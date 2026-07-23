@@ -1,0 +1,305 @@
+# Log retention & run-health report
+
+> Generated 2026-07-22T19:45:08Z. Read-only visibility — no rows deleted or archived here. A retention/deletion POLICY is a separate decision; this report exists so that decision can be made with real numbers, not a guess.
+
+## Contents
+
+- [Summary](#summary)
+- [Stuck chained runs (archival candidates — not relabelled; see lib/retention.py)](#stuck-chained-runs-archival-candidates-not-relabelled-see-libretentionpy)
+- [Open escalations (oldest first)](#open-escalations-oldest-first)
+- [Recent failed runs (last 50)](#recent-failed-runs-last-50)
+
+## Summary
+
+- `run`: **818** rows, oldest 2026-07-18T02:36:15Z, newest 2026-07-22T19:45:08Z
+  - done: 349
+  - paused: 197
+  - running: 182
+  - failed: 90
+- `escalation`: **254** rows — 21 open (raised), 233 answered
+- `validation_result`: **15821** rows, oldest 2026-07-18T02:36:19Z
+## Stuck chained runs (archival candidates — not relabelled; see lib/retention.py)
+
+**357** run(s): a chained work package (new-word / set-candidates / build-passages) stopped mid-sequence with nothing currently pending on it. May be a real abandoned run, or a deliberate standalone single-step test (e.g. `candidate.seed` run directly without a book) — needs a human look, not an automatic relabel.
+
+| run_id | work_package | state | resume_point | runs_over | started_at |
+| --- | --- | --- | --- | --- | --- |
+| RUN-20260718_033615_560-NEW-WORD | new-word | paused | registry.create | hypocrisy | 2026-07-18T02:36:15Z |
+| RUN-20260718_033616_610-NEW-WORD | new-word | running | raw.validate | hypocrisy | 2026-07-18T02:36:16Z |
+| RUN-TEST-B | new-word | running | registry.exists | malice | 2026-07-18T03:20:22Z |
+| RUN-20260718_084843_401-NEW-WORD | new-word | paused | registry.create | abomination | 2026-07-18T07:48:43Z |
+| RUN-COUPLING-TEST | set-candidates | running | candidate.seed |  | 2026-07-18T09:36:26Z |
+| RUN-20260718_104618_085-NEW-WORD | new-word | paused | registry.create | agony | 2026-07-18T09:46:18Z |
+| RUN-20260718_104623_175-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:46:23Z |
+| RUN-20260718_104623_688-NEW-WORD | new-word | paused | registry.create | ambition | 2026-07-18T09:46:23Z |
+| RUN-20260718_104627_119-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:46:27Z |
+| RUN-20260718_104627_643-NEW-WORD | new-word | paused | registry.create | anger | 2026-07-18T09:46:27Z |
+| RUN-20260718_104628_929-NEW-WORD | new-word | running | raw.detail | anger | 2026-07-18T09:46:29Z |
+| RUN-20260718_105228_153-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:52:28Z |
+| RUN-20260718_105228_690-NEW-WORD | new-word | paused | registry.create | anguish | 2026-07-18T09:52:28Z |
+| RUN-20260718_105236_778-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:52:37Z |
+| RUN-20260718_105355_081-NEW-WORD | new-word | paused | registry.create | anointing | 2026-07-18T09:53:55Z |
+| RUN-20260718_105402_957-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:54:03Z |
+| RUN-20260718_105403_509-NEW-WORD | new-word | paused | registry.create | anxiety | 2026-07-18T09:54:03Z |
+| RUN-20260718_105407_415-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:54:07Z |
+| RUN-20260718_105407_946-NEW-WORD | new-word | paused | registry.create | appetite | 2026-07-18T09:54:08Z |
+| RUN-20260718_105412_992-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:54:13Z |
+| RUN-20260718_105413_509-NEW-WORD | new-word | paused | registry.create | awe | 2026-07-18T09:54:13Z |
+| RUN-20260718_105420_535-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:54:20Z |
+| RUN-20260718_105421_063-NEW-WORD | new-word | paused | registry.create | bitterness | 2026-07-18T09:54:21Z |
+| RUN-20260718_105426_327-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:54:26Z |
+| RUN-20260718_105500_306-NEW-WORD | new-word | paused | registry.create | boastfulness | 2026-07-18T09:55:00Z |
+| RUN-20260718_105515_272-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:55:15Z |
+| RUN-20260718_105515_854-NEW-WORD | new-word | paused | registry.create | boldness | 2026-07-18T09:55:16Z |
+| RUN-20260718_105521_185-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:55:21Z |
+| RUN-20260718_105521_780-NEW-WORD | new-word | paused | registry.create | bondage | 2026-07-18T09:55:22Z |
+| RUN-20260718_105530_054-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:55:30Z |
+| RUN-20260718_105530_645-NEW-WORD | new-word | paused | registry.create | brokenness | 2026-07-18T09:55:30Z |
+| RUN-20260718_105543_507-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:55:43Z |
+| RUN-20260718_105544_176-NEW-WORD | new-word | paused | registry.create | calling | 2026-07-18T09:55:44Z |
+| RUN-20260718_105623_919-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:56:24Z |
+| RUN-20260718_105624_454-NEW-WORD | new-word | paused | registry.create | character | 2026-07-18T09:56:24Z |
+| RUN-20260718_105628_069-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:56:28Z |
+| RUN-20260718_105628_599-NEW-WORD | new-word | paused | registry.create | compassion | 2026-07-18T09:56:28Z |
+| RUN-20260718_105639_558-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:56:39Z |
+| RUN-20260718_105640_084-NEW-WORD | new-word | paused | registry.create | condemnation | 2026-07-18T09:56:40Z |
+| RUN-20260718_105649_687-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:56:49Z |
+| RUN-20260718_105650_242-NEW-WORD | new-word | paused | registry.create | conscience | 2026-07-18T09:56:50Z |
+| RUN-20260718_105654_286-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:56:54Z |
+| RUN-20260718_105654_828-NEW-WORD | new-word | paused | registry.create | consecration | 2026-07-18T09:56:55Z |
+| RUN-20260718_105704_374-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:57:04Z |
+| RUN-20260718_105704_930-NEW-WORD | new-word | paused | registry.create | contentment | 2026-07-18T09:57:05Z |
+| RUN-20260718_105714_969-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:57:15Z |
+| RUN-20260718_105715_506-NEW-WORD | new-word | paused | registry.create | contrition | 2026-07-18T09:57:15Z |
+| RUN-20260718_105719_601-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:57:19Z |
+| RUN-20260718_105720_181-NEW-WORD | new-word | paused | registry.create | corruption | 2026-07-18T09:57:20Z |
+| RUN-20260718_105728_316-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:57:28Z |
+| RUN-20260718_105728_849-NEW-WORD | new-word | paused | registry.create | counsel | 2026-07-18T09:57:29Z |
+| RUN-20260718_105737_916-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:57:38Z |
+| RUN-20260718_105738_478-NEW-WORD | new-word | paused | registry.create | courage | 2026-07-18T09:57:38Z |
+| RUN-20260718_105746_323-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:57:46Z |
+| RUN-20260718_105746_886-NEW-WORD | new-word | paused | registry.create | covenant | 2026-07-18T09:57:47Z |
+| RUN-20260718_105753_164-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:57:53Z |
+| RUN-20260718_105753_714-NEW-WORD | new-word | paused | registry.create | covetousness | 2026-07-18T09:57:54Z |
+| RUN-20260718_105759_324-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:57:59Z |
+| RUN-20260718_105759_851-NEW-WORD | new-word | paused | registry.create | debauchery | 2026-07-18T09:58:00Z |
+| RUN-20260718_105803_703-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:58:03Z |
+| RUN-20260718_105804_219-NEW-WORD | new-word | paused | registry.create | deceit | 2026-07-18T09:58:04Z |
+| RUN-20260718_105811_468-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:58:11Z |
+| RUN-20260718_105811_999-NEW-WORD | new-word | paused | registry.create | defilement | 2026-07-18T09:58:12Z |
+| RUN-20260718_105819_480-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:58:19Z |
+| RUN-20260718_105820_010-NEW-WORD | new-word | paused | registry.create | delight | 2026-07-18T09:58:20Z |
+| RUN-20260718_105835_492-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:58:35Z |
+| RUN-20260718_105836_062-NEW-WORD | new-word | paused | registry.create | desire | 2026-07-18T09:58:36Z |
+| RUN-20260718_105850_453-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:58:50Z |
+| RUN-20260718_105850_999-NEW-WORD | new-word | paused | registry.create | despair | 2026-07-18T09:58:51Z |
+| RUN-20260718_105857_741-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:58:58Z |
+| RUN-20260718_105858_280-NEW-WORD | new-word | paused | registry.create | devotion | 2026-07-18T09:58:58Z |
+| RUN-20260718_105907_194-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:59:07Z |
+| RUN-20260718_105907_719-NEW-WORD | new-word | paused | registry.create | dignity | 2026-07-18T09:59:07Z |
+| RUN-20260718_105913_995-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:59:14Z |
+| RUN-20260718_105914_560-NEW-WORD | new-word | paused | registry.create | discernment | 2026-07-18T09:59:14Z |
+| RUN-20260718_105928_780-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:59:29Z |
+| RUN-20260718_105929_312-NEW-WORD | new-word | paused | registry.create | disobedience | 2026-07-18T09:59:29Z |
+| RUN-20260718_105933_677-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:59:33Z |
+| RUN-20260718_105934_196-NEW-WORD | new-word | paused | registry.create | distress | 2026-07-18T09:59:34Z |
+| RUN-20260718_105947_385-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:59:47Z |
+| RUN-20260718_105947_931-NEW-WORD | new-word | paused | registry.create | division | 2026-07-18T09:59:48Z |
+| RUN-20260718_105955_720-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T09:59:56Z |
+| RUN-20260718_105956_280-NEW-WORD | new-word | paused | registry.create | dread | 2026-07-18T09:59:56Z |
+| RUN-20260718_110004_561-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:00:04Z |
+| RUN-20260718_110005_088-NEW-WORD | new-word | paused | registry.create | endurance | 2026-07-18T10:00:05Z |
+| RUN-20260718_110031_308-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:00:31Z |
+| RUN-20260718_110031_855-NEW-WORD | new-word | paused | registry.create | envy | 2026-07-18T10:00:32Z |
+| RUN-20260718_110037_121-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:00:37Z |
+| RUN-20260718_110037_648-NEW-WORD | new-word | paused | registry.create | evil | 2026-07-18T10:00:37Z |
+| RUN-20260718_110049_644-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:00:49Z |
+| RUN-20260718_110050_182-NEW-WORD | new-word | paused | registry.create | experience | 2026-07-18T10:00:50Z |
+| RUN-20260718_110056_721-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:00:56Z |
+| RUN-20260718_110057_245-NEW-WORD | new-word | paused | registry.create | faith | 2026-07-18T10:00:57Z |
+| RUN-20260718_110106_761-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:01:07Z |
+| RUN-20260718_110107_378-NEW-WORD | new-word | paused | registry.create | faithfulness | 2026-07-18T10:01:07Z |
+| RUN-20260718_110116_392-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:01:16Z |
+| RUN-20260718_110116_935-NEW-WORD | new-word | paused | registry.create | fear | 2026-07-18T10:01:17Z |
+| RUN-20260718_110131_679-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:01:31Z |
+| RUN-20260718_110132_229-NEW-WORD | new-word | paused | registry.create | fellowship | 2026-07-18T10:01:32Z |
+| RUN-20260718_110136_665-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:01:36Z |
+| RUN-20260718_110137_195-NEW-WORD | new-word | paused | registry.create | foolishness | 2026-07-18T10:01:37Z |
+| RUN-20260718_110144_482-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:01:44Z |
+| RUN-20260718_110145_001-NEW-WORD | new-word | paused | registry.create | forgiveness | 2026-07-18T10:01:45Z |
+| RUN-20260718_110151_586-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T10:01:51Z |
+| RUN-20260718_151918_253-NEW-WORD | new-word | paused | registry.create | generosity | 2026-07-18T14:19:18Z |
+| RUN-20260718_151923_339-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:19:23Z |
+| RUN-20260718_151923_918-NEW-WORD | new-word | paused | registry.create | gentleness | 2026-07-18T14:19:24Z |
+| RUN-20260718_151930_286-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:19:30Z |
+| RUN-20260718_151930_855-NEW-WORD | new-word | paused | registry.create | goodness | 2026-07-18T14:19:31Z |
+| RUN-20260718_151944_855-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:19:45Z |
+| RUN-20260718_151945_412-NEW-WORD | new-word | paused | registry.create | grace | 2026-07-18T14:19:45Z |
+| RUN-20260718_151951_920-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:19:52Z |
+| RUN-20260718_151952_528-NEW-WORD | new-word | paused | registry.create | gratitude | 2026-07-18T14:19:52Z |
+| RUN-20260718_151956_696-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:19:56Z |
+| RUN-20260718_151957_280-NEW-WORD | new-word | paused | registry.create | greed | 2026-07-18T14:19:57Z |
+| RUN-20260718_152001_736-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:20:02Z |
+| RUN-20260718_152002_333-NEW-WORD | new-word | paused | registry.create | grief | 2026-07-18T14:20:02Z |
+| RUN-20260718_152010_352-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:20:10Z |
+| RUN-20260718_152010_978-NEW-WORD | new-word | paused | registry.create | groaning | 2026-07-18T14:20:11Z |
+| RUN-20260718_152017_876-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:20:18Z |
+| RUN-20260718_152018_446-NEW-WORD | new-word | paused | registry.create | guilt | 2026-07-18T14:20:18Z |
+| RUN-20260718_152026_746-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:20:27Z |
+| RUN-20260718_152027_321-NEW-WORD | new-word | paused | registry.create | hardness | 2026-07-18T14:20:27Z |
+| RUN-20260718_152039_733-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:20:40Z |
+| RUN-20260718_152040_311-NEW-WORD | new-word | paused | registry.create | hatred | 2026-07-18T14:20:40Z |
+| RUN-20260718_152045_620-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:20:45Z |
+| RUN-20260718_152046_203-NEW-WORD | new-word | paused | registry.create | holiness | 2026-07-18T14:20:46Z |
+| RUN-20260718_152056_971-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:20:57Z |
+| RUN-20260718_152057_541-NEW-WORD | new-word | paused | registry.create | honesty | 2026-07-18T14:20:57Z |
+| RUN-20260718_152103_066-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:21:03Z |
+| RUN-20260718_152103_648-NEW-WORD | new-word | paused | registry.create | hope | 2026-07-18T14:21:03Z |
+| RUN-20260718_152111_733-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:21:12Z |
+| RUN-20260718_152112_317-NEW-WORD | new-word | paused | registry.create | humility | 2026-07-18T14:21:12Z |
+| RUN-20260718_152116_584-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:21:16Z |
+| RUN-20260718_152117_703-NEW-WORD | new-word | paused | registry.create | idolatry | 2026-07-18T14:21:17Z |
+| RUN-20260718_152122_196-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:21:22Z |
+| RUN-20260718_152122_756-NEW-WORD | new-word | paused | registry.create | imagination | 2026-07-18T14:21:23Z |
+| RUN-20260718_152129_563-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:21:29Z |
+| RUN-20260718_152130_145-NEW-WORD | new-word | paused | registry.create | impurity | 2026-07-18T14:21:30Z |
+| RUN-20260718_152135_722-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:21:36Z |
+| RUN-20260718_152136_286-NEW-WORD | new-word | paused | registry.create | indignation | 2026-07-18T14:21:36Z |
+| RUN-20260718_152143_019-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:21:43Z |
+| RUN-20260718_152143_659-NEW-WORD | new-word | paused | registry.create | iniquity | 2026-07-18T14:21:43Z |
+| RUN-20260718_152152_202-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:21:52Z |
+| RUN-20260718_152152_764-NEW-WORD | new-word | paused | registry.create | innocence | 2026-07-18T14:21:53Z |
+| RUN-20260718_152201_781-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:22:02Z |
+| RUN-20260718_152202_439-NEW-WORD | new-word | paused | registry.create | insight | 2026-07-18T14:22:02Z |
+| RUN-20260718_152209_052-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:22:09Z |
+| RUN-20260718_152209_643-NEW-WORD | new-word | paused | registry.create | integrity | 2026-07-18T14:22:09Z |
+| RUN-20260718_152214_825-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:22:15Z |
+| RUN-20260718_152215_381-NEW-WORD | new-word | paused | registry.create | intention | 2026-07-18T14:22:15Z |
+| RUN-20260718_152223_661-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:22:23Z |
+| RUN-20260718_152224_232-NEW-WORD | new-word | paused | registry.create | intercession | 2026-07-18T14:22:24Z |
+| RUN-20260718_152228_749-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:22:29Z |
+| RUN-20260718_152229_318-NEW-WORD | new-word | paused | registry.create | jealousy | 2026-07-18T14:22:29Z |
+| RUN-20260718_152234_204-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:22:34Z |
+| RUN-20260718_152234_846-NEW-WORD | new-word | paused | registry.create | joy | 2026-07-18T14:22:35Z |
+| RUN-20260718_152243_576-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:22:43Z |
+| RUN-20260718_152244_152-NEW-WORD | new-word | paused | registry.create | justice | 2026-07-18T14:22:44Z |
+| RUN-20260718_152255_686-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:22:55Z |
+| RUN-20260718_152256_258-NEW-WORD | new-word | paused | registry.create | kindness | 2026-07-18T14:22:56Z |
+| RUN-20260718_152308_175-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:23:08Z |
+| RUN-20260718_152308_856-NEW-WORD | new-word | paused | registry.create | knowledge | 2026-07-18T14:23:09Z |
+| RUN-20260718_152326_511-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:23:26Z |
+| RUN-20260718_152327_119-NEW-WORD | new-word | paused | registry.create | longing | 2026-07-18T14:23:27Z |
+| RUN-20260718_152353_200-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:23:53Z |
+| RUN-20260718_152353_781-NEW-WORD | new-word | paused | registry.create | love | 2026-07-18T14:23:54Z |
+| RUN-20260718_152408_392-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:24:08Z |
+| RUN-20260718_152408_967-NEW-WORD | new-word | paused | registry.create | lust | 2026-07-18T14:24:09Z |
+| RUN-20260718_152415_085-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:24:15Z |
+| RUN-20260718_152415_719-NEW-WORD | new-word | paused | registry.create | meaning | 2026-07-18T14:24:16Z |
+| RUN-20260718_152426_879-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:24:27Z |
+| RUN-20260718_152427_447-NEW-WORD | new-word | paused | registry.create | meditation | 2026-07-18T14:24:27Z |
+| RUN-20260718_152442_936-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:24:43Z |
+| RUN-20260718_152443_507-NEW-WORD | new-word | paused | registry.create | memory | 2026-07-18T14:24:43Z |
+| RUN-20260718_152449_733-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:24:50Z |
+| RUN-20260718_152450_386-NEW-WORD | new-word | paused | registry.create | mercy | 2026-07-18T14:24:50Z |
+| RUN-20260718_152500_598-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:25:00Z |
+| RUN-20260718_152501_184-NEW-WORD | new-word | paused | registry.create | mind | 2026-07-18T14:25:01Z |
+| RUN-20260718_152517_612-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:25:17Z |
+| RUN-20260718_152518_208-NEW-WORD | new-word | paused | registry.create | mourning | 2026-07-18T14:25:18Z |
+| RUN-20260718_152531_391-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:25:31Z |
+| RUN-20260718_152531_946-NEW-WORD | new-word | paused | registry.create | obedience | 2026-07-18T14:25:32Z |
+| RUN-20260718_152539_588-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:25:39Z |
+| RUN-20260718_152540_166-NEW-WORD | new-word | paused | registry.create | passion | 2026-07-18T14:25:40Z |
+| RUN-20260718_152545_401-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:25:45Z |
+| RUN-20260718_152545_970-NEW-WORD | new-word | paused | registry.create | patience | 2026-07-18T14:25:46Z |
+| RUN-20260718_152552_239-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:25:52Z |
+| RUN-20260718_152552_791-NEW-WORD | new-word | paused | registry.create | peace | 2026-07-18T14:25:53Z |
+| RUN-20260718_152603_557-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:26:03Z |
+| RUN-20260718_152604_181-NEW-WORD | new-word | paused | registry.create | perverseness | 2026-07-18T14:26:04Z |
+| RUN-20260718_152611_003-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:26:11Z |
+| RUN-20260718_152611_572-NEW-WORD | new-word | paused | registry.create | praise | 2026-07-18T14:26:11Z |
+| RUN-20260718_152623_294-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:26:23Z |
+| RUN-20260718_152623_876-NEW-WORD | new-word | paused | registry.create | prayer | 2026-07-18T14:26:24Z |
+| RUN-20260718_152631_187-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:26:31Z |
+| RUN-20260718_152631_812-NEW-WORD | new-word | paused | registry.create | pride | 2026-07-18T14:26:32Z |
+| RUN-20260718_152639_095-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:26:39Z |
+| RUN-20260718_152639_747-NEW-WORD | new-word | paused | registry.create | prophecy | 2026-07-18T14:26:40Z |
+| RUN-20260718_152646_225-SEED-REFRESH | set-candidates | running | candidate.seed |  | 2026-07-18T14:26:46Z |
+## Open escalations (oldest first)
+
+| id | run_id | word | at_step | question | raised_at |
+| --- | --- | --- | --- | --- | --- |
+| 195 | RUN-20260721_163620_949-PASSAGE-QUALITY |  | passage.validate | Passage distribution across all books: 18571 passages, average 1.34 verses/passage, 15027 (81%) are single-verse. passag | 2026-07-21T15:36:21Z |
+| 222 | RUN-20260722_054406_784-CANDIDATE-QUALITY |  | candidate.validate | Candidate quality findings across the stamp, the seed decision, and the independent substrate: 15541 null / 35975 messy  | 2026-07-22T04:44:07Z |
+| 228 | MANUAL-20260722_060313_690259 | None | manual | Anger/spirit dual-characteristic overlap (candidate_seed): a lemma whose seed match spans two valid IB concepts at once  | 2026-07-22T06:03:13Z |
+| 240 | RUN-20260722_092724_102-NEW-WORD | blindness | registry.create | Register the new word 'blindness'? | 2026-07-22T08:27:24Z |
+| 241 | RUN-20260722_094509_240-CONFIGMAINT |  | configmaint.validate | cfg_* is structurally coherent, but has findings needing your judgement: 6 orphan config(s): cfg_setting 'configmaint.au | 2026-07-22T08:45:09Z |
+| 244 | RUN-20260722_123817_702-CANDIDATE-LOAD |  | candidate.load | candidate.load: 0 item(s) loaded clean this run; 1029 exception row(s) now sit in candidate_seed (decision='exception')  | 2026-07-22T11:38:30Z |
+| 247 | RUN-20260722_134702_815-CANDIDATE-LOAD |  | candidate.load | candidate.load: 4 item(s) loaded clean this run; 245 exception row(s) now sit in candidate_seed (decision='exception') n | 2026-07-22T12:47:13Z |
+| 248 | RUN-20260722_134927_229-CANDIDATE-LOAD |  | candidate.load | candidate.load: 0 item(s) loaded clean this run; 248 exception row(s) now sit in candidate_seed (decision='exception') n | 2026-07-22T12:49:34Z |
+| 249 | RUN-20260722_135113_766-CANDIDATE-LOAD |  | candidate.load | candidate.load: 1 item(s) loaded clean this run, 2 duplicate(s) skipped untouched; 244 exception row(s) now sit in candi | 2026-07-22T12:51:20Z |
+| 250 | RUN-20260722_135227_715-CANDIDATE-LOAD |  | candidate.load | candidate.load: 1 item(s) loaded clean this run, 2 duplicate(s) skipped untouched; 246 exception row(s) now sit in candi | 2026-07-22T12:52:34Z |
+| 252 | RUN-20260722_141003_552-CANDIDATE-LOAD |  | candidate.load | candidate.load: 0 item(s) loaded clean this run, 0 duplicate(s) skipped untouched; 244 exception row(s) now sit in candi | 2026-07-22T13:10:10Z |
+| 253 | RUN-smoketest-0a |  | configmaint.validate | cfg_* is structurally coherent, but has findings needing your judgement: 12 orphan config(s): cfg_setting 'governance.bu | 2026-07-22T18:25:20Z |
+| 254 | RUN-smoketest-0b-candvalidate |  | candidate.validate | Candidate quality findings across the stamp, the seed decision, and the independent substrate: 15036 null / 33584 messy  | 2026-07-22T18:34:30Z |
+| 255 | RUN-smoketest-0b-candload |  | candidate.load | candidate.load: 0 item(s) loaded clean this run, 0 duplicate(s) skipped untouched; 244 exception row(s) now sit in candi | 2026-07-22T18:35:02Z |
+| 256 | RUN-smoketest-0b-passage |  | passage.validate | Passage distribution across all books: 18571 passages, average 1.34 verses/passage, 15027 (81%) are single-verse. passag | 2026-07-22T18:35:34Z |
+| 257 | RUN-smoketest-0b-final |  | configmaint.validate | cfg_* is structurally coherent, but has findings needing your judgement: 12 orphan config(s): cfg_setting 'governance.bu | 2026-07-22T18:41:24Z |
+| 258 | RUN-smoketest-0c-candload |  | candidate.load | candidate.load: 0 item(s) loaded clean this run, 0 duplicate(s) skipped untouched; 244 exception row(s) now sit in candi | 2026-07-22T18:45:54Z |
+| 259 | RUN-20260722_203621_706-CANDIDATE-QUALITY |  | candidate.validate | Candidate quality findings across the stamp, the seed decision, and the independent substrate: 15036 null / 33584 messy  | 2026-07-22T19:36:23Z |
+| 260 | RUN-20260722_203734_451-CONFIGMAINT |  | configmaint.validate | cfg_* is structurally coherent, but has findings needing your judgement: 3 orphan config(s): cfg_setting 'governance.bui | 2026-07-22T19:37:34Z |
+| 261 | RUN-20260722_203848_101-CANDIDATE-LOAD |  | candidate.load | candidate.load: 0 item(s) loaded clean this run, 0 duplicate(s) skipped untouched; 244 exception row(s) now sit in candi | 2026-07-22T19:38:56Z |
+| 262 | RUN-20260722_204223_295-PASSAGE-QUALITY |  | passage.validate | Passage distribution across all books: 18571 passages, average 1.34 verses/passage, 15027 (81%) are single-verse. passag | 2026-07-22T19:42:24Z |
+## Recent failed runs (last 50)
+
+| run_id | work_package | runs_over | outcome | ended_at |
+| --- | --- | --- | --- | --- |
+| RUN-20260722_065638_329-CONFIGMAINT | configuration-maintenance |  | the researcher rejected the proposed change — proposal rejected: update cfg_setting {'key': 'passage.review_over'} -> {' | 2026-07-22T05:56:54Z |
+| TEST-JUSTIFY-1 | configuration-maintenance |  | the researcher rejected the proposed change — proposal rejected: insert cfg_setting  -> {'key': 'candidate.test_setting' | 2026-07-21T15:11:35Z |
+| TEST-BADMODULE-1 | configuration-maintenance |  | the proposed change fails a coherence check — never escalated — 1 problem(s): cfg_setting.module 'nonexistent' not in en | 2026-07-21T15:11:25Z |
+| TEST-NOMODULE-1 | configuration-maintenance |  | the proposed change fails a coherence check — never escalated — 1 problem(s): cfg_setting inserts must set 'module' — ev | 2026-07-21T15:11:14Z |
+| TEST-DUP-CHECK-1 | configuration-maintenance |  | the live cfg_* store is incoherent — 1 coherence error(s) | 2026-07-21T14:41:36Z |
+| TEST-REJECT-1 | configuration-maintenance |  | the researcher rejected the proposed change — proposal rejected: update cfg_setting {'key': 'configmaint.selftest'} -> { | 2026-07-21T14:26:39Z |
+| TEST-REVISE-1 | configuration-maintenance |  | the researcher asked for the proposal to be revised (see the comment) and resubmitted — researcher asked for revision: p | 2026-07-21T14:26:32Z |
+| TEST-INVALID-2 | configuration-maintenance |  | the proposed change fails a coherence check — never escalated — 1 problem(s): cfg_setting: Set names unknown column(s) [ | 2026-07-21T14:26:18Z |
+| TEST-PROPOSE-1 | configuration-maintenance |  | Self-test: insert a harmless cfg_setting row to prove propose()'s approval cycle end to end. | 2026-07-21T14:24:43Z |
+| RUN-20260718_154019_703-NEW-WORD | new-word | the afflicted | span does not recover strong_verse — G3588:372 missed | 2026-07-18T14:40:35Z |
+| RUN-20260718_153809_267-NEW-WORD | new-word | being | span does not recover strong_verse — G1096:1 missed; G1510:48 missed; G2192:2 missed | 2026-07-18T14:39:21Z |
+| RUN-20260718_153532_766-NEW-WORD | new-word | malice | the word already exists; use a refresh run, not new-word — 'malice' is already built (status raw-complete) | 2026-07-18T14:35:33Z |
+| RUN-20260718_153024_890-NEW-WORD | new-word | surrender | span does not recover strong_verse — H5462:1 missed | 2026-07-18T14:30:34Z |
+| RUN-20260718_152117_153-NEW-WORD | new-word | hypocrisy | the word already exists; use a refresh run, not new-word — 'hypocrisy' is already built (status raw-complete) | 2026-07-18T14:21:17Z |
+| RUN-20260718_151917_142-NEW-WORD | new-word | foolishness | the word already exists; use a refresh run, not new-word — 'foolishness' is already built (status raw-complete) | 2026-07-18T14:19:17Z |
+| RUN-20260718_151917_702-NEW-WORD | new-word | forgiveness | the word already exists; use a refresh run, not new-word — 'forgiveness' is already built (status raw-complete) | 2026-07-18T14:19:17Z |
+| RUN-20260718_151916_048-NEW-WORD | new-word | fear | the word already exists; use a refresh run, not new-word — 'fear' is already built (status raw-complete) | 2026-07-18T14:19:16Z |
+| RUN-20260718_151916_598-NEW-WORD | new-word | fellowship | the word already exists; use a refresh run, not new-word — 'fellowship' is already built (status raw-complete) | 2026-07-18T14:19:16Z |
+| RUN-20260718_151914_948-NEW-WORD | new-word | faith | the word already exists; use a refresh run, not new-word — 'faith' is already built (status raw-complete) | 2026-07-18T14:19:15Z |
+| RUN-20260718_151915_490-NEW-WORD | new-word | faithfulness | the word already exists; use a refresh run, not new-word — 'faithfulness' is already built (status raw-complete) | 2026-07-18T14:19:15Z |
+| RUN-20260718_151913_786-NEW-WORD | new-word | evil | the word already exists; use a refresh run, not new-word — 'evil' is already built (status raw-complete) | 2026-07-18T14:19:14Z |
+| RUN-20260718_151914_330-NEW-WORD | new-word | experience | the word already exists; use a refresh run, not new-word — 'experience' is already built (status raw-complete) | 2026-07-18T14:19:14Z |
+| RUN-20260718_151913_251-NEW-WORD | new-word | envy | the word already exists; use a refresh run, not new-word — 'envy' is already built (status raw-complete) | 2026-07-18T14:19:13Z |
+| RUN-20260718_151912_160-NEW-WORD | new-word | dread | the word already exists; use a refresh run, not new-word — 'dread' is already built (status raw-complete) | 2026-07-18T14:19:12Z |
+| RUN-20260718_151912_705-NEW-WORD | new-word | endurance | the word already exists; use a refresh run, not new-word — 'endurance' is already built (status raw-complete) | 2026-07-18T14:19:12Z |
+| RUN-20260718_151911_053-NEW-WORD | new-word | distress | the word already exists; use a refresh run, not new-word — 'distress' is already built (status raw-complete) | 2026-07-18T14:19:11Z |
+| RUN-20260718_151911_598-NEW-WORD | new-word | division | the word already exists; use a refresh run, not new-word — 'division' is already built (status raw-complete) | 2026-07-18T14:19:11Z |
+| RUN-20260718_151909_923-NEW-WORD | new-word | discernment | the word already exists; use a refresh run, not new-word — 'discernment' is already built (status raw-complete) | 2026-07-18T14:19:10Z |
+| RUN-20260718_151910_472-NEW-WORD | new-word | disobedience | the word already exists; use a refresh run, not new-word — 'disobedience' is already built (status raw-complete) | 2026-07-18T14:19:10Z |
+| RUN-20260718_151908_829-NEW-WORD | new-word | devotion | the word already exists; use a refresh run, not new-word — 'devotion' is already built (status raw-complete) | 2026-07-18T14:19:09Z |
+| RUN-20260718_151909_374-NEW-WORD | new-word | dignity | the word already exists; use a refresh run, not new-word — 'dignity' is already built (status raw-complete) | 2026-07-18T14:19:09Z |
+| RUN-20260718_151907_717-NEW-WORD | new-word | desire | the word already exists; use a refresh run, not new-word — 'desire' is already built (status raw-complete) | 2026-07-18T14:19:08Z |
+| RUN-20260718_151908_263-NEW-WORD | new-word | despair | the word already exists; use a refresh run, not new-word — 'despair' is already built (status raw-complete) | 2026-07-18T14:19:08Z |
+| RUN-20260718_151907_184-NEW-WORD | new-word | delight | the word already exists; use a refresh run, not new-word — 'delight' is already built (status raw-complete) | 2026-07-18T14:19:07Z |
+| RUN-20260718_151906_046-NEW-WORD | new-word | deceit | the word already exists; use a refresh run, not new-word — 'deceit' is already built (status raw-complete) | 2026-07-18T14:19:06Z |
+| RUN-20260718_151906_625-NEW-WORD | new-word | defilement | the word already exists; use a refresh run, not new-word — 'defilement' is already built (status raw-complete) | 2026-07-18T14:19:06Z |
+| RUN-20260718_151904_937-NEW-WORD | new-word | covetousness | the word already exists; use a refresh run, not new-word — 'covetousness' is already built (status raw-complete) | 2026-07-18T14:19:05Z |
+| RUN-20260718_151905_491-NEW-WORD | new-word | debauchery | the word already exists; use a refresh run, not new-word — 'debauchery' is already built (status raw-complete) | 2026-07-18T14:19:05Z |
+| RUN-20260718_151903_851-NEW-WORD | new-word | courage | the word already exists; use a refresh run, not new-word — 'courage' is already built (status raw-complete) | 2026-07-18T14:19:04Z |
+| RUN-20260718_151904_400-NEW-WORD | new-word | covenant | the word already exists; use a refresh run, not new-word — 'covenant' is already built (status raw-complete) | 2026-07-18T14:19:04Z |
+| RUN-20260718_151902_747-NEW-WORD | new-word | corruption | the word already exists; use a refresh run, not new-word — 'corruption' is already built (status raw-complete) | 2026-07-18T14:19:03Z |
+| RUN-20260718_151903_301-NEW-WORD | new-word | counsel | the word already exists; use a refresh run, not new-word — 'counsel' is already built (status raw-complete) | 2026-07-18T14:19:03Z |
+| RUN-20260718_151902_201-NEW-WORD | new-word | contrition | the word already exists; use a refresh run, not new-word — 'contrition' is already built (status raw-complete) | 2026-07-18T14:19:02Z |
+| RUN-20260718_151901_049-NEW-WORD | new-word | consecration | the word already exists; use a refresh run, not new-word — 'consecration' is already built (status raw-complete) | 2026-07-18T14:19:01Z |
+| RUN-20260718_151901_601-NEW-WORD | new-word | contentment | the word already exists; use a refresh run, not new-word — 'contentment' is already built (status raw-complete) | 2026-07-18T14:19:01Z |
+| RUN-20260718_151859_906-NEW-WORD | new-word | condemnation | the word already exists; use a refresh run, not new-word — 'condemnation' is already built (status raw-complete) | 2026-07-18T14:19:00Z |
+| RUN-20260718_151900_473-NEW-WORD | new-word | conscience | the word already exists; use a refresh run, not new-word — 'conscience' is already built (status raw-complete) | 2026-07-18T14:19:00Z |
+| RUN-20260718_151858_813-NEW-WORD | new-word | character | the word already exists; use a refresh run, not new-word — 'character' is already built (status raw-complete) | 2026-07-18T14:18:59Z |
+| RUN-20260718_151859_371-NEW-WORD | new-word | compassion | the word already exists; use a refresh run, not new-word — 'compassion' is already built (status raw-complete) | 2026-07-18T14:18:59Z |
+| RUN-20260718_151858_260-NEW-WORD | new-word | calling | the word already exists; use a refresh run, not new-word — 'calling' is already built (status raw-complete) | 2026-07-18T14:18:58Z |

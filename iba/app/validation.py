@@ -20,8 +20,15 @@ import sys
 
 from .lib.cfg import Cfg
 from .lib.db import Db
+from .lib import reportkit, valuequality as vq
 
-REPORTS = pathlib.Path(__file__).resolve().parent / "reports"
+_SECTION_KEY = {
+    "1. App & DB": "app_db", "2. Pre/post": "pre_post", "3. Integrity": "integrity",
+    "4. References": "references", "5. Expectations": "expectations",
+    "6. Value quality": "value_quality", "3. Candidate (L4b)": "candidate",
+    "4. Passages": "passages",
+}
+
 CONTROL = {"run", "validation_result", "escalation"}   # not raw study tables
 
 
@@ -176,6 +183,69 @@ def _expectations(cfg: Cfg, db: Db, word: str) -> list[Check]:
     return out
 
 
+# ── section 6: value quality (config-derived — cfg_column.expectation, scoped to this word) ──
+def _value_quality_word(cfg: Cfg, word_id: int, word: str) -> list[Check]:
+    """Per-word value-quality — the same generic engine candidate.validate uses (lib/
+    valuequality), scoped to just this word's strongs/spans/registry row, so a word reviewer sees
+    it here without running the standalone candidate-quality check over the whole programme."""
+    out = []
+    scoped = (
+        ("strong_sense", "head",
+         "strong IN (SELECT strong FROM word_strong WHERE word_id=?)"),
+        ("span", "surface",
+         "verse_id IN (SELECT verse_id FROM strong_verse WHERE strong IN "
+         "(SELECT strong FROM word_strong WHERE word_id=?))"),
+    )
+    for table, column, where in scoped:
+        exp = cfg.conn.execute("SELECT expectation FROM cfg_column WHERE table_name=? AND name=?",
+                               (table, column)).fetchone()
+        if not exp or not exp["expectation"]:
+            continue
+        f = vq.scan_column(cfg, table, column, exp["expectation"], where, (word_id,))
+        if not f:
+            continue
+        out.append(Check("6. Value quality", f"{table}.{column} ({f.rule})", "0 violations",
+                         f"{f.violations}/{f.total}", "PASS" if not f.violations else "WARN",
+                         "; ".join(repr(v) for v, _ in f.samples[:3]) if f.violations else ""))
+    exp = cfg.conn.execute(
+        "SELECT expectation FROM cfg_column WHERE table_name='word_registry' AND name='word'").fetchone()
+    if exp and exp["expectation"]:
+        f = vq.scan_column(cfg, "word_registry", "word", exp["expectation"], "id=?", (word_id,))
+        if f:
+            out.append(Check("6. Value quality", f"word_registry.word ({f.rule})", "0 violations",
+                             f"{f.violations}/{f.total}", "PASS" if not f.violations else "FAIL",
+                             word if f.violations else ""))
+    return out
+
+
+def _value_quality_book(cfg: Cfg, book: str) -> list[Check]:
+    """Book-scoped span.surface (this book's verses) + programme-wide candidate_seed.tag/
+    lemma_inventory.gloss context (those tables aren't book-local — informational, full detail in
+    candidate-quality.md)."""
+    out = []
+    like = f"{book}.%"
+    exp = cfg.conn.execute(
+        "SELECT expectation FROM cfg_column WHERE table_name='span' AND name='surface'").fetchone()
+    if exp and exp["expectation"]:
+        f = vq.scan_column(cfg, "span", "surface", exp["expectation"],
+                           "verse_id IN (SELECT id FROM verse WHERE osisId LIKE ?)", (like,))
+        if f:
+            out.append(Check("6. Value quality", f"span.surface ({f.rule}, this book)",
+                             "0 violations", f"{f.violations}/{f.total}",
+                             "PASS" if not f.violations else "WARN"))
+    for table, column in (("candidate_seed", "tag"), ("lemma_inventory", "gloss")):
+        exp = cfg.conn.execute("SELECT expectation FROM cfg_column WHERE table_name=? AND name=?",
+                               (table, column)).fetchone()
+        if exp and exp["expectation"]:
+            f = vq.scan_column(cfg, table, column, exp["expectation"])
+            if f:
+                out.append(Check("6. Value quality", f"{table}.{column} ({f.rule}, programme-wide)",
+                                 "0 violations", f"{f.violations}/{f.total}",
+                                 "PASS" if not f.violations else "WARN",
+                                 "see candidate-quality.md for detail"))
+    return out
+
+
 def _tbl(headers, rows):
     L = ["| " + " | ".join(headers) + " |", "| " + " | ".join("---" for _ in headers) + " |"]
     for r in rows:
@@ -187,11 +257,27 @@ def _mark(v):
     return {"PASS": "✓ PASS", "FAIL": "✗ FAIL", "WARN": "⚠ WARN"}.get(v, v)
 
 
+_WORD_SECTIONS = {                          # section label -> the cfg_setting toggle that shows it
+    "1. App & DB": "validation.show_health",
+    "2. Pre/post": "validation.show_delta",
+    "3. Integrity": "validation.show_integrity",
+    "4. References": "validation.show_references",
+    "5. Expectations": "validation.show_expectations",
+    "6. Value quality": "validation.show_value_quality",
+}
+
+
 def generate(word: str) -> pathlib.Path:
     cfg = Cfg()
     db = Db(cfg)
+    output_dir = pathlib.Path(cfg.setting("validation.output_dir", "iba/app/reports"))
+    shown = {sec: bool(cfg.setting(key, True)) for sec, key in _WORD_SECTIONS.items()}
+
+    reg = db.rows("SELECT id FROM word_registry WHERE lower(word)=lower(?) AND deleted=0", (word,))
     health, run_id = _health(cfg, db, word)
     checks = health + _integrity(cfg, db) + _references(cfg, db) + _expectations(cfg, db, word)
+    if reg:
+        checks += _value_quality_word(cfg, reg[0]["id"], word)
     delta = _delta(db, run_id)
 
     fails = sum(1 for c in checks if c.verdict == "FAIL")
@@ -199,29 +285,42 @@ def generate(word: str) -> pathlib.Path:
     passes = sum(1 for c in checks if c.verdict == "PASS")
     overall = "FAIL" if fails else ("WARN" if warns else "PASS")
 
-    L = [f"# Validation report — {word!r}", "",
-         f"> Generated {_now()} · run `{run_id or '(none)'}`. Read-only; the authoritative gate is "
-         f"`raw.validate`.", "",
-         f"## Verdict: {_mark(overall)}   ({passes} pass · {warns} warn · {fails} fail)", ""]
+    intro = [
+        f"> Generated {_now()} · run `{run_id or '(none)'}`. Read-only; the authoritative gate is "
+        f"`raw.validate`. Sections shown are config-governed (`cfg_setting validation.show_*`).", "",
+        f"## Verdict: {_mark(overall)}   ({passes} pass · {warns} warn · {fails} fail)",
+    ]
 
-    for sec in ("1. App & DB", "2. Pre/post", "3. Integrity", "4. References", "5. Expectations"):
-        L.append(f"## {sec}")
-        if sec == "2. Pre/post":
-            if delta:
-                L += _tbl(["table", "pre", "post", "delta"], delta)
-            else:
-                L.append("_no snapshots for this run (run predates snapshotting, or no run)._")
-            L.append("")
+    sections: dict[str, list[str]] = {}
+    for sec in ("1. App & DB", "2. Pre/post", "3. Integrity", "4. References", "5. Expectations",
+               "6. Value quality"):
+        if not shown[sec]:
             continue
-        rows = [[_mark(c.verdict), c.name, c.expected, c.actual, c.detail]
-                for c in checks if c.section == sec]
-        L += _tbl(["verdict", "check", "expected", "actual", "detail"], rows)
-        L.append("")
+        if sec == "2. Pre/post":
+            S = (_tbl(["table", "pre", "post", "delta"], delta) if delta else
+                 ["_no snapshots for this run (run predates snapshotting, or no run)._"])
+        else:
+            rows = [[_mark(c.verdict), c.name, c.expected, c.actual, c.detail]
+                    for c in checks if c.section == sec]
+            S = _tbl(["verdict", "check", "expected", "actual", "detail"], rows)
+        sections[_SECTION_KEY[sec]] = S
 
+    output_dir.mkdir(parents=True, exist_ok=True)
+    out = output_dir / f"validation-{word}.md"
+    L = reportkit.render_scaffold(db.conn, "validation.word", sections, intro=intro, word=word)
+    if reg:
+        word_strong_rows = db.rows("SELECT * FROM word_strong WHERE word_id=?", (reg[0]["id"],))
+        strongs = [r["strong"] for r in word_strong_rows]
+        ph = ",".join("?" * len(strongs)) or "''"
+        span_rows = db.rows(
+            f"SELECT DISTINCT sp.* FROM span sp JOIN strong_verse sv ON sv.verse_id=sp.verse_id "
+            f"WHERE sv.strong IN ({ph})", strongs)
+    else:
+        word_strong_rows, span_rows = [], []
+    reportkit.write_csv_pairing(db.conn, "validation.word", output_dir / "export",
+                                row_filter={"span": span_rows, "word_strong": word_strong_rows})
+    reportkit.write_report(db.conn, "validation.word", out, L)
     db.close()
-    REPORTS.mkdir(parents=True, exist_ok=True)
-    out = REPORTS / f"validation-{word}.md"
-    out.write_text("\n".join(L) + "\n", encoding="utf-8")
     return out, overall, (passes, warns, fails)
 
 
@@ -275,33 +374,63 @@ def _base_checks(cfg: Cfg, db: Db, book: str) -> list[Check]:
     return out
 
 
+_BOOK_SECTIONS = {
+    "1. App & DB": "validation.show_health",
+    "3. Candidate (L4b)": "validation.show_candidate",
+    "4. Passages": "validation.show_passages",
+    "6. Value quality": "validation.show_value_quality",
+}
+
+
 def generate_book(book: str) -> tuple:
     cfg = Cfg()
     db = Db(cfg)
+    output_dir = pathlib.Path(cfg.setting("validation.output_dir", "iba/app/reports"))
+    shown = {sec: bool(cfg.setting(key, True)) for sec, key in _BOOK_SECTIONS.items()}
+
     health, _ = _health(cfg, db, book)
     # keep only the app/DB rows from health (drop the word-run row, which is word-scoped)
     health = [c for c in health if c.name != "latest run complete"]
-    checks = health + _base_checks(cfg, db, book)
+    checks = health + _base_checks(cfg, db, book) + _value_quality_book(cfg, book)
     fails = sum(1 for c in checks if c.verdict == "FAIL")
     warns = sum(1 for c in checks if c.verdict == "WARN")
     passes = sum(1 for c in checks if c.verdict == "PASS")
     overall = "FAIL" if fails else ("WARN" if warns else "PASS")
 
-    L = [f"# Base validation report — book {book!r}", "",
-         f"> Generated {_now()}. Read-only. Candidate (L4b) + passages.", "",
-         f"## Verdict: {_mark(overall)}   ({passes} pass · {warns} warn · {fails} fail)", ""]
-    for sec in ("1. App & DB", "3. Candidate (L4b)", "4. Passages"):
+    intro = [
+        f"> Generated {_now()}. Read-only. Candidate (L4b) + passages. Sections shown are "
+        f"config-governed (`cfg_setting validation.show_*`).", "",
+        f"## Verdict: {_mark(overall)}   ({passes} pass · {warns} warn · {fails} fail)",
+    ]
+    sections: dict[str, list[str]] = {}
+    for sec in ("1. App & DB", "3. Candidate (L4b)", "4. Passages", "6. Value quality"):
+        if not shown[sec]:
+            continue
         rows = [[_mark(c.verdict), c.name, c.expected, c.actual, c.detail]
                 for c in checks if c.section == sec]
         if not rows:
             continue
-        L.append(f"## {sec}")
-        L += _tbl(["verdict", "check", "expected", "actual", "detail"], rows)
-        L.append("")
+        sections[_SECTION_KEY[sec]] = _tbl(
+            ["verdict", "check", "expected", "actual", "detail"], rows)
+
+    output_dir.mkdir(parents=True, exist_ok=True)
+    out = output_dir / f"validation-book-{book}.md"
+    L = reportkit.render_scaffold(db.conn, "validation.book", sections, intro=intro, book=book)
+    like = f"{book}.%"
+    candidate_seed_rows = db.rows(
+        "SELECT cs.* FROM candidate_seed cs WHERE cs.deleted=0 AND EXISTS (SELECT 1 FROM "
+        "span sp JOIN verse v ON v.id=sp.verse_id WHERE v.osisId LIKE ? AND sp.strong_variant="
+        "cs.strong_variant)", (like,))
+    passage_rows = db.rows("SELECT * FROM passage WHERE book=? AND deleted=0", (book,))
+    verse_passage_rows = db.rows(
+        "SELECT vp.* FROM verse_passage vp JOIN passage p ON p.id=vp.passage_id WHERE p.book=?",
+        (book,))
+    reportkit.write_csv_pairing(db.conn, "validation.book", output_dir / "export",
+                                row_filter={"candidate_seed": candidate_seed_rows,
+                                           "passage": passage_rows,
+                                           "verse_passage": verse_passage_rows})
+    reportkit.write_report(db.conn, "validation.book", out, L)
     db.close()
-    REPORTS.mkdir(parents=True, exist_ok=True)
-    out = REPORTS / f"validation-book-{book}.md"
-    out.write_text("\n".join(L) + "\n", encoding="utf-8")
     return out, overall, (passes, warns, fails)
 
 

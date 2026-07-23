@@ -4,13 +4,161 @@
 
 **word_registry** — id 1 · status `raw-complete` · source gap scan 2026-07-18
 
+## Contents
+
+- [Validation](#validation)
+- [The strongs and their meaning (L1 → L2)](#the-strongs-and-their-meaning-l1-l2)
+- [Sample verses — the span layer (one row per code)](#sample-verses-the-span-layer-one-row-per-code)
+
 ## Validation
 
 | check | result | detail |
 |---|---|---|
 | parse-check | ✓ pass | span recovers all 18 strong_verse assertions |
 | no-null | ✓ pass | no NULLs in required columns |
-
+| pre:word_registry | ✗ **FAIL** | 67 |
+| pre:word_strong | ✗ **FAIL** | 1473 |
+| pre:strong | ✗ **FAIL** | 1243 |
+| pre:strong_sense | ✗ **FAIL** | 1243 |
+| pre:strong_meaning_tree | ✗ **FAIL** | 1081 |
+| pre:strong_lexicon | ✗ **FAIL** | 508 |
+| pre:verse | ✗ **FAIL** | 24019 |
+| pre:strong_verse | ✗ **FAIL** | 52006 |
+| pre:span | ✗ **FAIL** | 455926 |
+| pre:run | ✗ **FAIL** | 285 |
+| pre:validation_result | ✗ **FAIL** | 4995 |
+| pre:escalation | ✗ **FAIL** | 67 |
+| pre:lemma_inventory | ✗ **FAIL** | 11781 |
+| pre:candidate_seed | ✗ **FAIL** | 2218 |
+| pre:span_candidate | ✗ **FAIL** | 617 |
+| pre:passage | ✗ **FAIL** | 143 |
+| pre:verse_passage | ✗ **FAIL** | 146 |
+| pre:word_registry | ✗ **FAIL** | 178 |
+| pre:word_strong | ✗ **FAIL** | 4796 |
+| pre:strong | ✗ **FAIL** | 3463 |
+| pre:strong_sense | ✗ **FAIL** | 3463 |
+| pre:strong_meaning_tree | ✗ **FAIL** | 9454 |
+| pre:strong_lexicon | ✗ **FAIL** | 1506 |
+| pre:verse | ✗ **FAIL** | 29037 |
+| pre:strong_verse | ✗ **FAIL** | 112446 |
+| pre:span | ✗ **FAIL** | 534075 |
+| pre:run | ✗ **FAIL** | 798 |
+| pre:validation_result | ✗ **FAIL** | 15543 |
+| pre:escalation | ✗ **FAIL** | 248 |
+| pre:lemma_inventory | ✗ **FAIL** | 11781 |
+| pre:candidate_seed | ✗ **FAIL** | 2087 |
+| pre:span_candidate | ✗ **FAIL** | 85064 |
+| pre:passage | ✗ **FAIL** | 18571 |
+| pre:verse_passage | ✗ **FAIL** | 24847 |
+| pre:cfg_change_detail | ✗ **FAIL** | 37 |
+| post:word_registry | ✗ **FAIL** | 178 |
+| post:word_strong | ✗ **FAIL** | 4796 |
+| post:strong | ✗ **FAIL** | 3463 |
+| post:strong_sense | ✗ **FAIL** | 3463 |
+| post:strong_meaning_tree | ✗ **FAIL** | 9454 |
+| post:strong_lexicon | ✗ **FAIL** | 1506 |
+| post:verse | ✗ **FAIL** | 29037 |
+| post:strong_verse | ✗ **FAIL** | 112446 |
+| post:span | ✗ **FAIL** | 534075 |
+| post:run | ✗ **FAIL** | 798 |
+| post:validation_result | ✗ **FAIL** | 15561 |
+| post:escalation | ✗ **FAIL** | 248 |
+| post:lemma_inventory | ✗ **FAIL** | 11781 |
+| post:candidate_seed | ✗ **FAIL** | 2087 |
+| post:span_candidate | ✗ **FAIL** | 85064 |
+| post:passage | ✗ **FAIL** | 18571 |
+| post:verse_passage | ✗ **FAIL** | 24847 |
+| post:cfg_change_detail | ✗ **FAIL** | 37 |
+| pre:word_registry | ✗ **FAIL** | 178 |
+| pre:word_strong | ✗ **FAIL** | 4796 |
+| pre:strong | ✗ **FAIL** | 3463 |
+| pre:strong_sense | ✗ **FAIL** | 3463 |
+| pre:strong_meaning_tree | ✗ **FAIL** | 9454 |
+| pre:strong_lexicon | ✗ **FAIL** | 1506 |
+| pre:verse | ✗ **FAIL** | 29037 |
+| pre:strong_verse | ✗ **FAIL** | 112446 |
+| pre:span | ✗ **FAIL** | 534075 |
+| pre:run | ✗ **FAIL** | 799 |
+| pre:validation_result | ✗ **FAIL** | 15579 |
+| pre:escalation | ✗ **FAIL** | 248 |
+| pre:lemma_inventory | ✗ **FAIL** | 11781 |
+| pre:candidate_seed | ✗ **FAIL** | 2087 |
+| pre:span_candidate | ✗ **FAIL** | 85064 |
+| pre:passage | ✗ **FAIL** | 18571 |
+| pre:verse_passage | ✗ **FAIL** | 24847 |
+| pre:cfg_change_detail | ✗ **FAIL** | 37 |
+| post:word_registry | ✗ **FAIL** | 178 |
+| post:word_strong | ✗ **FAIL** | 4796 |
+| post:strong | ✗ **FAIL** | 3463 |
+| post:strong_sense | ✗ **FAIL** | 3463 |
+| post:strong_meaning_tree | ✗ **FAIL** | 9454 |
+| post:strong_lexicon | ✗ **FAIL** | 1506 |
+| post:verse | ✗ **FAIL** | 29037 |
+| post:strong_verse | ✗ **FAIL** | 112446 |
+| post:span | ✗ **FAIL** | 534075 |
+| post:run | ✗ **FAIL** | 799 |
+| post:validation_result | ✗ **FAIL** | 15597 |
+| post:escalation | ✗ **FAIL** | 248 |
+| post:lemma_inventory | ✗ **FAIL** | 11781 |
+| post:candidate_seed | ✗ **FAIL** | 2087 |
+| post:span_candidate | ✗ **FAIL** | 85064 |
+| post:passage | ✗ **FAIL** | 18571 |
+| post:verse_passage | ✗ **FAIL** | 24847 |
+| post:cfg_change_detail | ✗ **FAIL** | 37 |
+| pre:word_registry | ✗ **FAIL** | 178 |
+| pre:word_strong | ✗ **FAIL** | 4796 |
+| pre:strong | ✗ **FAIL** | 3463 |
+| pre:strong_sense | ✗ **FAIL** | 3463 |
+| pre:strong_meaning_tree | ✗ **FAIL** | 9454 |
+| pre:strong_lexicon | ✗ **FAIL** | 1506 |
+| pre:verse | ✗ **FAIL** | 29037 |
+| pre:strong_verse | ✗ **FAIL** | 112446 |
+| pre:span | ✗ **FAIL** | 534075 |
+| pre:run | ✗ **FAIL** | 800 |
+| pre:validation_result | ✗ **FAIL** | 15615 |
+| pre:escalation | ✗ **FAIL** | 248 |
+| pre:lemma_inventory | ✗ **FAIL** | 11781 |
+| pre:candidate_seed | ✗ **FAIL** | 2087 |
+| pre:span_candidate | ✗ **FAIL** | 85064 |
+| pre:passage | ✗ **FAIL** | 18571 |
+| pre:verse_passage | ✗ **FAIL** | 24847 |
+| pre:cfg_change_detail | ✗ **FAIL** | 37 |
+| post:word_registry | ✗ **FAIL** | 178 |
+| post:word_strong | ✗ **FAIL** | 4796 |
+| post:strong | ✗ **FAIL** | 3463 |
+| post:strong_sense | ✗ **FAIL** | 3463 |
+| post:strong_meaning_tree | ✗ **FAIL** | 9454 |
+| post:strong_lexicon | ✗ **FAIL** | 1506 |
+| post:verse | ✗ **FAIL** | 29037 |
+| post:strong_verse | ✗ **FAIL** | 112446 |
+| post:span | ✗ **FAIL** | 534075 |
+| post:run | ✗ **FAIL** | 800 |
+| post:validation_result | ✗ **FAIL** | 15633 |
+| post:escalation | ✗ **FAIL** | 248 |
+| post:lemma_inventory | ✗ **FAIL** | 11781 |
+| post:candidate_seed | ✗ **FAIL** | 2087 |
+| post:span_candidate | ✗ **FAIL** | 85064 |
+| post:passage | ✗ **FAIL** | 18571 |
+| post:verse_passage | ✗ **FAIL** | 24847 |
+| post:cfg_change_detail | ✗ **FAIL** | 37 |
+| pre:word_registry | ✗ **FAIL** | 178 |
+| pre:word_strong | ✗ **FAIL** | 4796 |
+| pre:strong | ✗ **FAIL** | 3463 |
+| pre:strong_sense | ✗ **FAIL** | 3463 |
+| pre:strong_meaning_tree | ✗ **FAIL** | 9454 |
+| pre:strong_lexicon | ✗ **FAIL** | 1506 |
+| pre:verse | ✗ **FAIL** | 29037 |
+| pre:strong_verse | ✗ **FAIL** | 112446 |
+| pre:span | ✗ **FAIL** | 534075 |
+| pre:run | ✗ **FAIL** | 813 |
+| pre:validation_result | ✗ **FAIL** | 15687 |
+| pre:escalation | ✗ **FAIL** | 253 |
+| pre:lemma_inventory | ✗ **FAIL** | 11781 |
+| pre:candidate_seed | ✗ **FAIL** | 2087 |
+| pre:span_candidate | ✗ **FAIL** | 85064 |
+| pre:passage | ✗ **FAIL** | 18571 |
+| pre:verse_passage | ✗ **FAIL** | 24847 |
+| pre:cfg_change_detail | ✗ **FAIL** | 37 |
 ## The strongs and their meaning (L1 → L2)
 
 | strong | stepGloss | accentedUnicode | stepTransliteration | head | count | verses |
@@ -20,7 +168,6 @@
 | `G5272` | hypocrisy | ὑπόκρισις | hupokrisis | **hypocrisy** | 7 | 6 |
 | `H2519` | smoothness | חֲלַקְלַקּוֹת | cha.laq.laq.qot | **smoothness** | 4 | 4 |
 | `H2612` | profaneness | חֹ֫נֶף | cho.neph | **profaneness** | 1 | 1 |
-
 ## Sample verses — the span layer (one row per code)
 
 ### Isa 32:6 — `Isa.32.6`

@@ -18,9 +18,12 @@ import json
 import pathlib
 import sqlite3
 
+from . import cfgquality, reportkit
+
 APP = pathlib.Path(__file__).resolve().parent.parent
 DB_PATH = APP / "db" / "iba.db"
 OUT_PATH = APP / "config" / "CONFIG-REPORT.md"
+STEP = "configmaint.report"
 
 
 def _disp(v) -> str:
@@ -54,106 +57,186 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
     latest = q("SELECT * FROM cfg_change_log ORDER BY id DESC LIMIT 1")
     now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
-    L: list[str] = []
-    L.append("# IBA app — configuration report")
-    L.append("")
-    L.append("> **Generated snapshot of the live config store** (`iba/app/db/iba.db`, tables "
-             "`cfg_*`). Auto-produced after every accepted config load; do not hand-edit — edit "
-             "the JSON seeds and reload. Overwritten in place on each change.")
-    L.append("")
-    L += _table(["field", "value"], [
+    intro = [
+        "> **Generated snapshot of the live config store** (`iba/app/db/iba.db`, tables "
+        "`cfg_*`). The DB is master — do not hand-edit this file. Change config only via "
+        "`configmaint.propose` (approval-gated; see GOVERNANCE.md §5A); this report "
+        "regenerates automatically after an approved change and is overwritten in place.",
+        "",
+    ] + _table(["field", "value"], [
         ["database", meta.get("database")],
         ["config_version", meta.get("config_version")],
         ["generated_at", now],
         ["current_seed_hash", latest[0]["seed_hash"] if latest else "(no load logged)"],
     ])
-    L.append("")
 
-    L.append("## 1. Connection (STEP)")
-    L += _table(["key", "value"], [[r["key"], r["value"]] for r in q(
+    sections: dict[str, list[str]] = {}
+
+    orphans = cfgquality.find_orphan_configs(conn, APP)
+    needs_justification = cfgquality.find_settings_needing_justification(conn)
+    missing_report_paths = cfgquality.find_missing_report_paths(conn)
+    S = [
+        "_Computed fresh on every regenerate; also what `configmaint.validate` escalates on "
+        "if any are present. Not errors — advisory. See GOVERNANCE.md §5B._",
+        "",
+        f"**Orphan configs** ({len(orphans)}) — a `cfg_setting`/`cfg_enum` not referenced by "
+        f"any code:",
+    ]
+    S += ["- " + o for o in orphans] if orphans else ["_(none)_"]
+    S += ["", f"**Settings needing justification** ({len(needs_justification)}) — module already "
+             f"has its own dedicated table:"]
+    S += ["- " + n for n in needs_justification] if needs_justification else ["_(none)_"]
+    S += ["", f"**Missing report paths** ({len(missing_report_paths)}) — a quality-check step with "
+             f"nowhere for its findings to persist (governance.reports_must_persist violation):"]
+    S += ["- " + m for m in missing_report_paths] if missing_report_paths else ["_(none)_"]
+    sections["findings"] = S
+
+    sections["connection"] = _table(["key", "value"], [[r["key"], r["value"]] for r in q(
         "SELECT key, value FROM cfg_connection ORDER BY key")])
-    L.append("")
 
-    L.append("## 2. Settings — every rule / threshold")
-    L += _table(["key", "value", "use"], [[r["key"], r["value"], r["use"]] for r in q(
-        'SELECT key, value, "use" AS "use" FROM cfg_setting ORDER BY key')])
-    L.append("")
+    sections["settings"] = [
+        "_Every setting must have a module (enum.config_module) — configmaint.propose "
+        "enforces this on every new row; see GOVERNANCE.md §5A._",
+    ] + _table(["module", "key", "value", "use"], [
+        [r["module"], r["key"], r["value"], r["use"]] for r in q(
+            'SELECT module, key, value, "use" AS "use" FROM cfg_setting ORDER BY module, key')])
 
-    L.append("## 3. STEP apis")
-    L += _table(["name", "route", "input", "returns"], [
+    sections["apis"] = _table(["name", "route", "input", "returns"], [
         [r["name"], r["route"], r["input"], r["returns"]] for r in q(
             "SELECT name, route, input, returns FROM cfg_api ORDER BY name")])
-    L.append("")
 
-    L.append("## 4. Work packages & steps (the sequence)")
+    S = []
     for wp in q("SELECT name, ps_script, runs_over FROM cfg_work_package ORDER BY name"):
-        L.append(f"**{wp['name']}** — runs over `{wp['runs_over']}` · script `{wp['ps_script']}`")
-        L += _table(["#", "step", "handler", "scope", "does"], [
+        S.append(f"**{wp['name']}** — runs over `{wp['runs_over']}` · script `{wp['ps_script']}`")
+        S += _table(["#", "step", "handler", "scope", "does"], [
             [r["ordinal"], r["step"], r["handler"], r["scope"], r["does"]] for r in q(
                 "SELECT ordinal, step, handler, scope, does FROM cfg_step "
                 "WHERE work_package=? ORDER BY ordinal", (wp["name"],))])
-        L.append("")
+        S.append("")
+    sections["work_packages"] = S
 
-    L.append("## 5. on_fail — condition -> path (the fork rules)")
-    L += _table(["step", "condition", "path", "message"], [
-        [r["step"], r["condition"], r["path"], r["message"]] for r in q(
-            "SELECT step, condition, path, message FROM cfg_on_fail ORDER BY step, condition")])
-    L.append("")
+    all_fail = [dict(r) for r in q(
+        "SELECT step, condition, path, message FROM cfg_on_fail ORDER BY step, condition")]
+    escalates = [r for r in all_fail if r["path"] == "pause-continue"]
+    non_escalating = [r for r in all_fail if r["path"] != "pause-continue"]
+    S = [
+        f"**{len(escalates)} of {len(all_fail)} conditions ESCALATE** (pause-continue — the "
+        f"researcher is asked); the rest either stop the run outright (report-stop) or continue "
+        f"with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any "
+        f"finding that needs a judgement call must be in the first group, not silently in the "
+        f"second or third.",
+        "",
+        "### 5a. Escalates (pause-continue) — the researcher is asked, every time",
+    ]
+    S += _table(["step", "condition", "message"], [
+        [r["step"], r["condition"], r["message"]] for r in escalates]) if escalates else ["_(none)_"]
+    S += ["", "### 5b. Does not escalate — report-stop (hard fail) or report-continue (logged, no ask)"]
+    S += _table(["step", "condition", "path", "message"], [
+        [r["step"], r["condition"], r["path"], r["message"]] for r in non_escalating])
+    sections["on_fail"] = S
 
-    L.append("## 6. Write grants — who may write what")
-    L += _table(["writer", "tables"], [
+    sections["write_grants"] = _table(["writer", "tables"], [
         [w, ", ".join(t)] for w, t in _grants(q).items()])
-    L.append("")
 
-    L.append("## 7. Status flow")
-    L += _table(["entity", "order", "status", "set_by"], [
+    sections["status_flow"] = _table(["entity", "order", "status", "set_by"], [
         [r["entity"], r["ordinal"], r["status"], r["set_by"]] for r in q(
             "SELECT entity, ordinal, status, set_by FROM cfg_status_flow "
             "ORDER BY entity, ordinal")])
-    L.append("")
 
-    L.append("## 8. Schema — data tables built from config")
     uniq = {}
     for r in q("SELECT table_name, col FROM cfg_unique ORDER BY table_name, ordinal"):
         uniq.setdefault(r["table_name"], []).append(r["col"])
+    S = []
     for t in q('SELECT name, grain, "use" AS "use" FROM cfg_table ORDER BY rowid'):
-        L.append(f"### {t['name']}")
-        L.append(f"_{t['grain'] or ''}_ — {t['use'] or ''}")
+        S.append(f"### {t['name']}")
+        S.append(f"_{t['grain'] or ''}_ — {t['use'] or ''}")
         if t["name"] in uniq:
-            L.append(f"dedup key: `{', '.join(uniq[t['name']])}`")
-        L += _table(["column", "type", "pk", "notnull", "unique", "fk", "use", "source/filled_by"], [
+            S.append(f"dedup key: `{', '.join(uniq[t['name']])}`")
+        S += _table(["column", "type", "pk", "notnull", "unique", "fk", "use", "source/filled_by"], [
             [c["name"], c["type"],
              "✓" if c["is_pk"] else "", "✓" if c["notnull"] else "", "✓" if c["is_unique"] else "",
              c["fk"] or "", c["use"] or "", c["source"] or c["filled_by"] or ""]
             for c in q('SELECT name, "type" AS "type", is_pk, "notnull" AS "notnull", is_unique, '
                        'fk, "use" AS "use", source, filled_by FROM cfg_column '
                        "WHERE table_name=? ORDER BY ordinal", (t["name"],))])
-        L.append("")
+        S.append("")
+    sections["schema"] = S
 
-    L.append("## 9. Enums")
     en = {}
     for r in q("SELECT name, value FROM cfg_enum ORDER BY name, ordinal"):
         en.setdefault(r["name"], []).append(r["value"])
-    L += _table(["enum", "values"], [[k, ", ".join(v)] for k, v in en.items()])
-    L.append("")
+    sections["enums"] = _table(["enum", "values"], [[k, ", ".join(v)] for k, v in en.items()])
 
-    L.append("## 10. Book order")
     bo = q("SELECT book, ordinal FROM cfg_book_order ORDER BY ordinal")
-    if bo:
-        L.append(f"{len(bo)} books, canonical order — first `{bo[0]['book']}`, last `{bo[-1]['book']}`.")
-    L.append("")
+    sections["book_order"] = (
+        [f"{len(bo)} books, canonical order — first `{bo[0]['book']}`, last `{bo[-1]['book']}`."]
+        if bo else [])
 
-    L.append("## 11. Change-log — every accepted load (audit)")
-    L += _table(["#", "loaded_at", "config_version", "seed_hash", "validated"], [
+    sections["change_log"] = _table(["#", "loaded_at", "config_version", "seed_hash", "validated"], [
         [r["id"], r["loaded_at"], r["config_version"], r["seed_hash"], r["validated"]] for r in q(
             "SELECT id, loaded_at, config_version, seed_hash, validated "
             "FROM cfg_change_log ORDER BY id")])
-    L.append("")
 
+    sections["report_governance"] = _report_governance(q)
+
+    L = reportkit.render_scaffold(conn, STEP, sections, intro=intro)
+    reportkit.write_csv_pairing(conn, STEP, out_path.parent / "export")
+    reportkit.write_report(conn, STEP, out_path, L)
     conn.close()
-    out_path.parent.mkdir(parents=True, exist_ok=True)
-    out_path.write_text("\n".join(L) + "\n", encoding="utf-8")
     return out_path
+
+
+def _report_governance(q) -> list[str]:
+    """Per PLAN-reports-config-governance-v1-20260722.md §10.1 — the answer to 'when I look at a
+    report, am I seeing everything related to it': one block per report, every config item that
+    governs it, joined together here so nothing needs to be found by cross-referencing 5 tables by
+    hand. Generated fresh every run — can't drift from the live rows the way a hand-written summary
+    could."""
+    L = [
+        "_One block per registered report — everything that governs it, joined from `cfg_report`, "
+        "`cfg_report_section`, `cfg_report_csv_table`, `cfg_work_package`, and `cfg_on_fail`. The "
+        "ownership ledger (which config item governs what) is in GOVERNANCE.md._", "",
+    ]
+    for rep in q("SELECT step, title, show_toc, footer_text, output_kind, naming_scheme, "
+                "archive_dir FROM cfg_report ORDER BY step"):
+        step_row = q("SELECT work_package FROM cfg_step WHERE step=?", (rep["step"],))
+        wp_name = step_row[0]["work_package"] if step_row else None
+        wp = q("SELECT ps_script, chained, complete_message, next_step_hint, paused_message "
+              "FROM cfg_work_package WHERE name=?", (wp_name,)) if wp_name else []
+        L.append(f"### `{rep['step']}`")
+        L.append(f"**{rep['title']}** — output `{rep['output_kind']}` · naming "
+                 f"`{rep['naming_scheme']}` · archived to `{rep['archive_dir']}/` · ToC "
+                 f"{'on' if rep['show_toc'] else 'off'}"
+                 + (f" · footer: {rep['footer_text']}" if rep["footer_text"] else ""))
+        if wp:
+            w = wp[0]
+            L.append(f"work package `{wp_name}` → `{w['ps_script']}` (chained={w['chained']})")
+            if w["complete_message"]:
+                L.append(f"- on completion: _{w['complete_message']}_")
+            if w["next_step_hint"]:
+                L.append(f"- next-step hint: _{w['next_step_hint']}_")
+            if w["paused_message"]:
+                L.append(f"- paused override: _{w['paused_message']}_")
+        L.append("")
+        L += _table(["#", "section", "heading", "toc label", "in ToC"], [
+            [r["ordinal"], r["section_key"], r["heading"], r["toc_label"] or "",
+             "✓" if r["include"] else ""]
+            for r in q("SELECT ordinal, section_key, heading, toc_label, include FROM "
+                      "cfg_report_section WHERE step=? ORDER BY ordinal", (rep["step"],))])
+        csv_tables = q("SELECT table_name, join_note FROM cfg_report_csv_table WHERE step=? "
+                      "ORDER BY table_name", (rep["step"],))
+        if csv_tables:
+            L.append("CSV pairing: " + "; ".join(
+                f"`{r['table_name']}`" + (f" ({r['join_note']})" if r["join_note"] else "")
+                for r in csv_tables))
+        on_fail = q("SELECT condition, path, route, message FROM cfg_on_fail WHERE step=? "
+                   "ORDER BY condition", (rep["step"],))
+        if on_fail:
+            L.append("")
+            L += _table(["condition", "path", "route", "message"], [
+                [r["condition"], r["path"], r["route"], r["message"]] for r in on_fail])
+        L.append("")
+    return L
 
 
 def _grants(q) -> dict[str, list[str]]:
