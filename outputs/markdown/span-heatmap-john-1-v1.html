@@ -1,0 +1,212 @@
+<title>Span heat map — John 1</title>
+<style>
+  .viz-root {
+    color-scheme: light;
+    --page: #f9f9f7; --surface-1: #fcfcfb;
+    --text-primary: #0b0b0b; --text-secondary: #52514e; --muted: #898781;
+    --grid: #e1e0d9; --border: rgba(11,11,11,0.10);
+    --char-hue: #2a78d6;      /* blue  — candidate-char */
+    --non-hue: #008300;       /* green — non-char */
+    --zero-cell: #f4f3ef;
+    --cell-ink-light: #0b0b0b; --cell-ink-dark: #ffffff;
+    --good: #0ca30c; --flag: #d03b3b;
+    --flag-wash: rgba(208,59,59,0.09); --flag-edge: #d03b3b;
+    font-family: system-ui, -apple-system, "Segoe UI", sans-serif;
+    color: var(--text-primary); background: var(--page);
+    max-width: 760px; margin: 0 auto; padding: 28px 20px 60px;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:where(:not([data-theme="light"])) .viz-root {
+      color-scheme: dark;
+      --page: #0d0d0d; --surface-1: #1a1a19;
+      --text-primary: #fff; --text-secondary: #c3c2b7; --muted: #898781;
+      --grid: #2c2c2a; --border: rgba(255,255,255,0.10);
+      --char-hue: #3987e5; --non-hue: #1baf7a;
+      --zero-cell: #201f1d;
+      --good: #0ca30c; --flag: #e66767;
+      --flag-wash: rgba(230,103,103,0.12); --flag-edge: #e66767;
+    }
+  }
+  :root[data-theme="dark"] .viz-root {
+    color-scheme: dark;
+    --page: #0d0d0d; --surface-1: #1a1a19;
+    --text-primary: #fff; --text-secondary: #c3c2b7; --muted: #898781;
+    --grid: #2c2c2a; --border: rgba(255,255,255,0.10);
+    --char-hue: #3987e5; --non-hue: #1baf7a; --zero-cell: #201f1d;
+    --good: #0ca30c; --flag: #e66767;
+    --flag-wash: rgba(230,103,103,0.12); --flag-edge: #e66767;
+  }
+  .viz-root h1 { font-size: 1.4rem; margin: 0 0 4px; letter-spacing: -0.01em; }
+  .sub { color: var(--text-secondary); font-size: 0.9rem; margin: 0 0 18px; line-height: 1.5; }
+  .sub code { background: var(--surface-1); border: 1px solid var(--border);
+    padding: 1px 5px; border-radius: 4px; font-size: 0.82em; }
+  .tiles { display: flex; gap: 10px; flex-wrap: wrap; margin: 0 0 22px; }
+  .tile { flex: 1 1 130px; background: var(--surface-1); border: 1px solid var(--border);
+    border-radius: 10px; padding: 12px 14px; }
+  .tile .n { font-size: 1.5rem; font-weight: 650; }
+  .tile .k { font-size: 0.75rem; color: var(--muted); text-transform: uppercase;
+    letter-spacing: 0.04em; margin-top: 2px; }
+  .tile .n .sw { display: inline-block; width: 10px; height: 10px; border-radius: 2px;
+    margin-right: 6px; vertical-align: middle; }
+  .scroll { overflow-x: auto; }
+  table.heat { border-collapse: separate; border-spacing: 2px; width: 100%; }
+  table.heat thead th { font-size: 0.72rem; color: var(--muted); font-weight: 600;
+    text-transform: uppercase; letter-spacing: 0.03em; padding: 4px 6px; text-align: center;
+    position: sticky; top: 0; background: var(--page); }
+  table.heat thead th.k { display: inline-flex; }
+  .kdot { display:inline-block; width:9px; height:9px; border-radius:2px; margin-right:5px; vertical-align:middle; }
+  th.vlab { font-size: 0.8rem; color: var(--text-secondary); font-weight: 600;
+    text-align: right; padding-right: 10px; width: 3.2rem; font-variant-numeric: tabular-nums; }
+  td.hc, td.hz { text-align: center; font-variant-numeric: tabular-nums; font-size: 0.85rem;
+    font-weight: 600; border-radius: 5px; padding: 7px 0; min-width: 84px; }
+  td.hz { color: var(--muted) !important; font-weight: 400; }
+  td.tot { text-align: center; font-variant-numeric: tabular-nums; font-size: 0.85rem;
+    color: var(--text-secondary); padding: 7px 8px; }
+  tr.absent td.absent-cell { text-align: center; color: var(--muted); font-size: 0.78rem;
+    font-style: italic; padding: 6px; }
+  td.scr { text-align: center; padding: 7px 8px; width: 2.4rem; }
+  td.scr .glyph { font-size: 0.95rem; font-weight: 700; cursor: default; }
+  tr.flagged th.vlab { position: relative; }
+  tr.flagged td, tr.flagged th.vlab { background: var(--flag-wash); }
+  tr.flagged th.vlab { box-shadow: inset 3px 0 0 var(--flag-edge); }
+  tbody tr:hover th.vlab { color: var(--text-primary); }
+  .legend { display: flex; gap: 26px; flex-wrap: wrap; margin: 18px 2px 0;
+    font-size: 0.76rem; color: var(--text-secondary); }
+  .legend .lg { display: flex; align-items: center; gap: 8px; }
+  .ramp { width: 120px; height: 10px; border-radius: 3px; border: 1px solid var(--border); }
+  .ramp.c { background: linear-gradient(90deg, var(--zero-cell), var(--char-hue)); }
+  .ramp.n { background: linear-gradient(90deg, var(--zero-cell), var(--non-hue)); }
+  #tt { position: fixed; pointer-events: none; z-index: 20; background: var(--text-primary);
+    color: var(--page); font-size: 0.75rem; line-height: 1.35; padding: 7px 9px; border-radius: 6px;
+    opacity: 0; transition: opacity .08s; max-width: 220px; }
+  #tt b { font-weight: 650; }
+  .foot { margin-top: 24px; font-size: 0.72rem; color: var(--muted); line-height: 1.5; }
+</style>
+<div class="viz-root">
+  <h1>Span heat map — John 1</h1>
+  <p class="sub">Word-spans per verse, in verse sequence, split into
+    <b>candidate-char</b> spans (a span carrying a <code>span_candidate</code> row —
+    an inner-being characteristic candidate) versus <b>non-char</b> spans (all other
+    spans). Each cell is shaded by count within its own category (blue / green ramp)
+    and labelled with the raw number. Each verse also carries a <b>human-presence screen</b> — <span class="glyph" style="color:var(--good)">✓</span> a human being is named, <span class="glyph" style="color:var(--muted)">~</span> one is inferred, <span class="glyph" style="color:var(--flag)">⚑</span> none present or inferable (flagged, out of scope by the <i>God-is-arena</i> rule). Source: <code>iba/app/db/iba.db</code> ·
+    tables <code>verse</code> · <code>span</code> · <code>span_candidate</code>.</p>
+
+  <div class="tiles">
+    <div class="tile"><div class="n">692</div><div class="k">Total spans</div></div>
+    <div class="tile"><div class="n"><span class="sw" style="background:var(--char-hue)"></span>57</div><div class="k">Candidate-char · 8.2%</div></div>
+    <div class="tile"><div class="n"><span class="sw" style="background:var(--non-hue)"></span>635</div><div class="k">Non-char spans</div></div>
+    <div class="tile"><div class="n">50</div><div class="k">Verses in set</div></div>
+    <div class="tile flagtile"><div class="n"><span class="sw" style="background:var(--flag)"></span>4</div><div class="k">Flagged · no human</div></div>
+  </div>
+
+  <div class="scroll">
+  <table class="heat">
+    <thead><tr>
+      <th class="vlab" style="text-align:right">Verse</th>
+      <th><span class="kdot" style="background:var(--char-hue)"></span>Candidate-char</th>
+      <th><span class="kdot" style="background:var(--non-hue)"></span>Non-char</th>
+      <th>Total</th>
+      <th style="text-align:center">Human?</th>
+    </tr></thead>
+    <tbody>
+<tr class="flagged" data-v="1" data-ref="Joh 1:1" data-total="13" data-char="2" data-nonchar="11" data-pctc="15"><th scope="row" class="vlab">1</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 52%, var(--surface-1));color:var(--cell-ink-dark)" data-count="11">11</td><td class="tot">13</td><td class="scr scr-flag" data-lbl="no human — flagged" data-ground="the Word … God" data-note=""><span class="glyph" style="color:var(--flag)" title="no human — flagged — the Word … God">⚑</span></td></tr>
+<tr class="flagged" data-v="2" data-ref="Joh 1:2" data-total="6" data-char="1" data-nonchar="5" data-pctc="17"><th scope="row" class="vlab">2</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 24%, var(--surface-1));color:var(--cell-ink-dark)" data-count="5">5</td><td class="tot">6</td><td class="scr scr-flag" data-lbl="no human — flagged" data-ground="He (the Word) … God" data-note=""><span class="glyph" style="color:var(--flag)" title="no human — flagged — He (the Word) … God">⚑</span></td></tr>
+<tr class="flagged" data-v="3" data-ref="Joh 1:3" data-total="12" data-char="0" data-nonchar="12" data-pctc="0"><th scope="row" class="vlab">3</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 57%, var(--surface-1));color:var(--cell-ink-light)" data-count="12">12</td><td class="tot">12</td><td class="scr scr-flag" data-lbl="no human — flagged" data-ground="all things … him" data-note="edge: creation subsumes humanity"><span class="glyph" style="color:var(--flag)" title="no human — flagged — all things … him">⚑</span></td></tr>
+<tr class="" data-v="4" data-ref="Joh 1:4" data-total="9" data-char="0" data-nonchar="9" data-pctc="0"><th scope="row" class="vlab">4</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 43%, var(--surface-1));color:var(--cell-ink-dark)" data-count="9">9</td><td class="tot">9</td><td class="scr scr-tilde" data-lbl="human inferred" data-ground="the light of men" data-note=""><span class="glyph" style="color:var(--muted)" title="human inferred — the light of men">~</span></td></tr>
+<tr class="flagged" data-v="5" data-ref="Joh 1:5" data-total="9" data-char="1" data-nonchar="8" data-pctc="11"><th scope="row" class="vlab">5</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 38%, var(--surface-1));color:var(--cell-ink-dark)" data-count="8">8</td><td class="tot">9</td><td class="scr scr-flag" data-lbl="no human — flagged" data-ground="light … darkness" data-note=""><span class="glyph" style="color:var(--flag)" title="no human — flagged — light … darkness">⚑</span></td></tr>
+<tr class="" data-v="6" data-ref="Joh 1:6" data-total="8" data-char="2" data-nonchar="6" data-pctc="25"><th scope="row" class="vlab">6</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 29%, var(--surface-1));color:var(--cell-ink-dark)" data-count="6">6</td><td class="tot">8</td><td class="scr scr-check" data-lbl="human present" data-ground="a man … John" data-note=""><span class="glyph" style="color:var(--good)" title="human present — a man … John">✓</span></td></tr>
+<tr class="" data-v="7" data-ref="Joh 1:7" data-total="13" data-char="2" data-nonchar="11" data-pctc="15"><th scope="row" class="vlab">7</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 52%, var(--surface-1));color:var(--cell-ink-dark)" data-count="11">11</td><td class="tot">13</td><td class="scr scr-check" data-lbl="human present" data-ground="He (John) … all might believe" data-note=""><span class="glyph" style="color:var(--good)" title="human present — He (John) … all might believe">✓</span></td></tr>
+<tr class="" data-v="8" data-ref="Joh 1:8" data-total="9" data-char="0" data-nonchar="9" data-pctc="0"><th scope="row" class="vlab">8</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 43%, var(--surface-1));color:var(--cell-ink-dark)" data-count="9">9</td><td class="tot">9</td><td class="scr scr-check" data-lbl="human present" data-ground="He (John)" data-note=""><span class="glyph" style="color:var(--good)" title="human present — He (John)">✓</span></td></tr>
+<tr class="" data-v="9" data-ref="Joh 1:9" data-total="10" data-char="0" data-nonchar="10" data-pctc="0"><th scope="row" class="vlab">9</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 48%, var(--surface-1));color:var(--cell-ink-dark)" data-count="10">10</td><td class="tot">10</td><td class="scr scr-tilde" data-lbl="human inferred" data-ground="everyone … the world" data-note=""><span class="glyph" style="color:var(--muted)" title="human inferred — everyone … the world">~</span></td></tr>
+<tr class="" data-v="10" data-ref="Joh 1:10" data-total="13" data-char="1" data-nonchar="12" data-pctc="8"><th scope="row" class="vlab">10</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 57%, var(--surface-1));color:var(--cell-ink-light)" data-count="12">12</td><td class="tot">13</td><td class="scr scr-tilde" data-lbl="human inferred" data-ground="the world did not know him" data-note=""><span class="glyph" style="color:var(--muted)" title="human inferred — the world did not know him">~</span></td></tr>
+<tr class="absent"><th scope="row" class="vlab">11</th><td colspan="4" class="absent-cell">not in IBA verse set</td></tr>
+<tr class="" data-v="12" data-ref="Joh 1:12" data-total="14" data-char="4" data-nonchar="10" data-pctc="29"><th scope="row" class="vlab">12</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 100%, var(--surface-1));color:var(--cell-ink-light)" data-count="4">4</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 48%, var(--surface-1));color:var(--cell-ink-dark)" data-count="10">10</td><td class="tot">14</td><td class="scr scr-check" data-lbl="human present" data-ground="all who received him … children of God" data-note=""><span class="glyph" style="color:var(--good)" title="human present — all who received him … children of God">✓</span></td></tr>
+<tr class="" data-v="13" data-ref="Joh 1:13" data-total="16" data-char="4" data-nonchar="12" data-pctc="25"><th scope="row" class="vlab">13</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 100%, var(--surface-1));color:var(--cell-ink-light)" data-count="4">4</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 57%, var(--surface-1));color:var(--cell-ink-light)" data-count="12">12</td><td class="tot">16</td><td class="scr scr-check" data-lbl="human present" data-ground="the will of man … flesh" data-note=""><span class="glyph" style="color:var(--good)" title="human present — the will of man … flesh">✓</span></td></tr>
+<tr class="" data-v="14" data-ref="Joh 1:14" data-total="21" data-char="2" data-nonchar="19" data-pctc="10"><th scope="row" class="vlab">14</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 90%, var(--surface-1));color:var(--cell-ink-light)" data-count="19">19</td><td class="tot">21</td><td class="scr scr-check" data-lbl="human present" data-ground="dwelt among us … we have seen" data-note=""><span class="glyph" style="color:var(--good)" title="human present — dwelt among us … we have seen">✓</span></td></tr>
+<tr class="" data-v="15" data-ref="Joh 1:15" data-total="21" data-char="1" data-nonchar="20" data-pctc="5"><th scope="row" class="vlab">15</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 95%, var(--surface-1));color:var(--cell-ink-light)" data-count="20">20</td><td class="tot">21</td><td class="scr scr-check" data-lbl="human present" data-ground="John … me" data-note=""><span class="glyph" style="color:var(--good)" title="human present — John … me">✓</span></td></tr>
+<tr class="" data-v="16" data-ref="Joh 1:16" data-total="10" data-char="2" data-nonchar="8" data-pctc="20"><th scope="row" class="vlab">16</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 38%, var(--surface-1));color:var(--cell-ink-dark)" data-count="8">8</td><td class="tot">10</td><td class="scr scr-check" data-lbl="human present" data-ground="we have all received" data-note=""><span class="glyph" style="color:var(--good)" title="human present — we have all received">✓</span></td></tr>
+<tr class="" data-v="17" data-ref="Joh 1:17" data-total="12" data-char="1" data-nonchar="11" data-pctc="8"><th scope="row" class="vlab">17</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 52%, var(--surface-1));color:var(--cell-ink-dark)" data-count="11">11</td><td class="tot">12</td><td class="scr scr-check" data-lbl="human present" data-ground="Moses … Jesus Christ" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Moses … Jesus Christ">✓</span></td></tr>
+<tr class="" data-v="18" data-ref="Joh 1:18" data-total="14" data-char="2" data-nonchar="12" data-pctc="14"><th scope="row" class="vlab">18</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 57%, var(--surface-1));color:var(--cell-ink-light)" data-count="12">12</td><td class="tot">14</td><td class="scr scr-tilde" data-lbl="human inferred" data-ground="No one has ever seen God" data-note="borderline; inference by negation"><span class="glyph" style="color:var(--muted)" title="human inferred — No one has ever seen God">~</span></td></tr>
+<tr class="" data-v="19" data-ref="Joh 1:19" data-total="19" data-char="1" data-nonchar="18" data-pctc="5"><th scope="row" class="vlab">19</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 86%, var(--surface-1));color:var(--cell-ink-light)" data-count="18">18</td><td class="tot">19</td><td class="scr scr-check" data-lbl="human present" data-ground="John … the Jews … priests and Levites" data-note=""><span class="glyph" style="color:var(--good)" title="human present — John … the Jews … priests and Levites">✓</span></td></tr>
+<tr class="" data-v="20" data-ref="Joh 1:20" data-total="11" data-char="0" data-nonchar="11" data-pctc="0"><th scope="row" class="vlab">20</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 52%, var(--surface-1));color:var(--cell-ink-dark)" data-count="11">11</td><td class="tot">11</td><td class="scr scr-check" data-lbl="human present" data-ground="He (John) confessed" data-note=""><span class="glyph" style="color:var(--good)" title="human present — He (John) confessed">✓</span></td></tr>
+<tr class="" data-v="21" data-ref="Joh 1:21" data-total="17" data-char="0" data-nonchar="17" data-pctc="0"><th scope="row" class="vlab">21</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 81%, var(--surface-1));color:var(--cell-ink-light)" data-count="17">17</td><td class="tot">17</td><td class="scr scr-check" data-lbl="human present" data-ground="they asked him … he said" data-note=""><span class="glyph" style="color:var(--good)" title="human present — they asked him … he said">✓</span></td></tr>
+<tr class="" data-v="22" data-ref="Joh 1:22" data-total="15" data-char="0" data-nonchar="15" data-pctc="0"><th scope="row" class="vlab">22</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 71%, var(--surface-1));color:var(--cell-ink-light)" data-count="15">15</td><td class="tot">15</td><td class="scr scr-check" data-lbl="human present" data-ground="they said to him … yourself" data-note=""><span class="glyph" style="color:var(--good)" title="human present — they said to him … yourself">✓</span></td></tr>
+<tr class="" data-v="23" data-ref="Joh 1:23" data-total="13" data-char="3" data-nonchar="10" data-pctc="23"><th scope="row" class="vlab">23</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 75%, var(--surface-1));color:var(--cell-ink-light)" data-count="3">3</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 48%, var(--surface-1));color:var(--cell-ink-dark)" data-count="10">10</td><td class="tot">13</td><td class="scr scr-check" data-lbl="human present" data-ground="He (John) … the prophet Isaiah" data-note=""><span class="glyph" style="color:var(--good)" title="human present — He (John) … the prophet Isaiah">✓</span></td></tr>
+<tr class="" data-v="24" data-ref="Joh 1:24" data-total="5" data-char="0" data-nonchar="5" data-pctc="0"><th scope="row" class="vlab">24</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 24%, var(--surface-1));color:var(--cell-ink-dark)" data-count="5">5</td><td class="tot">5</td><td class="scr scr-check" data-lbl="human present" data-ground="they … the Pharisees" data-note=""><span class="glyph" style="color:var(--good)" title="human present — they … the Pharisees">✓</span></td></tr>
+<tr class="" data-v="25" data-ref="Joh 1:25" data-total="15" data-char="0" data-nonchar="15" data-pctc="0"><th scope="row" class="vlab">25</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 71%, var(--surface-1));color:var(--cell-ink-light)" data-count="15">15</td><td class="tot">15</td><td class="scr scr-check" data-lbl="human present" data-ground="They asked him" data-note=""><span class="glyph" style="color:var(--good)" title="human present — They asked him">✓</span></td></tr>
+<tr class="" data-v="26" data-ref="Joh 1:26" data-total="15" data-char="1" data-nonchar="14" data-pctc="7"><th scope="row" class="vlab">26</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 67%, var(--surface-1));color:var(--cell-ink-light)" data-count="14">14</td><td class="tot">15</td><td class="scr scr-check" data-lbl="human present" data-ground="John … among you stands one" data-note=""><span class="glyph" style="color:var(--good)" title="human present — John … among you stands one">✓</span></td></tr>
+<tr class="" data-v="27" data-ref="Joh 1:27" data-total="14" data-char="0" data-nonchar="14" data-pctc="0"><th scope="row" class="vlab">27</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 67%, var(--surface-1));color:var(--cell-ink-light)" data-count="14">14</td><td class="tot">14</td><td class="scr scr-check" data-lbl="human present" data-ground="he who comes after me … I (John)" data-note=""><span class="glyph" style="color:var(--good)" title="human present — he who comes after me … I (John)">✓</span></td></tr>
+<tr class="" data-v="28" data-ref="Joh 1:28" data-total="10" data-char="0" data-nonchar="10" data-pctc="0"><th scope="row" class="vlab">28</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 48%, var(--surface-1));color:var(--cell-ink-dark)" data-count="10">10</td><td class="tot">10</td><td class="scr scr-check" data-lbl="human present" data-ground="John was baptizing" data-note=""><span class="glyph" style="color:var(--good)" title="human present — John was baptizing">✓</span></td></tr>
+<tr class="" data-v="29" data-ref="Joh 1:29" data-total="14" data-char="2" data-nonchar="12" data-pctc="14"><th scope="row" class="vlab">29</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 57%, var(--surface-1));color:var(--cell-ink-light)" data-count="12">12</td><td class="tot">14</td><td class="scr scr-check" data-lbl="human present" data-ground="he (John) saw Jesus … sin of the world" data-note=""><span class="glyph" style="color:var(--good)" title="human present — he (John) saw Jesus … sin of the world">✓</span></td></tr>
+<tr class="" data-v="30" data-ref="Joh 1:30" data-total="18" data-char="0" data-nonchar="18" data-pctc="0"><th scope="row" class="vlab">30</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 86%, var(--surface-1));color:var(--cell-ink-light)" data-count="18">18</td><td class="tot">18</td><td class="scr scr-check" data-lbl="human present" data-ground="a man … me" data-note=""><span class="glyph" style="color:var(--good)" title="human present — a man … me">✓</span></td></tr>
+<tr class="" data-v="31" data-ref="Joh 1:31" data-total="14" data-char="1" data-nonchar="13" data-pctc="7"><th scope="row" class="vlab">31</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 62%, var(--surface-1));color:var(--cell-ink-light)" data-count="13">13</td><td class="tot">14</td><td class="scr scr-check" data-lbl="human present" data-ground="I (John) … Israel" data-note=""><span class="glyph" style="color:var(--good)" title="human present — I (John) … Israel">✓</span></td></tr>
+<tr class="" data-v="32" data-ref="Joh 1:32" data-total="14" data-char="1" data-nonchar="13" data-pctc="7"><th scope="row" class="vlab">32</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 62%, var(--surface-1));color:var(--cell-ink-light)" data-count="13">13</td><td class="tot">14</td><td class="scr scr-check" data-lbl="human present" data-ground="John bore witness … I saw" data-note=""><span class="glyph" style="color:var(--good)" title="human present — John bore witness … I saw">✓</span></td></tr>
+<tr class="" data-v="33" data-ref="Joh 1:33" data-total="24" data-char="4" data-nonchar="20" data-pctc="17"><th scope="row" class="vlab">33</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 100%, var(--surface-1));color:var(--cell-ink-light)" data-count="4">4</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 95%, var(--surface-1));color:var(--cell-ink-light)" data-count="20">20</td><td class="tot">24</td><td class="scr scr-check" data-lbl="human present" data-ground="I (John) … me" data-note=""><span class="glyph" style="color:var(--good)" title="human present — I (John) … me">✓</span></td></tr>
+<tr class="" data-v="34" data-ref="Joh 1:34" data-total="8" data-char="1" data-nonchar="7" data-pctc="12"><th scope="row" class="vlab">34</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 33%, var(--surface-1));color:var(--cell-ink-dark)" data-count="7">7</td><td class="tot">8</td><td class="scr scr-check" data-lbl="human present" data-ground="I (John) have borne witness" data-note=""><span class="glyph" style="color:var(--good)" title="human present — I (John) have borne witness">✓</span></td></tr>
+<tr class="" data-v="35" data-ref="Joh 1:35" data-total="9" data-char="0" data-nonchar="9" data-pctc="0"><th scope="row" class="vlab">35</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 43%, var(--surface-1));color:var(--cell-ink-dark)" data-count="9">9</td><td class="tot">9</td><td class="scr scr-check" data-lbl="human present" data-ground="John … two disciples" data-note=""><span class="glyph" style="color:var(--good)" title="human present — John … two disciples">✓</span></td></tr>
+<tr class="" data-v="36" data-ref="Joh 1:36" data-total="8" data-char="1" data-nonchar="7" data-pctc="12"><th scope="row" class="vlab">36</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 33%, var(--surface-1));color:var(--cell-ink-dark)" data-count="7">7</td><td class="tot">8</td><td class="scr scr-check" data-lbl="human present" data-ground="he looked at Jesus" data-note=""><span class="glyph" style="color:var(--good)" title="human present — he looked at Jesus">✓</span></td></tr>
+<tr class="" data-v="37" data-ref="Joh 1:37" data-total="9" data-char="1" data-nonchar="8" data-pctc="11"><th scope="row" class="vlab">37</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 38%, var(--surface-1));color:var(--cell-ink-dark)" data-count="8">8</td><td class="tot">9</td><td class="scr scr-check" data-lbl="human present" data-ground="the two disciples … they followed" data-note=""><span class="glyph" style="color:var(--good)" title="human present — the two disciples … they followed">✓</span></td></tr>
+<tr class="" data-v="38" data-ref="Joh 1:38" data-total="21" data-char="1" data-nonchar="20" data-pctc="5"><th scope="row" class="vlab">38</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 95%, var(--surface-1));color:var(--cell-ink-light)" data-count="20">20</td><td class="tot">21</td><td class="scr scr-check" data-lbl="human present" data-ground="Jesus … them" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Jesus … them">✓</span></td></tr>
+<tr class="" data-v="39" data-ref="Joh 1:39" data-total="22" data-char="1" data-nonchar="21" data-pctc="5"><th scope="row" class="vlab">39</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 100%, var(--surface-1));color:var(--cell-ink-light)" data-count="21">21</td><td class="tot">22</td><td class="scr scr-check" data-lbl="human present" data-ground="they came and saw" data-note=""><span class="glyph" style="color:var(--good)" title="human present — they came and saw">✓</span></td></tr>
+<tr class="" data-v="40" data-ref="Joh 1:40" data-total="13" data-char="1" data-nonchar="12" data-pctc="8"><th scope="row" class="vlab">40</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 57%, var(--surface-1));color:var(--cell-ink-light)" data-count="12">12</td><td class="tot">13</td><td class="scr scr-check" data-lbl="human present" data-ground="Andrew, Simon Peter" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Andrew, Simon Peter">✓</span></td></tr>
+<tr class="" data-v="41" data-ref="Joh 1:41" data-total="14" data-char="0" data-nonchar="14" data-pctc="0"><th scope="row" class="vlab">41</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 67%, var(--surface-1));color:var(--cell-ink-light)" data-count="14">14</td><td class="tot">14</td><td class="scr scr-check" data-lbl="human present" data-ground="his brother Simon" data-note=""><span class="glyph" style="color:var(--good)" title="human present — his brother Simon">✓</span></td></tr>
+<tr class="" data-v="42" data-ref="Joh 1:42" data-total="19" data-char="1" data-nonchar="18" data-pctc="5"><th scope="row" class="vlab">42</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 86%, var(--surface-1));color:var(--cell-ink-light)" data-count="18">18</td><td class="tot">19</td><td class="scr scr-check" data-lbl="human present" data-ground="Jesus … Simon … John … Peter" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Jesus … Simon … John … Peter">✓</span></td></tr>
+<tr class="" data-v="43" data-ref="Joh 1:43" data-total="14" data-char="1" data-nonchar="13" data-pctc="7"><th scope="row" class="vlab">43</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 62%, var(--surface-1));color:var(--cell-ink-light)" data-count="13">13</td><td class="tot">14</td><td class="scr scr-check" data-lbl="human present" data-ground="Jesus … Philip" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Jesus … Philip">✓</span></td></tr>
+<tr class="" data-v="44" data-ref="Joh 1:44" data-total="10" data-char="0" data-nonchar="10" data-pctc="0"><th scope="row" class="vlab">44</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 48%, var(--surface-1));color:var(--cell-ink-dark)" data-count="10">10</td><td class="tot">10</td><td class="scr scr-check" data-lbl="human present" data-ground="Philip … Andrew and Peter" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Philip … Andrew and Peter">✓</span></td></tr>
+<tr class="" data-v="45" data-ref="Joh 1:45" data-total="19" data-char="0" data-nonchar="19" data-pctc="0"><th scope="row" class="vlab">45</th><td class="hz" style="background:var(--zero-cell);color:var(--cell-ink-dark)" data-count="0">0</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 90%, var(--surface-1));color:var(--cell-ink-light)" data-count="19">19</td><td class="tot">19</td><td class="scr scr-check" data-lbl="human present" data-ground="Philip … Nathanael … Moses … Joseph" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Philip … Nathanael … Moses … Joseph">✓</span></td></tr>
+<tr class="" data-v="46" data-ref="Joh 1:46" data-total="15" data-char="2" data-nonchar="13" data-pctc="13"><th scope="row" class="vlab">46</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 62%, var(--surface-1));color:var(--cell-ink-light)" data-count="13">13</td><td class="tot">15</td><td class="scr scr-check" data-lbl="human present" data-ground="Nathanael … Philip" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Nathanael … Philip">✓</span></td></tr>
+<tr class="" data-v="47" data-ref="Joh 1:47" data-total="18" data-char="2" data-nonchar="16" data-pctc="11"><th scope="row" class="vlab">47</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 76%, var(--surface-1));color:var(--cell-ink-light)" data-count="16">16</td><td class="tot">18</td><td class="scr scr-check" data-lbl="human present" data-ground="Jesus … Nathanael … an Israelite" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Jesus … Nathanael … an Israelite">✓</span></td></tr>
+<tr class="" data-v="48" data-ref="Joh 1:48" data-total="19" data-char="3" data-nonchar="16" data-pctc="16"><th scope="row" class="vlab">48</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 75%, var(--surface-1));color:var(--cell-ink-light)" data-count="3">3</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 76%, var(--surface-1));color:var(--cell-ink-light)" data-count="16">16</td><td class="tot">19</td><td class="scr scr-check" data-lbl="human present" data-ground="Nathanael … Jesus" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Nathanael … Jesus">✓</span></td></tr>
+<tr class="" data-v="49" data-ref="Joh 1:49" data-total="12" data-char="1" data-nonchar="11" data-pctc="8"><th scope="row" class="vlab">49</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 52%, var(--surface-1));color:var(--cell-ink-dark)" data-count="11">11</td><td class="tot">12</td><td class="scr scr-check" data-lbl="human present" data-ground="Nathanael … King of Israel" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Nathanael … King of Israel">✓</span></td></tr>
+<tr class="" data-v="50" data-ref="Joh 1:50" data-total="15" data-char="2" data-nonchar="13" data-pctc="13"><th scope="row" class="vlab">50</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 50%, var(--surface-1));color:var(--cell-ink-dark)" data-count="2">2</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 62%, var(--surface-1));color:var(--cell-ink-light)" data-count="13">13</td><td class="tot">15</td><td class="scr scr-check" data-lbl="human present" data-ground="Jesus … you" data-note=""><span class="glyph" style="color:var(--good)" title="human present — Jesus … you">✓</span></td></tr>
+<tr class="" data-v="51" data-ref="Joh 1:51" data-total="19" data-char="1" data-nonchar="18" data-pctc="5"><th scope="row" class="vlab">51</th><td class="hc" style="background:color-mix(in oklab, var(--char-hue) 25%, var(--surface-1));color:var(--cell-ink-dark)" data-count="1">1</td><td class="hc" style="background:color-mix(in oklab, var(--non-hue) 86%, var(--surface-1));color:var(--cell-ink-light)" data-count="18">18</td><td class="tot">19</td><td class="scr scr-check" data-lbl="human present" data-ground="you … Son of Man" data-note=""><span class="glyph" style="color:var(--good)" title="human present — you … Son of Man">✓</span></td></tr>
+    </tbody>
+  </table>
+  </div>
+
+  <div class="legend">
+    <div class="lg"><span>Candidate-char</span><span class="ramp c"></span><span>0 → 4</span></div>
+    <div class="lg"><span>Non-char</span><span class="ramp n"></span><span>0 → 21</span></div>
+    <div class="lg"><span class="glyph" style="color:var(--good)">✓</span>present<span class="glyph" style="color:var(--muted);margin-left:12px">~</span>inferred<span class="glyph" style="color:var(--flag);margin-left:12px">⚑</span>none (flagged)</div>
+  </div>
+
+  <p class="foot">Each ramp is scaled to its own maximum (4 candidate-char,
+    21 non-char), so shade shows the pattern <i>within</i> a category — compare
+    absolute magnitudes by the numbers, not by cross-category shade. A grey cell means
+    zero. Verses absent from the IBA verse subset are marked and skipped. The human-presence screen is an analytical judgement over the verse text (offered for validation, not a DB flag); hover a ⚑/✓/~ mark for its grounding word.</p>
+</div>
+<div id="tt"></div>
+<script>
+  const tt = document.getElementById('tt');
+  document.querySelectorAll('table.heat tbody tr[data-v]').forEach(tr => {
+    const d = tr.dataset;
+    tr.querySelectorAll('td.hc, td.hz').forEach((td, i) => {
+      const cat = i === 0 ? 'Candidate-char' : 'Non-char';
+      const cnt = td.dataset.count;
+      const pct = d.total > 0 ? Math.round(cnt / d.total * 100) : 0;
+      const show = e => {
+        tt.innerHTML = `<b>${d.ref}</b><br>${cat}: <b>${cnt}</b> span${cnt==1?'':'s'}` +
+          `<br>${pct}% of ${d.total} in verse`;
+        tt.style.opacity = 1;
+        const x = e.clientX + 14, y = e.clientY + 14;
+        tt.style.left = Math.min(x, innerWidth - 230) + 'px';
+        tt.style.top = y + 'px';
+      };
+      td.addEventListener('mousemove', show);
+      td.addEventListener('mouseleave', () => tt.style.opacity = 0);
+    });
+    const sc = tr.querySelector('td.scr');
+    if (sc && sc.dataset.lbl) {
+      const show = e => {
+        tt.innerHTML = `<b>${d.ref}</b><br>${sc.dataset.lbl}` +
+          (sc.dataset.ground ? `<br><i>${sc.dataset.ground}</i>` : '') +
+          (sc.dataset.note ? `<br>${sc.dataset.note}` : '');
+        tt.style.opacity = 1;
+        tt.style.left = Math.min(e.clientX + 14, innerWidth - 230) + 'px';
+        tt.style.top = (e.clientY + 14) + 'px';
+      };
+      sc.addEventListener('mousemove', show);
+      sc.addEventListener('mouseleave', () => tt.style.opacity = 0);
+    }
+  });
+</script>
