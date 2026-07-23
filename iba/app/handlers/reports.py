@@ -15,6 +15,7 @@ from .base import Ctx, Outcome, ok, fail
 from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import retention as retention_mod
+from ..lib import schemareport, seedreport, spanreport, strongreport
 from ..tools import export_tables_csv
 
 
@@ -57,3 +58,31 @@ def table_export(ctx: Ctx) -> Outcome:
     results = export_tables_csv.export(out_dir, only)
     return ok(f"exported {len(results)} table(s) to {out_dir}", path=str(out_dir),
              tables=len(results))
+
+
+def seed_candidate_report(ctx: Ctx) -> Outcome:
+    path = pathlib.Path(ctx.cfg.setting("report.seed_candidate_path",
+                                        "iba/app/reports/seed-candidate.md"))
+    out = seedreport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
+def strong_meaning_report(ctx: Ctx) -> Outcome:
+    path = pathlib.Path(ctx.cfg.setting("report.strong_meaning_path",
+                                        "iba/app/reports/strong-meaning.md"))
+    out = strongreport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
+def span_analysis_report(ctx: Ctx) -> Outcome:
+    path = pathlib.Path(ctx.cfg.setting("report.span_analysis_path",
+                                        "iba/app/reports/span-analysis.md"))
+    out = spanreport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
+def schema_overview_report(ctx: Ctx) -> Outcome:
+    path = pathlib.Path(ctx.cfg.setting("report.schema_overview_path",
+                                        "iba/app/reports/schema-overview.md"))
+    out = schemareport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))

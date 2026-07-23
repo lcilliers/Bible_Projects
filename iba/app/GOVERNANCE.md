@@ -753,3 +753,82 @@ already proven correct on every other script).
 **Not done yet (separate, later phases per the plan — §10.3/§8):** the 4 new reports (seed-candidate,
 strong-meaning, span-analysis, schema-overview), the one-off/investigatory report naming helper, and
 `BUILD.md`'s own update. Nothing in Phase 1+ has been started.
+
+---
+
+## 14. Reports fully config-governed — Phase 1 built: the 4 new reports (2026-07-23)
+
+Continues §13. Design: `PLAN-reports-config-governance-v1-20260722.md` §3.1–3.4. Unlike the
+original 8 reports (which started hardcoded and were retrofitted onto `lib/reportkit.py` in Phase
+0), these 4 were built **directly on the scaffolding** — no hardcoded headings ever existed for
+them.
+
+**Built:**
+
+- `report.seed_candidate` (`lib/seedreport.py`, `SeedCandidate-Report.ps1`) — whole-`candidate_seed`
+  picture: counts by decision/layer/role, tag word-count and rows-per-lemma distribution, the
+  busiest lemmas, and an open (`decision='exception'`)-vs-resolved trend by day. CSV: `candidate_seed`
+  joined to `lemma_inventory.gloss`.
+- `report.strong_meaning` (`lib/strongreport.py`, `StrongMeaning-Report.ps1`) — meaning-parse layer
+  coverage: `strong` rows with no `strong_sense` row (a gap list, ordered by usage `count`),
+  sense-count distribution (`strong_meaning_tree` rows per lemma), lexicon completeness
+  (`lsj`/`mounce`). CSV: `strong_sense` + `strong_meaning_tree`, both joined to `strong.stepGloss`.
+- `report.span_analysis` (`lib/spanreport.py`, `SpanAnalysis-Report.ps1`) — span-layer coverage per
+  book (spans + candidate spans), morph-code distribution, particle split. CSV: `span` +
+  `span_candidate`, full verbatim dumps (a join to `word_strong`/`strong` was considered per the
+  plan's first-cut proposal but dropped — the two tables don't share a clean join key at the same
+  grain, and a verbatim dump already satisfies "table content, not just summaries" without a
+  fragile join).
+- `report.schema_overview` (`lib/schemareport.py`, `SchemaOverview-Report.ps1`) — the IBA app's own
+  data-schema snapshot (the equivalent of the Bible-study side's `build_dbschema.py`, which had no
+  counterpart here): every one of the 17 data tables, columns/types/PK/FK/indexes, row counts.
+  Introspects the live DB directly (`PRAGMA table_info`/`foreign_key_list`/`index_list`) —
+  deliberately no CSV pairing, since this report already *is* the schema.
+
+**Registered** as 4 new single-step work packages (`seed-candidate-report`, `strong-meaning-report`,
+`span-analysis-report`, `schema-overview-report`), each with its own PS script, matching the
+established one-script-per-standalone-report pattern (`candidate-quality`, `passage-quality`,
+`log-retention`, `table-export`). Migration: `bootstrap_new_reports_phase1.py` (idempotent).
+`lib/cfgquality.REPORT_STEPS` extended to cover all 4, so `configmaint.validate`'s coherence check
+(§13) covers them from day one, not retrofitted later.
+
+**A real accuracy bug found and fixed while reviewing this report's own first output** (not by
+inspection — by reading what it actually said): `strong_meaning.md`'s lexicon-completeness table
+originally counted only *within* `strong_lexicon` (1506 rows), silently excluding the ~1957 `strong`
+entries with no `strong_lexicon` row at all — the table looked 100%-accounted-for when nearly 57%
+of `strong` was invisible to it. Fixed to count against every `strong` row via `NOT EXISTS`/`LEFT
+JOIN`, not just existing `strong_lexicon` rows.
+
+**`reportkit.render_scaffold` fixed too** (benefits all 12 reports, not just these 4): a section's
+body not ending in a blank line ran straight into the next `## heading` with no separating blank
+line — cosmetically wrong Markdown, found on this batch's first output and fixed at the shared
+level rather than patched per-report.
+
+**Verified**: all 4 re-run live end-to-end through their PS wrapper; `configmaint.validate` clean
+(no new coherence errors — REPORT_STEPS check passes for all 4); `CONFIG-REPORT.md` §12's per-report
+rollup picked all 4 up automatically, no extra wiring needed.
+
+**Still not done**: the one-off/investigatory report naming+folder config helper (Phase 2, §5 of the
+plan) — the last item from the plan's phase list.
+
+---
+
+## 15. Reports fully config-governed — Phase 2 built: one-off report naming (2026-07-23)
+
+Continues §13/§14 — the last item on the plan's phase list
+(`PLAN-reports-config-governance-v1-20260722.md` §5/§8, sub-phase "Phase 2"). One-off
+("investigatory") reports don't recur, so they get no `cfg_step`/`cfg_report` row — but their
+folder/naming/format now come from config too, via 3 new `governance.oneoff_*` settings
+(`bootstrap_oneoff_report_naming.py`) and `lib/reportkit.oneoff_path(cfg, topic)`.
+
+Same-day collisions get `-v2`/`-v3`/... appended automatically, per the Bible-study side's own
+`docs/file-organisation-rules.md` §2.3 convention (adopted, not reinvented). Verified directly:
+first call for a topic returns `{topic}-{YYYYMMDD}.md`; a second call the same day for the same
+topic returns `-v2`, a third `-v3`; a different topic gets its own clean path; punctuation/spaces
+in the topic are slugified. `configmaint.validate`/`configmaint.report` re-run clean.
+
+**All phases of `PLAN-reports-config-governance-v1-20260722.md` are now built** (Phase 0 §13,
+Phase 1 §14, Phase 2 this section). Nothing from the plan remains outstanding — future
+one-off/investigation scripts should call `reportkit.oneoff_path()` instead of hardcoding a path,
+but no existing script needed retrofitting (none existed yet using a hardcoded one-off path in a
+way this replaces).

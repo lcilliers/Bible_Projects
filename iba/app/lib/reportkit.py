@@ -15,6 +15,7 @@ from __future__ import annotations
 
 import datetime
 import pathlib
+import re
 import sqlite3
 
 
@@ -57,8 +58,12 @@ def render_scaffold(conn: sqlite3.Connection, step: str, sections: dict[str, lis
         L.append(s["heading"])
         L.append("")
         L += sections[s["section_key"]]
+        if L and L[-1] != "":
+            L.append("")
     for k in extra_keys:
         L += sections[k]
+        if L and L[-1] != "":
+            L.append("")
 
     if rep["footer_text"]:
         L.append("")
@@ -135,6 +140,35 @@ def _dump_table(conn: sqlite3.Connection, table: str, out_dir: pathlib.Path) -> 
 def _dump_rows(rows: list[sqlite3.Row], table: str, out_dir: pathlib.Path) -> pathlib.Path:
     cols = list(rows[0].keys()) if rows else []
     return _write_csv(out_dir / f"{table}.csv", cols, [[r[c] for c in cols] for r in rows])
+
+
+def oneoff_path(cfg, topic: str, ext: str | None = None) -> pathlib.Path:
+    """Phase 2 of PLAN-reports-config-governance-v1-20260722.md §5 — the path for a one-off
+    ("investigatory") report: no `cfg_step`, so no `cfg_report` row to key off, but the
+    folder/naming still comes from config (`governance.oneoff_*`), not a literal string a future
+    migration/investigation script hardcodes. `cfg` is a lib.cfg.Cfg (or any object with
+    .setting(key, default)).
+
+    Same-day version bump on collision, per the Bible-study side's own established convention
+    (docs/file-organisation-rules.md §2.3) rather than inventing a new one for this app — a second
+    call for the same topic on the same day gets `-v2`, a third `-v3`, and so on."""
+    out_dir = pathlib.Path(cfg.setting("governance.oneoff_report_dir", "iba/app/reports/"))
+    pattern = cfg.setting("governance.oneoff_report_naming_pattern", "{topic}-{YYYYMMDD}.{format}")
+    fmt = ext or cfg.setting("governance.oneoff_report_format", "md")
+    slug = re.sub(r"[^a-z0-9]+", "-", topic.lower()).strip("-")
+    stamp = datetime.datetime.now().strftime("%Y%m%d")
+    name = pattern.format(topic=slug, YYYYMMDD=stamp, format=fmt)
+
+    path = out_dir / name
+    if not path.exists():
+        return path
+    stem, _, extension = name.rpartition(".")
+    n = 2
+    while True:
+        candidate = out_dir / f"{stem}-v{n}.{extension}"
+        if not candidate.exists():
+            return candidate
+        n += 1
 
 
 def _write_csv(path: pathlib.Path, cols: list[str], rows: list[list]) -> pathlib.Path:

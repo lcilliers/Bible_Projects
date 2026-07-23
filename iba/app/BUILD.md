@@ -97,6 +97,10 @@ python -m iba.app.report --word hypocrisy      # -> iba/app/report-hypocrisy.md
 | `iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <id> -Decision Approve\|Reject\|Revise [-Comment ..]` | answer a config-proposal or quality-check escalation |
 | `iba\app\ps\Escalation.ps1 -Action Raise -Question ".."` | add your OWN item to the escalation table — a researcher-initiated flag, not raised by a running step |
 | `iba\app\ps\Log-Retention.ps1` | run/escalation/validation_result log-retention & run-health report (read-only — no pruning) |
+| `iba\app\ps\SeedCandidate-Report.ps1` | whole-`candidate_seed` analysis (decision/layer/role, tag/lemma distribution, busiest lemmas, open-vs-resolved over time) — added 2026-07-22/23, see GOVERNANCE.md §14 |
+| `iba\app\ps\StrongMeaning-Report.ps1` | meaning-parse layer coverage (`strong`/`strong_sense`/`strong_meaning_tree`/`strong_lexicon` gap list, sense-count distribution, lexicon completeness) |
+| `iba\app\ps\SpanAnalysis-Report.ps1` | span-layer coverage per book, confirmed vs candidate span counts, morph-code distribution |
+| `iba\app\ps\SchemaOverview-Report.ps1` | the app's own data-schema snapshot — every data table, columns, types, PK/FK, indexes, row counts, introspected live |
 
 `-Fresh` rebuilds the DB from `schema.json` first. Without it, the run adds to the existing DB.
 
@@ -171,6 +175,19 @@ does a run actually do").
 | 0 | `report.word` | `reports:word_report` | word | the word-raw report (`report.py`), content governed by `report.*` settings |
 | 1 | `validation.word` | `reports:validation_word` | word | the raw-layer validation report (`validation.py`), sections governed by `validation.show_*` |
 | 2 | `validation.book` | `reports:validation_book` | book | the base-layer validation report (`validation.py`), same toggles |
+
+**`seed-candidate-report`** / **`strong-meaning-report`** / **`span-analysis-report`** /
+**`schema-overview-report`** — each runs over `none`, single step, its own PS script (added
+2026-07-22/23, GOVERNANCE.md §14) — the 4 "missing reports" from
+`PLAN-reports-config-governance-v1-20260722.md` §3.1–3.4, built entirely on `lib/reportkit.py`
+(never hardcoded first, unlike the original 8):
+
+| work package | step | handler | does |
+|---|---|---|---|
+| `seed-candidate-report` | `report.seed_candidate` | `reports:seed_candidate_report` | whole-`candidate_seed` analysis |
+| `strong-meaning-report` | `report.strong_meaning` | `reports:strong_meaning_report` | meaning-parse layer coverage |
+| `span-analysis-report` | `report.span_analysis` | `reports:span_analysis_report` | span-layer coverage per book |
+| `schema-overview-report` | `report.schema_overview` | `reports:schema_overview_report` | the app's own data-schema snapshot |
 
 ---
 
@@ -397,3 +414,38 @@ Full account: GOVERNANCE.md §12.**
   pre-op snapshotting uses. Built directly in response to the incident above — the only recovery
   path available at the time was a stale 3-day-old manual `.bak` file and a lucky same-morning CSV
   export; this closes that gap going forward, not just for `candidate.load`.
+
+---
+
+## 10. Code changes this session (2026-07-22/23) — per `governance.build_md_on_code_change`
+
+Reports fully config-governed — Phase 0 (existing reports + PS notifications wired to config,
+content unchanged) and Phase 1 (the 4 new reports built). Full design:
+`PLAN-reports-config-governance-v1-20260722.md`. Full technical account of both phases:
+GOVERNANCE.md §13 (Phase 0) and §14 (Phase 1).
+
+**New library modules:** `lib/reportkit.py` (shared scaffold render + archive-on-write + CSV
+pairing — every report generator calls this instead of hand-building `## N. Title` lines),
+`lib/seedreport.py`, `lib/strongreport.py`, `lib/spanreport.py`, `lib/schemareport.py` (the 4 new
+reports), `lib/cfgquality.py` gained `REPORT_STEPS`/`find_missing_cfg_report_rows`/
+`find_chained_packages_missing_complete_message`.
+
+**New PS scripts:** `ps/_lib/Notify.ps1` (shared terminal-notification rendering, dot-sourced by
+every work-package script instead of each hardcoding its own `Write-Host` strings — reads
+`notification.*` settings), `ps/SeedCandidate-Report.ps1`, `ps/StrongMeaning-Report.ps1`,
+`ps/SpanAnalysis-Report.ps1`, `ps/SchemaOverview-Report.ps1`.
+
+**New migrations:** `migration/bootstrap_report_content_governance.py`,
+`migration/bootstrap_retention_table_export_registration.py`,
+`migration/bootstrap_new_reports_phase1.py` — all idempotent, re-run safe.
+
+**Schema:** `cfg_report` / `cfg_report_section` / `cfg_report_csv_table` (new tables);
+`cfg_on_fail.route` (new column); `cfg_work_package.complete_message` /
+`.next_step_hint` / `.paused_message` (new columns); `notification.*` settings (new module).
+
+**Registered as real dispatcher steps for the first time** (were standalone/unregistered before):
+`log-retention` / `retention.report`, `table-export` / `table.export`. Fixed along the way:
+`export_tables_csv` no longer dumps `cfg_*` tables (was duplicating `configmaint.report`);
+`candidate.load` has its own `candidate.load_report_path` instead of a derived one; a real 2.2GB
+gap in `.gitignore` (`iba/app/db/snapshots/` was uncovered) found and fixed while processing git
+for this session's commits.
