@@ -1,0 +1,516 @@
+{
+  "schema_version": "3.35.0",
+  "exported_date": "2026-07-02",
+  "source_file": "Workflow/schema/database-schema-v3.35.0-20260702.json",
+  "table_count": 10,
+  "tables": {
+    "prose_section": {
+      "sql": "CREATE TABLE \"prose_section\" (\n            id                INTEGER PRIMARY KEY,\n            registry_id       INTEGER REFERENCES word_registry(id),\n            section_type_id   INTEGER NOT NULL REFERENCES prose_section_type(id),\n            heading           TEXT,\n            body              TEXT    NOT NULL,\n            word_count        INTEGER NOT NULL DEFAULT 0,\n            status            TEXT    NOT NULL,\n            version           INTEGER NOT NULL DEFAULT 1,\n            supersedes_id     INTEGER REFERENCES prose_section(id),\n            superseded_by_id  INTEGER REFERENCES prose_section(id),\n            author            TEXT    NOT NULL,\n            created_at        TEXT    NOT NULL,\n            approved_at       TEXT,\n            approved_by       TEXT,\n            metadata_json     TEXT,\n            source_file       TEXT,\n            delete_flagged    INTEGER NOT NULL DEFAULT 0, cluster_code TEXT, characteristic_id INTEGER, cluster_subgroup_id INTEGER,\n            CHECK (status IN ('draft','in_review','approved','archived')),\n            CHECK (author IN ('claude_ai','claude_code','researcher'))\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "section_type_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "heading",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "body",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "word_count",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "1"
+        },
+        {
+          "name": "supersedes_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "superseded_by_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "author",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "approved_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "approved_by",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "metadata_json",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "cluster_code",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "characteristic_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_subgroup_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_prose_section_cluster_subgroup_id",
+          "unique": false
+        },
+        {
+          "name": "idx_prose_section_characteristic_id",
+          "unique": false
+        },
+        {
+          "name": "idx_prose_section_cluster_code",
+          "unique": false
+        },
+        {
+          "name": "idx_ps_supersedes",
+          "unique": false
+        },
+        {
+          "name": "idx_ps_status",
+          "unique": false
+        },
+        {
+          "name": "idx_ps_registry_type_current",
+          "unique": false
+        }
+      ],
+      "row_count": 397
+    },
+    "prose_section_dimension_link": {
+      "sql": "CREATE TABLE prose_section_dimension_link (\n            prose_section_id  INTEGER NOT NULL REFERENCES prose_section(id),\n            dimension_id      INTEGER NOT NULL,\n            link_type         TEXT    NOT NULL DEFAULT 'discusses',\n            created_at        TEXT    NOT NULL DEFAULT (datetime('now')),\n            PRIMARY KEY (prose_section_id, dimension_id, link_type)\n        )",
+      "columns": [
+        {
+          "name": "prose_section_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "dimension_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "link_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'discusses'"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "datetime('now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_dimension_link_1",
+          "unique": true
+        }
+      ],
+      "row_count": 0
+    },
+    "prose_section_finding_link": {
+      "sql": "CREATE TABLE prose_section_finding_link (\n            prose_section_id  INTEGER NOT NULL REFERENCES prose_section(id),\n            finding_id        INTEGER NOT NULL REFERENCES wa_session_b_findings(id),\n            link_type         TEXT    NOT NULL DEFAULT 'discusses',\n            created_at        TEXT    NOT NULL DEFAULT (datetime('now')),\n            PRIMARY KEY (prose_section_id, finding_id, link_type)\n        )",
+      "columns": [
+        {
+          "name": "prose_section_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "finding_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "link_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'discusses'"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "datetime('now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_finding_link_1",
+          "unique": true
+        }
+      ],
+      "row_count": 0
+    },
+    "prose_section_fts": {
+      "sql": "CREATE VIRTUAL TABLE prose_section_fts USING fts5(\n            body,\n            heading,\n            section_type_code UNINDEXED,\n            registry_id UNINDEXED,\n            cluster_code UNINDEXED,\n            characteristic_id UNINDEXED,\n            status UNINDEXED,\n            tokenize='porter unicode61 remove_diacritics 2'\n        )",
+      "columns": [
+        {
+          "name": "body",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "heading",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "section_type_code",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "registry_id",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "cluster_code",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "characteristic_id",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "status",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 397
+    },
+    "prose_section_fts_config": {
+      "sql": "CREATE TABLE 'prose_section_fts_config'(k PRIMARY KEY, v) WITHOUT ROWID",
+      "columns": [
+        {
+          "name": "k",
+          "type": "",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "v",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_fts_config_1",
+          "unique": true
+        }
+      ],
+      "row_count": 1
+    },
+    "prose_section_fts_content": {
+      "sql": "CREATE TABLE 'prose_section_fts_content'(id INTEGER PRIMARY KEY, c0, c1, c2, c3, c4, c5, c6)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c0",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c1",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c2",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c3",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c4",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c5",
+          "type": "",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "c6",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 397
+    },
+    "prose_section_fts_data": {
+      "sql": "CREATE TABLE 'prose_section_fts_data'(id INTEGER PRIMARY KEY, block BLOB)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "block",
+          "type": "BLOB",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 732
+    },
+    "prose_section_fts_docsize": {
+      "sql": "CREATE TABLE 'prose_section_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB)",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sz",
+          "type": "BLOB",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [],
+      "row_count": 397
+    },
+    "prose_section_fts_idx": {
+      "sql": "CREATE TABLE 'prose_section_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID",
+      "columns": [
+        {
+          "name": "segid",
+          "type": "",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "term",
+          "type": "",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "pgno",
+          "type": "",
+          "notnull": false,
+          "default": null
+        }
+      ],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_fts_idx_1",
+          "unique": true
+        }
+      ],
+      "row_count": 659
+    },
+    "prose_section_type": {
+      "sql": "CREATE TABLE prose_section_type (\n            id                   INTEGER PRIMARY KEY,\n            code                 TEXT    NOT NULL UNIQUE,\n            label                TEXT    NOT NULL,\n            source_stage         TEXT    NOT NULL,\n            lifecycle_tag        TEXT,\n            chapter_no           INTEGER,\n            description          TEXT,\n            expected_length_min  INTEGER,\n            expected_length_max  INTEGER,\n            sort_order           INTEGER NOT NULL DEFAULT 0,\n            delete_flagged       INTEGER NOT NULL DEFAULT 0,\n            created_at           TEXT    NOT NULL DEFAULT (datetime('now'))\n        )",
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "code",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "label",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "source_stage",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null
+        },
+        {
+          "name": "lifecycle_tag",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "chapter_no",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "expected_length_min",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "expected_length_max",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null
+        },
+        {
+          "name": "sort_order",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0"
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "datetime('now')"
+        }
+      ],
+      "indexes": [
+        {
+          "name": "idx_pst_stage_lifecycle",
+          "unique": false
+        },
+        {
+          "name": "sqlite_autoindex_prose_section_type_1",
+          "unique": true
+        }
+      ],
+      "row_count": 102
+    }
+  }
+}

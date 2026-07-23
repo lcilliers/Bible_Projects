@@ -1,5 +1,28 @@
 # CLAUDE.md — Claude Code Project Reference
 
+> **★ THE `AskUserQuestion` TOOL IS BANNED IN THIS PROJECT — NEVER USE IT (reinforced 2026-07-22).**
+> Blocked at config level (`.claude/settings.json` → `permissions.deny`), stated in
+> `docs/interaction-preferences.md`, and in memory — after two prior "hard stop" warnings
+> (2026-06-01, 2026-06-15) it was violated again this session, and the tool proved unreliable on
+> top of being against policy: a fired question came back with the researcher's actual answer lost,
+> only a bare rejection notice. Instead: investigate and present facts for anything answerable from
+> the DB/code; put a genuine judgement call in a `.md` review file and point to it in plain chat;
+> ask a real clarifying question in plain chat text. See `docs/interaction-preferences.md` for the
+> full protocol.
+>
+> **★ IBA APP — SESSION START (2026-07-22).** This repo also contains a second, separate
+> application — the **IBA app** (`iba/app/`), its own DB (`iba/app/db/iba.db`), its own config
+> (`cfg_*` tables), and its own rules — distinct from the Bible-study programme the rest of this
+> file describes. **On opening this project, before any IBA work, run
+> `iba\app\ps\Start-Iba.ps1`** — it bootstraps config/DB/STEP and prints an orientation pointer to
+> `iba/app/BUILD.md` (what's built) and `iba/app/GOVERNANCE.md` (how config governs the code).
+> **To use the app, start at [`iba/app/USER-GUIDE.md`](iba/app/USER-GUIDE.md)** — not
+> `iba/config/README.md`, which documents a separate, not-yet-loadable configurator design (see
+> `iba/app/GOVERNANCE.md` on the two-configurator gap). **Never assume an IBA rule from memory or
+> from a doc alone** — the rule that actually governs behaviour lives in a `cfg_*` DB row; changing
+> one goes through `iba\app\ps\Config-Maintenance.ps1 -Step Propose` (approval-gated), never a
+> direct edit.
+>
 > Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions per GR-REF-002). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
 >
 > **Orientation (2026-06-14):** §3 (schema) and §10 (programme state) refreshed to live **v3.31.0** + the finding-centric model. **Start each session at [`docs/project-orientation-core-memory-map.md`](docs/project-orientation-core-memory-map.md)** — it fans out to instructions, the current-state reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01–04), the reusable-scripts catalogue, and operational governance. This compact file can still lag the written record; when in doubt, the reconstruction is authoritative.

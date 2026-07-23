@@ -4,6 +4,25 @@ This file is the authoritative record of communication protocols between the res
 
 ---
 
+## AskUserQuestion Tool — BANNED, full stop (reinforced 2026-07-22)
+
+**The `AskUserQuestion` tool must NEVER be used in this project.** Blocked at the config level
+(`.claude/settings.json` → `permissions.deny: ["AskUserQuestion"]`) as of 2026-07-22, after it had
+already been called off-limits twice before (2026-06-01, 2026-06-15 "hard stop") and was violated
+again this session — a question fired through it, the researcher gave an elaborate answer, and the
+tool call came back as a bare rejection with **no answer content at all**. Memory-only enforcement
+had already failed three times; this is now a technical block, not just a reminder.
+
+**What to do instead, always:**
+- A question answerable from the DB or the code → investigate and present facts. Do not ask what
+  you can find out.
+- A genuine researcher judgement call → write it to a `.md` file (a review document, a decision
+  doc) with the options, current state, and a decision blank — per the file-based review protocol
+  below — and tell the researcher in plain chat where it is. Never a structured in-chat menu.
+- A single short clarifying question with no real menu of options → plain chat text is fine.
+
+---
+
 ## Instruction Confirmation Protocol
 
 Before executing ANY instruction (except trivial single-step tasks):

@@ -1,0 +1,11 @@
+{
+  "permissions": {
+    "allow": [
+      "PowerShell(.\\\\iba\\\\app\\\\ps\\\\Escalation.ps1 -Action AnswerRun -RunId RUN-20260722_065351_662-CONFIGMAINT -Decision Approve)",
+      "PowerShell(.\\\\iba\\\\app\\\\ps\\\\Config-Maintenance.ps1 -Step Validate -RunId RUN-20260722_065351_662-CONFIGMAINT)"
+    ],
+    "deny": [
+      "AskUserQuestion"
+    ]
+  }
+}
