@@ -717,3 +717,66 @@ coherence checks — it does not block a retired step from actually being invoke
 dispatcher doesn't check it). Actually preventing execution of a deactivated work package wasn't
 asked for and is a separate decision (error vs. warn vs. silently allow) — flagged here rather than
 assumed.
+
+---
+
+## 15. Lexicon term extraction + IB-relevance triage pass — built and concluded in one session (2026-07-24)
+
+Not wired into the app/DB pipeline — all of `iba/app/tools/` scripts below are exploratory data-prep,
+runnable standalone. Full narrative: `iba/logs/SESSION-LOG-20260724-lexicon-extraction-ib-relevance-
+classifier-span-reconciliation.md`. Short version: this investigated whether Inner-Being relevance
+can be judged from a term's own meaning (no registry/Strong's-number lookup), found real coverage is
+already high, found the word-level classification approach hits a hard ceiling on accuracy, and
+concluded the next phase should analyse individual spans/characteristics directly rather than keep
+investing in pre-classification. The tooling below is a **one-time triage pass**, not an ongoing
+method — kept for its actual findings (coverage numbers, the function-word list), not as infrastructure
+to build on.
+
+**Built:**
+
+- `lexicon_split_common.py` — shared bracket-aware comma/semicolon gloss-splitter and word-count/
+  script-based row classifier (`split_multi_gloss`, `classify_row`), factored out of
+  `build_mounce_lexicon_extract.py` so `build_lsj_sense_extract.py`/`build_meaning_tree_extract.py`
+  could reuse the identical logic instead of duplicating it. Mounce refactor verified byte-identical
+  before/after.
+- `build_lsj_sense_extract.py`/`build_meaning_tree_extract.py` — added a `row_type` column
+  ("headword"/"lookup" for LSJ; always "lookup"→classify_row-driven for meaning-tree, since it has no
+  headword concept), and exploded bundled comma/semicolon gloss text into one row per term, matching
+  Mounce's existing shape. Also fixed a real LSJ bug: bare-numeric sub-sense labels nested under the
+  implicit first "I" now correctly compose to "I.2" etc. (3,856 of 25,775 rows affected).
+- `build_lexicon_lookup_extract.py` — combines all three sources' `row_type == "lookup"` rows into
+  one flat (strong, term, source) list, with its own blank/script/duplicate filtering. 40,039 rows.
+- `ib_relevance_classifier.py` — free, local, wordlist-based `classify_ib_relevance(term)`: IB
+  related / Not relevant / Could impact IB (default). Category wordlists (emotion, volition/cognition,
+  character/moral trait, spiritual state vs. concrete objects, plants/animals, body parts, kinship,
+  numbers, proper names, generic verbs/nouns/adjectives, quantifiers, stopwords) built and repeatedly
+  corrected against actual output inspection across the session — see the session log for the full
+  sequence of researcher-found gaps and fixes (numerals, transliteration false alarm → real proper-
+  name gap, curly-apostrophe normalization, hyphenated-compound-name structural rule).
+- `build_span_term_reconciliation.py` — reconciles the term list against `span` (real text
+  occurrences), joined on STRONG ALONE (word-level mismatches are not gaps). Two outputs: span words
+  with zero lexicon coverage ("missing term" signal) and lexicon-covered strongs with zero text
+  occurrence ("missing verse" signal). Also owns `FUNCTION_WORD_STRONGS` — ~61 hand-verified Hebrew/
+  Greek function words (direct-object marker, copula, prepositions, conjunctions, pronouns,
+  interrogatives, particles, numeral carriers) excluded because `is_particle` doesn't catch them and
+  their `surface` text in `span` is borrowed from an adjacent word, not their own content. Found
+  systematically (querying `span` for the strongs with the most distinct surface words attached) after
+  the researcher spotted `H0853` behaving this way, then again after spotting `H4069` at smaller scale.
+- `_check_missing_strongs_in_step.py` / `_check_ib_related_span_step_coverage.py` — one-off, read-only
+  STEP-coverage checks (govered `lib.stepapi.Step` client, no writes) confirming: all 240 lexicon-
+  covered-but-textless strongs genuinely have zero verses in STEP (not a loading gap), and of 235
+  strongs behind the "IB related" span rows, 174 (74%) are already fully covered locally with only a
+  460-verse combined gap across the rest.
+
+**Verified:** every wordlist/structural fix in `ib_relevance_classifier.py` was checked against the
+specific failing examples before being trusted (unit-style `classify_ib_relevance()` calls in the
+terminal, not assumed); the Mounce refactor was diffed byte-identical; the LSJ sub-label fix and the
+STEP-variant-vs-base-strong bug in the coverage-checker were each caught by the researcher/self before
+being reported as done, not after.
+
+**Deliberately NOT done further:** did not keep expanding `ib_relevance_classifier.py`'s wordlists
+after the researcher's own conclusion that word-level pre-classification is the wrong level of
+investment going forward (see the session log's closing section) — remaining known false positives
+(e.g. a rare borrowed-surface-text word coinciding with a content strong's wordlist, like `H3068G`
+tagged "IB related" from one stray "peace") are left as a documented, understood limitation, not
+patched.
