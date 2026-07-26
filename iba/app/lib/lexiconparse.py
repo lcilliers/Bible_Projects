@@ -21,10 +21,11 @@ Corrected rules, all confirmed against live data / a live STEP re-fetch before b
 
 Unlike the tools/ extract scripts (which split strong into base+variant for a common join key
 across sources), these functions keep each table's NATURAL source key as-is: strong_meaning_tree.
-lemma_key is already base-only (it never carries a sub-entry letter — confirmed 3169/3169), and
-strong_lexicon.strong is already the full code (matching strong.strongNumber exactly) — no
-splitting/reconstruction needed for a DB table that's simply parsing IN PLACE, one raw row's HTML
-into several clean rows under the same key.
+lemma_key is base-only (it never carries a sub-entry letter — confirmed 3169/3169) AND (2026-07-26,
+migration/fix_strong_meaning_tree_collapse.py) carries its own `strong_variant` column recording
+the EXACT code a given tree row's content actually came from; strong_lexicon.strong is already the
+full code (matching strong.strongNumber exactly) — no splitting/reconstruction needed for a DB
+table that's simply parsing IN PLACE, one raw row's HTML into several clean rows under the same key.
 """
 
 from __future__ import annotations
@@ -153,9 +154,14 @@ def _extract_sense_code(sense_code: str, sense_text: str) -> tuple[str, str]:
     return "", sense_text
 
 
-def parse_meaning_tree_row(lemma_key: str, sort: int, sense_code: str,
+def parse_meaning_tree_row(lemma_key: str, strong_variant: str, sort: int, sense_code: str,
                            sense_text: str) -> list[tuple]:
-    """-> [(lemma_key, sort, sense_code, gloss, verse_refs, note, row_type), ...]"""
+    """-> [(lemma_key, strong_variant, sort, sense_code, gloss, verse_refs, note, row_type), ...]
+
+    `strong_variant` (2026-07-26, migration/fix_strong_meaning_tree_collapse.py) is a straight
+    pass-through of strong_meaning_tree's own new column — parsing never decides it, it just
+    carries the source row's key forward so a reader can look up a SPECIFIC sibling code's own
+    parsed gloss instead of only ever the shared base row (see BUILD.md sec24/sec25)."""
     code, remaining = _extract_sense_code(sense_code, sense_text)
 
     p = _MeaningSegmentParser()
@@ -172,19 +178,20 @@ def parse_meaning_tree_row(lemma_key: str, sort: int, sense_code: str,
             gloss, note = note, ""
 
         for part in (_split_by_linebreak(gloss) or [gloss]):
-            rows.append((lemma_key, sort, code, part, verse_refs, note, classify_row(part)))
+            rows.append((lemma_key, strong_variant, sort, code, part, verse_refs, note,
+                        classify_row(part)))
     return rows
 
 
 def meaning_tree_rows(conn) -> list[tuple]:
-    """All of strong_meaning_tree, parsed. -> [(lemma_key, sort, sense_code, gloss, verse_refs,
-    note, row_type), ...]"""
+    """All of strong_meaning_tree, parsed. -> [(lemma_key, strong_variant, sort, sense_code,
+    gloss, verse_refs, note, row_type), ...]"""
     cur = conn.execute(
-        "SELECT lemma_key, sort, sense_code, sense_text FROM strong_meaning_tree "
+        "SELECT lemma_key, strong_variant, sort, sense_code, sense_text FROM strong_meaning_tree "
         "WHERE deleted=0 ORDER BY lemma_key, sort")
     rows = []
-    for lemma_key, sort, sense_code, sense_text in cur.fetchall():
-        rows.extend(parse_meaning_tree_row(lemma_key, sort, sense_code, sense_text))
+    for lemma_key, strong_variant, sort, sense_code, sense_text in cur.fetchall():
+        rows.extend(parse_meaning_tree_row(lemma_key, strong_variant, sort, sense_code, sense_text))
     return rows
 
 

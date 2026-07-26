@@ -158,23 +158,36 @@ def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
     base = _base(code)
     lines = [f"stepGloss: {strong_row['stepGloss'] or '(none)'}"]
 
+    # strong_meaning_tree/strong_meaning_parsed carry strong_variant (2026-07-26, migration/
+    # fix_strong_meaning_tree_collapse.py): prefer THIS code's own exact-variant row; fall back to
+    # the base/unsplit row only for pre-fix legacy data that was never re-fetched per exact code.
     meaning_rows = conn.execute(
-        "SELECT gloss FROM strong_meaning_parsed WHERE lemma_key=? ORDER BY sort, id",
-        (base,),
+        "SELECT gloss FROM strong_meaning_parsed WHERE strong_variant=? ORDER BY sort, id",
+        (code,),
     ).fetchall()
+    exact_variant = bool(meaning_rows)
+    if not exact_variant:
+        meaning_rows = conn.execute(
+            "SELECT gloss FROM strong_meaning_parsed WHERE lemma_key=? AND strong_variant=? "
+            "ORDER BY sort, id", (base, base),
+        ).fetchall()
     meaning_text = "; ".join(r["gloss"] for r in meaning_rows if r["gloss"])
     siblings = sibling_variant_codes(conn, base, exclude=code)
     # A sibling existing is NOT itself ambiguity — most sub-lettered codes are the SAME root's
     # different stems (H0935G Qal "come" / H0935P Hiphil "bring"), sharing one legitimate combined
-    # dictionary entry. Only flag + pay for a live STEP call when this code's OWN (never-collapsed)
-    # stepGloss shares no real vocabulary with that shared entry — the actual signal of a genuine
-    # base-collapse (H3581B "strength" vs the shared tree's unrelated "reptile" content).
-    genuinely_ambiguous = bool(siblings) and meaning_text and not gloss_supported_by_tree(
-        strong_row["stepGloss"], meaning_text)
+    # dictionary entry. An EXACT strong_variant match is, by construction, this code's OWN tree
+    # content, never a shared/fallback row — never ambiguous regardless of siblings. Only the
+    # base-fallback case still needs the gloss-overlap check (only flag + pay for a live STEP call
+    # when this code's OWN (never-collapsed) stepGloss shares no real vocabulary with the shared
+    # fallback entry — the actual signal of a genuine base-collapse, e.g. H3581B "strength" vs the
+    # shared tree's unrelated "reptile" content).
+    genuinely_ambiguous = (bool(siblings) and meaning_text and not exact_variant and
+                          not gloss_supported_by_tree(strong_row["stepGloss"], meaning_text))
     if meaning_text:
+        tag = f"variant {code}" if exact_variant else f"base {base} fallback"
         warn = (f" [AMBIGUOUS - base shared with {', '.join(siblings)}, may not be specific "
                 f"to {code}]" if genuinely_ambiguous else "")
-        lines.append(f"meaning_tree (base {base}){warn}: {meaning_text}")
+        lines.append(f"meaning_tree ({tag}){warn}: {meaning_text}")
     else:
         lines.append(f"meaning_tree (base {base}): (none)")
     if genuinely_ambiguous:

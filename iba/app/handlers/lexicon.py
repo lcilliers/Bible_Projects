@@ -50,8 +50,8 @@ def rebuild_parsed_tables(ctx: Ctx) -> dict:
 
     ctx.db.conn.execute("DELETE FROM strong_meaning_parsed")
     ctx.db.conn.executemany(
-        'INSERT INTO strong_meaning_parsed ("lemma_key","sort","sense_code","gloss","verse_refs",'
-        '"note","row_type","deleted") VALUES (?,?,?,?,?,?,?,0)', meaning)
+        'INSERT INTO strong_meaning_parsed ("lemma_key","strong_variant","sort","sense_code",'
+        '"gloss","verse_refs","note","row_type","deleted") VALUES (?,?,?,?,?,?,?,?,0)', meaning)
 
     ctx.db.conn.execute("DELETE FROM strong_lsj_parsed")
     ctx.db.conn.executemany(

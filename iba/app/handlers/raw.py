@@ -90,9 +90,32 @@ def discover(ctx: Ctx) -> Outcome:
 
 
 # ── detail (the meaning) ─────────────────────────────────────────────────────
+def write_tree_rows(ctx: Ctx, lemma: str, strong_variant: str, tree: str, c: dict) -> None:
+    """Write strong_meaning_tree rows for ONE exact code (`strong_variant`). Factored out of
+    detail_one (2026-07-26) so migration/fix_strong_meaning_tree_collapse.py can re-fetch and
+    write a sibling's own tree text without re-running the whole detail_one pipeline (whose
+    early-return on an already-registered `strong` row would otherwise make a targeted re-fetch a
+    no-op). See that migration + BUILD.md sec24/sec25 for why a sibling can need its own row."""
+    for i, line in enumerate(x for x in tree.split("\n") if x.strip()):
+        m = re.match(r"^(\d+[a-z]?\d*\))\s*(.*)$", line.strip())
+        sc, txt = (m.group(1), m.group(2)) if m else ("", line.strip())
+        _write(ctx, "call2_getInfo", "strong_meaning_tree",
+               {"lemma_key": lemma, "sense_code": sc, "sense_text": txt, "sort": i,
+                "strong_variant": strong_variant, "deleted": 0}, upsert=False)
+        c["tree"] += 1
+
+
 def detail_one(ctx: Ctx, code: str, c: dict) -> None:
     """Fetch + write the meaning for ONE strong (call2). Reusable per-strong, so a single
-    strong can be added to a word WITHOUT re-pulling the word's other strongs."""
+    strong can be added to a word WITHOUT re-pulling the word's other strongs.
+
+    strong_meaning_tree.strong_variant (2026-07-26, migration/fix_strong_meaning_tree_collapse.py):
+    the tree-write guard used to be keyed on lemma_key ALONE ("does ANY row exist for this base"),
+    which meant whichever sibling code was fetched FIRST silently claimed the base row and every
+    OTHER sibling's own (already correctly fetched) tree text was discarded — real data loss for
+    genuine homonym collapses like H3581A/H3581B (BUILD.md sec19/sec24). Now keyed on the EXACT
+    resolved code: a sibling only skips the write if ITS OWN (lemma_key, strong_variant) row
+    already exists, never because a different sibling's row does."""
     greek = ctx.cfg.setting("language.greek_prefix", "G")
     if ctx.db.get("strong", strongNumber=code):
         c["skipped"] += 1
@@ -113,13 +136,8 @@ def detail_one(ctx: Ctx, code: str, c: dict) -> None:
         "strong": resolved, "head": head or v.get("stepGloss"),
         "is_own_lemma": 0 if head else 1, "deleted": 0}); c["sense"] += 1
     lemma = _base(resolved)
-    if tree and not ctx.db.get("strong_meaning_tree", lemma_key=lemma):
-        for i, line in enumerate(x for x in tree.split("\n") if x.strip()):
-            m = re.match(r"^(\d+[a-z]?\d*\))\s*(.*)$", line.strip())
-            sc, txt = (m.group(1), m.group(2)) if m else ("", line.strip())
-            _write(ctx, "call2_getInfo", "strong_meaning_tree",
-                   {"lemma_key": lemma, "sense_code": sc, "sense_text": txt,
-                    "sort": i, "deleted": 0}, upsert=False); c["tree"] += 1
+    if tree and not ctx.db.get("strong_meaning_tree", lemma_key=lemma, strong_variant=resolved):
+        write_tree_rows(ctx, lemma, resolved, tree, c)
     if v.get("lsjDefs") or v.get("shortDefMounce"):
         _write(ctx, "call2_getInfo", "strong_lexicon", {
             "strong": resolved, "lsj": v.get("lsjDefs"),
@@ -258,19 +276,15 @@ def _verse_range_filter(osis_id: str, book: str, lo_ch: int, hi_ch: int,
     return True
 
 
-def backfill_meaning(ctx: Ctx) -> Outcome:
-    book = ctx.params["Book"]
-    range_spec = ctx.params.get("Range")  # "chapter:verse-verse", e.g. "1:1-7"; omit for whole book
-    if range_spec:
-        ch, sep, vspec = range_spec.partition(":")
-        if not sep:
-            return fail("invalid-range", f"-Range needs chapter:verse[-verse], e.g. 1:1-7 (got {range_spec!r})")
-        vlo_s, _, vhi_s = vspec.partition("-")
-        lo_ch = hi_ch = int(ch)
-        verse_lo, verse_hi = int(vlo_s), int(vhi_s or vlo_s)
-    else:
-        lo_ch, hi_ch, verse_lo, verse_hi = 1, 999, None, None
-
+def backfill_meaning_for(ctx: Ctx, book: str, lo_ch: int, hi_ch: int,
+                         verse_lo: int | None, verse_hi: int | None) -> dict:
+    """The core of raw.backfill_meaning, factored out (2026-07-26) so a caller OTHER than the
+    standalone `raw-backfill` step can trigger the identical pull without re-implementing the
+    range/STEP/parse/related plumbing — specifically report.verse_span_meaning's
+    `report.auto_backfill_before_render` (researcher's direct 2026-07-26 instruction: don't leave
+    a report at partial coverage as a silent manual follow-up step). Raises StepUnavailable
+    (uncaught) if STEP is down AND there is something to backfill — same as `raw.backfill_meaning`
+    itself, just not pre-wrapped into a fail() here since callers differ in how they report it."""
     rows = ctx.db.rows(
         "SELECT v.osisId AS osis_id, sp.strong_variant AS sv FROM span sp "
         "JOIN verse v ON v.id = sp.verse_id "
@@ -284,13 +298,12 @@ def backfill_meaning(ctx: Ctx) -> Outcome:
 
     missing = sorted(c for c in codes if not ctx.db.get("strong", strongNumber=c))
     if not missing:
-        return ok(f"{book} {range_spec or '(whole book)'}: every span's strong already has a "
-                 f"strong row — nothing to backfill", checked=len(codes), missing=0)
+        return {"distinct_codes": len(codes), "missing_before": 0,
+                "strong": 0, "sense": 0, "tree": 0, "lexicon": 0, "skipped": 0, "no_vocab": 0,
+                "strong_meaning_parsed": 0, "strong_lsj_parsed": 0, "strong_mounce_parsed": 0,
+                "strong_related": 0, "strongs_checked": 0, "none_related": 0, "errors": 0}
 
-    try:
-        ctx.step.up()
-    except Exception as e:
-        return fail("unreachable", f"STEP is not reachable — cannot backfill meaning: {e}")
+    ctx.step.up()  # StepUnavailable propagates — caller decides how to report it
 
     c = {"strong": 0, "sense": 0, "tree": 0, "lexicon": 0, "skipped": 0, "no_vocab": 0}
     for code in missing:
@@ -304,13 +317,37 @@ def backfill_meaning(ctx: Ctx) -> Outcome:
     parsed_counts = rebuild_parsed_tables(ctx)
     related_counts = fetch_related_for(ctx, missing, clear_first=False)
 
-    return ok(f"{book} {range_spec or '(whole book)'}: {len(codes)} distinct strong(s) referenced, "
-             f"{len(missing)} were unregistered — pulled meaning (not verses) for {c['strong']} "
-             f"({c['no_vocab']} returned no vocab from STEP); parsed layer rebuilt "
-             f"({parsed_counts['strong_meaning_parsed']} meaning / {parsed_counts['strong_lsj_parsed']} "
-             f"lsj / {parsed_counts['strong_mounce_parsed']} mounce rows); relatedNos fetched for "
-             f"the {len(missing)} newly-registered strong(s) "
-             f"({related_counts['strong_related']} related row(s), "
-             f"{related_counts['errors']} fetch error(s)).",
-             distinct_codes=len(codes), missing_before=len(missing), **c,
-             **parsed_counts, **related_counts)
+    return {"distinct_codes": len(codes), "missing_before": len(missing), **c,
+           **parsed_counts, **related_counts}
+
+
+def backfill_meaning(ctx: Ctx) -> Outcome:
+    book = ctx.params["Book"]
+    range_spec = ctx.params.get("Range")  # "chapter:verse-verse", e.g. "1:1-7"; omit for whole book
+    if range_spec:
+        ch, sep, vspec = range_spec.partition(":")
+        if not sep:
+            return fail("invalid-range", f"-Range needs chapter:verse[-verse], e.g. 1:1-7 (got {range_spec!r})")
+        vlo_s, _, vhi_s = vspec.partition("-")
+        lo_ch = hi_ch = int(ch)
+        verse_lo, verse_hi = int(vlo_s), int(vhi_s or vlo_s)
+    else:
+        lo_ch, hi_ch, verse_lo, verse_hi = 1, 999, None, None
+
+    try:
+        result = backfill_meaning_for(ctx, book, lo_ch, hi_ch, verse_lo, verse_hi)
+    except Exception as e:
+        return fail("unreachable", f"STEP is not reachable — cannot backfill meaning: {e}")
+
+    if not result["missing_before"]:
+        return ok(f"{book} {range_spec or '(whole book)'}: every span's strong already has a "
+                 f"strong row — nothing to backfill", checked=result["distinct_codes"], missing=0)
+
+    return ok(f"{book} {range_spec or '(whole book)'}: {result['distinct_codes']} distinct strong(s) "
+             f"referenced, {result['missing_before']} were unregistered — pulled meaning (not "
+             f"verses) for {result['strong']} ({result['no_vocab']} returned no vocab from STEP); "
+             f"parsed layer rebuilt ({result['strong_meaning_parsed']} meaning / "
+             f"{result['strong_lsj_parsed']} lsj / {result['strong_mounce_parsed']} mounce rows); "
+             f"relatedNos fetched for the {result['missing_before']} newly-registered strong(s) "
+             f"({result['strong_related']} related row(s), {result['errors']} fetch error(s)).",
+             **result)

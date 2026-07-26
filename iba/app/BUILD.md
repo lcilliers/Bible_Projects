@@ -1250,3 +1250,119 @@ a schema fix — `strong_meaning_tree`'s own base-collapse root cause (§19's it
 is unchanged; this fix means the report no longer PAYS for that root cause on the ~77% of cases
 where it doesn't actually matter, and still catches it correctly on the ~23% where it does.
 All three Daniel reports regenerated in place (`iba/app/verse-analysis/Daniel/`).
+
+---
+
+## 25. `report.verse_span_meaning` auto-backfills its own range before rendering (2026-07-26, next session)
+
+Continues §22/§24 directly, closing item 1 of that session's "where to start": does the researcher
+want the report to auto-run backfill for any gap in its range before rendering, or keep it a
+deliberate separate step (`Raw-Backfill.ps1`)? Researcher's direct answer this session: yes, wire
+it in.
+
+**`handlers/raw.py:backfill_meaning`'s core factored out** into `backfill_meaning_for(ctx, book,
+lo_ch, hi_ch, verse_lo, verse_hi) -> dict` (same shape as `handlers/lexicon.py`'s own
+`rebuild_parsed_tables`/`fetch_related_for` factoring, §18) — the standalone `raw-backfill` step is
+now a thin wrapper over it; a second caller can trigger the identical pull without re-implementing
+the range/STEP/parse/related plumbing.
+
+**New `cfg_setting`, `report.auto_backfill_before_render`** (module `report`, default `true`),
+proposed via `configmaint.propose` and approved (escalation `#321`) — the researcher's own direct
+"yes" to this exact question, this session, stands as the approval, same pattern §21/§22 already
+used for a researcher instruction given in-conversation. `handlers/reports.py:
+verse_span_meaning_report` now reads it: when true (the default), it calls
+`raw.backfill_meaning_for()` for the EXACT book+range being rendered, before calling
+`versespanmeaningreport.write_report()` — any span whose strong is not yet registered gets pulled,
+parsed, and related-fetched automatically, and the outcome message names how many
+(`"... (auto-backfilled N previously-unregistered strong(s) before rendering)"`). Set `false` to
+go back to the original separate-step-only behaviour (`step.required_for_runs` still governs
+whether STEP-down refuses the run outright, unchanged — this setting only controls whether a *gap*
+gets auto-filled, not whether STEP itself is mandatory).
+
+The module docstring's "Read-only; no cfg_write_grant needed" claim (accurate for every other
+report in this file) is now corrected — `verse_span_meaning_report` is the one exception, and is
+labeled as such. No new write-grant row needed: the actual writes go through `_write(ctx,
+"call2_getInfo", ...)` and `handlers/lexicon.py`'s own hardcoded writer strings, exactly as
+`raw.backfill_meaning` already used — grants are keyed by writer identity, not by which step calls
+it, so an already-granted API writer works unchanged regardless of the calling step.
+
+**Verified live**: re-ran all three Daniel reports. Dan 1:1-7 and 1:7-21 (34 previously-unregistered
+strong(s) pulled for 1:7-21) both reported the auto-backfill note; Dan 2:1-16 — the report left at
+49% coverage in the prior session specifically because this question was still open — pulled 75
+previously-unregistered strongs automatically and rendered at **100% coverage** in one run, no
+separate `Raw-Backfill.ps1` call needed. `configmaint.validate` clean afterward.
+
+---
+
+## 26. `strong_meaning_tree`'s base-collapse root cause fixed properly (2026-07-26, next session)
+
+Closes item 3 of the prior session's "where to start" and the loose end named repeatedly since
+§19 (§19 item 4, §24's own closing line: "not a schema fix... unchanged") — researcher's direct
+instruction: "fix it properly." Full design + investigation trail lives in the new migration's own
+docstring (`migration/fix_strong_meaning_tree_collapse.py`); this section is the summary.
+
+**Root cause, confirmed precisely**: `handlers/raw.py:detail_one` already fetches
+`call2_getInfo(code)` PER EXACT resolved code, every time — the tree text in hand at write time
+IS already code-specific. But the write guard was `if tree and not ctx.db.get(
+"strong_meaning_tree", lemma_key=lemma):` — keyed on the BASE alone. Whichever sibling got
+detailed FIRST silently claimed the one base row; every other sibling's own, already-correctly-
+fetched tree text was discarded, never written anywhere. Harmless for the 362/470 (77%) same-root
+stem-split majority (§24) — STEP returns one shared, already stem-labeled combined entry for the
+whole family regardless of which sibling you ask, so the discarded copy said the same thing anyway
+— but real, silent data loss for the 108/470 (23%) genuine homonym collapses (H3581A "reptile" vs
+H3581B "strength", zero vocabulary overlap).
+
+**Fix, mirroring `candidate_seed.strong_variant`'s own precedent exactly** (GOVERNANCE.md §10 —
+same shape of gap, same fix, this time one level lower in the same lexicon layer):
+
+- **Schema**: `strong_variant` added to both `strong_meaning_tree` and `strong_meaning_parsed`
+  (the parsed table derives 1:1 from the tree and is fully rebuilt every `lexicon.parse` run, so it
+  needs the same column to carry the fact through to readers). No UNIQUE constraint exists on
+  either table (confirmed live — dedup here has always been a manual application-level guard, same
+  as every other `raw.py` write), so — unlike `candidate_seed`'s own migration — this was a plain
+  `ALTER TABLE ADD COLUMN`, no table rebuild needed. Existing rows default to
+  `strong_variant = lemma_key` (the "applies to whole/unsplit base" convention, identical to
+  `candidate_seed.strong_variant`'s own default rule) since which sibling originally produced a
+  pre-fix row isn't recoverable from the data as it stands. Both `cfg_column` rows proposed via
+  `configmaint.propose` and approved (escalations `#322`/`#323` — the researcher's explicit "fix it
+  properly" instruction this session stands as the approval, same pattern as §25).
+- **`handlers/raw.py:detail_one`**: write guard now keyed on `(lemma_key, strong_variant=resolved)`
+  instead of `lemma_key` alone — a sibling only skips the write if ITS OWN row already exists,
+  never because a different sibling's row does. The tree-writing block itself factored out into
+  `write_tree_rows(ctx, lemma, strong_variant, tree, c)` so a targeted backfill (below) can write a
+  sibling's own tree text without re-running `detail_one`'s whole pipeline (whose early-return on
+  an already-registered `strong` row would otherwise make a targeted re-fetch a no-op).
+- **`lib/lexiconparse.py` + `handlers/lexicon.py`**: `strong_variant` carried straight through the
+  parse rebuild (`meaning_tree_rows`/`parse_meaning_tree_row` now read/return it; `rebuild_parsed_
+  tables`'s INSERT includes it) — parsing never decides the value, only passes the source row's key
+  forward.
+- **Readers** (`lib/versespanmeaningreport.py` + `tools/build_verse_span_meaning_extract.py`, kept
+  in sync per every prior correction to this logic, §19/§20/§24): `meaning_for_code` now prefers an
+  EXACT `strong_variant=code` match, falling back to the base/unsplit row only when no exact row
+  exists — matching `candidate_seed.set()`'s own "prefers an exact strong_variant match, falling
+  back to the base row" precedent exactly. An exact match is, by construction, never ambiguous
+  (it's the code's own content, not a shared/fallback row) — the report's rendered line now says
+  `meaning_tree (variant H3581B): ...` vs `meaning_tree (base H0935 fallback): ...` so which case
+  applies is visible, not silently indistinguishable as before.
+
+**Backfill (`migration/fix_strong_meaning_tree_collapse.py`), live-detected, not a fixed list** —
+same discipline as `migration/repair_strong_sense_head.py`: every sub-lettered strong with a
+sibling whose OWN `stepGloss` shares no vocabulary with the shared/base tree text
+(`gloss_supported_by_tree` — the exact signal the report itself already uses to flag `[AMBIGUOUS]`)
+is a genuine collapse. Detected **108** system-wide (matching §24's own measured count exactly —
+confirms the detector is the same one already trusted). For each, live-refetched
+`call2_getInfo(code)` and wrote its own `strong_meaning_tree` row via `write_tree_rows` — the
+362-strong same-root stem-split majority was deliberately NOT re-fetched (no data was lost there;
+re-fetching would just re-store text the fallback already serves, at the cost of 362 needless live
+STEP calls). Parsed layer rebuilt once at the end. **Verified**: 108/108 backfilled, 0 remaining by
+a precise per-code check (does this exact code now have its own `strong_meaning_tree` row) —
+spot-checked live: `H3581B` now holds its own "strength, power, might..." tree distinct from
+`H3581`'s "reptile" content; `H0935G`/`H0935P` (the stem-split majority shape) correctly left
+sharing the one base row, untouched. `configmaint.validate` clean afterward.
+
+**Verified end-to-end against the actual report**: all three Daniel reports regenerated
+(§25's auto-backfill run doubled as this fix's live test). Zero genuinely-ambiguous flags remain in
+any of the three — `H3581B`/`H7227B` (Dan 1:1-7) and `H7356B`/`H1524B` (Dan 1:7-21), the four cases
+§24 confirmed were still genuinely flagged after that session's fix, now render their own correct,
+permanent `variant`-tagged content with no flag and no live STEP call needed at all — the
+distinction the report used to have to re-derive live on every run is now a fact sitting in the DB.

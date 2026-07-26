@@ -4,7 +4,10 @@ Both modules already had their own reusable generate functions (report.generate,
 generate/generate_book); this just wraps them in the standard `def h(ctx) -> Outcome` contract so
 they're registered work packages/steps like everything else in the app, instead of standalone
 scripts nothing else knows about — the same gap configuration_maintenance closed for
-cfgload/cfgcheck/cfgreport. Read-only; no cfg_write_grant needed (nothing writes to the DB).
+cfgload/cfgcheck/cfgreport. Mostly read-only — the one exception is
+`verse_span_meaning_report` (see `report.auto_backfill_before_render`, 2026-07-26): it may write
+to the raw/lexicon-parsed layer via `raw.backfill_meaning_for`, gated by that setting, before
+rendering. Every other report here writes nothing to the DB.
 """
 
 from __future__ import annotations
@@ -12,6 +15,7 @@ from __future__ import annotations
 import pathlib
 
 from .base import Ctx, Outcome, ok, fail
+from . import raw as raw_mod
 from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import retention as retention_mod
@@ -87,7 +91,16 @@ def verse_span_meaning_report(ctx: Ctx) -> Outcome:
     """Book-scoped, needs -Book plus exactly one of -Chapters/-Range. STEP-dependent (AMBIGUOUS-
     span live disambiguation) — versespanmeaningreport.write_report() reads step.required_for_runs
     itself and raises StepUnavailable when required and down; caught here into a clean fail(),
-    resolved by cfg_on_fail(report.verse_span_meaning, unreachable) rather than crashing the run."""
+    resolved by cfg_on_fail(report.verse_span_meaning, unreachable) rather than crashing the run.
+
+    `report.auto_backfill_before_render` (cfg_setting, module `report`, default True — researcher's
+    direct 2026-07-26 instruction, answering the open question left by the prior session): before
+    rendering, run the identical pull `Raw-Backfill.ps1` does (raw.backfill_meaning_for) for any
+    span in this exact book+range whose strong is not yet registered. A report is never silently
+    left at partial coverage waiting on a separate manual step. Set False to go back to a pure
+    read-only render (STEP-down still refuses rendering if step.required_for_runs is True, exactly
+    as before — this setting only controls whether a gap gets auto-filled, not whether STEP itself
+    is required)."""
     book = ctx.params["Book"]
     book_label = ctx.params.get("BookLabel")
     if ctx.params.get("Range"):
@@ -97,12 +110,18 @@ def verse_span_meaning_report(ctx: Ctx) -> Outcome:
     else:
         lo, hi = versespanmeaningreport.parse_chapters(ctx.params["Chapters"])
         verse_lo = verse_hi = None
+    backfill_note = ""
     try:
+        if ctx.cfg.setting("report.auto_backfill_before_render", True):
+            result = raw_mod.backfill_meaning_for(ctx, book, lo, hi, verse_lo, verse_hi)
+            if result["missing_before"]:
+                backfill_note = (f" (auto-backfilled {result['missing_before']} previously-"
+                                 f"unregistered strong(s) before rendering)")
         out = versespanmeaningreport.write_report(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
                                                   book_label=book_label)
     except StepUnavailable as e:
         return fail("unreachable", str(e))
-    return ok(f"wrote {out}", path=str(out))
+    return ok(f"wrote {out}{backfill_note}", path=str(out))
 
 
 def schema_overview_report(ctx: Ctx) -> Outcome:
