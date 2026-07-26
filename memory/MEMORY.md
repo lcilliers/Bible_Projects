@@ -76,6 +76,7 @@
 - [project_prophets_wisdom_read_at_movement_depth_debt](project_prophets_wisdom_read_at_movement_depth_debt.md) — filed prophet/wisdom readings = MOVEMENT-depth; span-depth DEBT.
 - [project_poetic_chapter_driven_method](project_poetic_chapter_driven_method.md) — poetic chapter-driven; Phase1 per-verse + Phase2 whole-chapter. ★ PSALTER COMPLETE.
 - [project_cross_chapter_synthesis_per_characteristic](project_cross_chapter_synthesis_per_characteristic.md) — NEXT: cross-chapter summary PER CHARACTERISTIC; re-align first.
+- [project_movement_operation_definition_written](project_movement_operation_definition_written.md) — 07-26: "movement" definition signed off — Passage read guidance.md gives the operational subject/operation/source/target spec.
 - [project_lexical_prose_endpoint_and_ve_lexical_phase1](project_lexical_prose_endpoint_and_ve_lexical_phase1.md) — per-term endpoint = story ('lexical_prose'). ve_lexical Phase1 (M63, 3.37.0).
 - [project_psalms_narratives_rollout_complete](project_psalms_narratives_rollout_complete.md) — ★ LIVE (07-12): Psalms two-narrative rollout COMPLETE 46/46; open = DB-load + cross-term + transposition.
 - [project_ib_observation_folds_into_ve_lexical](project_ib_observation_folds_into_ve_lexical.md) — ib_observation transitional → ve_lexical items; don't link the stores.
