@@ -1,0 +1,27 @@
+# Lexicon-parse quality report
+
+> Generated 2026-07-25T15:13:45Z by `lexicon.validate`. Read-only findings, not a gate. Covers strong_meaning_parsed/strong_lsj_parsed/strong_mounce_parsed/strong_related together.
+
+- `strong_lexicon` rows with no `strong_lsj_parsed` output: **0**
+- `strong_lexicon` rows with no `strong_mounce_parsed` output: **0**
+- `strong` rows with no `strong_related` fetch attempted yet: **0**
+
+## Contents
+
+- [Summary](#summary)
+- [Coverage — strong_lexicon/strong rows with no parsed/related output](#coverage-strong-lexiconstrong-rows-with-no-parsedrelated-output)
+- [Value quality — gloss findings](#value-quality-gloss-findings)
+
+## Summary
+
+0/12080 violate `notblank` in `strong_meaning_parsed.gloss`
+
+## Coverage — strong_lexicon/strong rows with no parsed/related output
+
+strong_lexicon rows with no strong_lsj_parsed output: 0
+strong_lexicon rows with no strong_mounce_parsed output: 0
+strong rows with no strong_related row at all (fetch never run, or STEP had none): 0
+
+## Value quality — gloss findings
+
+clean — 0/12080 violate `notblank`.

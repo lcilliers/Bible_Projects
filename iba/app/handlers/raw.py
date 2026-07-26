@@ -192,12 +192,21 @@ def _record(ctx: Ctx, check_name: str, result: str, detail: str):
 
 def validate(ctx: Ctx) -> Outcome:
     # check 1: the parse-check — span recovers strong_verse
+    # span.strong_variant can hold MORE THAN ONE code since the 2026-07-25 model fix
+    # (parse_spans keeps a tag's combined codes together, e.g. "G1722 G0054" — a real
+    # combined unit in STEP's own HTML, not artificial duplication). A code counts as
+    # recovered if it appears as one whitespace-delimited token in some span row for
+    # that verse, not only as an exact single-value match against the whole column.
+    code_verses: dict[str, set] = {}
+    for r in ctx.db.rows("SELECT verse_id, strong_variant FROM span WHERE deleted=0"):
+        for tok in (r["strong_variant"] or "").split():
+            code_verses.setdefault(tok, set()).add(r["verse_id"])
+
     mism = []
     for code in _strongs_for_word(ctx):
         asserted = {r["verse_id"] for r in ctx.db.rows(
             "SELECT verse_id FROM strong_verse WHERE strong=? AND deleted=0", (code,))}
-        parsed = {r["verse_id"] for r in ctx.db.rows(
-            "SELECT DISTINCT verse_id FROM span WHERE strong_variant=? AND deleted=0", (code,))}
+        parsed = code_verses.get(code, set())
         if asserted - parsed:
             mism.append((code, len(asserted - parsed)))
     if mism:
@@ -220,3 +229,88 @@ def validate(ctx: Ctx) -> Outcome:
         return fail("parse-mismatch", "no-null: " + "; ".join(nulls))
 
     return ok("validation PASSED — parse-check + no-null recorded", parse_check="pass")
+
+
+# ── backfill (book/range; meaning ONLY, no verses) ────────────────────────────────────────────
+# 2026-07-25, added same day as the lexicon-parsed layer. Researcher's finding, working from the
+# verse:span:meaning report (tools/build_verse_span_meaning_extract.py): a "(not yet registered)"
+# span is often a supporting term that still matters for reading a passage, even though nobody has
+# onboarded it as its own study WORD (the only route strong/strong_meaning_tree/strong_lexicon get
+# populated today - raw.detail, per-word). Recommended approach (of three the researcher named -
+# pull everything from STEP up front, pull live at report-render time, or pull progressively per
+# passage): progressive, per-passage, PERSISTED - avoids a wasteful full-Bible pull of codes never
+# actually studied, and avoids re-hitting STEP on every report re-run instead of building real DB
+# coverage. No new "meaning pulled" marker column needed: a `strong` row existing with no matching
+# `strong_verse` row already IS "meaning pulled, verses not" - exactly how the report already
+# detects coverage. Reuses detail_one() as-is (already meaning-only, already independent of
+# verses() - the split the researcher was asking for already existed, just only ever invoked from
+# the per-word new-word chain) rather than duplicating its STEP-parsing logic.
+def _verse_range_filter(osis_id: str, book: str, lo_ch: int, hi_ch: int,
+                        verse_lo: int | None, verse_hi: int | None) -> bool:
+    parts = (osis_id or "").split(".")
+    if len(parts) != 3 or parts[0] != book or not parts[1].isdigit() or not parts[2].isdigit():
+        return False
+    ch, vn = int(parts[1]), int(parts[2])
+    if not (lo_ch <= ch <= hi_ch):
+        return False
+    if verse_lo is not None and not (verse_lo <= vn <= verse_hi):
+        return False
+    return True
+
+
+def backfill_meaning(ctx: Ctx) -> Outcome:
+    book = ctx.params["Book"]
+    range_spec = ctx.params.get("Range")  # "chapter:verse-verse", e.g. "1:1-7"; omit for whole book
+    if range_spec:
+        ch, sep, vspec = range_spec.partition(":")
+        if not sep:
+            return fail("invalid-range", f"-Range needs chapter:verse[-verse], e.g. 1:1-7 (got {range_spec!r})")
+        vlo_s, _, vhi_s = vspec.partition("-")
+        lo_ch = hi_ch = int(ch)
+        verse_lo, verse_hi = int(vlo_s), int(vhi_s or vlo_s)
+    else:
+        lo_ch, hi_ch, verse_lo, verse_hi = 1, 999, None, None
+
+    rows = ctx.db.rows(
+        "SELECT v.osisId AS osis_id, sp.strong_variant AS sv FROM span sp "
+        "JOIN verse v ON v.id = sp.verse_id "
+        "WHERE v.osisId LIKE ? AND sp.deleted=0 AND v.deleted=0", (f"{book}.%",))
+    codes: set[str] = set()
+    for r in rows:
+        if not _verse_range_filter(r["osis_id"], book, lo_ch, hi_ch, verse_lo, verse_hi):
+            continue
+        for code in (r["sv"] or "").split():
+            codes.add(code)
+
+    missing = sorted(c for c in codes if not ctx.db.get("strong", strongNumber=c))
+    if not missing:
+        return ok(f"{book} {range_spec or '(whole book)'}: every span's strong already has a "
+                 f"strong row — nothing to backfill", checked=len(codes), missing=0)
+
+    try:
+        ctx.step.up()
+    except Exception as e:
+        return fail("unreachable", f"STEP is not reachable — cannot backfill meaning: {e}")
+
+    c = {"strong": 0, "sense": 0, "tree": 0, "lexicon": 0, "skipped": 0, "no_vocab": 0}
+    for code in missing:
+        detail_one(ctx, code, c)
+
+    # keep the downstream layers in sync AS PART OF this method (researcher's 2026-07-25
+    # instruction — a manual lexicon.parse re-run was missed once already after the first backfill
+    # run). Import here, not at module top, to avoid a name collision with this function's own
+    # local `c["lexicon"]` counter.
+    from .lexicon import fetch_related_for, rebuild_parsed_tables
+    parsed_counts = rebuild_parsed_tables(ctx)
+    related_counts = fetch_related_for(ctx, missing, clear_first=False)
+
+    return ok(f"{book} {range_spec or '(whole book)'}: {len(codes)} distinct strong(s) referenced, "
+             f"{len(missing)} were unregistered — pulled meaning (not verses) for {c['strong']} "
+             f"({c['no_vocab']} returned no vocab from STEP); parsed layer rebuilt "
+             f"({parsed_counts['strong_meaning_parsed']} meaning / {parsed_counts['strong_lsj_parsed']} "
+             f"lsj / {parsed_counts['strong_mounce_parsed']} mounce rows); relatedNos fetched for "
+             f"the {len(missing)} newly-registered strong(s) "
+             f"({related_counts['strong_related']} related row(s), "
+             f"{related_counts['errors']} fetch error(s)).",
+             distinct_codes=len(codes), missing_before=len(missing), **c,
+             **parsed_counts, **related_counts)

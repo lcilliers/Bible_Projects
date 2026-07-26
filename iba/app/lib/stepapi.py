@@ -132,18 +132,28 @@ class Step:
         return total, list(seen.values())
 
     def parse_spans(self, preview: str) -> list[dict]:
-        """One row per CODE. A surface word maps to N codes; each is a row at its own
-        running position; particles fall out as their own rows."""
+        """One row per HTML <span> TAG, not per code (corrected 2026-07-25 — see
+        migration/rebuild_span_combined_units.py). STEP tags a span with the FULL set
+        of source-language codes it aligned to that one rendering unit — e.g.
+        strong='G1722 G0054' on "purity" (the preposition ἐν fused with its noun for
+        this one English word), or a Hebrew word's root plus its attached prefix/
+        suffix particles. Confirmed against a live STEP re-fetch: this combination is
+        in STEP's own source HTML, not introduced downstream — splitting it into one
+        row per code (the old behaviour) misattributed the OTHER codes' surface text
+        onto the code that has none of its own, and broke the particle off from the
+        word it's semantically bound to. strong_variant and morph_code now keep the
+        tag's full space-separated code/morph list together; position is the running
+        TAG index (not code index). is_particle is 1 only if EVERY code in the tag is
+        a particle (a tag mixing a content word with attached particles is not itself
+        a pure particle)."""
         out, pos = [], 0
         for morph_list, strong_list, surface in self.span_re.findall(preview):
-            strongs = strong_list.split()
-            morphs = morph_list.split()
-            for i, code in enumerate(strongs):
-                out.append({
-                    "position": pos, "surface": surface.strip(), "strong_variant": code,
-                    "morph_code": morphs[i] if i < len(morphs) else None,
-                    "is_particle": 1 if self.is_particle(code) else 0})
-                pos += 1
+            codes = strong_list.split()
+            out.append({
+                "position": pos, "surface": surface.strip(), "strong_variant": strong_list.strip(),
+                "morph_code": morph_list.strip(),
+                "is_particle": 1 if codes and all(self.is_particle(c) for c in codes) else 0})
+            pos += 1
         return out
 
 

@@ -24,15 +24,23 @@ Within each sense block, text is separated by role, not concatenated:
 The entry's headword (Greek lemma + morphology, before the first sense tag)
 is emitted as its own row with sense_label "headword".
 
-Each sense's gloss is then exploded further, one row per comma/semicolon-
-delimited term (bracket-aware split shared with build_mounce_lexicon_extract.py
-via lexicon_split_common.py - a gloss like "without dissimulation, -τως"
-becomes two rows), so multi-row-per-sense_label is also expected. sense_label
-and note are repeated across the split rows. Every row is tagged row_type:
-"headword" for the headword row(s), "lookup" for every sense row -
-unlike Mounce, there is no word-count-based lookup/description split here,
-since the gloss/note separation already isolates the definitional wording
-from the surrounding prose.
+(2026-07-25: this sense's gloss is now kept whole, NOT exploded on comma/
+semicolon - matching the same fix in build_meaning_tree_extract.py and
+build_mounce_lexicon_extract.py: checking back against STEP showed internal
+commas in a bold span are punctuation within one sense, not sense
+separators, e.g. G0026's block "I.2" bolds "love" and "brotherly love,
+charity," as two phrases - the comma inside the second one is not a third
+sense.  sense_label and note are still repeated across rows when a block
+has more than one <b> span, since gloss reassembly across spans in the same
+block is unchanged here - flagged, not fixed, in this pass.) Every row is
+tagged row_type: "headword" for the headword row(s), "lookup" for every
+sense row - unlike Mounce, there is no word-count-based lookup/description
+split here, since the gloss/note separation already isolates the
+definitional wording from the surrounding prose.
+
+strong is split into strong (base code) + strong_variant, matching
+build_mounce_lexicon_extract.py/build_meaning_tree_extract.py - see
+lexicon_split_common.py's split_strong_variant().
 
 This is a different object from build_mounce_lexicon_extract.py's flat
 term list: one row per SENSE (multi-row per strong is expected), with
@@ -47,10 +55,10 @@ import re
 import sqlite3
 from html.parser import HTMLParser
 
-from lexicon_split_common import split_multi_gloss
+from lexicon_split_common import split_strong_variant
 
 DEFAULT_DB = r"C:/Bible_study_projects/iba/app/db/iba.db"
-DEFAULT_OUT = r"C:/Bible_study_projects/outputs/csv/lsj-sense-parsed-iba-20260723.csv"
+DEFAULT_OUT = r"C:/Bible_study_projects/outputs/csv/lsj-sense-parsed-iba-20260725.csv"
 
 LEVEL_TAGS = {"level1", "level2", "level3", "level4"}
 TOP_LEVEL_LABEL_RE = re.compile(r"^[IVXLCDM]+$")
@@ -119,9 +127,9 @@ def dedupe_preserve_order(items):
     return out
 
 
-def parse_lsj_rows(strong, html):
+def parse_lsj_rows(strong, strong_variant, html):
     if not html:
-        return [(strong, "", "", "", "lookup")]
+        return [(strong, strong_variant, "", "", "", "lookup")]
 
     p = SenseParser()
     p.feed(html)
@@ -166,9 +174,7 @@ def parse_lsj_rows(strong, html):
     final_rows = []
     for row_strong, label, gloss, note in parsed:
         row_type = "headword" if label == "headword" else "lookup"
-        gloss_parts = split_multi_gloss(gloss) or [gloss]
-        for part in gloss_parts:
-            final_rows.append((row_strong, label, part, note, row_type))
+        final_rows.append((row_strong, strong_variant, label, gloss, note, row_type))
     return final_rows
 
 
@@ -178,7 +184,8 @@ def build_rows(conn):
 
     rows = []
     for strong, lsj in cur.fetchall():
-        rows.extend(parse_lsj_rows(strong, lsj))
+        base, variant = split_strong_variant(strong)
+        rows.extend(parse_lsj_rows(base, variant, lsj))
     return rows
 
 
@@ -193,7 +200,7 @@ def main():
 
     with open(args.out, "w", newline="", encoding="utf-8") as f:
         writer = csv.writer(f, delimiter=",", quoting=csv.QUOTE_ALL)
-        writer.writerow(["strong", "sense_label", "gloss", "note", "row_type"])
+        writer.writerow(["strong", "strong_variant", "sense_label", "gloss", "note", "row_type"])
         writer.writerows(rows)
 
     print("rows:", len(rows))

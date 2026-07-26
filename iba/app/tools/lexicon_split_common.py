@@ -16,6 +16,12 @@ build_meaning_tree_extract.py):
   containing Greek or Hebrew script is never "lookup" (a Hebrew or Greek
   original-language form or cross-reference sitting in an otherwise-English
   gloss is not itself an English lookup term, however short).
+- split_strong_variant(): splits a Strong's code into (base, variant) - e.g.
+  "G0928H" -> ("G0928", "H"). strong_lexicon.strong carries sub-entry
+  letters that strong_meaning_tree.lemma_key never does (it collapses them
+  to the base lemma), so both extract scripts split on this to produce a
+  common "strong" join key, keeping the sub-entry letter as its own field
+  instead of losing it or baking it into an unjoinable key.
 """
 import re
 
@@ -24,6 +30,19 @@ CLOSE_BRACKETS = ")]}"
 
 # Greek (incl. polytonic Greek Extended) and Hebrew (incl. points/cantillation) blocks.
 NON_LATIN_SCRIPT_RE = re.compile(r"[Ͱ-Ͽἀ-῿֐-׿]")
+
+STRONG_VARIANT_RE = re.compile(r"^([GH]\d{4})([A-Za-z]*)$")
+
+
+def split_strong_variant(strong):
+    """Split a Strong's code into (base, variant). Codes that don't fit the
+    [GH]dddd[letters]* shape (a handful of 5-digit extended codes, e.g.
+    "G20125") pass through unsplit with an empty variant - they already
+    match their strong_meaning_tree counterpart as-is."""
+    m = STRONG_VARIANT_RE.match(strong)
+    if not m:
+        return strong, ""
+    return m.group(1), m.group(2)
 
 
 def bracket_aware_split(text, delim):

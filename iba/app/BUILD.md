@@ -780,3 +780,204 @@ investment going forward (see the session log's closing section) — remaining k
 (e.g. a rare borrowed-surface-text word coinciding with a content strong's wordlist, like `H3068G`
 tagged "IB related" from one stray "peace") are left as a documented, understood limitation, not
 patched.
+
+## 16. `span` model correction — combined-code tags were being split, not just mis-tallied (2026-07-25)
+
+**Bug found by the researcher**, working from `outputs/csv/span-unmatched-lexicon-json-iba-20260725.csv`
+(the lexicon-combined completeness check, §15's line of work): `span_id=7` (verse `2Cor.6.6`, "purity")
+showed `strong_variant='G1722'` alone — but STEP's own HTML tags that word `<span morph='PREP N-DSF'
+strong='G1722 G0054'>purity</span>`, i.e. ONE combined unit (the preposition ἐν fused with its noun for
+this English rendering). The old `parse_spans()` exploded every multi-code tag into one row per code,
+pairing the SAME surface text with each — so the `G1722` row for "purity" showed `surface="purity"`,
+which is wrong; "purity" is `G0054`'s surface, not `G1722`'s (`G1722` has none of its own here). This
+repeated across every multi-code tag in the DB: 116,953 of the rebuilt 370,200 rows now carry more than
+one code.
+
+**Verified the fault was in our parsing, not STEP's data**, before touching anything: fetched
+`2Cor.6.6` live from STEP (`rest/search/masterSearch/strong=G1722|version=ESV_th|reference=2Cor.6.6-
+2Cor.6.6`) and diffed its `preview` against the stored `verse.preview` — byte-for-byte identical (816
+chars). Also sampled ~4,000 verses to check the multi-code pattern generalizes correctly: Hebrew
+multi-code tags are a different, already-correct phenomenon (one written word = root + attached
+prefix/suffix particles, e.g. `H7931 H9033 H0408 H9002` on "dwell" — genuinely one unit, particles
+already flagged `is_particle`); Greek multi-code tags have NO fixed code order (`PREP` first on
+"purity" `G1722 G0054`, but `PREP` second on "leaven" `G2219 G1722`, and no head at all on "But"
+`G1161 G2532` — two conjunctions fused into one English word) — ruling out a "take the last code"
+heuristic and confirming the only correct fix is: keep a tag's codes together, don't split them.
+
+**The declared config model was itself wrong**, not just the code: `cfg_table.span.grain` said "ONE ROW
+PER CODE"; `cfg_column.span.strong_variant.use` said "ONE strong code" with an FK to
+`strong.strongNumber`. That's what justified the split in the first place. Corrected via
+`Config-Maintenance.ps1 -Step Propose` (approval-gated, all three approved by the researcher):
+
+- `RUN-20260725_133709_153-CONFIGMAINT` — `cfg_table.span`: grain/use → one row per HTML `<span>` TAG,
+  not per code; `(verse, position)` is the key on tag index, not code index.
+- `RUN-20260725_133720_920-CONFIGMAINT` — `cfg_column.span.strong_variant`: dropped the single-code FK
+  to `strong.strongNumber` (doesn't hold for a combined value); redescribed as "one or more strong
+  codes, space-separated, as STEP's HTML has them."
+- `RUN-20260725_133735_587-CONFIGMAINT` — `cfg_column.span.is_particle`: redefined as "1 only if EVERY
+  code on the tag is a particle" (was implicitly single-code).
+
+**Code fixed to match:**
+
+- `lib/stepapi.py` `Step.parse_spans()` — now one row per `<span>` tag: `strong_variant`/`morph_code`
+  keep the tag's full space-separated list; `position` is the tag index; `is_particle` is `1` only if
+  every code in the tag is a particle.
+- `handlers/raw.py` `validate()` — the parse-check (`span` recovers every `strong_verse` assertion) now
+  matches a code against any whitespace-delimited *token* in `strong_variant`, not exact string equality
+  against the whole column, so it still works once a row can hold multiple codes.
+
+**`span` fully regenerated**, not patched: `migration/rebuild_span_combined_units.py` (dry-run by
+default, `--apply` to write) deletes and reinserts every row from the already-stored `verse.preview` —
+no STEP re-fetch needed, since the preview HTML was already confirmed correct and unchanged. DB backed
+up first (`db/iba.db.bak-20260725-prespanregen`). Result: 534,075 → 370,200 rows (fewer, since combined
+tags collapse to one row instead of N). Verified `verse_id=2` produces exactly the 9 tags in its HTML
+(was 14 rows exploded from 9 tags).
+
+**Global re-verification of the parse-check** (all 112,446 `strong_verse` assertions, not just one
+word): 424 still unrecoverable, across 5 codes (`G1510`, `G2192`, `G1096`, `H5462`, `G3588`). Traced to
+a **separate, pre-existing bug**, NOT caused by this fix and NOT fixed in this pass: `cfg_setting.
+step.span_html`'s regex requires a `morph='...'` attribute to match at all, but 1,076 span tags across
+823 verses have none (e.g. `<span strong='G3588'>which</span>`, Jas 1:21 — no `morph=`) and are silently
+skipped by both the old and new parser alike. Flagged to the researcher; not yet actioned.
+
+**Ripple effects not yet addressed** (flagged, not silently left implicit): any downstream consumer
+that assumed `span.strong_variant` is always a single clean code will need the same token-aware
+handling as the `validate()` fix — in particular `_check_span_unmatched_lexicon_json.py` (§ this
+session's earlier work) matched on `split_strong_variant(strong_variant)`, which will now mis-split a
+combined value; it needs re-running with token-aware matching before its numbers can be trusted again.
+
+## 17. Lexicon-parsed layer baked into the core app + progressive meaning-only backfill (2026-07-25, later)
+
+Continues §16 — the same session's corrected parsing rules (comma/semicolon are not sense
+separators, refs/notes scoped per `<b>` span) were still only living in `iba/app/tools/`'s
+exploratory extract scripts, output to `outputs/csv|json/`. Researcher's instruction: "bake this
+into the app... create the schemas, create the configs, and update the methods to follow the
+standard of the IBA app and be included in the core system... check every aspect to ensure you
+build this in accordance with the rules" — full GOVERNANCE.md re-read first, not assumed from
+memory, per that instruction.
+
+**New parsed layer — 4 tables, physically built FROM `cfg_column`, not hand-written DDL**
+(`migration/bootstrap_lexicon_parsed_layer.py`, bootstrap-direct — brand-new mechanism, same
+class as `bootstrap_new_reports_phase1.py`, not `configmaint.propose`-able):
+
+- `strong_meaning_parsed` (base-keyed, `lemma_key` — matches `strong_meaning_tree`'s own key)
+- `strong_lsj_parsed` / `strong_mounce_parsed` (full-code-keyed, `strong` — matches `strong.
+  strongNumber`/`strong_lexicon.strong` exactly, FK'd)
+- `strong_related` (full-code-keyed; STEP's `relatedNos`, fetched live — no raw table captures
+  this, so it's not "parsed FROM" anything, it's fetched fresh. `related_strong` deliberately
+  unconstrained — STEP can name a code never onboarded here)
+
+**Parsing logic ported to `lib/lexiconparse.py`**, not imported from `tools/` — the exploratory
+scripts stay "not wired into the app" as their own docstrings say; the app gets its own governed
+copy of the same corrected algorithm (`SegmentParser` for meaning-tree, `SenseParser` for LSJ,
+`RowSplittingParser` for Mounce), verified byte-identical row counts against the tools/ output
+before trusting it (11788/10020/1547).
+
+**New standalone work package `lexicon-parse`** (3 steps, each independently invokable —
+`Lexicon-Parse.ps1 -Step Parse|Related|Validate`):
+- `lexicon.parse` — no network, deterministic, full clear-and-rebuild every run (no natural dedup
+  key on a parsed-sense table, same shape as `strong_meaning_tree` itself).
+- `lexicon.related` — one live STEP `getInfo` call per `strong` row. A genuine zero-related result
+  writes a placeholder row (empty `related_strong`) so it's distinguishable from "never
+  attempted" — found this the hard way: the first version of `lexicon.validate` flagged all 362
+  legitimate zero-result strongs as a coverage gap because of this exact ambiguity; fixed by
+  writing the placeholder, not by loosening the check.
+- `lexicon.validate` — coverage (`strong_lexicon`/`strong` rows with no parsed/related output) +
+  value-quality (`lib.valuequality`, `notblank` on `strong_meaning_parsed.gloss`) — same shape as
+  `candidate.validate`/`passage.validate`, escalates only if findings exist, persists
+  `iba/app/reports/lexicon-parse.md` every run (`governance.reports_must_persist` — registered in
+  `lib/cfgquality.QUALITY_CHECK_REPORT_PATH`/`REPORT_STEPS`, the hardcoded Python tuples that make
+  `configmaint.validate` actually check for it, not just a convention).
+
+New `config_module` enum value `lexicon` (bootstrapped alongside, same batch — a new VALUE on an
+already-existing group, not a schema change). No new `cfg_write_grant` rows needed for `strong`/
+`strong_sense`/etc. — `lexicon.parse`/`lexicon.related` only write their own 4 new tables.
+
+**A real, pre-existing coherence bug found and fixed while verifying** (unrelated to this layer):
+§16's `span.strong_variant.fk` correction had set it to `''` (empty string) to mean "no FK" —
+`configmaint.validate`'s FK check treats any non-NULL `fk` as a declared reference to parse, so
+`''` failed as "FK -> unknown table ''". Fixed via `configmaint.propose` (`fk: null`) — the
+correct NULL representation, no behaviour change intended. `configmaint.validate` was clean
+before this layer's work started (§16 didn't re-run it) — this was sitting latent until today's
+full re-check surfaced it, exactly why the researcher's "check every aspect" instruction mattered.
+
+**Progressive meaning-only backfill — `handlers/raw.py:backfill_meaning`, new standalone work
+package `raw-backfill`** (`Raw-Backfill.ps1 -Book <book> [-Range C:V-V]`). Researcher's finding,
+working from `tools/build_verse_span_meaning_extract.py`'s output: a "(not yet registered)" span
+is often a supporting term still relevant to reading a passage, even though nobody onboarded it as
+its own study word. Of three approaches offered (bulk-pull the whole Bible; pull live at
+report-render time; pull progressively per passage, persisted), chose the third — reuses `raw.
+detail_one()` completely unchanged (already meaning-only, already independent of `raw.verses` —
+the split asked for already existed, just only ever invoked from the per-word `new-word` chain).
+No new write grants needed (writes under the existing `call2_getInfo` writer identity, which
+already holds every grant it needs) and no new "meaning pulled" marker column — a `strong` row
+existing with no matching `strong_verse` row already IS "meaning without verses", the same
+signal the verse:span:meaning report already reads to detect coverage.
+
+**`tools/build_verse_span_meaning_extract.py` itself updated twice more, same day** (it had
+already been fixed once this session for §16's span-combined-code regression):
+- Meaning source switched from raw `strong_meaning_tree.sense_text`/`strong_lexicon.mounce`
+  (unparsed HTML) to the new `strong_meaning_parsed`/`strong_mounce_parsed` tables. `strong_sense.
+  head` dropped entirely (superseded). `strong_lsj_parsed` deliberately NOT pulled in by
+  default — LSJ is the classical lexicon, often dozens of senses per term, and would bloat a
+  per-verse table past readability for this report's stated use.
+- Added `--range C:V-V` (e.g. `1:1-7`) alongside the existing whole-chapter `--chapters`, for a
+  study passage narrower than a chapter — the researcher's actual next request.
+
+**Verified end-to-end for Dan 1:1-7** (the researcher's own worked example): `raw.backfill_meaning`
+found 84 distinct strongs referenced, 62 unregistered, pulled all 62 clean (0 STEP failures);
+`lexicon.parse` re-run picked them up (`strong_meaning_parsed` 11788 -> 12073); the report
+regenerated from 24% to **100%** meaning coverage for that range, e.g. "year" (`H8141 H9003`,
+a combined preposition-prefix tag) now shows both codes' real meaning instead of one failed
+lookup. `configmaint.validate` re-run clean after every step (`ok`, 0 coherence errors,
+0 orphans) — confirming both the lexicon-parsed layer and raw-backfill mechanism, plus the §16
+FK fix, are fully coherent together.
+
+## 18. `raw.backfill_meaning` now self-contained — parse + related folded in (2026-07-25, later)
+
+Continues §17. Found immediately in use: after the first Dan 1:1-7 backfill, `lexicon.validate`
+correctly flagged 62 strongs with no `strong_related` fetch yet — the parse/related refresh had to
+be remembered and run manually as separate steps, and the related refresh specifically was missed
+once before being caught. Researcher's instruction: fold both into the backfill method itself.
+
+**`handlers/lexicon.py` refactored, no behaviour change to the existing steps**: the rebuild body
+of `parse()` extracted to `rebuild_parsed_tables(ctx) -> dict`, and `related()`'s fetch body to
+`fetch_related_for(ctx, codes, clear_first) -> dict` (`clear_first=True` for `lexicon.related`'s
+own full-table use; `False` for a targeted append, since brand-new strongs can't collide with an
+existing row). `lexicon.parse`/`lexicon.related` now thin wrappers over these.
+
+**`handlers/raw.py:backfill_meaning` calls both directly** after `detail_one()`, imported inside
+the function body (not at module top) to avoid shadowing its own local `c["lexicon"]` counter.
+One command now does the whole job: pull meaning for unregistered strongs -> rebuild the parsed
+layer -> fetch relatedNos for exactly the newly-registered strongs (not a full 3000+-strong
+re-fetch — cheap, targeted).
+
+**Verified**: smoke-tested on Dan 1:8 (one previously-unregistered strong) — a single
+`Raw-Backfill.ps1` call reported the meaning pull AND the parsed-layer rebuild (12073 -> 12080
+meaning rows) AND the related fetch (5 rows) in one outcome message; `lexicon.validate` and
+`configmaint.validate` both re-run clean immediately after, no manual follow-up step needed.
+
+## 19. `build_verse_span_meaning_extract.py` — meaning renderer corrected again, researcher's direct challenge (2026-07-26)
+
+Found live via H3581B (a real homonym pair — H3581A "reptile" vs H3581B "strength", same
+`accentedUnicode`/transliteration, unrelated meanings): the researcher's verdict was blunt —
+"you building of the report is faulty and not reliable, you are not working strictly with the
+strong variant... I also do not like the way that you filter the information... Meaning means
+considering the three parse files together, not pick the first one." Both true, both fixed in
+`tools/build_verse_span_meaning_extract.py`:
+
+- `strong_meaning_parsed` is base-keyed in the SOURCE data (`strong_meaning_tree` collapses
+  sub-entry letters — a known, pre-existing limitation, not new). The renderer was presenting its
+  content as if specific to the exact span code with no indication otherwise. It cannot be MADE
+  code-specific here, but it can stop being presented as if it already were: now labeled with its
+  base and an explicit `[AMBIGUOUS - base shared with <siblings>, may not be specific to <code>]`
+  flag whenever `strong` has more than one code sharing that base (22 spans flagged in Dan 1:1-7
+  alone).
+- `stepGloss`/`meaning_tree`/`lsj`/`mounce` were a priority cascade (first non-empty wins), and
+  `lsj` was excluded outright (an earlier, now-corrected scoping decision, §17). All four are now
+  shown together on every covered span, each its own labeled line, `(none)` where empty — never
+  silently merged or dropped.
+
+Not a schema/mechanism change — this tool stays a standalone, read-only one-off
+(`oneoff_path`-governed naming only, same as before). Regenerated for Dan 1:1-7 and verified live
+against H3581B specifically: the ambiguity is now visible in the output, not hidden.

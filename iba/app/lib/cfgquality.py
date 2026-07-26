@@ -28,6 +28,7 @@ QUALITY_CHECK_REPORT_PATH = {
     "configmaint.validate": "configmaint.report_path",     # findings folded into CONFIG-REPORT.md
     "candidate.validate": "candidate.quality_report_path",
     "passage.validate": "passage.quality_report_path",
+    "lexicon.validate": "lexicon.quality_report_path",
 }
 
 # Every step known to write a persistent report via lib/reportkit.render_scaffold — the ground
@@ -41,7 +42,7 @@ REPORT_STEPS = (
     "configmaint.report", "candidate.validate", "candidate.load", "passage.validate",
     "report.word", "validation.word", "validation.book", "retention.report",
     "report.seed_candidate", "report.strong_meaning", "report.span_analysis",
-    "report.schema_overview", "report.registry",
+    "report.schema_overview", "report.registry", "lexicon.validate",
 )
 
 
