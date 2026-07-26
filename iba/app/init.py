@@ -87,8 +87,13 @@ def main() -> int:
     else:
         print(f"  ✓ data tables present ({len(cfg.tables())})")
 
-    # 4. STEP pre-flight
+    # 4. STEP pre-flight. step.required_for_runs is a real cfg_setting (module='step'), not just
+    # a hardcoded check + doc convention — flip it and this behaviour actually changes, per
+    # governance.rules_must_be_config_driven (2026-07-26): a doc/code-only "must" is not a real
+    # rule until the code reads it from config. Default True matches the behaviour this app has
+    # always had (STEP is mandatory infra), so an unset row changes nothing.
     from .lib.stepapi import Step, StepUnavailable
+    step_required = cfg.setting("step.required_for_runs", True)
     try:
         ev = Step(cfg).up()
         # report the EVIDENCE, not a bare 'up' — the known answer that proves it
@@ -98,7 +103,8 @@ def main() -> int:
         step_ok = True
     except StepUnavailable as e:
         print(f"  ⚠ STEP not ready: {e}")
-        print(f"    start the local STEP server, then re-run this. Runs will refuse to start without it.")
+        print(f"    start the local STEP server, then re-run this. "
+              f"{'Runs will refuse to start without it.' if step_required else '(step.required_for_runs=false — runs may proceed without it.)'}")
         step_ok = False
 
     # 5. orientation — read before touching code or config; not a substitute for reading them in full
@@ -119,7 +125,18 @@ def main() -> int:
 
     cfg.close()
 
-    print("\nREADY." if step_ok else "\nREADY (config + DB) — waiting on STEP.")
+    if not step_ok and step_required:
+        # Found 2026-07-26: this used to print the warning above then `return 0` unconditionally
+        # — "runs will refuse to start without it" had no actual teeth at the one place every
+        # session runs first, which is exactly how a STEP-dependent tool got run (and its result
+        # reported as a pass) while STEP was down. Now the exit code actually reflects the stated
+        # rule, gated by step.required_for_runs so it's the config's call, not a hardcoded one.
+        print("\nNOT READY — STEP is required (step.required_for_runs) and not reachable. "
+              "Start STEP, then re-run.")
+        return 1
+
+    print("\nREADY." if step_ok else "\nREADY (config + DB) — waiting on STEP "
+          "(step.required_for_runs=false, proceeding anyway).")
     print("  first run:  iba\\app\\ps\\New-Word.ps1 -Word <word> -Source \"<why>\"")
     return 0
 

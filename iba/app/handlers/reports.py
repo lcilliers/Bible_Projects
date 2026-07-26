@@ -16,6 +16,8 @@ from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import retention as retention_mod
 from ..lib import registryreport, schemareport, seedreport, spanreport, strongreport
+from ..lib import versespanmeaningreport
+from ..lib.stepapi import StepUnavailable
 from ..tools import export_tables_csv
 
 
@@ -78,6 +80,28 @@ def span_analysis_report(ctx: Ctx) -> Outcome:
     path = pathlib.Path(ctx.cfg.setting("report.span_analysis_path",
                                         "iba/app/reports/span-analysis.md"))
     out = spanreport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
+def verse_span_meaning_report(ctx: Ctx) -> Outcome:
+    """Book-scoped, needs -Book plus exactly one of -Chapters/-Range. STEP-dependent (AMBIGUOUS-
+    span live disambiguation) — versespanmeaningreport.write_report() reads step.required_for_runs
+    itself and raises StepUnavailable when required and down; caught here into a clean fail(),
+    resolved by cfg_on_fail(report.verse_span_meaning, unreachable) rather than crashing the run."""
+    book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
+    if ctx.params.get("Range"):
+        ch, vlo, vhi = versespanmeaningreport.parse_range(ctx.params["Range"])
+        lo = hi = ch
+        verse_lo, verse_hi = vlo, vhi
+    else:
+        lo, hi = versespanmeaningreport.parse_chapters(ctx.params["Chapters"])
+        verse_lo = verse_hi = None
+    try:
+        out = versespanmeaningreport.write_report(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
+                                                  book_label=book_label)
+    except StepUnavailable as e:
+        return fail("unreachable", str(e))
     return ok(f"wrote {out}", path=str(out))
 
 

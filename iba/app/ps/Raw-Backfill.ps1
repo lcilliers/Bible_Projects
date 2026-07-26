@@ -5,9 +5,10 @@
     per the researcher's 2026-07-25 direction (see BUILD.md).
 
 .DESCRIPTION
-    Reuses raw.detail_one() unchanged (already meaning-only, independent of raw.verses). After
-    this run, re-run Lexicon-Parse.ps1 -Step Parse to refresh the parsed layer with the newly
-    pulled raw data.
+    Reuses raw.detail_one() unchanged (already meaning-only, independent of raw.verses). Self-
+    contained since 2026-07-25 (BUILD.md §18): the parsed-layer refresh and related-terms fetch
+    for the newly pulled strongs happen automatically as part of this run — no separate
+    Lexicon-Parse.ps1 call needed afterward.
 
 .PARAMETER Book   OSIS book code as stored in verse.osisId, e.g. Dan
 .PARAMETER Range  optional: chapter:verse-verse, e.g. 1:1-7 — narrows to one chapter's verse

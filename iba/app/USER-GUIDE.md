@@ -96,7 +96,10 @@ probe values live in config: `iba/app/config/step.json` → `preflight`.)
     expected to contain 'God'. Stale or wrong module.
 ```
 
-Start (or restart) the STEP server and run `Start-Iba.ps1` again. Runs refuse to start without STEP.
+Start (or restart) the STEP server and run `Start-Iba.ps1` again. Runs refuse to start without STEP
+— governed by `cfg_setting step.required_for_runs` (`true`, approved 2026-07-26 — see
+`GOVERNANCE.md` §16), not just this sentence; `init.py`'s exit code and every STEP-dependent tool
+read that one row rather than each hardcoding the rule separately.
 
 > **A note on "STEP looks closed but the app says up."** Closing the STEP *window* does not always
 > stop its *server* — a `step.exe` process can keep holding port 8989 and answering. If the app

@@ -981,3 +981,272 @@ considering the three parse files together, not pick the first one." Both true, 
 Not a schema/mechanism change — this tool stays a standalone, read-only one-off
 (`oneoff_path`-governed naming only, same as before). Regenerated for Dan 1:1-7 and verified live
 against H3581B specifically: the ambiguity is now visible in the output, not hidden.
+
+---
+
+## 20. `build_verse_span_meaning_extract.py` — live STEP disambiguation for AMBIGUOUS spans, and a real process violation caught and corrected (2026-07-26)
+
+Continues §19 directly: the researcher's own next step was to make the `[AMBIGUOUS]` flag actually
+*resolve* rather than just name the problem — "if the span reference multiple meanings... access
+STEP to get the meaning of the specific construct, and add that to the meaning extract." Built as
+`live_step_meaning()` in `tools/build_verse_span_meaning_extract.py`: whenever a span's
+`meaning_tree` is flagged `[AMBIGUOUS]` (base shared with sibling codes), the report now calls
+STEP's `call2_getInfo(code)` for the EXACT span code (not the base) and adds its own labeled line —
+confirmed live on `H3581B` (Dan 1:4): the DB-side `meaning_tree` line still shows sibling `H3581A`'s
+"reptile" sense (a known, not-yet-fixed collapse bug, §19/GOVERNANCE §recent), but the new `STEP live
+(H3581B, code-specific)` line correctly shows `H3581B`'s own "strength, power, might..." — the
+researcher's finding is now resolved in the report itself, not just flagged. Scope stays small (23
+of Dan 1:1-7's spans call out to STEP, not a bulk pull) and per-code memoised within one run.
+
+**A real process violation, caught by the researcher and corrected in the same session, worth
+recording so it isn't repeated.** The first version of this change let the report degrade to a
+DB-only note ("STEP unavailable this run — resolve manually") when STEP was down, and was then
+*tested* and *reported as passing* while STEP was in fact down — proceeding with STEP down at all,
+and presenting a degraded run as a validated result, is the exact opposite of this app's own stated
+rule (`init.py`/`USER-GUIDE.md`: "runs refuse to start without STEP"). Separately, GOVERNANCE.md/
+BUILD.md were not actually read at session start — only the one-line teasers `Start-Iba.ps1` prints,
+which its own output explicitly says are "not a substitute for reading them in full" (`init.py:105`).
+Both corrected: `main()` now runs STEP's known-answer preflight up front and refuses (`return 1`,
+no report written) if it fails, matching every other STEP-dependent tool in `iba/app/tools/`
+(e.g. `build_strong_related_extract.py`); `build()` takes a required `cfg` and lets `StepUnavailable`
+propagate rather than catching it into a degraded path. Verified end-to-end both ways: refuses
+cleanly with STEP down (no traceback, no report written), and — once the researcher started STEP —
+ran clean live, `H3581B` resolving correctly as above, 23/23 ambiguous spans covered, 0 failures.
+Regenerated: `iba/app/reports/dan-1-1-7-verse-span-meaning-20260726-v2.md`.
+
+---
+
+## 21. `step.required_for_runs` made a real `cfg_setting` — the STEP-required rule stops living only in code/docs (2026-07-26, later the same session)
+
+§20's fix corrected the *behaviour* but left the underlying rule exactly where it was: hardcoded in
+`init.py`'s STEP preflight and stated only in prose (`init.py` comments, `USER-GUIDE.md`). The
+researcher's correction, direct and general: *"ALL rules must be config driven. NO rules should be
+specified only in Governance or Build or Memory or User Guide that is not in the config. Reading the
+config MUST be a startup rule and MUST be executed with every startup instruction."*
+
+**Two new `cfg_setting` rows, proposed via `configmaint.propose` (approval-gated, per
+`governance.governance_md_on_rule_change` — never a silent write), approved by the researcher and
+applied** (escalations `#319`/`#320`, runs `RUN-20260726_082346_730-CONFIGMAINT-GOV` /
+`RUN-20260726_082355_788-CONFIGMAINT-STEPREQ`):
+
+- **`governance.rules_must_be_config_driven`** (module `governance`) — states the meta-rule itself:
+  no operational/process rule may exist only in the docs or memory without a backing `cfg_*` row.
+  Read the same way the other two `governance.*` rows are (`init.py`'s existing generic
+  `WHERE module='governance'` print, step 6 of startup) — a new governance setting is picked up
+  automatically, no code change needed for THIS row specifically to satisfy its own "read at
+  startup" requirement.
+- **`step.required_for_runs`** (module `step`, default `true`) — turns "runs refuse to start
+  without STEP" from a hardcoded `init.py` check + `USER-GUIDE.md` sentence into an actual row the
+  code reads. `init.py`'s STEP preflight now does `cfg.setting("step.required_for_runs", True)` and
+  gates its startup exit code on it (see below); `build_verse_span_meaning_extract.py`'s `build()`
+  reads the identical setting rather than hardcoding its own copy of the rule — one source of
+  truth, not one convention duplicated per STEP-dependent tool.
+
+**A second real bug found while wiring this in**: `init.py`'s `main()` printed
+`"⚠ STEP not ready ... Runs will refuse to start without it"` on a failed preflight, but then
+**`return 0`ed unconditionally** regardless of `step_ok` — the exit code never actually reflected
+the stated rule. This is exactly how the §20 incident happened: `Start-Iba.ps1` "succeeded" (exit 0)
+even with STEP down, so nothing signalled a hard stop at the one place every session is required to
+run first. Fixed: `init.py` now returns `1` (`"NOT READY"`) when `step.required_for_runs` is true and
+STEP's preflight fails; if the researcher ever sets it `false`, startup instead prints a proceeding-
+anyway note and still exits `0` — the config's call, not a hardcoded one either way.
+`build_verse_span_meaning_extract.py` mirrors the same shape: `step.required_for_runs=true` (default)
+raises `StepUnavailable` from `build()`, caught in `main()` to refuse cleanly; `=false` degrades to a
+DB-only note per AMBIGUOUS span (`live_step_meaning()`'s `step is None` branch) instead of silently
+pretending STEP was never required.
+
+**Verified end-to-end, both against the default and after the real rows landed**: `init.py` re-run
+three ways before approval — STEP up (exit 0, `READY.`), STEP down against the default `true` (exit
+1, `NOT READY`), STEP restored (exit 0 again, `config_version` unchanged, confirming the down-test's
+direct SQL poke was fully reverted). Both proposals then approved and applied (escalations `#319`/
+`#320`) — `configmaint.validate` clean afterward (no orphans: `governance.rules_must_be_config_driven`
+covered by `init.py`'s existing generic governance-module print, `step.required_for_runs` covered by
+the real `.setting(` calls in `init.py` and `build_verse_span_meaning_extract.py`, both same-file per
+the orphan-detector's usage rule, §15C). `Start-Iba.ps1` re-run live with the real rows in place —
+the new governance rule now prints under "governance rules (must be complied with this session)"
+alongside the other two, and `READY.`/exit 0 with STEP up, confirming no regression from the
+approved values matching what the defaults already produced. `build_verse_span_meaning_extract.py`
+unaffected (still refuses cleanly with STEP down, still resolves `H3581B` correctly live) — the real
+row's value (`true`) is identical to the default it was tested against, so behaviour is provably
+unchanged; only its *source* moved from hardcoded default to a real, flippable config row.
+
+**Not done — explicitly out of scope for this pass, named so it isn't lost:** the researcher's "ALL
+rules" is broader than these two settings. A full audit of every "must"/"never"/"only sanctioned
+path" statement across GOVERNANCE.md (1100+ lines), BUILD.md (1000+ lines), and USER-GUIDE.md for
+ones with no backing `cfg_*` row has NOT been done — this pass fixed the one concrete case that had
+just been caught live (STEP-required) plus the meta-rule that names the standard going forward.
+Also honestly flagged: unlike `find_orphan_configs()` (cfg → code, exact key-string matching, already
+mechanical), the INVERSE check — docs/memory prose → "is this actually backed by a cfg row" — is not
+a well-defined mechanical scan the way orphan-detection is; it would need either a maintained list of
+"rule-shaped" sentences to check, or acceptance that new instances keep surfacing the way this one
+did and get fixed as found, per `governance.rules_must_be_config_driven`'s own standard, rather than
+a one-time sweep that claims completeness it can't verify.
+
+---
+
+## 22. `report.verse_span_meaning` — the verse-span-meaning extract promoted from a `tools/` one-off to a real, registered, config-governed report (2026-07-26, later the same session)
+
+The researcher's next request: a dedicated `verse-analysis` output area under `iba/app/`,
+book-subfoldered, with the tool's output filed there, "included in the app," fully config-driven —
+not another one-off. Built exactly on the established report-registration pattern
+(GOVERNANCE.md §14, `bootstrap_new_reports_phase1.py`), registered directly via a bootstrap
+migration rather than `configmaint.propose` row-by-row — the same infrastructure-registration
+carve-out §9B/§14 already used, with the researcher's own request standing as the up-front design
+approval that carve-out requires.
+
+**New governed module**: `iba/app/lib/versespanmeaningreport.py` — a SEPARATE copy of
+`tools/build_verse_span_meaning_extract.py`'s logic (per BUILD.md §17's established precedent: the
+`tools/` script "stays standalone/independent, not imported from"; the `tools/` CLI is unchanged
+and still usable ad hoc). Differs from the `tools/` version only in output shaping: renders through
+`lib/reportkit.render_scaffold`/`write_report` (ToC + `## Meaning coverage` / `## Verses` sections,
+per-verse headings bumped to `###` to nest correctly) instead of a flat one-off list, and resolves
+its output path entirely from config + a caller parameter rather than `governance.oneoff_*`.
+
+**Output path — config-driven, not hardcoded, per the researcher's explicit instruction:**
+
+- `report.verse_analysis_output_dir` (new `cfg_setting`, module `report`, default
+  `"iba/app/verse-analysis"`) — the base folder.
+- a per-call `book_label` (e.g. `"Daniel"`) — sub-folders the output by book. Deliberately a
+  PARAMETER, not a setting: which book a given call writes into varies per invocation, the same
+  boundary already drawn for `table_export`'s `-Out`/`-Table` (GOVERNANCE.md §14) — it isn't a rule.
+  Defaults to the OSIS book code if omitted.
+- `report.verse_analysis_output_pattern` (new `cfg_setting`, module `report`, default
+  `"{book}-{range}-verse-span-meaning.md"`) — the filename template. No date suffix (unlike the old
+  one-off naming) since this is now a "stable"-scheme registered report: a regenerate archives the
+  prior version (`reportkit.archive_before_write`) rather than needing a date in the name to avoid
+  collision.
+
+**Full registration bundle** (`migration/bootstrap_verse_analysis_report.py`, idempotent — 8 rows):
+new work package `verse-analysis-report` (`runs_over='book'`, `chained=0`, matching `raw-backfill`'s
+shape — a standalone book-scoped step, not a pipeline), step `report.verse_span_meaning` →
+`handlers/reports.py:verse_span_meaning_report`, the two settings above, a `cfg_report` row
+(`output_kind='md'` — no CSV pairing, this is a narrative extract not a table dump, same choice as
+`report.schema_overview`), two `cfg_report_section` rows, and — unlike the 4 phase-1 reports, which
+never touch STEP — a `cfg_on_fail` row for condition `unreachable` (`report-stop`/`terminal`),
+mirroring `lexicon.related`'s existing row exactly, so a STEP-down run fails cleanly through the
+dispatcher instead of an uncaught crash (`run.py` does not wrap `handler(ctx)` in a try/except —
+every STEP-touching handler must catch `StepUnavailable` itself, per the established idiom).
+
+**A real bug caught before it shipped**: copying `bootstrap_new_reports_phase1.py`'s `_setting()`/
+`cfg_step` insert helpers verbatim would have broken — both used bare `INSERT INTO t VALUES (...)`
+with fewer placeholders than the table now has columns, because `cfg_setting`/`cfg_step` each
+gained an `inactive` column afterward (§15D, added the same day the phase-1 script last ran
+successfully). A bare positional insert silently assumes column count never changes; fixed by
+naming columns explicitly in every insert in the new migration, not just copying the old pattern.
+
+**New PS wrapper**: `iba/app/ps/VerseSpanMeaning-Report.ps1` (`-Book`, one of `-Chapters`/`-Range`,
+optional `-BookLabel`), matching the single-step-per-standalone-report shape (`SpanAnalysis-Report.ps1`
+et al.), not folded into the older `Reports.ps1` (which predates the §14 pattern and only knows the
+original word/book validation trio).
+
+**Verified end-to-end**: `configmaint.validate` clean after the bootstrap (no orphans — both new
+settings are read by real `.setting(` calls in `versespanmeaningreport.py`, same file, per the
+orphan-detector's usage rule). Ran live for Dan 1:1-7 (`-BookLabel Daniel`): wrote
+`iba/app/verse-analysis/Daniel/dan-1-1-7-verse-span-meaning.md`, ToC/sections rendering correctly,
+`H3581B` still resolving its own "strength, power, might..." sense via STEP live disambiguation
+(unchanged from §20/§21), 23 STEP-live spans. STEP-down re-tested through the real dispatcher (not
+just the standalone tool): `python -m iba.app.run verse-analysis-report --step
+report.verse_span_meaning ...` with STEP unreachable returns condition `unreachable` → path
+`report-stop` → exit code `3`, no file written, no crash — config restored afterward.
+
+---
+
+## 23. The `passage`/`verse_passage` system retired — data and config, record kept (2026-07-26, later the same session)
+
+Researcher's own words: *"the past use, and rules have moved on. The assembly of the passages is no
+longer based on the same premise... the current data is no longer relevant and is getting in the
+way... there is nothing to migrate from the old to the new. The effort of reconciling the old data
+with potential new data is not worth it."* This directly answers three `passage.validate`
+escalations (`#195`/`#256`/`#262`) that had sat open, unanswered, since 2026-07-21 — same question
+every time: 18,571 passages, 1.34 avg verses/passage, 81% single-verse, "is this acceptable or does
+the passage rule need revisiting?" It needs revisiting — not by tuning the threshold, by retiring
+the whole candidate-driven assembly premise (`passage.build()` derives boundaries entirely from
+`span_candidate`, itself only produced by `set-candidates` — already retracted 2026-07-23, §15D;
+`build-passages`/`passage-quality` had kept running config-live on top of that now-frozen stamp, a
+real inconsistency closed here).
+
+**Recorded first, before anything was touched** (per the researcher's explicit "record the passages
+that have been generated, and the outcomes"):
+[`reports/passage-system-retirement-record-20260726.md`](../reports/passage-system-retirement-record-20260726.md)
+— full per-book breakdown (18,504 passages / 24,763 verse_passage rows, 65 books), the
+`build-passages` run history (char-continuity vs. `-Rule maximal` comparison runs), and the three
+escalations' full text. A verbatim CSV export of both tables (every column, every row) sits
+alongside it: `reports/passage-retirement-export-20260726/{passage,verse_passage}.csv` — the actual
+historical record, not just the summary.
+
+**Then retired** — `migration/retract_passage_system.py` (new, idempotent), scope enumerated by
+direct query first (same discipline as `retract_candidate_system.py`, §15D): 2 work packages
+(`build-passages`, `passage-quality`) + 2 steps + 5 `passage.*` settings + 1 `cfg_report` row + its
+2 sections + 4 `cfg_on_fail` rows + 2 `cfg_write_grant` rows → all `inactive=1` (same mechanism
+§15D built, config rows kept for provenance, excluded from `configmaint.validate`). Goes one step
+further than the candidate precedent on the DATA side, per this researcher's specific ask: `passage`
+(18,504 rows) and `verse_passage` (24,763 rows) are also soft-deleted (`deleted=1`) — not physically
+dropped, no `DROP TABLE`, schema stays for whatever the future design turns out to be — because the
+researcher explicitly wanted the current data out of the way, not just frozen in place the way
+`candidate_seed`/`span_candidate` were left in §15D (those were still needed by the "new" candidate
+routines at the time; nothing here needs the old passage rows for anything going forward).
+
+**The three escalations answered** `reject` (closest fit among approve/reject/revise for a
+dispatcher-tied escalation, since `retract_run`/`pause_run` are `MANUAL-`-run-id-only per §15B) —
+not "the finding was wrong," but "no threshold-tuning action needed, the system producing it is
+retired," each pointing back at the retirement record.
+
+**Explicitly not done**: no new passage design proposed or scaffolded. The researcher is still
+working out how a future passage concept fits together, possibly relating to the main Bible-study
+programme's separate, newer, verse-first "passage = maximal run of consecutive verses" concept
+(`verse.passage_id`, a different table in a different database) — that reconciliation is
+out of scope here too, on the same "not worth it yet" basis.
+
+**Verified**: `configmaint.validate` clean (no new orphans, no missing-report-path findings —
+`find_missing_report_paths`/`find_missing_cfg_report_rows` correctly skip inactive steps, §15D's
+own `_step_inactive()` guard); `CONFIG-REPORT.md` regenerated, showing the newly-inactive rows under
+its existing "Inactive configs" section; both tables confirmed `0` live (`deleted=0`) rows after the
+run; all three escalations confirmed `state='answered'`, `answer='reject'`.
+
+---
+
+## 24. `[AMBIGUOUS]`/live-STEP-call logic was itself wrong — most flags were false positives (2026-07-26, later the same session)
+
+The researcher's direct challenge, working the Dan 2:1-16 report: *"why can you not resolve the
+meaning from the parsings with H0935G. You know what H0935G renders, why do you first decide it is
+ambiguous and then need to do a span call to resolve it."* Investigated rather than assumed —
+confirmed the challenge was exactly right, and it was systemic, not a one-off:
+
+- `strong.stepGloss` is fetched and written PER EXACT resolved code, every time, with no
+  base-collapsing guard (`handlers/raw.py:detail_one()` — only `strong_meaning_tree`'s write has
+  the collapse-prone guard, §19/§20). So `H0935G`'s own stepGloss ("to come [in]: come") and
+  `H0935P`'s ("to come [in]: bring") were ALREADY correct and code-specific in the DB the whole
+  time — never ambiguous, never needed a live call to establish.
+- The `[AMBIGUOUS]` flag was firing purely on "does ANY sibling code exist sharing this base" —
+  too blunt. Measured directly: of 470 sub-lettered codes with a sibling (178 bases), **362 (77%)**
+  are like `H0935G`/`H0935P` — the SAME root's different STEMS (Qal "come" vs Hiphil "bring"),
+  where the shared `meaning_tree` is one legitimate combined dictionary entry, already
+  stem-labeled ("(Qal)...(Hiphil)...(Hophal)..."), not a case of one sibling's content wrongly
+  standing in for another's. Only **108 (23%)** are genuine collapses like `H3581A`/`H3581B`
+  (stepGloss "strength" vs the shared tree's unrelated "reptile" — zero vocabulary overlap).
+
+**Fixed** in both `lib/versespanmeaningreport.py` and `tools/build_verse_span_meaning_extract.py`
+(kept in sync, same as every prior correction to this logic): new `gloss_supported_by_tree(gloss,
+tree_text)` — tokenizes both (stopword-filtered, 3+ chars) and checks for real overlap. A sibling
+now only triggers `[AMBIGUOUS]` + a live STEP call when this code's OWN already-known stepGloss
+shares NO vocabulary with the shared tree — the actual signal of a genuine collapse. When it does
+overlap (the H0935G-shaped majority), the report shows the existing, already-correct data plainly,
+with no flag and no network call — using what was already known instead of re-fetching it.
+
+**Verified live, re-running all three Daniel reports already built this session:**
+
+- Dan 2:1-16: 8 flagged spans → **0** genuinely ambiguous (all 8 were same-root stem-splits).
+- Dan 1:1-7: 22 flagged (per §19's original count) → **2** genuinely ambiguous — `H3581B`
+  ("strength" vs "reptile", the original diagnosed case) and `H7227B` ("chief/captain" vs base
+  H7227A's "much, many, great" — a real, different sense), both still correctly flagged and
+  resolved via STEP live.
+- Dan 1:7-21: 31 flagged → **2** genuinely ambiguous (`H7356B` "compassion" vs base's "womb",
+  `H1524B` "youth/circle" vs base's "a rejoicing" — both real, both correctly resolved).
+
+Net effect: the report is now both MORE accurate (no more redundant/misleading duplicate STEP
+lookups presented as if they were resolving something) and cheaper to run (a ~90% reduction in live
+STEP calls across the three Daniel reports so far, all correctly reserved for genuine cases). Not
+a schema fix — `strong_meaning_tree`'s own base-collapse root cause (§19's item 4, still not fixed)
+is unchanged; this fix means the report no longer PAYS for that root cause on the ~77% of cases
+where it doesn't actually matter, and still catches it correctly on the ~23% where it does.
+All three Daniel reports regenerated in place (`iba/app/verse-analysis/Daniel/`).

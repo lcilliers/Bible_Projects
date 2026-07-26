@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-07-25T14:33:54Z |
+| generated_at | 2026-07-26T11:52:05Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -38,16 +38,16 @@ _(none)_
 **Missing report paths** (0) — a quality-check step with nowhere for its findings to persist (governance.reports_must_persist violation):
 _(none)_
 
-**Inactive configs** (354 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above:
-- **cfg_setting** (7): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.load_report_path`, `candidate.quality_report_path`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`
-- **cfg_step** (6): `candidate-curation/candidate.curate`, `candidate-curation/candidate.load`, `candidate-quality/candidate.validate`, `seed-candidate-report/report.seed_candidate`, `set-candidates/candidate.seed`, `set-candidates/candidate.set`
-- **cfg_work_package** (4): `candidate-curation`, `candidate-quality`, `seed-candidate-report`, `set-candidates`
-- **cfg_write_grant** (5): `candidate.curate -> candidate_seed`, `candidate.load -> candidate_seed`, `candidate.seed -> candidate_seed`, `candidate.seed -> lemma_inventory`, `candidate.set -> span_candidate`
-- **cfg_report** (3): `candidate.load`, `candidate.validate`, `report.seed_candidate`
-- **cfg_report_section** (10): `candidate.load/duplicates`, `candidate.load/exceptions`, `candidate.validate/gloss`, `candidate.validate/orphan_lemmas`, `candidate.validate/seed_tag`, `candidate.validate/span_tag`, `report.seed_candidate/distribution`, `report.seed_candidate/over_time`, `report.seed_candidate/summary`, `report.seed_candidate/top_lemmas`
+**Inactive configs** (372 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above:
+- **cfg_setting** (12): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.load_report_path`, `candidate.quality_report_path`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`, `passage.cross_chapter`, `passage.default_rule`, `passage.min_shared_strongs`, `passage.quality_report_path`, `passage.review_over`
+- **cfg_step** (8): `build-passages/passage.build`, `candidate-curation/candidate.curate`, `candidate-curation/candidate.load`, `candidate-quality/candidate.validate`, `passage-quality/passage.validate`, `seed-candidate-report/report.seed_candidate`, `set-candidates/candidate.seed`, `set-candidates/candidate.set`
+- **cfg_work_package** (6): `build-passages`, `candidate-curation`, `candidate-quality`, `passage-quality`, `seed-candidate-report`, `set-candidates`
+- **cfg_write_grant** (7): `candidate.curate -> candidate_seed`, `candidate.load -> candidate_seed`, `candidate.seed -> candidate_seed`, `candidate.seed -> lemma_inventory`, `candidate.set -> span_candidate`, `passage.build -> passage`, `passage.build -> verse_passage`
+- **cfg_report** (4): `candidate.load`, `candidate.validate`, `passage.validate`, `report.seed_candidate`
+- **cfg_report_section** (12): `candidate.load/duplicates`, `candidate.load/exceptions`, `candidate.validate/gloss`, `candidate.validate/orphan_lemmas`, `candidate.validate/seed_tag`, `candidate.validate/span_tag`, `passage.validate/by_book`, `passage.validate/dist`, `report.seed_candidate/distribution`, `report.seed_candidate/over_time`, `report.seed_candidate/summary`, `report.seed_candidate/top_lemmas`
 - **cfg_report_csv_table** (5): `candidate.load/candidate_seed`, `candidate.validate/candidate_seed`, `candidate.validate/lemma_inventory`, `candidate.validate/span_candidate`, `report.seed_candidate/candidate_seed`
 - **cfg_enum** (15): `candidate_decision=candidate`, `candidate_decision=exception`, `candidate_decision=rejected`, `candidate_decision=undecided`, `candidate_ib_referent=body_part`, `candidate_ib_referent=characteristic`, `candidate_ib_referent=other_being`, `candidate_source=curated-synonym`, `candidate_source=ib-judgement`, `candidate_source=read-emergent`, `candidate_source=registry-direct`, `candidate_step_status=in_strong`, `candidate_step_status=not_in_step`, `candidate_step_status=step_has_verses_pending`, `candidate_step_status=step_no_verses`
-- **cfg_on_fail** (10): `candidate.curate/change-rejected`, `candidate.curate/invalid-proposal`, `candidate.curate/needs-approval`, `candidate.curate/needs-revision`, `candidate.load/needs-review`, `candidate.seed/no-inventory`, `candidate.set/no-spans`, `candidate.validate/findings-rejected`, `candidate.validate/needs-review`, `candidate.validate/needs-revision`
+- **cfg_on_fail** (14): `candidate.curate/change-rejected`, `candidate.curate/invalid-proposal`, `candidate.curate/needs-approval`, `candidate.curate/needs-revision`, `candidate.load/needs-review`, `candidate.seed/no-inventory`, `candidate.set/no-spans`, `candidate.validate/findings-rejected`, `candidate.validate/needs-review`, `candidate.validate/needs-revision`, `passage.build/no-candidates`, `passage.validate/findings-rejected`, `passage.validate/needs-review`, `passage.validate/needs-revision`
 - **cfg_candidate_rule** (by kind): accept=289
 
 ## 1. Connection (STEP)
@@ -79,6 +79,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.oneoff_report_format | md | default file extension for one-off reports |
 | governance | governance.oneoff_report_naming_pattern | {topic}-{YYYYMMDD}.{format} | filename pattern for one-off reports ({topic}/{YYYYMMDD}/{format} substituted) — same-day collisions get -v2/-v3/... appended by oneoff_path() itself, per the Bible-study side's docs/file-organisation-rules.md §2.3 convention |
 | governance | governance.reports_must_persist | every quality-check or report-producing step must persist its output to a config-defined report path — a terminal print + an escalation row is not sufficient; enforced by lib/cfgquality.find_missing_report_paths, checked in configmaint.validate | the researcher's 2026-07-21 standard: deviations are bugs, not judgement calls — fix, don't ask |
+| governance | governance.rules_must_be_config_driven | no operational or process rule may exist only in GOVERNANCE.md, BUILD.md, USER-GUIDE.md, or memory without a backing cfg_* row recording it as data. A doc/memory statement is not a real rule until the code -- or, for AI-facing process rules, init.py at startup -- actually reads it. Found 2026-07-26: the STEP-required rule existed only as a doc/code convention (init.py comments, USER-GUIDE.md prose), with no cfg_setting backing it, and was silently violated as a result. | the researchers 2026-07-26 standard, raised after an unconfigured rule (STEP required) was silently violated |
 | governance | governance.scripts_ps_dir | iba/app/ps |  |
 | governance | governance.scripts_python_dir | iba/app/tools |  |
 | governance | governance.session_log_triggers_commit | completing a session log (any SESSION-LOG-*.md) means the full commit-and-push cycle happens in the same unit of work -- stage the real changes, commit with a proper message, push, confirm clean/pushed. See CLAUDE.md section 12. |  |
@@ -114,6 +115,8 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | report | report.span_fields | ['position', 'surface', 'strong_variant', 'morph_code', 'is_particle', 'sense'] | which columns the span table shows |
 | report | report.strong_fields | ['stepGloss', 'accentedUnicode', 'stepTransliteration', 'head', 'count', 'verses'] | which columns the L1->L2 strong table shows |
 | report | report.strong_meaning_path | iba/app/reports/strong-meaning.md | where report.strong_meaning persists its output |
+| report | report.verse_analysis_output_dir | iba/app/verse-analysis | base folder for report.verse_span_meaning, sub-foldered per book at write time |
+| report | report.verse_analysis_output_pattern | {book}-{range}-verse-span-meaning.md | filename pattern for report.verse_span_meaning ({book}/{range} substituted) |
 | retention | retention.report_path | iba/app/reports/log-retention.md | where the run/escalation/validation_result log-retention & run-health report is written |
 | retention | retention.snapshot_keep_count | 20 | how many pre-run DB snapshots to keep (oldest pruned first) -- lib/dbsnapshot.py, wired into run.py so every NEW run gets a rollback point; built 2026-07-22 after a candidate.load bug corrupted 1029 candidate_seed rows with no fine-grained rollback available |
 | step | discovery.particle_pattern | ^[HG]9\d{3}$ | grammar-particle codes; excluded from discovery, flagged on a span |
@@ -121,6 +124,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | step | step.expect_gloss_contains | God | STEP preflight known-answer probe |
 | step | step.expect_min_verses | 1000 | STEP preflight known-answer probe |
 | step | step.probe_strong | H0430 | STEP preflight known-answer probe |
+| step | step.required_for_runs | True | STEP is mandatory infra, not optional -- initpys startup preflight and every STEP-dependent tool/handler must refuse rather than degrade when this is true and STEP is down |
 | step | step.span_html | <span[^>]*\bmorph='([^']*)'[^>]*\bstrong='([^']*)'[^>]*>([^<]*)</span> | how STEP formats an interlinear span in a verse preview: (morph, strong, surface). The forward-walk and the span parse read it. |
 | step | step.walk_end | Rev.22.21 | forward-walk upper bound |
 | step | step.walk_max_iter | 400 | forward-walk safety bound |
@@ -197,6 +201,11 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- | --- |
 | 0 | passage.validate | iba.app.handlers.passage:validate | none | read-only quality check: passage verse_count distribution — one escalation per invocation, standalone (not part of build-passages) |
 
+**raw-backfill** — runs over `book` · script `iba/app/ps/Raw-Backfill.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 0 | raw.backfill_meaning | iba.app.handlers.raw:backfill_meaning | book | for a book (optionally narrowed to one chapter's verse range via -Range C:V-V), find every distinct strong its spans reference that has no `strong` row yet, and pull ONLY the meaning (STEP getInfo -> strong/strong_sense/strong_meaning_tree/strong_lexicon) — not verses. Reuses raw.detail_one() unchanged. Progressive, passage-driven DB coverage growth, not a full-Bible bulk pull. |
+
 **registry-report** — runs over `none` · script `iba/app/ps/Registry-Report.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
@@ -240,9 +249,14 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- | --- |
 | 0 | table.export | iba.app.handlers.reports:table_export | none | CSV dump of every data table, verbatim — excludes cfg_* (configmaint.report already owns that content) |
 
+**verse-analysis-report** — runs over `book` · script `iba/app/ps/VerseSpanMeaning-Report.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 0 | report.verse_span_meaning | iba.app.handlers.reports:verse_span_meaning_report | book | verse : span : meaning extract for a book/chapter-range — per-span meaning from all three parse tables (meaning_tree/lsj/mounce), live STEP disambiguation for AMBIGUOUS (sibling-shared-base) spans |
+
 ## 5. on_fail — condition -> path (the fork rules)
 
-**11 of 34 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**11 of 37 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -281,9 +295,12 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | passage.build | no-candidates | report-stop | the book has no candidate spans — run set-candidates first |
 | passage.validate | findings-rejected | report-stop | researcher flagged the passage distribution as needing the rule revisited |
 | passage.validate | needs-revision | report-stop | researcher asked for more specific investigation (see comment) |
+| raw.backfill_meaning | invalid-range | report-stop | the -Range value could not be parsed |
+| raw.backfill_meaning | unreachable | report-stop | STEP is not reachable — cannot pull any meaning |
 | raw.validate | parse-mismatch | report-stop | span does not recover strong_verse |
 | registry.create | word-rejected | report-stop | the researcher rejected the word |
 | registry.exists | word-exists | report-stop | the word already exists; use a refresh run, not new-word |
+| report.verse_span_meaning | unreachable | report-stop | STEP is not reachable — report.verse_span_meaning needs it for AMBIGUOUS-span disambiguation (step.required_for_runs) |
 | report.word | word-not-found | report-stop | the requested word is not in the registry |
 
 ## 6. Write grants — who may write what
@@ -786,6 +803,19 @@ work package `strong-meaning-report` → `iba/app/ps/StrongMeaning-Report.ps1` (
 | 2 | sense_by_registry | ## Sense distribution by registered word (with gloss) | Sense distribution by registered word (with gloss) | ✓ |
 | 3 | lexicon_completeness | ## Lexicon completeness (lsj / mounce) | Lexicon completeness (lsj / mounce) | ✓ |
 CSV pairing: `strong_meaning_tree` (joined to strong.stepGloss via lemma_key); `strong_sense` (joined to strong.stepGloss)
+
+### `report.verse_span_meaning`
+**{book} {range} -- verse : span : meaning extract** — output `md` · naming `stable` · archived to `archive/` · ToC on
+work package `verse-analysis-report` → `iba/app/ps/VerseSpanMeaning-Report.ps1` (chained=0)
+
+| # | section | heading | toc label | in ToC |
+| --- | --- | --- | --- | --- |
+| 0 | coverage | ## Meaning coverage (non-particle spans, this range) | Meaning coverage (non-particle spans, this range) | ✓ |
+| 1 | verses | ## Verses | Verses | ✓ |
+
+| condition | path | route | message |
+| --- | --- | --- | --- |
+| unreachable | report-stop | terminal | STEP is not reachable — report.verse_span_meaning needs it for AMBIGUOUS-span disambiguation (step.required_for_runs) |
 
 ### `report.word`
 **Raw layer — `{word}`** — output `md+csv` · naming `dated` · archived to `archive/` · ToC on

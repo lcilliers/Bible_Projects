@@ -1116,3 +1116,46 @@ it does not stop `run.py`'s dispatcher from actually executing a deactivated ste
 outright is a different, not-yet-made decision (hard error vs. warning vs. leaving it callable
 until the replacement lands) — not assumed here, flagged for whenever the actual replacement
 system is being designed.
+
+---
+
+## 16. `governance.rules_must_be_config_driven` — the general standard behind §8's two settings, raised after a concrete violation (2026-07-26)
+
+§8 already states two governance settings must exist as real `cfg_setting` rows, not just prose
+here. This section generalises that into the standard itself, raised directly by the researcher
+after catching a concrete instance: *"ALL rules must be config driven. NO rules should be specified
+only in Governance or Build or Memory or User Guide that is not in the config. Reading the config
+MUST be a startup rule and MUST be executed with every startup instruction."*
+
+**The trigger.** `BUILD.md` §19/§20 record it in full: "runs refuse to start without STEP" existed
+only as a hardcoded `init.py` check plus prose in `init.py`'s own comments and `USER-GUIDE.md` — no
+`cfg_setting` backed it. A STEP-dependent tool was run (and its degraded result reported as a pass)
+while STEP was down, and separately, `init.py`'s startup preflight printed the right warning but
+`return 0`ed regardless — the stated rule had no enforcement teeth at the one place every session is
+required to run first.
+
+**Proposed via `configmaint.propose` (per §3A — approval-gated, never a silent write), approved and
+applied** (escalations `#319`/`#320`, runs `RUN-20260726_082346_730-CONFIGMAINT-GOV` /
+`RUN-20260726_082355_788-CONFIGMAINT-STEPREQ`):
+
+- **`governance.rules_must_be_config_driven`** (module `governance`) — the general standard: no
+  operational/process rule may exist only in `GOVERNANCE.md`/`BUILD.md`/`USER-GUIDE.md`/memory
+  without a backing `cfg_*` row. Read the same way as every other `governance.*` row — `init.py`'s
+  existing generic `WHERE module='governance'` print at startup (§9A/step 6) — no new code needed
+  for this row specifically to satisfy its own requirement.
+- **`step.required_for_runs`** (module `step`, default `true`) — the concrete fix for the trigger
+  case: `init.py`'s STEP preflight and `build_verse_span_meaning_extract.py`'s `build()` both now
+  read this ONE setting instead of each hardcoding its own copy of "STEP is mandatory." Flip it to
+  `false` and both actually respond — proceeding without STEP rather than refusing — which is this
+  project's own standing proof-of-life test for "is this a real rule or decorative" (§4).
+
+**A second, independent bug found while wiring this in:** `init.py`'s exit code never actually
+reflected the STEP-preflight outcome (`return 0` regardless of `step_ok`) — fixed alongside, full
+detail in `BUILD.md` §21.
+
+**Honest scope note, not deferred quietly:** this is the general standard plus the one concrete case
+that triggered it — it is NOT a completed audit of every "must"/"never" sentence across this file,
+`BUILD.md`, and `USER-GUIDE.md` for a missing `cfg_*` row. Unlike `find_orphan_configs()` (a
+mechanical cfg→code key-string scan), the inverse direction — docs/memory prose → "is this backed by
+config" — has no equivalent mechanical check; new instances are expected to keep surfacing and
+should be fixed as found, per this standard, rather than claimed complete by a one-time sweep.
