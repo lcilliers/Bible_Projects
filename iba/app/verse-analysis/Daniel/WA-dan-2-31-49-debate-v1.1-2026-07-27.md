@@ -1,22 +1,28 @@
-# Dan 2:31-49 -- Passage Debate
+# Dan 2:31-49 -- Passage Debate (v1.1)
 
-**Filename:** WA-dan-2-31-49-debate.md
+**Filename:** WA-dan-2-31-49-debate-v1.1-2026-07-27.md
 **Date timestamp:** 2026-07-27
-**Previous outputs referenced:** base data `dan-2-31-49-verse-span-meaning.md` (100% coverage,
-286/286 non-particle spans, no `[AMBIGUOUS]` spans); method `WA-passage-read-guidance-v1.2-
-2026-07-27.md`; interrogative `WA-interpretation-questions-v1.0-2026-07-26.md`; immediately
-adjacent prior debate `WA-dan-2-17-30-debate-v1.1-2026-07-27.md` (re-read before writing this
-one, per the corrected step 2 note (f)/corpus-continuity practice).
+**Previous outputs referenced:** supersedes `WA-dan-2-31-49-debate-v1.0-2026-07-27.md` (archived);
+base data `dan-2-31-49-verse-span-meaning.md` (100% coverage, 286/286 non-particle spans, no
+`[AMBIGUOUS]` spans); method `WA-passage-read-guidance-v1.3-2026-07-27.md`; interrogative
+`WA-interpretation-questions-v1.2-2026-07-27.md`; immediately adjacent prior debate
+`WA-dan-2-17-30-debate-v1.2-2026-07-27.md`; action-word survey
+`action-word-surfacing-20260727.md`.
 
-**Version:** 1.0 (first debate for this range; written directly, not left as the auto-generated
-scaffold — see `report.passage_debate` for the mechanised skeleton this fills in)
-**Change-control note:** New. First application of the v1.2 read guidance (with step 2 note (f),
-the presumptive-candidate rule) to Dan 2:31-49 — the dream's interpretation and its immediate
-aftermath. A genuine data gap was found and is flagged, not worked around: **Dan 2:33 does not
-exist in the DB** (no `verse` row for `Dan.2.33` at all — the chapter's verse table runs
-1-32, 34-49, skipping 33 entirely). This is a real DB/import gap, not a versification artifact
-resolved elsewhere; flagged in the insufficiencies register and reported to the researcher, not
-fixed here (out of scope for a debate-writing pass).
+**Version:** 1.1
+**Change-control note (this revision).** Researcher-directed retrofit (2026-07-27): every
+operation below now carries an explicit **Action-type** label (read-guidance v1.3 step 5 note
+(a); interrogative v1.2 Q11/B.10), taken from `action-word-surfacing-20260727.md`'s existing
+extraction. No prior conclusion, decision, or silence-finding is changed.
+
+**Change-control note (v1.0, retained for provenance).** First application of the v1.2 read
+guidance (with step 2 note (f), the presumptive-candidate rule) to Dan 2:31-49 — the dream's
+interpretation and its immediate aftermath. **Dan 2:33 has no `verse` row** (the chapter's verse
+table runs 1-32, 34-49, skipping 33). This is not a DB/import gap: `verse` rows are populated per
+onboarded Strong's term (STEP's call3, one fetch per tracked term —
+`iba/app/handlers/raw.py:verses_one`), not by ingesting a book wholesale, so a verse containing
+none of the terms onboarded so far simply has no row yet. Noted in the insufficiencies register
+as a study-coverage boundary, not a data-quality problem.
 
 ---
 
@@ -55,6 +61,7 @@ appearance "was frightening" (H1763, *dechal* — to fear; Pael: to cause to be 
 terrible).
 
 **Operation 1 — the dream's content, disclosed (closes a standing insufficiency).**
+- **Action-type:** disclosed (dream content).
 - **Subject:** n/a — this is content, not an operation on a person in its own right.
 - **Q7 (major linkage, not a fresh operation):** `WA-dan-2-1-16-debate` explicitly named, as
   insufficiency #1, that "the extract... does not give the dream's content; so *what* about the
@@ -62,6 +69,7 @@ terrible).
   image itself, and per this verse, its own quality was *frightening*.
 
 **Operation 2 — Nebuchadnezzar's fear-response, retrospectively explained.**
+- **Action-type:** (frightened) — explanatory content of an already-stated operation, not a fresh act.
 - **Subject:** Nebuchadnezzar.
 - **Operation:** the image's "frightening" quality (H1763, a fear/terror lexeme) is predicated of
   the image's appearance grammatically, but the party who experienced that fright is Nebuchadnezzar
@@ -90,16 +98,18 @@ composition), not related to a human within this clause. **Set aside** — not e
 fork; the image *becomes* relevant to a human (Nebuchadnezzar, identified with its head) only at
 2:37-38, where it is retained.
 
-**Q9 (insufficiency, new).** **Dan 2:33 does not exist in the DB** — confirmed by direct query
+**Q9 (insufficiency, new).** **Dan 2:33 has no `verse` row** — confirmed by direct query
 (`SELECT ... FROM verse WHERE osisId='Dan.2.33'` returns no row; the chapter's verse set is
 1-32, 34-49). Per Part B.7, this is named, not supplied from memory or an external translation.
-Its absence means the "legs of iron, feet of iron/clay" transition between the upper metals (32)
-and the feet's role in 2:34's striking is read across a gap in the base data, not a gap in the
-text's own logic — the *narrative* is not missing anything (2:34 refers to "feet of iron and
-clay" as already established), only this extract's *DB row* for that verse is absent.
+Not a DB defect: no term onboarded so far occurs in 2:33, so STEP's per-term verse-fetch never
+had reason to pull it. Its absence means the "legs of iron, feet of iron/clay" transition between
+the upper metals (32) and the feet's role in 2:34's striking is read across a gap in this
+extract's *coverage*, not a gap in the text's own logic — the *narrative* is not missing anything
+(2:34 refers to "feet of iron and clay" as already established), only this extract's *DB row* for
+that verse doesn't exist yet, pending a future term whose onboarding happens to touch it.
 
-**Decision.** **Set aside** as non-human/circumstantial content. **Flag** the missing-verse data
-gap for the researcher — a DB/import issue, not a debate-writing decision, and out of scope to
+**Decision.** **Set aside** as non-human/circumstantial content. **Note** the missing verse row
+for the researcher — a study-coverage boundary, not a debate-writing decision, and out of scope to
 fix in this pass.
 
 ---
@@ -114,6 +124,7 @@ image "on its feet" (H7271, *regel*), "broke them in pieces" (H1855, *dequq* —
 pieces, shatter).
 
 **Operation 1 — the stone's origin, explicitly denied to be human.**
+- **Action-type:** cut, struck (not by human hand).
 - **Subject:** the stone (non-human) — but the verse's own content is a claim *about* human
   agency, making it in-scope per step 2 note (b): the non-human party's nature is stated *in
   direct contrast to* a human.
@@ -175,6 +186,7 @@ Retained only as the symbolic vehicle whose *meaning* (human kingdoms) is suppli
 plural.
 
 **Operation 1 — Daniel's (and the "we"'s) transition to interpreting.**
+- **Action-type:** transitions (to interpreting).
 - **Subject:** grammatically "we" — Daniel is the sole speaker in every surrounding verse
   (2:27-30, 2:36-45), so this "we" is either a rhetorical/formal plural (Daniel speaking of
   himself), or a genuine inclusion of the three companions who prayed together at 2:17-18. The
@@ -206,6 +218,7 @@ children of man" (H1247I + H0606, *enash*), "the beasts of the field," and "the 
 heavens." Daniel then states directly: "you are the head of gold."
 
 **Operation 1 — God's giving of kingdom/power/might/glory to Nebuchadnezzar.**
+- **Action-type:** gave (kingdom, power, might, glory).
 - **Subject:** God.
 - **Operation:** a giving — the most extensive, explicit statement of divine sourcing directed
   at Nebuchadnezzar anywhere in the corpus so far.
@@ -220,6 +233,7 @@ heavens." Daniel then states directly: "you are the head of gold."
   the fork over the wider one, at least as concerns Nebuchadnezzar specifically.
 
 **Operation 2 — God's giving of dominion over creation.**
+- **Action-type:** gave (dominion over creation).
 - **Subject:** God.
 - **Operation:** a further giving — dominion "into whose hand" over "the children of man, the
   beasts of the field, and the birds of the heavens... making you rule over them all."
@@ -237,6 +251,7 @@ heavens." Daniel then states directly: "you are the head of gold."
   whole-book read, not resolved here.
 
 **Operation 3 — Daniel's identity-conferral: "you are the head of gold."**
+- **Action-type:** identity-conferral ("you are the head of gold").
 - **Subject:** Daniel (speaking; relaying, per 2:28's framing, a divinely-sourced interpretation,
   not his own invention).
 - **Operation:** a movement — an interpretive identification, mapping Nebuchadnezzar onto the
@@ -290,6 +305,7 @@ seed, offspring — the idiom for intermarriage/dynastic union), but "will not h
 (H1693, *devaq* — to cleave, cling).
 
 **Operation 1 — a predicted human social/political operation (new candidate, per note (f)).**
+- **Action-type:** intermarry (attempted political unification).
 - **Subject:** the rulers/peoples of the divided kingdom — a future, generic, unnamed collective
   (Q8), the most tentative subject in this range (prophesied, not yet existing).
 - **Operation:** an attempted political unification through intermarriage ("mix... in marriage"),
@@ -323,6 +339,7 @@ king what shall be after this." "The dream is certain" (H3330, *yatsiv* — trut
 certain) "and its interpretation sure" (H0540, *aman* — trustworthy).
 
 **Operation 1 — God's eternal kingdom (positive attribution completing 2:34's negative one).**
+- **Action-type:** sets up (an eternal kingdom).
 - **Subject:** God.
 - **Operation:** setting up an indestructible kingdom, which will "break in pieces all these
   kingdoms" — the positive counterpart to 2:34's negative "by no human hand": that verse denied
@@ -334,6 +351,7 @@ certain) "and its interpretation sure" (H0540, *aman* — trustworthy).
   other kingdoms ended), not a statement about any individual's disposition.
 
 **Operation 2 — divine revelation, again, to the king (restating 2:19/2:28-29).**
+- **Action-type:** made known (revelation, again).
 - **Subject:** God.
 - **Operation:** making known "what shall be after this" — the same revelatory-content operation
   already established for Nebuchadnezzar at 2:28-29 (`WA-dan-2-17-30-debate`), now reconfirmed at
@@ -342,6 +360,7 @@ certain) "and its interpretation sure" (H0540, *aman* — trustworthy).
 - **Target:** Nebuchadnezzar.
 
 **Operation 3 — Daniel's own stated certainty (his interior, explicit).**
+- **Action-type:** states (his own certainty).
 - **Subject:** Daniel.
 - **Operation:** an epistemic/confessional state — Daniel asserts, in his own voice, that "the
   dream is certain, and its interpretation sure." This is a **stated** interior (a claimed
@@ -366,6 +385,7 @@ Daniel's own interior, closing his speech on the same confident note it began (2
 offering) be "offered up" (H5260, *nesakh* — to pour out, offer sacrifice) "to him" — to Daniel.
 
 **Operation 1 — Nebuchadnezzar's prostration and cultic ordering, directed at Daniel.**
+- **Action-type:** fell, paid homage (worshiped — *seged*).
 - **Subject:** Nebuchadnezzar.
 - **Operation:** this is the single most intense embodied-interior act attributed to
   Nebuchadnezzar in the whole corpus — not merely inferred from an outward act (as at Dan 1:1's
@@ -388,6 +408,7 @@ offering) be "offered up" (H5260, *nesakh* — to pour out, offer sacrifice) "to
   referential debate, not resolved (Part B.1-3) — no reading is imported from outside the text.
 
 **Operation 2 — Daniel's own interior in receiving this (recorded as silence, per note (f)).**
+- **Action-type:** (worshiped) — acted upon, not acting.
 - **Subject:** Daniel.
 - **Operation:** `[not stated]` — the text gives no reaction from Daniel to being prostrated
   before and having cultic offerings ordered in his honour. Does he accept, protest, redirect the
@@ -415,6 +436,7 @@ kings" (H4756, *mare*); "a revealer of mysteries" (H1541, *gelah*); "you have be
 *kehal*) "to reveal this mystery" (H1541 again).
 
 **Operation 1 — the king's theological confession (stated).**
+- **Action-type:** confesses ("God of gods").
 - **Subject:** Nebuchadnezzar.
 - **Operation:** an explicit, first-person confession — Daniel's God named "God of gods and Lord
   of kings, and a revealer of mysteries." A **stated** interior (a confessed belief), not
@@ -425,6 +447,7 @@ kings" (H4756, *mare*); "a revealer of mysteries" (H1541, *gelah*); "you have be
 - **Target:** Daniel (addressed); the confession's content targets God.
 
 **Operation 2 — the king's attribution of the ability to Daniel personally (tension surfaced).**
+- **Action-type:** attributes (ability to Daniel personally).
 - **Subject:** Nebuchadnezzar.
 - **Operation:** "**you** have been able to reveal this mystery" — the king credits the ability
   to Daniel, personally, in the very same breath as praising Daniel's God as its source. This
@@ -451,6 +474,7 @@ gifts" (H4978); "made him ruler" (H7981) "over the whole province of Babylon" an
 (H5460, *cagan*) "over all the wise men of Babylon."
 
 **Operation 1 — the king's reward.**
+- **Action-type:** rewards (honours, gifts, rulership).
 - **Subject:** Nebuchadnezzar.
 - **Operation:** `[INFERRED]` — the reward itself (honours, gifts, rulership) is stated; the
   king's own interior driving it (gratitude, continued awe from 2:46-47, or political
@@ -460,6 +484,7 @@ gifts" (H4978); "made him ruler" (H7981) "over the whole province of Babylon" an
   divine circumstantial-giving pattern of 2:37-38, though structurally similar in shape).
 
 **Operation 2 — Daniel's own interior in receiving the promotion (recorded as silence).**
+- **Action-type:** (promoted) — acted upon, not acting.
 - **Subject:** Daniel.
 - **Operation:** `[not stated]` — no reaction (gratitude, humility, acceptance, reluctance) is
   given. Per note (f), raised as a candidate rather than silently passed, given how carefully
@@ -485,6 +510,7 @@ of the province of Babylon." "Daniel remained" (H8651 + H9003, idiom "at the doo
 the king").
 
 **Operation 1 — Daniel's petition on behalf of his companions.**
+- **Action-type:** made a request (petitioned for his friends).
 - **Subject:** Daniel.
 - **Operation:** a request — the same interior-laden verb (*bĕʿah*, ask/seek/request/desire/
   pray) that carried the four's joint petition at 2:18 and Daniel's own thanksgiving-context at
@@ -503,6 +529,7 @@ the king").
   naturalised them by this point, with no friction shown.
 
 **Operation 2 — Daniel's own continuing status.**
+- **Action-type:** remained (at the king's court).
 - **Subject:** Daniel.
 - **Operation:** a state — "remained at the king's court," closing his personal arc for this
   chapter (distinct from the three, now posted to provincial affairs).
@@ -541,9 +568,9 @@ as a closing status.
 
 ## Insufficiencies register
 
-1. **Dan 2:33 is missing from the DB entirely** — no `verse` row for `Dan.2.33`. A genuine
-   import/data gap (the chapter runs 1-32, 34-49), not a versification note resolved elsewhere.
-   Flagged for the researcher; not fixed in this pass.
+1. **Dan 2:33 has no `verse` row** (the chapter's rows run 1-32, 34-49). Not an import gap: verses
+   are populated per onboarded Strong's term, and no term onboarded so far occurs in 2:33 — a
+   study-coverage boundary, not a data-quality problem. Noted for the researcher, not fixed here.
 2. **The object of Nebuchadnezzar's worship at 2:46** — Daniel personally, Daniel's God via
    Daniel, or the whole revealed event — is not disambiguated by the text. Recorded as open
    referential debate.
@@ -568,8 +595,8 @@ whole-book read — not merged with other passages' logs)
 
 ## Open decisions / next steps
 
-1. **Report the Dan 2:33 data gap to the researcher** — a DB/import issue, not a debate-writing
-   decision; whether and how to backfill it is outside this pass's scope.
+1. **Dan 2:33's missing `verse` row is a study-coverage boundary, not a data issue** — it will
+   appear if and when a future onboarded term happens to occur in it; no action needed now.
 2. **Scope fork — tracked, not a decision awaiting a ruling** (Dan 1:2; corrected 2026-07-27 per
    the researcher's direct correction — "it is not a researcher decision. It will either emerge
    from the broader study or not" — codified in `WA-interpretation-questions-v1.1` Part B.9).

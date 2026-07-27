@@ -1540,3 +1540,50 @@ exactly (7/15/16/14/18). Completion query (`verse` LEFT JOIN live `verse_passage
 `76/341` verses covered — the arithmetic sum of the six ranges is 77, one less because Dan 1:7 is
 the shared boundary between the 1:1-7 and 1:7-21 debates and now correctly has exactly one live
 owner (the later-processed range), not two. `configmaint.validate` clean throughout.
+
+---
+
+## 29. Action-type surfacing — method docs bumped, scaffold generator updated (2026-07-27, later)
+
+**What prompted this.** Rereading the seven Daniel debates on file for
+`iba/app/reports/action-word-surfacing-20260727.md` (a manual, one-off extraction of every
+recorded operation, grouped by verb rather than by verse) showed that the same action-type
+recurs across passages with wildly different interior treatment — e.g. *seged*/"worship" is
+stated at Dan 2:46, compelled-and-silent at Dan 3:5-7, a stated refusal at Dan 3:16-18, and
+confessed at Dan 3:28-29 — a linkage the debates only connected after the fact, by rereading,
+because nothing in the method or the output format carried an action-type as its own recorded
+part. The researcher's direct instruction (2026-07-27): surface this in the debate scope, the
+method instructions, the config, and the output document, and retrofit it into the debates
+already written.
+
+**Method docs bumped, config-anchored via `configmaint.propose` (approval-gated, researcher
+answered both).** `method.passage_read_guidance_path` → `WA-passage-read-guidance-v1.3-2026-07-27.md`
+(new step 5 note (a): every recorded operation carries an explicit, verb-based action-type label,
+independent of whether its interior content is stated/inferred/silent). `method.
+interpretation_questions_path` → `WA-interpretation-questions-v1.2-2026-07-27.md` (new Q11 —
+Action-type — and new Part B.10, which explicitly rules out building a controlled vocabulary or
+new DB field for this now: "a plain, consistently-worded label recorded in the debate's own prose
+is sufficient for now," matching the researcher's own "would not rush into reframing the entire
+study" instruction). Both superseded versions archived to `iba/docs/archive/`, per the same
+pattern the v1.1/v1.2 method-doc revisions already used.
+
+**Scaffold generator updated to match — `lib/passagedebatereport.py:_verse_block()`.** Every
+generated Operation block now includes an `**Action-type:**` line immediately after the
+`**Operation N —**` heading, before Subject/Source/Target, with guidance text pointing at
+read-guidance step 5 note (a) and interrogative Q11/B.10. The interrogative question list in the
+scaffold is relabelled `Q1-Q11` and gets a new `- Q11:` line. No DB/schema change — the label
+lives in the debate's own markdown prose, per B.10's explicit restraint; `debate_status` tracking
+(§28) is unaffected, since it only checks for the literal `<!-- fill in -->` placeholder string,
+which this change preserves the shape of.
+
+**Retrofit into the already-written debates — verified complete.** All seven existing debates
+(Dan 1:1-7 through 3:8-29) were revised to add an Action-type tag to every already-recorded
+operation, using the extraction already done in `action-word-surfacing-20260727.md` as the source
+— not re-derived by rereading the base text again. New versions written per file, superseded
+versions archived, per the same `-vN-YYYYMMDD` convention the four earlier corpus-review
+revisions already established: `WA-dan-1-1-7-debate-v1.2`, `WA-dan-1-7-21-debate-v1.2`,
+`WA-dan-2-1-16-debate-v1.2`, `WA-dan-2-17-30-debate-v1.2`, `WA-dan-2-31-49-debate-v1.1`,
+`WA-dan-3-1-7-debate-v1.1`, `WA-dan-3-8-30-debate-v1.1` (all `-2026-07-27`). Operation-count vs.
+Action-type-line-count checked per file after editing (`grep -c`) — every file matches exactly
+(the +1 in each is the change-control note's own mention of "Action-type," not a missed
+operation): 15/16, 14/15, 20/21, 15/16, 19/20, 7/8, 24/25.

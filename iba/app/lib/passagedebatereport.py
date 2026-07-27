@@ -64,20 +64,26 @@ def _verse_block(v: dict) -> list[str]:
     L = [f"### {v['reference']}", "", f"> {v['text'] or ''}", "",
         "**Observation.** <!-- what the text/span-data states; cite Strong's codes -->", "",
         "**Operation 1 — <!-- short label --> .**",
+        "- **Action-type:** <!-- short, consistent, verb-based label for what was done (e.g. "
+        "\"gave,\" \"summoned/complied,\" \"worshiped,\" \"renamed,\" \"bound and cast\") — "
+        "recorded regardless of whether this operation's interior content is stated, inferred, "
+        "or a recorded silence; a label, not a taxonomy — read-guidance step 5 note (a), "
+        "interrogative Q11/B.10 -->",
         "- **Subject:** <!-- the human (or in-scope non-human, note (b)/(d)) in focus -->",
         "- **Operation:** <!-- state/status, or movement: come from/go to/impact on/emerge/"
         "go away/become evident -->",
         "- **Source:** <!-- self / another human / non-human being / object-situation; "
         "state vs enablement kept distinct, Part B.5 -->",
         "- **Target:** <!-- another operation/human/non-human/object-situation, or n/a -->", "",
-        "**Interrogative — questions considered.** (`WA-interpretation-questions` Q1-Q10 — "
+        "**Interrogative — questions considered.** (`WA-interpretation-questions` Q1-Q11 — "
         "every human mentioned in this verse is a presumptive candidate, per read-guidance "
         "step 2 note (f); a candidate that resolves to nothing is recorded as an explicit "
         "silence, per Part B.4, not omitted)",
         "- Q1/Q2: <!-- focused inner being? implied interior? -->",
         "- Q3: <!-- stated or inferred -->", "- Q4: <!-- source of state vs source of enablement -->",
         "- Q5: <!-- target -->", "- Q6: <!-- state or movement -->", "- Q7: <!-- linkage, or absence surfaced -->",
-        "- Q8: <!-- collective, if applicable -->", "- Q9: <!-- sufficiency -->", "",
+        "- Q8: <!-- collective, if applicable -->", "- Q9: <!-- sufficiency -->",
+        "- Q11: <!-- action-type label, independent of Q1-Q9's outcome -->", "",
         "**Decision.** <!-- retain / set aside as stated IB op / retain as referential aspect / "
         "recorded silence -->", ""]
     return L
