@@ -1366,3 +1366,177 @@ any of the three — `H3581B`/`H7227B` (Dan 1:1-7) and `H7356B`/`H1524B` (Dan 1:
 §24 confirmed were still genuinely flagged after that session's fix, now render their own correct,
 permanent `variant`-tagged content with no flag and no live STEP call needed at all — the
 distinction the report used to have to re-derive live on every run is now a fact sitting in the DB.
+
+---
+
+## 27. `report.passage_debate` — the Daniel passage-debate method baked into the app as a registered scaffold generator (2026-07-27)
+
+The researcher's request: after four manually-written Daniel passage debates (`WA-dan-1-1-7`,
+`WA-dan-1-7-21`, `WA-dan-2-1-16`, `WA-dan-2-17-30`) and a corpus review that found real,
+correctable gaps in how they were being written (`iba/app/reports/dan-debate-method-assessment-
+20260727.md` — verses dismissed before the interrogative ran, inconsistent Subject/Operation/
+Source/Target formatting, a debate citing a method-doc version that had never actually been
+saved under that name), "bake in the analysis/debate process as part of the app" — config items,
+report format/destination/naming/content, a leading PS, and whatever else incorporating a new
+method requires.
+
+**What is and isn't mechanised — the same boundary as everywhere else in this app.** The debate
+itself (applying Q1-Q10 to a verse, judging stated-vs-inferred, naming a subject/source/target)
+is analytical work an AI does against the method docs — no DB query produces it, the same reason
+`report.verse_span_meaning` only renders lexical data and never interprets it. What CAN be
+mechanised, and now is: checking the base extract exists before a debate is even attempted;
+resolving the CURRENT method-doc version from config instead of an AI's memory or a citation that
+was never actually kept in sync with the file on disk (exactly the gap the corpus review found —
+every existing debate cited a "v1.1" read guidance that had never been saved as a file until this
+session); enforcing the Subject/Operation/Source/Target block per operation; and handling output
+path/naming/archiving the same way every other registered report does.
+
+**New governed module**: `iba/app/lib/passagedebatereport.py`. Reuses
+`versespanmeaningreport.fetch_verses`/`parse_range`/`parse_chapters`/`_range_str` directly (both
+live in `lib/`, so this is ordinary intra-package reuse, not the `tools/`-vs-`lib/` boundary
+§17/§22 draw between the standalone CLI scripts and their governed copies). `write_scaffold()`:
+resolves `method.passage_read_guidance_path` / `method.interpretation_questions_path` (new
+`cfg_setting`s, new module `method`) and fails cleanly (`MethodDocMissing`) if either points to a
+file that isn't on disk; resolves the base extract's path from the SAME
+`report.verse_analysis_output_dir`/`report.verse_analysis_output_pattern` settings
+`report.verse_span_meaning` already uses, and fails cleanly (`BaseExtractMissing`) if it doesn't
+exist yet; then writes a debate-document SKELETON — front-matter citing the resolved base extract
+and method-doc filenames together, a Preliminaries section (including a new "corpus-continuity check" prompt
+— read the adjacent prior debate before writing this one, the specific process gap that let a
+false "first stated interior" claim into `WA-dan-2-17-30-debate-v1.0`), one per-verse block per
+verse in the range (Observation / **Operation N — Subject/Operation/Source/Target** / Interrogative
+Q1-Q9 / Decision, all as `<!-- fill in -->` placeholders — the `dan-2-1-16` debate's format is the
+standard this bakes in, per the corpus review's finding that the other three weren't consistent
+with it), and the four standing closing sections (Passage-level linkages, Insufficiencies
+register, Emergent questions log, Open decisions). Every placeholder is a prompt, not invented
+content — the file is explicitly marked "not a finished debate" until every one is replaced.
+
+**New `cfg_setting`s** — `report.passage_debate_naming_pattern` (module `report`, stable scheme,
+`"WA-{book}-{range}-debate.md"` — no `-vN-`/date in the name, `reportkit.write_report` archives
+the prior version on regenerate exactly as `report.verse_span_meaning` does) and the two
+`method.*` settings above (module `method` — a NEW `cfg_enum(config_module)` value, added in the
+same migration, since `configmaint.validate` checks every `cfg_setting.module` against that enum
+as a hard coherence rule, not an advisory one — caught immediately on first validate). Output
+directory is NOT duplicated: reuses `report.verse_analysis_output_dir` so a range's extract and
+its debate scaffold always land in the same book folder.
+
+**Full registration bundle** (`migration/bootstrap_passage_debate_report.py`, idempotent — 15
+rows including the enum value): direct `cfg_*` inserts, not routed through `configmaint.propose`
+row-by-row, per the same infrastructure-registration carve-out §9B/§14/§22 already established —
+the researcher's own request is the up-front design approval that carve-out requires. New work
+package `passage-debate-report` (`runs_over='book'`, `chained=0`, matching `verse-analysis-
+report`'s shape exactly), step `report.passage_debate` → `handlers/reports.py:
+passage_debate_report`, the three new settings, a `cfg_report` row, six `cfg_report_section` rows
+(preliminaries / verses / linkages / insufficiencies / emergent / open_decisions), two
+`cfg_on_fail` rows (`base-extract-missing`, `guidance-doc-missing`, both `report-stop`/`terminal`
+— no STEP dependency here, so no `unreachable` condition), and the `cfg_enum` value.
+
+**New PS wrapper**: `iba/app/ps/PassageDebate-Report.ps1` — same `-Book`/`-Chapters`-or-`-Range`/
+`-BookLabel` shape as `VerseSpanMeaning-Report.ps1`, printing the resolved method-doc paths on
+success so the next step (an AI or the researcher filling in the scaffold) reads them from the
+run's own output, not from memory.
+
+**Verified end-to-end**: `configmaint.validate` failed on first run with the new settings in
+place — `cfg_setting.module='method'` not in `enum.config_module` (a hard coherence error, not
+advisory) — fixed by adding the enum value to the same migration; re-ran idempotently (all 14
+prior rows correctly reported "already present", only the new enum row added), `configmaint.
+validate` clean afterward. Tested against a genuinely new range (Dan 3:1-7, not one of the four
+existing hand-written debates): `VerseSpanMeaning-Report.ps1` run first (auto-backfilled 40
+strongs), then `PassageDebate-Report.ps1` — wrote `iba/app/verse-analysis/Daniel/WA-dan-3-1-7-
+debate.md`, correct front-matter citing `WA-passage-read-guidance-v1.2-2026-07-27.md` /
+`WA-interpretation-questions-v1.0-2026-07-26.md` (the actual current files, resolved from config),
+7 verse blocks each in the full Subject/Operation/Source/Target + Q1-Q9 shape. Both failure paths
+tested through the real dispatcher: no base extract (`base-extract-missing` → exit 3, no file
+written) and a temporarily-redirected `method.passage_read_guidance_path` pointing at a
+nonexistent file (`guidance-doc-missing` → exit 3), config restored afterward — same verification
+discipline §22 used for STEP-down.
+
+**Left for the researcher, not decided here**: the four existing hand-written debates
+(`WA-dan-1-1-7-debate-v1.1`, `WA-dan-1-7-21-debate-v1.1`, `WA-dan-2-1-16-debate-v1.1`,
+`WA-dan-2-17-30-debate-v1.1`) predate this registration and use the ad-hoc `-vN-{date}` naming
+convention, not the new stable-name-plus-archive-on-write scheme `report.passage_debate` now
+writes under (a bare `WA-dan-{range}-debate.md`, no version in the name). They are NOT renamed,
+merged, or touched by this build — running `report.passage_debate` for one of those four exact
+ranges would write a second, differently-named file alongside the existing one, not overwrite it.
+Whether to retire the old naming for those four (moving their content into the new stable-name
+file so future regenerates archive correctly) is a decision for the researcher, not assumed here.
+
+---
+
+## 28. `passage`/`verse_passage` repurposed as the verse-fanout completion record (2026-07-27)
+
+The researcher's own framing: "the passage tables becomes the record of the passages that were
+processed, with a reference to the file name of the verse-span-meaning and the file name of the
+debate... tracks the verses in the verse table against the passages... allows us to keep track of
+the completion of all the books, and back-track to the verses." Explicitly out of scope, in the
+same message: how the debate's own analytical content (operations, decisions) gets digested into
+the DB — "I have not yet decided... this is still emerging." §23 retired the old candidate-driven
+`passage`/`verse_passage` system (18,504/24,763 rows, `deleted=1`, kept for provenance, full CSV
+export already made) and explicitly left "no new passage design proposed... researcher still
+working out how a future passage concept fits." This is that design, now decided by the
+researcher and built.
+
+**A real blocker found before anything else could work.** `verse_passage.verse_id` carries a hard
+`UNIQUE (verse_id)` baked into the table's own `CREATE TABLE` — not a `cfg_unique`-declared,
+deleted-aware convention, an actual SQLite constraint. With 24,763 retired rows (`deleted=1`)
+already occupying nearly every verse_id in the Bible, inserting a new live tracking row for almost
+any verse would violate that constraint outright, blocked by dead rows the researcher explicitly
+wanted kept, not purged. Fixed by rebuilding the table (`migration/repurpose_passage_tracking.py`)
+without the inline constraint, replaced by a partial unique index
+(`idx_verse_passage_verse_id_live ON verse_passage(verse_id) WHERE deleted=0`) — every retired row
+preserved byte-for-byte (verified: `24,763` before and after), "one CURRENT passage per verse"
+enforced for live rows only. One dependent view (`vw_passages_by_book`) had to be dropped before
+the rebuild and recreated identically after (SQLite view bodies don't follow a table rebuild), all
+inside one explicit transaction with a row-count check before commit.
+
+**`passage` gets 6 new nullable columns**, added the same way (`ALTER TABLE`, `cfg_column` rows
+so `Db.write()`'s column-allowlist check accepts them): `book_label`, `verse_span_meaning_path`,
+`verse_span_meaning_written_at`, `debate_path`, `debate_written_at`, `debate_status` (new
+`cfg_enum(passage_debate_status)`: `scaffold` | `filled`). A partial unique index on the range
+identity (`book, start_chapter, start_verse, end_chapter, end_verse WHERE deleted=0`, also
+declared as a `cfg_unique` composite key for documentation) makes re-running a report for the same
+range update the existing row, not duplicate it. The OLD candidate-system columns (`rule`,
+`source`, `needs_review`) are left exactly as they were — new rows simply never populate them
+(their enum values describe an algorithm this new use doesn't run); `anchor_verse_id` is
+repurposed, unchanged in shape, to mean "first verse of the debated range" instead of "first verse
+of a char-continuity run."
+
+**`debate_status` is mechanical, not a content model** — the one boundary the researcher drew
+explicitly. `lib/passagetrack.py` checks the debate file for the literal string `<!-- fill in -->`
+(the exact placeholder `lib/passagedebatereport.py`'s scaffold writes, §27); if none remain, the
+row reads `filled`. Nothing about the debate's operations, subjects, sources, targets, or
+decisions is parsed or stored — that question stays open, per the researcher's own words.
+
+**New governed module**: `lib/passagetrack.py` — `record_extract()`/`record_debate()`, each
+deriving the range's identity (`book`/`start_chapter`/`start_verse`/`end_chapter`/`end_verse`/
+`ref`/`verse_count`/anchor) directly from the actual verse list `fetch_verses()` returns, not from
+the caller's raw `lo`/`hi`/`verse_lo`/`verse_hi` params — works identically whether the run was
+`-Chapters` or `-Range`, no special-casing needed. `_sync_verse_passage()` gives every covered
+verse a live link to the passage; a verse previously live-linked to a *different* passage (range
+boundaries changed on a later run) has that old link soft-deleted first, preserving "one live
+passage per verse." New `cfg_write_grant` rows: `report.verse_span_meaning`/`report.passage_debate`
+→ `passage`, `verse_passage`.
+
+**Linked into the run, not a separate step** — the researcher's explicit requirement. Both
+`handlers/reports.py:verse_span_meaning_report` and `:passage_debate_report` call the matching
+`passagetrack` function immediately after a successful write, in the same handler invocation, so
+the tracking row updates in the same run that produces the file (`ok()`'s `passage_id` now appears
+in the dispatcher's JSON result for both steps).
+
+**Backfilled, not left as a future-only feature**: `migration/backfill_passage_tracking_daniel.py`
+ran the same `passagetrack.record_extract`/`record_debate` functions (not separate logic) against
+the five Daniel ranges already completed before this feature existed, reading their existing
+files without touching them. A real bug caught in the process: `Cfg.close()` does not commit
+(only `Db.close()` does — the live dispatcher path commits via `Db.close()` sharing the same
+connection, which is why the direct end-to-end test below worked first try, but this standalone
+script bypassed that layer entirely); fixed with an explicit `cfg.conn.commit()` before close.
+
+**Verified end-to-end**: live dispatcher test on Dan 3:1-7 (safe — scaffold-only, nothing
+analytical to lose) — `report.verse_span_meaning` created passage id `37414` with
+`verse_span_meaning_path` set; `report.passage_debate` immediately after updated the *same* row
+(confirmed by id, not a duplicate) with `debate_path` and `debate_status='scaffold'`. Backfill for
+the five real ranges: all five show `debate_status='filled'`, `verse_count` matching each range
+exactly (7/15/16/14/18). Completion query (`verse` LEFT JOIN live `verse_passage` for `Dan.%`):
+`76/341` verses covered — the arithmetic sum of the six ranges is 77, one less because Dan 1:7 is
+the shared boundary between the 1:1-7 and 1:7-21 debates and now correctly has exactly one live
+owner (the later-processed range), not two. `configmaint.validate` clean throughout.

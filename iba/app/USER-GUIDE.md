@@ -539,6 +539,50 @@ build account: `GOVERNANCE.md` §14. Registry report: escalation #272, `GOVERNAN
 
 ---
 
+## 12b. Verse-analysis: the extract, then the passage-debate scaffold (added 2026-07-26/27)
+
+Two chained-by-hand, book/range-scoped reports that build a manual movement-analysis (inner-being
+/ passage-debate) workflow for a book. Both are book-subfoldered under
+`report.verse_analysis_output_dir` (default `iba/app/verse-analysis/`), e.g.
+`iba/app/verse-analysis/Daniel/`.
+
+**Step 1 — the base extract** (`report.verse_span_meaning`, `BUILD.md` §22): per-span meaning
+from all three parse tables (meaning_tree/lsj/mounce), live STEP disambiguation for genuinely
+`[AMBIGUOUS]` (sibling-shared-base) spans.
+
+```powershell
+iba\app\ps\VerseSpanMeaning-Report.ps1 -Book Dan -Range 3:1-7 -BookLabel Daniel
+#   -> iba/app/verse-analysis/Daniel/dan-3-1-7-verse-span-meaning.md
+# -Chapters 1-3 works too (whole-chapter range); give exactly one of -Chapters/-Range.
+```
+
+**Step 2 — the passage-debate scaffold** (`report.passage_debate`, `BUILD.md` §27): requires
+Step 1's extract to already exist for the exact same book/range — fails cleanly
+(`base-extract-missing`) if it doesn't. Writes a debate-document SKELETON, not a finished debate:
+front-matter citing the base extract and the CURRENT method docs (resolved from
+`method.passage_read_guidance_path` / `method.interpretation_questions_path`, not memory), one
+per-verse Observation / Operation (Subject/Operation/Source/Target) / Interrogative (Q1-Q9) /
+Decision block per verse, and the standard closing sections (Passage-level linkages,
+Insufficiencies register, Emergent questions log, Open decisions). Every `<!-- fill in -->`
+placeholder is then filled in by applying the two method docs to the verse — that analytical step
+is not, and cannot be, automated by this tool.
+
+```powershell
+iba\app\ps\PassageDebate-Report.ps1 -Book Dan -Range 3:1-7 -BookLabel Daniel
+#   -> iba/app/verse-analysis/Daniel/WA-dan-3-1-7-debate.md
+# prints the resolved method-doc paths on success — read them from there, not from memory.
+```
+
+The two method docs themselves — `iba/docs/WA-passage-read-guidance-v{n}-{date}.md` (steps 1-5 +
+notes) and `iba/docs/WA-interpretation-questions-v{n}-{date}.md` (the Q1-Q10 interrogative + Part
+B guidance of interpretation) — are the actual analytical instructions; read them before filling
+in a scaffold. When either is revised, update its `method.*` cfg_setting (via `configmaint.
+propose`, §9 below) to point at the new file — every future scaffold then cites the new version
+automatically, closing the gap that let debates cite a guidance version that had never actually
+been saved under that name (`BUILD.md` §27).
+
+---
+
 ## 13. Log retention (read-only)
 
 ```powershell

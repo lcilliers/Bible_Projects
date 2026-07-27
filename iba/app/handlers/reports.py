@@ -20,7 +20,7 @@ from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import retention as retention_mod
 from ..lib import registryreport, schemareport, seedreport, spanreport, strongreport
-from ..lib import versespanmeaningreport
+from ..lib import passagedebatereport, passagetrack, versespanmeaningreport
 from ..lib.stepapi import StepUnavailable
 from ..tools import export_tables_csv
 
@@ -121,7 +121,37 @@ def verse_span_meaning_report(ctx: Ctx) -> Outcome:
                                                   book_label=book_label)
     except StepUnavailable as e:
         return fail("unreachable", str(e))
-    return ok(f"wrote {out}{backfill_note}", path=str(out))
+    passage_id = passagetrack.record_extract(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
+                                             book_label, out)
+    return ok(f"wrote {out}{backfill_note}", path=str(out), passage_id=passage_id)
+
+
+def passage_debate_report(ctx: Ctx) -> Outcome:
+    """Book-scoped, needs -Book plus exactly one of -Chapters/-Range, same shape as
+    `verse_span_meaning_report`. Writes a debate SCAFFOLD, not a finished debate — see
+    `lib/passagedebatereport.py`'s module docstring for what is and isn't mechanised. Two
+    failure conditions distinct from `report.verse_span_meaning`'s (no STEP dependency here):
+    the base extract for this exact range not existing yet, and either `method.*` cfg_setting
+    pointing at a file that isn't on disk."""
+    book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
+    if ctx.params.get("Range"):
+        ch, vlo, vhi = versespanmeaningreport.parse_range(ctx.params["Range"])
+        lo = hi = ch
+        verse_lo, verse_hi = vlo, vhi
+    else:
+        lo, hi = versespanmeaningreport.parse_chapters(ctx.params["Chapters"])
+        verse_lo = verse_hi = None
+    try:
+        out = passagedebatereport.write_scaffold(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
+                                                 book_label=book_label)
+    except passagedebatereport.BaseExtractMissing as e:
+        return fail("base-extract-missing", str(e))
+    except passagedebatereport.MethodDocMissing as e:
+        return fail("guidance-doc-missing", str(e))
+    passage_id = passagetrack.record_debate(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
+                                            book_label, out)
+    return ok(f"wrote {out}", path=str(out), passage_id=passage_id)
 
 
 def schema_overview_report(ctx: Ctx) -> Outcome:
