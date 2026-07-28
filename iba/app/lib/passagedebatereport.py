@@ -34,7 +34,7 @@ import datetime
 import pathlib
 import sqlite3
 
-from . import reportkit
+from . import passagetrack, reportkit
 from .versespanmeaningreport import fetch_verses, parse_chapters, parse_range, _range_str
 
 
@@ -131,14 +131,28 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
         "debate until every `<!-- fill in -->` placeholder is replaced.",
     ]
 
+    prior = passagetrack.find_prior_debate(conn, book, verses[0]["chapter"], verses[0]["verse"])
+    if prior:
+        continuity_line = (
+            f"**Corpus-continuity check.** Immediately-adjacent prior range, found automatically: "
+            f"`{prior['ref']}` — `{prior['debate_path']}`. <!-- read it in full before drafting "
+            f"this debate, per the corpus review's process-gap finding; confirm here that this "
+            f"was done, and note anything it carries forward (open decisions, emergent questions, "
+            f"threads that bear on this range) -->"
+        )
+    else:
+        continuity_line = (
+            "**Corpus-continuity check.** No prior filled debate found for this book at or before "
+            "this range — this is the first debate in the sequence (or nothing precedes it yet). "
+            "Nothing to re-read."
+        )
+
     preliminaries = [
         "**Working scope (declared as assumption, not fact).** <!-- fill in — what counts as "
         "bearing on the inner being for this passage -->", "",
         "**Reading rule applied.** <!-- fill in — e.g. [AMBIGUOUS]-span STEP-live precedence, "
         "any range-specific reading rule -->", "",
-        "**Corpus-continuity check.** <!-- before writing this debate, read the debate(s) "
-        "covering the immediately adjacent prior range in this book; note here that this was "
-        "done, per the corpus review's process-gap finding -->",
+        continuity_line,
     ]
 
     verse_lines: list[str] = []

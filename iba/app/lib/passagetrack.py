@@ -24,6 +24,7 @@ from __future__ import annotations
 
 import datetime
 import pathlib
+import sqlite3
 
 from .versespanmeaningreport import fetch_verses
 
@@ -122,3 +123,30 @@ def record_debate(cfg, book: str, lo: int, hi: int, verse_lo: int | None, verse_
         debate_path=str(path), debate_written_at=_now(), debate_status=status)
     _sync_verse_passage(cfg, writer, passage_id, verses, verses[0]["id"])
     return passage_id
+
+
+def find_prior_debate(conn, book: str, sc: int, sv: int) -> sqlite3.Row | None:
+    """The most recently completed debate for `book` whose range ends at or before (sc, sv) —
+    i.e. the immediately-adjacent prior range, per the corpus-continuity discipline (read it in
+    full before drafting the next one — the process gap the corpus review found being followed
+    by memory, not enforced). Only `debate_status='filled'` rows count: a scaffold still holding
+    `FILL_IN_MARKER` has no analytical content worth reading for continuity. `<=` (not `<`) on
+    the end-reference so a range that shares its boundary verse with the range before it (as
+    several Daniel ranges deliberately do, e.g. `Dan 1:1-7` then `Dan 1:7-21`) still finds its
+    immediate predecessor. Returns `None` if this is the first debated range in the book, or no
+    filled debate precedes it yet."""
+    return conn.execute(
+        "SELECT ref, debate_path, debate_status FROM passage WHERE book=? AND deleted=0 AND "
+        "debate_status='filled' AND (end_chapter<? OR (end_chapter=? AND end_verse<=?)) "
+        "ORDER BY end_chapter DESC, end_verse DESC LIMIT 1",
+        (book, sc, sc, sv)).fetchone()
+
+
+def all_debated_ranges(conn, book: str) -> list[sqlite3.Row]:
+    """Every filled debate for `book`, in reading order — the whole-book-read step's input list.
+    Same `debate_status='filled'` filter as `find_prior_debate`; a book with unfilled scaffolds
+    still in progress simply won't surface those ranges yet."""
+    return conn.execute(
+        "SELECT ref, debate_path, start_chapter, start_verse, end_chapter, end_verse FROM "
+        "passage WHERE book=? AND deleted=0 AND debate_status='filled' "
+        "ORDER BY start_chapter, start_verse", (book,)).fetchall()

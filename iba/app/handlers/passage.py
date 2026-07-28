@@ -148,43 +148,61 @@ def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: l
 
 
 def validate(ctx: Ctx) -> Outcome:
+    """Corpus-wide by default (no `-Book`) — the original 2026-07-21 check on the raw
+    char-continuity distribution. With `-Book`, scoped to one book — reactivated 2026-07-28
+    (`reactivate_passage_quality.py`) for a second, distinct purpose the original check predates:
+    a spot-check on the debate-range sizes `report.passage_debate` produced for a completed book
+    (e.g. Dan 11's 45-verse range — was that the right call?), not on raw span fragmentation. Both
+    purposes share one query/report/escalation shape since both are ultimately "look at the live
+    verse_count distribution and judge it" — scoping is the only difference that matters."""
+    book = ctx.params.get("Book")
+    scope_sql = " AND book=?" if book else ""
+    scope_args = (book,) if book else ()
+    scope_label = f"in {book}" if book else "across all books"
+
     dist = ctx.db.rows(
-        "SELECT verse_count, COUNT(*) n FROM passage WHERE deleted=0 GROUP BY verse_count ORDER BY verse_count")
+        f"SELECT verse_count, COUNT(*) n FROM passage WHERE deleted=0{scope_sql} "
+        f"GROUP BY verse_count ORDER BY verse_count", scope_args)
     total = sum(r["n"] for r in dist)
     if not total:
-        return ok("no passages built yet — nothing to review")
+        return ok(f"no passages found {scope_label} — nothing to review")
     single = sum(r["n"] for r in dist if r["verse_count"] == 1)
     avg = sum(r["verse_count"] * r["n"] for r in dist) / total
+    min_vc = min(r["verse_count"] for r in dist)
+    max_vc = max(r["verse_count"] for r in dist)
 
     by_book = [dict(r) for r in ctx.db.rows(
-        "SELECT book, COUNT(*) n, AVG(verse_count) avg, "
-        "SUM(CASE WHEN verse_count=1 THEN 1 ELSE 0 END) single "
-        "FROM passage WHERE deleted=0 GROUP BY book ORDER BY book")]
+        f"SELECT book, COUNT(*) n, AVG(verse_count) avg, "
+        f"SUM(CASE WHEN verse_count=1 THEN 1 ELSE 0 END) single "
+        f"FROM passage WHERE deleted=0{scope_sql} GROUP BY book ORDER BY book", scope_args)]
     report_path = _write_quality_report(ctx, total, avg, single, dist, by_book)
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["answer"]
         if decision == "approve":
-            return ok(f"acknowledged: {total} passages, avg {avg:.2f} verses/passage, "
-                      f"{single} ({100*single/total:.0f}%) single-verse — researcher confirmed "
-                      f"this distribution is acceptable; full detail in {report_path}",
-                      total=total, avg_verses=avg, single_verse=single)
+            return ok(f"acknowledged: {total} passages {scope_label}, {min_vc}-{max_vc} "
+                      f"verses/passage (avg {avg:.2f}), {single} ({100*single/total:.0f}%) "
+                      f"single-verse — researcher confirmed this distribution is acceptable; "
+                      f"full detail in {report_path}",
+                      total=total, avg_verses=avg, min_verses=min_vc, max_verses=max_vc,
+                      single_verse=single)
         if decision == "reject":
             return fail("findings-rejected",
                        "researcher flagged the passage distribution as needing the rule revisited",
-                       total=total, avg_verses=avg, single_verse=single)
+                       total=total, avg_verses=avg, min_verses=min_vc, max_verses=max_vc,
+                       single_verse=single)
         return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
 
     return escalate(
         "needs-review",
-        question=(f"Passage distribution across all books: {total} passages, average "
-                 f"{avg:.2f} verses/passage, {single} ({100*single/total:.0f}%) are single-verse. "
-                 f"passage.review_over only flags passages that are too LONG — nothing flags this. "
-                 f"Is this distribution acceptable as the char-continuity rule stands, or does the "
-                 f"passage rule need revisiting (per the open question from earlier this session)? "
+        question=(f"Passage distribution {scope_label}: {total} passages, {min_vc}-{max_vc} "
+                 f"verses/passage (average {avg:.2f}), {single} ({100*single/total:.0f}%) are "
+                 f"single-verse. Is this distribution acceptable — no debate range (or raw span, "
+                 f"if unscoped) looks like an outlier that should be reconsidered? "
                  f"Full per-book breakdown written to {report_path}."),
-        preset={"total": total, "avg_verses": round(avg, 2), "single_verse": single,
+        preset={"total": total, "avg_verses": round(avg, 2), "min_verses": min_vc,
+               "max_verses": max_vc, "single_verse": single,
                "distribution": [dict(r) for r in dist[:30]], "report_path": str(report_path)},
-        tried="computed the live verse_count distribution across every built passage — approve to "
-              "accept as-is, reject to flag the rule for revisiting, or revise with a comment")
+        tried=f"computed the live verse_count distribution {scope_label} — approve to accept "
+              f"as-is, reject to flag it for revisiting, or revise with a comment")

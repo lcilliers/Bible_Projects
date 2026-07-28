@@ -1587,3 +1587,247 @@ revisions already established: `WA-dan-1-1-7-debate-v1.2`, `WA-dan-1-7-21-debate
 Action-type-line-count checked per file after editing (`grep -c`) — every file matches exactly
 (the +1 in each is the change-control note's own mention of "Action-type," not a missed
 operation): 15/16, 14/15, 20/21, 15/16, 19/20, 7/8, 24/25.
+
+## 30. Corpus-continuity check mechanised — scaffold generator now looks up the prior debate itself (2026-07-28)
+
+**What prompted this.** Daniel (12 chapters, 16 debates) was completed as a pilot, and the
+researcher asked whether the app has enough structure to stay repeatable across the other 65
+books, not just Daniel — since Daniel's own early chapters needed a retrofit (§27's corpus review)
+precisely because a discipline was being followed by memory rather than enforced. Investigating
+live found three such conventions: no registered whole-book-read step (§31, planned next), the
+debate-range size check (`passage-quality`/`passage.validate`) built and tested 2026-07-21 but
+left `inactive=1` (§32, planned next), and the corpus-continuity re-read itself — every one of the
+16 debates' own preamble says "read the immediately-adjacent prior range's debate before drafting
+this one," done faithfully by hand 16 times, but `passagedebatereport.py` never looked it up. This
+entry closes the third gap; §31/§32 are tracked as the next two phases of the same plan
+(`C:\Users\lerouxc\.claude\plans\twinkly-orbiting-dawn.md`, approved 2026-07-28).
+
+**`lib/passagetrack.py` — two new read-only lookups, no schema change.** `find_prior_debate(conn,
+book, sc, sv)` returns the most recently `debate_status='filled'` `passage` row for `book` whose
+end-reference is at or before `(sc, sv)` — `<=`, not `<`, since several Daniel ranges deliberately
+share a boundary verse with the range before them (`Dan 1:1-7` then `Dan 1:7-21`), and a `<` would
+miss exactly that case. `all_debated_ranges(conn, book)` returns every filled debate for a book in
+reading order — built now because §31's whole-book-read step needs exactly this, and it's the same
+query shape as `find_prior_debate` with the single-row filter removed; no reason to defer it to a
+second pass. Both filter on `debate_status='filled'`, not merely non-null — a scaffold still
+holding the unfilled-placeholder marker has no analytical content worth surfacing for continuity.
+
+**`lib/passagedebatereport.py:write_scaffold` — the static placeholder replaced with a real
+lookup.** Previously the generated "Corpus-continuity check" line was pure prose telling the AI to
+go find and read the prior debate itself. It now calls `passagetrack.find_prior_debate` and
+pre-fills the actual prior range's reference and file path directly into the scaffold when one
+exists, still with an explicit `<!-- confirm this was done, note what it carries forward -->`
+marker — the lookup is mechanised, the reading and its implications are not (same
+Claude-Code-mechanises-plumbing / Claude-AI-does-interpretation boundary the module's own
+docstring already draws). When no prior filled debate exists for the book at or before this range,
+the scaffold says so plainly rather than leaving a silent gap.
+
+**Verified directly against Daniel's live data**, not run through the full write path — running
+`write_scaffold` end-to-end against an already-debated Daniel range was deliberately avoided: the
+16 live debate files predate `report.passage_debate_naming_pattern` (they carry `-v1.1-2026-07-27`
+style suffixes; the registered pattern produces no version suffix at all), so a regenerate would
+write to a *different filename* than the real content lives at, while still upserting the *same*
+tracked `passage` row (matched on book/start/end, not filename) and — because the freshly-written
+scaffold would still hold the unfilled-placeholder marker — silently flip that row's
+`debate_status` from `filled` back to `scaffold`, corrupting the pilot's own completion tracking.
+Flagged here rather than worked around quietly, since it will matter again for §31/§32 and for any
+future re-run of an already-debated range. Instead, `find_prior_debate`/`all_debated_ranges` were
+called directly against the real DB: `Dan 2:17` → `Dan 2:1-16`; `Dan 3:1` → `Dan 2:31-49`; the
+boundary-overlap case `Dan 1:7` → `Dan 1:1-7` (not itself); `Dan 1:1` (the book's first debated
+range) → `None`; `Gen 1:1` (a book with zero debates) → `None`; `all_debated_ranges('Dan')` → all
+16 rows, correctly ordered, first `Dan 1:1-7`, last `Dan 12:1-13`. `lib/passagedebatereport.py`
+confirmed to import cleanly with the new `passagetrack` dependency (no circular import — `
+passagetrack` only imports `versespanmeaningreport`, which `passagedebatereport` already imported
+directly).
+
+## 31. `passage-quality`/`passage.validate` reactivated, book-scoped — the debate-range size check now exists (2026-07-28, later)
+
+**What prompted this.** Phase 2 of the same solidification plan as §30. `report.passage_debate`
+had no size awareness at all — `passagetrack.record_debate` upserts whatever range gets chosen,
+with no gate. `passage.validate` already existed, was built and tested 2026-07-21 (GOVERNANCE.md
+§9B), and does exactly what's needed — reports the live `verse_count` distribution and escalates
+for a researcher decision — but `retract_passage_system.py` (§23, 2026-07-26) had deactivated it
+alongside `build-passages`/`passage.build` in one bulk pass, for a reason (the raw char-continuity
+generation's own premise changing) that doesn't apply to `passage.validate` on its own: it doesn't
+generate or depend on raw spans, it only reports on whatever live `passage` rows exist, and today
+those ARE the debate-range rows `record_debate` writes.
+
+**`migration/reactivate_passage_quality.py` — scoped reactivation, enumerated before writing, same
+discipline `retract_passage_system.py` itself modelled.** A direct query of every `cfg_*` row tied
+to `passage.validate` specifically (not the whole `passage-quality` label) found six categories,
+not the three the plan sketched: `cfg_work_package(passage-quality)`, `cfg_step(passage.validate)`,
+one `cfg_setting` (`passage.quality_report_path` — the module's OTHER 4 settings,
+`cross_chapter`/`default_rule`/`min_shared_strongs`/`review_over`, belong to `passage.build` and
+stay `inactive=1` on purpose: `review_over=10` is calibrated for 1-3-verse raw spans, and every
+Daniel debate range, 7-45 verses, would trip it if reactivated as-is), one `cfg_report` row, two
+`cfg_report_section` rows (`dist`, `by_book`), three `cfg_on_fail` rows
+(`findings-rejected`/`needs-review`/`needs-revision`). No `cfg_write_grant` row exists for
+`passage.validate` (read-only step) — nothing to reactivate there. Ran clean:
+`cfg_work_package: 1`, `cfg_step: 1`, `cfg_setting: 1`, `cfg_report: 1`, `cfg_report_section: 2`,
+`cfg_on_fail: 3` — all flipped `inactive=0`; confirmed directly afterward that `build-passages`/
+`passage.build` and the other 4 settings are still `inactive=1`, untouched.
+
+**`handlers/passage.py:validate` — optional `Book` param, one query/report/escalation shape now
+serves two purposes.** Corpus-wide (no `-Book`) is unchanged — the original 2026-07-21 check on
+raw span fragmentation. With `-Book`, the same distribution query, report, and escalation are
+scoped to one book, which is what a completed book's debate ranges need: is the size spread
+reasonable, does any single range look like an outlier that should have been split? The escalation
+question text was also corrected while touching it — it previously always mentioned "the
+char-continuity rule" and "passage.review_over," language that only makes sense for raw
+`passage.build` output and would have been actively misleading applied to debate-authored ranges
+(which never go through `passage.build`, and whose `needs_review`/`rule` columns are simply `NULL`
+— confirmed by direct query). `min`/`max` verse counts added to the summary and escalation
+`preset`, since "was the biggest range too big" is the actual question being asked, not just the
+average. `ps/Passage-Quality.ps1` gets a `-Book` passthrough (optional; `--param "Book=$Book"`
+appended only when supplied), same convention `PassageDebate-Report.ps1` already used for
+`-BookLabel`.
+
+**Verified end-to-end against Daniel — a real escalation, not a dry run.**
+`.\Passage-Quality.ps1 -Book Dan` (`RUN-20260728_093008_297-PASSAGE-QUALITY`) reported "16
+passages, 7-45 verses/passage (average 21.38), 0 (0%) are single-verse" — exactly Daniel's 16 live
+debate rows, no raw-span noise — wrote `iba/app/reports/passage-quality.md` (checked: clean
+verse_count table, 7 through 45, correct `By book` row), and paused on the standard
+approve/reject/revise-with-comment escalation, left for the researcher to answer — not answered
+here, since that decision (was Dan 11's 45-verse range the right call) is exactly the judgement
+this check exists to surface, not one to make on its way through.
+
+## 32. `report.whole_book_read` — the deferred "resolved at the whole-book read" now has somewhere to land (2026-07-28, later)
+
+**What prompted this.** Phase 3, the last of the same solidification plan as §30/§31. All sixteen
+Daniel debates defer their Emergent-questions log to "the whole-book read" (the exact phrase, or a
+close variant, in every one of them) — a step that did not exist anywhere in `cfg_work_package`.
+At least one of those deferred questions was in fact answered several chapters later (Dan 2:8-9's
+EQ-1, on reading-vs-impacting-another-interior, bears directly on Dan 3:1-7's EQ-12 on coerced
+worship) with no step ever formally closing the loop; it only surfaced because all sixteen files
+were read by hand in one sitting for an unrelated task the same day.
+
+**`lib/wholebookread.py` — new, mirrors `passagedebatereport.py`'s shape and its
+mechanised/analytical boundary.** `gather_book(conn, book)` calls the new
+`passagetrack.all_debated_ranges` (added alongside `find_prior_debate` in §30 — same query shape,
+no `LIMIT 1`) to get every `debate_status='filled'` range in reading order, reads each file, and
+extracts its Emergent-questions and Passage-level-linkages sections via `_extract_section` — a
+tolerant PREFIX match on the heading line (`^##\s+Emergent[- ]questions?\s+log`,
+`^##\s+(Passage-level linkages|Linkages surfaced)`), capturing everything up to the next
+`##`-heading or end of file, rather than trying to match the full heading text (which varies
+file to file — confirmed directly, not assumed: `WA-dan-2-1-16-debate` uses "Emergent-questions
+log" / "Linkages surfaced (and non-linkages)" where every other file uses "Emergent questions
+log" / "Passage-level linkages (Q7)", and even the parenthetical after "Emergent questions log"
+varies). A heading that matches neither pattern yields `None`, which the renderer turns into an
+explicit "NOT FOUND — verify heading" line — never a silent skip. Deciding whether/how a given
+emergent question actually got resolved by a later passage is NOT mechanised: the scaffold leaves
+one **Resolution** placeholder per gathered passage (not per individual EQ item — parsing
+individual `**EQ-N.**` bullets was considered and rejected, since their own numbering/format
+already drifts across files the same way the section headings do, and a fragile per-item parse
+would risk silently mis-splitting content; one placeholder per passage, holding the passage's full
+gathered text, is the simpler and more robust choice).
+
+**`migration/bootstrap_whole_book_read.py` — same direct-insert, idempotent pattern as
+`bootstrap_passage_debate_report.py`, same up-front-approval carve-out** (the plan approved
+2026-07-28, Phase 3, is the design approval this time, matching how the researcher's own 2026-07-27
+request was the approval for the original bootstrap). Registers `cfg_work_package(whole-book-read)`,
+`cfg_step(report.whole_book_read)`, one new `cfg_setting`
+(`report.whole_book_read_naming_pattern`, module `report` — no new enum value needed this time,
+unlike the original bootstrap's new `method` module), one `cfg_report` row, four
+`cfg_report_section` rows (`coverage`, `carried_forward`, `not_found`, `closing`), one
+`cfg_on_fail` row (`no-debates-found`). `handlers/reports.py:whole_book_read_report` added
+following `passage_debate_report`'s exact adapter shape; `ps/WholeBookRead-Report.ps1` added
+following `PassageDebate-Report.ps1`'s exact shape (`-Book` mandatory, `-BookLabel` optional).
+`configmaint.validate` run after registering — clean, no orphans, no coherence errors.
+
+**Verified end-to-end against Daniel — a real run, and it caught something genuinely important.**
+`.\WholeBookRead-Report.ps1 -Book Dan -BookLabel Daniel` wrote
+`iba/app/verse-analysis/Daniel/WA-dan-whole-book-read.md` (377 lines) successfully. The tolerant
+heading match was proven directly against the one file confirmed to have drifted headings
+(`WA-dan-2-1-16-debate-v1.2`): called `_extract_section` on its real text outside the full
+pipeline, both patterns matched (2140 and 2126 characters respectively) — the drift this module
+docstring warns about is real and the tolerant match handles it. But the full run surfaced a
+**separate, pre-existing problem this tool did not create**: five of the sixteen tracked
+`passage.debate_path` values — `Dan 1:1-7`, `1:7-21`, `2:1-16`, `2:17-30`, `2:31-49` — point to
+filenames that no longer exist on disk. Those five files were revised (v1.1 → v1.2 for the first
+four, or renamed entirely for `2:31-49`, whose tracked path carries no version suffix at all) after
+whatever pass first populated `passage.debate_path` for them (per §28's own note, these four were
+among "the four hand-authored debates" pre-dating `report.passage_debate`'s registration), and the
+column was never updated to follow. `wholebookread.py` surfaced this exactly as designed —
+`"file not found on disk at the recorded path"` for each of the five, listed again explicitly under
+"Sections not found," never silently dropped or guessed at — but it means the gathered document
+is currently incomplete for those five ranges, through no fault of the new mechanism. Not fixed in
+that same pass — flagged for the researcher's decision rather than corrected silently on the way
+through; the researcher confirmed the same day, closed below.
+
+## 33. Daniel `debate_path` reconciled; a third heading variant found and handled — whole-book-read now clean end-to-end (2026-07-28, later)
+
+**`migration/reconcile_daniel_debate_paths.py` — one-off, five rows.** The researcher confirmed
+fixing the five stale `passage.debate_path` values §32 surfaced. Correct current filenames
+re-confirmed by direct `Glob` against the live folder before writing (exactly one non-archived
+match each, not guessed from memory — memory had already been right, but the discipline is the
+point): `Dan 1:1-7`/`1:7-21`/`2:1-16`/`2:17-30` → their `-v1.2-2026-07-27.md` files, `2:31-49` →
+its `-v1.1-2026-07-27.md` file. Updates only `debate_path` + `debate_written_at` for these five
+exact rows, matched by book/start/end — `debate_status` (already correctly `filled`) untouched.
+Ran clean: 5/5 rows updated.
+
+**Re-running `WholeBookRead-Report.ps1 -Book Dan` surfaced a THIRD heading variant** —
+`WA-dan-1-1-7-debate` (now reachable for the first time) uses the singular "## Passage-level
+linkage (stated once — Q7)," which `LINKAGE_HEADING_RE`'s two known patterns didn't match. Not
+treated as a one-off patch: the module docstring's own claim that heading drift "is real, not
+hypothetical" had itself already undercounted the drift by one variant, discovered only by
+actually running the tool against real data rather than the two variants found by inspection
+beforehand — worth stating plainly rather than quietly fixing. `LINKAGE_HEADING_RE` widened
+(`Passage-level linkages?` — trailing `s` now optional) and the module docstring corrected to say
+three confirmed variants, not two, with an explicit note that more should be expected, not treated
+as exhausted — the NOT-FOUND path, not the pattern list, is the actual safety net.
+
+**Final state, verified.** Re-ran `WholeBookRead-Report.ps1 -Book Dan -BookLabel Daniel` twice more
+(once after the path fix, once after the regex widening); the second run's "Sections not found"
+section reads "None — every gathered file's Emergent-questions and Passage-level-linkages sections
+were found by heading," across all sixteen ranges. `WA-dan-whole-book-read.md` is now a complete,
+correct gathering of Daniel's full passage-debate corpus — the first real deliverable of the
+solidification plan approved 2026-07-28, produced by the mechanism the plan built, not worked
+around.
+
+## 34. `report.book_narrative_validate` — a found scope-narrowing in the Daniel narratives, and a durable check against it repeating (2026-07-28, later)
+
+**What prompted this.** Separately from the passage-debate/whole-book-read solidification work
+(§30-33), two plain-language narratives had been written directly from Daniel's sixteen debates
+(`-v1`, `-v2`) plus a third consolidating both (`-v3`). The researcher's own instruction for `-v2`
+described three questions in chat, including "what goes on in the inner being is strongly
+influenced, to the extent of transfer, not only suggested from the outside, and other humans" —
+transfer into a person from a non-human being, another human, *or* the surrounding physical world.
+`-v2`'s own opening framing line narrowed this, from its first draft, to "one person's inner
+state... into another's" — human-to-human only. The narrowing went uncaught through `-v2`'s own
+completion and into `-v3`'s summary of it, and was only found when the researcher checked `-v3`'s
+summary sentence against the original chat wording directly. The researcher's own diagnosis,
+verbatim: "ensure that the instructions are clear on this, and that the validation will catch it
+if it drifts" — the same standard this session's other work (§27-33) already applies to the
+passage-debate method, now extended to narrative-writing, which had no written instructions or
+check of its own at all until this entry.
+
+**`iba/docs/WA-inner-being-narrative-guidance-v1-2026-07-28.md` — new, durable, explains its own
+cause.** Defines the three channels explicitly (non-human↔human, human↔human, physical
+world↔human), each with a real example already on record in the corrected narratives; requires
+every narrative organized around this question to close with a `## Scope self-check` section
+naming a concrete, body-cited example per channel; and states plainly, in its own §4, what a
+mechanical check of this can and cannot confirm — presence, not quality; a channel silently
+dropped, not a bad citation kept. Governs `-v2` onward; explicitly does not retroactively apply to
+`-v1`, which answered a different, earlier brief that never invoked a three-channel framework.
+
+**`handlers/narrative.py:validate` + `migration/bootstrap_book_narrative_validate.py` — same
+registered-step pattern as `passage.validate`/`report.passage_debate`, applied to a genuinely new
+concern.** Standalone, on-demand (`book-narrative-validate`, matching `passage-quality`'s
+not-part-of-any-pipeline shape, since no narrative-*writing* step exists to chain from — writing
+stays unmechanized, per the guidance doc's own §4). Checks, against a given `-Path`: the guidance
+doc resolves on disk; a `## Scope self-check` section exists; all three required labels are present
+with non-empty, non-placeholder content. A new `cfg_setting.module` value (`narrative`) needed
+registering in `cfg_enum` first, the same one-time step `bootstrap_passage_debate_report.py` did
+for `method` when introducing a new settings domain — found by direct query, not assumed.
+`configmaint.validate` run after registering — clean.
+
+**Verified both directions, not just the happy path.** Before any fix, ran the validator against
+the live `-v3` file (no `Scope self-check` section existed yet) — correctly failed with
+`scope-check-missing`, not a false pass. Retrofitted real `Scope self-check` sections into both
+`-v2` and `-v3`, citing examples genuinely used in each file's own body (Gabriel's touch for
+non-human↔human; Darius's grief preceding his conviction for human↔human; the furnace/lions and
+Nebuchadnezzar's body for physical world↔human) — re-ran, both now pass cleanly. Separately, wrote
+a scratch test file with one correct label and two deliberately broken ones (an HTML-comment
+placeholder left unfilled, and a label with no content at all) — the validator correctly named
+exactly those two as `empty` while recognizing the third as `ok`, proving the check discriminates
+per-label rather than passing or failing the whole file as one blunt unit.

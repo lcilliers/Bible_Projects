@@ -20,7 +20,7 @@ from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import retention as retention_mod
 from ..lib import registryreport, schemareport, seedreport, spanreport, strongreport
-from ..lib import passagedebatereport, passagetrack, versespanmeaningreport
+from ..lib import passagedebatereport, passagetrack, versespanmeaningreport, wholebookread
 from ..lib.stepapi import StepUnavailable
 from ..tools import export_tables_csv
 
@@ -152,6 +152,20 @@ def passage_debate_report(ctx: Ctx) -> Outcome:
     passage_id = passagetrack.record_debate(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
                                             book_label, out)
     return ok(f"wrote {out}", path=str(out), passage_id=passage_id)
+
+
+def whole_book_read_report(ctx: Ctx) -> Outcome:
+    """Book-scoped, needs -Book (BookLabel optional, defaults to -Book — same convention
+    `passage_debate_report` uses). Gathers every filled `report.passage_debate` output for the
+    book and lays out their Emergent-questions/Passage-level-linkages content together — see
+    `lib/wholebookread.py`'s module docstring for what is and isn't mechanised."""
+    book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
+    try:
+        out = wholebookread.write_scaffold(ctx.cfg, book, book_label=book_label)
+    except wholebookread.NoDebatesFound as e:
+        return fail("no-debates-found", str(e))
+    return ok(f"wrote {out}", path=str(out))
 
 
 def schema_overview_report(ctx: Ctx) -> Outcome:
