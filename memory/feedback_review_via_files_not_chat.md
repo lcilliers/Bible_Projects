@@ -1,10 +1,11 @@
 ---
 name: feedback-review-via-files-not-chat
-description: "For non-trivial decisions or multi-item review, put proposals into a markdown file. Chat-based asks don't work for this researcher's workflow."
+description: "AskUserQuestion is BANNED and config-blocked project-wide (permissions.deny) — for non-trivial decisions or multi-item review, put proposals into a markdown file instead."
 metadata: 
   node_type: memory
   type: feedback
   originSessionId: 7401fa55-df1f-434c-9ff3-b60b0138422f
+  modified: 2026-07-22T09:55:26.120Z
 ---
 
 When asking the researcher to review proposals, decisions across multiple items, or open questions — put them in a markdown file the researcher can read in their editor and mark up directly. **Do not present multi-item review menus in chat and ask "which option" — the researcher cannot review effectively that way.**
@@ -23,5 +24,7 @@ When asking the researcher to review proposals, decisions across multiple items,
 **Anti-pattern to avoid:** "Which sub-group should this go to — A or B? Let me know in chat." This forces the researcher into chat for a decision that belongs in a file.
 
 **REINFORCED 2026-06-15 (violated TWICE this session — hard stop):** I fired `AskUserQuestion` twice in one session and was rebuked both times. Second time was worse: the question ("should existing verses be re-run?") was one I could and should have ANSWERED FROM DATA — *"don't give me an AskUserQuestion without properly investigating it and provide me with facts."* So: (a) the `AskUserQuestion` tool is **off-limits, full stop**; (b) before asking ANY question, first determine whether it's answerable by querying the DB / reading the code — if so, investigate and present facts, don't ask. Only genuinely subjective researcher-judgement calls go to a filed `.md` decision doc (in `research/investigations/`, **not** `outputs/markdown/`).
+
+**HARD CONFIG BLOCK ADDED 2026-07-22 (violated a THIRD time, on the IBA workstream):** despite two prior hard-stop warnings, I fired `AskUserQuestion` repeatedly during an IBA session (2026-07-22) — including on genuine IBA design questions where memory alone should have stopped me. On one of those calls the tool proved unreliable on top of being against policy: the researcher gave an elaborate answer in the UI, and the tool result that reached me was a bare rejection notice with **no answer content at all** — not a short version, nothing. Memory-only enforcement had now failed three times, so the researcher had it blocked at the config level instead of asked-for-again: `.claude/settings.json` → `permissions.deny: ["AskUserQuestion"]`, plus an explicit ban stated in `CLAUDE.md` (top banner) and `docs/interaction-preferences.md` (dedicated section). **This applies project-wide, not just to the IBA workstream** — the tool is not to be used in this repo at all, under any circumstance, regardless of how well-scoped the question seems. If a permission prompt for it ever appears despite the deny rule, that itself is a signal something is misconfigured — stop and flag it, don't proceed.
 
 Related: [[feedback-working-style]] (investigate first, show evidence, structured docs, wait for approval).
