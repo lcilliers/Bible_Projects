@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 8e7abc11-4c98-4a3a-8770-1da0a8756a12
-  modified: 2026-07-29T07:59:05.115Z
+  modified: 2026-07-29T08:18:31.385Z
 ---
 
 As of 2026-07-28, the IBA app's passage-debate method ([[project_movement_operation_definition_written]], [[project_iba_passage_debate_no_separate_ai_chat_needed]]) is considered stable enough to run as a sustained, book-by-book campaign rather than a one-book pilot. The researcher named this the next major phase of the study: **complete the passage-debate stage (base extract → passage debate → whole-book read) for every book of the Bible**, working through the **prophets first**, then switching to other genres (order across Torah/history/wisdom/poetry/gospels/epistles/apocalyptic not yet fixed). Researcher's own estimate: roughly **1.5 months** for the whole phase.
@@ -30,10 +30,19 @@ As of 2026-07-28, the IBA app's passage-debate method ([[project_movement_operat
   instance yet: "sold" (H4376) — the nations' trafficking of Judah's children/people (3:3, 3:6)
   precisely mirrored by the LORD's own talionic reversal, selling the nations' own sons and
   daughters (3:8); "return" (H7725) also recurs (3:1, 3:4, 3:7), continuing ch.2's thread. Five
-  nations individually named and judged (Tyre, Sidon, Philistia, Egypt, Edom). **Joel 1 is now
-  the only unfilled piece of the book** — chapters 2-3 done, a whole-book-read today would only
-  gather 2 of 3 chapters. Decision on whether to finish Joel 1, run the whole-book read on 2-3
-  only, or move to book 4 is the researcher's own call, not assumed.
+  nations individually named and judged (Tyre, Sidon, Philistia, Egypt, Edom). **Chapter 1 then
+  filled too, same day, per the researcher's explicit instruction to complete the book before any
+  whole-book read** — 19/20 verses (1:15 is the gap), session log
+  `iba/logs/SESSION-LOG-20260729-joel-1-passage-debate-book-complete.md`. Notable finding: the
+  missing 1:15 sits exactly at the chapter's structural hinge (between the commanded corporate cry
+  of 1:14 and the community's own enacted first-person lament at 1:16) and is the very verse that
+  seeds the "day of the LORD" refrain recurring through 2:1/2:11/2:31/3:14 — a concrete, felt
+  instance of the verse-gap's cost, not just an abstract statistic. Joel's own individual voice
+  (1:19, "to you, O LORD, I call") pairs with the beasts' own directed cry (1:20), closing the
+  chapter. **Book 3 (Joel) is now COMPLETE — all three chapters filled, `passagetrack.
+  all_debated_ranges('Joel')` confirmed returning all three in correct order.** A
+  `report.whole_book_read` run is the natural next step; not run yet. Next book in "prophets
+  first" is the researcher's own call.
 
 **Why:** the researcher judged the method has reached a genuinely repeatable, working shape — per-book pipeline (`VerseSpanMeaning-Report.ps1` → `PassageDebate-Report.ps1`, filled by hand applying the method → `WholeBookRead-Report.ps1`), fully config-driven, with corpus-continuity auto-cited between debates. This is the "stream that finally works" moment after a long run of method corrections (RESET 2026-06-25, cycle authority 2026-07-08, verse-first pivot 2026-07-02, passage-debate correction/app-integration 2026-07-21 through 07-27).
 
