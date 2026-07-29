@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 8e7abc11-4c98-4a3a-8770-1da0a8756a12
-  modified: 2026-07-29T07:49:28.281Z
+  modified: 2026-07-29T07:59:05.115Z
 ---
 
 As of 2026-07-28, the IBA app's passage-debate method ([[project_movement_operation_definition_written]], [[project_iba_passage_debate_no_separate_ai_chat_needed]]) is considered stable enough to run as a sustained, book-by-book campaign rather than a one-book pilot. The researcher named this the next major phase of the study: **complete the passage-debate stage (base extract → passage debate → whole-book read) for every book of the Bible**, working through the **prophets first**, then switching to other genres (order across Torah/history/wisdom/poetry/gospels/epistles/apocalyptic not yet fixed). Researcher's own estimate: roughly **1.5 months** for the whole phase.
@@ -25,7 +25,15 @@ As of 2026-07-28, the IBA app's passage-debate method ([[project_movement_operat
   `iba/logs/SESSION-LOG-20260729-joel-2-passage-debate.md`. Two new Q12 (divine-mirroring)
   instances found ("return"/"turn" H7725 linking the people's commanded return to the LORD's own
   possible turning; "calls" H7121 used reciprocally of human and divine calling in 2:32) — the
-  first Q12 data since Jonah 1. Joel 1 still parked; Joel 3 not yet started.
+  first Q12 data since Jonah 1. **Chapter 3 also debated and FILLED same day** — 21/21 verses, no
+  verse gap, session log `iba/logs/SESSION-LOG-20260729-joel-3-passage-debate.md`. Clearest Q12
+  instance yet: "sold" (H4376) — the nations' trafficking of Judah's children/people (3:3, 3:6)
+  precisely mirrored by the LORD's own talionic reversal, selling the nations' own sons and
+  daughters (3:8); "return" (H7725) also recurs (3:1, 3:4, 3:7), continuing ch.2's thread. Five
+  nations individually named and judged (Tyre, Sidon, Philistia, Egypt, Edom). **Joel 1 is now
+  the only unfilled piece of the book** — chapters 2-3 done, a whole-book-read today would only
+  gather 2 of 3 chapters. Decision on whether to finish Joel 1, run the whole-book read on 2-3
+  only, or move to book 4 is the researcher's own call, not assumed.
 
 **Why:** the researcher judged the method has reached a genuinely repeatable, working shape — per-book pipeline (`VerseSpanMeaning-Report.ps1` → `PassageDebate-Report.ps1`, filled by hand applying the method → `WholeBookRead-Report.ps1`), fully config-driven, with corpus-continuity auto-cited between debates. This is the "stream that finally works" moment after a long run of method corrections (RESET 2026-06-25, cycle authority 2026-07-08, verse-first pivot 2026-07-02, passage-debate correction/app-integration 2026-07-21 through 07-27).
 
