@@ -102,6 +102,31 @@ def detect_verse_gaps(verses: list[dict], verse_lo: int | None = None) -> dict[i
     return gaps
 
 
+def merge_verses_and_gaps(verses: list[dict], gaps: dict[int, list[int]]):
+    """Yield (chapter, verse, kind, verse_dict) in reading order, kind in ('verse', 'gap') — a
+    real verse row, or a gap standing in for a verse that has none. Shared by both
+    `report.verse_span_meaning` (write_report) and `report.passage_debate` (write_scaffold) so
+    a missing verse renders the same way — noted, not silently skipped — in both places."""
+    by_chapter: dict[int, list[dict]] = {}
+    for v in verses:
+        by_chapter.setdefault(v["chapter"], []).append(v)
+    for ch in sorted(set(by_chapter) | set(gaps)):
+        items = [(v["verse"], "verse", v) for v in by_chapter.get(ch, [])]
+        items += [(vn, "gap", None) for vn in gaps.get(ch, [])]
+        for vn, kind, v in sorted(items, key=lambda x: x[0]):
+            yield ch, vn, kind, v
+
+
+def gap_note(cfg, book: str, book_label: str | None, chapter: int, verse: int) -> str:
+    ref = f"{book_label or book} {chapter}:{verse}"
+    tpl = cfg.setting(
+        "report.verse_gap_note",
+        "**Verse gap — by design.** `{ref}` has no verse row in iba.db (no onboarded term's "
+        "concordance search ever surfaced it — see governance.verse_gap_by_design). Not an "
+        "error; continuing with the next available verse.")
+    return tpl.format(ref=ref)
+
+
 def fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
     return [dict(r) for r in conn.execute(
         "SELECT position, surface, strong_variant, morph_code, is_particle "
@@ -296,10 +321,16 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
     range_str = _range_str(lo, hi, verse_lo, verse_hi)
     label = f"{lo}:{verse_lo}-{verse_hi}" if verse_lo is not None else f"{lo}-{hi}"
 
+    gaps = detect_verse_gaps(verses, verse_lo)
     per_chapter_total: dict[int, int] = {}
     per_chapter_covered: dict[int, int] = {}
     verse_lines: list[str] = []
-    for v in verses:
+    for ch, vn, kind, v in merge_verses_and_gaps(verses, gaps):
+        if kind == "gap":
+            verse_lines.append(gap_note(cfg, book, book_label, ch, vn))
+            verse_lines.append("")
+            continue
+
         spans = fetch_spans(conn, v["id"])
         for sp in spans:
             if not sp["is_particle"]:

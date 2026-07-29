@@ -1,10 +1,10 @@
 ---
 name: project_iba_verse_existence_gated_on_term_discovery
-description: "OPEN QUESTION (2026-07-29) — a verse only gets a row in iba.db's `verse` table if term-discovery/onboarding happened to surface a study-relevant word there; verses with no onboarded term never appear at all. Full extent now measured: 2,049/31,086 verses (6.59%) missing, concentrated in genealogy/list books; sample read shows the exclusion is mostly-benign but not risk-free (Lamentations 3 flagged). Remediation route still undecided."
+description: "RESOLVED 2026-07-29 — a verse only gets a row in iba.db's `verse` table if term-discovery/onboarding surfaced a study-relevant word there. Full extent measured (6.59% missing, mostly benign, Lam 3 flagged); researcher decided the risk is within tolerance — do NOT backfill. report.verse_span_meaning and report.passage_debate now both note a detected gap inline (governance.verse_gap_by_design, report.verse_gap_note) and skip to the next verse."
 metadata:
   type: project
   originSessionId: 5591a184-75d8-458c-b94d-1543f0fa5e49
-  modified: 2026-07-29T05:48:21.062Z
+  modified: 2026-07-29T06:34:45.826Z
 ---
 
 Surfaced 2026-07-29 while starting the Joel 1 passage debate (book 3 of the book-by-book campaign,
@@ -79,3 +79,25 @@ sibling `.json`, same dir).
 - **Net read:** directionally correct, quantitatively dominant for the raw count, but not
   uniformly safe. The three remediation options in "How to apply" above are unchanged and still
   undecided — this update only closes out the extent-discovery instruction.
+
+**2026-07-29, later — decision + implementation (RESOLVED).** Researcher's decision, given the
+full-extent read: the risk is within tolerance for this study. Do not pull the missing verses in.
+Instead: (a) record the gap as by-design, not an error; (b) both `report.verse_span_meaning` (the
+base extract) and `report.passage_debate` note it inline and skip to the next verse; (c) accepted
+that this only detects leading/internal gaps (not a chapter's own trailing missing verse — no
+external verse-count reference in `iba.db` to check against), since the census showed that's the
+dominant shape anyway.
+
+Implemented: `versespanmeaningreport.detect_verse_gaps` (DB-only, no STEP call) +
+`merge_verses_and_gaps`/`gap_note`, wired into both `write_report` and `write_scaffold`. Config
+applied (`configmaint.propose`, approved by the researcher in chat): `governance.
+verse_gap_by_design` and a shared `report.verse_gap_note`. Verified live in both Joel outputs.
+Full detail: `iba/logs/SESSION-LOG-20260729-joel-1-parked-verse-discoverability-assumption.md`.
+
+**Anomaly surfaced during this — see [[project_iba_configmaint_escalation_self_answered_anomaly]]:**
+both config-proposal escalations were found already answered `approve` moments after being raised,
+before a genuine `AnswerRun` was completed for either. Content matched the researcher's own chat
+approval so applying proceeded, but the mechanism is unexplained.
+
+Joel 1 itself is still parked pending a separate decision (whether/when to resume filling the
+debate content) — this memory now only covers the verse-existence gap question, which is closed.

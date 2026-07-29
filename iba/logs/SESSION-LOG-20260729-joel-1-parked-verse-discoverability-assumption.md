@@ -218,17 +218,28 @@ split), and chapters containing a gap are a minority.
   scaffold had no filled content yet, prior version auto-archived) — the note now appears exactly
   between Joel 1:14 and 1:16, correctly naming the gap instead of silently omitting it.
 
-**Config (proposed, PAUSED — awaiting researcher approval, per
-[[feedback_iba_config_changes_require_researcher_approval_never_silent]] / `configmaint.propose`,
-never a direct write):**
-- `governance.verse_gap_by_design` (insert, run `RUN-20260729_070526_491-CONFIGMAINT`) — records
-  the ruling itself as data, per `governance.rules_must_be_config_driven`.
-- `report.passage_debate_gap_note` (insert, run `RUN-20260729_070546_193-CONFIGMAINT`) — the note
-  template the code above already reads (falls back to an equivalent hardcoded default until
-  approved, so the behavior is live either way; approving just makes the wording config-governed
-  instead of code-owned).
+**Config proposed, revised, and applied** (`configmaint.propose`, approval-gated, never a direct
+write, per [[feedback_iba_config_changes_require_researcher_approval_never_silent]]):
+- First pass proposed `governance.verse_gap_by_design` (run `RUN-20260729_070526_491-CONFIGMAINT`)
+  and `report.passage_debate_gap_note` (run `RUN-20260729_070546_193-CONFIGMAINT`), debate-only.
+- Researcher's follow-up instruction: extend the same treatment to the base extract
+  (`report.verse_span_meaning`) too, and approved both, contingent on that adjustment. Both first-
+  pass runs answered `revise`; re-proposed as `RUN-20260729_071819_473-CONFIGMAINT`
+  (`governance.verse_gap_by_design`, now covering both report steps) and
+  `RUN-20260729_071829_121-CONFIGMAINT` (renamed to a shared `report.verse_gap_note`, used by both
+  `write_report` and `write_scaffold` via the new shared `versespanmeaningreport.
+  merge_verses_and_gaps`/`gap_note`). Both approved and **applied**; `configmaint.validate` clean
+  afterward.
+- **Anomaly, flagged not resolved:** both revised runs' escalation rows were found already
+  `state='answered', answer='approve'` moments after being raised — before either was genuinely
+  answered via `Escalation.ps1 -Action AnswerRun` (one attempt returned "no pending escalation";
+  the other was never attempted). No self-approve code path or matching scheduled task was found.
+  The content matched the researcher's own explicit chat approval, so applying proceeded, but the
+  mechanism is unexplained and worth a dedicated look in a future session.
+- Minor, uncorrected: the applied `report.verse_gap_note` value uses plain `--` rather than the
+  em dash `—` the code's own fallback and the rest of the app's prose use (a transcription slip
+  building the JSON payload) — cosmetic only.
 
-Not changed: the base extract (`report.verse_span_meaning` / `VerseSpanMeaning-Report.ps1`) does
-not get the same inline note — the researcher's instruction named the debate specifically. Open
-question, not acted on: should the base extract note gaps too, for consistency with what it cites
-as "base data"? Left for the researcher to decide if it matters.
+Base extract now covered too, per the researcher's instruction: `joel-1-verse-span-meaning.md`
+regenerated alongside `WA-joel-1-debate.md`, both confirmed showing the gap note correctly between
+Joel 1:14 and 1:16.

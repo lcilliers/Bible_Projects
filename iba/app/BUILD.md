@@ -1870,19 +1870,36 @@ verse is missing — `iba.db` has no external verse-count reference to check aga
 found leading/internal gaps are the dominant shape, so this covers the overwhelming majority of
 real cases without a STEP round-trip at debate-generation time.
 
-**`lib/passagedebatereport.py`** — `write_scaffold` now merges real verses and detected gaps into
-one reading-order sequence (`_merged_items`) and renders a `**Verse gap — by design.**` note
-(`_gap_block`) wherever a gap falls, reading its wording from the new `report.
-passage_debate_gap_note` cfg_setting (falls back to an equivalent hardcoded default until the
-proposal below is approved — the behavior is live either way). Verified against the known live
-case: regenerated `WA-joel-1-debate.md` (safe — no interpretive content existed yet, prior version
-auto-archived) and confirmed the note now sits correctly between Joel 1:14 and 1:16.
+**`lib/versespanmeaningreport.py:merge_verses_and_gaps` + `gap_note`** — shared by both report
+steps (moved here from a debate-only `_merged_items`/`_gap_block` after the researcher's
+follow-up instruction to extend the same treatment to the base extract, same session). Renders
+`**Verse gap — by design.**` wherever a gap falls, reading its wording from the `report.
+verse_gap_note` cfg_setting.
 
-**Config proposed, not yet applied** (`configmaint.propose`, approval-gated, never a silent
-write): `governance.verse_gap_by_design` (records the ruling itself as data, per `governance.
-rules_must_be_config_driven`) and `report.passage_debate_gap_note` (the template text above).
-Both PAUSED awaiting the researcher's decision at the time of this entry.
+**`lib/passagedebatereport.py:write_scaffold`** and **`lib/versespanmeaningreport.py:write_report`**
+both now merge real verses and detected gaps into one reading-order sequence and render the gap
+note instead of silently skipping — the base extract renders the note and moves straight to the
+next real verse, same as the debate. Verified against the known live case in BOTH outputs:
+regenerated `joel-1-verse-span-meaning.md` and `WA-joel-1-debate.md` (safe — no interpretive
+content existed yet in the debate, prior versions auto-archived) and confirmed the note sits
+correctly between Joel 1:14 and 1:16 in both files.
 
-**Not changed:** `report.verse_span_meaning` (the base extract) does not get the same inline note
-— the researcher's instruction named the debate specifically. Open question, not acted on: should
-the base extract note gaps too, for consistency with what it cites as "base data"?
+**Config proposed and applied** (`configmaint.propose`, approval-gated, never a silent write):
+`governance.verse_gap_by_design` (records the ruling as data, per `governance.
+rules_must_be_config_driven`, now covering both report steps) and `report.verse_gap_note` (shared
+key, renamed from an initial debate-only `report.passage_debate_gap_note` per the researcher's
+scope-extension instruction). Both approved by the researcher in chat and applied same session;
+`configmaint.validate` clean afterward.
+
+**Anomaly noted, not explained, flagged to the researcher:** both proposal runs' escalation rows
+were found already `state='answered', answer='approve'` in the DB moments after being raised —
+before either was answered via `Escalation.ps1 -Action AnswerRun` (one attempt returned "no
+pending escalation"; the other was never attempted at all before the anomaly was found). No
+self-approve code path was found in the app (grepped for `self_approve`/`auto_approve`); no
+matching scheduled task either (`ReconcileConfigs` is an unrelated stock Windows COM-handler
+task). The content matched the researcher's own explicit chat approval, so applying proceeded —
+but the mechanism itself is unexplained and worth a dedicated look.
+
+**Not changed:** the note text's dashes came out as plain `--` in the applied `cfg_setting.value`
+(a transcription slip building the JSON payload) rather than the em dash `—` the code's own
+fallback and the rest of the app's prose use — cosmetic only, not corrected this session.
