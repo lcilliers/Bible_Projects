@@ -1903,3 +1903,49 @@ but the mechanism itself is unexplained and worth a dedicated look.
 **Not changed:** the note text's dashes came out as plain `--` in the applied `cfg_setting.value`
 (a transcription slip building the JSON payload) rather than the em dash `—` the code's own
 fallback and the rest of the app's prose use — cosmetic only, not corrected this session.
+
+## 36. Daniel `1:7-21` corrected to `1:8-21` — a `passage` invariant that was mechanically satisfied but substantively wrong (2026-07-29)
+
+**What prompted this.** Running the `passage`-table audit this session's verse-gap work motivated
+found one live-link/`verse_count` mismatch: `Dan 1:1-7`'s `verse_count` (7) didn't match its
+actual 6 live `verse_passage` links. Root cause traced to Dan.1.7 being a genuine boundary verse
+shared between `Dan 1:1-7` and `Dan 1:7-21` — BUILD.md §28's own verification (2026-07-27) found
+exactly this and declared it correct, because the "one live owner per verse" invariant was
+satisfied (whichever range was processed later — `1:7-21` — held the live link). The researcher
+caught what that verification missed: `1:7-21`'s own debate text never independently analyses
+Dan.1.7 at all — it carries only a one-paragraph "Dan 1:7 — carried by reference" stub pointing
+back to `1:1-7`, which is where the verse is actually debated (confirmed by reading both files
+directly). The mechanical invariant was satisfied by the wrong file.
+
+**Corrected, not just relabeled.** (a) Generated a fresh, accurate base extract for the corrected
+range via a direct `versespanmeaningreport.write_report(cfg, 'Dan', 1, 1, 8, 21, ...)` call —
+deliberately bypassing the `handlers/reports.py` dispatcher path, which would have inserted a
+*second*, duplicate `passage` row for the new range rather than correcting the existing one
+(170/170 non-particle spans, 100% — the old range's 183/183 included verse 7's own 13 spans,
+which never belonged to this analysis). (b) Hand-corrected the debate file itself
+(`WA-dan-1-8-21-debate-v1.3-2026-07-29.md`, superseding `-v1.2`): removed the "carried by
+reference" stub, updated title/version/filename/change-control notes and the coverage statistic,
+left every analytical conclusion for 1:8 onward byte-for-byte unchanged. (c) Archived both
+superseded files (`WA-dan-1-7-21-debate-v1.2-2026-07-27.md`,
+`dan-1-7-21-verse-span-meaning-20260729-095948.md`) rather than deleting them. (d) A new one-off
+migration, `migration/correct_dan_1_boundary_range.py` (matching the established
+`reconcile_daniel_debate_paths.py` pattern for exactly this class of fix): updates the `passage`
+row in place (`start_verse` 7→8, `ref`, both file paths, `anchor_verse_id` Dan.1.7→Dan.1.8,
+`verse_count` 15→14), soft-deletes the `verse_passage` link from `1:7-21` to Dan.1.7, and restores
+(un-deletes) the link from `1:1-7` to Dan.1.7 — the correction the mechanical invariant was
+missing. (e) Corrected the two other files that named the old range by pointer only (not
+analytical content): `WA-dan-whole-book-read.md`'s coverage list and section heading, and a plain
+citation inside `WA-dan-2-31-49-debate-v1.1`.
+
+**Verified clean.** A full `passage`-table audit (debate_status vs. file content, `verse_count` vs.
+live `verse_passage` link count, exactly-one-anchor-per-passage, anchor_verse_id vs. the live
+anchor link, no verse double-linked) ran clean across all 23 live rows afterward — including the
+originally-flagged `Dan 1:1-7` mismatch, now resolved by restoring its rightful link rather than
+just editing a number.
+
+**Found, not chased:** `WA-dan-whole-book-read.md` itself still carries 17 unfilled
+`<!-- fill in -->` placeholders in its Resolution sections — Daniel's whole-book-read was
+generated but never actually resolved, contrary to the "complete" status this project's own
+memory has recorded for Daniel since 2026-07-27. Corrected the one in-scope reference (the section
+heading), left the rest exactly as found — resolving 17 emergent-question/linkage items is a
+separate, much larger task than this boundary correction, and not requested.

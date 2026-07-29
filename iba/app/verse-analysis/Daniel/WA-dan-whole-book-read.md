@@ -14,7 +14,7 @@
 - **16** filled debate(s) gathered for `Dan`, in reading order:
 
   1. `Dan 1:1-7` — `iba\app\verse-analysis\Daniel\WA-dan-1-1-7-debate-v1.2-2026-07-27.md`
-  1. `Dan 1:7-21` — `iba\app\verse-analysis\Daniel\WA-dan-1-7-21-debate-v1.2-2026-07-27.md`
+  1. `Dan 1:8-21` — `iba\app\verse-analysis\Daniel\WA-dan-1-8-21-debate-v1.3-2026-07-29.md`
   1. `Dan 2:1-16` — `iba\app\verse-analysis\Daniel\WA-dan-2-1-16-debate-v1.2-2026-07-27.md`
   1. `Dan 2:17-30` — `iba\app\verse-analysis\Daniel\WA-dan-2-17-30-debate-v1.2-2026-07-27.md`
   1. `Dan 2:31-49` — `iba\app\verse-analysis\Daniel\WA-dan-2-31-49-debate-v1.1-2026-07-27.md`
@@ -83,7 +83,7 @@ recorded on the same footing.
 
 **Resolution.** <!-- fill in — for each item above: does a later passage in this book answer it, contradict it, or does it stay open past this book? Point back to the specific verse/passage that resolves it, if any -->
 
-### Dan 1:7-21
+### Dan 1:8-21
 
 **Emergent questions (as filed).**
 

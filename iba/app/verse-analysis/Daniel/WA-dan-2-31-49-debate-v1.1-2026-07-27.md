@@ -226,7 +226,7 @@ heavens." Daniel then states directly: "you are the head of gold."
 - **Target:** Nebuchadnezzar — his **kingdom, power, might, and glory**. Every one of these four
   nouns names a *positional/circumstantial* attribute (rule, authority, strength-of-office,
   honour/esteem) — none names an interior disposition, character trait, or resolve. This is the
-  decisive data point for the passage-level fork (Dan 1:2, restated at Dan 1:7-21/2:17-30): God's
+  decisive data point for the passage-level fork (Dan 1:2, restated at Dan 1:8-21/2:17-30): God's
   sourcing here is comprehensive in *scope* (everything a king could have, positionally) but
   uniform in *kind* (all outcome/circumstance, none of it disposition). This **strengthens,
   without conclusively proving** (silence is not proof of absence), the conservative reading of
