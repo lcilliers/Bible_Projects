@@ -103,3 +103,90 @@ updated in place to reflect Joel as parked, not in progress.
 
 **Open**: the core assumption itself — see point 2 above. This is the entire subject of the next
 session.
+
+---
+
+## Follow-on session — 2026-07-29 — mechanism confirmed in depth (config + live STEP evidence)
+
+Per point 2 above, started at `cfg_work_package`/`cfg_step` for `new-word`/`raw.verses`, not from
+this log or memory.
+
+### Config trace
+
+`cfg_step` for `new-word` (6 steps, ordinal 0-6): `registry.exists` → `registry.create` →
+`raw.discover` (CALL 1 `meanings=` → seed strongs) → `raw.detail` (CALL 2 `getInfo` → meaning) →
+**`raw.verses`** (CALL 3 per strong → `strong_verse` + `verse` + `span`) → `raw.write` →
+`raw.validate`. The sibling work package `raw-backfill` has exactly one step,
+`raw.backfill_meaning`, explicitly scoped `book`, and its own `does` text says it plainly: pulls
+**meaning only, not verses** for codes a book's *existing* spans reference — "progressive,
+passage-driven DB coverage growth, not a full-Bible bulk pull."
+
+### Code trace (`iba/app/handlers/raw.py`, `iba/app/lib/stepapi.py`)
+
+- `verses()` / `verses_one()` is the **only** code path anywhere that inserts a `verse` row. It
+  loops `_strongs_for_word(ctx)` — the word's own seed strongs from `word_strong` (set by
+  `raw.discover`, i.e. STEP's `masterSearch meanings=` for the *English headword the researcher
+  chose to onboard*) — and calls `Step.call3_strong(code)` per seed, which is a concordance search
+  for occurrences of *that one Strong's number* (paginated past `step.cap`=60 via the
+  `step.walk_start`→`step.walk_end` forward-walk, max 400 iterations).
+- `backfill_meaning_for()` cannot create a `verse` row even in principle: it derives its list of
+  "codes to check" by querying the `span` table (`SELECT ... FROM span JOIN verse ...`) — i.e. it
+  only ever looks at spans belonging to verses that **already exist**. It has no independent
+  source of "what verses exist in this book." It is structurally incapable of closing this gap,
+  not just unscoped to do so.
+- Conclusion: a `verse` row exists **iff** at least one Strong's number in that verse happens to
+  be a seed strong of some *already-onboarded* IB study word. No step anywhere pulls a book/chapter
+  verse-by-verse independent of concordance search.
+
+### Live-STEP verification (ruled out a forward-walk/pagination bug as an alternative cause)
+
+Hit STEP directly (`interlinearMode=INTERLEAVED` on the same `masterSearch` route) for both gapped
+verses, to see what's actually there and check whether their content words were *studied but
+missed by pagination* (a code bug) vs *never queried at all* (the structural gap):
+
+| Verse      | Strong's present (base codes)                                                                              | `strong` row (meaning fetched)?                        | `strong_verse` rows (verses() ever run)? |
+| ---------- | ----------------------------------------------------------------------------------------------------------- | ------------------------------------------------------- | ----------------------------------------- |
+| Joel 1:15  | H0162 alas, H3117 day, H3068 LORD, H7138 near, H3588 for, H7701 destruction, H7706 Almighty, H0935 come      | H3117G/H3068G/H7138 yes (backfilled); rest no            | **0 for every single one**                |
+| Joel 2:4   | H4758 appearance, H5483 horse, H6571 horseman, H7323 run                                                     | H4758/H7323G yes (backfilled); rest no                   | **0 for every single one**                |
+
+Every content word in both verses has **zero** `strong_verse` rows — not "most," not "a pagination
+shortfall," literally none. Three of the seven distinct codes (H7138, H3068G, H3117G, H4758,
+H7323G) already have a `strong` row from meaning-only backfill (they're common support words like
+"LORD"/"day"/"run" that surfaced while reading *other* already-loaded verses in Joel), which
+confirms the backfill path runs correctly but — as the code trace above predicts — never touches
+`verse`/`strong_verse` regardless. None of the eight distinct codes across both verses has ever
+been the seed strong of an onboarded English word, so `raw.verses` was never invoked for any of
+them. This rules out a STEP forward-walk truncation bug: it isn't that `call3_strong` was called
+and came back short for a high-frequency term — it's that `call3_strong` was **never called** for
+any term that occurs in either verse.
+
+**This confirms the researcher's 2026-07-29 account precisely, with no contradicting evidence**:
+the gap is 100% attributable to verse-existence being gated on prior term discovery, not to a
+pagination/walk defect, and not fixable by the existing meaning-backfill utility even as a
+workaround — that utility reads FROM the verse/span tables it would need to be filling.
+
+### Still open for the next decision point
+The three options from the memory's "how to apply" ((a) new per-book/chapter text+span pull
+independent of concordance — impact on `raw.verses`/`new-word`, `passagetrack`, DB scope;
+(b) whether Daniel/Jonah have their own undetected gaps of this kind; (c) whether this is a new
+`cfg_step`-registered utility, a one-off repair, or a `configmaint.propose` model change) are
+unchanged and not yet decided — this follow-on only establishes the mechanism with certainty, it
+does not choose a remediation.
+
+## Second follow-on session — 2026-07-29 — full-extent census + sample impact read
+
+Per the researcher's instruction ("before deciding on the route... discover the full extent"):
+full-Bible census (66 books, 1189 STEP chapter fetches, read-only, no DB writes) plus a per-book
+sample read of the missing verses' actual content. Full write-up:
+[`iba/app/reports/verse-existence-census-20260729.md`](../app/reports/verse-existence-census-20260729.md)
+(data: `verse-existence-census-20260729.json` alongside it).
+
+**Headline:** 2,049 / 31,086 canonical verses (6.59%) have no `verse` row — smaller than the
+researcher's ~10% guess, and sharply concentrated (1Chr 44%, Ezra 40%, Neh 31%, Josh 23%, Num 17%
+account for over half the entire gap; 12 books have zero gap). Sample read of the missing verses'
+actual text confirms the researcher's assumption is directionally right for the bulk of the count
+(genealogies/censuses/measurements/place lists in the worst-hit books), **but** surfaces a real
+minority — concentrated in poetic/lament/wisdom material, Lamentations 3 above all (3 of 5 sampled
+verses there are personal-affliction content) — that plausibly carries inner-being content and is
+invisible for the same structural reason. Remediation route still not decided — this closes out
+the "discover the extent" instruction only.
