@@ -190,3 +190,45 @@ minority — concentrated in poetic/lament/wisdom material, Lamentations 3 above
 verses there are personal-affliction content) — that plausibly carries inner-being content and is
 invisible for the same structural reason. Remediation route still not decided — this closes out
 the "discover the extent" instruction only.
+
+## Decision + implementation — 2026-07-29 — accept the gap, mention it, move on
+
+Researcher's decision, given the full-extent read above: the risk of missing real inner-being
+content this way is **within tolerance for this study** — the missing verses are not pulled into
+the study. Three things to change instead: (a) record that a missing `verse` row is by design, not
+an error; (b) have the debate mention the gap inline and continue on the remaining verses; (c) this
+is a small footprint — passage-debate runs are chapter-scoped (or sub-chapter when a chapter is
+split), and chapters containing a gap are a minority.
+
+**Code (done, live-tested):**
+- [`lib/versespanmeaningreport.py`](../app/lib/versespanmeaningreport.py) — new
+  `detect_verse_gaps(verses, verse_lo)`: DB-only, no STEP call. Per chapter touched by a debate
+  range, finds verse numbers provably missing — a leading gap (chapter's first fetched verse
+  isn't 1, or isn't `verse_lo` for a `-Range` sub-chapter call) and internal gaps between fetched
+  verses. Documented limitation: it cannot prove a chapter's own TRAILING verse is missing (no
+  external verse-count reference in `iba.db`) — an accepted gap in the gap-detector itself, not
+  worth a STEP round-trip given the census found leading/internal gaps are the dominant shape.
+- [`lib/passagedebatereport.py`](../app/lib/passagedebatereport.py) — `write_scaffold` now merges
+  real verses and detected gaps into one reading-order sequence (`_merged_items`) and renders a
+  `**Verse gap — by design.**` note (`_gap_block`, template from the new
+  `report.passage_debate_gap_note` cfg_setting) wherever a gap falls, instead of silently jumping
+  past it.
+- Verified against the known live case: regenerated `WA-joel-1-debate.md`
+  (`.\iba\app\ps\PassageDebate-Report.ps1 -Book Joel -Chapters 1 -BookLabel Joel` — safe, the
+  scaffold had no filled content yet, prior version auto-archived) — the note now appears exactly
+  between Joel 1:14 and 1:16, correctly naming the gap instead of silently omitting it.
+
+**Config (proposed, PAUSED — awaiting researcher approval, per
+[[feedback_iba_config_changes_require_researcher_approval_never_silent]] / `configmaint.propose`,
+never a direct write):**
+- `governance.verse_gap_by_design` (insert, run `RUN-20260729_070526_491-CONFIGMAINT`) — records
+  the ruling itself as data, per `governance.rules_must_be_config_driven`.
+- `report.passage_debate_gap_note` (insert, run `RUN-20260729_070546_193-CONFIGMAINT`) — the note
+  template the code above already reads (falls back to an equivalent hardcoded default until
+  approved, so the behavior is live either way; approving just makes the wording config-governed
+  instead of code-owned).
+
+Not changed: the base extract (`report.verse_span_meaning` / `VerseSpanMeaning-Report.ps1`) does
+not get the same inline note — the researcher's instruction named the debate specifically. Open
+question, not acted on: should the base extract note gaps too, for consistency with what it cites
+as "base data"? Left for the researcher to decide if it matters.

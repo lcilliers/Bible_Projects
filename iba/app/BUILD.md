@@ -1831,3 +1831,58 @@ a scratch test file with one correct label and two deliberately broken ones (an 
 placeholder left unfilled, and a label with no content at all) — the validator correctly named
 exactly those two as `empty` while recognizing the third as `ok`, proving the check discriminates
 per-label rather than passing or failing the whole file as one blunt unit.
+
+## 35. Verse-existence gap sized, then accepted by design — `report.passage_debate` now notes a gap inline instead of silently skipping it (2026-07-29)
+
+**What prompted this.** Starting Joel 1 (book 3 of the book-by-book campaign) found `Joel.1.15`
+and `Joel.2.4` had no `verse` row in `iba.db` at all — not deleted, never created. Investigation
+(session log `iba/logs/SESSION-LOG-20260729-joel-1-parked-verse-discoverability-assumption.md`)
+traced the mechanism precisely: a `verse` row exists **iff** at least one Strong's number in it is
+a seed strong of some already-onboarded English study word (`raw.verses`, called only from the
+`new-word` chain). `raw.backfill_meaning` cannot close this — it discovers "codes to check" by
+querying the `span` table, which only has rows for verses that already exist. Live-STEP checks on
+both gapped verses ruled out a STEP forward-walk/pagination bug: every Strong's code in both verses
+had zero `strong_verse` rows — `call3_strong` was simply never invoked for any of them, not called
+and truncated.
+
+**Full-Bible census, then a sample read, before deciding anything** (researcher's explicit
+instruction — size the problem first). A read-only crawl of all 66 books direct from local STEP
+(1189 chapter fetches, ~36s, no DB writes), diffed against `iba.db`'s `verse` table:
+**2,049/31,086 verses (6.59%) missing**, sharply concentrated — 1Chr (44%), Ezra (40%), Neh (31%),
+Josh (23%), Num (17%) alone account for over half the gap; 12 books have zero gap. A sample read of
+up to 5 missing verses per affected book (all 55, ~330 verses, text already captured by the same
+crawl — no extra STEP calls needed) confirmed the bulk of the gap really is inert content
+(genealogies, censuses, temple/tabernacle measurements, place-name lists) but flagged a real
+minority of substantive misses concentrated in poetic/lament/wisdom material — Lamentations 3 above
+all (3 of 5 sampled verses there are personal-affliction content). Full report:
+`iba/app/reports/verse-existence-census-20260729.md` (data: sibling `.json`).
+
+**Researcher's decision:** the risk is within tolerance for this study. Do not pull the missing
+verses in. Instead: (a) record the gap as by-design, not an error; (b) have the debate mention it
+inline and continue on the remaining verses; (c) this is a small footprint since passage-debate
+runs are chapter-scoped (or sub-chapter when split) and gapped chapters are a minority.
+
+**`lib/versespanmeaningreport.py:detect_verse_gaps`** — new, DB-only, no STEP call. Per chapter
+touched by a debate range, finds verse numbers provably missing: a leading gap (chapter's first
+fetched verse isn't 1, or isn't `verse_lo` for a `-Range` sub-chapter call) and internal gaps
+between fetched verses. Documented, accepted limitation: cannot prove a chapter's own TRAILING
+verse is missing — `iba.db` has no external verse-count reference to check against. The census
+found leading/internal gaps are the dominant shape, so this covers the overwhelming majority of
+real cases without a STEP round-trip at debate-generation time.
+
+**`lib/passagedebatereport.py`** — `write_scaffold` now merges real verses and detected gaps into
+one reading-order sequence (`_merged_items`) and renders a `**Verse gap — by design.**` note
+(`_gap_block`) wherever a gap falls, reading its wording from the new `report.
+passage_debate_gap_note` cfg_setting (falls back to an equivalent hardcoded default until the
+proposal below is approved — the behavior is live either way). Verified against the known live
+case: regenerated `WA-joel-1-debate.md` (safe — no interpretive content existed yet, prior version
+auto-archived) and confirmed the note now sits correctly between Joel 1:14 and 1:16.
+
+**Config proposed, not yet applied** (`configmaint.propose`, approval-gated, never a silent
+write): `governance.verse_gap_by_design` (records the ruling itself as data, per `governance.
+rules_must_be_config_driven`) and `report.passage_debate_gap_note` (the template text above).
+Both PAUSED awaiting the researcher's decision at the time of this entry.
+
+**Not changed:** `report.verse_span_meaning` (the base extract) does not get the same inline note
+— the researcher's instruction named the debate specifically. Open question, not acted on: should
+the base extract note gaps too, for consistency with what it cites as "base data"?

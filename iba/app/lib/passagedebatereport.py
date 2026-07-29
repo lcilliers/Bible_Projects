@@ -35,7 +35,8 @@ import pathlib
 import sqlite3
 
 from . import passagetrack, reportkit
-from .versespanmeaningreport import fetch_verses, parse_chapters, parse_range, _range_str
+from .versespanmeaningreport import (detect_verse_gaps, fetch_verses, parse_chapters,
+                                     parse_range, _range_str)
 
 
 class BaseExtractMissing(Exception):
@@ -87,6 +88,29 @@ def _verse_block(v: dict) -> list[str]:
         "**Decision.** <!-- retain / set aside as stated IB op / retain as referential aspect / "
         "recorded silence -->", ""]
     return L
+
+
+def _merged_items(verses: list[dict], gaps: dict[int, list[int]]):
+    """Yield (chapter, verse, kind, verse_dict) in reading order, kind in ('verse', 'gap') —
+    a verse row's own debate block, or a gap note standing in for a verse that has no row."""
+    by_chapter: dict[int, list[dict]] = {}
+    for v in verses:
+        by_chapter.setdefault(v["chapter"], []).append(v)
+    for ch in sorted(set(by_chapter) | set(gaps)):
+        items = [(v["verse"], "verse", v) for v in by_chapter.get(ch, [])]
+        items += [(vn, "gap", None) for vn in gaps.get(ch, [])]
+        for vn, kind, v in sorted(items, key=lambda x: x[0]):
+            yield ch, vn, kind, v
+
+
+def _gap_block(cfg, book: str, book_label: str | None, chapter: int, verse: int) -> list[str]:
+    ref = f"{book_label or book} {chapter}:{verse}"
+    tpl = cfg.setting(
+        "report.passage_debate_gap_note",
+        "**Verse gap — by design.** `{ref}` has no verse row in iba.db (no onboarded term's "
+        "concordance search ever surfaced it — see governance.verse_gap_by_design). Not an "
+        "error; continuing with the next available verse.")
+    return [tpl.format(ref=ref), ""]
 
 
 def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
@@ -155,9 +179,13 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
         continuity_line,
     ]
 
+    gaps = detect_verse_gaps(verses, verse_lo)
     verse_lines: list[str] = []
-    for v in verses:
-        verse_lines += _verse_block(v)
+    for ch, vn, kind, v in _merged_items(verses, gaps):
+        if kind == "verse":
+            verse_lines += _verse_block(v)
+        else:
+            verse_lines += _gap_block(cfg, book, book_label, ch, vn)
 
     linkages = ["<!-- fill in — Q7: linkages across this passage's operations, and surfaced "
                "non-linkages -->"]

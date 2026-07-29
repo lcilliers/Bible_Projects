@@ -76,6 +76,32 @@ def fetch_verses(conn: sqlite3.Connection, book: str, lo: int, hi: int,
     return out
 
 
+def detect_verse_gaps(verses: list[dict], verse_lo: int | None = None) -> dict[int, list[int]]:
+    """Per chapter actually touched by `verses`, find verse numbers structurally provable as
+    missing from `iba.db`: a leading gap (the chapter's first fetched verse isn't verse 1, or
+    isn't `verse_lo` for a `-Range` sub-chapter call) and any internal gap between two fetched
+    verses. DB-only, no STEP call — this is a real limitation, not an oversight: it cannot prove
+    a chapter's OWN TRAILING verse(s) are missing (there's no way to know a chapter's true final
+    verse number without an external reference, and `iba.db` has none). Per the researcher's
+    2026-07-29 ruling (governance.verse_gap_by_design) this is by design, not an error, and the
+    census (iba/app/reports/verse-existence-census-20260729.md) found leading/internal gaps are
+    the dominant shape of it — this covers the overwhelming majority of real cases without
+    needing STEP at debate-generation time."""
+    by_chapter: dict[int, list[int]] = {}
+    for v in verses:
+        by_chapter.setdefault(v["chapter"], []).append(v["verse"])
+    gaps: dict[int, list[int]] = {}
+    for ch, vns in by_chapter.items():
+        vns = sorted(vns)
+        expected_start = verse_lo if verse_lo is not None else 1
+        missing = list(range(expected_start, vns[0]))
+        for a, b in zip(vns, vns[1:]):
+            missing.extend(range(a + 1, b))
+        if missing:
+            gaps[ch] = missing
+    return gaps
+
+
 def fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
     return [dict(r) for r in conn.execute(
         "SELECT position, surface, strong_variant, morph_code, is_particle "
