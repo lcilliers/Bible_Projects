@@ -243,3 +243,40 @@ write, per [[feedback_iba_config_changes_require_researcher_approval_never_silen
 Base extract now covered too, per the researcher's instruction: `joel-1-verse-span-meaning.md`
 regenerated alongside `WA-joel-1-debate.md`, both confirmed showing the gap note correctly between
 Joel 1:14 and 1:16.
+
+---
+
+## Session close-out — 2026-07-29
+
+**Question resolved.** What started as "why is Joel 1:15 missing" ended as a fully closed
+methodology question: mechanism traced precisely (config + code), extent measured Bible-wide
+(6.59% missing, sharply concentrated in genealogy/list books), sample-read impact assessed
+(mostly benign, Lamentations 3 flagged as the one real concentrated risk), a researcher decision
+made (accept the gap, do not backfill), and that decision implemented in both report steps plus
+the backing config — all in this one continuous log rather than scattered across separate files,
+per [[feedback_single_living_register]].
+
+**Net effect on the book-by-book campaign:** the reason Joel 1 was parked no longer applies. The
+gap-handling behavior is live in both `report.verse_span_meaning` and `report.passage_debate`, so
+any book's passage-debate work (Joel included) can proceed through a gapped chapter without
+silently losing a verse or needing a manual workaround.
+
+**Joel 1 itself stays parked, not resumed here.** Its scaffold (`WA-joel-1-debate.md`) is
+regenerated (now showing the 1:15 gap note) but still entirely unfilled — the researcher directed
+the next work to Joel **chapter 2**, not back to finishing chapter 1. Chapter 1's actual debate
+content remains open for a future session.
+
+**Artifacts this session:**
+- `iba/app/reports/verse-existence-census-20260729.md` + `.json` — the full-Bible census.
+- `iba/app/lib/versespanmeaningreport.py`, `iba/app/lib/passagedebatereport.py` — gap-detection +
+  inline note, shared between both report steps.
+- `governance.verse_gap_by_design`, `report.verse_gap_note` — applied `cfg_setting` rows.
+- `iba/app/verse-analysis/Joel/joel-1-verse-span-meaning.md`, `WA-joel-1-debate.md` — regenerated,
+  gap-aware (debate still unfilled).
+- Memory: `project_iba_verse_existence_gated_on_term_discovery` (now RESOLVED),
+  `project_iba_configmaint_escalation_self_answered_anomaly` (new, open).
+- This log, plus three commits (`785736a3` census, `e89dacb6` debate-only code,
+  `57440333` base-extract extension + config applied) — all pushed.
+
+**Next:** a new session/log covers Joel chapter 2's own passage debate — a fresh piece of work,
+not a continuation of this methodology question.
