@@ -5,7 +5,7 @@ metadata:
   node_type: memory
   type: project
   originSessionId: 8e7abc11-4c98-4a3a-8770-1da0a8756a12
-  modified: 2026-07-29T10:06:22.182Z
+  modified: 2026-07-30T16:27:40.451Z
 ---
 
 As of 2026-07-28, the IBA app's passage-debate method ([[project_movement_operation_definition_written]], [[project_iba_passage_debate_no_separate_ai_chat_needed]]) is considered stable enough to run as a sustained, book-by-book campaign rather than a one-book pilot. The researcher named this the next major phase of the study: **complete the passage-debate stage (base extract → passage debate → whole-book read) for every book of the Bible**, working through the **prophets first**, then switching to other genres (order across Torah/history/wisdom/poetry/gospels/epistles/apocalyptic not yet fixed). Researcher's own estimate: roughly **1.5 months** for the whole phase.
@@ -31,6 +31,71 @@ As of 2026-07-28, the IBA app's passage-debate method ([[project_movement_operat
   discoverability-assumption.md` (the gating question), `...joel-2-passage-debate.md`,
   `...joel-3-passage-debate.md`, `...joel-1-passage-debate-book-complete.md`,
   `...joel-whole-book-read.md`.
+- Book 4 — **Obadiah** (1 chapter / 1 passage debate — whole book in one debate), complete
+  2026-07-29. Taken deliberately out of `cfg_book_order` canonical sequence (Joel 28, Amos 29,
+  Obad 30) as a short, single-chapter book. Whole-book-read done, including real cross-book
+  comparison against Joel (not just deferred). Densest Q12 (divine-mirroring) material found in
+  the campaign so far: Obad 15-16 pair two CONSECUTIVE explicit lex-talionis constructions,
+  identical verb both sides ("as you have done, it shall be done to you"; "as you have drunk...so
+  shall they drink") — denser than Joel's own clearest instance ("sold," 3:3-8). Also found: a
+  four-stage escalation of Edom's own complicity (vv11-14: stood aloof → gloated/rejoiced/boasted
+  → looted → betrayed fugitives), two inner-being faculties (understanding, courage) failing in
+  succession (vv7-9), and an omission (v11 "stood aloof") explicitly judged morally equivalent to
+  active wrongdoing — a new emergent question about whether this method needs its own category
+  for omissions, not just acts/states/silences. Session log:
+  `SESSION-LOG-20260729-obadiah-complete-and-guardrail-escalation.md` (commit `2125addd`).
+- **Guardrail gap found + escalated 2026-07-29** (same session as Obadiah, unrelated to the method
+  itself): no runtime path in the IBA app enforces `cfg_work_package.inactive` or a `deleted=1`
+  row anywhere — `run.py` dispatches steps without ever consulting `cfg_work_package`;
+  `configmaint.py` is the only place `inactive` is read at all, and only for its own validation
+  report. Surfaced when a retired step (`set-candidates`) was about to be run against Obadiah with
+  nothing in the app to stop it — the researcher caught it, not the code. Escalation
+  `MANUAL-20260729_122829_764060`, open, not yet fixed — next task after this memory update.
+- Book 5 — **Micah** (7 chapters / 7 passage debates), complete end to end 2026-07-30, including
+  narrative. A real app-completeness gap was found and fixed mid-session first: `passage.
+  debate_sync` didn't exist as a registered step, so nothing ever re-checked `passage.
+  debate_status` after a scaffold was filled in by hand — the session started to reverse-engineer
+  the answer from BUILD.md history/archived files instead of stopping, was caught by the
+  researcher live, and the gap was closed properly (new step built + registered, GOVERNANCE.md
+  §3B/BUILD.md §53) before Micah's own debates resumed. See
+  [[feedback_doc_archaeology_signals_missing_config]]. Whole-book-read done with all 7 chapters'
+  Resolution sections filled by hand (not left as placeholders, unlike Daniel's known gap above) —
+  closed threads include the divine-empowerment pattern (Mic 3:8/5:4, confirmed twice), "steadfast
+  love" (chesed) argument (6:8 → 7:18 → 7:20, the cleanest fully-resolved thread found in the
+  campaign so far), and "shepherd" stretching across four registers in one book. The book's own
+  clearest genuinely UNRESOLVED feature (peace-vs-conquest, Mic 4:3-4/13, paired again at 5:7-8's
+  dew/lion double simile) is held open in the synthesis, not harmonised. Narrative generated same
+  session: 126,668 in / 7,670 out tokens, $0.4951, validated clean (all 3 channels present).
+- Book 6 — **Hosea** (14 chapters / 14 passage debates — the majority oracles, per the researcher's
+  own framing at task start), complete end to end 2026-07-30, including narrative. Done in
+  canonical `cfg_book_order` sequence (ordinal 27, directly after Daniel at 26) rather than
+  out-of-order like Joel/Obadiah. A genuine judgment call was made and disclosed rather than
+  asked: whole-chapter passage granularity throughout (no sub-chapter splits, even for ch1's
+  narrative/oracle seam), matching Joel/Obadiah/Micah precedent over Daniel's own early
+  narrative-scene splits — reasoned as fitting Hosea's own continuous prophetic-sign-unit shape.
+  Whole-book-read done with all 14 chapters' Resolution sections filled by hand. The book's own
+  central structural device, confirmed across the full read: the **shuv ("return") arc** — called
+  for (14:1) → confessed but transient (6:1-4) → denied (7:10) → hollowed (7:16) → historicised as
+  judgment ("return to Egypt," 8:13/9:3,6) → refused (11:5) → reversed by the LORD's own initiative
+  (11:11) → realised in both directions at once at the close (14:1/4/7, the identical verb for
+  Israel's return AND the LORD's anger turning away). The major judgment/mercy tension (ch9:15 "I
+  will love them no more" vs ch11:8-9's resolution, re-complicated by ch13:14 "compassion is hidden
+  from my eyes") was resolved as: ch11:8-9 is the real reversal (grounded in "I am God and not a
+  man," not in anything Israel did), reaffirmed at ch14:4, with ch13:14 read as belonging to that
+  chapter's own internal judgment-oracle rather than a reopening — mercy is the book's own final
+  position. Israel/Judah's relative standing (praised ch11:12, re-indicted ch12:2) was confirmed as
+  a genuine, deliberate oscillation across the book's own oracles, not a defect to smooth over —
+  structurally parallel to the judgment/mercy oscillation itself. One thread was left GENUINELY
+  OPEN, not force-resolved: ch13:16's literal violence against Samaria's infants and pregnant women
+  reuses the identical verb (baqa) applied figuratively to the whole nation's judgment at ch13:8 —
+  the ethical weight of corporate judgment landing on non-culpable individuals is never addressed
+  anywhere in the book's own text, and the narrative names this directly rather than manufacturing
+  a resolution. Narrative generated same session: 231,610 in / 6,366 out tokens, $0.7903, validated
+  clean (all 3 channels present) — the API-call approval escalation (id 415) was answered
+  successfully despite `Escalation.ps1 -Action AnswerRun` printing a misleading "no pending
+  escalation" message; the DB row itself showed `state='answered', answer='approve'` and resuming
+  the run with the same `-RunId` proceeded normally. Worth a quick sanity-check against the
+  escalation table directly if that message recurs, rather than assuming the approval failed.
 
 **Why:** the researcher judged the method has reached a genuinely repeatable, working shape — per-book pipeline (`VerseSpanMeaning-Report.ps1` → `PassageDebate-Report.ps1`, filled by hand applying the method → `WholeBookRead-Report.ps1`), fully config-driven, with corpus-continuity auto-cited between debates. This is the "stream that finally works" moment after a long run of method corrections (RESET 2026-06-25, cycle authority 2026-07-08, verse-first pivot 2026-07-02, passage-debate correction/app-integration 2026-07-21 through 07-27).
 
