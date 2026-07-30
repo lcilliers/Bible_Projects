@@ -44,9 +44,9 @@ def rebuild_parsed_tables(ctx: Ctx) -> dict:
     _may(ctx, "lexicon.parse", "strong_lsj_parsed")
     _may(ctx, "lexicon.parse", "strong_mounce_parsed")
 
-    meaning = lexiconparse.meaning_tree_rows(ctx.db.conn)
-    lsj = lexiconparse.lsj_rows(ctx.db.conn)
-    mounce = lexiconparse.mounce_rows(ctx.db.conn)
+    meaning = lexiconparse.meaning_tree_rows(ctx.cfg)
+    lsj = lexiconparse.lsj_rows(ctx.cfg)
+    mounce = lexiconparse.mounce_rows(ctx.cfg)
 
     ctx.db.conn.execute("DELETE FROM strong_meaning_parsed")
     ctx.db.conn.executemany(

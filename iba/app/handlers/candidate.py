@@ -226,7 +226,15 @@ def _write_quality_report(ctx: Ctx, sc_null: int, sc_tag: "vq.ValueFinding", see
             + [f"| {r['lk']} | {r['n']} |" for r in orphan_sorted] + [""]),
     }
     L = reportkit.render_scaffold(ctx.db.conn, "candidate.validate", sections, intro=intro)
-    reportkit.write_csv_pairing(ctx.db.conn, "candidate.validate", path.parent / "export")
+    # Same class of bug found+fixed 2026-07-30 in handlers/passage.py (`write_csv_pairing`'s
+    # default is an UNFILTERED full-table dump — appropriate for a cfg_* audit trail, wrong for a
+    # table with real soft-deleted rows): `candidate_seed` has 281 deleted=1 rows right now, which
+    # a plain dump would include even though every count/finding above is deleted=0-scoped. Pass
+    # the live rows explicitly via `row_filter`, same mechanism `candidate.load` already uses.
+    row_filter = {t: ctx.db.rows(f'SELECT * FROM "{t}" WHERE deleted=0')
+                 for t in ("candidate_seed", "lemma_inventory", "span_candidate")}
+    reportkit.write_csv_pairing(ctx.db.conn, "candidate.validate", path.parent / "export",
+                                row_filter=row_filter)
     reportkit.write_report(ctx.db.conn, "candidate.validate", path, L)
     return path
 

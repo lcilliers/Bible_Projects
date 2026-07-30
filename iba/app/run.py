@@ -176,9 +176,17 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
                           "AND state='raised'", (run_id, step_id))
         if not already:
             _grant(cfg, "escalation")
+            # Found 2026-07-30 (escalation #383, "it is unclear what the issue is"): `message` here
+            # is often just a bare count (e.g. fail()'s own message arg, "1 coherence error(s)") —
+            # the actual error text lives in `outcome.counts` (e.g. counts["errors"]), which the
+            # pause-continue path above gets for free via the handler's own escalate() question but
+            # this auto-generated path never surfaced at all. Append it so the question is
+            # self-contained — full detail also still in `preset` for programmatic use.
+            detail = "; ".join(f"{k}: {v}" for k, v in outcome.counts.items() if v)
+            question = f"{message} — {detail}" if detail else message
             db.write("escalation", {
                 "run_id": run_id, "word": ctx.word, "at_step": step_id, "type": "report-stop",
-                "question": message,
+                "question": question,
                 "preset": json.dumps(outcome.counts) if outcome.counts else "{}",
                 "tried": "hard error (report-stop) — recorded for visibility; answering this does "
                         "not resume the run, which is already terminal",

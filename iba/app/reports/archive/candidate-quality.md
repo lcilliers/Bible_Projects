@@ -1,10 +1,10 @@
 # Candidate quality report
 
-> Generated 2026-07-30T06:30:46Z by `candidate.validate`. Read-only findings, not a gate. Covers the stamp (`span_candidate`), the seed decision (`candidate_seed`), and the independent substrate (`lemma_inventory`) — one worklist, not three separate checks.
+> Generated 2026-07-22T19:36:22Z by `candidate.validate`. Read-only findings, not a gate. Covers the stamp (`span_candidate`), the seed decision (`candidate_seed`), and the independent substrate (`lemma_inventory`) — one worklist, not three separate checks.
 
-- `span_candidate.candidate_tag` null: **14751** row(s)
+- `span_candidate.candidate_tag` null: **15036** row(s)
 - `candidate_seed.tag` null (candidate rows only): **0** row(s)
-- `lemma_key` with no `strong` row: **42351** row(s) across 365 lemma(s)
+- `lemma_key` with no `strong` row: **44198** row(s) across 383 lemma(s)
 
 ## Contents
 
@@ -15,176 +15,179 @@
 
 ## span_candidate.candidate_tag (the stamp)
 
-**32757/69163** row(s) violate `pattern:candidate.tag_clean_pattern`, by category (of the samples shown below): parenthetical 16748, colon (dual-gloss) 6991, other 5621, slash (alt-gloss) 3397
+**33584/70028** row(s) violate `pattern:candidate.tag_clean_pattern`, by category (of the samples shown below): parenthetical 17130, colon (dual-gloss) 7260, other 5700, slash (alt-gloss) 3494
 
 | value | rows |
 |---|---:|
-| "'God has forgotten, he won't see'" | 4678 |
-| 'practice (asah)' | 2441 |
-| 'come before (bo)' | 2250 |
-| 'walk (halak)' | 1350 |
-| 'see (raah)' | 1146 |
+| "'God has forgotten, he won't see'" | 4703 |
+| 'practice (asah)' | 2475 |
+| 'come before (bo)' | 2282 |
+| 'walk (halak)' | 1383 |
+| 'see (raah)' | 1159 |
+| 'enemies speak lies (v11)' | 1069 |
 | 'to hear: hear' | 1068 |
-| 'enemies speak lies (v11)' | 1059 |
-| 'dwell in unity (yashab)' | 999 |
-| 'return (shuv)' | 962 |
-| 'stretch out the hands (shalach)' | 765 |
-| 'eat up / devour (akal - eat up my people)' | 730 |
-| 'to call: call to' | 606 |
-| 'lift up (nasa)' | 587 |
-| 'bad: harmful' | 561 |
-| 'make (sim)' | 530 |
-| 'forever: enduring' | 419 |
-| 'to keep: obey' | 418 |
-| 'justice: judgement' | 399 |
+| 'dwell in unity (yashab)' | 1007 |
+| 'return (shuv)' | 985 |
+| 'stretch out the hands (shalach)' | 777 |
+| 'eat up / devour (akal - eat up my people)' | 745 |
+| 'bad: harmful' | 629 |
+| 'to call: call to' | 622 |
+| 'lift up (nasa)' | 596 |
+| 'make (sim)' | 533 |
+| 'to keep: obey' | 449 |
+| 'forever: enduring' | 425 |
+| 'justice: judgement' | 419 |
+| 'suffer (matsa)' | 399 |
 | 'to perceive: understand' | 396 |
 | 'spirit/breath: spirit' | 379 |
-| 'suffer (matsa)' | 372 |
-| 'bloodthirsty / men of blood (dam - save me from bloodthirsty men)' | 341 |
-| 'I confess my iniquity, I am sorry for my sin' | 333 |
-| 'to strengthen: strengthen' | 281 |
-| 'turn aside (sur, negated)' | 272 |
-| 'face: anger' | 247 |
+| 'bloodthirsty / men of blood (dam - save me from bloodthirsty men)' | 349 |
+| 'I confess my iniquity, I am sorry for my sin' | 335 |
+| 'turn aside (sur, negated)' | 289 |
+| 'to strengthen: strengthen' | 285 |
+| 'face: anger' | 263 |
+| 'strength: soldiers' | 244 |
 | 'to trust (in)' | 243 |
-| 'strength: soldiers' | 239 |
-| 'iniquity: crime' | 227 |
+| 'iniquity: crime' | 229 |
+| 'the law in his heart, steps not slipping' | 218 |
 | 'to will/desire' | 206 |
-| 'the law in his heart, steps not slipping' | 205 |
-| 'defend / judge for (shaphat - may he defend the cause of the poor)' | 193 |
-| 'forsake (azab)' | 193 |
-| 'turn aside (natah)' | 193 |
-| 'pass away (kalah)' | 184 |
-| 'extol (rum)' | 176 |
-| 'prevail (yakol, negated)' | 171 |
+| 'turn aside (natah)' | 205 |
+| 'forsake (azab)' | 204 |
+| 'defend / judge for (shaphat - may he defend the cause of the poor)' | 197 |
+| 'to love: lover' | 197 |
+| 'pass away (kalah)' | 187 |
+| 'extol (rum)' | 184 |
+| 'prevail (yakol, negated)' | 172 |
 | 'to consecrate: consecate' | 170 |
-| 'to love: lover' | 170 |
+| 'fight / attack (lacham - many attack me)' | 168 |
 | 'swear (shaba)' | 167 |
-| 'fight / attack (lacham - many attack me)' | 165 |
-| 'pray (shaal)' | 158 |
-| 'kill (harag)' | 149 |
+| 'pray (shaal)' | 160 |
+| 'kill (harag)' | 151 |
 | 'to call: call' | 147 |
 | 'voice/sound: voice' | 140 |
 | 'declare (saphar)' | 138 |
-| 'profane / violate (chalal - he violated his covenant)' | 133 |
+| 'pursue (radaph)' | 138 |
+| 'profane / violate (chalal - he violated his covenant)' | 134 |
 | 'sacrifice (zabach)' | 132 |
-| 'pursue (radaph)' | 130 |
+| 'be at rest / settle (shakan - and be at rest)' | 121 |
 | 'cast / throw (shalak - cast your burden on the LORD)' | 121 |
-| 'be at rest / settle (shakan - and be at rest)' | 116 |
-| 'to devise: design' | 113 |
-| 'pour out (shaphak)' | 110 |
+| 'truth: faithful' | 121 |
+| 'upright:right' | 119 |
+| 'to devise: design' | 118 |
+| 'pour out (shaphak)' | 112 |
+| 'to honor: honour' | 110 |
 | 'to plead/comfort' | 109 |
-| 'truth: faithful' | 109 |
-| 'be weak: weak' | 104 |
-| 'to honor: honour' | 103 |
-| 'to redeem: redeem' | 101 |
+| 'be weak: weak' | 107 |
+| 'to redeem: redeem' | 102 |
 | 'to be sorry: comfort' | 99 |
-| 'upright:right' | 94 |
+| 'run (ruts)' | 91 |
 | 'unfeeling (tapash)' | 90 |
-| 'run (ruts)' | 87 |
 | 'stir up strife / band together (gur - they stir up strife)' | 85 |
-| 'learn (lamad)' | 82 |
+| 'learn (lamad)' | 84 |
+| 'hide oneself (sathar - then I could hide from him)' | 79 |
+| 'plan / take counsel (yaats - they only plan to thrust him down)' | 79 |
+| 'be estranged / alienated (zur - estranged from the womb)' | 77 |
 | 'be hurt (anah)' | 77 |
 | 'evil/bad' | 77 |
-| 'hide oneself (sathar - then I could hide from him)' | 74 |
-| 'plan / take counsel (yaats - they only plan to thrust him down)' | 74 |
-| 'abide (lun)' | 73 |
-| 'curse (qalal)' | 72 |
-| 'man is a mere breath, a shadow' | 70 |
-| 'set (shith)' | 69 |
-| 'evil: wickedness' | 68 |
-| 'see (nabat)' | 65 |
-| 'be estranged / alienated (zur - estranged from the womb)' | 63 |
+| 'evil: wickedness' | 77 |
+| 'curse (qalal)' | 76 |
+| 'abide (lun)' | 75 |
+| 'man is a mere breath, a shadow' | 73 |
+| 'set (shith)' | 73 |
+| 'to plow/plot' | 70 |
+| 'see (nabat)' | 66 |
+| 'observe (natsar)' | 63 |
 | 'will/desire' | 62 |
 | 'seize (achaz)' | 61 |
-| 'to plow/plot' | 61 |
+| 'do no wrong (paal)' | 57 |
 | 'to see/experience' | 57 |
-| "flee (barach) God's presence" | 55 |
-| 'to twist: tremble' | 54 |
-| 'do no wrong (paal)' | 53 |
-| 'hold dear (ratsah)' | 53 |
-| 'be afflicted (tsarar)' | 52 |
-| 'behold your face, satisfied with your likeness' | 52 |
-| 'vain (shav)' | 52 |
-| 'shout (ranan)' | 51 |
+| 'to twist: tremble' | 57 |
+| "flee (barach) God's presence" | 56 |
+| 'behold your face, satisfied with your likeness' | 55 |
+| 'hold dear (ratsah)' | 55 |
+| 'be afflicted (tsarar)' | 54 |
+| 'shout (ranan)' | 54 |
+| 'vain (shav)' | 53 |
 | 'cling (dabaq)' | 50 |
 | 'evil/harm: evil' | 50 |
 | 'lean / be sustained (samak - upon you I have leaned from before my birth)' | 47 |
-| 'murder (ratsach)' | 46 |
-| 'guilt [offering]' | 44 |
-| 'observe (natsar)' | 44 |
-| 'refrain from anger, forsake wrath' | 43 |
+| 'murder (ratsach)' | 47 |
+| 'refrain from anger, forsake wrath' | 46 |
+| 'guilt [offering]' | 45 |
 | 'to serve/heal' | 43 |
 | 'to praise/bless' | 42 |
+| 'lie in wait / ambush (arab - they lie in wait for my life)' | 41 |
+| 'haughty (gaboah)' | 40 |
 | 'to wait: wait' | 40 |
-| 'haughty (gaboah)' | 39 |
 | 'horror: destroyed' | 39 |
 | 'I am a worm, not a man' | 38 |
 | 'to call to/summon' | 38 |
-| 'lie in wait / ambush (arab - they lie in wait for my life)' | 35 |
-| 'word (millah) before the tongue' | 35 |
-| 'deliverance: salvation' | 31 |
+| 'laugh / deride (sachaq - laugh at him)' | 36 |
+| 'word (millah) before the tongue' | 36 |
+| 'deliverance: salvation' | 34 |
+| 'hope / expectation (tiqvah - my hope is from him)' | 34 |
+| 'moan / murmur (hamah - and moan)' | 34 |
+| 'store up (tsaphan)' | 32 |
 | 'hide (kachad, refused)' | 31 |
 | 'to call (on)/name' | 31 |
 | 'to hope/expect' | 31 |
 | 'to shine/appear' | 31 |
-| 'laugh / deride (sachaq - laugh at him)' | 30 |
-| 'moan / murmur (hamah - and moan)' | 30 |
 | 'quiet (damam)' | 30 |
 | 'vow (nadar)' | 29 |
+| 'noble: willing' | 28 |
+| 'secret sins (alum)' | 28 |
 | 'accuser (satan)' | 27 |
-| 'secret sins (alum)' | 27 |
+| 'conceives evil, births lies' | 27 |
+| 'ascribe glory, worship in holiness' | 26 |
+| 'be weary/toil' | 26 |
 | 'come (qadam)' | 26 |
-| 'hope / expectation (tiqvah - my hope is from him)' | 26 |
+| 'flatter / deceive (pathah)' | 26 |
+| 'fool[ish]' | 26 |
 | 'number (manah)' | 26 |
 | 'offer freely (nedabah)' | 26 |
-| 'be weary/toil' | 25 |
+| 'consecration: Nazirite vow' | 25 |
 | 'I told the glad news, I did not restrain my lips' | 24 |
-| 'ascribe glory, worship in holiness' | 24 |
-| 'conceives evil, births lies' | 24 |
-| 'consecration: Nazirite vow' | 24 |
+| 'fly away (uph - I would fly away)' | 24 |
 | 'weakness: weak' | 24 |
 | 'wrongdoings (alilah)' | 24 |
-| 'noble: willing' | 23 |
-| 'store up (tsaphan)' | 23 |
+| 'awake (qits) still with God' | 22 |
 | 'knees (berek)' | 22 |
 | 'belly/womb/stomach' | 21 |
-| 'flatter / deceive (pathah)' | 21 |
-| 'fly away (uph - I would fly away)' | 21 |
+| 'search out (chaphas - a diligent search)' | 21 |
 | 'temptation/testing: temptation' | 21 |
+| 'wander (shagah, negated)' | 21 |
 | "'with our tongue we will prevail'" | 20 |
-| 'awake (qits) still with God' | 20 |
+| 'arrogant (rachab)' | 20 |
+| 'judge / govern (din - may he judge your people with righteousness)' | 20 |
+| 'mix (arab)' | 20 |
 | 'proud (yonah/gaayon)' | 20 |
 | 'hasten (chush)' | 19 |
-| 'judge / govern (din - may he judge your people with righteousness)' | 19 |
 | 'oppress (lachats)' | 19 |
 | 'to judge/doubt' | 19 |
-| 'arrogant (rachab)' | 18 |
-| 'search out (chaphas - a diligent search)' | 18 |
 | 'bring / present (yabal - let all bring gifts)' | 17 |
+| 'commit iniquity (avah)' | 17 |
+| 'lowly (shaphal)' | 17 |
 | 'to remain/endure' | 17 |
-| 'commit iniquity (avah)' | 16 |
-| 'lowly (shaphal)' | 16 |
+| 'laughter (sechoq)' | 15 |
 | 'robber/rebel' | 15 |
-| 'wander (shagah, negated)' | 15 |
 | 'exchange (mur)' | 14 |
 | 'to know/understand' | 14 |
-| 'laughter (sechoq)' | 13 |
+| 'turn back / fall away (sug - they have all fallen away)' | 14 |
+| 'foolish confidence / folly (kesel)' | 13 |
 | 'long/distant' | 13 |
 | 'look away, that I may smile again' | 13 |
-| 'turn back / fall away (sug - they have all fallen away)' | 13 |
-| 'foolish confidence / folly (kesel)' | 12 |
+| 'no usury, no bribe' | 12 |
 | 'to say: will say' | 12 |
 | 'affection/entrails' | 11 |
-| 'mix (arab)' | 11 |
-| 'no usury, no bribe' | 11 |
+| 'glory (shabach)' | 11 |
+| 'perverse (iqqesh)' | 11 |
+| 'pour forth fame + sing' | 11 |
+| 'precious (yaqar) esteeming' | 11 |
 | 'change (chaliphah - they do not change)' | 10 |
-| 'glory (shabach)' | 10 |
-| 'precious (yaqar) esteeming' | 10 |
+| 'distribute freely (pazar)' | 10 |
 | 'to die/be dead' | 10 |
 | 'to give/deliver' | 10 |
 | 'barren woman (aqar)' | 9 |
 | 'delight (shaashua/shaa/sus)' | 9 |
-| 'distribute freely (pazar)' | 9 |
 | 'like a deaf, mute man I do not answer' | 9 |
 | 'war / conflict (qerab - war was in his heart)' | 9 |
 | 'I was mute, and my distress grew worse' | 8 |
@@ -196,26 +199,25 @@
 | 'image/mark' | 8 |
 | 'to cut/mourn' | 8 |
 | 'delay (mahah, negated)' | 7 |
-| 'fool[ish]' | 7 |
 | 'good/kind' | 7 |
-| 'pour forth fame + sing' | 7 |
+| 'murmur (ragan)' | 7 |
 | 'to bow/lay down' | 7 |
 | 'to pray/wish for' | 7 |
 | 'voice: sound' | 7 |
 | 'Jealous [God]' | 6 |
 | 'accusers (satan)' | 6 |
 | 'ark: covenant' | 6 |
+| 'longing (shaqaq)' | 6 |
 | 'mind/thought' | 6 |
 | 'to ponder/confer' | 6 |
 | 'a question/dispute' | 5 |
 | 'be false / deal falsely (shaqar - to your covenant, negated)' | 5 |
 | 'confidence/essence' | 5 |
-| 'longing (shaqaq)' | 5 |
 | 'moan / be in commotion (hum - I moan)' | 5 |
 | 'to know/choose' | 5 |
 | 'go astray (shagag)' | 4 |
 | 'open the mouth (paar)' | 4 |
-| 'perverse (iqqesh)' | 4 |
+| 'speak rashly (bata)' | 4 |
 | 'to bend/bow' | 4 |
 | 'to curse/revile' | 4 |
 | 'to do evil/harm' | 4 |
@@ -223,10 +225,8 @@
 | 'a vow/prayer' | 3 |
 | 'be restless / roam in distress (rud - I am restless)' | 3 |
 | 'melt away (dalaph)' | 3 |
-| 'murmur (ragan)' | 3 |
 | 'my soul bereft, repaid evil for good' | 3 |
 | 'rejected/fleeting' | 3 |
-| 'speak rashly (bata)' | 3 |
 | 'be weary/sick: weak' | 2 |
 | 'low estate (shephel)' | 2 |
 | 'thought/purpose' | 2 |
@@ -966,108 +966,113 @@
 
 | lemma_key | rows |
 |---|---:|
-| H3068 | 6210 |
-| H6213 | 2441 |
-| H0430 | 2349 |
-| H0935 | 2250 |
-| H1980 | 1350 |
+| H3068 | 6297 |
+| H6213 | 2475 |
+| H0430 | 2354 |
+| H0935 | 2282 |
+| H1980 | 1383 |
 | H8085 | 1160 |
-| H7200 | 1146 |
-| H1696 | 1059 |
-| H7725 | 962 |
+| H7200 | 1159 |
+| H1696 | 1069 |
+| H7725 | 985 |
 | H5869 | 873 |
-| H7971 | 765 |
+| H7971 | 777 |
 | H5315 | 754 |
 | G2962 | 708 |
-| H7121 | 606 |
-| H1870 | 596 |
+| H1870 | 669 |
+| H7451 | 629 |
+| H7121 | 622 |
+| H5375 | 596 |
 | H3820 | 595 |
-| H5375 | 587 |
 | H2896 | 562 |
-| H7451 | 561 |
-| H7760 | 530 |
+| H7760 | 533 |
 | H5975 | 519 |
 | H6310 | 491 |
 | H6944 | 469 |
-| H5769 | 419 |
-| H8104 | 418 |
-| H4941 | 399 |
+| H8104 | 449 |
+| H0136 | 429 |
+| H5769 | 425 |
+| H4941 | 419 |
 | G1492 | 396 |
 | G4151 | 379 |
 | H7307 | 378 |
 | H3372 | 314 |
+| H3069 | 303 |
 | H2403 | 295 |
+| H5493 | 289 |
 | H5647 | 288 |
-| H2388 | 281 |
-| H0341 | 278 |
-| H5493 | 272 |
-| H0639 | 267 |
-| H6485 | 254 |
+| H2388 | 285 |
+| H0341 | 280 |
+| H0639 | 269 |
+| H6485 | 255 |
 | H2617 | 247 |
+| H2428 | 244 |
 | G4102 | 243 |
-| H2428 | 239 |
 | H7965 | 237 |
-| H5771 | 227 |
-| H0410 | 219 |
+| H5771 | 229 |
+| H0410 | 220 |
 | H0899 | 213 |
-| H5800 | 193 |
-| H3615 | 184 |
-| H7901 | 177 |
-| H7311 | 176 |
-| H0157 | 170 |
+| H5800 | 204 |
+| H0157 | 197 |
+| H3615 | 187 |
+| H7901 | 185 |
+| H7311 | 184 |
 | H6942 | 170 |
+| H3898 | 168 |
 | H1984 | 165 |
-| H3898 | 165 |
 | H2930 | 162 |
 | G2564 | 147 |
 | H3644 | 143 |
 | G5456 | 140 |
 | H5608 | 138 |
-| H2490 | 133 |
+| H2490 | 134 |
+| H0571 | 121 |
+| H3477 | 119 |
 | H6664 | 119 |
+| H2803 | 118 |
 | H3956 | 117 |
 | H6918 | 116 |
 | H7999 | 116 |
-| H2803 | 113 |
-| H8210 | 110 |
-| H0571 | 109 |
+| H8210 | 112 |
+| H3513 | 110 |
 | H7489 | 104 |
 | G5590 | 103 |
-| H3513 | 103 |
+| H1350 | 102 |
 | G2570 | 101 |
-| H1350 | 101 |
+| H3722 | 100 |
 | H5162 | 99 |
-| H3722 | 98 |
-| H3477 | 94 |
-| H7323 | 87 |
+| H7323 | 91 |
+| H0426 | 89 |
 | H8074 | 86 |
 | H1481 | 85 |
-| H3925 | 82 |
+| H3925 | 84 |
 | H8549 | 79 |
 | H2603 | 78 |
+| H5782 | 78 |
+| H0205 | 77 |
+| H2114 | 77 |
 | H6031 | 77 |
 | H1168 | 76 |
 | H3988 | 76 |
+| H2470 | 75 |
+| H3885 | 75 |
 | H2654 | 74 |
-| H3885 | 73 |
-| H2470 | 72 |
+| H7896 | 73 |
+| H2790 | 70 |
 | H6186 | 70 |
-| H7896 | 69 |
-| H0205 | 68 |
-| H2114 | 63 |
-| H6869 | 63 |
+| H6869 | 70 |
 | H7919 | 62 |
 | H0270 | 61 |
 | H1730 | 61 |
-| H2790 | 61 |
 | H2256 | 60 |
 | G1140 | 59 |
-| H2342 | 54 |
+| H2505 | 59 |
+| H2342 | 57 |
+| H0433 | 56 |
 | H5766 | 54 |
-| H2505 | 52 |
-| H6887 | 52 |
-| H7723 | 52 |
-| H7442 | 51 |
+| H6887 | 54 |
+| H7442 | 54 |
+| H7723 | 53 |
 | G2556 | 50 |
 | H3050 | 50 |
 | H4148 | 50 |
@@ -1077,6 +1082,7 @@
 | H5749 | 44 |
 | H4609 | 43 |
 | H5355 | 43 |
+| H3256 | 42 |
 | G5092 | 41 |
 | H2778 | 41 |
 | H3245 | 41 |
@@ -1085,78 +1091,84 @@
 | G2168 | 39 |
 | H0842 | 39 |
 | H8047 | 39 |
+| H7194 | 38 |
 | H8438 | 38 |
 | G1228 | 37 |
-| H3256 | 37 |
 | G4567 | 36 |
-| H4405 | 35 |
+| H4405 | 36 |
 | H5254 | 34 |
 | H5401 | 34 |
-| H7194 | 34 |
+| H8615 | 34 |
+| H8668 | 34 |
 | G0770 | 32 |
-| H8668 | 31 |
+| H8213 | 31 |
 | G2190 | 30 |
 | H1826 | 30 |
 | H7110 | 29 |
-| H8213 | 28 |
+| H5081 | 28 |
+| H8433 | 28 |
 | G0772 | 27 |
+| H2254 | 27 |
 | H3708 | 26 |
 | H3867 | 26 |
+| H4487 | 26 |
 | H4888 | 26 |
-| H8615 | 26 |
+| H6601 | 26 |
+| H6923 | 26 |
 | H2530 | 25 |
 | H5034 | 25 |
+| H5145 | 25 |
 | H5258 | 25 |
 | G0769 | 24 |
-| H2254 | 24 |
-| H5145 | 24 |
-| H5081 | 23 |
-| H5175 | 23 |
+| H2820 | 24 |
+| H5175 | 24 |
+| H5774 | 24 |
 | H7921 | 23 |
 | G3986 | 21 |
 | H2532 | 21 |
 | H5251 | 21 |
-| H5774 | 21 |
-| H6601 | 21 |
 | H7737 | 21 |
 | G5091 | 20 |
 | H2186 | 20 |
+| H7342 | 20 |
 | H2363 | 19 |
 | H6612 | 19 |
-| H2820 | 18 |
 | H5496 | 18 |
-| H7342 | 18 |
 | H8088 | 18 |
 | H2986 | 17 |
+| H5753 | 17 |
 | H6087 | 17 |
 | H3724 | 16 |
-| H5753 | 16 |
 | H5848 | 16 |
 | H4869 | 15 |
 | H6233 | 15 |
 | H7423 | 15 |
+| H1606 | 14 |
+| H7301 | 14 |
 | H7602 | 14 |
 | G1404 | 13 |
 | H2000 | 13 |
-| H2611 | 12 |
+| H2611 | 13 |
 | H3906 | 12 |
 | H4172 | 12 |
 | H5273 | 12 |
 | H7385 | 12 |
-| H8433 | 12 |
+| H7386 | 12 |
 | H1605 | 11 |
-| H1606 | 11 |
 | H2836 | 11 |
-| H7301 | 11 |
+| H5042 | 11 |
+| H7623 | 11 |
 | G1375 | 10 |
 | G1497 | 10 |
 | H2048 | 10 |
 | H6049 | 10 |
-| H7386 | 10 |
-| H7623 | 10 |
+| H6340 | 10 |
 | H1524 | 9 |
 | H2102 | 9 |
+| H2748 | 9 |
 | H3039 | 9 |
+| H3948 | 9 |
+| H5943 | 9 |
 | H6670 | 9 |
 | H8173 | 9 |
 | G1727 | 8 |
@@ -1164,11 +1176,11 @@
 | H2648 | 8 |
 | H4432 | 8 |
 | H7663 | 8 |
+| H7962 | 8 |
 | H8175 | 8 |
 | H1442 | 7 |
 | H2427 | 7 |
 | H3635 | 7 |
-| H5042 | 7 |
 | H5183 | 7 |
 | H5531 | 7 |
 | H5849 | 7 |
@@ -1190,15 +1202,18 @@
 | G4288 | 5 |
 | H1891 | 5 |
 | H1949 | 5 |
+| H2749 | 5 |
 | H3908 | 5 |
 | H5007 | 5 |
 | H5356 | 5 |
 | H7183 | 5 |
 | H7343 | 5 |
 | H8324 | 5 |
+| H8639 | 5 |
 | G0364 | 4 |
 | G1142 | 4 |
 | G2152 | 4 |
+| H0380 | 4 |
 | H1176 | 4 |
 | H1947 | 4 |
 | H2267 | 4 |
@@ -1207,6 +1222,7 @@
 | H4531 | 4 |
 | H5541 | 4 |
 | H5920 | 4 |
+| H5946 | 4 |
 | H6090 | 4 |
 | H6217 | 4 |
 | H6473 | 4 |
@@ -1217,20 +1233,20 @@
 | H7726 | 4 |
 | H8178 | 4 |
 | H8186 | 4 |
-| H8639 | 4 |
 | G4705 | 3 |
 | G4709 | 3 |
+| H0943 | 3 |
 | H1421 | 3 |
 | H1793 | 3 |
 | H2616 | 3 |
 | H3272 | 3 |
-| H3948 | 3 |
 | H4654 | 3 |
 | H4915 | 3 |
 | H5587 | 3 |
 | H5730 | 3 |
 | H5788 | 3 |
 | H6121 | 3 |
+| H7169 | 3 |
 | H7332 | 3 |
 | H7363 | 3 |
 | H7475 | 3 |
@@ -1252,11 +1268,11 @@
 | G5468 | 2 |
 | G5469 | 2 |
 | G5512 | 2 |
-| H0380 | 2 |
 | H0596 | 2 |
 | H2559 | 2 |
 | H3631 | 2 |
 | H3856 | 2 |
+| H4642 | 2 |
 | H5010 | 2 |
 | H5607 | 2 |
 | H5765 | 2 |
@@ -1266,6 +1282,7 @@
 | H6800 | 2 |
 | H7189 | 2 |
 | H7329 | 2 |
+| H7647 | 2 |
 | H7700 | 2 |
 | H7739 | 2 |
 | H8385 | 2 |
@@ -1306,8 +1323,8 @@
 | H2357 | 1 |
 | H2541 | 1 |
 | H2613 | 1 |
+| H2927 | 1 |
 | H3931 | 1 |
-| H4642 | 1 |
 | H4783 | 1 |
 | H4835 | 1 |
 | H4890 | 1 |
@@ -1315,18 +1332,19 @@
 | H5543 | 1 |
 | H5792 | 1 |
 | H5868 | 1 |
+| H6104 | 1 |
 | H6122 | 1 |
 | H6127 | 1 |
 | H6129 | 1 |
+| H6146 | 1 |
 | H6199 | 1 |
 | H6216 | 1 |
 | H6234 | 1 |
+| H6615 | 1 |
 | H6712 | 1 |
 | H7009 | 1 |
-| H7169 | 1 |
 | H7283 | 1 |
 | H7317 | 1 |
-| H7647 | 1 |
 | H7790 | 1 |
 | H8265 | 1 |
 | H8437 | 1 |

@@ -6,9 +6,11 @@ findings, not just the live escalation). Split out 2026-07-21 to avoid a circula
 
 from __future__ import annotations
 
+import io
 import pathlib
 import re
 import sqlite3
+import tokenize
 
 # module -> the dedicated table it already has, if any. Per the researcher's 2026-07-21 rule
 # ("there must be a very good reason why a config goes into settings, rather than the specific
@@ -193,6 +195,162 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
     return orphans
 
 
+# Extended 2026-07-30 per the researcher's correction ("your validations is only touching settings
+# and enum and not incorporating all the other config tables") — `find_orphan_configs` above was
+# the ONLY usage check in the whole app, and it only ever covered `cfg_setting`/`cfg_enum`. Every
+# other table got at most a structural/referential check (does an FK point somewhere real), never
+# "is this actually consumed." These three close that gap for `cfg_book_order`/`cfg_connection`/
+# `cfg_candidate_rule` — the same "not referenced anywhere" concern, extended past the two tables
+# it happened to start with.
+
+def find_orphan_book_order(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
+    """`cfg.book_order()` — the WHOLE table is read as one dict, not looked up by individual key,
+    so (unlike cfg_setting/cfg_enum) there is no per-row "is this ONE book used" question — the
+    question is whether the accessor itself is called anywhere (same corpus-scan convention as
+    `find_orphan_configs`, `migration/` excluded for the same reason: those scripts exist to
+    populate/consume the seed once, not to represent ongoing app usage). ALSO flags duplicate
+    book/ordinal rows — free to check while already reading the table, the same class of internal-
+    coherence gap `_validate_live`'s schema checks already catch for other tables."""
+    out: list[str] = []
+    used = False
+    for f in app_root.rglob("*.py"):
+        if "migration" in f.relative_to(app_root).parts:
+            continue
+        try:
+            text = _code_only_text(f)
+        except OSError:
+            continue
+        if ".book_order(" in text:
+            used = True
+            break
+    if not used:
+        out.append("cfg_book_order: cfg.book_order() is not called anywhere outside migration/ "
+                  "— the whole table is unused")
+
+    books = [r[0] for r in conn.execute("SELECT book FROM cfg_book_order WHERE inactive=0")]
+    for b in sorted({b for b in books if books.count(b) > 1}):
+        out.append(f"cfg_book_order: {b!r} appears more than once")
+    ordinals = [r[0] for r in conn.execute("SELECT ordinal FROM cfg_book_order WHERE inactive=0")]
+    for o in sorted({o for o in ordinals if ordinals.count(o) > 1}):
+        out.append(f"cfg_book_order: ordinal {o} is used by more than one book")
+    return out
+
+
+def find_orphan_connection_keys(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
+    """Every active `cfg_connection.key` must co-occur with a `.connection(` call in the same file
+    — identical methodology to `find_orphan_configs`'s cfg_setting check, just scoped to this
+    table (which that check never covered)."""
+    # NOT `_code_only_text` here — that blanks OUT string-literal tokens, and the thing this check
+    # needs to find (`"base_url"`) is itself a string literal. `_code_only_text` only helps when
+    # searching for bare CODE SYNTAX that never legitimately appears inside a string/comment (a
+    # method-call pattern with no argument, like `find_orphan_book_order`'s `.book_order(` check);
+    # here it would silently blank out every real call site too — caught 2026-07-30 by re-testing
+    # immediately after switching to it and seeing genuinely-used keys (`base_url` et al., real
+    # calls in `stepapi.py`) suddenly flagged as unused.
+    per_file: dict[pathlib.Path, str] = {}
+    for f in app_root.rglob("*.py"):
+        if "migration" in f.relative_to(app_root).parts:
+            continue
+        try:
+            per_file[f] = f.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+    out = []
+    for r in conn.execute("SELECT key FROM cfg_connection WHERE inactive=0"):
+        key = r[0]
+        used = any((f'"{key}"' in text or f"'{key}'" in text) and ".connection(" in text
+                  for text in per_file.values())
+        if not used:
+            out.append(f"cfg_connection {key!r} — not read together with a cfg.connection(...) "
+                      f"call in any one file")
+    return out
+
+
+# The only two steps whose code calls `.candidate_rules(...)` (`candidate.seed`/`candidate.curate`
+# — verified by direct grep, 2026-07-30, not guessed). Both are currently INACTIVE (2026-07-23
+# candidate-system retraction) — when both are inactive, "code calls kind X but 0 active rows back
+# it" is not a live gap, it's the same already-recorded retraction every other inactive-scoped
+# check already excludes (escalation #310); skip the whole first direction of the check rather than
+# re-surface a fact GOVERNANCE.md §15D already covers. The reverse direction (rows nobody calls) is
+# NOT step-gated — a config value with no code path to it at all is a gap regardless of whether the
+# would-be caller happens to be active right now.
+_CANDIDATE_RULES_CALLER_STEPS = ("candidate.seed", "candidate.curate")
+_CANDIDATE_RULES_CALL_RE = re.compile(r"\.candidate_rules\(\s*[\"']([^\"']+)[\"']")
+
+
+def find_orphan_candidate_rules(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
+    """Two-directional usage check for `cfg_candidate_rule` — "orphan" means something different
+    here than a single cfg_setting key, since a row is a candidate WORD, not a configurable key:
+    (a) code calls the candidate_rules accessor for a kind with ZERO active rows — the call will
+    silently return an empty list, which may be exactly what's happening right now and going
+    unnoticed (skipped while `_CANDIDATE_RULES_CALLER_STEPS` are both inactive — see that
+    constant's comment); (b) a kind WITH active rows that no code anywhere asks for — config
+    nobody reads, the same direction `find_orphan_configs` already checks for cfg_setting/
+    cfg_enum.
+
+    Deliberately raw `read_text`, NOT `_code_only_text` — `_CANDIDATE_RULES_CALL_RE` needs to see
+    the actual quoted argument (the kind name IS a string literal), and `_code_only_text` blanks
+    string-literal tokens out; using it here would silently blank every real call site too (caught
+    2026-07-30 the same way as the `cfg_connection` check above — re-tested immediately after
+    switching and found real usage in `candidate.py` suddenly detected as zero). Also deliberately
+    NOT spelling out the literal call-with-a-quoted-kind syntax in prose anywhere in this docstring
+    (unlike the previous draft of this exact paragraph, which did, and matched its own regex
+    against this file's own text) — same class of self-collision `cfgreport.py`'s own "NOTE" already
+    documents for `find_utility_config_density`."""
+    called_kinds: set[str] = set()
+    for f in app_root.rglob("*.py"):
+        if "migration" in f.relative_to(app_root).parts:
+            continue
+        try:
+            text = f.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        called_kinds.update(_CANDIDATE_RULES_CALL_RE.findall(text))
+
+    active_kinds = {r[0] for r in conn.execute(
+        "SELECT DISTINCT kind FROM cfg_candidate_rule WHERE inactive=0")}
+
+    out = []
+    callers_inactive = all(_step_inactive(conn, s) for s in _CANDIDATE_RULES_CALLER_STEPS)
+    if not callers_inactive:
+        for kind in sorted(called_kinds - active_kinds):
+            out.append(f"cfg_candidate_rule: code calls candidate_rules({kind!r}) but there are "
+                      f"ZERO active rows of that kind — the call will silently return []")
+    for kind in sorted(active_kinds - called_kinds):
+        out.append(f"cfg_candidate_rule: kind {kind!r} has active rows but no code calls "
+                  f"candidate_rules({kind!r}) anywhere")
+    return out
+
+
+def find_bad_report_csv_table_references(conn: sqlite3.Connection) -> list[str]:
+    """Every `cfg_report_csv_table.table_name` must name a real table — a DATA table (`cfg_table`)
+    or a `cfg_*` infrastructure table — or the wildcard `cfg_*` prefix `reportkit.write_csv_pairing`
+    itself recognises (a literal trailing `*`). The same referential-integrity discipline
+    `find_report_step_references`/`_validate_live`'s write-grant check already apply to `.step`/
+    write-grant table references — never applied to THIS table's own column before (2026-07-30,
+    researcher: "your validations is only touching settings and enum"). A hard structural fault:
+    a CSV pairing for a table that doesn't exist would crash `write_csv_pairing` the moment that
+    report actually runs, not just sit as a cosmetic gap."""
+    data_tables = {r[0] for r in conn.execute("SELECT name FROM cfg_table")}
+    cfg_tables = {r[0] for r in conn.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
+    known = data_tables | cfg_tables
+    out = []
+    for r in conn.execute(
+            "SELECT DISTINCT step, table_name FROM cfg_report_csv_table WHERE inactive=0"):
+        name = r[1]
+        if name.endswith("*"):
+            prefix = name[:-1]
+            if not any(t.startswith(prefix) for t in known):
+                out.append(f"schema: cfg_report_csv_table ({r[0]}) wildcard {name!r} matches no "
+                          f"known table")
+            continue
+        if name not in known:
+            out.append(f"schema: cfg_report_csv_table ({r[0]}).table_name {name!r} is not a "
+                      f"known data or cfg_* table")
+    return out
+
+
 # Writer identities in cfg_write_grant that are NOT a cfg_step.step — dispatcher/API internals,
 # not steps. Fallback only — the real value is `cfg_enum` group `writer_identity` (added
 # 2026-07-29); kept byte-identical to that group's proposed values so this check works correctly
@@ -322,28 +480,93 @@ def find_unregistered_lib_modules(conn: sqlite3.Connection, app_root: pathlib.Pa
     return out
 
 
+# Every real method the `Cfg` class exposes — computed live from the class itself (not a hand-
+# maintained list) so this stays accurate as `Cfg` grows. Used to detect genuine config-consumption
+# call sites (`<anything>.setting(`, `<anything>.tables(`, ...), not just the two most common ones.
+# Escalation review 2026-07-30 (`cfg-utility-density-check-review-20260730.md`) found this check's
+# OWN pattern was the bug for two modules: `db.py` genuinely consumes config via `.tables()`/
+# `.columns()`/`.unique_key()` — real usage the old `.setting(`/`.enum(` -only pattern never
+# counted; `dbsnapshot.py` genuinely calls `.setting(` but on a `Cfg` instance bound to `c`, not
+# `cfg` — the old pattern hardcoded the literal text `cfg.setting(`/`cfg.enum(`, missing any other
+# variable name entirely.
+_STRING_TOKEN_TYPES = {tokenize.COMMENT, tokenize.STRING}
+for _name in ("FSTRING_START", "FSTRING_MIDDLE", "FSTRING_END"):    # Python 3.12+ (PEP 701) only
+    if hasattr(tokenize, _name):
+        _STRING_TOKEN_TYPES.add(getattr(tokenize, _name))
+
+
+def _code_only_text(path: pathlib.Path) -> str:
+    """Source with every COMMENT/STRING(/f-string literal piece) span blanked to spaces IN PLACE —
+    so a call-site scan can't be fooled by a docstring or comment that merely MENTIONS the pattern
+    in prose, while every real call site keeps its EXACT original adjacency (`cfg.setting(` stays
+    literally `cfg.setting(`, not spread apart). Found 2026-07-30, twice in one session:
+    `cfgreport.py` (fixed by rewording one line) and then `cfgquality.py` itself — THIS file's own
+    docstrings talk about `.setting(`/`.enum(`/`.tables(` (they document the exact check below),
+    which falsely satisfied the old raw-text substring scan. First attempt at this fix (joining
+    non-string tokens with a space) was itself wrong — it broke every REAL match too, by inserting
+    spaces between `cfg`/`.`/`setting`/`(`, caught immediately by re-testing `db.py`/`dbsnapshot.py`
+    (known-good cases) and finding them suddenly failing. Blanking spans in the original string,
+    same length, fixes both directions at once. Falls back to raw text if a file doesn't tokenize
+    cleanly (better a possible false negative than a hard crash on some edge-case file)."""
+    text = path.read_text(encoding="utf-8", errors="ignore")
+    try:
+        tokens = list(tokenize.generate_tokens(io.StringIO(text).readline))
+    except (tokenize.TokenizeError, IndentationError, SyntaxError, ValueError):
+        return text
+    line_starts = [0]
+    for line in text.splitlines(keepends=True):
+        line_starts.append(line_starts[-1] + len(line))
+    chars = list(text)
+    for tok in tokens:
+        if tok.type not in _STRING_TOKEN_TYPES:
+            continue
+        start = line_starts[tok.start[0] - 1] + tok.start[1]
+        end = line_starts[tok.end[0] - 1] + tok.end[1]
+        for i in range(start, min(end, len(chars))):
+            if chars[i] != "\n":
+                chars[i] = " "
+    return "".join(chars)
+
+
+def _cfg_method_pattern() -> re.Pattern:
+    from .cfg import Cfg
+    methods = [m for m in dir(Cfg) if not m.startswith("_") and callable(getattr(Cfg, m))
+              and m != "close"]
+    return re.compile(r"\.(?:" + "|".join(re.escape(m) for m in methods) + r")\(")
+
+
+_CFG_METHOD_RE = None  # lazy: built on first use, not at import time (avoids a circular import —
+                       # cfg.py doesn't import cfgquality, but this keeps the dependency one-way)
+
+
 def find_utility_config_density(conn: sqlite3.Connection) -> list[str]:
-    """Every ACTIVE `cfg_utility` module with ZERO `cfg.setting(`/`cfg.enum(` call sites in its own
-    file — ADVISORY, the same "could be legitimate" caveat `find_orphan_configs` already carries:
-    a module like `retention.py`/`seedreport.py` genuinely has no config of its own because its
-    caller resolves paths for it (a legitimate zero); a module like `lexiconparse.py` — six regexes
-    and a hardcoded tag-set deciding a real parse, zero `cfg.setting()` calls anywhere — is the
-    actual gap this check exists to surface (found by hand 2026-07-29,
-    `core-module-config-intent-vs-effect-20260729.md`; this makes it visible without needing
-    another by-hand read of every module). `cfg_utility.file_path` is already repo-root-relative
-    (e.g. `iba/app/lib/cfg.py`) — resolved against the CWD, which every PS entry point already sets
-    to the repo root (`Set-Location $RepoRoot`), not recombined with any other path."""
+    """Every ACTIVE, NON-EXEMPT `cfg_utility` module with ZERO real `Cfg`-method call sites in its
+    own file (any method `Cfg` exposes — `.setting(`/`.enum(` and every schema/write-grant/sequence
+    method alike, under any variable name — see `_cfg_method_pattern`) — ADVISORY, the same "could
+    be legitimate" caveat `find_orphan_configs` already carries: a module like `retention.py`/
+    `seedreport.py` genuinely has no config of its own because its caller resolves paths for it (a
+    legitimate zero — now declared via `cfg_utility.config_exempt`, not re-derived every run); a
+    module like `lexiconparse.py` — six regexes and a hardcoded tag-set deciding a real parse, zero
+    `Cfg` reference anywhere — is the actual gap this check exists to surface (found by hand
+    2026-07-29, `core-module-config-intent-vs-effect-20260729.md`). `cfg_utility.file_path` is
+    already repo-root-relative (e.g. `iba/app/lib/cfg.py`) — resolved against the CWD, which every
+    PS entry point already sets to the repo root (`Set-Location $RepoRoot`), not recombined with
+    any other path."""
+    global _CFG_METHOD_RE
+    if _CFG_METHOD_RE is None:
+        _CFG_METHOD_RE = _cfg_method_pattern()
     out = []
-    for r in conn.execute("SELECT module, file_path FROM cfg_utility WHERE inactive=0"):
+    for r in conn.execute(
+            "SELECT module, file_path FROM cfg_utility WHERE inactive=0 AND config_exempt=0"):
         path = pathlib.Path(r["file_path"])
         if not path.exists():
             out.append(f"cfg_utility {r['module']!r} — {path} no longer exists on disk")
             continue
-        text = path.read_text(encoding="utf-8", errors="ignore")
-        if "cfg.setting(" not in text and "cfg.enum(" not in text:
-            out.append(f"cfg_utility {r['module']!r} ({path}) has zero cfg.setting()/cfg.enum() "
-                      f"call sites — confirm this is a legitimate zero (a helper whose caller "
-                      f"resolves config for it) or a real completeness gap")
+        if not _CFG_METHOD_RE.search(_code_only_text(path)):
+            out.append(f"cfg_utility {r['module']!r} ({path}) has zero Cfg-method call sites "
+                      f"(.setting()/.enum()/.tables()/... under any variable name) — confirm this "
+                      f"is a legitimate zero (mark `cfg_utility.config_exempt=1` via "
+                      f"`configmaint.propose`) or a real completeness gap")
     return out
 
 

@@ -1328,3 +1328,54 @@ existing `configmaint.propose` approval gate, not a separate bypass; classifying
 requires that same sanctioned path. New hard `configmaint.validate` check
 (`find_unclassified_active_steps`) keeps a future unclassified step from silently existing. Full
 account, including the live refusal test: `BUILD.md` §40.
+
+---
+
+## 28. `cfg_enum.escalation_type` gains `report-stop` and `crash` (2026-07-30, escalations #384/#385, both approved+applied same day)
+
+Until now `escalation.type` only ever held `interactive` (a `raise`/word-scoped item) or `prompted`
+(a real dispatcher pause-continue awaiting a decision, which *resumes* the run on answer — §9). The
+2026-07-30 rule (recorded in `run.py`, §-adjacent to the `report-stop` path in `cfg_on_fail`): every
+`report-stop` condition now ALSO writes a recorded, visible `escalation` row when it fires, not just
+a silent `run.state` flip to `failed` — so a hard-stop failure shows up in `Escalation.ps1 -Action
+List`/`escalation-list.md` the same way a real pause does, distinguishable from `prompted` by `type`.
+A `report-stop` escalation is a **terminal record, not a live pause** — answering it does not resume
+anything (there is nothing to resume; the run already ended). Approved via `configmaint.propose`,
+applied (`INSERT cfg_enum escalation_type='report-stop'`) after fixing the id/run_id resolution bug
+that had blocked the approval from going through — see `BUILD.md` §43. The sibling value, `crash`
+(uncaught exception, caught+recorded+re-raised by `run.py`; escalation #385), is **also now
+approved and applied** (`INSERT cfg_enum escalation_type='crash'`) — resumed the same way once the
+researcher's own `Escalation.ps1 -Action AnswerRun` answer was recorded; see `BUILD.md` §44. Both
+values are live in `enum.escalation_type` as of 2026-07-30T05:14:23Z (the DB's own
+`cfg_change_detail` timestamp for the `crash` insert — the authoritative record of when this
+became true, not this doc's edit time).
+
+*Correction, same day:* this section originally said `crash` was "proposed but not yet approved"
+— true when first written, but the researcher applied it shortly after and this entry wasn't
+updated in the same unit of work, which is exactly what `find_stale_governance_docs` (§5B) exists
+to catch. That check flagged this as stale and Claude Code initially misread the finding as a
+sandbox clock artifact rather than checking `cfg_change_detail` directly — a real content-currency
+gap, now fixed here.
+
+---
+
+## 29. Validation extended past `cfg_setting`/`cfg_enum` — every `cfg_*` table now has SOME usage or referential check (2026-07-30, later same day)
+
+Researcher's factual challenge, confirmed by direct mapping: `find_orphan_configs` (§5B) — the
+check asking "is this genuinely consumed, not just structurally valid" — had only ever covered
+`cfg_setting`/`cfg_enum` since it was written. `cfg_book_order`, `cfg_connection`,
+`cfg_candidate_rule` had ZERO checking of any kind; `cfg_report_csv_table.table_name` had a step-
+reference check but nothing confirming the table name itself is real.
+
+**Closed, four new checks (`lib/cfgquality.py`, full account: `BUILD.md` §51):**
+`find_orphan_book_order` (is `cfg.book_order()` called anywhere + duplicate book/ordinal
+detection), `find_orphan_connection_keys` (same per-file co-occurrence methodology as
+`find_orphan_configs`), `find_orphan_candidate_rules` (two-directional — a called kind with zero
+active backing rows, skipped while both real callers are inactive per the 2026-07-23 retraction;
+an active kind no code ever asks for, unconditionally), `find_bad_report_csv_table_references`
+(hard structural check — a `table_name` must be a real DATA or `cfg_*` table).
+
+**Every `cfg_*` table now has at least one form of check** — either a referential/structural check
+(unchanged, `_validate_live`) or a genuine usage check (`find_orphan_configs` + the four new ones).
+Verified end to end: `Config-Maintenance.ps1 -Step Validate` returns clean `ok` — no coherence
+errors, no advisory findings — the first fully clean validate run of this whole 2026-07-30 session.

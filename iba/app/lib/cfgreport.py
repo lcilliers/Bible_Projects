@@ -78,14 +78,79 @@ _INACTIVE_LABEL = {
 }
 
 
+# Known whole-subsystem retirements — a bulk `inactive=1` sweep for a deliberately closed decision,
+# not evidence of stalled/unfinished work. Named explicitly (same discipline `DATA_TABLES`/
+# `REPORT_STEPS` already use elsewhere) so "Inactive configs (367 rows...)" doesn't read as an
+# unexplained pile — found 2026-07-30 (researcher's own read of this section) that it does exactly
+# that with no attribution at all. Checked, not assumed: every one of the 367 rows was individually
+# traced and every single one belongs to one of these two events, zero left over.
+_RETIREMENT_EVENTS = (
+    ("candidate", "candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; "
+                 "migration/retract_candidate_system.py)"),
+    ("passage", "passage-system retirement, 2026-07-26 "
+               "(reports/archive/passage-system-retirement-record-20260726.md)"),
+)
+
+
+def _classify_retirement(table: str, label: str) -> str | None:
+    """Which known retirement event a deactivated row belongs to, or None if unattributed.
+    Checked by substring on the row's own identity (module/step/table names), not by table alone
+    or a hardcoded count, so this stays accurate as either event's rows change AND so a genuinely
+    NEW/unrelated deactivation surfaces as unattributed instead of silently blending into the
+    total the way the plain count already was doing."""
+    if table == "cfg_candidate_rule":
+        return "candidate"          # the table's entire purpose is candidate meaning-net inputs
+    low = label.lower()
+    for key, _ in _RETIREMENT_EVENTS:
+        if key in low:
+            return key
+    return None
+
+
+def _utilities_table(q) -> list[str]:
+    """Full `cfg_utility` registry — module/file/purpose/active/exempt — added 2026-07-30 per the
+    researcher's own read of §0: "is the utility in the cfg.utility table? the contents page of
+    the report does not include the utility table." There was no way to cross-reference a §0
+    finding against the actual registry without a raw SQL query; this makes it browsable in the
+    same document, with `config_exempt`/`config_exempt_reason` (new columns, `migration/
+    add_cfg_utility_config_exempt.py`) visible right next to each module."""
+    rows = q("SELECT module, file_path, purpose, inactive, config_exempt, config_exempt_reason "
+             "FROM cfg_utility ORDER BY module")
+    n_exempt = sum(1 for r in rows if r["config_exempt"])
+    n_inactive = sum(1 for r in rows if r["inactive"])
+    S = [
+        f"**{len(rows)}** registered module(s) — **{n_exempt}** declared `config_exempt` (a "
+        f"legitimate zero for config-setting/enum usage, not a completeness gap), **{n_inactive}** "
+        f"inactive (module removed/merged). See §0 \"Low config-density utilities\" for any "
+        f"NON-exempt module still flagged.",
+        "",
+        "| module | file | purpose | active | exempt | exempt reason |",
+        "| --- | --- | --- | --- | --- | --- |",
+    ]
+    for r in rows:
+        S.append("| " + " | ".join([
+            r["module"],
+            r["file_path"],
+            (r["purpose"] or "").replace("|", "\\|"),
+            "" if r["inactive"] else "✓",
+            "✓" if r["config_exempt"] else "",
+            (r["config_exempt_reason"] or "").replace("|", "\\|"),
+        ]) + " |")
+    return S
+
+
 def _inactive_configs(q) -> list[str]:
     """Every deactivated config row, escalation #310 — DEACTIVATED, not deleted: excluded from
     configmaint.validate's coherence/orphan/justification checks (see cfgquality.py), but listed
     here in full so nothing goes quietly missing. cfg_candidate_rule is summarised by kind+count
-    (individual Strong's codes at real volume would swamp the report, not inform it)."""
+    (individual Strong's codes at real volume would swamp the report, not inform it). Also
+    attributes every row to a known retirement event (`_RETIREMENT_EVENTS`) where one applies —
+    see that constant's comment for why."""
     lines: list[str] = []
     total_rows = 0
     total_tables = 0
+    tally: dict[str | None, int] = {}
+    unattributed: list[str] = []
     for table, expr in _INACTIVE_LABEL.items():
         rows = q(f'SELECT {expr} AS label FROM "{table}" WHERE inactive=1 ORDER BY label')
         if not rows:
@@ -93,16 +158,30 @@ def _inactive_configs(q) -> list[str]:
         total_rows += len(rows)
         total_tables += 1
         lines.append(f"- **{table}** ({len(rows)}): " + ", ".join(f"`{r['label']}`" for r in rows))
+        for r in rows:
+            event = _classify_retirement(table, r["label"])
+            tally[event] = tally.get(event, 0) + 1
+            if event is None:
+                unattributed.append(f"{table}.{r['label']}")
     cand = q("SELECT kind, COUNT(*) n FROM cfg_candidate_rule WHERE inactive=1 GROUP BY kind "
              "ORDER BY kind")
     if cand:
-        total_rows += sum(r["n"] for r in cand)
+        n = sum(r["n"] for r in cand)
+        total_rows += n
         total_tables += 1
         lines.append("- **cfg_candidate_rule** (by kind): "
                      + ", ".join(f"{r['kind']}={r['n']}" for r in cand))
-    return [f"**Inactive configs** ({total_rows} row(s) across {total_tables} table(s)) — "
-            f"deactivated, not deleted; excluded from validation above:"] + (
-        lines if lines else ["_(none)_"])
+        tally["candidate"] = tally.get("candidate", 0) + n
+
+    attribution = [f"{tally[key]} from the {desc}" for key, desc in _RETIREMENT_EVENTS if tally.get(key)]
+    if unattributed:
+        attribution.append(f"**{len(unattributed)} UNATTRIBUTED** (not part of a known retirement "
+                           "— needs a look): " + ", ".join(unattributed))
+    header = (f"**Inactive configs** ({total_rows} row(s) across {total_tables} table(s)) — "
+             f"deactivated, not deleted; excluded from validation above.")
+    if attribution:
+        header += " " + "; ".join(attribution) + "."
+    return [header] + (lines if lines else ["_(none)_"])
 
 
 def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH) -> pathlib.Path:
@@ -128,25 +207,73 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
 
     sections: dict[str, list[str]] = {}
 
-    orphans = cfgquality.find_orphan_configs(conn, APP)
-    needs_justification = cfgquality.find_settings_needing_justification(conn)
-    missing_report_paths = cfgquality.find_missing_report_paths(conn)
-    S = [
-        "_Computed fresh on every regenerate; also what `configmaint.validate` escalates on "
-        "if any are present. Not errors — advisory. See GOVERNANCE.md §5B._",
-        "",
-        f"**Orphan configs** ({len(orphans)}) — a `cfg_setting`/`cfg_enum` not referenced by "
-        f"any code:",
+    finding_groups = [
+        ("Orphan configs", "a `cfg_setting`/`cfg_enum` not referenced by any code",
+         cfgquality.find_orphan_configs(conn, APP)),
+        ("Settings needing justification", "module already has its own dedicated table",
+         cfgquality.find_settings_needing_justification(conn)),
+        ("Missing report paths", "a quality-check step with nowhere for its findings to persist "
+         "(governance.reports_must_persist violation)",
+         cfgquality.find_missing_report_paths(conn)),
+        ("Stale filled_by", "cfg_column.filled_by names a now-inactive step",
+         cfgquality.find_filled_by_referencing_inactive_step(conn)),
+        ("Stale governance docs", "GOVERNANCE.md older than the newest applied config change",
+         cfgquality.find_stale_governance_docs(conn, APP)),
+        ("Unregistered lib modules", "iba/app/lib/*.py with no cfg_utility row",
+         cfgquality.find_unregistered_lib_modules(conn, APP)),
+        # NOTE: deliberately NOT spelling out the literal call-site pattern here (see the
+        # `find_utility_config_density` docstring for why) — `find_orphan_configs`-style checks in
+        # this app work by substring-scanning a file's raw text, docstrings and comments included;
+        # writing the literal pattern into THIS file's own source would falsely mark cfgreport.py
+        # itself as "using" it. Found live 2026-07-30: an earlier draft of this exact line did
+        # exactly that, silently dropping cfgreport.py off its own report's flagged list.
+        ("Low config-density utilities", "NON-EXEMPT cfg_utility module with zero real Cfg-method "
+         "call sites of its own (see §2 Utilities registry for the full module list, including "
+         "the 11 already declared config_exempt)",
+         cfgquality.find_utility_config_density(conn)),
+        # 2026-07-30 — extending find_orphan_configs' usage check past cfg_setting/cfg_enum to the
+        # three other tables that had none (researcher: "your validations is only touching settings
+        # and enum and not incorporating all the other config tables").
+        ("Orphan book_order", "cfg.book_order() unused, or a duplicate book/ordinal",
+         cfgquality.find_orphan_book_order(conn, APP)),
+        ("Orphan connection keys", "a cfg_connection key not read via cfg.connection(...) anywhere",
+         cfgquality.find_orphan_connection_keys(conn, APP)),
+        ("Orphan candidate rules", "a kind called with zero active rows, or active rows no code "
+         "asks for",
+         cfgquality.find_orphan_candidate_rules(conn, APP)),
     ]
-    S += ["- " + o for o in orphans] if orphans else ["_(none)_"]
-    S += ["", f"**Settings needing justification** ({len(needs_justification)}) — module already "
-             f"has its own dedicated table:"]
-    S += ["- " + n for n in needs_justification] if needs_justification else ["_(none)_"]
-    S += ["", f"**Missing report paths** ({len(missing_report_paths)}) — a quality-check step with "
-             f"nowhere for its findings to persist (governance.reports_must_persist violation):"]
-    S += ["- " + m for m in missing_report_paths] if missing_report_paths else ["_(none)_"]
-    S += [""] + _inactive_configs(q)
+    # this section is the ACTIONABLE detail behind configmaint.validate's escalation — that
+    # escalation question stays short (counts + this report path) precisely because every item
+    # is listed here in full, once, not repeated inline in the question every time it fires.
+    # Deliberately NOT including "Inactive configs" here (moved to its own §1, 2026-07-30, per the
+    # researcher's own read: "the section 0 Finding for researcher action should only include items
+    # that need my decision. The list of soft deleted items does not belong there" — a deactivated
+    # row is, by definition, an already-made decision recorded for the audit trail, not a live ask.
+    S = [
+        "_Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s "
+        "escalation, which references this section by path rather than repeating it. Not errors "
+        "— advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every "
+        "category below) so any one item can be referenced by number, e.g. \"item 7\" — the "
+        "numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/"
+        "already-decided records (inactive configs) are §1, not here — everything below is "
+        "something that actually needs your judgement.",
+        "",
+    ]
+    n = 0
+    for title, note, items in finding_groups:
+        S.append(f"**{title}** ({len(items)}) — {note}:")
+        if items:
+            for i in items:
+                n += 1
+                S.append(f"{n}. {i}")
+        else:
+            S.append("_(none)_")
+        S.append("")
     sections["findings"] = S
+
+    sections["inactive_configs"] = _inactive_configs(q)
+
+    sections["utilities"] = _utilities_table(q)
 
     sections["connection"] = _table(["key", "value"], [[r["key"], r["value"]] for r in q(
         "SELECT key, value FROM cfg_connection ORDER BY key")])

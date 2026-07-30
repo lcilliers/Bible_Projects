@@ -101,6 +101,22 @@ def answer_for_word(cfg: Cfg, db: Db, word: str, decision: str) -> str:
     return f"escalation {esc['id']} answered {decision!r}; {word!r} status -> {new_status}"
 
 
+def _resolve_run_id(db: Db, ident: str) -> str:
+    """Accept either the real `run_id` string, or the bare `escalation.id` shown as the `#`
+    column in `escalation-list.md` — found 2026-07-30 when a researcher typed `-RunId 384`
+    (the `#` the list report shows first, the natural thing to reference) and got "no pending
+    escalation for run '384'": the report's own primary-looking column and the CLI's expected
+    identifier are two different columns of the same row (`run_id` only appears buried inside
+    the `scope` column, e.g. `` run `RUN-20260730_050949_853-CONFIGMAINT` ``). A real `run_id`
+    always carries a non-digit prefix (`RUN-`/`MANUAL-`), so digits-only input is unambiguous
+    and safe to resolve via `id`; anything else is returned unchanged, exactly as before."""
+    if ident.isdigit():
+        rows = db.rows("SELECT run_id FROM escalation WHERE id=?", (int(ident),))
+        if rows:
+            return rows[0]["run_id"]
+    return ident
+
+
 def _check_state(db: Db, state: str) -> str:
     """Validate a state value against cfg_enum 'escalation_state' — a real, live lookup (not a
     hardcoded Python set) so a change to the DB's enum membership is something this code actually
@@ -156,6 +172,7 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
     answer itself the next time the step runs.
     Valid decisions come from cfg_enum 'escalation_answer' (a live lookup, not a hardcoded Python
     tuple — see _check_state's docstring for why this matters, same reasoning applies here)."""
+    run_id = _resolve_run_id(db, run_id)
     valid_answers = cfg.enum("escalation_answer")
     if decision not in valid_answers:
         return f"invalid decision {decision!r} — must be one of {valid_answers!r}"
@@ -198,6 +215,7 @@ def _latest_for_run(db: Db, run_id: str, states: tuple[str, ...]):
 def edit_question(cfg: Cfg, db: Db, run_id: str, new_question: str) -> str:
     """Replace a still-open (raised or paused) MANUAL escalation's question text. The old wording
     is preserved in `tried` with a timestamp, not silently lost -- the row's history stays readable."""
+    run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
     esc = _latest_for_run(db, run_id, ("raised", "paused"))
@@ -213,6 +231,7 @@ def edit_question(cfg: Cfg, db: Db, run_id: str, new_question: str) -> str:
 def pause_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> str:
     """Set a raised MANUAL escalation aside without answering it -- still shown in the list,
     flagged distinctly, until resumed."""
+    run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
     esc = _latest_for_run(db, run_id, ("raised",))
@@ -225,6 +244,7 @@ def pause_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> str:
 
 def resume_run(cfg: Cfg, db: Db, run_id: str) -> str:
     """Bring a paused MANUAL escalation back into the active (raised) queue."""
+    run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
     esc = _latest_for_run(db, run_id, ("paused",))
@@ -239,6 +259,7 @@ def retract_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> st
     """Withdraw an open (raised or paused) MANUAL escalation without it counting as a decision --
     'never mind', not 'reviewed and approved/rejected'. Terminal, like answered, but distinguishable
     from it in the record."""
+    run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
     esc = _latest_for_run(db, run_id, ("raised", "paused"))

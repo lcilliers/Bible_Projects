@@ -123,7 +123,8 @@ def build(ctx: Ctx) -> Outcome:
 # confirmation (raised earlier this session) — it reports the real distribution and lets the
 # researcher decide, same shape as candidate.validate: one escalation per invocation, standalone,
 # not tied to every build-passages run.
-def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: list, by_book: list) -> pathlib.Path:
+def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: list, by_book: list,
+                          scope_sql: str, scope_args: tuple) -> pathlib.Path:
     """Persist the current distribution — per the researcher's 2026-07-21 ruling that a quality
     check's output must persist to a report file like every other report in the app, not live
     only in a terminal print + an escalation row."""
@@ -142,7 +143,22 @@ def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: l
                   + [f"| {r['book']} | {r['n']} | {r['avg']:.2f} | {r['single']} |" for r in by_book],
     }
     L = reportkit.render_scaffold(ctx.db.conn, "passage.validate", sections, intro=intro)
-    reportkit.write_csv_pairing(ctx.db.conn, "passage.validate", path.parent / "export")
+    # Found 2026-07-30 (researcher: "it seems to include deleted items"): `write_csv_pairing`'s
+    # default is a verbatim FULL-table dump (no `deleted` filter at all — appropriate for a cfg_*
+    # audit trail, wrong here) — for `passage`/`verse_passage` that meant the CSV export sat right
+    # next to a report saying "24 passages" while containing all 18,528/25,244 rows, 99%+ of them
+    # soft-deleted by the 2026-07-26 passage-system retirement (`retract_passage_system.py`).
+    # Harmless before that retirement (the whole table WAS the live data); wrong now that most of
+    # it is historical. Pass the same deleted=0 rows the report itself computed from, via
+    # `row_filter`, exactly the mechanism `write_csv_pairing` already has for this.
+    live_passages = ctx.db.rows(f"SELECT * FROM passage WHERE deleted=0{scope_sql}", scope_args)
+    live_ids = [r["id"] for r in live_passages]
+    ph = ",".join("?" * len(live_ids)) if live_ids else "NULL"
+    live_verse_passages = ctx.db.rows(
+        f"SELECT * FROM verse_passage WHERE deleted=0 AND passage_id IN ({ph})", tuple(live_ids))
+    reportkit.write_csv_pairing(ctx.db.conn, "passage.validate", path.parent / "export",
+                                row_filter={"passage": live_passages,
+                                          "verse_passage": live_verse_passages})
     reportkit.write_report(ctx.db.conn, "passage.validate", path, L)
     return path
 
@@ -175,7 +191,8 @@ def validate(ctx: Ctx) -> Outcome:
         f"SELECT book, COUNT(*) n, AVG(verse_count) avg, "
         f"SUM(CASE WHEN verse_count=1 THEN 1 ELSE 0 END) single "
         f"FROM passage WHERE deleted=0{scope_sql} GROUP BY book ORDER BY book", scope_args)]
-    report_path = _write_quality_report(ctx, total, avg, single, dist, by_book)
+    report_path = _write_quality_report(ctx, total, avg, single, dist, by_book,
+                                        scope_sql, scope_args)
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:

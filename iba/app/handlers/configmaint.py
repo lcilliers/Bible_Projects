@@ -198,6 +198,11 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     # dispatch time with no coherence-report trail.
     e.extend(cfgquality.find_unclassified_active_steps(conn))
 
+    # cfg_report_csv_table.table_name referential integrity — added 2026-07-30 (researcher: "your
+    # validations is only touching settings and enum"). Same class as the on_fail.step/report-
+    # step-reference checks already here; this specific table's own column was never checked.
+    e.extend(cfgquality.find_bad_report_csv_table_references(conn))
+
     return e
 
 
@@ -246,20 +251,37 @@ def validate(ctx: Ctx) -> Outcome:
                                     "lib module(s) missing a cfg_utility row"),
         "low_config_density_utilities": (cfgquality.find_utility_config_density(ctx.db.conn),
                                         "utility module(s) with zero cfg.setting()/cfg.enum() usage"),
+        # 2026-07-30 — extending find_orphan_configs' "actually used, not just structurally valid"
+        # check past cfg_setting/cfg_enum to the three other tables that had zero usage checking.
+        "orphan_book_order": (cfgquality.find_orphan_book_order(ctx.db.conn, APP_ROOT),
+                             "cfg_book_order finding(s)"),
+        "orphan_connection": (cfgquality.find_orphan_connection_keys(ctx.db.conn, APP_ROOT),
+                             "cfg_connection finding(s)"),
+        "orphan_candidate_rule": (cfgquality.find_orphan_candidate_rules(ctx.db.conn, APP_ROOT),
+                                "cfg_candidate_rule finding(s)"),
     }
     preset = {k: v[0] for k, v in findings.items()}
     if not any(preset.values()):
         return ok("cfg_* tables are coherent — schema FKs, may_source, handlers, on_fail, "
                   "status flow, regex settings, report fields all check out; no orphans, no "
                   "settings needing justification, no stale filled_by references, GOVERNANCE.md "
-                  "current, every lib module registered, no zero-config-density utilities")
+                  "current, every lib module registered, no zero-config-density utilities, no "
+                  "book_order/connection/candidate_rule usage gaps")
+
+    # Full detail persists to CONFIG-REPORT.md's "findings" section (cfgreport.py mirrors the
+    # same cfgquality functions) — refreshed here so the report reflects THIS run's findings, not
+    # a stale prior one, before the escalation references it by path.
+    report_path = cfgreport.generate(
+        out_path=pathlib.Path(ctx.cfg.setting("configmaint.report_path",
+                                             "iba/app/config/CONFIG-REPORT.md")))
+    summary = ", ".join(f"{len(v)} {label}" for v, label in findings.values() if v)
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["answer"]
-        summary = ", ".join(f"{len(v)} {label}" for v, label in findings.values())
         if decision == "approve":
-            return ok(f"acknowledged: {summary} — researcher confirmed these are known/acceptable",
+            return ok(f"acknowledged: {summary} — researcher confirmed these are known/acceptable "
+                      f"(full detail in {report_path})",
                       **preset)
         if decision == "reject":
             return fail("findings-rejected",
@@ -267,12 +289,12 @@ def validate(ctx: Ctx) -> Outcome:
                        **preset)
         return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
 
-    lines = [f"{len(v)} {label}: " + "; ".join(v) for v, label in findings.values() if v]
     return escalate(
         "needs-review",
-        question="cfg_* is structurally coherent, but has findings needing your judgement: "
-                 + " | ".join(lines),
-        preset=preset,
+        question=(f"cfg_* is structurally coherent, but has findings needing your judgement: "
+                 f"{summary}. Full detail (every item, by category) written to {report_path} — "
+                 f"see the \"findings\" section."),
+        preset={**preset, "report_path": str(report_path)},
         tried="coherence checks passed; these are advisory findings, not errors — approve to "
               "acknowledge as known/acceptable, reject to flag for action, or revise with a "
               "comment on what to check")
