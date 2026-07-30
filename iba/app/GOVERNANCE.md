@@ -118,6 +118,41 @@ Coherence-checked before it ever reaches you (unknown table/column, bad enum, in
 
 ---
 
+## 3B. Doc/output archaeology is a STOP signal, not a workaround (`governance.past_precedent_investigation_signals_missing_config`, 2026-07-30)
+
+**What prompted this.** Asked to run the book-by-book passage-debate process for Micah, an AI
+session found that `report.passage_debate` writes a scaffold and nothing ever flips
+`passage.debate_status` from `scaffold` to `filled` once the researcher/AI fills in the content —
+no registered step covers that transition. Instead of stopping and naming the gap, the session
+read `BUILD.md`'s history and diffed archived output files from Jonah/Joel/Obadiah to reverse-
+engineer how those books' debates must have reached `filled`, and was about to quietly repeat
+whatever it inferred. The researcher's own words: *"you literally looked back at the completed
+work, never really looked at config, and from your observations about the past re-assembled the
+correct approach. That is exactly why, over the lifetime of this 7 months study, we never got a
+consistent result... The app must first be completed, config loaded, then the instruction can be
+resubmitted."*
+
+**The rule, `cfg_setting` (module `governance`), committed via `configmaint.propose`
+(escalation #409, approved 2026-07-30):** the moment running an already-registered instruction
+requires investigating *how it was done in the past* — reading `BUILD.md`/session-log history,
+diffing prior/archived output files, or otherwise reverse-engineering a missing step from
+precedent — instead of a live `cfg_step`/`cfg_setting` row telling you directly what to run and
+what rules apply, that investigation IS the signal a required config/mechanism is missing. Stop
+immediately; do not proceed by reconstructing the missing rule from precedent and presenting it as
+the standard process. Close the gap first (register the missing step/setting, build its code, per
+§9B's `configuration-maintenance` pattern and `governance.build_md_on_code_change`/
+`governance.governance_md_on_rule_change`), validate config clean, then resubmit the original
+instruction.
+
+**Closing this instance.** The same session built `passage.debate_sync` (BUILD.md §53) —
+a registered step that re-checks an already-written debate file for the fill-in-placeholder marker
+and updates `passage.debate_status` accordingly, without silently regenerating or guessing. This
+is the config-driven mechanism that should have existed before Jonah/Joel/Obadiah were debated;
+those books' own `filled` rows predate it and were not touched retroactively (out of scope of this
+fix — a separate question if their provenance ever needs auditing).
+
+---
+
 ## 4. Proofs it is real, not decorative
 
 **A · `may_source` is enforced.** `call1_meanings` may write only `word_strong` (`cfg_write_grant`).

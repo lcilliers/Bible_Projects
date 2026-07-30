@@ -4,4 +4,4 @@
 
 | # | state | scope | at step | raised | question |
 |---|---|---|---|---|---|
-| 404 | raised | word `Dan` | report.book_narrative_generate | 2026-07-30T09:24:52Z | Generate Daniel's inner-being narrative via claude-sonnet-5 from 16 filled debate(s) — estimated ~218,974 input tokens, up to 16,000 output tokens, ~$0.90. Approve to make the live API call and write the narrative. |
+| 410 | raised | run `MANUAL-20260730_104729_185213` | manual | 2026-07-30T10:47:29Z | Add escalation type in the escallation report  |

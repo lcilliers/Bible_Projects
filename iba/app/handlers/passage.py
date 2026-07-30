@@ -15,7 +15,7 @@ import pathlib
 import re
 
 from .base import Ctx, Outcome, ok, fail, escalate
-from ..lib import escalation as esc, reportkit
+from ..lib import escalation as esc, reportkit, passagetrack, versespanmeaningreport
 
 
 def _now() -> str:
@@ -223,3 +223,44 @@ def validate(ctx: Ctx) -> Outcome:
                "distribution": [dict(r) for r in dist[:30]], "report_path": str(report_path)},
         tried=f"computed the live verse_count distribution {scope_label} — approve to accept "
               f"as-is, reject to flag it for revisiting, or revise with a comment")
+
+
+# ── debate_sync (standalone, on-demand) ───────────────────────────────────────
+# The missing half of the report.passage_debate lifecycle (GOVERNANCE.md §3B, 2026-07-30):
+# write_scaffold() writes the file and passagetrack.record_debate() records its tracked status,
+# but that only ever runs once, immediately after the scaffold is written — at that instant the
+# file always still holds the fill-in placeholder, so the tracked status can only ever come out
+# 'scaffold' from that call. Nothing previously re-checked status after the researcher/AI filled
+# the file in by hand. This step closes that gap: read-only against the debate file (it does NOT
+# regenerate or rewrite it — rerunning report.passage_debate on an already-filled range would
+# silently overwrite real content with a blank scaffold and flip status back to 'scaffold',
+# exactly the corruption BUILD.md's report.passage_debate entry already warns against), DB-write
+# only to the tracked `passage` row via the existing, already-tested `passagetrack.record_debate`.
+def debate_sync(ctx: Ctx) -> Outcome:
+    book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
+    if ctx.params.get("Range"):
+        ch, vlo, vhi = versespanmeaningreport.parse_range(ctx.params["Range"])
+        lo = hi = ch
+        verse_lo, verse_hi = vlo, vhi
+    else:
+        lo, hi = versespanmeaningreport.parse_chapters(ctx.params["Chapters"])
+        verse_lo = verse_hi = None
+
+    range_label = f"{book} {lo}:{verse_lo}-{verse_hi}" if verse_lo is not None else (
+        f"{book} {lo}" if lo == hi else f"{book} {lo}-{hi}")
+    row = passagetrack.find_tracked_passage(ctx.db.conn, book, lo, hi, verse_lo, verse_hi)
+    if row is None or not row["debate_path"]:
+        return fail("no-debate-file", f"{range_label}: nothing tracked for this exact range")
+    path = pathlib.Path(row["debate_path"])
+    if not path.exists():
+        return fail("debate-file-missing", f"{range_label}: tracked path was {path}")
+
+    prior_status = row["debate_status"]
+    passage_id = passagetrack.record_debate(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
+                                            book_label, path)
+    new_status = ctx.db.rows("SELECT debate_status FROM passage WHERE id=?",
+                             (passage_id,))[0]["debate_status"]
+    changed = "" if new_status == prior_status else f" (was {prior_status!r})"
+    return ok(f"{path} re-checked — debate_status={new_status!r}{changed}",
+             path=str(path), passage_id=passage_id, debate_status=new_status)

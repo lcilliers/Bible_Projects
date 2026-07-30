@@ -2790,3 +2790,68 @@ generate` itself wasn't designed until the researcher's own instruction gave its
 ("assemble the debates... call the API... consistent quality"). When that shape is decided, it is
 most likely a new `report.*`/`lib/*` pair reading the SAME `passagetrack.all_debated_ranges` debate
 corpus this module already reads — cross-book, not a new source.
+
+---
+
+## 53. `passage.debate_sync` — the missing half of the passage-debate lifecycle, and a new governance rule against doc/output archaeology (2026-07-30, later same day)
+
+**Trigger.** An AI session, told to run the standard book-by-book passage-debate process for
+Micah, found that `report.passage_debate` writes a scaffold and `passagetrack.record_debate`
+records its tracked status in the SAME call — but that call only ever fires once, immediately
+after the scaffold is written, when the file still holds every `<!-- fill in -->` placeholder. No
+step existed to re-check `passage.debate_status` after the researcher/AI filled the scaffold in by
+hand, so the tracked status could only ever legitimately come out `scaffold` from that pathway.
+Instead of stopping and naming the gap, the session read `BUILD.md`'s own history (§27-30) and
+diffed archived Jonah/Joel/Obadiah output files to reverse-engineer how those books' rows ever
+reached `filled`, and was about to quietly repeat whatever it inferred as if it were the documented
+process. The researcher caught this live: *"you literally looked back at the completed work, never
+really looked at config, and from your observations about the past re-assembled the correct
+approach. That is exactly why, over the lifetime of this 7 months study, we never got a consistent
+result... I suggest you add another overriding config in settings that if you fulfil a standard
+instruction in future, and finding anything in future that calls for first investigating how it
+was done in the past — then it clearly signals that there a missing config. The instruction must
+stop in this case. The app must first be completed, config loaded, then the instruction can be
+resubmitted."*
+
+**Governance rule added first, via the sanctioned path.** `configmaint.propose` (escalation #409,
+approved 2026-07-30) inserted `governance.past_precedent_investigation_signals_missing_config`
+(`cfg_setting`, module `governance`) — GOVERNANCE.md §3B has the full text and rationale. In short:
+needing to investigate historical output to figure out how to run a registered instruction is
+itself the signal a config is missing; stop, name the gap, close it, validate, then resubmit —
+never reconstruct-and-apply from precedent. Two dead-end proposal attempts along the way
+(escalations #406/#407, both `report-stop` from JSON-encoding mistakes in the `-Set` payload, not
+a module-choice question) were answered `revise` with a question about what happened; addressed
+directly in chat, not reflected in any DB row since those runs were already terminal.
+
+**The gap itself, closed.** New work package `passage-debate-sync` (`ps/PassageDebate-Sync.ps1`,
+step `passage.debate_sync`, `handlers/passage.py:debate_sync`, `kind='operations'` — a pure
+DB-mutation step, no `cfg_report` row, same shape as `passage.build`/`candidate.curate`). Given the
+same `-Book`/`-Chapters`/`-Range`/`-BookLabel` call shape every sibling report step uses, it:
+looks up the already-tracked `passage` row for that exact range via a new public
+`passagetrack.find_tracked_passage()` (read-only wrapper around the same range-identity resolution
+`_upsert_passage` already used internally); reads the CURRENT content of its `debate_path` file;
+and calls the existing, already-tested `passagetrack.record_debate()` against that path to
+recompute and write `debate_status`. Deliberately does **not** call `passagedebatereport.
+write_scaffold()` — rerunning that on an already-filled range would overwrite real content with a
+blank scaffold and silently flip status back to `scaffold`, the exact corruption §30's Daniel entry
+already warned about. Registered via `migration/bootstrap_passage_debate_sync.py`, following
+`bootstrap_passage_debate_report.py`'s established direct-insert pattern (infrastructure
+registration, not a `configmaint.propose` row-by-row change — the researcher's own request IS the
+design approval, same carve-out §27 already uses).
+
+**Verified, three paths, no content touched:** (a) against Mic 1's freshly-generated scaffold
+(still holds placeholders) — correctly stays `debate_status='scaffold'`; (b) against Obadiah's
+already-filled debate — correctly reads `debate_status='filled'`, file untouched (confirms the
+positive-detection path, not just the negative); (c) against Mic 2 (no scaffold ever generated for
+that range) — correctly fails `no-debate-file`, distinct message from `cfg_on_fail`'s general
+guidance vs. the handler's own range-specific detail (first draft duplicated the two nearly
+verbatim; fixed to match the convention `report.passage_debate`'s `base-extract-missing` already
+sets: `cfg_on_fail` gives short general guidance, the handler gives the specific range/path).
+
+**Not done, deliberately out of scope.** Jonah/Joel/Obadiah's own `filled` rows predate this step
+and were not touched retroactively — how they actually reached `filled` remains unverified against
+live code (only reconstructed from doc/output archaeology, which is now exactly what's banned); a
+separate question if their provenance ever needs auditing, not addressed here. Micah's own passage
+debates (chapters 1-7, the instruction that surfaced this whole gap) remain paused pending
+confirmation this build is complete and config-validated clean — resuming immediately without that
+confirmation would repeat the same pattern this section exists to close.

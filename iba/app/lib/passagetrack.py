@@ -47,6 +47,20 @@ def _find_live_passage(conn, book: str, sc: int, sv: int, ec: int, ev: int):
         "end_chapter=? AND end_verse=? AND deleted=0", (book, sc, sv, ec, ev)).fetchone()
 
 
+def find_tracked_passage(conn, book: str, lo: int, hi: int, verse_lo: int | None,
+                         verse_hi: int | None):
+    """Public, read-only: resolve a (book, lo, hi, verse_lo, verse_hi) call shape — the same one
+    `report.verse_span_meaning`/`report.passage_debate` take — to its already-tracked live
+    `passage` row, using the identical range-identity resolution `_upsert_passage` uses (derived
+    from the verses themselves, not the caller's raw lo/hi). Returns `None` if nothing is tracked
+    yet for this exact range. For callers (`passage.debate_sync`) that need to find a row without
+    writing to it."""
+    verses = fetch_verses(conn, book, lo, hi, verse_lo, verse_hi)
+    sc, sv = verses[0]["chapter"], verses[0]["verse"]
+    ec, ev = verses[-1]["chapter"], verses[-1]["verse"]
+    return _find_live_passage(conn, book, sc, sv, ec, ev)
+
+
 def _upsert_passage(cfg, writer: str, book: str, book_label: str, verses: list[dict],
                     **fields) -> int:
     """fields are the writer-specific columns to set (verse_span_meaning_* or debate_*).
