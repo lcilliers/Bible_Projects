@@ -44,7 +44,7 @@ CFG_TABLES = (
     "cfg_api", "cfg_write_grant", "cfg_work_package", "cfg_step", "cfg_setting",
     "cfg_on_fail", "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule",
     "cfg_change_log", "cfg_change_detail", "cfg_report", "cfg_report_section",
-    "cfg_report_csv_table",
+    "cfg_report_csv_table", "cfg_utility",
 )
 
 # module -> the dedicated table it already has, if any (rule c's "very good reason" check).
@@ -183,7 +183,28 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     # were referenced nowhere in the app's code. A hard coherence fault, not a judgement call.
     e.extend(valuequality.find_enum_violations(conn))
 
+    # report-step / write-grant-writer coherence — added 2026-07-29 (the passage config audit):
+    # cfg_report/cfg_report_section/cfg_report_csv_table.step and cfg_write_grant.writer were never
+    # checked against cfg_step at all before this, the same class of gap the existing on_fail.step
+    # check already closed for a different table. Both hard errors — a report row or write grant
+    # for a step that doesn't exist (or was retired) is broken plumbing, not a judgement call.
+    e.extend(cfgquality.find_report_step_references(conn))
+    writer_identities = set(_writer_identities(conn))
+    e.extend(cfgquality.find_unknown_write_grant_writers(conn, writer_identities))
+
+    # step classification completeness — added 2026-07-30 (the operations/utility model). Hard
+    # error: an active, dispatchable step with no classification is exactly the state run.py's
+    # dispatch gate now refuses to run, so this check keeps surfacing why, not just crashing at
+    # dispatch time with no coherence-report trail.
+    e.extend(cfgquality.find_unclassified_active_steps(conn))
+
     return e
+
+
+def _writer_identities(conn: sqlite3.Connection) -> tuple[str, ...]:
+    return tuple(r[0] for r in conn.execute(
+        "SELECT value FROM cfg_enum WHERE name='writer_identity' AND inactive=0")) \
+        or cfgquality._WRITER_IDENTITY_FALLBACK
 
 
 # moved to lib/cfgquality.py 2026-07-21 so lib/cfgreport.py can share these without a circular
@@ -209,35 +230,49 @@ def validate(ctx: Ctx) -> Outcome:
     if errors:
         return fail("invalid", f"{len(errors)} coherence error(s)", errors="; ".join(errors))
 
-    orphans = _find_orphan_configs(ctx.db.conn)
-    needs_justification = _find_settings_needing_justification(ctx.db.conn)
-    if not orphans and not needs_justification:
+    # Every advisory (judgement-call, not structural-fault) finding — a dict, not one variable per
+    # check, so a 7th/8th finding never needs touching four separate places again the way orphans/
+    # needs_justification/stale_filled_by/stale_docs did one at a time on 2026-07-21/29. Each value
+    # is (list-of-findings, one-line label used in messages).
+    findings: dict[str, tuple[list[str], str]] = {
+        "orphans": (_find_orphan_configs(ctx.db.conn), "orphan config(s)"),
+        "needs_justification": (_find_settings_needing_justification(ctx.db.conn),
+                                "setting(s) needing justification"),
+        "stale_filled_by": (cfgquality.find_filled_by_referencing_inactive_step(ctx.db.conn),
+                           "column(s) with a stale filled_by"),
+        "stale_docs": (cfgquality.find_stale_governance_docs(ctx.db.conn, APP_ROOT),
+                      "stale-doc finding(s)"),
+        "unregistered_lib_modules": (cfgquality.find_unregistered_lib_modules(ctx.db.conn, APP_ROOT),
+                                    "lib module(s) missing a cfg_utility row"),
+        "low_config_density_utilities": (cfgquality.find_utility_config_density(ctx.db.conn),
+                                        "utility module(s) with zero cfg.setting()/cfg.enum() usage"),
+    }
+    preset = {k: v[0] for k, v in findings.items()}
+    if not any(preset.values()):
         return ok("cfg_* tables are coherent — schema FKs, may_source, handlers, on_fail, "
-                  "status flow, regex settings, report fields all check out; no orphans, "
-                  "no settings needing justification")
+                  "status flow, regex settings, report fields all check out; no orphans, no "
+                  "settings needing justification, no stale filled_by references, GOVERNANCE.md "
+                  "current, every lib module registered, no zero-config-density utilities")
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["answer"]
+        summary = ", ".join(f"{len(v)} {label}" for v, label in findings.values())
         if decision == "approve":
-            return ok(f"acknowledged: {len(orphans)} orphan(s), {len(needs_justification)} "
-                      f"needing justification — researcher confirmed these are known/acceptable",
-                      orphans=orphans, needs_justification=needs_justification)
+            return ok(f"acknowledged: {summary} — researcher confirmed these are known/acceptable",
+                      **preset)
         if decision == "reject":
             return fail("findings-rejected",
                        "researcher flagged these findings as needing action, not just acknowledgement",
-                       orphans=orphans, needs_justification=needs_justification)
+                       **preset)
         return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
 
-    lines = [f"{len(orphans)} orphan config(s): " + "; ".join(orphans)] if orphans else []
-    if needs_justification:
-        lines.append(f"{len(needs_justification)} setting(s) needing justification: "
-                     + "; ".join(needs_justification))
+    lines = [f"{len(v)} {label}: " + "; ".join(v) for v, label in findings.values() if v]
     return escalate(
         "needs-review",
         question="cfg_* is structurally coherent, but has findings needing your judgement: "
                  + " | ".join(lines),
-        preset={"orphans": orphans, "needs_justification": needs_justification},
+        preset=preset,
         tried="coherence checks passed; these are advisory findings, not errors — approve to "
               "acknowledge as known/acceptable, reject to flag for action, or revise with a "
               "comment on what to check")

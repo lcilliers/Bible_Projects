@@ -130,6 +130,36 @@ function Write-IbaStopped {
     Write-Host (_IbaFormat $script:_ibaNotif.'notification.stopped_banner' @{ message = $Message }) -ForegroundColor Red
 }
 
+function Test-IbaWorkPackageActive {
+    <#
+    .SYNOPSIS
+        Refuse cleanly if $WorkPackage is inactive (retired) or unknown, BEFORE the caller ever
+        builds/loops a step sequence. Added 2026-07-29 (escalation #334, part b/c).
+
+    .DESCRIPTION
+        `run.py`'s own dispatch gate (added the same day) already refuses an inactive step the
+        moment it's actually invoked — but a CHAINED work package script (New-Word.ps1,
+        Set-Candidates.ps1, Build-Passages.ps1) fetches its step list via `Cfg.sequence()` FIRST
+        and loops over it; once `sequence()` correctly started filtering `inactive=0`, an
+        entirely-retired work package yields an EMPTY list, the loop runs zero times, and the
+        script's own "nothing failed -> COMPLETE" fallback printed a false success — found live,
+        2026-07-29, running `Set-Candidates.ps1 -Book Obad` against this exact fix. This check
+        closes that gap at its actual source (before the loop, not after), for every chained
+        script in one place rather than case-by-case.
+    #>
+    param([Parameter(Mandatory)] [string] $WorkPackage)
+    $inactive = python -c @"
+from iba.app.lib.cfg import Cfg
+c = Cfg()
+print('1' if c.work_package_inactive('$WorkPackage') else '0')
+c.close()
+"@
+    if ($inactive -eq '1') {
+        Write-Host "work package '$WorkPackage' is inactive (retired) or unknown — refusing to run." -ForegroundColor Red
+        exit 1
+    }
+}
+
 function Write-IbaComplete {
     param(
         [Parameter(Mandatory)] [string] $WorkPackage,

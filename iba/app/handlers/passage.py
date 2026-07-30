@@ -40,7 +40,7 @@ def build(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
     rule = ctx.params.get("Rule") or ctx.cfg.setting("passage.default_rule", "char-continuity")
     min_shared = int(ctx.cfg.setting("passage.min_shared_strongs", 1))
-    review_over = int(ctx.cfg.setting("passage.review_over", 5))
+    review_over = int(ctx.cfg.setting("passage.review_over", 10))  # matches DB value (was 5)
     cross_chapter = bool(ctx.cfg.setting("passage.cross_chapter", False))
     like = f"{book}.%"
 

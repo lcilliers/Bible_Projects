@@ -49,6 +49,8 @@ if ($ready -ne '1') {
     exit 1
 }
 
+Test-IbaWorkPackageActive -WorkPackage 'new-word'
+
 # The sequence comes from the CONFIG STORE IN THE DB.
 $seq   = python -c "import json; from iba.app.lib.cfg import Cfg; c=Cfg(); print(json.dumps([dict(r) for r in c.sequence('new-word')])); c.close()" | ConvertFrom-Json
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-NEW-WORD"

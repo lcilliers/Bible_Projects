@@ -64,9 +64,14 @@ class Step:
         EXPECTED data'. A stale/degraded/untagged server that still answers the port FAILS
         this and cannot report up. Returns the evidence it checked, so 'up' is a fact, not a
         claim; raises StepUnavailable with the specific reason on any miss."""
+        # Fallback defaults corrected 2026-07-29 (were "" / 1 — vacuous no-ops that would have
+        # silently defeated this whole probe if the cfg_setting rows were ever lost; the DB's
+        # real, deliberately-set values are "God" / 1000, confirmed live during this session's
+        # own `Start-Iba.ps1` run against H0430/2088 verses). Kept byte-identical to the DB so a
+        # missing row degrades to the SAME check, not a weaker one.
         probe = self.cfg.setting("step.probe_strong", "H0430")
-        want_gloss = self.cfg.setting("step.expect_gloss_contains", "")
-        min_verses = int(self.cfg.setting("step.expect_min_verses", 1))
+        want_gloss = self.cfg.setting("step.expect_gloss_contains", "God")
+        min_verses = int(self.cfg.setting("step.expect_min_verses", 1000))
 
         # every network touch here is wrapped — a server that dies on the SECOND call is
         # 'not reachable', never an uncaught crash that init can't tell from 'up'.

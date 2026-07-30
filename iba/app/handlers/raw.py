@@ -19,15 +19,20 @@ import re
 
 from .base import Ctx, Outcome, ok, fail, escalate
 
-BASE_RE = re.compile(r"^([HG]\d+)([A-Z]?)$")
+# Fallback only — the real value is `cfg_setting raw.strong_base_pattern` (module `raw`), the
+# single home for this fact after it was found duplicated three ways: here, in
+# `lib/versespanmeaningreport.py`, and in the now-inactive `candidate.lemma_base_pattern`
+# (GOVERNANCE.md §5, 2026-07-22 — named then, closed 2026-07-29). Kept byte-identical so behaviour
+# is unchanged whether or not the cfg_setting row has been approved yet.
+_BASE_RE_FALLBACK = r"^([HG]\d+)([A-Z]?)$"
 
 
 def _now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def _base(code: str) -> str:
-    m = BASE_RE.match(code or "")
+def _base(code: str, base_pattern: str = _BASE_RE_FALLBACK) -> str:
+    m = re.match(base_pattern, code or "")
     return m.group(1) if m else code
 
 
@@ -75,9 +80,15 @@ def discover(ctx: Ctx) -> Outcome:
     d = ctx.step.call1_meanings(ctx.word)
     seeds = [x["strongNumber"] for x in d.get("definitions", [])
              if x.get("strongNumber") and not ctx.step.is_particle(x["strongNumber"])]
-    # relatedNos: only if config says to follow it (it says no)
+    # relatedNos: only if config says to follow it (it says no). Found 2026-07-29: this used to be
+    # `if true: pass` — a setting that changed nothing regardless of its value, since the expansion
+    # was never built. Now fails loudly instead of silently no-op'ing, so flipping the setting is
+    # either a real behaviour change (once built) or an honest refusal — never a silent non-event.
     if ctx.cfg.setting("discovery.follow_related", False):
-        pass  # would expand here; config disables it
+        return fail("follow-related-not-built",
+                   "discovery.follow_related is true, but relatedNos expansion was never "
+                   "implemented — set it back to false, or implement the expansion before relying "
+                   "on it (see handlers/raw.py:discover)")
     if not seeds:
         return escalate("zero-strongs",
                         question=f"{ctx.word!r} maps to no strongs. Register anyway, or reject?",
@@ -135,7 +146,7 @@ def detail_one(ctx: Ctx, code: str, c: dict) -> None:
     _write(ctx, "call2_getInfo", "strong_sense", {
         "strong": resolved, "head": head or v.get("stepGloss"),
         "is_own_lemma": 0 if head else 1, "deleted": 0}); c["sense"] += 1
-    lemma = _base(resolved)
+    lemma = _base(resolved, ctx.cfg.setting("raw.strong_base_pattern", _BASE_RE_FALLBACK))
     if tree and not ctx.db.get("strong_meaning_tree", lemma_key=lemma, strong_variant=resolved):
         write_tree_rows(ctx, lemma, resolved, tree, c)
     if v.get("lsjDefs") or v.get("shortDefMounce"):

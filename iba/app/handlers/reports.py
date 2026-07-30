@@ -14,10 +14,11 @@ from __future__ import annotations
 
 import pathlib
 
-from .base import Ctx, Outcome, ok, fail
+from .base import Ctx, Outcome, ok, fail, escalate
 from . import raw as raw_mod
 from .. import report as report_mod
 from .. import validation as validation_mod
+from ..lib import escalation as esc
 from ..lib import retention as retention_mod
 from ..lib import registryreport, schemareport, seedreport, spanreport, strongreport
 from ..lib import passagedebatereport, passagetrack, versespanmeaningreport, wholebookread
@@ -32,16 +33,49 @@ def word_report(ctx: Ctx) -> Outcome:
     return ok(f"wrote {out}", path=str(out))
 
 
+# Researcher's standing rule, 2026-07-30: "if a validation runs for a module operation... it would
+# escalate and record an escalation report." Found live: validation_word/validation_book computed
+# real PASS/WARN/FAIL verdicts but ALWAYS returned ok() regardless — a hard FAIL never surfaced as
+# anything but a number inside a message string. Both now follow the same escalate-on-finding shape
+# every other quality check in this app already uses (passage.validate/lexicon.validate/
+# configmaint.validate) — clean is still a plain ok(), a FAIL/WARN escalates once per run.
+def _validation_outcome(ctx: Ctx, scope_label: str, out, overall: str, p: int, w: int, f: int
+                        ) -> Outcome:
+    if overall == "PASS":
+        return ok(f"{overall} ({p} pass, {w} warn, {f} fail) -> {out}",
+                 path=str(out), overall=overall, passes=p, warns=w, fails=f)
+
+    answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
+    if answered:
+        decision = answered["answer"]
+        if decision == "approve":
+            return ok(f"acknowledged: {overall} ({p} pass, {w} warn, {f} fail) -> {out} — "
+                      f"researcher confirmed these findings are known/acceptable",
+                      path=str(out), overall=overall, passes=p, warns=w, fails=f)
+        if decision == "reject":
+            return fail("findings-rejected",
+                       f"researcher flagged {scope_label}'s validation findings as needing action",
+                       path=str(out), overall=overall, passes=p, warns=w, fails=f)
+        return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
+
+    return escalate(
+        "needs-review",
+        question=f"Validation for {scope_label}: {overall} ({p} pass, {w} warn, {f} fail) — see "
+                 f"{out} for full detail. Approve to acknowledge as known/acceptable, reject to "
+                 f"flag for action, or revise with a comment.",
+        preset={"scope": scope_label, "overall": overall, "passes": p, "warns": w, "fails": f,
+               "report_path": str(out)},
+        tried=f"ran the full validation report — {out}")
+
+
 def validation_word(ctx: Ctx) -> Outcome:
     out, overall, (p, w, f) = validation_mod.generate(ctx.params["Word"])
-    return ok(f"{overall} ({p} pass, {w} warn, {f} fail) -> {out}",
-             path=str(out), overall=overall, passes=p, warns=w, fails=f)
+    return _validation_outcome(ctx, f"word {ctx.params['Word']!r}", out, overall, p, w, f)
 
 
 def validation_book(ctx: Ctx) -> Outcome:
     out, overall, (p, w, f) = validation_mod.generate_book(ctx.params["Book"])
-    return ok(f"{overall} ({p} pass, {w} warn, {f} fail) -> {out}",
-             path=str(out), overall=overall, passes=p, warns=w, fails=f)
+    return _validation_outcome(ctx, f"book {ctx.params['Book']!r}", out, overall, p, w, f)
 
 
 def retention_report(ctx: Ctx) -> Outcome:

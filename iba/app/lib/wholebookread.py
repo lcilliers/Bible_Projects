@@ -41,10 +41,32 @@ import sqlite3
 
 from . import passagetrack, reportkit
 
-EQ_HEADING_RE = re.compile(r"^##\s+Emergent[- ]questions?\s+log", re.IGNORECASE | re.MULTILINE)
-LINKAGE_HEADING_RE = re.compile(
-    r"^##\s+(Passage-level linkages?|Linkages surfaced)", re.IGNORECASE | re.MULTILINE)
+# Known-historical tolerant variants — kept because past debate files were genuinely written with
+# these headings (see module docstring). NOT the single source of truth for "what heading does
+# report.passage_debate write today" — that's `cfg_report_section.heading` (step
+# 'report.passage_debate', section_key 'emergent'/'linkages'), read live in `_heading_pattern()`
+# below and always folded in as an extra alternative. Found 2026-07-29: before this fix, these two
+# were the ONLY source of truth for what this reader accepts — a `configmaint.propose` change to
+# `report.passage_debate`'s own heading config could silently desync this reader from its writer,
+# the same failure shape BUILD.md §33 already hit once by hand.
+_EQ_HEADING_FALLBACK = r"^##\s+Emergent[- ]questions?\s+log"
+_LINKAGE_HEADING_FALLBACK = r"^##\s+(Passage-level linkages?|Linkages surfaced)"
 NEXT_H2_RE = re.compile(r"^##\s+\S", re.MULTILINE)
+
+
+def _heading_pattern(conn: sqlite3.Connection, section_key: str, fallback: str) -> re.Pattern:
+    """The live `cfg_report_section.heading` for `report.passage_debate`/`section_key`, folded in
+    as an extra alternative alongside the known-historical fallback pattern — so a future change to
+    that heading's config can never silently stop matching here."""
+    row = conn.execute(
+        "SELECT heading FROM cfg_report_section WHERE step='report.passage_debate' "
+        "AND section_key=?", (section_key,)).fetchone()
+    branches = [fallback]
+    if row and row["heading"]:
+        literal = re.sub(r"^#+\s*", "", row["heading"]).strip()
+        if literal:
+            branches.append(r"^##\s+" + re.escape(literal))
+    return re.compile("(?:" + ")|(?:".join(branches) + ")", re.IGNORECASE | re.MULTILINE)
 
 
 class NoDebatesFound(Exception):
@@ -77,6 +99,8 @@ def gather_book(conn: sqlite3.Connection, book: str) -> list[dict]:
         raise NoDebatesFound(
             f"no debate_status='filled' passage row exists for book {book!r} — run at least one "
             f"report.passage_debate pass and fill it in before a whole-book read makes sense")
+    eq_re = _heading_pattern(conn, "emergent", _EQ_HEADING_FALLBACK)
+    linkage_re = _heading_pattern(conn, "linkages", _LINKAGE_HEADING_FALLBACK)
     out = []
     for r in rows:
         path = pathlib.Path(r["debate_path"])
@@ -85,8 +109,8 @@ def gather_book(conn: sqlite3.Connection, book: str) -> list[dict]:
             "ref": r["ref"],
             "path": r["debate_path"],
             "exists": path.exists(),
-            "eq": _extract_section(text, EQ_HEADING_RE) if text else None,
-            "linkages": _extract_section(text, LINKAGE_HEADING_RE) if text else None,
+            "eq": _extract_section(text, eq_re) if text else None,
+            "linkages": _extract_section(text, linkage_re) if text else None,
         })
     return out
 

@@ -15,7 +15,15 @@ import datetime
 from ..lib import escalation as esc
 from .base import Ctx, Outcome, ok, fail, escalate
 
-BUILT = ("raw-complete", "signed-off")     # a word past approval — a real duplicate
+# Fallback only — the real value is `cfg_enum` group `word_status_built` (added 2026-07-29,
+# closing a completeness gap: `cfg_status_flow` exists for exactly this kind of fact, but which
+# statuses count as "already built" used to live only here, in code). Kept byte-identical so
+# behaviour is unchanged whether or not the cfg_enum rows have been approved yet.
+_BUILT_FALLBACK = ("raw-complete", "signed-off")     # a word past approval — a real duplicate
+
+
+def _built_statuses(ctx: Ctx) -> tuple[str, ...]:
+    return tuple(ctx.cfg.enum("word_status_built")) or _BUILT_FALLBACK
 
 
 def _now() -> str:
@@ -44,7 +52,7 @@ def exists(ctx: Ctx) -> Outcome:
     if not row:
         return ok(f"{ctx.word!r} is not in the registry — a new word")
     st = row["status"]
-    if st in BUILT:
+    if st in _built_statuses(ctx):
         return fail("word-exists", f"{row['word']!r} is already built (status {st})")
     msgs = {
         "proposed": f"{row['word']!r} is in the registry awaiting your approval — will resume its approval",
@@ -58,7 +66,7 @@ def create(ctx: Ctx) -> Outcome:
     row = _find(ctx)
 
     # already approved (a resume after a yes) or built -> proceed idempotently
-    if row and row["status"] in ("approved",) + BUILT:
+    if row and row["status"] in ("approved",) + _built_statuses(ctx):
         ctx.word_id = row["id"]
         return ok(f"{row['word']!r} already approved (id {row['id']}) — proceeding")
 
@@ -113,11 +121,15 @@ def _ask_approval(ctx: Ctx, word_id: int) -> Outcome:
     held = [s for s in seeds if ctx.db.get("strong", strongNumber=s)]
     dups = _possible_duplicates(ctx, seeds, word_id)
 
-    # if an existing word already holds ALL of this word's strongs, it is a likely
-    # duplicate/typo — turn the approval into an explicit confirmation.
+    # if an existing word already holds >= this fraction of this word's strongs, it is a likely
+    # duplicate/typo — turn the approval into an explicit confirmation. Threshold is
+    # `registry.duplicate_shared_threshold` (cfg_setting, module `registry`, default 1.0 = ALL
+    # strongs shared — added 2026-07-29; previously a hardcoded 100%-only check with no tunable
+    # config counterpart at all).
+    threshold = ctx.cfg.setting("registry.duplicate_shared_threshold", 1.0)
     question = f"Register the new word {ctx.word!r}?"
     warning = None
-    if seeds and dups and dups[0]["shared"] == len(seeds):
+    if seeds and dups and dups[0]["shared"] >= threshold * len(seeds):
         other = dups[0]["word"]
         warning = (f"all {len(seeds)} strongs are already held by existing word {other!r} "
                    f"— this may be a duplicate or typo")

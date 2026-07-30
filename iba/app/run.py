@@ -79,6 +79,34 @@ def _ensure_run(db: Db, cfg: Cfg, package: str, params: dict, run_id: str):
 
 def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
     cfg = Cfg()
+    # Dispatch gate (escalation #334, 2026-07-29) — checked FIRST, before _ensure_run/any DB
+    # write, so a refusal is clean and has no partial effect. Before this, `inactive` was
+    # validator-only metadata: nothing stopped `Set-Candidates.ps1 -Book Obad` (a retired work
+    # package) from actually running. Raised as PermissionError, uncaught, the same convention
+    # every `_grant()`/`_may()` write-grant check in this app already uses for "the config
+    # forbids this" — see BUILD.md sec37.
+    if cfg.work_package_inactive(package):
+        cfg.close()
+        raise PermissionError(
+            f"work package {package!r} is inactive (retired) or unknown — refusing to dispatch "
+            f"step {step_id!r} (cfg_work_package.inactive)")
+    if cfg.step_inactive(package, step_id):
+        cfg.close()
+        raise PermissionError(
+            f"step {step_id!r} in work package {package!r} is inactive (retired) or unknown — "
+            f"refusing to dispatch (cfg_step.inactive)")
+    # Second gate, 2026-07-30 (the researcher's own operations/utility model — "routines not in
+    # the table[s] need special permission to be used"): a step with no cfg_step.kind classification
+    # is refused too, not silently run. "Special permission" = the same configmaint.propose
+    # approval gate every other cfg_* change goes through — there is no separate bypass.
+    if cfg.step_kind(package, step_id) is None:
+        cfg.close()
+        raise PermissionError(
+            f"step {step_id!r} in work package {package!r} has no cfg_step.kind classification "
+            f"(operations|utility) — refusing to dispatch. Classify it first: "
+            f"Config-Maintenance.ps1 -Step Propose -Table cfg_step -Op update "
+            f"-Where '{{\"work_package\":\"{package}\",\"step\":\"{step_id}\"}}' "
+            f"-Set '{{\"kind\":\"operations\"}}' (or \"utility\") -Question \"...\"")
     db = Db(cfg)
     if "Word" in params:                                  # normalise once, at the boundary
         params["Word"] = normalise(params["Word"], cfg)
@@ -90,7 +118,27 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
     ctx = Ctx(db=db, cfg=cfg, step=Step(cfg), run_id=run_id, word=_scope(params),
               word_id=wrow["id"] if wrow else None, params=params, step_id=step_id)
 
-    outcome: Outcome = handler(ctx)
+    # Researcher's standing rule, 2026-07-30: "if a validation runs for a module operation, or an
+    # error takes place in a module operation, then it would escalate and record an escalation
+    # report. It is that simple." Before this, an uncaught exception in a handler propagated as a
+    # bare crash — no record, nothing in `escalation`, nothing an Escalation.ps1 -Action List would
+    # ever show. Caught here, recorded, then RE-RAISED — this adds a permanent record, it does not
+    # soften or hide the failure (the traceback still surfaces exactly as before).
+    try:
+        outcome: Outcome = handler(ctx)
+    except Exception as exc:
+        import traceback
+        _grant(cfg, "escalation")
+        db.write("escalation", {
+            "run_id": run_id, "word": ctx.word, "at_step": step_id, "type": "crash",
+            "question": f"{step_id} crashed: {exc}",
+            "preset": json.dumps({"traceback": traceback.format_exc()}),
+            "tried": "uncaught exception — not a routed fail()/escalate() Outcome",
+            "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
+        db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(),
+                  outcome=f"crashed: {exc}")
+        db.close()
+        raise
 
     # resolve the CONDITION to a PATH via config (cfg_on_fail); 'ok' has no rule
     if outcome.condition == "ok":
@@ -119,6 +167,22 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
                 "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
         db.update("run", {"run_id": run_id}, state="paused", resume_point=step_id)
     elif path == "report-stop":
+        # Added 2026-07-30 (the same standing rule): report-stop used to only flip run.state to
+        # 'failed' — no escalation row, invisible to Escalation.ps1 -Action List. A hard error is
+        # still an error; it now leaves the same permanent, visible record a pause-continue
+        # finding does, even though (unlike pause-continue) answering it doesn't resume anything —
+        # the run is already terminal. Same idempotency guard as the pause-continue block above.
+        already = db.rows("SELECT id FROM escalation WHERE run_id=? AND at_step=? "
+                          "AND state='raised'", (run_id, step_id))
+        if not already:
+            _grant(cfg, "escalation")
+            db.write("escalation", {
+                "run_id": run_id, "word": ctx.word, "at_step": step_id, "type": "report-stop",
+                "question": message,
+                "preset": json.dumps(outcome.counts) if outcome.counts else "{}",
+                "tried": "hard error (report-stop) — recorded for visibility; answering this does "
+                        "not resume the run, which is already terminal",
+                "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(), outcome=message)
     else:
         db.update("run", {"run_id": run_id}, resume_point=step_id)

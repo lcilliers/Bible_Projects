@@ -24,11 +24,17 @@ import sqlite3
 from . import reportkit
 from .stepapi import Step, StepUnavailable
 
-BASE_RE = re.compile(r"^([HG]\d+)([A-Z]?)$")
+# Fallback only — the real value is `cfg_setting raw.strong_base_pattern` (module `raw`), the
+# single home for this fact after it was found duplicated three ways: here, in
+# `handlers/raw.py`, and in the now-inactive `candidate.lemma_base_pattern` (GOVERNANCE.md §5,
+# 2026-07-22 — named then, closed 2026-07-29). Kept byte-identical so behaviour is unchanged
+# whether or not the cfg_setting row has been approved yet.
+_BASE_RE_FALLBACK = r"^([HG]\d+)([A-Z]?)$"
+BASE_RE = re.compile(_BASE_RE_FALLBACK)  # back-compat alias — migration/fix_strong_meaning_tree_collapse.py imports this
 
 
-def _base(code: str) -> str:
-    m = BASE_RE.match(code or "")
+def _base(code: str, base_pattern: str = _BASE_RE_FALLBACK) -> str:
+    m = re.match(base_pattern, code or "")
     return m.group(1) if m else (code or "")
 
 
@@ -198,7 +204,8 @@ def live_step_meaning(step: "Step | None", code: str, live_cache: dict[str, str]
 
 
 def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
-                     live_cache: dict[str, str]) -> tuple[str, bool]:
+                     live_cache: dict[str, str], base_pattern: str = _BASE_RE_FALLBACK
+                     ) -> tuple[str, bool]:
     strong_row = conn.execute(
         "SELECT strongNumber, language, stepGloss FROM strong WHERE strongNumber=?",
         (code,),
@@ -206,7 +213,7 @@ def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
     if strong_row is None:
         return "(not yet registered)", False
 
-    base = _base(code)
+    base = _base(code, base_pattern)
     lines = [f"stepGloss: {strong_row['stepGloss'] or '(none)'}"]
 
     # strong_meaning_tree/strong_meaning_parsed carry strong_variant (2026-07-26, migration/
@@ -264,14 +271,15 @@ def meaning_for_code(conn: sqlite3.Connection, code: str, step: "Step | None",
 
 
 def meaning_for(conn: sqlite3.Connection, strong_variant: str | None, step: "Step | None",
-               live_cache: dict[str, str]) -> tuple[str, bool]:
+               live_cache: dict[str, str], base_pattern: str = _BASE_RE_FALLBACK
+               ) -> tuple[str, bool]:
     if not strong_variant:
         return "(no Strong's code on this span)", False
     codes = strong_variant.split()
     rendered = []
     any_covered = False
     for code in codes:
-        text, covered = meaning_for_code(conn, code, step, live_cache)
+        text, covered = meaning_for_code(conn, code, step, live_cache, base_pattern)
         any_covered = any_covered or covered
         rendered.append(f"**{code}**: {text}" if len(codes) > 1 else text)
     return " <br> ".join(rendered), any_covered
@@ -304,6 +312,7 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
     not given.
     """
     required = cfg.setting("step.required_for_runs", True)
+    base_pattern = cfg.setting("raw.strong_base_pattern", _BASE_RE_FALLBACK)
     step: Step | None = None
     try:
         ev = Step(cfg).up()
@@ -335,7 +344,7 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
         for sp in spans:
             if not sp["is_particle"]:
                 per_chapter_total[v["chapter"]] = per_chapter_total.get(v["chapter"], 0) + 1
-                _, covered = meaning_for(conn, sp["strong_variant"], step, live_cache)
+                _, covered = meaning_for(conn, sp["strong_variant"], step, live_cache, base_pattern)
                 if covered:
                     per_chapter_covered[v["chapter"]] = per_chapter_covered.get(v["chapter"], 0) + 1
 
@@ -346,7 +355,7 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
         verse_lines.append("| # | surface | strong | morph | particle | meaning |")
         verse_lines.append("| --- | --- | --- | --- | --- | --- |")
         for sp in spans:
-            meaning, _ = meaning_for(conn, sp["strong_variant"], step, live_cache)
+            meaning, _ = meaning_for(conn, sp["strong_variant"], step, live_cache, base_pattern)
             verse_lines.append(
                 f"| {sp['position']} | {sp['surface'] or ''} | {sp['strong_variant'] or ''} | "
                 f"{sp['morph_code'] or ''} | {'yes' if sp['is_particle'] else ''} | {meaning} |")

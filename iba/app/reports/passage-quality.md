@@ -1,9 +1,9 @@
 # Passage quality report
 
-> Generated 2026-07-28T08:30:08Z by `passage.validate`. Read-only findings, not a gate.
+> Generated 2026-07-29T18:20:38Z by `passage.validate`. Read-only findings, not a gate.
 
 - total passages: **16**
-- average verses/passage: **21.38**
+- average verses/passage: **21.31**
 - single-verse passages: **0** (0%)
 
 ## Contents
@@ -17,8 +17,7 @@
 |---:|---:|
 | 7 | 2 |
 | 13 | 1 |
-| 14 | 1 |
-| 15 | 1 |
+| 14 | 2 |
 | 16 | 1 |
 | 18 | 1 |
 | 21 | 2 |
@@ -32,4 +31,4 @@
 
 | book | passages | avg verses/passage | single-verse |
 |---|---:|---:|---:|
-| Dan | 16 | 21.38 | 0 |
+| Dan | 16 | 21.31 | 0 |

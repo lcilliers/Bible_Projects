@@ -24,7 +24,7 @@ import sys
 _VERSION_TABLES = (
     "cfg_table", "cfg_column", "cfg_unique", "cfg_enum", "cfg_connection", "cfg_api",
     "cfg_write_grant", "cfg_work_package", "cfg_step", "cfg_setting", "cfg_on_fail",
-    "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule",
+    "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule", "cfg_utility",
 )
 
 DB_PATH = pathlib.Path(__file__).resolve().parent.parent / "db" / "iba.db"
@@ -53,7 +53,11 @@ class Cfg:
 
     # ── settings (scalar rules) ──────────────────────────────────────────────
     def setting(self, key: str, default=None):
-        r = self.conn.execute("SELECT value FROM cfg_setting WHERE key=?", (key,)).fetchone()
+        # inactive=0 filter added 2026-07-29 (escalation #334) — until this, `inactive` was
+        # validator-only metadata: EVERY reader in this class ignored it, so "retiring" a row
+        # never actually stopped it being read and applied. See BUILD.md sec37/GOVERNANCE.md sec15D.
+        r = self.conn.execute(
+            "SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
         val = json.loads(r["value"]) if r else default
         _trace(f"setting {key}", val)
         return val
@@ -89,38 +93,42 @@ class Cfg:
 
     def enum(self, name: str) -> list[str]:
         rows = [r["value"] for r in self.conn.execute(
-            "SELECT value FROM cfg_enum WHERE name=? ORDER BY ordinal", (name,))]
+            "SELECT value FROM cfg_enum WHERE name=? AND inactive=0 ORDER BY ordinal", (name,))]
         _trace(f"enum({name})", rows)
         return rows
 
     # ── STEP ─────────────────────────────────────────────────────────────────
     def connection(self, key: str):
-        r = self.conn.execute("SELECT value FROM cfg_connection WHERE key=?", (key,)).fetchone()
+        r = self.conn.execute(
+            "SELECT value FROM cfg_connection WHERE key=? AND inactive=0", (key,)).fetchone()
         _trace(f"connection {key}", r["value"] if r else None)
         return r["value"] if r else None
 
     def route(self, api: str) -> str:
-        r = self.conn.execute("SELECT route FROM cfg_api WHERE name=?", (api,)).fetchone()
+        r = self.conn.execute(
+            "SELECT route FROM cfg_api WHERE name=? AND inactive=0", (api,)).fetchone()
         _trace(f"route {api}", r["route"] if r else None)
         return r["route"]
 
     def may_write(self, writer: str) -> set[str]:
         """Which tables this writer (an api, a step, or 'run') is granted to write."""
         rows = {r["table_name"] for r in self.conn.execute(
-            "SELECT table_name FROM cfg_write_grant WHERE writer=?", (writer,))}
+            "SELECT table_name FROM cfg_write_grant WHERE writer=? AND inactive=0", (writer,))}
         _trace(f"may_write({writer})", rows)
         return rows
 
     # ── run / sequence ───────────────────────────────────────────────────────
     def sequence(self, work_package: str) -> list[sqlite3.Row]:
         rows = self.conn.execute(
-            "SELECT * FROM cfg_step WHERE work_package=? ORDER BY ordinal", (work_package,)).fetchall()
+            "SELECT * FROM cfg_step WHERE work_package=? AND inactive=0 ORDER BY ordinal",
+            (work_package,)).fetchall()
         _trace(f"sequence({work_package})", rows)
         return rows
 
     def step(self, work_package: str, step: str) -> sqlite3.Row:
-        r = self.conn.execute("SELECT * FROM cfg_step WHERE work_package=? AND step=?",
-                              (work_package, step)).fetchone()
+        r = self.conn.execute(
+            "SELECT * FROM cfg_step WHERE work_package=? AND step=? AND inactive=0",
+            (work_package, step)).fetchone()
         _trace(f"step {step}", r["handler"] if r else None)
         return r
 
@@ -128,21 +136,49 @@ class Cfg:
         """True if every step of this work package runs under one run_id in one PS invocation
         (so 'done' should wait for the last step); False if each step is invoked independently
         (so 'done' should fire on that step's own first ok/report-continue/self-heal). See
-        cfg_work_package.chained, migration/add_work_package_chained_column.py."""
+        cfg_work_package.chained, migration/add_work_package_chained_column.py. Not filtered by
+        inactive here — by the time this is called, `run.py`'s own dispatch gate has already
+        refused an inactive package/step outright; this only ever runs for an active one."""
         r = self.conn.execute("SELECT chained FROM cfg_work_package WHERE name=?",
                               (work_package,)).fetchone()
         return bool(r["chained"]) if r else True   # default chained=True: the old, safer behaviour
 
+    def work_package_inactive(self, work_package: str) -> bool:
+        """True if `work_package` has a `cfg_work_package` row and it is `inactive=1`, OR it has no
+        row at all (an unknown package is never dispatchable either). Used by `run.py`'s dispatch
+        gate (escalation #334) — checked explicitly, before anything else happens, not inferred
+        from `step()`/`sequence()` silently returning nothing."""
+        r = self.conn.execute("SELECT inactive FROM cfg_work_package WHERE name=?",
+                              (work_package,)).fetchone()
+        return True if r is None else bool(r["inactive"])
+
+    def step_inactive(self, work_package: str, step: str) -> bool:
+        """True if `(work_package, step)` has a `cfg_step` row and it is `inactive=1`, OR no such
+        row exists at all. Same reasoning as `work_package_inactive()`."""
+        r = self.conn.execute("SELECT inactive FROM cfg_step WHERE work_package=? AND step=?",
+                              (work_package, step)).fetchone()
+        return True if r is None else bool(r["inactive"])
+
+    def step_kind(self, work_package: str, step: str) -> str | None:
+        """`cfg_step.kind` (`'operations'` | `'utility'`) for `(work_package, step)`, or `None` if
+        unset/unknown. Added 2026-07-30 — the researcher's operations/utility classification
+        (`migration/bootstrap_step_kind.py`). Used by `run.py`'s dispatch gate: a step with no kind
+        is refused the same way an inactive one already is — "routines not in the table[s] need
+        special permission [a `configmaint.propose` classification] to be used.\""""
+        r = self.conn.execute("SELECT kind FROM cfg_step WHERE work_package=? AND step=?",
+                              (work_package, step)).fetchone()
+        return r["kind"] if r else None
+
     def book_order(self) -> dict[str, int]:
         rows = {r["book"]: r["ordinal"] for r in self.conn.execute(
-            "SELECT book, ordinal FROM cfg_book_order")}
+            "SELECT book, ordinal FROM cfg_book_order WHERE inactive=0")}
         _trace("book_order()", rows)
         return rows
 
     def candidate_rules(self, kind: str) -> list[str]:
         """The editable candidate meaning-net inputs of one kind: synonym | accept | reject."""
         rows = [r["value"] for r in self.conn.execute(
-            "SELECT value FROM cfg_candidate_rule WHERE kind=?", (kind,))]
+            "SELECT value FROM cfg_candidate_rule WHERE kind=? AND inactive=0", (kind,))]
         _trace(f"candidate_rules({kind})", rows)
         return rows
 
@@ -167,8 +203,9 @@ class Cfg:
 
     # ── on_fail (the fork rule) ──────────────────────────────────────────────
     def on_fail(self, step: str, condition: str) -> sqlite3.Row | None:
-        r = self.conn.execute("SELECT * FROM cfg_on_fail WHERE step=? AND condition=?",
-                              (step, condition)).fetchone()
+        r = self.conn.execute(
+            "SELECT * FROM cfg_on_fail WHERE step=? AND condition=? AND inactive=0",
+            (step, condition)).fetchone()
         _trace(f"on_fail({step}/{condition})", r["path"] if r else "ok")
         return r
 

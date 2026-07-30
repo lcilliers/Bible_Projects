@@ -37,6 +37,8 @@ if ($ready -ne '1') {
     exit 1
 }
 
+Test-IbaWorkPackageActive -WorkPackage 'set-candidates'
+
 $seq   = python -c "import json; from iba.app.lib.cfg import Cfg; c=Cfg(); print(json.dumps([dict(r) for r in c.sequence('set-candidates')])); c.close()" | ConvertFrom-Json
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-SET-CANDIDATES"
 

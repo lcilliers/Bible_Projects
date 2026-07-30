@@ -193,6 +193,68 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
     return orphans
 
 
+# Writer identities in cfg_write_grant that are NOT a cfg_step.step — dispatcher/API internals,
+# not steps. Fallback only — the real value is `cfg_enum` group `writer_identity` (added
+# 2026-07-29); kept byte-identical to that group's proposed values so this check works correctly
+# even before the enum rows are approved. Found 2026-07-29: cfg_write_grant.writer was never
+# checked against anything at all — a typo'd writer name would have gone unnoticed structurally
+# forever, the same class of gap `find_orphan_configs` already closes for cfg_setting/cfg_enum.
+_WRITER_IDENTITY_FALLBACK = ("run", "escalation", "migration",
+                             "call1_meanings", "call2_getInfo", "call3_strong")
+
+
+def find_report_step_references(conn: sqlite3.Connection) -> list[str]:
+    """Every active `cfg_report`/`cfg_report_section`/`cfg_report_csv_table.step` must name a
+    currently-ACTIVE `cfg_step.step` — the same discipline `_validate_live`'s existing `on_fail`
+    check already applies to `cfg_on_fail.step`, extended to the three report-shape tables that
+    were never checked against anything at all. A hard structural fault: a report row for a step
+    that doesn't exist (or was retired) is broken plumbing, not a judgement call."""
+    active_steps = {r[0] for r in conn.execute("SELECT step FROM cfg_step WHERE inactive=0")}
+    out: list[str] = []
+    for table in ("cfg_report", "cfg_report_section", "cfg_report_csv_table"):
+        for r in conn.execute(f'SELECT DISTINCT step FROM "{table}" WHERE inactive=0'):
+            if r[0] not in active_steps:
+                out.append(f"schema: {table}.step {r[0]!r} is not a currently-active cfg_step")
+    return out
+
+
+def find_unknown_write_grant_writers(conn: sqlite3.Connection,
+                                     writer_identities: set[str] | None = None) -> list[str]:
+    """Every active `cfg_write_grant.writer` must resolve to a currently-ACTIVE `cfg_step.step`,
+    OR be a declared non-step writer identity (dispatcher/API internals — see
+    `_WRITER_IDENTITY_FALLBACK`/`enum.writer_identity`). Anything else is an unchecked typo/orphan
+    reference — found live 2026-07-29 to be clean today, but never actually checked before."""
+    active_steps = {r[0] for r in conn.execute("SELECT step FROM cfg_step WHERE inactive=0")}
+    identities = writer_identities or set(_WRITER_IDENTITY_FALLBACK)
+    out: list[str] = []
+    for r in conn.execute("SELECT DISTINCT writer FROM cfg_write_grant WHERE inactive=0"):
+        if r[0] not in active_steps and r[0] not in identities:
+            out.append(f"schema: cfg_write_grant.writer {r[0]!r} is not an active cfg_step and "
+                      f"not a declared writer identity")
+    return out
+
+
+def find_filled_by_referencing_inactive_step(conn: sqlite3.Connection) -> list[str]:
+    """`cfg_column.filled_by` naming a step that is now `inactive=1` — ADVISORY, not a hard error,
+    because the correct fix needs a human judgement call per column (is the column now genuinely
+    dormant, as `passage.rule`/`.source` are, or has a DIFFERENT currently-active mechanism quietly
+    taken over — `passage.created_at`/`verse_passage.created_at` are in fact written by
+    `lib/passagetrack.py` today, not `passage.build`, and simply clearing `filled_by` there would
+    be its own new inaccuracy). Found 2026-07-29: 21 columns across the candidate/passage
+    retirements had this defect, silent, because nothing checked it — see
+    `passage-config-full-extract-20260729.md`."""
+    inactive_steps = {r[0] for r in conn.execute("SELECT step FROM cfg_step WHERE inactive=1")}
+    if not inactive_steps:
+        return []
+    out: list[str] = []
+    for r in conn.execute(
+            "SELECT table_name, name, filled_by FROM cfg_column WHERE filled_by IS NOT NULL"):
+        if r["filled_by"] in inactive_steps:
+            out.append(f"{r['table_name']}.{r['name']} filled_by={r['filled_by']!r} "
+                      f"(an inactive step) — confirm dormant or update to the real current writer")
+    return out
+
+
 def find_missing_report_paths(conn: sqlite3.Connection) -> list[str]:
     """Every ACTIVE quality-check step (QUALITY_CHECK_REPORT_PATH) must have its output-path
     setting actually present, non-null, and active in cfg_setting — the code-backed enforcement of
@@ -210,3 +272,92 @@ def find_missing_report_paths(conn: sqlite3.Connection) -> list[str]:
             missing.append(f"{step} has no active {key} setting — its findings would not persist "
                           f"to a report")
     return missing
+
+
+def find_stale_governance_docs(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
+    """`GOVERNANCE.md`'s own §8 rule (LIVE `cfg_setting` rows `governance.governance_md_on_rule_change`/
+    `build_md_on_code_change`, escalations #238/#239): any `cfg_*` rule change updates GOVERNANCE.md,
+    same unit of work — a rule §8 itself named as "follow-up work, not done in this pass" on
+    2026-07-22, still unbuilt when a 2026-07-29 audit found 7 real rule changes (2026-07-26 to
+    2026-07-28) with no matching GOVERNANCE.md entry. ADVISORY only (a doc update is a human act
+    this can prompt, not perform): flags if the newest applied `cfg_change_detail` row is more
+    recent than GOVERNANCE.md's own last-modified time. A coarse signal (a doc edit unrelated to
+    config also resets the clock) — good enough to prompt a look, not precise enough to hard-fail
+    on."""
+    row = conn.execute("SELECT MAX(applied_at) FROM cfg_change_detail").fetchone()
+    latest_change = row[0] if row else None
+    if not latest_change:
+        return []
+    gov = app_root / "GOVERNANCE.md"
+    if not gov.exists():
+        return [f"{gov} does not exist — cannot check currency against the newest applied "
+                f"config change ({latest_change})"]
+    import datetime
+    gov_mtime = datetime.datetime.fromtimestamp(
+        gov.stat().st_mtime, tz=datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    if gov_mtime < latest_change:
+        return [f"GOVERNANCE.md was last modified {gov_mtime}, before the newest applied "
+                f"cfg_change_detail row ({latest_change}) — check whether that change needs an "
+                f"entry (GOVERNANCE.md §8's own rule)"]
+    return []
+
+
+def find_unregistered_lib_modules(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
+    """Every `iba/app/lib/*.py` module must have a `cfg_utility` row (added 2026-07-29, Phase 4 of
+    `PLAN-config-system-remediation-v1-20260729.md`) — a NEW module added later and never
+    registered would otherwise be invisible to `find_utility_config_density` below, the same
+    "found by chance, not by a check" gap this whole registry exists to close. ADVISORY: a brand
+    new file mid-edit is a normal transient state, not a coherence error."""
+    registered = {r[0] for r in conn.execute("SELECT module FROM cfg_utility")}
+    lib_dir = app_root / "lib"
+    out = []
+    if not lib_dir.exists():
+        return out
+    for f in sorted(lib_dir.glob("*.py")):
+        if f.stem == "__init__":
+            continue
+        if f.stem not in registered:
+            out.append(f"iba/app/lib/{f.name} has no cfg_utility row — run "
+                      f"migration/bootstrap_cfg_utility.py to register it")
+    return out
+
+
+def find_utility_config_density(conn: sqlite3.Connection) -> list[str]:
+    """Every ACTIVE `cfg_utility` module with ZERO `cfg.setting(`/`cfg.enum(` call sites in its own
+    file — ADVISORY, the same "could be legitimate" caveat `find_orphan_configs` already carries:
+    a module like `retention.py`/`seedreport.py` genuinely has no config of its own because its
+    caller resolves paths for it (a legitimate zero); a module like `lexiconparse.py` — six regexes
+    and a hardcoded tag-set deciding a real parse, zero `cfg.setting()` calls anywhere — is the
+    actual gap this check exists to surface (found by hand 2026-07-29,
+    `core-module-config-intent-vs-effect-20260729.md`; this makes it visible without needing
+    another by-hand read of every module). `cfg_utility.file_path` is already repo-root-relative
+    (e.g. `iba/app/lib/cfg.py`) — resolved against the CWD, which every PS entry point already sets
+    to the repo root (`Set-Location $RepoRoot`), not recombined with any other path."""
+    out = []
+    for r in conn.execute("SELECT module, file_path FROM cfg_utility WHERE inactive=0"):
+        path = pathlib.Path(r["file_path"])
+        if not path.exists():
+            out.append(f"cfg_utility {r['module']!r} — {path} no longer exists on disk")
+            continue
+        text = path.read_text(encoding="utf-8", errors="ignore")
+        if "cfg.setting(" not in text and "cfg.enum(" not in text:
+            out.append(f"cfg_utility {r['module']!r} ({path}) has zero cfg.setting()/cfg.enum() "
+                      f"call sites — confirm this is a legitimate zero (a helper whose caller "
+                      f"resolves config for it) or a real completeness gap")
+    return out
+
+
+def find_unclassified_active_steps(conn: sqlite3.Connection) -> list[str]:
+    """Every ACTIVE `cfg_step` must have `kind` set (`operations` | `utility` — the researcher's
+    own classification, 2026-07-30, `migration/bootstrap_step_kind.py`). A HARD error, not a
+    judgement call: `run.py`'s dispatch gate (escalation, same day) refuses to dispatch a step with
+    no classification at all — this is the structural check that keeps that gate's premise true
+    (a NEW step, added later without a `kind`, would otherwise silently sit undispatchable with no
+    coherence check pointing at why). `find_enum_violations` (value-quality) already catches an
+    INVALID `kind` value; this catches a MISSING one, which that check explicitly does not (it
+    skips `NULL` by design)."""
+    return [f"cfg_step ({r['work_package']}, {r['step']}) is active but has no kind "
+           f"(operations|utility) — classify it via configmaint.propose before it can be "
+           f"dispatched (run.py now refuses undispatched steps with no kind)"
+           for r in conn.execute(
+               "SELECT work_package, step FROM cfg_step WHERE inactive=0 AND kind IS NULL")]

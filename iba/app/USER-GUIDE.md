@@ -30,14 +30,18 @@ built out **operation by operation**, within a common framework. *(Plan §2.)*
 > ### Scope of this guide — read this
 >
 > **The application is under active construction, and this guide grows with it — updated
-> 2026-07-23.** Live today: the raw layer (**new-word**, §3), the base layer (**candidate
-> stamping + passages**, §8), **config maintenance** (§9), **candidate curation** — one-row-at-a-time
-> and JSON-batch (§10), **standalone quality checks** (§11), **reports and CSV export** (§12),
-> **log retention** (§13), and **4 analysis reports** — seed-candidate, strong-meaning,
-> span-analysis, schema-overview (§12a). **Every report now auto-archives its previous version and
-> pairs with a CSV export by default** (added 2026-07-22/23 — see §12). The interpretive stages
-> above the base layer (lexical, characteristics, findings) are not built yet. Where this guide
-> describes a command or a report, it describes what exists now. Companion docs: `BUILD.md` (what's
+> 2026-07-30.** Live today: the raw layer (**new-word**, §3; **raw-backfill**, §3a), **config
+> maintenance** (§9), **standalone quality checks** (§11), **the lexicon-parsed layer** (§11a),
+> **reports and CSV export** (§12), **log retention** (§13), **4 analysis reports** —
+> strong-meaning, span-analysis, schema-overview, registry (§12a), and **verse-analysis /
+> passage-debate / whole-book-read / narrative-check** (§12b/§12c) — the live method for building a
+> book's study content. **§8's candidate-stamping-and-passages pipeline
+> (`Set-Candidates.ps1`/`Build-Passages.ps1`), §10's candidate curation (`Candidate-Curate.ps1`),
+> `Candidate-Quality.ps1`, and `SeedCandidate-Report.ps1` are all RETIRED** (2026-07-23/26) — do not
+> run them; §12b/§12c is the current method. Every report auto-archives its previous version and
+> pairs with a CSV export by default (§12). The interpretive stages above this layer (lexical,
+> characteristics, findings) are not built yet. Where this guide describes a command or a report, it
+> describes what exists now. Companion docs: `BUILD.md` (what's
 > built, how the parts fit) and `GOVERNANCE.md` (how config governs the code) — this guide is *how
 > to run it*.
 
@@ -160,6 +164,27 @@ PAUSED — a researcher escalation was raised; the run is resumable.
 | already built | **stops:** `'<w>' is already built (status raw-complete)` |
 
 This is by design: the app will not add a new registry word without you.
+
+---
+
+## 3a. Backfilling meaning for supporting terms (`Raw-Backfill.ps1`)
+
+`New-Word.ps1` only pulls `strong`/`strong_sense`/etc. for the strongs a *registered* word maps to.
+A verse full of spans references many OTHER strongs too — words never onboarded as their own study
+term but still needed to read the verse. `Raw-Backfill.ps1` pulls meaning **only** (never verses)
+for every strong a book's (or one chapter/verse-range's) spans reference that has no `strong` row
+yet — progressive, passage-driven coverage, not a full-Bible bulk pull:
+
+```powershell
+iba\app\ps\Raw-Backfill.ps1 -Book Dan                # whole book
+iba\app\ps\Raw-Backfill.ps1 -Book Dan -Range 1:1-7   # just this chapter:verse-verse range
+```
+
+Self-contained: the lexicon-parsed layer (§11a) and `relatedNos` fetch for the newly-pulled strongs
+happen automatically as part of this run — no separate `Lexicon-Parse.ps1` call needed afterward.
+You will rarely need to run this by hand — `report.verse_span_meaning` (§12b) auto-backfills the
+exact range it's about to render before writing the report (`report.auto_backfill_before_render`),
+so this is here for when you want the pull done ahead of time, or on its own.
 
 ---
 
@@ -324,27 +349,25 @@ way (§9), never by hand-editing a JSON seed:
 
 ---
 
-## 8. Building the base layer — candidates and passages
+## 8. Building the base layer — candidates and passages — RETIRED, corrected 2026-07-29
 
-Two work packages, run **per book** (OSIS code, e.g. `Gen`, `Rom`, `Ps`), on top of an already-built
-word (§3):
+**This whole pipeline is retired and must not be run.** `Set-Candidates.ps1`
+(`candidate.seed`/`candidate.set`) was retracted 2026-07-23 (`GOVERNANCE.md` §15D);
+`Build-Passages.ps1` (`passage.build`) was retired 2026-07-26 (`GOVERNANCE.md` §17/`BUILD.md`
+§23) — *"the past use, and rules have moved on... there is nothing to migrate from the old to the
+new"* (the researcher's own words). Both work packages are `inactive=1` in `cfg_work_package`
+today. This section previously showed them as the live way to build a book's passages — stale
+since 2026-07-26, found and corrected in the same 2026-07-29 audit that produced
+`PLAN-config-system-remediation-v1-20260729.md`.
 
-```powershell
-iba\app\ps\Set-Candidates.ps1 -Book Gen
-#   candidate.seed   ok   refreshes candidate_seed globally (not just this book) over lemma_inventory
-#   candidate.set    ok   stamps span_candidate on this book's spans whose base-strong is a candidate
+**Nothing today derives a passage's boundaries algorithmically.** A passage is now whatever range
+`report.verse_span_meaning`/`report.passage_debate` is run over — a judgement call per debate, per
+the reading method — tracked (not generated) by `lib/passagetrack.py`. **See §12b below** for the
+current method: `VerseSpanMeaning-Report.ps1` then `PassageDebate-Report.ps1`.
 
-iba\app\ps\Build-Passages.ps1 -Book Gen
-#   passage.build    ok   recomputes this book's passages from span_candidate
-```
-
-`candidate.seed` is **global** — every run re-syncs the whole candidate list against the curated
-`cfg_candidate_rule` accept/reject/synonym rules (§10), even though you passed one book; `Book` is
-just what triggers it. `candidate.set`/`passage.build` are book-scoped and **fully re-derive** that
-book's stamps/passages from scratch each run (delete-then-rebuild), so re-running is always safe.
-
-`Build-Passages.ps1` accepts `-Rule char-continuity|maximal` to override
-`passage.default_rule` for one run.
+`candidate_seed`/`span_candidate` remain in the DB (retracted data kept for provenance, not
+purged — same as `passage`/`verse_passage`'s own retirement, §17) but nothing writes to them or
+reads them for any live workflow.
 
 ---
 
@@ -377,10 +400,19 @@ commits the write, logged row-by-row in `cfg_change_detail`. Full mechanism: `GO
 
 ---
 
-## 10. Candidate curation — correcting and adding to `candidate_seed`
+## 10. Candidate curation — correcting and adding to `candidate_seed` — RETIRED, corrected 2026-07-30
+
+**This work package is retired and must not be run.** `Candidate-Curate.ps1`'s work package
+(`candidate-curation`) is `inactive=1` — retired alongside the rest of the candidate system
+(`GOVERNANCE.md` §15D, 2026-07-23; `candidate_seed`/`span_candidate` themselves kept in the DB for
+provenance, nothing writes to them or reads them for any live workflow, same as §8's passage
+tables). This section previously showed it as the live way to correct/add candidate rows — stale
+since 2026-07-23, found and corrected in the same 2026-07-30 pass that added §3a/§11a/§12c. The
+commands below are kept as a record of what this utility did; running any of them is now refused by
+the dispatcher (`cfg_work_package.inactive`).
 
 `candidate_seed` (the base-layer candidate assessment) is a **data** table, not a `cfg_*` one, so
-`Config-Maintenance.ps1` can't touch it — it has its own utility, `Candidate-Curate.ps1`, in two
+`Config-Maintenance.ps1` can't touch it — it had its own utility, `Candidate-Curate.ps1`, in two
 modes.
 
 ### 10a. `-Mode Curate` (default) — correct/split/delete ONE existing row
@@ -460,21 +492,48 @@ Full design: the plan approved 2026-07-22 (`melodic-foraging-bunny`); build + a 
 
 ## 11. Standalone quality checks
 
-Read-only pictures of data health, run **whenever you want them** — not tied to any build step, so
-they don't add noise to every `Set-Candidates`/`Build-Passages` run:
+Read-only pictures of data health, run **whenever you want them** — not tied to any build step:
 
 ```powershell
-iba\app\ps\Candidate-Quality.ps1
-#   -> iba/app/reports/candidate-quality.md — span_candidate/candidate_seed/lemma_inventory
-#      tag & gloss null/format quality, lemma_key -> strong resolution
-
-iba\app\ps\Passage-Quality.ps1
-#   -> iba/app/reports/passage-quality.md — verse-count distribution across every passage
+iba\app\ps\Passage-Quality.ps1                 # corpus-wide raw distribution
+iba\app\ps\Passage-Quality.ps1 -Book Dan       # book-scoped: sanity-check that book's debate-range
+                                                # sizes (§12b) instead — added 2026-07-28
+#   -> iba/app/reports/passage-quality.md — verse-count distribution
 ```
 
-Both escalate (one run, one escalation, counts + samples) if they find anything — acknowledging the
+Escalates (one run, one escalation, counts + samples) if it finds anything — acknowledging the
 escalation (`Escalation.ps1 -Action AnswerRun ... -Decision Approve`) confirms you've seen the
-picture; it doesn't fix anything. Actual fixes go through §10.
+picture; it doesn't fix anything.
+
+**`Candidate-Quality.ps1` is retired**, corrected here 2026-07-30 — this section used to list it
+alongside `Passage-Quality.ps1` as a normal, currently-usable command. Its work package
+(`candidate-quality`) is `inactive=1` (retired with the rest of the candidate system, §8) — running
+it is now refused outright by the dispatcher (`cfg_work_package.inactive`), not just pointless.
+
+---
+
+## 11a. The lexicon-parsed layer (`Lexicon-Parse.ps1`)
+
+Not read-only like the checks above — `-Step Parse`/`-Step Related` actually write. Three
+independent steps (run whichever you need, not a fixed pipeline):
+
+```powershell
+iba\app\ps\Lexicon-Parse.ps1 -Step Parse      # strong_meaning_tree/strong_lexicon -> the 3 parsed
+                                               # tables. No network, deterministic, clears+rebuilds,
+                                               # safe to re-run any time.
+iba\app\ps\Lexicon-Parse.ps1 -Step Related    # strong -> strong_related, one live STEP getInfo
+                                               # call per row. Can take a couple of minutes over the
+                                               # full strong table.
+iba\app\ps\Lexicon-Parse.ps1 -Step Validate   # read-only coverage + value-quality check across all
+                                               # 4 tables -> iba/app/reports/lexicon-parse.md;
+                                               # escalates once if it finds anything, same shape as
+                                               # §11's checks.
+```
+
+**You will rarely need to run `Parse`/`Related` by hand.** `Raw-Backfill.ps1` (§3a) and
+`New-Word.ps1`'s own raw-detail step both rebuild this layer automatically for whatever strongs
+they just pulled — this script exists for a manual full rebuild/check, not as a required step in
+the everyday flow.
 
 ---
 
@@ -506,16 +565,14 @@ schema, a CSV of it would just repeat the same information.
 
 ---
 
-## 12a. The 5 analysis reports (added 2026-07-22/23; registry report added 2026-07-23)
+## 12a. The 4 analysis reports (added 2026-07-22/23; registry report added 2026-07-23; was 5, corrected 2026-07-30)
 
 Read-only, run whenever you want them — same standalone shape as the quality checks (§11), each its
-own work package:
+own work package. **`SeedCandidate-Report.ps1` is retired** (`seed-candidate-report` work package,
+`inactive=1`) — it reports on `candidate_seed`, itself retired data (§10); running it is now refused
+by the dispatcher. The remaining 4:
 
 ```powershell
-iba\app\ps\SeedCandidate-Report.ps1
-#   -> iba/app/reports/seed-candidate.md — whole candidate_seed picture: counts by decision/layer/
-#      role, tag-length and rows-per-lemma distribution, busiest lemmas, open-vs-resolved over time
-
 iba\app\ps\StrongMeaning-Report.ps1
 #   -> iba/app/reports/strong-meaning.md — meaning-parse coverage: strong rows with no strong_sense
 #      yet, sense-count distribution, lsj/mounce lexicon completeness
@@ -581,6 +638,41 @@ propose`, §9 below) to point at the new file — every future scaffold then cit
 automatically, closing the gap that let debates cite a guidance version that had never actually
 been saved under that name (`BUILD.md` §27).
 
+**Step 3 — the whole-book gathering read** (`report.whole_book_read`, `BUILD.md` §32; added here
+2026-07-30, was undocumented). Every passage debate defers its "Emergent questions log" to "the
+whole-book read" — this is that step. Requires at least one `debate_status='filled'` passage row
+for the book (i.e. Step 2 has actually been run and filled in at least once) — fails cleanly
+(`no-debates-found`) if not.
+
+```powershell
+iba\app\ps\WholeBookRead-Report.ps1 -Book Dan -BookLabel Daniel
+#   -> iba/app/verse-analysis/Daniel/WA-dan-whole-book-read.md
+```
+
+Gathers every filled debate for the book, in reading order, and lays out each one's Emergent-
+questions/Passage-level-linkages content together with an empty Resolution slot per item — plumbing
+only, same boundary as Step 2: it does not decide how any emergent question actually resolves
+itself. Re-running is safe (upserts by range, same as Steps 1-2).
+
+---
+
+## 12c. Inner-being narrative — structural check (`BookNarrative-Validate.ps1`, added 2026-07-30)
+
+Narrative writing itself is unmechanised analytical work (no pipeline produces it) — this is a
+read-only check you run **on a finished narrative file**, before treating it as done. Confirms a
+`## Scope self-check` section exists and cites all three required channels (non-human↔human,
+human↔human, physical world↔human — see `WA-inner-being-narrative-guidance-v1-2026-07-28.md` §4)
+with non-empty content. A presence check only — it does not judge whether the narrative's content or
+citations are actually good.
+
+```powershell
+iba\app\ps\BookNarrative-Validate.ps1 -Path iba\app\verse-analysis\Daniel\WA-dan-inner-being-narrative-v3-consolidated-2026-07-28.md
+#   -> iba/app/reports/book-narrative-scope-check.md
+```
+
+Fails (`scope-check-missing`/`scope-check-incomplete`) if the section is absent or any channel is
+missing/empty — the message names exactly which.
+
 ---
 
 ## 13. Log retention (read-only)
@@ -598,6 +690,11 @@ resumed) listed as archival **candidates** for you to judge — it does not prun
 
 ## 14. Everyday commands, in order
 
+**Corrected 2026-07-30** — this list used to show the retired `Set-Candidates.ps1`/
+`Build-Passages.ps1`/`Candidate-Curate.ps1` as the normal per-book workflow, contradicting §8/§10's
+own RETIRED markings. Replaced with the current verse-analysis/passage-debate method (§12b/§12c),
+and the 4 previously-undocumented scripts (§3a/§11a/§12b/§12c) added.
+
 ```powershell
 # once, at the start of a session:
 iba\app\ps\Start-Iba.ps1
@@ -608,13 +705,17 @@ iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"
 iba\app\ps\Escalation.ps1 -Action Answer -Word <word> -Decision Yes
 iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"     # resume
 
-# base layer, per book:
-iba\app\ps\Set-Candidates.ps1 -Book <book>
-iba\app\ps\Build-Passages.ps1 -Book <book>
+# fill in supporting-term meaning for a book/range, if you want it done ahead of time (§3a):
+iba\app\ps\Raw-Backfill.ps1 -Book <book> [-Range <ch:v-v>]
 
-# add/correct candidates:
-iba\app\ps\Candidate-Curate.ps1 -Mode Load -InputFile <batch.json>     # batch, from outside the app
-iba\app\ps\Candidate-Curate.ps1 -LemmaKey <k> -Field tag -Value <v> -Question "..."  # one row
+# the current per-book study method — extract, then debate, then whole-book read (§12b):
+iba\app\ps\VerseSpanMeaning-Report.ps1 -Book <book> -Chapters <n-n> -BookLabel <Label>
+iba\app\ps\PassageDebate-Report.ps1 -Book <book> -Chapters <n-n> -BookLabel <Label>
+#   ... fill in the debate's <!-- fill in --> placeholders, repeat per range, then:
+iba\app\ps\WholeBookRead-Report.ps1 -Book <book> -BookLabel <Label>
+
+# structural check on a finished inner-being narrative (§12c):
+iba\app\ps\BookNarrative-Validate.ps1 -Path <narrative file>
 
 # see what's open, answer it:
 iba\app\ps\Escalation.ps1 -Action List
@@ -624,13 +725,12 @@ iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <id> -Decision Approve|Reject
 iba\app\ps\Reports.ps1 -Step ReportWord -Word <word>
 
 # check on data/config health, any time:
-iba\app\ps\Candidate-Quality.ps1
-iba\app\ps\Passage-Quality.ps1
+iba\app\ps\Passage-Quality.ps1 [-Book <book>]
+iba\app\ps\Lexicon-Parse.ps1 -Step Validate
 iba\app\ps\Config-Maintenance.ps1 -Step Validate
 iba\app\ps\Log-Retention.ps1
 
-# the 5 analysis reports, any time (§12a):
-iba\app\ps\SeedCandidate-Report.ps1
+# the 4 analysis reports, any time (§12a):
 iba\app\ps\StrongMeaning-Report.ps1
 iba\app\ps\SpanAnalysis-Report.ps1
 iba\app\ps\SchemaOverview-Report.ps1
@@ -667,16 +767,16 @@ each (the list is your own curated, already-approved registry), **skips words al
 if it stops it can simply be re-run and it continues — and writes a transcript to
 `iba/app/reports/`.
 
-**Migrate the candidate seed** — load the independent candidate-characteristic seed (the base layer
-needs this before `Set-Candidates`):
+**Migrate the candidate seed** — historical record only, corrected 2026-07-30: this loaded the
+independent candidate-characteristic seed that the now-retired `Set-Candidates.ps1`/§10 pipeline
+depended on (§8/§10). Not part of the current method (§12b/§12c) and not needed for it.
 
 ```powershell
 python -m iba.app.migration.import_seed
 ```
 
 It imports the lemma inventory + candidate assessment from the old study and maps it against the
-strongs already in the app. Run it once; `candidate.seed`/`candidate.load` keep the seed current
-thereafter.
+strongs already in the app.
 
 ---
 

@@ -1159,3 +1159,172 @@ that triggered it — it is NOT a completed audit of every "must"/"never" senten
 mechanical cfg→code key-string scan), the inverse direction — docs/memory prose → "is this backed by
 config" — has no equivalent mechanical check; new instances are expected to keep surfacing and
 should be fixed as found, per this standard, rather than claimed complete by a one-time sweep.
+
+---
+
+## 17-23. Backfill: three days of real rule changes this file missed (2026-07-29)
+
+**Found during a full config-system audit, not self-reported at the time.** §8's own rule —
+any config-rule change updates this file, same unit of work — was not honoured for the passage
+method's three rewrites between 2026-07-26 and 2026-07-28. `BUILD.md` recorded every one of them;
+this file did not get a single matching entry, and §16 above (2026-07-26) is, chronologically,
+*before* the very retirement that happened later the same day. Backfilled here as the specific
+remediation the audit's own plan requires (`PLAN-config-system-remediation-v1-20260729.md`, Phase
+1 item 5) — not rewritten as if it happened on time.
+
+**§17 — the `passage`/`verse_passage` system retired (2026-07-26, `BUILD.md` §23).** Researcher's
+own words: *"the past use, and rules have moved on... there is nothing to migrate from the old to
+the new."* `migration/retract_passage_system.py` deactivated 2 work packages (`build-passages`,
+`passage-quality`), 2 steps, 5 `passage.*` settings, 1 `cfg_report` row + 2 sections, 4 `cfg_on_fail`
+rows, 2 `cfg_write_grant` rows — and, going further than the candidate precedent (§15D), soft-deleted
+the DATA itself (18,504 `passage` / 24,763 `verse_passage` rows) since the researcher wanted it out
+of the way, not just frozen. Three long-open `passage.validate` escalations (`#195`/`#256`/`#262`)
+answered `reject` — not "wrong," but "the system producing this finding is retired."
+
+**§18 — `report.passage_debate` registered (2026-07-27, `BUILD.md` §27).** The Daniel passage-debate
+method (four manually-written debates already existed) baked into the app as a registered scaffold
+generator: new work package `passage-debate-report`, step `report.passage_debate` →
+`lib/passagedebatereport.py`. Reads `method.passage_read_guidance_path`/
+`method.interpretation_questions_path` (new `method`-module settings) rather than hardcoding the
+method; writes a debate SKELETON only, no interpretive content.
+
+**§19 — `passage`/`verse_passage` repurposed (2026-07-27, `BUILD.md` §28).** The researcher's own
+framing: *"the passage tables becomes the record of the passages that were... debate."* The tables
+§17 emptied were rebuilt as a plain completion-tracking record for the verse-fanout method
+(`report.verse_span_meaning`/`report.passage_debate`), via new `lib/passagetrack.py` — 6 new
+nullable columns on `passage` (`book_label`, `verse_span_meaning_path`/`_written_at`, `debate_path`/
+`_written_at`/`_status`), a new `enum.passage_debate_status` (`scaffold`/`filled`), 2 new
+`cfg_write_grant` rows (`report.verse_span_meaning`/`report.passage_debate` → `passage`,
+`verse_passage`). **Not done in this backfill, found by the same 2026-07-29 audit that produced
+it:** the OLD `cfg_column` rows this repurposing left behind (`rule`/`source`/`needs_review`/
+`filled_by='passage.build'` etc.) were never updated to describe the new regime — see the audit's
+own `passage-config-full-extract-20260729.md` and the `cfg_column`/`cfg_enum` fixes proposed via
+`configmaint.propose` the same day this backfill was written.
+
+**§20 — `passage-quality`/`passage.validate` reactivated, book-scoped (2026-07-28, `BUILD.md`
+§31).** Deliberately scoped reactivation (`migration/reactivate_passage_quality.py`): only
+`passage.validate`'s own `cfg_work_package`/`cfg_step`/one setting
+(`passage.quality_report_path`)/`cfg_report`+2 sections/3 `cfg_on_fail` rows — the other 4
+`passage.*` settings (`cross_chapter`/`default_rule`/`min_shared_strongs`/`review_over`) stayed
+`inactive=1` on purpose, since `review_over=10` is calibrated for 1-3-verse raw spans and every
+Daniel debate range (7-45 verses) would trip it as-is. New optional `-Book` param gives the check a
+second purpose: a spot-check on debate-range sizes, not raw span fragmentation. The escalation
+question's wording was corrected at the same time to stop naming "the char-continuity rule"
+(misleading once applied to debate ranges, which never go through `passage.build`).
+
+**§21 — `report.whole_book_read` registered (2026-07-28, `BUILD.md` §32).** New work package
+`whole-book-read`, step `report.whole_book_read` → `lib/wholebookread.py`: gathers every
+`debate_status='filled'` passage for a book, extracts each debate's "Emergent questions log"/
+"Passage-level linkages" sections (tolerant heading match across three real variants found by
+reading all sixteen Daniel files by hand — BUILD.md §30/§32/§33), lays them out with an empty
+Resolution slot. Deliberately does not decide how any emergent question resolves itself.
+
+**§22 — `governance.verse_gap_by_design` + `report.verse_gap_note` added (2026-07-29, `BUILD.md`
+§35).** Researcher's ruling after measuring the full-Bible extent of the term-discovery verse gap
+(2,049/31,086 verses, 6.59%, concentrated in genealogy/list-heavy books): a verse missing from
+`iba.db` is BY DESIGN (verse-existence is gated on prior term discovery), not a data-integrity
+error — do not escalate or attempt to backfill it. Both `report.verse_span_meaning` and
+`report.passage_debate` now note each detectable gap inline and skip to the next available verse.
+
+**§23 — Daniel `1:7-21` corrected to `1:8-21` (2026-07-29, `BUILD.md` §36).** A `passage` row whose
+boundaries were mechanically self-consistent (start/end/verse_count all agreed with each other) but
+substantively wrong — verse 7 belonged to the *previous* range too, a real content error the
+`passage` table's own structural checks could not catch since nothing checks a boundary against the
+actual verse text's content, only against its own internal arithmetic.
+
+**What this backfill does not do:** it does not build the mechanical GOVERNANCE.md-currency check
+§8 already named as follow-up (2026-07-22) and still unbuilt at the time this backfill was written
+— built later the same day, §25 below.
+
+---
+
+## 24. `configmaint.validate` extended — inactive-reference coherence, write-grant-writer completeness, stale-`filled_by`, doc-currency (2026-07-29, same day as §17-23)
+
+Four new checks (`lib/cfgquality.py`), verified live against the real dispatcher, not just unit
+tests: **hard errors** — `find_report_step_references` (every active `cfg_report`/
+`cfg_report_section`/`cfg_report_csv_table.step` must name a currently-active step — the same
+discipline the existing `on_fail.step` check already had, extended to three tables that were never
+checked against anything before); `find_unknown_write_grant_writers` (every active
+`cfg_write_grant.writer` must resolve to an active step or a declared `cfg_enum writer_identity`).
+**Advisory** (judgement calls, escalated like orphans/justification, not hard-failed) —
+`find_filled_by_referencing_inactive_step` (surfaced 22 `cfg_column.filled_by` rows across the
+candidate/passage retirements naming a retired step — §2/A2 of `passage-config-full-extract-
+20260729.md`, now a standing check instead of a one-off finding); `find_stale_governance_docs`
+(compares `GOVERNANCE.md`'s own mtime against the newest applied `cfg_change_detail` row — the
+mechanical version of §8's 2026-07-22 follow-up, built four weeks-worth-of-calendar-time-equivalent
+later than promised, same day this note was written).
+
+---
+
+## 25. `inactive` made real at runtime — escalation #334 closed (2026-07-29, later the same day)
+
+Until this, `inactive` was **validator-only metadata** — confirmed by direct inspection: not one of
+`lib/cfg.py`'s read methods filtered on it, so "retiring" a `cfg_*` row changed nothing about
+whether the app actually still read and applied it. §15D built the column and the
+`configmaint.validate`-side exclusion in 2026-07-23; it also explicitly named, and deferred,
+runtime enforcement: *"Blocking execution outright is a different, not-yet-made decision... flagged
+for whenever the actual replacement system is being designed."* That moment arrived with escalation
+#334, raised 2026-07-29: a near-miss running `Set-Candidates.ps1 -Book Obad`, a retired work
+package, caught only by a manual DB query.
+
+**Fixed.** `AND inactive=0` added to every `Cfg` read method whose table actually carries the
+column (checked directly, not assumed — `cfg_book_order`/`cfg_connection`/`cfg_api` all have it too,
+correcting `PLAN-config-system-remediation-v1-20260729.md`'s own wrong guess). `run.py:run_step()`
+now refuses (uncaught `PermissionError`, before any DB write) if the requested work package or step
+is `inactive=1` or unknown. A second bug, found only by testing the actual near-miss scenario
+rather than trusting the unit-level fix: the three CHAINED work-package scripts (`Set-Candidates.ps1`/
+`Build-Passages.ps1`/`New-Word.ps1`) pre-fetch their step list via `Cfg.sequence()` and loop over
+it — an empty (correctly-filtered) sequence made the loop run zero times and fall through to a
+FALSE "COMPLETE" banner, worse than the original silent-execution gap for a "did this actually
+work" question. Fixed at its source, once, in the shared `ps/_lib/Notify.ps1`
+(`Test-IbaWorkPackageActive`), not per-script. Full account, including every verification run:
+`BUILD.md` §38.
+
+**§25a — remaining §17-24 proposals closed out, same day.** Researcher approved the outstanding
+`passage_rule` enum deactivation, `passage.source`/`.needs_review` `filled_by` clears, and all 6
+`writer_identity` values — `passage_rule`/`passage_source` and `passage.rule`/`.source`/
+`.needs_review` are now symmetric (§19's asymmetry note above resolved). 19 `cfg_column.filled_by`
+findings remain genuinely open (not a duplicate/artifact — tracked by §24's standing check, not
+raised again as individual escalations). Full detail: `BUILD.md` §38's closing note.
+
+**§25b — the 19 remaining `filled_by` findings closed, same day.** Researcher asked to see the
+actual live rows and get ready-to-run commands rather than a fill-in-the-blank template — both
+given, then executed at the researcher's go-ahead: 10 dormant clears (`candidate_seed`/
+`span_candidate`, naming retired `candidate.seed`/`.set`/`.load` steps) and 9 corrections to the
+real current writer (`passage`/`verse_passage`, now naming `report.verse_span_meaning /
+report.passage_debate (via lib/passagetrack.py)` instead of retired `passage.build`). `lib/
+cfgquality.find_filled_by_referencing_inactive_step` now returns **0**, confirmed both directly and
+live through the real dispatcher. Full detail: `BUILD.md` §38's second closing note.
+
+## 26. `cfg_utility` registry built — Phase 4, on direct instruction (2026-07-29, later the same day)
+
+The one deliberately-deferred piece of `PLAN-config-system-remediation-v1-20260729.md`, built after
+the researcher pointed out that "proceed to implement the plan" already covered it — sequencing it
+after the higher-risk Phase 2 work was a scoping call that should have been checked back on, not
+made alone. New table `cfg_utility` (module/file_path/purpose/inactive), one row per `iba/app/
+lib/*.py` module (23, enumerated directly from disk), added via a direct schema bootstrap
+(`migration/bootstrap_cfg_utility.py` — DDL, same class of exception as the `inactive` column
+itself) since `configmaint.propose` cannot create tables. Two new advisory `configmaint.validate`
+checks close the completeness gap `cfg_step`/`REPORT_STEPS` already closed for *steps* but never
+existed for library utilities: an unregistered-module check, and a config-density check that found,
+live, 14 of 23 modules touch zero `cfg_setting`/`cfg_enum` — 13 legitimate (helpers whose caller
+resolves config for them) and one real, already-known gap (`lib/lexiconparse.py`), both surfaced
+for judgement rather than either being silently accepted or forced into config that doesn't fit.
+Full account: `BUILD.md` §39.
+
+## 27. `cfg_step.kind` — operations/utility classification, dispatch requires it (2026-07-30)
+
+Corrected framing from the researcher: the operations/utility split is real, but it belongs on the
+*handler modules* (`raw`/`registry`/`lexicon`/the passage-debate-prep steps/`narrative` vs.
+`configmaint`/general reporting) — `cfg_utility` (§26) only ever covered `lib/*.py`, leaving exactly
+what the researcher named: *"the handler modules are not in the table."* Then: *"you need to build
+controls that routines not in the tables need special permission to be use."*
+
+New `cfg_step.kind` column (`operations`|`utility`, `enum.step_kind`) — on `cfg_step`, not a new
+table, because the split is per-step (`reports.py` itself mixes both). All 35 steps classified in
+one bootstrap pass (`migration/bootstrap_step_kind.py`): 22 operations, 13 utility. `run.py`'s
+dispatch gate (§25) now also refuses a step with `kind IS NULL` — "special permission" is the
+existing `configmaint.propose` approval gate, not a separate bypass; classifying a step already
+requires that same sanctioned path. New hard `configmaint.validate` check
+(`find_unclassified_active_steps`) keeps a future unclassified step from silently existing. Full
+account, including the live refusal test: `BUILD.md` §40.

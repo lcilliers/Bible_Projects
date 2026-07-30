@@ -1,6 +1,6 @@
 # Daniel -- Whole-Book Read
 
-> Generated 2026-07-28T09:08:42Z by `report.whole_book_read`. Gathers every filled `report.passage_debate` output for `Dan` — plumbing only; the resolutions below are for the researcher/AI to write, not generated.
+> Generated 2026-07-30T04:08:48Z by `report.whole_book_read`. Gathers every filled `report.passage_debate` output for `Dan` — plumbing only; the resolutions below are for the researcher/AI to write, not generated.
 
 ## Contents
 

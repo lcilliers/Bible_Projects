@@ -20,7 +20,11 @@ import re
 from .base import Ctx, Outcome, ok, fail
 from ..lib import reportkit
 
-REQUIRED_LABELS = ("Non-human ↔ human", "Human ↔ human", "Physical world ↔ human")
+# Fallback only — the real value is `cfg_enum` group `narrative_required_channel` (added
+# 2026-07-29, closing a completeness gap: the exact fact this whole check exists to enforce used
+# to live only here, in code, with no config counterpart at all). Kept byte-identical so behaviour
+# is unchanged whether or not the cfg_enum rows have been approved yet.
+_REQUIRED_LABELS_FALLBACK = ("Non-human ↔ human", "Human ↔ human", "Physical world ↔ human")
 
 _SECTION_RE = re.compile(r"^##\s+Scope self-check\s*$", re.IGNORECASE | re.MULTILINE)
 _NEXT_H2_RE = re.compile(r"^##\s+\S", re.MULTILINE)
@@ -52,10 +56,14 @@ def _extract_section(text: str) -> str | None:
     return text[body_start: nxt.start() if nxt else len(text)]
 
 
-def _check_labels(section: str) -> dict[str, str]:
+def _required_labels(ctx: Ctx) -> tuple[str, ...]:
+    return tuple(ctx.cfg.enum("narrative_required_channel")) or _REQUIRED_LABELS_FALLBACK
+
+
+def _check_labels(section: str, required_labels: tuple[str, ...]) -> dict[str, str]:
     """{label: finding} — finding is 'ok', 'missing', or 'empty' (placeholder never filled in)."""
     findings: dict[str, str] = {}
-    for label in REQUIRED_LABELS:
+    for label in required_labels:
         pat = re.compile(
             r"-\s*\*\*" + re.escape(label) + r":\*\*\s*(.*)", re.IGNORECASE)
         m = pat.search(section)
@@ -112,13 +120,14 @@ def validate(ctx: Ctx) -> Outcome:
                    f"no '## Scope self-check' section found in {path} — see {guidance_path} §3; "
                    f"detail in {report_path}")
 
-    findings = _check_labels(section)
+    required_labels = _required_labels(ctx)
+    findings = _check_labels(section, required_labels)
     report_path = _write_report(ctx.cfg, path, findings, section_found=True)
     problems = {label: f for label, f in findings.items() if f != "ok"}
     if problems:
         return fail("scope-check-incomplete",
-                   f"{len(problems)} of {len(REQUIRED_LABELS)} required channel(s) missing or "
+                   f"{len(problems)} of {len(required_labels)} required channel(s) missing or "
                    f"empty in {path}'s Scope self-check: {problems} — detail in {report_path}")
 
-    return ok(f"all {len(REQUIRED_LABELS)} channels present and filled in {path}",
+    return ok(f"all {len(required_labels)} channels present and filled in {path}",
              path=str(report_path))

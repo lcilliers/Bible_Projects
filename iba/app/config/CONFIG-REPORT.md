@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-07-29T06:32:48Z |
+| generated_at | 2026-07-30T04:11:43Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -38,7 +38,7 @@ _(none)_
 **Missing report paths** (0) — a quality-check step with nowhere for its findings to persist (governance.reports_must_persist violation):
 _(none)_
 
-**Inactive configs** (363 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above:
+**Inactive configs** (367 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above:
 - **cfg_setting** (11): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.load_report_path`, `candidate.quality_report_path`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`, `passage.cross_chapter`, `passage.default_rule`, `passage.min_shared_strongs`, `passage.review_over`
 - **cfg_step** (7): `build-passages/passage.build`, `candidate-curation/candidate.curate`, `candidate-curation/candidate.load`, `candidate-quality/candidate.validate`, `seed-candidate-report/report.seed_candidate`, `set-candidates/candidate.seed`, `set-candidates/candidate.set`
 - **cfg_work_package** (5): `build-passages`, `candidate-curation`, `candidate-quality`, `seed-candidate-report`, `set-candidates`
@@ -46,7 +46,7 @@ _(none)_
 - **cfg_report** (3): `candidate.load`, `candidate.validate`, `report.seed_candidate`
 - **cfg_report_section** (10): `candidate.load/duplicates`, `candidate.load/exceptions`, `candidate.validate/gloss`, `candidate.validate/orphan_lemmas`, `candidate.validate/seed_tag`, `candidate.validate/span_tag`, `report.seed_candidate/distribution`, `report.seed_candidate/over_time`, `report.seed_candidate/summary`, `report.seed_candidate/top_lemmas`
 - **cfg_report_csv_table** (5): `candidate.load/candidate_seed`, `candidate.validate/candidate_seed`, `candidate.validate/lemma_inventory`, `candidate.validate/span_candidate`, `report.seed_candidate/candidate_seed`
-- **cfg_enum** (15): `candidate_decision=candidate`, `candidate_decision=exception`, `candidate_decision=rejected`, `candidate_decision=undecided`, `candidate_ib_referent=body_part`, `candidate_ib_referent=characteristic`, `candidate_ib_referent=other_being`, `candidate_source=curated-synonym`, `candidate_source=ib-judgement`, `candidate_source=read-emergent`, `candidate_source=registry-direct`, `candidate_step_status=in_strong`, `candidate_step_status=not_in_step`, `candidate_step_status=step_has_verses_pending`, `candidate_step_status=step_no_verses`
+- **cfg_enum** (19): `candidate_decision=candidate`, `candidate_decision=exception`, `candidate_decision=rejected`, `candidate_decision=undecided`, `candidate_ib_referent=body_part`, `candidate_ib_referent=characteristic`, `candidate_ib_referent=other_being`, `candidate_source=curated-synonym`, `candidate_source=ib-judgement`, `candidate_source=read-emergent`, `candidate_source=registry-direct`, `candidate_step_status=in_strong`, `candidate_step_status=not_in_step`, `candidate_step_status=step_has_verses_pending`, `candidate_step_status=step_no_verses`, `passage_rule=char-continuity`, `passage_rule=maximal`, `passage_source=passage-build`, `passage_source=single-verse-emergent`
 - **cfg_on_fail** (11): `candidate.curate/change-rejected`, `candidate.curate/invalid-proposal`, `candidate.curate/needs-approval`, `candidate.curate/needs-revision`, `candidate.load/needs-review`, `candidate.seed/no-inventory`, `candidate.set/no-spans`, `candidate.validate/findings-rejected`, `candidate.validate/needs-review`, `candidate.validate/needs-revision`, `passage.build/no-candidates`
 - **cfg_candidate_rule** (by kind): accept=289
 
@@ -107,6 +107,8 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | raw | language.greek_prefix | G | a strong starting with this is Greek; else Hebrew |
 | raw | meaning.head_marker | :  | a mediumDef starting with this is a SENSE: head + the lemma's tree. Else the code is its own lemma. |
 | raw | raw.meaning_tree_clean_pattern | ^(?:[^<]\|<(?!(?i:br\b))[^>]*>)*$ | a clean strong_meaning_tree.sense_text: any text plus complete <ref>...</ref> spans (STEP's own citation markup, tolerated -- BUILD.md notes Greek mediumDef is prose with <ref> tags); any OTHER leftover markup (<br>, <b>, ...) fails -- the same <br> parser bug as strong_sense.head, one level deeper |
+| raw | raw.strong_base_pattern | ^([HG]\d+)([A-Z]?)$ | Strongs-code base/sub-letter split - single home for this fact (2026-07-29), replacing three independent copies (handlers/raw.py, lib/versespanmeaningreport.py, and the retired candidate.lemma_base_pattern) |
+| registry | registry.duplicate_shared_threshold | 1.0 | fraction of a new words seed strongs an existing word must already hold for registry.create to warn it may be a duplicate/typo (1.0 = must share ALL strongs) |
 | registry | registry.strip_ends_pattern | [^A-Za-z] | on entry, strip runs of these from BOTH ends of the word ('[hypocrisy]' -> 'hypocrisy'); internal hyphens/spaces kept. Word matching is case-insensitive. |
 | report | report.auto_backfill_before_render | True | report.verse_span_meaning auto-runs raw.backfill_meaning_for() for any span whose strong is not yet registered, for the exact book+range being rendered, before writing the report -- researchers direct 2026-07-26 instruction (do not leave partial-coverage reports as a silent manual follow-up step) |
 | report | report.output_dir | iba/app/reports | where report.word writes its output |
@@ -280,7 +282,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 
 ## 5. on_fail — condition -> path (the fork rules)
 
-**11 of 45 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**13 of 52 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -296,6 +298,8 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | raw.discover | zero-strongs | the word maps to no strongs — a researcher question |
 | raw.verses | shortfall | STEP returned fewer rows than its own reported total — the exact class of bug BUILD.md §5 found; must not silently continue |
 | registry.create | needs-approval | a new word needs researcher approval |
+| validation.book | needs-review | validation findings need researcher judgement |
+| validation.word | needs-review | validation findings need researcher judgement |
 
 ### 5b. Does not escalate — report-stop (hard fail) or report-continue (logged, no ask)
 | step | condition | path | message |
@@ -321,6 +325,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | passage.validate | needs-revision | report-stop | researcher asked for more specific investigation (see comment) |
 | raw.backfill_meaning | invalid-range | report-stop | the -Range value could not be parsed |
 | raw.backfill_meaning | unreachable | report-stop | STEP is not reachable — cannot pull any meaning |
+| raw.discover | follow-related-not-built | report-stop | discovery.follow_related is true but relatedNos expansion was never implemented |
 | raw.validate | parse-mismatch | report-stop | span does not recover strong_verse |
 | registry.create | word-rejected | report-stop | the researcher rejected the word |
 | registry.exists | word-exists | report-stop | the word already exists; use a refresh run, not new-word |
@@ -334,6 +339,10 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | report.verse_span_meaning | unreachable | report-stop | STEP is not reachable — report.verse_span_meaning needs it for AMBIGUOUS-span disambiguation (step.required_for_runs) |
 | report.whole_book_read | no-debates-found | report-stop | no debate_status='filled' passage row exists yet for this book — run at least one report.passage_debate pass and fill it in first |
 | report.word | word-not-found | report-stop | the requested word is not in the registry |
+| validation.book | findings-rejected | report-stop | researcher flagged the validation findings as needing action, not just acknowledgement |
+| validation.book | needs-revision | report-stop | researcher asked for more specific investigation (see comment) |
+| validation.word | findings-rejected | report-stop | researcher flagged the validation findings as needing action, not just acknowledgement |
+| validation.word | needs-revision | report-stop | researcher asked for more specific investigation (see comment) |
 
 ## 6. Write grants — who may write what
 
@@ -346,7 +355,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | candidate.load | candidate_seed |
 | candidate.seed | candidate_seed, lemma_inventory |
 | candidate.set | span_candidate |
-| configmaint.propose | cfg_api, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_enum, cfg_meta, cfg_on_fail, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_unique, cfg_work_package, cfg_write_grant |
+| configmaint.propose | cfg_api, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_enum, cfg_meta, cfg_on_fail, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
 | escalation | escalation, word_registry |
 | lexicon.parse | strong_lsj_parsed, strong_meaning_parsed, strong_mounce_parsed |
 | lexicon.related | strong_related |
@@ -540,16 +549,16 @@ dedup key: `lemma_key, strong_variant, sense_seq`
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | INTEGER | ✓ |  |  |  | surrogate key |  |
 | lemma_key | TEXT |  | ✓ |  | lemma_inventory.lemma_key | the assessed lemma |  |
-| decision | TEXT |  |  |  |  | candidate (potential) \| rejected \| undecided | candidate.seed |
-| layer | TEXT |  |  |  |  | which layer decided it | candidate.seed |
-| registry_match | TEXT |  |  |  |  | the registry word covering this lemma, or NULL (NULL+candidate = missing registry word) | candidate.seed |
-| tag | TEXT |  |  |  |  | IB label carried onto the stamp | candidate.seed |
-| assessed_at | TEXT |  |  |  |  | when assessed | candidate.seed |
+| decision | TEXT |  |  |  |  | DORMANT - candidate.seed retired 2026-07-23; no active mechanism populates this column |  |
+| layer | TEXT |  |  |  |  | DORMANT - candidate.seed retired 2026-07-23; no active mechanism populates this column |  |
+| registry_match | TEXT |  |  |  |  | DORMANT - candidate.seed retired 2026-07-23; no active mechanism populates this column |  |
+| tag | TEXT |  |  |  |  | DORMANT - candidate.seed retired 2026-07-23; no active mechanism populates this column |  |
+| assessed_at | TEXT |  |  |  |  | DORMANT - candidate.seed retired 2026-07-23; no active mechanism populates this column |  |
 | deleted | INTEGER |  |  |  |  | soft delete |  |
 | strong_variant | TEXT |  | ✓ |  | strong.strongNumber | the specific sub-lettered Strongs variant this row's tag reflects (e.g. H0639G), or the lemma_key itself when the tag applies to the whole base lemma (no sub-strong split decided yet -- the default for existing rows) | candidate.seed / candidate.curate |
-| sense_seq | INTEGER |  | ✓ | ✓ |  | which concept-sense of this (lemma_key, strong_variant) this row is, when one Strong's code genuinely carries more than one IB concept and there is no distinct sub-strong to split onto (0 = the only/first sense) | candidate.load |
-| step_status | TEXT |  |  |  |  | STEP cross-reference state, read-only (never writes to strong) -- in_strong / step_no_verses / not_in_step / step_has_verses_pending | candidate.load |
-| ib_referent_type | TEXT |  |  |  |  | informational signal, not a gate -- could this word be another being (third party impacting IB) or a body part (idiomatically IB-relevant), vs a direct characteristic | candidate.load |
+| sense_seq | INTEGER |  | ✓ | ✓ |  | DORMANT - candidate.load retired 2026-07-23; no active mechanism populates this column |  |
+| step_status | TEXT |  |  |  |  | DORMANT - candidate.load retired 2026-07-23; no active mechanism populates this column |  |
+| ib_referent_type | TEXT |  |  |  |  | DORMANT - candidate.load retired 2026-07-23; no active mechanism populates this column |  |
 
 ### span_candidate
 _one row per CANDIDATE span (existence = candidate) — the L4b stamp over the L4a span_ — over-inclusive candidate stamp; the lexical stage later tests each in context
@@ -559,8 +568,8 @@ _one row per CANDIDATE span (existence = candidate) — the L4b stamp over the L
 | span_id | INTEGER |  | ✓ | ✓ | span.id | the L4a span stamped |  |
 | lemma_key | TEXT |  |  |  |  | base Strong's of the span (denormalised for continuity/join) | derived:span.strong_variant |
 | candidate_tag | TEXT |  |  |  |  | the IB label from the seed | candidate_seed.tag |
-| seed_source | TEXT |  |  |  |  | which seed layer | candidate.set |
-| set_at | TEXT |  |  |  |  | when stamped | candidate.set |
+| seed_source | TEXT |  |  |  |  | DORMANT - candidate.set retired 2026-07-23; no active mechanism populates this column |  |
+| set_at | TEXT |  |  |  |  | DORMANT - candidate.set retired 2026-07-23; no active mechanism populates this column |  |
 | deleted | INTEGER |  |  |  |  | soft delete |  |
 
 ### passage
@@ -571,16 +580,16 @@ dedup key: `book, start_chapter, start_verse, end_chapter, end_verse`
 | id | INTEGER | ✓ |  |  |  | surrogate key |  |
 | book | TEXT |  | ✓ |  |  | OSIS book code | derived:verse.osisId |
 | anchor_verse_id | INTEGER |  | ✓ |  | verse.id | first verse of the run — the anchor |  |
-| start_chapter | INTEGER |  |  |  |  | range start chapter | passage.build |
-| start_verse | INTEGER |  |  |  |  | range start verse | passage.build |
-| end_chapter | INTEGER |  |  |  |  | range end chapter | passage.build |
-| end_verse | INTEGER |  |  |  |  | range end verse | passage.build |
-| ref | TEXT |  |  |  |  | human range | passage.build |
-| verse_count | INTEGER |  |  |  |  | >=1 | passage.build |
-| rule | TEXT |  |  |  |  | char-continuity \| maximal | passage.build |
-| source | TEXT |  |  |  |  | passage-build \| single-verse-emergent | passage.build |
-| needs_review | INTEGER |  |  |  |  | 1 when verse_count > passage.review_over — confirm one passage not several | passage.build |
-| created_at | TEXT |  |  |  |  | when built | passage.build |
+| start_chapter | INTEGER |  |  |  |  | range start chapter - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
+| start_verse | INTEGER |  |  |  |  | range start verse - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
+| end_chapter | INTEGER |  |  |  |  | range end chapter - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
+| end_verse | INTEGER |  |  |  |  | range end verse - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
+| ref | TEXT |  |  |  |  | human range - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
+| verse_count | INTEGER |  |  |  |  | count of verses in the range - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
+| rule | TEXT |  |  |  |  | char-continuity \| maximal - DORMANT since passage.build retired 2026-07-26; NULL on every live row; no active mechanism populates this column |  |
+| source | TEXT |  |  |  |  | passage-build \| single-verse-emergent - DORMANT since passage.build retired 2026-07-26; NULL on every live row; no active mechanism populates this column |  |
+| needs_review | INTEGER |  |  |  |  | 1 when verse_count > passage.review_over (passage.build only) - DORMANT since passage.build retired 2026-07-26; NULL on every live row; passage.validate reports the live distribution directly instead |  |
+| created_at | TEXT |  |  |  |  | when this passage row was created - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
 | deleted | INTEGER |  |  |  |  | soft delete |  |
 | book_label | TEXT |  |  |  |  | human-facing subfolder name (e.g. 'Daniel') used by the verse-analysis report writers; defaults to `book` if the caller never supplied one | report.verse_span_meaning |
 | verse_span_meaning_path | TEXT |  |  |  |  | path to this range's report.verse_span_meaning output, written by that step on success | report.verse_span_meaning |
@@ -596,8 +605,8 @@ _one row per verse-in-a-passage — passage membership (L4b), keeps the raw vers
 | id | INTEGER | ✓ |  |  |  | surrogate key |  |
 | passage_id | INTEGER |  | ✓ |  | passage.id | the passage |  |
 | verse_id | INTEGER |  | ✓ | ✓ | verse.id | the verse (unique — one passage per verse) |  |
-| is_anchor | INTEGER |  |  |  |  | 1 on the anchor verse | passage.build |
-| created_at | TEXT |  |  |  |  | when built | passage.build |
+| is_anchor | INTEGER |  |  |  |  | 1 on the anchor verse - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
+| created_at | TEXT |  |  |  |  | when this link was created - now populated by the verse-fanout tracking mechanism, not passage.build | report.verse_span_meaning / report.passage_debate (via lib/passagetrack.py) |
 | deleted | INTEGER |  |  |  |  | soft delete |  |
 
 ### cfg_change_detail
@@ -675,12 +684,16 @@ _one row per (strong, related strong) pair STEP's getInfo returned (fetched 2026
 | escalation_answer | approve, reject, revise |
 | escalation_state | raised, answered, paused, retracted |
 | escalation_type | prompted, interactive |
+| narrative_required_channel | Non-human ↔ human, Human ↔ human, Physical world ↔ human |
 | on_fail | report-continue, pause-continue, report-stop, self-heal |
 | passage_debate_status | scaffold, filled |
 | passage_rule | char-continuity, maximal |
 | passage_source | passage-build, single-verse-emergent |
 | run_state | running, paused, done, failed |
+| step_kind | operations, utility |
 | word_status | proposed, approved, raw-complete, signed-off, rejected |
+| word_status_built | raw-complete, signed-off |
+| writer_identity | run, escalation, migration, call1_meanings, call2_getInfo, call3_strong |
 
 ## 10. Book order
 
@@ -949,6 +962,12 @@ work package `reports` → `iba/app/ps/Reports.ps1` (chained=0)
 | 3 | value_quality | ## 6. Value quality | 6. Value quality | ✓ |
 CSV pairing: `candidate_seed` (book-scoped); `passage` (book-scoped); `verse_passage` (book-scoped)
 
+| condition | path | route | message |
+| --- | --- | --- | --- |
+| findings-rejected | report-stop | terminal | researcher flagged the validation findings as needing action, not just acknowledgement |
+| needs-review | pause-continue | terminal | validation findings need researcher judgement |
+| needs-revision | report-stop | terminal | researcher asked for more specific investigation (see comment) |
+
 ### `validation.word`
 **Validation report — '{word}'** — output `md+csv` · naming `dated` · archived to `archive/` · ToC on
 work package `reports` → `iba/app/ps/Reports.ps1` (chained=0)
@@ -962,3 +981,9 @@ work package `reports` → `iba/app/ps/Reports.ps1` (chained=0)
 | 4 | expectations | ## 5. Expectations | 5. Expectations | ✓ |
 | 5 | value_quality | ## 6. Value quality | 6. Value quality | ✓ |
 CSV pairing: `span` (word-scoped, same slice report.word checks); `word_strong` (word-scoped)
+
+| condition | path | route | message |
+| --- | --- | --- | --- |
+| findings-rejected | report-stop | terminal | researcher flagged the validation findings as needing action, not just acknowledgement |
+| needs-review | pause-continue | terminal | validation findings need researcher judgement |
+| needs-revision | report-stop | terminal | researcher asked for more specific investigation (see comment) |
