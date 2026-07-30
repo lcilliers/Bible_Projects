@@ -53,7 +53,7 @@ built out **operation by operation**, within a common framework. *(Plan §2.)*
 |---|---|
 | **Python 3.14** | with one package: `requests`. Install: `python -m pip install requests` |
 | **the local STEP server** | running at `http://localhost:8989` with the tagged module `ESV_th`. The app never uses the web. |
-| **nothing else** | **no `.env`, no secrets, no keys.** STEP is local and takes no key. The connection is in the config, not the environment. |
+| **nothing else, for everything except §12d** | **no `.env`, no secrets, no keys.** STEP is local and takes no key. The connection is in the config, not the environment. §12d's narrative generator is the one exception — it reads `ANTHROPIC_API_KEY` from the environment or the repo-root `.env` (added 2026-07-30; same key `scripts/_run_ve_reads_governed.py` at the repo root already uses, not a new provision). |
 
 The app lives in `iba/app/`. The database it builds is `iba/app/db/iba.db` (git-ignored). Run all
 commands from the repo root (`C:\Bible_study_projects`).
@@ -675,6 +675,66 @@ missing/empty — the message names exactly which.
 
 ---
 
+## 12d. Generating the narrative itself (`BookNarrative-Generate.ps1`, added 2026-07-30)
+
+Everything above through §12c gathers material and checks structure; this step is the one that
+actually **writes** the narrative, by calling the Anthropic Messages API — the first place in this
+app that costs real, pay-as-you-go money rather than running on the Claude Code subscription or a
+free local STEP call.
+
+```powershell
+iba\app\ps\BookNarrative-Generate.ps1 -Book Dan -BookLabel Daniel
+```
+
+Requires at least one filled `report.passage_debate` for the book (§12b) and `ANTHROPIC_API_KEY` in
+the environment or the repo-root `.env` (see §1 — the one exception to this app's "no secrets"
+rule; the same key `scripts/_run_ve_reads_governed.py` at the repo root already uses). It assembles
+every filled debate for the book plus the two governing docs — `method.narrative_hard_constraints_
+path` (the book-agnostic hard constraints: nothing invented, open threads stay open, no forced
+unity, plain language, no self-reference — generalized from the original Daniel-only brief) and
+`method.inner_being_narrative_guidance_path` (the three-channel requirement + the `## Scope
+self-check` section, §12c) — resolves both live from `cfg_setting`, not memory, then **estimates**
+the token count/cost before ever calling the network.
+
+- Over `narrative.generate_max_cost` (default $3.00): refused outright (`cost-cap-exceeded`) — raise
+  the cap deliberately via `configmaint.propose` for a book large enough to need it, don't just
+  re-run.
+- Under the cap: **pauses** (`needs-approval`) with the exact estimate in the question — same
+  approval shape as `registry.create`/`configmaint.propose`, nothing spent yet:
+
+  ```powershell
+  iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve
+  iba\app\ps\BookNarrative-Generate.ps1 -Book Dan -BookLabel Daniel -RunId <run_id>   # resume — makes the live call
+  ```
+
+Once approved and resumed, ONE live API call is made, the result is filed under `report.verse_
+analysis_output_dir/<BookLabel>/` (`narrative.output_pattern`, archived-on-regenerate like every
+other report), and the call's real token/cost (from the API response itself, not the estimate) is
+appended to `narrative.usage_log_path` — `scripts/cost_ledger.py` at the repo root only ingests
+Console CSV exports, not this app's own calls, so this is the audit trail for those. Run
+`BookNarrative-Validate.ps1` (§12c) on the result next.
+
+Every one of these is a `cfg_setting` (module `narrative`), changeable via `configmaint.propose`,
+never hard-coded: `narrative.generate_model` (default `claude-sonnet-5`), `narrative.generate_max_
+output_tokens`, `narrative.generate_max_cost`, `narrative.rate_input_per_million`/`rate_output_per_
+million`, `narrative.output_pattern`, `narrative.usage_log_path`. The `cfg_report` row for
+`report.book_narrative_generate` governs the title/footer the same way every other report's does.
+
+**What this doesn't do.** The actual writing is still not mechanized by this app's own code — the
+model does the writing, working strictly from the assembled package; this step's job is making sure
+that package is complete and consistent every time, not judging what the narrative should say.
+
+**Proven live** on Daniel ($1.19, 328,276 in / 13,711 out tokens) and Joel ($0.35, 86,420 in / 5,740
+out tokens), both 2026-07-30 — both passed `report.book_narrative_validate` clean.
+
+**Flagged, not built: a cross-book mechanism.** A single book's narrative holds together on its own,
+but nothing yet pulls information ACROSS books — recurring or varying themes and focal points. The
+researcher is confident this can be drawn from the same debate corpus this step already reads, but
+the shape of that data is not yet decided — nothing here should be read as a design for it. See
+`BUILD.md` §52's closing note when that direction is given.
+
+---
+
 ## 13. Log retention (read-only)
 
 ```powershell
@@ -713,6 +773,9 @@ iba\app\ps\VerseSpanMeaning-Report.ps1 -Book <book> -Chapters <n-n> -BookLabel <
 iba\app\ps\PassageDebate-Report.ps1 -Book <book> -Chapters <n-n> -BookLabel <Label>
 #   ... fill in the debate's <!-- fill in --> placeholders, repeat per range, then:
 iba\app\ps\WholeBookRead-Report.ps1 -Book <book> -BookLabel <Label>
+
+# generate the narrative itself — real API cost, approval-gated (§12d):
+iba\app\ps\BookNarrative-Generate.ps1 -Book <book> -BookLabel <Label>
 
 # structural check on a finished inner-being narrative (§12c):
 iba\app\ps\BookNarrative-Validate.ps1 -Path <narrative file>
@@ -794,6 +857,8 @@ iba/app/
               Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 · Escalation.ps1 ·
               Log-Retention.ps1 · SeedCandidate-Report.ps1 · StrongMeaning-Report.ps1 ·
               SpanAnalysis-Report.ps1 · SchemaOverview-Report.ps1 · Registry-Report.ps1 ·
+              VerseSpanMeaning-Report.ps1 · PassageDebate-Report.ps1 · WholeBookRead-Report.ps1 ·
+              BookNarrative-Generate.ps1 (§12d — real API cost) · BookNarrative-Validate.ps1 ·
               create-iba-view-template.ps1 · create-passage-view-and-export.ps1 ·
               create-passages-by-book-view-and-export.ps1 · export-iba-config-tables.ps1 ·
               generate-iba-db-schema-report.ps1 (5 standalone investigation utilities, relocated
@@ -804,7 +869,8 @@ iba/app/
               dbsnapshot · db · stepapi · escalation · words · reportkit (shared report rendering +
               archiving, incl. CSV writes + CSV pairing + one-off naming) · seedreport ·
               strongreport · spanreport · schemareport · registryreport (the 5 analysis reports,
-              §12a)
+              §12a) · passagetrack · passagedebatereport · wholebookread · versespanmeaningreport
+              (§12b) · narrativegenerate (§12d — assembly + Anthropic Messages API call + filing)
   handlers/   registry · raw · configmaint · candidate · passage · reports   (interpreters, no hard rules)
   migration/  one-off: Import-LegacyRegistry.ps1 · legacy_import · import_seed · ~20 further
               bootstrap/schema-addition scripts (see GOVERNANCE.md §7 for the full current list)

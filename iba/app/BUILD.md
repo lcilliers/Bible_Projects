@@ -2705,3 +2705,88 @@ detect real code (not silently empty) before trusting the "clean" result. Wired 
 them too). Ran `Config-Maintenance.ps1 -Step Validate` live end to end: **`ok` — cfg_* tables are
 coherent, no findings at all** — the first clean run this entire session, everything from §44
 through §51 holding together at once. Rule recorded: `GOVERNANCE.md` §29.
+
+---
+
+## 52. `report.book_narrative_generate` — the narrative itself now has a pipeline generator, real API call and all (2026-07-30, later same day)
+
+**Trigger.** Direct researcher instruction, after recovering the full Daniel narrative history
+(the two governing docs + the v1→reflection→v2→v3-consolidated prototyping rounds, none of which
+had ever had a generation script — narrative writing had stayed deliberately unmechanized, per
+`handlers/narrative.py`'s own docstring): "create a powershell script (as per all app processes)
+that will assemble the debates for a book, provide instructions, and call the API to generate the
+narrative... the package submitted to API would be such that a consistent quality of output would
+be delivered." Followed immediately by a second instruction the same day: report content, report
+defaults (headers/footers/layout), narrative style, file naming/type, and filing must ALL be
+config-driven and easy to maintain — not hard-coded in the handler.
+
+**What was built.**
+
+- `iba/docs/WA-inner-being-narrative-hard-constraints-v1-2026-07-30.md` — the Daniel-specific
+  `WA-instruction-daniel-inner-being-narrative-v1-2026-07-28.md` generalized into a book-agnostic
+  version (same 7 hard constraints + suggested approach, parameterized by book rather than
+  hardcoding Daniel's chapter count and 16 filenames). The Daniel-specific original is untouched —
+  it remains the record of what brief `-v1`'s narrative actually answered.
+- `lib/narrativegenerate.py` — assembles a book's filled debates (`passagetrack.all_debated_ranges`,
+  same reader `wholebookread.py` uses) + both governing docs (resolved from `cfg_setting`, not
+  memory) into one instructions/content package; estimates tokens/cost by a character-count
+  heuristic BEFORE any network call; calls the Anthropic Messages API directly via `requests` (this
+  app's one dependency, per `USER-GUIDE.md` §1 — no new package for one endpoint); files the result
+  under `report.verse_analysis_output_dir/<book_label>/`, archiving-on-regenerate the same way every
+  other report does; appends every LIVE call's real token/cost to `narrative.usage_log_path` (an
+  on-disk ledger — `scripts/cost_ledger.py` at the repo root only ingests Console CSV exports, never
+  this app's own calls, so this closes that gap for this one tool).
+- `handlers/narrative.py:generate` — the dispatcher adapter. A cost estimate over `narrative.
+  generate_max_cost` is a hard refusal (`cost-cap-exceeded`, report-stop) before ever touching the
+  network. Under the cap, it escalates (`needs-approval`, pause-continue) with the estimate in the
+  question — same shape `registry.create`/`configmaint.propose` already use for anything that
+  writes or spends — and only makes the live call once the SAME run_id comes back answered
+  `approve`. `reject`/`revise` both stop cleanly with no call made.
+- `migration/bootstrap_book_narrative_generate.py` — the same one-off direct-`cfg_*`-insert carve-
+  out `bootstrap_book_narrative_validate.py` used (GOVERNANCE.md §9B/§14): registers the work
+  package/step/`cfg_utility` row, ten `narrative.*`/`method.*` settings (model, max output tokens,
+  cost cap, both rates, output pattern, usage-log path — the full "config-driven, not hard-coded"
+  list the researcher asked for), the `cfg_report` row (title/footer, `md`, archived), and 8
+  `cfg_on_fail` rules.
+- `ps/BookNarrative-Generate.ps1` — matches every other book-scoped report script's shape
+  (`WholeBookRead-Report.ps1`'s own `-RunId`-resume convention), printing the pause/resume commands
+  directly when it pauses.
+
+**Verified live, no cost incurred.** `configmaint.validate` — clean `ok` after the new module/
+settings/report/on_fail rows (one transient `cfg_utility` gap found and fixed in the same pass,
+escalation #403). `assemble_package()` run directly against Daniel's real 16 filled debates: all 16
+found, 0 missing, both governing docs resolved, ~218,974 estimated input tokens, ~$0.90 estimated
+cost (well under the $3.00 default cap). The full PS wrapper run end-to-end against Daniel: paused
+cleanly with that exact estimate in the escalation question, printed the resume commands, **made no
+API call** — the live call path is built and wired but has not yet been exercised for real, pending
+the researcher's own approval to spend the first real dollar on it.
+
+**What this does not do.** The actual writing is still not mechanized — same boundary every other
+report generator in this app draws (`passagedebatereport.py`/`wholebookread.py`'s own docstrings):
+this assembles a consistent package and gets a consistent model to write from it, it does not decide
+what the narrative says. `ANTHROPIC_API_KEY` is read from the environment or the repo-root `.env` —
+outside `iba/app`'s own documented "no secrets, no .env" boundary (`USER-GUIDE.md` §1, now updated)
+since the key it needs is the same one `scripts/_run_ve_reads_governed.py` and the other repo-root
+`_apply_*_via_api_*.py` scripts already use, not a new provision.
+
+**Finalized — exercised for real, twice, the same day.** Daniel: approved, resumed, one live call —
+328,276 in / 13,711 out tokens, **$1.19**, `WA-dan-inner-being-narrative.md`, passed `report.
+book_narrative_validate` clean. Joel: approved, resumed, one live call — 86,420 in / 5,740 out
+tokens, **$0.35**, `WA-joel-inner-being-narrative.md`, passed clean. Both read well against the
+hand-written Daniel prototypes' own standard on the researcher's own judgment ("holds together," for
+both) — contradictions and silences left standing, nothing over-synthesized, Scope self-check
+entries genuinely drawn from the body text rather than generic filler. Both runs logged to
+`narrative.usage_log_path`; running total this session **$1.54**.
+
+**Flagged, not built: a cross-book mechanism.** The researcher's own note, immediately on seeing
+Joel's result: a single book's narrative holds together, but a mechanism is still needed to pull
+information ACROSS books — themes and focal points that recur or vary book to book — and they are
+"fairly confident it can be pulled from the debates," but explicitly **still making up their mind
+on the shape of the data** this would need. Recorded here as a known, real, near-term need — not
+designed, not scaffolded, not even a table sketched — because the researcher's own standing
+instruction on this project is that a judgment call this open does not get pre-empted by an
+AI-authored data shape; it waits for the researcher to decide, the same way `report.book_narrative_
+generate` itself wasn't designed until the researcher's own instruction gave its exact shape
+("assemble the debates... call the API... consistent quality"). When that shape is decided, it is
+most likely a new `report.*`/`lib/*` pair reading the SAME `passagetrack.all_debated_ranges` debate
+corpus this module already reads — cross-book, not a new source.

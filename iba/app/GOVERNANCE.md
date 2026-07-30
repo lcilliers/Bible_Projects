@@ -1379,3 +1379,30 @@ an active kind no code ever asks for, unconditionally), `find_bad_report_csv_tab
 (unchanged, `_validate_live`) or a genuine usage check (`find_orphan_configs` + the four new ones).
 Verified end to end: `Config-Maintenance.ps1 -Step Validate` returns clean `ok` — no coherence
 errors, no advisory findings — the first fully clean validate run of this whole 2026-07-30 session.
+
+---
+
+## §30. `report.book_narrative_generate` — the first step that spends real money, and how config governs that (2026-07-30, later same day)
+
+Every step registered so far either reads/writes this app's own DB or makes a free local STEP call.
+`report.book_narrative_generate` (full build account: `BUILD.md` §52) is the first to call an
+external, pay-as-you-go API — the Anthropic Messages API, to generate a book's inner-being
+narrative from its filled passage debates. Two governance points worth recording as rules, not just
+implementation detail:
+
+1. **`ANTHROPIC_API_KEY` is read from the environment or the repo-root `.env`** — the one deliberate
+   exception to this app's own "no secrets, no `.env`" boundary (`USER-GUIDE.md` §1). It is not a
+   new provision: it is the same key `scripts/_run_ve_reads_governed.py` and the repo-root
+   `_apply_*_via_api_*.py` scripts already use for the legacy (non-IBA) pipeline. This app reads it,
+   it does not own or duplicate it.
+2. **Spend is config-gated, not just estimated.** `narrative.generate_max_cost` (a `cfg_setting`,
+   changeable via `configmaint.propose` like anything else) is a hard ceiling checked against the
+   PRE-call estimate — over it, the step refuses outright (`cost-cap-exceeded`), no pause, no
+   escalation, nothing spent. Under it, the step still does not spend automatically: it escalates
+   (`needs-approval`, pause-continue) with the estimate in the question, the same shape
+   `registry.create`/`configmaint.propose` already use for anything that writes or spends, and the
+   live call is made only once that exact run_id comes back answered `approve`. The model, both
+   token/cost rates, the output-token ceiling, the output filename pattern, and the usage-log path
+   are all `narrative.*`/`method.*` settings too — per the researcher's own instruction the same
+   day, nothing about report content, defaults, narrative style, or filing lives as a literal in the
+   handler.
