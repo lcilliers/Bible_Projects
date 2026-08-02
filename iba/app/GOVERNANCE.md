@@ -1441,3 +1441,51 @@ implementation detail:
    are all `narrative.*`/`method.*` settings too — per the researcher's own instruction the same
    day, nothing about report content, defaults, narrative style, or filing lives as a literal in the
    handler.
+
+---
+
+## §31. The book-by-book pipeline split into 3 module entry points — session-scope guidance as config, and a real global-uniqueness rule found live (2026-08-02)
+
+**Trigger.** Hosea (book 6) was run end-to-end — 14 chapters of `report.verse_span_meaning` +
+`report.passage_debate` fill-in, then `report.whole_book_read`, then
+`report.book_narrative_generate` — in one unbroken Claude Code session, immediately after an
+equally large Micah cycle the same day (`BUILD.md` §54 has the full diagnostic:
+`iba/app/reports/token-consumption-diagnostic-20260802.md`, ≈1.13M tokens moved through one
+session, daily+weekly caps both exhausted). The researcher's instruction: separate the pipeline
+into three distinct modules — chapter generation (data + debate), book overview/summary, book
+narrative — each with its own PS entry point, and record the recommended ~3-chapters-per-session
+pacing as config, not just chat.
+
+**Advisory session guidance belongs in `cfg_setting` even when the code cannot enforce it.**
+`passage.debate_session_chapter_guideline` (module `passage`, value `3`) records the rule per
+`governance.rules_must_be_config_driven` (§16) — but nothing in `run.py` gates on it, because the
+thing it bounds (how many chapters' worth of manual interpretive fill-in happen in one Claude Code
+conversation) is not something any dispatched step can see or measure (established the same day,
+in chat, before this build — the debate-fill step is never dispatched through `run.py` at all).
+Recording an unenforceable-by-code rule as `cfg_setting` is a deliberate exception to "config
+should be enforced," not a gap: the alternative was leaving it in memory/chat only, which §16
+already forbids for exactly this reason (rules drift when only one of several enforcement paths
+gets updated).
+
+**A real coherence rule, found by actually running `configmaint.validate`, not assumed.** The
+initial plan (recorded in chat before this build) was to add the three new chained work packages
+(`chapter-generate`, `book-narrative`; `whole-book-read` needed no change) while leaving the four
+old standalone ones (`verse-analysis-report`, `passage-debate-report`, `book-narrative-generate`,
+`book-narrative-validate`) active too, as lower-level recovery tools. Running `configmaint.validate`
+after applying that plan failed hard (`report-stop`, not advisory): `cfg_step.step` must be globally
+unique across `work_package`, not just unique within one (§24's own check,
+`find_filled_by_referencing_inactive_step`'s sibling) — `escalation.pending_for_word`/
+`answered_for_word` and `cfg_on_fail` both match on `step` alone, with no `work_package` in the
+`WHERE` clause, so two work packages sharing a step name collide at runtime. The four old work
+packages (and their now-duplicate `cfg_step` rows) were retired (`inactive=1`) instead — the
+"exactly 3 entry points" outcome the researcher asked for turned out to be a real constraint, not
+just a tidiness preference. Full build account: `BUILD.md` §54.
+
+**A known false-positive accepted, not silently dismissed.** Retiring the old `cfg_step` rows while
+the same step NAMES remain active under their new work packages trips
+`find_filled_by_referencing_inactive_step` (§24) — it flags any step name with *any* `inactive=1`
+row, without checking whether an active registration of the same name exists elsewhere. The 6
+resulting `passage.*` column findings were reviewed and confirmed accurate (still filled by the
+same, still-active steps, just re-homed) — answered on the `configmaint.validate` escalation with
+that reasoning recorded, not silently cleared. `find_filled_by_referencing_inactive_step` itself is
+unchanged; this is a documented limitation, not a bug fixed today.

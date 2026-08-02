@@ -2855,3 +2855,68 @@ separate question if their provenance ever needs auditing, not addressed here. M
 debates (chapters 1-7, the instruction that surfaced this whole gap) remain paused pending
 confirmation this build is complete and config-validated clean — resuming immediately without that
 confirmation would repeat the same pattern this section exists to close.
+
+---
+
+## 54. Book-by-book pipeline split into 3 module entry points — `Chapter-Generate.ps1` / `Book-Narrative.ps1`, session-pacing guideline, and a live global-uniqueness violation (2026-08-02)
+
+**Trigger.** A diagnostic (`iba/app/reports/token-consumption-diagnostic-20260802.md`) traced why
+Hosea's session exhausted both the daily and weekly Claude Code allowance: not Hosea alone, but
+Micah (7 ch) and Hosea (14 ch) run end-to-end back to back in one unbroken conversation the same
+day, ≈1.13M tokens of raw extract-reads and debate-writes, no context-clearing checkpoint between
+any of it — on top of a follow-on architecture discussion (element-first vs. document-first
+storage, see the diagnostic's "Follow-up" section) that concluded the redesign wouldn't have
+prevented the incident; only bounding session scope would. The researcher's instruction: set a
+~3-chapter guideline for debate-fill sessions, and separate the pipeline into 3 distinct modules —
+chapter generation (data + debate), book overview/summary, book narrative — each its own PS entry
+point, "make the changes."
+
+**What was built — 7 governed config changes via `configmaint.propose`** (escalations #416-422, each
+proposed, approved, and applied in this session):
+
+1. `passage.debate_session_chapter_guideline` (`cfg_setting`, module `passage`, value `3`) —
+   advisory, not enforced (see GOVERNANCE.md §31 for why it can't be).
+2. New chained work package **`chapter-generate`** (`Chapter-Generate.ps1`) — ordinal 0
+   `report.verse_span_meaning`, ordinal 1 `report.passage_debate`, both handlers reused unchanged.
+   One `run_id`, one call, prints the guideline reminder. Deliberately does NOT chain in
+   `passage.debate_sync` — resuming a chained package re-runs every ordinal from the top, which
+   would silently overwrite an already-filled scaffold; `PassageDebate-Sync.ps1` stays its own
+   separate, unchanged call after the manual fill, exactly as before.
+3. New chained work package **`book-narrative`** (`Book-Narrative.ps1`) — ordinal 0
+   `report.book_narrative_generate`, ordinal 1 `report.book_narrative_validate`, both handlers
+   reused unchanged. Bespoke orchestration (not the generic sequence-loop `Chapter-Generate.ps1`/
+   `New-Word.ps1` use): validate needs the `-Path` generate just wrote, unknown until generate's
+   own JSON result comes back, so the script reads `$res.path` and feeds it into validate
+   automatically — no copy-pasted path needed as the old two-script process required. Handles the
+   `pause-continue` cost-approval gate exactly as the old standalone script did (same `-RunId`
+   resume convention), then continues straight to validation once the live call completes.
+4. `report.whole_book_read` — unchanged. Already its own single, separate work package; the
+   researcher's "book overview and summary" module needed no new code.
+
+**A plan revised live by the validator itself, not assumed correct.** The plan discussed in chat
+first (keep the four old standalone work packages active as recovery tools alongside the three new
+ones) was applied, then `configmaint.validate` was run — and failed hard, `report-stop`: 4 step
+names (`report.verse_span_meaning`, `report.passage_debate`, `report.book_narrative_generate`,
+`report.book_narrative_validate`) were now each registered under 2 different work packages, which
+violates a real coherence rule (§24/GOVERNANCE.md §31: `escalation`/`cfg_on_fail` match on `step`
+alone, no `work_package` in the `WHERE`). Fixed by retiring (`inactive=1`) the four old work
+packages AND their now-duplicate `cfg_step` rows (8 more governed changes, same
+propose→approve→apply pattern, escalations #423-431) — which also happens to give the researcher's
+"exactly 3 entry points" ask more cleanly than the original "keep both" plan would have.
+
+**A known validator limitation hit and accepted, not silently cleared.** Retiring the old
+`cfg_step` rows while the same step names stayed active elsewhere tripped
+`find_filled_by_referencing_inactive_step` (6 `passage.*` columns flagged "stale filled_by") — a
+documented limitation (§24), not a real staleness: the check flags any step name with *any*
+`inactive=1` row, without checking whether an active registration of the same name exists
+elsewhere. `configmaint.validate`'s resulting `pause-continue` (escalation #432) was answered
+`Approve` with the reasoning recorded in the escalation's own comment field, not dismissed
+silently. Re-run, `configmaint.validate` returned clean (`ok`).
+
+**Verified before being called done** (per the standing rule against declaring work finished on
+structural-validation-only, `feedback_structural_validation_is_not_value_quality_validation`):
+both new `.ps1` files parsed clean (`[scriptblock]::Create` against their raw content, no
+execution); `Cfg().sequence('chapter-generate')`/`sequence('book-narrative')` resolve to the exact
+2-step orderings expected; `configmaint.validate` returns `ok` clean on the live store. Not yet
+run end-to-end against a real book — first live use is Amos, pending the researcher's separate
+go-ahead to proceed (session log records the close of this build, not the start of Amos).
