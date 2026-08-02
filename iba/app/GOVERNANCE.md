@@ -1489,3 +1489,43 @@ resulting `passage.*` column findings were reviewed and confirmed accurate (stil
 same, still-active steps, just re-homed) — answered on the `configmaint.validate` escalation with
 that reasoning recorded, not silently cleared. `find_filled_by_referencing_inactive_step` itself is
 unchanged; this is a documented limitation, not a bug fixed today.
+
+---
+
+## §32. `governance.rules_must_be_config_driven` (§16) violated again the same day, this time by the AI, not just found live in old code — `cfg_report_section` brought in line with the v1.5/v1.4 method restructure (2026-08-02, later same day)
+
+**Trigger — a researcher correction, not a self-caught bug.** The same session that restructured
+`WA-passage-read-guidance`/`WA-interpretation-questions` to v1.5/v1.4 (`BUILD.md` §35's drift-and-
+restructure entry) repointed the two `method.*` `cfg_setting` rows at the new files and called the
+fix done. Asked to redo the Amos 1-3 debate under the new method, the researcher stopped the
+approach before any content was written: *"it is because you are not working all the rules through
+config, but you think by updating the instruction documents you can get away with it — so you are
+not adhering [to] the governance policies when making updates."* Checked against the live
+`cfg_report_section` table: correct. The two `cfg_setting` doc-pointer rows were genuine config, but
+Part C's actual structural rule — phenomena register (Phase 1) as its own section, ahead of
+operations (Phase 2), with a closing validation section (Phase 3) — existed only as prose in the
+new `.md` files. `cfg_report_section` for `step='report.passage_debate'` still had its old 6-section
+shape from before the restructure, and `lib/passagedebatereport.py` still emitted the old single
+per-verse block. §16's own honest-scope note ("new instances are expected to keep surfacing... fixed
+as found, rather than claimed complete by a one-time sweep") is exactly what this is: not a new kind
+of gap, the SAME kind, found live a second time in one day — this time in a change the AI itself had
+just made, not in pre-existing code.
+
+**The general lesson, stated plainly.** Editing a method/instruction doc and repointing a
+`cfg_setting` that names *which file* is current is necessary but not sufficient when the doc also
+specifies a *structure* (section order, required sections) that some other `cfg_*` table already
+governs mechanically. `governance.rules_must_be_config_driven` (§16) requires the structural rule
+itself to be written into that table — here, `cfg_report_section`, which `reportkit.render_scaffold`
+already reads for every report's headings/order/ToC (§9C/§13) — not left for the AI to remember to
+apply by hand from the doc's prose each time a scaffold is generated.
+
+**Fix — 7 governed `cfg_report_section` changes, proposed/approved/applied via `configmaint.propose`
+per §3A** (escalations #436-442, chat-approved by the researcher then answered
+`AnswerRun -Decision Approve` per row, never a silent write): `phenomena_register` inserted at
+ordinal 1, `verses` renamed to `operations` (ordinal 2, heading updated to "Per-verse operations
+(Phase 2 output)"), `linkages`/`insufficiencies`/`emergent` shifted to ordinals 3/4/5,
+`validation` inserted at ordinal 6, `open_decisions` shifted to ordinal 7 — the exact 8-section
+order Part C specifies. `lib/passagedebatereport.py` updated to match: `_verse_block()` split into
+`_phenomena_block()`/`_operations_block()`, a `validation` section body added, and — found in the
+same pass — `Q12` (added to the interrogative in v1.4) restored to the per-verse scaffold, which had
+never carried it even before this fix. Full change detail: `BUILD.md` §55.

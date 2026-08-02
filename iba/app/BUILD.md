@@ -2920,3 +2920,58 @@ execution); `Cfg().sequence('chapter-generate')`/`sequence('book-narrative')` re
 2-step orderings expected; `configmaint.validate` returns `ok` clean on the live store. Not yet
 run end-to-end against a real book — first live use is Amos, pending the researcher's separate
 go-ahead to proceed (session log records the close of this build, not the start of Amos).
+
+## 55. `report.passage_debate`'s scaffold structure brought back under config — the same-day v1.5/v1.4 method restructure had only repointed doc-path settings, not the section structure itself (2026-08-02, later same day)
+
+**Trigger.** §35/BUILD.md's same-day three-phase method restructure (`WA-passage-read-guidance-
+v1.5`, `WA-interpretation-questions-v1.4`) fixed the Amos 1-3 drift on paper — new Phase 1
+(phenomena register) / Phase 2 (operations) / Phase 3 (validation) structure specified in Part C —
+and updated `method.passage_read_guidance_path`/`method.interpretation_questions_path`
+(`cfg_setting`, escalations #434-435) to point at the new files. The researcher identified, on
+review, that this was itself a repeat of the exact failure mode `governance.
+rules_must_be_config_driven` exists to catch: the two `cfg_setting` doc-pointer rows were real
+config, but the *document-structure rule itself* (which sections exist, in what order) was never
+written into `cfg_report_section` — it existed only as prose the AI would have to remember to
+apply by hand each time, with nothing in the DB actually enforcing it. `lib/passagedebatereport.py`
+had a real, unused mechanism for exactly this (`reportkit.render_scaffold` already reads
+`cfg_report_section` for every heading/order/ToC entry) — the restructure simply didn't touch it.
+
+**What was built — 7 governed `cfg_report_section` changes via `configmaint.propose`**
+(escalations #436-442, each proposed, approved, and applied), bringing `step='report.passage_debate'`
+from the old 6-section shape to the 8 sections Part C now specifies:
+
+| ordinal | section_key | heading |
+| --- | --- | --- |
+| 0 | `preliminaries` | Preliminaries (unchanged) |
+| 1 | `phenomena_register` (new) | Phenomena register (Phase 1 output) |
+| 2 | `operations` (renamed from `verses`) | Per-verse operations (Phase 2 output) |
+| 3 | `linkages` | Passage-level linkages (Q7) (unchanged, ordinal 2→3) |
+| 4 | `insufficiencies` | Insufficiencies register (unchanged, ordinal 3→4) |
+| 5 | `emergent` | Emergent questions log (unchanged, ordinal 4→5) |
+| 6 | `validation` (new) | Debate quality validation (Phase 3 output) |
+| 7 | `open_decisions` | Open decisions / next steps (unchanged, ordinal 5→7) |
+
+**Code change to match.** `lib/passagedebatereport.py`'s single `_verse_block()` (which conflated
+Observation/Operation/Interrogative/Decision into one block per verse — itself part of how the
+phase-bleed drift was possible) split into `_phenomena_block()` (Phase 1 scaffold: a phenomenon-
+register placeholder per verse, explicitly warning not to draft an operation there) and
+`_operations_block()` (Phase 2 scaffold: the existing Observation/Operation/Interrogative/Decision
+shape, now also carrying **Q12** — the divine-mirroring question `WA-interpretation-questions-v1.4`
+added, which the scaffold had never been updated to include even before this fix). `write_scaffold`
+now builds both blocks per verse plus a new `validation` section body (Phase 3 instructions), keyed
+to match the `cfg_report_section` rows above.
+
+**Verified.** `cfg_report_section` for `report.passage_debate` re-queried post-apply: exact 8-row
+ordering above. The Amos 1:1-3:15 scaffold (`passage.id=37459`, `debate_status='scaffold'`, so
+nothing filled was at risk) regenerated via the single active step
+(`python -m iba.app.run chapter-generate --step report.passage_debate ...` — the standalone
+`passage-debate-report` work package is `inactive`, folded into `chapter-generate` in §54; the base
+extract was left untouched, not regenerated) — the rendered file's ToC and section order matches
+the table above, every verse gets a Phase 1 phenomena block AND a Phase 2 operations block with
+`Q12` present, and the old filled-but-superseded file was auto-archived (`write_report`'s existing
+archive-on-regenerate), not lost — `iba/app/verse-analysis/Amos/archive/
+WA-amos-1-3-debate-20260802-144518.md`, also still in git history at `dc2073c8`.
+
+**Not yet done.** The Amos 1:1-3:15 debate itself still needs the actual three-phase analytical
+fill (phenomena register for all 43 present verses, then a separate operations pass, then
+validation) — this section only fixes the mechanized scaffold structure the fill will use.

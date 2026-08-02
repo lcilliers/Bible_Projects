@@ -59,13 +59,35 @@ def _method_doc(cfg, key: str) -> pathlib.Path:
     return path
 
 
-def _verse_block(v: dict) -> list[str]:
-    """One verse's scaffold: heading, quoted text, and empty Observation/Operation/
+def _phenomena_block(v: dict) -> list[str]:
+    """Phase 1 scaffold, per verse: heading, quoted text, and an empty phenomena-register slot —
+    one entry per inner being present, with its textual warrant and stated-vs-inferred status,
+    written BEFORE any operation (`WA-passage-read-guidance-v1.5` Phase 1, steps 1-3b)."""
+    return [f"### {v['reference']}", "", f"> {v['text'] or ''}", "",
+        "**Phenomena identified (Phase 1).** <!-- for EVERY inner being present (read-guidance "
+        "step 2 note (f): every human is a presumptive candidate; note (b)/(d): an in-scope "
+        "non-human), isolate the phenomenon — a state, disposition, or characteristic of that "
+        "party's inner life, which may be hidden behind a stated act or a refrained-from act "
+        "(step 3 note (e)) — and record, per inner being, its own entry: the phenomenon; the "
+        "specific textual warrant that grounds it (the verb, clause, or stated silence, step 3b); "
+        "and whether it is stated or inferred (Q3). \"No phenomenon found, silent\" (Part B.4) is "
+        "a valid entry, not an omission. Do NOT draft an operation here — operations are Phase 2 "
+        "(see this verse's entry under 'Per-verse operations' below), written only once this "
+        "register is complete for the WHOLE debated range. -->", ""]
+
+
+def _operations_block(v: dict) -> list[str]:
+    """Phase 2 scaffold, per verse: heading, quoted text, and empty Observation/Operation/
     Interrogative/Decision slots in the Subject/Operation/Source/Target shape
-    (`WA-dan-2-1-16-debate` is the format standard, per the corpus review)."""
+    (`WA-dan-2-1-16-debate` is the format standard, per the corpus review). An operation here
+    must originate from a phenomenon already recorded in the phenomena register above — it may
+    not identify a fresh phenomenon of its own accord (`WA-passage-read-guidance-v1.5` Phase 2;
+    Part B.12)."""
     L = [f"### {v['reference']}", "", f"> {v['text'] or ''}", "",
         "**Observation.** <!-- what the text/span-data states; cite Strong's codes -->", "",
-        "**Operation 1 — <!-- short label --> .**",
+        "**Operation 1 — <!-- short label --> .** <!-- for the phenomenon already recorded in "
+        "the phenomena register above; a mismatch here signals the register entry needs "
+        "correcting, not a licence to invent a new phenomenon -->",
         "- **Action-type:** <!-- short, consistent, verb-based label for what was done (e.g. "
         "\"gave,\" \"summoned/complied,\" \"worshiped,\" \"renamed,\" \"bound and cast\") — "
         "recorded regardless of whether this operation's interior content is stated, inferred, "
@@ -77,7 +99,7 @@ def _verse_block(v: dict) -> list[str]:
         "- **Source:** <!-- self / another human / non-human being / object-situation; "
         "state vs enablement kept distinct, Part B.5 -->",
         "- **Target:** <!-- another operation/human/non-human/object-situation, or n/a -->", "",
-        "**Interrogative — questions considered.** (`WA-interpretation-questions` Q1-Q11 — "
+        "**Interrogative — questions considered.** (`WA-interpretation-questions` Q1-Q12 — "
         "every human mentioned in this verse is a presumptive candidate, per read-guidance "
         "step 2 note (f); a candidate that resolves to nothing is recorded as an explicit "
         "silence, per Part B.4, not omitted)",
@@ -85,7 +107,9 @@ def _verse_block(v: dict) -> list[str]:
         "- Q3: <!-- stated or inferred -->", "- Q4: <!-- source of state vs source of enablement -->",
         "- Q5: <!-- target -->", "- Q6: <!-- state or movement -->", "- Q7: <!-- linkage, or absence surfaced -->",
         "- Q8: <!-- collective, if applicable -->", "- Q9: <!-- sufficiency -->",
-        "- Q11: <!-- action-type label, independent of Q1-Q9's outcome -->", "",
+        "- Q11: <!-- action-type label, independent of Q1-Q9's outcome -->",
+        "- Q12: <!-- divine mirroring, only where textually anchored (Part B.11); otherwise "
+        "log as an emergent question instead of asserting it -->", "",
         "**Decision.** <!-- retain / set aside as stated IB op / retain as referential aspect / "
         "recorded silence -->", ""]
     return L
@@ -158,27 +182,45 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
     ]
 
     gaps = detect_verse_gaps(verses, verse_lo)
-    verse_lines: list[str] = []
-    for ch, vn, kind, v in merge_verses_and_gaps(verses, gaps):
+    merged = list(merge_verses_and_gaps(verses, gaps))
+    phenomena_lines: list[str] = []
+    operations_lines: list[str] = []
+    for ch, vn, kind, v in merged:
         if kind == "verse":
-            verse_lines += _verse_block(v)
+            phenomena_lines += _phenomena_block(v)
+            operations_lines += _operations_block(v)
         else:
-            verse_lines += [gap_note(cfg, book, book_label, ch, vn), ""]
+            note = gap_note(cfg, book, book_label, ch, vn)
+            phenomena_lines += [note, ""]
+            operations_lines += [note, ""]
 
     linkages = ["<!-- fill in — Q7: linkages across this passage's operations, and surfaced "
                "non-linkages -->"]
     insufficiencies = ["<!-- fill in — Q9: data the base extract does not carry, named not "
                       "filled -->"]
-    emergent = ["<!-- fill in — EQ items raised by this passage; filed here, resolved (if at "
-               "all) at the whole-book read, not merged with other passages' logs -->"]
+    emergent = ["<!-- fill in — EQ items raised by this passage (including interpretive forks, "
+               "Part B.9, and any genuine literary/structural observation per Part B.12 — logged "
+               "here, never built into the phenomena register or an operation as if it were "
+               "their own content); filed here, resolved (if at all) at the whole-book read, not "
+               "merged with other passages' logs -->"]
+    validation = ["<!-- fill in — Phase 3 (`WA-passage-read-guidance-v1.5` step 6): once the "
+                 "phenomena register and per-verse operations above are complete for the whole "
+                 "range, reconsider — for each phenomenon, or at minimum a representative sample "
+                 "spanning the range — whether it is genuinely an inner-being phenomenon (not a "
+                 "textual/structural pattern mislabeled as one, Part B.12), whether its Phase 1 "
+                 "justification actually warrants it from the verse's own text, and whether its "
+                 "Phase 2 operation tracks faithfully back to it. Correct any failure found before "
+                 "the debate is considered filled — do not merely log it for later. -->"]
     open_decisions = ["<!-- fill in — forks left to the researcher, next steps -->"]
 
     sections = {
         "preliminaries": preliminaries,
-        "verses": verse_lines,
+        "phenomena_register": phenomena_lines,
+        "operations": operations_lines,
         "linkages": linkages,
         "insufficiencies": insufficiencies,
         "emergent": emergent,
+        "validation": validation,
         "open_decisions": open_decisions,
     }
 
