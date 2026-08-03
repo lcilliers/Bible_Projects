@@ -24,6 +24,7 @@
 - [feedback_iba_session_start_read_live_docs_not_memory](feedback_iba_session_start_read_live_docs_not_memory.md) — ★ IBA session start: actually Read GOVERNANCE.md/BUILD.md/CONFIG-REPORT.md before governance claims — don't answer from memory summaries alone.
 - [feedback_iba_exploratory_use_logs_escalations_not_inline_fixes](feedback_iba_exploratory_use_logs_escalations_not_inline_fixes.md) — ★ during app-usage sessions: log spotted errors as escalations (Escalation.ps1 -Action Raise), don't fix inline, until told to clear backlog.
 - [feedback_avoid_unsubstantiated_superlatives](feedback_avoid_unsubstantiated_superlatives.md) — ★ don't write "most/clearest/strongest" unless actually checked against every candidate; state the fact plainly instead.
+- [feedback_deliberately_sparse_instructions_to_probe_defaults](feedback_deliberately_sparse_instructions_to_probe_defaults.md) — ★ researcher deliberately under-specifies in training sessions to observe go-to defaults as diagnostic signal — don't over-ask upfront, let defaults surface, take correction as data.
 
 - [feedback_source_of_truth_is_written_record](feedback_source_of_truth_is_written_record.md) — truth = written record via file_manifest; verify, don't assert.
 - [feedback_simple_steps_not_engineered_designs](feedback_simple_steps_not_engineered_designs.md) — ★ build in SIMPLE STEPS; machinery-heavy plans get rejected as overengineering.
