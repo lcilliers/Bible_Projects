@@ -114,51 +114,24 @@ Json - for the database entry to capture the work in the DB: sample layout below
 
 "_meta": {
     "technique_doc": "iba/docs/WA-verse-reading-technique-v3-2026-08-03.md",
-    "source_extract": "iba/app/verse-analysis/Obadiah/obad-1-verse-span-meaning.md",
+    "source_extract": "", (as per the chat where the source for the verses are specified)
     "status": "test-draft, not written to DB (destination tables not yet defined per researcher Q7)",
-    "field_shape": "not yet finalised (per technique doc Output section) -- each component captured as a loose node",
+    "field_shape": "per technique doc Output section -- each component captured as a loose node",
     "phase_gating": "T1-T5 completed for the whole passage before T6-T9 began, per the technique doc"
   },
   "verses": [
     {
-      "osisId": "Obad.1.1",
+      "osisId": "",
       "t1_t5": {
-        "reading": "Vision (H2377[v]) belonging to Obadiah (H5662R[v]). Thus says (H0559[v], Qal perf 3ms) the Lord God (H0136[v]/H3069[v]) concerning Edom (H0123G[v]). We have heard (H8085G[bf], Qal perf 1cp) a report (H8052[v]) from the Lord (H3068G[v]); a messenger has been sent (H7971G[bf], Pual perf 3ms, passive, agent unstated) among the nations (H1471A[bf]): Rise up (H6965J[v], Qal impv 2mp) let us rise (H6965J[v], Qal inf.cs + 1cp cohortative) against her for battle (H4421[v]).",
-        "referent_cruxes": [
+        "reading": "", (reading of the whole verse meaning after applying t1_t5)
+        "flags": [
           {
-            "target": "we (span 8, heard)",
-            "readings": [
-              "prophet alone (stylized prophetic we)",
-              "prophet + coalition of nations (adopted -- grounded in the 1cp cohortative 'let us rise' at span 15)",
-              "stylized collective, no specific referential intent"
-            ],
-            "adopted": "prophet + coalition of nations",
-            "adopted_is": "pass_default",
-            "rejected_kept_on_record": ["prophet alone", "stylized collective"]
-          }
-        ],
-        "open_naming_gaps": [
-          {"target": "messenger (span 11)", "note": "passive, agent unstated, no candidate to weigh -- single unnamed referent, not a crux"}
-        ],
-        "t2_flags": [],
-        "t3_flags": [
-          {"span": 12, "note": "Pual perfect passive (HVPp3ms), sent -- agent not encoded in the verb form"}
-        ],
-        "t5_genre_absences": [
-          "no date formula (contrast Amos 1:1, Hosea 1:1)",
-          "no call/commissioning narrative (contrast Isa 6, Ezek 1-3, Jer 1)"
-        ]
+            "target": "",
+            "readings": "" (reading to flag detail)
+          }      
       },
       "t6_t9_stamps": [
-        {"surface": "Obadiah", "stamps": ["IB"]},
-        {"surface": "Lord God", "stamps": ["Agent"]},
-        {"surface": "we", "stamps": ["IB", "Agent"]},
-        {"surface": "heard", "stamps": ["action"]},
-        {"surface": "Lord", "stamps": ["Agent"]},
-        {"surface": "messenger", "stamps": ["Agent"]},
-        {"surface": "sent", "stamps": ["action"]},
-        {"surface": "nations", "stamps": ["IB", "Agent"]},
-        {"surface": "Rise / rise", "stamps": ["action"]}
+        {"surface": "", "stamps": [""]}    
       ]
     },
 
