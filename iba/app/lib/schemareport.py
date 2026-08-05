@@ -118,5 +118,5 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     sections["tables"] = S
 
     L = reportkit.render_scaffold(conn, "report.schema_overview", sections, intro=intro)
-    reportkit.write_report(conn, "report.schema_overview", path, L)
+    path = reportkit.write_report(conn, "report.schema_overview", path, L)
     return path

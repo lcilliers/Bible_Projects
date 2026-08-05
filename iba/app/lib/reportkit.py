@@ -14,9 +14,18 @@ is the fallback gate for reports that have no toggle of their own, not a second 
 from __future__ import annotations
 
 import datetime
+import json
 import pathlib
 import re
 import sqlite3
+
+
+def _setting(conn: sqlite3.Connection, key: str, default=None):
+    """Same read semantics as `lib/cfg.py:Cfg.setting` (inactive=0 filter, JSON-decoded value) —
+    duplicated narrowly here rather than importing `Cfg` itself, since `reportkit.py` is
+    deliberately dependency-light (stdlib + a bare `sqlite3.Connection`, no app-object coupling)."""
+    r = conn.execute("SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
+    return json.loads(r["value"]) if r else default
 
 
 def render_scaffold(conn: sqlite3.Connection, step: str, sections: dict[str, list[str]],
@@ -97,14 +106,73 @@ def archive_before_write(path: pathlib.Path, archive_dir: str = "archive") -> No
     path.replace(adir / f"{path.stem}-{stamp}{path.suffix}")
 
 
+_VERSIONED_RE_TMPL = r"^{stem}-v(\d+)-\d{{8}}{suffix}$"
+
+
+def _versioned_rx(stem: str, suffix: str) -> re.Pattern:
+    return re.compile(_VERSIONED_RE_TMPL.format(stem=re.escape(stem), suffix=re.escape(suffix)))
+
+
+def next_versioned_path(path: pathlib.Path, archive_dir: str = "archive") -> pathlib.Path:
+    """`{stem}-v{n}-{date}{suffix}` — n = 1 + the highest version number found for this exact stem,
+    scanning BOTH `path.parent` (the current live one, if any) AND `path.parent/archive_dir` (every
+    superseded one) — version numbers stay monotonic across a report's whole lifetime even though
+    `write_report` archives every prior version out of the live folder (below). Not date-scoped, so
+    it keeps climbing across any gap in time, never resets, never collides. A caller's pre-existing
+    *plain*-named file (from before this setting existed) is untouched by this scan — it doesn't
+    match the `-v<n>-` pattern, so numbering starts fresh at 1 rather than trying to detect and
+    continue an unversioned lineage."""
+    stem, suffix = path.stem, path.suffix
+    rx = _versioned_rx(stem, suffix)
+    candidates = list(path.parent.glob(f"{stem}-v*{suffix}")) if path.parent.exists() else []
+    adir = path.parent / archive_dir
+    if adir.exists():
+        candidates += list(adir.glob(f"{stem}-v*{suffix}"))
+    versions = [int(m.group(1)) for m in (rx.match(f.name) for f in candidates) if m]
+    n = max(versions, default=0) + 1
+    stamp = datetime.datetime.now().strftime("%Y%m%d")
+    return path.parent / f"{stem}-v{n}-{stamp}{suffix}"
+
+
+def _archive_prior_versions(path: pathlib.Path, archive_dir: str) -> None:
+    """Moves any already-versioned file currently live for this stem into `archive_dir`, keeping
+    its own version-numbered filename exactly as-is (no re-stamping — the name already carries its
+    own version + date, that IS its archive identity). Leaves a pre-existing *plain*-named file
+    (legacy, pre-dating this setting) untouched — same non-interference `next_versioned_path`
+    already documents. Researcher, 2026-08-05: "as long as the archiving runs alongside the
+    versioning" — the live folder holds at most one current file per report; the full lineage lives
+    in `archive_dir`, nothing is ever silently lost."""
+    rx = _versioned_rx(path.stem, path.suffix)
+    if not path.parent.exists():
+        return
+    for f in path.parent.glob(f"{path.stem}-v*{path.suffix}"):
+        if rx.match(f.name):
+            adir = path.parent / archive_dir
+            adir.mkdir(parents=True, exist_ok=True)
+            f.replace(adir / f.name)
+
+
 def write_report(conn: sqlite3.Connection, step: str, path: pathlib.Path,
                  lines: list[str]) -> pathlib.Path:
-    """Archive the existing file (if any) to cfg_report.archive_dir before writing the new content
-    — a regenerate never silently destroys the prior snapshot (researcher's 2026-07-22 instruction)."""
+    """`report.version_on_regenerate` (module `report`, app-wide — governs every report writer
+    uniformly, not a per-step convention): when true (the default since 2026-08-05), archiving and
+    versioning both run, together — researcher, 2026-08-05: "as long as the archiving runs alongside
+    the versioning, as it should." Any already-versioned file currently live for this stem is moved
+    into `cfg_report.archive_dir` first (`_archive_prior_versions`, name unchanged — it's already
+    self-describing), THEN the new content is written under a freshly incremented version
+    (`next_versioned_path`, which counts archived versions too, so numbering stays monotonic). Net
+    effect: the live folder holds exactly one current file per report, the full lineage is preserved
+    in `archive_dir`, and nothing is ever silently lost or overwritten. When false, falls back to the
+    pre-2026-08-05 behaviour: archive the existing file (if any), then overwrite the same plain path
+    (researcher's 2026-07-22 instruction) — kept as the opt-out, not removed."""
+    path.parent.mkdir(parents=True, exist_ok=True)
     rep = conn.execute("SELECT archive_dir FROM cfg_report WHERE step=?", (step,)).fetchone()
     archive_dir = (rep["archive_dir"] if rep else None) or "archive"
-    path.parent.mkdir(parents=True, exist_ok=True)
-    archive_before_write(path, archive_dir)
+    if _setting(conn, "report.version_on_regenerate", True):
+        _archive_prior_versions(path, archive_dir)
+        path = next_versioned_path(path, archive_dir)
+    else:
+        archive_before_write(path, archive_dir)
     text = "\n".join(lines)
     if not text.endswith("\n"):
         text += "\n"

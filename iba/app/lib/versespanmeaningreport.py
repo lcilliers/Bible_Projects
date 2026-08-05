@@ -388,5 +388,5 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
     filename = pattern.format(book=book.lower(), range=range_str)
     path = output_dir / folder / filename
 
-    reportkit.write_report(conn, "report.verse_span_meaning", path, L)
+    path = reportkit.write_report(conn, "report.verse_span_meaning", path, L)
     return path

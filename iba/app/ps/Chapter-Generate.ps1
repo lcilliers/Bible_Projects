@@ -5,10 +5,19 @@
     instruction). PowerShell orchestrates; Python works; CONFIG (in the DB) governs.
 
 .DESCRIPTION
-    Chains report.verse_span_meaning (base extract) then report.passage_debate (debate SCAFFOLD)
-    under one run_id, for one book/chapter-range — the two purely mechanical prep steps a chapter
-    needs before the manual interpretive fill-in can start. The sequence comes from cfg_step
-    (work_package 'chapter-generate'), not from this script.
+    First ensures the book's passages are current (`build-passages`' `passage.build`, redefined
+    2026-08-05 around HIB-continuity — B4, debate-analytic-process-digest-20260805.md Step 2) — a
+    genuinely SEPARATE governed step, its own run_id, run and checked BEFORE chapter-generate's own
+    sequence, not chained into it (re-invoking a chained work package re-runs every ordinal in its
+    sequence from the top, which is exactly the failure mode this script's own scaffold-overwrite
+    guard below exists to avoid — the same risk would apply to passage.build if it shared a run_id).
+    A `no-hibs`/paused result here stops the whole script — generating a debate scaffold against
+    stale or absent passage boundaries is worse than not generating one at all.
+
+    Then chains report.verse_span_meaning (base extract) then report.passage_debate (debate
+    SCAFFOLD) under one run_id, for one book/chapter-range — the two purely mechanical prep steps a
+    chapter needs before the manual interpretive fill-in can start. The sequence comes from
+    cfg_step (work_package 'chapter-generate'), not from this script.
 
     Deliberately stops here. Filling in the scaffold's <!-- fill in --> placeholders is manual,
     unmechanised analytical work (same boundary every other debate-producing step in this app
@@ -66,6 +75,27 @@ if ([bool]$Chapters -eq [bool]$Range) {
 }
 
 Test-IbaWorkPackageActive -WorkPackage 'chapter-generate'
+Test-IbaWorkPackageActive -WorkPackage 'build-passages'
+
+# B4 — ensure passages are current BEFORE anything else runs (own run_id, NOT chained into the
+# sequence below — see .DESCRIPTION). Book-scoped, not range-scoped: passage.build always
+# recomputes the WHOLE book's passages (a clean drop+rebuild), so this stays correct regardless of
+# which -Chapters/-Range this particular invocation is generating a debate for.
+$passageRunId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-BUILD-PASSAGES"
+Write-IbaRunHeader -WorkPackage 'build-passages' -RunId $passageRunId -RunsOver "book = '$Book'"
+$json = python -m iba.app.run build-passages --step passage.build --run-id $passageRunId --param "Book=$Book"
+$code = $LASTEXITCODE
+$res  = $json | ConvertFrom-Json
+Write-IbaStepResult -Step 'passage.build' -Path $res.path -Message $res.message -Code $code
+if ($code -eq 2) {
+    Write-IbaPaused -WorkPackage 'build-passages' -RunId $passageRunId -Message $res.message
+    exit 2
+}
+if ($code -eq 3) {
+    Write-IbaStopped -Message $res.message
+    exit 3
+}
+Write-Host ""
 
 $guideline = python -c "from iba.app.lib.cfg import Cfg; c=Cfg(); print(c.setting('passage.debate_session_chapter_guideline', 3)); c.close()"
 

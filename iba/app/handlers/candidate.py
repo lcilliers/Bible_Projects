@@ -235,7 +235,7 @@ def _write_quality_report(ctx: Ctx, sc_null: int, sc_tag: "vq.ValueFinding", see
                  for t in ("candidate_seed", "lemma_inventory", "span_candidate")}
     reportkit.write_csv_pairing(ctx.db.conn, "candidate.validate", path.parent / "export",
                                 row_filter=row_filter)
-    reportkit.write_report(ctx.db.conn, "candidate.validate", path, L)
+    path = reportkit.write_report(ctx.db.conn, "candidate.validate", path, L)
     return path
 
 
@@ -694,8 +694,7 @@ def load(ctx: Ctx) -> Outcome:
     L = reportkit.render_scaffold(ctx.db.conn, "candidate.load", sections, intro=intro)
     reportkit.write_csv_pairing(ctx.db.conn, "candidate.load", report_path.parent / "export",
                                 row_filter={"candidate_seed": all_exceptions})
-    reportkit.write_report(ctx.db.conn, "candidate.load", report_path, L)
-
+    report_path = reportkit.write_report(ctx.db.conn, "candidate.load", report_path, L)
     if exceptions_open == 0:
         return ok(f"candidate.load: {c['loaded']} item(s) loaded clean, {c['duplicates']} "
                   f"duplicate(s) skipped untouched, seed list is clear", **c)

@@ -77,5 +77,5 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
               "WHERE cs.deleted=0")
     reportkit.write_csv_pairing(conn, "report.seed_candidate", path.parent / "export",
                                 row_filter={"candidate_seed": joined})
-    reportkit.write_report(conn, "report.seed_candidate", path, L)
+    path = reportkit.write_report(conn, "report.seed_candidate", path, L)
     return path

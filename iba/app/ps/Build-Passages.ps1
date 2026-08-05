@@ -1,25 +1,28 @@
 <#
 .SYNOPSIS
-    Build passages for a book from the candidate stamp. Config-governed. Run AFTER Set-Candidates.
+    Build passages for a book from HIB continuity. Config-governed. Run AFTER HIB identification
+    (debate digest Step 1) has populated verse_hib for the book.
 
 .DESCRIPTION
     Runs the 'build-passages' work package over a book: passage.build recomputes the book's
-    passages from span_candidate (a passage extends a char's context to adjacent verses).
-    Passages depend on the candidate stamp, so re-run this whenever the candidates change.
+    passages from verse_hib (a passage is a maximal run of consecutive verses tracking the same
+    Human Inner Being(s) -- debate-analytic-process-digest-20260805.md Step 2, redefined 2026-08-05
+    from the retired char-continuity/candidate-stamp rule). Passages depend on verse_hib, so
+    re-run this whenever HIB identification changes for the book.
 
-.PARAMETER Book  OSIS book code, e.g. Prov, Ps, Gen.
-.PARAMETER Rule  Boundary rule: char-continuity (default) or maximal.
+.PARAMETER Book  OSIS book code, e.g. Dan, Hos, Jon.
+.PARAMETER Rule  Boundary rule: hib-continuity (default) or maximal.
 .PARAMETER Trace Print every config read (IBA_TRACE).
 
 .EXAMPLE
-    .\Build-Passages.ps1 -Book Prov
-    .\Build-Passages.ps1 -Book Ps -Rule maximal
+    .\Build-Passages.ps1 -Book Dan
+    .\Build-Passages.ps1 -Book Dan -Rule maximal
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)] [string] $Book,
-    [ValidateSet('char-continuity', 'maximal')] [string] $Rule = 'char-continuity',
+    [ValidateSet('hib-continuity', 'maximal')] [string] $Rule = 'hib-continuity',
     [switch] $Trace
 )
 

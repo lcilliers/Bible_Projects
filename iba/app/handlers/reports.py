@@ -21,7 +21,7 @@ from .. import validation as validation_mod
 from ..lib import escalation as esc
 from ..lib import retention as retention_mod
 from ..lib import registryreport, schemareport, seedreport, spanreport, strongreport
-from ..lib import (passagedebatereport, passagetrack, spanreading, versespanmeaningreport,
+from ..lib import (lexical, passagedebatereport, passagetrack, versespanmeaningreport,
                    wholebookread)
 from ..lib.stepapi import StepUnavailable
 from ..tools import export_tables_csv
@@ -161,11 +161,11 @@ def verse_span_meaning_report(ctx: Ctx) -> Outcome:
     return ok(f"wrote {out}{backfill_note}", path=str(out), passage_id=passage_id)
 
 
-def span_reading_report(ctx: Ctx) -> Outcome:
+def lexical_report(ctx: Ctx) -> Outcome:
     """Book-scoped, needs -Book plus exactly one of -Chapters/-Range, same call shape as
-    `verse_span_meaning_report` (the step this replaces). Pure render off `span_reading` —
-    no STEP dependency, no backfill, no DB write here at all; `span_reading.build` (ordinal 0 of
-    the same `verse-span-reading` work package) is what populates the table this reads. `no-
+    `verse_span_meaning_report` (the step this replaces). Pure render off `verse_lexical` —
+    no STEP dependency, no backfill, no DB write here at all; `lexical.build` (ordinal 0 of
+    the same `verse-lexical` work package) is what populates the table this reads. `no-
     readings` fires when nothing has been built yet for this exact range (`cfg_on_fail` resolves
     the message, matching every other step's convention)."""
     book = ctx.params["Book"]
@@ -179,14 +179,14 @@ def span_reading_report(ctx: Ctx) -> Outcome:
         verse_lo = verse_hi = None
 
     built = ctx.db.conn.execute(
-        "SELECT 1 FROM span_reading sr JOIN verse v ON v.id=sr.verse_id "
-        "WHERE v.osisId LIKE ? AND sr.deleted=0 LIMIT 1", (f"{book}.%",)).fetchone()
+        "SELECT 1 FROM verse_lexical vl JOIN verse v ON v.id=vl.verse_id "
+        "WHERE v.osisId LIKE ? AND vl.deleted=0 LIMIT 1", (f"{book}.%",)).fetchone()
     if not built:
-        return fail("no-readings", f"no span_reading rows exist yet for {book} {lo}-{hi} — "
-                                   f"run span_reading.build first")
+        return fail("no-readings", f"no verse_lexical rows exist yet for {book} {lo}-{hi} — "
+                                   f"run lexical.build first")
 
-    out = spanreading.write_report(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
-                                   book_label=book_label)
+    out = lexical.write_report(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
+                               book_label=book_label)
     return ok(f"wrote {out}", path=str(out))
 
 

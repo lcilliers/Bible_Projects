@@ -319,7 +319,7 @@ def generate(word: str) -> pathlib.Path:
         word_strong_rows, span_rows = [], []
     reportkit.write_csv_pairing(db.conn, "validation.word", output_dir / "export",
                                 row_filter={"span": span_rows, "word_strong": word_strong_rows})
-    reportkit.write_report(db.conn, "validation.word", out, L)
+    out = reportkit.write_report(db.conn, "validation.word", out, L)
     db.close()
     return out, overall, (passes, warns, fails)
 
@@ -429,7 +429,7 @@ def generate_book(book: str) -> tuple:
                                 row_filter={"candidate_seed": candidate_seed_rows,
                                            "passage": passage_rows,
                                            "verse_passage": verse_passage_rows})
-    reportkit.write_report(db.conn, "validation.book", out, L)
+    out = reportkit.write_report(db.conn, "validation.book", out, L)
     db.close()
     return out, overall, (passes, warns, fails)
 

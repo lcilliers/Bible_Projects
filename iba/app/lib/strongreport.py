@@ -133,5 +133,5 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     reportkit.write_csv_pairing(conn, "report.strong_meaning", path.parent / "export",
                                 row_filter={"strong_sense": sense_joined,
                                            "strong_meaning_tree": tree_joined})
-    reportkit.write_report(conn, "report.strong_meaning", path, L)
+    path = reportkit.write_report(conn, "report.strong_meaning", path, L)
     return path

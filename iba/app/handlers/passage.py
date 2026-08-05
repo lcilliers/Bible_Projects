@@ -1,11 +1,19 @@
-"""Passage handler — build a book's passages from the candidate stamp. Config-governed.
+"""Passage handler — build a book's passages from HIB continuity. Config-governed.
 
-A passage's sole purpose is to extend a characteristic's context to its adjacent verses so
-movement / process / qualifying spans can be assessed with that context — NOT a thematic
-unit. Boundaries come from the candidate stamp: a maximal run of consecutive same-chapter
-candidate-bearing verses, broken when consecutive verses stop sharing a candidate base-
-Strong's (char-continuity) unless -Rule maximal. A run longer than passage.review_over is
-flagged needs_review (a long run may be several passages under different char focuses).
+**Redefined 2026-08-05 (B4, `debate-analytic-process-digest-20260805.md` Step 2).** A passage's
+boundary is now the same HIB(s) continuing to be what the text is tracking — NOT a thematic unit,
+and NOT the prior characteristic/candidate-stamp definition this handler used before the study's
+"characteristics → HIB" reframing. Boundaries come from `verse_hib` (debate digest Step 1's
+per-verse HIB presence): a maximal run of consecutive same-chapter HIB-bearing verses, broken when
+consecutive verses stop sharing a live HIB (hib-continuity) unless -Rule maximal. A run longer than
+passage.review_over is flagged needs_review (a long run may be several passages under different HIB
+focuses — the same over-batching concern the debate digest's failure-mode (b) names directly).
+
+**Retired shape, superseded not deleted.** Previously sourced from `span_candidate`
+(char-continuity: shared candidate base-Strong's) — that whole candidate system is itself retired
+(BUILD.md, `retract_candidate_system.py`); this handler's old body is preserved in git history, not
+copied forward, since the algorithm's SHAPE (adjacency + shared-set-membership run-forming) is
+identical, only the source table and the meaning of "shared" changed.
 """
 
 from __future__ import annotations
@@ -38,27 +46,29 @@ def _may(ctx: Ctx, writer: str, table: str):
 
 def build(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
-    rule = ctx.params.get("Rule") or ctx.cfg.setting("passage.default_rule", "char-continuity")
-    min_shared = int(ctx.cfg.setting("passage.min_shared_strongs", 1))
+    rule = ctx.params.get("Rule") or ctx.cfg.setting("passage.default_rule", "hib-continuity")
+    min_shared = int(ctx.cfg.setting("passage.min_shared_hibs", 1))
     review_over = int(ctx.cfg.setting("passage.review_over", 10))  # matches DB value (was 5)
     cross_chapter = bool(ctx.cfg.setting("passage.cross_chapter", False))
     like = f"{book}.%"
 
-    # candidate base-strongs per candidate-bearing verse
-    cand_by_verse: dict[int, set] = {}
+    # HIBs present per verse (debate digest Step 1's per-verse sweep; verse_hib is the input)
+    hibs_by_verse: dict[int, set] = {}
     for r in ctx.db.rows(
-        "SELECT sp.verse_id AS vid, sc.lemma_key AS lk FROM span_candidate sc "
-        "JOIN span sp ON sp.id = sc.span_id JOIN verse v ON v.id = sp.verse_id "
-        "WHERE v.osisId LIKE ? AND sc.deleted=0 AND sp.deleted=0 AND v.deleted=0", (like,)):
-        cand_by_verse.setdefault(r["vid"], set()).add(r["lk"])
-    if not cand_by_verse:
-        return fail("no-candidates", f"book {book!r} has no candidate spans — run set-candidates first")
+        "SELECT vh.verse_id AS vid, vh.hib_id AS hid FROM verse_hib vh "
+        "JOIN verse v ON v.id = vh.verse_id "
+        "WHERE v.osisId LIKE ? AND vh.deleted=0 AND v.deleted=0", (like,)):
+        hibs_by_verse.setdefault(r["vid"], set()).add(r["hid"])
+    if not hibs_by_verse:
+        return fail("no-hibs", f"book {book!r} has no verse_hib data — HIB identification "
+                               f"(debate digest Step 1) must happen for this book before passages "
+                               f"can be built")
 
     vinfo = {r["id"]: r["osisId"] for r in ctx.db.rows(
         "SELECT id, osisId FROM verse WHERE osisId LIKE ? AND deleted=0", (like,))}
-    verses = sorted(cand_by_verse.keys(), key=lambda vid: _cv(vinfo[vid]))
+    verses = sorted(hibs_by_verse.keys(), key=lambda vid: _cv(vinfo[vid]))
 
-    # form runs: consecutive same-chapter candidate verses, broken by char-continuity
+    # form runs: consecutive same-chapter HIB-bearing verses, broken by hib-continuity
     runs: list[list[int]] = []
     cur: list[int] = []
     for vid in verses:
@@ -75,7 +85,7 @@ def build(ctx: Ctx) -> Outcome:
         # Wired in 2026-07-22 (was previously read nowhere, per configmaint's orphan-config
         # finding) so the setting is no longer dead, not because true crossing is implemented.
         consecutive = (cross_chapter or ch == pch) and vs == pvs + 1
-        shares = len(cand_by_verse[vid] & cand_by_verse[cur[-1]]) >= min_shared
+        shares = len(hibs_by_verse[vid] & hibs_by_verse[cur[-1]]) >= min_shared
         if consecutive and (rule == "maximal" or shares):
             cur.append(vid)
         else:
@@ -109,10 +119,10 @@ def build(ctx: Ctx) -> Outcome:
                 "passage_id": pid, "verse_id": vid, "is_anchor": 1 if i == 0 else 0,
                 "created_at": now, "deleted": 0})
 
-    msg = f"{len(runs)} passage(s) over {len(verses)} candidate verse(s) in {book} ({rule})"
+    msg = f"{len(runs)} passage(s) over {len(verses)} HIB-bearing verse(s) in {book} ({rule})"
     if flagged:
         msg += f"; {flagged} need review (>{review_over} verses)"
-    return ok(msg, passages=len(runs), candidate_verses=len(verses), needs_review=flagged)
+    return ok(msg, passages=len(runs), hib_verses=len(verses), needs_review=flagged)
 
 
 # ── validate (standalone, on-demand) ──────────────────────────────────────────
@@ -159,7 +169,7 @@ def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: l
     reportkit.write_csv_pairing(ctx.db.conn, "passage.validate", path.parent / "export",
                                 row_filter={"passage": live_passages,
                                           "verse_passage": live_verse_passages})
-    reportkit.write_report(ctx.db.conn, "passage.validate", path, L)
+    path = reportkit.write_report(ctx.db.conn, "passage.validate", path, L)
     return path
 
 

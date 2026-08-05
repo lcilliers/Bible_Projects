@@ -365,7 +365,7 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
 
     L = reportkit.render_scaffold(conn, STEP, sections, intro=intro)
     reportkit.write_csv_pairing(conn, STEP, out_path.parent / "export")
-    reportkit.write_report(conn, STEP, out_path, L)
+    out_path = reportkit.write_report(conn, STEP, out_path, L)
     conn.close()
     return out_path
 

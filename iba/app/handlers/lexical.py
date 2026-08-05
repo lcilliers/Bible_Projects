@@ -1,5 +1,5 @@
-"""spanreading.py — dispatcher handler for `span_reading.build` (work package `verse-span-
-reading`, ordinal 0). Thin adapter over `lib/spanreading.py`'s `build_for_range`, same shape as
+"""lexical.py — dispatcher handler for `lexical.build` (work package `verse-lexical`, ordinal 0).
+Thin adapter over `lib/lexical.py`'s `build_for_range`, same shape as
 `handlers/reports.py:verse_span_meaning_report` (the step this replaces).
 
 Auto-backfill reused unchanged from `report.verse_span_meaning`'s own pattern (`report.
@@ -12,7 +12,7 @@ from __future__ import annotations
 
 from .base import Ctx, Outcome, fail, ok
 from . import raw as raw_mod
-from ..lib import spanreading
+from ..lib import lexical
 from ..lib.stepapi import Step, StepUnavailable
 from ..lib.versespanmeaningreport import parse_chapters, parse_range
 
@@ -23,7 +23,7 @@ def _may(ctx: Ctx, writer: str, table: str) -> None:
 
 
 def build(ctx: Ctx) -> Outcome:
-    _may(ctx, "span_reading.build", "span_reading")
+    _may(ctx, "lexical.build", "verse_lexical")
 
     book = ctx.params["Book"]
     if ctx.params.get("Range"):
@@ -55,7 +55,7 @@ def build(ctx: Ctx) -> Outcome:
             if required:
                 return fail("unreachable", str(e))
 
-    totals = spanreading.build_for_range(ctx.db.conn, book, lo, hi, verse_lo, verse_hi, step)
+    totals = lexical.build_for_range(ctx.db.conn, book, lo, hi, verse_lo, verse_hi, step)
     ctx.db.conn.commit()
 
     return ok(

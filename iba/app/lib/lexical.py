@@ -1,4 +1,4 @@
-"""spanreading.py — the `span_reading` engine: T1-T3 of the verse-lexical technique
+"""lexical.py — the `verse_lexical` engine: T1-T3 of the verse-lexical technique
 (`iba/docs/WA-verse-reading-technique-v4-2026-08-05.md`), mechanised. Replaces
 `report.verse_span_meaning`'s per-span dump with one row per CODE within a span, holding a
 mechanically resolved — never interpreted — reading. Full design record:
@@ -77,7 +77,7 @@ def classify_role(strong_code: str | None, morph_slice: str | None) -> str:
 # ── stem/voice selection ─────────────────────────────────────────────────────────────────────
 # Hebrew binyan letter (morph_code[2] for HV... codes) -> stem name, EMPIRICALLY VERIFIED against
 # real strong_meaning_parsed text in this DB 2026-08-05 (no morph-code legend exists anywhere in
-# this repo — checked). See bootstrap_span_reading.py's module docstring for the verification
+# this repo — checked). See bootstrap_verse_lexical.py's module docstring for the verification
 # detail per letter. 'v' (Hishtaphel, H7812 "bow/worship," 13 occurrences) deliberately omitted —
 # the source text lumps it under "(Hithpael)" with no independently labeled segment; left
 # unmapped so it falls back to full-text presentation rather than a guessed extraction.
@@ -149,7 +149,7 @@ def _select_stem_text(rows: list[tuple[str, str]], stem_name: str | None) -> tup
 def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None,
                  step: "Step | None", live_cache: dict[str, str],
                  base_pattern: str = _BASE_RE_FALLBACK) -> dict:
-    """One code's full span_reading row content (minus span_id/verse_id/code_ordinal, which the
+    """One code's full verse_lexical row content (minus span_id/verse_id/code_ordinal, which the
     caller fills in). Mirrors versespanmeaningreport.meaning_for_code's exact-variant/base-
     fallback/ambiguity decision (reused, not re-derived) then adds stem/voice narrowing."""
     role = classify_role(code, morph_slice)
@@ -219,18 +219,18 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
                             resolved: list[dict]) -> dict:
     """Version-aware: for each code_ordinal, soft-deletes any current (deleted=0) row and inserts
     a fresh one — always, even when content is unchanged, so created_at reflects the last run that
-    confirmed it (cheap; span_reading is not high-write-volume). Returns counts."""
+    confirmed it (cheap; verse_lexical is not high-write-volume). Returns counts."""
     c = {"inserted": 0, "superseded": 0}
     now = _now()
     for ordinal, r in enumerate(resolved):
         existing = conn.execute(
-            "SELECT id FROM span_reading WHERE span_id=? AND code_ordinal=? AND deleted=0",
+            "SELECT id FROM verse_lexical WHERE span_id=? AND code_ordinal=? AND deleted=0",
             (span_id, ordinal)).fetchone()
         if existing:
-            conn.execute("UPDATE span_reading SET deleted=1 WHERE id=?", (existing["id"],))
+            conn.execute("UPDATE verse_lexical SET deleted=1 WHERE id=?", (existing["id"],))
             c["superseded"] += 1
         conn.execute(
-            "INSERT INTO span_reading (span_id, verse_id, code_ordinal, strong, morph_code, "
+            "INSERT INTO verse_lexical (span_id, verse_id, code_ordinal, strong, morph_code, "
             "role, status, resolved_sense, ambiguity_note, created_at, deleted) "
             "VALUES (?,?,?,?,?,?,?,?,?,?,0)",
             (span_id, verse_id, ordinal, r["strong"], r["morph_code"], r["role"], r["status"],
@@ -292,9 +292,9 @@ def _tbl(headers: list[str], rows: list[list]) -> list[str]:
 
 def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
                  verse_hi: int | None = None, book_label: str | None = None) -> pathlib.Path:
-    """Reads span_reading — never re-derives from span/strong/strong_meaning_parsed. If nothing
+    """Reads verse_lexical — never re-derives from span/strong/strong_meaning_parsed. If nothing
     has been built yet for this exact range, that's `no-readings` (handlers/reports.py catches
-    it) — run span_reading.build first (ordinal 0 of the same work package)."""
+    it) — run lexical.build first (ordinal 0 of the same work package)."""
     conn = cfg.conn
     verses = fetch_verses(conn, book, lo, hi, verse_lo, verse_hi)
     range_str = _range_str(lo, hi, verse_lo, verse_hi)
@@ -318,7 +318,7 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
         rows = []
         for sp in spans:
             components = conn.execute(
-                "SELECT * FROM span_reading WHERE span_id=? AND deleted=0 ORDER BY code_ordinal",
+                "SELECT * FROM verse_lexical WHERE span_id=? AND deleted=0 ORDER BY code_ordinal",
                 (sp["id"],)).fetchall()
             if components:
                 any_readings = True
@@ -329,7 +329,7 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
                         per_chapter_covered[v["chapter"]] = (
                             per_chapter_covered.get(v["chapter"], 0) + 1)
             reading = (" + ".join(_render_component(c) for c in components)
-                      if components else "(not yet built — run span_reading.build)")
+                      if components else "(not yet built — run lexical.build)")
             rows.append([sp["position"], sp["surface"] or "", reading])
 
         verse_lines.append(f"### {v['reference']}")
@@ -340,13 +340,13 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
         verse_lines.append("")
 
     intro = [
-        "> On-demand extract, generated from `span_reading` (never an independent write) — the "
+        "> On-demand extract, generated from `verse_lexical` (never an independent write) — the "
         "resolved T1-T3 reading, connected units and morph-selected sense, not a per-code dump. "
         "Verse order = osisId parsed numerically, not table-id order.",
     ]
     if not any_readings:
         intro.append("")
-        intro.append("> **Nothing built yet for this range** — run `span_reading.build` first.")
+        intro.append("> **Nothing built yet for this range** — run `lexical.build` first.")
 
     coverage_rows = [[ch, per_chapter_covered.get(ch, 0), tot,
                       f"{round(100 * per_chapter_covered.get(ch, 0) / tot) if tot else 0}%"]
@@ -356,16 +356,16 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
         "verses": verse_lines,
     }
 
-    L = reportkit.render_scaffold(conn, "report.span_reading", sections, intro=intro,
+    L = reportkit.render_scaffold(conn, "report.verse_lexical", sections, intro=intro,
                                   book=book, range=label)
 
     output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir",
                                           "iba/app/verse-analysis"))
-    pattern = cfg.setting("report.span_reading_output_pattern",
-                         "{book}-{range}-span-reading.md")
+    pattern = cfg.setting("report.verse_lexical_output_pattern",
+                         "{book}-{range}-verse-lexical.md")
     folder = book_label or book
     filename = pattern.format(book=book.lower(), range=range_str)
     path = output_dir / folder / filename
 
-    reportkit.write_report(conn, "report.span_reading", path, L)
+    path = reportkit.write_report(conn, "report.verse_lexical", path, L)
     return path

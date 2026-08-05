@@ -167,7 +167,7 @@ def _write_report(ctx: Ctx, no_lsj: int, no_mounce: int, no_related: int,
     }
     L = reportkit.render_scaffold(ctx.db.conn, "lexicon.validate", sections, intro=intro)
     reportkit.write_csv_pairing(ctx.db.conn, "lexicon.validate", path.parent / "export")
-    reportkit.write_report(ctx.db.conn, "lexicon.validate", path, L)
+    path = reportkit.write_report(ctx.db.conn, "lexicon.validate", path, L)
     return path
 
 

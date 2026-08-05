@@ -90,5 +90,5 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         "ORDER BY wr.word")
     reportkit.write_csv_pairing(conn, "report.registry", path.parent / "export",
                                 row_filter={"word_registry": joined})
-    reportkit.write_report(conn, "report.registry", path, L)
+    path = reportkit.write_report(conn, "report.registry", path, L)
     return path

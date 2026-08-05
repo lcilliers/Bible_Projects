@@ -41,12 +41,14 @@ from .versespanmeaningreport import (detect_verse_gaps, fetch_verses, gap_note,
 
 
 class BaseExtractMissing(Exception):
-    """The span_reading data this range's debate depends on has not been built yet. Was a
+    """The verse_lexical data this range's debate depends on has not been built yet. Was a
     filesystem check against report.verse_span_meaning's MD output (extract_path.exists()) —
-    swapped 2026-08-05 to a DB check against span_reading, the T1-T3 replacement (report.
-    verse_span_meaning is retired; see t1-t3-design-decisions-20260805.md). T4-T9's own
-    integration with this scaffold is explicitly out of scope here (researcher's own follow-on
-    work, after span_reading has run through) — this change only swaps the existence gate."""
+    swapped 2026-08-05 to a DB check against verse_lexical, the mechanical-lexical replacement
+    (report.verse_span_meaning is retired; see t1-t3-design-decisions-20260805.md — "T1-T3" there
+    is this table's original dev-only name, retired in favour of "the lexical" per the
+    researcher's own terminology, same day). Digesting the full analytic method (HIB/phenomenon/
+    operation) into this scaffold is separate follow-on work — see
+    debate-analytic-process-digest-20260805.md — this change only swaps the existence gate."""
 
 
 class MethodDocMissing(Exception):
@@ -135,17 +137,17 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
 
     verses = fetch_verses(conn, book, lo, hi, verse_lo, verse_hi)
     built_verse_ids = {r["verse_id"] for r in conn.execute(
-        "SELECT DISTINCT verse_id FROM span_reading WHERE deleted=0 AND verse_id IN "
+        "SELECT DISTINCT verse_id FROM verse_lexical WHERE deleted=0 AND verse_id IN "
         f"({','.join('?' * len(verses))})", [v["id"] for v in verses]).fetchall()} if verses else set()
     missing = [v["reference"] for v in verses if v["id"] not in built_verse_ids]
     if missing:
         raise BaseExtractMissing(
-            f"span_reading has no rows for {len(missing)} of {len(verses)} verse(s) in this range "
-            f"({missing[0]}{' ...' if len(missing) > 1 else ''}) — run VerseSpanReading.ps1 for "
-            f"this exact book/range first (span_reading.build); the debate scaffold reads verse "
-            f"text from the DB directly but the analyst's workflow depends on the resolved T1-T3 "
-            f"reading existing first")
-    extract_label = "span_reading (DB)"
+            f"verse_lexical has no rows for {len(missing)} of {len(verses)} verse(s) in this range "
+            f"({missing[0]}{' ...' if len(missing) > 1 else ''}) — run VerseLexical.ps1 for "
+            f"this exact book/range first (lexical.build); the debate scaffold reads verse "
+            f"text from the DB directly but the analyst's workflow depends on the resolved "
+            f"lexical reading existing first")
+    extract_label = "verse_lexical (DB)"
 
     today = datetime.date.today().isoformat()
     pattern = cfg.setting("report.passage_debate_naming_pattern", "WA-{book}-{range}-debate.md")
@@ -234,5 +236,5 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
 
     L = reportkit.render_scaffold(conn, "report.passage_debate", sections, intro=intro,
                                   book=book, range=label)
-    reportkit.write_report(conn, "report.passage_debate", path, L)
+    path = reportkit.write_report(conn, "report.passage_debate", path, L)
     return path

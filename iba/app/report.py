@@ -140,7 +140,7 @@ def generate(word: str, cfg: Cfg | None = None) -> pathlib.Path | None:
     reportkit.write_csv_pairing(db.conn, "report.word", out_dir / "export",
                                 row_filter={"span": all_spans, "word_strong": word_strong_rows})
     text = "\n".join(L).rstrip() + "\n"
-    reportkit.write_report(db.conn, "report.word", out, text.splitlines())
+    out = reportkit.write_report(db.conn, "report.word", out, text.splitlines())
     if own_cfg:
         db.close(); cfg.close()
     return out

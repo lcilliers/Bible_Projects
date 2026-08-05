@@ -95,7 +95,7 @@ def _write_report(cfg, path: pathlib.Path, findings: dict[str, str] | None,
     sections = {"findings": body}
     L = reportkit.render_scaffold(cfg.conn, "report.book_narrative_validate", sections,
                                   intro=intro, path=str(path))
-    reportkit.write_report(cfg.conn, "report.book_narrative_validate", out_path, L)
+    out_path = reportkit.write_report(cfg.conn, "report.book_narrative_validate", out_path, L)
     return out_path
 
 

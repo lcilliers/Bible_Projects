@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-05T18:22:42Z |
+| generated_at | 2026-08-05T19:40:19Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -31,8 +31,8 @@
 
 _Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s escalation, which references this section by path rather than repeating it. Not errors — advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every category below) so any one item can be referenced by number, e.g. "item 7" — the numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/already-decided records (inactive configs) are §1, not here — everything below is something that actually needs your judgement.
 
-**Orphan configs** (1) — a `cfg_setting`/`cfg_enum` not referenced by any code:
-1. cfg_setting 'report.version_on_regenerate' (key not found together with a cfg.setting(...) call in any one file)
+**Orphan configs** (0) — a `cfg_setting`/`cfg_enum` not referenced by any code:
+_(none)_
 
 **Settings needing justification** (0) — module already has its own dedicated table:
 _(none)_
@@ -41,15 +41,15 @@ _(none)_
 _(none)_
 
 **Stale filled_by** (6) — cfg_column.filled_by names a now-inactive step:
-2. passage.book_label filled_by='report.verse_span_meaning' (an inactive step) — confirm dormant or update to the real current writer
-3. passage.verse_span_meaning_path filled_by='report.verse_span_meaning' (an inactive step) — confirm dormant or update to the real current writer
-4. passage.verse_span_meaning_written_at filled_by='report.verse_span_meaning' (an inactive step) — confirm dormant or update to the real current writer
-5. passage.debate_path filled_by='report.passage_debate' (an inactive step) — confirm dormant or update to the real current writer
-6. passage.debate_written_at filled_by='report.passage_debate' (an inactive step) — confirm dormant or update to the real current writer
-7. passage.debate_status filled_by='report.passage_debate' (an inactive step) — confirm dormant or update to the real current writer
+1. passage.book_label filled_by='report.verse_span_meaning' (an inactive step) — confirm dormant or update to the real current writer
+2. passage.verse_span_meaning_path filled_by='report.verse_span_meaning' (an inactive step) — confirm dormant or update to the real current writer
+3. passage.verse_span_meaning_written_at filled_by='report.verse_span_meaning' (an inactive step) — confirm dormant or update to the real current writer
+4. passage.debate_path filled_by='report.passage_debate' (an inactive step) — confirm dormant or update to the real current writer
+5. passage.debate_written_at filled_by='report.passage_debate' (an inactive step) — confirm dormant or update to the real current writer
+6. passage.debate_status filled_by='report.passage_debate' (an inactive step) — confirm dormant or update to the real current writer
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-8. GOVERNANCE.md was last modified 2026-08-02T13:46:47Z, before the newest applied cfg_change_detail row (2026-08-05T18:22:41Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+7. GOVERNANCE.md was last modified 2026-08-02T13:46:47Z, before the newest applied cfg_change_detail row (2026-08-05T18:22:41Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -701,6 +701,7 @@ _one row per passage — a reading frame (global, per book)_ — extends a chara
 dedup key: `book, start_chapter, start_verse, end_chapter, end_verse`
 | column | type | pk | notnull | unique | fk | use | source/filled_by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
+| phenomena_complete_at | TEXT |  |  |  |  | NULL until the debate digest Step 3 phase gate is confirmed complete for the whole passage (every verse_hib pair for this passage has a matching phenomenon row); set only by an explicit control check, never by trust. operation writes are blocked in code while this is NULL (schema built, gate-enforcing writer not yet built -- see b3-b5-operations-schema-design-20260805.md). |  |
 | id | INTEGER | ✓ |  |  |  | surrogate key |  |
 | book | TEXT |  | ✓ |  |  | OSIS book code | derived:verse.osisId |
 | anchor_verse_id | INTEGER |  | ✓ |  | verse.id | first verse of the run — the anchor |  |
@@ -812,6 +813,86 @@ dedup key: `span_id, code_ordinal`
 | ambiguity_note | TEXT |  |  |  |  | set only when the sibling/base-fallback ambiguity check fires — live senses named, not resolved (T4's job, not this table's) | migration/bootstrap_span_reading.py |
 | created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC | migration/bootstrap_span_reading.py |
 | deleted | INTEGER |  | ✓ |  |  | version-aware soft-delete — rewriting a (span_id, code_ordinal) inserts a fresh row and flips the superseded row's deleted to 1, same convention as verse/span/strong | migration/bootstrap_span_reading.py |
+
+### hib
+_hib_ — one row per Human Inner Being identified in a scope (debate digest Step 1) -- scope-wide, not passage-scoped: the same HIB recurs across many passages of a book.
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK |  |
+| book | TEXT |  | ✓ |  |  | OSIS book code, same convention as verse.osisId's book segment |  |
+| label | TEXT |  | ✓ |  |  | e.g. 'Daniel', 'the four youths', 'King Belshazzar' |  |
+| kind | TEXT |  | ✓ |  |  | 'named' \| 'collective' \| 'referential' -- debate digest Step 1 (presumptive-candidate / collective / referential rules) |  |
+| first_verse_id | INTEGER |  |  |  | verse.id | anchor -- where this HIB was first identified |  |
+| created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
+| deleted | INTEGER |  | ✓ |  |  | version-aware soft-delete, standard convention |  |
+
+### hib_referent_option
+_hib_referent_option_ — one row per grammatically-live referent-crux reading (T4), child of hib.
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK |  |
+| hib_id | INTEGER |  | ✓ |  | hib.id | the HIB this referent-crux reading belongs to |  |
+| reading_text | TEXT |  | ✓ |  |  | one grammatically-live candidate reading (T4) -- e.g. one option for 'we' in Obad 1 |  |
+| textual_grounds | TEXT |  |  |  |  | why this reading is live |  |
+| adopted | INTEGER |  | ✓ |  |  | exactly one row per hib_id should be 1 -- the explicit choice (T4: 'adopt one explicitly') |  |
+| ordinal | INTEGER |  | ✓ |  |  |  |  |
+| created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
+| deleted | INTEGER |  | ✓ |  |  | version-aware soft-delete |  |
+
+### verse_hib
+_verse_hib_ — one row per HIB present/a presumptive candidate in a given verse (Step 1's per-verse sweep) -- the input B4's future HIB-continuity passage-boundary rule reads from.
+dedup key: `verse_id, hib_id`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK |  |
+| verse_id | INTEGER |  | ✓ |  | verse.id |  |  |
+| hib_id | INTEGER |  | ✓ |  | hib.id | this HIB is present/a presumptive candidate in this verse (debate digest Step 1) -- also the table B4's future HIB-continuity passage-boundary rule reads from |  |
+| created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
+| deleted | INTEGER |  | ✓ |  |  | version-aware soft-delete |  |
+
+### phenomenon
+_phenomenon_ — the phenomena register (Step 3 output) -- one row per HIB per verse per passage.
+dedup key: `passage_id, verse_id, hib_id, ordinal`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK |  |
+| passage_id | INTEGER |  | ✓ |  | passage.id |  |  |
+| verse_id | INTEGER |  | ✓ |  | verse.id |  |  |
+| hib_id | INTEGER |  | ✓ |  | hib.id |  |  |
+| description | TEXT |  | ✓ |  |  | the phenomenon: a state, disposition, or characteristic of this HIB's inner life (debate digest Step 3) |  |
+| textual_warrant | TEXT |  |  |  |  | the verb/clause/stated-silence that grounds it (WA-passage-read-guidance step 3b) |  |
+| status | TEXT |  | ✓ |  |  | 'stated' \| 'inferred' \| 'silent' -- 'no phenomenon found, silent' is itself a valid row (WA-interpretation-questions Part B.4), never an omitted one |  |
+| ordinal | INTEGER |  | ✓ |  |  | allows more than one phenomenon for the same HIB in the same verse (v1.5 step3 note c) |  |
+| created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
+| deleted | INTEGER |  | ✓ |  |  | version-aware soft-delete |  |
+
+### operation
+_operation_ — the operation for a registered phenomenon (Step 4-5 output) -- phenomenon_id NOT NULL enforces Part B.12 at the DB level.
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK |  |
+| phenomenon_id | INTEGER |  | ✓ |  | phenomenon.id | NOT NULL by design -- the DB-level enforcement of WA-interpretation-questions Part B.12: an operation may only originate from an already-registered phenomenon |  |
+| process | TEXT |  |  |  |  | state/status, or a movement (come from/go to/impact on/emerge/go away/become evident) -- v1.4 Q6 |  |
+| action_type | TEXT |  |  |  |  | short verb-based label (Q11) -- a label, not a controlled vocabulary (Part B.10) |  |
+| decision | TEXT |  |  |  |  | 'retain' \| 'set_aside' \| 'retain_referential' \| 'recorded_silence' |  |
+| observation_text | TEXT |  |  |  |  | what the text/span-data states, Strong's codes cited |  |
+| description_text | TEXT |  |  |  |  | debate digest Step 5's descriptive write-up |  |
+| created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
+| deleted | INTEGER |  | ✓ |  |  | version-aware soft-delete |  |
+
+### operation_party
+_operation_party_ — one row per source/target of an operation (plural-capable, v1.5 step1 note a), child of operation.
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK |  |
+| operation_id | INTEGER |  | ✓ |  | operation.id |  |  |
+| role | TEXT |  | ✓ |  |  | 'source' \| 'target' |  |
+| kind | TEXT |  | ✓ |  |  | 'self' \| 'human' \| 'non_human' \| 'object_situation' \| 'none' |  |
+| detail | TEXT |  |  |  |  | which human/object, if named |  |
+| enablement_only | INTEGER |  | ✓ |  |  | role='source' rows only -- Part B.5's source-of-state vs source-of-enablement distinction, kept structurally separate rather than folded into kind |  |
+| ordinal | INTEGER |  | ✓ |  |  | a phenomenon's operation can have multiple sources/targets (v1.5 step1 note a) |  |
+| created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
+| deleted | INTEGER |  | ✓ |  |  | version-aware soft-delete |  |
 
 ## 11. Enums
 

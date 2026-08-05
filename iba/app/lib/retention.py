@@ -122,5 +122,5 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
 
     L = reportkit.render_scaffold(cfg.conn, "retention.report", sections, intro=intro)
     reportkit.write_csv_pairing(cfg.conn, "retention.report", path.parent / "export")
-    reportkit.write_report(cfg.conn, "retention.report", path, L)
+    path = reportkit.write_report(cfg.conn, "retention.report", path, L)
     return path

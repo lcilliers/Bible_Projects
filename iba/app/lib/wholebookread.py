@@ -182,5 +182,5 @@ def write_scaffold(cfg, book: str, book_label: str | None = None) -> pathlib.Pat
     sections = _render(book, entries)
     L = reportkit.render_scaffold(conn, "report.whole_book_read", sections, intro=intro,
                                   book=book_label or book)
-    reportkit.write_report(conn, "report.whole_book_read", path, L)
+    path = reportkit.write_report(conn, "report.whole_book_read", path, L)
     return path

@@ -3147,3 +3147,302 @@ sit at letter level in this data), not by a text blacklist. `resolve_code` now s
 593 fresh). `saw` (`H7200G`, Qal) and `appeared` (`H7200G`, Niphal) both now read "to see, look at,
 inspect, perceive, consider; ..." before their stem-specific text — the root sense the researcher's
 screenshot showed, present for both stems, not just found for one and assumed for the rest.
+
+---
+
+## 59. `span_reading`/"T1-T3" renamed to "the lexical" (`verse_lexical`) — terminology cleanup, no logic change (2026-08-05, same day)
+
+**Trigger.** Researcher, reviewing the debate-process review docs §56-58 produced this session:
+*"throughout the study we referred to the verse-span-meaning as the lexical. I think we need to
+return to that terminology. the new terminology introduced [`span_reading`, "T1-T3"] is all very
+confusing."* Part of a wider direction (`debate-analytic-process-digest-20260805.md`, "B1") to
+clean up naming noise across the whole debate pipeline before building on top of it.
+
+**What changed — naming only, verified zero logic/data change.** `iba/app/migration/
+rename_span_reading_to_lexical.py` (direct DDL migration, same carve-out class as `bootstrap_span_
+reading.py` itself — table rename is DDL, `configmaint.propose` can't do it; researcher's own
+"B1 — proceed" is the up-front approval that carve-out requires):
+
+- table `span_reading` → **`verse_lexical`** (`ALTER TABLE ... RENAME TO`, all 593 live Dan-8 rows
+  and their `cfg_column`/`cfg_unique`/`cfg_write_grant` registrations carried over unchanged)
+- work package `verse-span-reading` → **`verse-lexical`**; `ps/VerseSpanReading.ps1` →
+  **`ps/VerseLexical.ps1`**
+- step `span_reading.build` → **`lexical.build`**; step `report.span_reading` → **`report.
+  verse_lexical`** (handlers renamed to match: `handlers/spanreading.py` → `handlers/lexical.py`,
+  `handlers.reports:span_reading_report` → `handlers.reports:lexical_report`)
+- `lib/spanreading.py` → **`lib/lexical.py`**; `cfg_setting report.span_reading_output_pattern` →
+  **`report.verse_lexical_output_pattern`** (`"{book}-{range}-verse-lexical.md"`)
+- `cfg_utility`, `cfg_table`, `cfg_report`/`cfg_report_section`, `cfg_on_fail` rows updated to match.
+  `passagedebatereport.py`'s `BaseExtractMissing` gate (BUILD.md §56) re-pointed from `span_reading`
+  to `verse_lexical`. `migration/bootstrap_span_reading.py` (the original creation migration) and
+  `cfg_column.filled_by`/`cfg_change_detail` audit rows citing it were **deliberately left
+  untouched** — accurate historical provenance, not live naming.
+
+**A real bug, caught by actually running it, not just reading the diff.** The mechanical text
+substitution that produced `lib/lexical.py`/`handlers/lexical.py` correctly turned every
+`span_reading` (the table/concept) into `verse_lexical`, but the write-grant check inside `handlers/
+lexical.py:build` names the *step*, not the table (`_may(ctx, "‹step name›", "verse_lexical")`) —
+the step is `lexical.build` (short domain form, matching the migration's own naming decision), not
+`verse_lexical.build`. First end-to-end run against Dan 8 failed immediately with a write-grant
+`PermissionError` — fixed in the same pass (7 occurrences across `handlers/lexical.py`, `lib/
+lexical.py`, `ps/VerseLexical.ps1`), confirmed by grep (`verse_lexical\.build` — zero source-code
+hits after the fix) before re-running. A second gap (`cfg_work_package.complete_message` still
+reading `"span_reading built and rendered..."`) surfaced the same way — on the run's own completion
+banner, not by inspection — fixed and folded back into the migration script for reproducibility.
+
+**Verified.** `VerseLexical.ps1 -Book Dan -Range 8:1-27 -BookLabel Daniel` run clean end-to-end
+post-fix: `lexical.build` (27 verses, 362 spans, 593 codes, 593 written/593 superseded — identical
+counts to §58's last run, confirming no data changed) → `report.verse_lexical` (wrote
+`dan-8-1-27-verse-lexical.md`) → `COMPLETE — lexical built and rendered for 'Dan'.` Migration
+re-run confirmed idempotent (`already renamed — nothing to do`). `configmaint.validate` re-run
+post-rename: same 6 stale-`filled_by`/1 stale-`GOVERNANCE.md` findings as before the rename (§ see
+`debate-prep-validation-20260805.md`) — unchanged, confirming the rename introduced no new findings;
+those remain open pending the B3/B4 schema work and the researcher's explicit "governance updates
+after the debate changes are complete" deferral.
+
+**Not done.** `GOVERNANCE.md`/`USER-GUIDE.md §12b` still cite the old names — deliberately deferred,
+per the researcher's own instruction, until the debate-process build (B2-B5) is complete.
+
+---
+
+## 60. Reports never overwritten — app-wide `report.version_on_regenerate`, one setting governs every report writer (2026-08-05)
+
+**Trigger.** Researcher direction (`debate-analytic-process-digest-20260805.md`, B2/Q6):
+*"all reports must be versioned, reports should never be overwritten. This should be an app wide
+config."* Generalizes what would otherwise have been a one-off fix to `report.passage_debate`'s own
+naming pattern (the original Q3 ask) into a single mechanism covering every report this app writes.
+
+**What changed.** New `cfg_setting` `report.version_on_regenerate` (module `report`, default
+`true`), added via governed `configmaint.propose` (escalation #462, approved). `lib/reportkit.py:
+write_report` — the ONE function every report writer in the app already calls (`render_scaffold`'s
+sibling) — now branches on it: when true, `next_versioned_path()` computes `{stem}-v{n}-{date}
+{suffix}` (n = 1 + the highest version already on disk for that exact stem, never date-scoped so it
+keeps climbing rather than resetting) and writes there — nothing is ever moved, archived, or
+overwritten. When false, falls back to the pre-existing archive-before-overwrite behaviour
+(`archive_before_write`, researcher's 2026-07-22 instruction) — kept as the opt-out, not removed.
+One setting, zero per-step changes needed — every report writer already funnels through this one
+function.
+
+**A systemic bug this surfaced, fixed in the same pass.** Nineteen call sites across the app
+(`passagedebatereport.py`, `lib/lexical.py`, `handlers/candidate.py` ×2, `validation.py` ×2, and
+thirteen more) called `reportkit.write_report(...)` and then `return`ed their own **pre-write**
+local `path` variable instead of the function's actual return value — harmless under the old
+same-path-always behaviour, but silently wrong the moment the write path could differ from what was
+asked for (exactly what versioning introduces). Fixed uniformly: every call site now captures and
+returns/uses `write_report`'s actual return value. Caught by reasoning about the change's blast
+radius before declaring it done, not found by accident.
+
+**Verified.** `VerseLexical.ps1 -Book Dan -Range 8:1-27` run twice in a row: first run wrote
+`dan-8-1-27-verse-lexical-v1-20260805.md` (the pre-existing unversioned `dan-8-1-27-verse-lexical.md`
+from before this feature untouched alongside it), second run wrote `...-v2-20260805.md` — confirms
+next-version resolution, non-collision, and that nothing gets deleted or moved. All 19 fixed call
+sites compile clean (`py_compile`, zero failures).
+
+**Resolved same day — archiving runs alongside versioning, not instead of it.** The
+`CONFIG-REPORT.md` churn flagged above was reported to the researcher; the answer: *"as long as the
+archiving runs alongside the versioning, as it should, then versioning for config-report is in
+order."* The original cut had versioning **replace** archiving (version → nothing ever moves;
+non-version → archive-then-overwrite) — not what was meant. Fixed: `write_report` now runs both,
+together, when versioning is on. `_archive_prior_versions()` moves whatever versioned file is
+currently live for a stem into `archive_dir` first (keeping its own version-numbered filename
+as-is — no re-stamping, the name is already its own archive identity), **then**
+`next_versioned_path()` resolves the new file's name — now scanning both the live folder AND
+`archive_dir` for the highest existing version, so numbering stays monotonic across the move. Net
+effect, and the thing that actually resolves the churn concern: **the live folder holds exactly one
+current file per report** (easy to find, no clutter — same property the old overwrite behaviour
+had), while **every superseded version is fully preserved in `archive_dir`**, not just the one
+immediately prior (the old `archive_before_write` only ever kept the single last version before an
+overwrite; this keeps the whole lineage). A pre-existing plain-named file (from before this setting
+existed) is still left alone by both operations — it matches neither glob.
+
+**Verified.** Third consecutive `VerseLexical.ps1 -Book Dan -Range 8:1-27` run: live folder now
+holds exactly `dan-8-1-27-verse-lexical-v3-20260805.md` (plus the untouched legacy plain-named
+file); `v1`/`v2` both sit in `archive/`, filenames unchanged from when they were written. Confirms
+the combined behaviour end-to-end, including that `CONFIG-REPORT.md`'s frequent auto-regeneration
+is no longer a live-folder-clutter concern — it will accumulate in `archive/` instead, which is
+exactly what an audit trail is for.
+
+---
+
+## 61. Core operations schema built (B3) — `hib`/`hib_referent_option`/`verse_hib`/`phenomenon`/
+`operation`/`operation_party` + `passage.phenomena_complete_at` (2026-08-05)
+
+**Trigger.** `debate-analytic-process-digest-20260805.md` Step 6 ("create a DB record for each
+operation" — new this session, the debate's result now belongs in the DB, not only an `.md` file
+with a coarse `scaffold`/`filled` pointer) + the researcher's explicit instruction on this build:
+*"what ever you do must conform with the app governance."* Full design record, reviewed before any
+DDL was cut: `iba/app/reports/b3-b5-operations-schema-design-20260805.md`.
+
+**What was built — deliberately the core only.** `iba/app/migration/build_operations_schema.py`
+(direct DDL migration, same carve-out class as `verse_lexical`/`rename_span_reading_to_lexical.py`
+— GOVERNANCE.md §9B/§14; the design doc's review is the up-front approval that carve-out requires):
+six tables, standard version-aware-soft-delete convention throughout (`id` PK, `created_at`,
+`deleted`), FK relationships documented via `cfg_column.fk` metadata only (not declared SQL FK
+constraints — matching `verse_lexical`'s own precedent):
+
+- `hib` / `hib_referent_option` — Step 1 (HIB identification + T4 referent-crux options).
+- `verse_hib` — which HIB is present in which verse; also the input B4's still-open
+  HIB-continuity passage-boundary rule will read from.
+- `phenomenon` — the Step 3 register. `status` = `stated`/`inferred`/`silent`.
+- `operation` / `operation_party` — Step 4-5. **`operation.phenomenon_id` is `NOT NULL`** — the
+  actual DB-level enforcement of `WA-interpretation-questions` Part B.12 ("an operation may only
+  originate from an already-registered phenomenon"), not just a written rule. `operation_party` is
+  a child table (role=source/target, plural-capable per v1.5 step1 note a) rather than flat
+  source/target columns on `operation` itself.
+- `passage.phenomena_complete_at` — the Step 3 phase-gate column (NULL until Phase 1 is confirmed
+  complete for the whole passage). The gate-*enforcing* code (blocking `operation` writes while
+  NULL) is not built yet — no writer exists for any of these tables yet at all (next paragraph).
+
+**Explicitly NOT built, both still open per the design doc, neither decided by the researcher:**
+(1) the Step-7 closing-section tables (`passage_linkage`/`passage_insufficiency`/
+`passage_emergent_question`/`passage_validation_note`) — the design doc's own "easiest tier to
+cut"; (2) any writer. **No `cfg_write_grant` rows exist for these six tables** — deliberately: how
+an AI analytical pass's findings actually get written in (a registered step vs. a lighter
+patch-style ingestion, design doc's closing section) is unresolved. An unwritable table is the
+correct, safe state until that's decided, not an oversight.
+
+**A real bug, caught before it could do any damage.** `cfg_column` has a column literally named
+`notnull` — an unquoted `notnull` in a hand-written INSERT statement is a SQLite syntax error
+(confirmed against `bootstrap_span_reading.py`'s own precedent, which already quotes it). First run
+crashed on exactly this, but *after* all 6 `CREATE TABLE`s and the `passage` `ALTER TABLE` had
+already executed and auto-committed (SQLite's default Python `sqlite3` isolation behaviour for DDL)
+— leaving six real, unregistered tables and no way to detect that state from "does the table exist"
+alone. Fixed twice: the SQL quoting bug itself, and — more importantly — the migration's own
+idempotency logic, which originally inferred "needs `cfg_*` registration" from "did this run just
+create it" (`created`, a per-run list) rather than checking `cfg_table` directly. A naive re-run
+under the original logic would have seen every table already present, added nothing to `created`,
+and silently left all six permanently unregistered — a live violation of
+`governance.rules_must_be_config_driven`, not a cosmetic one. Rewritten so table-creation and
+`cfg_*`-registration are tracked and resumed independently, each checked against its own actual
+state, not against what this particular run happened to do.
+
+**Verified.** Re-run after the fix: `tables created this run: (none)` / `cfg_table/cfg_column/
+cfg_unique registered this run: ['hib', 'hib_referent_option', 'verse_hib', 'phenomenon',
+'operation', 'operation_party']` — confirms the resumed state was exactly the six already-created,
+previously-unregistered tables, correctly caught up. Third run: `(none)` / `(none)` — true no-op,
+idempotent. Column counts confirmed against the design (`hib` 7, `hib_referent_option` 8,
+`verse_hib` 5, `phenomenon` 10, `operation` 9, `operation_party` 9); `cfg_unique` rows confirmed for
+both natural keys. `configmaint.validate` re-run post-build: identical pre-existing findings to
+before this schema was built (the same 6 stale-`filled_by`/1 stale-`GOVERNANCE.md` items, already
+tracked, already deferred) — confirms this schema build introduced no new coherence issues.
+
+**Not done — the two open items above (closing-section tables, writer mechanism), plus everything
+B4 (passage-boundary redefinition around HIB-continuity) still needs before `verse_hib`/`hib` can
+actually be populated by anything.**
+
+---
+
+## 62. B4 — passages redefined around HIB-continuity, and wired into the debate process itself (2026-08-05)
+
+**Trigger.** Researcher direction: *"redefine the rules for the passages, and ensure that the
+passages are created/updated in debate process."* Two parts, both built.
+
+**Part (i) — the rule itself.** `handlers/passage.py:build` (the retired `passage.build`, dormant
+since `passage`/`span_candidate`'s 2026-07-26 retirement) redefined: sources `verse_hib` instead of
+`span_candidate`, forms runs by shared *HIB* rather than shared candidate base-Strong's — same
+adjacency+shared-set-membership algorithm, only the input table and the meaning of "shared"
+changed. Reactivated via 9 governed `configmaint.propose` changes (all approved, all applied —
+`cfg_work_package build-passages`, `cfg_step passage.build` [does-text redefined], `cfg_write_grant`
+×2, `cfg_setting passage.default_rule` [`char-continuity`→`hib-continuity`],
+`passage.min_shared_strongs`→`passage.min_shared_hibs` [renamed], `passage.cross_chapter`,
+`passage.review_over`, `enum.passage_rule` ×2 values). `Build-Passages.ps1`'s `-Rule` ValidateSet
+and docs updated to match.
+
+**Part (ii) — wired into the debate process.** `Chapter-Generate.ps1` now runs `build-passages`'
+`passage.build` FIRST, automatically, as a genuinely separate governed step (its own run_id — NOT
+chained into `chapter-generate`'s own sequence, for the identical reason `PassageDebate-Sync.ps1`
+was kept out of the chain, BUILD.md §53/GOVERNANCE.md §3B: re-invoking a chained work package
+re-runs every ordinal from the top). A `paused`/`report-stop` result here halts the whole script
+before it ever reaches `report.passage_debate` — generating a debate scaffold against stale or
+absent passage boundaries would be worse than not generating one. Book-scoped (passage.build always
+rebuilds the whole book), so this stays correct regardless of which `-Chapters`/`-Range` the
+particular `Chapter-Generate.ps1` call is generating a debate for.
+
+**Verified.** `Build-Passages.ps1 -Book Dan` standalone: clean `report-stop`, `"book 'Dan' has no
+verse_hib data — HIB identification (debate digest Step 1) must happen for this book before
+passages can be built"` — correct, honest behaviour (B3's writer-mechanism question is still open,
+so `verse_hib` is genuinely empty everywhere). `Chapter-Generate.ps1 -Book Dan -Range 8:1-27
+-BookLabel Daniel` end-to-end: stops at the SAME gate, before even reaching `chapter-generate`'s own
+run header — confirmed the existing filled `WA-dan-8-1-27-debate.md` was untouched (the script never
+got far enough to risk it). `configmaint.validate` re-run post-build: same pre-existing findings as
+every prior check this session, nothing new.
+
+**Still blocked on, same as B3's open item:** nothing populates `verse_hib` yet, so passages
+genuinely cannot be built for any book until the HIB-identification writer mechanism (registered
+step vs. patch-style ingestion, BUILD.md §61) is decided. B4's mechanism is correct and tested, not
+yet exercised against real data.
+
+---
+
+## 63. The writer mechanism — `operations-ingest` (`hib.set`/`phenomenon.set`/`operation.set`), closing B3's open question (2026-08-05)
+
+**Trigger.** Researcher: *"proceed with writing mech."* Resolves the design doc's own deliberately-
+unresolved closing question (`b3-b5-operations-schema-design-20260805.md`, "how does an analytical
+pass actually get written into these tables") — picked **shape 1**, a registered write step, over
+shape 2 (a lighter patch-style script): this app's own established convention everywhere else is a
+`cfg_step`-registered handler with grant-checked writes, not a side-script outside that model.
+
+**What was built.** `handlers/operations.py` (new module) — three steps, new standalone (`chained:
+0`) work package `operations-ingest`, `ps/Operations-Ingest.ps1` (mirrors `Config-Maintenance.ps1`'s
+per-step, own-run_id shape):
+
+- **`hib.set`** (scope book) — Step 1's HIB register. JSON payload (`-PayloadPath`, same file-based
+  shape as the main Bible-study programme's own patch mechanism, adapted to this app's dispatcher
+  instead of a side-script) → `hib`/`hib_referent_option`/`verse_hib`. Clean re-derivation per book
+  (soft-delete existing, insert fresh) — same convention `passage.build` already uses for `passage`.
+  Every verse reference resolved and checked BEFORE any row is written — a single bad reference
+  fails the whole call (`unknown-verse`), never a partial write.
+- **`phenomenon.set`** (scope book, needs -Chapters/-Range) — Step 3's register for one
+  already-tracked passage (found via `passagetrack.find_tracked_passage` — does NOT require
+  `passage.build` to have just run; works against any live tracked passage). Clean re-derivation
+  per passage. **Sets `passage.phenomena_complete_at` itself**, comparing the passage's full
+  `verse_hib` pair-set against what was just written — exact match sets the gate, any gap leaves it
+  NULL and reports exactly how many pairs are missing.
+- **`operation.set`** (scope book, needs -Chapters/-Range) — Step 4-5's operations + parties.
+  **Refuses outright (`phenomena-incomplete`) while `passage.phenomena_complete_at` is NULL** — the
+  literal code enforcement of `WA-interpretation-questions` Part B.12 / the digest's Step 3 phase
+  gate, not a convention left to memory. Every `(verse, hib_label, phenomenon_ordinal)` reference
+  resolved against already-registered phenomena before any write.
+
+Registered via 11 governed `configmaint.propose` changes (1 `cfg_work_package`, 3 `cfg_step`, 7
+`cfg_write_grant` — see below for the corrections).
+
+**Two self-caught corrections, both before they could do any damage:**
+1. Proposed a new `config_module` enum value (`operations`) for a `payload_staging_dir` setting,
+   then realised mid-build the setting itself wasn't needed — `-PayloadPath` is a plain
+   operator-supplied parameter, same precedent as `-Table`/`-Out` elsewhere in this app (`table_
+   export`'s own documented boundary: a parameter explained in a script's own help isn't a setting
+   just because the script is dispatcher-registered). Rejected via `Escalation.ps1 -Decision Reject`
+   before it was ever applied — the proposal is real, real escalation, real correction, not silently
+   dropped.
+2. `phenomenon_set`'s write to `passage.phenomena_complete_at` was originally missing its own grant
+   check (`_may(ctx, "phenomenon.set", "passage")`) — caught by re-reading the handler's own write
+   calls against its `_may()` coverage before moving on, not by a failure. Fixed in code, and the
+   corresponding `cfg_write_grant` row (`phenomenon.set` → `passage`) added to the batch.
+
+**Verified end-to-end, including the phase gate specifically — the one thing this whole mechanism
+exists to enforce, not just build.** Synthetic test (clearly labeled `"(MECHANISM TEST)"`, never
+real analytical content) against the ALREADY-tracked live `Dan 8:1-27` passage (`id=37425`) —
+deliberately did NOT invoke `passage.build` for this test, since it rebuilds the WHOLE book's
+passages and would have disturbed that real tracked row:
+1. `hib.set` — 1 HIB, 2 `verse_hib` links written. `ok`.
+2. `operation.set`, BEFORE any phenomenon exists — **correctly refused**,
+   `phenomena-incomplete`, naming the exact passage id.
+3. `phenomenon.set` — 2 phenomena written, exactly matching the 2 `verse_hib` pairs from step 1 —
+   **phase gate SET**.
+4. `operation.set`, again — **now succeeds**: 1 operation, 2 `operation_party` rows.
+5. Every row read back directly via SQL, confirmed to match the payload exactly (labels, kinds,
+   process/action_type/decision, source/target parties).
+
+**Cleaned up after verifying** — this was a mechanism test, not real analysis: all 5 test rows
+soft-deleted (`deleted=1`, same convention as everything else — not hard-deleted, the run stays
+auditable), `passage.phenomena_complete_at` reset to `NULL` on the real passage row. `hib`/
+`verse_hib`/`phenomenon`/`operation`/`operation_party` are back to genuinely empty — no real
+analytical content exists in the DB yet, the DB is left in an honest state. `configmaint.validate`
+re-run after cleanup: identical pre-existing findings only, nothing new from this build.
+
+**What this actually unblocks.** B3's schema and B4's passage-boundary mechanism were both built
+and tested against the ABSENCE of data (clean, honest failures). This closes that loop — real HIB
+identification, phenomena, and operations can now actually be written, once someone (an AI/
+researcher analytical pass) does the real reading work Steps 1/3-5 call for. Not attempted here —
+this session built and proved the mechanism, not the Daniel 8 (or any other) analysis itself.

@@ -63,5 +63,5 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     L = reportkit.render_scaffold(conn, "report.span_analysis", sections, intro=intro)
 
     reportkit.write_csv_pairing(conn, "report.span_analysis", path.parent / "export")
-    reportkit.write_report(conn, "report.span_analysis", path, L)
+    path = reportkit.write_report(conn, "report.span_analysis", path, L)
     return path
