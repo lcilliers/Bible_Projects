@@ -41,7 +41,12 @@ from .versespanmeaningreport import (detect_verse_gaps, fetch_verses, gap_note,
 
 
 class BaseExtractMissing(Exception):
-    """The verse-span-meaning extract this range's debate depends on does not exist yet."""
+    """The span_reading data this range's debate depends on has not been built yet. Was a
+    filesystem check against report.verse_span_meaning's MD output (extract_path.exists()) —
+    swapped 2026-08-05 to a DB check against span_reading, the T1-T3 replacement (report.
+    verse_span_meaning is retired; see t1-t3-design-decisions-20260805.md). T4-T9's own
+    integration with this scaffold is explicitly out of scope here (researcher's own follow-on
+    work, after span_reading has run through) — this change only swaps the existence gate."""
 
 
 class MethodDocMissing(Exception):
@@ -127,17 +132,20 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
 
     output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir",
                                           "iba/app/verse-analysis"))
-    extract_pattern = cfg.setting("report.verse_analysis_output_pattern",
-                                  "{book}-{range}-verse-span-meaning.md")
-    extract_path = output_dir / folder / extract_pattern.format(book=book.lower(), range=range_str)
-    if not extract_path.exists():
-        raise BaseExtractMissing(
-            f"{extract_path} does not exist — run VerseSpanMeaning-Report.ps1 for this exact "
-            f"book/range first (report.verse_span_meaning); the debate scaffold reads verse text "
-            f"from the DB but its own base-data citation and the analyst's workflow both depend "
-            f"on that extract existing first")
 
     verses = fetch_verses(conn, book, lo, hi, verse_lo, verse_hi)
+    built_verse_ids = {r["verse_id"] for r in conn.execute(
+        "SELECT DISTINCT verse_id FROM span_reading WHERE deleted=0 AND verse_id IN "
+        f"({','.join('?' * len(verses))})", [v["id"] for v in verses]).fetchall()} if verses else set()
+    missing = [v["reference"] for v in verses if v["id"] not in built_verse_ids]
+    if missing:
+        raise BaseExtractMissing(
+            f"span_reading has no rows for {len(missing)} of {len(verses)} verse(s) in this range "
+            f"({missing[0]}{' ...' if len(missing) > 1 else ''}) — run VerseSpanReading.ps1 for "
+            f"this exact book/range first (span_reading.build); the debate scaffold reads verse "
+            f"text from the DB directly but the analyst's workflow depends on the resolved T1-T3 "
+            f"reading existing first")
+    extract_label = "span_reading (DB)"
 
     today = datetime.date.today().isoformat()
     pattern = cfg.setting("report.passage_debate_naming_pattern", "WA-{book}-{range}-debate.md")
@@ -147,7 +155,7 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
     intro = [
         f"**Filename:** {filename}",
         f"**Date timestamp:** {today}",
-        f"**Previous outputs referenced:** base data `{extract_path.name}`; "
+        f"**Previous outputs referenced:** base data `{extract_label}`; "
         f"method `{guidance_path.name}`; interrogative `{interrogative_path.name}`.",
         "",
         "**Version:** 1.0 (auto-generated scaffold — no interpretive content yet)",

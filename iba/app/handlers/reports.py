@@ -21,7 +21,8 @@ from .. import validation as validation_mod
 from ..lib import escalation as esc
 from ..lib import retention as retention_mod
 from ..lib import registryreport, schemareport, seedreport, spanreport, strongreport
-from ..lib import passagedebatereport, passagetrack, versespanmeaningreport, wholebookread
+from ..lib import (passagedebatereport, passagetrack, spanreading, versespanmeaningreport,
+                   wholebookread)
 from ..lib.stepapi import StepUnavailable
 from ..tools import export_tables_csv
 
@@ -158,6 +159,35 @@ def verse_span_meaning_report(ctx: Ctx) -> Outcome:
     passage_id = passagetrack.record_extract(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
                                              book_label, out)
     return ok(f"wrote {out}{backfill_note}", path=str(out), passage_id=passage_id)
+
+
+def span_reading_report(ctx: Ctx) -> Outcome:
+    """Book-scoped, needs -Book plus exactly one of -Chapters/-Range, same call shape as
+    `verse_span_meaning_report` (the step this replaces). Pure render off `span_reading` —
+    no STEP dependency, no backfill, no DB write here at all; `span_reading.build` (ordinal 0 of
+    the same `verse-span-reading` work package) is what populates the table this reads. `no-
+    readings` fires when nothing has been built yet for this exact range (`cfg_on_fail` resolves
+    the message, matching every other step's convention)."""
+    book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
+    if ctx.params.get("Range"):
+        ch, vlo, vhi = versespanmeaningreport.parse_range(ctx.params["Range"])
+        lo = hi = ch
+        verse_lo, verse_hi = vlo, vhi
+    else:
+        lo, hi = versespanmeaningreport.parse_chapters(ctx.params["Chapters"])
+        verse_lo = verse_hi = None
+
+    built = ctx.db.conn.execute(
+        "SELECT 1 FROM span_reading sr JOIN verse v ON v.id=sr.verse_id "
+        "WHERE v.osisId LIKE ? AND sr.deleted=0 LIMIT 1", (f"{book}.%",)).fetchone()
+    if not built:
+        return fail("no-readings", f"no span_reading rows exist yet for {book} {lo}-{hi} — "
+                                   f"run span_reading.build first")
+
+    out = spanreading.write_report(ctx.cfg, book, lo, hi, verse_lo, verse_hi,
+                                   book_label=book_label)
+    return ok(f"wrote {out}", path=str(out))
 
 
 def passage_debate_report(ctx: Ctx) -> Outcome:

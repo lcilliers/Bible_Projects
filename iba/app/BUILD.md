@@ -2975,3 +2975,175 @@ WA-amos-1-3-debate-20260802-144518.md`, also still in git history at `dc2073c8`.
 **Not yet done.** The Amos 1:1-3:15 debate itself still needs the actual three-phase analytical
 fill (phenomena register for all 43 present verses, then a separate operations pass, then
 validation) — this section only fixes the mechanized scaffold structure the fill will use.
+
+---
+
+## 56. `span_reading` — `report.verse_span_meaning` replaced with a mechanically-connected T1-T3 engine (2026-08-05)
+
+**Trigger.** A full-session design review (researcher-led, `iba/app/reports/t1-t3-design-
+decisions-20260805.md`) diagnosed why `report.verse_span_meaning` never delivered a usable base
+for the verse-lexical method: it fetched `morph_code` and compound `strong_variant` codes but
+never used them — multi-code spans rendered as disconnected dictionary dumps (e.g. `G1722 G0505`
+"genuine" as two unrelated lookups, one showing `(none)` despite `morph_code` already stating
+they're one grammatical unit), and morph-driven stem/voice selection never happened (a Niphal
+participle got the verb's entire six-stem paradigm dumped, undifferentiated). The researcher
+traced this as the root mechanism behind the project's standing consistency problem: every
+downstream reading pass was forced to silently reconstruct that structural work itself, ad hoc,
+un-persisted, confirmed against the 2026-08-03 v3 test's own Jon 3:9-10 output (real synthesis
+only happened by bypassing the table and re-deriving from raw morph/strong data by hand).
+
+**What was built.**
+
+1. **`span_reading`** — new table, one row PER CODE within a span (not per span), via
+   `migration/bootstrap_span_reading.py` (DDL, same infrastructure-registration carve-out as
+   `bootstrap_cfg_utility.py`/`bootstrap_inactive_column.py` — `configmaint.propose` cannot
+   create tables). Columns: `role` (`content`|`function`), `status` (`content_resolved`|
+   `content_unregistered`|`function` — a genuine coverage gap is now distinguishable from a
+   grammatical formative correctly having no sense), `resolved_sense`, `ambiguity_note`.
+   Version-aware: rewriting a `(span_id, code_ordinal)` soft-deletes the superseded row and
+   inserts fresh, same convention `verse`/`span`/`strong` already use — never an in-place
+   overwrite. `cfg_unique` key: `(span_id, code_ordinal)`.
+2. **Role classification** (`lib/spanreading.py:classify_role`) — Hebrew: STEP reserves
+   `H9000-H9999` for grammatical formatives (article, prefixed prep/conj, pronominal suffixes,
+   directional-he); confirmed against every function-word code encountered this session. A code
+   in that range has no `stepGloss`/no `strong_meaning_parsed` rows BY DESIGN, not a data gap —
+   `status='function'` states that plainly instead of rendering a misleading `(none)`. Every other
+   Hebrew code (including standalone function words like `H0413` "to," which DOES carry real
+   content) is `content`. Greek has no equivalent reserved range — falls back to `morph_code`'s
+   own leading POS tag (`PREP`/`PRT`/`CONJ`/`ART` → function), lower confidence, flagged in code;
+   unrecognised tags default to `content` deliberately (a masked gap is worse than the reverse).
+3. **Stem/voice selection** (`lib/spanreading.py:_bucket_by_stem`/`_select_or_full`) —
+   `strong_meaning_parsed` rows are bucketed by their own `(Qal)`/`(Niphal)`/etc. marker rows,
+   then narrowed to the one bucket `morph_code` selects; falls back to full text (not a guessed
+   single-stem pick) when the stem can't be mapped. The Hebrew binyan-letter map was NOT taken
+   from memory — no morph-code legend exists anywhere in this repo (checked) — it was built by
+   querying every letter actually occurring in `span.morph_code` and cross-checking real verbs'
+   English glosses against their own labeled dictionary text: q=Qal (H7971G "sends"), N=Niphal
+   (H3811 "weary"), p=Piel (H1288 "bless"), P=Pual (H1878 "gorged"), h=Hiphil (H5337 "deliver"),
+   H=Hophal (H2986 "rescued"), t=Hithpael (H6419 "prayed"), c=Tiphel (H8474, rare, 2 occurrences
+   total), u=Hothpael (H1878's own rarest stem, 1 occurrence total). `v` (13 occurrences, all
+   `H7812` the textbook Hishtaphel root) could NOT be confirmed against an independently-labeled
+   text segment — left unmapped, falls back safely rather than assert an unverified letter.
+   Greek voice follows the standard Robinson/Byzantine tagging convention, re-verified less
+   deeply (today's Greek examples were non-verbs).
+4. **`verse-span-reading`** — new chained work package (`ps/VerseSpanReading.ps1`): ordinal 0
+   `span_reading.build` (the engine — reuses `report.auto_backfill_before_render`/
+   `raw.backfill_meaning_for` unchanged), ordinal 1 `report.span_reading` (pure render off
+   `span_reading`, no independent write, EV text and the resolved reading placed together per
+   span as one connected unit, e.g. `H4428G: king... + H9009 [function]` instead of two stacked
+   dictionary entries).
+5. **`report.passage_debate`'s `BaseExtractMissing` gate swapped** — was a bare
+   `extract_path.exists()` filesystem check (confirmed the MD file was never actually read for
+   content, only gated on); now checks `span_reading` has rows for every verse in the exact
+   range. `report.verse_span_meaning` retired (`inactive=1` on `chapter-generate`'s ordinal-0
+   `cfg_step` row) via governed `configmaint.propose` — escalation raised, researcher approved
+   (`RUN-RETIRE-VSM-001`), applied. Per the researcher's explicit scoping: only the gate swapped
+   here; combining T4-T9 with `passage_debate`'s own structure is the researcher's own follow-on
+   work, after `span_reading` has run through more books — not attempted in this pass.
+
+**A live-file mistake, caught and corrected, not silently absorbed.** Testing the gate swap by
+calling `write_scaffold` directly against `Dan 8:1-27` — not checking first whether that range
+already had a real, filled debate — the gate correctly passed (span_reading existed for that
+range from the test build) and overwrote `WA-dan-8-1-27-debate.md` (last genuinely written
+2026-07-27) with a blank scaffold. `reportkit.write_report`'s existing archive-on-regenerate
+caught it (`archive/WA-dan-8-1-27-debate-20260805-113142.md`); the file was also git-tracked, so
+`git checkout` restored it exactly (`git diff` against HEAD confirmed empty). No content lost.
+Root cause was a testing lapse (didn't check the target had no live content before calling a
+write function), not the gate logic itself — the gate's negative path (refuses cleanly with no
+`span_reading` data, tested against `Dan 9`) and positive path (this exact incident) both behaved
+correctly; the mistake was proceeding to write against a target without checking it first.
+
+**Verified.** `span_reading.build`/`report.span_reading` run end-to-end against `Dan 8:1-27`
+(chosen as the hardest range on file — multi-stem verbs, several 4-code compound spans): 27
+verses, 362 spans, 593 codes, 100% resolved (578/578 content-role codes), 0 ambiguous. Re-run
+confirmed version-awareness (593 superseded, 593 fresh, no duplication). Spot-checked against the
+two cases the design session diagnosed by hand: `appeared` (`H7200G`, Niphal participle) now
+resolves to only `to appear, present oneself; to be seen; to be visible` (was the full six-stem
+paradigm); `King` (`H4428G H9009`) and `Susa` (`H7800 H9003 H9040 H9002`, the researcher's own
+flagged example) now render as one connected unit with function codes correctly labeled, not
+disconnected dictionary dumps.
+
+**Not yet done.** Backfill of the other already-completed books (Hosea/Obadiah/Jonah/Joel/Micah/
+Amos) — deliberately not run this session, batched-by-book per the design record. `chapter-
+generate`'s own restructuring (now a 1-step chain) — open, not decided. Whether the pre-existing
+*filled* debates (Hosea/Daniel/Obadiah/Jonah/Joel/Micah) get re-checked against `span_reading`
+once it's built under them — explicitly deferred by the researcher, tracked not forgotten.
+
+---
+
+## 57. `span_reading` regression fixed same day — role was silently suppressing real stepGloss/meaning content for every grammatical-formative code
+
+**Trigger.** Researcher, reviewing the regenerated `dan-8-span-reading.md` against the retired
+`report.verse_span_meaning`'s own prior output: *"I notice that for multi strong concepts, the
+stepgloss of the all but the main strong is dropped. this was in the original verse-span-reading,
+but now missing."*
+
+**Root cause.** §56's `resolve_code` hard-coded `if role == "function": return row` before ever
+querying `strong` — built on an unverified claim (stated in `bootstrap_span_reading.py`'s own
+docstring) that Hebrew `H9xxx` formative codes "carry no stepGloss/no strong_meaning_parsed rows
+by design." Checked directly against the live DB once challenged: **every H9xxx code DOES carry a
+real stepGloss and a real strong_meaning_parsed row** (`H9002`='and', `H9003`='in/on/with',
+`H9009`='[the]', "Prefix hé article...", etc.) — the false generalization came from an earlier,
+correctly-verified finding about ONE Greek code (`G1722`, genuinely `stepGloss=NULL`) applied to
+Hebrew without checking. The old `report.verse_span_meaning` always showed this content; the new
+module was silently dropping it — a real regression, not a rough edge.
+
+**Fixed.** `resolve_code` no longer gates on `role` at all — every code, content or function, goes
+through the identical resolution pipeline (lookup `strong`, pull `strong_meaning_parsed`, stem-
+select). `role` is now purely classification metadata (independent lexical item vs. grammatical
+formative) layered on top of a `status` field that reflects only whether resolution itself
+succeeded (`resolved`/`unregistered`, renamed from the old three-way `content_resolved`/
+`content_unregistered`/`function` conflation). `_render_component` now shows `CODE [role]: sense`
+for every component uniformly. Doc corrections applied in the same unit of work — the false claim
+was written in three places (module comment block, migration docstring, live `cfg_column.use`
+rows for `role`/`status`/`resolved_sense`) and all three were fixed, the last via governed
+`configmaint.propose` (escalations #454-456), not just the code.
+
+**Verified.** Re-ran `span_reading.build`/`report.span_reading` against `Dan 8` (version-aware —
+593 rows superseded, 593 fresh, same range). `King` (`H4428G H9009`) and `Susa` (`H7800 H9003
+H9040 H9002`, the researcher's own original flagged example from §56) now show every component's
+real stepGloss + short gloss text, `[function]`-labeled but not suppressed — matching the old
+routine's coverage while keeping the connected-unit presentation §56 was built for.
+
+**Separately, same session:** a proposed "lexical verse" concatenation line (one short token per
+span, joined into a pseudo-reading below the EV text) was built, found broken on inspection, and
+removed rather than patched — `stepGloss` values carry STEP's own headword punctuation (`"to see:
+see"`, `"to[wards]"`) not designed for concatenation, and deciding which components read as their
+own word vs. fold into a neighbouring phrase is genuine sense-disambiguation (confirmed against
+`H0413`, whose `morph_code` stays flat across all ~15 of its live senses — morph settles
+grammatical form, never semantic sense) — T4/T5 territory, not T1-T3's. Not carried into
+`span_reading` in any form.
+
+---
+
+## 58. `span_reading` stem selection rebuilt on `sense_code`, not text-guessing — the root-level sense was being silently dropped for every verb
+
+**Trigger.** Researcher, comparing `dan-8-span-reading.md` against STEP's own live word-analysis
+panel (screenshot, Dan 8:2 "saw"/H7200G): *"the first two lines of the actual STEP meaning data is
+not included... I suspect it is the key part of the meaning... It looks like you only include the
+meaning from 1a1."*
+
+**Root cause, traced against the raw table, not guessed.** `strong_meaning_parsed` already carries
+a `sense_code` column encoding STEP's own outline (`'1)'` root sense, `'1a)'`/`'1b)'`... stem
+markers nested under it, `'1a1)'`/`'1a2)'`... sub-senses nested under a stem) — §56/§57's
+`_bucket_by_stem` never read it, instead regex-scanning `gloss` *text* for a leading `(StemName)`
+marker. That approach had two real bugs, not one: (a) it dropped the digit-only root row
+(`sense_code='1)'`, text "to see, look at, inspect, perceive, consider" for `H7200G`) every time a
+specific stem was matched — exactly what the researcher's screenshot showed missing, for every
+verb in the report, not just this one; (b) checked against a second word (`H1288` "bless," which
+has a root-level citation marker `(TWOT)` at `sense_code='2)'`), the old text-scan would have
+misread `(TWOT)` as if it were a stem name — never actually triggered in this session's test data,
+but a live latent bug.
+
+**Fixed.** `_select_stem_text` (replaces `_bucket_by_stem`/`_select_or_full`) narrows using
+`sense_code`'s own hierarchy: finds the letter-level row (`'1a)'`/`'1b)'`...) whose text names the
+matched stem, collects every row sharing that `root+letter` prefix, and — the actual fix —
+prepends the digit-only root row sharing the same leading digit. Restricting the stem search to
+letter-level codes structurally rules out the `(TWOT)`-at-root-level bug (citation markers never
+sit at letter level in this data), not by a text blacklist. `resolve_code` now selects
+`sense_code` alongside `gloss` to feed it.
+
+**Verified.** Re-ran `span_reading.build`/`report.span_reading` against `Dan 8` (593 superseded,
+593 fresh). `saw` (`H7200G`, Qal) and `appeared` (`H7200G`, Niphal) both now read "to see, look at,
+inspect, perceive, consider; ..." before their stem-specific text — the root sense the researcher's
+screenshot showed, present for both stems, not just found for one and assumed for the rest.
