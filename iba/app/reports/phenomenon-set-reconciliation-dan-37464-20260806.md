@@ -1,0 +1,210 @@
+# phenomenon.set reconciliation — Dan-37464
+
+> Generated 2026-08-06T14:54:56Z. 0 unchanged, 0 corrected, 51 new, 0 removed.
+
+## New
+
+- ('Dan.8.1', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.1', 'Belshazzar', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.2', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.3', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.3', 'the ram', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.4', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.4', 'the ram', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.5', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.5', 'the goat', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.5', "the goat's great horn", 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.6', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.6', 'the ram', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.6', 'the goat', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.7', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.7', 'the ram', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.7', 'the goat', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.8', 'the goat', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.8', "the goat's great horn", 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.8', 'the four horns', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.9', 'the little horn', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.10', 'the little horn', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.11', 'the little horn', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.11', 'the Prince of the host / Prince of princes', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.12', 'the little horn', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.13', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.13', 'the holy ones', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.14', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.15', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.15', 'Gabriel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.16', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.16', 'Gabriel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.16', "the man's voice (between the banks of the Ulai)", 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.17', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.17', 'Gabriel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.18', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.18', 'Gabriel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.19', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.19', 'Gabriel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.20', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.20', 'the ram', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.21', 'the goat', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.21', "the goat's great horn", 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.22', 'the four horns', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.23', 'the little horn', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.24', 'the little horn', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.24', 'the people who are the saints', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.25', 'the little horn', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.25', 'the Prince of the host / Prince of princes', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.26', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.26', 'Gabriel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.
+- ('Dan.8.27', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine state/disposition of this party's own inner life (not a bare outward/administrative restatement) -- see description; distinguished from the party's outward act, which is recorded separately in Phase 2.
+  - quality check 'not-a-literary-pattern': Anchored to this one verse's own clause/party, not a recurring formula or book-wide thesis; any cross-verse echo noted is logged as an emergent question (B.12), not built into this entry's own content.
+  - quality check 'warrant-is-specific': textual_warrant below names the specific verb/clause/Strong's code grounding the identification, not a restatement of the description.

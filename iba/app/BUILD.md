@@ -3998,3 +3998,123 @@ actually changed) escalation raised for the new count.
 
 **Pending your approval:** unchanged, still 14 (§65+§66) — everything built this round was either
 self-approved under this exchange's own explicit direction, or (§67's cleanout) already resolved.
+
+---
+
+## 71. First real Dan 8 debate run — failed on content, not wiring; escalation backlog cleared; §65/§66's 14 approvals applied; a bug in one of my own applied fixes caught and corrected (2026-08-06)
+
+**Trigger.** Full Steps 1-6 run against real Dan 8:1-27 content (not a mechanism test) — 12 HIBs, 51
+phenomena, 51 operations written for real, `passage.build` correctly superseded the legacy row
+(`37425`→deleted, new `input-scope` row `37464`→live), `build_debate_report.py` rendered
+`debate_status='complete'`. Researcher's review: the WIRING worked exactly as designed end-to-end,
+but the CONTENT was substantially wrong — full account in
+`iba/app/reports/dan8-debate-run-failure-review-20260806.md`. Root causes owned there: I read the two
+retired guidance docs as authority instead of `cfg_method_rule`; I read the retired
+`report.verse_span_meaning` extract instead of the current `report.verse_lexical` one; an earlier
+partial read of the old `WA-dan-8-1-27-debate.md`'s framing paragraph this same session likely primed
+the wrong HIB categorization. Concrete finding: `cfg_method_rule`'s `non-human-scope` rule doesn't
+exclude a symbolic vision-image (ram/goat), a feature of a being (a horn), or the medium of an act
+(a voice) from HIB eligibility — animals were treated as if human, horns/voice were wrongly
+registered as their own HIBs, and "Prince of princes" was wrongly split out from Gabriel instead of
+recorded as his own referent option.
+
+**Confirmed code bugs (not content):** (1) `tools/build_debate_report.py`'s verse ordering —
+`ORDER BY is_anchor DESC` alone, no chapter/verse tiebreak, causing SQLite's unordered-tie behaviour
+to render Dan 8:19 before Dan 8:6; (2) `handlers/passage.py:build` writes `needs_review: 0`
+unconditionally — never actually computed since the old `passage.review_over` threshold was retired
+with the Step 2 rebuild (§67) and nothing replaced it; (3) no visible version/generated-at line
+inside the standalone report's own Markdown (filename-only versioning via `reportkit.oneoff_path`).
+**Confirmed NOT a bug**, checked directly against the handler: `operation_set` cannot write an
+operation without a matching, already-registered `phenomenon` (`operation.phenomenon_id NOT NULL` +
+explicit `_find_phenomenon` lookup) — the "operations seem to use their own rules" concern was a
+content-authoring inconsistency on my part, not a dispatcher bypass of Phase 1.
+
+**Escalation backlog cleared per researcher's explicit decisions**, all via `Escalation.ps1
+-Action AnswerRun`: 19 stale/duplicate/test-artifact escalations closed (`reject`, reason recorded
+as comment) — #452/453/457/458/460/461/463/473/474/475/488/489/490/491/492/517/518/519/520. #524/525
+("not sure if significant") checked and reported back, not closed unilaterally — confirmed as the
+quality-check attestation gate correctly refusing an incomplete mechanism-test payload, not a defect.
+
+**§65's 6 + §66's 8 = 14 pending `configmaint.propose` approvals, answered `approve` and actually
+applied** (answering the escalation alone doesn't apply the change — each was re-submitted with its
+original `run_id`/`Table`/`Op`/`Where`/`Set`, read back from the escalation's own `preset` column):
+`closing.set` (`cfg_step`, now **active** — Step 7 can run) + its 5 `cfg_write_grant` rows; the 6
+`hib_kind` enum values; the `hib.kind` column-expectation update; the `retention.report`
+stuck-non-chained section.
+
+**A bug in my OWN application of an already-approved fix, caught immediately by `configmaint.validate`
+and corrected in the same pass, not shipped.** The original `RUN-HIBKIND-COLEXPECT` proposal (raised
+2026-08-06, approved this round) put the six-type explanatory prose INSIDE `cfg_column.expectation`
+itself — `configmaint.validate` broke immediately after applying it (`hib.kind declares expectation
+enum.'hib_kind -- six types...' but that enum has no members` — it was reading the whole sentence as
+the enum name). Checked against every other enum-linked column in `cfg_column` (10/10): the
+convention is the bare `enum.<name>` form only. Fixed: `expectation` set to `enum.hib_kind`;
+explanatory prose moved to `use` (which was ALSO stale — still describing the old three-value
+named/collective/referential scheme superseded by the six-type scheme). Self-approved as a mechanical
+correction to my own execution error, not a new design decision. `configmaint.validate` re-run clean
+after (back to the one pre-existing baseline finding, #536, only).
+
+**Escalation #445 + CONFIG-REPORT-v34's "stale filled_by (3)" — cleaned out per direct researcher
+authorization** (`iba/app/migration/cleanout_retired_verse_span_meaning_config.py`, new, same
+governed-DDL-carve-out class as `cleanout_retired_passage_config.py` — direct instruction is the
+up-front approval): hard-deleted the dangling `report.verse_span_meaning` references that survived
+its own `inactive=1` retirement and kept failing `configmaint.validate`'s coherence check —
+`cfg_on_fail` ×1, `cfg_report` ×1, `cfg_report_section` ×2, `cfg_write_grant` ×2. Updated
+`passage.book_label`/`verse_span_meaning_path`/`verse_span_meaning_written_at`'s `filled_by` from the
+dead step name to an honest DORMANT marker (confirmed directly against `handlers/passage.py:build`
+that nothing in the current input-scope model writes these 3 columns at all). Idempotent, verified by
+re-run (no-op second pass). `configmaint.validate` clean after.
+
+**Not done — explicitly deferred to the researcher, not decided here:** whether to roll back the
+flawed Dan 8 content now vs. keep it as a diagnostic record; whether/how to correct
+`non-human-scope` in `cfg_method_rule` before any re-attempt. Both raised as direct questions in the
+failure-review file, not resolved unilaterally.
+
+**Addendum, same day — researcher said "re-run debate for dan 8"; the three confirmed/authorized
+items done first, the genuinely open one asked instead of guessed again.**
+
+1. **Verse-ordering bug fixed.** `tools/build_debate_report.py` — the `ORDER BY is_anchor DESC` fetch
+   now tiebreaks on chapter/verse (parsed from `osisId` in Python, same convention
+   `versespanmeaningreport.fetch_verses` already uses — `verse` has no `chapter`/`verse` columns).
+2. **`cfg_method_rule` corrected** (`migration/fix_nonhuman_scope_method_rule.py`, new, same
+   direct-write convention §66 established for this table — not `configmaint.propose`-gated,
+   confirmed live: no write-grant exists for it). `non-human-scope` now explicitly means a genuine,
+   addressable party, not a feature or a medium; new rule `not-a-feature-or-medium` states the horn/
+   voice exclusion directly, citing this exact finding. Deliberately does NOT touch the separate
+   ram/goat question (item 4 below).
+3. **Flawed Dan 8 content rolled back.** All 12 `hib` / 5 `hib_referent_option` / 51 `verse_hib` /
+   51 `phenomenon` / 51 `operation` / 102 `operation_party` rows soft-deleted; `passage.id=37464`
+   soft-deleted; legacy `passage.id=37425` restored to `deleted=0` (its `debate_status='filled'`,
+   old hand-filled markdown, is live again). Direct SQL, not the `hib.set` reconciliation `remove`
+   path — everything was being redone, not selectively corrected. `configmaint.validate` clean after.
+4. **The open question, answered directly by the researcher, not guessed:** *"a non human by
+   definition cannot be a HIB — HIB is human inner being. the ram/goat angels, voice (physical body)
+   could be a source or target or related object in the operation, but not a HIB. also a HIB can be
+   a part of the operation of another HIB (the King acting against daniel)."* This is more
+   fundamental than item 2's fix and supersedes it outright — `migration/
+   fix_hib_is_human_only_method_rule.py` (new): `non-human-scope` rewritten from "in scope when
+   related to a human" to **never a HIB, full stop** — a non-human being (animal-in-vision, angel,
+   voice) is only ever an `operation_party.kind='non_human'` inside a human HIB's own operation.
+   Where the vision depicts a human king/kingdom symbolically and the text resolves it (Dan 8:20-23),
+   the HIB is the resolved HUMAN referent from its first appearance, not the animal image. The
+   `not-a-feature-or-medium` rule from item 2 is now subsumed by this (deactivated, not deleted —
+   record kept). New `operation.set` rule `hib-can-be-party-in-another-hibs-operation`: one HIB
+   acting on another uses `operation_party.kind='human'` — no schema change, that value already
+   existed. Corrected Dan 8 HIB list this establishes: Daniel, Belshazzar, the kings of Media and
+   Persia (ram's resolved referent), the king of Greece (goat's), the first king (great horn's), the
+   four kingdoms (four horns'), the bold-faced/latter-day king (little horn's), the people who are
+   the saints — 8 human HIBs, down from the first attempt's 12 (Gabriel, the holy ones, the man's
+   voice, and the separately-registered Prince of the host/princes all drop out entirely, folded into
+   Daniel's or the kings'/king's own operations as non-human parties).
+
+**Rebuilt same session, corrected.** Full Steps 1-6 re-run for real against the corrected model:
+`hib.set` — 8 HIBs, 41 `verse_hib` pairs (down from 51). `passage.build` — new passage `id=37465`,
+correctly superseded the restored legacy row again. `phenomenon.set` — 41 phenomena, phase gate SET.
+`operation.set` — 41 operations, 85 parties (`operation_party.kind='human'` used where one HIB acts
+on another — e.g. the king of Greece against the kings of Media and Persia, the bold-faced king
+against the people who are the saints — per the new `hib-can-be-party-in-another-hibs-operation`
+rule; `kind='non_human'` for Gabriel/the holy ones/the voice/the Prince of the host-princes
+throughout, never their own row). `build_debate_report.py` — `dan-8-debate-report-20260806-v2.md`,
+`debate_status='complete'`, **verse order confirmed correct** (Dan.8.1→27 in sequence — the item 1
+fix verified against real output, not just read). `configmaint.validate` clean throughout every
+step. Not yet re-reviewed by the researcher — this is a corrected first pass, not a closed loop.

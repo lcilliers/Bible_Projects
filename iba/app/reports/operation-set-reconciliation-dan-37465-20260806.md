@@ -1,0 +1,129 @@
+# operation.set reconciliation — Dan-37465
+
+> Generated 2026-08-06T16:20:47Z. 0 unchanged, 0 corrected, 41 new, 0 removed.
+
+## New
+
+- ('Dan.8.1', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.1', 'Belshazzar', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.2', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.3', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.3', 'the kings of Media and Persia', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.4', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.4', 'the kings of Media and Persia', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.5', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.5', 'the king of Greece', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.5', 'the first king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.6', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.6', 'the kings of Media and Persia', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.6', 'the king of Greece', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.7', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.7', 'the kings of Media and Persia', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.7', 'the king of Greece', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.8', 'the king of Greece', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.8', 'the first king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.8', 'the four kingdoms', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.9', 'the bold-faced king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.10', 'the bold-faced king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.11', 'the bold-faced king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.12', 'the bold-faced king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.13', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.14', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.15', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.16', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.17', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.18', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.19', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.20', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.20', 'the kings of Media and Persia', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.21', 'the king of Greece', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.21', 'the first king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.22', 'the four kingdoms', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.23', 'the bold-faced king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.24', 'the bold-faced king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.24', 'the people who are the saints', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.25', 'the bold-faced king', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.26', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.
+- ('Dan.8.27', 'Daniel', 0)
+  - quality check 'phenomenon-actually-underlies-it': Writing this operation confirmed the Step 3 phenomenon genuinely underlies it -- no mismatch surfaced requiring the phenomenon entry to be revisited.
+  - quality check 'source-target-not-invented': Source/target parties are the parties the verse itself names or makes identifiable -- kind='human' used ONLY when the party is itself a registered HIB (per hib-can-be-party-in-another-hibs-operation); kind='non_human' for angels/voice/animal-imagery-as-vehicle; none invented.

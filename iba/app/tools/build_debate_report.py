@@ -81,9 +81,19 @@ def build(conn: sqlite3.Connection, book: str, lo: int, hi: int, vlo=None, vhi=N
         raise ValueError(problem)
     pid = passage["id"]
 
-    verse_ids = [r["verse_id"] for r in _rows(
-        conn, "SELECT verse_id FROM verse_passage WHERE passage_id=? AND deleted=0 ORDER BY "
-              "is_anchor DESC", (pid,))]
+    # 2026-08-06 fix (researcher, first real Dan 8 run): ORDER BY is_anchor DESC alone has no
+    # tiebreaker for the non-anchor rows -- SQLite does not guarantee tie order without one, which
+    # is why Dan 8:19 rendered before Dan 8:6. `verse` has no chapter/verse columns (osisId-only,
+    # same as every other reader in this app -- versespanmeaningreport.fetch_verses parses it the
+    # same way), so the tiebreak is done in Python after fetch, anchor still pinned first.
+    vp_rows = _rows(
+        conn, "SELECT vp.verse_id, vp.is_anchor, v.osisId FROM verse_passage vp "
+              "JOIN verse v ON v.id = vp.verse_id WHERE vp.passage_id=? AND vp.deleted=0", (pid,))
+    def _ch_vs(osis_id: str) -> tuple[int, int]:
+        parts = osis_id.split(".")
+        return (int(parts[-2]), int(parts[-1]))
+    vp_rows.sort(key=lambda r: (0 if r["is_anchor"] else 1, *_ch_vs(r["osisId"])))
+    verse_ids = [r["verse_id"] for r in vp_rows]
     verses = {r["id"]: r for r in _rows(
         conn, f"SELECT id, osisId, text FROM verse WHERE id IN "
               f"({','.join('?' * len(verse_ids))}) AND deleted=0", tuple(verse_ids))} if verse_ids else {}
