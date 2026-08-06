@@ -1,26 +1,47 @@
-"""Passage handler — build a book's passages from HIB continuity. Config-governed.
+"""Passage handler — register the debate's own input scope as the passage. Config-governed.
 
-**Redefined 2026-08-05 (B4, `debate-analytic-process-digest-20260805.md` Step 2).** A passage's
-boundary is now the same HIB(s) continuing to be what the text is tracking — NOT a thematic unit,
-and NOT the prior characteristic/candidate-stamp definition this handler used before the study's
-"characteristics → HIB" reframing. Boundaries come from `verse_hib` (debate digest Step 1's
-per-verse HIB presence): a maximal run of consecutive same-chapter HIB-bearing verses, broken when
-consecutive verses stop sharing a live HIB (hib-continuity) unless -Rule maximal. A run longer than
-passage.review_over is flagged needs_review (a long run may be several passages under different HIB
-focuses — the same over-batching concern the debate digest's failure-mode (b) names directly).
+**Redefined 2026-08-06 (researcher direction, following the HIB-distribution visualization across
+Dan 8 / Jonah 1 / Hos 1 / Mic 1).** Passaging is about the capacity to digest a scope, not about
+finding a narrative structure within it — across all four sampled chapters, no natural sub-chapter
+break existed: every HIB's phenomena related to another HIB's, on equal footing with a single HIB's
+own movement across verses. The HIB-continuity run-forming algorithm (2026-08-05, B4) is RETIRED
+in this pass, not just its parameters tuned — it was still trying to derive a narratively-meaningful
+boundary from HIB co-presence, and the visualization showed that doesn't correspond to anything
+real at the scale this study reads at (a single chapter, occasionally a short run of them).
 
-**Retired shape, superseded not deleted.** Previously sourced from `span_candidate`
-(char-continuity: shared candidate base-Strong's) — that whole candidate system is itself retired
-(BUILD.md, `retract_candidate_system.py`); this handler's old body is preserved in git history, not
-copied forward, since the algorithm's SHAPE (adjacency + shared-set-membership run-forming) is
-identical, only the source table and the meaning of "shared" changed.
+**New rule.** A passage IS the debate's own input scope (`-Chapters`/`-Range`) — registered
+verbatim, never algorithmically sub-divided. This step's real job: read the whole scope in light of
+the HIBs already identified (`verse_hib`, Step 1), synthesise a high-level story (`story_summary`),
+and self-assess whether the scope can actually be read as a whole without quality loss
+(`feasible`/`feasibility_note`). Refuses outright (`scope-too-complex`) if not — no passage row is
+written, and the failure message tells the operator to narrow the scope and resubmit, rather than
+silently sub-dividing it. Like `hib.set`/`phenomenon.set`/`operation.set`, this judgement is the
+analyst's own, already made before calling this step — the payload carries the decision, this
+handler validates, grant-checks, and commits it.
+
+**Reconciliation, single-item shape.** Because a passage is now exactly one row per exact scope,
+there is nothing to derive or rebuild. If a live passage already exists for this precise scope, its
+`story_summary`/`feasibility_note` are compared to the incoming payload: identical is a no-op,
+different requires a `reconciliation_note` (else `unreconciled`), and the row is updated IN PLACE —
+same `id`, `verse_passage` rows untouched (verse coverage can't change for an identical scope), so a
+story correction can never orphan a `phenomenon`/`operation` the way a boundary change could under
+the old algorithm.
+
+**Legacy transition, unchanged in spirit.** A live legacy (`rule IS NULL`, pre-B4) row matching the
+EXACT same scope is soft-deleted on the one-time transition — "we are not reconciling the old with
+the new." A legacy row for a different scope is simply left alone.
+
+**Retired in this same pass** (BUILD.md): the whole run-forming loop; `passage.min_shared_hibs`,
+`passage.cross_chapter`, `passage.default_rule` (no algorithm left to configure); `passage.
+review_over`'s auto-flagging (the feasibility self-assessment now does this job, as a real reading
+judgement rather than a verse-count threshold) — all deactivated via `configmaint.propose`.
 """
 
 from __future__ import annotations
 
 import datetime
+import json
 import pathlib
-import re
 
 from .base import Ctx, Outcome, ok, fail, escalate
 from ..lib import escalation as esc, reportkit, passagetrack, versespanmeaningreport
@@ -30,99 +51,166 @@ def _now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
-def _cv(osis: str) -> tuple[int, int]:
-    """(chapter, verse) from an osisId like 'Prov.3.5'."""
-    p = (osis or "").split(".")
-    def i(x):
-        m = re.match(r"\d+", x or "")
-        return int(m.group()) if m else 0
-    return (i(p[1]) if len(p) > 1 else 0, i(p[2]) if len(p) > 2 else 0)
-
-
 def _may(ctx: Ctx, writer: str, table: str):
     if table not in ctx.cfg.may_write(writer):
         raise PermissionError(f"write-grant violation: {writer!r} may not write {table!r}")
 
 
+def _resolve_range(ctx: Ctx):
+    """Same one-of-Chapters/-Range shape every other book-scoped step uses."""
+    if ctx.params.get("Range"):
+        ch, vlo, vhi = versespanmeaningreport.parse_range(ctx.params["Range"])
+        return ch, ch, vlo, vhi
+    lo, hi = versespanmeaningreport.parse_chapters(ctx.params["Chapters"])
+    return lo, hi, None, None
+
+
+class BadPayload(Exception):
+    """PayloadPath missing/unreadable, not valid JSON, or missing a required key — always caught
+    and turned into a clean fail(), never left to crash the run with a raw traceback."""
+
+
+def _load_payload(ctx: Ctx) -> dict:
+    raw = ctx.params.get("PayloadPath")
+    if not raw:
+        raise BadPayload("-PayloadPath not given")
+    path = pathlib.Path(raw)
+    if not path.exists():
+        raise BadPayload(f"PayloadPath {path} does not exist")
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
+    except json.JSONDecodeError as e:
+        raise BadPayload(f"PayloadPath {path} is not valid JSON: {e}")
+
+
+# payload: {"book": "Dan", "story_summary": "...", "feasible": true, "feasibility_note": "...",
+#           "reconciliation_note": "..."  -- required only when correcting an already-live passage
+#                                             for this exact scope with different content}
 def build(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
-    rule = ctx.params.get("Rule") or ctx.cfg.setting("passage.default_rule", "hib-continuity")
-    min_shared = int(ctx.cfg.setting("passage.min_shared_hibs", 1))
-    review_over = int(ctx.cfg.setting("passage.review_over", 10))  # matches DB value (was 5)
-    cross_chapter = bool(ctx.cfg.setting("passage.cross_chapter", False))
-    like = f"{book}.%"
+    lo, hi, vlo, vhi = _resolve_range(ctx)
 
-    # HIBs present per verse (debate digest Step 1's per-verse sweep; verse_hib is the input)
-    hibs_by_verse: dict[int, set] = {}
-    for r in ctx.db.rows(
-        "SELECT vh.verse_id AS vid, vh.hib_id AS hid FROM verse_hib vh "
-        "JOIN verse v ON v.id = vh.verse_id "
-        "WHERE v.osisId LIKE ? AND vh.deleted=0 AND v.deleted=0", (like,)):
-        hibs_by_verse.setdefault(r["vid"], set()).add(r["hid"])
-    if not hibs_by_verse:
-        return fail("no-hibs", f"book {book!r} has no verse_hib data — HIB identification "
-                               f"(debate digest Step 1) must happen for this book before passages "
-                               f"can be built")
+    try:
+        payload = _load_payload(ctx)
+    except BadPayload as e:
+        return fail("bad-payload", str(e))
 
-    vinfo = {r["id"]: r["osisId"] for r in ctx.db.rows(
-        "SELECT id, osisId FROM verse WHERE osisId LIKE ? AND deleted=0", (like,))}
-    verses = sorted(hibs_by_verse.keys(), key=lambda vid: _cv(vinfo[vid]))
+    missing = [k for k in ("story_summary", "feasible", "feasibility_note") if k not in payload]
+    if missing:
+        return fail("bad-payload", f"payload missing required key(s): {missing}")
+    story_summary = payload["story_summary"]
+    feasible = bool(payload["feasible"])
+    feasibility_note = payload["feasibility_note"]
+    if not feasibility_note:
+        return fail("bad-payload", "feasibility_note is required either way (why the scope was "
+                                   "judged feasible, or why it wasn't)")
 
-    # form runs: consecutive same-chapter HIB-bearing verses, broken by hib-continuity
-    runs: list[list[int]] = []
-    cur: list[int] = []
-    for vid in verses:
-        if not cur:
-            cur = [vid]
-            continue
-        ch, vs = _cv(vinfo[vid])
-        pch, pvs = _cv(vinfo[cur[-1]])
-        # same chapter, adjacent verse — unless passage.cross_chapter allows crossing.
-        # NOTE: crossing a real chapter boundary (last verse of ch N -> verse 1 of ch N+1) still
-        # can't be recognised here even with cross_chapter=True, because "adjacent" is computed
-        # purely from verse numbers (vs == pvs + 1) and verse numbers reset to 1 each chapter —
-        # this app has no per-chapter verse-count reference to detect a true boundary crossing.
-        # Wired in 2026-07-22 (was previously read nowhere, per configmaint's orphan-config
-        # finding) so the setting is no longer dead, not because true crossing is implemented.
-        consecutive = (cross_chapter or ch == pch) and vs == pvs + 1
-        shares = len(hibs_by_verse[vid] & hibs_by_verse[cur[-1]]) >= min_shared
-        if consecutive and (rule == "maximal" or shares):
-            cur.append(vid)
-        else:
-            runs.append(cur)
-            cur = [vid]
-    if cur:
-        runs.append(cur)
+    if not feasible:
+        return fail("scope-too-complex",
+                    f"{book} {lo}-{hi}: judged NOT readable as a whole without quality loss -- "
+                    f"narrow -Chapters/-Range and resubmit. Reason: {feasibility_note}")
+
+    verses = versespanmeaningreport.fetch_verses(ctx.db.conn, book, lo, hi, vlo, vhi)
+    if not verses:
+        return fail("no-verses", f"{book} {lo}-{hi}: no live verses found for this scope")
+    verses.sort(key=lambda v: (v["chapter"], v["verse"]))
+    verse_ids = [v["id"] for v in verses]
+
+    ph = ",".join("?" * len(verse_ids))
+    hib_count = ctx.db.rows(
+        f"SELECT COUNT(DISTINCT hib_id) n FROM verse_hib WHERE deleted=0 AND verse_id IN ({ph})",
+        tuple(verse_ids))[0]["n"]
+    if hib_count == 0:
+        return fail("no-hibs", f"{book} {lo}-{hi}: no verse_hib data for this scope -- run "
+                               f"hib.set (debate digest Step 1) for these verses first")
 
     _may(ctx, "passage.build", "passage")
-    # clean re-derivation: drop the book's passages + membership, then rebuild
-    ctx.db.conn.execute(
-        "DELETE FROM verse_passage WHERE passage_id IN (SELECT id FROM passage WHERE book=?)", (book,))
-    ctx.db.conn.execute("DELETE FROM passage WHERE book=?", (book,))
+    _may(ctx, "passage.build", "verse_passage")
 
+    a_ch, a_vs = verses[0]["chapter"], verses[0]["verse"]
+    e_ch, e_vs = verses[-1]["chapter"], verses[-1]["verse"]
+    if a_ch == e_ch:
+        ref = f"{book} {a_ch}:{a_vs}" if len(verses) == 1 else f"{book} {a_ch}:{a_vs}-{e_vs}"
+    else:
+        ref = f"{book} {a_ch}:{a_vs}-{e_ch}:{e_vs}"
+
+    existing = passagetrack.find_tracked_passage(ctx.db.conn, book, lo, hi, vlo, vhi)
     now = _now()
-    flagged = 0
-    for run in runs:
-        a_ch, a_vs = _cv(vinfo[run[0]])
-        e_ch, e_vs = _cv(vinfo[run[-1]])
-        vc = len(run)
-        needs = 1 if vc > review_over else 0
-        flagged += needs
-        ref = f"{book} {a_ch}:{a_vs}" if vc == 1 else f"{book} {a_ch}:{a_vs}-{e_vs}"
-        pid = ctx.db.write("passage", {
-            "book": book, "anchor_verse_id": run[0],
-            "start_chapter": a_ch, "start_verse": a_vs, "end_chapter": e_ch, "end_verse": e_vs,
-            "ref": ref, "verse_count": vc, "rule": rule, "source": "passage-build",
-            "needs_review": needs, "created_at": now, "deleted": 0})
-        for i, vid in enumerate(run):
-            ctx.db.write("verse_passage", {
-                "passage_id": pid, "verse_id": vid, "is_anchor": 1 if i == 0 else 0,
-                "created_at": now, "deleted": 0})
 
-    msg = f"{len(runs)} passage(s) over {len(verses)} HIB-bearing verse(s) in {book} ({rule})"
-    if flagged:
-        msg += f"; {flagged} need review (>{review_over} verses)"
-    return ok(msg, passages=len(runs), hib_verses=len(verses), needs_review=flagged)
+    # A verse belongs to at most one live passage (verse_passage.verse_id is DB-unique) -- found
+    # live, 2026-08-06: a scope that only PARTIALLY overlaps a wider existing passage (rather than
+    # matching it exactly) was neither caught by the exact-match check above nor by anything else,
+    # and crashed the write outright on the UNIQUE constraint, mid-transaction (the crash itself
+    # then exposed a second bug, in run.py's own crash handler -- see that file). Checked
+    # explicitly here, before any write is attempted: every OTHER live passage (not `existing`
+    # itself, which the exact-match branch above already handles) that owns any verse in this
+    # scope. Legacy (`rule IS NULL`) overlaps are superseded wholesale, same "not reconciling old
+    # with new" rule as an exact-match legacy row -- the WHOLE legacy passage is retired, not just
+    # the overlapping verses, since partial-splitting historical data isn't worth the complexity.
+    # A new-model (`rule IS NOT NULL`) overlap with a genuinely DIFFERENT scope is a real conflict
+    # between two operator-chosen scopes and is refused outright, not auto-resolved.
+    ph2 = ",".join("?" * len(verse_ids))
+    overlaps = ctx.db.rows(
+        f"SELECT DISTINCT p.id, p.ref, p.rule FROM passage p JOIN verse_passage vp "
+        f"ON vp.passage_id = p.id WHERE p.deleted=0 AND vp.deleted=0 AND vp.verse_id IN ({ph2}) "
+        f"AND p.id != ?", tuple(verse_ids) + (existing["id"] if existing else -1,))
+    new_model_overlaps = [r for r in overlaps if r["rule"] is not None]
+    if new_model_overlaps:
+        refs = ", ".join(sorted(r["ref"] for r in new_model_overlaps))
+        return fail("scope-overlaps-existing",
+                    f"{ref}: overlaps {len(new_model_overlaps)} already-registered passage(s) "
+                    f"with a different scope: {refs} -- pick a non-overlapping scope, or address "
+                    f"the existing one(s) first")
+    legacy_overlaps = [r for r in overlaps if r["rule"] is None]
+    for r in legacy_overlaps:
+        ctx.db.conn.execute(
+            "UPDATE verse_passage SET deleted=1 WHERE deleted=0 AND passage_id=?", (r["id"],))
+        ctx.db.conn.execute("UPDATE passage SET deleted=1 WHERE id=?", (r["id"],))
+
+    if existing and existing["rule"] is None:
+        # legacy (pre-B4) row, exact-scope match -- one-time transition, unconditional, not
+        # reconciled, matching every other legacy-row transition in this pipeline.
+        ctx.db.conn.execute(
+            "UPDATE verse_passage SET deleted=1 WHERE deleted=0 AND passage_id=?",
+            (existing["id"],))
+        ctx.db.conn.execute("UPDATE passage SET deleted=1 WHERE id=?", (existing["id"],))
+        existing = None
+
+    if existing:
+        current = (existing["story_summary"], existing["feasibility_note"])
+        incoming = (story_summary, feasibility_note)
+        if current == incoming:
+            return ok(f"{ref}: unchanged (already registered, same story/feasibility)",
+                     passage_id=existing["id"], changed=False)
+        if not payload.get("reconciliation_note"):
+            return fail("unreconciled",
+                       f"{ref}: a live passage already exists for this exact scope with "
+                       f"different story_summary/feasibility_note -- a reconciliation_note is "
+                       f"required to change it")
+        ctx.db.conn.execute(
+            "UPDATE passage SET story_summary=?, feasibility_note=? WHERE id=?",
+            (story_summary, feasibility_note, existing["id"]))
+        ctx.db.conn.commit()
+        return ok(f"{ref}: story/feasibility corrected in place (passage_id={existing['id']} "
+                  f"unchanged, verse coverage unchanged, nothing orphaned) — "
+                  f"{payload['reconciliation_note']}",
+                 passage_id=existing["id"], changed=True)
+
+    pid = ctx.db.write("passage", {
+        "book": book, "anchor_verse_id": verse_ids[0],
+        "start_chapter": a_ch, "start_verse": a_vs, "end_chapter": e_ch, "end_verse": e_vs,
+        "ref": ref, "verse_count": len(verses), "rule": "input-scope", "source": "passage-build",
+        "needs_review": 0, "story_summary": story_summary, "feasibility_note": feasibility_note,
+        "created_at": now, "deleted": 0})
+    for i, vid in enumerate(verse_ids):
+        ctx.db.write("verse_passage", {
+            "passage_id": pid, "verse_id": vid, "is_anchor": 1 if i == 0 else 0,
+            "created_at": now, "deleted": 0})
+
+    ctx.db.conn.commit()
+    return ok(f"{ref}: passage registered ({len(verses)} verse(s), {hib_count} distinct HIB(s) "
+              f"in scope) — passage_id={pid}",
+             passage_id=pid, verse_count=len(verses), hibs_in_scope=hib_count)
 
 
 # ── validate (standalone, on-demand) ──────────────────────────────────────────

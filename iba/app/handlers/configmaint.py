@@ -289,11 +289,24 @@ def validate(ctx: Ctx) -> Outcome:
                        **preset)
         return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
 
+    question = (f"cfg_* is structurally coherent, but has findings needing your judgement: "
+               f"{summary}. Full detail (every item, by category) written to {report_path} — "
+               f"see the \"findings\" section.")
+
+    # 2026-08-06: don't raise a fresh escalation for a finding that's already sitting open,
+    # unanswered, from an earlier run -- see lib/escalation.py:open_duplicate for why this is
+    # scoped to advisory self-checks like this one specifically (not a generic run.py fix), and
+    # why it matches on `summary` (stable) rather than `question` (embeds a versioned report_path
+    # that changes every call -- the bug in this fix's own first attempt, caught by re-running it).
+    dup = esc.open_duplicate(ctx.db, ctx.step_id, summary)
+    if dup:
+        return ok(f"identical to already-open escalation #{dup['id']} (raised {dup['raised_at']}) "
+                  f"— not re-raised; answer #{dup['id']} to resolve this finding. Full detail in "
+                  f"{report_path}", **preset, existing_escalation_id=dup["id"])
+
     return escalate(
         "needs-review",
-        question=(f"cfg_* is structurally coherent, but has findings needing your judgement: "
-                 f"{summary}. Full detail (every item, by category) written to {report_path} — "
-                 f"see the \"findings\" section."),
+        question=question,
         preset={**preset, "report_path": str(report_path)},
         tried="coherence checks passed; these are advisory findings, not errors — approve to "
               "acknowledge as known/acceptable, reject to flag for action, or revise with a "

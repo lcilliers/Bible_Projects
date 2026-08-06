@@ -5,14 +5,16 @@
     instruction). PowerShell orchestrates; Python works; CONFIG (in the DB) governs.
 
 .DESCRIPTION
-    First ensures the book's passages are current (`build-passages`' `passage.build`, redefined
-    2026-08-05 around HIB-continuity — B4, debate-analytic-process-digest-20260805.md Step 2) — a
-    genuinely SEPARATE governed step, its own run_id, run and checked BEFORE chapter-generate's own
-    sequence, not chained into it (re-invoking a chained work package re-runs every ordinal in its
-    sequence from the top, which is exactly the failure mode this script's own scaffold-overwrite
-    guard below exists to avoid — the same risk would apply to passage.build if it shared a run_id).
-    A `no-hibs`/paused result here stops the whole script — generating a debate scaffold against
-    stale or absent passage boundaries is worse than not generating one at all.
+    First CHECKS the book's passage is already registered for this exact scope (`build-passages`'
+    `passage.build`, redefined 2026-08-06 — a passage is now the debate's own input scope, read and
+    judged feasible by a real analytical pass, not derived by an algorithm). Redefined 2026-08-05
+    (B4) around HIB-continuity, then redefined again 2026-08-06 after a visualization across four
+    sample chapters showed HIB-continuity didn't correspond to a real narrative break in any of
+    them — passaging turned out to be about reading capacity, not story structure. Because
+    registering a passage now requires a genuine reading judgement (a story synthesis + a
+    feasibility self-assessment), this script no longer auto-invokes it — it only checks one is
+    already live for the scope, and stops with a clear message (run `Build-Passages.ps1` yourself
+    first) if not.
 
     Then chains report.verse_span_meaning (base extract) then report.passage_debate (debate
     SCAFFOLD) under one run_id, for one book/chapter-range — the two purely mechanical prep steps a
@@ -75,25 +77,28 @@ if ([bool]$Chapters -eq [bool]$Range) {
 }
 
 Test-IbaWorkPackageActive -WorkPackage 'chapter-generate'
-Test-IbaWorkPackageActive -WorkPackage 'build-passages'
 
-# B4 — ensure passages are current BEFORE anything else runs (own run_id, NOT chained into the
-# sequence below — see .DESCRIPTION). Book-scoped, not range-scoped: passage.build always
-# recomputes the WHOLE book's passages (a clean drop+rebuild), so this stays correct regardless of
-# which -Chapters/-Range this particular invocation is generating a debate for.
-$passageRunId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-BUILD-PASSAGES"
-Write-IbaRunHeader -WorkPackage 'build-passages' -RunId $passageRunId -RunsOver "book = '$Book'"
-$json = python -m iba.app.run build-passages --step passage.build --run-id $passageRunId --param "Book=$Book"
-$code = $LASTEXITCODE
-$res  = $json | ConvertFrom-Json
-Write-IbaStepResult -Step 'passage.build' -Path $res.path -Message $res.message -Code $code
-if ($code -eq 2) {
-    Write-IbaPaused -WorkPackage 'build-passages' -RunId $passageRunId -Message $res.message
-    exit 2
-}
-if ($code -eq 3) {
-    Write-IbaStopped -Message $res.message
-    exit 3
+# Redefined 2026-08-06: passage.build now requires a real analytical payload (a story synthesis +
+# a feasibility judgement) -- it is a writer like hib.set/phenomenon.set/operation.set, not a
+# mechanical rebuild-on-demand utility, so it can no longer be silently auto-invoked here the way
+# B4's algorithm was. This script now only CHECKS a passage is already registered for the exact
+# scope being generated -- run Build-Passages.ps1 yourself first if not.
+$tracked = python -c "
+from iba.app.lib.cfg import Cfg
+from iba.app.lib import passagetrack, versespanmeaningreport as vsm
+cfg = Cfg()
+if '$Range':
+    ch, vlo, vhi = vsm.parse_range('$Range'); lo = hi = ch
+else:
+    lo, hi = vsm.parse_chapters('$Chapters'); vlo = vhi = None
+row = passagetrack.find_tracked_passage(cfg.conn, '$Book', lo, hi, vlo, vhi)
+print('1' if row else '0')
+cfg.close()
+"
+if ($tracked -ne '1') {
+    Write-Host "No passage registered yet for this exact scope." -ForegroundColor Yellow
+    Write-Host "Run Build-Passages.ps1 -Book $Book $(if ($Range) {"-Range $Range"} else {"-Chapters $Chapters"}) -PayloadPath <json> first." -ForegroundColor Yellow
+    exit 1
 }
 Write-Host ""
 

@@ -128,6 +128,22 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         outcome: Outcome = handler(ctx)
     except Exception as exc:
         import traceback
+        # 2026-08-06: a real bug, found live (passage.build crashed mid-write on a verse_passage
+        # UNIQUE-constraint collision, ROOT-CAUSED and fixed in handlers/passage.py separately —
+        # but investigating IT surfaced this second, independent, cross-cutting bug: db.close()
+        # below unconditionally commits, so whatever the crashed handler partially wrote BEFORE
+        # raising was landing in the live DB as committed, inconsistent state (a `passage` row
+        # with a `verse_count` that didn't match its actual, incomplete `verse_passage` rows —
+        # confirmed live, not hypothetical). The disaster-recovery guarantee documented for this
+        # app ("a hard kill commits nothing, since nothing commits until the handler's own single
+        # final commit()") is genuinely true for a hard kill (the process is just gone, this
+        # except block never runs) — but was FALSE for an in-process exception, because this
+        # except block's own recovery writes shared the crashed handler's own still-open
+        # transaction. Roll back FIRST, discarding the crashed handler's partial work, before
+        # writing the escalation/run-state record in a fresh transaction — the crash gets a
+        # permanent, visible record either way (that part was already correct); it just no longer
+        # drags the crash's own half-finished writes in with it.
+        db.conn.rollback()
         _grant(cfg, "escalation")
         db.write("escalation", {
             "run_id": run_id, "word": ctx.word, "at_step": step_id, "type": "crash",

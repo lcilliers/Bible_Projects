@@ -146,6 +146,35 @@ def answered_for_run(db: Db, run_id: str, at_step: str):
     return rows[0] if rows else None
 
 
+def open_duplicate(db: Db, at_step: str, stable_key: str):
+    """The already-OPEN (raised, unanswered) escalation for this step whose question CONTAINS
+    `stable_key`, from any prior run_id, or None. Found 2026-08-06: a re-run of a self-computing
+    advisory check (configmaint.validate — same live findings, freshly re-derived each call) got a
+    brand new run_id every time, so `run.py`'s own within-run dedup (`answered_for_run`/the
+    pause-continue idempotency guard) never caught it — every re-run raised its own duplicate
+    escalation for the SAME still-open finding, 15+ near-identical rows piling up in one day.
+
+    **Matches on a substring, not the full question, on purpose** — a real bug in the first cut of
+    this fix, caught immediately by actually running it twice: `configmaint.validate`'s own
+    question text embeds `report_path`, which is itself freshly versioned every call
+    (`CONFIG-REPORT-v28...` -> `-v29...`), so an exact-text match never matched even when the
+    underlying findings were byte-for-byte identical. `stable_key` must be the caller's own
+    STABLE summary (counts/labels only, no versioned path) — the caller finds it as a substring of
+    the stored `question`, not compares the whole thing.
+
+    Deliberately scoped to steps like `configmaint.validate`/`passage.validate`/`candidate.
+    validate` (an advisory check that re-computes the same facts on every call, so an identical
+    summary really does mean an identical situation) — NOT used generically in `run.py`'s own
+    dispatcher, because `configmaint.propose`'s auto-generated question text ("insert on
+    cfg_write_grant — approve?") is deliberately generic and shared across genuinely DIFFERENT
+    proposals distinguished only by their `Set` payload; a text-match dedup there would wrongly
+    suppress real, distinct decisions."""
+    rows = db.rows(
+        "SELECT * FROM escalation WHERE at_step=? AND state='raised' AND question LIKE ? "
+        "ORDER BY id DESC LIMIT 1", (at_step, f"%{stable_key}%"))
+    return rows[0] if rows else None
+
+
 def raise_manual(db: Db, question: str, tried: str | None = None) -> tuple[int, str]:
     """A researcher-initiated item — 'flag this for later, resolve it via the same review
     workflow' — not raised BY a running step. Found 2026-07-22: raise_() always needed a run_id/

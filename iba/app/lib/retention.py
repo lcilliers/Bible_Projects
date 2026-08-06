@@ -69,6 +69,25 @@ def build(cfg) -> dict:
         ORDER BY r.started_at
     """)]
 
+    # 2026-08-06: the non-chained equivalent, previously uncovered. A non-chained package's run
+    # (operations-ingest, configuration-maintenance, reports, ...) transitions to 'done' the moment
+    # its single step resolves on a continue path (run.py:207) — there is NO legitimate reason for
+    # one to still read 'running' with no escalation pending, unlike a chained run (which might be
+    # a deliberate standalone test mid-sequence). A stuck non-chained run is therefore an
+    # UNAMBIGUOUS crash signal (process killed/power lost between the step's own write-transaction
+    # commit boundary and run.py's own final `db.update("run", ..., state="done")` call) — not an
+    # archival judgement call the way stuck_chained is. Answer: re-submit the same call: the write
+    # transaction inside the handler was never committed (sqlite3's default deferred-transaction
+    # isolation — see debate-pipeline-technical-reference-20260806.md sec2's disaster-recovery
+    # note), so the DB genuinely holds no partial state to clean up first.
+    out["stuck_nonchained"] = [dict(r) for r in conn.execute("""
+        SELECT r.run_id, r.work_package, r.state, r.resume_point, r.runs_over, r.started_at
+        FROM run r JOIN cfg_work_package wp ON wp.name = r.work_package
+        WHERE wp.chained = 0 AND r.state IN ('running','paused')
+        AND NOT EXISTS (SELECT 1 FROM escalation e WHERE e.run_id = r.run_id AND e.state='raised')
+        ORDER BY r.started_at
+    """)]
+
     out["oldest_open_escalations"] = [dict(r) for r in conn.execute("""
         SELECT id, run_id, word, at_step, question, raised_at FROM escalation
         WHERE state='raised' ORDER BY raised_at LIMIT 50
@@ -110,6 +129,17 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
             + _tbl(["run_id", "work_package", "state", "resume_point", "runs_over", "started_at"],
                   [[r["run_id"], r["work_package"], r["state"], r["resume_point"], r["runs_over"],
                     r["started_at"]] for r in d["stuck_chained"][:200]])),
+        "stuck_nonchained": (
+            [f"**{len(d['stuck_nonchained'])}** run(s): a NON-chained work package "
+             f"(operations-ingest / configuration-maintenance / reports / ...) stuck 'running' or "
+             f"'paused' with nothing pending. Unlike stuck_chained, this is unambiguous — a "
+             f"non-chained run always reaches 'done' the instant its one step resolves, so a stuck "
+             f"one means the process was killed mid-step (crash/power loss/session breakdown). "
+             f"**Safe to just re-submit the same call** — the write transaction never committed, "
+             f"so the DB holds no partial state.", ""]
+            + _tbl(["run_id", "work_package", "state", "resume_point", "runs_over", "started_at"],
+                  [[r["run_id"], r["work_package"], r["state"], r["resume_point"], r["runs_over"],
+                    r["started_at"]] for r in d["stuck_nonchained"][:200]])),
         "open_escalations": _tbl(
             ["id", "run_id", "word", "at_step", "question", "raised_at"],
             [[r["id"], r["run_id"], r["word"], r["at_step"], r["question"][:120], r["raised_at"]]

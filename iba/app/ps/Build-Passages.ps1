@@ -1,28 +1,36 @@
 <#
 .SYNOPSIS
-    Build passages for a book from HIB continuity. Config-governed. Run AFTER HIB identification
-    (debate digest Step 1) has populated verse_hib for the book.
+    Register the debate's own input scope as a passage. Config-governed.
 
 .DESCRIPTION
-    Runs the 'build-passages' work package over a book: passage.build recomputes the book's
-    passages from verse_hib (a passage is a maximal run of consecutive verses tracking the same
-    Human Inner Being(s) -- debate-analytic-process-digest-20260805.md Step 2, redefined 2026-08-05
-    from the retired char-continuity/candidate-stamp rule). Passages depend on verse_hib, so
-    re-run this whenever HIB identification changes for the book.
+    Runs the 'build-passages' work package's passage.build step for one book+scope. Redefined
+    2026-08-06 (researcher direction, following the HIB-distribution visualization across four
+    chapters): a passage is no longer derived by a HIB-continuity algorithm — it IS the given
+    scope, verbatim. This step reads the whole scope in light of the HIBs already identified
+    (hib.set must have run first for these verses), and requires a JSON payload carrying the
+    already-decided reading judgement: a high-level story synthesis, and a self-assessment of
+    whether the scope can be read as a whole without quality loss. If not, the step refuses
+    outright (no passage row written) with a message to narrow the scope and resubmit.
 
-.PARAMETER Book  OSIS book code, e.g. Dan, Hos, Jon.
-.PARAMETER Rule  Boundary rule: hib-continuity (default) or maximal.
-.PARAMETER Trace Print every config read (IBA_TRACE).
+.PARAMETER Book         OSIS book code, e.g. Dan, Hos, Jon.
+.PARAMETER Chapters     Whole-chapter range, e.g. 1-3 or 1. Mutually exclusive with -Range.
+.PARAMETER Range        Single-chapter verse range, e.g. 8:1-27. Mutually exclusive with -Chapters.
+.PARAMETER PayloadPath  Path to the JSON payload file (story_summary/feasible/feasibility_note,
+                        and reconciliation_note if correcting an already-registered scope).
+.PARAMETER Trace        Print every config read (IBA_TRACE).
 
 .EXAMPLE
-    .\Build-Passages.ps1 -Book Dan
-    .\Build-Passages.ps1 -Book Dan -Rule maximal
+    .\Build-Passages.ps1 -Book Dan -Range 8:1-27 -PayloadPath iba\app\staging\passages\dan-8.json
+.EXAMPLE
+    .\Build-Passages.ps1 -Book Hos -Chapters 1 -PayloadPath iba\app\staging\passages\hos-1.json
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)] [string] $Book,
-    [ValidateSet('hib-continuity', 'maximal')] [string] $Rule = 'hib-continuity',
+    [string] $Chapters,
+    [string] $Range,
+    [Parameter(Mandatory = $true)] [string] $PayloadPath,
     [switch] $Trace
 )
 
@@ -41,24 +49,32 @@ if ($ready -ne '1') {
     exit 1
 }
 
+if ([bool]$Chapters -eq [bool]$Range) {
+    Write-Host "passage.build needs exactly one of -Chapters or -Range." -ForegroundColor Yellow
+    exit 1
+}
+if (-not (Test-Path $PayloadPath)) {
+    Write-Host "PayloadPath '$PayloadPath' does not exist." -ForegroundColor Yellow
+    exit 1
+}
+
 Test-IbaWorkPackageActive -WorkPackage 'build-passages'
 
-$seq   = python -c "import json; from iba.app.lib.cfg import Cfg; c=Cfg(); print(json.dumps([dict(r) for r in c.sequence('build-passages')])); c.close()" | ConvertFrom-Json
 $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-BUILD-PASSAGES"
+$scopeLabel = if ($Range) { "$Book $Range" } else { "$Book $Chapters" }
+Write-IbaRunHeader -WorkPackage 'build-passages' -RunId $runId -RunsOver "scope = '$scopeLabel'"
 
-Write-IbaRunHeader -WorkPackage 'build-passages' -RunId $runId -RunsOver "book = '$Book'  (rule: $Rule)"
+$paramArgs = @('--param', "Book=$Book", '--param', "PayloadPath=$PayloadPath")
+if ($Chapters) { $paramArgs += @('--param', "Chapters=$Chapters") }
+if ($Range)    { $paramArgs += @('--param', "Range=$Range") }
 
-$exitCode = 0
-foreach ($entry in $seq) {
-    $json = python -m iba.app.run build-passages --step $entry.step --run-id $runId --param "Book=$Book" --param "Rule=$Rule"
-    $code = $LASTEXITCODE
-    $res  = $json | ConvertFrom-Json
-    Write-IbaStepResult -Step $entry.step -Path $res.path -Message $res.message -Code $code
-    if ($code -eq 3) { Write-IbaStopped -Message $res.message; $exitCode = 3; break }
-    if ($code -eq 2) { Write-IbaPaused -WorkPackage 'build-passages' -RunId $runId -Message $res.message; $exitCode = 2; break }
-}
+$json = python -m iba.app.run build-passages --step passage.build --run-id $runId @paramArgs
+$code = $LASTEXITCODE
+$res  = $json | ConvertFrom-Json
+Write-IbaStepResult -Step 'passage.build' -Path $res.path -Message $res.message -Code $code
 
-if ($exitCode -eq 0) {
-    Write-IbaComplete -WorkPackage 'build-passages' -Vars @{ book = $Book }
-}
-exit $exitCode
+if ($code -eq 3) { Write-IbaStopped -Message $res.message }
+elseif ($code -eq 2) { Write-IbaPaused -WorkPackage 'build-passages' -RunId $runId -Message $res.message }
+else { Write-IbaComplete -WorkPackage 'build-passages' -Vars @{ scope = $scopeLabel } }
+
+exit $code
