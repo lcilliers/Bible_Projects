@@ -596,63 +596,97 @@ build account: `GOVERNANCE.md` §14. Registry report: escalation #272, `GOVERNAN
 
 ---
 
-## 12b. Verse-analysis: the extract, then the passage-debate scaffold (added 2026-07-26/27)
+## 12b. Verse-analysis: lexical, then the debate pipeline (rewritten 2026-08-07 — supersedes the scaffold-based version of this section)
 
-Two chained-by-hand, book/range-scoped reports that build a manual movement-analysis (inner-being
-/ passage-debate) workflow for a book. Both are book-subfoldered under
-`report.verse_analysis_output_dir` (default `iba/app/verse-analysis/`), e.g.
-`iba/app/verse-analysis/Daniel/`.
+**This section replaces the scaffold-based workflow entirely.** The old two steps documented here
+(`VerseSpanMeaning-Report.ps1` → `PassageDebate-Report.ps1`, added 2026-07-26/27) are both fully
+retired — `report.verse_span_meaning` since `BUILD.md` §56-59 (2026-08-05, superseded by
+`report.verse_lexical`/`lexical.build`), `report.passage_debate`/`Chapter-Generate.ps1`/
+`passage-debate-sync` since 2026-08-07 (superseded by the DB-first `hib`/`phenomenon`/`operation`/
+`closing` model, which is what the real Dan 8 debate actually used — `BUILD.md` §61-71). Leaving
+both routes live side by side was a confirmed, live-hit source of confusion (a half-migrated
+pipeline pointing at itself) — this rewrite is the fix, not a parallel option.
 
-**Step 1 — the base extract** (`report.verse_span_meaning`, `BUILD.md` §22): per-span meaning
-from all three parse tables (meaning_tree/lsj/mounce), live STEP disambiguation for genuinely
-`[AMBIGUOUS]` (sibling-shared-base) spans.
+**The real pipeline, two separate tools:**
 
-```powershell
-iba\app\ps\VerseSpanMeaning-Report.ps1 -Book Dan -Range 3:1-7 -BookLabel Daniel
-#   -> iba/app/verse-analysis/Daniel/dan-3-1-7-verse-span-meaning.md
-# -Chapters 1-3 works too (whole-chapter range); give exactly one of -Chapters/-Range.
-```
+1. **The lexical** (`lexical.build`/`report.verse_lexical`, `VerseLexical.ps1`) — mechanical,
+   deterministic, no analytical judgement. Book-scoped, run once ahead of time — independent of
+   how many small debate chapters follow, since a debate is always chapter/range-scoped while the
+   lexical is naturally a whole-book pass.
+2. **The debate** (`Debate-Run.ps1`) — the single entry point for everything from HIB
+   identification through the rendered report, for one chapter/range at a time.
 
-**Step 2 — the passage-debate scaffold** (`report.passage_debate`, `BUILD.md` §27): requires
-Step 1's extract to already exist for the exact same book/range — fails cleanly
-(`base-extract-missing`) if it doesn't. Writes a debate-document SKELETON, not a finished debate:
-front-matter citing the base extract and the CURRENT method docs (resolved from
-`method.passage_read_guidance_path` / `method.interpretation_questions_path`, not memory), one
-per-verse Observation / Operation (Subject/Operation/Source/Target) / Interrogative (Q1-Q9) /
-Decision block per verse, and the standard closing sections (Passage-level linkages,
-Insufficiencies register, Emergent questions log, Open decisions). Every `<!-- fill in -->`
-placeholder is then filled in by applying the two method docs to the verse — that analytical step
-is not, and cannot be, automated by this tool.
+### Step 1 — build the lexical for the whole book (once, ahead of time)
 
 ```powershell
-iba\app\ps\PassageDebate-Report.ps1 -Book Dan -Range 3:1-7 -BookLabel Daniel
-#   -> iba/app/verse-analysis/Daniel/WA-dan-3-1-7-debate.md
-# prints the resolved method-doc paths on success — read them from there, not from memory.
+iba\app\ps\VerseLexical.ps1 -Book Dan -Chapters 1-12
+#   -> iba/app/verse-analysis/Daniel/dan-1-12-verse-lexical-v{n}-{date}.md
+# -Range 8:1-27 also works for a sub-chapter slice, but the normal case is the WHOLE book at once.
 ```
 
-The two method docs themselves — `iba/docs/WA-passage-read-guidance-v{n}-{date}.md` (steps 1-5 +
-notes) and `iba/docs/WA-interpretation-questions-v{n}-{date}.md` (the Q1-Q10 interrogative + Part
-B guidance of interpretation) — are the actual analytical instructions; read them before filling
-in a scaffold. When either is revised, update its `method.*` cfg_setting (via `configmaint.
-propose`, §9 below) to point at the new file — every future scaffold then cites the new version
-automatically, closing the gap that let debates cite a guidance version that had never actually
-been saved under that name (`BUILD.md` §27).
+`hib.set` (below) hard-refuses (`lexical-incomplete`) against any verse this hasn't covered yet —
+build it first, for the whole book, and you won't hit that per-chapter.
 
-**Step 3 — the whole-book gathering read** (`report.whole_book_read`, `BUILD.md` §32; added here
-2026-07-30, was undocumented). Every passage debate defers its "Emergent questions log" to "the
-whole-book read" — this is that step. Requires at least one `debate_status='filled'` passage row
-for the book (i.e. Step 2 has actually been run and filled in at least once) — fails cleanly
-(`no-debates-found`) if not.
+### Step 2 — run the debate, one chapter/range at a time
 
 ```powershell
-iba\app\ps\WholeBookRead-Report.ps1 -Book Dan -BookLabel Daniel
-#   -> iba/app/verse-analysis/Daniel/WA-dan-whole-book-read.md
+# single chapter
+iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1
+
+# multi-chapter range
+iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1-3
+
+# sub-chapter verse range
+iba\app\ps\Debate-Run.ps1 -Book Dan -Range 8:1-27
+
+# targeted single-step rerun/correction (mirrors the real Dan 8 rollback/redo, BUILD.md §71)
+iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1 -Step hib.set
 ```
 
-Gathers every filled debate for the book, in reading order, and lays out each one's Emergent-
-questions/Passage-level-linkages content together with an empty Resolution slot per item — plumbing
-only, same boundary as Step 2: it does not decide how any emergent question actually resolves
-itself. Re-running is safe (upserts by range, same as Steps 1-2).
+One call walks the whole sequence (`cfg_setting.passage.debate_run_sequence` — `hib.set` →
+`passage.build` → `phenomenon.set` → `operation.set` → `closing.set`), each step still under its
+own existing work package. **Per-step separation is unchanged and load-bearing** — each step still
+needs its own genuinely-authored analytical content (the digest's "failure modes," `BUILD.md`
+§61-71); what's gone is only the need to invoke five separate scripts by hand in a fixed order.
+
+For each step, in order, the script:
+
+1. **Checks if it's already done** for this exact scope (a DB read, mirroring that step's own
+   gate) — if so, skips it silently.
+2. **Looks for a staging payload** at a predictable path (`cfg_setting.
+   passage.debate_staging_path_pattern`: `iba/app/staging/operations/{book}-{scope}-{step}.json`)
+   — if present, runs the step with it.
+3. **Otherwise stops**, printing the exact path expected. That payload is authored by whoever does
+   that step's actual reading (the AI, in-session, from the lexical + prior DB state) — it is
+   never something typed by hand at this command line. Once it exists, **rerun the exact same
+   command** — readiness is re-derived from the DB and the staging files every time, no `-RunId`
+   bookkeeping needed to resume.
+
+Example of a stop, and what happens next:
+
+```text
+PS> iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1
+
+  hib.set              skip           already satisfied for this scope     <- example only;
+                                                                                first run always
+                                                                                stops at hib.set
+
+STOPPED -- hib.set needs its analytical payload next.
+  Write it to: iba\app\staging\operations\dan-1-hib.set.json
+  Then rerun the exact same command -- readiness is re-derived from the DB
+  and staging files each time, no run-id bookkeeping needed to resume.
+```
+
+Once `closing.set` succeeds, `Debate-Run.ps1` automatically renders the report
+(`python -m iba.app.tools.build_debate_report`, standalone — deliberately not a `cfg_report` step,
+`BUILD.md` §65) to `iba/app/reports/{book}-{scope}-debate-report-{date}.md`.
+
+**Known gap, not yet updated for this model:** `WholeBookRead-Report.ps1`/`report.whole_book_read`
+(`BUILD.md` §32) still reads the old scaffold's `debate_status='filled'` .md sections
+(Emergent-questions/Passage-level-linkages) — it has not been rebuilt against the new
+`passage_emergent_question`/`passage_linkage` DB tables. Still correct for the six pre-existing
+scaffold-model books (Amos/Hosea/Joel/Jonah/Micah/Obadiah); not yet exercised against a
+`Debate-Run.ps1`-produced book.
 
 ---
 

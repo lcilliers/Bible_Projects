@@ -1490,6 +1490,24 @@ same, still-active steps, just re-homed) — answered on the `configmaint.valida
 that reasoning recorded, not silently cleared. `find_filled_by_referencing_inactive_step` itself is
 unchanged; this is a documented limitation, not a bug fixed today.
 
+**Per-step separation gates content, not invocation (2026-08-07, added retroactively next to the
+constraint that makes it work).** Found live building `Debate-Run.ps1` (`BUILD.md` §72): running
+Dan 1's debate meant discovering, one manual PS invocation and one failure message at a time, that
+`hib.set` → `passage.build` → `phenomenon.set` → `operation.set` → `closing.set` are always
+sequentially dependent, yet had to be typed as five separate commands. Researcher's correction,
+direct: "having different steps is only necessary if the steps are required to enforce the
+controls of not trying to do everything at once... There is no need to type in each ps command for
+all the steps by hand if these steps always is run as a package and is dependent on each other."
+The distinction that resolves this, stated as a standing rule: **a step boundary that exists to
+gate genuine analytical judgement (a fresh JSON payload, an actual reading pass) stays a real
+boundary — that discipline is never removed.** A boundary that exists only because nobody wrote the
+orchestration is a gap, not a control, and should be closed the same way any other chained work
+package already closes it (`cfg_setting`-driven sequencing over the EXISTING step registrations —
+§31's "global step-name uniqueness" constraint above is exactly why this can't be done by
+registering the steps a second time under a new work package). Applied: `passage.debate_run_sequence`
+or a `debate-run` PS script that sequences `operations-ingest`/`build-passages` steps in order,
+stopping only where a step's own DB precondition genuinely isn't met yet.
+
 ---
 
 ## §32. `governance.rules_must_be_config_driven` (§16) violated again the same day, this time by the AI, not just found live in old code — `cfg_report_section` brought in line with the v1.5/v1.4 method restructure (2026-08-02, later same day)

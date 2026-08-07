@@ -233,7 +233,32 @@ def validate(ctx: Ctx) -> Outcome:
     candidate.validate has to handle differently, see handlers/candidate.py)."""
     errors = _validate_live(ctx.db.conn)
     if errors:
-        return fail("invalid", f"{len(errors)} coherence error(s)", errors="; ".join(errors))
+        error_summary = "; ".join(errors)
+        # 2026-08-07: the 2026-08-06 dedup fix (open_duplicate, see below) was only ever wired
+        # into the ADVISORY path (needs-review, further down this function) -- this hard-error
+        # path had its own separate `fail()` call, going through run.py's generic (run_id, step_id)
+        # idempotency guard instead, which never catches a cross-run duplicate because every
+        # invocation mints a fresh run_id. Found live 2026-08-07 (researcher: "too many of these
+        # escalations... it is notifications to you for stuff you did not do properly, or
+        # completed and not cleared") -- successive validate re-runs each stacked their own
+        # report-stop escalation for what was often the SAME still-open coherence error (#534,
+        # #537, #539's crash all piled up this way). Same fix, same rationale, applied here too --
+        # matched on the error text (stable across re-runs of the same broken state), not a
+        # versioned path.
+        # Mirrors the advisory branch below exactly: return ok(), not fail() -- a `fail()` here
+        # would still hit run.py's own report-stop write, which has no knowledge of `dup` and
+        # would write a fresh row regardless of the message text. Only ok() skips the write
+        # (condition == "ok" takes no on_fail path at all). Trade-off accepted deliberately, same
+        # as the advisory case: this run's own `outcome`/`state` reads as ok even though the
+        # underlying cfg_* is still broken -- the point is "no NEW escalation", not "this run
+        # succeeded"; the still-open #dup['id'] remains the one place that record lives.
+        dup = esc.open_duplicate(ctx.db, ctx.step_id, error_summary)
+        if dup:
+            return ok(f"identical to already-open escalation #{dup['id']} (raised "
+                      f"{dup['raised_at']}) — not re-raised; answer #{dup['id']} to resolve. "
+                      f"{len(errors)} coherence error(s): {error_summary}",
+                      errors=error_summary, existing_escalation_id=dup["id"])
+        return fail("invalid", f"{len(errors)} coherence error(s)", errors=error_summary)
 
     # Every advisory (judgement-call, not structural-fault) finding — a dict, not one variable per
     # check, so a 7th/8th finding never needs touching four separate places again the way orphans/

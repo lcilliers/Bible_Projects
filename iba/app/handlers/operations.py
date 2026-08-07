@@ -925,7 +925,13 @@ def closing_set(ctx: Ctx) -> Outcome:
 
     now = _now()
     problems: list[str] = []
-    all_summary: dict[str, tuple] = {}
+    # Each entry: (list_name, table, current, incoming, resolved_raw, reconciled) -- reconciled but
+    # NOT yet written. 2026-08-07: quality-check attestations must be verified BEFORE any row is
+    # written (the same boundary hib.set/phenomenon.set/operation.set already draw) -- previously
+    # this function wrote each section immediately after reconciling it. Restructured to reconcile
+    # all four sections first, check quality attestations once against the combined new+changed
+    # set, and only then write anything.
+    plan: list[tuple[str, str, dict, dict, dict, tuple]] = []
 
     # -- linkages --
     current = {r["ordinal"]: {"content": (r["from_id"], r["to_id"], r["note"]), "id": r["id"]}
@@ -943,25 +949,16 @@ def closing_set(ctx: Ctx) -> Outcome:
         if not (p1 or p2):
             ordv = item.get("ordinal", 0)
             incoming[ordv] = {"content": (from_id, to_id, item["note"]),
-                              "note": item.get("reconciliation_note")}
+                              "note": item.get("reconciliation_note"), "raw": item}
             resolved_raw[ordv] = (from_id, to_id, item["note"])
     removals = {r["ordinal"]: r.get("reason") for r in payload.get("remove", {}).get("linkages", [])}
     if not problems:
         try:
-            unchanged, changed, new, removed = _reconcile(current, incoming, removals)
+            reconciled = _reconcile(current, incoming, removals)
         except ReconciliationError as e:
             problems += [f"linkages: {p}" for p in e.problems]
         else:
-            to_drop = [current[k]["id"] for k in (set(changed) | set(removed))]
-            if to_drop:
-                ph = ",".join("?" * len(to_drop))
-                ctx.db.conn.execute(f"UPDATE passage_linkage SET deleted=1 WHERE id IN ({ph})", to_drop)
-            for ordv in list(new) + list(changed):
-                from_id, to_id, note = resolved_raw[ordv]
-                ctx.db.write("passage_linkage", {
-                    "passage_id": passage_id, "from_operation_id": from_id, "to_operation_id": to_id,
-                    "note": note, "ordinal": ordv, "created_at": now, "deleted": 0})
-            all_summary["linkages"] = (unchanged, changed, new, removed)
+            plan.append(("linkages", "passage_linkage", current, incoming, resolved_raw, reconciled))
 
     if problems:
         return fail("unresolved-reference",
@@ -980,29 +977,22 @@ def closing_set(ctx: Ctx) -> Outcome:
             problems.append(f"insufficiency ordinal {item.get('ordinal', 0)}: unknown verse {verse!r}")
             continue
         ordv = item.get("ordinal", 0)
-        incoming[ordv] = {"content": (verse, item["note"]), "note": item.get("reconciliation_note")}
+        incoming[ordv] = {"content": (verse, item["note"]), "note": item.get("reconciliation_note"),
+                          "raw": item}
         resolved_raw[ordv] = (vid, item["note"])
     removals = {r["ordinal"]: r.get("reason") for r in payload.get("remove", {}).get("insufficiencies", [])}
     if not problems:
         try:
-            unchanged, changed, new, removed = _reconcile(current, incoming, removals)
+            reconciled = _reconcile(current, incoming, removals)
         except ReconciliationError as e:
             problems += [f"insufficiencies: {p}" for p in e.problems]
         else:
-            to_drop = [current[k]["id"] for k in (set(changed) | set(removed))]
-            if to_drop:
-                ph = ",".join("?" * len(to_drop))
-                ctx.db.conn.execute(f"UPDATE passage_insufficiency SET deleted=1 WHERE id IN ({ph})", to_drop)
-            for ordv in list(new) + list(changed):
-                vid, note = resolved_raw[ordv]
-                ctx.db.write("passage_insufficiency", {
-                    "passage_id": passage_id, "verse_id": vid, "note": note, "ordinal": ordv,
-                    "created_at": now, "deleted": 0})
-            all_summary["insufficiencies"] = (unchanged, changed, new, removed)
+            plan.append(("insufficiencies", "passage_insufficiency", current, incoming, resolved_raw,
+                        reconciled))
 
     if problems:
         return fail("unresolved-reference",
-                    f"{len(problems)} problem(s), nothing further written: "
+                    f"{len(problems)} problem(s), nothing written: "
                     f"{problems[:5]}{' ...' if len(problems) > 5 else ''}")
 
     # -- emergent questions --
@@ -1020,29 +1010,21 @@ def closing_set(ctx: Ctx) -> Outcome:
             continue
         ordv = item.get("ordinal", 0)
         incoming[ordv] = {"content": (verse, item["question_text"], item["kind"]),
-                          "note": item.get("reconciliation_note")}
+                          "note": item.get("reconciliation_note"), "raw": item}
         resolved_raw[ordv] = (vid, item["question_text"], item["kind"])
     removals = {r["ordinal"]: r.get("reason") for r in payload.get("remove", {}).get("emergent_questions", [])}
     if not problems:
         try:
-            unchanged, changed, new, removed = _reconcile(current, incoming, removals)
+            reconciled = _reconcile(current, incoming, removals)
         except ReconciliationError as e:
             problems += [f"emergent_questions: {p}" for p in e.problems]
         else:
-            to_drop = [current[k]["id"] for k in (set(changed) | set(removed))]
-            if to_drop:
-                ph = ",".join("?" * len(to_drop))
-                ctx.db.conn.execute(f"UPDATE passage_emergent_question SET deleted=1 WHERE id IN ({ph})", to_drop)
-            for ordv in list(new) + list(changed):
-                vid, qtext, kind = resolved_raw[ordv]
-                ctx.db.write("passage_emergent_question", {
-                    "passage_id": passage_id, "verse_id": vid, "question_text": qtext, "kind": kind,
-                    "ordinal": ordv, "created_at": now, "deleted": 0})
-            all_summary["emergent_questions"] = (unchanged, changed, new, removed)
+            plan.append(("emergent_questions", "passage_emergent_question", current, incoming,
+                        resolved_raw, reconciled))
 
     if problems:
         return fail("unresolved-reference",
-                    f"{len(problems)} problem(s), nothing further written: "
+                    f"{len(problems)} problem(s), nothing written: "
                     f"{problems[:5]}{' ...' if len(problems) > 5 else ''}")
 
     # -- validation notes --
@@ -1061,30 +1043,76 @@ def closing_set(ctx: Ctx) -> Outcome:
         ordv = item.get("ordinal", 0)
         corrected = 1 if item.get("corrected") else 0
         incoming[ordv] = {"content": (phen_id, item["finding_text"], corrected),
-                          "note": item.get("reconciliation_note")}
+                          "note": item.get("reconciliation_note"), "raw": item}
         resolved_raw[ordv] = (phen_id, item["finding_text"], corrected)
     removals = {r["ordinal"]: r.get("reason") for r in payload.get("remove", {}).get("validation_notes", [])}
     if not problems:
         try:
-            unchanged, changed, new, removed = _reconcile(current, incoming, removals)
+            reconciled = _reconcile(current, incoming, removals)
         except ReconciliationError as e:
             problems += [f"validation_notes: {p}" for p in e.problems]
         else:
-            to_drop = [current[k]["id"] for k in (set(changed) | set(removed))]
-            if to_drop:
-                ph = ",".join("?" * len(to_drop))
-                ctx.db.conn.execute(f"UPDATE passage_validation_note SET deleted=1 WHERE id IN ({ph})", to_drop)
-            for ordv in list(new) + list(changed):
+            plan.append(("validation_notes", "passage_validation_note", current, incoming,
+                        resolved_raw, reconciled))
+
+    if problems:
+        return fail("unresolved-reference",
+                    f"{len(problems)} problem(s), nothing written: "
+                    f"{problems[:5]}{' ...' if len(problems) > 5 else ''}")
+
+    # Quality-check attestations -- BEFORE any row is written (same boundary hib.set/
+    # phenomenon.set/operation.set draw). closing.set is the first step with FOUR heterogeneous
+    # item types under one step name -- `_required_quality_checks(ctx, "closing.set")` returns
+    # every required check_key across ALL of them, which would wrongly demand a linkage's own
+    # attestation on an emergent_question (found live, 2026-08-07, before this ever shipped: an
+    # emergent_question was asked to attest `linkage-genuinely-registered`). Filtered per list_name
+    # by its own check_key naming convention -- checked once per section, not once combined.
+    LIST_QUALITY_PREFIX = {
+        "linkages": "linkage-", "insufficiencies": "insufficiency-",
+        "emergent_questions": "emergent-question-", "validation_notes": "validation-finding-",
+    }
+    all_required = _required_quality_checks(ctx, "closing.set")
+    for list_name, _table, _current, incoming, _resolved_raw, (unchanged, changed, new, removed) in plan:
+        prefix = LIST_QUALITY_PREFIX[list_name]
+        required = [c for c in all_required if c.startswith(prefix)]
+        qc_items = {f"{list_name}:{key}": incoming[key]["raw"] for key in list(new) + list(changed)}
+        try:
+            _check_quality_attestations(qc_items, required)
+        except QualityCheckIncomplete as e:
+            return fail("quality-check-incomplete",
+                        f"{len(e.problems)} item(s), nothing written: "
+                        f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
+
+    # Now write every section for real -- same per-table logic the original single-pass version
+    # used, just performed after the quality gate above instead of interleaved with it.
+    all_summary: dict[str, tuple] = {}
+    for list_name, table, current, incoming, resolved_raw, (unchanged, changed, new, removed) in plan:
+        to_drop = [current[k]["id"] for k in (set(changed) | set(removed))]
+        if to_drop:
+            ph = ",".join("?" * len(to_drop))
+            ctx.db.conn.execute(f"UPDATE {table} SET deleted=1 WHERE id IN ({ph})", to_drop)
+        for ordv in list(new) + list(changed):
+            if list_name == "linkages":
+                from_id, to_id, note = resolved_raw[ordv]
+                ctx.db.write("passage_linkage", {
+                    "passage_id": passage_id, "from_operation_id": from_id, "to_operation_id": to_id,
+                    "note": note, "ordinal": ordv, "created_at": now, "deleted": 0})
+            elif list_name == "insufficiencies":
+                vid, note = resolved_raw[ordv]
+                ctx.db.write("passage_insufficiency", {
+                    "passage_id": passage_id, "verse_id": vid, "note": note, "ordinal": ordv,
+                    "created_at": now, "deleted": 0})
+            elif list_name == "emergent_questions":
+                vid, qtext, kind = resolved_raw[ordv]
+                ctx.db.write("passage_emergent_question", {
+                    "passage_id": passage_id, "verse_id": vid, "question_text": qtext, "kind": kind,
+                    "ordinal": ordv, "created_at": now, "deleted": 0})
+            elif list_name == "validation_notes":
                 phen_id, ftext, corrected = resolved_raw[ordv]
                 ctx.db.write("passage_validation_note", {
                     "passage_id": passage_id, "phenomenon_id": phen_id, "finding_text": ftext,
                     "corrected": corrected, "ordinal": ordv, "created_at": now, "deleted": 0})
-            all_summary["validation_notes"] = (unchanged, changed, new, removed)
-
-    if problems:
-        return fail("unresolved-reference",
-                    f"{len(problems)} problem(s), nothing further written: "
-                    f"{problems[:5]}{' ...' if len(problems) > 5 else ''}")
+        all_summary[list_name] = (unchanged, changed, new, removed)
 
     if "open_decisions_note" in payload:
         _may(ctx, "closing.set", "passage")

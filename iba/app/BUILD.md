@@ -4118,3 +4118,482 @@ throughout, never their own row). `build_debate_report.py` — `dan-8-debate-rep
 `debate_status='complete'`, **verse order confirmed correct** (Dan.8.1→27 in sequence — the item 1
 fix verified against real output, not just read). `configmaint.validate` clean throughout every
 step. Not yet re-reviewed by the researcher — this is a corrected first pass, not a closed loop.
+
+---
+
+## 72. `Debate-Run.ps1` — one entry point for the debate pipeline; `chapter-generate`/`passage-debate-sync` retired; escalation dedup bug fixed (2026-08-07)
+
+**Trigger.** Running the Dan 1 debate hit `Chapter-Generate.ps1`'s "no passage registered — run
+Build-Passages.ps1" message, which itself then hit `passage.build`'s own further silent
+prerequisite (`verse_hib` via `hib.set`) with no forward pointer (escalation
+`MANUAL-20260806_192445_037427`). Researcher's diagnosis, direct: `chapter-generate` (the old
+scaffold-based route) was never retired when the DB-first `hib`/`phenomenon`/`operation`/`closing`
+model replaced it (§61-71) — both routes live side by side is the actual root cause, not a
+messaging gap to patch over. Directive: stop Dan 1, design mode, (a) build the real script(s),
+(b) fix the docs properly, (c) — the key correction — per-step separation exists to gate
+*analytical content*, not to force five separate PS invocations by hand for steps that are always
+sequentially dependent; a step's own JSON-payload requirement was also clarified live against the
+actual code (not assumed): the DB-to-DB *gating* between steps is 100% real and already correct
+(each handler checks the previous step's DB write), the JSON file is real too, but it's the AI's/
+researcher's own scratch hand-off for that step's analytical content, never something the
+researcher types by hand.
+
+**Design, plan-mode, approved** (session plan file: streamed-enchanting-crescent). Key finding:
+`cfg_step.step` must be globally unique across `work_package` (GOVERNANCE.md ~line 1470, §54) —
+rules out registering `hib.set`/`passage.build`/etc a second time under a new `debate-run` work
+package. The orchestrator instead sequences the EXISTING active registrations
+(`operations-ingest`, `build-passages`) via a config-driven order, not new `cfg_step` rows.
+
+**Built:**
+
+- **`cfg_setting.passage.debate_run_sequence`** (new, `configmaint.propose`, escalation #541) —
+  ordered `[{work_package, step}, ...]` array `Debate-Run.ps1` reads instead of a hardcoded PS
+  array: `operations-ingest/hib.set` → `build-passages/passage.build` →
+  `operations-ingest/phenomenon.set` → `operations-ingest/operation.set` →
+  `operations-ingest/closing.set`. Deliberately excludes `lexical.build` — researcher direction:
+  the lexical is naturally a whole-book, run-ahead-of-time pass (`VerseLexical.ps1`), independent
+  of how many small debate chapters follow; folding it into a chapter-scoped orchestrator would be
+  the wrong grain.
+- **`cfg_setting.passage.debate_staging_path_pattern`** (new, escalation #542) —
+  `iba/app/staging/operations/{book_lower}-{scope}-{step}.json`, the predictable path
+  `Debate-Run.ps1` auto-detects a step's payload at, so the researcher never types `-PayloadPath`
+  in the normal flow. The payload itself is unchanged — still authored by whoever does that
+  step's actual reading, immediately before that step runs.
+- **`iba/app/lib/debaterun.py`** (new, registered `cfg_utility`) — read-only readiness checks,
+  one per content step, each deliberately MIRRORING that step's own handler gate (never
+  reimplementing new rules): `hib_ready` (live `verse_hib` for the scope), `passage_ready`/
+  `find_new_model_passage` (a `rule IS NOT NULL` tracked passage — mirrors the private
+  `operations.py:_find_new_model_passage`), `phenomenon_ready` (`phenomena_complete_at` set),
+  `operation_ready` (every live phenomenon has a live operation — mirrors `closing_set`'s own live
+  check), `closing_ready` (best-effort: any live Step-7 row or `open_decisions_note`, since
+  `closing.set` has no stored "complete" flag by design, §65 — closing.set itself is
+  reconciliation-gated and safe to rerun regardless if this under-detects).
+- **`iba/app/ps/Debate-Run.ps1`** (new) — the single entry point. Reads the sequence from config;
+  for each step: skip if already satisfied (`debaterun.is_ready`), else run it if a staging payload
+  exists at the config-pattern path, else STOP naming the exact path expected — rerunning the same
+  command later picks up from wherever DB+staging state now is, no run-id bookkeeping needed.
+  Once `closing.set` succeeds, auto-renders the report (`python -m iba.app.tools.
+  build_debate_report`). `-Step <id>` passthrough kept for a single targeted correction (mirrors
+  the real Dan 8 rollback/redo, §71). No `-BookLabel` — checked directly against
+  `build_debate_report.py`: it writes flat to `governance.oneoff_report_dir` by topic name, no
+  book subfolder, unlike the old scaffold model.
+- **Retired** (`configmaint.propose`, escalations #543-546, approved and applied): `cfg_work_package.
+  chapter-generate` and `.passage-debate-sync` → `inactive=1`; `cfg_step` `chapter-generate/
+  report.passage_debate` and `passage-debate-sync/passage.debate_sync` → `inactive=1`. The 24
+  pre-existing scaffold-model debate `.md` files (Amos 1 · Hosea 1-14 · Joel 1-3 · Jonah 1-4 ·
+  Micah 1-7 · Obadiah 1) are untouched on disk — only the regenerate/sync tooling is retired,
+  confirmed by direct listing before and after.
+- **`iba/app/migration/cleanout_retired_chapter_generate_config.py`** (new, same carve-out class
+  as `cleanout_retired_verse_span_meaning_config.py`, §71) — the retirement above left dangling
+  `cfg_on_fail`/`cfg_report`/`cfg_report_section`/`cfg_write_grant` references to
+  `report.passage_debate`/`passage.debate_sync`, which `configmaint.validate` correctly treats as
+  a hard coherence error, not advisory (7 errors, confirmed live). Hard-deleted: 4 `cfg_on_fail`
+  rows, 1 `cfg_report` row, 8 `cfg_report_section` rows, 2 `cfg_write_grant` rows. `cfg_column.
+  filled_by` values mentioning `report.passage_debate` were checked and left alone — they already
+  correctly describe it as one of two historical writers, not asserting a live step. `configmaint.
+  validate` clean (down to one expected, temporary advisory finding — the two new settings above
+  read as "orphan" until `Debate-Run.ps1` itself, the code that calls `cfg.setting()` on them,
+  existed; resolved by this same build).
+
+**A real, separate bug found and fixed along the way** (researcher: "too many of these
+escalations... it is notifications to you for stuff you did not do properly, or completed and not
+cleared"): `handlers/configmaint.py:validate`'s duplicate-escalation dedup (`open_duplicate`,
+built §68) was only ever wired into the ADVISORY findings path — the HARD-ERROR path had its own
+separate `fail()` call that went through `run.py`'s generic (run_id, step_id) idempotency guard
+instead, which never catches a cross-run duplicate because every invocation mints a fresh run_id.
+Every re-run that hit a coherence error stacked a fresh `report-stop` escalation forever (#534,
+#537, #539's crash all piled up this way) instead of collapsing into the one still-open record.
+Fixed: the hard-error path now checks `open_duplicate` too, returning `ok()` (not `fail()`) on a
+match — `fail()` would still have hit `run.py`'s own write, which has no knowledge of the dedup
+result. Verified live: a fresh `configmaint.validate` re-run correctly matched into the existing
+open advisory item instead of raising a new row.
+
+**Escalation backlog cleared same session**, all evidence-based, not assumed: #493/#534/#537
+closed (confirmed stale — a fresh live re-run finds zero coherence errors); #539 closed (not a
+bug — `cfg_method_rule` intentionally has no write-grant for `configmaint.propose`, §66, the crash
+was the correct refusal against the wrong tool); #536 closed as superseded by #548 (same
+GOVERNANCE.md-staleness finding, re-raised under a new run_id because the finding set changed).
+Down from 12 open escalations to the genuinely-open set only.
+
+**Verified live, real data, not a mechanism test:** dry-run against Dan 1 (lexical built, nothing
+else done) correctly stops at `hib.set`, naming the exact staging path. Dry-run against the real
+Dan 8:1-27 (BUILD.md §71's actual completed debate) correctly SKIPPED `hib.set`/`passage.build`/
+`phenomenon.set`/`operation.set` as already satisfied and stopped at `closing.set` — genuinely
+never run for Dan 8 (confirmed directly: all four Step-7 tables empty, no
+`open_decisions_note`), not a false negative. **A real bug caught in this same dry-run and fixed
+before ship:** the staging path used the raw scope token (`8:1-27`) with a literal colon — invalid
+in a Windows filename; fixed to reuse the same `:`→`_` substitution `debaterun.scope_token`
+already had, which the PS script had built but never actually called.
+
+**Docs:** `USER-GUIDE.md` §12b rewritten — the scaffold-based two-step workflow replaced outright
+(not left as a stale alternative) with lexical-once-per-book → `Debate-Run.ps1`-per-chapter,
+explicit copy-paste examples for every scope variation (single chapter, multi-chapter, sub-chapter
+range, targeted single-step). Flagged, not fixed here (out of the researcher's actual ask this
+session): `WholeBookRead-Report.ps1`/`report.whole_book_read` still reads the old scaffold's
+`debate_status='filled'` .md sections, not yet rebuilt against the new `passage_emergent_question`/
+`passage_linkage` tables.
+
+**Not yet done — deliberately left to the researcher, not decided here:** the actual Dan 1
+analytical content (Step 1's HIB read) — this build only gets the pipeline to the point of asking
+for it correctly.
+
+**Addendum, same day — a real gap found and fixed via direct researcher correction.** Asked "how
+do I get past the hib.set warning," then pressed on why HIB-derivation isn't itself a documented
+step: the researcher's actual 2026-08-06 instruction (quoted verbatim already inside
+`operations.py:_check_lexical_complete`'s own docstring — *"step 1 of the debate pipeline is to
+validate that the book+chapter has a valid lexical... if lexicals are incomplete, hard stop. The
+next step is to read all the lexicals for the purpose of assessing the HIB"*) was never actually
+built as its own standalone check — only as a side-effect scoped to whatever verses a `hib.set`
+payload happens to already reference, which only fires once an analytical pass has already been
+attempted, not before it starts. (Separately corrected: I had conflated this with `passage.build`'s
+"story_summary" — a different artifact, Step 2, read in light of the HIBs, not a precursor to
+deriving them; that ordering is unchanged and correct.) Fixed: `lib/debaterun.py:
+lexical_complete_for_scope` (new) — the same verse-existence-agnostic, deleted-filtered check, but
+whole-scope and read-only, run as `Debate-Run.ps1`'s own genuine Step 1, before the `hib.set`→
+`closing.set` sequence even begins. Verified live: Dan 1 (complete) passes through to the existing
+`hib.set` stop unchanged; Amos 1 (zero `verse_lexical` coverage) hard-stops correctly, naming all
+15 missing verses and pointing at `VerseLexical.ps1`.
+
+---
+
+## 73. HIB-centric traversal made explicit across the pipeline, plus a full config-completeness pass (2026-08-07, same day, later)
+
+**Trigger.** Two rounds of researcher correction on the Dan 1 phenomena work: (1) a first
+verse-by-verse phenomena pass was grounded in narrative/gloss-level reasoning instead of each
+verse's actual `verse_lexical` row — caught before any DB write, not after (see memory
+`feedback_iba_phenomenon_set_hib_first_lexical_verified`); (2) re-reading
+`debate-pipeline-technical-reference-20260806.md`, the researcher found it had lost its HIB-centric
+focus across its own revisions — schema HIB-capable at every step, but nothing written down said
+HIB was the actual working order, with worked detail on the three dimensions of fanning out to
+other HIBs and which step each belongs to. Final instruction: "ensure that the config rules are in
+place for all the observations and changes in this session, and that it is not left undone" —
+config first, doc second, before resuming Dan 1.
+
+**Built:**
+
+- **`debate-pipeline-technical-reference-20260806.md` §2.7 (new)** — the cross-cutting HIB-centric
+  principle: dominant-HIB selection (verse-count cross-checked against the story's throughline);
+  the three fan-out dimensions (A: party-within-the-focused-HIB's-operation, B: the mirror once
+  focus switches, C: cross-HIB movement/linkage); which step owns each (A/B → `operation.set` only;
+  C → `closing.set`/Q7 only; neither belongs in `phenomenon.set`, which stays single-HIB/
+  single-verse); why phenomena must be genuinely complete before operations can work substantively,
+  not just because the gate refuses. Steps 2/3/4-5 each got a short section applying it.
+- **3 new `cfg_method_rule` rows** (`migration/add_hib_centric_traversal_method_rules_20260807.py`)
+  mirroring §2.7 exactly: `passage.build/story-organized-by-hib`, `phenomenon.set/
+  hib-first-traversal`, `operation.set/hib-fanout-dimensions`. Direct-write convention (confirmed
+  live: `configmaint.propose` has no write-grant for `cfg_method_rule`, same lesson as escalation
+  #539).
+- **A second, separate config-completeness pass**
+  (`migration/complete_method_config_20260807.py`), responding to the "not left undone" instruction
+  directly, found three gaps unrelated to the HIB-centricity fix itself:
+  1. `passage.build`'s own 5 documented method rules (in this same reference doc's Step 2 table
+     since its first draft) had never actually been written to `cfg_method_rule` — content was
+     never wrong, only never config-resident. Backfilled verbatim.
+  2. `closing.set` (Step 7) had **zero** `cfg_method_rule`/`cfg_quality_check` rows — its content
+     (Q7 linkages, insufficiencies register, emergent questions log, debate quality validation,
+     open decisions) existed only as `WA-interpretation-questions-v1.4` Part A/B/C prose since
+     2026-08-02. 5 rows added, cited directly from that source, not paraphrased from BUILD.md or
+     the digest. Full write-grant/quality-check build-out for `closing.set` explicitly NOT done
+     here — stays deferred to the researcher's own planned Step 6/7 review, a narrower scope than
+     what this pass closed.
+  3. `operation.set→phenomenon.set`'s correction direction already existed twice over
+     (`operation-from-phenomenon-only` rule + `phenomenon-actually-underlies-it` required quality
+     check) — but the mirror, `phenomenon.set→hib.set` ("the phenomena step discovers the HIB has
+     no inner-being role or effect... the HIB must be removed," the researcher's own live example),
+     had no equivalent. Added `phenomenon.set/hib-still-warranted` (rule + required quality check),
+     deliberately NOT contradicting `silence-is-a-finding` — some/all-silent phenomena is not
+     automatically grounds for removal; this rule is for a HIB that, on full review, was never a
+     genuine candidate at all.
+  4. Also found and fixed, incidentally: `operation.set`'s own `hib-can-be-party-in-another-hibs-
+     operation` row (added 2026-08-06) was live in config but had been missing from this reference
+     document's Step 4-5 table the whole time — a doc staleness, not a config gap; fixed by adding
+     the row to the table, no migration needed.
+- **New §3 "Step 6-7" section** in the reference doc — explicitly scoped as closing a narrower gap
+  (method-rule content existing in config) than the researcher's own planned Step 6/7 review;
+  states plainly what was and wasn't done.
+
+**Verified:** `configmaint.validate` clean after both migrations. Live counts confirmed by direct
+query, not assumed, before writing them into the doc: `cfg_method_rule` 35 active rows (`hib.set`
+7, `passage.build` 6, `phenomenon.set` 9, `operation.set` 8, `closing.set` 5); `cfg_quality_check`
+11 active rows.
+
+**Not yet done:** the Dan 1 phenomena register itself — this whole pass was explicitly config/
+design work, sequenced before resuming it, per direct instruction.
+
+---
+
+## 74. Full lexical weight in descriptions; `closing.set`'s quality-check gate built, not deferred (2026-08-07, same day, later still)
+
+**Trigger, direct instruction:** (1) "ensure that... when the descriptions of the operations of
+the phenomena is done, that the full value of the lexical weight of the words are included, and
+not just a brief generic description... this is where the actual meaning of the phenomena in all
+its glory resides and must not be compromised by stereotyped namings. it must be context
+specific"; (2) "the closing.set checks must all be completed also, and captured in configs to
+control the quality. this should not be deferred for another day" — directly superseding §73's own
+"deferred to the researcher's own planned review" language for `closing.set`'s quality checks
+specifically (not its full Step 6/7 analytical depth, which stays deferred).
+
+**Built:**
+
+- **2 new `cfg_method_rule` rows + 2 new `cfg_quality_check` rows**
+  (`migration/add_lexical_weight_and_closing_checks_20260807.py`): `phenomenon.set/
+  full-lexical-weight-in-description` + its `description-uses-full-lexical-range` check;
+  `operation.set/full-lexical-weight-in-observation` + its `observation-uses-full-lexical-range`
+  check. Both steps already had `_check_quality_attestations` wired in — pure config addition, no
+  code change needed for these two.
+- **4 new `cfg_quality_check` rows for `closing.set`** (same migration): `linkage-genuinely-
+  registered`, `insufficiency-genuinely-absent`, `emergent-question-not-resolvable-now`,
+  `validation-finding-corrected-not-just-logged` — the last one is the actual enforcement
+  mechanism for `debate-quality-validation`'s "correct any failure found... do not merely log it
+  for later" (§73).
+- **A real code gap closed, not just config:** `handlers/operations.py:closing_set` never called
+  `_check_quality_attestations` at all — the four rows above would have been silently unenforced.
+  Fixed, and in fixing it, restructured the function: it used to reconcile-then-immediately-write
+  each of its 4 sections (linkages/insufficiencies/emergent_questions/validation_notes) one at a
+  time, writing section 1 before even checking section 2 for problems. Now reconciles all 4
+  sections first (no writes), checks quality attestations, and only then writes any of them — the
+  same before-any-write boundary `hib.set`/`phenomenon.set`/`operation.set` already draw.
+- **A real design bug caught and fixed in the same pass, before shipping:** `closing.set` is the
+  first step with FOUR heterogeneous item types under one step name.
+  `_check_quality_attestations`/`_required_quality_checks` are step-scoped, not item-type-scoped —
+  a first attempt called them once with the full combined required-check list, which wrongly
+  demanded a linkage's own attestation on an `emergent_questions` item (confirmed live: an
+  `emergent_questions` test item was asked to attest all 4 `closing.set` checks, not just its own).
+  Fixed: the 4 checks are filtered per list_name by `check_key` prefix and verified separately, once
+  per section.
+
+**Verified live**, real Dan 8 passage (id 37465), cleaned up after each step:
+- Empty payload → succeeds, 0 items everywhere, no writes.
+- `emergent_questions` item missing its own required attestation → refuses
+  (`quality-check-incomplete`), confirmed 0 rows written.
+- Same item WITH the attestation → succeeds, writes.
+- Follow-up `remove` call → cleaned out; confirmed 0 live `passage_emergent_question` rows for the
+  Dan 8 passage afterward, real data unaffected throughout.
+- `python -c "import ast; ast.parse(...)"` + module import both clean before any live test.
+
+**Final live counts, confirmed by direct query, not assumed:** `cfg_method_rule` 37 active rows
+(`hib.set` 7, `passage.build` 6, `phenomenon.set` 10, `operation.set` 9, `closing.set` 5);
+`cfg_quality_check` 17 active rows (`hib.set` 4, `passage.build` 1, `phenomenon.set` 5,
+`operation.set` 3, `closing.set` 4). `configmaint.validate` clean throughout.
+
+**Doc:** `debate-pipeline-technical-reference-20260806.md` — Step 3/4-5 tables get the two new
+lexical-weight rows; Step 6-7 gets the 4 new quality-check rows plus the write-up of the
+per-item-type filtering bug; §4's snapshot corrected in full (was already stale on `closing.set`'s
+step/write-grant status — "proposed, pending" — since §65/§71 approved and applied it 2026-08-06,
+never updated in this doc until now).
+
+**Still not done, correctly:** Dan 1's actual phenomena register. Also still correctly deferred:
+`closing.set`'s full Step 6/7 analytical write-up (report-section structure, DB-write column
+detail at the same depth as Steps 1-5) — narrower than what this pass closed, and the researcher's
+own review of that remains a separate, later thing.
+
+---
+
+## 75. Steps 6/7 split and fully reviewed; §5/§6 audited against live reality, nothing carried forward (2026-08-07, same day, later still)
+
+**Trigger, direct instruction:** "Split step 6 and 7 in the document. This is now the review of
+these sections, and should now be completed, not left open"; a precise spec for `closing.set`
+("ensure that each of the closing sections (method rules) have configs that comes out of the
+interpretive questions that rules the specific rule_key... remove all the ifs and buts... design
+this properly"); and a real numbering bug: "There is no report section. this should be 7... the
+report is generated after the debate process have been completed and everything is written to DB."
+
+**Found:** the pipeline map (§1) and prose both had `build_debate_report.py` labelled "Step 6" and
+`closing.set` labelled "Step 7" — backwards relative to what's actually built and running
+(`Debate-Run.ps1` invokes `closing.set` THEN the report, always, by construction). Doc-only bug;
+the running pipeline was never wrong.
+
+**Built:**
+
+- **§1 pipeline map corrected:** `closing.set` = Step 6, report = Step 7 — "generated LAST, from
+  the complete DB state, after Step 6," stated directly, not implied.
+- **Split into two full sections, same depth as Steps 1-5 (Invocation, Payload, DB reads, Method
+  rules, Quality checks, Controls in order, DB writes column-level, Outputs, Unlocks) — no more
+  "not built out at the same depth," no more hedged/deferred language for anything actually done:**
+  - **Step 6 (`closing.set`)** — full write-up of the reconcile-all → quality-check-all → write-all
+    control flow (§74), the 5 method rules, the 4 quality checks and their per-item-type filtering.
+  - **Step 7 (report)** — `build_debate_report.py` read in full for the first time this session to
+    write this properly: the 9-section render structure (Process control leading the other 8), the
+    `debate_status` computation (`empty`/`in-progress`/`complete`, live every call), the narrow
+    3-column write (`debate_path`/`debate_written_at`/`debate_status`, grant-checked), the
+    deliberate (not deferred) design reason it's a standalone tool and not a registered
+    `cfg_report` step.
+- **2 of `closing.set`'s 5 method rules strengthened** after a fresh line-by-line re-check against
+  `WA-interpretation-questions-v1.4` (`migration/strengthen_closing_set_rules_20260807.py`, direct-
+  write, idempotent) — `insufficiencies-register` had dropped Part B.7's own worked example
+  ("e.g. name etymologies"); `emergent-questions-log` had dropped Part B.9's distinct point that an
+  interpretive fork is never a researcher decision awaiting a ruling, only genuine resourcing/
+  data-curation choices are. The other 3 rules already matched their source completely.
+- **§5 rewritten from an approval-request into a verification table** — all 14 items it named as
+  "pending" were checked live, not assumed: all 14 already applied (BUILD.md §71, 2026-08-06). The
+  section's own framing had simply never been updated since.
+- **§6 reviewed item by item:** `operation.decision` enum-ification — found already fully built and
+  live (`cfg_enum 'operation_decision'` 4 active values, `cfg_column.expectation` set, the code's
+  `invalid-decision` check already active) — doc was stale, not a real gap. Steps 6/7's write-up —
+  resolved by this same pass. §2.4's report fact-provenance preference — satisfied by design (the
+  report is 100% DB-sourced, its own header already states "never hand-edit," there is no
+  memory-sourced content to distinguish from). Only one item stays genuinely open: operator
+  guidance for a chapter that's too complex for any clean sub-range — a real, not-yet-encountered
+  process question, restated with why it's correctly left open rather than guessed at.
+- **3 stray escalations closed** (#550-552) — all residue from this session's own deliberate
+  testing (the `cfg_method_rule` write-grant lesson; before/after evidence for the `closing.set`
+  filtering fix), each with the specific reasoning recorded, not left as unexplained noise.
+
+**Verified:** `configmaint.validate` clean; **0 open escalations** (down from 3 found this pass,
+which were themselves down from the session's earlier peak of 12).
+
+**Not yet done, correctly:** Dan 1's actual phenomena register — still the one substantive thing
+this entire config/design/doc day was in service of, not yet resumed.
+
+---
+
+## 76. Pipeline-map staleness fixed; every method rule audited full-text, one mislinked rule found and rehomed; §6 fully resolved (2026-08-07, same day, later still)
+
+**Trigger, direct instruction:** the pipeline map's last row ("Old prose scaffold... active,
+unchanged") was checked and found false — confirm retired; §4 needed the full wording of every
+rule, not a table summary, plus explicit verification the list is complete and correctly linked to
+its owning step/module; §6 item 2 (`scope-too-complex` operator guidance) — "this have already been
+answered in that it is unlikely to be an issue."
+
+**Found and fixed:**
+
+- **Pipeline map row corrected.** `chapter-generate`/`passage-debate-report`/`passage-debate-sync`/
+  `verse-analysis-report` and their `report.passage_debate`/`passage.debate_sync` steps all
+  confirmed `inactive=1` live (already true since §72's retirement — the map row itself had simply
+  never been updated to say so). The 24 pre-existing scaffold-model debate files remain on disk,
+  unaffected either way.
+- **§4a (new): full, unabbreviated text of all 37 `cfg_method_rule` rows**, pulled fresh from a
+  live query, grouped by step in pipeline reading order, each with its full `rule_text`,
+  `source_doc`, and `enforced_by` — not the §3 tables' own compressed cells. Total counted
+  (7+6+9+9+6=37) against the live count as its own check, not asserted.
+- **A real mislink found doing that audit, not a cosmetic one:** `multi-chapter-vigilance` was
+  filed under `phenomenon.set`, but its own `rule_text` said outright *"Belongs to Phase 3/Step 7,
+  not Step 3 itself... correctly homed once Step 7's own cfg_method_rule rows are built"* — true
+  when written (`closing.set` had zero rows), false now (§73/§74 gave it 6). Moved
+  (`migration/rehome_multi_chapter_vigilance_rule_20260807.py`) to `closing.set`, alongside
+  `debate-quality-validation` — the same Phase 3 pass it refines — and its stale self-referential
+  parenthetical dropped. `phenomenon.set` now 9 rules, `closing.set` now 6 (37 total, unchanged).
+  §3's own Step 3/Step 6 tables updated to match.
+- **§6 item 2 resolved** by the researcher's own direct answer (unlikely to be an issue, no
+  further build follows) — not guessed at, not left open. With items 1 and 3 already resolved same
+  day (§75), **all 3 of §6's items are now closed** — heading and closing summary corrected to say
+  so plainly, including a stale "21 active checks" figure fixed to the actual live count (17).
+
+**Verified:** `configmaint.validate` clean; **0 open escalations**, still.
+
+**Not yet done, still correctly:** Dan 1's actual phenomena register.
+
+---
+
+## 77. Full code-vs-doc alignment audit — 9 real findings, all fixed (2026-08-07, same day, later still)
+
+**Trigger, direct instruction:** "work through the technical reference against the actual scripts,
+code, configs and confirm that the code is aligned with the technical reference and that there are
+no gaps." Read every handler function line by line (`hib_set`/`phenomenon_set`/`operation_set`/
+`closing_set`/`passage.py:build`), not skimmed against the doc's own claims, plus `Debate-Run.ps1`
+and the live `cfg_setting`. 9 real, confirmed gaps found — all in the DOC, none in the running
+code — fixed in place, none left for later.
+
+**Missing controls in "Controls, in order" lines (3 findings)** — `quality-check-incomplete` was
+added to `hib_set`/`phenomenon_set`/`operation_set` when the quality-check gate was wired in, but
+never backfilled into these three steps' own documented control lists:
+- **Step 1 (`hib.set`):** `quality-check-incomplete` missing between `unreconciled` and the
+  write-grant check.
+- **Step 3 (`phenomenon.set`):** same gap; also clarified that the control-total computation
+  happens AFTER the write, not as a pre-write hard stop like the others in that list.
+- **Step 4-5 (`operation.set`):** missing BOTH `quality-check-incomplete` AND `invalid-decision`
+  (the `operation.decision` enum-membership check, confirmed live in the code at
+  `handlers/operations.py:750-757`) — two real omissions in the same line.
+
+**Stale "not yet" claims describing states that changed days ago (4 findings):**
+- §2.1 said *"this is why `closing.set` cannot write anything right now"* — false since
+  2026-08-06 (§65/§71 approved and applied those grants); corrected to state they're live.
+- §2.5(d) said the `stuck_nonchained` `cfg_report_section` row was "proposed, pending" — confirmed
+  active; corrected.
+- Two separate spots (§3 Step 1, §4) called `cfg_enum 'hib_kind'` "proposed, pending approval" —
+  confirmed all 6 values active and the `invalid-kind` check genuinely enforcing, not a documented
+  skip; both corrected.
+
+**Stale summary counts (2 findings):**
+- §2.6 said "10 checks... added to `hib.set`/`phenomenon.set`/`operation.set`" — now 17 checks
+  across 4 steps including `closing.set` (which needed its own per-item-type filtering, distinct
+  from the other three's flat list — noted explicitly this pass).
+- §2.4 still described `report.passage_debate`'s render mechanism without noting the step itself
+  is retired (§1/§72) — corrected to say so plainly.
+
+**Confirmed correct, no changes needed:** the reconciliation gate (§2.2) exact algorithm, matches
+`_reconcile()` precisely; `passage.build`'s own "Controls, in order" list, checked line-by-line
+against `passage.py:build`, already accurate; `closing.set`'s controls list (written directly
+against the code the same session it was built) already accurate; `Debate-Run.ps1`'s actual
+execution order (`hib.set → passage.build → phenomenon.set → operation.set → closing.set`, THEN
+the report) confirmed to match the doc's "generated LAST" claim exactly, read directly from both
+`cfg_setting.passage.debate_run_sequence` and the script's own report-invocation code; the pipeline
+map's file references (`lib/passagedebatereport.py` etc.) all confirmed to exist.
+
+**Verified:** `configmaint.validate` clean; **0 open escalations**. No code was changed this pass —
+every finding was a documentation lag behind code/config that had already moved on, not the other
+way around.
+
+## 78. Dan 1 cleared for a full lexical redo — Daniel-book HIB scope confirmed book-wide, not per-chapter (2026-08-07, same day, later still)
+
+**Trigger, direct instruction:** "the lexicals for all the books will be regenerated, unfortunately
+the quality was not at the right standard and the work must all be redone. I will do the
+instructions in my own time. do a session log and confirm I can clear and start fresh with dan 1."
+Full narrative: `SESSION-LOG-20260807-dan1-clear-for-lexical-redo.md`.
+
+**Investigated before touching anything.** Live DB state confirmed: `verse_lexical` exists for all
+6 processed books (Dan 4142 rows, Hos 209, Joel 299, Jonah 388, Mic 279, Obad 394); `hib`/`passage`
+content under the new hib/phenomenon/operation/closing model exists only for **Dan 1** (in
+progress, no phenomena yet) and **Dan 8** (complete — 41 phenomena, 41 operations,
+`debate_status='complete'`); every other book's passages (Hos/Joel/Jonah/Mic/Obad, plus Dan 2-7/9-12)
+carry `debate_status='filled'`, a value outside the new model's own enum — confirmed these are
+leftover **old-scaffold-route** content (§72's retirement didn't touch what was already on disk),
+not new-model work, so out of scope for this clear.
+
+**Real finding, not assumed:** `hib.set`'s own reconciliation scope is `WHERE book=?` —
+**book-wide, not chapter/passage-scoped.** Confirmed live: a first attempt to `remove` only Dan 1's
+HIBs failed `unreconciled`, demanding Dan 8's 7 HIBs be addressed too. Deeper still: HIB id 43
+("Daniel") was already a **single row spanning both chapters** — its `verse_hib` coverage ran
+Dan.1.6-21 AND Dan.8.1-27 together, the same person-entity registered once for the whole book. A
+straight `remove` of "Daniel" to clear Dan 1 would have stripped Dan 8's own Daniel coverage too,
+corrupting already-complete, validated work. `phenomenon`/`operation` reference `hib_id` directly
+(not verse lists), so this doesn't invalidate their content, but the live HIB row itself had to be
+handled precisely, not blown away.
+
+**Fix, run through the proper handler, not raw SQL for the content layer:** one `hib.set` call
+(payload `iba/app/staging/operations/dan-1-hib-clear-20260807.json`):
+
+- **10 removed** (Dan-1-only: Nebuchadnezzar, Jehoiakim, Melzar, the king's magicians and
+  enchanters, King Cyrus, the youths, Ashpenaz, Hananiah, Mishael, Azariah), each with a reason.
+- **1 changed**: "Daniel" resubmitted with its verse list narrowed to the Dan 8 subset only
+  (`reconciliation_note` + all 3 required quality-check attestations), Dan 8 kind/referent_options
+  otherwise identical — DB superseded it cleanly (old id 43 → new id 47, same soft-delete/insert
+  pattern as every other correction).
+- **7 unchanged**: Dan 8's other live HIBs (Belshazzar, the kings of Media and Persia, the king of
+  Greece, the first king, the four kingdoms, the bold-faced king, the people who are the saints)
+  repeated verbatim so the book-wide reconciliation gate had a complete picture.
+
+Result: `Dan: 7 unchanged, 0 new, 1 corrected, 10 removed`. Passage 37466 (Dan 1:1-21) — already
+empty (0 phenomena/operations/closing rows, `debate_status` was already NULL) and now with zero
+live HIB coverage — soft-deleted directly via a new one-off migration
+(`clear_dan1_stale_passage_20260807.py`, same UPDATE-pattern `passage.py:build` already uses
+internally when superseding a same-scope passage), so a future `passage.build` for the identical
+Dan 1:1-21 scope registers clean rather than tripping `scope-overlaps-existing` against a dead row.
+
+**The lexical layer itself needed no clearing action at all** — `lib/lexical.py:build_for_range` is
+already version-aware (soft-deletes the current row and inserts fresh per `code_ordinal` on every
+rerun, confirmed reading the code directly), and `VerseLexical.ps1` already supports a chapter-scoped
+run (`-Book Dan -Chapters 1`, independent of the rest of the book) — so re-running it for Dan 1
+alone, whenever the researcher's new instructions are ready, will supersede the old 468 Dan-1
+`verse_lexical` rows automatically, in place, with no manual pre-clear required.
+
+**Verified, not assumed:** Dan 8 (passage 37465) fully untouched after the whole operation — still
+41/41 phenomena/operations, still `debate_status='complete'`, still `phenomena_complete_at` unchanged.
+Dan 1: 0 live HIBs, 0 live `verse_hib` rows, passage soft-deleted. `configmaint.validate` clean
+throughout (before and after). **Dan 1 is confirmed clear and ready for a fresh start** once the
+researcher's own regenerated lexical (and, per this finding, whatever book-wide HIB re-derivation
+follows it) is ready.
+
+**Not done, correctly deferred:** no new Dan 1 lexical was built, no new HIB was registered, no
+phenomenon/operation work was started — this pass was the clear only, per the researcher's own "I
+will do the instructions in my own time."
