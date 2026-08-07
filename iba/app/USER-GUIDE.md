@@ -688,6 +688,21 @@ Once `closing.set` succeeds, `Debate-Run.ps1` automatically renders the report
 scaffold-model books (Amos/Hosea/Joel/Jonah/Micah/Obadiah); not yet exercised against a
 `Debate-Run.ps1`-produced book.
 
+**New failure conditions (2026-08-07, `BUILD.md` §79 — full-app schema remediation).** A correction
+payload for `hib.set`/`phenomenon.set`/`operation.set` naming an item under `remove` can now stop
+with `hib-has-dependent-phenomena` / `phenomenon-has-dependent-operations` /
+`operation-has-dependent-linkage` — the removal is refused because live analytical work is already
+built on top of it. Not a bug: clear the dependent first (remove the phenomenon/operation/linkage
+that depends on it, via that step's own `remove` list), or withdraw the item from `remove` and leave
+it in place. A `changed` correction (same label/key, different content) no longer needs this —
+corrections update the existing DB row in place now, they never orphan anything downstream.
+
+`operation.set`'s `sources`/`targets` party objects also gained an optional `hib_label` field —
+set it when a source/target genuinely IS a HIB already registered via `hib.set` (structurally links
+`operation_party.hib_id`, not just the free-text `detail` gloss); omit it for a party that isn't its
+own registered HIB. An unresolvable `hib_label` fails the call the same way an unresolvable verse or
+HIB label already does.
+
 ---
 
 ## 12c. Inner-being narrative — structural check (`BookNarrative-Validate.ps1`, added 2026-07-30)

@@ -4597,3 +4597,139 @@ follows it) is ready.
 **Not done, correctly deferred:** no new Dan 1 lexical was built, no new HIB was registered, no
 phenomenon/operation work was started — this pass was the clear only, per the researcher's own "I
 will do the instructions in my own time."
+
+## 79. Full-app schema remediation — real FK/UNIQUE constraints, an app-wide index mechanism, and cascade guards on every reconciling writer (2026-08-07, same day, later still)
+
+**Trigger.** Researcher's own live discovery (chat, not this app's own tooling): the debate schema
+"is not complete... does not provide for forward and backward traceability, relies on text scan,
+does not capture all the data of the debate... many to many index tables missing." Investigated and
+confirmed against the live DB + `handlers/operations.py` — see
+`iba/app/reports/debate-schema-traceability-gap-findings-20260807.md`. Widened by researcher
+follow-up (a-l) to cover every table in the app, root-cause it rather than patch around it, and
+fix CRUD/cascade behaviour everywhere the same class of bug could occur, not only `hib.set`. Full
+design record: `iba/app/reports/debate-schema-remediation-design-20260807.md`.
+
+**Root cause, confirmed by reading `lib/db.py` before writing anything.** `build_data_tables()` is
+this app's own generic, config-driven table builder — it already emitted real `FOREIGN KEY`
+constraints from `cfg_column.fk` for every table built through it. The debate tables (`hib` and its
+nine siblings) and two lexicon tables (`verse_lexical`, `strong_meaning_parsed`/`strong_meaning_tree`)
+were instead built by hand-written, one-off migration DDL that bypassed this builder — while still
+inserting the *correct* `cfg_column.fk`/`cfg_unique` metadata the builder would have read correctly,
+had it been used. Not a design tradeoff: a build-vs-config conformance bug, config declared the
+right rule, the tables were never actually built to match it.
+
+**A second, deeper bug found only by trying the fix.** `build_data_tables()`'s own UNIQUE emission
+was ALSO wrong — a plain table-level `UNIQUE(...)` collides with this app's own soft-delete-and-
+reconcile convention (a row corrected by soft-deleting and reinserting under the same natural key)
+the first time any row is ever corrected. `passage` had already hit and hand-fixed this
+(`idx_passage_range_live`, a partial unique index, `WHERE deleted=0`) by bypassing the builder
+rather than the builder knowing the right rule. Retrofitting `verse_lexical` hit the live version of
+exactly this: 593 natural keys already carried one live row + several soft-deleted rebuild-history
+predecessors — a plain UNIQUE would have hard-failed on data that was already there. Fixed at the
+root: `lib/db.py:table_ddl()` (new, the one place this DDL logic now lives, shared by
+`build_data_tables()` and the retrofit script) emits a partial unique index whenever the table has
+a `deleted` column, plain inline UNIQUE otherwise.
+
+**Built: `cfg_index`, an app-wide config-governed index mechanism (closes a gap in the builder
+itself, not just the debate tables).** `build_data_tables()` had no mechanism at all for plain
+secondary indexes — SQLite doesn't auto-index FK columns, so every table this app has ever built has
+had every FK-column join run as a full table scan; invisible only because current row counts are
+still small (researcher's own point (e): "record counts will increase exponentially"). New
+`cfg_index(table_name, name, col, ordinal)` (same shape as `cfg_unique`), new `Cfg.indexes(table)`,
+new emission step in `build_data_tables()`. Populated app-wide (`populate_cfg_index_rows.py`,
+re-runnable): one composite `(fk_col, deleted)` index per live FK column, on every real data table
+— 42 index definitions across 27 tables, not just the 13 in the retrofit.
+
+**Retrofitted, in dependency order, real FK+partial-unique+indexes, each verified before swap:**
+`hib` → `hib_referent_option`, `verse_hib` → `phenomenon` → `operation` → `operation_party` →
+`passage_linkage`, `passage_insufficiency`, `passage_emergent_question`, `passage_validation_note` →
+`verse_lexical` → `strong_meaning_parsed`, `strong_meaning_tree`. Method: SQLite has no `ALTER TABLE
+... ADD CONSTRAINT`, so each table was rebuilt as `{table}__retrofit` from `table_ddl()`, every row
+copied across, row count and `PRAGMA foreign_key_check` verified, then swapped in — one table per
+transaction, never all 13 in one. Two *expected*, documented exceptions accepted (not gated): 3
+`verse_lexical` rows with `status='unregistered'` (a real, pre-existing, by-design coverage gap
+per `bootstrap_span_reading.py`) and 2,380/2,182 `strong_meaning_parsed`/`strong_meaning_tree` rows
+referencing a not-yet-onboarded Strong's number (bulk reference data ahead of onboarding, the same
+"concordance-driven onboarding" principle as `governance.verse_gap_by_design`, just table-grain
+instead of row-grain since these two tables carry no per-row status flag). Snapshot taken first
+(`iba/app/db/snapshots/iba-20260807T155245Z-schema-remediation-pre-fk-retrofit-20260.db`); every
+table's row count confirmed unchanged after, against the pre-change audit.
+
+**Closed the sharpest concrete gap named — `operation_party ↔ hib`.** The one genuinely *missing*
+many-to-many link (not just an unindexed existing one): an operation's source/target party, when it
+IS a previously-registered HIB, had only a free-text `detail` gloss — checked live, only 3 of 42
+distinct `detail` values matched a `hib.label` even as text. New nullable `operation_party.hib_id`
+(FK → `hib.id`), backfilled for the 4 exact-label matches that exist; `detail` kept alongside, not
+replaced. `operation.set`'s payload contract gained an optional `hib_label` on each source/target
+party (validated against the live HIB register, same fail-fast convention as every other reference
+in the call) — resolved to `hib_id` and folded into the operation's own reconciliation content, so
+correcting a party's HIB link now registers as a real `changed` item, not silently invisible to
+`_reconcile()`.
+
+**Cascade guards + identity-preserving corrections, on every reconciling writer, not just `hib.set`
+(item h).** Three separate but identical-shaped bugs found and fixed together: `hib.set`,
+`phenomenon.set`, and `operation.set` each soft-delete-and-reinsert a `changed` item under a BRAND
+NEW id — which silently orphans any already-written downstream row (a `phenomenon`/`operation`/
+`passage_linkage` still pointing at the now-dead old id) the moment anything is ever corrected, not
+just removed. `passage.py` had already hit and fixed the identical problem for its own scope back
+in §67 ("a story correction can never orphan a phenomenon/operation... updates the existing row IN
+PLACE, same id") — that fix was never generalised to the debate writers built alongside it. Applied
+the same fix to all three: `hib.set`/`phenomenon.set`/`operation.set` now `UPDATE` the existing
+parent row in place on `changed` (id preserved; child rows — `hib_referent_option`/`verse_hib`,
+`operation_party` — are still fully replaced, since nothing else references their own id). And a
+genuinely new guard: `removed` now checks for live dependents first and refuses outright
+(`hib-has-dependent-phenomena` / `phenomenon-has-dependent-operations` /
+`operation-has-dependent-linkage`) rather than the old silent orphan — a HIB/phenomenon/operation
+with real analytical work already built on it cannot be pulled out from under that work by a later
+correction pass; the dependent has to be cleared first, or the removal withdrawn.
+
+**On the JSON-payload mechanism (item g — "why two control mechanisms").** Investigated, not
+removed. The `PayloadPath` JSON is a batch-input artifact, the same one-shot shape the main
+Bible-study programme's `apply_session_patch.py` already uses — not a second store of state; after
+a call the DB is the sole record. What WAS real duplication: `_reconcile()`'s natural-key
+uniqueness checking was re-deriving, in hand-written Python, exactly what a correctly-built
+`UNIQUE`/FK-constrained DB gives for free. That duplication is what this remediation actually
+closes — `_reconcile()` keeps doing what only it can do (deciding whether a content change is
+justified, recording why), while the DB now backs the structural half on its own.
+
+**Deliberately out of scope, recorded not silently dropped:**
+
+- `cfg_*` config tables (23 of them) were not retrofitted — a different reference-integrity problem
+  (config-to-code, several legitimately point at not-yet-built targets during a pending proposal),
+  already served by `lib/cfgquality.py`'s orphan-detectors.
+- Running the same whole-DB `PRAGMA foreign_key_check` this remediation used on ITSELF turned up
+  pre-existing FK violations this session never touched and did not fix: `word_strong` (29),
+  `span` (210,612), `span_candidate` (83,914), `strong_related` (4), `escalation` (27) — all
+  pre-dating this session (these tables already had real FKs before today). The `span`/`span_candidate`/
+  `word_strong`/`strong_related` scale matches `lib/db.py`'s own long-standing comment ("FKs
+  declared in DDL but NOT hard-enforced — the raw model references before its referent (word_strong
+  before strong)") — the same "reference data ahead of onboarding" pattern accepted above for
+  `strong_meaning_parsed`/`strong_meaning_tree`, at a much larger, systemic scale across the raw
+  ingest layer. `escalation`'s 27 `run_id` orphans look like a different, smaller, genuinely separate
+  question (stale runs? a purge that didn't cascade?) not investigated further here. Named so a
+  future pass starts from a real number, not a re-discovery.
+- `PRAGMA foreign_keys` runtime enforcement stays OFF, app-wide, matching the existing convention —
+  the retrofitted FKs are declarative/`PRAGMA foreign_key_check`-auditable, same as every FK this
+  app already had; real-time rejection of a bad reference still comes from each writer's own
+  existence checks (`_verse_id`, `_find_phenomenon`, `hib_by_label`, all pre-existing and unchanged
+  in their own right). Flipping enforcement on is a separate, larger, cross-cutting decision this
+  remediation did not make.
+
+**Verified:** every retrofitted table's row count unchanged vs. the pre-change snapshot; `PRAGMA
+foreign_key_check` clean on all 13 (the two documented, by-design exceptions above); `configmaint`'s
+own hard-coherence check (`_validate_live`) clean (two self-inflicted `cfg_index` self-description
+errors — 3-column composite PK and an invalid FK target — caught by running the check on this
+session's own work and fixed before calling it done); the module still imports cleanly; the party
+content-comparison's `None`-vs-`int` `hib_id` sort was unit-tested directly (mixed-type tuple
+sorting is a real Python `TypeError` risk, not a hypothetical one). No live `hib.set`/
+`phenomenon.set`/`operation.set` call was made against real Daniel data as part of this
+verification — the fix was verified structurally (import, unit tests, whole-DB integrity checks),
+not by writing a fabricated correction into production analytical data.
+
+**Files:** `lib/db.py` (`table_ddl()` extracted + fixed UNIQUE emission + index emission),
+`lib/cfg.py` (`Cfg.indexes()`, `cfg_index` added to `_VERSION_TABLES`), `handlers/operations.py`
+(cascade guards + update-in-place on all three writers, `operation_party.hib_id` wiring),
+`migration/build_cfg_index_table.py`, `migration/fix_cfg_column_fk_gaps.py`,
+`migration/populate_cfg_index_rows.py`, `migration/retrofit_debate_lexicon_tables.py` (new, all
+four). Reports: `debate-schema-traceability-gap-findings-20260807.md`,
+`debate-schema-remediation-design-20260807.md`.

@@ -29,6 +29,18 @@ into `cfg_method_rule` the same session (`story-organized-by-hib` / `hib-first-t
 same lesson as escalation #539) — config first, this doc restates it, per
 `governance.rules_must_be_config_driven`. `configmaint.validate` clean after.
 
+**2026-08-07 addendum (fourth pass, full-app schema remediation, `BUILD.md` §79 / `GOVERNANCE.md`
+§33).** Researcher's own live discovery: this pipeline's ten debate/closing tables had no real FK,
+UNIQUE, or index of any kind despite `cfg_column`/`cfg_unique` already declaring the correct rules
+— retrofitted, root cause + full record in `BUILD.md` §79. New §2.3a documents the schema fix. New
+§2.2a documents a second, related fix found generalising it: `hib.set`/`phenomenon.set`/
+`operation.set` each silently orphaned a downstream row on a `changed` correction (new id every
+time) — now update the existing row in place, and a `removed` item is refused outright while a
+live dependent exists. `operation_party` gained a real `hib_id` link (Finding 2 of the traceability
+report) — §3 Step 4-5 and the `hib-can-be-party-in-another-hibs-operation` method rule (both this
+doc's quote and the live `cfg_method_rule` row) corrected to match. Steps 1/3/4-5's own "Controls"
+and "DB writes" sub-sections updated in place to reflect all of the above.
+
 ---
 
 ## 1. Pipeline map
@@ -89,16 +101,73 @@ reinsert everything in the payload) with genuine read-compare-adjudicate-correct
 6. Any problem in 3-5 → `ReconciliationError`, raised **before any row is written** — fail
    condition `unreconciled` (or `unresolved-reference` for a broken cross-reference, checked even
    earlier).
-7. Only on success: `changed`+`removed` rows soft-deleted, `new`+`changed` rows inserted fresh.
-   `unchanged` rows: nothing happens.
+7. Only on success, **corrected 2026-08-07** (was: "changed+removed soft-deleted, new+changed
+   inserted fresh" — that inserted a BRAND NEW id for every `changed` item, silently orphaning any
+   already-written downstream row still pointing at the old one; see §2.2a): `new` items insert
+   fresh; `changed` items **`UPDATE` the existing row in place** (same `id`) — only genuinely
+   child-only rows with no downstream referent (`hib_referent_option`/`verse_hib`,
+   `operation_party`) are still soft-deleted-and-reinserted under a `changed` parent, since nothing
+   else references their own id; `removed` items are soft-deleted, but only after §2.2a's guard
+   confirms nothing live still depends on them; `unchanged` rows: nothing happens.
 
 **A reconciliation report is written on every successful call** (§2.4).
+
+### 2.2a Cascade guards — every reconciling writer, not just one (added 2026-08-07)
+
+`hib.set`, `phenomenon.set`, `operation.set` each write a table another live table can point at
+(`hib`←`phenomenon`, `phenomenon`←`operation`, `operation`←`passage_linkage`). Two rules now apply
+uniformly to all three (`BUILD.md` §79, `passage.py`'s own §67 fix generalised, never a `hib.set`-
+only special case):
+
+1. **A `changed` item preserves its row's id** (§2.2 step 7) — a correction can never silently
+   orphan a downstream row just by existing.
+2. **A `removed` item is checked for live dependents FIRST, refused outright if any exist** — new
+   fail conditions `hib-has-dependent-phenomena` (`hib.set`), `phenomenon-has-dependent-operations`
+   (`phenomenon.set`), `operation-has-dependent-linkage` (`operation.set`). The dependent must be
+   cleared first (via that lower step's own `remove` list) or the removal withdrawn — never a
+   silent orphan, same "fail clean before any row is touched" convention as every other check in
+   this pipeline.
 
 ### 2.3 Soft-delete convention
 
 Every table in this pipeline uses `deleted INTEGER NOT NULL DEFAULT 0`; every write path uses
 `UPDATE ... SET deleted=1`, never `DELETE`. Nothing physically removes a row; everything is
 recoverable by resetting the flag.
+
+### 2.3a Schema — real FK/UNIQUE/index constraints, retrofitted 2026-08-07 (previously absent)
+
+**Corrects this document's own earlier silence on the point** — none of the ten debate/closing
+tables (`hib`, `hib_referent_option`, `verse_hib`, `phenomenon`, `operation`, `operation_party`,
+`passage_linkage`, `passage_insufficiency`, `passage_emergent_question`, `passage_validation_note`)
+had a real `FOREIGN KEY`, `UNIQUE`, or index of any kind before 2026-08-07, despite `cfg_column.fk`/
+`cfg_unique` already declaring the correct relationships — a build-vs-config conformance bug, not a
+design choice (root cause + full change record: `BUILD.md` §79). All ten now carry:
+
+- **Real `FOREIGN KEY` constraints** matching `cfg_column.fk` exactly (`hib.first_verse_id →
+  verse.id`, `phenomenon.{passage_id,verse_id,hib_id} → passage.id/verse.id/hib.id`,
+  `operation.phenomenon_id → phenomenon.id`, `operation_party.{operation_id,hib_id} →
+  operation.id/hib.id`, `passage_linkage.{from,to}_operation_id → operation.id`, etc.) — declarative
+  and `PRAGMA foreign_key_check`-auditable, same as every other FK in the app; `PRAGMA foreign_keys`
+  runtime enforcement stays OFF app-wide (unchanged, pre-existing convention), so real-time rejection
+  of a bad reference still comes from each writer's own existence checks (`_verse_id`,
+  `_find_phenomenon`, `hib_by_label`), not the constraint itself.
+- **A partial unique index** (`... WHERE deleted=0`), not a plain table-level `UNIQUE`, on each
+  table's natural key (`verse_hib(verse_id,hib_id)`, `phenomenon(passage_id,verse_id,hib_id,
+  ordinal)`) — live-rows-only, so a table's own soft-deleted correction history never collides with
+  itself (matches `passage`'s own pre-existing `idx_passage_range_live` pattern).
+- **A composite `(fk_col, deleted)` index** for every FK column — config-driven via the new
+  `cfg_index` table (`GOVERNANCE.md` §33), not a one-off. Before this, every JOIN in `operations.py`
+  (e.g. `operation.set`'s `phenomenon ph JOIN verse v ON v.id=ph.verse_id JOIN hib h ON
+  h.id=ph.hib_id`) ran as a full table scan on the child side.
+
+**The one genuinely missing many-to-many link, also closed:** `operation_party.hib_id` (nullable,
+→ `hib.id`) — an operation's source/target party, when it IS a previously-registered HIB, is now a
+real structural link, not only the free-text `detail` gloss (§3 Step 4-5's payload contract gained
+an optional `hib_label` per party). Checked live before the fix: only 3 of 42 distinct `detail`
+values matched a `hib.label` even as *text*.
+
+Full investigation + before/after evidence: `iba/app/reports/
+debate-schema-traceability-gap-findings-20260807.md` and `-remediation-design-20260807.md`.
 
 ### 2.4 Report writing — two different mechanisms, deliberately
 
@@ -343,18 +412,26 @@ enforced — see §2.6):**
 **Controls, in order, each a hard stop:** `unknown-verse` → `lexical-incomplete` → `invalid-kind`
 (§above) → `unreconciled` (natural key = `label`; content = `(kind, sorted(verses),
 sorted(referent_options))`) → **`quality-check-incomplete`** (§2.6 — checked against `new`/
-`changed` items only, after reconciliation, before any write) → write-grant check. (Corrected
-2026-08-07: `quality-check-incomplete` was missing from this list — verified directly against
-`handlers/operations.py:hib_set`, not assumed from an earlier draft of this line.)
+`changed` items only, after reconciliation, before any write) → **`hib-has-dependent-phenomena`**
+(§2.2a, new 2026-08-07 — any `remove` entry with a live `phenomenon` row still pointing at it) →
+write-grant check. (Corrected 2026-08-07: `quality-check-incomplete` was missing from this list —
+verified directly against `handlers/operations.py:hib_set`, not assumed from an earlier draft of
+this line.)
 
-**DB writes, column-level:**
-- `hib`: `book`, `label`, `kind`, `first_verse_id` (the payload's first listed verse), `created_at`,
-  `deleted`.
+**DB writes, column-level — corrected 2026-08-07, §2.2a/§2.2 step 7:**
+- `hib`, **`new`**: `book`, `label`, `kind`, `first_verse_id` (the payload's first listed verse),
+  `created_at`, `deleted`. `hib`, **`changed`**: `UPDATE ... SET kind=?, first_verse_id=? WHERE
+  id=?` — the existing row's `id` is preserved (was: soft-delete + reinsert under a new id, which
+  silently orphaned any `phenomenon.hib_id` already pointing at it — fixed, not just documented).
 - `hib_referent_option` (per referent-crux option): `hib_id`, `reading_text`, `textual_grounds`,
-  `adopted`, `ordinal`, `created_at`, `deleted`.
-- `verse_hib` (one per HIB×verse): `verse_id`, `hib_id`, `created_at`, `deleted`.
-- `changed`/`removed` HIBs: cascade soft-delete their own `hib_referent_option`/`verse_hib`
-  children first.
+  `adopted`, `ordinal`, `created_at`, `deleted` — always fully replaced under `new`+`changed`
+  (nothing else references its own id, so there's no identity to preserve here).
+- `verse_hib` (one per HIB×verse): `verse_id`, `hib_id`, `created_at`, `deleted` — same, always
+  fully replaced.
+- `changed`/`removed` HIBs: `hib_referent_option`/`verse_hib` children are cascade-soft-deleted
+  first, same as before; `removed` HIBs' own `hib` row is also soft-deleted (only `changed` HIBs
+  keep their `hib` row alive, updated in place) — and only after the `hib-has-dependent-phenomena`
+  guard above has already confirmed nothing live depends on it.
 
 **Outputs, incl. by-type (new this revision):** `ok` message with unchanged/new/changed/removed
 counts **and a live by-type count** (`{"named_individual": 3, "implicit_collection": 1, ...}`); a
@@ -548,19 +625,23 @@ enforced — `_check_quality_attestations` in `phenomenon_set`; rows 4-5 added 2
 
 **Controls, in order:** `no-passage`/`legacy-passage` → `unresolved-reference` → `unreconciled`
 (natural key = `(verse_osis, hib_label, ordinal)`; content = `(description, textual_warrant,
-status)`) → **`quality-check-incomplete`** (§2.6, `new`/`changed` items only) → write-grant check
-→ writes → **the control total, computed AFTER the write, not a pre-write hard stop like the
-others above** — it decides the phase-gate flag, it never refuses the call itself: `vh_pairs`
-(every live `(verse_id, hib_id)` from `verse_hib` for the passage's verses) vs. `live_pairs` (same
-shape from `unchanged ∪ new ∪ changed` phenomena,
-`removed` excluded) → `missing` non-empty sets `phenomena_complete_at = NULL` (explicitly
-re-opening a previously-set gate, the bug fixed this session — it used to only ever move forward);
-`missing` empty sets it to the current UTC timestamp.
+status)`) → **`quality-check-incomplete`** (§2.6, `new`/`changed` items only) →
+**`phenomenon-has-dependent-operations`** (§2.2a, new 2026-08-07 — any `remove` entry with a live
+`operation` row still pointing at it) → write-grant check → writes → **the control total, computed
+AFTER the write, not a pre-write hard stop like the others above** — it decides the phase-gate
+flag, it never refuses the call itself: `vh_pairs` (every live `(verse_id, hib_id)` from
+`verse_hib` for the passage's verses) vs. `live_pairs` (same shape from `unchanged ∪ new ∪ changed`
+phenomena, `removed` excluded) → `missing` non-empty sets `phenomena_complete_at = NULL`
+(explicitly re-opening a previously-set gate, the bug fixed this session — it used to only ever
+move forward); `missing` empty sets it to the current UTC timestamp.
 
-**DB writes, column-level:**
-- `phenomenon` (per new/changed entry): `passage_id`, `verse_id`, `hib_id`, `description`,
-  `textual_warrant`, `status`, `ordinal`, `created_at`, `deleted`.
-- `passage.phenomena_complete_at`: written every call, one way or the other.
+**DB writes, column-level — corrected 2026-08-07, §2.2a/§2.2 step 7:**
+- `phenomenon`, **`new`**: `passage_id`, `verse_id`, `hib_id`, `description`, `textual_warrant`,
+  `status`, `ordinal`, `created_at`, `deleted`. `phenomenon`, **`changed`**: `UPDATE ... SET
+  description=?, textual_warrant=?, status=? WHERE id=?` — the existing row's `id` is preserved
+  (was: soft-delete + reinsert under a new id, silently orphaning any `operation.phenomenon_id`
+  already pointing at it).
+- `passage.phenomena_complete_at`: written every call, one way or the other — unchanged.
 
 **Outputs:** `ok` with counts + gate status; reconciliation report.
 
@@ -601,7 +682,7 @@ row-count staleness this session):**
 | `action-type-is-a-label` | The action-type is a short, natural, verb-based tag — a label for cross-passage/cross-book comparison, not a taxonomy; no controlled vocabulary is being built. | WA-interpretation-questions-v1.4 Q11 / Part B.10 | schema: `operation.action_type` (free text) |
 | `divine-mirroring-anchored` | Record a human/divine operation comparison only where the text's own juxtaposition or wording anchors it — a merely plausible resemblance is logged as an emergent question, never asserted or theologically elaborated. | WA-interpretation-questions-v1.4 Q12 / Part B.11 | — |
 | `decision-enum` | decision = retain \| set_aside \| retain_referential \| recorded_silence. | WA-interpretation-questions-v1.4 Part C section 3 | schema: `operation.decision` (free text, not yet `cfg_enum`-enforced — see follow-up below) |
-| `hib-can-be-party-in-another-hibs-operation` | A HIB can be a party within another HIB's own operation (e.g. a king acting against Daniel) — `operation_party.kind='human'` with `detail` naming the other HIB is how this is recorded; no separate mechanism needed. Distinct from a non-human party (`kind='non_human'`), which never gets its own hib/phenomenon/operation rows at all. | researcher direct correction, same session as `dan8-debate-run-failure-review-20260806.md` | schema: `operation_party.kind='human'` |
+| `hib-can-be-party-in-another-hibs-operation` | A HIB can be a party within another HIB's own operation (e.g. a king acting against Daniel) — `operation_party.kind='human'`, with an optional `hib_label` naming the other HIB (resolved to `operation_party.hib_id`, a real structural link) alongside the existing free-text `detail`. **Corrected 2026-08-07** (Finding 2, `debate-schema-traceability-gap-findings-20260807.md`): `detail` alone was not sufficient traceability — only 3 of 42 live `detail` values matched a `hib.label` even as text; `hib_id` is now the real link, `detail` stays as a gloss alongside it, not a replacement. Distinct from a non-human party (`kind='non_human'`), which never gets its own hib/phenomenon/operation rows at all. | researcher direct correction, same session as `dan8-debate-run-failure-review-20260806.md`; corrected 2026-08-07 | schema: `operation_party.hib_id` (FK → `hib.id`) + `operations.py:operation_set` hib_label resolution |
 | `hib-fanout-dimensions` | Fanning out from the focused HIB to the rest of the passage's cast has three distinct dimensions: (A) another HIB as source/target within the focused HIB's own operation; (B) the mirror once focus switches to that other HIB, checked for consistency, not re-derived; (C) movement/process BETWEEN two different HIBs' already-registered phenomena/operations, which belongs to `closing.set`'s `passage_linkage` (Q7), not to `operation.set` itself. Only (A) and (B) are this step's job. | researcher direction, 2026-08-07 | — |
 | `full-lexical-weight-in-observation` | The same discipline as `phenomenon.set`'s `full-lexical-weight-in-description` rule, applied to an operation's `observation_text`/`description_text`: draw on the governing word's full lexical range, in this exact context, not a brief generic label. Distinct from `action_type` (a short label, deliberately — `action-type-is-a-label`) — observation/description text is where the full weight belongs. | researcher direction, 2026-08-07 | — |
 
@@ -615,21 +696,29 @@ enforced — `_check_quality_attestations` in `operation_set`; 3rd row added 202
 | `observation-uses-full-lexical-range` | Does `observation_text`/`description_text` draw on the governing word's full lexical range and its specific contextual sense here — not a brief, generic, or stereotyped label? | reasonableness |
 
 **Controls, in order:** `no-passage`/`legacy-passage` → **`phenomena-incomplete`** (hard refusal if
-`phenomena_complete_at` is NULL, checked live, never assumed) → `unresolved-reference` →
-**`invalid-decision`** (existence check — `operation.decision` must be one of `enum.
-operation_decision`'s 4 values; `action_type` deliberately gets no such check,
-`action-type-is-a-label`) → `unreconciled` (natural key = `(verse_osis, hib_label,
-phenomenon_ordinal)`; content = `(process, action_type, decision, observation_text,
-description_text, sorted(sources), sorted(targets))`) → **`quality-check-incomplete`** (§2.6,
-`new`/`changed` items only) → write-grant check. (Corrected 2026-08-07: `invalid-decision` and
-`quality-check-incomplete` were both missing from this list — verified directly against
+`phenomena_complete_at` is NULL, checked live, never assumed) → `unresolved-reference` (now also
+covers an unresolvable party `hib_label`, 2026-08-07) → **`invalid-decision`** (existence check —
+`operation.decision` must be one of `enum.operation_decision`'s 4 values; `action_type`
+deliberately gets no such check, `action-type-is-a-label`) → `unreconciled` (natural key =
+`(verse_osis, hib_label, phenomenon_ordinal)`; content = `(process, action_type, decision,
+observation_text, description_text, sorted(sources), sorted(targets))` — `sources`/`targets`
+content now includes each party's resolved `hib_id`, 2026-08-07, so a `hib_label` correction alone
+registers as `changed`) → **`quality-check-incomplete`** (§2.6, `new`/`changed` items only) →
+**`operation-has-dependent-linkage`** (§2.2a, new 2026-08-07 — any `remove` entry a live
+`passage_linkage` still points at) → write-grant check. (Corrected 2026-08-07: `invalid-decision`
+and `quality-check-incomplete` were both missing from this list — verified directly against
 `handlers/operations.py:operation_set`.)
 
-**DB writes, column-level:**
-- `operation` (per new/changed): `phenomenon_id`, `process`, `action_type`, `decision`,
-  `observation_text`, `description_text`, `created_at`, `deleted`.
-- `operation_party` (per source/target): `operation_id`, `role`, `kind`, `detail`,
-  `enablement_only`, `ordinal`, `created_at`, `deleted`.
+**DB writes, column-level — corrected 2026-08-07, §2.2a/§2.2 step 7:**
+- `operation`, **`new`**: `phenomenon_id`, `process`, `action_type`, `decision`, `observation_text`,
+  `description_text`, `created_at`, `deleted`. `operation`, **`changed`**: `UPDATE ... SET
+  process=?, action_type=?, decision=?, observation_text=?, description_text=? WHERE id=?` — the
+  existing row's `id` is preserved (was: soft-delete + reinsert under a new id, silently orphaning
+  any `passage_linkage.from/to_operation_id` already pointing at it).
+- `operation_party` (per source/target, `new`+`changed`): `operation_id`, `role`, `kind`, `detail`,
+  **`hib_id`** (new column, resolved from an optional payload `hib_label`), `enablement_only`,
+  `ordinal`, `created_at`, `deleted` — always fully replaced regardless of whether the parent
+  `operation` is `new` or `changed` (nothing else references a party's own id).
 
 **Outputs:** `ok` with counts + party-record count; reconciliation report.
 

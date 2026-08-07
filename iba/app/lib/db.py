@@ -33,22 +33,63 @@ def _col_ddl(c: sqlite3.Row) -> str:
     return " ".join(parts)
 
 
+def table_ddl(cfg: Cfg, table: str, name: str | None = None) -> tuple[str, list[str]]:
+    """(create_table_sql, [index_sql, ...]) for `table`, entirely from current config — the ONE
+    place this logic lives (`build_data_tables()` and `migration/retrofit_debate_lexicon_tables.py`
+    both call this, so a rebuilt table is provably identical to what the generic builder would
+    produce, never a second hand-written copy of the same rules). `name` overrides the physical
+    table name in the generated SQL (used for a `{table}__retrofit` staging table) while FK/index
+    definitions still reference the real config-declared relationships.
+
+    **Uniqueness (fixed 2026-08-07, schema-remediation-design-20260807.md).** A plain table-level
+    `UNIQUE(...)` is WRONG for any table that uses this app's soft-delete-and-reconcile convention
+    (a `deleted` column, rows corrected by soft-deleting and reinserting under the SAME natural
+    key) — it collides with the table's own legitimate history the first time any row is ever
+    corrected. Found live retrofitting `verse_lexical`: 593 natural keys already had this shape
+    (one live row + several soft-deleted predecessors from repeated rebuild passes) — a plain
+    UNIQUE would have made every one of those a hard failure. `passage` had already hit and fixed
+    this the hard way (`idx_passage_range_live`, a PARTIAL unique index, `WHERE deleted=0`) by
+    hand-bypassing this exact builder, rather than the builder itself knowing the right rule. Fixed
+    at the root instead: a table WITH a `deleted` column gets a partial unique index
+    (`CREATE UNIQUE INDEX ... WHERE deleted=0`) — unique only among LIVE rows, history exempt.
+    A table with no `deleted` column (none currently) still gets the plain inline UNIQUE."""
+    phys = name or table
+    cols = cfg.columns(table)
+    col_names = {c["name"] for c in cols}
+    has_deleted = "deleted" in col_names
+    ddl = [_col_ddl(c) for c in cols]
+    key = cfg.unique_key(table)
+    pk = [c["name"] for c in cols if c["is_pk"]]
+    composite = bool(key) and (len(key) > 1 or key != pk)
+    if composite and not has_deleted:
+        ddl.append(f'UNIQUE ({", ".join(key)})')
+    for c in cols:
+        if c["fk"]:
+            rt, rc = c["fk"].split(".")
+            ddl.append(f'FOREIGN KEY ("{c["name"]}") REFERENCES "{rt}"("{rc}")')
+    create_sql = f'CREATE TABLE "{phys}" (\n  ' + ",\n  ".join(ddl) + "\n)"
+
+    index_sql = []
+    if composite and has_deleted:
+        idx_name = f"idx_{phys}_live_unique"
+        cols_sql = ", ".join(f'"{c}"' for c in key)
+        index_sql.append(f'CREATE UNIQUE INDEX "{idx_name}" ON "{phys}" ({cols_sql}) WHERE deleted=0')
+    for idx_name, idx_cols in cfg.indexes(table):
+        cols_sql = ", ".join(f'"{c}"' for c in idx_cols)
+        index_sql.append(f'CREATE INDEX "{idx_name}" ON "{phys}" ({cols_sql})')
+    return create_sql, index_sql
+
+
 def build_data_tables(cfg: Cfg, conn: sqlite3.Connection) -> list[str]:
-    """Create every DATA table from cfg_column. Config-governed, from line one."""
+    """Create every DATA table from cfg_column. Config-governed, from line one — DDL from
+    `table_ddl()` above."""
     built = []
     for table in cfg.tables():
-        cols = cfg.columns(table)
-        ddl = [_col_ddl(c) for c in cols]
-        key = cfg.unique_key(table)
-        # composite unique when the key is more than the PK
-        pk = [c["name"] for c in cols if c["is_pk"]]
-        if len(key) > 1 or (key and key != pk):
-            ddl.append(f'UNIQUE ({", ".join(key)})')
-        for c in cols:
-            if c["fk"]:
-                rt, rc = c["fk"].split(".")
-                ddl.append(f'FOREIGN KEY ("{c["name"]}") REFERENCES "{rt}"("{rc}")')
-        conn.execute(f'CREATE TABLE IF NOT EXISTS "{table}" (\n  ' + ",\n  ".join(ddl) + "\n)")
+        create_sql, index_sql = table_ddl(cfg, table)
+        conn.execute(create_sql.replace("CREATE TABLE ", "CREATE TABLE IF NOT EXISTS ", 1))
+        for sql in index_sql:
+            conn.execute(sql.replace("CREATE INDEX ", "CREATE INDEX IF NOT EXISTS ", 1)
+                             .replace("CREATE UNIQUE INDEX ", "CREATE UNIQUE INDEX IF NOT EXISTS ", 1))
         built.append(table)
     conn.commit()
     return built

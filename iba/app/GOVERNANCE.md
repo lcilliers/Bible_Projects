@@ -1547,3 +1547,48 @@ order Part C specifies. `lib/passagedebatereport.py` updated to match: `_verse_b
 `_phenomena_block()`/`_operations_block()`, a `validation` section body added, and — found in the
 same pass — `Q12` (added to the interrogative in v1.4) restored to the per-verse scaffold, which had
 never carried it even before this fix. Full change detail: `BUILD.md` §55.
+
+---
+
+## §33. `cfg_index` — indexes are now config, not a per-table hand decision; cascade guards made a general rule, not a `hib.set` special case (2026-08-07)
+
+**Trigger.** Researcher's own live discovery: the debate schema had no real FK constraints, no
+indexes, and a HIB correction could silently orphan already-written phenomena — widened to a
+full-app review (a-l). Root cause + full change detail: `BUILD.md` §79. This section records the
+two additions that change HOW config governs the schema going forward, not just what got fixed once.
+
+**New config table: `cfg_index(table_name, name, col, ordinal)`.** Same shape as `cfg_unique`.
+`build_data_tables()` (`lib/db.py`) already built real `FOREIGN KEY`/`UNIQUE` DDL from `cfg_column`/
+`cfg_unique` — it had never had ANY mechanism for plain secondary indexes, on any table, ever. That
+gap is now closed the same way every other piece of this schema is governed: a data table's indexes
+are config rows (`Cfg.indexes(table)`), not a decision left to whoever writes that table's migration.
+**The rule this establishes:** every FK column on every data table gets an index — mechanical,
+checkable (`populate_cfg_index_rows.py` is re-runnable and syncs `cfg_index` to current
+`cfg_column.fk` on demand), not something a future migration can quietly skip the way the original
+debate-table migration skipped FK constraints entirely.
+
+**Also fixed in the same builder: composite `UNIQUE` was wrong for any table with a `deleted`
+column.** A plain table-level `UNIQUE(...)` collides with this app's own soft-delete-and-reconcile
+convention the first time a row is ever corrected (soft-deleted, reinserted under the same natural
+key). `passage` had already hand-fixed this once (`idx_passage_range_live`) by bypassing the
+builder; the builder itself now knows the rule (`lib/db.py:table_ddl()`) — a partial unique index
+(`WHERE deleted=0`) for any table with `deleted`, plain inline `UNIQUE` otherwise.
+
+**Cascade-guard convention generalised.** `passage.py` already had the right rule (§67: a
+correction updates the existing row in place, same id, so it can never orphan a child row).
+`hib.set`/`phenomenon.set`/`operation.set` (built in the same debate-schema work, §61-70) never got
+it — each soft-deleted-and-reinserted a `changed` item under a new id, silently orphaning any
+already-written `phenomenon`/`operation`/`passage_linkage` still pointing at the old one. Fixed
+identically in all three, plus a genuine new rule: `removed` items are now checked for live
+dependents FIRST and refused outright if any exist. **The general rule this establishes:** any
+writer that reconciles (soft-delete-and-correct) a row other tables can point at must (a) preserve
+that row's id across a `changed` correction, and (b) refuse a `removed` correction while a live
+dependent still exists — not a `hib.set`-only convention; the next reconciling writer built in this
+app is expected to follow it too, the same way `governance.build_md_on_code_change` etc. apply to
+every future code change, not just the one that prompted the rule.
+
+**Scope note, honestly recorded:** the `cfg_*` config tables themselves (23 of them) were not
+brought into this FK/index retrofit — a different reference-integrity problem (config-to-code,
+several legitimately reference not-yet-built targets during a pending `configmaint.propose`
+approval), already served by `lib/cfgquality.py`'s orphan-detectors, not by DB-level FKs. Not an
+oversight; a recorded scoping decision (`BUILD.md` §79 has the full reasoning).

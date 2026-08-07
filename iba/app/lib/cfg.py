@@ -22,10 +22,15 @@ import sys
 # depend on its own prior value. Kept as a named list (not a LIKE 'cfg_%' scan) so a future
 # audit-only cfg_* table doesn't silently start affecting the version.
 _VERSION_TABLES = (
-    "cfg_table", "cfg_column", "cfg_unique", "cfg_enum", "cfg_connection", "cfg_api",
+    "cfg_table", "cfg_column", "cfg_unique", "cfg_index", "cfg_enum", "cfg_connection", "cfg_api",
     "cfg_write_grant", "cfg_work_package", "cfg_step", "cfg_setting", "cfg_on_fail",
     "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule", "cfg_utility",
 )
+# NOTE (2026-08-07): several cfg_* tables added after this list was written (cfg_quality_check,
+# cfg_method_rule, cfg_report*, cfg_change_detail) are NOT in this list either — an existing,
+# unresolved gap noted here rather than silently fixed as a side effect of the schema-remediation
+# work this session; widening _VERSION_TABLES policy is a separate decision from adding cfg_index,
+# which belongs here on its own terms (it drives DDL exactly like cfg_column/cfg_unique already do).
 
 DB_PATH = pathlib.Path(__file__).resolve().parent.parent / "db" / "iba.db"
 TRACE = os.environ.get("IBA_TRACE") == "1"
@@ -76,6 +81,22 @@ class Cfg:
 
     def column_names(self, table: str) -> set[str]:
         return {r["name"] for r in self.columns(table)}
+
+    def indexes(self, table: str) -> list[tuple[str, list[str]]]:
+        """Secondary (non-unique) indexes to build for this table — [(index_name, [cols])],
+        cols in cfg_index.ordinal order, indexes in name order. `cfg_index` added 2026-08-07
+        (schema-remediation-design-20260807.md): `build_data_tables()` already emitted FK/UNIQUE
+        from config but had no mechanism for plain indexes at all — every FK column app-wide was a
+        full-table-scan join target, invisible only because current row counts are still small."""
+        rows = self.conn.execute(
+            "SELECT name, col FROM cfg_index WHERE table_name=? ORDER BY name, ordinal",
+            (table,)).fetchall()
+        out: dict[str, list[str]] = {}
+        for r in rows:
+            out.setdefault(r["name"], []).append(r["col"])
+        result = sorted(out.items())
+        _trace(f"indexes({table})", result)
+        return result
 
     def unique_key(self, table: str) -> list[str]:
         """The dedup key — the composite UNIQUE, else the single UNIQUE column, else the PK."""
