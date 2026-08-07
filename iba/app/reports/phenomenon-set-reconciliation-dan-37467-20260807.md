@@ -1,0 +1,486 @@
+# phenomenon.set reconciliation — Dan-37467
+
+> Generated 2026-08-07T16:47:54Z. 0 unchanged, 0 corrected, 80 new, 0 removed.
+
+## New
+
+- ('Dan.1.6', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Among these were Daniel, Hananiah, Mishael, and Azariah of the tribe of Judah" (1:6) -- a naming clause only.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.7', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Daniel he called Belteshazzar" (1:7) -- the chief eunuch is the grammatical subject; Daniel is only the object of the naming.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.8', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Daniel resolved [lit. sim ... al-libbo, "set ... upon his heart", H7760A + H3820A leb, "inner man, mind, will, heart, ... resolution, determination of will"] that he would not defile himself with the king's food, or with the wine that he drank" (1:8a).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': H3820A leb's own full range (inner man, mind, will, heart, seat of resolution/determination) is drawn on directly -- this is framed as an act of the will/inner man, not merely "Daniel decided" as a stock phrase.
+- ('Dan.1.9', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "God gave Daniel favor and compassion in the sight of the chief of the eunuchs" (1:9) -- Daniel is the object/beneficiary, not the subject, of the stated disposition.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Ashpenaz/1:9 for the phenomenon this verse actually evidences.
+- ('Dan.1.10', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs said to Daniel, 'I fear my lord the king...'" (1:10) -- fear (H3373) is predicated of the speaker, not of Daniel.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.11', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Then Daniel said [H0559 amar, carrying the sense of purposeful speech: "to say, to intend"] to the steward whom the chief of the eunuchs had assigned over Daniel, Hananiah, Mishael, and Azariah" (1:11) -- Daniel is the sole grammatical subject of the verse's main verb.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': H0559's own secondary sense ("to intend, to purpose") is drawn on, not just "he spoke" as a bare label -- framed as continued deliberate initiative, matching 1:8's own resolve.
+- ('Dan.1.12', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Test [H5254G nasah, "to test, try, prove, put to the proof"] your servants for ten days; let us be given vegetables to eat and water to drink" (1:12) -- Daniel's own proposed terms.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': H5254G's full range (test, try, prove, put to the proof) is drawn on -- described as a willingness to be PROVEN, not simply "he suggested a diet".
+- ('Dan.1.13', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Then let our appearance ... be observed [H7200G ra'ah, in its passive sense: "to appear, be seen"] by you, and deal with your servants according to what you see" (1:13) -- Daniel names the evidentiary standard himself.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': H7200G's passive/evidentiary sense ("to appear, present oneself, be seen") is drawn on -- framed as Daniel deliberately submitting to visual proof, not a generic "he asked to be checked on".
+- ('Dan.1.14', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "So he [the steward] listened to them, and tested them for ten days" (1:14) -- the steward is the grammatical subject throughout.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Melzar/1:14 for the phenomenon this verse evidences.
+- ('Dan.1.15', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "At the end of ten days it was seen that they were better in appearance and fatter in flesh than all the youths" (1:15) -- H4758 mar'eh (appearance) and H1320 basar (flesh) are both outward/physical terms.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.16', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the steward took away their food and the wine they were to drink, and gave them vegetables" (1:16) -- the steward is the grammatical subject.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Melzar/1:16.
+- ('Dan.1.17', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "As for these four youths, God gave them learning [H4093 madda, "knowledge, thought, mind"] and skill [H7919A sakal, "be prudent, have insight, comprehension"] in all literature and wisdom [H2451 chokmah]" (1:17a).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': Draws on madda (mind/thought, not just "knowledge"), sakal's own insight/prudence range, and chokmah's own breadth (skill, administration, ethical/religious wisdom) rather than a flat "they were smart" label.
+- ('Dan.1.17', 'Daniel', 1)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "and Daniel had understanding [H0995 biyn, "to discern, understand, consider"] in all visions [H2377 chazon] and dreams [H2472 chalom]" (1:17b) -- explicitly singles Daniel out from "these four youths" of 1:17a.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': biyn's own discernment/perception sense is drawn on (not just "he understood"), and chazon/chalom's own specifically revelatory/prophetic register is named, not flattened to generic "dreams".
+- ('Dan.1.18', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs brought them in before Nebuchadnezzar" (1:18) -- the chief eunuch is the subject; Daniel is object.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.19', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the king spoke with them, and among all of them none was found like Daniel, Hananiah, Mishael, and Azariah. Therefore they stood before the king" (1:19) -- H4672 matsa ("to be found, be recognised") is the king's own act of recognition.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Nebuchadnezzar/1:19.
+- ('Dan.1.20', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he found them ten times better than all the magicians and enchanters" (1:20) -- the king is the grammatical subject of "inquired"/"found".
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Nebuchadnezzar/1:20.
+- ('Dan.1.21', 'Daniel', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "And Daniel was there until the first year of King Cyrus" (1:21) -- a time-span notice.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields multiple genuine inner-being phenomena (resolve 1:8; renewed initiative/proposal 1:11-13; divinely-granted wisdom shared with the other three 1:17a; Daniel's own additional revelatory understanding 1:17b) alongside legitimate silence elsewhere; clearly warranted, the book's own protagonist.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.6', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Among these were Daniel, Hananiah, Mishael, and Azariah of the tribe of Judah" (1:6).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.7', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': renamed within "the chief of the eunuchs gave them names" (1:7).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.11', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "whom the chief of the eunuchs had assigned over Daniel, Hananiah, Mishael, and Azariah" (1:11) -- an object of assignment, not an acting subject.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.12', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Test your servants for ten days" (1:12) -- spoken by Daniel (subject established at 1:11), not by this HIB.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.13', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "deal with your servants according to what you see" (1:13) -- Daniel's own continued proposal.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.14', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he [the steward] listened to them, and tested them for ten days" (1:14).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.15', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "they were better in appearance and fatter in flesh" (1:15).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.16', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the steward took away their food ... and gave them vegetables" (1:16).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.17', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "As for these four youths, God gave them learning [H4093 madda] and skill [H7919A sakal] in all literature and wisdom [H2451 chokmah]" (1:17a).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': Draws on madda/sakal/chokmah's own specific senses (mind/thought, insight/prudence, administrative-ethical-religious wisdom), not a flat "they were smart" label.
+- ('Dan.1.18', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs brought them in before Nebuchadnezzar" (1:18).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.19', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "none was found like Daniel, Hananiah, Mishael, and Azariah" (1:19) -- the king's own act of recognition (H4672 matsa).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Nebuchadnezzar/1:19.
+- ('Dan.1.20', 'Hananiah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he found them ten times better than all the magicians and enchanters" (1:20).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Nebuchadnezzar/1:20.
+- ('Dan.1.6', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Among these were Daniel, Hananiah, Mishael, and Azariah of the tribe of Judah" (1:6).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.7', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': renamed within "the chief of the eunuchs gave them names" (1:7).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.11', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "whom the chief of the eunuchs had assigned over Daniel, Hananiah, Mishael, and Azariah" (1:11) -- an object of assignment, not an acting subject.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.12', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Test your servants for ten days" (1:12) -- spoken by Daniel (subject established at 1:11), not by this HIB.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.13', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "deal with your servants according to what you see" (1:13) -- Daniel's own continued proposal.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.14', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he [the steward] listened to them, and tested them for ten days" (1:14).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.15', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "they were better in appearance and fatter in flesh" (1:15).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.16', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the steward took away their food ... and gave them vegetables" (1:16).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.17', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "As for these four youths, God gave them learning [H4093 madda] and skill [H7919A sakal] in all literature and wisdom [H2451 chokmah]" (1:17a).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': Draws on madda/sakal/chokmah's own specific senses (mind/thought, insight/prudence, administrative-ethical-religious wisdom), not a flat "they were smart" label.
+- ('Dan.1.18', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs brought them in before Nebuchadnezzar" (1:18).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.19', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "none was found like Daniel, Hananiah, Mishael, and Azariah" (1:19) -- the king's own act of recognition (H4672 matsa).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Nebuchadnezzar/1:19.
+- ('Dan.1.20', 'Mishael', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he found them ten times better than all the magicians and enchanters" (1:20).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Nebuchadnezzar/1:20.
+- ('Dan.1.6', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Among these were Daniel, Hananiah, Mishael, and Azariah of the tribe of Judah" (1:6).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.7', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': renamed within "the chief of the eunuchs gave them names" (1:7).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.11', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "whom the chief of the eunuchs had assigned over Daniel, Hananiah, Mishael, and Azariah" (1:11) -- an object of assignment, not an acting subject.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.12', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Test your servants for ten days" (1:12) -- spoken by Daniel (subject established at 1:11), not by this HIB.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.13', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "deal with your servants according to what you see" (1:13) -- Daniel's own continued proposal.
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.14', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he [the steward] listened to them, and tested them for ten days" (1:14).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.15', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "they were better in appearance and fatter in flesh" (1:15).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.16', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the steward took away their food ... and gave them vegetables" (1:16).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.17', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "As for these four youths, God gave them learning [H4093 madda] and skill [H7919A sakal] in all literature and wisdom [H2451 chokmah]" (1:17a).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': Draws on madda/sakal/chokmah's own specific senses (mind/thought, insight/prudence, administrative-ethical-religious wisdom), not a flat "they were smart" label.
+- ('Dan.1.18', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs brought them in before Nebuchadnezzar" (1:18).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.19', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "none was found like Daniel, Hananiah, Mishael, and Azariah" (1:19) -- the king's own act of recognition (H4672 matsa).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Nebuchadnezzar/1:19.
+- ('Dan.1.20', 'Azariah', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he found them ten times better than all the magicians and enchanters" (1:20).
+  - quality check 'hib-still-warranted': Yes -- this HIB's full Dan 1 phenomena list yields at least one genuine inner-being phenomenon (the shared divinely-granted learning/skill of 1:17) alongside legitimate silence elsewhere; warranted, though this HIB is never individuated from the other two by any verse's own wording -- it moves only as part of the four throughout.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Nebuchadnezzar/1:20.
+- ('Dan.1.1', 'Nebuchadnezzar', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Nebuchadnezzar king of Babylon came to Jerusalem and besieged [H6696A tsur, "to bind, confine, shut in"] it" (1:1) -- an outward military act only.
+  - quality check 'hib-still-warranted': Yes -- religious devotion expressed through the dedication-act (1:2), favor/generosity in provisioning (1:5), and evaluative discernment (1:19-20) are all genuine, separately-warranted inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.2', 'Nebuchadnezzar', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he brought them to the land of Shinar, to the house of his god, and placed the vessels in the treasury of his god" (1:2b-c).
+  - quality check 'hib-still-warranted': Yes -- religious devotion expressed through the dedication-act (1:2), favor/generosity in provisioning (1:5), and evaluative discernment (1:19-20) are all genuine, separately-warranted inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': The verse's own repetition ("his god ... his god", H0430G elohim used of a pagan deity) is drawn on directly to name the disposition as one of religious allegiance/attribution, not a bare "he stored the loot".
+- ('Dan.1.3', 'Nebuchadnezzar', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the king commanded [H0559 amar] Ashpenaz ... to bring some of the people of Israel" (1:3) -- a decree, no stated motive-word.
+  - quality check 'hib-still-warranted': Yes -- religious devotion expressed through the dedication-act (1:2), favor/generosity in provisioning (1:5), and evaluative discernment (1:19-20) are all genuine, separately-warranted inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.5', 'Nebuchadnezzar', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "The king assigned them a daily portion of the food that the king ate, and of the wine that he drank" (1:5a) -- his OWN fare, not merely rations.
+  - quality check 'hib-still-warranted': Yes -- religious devotion expressed through the dedication-act (1:2), favor/generosity in provisioning (1:5), and evaluative discernment (1:19-20) are all genuine, separately-warranted inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': Draws on the specific detail that this is the king's own table (H6598 pathbag, "portion of food for king, delicacies") rather than a generic "provisions" label -- framed as a mark of favor, not bare logistics.
+- ('Dan.1.10', 'Nebuchadnezzar', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "I fear my lord the king, who assigned your food and your drink" (1:10) -- fear is predicated of Ashpenaz, the speaker.
+  - quality check 'hib-still-warranted': Yes -- religious devotion expressed through the dedication-act (1:2), favor/generosity in provisioning (1:5), and evaluative discernment (1:19-20) are all genuine, separately-warranted inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent for this HIB; see Ashpenaz/1:10.
+- ('Dan.1.18', 'Nebuchadnezzar', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs brought them in before Nebuchadnezzar" (1:18) -- the chief eunuch is the subject.
+  - quality check 'hib-still-warranted': Yes -- religious devotion expressed through the dedication-act (1:2), favor/generosity in provisioning (1:5), and evaluative discernment (1:19-20) are all genuine, separately-warranted inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.19', 'Nebuchadnezzar', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the king spoke [H1696G dabar] with them, and among all of them none was found [H4672 matsa, "to be found, be recognised"] like Daniel, Hananiah, Mishael, and Azariah" (1:19a-b).
+  - quality check 'hib-still-warranted': Yes -- religious devotion expressed through the dedication-act (1:2), favor/generosity in provisioning (1:5), and evaluative discernment (1:19-20) are all genuine, separately-warranted inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': matsa's own "be recognised/discovered" sense is drawn on to frame this as the king's own act of discernment/recognition, not a flat "he liked them".
+- ('Dan.1.20', 'Nebuchadnezzar', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "in every matter of wisdom and understanding about which the king inquired [H1245 baqash, "to seek, require, desire, exact, request"] of them, he found them ten times better than all the magicians and enchanters" (1:20).
+  - quality check 'hib-still-warranted': Yes -- religious devotion expressed through the dedication-act (1:2), favor/generosity in provisioning (1:5), and evaluative discernment (1:19-20) are all genuine, separately-warranted inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': baqash's own active-inquiry sense (seek, exact, request) is drawn on to frame this as investigative engagement, not passive noticing -- distinct from, and building on, 1:19's initial act of recognition.
+- ('Dan.1.3', 'Ashpenaz', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the king commanded Ashpenaz, his chief eunuch" (1:3) -- he is the object of the command.
+  - quality check 'hib-still-warranted': Yes -- favor/compassion received toward Daniel (1:9) and Ashpenaz's own explicitly stated fear (1:10), with a textually-grounded inferred prudent delegation (1:11), are genuine inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.7', 'Ashpenaz', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs gave them names" (1:7).
+  - quality check 'hib-still-warranted': Yes -- favor/compassion received toward Daniel (1:9) and Ashpenaz's own explicitly stated fear (1:10), with a textually-grounded inferred prudent delegation (1:11), are genuine inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.8', 'Ashpenaz', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "he asked the chief of the eunuchs to allow him not to defile himself" (1:8b) -- Daniel is the subject; Ashpenaz has not yet responded within this verse.
+  - quality check 'hib-still-warranted': Yes -- favor/compassion received toward Daniel (1:9) and Ashpenaz's own explicitly stated fear (1:10), with a textually-grounded inferred prudent delegation (1:11), are genuine inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.9', 'Ashpenaz', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "God gave Daniel favor [H2617A chesed, "goodness, kindness, faithfulness"] and compassion [H7356B racham] in the sight of the chief of the eunuchs" (1:9).
+  - quality check 'hib-still-warranted': Yes -- favor/compassion received toward Daniel (1:9) and Ashpenaz's own explicitly stated fear (1:10), with a textually-grounded inferred prudent delegation (1:11), are genuine inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': Draws on chesed's own kindness/faithfulness range and racham's own tenderness/compassion sense, not a flat "he liked Daniel".
+- ('Dan.1.10', 'Ashpenaz', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs said to Daniel, 'I fear [H3373 yare, "fearing, reverent, afraid"] my lord the king...'" (1:10a).
+  - quality check 'hib-still-warranted': Yes -- favor/compassion received toward Daniel (1:9) and Ashpenaz's own explicitly stated fear (1:10), with a textually-grounded inferred prudent delegation (1:11), are genuine inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': yare's own range (fearing, reverent, afraid) is drawn on directly and named as the explicit content -- not softened to "he was cautious".
+- ('Dan.1.11', 'Ashpenaz', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': The sequence "I fear the king" (1:10) immediately followed by "the steward whom the chief of the eunuchs had assigned over Daniel, Hananiah, Mishael, and Azariah" (1:11) -- an act of delegation following directly on stated fear, though the causal link itself is not spelled out by the text.
+  - quality check 'hib-still-warranted': Yes -- favor/compassion received toward Daniel (1:9) and Ashpenaz's own explicitly stated fear (1:10), with a textually-grounded inferred prudent delegation (1:11), are genuine inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': Names the specific inference being drawn (fear -> delegation as a way to help without personal risk) and marks it explicitly as inferred, not stated -- not disguising interpretation as textual assertion.
+- ('Dan.1.18', 'Ashpenaz', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the chief of the eunuchs brought them in before Nebuchadnezzar" (1:18).
+  - quality check 'hib-still-warranted': Yes -- favor/compassion received toward Daniel (1:9) and Ashpenaz's own explicitly stated fear (1:10), with a textually-grounded inferred prudent delegation (1:11), are genuine inner-being phenomena; clearly warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.3', 'the youths', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "to bring some of the people of Israel, both of the royal family and of the nobility" (1:3b).
+  - quality check 'hib-still-warranted': Yes -- the selection description of 1:4 (skillful in wisdom, endowed with knowledge, understanding) is a genuine, textually-stated inner-being phenomenon of this collective; warranted, though the remaining verses are comparison-class mentions only.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.4', 'the youths', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "skillful [H7919A sakal] in all wisdom [H2451 chokmah], endowed with knowledge [H1847 da'ath], understanding [H0995 biyn] learning" (1:4b).
+  - quality check 'hib-still-warranted': Yes -- the selection description of 1:4 (skillful in wisdom, endowed with knowledge, understanding) is a genuine, textually-stated inner-being phenomenon of this collective; warranted, though the remaining verses are comparison-class mentions only.
+  - quality check 'description-uses-full-lexical-range': Draws on sakal (insight, comprehension, prudence), chokmah (skill, administrative and religious wisdom), da'ath (knowledge, perception, discernment) and biyn (to discern, understand) each in their own specific range, not flattened to one generic "smart" label.
+- ('Dan.1.5', 'the youths', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "The king assigned them a daily portion ... They were to be educated for three years" (1:5).
+  - quality check 'hib-still-warranted': Yes -- the selection description of 1:4 (skillful in wisdom, endowed with knowledge, understanding) is a genuine, textually-stated inner-being phenomenon of this collective; warranted, though the remaining verses are comparison-class mentions only.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.10', 'the youths', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "than the youths who are of your own age" (1:10) -- part of Ashpenaz's own fear-statement, not a description of the youths' own disposition.
+  - quality check 'hib-still-warranted': Yes -- the selection description of 1:4 (skillful in wisdom, endowed with knowledge, understanding) is a genuine, textually-stated inner-being phenomenon of this collective; warranted, though the remaining verses are comparison-class mentions only.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.13', 'the youths', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the appearance of the youths who eat the king's food" (1:13).
+  - quality check 'hib-still-warranted': Yes -- the selection description of 1:4 (skillful in wisdom, endowed with knowledge, understanding) is a genuine, textually-stated inner-being phenomenon of this collective; warranted, though the remaining verses are comparison-class mentions only.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.15', 'the youths', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "than all the youths who ate the king's food" (1:15).
+  - quality check 'hib-still-warranted': Yes -- the selection description of 1:4 (skillful in wisdom, endowed with knowledge, understanding) is a genuine, textually-stated inner-being phenomenon of this collective; warranted, though the remaining verses are comparison-class mentions only.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.11', 'Melzar (the steward)', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the steward whom the chief of the eunuchs had assigned over Daniel, Hananiah, Mishael, and Azariah" (1:11) -- an object of assignment.
+  - quality check 'hib-still-warranted': Yes -- responsiveness/willingness in granting the request (1:14) and continued accommodation once the result vindicated it (1:16) are genuine inner-being phenomena; warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.12', 'Melzar (the steward)', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "Test your servants for ten days" (1:12) -- Daniel's own proposed words, addressed to the steward.
+  - quality check 'hib-still-warranted': Yes -- responsiveness/willingness in granting the request (1:14) and continued accommodation once the result vindicated it (1:16) are genuine inner-being phenomena; warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.13', 'Melzar (the steward)', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "deal with your servants according to what you see" (1:13) -- still Daniel's own address.
+  - quality check 'hib-still-warranted': Yes -- responsiveness/willingness in granting the request (1:14) and continued accommodation once the result vindicated it (1:16) are genuine inner-being phenomena; warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.14', 'Melzar (the steward)', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "So he listened to [H8085G shama, in its consent sense: "to listen, give heed ... to consent, agree, grant request ... to yield to"] them in this matter, and tested them for ten days" (1:14a).
+  - quality check 'hib-still-warranted': Yes -- responsiveness/willingness in granting the request (1:14) and continued accommodation once the result vindicated it (1:16) are genuine inner-being phenomena; warranted.
+  - quality check 'description-uses-full-lexical-range': Draws on shama's own "consent, agree, grant request, yield to" sense specifically, not the bare "heard" gloss -- names this as an act of granting/agreeing, not mere physical audition.
+- ('Dan.1.15', 'Melzar (the steward)', 0)
+  - quality check 'genuinely-inner-being': N/A -- judged silent precisely because no interior content is identified; see description/warrant for what was examined and why it doesn't qualify.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "At the end of ten days it was seen [H7200G ra'ah, passive] that they were better in appearance" (1:15) -- passive construction, no named agent.
+  - quality check 'hib-still-warranted': Yes -- responsiveness/willingness in granting the request (1:14) and continued accommodation once the result vindicated it (1:16) are genuine inner-being phenomena; warranted.
+  - quality check 'description-uses-full-lexical-range': N/A -- silent.
+- ('Dan.1.16', 'Melzar (the steward)', 0)
+  - quality check 'genuinely-inner-being': A genuine interior state/disposition of this HIB's own, not an outward fact restated without interior content.
+  - quality check 'not-a-literary-pattern': A single verse's own stated act/state for one specific HIB, not a recurring formula or book-wide thesis pulled in as if it were a per-verse finding.
+  - quality check 'warrant-is-specific': "the steward took away their food and the wine they were to drink, and gave them vegetables" (1:16) -- a continuing action following directly from 1:14-15's test.
+  - quality check 'hib-still-warranted': Yes -- responsiveness/willingness in granting the request (1:14) and continued accommodation once the result vindicated it (1:16) are genuine inner-being phenomena; warranted.
+  - quality check 'description-uses-full-lexical-range': Named explicitly as continuation/confirmation of the same 1:14 disposition (responsiveness/consent), not a fresh unrelated act -- keeps the description tied to the word's own established sense in this passage rather than a generic "he complied".

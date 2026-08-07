@@ -150,14 +150,20 @@ Write-Host ""
 
 $exitCode = 0
 foreach ($entry in $seq) {
-    $pkg  = $entry.work_package
-    $step = $entry.step
+    # NOTE (found live, 2026-08-07): the per-iteration step name MUST NOT be named $step --
+    # PowerShell variable names are case-insensitive, so a lowercase $step silently collides
+    # with the -Step PARAMETER above it, overwriting it with the last-iterated step name by the
+    # time the loop exits. That made "-not $Step" false on every full-sequence (no -Step) run,
+    # silently skipping the auto-render block below -- found when it never fired after a real
+    # closing.set success. Named $stepName here instead to keep the parameter intact.
+    $pkg      = $entry.work_package
+    $stepName = $entry.step
 
     $stagingPath = python -c "
 from iba.app.lib.cfg import Cfg
 from iba.app.lib import debaterun as dr
 cfg = Cfg()
-print(dr.staging_path(cfg, '$Book', '$scopeToken', '$step'))
+print(dr.staging_path(cfg, '$Book', '$scopeToken', '$stepName'))
 cfg.close()
 "
 
@@ -166,18 +172,18 @@ import sqlite3
 from iba.app.lib.cfg import Cfg
 from iba.app.lib import debaterun as dr
 cfg = Cfg()
-print('1' if dr.is_ready(cfg.conn, '$step', '$Book', $(if ($Chapters) { "'$Chapters'" } else { 'None' }), $(if ($Range) { "'$Range'" } else { 'None' })) else '0')
+print('1' if dr.is_ready(cfg.conn, '$stepName', '$Book', $(if ($Chapters) { "'$Chapters'" } else { 'None' }), $(if ($Range) { "'$Range'" } else { 'None' })) else '0')
 cfg.close()
 "
 
     if ($isReady -eq '1') {
-        Write-Host "  $($step.PadRight(20)) skip           already satisfied for this scope" -ForegroundColor DarkGray
+        Write-Host "  $($stepName.PadRight(20)) skip           already satisfied for this scope" -ForegroundColor DarkGray
         continue
     }
 
     if (-not (Test-Path $stagingPath)) {
         Write-Host ""
-        Write-Host "STOPPED -- $step needs its analytical payload next." -ForegroundColor Yellow
+        Write-Host "STOPPED -- $stepName needs its analytical payload next." -ForegroundColor Yellow
         Write-Host "  Write it to: $stagingPath" -ForegroundColor Yellow
         Write-Host "  Then rerun the exact same command -- readiness is re-derived from the DB" -ForegroundColor Yellow
         Write-Host "  and staging files each time, no run-id bookkeeping needed to resume." -ForegroundColor Yellow
@@ -188,10 +194,10 @@ cfg.close()
     if ($Chapters) { $paramArgs += @('--param', "Chapters=$Chapters") }
     if ($Range)    { $paramArgs += @('--param', "Range=$Range") }
 
-    $json = python -m iba.app.run $pkg --step $step --run-id $runId @paramArgs
+    $json = python -m iba.app.run $pkg --step $stepName --run-id $runId @paramArgs
     $code = $LASTEXITCODE
     $res  = $json | ConvertFrom-Json
-    Write-IbaStepResult -Step $step -Path $res.path -Message $res.message -Code $code
+    Write-IbaStepResult -Step $stepName -Path $res.path -Message $res.message -Code $code
 
     if ($code -eq 2) {
         Write-IbaPaused -WorkPackage $pkg -RunId $runId -Message $res.message

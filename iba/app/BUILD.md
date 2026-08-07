@@ -4733,3 +4733,83 @@ not by writing a fabricated correction into production analytical data.
 `migration/populate_cfg_index_rows.py`, `migration/retrofit_debate_lexicon_tables.py` (new, all
 four). Reports: `debate-schema-traceability-gap-findings-20260807.md`,
 `debate-schema-remediation-design-20260807.md`.
+
+## 80. Dan 1 fully re-debated under the rebuilt lexical; `hib-still-warranted` pruning exercised live for the first time; `Debate-Run.ps1` auto-render bug found and fixed (2026-08-07, same day, later still)
+
+**Trigger.** Researcher, re-running `Debate-Run.ps1 -Book Dan -Chapters 1` after §78's clear, hit
+`hib.set`'s own `quality-check-incomplete` report-stop against a stale pre-clear staging file still
+sitting at the exact auto-discovered path — traced to a leftover `dan-1-hib.set.json` from before
+§78's clear (06:13, predating that day's `quality_checks` backfill), archived (with its three
+downstream-dependent siblings, `-correction`/`passage.build`/`phenomenon.set`, all confirmed dead by
+§78's own passage soft-delete) to `staging/operations/archive/`, not deleted. Researcher then
+directed the actual content work to proceed: "I don't want you to run the operations manually... I
+want the app to work... check the previous sessions for today -- I thought you created a method
+that deals with this" -- confirmed the method exists and is fully live as `cfg_method_rule` (7 rows
+for `hib.set`, more for the other four steps) plus `cfg_quality_check`, not documented in
+`USER-GUIDE.md` at all (correctly so, per `governance.rules_must_be_config_driven` -- the gap was in
+the doc pointing there, not in the config).
+
+**Full pipeline run, book-scoped `hib.set` first.** Read all 21 verses of Dan 1 against the rebuilt
+`verse_lexical` (`dan-1-12-verse-lexical-v1-20260807.md`), applied `hib.set`'s own rules
+(`presumptive-candidate`, `collective-stays-collective`, `six-type-scheme`,
+`referential-named-not-skipped`, `db-compare-adjudicate`) fresh -- not reused from the archived
+file, independently re-derived and cross-checked against it after the fact. Result matched the
+pre-clear reading's own verse coverage for 10 of 13 candidates (convergent reasoning, not copying);
+all 10 new/changed entries carry real, verse-lexical-grounded `quality_checks` this time. Result:
+15 unchanged (7 Dan 8 HIBs + Daniel's Dan 8 half), 10 new, 1 corrected (Daniel's Dan 1 half
+restored).
+
+**`phenomenon.set/hib-still-warranted` actually applied for the first time.** Before writing any
+phenomena, reviewed each of the 11 live HIBs against the rule's own instruction ("if there is no
+inner-being role or effect anywhere... go back and correct hib.set (remove, with reason) before
+treating this HIB's phenomena as final"). Three of the ten freshly-registered candidates -- Jehoiakim
+(pure dating notice + passive object of judgment), King Cyrus (pure chronological marker), "the
+king's magicians and enchanters" (pure comparison class) -- carried zero inner-being content
+anywhere in the passage on a full verse-by-verse check. Corrected `hib.set` to remove all three
+(reason cited) BEFORE writing phenomena, per the rule's own ordering, rather than padding the
+register with hollow silent rows for HIBs that never warranted registering as a HIB's own
+phenomena list in the first place. Reduced the passage's own control total from 83 to 79 verse×HIB
+pairs across 8 HIBs.
+
+**`phenomenon.set` (80 entries, 19 stated/inferred + 61 silent) and `operation.set` (80 operations,
+1 `retain_referential`) both ran clean on the first submission** -- `hib-first-traversal` (Daniel,
+the book's dominant HIB, worked first and fully, then the rest), `full-lexical-weight-in-description`
+honoured throughout (every stated/inferred entry cites the specific Strong's code and its operative
+sense in context, not a stock label), `silence-is-a-finding` used honestly (a phenomenon judged
+silent names the clause examined and why it doesn't qualify, not left blank). Phase gate set;
+operations-completeness confirmed live.
+
+**`closing.set`'s own `debate-quality-validation` rule caught and corrected a real issue before the
+debate was closed** -- re-examining a representative sample (not all 80) of the stated/inferred
+operations against `operation.set/source-vs-enablement`'s own warning ("extending sourcing from an
+outcome to an interior state is an interpretive step to flag, never to assume"), found
+Ashpenaz/1:9's operation had asserted God's sourcing of Ashpenaz's own INTERIOR favor/compassion
+toward Daniel as simply stated, when the underlying idiom ("gave X favor in the sight of Y") most
+directly states a favorable OUTCOME for Daniel and only secondarily an interior state. Corrected via
+a real `operation.set` rerun (kept `retain`, since 1:10's own following stated fear presupposes a
+real felt disposition -- but the outcome-vs-interior distinction is now named explicitly rather than
+silently assumed), not merely logged -- `validation-finding-corrected-not-just-logged` requires the
+correction actually be submitted, which it was, before the validation note citing it was written.
+3 cross-HIB Q7 linkages, 1 insufficiency (Babylonian court-name etymologies absent from the base
+extract), 3 emergent questions (1 interpretive fork, 1 literary/structural observation kept
+correctly out of the phenomena register, 1 cross-chapter fork) also registered. `passage.
+debate_status` -> `complete`.
+
+**A real bug found and fixed in `Debate-Run.ps1` itself, live, mid-session.** The auto-render step
+after a full (no `-Step`) run never fired, on any run, ever -- traced by adding a temporary debug
+trace to a scratch copy of the script: the loop's own per-iteration variable was named `$step`
+(lowercase), which PowerShell's case-insensitive variable binding treats as THE SAME variable as
+the script's own `-Step` PARAMETER (capital S) -- by the time the loop finished, `$Step` had been
+silently overwritten with the last-iterated step name (`"closing.set"`), making the render
+condition (`-not $Step`) false on every full-sequence run. Renamed the loop variable to `$stepName`
+throughout; verified against a real run (`closing.set` already satisfied -> render fired, wrote
+`dan-1-debate-report-20260807-v2.md`, `COMPLETE` printed) rather than trusting the fix without
+re-running it live.
+
+**Files:** `ps/Debate-Run.ps1` (`$step` -> `$stepName`, collision fix). No schema/table change this
+session -- content-only (`hib`/`phenomenon`/`operation`/`passage_linkage`/`passage_insufficiency`/
+`passage_emergent_question`/`passage_validation_note` rows for Dan 1) plus the one script fix above.
+Reports: `hib-set-reconciliation-dan-20260807-v4.md`/`-v5.md`, `hib-set-by-type-dan-20260807-v4.md`/
+`-v5.md`, `phenomenon-set-reconciliation-dan-37467-20260807.md`,
+`operation-set-reconciliation-dan-37467-20260807.md`/`-v2.md`,
+`closing-set-reconciliation-dan-37467-20260807.md`, `dan-1-debate-report-20260807.md`/`-v2.md`.
