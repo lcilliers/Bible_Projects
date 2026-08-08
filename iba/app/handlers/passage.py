@@ -45,6 +45,7 @@ import pathlib
 
 from .base import Ctx, Outcome, ok, fail, escalate
 from ..lib import escalation as esc, reportkit, passagetrack, versespanmeaningreport
+from ..lib.debateaudit import log_change as _log_change
 
 
 def _now() -> str:
@@ -126,6 +127,7 @@ def build(ctx: Ctx) -> Outcome:
 
     _may(ctx, "passage.build", "passage")
     _may(ctx, "passage.build", "verse_passage")
+    _may(ctx, "passage.build", "debate_change_detail")
 
     a_ch, a_vs = verses[0]["chapter"], verses[0]["verse"]
     e_ch, e_vs = verses[-1]["chapter"], verses[-1]["verse"]
@@ -161,19 +163,30 @@ def build(ctx: Ctx) -> Outcome:
                     f"{ref}: overlaps {len(new_model_overlaps)} already-registered passage(s) "
                     f"with a different scope: {refs} -- pick a non-overlapping scope, or address "
                     f"the existing one(s) first")
+    def _retire_legacy_passage(row_id: int, ref_hint: str) -> None:
+        """Full soft-delete of a legacy passage + its verse_passage children -- the "not
+        reconciling old with new" transition, real CRUD delete (not a correction), logged per row
+        for the same traceability every other debate writer now carries (2026-08-08)."""
+        live_vp = ctx.db.rows(
+            "SELECT id, verse_id, is_anchor FROM verse_passage WHERE deleted=0 AND passage_id=?",
+            (row_id,))
+        for vp in live_vp:
+            ctx.db.conn.execute("UPDATE verse_passage SET deleted=1 WHERE id=?", (vp["id"],))
+            _log_change(ctx, "passage.build", "verse_passage", "delete", {"id": vp["id"]},
+                       before={"passage_id": row_id, "verse_id": vp["verse_id"],
+                               "is_anchor": vp["is_anchor"]})
+        ctx.db.conn.execute("UPDATE passage SET deleted=1 WHERE id=?", (row_id,))
+        _log_change(ctx, "passage.build", "passage", "delete", {"id": row_id},
+                   before={"ref": ref_hint})
+
     legacy_overlaps = [r for r in overlaps if r["rule"] is None]
     for r in legacy_overlaps:
-        ctx.db.conn.execute(
-            "UPDATE verse_passage SET deleted=1 WHERE deleted=0 AND passage_id=?", (r["id"],))
-        ctx.db.conn.execute("UPDATE passage SET deleted=1 WHERE id=?", (r["id"],))
+        _retire_legacy_passage(r["id"], r["ref"])
 
     if existing and existing["rule"] is None:
         # legacy (pre-B4) row, exact-scope match -- one-time transition, unconditional, not
         # reconciled, matching every other legacy-row transition in this pipeline.
-        ctx.db.conn.execute(
-            "UPDATE verse_passage SET deleted=1 WHERE deleted=0 AND passage_id=?",
-            (existing["id"],))
-        ctx.db.conn.execute("UPDATE passage SET deleted=1 WHERE id=?", (existing["id"],))
+        _retire_legacy_passage(existing["id"], existing["ref"])
         existing = None
 
     if existing:
@@ -190,22 +203,29 @@ def build(ctx: Ctx) -> Outcome:
         ctx.db.conn.execute(
             "UPDATE passage SET story_summary=?, feasibility_note=? WHERE id=?",
             (story_summary, feasibility_note, existing["id"]))
+        _log_change(ctx, "passage.build", "passage", "update", {"id": existing["id"]},
+                   set_={"story_summary": story_summary, "feasibility_note": feasibility_note},
+                   before={"story_summary": existing["story_summary"],
+                           "feasibility_note": existing["feasibility_note"]})
         ctx.db.conn.commit()
         return ok(f"{ref}: story/feasibility corrected in place (passage_id={existing['id']} "
                   f"unchanged, verse coverage unchanged, nothing orphaned) — "
                   f"{payload['reconciliation_note']}",
                  passage_id=existing["id"], changed=True)
 
-    pid = ctx.db.write("passage", {
+    passage_row = {
         "book": book, "anchor_verse_id": verse_ids[0],
         "start_chapter": a_ch, "start_verse": a_vs, "end_chapter": e_ch, "end_verse": e_vs,
         "ref": ref, "verse_count": len(verses), "rule": "input-scope", "source": "passage-build",
         "needs_review": 0, "story_summary": story_summary, "feasibility_note": feasibility_note,
-        "created_at": now, "deleted": 0})
+        "created_at": now, "deleted": 0}
+    pid = ctx.db.write("passage", passage_row)
+    _log_change(ctx, "passage.build", "passage", "insert", {"id": pid}, set_=passage_row)
     for i, vid in enumerate(verse_ids):
-        ctx.db.write("verse_passage", {
-            "passage_id": pid, "verse_id": vid, "is_anchor": 1 if i == 0 else 0,
-            "created_at": now, "deleted": 0})
+        vp_row = {"passage_id": pid, "verse_id": vid, "is_anchor": 1 if i == 0 else 0,
+                 "created_at": now, "deleted": 0}
+        vp_id = ctx.db.write("verse_passage", vp_row)
+        _log_change(ctx, "passage.build", "verse_passage", "insert", {"id": vp_id}, set_=vp_row)
 
     ctx.db.conn.commit()
     return ok(f"{ref}: passage registered ({len(verses)} verse(s), {hib_count} distinct HIB(s) "

@@ -79,7 +79,8 @@ import pathlib
 
 from .base import Ctx, Outcome, ok, fail
 from ..lib import passagetrack, reportkit
-from ..lib.versespanmeaningreport import parse_chapters, parse_range
+from ..lib.debateaudit import log_change as _log_change
+from ..lib.versespanmeaningreport import parse_chapters, parse_range, fetch_verses
 
 
 def _now() -> str:
@@ -331,17 +332,41 @@ def _write_reconciliation_report(ctx: Ctx, step: str, scope_label: str,
 
 # ── hib.set ────────────────────────────────────────────────────────────────────────────────────
 # payload: {"book": "Dan", "hibs": [
-#   {"label": "Daniel", "kind": "named"|"collective"|"referential", "verses": ["Dan.8.1", ...],
+#   {"label": "Daniel", "kind": "named_individual", "verses": ["Dan.2.13", ...],  <- THIS CALL'S
+#      OWN -Chapters/-Range SCOPE ONLY, never a book-wide reconstruction (revised 2026-08-08,
+#      researcher direction: "the entire pipeline will only concern itself with the chapter"),
 #    "referent_options": [{"reading_text": "...", "textual_grounds": "...", "adopted": true}, ...],
-#    "reconciliation_note": "..."   -- required only if this label already exists in the DB with
-#                                      different content; omit for a genuinely new HIB},
+#      -- omit/empty unless THIS call is actually asserting a referent-crux reading; an absent or
+#         empty list here never touches (and never wipes) whatever's already on record,
+#    "reconciliation_note": "..."   -- required only if this label's SCOPE-VERSE content (or kind,
+#                                      or an explicitly-provided referent_options) already differs
+#                                      from what's on record for THIS scope; omit for a genuinely
+#                                      new HIB or a same-content repeat,
+#    "quality_checks": {...}},
 #  ...],
-#  "remove": [{"label": "...", "reason": "..."}]   -- optional; explicit removal of a HIB the DB
-#                                                      currently has that this reading no longer
-#                                                      supports. Anything currently in the DB but
-#                                                      absent from BOTH 'hibs' and 'remove' fails
-#                                                      the call (unreconciled) rather than being
-#                                                      silently dropped or silently kept.
+#  "remove": [{"label": "...", "reason": "..."}]   -- optional. A label named here must already
+#     have a live footprint IN THIS CALL'S OWN SCOPE — a HIB with no presence here (e.g.
+#     Belshazzar, Dan 8, when running Dan 2) is never reachable from 'remove' on this call; run the
+#     removal from a call scoped to where it actually appears. Removes the WHOLE HIB identity
+#     (book-wide), not just this scope's claim on it — narrowing just this scope's verse-set is a
+#     'changed' entry (a smaller `verses` list), not a removal.
+#
+# Matching against an existing HIB is book-wide BY LABEL (so "Daniel" extending from Dan 1 into
+# Dan 2 resolves to the SAME row — CRUD, never a duplicate insert) — only the reconciliation
+# completeness check ("every pre-existing item must be addressed or removed") and the verse_hib
+# writes are scope-limited. See PLAN-revise-hib-set-scope-and-crud-v1-20260808.md for the full
+# reasoning; this supersedes the whole-book-payload shape this docstring described until now.
+def _verse_sort_key(osis: str) -> tuple[int, int]:
+    """(chapter, verse) from an OSIS id, for canonical reading-order comparison. `verse.id` is a
+    surrogate PK with NO relationship to reading order (confirmed live, Dan 2: ids scattered
+    across the whole numeric range) — `first_verse_id` can never be computed by comparing raw ids,
+    only by parsing the OSIS reference itself."""
+    parts = osis.split(".")
+    if len(parts) == 3 and parts[1].isdigit() and parts[2].isdigit():
+        return (int(parts[1]), int(parts[2]))
+    return (10**9, 10**9)
+
+
 def _valid_enum(ctx: Ctx, name: str) -> set[str] | None:
     """`cfg_enum WHERE name=?` — returns None (skip the check) if the enum isn't registered/active
     yet (e.g. its `configmaint.propose` approval is still pending) — a not-yet-approved enum must
@@ -365,6 +390,11 @@ def _hib_content(kind, verses, referent_options):
 
 def hib_set(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
+    lo, hi, vlo, vhi = _resolve_range(ctx)
+    scope_verses = fetch_verses(ctx.db.conn, book, lo, hi, vlo, vhi)
+    scope_osis = {f"{book}.{v['chapter']}.{v['verse']}" for v in scope_verses}
+    scope_token = ctx.params.get("Chapters") or ctx.params.get("Range") or ""
+
     try:
         payload = _load_payload(ctx)
         if payload.get("book") != book:
@@ -384,6 +414,15 @@ def hib_set(ctx: Ctx) -> Outcome:
         return fail("unknown-verse",
                     f"{len(missing_verses)} verse reference(s) not found in the verse table: "
                     f"{missing_verses[:5]}{' ...' if len(missing_verses) > 5 else ''}")
+
+    # New 2026-08-08: a payload may only claim verses actually inside THIS call's own scope --
+    # "the pipeline will only concern itself with the chapter," enforced, not just intended.
+    out_of_scope = sorted(referenced_osis - scope_osis)
+    if out_of_scope:
+        return fail("out-of-scope-verse",
+                    f"{len(out_of_scope)} verse(s) in the payload fall outside this call's own "
+                    f"scope ({book} {scope_token}): "
+                    f"{out_of_scope[:5]}{' ...' if len(out_of_scope) > 5 else ''}")
 
     # Step 0/1 hard gate (2026-08-06 direction): every verse this payload actually covers must
     # already have a complete lexical before any HIB work is accepted for it.
@@ -409,15 +448,41 @@ def hib_set(ctx: Ctx) -> Outcome:
                        f"{len(bad_kinds)} hib.kind value(s) not in enum.hib_kind "
                        f"{sorted(valid_kinds)}: {bad_kinds}")
 
-    current = {}
-    for r in ctx.db.rows("SELECT id, label, kind FROM hib WHERE book=? AND deleted=0", (book,)):
+    # Book-wide identity lookup (2026-08-08) -- separate from the scope-limited completeness check
+    # below. Read-only, and book-wide only for identity-matching ("Daniel" extending from Dan 1
+    # into Dan 2 must resolve to the SAME row) -- everything else in this call stays inside scope.
+    all_by_label: dict[str, dict] = {}
+    for r in ctx.db.rows(
+            "SELECT id, label, kind, first_verse_id FROM hib WHERE book=? AND deleted=0", (book,)):
         verses = [v["osisId"] for v in ctx.db.rows(
             "SELECT v.osisId FROM verse_hib vh JOIN verse v ON v.id=vh.verse_id "
             "WHERE vh.hib_id=? AND vh.deleted=0", (r["id"],))]
         opts = [dict(o) for o in ctx.db.rows(
-            "SELECT reading_text, textual_grounds, adopted FROM hib_referent_option "
+            "SELECT ordinal, reading_text, textual_grounds, adopted FROM hib_referent_option "
             "WHERE hib_id=? AND deleted=0 ORDER BY ordinal", (r["id"],))]
-        current[r["label"]] = {"content": _hib_content(r["kind"], verses, opts), "id": r["id"]}
+        all_by_label[r["label"]] = {"id": r["id"], "kind": r["kind"],
+                                    "first_verse_id": r["first_verse_id"],
+                                    "verses": verses, "opts": opts}
+
+    incoming_by_label = {h["label"]: h for h in hibs}
+
+    # `current` -- what `_reconcile` checks completeness against -- is scope-LIMITED (2026-08-08):
+    # only a label with an EXISTING footprint in this call's own scope is included, so a book HIB
+    # with no presence here (Belshazzar, Dan 8, when running Dan 2) is never pulled in and never
+    # needs mentioning. Referent options only enter the comparison when the payload itself touches
+    # them for this label -- an absent/empty list never wipes (or spuriously conflicts with)
+    # whatever's already on record.
+    current = {}
+    for label, row in all_by_label.items():
+        scope_verses_for_label = sorted(v for v in row["verses"] if v in scope_osis)
+        if not scope_verses_for_label:
+            continue
+        h = incoming_by_label.get(label)
+        touches_opts = bool(h and h.get("referent_options"))
+        current[label] = {
+            "content": _hib_content(row["kind"], scope_verses_for_label,
+                                    row["opts"] if touches_opts else []),
+            "id": row["id"]}
 
     incoming = {h["label"]: {"content": _hib_content(h["kind"], h.get("verses", []),
                                                       h.get("referent_options", [])),
@@ -443,10 +508,11 @@ def hib_set(ctx: Ctx) -> Outcome:
 
     # Cascade guard (2026-08-07, schema-remediation-design-20260807.md §4 -- Finding 3 of
     # debate-schema-traceability-gap-findings-20260807.md): a HIB removal must not silently orphan
-    # already-written Step 3+ work. Mirrors `passage.py`'s own established pattern (never let a
-    # correction at this level strand a child record downstream) rather than inventing a new rule.
-    # Refuse OUTRIGHT (never partial) -- same "fail clean before any row is touched" convention as
-    # every other check in this function.
+    # already-written Step 3+ work. `removed` labels are, by construction, already restricted to
+    # ones with a footprint in THIS scope (they came through `current`, which is scope-filtered) --
+    # a book-wide-only removal (no presence here) is never reachable from this call. Refuse
+    # OUTRIGHT (never partial) -- same "fail clean before any row is touched" convention as every
+    # other check in this function.
     if removed:
         removed_ids = [current[l]["id"] for l in removed]
         ph = ",".join("?" * len(removed_ids))
@@ -464,63 +530,132 @@ def hib_set(ctx: Ctx) -> Outcome:
     _may(ctx, "hib.set", "hib")
     _may(ctx, "hib.set", "hib_referent_option")
     _may(ctx, "hib.set", "verse_hib")
+    _may(ctx, "hib.set", "debate_change_detail")
 
     now = _now()
-    # `changed` HIBs update the existing `hib` row IN PLACE (same id) -- NOT soft-delete-and-
-    # reinsert. A new id here would silently orphan any `phenomenon.hib_id` already pointing at
-    # this HIB, exactly the class of bug the cascade guard above blocks for `removed` -- but
-    # `changed` has no guard to trip because the label persists, so it would fail silently instead
-    # of loudly. Matches `passage.py`'s own fix for the identical problem ("a story correction can
-    # never orphan a phenomenon/operation... updates the existing row IN PLACE, same id").
-    # `hib_referent_option`/`verse_hib` children ARE soft-deleted-and-reinserted (their own content
-    # genuinely differs) -- only the parent `hib` row's identity is preserved.
-    to_drop_children = [current[l]["id"] for l in (set(changed) | set(removed))]
-    if to_drop_children:
-        ph = ",".join("?" * len(to_drop_children))
-        ctx.db.conn.execute(
-            f"UPDATE hib_referent_option SET deleted=1 WHERE hib_id IN ({ph})", to_drop_children)
-        ctx.db.conn.execute(
-            f"UPDATE verse_hib SET deleted=1 WHERE hib_id IN ({ph})", to_drop_children)
-    to_drop_hib = [current[l]["id"] for l in removed]   # 'changed' no longer drops the hib row itself
-    if to_drop_hib:
-        ph = ",".join("?" * len(to_drop_hib))
-        ctx.db.conn.execute(f"UPDATE hib SET deleted=1 WHERE id IN ({ph})", to_drop_hib)
 
-    n_opt = n_vh = 0
+    # `removed` -- full removal of the HIB entity, book-wide (soft-delete hib + all its children).
+    # 'remove' means this identified HIB doesn't genuinely warrant HIB status at all (method rule
+    # `hib-still-warranted`), not "retract just this chapter's claim" -- that narrower case is a
+    # `changed` scope-verse shrink, handled in the CRUD loop below.
+    for label in removed:
+        hib_id = current[label]["id"]
+        before_row = all_by_label[label]
+        ctx.db.conn.execute("UPDATE hib_referent_option SET deleted=1 WHERE hib_id=?", (hib_id,))
+        ctx.db.conn.execute("UPDATE verse_hib SET deleted=1 WHERE hib_id=?", (hib_id,))
+        ctx.db.conn.execute("UPDATE hib SET deleted=1 WHERE id=?", (hib_id,))
+        _log_change(ctx, "hib.set", "hib", "delete", {"id": hib_id},
+                   before={"label": label, "kind": before_row["kind"], "book": book})
+
+    n_opt = n_vh_ins = n_vh_del = 0
     for label in list(new) + list(changed):
-        h = incoming[label]["raw"]
-        verses = h.get("verses", [])
-        first_verse_id = _verse_id(ctx, verses[0]) if verses else None
-        if label in changed:
-            hib_id = current[label]["id"]
-            ctx.db.conn.execute(
-                "UPDATE hib SET kind=?, first_verse_id=? WHERE id=?",
-                (h["kind"], first_verse_id, hib_id))
+        h = incoming_by_label[label]
+        payload_verses = h.get("verses", [])
+        existing = all_by_label.get(label)   # book-wide match, regardless of scope-only new/changed
+
+        if existing:
+            # EXTEND an existing book-wide HIB -- real CRUD, never a duplicate insert. Real
+            # first_verse_id recompute: canonical-earliest of (existing verses UNION this call's),
+            # never the payload's own array order (that convention only ever made sense when a
+            # payload was a whole-set replacement, which it no longer is).
+            hib_id = existing["id"]
+            all_verses_osis = sorted(set(existing["verses"]) | set(payload_verses))
+            new_first_osis = min(all_verses_osis, key=_verse_sort_key)
+            new_first_id = _verse_id(ctx, new_first_osis)
+            kind_changed = h["kind"] != existing["kind"]
+            first_verse_changed = new_first_id != existing["first_verse_id"]
+            if kind_changed or first_verse_changed:
+                before = {"kind": existing["kind"], "first_verse_id": existing["first_verse_id"]}
+                ctx.db.conn.execute("UPDATE hib SET kind=?, first_verse_id=? WHERE id=?",
+                                   (h["kind"], new_first_id, hib_id))
+                _log_change(ctx, "hib.set", "hib", "update", {"id": hib_id},
+                           set_={"kind": h["kind"], "first_verse_id": new_first_id}, before=before)
         else:
+            # Genuinely new HIB, never seen anywhere in the book before.
+            first_osis = min(payload_verses, key=_verse_sort_key)
+            first_id = _verse_id(ctx, first_osis)
             hib_id = ctx.db.write("hib", {
                 "book": book, "label": label, "kind": h["kind"],
-                "first_verse_id": first_verse_id, "created_at": now, "deleted": 0})
-        for i, opt in enumerate(h.get("referent_options", [])):
-            ctx.db.write("hib_referent_option", {
-                "hib_id": hib_id, "reading_text": opt["reading_text"],
-                "textual_grounds": opt.get("textual_grounds"),
-                "adopted": 1 if opt.get("adopted") else 0, "ordinal": i,
-                "created_at": now, "deleted": 0})
-            n_opt += 1
-        for osis in verses:
-            ctx.db.write("verse_hib", {
-                "verse_id": _verse_id(ctx, osis), "hib_id": hib_id,
-                "created_at": now, "deleted": 0})
-            n_vh += 1
+                "first_verse_id": first_id, "created_at": now, "deleted": 0})
+            _log_change(ctx, "hib.set", "hib", "insert", {"id": hib_id},
+                       set_={"book": book, "label": label, "kind": h["kind"],
+                             "first_verse_id": first_id})
+
+        # referent_options -- only touched if THIS call's payload actually provides them for this
+        # label; an absent/empty list never wipes what's already on record (2026-08-08). Real
+        # per-row CRUD by ordinal position (same upgrade as operation_party, researcher direction:
+        # "full CRUD is required for all table update controls") -- only a position whose content
+        # actually differs is touched, not a blanket soft-delete-and-reinsert of every option.
+        if h.get("referent_options"):
+            prior_by_ord = {o["ordinal"]: o for o in (existing or {}).get("opts") or []}
+            new_opts = h["referent_options"]
+            span = max(len(new_opts), len(prior_by_ord) and max(prior_by_ord) + 1 or 0)
+            for i in range(span):
+                new_opt = new_opts[i] if i < len(new_opts) else None
+                old_opt = prior_by_ord.get(i)
+                if new_opt is None and old_opt is not None:
+                    ctx.db.conn.execute(
+                        "UPDATE hib_referent_option SET deleted=1 WHERE hib_id=? AND ordinal=?",
+                        (hib_id, i))
+                    _log_change(ctx, "hib.set", "hib_referent_option", "delete",
+                               {"hib_id": hib_id, "ordinal": i}, before=dict(old_opt))
+                    n_opt += 1
+                    continue
+                new_row = {"hib_id": hib_id, "reading_text": new_opt["reading_text"],
+                          "textual_grounds": new_opt.get("textual_grounds"),
+                          "adopted": 1 if new_opt.get("adopted") else 0, "ordinal": i,
+                          "created_at": now, "deleted": 0}
+                if old_opt is not None:
+                    same = (old_opt.get("reading_text") == new_row["reading_text"]
+                            and (old_opt.get("textual_grounds") or None) ==
+                                (new_row["textual_grounds"] or None)
+                            and bool(old_opt.get("adopted")) == bool(new_row["adopted"]))
+                    if not same:
+                        ctx.db.conn.execute(
+                            "UPDATE hib_referent_option SET reading_text=?, textual_grounds=?, "
+                            "adopted=? WHERE hib_id=? AND ordinal=?",
+                            (new_row["reading_text"], new_row["textual_grounds"],
+                             new_row["adopted"], hib_id, i))
+                        _log_change(ctx, "hib.set", "hib_referent_option", "update",
+                                   {"hib_id": hib_id, "ordinal": i}, set_=new_row,
+                                   before=dict(old_opt))
+                else:
+                    ctx.db.write("hib_referent_option", new_row)
+                    _log_change(ctx, "hib.set", "hib_referent_option", "insert",
+                               {"hib_id": hib_id, "ordinal": i}, set_=new_row)
+                n_opt += 1
+                n_opt += 1
+
+        # verse_hib -- real per-row CRUD (2026-08-08): insert only links not already live, delete
+        # only links this scope's payload genuinely drops. Never touches a verse_hib row outside
+        # this call's own scope, for ANY label, extended or brand new.
+        existing_links_in_scope = {v for v in (existing["verses"] if existing else []) if v in scope_osis}
+        payload_links = set(payload_verses)
+        for osis in payload_links - existing_links_in_scope:
+            vid = _verse_id(ctx, osis)
+            ctx.db.write("verse_hib", {"verse_id": vid, "hib_id": hib_id, "created_at": now, "deleted": 0})
+            _log_change(ctx, "hib.set", "verse_hib", "insert", {"verse_id": vid, "hib_id": hib_id},
+                       set_={"verse_id": vid, "hib_id": hib_id})
+            n_vh_ins += 1
+        for osis in existing_links_in_scope - payload_links:
+            vid = _verse_id(ctx, osis)
+            ctx.db.conn.execute(
+                "UPDATE verse_hib SET deleted=1 WHERE verse_id=? AND hib_id=? AND deleted=0",
+                (vid, hib_id))
+            _log_change(ctx, "hib.set", "verse_hib", "delete", {"verse_id": vid, "hib_id": hib_id},
+                       before={"verse_id": vid, "hib_id": hib_id})
+            n_vh_del += 1
 
     ctx.db.conn.commit()
     notes = {l: incoming[l]["note"] for l in changed} | {l: removals[l] for l in removed}
     quality_notes = {l: incoming[l]["raw"].get("quality_checks", {}) for l in (set(new) | set(changed))}
-    report_path = _write_reconciliation_report(ctx, "hib.set", book, unchanged, changed, new,
+    scope_label = f"{book}-{scope_token}" if scope_token else book
+    report_path = _write_reconciliation_report(ctx, "hib.set", scope_label, unchanged, changed, new,
                                                removed, notes, quality_notes)
 
-    # Output by type (researcher, 2026-08-06: "count by type; list by type") -- the FINAL live
-    # state for the book after this call, not just what this call touched.
+    # Output by type (researcher, 2026-08-06: "count by type; list by type") -- the book's FULL
+    # live state after this call, unaffected by the scope change above (this report always
+    # reflected the whole book, by design, not just what one call touched).
     by_kind: dict[str, list[str]] = {}
     for r in ctx.db.rows("SELECT label, kind FROM hib WHERE book=? AND deleted=0 ORDER BY kind, label",
                          (book,)):
@@ -541,12 +676,14 @@ def hib_set(ctx: Ctx) -> Outcome:
     kind_path.write_text(kind_text, encoding="utf-8")
 
     counts_by_kind = {k: len(v) for k, v in by_kind.items()}
-    return ok(f"{book}: {len(unchanged)} unchanged, {len(new)} new, {len(changed)} corrected, "
-              f"{len(removed)} removed HIB(s); {n_opt} referent option(s), {n_vh} verse-HIB link(s) "
-              f"written this call; by type: {counts_by_kind}; reconciliation log: {report_path}; "
+    return ok(f"{book} {scope_token}: {len(unchanged)} unchanged, {len(new)} new, {len(changed)} "
+              f"corrected, {len(removed)} removed HIB(s) in this scope; {n_opt} referent option(s), "
+              f"{n_vh_ins} verse-HIB link(s) added, {n_vh_del} removed this call; by type "
+              f"(book-wide): {counts_by_kind}; reconciliation log: {report_path}; "
               f"by-type log: {kind_path}",
              unchanged=len(unchanged), new=len(new), changed=len(changed), removed=len(removed),
-             referent_options=n_opt, verse_hib=n_vh, **counts_by_kind)
+             referent_options=n_opt, verse_hib_added=n_vh_ins, verse_hib_removed=n_vh_del,
+             **counts_by_kind)
 
 
 # ── phenomenon.set ─────────────────────────────────────────────────────────────────────────────
@@ -653,28 +790,37 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
 
     _may(ctx, "phenomenon.set", "phenomenon")
     _may(ctx, "phenomenon.set", "passage")   # phase-gate write (phenomena_complete_at), below
+    _may(ctx, "phenomenon.set", "debate_change_detail")
 
     now = _now()
     # `changed` phenomena UPDATE the existing row IN PLACE (same id), not soft-delete-and-reinsert
     # -- a new id would silently orphan any `operation.phenomenon_id` already pointing at it (same
     # fix as hib.set; passage.py's own established precedent). `removed` still soft-deletes (the
-    # guard above already confirmed no live operation depends on it).
-    to_drop = [current[k]["id"] for k in removed]
-    if to_drop:
-        ph = ",".join("?" * len(to_drop))
-        ctx.db.conn.execute(f"UPDATE phenomenon SET deleted=1 WHERE id IN ({ph})", to_drop)
+    # guard above already confirmed no live operation depends on it). Per-row audit logging added
+    # 2026-08-07 -- the underlying CRUD here was already correct, only the trace was missing.
+    for key in removed:
+        row_id = current[key]["id"]
+        ctx.db.conn.execute("UPDATE phenomenon SET deleted=1 WHERE id=?", (row_id,))
+        _log_change(ctx, "phenomenon.set", "phenomenon", "delete", {"id": row_id},
+                   before={"content": current[key]["content"]})
 
     for key in list(new) + list(changed):
         vid, hid, ordv, p = by_key[key]
         if key in changed:
+            row_id = current[key]["id"]
+            new_vals = {"description": p["description"], "textual_warrant": p.get("textual_warrant"),
+                       "status": p["status"]}
             ctx.db.conn.execute(
                 "UPDATE phenomenon SET description=?, textual_warrant=?, status=? WHERE id=?",
-                (p["description"], p.get("textual_warrant"), p["status"], current[key]["id"]))
+                (new_vals["description"], new_vals["textual_warrant"], new_vals["status"], row_id))
+            _log_change(ctx, "phenomenon.set", "phenomenon", "update", {"id": row_id},
+                       set_=new_vals, before={"content": current[key]["content"]})
         else:
-            ctx.db.write("phenomenon", {
-                "passage_id": passage_id, "verse_id": vid, "hib_id": hid,
-                "description": p["description"], "textual_warrant": p.get("textual_warrant"),
-                "status": p["status"], "ordinal": ordv, "created_at": now, "deleted": 0})
+            row = {"passage_id": passage_id, "verse_id": vid, "hib_id": hid,
+                  "description": p["description"], "textual_warrant": p.get("textual_warrant"),
+                  "status": p["status"], "ordinal": ordv, "created_at": now, "deleted": 0}
+            new_id = ctx.db.write("phenomenon", row)
+            _log_change(ctx, "phenomenon.set", "phenomenon", "insert", {"id": new_id}, set_=row)
 
     # completeness check -- every verse_hib pair for this passage's verses must now have a LIVE
     # phenomenon (unchanged + new + corrected; removed items drop back out of the live set).
@@ -704,9 +850,15 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
         # from before this call. (Bug in the original §61-63 build: it only ever set the gate
         # forward, never cleared it -- caught and fixed in this same reconciliation pass.)
         ctx.db.conn.execute("UPDATE passage SET phenomena_complete_at=NULL WHERE id=?", (passage_id,))
+        _log_change(ctx, "phenomenon.set", "passage", "update", {"id": passage_id},
+                   set_={"phenomena_complete_at": None},
+                   before={"phenomena_complete_at": passage_row["phenomena_complete_at"]})
         gate_msg = f"phase gate NOT set -- {len(missing)} verse/HIB pair(s) still missing a phenomenon"
     else:
         ctx.db.conn.execute("UPDATE passage SET phenomena_complete_at=? WHERE id=?", (now, passage_id))
+        _log_change(ctx, "phenomenon.set", "passage", "update", {"id": passage_id},
+                   set_={"phenomena_complete_at": now},
+                   before={"phenomena_complete_at": passage_row["phenomena_complete_at"]})
         gate_msg = "phase gate SET -- phenomena register is complete for this passage"
 
     ctx.db.conn.commit()
@@ -913,47 +1065,95 @@ def operation_set(ctx: Ctx) -> Outcome:
 
     _may(ctx, "operation.set", "operation")
     _may(ctx, "operation.set", "operation_party")
+    _may(ctx, "operation.set", "debate_change_detail")
 
     now = _now()
     # `changed` operations UPDATE the existing row IN PLACE (same id) -- a new id would silently
     # orphan any `passage_linkage.from/to_operation_id` already pointing at it. `operation_party`
-    # children are always fully replaced regardless (nothing else references their own id, so
-    # there's no identity to preserve there, unlike the parent `operation` row).
-    to_drop_parties = [current[k]["id"] for k in (set(changed) | set(removed))]
-    if to_drop_parties:
-        ph = ",".join("?" * len(to_drop_parties))
-        ctx.db.conn.execute(
-            f"UPDATE operation_party SET deleted=1 WHERE operation_id IN ({ph})", to_drop_parties)
-    to_drop_op = [current[k]["id"] for k in removed]
-    if to_drop_op:
-        ph = ",".join("?" * len(to_drop_op))
-        ctx.db.conn.execute(f"UPDATE operation SET deleted=1 WHERE id IN ({ph})", to_drop_op)
+    # children: real per-row CRUD by (role, ordinal) position (2026-08-08, researcher direction --
+    # "full CRUD is required for all table update controls", upgraded from the previously-approved
+    # soft-delete-and-reinsert-under-a-changed-parent convention, tech ref sec2.2 step 7) -- only a
+    # position whose content actually differs is touched; a `removed` operation's parties are still
+    # fully soft-deleted (the whole operation is gone, nothing to diff against).
+    for key in removed:
+        op_id = current[key]["id"]
+        live = ctx.db.rows(
+            "SELECT id, role, ordinal, kind, detail, enablement_only, hib_id FROM operation_party "
+            "WHERE operation_id=? AND deleted=0", (op_id,))
+        for p in live:
+            ctx.db.conn.execute("UPDATE operation_party SET deleted=1 WHERE id=?", (p["id"],))
+            _log_change(ctx, "operation.set", "operation_party", "delete", {"id": p["id"]},
+                       before=dict(p))
+        ctx.db.conn.execute("UPDATE operation SET deleted=1 WHERE id=?", (op_id,))
+        _log_change(ctx, "operation.set", "operation", "delete", {"id": op_id},
+                   before={"content": current[key]["content"]})
 
     n_party = 0
     for key in list(new) + list(changed):
         phen_id, o = by_key[key]
         if key in changed:
             op_id = current[key]["id"]
+            new_vals = {"process": o.get("process"), "action_type": o.get("action_type"),
+                       "decision": o.get("decision"), "observation_text": o.get("observation_text"),
+                       "description_text": o.get("description_text")}
             ctx.db.conn.execute(
                 "UPDATE operation SET process=?, action_type=?, decision=?, observation_text=?, "
                 "description_text=? WHERE id=?",
-                (o.get("process"), o.get("action_type"), o.get("decision"),
-                 o.get("observation_text"), o.get("description_text"), op_id))
+                (new_vals["process"], new_vals["action_type"], new_vals["decision"],
+                 new_vals["observation_text"], new_vals["description_text"], op_id))
+            _log_change(ctx, "operation.set", "operation", "update", {"id": op_id},
+                       set_=new_vals, before={"content": current[key]["content"]})
         else:
-            op_id = ctx.db.write("operation", {
-                "phenomenon_id": phen_id, "process": o.get("process"),
-                "action_type": o.get("action_type"), "decision": o.get("decision"),
-                "observation_text": o.get("observation_text"),
-                "description_text": o.get("description_text"),
-                "created_at": now, "deleted": 0})
+            row = {"phenomenon_id": phen_id, "process": o.get("process"),
+                  "action_type": o.get("action_type"), "decision": o.get("decision"),
+                  "observation_text": o.get("observation_text"),
+                  "description_text": o.get("description_text"),
+                  "created_at": now, "deleted": 0}
+            op_id = ctx.db.write("operation", row)
+            _log_change(ctx, "operation.set", "operation", "insert", {"id": op_id}, set_=row)
+
         for role, parties in (("source", o.get("sources", [])), ("target", o.get("targets", []))):
-            for i, party in enumerate(parties):
-                ctx.db.write("operation_party", {
-                    "operation_id": op_id, "role": role, "kind": party["kind"],
-                    "detail": party.get("detail"), "hib_id": party.get("hib_id"),
-                    "enablement_only": 1 if party.get("enablement_only") else 0,
-                    "ordinal": i, "created_at": now, "deleted": 0})
-                n_party += 1
+            existing_by_ord = {}
+            if key in changed:
+                existing_by_ord = {p["ordinal"]: p for p in ctx.db.rows(
+                    "SELECT id, ordinal, kind, detail, enablement_only, hib_id FROM operation_party "
+                    "WHERE operation_id=? AND role=? AND deleted=0", (op_id, role))}
+            span = max(len(parties), len(existing_by_ord) and max(existing_by_ord) + 1 or 0)
+            for i in range(span):
+                new_party = parties[i] if i < len(parties) else None
+                old_party = existing_by_ord.get(i)
+                if new_party is None and old_party is not None:
+                    ctx.db.conn.execute(
+                        "UPDATE operation_party SET deleted=1 WHERE id=?", (old_party["id"],))
+                    _log_change(ctx, "operation.set", "operation_party", "delete",
+                               {"id": old_party["id"]}, before=dict(old_party))
+                    n_party += 1
+                    continue
+                new_row = {"operation_id": op_id, "role": role, "kind": new_party["kind"],
+                          "detail": new_party.get("detail"), "hib_id": new_party.get("hib_id"),
+                          "enablement_only": 1 if new_party.get("enablement_only") else 0,
+                          "ordinal": i, "created_at": now, "deleted": 0}
+                if old_party is not None:
+                    same = (old_party["kind"] == new_row["kind"]
+                            and (old_party["detail"] or None) == (new_row["detail"] or None)
+                            and old_party["enablement_only"] == new_row["enablement_only"]
+                            and old_party["hib_id"] == new_row["hib_id"])
+                    if not same:
+                        ctx.db.conn.execute(
+                            "UPDATE operation_party SET kind=?, detail=?, enablement_only=?, "
+                            "hib_id=? WHERE id=?",
+                            (new_row["kind"], new_row["detail"], new_row["enablement_only"],
+                             new_row["hib_id"], old_party["id"]))
+                        _log_change(ctx, "operation.set", "operation_party", "update",
+                                   {"id": old_party["id"]}, set_=new_row, before=dict(old_party))
+                        n_party += 1
+                    # same -- genuinely nothing to do, no write, no log, no count (this is the
+                    # actual point of real CRUD: an untouched position stays untouched).
+                else:
+                    party_id = ctx.db.write("operation_party", new_row)
+                    _log_change(ctx, "operation.set", "operation_party", "insert",
+                               {"id": party_id}, set_=new_row)
+                    n_party += 1
 
     ctx.db.conn.commit()
     notes = {k: incoming[k]["note"] for k in changed} | {k: removals[k] for k in removed}
@@ -1054,6 +1254,7 @@ def closing_set(ctx: Ctx) -> Outcome:
     _may(ctx, "closing.set", "passage_insufficiency")
     _may(ctx, "closing.set", "passage_emergent_question")
     _may(ctx, "closing.set", "passage_validation_note")
+    _may(ctx, "closing.set", "debate_change_detail")
 
     now = _now()
     problems: list[str] = []
@@ -1215,41 +1416,51 @@ def closing_set(ctx: Ctx) -> Outcome:
                         f"{len(e.problems)} item(s), nothing written: "
                         f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
-    # Now write every section for real -- same per-table logic the original single-pass version
-    # used, just performed after the quality gate above instead of interleaved with it.
+    # Now write every section for real. Real per-row CRUD (2026-08-08, researcher direction --
+    # "full CRUD is required for all table update controls"): `changed` items UPDATE the existing
+    # row IN PLACE (same id), `new` items INSERT fresh, `removed` items soft-delete only -- was:
+    # soft-delete-and-reinsert-under-a-new-id for BOTH changed and new, the same antipattern
+    # hib.set/phenomenon.set/operation.set already had fixed for their own parent rows. None of
+    # these four tables currently has a downstream FK pointing at its own id, so the old shape
+    # never orphaned anything structurally -- but a stable id across a correction is still the more
+    # traceable, auditable shape, and the researcher's direction was unqualified.
+    ROW_COLUMNS = {
+        "passage_linkage": ("from_operation_id", "to_operation_id", "note"),
+        "passage_insufficiency": ("verse_id", "note"),
+        "passage_emergent_question": ("verse_id", "question_text", "kind"),
+        "passage_validation_note": ("phenomenon_id", "finding_text", "corrected"),
+    }
     all_summary: dict[str, tuple] = {}
     for list_name, table, current, incoming, resolved_raw, (unchanged, changed, new, removed) in plan:
-        to_drop = [current[k]["id"] for k in (set(changed) | set(removed))]
-        if to_drop:
-            ph = ",".join("?" * len(to_drop))
-            ctx.db.conn.execute(f"UPDATE {table} SET deleted=1 WHERE id IN ({ph})", to_drop)
-        for ordv in list(new) + list(changed):
-            if list_name == "linkages":
-                from_id, to_id, note = resolved_raw[ordv]
-                ctx.db.write("passage_linkage", {
-                    "passage_id": passage_id, "from_operation_id": from_id, "to_operation_id": to_id,
-                    "note": note, "ordinal": ordv, "created_at": now, "deleted": 0})
-            elif list_name == "insufficiencies":
-                vid, note = resolved_raw[ordv]
-                ctx.db.write("passage_insufficiency", {
-                    "passage_id": passage_id, "verse_id": vid, "note": note, "ordinal": ordv,
-                    "created_at": now, "deleted": 0})
-            elif list_name == "emergent_questions":
-                vid, qtext, kind = resolved_raw[ordv]
-                ctx.db.write("passage_emergent_question", {
-                    "passage_id": passage_id, "verse_id": vid, "question_text": qtext, "kind": kind,
-                    "ordinal": ordv, "created_at": now, "deleted": 0})
-            elif list_name == "validation_notes":
-                phen_id, ftext, corrected = resolved_raw[ordv]
-                ctx.db.write("passage_validation_note", {
-                    "passage_id": passage_id, "phenomenon_id": phen_id, "finding_text": ftext,
-                    "corrected": corrected, "ordinal": ordv, "created_at": now, "deleted": 0})
+        cols = ROW_COLUMNS[table]
+        for ordv in removed:
+            row_id = current[ordv]["id"]
+            ctx.db.conn.execute(f"UPDATE {table} SET deleted=1 WHERE id=?", (row_id,))
+            _log_change(ctx, "closing.set", table, "delete", {"id": row_id},
+                       before={"content": current[ordv]["content"]})
+        for ordv in changed:
+            row_id = current[ordv]["id"]
+            vals = resolved_raw[ordv]
+            set_clause = ", ".join(f"{c}=?" for c in cols)
+            ctx.db.conn.execute(f"UPDATE {table} SET {set_clause} WHERE id=?", (*vals, row_id))
+            _log_change(ctx, "closing.set", table, "update", {"id": row_id},
+                       set_=dict(zip(cols, vals)), before={"content": current[ordv]["content"]})
+        for ordv in new:
+            vals = resolved_raw[ordv]
+            row = {"passage_id": passage_id, **dict(zip(cols, vals)),
+                  "ordinal": ordv, "created_at": now, "deleted": 0}
+            new_id = ctx.db.write(table, row)
+            _log_change(ctx, "closing.set", table, "insert", {"id": new_id}, set_=row)
         all_summary[list_name] = (unchanged, changed, new, removed)
 
     if "open_decisions_note" in payload:
         _may(ctx, "closing.set", "passage")
+        before_note = passage_row["open_decisions_note"]
         ctx.db.conn.execute("UPDATE passage SET open_decisions_note=? WHERE id=?",
                             (payload["open_decisions_note"], passage_id))
+        _log_change(ctx, "closing.set", "passage", "update", {"id": passage_id},
+                   set_={"open_decisions_note": payload["open_decisions_note"]},
+                   before={"open_decisions_note": before_note})
 
     ctx.db.conn.commit()
     counts = {k: {"unchanged": len(u), "changed": len(c), "new": len(n), "removed": len(r)}

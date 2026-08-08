@@ -1,0 +1,246 @@
+{
+  "book": "Dan",
+  "hibs": [
+    {
+      "label": "Daniel",
+      "kind": "named_individual",
+      "verses": [
+        "Dan.2.13",
+        "Dan.2.14",
+        "Dan.2.15",
+        "Dan.2.16",
+        "Dan.2.17",
+        "Dan.2.18",
+        "Dan.2.19",
+        "Dan.2.20",
+        "Dan.2.21",
+        "Dan.2.22",
+        "Dan.2.23",
+        "Dan.2.24",
+        "Dan.2.25",
+        "Dan.2.26",
+        "Dan.2.27",
+        "Dan.2.28",
+        "Dan.2.29",
+        "Dan.2.30",
+        "Dan.2.31",
+        "Dan.2.32",
+        "Dan.2.34",
+        "Dan.2.35",
+        "Dan.2.36",
+        "Dan.2.37",
+        "Dan.2.38",
+        "Dan.2.39",
+        "Dan.2.40",
+        "Dan.2.41",
+        "Dan.2.42",
+        "Dan.2.43",
+        "Dan.2.44",
+        "Dan.2.45",
+        "Dan.2.46",
+        "Dan.2.47",
+        "Dan.2.48",
+        "Dan.2.49"
+      ],
+      "reconciliation_note": "extends the existing Daniel HIB (id 47, tracked from Dan 1/8) with its Dan 2 appearances -- same identity, not a correction of prior content.",
+      "quality_checks": {
+        "is-genuinely-human": "the same named individual already tracked in Dan 1/8 -- continuity of a real person, not a fresh judgement call.",
+        "not-already-excluded": "already a live HIB (id 47); this call only adds verses, never reintroduces a previously-excluded referent.",
+        "verse-actually-supports-it": "present as narrative actor vv13-26,46-49, and as the continuous speaker of his own discourse vv27-45 (the phase-1 sweep counts a speaker present throughout their own quoted speech, per Step 1's \"speaks\" criterion) -- verified against the narration/quotation structure verse by verse."
+      }
+    },
+    {
+      "label": "Nebuchadnezzar",
+      "kind": "named_individual",
+      "verses": [
+        "Dan.2.1",
+        "Dan.2.2",
+        "Dan.2.3",
+        "Dan.2.4",
+        "Dan.2.5",
+        "Dan.2.6",
+        "Dan.2.7",
+        "Dan.2.8",
+        "Dan.2.9",
+        "Dan.2.10",
+        "Dan.2.11",
+        "Dan.2.12",
+        "Dan.2.14",
+        "Dan.2.15",
+        "Dan.2.16",
+        "Dan.2.23",
+        "Dan.2.24",
+        "Dan.2.25",
+        "Dan.2.26",
+        "Dan.2.27",
+        "Dan.2.28",
+        "Dan.2.29",
+        "Dan.2.30",
+        "Dan.2.31",
+        "Dan.2.34",
+        "Dan.2.36",
+        "Dan.2.37",
+        "Dan.2.38",
+        "Dan.2.41",
+        "Dan.2.43",
+        "Dan.2.45",
+        "Dan.2.46",
+        "Dan.2.47",
+        "Dan.2.48",
+        "Dan.2.49"
+      ],
+      "reconciliation_note": "extends the existing Nebuchadnezzar HIB (id 48) with its Dan 2 appearances -- verse-by-verse presence checked against the lexical (2nd-person morph markers) at every crux (vv13,17-22,32,35,39-40,42,44 confirmed absent; vv34,41,43 confirmed present).",
+      "quality_checks": {
+        "is-genuinely-human": "the same named individual already tracked in Dan 1/8.",
+        "not-already-excluded": "already a live HIB (id 48); this call only adds verses.",
+        "verse-actually-supports-it": "every included verse checked directly against verse_lexical morph_code for an explicit 2nd-person (\"you\"/\"O king\") address or narrative mention of the king; vv32/35/42 excluded after confirming NO 2nd-person marker in their lexical rows (image-description verses only)."
+      }
+    },
+    {
+      "label": "Hananiah",
+      "kind": "named_individual",
+      "verses": [
+        "Dan.2.13",
+        "Dan.2.17",
+        "Dan.2.18",
+        "Dan.2.23",
+        "Dan.2.49"
+      ],
+      "reconciliation_note": "extends the existing Hananiah HIB (id 52) with its Dan 2 appearances (referential \"his companions\" v13/18, named v17, joint \"us\" v23, Babylonian name Shadrach v49).",
+      "quality_checks": {
+        "is-genuinely-human": "the same named individual already tracked in Dan 1.",
+        "not-already-excluded": "already a live HIB (id 52); this call only adds verses.",
+        "verse-actually-supports-it": "v17 names him directly; v13/18 \"his companions\" is referential to the same trio (Step 1 referential-named-not-skipped); v23 \"us\" follows directly from v18's joint prayer; v49 \"Shadrach\" is his Dan 1:7-established Babylonian name, same identity as \"Daniel\"/\"Belteshazzar\"."
+      }
+    },
+    {
+      "label": "Mishael",
+      "kind": "named_individual",
+      "verses": [
+        "Dan.2.13",
+        "Dan.2.17",
+        "Dan.2.18",
+        "Dan.2.23",
+        "Dan.2.49"
+      ],
+      "reconciliation_note": "extends the existing Mishael HIB (id 53) with its Dan 2 appearances, same grounds as Hananiah (id 52).",
+      "quality_checks": {
+        "is-genuinely-human": "the same named individual already tracked in Dan 1.",
+        "not-already-excluded": "already a live HIB (id 53); this call only adds verses.",
+        "verse-actually-supports-it": "same textual grounds as Hananiah (id 52) -- named v17, referential v13/18, joint v23, Babylonian name Meshach v49."
+      }
+    },
+    {
+      "label": "Azariah",
+      "kind": "named_individual",
+      "verses": [
+        "Dan.2.13",
+        "Dan.2.17",
+        "Dan.2.18",
+        "Dan.2.23",
+        "Dan.2.49"
+      ],
+      "reconciliation_note": "extends the existing Azariah HIB (id 54) with its Dan 2 appearances, same grounds as Hananiah (id 52).",
+      "quality_checks": {
+        "is-genuinely-human": "the same named individual already tracked in Dan 1.",
+        "not-already-excluded": "already a live HIB (id 54); this call only adds verses.",
+        "verse-actually-supports-it": "same textual grounds as Hananiah (id 52) -- named v17, referential v13/18, joint v23, Babylonian name Abednego v49."
+      }
+    },
+    {
+      "label": "Arioch",
+      "kind": "named_individual",
+      "verses": [
+        "Dan.2.14",
+        "Dan.2.15",
+        "Dan.2.24",
+        "Dan.2.25"
+      ],
+      "quality_checks": {
+        "is-genuinely-human": "named individual, \"the captain of the king's guard\" (v14) -- a real court office-holder, not a personification.",
+        "not-already-excluded": "not previously recorded or excluded anywhere in the live Dan HIB register (checked against all 14 existing rows before this call).",
+        "verse-actually-supports-it": "v14 names him directly (\"Arioch, the captain of the king's guard\"); v15/24/25 each show him acting (making the matter known, being addressed by Daniel, bringing Daniel before the king)."
+      }
+    },
+    {
+      "label": "the wise men of Babylon",
+      "kind": "named_collection",
+      "verses": [
+        "Dan.2.2",
+        "Dan.2.3",
+        "Dan.2.4",
+        "Dan.2.5",
+        "Dan.2.6",
+        "Dan.2.7",
+        "Dan.2.8",
+        "Dan.2.9",
+        "Dan.2.10",
+        "Dan.2.11",
+        "Dan.2.12",
+        "Dan.2.13",
+        "Dan.2.14",
+        "Dan.2.18",
+        "Dan.2.24",
+        "Dan.2.27",
+        "Dan.2.48"
+      ],
+      "quality_checks": {
+        "is-genuinely-human": "the summoned professional class (magicians/enchanters/sorcerers/Chaldeans/astrologers, v2,10,27) -- real human courtiers, not a personified institution.",
+        "not-already-excluded": "not previously recorded or excluded in the live Dan HIB register.",
+        "verse-actually-supports-it": "v2 lists the four professional titles summoned; v12-13 names them collectively \"the wise men of Babylon\" under threat of death; v48 confirms Daniel is later made \"chief prefect over all the wise men of Babylon\" -- the same referent throughout. Modelled as ONE collective HIB (collective-stays-collective), consistent with the Dan 8 precedent (\"the four kingdoms\", id 27)."
+      }
+    },
+    {
+      "label": "the king's executioners",
+      "kind": "implicit_collection",
+      "verses": [
+        "Dan.2.13"
+      ],
+      "quality_checks": {
+        "is-genuinely-human": "the unnamed party carrying out the death decree (\"they sought Daniel and his companions, to kill them\") -- human agents, not a personification.",
+        "not-already-excluded": "not previously recorded or excluded in the live Dan HIB register.",
+        "verse-actually-supports-it": "lexical confirms a plain 3mp verb (H1156 AVqp3mp \"they sought\") with no named antecedent in v13 itself -- a genuine referential HIB per the referential-named-not-skipped rule, not asserted as Arioch's own identity since v13 itself does not name him (Arioch is named only in v14)."
+      }
+    },
+    {
+      "label": "the second kingdom",
+      "kind": "unnamed_collection",
+      "verses": [
+        "Dan.2.39"
+      ],
+      "quality_checks": {
+        "is-genuinely-human": "represents the human rulers/peoples of the kingdom that will arise after Nebuchadnezzar's, per the vision -- consistent with the Dan 8 precedent (\"the four kingdoms\", id 27) treating a prophetic kingdom as a trackable HIB.",
+        "not-already-excluded": "not previously recorded or excluded in the live Dan HIB register.",
+        "verse-actually-supports-it": "v39a: \"another kingdom inferior to you shall arise after you.\""
+      }
+    },
+    {
+      "label": "the third kingdom",
+      "kind": "unnamed_collection",
+      "verses": [
+        "Dan.2.39"
+      ],
+      "quality_checks": {
+        "is-genuinely-human": "same grounds as \"the second kingdom\" -- represents a future kingdom's human rulers/peoples.",
+        "not-already-excluded": "not previously recorded or excluded in the live Dan HIB register.",
+        "verse-actually-supports-it": "v39b: \"yet a third kingdom of bronze, which shall rule over all the earth.\""
+      }
+    },
+    {
+      "label": "the fourth kingdom",
+      "kind": "unnamed_collection",
+      "verses": [
+        "Dan.2.40",
+        "Dan.2.41",
+        "Dan.2.42",
+        "Dan.2.43",
+        "Dan.2.44"
+      ],
+      "quality_checks": {
+        "is-genuinely-human": "same grounds as the second/third kingdoms -- represents the fourth (and later divided) kingdom's human rulers/peoples, including v43's \"they will mix with one another in marriage\" (3mp verbs, lexically confirmed).",
+        "not-already-excluded": "not previously recorded or excluded in the live Dan HIB register.",
+        "verse-actually-supports-it": "v40 introduces it (\"a fourth kingdom, strong as iron\"); v41-43 elaborate its divided nature; v44's \"in the days of those kings\" ties temporally to this same kingdom's era."
+      }
+    }
+  ]
+}

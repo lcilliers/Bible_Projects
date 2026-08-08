@@ -4813,3 +4813,208 @@ Reports: `hib-set-reconciliation-dan-20260807-v4.md`/`-v5.md`, `hib-set-by-type-
 `-v5.md`, `phenomenon-set-reconciliation-dan-37467-20260807.md`,
 `operation-set-reconciliation-dan-37467-20260807.md`/`-v2.md`,
 `closing-set-reconciliation-dan-37467-20260807.md`, `dan-1-debate-report-20260807.md`/`-v2.md`.
+
+## 81. `hib.set` revised — genuinely scoped to `-Chapters`/`-Range`, real per-row CRUD, an audit trail; supersedes §78's "book-wide" finding (2026-08-08)
+
+**Trigger, direct instruction, worked through plan mode over several rounds.** Reconciling the
+session's own Dan 2 Step 1 work against `debate-pipeline-technical-reference-20260806.md` surfaced
+that `hib.set`'s whole-book reconciliation (§78's "real finding, book-wide, not chapter/passage-
+scoped") was never actually caused by `cfg_step.scope='book'` — checked directly against `run.py`:
+that field is read once, at dispatch, and never branched on anywhere afterward. The book-wide reach
+was hard-coded SQL inside `hib_set` itself, inconsistent with `phenomenon.set`/`operation.set`/
+`closing.set` (all genuinely passage-scoped via `_find_new_model_passage`). Researcher's own
+direction, in full: (a) HIB read scoped strictly to `-Chapters`/`-Range`, never book-wide
+reconciliation; (b) confirm the scope config isn't silently forcing book-wide reads elsewhere too
+(confirmed clean — nothing else does); (c) full CRUD with a per-run, per-row audit trail, "a new run
+does not mean soft delete all the HIB entries and recreate"; (d) no intermediate mechanically-built
+JSON — once (a)-(c) hold, nothing is left to build in a separate pass.
+
+**Design, not just a patch.** `hib.set` revised in place (same `cfg_step` row, same work package,
+same handler path) rather than adding a new step ahead of it — a candidate-identify-then-build-
+JSON split was designed first, then rejected as unneeded machinery once (a)+(c) made the mechanical
+build step redundant (its whole job was reconciling a payload no longer needs reconciling by hand).
+Full design record, including the rejected two-step draft and both DB-level fact-checks: `PLAN-
+revise-hib-set-scope-and-crud-v1-20260808.md` (`~/.claude/plans/`).
+
+- **Matching stays book-wide BY LABEL** ("Daniel" extending from Dan 1 into Dan 2 must resolve to
+  the SAME row) via a new read-only `all_by_label` lookup — but the reconciliation **completeness**
+  check (`_reconcile`'s "every pre-existing item must be addressed or removed") is now scope-
+  limited: `current` only includes a label with an EXISTING footprint in THIS call's own scope. A
+  book HIB with no presence here (Belshazzar, Dan 8, when running Dan 2) is never pulled in and
+  never needs mentioning — the literal fix for §78's "book-wide" constraint.
+- **New control, `out-of-scope-verse`**: a payload referencing a verse outside its own `-Chapters`/
+  `-Range` is refused outright, before any other check.
+- **`verse_hib` is real per-row CRUD now**, not a whole-array replace-on-conflict: for an extended
+  HIB, only verses not already linked are inserted, only verses the payload genuinely drops (within
+  this scope) are soft-deleted — never touching a link outside the call's own scope.
+- **`first_verse_id` recomputed by canonical (chapter, verse) order**, never "the payload's first-
+  listed array element" (that convention only ever made sense for a whole-set-replacement payload,
+  which this no longer is) — `verse.id` is a surrogate PK with no relationship to reading order,
+  confirmed live (Dan 2's ids scattered across the whole numeric range).
+- **`referent_options` only touched when a payload item actually provides them** — an absent/empty
+  list never wipes what's on record, closing the same class of gap for options that this whole
+  revision closes for verses.
+- **New `hib_change_detail` table** — one row per `hib`/`hib_referent_option`/`verse_hib` row this
+  call inserts, updates, or soft-deletes (`run_id, table_name, op, where/set/before_json,
+  applied_at`), mirroring `cfg_change_detail`'s own shape exactly. New migration
+  `migration/build_hib_change_detail_table_20260808.py` — DDL exception (same class as
+  `build_operations_schema.py`), registers `cfg_table`/`cfg_column`/`cfg_index`/`cfg_write_grant`
+  FIRST, then builds the physical table via `db.build_data_tables()` (never a hand-written `CREATE
+  TABLE`) — first attempt used raw DDL directly and produced a table with NO FK/index despite
+  correct `cfg_column`/`cfg_index` rows, the exact config/build mismatch §79 already had to
+  retrofit once; caught before verification, fixed by dropping the empty table and rebuilding it
+  config-first, migration script corrected in place so a future re-run can't repeat it.
+- **`Operations-Ingest.ps1`** updated: `hib.set` now requires exactly one of `-Chapters`/`-Range`,
+  same as the other two steps (was: actively refused them). `Debate-Run.ps1` needed no change — it
+  already passes `-Chapters`/`-Range` to every step in its sequence, `hib.set` included.
+
+**Verified live, not assumed.** `hib.set -Book Dan -Chapters 1` with a payload repeating only Dan
+1's 8 already-live HIBs, Dan-1-scope verses only: `8 unchanged, 0 new, 0 corrected, 0 removed in
+this scope` — Dan 8's 6 HIBs never mentioned, never demanded, and confirmed 0 `hib_change_detail`
+rows written (nothing actually touched, correctly). `hib.set -Book Dan -Chapters 2` with a fresh
+scope-only reading (5 extends of existing Dan 1/8 HIBs — Daniel, Nebuchadnezzar, Hananiah, Mishael,
+Azariah — plus 6 new: Arioch, "the wise men of Babylon", "the king's executioners", the second/
+third/fourth kingdom): `0 unchanged, 11 new, 0 corrected` (all 11 register as scope-new even though
+5 are book-wide extends — expected, since none had any Dan-2 footprint before this call), 115
+verse-HIB links added, ids **47/48/52/53/54 preserved** (no duplicates), Daniel's live `verse_hib`
+count = 69 = 33 pre-existing (16 Dan 1 + 17 Dan 8) + 36 new (Dan 2), confirmed by direct count.
+**A real pre-existing data bug caught and self-corrected in the process**: Daniel's stored
+`first_verse_id` was `Dan.8.1`, not `Dan.1.6` — an artifact of the old "payload's first array
+element" logic from whichever earlier call happened to list Dan 8 first. The new canonical-order
+recompute detected and corrected it automatically (one `hib` `update`, logged with `before`/`set_`
+showing exactly what changed and why), the first real exercise of the audit trail this revision
+adds.
+
+**Escalation raised, not yet actioned**: `MANUAL-20260808_042042_515014` — the same full-CRUD-
+and-audit-trail treatment applied here to `hib.set` should be checked (and fixed if needed) across
+`passage.build`, `phenomenon.set`, `operation.set`, `closing.set` too, not assumed clean by
+association. Includes re-examining `hib_referent_option`/`operation_party`'s existing, approved
+soft-delete-and-reinsert-under-a-changed-parent convention (§2.2 step 7 of the tech reference) now
+that per-row audit traceability is itself a new requirement.
+
+**Files:** `handlers/operations.py` (`hib_set` rewritten; new `_verse_sort_key`/`_log_change`
+helpers), `ps/Operations-Ingest.ps1` (scope now required for `hib.set`),
+`migration/build_hib_change_detail_table_20260808.py` (new). Data: `hib_change_detail` (new table,
+7 rows this session), `hib`/`verse_hib` (Dan 2's real content — 6 new HIBs, 115 new verse links, 1
+retroactive `first_verse_id` correction on Daniel). Payloads:
+`staging/operations/dan-1-hib.set.json` (regression payload, rewritten scope-only),
+`staging/operations/dan-2-hib.set.json` (new). Reports:
+`hib-set-reconciliation-dan-1-20260808.md`, `hib-set-reconciliation-dan-2-20260808.md`,
+`hib-set-by-type-dan-20260808.md`/`-v2.md`.
+
+## 82. Full-CRUD audit extended across every debate writer (2026-08-08, same day, later still)
+
+**Summary.** `passage.build`/`phenomenon.set` already correct; `operation_party`/
+`hib_referent_option`/all 4 `closing.set` tables upgraded from soft-delete-and-reinsert;
+`Operations-Ingest.ps1`'s missing `closing.set` found and fixed; a real pre-existing data-integrity
+bug found and reported, not silently patched.
+
+**Trigger.** Escalation `MANUAL-20260808_042042_515014` (raised closing §81, approved same day:
+"Full CRUD is required for all table update controls") — check every debate-table write site, not
+just `hib.set`, for real per-row CRUD and the same audit trail. GOVERNANCE.md §34 has the config-
+governance-level record; this entry is the work log.
+
+**Shared audit table renamed before extending it.** `hib_change_detail` → `debate_change_detail`
+(`migration/rename_hib_change_detail_to_debate_change_detail_20260808.py`, DDL-exception rename,
+same precedent as `span_reading`→`verse_lexical`) — about to hold rows for every writer, not just
+`hib.set`. Gained a `writer` column (`add_debate_change_detail_writer_column_20260808.py`) — `run_id`
+is shared across a whole `Debate-Run.ps1` sequence, so it alone can't identify which step made a
+given row; 122 pre-existing rows backfilled `writer='hib.set'`. Logging centralised into
+`lib/debateaudit.py:log_change` (all 5 writers call the same function) rather than duplicated
+per-handler — the audit shape has to stay byte-identical, unlike this app's small `_may`/`_now`
+helpers, which do stay duplicated per file.
+
+**`passage.build` and `phenomenon.set`: already correct, audit trail added, nothing else changed.**
+Read both in full before touching anything (`feedback_iba_gap_analysis_requires_live_build_
+inspection`) — `passage.build` already updates an existing row in place on a story/feasibility
+correction (redefined 2026-08-06/07, §2.2 step 7's own fix already applied there); `phenomenon.set`
+already does the same for `changed` phenomena. Both just had no `debate_change_detail` logging.
+Added `_log_change` at every write site: `passage`'s legacy-overlap-supersede (per-row, both
+`verse_passage` children and the `passage` row itself), the exact-scope correction, and the new-
+insert path; `phenomenon`'s delete/update/insert plus the (pre-existing, unconditional)
+`phenomena_complete_at` gate touch.
+
+**`operation.set`: `operation` already correct; `operation_party` upgraded from the old
+soft-delete-and-reinsert-under-a-changed-parent shape to real per-row CRUD, matched by ordinal
+position within its role** (source/target) — a position whose content is unchanged is left
+untouched, a position that shrinks away is soft-deleted, a position that appears fresh is inserted.
+This is the exact exception §33/GOVERNANCE.md flagged for reconsideration ("no downstream referent,
+so no id to preserve" — true, but no longer the only consideration once per-row audit traceability
+is itself required). **A real counting bug caught by the isolated-copy test before it shipped**: the
+first version incremented `n_party` unconditionally at the end of every position's loop iteration,
+including untouched ("same") positions — a hand-verified correction (1 operation, 1 party edited)
+reported "3 party record(s) written" against only 1 real audit row. Fixed by moving the increment
+into only the branches that actually write; re-verified: "1 party record(s) written" against exactly
+1 audit row, operation and party ids both preserved across the correction.
+
+**`hib_referent_option` upgraded the same way** (positional CRUD by `ordinal`, matched against
+`hib.set`'s existing scope-limited `all_by_label` lookup) — the SELECT feeding it gained an explicit
+`ordinal` column (was relying on `ORDER BY ordinal` + Python `enumerate()` alignment, fragile even
+though it happened to be correct). Verified live-copy: insert 2 options for a real HIB (Belshazzar,
+previously option-less) → edit option 0's text, drop option 1 → option 0's id preserved, option 1
+correctly soft-deleted (not reinserted), exactly 1 update + 1 delete audit row.
+
+**`closing.set`: a real bug found, not just a missing audit trail.** All four list tables
+(`passage_linkage`/`passage_insufficiency`/`passage_emergent_question`/`passage_validation_note`)
+were soft-deleting AND reinserting under a new id for `changed` items — the same antipattern
+`hib`/`phenomenon`/`operation` already had fixed, missed here because §33's original sweep only
+reached the operations-schema writers, not `closing.set`. Rewritten to real per-ordinal CRUD
+(`ROW_COLUMNS` maps each table's own natural-key-adjacent columns; UPDATE-in-place for `changed`,
+INSERT for `new`, soft-delete for `removed`), plus the unconditional `open_decisions_note` field
+write. Verified live (no-op: 3 linkages + 1 insufficiency + 3 emergent_questions + 4 validation_notes
+against Dan 1's real passage, all correctly `unchanged`, only the unconditional `open_decisions_note`
+touch logged) and isolated-copy (a real linkage-note correction: id preserved, exactly one `update`
+row logged with full before/after content).
+
+**A separate, real gap found and fixed while testing: `Operations-Ingest.ps1` never had
+`closing.set` in its own `-ValidateSet`**, even though `cfg_step` has always had it registered and
+`Debate-Run.ps1` reaches it fine (calls the dispatcher directly, bypassing this wrapper's
+validation). `closing.set` was unreachable via direct/manual invocation this whole time. Added to
+`-ValidateSet`, `.DESCRIPTION`, and a new `.EXAMPLE` — verified live (the same Dan 1 no-op payload,
+now runs through the wrapper, not just the raw dispatcher).
+
+**A real, pre-existing data-integrity bug found as a side effect of the `operation.set` no-op
+regression test — reported, not silently patched.** All 17 of Dan 8 passage 37465's `phenomenon`
+rows for "Daniel" reference `hib_id=22`, a soft-deleted ("Daniel", `deleted=1`) row — not the live
+Daniel (`hib_id=47`). Residue from an older `hib.set` correction, before the 2026-08-07 update-in-
+place fix, that changed Daniel's id without repointing the phenomena already written against the
+old one. Dan 1's passage has no equivalent issue (all its phenomena correctly reference live hib
+rows); `operation_party.hib_id` has zero orphaned references anywhere. Practical effect: `closing.
+set`'s own phenomenon/operation lookups aren't affected (they join `hib` without filtering
+`deleted=0`), but `phenomenon.set`/`operation.set`'s own `hib_by_label` lookups (live-only) cannot
+resolve these 17 rows by label at all — confirmed live, this is exactly what surfaced it (the no-op
+test failed "no registered phenomenon for Daniel" until the isolated test copy repointed the 17 rows
+to `hib_id=47`, done ONLY in that throwaway copy). Escalation `MANUAL-20260808_052156_904168` raised
+with the recommended fix (repoint the 17 rows, same repair already proven safe in the isolated
+copy) — not applied to live data without the researcher's decision, since this touches real
+analytical content, not just mechanism. `configmaint.validate`'s own orphan-detector independently
+surfaced the same finding on the next run, confirming it as the same tracked item rather than
+re-raising it. **Answered `approve`, "repair now" — applied same session**,
+`migration/repair_dan8_daniel_phenomenon_hib_id_20260808.py` (idempotent, audited: 17 `phenomenon`
+rows repointed 22→47, each logged to `debate_change_detail` under `writer='repair.
+dan8_daniel_hib_id'`, re-run confirmed no-op). Verified: all 8 Dan 8 HIBs, including Daniel, now
+resolve to live `hib` rows with no exceptions; `configmaint.validate` clean.
+
+**GOVERNANCE.md §34** added (the config-governance record: the shared audit table, the id-preservation
+rule extended to child tables) — `configmaint.validate` had flagged GOVERNANCE.md as stale relative
+to the session's `cfg_change_detail` activity; resolved by adding the section, not by ignoring the
+finding. Also resolved the same run: `lib/debateaudit.py` registered in `cfg_utility` (`bootstrap_
+cfg_utility.py`, idempotent re-run — auto-discovers new `lib/*.py` modules) and marked
+`config_exempt` (a pure DB-write helper, genuinely zero `cfg.setting()`/`cfg.enum()` usage, same
+class as the 12 other already-exempt utilities). `configmaint.validate` clean at the end (bar the
+orphaned-hib_id finding, tracked, not re-raised).
+
+**Files:** `handlers/operations.py` (`phenomenon_set`/`operation_set`/`closing_set` all gain
+`_log_change` calls; `operation_set`'s `operation_party` and `hib_set`'s `hib_referent_option` block
+rewritten to positional CRUD; local `_log_change` removed in favour of the shared import),
+`handlers/passage.py` (`_log_change` calls added; `_retire_legacy_passage` helper factored out),
+`lib/debateaudit.py` (new), `ps/Operations-Ingest.ps1` (`closing.set` added to `-ValidateSet`/docs),
+`migration/rename_hib_change_detail_to_debate_change_detail_20260808.py` (new),
+`migration/add_debate_change_detail_writer_column_20260808.py` (new), `GOVERNANCE.md` §34 (new).
+Config: 4 `cfg_write_grant` rows (`passage.build`/`phenomenon.set`/`operation.set`/`closing.set` →
+`debate_change_detail`), `cfg_utility.debateaudit` registered + marked exempt — all via
+`configmaint.propose`, approved per row. Data: live-verified via no-op regressions (Dan 1 `hib.set`/
+`phenomenon.set`/`closing.set`, Dan 8 `operation.set` minus the 17 orphaned rows) and isolated-copy
+corrections (`passage.build` insert+supersede, `operation.set`/`hib_referent_option`/`closing.set`
+real edits) — no live production data touched by any test in this session; every scratch DB copy
+discarded after use.

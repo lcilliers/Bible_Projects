@@ -1592,3 +1592,48 @@ brought into this FK/index retrofit — a different reference-integrity problem 
 several legitimately reference not-yet-built targets during a pending `configmaint.propose`
 approval), already served by `lib/cfgquality.py`'s orphan-detectors, not by DB-level FKs. Not an
 oversight; a recorded scoping decision (`BUILD.md` §79 has the full reasoning).
+
+---
+
+## §34. `debate_change_detail` — a shared per-row CRUD audit trail across all 5 debate writers; §33's "preserve id" rule extended to child tables (2026-08-08)
+
+**Trigger.** Researcher direction, following a `hib.set` scope/CRUD reconciliation
+(`PLAN-revise-hib-set-scope-and-crud-v1-20260808.md`): "each entry (insert, update, delete) must
+have entries in the table to be able to trace the changes to the run... full CRUD is required for
+all table update controls." Full change detail: `BUILD.md` §81/§82.
+
+**New data table: `debate_change_detail(run_id, writer, table_name, op, where_json, set_json,
+before_json, applied_at)`** — mirrors `cfg_change_detail`'s own shape exactly (the existing per-row
+audit trail for `configmaint.propose` writes), kept separate since this is data-write audit, not
+config-write audit. Shared by all 5 debate writers (`hib.set`, `passage.build`, `phenomenon.set`,
+`operation.set`, `closing.set`) via one lib function, `lib/debateaudit.py:log_change` — centralised
+rather than duplicated per-handler (unlike this app's small `_may`/`_now` helpers, which each
+handler file still defines locally) because the audit shape has to stay byte-identical across all
+five. One `cfg_write_grant` row per writer → `debate_change_detail`, same governance as any other
+table write. (Originally built as `hib_change_detail`, `hib.set`-only; renamed once its scope
+broadened to every writer, `migration/rename_hib_change_detail_to_debate_change_detail_
+20260808.py` — same rename-on-outgrown-name precedent as `span_reading` → `verse_lexical`.)
+
+**§33's "preserve id across a `changed` correction" rule extended down to child tables.** §33
+fixed this for the parent rows (`hib`/`phenomenon`/`operation`) but explicitly left
+`hib_referent_option`/`operation_party` on the older soft-delete-and-reinsert-under-a-changed-parent
+shape ("no downstream referent, so no id to preserve" — reasonable at the time, since nothing
+pointed at their own id). The audit trail changes that calculus: a stable id across a correction is
+now itself the more traceable shape, not just the orphan-safe one. Both upgraded to real per-row
+CRUD, matched by ordinal position within their parent — a position whose content is unchanged is
+left untouched (no write, no log); `closing.set`'s four list tables (`passage_linkage`/
+`passage_insufficiency`/`passage_emergent_question`/`passage_validation_note`), found to still be
+using the old soft-delete-and-reinsert-under-a-`changed`-item shape too (missed by §33's original
+sweep, which only reached the operations-schema writers), were fixed the same way.
+
+**Corollary for the next writer.** Same standing instruction §33 already established, restated
+because it now covers one more layer: any writer that reconciles a row — parent OR child — must
+preserve that row's id across a `changed` correction and log every insert/update/delete to
+`debate_change_detail`. Not a `hib.set`-only convention.
+
+**Housekeeping, same session:** `lib/debateaudit.py` (this section's own new module) registered in
+`cfg_utility` and marked `config_exempt` — a pure DB-write helper with no `cfg.setting()`/
+`cfg.enum()` usage by design, same class as the other already-exempt utilities (§2's registry). Not
+a new rule, an instance of the existing `config_exempt` convention — noted here only because
+`configmaint.validate`'s stale-doc check compares this file's mtime against the newest applied
+config change regardless of whether that change was itself rule-shaped.
