@@ -5085,3 +5085,96 @@ live writes. `configmaint.validate` clean.
 into `validate`'s findings dict + success message), `GOVERNANCE.md` §35 (new). New:
 `migration/archive_oneoff_report_clutter_20260808.py`. Config: `cfg_setting
 governance.oneoff_report_archive_dir`, via `configmaint.propose`, approved and applied.
+
+---
+
+## 84. Book-report filing convention violation found and fixed — debate/reconciliation reports were never "one-off" reports (2026-08-08, same day, later still)
+
+**Trigger.** Researcher, on `Debate-Run.ps1 -Book Daniel -Chapters 2` stopping with "no live verses
+found" (a `-Book` OSIS-code-vs-full-name mismatch, unrelated and separately explained): "the issue
+is actually bigger. the filing for all Book related operations should be in the
+`iba/app/verse-analysis/[book]` folders where it has been since we started with book operations...
+why was the convention that you started in the first place changed? just re-align to the rules,
+that is why they are there."
+
+**Correction to §83, same day, earlier.** §83 fixed a real bug in `oneoff_path()`'s own archiving
+mechanism and, in doing so, explicitly RE-AFFIRMED (its own §83 text) that `build_debate_report.py`
+and every `hib.set`/`phenomenon.set`/`operation.set`/`closing.set` reconciliation/by-type report were
+correctly using `oneoff_path` as "investigatory" reports. That classification itself was wrong, not
+just its archiving — checked directly against the code, not assumed: `versespanmeaningreport.py`
+(§21)/`lexical.py`(§56-59)/`passagedebatereport.py`(§27)/`narrativegenerate.py`(§75)/
+`wholebookread.py`(§32) all independently do the SAME thing inline — `folder = book_label or book`,
+filed under `report.verse_analysis_output_dir/<folder>/` — for every OTHER book-scoped analytical
+report this app produces. `build_debate_report.py`/`operations.py`'s reconciliation reports are the
+SAME class of output (the book's filed analytical record, not an ad-hoc investigation) and are the
+only ones that didn't follow it.
+
+**Root cause of the original deviation, found in §72's own build note, not invented after the fact.**
+When `Debate-Run.ps1`/`build_debate_report.py` was built (§72, 2026-08-07), the note reads: *"No
+`-BookLabel` — checked directly against `build_debate_report.py`: it writes flat to
+`governance.oneoff_report_dir` by topic name, no book subfolder, unlike the old scaffold model."*
+That is a description of what the newly-built code happened to do, never checked against the
+still-live book-folder convention in the five sibling modules above. An oversight during a same-day
+rebuild, not a deliberate design decision — there is no reasoning anywhere in §61-83 for why the
+debate pipeline's own filed output should differ from every other book tool's.
+
+**Fixed — filing only, no change to report CONTENT or the reconciliation/versioning LOGIC itself:**
+
+- `tools/build_debate_report.py` — output path now `report.verse_analysis_output_dir/
+  <book_label or book>/<topic>.md` (new `--book-label` CLI arg, defaults to `--book`), written via
+  `reportkit.write_report(conn, "report.debate", path, lines)` instead of `oneoff_path` — gets
+  versioning + archive-on-regenerate from the SAME already-existing mechanism (`write_report` only
+  needs a `cfg_report` row for its `archive_dir` lookup, gracefully defaults to `"archive"` when
+  none exists — no new config row required).
+- `handlers/operations.py` — all 4 `oneoff_path` call sites fixed the same way: the shared
+  `_write_reconciliation_report()` (now takes `book`/`book_label`, called from `hib.set`/
+  `phenomenon.set`/`operation.set`), `hib.set`'s own by-type report, and `closing.set`'s own inline
+  reconciliation report. `book_label` threaded from `ctx.params.get("BookLabel")` — a plain optional
+  `--param` key, no schema/dispatcher change needed (`run.py --param Name=Value` is already
+  free-form).
+- `ps/Debate-Run.ps1` — new `-BookLabel` parameter (same shape as `VerseLexical.ps1`), passed to
+  every step's `--param BookLabel=...` and to `build_debate_report.py --book-label` at the end.
+- No new abstraction added to `reportkit.py` — inlined the identical `output_dir`/`folder`/`path`
+  three-liner at each fix site, matching the five sibling modules' own existing shape exactly
+  (they don't share a helper either), rather than introducing a variant of the convention.
+
+**Retrofit — existing misfiled output moved, not just fixed going forward** (researcher: "just
+re-align to the rules"). 19 live + 22 archived Daniel report files in `iba/app/reports/`(`/archive/`)
+matching the 6 auto-generated patterns (`*-debate-report`, `hib.set-reconciliation-*`,
+`hib.set-by-type-*`, `phenomenon.set-reconciliation-*`, `operation.set-reconciliation-*`,
+`closing.set-reconciliation-*`) — 41 files total — moved via `git mv` into
+`iba/app/verse-analysis/Daniel/`(`/archive/`), filenames unchanged (no lineage renumbering; historical
+files keep their original `oneoff_path`-era naming). Confirmed NOT part of this bug and left alone:
+5 genuinely hand-authored investigation/draft docs also `dan`-prefixed in `iba/app/reports/`
+(`dan-1-hib-and-story-extract`, `dan-2-hib-step1-draft`, `dan8-debate-run-failure-review`,
+`debate-rebuild-readiness-for-dan-8`) — checked by reading each file's own header, not
+pattern-matched blindly. No Hosea/Obadiah/other-book files matched the 6 patterns — the bug's
+live damage was Daniel-only (the only book that had reached `operations-ingest` yet).
+
+**DB consequence of the retrofit, found and fixed in the same pass.** 3 live (`deleted=0`)
+`passage.debate_path` rows pointed at the pre-move `iba/app/reports/...` location for files just
+relocated (37465, 37467; 37464 is `deleted=1`, a superseded duplicate, correctly left untouched).
+New `migration/reconcile_daniel_debate_paths_20260808.py` (same shape/precedent as
+`reconcile_daniel_debate_paths.py`, 2026-07-28) — updated `debate_path`/`debate_written_at` for the
+2 live rows, verified both resolve to a real file on disk post-update. **Found, not fixed, flagged
+for the researcher:** passage 37463 (`Dan 8:1`, `debate_status=complete`) points at
+`dan-8-1-1-debate-report-20260806-v3.md`, which exists nowhere on disk and has no trace in
+`git log --all` — predates this session's refile entirely, a separate pre-existing stale pointer
+(delete the row as a stale test artifact, or re-render — a judgement call, not decided here).
+
+**Verified.** Both Python files re-parsed clean (`ast.parse`), `Debate-Run.ps1` re-parsed clean
+(`System.Management.Automation.Language.Parser`). Path-construction logic smoke-tested directly
+against `Cfg().setting("report.verse_analysis_output_dir", ...)` (no DB writes). `git status`
+confirmed all 41 retrofit moves registered as clean renames (`R`), not delete+add.
+
+**Docs:** `USER-GUIDE.md` corrected in the same session, ahead of this fix (§8, §14, §16) — three
+places still pointed at the pre-2026-08-07 retired script pair or omitted `VerseLexical.ps1`/
+`Debate-Run.ps1`/`Operations-Ingest.ps1`/`Lexicon-Parse.ps1` from the file inventory entirely.
+§12b/§14 updated again here to show `-BookLabel` on `Debate-Run.ps1`.
+
+**Files:** `iba/app/tools/build_debate_report.py`, `iba/app/handlers/operations.py`,
+`iba/app/ps/Debate-Run.ps1`. New: `iba/app/migration/reconcile_daniel_debate_paths_20260808.py`.
+Retrofit: 41 files `git mv`'d from `iba/app/reports/`(`/archive/`) into
+`iba/app/verse-analysis/Daniel/`(`/archive/`). No new `cfg_setting`/`cfg_report`/`cfg_write_grant`
+rows — reused `report.verse_analysis_output_dir` (already live) and the `report.debate` writer name
+(already granted).

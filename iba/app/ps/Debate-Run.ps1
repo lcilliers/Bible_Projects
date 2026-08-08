@@ -43,9 +43,15 @@
 .PARAMETER Book       OSIS book code as stored in verse.osisId, e.g. Dan. Mandatory.
 .PARAMETER Chapters   whole-chapter range, e.g. 1-3 or 1. Mutually exclusive with -Range.
 .PARAMETER Range      single-chapter verse range, e.g. 8:1-27. Mutually exclusive with -Chapters.
-                      No -BookLabel here (unlike VerseLexical.ps1) -- build_debate_report.py
-                      writes flat to governance.oneoff_report_dir by topic name, no book
-                      subfolder (checked directly against tools/build_debate_report.py).
+.PARAMETER BookLabel  human-facing subfolder name (e.g. "Daniel"). Defaults to -Book if omitted --
+                      same shape as VerseLexical.ps1. Corrected 2026-08-08: every step's own
+                      reconciliation report AND the final rendered debate report now file under
+                      report.verse_analysis_output_dir/<BookLabel>/, same convention every sibling
+                      book tool (VerseLexical.ps1/BookNarrative-Generate.ps1/WholeBookRead-Report.ps1)
+                      already uses -- these had been landing flat in governance.oneoff_report_dir
+                      instead, a filing bug, not a deliberate design difference (found live,
+                      researcher: "the filing for all Book related operations should be in the
+                      iba/app/verse-analysis/[book] folders where it has been since we started").
 .PARAMETER Step       run only this one step (hib.set|passage.build|phenomenon.set|operation.set|
                       closing.set), same readiness/staging logic, then stop — for a targeted
                       standalone correction/rerun (mirrors the real Dan 8 rollback/redo,
@@ -54,8 +60,11 @@
 .PARAMETER Trace      Print every config read (IBA_TRACE).
 
 .EXAMPLE
+    iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1 -BookLabel Daniel
+    # single chapter, filed under iba/app/verse-analysis/Daniel/
+.EXAMPLE
     iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1
-    # single chapter
+    # -BookLabel omitted -- files under iba/app/verse-analysis/Dan/ instead (defaults to -Book)
 .EXAMPLE
     iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1-3
     # multi-chapter range
@@ -72,6 +81,7 @@ param(
     [Parameter(Mandatory = $true)] [string] $Book,
     [string] $Chapters,
     [string] $Range,
+    [string] $BookLabel,
     [ValidateSet('hib.set', 'passage.build', 'phenomenon.set', 'operation.set', 'closing.set')]
     [string] $Step,
     [string] $RunId,
@@ -191,8 +201,9 @@ cfg.close()
     }
 
     $paramArgs = @('--param', "Book=$Book", '--param', "PayloadPath=$stagingPath")
-    if ($Chapters) { $paramArgs += @('--param', "Chapters=$Chapters") }
-    if ($Range)    { $paramArgs += @('--param', "Range=$Range") }
+    if ($Chapters)   { $paramArgs += @('--param', "Chapters=$Chapters") }
+    if ($Range)      { $paramArgs += @('--param', "Range=$Range") }
+    if ($BookLabel)  { $paramArgs += @('--param', "BookLabel=$BookLabel") }
 
     $json = python -m iba.app.run $pkg --step $stepName --run-id $runId @paramArgs
     $code = $LASTEXITCODE
@@ -212,10 +223,12 @@ cfg.close()
 if ($exitCode -eq 0 -and -not $Step) {
     Write-Host ""
     Write-Host "closing.set complete -- rendering the debate report..." -ForegroundColor DarkGray
+    $reportArgs = @()
+    if ($BookLabel) { $reportArgs += @('--book-label', $BookLabel) }
     if ($Chapters) {
-        python -m iba.app.tools.build_debate_report --book $Book --chapters $Chapters
+        python -m iba.app.tools.build_debate_report --book $Book --chapters $Chapters @reportArgs
     } else {
-        python -m iba.app.tools.build_debate_report --book $Book --range $Range
+        python -m iba.app.tools.build_debate_report --book $Book --range $Range @reportArgs
     }
     Write-Host ""
     Write-Host "COMPLETE -- debate built and rendered for '$scopeLabel'." -ForegroundColor Green

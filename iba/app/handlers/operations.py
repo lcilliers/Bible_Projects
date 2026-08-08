@@ -49,12 +49,13 @@ three writers:
   soft-deleted-and-reinserted (their note kept in the reconciliation log below, not the row itself —
   none of the six tables carry a note column; adding one is future schema work, not required to
   close this gap), `removed` rows are soft-deleted only.
-- **A reconciliation report is written on every call, changes or none** (`lib.reportkit.oneoff_path`
-  — no new `cfg_report`/`cfg_setting` needed; this is the same already-governed one-off-report
-  mechanism `build_verse_span_meaning_extract.py`/`build_verse_span_strongtree_extract.py` already
-  use, `governance.oneoff_report_dir`/`_naming_pattern`/`_format`) — an auditable record of what was
-  found unchanged, what was corrected and why, what was added, and what was removed and why, for
-  every invocation, not only the ones with corrections.
+- **A reconciliation report is written on every call, changes or none** — filed book-scoped under
+  `report.verse_analysis_output_dir/<book_label or book>/` (fixed 2026-08-08; previously
+  `lib.reportkit.oneoff_path`, landing flat in `governance.oneoff_report_dir` — a real filing bug,
+  not the intended design; see `_write_reconciliation_report`'s own docstring), versioned +
+  archived-on-regenerate via `reportkit.write_report` — an auditable record of what was found
+  unchanged, what was corrected and why, what was added, and what was removed and why, for every
+  invocation, not only the ones with corrections.
 
 **Three steps, one per digest stage, each fails cleanly (never partially writes) on any unresolved
 reference OR any unreconciled item:**
@@ -280,14 +281,21 @@ def _reconcile(current: dict, incoming: dict, removals: dict) -> tuple[list, lis
     return unchanged, changed, new, list(removals.keys())
 
 
-def _write_reconciliation_report(ctx: Ctx, step: str, scope_label: str,
+def _write_reconciliation_report(ctx: Ctx, step: str, scope_label: str, book: str,
+                                 book_label: str | None,
                                  unchanged: list, changed: list, new: list, removed: list,
                                  notes: dict, quality_notes: dict | None = None) -> pathlib.Path:
     """Persist an auditable record of every reconciliation decision this call made — every call,
-    not only ones with corrections. Uses `reportkit.oneoff_path` (governance.oneoff_report_dir/
-    _naming_pattern/_format) rather than the cfg_report-registered scaffold — no new config row is
-    needed to write this, same mechanism `build_verse_span_meaning_extract.py` already uses for its
-    own investigatory output.
+    not only ones with corrections.
+
+    Filing corrected 2026-08-08 (found live: landing flat in `governance.oneoff_report_dir` instead
+    of the book-scoped folder every sibling book tool uses). This is per-book analytical output, the
+    same class as `lexical.build`/`report.verse_span_meaning`/the narrative — not a "one-off
+    investigatory" report (that's what `reportkit.oneoff_path`/`build_verse_span_meaning_extract.py`
+    are correctly for). Now files under `report.verse_analysis_output_dir/<book_label or book>/`,
+    same inline convention `versespanmeaningreport.py`/`lexical.py`/`passagedebatereport.py`/
+    `narrativegenerate.py`/`wholebookread.py` all already use — versioned + archived-on-regenerate
+    via `reportkit.write_report` instead of a plain overwrite.
 
     `quality_notes` (2026-08-06): {key: {check_key: note}} for every new/changed item — the
     quality-check attestations `_check_quality_attestations` already required before this call was
@@ -321,12 +329,11 @@ def _write_reconciliation_report(ctx: Ctx, step: str, scope_label: str,
     if unchanged:
         lines += ["## Unchanged (confirmed against DB, left untouched)", ""]
         lines += [f"- {k}" for k in unchanged] + [""]
-    path = reportkit.oneoff_path(ctx.cfg, f"{step}-reconciliation-{scope_label}")
-    path.parent.mkdir(parents=True, exist_ok=True)
-    text = "\n".join(lines)
-    if not text.endswith("\n"):
-        text += "\n"
-    path.write_text(text, encoding="utf-8")
+    output_dir = pathlib.Path(ctx.cfg.setting("report.verse_analysis_output_dir",
+                                              "iba/app/verse-analysis"))
+    folder = book_label or book
+    path = output_dir / folder / f"{step}-reconciliation-{scope_label}.md"
+    path = reportkit.write_report(ctx.cfg.conn, f"report.{step}-reconciliation", path, lines)
     return path
 
 
@@ -390,6 +397,7 @@ def _hib_content(kind, verses, referent_options):
 
 def hib_set(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
     lo, hi, vlo, vhi = _resolve_range(ctx)
     scope_verses = fetch_verses(ctx.db.conn, book, lo, hi, vlo, vhi)
     scope_osis = {f"{book}.{v['chapter']}.{v['verse']}" for v in scope_verses}
@@ -650,8 +658,8 @@ def hib_set(ctx: Ctx) -> Outcome:
     notes = {l: incoming[l]["note"] for l in changed} | {l: removals[l] for l in removed}
     quality_notes = {l: incoming[l]["raw"].get("quality_checks", {}) for l in (set(new) | set(changed))}
     scope_label = f"{book}-{scope_token}" if scope_token else book
-    report_path = _write_reconciliation_report(ctx, "hib.set", scope_label, unchanged, changed, new,
-                                               removed, notes, quality_notes)
+    report_path = _write_reconciliation_report(ctx, "hib.set", scope_label, book, book_label,
+                                               unchanged, changed, new, removed, notes, quality_notes)
 
     # Output by type (researcher, 2026-08-06: "count by type; list by type") -- the book's FULL
     # live state after this call, unaffected by the scope change above (this report always
@@ -668,12 +676,10 @@ def hib_set(ctx: Ctx) -> Outcome:
         kind_lines.append("")
         kind_lines += [f"- {label}" for label in by_kind[kind]]
         kind_lines.append("")
-    kind_path = reportkit.oneoff_path(ctx.cfg, f"hib.set-by-type-{book}")
-    kind_path.parent.mkdir(parents=True, exist_ok=True)
-    kind_text = "\n".join(kind_lines)
-    if not kind_text.endswith("\n"):
-        kind_text += "\n"
-    kind_path.write_text(kind_text, encoding="utf-8")
+    kind_output_dir = pathlib.Path(ctx.cfg.setting("report.verse_analysis_output_dir",
+                                                    "iba/app/verse-analysis"))
+    kind_path = kind_output_dir / (book_label or book) / f"hib.set-by-type-{book}.md"
+    kind_path = reportkit.write_report(ctx.cfg.conn, "report.hib.set-by-type", kind_path, kind_lines)
 
     counts_by_kind = {k: len(v) for k, v in by_kind.items()}
     return ok(f"{book} {scope_token}: {len(unchanged)} unchanged, {len(new)} new, {len(changed)} "
@@ -698,6 +704,7 @@ def _phenomenon_content(description, textual_warrant, status):
 
 def phenomenon_set(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
     lo, hi, vlo, vhi = _resolve_range(ctx)
     try:
         payload = _load_payload(ctx)
@@ -865,8 +872,8 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
     notes = {k: incoming[k]["note"] for k in changed} | {k: removals[k] for k in removed}
     quality_notes = {k: by_key[k][3].get("quality_checks", {}) for k in (set(new) | set(changed))}
     scope_label = f"{book}-{passage_id}"
-    report_path = _write_reconciliation_report(ctx, "phenomenon.set", scope_label, unchanged,
-                                               changed, new, removed, notes, quality_notes)
+    report_path = _write_reconciliation_report(ctx, "phenomenon.set", scope_label, book, book_label,
+                                               unchanged, changed, new, removed, notes, quality_notes)
     return ok(f"{book} passage {passage_id}: {len(unchanged)} unchanged, {len(new)} new, "
               f"{len(changed)} corrected, {len(removed)} removed phenomenon/phenomena; {gate_msg}; "
               f"reconciliation log: {report_path}",
@@ -908,6 +915,7 @@ def _operation_content(o: dict) -> tuple:
 
 def operation_set(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
     lo, hi, vlo, vhi = _resolve_range(ctx)
     try:
         payload = _load_payload(ctx)
@@ -1159,8 +1167,8 @@ def operation_set(ctx: Ctx) -> Outcome:
     notes = {k: incoming[k]["note"] for k in changed} | {k: removals[k] for k in removed}
     quality_notes = {k: by_key[k][1].get("quality_checks", {}) for k in (set(new) | set(changed))}
     scope_label = f"{book}-{passage_id}"
-    report_path = _write_reconciliation_report(ctx, "operation.set", scope_label, unchanged,
-                                               changed, new, removed, notes, quality_notes)
+    report_path = _write_reconciliation_report(ctx, "operation.set", scope_label, book, book_label,
+                                               unchanged, changed, new, removed, notes, quality_notes)
     return ok(f"{book} passage {passage_id}: {len(unchanged)} unchanged, {len(new)} new, "
               f"{len(changed)} corrected, {len(removed)} removed operation(s), {n_party} party "
               f"record(s) written this call; reconciliation log: {report_path}",
@@ -1223,6 +1231,7 @@ def _find_operation_id(ctx: Ctx, passage_id: int, verse: str, hib_label: str,
 
 def closing_set(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
+    book_label = ctx.params.get("BookLabel")
     lo, hi, vlo, vhi = _resolve_range(ctx)
     try:
         payload = _load_payload(ctx)
@@ -1473,12 +1482,10 @@ def closing_set(ctx: Ctx) -> Outcome:
                      f"corrected, {c['removed']} removed")
     if "open_decisions_note" in payload:
         lines.append("- **open_decisions_note**: updated")
-    path = reportkit.oneoff_path(ctx.cfg, f"closing.set-reconciliation-{scope_label}")
-    path.parent.mkdir(parents=True, exist_ok=True)
-    text = "\n".join(lines)
-    if not text.endswith("\n"):
-        text += "\n"
-    path.write_text(text, encoding="utf-8")
+    closing_output_dir = pathlib.Path(ctx.cfg.setting("report.verse_analysis_output_dir",
+                                                       "iba/app/verse-analysis"))
+    path = closing_output_dir / (book_label or book) / f"closing.set-reconciliation-{scope_label}.md"
+    path = reportkit.write_report(ctx.cfg.conn, "report.closing.set-reconciliation", path, lines)
 
     return ok(f"{book} passage {passage_id}: closing sections written — "
               + "; ".join(f"{k}: {v}" for k, v in counts.items())

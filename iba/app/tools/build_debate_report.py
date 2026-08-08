@@ -26,13 +26,25 @@ they filled it in; status is recomputed from the DB fresh every regenerate.
 **Why a standalone tool, not a `cfg_report`-registered `report.*` step (2026-08-06 scoping call).**
 `reportkit.render_scaffold` requires a `cfg_report`/`cfg_report_section` row per section — 8+ new
 config rows, each needing its own `configmaint.propose` approval cycle, on top of the write-grant
-proposals `closing.set` already needed. This tool instead hand-builds Markdown and writes it via
-`reportkit.oneoff_path` (`governance.oneoff_report_dir`/`_naming_pattern`/`_format` — already
-governed, zero new config) — the exact same precedent `build_verse_span_meaning_extract.py`/
-`build_verse_span_strongtree_extract.py` already establish for read-only, DB-sourced reports. If the
-researcher later wants these 8 section headings to be config-editable the way `report.passage_debate`
-already is, promoting this to a registered `cfg_report` step is a small, well-scoped follow-up, not
-a redesign — flagged, not built here, to keep this delivery unblocked by an approval queue.
+proposals `closing.set` already needed. This tool instead hand-builds Markdown; it still gets
+versioning + archive-on-regenerate for free via `reportkit.write_report` (`step="report.debate"` —
+already a recognised writer name, via `cfg_write_grant`, no NEW config row needed for that either).
+If the researcher later wants these 8 section headings to be config-editable the way
+`report.passage_debate` already is, promoting this to a registered `cfg_report` step is a small,
+well-scoped follow-up, not a redesign — flagged, not built here, to keep this delivery unblocked by
+an approval queue.
+
+**Filing corrected 2026-08-08 (found live: a real book's debate reports were landing flat in
+`iba/app/reports/` instead of the book-scoped folder every sibling book tool uses).** This report is
+book-scoped analytical output, same class as `lexical.build`/`report.verse_span_meaning`/
+`report.whole_book_read`/the narrative — not a "one-off investigatory" report (`reportkit.oneoff_path`,
+what `build_verse_span_meaning_extract.py`/`build_verse_span_strongtree_extract.py` correctly use,
+since THOSE really are ad-hoc extracts, not the book's filed record). Now files under the SAME
+`report.verse_analysis_output_dir/<book_label or book>/` convention as every sibling tool
+(`versespanmeaningreport.py`/`lexical.py`/`passagedebatereport.py`/`narrativegenerate.py`/
+`wholebookread.py` all do `folder = book_label or book` inline — no shared helper existed to reuse,
+so this follows the same inline shape rather than inventing a new abstraction) — takes an optional
+`--book-label` the same shape as those tools' `-BookLabel`.
 
 **Reads broadly, writes narrowly.** Every table it reads from is untouched; the only write is the
 grant-checked tracking-column update on its own target passage, described above. Refuses to run
@@ -42,8 +54,8 @@ carrying `hib`/`phenomenon`/
 passage` guard, mirrored here read-only).
 
 Usage:
-  python -m iba.app.tools.build_debate_report --book Dan --range 8:1-27
-  python -m iba.app.tools.build_debate_report --book Dan --chapters 1-3
+  python -m iba.app.tools.build_debate_report --book Dan --range 8:1-27 --book-label Daniel
+  python -m iba.app.tools.build_debate_report --book Dan --chapters 1-3 --book-label Daniel
 """
 from __future__ import annotations
 
@@ -54,8 +66,10 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
 
+import pathlib
+
 from iba.app.lib.cfg import Cfg
-from iba.app.lib.reportkit import oneoff_path
+from iba.app.lib import reportkit
 from iba.app.lib import passagetrack
 from iba.app.lib.versespanmeaningreport import parse_chapters, parse_range
 
@@ -310,6 +324,9 @@ def main() -> int:
     ap.add_argument("--book", required=True)
     ap.add_argument("--chapters", help="whole-chapter range, e.g. 1-3 or 1")
     ap.add_argument("--range", dest="vrange", help="single-chapter verse range, e.g. 8:1-27")
+    ap.add_argument("--book-label", default=None,
+                    help="human-facing subfolder name (e.g. Daniel) -- defaults to --book if omitted, "
+                         "same shape as VerseLexical.ps1/-BookLabel")
     ap.add_argument("--out", default=None)
     args = ap.parse_args()
 
@@ -339,13 +356,19 @@ def main() -> int:
         if args.out:
             out_path = Path(args.out)
             out_path.parent.mkdir(parents=True, exist_ok=True)
+            text = "\n".join(lines)
+            if not text.endswith("\n"):
+                text += "\n"
+            out_path.write_text(text, encoding="utf-8")
         else:
-            out_path = oneoff_path(cfg, topic)
-
-        text = "\n".join(lines)
-        if not text.endswith("\n"):
-            text += "\n"
-        out_path.write_text(text, encoding="utf-8")
+            # Book-scoped filing (fixed 2026-08-08) -- same convention every sibling book tool uses:
+            # report.verse_analysis_output_dir/<book_label or book>/<topic>.md, versioned +
+            # archived-on-regenerate by write_report (not the flat oneoff_path this used to call).
+            output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir",
+                                                   "iba/app/verse-analysis"))
+            folder = args.book_label or args.book
+            out_path = output_dir / folder / f"{topic}.md"
+            out_path = reportkit.write_report(cfg.conn, "report.debate", out_path, lines)
         print(f"wrote {out_path}")
 
         # 2026-08-06: this report is no longer purely read-only -- it keeps passage.debate_path/

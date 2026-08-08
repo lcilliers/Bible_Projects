@@ -30,20 +30,23 @@ built out **operation by operation**, within a common framework. *(Plan §2.)*
 > ### Scope of this guide — read this
 >
 > **The application is under active construction, and this guide grows with it — updated
-> 2026-07-30.** Live today: the raw layer (**new-word**, §3; **raw-backfill**, §3a), **config
+> 2026-08-08.** Live today: the raw layer (**new-word**, §3; **raw-backfill**, §3a), **config
 > maintenance** (§9), **standalone quality checks** (§11), **the lexicon-parsed layer** (§11a),
 > **reports and CSV export** (§12), **log retention** (§13), **4 analysis reports** —
-> strong-meaning, span-analysis, schema-overview, registry (§12a), and **verse-analysis /
-> passage-debate / whole-book-read / narrative-check** (§12b/§12c) — the live method for building a
-> book's study content. **§8's candidate-stamping-and-passages pipeline
-> (`Set-Candidates.ps1`/`Build-Passages.ps1`), §10's candidate curation (`Candidate-Curate.ps1`),
-> `Candidate-Quality.ps1`, and `SeedCandidate-Report.ps1` are all RETIRED** (2026-07-23/26) — do not
-> run them; §12b/§12c is the current method. Every report auto-archives its previous version and
-> pairs with a CSV export by default (§12). The interpretive stages above this layer (lexical,
-> characteristics, findings) are not built yet. Where this guide describes a command or a report, it
-> describes what exists now. Companion docs: `BUILD.md` (what's
-> built, how the parts fit) and `GOVERNANCE.md` (how config governs the code) — this guide is *how
-> to run it*.
+> strong-meaning, span-analysis, schema-overview, registry (§12a), and the **lexical-then-debate
+> pipeline** (`VerseLexical.ps1`/`Debate-Run.ps1`) plus **whole-book-read / narrative-check**
+> (§12b/§12c/§12d) — the live method for building a book's study content. **§8's
+> candidate-stamping-and-passages pipeline (`Set-Candidates.ps1`/`Build-Passages.ps1`), §10's
+> candidate curation (`Candidate-Curate.ps1`), `Candidate-Quality.ps1`, and `SeedCandidate-Report.ps1`
+> are all RETIRED** (2026-07-23/26), as is §12b's own original scaffold-based
+> `VerseSpanMeaning-Report.ps1`/`PassageDebate-Report.ps1` pair (2026-08-07) — do not run any of
+> these; §12b/§12c/§12d is the current method. Every report auto-archives its previous version and
+> pairs with a CSV export by default (§12). Book-scoped reports (lexical, debate, reconciliation,
+> narrative) file under `iba/app/verse-analysis/<BookLabel or Book>/` — not `iba/app/reports/`
+> (that's for one-off investigatory output only; corrected 2026-08-08, `BUILD.md` §84). Where this
+> guide describes a command or a report, it describes what exists now. Companion docs: `BUILD.md`
+> (what's built, how the parts fit) and `GOVERNANCE.md` (how config governs the code) — this guide
+> is *how to run it*.
 
 ---
 
@@ -361,9 +364,11 @@ since 2026-07-26, found and corrected in the same 2026-07-29 audit that produced
 `PLAN-config-system-remediation-v1-20260729.md`.
 
 **Nothing today derives a passage's boundaries algorithmically.** A passage is now whatever range
-`report.verse_span_meaning`/`report.passage_debate` is run over — a judgement call per debate, per
-the reading method — tracked (not generated) by `lib/passagetrack.py`. **See §12b below** for the
-current method: `VerseSpanMeaning-Report.ps1` then `PassageDebate-Report.ps1`.
+`hib.set`/`passage.build` is run over — a judgement call per debate, per the reading method —
+tracked (not generated) by `lib/passagetrack.py`. **See §12b below** for the current method:
+`VerseLexical.ps1` (once, book-scoped) then `Debate-Run.ps1` (per chapter/range) — the
+`VerseSpanMeaning-Report.ps1`/`PassageDebate-Report.ps1` pair named here previously was itself
+retired 2026-08-07 (§12b).
 
 `candidate_seed`/`span_candidate` remain in the DB (retracted data kept for provenance, not
 purged — same as `passage`/`verse_passage`'s own retirement, §17) but nothing writes to them or
@@ -631,17 +636,21 @@ build it first, for the whole book, and you won't hit that per-chapter.
 
 ```powershell
 # single chapter
-iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1
+iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1 -BookLabel Daniel
 
 # multi-chapter range
-iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1-3
+iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1-3 -BookLabel Daniel
 
 # sub-chapter verse range
-iba\app\ps\Debate-Run.ps1 -Book Dan -Range 8:1-27
+iba\app\ps\Debate-Run.ps1 -Book Dan -Range 8:1-27 -BookLabel Daniel
 
 # targeted single-step rerun/correction (mirrors the real Dan 8 rollback/redo, BUILD.md §71)
-iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1 -Step hib.set
+iba\app\ps\Debate-Run.ps1 -Book Dan -Chapters 1 -BookLabel Daniel -Step hib.set
 ```
+
+`-BookLabel` (added 2026-08-08, same shape as `VerseLexical.ps1`) defaults to `-Book` if omitted —
+so `-Book Dan` alone files under `iba/app/verse-analysis/Dan/` rather than `Daniel/`. Always pass
+both together for a book you already have a labelled folder for.
 
 One call walks the whole sequence (`cfg_setting.passage.debate_run_sequence` — `hib.set` →
 `passage.build` → `phenomenon.set` → `operation.set` → `closing.set`), each step still under its
@@ -679,7 +688,11 @@ STOPPED -- hib.set needs its analytical payload next.
 
 Once `closing.set` succeeds, `Debate-Run.ps1` automatically renders the report
 (`python -m iba.app.tools.build_debate_report`, standalone — deliberately not a `cfg_report` step,
-`BUILD.md` §65) to `iba/app/reports/{book}-{scope}-debate-report-{date}.md`.
+`BUILD.md` §65) to `iba/app/verse-analysis/<BookLabel or Book>/{book}-{scope}-debate-report.md`
+(book-scoped, versioned + archived-on-regenerate — corrected `BUILD.md` §84, 2026-08-08; this used
+to land flat in `iba/app/reports/` with a date in the filename instead, a filing bug, not the
+intended design). Every `hib.set`/`phenomenon.set`/`operation.set`/`closing.set` step's own
+reconciliation report files the same way, same folder.
 
 **Known gap, not yet updated for this model:** `WholeBookRead-Report.ps1`/`report.whole_book_read`
 (`BUILD.md` §32) still reads the old scaffold's `debate_status='filled'` .md sections
@@ -799,10 +812,19 @@ resumed) listed as archival **candidates** for you to judge — it does not prun
 
 ## 14. Everyday commands, in order
 
-**Corrected 2026-07-30** — this list used to show the retired `Set-Candidates.ps1`/
-`Build-Passages.ps1`/`Candidate-Curate.ps1` as the normal per-book workflow, contradicting §8/§10's
-own RETIRED markings. Replaced with the current verse-analysis/passage-debate method (§12b/§12c),
-and the 4 previously-undocumented scripts (§3a/§11a/§12b/§12c) added.
+**Corrected 2026-08-08** — this list still showed the retired `VerseSpanMeaning-Report.ps1`/
+`PassageDebate-Report.ps1` pair as "the current per-book study method," contradicting §12b's own
+2026-08-07 rewrite, which retired that pair in favour of `VerseLexical.ps1`/`Debate-Run.ps1`. §14
+was last corrected 2026-07-30 — before that rewrite — and was never brought back in sync. Replaced
+below with the current two-tool pipeline (§12b). (Prior correction, 2026-07-30: this list used to
+show the retired `Set-Candidates.ps1`/`Build-Passages.ps1`/`Candidate-Curate.ps1` as the normal
+per-book workflow, contradicting §8/§10's own RETIRED markings; replaced then with the
+verse-analysis/passage-debate method, and the 4 previously-undocumented scripts (§3a/§11a/§12b/§12c)
+added.)
+
+`-Book` below is always the **OSIS book code as stored in `verse.osisId`** (e.g. `Dan`, not
+`Daniel`) — every script that also writes to a human-facing folder takes a separate `-BookLabel`
+(e.g. `-BookLabel Daniel`) for that; the two are never the same parameter.
 
 ```powershell
 # once, at the start of a session:
@@ -817,11 +839,17 @@ iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"     # resume
 # fill in supporting-term meaning for a book/range, if you want it done ahead of time (§3a):
 iba\app\ps\Raw-Backfill.ps1 -Book <book> [-Range <ch:v-v>]
 
-# the current per-book study method — extract, then debate, then whole-book read (§12b):
-iba\app\ps\VerseSpanMeaning-Report.ps1 -Book <book> -Chapters <n-n> -BookLabel <Label>
-iba\app\ps\PassageDebate-Report.ps1 -Book <book> -Chapters <n-n> -BookLabel <Label>
-#   ... fill in the debate's <!-- fill in --> placeholders, repeat per range, then:
-iba\app\ps\WholeBookRead-Report.ps1 -Book <book> -BookLabel <Label>
+# the current per-book study method — lexical once, then debate per chapter/range (§12b):
+iba\app\ps\VerseLexical.ps1 -Book <book> -Chapters <whole book, e.g. 1-12> [-BookLabel <Label>]
+iba\app\ps\Debate-Run.ps1 -Book <book> -Chapters <n-n> [-BookLabel <Label>]
+#   ... write each step's staging payload when it stops and asks for one, rerun the same command,
+#   repeat per chapter/range. -BookLabel (added 2026-08-08) defaults to -Book if omitted -- every
+#   step's own reconciliation report AND the final rendered debate report file under
+#   iba/app/verse-analysis/<BookLabel or Book>/, same convention every sibling book tool uses
+#   (see §12b) -- always pass it for a book you already have a labelled folder for.
+#   WholeBookRead-Report.ps1 is a KNOWN GAP against this model (§12b) — still correct for the 6
+#   pre-existing scaffold-model books (Amos/Hosea/Joel/Jonah/Micah/Obadiah), not yet rebuilt
+#   against Debate-Run.ps1-produced books.
 
 # generate the narrative itself — real API cost, approval-gated (§12d):
 iba\app\ps\BookNarrative-Generate.ps1 -Book <book> -BookLabel <Label>
@@ -901,13 +929,21 @@ iba/app/
               CSV pairing for CONFIG-REPORT.md itself)
   db/iba.db   the database (config tables cfg_* + the data)
   db/snapshots/  pre-run DB snapshots (added 2026-07-22) — every new run copies iba.db here first
-  ps/         Start-Iba.ps1 · New-Word.ps1 · Set-Candidates.ps1 · Build-Passages.ps1 ·
-              Config-Maintenance.ps1 · Candidate-Curate.ps1 · Candidate-Quality.ps1 ·
-              Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 · Escalation.ps1 ·
-              Log-Retention.ps1 · SeedCandidate-Report.ps1 · StrongMeaning-Report.ps1 ·
-              SpanAnalysis-Report.ps1 · SchemaOverview-Report.ps1 · Registry-Report.ps1 ·
-              VerseSpanMeaning-Report.ps1 · PassageDebate-Report.ps1 · WholeBookRead-Report.ps1 ·
+  ps/         Start-Iba.ps1 · New-Word.ps1 · Config-Maintenance.ps1 · Candidate-Quality.ps1 ·
+              Lexicon-Parse.ps1 · Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 ·
+              Escalation.ps1 · Log-Retention.ps1 · SeedCandidate-Report.ps1 ·
+              StrongMeaning-Report.ps1 · SpanAnalysis-Report.ps1 · SchemaOverview-Report.ps1 ·
+              Registry-Report.ps1 ·
+              **current per-book pipeline (§12b):** VerseLexical.ps1 · Debate-Run.ps1 ·
+              Operations-Ingest.ps1 (the work package Debate-Run.ps1's hib/phenomenon/operation/
+              closing steps run under) ·
+              WholeBookRead-Report.ps1 (known gap against the current model, §12b) ·
               BookNarrative-Generate.ps1 (§12d — real API cost) · BookNarrative-Validate.ps1 ·
+              **retired, kept on disk for provenance — do not use:** Set-Candidates.ps1 ·
+              Build-Passages.ps1 · Candidate-Curate.ps1 (§8/§10) · VerseSpanMeaning-Report.ps1 ·
+              PassageDebate-Report.ps1 · PassageDebate-Sync.ps1 · Chapter-Generate.ps1 (§12b) ·
+              Book-Narrative.ps1 (superseded by the split BookNarrative-Generate.ps1/
+              BookNarrative-Validate.ps1 above — not otherwise documented in this guide) ·
               create-iba-view-template.ps1 · create-passage-view-and-export.ps1 ·
               create-passages-by-book-view-and-export.ps1 · export-iba-config-tables.ps1 ·
               generate-iba-db-schema-report.ps1 (5 standalone investigation utilities, relocated
