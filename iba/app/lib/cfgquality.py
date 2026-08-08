@@ -460,6 +460,41 @@ def find_stale_governance_docs(conn: sqlite3.Connection, app_root: pathlib.Path)
     return []
 
 
+def find_report_version_clutter(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
+    """`lib/reportkit.oneoff_path()` was found 2026-08-08 (BUILD.md §83) to version correctly
+    (`-v2`/`-v3`/...) but never archive the superseded version — every reconciliation report and
+    several extract tools accumulated their whole lineage flat in `governance.oneoff_report_dir`
+    forever, unlike `write_report`'s own reports (fixed 2026-08-05, §60) which correctly hold
+    exactly one live file per stem. Fixed at the source (`oneoff_path` now archives before writing)
+    — this is the ACTIVE detector that a future regression (a new caller bypassing `oneoff_path`,
+    or the archiving logic breaking) doesn't silently recur unnoticed, matching this app's own
+    "not stated, enforced" convention rather than trusting the fix to hold by inspection alone."""
+    from . import reportkit
+    out_dir_setting = _cfg_setting(conn, "governance.oneoff_report_dir")
+    if not out_dir_setting:
+        return []
+    # governance.oneoff_report_dir's value ("iba/app/reports/") is already relative to the REPO
+    # ROOT (same resolution oneoff_path() itself relies on, via cwd) -- NOT relative to app_root
+    # (iba/app, one level in) the way other checks in this file use it. app_root.parent.parent
+    # recovers the repo root correctly either way, without assuming cwd.
+    out_dir_path = pathlib.Path(out_dir_setting)
+    out_dir = out_dir_path if out_dir_path.is_absolute() else app_root.parent.parent / out_dir_path
+    findings = []
+    for base, items in reportkit.group_oneoff_versions(out_dir).items():
+        if len(items) > 1:
+            versions = sorted(v for v, _ in items)
+            findings.append(f"{base}: {len(items)} versions simultaneously live "
+                           f"({versions}) — only the highest should be; the rest belong in "
+                           f"{out_dir_setting.rstrip('/')}/archive/")
+    return findings
+
+
+def _cfg_setting(conn: sqlite3.Connection, key: str):
+    import json
+    r = conn.execute("SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
+    return json.loads(r["value"]) if r else None
+
+
 def find_unregistered_lib_modules(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
     """Every `iba/app/lib/*.py` module must have a `cfg_utility` row (added 2026-07-29, Phase 4 of
     `PLAN-config-system-remediation-v1-20260729.md`) — a NEW module added later and never

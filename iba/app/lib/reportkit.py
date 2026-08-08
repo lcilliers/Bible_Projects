@@ -221,6 +221,57 @@ def _dump_rows(rows: list[sqlite3.Row], table: str, out_dir: pathlib.Path) -> pa
     return _write_csv(out_dir / f"{table}.csv", cols, [[r[c] for c in cols] for r in rows])
 
 
+_STEM_VERSION_RE = re.compile(r"^(.*)-v(\d+)(\.[^.]+)$")
+
+
+def _stem_and_version(path: pathlib.Path) -> tuple[str, int]:
+    """(base-stem+ext, version) for any file in a one-off report's lineage — `{stem}.ext` (the
+    first-ever version, implicit `1`) and `{stem}-v{n}.ext` both normalise to the SAME base key, so
+    grouping by it finds every version of the same report regardless of which one is unversioned.
+    Shared by `oneoff_path` (archives before writing), `cfgquality.find_report_version_clutter`
+    (detects a regression), and any one-time cleanup sweep — one place this grouping rule lives,
+    never a second hand-written copy of it (2026-08-08)."""
+    m = _STEM_VERSION_RE.match(path.name)
+    if m:
+        return m.group(1) + m.group(3), int(m.group(2))
+    return path.name, 1
+
+
+def group_oneoff_versions(out_dir: pathlib.Path) -> dict[str, list[tuple[int, pathlib.Path]]]:
+    """Every file directly in `out_dir` (not recursive — subdirectories like `archive/`/`export/`
+    are never one-off report lineage members themselves), grouped by base stem, each entry a
+    `(version, path)` list. A group of size 1 is a normal, un-cluttered report (nothing to do); a
+    group of size >1 means more than one version is simultaneously "live" — exactly the gap
+    `oneoff_path` had until 2026-08-08 (BUILD.md §83)."""
+    groups: dict[str, list[tuple[int, pathlib.Path]]] = {}
+    if not out_dir.exists():
+        return groups
+    for f in out_dir.iterdir():
+        if not f.is_file():
+            continue
+        base, ver = _stem_and_version(f)
+        groups.setdefault(base, []).append((ver, f))
+    return groups
+
+
+def archive_oneoff_clutter(out_dir: pathlib.Path, archive_dir: str = "archive") -> list[str]:
+    """For every report lineage in `out_dir` with more than one version currently live, archive
+    every version except the highest-numbered one. Returns the archived filenames (for a caller to
+    report, never silent). Used both by the one-time retroactive sweep and, in single-lineage form,
+    by `oneoff_path` itself on every call."""
+    adir = out_dir / archive_dir
+    archived: list[str] = []
+    for base, items in group_oneoff_versions(out_dir).items():
+        if len(items) <= 1:
+            continue
+        items.sort(key=lambda t: t[0])
+        for ver, f in items[:-1]:
+            adir.mkdir(parents=True, exist_ok=True)
+            f.replace(adir / f.name)
+            archived.append(f.name)
+    return archived
+
+
 def oneoff_path(cfg, topic: str, ext: str | None = None) -> pathlib.Path:
     """Phase 2 of PLAN-reports-config-governance-v1-20260722.md §5 — the path for a one-off
     ("investigatory") report: no `cfg_step`, so no `cfg_report` row to key off, but the
@@ -230,24 +281,42 @@ def oneoff_path(cfg, topic: str, ext: str | None = None) -> pathlib.Path:
 
     Same-day version bump on collision, per the Bible-study side's own established convention
     (docs/file-organisation-rules.md §2.3) rather than inventing a new one for this app — a second
-    call for the same topic on the same day gets `-v2`, a third `-v3`, and so on."""
+    call for the same topic on the same day gets `-v2`, a third `-v3`, and so on.
+
+    **Archiving added 2026-08-08 (BUILD.md §83).** `write_report` was fixed 2026-08-05 to archive
+    the previously-live version alongside every version bump ("archiving runs alongside the
+    versioning, as it should") — this function, a SEPARATE report-writing path used by every
+    reconciliation report and several extract tools, was never brought into that fix, so its own
+    live folder accumulated every version forever. Same rule, applied here: before computing the
+    next version, whatever is currently live for this exact topic-day is moved into `archive_dir`
+    first — the live folder holds exactly the newest version per topic-day, the full lineage is in
+    `archive_dir`, nothing is ever silently lost."""
     out_dir = pathlib.Path(cfg.setting("governance.oneoff_report_dir", "iba/app/reports/"))
     pattern = cfg.setting("governance.oneoff_report_naming_pattern", "{topic}-{YYYYMMDD}.{format}")
     fmt = ext or cfg.setting("governance.oneoff_report_format", "md")
+    archive_dir = cfg.setting("governance.oneoff_report_archive_dir", "archive")
     slug = re.sub(r"[^a-z0-9]+", "-", topic.lower()).strip("-")
     stamp = datetime.datetime.now().strftime("%Y%m%d")
     name = pattern.format(topic=slug, YYYYMMDD=stamp, format=fmt)
-
-    path = out_dir / name
-    if not path.exists():
-        return path
     stem, _, extension = name.rpartition(".")
-    n = 2
-    while True:
-        candidate = out_dir / f"{stem}-v{n}.{extension}"
-        if not candidate.exists():
-            return candidate
-        n += 1
+
+    live_matches = [out_dir / name] if (out_dir / name).exists() else []
+    if out_dir.exists():
+        live_matches += sorted(out_dir.glob(f"{stem}-v*.{extension}"))
+    if not live_matches:
+        return out_dir / name
+
+    adir = out_dir / archive_dir
+    adir.mkdir(parents=True, exist_ok=True)
+    for f in live_matches:
+        f.replace(adir / f.name)
+
+    rx = re.compile(rf"^{re.escape(stem)}-v(\d+)\.{re.escape(extension)}$")
+    candidates = (list(out_dir.glob(f"{stem}-v*.{extension}")) if out_dir.exists() else []) + \
+                list(adir.glob(f"{stem}-v*.{extension}"))
+    versions = [int(m.group(1)) for m in (rx.match(f.name) for f in candidates) if m]
+    n = max(versions, default=1) + 1
+    return out_dir / f"{stem}-v{n}.{extension}"
 
 
 def _write_csv(path: pathlib.Path, cols: list[str], rows: list[list]) -> pathlib.Path:

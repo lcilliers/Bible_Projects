@@ -5018,3 +5018,70 @@ Config: 4 `cfg_write_grant` rows (`passage.build`/`phenomenon.set`/`operation.se
 corrections (`passage.build` insert+supersede, `operation.set`/`hib_referent_option`/`closing.set`
 real edits) — no live production data touched by any test in this session; every scratch DB copy
 discarded after use.
+
+## 83. `oneoff_path()` fixed to archive — the report-writing path §60's fix missed; existing clutter swept; an active detector added (2026-08-08, same day, later still)
+
+**Trigger.** Researcher, inspecting `iba/app/reports/`: *"this folder is really dirty... not sure
+if it is because the configs are incoherent, or if you just do not comply with the rules."*
+Investigated the mechanism directly before answering either way.
+
+**Root cause, found by reading `lib/reportkit.py` line by line, not assumed clean because §60 said
+so.** `reportkit.py` has TWO report-writing functions. `write_report()` — fixed 2026-08-05 (§60) to
+archive the previously-live version alongside every version bump. `oneoff_path()` — used for
+"investigatory" reports with no `cfg_step`/`cfg_report` row (every `hib.set`/`phenomenon.set`/
+`operation.set`/`closing.set` reconciliation report, `hib.set`-by-type, `build_debate_report.py`,
+both `build_verse_span_*_extract.py` tools) — is a SEPARATE path that bypasses `write_report()`
+entirely: it computes a path, the caller writes to it directly. §60's own claim ("every report
+writer already funnels through this one function") was checked live and found false — `oneoff_path`
+versioned correctly (`-v2`/`-v3`/...) but never archived anything, so every report through it
+accumulated its FULL lineage flat in the live folder, forever, since before §60 even existed.
+**Not a compliance failure on the calling side** — every caller (including this session's own
+extensive use of it) called `oneoff_path` exactly as documented; the mechanism had the gap.
+
+**Fixed at the source.** `oneoff_path()` (`lib/reportkit.py`) now archives whatever's currently
+live for a topic-day before computing the next version. New shared helpers,
+`group_oneoff_versions()`/`archive_oneoff_clutter()` — parse `{stem}.ext`/`{stem}-v{n}.ext` into a
+common base key, group a directory's files by it, archive every version in a group except the
+highest. Used by `oneoff_path()` itself, the retroactive sweep, AND the new detector (below) — one
+place this grouping rule lives, never three hand-written copies of it. `oneoff_path`'s own
+`{topic}-{date}[-vN]` naming convention kept as-is (not unified with `write_report`'s
+`{stem}-v{n}-{date}` scheme) — a rename would have been a breaking change across every existing
+report file for no functional gain. New `cfg_setting` `governance.oneoff_report_archive_dir`
+(default `"archive"`), proposed/approved/applied.
+
+**Existing clutter swept, same session, not left to accumulate until the fix's own effects caught
+up.** `migration/archive_oneoff_report_clutter_20260808.py` (idempotent, reuses the exact same
+`archive_oneoff_clutter()` the fix itself calls) — **18 files across 10 report lineages** archived
+(`closing-set-reconciliation-dan-37465/37467`, `dan-8-debate-report`, `hib-set-by-type-dan`
+×3 different dates, `hib-set-reconciliation-dan`/`-dan-1` ×3 different dates,
+`operation-set-reconciliation-dan-37467`), kept the newest version of each live. Re-run confirmed
+idempotent (0 files, nothing left).
+
+**Also cleaned in the same pass, unrelated to the mechanism fix itself:** 8 report files from
+THIS session's own isolated-copy CRUD testing (§82) had leaked into `iba/app/reports/` with real
+repo-relative paths (only the DB connection was isolated, not the report-writing side, since the
+scratch DB copy carried the same `cfg_setting` values) — deleted outright before the §82 commit,
+not archived (they were never real analytical content to begin with).
+
+**The "never happens again" half — an active detector, not a code fix trusted to hold by
+inspection.** New `cfgquality.find_report_version_clutter(conn, app_root)` — scans
+`governance.oneoff_report_dir` for any report lineage with more than one version simultaneously
+live, wired into `configmaint.validate`'s findings dict (mirrors every other advisory check
+already there) and into `cfgreport.py`'s `CONFIG-REPORT.md` output. A future regression — a new
+caller writing to a hand-built path instead of `oneoff_path`, or the archiving logic itself
+breaking — surfaces as a real advisory finding on the next `configmaint.validate` run, not a
+silently-recurring mess someone has to notice by eye again.
+
+**Verified live, not assumed.** Two consecutive real `hib.set` calls (`Dan 1`, genuinely
+zero-content-change no-ops): the SECOND call correctly archived the FIRST call's freshly-written
+reconciliation report AND by-type report before writing its own next version — live folder held
+exactly one file per stem throughout (confirmed by direct listing, both before and after),
+`find_report_version_clutter` returned 0 findings before the sweep's target state and 0 after these
+live writes. `configmaint.validate` clean.
+
+**Files:** `lib/reportkit.py` (`oneoff_path` rewritten; new `group_oneoff_versions`/
+`archive_oneoff_clutter`/`_stem_and_version` helpers), `lib/cfgquality.py` (new
+`find_report_version_clutter`), `lib/cfgreport.py` (wired in), `handlers/configmaint.py` (wired
+into `validate`'s findings dict + success message), `GOVERNANCE.md` §35 (new). New:
+`migration/archive_oneoff_report_clutter_20260808.py`. Config: `cfg_setting
+governance.oneoff_report_archive_dir`, via `configmaint.propose`, approved and applied.

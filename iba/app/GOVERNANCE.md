@@ -1637,3 +1637,53 @@ preserve that row's id across a `changed` correction and log every insert/update
 a new rule, an instance of the existing `config_exempt` convention — noted here only because
 `configmaint.validate`'s stale-doc check compares this file's mtime against the newest applied
 config change regardless of whether that change was itself rule-shaped.
+
+---
+
+## §35. `oneoff_path()` never archived — the OTHER report-writing path §60's fix missed, fixed and now actively detected (2026-08-08)
+
+**Trigger.** Researcher, inspecting `iba/app/reports/`: *"this folder is really dirty... not sure
+if it is because the configs are incoherent, or if you just do not comply with the rules."*
+Investigated against the live code, not assumed either way.
+
+**Root cause: §60's "every report writer already funnels through this one function" was wrong.**
+§60 (2026-08-05) fixed `write_report()` to archive the previously-live version alongside every
+version bump. `lib/reportkit.py` has a SECOND, separate report-writing path — `oneoff_path()`,
+used for "investigatory" reports with no `cfg_step`/`cfg_report` row (§15) — that bypasses
+`write_report()` entirely: a caller gets a path from `oneoff_path()` and writes to it directly.
+§60 never touched this path. It versioned correctly (`-v2`/`-v3`/...) but never archived anything,
+so every report going through it (every `hib.set`/`phenomenon.set`/`operation.set`/`closing.set`
+reconciliation report, the `hib.set`-by-type report, `build_debate_report.py`, both
+`build_verse_span_*_extract.py` tools) accumulated its FULL lineage flat in the live folder,
+forever, since before §60 even existed. Not a compliance failure by whoever called `oneoff_path()`
+— every caller used it exactly as documented; the mechanism itself had the gap.
+
+**Fixed at the source, not per-caller.** `oneoff_path()` (`lib/reportkit.py`) now archives whatever
+is currently live for a topic-day before computing the next version — same "archive alongside
+versioning" rule §60 established, same live-folder-holds-exactly-one-current-file-per-report
+outcome, applied via a NEW shared helper (`reportkit.group_oneoff_versions`/
+`archive_oneoff_clutter`) rather than copying `write_report`'s own version-numbering scheme (the
+two paths' naming conventions differ — `{topic}-{date}[-vN]` vs `{stem}-v{n}-{date}` — kept as-is,
+not unified, to avoid a breaking rename across every existing report file). New `cfg_setting`
+`governance.oneoff_report_archive_dir` (default `"archive"`, same shape as `cfg_report.archive_dir`).
+
+**Existing clutter swept, not left for the fix to slowly catch up on.**
+`migration/archive_oneoff_report_clutter_20260808.py` (idempotent) — reused the exact same
+grouping/archiving helper `oneoff_path()` itself now calls, so the one-time cleanup and the
+going-forward behaviour are provably the same rule, not two hand-written copies of it. 18 files
+across 10 report lineages archived (kept the newest live), verified 0 remaining.
+
+**The "never happens again" half: an active detector, not just a code fix trusted to hold.**
+`cfgquality.find_report_version_clutter()` — scans `governance.oneoff_report_dir` for any report
+lineage with more than one version simultaneously live, wired into `configmaint.validate`'s
+findings dict and `CONFIG-REPORT.md` (mirrored the same way every other advisory check in this app
+is). If `oneoff_path`'s own archiving is ever bypassed (a future caller writing to a hand-built
+path, or the archiving logic itself regressing), this surfaces it as a real advisory finding on the
+next `configmaint.validate` run — matching this app's standing convention that a rule is enforced,
+not just documented and trusted.
+
+**Verified live**, not assumed: two consecutive real `hib.set` calls confirmed the SECOND call
+archives the FIRST call's freshly-written report (both the reconciliation report and the
+`hib.set`-by-type report) before writing its own next version — live folder held exactly one file
+per stem throughout, full lineage in `archive/`. `find_report_version_clutter` returns 0 findings
+before AND after. Full work record: `BUILD.md` §83.

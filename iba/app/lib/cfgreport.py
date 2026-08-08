@@ -241,6 +241,10 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
         ("Orphan candidate rules", "a kind called with zero active rows, or active rows no code "
          "asks for",
          cfgquality.find_orphan_candidate_rules(conn, APP)),
+        ("Report version clutter", "more than one version of a one-off report simultaneously live "
+         "in governance.oneoff_report_dir (oneoff_path() found 2026-08-08 to version without "
+         "archiving, BUILD.md §83) — the rest belong in archive/",
+         cfgquality.find_report_version_clutter(conn, APP)),
     ]
     # this section is the ACTIONABLE detail behind configmaint.validate's escalation — that
     # escalation question stays short (counts + this report path) precisely because every item

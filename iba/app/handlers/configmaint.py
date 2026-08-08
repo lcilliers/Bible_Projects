@@ -284,6 +284,10 @@ def validate(ctx: Ctx) -> Outcome:
                              "cfg_connection finding(s)"),
         "orphan_candidate_rule": (cfgquality.find_orphan_candidate_rules(ctx.db.conn, APP_ROOT),
                                 "cfg_candidate_rule finding(s)"),
+        # 2026-08-08 (BUILD.md §83) -- oneoff_path() versioned but never archived; fixed at the
+        # source, this is the active detector that a future regression doesn't silently recur.
+        "report_version_clutter": (cfgquality.find_report_version_clutter(ctx.db.conn, APP_ROOT),
+                                  "report lineage(s) with more than one live version"),
     }
     preset = {k: v[0] for k, v in findings.items()}
     if not any(preset.values()):
@@ -291,7 +295,7 @@ def validate(ctx: Ctx) -> Outcome:
                   "status flow, regex settings, report fields all check out; no orphans, no "
                   "settings needing justification, no stale filled_by references, GOVERNANCE.md "
                   "current, every lib module registered, no zero-config-density utilities, no "
-                  "book_order/connection/candidate_rule usage gaps")
+                  "book_order/connection/candidate_rule usage gaps, no report-version clutter")
 
     # Full detail persists to CONFIG-REPORT.md's "findings" section (cfgreport.py mirrors the
     # same cfgquality functions) — refreshed here so the report reflects THIS run's findings, not
