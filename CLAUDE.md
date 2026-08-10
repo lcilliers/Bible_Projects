@@ -328,13 +328,21 @@ Programme-state SQL queries (Session B progress, VC progress, OWNER terms needin
 - Excluded: `database/bible_research.db`, `backups/`.
 - Committed: `Sessions/Patches/*.json`.
 - Commit message: `session YYYYMMDD: brief description`. Branch: `main`. Remote: `github.com/lcilliers/Bible_Projects`.
-- **Standing pre-authorization (2026-07-23):** completing a session log (any `SESSION-LOG-*.md`,
-  including `iba/app/SESSION-LOG-*.md`) means the full commit-and-push cycle happens in the same
-  unit of work — stage the real changes (not a blanket `-A`), write a proper commit message, commit,
-  push, confirm `git status` clean/pushed. This is the one standing exception to "never commit
-  unless explicitly asked" (§ system instructions) — narrowly scoped to this one trigger, not a
-  general license to commit proactively elsewhere. Mirrors `governance.build_md_on_code_change`
-  in `iba/app/` (same shape of rule, same day).
+- **Standing pre-authorization (2026-07-23, scope widened 2026-08-10):** completing a session log
+  (any `SESSION-LOG-*.md`, including `iba/app/SESSION-LOG-*.md`) means the full commit-and-push
+  cycle happens in the same unit of work — write a proper commit message, commit, push, confirm
+  `git status` clean/pushed. This is the one standing exception to "never commit unless explicitly
+  asked" (§ system instructions) — narrowly scoped to this one trigger, not a general license to
+  commit proactively elsewhere. Mirrors `governance.build_md_on_code_change` in `iba/app/` (same
+  shape of rule, same day).
+  **Default scope, corrected 2026-08-10:** stage every outstanding change in the working tree at
+  close, not only the changes made during the current session — a prior narrower reading (session-
+  own changes only, everything else left for a separate pass) required a follow-up "(cont.)"
+  catch-up commit twice (2026-08-09, 2026-08-10); the default is now the full diff. Still not a
+  blanket `git add -A` performed blindly: read anything unfamiliar before staging it (per the
+  standing "read before publishing/distributing" rule) and still exclude the standing binary/log
+  paths above (`database/bible_research.db`, `backups/`) — but do not filter files down to "did I
+  personally generate this" as a routine step.
 
 ---
 
