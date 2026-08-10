@@ -35,6 +35,12 @@ Chain:
 "Unique span" = distinct `span.surface` values tagged with that Strong's — the different surface
 realisations ("applications") a lemma took across its occurrences, not `resolved_sense` (checked:
 fixed per Strong's in this data, so surface diversity carries the real signal here).
+
+`strong.count` (STEP's `call2_getInfo` "count" field) is fixed Strong's-dictionary reference data
+— NOT a verse-occurrence count in this app's Bible text, confirmed live 2026-08-10 (BUILD.md §88):
+it returns byte-identical regardless of which Bible module/version is queried, including modules
+that can't sensibly answer for the code at all. Shown here relabelled, alongside the real local
+`verse_lexical` occurrence/verse counts — never presented alone as if it meant "how many verses."
 """
 
 from __future__ import annotations
@@ -230,14 +236,46 @@ def write_report(cfg, word: str) -> pathlib.Path | None:
                 body.append(f"**Strong's:** {strong}")
                 body.append("")
             if srow:
+                # `strong.count` (STEP's call2_getInfo "count" field) is NOT a verse-occurrence
+                # count — confirmed live 2026-08-10 (iba/app/reports/g2128-verse-lexical-by-
+                # strong-sample-20260810.md addendum): calling getInfo for the SAME code under
+                # nine different {version} values, including Hebrew-only modules that can't
+                # sensibly answer for a Greek code at all, returned the IDENTICAL count every
+                # time. It is fixed Strong's-dictionary reference data (global, corpus-
+                # independent — plausibly NT+LXX+cited literature per the lsjDefs citations),
+                # never scoped to any Bible text this app actually holds. Labelling it "STEP
+                # total count" implied it meant "how many verses does this occur in" — wrong,
+                # and the true figure (this DB's actual verse_lexical coverage) is usually far
+                # smaller (e.g. G2128: dictionary count 52 vs 8 real verses). Replaced with the
+                # real local occurrence/verse counts; the dictionary number is kept alongside,
+                # relabelled so it can't be misread as a verse count again.
+                occ = q("SELECT COUNT(*) n, COUNT(DISTINCT vl.verse_id) v FROM verse_lexical vl "
+                       "WHERE vl.strong=? AND vl.deleted=0", (strong,))[0]
                 body.append(f"transliteration: *{srow['stepTransliteration']}* &nbsp;|&nbsp; "
-                           f"language: {srow['language']} &nbsp;|&nbsp; STEP total count: {srow['count']}")
+                           f"language: {srow['language']} &nbsp;|&nbsp; "
+                           f"verse_lexical occurrences: {occ['n']} "
+                           f"({occ['v']} verse{'s' if occ['v'] != 1 else ''}) &nbsp;|&nbsp; "
+                           f"STEP lexicon count (dictionary-wide, NOT verse-scoped — see BUILD.md "
+                           f"§88): {srow['count']}")
             else:
                 body.append("*(no `strong` row for this code — not yet onboarded)*")
             body.append("")
 
+            # Bug found + fixed 2026-08-10, building on `healing`'s meaning-table backfill
+            # (BUILD.md — same session): this was querying `lemma_key=?` with the FULL
+            # sub-lettered code — but `strong_meaning_tree`/`strong_meaning_parsed`.lemma_key is
+            # always the BASE (added by migration/fix_strong_meaning_tree_collapse.py,
+            # 2026-07-26, which gave both tables a `strong_variant` column for exactly this exact-
+            # match case and updated every OTHER reader — `versespanmeaningreport.py`,
+            # `build_verse_span_meaning_extract.py` — to use it; this report was never migrated).
+            # `lemma_key=strong` for a sub-lettered code (e.g. 'H7965I') never matches anything
+            # (no row's lemma_key is ever 'H7965I', only 'H7965'), so this ALWAYS fell through to
+            # the base fallback below, silently, for every sub-lettered code — even ones that DO
+            # have their own exact-variant row (confirmed live: `healing`'s H7965G-L/H2492A/H5414P
+            # kept showing "no rows under X itself" immediately AFTER their own exact-variant rows
+            # were backfilled, because this query was never actually capable of finding them).
             senses = q("SELECT sense_code, gloss FROM strong_meaning_parsed "
-                      "WHERE lemma_key=? AND deleted=0 ORDER BY sort", (strong,))
+                      "WHERE strong_variant=? AND deleted=0 ORDER BY sort", (strong,))
             fallback_base = None
             if not senses:
                 base = _base_strong(strong)

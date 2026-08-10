@@ -21,7 +21,7 @@ from .. import validation as validation_mod
 from ..lib import escalation as esc
 from ..lib import retention as retention_mod
 from ..lib import (registryreport, schemareport, seedreport, spanreport, strongreport,
-                   wordregistryspanreport)
+                   strongversereport, wordregistryspanreport)
 from ..lib import (lexical, passagedebatereport, passagetrack, versespanmeaningreport,
                    wholebookread)
 from ..lib.stepapi import StepUnavailable
@@ -120,6 +120,26 @@ def word_registry_span_report(ctx: Ctx) -> Outcome:
     out = wordregistryspanreport.write_report(ctx.cfg, ctx.params["Word"])
     if out is None:
         return fail("word-not-found", f"{ctx.params['Word']!r} is not in the registry")
+    return ok(f"wrote {out}", path=str(out))
+
+
+def strong_verse_report(ctx: Ctx) -> Outcome:
+    """`ctx.word_id` is already resolved by the dispatcher (run.py: any step with 'Word' in
+    params gets `wrow = db.get('word_registry', word=params['Word'])` before the handler runs) —
+    reused here rather than a second lookup. Word-not-found is therefore a dispatcher-level fact,
+    not something this handler re-derives."""
+    if ctx.word_id is None:
+        return fail("word-not-found", f"{ctx.params['Word']!r} is not in the registry")
+    strong = ctx.params["Strong"]
+    linked = ctx.db.rows(
+        "SELECT 1 FROM word_strong WHERE word_id=? AND strong=? AND deleted=0",
+        (ctx.word_id, strong))
+    if not linked:
+        return fail("strong-not-linked",
+                    f"{strong!r} is not linked to registry word {ctx.params['Word']!r} "
+                    f"(word_strong) — check the word's own -strong-span- report for its linked "
+                    f"Strong's list")
+    out = strongversereport.write_report(ctx.cfg, ctx.params["Word"], strong, ctx.word_id)
     return ok(f"wrote {out}", path=str(out))
 
 

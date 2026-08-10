@@ -5336,3 +5336,433 @@ immediately precedes `### fear — G6015`, confirmed byte-exact match to the ToC
 **Files:** `iba/app/lib/reportkit.py` (`render_scaffold` — explicit anchors), `iba/app/lib/
 wordregistryspanreport.py` (`_index_group_clusters` rewritten, single-hop; `_core_words`/
 `_shares_word` new). No config/schema change.
+
+## 88. `report.word_registry_span`'s "STEP total count" field was showing bogus data — root-caused live and fixed (2026-08-10)
+
+Researcher, prototyping a new on-demand per-Strong's verse report against G2128 (`blessing`'s
+span report, "STEP total count: 52"), expected 52 verses. Investigated rather than assumed:
+
+- Local `span`/`verse_lexical` both carry exactly **8** rows for `strong_variant='G2128'`.
+- A **live** STEP `call3_strong("G2128")` call this session (the actual verse-search API) also
+  returned `total: 8`, the same 8 references — not a local-onboarding coverage gap, the real
+  in-Bible-text figure genuinely is 8.
+- So where does 52 come from? Traced to `call2_getInfo`'s `count` field — the source
+  `wordregistryspanreport.py` was reading into `strong.count` and printing as "STEP total count."
+  Tested directly: called `getInfo` for the same code (G2127, for a second data point) with the
+  `{version}` route parameter swapped across nine values — the real configured module (`ESV_th`),
+  several other NT/LXX-shaped module names, and **two Hebrew-only modules** (`OSMHB`, `OHB`) that
+  have no reason to answer for a Greek code at all. **Identical `count: 334` every single time.**
+  This proves the field is not scoped to any Bible text/module STEP is asked about — it's a fixed
+  Strong's-dictionary reference number (global, corpus-independent, plausibly NT+LXX+cited
+  literature per the same lexicon entry's own `lsjDefs` citations — "LXX.Gen.9.26, +others, 1st
+  c.AD: Philo Judaeus..."), not a live count of anything in our data at request time.
+
+**Bug:** `wordregistryspanreport.py` labelled this dictionary number "STEP total count" right next
+to transliteration/language — reads exactly like "how many verses does this occur in," which is
+what the researcher (reasonably) expected it to mean, and is wrong for that purpose by roughly an
+order of magnitude in the cases checked (G2128: 52 vs 8 real verses; G2127: 334 vs 40; G3106: 14
+vs 2; H0833, a Hebrew code with no LXX inflation: 19 vs 15, still off but far closer — consistent
+with the LXX-inclusion theory for Greek codes specifically).
+
+**Fixed:** the line now shows the real, locally-verified occurrence data first —
+`verse_lexical occurrences: {rows} ({distinct verses} verses)`, straight `COUNT(*)` /
+`COUNT(DISTINCT verse_id)` against `verse_lexical` for that exact `strong` — with the STEP
+dictionary number kept alongside but explicitly relabelled `STEP lexicon count (dictionary-wide,
+NOT verse-scoped — see BUILD.md §88)` so it can't be misread as a verse count again. Module
+docstring updated with the same finding so a future reader doesn't have to rediscover it.
+
+**Verified live:** regenerated `blessing`'s report — G2128 now reads `verse_lexical occurrences: 8
+(8 verses)` (matches the live STEP cross-check exactly); G2127 reads `verse_lexical occurrences:
+42 (40 verses)` (42 = the sum of that code's own "Unique spans" counts already shown lower in the
+same report, 40 = exact match to a fresh live `call3_strong` total) — internally consistent against
+two independent sources, not just "the query ran."
+
+**Filing note, not a code change:** the regenerated file landed at the flat
+`word_registry/blessing-strong-span-v1-20260810.md` — `wordregistryspanreport.write_report()`
+writes directly under `report.word_registry_span_output_dir` with no per-word subfolder, confirmed
+by reading the code (it was never doing this automatically). Every existing live word report
+(`Fear/`, `blessing/`, `Renewal/`) is filed one-per-word-subfolder instead, with superseded
+versions swept to the shared flat `word_registry/archive/` — an established, repeated filing
+practice, just not one any `cfg_step`/config drives (checked `cfg_step` for a refile step first;
+none exists). Followed the existing precedent by hand rather than leaving the fix's own output
+inconsistent with every sibling report: moved the new file into `blessing/`, renamed it `v2` (a
+same-stem regeneration, not a fresh v1, per the file-organisation-rules same-name-version-bump
+rule — the writer's own auto-versioning couldn't see this because it only checks its own flat
+output path), and archived the superseded bogus-count `v1-20260809` into `word_registry/archive/`.
+The gap itself (no config-driven step performs this filing) is flagged, not silently closed —
+worth a real decision on whether `wordregistryspanreport.py` should write directly into a per-word
+subfolder rather than relying on a manual step every time.
+
+**Files:** `iba/app/lib/wordregistryspanreport.py` (`write_report` — the fixed field + docstring
+note). No config/schema change. Report output: `iba/app/verse-analysis/word_registry/blessing/
+blessing-strong-span-v2-20260810.md`; superseded `v1-20260809` moved to `word_registry/archive/`.
+Investigation trail: `iba/app/reports/g2128-verse-lexical-by-strong-sample-20260810.md`.
+
+## 89. `report.registry` missing a plain per-word listing — code shipped, config change PENDING approval (2026-08-10, same day, later still)
+
+Researcher, on `Registry-Report.ps1`'s output: (1) no listing of the registry, (2) no CSV,
+(3) unsure whether the report refreshes an existing CSV. Investigated all three rather than
+assumed:
+
+**(1) Confirmed real** — `report.registry` has exactly 3 `cfg_report_section` rows (`summary`,
+`by_strong`, `sense_report`). `by_strong` and `sense_report` both `JOIN word_strong` (INNER), so a
+registry word with **zero** `word_strong` links never appears as an identifiable row in either —
+grepped the live report for "blindness" (the one registry row, id 183, with no links): the only
+hit was an unrelated `source`-column string from a *different* row that happens to contain that
+substring. `summary` only carries an aggregate ("with no word_strong link: 1"), never the word's
+name. No section lists all 178 `word_registry` rows plainly.
+
+**(2) NOT confirmed — a CSV already exists and does get produced.** `write_csv_pairing` is called
+with `row_filter={"word_registry": joined}` (a LEFT JOIN, so `blindness` DOES appear there, with
+null strong columns) against `cfg_report_csv_table` (one row registered: `word_registry`) →
+`iba/app/reports/export/word_registry.csv`, 4,797 data rows. Confirmed present and current
+(178 registry words × their `word_strong` links, LEFT JOIN).
+
+**(3) Confirmed refreshes on every run.** `_write_csv` calls `archive_before_write()` before every
+write — checked the archive folder: `word_registry-20260810-060644.csv` and `word_registry-
+20260810-060926.csv` both sit in `export/archive/`, one per each of two runs made earlier today,
+each with the *prior* live copy preserved before being overwritten — the mechanism is doing
+exactly what it's supposed to. Not a defect; researcher's uncertainty resolved with evidence, not
+a rebuild.
+
+**Fix for (1), shipped this session:** `registryreport.py` gained a `listing` section — a plain,
+un-joined `SELECT` over `word_registry` (id/word/status/source/count of its own `word_strong`
+rows), one row per active registry entry regardless of linkage, so `blindness` (and any future
+zero-link word) is finally named directly. Code is in `write_report()` now, building
+`sections["listing"]`.
+
+**Config change required and NOT applied — awaiting researcher approval, per `governance.
+rules_must_be_config_driven`.** `render_scaffold` only renders a section that has a matching
+`cfg_report_section` row (unmatched keys fall into a headerless "extra_keys" safety-net tail, "not
+expected in use" per that function's own comment) — so the new section needs a new row, which only
+`configmaint.propose` may write (approval-gated, per `governance.rules_must_be_config_driven`
+generally and the standing "config changes require researcher approval, never silent" rule
+specifically). Proposed, not self-approved:
+
+```
+Config-Maintenance.ps1 -Step Propose -Table cfg_report_section -Op insert -Set
+  '{"step":"report.registry","ordinal":3,"section_key":"listing",
+    "heading":"## Registry listing (all words)","toc_label":"Registry listing (all words)",
+    "include":1,"inactive":0}'
+```
+
+`run_id RUN-20260810_062823_629-CONFIGMAINT` — placed at `ordinal 3` (after the 3 existing
+sections) rather than its more natural position right after `summary`, to avoid a second proposal
+renumbering the existing 0/1/2 ordinals — position can still move via a follow-up `update`
+proposal if wanted.
+
+**Approved and applied, same day, later still.** Researcher answered the escalation directly
+(`answer: approve`, `answered_at 2026-08-10T05:30:27Z`, confirmed by reading the `escalation`
+table row rather than assumed from the chat reply alone). Re-ran the same `Config-Maintenance.ps1
+-Step Propose -RunId RUN-20260810_062823_629-CONFIGMAINT ...` command to apply it —
+`configmaint.propose` picked up the approval via `esc.answered_for_run`, inserted the
+`cfg_report_section` row, and logged it to `cfg_change_detail`. `auto_report` regenerated
+`CONFIG-REPORT.md` automatically as part of the same apply.
+
+**Verified live, not just "the insert didn't error":** regenerated `report.registry`
+(`registry-v2-20260810.md`) and confirmed (a) the new heading `## Registry listing (all words)`
+renders with its own `<a id>` anchor and ToC entry, in the right position (last), (b) `blindness`
+(id 183, the zero-`word_strong`-link word this whole fix exists for) now appears as a real,
+directly-named row — `| 183 | blindness | approved | ... | 0 |` — for the first time anywhere in
+this report, and (c) the section's own row count (178) matches `word_registry`'s active total
+exactly, confirming the un-joined query really does cover every row, not a subset.
+
+**Files:** `iba/app/lib/registryreport.py` (`write_report` — new `listing` section + docstring).
+Config change: `cfg_report_section` insert, applied (`cfg_change_detail`, run id above). No schema
+change. Report output: `iba/app/reports/registry-v2-20260810.md`.
+
+## 90. `report.registry` — §89 only half-answered "produce a CSV for the registry": the plain listing needed its OWN CSV, not just the .md section (2026-08-10, same day, later still)
+
+Researcher, re-reading §89's fix: "you still did not get it that I asked for both word-registry
+table and registry table to be exported to csv." Correct, and a real miss — §89 fixed the
+*markdown* gap (the `listing` section) but left the CSV side exactly as before: still only one
+registered `cfg_report_csv_table` row (`word_registry`, the joined pairing export), so the same
+"joined data can't stand in for a plain per-word list" problem §89 diagnosed for the `.md` still
+held for the `.csv` — `word_registry.csv` has 4,797 rows (one per registry-word/strong pair, or a
+null-strong row for a zero-link word) and was never a clean "here are the 178 registry words"
+export on its own, same as the `.md`'s `by_strong` section wasn't.
+
+**Fix:** `write_report()`'s `row_filter` now carries `"registry": listing` alongside the existing
+`"word_registry": joined` — reusing the exact same `listing` query already built for the `.md`
+section, no new SQL. Two CSVs out of one run: `word_registry.csv` (pairing, unchanged) and
+`registry.csv` (plain, new — one row per `word_registry` row).
+
+**Config change required and NOT applied — awaiting researcher approval**, same reason as §89:
+`write_csv_pairing` only writes a `row_filter` key that has a matching `cfg_report_csv_table` row;
+an unregistered key in the dict is silently never written (checked the function directly — no
+safety-net path for CSVs the way `render_scaffold` has one for sections). Proposed:
+
+```
+Config-Maintenance.ps1 -Step Propose -Table cfg_report_csv_table -Op insert -Set
+  '{"step":"report.registry","table_name":"registry",
+    "join_note":"plain word_registry listing, no join -- one row per registry word regardless
+     of word_strong linkage; CSV mirror of the listing report section (BUILD.md sec89)",
+    "inactive":0}'
+```
+
+`run_id RUN-20260810_063841_092-CONFIGMAINT` — **PAUSED**, escalation open. Until approved,
+`registry.csv` will not be produced even though the code now asks for it — the `row_filter` entry
+is simply skipped by `write_csv_pairing` for any table name it doesn't recognise.
+
+**Approved and applied, same day, later still.** Checked the `escalation` row directly before
+acting (`answer: approve`, `answered_at 2026-08-10T05:43:48Z`) rather than acting on the chat
+reply alone. Re-ran the same `Config-Maintenance.ps1 -Step Propose -RunId
+RUN-20260810_063841_092-CONFIGMAINT ...` command — applied, `cfg_change_detail` logged,
+`CONFIG-REPORT.md` auto-regenerated.
+
+**Verified live:** regenerated `report.registry` (`registry-v3-20260810.md`) and confirmed both
+CSVs land in `iba/app/reports/export/`: `word_registry.csv` unchanged (4,797 pairing rows) and the
+new `registry.csv` — **178 data rows**, exact match to `word_registry`'s active total, header
+`id,word,status,source,strong_count`, and `blindness` (id 183) present with `strong_count=0` —
+the same zero-link word this whole two-part fix (§89 + §90) exists for, now visible in the `.md`
+listing section, the `.md`'s row count, and its own dedicated CSV, all three independently agreeing
+on 178.
+
+**Files:** `iba/app/lib/registryreport.py` (`write_report` — `row_filter` extended, comment
+explaining the split). Config change: `cfg_report_csv_table` insert, applied (`cfg_change_detail`,
+run id above). No schema change. Report output: `iba/app/reports/registry-v3-20260810.md`; CSVs:
+`iba/app/reports/export/{word_registry,registry}.csv`.
+
+## 91. `report.strong_verse` built — the G2128/G2127 preview formalised into a real, config-driven report (2026-08-10, same day, later still)
+
+Researcher: "formalise this report into the app. add it to the configs, filing should be in the
+`iba\app\verse-analysis\word_registry\[word]` folder. ensure there is a ps module to create the
+report and update the user guide." Approving the design from the two preview samples
+(`g2128-...20260810.md`, `g2127-...20260810.md`) as-is — inline annotation, exact-variant senses
+only, one Strong's per run.
+
+**Code shipped:**
+
+- **`iba/app/lib/strongversereport.py`** (new) — `write_report(cfg, word, strong, word_id)`.
+  Queries `verse_lexical.strong=?` (not `span.strong_variant` exact-match — §90's own preview work
+  found that undercounts by missing combined-tag spans; carried the fix forward into the real
+  code from the start). Canonical verse order via `cfg.book_order()` + `osisId`, not `verse.id`
+  (same class of ordering bug `BUILD.md` has already found and fixed once before, for a different
+  report). Senses: every `strong_meaning_parsed` row for the EXACT `strong_variant`, no base
+  fallback (deliberately different from `wordregistryspanreport.py`'s own fallback behaviour —
+  this report's reason to exist is per-span exactness, a fallback would defeat that). Per verse:
+  word-boundary regex (`\bsurface\b`) locates the substitution point — a real bug found in the
+  G2127 preview (plain substring search matched `"bless"` inside `"blessing"`, a different span
+  entirely) is fixed from the start here, not patched in later. A surface matching 0 or >1 times
+  is flagged `UNRESOLVED`, never guessed. Combined-tag spans labelled `{strong}+{other} combined
+  tag`; empty-surface spans rendered as a structured aside, not forced into the running text or
+  silently dropped.
+- **`iba/app/handlers/reports.py:strong_verse_report`** (new) — reuses `ctx.word_id` (already
+  resolved by the dispatcher for any step with `Word` in params, no second lookup needed);
+  separately checks `word_strong` for the given Strong's actually being linked to that word before
+  calling the writer, failing cleanly (`strong-not-linked`) rather than producing a report for an
+  unrelated pairing.
+- **`iba/app/ps/StrongVerse-Report.ps1`** (new) — `-Word <word> -Strong <strong>`, both mandatory.
+  Files output directly at `<output_dir>/<word>/<word>-<strong>-verse-lexical.md` — **in code**,
+  not as a manual after-the-fact move. This is a deliberate fix over §89/§90's own precedent
+  earlier today: both `report.word_registry_span` and `report.registry` write flat and needed a
+  human to refile them into the per-word convention every time (flagged as an open gap in §88's
+  addendum); this report does it right from the start, per the researcher's explicit filing
+  instruction this time.
+- **`iba/app/USER-GUIDE.md`** — new `§12f`, cross-referenced from `§14` (everyday commands) and
+  `§16` (where things are); `§12e`'s neighbouring section updated only by cross-reference, not
+  rewritten.
+
+**Config change required and NOT applied — 9 separate proposals, all PAUSED, awaiting researcher
+approval.** Every piece of this report is config-governed (`cfg_work_package`, `cfg_step`,
+`cfg_report`, 2× `cfg_report_section`, 2× `cfg_on_fail`, `cfg_setting` for the output dir,
+`cfg_utility` for the new lib module) — `configmaint.propose` is single-row-per-call by design, so
+this took 9 independent escalations rather than one. Run ids:
+
+| table | change | run_id |
+| --- | --- | --- |
+| `cfg_work_package` | insert `strong-verse-report` | `RUN-20260810_070102_512-CONFIGMAINT` |
+| `cfg_step` | insert `report.strong_verse` | `RUN-20260810_070112_785-CONFIGMAINT` |
+| `cfg_report` | insert `report.strong_verse` | `RUN-20260810_070121_100-CONFIGMAINT` |
+| `cfg_report_section` | insert `senses` | `RUN-20260810_070133_039-CONFIGMAINT` |
+| `cfg_report_section` | insert `verses` | `RUN-20260810_070142_960-CONFIGMAINT` |
+| `cfg_on_fail` | insert `word-not-found` | `RUN-20260810_070150_710-CONFIGMAINT` |
+| `cfg_on_fail` | insert `strong-not-linked` | `RUN-20260810_070158_690-CONFIGMAINT` |
+| `cfg_setting` | insert `report.strong_verse_output_dir` | `RUN-20260810_070216_322-CONFIGMAINT` |
+| `cfg_utility` | insert `strongversereport` | `RUN-20260810_070231_894-CONFIGMAINT` |
+
+Until all 9 are approved and applied, `StrongVerse-Report.ps1` will fail at dispatch —
+`run_step()` refuses any step with no `cfg_step` row at all, before the handler ever runs — **not
+tested end-to-end yet**, per `feedback_verify_before_reporting_fixed`; will run and verify against
+`-Word blessing -Strong G2127` (the harder of the two preview cases) once approved, and record the
+result here rather than assuming the design transferred correctly from the preview scripts to the
+real config-driven path.
+
+**Approved (all 9) and applied, same day, later still.** Researcher: "you can approve all 9
+escalations to complete the work" — explicit, direct, in-session authorization for this specific
+batch (not a standing policy). Answered all 9 via `Escalation.ps1 -Action AnswerRun ... -Decision
+Approve`, then re-ran each `Config-Maintenance.ps1 -Step Propose -RunId ...` to apply; all 9 rows
+verified present by direct query afterward, not assumed from the "ok" exit code alone.
+
+**Verified live, end-to-end, against the harder of the two preview cases** (`-Word blessing
+-Strong G2127`, the one with 40 verses and both special cases):
+`StrongVerse-Report.ps1 -Word blessing -Strong G2127` → wrote
+`blessing-G2127-verse-lexical-v1-20260810.md` directly into `word_registry/blessing/` (no manual
+refile — confirmed the filing fix works as coded, not just in theory).
+
+**Found and fixed one real bug in this very first live run**, before calling it done: the intro's
+fact-line list used a single `[line for line in intro if line != ""]` filter meant to drop one
+*conditionally*-empty line (the STEP-count caveat when `strong` has no `strong` row) — it also ate
+the *intentional* blank line separating the lead paragraph from the bullet list, so the first
+bullet rendered directly abutting the blockquote in the live output. Fixed (facts filtered on
+their own list, kept separate from the paragraph + its deliberate blank line) and **re-verified**:
+regenerated (`-v2-20260810.md`, `v1` auto-archived to `blessing/archive/` — a per-word archive
+folder, an emergent and arguably better consequence of filing directly under the word folder from
+the start, vs. `wordregistryspanreport`'s shared flat `word_registry/archive/`), confirmed the
+blank line now renders correctly and nothing else regressed: 40 verses present, 8 senses listed,
+`Luk 1:28`'s empty-surface aside, `Luk 1:42`'s `G2127+G2532 combined tag` label, and `1Cor 10:16`'s
+correctly-isolated `bless` (not the substring inside `blessing`) all matched the preview exactly.
+Zero `UNRESOLVED` markers across all 40 verses.
+
+**`configmaint.validate` run as a final check — found 1 coherence error, unrelated to this
+report.** `report.strong_verse`'s own 9 rows are completely clean; the error is
+`cfg_report_csv_table (report.registry).table_name 'registry' is not a known data or cfg_* table`
+— a real, pre-existing defect from **§90 earlier today**, not from this build. `registry` was
+invented as an output filename, not a real table (every other `cfg_report_csv_table` row, checked
+across all 27 live rows, names an actual table or the `cfg_*` wildcard) — it only works today
+because `registryreport.py` always supplies `row_filter` for it; the validator is correctly
+flagging that nothing stops a future change from removing that `row_filter` and crashing
+`write_csv_pairing`'s live-table fallback. Proper fix needs a real, live-queryable object behind
+that name — most likely a SQL `VIEW` (schema work, its own migration + `cfg_table` registration,
+out of scope for a single-row `configmaint.propose`) — flagged for a separate decision, not
+silently patched around and not left unrecorded.
+
+**Files:** `iba/app/lib/strongversereport.py` (new — intro fact-line fix included),
+`iba/app/handlers/reports.py` (`strong_verse_report` + import), `iba/app/ps/StrongVerse-Report.ps1`
+(new), `iba/app/USER-GUIDE.md` (§12f + §14/§16 cross-refs). Config: all 9 proposals applied (table
+above). No schema change. Verified output:
+`iba/app/verse-analysis/word_registry/blessing/blessing-G2127-verse-lexical-v2-20260810.md`.
+
+## 92. New registry word `healing` (id 184) + 44 curated `word_strong` links, from the healing-domain check (2026-08-10, same day, later still)
+
+Researcher, following on from `healing-words-in-study-check-20260810.md` (the Hebrew+Greek
+healing-word audit): "add healing to the word-registry index and add all the missing hebrew and
+greek words to it. you can also create the cross registry items for the strong already in other
+registries also."
+
+**Deliberately not the normal `New-Word.ps1` flow.** That pipeline's next step after
+`registry.create` is `raw.discover`, which populates `word_strong` from STEP's own
+`call1_meanings("healing")` search — a DIFFERENT, uncontrolled set from the researcher's own
+curated list, never checked against it. Ran `registry.create` **standalone** (one step, not the
+chained work package — confirmed safe: chaining is a `New-Word.ps1` foreach-loop convention, not
+something the dispatcher does automatically) to create the word alone, answered its word-scoped
+approval (`Escalation.ps1 -Action Answer -Word healing -Decision Yes`), then stopped — no
+`raw.discover` ever ran for this word.
+
+**`word_strong` writes went through the sanctioned `migration` writer**, not a raw SQL insert —
+`cfg_write_grant` already lists `migration` as allowed to write `word_strong` (the same grant
+`allocate_strongs.py` uses), so no config change was needed for this part. New one-off script:
+`iba/app/migration/add_healing_word_strong_20260810.py` (dry-run by default, `--apply` to write,
+same convention as every other migration one-off) — 44 codes, split **17 NEW** (11 Hebrew + 6
+Greek, no prior registry link at all) vs **27 CROSS** (18 Hebrew + 9 Greek, already linked to
+another registry word — the 880-code overlap phenomenon documented in
+`strongs-shared-across-registry-words-20260810.md`, now extended by these 27).
+
+**Checked the DB, not just my own list, before writing** — found and fixed a real categorisation
+error in my own first draft: `H2418`/`H2425` (siblings of `cha.yah`/"to live") were provisionally
+marked CROSS from the earlier check's summary table, but a direct `word_strong` query showed
+**neither has ever been linked to any registry word** — corrected to NEW before running `--apply`,
+not after.
+
+**Two items named in the researcher's source list deliberately NOT fully included, flagged in the
+script's own docstring rather than guessed:**
+- The other 10 sub-lettered forms of `H5414` ("na.tan") — only the one exact-gloss match
+  (`H5414P`, "to give: do") was added; the family's other forms range up to 1,324 occurrences
+  ("to give: give") and would fold one of the commonest Hebrew verbs into "healing" on a thin
+  thread.
+- `G4990`/`G4992` (`sōtēr`/`sōtērion`) — the source list said "sōtēria etc. (2 forms)" but no
+  pairing resolves cleanly to the given 49x; only `G4991` (`sōtēria` itself) was added.
+
+**Verified live**, not just "the script printed applied": `word_registry` row 184
+(`status='approved'`), `word_strong` count for id 184 = 44 (queried directly). Regenerated
+`report.word_registry_span` for `healing` — all 44 codes render with real parse-meaning + span
+data (confirming the whole-Bible lexical layer genuinely already covers every one of them, no
+gaps) — then filed the output into `word_registry/healing/`, matching the same per-word convention
+followed for `blessing`/`Fear` (this report writer still doesn't do it in code — same known,
+unfixed gap noted in §88's addendum).
+
+**Scope flag, not silently absorbed**: several CROSS codes are very high-frequency, only loosely
+"healing"-related words in their own right (`agathos` "good" 505x, `ischuō` "be strong" 104x,
+`sōtēria` "salvation" 156x) — `healing` now inherits a large verse footprint from these by the
+researcher's own explicit instruction, the same shape of concern already flagged for `being`'s
+444-Strong's scope back in the 2026-08-09 per-registry volume report. Not walked back here — an
+explicit, direct instruction, not a default — but worth knowing before reading `healing`'s own
+verse counts as a tight, healing-specific corpus.
+
+**Files:** `iba/app/migration/add_healing_word_strong_20260810.py` (new). Data change:
+`word_registry` +1 row (`healing`, id 184), `word_strong` +44 rows. No schema/config change (both
+writers — `registry.create`, `migration`→`word_strong` — were already granted). Report output:
+`iba/app/verse-analysis/word_registry/healing/healing-strong-span-v1-20260810.md` (superseded by
+`v2` — see §93).
+
+## 93. Full meaning-table audit of `healing`'s 44 codes — 8 genuine gaps backfilled, and that surfaced a real, previously-hidden bug in `report.word_registry_span` itself (2026-08-10, same day, later still)
+
+Researcher: "you need to take these new strongs into all the meaning tables and generate the
+lexicals for it also." Audited all 44 `healing` codes across every relevant table — `strong`,
+`span`, `verse_lexical`, `strong_meaning_parsed` (+ `strong_lsj_parsed`/`strong_mounce_parsed` for
+the 15 Greek ones) — rather than assuming the earlier check's spot-sample generalised.
+
+**Confirmed already complete, no action needed:** `strong`, `span`, `verse_lexical` — full for all
+44 (the whole-Bible `lexical.build` pass already covers every one). Two apparent `span=0` cases
+(`H1455`, `H8644`) turned out to be combined-tag spans (`H1455 H9005 H9036 H3808 H9002`,
+`H8644 H9005 H9023`) a plain `strong_variant` string match misses — `verse_lexical` already has
+them correctly decomposed, same class of finding as G2127 earlier this session. `G7534`
+(`euekteō`) genuinely has **zero** verse occurrences — checked live via `call3_strong`, `total: 0`
+— consistent with the researcher's own `0x` label; nothing to build, not a gap.
+
+**Real gap found: 8 codes with no exact-variant `strong_meaning_tree`/`strong_meaning_parsed` row
+of their own** — `H7965G`–`H7965L` (all six "peace" sub-senses), `H2492A` ("be healthy"),
+`H5414P` ("to give: do"). Only the shared BASE lemma's entry existed for any of them.
+`raw.detail_one` is a no-op for all 8 (`if ctx.db.get("strong", strongNumber=code): skip` — every
+one already has a `strong` row from the bulk dictionary import). Reused
+`migration/fix_strong_meaning_tree_collapse.py`'s own mechanism (`raw.write_tree_rows` +
+`handlers.lexicon.rebuild_parsed_tables`, which bypasses that guard) in a new one-off,
+`migration/backfill_healing_exact_variant_meaning_20260810.py` — deliberately going beyond that
+script's own "genuine collapse only" policy (these 8 are same-root sense-splits, not homonym
+collapses, which that script's detector explicitly leaves alone) on the researcher's direct
+instruction for this specific curated list. Applied: 8/8 backfilled, self-verified 0 remaining.
+
+**Checking the result surfaced a second, independent, real bug — not caused by today's backfill,
+already there since `report.word_registry_span` was built (BUILD.md §85, 2026-08-09).**
+`wordregistryspanreport.py`'s senses lookup queried `strong_meaning_parsed WHERE lemma_key=?`
+using the FULL sub-lettered code — but `lemma_key` is always the BASE (`H7965`, never `H7965I`);
+the `strong_variant` column that exists for exactly this exact-match case
+(`fix_strong_meaning_tree_collapse.py`, 2026-07-26) was never wired into this one reader, even
+though `versespanmeaningreport.py`/`build_verse_span_meaning_extract.py` both correctly use it.
+Practical effect: this query **always** fell through to the base-fallback path for every
+sub-lettered code, silently, regardless of whether an exact-variant row existed — confirmed live,
+the base-fallback message was still showing for `healing`'s 8 codes immediately AFTER their own
+exact-variant rows were written. **Fixed**: `lemma_key=?` → `strong_variant=?` for the primary
+lookup (fallback-to-base logic unchanged, still correct for genuine no-exact-variant cases).
+
+**Impact is bigger than `healing` alone — this bug was silently serving wrong/pooled content for
+OTHER already-fixed words too.** Regenerated `fear` (unrelated to today's backfill) to check for
+regressions and found a real, pre-existing case: `H1481C` ("to dread") and `H8175C` used to render
+the base-fallback message and then display TWO interleaved, unrelated senses at once (`H1481`'s
+base entry pools a genuine homonym split — "to sojourn, dwell" AND "to stir up trouble, strife,
+quarrel" shown as if one meaning) — these had their own correct exact-variant rows from the
+*original* 2026-07-26 backfill, but this bug hid them from ever being displayed correctly, for
+every report run since this tool was built. Now `H1481C` renders cleanly: "to dread, fear, stand
+in awe, be afraid" — its own content, nothing pooled in from an unrelated sibling.
+
+**Verified live across three words, not just healing:**
+- `healing` regenerated (`v2`) — zero "no rows under X itself" lines remain for any of the 8
+  backfilled codes.
+- `blessing` regenerated — byte-identical to its existing `v2` (no sub-lettered-sibling cases
+  exist there, so no behaviour change expected or found; redundant duplicate discarded, not kept).
+- `fear` regenerated (`v5-20260810`) — `H3372G`/`H3372H` (a genuine remaining no-exact-variant
+  case, confirmed via direct query, not backfilled by anything) still correctly show the
+  base-fallback message — proving the fix is precise, not over-corrected to always skip fallback.
+  `H1481C`/`H8175C` now show correct, distinct content as described above.
+
+**Filing**: `healing-strong-span-v1-20260810.md` (the pre-fix run) archived to
+`word_registry/archive/` as `-prefix`; the corrected regeneration filed as
+`word_registry/healing/healing-strong-span-v2-20260810.md`. `fear-strong-span-v5-20260810.md`
+filed alongside the existing `-v5-20260809.md` in `word_registry/Fear/` (both kept — a real,
+substantive content change, not a reprint).
+
+**Files:** `iba/app/migration/backfill_healing_exact_variant_meaning_20260810.py` (new),
+`iba/app/lib/wordregistryspanreport.py` (senses lookup fixed + comment). Data change:
+`strong_meaning_tree` +66 rows (8 codes' own exact-variant trees), `strong_meaning_parsed` fully
+rebuilt (47,113 rows total) via the existing `lexicon.parse` writer grant — no new grant needed.
+No schema/config change.

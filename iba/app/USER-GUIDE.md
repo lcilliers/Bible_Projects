@@ -837,6 +837,52 @@ uses. Design/build record: `GOVERNANCE.md` §36/§37/§38, `BUILD.md` §85/§86/
 
 ---
 
+## 12f. On-demand verse restatement, by ONE Strong's reference (`StrongVerse-Report.ps1`, added 2026-08-10)
+
+`§12e` shows every Strong's linked to a word, one example verse each. This is the other direction:
+pick ONE Strong's code and see **every verse it occurs in** (whole Bible), each verse's text left
+intact except that one occurrence, annotated inline with its exact parse-meaning senses. Built to
+answer "what does this specific Strong's actually look like across every verse it's in" — scoping
+to a single code (not a whole registry word's full verse set, which can run into the thousands,
+see `verse-lexical-by-registry-20260810.md`) is what keeps this readable in one file.
+
+```powershell
+iba\app\ps\StrongVerse-Report.ps1 -Word blessing -Strong G2127
+#   -> iba/app/verse-analysis/word_registry/blessing/blessing-G2127-verse-lexical-v1-{date}.md
+```
+
+`-Word` is both the filing folder and a validation check — the given `-Strong` must actually be
+linked to that word (`word_strong`); an unrecognised word or an unlinked Strong's both fail
+cleanly (`report-stop`, exit 3), never a silent empty/wrong report. Read-only, run whenever you
+want it, no `verse_lexical.build` prerequisite beyond whatever's already been built for the books
+that Strong's occurs in.
+
+**What each verse shows:** the verse text, unchanged, with the matched span's surface text
+annotated `**surface** [strong: senses]` — senses are **exact `strong_variant` matches only**, no
+sibling/base-lemma fallback (unlike `§12e`, which does fall back — this report's whole reason to
+exist is per-span exactness). Two data shapes get explicit handling rather than being smoothed
+over:
+
+- **Combined-tag spans** — STEP sometimes tags two Strong's codes on one rendering unit (e.g. the
+  Greek conjunction "and" fused onto the following verb). Labelled `{strong}+{other code}
+  combined tag` in the annotation, not presented as a pure single-code occurrence.
+- **Empty-surface spans** — the other half of a combined tag can carry no independent English
+  surface text at all. Rendered as a structured aside under the verse rather than forced into the
+  running text.
+
+A surface that doesn't match its own verse's text **exactly once** (a real bug found building
+this — see `g2127-verse-lexical-by-strong-sample-20260810.md`: `"bless"` is a literal substring of
+`"blessing"`, a DIFFERENT span in the same verse) is flagged `UNRESOLVED` rather than guessed —
+word-boundary matching (`\bsurface\b`) resolves the ordinary case; anything that still doesn't
+resolve to exactly one match is surfaced, never silently dropped.
+
+Preview/build record: `iba/app/reports/g2128-verse-lexical-by-strong-sample-20260810.md` (first
+test, 8 verses) and `g2127-verse-lexical-by-strong-sample-20260810.md` (second test, 40 verses —
+found and fixed the substring-collision bug and the combined-tag/empty-surface cases above);
+`BUILD.md` §91.
+
+---
+
 ## 13. Log retention (read-only)
 
 ```powershell
@@ -919,6 +965,9 @@ iba\app\ps\Registry-Report.ps1
 # word-registry Strong's/span analysis, any time (§12e):
 iba\app\ps\WordRegistrySpan-Report.ps1 -Word <word>
 
+# on-demand verse restatement for ONE Strong's reference, any time (§12f):
+iba\app\ps\StrongVerse-Report.ps1 -Word <word> -Strong <strong>
+
 # remove a test word (dry-run, then --yes):
 python -m iba.app.tools.purge_word --word <word>
 
@@ -977,6 +1026,7 @@ iba/app/
               Escalation.ps1 · Log-Retention.ps1 · SeedCandidate-Report.ps1 ·
               StrongMeaning-Report.ps1 · SpanAnalysis-Report.ps1 · SchemaOverview-Report.ps1 ·
               Registry-Report.ps1 · WordRegistrySpan-Report.ps1 (§12e) ·
+              StrongVerse-Report.ps1 (§12f) ·
               **current per-book pipeline (§12b):** VerseLexical.ps1 · Debate-Run.ps1 ·
               Operations-Ingest.ps1 (the work package Debate-Run.ps1's hib/phenomenon/operation/
               closing steps run under) ·
@@ -997,9 +1047,9 @@ iba/app/
               dbsnapshot · db · stepapi · escalation · words · reportkit (shared report rendering +
               archiving, incl. CSV writes + CSV pairing + one-off naming) · seedreport ·
               strongreport · spanreport · schemareport · registryreport (the 5 analysis reports,
-              §12a) · wordregistryspanreport (§12e) · passagetrack · passagedebatereport ·
-              wholebookread · versespanmeaningreport (§12b) · narrativegenerate (§12d — assembly +
-              Anthropic Messages API call + filing)
+              §12a) · wordregistryspanreport (§12e) · strongversereport (§12f) · passagetrack ·
+              passagedebatereport · wholebookread · versespanmeaningreport (§12b) ·
+              narrativegenerate (§12d — assembly + Anthropic Messages API call + filing)
   handlers/   registry · raw · configmaint · candidate · passage · reports   (interpreters, no hard rules)
   migration/  one-off: Import-LegacyRegistry.ps1 · legacy_import · import_seed · ~20 further
               bootstrap/schema-addition scripts (see GOVERNANCE.md §7 for the full current list)

@@ -1,6 +1,12 @@
-"""registryreport.py — evaluate/review the `word_registry`: a summary, its join to `strong` (via
-`word_strong`), and a sense report grouping registry words by the gloss/broad meaning their strong
-carries. Built 2026-07-23 per escalation #272 (the registry had no evaluation report at all).
+"""registryreport.py — evaluate/review the `word_registry`: a summary, a plain per-word listing,
+its join to `strong` (via `word_strong`), and a sense report grouping registry words by the
+gloss/broad meaning their strong carries. Built 2026-07-23 per escalation #272 (the registry had
+no evaluation report at all).
+
+`listing` section added 2026-08-10 (BUILD.md §89) — the join-based sections are INNER JOIN
+through `word_strong`, so a zero-strong-link word (`blindness`, the one registry row that has
+none) was never named as an identifiable row anywhere in the report. `listing` is a plain
+`word_registry` scan, no join, so every active row appears exactly once regardless of linkage.
 """
 
 from __future__ import annotations
@@ -43,6 +49,24 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     S = ["**By status:**", ""] + _tbl(["status", "rows"], [[r["status"], r["n"]] for r in by_status])
     S += ["", "**By source:**", ""] + _tbl(["source", "rows"], [[r["source"], r["n"]] for r in by_source])
     sections["summary"] = S
+
+    # Plain registry listing — one row PER WORD, regardless of word_strong linkage. Added
+    # 2026-08-10 (researcher: "does not include a listing of the registry") — every other section
+    # below joins through word_strong (INNER JOIN for by_strong/sense_report), so a word with zero
+    # links (e.g. `blindness`, id 183) never appears as an identifiable row anywhere in this
+    # report; only the intro's aggregate "with no word_strong link: N" count hints it exists.
+    # Confirmed live: grepping the previous report for "blindness" only matched an unrelated
+    # `source` string, not an actual listing of that word. This section is the one place every
+    # active word_registry row is named directly.
+    listing = q(
+        "SELECT wr.id, wr.word, wr.status, wr.source, "
+        "(SELECT COUNT(*) FROM word_strong ws WHERE ws.word_id=wr.id AND ws.deleted=0) strong_count "
+        "FROM word_registry wr WHERE wr.deleted=0 ORDER BY wr.word")
+    sections["listing"] = (
+        [f"**{len(listing)}** registry words — one row each, regardless of whether it has any "
+         f"`word_strong` link yet (the joined sections below omit zero-link words entirely):", ""]
+        + _tbl(["id", "word", "status", "source", "strong's linked"],
+              [[r["id"], r["word"], r["status"], r["source"], r["strong_count"]] for r in listing]))
 
     # registry word joined to every strong it holds (word_strong), with that strong's own gloss —
     # the "join with the strong related to registry word" ask.
@@ -88,7 +112,15 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         "LEFT JOIN strong_sense ss ON ss.strong=s.strongNumber AND ss.deleted=0 "
         "WHERE wr.deleted=0 "
         "ORDER BY wr.word")
+    # Two CSVs, not one — researcher, 2026-08-10: "both word-registry table and registry table."
+    # `word_registry.csv` (above `joined`) is the PAIRING export (LEFT JOIN word_strong/strong/
+    # strong_sense — one row per registry-word/strong pair, or one null-strong row for a
+    # zero-link word). `registry.csv` is the PLAIN export — `listing` (already built above for
+    # the report's own `listing` section), one row per `word_registry` row, no join at all. Same
+    # split reasoning as the `listing` markdown section (BUILD.md §89): the joined CSV can't be
+    # read as "the list of registry words" on its own (multiple rows per word, or a null-strong
+    # row for a zero-link word) — a genuinely flat, one-row-per-word CSV needed its own export.
     reportkit.write_csv_pairing(conn, "report.registry", path.parent / "export",
-                                row_filter={"word_registry": joined})
+                                row_filter={"word_registry": joined, "registry": listing})
     path = reportkit.write_report(conn, "report.registry", path, L)
     return path
