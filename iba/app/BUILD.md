@@ -5766,3 +5766,317 @@ substantive content change, not a reprint).
 `strong_meaning_tree` +66 rows (8 codes' own exact-variant trees), `strong_meaning_parsed` fully
 rebuilt (47,113 rows total) via the existing `lexicon.parse` writer grant — no new grant needed.
 No schema/config change.
+
+## 94. Registry word 177 repurposed `Incurability` -> `Suffering`, with a new `migration` -> `word_registry` write grant (2026-08-10, same day, later still)
+
+**Origin.** The researcher asked, from `iba/app/reports/export/registry.csv`, why "Incurability"
+(id 177) had 7 linked `word_strong` codes with no visible relation to the word. Traced live:
+`Incurability` was a legacy "verse-fanout orphan" (main-project `word_registry` id 218, curated
+there to exactly ONE Strong's, `H0605` "anash"/be incurable — researcher's own 2026-06-29 note
+excludes the related root `H0582` as non-target). But in THIS app, the word's 7 links came from a
+completely different, uncurated path: `run` row `RUN-20260718_153954-NEW-WORD` shows the `new-word`
+work package ran with just `{"Word": "Incurability"}` — no anchor override — so
+`handlers/raw.py:discover()` seeded `word_strong` from `Step.call1_meanings("Incurability")`
+(`rest/search/masterSearch/version={v}|meanings=Incurability`), STEP's own bare English-string
+search, and wrote back every returned `strongNumber` unfiltered. Of the 7: `H0605`/`G6103`/`G6345`
+are genuinely "incurable"; `G7474` ("incurring ridicule") is a loose-but-real gloss match; `G2983`
+(*lambanō*, "to take", 1,361 occurrences), `H5375J` (*nasa*, "to lift/bear"), and `H2470I`
+(*chalah*, "be weak/grieved") are false positives — the first two only because one ESV verse each
+happens to translate them with the English word "incur" (Rom 13:2 "will incur judgment", Lev
+19:17 "lest you incur sin"); `H2470I` has no "incur" text anywhere in its own spans at all, no
+visible justification found for it being there. **This is not a one-word bug — `raw.discover()`
+seeds every new word this same unfiltered way**; flagged to the researcher as a process gap, not
+fixed here (out of scope for this instruction).
+
+**Instruction received:** repurpose the word itself — rename id 177 `Incurability` -> `Suffering`,
+retire all 7 old links (none of them fit the new word either), and link a researcher-supplied
+curated Hebrew list instead. Each code verified live against `strong` by exact
+`stepTransliteration` + `stepGloss` match before writing:
+
+| strong | translit | gloss | researcher's count | DB agreement |
+|---|---|---|---|---|
+| H6869B | tsa.rah | distress | 70x | exact (`H6869C` "vexer" 1x correctly not this one) |
+| H6040 | o.ni | affliction | 36x | exact (`H0590` "fleet" 7x correctly not this one) |
+| H7185 | qa.shah | to harden | 28x | exact |
+| H4341 | makh.ov | pain | 16x | exact |
+| H3511 | ke.ev | pain | 6x | exact |
+| H4251 | ma.cha.luy | suffering | 1x | **mismatch** — `strong.count`=4 (dictionary-wide), 0 `strong_verse` rows (code not yet pulled into any book build in this DB). Unambiguous by translit+gloss (only match), linked anyway per instruction, flagged rather than silently resolved. |
+| H6039 | e.nut | affliction | 1x | exact |
+| H6094 | ats.tse.vet | injury | 5x | exact |
+
+**A real gap found before the write could even run:** `cfg_write_grant` had no `migration` ->
+`word_registry` row — `migration` was granted `word_strong`/`candidate_seed`/`lemma_inventory`
+only (§C, 2026-07-18 slice), and no existing writer/work-package covers a rename/repurpose
+operation on an already-registered word (`registry.create` only handles brand-new words). Per
+governance (a `cfg_write_grant` row is a process rule, not data), proposed and researcher-approved
+through the sanctioned path rather than a direct edit: `Config-Maintenance.ps1 -Step Propose -Table
+cfg_write_grant -Op insert -Set '{"writer":"migration","table_name":"word_registry","inactive":0}'`
+— `RUN-20260810_153409_045-CONFIGMAINT`, escalation 594, decision `approve`. `CONFIG-REPORT.md`
+auto-regenerated on apply; no `GOVERNANCE.md` change needed (it documents the write-grant
+*mechanism*, not an enumeration of every writer's granted tables — that's `CONFIG-REPORT.md`'s
+job, and it's live).
+
+**Applied**, dry-run checked first: `word_registry` id 177 `word` -> `Suffering`, `source` rewritten
+to record the repurposing and why; the 7 old `word_strong` rows soft-deleted (`deleted=1`, not
+physically removed — auditable); the 8 new rows added (`deleted=0`). Verified live post-write:
+`word_registry.word='Suffering'`, active `word_strong` = exactly the 8 new codes, retired
+`word_strong` = exactly the 7 old codes.
+
+**Files:** `iba/app/migration/repurpose_incurability_to_suffering_20260810.py` (new). Config
+change: `cfg_write_grant` +1 row (`migration` -> `word_registry`). Data change: `word_registry` 1
+row updated, `word_strong` 7 rows soft-deleted + 8 rows added. No schema change. No raw-layer pull
+run yet for the 8 new codes (meaning data already present for all 8 in this DB's whole-Bible build;
+verse data present for 7/8, missing for `H4251` — "build that out" is the researcher's stated next
+step, not done in this unit of work).
+
+## 95. §94 correction — the 7 legacy `Incurability` `word_strong` links restored, not retired (2026-08-10, same day, later still)
+
+**Researcher's follow-up instruction:** "the strong links of the old ones must be retained and the
+8 new ones added" — correcting §94's own reasoning. §94 had soft-deleted the 7 legacy links
+(`G2983, G6103, G6345, G7474, H0605, H2470I, H5375J`) on the assumption that none of them fit the
+new word `Suffering`; the researcher's actual intent was additive — the 8 new curated codes sit
+ALONGSIDE the 7 legacy ones, not in place of them.
+
+**Applied**, dry-run checked first: `migration/restore_incurability_legacy_word_strong_20260810.py`
+flips `deleted` back to 0 on exactly those 7 `word_strong` rows (the 8 new rows from §94 untouched
+— already correct) and rewrites `word_registry.source` to stop claiming a replacement that no
+longer happened. Verified live: `word_registry` id 177 = `Suffering`; all 15 `word_strong` rows
+(7 legacy + 8 new) now `deleted=0`, none retired.
+
+**No new write grant needed** — both tables (`word_registry`, `word_strong`) were already covered
+by the `migration` grants established for §94 (the `word_registry` one via
+`RUN-20260810_153409_045-CONFIGMAINT`).
+
+**Files:** `iba/app/migration/restore_incurability_legacy_word_strong_20260810.py` (new). Data
+change: `word_registry` 1 row (`source` corrected), `word_strong` 7 rows un-deleted. No
+schema/config change.
+
+## 96. `Suffering`'s raw layer pulled through for all 15 linked strongs; verse-lexical checked and found already complete (2026-08-10, same day, later still)
+
+**Instruction:** "complete the word suffering raw data update and pull through all the strongs in
+this word to populate all the raw data tables, including the lexicals for all the verses."
+
+**No code change needed** — the existing `new-word` step sequence (`registry.exists` ->
+`registry.create` -> `raw.discover` -> `raw.detail` -> `raw.verses` -> `raw.write` ->
+`raw.validate`) already does exactly this per-word, and `raw.detail`/`raw.verses` both iterate
+`_strongs_for_word(ctx)` — every active `word_strong` row, not just newly-discovered ones — so
+they're safe to run for a word whose strongs were set by migration rather than `raw.discover`.
+`registry.exists`/`registry.create`/`raw.discover` were skipped (word already exists, `word_strong`
+already seeded by §94/§95) by invoking the remaining steps directly against the SAME run_id, the
+same mechanism `New-Word.ps1` itself uses per-step internally, just without its first-3-steps
+prefix: `python -m iba.app.run new-word --step <id> --run-id RUN-20260810_144609_340-RAW-SUFFERING
+--param Word=Suffering`.
+
+**Ran in order, all `ok`:**
+- `raw.detail` — 0 new (`strong`/`strong_sense`/`strong_meaning_tree`/`strong_lexicon` already held
+  for all 15 codes from earlier builds).
+- `raw.verses` — 1 new `strong_verse` row (`H4251`, the one code with no verse data before this
+  run — see §94's flag), 0 new `verse` rows (already existed via other terms), 0 new `span` rows
+  (verses already fully spanned).
+- `raw.write` — committed; `word_registry.status` -> `raw-complete`.
+- `raw.validate` — parse-check PASS (span recovers every `strong_verse` assertion), no-null PASS.
+
+**Verse-lexical checked, found already complete — no build needed.** `lexical.build` is book-
+scoped, not word-scoped, so "the lexicals for all the verses" meant: find every distinct verse the
+word's 15 strongs touch (448 verses across 51 books — `G2983`/*lambanō* alone accounts for 238 of
+them, its 1,361-occurrence dictionary count notwithstanding), and check `verse_lexical` coverage.
+All 448/448 already had active (`deleted=0`) `verse_lexical` rows — this DB's lexical layer is a
+prior whole-Bible build (per §C precedent, `add_healing_word_strong_20260810.py`'s own note),
+independent of word-registry onboarding. Nothing to run.
+
+**Final per-code state** (`strong` / `strong_sense` / `strong_verse` counts) — 12/15 have real verse
+occurrences; `G6103`/`G6345`/`G7474` confirmed genuinely 0 (STEP's own `call3_strong` total, not a
+gap — same class of finding as §93's `G7534`):
+
+```
+G2983  238    G6103  0    G6345  0    G7474  0    H0605  9     H2470I 12   H3511  6
+H4251  1      H4341  15   H5375J 36   H6039  1    H6040  36    H6094  5    H6869B 69   H7185  28
+```
+
+**Files:** none (no code/config change — existing steps run against existing data). Data change:
+`word_strong`/`strong_verse` — 1 new row (`H4251`); `word_registry.status` -> `raw-complete`;
+`validation_result` +2 rows (parse-check, no-null, both pass). No schema/config change.
+
+## 97. New registry word `receive` (id 185); `G2983` moved off `Suffering`; a real cross-cutting span-parser bug found and root-fixed along the way (2026-08-10, same day, later still)
+
+**Instruction:** "add a new word 'receive', move G2983 to this word. then use the word receive to
+pull all related strongs for it."
+
+**Word creation, standard flow.** `New-Word.ps1 -Word receive -Source "split off G2983 (lambano)
+from 'Suffering' ... into its own proper word"` -> `registry.create` escalated (`Register the new
+word 'receive'?`, preview: 64 seed strongs, no duplicate-threshold breach — best overlap was
+`being` at 4/64) -> approved (`Escalation.ps1 -Action Answer -Word receive -Decision Yes`) ->
+resumed: `raw.discover` seeded all 64 (STEP `masterSearch(meanings="receive")` — `G2983`/*lambanō*
+was already one of the 64, discovered on its own real meaning this time, not an English-span
+accident) -> `raw.detail` (3 new strong, 61 already held from other words) -> `raw.verses` (2,865
+`strong_verse`, 114 new `verse`, 1,156 `span`) -> `raw.write` (status -> `raw-complete`) ->
+**`raw.validate` FAILED**: `report-stop — span does not recover strong_verse — G2192:2 missed`.
+
+**Root-caused, not patched around.** `John.4.18` and `Rev.4.8`'s stored `verse.preview` HTML
+(inspected directly) DOES contain `<span strong='G2192'>...</span>` tags for "have"/"having" — with
+NO `morph=` attribute. `cfg_setting step.span_html` (the regex `Step.parse_spans` reads,
+`lib/stepapi.py`) required `\bmorph='([^']*)'` unconditionally — a content span STEP renders
+without a morph tag was silently dropped from `span` entirely, even though the SAME strong's
+occurrence is correctly asserted in `strong_verse` via a separate STEP call. **Not scoped to
+`receive`**: scanned every stored `verse.preview` in the DB (29,151 verses) for this same shape —
+**824 verses / 1,077 spans / 24 Strong's codes** already silently short a span, all common
+grammatical-ish words (`G1510` "to be", pronouns, `G3588`/`G3739`/`G3756` etc., `G2192` "have").
+
+**Fixed, config + data, both researcher-approved (per governance — a `cfg_write_grant`/
+`cfg_setting` row is a process rule, not data, so both went through `configmaint.propose`, not a
+direct edit):**
+1. `cfg_setting step.span_html` updated — morph group now optional (empty string when absent).
+   Tested before proposing (John 4:18: 13 -> 16 tags recovered, zero regression on the other 13);
+   re-verified live post-apply via `cfg.setting()` + a real `Step.span_re` match.
+   `RUN-20260810_160133_776-CONFIGMAINT`, escalation 597, `approve`.
+2. `cfg_write_grant` +1 row (`migration` -> `span`) — needed for the backfill migration below.
+   `RUN-20260810_160505_505-CONFIGMAINT`, escalation 598, `approve`.
+3. **`migration/backfill_morphless_span_fix_20260810.py`** — re-parses every affected verse's
+   ALREADY-STORED preview (no new STEP calls) with the fixed regex and replaces its span set.
+   Found and fixed a SECOND issue while building this: `span` carries an unconditional
+   `UNIQUE(verse_id, position)` table constraint (not just the partial live-only index
+   `idx_span_live_unique`) — a plain `deleted=1` on the old rows still occupies their position
+   slots, so the reinsert collided (`UNIQUE constraint failed`, confirmed live on the very first
+   verse, transaction rolled back cleanly — verified `1Cor.1.10` untouched afterward). Fixed by
+   bumping the old rows' `position` by +1,000,000 in the SAME update that soft-deletes them —
+   still soft-deleted (auditable), no longer collides. Dry-run matched the scan exactly (824
+   verses, +1,077 spans); applied: 13,268 old span rows soft-deleted, 14,345 new inserted (net
+   +1,077, consistent). Re-scanned post-apply: **0 verses differ from a fresh parse.** Spot-checked
+   `Rev.4.8`/`John.4.18`: both now carry their `G2192` span.
+4. **`receive` re-validated**: `raw.validate` re-run standalone — parse-check + no-null both PASS.
+
+**`G2983` moved.** Already active under `receive` (via `raw.discover`'s own real match — no manual
+add needed there). Retired under `Suffering` via `migration/move_g2983_suffering_to_receive_
+20260810.py` (idempotent; the retiring soft-delete was actually applied via one ad hoc inline call
+first, then this script written and re-run to confirm/formalise the same state for the audit
+trail — it correctly reported "already retired, nothing to apply").
+
+**Final state:** `receive` (id 185) = 64 active `word_strong`, 8,266 total `strong_verse` rows
+across them, status `raw-complete`. `Suffering` (id 177) = 14 active `word_strong` (down from 15 —
+`G2983` gone, nothing else changed).
+
+**Files:** `iba/app/migration/backfill_morphless_span_fix_20260810.py` (new),
+`iba/app/migration/move_g2983_suffering_to_receive_20260810.py` (new). Config change:
+`cfg_setting step.span_html` (regex fixed), `cfg_write_grant` +1 row (`migration` -> `span`). Data
+change: `word_registry` +1 row (`receive`, id 185); `word_strong` — 64 rows added under `receive`,
+1 row retired under `Suffering`; `strong`/`strong_sense`/`strong_meaning_tree`/`strong_lexicon` +3
+new codes' meaning; `strong_verse` +2,865, `verse` +114 for `receive`'s pull; `span` — 13,268 rows
+soft-deleted + 14,345 inserted (the morph-less-span backfill, corpus-wide); `validation_result` +4
+rows (2 for the first `receive` raw-build attempt — 1 fail, 1 pass — +2 for the re-validate). No
+schema change.
+
+## 98. Parsed-layer gap for `receive` checked and closed — a real gap found, not just the 3 new codes (2026-08-10, same day, later still)
+
+**Instruction:** "can you confirm that the parse tables have all been generated for the new
+strongs." Answer at the time of asking was **no** — checked and reported honestly rather than
+assumed. `raw.detail`'s 3 newly-pulled codes (`G0354`, `G6985`, `H5375X` — identified by
+`strong.created_at` matching this run) had `strong`/`strong_sense`/`strong_meaning_tree`/
+`strong_lexicon` from `raw.detail`, but the DERIVED parsed layer
+(`strong_meaning_parsed`/`strong_lsj_parsed`/`strong_mounce_parsed`) and `strong_related` were
+zero rows for all 3 — because the `new-word` step sequence (`registry.exists` -> ... ->
+`raw.validate`, 7 steps, BUILD.md sec97) has NO `lexicon.parse`/`lexicon.related` step in it. Only
+`raw.backfill_meaning` (the book-scoped `raw-backfill` package) auto-chains those internally
+(`raw.backfill_meaning_for` calls `rebuild_parsed_tables`/`fetch_related_for` directly, per its own
+2026-07-25 comment: "a manual lexicon.parse re-run had to be remembered ... once already"). The
+per-word `new-word` chain never got that same fix — a real gap in the pipeline, not this session's
+bug, just newly surfaced by checking rather than assuming.
+
+**Closed, not just flagged:**
+- `lexicon.parse` run standalone (`lexicon-parse` work package, scope `none`, deterministic, no
+  network — full corpus rebuild): 47,135 `strong_meaning_parsed` / 36,213 `strong_lsj_parsed` /
+  5,744 `strong_mounce_parsed` rows.
+- `strong_related` fetched TARGETED to just the 3 new codes (`lexicon.fetch_related_for`, the same
+  function `raw.backfill_meaning_for` reuses, `clear_first=False`) — deliberately NOT the full
+  `lexicon.related` step, which does one live STEP call per EVERY strong row in the whole DB
+  (thousands) and would have been wasteful for 3 codes. 34 rows across the 3 (1 had none — STEP
+  genuinely returned no `relatedNos` for it, not a fetch failure).
+
+**Checking coverage across all 64 `receive` codes (not just the 3 new) surfaced a second, real,
+PRE-EXISTING gap — the same class already root-fixed once this session for `healing`'s codes
+(sec93): 8 codes with no exact-variant `strong_meaning_tree` row of their own (only the shared
+BASE lemma's row existed) — `H0935G`, `H3947G`, `H5375H`, `H5375Q`, `H5414G`, `H7999A`, `H8085G`,
+`H8085L`. All pre-date today (`strong.created_at` 2026-07-21/22/25) — registered under other words
+before `receive` also picked them up via `raw.discover`; not caused by anything in this session.
+Per standing practice (a confirmed instance of an already-documented bug class gets the
+already-established fix, not a fresh ask): `migration/backfill_receive_exact_variant_meaning_
+20260810.py` — reuses `backfill_healing_exact_variant_meaning_20260810.py`'s exact mechanism
+(`raw.write_tree_rows` + `handlers.lexicon.rebuild_parsed_tables`), same writers, no new grant.
+8/8 backfilled, 163 new `strong_meaning_tree` rows, parsed layer rebuilt, 0 remaining.
+
+**Final state, verified across all 64 `receive` codes**: 0 missing `strong` row, 0 missing
+`strong_meaning_parsed`, 0 missing `strong_related` (every code that legitimately has none checked
+individually, not assumed).
+
+**Files:** `iba/app/migration/backfill_receive_exact_variant_meaning_20260810.py` (new). No
+config/schema change. Data change: `strong_meaning_parsed`/`strong_lsj_parsed`/
+`strong_mounce_parsed` — full corpus rebuild (DELETE + reinsert, same row counts as content
+warrants); `strong_related` +34 rows (3 targeted codes); `strong_meaning_tree` +163 rows (8
+pre-existing codes' own exact-variant trees).
+
+## 99. `receive` (sec97/sec98) rolled back entirely — researcher judgment call: STEP's raw discovery was never checked against inner-being relevance before being built out (2026-08-10, same day, later still)
+
+**Trigger.** Asked to confirm whether `receive`'s 7,336-verse `raw.lexical` scope was legitimate,
+broke it down by per-code verse count: **79% of all 8,266 code-occurrences came from just 9 of the
+64 codes** — `bo` ("come," 1,753x), `natan` ("give," 1,187x), `shama` ("hear," 904x), `laqach`
+("take," 734x), `echō` ("have/be," 615x), `matsa` ("find," 425x), `didōmi` ("give," 375x), `laleō`
+("speak," 265x), `lambanō` ("take," 238x) — basic high-frequency action verbs, not terms about
+receiving as an inner-being movement. They were in the list only because STEP's bare
+`masterSearch(meanings="receive")` matches "receive" against *any* buried sense in a lemma's full
+dictionary entry, the same failure mode already found once this session (`Incurability`'s false
+positives, sec93-era) — but far larger in scale here because "receive" is a far more common English
+word. Researcher's verdict, stated directly: the whole `receive` build "created chaos," was done
+"without visibility of the impact," and this session's own procedural governance (write-grants,
+`configmaint.propose` approval gates — genuinely followed throughout) does NOT substitute for the
+study's own substantive relevance test — inner-being fit — which has always been a human curation
+step (matches the main project's own Phase 1 discover -> Phase 2 **decisions** -> Phase 3 sync
+shape, and the exact H0605-kept/H0582-excluded curation note already sitting in `Suffering`'s own
+`source` field). That check was skipped for `receive`: `raw.discover`'s 64 raw seeds went straight
+into `detail`/`verses`/the full lexical build with no pause for relevance review.
+
+**Instruction: roll back to before this started.** Rather than hand-reverse each of sec97/sec98's
+many writes (word/word_strong rows, a corpus-wide regex config change, an 824-verse span backfill,
+a corpus-wide parsed-layer rebuild, an 8-code meaning backfill, a 7,336-verse `verse_lexical`
+rebuild touching potentially many OTHER words' verses) — real "chaos"/uncertain-impact risk in
+itself if done by hand — used the app's own per-run pre-write snapshot mechanism
+(`lib/dbsnapshot.py`, `run.py:_ensure_run`, found 2026-07-22 per that file's own docstring) instead.
+`RUN-20260810_155707_659-NEW-WORD` (the FIRST `receive`-related run, `registry.exists` only — no
+writes yet) had its own pre-write snapshot: `db/snapshots/iba-20260810T145708Z-new-word-run-
+20260810-155707-659-new-wor.db`, taken the instant before `receive` existed. **Took a safety
+snapshot of the pre-rollback (messy) state first** (`iba-20260810T154548Z-pre-rollback-receive-
+mess.db` — nothing is unrecoverable if any of it turns out to be wanted later), then restored
+`iba.db` from the pre-`receive` snapshot via plain file copy (WAL-checkpointed first, matching
+`dbsnapshot.snapshot()`'s own consistency convention).
+
+**Verified clean, exactly at the intended boundary:**
+- `receive` (word_registry + all 64 `word_strong` rows): **gone**.
+- `Suffering` (sec94-96 — the researcher's own dictated, curated work): **fully intact** — 15
+  active `word_strong` rows, `G2983` back in place. This snapshot postdates all of that work, so
+  none of it was touched.
+- `cfg_write_grant`: back to only `migration` -> `word_registry`/`word_strong` (the `Suffering`-era
+  grants) — the `migration` -> `span` grant from the regex-fix thread is gone.
+- **`cfg_setting step.span_html` is back to the UNFIXED (morph-required) regex — the morph-less-
+  span bug (sec97, 824 verses / 1,077 spans corpus-wide) is REINTRODUCED.** This is a real,
+  already-diagnosed, already-validated-with-zero-regressions fix that happens to be logically
+  independent of whether `receive` was a good word — rolling back to a snapshot that predates it
+  necessarily un-fixes it too. Flagged explicitly, not silently re-broken: whether to reapply that
+  fix on its own is the researcher's separate call, not bundled back in here.
+
+**Left in place, inert, NOT to be re-run as-is** (code files aren't part of a DB snapshot; these
+now reference a word/state that no longer exists):
+- `iba/app/migration/backfill_morphless_span_fix_20260810.py`, `move_g2983_suffering_to_
+  receive_20260810.py`, `backfill_receive_exact_variant_meaning_20260810.py` — historical record of
+  what was found/done; harmless to leave, would need real reconsideration before any re-run.
+- `iba/app/lib/lexical.py:build_for_verse_ids()`, `iba/app/handlers/raw.py:related()`/`lexical()` —
+  written for the "wire the complete cycle into `new-word`" ask, unit-tested against `receive`
+  (worked correctly), but **never wired into `cfg_step`** (no proposal was submitted before this
+  rollback) — so there is no config drift to undo here. The mechanism itself (word-scoped
+  parse/related/lexical rebuild) is sound and word-agnostic; whether/when to revisit it is now tied
+  to how `receive` (or any future word) gets its `word_strong` scope curated BEFORE the raw pull
+  runs, not after.
+
+**Files:** none newly written for the rollback itself (a snapshot restore + this record). The code
+files listed above already exist from sec97/sec98's own work. No schema/config change (the restore
+reverted `cfg_setting`/`cfg_write_grant` to their pre-`receive` values; nothing new was written on
+top). Data change: `iba.db` restored wholesale from `db/snapshots/iba-20260810T145708Z-new-word-
+run-20260810-155707-659-new-wor.db`; safety snapshot `iba-20260810T154548Z-pre-rollback-receive-
+mess.db` retained.

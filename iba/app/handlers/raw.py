@@ -18,6 +18,7 @@ import datetime
 import re
 
 from .base import Ctx, Outcome, ok, fail, escalate
+from ..lib.stepapi import StepUnavailable
 
 # Fallback only — the real value is `cfg_setting raw.strong_base_pattern` (module `raw`), the
 # single home for this fact after it was found duplicated three ways: here, in
@@ -200,6 +201,75 @@ def verses(ctx: Ctx) -> Outcome:
     if c["short"]:
         return fail("shortfall", msg + f" — {c['short']} strong(s) short of STEP's total", **c)
     return ok(msg, **c)
+
+
+# ── related (scoped to THIS word's own strongs — not lexicon.related's full-corpus rebuild) ──
+# Found 2026-08-10 (`receive`, BUILD.md sec98): the `new-word` chain had no step that populated
+# `strong_related` at all — only the book-scoped `raw.backfill_meaning` auto-chained it
+# (`raw.backfill_meaning_for` -> `lexicon.fetch_related_for`). Per-word onboarding silently left
+# every newly-registered code without its related-terms fetch until someone happened to check.
+# Reuses `lexicon.fetch_related_for` UNCHANGED — same writer grant ('lexicon.related' ->
+# 'strong_related', already held), `clear_first=False` (append, never wipes another word's already-
+# fetched codes). Deliberately NOT `lexicon.related` itself, which does one live STEP call per
+# EVERY strong row in the whole DB (thousands) — wasteful for a single word's handful of codes.
+def related(ctx: Ctx) -> Outcome:
+    codes = _strongs_for_word(ctx)
+    # "0 strong_related rows" = "needs fetching" — the SAME coverage signal lexicon.validate
+    # itself already uses (`NOT EXISTS ... strong_related`); a code STEP genuinely returns no
+    # relatedNos for is indistinguishable from "never fetched" either way, by design (matches the
+    # existing convention project-wide, not a new ambiguity introduced here).
+    missing = [c for c in codes if ctx.db.count("strong_related", strong=c, deleted=0) == 0]
+    if not missing:
+        return ok(f"0 of {len(codes)} strong(s) needed a related-terms fetch — already covered")
+    try:
+        ctx.step.up()
+    except StepUnavailable as e:
+        return fail("unreachable", str(e))
+    from .lexicon import fetch_related_for
+    counts = fetch_related_for(ctx, missing, clear_first=False)
+    return ok(f"related: {counts['strong_related']} row(s) across {counts['strongs_checked']} "
+             f"strong(s) newly fetched ({counts['none_related']} with none, "
+             f"{counts['errors']} fetch error(s))", **counts)
+
+
+# ── lexical (verse_lexical, scoped to THIS word's own verses — the chain's closing step) ──────
+# Found the same session (sec98): `strong_meaning_parsed` itself was never being rebuilt for a new
+# word's codes either (no `lexicon.parse` step in the chain), so even where `verse_lexical` rows
+# DID exist for a word's verses (built earlier for some OTHER word sharing the same verse), they
+# could be resolving against a stale/absent parsed layer for THIS word's own codes. Runs LAST in
+# the chain (after lexicon.parse + raw.write + raw.validate) so it always reads the FRESH parsed
+# layer and the FULLY validated span set. Reuses `lib.lexical.build_for_verse_ids` (version-aware:
+# supersedes a stale reading, never overwrites in place) — this step both BUILDS and, by that same
+# supersede mechanism, IS the "check that the lexicals are correct" the researcher asked for; a
+# verse whose spans/parsed-meaning haven't changed since its last build is a safe, cheap no-op.
+def lexical(ctx: Ctx) -> Outcome:
+    if "verse_lexical" not in ctx.cfg.may_write("lexical.build"):
+        raise PermissionError("write-grant violation: 'lexical.build' may not write 'verse_lexical'")
+
+    codes = _strongs_for_word(ctx)
+    if not codes:
+        return ok("0 verse(s) to build — word has no strongs")
+    verse_ids = [r["verse_id"] for r in ctx.db.rows(
+        "SELECT DISTINCT sv.verse_id FROM strong_verse sv WHERE sv.strong IN ({}) "
+        "AND sv.deleted=0".format(",".join("?" * len(codes))), codes)]
+    if not verse_ids:
+        return ok("0 verse(s) to build — word has no strong_verse rows yet")
+
+    required = ctx.cfg.setting("step.required_for_runs", True)
+    step = ctx.step
+    try:
+        step.up()
+    except StepUnavailable as e:
+        if required:
+            return fail("unreachable", str(e))
+        step = None
+
+    from ..lib import lexical as lexlib
+    totals = lexlib.build_for_verse_ids(ctx.db.conn, verse_ids, step)
+    ctx.db.conn.commit()
+    return ok(f"{totals['verses']} verse(s), {totals['spans']} span(s), {totals['codes']} "
+             f"code(s) resolved ({totals['inserted']} written, {totals['superseded']} superseded)",
+             **totals)
 
 
 # ── write ────────────────────────────────────────────────────────────────────

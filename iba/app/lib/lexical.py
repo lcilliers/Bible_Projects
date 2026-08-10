@@ -272,6 +272,26 @@ def build_for_range(conn: sqlite3.Connection, book: str, lo: int, hi: int,
     return totals
 
 
+def build_for_verse_ids(conn: sqlite3.Connection, verse_ids: list[int],
+                        step: "Step | None") -> dict:
+    """Same shape as `build_for_range`, but scoped to an explicit verse_id list rather than a
+    book/chapter range — for a per-WORD rebuild (2026-08-10, `raw.lexical`, the `new-word` chain's
+    closing step: "checking that the lexicals for the verses are correct with the parse values").
+    `build_for_verse` is already version-aware (soft-deletes a superseded row, never overwrites in
+    place — see its own `write_readings_for_span` call), so re-running this for a verse whose
+    parse values haven't changed since the last build is a safe, cheap no-op; a verse whose
+    `strong_meaning_parsed`/span content HAS changed gets its `verse_lexical` rows corrected in
+    place. Dedups the input (a word's strongs can share a verse many times over)."""
+    live_cache: dict[str, str] = {}
+    totals = {"verses": 0, "spans": 0, "codes": 0, "inserted": 0, "superseded": 0}
+    for vid in dict.fromkeys(verse_ids):     # de-dup, preserve order
+        counts = build_for_verse(conn, vid, step, live_cache)
+        totals["verses"] += 1
+        for k in ("spans", "codes", "inserted", "superseded"):
+            totals[k] += counts[k]
+    return totals
+
+
 # ── on-demand report — DB is the source, this is a render, never an independent write ────────
 
 def _render_component(r: sqlite3.Row) -> str:
