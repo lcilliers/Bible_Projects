@@ -58,12 +58,21 @@ def render_scaffold(conn: sqlite3.Connection, step: str, sections: dict[str, lis
         L.append("")
         for s in present:
             label = s["toc_label"] or s["heading"].lstrip("#").strip()
-            L.append(f"- [{label}](#{_anchor(s['heading'])})")
+            L.append(f"- [{label}](#{anchor(s['heading'])})")
         for k in extra_keys:
             L.append(f"- {k}")
         L.append("")
 
+    # `<a id="...">` immediately before each heading, not a bare "## Heading" left to the
+    # viewer's own auto-slugger — found 2026-08-09 (researcher: ToC links don't work, "in all of
+    # the reports in the app") that different Markdown renderers (GitHub / VS Code preview /
+    # Obsidian / pandoc) slug punctuation-heavy headings differently from `anchor()` above (this
+    # app's own collapsing of "--" into "-" is not universal — GitHub's own slugger, for one,
+    # does NOT collapse), so a ToC link computed here was never guaranteed to land on the heading
+    # a renderer actually generated. An explicit anchor sidesteps the whole class of mismatch —
+    # every renderer that runs raw HTML in Markdown (near-universal) resolves it identically.
     for s in present:
+        L.append(f'<a id="{anchor(s["heading"])}"></a>')
         L.append(s["heading"])
         L.append("")
         L += sections[s["section_key"]]
@@ -81,8 +90,12 @@ def render_scaffold(conn: sqlite3.Connection, step: str, sections: dict[str, lis
     return L
 
 
-def _anchor(heading: str) -> str:
-    """GitHub-style heading slug — good enough for this app's own ToC links."""
+def anchor(heading: str) -> str:
+    """GitHub-style heading slug — good enough for this app's own ToC links. Public (not just
+    `render_scaffold`'s own internal use) since a generator building its OWN in-body sub-ToC
+    (e.g. `wordregistryspanreport.py`'s per-cluster links, cfg_report_section being too static
+    to represent dynamic per-run structure) needs the exact same slugging rule, not a second
+    hand-written copy of it."""
     text = heading.lstrip("#").strip().lower()
     out = ["-" if ch in (" ", "-", "_") else ch for ch in text if ch.isalnum() or ch in " -_"]
     slug = "".join(out)

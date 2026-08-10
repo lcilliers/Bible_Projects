@@ -43,7 +43,9 @@ built out **operation by operation**, within a common framework. *(Plan §2.)*
 > these; §12b/§12c/§12d is the current method. Every report auto-archives its previous version and
 > pairs with a CSV export by default (§12). Book-scoped reports (lexical, debate, reconciliation,
 > narrative) file under `iba/app/verse-analysis/<BookLabel or Book>/` — not `iba/app/reports/`
-> (that's for one-off investigatory output only; corrected 2026-08-08, `BUILD.md` §84). Where this
+> (that's for one-off investigatory output only; corrected 2026-08-08, `BUILD.md` §84).
+> Word-registry-scoped reports (§12e, added 2026-08-09) file the same way but under
+> `iba/app/verse-analysis/word_registry/` — a registry word, not a book. Where this
 > guide describes a command or a report, it describes what exists now. Companion docs: `BUILD.md`
 > (what's built, how the parts fit) and `GOVERNANCE.md` (how config governs the code) — this guide
 > is *how to run it*.
@@ -797,6 +799,44 @@ the shape of that data is not yet decided — nothing here should be read as a d
 
 ---
 
+## 12e. Word-registry Strong's/span analysis (`WordRegistrySpan-Report.ps1`, added 2026-08-09, clustered by meaning + English-gloss index later the same day)
+
+For one `word_registry` word: every linked Strong's, grouped into **meaning clusters** — same-root
+word families (noun/verb/adjective forms of one lemma, e.g. G1167 "timidity" / G1168 "be timid" /
+G1169 "timid") clustered together via `strong_related` (STEP's own root-family data), not listed
+flat by Strong's number. Each cluster shows its member Strong's (gloss/transliteration/count), its
+full parse-meaning breakdown, and its **unique surface-span applications** — the different ways
+that Strong's actually shows up in the text (e.g. G5399 realised as "afraid"/"fear"/"feared"/
+"awe"/"terrified"/… — 13 distinct surface forms), each with an occurrence count and one example
+verse reference + text.
+
+**The report body opens with a working table of contents**, one link per meaning cluster (heading
+led by the shared meaning, e.g. "timidity, be timid, timid — G1167, G1168, G1169" — not by Strong's
+number). Links are real `<a id>` anchors, not left to the viewer's own auto-generated heading ids
+(that was a real bug, found and fixed app-wide the same day — every registered report's ToC now
+works the same way; see `GOVERNANCE.md` §38 if curious). **The ToC additionally groups clusters
+a second way**, by shared English gloss word — e.g. all 8 of `fear`'s distinct root-clusters that
+happen to gloss as "fear" (φόβος, πτόησις, יָרֵא, …) are shown together under one **fear** heading
+in the ToC, even though they're separate, unrelated root families; a shared row there does **not**
+imply a shared root — it's a browsing aid only, clearly labelled as such, and the actual root
+relationship (or lack of one) is always shown in the section itself.
+
+```powershell
+iba\app\ps\WordRegistrySpan-Report.ps1 -Word fear
+#   -> iba/app/verse-analysis/word_registry/fear-strong-span-v4-20260809.md
+#      (62 Strong's -> 33 meaning clusters for 'fear'; ToC additionally index-groups them by
+#       shared English gloss word — 8 "fear" variants, 3 "trembling"/2 "tremble", 2 "devout",
+#       2 "terror" — each still linking to its own root-based section)
+```
+
+Read-only, run whenever you want it. `-Word` must match a `word_registry.word` value (case-
+insensitive) — an unrecognised word fails cleanly (`report-stop`, exit 3), it does not silently
+produce an empty report. Output is dated/versioned (`fear-strong-span-v1-...`, `-v2-...` on a
+same-day re-run) with prior versions auto-archived, same convention every other registered report
+uses. Design/build record: `GOVERNANCE.md` §36/§37/§38, `BUILD.md` §85/§86/§87.
+
+---
+
 ## 13. Log retention (read-only)
 
 ```powershell
@@ -876,6 +916,9 @@ iba\app\ps\SpanAnalysis-Report.ps1
 iba\app\ps\SchemaOverview-Report.ps1
 iba\app\ps\Registry-Report.ps1
 
+# word-registry Strong's/span analysis, any time (§12e):
+iba\app\ps\WordRegistrySpan-Report.ps1 -Word <word>
+
 # remove a test word (dry-run, then --yes):
 python -m iba.app.tools.purge_word --word <word>
 
@@ -933,7 +976,7 @@ iba/app/
               Lexicon-Parse.ps1 · Passage-Quality.ps1 · Reports.ps1 · Export-Tables.ps1 ·
               Escalation.ps1 · Log-Retention.ps1 · SeedCandidate-Report.ps1 ·
               StrongMeaning-Report.ps1 · SpanAnalysis-Report.ps1 · SchemaOverview-Report.ps1 ·
-              Registry-Report.ps1 ·
+              Registry-Report.ps1 · WordRegistrySpan-Report.ps1 (§12e) ·
               **current per-book pipeline (§12b):** VerseLexical.ps1 · Debate-Run.ps1 ·
               Operations-Ingest.ps1 (the work package Debate-Run.ps1's hib/phenomenon/operation/
               closing steps run under) ·
@@ -954,8 +997,9 @@ iba/app/
               dbsnapshot · db · stepapi · escalation · words · reportkit (shared report rendering +
               archiving, incl. CSV writes + CSV pairing + one-off naming) · seedreport ·
               strongreport · spanreport · schemareport · registryreport (the 5 analysis reports,
-              §12a) · passagetrack · passagedebatereport · wholebookread · versespanmeaningreport
-              (§12b) · narrativegenerate (§12d — assembly + Anthropic Messages API call + filing)
+              §12a) · wordregistryspanreport (§12e) · passagetrack · passagedebatereport ·
+              wholebookread · versespanmeaningreport (§12b) · narrativegenerate (§12d — assembly +
+              Anthropic Messages API call + filing)
   handlers/   registry · raw · configmaint · candidate · passage · reports   (interpreters, no hard rules)
   migration/  one-off: Import-LegacyRegistry.ps1 · legacy_import · import_seed · ~20 further
               bootstrap/schema-addition scripts (see GOVERNANCE.md §7 for the full current list)

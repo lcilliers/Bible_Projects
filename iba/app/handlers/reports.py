@@ -20,7 +20,8 @@ from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import escalation as esc
 from ..lib import retention as retention_mod
-from ..lib import registryreport, schemareport, seedreport, spanreport, strongreport
+from ..lib import (registryreport, schemareport, seedreport, spanreport, strongreport,
+                   wordregistryspanreport)
 from ..lib import (lexical, passagedebatereport, passagetrack, versespanmeaningreport,
                    wholebookread)
 from ..lib.stepapi import StepUnavailable
@@ -112,6 +113,13 @@ def strong_meaning_report(ctx: Ctx) -> Outcome:
     path = pathlib.Path(ctx.cfg.setting("report.strong_meaning_path",
                                         "iba/app/reports/strong-meaning.md"))
     out = strongreport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
+def word_registry_span_report(ctx: Ctx) -> Outcome:
+    out = wordregistryspanreport.write_report(ctx.cfg, ctx.params["Word"])
+    if out is None:
+        return fail("word-not-found", f"{ctx.params['Word']!r} is not in the registry")
     return ok(f"wrote {out}", path=str(out))
 
 

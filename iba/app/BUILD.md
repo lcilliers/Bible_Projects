@@ -5178,3 +5178,161 @@ Retrofit: 41 files `git mv`'d from `iba/app/reports/`(`/archive/`) into
 `iba/app/verse-analysis/Daniel/`(`/archive/`). No new `cfg_setting`/`cfg_report`/`cfg_write_grant`
 rows — reused `report.verse_analysis_output_dir` (already live) and the `report.debate` writer name
 (already granted).
+
+## 85. `report.word_registry_span` built and registered — word_registry -> Strong's -> parse
+meaning -> span analysis (2026-08-09)
+
+Researcher, after reviewing an ad-hoc one-off analysis of a single word ("fear") built earlier the
+same session: "this looks useful. add this report into the app as a standard report, define it in
+the configs, and ensure that it has a powershell script to run the report. create a new folder in
+verse-analysis/word_registry where these reports are filed. update the userguide on running the
+report." Full design/rationale record: GOVERNANCE.md §36.
+
+**Built:**
+
+- `iba/app/lib/wordregistryspanreport.py` — the report generator, `write_report(cfg, word) ->
+  Path | None` (None on an unknown word, same convention `report.py`'s `generate()` already uses).
+  For each `word_strong`-linked Strong's: gloss/transliteration/count from `strong`; parse-meaning
+  breakdown from `strong_meaning_parsed`, with a base-lemma fallback for suffixed sub-entries (e.g.
+  `H3372G` has no rows of its own — falls back to `H3372`, labelled as such, not silently empty);
+  unique `span.surface` applications (distinct surface text forms tagged with that Strong's in
+  `verse_lexical`) each with an occurrence count and one example verse. Uses `reportkit.
+  render_scaffold`/`write_report` like every other registered report — title/ToC/sections/
+  versioning all config-driven, none of it hand-built in this module.
+- `iba/app/handlers/reports.py` — `word_registry_span_report(ctx)`, thin adapter, `word-not-found`
+  -> `fail()`.
+- `iba/app/migration/bootstrap_word_registry_span_report.py` — idempotent, direct `cfg_*` inserts
+  (the established infrastructure-registration carve-out, not `configmaint.propose` row-by-row —
+  the researcher's own request above is the up-front design approval it requires, same as every
+  prior report registration). New `cfg_work_package` (`word-registry-span-report`), `cfg_step`
+  (`report.word_registry_span`, scope `word`, kind `utility`), `cfg_setting`
+  (`report.word_registry_span_output_dir` = `iba/app/verse-analysis/word_registry`), `cfg_report`
+  (`naming_scheme='dated'`), 2 `cfg_report_section` rows (Overview / Strong's breakdown), 1
+  `cfg_on_fail` row (`word-not-found` -> `report-stop`).
+- `iba/app/ps/WordRegistrySpan-Report.ps1` — new dedicated PS script (`-Word <word>`), matching the
+  one-script-per-standalone-report pattern already used for `StrongMeaning-Report.ps1`/
+  `SpanAnalysis-Report.ps1`, rather than folding into the general-purpose `Reports.ps1`.
+- `migration/bootstrap_cfg_utility.py` re-run (idempotent, auto-discovers `lib/*.py`) —
+  `wordregistryspanreport` had no `cfg_utility` row yet; `configmaint.validate` flagged it before
+  this was run, clean after.
+
+**Verified live, not assumed:** ran for `fear` (62 linked Strong's) — wrote `iba/app/
+verse-analysis/word_registry/fear-strong-span-v1-20260809.md`, content matches the ad-hoc
+prototype's output byte-for-byte in substance (same queries, now via `reportkit`). Ran for a
+nonexistent word — clean `report-stop` (exit 3, no crash). `Config-Maintenance.ps1 -Step Validate`
+clean after both migrations (first run flagged the missing `cfg_utility` row; second run clean).
+
+**Retired:** `iba/app/tools/word_strong_span_report.py`, the ad-hoc prototype this replaces — kept
+on disk (its own docstring already said "if this becomes a recurring need, register it properly"),
+now superseded; the registered report is the one to run going forward.
+
+**Docs:** `USER-GUIDE.md` updated with a run example (§ see USER-GUIDE.md's own numbering).
+GOVERNANCE.md §36 (design/rationale). No `cfg_report_csv_table` row — this report is `md`-only
+(the source data — one word's Strong's/spans — is already small and fully shown in the `.md` body;
+no separate CSV verbatim-dump adds anything a full-table CSV wouldn't already, matching the same
+judgement call `report.schema_overview`/`report.verse_lexical` made).
+
+## 86. `report.word_registry_span` restructured — clustered by meaning, working ToC (2026-08-09,
+same day, later still)
+
+Researcher, immediately after reviewing §85's first output: "the report must have a table of
+contents (that will work as a link) on the pase [sic] meaning (not the strong nr) and the parse
+meaning must list the similar meaning together (e.g timidity, be timid, timid should be clustered
+in the ToC and all the stongs for the parse meaning should be clustered together." Two distinct
+asks, both addressed: (1) the flat per-Strong's list needed grouping by shared meaning; (2) that
+grouping needed a real, working, clickable ToC — not just section headings.
+
+**Clustering source — checked, not guessed.** `strong_related` (STEP's own root-family
+cross-references — δειλία/δειλιάω/δειλός mutually listed there, matching the researcher's own
+example exactly) already existed in the DB, unused by this report until now. Restricted to edges
+where BOTH ends are already linked to the word (so the clustering never pulls in an unrelated
+Strong's the word doesn't actually cover), grouped via union-find
+(`_cluster_by_related_strong`). Verified against live 'fear' data BEFORE building the final
+version: 62 Strong's collapsed into 33 clusters — 12 real multi-member groups (e.g. the φόβος/
+φοβέω family, G0870/G1630/G1719/G4423/G5398/G5399/G5400/G5401, 8 members) and 21 singletons — a
+genuine reduction, not a forced grouping.
+
+**Heading/label design.** Cluster label = deduped `stepGloss` values (case-insensitive, order
+preserved) — meaning leads, per the instruction. Checked for collisions before finalising:
+several distinct singleton clusters share an identical gloss (two separate "fear" Strong's, two
+separate "terror" Strong's) — a label-only heading would produce duplicate anchors and silently
+broken ToC links. Fixed by appending the cluster's own Strong's code(s) to the heading
+(`"fear — G6015"` vs `"fear — G7949"`) — guarantees uniqueness by construction, and is a genuine
+usability improvement (which Strong's this cluster covers is visible right in the ToC), not just a
+collision workaround.
+
+**`reportkit.anchor()` made public.** The heading-slug function existed already
+(`render_scaffold`'s own private `_anchor`) but a generator building its OWN in-body sub-ToC (the
+2 static `cfg_report_section` rows can't represent a dynamic, per-run, per-word cluster count —
+correctly left as free-form section body content, `reportkit.py`'s own documented boundary) needed
+the exact same slugging rule, not a second hand-written copy that could drift. Renamed `_anchor` ->
+`anchor`, `render_scaffold`'s own call site updated, no other call sites existed.
+
+**Verified live**: re-ran for `fear` — `fear-strong-span-v2-20260809.md` (auto-versioned, `-v1`
+archived per the existing convention). ToC anchor `#timidity-be-timid-timid-g1167-g1168-g1169`
+confirmed to land on the matching `###` heading; singleton clusters (e.g. `to alarm — G2360`)
+confirmed to render without the redundant extra `####` sub-heading multi-member clusters get.
+`configmaint.validate` clean after the `reportkit.py` change. Regression-checked another report
+sharing `reportkit.py` (`StrongMeaning-Report.ps1`) — ran clean, unaffected.
+
+**Files:** `iba/app/lib/wordregistryspanreport.py` (rewritten), `iba/app/lib/reportkit.py`
+(`_anchor` -> public `anchor`). No config/schema change — same `cfg_report`/`cfg_report_section`
+rows from §85 still apply; the restructure is entirely inside the section body content the
+generator was always responsible for.
+
+## 87. ToC links fixed app-wide (`reportkit.render_scaffold`); English-gloss index grouping added
+to `report.word_registry_span` (2026-08-09, same day, later still)
+
+Researcher, on reviewing §86's output: (1) the ToC links didn't actually work — "it seems that
+your reference method does not work" — and, critically, "I notice that links in all of the
+reports in the app does not work as a link," i.e. not a bug local to this one report. (2) The
+root-based clustering (§86) is correct to keep, but the researcher also wants an English-gloss-
+based grouping layer purely for the ToC, so "several rows for the different variations of fear"
+sit together even though they're genuinely separate root families — reusing the same
+`strong_related`-based devout/God split from §86's discussion as a live example of what NOT to
+silently merge.
+
+**Bug 1 — ToC links, root cause found and fixed at the shared source.** `render_scaffold`'s ToC
+computed a heading anchor itself (`anchor()`) and linked to `#{that-slug}`, relying entirely on
+whatever Markdown renderer the file is opened in to independently generate the SAME id for the
+actual `## Heading` line. Different renderers slug punctuation differently — GitHub's own slugger
+does not collapse `--` into `-`, this app's `anchor()` does — so a heading like "Linked Strong's —
+parse meaning & span analysis" (em-dash + ampersand, both stripped, leaving adjacent spaces) was
+never guaranteed to resolve. Fixed by no longer relying on any renderer's auto-slug at all: every
+heading in `render_scaffold`'s section loop now gets an explicit `<a id="{slug}"></a>` emitted
+immediately before it, and the ToC links to that exact id — renderer-independent (raw inline HTML
+in Markdown is near-universally supported: GitHub, VS Code preview, Obsidian, pandoc all resolve
+it identically). This is a shared-function fix — every registered report that calls
+`render_scaffold` (all of them) is fixed by the one change, not just `report.word_registry_span`.
+Regression-checked against `report.span_analysis` (unrelated report, same shared function) — its
+own ToC now emits the same `<a id>` pattern, confirmed live.
+
+**Bug 2 — English-gloss index grouping, WITH a real over-merging bug caught and fixed before
+shipping.** First draft grouped clusters via union-find (transitive closure) whenever any gloss
+word in one cluster shared a root-prefix with any word in another. Checked live against 'fear'
+before finalising (the researcher's own stated practice — verify before reporting fixed) and found
+it over-merged: a cluster glossed "to revere" (G2124/5/6, the εὐλαβ- family) shares the literal
+word "revere" with a cluster glossed "to fear: revere" (H3372's Hebrew יָרֵא, which genuinely
+covers both senses per STEP's own gloss) — a real, accurate one-hop connection. But that
+reverence cluster ALSO shares "devout" with an entirely unrelated θεός/θεοσεβής/σέβομαι family
+(G2316/2318/4576) — a SECOND hop — and transitive closure silently pulled all three (fear +
+reverence + God/devout) into one mislabelled "fear" bucket. Classic single-linkage chaining.
+**Fixed** by abandoning full transitive closure: `_index_group_clusters` now anchors every group
+to one head cluster (its earliest-ordered member) and matches every other cluster ONLY against
+that head's own words, never against an already-added member's — caps chaining at exactly one hop
+by construction. Re-verified against the same live data: `fear` now groups correctly as 8
+variants (the reverence/God families correctly excluded), `devout` now correctly forms its OWN
+separate 2-variant group (visible in the index, but explicitly labelled "separate root families
+unless a section below says otherwise" so it can't be mistaken for the etymological claim §86
+already established is false), `terror` and `trembling`/`tremble` (two adjacent groups, not one —
+a known, documented limitation: "tremble" is not literally a substring-prefix of "trembling",
+English drops the 'e' before '-ing', so the two only merge when some cluster's gloss happens to
+use the exact matching form) each group correctly.
+
+**Verified live**: `fear-strong-span-v4-20260809.md` — spot-checked `<a id="fear-g6015">`
+immediately precedes `### fear — G6015`, confirmed byte-exact match to the ToC's own
+`#fear-g6015` link target. `configmaint.validate` clean.
+
+**Files:** `iba/app/lib/reportkit.py` (`render_scaffold` — explicit anchors), `iba/app/lib/
+wordregistryspanreport.py` (`_index_group_clusters` rewritten, single-hop; `_core_words`/
+`_shares_word` new). No config/schema change.

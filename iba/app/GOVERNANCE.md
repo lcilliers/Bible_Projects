@@ -1687,3 +1687,85 @@ archives the FIRST call's freshly-written report (both the reconciliation report
 `hib.set`-by-type report) before writing its own next version — live folder held exactly one file
 per stem throughout, full lineage in `archive/`. `find_report_version_clutter` returns 0 findings
 before AND after. Full work record: `BUILD.md` §83.
+
+## §36. `report.word_registry_span` — new registered report, word_registry -> Strong's -> parse
+meaning -> span analysis (2026-08-09)
+
+Promoted from an ad-hoc prototype (`tools/word_strong_span_report.py`, built the same session to
+answer "for a registry word, what do its linked Strong's actually resolve to and how do they show
+up in the text") into a real registered report, per the researcher's direct instruction: "add this
+report into the app as a standard report, define it in the configs, and ensure that it has a
+powershell script to run the report."
+
+**What it shows**, for one `word_registry` word: every linked Strong's (`word_strong`), each with
+its gloss/transliteration/count (`strong`), its full parse-meaning breakdown
+(`strong_meaning_parsed` — falling back to the base lemma's tree for suffixed sub-entries like
+`H3372G`, which have none of their own), and its **unique surface-span applications** — the
+distinct `span.surface` text forms tagged with that Strong's across `verse_lexical`, each with an
+occurrence count and one example verse (reference + text). "Unique span" was checked against real
+data before building: `resolved_sense` turned out to be fixed per Strong's in this DB, so surface
+diversity (e.g. G5399 realised as "afraid"/"fear"/"feared"/"awe"/"terrified"/… — 13 distinct forms)
+is what actually carries the signal, not sense grouping.
+
+**Registered per the infrastructure-registration carve-out** (§9B/this section's own precedent —
+`bootstrap_verse_analysis_report.py` et al.): direct, idempotent `cfg_*` inserts
+(`migration/bootstrap_word_registry_span_report.py`), not `configmaint.propose` row-by-row — the
+researcher's own explicit request IS the up-front design approval that carve-out requires. New
+work package `word-registry-span-report` (own PS script, `WordRegistrySpan-Report.ps1 -Word
+<word>`, matching the one-script-per-standalone-report pattern already used for
+`strong-meaning-report`/`span-analysis-report`), scope `word`, step `report.word_registry_span`.
+`cfg_report` (title/ToC/`naming_scheme='dated'`, same versioning-with-archive convention every
+other report gets from `reportkit.write_report`) + 2 `cfg_report_section` rows (Overview /
+Strong's breakdown) + one `cfg_on_fail` row (`word-not-found` -> `report-stop`, mirrors
+`report.word`'s own row exactly). New setting `report.word_registry_span_output_dir` — a **new
+folder**, `iba/app/verse-analysis/word_registry/`, distinct from the per-book
+`verse-analysis/{Book}/` folders the rest of that tree already holds, since this report is
+word-registry-scoped, not book-scoped. `lib/wordregistryspanreport.py` also needed its own
+`cfg_utility` row (`migration/bootstrap_cfg_utility.py`, re-run — auto-discovers any new `lib/*.py`
+module, idempotent) before `configmaint.validate` came back clean.
+
+**Verified live**: ran for `fear` (62 linked Strong's) — wrote
+`iba/app/verse-analysis/word_registry/fear-strong-span-v1-20260809.md`; ran for a nonexistent word
+— clean `report-stop` (exit 3), no crash. `configmaint.validate` clean after both migrations.
+`USER-GUIDE.md` updated with a run example.
+
+## §37. `report.word_registry_span` clustered by meaning — a working, meaning-first ToC
+(2026-08-09, same day, later still)
+
+§36's first output was reviewed immediately and corrected: a flat per-Strong's list with no real
+in-body table of contents wasn't what was asked for. Researcher: cluster Strong's with similar
+meaning together (his own example: "timidity, be timid, timid" — G1167/G1168/G1169), and the ToC
+must be built off the *meaning*, not the Strong's number, and must actually link.
+
+**The clustering itself uses `strong_related`** — an existing table (STEP's own root-family
+cross-reference data) the report wasn't reading before. Restricted to edges where both ends are
+already among the word's own linked Strong's, then grouped by union-find. This is a genuine data-
+grounded reduction, not an invented similarity heuristic — checked live against `fear` before
+committing to the design: 62 Strong's -> 33 clusters (12 real multi-member root families, 21
+singletons), and the researcher's own three-way example (G1167/G1168/G1169) clustered together
+exactly as named.
+
+**Full design/rationale/verification record: `BUILD.md` §86** (this section stays short — the
+detail belongs in one place, not duplicated).
+
+One general point worth recording here rather than only in BUILD.md: `reportkit.anchor()` (was
+`render_scaffold`'s private `_anchor`) is now public, because this is the SECOND report generator
+that needed to build its own in-body sub-ToC beyond what the static `cfg_report_section` table can
+represent (per-run, per-word cluster counts can't be pre-registered rows) — any future report
+generator with the same need should call `reportkit.anchor()`, not hand-roll a second slugging
+rule that could silently drift from the one `render_scaffold` itself uses.
+
+## §38. ToC links fixed for every registered report, not just one (2026-08-09, same day, later
+still)
+
+The researcher's own testing caught what §36/§37 missed: "I notice that links in all of the
+reports in the app does not work as a link" — this was never report-specific. `render_scaffold`
+computed a heading's anchor itself and trusted the Markdown renderer to independently generate the
+identical id — a real gap, since different renderers slug punctuation differently (this app's own
+`anchor()` collapses repeated hyphens; GitHub's own slugger does not). Fixed at the shared source,
+not per-report: `render_scaffold` now emits an explicit `<a id="...">` immediately before every
+heading and links the ToC to that exact id — no renderer's own slugging is trusted anymore. Every
+report that calls `render_scaffold` is fixed by this one change.
+
+Full record (including a second, real over-merging bug caught and fixed the same session in the
+new English-gloss ToC grouping added to `report.word_registry_span`): `BUILD.md` §87.
