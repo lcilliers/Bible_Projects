@@ -113,14 +113,18 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         "WHERE wr.deleted=0 "
         "ORDER BY wr.word")
     # Two CSVs, not one — researcher, 2026-08-10: "both word-registry table and registry table."
-    # `word_registry.csv` (above `joined`) is the PAIRING export (LEFT JOIN word_strong/strong/
-    # strong_sense — one row per registry-word/strong pair, or one null-strong row for a
-    # zero-link word). `registry.csv` is the PLAIN export — `listing` (already built above for
-    # the report's own `listing` section), one row per `word_registry` row, no join at all. Same
-    # split reasoning as the `listing` markdown section (BUILD.md §89): the joined CSV can't be
-    # read as "the list of registry words" on its own (multiple rows per word, or a null-strong
-    # row for a zero-link word) — a genuinely flat, one-row-per-word CSV needed its own export.
+    # Renamed 2026-08-11 (researcher escalation, via configmaint.propose) after the original names
+    # caused a real misreading: the joined/pairing file was called `word_registry.csv`, which read
+    # as a dump of the `word_registry` TABLE — leading the researcher and Claude to independently
+    # conclude the table itself had degenerated into a Strong's table, when the live table was
+    # (and always was) clean: one row per word, no Strong's columns. Names now match content:
+    # `word_registry.csv` (`listing`, built above for the report's own `listing` section) is the
+    # PLAIN export — one row per `word_registry` row, no join at all, genuinely "the registry".
+    # `word_registry_strong_pairing.csv` (`joined`) is the PAIRING export (LEFT JOIN word_strong/
+    # strong/strong_sense — one row per registry-word/strong pair, or one null-strong row for a
+    # zero-link word) — never read this one as "the list of registry words" on its own.
     reportkit.write_csv_pairing(conn, "report.registry", path.parent / "export",
-                                row_filter={"word_registry": joined, "registry": listing})
+                                row_filter={"word_registry_strong_pairing": joined,
+                                            "word_registry": listing})
     path = reportkit.write_report(conn, "report.registry", path, L)
     return path

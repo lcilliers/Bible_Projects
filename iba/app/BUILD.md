@@ -6080,3 +6080,140 @@ reverted `cfg_setting`/`cfg_write_grant` to their pre-`receive` values; nothing 
 top). Data change: `iba.db` restored wholesale from `db/snapshots/iba-20260810T145708Z-new-word-
 run-20260810-155707-659-new-wor.db`; safety snapshot `iba-20260810T154548Z-pre-rollback-receive-
 mess.db` retained.
+
+## 100. `word_registry` vs `word_strong` false alarm resolved (naming, not schema); `report.registry`'s two CSVs renamed to match their content; `New-Word.ps1`'s dead post-retraction candidate-seed coupling call removed; `blindness` built out (2026-08-11)
+
+**Trigger.** Researcher, working from `iba/app/reports/export/word_registry.csv` (open in the IDE),
+concluded the table had "become a table of the strongs with the word list being a derivative" — the
+same degeneration the *old* project's `word_registry` suffered — and asked to (b) validate `word_strong`
+vs `word_registry` are the same/different and fix any gap, then (c) reset `word_registry` to a plain
+~200-word list with no Strong's columns.
+
+**Checked the live table directly rather than trusting the export — it was never broken.**
+`word_registry`: 179 rows, **179 distinct words, zero duplicates**, columns `id, word, source, status,
+created_at, deleted` only — **no Strong's column ever existed**. `word_strong` → `word_registry`
+integrity: `NOT EXISTS` check for orphaned junction rows (a `word_strong` pointing at a dead/missing
+registry id) — **zero found.** Every one of the 4,848 active `word_strong` rows traces to a live word.
+
+**Root cause was a file-naming defect in the export layer, not the schema.** `registryreport.py`
+(§89/§90 above) writes two CSVs: a LEFT JOIN pairing (`word_registry` × `word_strong` × `strong`, one
+row per word/Strong's pair) and a plain per-word listing. They were named backwards relative to their
+content — the *pairing* file was called `word_registry.csv` (read straight off the disk, that looks
+exactly like "the `word_registry` table," which is precisely the false read both the researcher and
+Claude independently made), while the genuine one-row-per-word dump was called `registry.csv`.
+
+**Fixed, not just diagnosed.** Two `configmaint.propose` renames on `cfg_report_csv_table` (row-scoped
+config, approval required per `governance.rules_must_be_config_driven` — researcher's chat instruction
+this session, "fix the documentation, naming conventions and reports for it," taken as the approval,
+recorded as the escalation comment on each):
+
+- `RUN-20260811_060602_469-CONFIGMAINT` — pairing export `word_registry` → `word_registry_strong_pairing`
+- `RUN-20260811_060642_377-CONFIGMAINT` — plain listing `registry` → `word_registry`
+
+`registryreport.py`'s `row_filter` keys updated to match (`{"word_registry_strong_pairing": joined,
+"word_registry": listing}`), docstring updated. Old orphaned `export/registry.csv` (nothing will ever
+write that name again) moved to `export/archive/registry-superseded-by-rename-20260811-060816.csv`
+rather than deleted. Regenerated (`Registry-Report.ps1` → `registry-v7-20260811.md`) and verified on
+disk: `export/word_registry.csv` is now the plain 179-row per-word list (`id, word, status, source,
+strong_count`); `export/word_registry_strong_pairing.csv` is the join.
+
+**Second finding, from re-checking the whole new-word pipeline per the researcher's (b) instruction:**
+`New-Word.ps1` carried a "coupling" block, run unconditionally after every successful build, calling
+`python -m iba.app.run set-candidates --step candidate.seed ...` — a direct call into a work package
+that was **fully and deliberately retracted 2026-07-23** (`migration/retract_candidate_system.py`,
+escalations #306/#310: 4 work packages, 6 steps, 5 write-grants, 7 settings, 3 reports + sections + CSV
+pairings, 10 on_fail rows, 4 enum groups, all `cfg_candidate_rule` rows — all set `inactive=1`, on
+purpose, "ahead of the coming replacement"). That replacement is already live: `passage.build`'s own
+`cfg_step.does` field records it was redefined 2026-08-05 off `verse_hib` (hib-continuity), not the old
+candidate-stamp mechanism. The CONFIG-side retraction was thorough and is correctly enforced —
+`run.py`'s `cfg_work_package.inactive` check is exactly what turned this stray call into the
+`PermissionError` traceback seen live during the `blindness` build below — but the CODE-side caller in
+`New-Word.ps1` was never cleaned up, so it fired (and failed noisily) on every single word build since
+2026-07-23. Removed the block entirely — not gated, since the retraction is permanent and its
+replacement has been live for six days; nothing left to "best-effort" couple to.
+
+**Audited the rest of the active word/strong → verse-lexical path for the same kind of leftover
+wiring** — grepped every active handler (`handlers/*.py`) and every `Test-IbaWorkPackageActive`-gated
+`ps/*.ps1` script for `candidate`/`span_candidate`/`candidate_seed`. Found only comments/docstrings
+citing the old system for context (e.g. `raw.py`'s note on `candidate.lemma_base_pattern`) — no other
+live call into a retired step. Confirmed `passage.build`/`passage.validate` (active) and
+`lib/lexical.py:build_for_range` (the `verse-lexical` work package) touch neither `span_candidate` nor
+`candidate_seed` at all — `lexical.build` is book/range-scoped and independent of `passage`/`hib`/
+`phenomenon`/`operation` entirely (its own `does` field: "runs independent of T4-T9/passage_debate").
+The real current chain is: `new-word` (raw layer) → *(researcher-dictated, JSON-payload-driven)*
+`operations-ingest`: `hib.set` → `phenomenon.set` → `operation.set` → `closing.set` → `build-passages`
+(off `verse_hib`) → `passage-quality` → `verse-lexical`. One softer item flagged, not fixed: the still-
+active `SpanAnalysis-Report.ps1` (`span-analysis-report`) reports `span_candidate` row counts framed as
+"confirmed vs candidate" — accurate (the table is frozen, not stale data), but the framing describes a
+category nothing grows into anymore since `candidate.set` retired. Researcher's call whether to reword
+or retire that report; not touched here.
+
+**`blindness` built out** (researcher: "at least 16 related words in strong with approx 300 verses...
+never built... must be built using the App methods"). `New-Word.ps1 -Word blindness -Source "..."`:
+`registry.exists` → "approved but its raw layer is not built" (word_registry id 183 already existed,
+`status=approved`, zero `word_strong` rows — the one genuine zero-link word, confirmed both in the old
+DB, where it doesn't exist at all, and the new one). `raw.discover` found **16 seed Strong's** (G5185,
+H5787, G6507, H5788B, H5788A, H5575, G5186, H5786, H5956, H8173B, H3543A, G4456, G1689, G7167, H7843,
+H8173A) — matches the researcher's own STEP-verified count exactly. `raw.verses` → **277 `strong_verse`
+rows** (close to the researcher's "~300" estimate). `raw.write`/`raw.validate` → committed,
+`status=raw-complete`, parse-check passed. Not taken further into `operations-ingest`/`build-passages`/
+`verse-lexical` in this session — that is real, researcher-paced analytical work under the still-being-
+dictated v4 method (`project_iba_study_reopened_20260805_v4`), not something to auto-continue past the
+raw layer.
+
+**Files:** `iba/app/lib/registryreport.py` (row_filter keys + docstring), `iba/app/ps/New-Word.ps1`
+(dead coupling block removed). Config: `cfg_report_csv_table` × 2 rows renamed (run ids above, via
+`configmaint.propose`, `cfg_change_detail` logged, `CONFIG-REPORT.md` auto-regenerated both times). No
+other schema change. Report output: `iba/app/reports/registry-v7-20260811.md` +
+`export/word_registry.csv` + `export/word_registry_strong_pairing.csv` (regenerated);
+`export/archive/registry-superseded-by-rename-20260811-060816.csv` (old file preserved, not deleted).
+Data: `word_registry` id 183 (`blindness`) → `raw-complete`; 16 `word_strong` rows; 277 `strong_verse`
+rows newly linked.
+
+## 101. §100 correction — the rename relocated a pre-existing `configmaint.validate` coherence gap, did not eliminate it; two redundant one-off reports archived; session closed with two forks queued (2026-08-11, same day, later still)
+
+**Correction to §100.** The 2026-08-10 session log had already found (not fixed — flagged as
+schema-work-scoped-out) that `cfg_report_csv_table (report.registry).table_name='registry'` failed
+`cfgquality.py`'s "every `table_name` must name a real `cfg_table` row" check, because `registry`
+isn't an actual table, just an invented output label. §100's rename made that row's `table_name`
+`word_registry` — which IS a real table, so that specific check now passes — but the OTHER renamed
+row's `table_name` (`word_registry_strong_pairing`, the join export) is **not** a real table either.
+Ran the exact check `configmaint.validate` uses (`cfg_report_csv_table.table_name` vs `cfg_table`)
+directly: confirmed **the flag moved, it was not resolved** — `report.registry
+word_registry_strong_pairing` now fails the identical check `report.registry registry` used to fail.
+Net position: still exactly one flagged row, same as before §100, just relocated. Correctly out of
+scope to actually fix here (needs a real SQL `VIEW` + migration, per the 2026-08-10 log's own
+assessment) — recorded honestly rather than left implied-fixed by §100's silence on it.
+
+**Two redundant one-off reports archived** (researcher: "remove the redundant reports from IBA"):
+`iba/app/reports/word-strong-cluster-mapping-20260810.{md,csv}` — superseded same-topic rework
+(word-level "dominant cluster" reduction, corrected the next day per the researcher's own "that is
+not what I asked for" to the flat per-Strong's-hit mapping) by `word-registry-strong-cluster-
+mapping-20260811.{md,csv}`, which stays live. Moved to `iba/app/reports/archive/`, not deleted, per
+`governance.oneoff_report_archive_dir`. (These are hand-named one-off reports, not `cfg_report`-
+registered ones, so they don't get the automatic archive-on-regenerate `reportkit.py` gives
+registered reports — had to be archived by hand.)
+
+**Session closed at the researcher's instruction, scope deliberately contained.** Two threads opened
+this session are explicitly NOT continued now — queued for future sessions instead:
+
+- **Fork (a) — old-system cluster comparison.** `word-registry-strong-cluster-mapping-20260811.csv`
+  (4,972 rows: every `word_registry.csv` row's `strongNumber` against every old-DB (`bible_research.
+  db`) `mti_terms.cluster_code` it hits) + `cluster-master-20260811.csv` (the 49-row old `cluster`
+  table) are the checkpoint this resumes from — both stay live in `iba/app/reports/`, not archived.
+  "Complete the work" is not yet scoped beyond that checkpoint.
+- **Fork (b) — raw data integrity vs. completed analysis.** Re-check what `raw-complete` actually
+  guarantees against what the full pipeline needs, and what that implies for words already marked
+  `raw-complete` but not carried further. Named test case: **`blindness` (id 183) should fall out of
+  that check as NOT complete** — it has a raw layer (16 `word_strong`, 277 `strong_verse`, §100) but
+  none of `operations-ingest`/`build-passages`/`verse-lexical` has run for it yet, so treating
+  `raw-complete` as "done" anywhere downstream would be wrong for it specifically, and possibly for
+  other words in the same state (not checked this session — the count of how many `raw-complete`
+  words never went further is itself part of fork (b), not answered here).
+
+Neither fork's actual work is started — both are pointers for a future session, recorded here and in
+the session log's own "Next" section (`iba/logs/SESSION-LOG-20260811-*.md`).
+
+**Files:** `iba/app/reports/archive/word-strong-cluster-mapping-20260810.{md,csv}` (moved, not
+edited). No code/config/data change in this entry beyond the file move — §101 is a correction +
+closing record, not a new fix.
