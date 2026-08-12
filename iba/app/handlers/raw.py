@@ -347,6 +347,23 @@ def validate(ctx: Ctx) -> Outcome:
     return ok("validation PASSED — parse-check + no-null recorded", parse_check="pass")
 
 
+# ── reconcile (cluster-assign every one of the word's own codes, ordinal 7) ───────────────────
+# 2026-08-12, backfill-cluster-triage-plan-v3 point (c): "new-word must complete the entire
+# process up to the build/update of the lexical for each verse for qualifying strongs." Runs LAST
+# in the new-word chain (after raw.validate) so every code already has its verses/spans validated
+# before classification is attempted. Absorbs what the `receive` rebuild (BUILD.md sec98/99) was
+# scoped to wire in — `strongreconcile.reconcile()` already owns the full classify/promote cascade,
+# this step is just "call it once per this word's own codes."
+def reconcile(ctx: Ctx) -> Outcome:
+    from ..lib import strongreconcile
+    tallies: dict[str, int] = {}
+    for code in _strongs_for_word(ctx):
+        r = strongreconcile.reconcile(ctx, code)
+        tallies[r["status"]] = tallies.get(r["status"], 0) + 1
+    parts = ", ".join(f"{k}: {v}" for k, v in sorted(tallies.items()))
+    return ok(f"{len(_strongs_for_word(ctx))} strong(s) cluster-reconciled — {parts}", **tallies)
+
+
 # ── backfill (book/range; meaning ONLY, no verses) ────────────────────────────────────────────
 # 2026-07-25, added same day as the lexicon-parsed layer. Researcher's finding, working from the
 # verse:span:meaning report (tools/build_verse_span_meaning_extract.py): a "(not yet registered)"
@@ -399,7 +416,8 @@ def backfill_meaning_for(ctx: Ctx, book: str, lo_ch: int, hi_ch: int,
         return {"distinct_codes": len(codes), "missing_before": 0,
                 "strong": 0, "sense": 0, "tree": 0, "lexicon": 0, "skipped": 0, "no_vocab": 0,
                 "strong_meaning_parsed": 0, "strong_lsj_parsed": 0, "strong_mounce_parsed": 0,
-                "strong_related": 0, "strongs_checked": 0, "none_related": 0, "errors": 0}
+                "strong_related": 0, "strongs_checked": 0, "none_related": 0, "errors": 0,
+                "reconcile_tallies": {}}
 
     ctx.step.up()  # StepUnavailable propagates — caller decides how to report it
 
@@ -415,8 +433,18 @@ def backfill_meaning_for(ctx: Ctx, book: str, lo_ch: int, hi_ch: int,
     parsed_counts = rebuild_parsed_tables(ctx)
     related_counts = fetch_related_for(ctx, missing, clear_first=False)
 
+    # cluster-assign the newly-backfilled codes (2026-08-12, backfill-cluster-triage-plan-v3):
+    # this is scenario (b) of "when do new strongs surface" — a code created here has no later
+    # per-word chain to reconcile it in (backfill_meaning_for is book-scoped, not word-scoped), so
+    # reconcile() runs inline, right here, the only point this code will ever pass through.
+    from ..lib import strongreconcile
+    reconcile_tallies: dict[str, int] = {}
+    for code in missing:
+        r = strongreconcile.reconcile(ctx, code)
+        reconcile_tallies[r["status"]] = reconcile_tallies.get(r["status"], 0) + 1
+
     return {"distinct_codes": len(codes), "missing_before": len(missing), **c,
-           **parsed_counts, **related_counts}
+           **parsed_counts, **related_counts, "reconcile_tallies": reconcile_tallies}
 
 
 def backfill_meaning(ctx: Ctx) -> Outcome:
@@ -441,11 +469,13 @@ def backfill_meaning(ctx: Ctx) -> Outcome:
         return ok(f"{book} {range_spec or '(whole book)'}: every span's strong already has a "
                  f"strong row — nothing to backfill", checked=result["distinct_codes"], missing=0)
 
+    tallies = ", ".join(f"{k}: {v}" for k, v in sorted(result["reconcile_tallies"].items()))
     return ok(f"{book} {range_spec or '(whole book)'}: {result['distinct_codes']} distinct strong(s) "
              f"referenced, {result['missing_before']} were unregistered — pulled meaning (not "
              f"verses) for {result['strong']} ({result['no_vocab']} returned no vocab from STEP); "
              f"parsed layer rebuilt ({result['strong_meaning_parsed']} meaning / "
              f"{result['strong_lsj_parsed']} lsj / {result['strong_mounce_parsed']} mounce rows); "
              f"relatedNos fetched for the {result['missing_before']} newly-registered strong(s) "
-             f"({result['strong_related']} related row(s), {result['errors']} fetch error(s)).",
+             f"({result['strong_related']} related row(s), {result['errors']} fetch error(s)); "
+             f"cluster-reconciled ({tallies or 'nothing to reconcile'}).",
              **result)

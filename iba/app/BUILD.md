@@ -6464,3 +6464,180 @@ left NULL/0 (the source file carries no per-move confidence, unlike §105's allo
 **Files:** `iba/app/migration/apply_prior_reassignments_v1_1_20260812.py` (new). No schema/config
 change (columns already added in §105). Data change: `cluster_strong` — 218 rows soft-deleted,
 203 inserted.
+
+## 107. Cluster-assignment made an app module, not a one-off — `strong.reconcile()`, `cluster-assign` work package, wired into both strong-creation paths (2026-08-12, same session)
+
+**Trigger.** Researcher review of the §103–106 work (a bootstrap-and-migrate-scripts sequence)
+found it framed as a one-off corrective, not a repeatable process — "this corrective action actually
+spans several app module fixes as well as include the establishment of a new app module." Full
+design trail: `iba/app/reports/backfill-cluster-triage-plan-v2/v3-20260812.md` (architecture, the
+researcher's own Strong Expectations Table, Q2.4.1/Q2.4.2 answers) and `cluster-assign-build-spec-
+20260812.md` (the executable build order + running progress log). Rows 6/7/9 of the researcher's
+expectations table (meaning/parse tables restricted for `backfill`) were drafted, then **reverted
+same day** — `backfill` keeps full parse depth, matching what `detail_one()`/`lexicon.parse` already
+do unconditionally; no behaviour change needed there.
+
+**Traced "when do new strongs surface" from the code, not assumed** (the researcher's own question):
+(a) `new-word` → `raw.detail` → `detail_one(origin="word")`, confirmed. (b) `verse-lexical` build →
+`handlers/lexical.py:build()` auto-calls `raw.backfill_meaning_for()` → `detail_one(origin="backfill")`
+— confirmed live in code, this is the real, working mechanism behind "backfill created from lexical
+discovery." (c), as posed ("verse-lexical discovers a backfill strong should have full meaning") —
+**does not exist**: once a `strong` row exists at any completeness level, nothing re-examines it.
+That absence is what this build fills.
+
+**New code:**
+- `lib/clusterassign.py` — the mechanical (HIGH-confidence-only) precedent matcher, P1/P2 from the
+  cluster-allocation session's own reusable method (`wa-global-cluster-alloc-sessionlog-v1_0-
+  20260811.md` §4) — exact gloss match against existing `cluster_strong` labels or `cluster.gloss`'s
+  worked-example list. Config-driven (`cluster.assign.exclude_flag_gloss_from_voting`), reuses the
+  session's own named pitfalls (FLAG's gloss list excluded from voting; conflict = not a HIGH match).
+- `lib/strongreconcile.py` — `reconcile(ctx, code)`, the single-strong handler the researcher asked
+  for: classify → Q2.4.1 exception check → promote-or-leave. **Never escalates itself** — traced
+  `run.py`'s dispatcher first and confirmed only a top-level handler's returned `Outcome` reaches
+  `escalation`; a nested library call can't. Design simplification made from that: all exception
+  reporting concentrates in `cluster.validate` (below) rather than threading escalation through every
+  call site — this also gives the researcher's "one-time clearing vs. standing watch" split for free,
+  with no separate code path: the *first* `cluster.validate` run reports the whole historical
+  backlog; once resolved, a later finding is visibly new.
+- `handlers/cluster.py` — `cluster.assign` (DB-wide sweep, calls `reconcile()` per strong) and
+  `cluster.validate` (read-only coverage + the two named exception reports, same shape as
+  `lexicon.validate` — escalates once if findings exist, Approve/Reject/Revise).
+- `ps/Cluster-Assign.ps1` — `-Step Assign|Validate`, same shape as `Lexicon-Parse.ps1`.
+
+**Wiring (point c — "new-word must complete through verse_lexical for qualifying strongs"):**
+`handlers/raw.py:backfill_meaning_for()` now calls `reconcile()` for each newly-backfilled code
+inline (its only pass-through point, since it is book-scoped, not word-scoped). `new-word` gained
+ordinal 7, `strong.reconcile` (`handlers/raw.py:reconcile()`), looping the word's own codes through
+the same function — runs last, after `raw.validate`, so verses/spans are already validated first.
+This absorbs what the postponed `receive` rebuild (BUILD.md sec98/99) was scoped to wire in;
+`receive`'s rebuild remains the live end-to-end test of this wiring, per the researcher's own
+direction, not restarted here.
+
+**Promotion cascade** (Q2.4.2, confirmed in full by the researcher: always a real STEP fetch, never
+derived from existing spans) reuses `raw.py:verses_one()` and `lib.lexical.build_for_verse_ids()`
+UNCHANGED — verse fetch first, origin flip only after it succeeds (so a STEP failure leaves a code
+untouched, not half-promoted), then `verse_lexical` extended to whatever verses the fetch surfaced.
+
+**Q2.4.1 exceptions, built as flag-only — never silently resolved.** Exception 1: a non-T2 cluster
+assignment with no `word_registry` link. Exception 2: a `backfill` code whose base-lemma sibling
+(`sibling_variant_codes()`, the codebase's own existing convention — not `strong_related`) is already
+`word`-origin and/or already clustered. `reconcile()` declines to promote on either, leaving the code
+exactly as found; `cluster.validate` is what surfaces it.
+
+**Config, self-approved per the researcher's standing 2026-08-12 authorisation for this build**
+("I do not have to approve individual configs for this development... I will look at it separately
+to evaluate everything as a whole once it is built") — 16 `configmaint.propose` rows, every one via
+the sanctioned path (no bootstrap-direct bypass, since `cluster`/`cluster_strong` already existed as
+tables): `cfg_enum` (+1, `config_module`=`cluster` — needed before any `cfg_setting` could declare
+that module); `cfg_write_grant` (+2: `strong.reconcile`→`strong`, `cluster.assign`→`cluster_strong`);
+`cfg_work_package` (+1, `cluster-assign`); `cfg_step` (+3: `cluster.assign`, `cluster.validate`,
+and `new-word`'s new ordinal-7 `strong.reconcile`); `cfg_on_fail` (+3, mirrors `lexicon.validate`'s
+three conditions exactly); `cfg_setting` (+2); `cfg_report` (+1); `cfg_report_section` (+3). One
+proposal round-tripped on a real coherence-check catch: a `cfg_setting.value` for a path string must
+itself be JSON-quoted (`cfg.setting()` always `json.loads()`s the stored value) — caught by
+`_check_proposal`, not silently wrong, fixed and reapplied.
+
+**Tested forwards and backward, live, this session — not just unit-level.**
+- `cluster.validate` (first-ever run): **10,972/15,293 strongs unclassified**; **0** backfill-origin
+  non-T2-with-a-word not yet promoted; **428** exception (no word); **481** exception (sibling
+  conflict). Escalated cleanly (`RUN-20260812_155001_294-CLUSTER-ASSIGN`), report written to
+  `iba/app/reports/cluster-assign-v1-20260812.md`. **Left open for the researcher, not self-
+  answered** — a data-content judgement call, outside the config pre-authorisation's scope.
+- `cluster.assign` (first-ever run): 15,293 checked, **1,410** new mechanical HIGH-precedent
+  classifications written (`cluster_strong` 4,398 → 5,808), **0 promotions**. Traced why, not left
+  unexplained: every promotion candidate checked hit the no-word exception first — `backfill`-origin
+  codes structurally almost never have their own `word_registry` link (that is what "backfill"
+  means), so exception 1 is turning out to be the dominant case for a non-T2 `backfill` code, not a
+  rare edge case as the name might suggest. **Flagged to the researcher as a real, scale-relevant
+  finding**, not resolved unilaterally.
+- Backward check: `blindness` (`word_registry` 183) and its `G6507`/`G7167` (both already
+  `origin='word'` from onboarding, correctly `t2-confirmed`, untouched) unaffected; the six debated
+  books' `hib` count unchanged (21, exact); `word_registry`/`strong` row counts and `origin='word'`
+  count (3,456) unchanged — confirms zero destructive side effects from the first sweep.
+
+**Left open, not silently dropped:**
+- The "no-word" exception's real scale (above) — needs the researcher's direction on the ownership
+  question this reopens (does a cluster-only code get a synthetic/grouping word, stay unpromoted
+  indefinitely, or something else) before any further promotion can proceed at scale.
+- `cluster.validate`'s first escalation (`RUN-20260812_155001_294-CLUSTER-ASSIGN`) — awaiting
+  researcher decision.
+- Row 20 (verse-triggered T2→cluster reclassification) — sized and a detection approach prototyped
+  (`backfill-cluster-triage-plan-v3-20260812.md` addendum) but not built; researcher was not sure it
+  was worth building yet.
+- The old dormant `handlers/raw.py:related()`/`lexical()` functions (BUILD.md sec98/99, left inert
+  after the `receive` rollback) are now functionally superseded by `strongreconcile.reconcile()`'s
+  own cascade — left in place, not deleted, same "harmless to leave" judgement as sec99's own note.
+
+**Files:** `iba/app/lib/clusterassign.py` (new), `iba/app/lib/strongreconcile.py` (new),
+`iba/app/handlers/cluster.py` (new), `iba/app/ps/Cluster-Assign.ps1` (new). Modified:
+`iba/app/handlers/raw.py` (`backfill_meaning_for()` +reconcile call; new `reconcile()` function/step).
+Config: 16 rows via `configmaint.propose` (listed above). Data: `cluster_strong` +1,410 rows
+(`source='auto-precedent'`), 0 `strong.origin` changes. Report output:
+`iba/app/reports/cluster-assign-v1-20260812.md`. Planning/progress:
+`iba/app/reports/backfill-cluster-triage-plan-v2-20260812.md`,
+`iba/app/reports/backfill-cluster-triage-plan-v3-20260812.md`,
+`iba/app/reports/cluster-assign-build-spec-20260812.md`.
+
+## 108. §107 correction — the "no-word" rule was too broad; T2/T3 exempted, first real promotions land (2026-08-12, same session)
+
+**Trigger.** Reviewing §107's "0 promotions, 100% blocked by no-word" finding, researcher corrected
+the rule itself, not just the data: *"the whole purpose of having a word, is to generate the verse,
+which we have"* — a code discovered afterward in an already-generated verse doesn't need its own
+dedicated word just because it turned out to be relevant. `T3` specifically is *"by its nature ...
+not word specific"* — a `T3` code spans many verses pulled by many different original words, so
+requiring correlation with exactly one of them was backwards. Real M-cluster/FLAG classifications
+still need a word; `T2`/`T3` don't.
+
+**Fixed, config-driven, not hard-coded** — `strongreconcile._word_optional_clusters(ctx)` reads
+`cfg_setting cluster.assign.word_optional_clusters` (default `["T2","T3"]`, self-approved via
+`configmaint.propose`, escalation 633). `reconcile()`'s exception-1 gate now only fires when a
+strong's classification includes something outside that set with no `word_strong` link.
+`handlers/cluster.py:validate()`'s `no_word`/`not_promoted` queries corrected to match exactly
+(computed in Python against the same helper, not a second hand-written SQL rule).
+
+**Re-ran both steps clean.** `cluster.assign`: 15,293 checked — **313 promoted** (first real
+promotions since the module was built), exception 782 (down from 1,095 — the T3 share exempted),
+already-active 2,705, t2-confirmed 1,931, unclassified 9,562. Backward check: `strong.origin='word'`
+count now exactly 3,769 = 3,456 + 313 (reconciles exactly); `hib` count unchanged (21); `blindness`
+unaffected.
+
+**Files:** `iba/app/lib/strongreconcile.py` (`_word_optional_clusters()` + exception-1 gate),
+`iba/app/handlers/cluster.py` (`validate()` query correction). Config: `cfg_setting`
+`cluster.assign.word_optional_clusters` (+1 row). Data: `strong.origin` — 313 rows `backfill`→`word`;
+`strong_verse`/`span`/`verse_lexical` extended for those 313 codes' newly-fetched verses.
+
+## 109. `report.cluster` extended — a comprehensive cluster summary (every origin, span/lexical/verse coverage, stem-grouped top meanings) (2026-08-12, same session)
+
+**Trigger.** Researcher request, direct follow-on from §107/108's cluster-assign work: "the cluster
+summary report. by cluster, count of strongs, top 10 meanings by cluster (optimised so related
+words are together e.g grace, gracious, graciously etc), number of spans, number of lexicals,
+number of verses."
+
+**Built as a new section on the existing `report.cluster`**, not a parallel report — reuses the
+already-registered work package/step. New section `cluster_summary`: per cluster, `strongs`/
+`spans`/`lexicals`/`verses` counts (a single query joining `cluster_strong` to `verse_lexical` —
+one row per (span, code) already, so span/lexical/verse counts fall out of one `GROUP BY` with no
+`span.strong_variant` text-parsing needed), plus the top 10 meanings, English-gloss-stemmed so
+derivational family members group as one line (`lib/clusterreport.py:_stem_key()` — one-pass
+longest-suffix strip, then a short config-driven prefix as the final grouping key; deliberately not
+a real stemmer — a report-legibility aid, not a correctness-critical mechanism). Verified against
+the researcher's own example (`grace`/`gracious`/`graciously` → one group, confirmed) and spot-
+checked across the live report: `M01 Fear` groups `fear/fearful/fearing/to fear/to fear: revere`
+correctly; `M14 Deceit` groups all 20 `deceit`-family variants together; similarly clean for
+`M05 Love`, `M15 Wisdom`, `M23 Strength`. One known, accepted limitation: naive suffix-stripping
+mishandles a trailing silent-e drop (`love`/`loving` land in different groups) — flagged, not
+silently passed off as more precise than it is.
+
+**Scope note, deliberate:** unlike `report.cluster`'s three original sections (word-origin only),
+`cluster_summary` covers **every origin** — the whole point of §107/108's work was to stop treating
+`backfill`-origin cluster membership as out of scope.
+
+**Config, self-approved per the same standing authorisation** — 7 `configmaint.propose` rows:
+`cfg_setting` ×3 (`report.cluster_stem_suffixes`, `report.cluster_stem_prefix_len`,
+`report.cluster_top_meanings`); `cfg_report_section` ×4 — the new `cluster_summary` section, **plus
+a retrofit of the report's original 3 sections**, found unregistered while adding this one
+(`cfg_report_section` had zero rows for `report.cluster` at all — `reportkit.render_scaffold()`'s
+"extra_keys" fallback had been silently carrying them, un-config-governed, since §104).
+
+**Files:** `iba/app/lib/clusterreport.py` (`_stem_key()` + `cluster_summary` section). Config: 7 rows
+via `configmaint.propose`. Report output: `iba/app/reports/cluster-v2-20260812.md`.

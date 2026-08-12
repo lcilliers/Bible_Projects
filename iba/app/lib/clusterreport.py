@@ -15,8 +15,16 @@ reported as an explicit count, never included in the gap list.
 from __future__ import annotations
 
 import pathlib
+import re
 
 from . import reportkit
+
+
+_STEM_SUFFIXES_DEFAULT = ["ically", "iously", "ously", "ingly", "edness", "fulness", "tion",
+                          "sion", "ness", "ings", "ing", "edly", "ed", "ly", "ies", "es", "s",
+                          "able", "ible", "tive", "ive", "ful", "ous", "al", "ic"]
+_STEM_PREFIX_LEN_DEFAULT = 4
+_STEM_TOP_N_DEFAULT = 10
 
 
 def _tbl(headers, rows):
@@ -24,6 +32,24 @@ def _tbl(headers, rows):
     for r in rows:
         L.append("| " + " | ".join(str(c) if c is not None else "" for c in r) + " |")
     return L
+
+
+# ── gloss stemming (grouping aid for "top meanings by cluster") ────────────────────────────────
+# One-pass longest-suffix strip, then a short config-driven prefix as the group key — deliberately
+# not a real stemmer (Porter etc.): this is a REPORT grouping aid for a human to read, not a
+# correctness-critical mechanism, so a simple heuristic that visibly does the job (grace/gracious/
+# graciously -> one group) beats a heavier dependency. Both the suffix list and prefix length are
+# `cfg_setting` (module `report`), not hard-coded — governance.rules_must_be_config_driven.
+def _stem_key(gloss: str, suffixes: list[str], prefix_len: int) -> str:
+    w = re.sub(r"^to\s+", "", (gloss or "").strip().lower())   # verb-infinitive marker, common in stepGloss
+    w = re.sub(r"[^a-z]", "", w)
+    if not w:
+        return ""
+    for suf in sorted(suffixes, key=len, reverse=True):        # longest match first (ously before ly)
+        if w.endswith(suf) and len(w) - len(suf) >= 3:
+            w = w[: -len(suf)]
+            break
+    return w[:prefix_len] if len(w) > prefix_len else w
 
 
 def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
@@ -82,6 +108,57 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         + _tbl(["strongNumber", "stepGloss", "stepTransliteration", "language", "count"],
               [[r["strongNumber"], r["stepGloss"], r["stepTransliteration"], r["language"],
                 r["count"]] for r in gap]))
+
+    # ── cluster summary — every origin (not word-only, unlike the sections above): strong/span/
+    # lexical/verse counts per cluster, + top-10 meanings grouped by a rough English-gloss stem so
+    # derivational family members (grace/gracious/graciously) count as one line, not three
+    # (2026-08-12, researcher request, same session as the cluster-assign module). `verse_lexical`
+    # already carries one row per (span, code) — joining it directly gives span/lexical/verse
+    # counts without re-parsing `span.strong_variant` text.
+    suffixes = cfg.setting("report.cluster_stem_suffixes", _STEM_SUFFIXES_DEFAULT)
+    prefix_len = int(cfg.setting("report.cluster_stem_prefix_len", _STEM_PREFIX_LEN_DEFAULT))
+    top_n = int(cfg.setting("report.cluster_top_meanings", _STEM_TOP_N_DEFAULT))
+
+    counts = q(
+        "SELECT cs.cluster_code, cl.short_name, COUNT(DISTINCT cs.strong) strong_n, "
+        "COUNT(DISTINCT vl.span_id) span_n, COUNT(vl.id) lexical_n, "
+        "COUNT(DISTINCT vl.verse_id) verse_n FROM cluster_strong cs "
+        "JOIN cluster cl ON cl.cluster_code=cs.cluster_code AND cl.deleted=0 "
+        "LEFT JOIN verse_lexical vl ON vl.strong=cs.strong AND vl.deleted=0 "
+        "WHERE cs.deleted=0 GROUP BY cs.cluster_code ORDER BY strong_n DESC")
+
+    summary_lines = [
+        "**Every cluster, every origin** (unlike the word-origin-only sections above) — strong "
+        "count, span/lexical/verse coverage (via `verse_lexical`), and the top "
+        f"{top_n} meanings per cluster, English-gloss-stemmed so derivational family members "
+        "(grace/gracious/graciously) group as one line rather than compete separately. `freq` = "
+        "summed STEP `count` across the group's member codes.", ""]
+    summary_lines += _tbl(
+        ["cluster_code", "short_name", "strongs", "spans", "lexicals", "verses"],
+        [[r["cluster_code"], r["short_name"], r["strong_n"], r["span_n"], r["lexical_n"],
+          r["verse_n"]] for r in counts])
+    summary_lines.append("")
+
+    for r in counts:
+        members = q("SELECT DISTINCT s.strongNumber, s.stepGloss, s.count FROM cluster_strong cs "
+                   "JOIN strong s ON s.strongNumber=cs.strong AND s.deleted=0 "
+                   "WHERE cs.deleted=0 AND cs.cluster_code=?", (r["cluster_code"],))
+        groups: dict[str, dict] = {}
+        for m in members:
+            key = _stem_key(m["stepGloss"], suffixes, prefix_len) or m["strongNumber"]
+            g = groups.setdefault(key, {"glosses": set(), "codes": [], "freq": 0})
+            g["glosses"].add((m["stepGloss"] or "").strip())
+            g["codes"].append(m["strongNumber"])
+            g["freq"] += int(m["count"]) if m["count"] and str(m["count"]).isdigit() else 0
+        top = sorted(groups.values(), key=lambda g: -g["freq"])[:top_n]
+        summary_lines.append(f"### {r['cluster_code']} {r['short_name']} — top {len(top)} meanings")
+        summary_lines.append("")
+        summary_lines += _tbl(
+            ["meanings (stem-grouped)", "codes", "freq"],
+            [[", ".join(sorted(g["glosses"])), ", ".join(sorted(g["codes"])), g["freq"]]
+             for g in top])
+        summary_lines.append("")
+    sections["cluster_summary"] = summary_lines
 
     L = reportkit.render_scaffold(conn, "report.cluster", sections, intro=intro)
 
