@@ -1,0 +1,656 @@
+{
+ "meta": {
+  "report": "Generic-verb operations in IB clusters — disposition under edge rule",
+  "date": "2026-08-11",
+  "author": "le Roux Cilliers",
+  "version": "v1_0",
+  "rule": "direct relation→STAY (keep in cluster, no T3); bare/applies-to-many→T3; sense ties elsewhere→RECLUSTER? (confirm); heuristic via cluster profiles + overrides, researcher confirms",
+  "counts": {
+   "STAY": 39,
+   "T3": 24,
+   "RECLUSTER?": 8
+  },
+  "note": "RECLUSTER? and T3 rows change prior/task allocations → confirm before CC applies. STAY = no change."
+ },
+ "items": [
+  {
+   "strongNumber": "G0014",
+   "stepGloss": "to do good",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M05"
+  },
+  {
+   "strongNumber": "G0015",
+   "stepGloss": "to do good",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M05"
+  },
+  {
+   "strongNumber": "G0577",
+   "stepGloss": "to throw away",
+   "language": "Greek",
+   "current_cluster": "M07",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M07"
+  },
+  {
+   "strongNumber": "G1303",
+   "stepGloss": "to make a covenant",
+   "language": "Greek",
+   "current_cluster": "M21",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "relation to M21"
+  },
+  {
+   "strongNumber": "G1433",
+   "stepGloss": "to give",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "prior",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "G1517",
+   "stepGloss": "to make peace",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "prior",
+   "disposition": "RECLUSTER?",
+   "reason": "ties to M33 (Peace) not M05"
+  },
+  {
+   "strongNumber": "G2026",
+   "stepGloss": "to build up/upon",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M05"
+  },
+  {
+   "strongNumber": "G2346",
+   "stepGloss": "to press on",
+   "language": "Greek",
+   "current_cluster": "M03",
+   "src": "prior",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "G2554",
+   "stepGloss": "to do evil/harm",
+   "language": "Greek",
+   "current_cluster": "M27",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M27"
+  },
+  {
+   "strongNumber": "G2875",
+   "stepGloss": "to cut/mourn",
+   "language": "Greek",
+   "current_cluster": "M03",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M03"
+  },
+  {
+   "strongNumber": "G3499",
+   "stepGloss": "to put to death",
+   "language": "Greek",
+   "current_cluster": "M24",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M24"
+  },
+  {
+   "strongNumber": "G3863",
+   "stepGloss": "to make envious",
+   "language": "Greek",
+   "current_cluster": "M28",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M28"
+  },
+  {
+   "strongNumber": "G4350",
+   "stepGloss": "to strike",
+   "language": "Greek",
+   "current_cluster": "M35",
+   "src": "prior",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "G4679",
+   "stepGloss": "to make wise",
+   "language": "Greek",
+   "current_cluster": "M15",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M15"
+  },
+  {
+   "strongNumber": "G4729",
+   "stepGloss": "to press upon",
+   "language": "Greek",
+   "current_cluster": "M03",
+   "src": "prior",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "G5342",
+   "stepGloss": "to bear/lead",
+   "language": "Greek",
+   "current_cluster": "M23",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M23"
+  },
+  {
+   "strongNumber": "G5483",
+   "stepGloss": "to give grace",
+   "language": "Greek",
+   "current_cluster": "M39",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M39"
+  },
+  {
+   "strongNumber": "G7143",
+   "stepGloss": "to tear off flesh",
+   "language": "Greek",
+   "current_cluster": "M47",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M47"
+  },
+  {
+   "strongNumber": "G7798",
+   "stepGloss": "to take heart",
+   "language": "Greek",
+   "current_cluster": "M47",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M47"
+  },
+  {
+   "strongNumber": "H1214I",
+   "stepGloss": "to cut off: to gain",
+   "language": "Hebrew",
+   "current_cluster": "M29",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M29"
+  },
+  {
+   "strongNumber": "H1342",
+   "stepGloss": "to rise up",
+   "language": "Hebrew",
+   "current_cluster": "M08",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M08"
+  },
+  {
+   "strongNumber": "H3034",
+   "stepGloss": "to give thanks",
+   "language": "Hebrew",
+   "current_cluster": "M22",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M22"
+  },
+  {
+   "strongNumber": "H3772H",
+   "stepGloss": "to cut: make [covenant]",
+   "language": "Hebrew",
+   "current_cluster": "M44",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "relation to M44"
+  },
+  {
+   "strongNumber": "H5307K",
+   "stepGloss": "to fall: angry",
+   "language": "Hebrew",
+   "current_cluster": "M02",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M02"
+  },
+  {
+   "strongNumber": "H5375O",
+   "stepGloss": "to lift: trust",
+   "language": "Hebrew",
+   "current_cluster": "M19",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M19"
+  },
+  {
+   "strongNumber": "H5414G",
+   "stepGloss": "to give: give",
+   "language": "Hebrew",
+   "current_cluster": "M12",
+   "src": "prior",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H5493G",
+   "stepGloss": "to turn aside: remove",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M30"
+  },
+  {
+   "strongNumber": "H5493H",
+   "stepGloss": "to turn aside: depart",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M30"
+  },
+  {
+   "strongNumber": "H5493I",
+   "stepGloss": "to turn aside: turn aside",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M30"
+  },
+  {
+   "strongNumber": "H5648",
+   "stepGloss": "to make",
+   "language": "Hebrew",
+   "current_cluster": "M36",
+   "src": "prior",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H7683",
+   "stepGloss": "to go astray",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M30"
+  },
+  {
+   "strongNumber": "H7896K",
+   "stepGloss": "to set: consider",
+   "language": "Hebrew",
+   "current_cluster": "M15",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M15"
+  },
+  {
+   "strongNumber": "H8582",
+   "stepGloss": "to go astray",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "prior",
+   "disposition": "STAY",
+   "reason": "direct relation to M30"
+  },
+  {
+   "strongNumber": "G0654",
+   "stepGloss": "to turn away",
+   "language": "Greek",
+   "current_cluster": "M30",
+   "src": "task",
+   "disposition": "RECLUSTER?",
+   "reason": "ties to M07 (Shame) not M30"
+  },
+  {
+   "strongNumber": "G1325",
+   "stepGloss": "to give",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "G2109",
+   "stepGloss": "to do good",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M05"
+  },
+  {
+   "strongNumber": "G2569",
+   "stepGloss": "to do good",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M05"
+  },
+  {
+   "strongNumber": "G2983",
+   "stepGloss": "to take",
+   "language": "Greek",
+   "current_cluster": "M04",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "G3718",
+   "stepGloss": "to cut straight",
+   "language": "Greek",
+   "current_cluster": "M13",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M13"
+  },
+  {
+   "strongNumber": "G4332",
+   "stepGloss": "to sit near/serve",
+   "language": "Greek",
+   "current_cluster": "M36",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M36"
+  },
+  {
+   "strongNumber": "G5159",
+   "stepGloss": "to put up with",
+   "language": "Greek",
+   "current_cluster": "M24",
+   "src": "task",
+   "disposition": "RECLUSTER?",
+   "reason": "ties to M05 (Love) not M24"
+  },
+  {
+   "strongNumber": "G6107",
+   "stepGloss": "to do good",
+   "language": "Greek",
+   "current_cluster": "M05",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M05"
+  },
+  {
+   "strongNumber": "G6396",
+   "stepGloss": "to cast shame",
+   "language": "Greek",
+   "current_cluster": "M07",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M07"
+  },
+  {
+   "strongNumber": "G7167",
+   "stepGloss": "to make blind",
+   "language": "Greek",
+   "current_cluster": "M24",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M24"
+  },
+  {
+   "strongNumber": "G7379",
+   "stepGloss": "to raise hope",
+   "language": "Greek",
+   "current_cluster": "M18",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M18"
+  },
+  {
+   "strongNumber": "G7899",
+   "stepGloss": "to strike with terror",
+   "language": "Greek",
+   "current_cluster": "M01",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M01"
+  },
+  {
+   "strongNumber": "H1319",
+   "stepGloss": "to bear tidings",
+   "language": "Hebrew",
+   "current_cluster": "M41",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M41"
+  },
+  {
+   "strongNumber": "H2095",
+   "stepGloss": "to take heed",
+   "language": "Hebrew",
+   "current_cluster": "M04",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "sense not tied to a single IB cluster"
+  },
+  {
+   "strongNumber": "H3051",
+   "stepGloss": "to give",
+   "language": "Hebrew",
+   "current_cluster": "M05",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H3052",
+   "stepGloss": "to give",
+   "language": "Hebrew",
+   "current_cluster": "M05",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H3947G",
+   "stepGloss": "to take: take",
+   "language": "Hebrew",
+   "current_cluster": "M04",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H5307G",
+   "stepGloss": "to fall: fall",
+   "language": "Hebrew",
+   "current_cluster": "M02",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H5375H",
+   "stepGloss": "to lift: bear",
+   "language": "Hebrew",
+   "current_cluster": "M19",
+   "src": "task",
+   "disposition": "RECLUSTER?",
+   "reason": "ties to M23 (Strength) not M19"
+  },
+  {
+   "strongNumber": "H5375I",
+   "stepGloss": "to lift: forgive",
+   "language": "Hebrew",
+   "current_cluster": "M19",
+   "src": "task",
+   "disposition": "RECLUSTER?",
+   "reason": "ties to M11 (Repentance) not M19"
+  },
+  {
+   "strongNumber": "H5375J",
+   "stepGloss": "to lift: guilt",
+   "language": "Hebrew",
+   "current_cluster": "M19",
+   "src": "task",
+   "disposition": "RECLUSTER?",
+   "reason": "ties to M10 (Sin) not M19"
+  },
+  {
+   "strongNumber": "H5375K",
+   "stepGloss": "to lift: aid",
+   "language": "Hebrew",
+   "current_cluster": "M19",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "sense not tied to a single IB cluster"
+  },
+  {
+   "strongNumber": "H5375P",
+   "stepGloss": "to lift: vow",
+   "language": "Hebrew",
+   "current_cluster": "M19",
+   "src": "task",
+   "disposition": "RECLUSTER?",
+   "reason": "ties to M21 (Prayer) not M19"
+  },
+  {
+   "strongNumber": "H5375Q",
+   "stepGloss": "to lift: kindness",
+   "language": "Hebrew",
+   "current_cluster": "M19",
+   "src": "task",
+   "disposition": "RECLUSTER?",
+   "reason": "ties to M05 (Love) not M19"
+  },
+  {
+   "strongNumber": "H5437G",
+   "stepGloss": "to turn: turn",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H5437H",
+   "stepGloss": "to turn: surround",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "sense not tied to a single IB cluster"
+  },
+  {
+   "strongNumber": "H5472",
+   "stepGloss": "to turn",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H5674D",
+   "stepGloss": "to pass: trespass",
+   "language": "Hebrew",
+   "current_cluster": "M10",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M10"
+  },
+  {
+   "strongNumber": "H5849A",
+   "stepGloss": "to surround",
+   "language": "Hebrew",
+   "current_cluster": "M21",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H6213H",
+   "stepGloss": "to make",
+   "language": "Hebrew",
+   "current_cluster": "M36",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H6437G",
+   "stepGloss": "to turn",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H6965B",
+   "stepGloss": "to arise: rise",
+   "language": "Hebrew",
+   "current_cluster": "M08",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M08"
+  },
+  {
+   "strongNumber": "H7489B",
+   "stepGloss": "to shatter",
+   "language": "Hebrew",
+   "current_cluster": "M27",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H7919B",
+   "stepGloss": "to cross hands",
+   "language": "Hebrew",
+   "current_cluster": "M15",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "sense not tied to a single IB cluster"
+  },
+  {
+   "strongNumber": "H7971G",
+   "stepGloss": "to send: depart",
+   "language": "Hebrew",
+   "current_cluster": "M30",
+   "src": "task",
+   "disposition": "STAY",
+   "reason": "direct relation to M30"
+  },
+  {
+   "strongNumber": "H7993",
+   "stepGloss": "to throw",
+   "language": "Hebrew",
+   "current_cluster": "M07",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  },
+  {
+   "strongNumber": "H7997A",
+   "stepGloss": "to take",
+   "language": "Hebrew",
+   "current_cluster": "M04",
+   "src": "task",
+   "disposition": "T3",
+   "reason": "bare generic verb → applies to many clusters"
+  }
+ ]
+}

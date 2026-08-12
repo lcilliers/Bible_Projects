@@ -20,8 +20,8 @@ from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import escalation as esc
 from ..lib import retention as retention_mod
-from ..lib import (registryreport, schemareport, seedreport, spanreport, strongreport,
-                   strongversereport, wordregistryspanreport)
+from ..lib import (clusterreport, registryreport, schemareport, seedreport, spanreport,
+                   strongreport, strongversereport, wordregistryspanreport)
 from ..lib import (lexical, passagedebatereport, passagetrack, versespanmeaningreport,
                    wholebookread)
 from ..lib.stepapi import StepUnavailable
@@ -271,4 +271,11 @@ def registry_report(ctx: Ctx) -> Outcome:
     path = pathlib.Path(ctx.cfg.setting("report.registry_path",
                                         "iba/app/reports/registry.md"))
     out = registryreport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
+def cluster_report(ctx: Ctx) -> Outcome:
+    path = pathlib.Path(ctx.cfg.setting("report.cluster_path",
+                                        "iba/app/reports/cluster.md"))
+    out = clusterreport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))

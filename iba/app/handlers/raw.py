@@ -117,7 +117,7 @@ def write_tree_rows(ctx: Ctx, lemma: str, strong_variant: str, tree: str, c: dic
         c["tree"] += 1
 
 
-def detail_one(ctx: Ctx, code: str, c: dict) -> None:
+def detail_one(ctx: Ctx, code: str, c: dict, origin: str = "word") -> None:
     """Fetch + write the meaning for ONE strong (call2). Reusable per-strong, so a single
     strong can be added to a word WITHOUT re-pulling the word's other strongs.
 
@@ -127,9 +127,26 @@ def detail_one(ctx: Ctx, code: str, c: dict) -> None:
     OTHER sibling's own (already correctly fetched) tree text was discarded — real data loss for
     genuine homonym collapses like H3581A/H3581B (BUILD.md sec19/sec24). Now keyed on the EXACT
     resolved code: a sibling only skips the write if ITS OWN (lemma_key, strong_variant) row
-    already exists, never because a different sibling's row does."""
+    already exists, never because a different sibling's row does.
+
+    `origin` ('word' | 'backfill', 2026-08-11, bootstrap_strong_origin_column_20260811.py):
+    stamped on the `strong` row at creation — 'word' from `detail()` (a registry word's own
+    onboarding), 'backfill' from `backfill_meaning_for()` (book-scoped completeness sweep,
+    independent of any word). STICKY on the already-exists path: a code that started as
+    'backfill' and is now being requested as 'word' (a real word legitimately claims it) gets
+    upgraded; never the reverse."""
     greek = ctx.cfg.setting("language.greek_prefix", "G")
-    if ctx.db.get("strong", strongNumber=code):
+    existing = ctx.db.get("strong", strongNumber=code)
+    if existing:
+        # NOTE: _write(..., upsert=True) is dedup-only (Db.upsert returns early on an existing
+        # key, it does not update it) — an upgrade needs a real UPDATE, done here directly with
+        # the same grant check _write would have applied.
+        if origin == "word" and existing["origin"] == "backfill":
+            if "strong" not in ctx.cfg.may_write("call2_getInfo"):
+                raise PermissionError(
+                    "write-grant violation: 'call2_getInfo' may not write 'strong'")
+            ctx.db.update("strong", {"strongNumber": code}, origin="word")
+            c["origin_upgraded"] = c.get("origin_upgraded", 0) + 1
         c["skipped"] += 1
         return
     v = (ctx.step.call2_getInfo(code).get("vocabInfos") or [None])[0]
@@ -142,7 +159,7 @@ def detail_one(ctx: Ctx, code: str, c: dict) -> None:
         "strongNumber": resolved, "accentedUnicode": v.get("accentedUnicode"),
         "stepGloss": v.get("stepGloss"), "stepTransliteration": v.get("stepTransliteration"),
         "language": "Greek" if resolved.startswith(greek) else "Hebrew",
-        "count": v.get("count"), "freqList": v.get("freqList"),
+        "count": v.get("count"), "freqList": v.get("freqList"), "origin": origin,
         "created_at": _now(), "deleted": 0}); c["strong"] += 1
     _write(ctx, "call2_getInfo", "strong_sense", {
         "strong": resolved, "head": head or v.get("stepGloss"),
@@ -159,7 +176,7 @@ def detail_one(ctx: Ctx, code: str, c: dict) -> None:
 def detail(ctx: Ctx) -> Outcome:
     c = {"strong": 0, "sense": 0, "tree": 0, "lexicon": 0, "skipped": 0, "no_vocab": 0}
     for code in _strongs_for_word(ctx):
-        detail_one(ctx, code, c)
+        detail_one(ctx, code, c, origin="word")
     if c["no_vocab"]:
         return fail("no-vocab", f"detail done; {c['no_vocab']} strong(s) returned no vocab", **c)
     return ok(f"detail: {c['strong']} strong, {c['sense']} sense, {c['tree']} tree, "
@@ -388,7 +405,7 @@ def backfill_meaning_for(ctx: Ctx, book: str, lo_ch: int, hi_ch: int,
 
     c = {"strong": 0, "sense": 0, "tree": 0, "lexicon": 0, "skipped": 0, "no_vocab": 0}
     for code in missing:
-        detail_one(ctx, code, c)
+        detail_one(ctx, code, c, origin="backfill")
 
     # keep the downstream layers in sync AS PART OF this method (researcher's 2026-07-25
     # instruction — a manual lexicon.parse re-run was missed once already after the first backfill

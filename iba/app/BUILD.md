@@ -6217,3 +6217,250 @@ the session log's own "Next" section (`iba/logs/SESSION-LOG-20260811-*.md`).
 **Files:** `iba/app/reports/archive/word-strong-cluster-mapping-20260810.{md,csv}` (moved, not
 edited). No code/config/data change in this entry beyond the file move — §101 is a correction +
 closing record, not a new fix.
+
+## 102. Morphless-span bug (sec97, reverted sec99) re-fixed and re-swept, this time re-derived and corpus-validated rather than trusted from the prior record (2026-08-11, new session, post power-failure recovery)
+
+**Trigger.** Researcher-approved recovery plan (power-failure-interrupted session, Fork (b) +
+Fork (a) merged) named this bug for inclusion in the same work package as the raw-data-integrity
+build, with the explicit instruction to establish ramifications before acting. Full history
+recovered from this file (sec §§ around 2026-07-25's span-grain fix, sec97, sec99) rather than
+assumed: found 2026-07-25 (823 verses/1,076 spans/5 codes, flagged, left unactioned); root-caused
+and fixed 2026-08-10 (sec97, 824/1,077/24); reverted the same day by the `receive` rollback
+(sec99), which explicitly named reapplying the fix as "the researcher's separate call, not
+bundled back in here." That call was made this session.
+
+**Not a blind re-apply — the prior fix's exact regex string was unrecoverable** (the rollback also
+erased the `cfg_change_detail`/escalation rows that would have recorded it; checked, both empty
+for this key). Re-derived from BUILD.md's own description ("morph group now optional") and
+**tested against the full live corpus before proposing anything** — this caught a real problem a
+naive re-implementation would have shipped: making the morph group bare-optional inside the old
+`[^>]*...[^>]*` wildcard structure hits a classic greedy-backtracking trap that silently drops the
+morph VALUE (not the span) on ~370,000 already-working tags, while still passing a shallow
+span-count check. Scanned every content-span tag corpus-wide first (`re.findall` over all 29,037
+active verses' stored `preview`) to enumerate the actual attribute shapes rather than guess: 4
+distinct shapes exist — `morph+strong` (370,172), `strong`-only (1,076), `var+morph+strong` (31,
+a textual-variant marker preceding morph), `var+strong` (1). Final regex models all four
+explicitly (no bare wildcard spanning the optional group):
+`<span(?: var='[^']*')?(?: morph='([^']*)')? strong='([^']*)'>([^<]*)</span>`. Verified against the
+full corpus before proposing: **0 morph-value regressions, 0 missing spans** vs. the old
+(unfixed) regex, and recovers exactly the historical 824 verses/1,077 spans/24 codes — the bug's
+scope had not grown since 08-10 despite `blindness` (sec100/101) being pulled in the interim under
+the still-broken regex; its verses simply don't intersect this shape.
+
+**Applied, both researcher-approved via `configmaint.propose` (escalations 599/600):**
+1. `cfg_setting step.span_html` → the corrected regex above.
+2. `cfg_write_grant` (`migration`→`span`) re-added — removed by the sec99 rollback along with the
+   fix it supported.
+3. `migration/backfill_morphless_span_fix_20260810.py` (unchanged from sec97 — confirmed by
+   reading it first that it live-rescans every active verse rather than replaying a stored
+   historical list, so it needed no changes to pick up anything added since 08-10) — dry-run
+   matched the pre-proposal analysis exactly (824/1,077); applied: 13,268 old `span` rows
+   soft-deleted, 14,345 inserted (net +1,077). Re-ran the dry-run immediately after: **0 verses
+   differ from a fresh parse.**
+
+**Debated-books cross-check — zero overlap, confirmed not assumed.** Cross-referenced the 824
+affected verses against the six completed debate books (Daniel, Jonah, Joel, Obadiah, Micah,
+Hosea — `project_iba_book_by_book_debate_phase`): **none of the 824 fall in any of them**
+(book-prefix codes sanity-checked against real verse counts first: Dan 341, Jonah 48, Joel 71,
+Obad 20, Mic 103, Hos 194 — a genuine zero, not a lookup miss). The completed HIB/phenomenon/
+operation work on those six books was not built on data missing because of this specific gap.
+Per standing researcher instruction, analytic work gets revisited regardless of this finding —
+this result just means this fix isn't what would trigger that revisit for these six books.
+
+**Not yet done, deliberately deferred:** `verse_lexical` for the 824 touched verses has not been
+rebuilt — spans changing doesn't propagate downstream automatically (no trigger mechanism exists
+yet; that's exactly the still-open row-6 gap in the raw-data-integrity plan). Scoped into that
+plan's build spec item 6, to run together with the rest of that phase, not as a standalone step
+here.
+
+**Files:** no code files changed (the sec97 migration script was reused as-is, verified suitable
+first). Config change: `cfg_setting.step.span_html` (regex, `configmaint.propose` esc. 599);
+`cfg_write_grant` +1 row (`migration`→`span`, esc. 600). Data change: `span` — 13,268 rows
+soft-deleted, 14,345 inserted (824 verses). No schema change.
+
+## 103. Cluster model adopted into IBA — two new tables, seeded from the old project (2026-08-11, same session, continuing the raw-data-integrity work)
+
+**Trigger.** Same recovered plan, stage b: researcher direction to adopt the old project's
+49-cluster taxonomy (M01–M46 + `FLAG` + `T2`) into IBA wholesale, superseding a bespoke-filter
+approach — `T2` becomes the landing zone for codes that should not be included in analysis. This
+resumes Fork (a) (sec101), merged into Fork (b)'s build.
+
+**Scope correction made mid-build, researcher-caught.** First pass scoped the cluster-assignment
+gap to Strong's codes currently linked via `word_strong` (~3,485) — wrong: cluster membership is
+a property of the Strong's code itself (matches the old DB's own `mti_terms.cluster_code`, keyed
+by Strong's number with no reference to word membership), not of the word↔strong relationship.
+Corrected to scope against IBA's full `strong` table (15,293 active rows) instead. Also: a
+`candidate_seed` cross-reference was floated to explain an unrelated observation (11,837 `strong`
+rows with no `word_strong` link, ever) and explicitly ruled out by the researcher — retired,
+not to be used for anything, including read-only diagnostics. Not chased further.
+
+**Schema, bootstrap-direct** (`migration/bootstrap_cluster_tables_20260811.py` — new tables, so
+`configmaint.propose` cannot reach it, same class of exception as `bootstrap_lexicon_parsed_layer.py`):
+- `cluster` (cluster_code PK, short_name, description, gloss, deleted) — 49 rows loaded from
+  `iba/app/reports/cluster-master-20260811.csv`. Only the taxonomy fields carried over; the old
+  table's own workflow-progress columns (bucket/status/source/version/last_updated_date/
+  char_structure) describe the *old* project's session state, not a property of the cluster
+  itself — not migrated.
+- `cluster_strong` (id, strong FK, cluster_code FK, source, created_at, deleted) — **no FK/
+  dependency on `word_strong`/`word_registry` at all**, deliberately, per the scope correction
+  above. `source` distinguishes provenance across future allocation passes without overwriting
+  rows in place.
+- `cfg_write_grant`: `migration`→`cluster`, `migration`→`cluster_strong`.
+
+**Seeded from a fresh live query against `bible_research.db`, not Fork (a)'s 17-day-old CSV
+checkpoint** (close but not exact — re-queried for accuracy): of IBA's 15,293 active `strong`
+rows, **2,709 have an old-system cluster match** (92 map to 2 clusters, none to more — 2,801
+`cluster_strong` rows total), **12,584 have none** — the real "outstanding" set for the
+still-to-be-designed LLM-assisted allocation pass (not built this entry).
+
+**Exports for researcher review** (`iba/app/reports/`): `cluster-list-20260811.csv` (49),
+`cluster-strong-index-20260811.csv` (2,801, joined with `strong.stepGloss`/`language` and
+`cluster.short_name`), `strong-without-cluster-20260811.csv` (12,584, joined with
+`stepGloss`/`stepTransliteration`/`language`/`count`).
+
+**Files:** `iba/app/migration/bootstrap_cluster_tables_20260811.py` (new). Config change:
+`cfg_table`/`cfg_column` ×2 tables (bootstrap-direct, not `configmaint.propose`); `cfg_write_grant`
++2 rows. Data change: `cluster` +49 rows; `cluster_strong` +2,801 rows. Schema change: 2 new
+tables. Report output: 3 CSVs listed above.
+
+## 104. `strong.origin` ('word' | 'backfill') — the real cluster-mapping scope; `report.cluster` built to replace an ad hoc script that bypassed the app's own reporting mechanism (2026-08-11, same session)
+
+**Trigger, two researcher findings in a row.** (a) The cluster CSVs in §103 were written by a raw
+ad hoc Python script straight to `iba/app/reports/`, never going through `reportkit`/
+`cfg_report_csv_table` at all — caught by the researcher, a real governance violation
+(`governance.rules_must_be_config_driven`), not a judgement call: I treated a genuine reporting
+need as a quick one-off and skipped checking for the config-governed mechanism first. (b) The
+researcher separately clarified that `strong` holds two fundamentally different kinds of row that
+§103's cluster-mapping work had been conflating: **'word'** — deliberately onboarded for a
+registry word (`raw.discover` → `word_strong` → `raw.detail`), must carry the full raw-data-
+integrity chain; **'backfill'** — onboarded by `raw.backfill_meaning`'s book-scoped completeness
+sweep (`handlers/raw.py:backfill_meaning_for()`, confirmed this session as the source of 11,835 of
+11,837 `strong` rows with no `word_strong` link, 99.98%), independent of any word, "effectively
+only used in the lexicals" (researcher's words) — never a cluster-mapping subject.
+
+**Schema, bootstrap-direct** (`migration/bootstrap_strong_origin_column_20260811.py` — adding a
+COLUMN to an existing table is DDL, same class of exception as `bootstrap_inactive_column.py`):
+`strong.origin` (TEXT NOT NULL DEFAULT 'word'). One-time backfill of the 15,293 pre-existing rows:
+'word' if the code has EVER had a `word_strong` row (active or soft-deleted — confirmed this
+session that 0 of the current no-link rows have a soft-deleted one either, so "ever" and
+"currently active" agree completely on live data), else 'backfill'. Result: **3,456 'word' ·
+11,837 'backfill'**.
+
+**Code change, so this stays correct going forward** (`handlers/raw.py:detail_one()` — confirmed
+via grep this is the ONLY place anything writes to `strong`): now takes an `origin` parameter
+(`detail()` passes `'word'`; `backfill_meaning_for()` passes `'backfill'`). 'word' is **sticky**:
+on the existing-row skip path, a code requested as `'word'` whose stored origin is `'backfill'`
+gets upgraded (a later word legitimately claims a code that started as book-backfill only) — never
+the reverse. **Caught and fixed my own bug while writing this**: the upgrade path first used
+`_write(..., upsert=True)`, but `Db.upsert()` is dedup-only (returns early on an existing key, it
+does not update it) — would have silently no-op'd. Fixed to call `ctx.db.update()` directly, with
+the same grant check `_write` would have applied.
+
+**Corrected the real cluster-mapping gap.** Rescoped to `origin='word'` only: of 3,456 word-origin
+strongs, **1,844 have a cluster assignment, 1,612 don't** — the real LLM-allocation target (not the
+12,584 figure from §103, which wrongly included every backfill-origin code). The 11,837
+backfill-origin strongs are permanently out of scope for cluster mapping, not "pending."
+
+**`report.cluster` built** (`lib/clusterreport.py`, `handlers/reports.py:cluster_report`,
+`ps/Cluster-Report.ps1`) — the properly config-governed replacement for §103's ad hoc script, same
+shape as `registryreport.py`/`strongreport.py`. Registered via `configmaint.propose` (escalations 608–614, 6 rows: `cfg_setting
+report.cluster_path`, `cfg_work_package cluster-report`, `cfg_step report.cluster`, `cfg_report
+report.cluster`, `cfg_report_csv_table` ×3 — `cluster` (full dump), `cluster_strong` (joined),
+`strong_without_cluster` (row_filter'd gap list, same synthetic-name pattern as `report.registry`'s
+`word_registry_strong_pairing`)). Ran end-to-end: wrote
+`cluster-v1-20260811.md` + 3 CSVs correctly into `iba/app/reports/export/`. §103's 3 ad hoc CSVs
+archived (moved, not deleted) to `iba/app/reports/archive/`, superseded.
+
+**Files:** `iba/app/migration/bootstrap_strong_origin_column_20260811.py` (new),
+`iba/app/lib/clusterreport.py` (new), `iba/app/ps/Cluster-Report.ps1` (new). Code change:
+`iba/app/handlers/raw.py` (`detail_one()` signature + origin-stamping/upgrade logic; `detail()`/
+`backfill_meaning_for()` call sites), `iba/app/handlers/reports.py` (+`cluster_report`, +import).
+Config change: `cfg_column` +1 row (bootstrap-direct); `cfg_setting`/`cfg_work_package`/`cfg_step`/
+`cfg_report`/`cfg_report_csv_table` ×3 — 6 rows total via `configmaint.propose`. Data change:
+`strong.origin` backfilled for all 15,293 rows. Schema change: 1 new column. Report output:
+`cluster.md` + 3 CSVs (`cluster.csv`, `cluster_strong.csv`, `strong_without_cluster.csv`).
+
+## 105. LLM-assisted cluster allocation processed — the 1,612-strong word-origin gap closed to zero; new cluster `T3` (Operations) added (2026-08-12)
+
+**Source.** Researcher ran the allocation round themselves (per `feedback_iba_phenomenon_set...`-
+style precedent — Claude AI, a separate chat, not this session), handed `report.cluster`'s own
+`cluster.csv`/`cluster_strong.csv`/`strong_without_cluster.csv` as the input package as discussed.
+Two output files, `iba/docs/cluster assignment process/`: `wa-global-t3-cluster-record-v1_0-
+20260811.json` (one new cluster) and `wa-global-cluster-alloc-final-v1_3-20260811.json` (1,612
+assignments — the exact `strong_without_cluster.csv` gap set).
+
+**Validated before writing anything, not trusted blind:**
+- Every assignment's `strongNumber` = exactly the exported gap-list set — 0 extra, 0 missing.
+- Every `cluster_code` used is either an existing live cluster or the new `T3` — 0 unknown codes.
+- `confidence` is a clean 3-value enum (high 519 / medium 519 / low 574) — 0 stray values.
+- The file's own `meta.counts_by_cluster` tally matches a fresh count of its `assignments` array
+  exactly — 0 mismatches (rules out silent corruption/truncation).
+- `review_flag=true` count (574) exactly equals the low-confidence count — internally consistent.
+- `stepGloss`/`stepTransliteration`/`language`/`count` on every one of the 1,612 rows matches the
+  live `strong` table exactly — 0 field-fidelity mismatches (not hallucinated/stale source data).
+- Zero duplicate `strongNumber` keys within the assignments array.
+
+**Schema extended first** (`migration/bootstrap_cluster_strong_evidence_columns_20260812.py`,
+bootstrap-direct — ALTER TABLE): `cluster_strong` gained `confidence`/`operation`/`alt_clusters`/
+`review_flag`/`rationale` — the source file's own schema design (its `meta.decisions.F3`), not
+discarded on write. NULL/0 for the existing 2,801 old-system-migration rows (no equivalent
+evidence to backfill).
+
+**Applied** (`migration/apply_cluster_alloc_v1_3_20260812.py`, dry-run confirmed then `--apply`):
+`T3` ("Operations" — "a strong considered as a human operation/movement, not tied to one
+inner-being cluster") inserted into `cluster`; all 1,612 assignments inserted into `cluster_strong`
+(`source='llm-allocation-v1_3-20260811'`). **Additions only** — every target strong had zero
+`cluster_strong` rows beforehand (confirmed: the source's own scope IS the gap list), so nothing
+existing was touched or overwritten.
+
+**Result: the word-origin cluster gap is now zero.** Re-ran the coverage check `report.cluster`
+itself uses: 0 of 3,456 word-origin strongs remain without a cluster assignment (was 1,612).
+`cluster` now has 50 rows (was 49). 574 of the new rows carry `review_flag=1` — flagged by the
+allocation pass itself as lower-confidence, not yet independently re-checked.
+
+**Left open, not silently dropped:** the source file's own `meta.prior_output_reference` names a
+third companion, `wa-global-prior-reassignments-v1_1`, not provided this pass — the researcher's
+instruction ("assign, or re-assign... for all active strongs") may mean that file's job is to
+revise some of the prior 2,801 old-system-migration assignments. Flagged to the researcher rather
+than assumed either way; not part of this entry.
+
+**Files:** `iba/app/migration/bootstrap_cluster_strong_evidence_columns_20260812.py` (new),
+`iba/app/migration/apply_cluster_alloc_v1_3_20260812.py` (new). Schema change: `cluster_strong` +5
+columns (bootstrap-direct). Data change: `cluster` +1 row (`T3`); `cluster_strong` +1,612 rows.
+No config change (data-table writes, `migration` writer, already-granted `cluster`/`cluster_strong`
+write-grants — no `configmaint.propose` needed, these aren't `cfg_*` tables).
+
+## 106. Prior-allocation reassignments applied — the third companion file, provided after being asked for (2026-08-12)
+
+**Source.** `wa-global-prior-reassignments-v1_1-20260811.json` — the file §105 flagged as
+referenced-but-not-provided. 218 `(strong, from_cluster) → to_cluster` moves, revising rows from
+the original 2,801 old-system-migration batch (not §105's additions). Its own note: "For CC to
+apply via patch after review (GR-PROC-004)" — confirms this file's shape is meant for direct
+processing, not further researcher curation first.
+
+**Validated before writing, same rigor as §105:** `meta.count` (218) matches the actual `moves`
+array length exactly; the per-`reason` tally (`T2/FLAG operation → T3`: 211, `generic operation →
+T3`: 6, `reclustered: make peace → Peace`: 1) matches `meta.breakdown` exactly; every
+`(strong, from_cluster)` genuinely exists as a live `cluster_strong` row — 0 missing (nothing
+stale, nothing hallucinated); every `to_cluster` is a known cluster including the `T3` §105 added —
+0 unknown; `stepGloss`/`language` on all 218 moves matches the live `strong` table — 0 mismatches.
+
+**One structural wrinkle, expected and handled, not a defect:** 15 `(strong, T3)` target pairs
+are duplicated *within the file itself* — exactly the multi-cluster case the file's own note
+names ("Multi-cluster strongs: only the T2/FLAG instance moves to T3; any M-cluster instance is
+untouched") — a strong holding both a `T2` row and a separate `FLAG` row both move to `T3`,
+which must collapse to ONE active row, not two.
+
+**Applied** (`migration/apply_prior_reassignments_v1_1_20260812.py`, dry-run confirmed then
+`--apply`), following the codebase's standing "supersede, never overwrite in place" convention
+(same shape as `verse_lexical`'s `write_readings_for_span`): each move's source row soft-deleted;
+a new target row inserted only if no live row for that exact `(strong, to_cluster)` pair already
+exists (handles both the 15 within-file duplicates and any cross-batch overlap with §105's own
+additions). Result: **218 rows soft-deleted, 203 new rows inserted, 15 deduped** — active
+`cluster_strong` now 4,398 (2,801 − 218 + 1,612 [§105] + 203 = 4,398, reconciles exactly).
+`rationale` on each new row carries the move's own `reason` text; `confidence`/`review_flag`
+left NULL/0 (the source file carries no per-move confidence, unlike §105's allocation pass).
+
+**Files:** `iba/app/migration/apply_prior_reassignments_v1_1_20260812.py` (new). No schema/config
+change (columns already added in §105). Data change: `cluster_strong` — 218 rows soft-deleted,
+203 inserted.

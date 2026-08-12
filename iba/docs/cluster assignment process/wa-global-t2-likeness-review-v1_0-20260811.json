@@ -1,0 +1,4087 @@
+{
+ "meta": {
+  "report": "T2 likeness grouping",
+  "date": "2026-08-11",
+  "author": "le Roux Cilliers",
+  "version": "v1_0",
+  "total": 542,
+  "tiers": {
+   "HIGH": 48,
+   "MEDIUM": 132,
+   "LOW": 362
+  },
+  "categories": {
+   "Particles / function / grammatical": 60,
+   "Proper names / places": 8,
+   "Deity / spiritual beings": 6,
+   "People / roles / occupations": 21,
+   "Place / geography / building": 5,
+   "Animals": 1,
+   "Plants / food": 14,
+   "Physical objects / materials": 17,
+   "Body / anatomy": 19,
+   "Number / quantity / measure": 8,
+   "Colour": 8,
+   "Time / temporal": 10,
+   "Space / direction / position": 7,
+   "Death / destruction": 8,
+   "Legal / covenantal / cultic / abstract": 12,
+   "State / condition (non-IB)": 172,
+   "Other / abstract (uncategorised)": 166
+  },
+  "ib_flagged_in_other": [
+   {
+    "strongNumber": "H7961",
+    "stepGloss": "at ease"
+   },
+   {
+    "strongNumber": "G1370",
+    "stepGloss": "dissension"
+   },
+   {
+    "strongNumber": "G1999",
+    "stepGloss": "insurrection"
+   },
+   {
+    "strongNumber": "G2143",
+    "stepGloss": "beauty"
+   },
+   {
+    "strongNumber": "G2239",
+    "stepGloss": "moral"
+   },
+   {
+    "strongNumber": "G2386",
+    "stepGloss": "healing"
+   },
+   {
+    "strongNumber": "G2392",
+    "stepGloss": "healing"
+   },
+   {
+    "strongNumber": "G2412",
+    "stepGloss": "reverent"
+   },
+   {
+    "strongNumber": "G2659",
+    "stepGloss": "stupor"
+   },
+   {
+    "strongNumber": "G3042",
+    "stepGloss": "hunger"
+   },
+   {
+    "strongNumber": "G3095",
+    "stepGloss": "magic"
+   },
+   {
+    "strongNumber": "G3835",
+    "stepGloss": "crafty"
+   },
+   {
+    "strongNumber": "G3859",
+    "stepGloss": "contention"
+   },
+   {
+    "strongNumber": "G5199",
+    "stepGloss": "healthy"
+   },
+   {
+    "strongNumber": "G6326",
+    "stepGloss": "courage"
+   },
+   {
+    "strongNumber": "G6493",
+    "stepGloss": "rejection"
+   },
+   {
+    "strongNumber": "G6507",
+    "stepGloss": "blindness"
+   },
+   {
+    "strongNumber": "G6882",
+    "stepGloss": "perverseness"
+   },
+   {
+    "strongNumber": "G8214",
+    "stepGloss": "distressing"
+   },
+   {
+    "strongNumber": "G8618",
+    "stepGloss": "comforting"
+   },
+   {
+    "strongNumber": "G8619",
+    "stepGloss": "a comforter"
+   },
+   {
+    "strongNumber": "H0280",
+    "stepGloss": "riddle"
+   },
+   {
+    "strongNumber": "H0391",
+    "stepGloss": "deceptive"
+   },
+   {
+    "strongNumber": "H0724",
+    "stepGloss": "health"
+   },
+   {
+    "strongNumber": "H1243",
+    "stepGloss": "seeking"
+   },
+   {
+    "strongNumber": "H1945",
+    "stepGloss": "woe!"
+   },
+   {
+    "strongNumber": "H2049",
+    "stepGloss": "mockery"
+   },
+   {
+    "strongNumber": "H2121",
+    "stepGloss": "raging"
+   },
+   {
+    "strongNumber": "H2433",
+    "stepGloss": "beauty"
+   },
+   {
+    "strongNumber": "H2714",
+    "stepGloss": "search"
+   },
+   {
+    "strongNumber": "H2896C",
+    "stepGloss": "welfare"
+   },
+   {
+    "strongNumber": "H3303",
+    "stepGloss": "beautiful"
+   },
+   {
+    "strongNumber": "H3586",
+    "stepGloss": "deceptive"
+   },
+   {
+    "strongNumber": "H3687",
+    "stepGloss": "stupidity"
+   },
+   {
+    "strongNumber": "H3934",
+    "stepGloss": "mocking"
+   },
+   {
+    "strongNumber": "H4065",
+    "stepGloss": "enticement"
+   },
+   {
+    "strongNumber": "H4079",
+    "stepGloss": "contention"
+   },
+   {
+    "strongNumber": "H4426",
+    "stepGloss": "mockery"
+   },
+   {
+    "strongNumber": "H4485",
+    "stepGloss": "mocking"
+   },
+   {
+    "strongNumber": "H4832",
+    "stepGloss": "healing"
+   },
+   {
+    "strongNumber": "H5173",
+    "stepGloss": "divination"
+   },
+   {
+    "strongNumber": "H5205",
+    "stepGloss": "solace"
+   },
+   {
+    "strongNumber": "H5575",
+    "stepGloss": "blindness"
+   },
+   {
+    "strongNumber": "H5788A",
+    "stepGloss": "blindness"
+   },
+   {
+    "strongNumber": "H5788B",
+    "stepGloss": "blindness"
+   },
+   {
+    "strongNumber": "H5892A",
+    "stepGloss": "excitement"
+   },
+   {
+    "strongNumber": "H5949",
+    "stepGloss": "wantonness"
+   },
+   {
+    "strongNumber": "H6771",
+    "stepGloss": "thirsty"
+   },
+   {
+    "strongNumber": "H7195",
+    "stepGloss": "conspiracy"
+   },
+   {
+    "strongNumber": "H7267",
+    "stepGloss": "turmoil"
+   },
+   {
+    "strongNumber": "H7309",
+    "stepGloss": "relief"
+   },
+   {
+    "strongNumber": "H7390",
+    "stepGloss": "tender"
+   },
+   {
+    "strongNumber": "H7391",
+    "stepGloss": "tenderness"
+   },
+   {
+    "strongNumber": "H7457",
+    "stepGloss": "hungry"
+   },
+   {
+    "strongNumber": "H7494",
+    "stepGloss": "quaking"
+   },
+   {
+    "strongNumber": "H7499",
+    "stepGloss": "remedy"
+   },
+   {
+    "strongNumber": "H7500",
+    "stepGloss": "healing"
+   },
+   {
+    "strongNumber": "H7648",
+    "stepGloss": "satiety"
+   },
+   {
+    "strongNumber": "H7649",
+    "stepGloss": "sated"
+   },
+   {
+    "strongNumber": "H7814",
+    "stepGloss": "laughter"
+   },
+   {
+    "strongNumber": "H7914",
+    "stepGloss": "craft"
+   },
+   {
+    "strongNumber": "H8216",
+    "stepGloss": "poverty"
+   },
+   {
+    "strongNumber": "H8585B",
+    "stepGloss": "healing"
+   },
+   {
+    "strongNumber": "H8644",
+    "stepGloss": "healing"
+   }
+  ]
+ },
+ "items": [
+  {
+   "strongNumber": "G0039H",
+   "stepGloss": "Most Holy Place",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G0235",
+   "stepGloss": "but",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G0334",
+   "stepGloss": "offering",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "G0473",
+   "stepGloss": "for",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G0509",
+   "stepGloss": "from above/again",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G0579",
+   "stepGloss": "rejected",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0687",
+   "stepGloss": "no?",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G0891",
+   "stepGloss": "until",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1063",
+   "stepGloss": "for",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1163",
+   "stepGloss": "be necessary",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1206",
+   "stepGloss": "the next day",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "G1223",
+   "stepGloss": "through/because of",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1352",
+   "stepGloss": "therefore",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1482",
+   "stepGloss": "Gentile-like",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1483",
+   "stepGloss": "Gentile-way",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G1520",
+   "stepGloss": "one",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Number / quantity / measure"
+  },
+  {
+   "strongNumber": "G1526",
+   "stepGloss": "they are",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1597",
+   "stepGloss": "of old",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "G1736",
+   "stepGloss": "be home",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1751",
+   "stepGloss": "be in",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1752",
+   "stepGloss": "because of",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1887",
+   "stepGloss": "the next day",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "G1935",
+   "stepGloss": "condemned to death",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Death / destruction"
+  },
+  {
+   "strongNumber": "G2077",
+   "stepGloss": "you be!",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G21410",
+   "stepGloss": "be white",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Colour"
+  },
+  {
+   "strongNumber": "G21422",
+   "stepGloss": "such-like",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G2193",
+   "stepGloss": "until",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G2277",
+   "stepGloss": "let him/it be",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G2316",
+   "stepGloss": "God",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Deity / spiritual beings"
+  },
+  {
+   "strongNumber": "G2450",
+   "stepGloss": "Jew",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G2465",
+   "stepGloss": "like an angel",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G2468",
+   "stepGloss": "you should be",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G2570H",
+   "stepGloss": "Fair [Havens]",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Place / geography / building"
+  },
+  {
+   "strongNumber": "G2590",
+   "stepGloss": "fruit",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "G2693",
+   "stepGloss": "be thrown down",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G2801",
+   "stepGloss": "fragment",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "G2836",
+   "stepGloss": "belly/womb/stomach",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "G2839G",
+   "stepGloss": "common: unsanctified",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G2888",
+   "stepGloss": "world power",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2933",
+   "stepGloss": "possession",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "G2966",
+   "stepGloss": "corpse",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Death / destruction"
+  },
+  {
+   "strongNumber": "G3083",
+   "stepGloss": "ransom",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "G3141",
+   "stepGloss": "testimony",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "G3142",
+   "stepGloss": "testimony",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "G3173",
+   "stepGloss": "great",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G3175",
+   "stepGloss": "great man",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G3388",
+   "stepGloss": "womb",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "G3483",
+   "stepGloss": "yes",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3500",
+   "stepGloss": "death",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Death / destruction"
+  },
+  {
+   "strongNumber": "G3547",
+   "stepGloss": "teacher of the law",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G3588",
+   "stepGloss": "the/this/who",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3664",
+   "stepGloss": "like",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3673",
+   "stepGloss": "of the same trade",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3745",
+   "stepGloss": "just as/how much",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3760",
+   "stepGloss": "by no means",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3909",
+   "stepGloss": "be there",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3946",
+   "stepGloss": "like",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G4169",
+   "stepGloss": "what?",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G4183",
+   "stepGloss": "much",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G4204",
+   "stepGloss": "prostitute",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G4219",
+   "stepGloss": "when?",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G4430",
+   "stepGloss": "corpse",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Death / destruction"
+  },
+  {
+   "strongNumber": "G4449",
+   "stepGloss": "be (fiery) red",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Colour"
+  },
+  {
+   "strongNumber": "G4632",
+   "stepGloss": "vessel",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "G4750",
+   "stepGloss": "mouth",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "G4954",
+   "stepGloss": "of the same body",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G5122",
+   "stepGloss": "by name",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G5197",
+   "stepGloss": "insolent man",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G5224",
+   "stepGloss": "possession",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "G5333",
+   "stepGloss": "sorcerer",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G5480",
+   "stepGloss": "image/mark",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "G5484",
+   "stepGloss": "because of",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G5616",
+   "stepGloss": "like/as/about",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G6124",
+   "stepGloss": "be wild",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6221",
+   "stepGloss": "an anointing",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "G6441",
+   "stepGloss": "be without a turban",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Space / direction / position"
+  },
+  {
+   "strongNumber": "G6530",
+   "stepGloss": "a lion-like person",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G6656",
+   "stepGloss": "be weighed down",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6772",
+   "stepGloss": "be naked",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6802",
+   "stepGloss": "be master",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G6980",
+   "stepGloss": "hard of hearing",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7140",
+   "stepGloss": "be torn from",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7376",
+   "stepGloss": "be used",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7513",
+   "stepGloss": "passion",
+   "language": "Greek",
+   "tier": "HIGH",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "G7813",
+   "stepGloss": "nut-like",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G7895",
+   "stepGloss": "very bitter",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G8016",
+   "stepGloss": "a place of weeping",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Place / geography / building"
+  },
+  {
+   "strongNumber": "G8083",
+   "stepGloss": "be dizzy from wine",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "G8159",
+   "stepGloss": "like a covered chariot",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G8186",
+   "stepGloss": "be white",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Colour"
+  },
+  {
+   "strongNumber": "G8231",
+   "stepGloss": "most blessed",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G8240",
+   "stepGloss": "by all means",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G8463",
+   "stepGloss": "be drunk with wine",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "G8466",
+   "stepGloss": "be drunk with wine",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "G8598",
+   "stepGloss": "of all kinds",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G8794",
+   "stepGloss": "a bitter herb",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "G8898",
+   "stepGloss": "be first to take",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8963",
+   "stepGloss": "be seated first",
+   "language": "Greek",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H0149",
+   "stepGloss": "diligently",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H0375",
+   "stepGloss": "where?",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H0383",
+   "stepGloss": "there is",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H0410L",
+   "stepGloss": "god: power",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Deity / spiritual beings"
+  },
+  {
+   "strongNumber": "H0637",
+   "stepGloss": "also",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H0639H",
+   "stepGloss": "face: nose",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H0639I",
+   "stepGloss": "face",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H0929",
+   "stepGloss": "animal",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Animals"
+  },
+  {
+   "strongNumber": "H1100H",
+   "stepGloss": "Belial: destruction",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Death / destruction"
+  },
+  {
+   "strongNumber": "H1274",
+   "stepGloss": "fat",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "H1277",
+   "stepGloss": "fat",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "H1419A",
+   "stepGloss": "great: large",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H1471A",
+   "stepGloss": "nation",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H1471G",
+   "stepGloss": "Gentile",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H1472",
+   "stepGloss": "body",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H1697M",
+   "stepGloss": "word: because",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H1870J",
+   "stepGloss": "way: direction",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "H1933B",
+   "stepGloss": "to be",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H1961",
+   "stepGloss": "to be",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H1995A",
+   "stepGloss": "crowd",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H2114B",
+   "stepGloss": "be loathsome",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2151B",
+   "stepGloss": "be vile",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2204",
+   "stepGloss": "be old",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "H2214",
+   "stepGloss": "loathsome",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2310",
+   "stepGloss": "rejected/fleeting",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2342B",
+   "stepGloss": "be firm",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2409",
+   "stepGloss": "sin offering",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H2459",
+   "stepGloss": "fat",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "H2519",
+   "stepGloss": "smoothness",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2553",
+   "stepGloss": "pillar",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H2556B",
+   "stepGloss": "be red",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Colour"
+  },
+  {
+   "strongNumber": "H2560C",
+   "stepGloss": "be red",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Colour"
+  },
+  {
+   "strongNumber": "H2992",
+   "stepGloss": "be brother-in-law",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H3027N",
+   "stepGloss": "hand: penis",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H3117K",
+   "stepGloss": "day: always",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H3202",
+   "stepGloss": "be able",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H3282",
+   "stepGloss": "because",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H3456",
+   "stepGloss": "be desolate",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H3515",
+   "stepGloss": "heavy",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H3546",
+   "stepGloss": "be able",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H3644H",
+   "stepGloss": "[Geruth] Chimham",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Proper names / places"
+  },
+  {
+   "strongNumber": "H3689",
+   "stepGloss": "loin",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H3956G",
+   "stepGloss": "tongue",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H3975",
+   "stepGloss": "hole",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Place / geography / building"
+  },
+  {
+   "strongNumber": "H4060A",
+   "stepGloss": "measure",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Number / quantity / measure"
+  },
+  {
+   "strongNumber": "H4180",
+   "stepGloss": "possession",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "H4327",
+   "stepGloss": "kind",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "H4347",
+   "stepGloss": "wound",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H4373",
+   "stepGloss": "number",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Number / quantity / measure"
+  },
+  {
+   "strongNumber": "H4395",
+   "stepGloss": "fruit",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "H4653",
+   "stepGloss": "division",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Number / quantity / measure"
+  },
+  {
+   "strongNumber": "H4676",
+   "stepGloss": "pillar",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H5088",
+   "stepGloss": "vow",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "H5108B",
+   "stepGloss": "fruit",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "H5139",
+   "stepGloss": "Nazirite",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H5439G",
+   "stepGloss": "around",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Space / direction / position"
+  },
+  {
+   "strongNumber": "H5769I",
+   "stepGloss": "forever: any time",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H5769J",
+   "stepGloss": "forever: antiquity",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "H5869I",
+   "stepGloss": "eye: appearance",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H5869K",
+   "stepGloss": "eye: sin",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H5921A",
+   "stepGloss": "upon",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Space / direction / position"
+  },
+  {
+   "strongNumber": "H5971A",
+   "stepGloss": "people",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H6203",
+   "stepGloss": "neck",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H6297",
+   "stepGloss": "corpse",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Death / destruction"
+  },
+  {
+   "strongNumber": "H6391",
+   "stepGloss": "division",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Number / quantity / measure"
+  },
+  {
+   "strongNumber": "H6392",
+   "stepGloss": "division",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Number / quantity / measure"
+  },
+  {
+   "strongNumber": "H6415",
+   "stepGloss": "judge",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H6440I",
+   "stepGloss": "face: because",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H6440L",
+   "stepGloss": "face of",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H6546",
+   "stepGloss": "leader",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H6903H",
+   "stepGloss": "before: because",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H7011",
+   "stepGloss": "enduring",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "H7075",
+   "stepGloss": "acquisition",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "H7189A",
+   "stepGloss": "bow",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H7217",
+   "stepGloss": "head",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H7375",
+   "stepGloss": "be fresh",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7488A",
+   "stepGloss": "be fresh",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7616",
+   "stepGloss": "fragment",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H7867",
+   "stepGloss": "be gray",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Colour"
+  },
+  {
+   "strongNumber": "H7868",
+   "stepGloss": "be gray",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "Colour"
+  },
+  {
+   "strongNumber": "H7961",
+   "stepGloss": "at ease",
+   "language": "Hebrew",
+   "tier": "HIGH",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8246",
+   "stepGloss": "be almond shaped",
+   "language": "Hebrew",
+   "tier": "MEDIUM",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0060",
+   "stepGloss": "of the marketplace",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Place / geography / building"
+  },
+  {
+   "strongNumber": "G0069",
+   "stepGloss": "be watchful",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0090",
+   "stepGloss": "unspoilable",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G0101",
+   "stepGloss": "be impossible",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0102",
+   "stepGloss": "unable",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0111",
+   "stepGloss": "unlawful",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0165H",
+   "stepGloss": "an age: eternity",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "G0181",
+   "stepGloss": "disorder",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0198",
+   "stepGloss": "be exactly",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0331",
+   "stepGloss": "cursed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G0416",
+   "stepGloss": "be wind-blown",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0433",
+   "stepGloss": "be fitting",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0445",
+   "stepGloss": "to be proconsul",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G0449",
+   "stepGloss": "unwashed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0530",
+   "stepGloss": "once",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G0548",
+   "stepGloss": "be absent",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0568G",
+   "stepGloss": "to be distant",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Space / direction / position"
+  },
+  {
+   "strongNumber": "G0691",
+   "stepGloss": "be idle",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0714",
+   "stepGloss": "be sufficient",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0744",
+   "stepGloss": "ancient",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "G0767",
+   "stepGloss": "insignificant",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G0790",
+   "stepGloss": "be unsettled",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0812",
+   "stepGloss": "be idle",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G0850",
+   "stepGloss": "dingy",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G1005",
+   "stepGloss": "the north",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Space / direction / position"
+  },
+  {
+   "strongNumber": "G1037",
+   "stepGloss": "the deep",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1073",
+   "stepGloss": "be full",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1074",
+   "stepGloss": "generation",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "G1110",
+   "stepGloss": "acquainted with",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G1139",
+   "stepGloss": "be demonised",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Deity / spiritual beings"
+  },
+  {
+   "strongNumber": "G1171",
+   "stepGloss": "terribly",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1228G",
+   "stepGloss": "Devil",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Deity / spiritual beings"
+  },
+  {
+   "strongNumber": "G1316",
+   "stepGloss": "be separated",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1359",
+   "stepGloss": "the twin gods",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Deity / spiritual beings"
+  },
+  {
+   "strongNumber": "G1370",
+   "stepGloss": "dissension",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G1419",
+   "stepGloss": "ponderous",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G1422",
+   "stepGloss": "difficult",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G1423",
+   "stepGloss": "difficultly",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1480",
+   "stepGloss": "be accustomed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1498",
+   "stepGloss": "may be",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G1500",
+   "stepGloss": "in vain",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G1572",
+   "stepGloss": "be enflamed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1612",
+   "stepGloss": "be warped",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1619",
+   "stepGloss": "fervently",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G1690",
+   "stepGloss": "be agitated",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1693",
+   "stepGloss": "be enraged",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1735",
+   "stepGloss": "be possible",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1789",
+   "stepGloss": "be reared",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1902",
+   "stepGloss": "be clothed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "G1944",
+   "stepGloss": "cursed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G1952",
+   "stepGloss": "be insufficient",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G1999",
+   "stepGloss": "insurrection",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G20125",
+   "stepGloss": "be childless",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G20258",
+   "stepGloss": "worth two talents",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Number / quantity / measure"
+  },
+  {
+   "strongNumber": "G21401",
+   "stepGloss": "be inundated",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G2143",
+   "stepGloss": "beauty",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2145",
+   "stepGloss": "devoted",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2164",
+   "stepGloss": "be fruitful",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "G2239",
+   "stepGloss": "moral",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2274",
+   "stepGloss": "be lesser",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G2297",
+   "stepGloss": "marvelous",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2298",
+   "stepGloss": "marvellous",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2386",
+   "stepGloss": "healing",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2392",
+   "stepGloss": "healing",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2412",
+   "stepGloss": "reverent",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2443",
+   "stepGloss": "in order that/to",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G2520",
+   "stepGloss": "be fit",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G2557",
+   "stepGloss": "criminal",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2659",
+   "stepGloss": "stupor",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G2754",
+   "stepGloss": "empty conceit",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G2756",
+   "stepGloss": "empty",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G2761",
+   "stepGloss": "vainly",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G2793",
+   "stepGloss": "be in danger",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G2990",
+   "stepGloss": "be hidden",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G3042",
+   "stepGloss": "hunger",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G3095",
+   "stepGloss": "magic",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G3112",
+   "stepGloss": "far",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Space / direction / position"
+  },
+  {
+   "strongNumber": "G3322",
+   "stepGloss": "be in the middle",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G3467",
+   "stepGloss": "be nearsighted",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G3489",
+   "stepGloss": "be shipwrecked",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G3515",
+   "stepGloss": "be childlike",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G3634",
+   "stepGloss": "such as",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3647",
+   "stepGloss": "wholeness",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G3648",
+   "stepGloss": "whole",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G3661",
+   "stepGloss": "united",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G3689",
+   "stepGloss": "really",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G3776",
+   "stepGloss": "estate",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G3781",
+   "stepGloss": "debtor",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G3835",
+   "stepGloss": "crafty",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G3859",
+   "stepGloss": "contention",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G3939",
+   "stepGloss": "be a stranger",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "G4020",
+   "stepGloss": "be a busybody",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4164",
+   "stepGloss": "various",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G4241",
+   "stepGloss": "be proper",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4243",
+   "stepGloss": "be ambassador",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4391",
+   "stepGloss": "be formerly",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4445",
+   "stepGloss": "be feverish",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4550",
+   "stepGloss": "rotten",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4583",
+   "stepGloss": "be epileptic",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4659",
+   "stepGloss": "sad",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G4768",
+   "stepGloss": "be gloomy",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4803",
+   "stepGloss": "discussion",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G4851",
+   "stepGloss": "be profitable",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4886",
+   "stepGloss": "bond(age)",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Time / temporal"
+  },
+  {
+   "strongNumber": "G4916",
+   "stepGloss": "be buried with",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4927",
+   "stepGloss": "be next to",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G4980",
+   "stepGloss": "be devoted/empty",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G5005",
+   "stepGloss": "wretched",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G5010",
+   "stepGloss": "order",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "G5059",
+   "stepGloss": "wonders",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G5075",
+   "stepGloss": "be a tetrarch",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G5198",
+   "stepGloss": "be healthy",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G5199",
+   "stepGloss": "healthy",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G5223",
+   "stepGloss": "property",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G5225",
+   "stepGloss": "be already",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G5259G",
+   "stepGloss": "by/under: by",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G5349",
+   "stepGloss": "perishable",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Death / destruction"
+  },
+  {
+   "strongNumber": "G5449",
+   "stepGloss": "nature",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G5476",
+   "stepGloss": "on the ground",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G5481",
+   "stepGloss": "reproduction",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G5492",
+   "stepGloss": "be storm-tossed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G5550",
+   "stepGloss": "time",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G6028",
+   "stepGloss": "be amazed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6081",
+   "stepGloss": "be downcast",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6108",
+   "stepGloss": "be better",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6131",
+   "stepGloss": "to be kin",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G6215",
+   "stepGloss": "be a runaway",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6297",
+   "stepGloss": "be fatigued",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6300",
+   "stepGloss": "be effronted",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6326",
+   "stepGloss": "courage",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G6461",
+   "stepGloss": "be estranged",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6485",
+   "stepGloss": "a broken branch",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "G6493",
+   "stepGloss": "rejection",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G6507",
+   "stepGloss": "blindness",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G6589",
+   "stepGloss": "be barren",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6596",
+   "stepGloss": "be unfortunate",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6791",
+   "stepGloss": "awful",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G6804",
+   "stepGloss": "be second",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6882",
+   "stepGloss": "perverseness",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G6893",
+   "stepGloss": "be overawed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G6948",
+   "stepGloss": "be cloven",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7235",
+   "stepGloss": "be pleased with",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7255",
+   "stepGloss": "be related",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7301",
+   "stepGloss": "be enough",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7303",
+   "stepGloss": "be attached to",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7405",
+   "stepGloss": "be lenient",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7428",
+   "stepGloss": "be possessed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7435",
+   "stepGloss": "be welcomed as a guest",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "G7474",
+   "stepGloss": "incurring ridicule",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G7518",
+   "stepGloss": "be late",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7533",
+   "stepGloss": "be approved",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7565",
+   "stepGloss": "be moldy",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7567",
+   "stepGloss": "be stable",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7576",
+   "stepGloss": "be fragrant",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7618",
+   "stepGloss": "be esteemed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7619",
+   "stepGloss": "be delicious",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7767",
+   "stepGloss": "be late",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G7806",
+   "stepGloss": "a yield",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G7807",
+   "stepGloss": "a yield",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G8199",
+   "stepGloss": "be famished",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8214",
+   "stepGloss": "distressing",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G8229",
+   "stepGloss": "be irresistibly led",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8313",
+   "stepGloss": "be content",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8320",
+   "stepGloss": "be infuriated",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8363",
+   "stepGloss": "be troubled with warts",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8376",
+   "stepGloss": "be paralyzed",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8422",
+   "stepGloss": "be yellowish",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8468",
+   "stepGloss": "be undone",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8474",
+   "stepGloss": "slothful",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G8513",
+   "stepGloss": "be sour",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8618",
+   "stepGloss": "comforting",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G8619",
+   "stepGloss": "a comforter",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "G8642",
+   "stepGloss": "be a bodyguard",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8658",
+   "stepGloss": "be in heat",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8687",
+   "stepGloss": "be darkened",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8694",
+   "stepGloss": "be in need",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8721",
+   "stepGloss": "be an advantage",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8825",
+   "stepGloss": "be carried by wind",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8854",
+   "stepGloss": "be numerous",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8926",
+   "stepGloss": "be burnt through",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "G8997",
+   "stepGloss": "be reddish",
+   "language": "Greek",
+   "tier": "LOW",
+   "likeness": "Colour"
+  },
+  {
+   "strongNumber": "H0235",
+   "stepGloss": "be gone",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H0280",
+   "stepGloss": "riddle",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H0328A",
+   "stepGloss": "mutterer",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H0330",
+   "stepGloss": "fine linen",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H0377",
+   "stepGloss": "be manly",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H0391",
+   "stepGloss": "deceptive",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H0505H",
+   "stepGloss": "thousand: clan",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Number / quantity / measure"
+  },
+  {
+   "strongNumber": "H0679",
+   "stepGloss": "joint",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H0724",
+   "stepGloss": "health",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H0749",
+   "stepGloss": "be proper",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H0797",
+   "stepGloss": "Ashdod",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Proper names / places"
+  },
+  {
+   "strongNumber": "H0907",
+   "stepGloss": "bluster",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H0909",
+   "stepGloss": "be alone",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H1203",
+   "stepGloss": "Beeshterah",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Proper names / places"
+  },
+  {
+   "strongNumber": "H1238A",
+   "stepGloss": "be luxuriant",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H1243",
+   "stepGloss": "seeking",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H1290",
+   "stepGloss": "knee",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H1416",
+   "stepGloss": "band",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H1471B",
+   "stepGloss": "Goiim",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Proper names / places"
+  },
+  {
+   "strongNumber": "H1471H",
+   "stepGloss": "[Harosheth]-hagoyim",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Proper names / places"
+  },
+  {
+   "strongNumber": "H1645",
+   "stepGloss": "produce",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H1790",
+   "stepGloss": "crushed",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H1818",
+   "stepGloss": "blood",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H1851",
+   "stepGloss": "thin",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H1945",
+   "stepGloss": "woe!",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H1951",
+   "stepGloss": "be ready",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H1995B",
+   "stepGloss": "be turbulent",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2049",
+   "stepGloss": "mockery",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2114A",
+   "stepGloss": "be a stranger",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "People / roles / occupations"
+  },
+  {
+   "strongNumber": "H2116",
+   "stepGloss": "crushed",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2121",
+   "stepGloss": "raging",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2300A",
+   "stepGloss": "be sharp",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2329",
+   "stepGloss": "circle",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2433",
+   "stepGloss": "beauty",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2492A",
+   "stepGloss": "be healthy",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2685",
+   "stepGloss": "be hasty",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2711",
+   "stepGloss": "decree",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Legal / covenantal / cultic / abstract"
+  },
+  {
+   "strongNumber": "H2714",
+   "stepGloss": "search",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2718",
+   "stepGloss": "be wasted",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2747",
+   "stepGloss": "stylus",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2764B",
+   "stepGloss": "net",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H2859B",
+   "stepGloss": "be related",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H2896C",
+   "stepGloss": "welfare",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2902B",
+   "stepGloss": "to be smeared",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H2981",
+   "stepGloss": "crops",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3267",
+   "stepGloss": "be fierce",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H3302",
+   "stepGloss": "be beautiful",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H3303",
+   "stepGloss": "beautiful",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3366",
+   "stepGloss": "preciousness",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3508",
+   "stepGloss": "lobe",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3545",
+   "stepGloss": "easing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3586",
+   "stepGloss": "deceptive",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3610",
+   "stepGloss": "mixture",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3687",
+   "stepGloss": "stupidity",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3736",
+   "stepGloss": "be clothed",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H3749",
+   "stepGloss": "ledge",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3780",
+   "stepGloss": "be sated",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H3799",
+   "stepGloss": "be stained",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H3801",
+   "stepGloss": "tunic",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3934",
+   "stepGloss": "mocking",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3939",
+   "stepGloss": "wormwood",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3971A",
+   "stepGloss": "blemish",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3986",
+   "stepGloss": "refusing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H3987",
+   "stepGloss": "refusing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4065",
+   "stepGloss": "enticement",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4079",
+   "stepGloss": "contention",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4229C",
+   "stepGloss": "be marrow",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H4230",
+   "stepGloss": "compass",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4255",
+   "stepGloss": "class",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4301",
+   "stepGloss": "treasure",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H4334",
+   "stepGloss": "plain",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4377",
+   "stepGloss": "merchandise",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4394",
+   "stepGloss": "setting",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4410",
+   "stepGloss": "kingship",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4426",
+   "stepGloss": "mockery",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4438",
+   "stepGloss": "royalty",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4465",
+   "stepGloss": "sale",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4485",
+   "stepGloss": "mocking",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4541A",
+   "stepGloss": "liquid",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4541B",
+   "stepGloss": "veil",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H4627",
+   "stepGloss": "merchandise",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4696",
+   "stepGloss": "forehead",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H4723A",
+   "stepGloss": "Kue",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Proper names / places"
+  },
+  {
+   "strongNumber": "H4728",
+   "stepGloss": "ware",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4790",
+   "stepGloss": "crushed",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4832",
+   "stepGloss": "healing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4846",
+   "stepGloss": "gall",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4929",
+   "stepGloss": "custody",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H4985",
+   "stepGloss": "be sweet",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H5014",
+   "stepGloss": "be hollow",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H5038",
+   "stepGloss": "carcass",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Death / destruction"
+  },
+  {
+   "strongNumber": "H5094B",
+   "stepGloss": "illumination",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5112",
+   "stepGloss": "wandering",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5173",
+   "stepGloss": "divination",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5205",
+   "stepGloss": "solace",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5218B",
+   "stepGloss": "stricken",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5361",
+   "stepGloss": "be alienated",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H5392",
+   "stepGloss": "interest",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5405",
+   "stepGloss": "be dry",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H5433B",
+   "stepGloss": "be drunk",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H5487",
+   "stepGloss": "be fulfilled",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H5509",
+   "stepGloss": "dross",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5532",
+   "stepGloss": "be useful",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H5575",
+   "stepGloss": "blindness",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5668",
+   "stepGloss": "for the sake of",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Particles / function / grammatical"
+  },
+  {
+   "strongNumber": "H5704",
+   "stepGloss": "till",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5773",
+   "stepGloss": "distortion",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5788A",
+   "stepGloss": "blindness",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5788B",
+   "stepGloss": "blindness",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5892A",
+   "stepGloss": "excitement",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5949",
+   "stepGloss": "wantonness",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H5977",
+   "stepGloss": "post",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H6009",
+   "stepGloss": "be deep",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6132",
+   "stepGloss": "be uprooted",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6135",
+   "stepGloss": "barren",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H6188",
+   "stepGloss": "be uncircumcised",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6257",
+   "stepGloss": "be ready",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6276",
+   "stepGloss": "surpassing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H6313",
+   "stepGloss": "be numb",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6338",
+   "stepGloss": "be refined",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6339",
+   "stepGloss": "be agile",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6390",
+   "stepGloss": "stream",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Place / geography / building"
+  },
+  {
+   "strongNumber": "H6395",
+   "stepGloss": "be distinguished",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6500",
+   "stepGloss": "be fruitful",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "H6509",
+   "stepGloss": "be fruitful",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Plants / food"
+  },
+  {
+   "strongNumber": "H6528",
+   "stepGloss": "broken",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6556",
+   "stepGloss": "breach",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H6660",
+   "stepGloss": "ambush",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H6705",
+   "stepGloss": "be dazzling",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6771",
+   "stepGloss": "thirsty",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H6879",
+   "stepGloss": "be leprous",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6949",
+   "stepGloss": "be blunt",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H6994",
+   "stepGloss": "be small",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7001",
+   "stepGloss": "joint",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7038",
+   "stepGloss": "be stunted",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7128",
+   "stepGloss": "battle",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7195",
+   "stepGloss": "conspiracy",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7267",
+   "stepGloss": "turmoil",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7304",
+   "stepGloss": "be wide",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7309",
+   "stepGloss": "relief",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7341",
+   "stepGloss": "width",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7372",
+   "stepGloss": "be moist",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7390",
+   "stepGloss": "tender",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7391",
+   "stepGloss": "tenderness",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7399",
+   "stepGloss": "property",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7401",
+   "stepGloss": "be tender",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7456",
+   "stepGloss": "be hungry",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7457",
+   "stepGloss": "hungry",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7494",
+   "stepGloss": "quaking",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7499",
+   "stepGloss": "remedy",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7500",
+   "stepGloss": "healing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7613",
+   "stepGloss": "elevation",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7648",
+   "stepGloss": "satiety",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7649",
+   "stepGloss": "sated",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7662",
+   "stepGloss": "to be left",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Space / direction / position"
+  },
+  {
+   "strongNumber": "H7729",
+   "stepGloss": "returning",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7802",
+   "stepGloss": "Shushan-eduth",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Proper names / places"
+  },
+  {
+   "strongNumber": "H7814",
+   "stepGloss": "laughter",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7854",
+   "stepGloss": "Satan",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Deity / spiritual beings"
+  },
+  {
+   "strongNumber": "H7914",
+   "stepGloss": "craft",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7921A",
+   "stepGloss": "be bereaved",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7937",
+   "stepGloss": "be drunk",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7948",
+   "stepGloss": "frame",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H7954",
+   "stepGloss": "be safe",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H7998",
+   "stepGloss": "spoil",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Physical objects / materials"
+  },
+  {
+   "strongNumber": "H8075",
+   "stepGloss": "be appalled",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H8106B",
+   "stepGloss": "Shemed",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Proper names / places"
+  },
+  {
+   "strongNumber": "H8192",
+   "stepGloss": "be bare",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H8193G",
+   "stepGloss": "lips",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Body / anatomy"
+  },
+  {
+   "strongNumber": "H8216",
+   "stepGloss": "poverty",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8322",
+   "stepGloss": "hissing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8356",
+   "stepGloss": "foundation",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8393",
+   "stepGloss": "produce",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8403",
+   "stepGloss": "pattern",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8408",
+   "stepGloss": "benefit",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8451",
+   "stepGloss": "instruction",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8524",
+   "stepGloss": "be eminent",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "State / condition (non-IB)"
+  },
+  {
+   "strongNumber": "H8585B",
+   "stepGloss": "healing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8601",
+   "stepGloss": "baked",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8644",
+   "stepGloss": "healing",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  },
+  {
+   "strongNumber": "H8655",
+   "stepGloss": "teraphim",
+   "language": "Hebrew",
+   "tier": "LOW",
+   "likeness": "Other / abstract (uncategorised)"
+  }
+ ]
+}
