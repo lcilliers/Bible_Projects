@@ -6641,3 +6641,78 @@ a retrofit of the report's original 3 sections**, found unregistered while addin
 
 **Files:** `iba/app/lib/clusterreport.py` (`_stem_key()` + `cluster_summary` section). Config: 7 rows
 via `configmaint.propose`. Report output: `iba/app/reports/cluster-v2-20260812.md`.
+
+## 110. `report.cluster` extended — backfill vocabulary typed instead of just counted (2026-08-13, ad hoc cluster-cleanup session, follow-on from the M10b/M10c relocation)
+
+**Trigger.** Same session as the M10b/M10c relocation (see `iba/app/reports/
+m10bc-cluster-review-20260813.md`) — researcher, after reviewing the relocation: *"include in the
+cluster report a strong analysis of what is not in clusters... see if stem / type / heuristics
+could help create some order... be careful to lose visibility of outliers and just showing counts
+is not useful."* The "not in clusters" mass is `strong.origin='backfill'` minus whatever already
+carries a legacy `old-system-migration` cluster tag — **9,562** rows, the exact figure §108's
+`cluster.assign` run already reported as `unclassified` (15,293 checked = 3,769 word + 11,524
+backfill; word-origin is 100% assigned per `report.cluster`'s own gap list, so the 9,562 unclassified
+there is this same backfill-untagged population, now characterised rather than left as one number).
+
+**New section `backfill_typology`, same shape as §109's `cluster_summary`** (reuses `_stem_key()`).
+Two passes over the 9,562:
+
+1. **Structural typing** — four buckets by heuristic, not judgement: proper nouns/place names
+   (capitalized single-word gloss, 3,152/33%), grammatical markers/construct forms (bracketed
+   gloss, e.g. `[the]`, `[Valley of] Achor`, 116/1%), high-frequency closed-class function words
+   (count ≥ 1000 and neither of the above — pronouns/prepositions/conjunctions, 67/1%, **listed in
+   full**, not summarised), leaving a **candidate-vocabulary residual of 6,227 (65%)** as the
+   section's actual subject.
+2. **The residual, split two ways**: (a) cross-matched word-for-word (not substring — the naive
+   first pass on the M10b/M10c work had a "Devil"/"evil" false-positive, fixed here with
+   `\b`-equivalent whole-token matching) against every existing cluster's own `gloss` vocabulary —
+   **1,117** hit at least one cluster, tabulated by matched-cluster and listed individually
+   (capped at 60 in the markdown, full set in CSV), with an explicit caveat that T2/T3 hits are
+   *expected* (ordinary narrative vocabulary) and only non-T2/T3 hits are worth a researcher's
+   actual look; (b) the remaining **5,110** with no match at all, stem-grouped like §109's meanings
+   tables so the mass has visible shape, **plus every individual item at count ≥ 100 (310 of them)
+   listed by name** so high-usage outliers can't hide inside a group total. Spot-read: the residual
+   stem groups are dominated by ordinary narrative/temporal/kinship/office vocabulary (year, priest,
+   two, heaven, seven, midst, daughter, now, tent, to enter, to ascend, to come) — i.e. the backfill
+   gap is, as expected, mostly the corpus's mundane connective tissue, not a hidden pile of missed
+   inner-being content.
+
+**Full row-level detail persisted, not just the markdown summary** (governance.reports_must_persist)
+— three new CSVs written directly to `iba/app/reports/export/` (`backfill_typology.csv`,
+`backfill_crossmatch.csv`, `backfill_residual.csv`) via a new `_write_csv_direct()` helper,
+filesystem-only, **not** through `reportkit.write_csv_pairing`'s `cfg_report_csv_table` machinery
+(that requires a `configmaint.propose` row per table; this doesn't touch the DB).
+
+**Not yet config-registered** — five new tunables (`report.cluster_backfill_closedclass_freq`
+default 1000, `_keyword_minlen` default 4, `_crossmatch_cap` default 60, `_residual_top_stems`
+default 15, `_outlier_freq` default 100) are read via `cfg.setting(key, default)`, same pattern as
+§109's stemming settings, but **no `cfg_setting` rows exist for them yet** — they run on the Python
+defaults. Likewise the section itself renders via `render_scaffold`'s "extra_keys" fallback (own
+`<a id>`/heading written inline), not a registered `cfg_report_section` row, so it gets a plain ToC
+bullet, not a proper ordinal/label. Both are deliberate — this is a first pass the researcher is
+still reviewing; formalising via `configmaint.propose` (mirroring §109's 7-row retrofit) is the
+natural next step once the shape of this section is confirmed, not before.
+
+**Files:** `iba/app/lib/clusterreport.py` (`_write_csv_direct()` + `backfill_typology` section).
+Config: none yet (see above). Report output: `iba/app/reports/cluster-v4-20260813.md`.
+
+## 111. `report.cluster` — every per-cluster table sorted by `cluster_code`, not count (2026-08-13, same session)
+
+**Trigger.** Researcher, reviewing the report: *"sort the cluster listing, difficult to find in
+the report. sort by cluster code."* Three of the report's per-cluster tables were ordered by a
+count column (word-origin strong count, then all-origin strong count, then backfill-crossmatch hit
+count) — good for seeing what's biggest, bad for finding one specific cluster on a page with 50 of
+them. The taxonomy table (§ "Cluster taxonomy") was already `ORDER BY cluster_code` from the
+start; the others weren't.
+
+**Fixed, no new config:** `by_cluster` (word-origin count) and the `cluster_summary` counts query
+(§109) both changed their SQL `ORDER BY` from the count column to `cs.cluster_code` — the latter
+also reorders the per-cluster meaning subsections that follow it, since that loop just iterates
+the same query result. `backfill_typology`'s "matches by cluster" table (§110) changed from a
+Python `sorted(..., key=lambda x: -x[1])` to a plain `sorted(...)` on the dict, same effect. Every
+per-cluster table in the report is now `cluster_code`-ordered; per-*strong* tables (the gap list,
+the closed-class list, crossmatch hits, residual items) are untouched — count-ordering is the
+right choice there, this was specifically about tables keyed one-row-per-cluster.
+
+**Files:** `iba/app/lib/clusterreport.py` (3 `ORDER BY`/sort-key changes, no new sections). Config:
+none. Report output: `iba/app/reports/cluster-v8-20260813.md`.

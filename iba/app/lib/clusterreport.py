@@ -14,8 +14,10 @@ reported as an explicit count, never included in the gap list.
 
 from __future__ import annotations
 
+import csv
 import pathlib
 import re
+from collections import Counter
 
 from . import reportkit
 
@@ -50,6 +52,20 @@ def _stem_key(gloss: str, suffixes: list[str], prefix_len: int) -> str:
             w = w[: -len(suf)]
             break
     return w[:prefix_len] if len(w) > prefix_len else w
+
+
+def _write_csv_direct(out_dir: pathlib.Path, name: str, header: list[str], rows: list[list]) -> pathlib.Path:
+    """Plain, unregistered CSV write (not through `reportkit.write_csv_pairing`'s `cfg_report_csv_table`
+    machinery — that path requires a config-write-grant round trip per new table; this one doesn't
+    touch the DB at all, it's filesystem-only). Used by the backfill-typology section so its full
+    row-level detail persists next to the summarised markdown, per governance.reports_must_persist."""
+    out_dir.mkdir(parents=True, exist_ok=True)
+    p = out_dir / f"{name}.csv"
+    with p.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(header)
+        w.writerows(rows)
+    return p
 
 
 def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
@@ -91,9 +107,10 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         "SELECT cs.cluster_code, cl.short_name, COUNT(*) n FROM cluster_strong cs "
         "JOIN cluster cl ON cl.cluster_code=cs.cluster_code AND cl.deleted=0 "
         "JOIN strong s ON s.strongNumber=cs.strong AND s.deleted=0 AND s.origin='word' "
-        "WHERE cs.deleted=0 GROUP BY cs.cluster_code ORDER BY n DESC")
+        "WHERE cs.deleted=0 GROUP BY cs.cluster_code ORDER BY cs.cluster_code")
     sections["by_cluster"] = (
-        ["**Word-origin strong count per cluster:**", ""]
+        ["**Word-origin strong count per cluster** (sorted by `cluster_code`, not count — "
+         "findability over ranking):", ""]
         + _tbl(["cluster_code", "short_name", "word-origin strongs assigned"],
               [[r["cluster_code"], r["short_name"], r["n"]] for r in by_cluster]))
 
@@ -125,11 +142,12 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         "COUNT(DISTINCT vl.verse_id) verse_n FROM cluster_strong cs "
         "JOIN cluster cl ON cl.cluster_code=cs.cluster_code AND cl.deleted=0 "
         "LEFT JOIN verse_lexical vl ON vl.strong=cs.strong AND vl.deleted=0 "
-        "WHERE cs.deleted=0 GROUP BY cs.cluster_code ORDER BY strong_n DESC")
+        "WHERE cs.deleted=0 GROUP BY cs.cluster_code ORDER BY cs.cluster_code")
 
     summary_lines = [
-        "**Every cluster, every origin** (unlike the word-origin-only sections above) — strong "
-        "count, span/lexical/verse coverage (via `verse_lexical`), and the top "
+        "**Every cluster, every origin** (unlike the word-origin-only sections above), sorted by "
+        "`cluster_code` throughout (both the summary table and the per-cluster subsections below "
+        "it) — strong count, span/lexical/verse coverage (via `verse_lexical`), and the top "
         f"{top_n} meanings per cluster, English-gloss-stemmed so derivational family members "
         "(grace/gracious/graciously) group as one line rather than compete separately. `freq` = "
         "summed STEP `count` across the group's member codes.", ""]
@@ -160,6 +178,185 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         summary_lines.append("")
     sections["cluster_summary"] = summary_lines
 
+    # ── backfill vocabulary outside the cluster taxonomy (2026-08-13, researcher request: "not in
+    # clusters" is a real ~9.5k-row mass — a bare count isn't useful, but it's too large to hand-
+    # review line by line, so it needs typing/ordering that still keeps individual outliers visible
+    # rather than folding everything into a summary number. See iba/app/reports/
+    # m10bc-cluster-review-20260813.md for the M10b/M10c work this followed from.
+    #
+    # Not yet registered in cfg_report_section (renders via render_scaffold's "extra_keys" safety
+    # net, own heading/anchor included below) or cfg_report_csv_table (CSVs below are written
+    # directly, bypassing write_csv_pairing) — both are configmaint.propose-gated and this is a
+    # first pass; formalise later if the researcher wants a governed ToC entry/ordinal.
+    bf_freq_threshold = int(cfg.setting("report.cluster_backfill_closedclass_freq", 1000))
+    bf_kw_minlen = int(cfg.setting("report.cluster_backfill_keyword_minlen", 4))
+    bf_crossmatch_cap = int(cfg.setting("report.cluster_backfill_crossmatch_cap", 60))
+    bf_residual_top_n = int(cfg.setting("report.cluster_backfill_residual_top_stems", 15))
+    bf_outlier_freq = int(cfg.setting("report.cluster_backfill_outlier_freq", 100))
+
+    n_bf_tagged = q(
+        "SELECT COUNT(*) n FROM strong s WHERE s.deleted=0 AND s.origin='backfill' AND EXISTS "
+        "(SELECT 1 FROM cluster_strong cs WHERE cs.strong=s.strongNumber AND cs.deleted=0)")[0]["n"]
+    bf_untagged = q(
+        "SELECT s.strongNumber, s.stepGloss, s.stepTransliteration, s.language, s.count "
+        "FROM strong s WHERE s.deleted=0 AND s.origin='backfill' AND NOT EXISTS "
+        "(SELECT 1 FROM cluster_strong cs WHERE cs.strong=s.strongNumber AND cs.deleted=0)")
+
+    def _looks_proper(g):
+        g = (g or "").strip()
+        if not g or any(ch in g for ch in " /:,"):
+            return False
+        return g[:1].isupper()
+
+    bracket, proper, closed, candidates = [], [], [], []
+    for r in bf_untagged:
+        g = r["stepGloss"] or ""
+        if g.strip().startswith("["):
+            bracket.append(r)
+        elif _looks_proper(g):
+            proper.append(r)
+        elif (r["count"] or 0) >= bf_freq_threshold:
+            closed.append(r)
+        else:
+            candidates.append(r)
+
+    # a small stoplist so generic narrative words (from/this/that/come/take/...) that happen to sit
+    # in several clusters' own gloss lists don't drown the cross-match in coincidence
+    _BF_STOP = {"from", "this", "that", "with", "have", "were", "been", "also", "then", "than",
+               "when", "what", "who", "which", "into", "upon", "over", "under", "only", "some",
+               "such", "each", "more", "most", "very", "just", "like", "make", "made", "give",
+               "gave", "take", "took", "come", "came", "said", "says", "your", "their", "them",
+               "they", "will", "shall", "being"}
+
+    def _kw_tokens(gloss):
+        w = re.sub(r"^to\s+", "", (gloss or "").strip().lower())
+        return [x for x in re.findall(r"[a-z]+", w) if len(x) >= bf_kw_minlen and x not in _BF_STOP]
+
+    word_to_clusters: dict[str, set[str]] = {}
+    for r in q("SELECT cluster_code, gloss FROM cluster WHERE deleted=0"):
+        for entry in (r["gloss"] or "").split(", "):
+            m = re.match(r"^(.*?)\s*\([^)]*\)\s*$", entry.strip())
+            phrase = m.group(1) if m else entry.strip()
+            for w in _kw_tokens(phrase):
+                word_to_clusters.setdefault(w, set()).add(r["cluster_code"])
+
+    crossmatch, unmatched = [], []
+    for r in candidates:
+        hit_clusters: set = set()
+        hit_words: set = set()
+        for t in _kw_tokens(r["stepGloss"]):
+            if t in word_to_clusters:
+                hit_clusters |= word_to_clusters[t]
+                hit_words.add(t)
+        (crossmatch if hit_clusters else unmatched).append((r, hit_clusters, hit_words))
+    crossmatch.sort(key=lambda h: -(h[0]["count"] or 0))
+    unmatched = [r for r, _, _ in unmatched]
+
+    by_cluster_ct = Counter()
+    for _, hc, _ in crossmatch:
+        for c in hc:
+            by_cluster_ct[c] += 1
+
+    n_untagged = len(bf_untagged)
+    bf_lines = [
+        '<a id="backfill-vocabulary-outside-the-cluster-taxonomy"></a>',
+        "## Backfill vocabulary outside the cluster taxonomy", "",
+        "`strong.origin='backfill'` is out of scope for cluster mapping by design (book-scoped "
+        "lexical-completeness sweep, independent of any word — see the intro note above). This "
+        "section checks that the exclusion isn't hiding anything worth a second look: it types the "
+        "untagged mass instead of just counting it, and calls out individually every item that "
+        "plausibly *does* belong somewhere.", "",
+        f"- backfill strongs, total: **{n_backfill}**",
+        f"- already carrying a cluster tag (legacy `old-system-migration`, mostly T2/T3 function "
+        f"words): **{n_bf_tagged}**",
+        f"- genuinely untagged — the set this section breaks down: **{n_untagged}**", "",
+    ]
+    bf_lines += _tbl(
+        ["type", "heuristic", "count", "% of untagged", "verdict"],
+        [["proper nouns / place names", "capitalized single-word gloss", len(proper),
+          f"{100*len(proper)/n_untagged:.0f}%", "correctly out of scope"],
+         ["grammatical markers / construct forms",
+          "bracketed gloss, e.g. `[the]`, `[Valley of] Achor`", len(bracket),
+          f"{100*len(bracket)/n_untagged:.0f}%", "correctly out of scope"],
+         [f"high-frequency closed-class (count ≥ {bf_freq_threshold})",
+          "pronouns/prepositions/conjunctions — listed in full below", len(closed),
+          f"{100*len(closed)/n_untagged:.0f}%", "correctly out of scope"],
+         ["candidate vocabulary (the residual)", "everything else — real content words",
+          len(candidates), f"{100*len(candidates)/n_untagged:.0f}%", "this section's actual subject"]])
+    bf_lines.append("")
+
+    bf_lines.append(
+        f"**All {len(closed)} closed-class items** (count ≥ {bf_freq_threshold}, not a proper "
+        f"noun or grammatical marker — pronouns, prepositions, conjunctions, basic connectives; "
+        f"listed in full, not summarised):")
+    bf_lines.append("")
+    bf_lines += _tbl(["strongNumber", "stepGloss", "language", "count"],
+                     [[r["strongNumber"], r["stepGloss"], r["language"], r["count"]]
+                      for r in sorted(closed, key=lambda r: -(r["count"] or 0))])
+    bf_lines.append("")
+
+    bf_lines.append(
+        f"**Candidate vocabulary: {len(candidates)} items.** Cross-matched word-for-word (not "
+        f"substring — avoids e.g. \"Devil\" false-hitting on \"evil\") against every existing "
+        f"cluster's own `gloss` vocabulary, the same defining keyword lists used in the meanings "
+        f"tables above — **{len(crossmatch)}** hit at least one cluster. A single shared word is a "
+        f"hint, not a verdict: T2/T3 hits are expected (the candidate pool is mostly ordinary "
+        f"narrative vocabulary, which is exactly what T2/T3 already hold); hits against a specific "
+        f"M-cluster deserve an actual look before anything is relocated.")
+    bf_lines.append("")
+    bf_lines.append("Matches by cluster, sorted by `cluster_code` (one hit may count toward more "
+                    "than one cluster):")
+    bf_lines.append("")
+    bf_lines += _tbl(["cluster_code", "hits"],
+                     [[c, n] for c, n in sorted(by_cluster_ct.items())])
+    bf_lines.append("")
+    bf_lines.append(
+        f"Top {min(bf_crossmatch_cap, len(crossmatch))} hits by STEP frequency (full "
+        f"{len(crossmatch)} in `export/backfill_crossmatch.csv`):")
+    bf_lines.append("")
+    bf_lines += _tbl(
+        ["strongNumber", "stepGloss", "count", "matched cluster(s)", "matched word(s)"],
+        [[r["strongNumber"], r["stepGloss"], r["count"], ", ".join(sorted(hc)), ", ".join(sorted(hw))]
+         for r, hc, hw in crossmatch[:bf_crossmatch_cap]])
+    bf_lines.append("")
+
+    groups: dict[str, dict] = {}
+    for r in unmatched:
+        key = _stem_key(r["stepGloss"], suffixes, prefix_len) or r["strongNumber"]
+        g = groups.setdefault(key, {"glosses": set(), "codes": [], "freq": 0})
+        g["glosses"].add((r["stepGloss"] or "").strip())
+        g["codes"].append(r["strongNumber"])
+        g["freq"] += int(r["count"]) if r["count"] and str(r["count"]).isdigit() else 0
+    top_groups = sorted(groups.values(), key=lambda g: -g["freq"])[:bf_residual_top_n]
+
+    bf_lines.append(
+        f"**Residual — {len(unmatched)} items with no overlap against any existing cluster's "
+        f"vocabulary at all.** Stem-grouped the same way as the per-cluster meanings tables above, "
+        f"so the mass has visible shape rather than being one number:")
+    bf_lines.append("")
+    bf_lines += _tbl(["stem group", "codes", "freq"],
+                     [[", ".join(sorted(g["glosses"])), ", ".join(sorted(g["codes"])), g["freq"]]
+                      for g in top_groups])
+    bf_lines.append("")
+
+    outliers = sorted([r for r in unmatched if (r["count"] or 0) >= bf_outlier_freq],
+                      key=lambda r: -(r["count"] or 0))
+    bf_lines.append(
+        f"**{len(outliers)} individual residual items at count ≥ {bf_outlier_freq}** — high "
+        f"enough usage that a stem-group summary alone would bury them, so they're named "
+        f"individually here rather than only inside a group total:")
+    bf_lines.append("")
+    bf_lines += _tbl(["strongNumber", "stepGloss", "language", "count"],
+                     [[r["strongNumber"], r["stepGloss"], r["language"], r["count"]] for r in outliers])
+    bf_lines.append("")
+    bf_lines.append(
+        f"Full row-level detail behind every table above — all {n_untagged} untagged backfill "
+        f"strongs (typed), all {len(crossmatch)} cross-match hits, all {len(unmatched)} unmatched "
+        f"residual items — is in `export/backfill_typology.csv`, `export/backfill_crossmatch.csv`, "
+        f"`export/backfill_residual.csv`; nothing above is summarised without the full data sitting "
+        f"next to it.")
+    sections["backfill_typology"] = bf_lines
+
     L = reportkit.render_scaffold(conn, "report.cluster", sections, intro=intro)
 
     cluster_strong_joined = q(
@@ -176,5 +373,22 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     reportkit.write_csv_pairing(conn, "report.cluster", path.parent / "export",
                                 row_filter={"cluster_strong": cluster_strong_joined,
                                            "strong_without_cluster": strong_without_cluster})
+
+    export_dir = path.parent / "export"
+    typology = ([("proper_noun", r) for r in proper] + [("grammatical_marker", r) for r in bracket]
+               + [("closed_class", r) for r in closed] + [("candidate_vocabulary", r) for r in candidates])
+    _write_csv_direct(export_dir, "backfill_typology",
+                      ["strongNumber", "stepGloss", "stepTransliteration", "language", "count", "type"],
+                      [[r["strongNumber"], r["stepGloss"], r["stepTransliteration"], r["language"],
+                        r["count"], t] for t, r in typology])
+    _write_csv_direct(export_dir, "backfill_crossmatch",
+                      ["strongNumber", "stepGloss", "count", "matched_clusters", "matched_words"],
+                      [[r["strongNumber"], r["stepGloss"], r["count"], ",".join(sorted(hc)),
+                        ",".join(sorted(hw))] for r, hc, hw in crossmatch])
+    _write_csv_direct(export_dir, "backfill_residual",
+                      ["strongNumber", "stepGloss", "stepTransliteration", "language", "count", "stem_key"],
+                      [[r["strongNumber"], r["stepGloss"], r["stepTransliteration"], r["language"],
+                        r["count"], _stem_key(r["stepGloss"], suffixes, prefix_len)] for r in unmatched])
+
     path = reportkit.write_report(conn, "report.cluster", path, L)
     return path

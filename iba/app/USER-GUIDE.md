@@ -883,6 +883,48 @@ found and fixed the substring-collision bug and the combined-tag/empty-surface c
 
 ---
 
+## 12g. Cluster taxonomy + assignment (`Cluster-Report.ps1` / `Cluster-Assign.ps1`, built 2026-08-11/12, documented 2026-08-13 — was missing from this guide entirely)
+
+Two tools, read-only + mutating, same split as `Config-Maintenance.ps1`'s `Validate`/`Propose`:
+
+```powershell
+iba\app\ps\Cluster-Report.ps1
+#   -> iba/app/reports/cluster.md — the cluster taxonomy (all 50 codes: FLAG, M01-M47 incl. M10b/
+#      M10c/M32, T2, T3), word-origin strong-assignment coverage + gap list, and — every origin,
+#      not just word — per-cluster strong/span/lexical/verse counts with the top stem-grouped
+#      meanings per cluster, plus a "backfill vocabulary outside the taxonomy" section (typed:
+#      proper nouns / grammatical markers / closed-class / real candidate vocabulary, the last
+#      cross-matched against every cluster's own gloss and stem-grouped). Every per-cluster table
+#      sorts by `cluster_code`, not count (2026-08-13 — findability over ranking). Read-only, run
+#      whenever you want it.
+
+iba\app\ps\Cluster-Assign.ps1 -Step Validate
+#   read-only coverage/exception check — same escalate-once-then-pause shape as every other
+#   -Step Validate in this guide. Answer with Escalation.ps1 -Action AnswerRun, then re-run
+#   -Step Validate with the same -RunId to act on the answer.
+
+iba\app\ps\Cluster-Assign.ps1 -Step Assign
+#   DB-wide sweep: lib.strongreconcile.reconcile() against every strong row — mechanical
+#   HIGH-precedent cluster match (exact gloss match only, P1/P2, no researcher decision needed)
+#   plus the backfill->word promotion cascade (real STEP fetch + verse_lexical build) wherever a
+#   non-T2 classification and a word_registry link both already hold. T2 classifications never
+#   promote; T3 promotes with no word link required (by design — T3 "is inherently not word-
+#   specific"). Safe to re-run, idempotent.
+```
+
+**What `-Step Assign`'s exact-match matcher can't reach, a researcher pass can.** Its P1/P2 rule
+is deliberately narrow (exact stepGloss string match only, never substring — avoids the ill/kill,
+sin/hissing false-positive class) and found genuinely low recall against the ~9,500-strong
+untagged-backfill pool: a live run against that pool classified **zero** new codes. The real
+backfill-scope work (typing the pool with `report.cluster`'s backfill section, hand-tagging the
+clear T2/T3 cases, then re-running `-Step Assign` to do the actual promotion through this same
+registered mechanism) is a manual, judgement-led pass on top of this tool, not something it does
+alone — see `iba/app/reports/backfill-scope-triage-20260813.md` for the worked example (1,150
+codes hand-classified T3, then 1,000 promoted by re-running `-Step Assign`) and `BUILD.md` §107-111
+for the build history.
+
+---
+
 ## 13. Log retention (read-only)
 
 ```powershell
@@ -968,6 +1010,11 @@ iba\app\ps\WordRegistrySpan-Report.ps1 -Word <word>
 # on-demand verse restatement for ONE Strong's reference, any time (§12f):
 iba\app\ps\StrongVerse-Report.ps1 -Word <word> -Strong <strong>
 
+# cluster taxonomy report, any time; DB-wide mechanical assign is mutating (§12g):
+iba\app\ps\Cluster-Report.ps1
+iba\app\ps\Cluster-Assign.ps1 -Step Validate
+iba\app\ps\Cluster-Assign.ps1 -Step Assign
+
 # remove a test word (dry-run, then --yes):
 python -m iba.app.tools.purge_word --word <word>
 
@@ -1027,6 +1074,7 @@ iba/app/
               StrongMeaning-Report.ps1 · SpanAnalysis-Report.ps1 · SchemaOverview-Report.ps1 ·
               Registry-Report.ps1 · WordRegistrySpan-Report.ps1 (§12e) ·
               StrongVerse-Report.ps1 (§12f) ·
+              Cluster-Report.ps1 · Cluster-Assign.ps1 (§12g) ·
               **current per-book pipeline (§12b):** VerseLexical.ps1 · Debate-Run.ps1 ·
               Operations-Ingest.ps1 (the work package Debate-Run.ps1's hib/phenomenon/operation/
               closing steps run under) ·
