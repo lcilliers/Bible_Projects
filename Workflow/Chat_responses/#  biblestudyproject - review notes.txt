@@ -1,0 +1,40 @@
+#  biblestudyproject - review notes
+2026-08-15
+
+with reference to the report outputs/markdown/project-sanity-check-20260815.md 
+
+## status
+
+- This project is now live since February 2026 and are actively engaged with across the whole spectrum
+- The original database (also referred to as the old DB) is database\bible_research.db
+- approx. 1 month back it was decided to start the build the IBA app C:\Bible_study_projects\iba as an integrated operational platform to manage and control the operations of the study. To this end a new database was created. iba\app\db\iba.db
+- the IBA App replaces the operational routines.  The cycle from word initiation (STEP) through to verse lexical analysis, also referred to the base layer of the study data is now completely migrated to iba.db. All the instructions and scripts in the main project pointing to the old DB for the base layer is now redundant.
+- what is not redundant in the old DB is the entire prose section, as well as all the findings tables and files.
+- currently the project is getting ready to restart the findings/analysis stage of the project and is in the process of evaluating different ways to do it.  This leads to this chat.
+- the work done on the prose is part of the preparation.  It is an integral part of the project.
+- obsidian is increasingly being used to read and prepare md files.
+
+## questions and actions to consider
+- the current plan is to split the use of databases to capture and control the project between the two current database.  Bible_research holding the analytic output (findings/analysis etc) and the prose (the canonical story of the entire project) while the IBA App holds the entire process control machine and the base data layer.  If this plan works, then it would be prudent to remove the base data layer from Bible_research. Additional consolidation of the process control need to move from the main project to be included in the app.  This is likely now the right time to bring it all together, with the DB layer operating from the two databases.
+
+- The repo commit rules must be applied across the entire project
+- Claude memory should be consistent across the entire project
+- memory to be updated to reflect the overall status of the project - this review demonstrated that it is fragmented
+- the main next steps in the project is
+	- bring the integrated project together and consolidate the project status
+	- bring all the guidance, governance, readme and other startup and control documents together, align it and enforce it across the entire base. (the IBA App is starting to work as expected)
+	- merge the windows debate in IBA with the prose and document the revised analytic approach and design
+	- merge the consolidated findings into prose, and actively use the prose to capture the findings 
+	- consolidate the huge store of very valuable information in the thousands of md files.
+
+- I want to make sure that I am using the best claude practices to run this project.  For instance:
+	- what is the best way to prepare my communications and review notes. Typing it into the chat is not effective.
+	- how to work with multiple windows open
+	- how to access Claude AI directly in the Claude Code or VSC interface (currently I use Claude AI desktop which means jumping from one application to another
+	- best practices to use obsidian
+	- best practices to use the SQLite-extension engine. this is done to get better visibility of the database, and to get around Claude not consistently being helpful with identifying issues in the DB. The DB is not visible enough for me and Claude have consistently mislead me or simple did not put enough thought into the implications of the data in the DB.
+	- file management is still a long way from being easy to navigate and to find what I am looking for. Claude is still very inconsistent.
+	
+        
+
+

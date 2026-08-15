@@ -238,14 +238,58 @@ A revision follows the same shape but uses the `supersede` operation on `prose_s
 [scripts/build_programme_prose_extract.py](../scripts/build_programme_prose_extract.py) produces the programme-prose extract in three formats:
 
 - **JSON** — machine-readable state; metadata always; bodies included with `--include-body`.
-- **Markdown** — readable view grouped by chapter, bodies inline.
+- **Markdown** — readable view grouped by book, section, and chapter, with bodies inline.
 - **DOCX** — reader-facing Word document (for review in Drive).
 
-Output paths: [Workflow/reference/](../Workflow/reference/) for JSON/MD; [outputs/docx/](../outputs/docx/) for DOCX.
+The exporter accepts `--book BOOK_LABEL`; omit it to produce all books:
+
+```powershell
+python scripts/build_programme_prose_extract.py --also-markdown --include-body
+python scripts/build_programme_prose_extract.py --book Programme --also-markdown --include-body
+```
+
+Output paths: [Workflow/Programme/programme_prose/](../Workflow/Programme/programme_prose/)
+for dated JSON/Markdown extracts; [outputs/docx/](../outputs/docx/) for DOCX.
+
+For section-by-section editing, export a temporary chapter file:
+
+```powershell
+python scripts/export_prose_chapter_edit.py --book Programme --chapter 1
+```
+
+Edit only the prose body below each immutable `PROSE_*` marker. Generate a
+supersede patch from the edited file:
+
+```powershell
+python scripts/import_prose_chapter_edit.py path/to/edited-chapter.md
+python scripts/apply_session_patch.py path/to/generated-patch.json
+```
+
+The importer validates the book, section, chapter, title, sort order, current
+version, and source-file markers. It never changes structure and never writes
+directly to the database. The old prose version remains preserved through the
+supersede chain. Temporary edit files may be discarded after the patch has
+been reviewed and applied.
 
 ### 8.2 FTS5 search
 
-`prose_section_fts` supports phrase and proximity search across every prose row in the database. Useful for "show me every passage that mentions X across all stages".
+[`scripts/search_prose.py`](../scripts/search_prose.py) searches active,
+non-superseded prose across all books and writes a Markdown report while
+printing only a short terminal summary:
+
+```powershell
+python scripts/search_prose.py grace
+python scripts/search_prose.py grace --book Findings --limit 1000
+python scripts/search_prose.py "grace OR love" --fts --limit 1000
+```
+
+The report includes the book, section, chapter, prose-section ID, version,
+and `source_file` for every match. `prose_section_fts` indexes prose headings
+and bodies; the helper joins each FTS hit back to the current prose hierarchy.
+Plain search text is treated literally. Use `--fts` only for an explicit
+SQLite FTS5 expression. Reports default to
+`outputs/markdown/prose-search-YYYYMMDD.md`-style filenames; use `--out PATH`
+for a specific path.
 
 ### 8.3 Round-trip editing via `.md` markers
 

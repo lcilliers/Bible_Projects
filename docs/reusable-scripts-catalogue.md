@@ -59,6 +59,14 @@
 ## Reference-as-DB extract builders (M32–34 governance)
 `build_reference_snapshot.py` · `build_rules_extract.py` · `build_vocab_extract.py` · `build_obs_catalogue_export.py` · `build_obs_catalogue_tiered_extract.py` · `build_file_patterns_extract.py` · `build_label_patterns_extract.py` · `build_patch_types_extract.py` · `build_programme_prose_extract.py` · `build_corpus_prose.py` · `build_session_a_prose.py`
 
+## Prose retrieval
+| Script | Produces |
+|---|---|
+| `build_programme_prose_extract.py` | All-book or single-book prose JSON/Markdown/DOCX extracts (`--book`, `--include-body`, `--also-markdown`, `--also-docx`) |
+| `export_prose_chapter_edit.py` | Temporary editable Markdown for one book/chapter; preserves immutable routing markers |
+| `import_prose_chapter_edit.py` | Validates an edited chapter file and generates a `PROSE` supersede patch; does not write directly to DB |
+| `search_prose.py` | Markdown cross-prose search reports with book, section, chapter, ID, version, and source-file references (`--book`, `--limit`, `--fts`, `--out`) |
+
 ## Process / pipeline (reusable; modifies state)
 | Script | Action |
 |---|---|

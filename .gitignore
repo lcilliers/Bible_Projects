@@ -107,8 +107,10 @@ desktop.ini
 *.sln.docstates
 
 # ── Obsidian ──────────────────────────────────
-.obsidian/workspace.json
-.obsidian/workspace-mobile.json
+.obsidian/
+
+# ── SQLite VS Code extension scratch queries ──
+database/scripts/*.sqlite3-query
 
 # ── Zotero (local cache) ──────────────────────
 zotero-cache/

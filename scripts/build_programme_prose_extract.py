@@ -1,13 +1,13 @@
-"""build_programme_prose_extract.py — Programme-stage prose extract (M34).
+"""build_programme_prose_extract.py — Prose-book extract.
 
-Source of truth: `prose_section_type` where `source_stage='programme'` + the
-actual `prose_section` content for each type (where populated).
+Source of truth: `prose_section_type` and the actual `prose_section` content.
 
 Usage:
   python scripts/build_programme_prose_extract.py
   python scripts/build_programme_prose_extract.py --also-markdown
   python scripts/build_programme_prose_extract.py --also-docx       # readable Word doc in outputs/docx/
-  python scripts/build_programme_prose_extract.py --include-body    # include full prose body text in JSON
+    python scripts/build_programme_prose_extract.py --include-body    # include full prose body text in JSON
+    python scripts/build_programme_prose_extract.py --book Programme  # one book; omit for all books
   python scripts/build_programme_prose_extract.py --all-formats     # JSON + MD + DOCX with bodies
 
 Default outputs:
@@ -15,8 +15,8 @@ Default outputs:
   Workflow/Programme/programme_prose/wa-programme-prose-extract-{YYYYMMDD}.md   (if --also-markdown)
   outputs/docx/wa-programme-prose-extract-{YYYYMMDD}.docx            (if --also-docx)
 
-Content is expected to be empty after M34 seed; populated later via PROSE
-patches as researcher + Claude AI draft each programme-stage narrative.
+The `--book` value matches `prose_section_type.book_label`. Omit it to export
+all books.
 """
 from __future__ import annotations
 
@@ -46,6 +46,13 @@ CHAPTER_NAMES = {
     6: "Instruction corpus",
 }
 
+BOOK_STAGE_MAP = {
+    "Programme": {"programme"},
+    "Detail design": {"session_a", "session_b", "session_b_phase9", "session_c", "session_d"},
+    "Findings": {"synthesis", "verse-analysis"},
+    "Essays": {"essay"},
+}
+
 
 def open_db(path: str = DB_PATH) -> sqlite3.Connection:
     conn = sqlite3.connect(path)
@@ -68,14 +75,27 @@ def get_schema_version(conn) -> str:
     return row[0] if row else "unknown"
 
 
-def extract_programme_prose(conn, include_body: bool = False) -> dict:
+def extract_programme_prose(
+    conn, include_body: bool = False, book: str | None = None, chapter: int | None = None
+) -> dict:
     # Section type catalogue
+    book_filter = ""
+    params: tuple[str, ...] = ()
+    if book is not None:
+        book_filter = " AND book_label = ?"
+        params = (book,)
+    if chapter is not None:
+        book_filter += " AND chapter_no = ?"
+        params += (chapter,)
     type_rows = conn.execute(
-        """SELECT id, code, label, description, chapter_no, lifecycle_tag,
-                  expected_length_min, expected_length_max, sort_order
+        f"""SELECT id, code, label, description, chapter_no, lifecycle_tag,
+                  expected_length_min, expected_length_max, sort_order,
+                  book_order, book_label, section_order, section_label,
+                  source_stage
              FROM prose_section_type
-            WHERE source_stage = 'programme' AND delete_flagged = 0
-            ORDER BY sort_order, code"""
+            WHERE delete_flagged = 0{book_filter}
+            ORDER BY book_order, section_order, chapter_no, sort_order, id, code""",
+        params,
     ).fetchall()
 
     types: list[dict] = []
@@ -90,7 +110,8 @@ def extract_programme_prose(conn, include_body: bool = False) -> dict:
         # current-only for readability.
         sections = conn.execute(
             """SELECT id, registry_id, heading, status, version, author,
-                      word_count, created_at, approved_at, supersedes_id
+                      word_count, created_at, approved_at, supersedes_id,
+                      source_file
                  FROM prose_section
                 WHERE section_type_id = ?
                   AND delete_flagged = 0
@@ -108,6 +129,11 @@ def extract_programme_prose(conn, include_body: bool = False) -> dict:
             "expected_length_min": t["expected_length_min"],
             "expected_length_max": t["expected_length_max"],
             "sort_order": t["sort_order"],
+            "book_order": t["book_order"],
+            "book_label": t["book_label"],
+            "section_order": t["section_order"],
+            "section_label": t["section_label"],
+            "source_stage": t["source_stage"],
             "section_count": len(sections),
             "sections_preview": [dict(s) for s in sections],
         }
@@ -126,17 +152,21 @@ def extract_programme_prose(conn, include_body: bool = False) -> dict:
         "types": types,
         "type_count": type_count,
         "section_total": section_total,
+        "book": book,
+        "chapter": chapter,
     }
 
 
-def build_extract(conn, include_body: bool = False) -> dict:
-    pp = extract_programme_prose(conn, include_body=include_body)
+def build_extract(
+    conn, include_body: bool = False, book: str | None = None, chapter: int | None = None
+) -> dict:
+    pp = extract_programme_prose(conn, include_body=include_body, book=book, chapter=chapter)
     return {
         "meta": {
             "generated_at": now_iso(),
             "schema_version": get_schema_version(conn),
             "extractor_version": EXTRACTOR_VERSION,
-            "source": "prose_section_type WHERE source_stage='programme' (M34 live, 2026-04-20)",
+            "source": "prose_section_type + prose_section",
             "canonical_note": "DB is source of truth post-M34 for programme-stage narrative (L2 of 3-layer reference).",
             "include_body": include_body,
             "description": "Programme-wide narrative section index — anchor verse definition, XREF architecture, validation standard, etc. Content populated via PROSE patches as researcher + AI draft each narrative.",
@@ -151,7 +181,9 @@ def render_markdown_view(extract: dict) -> str:
     meta = extract["meta"]
     pp = extract["programme_prose"]
 
-    lines.append(f"# WA Programme-Stage Prose — {meta['generated_at'][:10]}\n")
+    book_name = pp.get("book") or "All books"
+    chapter_name = f" — Chapter {pp['chapter']}" if pp.get("chapter") is not None else ""
+    lines.append(f"# Prose Extract — {book_name}{chapter_name} — {meta['generated_at'][:10]}\n")
     lines.append(f"_Schema {meta['schema_version']} · source: `prose_section_type` + `prose_section`._\n")
     lines.append("---\n")
     lines.append("## Summary\n")
@@ -167,41 +199,54 @@ def render_markdown_view(extract: dict) -> str:
     stubs = [t for t in pp["types"] if t["section_count"] == 0]
 
     if populated:
-        lines.append("## Programme\n")
-        # Group populated types by chapter_no (None sorts last)
-        by_chapter: dict = {}
+        # Group populated types by book, section, and chapter.
+        by_book: dict = {}
         for t in populated:
-            ch = t.get("chapter_no")
-            by_chapter.setdefault(ch, []).append(t)
-        chapter_keys = sorted(by_chapter.keys(), key=lambda c: (c is None, c if c is not None else 0))
+            by_book.setdefault((t.get("book_order"), t.get("book_label") or "Unassigned book"), []).append(t)
 
-        for ch in chapter_keys:
-            chapter_name = CHAPTER_NAMES.get(ch, "Unchaptered") if ch is not None else "Unchaptered"
-            header = f"Chapter {ch} — {chapter_name}" if ch is not None else chapter_name
-            lines.append(f"### {header}\n")
-            for t in sorted(by_chapter[ch], key=lambda x: (x["sort_order"] or 0)):
-                lines.append(f"#### {t['label']}\n")
-                lines.append(f"_`{t['code']}`  ·  type id {t['id']}  ·  sort {t['sort_order']}_\n")
-                if t.get("description"):
-                    lines.append(f"> {t['description']}\n")
-                # Render each populated section's body inline (highest-version first
-                # per the underlying query in extract_programme_prose).
-                bodies = t.get("bodies_by_id") or {}
-                for s in t["sections_preview"]:
-                    body = bodies.get(s["id"])
-                    if body is None:
-                        # No body (either --include-body not set, or row missing). Show metadata.
-                        lines.append(f"*(metadata only — body not included in this extract. "
-                                     f"Run `build_programme_prose_extract.py --include-body` to render full text.)*")
-                        lines.append(f"- Section id {s['id']} · status `{s['status']}` · "
-                                     f"v{s['version']} · {s['word_count']} words · author `{s['author']}`\n")
-                    else:
-                        meta_line = (f"*Section id {s['id']} · status `{s['status']}` · "
-                                     f"v{s['version']} · {s['word_count']} words · author `{s['author']}`*")
-                        lines.append(meta_line + "\n")
-                        lines.append(body.rstrip())
-                        lines.append("")  # blank line after body
-            lines.append("")  # blank line between chapters
+        book_keys = sorted(by_book.keys(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0, x[1]))
+        for book_key in book_keys:
+            lines.append(f"## {book_key[1]}\n")
+            by_section: dict = {}
+            for t in by_book[book_key]:
+                section_key = (t.get("section_order"), t.get("section_label") or t.get("source_stage") or "Unassigned section")
+                by_section.setdefault(section_key, []).append(t)
+            section_keys = sorted(by_section.keys(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0, x[1]))
+            for section_key in section_keys:
+                if section_key[1] != book_key[1]:
+                    lines.append(f"### {section_key[1]}\n")
+                by_chapter: dict = {}
+                for t in by_section[section_key]:
+                    by_chapter.setdefault(t.get("chapter_no"), []).append(t)
+                chapter_keys = sorted(by_chapter.keys(), key=lambda c: (c is None, c if c is not None else 0))
+                for ch in chapter_keys:
+                    chapter_name = CHAPTER_NAMES.get(ch, "Unchaptered") if ch is not None else "Unchaptered"
+                    header = f"Chapter {ch} — {chapter_name}" if ch is not None else chapter_name
+                    lines.append(f"#### {header}\n")
+                    for t in sorted(by_chapter[ch], key=lambda x: (x["sort_order"] is None, x["sort_order"] or 0, x["id"])):
+                        if t.get("description"):
+                            lines.append(f"> {t['description']}\n")
+                        lines.append(f"##### {t['label']}\n")
+                        lines.append(f"_`{t['code']}`  ·  type id {t['id']}  ·  chapter {t['chapter_no']}  ·  sort {t['sort_order']}_\n")
+                        # Render each populated section's body inline (highest-version first
+                        # per the underlying query in extract_programme_prose).
+                        bodies = t.get("bodies_by_id") or {}
+                        for s in t["sections_preview"]:
+                            body = bodies.get(s["id"])
+                            if body is None:
+                                lines.append(f"*(metadata only — body not included in this extract. "
+                                             f"Run `build_programme_prose_extract.py --include-body` to render full text.)*")
+                                lines.append(f"- Section id {s['id']} · status `{s['status']}` · "
+                                             f"v{s['version']} · {s['word_count']} words · author `{s['author']}` · "
+                                             f"source `{s['source_file'] or 'not recorded'}`\n")
+                            else:
+                                meta_line = (f"*Section id {s['id']} · status `{s['status']}` · "
+                                             f"v{s['version']} · {s['word_count']} words · author `{s['author']}` · "
+                                             f"source `{s['source_file'] or 'not recorded'}`*")
+                                lines.append(meta_line + "\n")
+                                lines.append(body.rstrip())
+                                lines.append("")
+                        lines.append("")
 
     if stubs:
         lines.append("---\n")
@@ -374,6 +419,10 @@ def main() -> int:
                     help="also emit a readable .docx view (outputs/docx/)")
     ap.add_argument("--include-body", action="store_true",
                     help="include full prose body text in JSON (default: metadata only)")
+    ap.add_argument("--book", type=str, default=None,
+                    help="book_label to export; omit to export all books")
+    ap.add_argument("--chapter", type=int, default=None,
+                    help="chapter number to export; combine with --book")
     ap.add_argument("--all-formats", action="store_true",
                     help="shortcut: equivalent to --also-markdown --also-docx --include-body")
     args = ap.parse_args()
@@ -384,7 +433,13 @@ def main() -> int:
         args.include_body = True
 
     conn = open_db(args.db)
-    extract = build_extract(conn, include_body=args.include_body)
+    if args.book is not None and args.book not in BOOK_STAGE_MAP:
+        ap.error(f"unknown book {args.book!r}; choose from: {', '.join(BOOK_STAGE_MAP)}")
+    if args.chapter is not None and args.book is None:
+        ap.error("--chapter requires --book")
+    extract = build_extract(
+        conn, include_body=args.include_body, book=args.book, chapter=args.chapter
+    )
 
     out_dir = Path(OUT_DIR)
     out_dir.mkdir(parents=True, exist_ok=True)

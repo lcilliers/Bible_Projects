@@ -375,6 +375,101 @@ python -m engine.engine --clear-lock --registry=42  # Clear a specific lock
 | `scripts/_apply_stem_patch.py` | Applies a Claude-produced stem extraction JSON patch | ⚠️ Modifies DB |
 | `scripts/_apply_phase2_flags_patch.py` | Applies a Claude-produced phase-2 flag reassessment JSON patch | ⚠️ Modifies DB |
 
+### Prose output and search
+
+The prose store is read from `database/bible_research.db`. These are the two
+normal read-only routines for working with it.
+
+#### Produce prose output
+
+Generate JSON and Markdown for all prose books:
+
+```powershell
+python scripts/build_programme_prose_extract.py --also-markdown --include-body
+```
+
+Limit the output to one book with its `book_label`:
+
+```powershell
+python scripts/build_programme_prose_extract.py `
+        --book Programme `
+        --also-markdown `
+        --include-body
+```
+
+Omit `--book` to export all books. Outputs are written under
+`Workflow/Programme/programme_prose/`; they are generated views of the
+database, not editing sources.
+
+To create a temporary editable Markdown file for one chapter:
+
+```powershell
+python scripts/export_prose_chapter_edit.py `
+        --book Programme `
+        --chapter 1
+```
+
+To export one exact prose section by `prose_section_type.id`:
+
+```powershell
+python scripts/export_prose_chapter_edit.py --type-id 53
+```
+
+For the current Programme revision work, the populated sections in Chapters
+4-6 were exported individually to:
+`outputs/markdown/prose-edits/programme-chapters-4-6/`. This excludes Detail
+design sections. There are 31 Programme files: 11 in Chapter 4, 7 in Chapter
+5, and 13 in Chapter 6.
+
+Edit only the prose bodies below the `PROSE_*` markers, including
+`PROSE_SECTION_ID`, `PROSE_SECTION_TYPE`, `PROSE_BOOK`, `PROSE_SECTION`,
+`PROSE_CHAPTER_NO`, `PROSE_CHAPTER_TITLE`, `PROSE_SORT_ORDER`,
+`PROSE_VERSION`, and `PROSE_SOURCE_FILE`. Do not change the markers or the
+structural metadata. After editing, generate a versioned
+supersede patch:
+
+```powershell
+python scripts/import_prose_chapter_edit.py `
+        outputs/markdown/prose-edit-programme-chapter-1-YYYYMMDD.md
+```
+
+Review the generated patch, then apply it through the normal patch applicator:
+
+```powershell
+python scripts/apply_session_patch.py PATH_TO_GENERATED_PATCH.json
+```
+
+The importer does not write to the database. It validates the book, section,
+chapter, title, sort order, current version, and source markers, then creates
+a `PROSE` `supersede` operation. The old row remains in the audit trail and
+the new row receives the next version. A superseded or soft-deleted row is not
+included in the current prose extract.
+
+#### Search prose
+
+Search active, non-superseded prose across all books. The command writes a
+Markdown report and prints only a short terminal summary:
+
+```powershell
+python scripts/search_prose.py grace
+```
+
+Search one book and increase the result limit when needed:
+
+```powershell
+python scripts/search_prose.py grace --book Findings --limit 1000
+```
+
+For an advanced SQLite FTS5 expression, add `--fts`:
+
+```powershell
+python scripts/search_prose.py "grace OR love" --fts --limit 1000
+```
+
+Reports are written to `outputs/markdown/prose-search-*.md`. Each result
+includes the book, section, chapter, prose-section ID, version, and source
+file. Use `--out PATH` for a specific report filename.
+
 ### Common ad-hoc queries
 
 ```python
