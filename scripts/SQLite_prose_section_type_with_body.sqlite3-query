@@ -1,0 +1,30 @@
+-- database: ../database/bible_research.db
+
+SELECT * FROM prose_section_type
+order by source_stage,sort_order, chapter_no
+;
+
+SELECT
+    pst.book_order,
+    pst.book_label,
+    pst.section_order,
+    pst.section_label,
+    pst.chapter_no,
+    pst.label AS chapter_title,
+    pst.description AS chapter_description,
+    pst.sort_order,
+    ps.id,
+    ps.body,
+    ps.source_file
+FROM prose_section_type pst
+JOIN prose_section ps
+    ON ps.section_type_id = pst.id
+WHERE COALESCE(pst.delete_flagged, 0) = 0
+  AND COALESCE(ps.delete_flagged, 0) = 0
+  AND ps.superseded_by_id IS NULL
+ORDER BY
+    pst.book_order,
+    pst.section_order,
+    pst.chapter_no,
+    pst.sort_order,
+    pst.id;

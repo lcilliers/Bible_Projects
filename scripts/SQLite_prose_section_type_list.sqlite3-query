@@ -1,0 +1,4 @@
+-- database: ../database/bible_research.db
+
+SELECT * FROM prose_section_type
+order by source_stage,sort_order

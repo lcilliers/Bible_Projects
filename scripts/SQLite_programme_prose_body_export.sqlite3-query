@@ -1,0 +1,28 @@
+-- database: ../database/bible_research.db
+
+SELECT pst.chapter_no,
+pst.label,
+pst.description,
+ps.id,
+ps.body,
+ps.source_file
+FROM prose_section_type pst
+INNER JOIN prose_section ps
+ON pst.id = ps.section_type_id
+WHERE pst.source_stage = 'programme' and pst.delete_flagged = 0
+ORDER BY pst.sort_order;
+
+SELECT
+pst.source_stage,
+pst.sort_order,
+pst.chapter_no,
+pst.label,
+pst.description,
+ps.id,
+ps.body,
+ps.source_file
+FROM prose_section_type pst
+INNER JOIN prose_section ps
+ON pst.id = ps.section_type_id
+WHERE  pst.delete_flagged = 0
+ORDER BY pst.source_stage,pst.sort_order,  pst.chapter_no;
