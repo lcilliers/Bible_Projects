@@ -325,20 +325,37 @@ def find_orphan_candidate_rules(conn: sqlite3.Connection, app_root: pathlib.Path
 def find_bad_report_csv_table_references(conn: sqlite3.Connection) -> list[str]:
     """Every `cfg_report_csv_table.table_name` must name a real table — a DATA table (`cfg_table`)
     or a `cfg_*` infrastructure table — or the wildcard `cfg_*` prefix `reportkit.write_csv_pairing`
-    itself recognises (a literal trailing `*`). The same referential-integrity discipline
+    itself recognises (a literal trailing `*`) — **or be marked `virtual`** (a row_filter-supplied
+    CSV pairing: the handler computes the rows itself and passes them to `write_csv_pairing` under
+    this `table_name` as a key, so no `SELECT * FROM {table_name}` ever runs against it — see
+    `write_csv_pairing`'s `row_filter` parameter). The same referential-integrity discipline
     `find_report_step_references`/`_validate_live`'s write-grant check already apply to `.step`/
     write-grant table references — never applied to THIS table's own column before (2026-07-30,
     researcher: "your validations is only touching settings and enum"). A hard structural fault:
-    a CSV pairing for a table that doesn't exist would crash `write_csv_pairing` the moment that
-    report actually runs, not just sit as a cosmetic gap."""
+    a CSV pairing for a table that doesn't exist AND isn't `virtual` would crash `write_csv_pairing`
+    the moment that report actually runs, not just sit as a cosmetic gap.
+
+    **`virtual` added 2026-08-15** — this check itself was a false positive against two entries
+    that were never broken (`report.registry`/`word_registry_strong_pairing`,
+    `report.cluster`/`strong_without_cluster`, both legitimate `row_filter` keys), re-raised across
+    three separate `configmaint.validate` escalations (#591, #597, #642) over five days because the
+    check had no way to represent "this is intentionally not a literal table." A `virtual` row
+    without a `join_note` is still flagged — the exemption cannot silently hide an actually-wrong
+    entry with no explanation attached."""
     data_tables = {r[0] for r in conn.execute("SELECT name FROM cfg_table")}
     cfg_tables = {r[0] for r in conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
     known = data_tables | cfg_tables
     out = []
     for r in conn.execute(
-            "SELECT DISTINCT step, table_name FROM cfg_report_csv_table WHERE inactive=0"):
-        name = r[1]
+            "SELECT DISTINCT step, table_name, virtual, join_note FROM cfg_report_csv_table "
+            "WHERE inactive=0"):
+        name, is_virtual, join_note = r[1], r[2], r[3]
+        if is_virtual:
+            if join_note is None:
+                out.append(f"schema: cfg_report_csv_table ({r[0]}).table_name {name!r} is marked "
+                          f"virtual but carries no join_note explaining what it is")
+            continue
         if name.endswith("*"):
             prefix = name[:-1]
             if not any(t.startswith(prefix) for t in known):

@@ -1,5 +1,8 @@
 # The IBA app — build record
 
+> **Start at [`CHARTER.md`](CHARTER.md) first** — the researcher's own statement of what this app
+> is *for*. This file is the history of building toward that; it is not the objective itself.
+
 > **2026-07-17, first slice.** The first working vertical slice of the IBA application:
 > PowerShell, Python, config, DB, output and controls, fitting together. It registers a new word
 > and builds its **raw layer** from STEP into a new database, and it runs end to end. §1–§7 below
@@ -6716,3 +6719,152 @@ right choice there, this was specifically about tables keyed one-row-per-cluster
 
 **Files:** `iba/app/lib/clusterreport.py` (3 `ORDER BY`/sort-key changes, no new sections). Config:
 none. Report output: `iba/app/reports/cluster-v8-20260813.md`.
+
+---
+
+## 112. `manifest.rebuild` / `manifest.search` — the project-wide file manifest, ported from the main-repo `scripts/build_file_manifest.py` into a governed IBA utility (2026-08-15)
+
+**Trigger.** Researcher, 2026-08-15: "the rules, user guide, and methods to use and update the
+manifest, and search the manifest must be built into the IBA App" — the manifest (filename/path
+metadata for every file in the project) had lived only as a standalone main-repo script
+(`scripts/build_file_manifest.py` → a loose 8.3 MB `database/file_manifest.json`), unregistered,
+un-config-governed, and separate from everything else this app tracks. This is round A of a
+two-round plan (round B, a file-**content** search built on top of this manifest as its coverage
+baseline, is scoped but not yet built —
+`outputs/markdown/manifest-and-content-search-into-iba-plan-v1-20260815.md`).
+
+**What moved, and what stayed.** The classification logic (category/type/currency, and the date/
+registry/version/cluster/word extraction regexes) is project-naming FACT — how files across this
+repo's actual history have been named — ported near-verbatim into `iba/app/lib/manifest.py`, same
+distinction the STEP client config already draws between facts (code) and decisions (config). One
+addition: an `iba` category (with its own sub-typing — migration/ps-script/handler/lib/config/
+report/verse-analysis/governance/build-log/user-guide/session-log) for the `iba/` subtree, which
+the original script left uncategorised as "other." What genuinely is a decision — which
+directories/extensions a scan skips — is `manifest.skip_dirs`/`manifest.exclude_exts`
+(`cfg_setting`, module `manifest`), not a literal. The manifest still scans the WHOLE project tree
+from the repo root, not `iba/` only — the governing mechanism moved into IBA; the target didn't
+shrink.
+
+**Two independently-invokable work packages** (same shape as `log-retention`/`table-export` —
+`bootstrap_retention_table_export_registration.py` — rather than one chained package):
+`file-manifest-rebuild` / `manifest.rebuild` (full rescan, replaces the `file_manifest` table's
+contents, writes a persisted summary report via `reportkit.render_scaffold`) and
+`file-manifest-search` / `manifest.search` (read-only `field:value`/free-text query against that
+table — `-Query` is a per-call PS parameter, not config, same boundary `table.export`'s `-Table`
+draws). Both `cfg_step.kind='utility'` (§27 — this app's own running, not the study's substantive
+analytic content), registered via a direct `bootstrap_file_manifest.py` migration (DDL + `cfg_*`
+inserts, the established step-registration carve-out, §9B/§14) — new table `file_manifest`
+(path/category/file_type/currency/archived/registry/word/cluster/vcb_batch/version/date/ext/
+size_bytes/modified_at/scanned_at), plus a `cfg_utility` row for `lib/manifest.py` (§26).
+`manifest.search`'s results persist via `reportkit.oneoff_path` (`governance.reports_must_persist`)
+— no `cfg_report` row needed for a one-off query, only `manifest.rebuild`'s summary report has one.
+
+**Real gap found and fixed in the same pass, not left for later:** the first `configmaint.validate`
+run after the initial migration failed with 6 coherence errors — 4 were the migration's own miss
+(`manifest` used as a `cfg_setting.module` value without being added to `enum.config_module` first);
+fixed by adding the missing `_enum(conn, "config_module", "manifest", ...)` call and re-running the
+idempotent migration. The remaining 2 (`cfg_report_csv_table` rows for `report.registry`/
+`report.cluster` naming table names that aren't real tables) are confirmed **pre-existing** — still
+present after the manifest-specific 4 were fixed, unrelated to this work, already recorded as part
+of escalation #642 (raised by the first, failing validate run) — flagged to the researcher rather
+than fixed here, since diagnosing which of those two `cfg_report_csv_table` rows is wrong (a stale
+table name vs. a table that should exist but doesn't) is its own judgement call, out of scope for
+this build.
+
+**Verified end to end, not just written:** migration ran idempotently (second run: 12 of 13 items
+"already present," only the enum fix new); `manifest.rebuild` run for real via the dispatcher —
+18,653 files indexed (10,099 active, 8,554 archived), summary report rendered with working ToC
+anchors; `manifest.search` run for real with both a field query (`type:iba-migration`, 89 matches)
+and a free-text query (`governance-alignment`, 1 match, correctly located
+`docs/governance-alignment-register.md`); `configmaint.validate` clean on everything this migration
+touched.
+
+**Files:** `iba/app/lib/manifest.py` (new), `iba/app/migration/bootstrap_file_manifest.py` (new),
+`iba/app/handlers/reports.py` (+`manifest_rebuild`/`manifest_search`), `iba/app/ps/
+Manifest-Rebuild.ps1` (new), `iba/app/ps/Manifest-Search.ps1` (new). Report output:
+`iba/app/reports/file-manifest-v1-20260815.md`; search results under `iba/app/reports/
+manifest-search-*-20260815.md`.
+
+## 113. Escalation system reset — column shape, own rule table, wider vocabulary, 22 governance settings, backlog cleared (2026-08-16)
+
+**Trigger.** Researcher's "iba table review" + `export.cfg_settings shortcomings.csv`
+(`Workflow/Chat_responses/`), confirmed and refined in a follow-up chat response
+(`Workflow/Chat_responses/response-tablereviewresponse v1`) — full digest at
+`outputs/markdown/iba-table-review-response-v1-20260816.md`. Diagnosis: escalation's original
+three-way approve/reject/revise shape couldn't carry what was being asked of it (no severity/owner
+routing, no place to record what was actually done, `governance` settings had drifted into
+incident notes rather than standing rules), and `configmaint.propose`-style gating was becoming a
+drag when most items just need recording, not a decision.
+
+**Schema** (`iba/app/migration/escalation_reset_v1_20260816.py`, config-driven retrofit — same
+method as `retrofit_debate_lexicon_tables.py`, not hand DDL): `escalation.word`→`source` (now
+NOT NULL — `'new-word: <word>'` / the generating module name / `'claude'` / `'researcher'`,
+per new `cfg_escalation.source_classification`), `question`→`short_description`,
+`preset`→`context`, `answer`→`next_action` (approve|reject|revise|hold|noted, was
+approve|reject|revise); new columns `resolution` (what was actually done — nothing previously
+recorded this), `related_activity`, `next_action_assigned_to` (Claude|Researcher),
+`answered_by` (Claude|Researcher, required by convention at every terminal state, enforced in
+code not a DB constraint). `state`: raised|re-assign|on-hold|closed|withdraw|completed (was
+raised|answered|paused|retracted). All 634 live rows backfilled by explicit CASE mapping, not a
+blind copy — `type` reclassified from the old crash|interactive|prompted|report-stop into
+task|run_error|issue|notice|config by `at_step`/word-presence pattern (documented inline in
+`_retrofit_escalation()`). New `cfg_escalation` table (same shape/registration convention as
+`cfg_method_rule`) holds 5 rules: source-classification, duplicate-suppression (already
+enforced, `open_duplicate`), module-blocking (recorded, **not yet wired** — tracked as its own
+task escalation), resolution-precedence, chat-routing.
+
+**Real bug found and fixed mid-build, not left for later:** the first migration run failed —
+`escalation.raise_manual` immediately errored `'raised' is not a member of cfg_enum
+'escalation_state'`. Cause: `_update_enums()`'s "mark old inactive, `INSERT OR IGNORE` new" pattern
+silently no-ops on any value SHARED between the old and new sets (`raised` is valid in both), so
+the blanket `inactive=1` sweep left it stuck inactive with nothing to reactivate it. Fixed the live
+row directly, then replaced the pattern with a real upsert (`_upsert_enum()`,
+`ON CONFLICT...DO UPDATE SET inactive=0`) in the migration source so it's correct for anyone
+re-reading it. Second gap, also found live: `escalation`'s `run_id` FK (`run.run_id`) had never
+actually been checked before (`PRAGMA foreign_keys` is OFF app-wide) — the retrofit's FK-check
+surfaced 32 pre-existing orphans, 27 of them the documented-by-design `MANUAL-*` synthetic run_ids
+(`raise_manual`'s own docstring), but **5 genuinely undocumented** (`#539/#550/#559/#561/#579`) —
+accepted, not gated (same class of exception `retrofit_debate_lexicon_tables.py` already
+established for `verse_lexical`/`strong_meaning_*`), and raised as their own tracked escalation
+rather than silently absorbed — `#579` shares its run_id with the still-open `configmaint.propose`
+crash escalation, useful corroborating evidence for that bug's root cause.
+
+**Every direct `escalation` table writer fixed, not just `lib/escalation.py` itself** — found by
+grepping for `write("escalation"`/`update("escalation"` and every `["answer"]` read across the
+whole app, not assumed: `run.py` (3 direct writes — crash/pause-continue/report-stop — bypassed
+`lib/escalation.py` entirely, so the rename would have broken every crash/pause/report-stop path
+app-wide if left alone), `handlers/registry.py` (`ans["answer"]=="yes"/"no"` →
+`ans["next_action"]=="approve"/"reject"`), 7 more handlers' `answered["answer"]` reads
+(candidate/cluster/configmaint/lexicon/narrative/passage/reports), `lib/retention.py` (health-report
+queries), `iba/app/tools/purge_word.py` (a real deletion tool — word-scoped escalation rows are now
+matched via `source`, not `word`), `iba/app/migration/legacy_import.py`'s `pending` lookup.
+`configmaint.validate` run clean afterward (structurally coherent; only the 2 new
+`escalation.control_*` settings flagged as expected "orphan" advisories, same class as most
+`governance.*` rows).
+
+**22 new / 2 revised `cfg_setting` rows** (module `governance`/`escalation`, written directly per
+the researcher's explicit "don't make this a drag — not everything needs `configmaint.propose`"
+correction) — scope, database locations, `cfg_table`/`cfg_column` completeness rules, naming/
+terminology rule, escalation control objectives, programme-stage definitions, and more; full list
+in the response doc §6. Deliberately deferred, not invented: `governance.oneoff_report_dir`'s
+proposed relocation (a filing decision needing the researcher's own judgement, tracked as its own
+escalation), `governance.startup` and the bare `naming.` CSV rows (no content given).
+
+**Backlog cleared** (all 13 open escalations the researcher named): #575/#576 retracted (NT
+verse-lexical coverage rescheduled as its own task), #577 retracted (test input), #578 retracted
+(duplicate of #643), #591/#597/#642 closed `noted` (verified already fixed in substance —
+`cfg_report_csv_table`/`config_module` enum gaps from earlier sessions), #593 closed `noted`
+(verified clean by-design error handling, not a defect), #598/#626 closed `approve` (real fix — two
+`cfg_setting.value`s re-quoted as valid JSON), #643 closed `approve` (real fix — the 3 missing
+`cfg_utility` rows added: `clusterassign`/`clusterreport`/`strongreconcile`). #632 and #579
+deliberately left open (genuine judgement calls, not config-mechanics bugs). 6 new task escalations
+raised for the work this reset surfaced but didn't do: NT verse-lexical check, module-blocking
+wiring, work-package registration-check verification, the project-wide config-driven-rule sweep,
+the 5 FK orphans, and the filing/consolidation decision (assigned Researcher).
+
+**Files:** `iba/app/migration/escalation_reset_v1_20260816.py` (new), `iba/app/lib/escalation.py`
+(rewritten), `iba/app/run.py` (3 write sites + 2 new classification helpers), `iba/app/handlers/
+registry.py`, `iba/app/handlers/{candidate,cluster,configmaint,lexicon,narrative,passage,
+reports}.py` (mechanical `answer`→`next_action` read-site rename), `iba/app/lib/retention.py`,
+`iba/app/tools/purge_word.py`, `iba/app/migration/legacy_import.py`. Full digest:
+`outputs/markdown/iba-table-review-response-v1-20260816.md`.

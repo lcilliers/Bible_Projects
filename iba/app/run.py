@@ -22,6 +22,7 @@ from .lib.db import Db
 from .lib.stepapi import Step
 from .lib.words import normalise
 from .lib import dbsnapshot
+from .lib.escalation import word_source
 from .handlers.base import Ctx, Outcome
 
 # path -> what the run does + the process exit code
@@ -41,6 +42,30 @@ def _grant(cfg: Cfg, table: str):
     """The dispatcher writes control tables under the 'run' write grant — config-governed."""
     if table not in cfg.may_write("run"):
         raise PermissionError(f"write-grant violation: 'run' may not write {table!r} (cfg_write_grant)")
+
+
+# ── escalation-reset 2026-08-16 (iba-table-review-response-v1) — this dispatcher writes the
+# `escalation` table directly (three sites below), NOT via lib/escalation.py's raise_()/
+# raise_manual() -- so the column renames + new required columns from that reset had to be applied
+# here too, or every crash/pause/report-stop write in the app would have broken outright.
+def _source_for_step(step_id: str) -> str:
+    """cfg_escalation.source_classification: a code-generated row's source is the generating
+    module name -- the same convention the reset's migration backfilled from at_step."""
+    return step_id.split(".", 1)[0] if "." in step_id else "code"
+
+
+def _escalation_type_for(step_id: str, word: str) -> str:
+    """Same classification the migration used to backfill 634 historical rows (escalation_reset_v1
+    _retrofit_escalation) -- kept in sync deliberately, not reinvented here."""
+    if step_id.startswith("configmaint.propose"):
+        return "config"
+    if step_id.endswith(".validate"):
+        return "issue"
+    if word:
+        return "task"
+    if step_id in ("candidate.curate", "candidate.load"):
+        return "issue"
+    return "issue"
 
 
 def _snapshot(db: Db, cfg: Cfg, run_id: str, word: str, phase: str):
@@ -146,11 +171,14 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         db.conn.rollback()
         _grant(cfg, "escalation")
         db.write("escalation", {
-            "run_id": run_id, "word": ctx.word, "at_step": step_id, "type": "crash",
-            "question": f"{step_id} crashed: {exc}",
-            "preset": json.dumps({"traceback": traceback.format_exc()}),
+            "run_id": run_id, "source": _source_for_step(step_id), "at_step": step_id,
+            "type": "run_error",
+            "short_description": f"{step_id} crashed: {exc}",
+            "context": json.dumps({"traceback": traceback.format_exc()}),
             "tried": "uncaught exception — not a routed fail()/escalate() Outcome",
-            "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
+            "state": "raised", "next_action": None, "answered_at": None, "raised_at": _now(),
+            "resolution": None, "related_activity": step_id,
+            "next_action_assigned_to": "Claude", "answered_by": None})
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(),
                   outcome=f"crashed: {exc}")
         db.close()
@@ -177,10 +205,15 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
                           "AND state='raised'", (run_id, step_id))
         if not already:
             _grant(cfg, "escalation")
+            source = word_source(ctx.word) if ctx.word else _source_for_step(step_id)
             db.write("escalation", {
-                "run_id": run_id, "word": ctx.word, "at_step": step_id, "type": e["type"],
-                "question": e["question"], "preset": json.dumps(e["preset"]), "tried": e["tried"],
-                "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
+                "run_id": run_id, "source": source, "at_step": step_id,
+                "type": _escalation_type_for(step_id, ctx.word),
+                "short_description": e["question"], "context": json.dumps(e["preset"]),
+                "tried": e["tried"],
+                "state": "raised", "next_action": None, "answered_at": None, "raised_at": _now(),
+                "resolution": None, "related_activity": step_id,
+                "next_action_assigned_to": "Researcher", "answered_by": None})
         db.update("run", {"run_id": run_id}, state="paused", resume_point=step_id)
     elif path == "report-stop":
         # Added 2026-07-30 (the same standing rule): report-stop used to only flip run.state to
@@ -200,13 +233,16 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
             # self-contained — full detail also still in `preset` for programmatic use.
             detail = "; ".join(f"{k}: {v}" for k, v in outcome.counts.items() if v)
             question = f"{message} — {detail}" if detail else message
+            source = word_source(ctx.word) if ctx.word else _source_for_step(step_id)
             db.write("escalation", {
-                "run_id": run_id, "word": ctx.word, "at_step": step_id, "type": "report-stop",
-                "question": question,
-                "preset": json.dumps(outcome.counts) if outcome.counts else "{}",
+                "run_id": run_id, "source": source, "at_step": step_id, "type": "run_error",
+                "short_description": question,
+                "context": json.dumps(outcome.counts) if outcome.counts else "{}",
                 "tried": "hard error (report-stop) — recorded for visibility; answering this does "
                         "not resume the run, which is already terminal",
-                "state": "raised", "answer": None, "answered_at": None, "raised_at": _now()})
+                "state": "raised", "next_action": None, "answered_at": None, "raised_at": _now(),
+                "resolution": None, "related_activity": step_id,
+                "next_action_assigned_to": "Claude", "answered_by": None})
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(), outcome=message)
     else:
         db.update("run", {"run_id": run_id}, resume_point=step_id)

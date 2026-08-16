@@ -25,11 +25,14 @@ import sys
 
 from ..lib.cfg import Cfg
 from ..lib.db import Db
+from ..lib.escalation import word_source
 
 # table -> the column that carries the word (or the word's id), for word-scoped deletes
+# escalation-reset 2026-08-16: escalation no longer has a `word` column — a word-scoped row's
+# `source` carries 'new-word: <word>' (lib.escalation.word_source), matched below via that helper.
 WORD_SCOPED = [
     ("validation_result", "word"),
-    ("escalation",        "word"),
+    ("escalation",        "source"),
     ("run",               "runs_over"),
     ("word_strong",       "word_id"),   # by the registry id, resolved below
     ("word_registry",     "id"),        # last — others may resolve against it
@@ -41,7 +44,7 @@ def _counts(db: Db, word: str, wid: int | None) -> dict[str, int]:
     out["word_registry"] = db.rows(
         "SELECT COUNT(*) c FROM word_registry WHERE lower(word)=lower(?)", (word,))[0]["c"]
     out["escalation"] = db.rows(
-        "SELECT COUNT(*) c FROM escalation WHERE lower(word)=lower(?)", (word,))[0]["c"]
+        "SELECT COUNT(*) c FROM escalation WHERE lower(source)=lower(?)", (word_source(word),))[0]["c"]
     out["run"] = db.rows(
         "SELECT COUNT(*) c FROM run WHERE lower(runs_over)=lower(?)", (word,))[0]["c"]
     out["validation_result"] = db.rows(
@@ -73,7 +76,7 @@ def purge(word: str, do_it: bool) -> int:
         db.close(); cfg.close(); return 0
 
     db.conn.execute("DELETE FROM validation_result WHERE lower(word)=lower(?)", (word,))
-    db.conn.execute("DELETE FROM escalation WHERE lower(word)=lower(?)", (word,))
+    db.conn.execute("DELETE FROM escalation WHERE lower(source)=lower(?)", (word_source(word),))
     db.conn.execute("DELETE FROM run WHERE lower(runs_over)=lower(?)", (word,))
     if wid:
         db.conn.execute("DELETE FROM word_strong WHERE word_id=?", (wid,))

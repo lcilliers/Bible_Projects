@@ -160,7 +160,7 @@ def generate(ctx: Ctx) -> Outcome:
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision = answered["answer"]
+        decision = answered["next_action"]
         if decision == "reject":
             return fail("declined", f"researcher declined generating {book_label}'s narrative")
         if decision == "revise":

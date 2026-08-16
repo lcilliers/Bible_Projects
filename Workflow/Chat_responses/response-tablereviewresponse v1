@@ -1,0 +1,27 @@
+Response to your iba-table-review-response-v1-20260816
+
+Thanks. This is helpful. also show why we need to work together as I do miss things.
+
+1.1 agree
+1.2 noted, agree
+1.3 agree
+1.4 the csv is a input document with existing and new rows
+
+2.1 row 1 - you are right
+2 row 2 - agree
+2 row 3 - the answer (existing) should change to next action.  The current version of approve/reject/revise is too simplistic for the real process. the answer should include hold/noted.  the answers must support the expansion of the types of escalations.  The suggested new column (use resolution) is to record what the resolution was, this is not recorded anywhere.
+noted rest of 2 - agree to fix
+3 - noted, record as tasks or new issues if needed, else schedule for fixing
+overall we must ensure that configmaint fulfill its purpose, and does not become a beurocratic compliance exercise. that is partly why i thought we can use escalation type where you can notify me of the actions taken, and have it recorded. rather than having me approve stuff that you should have and take control over. The real reason why I am using you for the App is to use your special skills, and only when you really need my agreement on choices or different approach, then channel it back to me.
+4.1 dealth with above
+4.2 I missed these blank ones:
+governance.scope_project : the configs scope is the entire project, with all of its parts, not a sub section of the project
+governance.project_databases: research_db in folder xxxx and iba.db in folder xxxxx
+bare governance row and duplicate naming rows can be ignored or used where you find missing items.  my style was to use governance to set the overall config objective, and then separate cfg tables to provide the detail rules per processing entity.  governance.* should in effect cover the scope and definition of the IBA app and should allow anyone coming in cold to rapidly get what it is and how it should operate.
+configmaint.propose must not become a drag. not all escalations goes through propose / approved, lots of it would raise, schedule, notify. 
+4.3 we need to think through and deal with filing between the main project and what is set to be in IBA. anything related to the phases should be filed together and not split into different branches.  reports that belong to a specific topic must not be filed in the general reports folder.
+4.4 check the actual DB name, I may have used a short hand for it.
+
+5 - item 575 - schedule the check, and closing 575 depending on the outcome.  lets first get the main app under control before being distracted. That is exactly what the escalation help us to do.
+
+Build the new escalation structure/table/code updates so we can start to use it. Then use escalation system to structure the tasks for the rest of the actions that is flowing from my review, the config updates, and your review of yesterday.  It it ok if escalation refers to a planning document that contains the content of a package of tasks. escalation will serve as the control that all of the tasks is completed.

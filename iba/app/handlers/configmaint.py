@@ -307,7 +307,7 @@ def validate(ctx: Ctx) -> Outcome:
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision = answered["answer"]
+        decision = answered["next_action"]
         if decision == "approve":
             return ok(f"acknowledged: {summary} — researcher confirmed these are known/acceptable "
                       f"(full detail in {report_path})",
@@ -455,7 +455,7 @@ def propose(ctx: Ctx) -> Outcome:
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision = answered["answer"]
+        decision = answered["next_action"]
         if decision == "approve":
             before = _apply(ctx, table, op, where, set_)
             ctx.db.conn.execute(

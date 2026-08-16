@@ -267,7 +267,7 @@ def validate(ctx: Ctx) -> Outcome:
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision = answered["answer"]
+        decision = answered["next_action"]
         if decision == "approve":
             return ok(f"acknowledged: {sc_null} null stamp tag(s), {sc_tag.violations} messy stamp "
                       f"tag(s), {seed_null} null seed tag(s), {seed_tag.violations} messy seed "
@@ -377,7 +377,7 @@ def curate(ctx: Ctx) -> Outcome:
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision = answered["answer"]
+        decision = answered["next_action"]
         now = _now()
         if decision == "approve":
             if fld == "split":

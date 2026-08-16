@@ -196,7 +196,7 @@ def validate(ctx: Ctx) -> Outcome:
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision, comment = answered["answer"], answered["comment"]
+        decision, comment = answered["next_action"], answered["comment"]
         if decision == "approve":
             return ok(f"acknowledged: {no_lsj} strong_lexicon row(s) with no lsj parse, {no_mounce} "
                       f"with no mounce parse, {no_related} strong row(s) with no related fetch, "

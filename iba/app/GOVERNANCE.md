@@ -1,5 +1,9 @@
 # GOVERNANCE.md — how the app is governed by config (overview + history)
 
+> **Start at [`CHARTER.md`](CHARTER.md) first** — the researcher's own statement of what this app
+> is *for* (the single driver of all operational work in this project). Everything below describes
+> the mechanism; `CHARTER.md` is the objective the mechanism serves.
+
 > **What this file is for.** This is an OVERVIEW of the *mechanism* by which config governs the
 > code — how the store works, how a rule changes, what's enforced vs. still a convention. It is
 > **not** the place a rule's current value lives — that's always a `cfg_*` DB row, and the live
@@ -1769,3 +1773,40 @@ report that calls `render_scaffold` is fixed by this one change.
 
 Full record (including a second, real over-merging bug caught and fixed the same session in the
 new English-gloss ToC grouping added to `report.word_registry_span`): `BUILD.md` §87.
+
+## §39. Escalation reset — own rule table, wider vocabulary, `configmaint.propose` recalibrated as one path among several, not the default gate (2026-08-16)
+
+**Researcher ruling, 2026-08-16** (full digest `outputs/markdown/iba-table-review-response-v1-
+20260816.md`; build record `BUILD.md` §113): the escalation table's original three-way
+approve/reject/revise shape, and the `governance` module's drift into per-incident notes rather
+than standing rules, were both named as root causes of process inconsistency this session. Two
+governing corrections, both now live:
+
+1. **`escalation` is no longer approve/reject/revise-only.** `next_action` (renamed from `answer`)
+   adds `hold`/`noted`; a new `resolution` column records what was actually done — nothing
+   previously captured that. `next_action_assigned_to`/`answered_by` (Claude|Researcher) route and
+   attribute every row. Rule text for the utility's own operation (source-classification,
+   duplicate-suppression, module-blocking, resolution-precedence, chat-routing) now lives in its
+   own table, `cfg_escalation` — same pattern §33/§34 already established for `cfg_index`/
+   `debate_change_detail`: a mechanism's own control rules get their own table, not scattered
+   settings.
+2. **`configmaint.propose`'s approve/reject/revise gate is not the default path for every
+   escalation.** Researcher, verbatim: *"not all escalations goes through propose / approved, lots
+   of it would raise, schedule, notify... The real reason why I am using you for the App is to use
+   your special skills, and only when you really need my agreement on choices or different
+   approach, then channel it back to me."* Practical effect: a fully-worded, already-settled
+   `cfg_setting` change (this session wrote 22 of them) is applied directly and recorded, not routed
+   through a proposal-and-approval round; the gate is reserved for genuine judgement calls. This
+   sits alongside, and narrows, `governance.rules_must_be_config_driven` (§16) — the standing rule
+   that a process rule must be config-backed is unchanged; what changed is that not every config
+   write needs its own approval cycle to count as properly governed.
+
+Both corrections are themselves now `cfg_setting` rows (`governance.escalation.scope`,
+`governance.utility.config`, `escalation.control_objectives`, `escalation.control_process`, module
+`escalation`/`governance`) — per `governance.governance_md_on_rule_change`'s own requirement, this
+section documents the config, it does not hold a rule the config does not.
+
+**Deferred, not decided here:** wiring `cfg_escalation.module_blocking` into `run.py`'s dispatcher
+(rule recorded, `enforced_by` says "not yet wired"); the `governance.oneoff_report_dir` folder
+relocation the CSV proposed (a filing decision, tracked as its own escalation, not applied). Both
+are real open items, listed in full in `BUILD.md` §113 and the response doc — not silently dropped.

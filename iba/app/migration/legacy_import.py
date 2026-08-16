@@ -43,9 +43,10 @@ def words() -> int:
 def pending(word: str) -> int:
     conn = sqlite3.connect(NEW_DB)
     conn.row_factory = sqlite3.Row
+    # escalation-reset 2026-08-16: `word` -> `source` ('new-word: <word>' for a word-scoped row).
     r = conn.execute(
-        "SELECT at_step FROM escalation WHERE lower(word)=lower(?) AND state='raised' "
-        "ORDER BY id DESC LIMIT 1", (word,)).fetchone()
+        "SELECT at_step FROM escalation WHERE lower(source)=lower(?) AND state='raised' "
+        "ORDER BY id DESC LIMIT 1", (f"new-word: {word}",)).fetchone()
     conn.close()
     print(r["at_step"] if r else "")
     return 0

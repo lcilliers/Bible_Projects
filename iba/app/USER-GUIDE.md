@@ -1,5 +1,8 @@
 # IBA app — user guide
 
+> **Start at [`CHARTER.md`](CHARTER.md) first** — the researcher's own statement of what this app
+> is *for*. This file is how to run it.
+
 ## About the application
 
 The **Inner Being Analysis (IBA) app** serves the Inner Being Analysis Programme — a structured
@@ -210,23 +213,35 @@ never did until then.
 
 | shape | raised by | scope | answered with |
 |---|---|---|---|
-| **word-scoped** | `registry.create` (a genuinely new word, or a suspected duplicate) | one word | yes/no |
-| **run-scoped** | a real dispatcher pause — a `configmaint.propose` change, or a quality-check finding (`candidate.validate`/`passage.validate`/`configmaint.validate`) | one run | approve / reject / revise |
-| **manual** | **you**, via `-Action Raise` — not raised by any running step | a synthetic run_id | approve / reject / revise |
+| **word-scoped** | `registry.create` (a genuinely new word, or a suspected duplicate) | one word | approve / reject (yes/no still accepted as aliases) |
+| **run-scoped** | a real dispatcher pause — a `configmaint.propose` change, a quality-check finding (`candidate.validate`/`passage.validate`/`configmaint.validate`), a crash, or a report-stop | one run | approve / reject / revise / hold / noted |
+| **manual** | **you, or Claude**, via `-Action Raise` — not raised by any running step | a synthetic run_id | approve / reject / revise / hold / noted |
 
 Manual escalations answer through the exact same `AnswerRun` path as a real run-scoped one — there
-is no separate mechanism to learn. This is also how this session's "flag it now, fix it later"
-backlog workflow works: raising an item doesn't fix anything by itself, it just records it.
+is no separate mechanism to learn. This is also how the "flag it now, fix it later" backlog
+workflow works: raising an item doesn't fix anything by itself, it just records it.
+
+**Escalation reset, 2026-08-16** (full record: `BUILD.md` §113, `GOVERNANCE.md` §39). Two changes
+worth knowing before using this section:
+
+- `next_action` (was `answer`) now includes `hold`/`noted`, not just approve/reject/revise — not
+  every escalation is a decision gate. A new `resolution` field records what was actually done
+  (nothing previously captured that); `-AssignedTo`/`-AnsweredBy` (Claude|Researcher) say who
+  should act next and who actually did.
+- `configmaint.propose`'s approve/reject/revise gate is **not** the default path for every
+  escalation any more — a fully-worded, already-settled change can be applied directly and
+  recorded (`noted`/`resolution`), not routed through a proposal-and-approval round. The gate is
+  for genuine judgement calls, not everything.
 
 ### 4.3 The state a row moves through
 
-Today: **`raised`** (open, unanswered) → **`answered`** (you gave a decision; `answer` holds
-approve/reject/revise, `comment` optional unless revise). That is the whole lifecycle that exists
-right now — there is currently no way to edit an already-raised question's wording, pause one aside
-without answering it, or withdraw one without it counting as a decision. See the proposal below
-(§4.6) if you want those.
+**`raised`** (open) → **`re-assign`** (bounced between Claude/Researcher) / **`on-hold`** (set
+aside, §4.6) → **`completed`** (a decision was recorded — `next_action` holds approve/reject/
+revise/hold/noted, `resolution` optionally says what was done) / **`closed`** (administratively
+closed — duplicate, superseded, acknowledged) / **`withdraw`** (retracted — "never mind", not a
+reviewed decision, §4.6).
 
-### 4.4 The four actions that exist today
+### 4.4 The five actions that exist today
 
 ```powershell
 # see what's open — writes escalation.list_report_path (default iba/app/reports/escalation-list.md,
@@ -235,13 +250,16 @@ without answering it, or withdraw one without it counting as a decision. See the
 iba\app\ps\Escalation.ps1 -Action List
 
 # answer a WORD-scoped one:
-iba\app\ps\Escalation.ps1 -Action Answer -Word hypocrisy -Decision Yes    # or: No
+iba\app\ps\Escalation.ps1 -Action Answer -Word hypocrisy -Decision Approve    # or: Reject
 
-# answer a RUN-scoped one (config proposal, quality-check finding, or your own manual item):
-iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise [-Comment "..."]
+# answer a RUN-scoped one (config proposal, quality-check finding, crash, report-stop, or your own
+# manual item) — -Resolution optional (what was actually done, if anything), -AnsweredBy optional
+# (Claude|Researcher, default Researcher):
+iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise|Hold|Noted [-Comment "..."] [-Resolution "..."] [-AnsweredBy Claude]
 
-# raise your OWN item — not raised by a running step:
-iba\app\ps\Escalation.ps1 -Action Raise -Question "<exactly what you want recorded>"
+# raise your OWN item — not raised by a running step. -AssignedTo (Claude|Researcher, default
+# Researcher) and -Type (task|run_error|issue|notice|config, default task) optional:
+iba\app\ps\Escalation.ps1 -Action Raise -Question "<exactly what you want recorded>" [-AssignedTo Claude] [-Type task]
 # prints a synthetic run_id — answer it later with -Action AnswerRun same as any other
 ```
 
@@ -272,16 +290,16 @@ word maps to Strong's already held by an existing word:
 #   'envy' shares ALL 3 strongs with existing word 'jealousy'. Register it as a SEPARATE word anyway?
 ```
 
-`No` stops it (it was a duplicate/typo); `Yes` registers it as a distinct word.
+`Reject` stops it (it was a duplicate/typo); `Approve` registers it as a distinct word.
 
 ### 4.6 Editing, pausing, and retracting a MANUAL item (added 2026-07-23)
 
 Built for the "escalation as a backlog of work for Claude" workflow — a manual item (§4.2) is
 often a work instruction, not only a design decision awaiting approval, so it needs a bit more
-lifecycle than raised → answered. **Restricted to `MANUAL-`-prefixed run_ids only** — a real
+lifecycle than raised → completed. **Restricted to `MANUAL-`-prefixed run_ids only** — a real
 dispatcher-tied escalation (a config proposal, a quality-check finding) must still go through
 `AnswerRun`; pausing one of those risks a duplicate escalation on the next run (the dispatcher's own
-resume logic keys on `state='raised'`/`'answered'` specifically).
+resume logic keys on `state='raised'`/`'completed'` specifically).
 
 ```powershell
 # replace the wording on a still-open item (old wording preserved in the row's history, not lost):
@@ -299,10 +317,11 @@ iba\app\ps\Escalation.ps1 -Action Resume -RunId MANUAL-...
 iba\app\ps\Escalation.ps1 -Action Retract -RunId MANUAL-... -Comment "why it's withdrawn"
 ```
 
-`-Action List`'s output now shows `raised` and `paused` items together (paused ones flagged), with
-a state column; `answered`/`retracted` items drop off the open list, same as before, but remain in
-the `escalation` table (and its own row's `answer`/`comment` fields) for audit — an `answer` of
-approve/reject/revise means a real decision was made; `retracted` means it was withdrawn instead.
+`-Action List`'s output now shows `raised` and `on-hold` items together (on-hold ones flagged), with
+a state column; `completed`/`withdraw` items drop off the open list, same as before, but remain in
+the `escalation` table (and its own row's `next_action`/`resolution`/`comment` fields) for audit —
+a `next_action` of approve/reject/revise/hold/noted means a real decision was recorded;
+`withdraw` means it was retracted instead, not a decision.
 
 ---
 
@@ -938,6 +957,56 @@ resumed) listed as archival **candidates** for you to judge — it does not prun
 
 ---
 
+## 13a. File manifest — rebuild and search (added 2026-08-15)
+
+Every file in the project tree (not `iba/` only — the whole repo, including every `archive/`
+folder), indexed by filename/path metadata: category, type, currency (active/archived/cross-
+reference/historical/backup/other), and any date/registry-number/version/cluster-code/word the
+filename itself carries. **Filename/path metadata only — this does not read file contents.**
+Replaces the old standalone `scripts/build_file_manifest.py` → `database/file_manifest.json`
+(that script's logic now lives here, governed, instead of running unregistered and separately).
+
+```powershell
+iba\app\ps\Manifest-Rebuild.ps1
+#   -> iba/app/reports/file-manifest.md  (counts by category, by currency)
+
+iba\app\ps\Manifest-Search.ps1 -Query "type:iba-verse-analysis"
+iba\app\ps\Manifest-Search.ps1 -Query "category:archived"
+iba\app\ps\Manifest-Search.ps1 -Query "grace"
+#   -> iba/app/reports/manifest-search-<query>-<date>.md
+```
+
+**Rebuild** (`manifest.rebuild`) is a full rescan — it replaces the `file_manifest` table's
+contents each time, so run it again after adding/moving/renaming files before relying on a search.
+Only VCS/build/cache machinery is skipped (`manifest.skip_dirs`/`manifest.exclude_exts`, both
+`cfg_setting` — everything else, including every `archive/` subfolder anywhere in the tree, is
+indexed on principle: archived material is put aside, not dead, and may hold data still needed).
+
+**Search** (`manifest.search`) takes one `-Query`, either a **field query** —
+
+| Field | Example | Matches |
+| --- | --- | --- |
+| `registry:N` | `registry:68` | exact registry number |
+| `type:X` | `type:iba-migration` | file type contains X |
+| `category:X` | `category:iba` | category contains X |
+| `currency:X` | `currency:archived` | exact currency status |
+| `cluster:X` | `cluster:c17` | exact cluster code |
+| `word:X` | `word:grace` | exact extracted word |
+| `date:X` | `date:2026-08` | date starts with X |
+| `archived:true\|false` | `archived:true` | archived flag |
+| `ext:X` | `ext:.md` | exact extension |
+
+— or **free text**, matched as a substring against the file's path. Every search's results are
+written to a report file (path/category/type/currency for each hit) — this is a read-only query,
+nothing in `file_manifest` is changed by a search.
+
+This is the baseline a future **file-content search** (round B — searching what's actually written
+*inside* files, not just filenames; scoped separately, not yet built:
+`outputs/markdown/manifest-and-content-search-into-iba-plan-v1-20260815.md`) will cross-check
+coverage against — prose itself is out of scope for both (`prose_section_fts` already covers it).
+
+---
+
 ## 14. Everyday commands, in order
 
 **Corrected 2026-08-08** — this list still showed the retired `VerseSpanMeaning-Report.ps1`/
@@ -961,7 +1030,7 @@ iba\app\ps\Start-Iba.ps1
 # for each new word:
 iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"
 #   if it pauses:
-iba\app\ps\Escalation.ps1 -Action Answer -Word <word> -Decision Yes
+iba\app\ps\Escalation.ps1 -Action Answer -Word <word> -Decision Approve
 iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"     # resume
 
 # fill in supporting-term meaning for a book/range, if you want it done ahead of time (§3a):

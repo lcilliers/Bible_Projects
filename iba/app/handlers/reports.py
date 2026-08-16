@@ -19,6 +19,7 @@ from . import raw as raw_mod
 from .. import report as report_mod
 from .. import validation as validation_mod
 from ..lib import escalation as esc
+from ..lib import manifest as manifest_mod
 from ..lib import retention as retention_mod
 from ..lib import (clusterreport, registryreport, schemareport, seedreport, spanreport,
                    strongreport, strongversereport, wordregistryspanreport)
@@ -49,7 +50,7 @@ def _validation_outcome(ctx: Ctx, scope_label: str, out, overall: str, p: int, w
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision = answered["answer"]
+        decision = answered["next_action"]
         if decision == "approve":
             return ok(f"acknowledged: {overall} ({p} pass, {w} warn, {f} fail) -> {out} — "
                       f"researcher confirmed these findings are known/acceptable",
@@ -78,6 +79,28 @@ def validation_word(ctx: Ctx) -> Outcome:
 def validation_book(ctx: Ctx) -> Outcome:
     out, overall, (p, w, f) = validation_mod.generate_book(ctx.params["Book"])
     return _validation_outcome(ctx, f"book {ctx.params['Book']!r}", out, overall, p, w, f)
+
+
+def manifest_rebuild(ctx: Ctx) -> Outcome:
+    """Full rescan of the whole project tree — filename/path metadata only. See lib/manifest.py."""
+    summary = manifest_mod.rebuild(ctx.cfg)
+    path = pathlib.Path(ctx.cfg.setting("manifest.report_path", "iba/app/reports/file-manifest.md"))
+    out = manifest_mod.write_rebuild_report(ctx.cfg, path, summary)
+    return ok(f"wrote {out} ({summary['total']} files: {summary['active']} active, "
+             f"{summary['archived']} archived)", path=str(out), total=summary["total"],
+             active=summary["active"], archived=summary["archived"])
+
+
+def manifest_search(ctx: Ctx) -> Outcome:
+    """Field:value or free-text search against file_manifest. -Query is a per-call parameter (like
+    table_export's -Table), not config — a search term isn't a policy anyone proposes to change."""
+    query = ctx.params.get("Query")
+    if not query:
+        return fail("missing-query", "manifest.search requires a -Query parameter")
+    results = manifest_mod.search(ctx.cfg, query)
+    out = manifest_mod.write_search_report(ctx.cfg, query, results)
+    return ok(f"{len(results)} match(es) for {query!r} — wrote {out}", path=str(out),
+             matches=len(results))
 
 
 def retention_report(ctx: Ctx) -> Outcome:

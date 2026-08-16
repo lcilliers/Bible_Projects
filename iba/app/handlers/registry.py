@@ -80,11 +80,11 @@ def create(ctx: Ctx) -> Outcome:
     # mid-approval: is there an answer now?
     if row and row["status"] == "proposed":
         ans = esc.answered_for_word(ctx.db, ctx.word, "registry.create")
-        if ans and ans["answer"] == "yes":
+        if ans and ans["next_action"] == "approve":
             ctx.db.update("word_registry", {"id": row["id"]}, status="approved")
             ctx.word_id = row["id"]
             return ok(f"approval received; {row['word']!r} -> approved")
-        if ans and ans["answer"] == "no":
+        if ans and ans["next_action"] == "reject":
             ctx.db.update("word_registry", {"id": row["id"]}, status="rejected")
             return fail("word-rejected", f"{row['word']!r} was rejected")
         # still waiting

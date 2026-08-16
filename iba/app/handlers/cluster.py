@@ -110,7 +110,7 @@ def validate(ctx: Ctx) -> Outcome:
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision, comment = answered["answer"], answered["comment"]
+        decision, comment = answered["next_action"], answered["comment"]
         if decision == "approve":
             return ok(f"acknowledged: {len(no_word)} no-word / {len(sibling_rows)} sibling-conflict "
                      f"exception(s) — researcher confirmed known/acceptable; full detail in "

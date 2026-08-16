@@ -47,7 +47,7 @@ def build(cfg) -> dict:
     out["escalation_open"] = conn.execute(
         "SELECT COUNT(*) FROM escalation WHERE state='raised'").fetchone()[0]
     out["escalation_answered"] = conn.execute(
-        "SELECT COUNT(*) FROM escalation WHERE state='answered'").fetchone()[0]
+        "SELECT COUNT(*) FROM escalation WHERE state='completed'").fetchone()[0]
 
     out["validation_result_total"] = conn.execute("SELECT COUNT(*) FROM validation_result").fetchone()[0]
     out["validation_result_oldest"] = conn.execute("SELECT MIN(ran_at) FROM validation_result").fetchone()[0]
@@ -89,7 +89,7 @@ def build(cfg) -> dict:
     """)]
 
     out["oldest_open_escalations"] = [dict(r) for r in conn.execute("""
-        SELECT id, run_id, word, at_step, question, raised_at FROM escalation
+        SELECT id, run_id, source, at_step, short_description, raised_at FROM escalation
         WHERE state='raised' ORDER BY raised_at LIMIT 50
     """)]
 
@@ -141,8 +141,9 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
                   [[r["run_id"], r["work_package"], r["state"], r["resume_point"], r["runs_over"],
                     r["started_at"]] for r in d["stuck_nonchained"][:200]])),
         "open_escalations": _tbl(
-            ["id", "run_id", "word", "at_step", "question", "raised_at"],
-            [[r["id"], r["run_id"], r["word"], r["at_step"], r["question"][:120], r["raised_at"]]
+            ["id", "run_id", "source", "at_step", "short_description", "raised_at"],
+            [[r["id"], r["run_id"], r["source"], r["at_step"], r["short_description"][:120],
+              r["raised_at"]]
              for r in d["oldest_open_escalations"]]),
         "recent_failed": _tbl(
             ["run_id", "work_package", "runs_over", "outcome", "ended_at"],

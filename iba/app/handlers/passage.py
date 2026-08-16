@@ -314,7 +314,7 @@ def validate(ctx: Ctx) -> Outcome:
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
-        decision = answered["answer"]
+        decision = answered["next_action"]
         if decision == "approve":
             return ok(f"acknowledged: {total} passages {scope_label}, {min_vc}-{max_vc} "
                       f"verses/passage (avg {avg:.2f}), {single} ({100*single/total:.0f}%) "
