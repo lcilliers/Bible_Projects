@@ -111,7 +111,7 @@ iba\app\ps\Config-Maintenance.ps1 -Step Propose -Table cfg_setting -Op update `
     -Where '{"key":"passage.review_over"}' -Set '{"value":"12"}' `
     -Question "Raise passage.review_over from 10 to 12 — why, what it affects."
 # -> PAUSED, run_id printed.
-iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise [-Comment ...]
+iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise|Hold|Noted [-Comment ...]
 # then re-run the SAME Propose command with -RunId <run_id> to act on the answer.
 ```
 
@@ -1810,3 +1810,15 @@ section documents the config, it does not hold a rule the config does not.
 (rule recorded, `enforced_by` says "not yet wired"); the `governance.oneoff_report_dir` folder
 relocation the CSV proposed (a filing decision, tracked as its own escalation, not applied). Both
 are real open items, listed in full in `BUILD.md` §113 and the response doc — not silently dropped.
+
+**§39 correction, same day, later still — declared rules that turned out not to be wired.** The
+researcher asked directly, reading USER-GUIDE.md's stale §4.2: had the new vocabulary this section
+describes actually been built into the code, or just documented? Checked rather than assumed:
+`type` has no behavioural effect anywhere (disclosed as classification-only, not fixed — that's a
+legitimate design, just needed saying); `next_action='hold'/'noted'` were silently mishandled as
+rejections by every one of the 7 handlers that resume a real pause (both always wrote
+`state='completed'`, and no handler understands anything but approve/reject); `state='re-assign'`
+was declared here and in `cfg_escalation` and never once produced by any function. All three fixed
+— `hold`→`on-hold`, `noted`→`closed` (neither satisfies a dispatcher's `answered_for_run` lookup
+any more, so a real pause answered either way correctly stays paused rather than being misread as
+a decision), new `reassign_run()`. Full record: `BUILD.md` §116.

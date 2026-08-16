@@ -6,7 +6,7 @@
 
 .DESCRIPTION
     Read-only. If findings exist, escalates ONCE with a summary + samples, then pauses. Answer
-    with `Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise>`,
+    with `Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise|Hold|Noted>`,
     then re-run this script with -RunId to act on the answer.
 
 .PARAMETER RunId  resume a specific pending check (reuse the run_id from its first call).

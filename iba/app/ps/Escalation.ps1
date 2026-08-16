@@ -26,6 +26,11 @@
                          synthetic run_id to answer it with later (AnswerRun, same as any other).
                          -AssignedTo (Claude|Researcher, default Researcher) and -Type
                          (task|run_error|issue|notice|config, default task) optional.
+                         -RelatedActivity groups this with other escalations on the same package
+                         of work — if given, -ReferenceDoc (the planning document) is REQUIRED too
+                         (cfg_escalation.document_reference_grouping, mechanically enforced since
+                         2026-08-16 — a grouped item with no reference doc is refused, not written
+                         silently ungrounded).
 
     Added 2026-07-23 — for working the escalation table as a backlog of items for Claude, not only
     design decisions awaiting approval. Run-scoped/manual only (same boundary AnswerRun already
@@ -40,6 +45,11 @@
     -Action Retract      withdraw an open escalation — "never mind", not a reviewed decision.
                          Terminal, like a completed answer, but distinguishable from one in the
                          record. Needs -RunId; -Comment optional.
+    -Action Reassign     bounce an open escalation to the other party (Claude<->Researcher)
+                         without treating it as a decision — state becomes `re-assign`, still
+                         open, still shown in -Action List. Needs -RunId and -AssignedTo
+                         (Claude|Researcher); -Comment optional. Added 2026-08-16 — the state
+                         value existed in the schema/docs before this, but nothing produced it.
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
@@ -61,12 +71,14 @@
     .\Escalation.ps1 -Action Resume -RunId MANUAL-20260723_060301_575459
 .EXAMPLE
     .\Escalation.ps1 -Action Retract -RunId MANUAL-20260723_061922_821483 -Comment "superseded by #274's rework"
+.EXAMPLE
+    .\Escalation.ps1 -Action Reassign -RunId MANUAL-20260816_... -AssignedTo Researcher -Comment "needs your judgement, not mine"
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('List', 'Answer', 'AnswerRun', 'Raise', 'Edit', 'Pause', 'Resume', 'Retract')]
+    [ValidateSet('List', 'Answer', 'AnswerRun', 'Raise', 'Edit', 'Pause', 'Resume', 'Retract', 'Reassign')]
     [string] $Action,
     [string] $Word,
     [string] $RunId,
@@ -76,7 +88,9 @@ param(
     [string] $Resolution,
     [ValidateSet('Claude', 'Researcher')] [string] $AnsweredBy = 'Researcher',
     [ValidateSet('Claude', 'Researcher')] [string] $AssignedTo = 'Researcher',
-    [ValidateSet('task', 'run_error', 'issue', 'notice', 'config')] [string] $Type = 'task'
+    [ValidateSet('task', 'run_error', 'issue', 'notice', 'config')] [string] $Type = 'task',
+    [string] $RelatedActivity,
+    [string] $ReferenceDoc
 )
 
 Set-StrictMode -Version Latest
@@ -127,7 +141,14 @@ switch ($Action) {
             Write-Host "Raise needs -Question." -ForegroundColor Yellow
             exit 1
         }
-        python -m iba.app.lib.escalation raise "--source=researcher" "--assigned-to=$AssignedTo" "--type=$Type" $Question
+        if ($RelatedActivity -and -not $ReferenceDoc) {
+            Write-Host "-RelatedActivity groups this with other escalations -- -ReferenceDoc (the planning document) is required too." -ForegroundColor Yellow
+            exit 1
+        }
+        $flags = @("--source=researcher", "--assigned-to=$AssignedTo", "--type=$Type")
+        if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
+        if ($ReferenceDoc) { $flags += "--reference-doc=$ReferenceDoc" }
+        python -m iba.app.lib.escalation raise @flags $Question
     }
     'Edit' {
         if (-not $RunId -or -not $Question) {
@@ -163,6 +184,17 @@ switch ($Action) {
             python -m iba.app.lib.escalation retract $RunId "--by=$AnsweredBy" $Comment
         } else {
             python -m iba.app.lib.escalation retract $RunId "--by=$AnsweredBy"
+        }
+    }
+    'Reassign' {
+        if (-not $RunId -or -not $AssignedTo) {
+            Write-Host "Reassign needs -RunId and -AssignedTo (Claude|Researcher)." -ForegroundColor Yellow
+            exit 1
+        }
+        if ($Comment) {
+            python -m iba.app.lib.escalation reassign $RunId $AssignedTo $Comment
+        } else {
+            python -m iba.app.lib.escalation reassign $RunId $AssignedTo
         }
     }
 }

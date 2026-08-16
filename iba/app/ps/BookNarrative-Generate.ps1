@@ -8,7 +8,7 @@
 .DESCRIPTION
     First run for a book: assembles the package, estimates tokens/cost, and PAUSES for researcher
     approval (report.book_narrative_generate/needs-approval) — no API call is made yet. Answer the
-    escalation (Escalation.ps1 -Action AnswerRun -Decision Approve|Reject|Revise), then re-run this
+    escalation (Escalation.ps1 -Action AnswerRun -Decision Approve|Reject|Revise|Hold|Noted), then re-run this
     EXACT command with the SAME -RunId to make the live call and write the narrative.
 
     Requires ANTHROPIC_API_KEY in the environment or the repo-root .env. Requires at least one
@@ -65,7 +65,7 @@ Write-IbaStepResult -Step 'report.book_narrative_generate' -Path $res.path -Mess
 
 if ($code -eq 2) {
     Write-Host "`nPAUSED — no API call made yet. Read the estimate above, then:" -ForegroundColor Yellow
-    Write-Host "  iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId $runId -Decision Approve|Reject|Revise" -ForegroundColor Yellow
+    Write-Host "  iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId $runId -Decision Approve|Reject|Revise|Hold|Noted" -ForegroundColor Yellow
     Write-Host "  iba\app\ps\BookNarrative-Generate.ps1 -Book $Book -BookLabel $BookLabel -RunId $runId   # re-run to resume" -ForegroundColor Yellow
 } elseif ($code -eq 0) {
     Write-Host "`nNarrative written — run BookNarrative-Validate.ps1 on it next." -ForegroundColor DarkGray

@@ -42,6 +42,8 @@ CLI (module path: iba.app.lib.escalation, invoked as `python -m iba.app.lib.esca
         [--by=Claude|Researcher] [--resolution=...] [comment words...]
     python -m iba.app.lib.escalation raise <question...>
         [--source=claude|researcher] [--assigned-to=Claude|Researcher] [--type=task|...]
+        [--related-activity=...] [--reference-doc=...]  (required together — see
+        cfg_escalation.document_reference_grouping; omit both for a standalone item)
 
 Added 2026-07-23 for the researcher's backlog-of-work-for-Claude workflow — a manual escalation
 doubles as a work instruction, not only a design decision awaiting approval. Run-scoped/manual only
@@ -50,6 +52,8 @@ doubles as a work instruction, not only a design decision awaiting approval. Run
     python -m iba.app.lib.escalation pause <run_id> [comment...]         -- set aside, out of the active queue
     python -m iba.app.lib.escalation resume <run_id>                    -- back into the active queue
     python -m iba.app.lib.escalation retract <run_id> [comment...]      -- withdraw, not a decision
+    python -m iba.app.lib.escalation reassign <run_id> <Claude|Researcher> [comment...]
+                                                                          -- bounce to the other party
 """
 
 from __future__ import annotations
@@ -77,6 +81,25 @@ def _grant(cfg: Cfg, table: str):
 
 def word_source(word: str) -> str:
     return f"new-word: {word}"
+
+
+def _terminal_state_for(next_action: str) -> str:
+    """Which `state` a decision resolves to — NOT uniformly 'completed'. Found live 2026-08-16
+    (researcher, reviewing USER-GUIDE.md §4.2's staleness, asked directly whether hold/noted were
+    actually wired into the app, not just documented): every `answer_for_run`/`answer_for_word`
+    dispatcher-tied consumer (registry.create + 7 more handlers — candidate/cluster/configmaint/
+    lexicon/narrative/passage/reports, all checked live) only branches on `decision == "approve"`/
+    `"reject"`, with a fallback that treats ANYTHING else — including `hold`/`noted` — exactly like
+    a rejection ('needs-revision'). Since every prior version of this function hardcoded
+    `state='completed'` regardless of `next_action`, answering a real run-scoped escalation with
+    `hold` or `noted` was silently mishandled as if it meant 'revise', which is not what either
+    word means. Fixed here, not just documented: `approve`/`reject`/`revise` are the only three
+    decision values any handler actually understands — those close to `'completed'`. `hold`
+    resolves to `'on-hold'` (genuinely kept open — the underlying paused run correctly stays
+    paused, not misread as a decision it wasn't). `noted` resolves to `'closed'` (acknowledged/
+    dismissed, distinct from a real decision — also excluded from `answered_for_run`'s
+    `state='completed'` filter, for the same reason)."""
+    return {"hold": "on-hold", "noted": "closed"}.get(next_action, "completed")
 
 
 def _check_state(db: Db, state: str) -> str:
@@ -154,16 +177,27 @@ def answer_for_word(cfg: Cfg, db: Db, word: str, decision: str, answered_by: str
                     resolution: str | None = None) -> str:
     """Record the researcher's answer and advance the word's status accordingly.
     decision: 'approve'/'yes' -> approved, 'reject'/'no' -> rejected (yes/no accepted as aliases
-    for backward compatibility with the pre-reset CLI). Case-insensitive on word."""
+    for backward compatibility with the pre-reset CLI). Case-insensitive on word.
+
+    Deliberately restricted to approve/reject ONLY — unlike answer_for_run, `hold`/`noted`/`revise`
+    have no sensible word_registry.status to map to (that enum is proposed|approved|rejected, no
+    'on hold' or 'needs revision' state for a word). Found live 2026-08-16: before this check, ANY
+    decision that wasn't literally 'approve' fell into `new_status = ... else 'rejected'` — meaning
+    answering with `hold` would have wrongly REJECTED the word. Fixed at the source, not patched
+    around."""
     rows = pending_for_word(db, word)
     if not rows:
         return f"no pending escalation for {word!r}"
     esc = rows[0]
     normalised = {"yes": "approve", "no": "reject"}.get(decision.lower(), decision.lower())
+    if normalised not in ("approve", "reject"):
+        return (f"{decision!r} is not valid for a word-scoped escalation — must be "
+                f"'approve'/'reject' (word_registry.status has no meaning for hold/noted/revise)")
     _check_next_action(db, normalised)
     who = _check_assignee(db, answered_by)
     _grant(cfg, "escalation")
-    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "completed"),
+    db.update("escalation", {"id": esc["id"]},
+              state=_check_state(db, _terminal_state_for(normalised)),
               next_action=normalised, resolution=resolution, answered_by=who, answered_at=_now())
     new_status = "approved" if normalised == "approve" else "rejected"
     wr = db.rows("SELECT id, word FROM word_registry WHERE lower(word)=lower(?) AND deleted=0",
@@ -239,7 +273,7 @@ def open_duplicate(db: Db, at_step: str, stable_key: str):
 
 def raise_manual(db: Db, question: str, tried: str | None = None, source: str = "claude",
                  etype: str = "task", assigned_to: str = "Researcher",
-                 related_activity: str | None = None) -> str:
+                 related_activity: str | None = None, reference_doc: str | None = None) -> str:
     """A researcher- or Claude-initiated item — 'flag this for later, resolve it via the same
     review workflow' — not raised BY a running step. Found 2026-07-22: raise_() always needed a
     run_id/at_step from an in-flight run; there was no way to add a standalone tracked item.
@@ -251,15 +285,32 @@ def raise_manual(db: Db, question: str, tried: str | None = None, source: str = 
 
     `source` per `cfg_escalation.source_classification`: 'claude' or 'researcher' (lowercase, by
     convention — this is a free-text field, not itself enum-validated, so the exact casing here is
-    what every future query matches against; keep it lowercase)."""
+    what every future query matches against; keep it lowercase).
+
+    `reference_doc` per `cfg_escalation.document_reference_grouping` — MECHANICALLY ENFORCED, not
+    just documented: found 2026-08-16 (the researcher spotted it directly, escalation #653) that
+    this rule was written the same session it was first needed and then not actually applied by the
+    code raising the very escalations it governs — 14 rows landed with `context='{}'` despite the
+    rule existing. `related_activity` alone is not enough to satisfy it; a non-default
+    `related_activity` (a real group, not the bare 'manual' default) now REQUIRES a `reference_doc`,
+    written into `context` as `{"reference_doc": "..."}`, or this raises rather than writing another
+    silently ungrounded row."""
+    related = related_activity or "manual"
+    if related != "manual" and not reference_doc:
+        raise ValueError(
+            f"related_activity={related!r} groups this escalation with others, but no "
+            f"reference_doc was given — cfg_escalation.document_reference_grouping requires the "
+            f"planning document be recorded in `context` for any grouped item (pass "
+            f"reference_doc=... or related_activity='manual' for a genuinely standalone item)")
+    context = {"reference_doc": reference_doc} if reference_doc else {}
     run_id = f"MANUAL-{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d_%H%M%S_%f')}"
     _grant(db.cfg, "escalation")
     db.write("escalation", {
         "run_id": run_id, "source": source, "at_step": "manual", "type": _check_type(db, etype),
-        "short_description": question, "context": json.dumps({}),
+        "short_description": question, "context": json.dumps(context),
         "tried": tried or "researcher/Claude-initiated — no run to resume; a standalone tracked note",
         "state": _check_state(db, "raised"), "next_action": None, "answered_at": None,
-        "raised_at": _now(), "resolution": None, "related_activity": related_activity or "manual",
+        "raised_at": _now(), "resolution": None, "related_activity": related,
         "next_action_assigned_to": _check_assignee(db, assigned_to), "answered_by": None})
     return run_id
 
@@ -270,7 +321,15 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
     decision: 'approve' | 'reject' | 'revise' | 'hold' | 'noted' (revise carries feedback, not a
     rejection). No word_registry side-effect — the caller (e.g. configmaint.propose) acts on the
     answer itself the next time the step runs. Valid decisions come from cfg_enum
-    'escalation_next_action' (a live lookup, not a hardcoded Python tuple)."""
+    'escalation_next_action' (a live lookup, not a hardcoded Python tuple).
+
+    **`hold`/`noted` do NOT resolve to `state='completed'`** (see `_terminal_state_for`) — every
+    dispatcher-tied consumer of `answered_for_run` (7 handlers, checked live 2026-08-16) only
+    branches on `decision == "approve"`/`"reject"`, with everything else falling into a
+    'needs-revision'-shaped fallback. If a real quality-check/config-proposal pause is answered
+    `hold` or `noted`, the underlying paused run correctly STAYS PAUSED (visible in the open list as
+    on-hold/closed, not silently misread as a rejection) — those two words only fully make sense
+    for a MANUAL item with no run to resume. `approve`/`reject`/`revise` are unaffected."""
     run_id = _resolve_run_id(db, run_id)
     decision = decision.lower()
     valid_answers = cfg.enum("escalation_next_action")
@@ -282,7 +341,8 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
     esc = rows[0]
     who = _check_assignee(db, answered_by)
     _grant(cfg, "escalation")
-    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "completed"),
+    db.update("escalation", {"id": esc["id"]},
+              state=_check_state(db, _terminal_state_for(decision)),
               next_action=decision, comment=comment, resolution=resolution, answered_by=who,
               answered_at=_now())
     return f"escalation {esc['id']} (run {run_id!r}, step {esc['at_step']!r}) answered {decision!r}" + (
@@ -314,6 +374,30 @@ def _latest_for_run(db: Db, run_id: str, states: tuple[str, ...]):
     return rows[0] if rows else None
 
 
+def reassign_run(cfg: Cfg, db: Db, run_id: str, new_assignee: str, comment: str | None = None) -> str:
+    """Bounce an open MANUAL escalation to the other party (Claude<->Researcher) without treating
+    it as a decision. Found live 2026-08-16: `state='re-assign'` was documented (BUILD.md §113,
+    GOVERNANCE.md §39) but no code path ever produced it — a dead enum value, same class of gap as
+    `document_reference_grouping` before it was wired. `state='re-assign'` — distinct from both
+    'raised' (nobody has looked at it yet) and any terminal state (nobody decided anything, it's
+    just moved to the other party's queue). Restricted to `MANUAL-`-prefixed run_ids only, same
+    boundary as edit/pause/resume/retract — a real dispatcher-tied escalation's
+    `next_action_assigned_to` is set by the app itself (the researcher's own approval gate), not
+    something either party bounces around."""
+    run_id = _resolve_run_id(db, run_id)
+    if (err := _manual_only(run_id)):
+        return err
+    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign"))
+    if not esc:
+        return f"no open escalation for run {run_id!r} to re-assign"
+    who = _check_assignee(db, new_assignee)
+    _grant(cfg, "escalation")
+    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "re-assign"),
+              next_action_assigned_to=who, comment=comment)
+    return (f"escalation {esc['id']} (run {run_id!r}) re-assigned to {who!r}"
+           + (f" — {comment!r}" if comment else ""))
+
+
 def edit_question(cfg: Cfg, db: Db, run_id: str, new_question: str) -> str:
     """Replace a still-open (raised or on-hold) MANUAL escalation's short_description. The old
     wording is preserved in `tried` with a timestamp, not silently lost -- the row's history stays
@@ -321,9 +405,9 @@ def edit_question(cfg: Cfg, db: Db, run_id: str, new_question: str) -> str:
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
-    esc = _latest_for_run(db, run_id, ("raised", "on-hold"))
+    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign"))
     if not esc:
-        return f"no open (raised/on-hold) escalation for run {run_id!r} to edit"
+        return f"no open (raised/on-hold/re-assign) escalation for run {run_id!r} to edit"
     _grant(cfg, "escalation")
     old_note = f"[edited {_now()}] was: {esc['short_description']}"
     tried = f"{esc['tried']}\n{old_note}" if esc["tried"] else old_note
@@ -332,14 +416,14 @@ def edit_question(cfg: Cfg, db: Db, run_id: str, new_question: str) -> str:
 
 
 def pause_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> str:
-    """Set a raised MANUAL escalation aside without answering it -- still shown in the list,
-    flagged distinctly, until resumed."""
+    """Set a raised (or re-assigned) MANUAL escalation aside without answering it -- still shown
+    in the list, flagged distinctly, until resumed."""
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
-    esc = _latest_for_run(db, run_id, ("raised",))
+    esc = _latest_for_run(db, run_id, ("raised", "re-assign"))
     if not esc:
-        return f"no raised escalation for run {run_id!r} to pause"
+        return f"no raised/re-assign escalation for run {run_id!r} to pause"
     _grant(cfg, "escalation")
     db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "on-hold"), comment=comment)
     return f"escalation {esc['id']} (run {run_id!r}) on-hold" + (f" — {comment!r}" if comment else "")
@@ -360,15 +444,15 @@ def resume_run(cfg: Cfg, db: Db, run_id: str) -> str:
 
 def retract_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None,
                 answered_by: str = "Researcher") -> str:
-    """Withdraw an open (raised or on-hold) MANUAL escalation without it counting as a decision --
-    'never mind', not 'reviewed and approved/rejected'. Terminal, like completed, but
+    """Withdraw an open (raised, on-hold, or re-assign) MANUAL escalation without it counting as a
+    decision -- 'never mind', not 'reviewed and approved/rejected'. Terminal, like completed, but
     distinguishable from it in the record."""
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
-    esc = _latest_for_run(db, run_id, ("raised", "on-hold"))
+    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign"))
     if not esc:
-        return f"no open (raised/on-hold) escalation for run {run_id!r} to retract"
+        return f"no open (raised/on-hold/re-assign) escalation for run {run_id!r} to retract"
     who = _check_assignee(db, answered_by)
     _grant(cfg, "escalation")
     db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "withdraw"), comment=comment,
@@ -444,9 +528,12 @@ def main() -> int:
         rest, source = _extract_flag(argv[1:], "source")
         rest, assigned_to = _extract_flag(rest, "assigned-to")
         rest, etype = _extract_flag(rest, "type")
+        rest, related_activity = _extract_flag(rest, "related-activity")
+        rest, reference_doc = _extract_flag(rest, "reference-doc")
         question = " ".join(rest)
         run_id = raise_manual(db, question, source=source or "claude",
-                              assigned_to=assigned_to or "Researcher", etype=etype or "task")
+                              assigned_to=assigned_to or "Researcher", etype=etype or "task",
+                              related_activity=related_activity, reference_doc=reference_doc)
         print(f"  raised — run_id {run_id!r}. Answer with:")
         print(f"    python -m iba.app.lib.escalation answer-run {run_id} <approve|reject|revise|hold|noted>")
     elif len(argv) >= 3 and argv[0] == "edit":
@@ -461,15 +548,20 @@ def main() -> int:
         rest, by = _extract_flag(argv[2:], "by")
         comment = " ".join(rest) or None
         print("  " + retract_run(cfg, db, argv[1], comment, answered_by=by or "Researcher"))
+    elif len(argv) >= 3 and argv[0] == "reassign":
+        comment = " ".join(argv[3:]) or None
+        print("  " + reassign_run(cfg, db, argv[1], argv[2], comment))
     else:
         print("usage: python -m iba.app.lib.escalation list"
               " | answer <word> <approve|reject> [--by=Claude|Researcher]"
               " | answer-run <run_id> <approve|reject|revise|hold|noted> [--by=...] [--resolution=...] [comment...]"
               " | raise <question...> [--source=claude|researcher] [--assigned-to=...] [--type=...]"
+              " [--related-activity=...] [--reference-doc=...]"
               " | edit <run_id> <new question...>"
               " | pause <run_id> [comment...]"
               " | resume <run_id>"
-              " | retract <run_id> [--by=...] [comment...]")
+              " | retract <run_id> [--by=...] [comment...]"
+              " | reassign <run_id> <Claude|Researcher> [comment...]")
     db.close()
     return 0
 

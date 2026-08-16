@@ -12,7 +12,7 @@
                     couple of minutes over the full strong table.
     -Step Validate  read-only coverage + value-quality check. If there are findings, escalates
                     ONCE, then pauses. Answer with
-                    `Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise>`,
+                    `Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise|Hold|Noted>`,
                     then re-run this script with -Step Validate -RunId <run_id> to act on the answer.
 
 .PARAMETER Step   Parse | Related | Validate

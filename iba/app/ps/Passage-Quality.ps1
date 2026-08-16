@@ -8,7 +8,7 @@
 .DESCRIPTION
     Read-only. If there are passages to review, escalates ONCE with the distribution, then
     pauses. Answer with
-    `Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise>`,
+    `Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise|Hold|Noted>`,
     then re-run this script with -RunId to act on the answer.
 
 .PARAMETER Book   Optional OSIS book code (e.g. Dan). Scopes the distribution to that book's live

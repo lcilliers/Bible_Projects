@@ -11,7 +11,7 @@
                      a word_registry link both already hold. Safe to re-run (idempotent).
     -Step Validate   read-only coverage + exception check. If there are findings, escalates ONCE,
                      then pauses. Answer with
-                     `Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise>`,
+                     `Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise|Hold|Noted>`,
                      then re-run this script with -Step Validate -RunId <run_id> to act on the answer.
 
 .PARAMETER Step   Assign | Validate

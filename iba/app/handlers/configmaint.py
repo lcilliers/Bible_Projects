@@ -485,7 +485,7 @@ def propose(ctx: Ctx) -> Outcome:
         preset={"table": table, "op": op, "where": where, "set": set_},
         tried="coherence-checked against the live cfg_* schema — awaiting researcher decision "
               "(approve / reject / revise-with-comment via "
-              "`Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise> "
+              "`Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise|Hold|Noted> "
               "[-Comment ...]`)")
 
 

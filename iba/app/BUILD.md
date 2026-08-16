@@ -6918,3 +6918,157 @@ not a defect).
 scripts, not a registered migration, matching the direct-write convention §113 established for
 already-settled content). Full digest: `outputs/markdown/iba-table-review-response-v1-20260816.md`
 §7 addendum; session log `iba/logs/SESSION-LOG-20260816-escalation-system-reset-and-backlog-clearance.md`.
+
+## 115. `cfg_escalation.document_reference_grouping` actually wired — researcher caught it was written and not applied, same session (2026-08-16, same day, later still)
+
+**Trigger.** Researcher, reviewing escalation #653 directly: *"I notice in none of the new
+escalations the column context is filled in... does the escalation script check any of the
+escalation configs?"* Checked, confirmed: all 14 escalations §113/§114 raised had `context='{}'` —
+the `document_reference_grouping` rule (§113) was written and then never applied by the same
+session's own code raising the very escalations it governs. Answer to the researcher's actual
+question, given straight: `escalation.py` DOES check config live for the enum-constrained columns
+(`_check_type`/`_check_state`/`_check_next_action`/`_check_assignee`, all real `cfg.enum()` lookups
+— an invalid value genuinely cannot be written) but reads NOTHING from `cfg_escalation` itself —
+that table was pure documentation, same "not yet wired" status as `module_blocking`, just not
+labelled as such for this rule until asked.
+
+**Fixed for real, not just re-documented.** `escalation.raise_manual()` gained a `reference_doc`
+parameter; a non-default `related_activity` (a real group, not the bare `'manual'` default) now
+REQUIRES `reference_doc` or raises `ValueError` rather than writing another silently ungrounded
+row — smoke-tested both ways (refusal without a doc, success with one, through both the Python CLI
+and `Escalation.ps1` directly). `Escalation.ps1` gained `-RelatedActivity`/`-ReferenceDoc` (paired,
+same requirement enforced at the PS layer too, not just Python). `cfg_escalation.document_reference_
+grouping`'s `enforced_by` updated from "not yet wired" to the real function. The 12 real grouped
+escalations from §113/§114 backfilled with their `reference_doc` (the two throwaway smoke-test rows
+from §113/§114, already closed, left as-is — not worth grounding a discarded test). `configmaint.
+validate` clean afterward (still 8 orphan-setting advisories, unchanged).
+
+**Files:** `iba/app/lib/escalation.py` (`raise_manual`, CLI `raise` subcommand), `iba/app/ps/
+Escalation.ps1` (`-RelatedActivity`/`-ReferenceDoc`).
+
+## 116. `next_action='hold'/'noted'` were silently mishandled by every real consumer; `state='re-assign'` was never producible; USER-GUIDE.md never documented `type` at all (2026-08-16, same day, later still)
+
+**Trigger.** Researcher, reading USER-GUIDE.md §4.2 directly: *"[it] talks about three shapes —
+only referencing the old items, not dealing at all with the new types (issues, tasks, notification
+etc)... does it make you think to ask if the new methods... been incorporated into the script
+itself and the ps command?"* Checked, rather than assumed clean: three real, confirmed gaps, not
+one documentation gap.
+
+**Gap 1 — `type` has zero behavioural effect, anywhere.** Grepped the whole app for any branch on
+`type`: none exists. It's written and validated against `cfg_enum` on write, never read back.
+Disclosed as-is in USER-GUIDE.md §4.2 rather than built into something it isn't — a classification
+field is a legitimate design, but claiming otherwise would not have been honest.
+
+**Gap 2 — real, live behavioural bug.** Every one of the 7 handlers that resume a real
+dispatcher-tied pause (`registry.create`, `candidate.py` ×2, `cluster.py`, `configmaint.py` ×2,
+`narrative.py`, `passage.py`, `reports.py` — checked live, all of them) branches ONLY on
+`decision == "approve"`/`"reject"`, with a fallback that treats anything else — `revise`, and,
+since the reset, `hold`/`noted` too — exactly like a rejection ("needs-revision"). Because
+`answer_for_run`/`answer_for_word` unconditionally wrote `state='completed'` regardless of
+`next_action`'s actual value, answering a real pause with `hold` or `noted` was silently
+mishandled as if it meant "revise" — not remotely what either word means. **Fixed at the root, not
+patched around:** new `_terminal_state_for(next_action)` — `approve`/`reject`/`revise` (the only
+three values any handler understands) still resolve to `completed`; `hold` now resolves to
+`on-hold` (the underlying run correctly stays paused — no handler ever sees a `hold` "decision"
+it would mishandle); `noted` resolves to `closed` (acknowledged, distinct from a real decision,
+also excluded from `answered_for_run`'s `state='completed'` filter for the same reason). A second,
+adjacent bug caught fixing this: `answer_for_word`'s `new_status = "approved" if normalised ==
+"approve" else "rejected"` would have wrongly REJECTED a word answered with `hold` — word-scoped
+decisions are now explicitly restricted to approve/reject only (`word_registry.status` has no
+"on hold"/"needs revision" state to map to). **12 historical rows from earlier today** (`#575/
+#576/#577/#578/#591/#593/#597/#642` + 4 smoke-test rows) retroactively corrected from `completed`
+to `closed` for consistency with the new mapping — safe (none has a live process re-checking that
+exact `run_id`, `configmaint.validate`'s own escalations always get a fresh `run_id` per call).
+
+**Gap 3 — `state='re-assign'` was documented (§113/§39) and never producible.** Same class of gap
+as `document_reference_grouping` before it was wired (§115) — a value existed in the schema and the
+docs, no code path ever set it. New `reassign_run()` (MANUAL-only, same boundary as edit/pause/
+resume/retract): bounces an open item to the other party without treating it as a decision. Wired
+into the CLI (`reassign <run_id> <Claude|Researcher> [comment...]`) and `Escalation.ps1` (`-Action
+Reassign`). `edit_question`/`pause_run`/`retract_run` widened to recognise `re-assign` as an open
+state too (they didn't before — a re-assigned item couldn't be edited, paused, or retracted).
+
+**Verified end to end, not just read back:** every new/changed function smoke-tested through both
+the Python CLI and `Escalation.ps1` directly — `hold`→`on-hold` confirmed, `noted`→`closed`
+confirmed, `reassign`→`re-assign` + assignee update confirmed, retract-from-re-assign confirmed.
+`configmaint.validate` clean throughout (still 8 expected orphan-setting advisories, unchanged).
+
+**USER-GUIDE.md §4 substantially rewritten**, not patched: §4.2 now separates "shape" (word/run/
+manual — unchanged) from "type" (task/run_error/issue/notice/config — never documented before,
+including the honest disclosure that it's classification-only); §4.3 now explains what
+`next_action` actually resolves to, not a uniform "completed"; §4.4/§4.6 gained `-Action Reassign`
+and the `-RelatedActivity`/`-ReferenceDoc` pairing requirement.
+
+**Files:** `iba/app/lib/escalation.py` (`_terminal_state_for`, `answer_for_word`/`answer_for_run`
+rewritten, new `reassign_run`, `edit_question`/`pause_run`/`retract_run` widened, CLI `reassign`
+subcommand), `iba/app/ps/Escalation.ps1` (`-Action Reassign`), `iba/app/USER-GUIDE.md` §4.
+
+## 117. The stale 3-option `-Decision` vocabulary swept everywhere it lived — including a LIVE runtime message, not just docs (2026-08-16, same day, later still)
+
+**Trigger.** Researcher, USER-GUIDE.md §14's cheat-sheet: *"I assume the switch -decision for
+escalation maps to answer in the table. if so, then the documentation is not up to date as it only
+mention three decision options. Also confirm the code caters for all the different answers."*
+
+**Checked wider than the one line flagged.** Grepped the whole `iba/app` tree for the literal
+`Approve|Reject|Revise` pattern, not just the cheat-sheet: **9 more places** still said only three
+options, one of them not documentation at all —
+
+- **`notification.paused_banner_guided`** (`cfg_setting`, module `notification`) — the actual text
+  `run.py` prints to the researcher's terminal every time a chained work package pauses. This one
+  mattered most: every real pause has been telling the researcher only Approve/Reject/Revise were
+  valid, even though the code has accepted Hold/Noted since §113. Fixed live (direct `cfg_setting`
+  UPDATE — this is a bug fix to match an already-live rule, not a new rule, so no
+  `configmaint.propose` round needed), re-rendered through `cfg.setting()` + `.format()` exactly as
+  `run.py` would, confirmed correct.
+- `iba/app/handlers/configmaint.py:488` — the same banner text duplicated in source (a fallback/
+  reference copy).
+- `USER-GUIDE.md`'s §14 cheat-sheet (the line the researcher pointed at).
+- `GOVERNANCE.md` §9D's own `Escalation.ps1` usage example.
+- 7 PS scripts' own help text pointing back to `Escalation.ps1` after they pause:
+  `BookNarrative-Generate.ps1` (×2), `Candidate-Curate.ps1` (×2), `Candidate-Quality.ps1`,
+  `Cluster-Assign.ps1`, `Config-Maintenance.ps1`, `Lexicon-Parse.ps1`, `Passage-Quality.ps1`.
+
+**Also found, same sweep, the OLD `Yes|No` word-scoped vocabulary still live in two places** —
+`handlers/registry.py`'s own module docstring and `GOVERNANCE.md` §6 (a historical, explicitly
+`CORRECTED 2026-07-22`-dated section). Fixed the former (current, load-bearing documentation);
+deliberately left the latter as-is — it is already a self-aware historical snapshot, and `Yes|No`
+still works today as an alias (§115/§116), so re-editing an already-superseded note would layer
+correction on correction rather than clarify anything.
+
+**Not touched, deliberately:** the historical `migration/bootstrap_report_content_governance.py`
+(the one-off migration that originally seeded the banner text — a point-in-time record of what was
+seeded, not a live source; editing it would misrepresent history) and the auto-generated
+`CONFIG-REPORT*.md` archive (regenerates itself from live config on every `configmaint.validate`
+run — nothing to hand-edit).
+
+**Files:** `iba/app/handlers/configmaint.py`, `iba/app/handlers/registry.py`, `iba/app/GOVERNANCE.md`,
+`iba/app/USER-GUIDE.md`, `iba/app/ps/{BookNarrative-Generate,Candidate-Curate,Candidate-Quality,
+Cluster-Assign,Config-Maintenance,Lexicon-Parse,Passage-Quality}.ps1`. **Config:**
+`notification.paused_banner_guided` (live value fixed).
+
+## 118. `cfg_escalation.chat_routing` strengthened — a genuine judgement call reported only in chat prose, not escalated until asked (2026-08-16, same day, later still)
+
+**Trigger.** Researcher, reading §117's "not touched, deliberately" note: *"I would expect that
+this comment will automatically create an escalation to anchor the 'not yet done' pointer."* Also
+asked directly whether today's 42 new `governance`/`backup`/`escalation` settings and 7
+`cfg_escalation` rules are actually active — checked: all `inactive=0`/`active=1` (live data), but
+"active as a row" and "enforced by code" are two different questions, answered separately and
+precisely rather than letting one imply the other.
+
+**Triaged §117's three "not touched" items rather than blanket-escalating all of them** — the
+historical migration file and the auto-generated `CONFIG-REPORT` archive are closed decisions with
+no further action possible (rewriting either would misrepresent history or edit a self-regenerating
+file); `GOVERNANCE.md` §6's still-`Yes|No` historical note is different — a genuine judgement call
+(leave the historical claim as-is, but should a forward cross-reference to §39/§115-117 be added?)
+that was reported only in chat prose, exactly the pattern
+`feedback_iba_data_judgment_calls_must_escalate_not_silent_report` already names as wrong. Raised as
+its own escalation, assigned Researcher.
+
+**`cfg_escalation.chat_routing` extended**, not just applied once: any judgement call or genuinely
+open item reported only in chat prose (not a closed, fully-reasoned decision) must get its own
+escalation in the SAME turn it's mentioned. Still honestly marked "not mechanically enforced" —
+there's no reliable way to scan this session's own prose for "looks like a deferred item" — this is
+a strengthened practice commitment, not a code change.
+
+**Files:** none (config/data only — `cfg_escalation.chat_routing` row updated, one new escalation
+raised).

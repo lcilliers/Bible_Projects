@@ -191,3 +191,101 @@ auto-adopting old `research_db`/`engine/` routines verbatim, and the design audi
 `configmaint.validate` re-run clean (orphan-setting advisories 2→8, all expected — same
 documentation-only class as the `escalation.control_*` rows, not a defect). Open-escalation count:
 8 → 14.
+
+## 8. Addendum, same day — `document_reference_grouping` found written but not applied by its own code
+
+Researcher, looking directly at escalation #653: *"I notice in none of the new escalations the
+column context is filled in... does the escalation script check any of the escalation configs?"*
+Checked, confirmed: all 14 escalations from §§1–7 had `context='{}'` — the
+`document_reference_grouping` rule (§1) was written and then never applied by the same session's
+own code raising the very escalations it governs. Answered the actual question straight: only the
+four enum-constrained columns are checked live against `cfg_enum`; `cfg_escalation` itself was pure
+documentation, nothing read it. Fixed for real: `raise_manual()` gained `reference_doc`; a
+non-default `related_activity` now REQUIRES it or raises `ValueError`. Smoke-tested both the
+refusal and the success path, Python CLI and `Escalation.ps1` directly. Backfilled `context` on all
+12 real grouped escalations. `cfg_escalation.document_reference_grouping`'s `enforced_by` updated
+from "not yet wired" to the real function. Full record: `BUILD.md` §115.
+
+## 9. Addendum, same day — a bare `run.py` mention proved genuinely ambiguous; `full_path_file_references` rule added
+
+Researcher, still on #647: `related_activity` said `"run.py work-package registration check"` —
+searched for the file, couldn't find it. Checked: `run.py` resolves to **5 different files** in
+this repo (3 vendored inside a `docx` library, 1 real at `iba/app/run.py`) — not just unhelpful,
+actively ambiguous. Fixed #646/#647's text to full paths; added `cfg_escalation.
+full_path_file_references`, honestly marked NOT mechanically enforced (no reliable regex for "is
+this really an ambiguous filename mention"). Full record: `BUILD.md` §115 (same section as §8's
+fix — both landed in one pass).
+
+## 10. Addendum, same day — USER-GUIDE.md §4.2 was stale AND two live behavioural bugs were hiding behind it
+
+Researcher, reading §4.2 directly: it only described the three *shapes* (word/run/manual), never
+the five *types* (task/run_error/issue/notice/config) added this session — "does it make you think
+to ask if the new methods... been incorporated into the script itself and the ps command?" Checked
+rather than assumed clean — three real gaps, not one doc gap:
+
+1. `type` has zero behavioural effect anywhere (grepped the whole app) — disclosed as
+   classification-only in the rewritten docs, not built into something it wasn't.
+2. **Real, live bug:** all 7 handlers that resume a real pause only understand `approve`/`reject`,
+   with a fallback that treated `hold`/`noted` exactly like a rejection — because
+   `answer_for_run`/`answer_for_word` always wrote `state='completed'` regardless of value. Fixed
+   at the root (`_terminal_state_for`): `hold`→`on-hold` (run correctly stays paused), `noted`→
+   `closed`. Second bug caught fixing it: `answer_for_word` would have wrongly REJECTED a word
+   answered `hold` — word-scoped decisions now restricted to approve/reject only. 12 historical
+   rows from earlier today retroactively corrected to match.
+3. `state='re-assign'` was documented, never producible. Built `reassign_run()` for real, wired
+   into the CLI and `Escalation.ps1 -Action Reassign`; widened edit/pause/retract to recognise it
+   as an open state (they didn't before).
+
+Verified end to end through both the Python CLI and `Escalation.ps1` directly for every change.
+USER-GUIDE.md §4 substantially rewritten, not patched. Full record: `BUILD.md` §116.
+
+## 11. Addendum, same day — the stale 3-option vocabulary swept everywhere, including a LIVE runtime message; `chat_routing` strengthened after a real violation caught live
+
+Grepped the whole `iba/app` tree for the `Approve|Reject|Revise` pattern rather than fixing only
+the one cheat-sheet line the researcher flagged — found 9 more places, one of them not
+documentation at all: `notification.paused_banner_guided`, the actual text `run.py` prints to the
+researcher's terminal every real pause, fixed live and re-rendered through `cfg.setting()` +
+`.format()` to confirm. Plus `configmaint.py`'s duplicate copy, `GOVERNANCE.md` §9D, and 7 PS
+scripts' own pause-and-point-back help text. Also found the old `Yes|No` word-scoped vocabulary
+still live in `registry.py`'s docstring (fixed) and in `GOVERNANCE.md` §6 (a historical,
+`CORRECTED 2026-07-22`-dated section — deliberately left as-is, `Yes|No` still works as an alias).
+Full record: `BUILD.md` §117.
+
+Researcher then caught the meta-pattern: *"I would expect that this comment will automatically
+create an escalation to anchor the 'not yet done' pointer."* Also asked directly whether today's 42
+new `governance`/`backup`/`escalation` settings are actually active — checked and answered
+precisely (`inactive=0`/`active=1`, live data; enforcement is a separate, already-disclosed
+question). Triaged the three "not touched" items from §11's own report: two were closed decisions
+with no further action possible; `GOVERNANCE.md` §6's note was a genuine judgement call reported
+only in chat, exactly the pattern `feedback_iba_data_judgment_calls_must_escalate_not_silent_report`
+already names — raised as its own escalation, assigned Researcher.
+`cfg_escalation.chat_routing` extended: any judgement call or genuinely open item reported only in
+chat prose must get its own escalation in the same turn, not after being asked — honestly still
+marked a practice commitment, not a code change (nothing can reliably scan this session's own
+prose). Full record: `BUILD.md` §118.
+
+## Updated: files touched, this whole session (supersedes the §"Files touched" list above for anything changed again in §§8–11)
+
+**Further modified code:** `iba/app/lib/escalation.py` (`_terminal_state_for`, `reassign_run`,
+`raise_manual`'s `reference_doc` requirement, `edit_question`/`pause_run`/`retract_run` widened, 2
+new CLI subcommand flags), `iba/app/ps/Escalation.ps1` (`-Action Reassign`,
+`-RelatedActivity`/`-ReferenceDoc`), `iba/app/handlers/configmaint.py`, `iba/app/handlers/
+registry.py`, `iba/app/ps/{BookNarrative-Generate,Candidate-Curate,Candidate-Quality,
+Cluster-Assign,Config-Maintenance,Lexicon-Parse,Passage-Quality}.ps1`.
+
+**Further docs:** `iba/app/BUILD.md` (§§115–118), `iba/app/GOVERNANCE.md` (§39 addendum),
+`iba/app/USER-GUIDE.md` (§4 substantially rewritten a second time).
+
+**Further config/data:** `cfg_escalation` (+1 rule `full_path_file_references`,
+`document_reference_grouping`/`chat_routing` rule text/enforced_by updated), `notification.
+paused_banner_guided` (live value fixed), 12 historical `escalation` rows corrected from
+`completed` to `closed`, 12 grouped rows backfilled with `context`, 2 escalation-text rows fixed
+(#646/#647 bare filename), 1 new escalation raised (GOVERNANCE.md §6 judgement call). Final
+open-escalation count: **15**.
+
+## Next (supersedes the prior "Next" above)
+
+Same priorities as before, unchanged in substance: `module_blocking` wiring and the work-package
+registration-check verification are the two most load-bearing of the 6 §7 task escalations. Add to
+the queue: the GOVERNANCE.md §6 cross-reference decision (§11, assigned Researcher) is small and
+quick whenever picked up. `Escalation.ps1 -Action List` remains the live tracking surface.

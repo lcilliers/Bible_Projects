@@ -209,11 +209,13 @@ it — becomes exactly one row in the `escalation` table. `Escalation.ps1` (adde
 **one** front door for it; every other governed operation had a PS wrapper from the start, answering
 never did until then.
 
-### 4.2 The three shapes
+### 4.2 The three shapes — and separately, the five types (don't confuse them)
+
+**Shape** is about who raises a row and how it's answered — this axis hasn't changed:
 
 | shape | raised by | scope | answered with |
 |---|---|---|---|
-| **word-scoped** | `registry.create` (a genuinely new word, or a suspected duplicate) | one word | approve / reject (yes/no still accepted as aliases) |
+| **word-scoped** | `registry.create` (a genuinely new word, or a suspected duplicate) | one word | approve / reject only (yes/no still accepted as aliases — hold/revise/noted are refused: `word_registry.status` has no meaning for them, see §4.3) |
 | **run-scoped** | a real dispatcher pause — a `configmaint.propose` change, a quality-check finding (`candidate.validate`/`passage.validate`/`configmaint.validate`), a crash, or a report-stop | one run | approve / reject / revise / hold / noted |
 | **manual** | **you, or Claude**, via `-Action Raise` — not raised by any running step | a synthetic run_id | approve / reject / revise / hold / noted |
 
@@ -221,7 +223,27 @@ Manual escalations answer through the exact same `AnswerRun` path as a real run-
 is no separate mechanism to learn. This is also how the "flag it now, fix it later" backlog
 workflow works: raising an item doesn't fix anything by itself, it just records it.
 
-**Escalation reset, 2026-08-16** (full record: `BUILD.md` §113, `GOVERNANCE.md` §39). Two changes
+**Type is a completely different axis** — `escalation.type`, one of `task | run_error | issue |
+notice | config`, set at raise-time (`-Type` on `-Action Raise`, default `task`; the app itself
+picks it for code-raised rows — crashes and report-stops are always `run_error`, a
+`configmaint.propose` pause is `config`, a `*.validate` finding is `issue`). What each means:
+
+| type | for |
+|---|---|
+| `task` | something to do — the default; most manual items land here |
+| `run_error` | a crash or a hard report-stop — the app tried and failed |
+| `issue` | a quality-check/validate finding — a defect or discrepancy surfaced, not yet a decided task |
+| `notice` | FYI only, no action expected — a standing constraint or observation, not a to-do |
+| `config` | a `configmaint.propose` change specifically awaiting approve/reject/revise |
+
+**Be honest about what `type` does and doesn't do:** it is classification for humans reading the
+list/report — filtering, grouping, understanding a row's nature at a glance. **Nothing in the app
+branches its behaviour on `type`.** If you need type-driven behaviour (e.g. `notice` rows never
+blocking a module, `run_error` rows auto-escalating), that's a real feature to design and build,
+not something already there under the surface — checked directly, 2026-08-16, when asked exactly
+this question.
+
+**Escalation reset, 2026-08-16** (full record: `BUILD.md` §113–§116, `GOVERNANCE.md` §39). Changes
 worth knowing before using this section:
 
 - `next_action` (was `answer`) now includes `hold`/`noted`, not just approve/reject/revise — not
@@ -232,16 +254,37 @@ worth knowing before using this section:
   escalation any more — a fully-worded, already-settled change can be applied directly and
   recorded (`noted`/`resolution`), not routed through a proposal-and-approval round. The gate is
   for genuine judgement calls, not everything.
+- **`hold`/`noted` have real, different consequences from approve/reject/revise for a RUN-scoped
+  item — read §4.3 before using them on anything but a manual item.** Found live 2026-08-16: every
+  handler that resumes a real dispatcher-tied pause (`registry.create` + 7 more) only understands
+  `approve`/`reject`(/`revise`) — answering a real pause with `hold` or `noted` does NOT resume it
+  as if it were one of those; the underlying run correctly stays paused instead.
+- `-RelatedActivity` (grouping this escalation with others on the same package of work) now
+  **requires** `-ReferenceDoc` (the planning document) — a grouped item with no traceable source is
+  refused, not written. Caught live, 2026-08-16, escalation #653 — the rule existed for one session
+  before the code that should have applied it actually did.
 
-### 4.3 The state a row moves through
+### 4.3 The state a row moves through — and what `next_action` actually resolves to
 
-**`raised`** (open) → **`re-assign`** (bounced between Claude/Researcher) / **`on-hold`** (set
-aside, §4.6) → **`completed`** (a decision was recorded — `next_action` holds approve/reject/
-revise/hold/noted, `resolution` optionally says what was done) / **`closed`** (administratively
-closed — duplicate, superseded, acknowledged) / **`withdraw`** (retracted — "never mind", not a
-reviewed decision, §4.6).
+`raised` (open, nobody's decided anything) → **from here, three different things can happen:**
 
-### 4.4 The five actions that exist today
+- **`re-assign`** — bounced to the other party (`-Action Reassign`, added 2026-08-16 — the state
+  existed in the schema/docs a full session before any code produced it) — still open, not a
+  decision.
+- **`on-hold`** — either set aside without a decision (`-Action Pause`, §4.4b), OR answered with
+  `next_action=hold` — **`hold` does not close a row**, it moves it here. For a real dispatcher-tied
+  pause this means the run correctly stays paused (no handler treats `hold` as approve/reject), not
+  silently mishandled as a rejection the way it was for one session before this was fixed.
+- **terminal** (row is done, drops off `-Action List`'s open view): `completed` (`next_action` is
+  `approve`/`reject`/`revise` — a real decision every handler understands) / `closed`
+  (`next_action=noted` — acknowledged, not a decision, `resolution` says why nothing further is
+  needed) / `withdraw` (`-Action Retract` — "never mind", never counted as a decision at all).
+
+Word-scoped escalations only ever produce `completed` (approve→approved, reject→rejected) —
+`hold`/`revise`/`noted` are refused outright for that shape (§4.2) rather than silently doing
+something undefined to `word_registry.status`.
+
+### 4.4 The six actions that exist today
 
 ```powershell
 # see what's open — writes escalation.list_report_path (default iba/app/reports/escalation-list.md,
@@ -249,18 +292,22 @@ reviewed decision, §4.6).
 # full list to the terminal only):
 iba\app\ps\Escalation.ps1 -Action List
 
-# answer a WORD-scoped one:
+# answer a WORD-scoped one — approve/reject ONLY (§4.2/§4.3):
 iba\app\ps\Escalation.ps1 -Action Answer -Word hypocrisy -Decision Approve    # or: Reject
 
 # answer a RUN-scoped one (config proposal, quality-check finding, crash, report-stop, or your own
 # manual item) — -Resolution optional (what was actually done, if anything), -AnsweredBy optional
-# (Claude|Researcher, default Researcher):
+# (Claude|Researcher, default Researcher). Hold/Noted do NOT resolve/complete it, see §4.3:
 iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise|Hold|Noted [-Comment "..."] [-Resolution "..."] [-AnsweredBy Claude]
 
 # raise your OWN item — not raised by a running step. -AssignedTo (Claude|Researcher, default
-# Researcher) and -Type (task|run_error|issue|notice|config, default task) optional:
-iba\app\ps\Escalation.ps1 -Action Raise -Question "<exactly what you want recorded>" [-AssignedTo Claude] [-Type task]
+# Researcher) and -Type (task|run_error|issue|notice|config, default task) optional. -RelatedActivity
+# + -ReferenceDoc are a PAIR — give both or neither (§4.2):
+iba\app\ps\Escalation.ps1 -Action Raise -Question "<exactly what you want recorded>" [-AssignedTo Claude] [-Type task] [-RelatedActivity "..." -ReferenceDoc "path/to/plan.md"]
 # prints a synthetic run_id — answer it later with -Action AnswerRun same as any other
+
+# bounce an open item to the other party, no decision made — added 2026-08-16:
+iba\app\ps\Escalation.ps1 -Action Reassign -RunId MANUAL-... -AssignedTo Researcher [-Comment "..."]
 ```
 
 `-Action Raise`'s `-Question` text is stored **verbatim** — it does not get reworded or have
@@ -292,14 +339,14 @@ word maps to Strong's already held by an existing word:
 
 `Reject` stops it (it was a duplicate/typo); `Approve` registers it as a distinct word.
 
-### 4.6 Editing, pausing, and retracting a MANUAL item (added 2026-07-23)
+### 4.6 Editing, pausing, retracting, and re-assigning a MANUAL item (added 2026-07-23; Reassign 2026-08-16)
 
 Built for the "escalation as a backlog of work for Claude" workflow — a manual item (§4.2) is
 often a work instruction, not only a design decision awaiting approval, so it needs a bit more
 lifecycle than raised → completed. **Restricted to `MANUAL-`-prefixed run_ids only** — a real
 dispatcher-tied escalation (a config proposal, a quality-check finding) must still go through
 `AnswerRun`; pausing one of those risks a duplicate escalation on the next run (the dispatcher's own
-resume logic keys on `state='raised'`/`'completed'` specifically).
+resume logic keys on `state='raised'` for its duplicate guard).
 
 ```powershell
 # replace the wording on a still-open item (old wording preserved in the row's history, not lost):
@@ -315,13 +362,17 @@ iba\app\ps\Escalation.ps1 -Action Resume -RunId MANUAL-...
 # withdraw it — "never mind", NOT a reviewed decision (distinguishable in the record from an
 # actual approve/reject/revise):
 iba\app\ps\Escalation.ps1 -Action Retract -RunId MANUAL-... -Comment "why it's withdrawn"
+
+# bounce it to the other party without deciding anything — state becomes `re-assign`, still open:
+iba\app\ps\Escalation.ps1 -Action Reassign -RunId MANUAL-... -AssignedTo Researcher -Comment "why"
 ```
 
-`-Action List`'s output now shows `raised` and `on-hold` items together (on-hold ones flagged), with
-a state column; `completed`/`withdraw` items drop off the open list, same as before, but remain in
-the `escalation` table (and its own row's `next_action`/`resolution`/`comment` fields) for audit —
-a `next_action` of approve/reject/revise/hold/noted means a real decision was recorded;
-`withdraw` means it was retracted instead, not a decision.
+`-Action List`'s output shows `raised`, `on-hold`, and `re-assign` items together (the latter two
+flagged), with a state column; `completed`/`closed`/`withdraw` items drop off the open list, but
+remain in the `escalation` table (and its own row's `next_action`/`resolution`/`comment` fields)
+for audit — `completed` means a real decision was recorded (approve/reject/revise); `closed` means
+`noted` — acknowledged, not a decision; `withdraw` means it was retracted, not a decision either.
+See §4.3 for the full state model and why `hold`/`noted` don't behave like the other three.
 
 ---
 
@@ -1056,7 +1107,7 @@ iba\app\ps\BookNarrative-Validate.ps1 -Path <narrative file>
 
 # see what's open, answer it:
 iba\app\ps\Escalation.ps1 -Action List
-iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <id> -Decision Approve|Reject|Revise
+iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <id> -Decision Approve|Reject|Revise|Hold|Noted
 
 # read it:
 iba\app\ps\Reports.ps1 -Step ReportWord -Word <word>

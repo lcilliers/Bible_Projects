@@ -27,7 +27,7 @@
                      match at all is an invalid row.
 
     First call escalates and pauses (exit code 2) — answer it with:
-        Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise>
+        Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise|Hold|Noted>
     then re-run this SAME command (pass -RunId to resume the same proposal).
 
     -Mode Load:
@@ -140,7 +140,7 @@ if ($Mode -eq 'Load') {
     if ($code -eq 2) {
         Write-Host ""
         Write-Host "PAUSED — unresolved exceptions in candidate_seed. Answer with:" -ForegroundColor Yellow
-        Write-Host "  .\Escalation.ps1 -Action AnswerRun -RunId $runId -Decision <Approve|Reject|Revise> [-Comment ...]"
+        Write-Host "  .\Escalation.ps1 -Action AnswerRun -RunId $runId -Decision <Approve|Reject|Revise|Hold|Noted> [-Comment ...]"
     }
     exit $code
 }

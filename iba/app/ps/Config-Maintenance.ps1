@@ -8,7 +8,7 @@
     -Step Validate   read-only coherence check of the live cfg_* tables. Safe any time.
     -Step Propose    DB-direct, single-row, APPROVAL-GATED change. First call escalates and
                       pauses (exit code 2) — answer it with:
-                        Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise>
+                        Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise|Hold|Noted>
                       then re-run this SAME command (same run id is generated per invocation,
                       so pass -RunId to resume the same proposal rather than opening a new one).
     -Step Report     regenerate CONFIG-REPORT.md from the live cfg_* tables. Safe any time.

@@ -2,8 +2,8 @@
 
 The approval is durable and resumable (util.escalation):
   - a new word is created as 'proposed' and an approval escalation is raised -> the run pauses.
-  - the researcher answers (Escalation.ps1 -Action Answer -Word <word> -Decision Yes|No), which sets
-    the word's status to 'approved' or 'rejected'.
+  - the researcher answers (Escalation.ps1 -Action Answer -Word <word> -Decision Approve|Reject —
+    Yes|No still accepted as aliases), which sets the word's status to 'approved' or 'rejected'.
   - re-running the package resumes: a 'proposed' word is mid-approval (not a duplicate);
     an 'approved' word proceeds; a 'rejected' word stops.
 """
