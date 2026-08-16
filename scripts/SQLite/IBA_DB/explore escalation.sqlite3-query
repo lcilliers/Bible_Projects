@@ -1,0 +1,7 @@
+-- database: ../../../iba/app/db/iba.db
+
+SELECT * FROM escalation;
+
+SELECT * FROM escalation 
+WHERE state not in ('completed','withdraw')
+;

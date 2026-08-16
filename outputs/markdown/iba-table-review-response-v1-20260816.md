@@ -193,3 +193,18 @@ config-driven-rule sweep beyond `iba/app/`.
 
 Current open-escalation count: **8** (`Escalation.ps1 -Action List` / `iba/app/reports/
 escalation-list.md`).
+
+## 7a. Addendum — `Workflow/Chat_responses/Additional configs` processed (same day, later)
+
+Full record: `BUILD.md` §114. Summary: registered the atomic-transaction/pre-run-snapshot facts
+(already true, confirmed live at §66, previously only in `BUILD.md` prose) and the NAS backup
+schedule (previously main-project-only, CLAUDE.md §13) as 6 new `cfg_setting` rows, module
+`backup` — including a real, previously-undocumented gap: `iba.db` has no dedicated NAS
+backup+integrity script the way `bible_research.db` does. Caught and fixed my own bug mid-write:
+two of those rows' UNC paths failed `json.loads()` from hand-escaped backslashes — same defect
+class as #598/#626, caught by verifying every new row parses, not assumed. Added a new
+`cfg_escalation` rule (`document_reference_grouping`) formalising the pattern this whole reset
+already used for its own follow-on escalations. Raised 6 new escalations for the remaining items
+(engine-controls migration into IBA, `research_db` table retirement/consolidation ×3 — explicitly
+gated on the design audit — a standing don't-auto-adopt-old-routines notice, and the audit itself).
+`configmaint.validate` clean afterward. Current open-escalation count: **14**.

@@ -170,3 +170,24 @@ gaps this exact session's own build depends on being real, per `governance.rules
 driven`'s "establish the rules are captured correctly" standard). The filing/consolidation decision
 (§4.3) needs the researcher's own judgement before any doc/folder move. `Escalation.ps1 -Action
 List` / `iba/app/reports/escalation-list.md` is now the live tracking surface for all of it.
+
+## 7. Addendum, same day — `Workflow/Chat_responses/Additional configs` processed
+
+Full record: `BUILD.md` §114, `outputs/markdown/iba-table-review-response-v1-20260816.md` §7a.
+Registered the atomic-transaction/pre-run-snapshot facts (already true, confirmed live at
+`GOVERNANCE.md`/`BUILD.md` §66, previously only in prose) and the NAS backup schedule (previously
+main-project-only, `CLAUDE.md` §13) as 6 new `cfg_setting` rows, module `backup` — surfacing a
+real, previously-undocumented gap: `iba.db` has no dedicated NAS backup+integrity script the way
+`bible_research.db` does, only the whole-folder mirror as a side effect. Caught and fixed a second
+real bug the same shape as #598/#626: two of the new rows' UNC paths failed `json.loads()` from
+hand-escaped backslashes, caught by verifying every new row actually parses rather than assuming a
+clean write. Added a new `cfg_escalation` rule (`document_reference_grouping`) formalising the
+document-reference pattern this whole reset already used raising its own follow-on escalations.
+Raised 6 new escalations for the remaining items in the researcher's note: migrating the
+main-project `engine/` controls into IBA (scope-first — the natural first case of the project-wide
+config-driven-rule sweep already tracked), `research_db` table retirement/consolidation ×3
+(explicitly worded as gated on the design-audit item completing first), a standing notice against
+auto-adopting old `research_db`/`engine/` routines verbatim, and the design audit itself.
+`configmaint.validate` re-run clean (orphan-setting advisories 2→8, all expected — same
+documentation-only class as the `escalation.control_*` rows, not a defect). Open-escalation count:
+8 → 14.

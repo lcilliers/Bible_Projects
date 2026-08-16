@@ -6868,3 +6868,53 @@ registry.py`, `iba/app/handlers/{candidate,cluster,configmaint,lexicon,narrative
 reports}.py` (mechanical `answer`→`next_action` read-site rename), `iba/app/lib/retention.py`,
 `iba/app/tools/purge_word.py`, `iba/app/migration/legacy_import.py`. Full digest:
 `outputs/markdown/iba-table-review-response-v1-20260816.md`.
+
+## 114. `Workflow/Chat_responses/Additional configs` processed — backup/recovery rules registered as config, document-reference-grouping rule added, 6 new escalations raised (2026-08-16, same day, later still)
+
+**Trigger.** Researcher's follow-up note (`Workflow/Chat_responses/Additional configs`) after §113's
+escalation reset, processed the same session: a short list of further config gaps and work items.
+
+**"Rules for backup and recovery already exist but should be in configs"** — traced rather than
+invented: the atomic-transaction guarantee and the pre-run-snapshot trigger were both already true
+(confirmed live, §66) but only documented in `BUILD.md` prose, not a `cfg_setting` row a live check
+can see; the NAS off-machine backup schedule (`scripts/backup_db_to_nas.py` 18:00,
+`scripts/mirror_to_nas.ps1` 18:30) was main-project-only, in CLAUDE.md §13, not in IBA's config at
+all. New `backup` `cfg_setting` module, 6 rows: `pre_run_snapshot_policy`,
+`write_atomicity_guarantee`, `nas_db_backup_schedule`, `nas_full_mirror_schedule`,
+`alerting_policy`, and `iba_db_gap` — a real, previously-undocumented gap this pass surfaced rather
+than papered over: `iba.db` has no dedicated NAS backup+integrity-check script the way
+`bible_research.db` does, only the whole-folder mirror as a side effect. **A real bug found and
+fixed in the same pass, not left for later:** the first two rows' UNC paths
+(`\\LSUK-SYNRACK\...`) were written with hand-escaped backslashes and failed `json.loads()` on
+read — same defect class as escalations #598/#626 (§113) — caught immediately by verifying every
+new row actually parses, not assumed from a clean write. Fixed via `json.dumps()` instead of manual
+escaping.
+
+**"Add config to give instruction on adding document references in the escalation"** — new
+`cfg_escalation` rule, `document_reference_grouping`: a package of related tasks raised as multiple
+escalation rows records its planning document in `context` (JSON) and shares one
+`related_activity` string across the group, so the whole package is findable as a unit later. This
+is exactly the pattern §113 already used raising its own 6 follow-on escalations; now it's a
+recorded rule, not just a one-off convention.
+
+**6 new escalations raised** for the remaining items, each tagged `related_activity=
+'additional-configs-20260816'` per the rule above: migrating the main-project `engine/` controls
+into IBA (scope-first, not a blind migration — the natural first case of §113's project-wide
+config-driven-rule sweep item); retiring `research_db`'s superseded base-data tables; moving the
+debate-pipeline tables from IBA back to `research_db` (findings, not base data, per
+`governance.scope_research_db`/`scope_iba_db`); registering `research_db`'s own tables/columns in
+`cfg_table`/`cfg_column`; a standing **notice** that old `research_db`/`engine/` routines must not
+be auto-adopted into IBA verbatim; and the audit/review of IBA's design "through the eyes of the
+configs" itself. The three `research_db`-table escalations are explicitly worded as **gated** on
+the audit item completing first, per the researcher's own stated sequencing — not mechanically
+enforced yet (`cfg_escalation.module_blocking` is still "not yet wired," §113), but recorded in
+each escalation's own text so the dependency isn't lost.
+
+`configmaint.validate` re-run clean afterward (structurally coherent; orphan-setting advisories
+rose from 2 to 8 — the new `backup.*` rows, same expected class as the `escalation.control_*` ones,
+not a defect).
+
+**Files:** no code changes this pass — `cfg_setting`/`cfg_escalation`/`escalation` data only (ad hoc
+scripts, not a registered migration, matching the direct-write convention §113 established for
+already-settled content). Full digest: `outputs/markdown/iba-table-review-response-v1-20260816.md`
+§7 addendum; session log `iba/logs/SESSION-LOG-20260816-escalation-system-reset-and-backlog-clearance.md`.
