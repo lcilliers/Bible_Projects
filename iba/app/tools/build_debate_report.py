@@ -316,7 +316,7 @@ def _may_write_passage(conn: sqlite3.Connection) -> bool:
     though this is a standalone tool with no `Ctx`/dispatcher — a write is a write."""
     return conn.execute(
         "SELECT 1 FROM cfg_write_grant WHERE writer='report.debate' AND table_name='passage' "
-        "AND inactive=0").fetchone() is not None
+        "AND database='iba' AND inactive=0").fetchone() is not None
 
 
 def main() -> int:

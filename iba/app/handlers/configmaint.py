@@ -94,8 +94,11 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
         if "{version}" not in (r["route"] or ""):
             e.append(f"step: api {r['name']} route has no {{version}} placeholder")
 
-    # write grants: every granted table must be a real table (data OR cfg_*)
-    for r in q("SELECT DISTINCT writer, table_name FROM cfg_write_grant WHERE inactive=0"):
+    # write grants: every granted table must be a real table (data OR cfg_*). database='iba' --
+    # this checks THIS app's own tables; a database='bible_research' grant (escalation #680)
+    # documents intent against a different schema this function doesn't have loaded.
+    for r in q("SELECT DISTINCT writer, table_name FROM cfg_write_grant WHERE database='iba' "
+              "AND inactive=0"):
         if r["table_name"] not in tables and r["table_name"] not in real_cfg_tables:
             e.append(f"rules: write_grant {r['writer']!r} -> unknown table {r['table_name']!r}")
 

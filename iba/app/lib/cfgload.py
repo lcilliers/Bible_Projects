@@ -174,7 +174,8 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
         conn.execute("INSERT INTO cfg_api VALUES (?,?,?,?)",
                      (aname, api["route"], api.get("input"), api.get("returns")))
         for tbl in api.get("may_source", []):        # api writers -> write grants
-            conn.execute("INSERT INTO cfg_write_grant VALUES (?,?)", (aname, tbl))
+            conn.execute("INSERT INTO cfg_write_grant (writer, table_name, database) "
+                        "VALUES (?,?,'iba')", (aname, tbl))
 
     # ── run / sequence ──
     for wpname, wp in run["work_packages"].items():
@@ -195,7 +196,8 @@ def load(db_path: pathlib.Path = DB_PATH) -> pathlib.Path:
         if writer.startswith("_"):
             continue
         for tbl in tbls:
-            conn.execute("INSERT OR IGNORE INTO cfg_write_grant VALUES (?,?)", (writer, tbl))
+            conn.execute("INSERT OR IGNORE INTO cfg_write_grant (writer, table_name, database) "
+                        "VALUES (?,?,'iba')", (writer, tbl))
     for entity, flow in rules["status_flow"].items():
         for i, f in enumerate(flow):
             conn.execute("INSERT INTO cfg_status_flow VALUES (?,?,?,?)",

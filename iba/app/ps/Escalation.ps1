@@ -50,6 +50,12 @@
                          open, still shown in -Action List. Needs -RunId and -AssignedTo
                          (Claude|Researcher); -Comment optional. Added 2026-08-16 — the state
                          value existed in the schema/docs before this, but nothing produced it.
+    -Action Complete     Claude marks an `in-progress` MANUAL escalation genuinely done. Added
+                         2026-08-17 (escalations #673/#674) — `AnswerRun -Decision Approve/Revise`
+                         on a MANUAL item now resolves to `in-progress` ("go do it"), not
+                         `completed` ("already done") — this is what actually closes it out, with
+                         a real record via -Resolution of what was done. Needs -RunId and
+                         -Resolution.
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
@@ -73,12 +79,14 @@
     .\Escalation.ps1 -Action Retract -RunId MANUAL-20260723_061922_821483 -Comment "superseded by #274's rework"
 .EXAMPLE
     .\Escalation.ps1 -Action Reassign -RunId MANUAL-20260816_... -AssignedTo Researcher -Comment "needs your judgement, not mine"
+.EXAMPLE
+    .\Escalation.ps1 -Action Complete -RunId MANUAL-20260817_... -Resolution "Built and verified live; BUILD.md sec128"
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('List', 'Answer', 'AnswerRun', 'Raise', 'Edit', 'Pause', 'Resume', 'Retract', 'Reassign')]
+    [ValidateSet('List', 'Answer', 'AnswerRun', 'Raise', 'Edit', 'Pause', 'Resume', 'Retract', 'Reassign', 'Complete')]
     [string] $Action,
     [string] $Word,
     [string] $RunId,
@@ -196,5 +204,12 @@ switch ($Action) {
         } else {
             python -m iba.app.lib.escalation reassign $RunId $AssignedTo
         }
+    }
+    'Complete' {
+        if (-not $RunId -or -not $Resolution) {
+            Write-Host "Complete needs -RunId and -Resolution (what was actually done)." -ForegroundColor Yellow
+            exit 1
+        }
+        python -m iba.app.lib.escalation complete $RunId "--resolution=$Resolution"
     }
 }

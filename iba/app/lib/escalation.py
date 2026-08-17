@@ -67,7 +67,7 @@ from . import reportkit
 from .cfg import Cfg
 from .db import Db
 
-_OPEN_STATES = ("raised", "re-assign", "on-hold")
+_OPEN_STATES = ("raised", "re-assign", "on-hold", "in-progress")
 
 
 def _now() -> str:
@@ -83,7 +83,7 @@ def word_source(word: str) -> str:
     return f"new-word: {word}"
 
 
-def _terminal_state_for(next_action: str) -> str:
+def _terminal_state_for(next_action: str, is_manual: bool = False) -> str:
     """Which `state` a decision resolves to — NOT uniformly 'completed'. Found live 2026-08-16
     (researcher, reviewing USER-GUIDE.md §4.2's staleness, asked directly whether hold/noted were
     actually wired into the app, not just documented): every `answer_for_run`/`answer_for_word`
@@ -98,8 +98,27 @@ def _terminal_state_for(next_action: str) -> str:
     resolves to `'on-hold'` (genuinely kept open — the underlying paused run correctly stays
     paused, not misread as a decision it wasn't). `noted` resolves to `'closed'` (acknowledged/
     dismissed, distinct from a real decision — also excluded from `answered_for_run`'s
-    `state='completed'` filter, for the same reason)."""
-    return {"hold": "on-hold", "noted": "closed"}.get(next_action, "completed")
+    `state='completed'` filter, for the same reason).
+
+    `is_manual` + the `'in-progress'` branch — added 2026-08-17, escalations #673/#674. Researcher,
+    reviewing #653/#657: *"how can escalation 653 and 657 be completed, it is still in progress...
+    I am not sure this is working properly."* Root cause was this exact function: `approve`/
+    `revise` landing on `'completed'` unconditionally conflates "the decision is final" with "the
+    task is finished" — true for a same-turn dispatcher-tied decision (`configmaint.propose`
+    applies its change in the very call that resolves it), false for a MANUAL task-type escalation
+    approving ongoing work. Restricted to `is_manual` ONLY — a real dispatcher-tied escalation's
+    `answered_for_run`/resume-on-'completed' machinery (7 handlers, load-bearing) is UNCHANGED, or
+    `configmaint.propose -RunId <id>`'s own apply-on-resume flow would break the moment this
+    landed. For a MANUAL item, `approve`/`revise` now land on `'in-progress'` — "go do it", not
+    "already done" — closed out for real via `complete_run()`/`Escalation.ps1 -Action Complete`,
+    not by re-answering with AnswerRun."""
+    if next_action == "hold":
+        return "on-hold"
+    if next_action == "noted":
+        return "closed"
+    if is_manual and next_action in ("approve", "revise"):
+        return "in-progress"
+    return "completed"
 
 
 def _check_state(db: Db, state: str) -> str:
@@ -341,12 +360,15 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
     esc = rows[0]
     who = _check_assignee(db, answered_by)
     _grant(cfg, "escalation")
+    new_state = _terminal_state_for(decision, is_manual=run_id.startswith("MANUAL-"))
     db.update("escalation", {"id": esc["id"]},
-              state=_check_state(db, _terminal_state_for(decision)),
+              state=_check_state(db, new_state),
               next_action=decision, comment=comment, resolution=resolution, answered_by=who,
               answered_at=_now())
-    return f"escalation {esc['id']} (run {run_id!r}, step {esc['at_step']!r}) answered {decision!r}" + (
-        f" — {comment!r}" if comment else "")
+    note = " — use Escalation.ps1 -Action Complete when the work is actually done" \
+        if new_state == "in-progress" else ""
+    return (f"escalation {esc['id']} (run {run_id!r}, step {esc['at_step']!r}) answered "
+           f"{decision!r} -> {new_state}{note}" + (f" — {comment!r}" if comment else ""))
 
 
 # ── edit / pause / resume / retract — added 2026-07-23 for the researcher's own backlog-of-
@@ -387,7 +409,7 @@ def reassign_run(cfg: Cfg, db: Db, run_id: str, new_assignee: str, comment: str 
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
-    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign"))
+    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign", "in-progress"))
     if not esc:
         return f"no open escalation for run {run_id!r} to re-assign"
     who = _check_assignee(db, new_assignee)
@@ -398,16 +420,35 @@ def reassign_run(cfg: Cfg, db: Db, run_id: str, new_assignee: str, comment: str 
            + (f" — {comment!r}" if comment else ""))
 
 
-def edit_question(cfg: Cfg, db: Db, run_id: str, new_question: str) -> str:
-    """Replace a still-open (raised or on-hold) MANUAL escalation's short_description. The old
-    wording is preserved in `tried` with a timestamp, not silently lost -- the row's history stays
-    readable."""
+def complete_run(cfg: Cfg, db: Db, run_id: str, resolution: str) -> str:
+    """Claude marks an `in-progress` MANUAL escalation genuinely done — the actual answer to
+    escalations #673/#674 (2026-08-17), replacing the earlier workaround (raising a SEPARATE
+    tracker escalation for ongoing work, `BUILD.md` §123) with a real state transition. Restricted
+    to MANUAL- run_ids currently `in-progress`, same boundary as edit/pause/resume/retract/
+    reassign — a dispatcher-tied escalation's `'completed'` is set by the app itself the moment
+    its decision resolves (see `_terminal_state_for`), not something either party marks later."""
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
-    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign"))
+    esc = _latest_for_run(db, run_id, ("in-progress",))
     if not esc:
-        return f"no open (raised/on-hold/re-assign) escalation for run {run_id!r} to edit"
+        return f"no in-progress escalation for run {run_id!r} to complete"
+    _grant(cfg, "escalation")
+    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "completed"),
+              resolution=resolution)
+    return f"escalation {esc['id']} (run {run_id!r}) marked complete — {resolution!r}"
+
+
+def edit_question(cfg: Cfg, db: Db, run_id: str, new_question: str) -> str:
+    """Replace a still-open (raised, on-hold, or in-progress) MANUAL escalation's
+    short_description. The old wording is preserved in `tried` with a timestamp, not silently
+    lost -- the row's history stays readable."""
+    run_id = _resolve_run_id(db, run_id)
+    if (err := _manual_only(run_id)):
+        return err
+    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign", "in-progress"))
+    if not esc:
+        return f"no open (raised/on-hold/re-assign/in-progress) escalation for run {run_id!r} to edit"
     _grant(cfg, "escalation")
     old_note = f"[edited {_now()}] was: {esc['short_description']}"
     tried = f"{esc['tried']}\n{old_note}" if esc["tried"] else old_note
@@ -421,9 +462,9 @@ def pause_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> str:
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
-    esc = _latest_for_run(db, run_id, ("raised", "re-assign"))
+    esc = _latest_for_run(db, run_id, ("raised", "re-assign", "in-progress"))
     if not esc:
-        return f"no raised/re-assign escalation for run {run_id!r} to pause"
+        return f"no raised/re-assign/in-progress escalation for run {run_id!r} to pause"
     _grant(cfg, "escalation")
     db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "on-hold"), comment=comment)
     return f"escalation {esc['id']} (run {run_id!r}) on-hold" + (f" — {comment!r}" if comment else "")
@@ -444,13 +485,13 @@ def resume_run(cfg: Cfg, db: Db, run_id: str) -> str:
 
 def retract_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None,
                 answered_by: str = "Researcher") -> str:
-    """Withdraw an open (raised, on-hold, or re-assign) MANUAL escalation without it counting as a
-    decision -- 'never mind', not 'reviewed and approved/rejected'. Terminal, like completed, but
-    distinguishable from it in the record."""
+    """Withdraw an open (raised, on-hold, re-assign, or in-progress) MANUAL escalation without it
+    counting as a decision -- 'never mind', not 'reviewed and approved/rejected'. Terminal, like
+    completed, but distinguishable from it in the record."""
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
-    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign"))
+    esc = _latest_for_run(db, run_id, ("raised", "on-hold", "re-assign", "in-progress"))
     if not esc:
         return f"no open (raised/on-hold/re-assign) escalation for run {run_id!r} to retract"
     who = _check_assignee(db, answered_by)
@@ -471,9 +512,14 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
                    f"next_action_assigned_to, raised_at FROM escalation "
                    f"WHERE state IN ({ph}) ORDER BY id", _OPEN_STATES)
     n_on_hold = sum(1 for r in rows if r["state"] == "on-hold")
+    # in-progress broken out from "active" explicitly (escalation #674) -- "awaiting a decision"
+    # (raised/re-assign) and "decided, work under way" (in-progress) are different things to see
+    # at a glance, the whole point of the new state.
+    n_in_progress = sum(1 for r in rows if r["state"] == "in-progress")
+    n_active = len(rows) - n_on_hold - n_in_progress
     L = ["# Open escalations", "",
          f"> Generated by `Escalation.ps1 -Action List`. {len(rows)} open escalation(s) "
-         f"({len(rows) - n_on_hold} active, {n_on_hold} on-hold).", ""]
+         f"({n_active} active, {n_in_progress} in-progress, {n_on_hold} on-hold).", ""]
     if not rows:
         L.append("_no open escalations_")
     else:
@@ -481,7 +527,7 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
               "|---|---|---|---|---|---|---|"]
         for r in rows:
             q = str(r["short_description"]).replace("|", "\\|").replace("\n", " ")
-            state = f"**{r['state']}**" if r["state"] == "on-hold" else r["state"]
+            state = f"**{r['state']}**" if r["state"] in ("on-hold", "in-progress") else r["state"]
             L.append(f"| {r['id']} | {state} | {r['source']} | {r['at_step']} | "
                      f"{r['next_action_assigned_to'] or ''} | {r['raised_at']} | {q} |")
     reportkit.archive_before_write(path)
@@ -513,7 +559,9 @@ def main() -> int:
                                         "iba/app/reports/escalation-list.md"))
         out, rows = write_list_report(cfg, db, path)
         n_on_hold = sum(1 for r in rows if r["state"] == "on-hold")
-        print(f"  {len(rows)} open escalation(s) ({len(rows) - n_on_hold} active, "
+        n_in_progress = sum(1 for r in rows if r["state"] == "in-progress")
+        n_active = len(rows) - n_on_hold - n_in_progress
+        print(f"  {len(rows)} open escalation(s) ({n_active} active, {n_in_progress} in-progress, "
              f"{n_on_hold} on-hold) -> {out}")
     elif len(argv) >= 3 and argv[0] == "answer":
         rest, by = _extract_flag(argv[3:], "by")
@@ -536,6 +584,10 @@ def main() -> int:
                               related_activity=related_activity, reference_doc=reference_doc)
         print(f"  raised — run_id {run_id!r}. Answer with:")
         print(f"    python -m iba.app.lib.escalation answer-run {run_id} <approve|reject|revise|hold|noted>")
+    elif len(argv) >= 3 and argv[0] == "complete":
+        rest, resolution_flag = _extract_flag(argv[2:], "resolution")
+        resolution = resolution_flag or " ".join(rest)
+        print("  " + complete_run(cfg, db, argv[1], resolution))
     elif len(argv) >= 3 and argv[0] == "edit":
         question = " ".join(argv[2:])
         print("  " + edit_question(cfg, db, argv[1], question))
@@ -557,6 +609,7 @@ def main() -> int:
               " | answer-run <run_id> <approve|reject|revise|hold|noted> [--by=...] [--resolution=...] [comment...]"
               " | raise <question...> [--source=claude|researcher] [--assigned-to=...] [--type=...]"
               " [--related-activity=...] [--reference-doc=...]"
+              " | complete <run_id> [--resolution=...] <what was actually done...>"
               " | edit <run_id> <new question...>"
               " | pause <run_id> [comment...]"
               " | resume <run_id>"

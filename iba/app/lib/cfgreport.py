@@ -433,7 +433,10 @@ def _report_governance(q) -> list[str]:
 
 def _grants(q) -> dict[str, list[str]]:
     g: dict[str, list[str]] = {}
-    for r in q("SELECT writer, table_name FROM cfg_write_grant ORDER BY writer, table_name"):
+    # database='iba' -- this report describes THIS app; escalation #680 widened cfg_write_grant
+    # to (eventually) also carry bible_research.db-scoped grants, its own report if ever needed.
+    for r in q("SELECT writer, table_name FROM cfg_write_grant WHERE database='iba' "
+              "ORDER BY writer, table_name"):
         g.setdefault(r["writer"], []).append(r["table_name"])
     return g
 

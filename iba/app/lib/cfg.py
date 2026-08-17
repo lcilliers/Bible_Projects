@@ -140,11 +140,15 @@ class Cfg:
         _trace(f"route {api}", r["route"] if r else None)
         return r["route"]
 
-    def may_write(self, writer: str) -> set[str]:
-        """Which tables this writer (an api, a step, or 'run') is granted to write."""
+    def may_write(self, writer: str, database: str = "iba") -> set[str]:
+        """Which tables this writer (an api, a step, or 'run') is granted to write.
+        `database='iba'` default — escalation #680 widened cfg_write_grant to differentiate
+        iba.db from bible_research.db (they share table names for different tables); every
+        current call site writes to iba.db only, so the default keeps them all unchanged."""
         rows = {r["table_name"] for r in self.conn.execute(
-            "SELECT table_name FROM cfg_write_grant WHERE writer=? AND inactive=0", (writer,))}
-        _trace(f"may_write({writer})", rows)
+            "SELECT table_name FROM cfg_write_grant WHERE writer=? AND database=? AND inactive=0",
+            (writer, database))}
+        _trace(f"may_write({writer}, database={database!r})", rows)
         return rows
 
     # ── run / sequence ───────────────────────────────────────────────────────

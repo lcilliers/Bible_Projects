@@ -7483,3 +7483,95 @@ with the plan's own "redesign, don't port" framing, not a shortfall being glosse
 
 **Files:** `iba/app/migration/bootstrap_word_audit.py`, `iba/app/handlers/wordaudit.py` (both new).
 DB snapshot: `iba-20260817T054357Z-pre-bootstrap-word-audit-escalation-672.db`.
+
+---
+
+## 128. `escalation_state='in-progress'` — the real fix for §123, not another tracker workaround (2026-08-17, later still)
+
+**Trigger.** Researcher, on the earlier tracker-escalation workaround (§123): *"it seems that you
+by default change items to completed, but the task or updated are not completely done... review
+how ongoing planning, or progressive work must be handled through escalation"* (#673); *"create new
+escalation state 'in progress'... to keep tasks open that is not yet signed off or busy working on"*
+(#674).
+
+**Root cause, precisely scoped this time.** `_terminal_state_for()` (§123) is genuinely correct for
+dispatcher-tied escalations — `configmaint.propose -RunId <id>` applies its change in the SAME call
+that resolves the decision, so `'completed'` is accurate immediately. It's only wrong for MANUAL
+task-type escalations, where `approve` means "go do it," not "already done." Fixed exactly there,
+nowhere else: `_terminal_state_for(next_action, is_manual=False)` — `is_manual` computed from
+`run_id.startswith("MANUAL-")` in `answer_for_run`, the same boundary `_manual_only()` already
+draws for Edit/Pause/Resume/Retract/Reassign. For a MANUAL item, `approve`/`revise` now resolve to
+`'in-progress'`; `reject` still resolves straight to `'completed'` (a rejection has nothing further
+to do). **Every dispatcher-tied consumer is untouched** — verified live, not just reasoned about: a
+synthetic non-`MANUAL-` run_id answered `approve` still resolves straight to `'completed'`, exactly
+as before.
+
+**New `complete_run()`** (`Escalation.ps1 -Action Complete -RunId ... -Resolution "..."`) — Claude's
+real close-out action for an `in-progress` MANUAL item, replacing the earlier "raise a separate
+tracker escalation" workaround entirely. Restricted to `in-progress` MANUAL- items, same class of
+boundary as every other manual-only action. `edit`/`pause`/`retract`/`reassign` all widened to
+recognise `in-progress` as a valid current state too (an in-progress item can still be re-worded,
+set aside, withdrawn, or bounced to the other party).
+
+**`cfg_enum.escalation_state` gains `'in-progress'`** (migration script, code-paired, same class as
+`step_kind`'s enum values). `write_list_report`/the CLI's terminal print both break it out from
+"active" explicitly in the summary line — *"awaiting a decision"* and *"decided, work under way"*
+read as different things now, the whole point of the new state.
+
+**Live-verified end to end**: raised a synthetic MANUAL escalation, answered `Approve` — confirmed
+`state='in-progress'`, not `'completed'`; ran `-Action Complete` — confirmed `state='completed'`
+with the resolution text recorded; separately confirmed the dispatcher-tied path is unchanged (see
+above). Cleaned up the synthetic test row afterward.
+
+**Files:** `iba/app/lib/escalation.py` (`_terminal_state_for`, `answer_for_run`, new
+`complete_run`, `edit_question`/`pause_run`/`retract_run`/`reassign_run` widened, CLI `complete`
+subcommand), `iba/app/ps/Escalation.ps1` (`-Action Complete`), `iba/app/migration/
+add_escalation_state_in_progress.py` (new). DB snapshot:
+`iba-20260817T062000Z-pre-escalation-state-in-progress-673-674.db`.
+
+---
+
+## 129. `cfg_write_grant` database-differentiated (#680) + all narrative session logs consolidated into `Logs/` (#682) (2026-08-17, later still)
+
+**#680 — "implement table differentiation in the config tables where it is necessary."** Same root
+cause as §125/§127's cross-database findings: `cfg_write_grant.table_name` alone can't say WHICH
+database's `word_registry`/`cluster`/`passage`/`verse` a writer may touch. `migration/
+add_cfg_write_grant_database_column.py` widened the PK to `(writer, table_name, database)`, all 79
+existing rows backfilled `database='iba'`. `Cfg.may_write()` gained an optional `database='iba'`
+parameter (every current call site unaffected). **Scope stated plainly, not overreached**: this is
+config differentiation only — no runtime mechanism exists yet for a dispatched step to actually
+write a `bible_research.db` table (that's still `handlers/wordaudit.py`'s open question, §127).
+Swept every other `cfg_write_grant` consumer (`configmaint.py`, `cfgquality.py` x2, `cfgreport.py`,
+`tools/build_debate_report.py`) to scope `database='iba'`, same discipline as §125. **Found and
+fixed a real regression while doing it**: `cfgload.py`'s seed-loader had two bare
+`INSERT INTO cfg_write_grant VALUES (?,?)` calls (2 positional values) that the new 4-column schema
+would have broken outright on the next `--reload` — fixed to name columns explicitly. **Noted, not
+chased**: `cfgload.py`'s own baseline `CREATE TABLE` DDL for `cfg_table`/`cfg_column`/
+`cfg_write_grant`/`cfg_step` is separately stale against 30+ historical migrations — only matters
+for a from-scratch install, out of scope tonight. Verified: `may_write()` regression-checked live,
+full `Start-Iba.ps1` clean before and after.
+
+**#682 — log consolidation, "implement as suggested."** Surveyed first (`outputs/markdown/
+log-consolidation-survey-v1-20260817.md`), moved second. 171 files (`git mv`, history preserved)
+from `iba/logs/` (68), `outputs/session-logs/` incl. its own `archive/` (23), 3 repo-root stragglers,
+and the log-shaped subset of `Workflow/Sessionlogs/` + its nested `archive/` (53 of 176 — the rest
+is genuinely mixed content: `PATCH-*.json`, task lists, directive analyses, schema catalogues, left
+in place) — all into the existing `Logs/` (case-insensitive filesystem: `logs/`/`Logs/` are the same
+directory here). Zero basename collisions, checked before any move, not after. **Deliberately did
+NOT sweep** the hundreds of `*obslog*`/`*sessionlog*`-named files embedded throughout `Sessions/`,
+`Sessions-v2/`, `iba/docs/`, `iba/app/verse-analysis/`, `outputs/`, `research/` — checked broadly to
+confirm this, not just assumed it: those are per-word/per-cluster/per-phase working artifacts
+properly colocated with their research context, not narrative session logs, and moving them would
+violate the exact filing principle (#650: topic-specific content stays with its topic) this
+consolidation is meant to serve.
+
+**`governance.session_log_dir` proposed** (`RUN-20260817_072453_265-CONFIGMAINT`), settling #681's
+open location question with `Logs/` now that the move is real, not hypothetical — **PAUSED**,
+awaiting researcher decision; `_naming_pattern`/`_format` queued behind it (`module_blocking`
+serialises one `configmaint.propose` at a time).
+
+**Files:** `iba/app/lib/cfg.py`, `iba/app/lib/cfgload.py`, `iba/app/handlers/configmaint.py`,
+`iba/app/lib/cfgquality.py`, `iba/app/lib/cfgreport.py`, `iba/app/tools/build_debate_report.py`
+(all `database='iba'`-scoped); `iba/app/migration/add_cfg_write_grant_database_column.py` (new);
+171 files renamed into `Logs/`; `outputs/markdown/log-consolidation-survey-v1-20260817.md` (new).
+DB snapshot: `iba-20260817T061604Z-pre-cfg-write-grant-database-column-esca.db`.

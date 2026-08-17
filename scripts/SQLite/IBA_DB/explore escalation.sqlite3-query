@@ -1,4 +1,7 @@
 -- database: c:\Bible_study_projects\iba\app\db\iba.db
 
 SELECT * FROM escalation 
-WHERE state not in ('completed','withdraw');
+WHERE state not in ('completed','withdraw','closed');
+
+SELECT * FROM escalation 
+WHERE id in (671);

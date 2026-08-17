@@ -404,7 +404,10 @@ def find_unknown_write_grant_writers(conn: sqlite3.Connection,
     active_steps = {r[0] for r in conn.execute("SELECT step FROM cfg_step WHERE inactive=0")}
     identities = writer_identities or set(_WRITER_IDENTITY_FALLBACK)
     out: list[str] = []
-    for r in conn.execute("SELECT DISTINCT writer FROM cfg_write_grant WHERE inactive=0"):
+    # database='iba' -- escalation #680 widened cfg_write_grant to also (eventually) carry
+    # bible_research.db-scoped grants; this checks THIS app's own step/writer coherence.
+    for r in conn.execute("SELECT DISTINCT writer FROM cfg_write_grant WHERE database='iba' "
+                          "AND inactive=0"):
         if r[0] not in active_steps and r[0] not in identities:
             out.append(f"schema: cfg_write_grant.writer {r[0]!r} is not an active cfg_step and "
                       f"not a declared writer identity")
@@ -425,7 +428,8 @@ def find_cfg_tables_missing_configmaint_grant(conn: sqlite3.Connection) -> list[
     cfg_tables = {r[0] for r in conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
     granted = {r[0] for r in conn.execute(
-        "SELECT table_name FROM cfg_write_grant WHERE writer='configmaint.propose'")}
+        "SELECT table_name FROM cfg_write_grant WHERE writer='configmaint.propose' "
+        "AND database='iba'")}
     missing = sorted(cfg_tables - granted)
     return [f"schema: {t!r} has no cfg_write_grant row for writer 'configmaint.propose' — "
             f"nothing can maintain it through the sanctioned gate (governance.config_control)"
