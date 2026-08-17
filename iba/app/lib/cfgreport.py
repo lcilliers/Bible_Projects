@@ -335,7 +335,11 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
     for r in q("SELECT table_name, col FROM cfg_unique ORDER BY table_name, ordinal"):
         uniq.setdefault(r["table_name"], []).append(r["col"])
     S = []
-    for t in q('SELECT name, grain, "use" AS "use" FROM cfg_table ORDER BY rowid'):
+    # database='iba' — this report describes THIS app's own schema; escalation #653 (2026-08-17)
+    # widened cfg_table/cfg_column to also carry bible_research.db's tables (governance.tables:
+    # "applies to all databases"), which is its own report, not folded into this one silently.
+    for t in q("SELECT name, grain, \"use\" AS \"use\" FROM cfg_table WHERE database='iba' "
+              "ORDER BY rowid"):
         S.append(f"### {t['name']}")
         S.append(f"_{t['grain'] or ''}_ — {t['use'] or ''}")
         if t["name"] in uniq:
@@ -346,7 +350,7 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
              c["fk"] or "", c["use"] or "", c["source"] or c["filled_by"] or ""]
             for c in q('SELECT name, "type" AS "type", is_pk, "notnull" AS "notnull", is_unique, '
                        'fk, "use" AS "use", source, filled_by FROM cfg_column '
-                       "WHERE table_name=? ORDER BY ordinal", (t["name"],))])
+                       "WHERE database='iba' AND table_name=? ORDER BY ordinal", (t["name"],))])
         S.append("")
     sections["schema"] = S
 

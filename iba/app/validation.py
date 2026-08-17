@@ -197,7 +197,7 @@ def _value_quality_word(cfg: Cfg, word_id: int, word: str) -> list[Check]:
          "(SELECT strong FROM word_strong WHERE word_id=?))"),
     )
     for table, column, where in scoped:
-        exp = cfg.conn.execute("SELECT expectation FROM cfg_column WHERE table_name=? AND name=?",
+        exp = cfg.conn.execute("SELECT expectation FROM cfg_column WHERE database='iba' AND table_name=? AND name=?",
                                (table, column)).fetchone()
         if not exp or not exp["expectation"]:
             continue
@@ -208,7 +208,8 @@ def _value_quality_word(cfg: Cfg, word_id: int, word: str) -> list[Check]:
                          f"{f.violations}/{f.total}", "PASS" if not f.violations else "WARN",
                          "; ".join(repr(v) for v, _ in f.samples[:3]) if f.violations else ""))
     exp = cfg.conn.execute(
-        "SELECT expectation FROM cfg_column WHERE table_name='word_registry' AND name='word'").fetchone()
+        "SELECT expectation FROM cfg_column WHERE database='iba' AND table_name='word_registry' "
+        "AND name='word'").fetchone()
     if exp and exp["expectation"]:
         f = vq.scan_column(cfg, "word_registry", "word", exp["expectation"], "id=?", (word_id,))
         if f:
@@ -225,7 +226,8 @@ def _value_quality_book(cfg: Cfg, book: str) -> list[Check]:
     out = []
     like = f"{book}.%"
     exp = cfg.conn.execute(
-        "SELECT expectation FROM cfg_column WHERE table_name='span' AND name='surface'").fetchone()
+        "SELECT expectation FROM cfg_column WHERE database='iba' AND table_name='span' "
+        "AND name='surface'").fetchone()
     if exp and exp["expectation"]:
         f = vq.scan_column(cfg, "span", "surface", exp["expectation"],
                            "verse_id IN (SELECT id FROM verse WHERE osisId LIKE ?)", (like,))
@@ -234,7 +236,7 @@ def _value_quality_book(cfg: Cfg, book: str) -> list[Check]:
                              "0 violations", f"{f.violations}/{f.total}",
                              "PASS" if not f.violations else "WARN"))
     for table, column in (("candidate_seed", "tag"), ("lemma_inventory", "gloss")):
-        exp = cfg.conn.execute("SELECT expectation FROM cfg_column WHERE table_name=? AND name=?",
+        exp = cfg.conn.execute("SELECT expectation FROM cfg_column WHERE database='iba' AND table_name=? AND name=?",
                                (table, column)).fetchone()
         if exp and exp["expectation"]:
             f = vq.scan_column(cfg, table, column, exp["expectation"])

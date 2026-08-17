@@ -35,6 +35,7 @@ from ..lib import cfgreport, cfgquality, valuequality, escalation as esc
 from .base import Ctx, Outcome, ok, fail, escalate
 
 APP_ROOT = pathlib.Path(__file__).resolve().parent.parent   # iba/app — scanned for orphan configs
+PROJECT_ROOT = APP_ROOT.parent.parent   # repo root — scanned by find_unregistered_project_scripts (Phase 0, #672)
 
 # every cfg_* table configuration_maintenance may touch (kept in step with the bootstrap
 # migration's CFG_TABLES — both name the same set on purpose, rule j: one rule, one home,
@@ -61,19 +62,24 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     e: list[str] = []
     q = lambda sql, p=(): conn.execute(sql, p).fetchall()
 
-    tables = {r["name"] for r in q("SELECT name FROM cfg_table")}
+    # database='iba' explicit throughout this function — escalation #653 (2026-08-17) widened
+    # cfg_table/cfg_column to also describe bible_research.db, and the two DBs genuinely share
+    # table names (cluster/passage/verse/word_registry) for DIFFERENT tables. This function checks
+    # THIS app's own schema coherence — it must not silently mix the other database's rows in.
+    tables = {r["name"] for r in q("SELECT name FROM cfg_table WHERE database='iba'")}
     real_cfg_tables = {r[0] for r in q(
         "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
     columns: dict[str, set[str]] = {}
-    for r in q("SELECT table_name, name FROM cfg_column"):
+    for r in q("SELECT table_name, name FROM cfg_column WHERE database='iba'"):
         columns.setdefault(r["table_name"], set()).add(r["name"])
 
     # schema integrity
     for t in tables:
-        pk_n = q("SELECT COUNT(*) n FROM cfg_column WHERE table_name=? AND is_pk=1", (t,))[0]["n"]
+        pk_n = q("SELECT COUNT(*) n FROM cfg_column WHERE database='iba' AND table_name=? "
+                "AND is_pk=1", (t,))[0]["n"]
         if pk_n > 1:
             e.append(f"schema: {t} has {pk_n} primary keys")
-    for r in q("SELECT table_name, name, fk FROM cfg_column WHERE fk IS NOT NULL"):
+    for r in q("SELECT table_name, name, fk FROM cfg_column WHERE database='iba' AND fk IS NOT NULL"):
         rt, _, rc = r["fk"].partition(".")
         if rt not in tables:
             e.append(f"schema: {r['table_name']}.{r['name']} FK -> unknown table {rt!r}")
@@ -192,6 +198,12 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     writer_identities = set(_writer_identities(conn))
     e.extend(cfgquality.find_unknown_write_grant_writers(conn, writer_identities))
 
+    # the reverse gap — a cfg_* table with NO configmaint.propose grant at all — added 2026-08-17
+    # after it crashed live twice (escalations #539/#550 historical, #666/#667 today): the checks
+    # above validate that every GRANT points somewhere real; this validates every TABLE has a grant
+    # to be reached through in the first place. See cfgquality.find_cfg_tables_missing_configmaint_grant.
+    e.extend(cfgquality.find_cfg_tables_missing_configmaint_grant(conn))
+
     # step classification completeness — added 2026-07-30 (the operations/utility model). Hard
     # error: an active, dispatchable step with no classification is exactly the state run.py's
     # dispatch gate now refuses to run, so this check keeps surfacing why, not just crashing at
@@ -274,6 +286,14 @@ def validate(ctx: Ctx) -> Outcome:
                       "stale-doc finding(s)"),
         "unregistered_lib_modules": (cfgquality.find_unregistered_lib_modules(ctx.db.conn, APP_ROOT),
                                     "lib module(s) missing a cfg_utility row"),
+        # Phase 0 of the engine-controls migration (escalation #672) — the project-wide counterpart
+        # to unregistered_lib_modules above, whole-repo not just iba/app/lib/. ADVISORY (see the
+        # function's own docstring): ~345 pre-existing files are a known, already-tracked backlog
+        # (Phase 2 of the same plan), not new drift — this check's job is catching what's added
+        # AFTER today, not hard-failing validate over what's already known and queued.
+        "unregistered_project_scripts": (
+            cfgquality.find_unregistered_project_scripts(ctx.db.conn, PROJECT_ROOT),
+            "project-wide script(s) missing a cfg_utility row"),
         "low_config_density_utilities": (cfgquality.find_utility_config_density(ctx.db.conn),
                                         "utility module(s) with zero cfg.setting()/cfg.enum() usage"),
         # 2026-07-30 — extending find_orphan_configs' "actually used, not just structurally valid"
@@ -446,8 +466,13 @@ def _apply(ctx: Ctx, table: str, op: str, where: dict, set_: dict) -> dict | Non
 def propose(ctx: Ctx) -> Outcome:
     table = ctx.params["Table"]
     op = ctx.params["Op"]
-    where = json.loads(ctx.params.get("Where") or "{}")
-    set_ = json.loads(ctx.params.get("Set") or "{}")
+    # `or "{}"` alone doesn't catch a WHITESPACE-only value (truthy in Python, but json.loads(" ")
+    # still raises "Expecting value: line 1 column 1 (char 0)") -- root cause of escalation #579
+    # (2026-08-10), reproduced exactly from its own recorded traceback: crashed on this line before
+    # this .strip() existed. `.strip()` first so a stray space/blank -Where/-Set behaves the same as
+    # an omitted one, instead of crashing.
+    where = json.loads((ctx.params.get("Where") or "").strip() or "{}")
+    set_ = json.loads((ctx.params.get("Set") or "").strip() or "{}")
     question = ctx.params.get("Question", f"{op} on {table} — approve?")
 
     if table not in ctx.cfg.may_write("configmaint.propose"):

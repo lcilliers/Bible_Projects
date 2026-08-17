@@ -342,7 +342,9 @@ def find_bad_report_csv_table_references(conn: sqlite3.Connection) -> list[str]:
     check had no way to represent "this is intentionally not a literal table." A `virtual` row
     without a `join_note` is still flagged — the exemption cannot silently hide an actually-wrong
     entry with no explanation attached."""
-    data_tables = {r[0] for r in conn.execute("SELECT name FROM cfg_table")}
+    # database='iba' -- this checks cfg_report_csv_table references against THIS app's own data
+    # tables (escalation #653, 2026-08-17, widened cfg_table to also carry bible_research.db's).
+    data_tables = {r[0] for r in conn.execute("SELECT name FROM cfg_table WHERE database='iba'")}
     cfg_tables = {r[0] for r in conn.execute(
         "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
     known = data_tables | cfg_tables
@@ -406,6 +408,70 @@ def find_unknown_write_grant_writers(conn: sqlite3.Connection,
         if r[0] not in active_steps and r[0] not in identities:
             out.append(f"schema: cfg_write_grant.writer {r[0]!r} is not an active cfg_step and "
                       f"not a declared writer identity")
+    return out
+
+
+def find_cfg_tables_missing_configmaint_grant(conn: sqlite3.Connection) -> list[str]:
+    """Every real `cfg_*` DATA table must have a `cfg_write_grant` row for writer
+    `configmaint.propose` — that's the one sanctioned path `USER-GUIDE.md` §9 states for changing
+    any `cfg_*` row, and `governance.config_control` states it as a blanket rule with no carve-out.
+    Found 2026-08-17 the hard way: `cfg_escalation`/`cfg_method_rule`/`cfg_quality_check`/`cfg_index`
+    had silently shipped with NO grant at all — `cfg_method_rule`'s gap is the live, still-unfixed
+    root cause of escalations #539/#550 (crashed 2026-08-06/07, reproduced identically 2026-08-17).
+    A hard structural fault, not a judgement call: a `cfg_*` table nobody can write through the
+    sanctioned gate is broken plumbing the same class as an unresolved `on_fail`/`write_grant`
+    reference, just the opposite direction (a table with zero grants, not a grant naming a dead
+    step)."""
+    cfg_tables = {r[0] for r in conn.execute(
+        "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
+    granted = {r[0] for r in conn.execute(
+        "SELECT table_name FROM cfg_write_grant WHERE writer='configmaint.propose'")}
+    missing = sorted(cfg_tables - granted)
+    return [f"schema: {t!r} has no cfg_write_grant row for writer 'configmaint.propose' — "
+            f"nothing can maintain it through the sanctioned gate (governance.config_control)"
+            for t in missing]
+
+
+def find_unregistered_project_scripts(conn: sqlite3.Connection,
+                                      project_root: pathlib.Path) -> list[str]:
+    """Phase 0 of the engine-controls migration (escalation #672, `engine-controls-migration-plan-v3
+    -20260817.md`): *"any new script or routine, anywhere in the project, must be registered in
+    cfg_utility... in the same unit of work it is created"* (governance.new_utility_registration_timing)
+    — this is the enforcement half of that rule. Walks the WHOLE project (not just `iba/app/lib/`,
+    which `find_unregistered_lib_modules` already covers by module stem) for `.py` files with no
+    matching `cfg_utility.file_path` row, matched by project-root-relative path since files outside
+    `iba/app/` don't share `iba/app/lib/`'s one-unique-stem-per-file guarantee. `temp_*` files are
+    exempt (governance.scripts_and_routines' own carve-out for throwaway scripts).
+
+    **ADVISORY, not a hard error** — deliberate, same reasoning as `find_stale_governance_docs`:
+    at the moment this check was built, ~345 pre-existing files (`engine/`, `scripts/`, `research/`,
+    `iba/prototype/`, `iba/scripts/`) are unregistered by design (that's Phase 2 of the same plan,
+    not yet executed) — a hard error here would fail `configmaint.validate` wall-to-wall for a known,
+    already-tracked backlog rather than catch NEW drift, which is this check's actual job. Revisit
+    once Phase 2 substantially closes the backlog; hard-failing on it now would drown the signal
+    this exists to give, not strengthen it."""
+    # Checked against EVERY path component, not just parts[0] — found live while verifying this
+    # check: scripts/analytics/venv/ is a NESTED virtualenv (3,042 site-packages .py files) that a
+    # top-level-only exclusion completely misses, turning 345 real findings into 3,100+ noise.
+    _EXCLUDE_ANYWHERE = {".git", "archive", "__pycache__", ".venv", "venv", "node_modules",
+                        "site-packages"}
+    registered = {pathlib.PurePosixPath(r[0]) for r in
+                 conn.execute("SELECT file_path FROM cfg_utility")}
+    out: list[str] = []
+    for f in sorted(project_root.rglob("*.py")):
+        rel = f.relative_to(project_root)
+        parts = rel.parts
+        if not parts:
+            continue
+        if _EXCLUDE_ANYWHERE & set(parts):
+            continue
+        if parts[0] == "iba" and len(parts) > 1 and parts[1] == "app":
+            continue  # iba/app/ covered by find_unregistered_lib_modules + handler/tool/migration checks
+        if f.stem == "__init__" or f.stem.startswith("temp_"):
+            continue
+        rel_posix = pathlib.PurePosixPath(rel.as_posix())
+        if rel_posix not in registered:
+            out.append(f"{rel_posix} has no cfg_utility row (governance.new_utility_registration_timing)")
     return out
 
 

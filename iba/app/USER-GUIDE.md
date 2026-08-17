@@ -33,7 +33,7 @@ built out **operation by operation**, within a common framework. *(Plan §2.)*
 > ### Scope of this guide — read this
 >
 > **The application is under active construction, and this guide grows with it — updated
-> 2026-08-08.** Live today: the raw layer (**new-word**, §3; **raw-backfill**, §3a), **config
+> 2026-08-17 (§2's startup transcript brought current, BUILD.md §119).** Live today: the raw layer (**new-word**, §3; **raw-backfill**, §3a), **config
 > maintenance** (§9), **standalone quality checks** (§11), **the lexicon-parsed layer** (§11a),
 > **reports and CSV export** (§12), **log retention** (§13), **4 analysis reports** —
 > strong-meaning, span-analysis, schema-overview, registry (§12a), and the **lexical-then-debate
@@ -74,25 +74,43 @@ commands from the repo root (`C:\Bible_study_projects`).
 iba\app\ps\Start-Iba.ps1
 ```
 
-This prepares the environment and reports `READY`:
+This prepares the environment and reports `READY`. Typical (repeat-session) output:
 
 ```
 IBA app — startup
-  ✓ config loaded (904 rows in 20 cfg_* tables)
-    config_version: app-0.1.0
-  ✓ data tables present (18)
+  ✓ config already loaded (use --reload to reseed)
+    config_version: app-0.1.0+6c68c02fb4b8
+  ✓ data tables present (40)
   ✓ STEP up and tagged (http://localhost:8989, ESV_th)
     known-answer probe: H0430 -> H0430G gloss 'God', 2088 verses
 
   orientation (read before making changes):
-    BUILD.md      The IBA app — build record — 2026-07-17, first slice...
-    GOVERNANCE.md How the app is governed by config — the chain, first line to last...
+    BUILD.md      The IBA app — build record — ...
+    GOVERNANCE.md How the app is governed by config — ...
+
+  governance rules (must be complied with this session):
+    governance.build_md_on_code_change: ...
+    governance.escalation.scope: ...
+    ... one line per `module='governance'` cfg_setting row, ALL of them, every run (currently
+    33 rows) — read this block in full, not just the two doc-teaser lines above it ...
+
 READY.
+  first run:  iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"
 ```
 
-It is **idempotent** — safe to run any time. What it does: validates the config, loads it into the
-DB if needed, builds the data tables if missing, pre-flights STEP, and (added 2026-07-22) prints an
-orientation pointer to `BUILD.md`/`GOVERNANCE.md` so a session doesn't start blind.
+Table/row/rule counts above are a real snapshot (2026-08-17), not fixed — they grow as config and
+the DB grow. On a genuinely first-ever run (no config loaded yet), the first two lines instead read
+`✓ config loaded (N rows in M cfg_* tables)`, and the data-tables line reads `created` rather than
+`present`.
+
+It is **idempotent** — safe to run any time. What it does, in order (`init.py`'s docstring, steps
+1–7): validate the config; load it into the DB if not already there (or `--reload` to reseed);
+build the data tables if missing (or `--reset` to rebuild); pre-flight STEP; print an orientation
+pointer to `BUILD.md`/`GOVERNANCE.md` (added 2026-07-22); **print every `module='governance'`
+`cfg_setting` row explicitly, in full** (added 2026-07-23, escalation #305) — not summarised, not
+optional: per `governance.rules_must_be_config_driven`, a process rule unread at startup from its
+own `cfg_*` row is a rule that exists only in a doc or in memory, which the config itself forbids;
+print the `READY`/`NOT READY` status.
 
 **The STEP check is a known-answer probe, not a ping.** It does not merely ask "did something
 answer on the port" — it fetches a fixed Strong's (`H0430`) and requires the *expected* answer back:

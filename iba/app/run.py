@@ -132,6 +132,26 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
             f"Config-Maintenance.ps1 -Step Propose -Table cfg_step -Op update "
             f"-Where '{{\"work_package\":\"{package}\",\"step\":\"{step_id}\"}}' "
             f"-Set '{{\"kind\":\"operations\"}}' (or \"utility\") -Question \"...\"")
+    # Third gate — `cfg_escalation.module_blocking` (escalation #646, 2026-08-17): "Running a
+    # module registered in cfg_utility (or a step registered in cfg_step) is blocked while it has
+    # an unresolved escalation against it (state is one of raised, re-assign)." Matched two ways,
+    # same as the rule text's two clauses: the exact step (`at_step=step_id`) and the owning
+    # module (`source=<module prefix of step_id>`, the identical derivation `_source_for_step()`
+    # already uses to classify a code-generated escalation's source) — so an escalation raised
+    # against either the specific step or the module as a whole blocks dispatch. `at_step='manual'`
+    # (general Claude/Researcher escalations not tied to a dispatched step) never collides with a
+    # real step_id, so this cannot false-positive-block on those.
+    _module = _source_for_step(step_id)
+    _blocker = cfg.conn.execute(
+        "SELECT id, short_description FROM escalation "
+        "WHERE state IN ('raised','re-assign') AND (at_step=? OR source=?) "
+        "ORDER BY id LIMIT 1", (step_id, _module)).fetchone()
+    if _blocker:
+        cfg.close()
+        raise PermissionError(
+            f"step {step_id!r} in work package {package!r} is blocked by unresolved escalation "
+            f"#{_blocker['id']} ({_blocker['short_description'][:100]!r}) — resolve it "
+            f"(Escalation.ps1 -Action AnswerRun) before dispatching (cfg_escalation.module_blocking)")
     db = Db(cfg)
     if "Word" in params:                                  # normalise once, at the boundary
         params["Word"] = normalise(params["Word"], cfg)

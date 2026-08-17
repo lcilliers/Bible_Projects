@@ -213,7 +213,9 @@ exactly how book order and span_html went undocumented here.**
   the run; the researcher answers `Escalation.ps1 -Action Answer -Word <w> -Decision Yes|No`
   (confirmed live: escalation `#169`, `[blindness (spiritual]`, currently open). What remains a
   named, deliberate fast-follow (per §9A) is only the **answer shape** — still yes/no, not yet the
-  three-way approve/reject/revise every other escalation in this app uses.
+  three-way approve/reject/revise every other escalation in this app uses. *(Historical note, left
+  as-is per researcher decision 2026-08-17, escalation #664: the vocabulary itself has since moved
+  on — see §39 and `BUILD.md` §115–117 for the current `type`/`next_action`/`state` model.)*
 - **`source` / `filled_by`** are in `cfg_column` but not yet *enforced* — `validation.py` only
   checks a column's `source` is non-empty (informational WARN), not that the value it holds
   actually matches what its declared source says fed it. `expectation` IS enforced (value-quality

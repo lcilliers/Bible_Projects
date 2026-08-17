@@ -68,14 +68,23 @@ class Cfg:
         return val
 
     # ── the schema (data tables built from here) ─────────────────────────────
+    # `database='iba'` explicit on both queries below — escalation #653 (2026-08-17) widened
+    # cfg_table/cfg_column to describe bible_research.db too (governance.tables/.table_columns:
+    # "applies to all databases"), and the two DBs genuinely share table names (cluster/passage/
+    # verse/word_registry, confirmed live) for DIFFERENT tables. `Cfg` is *"THE ONLY WAY THE APP
+    # READS CONFIG"* for THIS running app's own DB — it must never resolve the other database's
+    # row by accident (lib/db.py:build_data_tables() reads cfg_column and creates data tables from
+    # it; scoping wrong here would try to build bible_research.db's tables inside iba.db).
     def tables(self) -> list[str]:
-        rows = [r["name"] for r in self.conn.execute("SELECT name FROM cfg_table ORDER BY rowid")]
+        rows = [r["name"] for r in self.conn.execute(
+            "SELECT name FROM cfg_table WHERE database='iba' ORDER BY rowid")]
         _trace("tables()", rows)
         return rows
 
     def columns(self, table: str) -> list[sqlite3.Row]:
         rows = self.conn.execute(
-            "SELECT * FROM cfg_column WHERE table_name=? ORDER BY ordinal", (table,)).fetchall()
+            "SELECT * FROM cfg_column WHERE database='iba' AND table_name=? ORDER BY ordinal",
+            (table,)).fetchall()
         _trace(f"columns({table})", rows)
         return rows
 

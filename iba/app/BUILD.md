@@ -7072,3 +7072,414 @@ a strengthened practice commitment, not a code change.
 
 **Files:** none (config/data only — `cfg_escalation.chat_routing` row updated, one new escalation
 raised).
+
+---
+
+## 119. `USER-GUIDE.md` §2 startup transcript brought current — the governance-rules print (added 2026-07-23) was never documented (2026-08-17)
+
+**Trigger.** Researcher asked, plainly, whether a terminal-run startup script actually reaches this
+session and whether escalation-file changes are picked up automatically (answer: no to both — no
+ambient visibility into anything outside a tool call this session makes). Answering that from
+evidence meant re-running the actual session-start sequence (`start-project`, then
+`Start-Iba.ps1`) and, per the researcher's own follow-up instruction, comparing its real output
+against what `USER-GUIDE.md` §2 documents.
+
+**Found stale on three points**, despite the guide's own "Scope of this guide" banner claiming
+currency as of 2026-08-08: (a) the `config_version` example (`app-0.1.0`) didn't show the git-hash
+suffix `cfg.config_version()` actually appends (`app-0.1.0+<hash>`); (b) the `data tables present`
+count (`18`) was a build-time snapshot, now `40`; (c) most substantively, `init.py` step 6 —
+printing every `module='governance'` `cfg_setting` row explicitly, in full (added 2026-07-23,
+escalation #305, §13 above) — was missing from both the example transcript and the "what it does"
+prose list entirely. That third gap matters beyond cosmetics: `governance.rules_must_be_config_driven`
+makes that print block the one place those 33 process rules are actually "read" each session: a
+guide that doesn't show it undersells that the researcher-facing contract is "read the whole
+block," not "skim the two BUILD.md/GOVERNANCE.md teaser lines above it."
+
+**Fixed:** §2 rewritten with a real 2026-08-17 transcript (config-already-loaded case, the
+governance-rules block included, currently 33 rows), an explicit note that the counts shown are a
+snapshot and grow over time (not a fixed number to expect verbatim), the first-run-vs-repeat-run
+output distinction, and the "what it does" prose corrected to name all of `init.py`'s documented
+steps 1–7 including the governance print, sourced directly from `init.py`'s own docstring rather
+than reconstructed from memory.
+
+**Files:** `iba/app/USER-GUIDE.md` (§2 rewritten, no other section touched).
+
+---
+
+## 120. Escalation #646 (`module_blocking` wired) + real `configmaint.propose` grant gaps found and partly fixed while doing it (2026-08-17)
+
+**Trigger.** All 15 open escalations from the 08-16 sessions were answered by the researcher via
+the terminal at 03:17–03:18, before this chat session started — this session's actual job was to
+carry out what each answer instructed, not "decide" anything already decided. #646: "implement and
+deploy" `cfg_escalation.module_blocking` (rule text already recorded 2026-08-16, `enforced_by`
+still read "not yet wired"). #647: verify `run.py` really refuses an unregistered
+work-package/step combo. #649: "resolve this bug [orphaned `escalation.run_id`s], ensure the
+outstanding escalations are not ignored." #579: "follow-up and resolution" on a 2026-08-10
+`configmaint.propose` crash.
+
+**#647 — verified, no gap.** `cfg.work_package_inactive()`/`cfg.step_inactive()`
+(`lib/cfg.py:167-181`) already treat "no `cfg_work_package`/`cfg_step` row at all" identically to
+"row exists but `inactive=1`" — both refuse. Live-probed (`run BOGUS_PACKAGE_XYZ --step whatever`)
+— refused cleanly with `PermissionError`, no partial write. Nothing to fix; existing gate
+(escalation #334, §37) already covers the researcher's 2026-08-16 instruction.
+
+**#646 — built.** `run.py:run_step` gained a third dispatch gate, after the `step_kind` check:
+queries `escalation WHERE state IN ('raised','re-assign') AND (at_step=step_id OR source=module)`
+(`module` = the same `_source_for_step()` derivation `run.py` already uses for classification —
+one source of truth, not a second copy of the rule) and refuses with `PermissionError` if a match
+exists. Live-verified both directions: inserted a synthetic `raised` escalation against
+`registry.exists`, confirmed `new-word/registry.exists` refuses citing that escalation's own id and
+text; deleted it, confirmed the identical dispatch then runs clean (`condition: ok`); cleaned up
+every artefact the clean run wrote (`run`/`validation_result` rows, the DB snapshot file) so no
+test debris was left in the live DB. **Then observed it fire for real, unprompted**, twice, in this
+very session (below) — the strongest verification available: production behaviour, not just a
+synthetic probe.
+
+**A real, live bug found immediately after wiring #646 in:** proposing the `enforced_by` metadata
+update for `module_blocking` itself crashed — `PermissionError: 'configmaint.propose' may not write
+'cfg_escalation'`. `cfg_escalation` (added by the 2026-08-16 escalation-reset) had **never been
+given a `configmaint.propose` write grant**, unlike every other `cfg_*` table — a real violation of
+`governance.config_control`, not a side-effect of anything built today. The crash correctly
+self-recorded as escalation #666 (the 2026-07-30 "an error in a module operation escalates itself"
+rule, confirmed working). Swept the whole `cfg_write_grant` table for the same shape of gap
+(`SELECT name FROM sqlite_master WHERE name LIKE 'cfg_%'` minus `writer='configmaint.propose'`
+grants) and found **four**, not one: `cfg_escalation`, `cfg_index`, `cfg_method_rule`,
+`cfg_quality_check`. `cfg_method_rule`'s gap is the **live, still-unreproduced-as-fixed** root cause
+of escalations #539/#550 (2026-08-06/07 — both "may not write 'cfg_method_rule'"); the parallel gap
+`#561` hit (`debate_change_detail`/`passage.build`) has since been closed by someone/something else
+— confirmed via a direct query, not assumed.
+
+**Fix proposed for `cfg_escalation`'s grant** (`RUN-20260817_043505_766-CONFIGMAINT`) — correctly
+**PAUSED**, not self-approved: this is a real permission change (governance.config_control demands
+researcher approval, unlike the module_blocking *code* wiring itself, which needed none). Attempting
+the other three grants (`cfg_index`/`cfg_method_rule`/`cfg_quality_check`) then hit **#646's own new
+gate**: `configmaint.propose` refused to dispatch *at all* — blocked by escalation #667 (the pending
+grant's own PAUSE, `source='configmaint'`), matching `resolution_precedence` (one pending config
+decision blocks the next). **Same gate then also blocked `configmaint.validate`** (read-only) for
+the identical reason — a real, load-bearing consequence of the rule's literal wording ("module...
+blocked while it has an unresolved escalation against it") the researcher should know landed exactly
+this broadly: a single pending propose currently locks out the whole `configmaint` module, including
+diagnostics. Left as specified, not silently narrowed — flagged in chat for a decision if this proves
+too strict in practice.
+
+**A genuine "integrity check that makes sense" added to `configmaint.validate`** (closing part of
+escalation #657's ask directly): `cfgquality.find_cfg_tables_missing_configmaint_grant()` — every
+`cfg_*` table must have a `configmaint.propose` write grant; a hard error (`e.append`), same
+severity class as the existing `find_unknown_write_grant_writers` (which checks the *opposite*
+direction — a grant naming a step that doesn't exist). Unit-verified directly against the live DB
+(dispatcher itself is currently locked by #667, above, so this bypassed it): correctly returns
+exactly the same 4 tables found above, nothing spurious.
+
+**#579 — actual root cause found and fixed**, not just triaged. Escalation #579's own recorded
+`context.traceback` pinpoints the exact crash: `configmaint.py:449`,
+`where = json.loads(ctx.params.get("Where") or "{}")`. `or "{}"` does not catch a
+**whitespace-only** value — `" "` is truthy in Python, so `json.loads(" ")` still raises exactly
+`Expecting value: line 1 column 1 (char 0)`, #579's literal error text. Fixed both the `Where` and
+`Set` lines to `.strip()` before the `or` check. Verified against a synthetic reproduction of the
+exact old crash (confirmed it still throws pre-fix) and confirmed clean against a whitespace value,
+an empty value, and a real JSON value post-fix.
+
+**#649 — resolved.** All 5 orphaned `escalation.run_id`s (#539/#550/#559/#561/#579) confirmed
+genuinely orphaned (no matching `run` row — consistent with each crash happening before
+`_ensure_run()` ever wrote one) and confirmed **none are outstanding** — all 5 already `state=
+completed` (539/550/559/561 historical, 579 answered by the researcher today). #539/#550 (the two
+`cfg_method_rule` write-grant crashes) are explained by the same root cause found above, not a
+separate bug. #559 (`hib.set crashed: 'osisId'`) and the #561 grant gap (since independently fixed)
+were not re-investigated further — genuinely lower priority per the escalation's own text, and nothing
+about them recurred today.
+
+**Files:** `iba/app/run.py` (third dispatch gate), `iba/app/lib/cfgquality.py`
+(`find_cfg_tables_missing_configmaint_grant`), `iba/app/handlers/configmaint.py` (validate() wired
+to the new check; propose()'s `Where`/`Set` parsing hardened). **Pending researcher decision:**
+`RUN-20260817_043505_766-CONFIGMAINT` (grant `cfg_escalation`) PAUSED; `cfg_index`/`cfg_method_rule`/
+`cfg_quality_check` grants identified but not yet proposed (blocked by the above until it clears).
+
+---
+
+## 121. Second round — researcher's answers to #667/#668/#669 actioned (2026-08-17, later)
+
+- **#667 approved and applied.** `cfg_write_grant` now has `(configmaint.propose, cfg_escalation)`.
+  Re-proposed the next of the 3 remaining gaps, `cfg_index` — correctly **PAUSED again**
+  (`RUN-20260817_052130_987-CONFIGMAINT`), not self-approved; `module_blocking` (escalation #646)
+  now serialises these one at a time by design (`resolution_precedence`), so `cfg_method_rule`/
+  `cfg_quality_check` stay queued until this one clears too.
+- **#668 answered on-hold**, with a real rule attached, not just a pause: *"currently backfill
+  strongs (not T2 and T3) may not [be] linked to words. Analytics will identify individual backfills
+  that must be pulled into the registry, rather than doing the outstanding backfill word imports in
+  bulk."* Extends the same standing constraint already memoried
+  (`feedback_iba_backfill_cluster_assignment_via_analysis_not_bulk_automation`, 2026-08-13) to the
+  746/825 exceptions found tonight — no bulk import, individual pulls only, via analysis. No code
+  change; noted here as the record.
+- **#669 answered revise** — v1 was "moving in the right direction" but read as a catalogue of
+  `engine/`'s past shape rather than a plan for the stated goal (one governed control plane for
+  **all** project operations, present and future — the researcher's comments verbatim in the v2
+  doc's §1). v2 written from that goal down: sized the real fragmentation project-wide (345 live
+  `.py` files outside `iba/app/`+`engine/`, zero `cfg_utility` registration — not just `engine/`'s
+  11), proposed a forward-looking capture mechanism (a standing "register in `cfg_utility` in the
+  same unit of work" rule + a companion `configmaint.validate` integrity check, same shape as
+  §120's write-grant-coverage one) so future drift is structurally caught rather than rediscovered
+  by another sweep, and left the one-DB-vs-two-DB question explicitly undecided with tradeoffs laid
+  out rather than presumed. v1 archived to `iba/app/reports/archive/`. New approval request raised:
+  `MANUAL-20260817_042123_261705`.
+
+**Files:** none beyond the config write (`cfg_write_grant`) and the two report docs
+(`engine-controls-migration-plan-v2-20260817.md`, v1 archived).
+
+---
+
+## 122. Engine plan v3 — config stubs asked for, then folded into the plan itself, not kept separate (2026-08-17, later still)
+
+**Trigger 1** ("I want to see the config stubs"): drafted concrete illustrative rows across
+`cfg_setting`/`cfg_utility`/`cfg_work_package`/`cfg_step`/`cfg_write_grant` for the `engine/`
+migration — real purposes from each file's own docstring, real `Pre-A1`…`A11` step sequence from
+`audit_word.py`'s own docstring, nothing invented. Caught and fixed a real error while doing it: the
+plan's "47 WR-checks" was a `grep -c` line-count, not a distinct-code count — re-verified, it's
+**20** (`WR-01`–`WR-20`); `CLAUDE.md` §4 was correct all along, no correction needed there.
+`iba/app/reports/engine-controls-config-stubs-draft-20260817.md` (kept separate from the plan at
+this point — corrected below).
+
+**Trigger 2** ("I actually want to see the config stubs and the plan as an integrated whole..."):
+the split itself was wrong. Rebuilt as **v3**: every phase now carries **Concept → Configs → Code →
+Daily-running rules** together, not prose in one doc and rows in another. Also **extended**, not
+just reorganised: (a) a new "Phase 0" isolates the governance-mechanism work as buildable *now*,
+zero dependency on #653/#657 — wasn't called out as independently startable before; (b) the
+`scripts/` phase (previously deferred entirely to "its own follow-up plan") now has 3 real
+representative stubs, one per `CLAUDE.md` §6 risk category (`_assess_cluster_profiles.py` read-only,
+`_apply_backfill_verse_id_active_20260701.py` mutating, `_delete_empty_fi.py` destructive) — the
+last one surfaced its own small finding along the way (no docstring on a destructive script, the
+exact category that most needs one); (c) `cfg_on_fail` rows added for `engine/`'s existing
+CONFIRM-prompt/`--interactive`-gate behaviour, mapped onto IBA's `pause-continue` path — not in the
+original stub draft at all.
+
+**Escalation handling:** the pending v2-approval request (#670, `MANUAL-20260817_042123_261705`)
+was still unanswered when v3 superseded it — withdrawn rather than left to be answered against a
+stale document, with a pointer to the new one; fresh approval request raised for v3
+(`MANUAL-20260817_043359_041885`). v2 and the standalone stub draft both archived to
+`iba/app/reports/archive/`.
+
+**Files:** `iba/app/reports/engine-controls-migration-plan-v3-20260817.md` (new, supersedes v2);
+`engine-controls-config-stubs-draft-20260817.md` + `engine-controls-migration-plan-v2-20260817.md`
+moved to `archive/`. No code/config DB writes this round — draft-only, per the escalation's own
+"nothing written yet" framing.
+
+---
+
+## 123. `state='completed'` ≠ task done — real confusion, traced and partially fixed (2026-08-17, later still)
+
+**Trigger.** Researcher, looking at #653/#657 in the open-escalations report: *"how can escalation
+653 and 657 be completed, it is still in progress or on hold, but definitely not completed. There
+may be others that fall in the same class."*
+
+**Root cause, not a data error.** `lib/escalation.py:_terminal_state_for()` maps `approve`/
+`reject`/`revise` to `state='completed'` **unconditionally, by design** (its own docstring: this is
+the fix for a *different*, earlier bug — `hold`/`noted` used to wrongly fall into the same bucket,
+corrected 2026-08-16). `'completed'` means *the decision on this escalation is final* — not *the
+task it authorized is finished*. For a one-turn answer (approve → fix → verify, all in the same
+reply) those two things coincide, so the state has read correctly all night. For a multi-session
+approval (`"proceed with X... stays open until Y"`), they don't — and nothing in the system raises
+a companion tracker when that gap opens up.
+
+**Scanned the whole batch for the same shape**, not just the two named. Found **three**, not two:
+
+| # | comment | actual status |
+|---|---|---|
+| #653 | *"653 stay open until research_db is migrated and correct"* — the researcher's own words say open | not started, nothing tracking it |
+| #657 | *"perform this sweep... integrity checks that make sense"* | partial (one check built, §120) — the full sweep isn't |
+| #672 | *"approve phase 0... proceed with phase 1"* | not started — answered minutes before this was even raised |
+
+Nine others read `completed` tonight (632/645/646/647/649/652/655/666/667) — each checked
+individually, genuinely has no open work left (either finished+verified, or its follow-on already
+has its own live tracker: 652→668/672's chain).
+
+**Fixed practically**: raised three dedicated open trackers (`MANUAL-20260817_050729_131006` /
+`_050732_324749` / `_050735_574484`, all `assigned_to=Claude`, `state=raised`) so the
+open-escalations report stops silently hiding this class of work. #653/#657/#672 themselves are
+**left at `completed`** — that's factually correct for what it records (a decision was made) — the
+trackers are the fix, not an edit to the historical decision rows.
+
+**Not yet fixed structurally.** The right permanent fix is a `cfg_escalation` rule (same table as
+`module_blocking`/`resolution_precedence`/etc.): *an `approve`/`revise` answer that authorizes
+ongoing work must raise its own open tracker in the same unit of work, or the answer must say the
+work is already done.* Proposing this needs `configmaint.propose` — currently **blocked**, same as
+everything else config-side tonight, by escalation #671 (`cfg_index` write-grant, still pending).
+Queued behind it, not forgotten.
+
+**Files:** none (three new `escalation` rows only).
+
+---
+
+## 124. Engine plan Phase 0 built (code only — the config row is still queued) + the `kind` question resolved with a real simplification found (2026-08-17, later still)
+
+**Trigger.** Researcher, on the three new trackers: *"proceed with the work, escalation is our
+ultimate control of work in progress and not yet started; it also tracks the key steps on the way."*
+Started with the `kind`/`operations` question flagged on #672 (blocks Phase 1's `cfg_step` table
+being right), then built Phase 0.
+
+**Phase 0 code built and verified.** `cfgquality.find_unregistered_project_scripts()` — the
+project-wide counterpart to `find_unregistered_lib_modules` (which only ever covered
+`iba/app/lib/`), matched by `file_path` not module stem since files outside `iba/app/` don't share
+that directory's one-stem-per-file guarantee. Wired into `configmaint.validate()` as **advisory**,
+not a hard error — deliberately: at 345+ pre-existing unregistered files, hard-failing would drown
+`configmaint.validate` in a known, already-tracked backlog (Phase 2) rather than catch the NEW drift
+this check exists for. **Caught its own bug while verifying it**: first cut excluded `venv`/
+`__pycache__`/etc. only at the path's first component — missed `scripts/analytics/venv/`, a nested
+virtualenv, and inflated the finding count to 3,100+ (3,042 of them `site-packages` third-party
+files). Fixed to check every path component; re-verified clean — **358 real findings**
+(331 `scripts/`, 15 `engine/`, 9 `iba/{prototype,scripts}`, 2 `research/`, 1 root), 0 false
+positives from `iba/app/`, `.git`, `archive/`, or any venv. Close to the plan's earlier 345 estimate
+(the gap is legitimate — a handful of files changed between the original count and now).
+**The `cfg_setting` row itself (`governance.new_utility_registration_timing`) is still not
+written** — needs `configmaint.propose`, still blocked by #671. Code is real and live either way;
+the governance rule's own DB record is the one piece still queued.
+
+**The `kind` question — resolved, and it found a real simplification, not just a label fix.**
+Re-derived each of the 12 drafted `word.*` steps against the actual precedent (`BUILD.md` §40: 22
+`operations` = the study-data-mutating pipeline, including pipeline-*embedded* validate/report
+steps like `lexicon.validate`/`report.verse_span_meaning`; 13 `utility` = general-purpose,
+standalone reporting/config-maintenance, e.g. `report.word`). Two findings:
+
+1. **Two of the 12 drafted steps are redundant, not just mis-classified.** `Pre-A1` (lock sentinel +
+   open run log) and A2's snapshot half (`_load_snapshot()` in `audit_word.py` — actually a
+   before-state row-count preview for the CONFIRM step, not a rollback backup) are **already done
+   automatically** by `run.py`'s own `_ensure_run()`/`_snapshot()` for every word-scoped run, no
+   per-work-package step needed. Porting them as discrete `cfg_step` rows would duplicate existing
+   dispatcher machinery — exactly the "redesign, don't port" the plan already commits to (escalation
+   #656), just not applied carefully enough the first time. A2's "structural completeness check"
+   half is NOT redundant — folds forward into the JSON-load-validate step instead of staying separate.
+2. **One real re-classification**: the drafted final step, `word.export` (full-word JSON export), is
+   a direct analogue of the *existing* `report.word` step (word overview report) — already `utility`.
+   Drafted as `operations` originally with no real justification; corrected.
+
+Net: the 12-step draft becomes **10 real steps**, 9 `operations` + 1 `utility`
+(`word.export`), not 12/all-operations. Plan doc update (v4) and the phase-numbering ambiguity this
+also surfaced are covered in the chat reply, not duplicated here.
+
+**Files:** `iba/app/lib/cfgquality.py` (`find_unregistered_project_scripts`),
+`iba/app/handlers/configmaint.py` (`PROJECT_ROOT` constant, wired into `validate()`'s findings
+dict). No `cfg_*` DATA rows written — `RUN-20260817_052130_987-CONFIGMAINT` (#671) still pending.
+
+---
+
+## 125. `cfg_table`/`cfg_column` widened for two databases — the real prerequisite #653 needed, found before any data was written (2026-08-17, later still)
+
+**Trigger.** Researcher: *"proceed with phase 1 as you defined it, and proceed with 653 and 657 to
+complete it, it seems that it is blocking the engine phase 1 work and leaving too many open ends."*
+Starting #653 (research_db → `cfg_table`/`cfg_column`) with the freshly-rebuilt
+`iba/config/DBSchema/DBSchema.json` (`build_dbschema.py --db bible_research`, re-run today —
+1,181 columns/110 tables, real profiled descriptions) as the source, before writing a single row.
+
+**Found the real blocker.** `cfg_table.name` was the sole `PRIMARY KEY`; `cfg_column`'s was
+`(table_name, name)`. Checked live whether `iba.db` and `bible_research.db` share any table names:
+**they do** — `cluster`, `passage`, `verse`, `word_registry` all exist in both, as **completely
+different tables** (`iba.db`'s `word_registry` is a lean 6-column raw-pipeline table; `bible_research
+.db`'s is the legacy 32-column research registry). Bulk-inserting `bible_research.db`'s 110 tables
+under the existing schema would have collided on the PK outright, or — had the PK been dropped
+instead of widened — silently merged both databases' rows with no way to tell them apart. Read
+`lib/db.py`'s own docstring to confirm the actual blast radius: `build_data_tables()` *"reads
+cfg_column and creates the data tables from it"* — meaning `Cfg.tables()` returning
+`bible_research.db`'s 110 table names unscoped would have made `iba.db`'s own bootstrap try to
+**create bible_research.db's tables inside iba.db**. Not a hypothetical — confirmed by reading the
+consuming code, not assumed.
+
+**Fixed properly, not worked around.** `migration/add_cfg_table_database_column.py` (DDL, same
+exception class as every other schema-adding migration — not `configmaint.propose`, that gate is
+for value changes against an existing schema): both tables rebuilt (SQLite can't ALTER a PK in
+place) — `cfg_table` PK `(name)` → `(database, name)`, `cfg_column` PK `(table_name, name)` →
+`(database, table_name, name)`. All 40/350 existing rows backfilled `database='iba'` — zero
+behaviour change for what was already there. Self-documented (`cfg_column` rows added for the two
+tables' own new `database` column, same convention `add_cfg_utility_config_exempt.py` used).
+Idempotent, verified (re-run reports "already done").
+
+**Every LIVE consumer of `cfg_table`/`cfg_column` updated to scope `database='iba'`** — swept all
+36 files referencing either table; 31 were one-time `migration/` scripts (already run against their
+own new tables, no behaviour to protect, left untouched) or safely unaffected (`lib/valuequality.py`
+filters `expectation IS NOT NULL`, which nothing bible_research-scoped will ever set). Five actually
+needed the fix: `lib/cfg.py` (`tables()`/`columns()` — the one that would have broken `db.build()`),
+`handlers/configmaint.py` (`_validate_live`'s own schema-coherence queries — PK-count/FK-target
+checks would have started comparing across both databases' tables), `lib/cfgreport.py`
+(`CONFIG-REPORT.md` generation — would have dumped 110 unrelated tables into IBA's own report),
+`lib/cfgquality.py` (`find_report_csv_table_references`' known-tables set), `validation.py` (four
+`cfg_column` expectation lookups keyed on bare `table_name` — `word_registry`/`span` lookups could
+have silently resolved the WRONG database's row via an unordered `.fetchone()`, the most dangerous
+of the five since it fails silently rather than crashing).
+
+**Verified end-to-end, not just unit-tested**: `Cfg().tables()` still returns exactly 40 (not 150);
+`Cfg().columns('word_registry')` resolves to iba.db's own 6 columns, not bible_research's 32; full
+live `Start-Iba.ps1` re-run afterward — `data tables present (40)`, `READY`, no regression.
+
+**Not yet done**: the actual bulk load of `bible_research.db`'s 110 tables/1,181 columns
+(`database='bible_research'`) — this section is the prerequisite, not #653 itself. Continues in the
+next section.
+
+**Files:** `iba/app/migration/add_cfg_table_database_column.py` (new); `iba/app/lib/cfg.py`,
+`iba/app/handlers/configmaint.py`, `iba/app/lib/cfgreport.py`, `iba/app/lib/cfgquality.py`,
+`iba/app/validation.py` (all scoped to `database='iba'`). DB snapshot taken first:
+`iba-20260817T053447Z-pre-cfg-table-database-column-escalation.db`.
+
+---
+
+## 126. #653 — `bible_research.db`'s 110 tables / 1,181 columns actually registered (2026-08-17, later still)
+
+**`migration/bootstrap_research_db_cfg_table.py`** — bulk-loads `cfg_table`/`cfg_column` for every
+`bible_research.db` table straight from the freshly-recaptured `DBSchema.json` (real profiled
+descriptions, not hand-written), `database='bible_research'`. `grain` (a field `DBSchema.json`
+doesn't carry) derived mechanically from each table's own `primary_key`. `is_unique` derived from
+single-column unique indexes only. `expectation`/`source`/`filled_by` left NULL throughout —
+`bible_research.db` is governed by the legacy `engine/` pipeline, not `run.py`'s dispatcher, so none
+of those three IBA-specific concepts have real content there yet; verified safe against every check
+that reads them (§125).
+
+**Run once, idempotent, verified**: 110 tables / 1,181 columns registered. Row counts confirmed
+split correctly (`bible_research`: 110/1,181; `iba`: unchanged 40/352). All four cross-database
+name collisions (`cluster`/`passage`/`verse`/`word_registry`) spot-checked — each database's row
+shows its own correct, distinct description, no bleed-through. Re-run confirms idempotent
+("already has 110 row(s)... nothing to do"). Full live `Start-Iba.ps1` re-verified clean afterward
+— `data tables present (40)`, `READY`.
+
+**This satisfies `governance.table_columns`** ("each column in each table... must be listed in
+cfg_column with a proper use text. This applies to all databases") for the first time — previously
+true for `iba.db` only.
+
+**#653's own follow-up instruction** ("then create new escalate for researcher to confirm all
+inactive tables") — raised as its own escalation, not folded in here (a genuine researcher
+judgement call: WHICH of the 110 are actually superseded by an `iba.db` equivalent vs. still the
+canonical home for prose/findings, per `governance.scope_research_db`/`governance.scope_iba_db`).
+`CLAUDE.md` §3's own "Legacy / superseded (retained)" table group is a starting reference, not a
+ruling.
+
+**Files:** `iba/app/migration/bootstrap_research_db_cfg_table.py` (new). DB snapshot:
+`iba-20260817T054053Z-pre-bootstrap-research-db-cfg-table-esca.db`.
+
+---
+
+## 127. Phase 1 (`engine/`) registered and live — honestly stubbed, not ported, and a real second cross-database question surfaced (2026-08-17, later still)
+
+**`migration/bootstrap_word_audit.py`** — the `word-audit` work package, real and dispatchable:
+15 `cfg_utility` rows (`engine/`'s own modules, `gap_fill.py` `inactive=1`), 1 `cfg_work_package`,
+the 10-step `cfg_step` sequence from plan v4 (kinds re-derived, not defaulted — `BUILD.md` §124),
+2 `cfg_on_fail` rows. Verified live: dispatched `word-audit/word.load_json` for real, confirmed
+`module_blocking`/`step_kind`/dispatch gates all apply exactly like every other work package, then
+cleaned up every artefact the probe wrote (`run`, `validation_result`, the auto-raised escalation,
+the DB snapshot file) — same discipline as every other synthetic probe tonight.
+
+**`handlers/wordaudit.py`** — deliberately stub, not `engine/audit_word.py`'s logic copied over
+(escalation #656's standing rule). `word.load_json` does one real thing (confirms `Word` was
+actually given); all 10 steps return a clearly-labelled `not-yet-implemented` outcome rather than
+faking success, each naming exactly what's blocking it.
+
+**A second cross-database question, found while writing the handler, not guessed at.**
+`engine/audit_word.py`'s file-discovery convention keys off `bible_research.db.word_registry.no`
+(the legacy 222-word registry, §126) — but `run.py`'s `Ctx.word_id` resolves against `iba.db`'s OWN
+`word_registry` (6 columns, the new raw-pipeline table, §125). These are not the same registry, and
+nothing states whether/how `word-audit` should read/write the legacy one. This is the SAME
+underlying gap `bootstrap_word_audit.py`'s own docstring already named for `cfg_write_grant` (no
+mechanism yet for a dispatched step to write a `bible_research.db` table from `iba.db`'s single-
+connection `Db`/`_grant()` machinery) — one open architectural question, two symptoms. Not
+resolved here; named plainly so it doesn't get silently guessed at inside a handler later.
+
+**Phase 1 status**: registered, dispatchable, honestly incomplete. The actual WR-01–WR-20 redesign
+and the cross-database write mechanism are real follow-up work, not finished tonight — consistent
+with the plan's own "redesign, don't port" framing, not a shortfall being glossed over.
+
+**Files:** `iba/app/migration/bootstrap_word_audit.py`, `iba/app/handlers/wordaudit.py` (both new).
+DB snapshot: `iba-20260817T054357Z-pre-bootstrap-word-audit-escalation-672.db`.

@@ -1,9 +1,9 @@
 {
   "database": "bible_research",
   "database_path": "database/bible_research.db",
-  "database_bytes": 802828288,
+  "database_bytes": 802877440,
   "schema_version": "3.40.0",
-  "exported_date": "2026-07-16",
+  "exported_date": "2026-08-17",
   "captured_by": "iba/scripts/build_dbschema.py",
   "★ what_this_is": "CAPTURED DATA -- the live schema of this database, read from the DB itself. Not a rulebook: it records what the schema IS, never what it should be. Rules governing it: iba/config/utility/DBSchema_maintenance.json (util.dbschema). Every description is derived from the `profile` beside it (dbschema.description-from-data).",
   "table_count": 110,
@@ -4428,7 +4428,7 @@
     "engine_run_log": {
       "description": "One row per engine or patch execution (875 rows, March to July), recording mode, timing, outcome and roll-up counts of what was written. It is the parent audit record that word_run_state, engine_stream_checkpoint and term_fetch_log hang off, and it logs patch applications as well as engine runs.",
       "description_source": "profiler",
-      "row_count": 875,
+      "row_count": 876,
       "sql": "CREATE TABLE engine_run_log (\n            id                   INTEGER PRIMARY KEY AUTOINCREMENT,\n            run_id               TEXT    NOT NULL UNIQUE,\n            mode                 TEXT    NOT NULL,\n            target_registry_ids  TEXT,\n            started_at           TEXT    NOT NULL,\n            completed_at         TEXT,\n            outcome              TEXT,\n            words_attempted      INTEGER DEFAULT 0,\n            words_complete       INTEGER DEFAULT 0,\n            words_stopped        INTEGER DEFAULT 0,\n            total_terms_new      INTEGER DEFAULT 0,\n            total_terms_xref     INTEGER DEFAULT 0,\n            total_verses_inserted INTEGER DEFAULT 0,\n            total_verses_filtered INTEGER DEFAULT 0,\n            total_meanings_parsed INTEGER DEFAULT 0,\n            error_detail         TEXT,\n            resume_from          TEXT\n        )",
       "primary_key": [
         "id"
@@ -4444,14 +4444,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 875,
+            "distinct_count": 876,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 887,
+            "max": 888,
             "looks_categorical": false
           }
         },
@@ -4465,11 +4465,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 875,
+            "distinct_count": 876,
             "distinct_bucket": "high-cardinality",
             "min": "PATCH-20260324-004-SESSIONB-V1",
             "max": "wa-tier-catalogue-refit-update-v1-20260619",
@@ -4486,7 +4486,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4502,7 +4502,7 @@
               },
               {
                 "v": "SESSION_PATCH",
-                "n": 311
+                "n": 312
               },
               {
                 "v": "NEW_WORD",
@@ -4535,7 +4535,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4547,7 +4547,7 @@
             "top_values": [
               {
                 "v": "",
-                "n": 201
+                "n": 202
               },
               {
                 "v": "117",
@@ -4578,7 +4578,7 @@
                 "n": 8
               }
             ],
-            "top_values_cover": 0.3074
+            "top_values_cover": 0.3082
           }
         },
         {
@@ -4591,14 +4591,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 871,
+            "distinct_count": 872,
             "distinct_bucket": "high-cardinality",
             "min": "2026-03-18T10:57:05",
-            "max": "2026-07-13T06:03:26",
+            "max": "2026-08-14T19:00:57Z",
             "looks_categorical": false
           }
         },
@@ -4612,14 +4612,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 13,
-            "null_rate": 0.0149,
+            "null_rate": 0.0148,
             "null_bucket": "under-50pct",
-            "distinct_count": 857,
+            "distinct_count": 858,
             "distinct_bucket": "high-cardinality",
             "min": "2026-03-18T10:57:40",
-            "max": "2026-07-13T06:03:26",
+            "max": "2026-08-14T19:00:57Z",
             "looks_categorical": false
           }
         },
@@ -4633,7 +4633,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 1,
             "null_rate": 0.0011,
             "null_bucket": "under-50pct",
@@ -4645,7 +4645,7 @@
             "top_values": [
               {
                 "v": "COMPLETE",
-                "n": 681
+                "n": 682
               },
               {
                 "v": "STOPPED",
@@ -4678,7 +4678,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4694,7 +4694,7 @@
               },
               {
                 "v": 0,
-                "n": 334
+                "n": 335
               },
               {
                 "v": 167,
@@ -4715,7 +4715,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4727,7 +4727,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 515
+                "n": 516
               },
               {
                 "v": 1,
@@ -4752,7 +4752,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4764,7 +4764,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 704
+                "n": 705
               },
               {
                 "v": 1,
@@ -4793,7 +4793,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4805,7 +4805,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 577
+                "n": 578
               },
               {
                 "v": 1,
@@ -4836,7 +4836,7 @@
                 "n": 7
               }
             ],
-            "top_values_cover": 0.8366
+            "top_values_cover": 0.8368
           }
         },
         {
@@ -4849,7 +4849,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4861,7 +4861,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 865
+                "n": 866
               },
               {
                 "v": 1,
@@ -4890,7 +4890,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4911,7 +4911,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4923,7 +4923,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 859
+                "n": 860
               },
               {
                 "v": 6,
@@ -4968,7 +4968,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4980,7 +4980,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 511
+                "n": 512
               },
               {
                 "v": 1,
@@ -5011,7 +5011,7 @@
                 "n": 8
               }
             ],
-            "top_values_cover": 0.7509
+            "top_values_cover": 0.7511
           }
         },
         {
@@ -5024,9 +5024,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
+            "rows_scanned": 876,
             "null_count": 393,
-            "null_rate": 0.4491,
+            "null_rate": 0.4486,
             "null_bucket": "under-50pct",
             "distinct_count": 408,
             "distinct_bucket": "high-cardinality",
@@ -5045,8 +5045,8 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 875,
-            "null_count": 875,
+            "rows_scanned": 876,
+            "null_count": 876,
             "null_rate": 1.0,
             "null_bucket": "all",
             "distinct_count": 0,
@@ -12363,7 +12363,7 @@
     "prose_section": {
       "description": "The DB-canonical store of authored prose: one row per titled section of narrative — chapter readings, cluster essays, synthesis passages and programme documentation — with its full body text, version lineage and approval state. Almost all of it is machine-authored (claude_code or claude_ai); exactly one row is attributed to the researcher.",
       "description_source": "profiler",
-      "row_count": 1039,
+      "row_count": 1040,
       "sql": "CREATE TABLE \"prose_section\" (\n            id                INTEGER PRIMARY KEY,\n            registry_id       INTEGER REFERENCES word_registry(id),\n            section_type_id   INTEGER NOT NULL REFERENCES prose_section_type(id),\n            heading           TEXT,\n            body              TEXT    NOT NULL,\n            word_count        INTEGER NOT NULL DEFAULT 0,\n            status            TEXT    NOT NULL,\n            version           INTEGER NOT NULL DEFAULT 1,\n            supersedes_id     INTEGER REFERENCES prose_section(id),\n            superseded_by_id  INTEGER REFERENCES prose_section(id),\n            author            TEXT    NOT NULL,\n            created_at        TEXT    NOT NULL,\n            approved_at       TEXT,\n            approved_by       TEXT,\n            metadata_json     TEXT,\n            source_file       TEXT,\n            delete_flagged    INTEGER NOT NULL DEFAULT 0, cluster_code TEXT, characteristic_id INTEGER, cluster_subgroup_id INTEGER,\n            CHECK (status IN ('draft','in_review','approved','archived')),\n            CHECK (author IN ('claude_ai','claude_code','researcher'))\n        )",
       "primary_key": [
         "id"
@@ -12379,14 +12379,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1039,
+            "distinct_count": 1040,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 1039,
+            "max": 1040,
             "looks_categorical": false
           }
         },
@@ -12400,9 +12400,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 893,
-            "null_rate": 0.8595,
+            "rows_scanned": 1040,
+            "null_count": 894,
+            "null_rate": 0.8596,
             "null_bucket": "over-50pct",
             "distinct_count": 21,
             "distinct_bucket": "11-200",
@@ -12456,7 +12456,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12499,7 +12499,7 @@
                 "n": 20
               }
             ],
-            "top_values_cover": 0.82
+            "top_values_cover": 0.8192
           }
         },
         {
@@ -12512,7 +12512,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12533,11 +12533,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1036,
+            "distinct_count": 1037,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
             "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
@@ -12554,7 +12554,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12575,7 +12575,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12591,7 +12591,7 @@
               },
               {
                 "v": "draft",
-                "n": 106
+                "n": 107
               },
               {
                 "v": "archived",
@@ -12611,7 +12611,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12631,7 +12631,7 @@
               },
               {
                 "v": 2,
-                "n": 85
+                "n": 86
               },
               {
                 "v": "2_0",
@@ -12668,11 +12668,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 949,
-            "null_rate": 0.9134,
+            "null_rate": 0.9125,
             "null_bucket": "over-50pct",
-            "distinct_count": 90,
+            "distinct_count": 91,
             "distinct_bucket": "11-200",
             "min": 1,
             "max": 988,
@@ -12684,6 +12684,10 @@
               },
               {
                 "v": 17,
+                "n": 1
+              },
+              {
+                "v": 19,
                 "n": 1
               },
               {
@@ -12705,13 +12709,9 @@
               {
                 "v": 49,
                 "n": 1
-              },
-              {
-                "v": 52,
-                "n": 1
               }
             ],
-            "top_values_cover": 0.0889
+            "top_values_cover": 0.0879
           }
         },
         {
@@ -12724,14 +12724,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 949,
-            "null_rate": 0.9134,
+            "null_rate": 0.9125,
             "null_bucket": "over-50pct",
-            "distinct_count": 90,
+            "distinct_count": 91,
             "distinct_bucket": "11-200",
             "min": 15,
-            "max": 1039,
+            "max": 1040,
             "looks_categorical": true,
             "top_values": [
               {
@@ -12767,7 +12767,7 @@
                 "n": 1
               }
             ],
-            "top_values_cover": 0.0889
+            "top_values_cover": 0.0879
           }
         },
         {
@@ -12780,7 +12780,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12800,7 +12800,7 @@
               },
               {
                 "v": "researcher",
-                "n": 1
+                "n": 2
               }
             ],
             "top_values_cover": 1.0
@@ -12816,14 +12816,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 601,
+            "distinct_count": 602,
             "distinct_bucket": "high-cardinality",
             "min": "2026-04-21T16:06:38Z",
-            "max": "2026-07-05T17:36:09Z",
+            "max": "2026-08-14T19:00:57Z",
             "looks_categorical": false
           }
         },
@@ -12837,9 +12837,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 905,
-            "null_rate": 0.871,
+            "rows_scanned": 1040,
+            "null_count": 906,
+            "null_rate": 0.8712,
             "null_bucket": "over-50pct",
             "distinct_count": 22,
             "distinct_bucket": "11-200",
@@ -12894,9 +12894,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 905,
-            "null_rate": 0.871,
+            "rows_scanned": 1040,
+            "null_count": 906,
+            "null_rate": 0.8712,
             "null_bucket": "over-50pct",
             "distinct_count": 2,
             "distinct_bucket": "binary",
@@ -12927,11 +12927,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 86,
-            "null_rate": 0.0828,
+            "null_rate": 0.0827,
             "null_bucket": "under-50pct",
-            "distinct_count": 789,
+            "distinct_count": 790,
             "distinct_bucket": "high-cardinality",
             "min": "{\"book\": \"Amo\", \"chapter\": 1, \"verses\": [\"Amo 1:1\", \"Amo 1:2\", \"Amo 1:3\", \"Amo 1:4\", \"Amo 1:5\", \"Amo 1:6\", \"Amo 1:7\", \"A… (+446 chars)",
             "max": "{\"term\": \"H6531\", \"cluster_code\": \"M06\", \"source\": \"lexical-model-2026\", \"verses\": [\"Exo 1:13\", \"Exo 1:14\", \"Lev 25:43\",… (+233 chars)",
@@ -12948,11 +12948,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 20,
             "null_rate": 0.0192,
             "null_bucket": "under-50pct",
-            "distinct_count": 870,
+            "distinct_count": 871,
             "distinct_bucket": "high-cardinality",
             "min": "Sessions/Session_Clusters/M01/Published/wa-cluster-M01-ch1-draft-v1-20260523.md",
             "max": "wa-prose_ch5-obslog-v1_0-20260423.md",
@@ -12969,7 +12969,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12981,7 +12981,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 980
+                "n": 981
               },
               {
                 "v": 1,
@@ -13002,9 +13002,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 847,
-            "null_rate": 0.8152,
+            "rows_scanned": 1040,
+            "null_count": 848,
+            "null_rate": 0.8154,
             "null_bucket": "over-50pct",
             "distinct_count": 11,
             "distinct_bucket": "11-200",
@@ -13059,9 +13059,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 915,
-            "null_rate": 0.8807,
+            "rows_scanned": 1040,
+            "null_count": 916,
+            "null_rate": 0.8808,
             "null_bucket": "over-50pct",
             "distinct_count": 71,
             "distinct_bucket": "11-200",
@@ -13115,8 +13115,8 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 1039,
+            "rows_scanned": 1040,
+            "null_count": 1040,
             "null_rate": 1.0,
             "null_bucket": "all",
             "distinct_count": 0,
@@ -13398,7 +13398,7 @@
     "prose_section_fts": {
       "description": "An SQLite FTS5 virtual table providing full-text search over prose_section. Its columns mirror the source table one-for-one and hold no independent data; the underlying storage lives in the prose_section_fts_data/idx/content/docsize/config shadow tables. Because FTS5 columns are untyped, every column reports as type '?'.",
       "description_source": "profiler",
-      "row_count": 1039,
+      "row_count": 1040,
       "sql": "CREATE VIRTUAL TABLE prose_section_fts USING fts5(\n            body,\n            heading,\n            section_type_code UNINDEXED,\n            registry_id UNINDEXED,\n            cluster_code UNINDEXED,\n            characteristic_id UNINDEXED,\n            status UNINDEXED,\n            tokenize='porter unicode61 remove_diacritics 2'\n        )",
       "primary_key": [],
       "columns": [
@@ -13412,11 +13412,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1036,
+            "distinct_count": 1037,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
             "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
@@ -13433,7 +13433,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -13454,7 +13454,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -13497,7 +13497,7 @@
                 "n": 20
               }
             ],
-            "top_values_cover": 0.82
+            "top_values_cover": 0.8192
           }
         },
         {
@@ -13510,9 +13510,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 893,
-            "null_rate": 0.8595,
+            "rows_scanned": 1040,
+            "null_count": 894,
+            "null_rate": 0.8596,
             "null_bucket": "over-50pct",
             "distinct_count": 21,
             "distinct_bucket": "11-200",
@@ -13567,9 +13567,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 847,
-            "null_rate": 0.8152,
+            "rows_scanned": 1040,
+            "null_count": 848,
+            "null_rate": 0.8154,
             "null_bucket": "over-50pct",
             "distinct_count": 11,
             "distinct_bucket": "11-200",
@@ -13624,9 +13624,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 915,
-            "null_rate": 0.8807,
+            "rows_scanned": 1040,
+            "null_count": 916,
+            "null_rate": 0.8808,
             "null_bucket": "over-50pct",
             "distinct_count": 71,
             "distinct_bucket": "11-200",
@@ -13680,7 +13680,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -13696,7 +13696,7 @@
               },
               {
                 "v": "draft",
-                "n": 106
+                "n": 107
               },
               {
                 "v": "archived",
@@ -13794,7 +13794,7 @@
     "prose_section_fts_content": {
       "description": "An FTS5-managed shadow table storing the raw column values of each indexed row, so the virtual table can return original text and support content-requiring operations. It is SQLite's internal copy of prose_section's indexed columns, positionally numbered c0..c6, not a hand-designed table.",
       "description_source": "profiler",
-      "row_count": 1039,
+      "row_count": 1040,
       "sql": "CREATE TABLE 'prose_section_fts_content'(id INTEGER PRIMARY KEY, c0, c1, c2, c3, c4, c5, c6)",
       "primary_key": [
         "id"
@@ -13810,14 +13810,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1039,
+            "distinct_count": 1040,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 1039,
+            "max": 1040,
             "looks_categorical": false
           }
         },
@@ -13831,11 +13831,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1036,
+            "distinct_count": 1037,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
             "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
@@ -13852,7 +13852,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -13873,7 +13873,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -13916,7 +13916,7 @@
                 "n": 20
               }
             ],
-            "top_values_cover": 0.82
+            "top_values_cover": 0.8192
           }
         },
         {
@@ -13929,9 +13929,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 893,
-            "null_rate": 0.8595,
+            "rows_scanned": 1040,
+            "null_count": 894,
+            "null_rate": 0.8596,
             "null_bucket": "over-50pct",
             "distinct_count": 21,
             "distinct_bucket": "11-200",
@@ -13986,9 +13986,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 847,
-            "null_rate": 0.8152,
+            "rows_scanned": 1040,
+            "null_count": 848,
+            "null_rate": 0.8154,
             "null_bucket": "over-50pct",
             "distinct_count": 11,
             "distinct_bucket": "11-200",
@@ -14043,9 +14043,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
-            "null_count": 915,
-            "null_rate": 0.8807,
+            "rows_scanned": 1040,
+            "null_count": 916,
+            "null_rate": 0.8808,
             "null_bucket": "over-50pct",
             "distinct_count": 71,
             "distinct_bucket": "11-200",
@@ -14099,7 +14099,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -14115,7 +14115,7 @@
               },
               {
                 "v": "draft",
-                "n": 106
+                "n": 107
               },
               {
                 "v": "archived",
@@ -14134,7 +14134,7 @@
     "prose_section_fts_data": {
       "description": "An FTS5-managed shadow table holding the inverted index itself as opaque binary segment blobs. It is SQLite internal machinery — the contents are not human-readable and must never be written or interpreted directly; the index is maintained automatically as prose_section changes.",
       "description_source": "profiler",
-      "row_count": 1059,
+      "row_count": 1063,
       "sql": "CREATE TABLE 'prose_section_fts_data'(id INTEGER PRIMARY KEY, block BLOB)",
       "primary_key": [
         "id"
@@ -14150,14 +14150,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1059,
+            "rows_scanned": 1063,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1059,
+            "distinct_count": 1063,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 1511828488194,
+            "max": 1924145348609,
             "looks_categorical": false
           }
         },
@@ -14171,14 +14171,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1059,
+            "rows_scanned": 1063,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1059,
+            "distinct_count": 1063,
             "distinct_bucket": "high-cardinality",
-            "min": "b'\\x00\\x00\\x00\\x00\\x04\\x0b\\x91L\\x00\\x06\\x03\\x01\\x02\\x07\\x01\\x02\\x08\\x01\\x02\\t\\x01\\x02\\n\\x01\\x02\\x0b\\x01\\x02\\x00\\x00\\x00\\… (+71 chars)",
-            "max": "b'\\x88\\x0f\\x81\\x86\\xd1^\\xba\\x04\\x00\\x00\\x00\\x00\\x00'",
+            "min": "b'\\x00\\x00\\x00\\x00\\x04\\x0e\\x91P\\x00\\t\\x03\\x01\\x02\\x07\\x01\\x02\\x08\\x01\\x02\\t\\x01\\x02\\n\\x01\\x02\\x0b\\x01\\x02\\x0c\\x01\\x01\\r\\… (+103 chars)",
+            "max": "b'\\x88\\x10\\x81\\x86\\xdc\\x04\\xba\\x08\\x00\\x00\\x00\\x00\\x00'",
             "looks_categorical": false
           }
         }
@@ -14190,7 +14190,7 @@
     "prose_section_fts_docsize": {
       "description": "An FTS5-managed shadow table recording, per indexed document, the token count of each column in a packed binary form. FTS5 uses it for relevance ranking; it is internal machinery with one row per prose_section row.",
       "description_source": "profiler",
-      "row_count": 1039,
+      "row_count": 1040,
       "sql": "CREATE TABLE 'prose_section_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB)",
       "primary_key": [
         "id"
@@ -14206,14 +14206,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1039,
+            "distinct_count": 1040,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 1039,
+            "max": 1040,
             "looks_categorical": false
           }
         },
@@ -14227,11 +14227,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1039,
+            "rows_scanned": 1040,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 915,
+            "distinct_count": 916,
             "distinct_bucket": "high-cardinality",
             "min": "b'\\x81 \\x03\\x00\\x00\\x00\\x00\\x00'",
             "max": "b'\\xf8Y\\x08\\x00\\x00\\x00\\x00\\x00'",
@@ -14246,7 +14246,7 @@
     "prose_section_fts_idx": {
       "description": "An FTS5-managed shadow table mapping index segments and term prefixes to the pages within prose_section_fts_data where their postings live — the b-tree lookup layer of the index. Internal machinery; the 'term' values are binary prefix keys, not words from the prose.",
       "description_source": "profiler",
-      "row_count": 894,
+      "row_count": 898,
       "sql": "CREATE TABLE 'prose_section_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID",
       "primary_key": [
         "segid",
@@ -14263,14 +14263,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 894,
+            "rows_scanned": 898,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 11,
+            "distinct_count": 14,
             "distinct_bucket": "11-200",
             "min": 1,
-            "max": 11,
+            "max": 14,
             "looks_categorical": true,
             "top_values": [
               {
@@ -14306,7 +14306,7 @@
                 "n": 2
               }
             ],
-            "top_values_cover": 0.9933
+            "top_values_cover": 0.9889
           }
         },
         {
@@ -14319,11 +14319,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 894,
+            "rows_scanned": 898,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 793,
+            "distinct_count": 794,
             "distinct_bucket": "high-cardinality",
             "min": "b''",
             "max": "b'0zi'",
@@ -14340,7 +14340,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 894,
+            "rows_scanned": 898,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -14370,7 +14370,7 @@
       "description": "The controlled vocabulary of prose section kinds — 108 codes spanning programme documentation, per-session outputs, cluster findings and lexical prose — each with a label, the stage that produces it, and expected length bounds. It is the only real enforcement behind prose_section.section_type_id, and it has grown by accretion: over half the types belong to 'programme' rather than to any analytical stage.",
       "description_source": "profiler",
       "row_count": 108,
-      "sql": "CREATE TABLE prose_section_type (\n            id                   INTEGER PRIMARY KEY,\n            code                 TEXT    NOT NULL UNIQUE,\n            label                TEXT    NOT NULL,\n            source_stage         TEXT    NOT NULL,\n            lifecycle_tag        TEXT,\n            chapter_no           INTEGER,\n            description          TEXT,\n            expected_length_min  INTEGER,\n            expected_length_max  INTEGER,\n            sort_order           INTEGER NOT NULL DEFAULT 0,\n            delete_flagged       INTEGER NOT NULL DEFAULT 0,\n            created_at           TEXT    NOT NULL DEFAULT (datetime('now'))\n        )",
+      "sql": "CREATE TABLE prose_section_type (\n            id                   INTEGER PRIMARY KEY,\n            code                 TEXT    NOT NULL UNIQUE,\n            label                TEXT    NOT NULL,\n            source_stage         TEXT    NOT NULL,\n            lifecycle_tag        TEXT,\n            chapter_no           INTEGER,\n            description          TEXT,\n            expected_length_min  INTEGER,\n            expected_length_max  INTEGER,\n            sort_order           INTEGER NOT NULL DEFAULT 0,\n            delete_flagged       INTEGER NOT NULL DEFAULT 0,\n            created_at           TEXT    NOT NULL DEFAULT (datetime('now'))\n        , book_order INTEGER, book_label TEXT, section_order INTEGER, section_label TEXT)",
       "primary_key": [
         "id"
       ],
@@ -15002,6 +15002,194 @@
               }
             ],
             "top_values_cover": 0.8611,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "book_order",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 108,
+            "null_count": 5,
+            "null_rate": 0.0463,
+            "null_bucket": "under-50pct",
+            "distinct_count": 4,
+            "distinct_bucket": "2-10",
+            "min": 1,
+            "max": 4,
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": 1,
+                "n": 51
+              },
+              {
+                "v": 2,
+                "n": 45
+              },
+              {
+                "v": 3,
+                "n": 6
+              },
+              {
+                "v": 4,
+                "n": 1
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "book_label",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 108,
+            "null_count": 5,
+            "null_rate": 0.0463,
+            "null_bucket": "under-50pct",
+            "distinct_count": 4,
+            "distinct_bucket": "2-10",
+            "min": "Detail design",
+            "max": "Programme",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "Programme",
+                "n": 51
+              },
+              {
+                "v": "Detail design",
+                "n": 45
+              },
+              {
+                "v": "Findings",
+                "n": 6
+              },
+              {
+                "v": "Essays",
+                "n": 1
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "section_order",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 108,
+            "null_count": 5,
+            "null_rate": 0.0463,
+            "null_bucket": "under-50pct",
+            "distinct_count": 6,
+            "distinct_bucket": "2-10",
+            "min": 1,
+            "max": 6,
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": 1,
+                "n": 61
+              },
+              {
+                "v": 3,
+                "n": 12
+              },
+              {
+                "v": 5,
+                "n": 11
+              },
+              {
+                "v": 4,
+                "n": 10
+              },
+              {
+                "v": 2,
+                "n": 8
+              },
+              {
+                "v": 6,
+                "n": 1
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "section_label",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 108,
+            "null_count": 5,
+            "null_rate": 0.0463,
+            "null_bucket": "under-50pct",
+            "distinct_count": 10,
+            "distinct_bucket": "2-10",
+            "min": "Essays",
+            "max": "Verse analysis",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "Programme",
+                "n": 51
+              },
+              {
+                "v": "Session C",
+                "n": 12
+              },
+              {
+                "v": "Session B Phase 9",
+                "n": 11
+              },
+              {
+                "v": "Session D",
+                "n": 10
+              },
+              {
+                "v": "Session A",
+                "n": 6
+              },
+              {
+                "v": "Session B",
+                "n": 5
+              },
+              {
+                "v": "Synthesis",
+                "n": 3
+              },
+              {
+                "v": "Verse analysis",
+                "n": 3
+              }
+            ],
+            "top_values_cover": 0.9806,
             "uncontrolled_vocabulary": true
           }
         }
@@ -46758,7 +46946,7 @@
   },
   "counts": {
     "tables": 110,
-    "columns": 1177,
+    "columns": 1181,
     "pk_columns": 105,
     "foreign_keys": 77,
     "checks": 6,
