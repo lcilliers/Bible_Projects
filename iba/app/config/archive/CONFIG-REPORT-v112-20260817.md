@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-17T14:02:11Z |
+| generated_at | 2026-08-17T11:46:45Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -50,7 +50,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-7. GOVERNANCE.md was last modified 2026-08-17T03:35:32Z, before the newest applied cfg_change_detail row (2026-08-17T14:02:11Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+7. GOVERNANCE.md was last modified 2026-08-17T03:35:32Z, before the newest applied cfg_change_detail row (2026-08-17T11:46:44Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -182,11 +182,11 @@ _(none)_
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
 
-**Inactive configs** (381 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 355 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 8 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **18 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.verse-analysis-report, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop.
+**Inactive configs** (380 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 355 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 7 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **18 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.verse-analysis-report, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop.
 - **cfg_setting** (7): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.load_report_path`, `candidate.quality_report_path`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`
 - **cfg_step** (13): `book-narrative-generate/report.book_narrative_generate`, `book-narrative-validate/report.book_narrative_validate`, `candidate-curation/candidate.curate`, `candidate-curation/candidate.load`, `candidate-quality/candidate.validate`, `chapter-generate/report.passage_debate`, `chapter-generate/report.verse_span_meaning`, `passage-debate-report/report.passage_debate`, `passage-debate-sync/passage.debate_sync`, `seed-candidate-report/report.seed_candidate`, `set-candidates/candidate.seed`, `set-candidates/candidate.set`, `verse-analysis-report/report.verse_span_meaning`
 - **cfg_work_package** (10): `book-narrative-generate`, `book-narrative-validate`, `candidate-curation`, `candidate-quality`, `chapter-generate`, `passage-debate-report`, `passage-debate-sync`, `seed-candidate-report`, `set-candidates`, `verse-analysis-report`
-- **cfg_write_grant** (6): `candidate.curate -> candidate_seed`, `candidate.load -> candidate_seed`, `candidate.seed -> candidate_seed`, `candidate.seed -> lemma_inventory`, `candidate.set -> span_candidate`, `report.debate -> passage`
+- **cfg_write_grant** (5): `candidate.curate -> candidate_seed`, `candidate.load -> candidate_seed`, `candidate.seed -> candidate_seed`, `candidate.seed -> lemma_inventory`, `candidate.set -> span_candidate`
 - **cfg_report** (3): `candidate.load`, `candidate.validate`, `report.seed_candidate`
 - **cfg_report_section** (10): `candidate.load/duplicates`, `candidate.load/exceptions`, `candidate.validate/gloss`, `candidate.validate/orphan_lemmas`, `candidate.validate/seed_tag`, `candidate.validate/span_tag`, `report.seed_candidate/distribution`, `report.seed_candidate/over_time`, `report.seed_candidate/summary`, `report.seed_candidate/top_lemmas`
 - **cfg_report_csv_table** (5): `candidate.load/candidate_seed`, `candidate.validate/candidate_seed`, `candidate.validate/lemma_inventory`, `candidate.validate/span_candidate`, `report.seed_candidate/candidate_seed`
@@ -197,7 +197,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**392** registered module(s) — **16** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **248** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**391** registered module(s) — **16** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **248** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -208,7 +208,6 @@ _(none)_
 | cfgreport | iba/app/lib/cfgreport.py | cfgreport.py — full-visibility config report, generated FROM the config store. | ✓ | ✓ | generates reports by querying cfg_* tables directly; the paths it needs (out_path/db_path) are resolved by its caller (configmaint.report), not read here. |
 | clusterassign | iba/app/lib/clusterassign.py | cluster.assign -- allocates strongs to M-code clusters | ✓ |  |  |
 | clusterreport | iba/app/lib/clusterreport.py | report.cluster -- cluster content/quality report | ✓ |  |  |
-| contentindex | iba/app/lib/contentindex.py | contentindex.py — file-content concordance search over .md files, keyed on Strong's numbers/glosses/words sourced from strong/word_registry. Round 2 of the manifest + content-search plan; file_manifest (round 1) is its coverage baseline. | ✓ |  |  |
 | db | iba/app/lib/db.py | db.py — the DATA layer. Built FROM the config in the database. | ✓ |  |  |
 | dbsnapshot | iba/app/lib/dbsnapshot.py | dbsnapshot.py — pre-write DB snapshots. THE GAP FOUND 2026-07-22: this app had no rollback | ✓ |  |  |
 | debateaudit | iba/app/lib/debateaudit.py | debateaudit.py — the shared per-row CRUD audit trail for every debate writer (`hib.set`, | ✓ | ✓ | writes to a fixed table name (debate_change_detail) only -- no cfg.setting()/cfg.enum() usage by design, same shape as other pure DB-write utilities already exempt |
@@ -627,9 +626,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster | cluster.quality_report_path | iba/app/reports/cluster-assign.md | report path for cluster.validate, same convention as lexicon.quality_report_path |
 | configmaint | configmaint.auto_report | True | whether an approved configmaint.propose automatically chains to configmaint.report |
 | configmaint | configmaint.report_path | iba/app/config/CONFIG-REPORT.md | where configmaint.report writes the snapshot |
-| content_index | content_index.exclude_size_threshold_bytes | 52428800 | a .md file this size or larger (bytes; default 50MB) is excluded from content_index.rebuild/.refresh by default, unless it matches an active cfg_content_index_size_override pattern |
-| content_index | content_index.report_path | iba/app/reports/content-index-rebuild.md | where content_index.rebuild writes its summary report |
-| content_index | content_index.size_profile_report_path | iba/app/reports/content-index-size-profile.md | where content_index.size_profile writes its .md-file-size report |
 | escalation | escalation.control_objectives | the escalation table manages all open items, irrespective of source or reason -- AI or researcher raise the escalation when discovered or raised, using the escalation module |  |
 | escalation | escalation.control_process | escalations are raised, processed, and completed using the escalation utility module |  |
 | escalation | escalation.list_report_path | iba/app/reports/escalation-list.md |  |
@@ -829,21 +825,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | 0 | configmaint.validate | iba.app.handlers.configmaint:validate | none | coherence-check the live cfg_* tables — read-only, no approval needed |
 | 1 | configmaint.propose | iba.app.handlers.configmaint:propose | none | the only path that may change a cfg_* row — approval-gated (escalation, 3-way) |
 | 2 | configmaint.report | iba.app.handlers.configmaint:report | none | regenerate CONFIG-REPORT.md from the live cfg_* tables — read-only |
-
-**content-index-rebuild** — runs over `none` · script `iba/app/ps/ContentIndex-Rebuild.ps1`
-| # | step | handler | scope | does |
-| --- | --- | --- | --- | --- |
-| 0 | content_index.rebuild | iba.app.handlers.reports:content_index_rebuild | none | full rescan of every .md file in file_manifest — clears and rebuilds content_index + content_index_scan from scratch; see lib/contentindex.py |
-
-**content-index-search** — runs over `none` · script `iba/app/ps/ContentIndex-Search.ps1`
-| # | step | handler | scope | does |
-| --- | --- | --- | --- | --- |
-| 0 | content_index.search | iba.app.handlers.reports:content_index_search | none | incremental refresh (mtime-based, only changed .md files) then a key_type:value or bare-value lookup against content_index, enriched with file_manifest metadata; results persisted via reportkit.oneoff_path, per governance.reports_must_persist |
-
-**content-index-size-profile** — runs over `none` · script `iba/app/ps/ContentIndex-SizeProfile.ps1`
-| # | step | handler | scope | does |
-| --- | --- | --- | --- | --- |
-| 0 | content_index.size_profile | iba.app.handlers.reports:content_index_size_profile | none | read-only report of every .md file in file_manifest by size, largest first — file name, folder, size — for visual review before adding to cfg_content_index_exclude; see lib/contentindex.py |
 
 **file-manifest-rebuild** — runs over `none` · script `iba/app/ps/Manifest-Rebuild.ps1`
 | # | step | handler | scope | does |
@@ -1084,7 +1065,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | candidate.set | span_candidate |
 | closing.set | debate_change_detail, passage, passage_emergent_question, passage_insufficiency, passage_linkage, passage_validation_note |
 | cluster.assign | cluster_strong |
-| configmaint.propose | cfg_api, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_enum, cfg_escalation, cfg_index, cfg_meta, cfg_on_fail, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
+| configmaint.propose | cfg_api, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_enum, cfg_escalation, cfg_index, cfg_meta, cfg_on_fail, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
 | escalation | escalation, word_registry |
 | hib.set | debate_change_detail, hib, hib_referent_option, verse_hib |
 | lexical.build | verse_lexical |
@@ -1657,24 +1638,6 @@ _cfg_escalation_ — One row per discrete, nameable rule governing the escalatio
 | enforced_by | TEXT |  |  |  |  | code location that mechanically checks this rule, if any -- NULL/'not yet wired' if it is process discipline, not yet a SQL/code-checkable condition |  |
 | active | INTEGER |  | ✓ |  |  | supersede by setting 0 and inserting a new row, rather than editing/deleting -- history kept |  |
 
-### cfg_content_index_exclude
-_one row per exclude pattern_ — governs content_index.rebuild/.refresh's file scope: any .md file whose path starts with an ACTIVE pattern here is skipped. Default is 'include all .md except' -- an empty table excludes nothing.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| pattern | TEXT | ✓ | ✓ |  |  | a file path or folder-path prefix (posix-style, project-root-relative) -- e.g. 'iba/app/verse-analysis/' excludes the whole folder, a full file path excludes just that file | migration/bootstrap_content_index.py |
-| reason | TEXT |  | ✓ |  |  | why this is excluded -- required, not a bare flag | migration/bootstrap_content_index.py |
-| added_at | TEXT |  | ✓ |  |  | when the pattern was added | migration/bootstrap_content_index.py |
-| inactive | INTEGER |  | ✓ |  |  | 0=active (excludes), 1=retired (no longer excludes, kept for history per governance.tables' own convention) | migration/bootstrap_content_index.py |
-
-### cfg_content_index_size_override
-_one row per manually-released large file/folder_ — overrides content_index.exclude_size_threshold_bytes: a .md file matching an ACTIVE pattern here is included even if it's at or above the size threshold. 'Manually released if needed' (researcher, 2026-08-17) -- empty by default, nothing released until named here.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| pattern | TEXT | ✓ | ✓ |  |  | a file path or folder-path prefix (posix-style, project-root-relative), same matching rule as cfg_content_index_exclude | migration/bootstrap_content_index.py |
-| reason | TEXT |  | ✓ |  |  | why this large file is still wanted in the index | migration/bootstrap_content_index.py |
-| added_at | TEXT |  | ✓ |  |  | when the override was added | migration/bootstrap_content_index.py |
-| inactive | INTEGER |  | ✓ |  |  | 0=active (releases it), 1=retired | migration/bootstrap_content_index.py |
-
 <a id="11-enums"></a>
 ## 11. Enums
 
@@ -1685,7 +1648,7 @@ _one row per manually-released large file/folder_ — overrides content_index.ex
 | candidate_source | registry-direct, curated-synonym, ib-judgement, read-emergent |
 | candidate_step_status | in_strong, step_no_verses, not_in_step, step_has_verses_pending |
 | cfg_change_op | insert, update, delete |
-| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index |
+| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup |
 | escalation_answer | approve, reject, revise |
 | escalation_assignee | Claude, Researcher |
 | escalation_next_action | approve, reject, revise, hold, noted |

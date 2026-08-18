@@ -23,7 +23,16 @@
 > one goes through `iba\app\ps\Config-Maintenance.ps1 -Step Propose` (approval-gated), never a
 > direct edit.
 >
-> Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions per GR-REF-002). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
+> **★ BASE LAYER MOVED TO IBA — §4/§5/§7/§8 SUPERSEDED (2026-08-17).** §4 (The Engine), §5 (STEP API
+> Client), §7 (Word Study Pipeline), and §8 (Data Flow) below describe the OLD `engine/`/STEP-client
+> pipeline for base-layer work (word initiation → verse-lexical). Per the 2026-08-15 architecture
+> correction, that layer is now owned entirely by `iba.db`/`iba/app/` — these four sections are
+> **provenance-only** (accurate history of how it used to be done), not live instruction. For current
+> base-layer work, start at [`iba/app/USER-GUIDE.md`](iba/app/USER-GUIDE.md). Each section carries
+> its own short pointer back to this banner. Governance-alignment register item #1
+> (`docs/governance-alignment-register.md`); full record: `iba/app/BUILD.md`.
+>
+> Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions — see §10). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
 >
 > **Orientation (2026-06-14):** §3 (schema) and §10 (programme state) refreshed to live **v3.31.0** + the finding-centric model. **Start each session at [`docs/project-orientation-core-memory-map.md`](docs/project-orientation-core-memory-map.md)** — it fans out to instructions, the current-state reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01–04), the reusable-scripts catalogue, and operational governance. This compact file can still lag the written record; when in doubt, the reconstruction is authoritative.
 >
@@ -48,7 +57,7 @@ A structured academic Bible research platform centred on **~214 English words** 
 - **Claude Code** — DB engine: patch application, JSON export, schema migrations, validation queries, programme state, Verse Context batch construction, pool dataset assembly.
 - **Claude AI** — analytical: term classification, verse analysis, scope judgements, narrative production, JSON extraction, Verse Context classification.
 
-**Governing documents:** `Workflow/Instructions/`. All operational cross-refs use `[current]` (GR-REF-002) → resolve to highest-numbered version at read time. Authoritative CC instruction: `wa-claudecode-instruction [current]`.
+**Governing documents:** `Workflow/Instructions/`. All operational cross-refs use `[current]` → resolve to highest-numbered version at read time. Authoritative CC instruction: `wa-claudecode-instruction [current]`.
 
 ---
 
@@ -120,7 +129,8 @@ For exact file lookup use `python scripts/build_file_manifest.py --search "..."`
 | Observation catalogue | `wa_obs_question_catalogue`, `wa_finding_catalogue_links`, `wa_flag_type_question_link` | 189-question catalogue; ⚠ being refactored to the two-layer VE/SYNTH catalogue (not yet in DB) |
 | Prose store | `prose_section_type`, `prose_section`, `prose_section_fts` (FTS5), link tables | DB-canonical prose (publication parked) |
 | Quality / research flags | `wa_quality_flag_types`, `wa_data_quality_flags`, `wa_session_research_flags` | Engine-derived evidence flags + researcher pointers (PH2_*, SD_POINTER) |
-| Reference-as-DB registries | `wa_rule_registry`, `wa_addendum_registry`, `wa_vocab_set`/`_member`, `wa_patch_type_registry`, `wa_file_name_pattern`, `wa_label_pattern` | Governance reference (M32–34). ⚠ stale (last written April) |
+| Reference-as-DB registries | `wa_addendum_registry`, `wa_vocab_set`/`_member`, `wa_patch_type_registry`, `wa_file_name_pattern`, `wa_label_pattern` | Governance reference (M32–34). ⚠ stale (last written April), not yet reviewed |
+| ~~`wa_rule_registry`~~ | — | **Superseded 2026-08-17** (researcher decision, escalation #696) — all 59 rows (34 previously active) marked `obsolete=1`, `superseded_by='iba.db cfg_* configuration system'`. No longer operational; rules now live in `cfg_*` (`iba/app/GOVERNANCE.md`, `iba\app\ps\Config-Maintenance.ps1 -Step Propose`), not this table. Full review: [`outputs/markdown/wa-rule-registry-full-review-v1-20260817.md`](outputs/markdown/wa-rule-registry-full-review-v1-20260817.md). |
 | Engine control | `engine_run_log`, `engine_stream_checkpoint`, `word_run_state`, `term_fetch_log` | Audit trail |
 | Reference (static) | `books`, `book_code_variants`, `themes`, `sources` | 66 books + aliases; `themes`/`sources` empty |
 | Metadata | `schema_version` | Migration history (→ 3.31.0) |
@@ -159,6 +169,9 @@ finding (LIVE unit; level=VERSE → verse_context_id + mti_term_id + cluster_cod
 
 ## 4. The Engine
 
+> **Superseded 2026-08-17 — provenance only, not live instruction.** Base-layer work moved to IBA;
+> see the top-of-file banner and [`iba/app/USER-GUIDE.md`](iba/app/USER-GUIDE.md).
+
 Invocation: `python -m engine.engine [options]`. Source: `engine/`. Audit pipeline runs `audit.py` (WR-01..WR-20: outcome PASS / REVIEW / STOP).
 
 | Mode | Command | Purpose |
@@ -182,6 +195,9 @@ Detailed engine architecture and audit-check enumeration: `docs/Session-A-v9-Arc
 
 ## 5. STEP API Client
 
+> **Superseded 2026-08-17 — provenance only, not live instruction.** Base-layer work moved to IBA;
+> see the top-of-file banner and [`iba/app/USER-GUIDE.md`](iba/app/USER-GUIDE.md).
+
 `scripts/analytics/step_client.py` against local STEP server (`http://localhost:8989`). Methods: `get_vocab_info`, `get_verse_records`, `get_verse_records_with_html`, `get_strongs_for_word`, `get_related_term_cluster`, `extract_word_data`. STEP caps results at 60; client uses canonical section splits (Torah/History/Poetry/Prophets/NT, halved if needed) for full coverage. Detail: `docs/step_setup.md`.
 
 ---
@@ -203,11 +219,17 @@ For full file lookup: `python scripts/build_file_manifest.py --search "..."`.
 
 ## 7. Word Study Pipeline
 
+> **Superseded 2026-08-17 — provenance only, not live instruction.** Base-layer work moved to IBA;
+> see the top-of-file banner and [`iba/app/USER-GUIDE.md`](iba/app/USER-GUIDE.md).
+
 Three-phase term workflow (Phase 1 discover → Phase 2 decisions → Phase 3 DB sync): `_discover_word_terms.py` → `_apply_term_decisions.py` → `_extract_word_terms.py`. For a quick STEP pull without the full pipeline: `word_study_extract.py --word <english> [--anchors H1234,G5678]`.
 
 ---
 
 ## 8. Data Flow
+
+> **Superseded 2026-08-17 — provenance only, not live instruction.** Base-layer work moved to IBA;
+> see the top-of-file banner and [`iba/app/USER-GUIDE.md`](iba/app/USER-GUIDE.md).
 
 ```text
 Phase 1 (STEP + audit_word) → Verse Context → Session B (DataPrep → pool Analysis → Extraction) → Session C → Session D
@@ -237,14 +259,14 @@ Detail: `wa-patch-instruction [current]` (patch ops, REPAIR catalogue, failure p
 
 ## 10. Document Architecture
 
-Documents in `Workflow/Instructions/`. **All operational cross-references use the `[current]` token (GR-REF-002)** — resolve to highest-numbered version at read time. Pin specific versions only for provenance (Supersedes fields, patch metadata).
+Documents in `Workflow/Instructions/`. **All operational cross-references use the `[current]` token** — resolve to highest-numbered version at read time. Pin specific versions only for provenance (Supersedes fields, patch metadata). (Originally codified as `GR-REF-002` in `wa_rule_registry` — that table is superseded 2026-08-17, see §3; the convention itself is unaffected, defined here directly.)
 
 | Document | Audience | Purpose |
 | --- | --- | --- |
 | wa-claudecode-instruction | Claude Code | CC responsibilities: patch/directive execution, VC batch ops, extracts |
 | wa-patch-instruction | Claude Code | Patch preparation + execution: ops, REPAIR catalogue, failure protocol, validation |
 | wa-directive-instruction | Both | Directive specification (5 required elements, validation, execution) |
-| wa-global-general-rules | Both | Programme governance (GR-REF-002, GR-FILE-003, GR-OBS-001, etc.) |
+| ~~wa-global-general-rules~~ | — | **Superseded 2026-08-17** — was the compiled export of `wa_rule_registry` (GR-REF-002, GR-FILE-003, GR-OBS-001, etc.), now entirely `obsolete=1`. Rules now live in `iba.db`'s `cfg_*` system (`iba/app/GOVERNANCE.md`). |
 | wa-global-flags | Both | Standalone flag tracking (FLAG-010 = blocking gate) |
 | wa-reference | Both | Controlled vocabulary, schema reference, file naming, validation standard |
 | wa-registry-management-guide | Both | Registry structure, OWNER/XREF, dual status, clusters, pools (§7a) |

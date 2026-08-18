@@ -18,6 +18,7 @@ from .base import Ctx, Outcome, ok, fail, escalate
 from . import raw as raw_mod
 from .. import report as report_mod
 from .. import validation as validation_mod
+from ..lib import contentindex as contentindex_mod
 from ..lib import escalation as esc
 from ..lib import manifest as manifest_mod
 from ..lib import retention as retention_mod
@@ -101,6 +102,50 @@ def manifest_search(ctx: Ctx) -> Outcome:
     out = manifest_mod.write_search_report(ctx.cfg, query, results)
     return ok(f"{len(results)} match(es) for {query!r} — wrote {out}", path=str(out),
              matches=len(results))
+
+
+def content_index_rebuild(ctx: Ctx) -> Outcome:
+    """Full rescan of every .md file in file_manifest (round 2 of manifest + content-search — see
+    lib/contentindex.py). Requires manifest.rebuild to have run at least once; content_index's
+    coverage never exceeds file_manifest's."""
+    summary = contentindex_mod.rebuild(ctx.cfg)
+    path = pathlib.Path(ctx.cfg.setting("content_index.report_path",
+                                        "iba/app/reports/content-index-rebuild.md"))
+    out = contentindex_mod.write_rebuild_report(ctx.cfg, path, summary)
+    return ok(f"wrote {out} ({summary['files_scanned']} files scanned, "
+             f"{summary['total_hits']} key occurrence(s) indexed)", path=str(out),
+             files_scanned=summary["files_scanned"], total_hits=summary["total_hits"])
+
+
+def content_index_search(ctx: Ctx) -> Outcome:
+    """Incremental refresh then a key_type:value (strong:H2734, gloss:anger, word:anger) or
+    bare-value lookup against content_index. -Query is a per-call parameter, not config — same
+    reasoning as manifest_search's -Query. -Csv (optional, any non-empty value) also writes the
+    FULL result set as .csv — the .md report caps at 500 rows for readability, a large query
+    (gloss:compassion, 23,098+ hits) needs the untruncated set for real spreadsheet review."""
+    query = ctx.params.get("Query")
+    if not query:
+        return fail("missing-query", "content_index.search requires a -Query parameter")
+    hits, refresh_summary = contentindex_mod.search(ctx.cfg, query)
+    out = contentindex_mod.write_search_report(ctx.cfg, query, hits, refresh_summary)
+    result = {"path": str(out), "matches": len(hits),
+             "files_rescanned": refresh_summary["files_scanned"]}
+    message = f"{len(hits)} match(es) for {query!r} — wrote {out}"
+    if ctx.params.get("Csv"):
+        csv_out = contentindex_mod.write_search_csv(ctx.cfg, query, hits)
+        result["csv_path"] = str(csv_out)
+        message += f" and {csv_out}"
+    return ok(message, **result)
+
+
+def content_index_size_profile(ctx: Ctx) -> Outcome:
+    """Every .md file in file_manifest, largest first -- for visual review before deciding
+    cfg_content_index_exclude entries. Read-only, no exclusions applied (see lib/contentindex.py)."""
+    rows = contentindex_mod.size_profile(ctx.cfg)
+    out = contentindex_mod.write_size_profile_report(ctx.cfg, rows)
+    total_mb = sum(r["size_mb"] for r in rows)
+    return ok(f"wrote {out} ({len(rows)} files, {total_mb:.1f} MB total)", path=str(out),
+             files=len(rows), total_mb=round(total_mb, 1))
 
 
 def retention_report(ctx: Ctx) -> Outcome:

@@ -173,24 +173,37 @@ def write_report(conn: sqlite3.Connection, step: str, path: pathlib.Path,
     the versioning, as it should." Any already-versioned file currently live for this stem is moved
     into `cfg_report.archive_dir` first (`_archive_prior_versions`, name unchanged — it's already
     self-describing), THEN the new content is written under a freshly incremented version
-    (`next_versioned_path`, which counts archived versions too, so numbering stays monotonic). Net
-    effect: the live folder holds exactly one current file per report, the full lineage is preserved
-    in `archive_dir`, and nothing is ever silently lost or overwritten. When false, falls back to the
-    pre-2026-08-05 behaviour: archive the existing file (if any), then overwrite the same plain path
-    (researcher's 2026-07-22 instruction) — kept as the opt-out, not removed."""
+    (`next_versioned_path`, which counts archived versions too, so numbering stays monotonic). When
+    false, falls back to the pre-2026-08-05 behaviour: archive the existing file (if any), then
+    overwrite the same plain path (researcher's 2026-07-22 instruction) — kept as the opt-out, not
+    removed.
+
+    **Also refreshes the plain-named `path` even when versioning is on — fixed 2026-08-17,
+    escalation #702.** `_archive_prior_versions`/`next_versioned_path` both deliberately ignore a
+    pre-existing plain-named file "untouched by this scan" — true, but the consequence went
+    unnoticed for 12 days: `CONFIG-REPORT.md`, the fixed filename `GOVERNANCE.md`/`USER-GUIDE.md`
+    tell every reader to check, silently froze at whatever content existed the moment versioning was
+    turned on (2026-08-05) and was never touched again — every regenerate since only added a new
+    `-vNNN-` file alongside it. The researcher found this by hitting stale, wrong orphan-config
+    findings live. Both purposes are real and not in tension: versioning preserves history
+    (`archive_dir`), the plain name is what every doc and habit actually checks — so both get written
+    on every regenerate now, not one traded off against the other."""
     path.parent.mkdir(parents=True, exist_ok=True)
     rep = conn.execute("SELECT archive_dir FROM cfg_report WHERE step=?", (step,)).fetchone()
     archive_dir = (rep["archive_dir"] if rep else None) or "archive"
-    if _setting(conn, "report.version_on_regenerate", True):
-        _archive_prior_versions(path, archive_dir)
-        path = next_versioned_path(path, archive_dir)
-    else:
-        archive_before_write(path, archive_dir)
     text = "\n".join(lines)
     if not text.endswith("\n"):
         text += "\n"
-    path.write_text(text, encoding="utf-8")
-    return path
+    if _setting(conn, "report.version_on_regenerate", True):
+        _archive_prior_versions(path, archive_dir)
+        versioned_path = next_versioned_path(path, archive_dir)
+        versioned_path.write_text(text, encoding="utf-8")
+        path.write_text(text, encoding="utf-8")  # keep the fixed name current too, see docstring
+        return versioned_path
+    else:
+        archive_before_write(path, archive_dir)
+        path.write_text(text, encoding="utf-8")
+        return path
 
 
 def write_csv_pairing(conn: sqlite3.Connection, step: str, out_dir: pathlib.Path,

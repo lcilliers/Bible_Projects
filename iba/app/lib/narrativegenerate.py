@@ -105,7 +105,12 @@ def gather_book(conn: sqlite3.Connection, book: str) -> list[dict]:
 def assemble_package(cfg, book: str, book_label: str) -> dict:
     """Resolve the two governing docs + every filled debate for `book` into one instructions/content
     pair, and estimate its token count/cost. Raises NoDebatesFound/MethodDocMissing before ever
-    touching the network."""
+    touching the network.
+
+    Checked for compliance first (escalation #648, 2026-08-17) — this module's own API_URL/
+    API_VERSION/CHARS_PER_TOKEN are hardcoded, flagged NON-COMPLIANT in cfg_utility; using it now
+    signals (via cfg.assert_utility_compliant) that it needs revision before this is called again."""
+    cfg.assert_utility_compliant("iba/app/lib/narrativegenerate.py")
     conn: sqlite3.Connection = cfg.conn
     constraints_path = _method_doc(cfg, "method.narrative_hard_constraints_path")
     guidance_path = _method_doc(cfg, "method.inner_being_narrative_guidance_path")

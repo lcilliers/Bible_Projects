@@ -284,38 +284,89 @@ worth knowing before using this section:
 
 ### 4.3 The state a row moves through — and what `next_action` actually resolves to
 
-`raised` (open, nobody's decided anything) → **from here, three different things can happen:**
+**Live states** (`cfg_enum.escalation_state`, active members — checked directly against the DB, not
+assumed from a docstring): `raised`, `re-assign`, `on-hold`, `in-progress`, `completed`, `closed`,
+`withdraw`. (`answered`/`paused`/`retracted` are legacy values, `inactive=1` — pre-2026-08-16 rows
+only; no live code produces them.)
+
+`raised` (open, nobody's decided anything) → **from here, four different things can happen:**
 
 - **`re-assign`** — bounced to the other party (`-Action Reassign`, added 2026-08-16 — the state
   existed in the schema/docs a full session before any code produced it) — still open, not a
-  decision.
-- **`on-hold`** — either set aside without a decision (`-Action Pause`, §4.4b), OR answered with
+  decision. `-Action Resume` brings a `re-assign` row directly back to `raised`, same as `on-hold`
+  (fixed 2026-08-17, escalation #692 — previously needed a Pause-then-Resume detour with no purpose
+  of its own; see below).
+- **`on-hold`** — either set aside without a decision (`-Action Pause`, §4.6), OR answered with
   `next_action=hold` — **`hold` does not close a row**, it moves it here. For a real dispatcher-tied
   pause this means the run correctly stays paused (no handler treats `hold` as approve/reject), not
   silently mishandled as a rejection the way it was for one session before this was fixed.
+- **`in-progress`** — **MANUAL items only** (added 2026-08-17 for escalations #673/#674): answering
+  with `next_action=approve` or `next_action=revise` on a `MANUAL-`-prefixed row lands here, *not*
+  `completed` — "go do it", not "already done". A non-manual (real dispatcher-tied) row never lands
+  here; `approve`/`revise` resolve straight to `completed` for those, same as always. Close an
+  `in-progress` row out with `-Action Complete` (§4.6) when the work is actually finished — answering
+  it again with `AnswerRun` does nothing (`pending_for_run` only matches `state='raised'`, see below).
+  **`-Action Reassign` on an `in-progress` row leaves it `in-progress`** (fixed 2026-08-17, escalation
+  #692 — previously discarded the decision and forced a full re-raise-and-reapprove just to hand it
+  to someone else; now only `next_action_assigned_to`/`comment` change, and the new assignee goes
+  straight to `-Action Complete`).
 - **terminal** (row is done, drops off `-Action List`'s open view): `completed` (`next_action` is
-  `approve`/`reject`/`revise` — a real decision every handler understands) / `closed`
-  (`next_action=noted` — acknowledged, not a decision, `resolution` says why nothing further is
-  needed) / `withdraw` (`-Action Retract` — "never mind", never counted as a decision at all).
+  `approve`/`reject`/`revise` on a non-manual row, or `reject` on any row, or `-Action Complete` on an
+  `in-progress` manual row) / `closed` (`next_action=noted` — acknowledged, not a decision,
+  `resolution` says why nothing further is needed) / `withdraw` (`-Action Retract` — "never mind",
+  never counted as a decision at all).
+
+**`AnswerRun` on a `MANUAL-` item auto-resumes it from `on-hold`/`re-assign` first, fixed
+2026-08-17** — three separate times in one session (escalations tied to #648, #678, #691) the
+researcher typed `-Decision resume` (not a real decision — `Resume` is a separate `-Action`)
+because the old two-call sequence wasn't the obvious shape for "just answer this." `AnswerRun` now
+silently resumes a parked `MANUAL-` item to `raised` before applying whichever `-Decision` you
+pass — behaviourally identical to calling `-Action Resume` yourself first, just one call instead
+of two. **This does NOT apply to real dispatcher-tied rows** (a `configmaint.propose` pause, a
+quality-check finding) — those still require `state='raised'` exactly as before; their resume path
+is re-running the original paused command (§4.5), a different mechanism `AnswerRun` still leaves
+alone. An `in-progress` row (any shape) still needs `-Action Complete`, not `AnswerRun`, regardless.
+
+**What's still NOT solved (2026-08-17):** `-Action Pause` on an `in-progress` row still drops it to
+plain `on-hold` with no memory of where it came from — `-Action Resume` sends it to `raised`, same
+as any other `on-hold` row, which still means a full re-decide for something that was already
+approved and mid-work. Same root cause as the `Reassign` case just fixed, left open deliberately —
+recovering it properly needs the row to remember its prior state (a schema change + its own
+`cfg_column`/migration/approval), not something to fold into this fix silently. Use `Reassign`, not
+`Pause`, to hand off `in-progress` work without losing the decision.
 
 Word-scoped escalations only ever produce `completed` (approve→approved, reject→rejected) —
 `hold`/`revise`/`noted` are refused outright for that shape (§4.2) rather than silently doing
-something undefined to `word_registry.status`.
+something undefined to `word_registry.status`. Word-scoped items have no `on-hold`/`re-assign`/
+`in-progress` lifecycle at all — Edit/Pause/Resume/Retract/Reassign/Complete are all restricted to
+`MANUAL-`-prefixed run_ids (§4.6), and a real dispatcher-tied pause is always answered the moment
+it's raised, so it stays `raised` until it does.
 
-### 4.4 The six actions that exist today
+### 4.4 The ten actions that exist today
+
+**Count corrected 2026-08-17** — this heading previously said "six" over a five-item list, neither
+of which matched the true live total; see §4.6 for the other five (Edit/Pause/Resume/Retract/
+Complete — Reassign is shown once, here).
 
 ```powershell
 # see what's open — writes escalation.list_report_path (default iba/app/reports/escalation-list.md,
 # archived on regenerate) and prints a one-line pointer + count (fixed 2026-07-23; used to dump the
-# full list to the terminal only):
+# full list to the terminal only). Counts raised/re-assign together as "active", in-progress and
+# on-hold broken out separately (added 2026-08-17, escalation #674):
 iba\app\ps\Escalation.ps1 -Action List
 
-# answer a WORD-scoped one — approve/reject ONLY (§4.2/§4.3):
+# answer a WORD-scoped one — approve/reject ONLY (§4.2/§4.3). Requires the row to still be
+# state='raised' (always true for a word-scoped item until answered — see §4.3):
 iba\app\ps\Escalation.ps1 -Action Answer -Word hypocrisy -Decision Approve    # or: Reject
 
 # answer a RUN-scoped one (config proposal, quality-check finding, crash, report-stop, or your own
 # manual item) — -Resolution optional (what was actually done, if anything), -AnsweredBy optional
-# (Claude|Researcher, default Researcher). Hold/Noted do NOT resolve/complete it, see §4.3:
+# (Claude|Researcher, default Researcher). On a MANUAL- item, on-hold/re-assign auto-resumes first
+# (2026-08-17) -- just answer it directly. A REAL dispatcher-tied row still REQUIRES state='raised'
+# for every decision; an in-progress row (either shape) still needs -Action Complete, not this.
+# Hold does not close a row (→ on-hold); Noted does not either (→ closed); on a MANUAL row,
+# Approve/Revise land on in-progress, not completed — close those with -Action Complete, not a
+# second AnswerRun:
 iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise|Hold|Noted [-Comment "..."] [-Resolution "..."] [-AnsweredBy Claude]
 
 # raise your OWN item — not raised by a running step. -AssignedTo (Claude|Researcher, default
@@ -324,7 +375,10 @@ iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Re
 iba\app\ps\Escalation.ps1 -Action Raise -Question "<exactly what you want recorded>" [-AssignedTo Claude] [-Type task] [-RelatedActivity "..." -ReferenceDoc "path/to/plan.md"]
 # prints a synthetic run_id — answer it later with -Action AnswerRun same as any other
 
-# bounce an open item to the other party, no decision made — added 2026-08-16:
+# bounce an open item to the other party, no decision made — added 2026-08-16. MANUAL items only.
+# From raised/on-hold/re-assign: lands on re-assign (Resume brings it straight back to raised).
+# From in-progress: stays in-progress (2026-08-17 fix, #692) -- only the assignee/comment change,
+# so the new owner goes straight to -Action Complete instead of re-approving decided work:
 iba\app\ps\Escalation.ps1 -Action Reassign -RunId MANUAL-... -AssignedTo Researcher [-Comment "..."]
 ```
 
@@ -343,9 +397,11 @@ iba\app\ps\New-Word.ps1 -Word hypocrisy -Source "gap scan 2026-07-18"
 #   COMPLETE — raw layer built for 'hypocrisy'.
 ```
 
-A **manual** item (§4.2) has no underlying run to resume — answering it just closes the record; if
-it named a fix, the fix is done separately (by hand, or by asking Claude), not by re-running
-anything.
+A **manual** item (§4.2) has no underlying run to resume — the fix, if it named one, is done
+separately (by hand, or by asking Claude), not by re-running anything. Answering it does **not**
+always just close the record, though: `Reject`/`Hold`/`Noted` do (→ `completed`/`on-hold`/`closed`),
+but `Approve`/`Revise` land it on `in-progress` — genuinely open, still work to do — closed out for
+real only via `-Action Complete` (§4.6), corrected 2026-08-17 (see §4.3).
 
 **Duplicate-word suspicion** is the same word-scoped mechanism with a different question — if a new
 word maps to Strong's already held by an existing word:
@@ -357,7 +413,7 @@ word maps to Strong's already held by an existing word:
 
 `Reject` stops it (it was a duplicate/typo); `Approve` registers it as a distinct word.
 
-### 4.6 Editing, pausing, retracting, and re-assigning a MANUAL item (added 2026-07-23; Reassign 2026-08-16)
+### 4.6 Editing, pausing, resuming, retracting, re-assigning, and completing a MANUAL item (added 2026-07-23; Reassign 2026-08-16; Complete + in-progress 2026-08-17)
 
 Built for the "escalation as a backlog of work for Claude" workflow — a manual item (§4.2) is
 often a work instruction, not only a design decision awaiting approval, so it needs a bit more
@@ -371,26 +427,41 @@ resume logic keys on `state='raised'` for its duplicate guard).
 iba\app\ps\Escalation.ps1 -Action Edit -RunId MANUAL-... -Question "corrected instruction..."
 
 # set one aside without answering it — still shown in -Action List, flagged, excluded from the
-# active queue:
+# active queue. Accepts a source state of raised, re-assign, or in-progress:
 iba\app\ps\Escalation.ps1 -Action Pause -RunId MANUAL-... -Comment "why it's on hold"
 
-# bring it back into the active queue:
+# bring it back into the active queue WITHOUT answering it yet. Accepts a source state of on-hold
+# OR re-assign (fixed 2026-08-17, #692 — re-assign used to need a Pause detour first to reach
+# this). If you're about to answer it anyway, you don't need this step at all any more --
+# AnswerRun on a MANUAL- item auto-resumes on-hold/re-assign for you (2026-08-17, see §4.3/§4.4).
+# Use Resume on its own only when you want it back in the queue for someone ELSE to decide:
 iba\app\ps\Escalation.ps1 -Action Resume -RunId MANUAL-...
 
 # withdraw it — "never mind", NOT a reviewed decision (distinguishable in the record from an
-# actual approve/reject/revise):
+# actual approve/reject/revise). Accepts raised, on-hold, re-assign, or in-progress:
 iba\app\ps\Escalation.ps1 -Action Retract -RunId MANUAL-... -Comment "why it's withdrawn"
 
-# bounce it to the other party without deciding anything — state becomes `re-assign`, still open:
+# bounce it to the other party without deciding anything. From raised/on-hold/re-assign: state
+# becomes `re-assign`, still open, undecided. From in-progress: state is left AS in-progress (fixed
+# 2026-08-17, #692) — only the assignee changes, the decision already made isn't discarded:
 iba\app\ps\Escalation.ps1 -Action Reassign -RunId MANUAL-... -AssignedTo Researcher -Comment "why"
+
+# mark an in-progress item genuinely done — the real close-out for a manual item that was answered
+# Approve/Revise (§4.3/§4.5). ONLY accepts a source state of in-progress; -Resolution is what was
+# actually done, required in practice even though not enforced at the DB level:
+iba\app\ps\Escalation.ps1 -Action Complete -RunId MANUAL-... -Resolution "what was actually done"
 ```
 
-`-Action List`'s output shows `raised`, `on-hold`, and `re-assign` items together (the latter two
-flagged), with a state column; `completed`/`closed`/`withdraw` items drop off the open list, but
-remain in the `escalation` table (and its own row's `next_action`/`resolution`/`comment` fields)
-for audit — `completed` means a real decision was recorded (approve/reject/revise); `closed` means
-`noted` — acknowledged, not a decision; `withdraw` means it was retracted, not a decision either.
-See §4.3 for the full state model and why `hold`/`noted` don't behave like the other three.
+`-Action List`'s output shows `raised`, `re-assign`, `on-hold`, and `in-progress` items together
+(the latter three flagged, `in-progress` counted separately from the rest, added 2026-08-17 for
+escalation #674 — "decided, work under way" reads differently from "awaiting a decision" at a
+glance); `completed`/`closed`/`withdraw` items drop off the open list, but remain in the
+`escalation` table (and its own row's `next_action`/`resolution`/`comment` fields) for audit —
+`completed` means a real decision was recorded and, for anything `MANUAL-`, that the work is
+actually finished (approve/reject/revise on a non-manual row; reject on any row; or `-Action
+Complete` on a manual row that was `in-progress`); `closed` means `noted` — acknowledged, not a
+decision; `withdraw` means it was retracted, not a decision either. See §4.3 for the full state
+model and why `hold`/`noted`/`in-progress` don't behave like `completed`.
 
 ---
 
@@ -1069,10 +1140,61 @@ indexed on principle: archived material is put aside, not dead, and may hold dat
 written to a report file (path/category/type/currency for each hit) — this is a read-only query,
 nothing in `file_manifest` is changed by a search.
 
-This is the baseline a future **file-content search** (round B — searching what's actually written
-*inside* files, not just filenames; scoped separately, not yet built:
-`outputs/markdown/manifest-and-content-search-into-iba-plan-v1-20260815.md`) will cross-check
-coverage against — prose itself is out of scope for both (`prose_section_fts` already covers it).
+This is the baseline round B (below) cross-checks coverage against — prose itself is out of scope
+for both (`prose_section_fts` already covers it).
+
+---
+
+## 13b. Content-index — search what's actually WRITTEN inside `.md` files (added 2026-08-17)
+
+Round 2 of the manifest + content-search plan (governance-alignment register item #6). A
+**predefined-key concordance** — not free-text search — over every `.md` file `file_manifest`
+knows about: for each hit, which file, which line, and the line's own text. Three key types,
+sourced live from `iba.db` (`strong`, `word_registry`), not cached separately:
+
+| Key type | Source | Example |
+| --- | --- | --- |
+| `strong` | `strong.strongNumber` (15,293 rows) | `strong:H2734` |
+| `gloss` | `strong.stepGloss` (9,165 distinct values) | `gloss:compassion` |
+| `word` | `word_registry.word` (180 rows) | `word:anger` |
+
+```powershell
+iba\app\ps\ContentIndex-SizeProfile.ps1
+#   -> iba/app/reports/content-index-size-profile.md — every .md file, largest first (file, folder,
+#      size). Run this FIRST if you haven't reviewed exclusions yet (see below).
+
+iba\app\ps\ContentIndex-Rebuild.ps1
+#   -> iba/app/reports/content-index-rebuild.md — full rescan, clears and rebuilds from scratch.
+
+iba\app\ps\ContentIndex-Search.ps1 -Query "strong:H2734"
+iba\app\ps\ContentIndex-Search.ps1 -Query "gloss:compassion" -Csv
+#   -> refreshes the index incrementally first (only .md files changed since last pass), then
+#      queries, then writes results (type/key/file/line/category/snippet) as a one-off .md report
+#      (capped at 500 rows for readability). Add -Csv for the FULL result set as a .csv (added
+#      2026-08-17) — a common gloss/word query (e.g. gloss:compassion, 23,098+ hits) needs the
+#      untruncated set for real spreadsheet review, not a terminal glance.
+```
+
+**`cfg_content_index_exclude` — "include all `.md` except"** (`Config-Maintenance.ps1 -Step
+Propose -Table cfg_content_index_exclude -Op insert -Where '{}' -Set
+'{"pattern":"...","reason":"...","added_at":"..."}'`). A path or folder-prefix per row; an empty
+table excludes nothing. **Why this exists, found live 2026-08-17**: some generated dumps — large
+per-book verse-analysis files, a couple of prose extracts — are dense with the exact biblical
+vocabulary being indexed (the project's own analysis prose, naturally saturated with its own
+subject matter). One file alone produced ~597,000 hits. Run `ContentIndex-SizeProfile.ps1` first
+and decide exclusions from real data, not a guess — 74 of 7,874 `.md` files (≥1MB each) hold 270 of
+558 total MB, almost entirely `iba/app/verse-analysis/**` plus a few `Workflow/Programme/
+programme_prose/` extracts.
+
+**Single-word gloss matches are excluded via a stopword list** (`contentindex._STOPWORDS`, ~100
+common English function words) — `strong.stepGloss` genuinely carries entries like `"and"`/`"not"`/
+`"this"` (real Hebrew/Greek conjunction/particle glosses), which as SEARCH KEYS would match nearly
+every line in the project. Multi-word gloss phrases are unaffected — already specific enough.
+
+**Matching is tokenize + n-gram + set lookup, deliberately not a regex alternation** — tested live
+before building this: compiling one `re` pattern over the ~9,300 gloss+word keys hung outright.
+Each line is tokenized once, then checked as 1–6-word windows (6 = the longest gloss, measured
+live) against a lowercased key set — O(line length), independent of key count.
 
 ---
 

@@ -7575,3 +7575,535 @@ serialises one `configmaint.propose` at a time).
 (all `database='iba'`-scoped); `iba/app/migration/add_cfg_write_grant_database_column.py` (new);
 171 files renamed into `Logs/`; `outputs/markdown/log-consolidation-survey-v1-20260817.md` (new).
 DB snapshot: `iba-20260817T061604Z-pre-cfg-write-grant-database-column-esca.db`.
+
+## 130. `Reassign`/`Resume` no longer force a full re-raise-and-reapprove for decided work (#692) (2026-08-17, later still)
+
+Traced from a researcher correction in chat on §4.3/§4.4's own wording ("it does not make a lot of
+sense that all progression must go back to a new raise, and reapprove") — a real gap, not a docs
+nuance. `reassign_run()` unconditionally forced `state='re-assign'` even on an `in-progress` row,
+discarding a decision already made; the only way back to work was `Pause`(→`on-hold`)→`Resume`
+(→`raised`)→a fresh `AnswerRun` decision, re-approving something already approved. Separately,
+`resume_run()` only ever accepted `on-hold` as a source state, so a `re-assign`-ed row (genuinely
+undecided, no `in-progress` involved) needed the same pointless `Pause` detour just to reach
+`Resume`'s filter.
+
+**Fixed, not just documented** (`escalation.py:399-483`): (1) `reassign_run()` now checks the row's
+current state — if `in-progress`, only `next_action_assigned_to`/`comment` change and `state` stays
+`in-progress`, so the new assignee goes straight to `-Action Complete`; `raised`/`on-hold`/
+`re-assign` sources are unaffected (those are genuinely undecided, so landing on `re-assign` is
+correct). (2) `resume_run()` now accepts `re-assign` as well as `on-hold` as a source state, both
+resolving to `raised` directly. **Verified against two live smoke-test escalations** (693, 694 —
+both cleaned up: 693 completed for real, 694 retracted), not just read back from the diff.
+
+**Deliberately left open, not silently bundled in**: `-Action Pause` on an `in-progress` row still
+drops it to plain `on-hold` with no memory of what state it came from, so `-Action Resume` from
+there still lands on `raised` — same root cause, but fixing it needs the row to remember its prior
+state (a new column, its own `cfg_column`/migration/approval), a bigger change than this fix's
+scope. Documented as a known gap in `USER-GUIDE.md` §4.3 rather than left implicit.
+
+`USER-GUIDE.md` §4.3/§4.4/§4.6 corrected in the same pass — and, one step earlier in this same
+session, corrected from a prior state that had never documented `in-progress` or `-Action Complete`
+at all despite both being live since §128 (2026-08-17, earlier tonight); the researcher's original
+complaint was that my own chat explanation of the `AnswerRun`/`state='raised'` requirement dropped
+`Reject`/`Revise` and implied the docs couldn't be trusted at face value — right on both counts.
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/USER-GUIDE.md` §4.3/§4.4/§4.5/§4.6. Escalation
+`#692` (raised, widened, then completed live this session) carries the full before/after record.
+
+## 131. `escalation-list.md` reworked — grouped, four missing columns added, resolved work no longer invisible (2026-08-17, later still)
+
+Researcher, live, after using the tool as a real task list for a full session: "not a single
+resolution is filled in" — traced, not assumed: `resolution` is only ever set on a terminal state,
+and both the researcher's own saved query and `write_list_report` filtered those states OUT
+entirely, so completed work — with its resolution — structurally could not appear anywhere.
+Separately: "report does not show the context, type, comment, related_activity columns... I am
+using SQLite queries... so the report is less useful, not really fit for purpose," and
+"`related_activity` is poorly used for escalations that all belong together" (confirmed: `#648`
+carried its own one-off `related_activity` instead of `engine-controls-migration`, the group it
+actually belongs to — fixed as a live data correction, not just a code change, via the same
+`db.update`/`_grant('escalation')` path every other write in this module uses).
+
+**Fixed** (`write_list_report`, `escalation.py`): (1) query now selects `type`/`context`/`comment`/
+`related_activity` alongside the previous columns; (2) open items ordered by `related_activity`
+first, not flat `id` order, so related work is actually adjacent; (3) `context` rendered via a new
+`_context_gist()` — most rows carry only `{"reference_doc": "..."}`, so the report shows `see
+<path>` rather than raw JSON; (4) new **"Recently resolved (last 15)"** section — terminal items
+with `resolution` set, truncated over 200 chars with a pointer back to the full row, so "what's
+actually been done" has a home that isn't a raw SQL query.
+
+**Not built tonight, drafted for the researcher's decision** (both are real `cfg_*` changes,
+correctly gated behind `#698` clearing `module_blocking` first, and behind their own approval):
+
+- `cfg_column` `use` text for `escalation.short_description`/`context`/`related_activity` —
+  tightened to state the actual discipline the researcher named: `short_description` = expected
+  action, one sentence; `context` = full decision detail, a companion doc referenced by path for
+  anything non-trivial rather than packed inline; `related_activity` = ALL escalations belonging to
+  the same body of work MUST share the identical value.
+- A `type='review'` value added to `cfg_enum.escalation_type`, so "list everything flagged for
+  re-review" becomes a real filter instead of an improvised manual escalation (`#696` is the
+  researcher's own example of the workaround this would replace).
+
+**Files:** `iba/app/lib/escalation.py` (`write_list_report`, new `_context_gist`), `iba/app/reports/
+escalation-list.md` (regenerated, verified against live data). Live data correction: escalation
+`#648.related_activity` → `engine-controls-migration`.
+
+## 132. Engine-controls Phase 0 + Phase 2/3 both closed — `#698`/`#699` (2026-08-17, later still)
+
+**Phase 0** (`#698`, approved "noted, add table entries"): `governance.new_utility_registration_
+timing` proposed and applied via `configmaint.propose` for real — the config row §Phase 0 (BUILD.md
+§120/§122/§124) had built the enforcement code for but never actually landed, blocked behind `#671`.
+Applied clean.
+
+**Phase 2/3** (`#699`, approved "option b) register all and make any that is not clearly alive
+inactive"): all 343 previously-unregistered project scripts registered into `cfg_utility` in one
+governed batch — not 343 individual `configmaint.propose` round-trips, which would have been
+disproportionate to a decision the researcher had already made at the aggregate level. `module`
+(the table's actual PK, not `file_path` — checked against live schema before writing, not assumed)
+= sanitized full relative path, collision-checked (0 collisions across 343). `purpose` = each
+file's own module docstring via `ast.get_docstring()` — not invented; 5 files had none, given an
+honest placeholder and listed separately, not fabricated. `inactive=1` only for filenames carrying
+a version+date stamp (e.g. `_v1_20260707`) — the project's own established one-shot-patch naming
+pattern, same reasoning already used for `engine_migrate.py`'s `config_exempt`. **202 active / 141
+inactive.** Deliberately conservative: a script without a dated stamp stays active even if it looks
+like a one-off, since a false-active is harmless clutter and a false-inactive silently breaks
+something someone still uses.
+
+**One real bug caught before writing anything, not after**: the first purpose-extraction cut used a
+regex with `re.DOTALL` for the leading-comment skip, which let `.` match newlines and swallow past
+the real module docstring into a LATER triple-quoted string elsewhere in the file (a hand-authored
+SQL block, in the one case that surfaced it) — caught by spot-checking a sample of output before any
+DB write, not assumed correct from the code alone. Rewritten to use `ast.get_docstring()` (Python's
+real parser) instead of a regex approximating Python syntax.
+
+`find_unregistered_project_scripts()` confirmed **0 remaining** after the write (was 343 at session
+start, `engine/`'s 11 already resolved separately in Phase 1). `configmaint.validate` itself
+couldn't be re-run to confirm coherence — blocked by the pre-existing, unrelated `#695`/`#700`
+(`cfg_method_rule`/`cfg_quality_check` missing write-grants) — confirmed via direct inspection that
+this blocker predates and is unrelated to tonight's writes, not assumed.
+
+**Files:** `iba/app/reports/unregistered-scripts-batch-registration-20260817.md` (new, full 343-row
+table + the 5 no-docstring exceptions). `cfg_setting` (+1 row), `cfg_utility` (+343 rows, 48→391,
+all unique). Registration script itself run from the session scratchpad, not committed to the repo
+— a genuine one-shot bulk operation, same class as `engine/migrate.py`'s historical migrations.
+
+## 133. Two real bugs + one stale-report incident found via the registration batch itself (2026-08-17, later still)
+
+**Bug 1 — `cfgquality.py` crash on first real trigger.** `_code_only_text()` caught
+`tokenize.TokenizeError` — an attribute that has never existed in Python (`tokenize.TokenError` is
+the real name) — so the fallback its own docstring promised ("better a possible false negative than
+a hard crash") never actually worked; it just never got exercised until one of the 343 newly
+registered files (`scripts/word_full_extract.py`) genuinely failed to tokenize. Fixed: one-word
+attribute correction.
+
+**Found via the crash, not guessed at**: `scripts/word_full_extract.py` is corrupted — a SQL string
+is followed by what reads as pasted chat/assistant text, not Python. Only one commit ever touches it
+(`a3744cfb`, 2026-03-19) — broken since its first commit, never touched since. `cfg_utility` row
+corrected to `inactive=1` with the corruption noted in `purpose`; raised as escalation `#701` for a
+real decision (nothing to restore from — no other commit holds working content).
+
+**Bug 2 — `escalation.control_objectives`/`escalation.control_process` orphaned since the 2026-08-16
+reset**, never read by any code (researcher, live, after `#700` pointed at `CONFIG-REPORT`). Fixed
+by having `write_list_report` actually read both via `cfg.setting(...)` and state them in the
+report's own header — `-Action List` is the module's natural "status check" moment, not a bolted-on
+check. Confirmed via `find_orphan_configs` re-run: 8 orphans → 6 (the 2 `escalation.control_*` rows
+resolved; 6 `backup.*` rows remain — genuinely policy-documentation settings with no runtime
+consumer by design, same class as `module='governance'` settings but not currently given that
+exemption in the orphan-detector's logic; not touched here, a separate design question).
+
+**Incident, not a code bug — `CONFIG-REPORT.md` (the plain filename) has been stuck at 2026-08-05**
+since `report.version_on_regenerate` was turned on that day: every regenerate since has written a
+new `CONFIG-REPORT-vNNN-*.md` instead of refreshing the fixed name `GOVERNANCE.md`/`USER-GUIDE.md`
+tell every reader to check. `escalation-list.md` doesn't share this bug (an older, different write
+path — direct `path.write_text`, not `reportkit.write_report`). This is very likely why the
+researcher's own orphan discovery (`backup.*`, `escalation.control_*`) only surfaced tonight — those
+settings postdate 2026-08-05, so they could never have appeared in the stale file at all. Escalated
+as `#702` — needs a decision (exempt singleton always-current reports from versioning, or fix every
+doc reference to resolve to the latest version) rather than a unilateral fix, given the researcher's
+own 2026-08-05 instruction turned versioning on deliberately for reports generally.
+
+**Also raised for real, not just noted**: `#703` — `backup.iba_db_gap`'s own stored value claims
+"raised as its own escalation 2026-08-16"; confirmed false (zero backup-related escalations existed
+before tonight). iba.db still has no dedicated NAS backup+alerting script, unlike
+`backup_db_to_nas.py` for `bible_research.db`.
+
+**Files:** `iba/app/lib/cfgquality.py` (`_code_only_text`), `iba/app/lib/escalation.py`
+(`write_list_report`), `cfg_utility` (`scripts/word_full_extract.py` → `inactive=1`). Escalations
+`#701`/`#702`/`#703` raised, all awaiting researcher decision — none of these three were fixed
+unilaterally, each is a genuine judgement call.
+
+## 134. `CONFIG-REPORT.md` staleness root-fixed + full `cfgquality.py` check sweep — `#701`/`#702` (2026-08-17, later still)
+
+**`#701`** approved ("set script to inactive") — already done during investigation (§133), confirmed
+and closed.
+
+**`#702`** approved ("fix the config-report generator... not convinced the report really do a proper
+integrity check, and is really complete") — two separate asks, both actioned:
+
+1. **Root-fixed the staleness, not special-cased**: `reportkit.write_report()` now writes the
+   plain-named file on every regenerate, not only the versioned archive copy, whenever
+   `report.version_on_regenerate` is on — affects all ~24 callers uniformly, not just
+   `cfgreport.py`. Both purposes (`archive_dir` = full history, fixed name = "check here for
+   current") are real and were never actually in tension; the code just never did both. Verified:
+   `CONFIG-REPORT.md` now byte-identical to the freshly generated versioned copy, current mtime.
+2. **Swept all 18 `find_*`/`check_*` functions in `cfgquality.py`**, calling each directly against
+   live data, not reading the code and assuming — zero crashes beyond the already-fixed
+   `TokenizeError` typo. One own testing mistake caught and corrected before being reported as a
+   finding (passed the wrong `writer_identities` arg to `find_unknown_write_grant_writers`,
+   producing 7 false positives — re-ran with the real default, 1 genuine finding remained). That
+   genuine finding: `cfg_write_grant.writer='report.debate'` matches no real `cfg_step` (closest:
+   `report.passage_debate`, inactive) — raised as `#704`, not fixed here. The two large-count
+   findings (213 `find_utility_config_density`, 6 `find_orphan_configs`) verified as accurate, not
+   noise: the 213 are almost entirely tonight's freshly-registered pre-`Cfg` scripts (correctly
+   flagged) plus 13 already-known `engine/` stub registrations (§127); the 6 orphans are the
+   `backup.*` settings already tracked under `#703`.
+
+**Files:** `iba/app/lib/reportkit.py` (`write_report`). Escalation `#704` raised (`report.debate`
+stale grant). `#701`/`#702` both completed live.
+
+## 135. `#648` — the actual content sweep, not just the inventory (2026-08-17, later still)
+
+**Correction first**: §132/register item #7 had marked `#648` complete alongside `#698`/`#699` —
+wrong. `#699` built the *inventory* (which scripts exist); `#648`'s own text asks for a *content*
+review — hardcoded variables/rules/lookups inside those scripts that should be `cfg_*`-driven, a
+materially different, still-unstarted task. Corrected in the register before starting real work,
+not silently carried forward.
+
+**Delivered**: scanned 232 active, non-exempt registered scripts via `ast.parse` for module-level
+ALL_CAPS constants — the same signal `engine/constants.py` already models
+(`config_exempt_reason='values move to cfg_setting instead'`). Two-tier split by whether the
+assigned value is a plain literal (`ast.literal_eval`-able — a real number/string/lookup) or a
+computed expression (path derivation via `__file__`, `re.compile(...)`, a function-dispatch dict —
+structurally can't be a `cfg_setting` row no matter how the name looks) — the second tier caught a
+real false-positive class my first cut would have reported as findings (`ROOT = pathlib.Path(
+__file__)...`, `READY_CHECKS = {name: function, ...}`).
+
+**Result**: Tier 1 (real candidates) — 105 files, 263 constants. Tier 2 (structural, not action
+items) — 177 files, 423 constants, kept for transparency only. Strongest concrete examples:
+`iba/app/lib/narrativegenerate.py`'s `API_URL`/`API_VERSION`/`CHARS_PER_TOKEN`; `iba/prototype/
+inspect_verse.py`'s Hebrew morphology lookup tables (`STATE`/`GENDER`/`NUMBER`/`POS`/`STEM`).
+
+**Scope, stated plainly**: this delivers the review `#648` asked for — a candidate list for
+researcher triage. Migrating any specific Tier 1 candidate into `cfg_setting` is separate follow-on
+work, one `configmaint.propose` per item, per `governance.config_control` — not started here, and
+not implied by marking `#648` complete.
+
+**Files:** `iba/app/reports/hardcoded-constants-sweep-20260817.md` (new). Scanner run from the
+session scratchpad, not committed — same one-shot class as the `#699` registration script.
+
+## 136. Non-compliant scripts marked inactive + a real enforcement hook, not just a data flag (2026-08-17, later still)
+
+Researcher instruction: "all the scripts that does not comply must be in the register, but marked
+as inactive. when one of these scripts are put into use... it should signal that the script needs
+revision and the rules should move to configs." Two parts, both actioned.
+
+**Part 1 — the register.** All 105 Tier-1 files from `#648`'s sweep set `cfg_utility.inactive=1`,
+`purpose` prefixed `"NON-COMPLIANT (escalation #648 -- ...); see .../hardcoded-constants-sweep-
+20260817.md)."`, original docstring-derived purpose kept after the flag, not overwritten. Batch
+write, same class as `#699`'s — verified live: 105/105 updated, 0 already-inactive collisions, 0
+missing rows.
+
+**Part 2 — the signal on use. Checked the technical reality before building anything**: of the 105,
+only 2 (`iba/app/lib/narrativegenerate.py`, `iba/app/lib/wordregistryspanreport.py`) are importable
+modules with a real dispatcher-reachable caller (a `handlers/*.py` file, itself reached via
+`run.py`'s `cfg_step` dispatch) — the other 103 are standalone scripts invoked directly
+(`python scripts/foo.py`), with genuinely no code-level checkpoint to hook into; a universal
+runtime guard for those would mean editing all 103 files individually with no actual dispatch point
+to anchor it to, disproportionate engineering for what's realistically enforceable. Built what's
+real, not a false promise of full automatic coverage:
+
+- New `Cfg.assert_utility_compliant(file_path)` (`cfg.py`) + `NonCompliantUtility` exception —
+  checks the caller's own `cfg_utility.purpose` for the `#648` flag, raises before any real work
+  happens if flagged.
+- Wired into both modules' own entry points (`narrativegenerate.assemble_package`,
+  `wordregistryspanreport.write_report`). **Verified live, not just unit-tested**: calling
+  `assemble_package` through the exact same path `handlers/narrative.py` uses raises
+  `NonCompliantUtility` before touching any data.
+- `governance.noncompliant_script_gate` proposed (`RUN-20260817_120026_494-CONFIGMAINT`, **PAUSED
+  for real researcher approval** — a substantive new rule, not self-approved) — documents the full
+  policy for all 105, including the 103 that can only be enforced by process discipline (check
+  `cfg_utility` before running one), not code.
+
+**Own mistake mid-flight, same class as `#697`/`#705` before it**: first `configmaint.propose`
+attempt for the governance row was malformed (unescaped JSON string), raised blocking escalation
+`#705`, rejected as a self-fix before retrying correctly.
+
+**Files:** `iba/app/lib/cfg.py` (`NonCompliantUtility`, `Cfg.assert_utility_compliant`),
+`iba/app/lib/narrativegenerate.py`, `iba/app/lib/wordregistryspanreport.py` (both entry points
+gated). `cfg_utility` (105 rows → `inactive=1` + flagged `purpose`).
+
+## 137. `wa_rule_registry` retired entirely — `#696` (2026-08-17, later still)
+
+Researcher, `#696` (after an earlier `AnswerRun` attempt failed on the same `on-hold`-needs-`Resume`
+mechanic as `#648` — same lesson applied): *"the table wa-rule-register must be set to inactive. the
+rules in this table are replace with configs in iba and this table is therefore no longer
+operational. references in code, claude.md or other memory to this table should be replaced with
+pointing to cfg.* configs."* A blanket decision, not the finer four-bucket disposition the review
+(register item #5, `wa-rule-registry-full-review-v1-20260817.md`) had proposed — applied as given,
+not second-guessed.
+
+**Applied** (`database/bible_research.db`): all 59 `wa_rule_registry` rows (34 previously
+`obsolete=0`) set `obsolete=1`, `obsolete_reason`/`superseded_by` pointing at `iba.db`'s `cfg_*`
+system, `last_modified` stamped. Verified: 0 active rows remain.
+
+**References updated, not left dangling**: `CLAUDE.md` §3's table-groups row struck through with a
+pointer to this decision; §10's `wa-global-general-rules` document-architecture row marked
+superseded; all three `GR-REF-002` citations (§ intro ×2, §10) replaced with a direct statement of
+the `[current]`-token convention — CLAUDE.md already fully defines that convention inline, so losing
+the DB citation doesn't lose the rule itself, only the (now-false) claim that a `wa_rule_registry`
+row governs it. Checked code for operational (not just documentation) references — 6 `.py` files
+name the table (`build_rules_extract.py`, `build_reference_snapshot.py`, `apply_session_patch.py`,
+`engine/migrate.py`, 2 archived one-off patches); none assert it's currently operational, all keep
+working correctly against an all-obsolete table (an extract naturally reports nothing active) — not
+touched. Memory checked: one relevant hit (`feedback_rule_extract_obsolete_default`, a general
+extraction-discipline principle, not a currency claim) — left as-is, still valid for other tables.
+
+**Flagged, not silently dropped**: the review's "Keep" bucket (`GR-DB-001`, `GR-REF-001`,
+`GR-PROC-001`, `GR-PROG-001`/`002`/`009`) had identified these as still-live principles with no
+`cfg_*` equivalent yet. The blanket decision supersedes that finer triage — those principles now
+have no operational home anywhere until/unless re-homed into a live doc or `cfg_*`, a genuine
+follow-on the researcher should be aware of, not assumed resolved by this closure.
+
+**Files:** `database/bible_research.db` (`wa_rule_registry`, 59 rows). `CLAUDE.md` §3/§9/§10.
+`docs/governance-alignment-register.md` items #4/#5.
+
+## 138. `#678` applied (full `cfg_table.inactive` bootstrap + 150-row researcher review) + a live NAS backup incident found and fixed while actioning `#703` (2026-08-17, later still)
+
+**`#678`.** The researcher's full table-by-table review (`iba/app/reports/cfg_tables for review
+2026-08-17.csv`, 150 rows across both databases, every one individually assessed) had nowhere to
+land: `cfg_table` had no `inactive` column at all — confirmed live, not assumed. Traced to
+escalation `#310`'s own bootstrap (`bootstrap_inactive_column.py`), which had *deliberately*
+excluded `cfg_table`/`cfg_column`/`cfg_unique` as "schema-of-schema, not toggleable." `governance.
+tables` ("tables no longer in use must be set as inactive") was never reconciled with that
+exclusion — a real, confirmed gap between two governance artifacts. New migration
+`add_cfg_table_inactive_column.py` reverses the exclusion for `cfg_table` specifically (not
+`cfg_column`/`cfg_unique` — no comparable review driving a need there yet), same physical-ALTER +
+`cfg_column`-self-document pattern as every prior column bootstrap. Applied the full CSV as one
+governed batch (150 rows, all individually researcher-reviewed, not 150 proposals): 55 changed to
+`inactive=1`, 95 already matched the new column's `DEFAULT 0`, 0 missing. Verified: `bible_research`
+55/55 split active/inactive, `iba` all 40 stay active, matching the CSV exactly.
+
+**`#703`, and a live incident found while working it.** Before touching the backup-location
+decision itself, checked `scripts/backup_db_to_nas.py` (the file the decision concerns) — found its
+`DEFAULT_SOURCE` already pointed at `iba.db`, not `bible_research.db`. Traced with `git blame`: a
+2026-07-19 commit (`216314b9`, message "config->configurator restructure..." — no mention of
+backups at all) silently made this change. The scheduled task (`BibleResearch DB Backup to NAS`)
+passes no `--source`, so it's used this default ever since — **confirmed against the NAS itself**,
+not assumed: the most recent `bible_research_*.db` backup (675,864,576 bytes) is byte-identical to
+`iba.db`'s current size, not `bible_research.db`'s (802,897,920 bytes). For **~29 days**,
+`bible_research.db` had no dedicated, integrity-checked NAS backup — only the passive whole-folder
+mirror (18:30) — while its "backups" on the NAS were silently `iba.db` snapshots under a misleading
+name.
+
+**Root-fixed, not just reverted**: restored `DEFAULT_SOURCE` to `bible_research.db`, but also made
+the filename prefix, pruning lineage, and alert job identity (`_prefix`/`_job_name`) all DERIVED
+from `--source` rather than hardcoded `"bible_research"` — the actual root cause was that nothing
+in the script's naming logic depended on which database it was backing up, so a wrong default
+silently mislabelled everything downstream too. `notify_backup_alert.ps1`'s `-Job` `ValidateSet`
+widened (`dbbackup` / `dbbackup_iba`) so the two databases' status files/alerts can never overwrite
+each other, which they would have (single shared `status_dbbackup.txt`) the moment a second task
+used this script at all.
+
+**`#703`'s actual ask, delivered**: `iba.db` now gets the same mechanism, same NAS target folder —
+new scheduled task `IBA DB Backup to NAS`, daily 18:10 (staggered 10 min after the existing 18:00
+task), explicit `--source`. **Verified live, both databases, not just dry-run**: real backups run
+for both — `bible_research_20260817T113922Z_restore_20260817.db` (802,897,920 bytes) and
+`iba_20260817T114030Z_first_dedicated_backup.db` (675,864,576 bytes) — both confirmed on the NAS
+with correct names and sizes.
+
+**Not yet applied — paused for real approval** (`RUN-20260817_124236_152-CONFIGMAINT`):
+`backup.iba_db_gap` resolution text. `governance.tables`/`backup.nas_db_backup_schedule` follow-up
+updates and `#704` (`report.debate` stale write-grant) are queued behind it — `module_blocking`
+allows one `configmaint.propose` at a time.
+
+**Residual, not cleaned up here**: the NAS still holds ~29 days of `bible_research_*.db` files that
+are actually mislabelled `iba.db` snapshots (2026-07-19 through today) — left in place, not deleted
+or reclassified, since bulk-deleting NAS backup history needs its own explicit decision, not a
+side effect of this fix.
+
+**Files:** `scripts/backup_db_to_nas.py`, `scripts/notify_backup_alert.ps1`. New Windows scheduled
+task `IBA DB Backup to NAS`. `iba/app/migration/add_cfg_table_inactive_column.py` (new). `cfg_table`
+(+`inactive` column, 55 rows flipped). `iba/app/reports/cfg-table-inactive-applied-20260817.md`
+(new).
+
+## 139. `#704`/`#707` closed out — the two queued config changes from §138 (2026-08-17, later still)
+
+**`#707`** (`backup.iba_db_gap` resolution text, paused in §138) — approved, applied for real via
+`Config-Maintenance.ps1 -Step Propose -RunId ...` (same two-step propose-then-apply flow as every
+other paused proposal this session). `configmaint.propose` returned `ok`.
+
+**`#704`** (`cfg_write_grant.writer='report.debate'` — stale, matches no real `cfg_step`) —
+proposed `inactive=1` rather than deleting the row outright, per the researcher's own comment ("no
+proper passage-table report formulated" yet — a real `report.passage` writer may still need this
+grant later). Correctly **paused for real approval** (`RUN-20260817_124702_534-CONFIGMAINT`) — the
+researcher's comment gave the underlying decision, but the exact payload still goes through the
+same sign-off as every other value change this session, not self-approved on the strength of a
+prior comment alone.
+
+**Files:** none beyond the `cfg_setting`/`cfg_write_grant` rows themselves.
+
+## 140. `AnswerRun` auto-resumes a `MANUAL-` item — three repeats made it a real fix, not a doc note (2026-08-17, later still)
+
+Researcher hit `-Decision resume` (not a real decision — `Resume` is a separate `-Action`) three
+separate times in one session, on escalations tied to `#648`, `#678`, and `#691` — each time the
+same "no pending escalation for run '...'" error, each time because the two-call Resume-then-
+AnswerRun sequence isn't the obvious shape for "just answer this." Two prior sessions today already
+documented the distinction clearly (§131's report rework, the earlier USER-GUIDE.md pass) — the
+docs were accurate, but accurate docs didn't stop a third repeat. Treated as the actual signal it
+is: a tool-usability gap, fixed in code, not documented around again.
+
+**Fixed**: `answer_for_run()` (`escalation.py`) now auto-resumes a `MANUAL-`-prefixed item from
+`on-hold` or `re-assign` to `raised` before applying the answer, when `pending_for_run` finds
+nothing — one call does what used to need two, for the shape that actually causes the confusion.
+**Deliberately scoped to `MANUAL-` only**: a real dispatcher-tied row (`configmaint.propose`, a
+quality-check finding) still requires `state='raised'` exactly as before — its resume path is
+re-running the original paused command (§4.5's mechanism), not this function's business to
+short-circuit. Verified live against two fresh smoke-test escalations (711/712 — both cleaned up):
+`AnswerRun` called directly on an `on-hold` row, and directly on a `re-assign` row, both now
+succeed in one call.
+
+`USER-GUIDE.md` §4.3/§4.4/§4.6 updated in the same pass to describe the new behaviour, not left to
+go stale a third time.
+
+**Files:** `iba/app/lib/escalation.py` (`answer_for_run`), `iba/app/USER-GUIDE.md` §4.3/§4.4/§4.6.
+
+## 141. Content-index (round B) built — `#691` — real rebuild found a live design issue, not run yet (2026-08-17, later still)
+
+Register item #6 part B, approved via `#691` ("process as planned"). Built per the plan's own §2
+design decisions (`manifest-and-content-search-into-iba-plan-v1-20260815.md`): predefined-key
+concordance (`strong.strongNumber`/`strong.stepGloss`/`word_registry.word`, all already in
+`iba.db`) over every `.md` file `file_manifest` (round A) already knows about.
+
+**Matching approach changed from the plan's original assumption, tested live before committing**:
+a single `re` alternation over the ~9,300 gloss+word keys was tried first and hung outright —
+confirmed, not guessed. Replaced with tokenize + n-gram (1–6 words, 6 = the longest gloss measured
+live) + set lookup, O(line length) regardless of key count.
+
+**Real design issue found running the actual rebuild, not a performance bug alone**: one file
+(`wa-programme-prose-extract-20260814.md`, 144,866 lines) produced ~597,000 hits by itself — the
+project's own analysis prose is saturated with the very biblical vocabulary being indexed. A full
+rebuild across all 7,874 `.md` files (558 MB) was projected at 15–30+ minutes for a multi-million-
+row index of doubtful value. **Not run to completion** — stopped, the finding taken to the
+researcher rather than pushed through or silently descoped. Researcher: *"we should definitely
+exclude the prose files. but there may be others also... I would first like to see the [size]
+check."*
+
+**Built in response, in this order**:
+1. `cfg_content_index_exclude` — a governed table (not JSON — `cfg.py`'s own rule is "never opens a
+   JSON file," DB is the only config source), `pattern`/`reason`/`added_at`/`inactive`, "include all
+   `.md` except." Registered properly this time: `cfg_write_grant` + `cfg_table`/`cfg_column` rows
+   all added in the same migration that creates the table — not repeating the exact gap (#695/#700)
+   found earlier tonight.
+2. `content_index.size_profile` — read-only report, every `.md` file largest-first (file, folder,
+   size), run for real: **7,874 files, 558.6 MB. 74 files ≥1 MB hold 270.1 MB (48% of total mass in
+   1% of files)** — almost entirely `iba/app/verse-analysis/**` (per-book verse-lexical dumps) plus
+   `Workflow/Programme/programme_prose/` extracts and one `Sessions/Session_Clusters/M15` file.
+   Report: `iba/app/reports/content-index-size-profile.md`.
+3. A stopword filter (`_STOPWORDS`, ~100 words) for single-word gloss/word keys — found live that
+   `strong.stepGloss` genuinely carries entries like `"and"`/`"not"`/`"this"` (real Hebrew/Greek
+   conjunction/particle glosses), which as search keys matched nearly every line in the project;
+   multi-word phrases unaffected.
+
+**Two own bugs caught before calling this done, not after**: (a) `cfg_utility.module` registered as
+`'content_index'` when the file `contentindex.py` has stem `contentindex` — `find_unregistered_lib_
+modules` correctly flagged it (module name must match file stem, not the feature's naming
+convention); fixed in both the migration and the already-inserted row. (b) `content_index.
+search_report_path` registered as a setting but never actually read — `write_search_report` uses
+`reportkit.oneoff_path` instead (matching `manifest.search`'s own precedent, which has no such
+setting either) — removed the orphaned row rather than leave it. Full 12-check sweep afterward:
+clean, matches the pre-existing baseline exactly (6 `backup.*` orphans, 1 `report.debate` grant, 2
+`cfg_method_rule`/`cfg_quality_check` grants — all already tracked under `#700`/`#703`/`#704`).
+
+**Not yet done — waiting on the researcher's exclusion decision from the size-profile report,
+same as `#691` itself remains open**: the actual `content_index.rebuild` full run.
+
+**Files:** `iba/app/lib/contentindex.py` (new), `iba/app/migration/bootstrap_content_index.py`
+(new), `iba/app/handlers/reports.py` (+3 handlers), `iba/app/ps/ContentIndex-Rebuild.ps1` /
+`-Search.ps1` / `-SizeProfile.ps1` (new), `USER-GUIDE.md` §13a/§13b. `cfg_content_index_exclude`
+(new table, empty). `iba/app/reports/content-index-size-profile.md` (new).
+
+## 142. Refined per researcher instruction: T2 gloss exclusion, 50MB auto-threshold + release override, `CFG_TABLES` gap found and fixed (2026-08-17, later still)
+
+Researcher, after reviewing the size profile: *"exclude program prose, the rest listed is the main
+target... add all above 50MB by default into the exclusions, to be manually released if needed...
+gloss for any T2 cluster terms can be excluded."* All three built.
+
+1. **T2 gloss exclusion** (`contentindex._build_keys`) — filtered by STRONG, not gloss text: a
+   gloss shared between a T2 strong and a real-cluster strong (30 such strongs, measured live)
+   still gets indexed via the non-T2 one. 9,165 → 7,951 distinct glosses (~13% reduction).
+2. **`content_index.exclude_size_threshold_bytes`** (default 50MB) + **`cfg_content_index_size_
+   override`** (symmetric table to `cfg_content_index_exclude` — a matching pattern releases a
+   large file regardless of size). Currently dormant (no `.md` file is actually ≥50MB), a forward
+   safety default.
+3. **`cfg_content_index_exclude` row for `Workflow/Programme/programme_prose/`** — proposed,
+   blocked behind the researcher's own unanswered `#708` (`#704`'s write-grant fix) clearing first,
+   then a SEPARATE real gap found trying to propose it for real.
+
+**Real gap found, not a repeat of #695/#700's class**: `configmaint.propose`'s own `CFG_TABLES`
+allowlist (`handlers/configmaint.py`) is hardcoded, not derived from `cfg_table` — `cfg_content_
+index_exclude` (today's) plus `cfg_escalation`/`cfg_index`/`cfg_method_rule`/`cfg_quality_check`
+(all pre-existing, predating today) were ALL missing from it, meaning `configmaint.propose`
+refused those tables outright — a bigger block than a missing `cfg_write_grant` row, since this
+check runs before grants are even considered. Fixed by adding all 6 names directly. **Not**
+switched to a dynamic `SELECT FROM cfg_table` — checked first: the 20 foundational `cfg_*` tables
+(`cfg_meta`, `cfg_table`, `cfg_setting`, ...) aren't themselves registered in `cfg_table` yet, a
+separate, deeper backfill gap — deriving now would silently drop them. Escalation `#712` raised for
+the two-part follow-on (backfill the 20, then switch to dynamic derivation), not fixed here.
+
+**Files:** `iba/app/lib/contentindex.py` (`_build_keys`, `_eligible_md_files`, new
+`_size_override_patterns`), `iba/app/migration/bootstrap_content_index.py` (`cfg_content_index_
+size_override` table + `content_index.exclude_size_threshold_bytes` setting),
+`iba/app/handlers/configmaint.py` (`CFG_TABLES` +6). Escalation `#712` raised. Programme-prose
+exclusion paused for approval (`RUN-20260817_145306_062-CONFIGMAINT`).
+
+## 143. First real full `content_index.rebuild` — done, with two costs to report plainly (2026-08-17, later still)
+
+Programme-prose exclusion applied for real (`#713`, approved "confirm exclusions"). Full rebuild
+run for real, in background (1,557.6s / ~26 min): **7,869 files scanned, 19,348,411 total hits
+found, 14,118,338 rows actually written** (the gap is genuine same-line repeat matches, deduped by
+`content_index`'s own PK via `INSERT OR IGNORE` — not a bug). Split: 10,722,246 gloss / 1,825,204
+word / 1,570,888 strong.
+
+**Two real costs, reported as found, not smoothed over:**
+
+1. **`iba.db` grew from ~675MB to 8.06 GB** — a >10x increase from this one table. Real
+   consequence: the daily `IBA DB Backup to NAS` task (§138) now transfers/stores 8GB nightly
+   instead of 675MB.
+2. **Verified search itself, not just the build**: `strong:H2734` — 938 hits, 0.68s, genuinely
+   precise and useful. `gloss:compassion` — 23,098 hits, 5.8s. `word:anger` — 19,991 hits, 2.3s.
+   Both technically correct (the project's own subject matter genuinely uses these words that
+   often) but not a browsable result set — confirms the concern raised before the rebuild: common
+   domain-central gloss/word keys will always produce very large hit counts, T2/stopword filtering
+   notwithstanding, because the vocabulary IS the project's own subject.
+
+Not fixed or further descoped here — reported to the researcher for a decision on whether this is
+acceptable as delivered or needs more refinement (e.g., a per-search result cap, rarity-based
+ranking, or dropping single-word gloss/word matching in favour of Strong's-number-only, which is
+demonstrably the highest-value, lowest-noise key type).
+
+**Files:** none beyond `content_index`'s own data (14.1M rows) and `iba.db`'s resulting size.
+
+## 144. `-Csv` added to `ContentIndex-Search.ps1` (2026-08-17, later still)
+
+Researcher: "a simple powershell utility to produce a search result to a csv." Extended the
+existing search path rather than building a parallel mechanism — reuses `search()`'s already-tested
+logic exactly. `write_search_csv()` (`contentindex.py`) writes the FULL result set, no truncation
+(`write_search_report`'s `.md` table caps at 500 rows for readability — a query like `gloss:
+compassion` returns 23,098+, mostly invisible there). `-Csv` switch on `ContentIndex-Search.ps1` →
+`Csv=1` param → `content_index_search` handler also calls the CSV writer when set. UTF-8 BOM
+encoding for Excel compatibility.
+
+**Real bug caught testing it, not after**: `$res.csv_path` failed under `Set-StrictMode` —
+`run.py`'s JSON nests every handler kwarg under `"counts"`, so it's `$res.counts.csv_path`, not
+`$res.csv_path`. Fixed before calling this done. **Separately noticed, not fixed**: `$res.path`
+(used by every PS wrapper's `Write-IbaStepResult -Path`) is always the literal string `"ok"` for a
+successful step — `run.py`'s top-level `"path"` key comes from `cfg_on_fail` rule resolution, not
+any handler's own report path. Purely cosmetic (the real path is still in the message text, nothing
+is lost) and affects every script using this convention, not just this one — flagged here, not
+formally escalated or fixed, since correcting it means touching `run.py`'s output shape or every
+`Write-IbaStepResult` call app-wide, out of scope for a small CSV addition.
+
+Verified live: `strong:H2734` (938 rows) and `gloss:compassion` (23,098 rows, exact row-count match
+confirmed) both produced clean, correctly-quoted CSVs through the full PS→dispatcher→handler chain.
+
+**Files:** `iba/app/lib/contentindex.py` (`write_search_csv`), `iba/app/handlers/reports.py`
+(`content_index_search`), `iba/app/ps/ContentIndex-Search.ps1` (`-Csv`), `USER-GUIDE.md` §13b.

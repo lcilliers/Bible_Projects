@@ -46,6 +46,17 @@ CFG_TABLES = (
     "cfg_on_fail", "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule",
     "cfg_change_log", "cfg_change_detail", "cfg_report", "cfg_report_section",
     "cfg_report_csv_table", "cfg_utility",
+    # Found live 2026-08-17 trying to propose a cfg_content_index_exclude row: this tuple is
+    # hardcoded, not derived from cfg_table, so every cfg_* table created since it was last
+    # updated was invisible to configmaint.propose entirely -- a bigger block than a missing
+    # cfg_write_grant row (#695/#700's class of gap), since propose refuses the table outright
+    # before ever checking grants. Confirmed via cfg_table itself: cfg_escalation/cfg_index/
+    # cfg_method_rule/cfg_quality_check were ALSO missing here, predating this session. NOT
+    # switched to a dynamic SELECT FROM cfg_table -- checked first: the 20 tables above aren't
+    # themselves registered IN cfg_table yet (a separate, deeper backfill gap), so deriving from
+    # it right now would silently drop them. Flagged as a follow-on, not fixed here.
+    "cfg_content_index_exclude", "cfg_content_index_size_override", "cfg_escalation",
+    "cfg_index", "cfg_method_rule", "cfg_quality_check",
 )
 
 # module -> the dedicated table it already has, if any (rule c's "very good reason" check).

@@ -161,6 +161,10 @@ def _index_group_clusters(clusters: list[list[str]], cluster_words: list[set[str
 
 
 def write_report(cfg, word: str) -> pathlib.Path | None:
+    """Checked for compliance first (escalation #648, 2026-08-17) — this module's own STEP
+    constant is hardcoded, flagged NON-COMPLIANT in cfg_utility; using it now signals (via
+    cfg.assert_utility_compliant) that it needs revision before this is called again."""
+    cfg.assert_utility_compliant("iba/app/lib/wordregistryspanreport.py")
     conn = cfg.conn
     q = lambda sql, p=(): conn.execute(sql, p).fetchall()
 

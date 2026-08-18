@@ -633,7 +633,7 @@ def _code_only_text(path: pathlib.Path) -> str:
     text = path.read_text(encoding="utf-8", errors="ignore")
     try:
         tokens = list(tokenize.generate_tokens(io.StringIO(text).readline))
-    except (tokenize.TokenizeError, IndentationError, SyntaxError, ValueError):
+    except (tokenize.TokenError, IndentationError, SyntaxError, ValueError):
         return text
     line_starts = [0]
     for line in text.splitlines(keepends=True):

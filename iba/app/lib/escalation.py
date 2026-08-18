@@ -348,13 +348,31 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
     'needs-revision'-shaped fallback. If a real quality-check/config-proposal pause is answered
     `hold` or `noted`, the underlying paused run correctly STAYS PAUSED (visible in the open list as
     on-hold/closed, not silently misread as a rejection) — those two words only fully make sense
-    for a MANUAL item with no run to resume. `approve`/`reject`/`revise` are unaffected."""
+    for a MANUAL item with no run to resume. `approve`/`reject`/`revise` are unaffected.
+
+    **Auto-resumes a `MANUAL-` item from `on-hold`/`re-assign`, 2026-08-17 (escalation #692's
+    fix hit its own limit)** — found live: the researcher hit "no pending escalation for run..."
+    on `#648`, `#678`, AND `#691` in one session, each time typing `-Decision resume` (not a real
+    decision value — `Resume` is a separate `-Action`) because the two-call sequence
+    (`-Action Resume` then `-Action AnswerRun`) isn't the obvious shape for "just answer this."
+    Three repeats of the identical mistake is a tool-usability signal, not three unrelated user
+    errors. Both `on-hold` and `re-assign` mean the same thing here — nobody has decided anything
+    yet — so silently resuming first and then answering is behaviourally identical to the two-call
+    sequence, just one call instead of two. Real dispatcher-tied (non-`MANUAL-`) rows are
+    deliberately NOT auto-resumed here — their resume path is re-running the original paused
+    command (§4.5), a different mechanism this function has no business short-circuiting."""
     run_id = _resolve_run_id(db, run_id)
     decision = decision.lower()
     valid_answers = cfg.enum("escalation_next_action")
     if decision not in valid_answers:
         return f"invalid decision {decision!r} — must be one of {valid_answers!r}"
     rows = pending_for_run(db, run_id)
+    if not rows and run_id.startswith("MANUAL-"):
+        parked = _latest_for_run(db, run_id, ("on-hold", "re-assign"))
+        if parked:
+            _grant(cfg, "escalation")
+            db.update("escalation", {"id": parked["id"]}, state=_check_state(db, "raised"))
+            rows = pending_for_run(db, run_id)
     if not rows:
         return f"no pending escalation for run {run_id!r}"
     esc = rows[0]
@@ -405,7 +423,18 @@ def reassign_run(cfg: Cfg, db: Db, run_id: str, new_assignee: str, comment: str 
     just moved to the other party's queue). Restricted to `MANUAL-`-prefixed run_ids only, same
     boundary as edit/pause/resume/retract — a real dispatcher-tied escalation's
     `next_action_assigned_to` is set by the app itself (the researcher's own approval gate), not
-    something either party bounces around."""
+    something either party bounces around.
+
+    **`in-progress` is left alone, 2026-08-17 (escalation #692)** — researcher, reviewing this:
+    "it does not make a lot of sense that all progression must go back to a new raise, and
+    reapprove." Before this fix, re-assigning an `in-progress` item (already decided, mid-work)
+    unconditionally flipped it to `state='re-assign'`, discarding the decision — the only way back
+    to work was Pause→Resume→a FRESH AnswerRun decision, re-approving something already approved.
+    An `in-progress` item hasn't reached a fork requiring a new decision; it just needs a different
+    owner, so bouncing it changes `next_action_assigned_to` only and leaves `state='in-progress'`
+    — the new assignee goes straight to `-Action Complete`. `raised`/`on-hold`/`re-assign` sources
+    are unaffected: those genuinely have no decision recorded yet, so landing back on `re-assign`
+    (open, undecided, in the other party's queue) is correct, not a bug."""
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
@@ -414,9 +443,11 @@ def reassign_run(cfg: Cfg, db: Db, run_id: str, new_assignee: str, comment: str 
         return f"no open escalation for run {run_id!r} to re-assign"
     who = _check_assignee(db, new_assignee)
     _grant(cfg, "escalation")
-    db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "re-assign"),
+    new_state = "in-progress" if esc["state"] == "in-progress" else _check_state(db, "re-assign")
+    db.update("escalation", {"id": esc["id"]}, state=new_state,
               next_action_assigned_to=who, comment=comment)
     return (f"escalation {esc['id']} (run {run_id!r}) re-assigned to {who!r}"
+           f"{' (stays in-progress)' if new_state == 'in-progress' else ''}"
            + (f" — {comment!r}" if comment else ""))
 
 
@@ -471,13 +502,19 @@ def pause_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None) -> str:
 
 
 def resume_run(cfg: Cfg, db: Db, run_id: str) -> str:
-    """Bring an on-hold MANUAL escalation back into the active (raised) queue."""
+    """Bring an on-hold OR re-assigned MANUAL escalation back into the active (raised) queue.
+
+    **`re-assign` accepted as a source state, 2026-08-17 (escalation #692)** — before this, a
+    re-assigned item had NO direct way back to `raised`; it had to be Paused first purely to
+    satisfy this function's state filter, an extra hop with no purpose of its own. Both `on-hold`
+    and `re-assign` mean the same thing from here: nobody has decided anything yet, so both
+    resolve the same way — back to `raised`, awaiting a real `AnswerRun` decision."""
     run_id = _resolve_run_id(db, run_id)
     if (err := _manual_only(run_id)):
         return err
-    esc = _latest_for_run(db, run_id, ("on-hold",))
+    esc = _latest_for_run(db, run_id, ("on-hold", "re-assign"))
     if not esc:
-        return f"no on-hold escalation for run {run_id!r} to resume"
+        return f"no on-hold/re-assign escalation for run {run_id!r} to resume"
     _grant(cfg, "escalation")
     db.update("escalation", {"id": esc["id"]}, state=_check_state(db, "raised"))
     return f"escalation {esc['id']} (run {run_id!r}) resumed — back in the active queue"
@@ -501,35 +538,91 @@ def retract_run(cfg: Cfg, db: Db, run_id: str, comment: str | None = None,
     return f"escalation {esc['id']} (run {run_id!r}) withdrawn" + (f" — {comment!r}" if comment else "")
 
 
+def _context_gist(raw: str | None) -> str:
+    """Short, human-scannable rendering of `context` for the report table — full JSON is noise at
+    a glance, but the row it usually carries (`reference_doc`, the planning document per
+    `cfg_escalation.document_reference_grouping`) is exactly what's needed to go find the detail."""
+    if not raw or raw == "{}":
+        return ""
+    try:
+        obj = json.loads(raw)
+    except (ValueError, TypeError):
+        return str(raw)[:60]
+    if isinstance(obj, dict) and "reference_doc" in obj:
+        return f"see {obj['reference_doc']}"
+    return str(obj)[:60]
+
+
 def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Path, list]:
     """`Escalation.ps1 -Action List` used to only print to the terminal — never persisted, the
     same standard violation `governance.reports_must_persist` (GOVERNANCE.md §9E) already named
     for every other report in this app. Fixed 2026-07-23: writes a real .md file (archived on
     every regenerate, same convention as every other report) and returns the rows so the caller
-    can still print a short terminal pointer, not the full dump."""
+    can still print a short terminal pointer, not the full dump.
+
+    **Reworked 2026-08-17** (researcher, live): the report was missing `type`/`comment`/
+    `related_activity`/`context` entirely — forcing raw SQL against the DB to find or group
+    anything, "not really fit for purpose." Also grouped by `related_activity` now, not a flat `id`
+    order, since the researcher's specific complaint was that related items ("escalations that all
+    belong together") weren't listed together. Adds a **Recently resolved** section — the report
+    used to show `_OPEN_STATES` only, so the moment an item completed, it and its `resolution`
+    vanished from every view; there was no way to see what had actually been done without a raw
+    query against a terminal state the report never selected."""
     ph = ",".join("?" * len(_OPEN_STATES))
-    rows = db.rows(f"SELECT id, run_id, source, at_step, state, short_description, "
-                   f"next_action_assigned_to, raised_at FROM escalation "
-                   f"WHERE state IN ({ph}) ORDER BY id", _OPEN_STATES)
+    rows = db.rows(f"SELECT id, run_id, source, at_step, state, type, short_description, context, "
+                   f"comment, related_activity, next_action_assigned_to, raised_at FROM escalation "
+                   f"WHERE state IN ({ph}) ORDER BY related_activity, id", _OPEN_STATES)
     n_on_hold = sum(1 for r in rows if r["state"] == "on-hold")
     # in-progress broken out from "active" explicitly (escalation #674) -- "awaiting a decision"
     # (raised/re-assign) and "decided, work under way" (in-progress) are different things to see
     # at a glance, the whole point of the new state.
     n_in_progress = sum(1 for r in rows if r["state"] == "in-progress")
     n_active = len(rows) - n_on_hold - n_in_progress
+    # Reads escalation.control_objectives/escalation.control_process live, not just documents them
+    # -- researcher, 2026-08-17: both settings existed since the 2026-08-16 reset with no code ever
+    # reading them (found via CONFIG-REPORT's orphan-configs check, module='escalation' branch,
+    # which requires the key literal + a `.setting(` call site IN THE SAME FILE to count as used).
+    # `-Action List` is this module's one natural "status check" moment, so this is where compliance
+    # gets stated, not a separate standalone check invented for the purpose.
+    objectives = cfg.setting("escalation.control_objectives", "")
+    process = cfg.setting("escalation.control_process", "")
     L = ["# Open escalations", "",
+         f"> {objectives}. {process}.".strip(), "",
          f"> Generated by `Escalation.ps1 -Action List`. {len(rows)} open escalation(s) "
-         f"({n_active} active, {n_in_progress} in-progress, {n_on_hold} on-hold).", ""]
+         f"({n_active} active, {n_in_progress} in-progress, {n_on_hold} on-hold), grouped by "
+         f"`related_activity`.", ""]
     if not rows:
         L.append("_no open escalations_")
     else:
-        L += ["| # | state | source | at step | assigned to | raised | short description |",
-              "|---|---|---|---|---|---|---|"]
+        L += ["| # | state | type | assigned to | related activity | short description | context | comment |",
+              "|---|---|---|---|---|---|---|---|"]
         for r in rows:
             q = str(r["short_description"]).replace("|", "\\|").replace("\n", " ")
+            ctx = _context_gist(r["context"]).replace("|", "\\|")
+            cm = str(r["comment"] or "").replace("|", "\\|").replace("\n", " ")
             state = f"**{r['state']}**" if r["state"] in ("on-hold", "in-progress") else r["state"]
-            L.append(f"| {r['id']} | {state} | {r['source']} | {r['at_step']} | "
-                     f"{r['next_action_assigned_to'] or ''} | {r['raised_at']} | {q} |")
+            L.append(f"| {r['id']} | {state} | {r['type']} | {r['next_action_assigned_to'] or ''} | "
+                     f"{r['related_activity']} | {q} | {ctx} | {cm} |")
+
+    resolved = db.rows(
+        "SELECT id, state, related_activity, resolution, answered_at FROM escalation "
+        "WHERE state IN ('completed','closed') AND resolution IS NOT NULL "
+        "ORDER BY answered_at DESC LIMIT 15")
+    L += ["", "## Recently resolved (last 15)", "",
+         "_Terminal items with a resolution recorded — the answer to \"what's actually been "
+         "done,\" not visible above since resolved items drop off the open list._", ""]
+    if not resolved:
+        L.append("_none yet_")
+    else:
+        L += ["| # | state | related activity | resolution | answered |",
+              "|---|---|---|---|---|"]
+        for r in resolved:
+            res = str(r["resolution"]).replace("|", "\\|").replace("\n", " ")
+            if len(res) > 200:
+                res = res[:200] + "… (full text in `escalation.resolution`, id " + str(r["id"]) + ")"
+            L.append(f"| {r['id']} | {r['state']} | {r['related_activity']} | {res} | "
+                     f"{r['answered_at']} |")
+
     reportkit.archive_before_write(path)
     path.parent.mkdir(parents=True, exist_ok=True)
     text = "\n".join(L).rstrip() + "\n"

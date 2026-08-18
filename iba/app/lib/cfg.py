@@ -42,6 +42,12 @@ def _trace(what: str, value) -> None:
         print(f"    [cfg] {what:44} = {v}", file=sys.stderr)
 
 
+class NonCompliantUtility(RuntimeError):
+    """Raised by `Cfg.assert_utility_compliant()` — the module has a live `cfg_utility` row
+    flagging hardcoded values that should be `cfg_setting`-driven (escalation #648), so it must
+    not run as-is."""
+
+
 class Cfg:
     """One open handle to the config store. Cheap; make one per process."""
 
@@ -139,6 +145,28 @@ class Cfg:
             "SELECT route FROM cfg_api WHERE name=? AND inactive=0", (api,)).fetchone()
         _trace(f"route {api}", r["route"] if r else None)
         return r["route"]
+
+    def assert_utility_compliant(self, file_path: str) -> None:
+        """Raises `NonCompliantUtility` if `file_path`'s own `cfg_utility` row is flagged
+        non-compliant (`purpose` prefixed `'NON-COMPLIANT (escalation #648'`) — the enforcement
+        half of the researcher's 2026-08-17 instruction: a script with known hardcoded-config
+        violations, put back into use, must signal that it needs revision (move the flagged
+        values to `cfg_setting`) before running, not run silently as before. Called by a module's
+        own entry point (its real caller — a handler dispatched via `run.py` — is the only place
+        this can be checked in code); a caller passes its own `file_path` (typically `__file__`
+        made project-relative). Deliberately narrow: only the ~2 of 105 flagged files that are
+        importable library modules with a real dispatcher-reachable caller can be checked this
+        way — the other ~103 are standalone scripts invoked directly (`python scripts/foo.py`),
+        with no code-level checkpoint to hook into at all; enforcement for those is process
+        discipline (check `cfg_utility` before running one), not something code can gate. See
+        `governance.noncompliant_script_gate` for the full policy text."""
+        row = self.conn.execute(
+            "SELECT purpose FROM cfg_utility WHERE file_path=?", (file_path,)).fetchone()
+        if row and row["purpose"] and row["purpose"].startswith("NON-COMPLIANT (escalation #648"):
+            raise NonCompliantUtility(
+                f"{file_path!r} is flagged non-compliant in cfg_utility and must be revised "
+                f"(hardcoded values moved to cfg_setting) before use -- see its own purpose text, "
+                f"or iba/app/reports/hardcoded-constants-sweep-20260817.md, for what needs to move.")
 
     def may_write(self, writer: str, database: str = "iba") -> set[str]:
         """Which tables this writer (an api, a step, or 'run') is granted to write.

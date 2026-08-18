@@ -128,10 +128,13 @@ package, no separate discipline to remember.
 
 ---
 
-## Phase 2 / Phase 3
+## Phase 2 / Phase 3 — **DONE (2026-08-17)**
 
-Unchanged from v3 — both explicitly on hold per #672's own answer ("phase 2 and phase 3 is on hold
-until phase 0 and 1 is completed").
+Gate cleared: Phase 1 was already done; Phase 0 (`#698`) applied for real this session. Phase 2/3
+(`#699`, approved option (b) — register all, mark any not clearly alive inactive) executed as one
+governed batch: all 343 previously-unregistered scripts registered into `cfg_utility` (202 active /
+141 inactive). Full detail: `BUILD.md` §132, `iba/app/reports/
+unregistered-scripts-batch-registration-20260817.md`.
 
 ---
 

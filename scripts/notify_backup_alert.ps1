@@ -14,7 +14,11 @@ Usage:
 Status files: C:\Users\lerouxc\nas_mirror_logs\status_<job>.txt  =  "<STATUS>|<ISO-8601>|<detail>"
 #>
 param(
-    [Parameter(Mandatory)][ValidateSet('mirror','dbbackup','watchdog')][string]$Job,
+    # 'dbbackup_iba' added 2026-08-17 (escalation #703) -- iba.db gets its own dedicated NAS
+    # backup task, same script/mechanism as bible_research.db's 'dbbackup', but a distinct job
+    # identity so one database's failure alert can never be silently overwritten by the other's
+    # status file (both used to share 'dbbackup' before iba.db had its own task at all).
+    [Parameter(Mandatory)][ValidateSet('mirror','dbbackup','dbbackup_iba','watchdog')][string]$Job,
     [Parameter(Mandatory)][ValidateSet('OK','FAIL')][string]$Status,
     [string]$Detail = ''
 )
