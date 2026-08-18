@@ -37,27 +37,26 @@ from .base import Ctx, Outcome, ok, fail, escalate
 APP_ROOT = pathlib.Path(__file__).resolve().parent.parent   # iba/app — scanned for orphan configs
 PROJECT_ROOT = APP_ROOT.parent.parent   # repo root — scanned by find_unregistered_project_scripts (Phase 0, #672)
 
-# every cfg_* table configuration_maintenance may touch (kept in step with the bootstrap
-# migration's CFG_TABLES — both name the same set on purpose, rule j: one rule, one home,
-# would eventually pull this from a single source; noted, not solved, in this first pass)
-CFG_TABLES = (
-    "cfg_meta", "cfg_table", "cfg_column", "cfg_unique", "cfg_enum", "cfg_connection",
-    "cfg_api", "cfg_write_grant", "cfg_work_package", "cfg_step", "cfg_setting",
-    "cfg_on_fail", "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule",
-    "cfg_change_log", "cfg_change_detail", "cfg_report", "cfg_report_section",
-    "cfg_report_csv_table", "cfg_utility",
-    # Found live 2026-08-17 trying to propose a cfg_content_index_exclude row: this tuple is
-    # hardcoded, not derived from cfg_table, so every cfg_* table created since it was last
-    # updated was invisible to configmaint.propose entirely -- a bigger block than a missing
-    # cfg_write_grant row (#695/#700's class of gap), since propose refuses the table outright
-    # before ever checking grants. Confirmed via cfg_table itself: cfg_escalation/cfg_index/
-    # cfg_method_rule/cfg_quality_check were ALSO missing here, predating this session. NOT
-    # switched to a dynamic SELECT FROM cfg_table -- checked first: the 20 tables above aren't
-    # themselves registered IN cfg_table yet (a separate, deeper backfill gap), so deriving from
-    # it right now would silently drop them. Flagged as a follow-on, not fixed here.
-    "cfg_content_index_exclude", "cfg_content_index_size_override", "cfg_escalation",
-    "cfg_index", "cfg_method_rule", "cfg_quality_check",
-)
+# Escalation #712, part 2 (2026-08-18) -- the hardcoded CFG_TABLES tuple this used to be is
+# retired. History: found live 2026-08-17 trying to propose a cfg_content_index_exclude row that
+# the tuple was hardcoded and not derived from cfg_table, so every cfg_* table created since it
+# was last updated was invisible to configmaint.propose entirely, before ever checking grants --
+# 6 tables missing that day (#712), 2 more the very next day (cfg_behaviour_class/_rule, #715/
+# BUILD.md §145), each requiring a second, easy-to-forget hardcoded-tuple edit alongside the
+# migration that created the table. NOT switchable to a dynamic SELECT until now because the 20
+# foundational cfg_* tables (cfg_meta, cfg_table, cfg_setting, etc.) weren't themselves registered
+# IN cfg_table -- deriving from it would have silently dropped them. That backfill is done
+# (migration/backfill_foundational_cfg_tables_v1_20260818.py, part 1 -- verified live: 29/29
+# cfg_* tables registered), so this now derives live instead of duplicating a second list by hand.
+def _known_cfg_tables(conn: sqlite3.Connection) -> set[str]:
+    """The set of cfg_* tables configuration_maintenance may touch — live from cfg_table
+    (database='iba'), not a hardcoded tuple. A newly created cfg_* table becomes visible here as
+    soon as ITS OWN migration registers it in cfg_table (governance.tables already requires this
+    in the same unit of work) — no second edit to this file required, closing the recurring gap
+    this class of bug kept reproducing."""
+    return {r[0] for r in conn.execute(
+        "SELECT name FROM cfg_table WHERE database='iba' AND name LIKE 'cfg\\_%' ESCAPE '\\' "
+        "AND inactive=0")}
 
 # module -> the dedicated table it already has, if any (rule c's "very good reason" check).
 # Moved to lib/cfgquality.py 2026-07-21 so lib/cfgreport.py can share it without a circular import.
@@ -73,45 +72,66 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     e: list[str] = []
     q = lambda sql, p=(): conn.execute(sql, p).fetchall()
 
-    # database='iba' explicit throughout this function — escalation #653 (2026-08-17) widened
-    # cfg_table/cfg_column to also describe bible_research.db, and the two DBs genuinely share
-    # table names (cluster/passage/verse/word_registry) for DIFFERENT tables. This function checks
-    # THIS app's own schema coherence — it must not silently mix the other database's rows in.
-    tables = {r["name"] for r in q("SELECT name FROM cfg_table WHERE database='iba'")}
+    # Escalation #723, 2026-08-18: this used to hardcode database='iba' throughout (escalation
+    # #653's reasoning still applies — iba.db and bible_research.db share table names, e.g.
+    # 'cluster'/'passage'/'verse'/'word_registry', for DIFFERENT tables, so per-database scoping
+    # within each check is still required). What changed: WHICH databases to loop over is now
+    # read from cfg_enum 'project_database' (bootstrap_project_database_enum_v1_20260818.py)
+    # instead of being a literal — this is also the direct fix for why escalation #722's 7
+    # bible_research.db tables were invisible to this check: it simply never looked.
+    databases = [r["value"] for r in q("SELECT value FROM cfg_enum WHERE name='project_database'")]
     real_cfg_tables = {r[0] for r in q(
         "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
-    columns: dict[str, set[str]] = {}
+    tables: dict[str, set[str]] = {}       # database -> table names (used below for cfg_write_grant)
+
+    for db in databases:
+        db_tables = {r["name"] for r in q("SELECT name FROM cfg_table WHERE database=?", (db,))}
+        tables[db] = db_tables
+        columns: dict[str, set[str]] = {}
+        for r in q("SELECT table_name, name FROM cfg_column WHERE database=?", (db,)):
+            columns.setdefault(r["table_name"], set()).add(r["name"])
+
+        # schema integrity
+        for t in db_tables:
+            pk_n = q("SELECT COUNT(*) n FROM cfg_column WHERE database=? AND table_name=? "
+                    "AND is_pk=1", (db, t))[0]["n"]
+            if pk_n > 1:
+                e.append(f"schema: {db}.{t} has {pk_n} primary keys")
+        for r in q("SELECT table_name, name, fk FROM cfg_column WHERE database=? AND "
+                  "fk IS NOT NULL", (db,)):
+            rt, _, rc = r["fk"].partition(".")
+            if rt not in db_tables:
+                e.append(f"schema: {db}.{r['table_name']}.{r['name']} FK -> unknown table {rt!r}")
+            elif rc not in columns.get(rt, set()):
+                e.append(f"schema: {db}.{r['table_name']}.{r['name']} FK -> unknown column "
+                         f"{rt}.{rc}")
+        for r in q("SELECT table_name, col FROM cfg_unique WHERE database=?", (db,)):
+            if r["col"] not in columns.get(r["table_name"], set()):
+                e.append(f"schema: {db}.{r['table_name']} unique names unknown column "
+                         f"{r['col']!r}")
+
+        # write grants: every granted table must be a real table (data OR cfg_*, cfg_* tables
+        # only physically exist in iba.db, hence the real_cfg_tables fallback applying to every
+        # database's grants — a bible_research grant naming a cfg_* table would be a real error).
+        for r in q("SELECT DISTINCT writer, table_name FROM cfg_write_grant WHERE database=? "
+                  "AND inactive=0", (db,)):
+            if r["table_name"] not in db_tables and r["table_name"] not in real_cfg_tables:
+                e.append(f"rules: write_grant ({db}) {r['writer']!r} -> unknown table "
+                         f"{r['table_name']!r}")
+
+    # everything below is inherently iba-only (cfg_step/cfg_on_fail/cfg_setting/cfg_api have no
+    # database column at all — they're this app's own control-plane data, not per-database
+    # concepts; bible_research.db has no work packages/steps/settings in this cfg_* system, it
+    # still runs on the legacy engine/ pipeline). columns/tables below = iba.db's own, for the
+    # span/strong column-name checks further down.
+    columns = {}
     for r in q("SELECT table_name, name FROM cfg_column WHERE database='iba'"):
         columns.setdefault(r["table_name"], set()).add(r["name"])
-
-    # schema integrity
-    for t in tables:
-        pk_n = q("SELECT COUNT(*) n FROM cfg_column WHERE database='iba' AND table_name=? "
-                "AND is_pk=1", (t,))[0]["n"]
-        if pk_n > 1:
-            e.append(f"schema: {t} has {pk_n} primary keys")
-    for r in q("SELECT table_name, name, fk FROM cfg_column WHERE database='iba' AND fk IS NOT NULL"):
-        rt, _, rc = r["fk"].partition(".")
-        if rt not in tables:
-            e.append(f"schema: {r['table_name']}.{r['name']} FK -> unknown table {rt!r}")
-        elif rc not in columns.get(rt, set()):
-            e.append(f"schema: {r['table_name']}.{r['name']} FK -> unknown column {rt}.{rc}")
-    for r in q("SELECT table_name, col FROM cfg_unique"):
-        if r["col"] not in columns.get(r["table_name"], set()):
-            e.append(f"schema: {r['table_name']} unique names unknown column {r['col']!r}")
 
     # STEP apis (inactive=0: escalation #310, deactivated config is excluded from validation)
     for r in q("SELECT name, route FROM cfg_api WHERE inactive=0"):
         if "{version}" not in (r["route"] or ""):
             e.append(f"step: api {r['name']} route has no {{version}} placeholder")
-
-    # write grants: every granted table must be a real table (data OR cfg_*). database='iba' --
-    # this checks THIS app's own tables; a database='bible_research' grant (escalation #680)
-    # documents intent against a different schema this function doesn't have loaded.
-    for r in q("SELECT DISTINCT writer, table_name FROM cfg_write_grant WHERE database='iba' "
-              "AND inactive=0"):
-        if r["table_name"] not in tables and r["table_name"] not in real_cfg_tables:
-            e.append(f"rules: write_grant {r['writer']!r} -> unknown table {r['table_name']!r}")
 
     # step names must be globally unique ACROSS work packages, not just within one (the PK is
     # (work_package, step), which would silently allow a duplicate) — escalation.pending_for_word/
@@ -150,6 +170,16 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     for r in q("SELECT status FROM cfg_status_flow WHERE entity='word' AND inactive=0"):
         if r["status"] not in valid_status:
             e.append(f"rules: status {r['status']!r} not in enum.word_status {sorted(valid_status)}")
+
+    # cfg_prose_chapter.status in enum.prose_chapter_status (escalation #714/#727 — the enum
+    # existed with no check actually using it, a genuine gap in the same session that created it,
+    # not a pre-existing one; same shape as the word_status check just above).
+    valid_prose_status = {r["value"] for r in
+                          q("SELECT value FROM cfg_enum WHERE name='prose_chapter_status'")}
+    for r in q("SELECT chapter, status FROM cfg_prose_chapter"):
+        if r["status"] not in valid_prose_status:
+            e.append(f"rules: prose chapter {r['chapter']} status {r['status']!r} not in "
+                     f"enum.prose_chapter_status {sorted(valid_prose_status)}")
 
     # settings: a *pattern setting must compile; report.*_fields must name real columns
     span_cols = columns.get("span", set()) | {"sense"}
@@ -383,8 +413,9 @@ def _table_columns(conn: sqlite3.Connection, table: str) -> set[str]:
 
 def _check_proposal(conn: sqlite3.Connection, table: str, op: str, where: dict, set_: dict) -> list[str]:
     e: list[str] = []
-    if table not in CFG_TABLES:
-        e.append(f"{table!r} is not a recognised cfg_* table (known: {sorted(CFG_TABLES)})")
+    known = _known_cfg_tables(conn)
+    if table not in known:
+        e.append(f"{table!r} is not a recognised cfg_* table (known: {sorted(known)})")
         return e                                             # nothing else is checkable
     if op not in ("insert", "update", "delete"):
         e.append(f"op must be one of insert/update/delete, got {op!r}")

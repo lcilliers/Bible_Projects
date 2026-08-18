@@ -1824,3 +1824,46 @@ was declared here and in `cfg_escalation` and never once produced by any functio
 — `hold`→`on-hold`, `noted`→`closed` (neither satisfies a dispatcher's `answered_for_run` lookup
 any more, so a real pause answered either way correctly stays paused rather than being misread as
 a decision), new `reassign_run()`. Full record: `BUILD.md` §116.
+
+## §40. `configmaint`'s own machinery made config-driven, not just what it governs (2026-08-18)
+
+Five mechanism changes to `configmaint.py`/`cfgquality.py` themselves — not new content in a
+governed table, changes to the governing code's own behaviour, which is why they're recorded here
+rather than only in `BUILD.md`'s build history (full content/data detail: `BUILD.md` §§145-147).
+
+**`configmaint.propose`'s known-table list is no longer a hardcoded tuple.** `CFG_TABLES` (a
+Python literal, edited by hand every time a new `cfg_*` table was created — missed twice inside
+24 hours, escalations `#712`/`#715`) is retired; `_known_cfg_tables(conn)` derives it live from
+`cfg_table`. A new `cfg_*` table becomes proposable the moment its own migration registers it —
+`governance.new_utility_registration_timing`'s "same unit of work" requirement is now sufficient
+on its own, no second file to remember.
+
+**`_validate_live`'s schema-integrity checks no longer hardcode `database='iba'`.** They loop over
+`cfg_enum 'project_database'` — collision-safe per database still (escalation `#653`'s original
+concern), but no longer blind to `bible_research.db`'s own coherence, which had literally never
+been checked before (found live: 7 tables there with the same compound-PK registration defect 11
+`iba.db` tables had, invisible until this loop existed).
+
+**A `database.<name>.path` structured pair replaces `governance.project_databases`'s prose for
+anything that needs to iterate "every known project database" programmatically** — the prose
+setting stays for a human reader, per `cfg_behaviour_rule
+documentation.single-authority-pointer-not-copy` (a fact has one authoritative FORM per
+consumer-kind, not one authoritative row full stop). `Cfg.database_path(name)` is the real
+consumer, wired into `init.py`'s startup sequence as a live path-drift check, not a read-and-
+discard.
+
+**`find_orphan_configs` gained a second documentation-only module class.** Previously only
+`module='governance'` settings were exempt from the "must co-occur with a literal `.setting(`
+call" rule (they're process rules for the AI, not runtime-applied values). `_NARRATIVE_MODULES`
+generalises this to any module whose settings are pure infrastructure documentation with no
+apply-the-value behaviour to grep for — seeded with `'backup'` (all 6 live rows checked
+individually against their content before adding the module, not assumed).
+
+**Two new governance-layer mechanisms exist as of today, both still mid-build:**
+`governance.operational_behaviour_control` (`cfg_behaviour_class`/`cfg_behaviour_rule` — chat/
+terminal/sqlite/documentation/llm_output operational-behaviour rules, project-wide scope, escalation
+`#715`, 2 cycles in, `chat` still empty) and `governance.prose_canonical_authority`
+(`cfg_prose_chapter`/`cfg_prose_concept` — the programme prose as the project's canonical
+definition source, pointed at rather than restated, escalation `#714`, chapters 4-6 still
+unaligned). Neither is finished; both are named here because they're new *governing* mechanisms,
+not because the work is done.

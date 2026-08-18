@@ -73,6 +73,31 @@ class Cfg:
         _trace(f"setting {key}", val)
         return val
 
+    def database_path(self, name: str) -> pathlib.Path:
+        """Project-root-relative path to a registered project database, per `cfg_enum
+        'project_database'`/`database.<name>.path` (escalation #723's settings; this method is
+        their real consumer, added escalation #727 after both sat as genuine orphans — nothing
+        read them). `database.<name>.path` is always READ (real `.setting()` usage either way, not
+        skipped for 'iba') — but the RETURN VALUE for `name='iba'` is the already-known `DB_PATH`,
+        not a value re-derived from the setting: bootstrapping the very first connection has to use
+        the hardcoded `DB_PATH` constant (reading it from a row inside the database it locates
+        would be circular, the same class of exception `lib/cfg.py` itself is `config_exempt`
+        for) — but by the time this method runs, that connection already exists, so reading the
+        setting here is a genuine post-bootstrap VERIFICATION (does the configured value still
+        match where the DB actually lives?), not a bootstrap dependency. A mismatch is real drift,
+        surfaced by `init.py`'s startup check, not silently ignored."""
+        repo_root = DB_PATH.resolve().parent.parent.parent.parent
+        rel = self.setting(f"database.{name}.path")
+        if rel is None:
+            raise KeyError(f"no database.{name}.path setting -- is {name!r} a registered "
+                          f"project_database? (cfg_enum 'project_database')")
+        if name == "iba":
+            configured = (repo_root / rel).resolve()
+            if configured != DB_PATH.resolve():
+                _trace("database_path(iba) DRIFT", f"configured={configured} actual={DB_PATH}")
+            return DB_PATH
+        return repo_root / rel
+
     # ── the schema (data tables built from here) ─────────────────────────────
     # `database='iba'` explicit on both queries below — escalation #653 (2026-08-17) widened
     # cfg_table/cfg_column to describe bible_research.db too (governance.tables/.table_columns:
@@ -113,18 +138,25 @@ class Cfg:
         _trace(f"indexes({table})", result)
         return result
 
-    def unique_key(self, table: str) -> list[str]:
-        """The dedup key — the composite UNIQUE, else the single UNIQUE column, else the PK."""
+    def unique_key(self, table: str, database: str = "iba") -> list[str]:
+        """The dedup key — the composite UNIQUE, else the single UNIQUE column, else the PK.
+        `database` defaults to 'iba' (matches `may_write()`'s convention) — added escalation
+        #723's supporting infra: all three queries here were missing a database filter entirely,
+        the same shared-table-name ambiguity (`passage` exists in both DBs) `may_write()`/
+        `columns()` were already fixed for, just never applied to this method."""
         comp = [r["col"] for r in self.conn.execute(
-            "SELECT col FROM cfg_unique WHERE table_name=? ORDER BY ordinal", (table,))]
+            "SELECT col FROM cfg_unique WHERE database=? AND table_name=? ORDER BY ordinal",
+            (database, table))]
         if comp:
             _trace(f"unique_key({table})", comp); return comp
         u = [r["name"] for r in self.conn.execute(
-            "SELECT name FROM cfg_column WHERE table_name=? AND is_unique=1", (table,))]
+            "SELECT name FROM cfg_column WHERE database=? AND table_name=? AND is_unique=1",
+            (database, table))]
         if u:
             _trace(f"unique_key({table})", u); return u
         pk = [r["name"] for r in self.conn.execute(
-            "SELECT name FROM cfg_column WHERE table_name=? AND is_pk=1", (table,))]
+            "SELECT name FROM cfg_column WHERE database=? AND table_name=? AND is_pk=1",
+            (database, table))]
         _trace(f"unique_key({table})", pk); return pk
 
     def enum(self, name: str) -> list[str]:

@@ -8107,3 +8107,266 @@ confirmed) both produced clean, correctly-quoted CSVs through the full PS→disp
 
 **Files:** `iba/app/lib/contentindex.py` (`write_search_csv`), `iba/app/handlers/reports.py`
 (`content_index_search`), `iba/app/ps/ContentIndex-Search.ps1` (`-Csv`), `USER-GUIDE.md` §13b.
+
+## 145. Operational-behaviour cfg layer — cycle 1 ("the obvious ones") built (2026-08-18, escalation #715)
+
+Researcher instruction (chat, 2026-08-18, formalised in
+`Workflow/Chat_responses/comments-operational-behaviour-plan`): a project-wide (not `iba/app/**`
+only) cfg mechanism to regulate *operational behaviour* — chat, terminal, sqlite, documentation,
+and (addendum) llm_output — replacing the scattered, undecided state these rules were in across
+`CLAUDE.md`, memory, and the now-retired `wa_rule_registry`. Full plan, background, and the
+researcher's own comments: `iba/app/reports/operational-behaviour-rules-cfg-plan-20260818.md`.
+
+**Built this cycle** (`iba/app/migration/bootstrap_behaviour_rules_v1_20260818.py`):
+
+- Two new tables: `cfg_behaviour_class` (the taxonomy: `chat`, `terminal`, `sqlite`,
+  `documentation`, `llm_output`) and `cfg_behaviour_rule` (rule content per class — `rule_key`,
+  `rule_text` worded as a definitive statement per the researcher's explicit instruction,
+  `source`, `enforced_by`). Both registered in `cfg_table`/`cfg_column`, both write-granted to
+  `configmaint.propose`.
+- `governance.operational_behaviour_control` — the entry-point anchor setting, stating the
+  project-wide scope and the "a rule lives in exactly one place" principle (no rule stands in both
+  a document and a cfg row at once).
+- Four rules seeded — the direct successors of the four `wa_rule_registry` principle-rules found
+  unhomed 2026-08-18 (governance-alignment register row 5's open note): `GR-DB-001` →
+  `sqlite.verify-before-acting`, `GR-PROC-001` → `terminal.step-not-done-without-validated-output`,
+  `GR-REF-001` → `documentation.single-authority-pointer-not-copy`, `GR-PROG-009` →
+  `llm_output.inferential-not-confirmed` (reframed by the researcher as the general API/LLM-use
+  discipline rule, not only an analytical-finding label).
+- `class='chat'` deliberately seeded with **zero rules** — its content (CLAUDE.md §9,
+  `docs/interaction-preferences.md`, `cfg_escalation.chat_routing`, the `feedback_*` memory set)
+  needs the `Workflow/*` + session-log survey and CLAUDE.md/memory audit the researcher named as
+  later cycles; guessing a partial set now would misrepresent the class as populated.
+- `authoritative_doc` left `NULL` on every class — the guide-authority mapping (which of
+  `USER-GUIDE.md`/`GOVERNANCE.md`/`BUILD.md`/`README.md`/`CLAUDE.md`/
+  `docs/interaction-preferences.md` governs which class) is explicitly undecided, not guessed.
+
+**Two pre-existing gaps surfaced (not caused) by running `configmaint.validate` to check this
+work**, fixed the same session via `iba/app/migration/fix_missing_write_grants_v1_20260818.py`
+(escalation #716, closed `noted`): `cfg_method_rule`/`cfg_quality_check` had no
+`cfg_write_grant` row for `configmaint.propose` (hard coherence error, blocked all `configmaint.*`
+dispatch until fixed); `bootstrap_behaviour_rules` itself flagged zero-Cfg-method-call-sites,
+resolved via `cfg_utility.config_exempt=1` (same class already established for `cfgload.py` — a
+migration script that writes cfg_* directly via raw sqlite3, not the `Cfg` wrapper).
+
+**`configmaint.validate` after both fixes**: schema coherent (0 hard errors). Remaining
+pause-continue is a **pre-existing, project-wide backlog unrelated to this work** — 6 orphan
+`backup.*` settings, 1 `GOVERNANCE.md` staleness note, 110 legacy utility modules with zero cfg
+usage (escalation #717, closed `noted` — out of scope for #715/#716, flagged in chat, not silently
+dropped).
+
+**Explicitly NOT done this cycle** (the researcher's later-cycle instructions, tracked in the plan
+doc, not repeated here): the `Workflow/*` + session-log survey for prior (including failed)
+regulation attempts; the `CLAUDE.md`/memory audit; consolidating `cfg_escalation.chat_routing` or
+any other pre-existing cfg row into this structure; the doc-authority mapping; a deviation-
+monitoring/enforcement mechanism; quantifying impact on existing docs/data; the four-way future
+procedural-document taxonomy (planning / config-extract / history / guidance) the researcher named.
+Also queued, same session: `GR-PROG-002` is superseded by the prose rules (escalation #714
+addendum) — a parallel, not-yet-executed reference sweep, gated on #714's prose-pointer mechanism.
+
+**Files:** `iba/app/migration/bootstrap_behaviour_rules_v1_20260818.py`,
+`iba/app/migration/fix_missing_write_grants_v1_20260818.py`,
+`iba/app/reports/operational-behaviour-rules-cfg-plan-20260818.md`,
+`Workflow/Chat_responses/comments-operational-behaviour-plan`.
+
+**Addendum, same day — `#712` relationship checked directly, not assumed.** Researcher asked
+whether `#712`'s outstanding work should land before continuing `#715` (`#716` looked related).
+Checked by reading `handlers/configmaint.py`, not guessed: `#712` (still open, `state:
+in-progress`, awaiting researcher decision on its own two-part follow-on) is the **code-level**
+`CFG_TABLES` allowlist gap; `#716` (closed) was the **DB-level** `cfg_write_grant` gap — related,
+not the same. Confirmed live: `cfg_behaviour_class`/`cfg_behaviour_rule` were absent from
+`CFG_TABLES`, so `configmaint.propose` would have rejected any write to either table outright —
+`#716`'s fix never touched this. `#712`'s own two-part follow-on (backfill `cfg_table` for the 20
+foundational tables, then derive `CFG_TABLES` dynamically) does **not** need to land first —
+applied `#712`'s own already-established immediate mitigation instead (add the new names directly
+to the tuple, exactly as `#712` did for its original 6) — `iba/app/handlers/configmaint.py`
+`CFG_TABLES` now 29 entries, confirmed via live import. `#712` itself left open and unedited —
+still the researcher's call on the deeper dynamic-derivation question.
+
+## 146. `#712` completed — foundational `cfg_table` backfill, `CFG_TABLES` made dynamic, and the compound-PK/validator-scoping cascade it surfaced (2026-08-18, escalations #712/#719-724)
+
+**Part 1 — backfill.** `migration/backfill_foundational_cfg_tables_v1_20260818.py`: registered
+all 20 foundational `cfg_*` tables (`cfg_meta`, `cfg_table`, `cfg_setting`, etc. — the ones that
+predate `cfg_table`/`governance.tables` itself) in `cfg_table`/`cfg_column`, with `use`/description
+text written from each table's own live schema + sample rows, not guessed. Verified live: 29/29
+`cfg_*` tables now registered.
+
+**Part 2 — `CFG_TABLES` made dynamic.** `handlers/configmaint.py`'s hardcoded `CFG_TABLES` tuple
+(the recurring-gap class `#712` itself was raised over) replaced with `_known_cfg_tables(conn)`,
+a live `SELECT name FROM cfg_table WHERE database='iba' AND name LIKE 'cfg\\_%' ... AND
+inactive=0` — a newly created `cfg_*` table becomes visible to `configmaint.propose` as soon as
+its own migration registers it in `cfg_table` (already required, same unit of work), no second
+hardcoded-tuple edit needed. Verified: matches the live schema exactly, 29/29.
+
+**Fallout, found running `configmaint.validate` to check part 2 (escalation `#719`/`#720`):** 11
+of the just-backfilled tables hard-failed a `pk_n > 1` coherence check. Not a false positive —
+checked `lib/db.py` directly: `_col_ddl()` emits an inline column-level `PRIMARY KEY` per
+`is_pk=1` column, and SQLite only allows one such declaration per `CREATE TABLE`; truthfully
+marking every column of a compound key `is_pk=1` (which the backfill had just done, accurately
+reflecting the real schema) is itself a latent bug — it would crash table creation the moment any
+of these tables needed rebuilding from scratch. `Db.upsert()`'s dedup key (`Cfg.unique_key()`)
+breaks the same way. One prior, incomplete precedent existed (`cfg_index`, `is_pk=0`-everywhere
+but zero `cfg_unique` backing rows, added 2026-08-07) — not a template to copy blindly, since it
+lost the true-key information rather than preserving it via `cfg_unique`.
+
+**Widened the search past `iba.db` on the researcher's direct challenge** ("I would expect
+another flag to appear because bible_research_db definitely have multiple FKs... if this is about
+more than cfg.* related indexes") — found the identical pattern in **7 `bible_research.db`
+tables**, invisible to `_validate_live` because it hardcoded `database='iba'` throughout, and (a
+second, distinct gap) the checker meant to enforce `governance.rules_must_be_config_driven` was
+itself not config-driven about which database(s) to check — no `cfg_enum` named the project's
+databases; `governance.project_databases` was prose, not queryable.
+
+**Raised three escalations rather than fixing inline** (researcher instruction — several distinct
+focus areas), full evidence in
+`iba/app/reports/cfg-pk-registration-and-validator-scoping-plan-20260818.md`: `#721` (iba.db, 12
+tables), `#722` (bible_research.db, 7 tables), `#723` (validator not config-driven). All three
+approved ("as per plan").
+
+**Built, once approved:**
+- `migration/add_cfg_unique_database_column_v1_20260818.py` — `cfg_unique` gained a `database`
+  column (PK widened to `(database, table_name, col)`), same precedent as `cfg_table`/
+  `cfg_write_grant`'s own 2026-08-17 widenings (`#653`/`#680`) — needed because `cfg_unique` rows
+  for both databases can now share table names (`passage` already existed). `Cfg.unique_key()`
+  (`lib/cfg.py`) gained a `database` parameter (default `'iba'`) and now filters all three of its
+  queries by it — it had been missing the filter entirely, the same ambiguity class `may_write()`/
+  `columns()` were already fixed for, just never applied here.
+- `migration/bootstrap_project_database_enum_v1_20260818.py` — `cfg_enum project_database` (`iba`,
+  `bible_research`) plus two structured settings, `database.iba.path`/`database.bible_research.path`
+  (module `database`, added to `enum.config_module`) — the queryable decomposition of
+  `governance.project_databases`'s prose (left in place for human orientation; not a duplicate
+  rule per `cfg_behaviour_rule` documentation class — one's for a reader, one's for code). Naming
+  (`database.<name>.path`, not a flatter key) per the researcher's own refinement of the first
+  sketch, matching the `<module>.<key>` convention already used everywhere else in `cfg_setting`.
+- `handlers/configmaint.py`'s `_validate_live` rewritten: the schema-integrity block (PK count, FK
+  target, `cfg_unique` column, write-grant target checks) now loops over `cfg_enum
+  'project_database'` instead of one hardcoded database — collision-safe per iteration (escalation
+  `#653`'s original concern still holds), but no longer blind to `bible_research.db`. Everything
+  below (steps/on_fail/status_flow/settings/api) stays iba-only, correctly — those tables have no
+  `database` column at all, they're this app's own control-plane data, not per-database concepts.
+- `migration/fix_compound_pk_registration_v1_20260818.py` — `is_pk=0` + correctly-ordered
+  `cfg_unique` rows for all 19 tables (12 iba.db + 7 bible_research.db) in one consistent pass;
+  `cfg_index` got its first-ever `cfg_unique` backing at the same time, closing its own
+  2026-08-07 gap rather than leaving it the odd one out.
+
+**Verified live, in order:** `_validate_live` direct call → 0 errors (was 21 mid-fix: 12 iba + 7
+bible_research + 2 self-inflicted `config_module` gaps from the new `database` module, also
+fixed). `Cfg.unique_key()` spot-checked against all 12 iba.db tables — every one resolves the
+correct true-key column order. Real dispatcher run (`Config-Maintenance.ps1 -Step Validate`):
+schema-coherent, only the same pre-existing advisory backlog remains (2 orphans — the two new path
+settings, honestly unconsumed by any code yet, not faked; 1 stale-doc note predating this session;
+110 legacy utility modules — all previously flagged, all still out of scope here).
+
+**Escalations closed:** `#719` (root-caused, not just acknowledged — the `backup.*`
+`_NARRATIVE_MODULES` fix from earlier the same session), `#720` (this section's full fix),
+`#724` (final advisory pass, `noted`). `#721`/`#722`/`#723` all closed via this work.
+
+**Files:** `iba/app/migration/backfill_foundational_cfg_tables_v1_20260818.py`,
+`iba/app/migration/add_cfg_unique_database_column_v1_20260818.py`,
+`iba/app/migration/bootstrap_project_database_enum_v1_20260818.py`,
+`iba/app/migration/fix_compound_pk_registration_v1_20260818.py`,
+`iba/app/handlers/configmaint.py` (`_known_cfg_tables`, `_validate_live`), `iba/app/lib/cfg.py`
+(`unique_key`), `iba/app/reports/cfg-pk-registration-and-validator-scoping-plan-20260818.md`.
+
+## 147. `#715` cycle 2 (`Workflow/*` guide sweep) + `#714` prose-canonical-authority — both built (2026-08-18)
+
+**`#715` cycle 2.** Per the researcher's own sequencing ("start with the obvious ones... then eat
+into everything else in different focusses" + "survey the `/workflow/*` folder... this is not the
+first time there is attempt to regulate the system"), surveyed `Workflow/*` before writing more
+rule content. Found three top-level folders never mentioned in `CLAUDE.md`
+(`Workflow/Claude_API/`, `Workflow/SQLite/`, `Workflow/Obsidian/`, all dated 2026-08-15) holding
+real, current, unclaimed rule content — not failed attempts, live guides nobody had folded into
+`cfg_behaviour_rule` yet. The actual "failed prior attempt" the researcher was recalling is
+`wa_rule_registry` itself (confirmed via `Logs/wa-global-rules-review-obslog-v1_0-20260421.md`) —
+59 rules, never mechanically enforced, drifted across every method pivot, retired 2026-08-17
+(register item #5) — the lesson taken: a rules table without `enforced_by` tends to rot, an
+argument for not deferring deviation-monitoring indefinitely, not for abandoning the config
+approach itself.
+
+`migration/bootstrap_behaviour_rules_cycle2_v1_20260818.py` — 11 rules seeded from the three
+guides: 6 `llm_output` (from `claude-api-usage-guide-v1-20260815.md` §5 — SDK-dependency decision,
+no hardcoded call params, cost-cap-before-call, usage-log required, Sonnet-5 default,
+never-expose-API-key), 4 `sqlite` (from `sqlite-extension-best-practice-v1-20260815.md` — the
+"verify, don't trust" section overlapped the already-seeded `sqlite.verify-before-acting` and
+wasn't repeated; new content: read-only by default, never write via an ad-hoc tool, don't assume
+which database, query-file conventions), 1 `documentation` (from
+`obsidian-usage-guide-v1-20260815.md` — an Obsidian-edited copy of a DB-generated file is never
+authoritative). `chat` still seeded empty — none of the three docs are about the human-Claude
+interaction protocol; that audit (`CLAUDE.md` §9/`docs/interaction-preferences.md`/memory) is
+still a separate, un-started item.
+
+**`#714` — prose-canonical-authority, parts (a)/(b)/(c)/(e).**
+`migration/bootstrap_prose_authority_v1_20260818.py`:
+
+- `governance.prose_canonical_authority` — entry-point anchor (part a), stating the programme
+  prose is canonical, chapters 0–3 reviewed/final and 4–6 not yet aligned (per the researcher's
+  direct statement — NOT re-derived from the prose extract file's own per-section `status`
+  metadata, which is known stale, still `draft` everywhere as of the 2026-08-14 export; flagged as
+  a discrepancy, not resolved), and states the "no rule restated once it's pointed at" + the
+  methodology-change-flags-prose principle (part f's principle only — no enforcement mechanism
+  built).
+- `cfg_prose_chapter` (part b/c) — one row per chapter (0–6), status, source doc. Does not hold
+  the prose text itself — an index, not a copy.
+- `cfg_prose_concept` (part b/c) — a pointer index: "this concept is defined at this
+  chapter/section," not a restatement. Two rows seeded (part e): `verse_primacy` (direct successor
+  of `wa_rule_registry` `GR-PROG-001`) and `inner_being_definition` (successor of `GR-PROG-002`,
+  superseded per the researcher's 2026-08-18 decision) — both point at prose chapter 1's "Defining
+  Inner Being"/"This Inner-Being Programme" sections, confirmed present in the live extract.
+- Escalation raised (part d): programme prose chapters 4–6 need alignment against the current
+  architecture/`GOVERNANCE.md` — not started, tracked separately.
+
+**Not done, either item:** the `GR-PROG-002` reference sweep (6 live files identified 2026-08-18,
+still un-edited); `chat` class population; `authoritative_doc` decisions per behaviour class;
+deviation-monitoring mechanism; part (f)'s actual flagging mechanism (principle stated, not built).
+
+**Verified:** `configmaint.validate` — 0 hard errors after both bootstraps; 3 advisory orphans, all
+legitimately pre-staged (the two `database.*.path` settings from `#723`, plus the new
+`prose_chapter_status` enum — none yet consumed by code, none faked to silence the check).
+
+**Files:** `iba/app/migration/bootstrap_behaviour_rules_cycle2_v1_20260818.py`,
+`iba/app/migration/bootstrap_prose_authority_v1_20260818.py`.
+
+## 148. Escalation `#727` — genuine orphans actually fixed, not noted again (2026-08-18, later same day)
+
+Researcher, on `#727` (a `configmaint.validate` advisory run): *"this need your attention, a few
+missing strings still"* — after this session had repeatedly answered the identical recurring
+advisory `noted` without addressing the substance. Three real orphans, each root-caused:
+
+- **`cfg_enum 'prose_chapter_status'`** — genuinely a gap in this session's own earlier work
+  (`#714`): the enum existed, nothing checked `cfg_prose_chapter.status` against it.
+  `handlers/configmaint.py:_validate_live` gained the check, same shape as the existing
+  `word_status`/`cfg_status_flow` one immediately above it. Verified: 0 errors, and the orphan is
+  gone from the live report.
+- **`cfg_setting 'database.iba.path'`/`'database.bible_research.path'`** — `Cfg.database_path(name)`
+  (`lib/cfg.py`) is their real consumer: resolves either database's configured path, and for
+  `'iba'` specifically reads-then-verifies against the already-known `DB_PATH` rather than
+  deriving it circularly (the connection has to exist before it can read its own location back out
+  of itself — same class of exception `lib/cfg.py` is already `config_exempt` for). Wired into
+  `init.py`'s startup sequence as a real path-drift check (does the configured path still match
+  where the file actually lives?), not a read-and-discard — verified live,
+  `python -m iba.app.init` now prints `database 'iba' -> ...`/`database 'bible_research' -> ...`
+  for both.
+- **These two settings still show as orphans in `find_orphan_configs`'s report** — checked why
+  rather than assumed fixed: the checker's same-file-literal-match heuristic looks for the key as
+  a quoted string literal; `Cfg.database_path()` builds it via `f"database.{name}.path"`, so the
+  literal text never appears in the source. Real usage, proven live above, undetectable by a
+  text-scan that doesn't follow f-string interpolation — a known category the checker's own
+  docstring acknowledges exists (`_WORD_SECTIONS`-style indirection) without a general mechanism
+  to catch it. Not chased further — degrading the method to two hardcoded branches just to satisfy
+  the scanner would trade correct, extensible code for a green checkmark; left as a documented,
+  understood false-positive instead.
+
+**`GOVERNANCE.md` also updated in the same pass** (§40) — the specific stale-doc flag `#727`
+carried was checked and found to be a false positive against its own intent (the newest
+`cfg_change_detail` row was a routine `cfg_content_index_exclude` content insert from the previous
+night, not a governance/process rule change), but the check anyway surfaced a real, accumulated
+gap: this session's actual governance-*mechanism* changes (`CFG_TABLES` retirement, `_validate_
+live`'s database-generalisation, `_NARRATIVE_MODULES`, the two new governance layers) had only
+been recorded in `BUILD.md`, never in `GOVERNANCE.md` — closed as `GOVERNANCE.md` §40.
+
+**Verified:** `_validate_live` direct call → 0 errors. Real dispatcher run → 2 advisory findings
+remain (the two path-setting false positives, explained above) plus the same pre-existing 110-
+module/backup backlog — nothing newly broken.
+
+**Files:** `iba/app/lib/cfg.py` (`database_path`), `iba/app/init.py` (startup check),
+`iba/app/handlers/configmaint.py` (`_validate_live`), `iba/app/GOVERNANCE.md` §40.

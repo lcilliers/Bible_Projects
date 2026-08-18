@@ -102,6 +102,16 @@ def find_settings_needing_justification(conn: sqlite3.Connection) -> list[str]:
     return flags
 
 
+# Modules whose cfg_setting rows are pure narrative/documentation -- a fact recorded for a human
+# or an external, non-dispatcher-mediated process to read, never a value the app's own runtime
+# applies via .setting(). Distinct from the module='governance' branch below: governance rows must
+# still be read by init.py (AI-startup-compliance requirement); these have no such requirement at
+# all. Escalation #719, 2026-08-18 -- start with 'backup' (verified: all 6 live rows document
+# Windows Scheduled Tasks / standalone scripts outside the app, not one is a masked real orphan).
+# Add a module here only after checking its live rows the same way, not by assumption.
+_NARRATIVE_MODULES = frozenset({"backup"})
+
+
 def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
     """cfg_setting keys / cfg_enum groups without REAL usage — configs the app would not actually
     respond to if their value/membership changed. ADVISORY, not a coherence error: an orphan may
@@ -176,6 +186,18 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
                 continue
             orphans.append(f"cfg_setting {key!r} (module 'governance' — not read by "
                            f"iba/app/init.py, the startup routine)")
+            continue
+        if module in _NARRATIVE_MODULES:
+            # Escalation #719, 2026-08-18: all 6 module='backup' rows checked individually against
+            # their live value text, not assumed -- every one documents infrastructure the app's
+            # own runtime never touches (Windows Scheduled Tasks, standalone scripts under
+            # scripts/*.py invoked outside the dispatcher, one historical-incident note). Same KIND
+            # of content the governance branch above already exempts ("no apply-the-value
+            # behaviour to grep for"), just without governance's extra "must be read by init.py"
+            # compliance requirement -- there is no AI-startup-compliance angle for a backup
+            # schedule fact. Confirmed no module='backup' row currently DOES pass the generic
+            # check below, so this loses no real detection. Writing a fake .setting() call
+            # somewhere just to silence this check would be worse than the finding it replaces.
             continue
         used = any((f'"{key}"' in text or f"'{key}'" in text) and ".setting(" in text
                    for text in per_file.values())

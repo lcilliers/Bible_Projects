@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-18T07:51:29Z |
+| generated_at | 2026-08-18T05:33:50Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -32,9 +32,13 @@
 
 _Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s escalation, which references this section by path rather than repeating it. Not errors — advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every category below) so any one item can be referenced by number, e.g. "item 7" — the numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/already-decided records (inactive configs) are §1, not here — everything below is something that actually needs your judgement.
 
-**Orphan configs** (2) — a `cfg_setting`/`cfg_enum` not referenced by any code:
-1. cfg_setting 'database.iba.path' (key not found together with a cfg.setting(...) call in any one file)
-2. cfg_setting 'database.bible_research.path' (key not found together with a cfg.setting(...) call in any one file)
+**Orphan configs** (6) — a `cfg_setting`/`cfg_enum` not referenced by any code:
+1. cfg_setting 'backup.pre_run_snapshot_policy' (key not found together with a cfg.setting(...) call in any one file)
+2. cfg_setting 'backup.write_atomicity_guarantee' (key not found together with a cfg.setting(...) call in any one file)
+3. cfg_setting 'backup.nas_db_backup_schedule' (key not found together with a cfg.setting(...) call in any one file)
+4. cfg_setting 'backup.nas_full_mirror_schedule' (key not found together with a cfg.setting(...) call in any one file)
+5. cfg_setting 'backup.alerting_policy' (key not found together with a cfg.setting(...) call in any one file)
+6. cfg_setting 'backup.iba_db_gap' (key not found together with a cfg.setting(...) call in any one file)
 
 **Settings needing justification** (0) — module already has its own dedicated table:
 _(none)_
@@ -45,123 +49,123 @@ _(none)_
 **Stale filled_by** (0) — cfg_column.filled_by names a now-inactive step:
 _(none)_
 
-**Stale governance docs** (0) — GOVERNANCE.md older than the newest applied config change:
-_(none)_
+**Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
+7. GOVERNANCE.md was last modified 2026-08-17T03:35:32Z, before the newest applied cfg_change_detail row (2026-08-17T14:02:11Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
 **Low config-density utilities** (110) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-3. cfg_utility 'engine_audit' (engine\audit.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-4. cfg_utility 'engine_audit_word' (engine\audit_word.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-5. cfg_utility 'engine_backup' (engine\backup.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-6. cfg_utility 'engine_db' (engine\db.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-7. cfg_utility 'engine_cli' (engine\engine.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-8. cfg_utility 'engine_flag' (engine\flag_engine.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-9. cfg_utility 'engine_meaning_parser' (engine\meaning_parser.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-10. cfg_utility 'engine_register' (engine\register.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-11. cfg_utility 'engine_report' (engine\report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-12. cfg_utility 'engine_run_log' (engine\run_log.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-13. cfg_utility 'engine_softdelete' (engine\softdelete.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-14. cfg_utility 'engine_span_filter' (engine\span_filter.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-15. cfg_utility 'iba_prototype_build_layers' (iba\prototype\build_layers.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-16. cfg_utility 'iba_prototype_build_prototype' (iba\prototype\build_prototype.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-17. cfg_utility 'iba_scripts_cfg_apply' (iba\scripts\cfg_apply.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-18. cfg_utility 'query_db' (query_db.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-19. cfg_utility 'scripts_apply_create_vc_for_onboarded' (scripts\_apply_create_vc_for_onboarded.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-20. cfg_utility 'scripts_apply_descriptions_patch' (scripts\_apply_descriptions_patch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-21. cfg_utility 'scripts_apply_l2_rollup' (scripts\_apply_l2_rollup.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-22. cfg_utility 'scripts_apply_language_reconcile' (scripts\_apply_language_reconcile.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-23. cfg_utility 'scripts_apply_link_mti_term_id' (scripts\_apply_link_mti_term_id.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-24. cfg_utility 'scripts_apply_prose_programme_chapter01' (scripts\_apply_prose_programme_chapter01.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-25. cfg_utility 'scripts_apply_registry_metadata_patch' (scripts\_apply_registry_metadata_patch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-26. cfg_utility 'scripts_apply_sense_from_subgloss' (scripts\_apply_sense_from_subgloss.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-27. cfg_utility 'scripts_apply_softdelete_excluded_empty_terms' (scripts\_apply_softdelete_excluded_empty_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-28. cfg_utility 'scripts_apply_softdelete_orphan_verses' (scripts\_apply_softdelete_orphan_verses.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-29. cfg_utility 'scripts_apply_stem_patch' (scripts\_apply_stem_patch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-30. cfg_utility 'scripts_apply_supersede_old_mechanical' (scripts\_apply_supersede_old_mechanical.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-31. cfg_utility 'scripts_apply_t2_soft_delete' (scripts\_apply_t2_soft_delete.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-32. cfg_utility 'scripts_apply_verse_uniqueness_cleanup' (scripts\_apply_verse_uniqueness_cleanup.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-33. cfg_utility 'scripts_apply_wipe_ve_lexical_v1' (scripts\_apply_wipe_ve_lexical_v1.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-34. cfg_utility 'scripts_assess_cluster_profiles' (scripts\_assess_cluster_profiles.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-35. cfg_utility 'scripts_assess_cluster_v3_2_preeval' (scripts\_assess_cluster_v3_2_preeval.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-36. cfg_utility 'scripts_assess_corpus_keyword_map' (scripts\_assess_corpus_keyword_map.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-37. cfg_utility 'scripts_assess_corpus_keyword_typed' (scripts\_assess_corpus_keyword_typed.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-38. cfg_utility 'scripts_assess_cross_cluster_cooccurrence' (scripts\_assess_cross_cluster_cooccurrence.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-39. cfg_utility 'scripts_assess_keyword_corpus_report' (scripts\_assess_keyword_corpus_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-40. cfg_utility 'scripts_assess_keyword_overlap' (scripts\_assess_keyword_overlap.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-41. cfg_utility 'scripts_assess_link_correlation' (scripts\_assess_link_correlation.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-42. cfg_utility 'scripts_assess_meaning_tables' (scripts\_assess_meaning_tables.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-43. cfg_utility 'scripts_assess_mti_duplicate_terms' (scripts\_assess_mti_duplicate_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-44. cfg_utility 'scripts_assess_p2_verse_scenarios' (scripts\_assess_p2_verse_scenarios.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-45. cfg_utility 'scripts_assess_qa_method_effectiveness' (scripts\_assess_qa_method_effectiveness.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-46. cfg_utility 'scripts_assess_qa_method_quality_review' (scripts\_assess_qa_method_quality_review.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-47. cfg_utility 'scripts_assess_read_dedup' (scripts\_assess_read_dedup.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-48. cfg_utility 'scripts_assess_registry_grounding' (scripts\_assess_registry_grounding.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-49. cfg_utility 'scripts_assess_registry_vs_keywords' (scripts\_assess_registry_vs_keywords.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-50. cfg_utility 'scripts_assess_shared_forms' (scripts\_assess_shared_forms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-51. cfg_utility 'scripts_assess_termsense_ranking' (scripts\_assess_termsense_ranking.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-52. cfg_utility 'scripts_assess_verse_assembly' (scripts\_assess_verse_assembly.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-53. cfg_utility 'scripts_audit_step_extract_archiving' (scripts\_audit_step_extract_archiving.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-54. cfg_utility 'scripts_batch_audit' (scripts\_batch_audit.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-55. cfg_utility 'scripts_batch_extract' (scripts\_batch_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-56. cfg_utility 'scripts_build_M01_verse_read_review' (scripts\_build_M01_verse_read_review.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-57. cfg_utility 'scripts_build_vc_batch' (scripts\_build_vc_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-58. cfg_utility 'scripts_cc_verse_read' (scripts\_cc_verse_read.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-59. cfg_utility 'scripts_check_doc_versions' (scripts\_check_doc_versions.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-60. cfg_utility 'scripts_check_fi_ti_chain' (scripts\_check_fi_ti_chain.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-61. cfg_utility 'scripts_check_mti_terms' (scripts\_check_mti_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-62. cfg_utility 'scripts_check_softdelete_integrity' (scripts\_check_softdelete_integrity.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-63. cfg_utility 'scripts_check_ve_seat_completeness' (scripts\_check_ve_seat_completeness.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-64. cfg_utility 'scripts_db_introspect' (scripts\_db_introspect.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-65. cfg_utility 'scripts_discover_word_terms' (scripts\_discover_word_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-66. cfg_utility 'scripts_generate_dimension_report' (scripts\_generate_dimension_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-67. cfg_utility 'scripts_generate_programme_report' (scripts\_generate_programme_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-68. cfg_utility 'scripts_generate_verse_meanings_export' (scripts\_generate_verse_meanings_export.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-69. cfg_utility 'scripts_integrity_full_check' (scripts\_integrity_full_check.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-70. cfg_utility 'scripts_list_shared_words' (scripts\_list_shared_words.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-71. cfg_utility 'scripts_patch_report' (scripts\_patch_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-72. cfg_utility 'scripts_produce_final_extract' (scripts\_produce_final_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-73. cfg_utility 'scripts_produce_registry_full_extract' (scripts\_produce_registry_full_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-74. cfg_utility 'scripts_produce_vc_word_report' (scripts\_produce_vc_word_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-75. cfg_utility 'scripts_produce_ve_narration_v1' (scripts\_produce_ve_narration_v1.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-76. cfg_utility 'scripts_prototype_p1_keywords' (scripts\_prototype_p1_keywords.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-77. cfg_utility 'scripts_realign_meaning_tables' (scripts\_realign_meaning_tables.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-78. cfg_utility 'scripts_realign_quality_flags' (scripts\_realign_quality_flags.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-79. cfg_utility 'scripts_repair_02_zero_padding' (scripts\_repair_02_zero_padding.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-80. cfg_utility 'scripts_schema_dump' (scripts\_schema_dump.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-81. cfg_utility 'scripts_term_sharing_spider' (scripts\_term_sharing_spider.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-82. cfg_utility 'scripts_tmp_read_cycle2_rest' (scripts\_tmp_read_cycle2_rest.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-83. cfg_utility 'scripts_tmp_read_cycle3' (scripts\_tmp_read_cycle3.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-84. cfg_utility 'scripts_update_claude_code_instructions' (scripts\_update_claude_code_instructions.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-85. cfg_utility 'scripts_update_reference_doc' (scripts\_update_reference_doc.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-86. cfg_utility 'scripts_update_registry_guide' (scripts\_update_registry_guide.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-87. cfg_utility 'scripts_analytics_bible_analytics' (scripts\analytics\bible_analytics.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-88. cfg_utility 'scripts_analytics_db_client' (scripts\analytics\db_client.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-89. cfg_utility 'scripts_analytics_step_client' (scripts\analytics\step_client.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-90. cfg_utility 'scripts_analytics_word_export' (scripts\analytics\word_export.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-91. cfg_utility 'scripts_analytics_zotero_client' (scripts\analytics\zotero_client.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-92. cfg_utility 'scripts_apply_session_patch' (scripts\apply_session_patch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-93. cfg_utility 'scripts_backfill_root_families' (scripts\backfill_root_families.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-94. cfg_utility 'scripts_build_cluster_findings_digest' (scripts\build_cluster_findings_digest.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-95. cfg_utility 'scripts_build_correlation_extract' (scripts\build_correlation_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-96. cfg_utility 'scripts_build_dimension_extract' (scripts\build_dimension_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-97. cfg_utility 'scripts_build_obs_catalogue_export' (scripts\build_obs_catalogue_export.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-98. cfg_utility 'scripts_build_obs_catalogue_tiered_extract' (scripts\build_obs_catalogue_tiered_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-99. cfg_utility 'scripts_build_word_relationship_report' (scripts\build_word_relationship_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-100. cfg_utility 'scripts_classify_term_introduction_source' (scripts\classify_term_introduction_source.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-101. cfg_utility 'scripts_combine_cluster_published_to_docx' (scripts\combine_cluster_published_to_docx.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-102. cfg_utility 'scripts_export_database_schema' (scripts\export_database_schema.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-103. cfg_utility 'scripts_export_prose_chapter_edit' (scripts\export_prose_chapter_edit.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-104. cfg_utility 'scripts_export_word_json' (scripts\export_word_json.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-105. cfg_utility 'scripts_extract_term_data' (scripts\extract_term_data.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-106. cfg_utility 'scripts_generate_registry_overview' (scripts\generate_registry_overview.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-107. cfg_utility 'scripts_import_prose_chapter_edit' (scripts\import_prose_chapter_edit.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-108. cfg_utility 'scripts_inspect_db_only_terms' (scripts\inspect_db_only_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-109. cfg_utility 'scripts_list_tables' (scripts\list_tables.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-110. cfg_utility 'scripts_query_h2734' (scripts\query_h2734.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-111. cfg_utility 'scripts_verify_soul' (scripts\verify_soul.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-112. cfg_utility 'scripts_verse_vertical_pass' (scripts\verse_vertical_pass.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+8. cfg_utility 'engine_audit' (engine\audit.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+9. cfg_utility 'engine_audit_word' (engine\audit_word.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+10. cfg_utility 'engine_backup' (engine\backup.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+11. cfg_utility 'engine_db' (engine\db.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+12. cfg_utility 'engine_cli' (engine\engine.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+13. cfg_utility 'engine_flag' (engine\flag_engine.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+14. cfg_utility 'engine_meaning_parser' (engine\meaning_parser.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+15. cfg_utility 'engine_register' (engine\register.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+16. cfg_utility 'engine_report' (engine\report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+17. cfg_utility 'engine_run_log' (engine\run_log.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+18. cfg_utility 'engine_softdelete' (engine\softdelete.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+19. cfg_utility 'engine_span_filter' (engine\span_filter.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+20. cfg_utility 'iba_prototype_build_layers' (iba\prototype\build_layers.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+21. cfg_utility 'iba_prototype_build_prototype' (iba\prototype\build_prototype.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+22. cfg_utility 'iba_scripts_cfg_apply' (iba\scripts\cfg_apply.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+23. cfg_utility 'query_db' (query_db.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+24. cfg_utility 'scripts_apply_create_vc_for_onboarded' (scripts\_apply_create_vc_for_onboarded.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+25. cfg_utility 'scripts_apply_descriptions_patch' (scripts\_apply_descriptions_patch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+26. cfg_utility 'scripts_apply_l2_rollup' (scripts\_apply_l2_rollup.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+27. cfg_utility 'scripts_apply_language_reconcile' (scripts\_apply_language_reconcile.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+28. cfg_utility 'scripts_apply_link_mti_term_id' (scripts\_apply_link_mti_term_id.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+29. cfg_utility 'scripts_apply_prose_programme_chapter01' (scripts\_apply_prose_programme_chapter01.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+30. cfg_utility 'scripts_apply_registry_metadata_patch' (scripts\_apply_registry_metadata_patch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+31. cfg_utility 'scripts_apply_sense_from_subgloss' (scripts\_apply_sense_from_subgloss.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+32. cfg_utility 'scripts_apply_softdelete_excluded_empty_terms' (scripts\_apply_softdelete_excluded_empty_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+33. cfg_utility 'scripts_apply_softdelete_orphan_verses' (scripts\_apply_softdelete_orphan_verses.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+34. cfg_utility 'scripts_apply_stem_patch' (scripts\_apply_stem_patch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+35. cfg_utility 'scripts_apply_supersede_old_mechanical' (scripts\_apply_supersede_old_mechanical.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+36. cfg_utility 'scripts_apply_t2_soft_delete' (scripts\_apply_t2_soft_delete.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+37. cfg_utility 'scripts_apply_verse_uniqueness_cleanup' (scripts\_apply_verse_uniqueness_cleanup.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+38. cfg_utility 'scripts_apply_wipe_ve_lexical_v1' (scripts\_apply_wipe_ve_lexical_v1.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+39. cfg_utility 'scripts_assess_cluster_profiles' (scripts\_assess_cluster_profiles.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+40. cfg_utility 'scripts_assess_cluster_v3_2_preeval' (scripts\_assess_cluster_v3_2_preeval.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+41. cfg_utility 'scripts_assess_corpus_keyword_map' (scripts\_assess_corpus_keyword_map.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+42. cfg_utility 'scripts_assess_corpus_keyword_typed' (scripts\_assess_corpus_keyword_typed.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+43. cfg_utility 'scripts_assess_cross_cluster_cooccurrence' (scripts\_assess_cross_cluster_cooccurrence.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+44. cfg_utility 'scripts_assess_keyword_corpus_report' (scripts\_assess_keyword_corpus_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+45. cfg_utility 'scripts_assess_keyword_overlap' (scripts\_assess_keyword_overlap.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+46. cfg_utility 'scripts_assess_link_correlation' (scripts\_assess_link_correlation.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+47. cfg_utility 'scripts_assess_meaning_tables' (scripts\_assess_meaning_tables.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+48. cfg_utility 'scripts_assess_mti_duplicate_terms' (scripts\_assess_mti_duplicate_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+49. cfg_utility 'scripts_assess_p2_verse_scenarios' (scripts\_assess_p2_verse_scenarios.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+50. cfg_utility 'scripts_assess_qa_method_effectiveness' (scripts\_assess_qa_method_effectiveness.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+51. cfg_utility 'scripts_assess_qa_method_quality_review' (scripts\_assess_qa_method_quality_review.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+52. cfg_utility 'scripts_assess_read_dedup' (scripts\_assess_read_dedup.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+53. cfg_utility 'scripts_assess_registry_grounding' (scripts\_assess_registry_grounding.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+54. cfg_utility 'scripts_assess_registry_vs_keywords' (scripts\_assess_registry_vs_keywords.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+55. cfg_utility 'scripts_assess_shared_forms' (scripts\_assess_shared_forms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+56. cfg_utility 'scripts_assess_termsense_ranking' (scripts\_assess_termsense_ranking.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+57. cfg_utility 'scripts_assess_verse_assembly' (scripts\_assess_verse_assembly.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+58. cfg_utility 'scripts_audit_step_extract_archiving' (scripts\_audit_step_extract_archiving.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+59. cfg_utility 'scripts_batch_audit' (scripts\_batch_audit.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+60. cfg_utility 'scripts_batch_extract' (scripts\_batch_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+61. cfg_utility 'scripts_build_M01_verse_read_review' (scripts\_build_M01_verse_read_review.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+62. cfg_utility 'scripts_build_vc_batch' (scripts\_build_vc_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+63. cfg_utility 'scripts_cc_verse_read' (scripts\_cc_verse_read.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+64. cfg_utility 'scripts_check_doc_versions' (scripts\_check_doc_versions.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+65. cfg_utility 'scripts_check_fi_ti_chain' (scripts\_check_fi_ti_chain.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+66. cfg_utility 'scripts_check_mti_terms' (scripts\_check_mti_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+67. cfg_utility 'scripts_check_softdelete_integrity' (scripts\_check_softdelete_integrity.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+68. cfg_utility 'scripts_check_ve_seat_completeness' (scripts\_check_ve_seat_completeness.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+69. cfg_utility 'scripts_db_introspect' (scripts\_db_introspect.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+70. cfg_utility 'scripts_discover_word_terms' (scripts\_discover_word_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+71. cfg_utility 'scripts_generate_dimension_report' (scripts\_generate_dimension_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+72. cfg_utility 'scripts_generate_programme_report' (scripts\_generate_programme_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+73. cfg_utility 'scripts_generate_verse_meanings_export' (scripts\_generate_verse_meanings_export.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+74. cfg_utility 'scripts_integrity_full_check' (scripts\_integrity_full_check.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+75. cfg_utility 'scripts_list_shared_words' (scripts\_list_shared_words.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+76. cfg_utility 'scripts_patch_report' (scripts\_patch_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+77. cfg_utility 'scripts_produce_final_extract' (scripts\_produce_final_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+78. cfg_utility 'scripts_produce_registry_full_extract' (scripts\_produce_registry_full_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+79. cfg_utility 'scripts_produce_vc_word_report' (scripts\_produce_vc_word_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+80. cfg_utility 'scripts_produce_ve_narration_v1' (scripts\_produce_ve_narration_v1.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+81. cfg_utility 'scripts_prototype_p1_keywords' (scripts\_prototype_p1_keywords.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+82. cfg_utility 'scripts_realign_meaning_tables' (scripts\_realign_meaning_tables.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+83. cfg_utility 'scripts_realign_quality_flags' (scripts\_realign_quality_flags.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+84. cfg_utility 'scripts_repair_02_zero_padding' (scripts\_repair_02_zero_padding.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+85. cfg_utility 'scripts_schema_dump' (scripts\_schema_dump.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+86. cfg_utility 'scripts_term_sharing_spider' (scripts\_term_sharing_spider.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+87. cfg_utility 'scripts_tmp_read_cycle2_rest' (scripts\_tmp_read_cycle2_rest.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+88. cfg_utility 'scripts_tmp_read_cycle3' (scripts\_tmp_read_cycle3.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+89. cfg_utility 'scripts_update_claude_code_instructions' (scripts\_update_claude_code_instructions.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+90. cfg_utility 'scripts_update_reference_doc' (scripts\_update_reference_doc.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+91. cfg_utility 'scripts_update_registry_guide' (scripts\_update_registry_guide.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+92. cfg_utility 'scripts_analytics_bible_analytics' (scripts\analytics\bible_analytics.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+93. cfg_utility 'scripts_analytics_db_client' (scripts\analytics\db_client.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+94. cfg_utility 'scripts_analytics_step_client' (scripts\analytics\step_client.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+95. cfg_utility 'scripts_analytics_word_export' (scripts\analytics\word_export.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+96. cfg_utility 'scripts_analytics_zotero_client' (scripts\analytics\zotero_client.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+97. cfg_utility 'scripts_apply_session_patch' (scripts\apply_session_patch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+98. cfg_utility 'scripts_backfill_root_families' (scripts\backfill_root_families.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+99. cfg_utility 'scripts_build_cluster_findings_digest' (scripts\build_cluster_findings_digest.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+100. cfg_utility 'scripts_build_correlation_extract' (scripts\build_correlation_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+101. cfg_utility 'scripts_build_dimension_extract' (scripts\build_dimension_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+102. cfg_utility 'scripts_build_obs_catalogue_export' (scripts\build_obs_catalogue_export.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+103. cfg_utility 'scripts_build_obs_catalogue_tiered_extract' (scripts\build_obs_catalogue_tiered_extract.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+104. cfg_utility 'scripts_build_word_relationship_report' (scripts\build_word_relationship_report.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+105. cfg_utility 'scripts_classify_term_introduction_source' (scripts\classify_term_introduction_source.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+106. cfg_utility 'scripts_combine_cluster_published_to_docx' (scripts\combine_cluster_published_to_docx.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+107. cfg_utility 'scripts_export_database_schema' (scripts\export_database_schema.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+108. cfg_utility 'scripts_export_prose_chapter_edit' (scripts\export_prose_chapter_edit.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+109. cfg_utility 'scripts_export_word_json' (scripts\export_word_json.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+110. cfg_utility 'scripts_extract_term_data' (scripts\extract_term_data.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+111. cfg_utility 'scripts_generate_registry_overview' (scripts\generate_registry_overview.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+112. cfg_utility 'scripts_import_prose_chapter_edit' (scripts\import_prose_chapter_edit.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+113. cfg_utility 'scripts_inspect_db_only_terms' (scripts\inspect_db_only_terms.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+114. cfg_utility 'scripts_list_tables' (scripts\list_tables.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+115. cfg_utility 'scripts_query_h2734' (scripts\query_h2734.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+116. cfg_utility 'scripts_verify_soul' (scripts\verify_soul.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+117. cfg_utility 'scripts_verse_vertical_pass' (scripts\verse_vertical_pass.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -627,8 +631,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | content_index | content_index.exclude_size_threshold_bytes | 52428800 | a .md file this size or larger (bytes; default 50MB) is excluded from content_index.rebuild/.refresh by default, unless it matches an active cfg_content_index_size_override pattern |
 | content_index | content_index.report_path | iba/app/reports/content-index-rebuild.md | where content_index.rebuild writes its summary report |
 | content_index | content_index.size_profile_report_path | iba/app/reports/content-index-size-profile.md | where content_index.size_profile writes its .md-file-size report |
-| database | database.bible_research.path | database/bible_research.db | bible_research.db's file path, project-root-relative (aka research_db in prose elsewhere -- that alias isn't repeated here, see governance.project_databases). Structured counterpart, escalation #723. |
-| database | database.iba.path | iba/app/db/iba.db | iba.db's file path, project-root-relative -- structured counterpart to governance.project_databases' prose, part of escalation #723's project_database enum + path settings. |
 | escalation | escalation.control_objectives | the escalation table manages all open items, irrespective of source or reason -- AI or researcher raise the escalation when discovered or raised, using the escalation module |  |
 | escalation | escalation.control_process | escalations are raised, processed, and completed using the escalation utility module |  |
 | escalation | escalation.list_report_path | iba/app/reports/escalation-list.md |  |
@@ -652,7 +654,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.project_databases | bible_research.db (aka research_db) lives in database/; iba.db lives in iba/app/db/ -- both paths are project-root-relative |  |
 | governance | governance.project_lookups_and_naming_convensions | Project-specific naming in lookups, stages, and terms with specific meaning must be defined in cfg_enum (see cfg_setting naming.*). Terminology must be checked whenever an operation is executed to ensure it is used in accordance with its definition; a missing definition must be escalated. |  |
 | governance | governance.project_operations | A project operation is any activity to perform research, development, exploration, investigation, or running scripts related to achieving the project objectives. |  |
-| governance | governance.prose_canonical_authority | The programme prose (Workflow/Programme/programme_prose/) is the canonical authority on what the project is about -- researcher, 2026-08-18. Chapters 0-3 are reviewed and final; chapters 4-6 are not yet aligned (escalation pending, part (d)). cfg_prose_chapter names each chapter and its status; cfg_prose_concept points a key project concept (e.g. verse primacy, the inner-being definition) at the prose section that defines it, rather than restating the definition as a separate rule. A methodology/approach change that touches a concept named in cfg_prose_concept should flag whether the prose needs updating (part (f) -- the flagging MECHANISM is not yet built, this states the principle only). | entry-point anchor for the prose-as-canonical-authority work -- part (a) of escalation #714 |
 | governance | governance.redundancy_archiving | One-off reports, scripts, or other artifacts no longer in use or relevant must be archived on a daily basis. |  |
 | governance | governance.reports_must_persist | every quality-check or report-producing step must persist its output to a config-defined report path — a terminal print + an escalation row is not sufficient; enforced by lib/cfgquality.find_missing_report_paths, checked in configmaint.validate | the researcher's 2026-07-21 standard: deviations are bugs, not judgement calls — fix, don't ask |
 | governance | governance.rules_must_be_config_driven | no operational or process rule may exist only in GOVERNANCE.md, BUILD.md, USER-GUIDE.md, or memory without a referenced cfg_* row recording it as the evidence that the configuration control is in operation. Any deviation discovered requires escalation. On a new instruction, the first thing to establish is that the rules governing the instruction are fully captured and interpreted correctly in the configs -- if not, it requires escalation. | the researchers 2026-07-26 standard, raised after an unconfigured rule (STEP required) was silently violated |
@@ -1085,7 +1086,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | candidate.set | span_candidate |
 | closing.set | debate_change_detail, passage, passage_emergent_question, passage_insufficiency, passage_linkage, passage_validation_note |
 | cluster.assign | cluster_strong |
-| configmaint.propose | cfg_api, cfg_behaviour_class, cfg_behaviour_rule, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_enum, cfg_escalation, cfg_index, cfg_meta, cfg_method_rule, cfg_on_fail, cfg_prose_chapter, cfg_prose_concept, cfg_quality_check, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
+| configmaint.propose | cfg_api, cfg_behaviour_class, cfg_behaviour_rule, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_enum, cfg_escalation, cfg_index, cfg_meta, cfg_method_rule, cfg_on_fail, cfg_quality_check, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
 | escalation | escalation, word_registry |
 | hib.set | debate_change_detail, hib, hib_referent_option, verse_hib |
 | lexical.build | verse_lexical |
@@ -1601,7 +1602,6 @@ dedup key: `step, check_key`
 
 ### cfg_index
 _cfg_index_ — Secondary (non-unique) indexes to build per data table -- closes the gap left by build_data_tables() only ever emitting FK/UNIQUE, never plain indexes (schema-remediation-design-20260807.md).
-dedup key: `table_name, name, col`
 | column | type | pk | notnull | unique | fk | use | source/filled_by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | table_name | TEXT |  | ✓ |  |  | which data table this index is built on |  |
@@ -1700,250 +1700,6 @@ _one row per rule within a behaviour class_ — the actual rule content per clas
 | added_at | TEXT |  | ✓ |  |  | when the rule was registered | migration/bootstrap_behaviour_rules_v1_20260818.py |
 | active | INTEGER |  | ✓ |  |  | 0=retired, 1=live | migration/bootstrap_behaviour_rules_v1_20260818.py |
 
-### cfg_meta
-_one row per top-level app-identity key_ — core app-identity facts (which database this cfg_* store belongs to, the seeded config_version) — read once at startup to confirm identity before anything else runs.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| key | TEXT | ✓ |  |  |  | the identity fact's name, e.g. 'database', 'config_version' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| value | TEXT |  |  |  |  | the fact's value | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_table
-_one row per registered table (database, name) — this row_ — the table-level half of governance.tables — every table across both project databases (bible_research/research_db and iba), what one row of it represents, and its overall purpose. Self-referential: this table registers itself.
-dedup key: `database, name`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| database | TEXT |  | ✓ |  |  | which physical database this row describes -- part of the primary key (escalation #653: iba.db and bible_research.db genuinely share table names like word_registry/cluster/passage/verse for DIFFERENT tables). | migration/add_cfg_table_database_column.py |
-| inactive | INTEGER |  | ✓ |  |  | a data table no longer in use (superseded, retired, or abandoned scaffolding) is marked inactive=1 here rather than deleted from cfg_table — governance.tables' own requirement, unsupported by schema until escalation #678's full table review made the gap concrete. Reverses bootstrap_inactive_column.py's (#310) earlier exclusion of cfg_table as 'schema-of-schema, not toggleable' — cfg_column/cfg_unique remain excluded, no comparable review driving a need for it there yet. | migration/add_cfg_table_inactive_column.py |
-| name | TEXT |  | ✓ |  |  | the table's name | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| grain | TEXT |  |  |  |  | what one row of this table represents | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| use | TEXT |  |  |  |  | the table's purpose — why it exists, how it's used | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_column
-_one row per column of a registered table (database, table_name, name)_ — the column-level half of governance.table_columns — every column's type, key/nullability flags, use text, and (for data-driven-enforced settings) the expectation pattern lib/valuequality.py checks it against. Self-referential: this table registers its own columns via the rows this very migration writes.
-dedup key: `database, table_name, name`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| database | TEXT |  | ✓ |  |  | which physical database this row describes -- part of the primary key (escalation #653: iba.db and bible_research.db genuinely share table names like word_registry/cluster/passage/verse for DIFFERENT tables). | migration/add_cfg_table_database_column.py |
-| table_name | TEXT |  |  |  |  | the table this column belongs to | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| name | TEXT |  |  |  |  | the column's name | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| ordinal | INTEGER |  |  |  |  | declaration order within the table | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| type | TEXT |  |  |  |  | the column's SQL type (TEXT/INTEGER/...) | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| is_pk | INTEGER |  |  |  |  | 1 if part of the table's primary key | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| notnull | INTEGER |  |  |  |  | 1 if the column has a NOT NULL constraint | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| is_unique | INTEGER |  |  |  |  | 1 if the column has its own UNIQUE constraint (compound uniqueness across columns is cfg_unique's job instead) | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| dflt | TEXT |  |  |  |  | the column's declared SQL default, if any | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| fk | TEXT |  |  |  |  | the table.column this column references, if it's a foreign key | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| use | TEXT |  |  |  |  | what this column holds and how it's used | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| expectation | TEXT |  |  |  |  | for a data-driven-enforced value: 'pattern:<cfg_setting key>' or 'enum.<cfg_enum name>' — lib/valuequality.py's engine checks live values against this instead of a hardcoded rule | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| source | TEXT |  |  |  |  | where this column's value originates, if not obvious | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| filled_by | TEXT |  |  |  |  | the script/migration that populates this column | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_unique
-_one row per column participating in a named table's compound-uniqueness rule_ — documents a compound (multi-column) uniqueness expectation for a table — table_name plus one row per participating column, ordinal giving the compound-key column order. A documentation/validation aid, not itself an enforced DB constraint.
-dedup key: `database, table_name, col`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| database | TEXT |  | ✓ |  |  | which physical database table_name refers to -- part of the primary key (iba.db and bible_research.db share table names, e.g. 'passage', for different tables; escalations #653/#680 widened cfg_table/cfg_write_grant the same way, this closes the same gap for cfg_unique). Config differentiation only. | migration/add_cfg_unique_database_column_v1_20260818.py |
-| table_name | TEXT |  |  |  |  | the table the uniqueness rule applies to | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| col | TEXT |  |  |  |  | one column participating in the compound unique key | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| ordinal | INTEGER |  |  |  |  | this column's position within the compound key | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_enum
-_one row per (name, value) enum membership_ — named controlled-vocabulary groups — lookups/options queried BY NAME at runtime (cfg.enum(name) or the equivalent raw SQL) rather than hardcoded as string literals in code, so a membership change is something the app actually notices.
-dedup key: `name, value`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| name | TEXT |  |  |  |  | the enum group's name, e.g. 'config_module' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| value | TEXT |  |  |  |  | one member of the group | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| ordinal | INTEGER |  |  |  |  | display/insertion order within the group | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_connection
-_one row per STEP-server connection parameter_ — STEP Bible local-server connection parameters (base_url, version, ...) — read at startup to build the live connection used by every raw.* STEP call.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| key | TEXT | ✓ |  |  |  | the parameter's name, e.g. 'base_url', 'version' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| value | TEXT |  |  |  |  | the parameter's value | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_api
-_one row per named STEP REST API call this app is coded to use_ — the catalogue of STEP Bible REST API calls the app actually issues — route template (with {placeholders}), what input the caller supplies, and what shape the response returns. The IBA-side equivalent of scripts/analytics/step_client.py's method list.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| name | TEXT | ✓ |  |  |  | the call's short identifier, e.g. 'call1_meanings' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| route | TEXT |  |  |  |  | the REST route template, with {placeholder} segments | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| input | TEXT |  |  |  |  | what the caller must supply | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| returns | TEXT |  |  |  |  | what shape the response gives back | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_book_order
-_one row per Bible book_ — canonical book ordering (Gen=0 .. Rev=65) for sorting/sequencing verse references app-wide — the IBA-side equivalent of research_db's books/book_code_variants tables.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| book | TEXT | ✓ |  |  |  | the book's short code, e.g. 'Gen' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| ordinal | INTEGER |  |  |  |  | 0-based canonical Bible order | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_candidate_rule
-_one row per (kind, value) candidate-inclusion override_ — accept/reject overrides for candidate Strong's numbers considered during term/HIB candidate onboarding — kind names the rule type (currently only 'accept' is live), value is the Strong's number the rule applies to.
-dedup key: `kind, value`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| kind | TEXT |  |  |  |  | the rule type — currently only 'accept' is a live value | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| value | TEXT |  |  |  |  | the Strong's number (or other matched value) the rule covers | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_write_grant
-_one row per (writer, table_name, database) write permission_ — governance.config_control's write-grant registry — which writer (a step name, or 'configmaint.propose' for the sanctioned manual-change gate) may write which table in which database. configmaint.validate's coherence check confirms every cfg_* table has at least one grant, or nothing could legitimately maintain it.
-dedup key: `writer, table_name, database`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| writer | TEXT |  |  |  |  | the step/mechanism permitted to write — a dispatcher step name, or 'configmaint.propose' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| table_name | TEXT |  |  |  |  | the table this writer may write to | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| database | TEXT |  | ✓ |  |  | which physical database table_name refers to -- part of the primary key (escalation #680: iba.db and bible_research.db share table names for different tables). Config differentiation only -- no runtime cross-database write mechanism exists yet, see handlers/wordaudit.py's module docstring. | migration/add_cfg_write_grant_database_column.py |
-
-### cfg_work_package
-_one row per top-level invokable work package_ — the dispatcher's top-level package registry — its PowerShell entry script, what it runs over (a word, a book, 'none', ...), whether its steps chain automatically once triggered, and the user-facing complete/paused/next-step messages a PS wrapper shows.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| name | TEXT | ✓ |  |  |  | the work package's name, e.g. 'configuration-maintenance' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| ps_script | TEXT |  |  |  |  | the PowerShell entry-point script for this package | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| runs_over | TEXT |  |  |  |  | what one invocation operates over — a word, a book, a run, 'none', etc. | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| chained | INTEGER |  |  |  |  | 1 if this package's steps run automatically in sequence once triggered, 0 if each step is invoked independently | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| complete_message | TEXT |  |  |  |  | message shown to the researcher on successful completion | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| next_step_hint | TEXT |  |  |  |  | suggested next action shown after completion | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| paused_message | TEXT |  |  |  |  | message shown when a step pauses awaiting a decision | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_step
-_one row per (work_package, step)_ — the dispatcher's step registry — which handler function runs for a named step within a work package, what scope it needs, a human description of what it does, and its kind ('utility' = this app's own running; 'operations' = substantive analytic/study content).
-dedup key: `work_package, step`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| work_package | TEXT |  |  |  |  | the owning work package | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| kind | TEXT |  | ✓ |  |  | operations (does the study work — raw/registry/lexicon/passage-debate-prep/narrative) or utility (supports the app's own running — configmaint, general reporting). REQUIRED for dispatch — run.py refuses a step with no kind (escalation, 2026-07-30). | migration/bootstrap_step_kind.py |
-| ordinal | INTEGER |  |  |  |  | this step's position within its package | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| step | TEXT |  |  |  |  | the step's dotted name, e.g. 'configmaint.validate' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| handler | TEXT |  |  |  |  | the Python handler function this step dispatches to, as 'module:function' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| scope | TEXT |  |  |  |  | what this step needs scoped to it to run — a word, 'none', etc. | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| does | TEXT |  |  |  |  | a human-readable description of what this step actually does | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_status_flow
-_one row per (entity, status) lifecycle stage_ — the ordered status lifecycle for a named entity (e.g. 'word') — which step sets each status, and its position in the sequence, so a status transition can be validated against a declared order rather than assumed.
-dedup key: `entity, status`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| entity | TEXT |  |  |  |  | the entity whose lifecycle this describes, e.g. 'word' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| status | TEXT |  |  |  |  | one status value in that entity's lifecycle | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| set_by | TEXT |  |  |  |  | which step/mechanism sets this status | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| ordinal | INTEGER |  |  |  |  | this status's position in the lifecycle sequence | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_on_fail
-_one row per (step, condition) failure-routing rule_ — how a named step should react to a named failure condition — path (the actual routing outcome: 'report-stop' or 'pause-continue'), an optional resolver, the message shown, and route (a routing category — currently always 'terminal', reserved for future non-terminal routing types).
-dedup key: `step, condition`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| step | TEXT |  |  |  |  | the step this failure-routing rule applies to | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| condition | TEXT |  |  |  |  | the named failure condition, e.g. 'word-exists' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| path | TEXT |  |  |  |  | the actual routing outcome — 'report-stop' (hard stop) or 'pause-continue' (escalate and wait for a decision) | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| resolver | TEXT |  |  |  |  | an optional handler that can auto-resolve this condition, if one exists | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| message | TEXT |  |  |  |  | the message shown to the researcher/Claude for this condition | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| route | TEXT |  | ✓ |  |  | a routing category — currently always 'terminal' across every live row; reserved for a future non-terminal routing type | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_report
-_one row per report-producing step's report shape_ — report-generation shape for a step per governance.reports_must_persist — title, whether to show a table of contents, output format(s) (md/md+csv), naming scheme (stable = fixed filename, dated = versioned per governance.oneoff_report_naming_pattern), and archive folder for superseded versions.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| step | TEXT | ✓ |  |  |  | the report-producing step this shape applies to | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| title | TEXT |  | ✓ |  |  | the report's title | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| show_toc | INTEGER |  | ✓ |  |  | 1 if the report includes a table of contents | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| footer_text | TEXT |  |  |  |  | optional footer text appended to the report | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| output_kind | TEXT |  | ✓ |  |  | the output format(s) produced — 'md' or 'md+csv' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| naming_scheme | TEXT |  | ✓ |  |  | 'stable' (fixed filename, overwritten/archived on regenerate) or 'dated' (versioned filename per report) | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| archive_dir | TEXT |  | ✓ |  |  | where a superseded 'stable'-scheme report is archived | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_report_section
-_one row per (step, section_key) report section_ — the section layout of a generated report — ordinal position, the markdown heading text, an optional shorter table-of-contents label, and whether the section is actually included in a live regenerate.
-dedup key: `step, section_key`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| step | TEXT |  | ✓ |  |  | the report-producing step this section belongs to | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| ordinal | INTEGER |  | ✓ |  |  | the section's position in the report | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| section_key | TEXT |  | ✓ |  |  | the section's stable identifier | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| heading | TEXT |  | ✓ |  |  | the markdown heading text rendered for this section | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| toc_label | TEXT |  |  |  |  | a shorter label for the table of contents, if different from the heading | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| include | INTEGER |  | ✓ |  |  | 1 if this section is actually rendered | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_report_csv_table
-_one row per (step, table_name) CSV-export target within a report_ — which table(s) a report step's CSV output covers — join_note describes a multi-table join in plain language where table_name isn't a literal single table, and virtual=1 flags a computed/derived result set (a name that doesn't resolve to a literal live table — escalation #642 found two such rows naming non-existent tables, left open for researcher judgement, not fixed by this backfill).
-dedup key: `step, table_name`
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| step | TEXT |  | ✓ |  |  | the report-producing step this CSV export belongs to | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| table_name | TEXT |  | ✓ |  |  | the table (or, if virtual=1, the named derived result set) this CSV covers | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| join_note | TEXT |  |  |  |  | plain-language description of a multi-table join, if the export isn't a single verbatim table | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| virtual | INTEGER |  | ✓ |  |  | 1 if table_name is a computed/derived name rather than a literal live table | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_change_log
-_one row per whole-store config reload/load event_ — audit trail of cfg_* seed reloads — config_version and seed_hash (change-detection fingerprint), when the load happened, and whether it validated clean. Whole-reload events only; row-level individual changes are cfg_change_detail instead.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| id | INTEGER | ✓ |  |  |  | surrogate key | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| config_version | TEXT |  |  |  |  | the app's config_version string at the time of this load | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| seed_hash | TEXT |  |  |  |  | a hash of the seed content, for change detection | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| loaded_at | TEXT |  |  |  |  | when this load happened | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| validated | INTEGER |  |  |  |  | 1 if this load passed validation | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_setting
-_one row per named setting key_ — flat key/value application settings, grouped by module (cfg_setting.module) — the app's primary tunable-configuration store, read at runtime via cfg.setting(key). module='governance' rows are the special case: process rules for the AI/researcher workflow, not runtime-applied values.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| key | TEXT | ✓ |  |  |  | the setting's dotted key, e.g. 'governance.reports_must_persist' | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| module | TEXT |  | ✓ |  |  | which module/utility owns this setting — every setting must have one, per the researcher's 2026-07-21 rule against cfg_setting becoming a catch-all | configmaint.propose |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this config row without deleting it — excluded from configmaint.validate's coherence/orphan/justification checks, listed separately (not silently dropped) in configmaint.report. Set via the normal configmaint.propose update path, same as any other cfg_* value. | configmaint.propose |
-| value | TEXT |  |  |  |  | the setting's value, JSON-encoded | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-| use | TEXT |  |  |  |  | what this setting controls and why | migration/backfill_foundational_cfg_tables_v1_20260818.py |
-
-### cfg_utility
-_one row per registered script/library module_ — the registry of every script/routine in the project per governance.scripts_and_routines — its file path, purpose (usually from the file's own docstring), whether retired, and whether it's exempt from the config-usage completeness check (config_exempt=1, with a required reason) for a legitimate structural reason — e.g. it IS the config reader, or it writes cfg_* directly via raw sqlite3 rather than reading it.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| module | TEXT | ✓ | ✓ |  |  | the lib module's own name (no .py, no package prefix) | migration/bootstrap_cfg_utility.py |
-| file_path | TEXT |  | ✓ |  |  | path from the repo root, e.g. iba/app/lib/stepapi.py | migration/bootstrap_cfg_utility.py |
-| purpose | TEXT |  |  |  |  | first line of the module's own docstring, verbatim | migration/bootstrap_cfg_utility.py |
-| inactive | INTEGER |  | ✓ |  |  | deactivate this registry row without deleting it (module removed/merged) — same convention as every other cfg_* table's inactive column | migration/bootstrap_cfg_utility.py |
-| config_exempt | INTEGER |  | ✓ |  |  | 1 = a legitimate zero for config-setting/enum usage (caller resolves it, or this module IS the config layer) — declared, not re-derived every validate run. 0 = subject to the usual finding. | migration/add_cfg_utility_config_exempt.py |
-| config_exempt_reason | TEXT |  |  |  |  | why this module is exempt — required whenever config_exempt=1 so the flag never sits undocumented. | migration/add_cfg_utility_config_exempt.py |
-
-### cfg_prose_chapter
-_one row per programme-prose chapter_ — the chapter-level registry for governance.prose_canonical_authority -- which chapters exist, their review status, and which live prose extract file is their source. Does not hold the prose text itself (that stays in Workflow/Programme/programme_prose/ and/or bible_research.db's prose_section) -- this is the index, not a copy.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| chapter | INTEGER | ✓ | ✓ |  |  | the chapter number (0-6 currently) | migration/bootstrap_prose_authority_v1_20260818.py |
-| title | TEXT |  | ✓ |  |  | the chapter's title | migration/bootstrap_prose_authority_v1_20260818.py |
-| status | TEXT |  | ✓ |  |  | 'reviewed' (final, per researcher 2026-08-18) or 'not_yet_aligned' (per cfg_enum prose_chapter_status) -- NOT derived from the prose extract file's own per-section status metadata, which is known stale (still shows 'draft' everywhere as of 2026-08-14) | migration/bootstrap_prose_authority_v1_20260818.py |
-| source_doc | TEXT |  | ✓ |  |  | the live prose extract file this chapter's content comes from | migration/bootstrap_prose_authority_v1_20260818.py |
-| description | TEXT |  |  |  |  | what this chapter covers | migration/bootstrap_prose_authority_v1_20260818.py |
-| added_at | TEXT |  | ✓ |  |  | when this chapter was registered | migration/bootstrap_prose_authority_v1_20260818.py |
-
-### cfg_prose_concept
-_one row per key project concept pointed at its defining prose location_ — a pointer index: 'this concept is DEFINED at this chapter/section of the prose' -- not a copy of the definition. Direct replacement mechanism for wa_rule_registry rows like GR-PROG-001/GR-PROG-002 that used to restate a definition as rule text; this points at the authoritative prose instead, per cfg_behaviour_rule 'documentation.single-authority-pointer-not-copy'.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| concept_key | TEXT | ✓ | ✓ |  |  | short kebab/snake-case identifier, e.g. 'verse_primacy' | migration/bootstrap_prose_authority_v1_20260818.py |
-| chapter | INTEGER |  | ✓ |  |  | which cfg_prose_chapter defines this concept | migration/bootstrap_prose_authority_v1_20260818.py |
-| section_hint | TEXT |  | ✓ |  |  | which section(s) within the chapter, in plain language (prose sections aren't independently keyed yet) | migration/bootstrap_prose_authority_v1_20260818.py |
-| description | TEXT |  | ✓ |  |  | a short gloss of the concept, for discoverability -- the prose itself remains authoritative for the full definition | migration/bootstrap_prose_authority_v1_20260818.py |
-| source | TEXT |  | ✓ |  |  | provenance -- which prior rule/decision this concept pointer replaces or derives from | migration/bootstrap_prose_authority_v1_20260818.py |
-| added_at | TEXT |  | ✓ |  |  | when this concept was registered | migration/bootstrap_prose_authority_v1_20260818.py |
-
 <a id="11-enums"></a>
 ## 11. Enums
 
@@ -1954,7 +1710,7 @@ _one row per key project concept pointed at its defining prose location_ — a p
 | candidate_source | registry-direct, curated-synonym, ib-judgement, read-emergent |
 | candidate_step_status | in_strong, step_no_verses, not_in_step, step_has_verses_pending |
 | cfg_change_op | insert, update, delete |
-| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose |
+| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour |
 | escalation_answer | approve, reject, revise |
 | escalation_assignee | Claude, Researcher |
 | escalation_next_action | approve, reject, revise, hold, noted |
@@ -1966,8 +1722,6 @@ _one row per key project concept pointed at its defining prose location_ — a p
 | operation_decision | retain, set_aside, retain_referential, recorded_silence |
 | passage_debate_status | scaffold, filled, empty, in-progress, complete |
 | passage_source | passage-build, single-verse-emergent |
-| project_database | iba, bible_research |
-| prose_chapter_status | reviewed, not_yet_aligned |
 | run_state | running, paused, done, failed |
 | step_kind | operations, utility |
 | word_status | proposed, approved, raw-complete, signed-off, rejected |

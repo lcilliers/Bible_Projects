@@ -87,6 +87,23 @@ def main() -> int:
     else:
         print(f"  ✓ data tables present ({len(cfg.tables())})")
 
+    # 3b. database-path integrity check — the real consumer of database.iba.path/
+    # database.bible_research.path (escalation #723's cfg_enum project_database +
+    # cfg_setting.database.* pair, escalation #727: both settings were genuine orphans, no code
+    # anywhere read them). Cfg.database_path() is that consumer: confirms the configured path
+    # actually points at a real, existing file, catching path drift (a DB moved but the setting
+    # not updated) rather than reading-and-discarding just to silence the orphan check.
+    for db_name in cfg.enum("project_database"):
+        try:
+            p = cfg.database_path(db_name)
+        except KeyError as e:
+            print(f"  ✗ database_path({db_name!r}): {e}", file=sys.stderr)
+            return 1
+        if not p.exists():
+            print(f"  ⚠ database.{db_name}.path configured as {p} — file does not exist there")
+        else:
+            print(f"  ✓ database {db_name!r} -> {p}")
+
     # 4. STEP pre-flight. step.required_for_runs is a real cfg_setting (module='step'), not just
     # a hardcoded check + doc convention — flip it and this behaviour actually changes, per
     # governance.rules_must_be_config_driven (2026-07-26): a doc/code-only "must" is not a real
