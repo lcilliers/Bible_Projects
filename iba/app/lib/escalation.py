@@ -3,45 +3,56 @@ issues, and building tasks. NOT a run-logging mechanism — a standard operation
 through an already-approved app PS script) is logged by the engine (`run.state`/`resume_point`/
 `outcome`) and escalates only on genuine error. A DEVELOPMENT/DESIGN control — anything that
 changes the app's own behaviour, above all a `configmaint.propose` config write — keeps a real,
-gated approval here (researcher, 2026-08-19/20; full record `iba/docs/escalation-redesign-plan-v3-
-20260819.md` + `BUILD.md` §152/§153).
+gated approval here.
 
-**Redesign v2, 2026-08-20** (supersedes the 2026-08-16 reset). Root cause of the whole rebuild:
-escalation #715's updates were silently overwritten with no trace — `comment`/`next_action`/etc.
-were single mutable fields, never a history. Fixed at the root: `escalation` is now CURRENT STATE
-ONLY, `escalation_history` is a real APPEND-ONLY table, one FULL SNAPSHOT row per update, every
-column's value at that version, never updated or deleted once written.
+**Full rebuild, 2026-08-20** (full design: `iba/docs/escalation-rebuild-design-v1-20260820.md`).
+The redesign that preceded this (2026-08-19/20, `escalation-redesign-plan-v3-20260819.md`) fixed
+the loss-of-history bug (#715) correctly but shipped with no config representation for any of its
+own validate/complete rules, and its `escalation_history` rows stored full cumulative snapshots
+instead of per-version deltas — both found, in one session, alongside a chain of smaller defects
+(a title-shape violation, ≥39 originator misattributions from a silent default, two `cfg_escalation`
+rows naming a function that no longer existed). Researcher: *"the system is not ready for
+production ... export the data ... delete all the records ... go back and do a proper design and
+implementation."* Both tables were exported (`iba/app/db/archive/escalation{,_history}-export-
+20260820.json`) and emptied before this rewrite.
 
-**Two shapes now share this mechanism, each with its own vocabulary — deliberately NOT unified**,
-because they answer genuinely different questions:
+**What actually changed** (§1 of the design doc has the full before/after table):
+  - `escalation_history`'s content fields (`comment`/`context`/`resolution`/`tried`/
+    `short_description`/`related_activity`) are now TRUE DELTAS — `NULL` unless this transaction
+    actually set them. `escalation`'s own fields are unchanged: still the cumulative/current state.
+  - State-derivation is now a config-driven rule engine (`cfg_escalation_transition`), evaluated
+    in priority order, not a hardcoded `if`/`elif` chain — see `_evaluate_transition()`.
+  - Field-requirement rules are config-driven too (`cfg_escalation_requirement`) — see
+    `_check_requirements()`.
+  - `originator` has NO default anywhere, in this file or in `Escalation.ps1` — every caller must
+    say who they are. The old `"Researcher"` default was the actual root cause of the
+    misattribution bug.
+  - Two-stage approval (`ready_for_approval` → `approved`) now checks the two parties differ.
+  - `escalation_next_action` (the old merged cfg_enum) is retired; the dispatcher and manual
+    shapes each validate against their own group (`escalation_next_action_dispatcher` /
+    `_manual`), closing the vocabulary-leak gap the merged enum had.
 
-  - **dispatcher-tied** (`run_id` set) — a real pipeline pause, e.g. `configmaint.propose`/
-    `validate`, `candidate.validate`, `passage.build`/`validate`, `lexicon.validate`. Vocabulary
-    UNCHANGED from the pre-redesign shape (`approve | reject | revise | hold | noted`) so the 9
-    existing handler call sites (`answered_for_run()["next_action"]`/`["comment"]`) needed zero
-    changes — verified by reading every one of them, not assumed compatible. `raise_()` /
-    `pending_for_run()` / `answered_for_run()` / `answer_for_run()` are this shape's functions.
+**Two shapes, deliberately not unified** (unchanged from the prior redesign, still correct):
+  - **dispatcher-tied** (`run_id` set) — a real pipeline pause. `raise_()` / `pending_for_run()` /
+    `answered_for_run()` / `answer_for_run()`.
+  - **manual** (`run_id` is `MANUAL-...`) — the researcher/Claude backlog workflow. `raise_new()` /
+    `update()`.
 
-  - **manual** (`run_id` is `MANUAL-...`, no real `run` row) — the researcher/Claude backlog-of-
-    work-and-issues workflow the three plan-review rounds designed. Vocabulary: `ready_for_approval
-    | approved | reject | revise | noted | review` — a two-stage handshake for approval
-    (`ready_for_approval` -> `approved` -> system-validated `completed`, producing two real history
-    rows), auto-state rules evaluated in priority order (plan v3 §3). `raise_new()` / `update()`
-    are this shape's functions.
-
-Both write through the SAME full-snapshot mechanism (`_snapshot()`), so both get real history for
-free — including dispatcher-tied items, which never had it before either.
+Both write through the SAME snapshot mechanism (`_snapshot()`), so both get real (now correctly
+delta-shaped) history for free.
 
 CLI (module path: iba.app.lib.escalation, invoked as `python -m iba.app.lib.escalation`):
     python -m iba.app.lib.escalation list
     python -m iba.app.lib.escalation answer-run <run_id> <approve|reject|revise|hold|noted>
-        [--by=Claude|Researcher] [--resolution=...] [comment words...]
+        --by=Claude|Researcher [--resolution=...] [comment words...]
     python -m iba.app.lib.escalation raise <question...>
-        [--source=claude|researcher] [--assigned-to=Claude|Researcher] [--type=task|...]
-        [--related-activity=...]
-    python -m iba.app.lib.escalation update <id> [--next-action=...] [--assigned-to=...]
-        [--state=on-hold|in-progress|closed|withdraw|supersede] [--resolution=...]
-        [--related-activity=...] [--tried=...] [comment/context words...]
+        --originator=Claude|Researcher [--source=claude|researcher] [--assigned-to=Claude|Researcher]
+        [--type=task|...] [--related-activity=...] --comment=...
+    python -m iba.app.lib.escalation update <id> --originator=Claude|Researcher
+        [--next-action=...] [--assigned-to=...] [--state=on-hold|in-progress|closed|withdraw|supersede]
+        [--resolution=...] [--related-activity=...] [--tried=...] [comment/context words...]
+
+`--originator`/`--by` are now REQUIRED on every write verb — no default, see above.
 """
 
 from __future__ import annotations
@@ -59,9 +70,11 @@ _OPEN_STATES = ("raised", "re-assigned", "on-hold", "in-progress")
 
 # every business column on `escalation` / `escalation_history` (id/version/escalation_id excluded
 # -- those are structural, not part of a snapshot's business content)
-_COLS = ("run_id", "source", "at_step", "type", "short_description", "context", "comment", "tried",
-        "state", "next_action", "next_action_assigned_to", "originator", "resolution",
-        "related_activity", "raised_at", "answered_at")
+_ENVELOPE_COLS = ("state", "next_action", "next_action_assigned_to", "originator", "answered_at")
+_APPEND_COLS = ("comment", "context")            # escalation: cumulative. history: raw increment.
+_REPLACE_COLS = ("resolution", "related_activity", "tried", "short_description")
+_IMMUTABLE_COLS = ("run_id", "source", "at_step", "type", "raised_at")
+_COLS = _ENVELOPE_COLS + _APPEND_COLS + _REPLACE_COLS + _IMMUTABLE_COLS
 
 
 def _now() -> str:
@@ -91,26 +104,142 @@ def _check_type(db: Db, etype: str) -> str:
     return etype
 
 
-def _check_next_action(db: Db, next_action: str | None) -> str | None:
+def _check_next_action_manual(db: Db, next_action: str | None) -> str | None:
     if next_action is None:
         return None
-    valid = db.cfg.enum("escalation_next_action")
+    valid = db.cfg.enum("escalation_next_action_manual")
     if next_action not in valid:
-        raise ValueError(f"{next_action!r} is not a member of cfg_enum 'escalation_next_action' "
-                         f"({valid!r})")
+        raise ValueError(f"{next_action!r} is not a member of cfg_enum "
+                         f"'escalation_next_action_manual' ({valid!r})")
     return next_action
+
+
+def _check_next_action_dispatcher(db: Db, decision: str) -> str:
+    valid = db.cfg.enum("escalation_next_action_dispatcher")
+    if decision not in valid:
+        raise ValueError(f"{decision!r} is not a member of cfg_enum "
+                         f"'escalation_next_action_dispatcher' ({valid!r})")
+    return decision
 
 
 def _check_assignee(db: Db, who: str | None, required: bool = True) -> str | None:
     if who is None:
         if required:
-            raise ValueError("originator is required — must be 'Claude' or 'Researcher'")
+            raise ValueError("originator is required — must be 'Claude' or 'Researcher'. No "
+                             "default (escalation rebuild 2026-08-20): a silent 'Researcher' "
+                             "default previously misattributed >=39 history rows in one session.")
         return None
     normalised = who.strip().capitalize()
     valid = db.cfg.enum("escalation_assignee")
     if normalised not in valid:
         raise ValueError(f"{who!r} is not a member of cfg_enum 'escalation_assignee' ({valid!r})")
     return normalised
+
+
+_TITLE_MAX_CHARS = 60
+
+
+def _title_shape_error(short_description: str) -> str | None:
+    """Returns an error message if `short_description` violates the title-shape spec (escalation
+    #759 -- 'a short description of item, like a title', <=60 chars, no embedded clause-stitching)
+    -- else None."""
+    if "\n" in short_description:
+        return "short_description must be a single line (a title) -- it contains a newline."
+    if len(short_description) > _TITLE_MAX_CHARS:
+        return (f"short_description is {len(short_description)} chars, over the "
+                f"{_TITLE_MAX_CHARS}-char title limit. It must read like a title/subject naming "
+                f"the topic -- move the detail into context (background needed to understand/"
+                f"decide) or comment (what needs to be done, or the error).")
+    if "--" in short_description:
+        return ("short_description contains '--' -- that's a clause connector, a reliable sign "
+                "this is a compressed sentence, not a title. Rephrase as a noun phrase naming the "
+                "topic; move the detail into context/comment.")
+    return None
+
+
+def _status_for(db: Db, set_by_substr: str, fallback: str) -> str:
+    """cfg_status_flow lookup for entity='escalation' -- same pattern handlers/registry.py uses
+    for entity='word'. `fallback` is only hit if the row is somehow missing post-rebuild (defensive,
+    should not happen -- every key used below has a seeded row, see migration/
+    rebuild_escalation_rules_config_20260820.py)."""
+    for r in db.conn.execute(
+            "SELECT status FROM cfg_status_flow WHERE entity='escalation' AND set_by LIKE ?",
+            (f"%{set_by_substr}%",)):
+        return r["status"]
+    return fallback
+
+
+# ── the config-driven state-derivation rule engine ───────────────────────────────────────────────
+def _condition_true(condition_key: str, *, next_action: str | None, has_resolution: bool,
+                    assignee_changed: bool) -> bool:
+    """The fixed, small vocabulary cfg_escalation_transition.condition_key draws from -- see
+    escalation-rebuild-design-v1-20260820.md sec2.4. A new condition needs a code change here
+    (a new named boolean); which RULE consumes it, in what priority, with what resulting status,
+    is config from that point on."""
+    if condition_key == "always":
+        return True
+    if condition_key == "has_resolution":
+        return bool(has_resolution)
+    if condition_key == "assignee_changed":
+        return bool(assignee_changed)
+    raise ValueError(f"unknown cfg_escalation_transition.condition_key {condition_key!r}")
+
+
+def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_resolution: bool,
+                         assignee_changed: bool, explicit_state: str | None,
+                         cur_state: str) -> str:
+    """Reads cfg_escalation_transition for `shape`, in priority order, first match wins -- replaces
+    the old hardcoded if/elif chain. `resulting_status_key` of `__explicit__` means the reject
+    branch: state comes from the caller's own choice, validated here (withdraw|supersede only).
+    `__unchanged__` means no rule truly fires: state carries forward (or the caller's -State)."""
+    rows = db.rows(
+        "SELECT priority, next_action, condition_key, resulting_status_key FROM "
+        "cfg_escalation_transition WHERE shape=? AND active=1 ORDER BY priority", (shape,))
+    if not rows:
+        raise ValueError(f"cfg_escalation_transition has no active rows for shape={shape!r} -- "
+                         f"run migration/rebuild_escalation_rules_config_20260820")
+    for r in rows:
+        if r["next_action"] is not None and r["next_action"] != next_action:
+            continue
+        if not _condition_true(r["condition_key"], next_action=next_action,
+                               has_resolution=has_resolution, assignee_changed=assignee_changed):
+            continue
+        key = r["resulting_status_key"]
+        if key == "__explicit__":
+            if explicit_state not in ("withdraw", "supersede"):
+                raise ValueError("next_action='reject' requires state='withdraw' or 'supersede', "
+                                 "chosen explicitly by the caller")
+            return explicit_state
+        if key == "__unchanged__":
+            return explicit_state or cur_state
+        return _status_for(db, key, cur_state)
+    raise ValueError(f"no cfg_escalation_transition rule matched shape={shape!r} "
+                     f"next_action={next_action!r} -- the priority-last 'always' rule should have "
+                     f"caught this; check the seed data")
+
+
+# ── the config-driven field-requirement checker ──────────────────────────────────────────────────
+def _requirement_condition_true(condition_key: str, *, originator: str, checked_action: str | None) -> bool:
+    if condition_key == "always":
+        return True
+    if condition_key == "claude_revising":
+        return originator == "Claude" and checked_action == "revise"
+    raise ValueError(f"unknown cfg_escalation_requirement.condition_key {condition_key!r}")
+
+
+def _check_requirements(db: Db, action: str, *, originator: str, checked_action: str | None,
+                        values: dict) -> None:
+    """Raises ValueError on the first unmet requirement. `values` = the field->value the caller is
+    actually supplying this transaction (already-merged where relevant, e.g. resolution)."""
+    rows = db.rows(
+        "SELECT field, condition_key, message FROM cfg_escalation_requirement "
+        "WHERE action=? AND active=1", (action,))
+    for r in rows:
+        if not _requirement_condition_true(r["condition_key"], originator=originator,
+                                           checked_action=checked_action):
+            continue
+        if not values.get(r["field"]):
+            raise ValueError(r["message"])
 
 
 # ── the shared core: every write, either shape, goes through this ───────────────────────────────
@@ -122,17 +251,13 @@ def _current(db: Db, escalation_id: int) -> dict:
 
 
 def _grant_both(cfg: Cfg) -> None:
-    """Every write touches BOTH `escalation` and `escalation_history` -- check both grants
-    explicitly, every time, rather than relying on one check to stand in for the other (escalation
-    #745, 2026-08-20: `escalation_history` had no grant row at all and nothing ever caught it,
-    because only `escalation`'s grant was ever checked here)."""
     _grant(cfg, "escalation")
     _grant(cfg, "escalation_history")
 
 
 def _create(cfg: Cfg, db: Db, **fields) -> int:
-    """New item, version 1. `fields` must already have every _COLS value resolved (raised_at set,
-    defaults applied by the caller) -- this just writes it, snapshot included."""
+    """New item, version 1. Every field is 'set' at creation -- no delta/envelope split needed,
+    v1's history row IS the full row (matches escalation itself)."""
     _grant_both(cfg)
     row = {"version": 1, **{k: fields.get(k) for k in _COLS}}
     new_id = db.write("escalation", row)
@@ -141,56 +266,86 @@ def _create(cfg: Cfg, db: Db, **fields) -> int:
     return new_id
 
 
-def _snapshot(cfg: Cfg, db: Db, escalation_id: int, changes: dict, originator: str) -> dict:
-    """Merge `changes` onto the current row, write the new full-snapshot history row, update
-    `escalation` to match -- both in the caller's open transaction (single commit). Returns the
-    merged row."""
+def _snapshot(cfg: Cfg, db: Db, escalation_id: int, deltas: dict, envelope: dict,
+              originator: str) -> dict:
+    """`deltas` = exactly what the caller is setting THIS transaction for append/replace columns
+    (raw, un-merged increments -- None/absent means untouched). `envelope` = state/next_action/
+    next_action_assigned_to already resolved by the caller. Writes escalation_history with deltas
+    AS GIVEN (NULL where not supplied this version) plus envelope always populated -- a true
+    per-version delta, not a cumulative snapshot (escalation-rebuild-design-v1 sec1/sec3). Writes
+    `escalation` with append-cols merged onto the running cumulative text and replace-cols taking
+    the new value or carrying forward -- `escalation` stays the full current-state materialisation
+    it always was."""
     _grant_both(cfg)
     cur = _current(db, escalation_id)
-    merged = {**cur, **changes}
-    merged["version"] = cur["version"] + 1
+    version = cur["version"] + 1
+    now = _now()
+
+    hist_row = {c: None for c in _APPEND_COLS + _REPLACE_COLS + _IMMUTABLE_COLS}
+    for c in _APPEND_COLS + _REPLACE_COLS:
+        if deltas.get(c):
+            hist_row[c] = deltas[c]
+    hist_row.update(envelope)
+    hist_row["originator"] = originator
+    hist_row["answered_at"] = now
+    db.write("escalation_history", {"escalation_id": escalation_id, "version": version, **hist_row})
+
+    merged = dict(cur)
+    for c in _APPEND_COLS:
+        if deltas.get(c):
+            merged[c] = _append(cur[c], deltas[c])
+    for c in _REPLACE_COLS:
+        if deltas.get(c) is not None:
+            merged[c] = deltas[c]
+    merged.update(envelope)
     merged["originator"] = originator
-    merged["answered_at"] = _now()
-    db.write("escalation_history", {"escalation_id": escalation_id, "version": merged["version"],
-                                    **{k: merged[k] for k in _COLS}})
-    db.update("escalation", {"id": escalation_id}, version=merged["version"],
-              **{k: merged[k] for k in _COLS})
+    merged["answered_at"] = now
+    merged["version"] = version
+    db.update("escalation", {"id": escalation_id}, version=version,
+             **{k: merged[k] for k in _COLS})
     return merged
 
 
 def _append(current: str | None, addition: str | None) -> str | None:
-    """Cumulative field convention (plan v3 §2): the caller supplies only the increment; storage
-    holds the running full text."""
     if not addition:
         return current
     return f"{current}\n{addition}" if current else addition
 
 
-# ── DISPATCHER-TIED shape (run_id set) -- vocabulary/semantics UNCHANGED from pre-redesign ──────
-def _terminal_state_for(next_action: str) -> str:
-    """Dispatcher-tied decision -> state. Unchanged from the pre-redesign function of the same
-    name (run-scoped branch only -- the is_manual branch doesn't apply here, manual items use
-    `update()`'s auto-state rules instead, see plan v3 §3)."""
-    if next_action == "hold":
-        return "on-hold"
-    if next_action == "noted":
-        return "closed"
-    return "completed"
+def _last_next_action_originator(db: Db, escalation_id: int, next_action: str) -> str | None:
+    rows = db.rows(
+        "SELECT originator FROM escalation_history WHERE escalation_id=? AND next_action=? "
+        "ORDER BY version DESC LIMIT 1", (escalation_id, next_action))
+    return rows[0]["originator"] if rows else None
+
+
+# ── DISPATCHER-TIED shape (run_id set) -- vocabulary/semantics unchanged, engine now config-driven
+def _sanitise_dispatcher_title(question: str, preset: dict) -> tuple[str, dict]:
+    """Dispatcher-tied short_description still respects the title-shape spec, but this path fires
+    from inside a crash/pause handler (run.py:172-200) -- raising here would mask the real crash.
+    Sanitise instead of reject, never lose data: the untouched original survives in
+    preset['full_message'] whenever sanitising actually changes anything."""
+    if _title_shape_error(question) is None:
+        return question, preset
+    flat = question.replace("\n", " ").replace("--", "-")
+    if len(flat) > _TITLE_MAX_CHARS:
+        flat = flat[: _TITLE_MAX_CHARS - 1].rstrip() + "…"
+    return flat, {**preset, "full_message": question}
 
 
 def raise_(db: Db, run_id: str, source: str, at_step: str, question: str,
           preset: dict, tried: str, etype: str = "task", assigned_to: str = "Researcher") -> int:
-    """Record a pause -- called by run.py at a real dispatcher pause point. `source` is the
-    caller's own choice (word_source(word) for a word-scoped step, _source_for_step(step_id)
-    otherwise) -- this function no longer derives it, since run.py's 3 call sites need both
-    shapes and only one of them is word-scoped."""
+    """Record a pause -- called by run.py at a real dispatcher pause point."""
     now = _now()
+    short_description, preset = _sanitise_dispatcher_title(question, preset)
     fields = {
         "run_id": run_id, "source": source, "at_step": at_step,
-        "type": _check_type(db, etype), "short_description": question, "context": json.dumps(preset),
-        "tried": tried, "state": _check_state(db, "raised"), "next_action": None,
-        "answered_at": now, "raised_at": now,     # answered_at = this row's own write time, not
-        "resolution": None, "related_activity": at_step,          # a decision date -- never null
+        "type": _check_type(db, etype), "short_description": short_description,
+        "context": json.dumps(preset),
+        "tried": tried, "state": _check_state(db, _status_for(db, "at Raise", "raised")),
+        "next_action": None,
+        "answered_at": now, "raised_at": now,
+        "resolution": None, "related_activity": at_step,
         "next_action_assigned_to": _check_assignee(db, assigned_to), "originator": None}
     return _create(db.cfg, db, **fields)
 
@@ -202,9 +357,8 @@ def pending_for_run(db: Db, run_id: str):
 
 
 def answered_for_run(db: Db, run_id: str, at_step: str):
-    """The latest COMPLETED escalation for a run at a step, or None -- unchanged signature/
-    semantics from pre-redesign. `hold`/`noted` deliberately never resolve to `state='completed'`,
-    so they never match here: the underlying run correctly stays paused (see _terminal_state_for)."""
+    """The latest COMPLETED escalation for a run at a step, or None. `hold`/`noted` deliberately
+    never resolve to `state='completed'`, so they never match here."""
     rows = db.rows(
         "SELECT * FROM escalation WHERE run_id=? AND at_step=? AND state='completed' "
         "ORDER BY id DESC LIMIT 1", (run_id, at_step))
@@ -218,47 +372,48 @@ def open_duplicate(db: Db, at_step: str, stable_key: str):
     return rows[0] if rows else None
 
 
-def _resolve_id(db: Db, ident: str) -> int:
-    """Accept either the bare `escalation.id` or (legacy convenience) a digit string."""
-    return int(ident)
-
-
 def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | None = None,
-                   answered_by: str = "Researcher", resolution: str | None = None) -> str:
-    """Record the decision on a run-scoped (dispatcher-tied) escalation. decision: approve | reject
-    | revise | hold | noted -- UNCHANGED vocabulary/state-mapping from pre-redesign."""
+                   *, answered_by: str, resolution: str | None = None) -> str:
+    """Record the decision on a run-scoped (dispatcher-tied) escalation. `answered_by` is required,
+    no default (escalation-rebuild-design-v1 sec6)."""
     decision = decision.lower()
-    valid = ("approve", "reject", "revise", "hold", "noted")
-    if decision not in valid:
-        return f"invalid decision {decision!r} — must be one of {valid!r}"
     rows = pending_for_run(db, run_id)
     if not rows:
         return f"no pending escalation for run {run_id!r}"
     esc_row = rows[0]
     who = _check_assignee(db, answered_by)
-    new_state = _terminal_state_for(decision)
-    merged = _snapshot(cfg, db, esc_row["id"], {
-        "state": _check_state(db, new_state), "next_action": decision,
-        "comment": _append(esc_row["comment"], comment), "resolution": resolution}, who)
+    decision = _check_next_action_dispatcher(db, decision)
+    new_state = _evaluate_transition(db, "dispatcher", decision, has_resolution=bool(resolution),
+                                     assignee_changed=False, explicit_state=None,
+                                     cur_state=esc_row["state"])
+    merged = _snapshot(cfg, db, esc_row["id"],
+                       deltas={"comment": comment, "resolution": resolution},
+                       envelope={"state": _check_state(db, new_state), "next_action": decision,
+                                "next_action_assigned_to": esc_row["next_action_assigned_to"]},
+                       originator=who)
     return (f"escalation {esc_row['id']} (run {run_id!r}, step {esc_row['at_step']!r}) answered "
            f"{decision!r} -> {new_state}" + (f" — {comment!r}" if comment else ""))
 
 
-# ── MANUAL shape -- the new two-transaction model (plan v3) ─────────────────────────────────────
+# ── MANUAL shape ──────────────────────────────────────────────────────────────────────────────
 def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str = "task",
              comment: str | None = None, context: str | None = None,
              related_activity: str | None = None, assigned_to: str = "Claude",
-             originator: str = "Researcher") -> int:
-    """Raise -- a new MANUAL item. Required: short_description, source, type, comment (plan v3
-    §6). Defaults: next_action_assigned_to=Claude, next_action=review, state=raised."""
-    if not comment:
-        raise ValueError("comment is required at Raise -- minimum: what the item is about")
+             *, originator: str) -> int:
+    """Raise -- a new MANUAL item. `originator` is required, no default. `comment`/
+    `short_description` requirements come from cfg_escalation_requirement (action='raise')."""
+    _check_requirements(db, "raise", originator=originator or "", checked_action=None,
+                        values={"comment": comment, "short_description": short_description})
+    title_error = _title_shape_error(short_description)
+    if title_error:
+        raise ValueError(title_error)
     run_id = f"MANUAL-{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d_%H%M%S_%f')}"
     now = _now()
     fields = {
         "run_id": run_id, "source": source, "at_step": "manual", "type": _check_type(db, etype),
         "short_description": short_description, "context": context, "comment": comment,
-        "tried": None, "state": _check_state(db, "raised"), "next_action": "review",
+        "tried": None, "state": _check_state(db, _status_for(db, "at Raise", "raised")),
+        "next_action": "review",
         "answered_at": now, "raised_at": now, "resolution": None,
         "related_activity": related_activity,
         "next_action_assigned_to": _check_assignee(db, assigned_to),
@@ -266,32 +421,14 @@ def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str 
     return _create(cfg, db, **fields)
 
 
-def _derive_state(cur: dict, next_action: str | None, explicit_state: str | None,
-                  assignee_changed: bool) -> str:
-    """Auto-state rules, priority order (plan v3 §3) -- first match wins."""
-    if next_action == "approved" and (cur.get("resolution") or explicit_state):
-        return "completed"
-    if next_action == "reject":
-        if explicit_state not in ("withdraw", "supersede"):
-            raise ValueError("next_action='reject' requires state='withdraw' or 'supersede', "
-                             "chosen explicitly by the caller (plan v3 §3)")
-        return explicit_state
-    if next_action == "revise":
-        return "in-progress"
-    if next_action == "noted":
-        return "closed"
-    if assignee_changed:
-        return "re-assigned"
-    return explicit_state or cur["state"]
-
-
 def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = None,
           next_action_assigned_to: str | None = None, comment: str | None = None,
           context: str | None = None, tried: str | None = None, resolution: str | None = None,
           related_activity: str | None = None, state: str | None = None,
-          originator: str = "Researcher") -> str:
-    """Update -- every subsequent change to a MANUAL item, on any open state (plan v3 §6). Only
-    fields given a value change; everything else carries forward from the current row (§2)."""
+          originator: str) -> str:
+    """Update -- every subsequent change to a MANUAL item. `originator` is required, no default.
+    Two-stage approval separation of duties: the party that sets `approved` must differ from the
+    party that most recently set `ready_for_approval` on this item."""
     cur = _current(db, escalation_id)
     if not cur["run_id"].startswith("MANUAL-"):
         return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
@@ -300,34 +437,53 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
         return f"escalation #{escalation_id} is not open (state={cur['state']!r})"
 
     who = _check_assignee(db, originator)
-    checked_action = _check_next_action(db, next_action)
+    checked_action = _check_next_action_manual(db, next_action)
     new_resolution = resolution if resolution is not None else cur["resolution"]
-    if checked_action == "approved" and not new_resolution:
-        return "next_action='approved' requires resolution to be filled in (plan v3 §3)"
-    assignee_changed = bool(next_action_assigned_to) and next_action_assigned_to != cur["next_action_assigned_to"]
-    new_state = _derive_state(cur, checked_action, state, assignee_changed)
 
-    merged = _snapshot(cfg, db, escalation_id, {
-        "next_action": checked_action if checked_action is not None else cur["next_action"],
-        "next_action_assigned_to": _check_assignee(db, next_action_assigned_to, required=False) or cur["next_action_assigned_to"],
-        "comment": _append(cur["comment"], comment),
-        "context": _append(cur["context"], context),
-        "tried": tried if tried is not None else cur["tried"],
-        "resolution": new_resolution,
-        "related_activity": related_activity if related_activity is not None else cur["related_activity"],
-        "state": _check_state(db, new_state)}, who)
+    if checked_action == "approved":
+        last_rfa_by = _last_next_action_originator(db, escalation_id, "ready_for_approval")
+        if last_rfa_by and last_rfa_by == who:
+            return (f"escalation #{escalation_id}: {who} cannot set 'approved' -- {who} is also "
+                   f"who most recently set 'ready_for_approval' on this item. Approval needs a "
+                   f"different party.")
+
+    if checked_action == "approved":
+        _check_requirements(db, "approved", originator=who, checked_action=checked_action,
+                            values={"resolution": new_resolution})
+    if checked_action == "reject":
+        _check_requirements(db, "reject", originator=who, checked_action=checked_action,
+                            values={"state": state})
+    if checked_action == "revise":
+        _check_requirements(db, "revise", originator=who, checked_action=checked_action,
+                            values={"tried": tried})
+
+    assignee_changed = bool(next_action_assigned_to) and next_action_assigned_to != cur["next_action_assigned_to"]
+    new_state = _evaluate_transition(db, "manual", checked_action, has_resolution=bool(new_resolution),
+                                     assignee_changed=assignee_changed, explicit_state=state,
+                                     cur_state=cur["state"])
+
+    merged = _snapshot(cfg, db, escalation_id,
+                       deltas={"comment": comment, "context": context, "tried": tried,
+                              "resolution": resolution, "related_activity": related_activity},
+                       envelope={
+                           "next_action": checked_action if checked_action is not None else cur["next_action"],
+                           "next_action_assigned_to": _check_assignee(db, next_action_assigned_to, required=False) or cur["next_action_assigned_to"],
+                           "state": _check_state(db, new_state)},
+                       originator=who)
     return f"escalation #{escalation_id} v{merged['version']} -> state={new_state!r}"
 
 
-def _context_gist(raw: str | None) -> str:
+# ── reports ───────────────────────────────────────────────────────────────────────────────────
+def _gist(raw, width: int = 80) -> str:
     if not raw:
         return ""
-    return str(raw).replace("\n", " ")[:80]
+    return str(raw).replace("\n", " ")[:width]
 
 
 def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Path, list]:
-    """Open items, grouped by related_activity, WITH full history inline underneath each one
-    (plan v3 §5a -- the old report only ever showed current state)."""
+    """Open items, grouped by related_activity, WITH full history inline underneath each one --
+    the `comment`/`context` columns here are now the true per-version DELTA (blank when that
+    version didn't touch the field), not a cumulative gist (escalation-rebuild-design-v1 sec4.2)."""
     ph = ",".join("?" * len(_OPEN_STATES))
     rows = db.rows(f"SELECT * FROM escalation WHERE state IN ({ph}) "
                    f"ORDER BY related_activity, id", _OPEN_STATES)
@@ -340,7 +496,7 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
         f"> {objectives}. {process}.".strip(), "",
         f"> Generated by `Escalation.ps1 -Action List`. {len(rows)} open escalation(s) "
         f"({n_active} active, {n_in_progress} in-progress, {n_on_hold} on-hold), grouped by "
-        f"`related_activity`, full history inline.", ""]
+        f"`related_activity`, full history inline (each row = that version's own changes).", ""]
     if not rows:
         L.append("_no open escalations_")
     for r in rows:
@@ -350,11 +506,14 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
         L.append(f"type={r['type']} assigned_to={r['next_action_assigned_to']} "
                  f"related_activity={r['related_activity'] or ''}")
         L.append("")
-        L.append("| v | state | next_action | originator | comment | at |")
+        L.append("| v | state | next_action | originator | changed this version | at |")
         L.append("|---|---|---|---|---|---|")
         for h in hist:
+            changed = [c for c in ("comment", "context", "resolution", "tried",
+                                   "short_description", "related_activity") if h[c]]
+            summary = "; ".join(f"{c}: {_gist(h[c], 50)}" for c in changed) or "_(state/assignee only)_"
             L.append(f"| {h['version']} | {h['state']} | {h['next_action'] or ''} | "
-                     f"{h['originator'] or ''} | {_context_gist(h['comment'])} | {h['answered_at']} |")
+                     f"{h['originator'] or ''} | {summary} | {h['answered_at']} |")
         L.append("")
 
     resolved = db.rows(
@@ -382,8 +541,9 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
 
 
 def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Path) -> pathlib.Path:
-    """Deep-history report for one item (plan v3 §5b) -- its full history, plus the same for every
-    item its related_activity text names or that names it back."""
+    """Deep-history report for one item -- its full history, plus the same for every item its
+    related_activity text names or that names it back. Every column shown: envelope fields always,
+    delta fields only when this version actually set them (escalation-rebuild-design-v1 sec4.1)."""
     seen: set[int] = set()
     queue = [escalation_id]
     L = ["# Escalation deep history", ""]
@@ -399,13 +559,17 @@ def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Pat
         hist = db.rows("SELECT * FROM escalation_history WHERE escalation_id=? ORDER BY version",
                        (eid,))
         L.append(f"## #{eid} — {r['short_description']}")
-        L.append(f"related_activity: {r['related_activity'] or ''}")
+        L.append(f"type={r['type']} source={r['source']} related_activity={r['related_activity'] or ''}")
         L.append("")
         for h in hist:
             L.append(f"**v{h['version']}** ({h['answered_at']}, {h['originator'] or '?'}) "
-                     f"state={h['state']} next_action={h['next_action'] or ''}")
-            if h["comment"]:
-                L.append(f"> {h['comment']}")
+                     f"state={h['state']} next_action={h['next_action'] or ''} "
+                     f"assigned_to={h['next_action_assigned_to'] or ''}")
+            for c in ("short_description", "comment", "context", "resolution", "tried",
+                     "related_activity"):
+                if h[c]:
+                    label = c.replace("_", " ")
+                    L.append(f"> **{label} (set this version):** {h[c]}")
             L.append("")
         if r["related_activity"]:
             others = db.rows(
@@ -436,6 +600,33 @@ def main() -> int:
     cfg = Cfg()
     db = Db(cfg)
     argv = sys.argv[1:]
+    try:
+        return _dispatch(cfg, db, argv)
+    except Exception as exc:
+        import traceback
+        tb = traceback.format_exc()
+        db.conn.rollback()
+        try:
+            title, extra = _sanitise_dispatcher_title(f"escalation CLI crashed: {exc}",
+                                                       {"argv": argv, "traceback": tb})
+            raise_new(cfg, db, title, "iba.app.lib.escalation",
+                     etype="run_error", comment=f"argv={argv!r}\n{tb}",
+                     context=json.dumps(extra),
+                     related_activity="escalation-cli-crash", assigned_to="Claude",
+                     originator="Claude")
+        except Exception:
+            pass   # never let a failure recording the crash mask the original crash itself
+        db.close()
+        raise
+
+
+def _require_flag(value: str | None, name: str) -> str:
+    if not value:
+        raise ValueError(f"--{name}= is required -- no default (escalation rebuild 2026-08-20)")
+    return value
+
+
+def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
     if len(argv) >= 1 and argv[0] == "list":
         path = pathlib.Path(cfg.setting("escalation.list_report_path",
                                         "iba/app/reports/escalation-list.md"))
@@ -446,7 +637,7 @@ def main() -> int:
         rest, resolution = _extract_flag(rest, "resolution")
         comment = " ".join(rest) or None
         print("  " + answer_for_run(cfg, db, argv[1], argv[2], comment,
-                                    answered_by=by or "Researcher", resolution=resolution))
+                                    answered_by=_require_flag(by, "by"), resolution=resolution))
     elif len(argv) >= 2 and argv[0] == "raise":
         rest, source = _extract_flag(argv[1:], "source")
         rest, assigned_to = _extract_flag(rest, "assigned-to")
@@ -459,7 +650,8 @@ def main() -> int:
         new_id = raise_new(cfg, db, question, source or "claude", etype=etype or "task",
                            comment=comment or question, context=context,
                            assigned_to=assigned_to or "Researcher",
-                           related_activity=related_activity, originator=originator or "Researcher")
+                           related_activity=related_activity,
+                           originator=_require_flag(originator, "originator"))
         print(f"  raised — #{new_id}. Update with: python -m iba.app.lib.escalation update {new_id} ...")
     elif len(argv) >= 2 and argv[0] == "update":
         rest, next_action = _extract_flag(argv[2:], "next-action")
@@ -474,7 +666,7 @@ def main() -> int:
         print("  " + update(cfg, db, int(argv[1]), next_action=next_action,
                             next_action_assigned_to=assigned_to, comment=comment, context=context,
                             tried=tried, resolution=resolution, related_activity=related_activity,
-                            state=state, originator=originator or "Researcher"))
+                            state=state, originator=_require_flag(originator, "originator")))
     elif len(argv) >= 2 and argv[0] == "history":
         path = pathlib.Path(cfg.setting("escalation.history_report_dir",
                                         "iba/app/reports")) / f"escalation-{argv[1]}-history.md"
@@ -483,12 +675,14 @@ def main() -> int:
     else:
         print("usage: python -m iba.app.lib.escalation list"
              " | history <id>"
-             " | answer-run <run_id> <approve|reject|revise|hold|noted> [--by=...] "
+             " | answer-run <run_id> <approve|reject|revise|hold|noted> --by=Claude|Researcher "
              "[--resolution=...] [comment...]"
-             " | raise <short_description...> --comment=... [--source=...] [--assigned-to=...] "
-             "[--type=...] [--related-activity=...] [--context=...]"
-             " | update <id> [--next-action=...] [--assigned-to=...] [--state=...] "
-             "[--resolution=...] [--related-activity=...] [--tried=...] [--context=...] [comment...]")
+             " | raise <short_description...> --comment=... --originator=Claude|Researcher "
+             "[--source=...] [--assigned-to=...] [--type=...] [--related-activity=...] "
+             "[--context=...]"
+             " | update <id> --originator=Claude|Researcher [--next-action=...] [--assigned-to=...] "
+             "[--state=...] [--resolution=...] [--related-activity=...] [--tried=...] "
+             "[--context=...] [comment...]")
     db.close()
     return 0
 

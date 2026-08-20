@@ -8705,3 +8705,319 @@ mentions are dated historical narrative, correctly left as pure history per the 
 
 **Files:** `iba/app/migration/fix_escalation_history_write_grant_20260820.py`,
 `iba/app/lib/escalation.py`, `iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`.
+
+## 156. `Escalation.ps1` positional-binding bug fixed (2026-08-20, escalation #754)
+
+Live hit, first real use of `-Action Update` after #155: the researcher ran `-State in-progress
+comment "..."` — a missing leading `-` before `-Comment`. Default `[CmdletBinding()]` positional
+binding took the bare token `comment` and bound it to `-RunId` (position 2, first unbound
+parameter), then bound the actual comment text to `-Decision` (position 3), which failed
+`ValidateSet` with an error pointing at `-Decision` — nothing in the message named the real
+problem (missing dash) or that `-RunId` had also been silently corrupted. Root cause: none of the
+script's 16 params declare an explicit `Position`, so PowerShell's advanced-function default
+(positional binding on) assigns them positions in declaration order regardless of intent — every
+`.EXAMPLE` in the script's own header uses named parameters only, positional binding was never
+actually wanted here.
+
+**Fix:** `[CmdletBinding(PositionalBinding = $false)]`. Verified: (1) the exact failing command now
+throws `A positional parameter cannot be found that accepts argument 'comment'.` — names the actual
+bad token instead of corrupting an unrelated parameter; (2) named-parameter usage (`-Action History
+-Id 753`) unchanged; (3) grepped every `iba/app/ps/*.ps1` caller of `Escalation.ps1` — all
+named-parameter only, nothing relies on positional args; (4) the researcher's original `-Action
+Update -Id 753` command re-run with `-Comment` corrected, landed clean as v2.
+
+Also surfaced, not yet acted on: the error was a PS-side terminating error thrown before the script
+reached `iba.app.lib.escalation` at all, so it never landed as an escalation row on its own — no
+mechanism auto-captures a PS terminating error into the escalation table today (`cfg_behaviour_rule`
+`terminal` class has no such rule; escalation raised manually by Claude after the researcher
+reported the error in chat). Tracked as `#754`, `related_activity` references `#753`.
+
+**Second fix, same escalation (researcher spotted it live):** `USER-GUIDE.md` §4.6's `-Action
+Update` synopsis documented the trailing argument as a bare `[comment text]` rather than `[-Comment
+"..."]` — the doc itself taught the exact positional usage that caused the bug. Corrected, and the
+undocumented `[-Context "..."]` flag added alongside it.
+
+**Files:** `iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`.
+
+## 157. Escalation config-review fixes, in progress (2026-08-20, escalation #755)
+
+Researcher approved findings 1/2/3/4 from `iba/docs/escalation-config-review-v1-20260820.md` for
+implementation ("finding 1 ... don't guess, just fix it", "finding 3 - fix it", "finding 4 - clear
+it"). Code-only parts landed and tested this pass; every `cfg_*` data change is blocked pending the
+researcher's own approval (see below) — self-approving a `configmaint.propose` was refused by the
+Claude Code permission classifier, and a second, independent app-level gate (`cfg_escalation.
+module_blocking`) then confirmed no further `configmaint.propose` call can even be *raised* while
+`#756` sits unresolved — tested live: 8 queued `cfg_status_flow` inserts all refused with the exact
+same `PermissionError`, no partial data written. Config proposals are strictly serial, one open item
+per module, resolved by the researcher — not a queue Claude can pre-load.
+
+**Finding 1 (state machine rules not in `cfg_status_flow`) — code done, data pending.**
+`escalation.py` gained `_status_for(db, set_by_substr, fallback)` (same pattern as
+`handlers/registry.py`'s `_status_for()`/`handlers/raw.py`'s `write()` already use for
+`entity='word'` — `cfg_status_flow` exists for exactly this). Wired into `raise_()`/`raise_new()`'s
+initial state, `_derive_state()`'s four derived-state branches, and `_terminal_state_for()`'s
+dispatcher-tied mapping — every call keeps today's literal as a fallback, so behaviour is
+byte-identical until the 8 `entity='escalation'` rows land. Tested against a scratch copy of
+`iba.db` two ways: (a) fallback path, rows absent — 10 scenarios (raise/revise/noted/reassign/
+approve-in-one-call/approve-two-call/reject-withdraw/reject-supersede/dispatcher-hold/
+dispatcher-approve/dispatcher-noted), all matched pre-fix behaviour exactly; (b) config-driven path,
+the 8 proposed rows inserted into the copy directly — every `_status_for()` lookup substring
+resolved to its intended row with no collisions, full scenario re-run gave identical results.
+
+**Real bug found and fixed live while testing (not one of the 4 findings):** `_derive_state()`
+checked `cur.get('resolution')` — the row's value *before* this update's own merge — so calling
+`update(next_action='approved', resolution='...')` in one shot silently failed to complete the item
+(fell through to a no-op instead), even though the PS docstring itself describes this single-call
+shortcut as valid. The two-call flow (`ready_for_approval` now, bare `approved` later) never hit it,
+because by the second call `cur` already reflects the first call's committed resolution. Fixed by
+passing the already-merged `new_resolution` into `_derive_state()` instead of re-deriving it from
+stale `cur`. Verified both the one-call and two-call paths now give identical, correct results.
+
+**Finding 2 (dispatcher-only error-trapping) — question answered, code done for the one instance
+found, wider sweep not attempted.** Confirmed live in `run.py`: `run_step()` already wraps every
+`cfg_step`-registered handler's call in try/except (lines 172-200) and records ANY uncaught
+exception as an escalation before re-raising — a real, working mechanism, per the researcher's own
+2026-07-30 standing rule quoted in the code comment there. But that rule is **not captured in any
+`cfg_*` row** — not `cfg_escalation`'s 7 rows, nowhere — only in the comment. And it only covers
+steps dispatched through `run_step()`; a standalone module CLI outside that path (like
+`escalation.py`'s own `list`/`raise`/`update`/`history`/`answer-run`) gets none of it — which is
+exactly why `#754` never landed a record on its own. Fixed the one confirmed instance: wrapped
+`escalation.py`'s `main()` in the identical catch-roll back-record(as a MANUAL item via its own
+`raise_new()`)-re-raise pattern, tested against a scratch DB copy with both a genuine crash
+(invalid `--type=`) and the happy path (`list`) — crash correctly recorded (`type=run_error`,
+`assigned_to=Claude`, `related_activity=escalation-cli-crash`) and re-raised unmasked; happy path
+unaffected. **Not done:** an inventory of every other standalone-CLI module outside `run_step()`'s
+protection, and the `cfg_escalation` rule row capturing the dispatcher rule itself — both need a
+`cfg_escalation` insert or a scoping decision, blocked the same way as finding 1's data.
+
+**Finding 3 (reports bypass `reportkit`/`cfg_report`) — not started.** Deliberately held: this
+app's own established convention (`reportkit.render_scaffold()`'s own docstring: "seed it in a
+migration before wiring the generator to call this") is config-first — wiring the code before the
+`cfg_report`/`cfg_report_section` rows exist would make `Escalation.ps1 -Action List`/`-Action
+History` hard-crash on every regenerate until they land. Row definitions are drafted (2 `cfg_report`
++ 3 `cfg_report_section` rows) but not yet proposed.
+
+**Finding 4 (orphan write-grant) — proposed, awaiting approval.** `#756`, `configmaint.propose`,
+paused. This is the escalation currently blocking every other proposal in this list.
+
+**Also found and escalated, unrelated:** `#757` — C: drive at 0 bytes free while testing (a full-DB
+scratch copy corrupted mid-write with "No space left on device"). Researcher cleared old
+snapshots/backups live during this session; confirmed back to 143GB free, `#757` closed. `#758` —
+`content_index` (14.1M rows) is the large majority of `iba.db`'s 7.5GB; two folders never added to
+`cfg_content_index_exclude` now dominate (`iba/app/verse-analysis/**` 31.8%, `Sessions/
+Session_Clusters/**` 31.6%) — same failure mode already fixed once for `programme_prose`
+(2026-08-17), recurred bigger. Raised for the researcher's decision, not acted on.
+
+**Files:** `iba/app/lib/escalation.py`.
+
+## 158. `escalation.short_description` data repair — all 23 post-redesign rows corrected (2026-08-20, escalation #759)
+
+Researcher, live: *"the short_description for all the item created by you or the system does not
+comply with the column specs. It is contaminating the entire database ... 60 characters ... like a
+title ... Comment - what needs to be done or the error message; Context - the context to understand
+the point and make choices; resolution = what have been done to solve or complete the issue (it is
+not just the decision like 'approved'."* — confirmed by `#759`: 18 of 23 post-redesign rows (id
+736-758) had a `short_description` over 100 characters (avg 247, max 516), because `raise_new()`/
+`raise_()` store `-Question` verbatim with no length/shape check, and every finding this session was
+front-loaded into `short_description` instead of `context`/`comment`.
+
+`update()` deliberately excludes `short_description` from its editable fields (plan v3 §3: immutable
+after Raise, corrected by superseding — right for the normal workflow, wrong for a one-off
+researcher-directed structural repair). Wrote
+`migration/fix_escalation_short_description_and_columns_20260820.py` instead: for each of the 23
+affected rows (id 736-752, 754-759 — **`#753` deliberately excluded**, its title was already
+compliant at 29 chars and its comment/context are a genuine researcher-authored running thread, not
+a Claude finding-dump), it computes a real ≤60-char title, redistributes the prior content into
+`comment` (what needs to be done / the error), `context` (background needed to understand/decide),
+and `resolution` (what was actually done — backfilled for 4 closed/completed items that had none:
+`#740`, `#742`, `#751`, `#752`), and writes it as a **new `escalation_history` snapshot** (version+1,
+`originator=Claude`, a `[data corrected ...]` marker appended to `comment`) — the same
+current-state-plus-append-only-history mechanism `_snapshot()` already uses, just allowing
+`short_description` to change, which no normal caller does. Every prior `escalation_history` row is
+completely untouched — verified live: `#745`'s v1-v3 still hold the original 294-char text exactly,
+only the new v4 has the corrected title.
+
+Two rows handled with extra care, not touched where it would have broken something live: `#756`
+(the paused `configmaint.propose` for finding 4) — its `context` is the operational `{table, op,
+where, set}` payload the pause records; left untouched, only the title shortened. `#753` — excluded
+entirely, per above.
+
+Tested twice before running live: first attempt used a plain `cp` of `iba.db`, which (WAL mode)
+silently produced a copy MISSING `#756` — a real methodology bug in this session's own testing
+approach, caught because the dry run crashed with `no escalation #756` rather than silently
+succeeding on stale data. Redone with `sqlite3.connect(...).backup(...)`, which correctly merges the
+WAL — the copy then matched live exactly (24 rows). Dry run against that correct copy: all 23 titles
+≤60 chars (max 57, avg 50.7), old history rows verified byte-identical, `#756`'s operational JSON
+verified untouched, `#753` verified untouched, both report generators (`write_list_report`/
+`write_history_report`) still render cleanly against the corrected data. Then run for real; live DB
+re-checked post-run with the same assertions, all passed; `Escalation.ps1 -Action List` regenerated
+cleanly.
+
+**Not done in this pass:** the raise-time guardrail itself (a length/shape check in `raise_new()`/
+`raise_()` so this can't recur) — `#759` stays open for that, tracked separately from the data
+cleanup this migration performed.
+
+**Files:** `iba/app/migration/fix_escalation_short_description_and_columns_20260820.py`.
+
+## 159. §158's titles rejected and redone — round 2 (2026-08-20, same escalation #759)
+
+Researcher, live, pointing at `#753`'s own title as the standard: *"if you take my title in 753 as
+an example, it would help. It looks like you just cut whatever was there previous to 57 chars, its
+not a title or subject."* Correct — §158's "titles" were compressed sentences (verb-predicate
+clauses, colons dragging in stats/paths/parentheticals) squeezed under 60 characters, not composed
+noun-phrase titles. `#753`'s own "Escalation utility Refinement" is the standard: names the topic,
+nothing else.
+
+Wrote `migration/fix_escalation_titles_v2_20260820.py` — touches ONLY `short_description` this
+round; §158's `comment`/`context`/`resolution` split was correct and untouched. Same mechanism
+(new `escalation_history` snapshot, nothing in any prior version altered) — verified again on
+`#745`: v1-v3 hold the original 294-char text, v4 holds §158's failed compressed-sentence attempt,
+v5 holds the real title ("escalation_history Write-Grant Gap") — the whole wrong attempt stays
+visible in history, not hidden. Tested against a fresh `sqlite3 .backup()`-API copy (same lesson
+from §158, applied without re-learning it), all 23 titles confirmed ≤60 chars (30-52 range this
+time, not clustered near the ceiling like §158's), `Escalation.ps1 -Action List` regenerates
+cleanly. Run live, live DB re-checked, same results.
+
+**Files:** `iba/app/migration/fix_escalation_titles_v2_20260820.py`.
+
+## 160. `short_description` title-shape guardrail — the raise-time check §158/159 left open (2026-08-20, escalation #759 closed out)
+
+Researcher: *"now you need to prevent it from happening again."* Added `_title_shape_error()` —
+checked, not a style guess: two mechanical signals present in EVERY violation found live in #759
+and absent from the researcher's own worked example (`#753`, "Escalation utility Refinement") —
+over 60 chars, or contains a literal `--` (this codebase's own clause-connector convention,
+throughout every doc and comment in the project — a reliable tell that text is a compressed
+sentence, not a title). A bare newline is rejected too (a title is one line).
+
+Two different enforcement modes, because the two shapes have different constraints:
+- **Manual (`raise_new()`) — hard reject.** The caller (researcher or Claude) always has time to
+  write a real title, and `comment`/`context` exist precisely to hold the detail — no excuse for
+  a bad one. Raises `ValueError` with the exact reason and where the detail belongs.
+- **Dispatcher-tied (`raise_()`) — sanitise, never reject.** This path fires from inside
+  `run.py`'s crash handler (`run.py:172-200`) — raising here would mask the very crash it exists
+  to record, the failure mode that handler was built to prevent. New
+  `_sanitise_dispatcher_title()`: strips newlines, replaces `--` with `-`, hard-truncates to 60
+  chars with `…` if still over — and the untouched original is never lost, folded into
+  `context['full_message']` whenever sanitising actually changes anything (left alone entirely
+  when the input already passes clean, so well-formed dispatcher titles get no clutter added).
+
+**Found and fixed the same turn, not after:** `escalation.py`'s own CLI crash-wrapper (§157/BUILD
+Finding 2) calls `raise_new()` to record a crash, passing the raw exception message as the title —
+which would now itself get hard-rejected by the very guardrail just added, and (since that call was
+already wrapped in `except Exception: pass` so a recording failure can't mask the real crash)
+silently swallow the crash record instead of raising it. Fixed before it could bite: the
+crash-wrapper now runs the same `_sanitise_dispatcher_title()` shaping first, matching the
+dispatcher-tied convention rather than the manual one (an exception message is system-generated
+text, not authored).
+
+Tested on a scratch `sqlite3.backup()` copy: (1) manual raise rejects >60 chars, `--`, and newline,
+each with the right message; (2) manual raise accepts a real title; (3) dispatcher-tied sanitises a
+long+dashed message to exactly 60 chars, `full_message` preserved intact (200 chars) in `context`;
+(4) an already-clean dispatcher-tied title passes through completely unchanged, no `full_message`
+added; (5) the CLI crash-wrapper interaction specifically — both a self-referential case (a bad
+`raise` command whose own title-guard trip becomes the crash) and a genuine unrelated crash with a
+long dashed message — both recorded a clean ≤60-char title with the full original preserved in
+context, neither silently swallowed; (6) `write_list_report()` still renders cleanly against the
+mixed old/new data. `#759` closed out — the data was fixed in §158/159, the recurrence is now
+prevented in code.
+
+**Files:** `iba/app/lib/escalation.py`.
+
+## 161. Escalation module — full reset and rebuild (2026-08-20)
+
+Researcher, after §157-160's cascade of defects (title-shape violations, ≥39 originator
+misattributions, `cfg_escalation` rows naming a deleted function, `escalation_history` storing
+cumulative text instead of per-version deltas, the deep-history report silently dropping 7 of 19
+columns, the entire validate/complete rule engine having zero config representation): *"the system
+is not ready for production ... export the data ... delete all the records ... go back and do a
+proper design and implementation ... You know what has to be done ... make sure it works,
+technically and practically."*
+
+**Sequence:**
+
+1. **Failure recorded honestly on `#753`** before anything else — the `#755` config review had
+   checked table-by-table presence and reported 4 findings, but never asked whether the *rule
+   engine itself* was in config at all (it wasn't). Redone properly:
+   `iba/docs/escalation-config-review-v2-20260820.md`, a line-by-line inventory of every rule
+   `escalation.py` enforced against what config actually drove it — concretised `#746`'s "stale"
+   claim (2 `cfg_escalation` rows named `escalation.raise_manual`, a function that no longer
+   existed anywhere in the codebase) and found the root cause of the misattribution bug (a
+   hardcoded `"Researcher"` default in 4 places, zero justification, zero config).
+2. **Export + wipe**: `migration/reset_escalation_tables_20260820.py` — full-fidelity JSON export
+   of both tables (`iba/app/db/archive/escalation{,_history}-export-20260820.json`, 24 + 96 rows,
+   later +1 row from a `configmaint.validate` advisory pause raised mid-rebuild, appended to the
+   same export files and cleared the same way), then both tables emptied, id sequences reset.
+3. **Design first, written before any code**: `iba/docs/escalation-rebuild-design-v1-20260820.md`
+   — every element from the failed review accounted for, each either fixed (with a reason) or
+   explicitly deferred (with a reason), matching this same module's own precedent (3 review rounds
+   before the prior redesign was built).
+4. **Config layer built**: `migration/rebuild_escalation_rules_config_20260820.py` — two new
+   tables (`cfg_escalation_transition`, the state-derivation rule engine, 9 seed rows;
+   `cfg_escalation_requirement`, the field-requirement rules, 5 seed rows), both fully registered
+   (`cfg_table`/`cfg_column`/`cfg_unique`/`cfg_write_grant`, same as any other config table); the 8
+   `cfg_status_flow` rows for `entity='escalation'` (`#755` finding 1, previously blocked behind
+   `#756` — moot now, that item was wiped with the rest); `escalation_next_action` retired,
+   split into `escalation_next_action_dispatcher`/`_manual` (`#755` finding 2); `cfg_escalation`'s
+   2 stale `enforced_by` claims corrected to state plainly that nothing currently enforces them;
+   both orphan `cfg_write_grant` rows (`#750`, `#755` finding 4) retired. Written direct, not via
+   `configmaint.propose` — same precedent as the prior redesign's own bootstrap (schema/seed
+   bootstrapping is not the operation `configmaint.propose` gates; changing an established config
+   is).
+
+   **Schema fix found mid-build**: `escalation_history.source`/`.type`/`.short_description`/
+   `.raised_at` were `NOT NULL` under the retired full-snapshot design — the delta design leaves
+   them `NULL` on every version after v1 unless that specific transaction changed them, so the old
+   constraint rejected every such row. Table was empty (verified, not assumed) — rebuilt clean
+   rather than migrated, `cfg_column` descriptions corrected to match.
+
+5. **`escalation.py` fully rewritten**: `_snapshot()` now takes `deltas` (raw, un-merged increments)
+   separately from `envelope` (state/next_action/assignee, always populated) — writes
+   `escalation_history` as a true delta, `escalation` as the still-cumulative current state.
+   `_evaluate_transition()` replaces the hardcoded `if`/`elif` chain, reading
+   `cfg_escalation_transition` in priority order. `_check_requirements()` reads
+   `cfg_escalation_requirement`. `originator`/`answered_by` lost their default everywhere (4 sites)
+   — now a required keyword-only Python argument PLUS a runtime check (a caller can still pass
+   `None` explicitly; `_check_assignee` catches that too). `update()` gained the two-stage
+   separation-of-duties check (`_last_next_action_originator`). Both report generators rewritten:
+   `write_history_report()` shows every column, envelope always, content fields labelled "set this
+   version" and omitted when `NULL`; `write_list_report()`'s per-version table shows "changed this
+   version" (the delta), not a cumulative gist. The title-shape guardrail (`#759`) and the CLI
+   crash-wrapper (finding 2) both carried forward unchanged in behaviour, adjusted only to call the
+   new `_check_requirements`/pass `originator` through — re-verified, not assumed compatible.
+6. **`Escalation.ps1`**: `-AnsweredBy`'s default removed from the parameter itself; each of the 3
+   write actions (`AnswerRun`/`Raise`/`Update`) gained an explicit early check refusing to proceed
+   without it, with a message naming why. Docstring and all 6 `.EXAMPLE`s updated to show
+   `-AnsweredBy` explicitly. Parse-checked clean (`PSParser::Tokenize`).
+7. **`USER-GUIDE.md` §4.1-4.4/4.6** rewritten to match: the delta-vs-cumulative split stated
+   plainly, the state-derivation table now describes `cfg_escalation_transition`'s actual rows
+   (not a hardcoded description of code), the two-stage approval's enforced separation of duties,
+   `-AnsweredBy` required everywhere, the title-shape limit in the `Raise` example.
+
+**Tested before any of this was reported done, not after** (full plan: rebuild design §11):
+fallback-vs-config-driven parity is moot now (fully config-driven, no fallback path retained on
+purpose — a missing rule row is a hard error, not a silent guess); ran instead: originator
+required at every call site (Python `TypeError` on omission, `ValueError` on explicit `None`,
+4 sites); delta/envelope correctness (a 3-call comment/context sequence, checked field-by-field);
+every `cfg_escalation_transition` rule exercised at least once (revise+tried, revise-without-tried
+rejected, noted, reject/withdraw, reject-without-state rejected, two-stage approval same-party
+rejected + different-party completed, approved-without-resolution rejected, bare reassignment);
+dispatcher-tied hold/approve; the split enums rejecting the wrong shape's vocabulary in both
+directions; the CLI crash-wrapper still recording and re-raising correctly post-rewrite (one
+false-negative in testing traced to a cross-connection artifact in the test harness itself, not the
+code — confirmed by a fresh-process re-query); both reports rendering correctly against real
+multi-version data (spot-read, not just "no exception"). Then a REAL end-to-end pass through the
+actual PS front door against the live (freshly emptied) tables — `Raise` refused without
+`-AnsweredBy`, succeeded with it, `Update`/`List`/`History` all correct, the resulting deep-history
+report showing exactly the version-by-version delta story the researcher asked for — then that test
+item removed, id sequences reset again, live tables left empty and ready for real use.
+
+**Explicitly deferred, not silently dropped** (rebuild design §10): full `reportkit`/`cfg_report`
+registration for the two reports (`#755` finding 3) — holding until this rebuild's report *content*
+settles, so it isn't registered twice; a general condition/expression language for
+`cfg_escalation_transition` (9 named conditions cover every rule this module actually has); auto-
+escalating every other standalone-CLI module's crashes, not just this one.
+
+**Files:** `iba/app/migration/reset_escalation_tables_20260820.py`,
+`iba/app/migration/rebuild_escalation_rules_config_20260820.py`, `iba/app/lib/escalation.py`,
+`iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`, `iba/docs/escalation-config-review-v2-
+20260820.md`, `iba/docs/escalation-rebuild-design-v1-20260820.md`.

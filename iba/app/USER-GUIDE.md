@@ -237,14 +237,19 @@ genuine error; escalation itself is reserved for things that need a decision or 
 
 Two real tables, not one:
 
-- **`escalation`** — one row per item, **current state only**.
-- **`escalation_history`** — append-only. Every update writes a **full snapshot** here (every
-  column's value at that version, not a partial diff) — this is what #715 never had. `escalation`
-  always mirrors the latest snapshot; both are written together, in one transaction, on every call.
+- **`escalation`** — one row per item, **current state**. `comment`/`context` are **cumulative**
+  here — every update's text is appended onto the running total.
+- **`escalation_history`** — append-only. Every update writes one row here, but **it's a true
+  delta, not a snapshot** (rebuilt 2026-08-20 — the redesign the day before stored a full
+  cumulative copy every version, which is wrong: a reader can't see what actually changed without
+  diffing consecutive rows by hand). Envelope fields (`state`/`next_action`/`next_action_assigned_to`/
+  `originator`/`answered_at`) are always present — they describe this transaction's outcome. Content
+  fields (`comment`/`context`/`resolution`/`tried`/`short_description`/`related_activity`) are
+  `NULL` unless THIS version actually set them.
 
-`-Action History -Id <id>` (new, 2026-08-20) is how you actually see this — the full version-by-
-version story for one item, plus the same for anything its `related_activity` text names or is
-named by (§4.6).
+`-Action History -Id <id>` is how you actually see this — the full version-by-version story for
+one item (each row showing only what that version changed), plus the same for anything its
+`related_activity` text names or is named by (§4.6).
 
 ### 4.2 Two shapes, two vocabularies — deliberately not unified
 
@@ -260,38 +265,33 @@ axis: classification for humans reading the list, set at raise-time (`-Type` on 
 default `task`; the app picks it for code-raised rows — crashes/report-stops are `run_error`, a
 `configmaint.propose` pause is `config`). Nothing in the app branches behaviour on `type`.
 
-### 4.3 States — 8 live values, most of them logic-derived
+### 4.3 States — config-driven, not hardcoded
 
 `cfg_enum.escalation_state`, active members: `raised`, `re-assigned`, `on-hold`, `in-progress`,
-`closed`, `completed`, `withdraw`, `supersede`.
+`closed`, `completed`, `withdraw`, `supersede`. Which one a transaction produces is now read from
+**`cfg_escalation_transition`** (rebuilt 2026-08-20 — the prior redesign had this as a hardcoded
+`if`/`elif` chain with no config representation at all) — one row per rule, evaluated in `priority`
+order per shape (`manual`/`dispatcher`), first match wins:
 
-| state | meaning | who sets it |
-|---|---|---|
-| `raised` | new, open item | system, at Raise only |
-| `re-assigned` | attention/responsibility handed to the other party | **automatic** — fires whenever `-AssignedTo` actually changes the current owner and no more specific rule below applies |
-| `on-hold` | action is paused | either party, directly |
-| `in-progress` | being worked, more updates expected | either party, or automatically on `next_action=revise` |
-| `closed` | no further action needed | either party, or automatically on `next_action=noted` |
-| `completed` | all actions fulfilled and validated | **logic only** — `next_action=approved`, and only once `resolution` is filled in |
-| `withdraw` | no longer required | the party's explicit choice at `next_action=reject` |
-| `supersede` | replaced by other work (e.g. correcting a wrong title — §4.7) | the party's explicit choice at `next_action=reject` |
+| priority | shape | next_action | fires when | → state |
+|---|---|---|---|---|
+| 1 | manual | `approved` | `resolution` present (this call or a prior one) | `completed` |
+| 2 | manual | `reject` | always | the party's explicit `-State withdraw`/`supersede` choice, `-Comment` required |
+| 3 | manual | `revise` | always | `in-progress` |
+| 4 | manual | `noted` | always | `closed` |
+| 5 | manual | any | `-AssignedTo` changed, no more specific rule matched | `re-assigned` |
+| 6 | manual | any | nothing else matched | state unchanged, or your explicit `-State` |
+| 1 | dispatcher | `hold` | always | `on-hold` |
+| 2 | dispatcher | `noted` | always | `closed` |
+| 3 | dispatcher | any | always | `completed` |
 
-**Auto-state priority, evaluated top to bottom, first match wins** (this is why the two-stage
-approval below reliably produces exactly two history rows, not a special case):
+Field requirements (comment@Raise, resolution@approved, state@reject, tried@Claude-revising-own-
+item) are config-driven too, in **`cfg_escalation_requirement`** — same reason: no longer a rule a
+reader has to find by reading Python.
 
-1. `next_action=approved` AND `resolution` present → `completed`
-2. `next_action=reject` → whichever the party explicitly set, `-State withdraw` or `-State
-   supersede` (both require `-Comment`, the reason)
-3. `next_action=revise` → `in-progress`
-4. `next_action=noted` → `closed`
-5. `-AssignedTo` differs from the current owner → `re-assigned`
-6. none of the above → state stays as given, or unchanged
-
-**Dispatcher-tied decisions are unaffected by any of this** — `approve`/`reject`/`revise`/`hold`/
-`noted` on a real pause behave exactly as before the redesign: `hold`→`on-hold`, `noted`→`closed`,
-everything else→`completed`. The 9 real handlers that resume a dispatcher-tied pause only ever
-check `next_action`/`comment` on the answered row — verified directly against the code, not
-assumed, before this redesign shipped.
+**Two-stage approval now actually enforces separation of duties**: `next_action=approved` is
+refused if you're the same party who most recently set `ready_for_approval` on this item — the
+prior redesign never checked this at all.
 
 ### 4.4 The two-stage approval (manual items only)
 
@@ -302,7 +302,8 @@ wanted two real history rows for an approval, not one:
    `-Resolution "<what was done>"`. Lands on `re-assigned` (rule 5 above — nothing more specific
    matches `ready_for_approval` itself).
 2. The reviewer sets `-NextAction approved` (plus any further `-Comment`). Since `resolution` is
-   already on the row, rule 1 fires → `completed`.
+   already on the row, rule 1 fires → `completed`. **Refused if the reviewer is the same party who
+   set `ready_for_approval`** — enforced since the 2026-08-20 rebuild, not just a convention.
 
 Claude may complete its own straightforward, fully-recorded fixes this way without the researcher
 in the loop for step 2 — e.g. Claude raises a code error, fixes it, records what was tried, and
@@ -338,26 +339,34 @@ iba\app\ps\Escalation.ps1 -Action List
 iba\app\ps\Escalation.ps1 -Action History -Id 741
 
 # answer a DISPATCHER-TIED pause (config proposal, quality-check finding, crash, report-stop) --
-# UNCHANGED from before the redesign. -Resolution optional, -AnsweredBy optional (Claude|
-# Researcher, default Researcher):
-iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise|Hold|Noted [-Comment "..."] [-Resolution "..."] [-AnsweredBy Claude]
+# UNCHANGED from before the redesign. -AnsweredBy is REQUIRED -- no default, say who you are:
+iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise|Hold|Noted -AnsweredBy Claude|Researcher [-Comment "..."] [-Resolution "..."]
 
-# raise a new MANUAL item -- -Question becomes the (immutable-after-raise) title, -Comment is
-# required (minimum: what this is about). -Source (default 'researcher'), -Type (default task),
+# raise a new MANUAL item -- -Question becomes the (immutable-after-raise) title, MAX 60
+# CHARACTERS, must read like a title/subject -- a bare '--' anywhere in it is rejected (a reliable
+# sign it's a compressed sentence, not a title). -Comment is required (minimum: what this is
+# about). -AnsweredBy is REQUIRED. -Source (default 'researcher'), -Type (default task),
 # -AssignedTo (default Claude), -RelatedActivity (free text, optional):
-iba\app\ps\Escalation.ps1 -Action Raise -Question "short title" -Comment "what this item is about" [-Type task] [-AssignedTo Claude] [-RelatedActivity "..."]
+iba\app\ps\Escalation.ps1 -Action Raise -Question "Short Title, <=60 Chars" -Comment "what this item is about, and any detail" -AnsweredBy Claude|Researcher [-Type task] [-AssignedTo Claude] [-RelatedActivity "..."]
 # prints the new id -- update it with -Action Update
 
 # every subsequent change to a MANUAL item -- comments, decisions, reassignment, state changes,
-# ALL through this one action; resulting state is DERIVED from what you set (§4.3), not chosen
-# directly. -Comment/-Context are CUMULATIVE -- pass only the increment, it's appended onto the
-# existing text, not a replacement:
-iba\app\ps\Escalation.ps1 -Action Update -Id <id> [-NextAction ready_for_approval|approved|reject|revise|noted|review] [-AssignedTo Claude|Researcher] [-State on-hold|in-progress|closed|withdraw|supersede] [-Resolution "..."] [-Tried "..."] [-RelatedActivity "..."] [comment text]
+# ALL through this one action; resulting state is DERIVED from what you set via
+# cfg_escalation_transition (§4.3), not chosen directly. -Comment/-Context are CUMULATIVE in
+# `escalation` -- pass only the increment, it's appended onto the existing text -- but
+# `escalation_history` stores only that increment for this version, not the running total.
+# -AnsweredBy is REQUIRED:
+iba\app\ps\Escalation.ps1 -Action Update -Id <id> -AnsweredBy Claude|Researcher [-NextAction ready_for_approval|approved|reject|revise|noted|review] [-AssignedTo Claude|Researcher] [-State on-hold|in-progress|closed|withdraw|supersede] [-Resolution "..."] [-Tried "..."] [-RelatedActivity "..."] [-Comment "..."] [-Context "..."]
+# -Comment must be passed with the -Comment flag, never as a bare trailing argument -- positional
+# binding is off, so an unflagged argument errors instead of silently landing on the wrong parameter.
 ```
 
 `-Action Raise`'s `-Question`/`-Comment` are stored **verbatim** — they don't get reworded or have
-analysis folded in. What you write is the record. `short_description` (the `-Question` text) is
-**immutable after Raise** — see §4.7 for how to correct a wrong one.
+analysis folded in (beyond the title-shape check above). What you write is the record.
+`short_description` (the `-Question` text) is **immutable after Raise** — see §4.7 for how to
+correct a wrong one. **`-AnsweredBy` has no default anywhere in this tool** — a silent
+`'Researcher'` default previously misattributed dozens of history rows to the wrong party in one
+session; every write says explicitly who's making it.
 
 The six single-purpose pre-redesign actions (`Edit`/`Pause`/`Resume`/`Retract`/`Reassign`/
 `Complete`) no longer exist — they're all just `-Action Update` calls now, with the right

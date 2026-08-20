@@ -5,10 +5,19 @@
     lib/escalation.py.
 
 .DESCRIPTION
-    Escalation redesign, 2026-08-19/20 (`iba/docs/escalation-redesign-plan-v3-20260819.md`,
-    `BUILD.md` §152-154) — root cause: escalation #715's updates were silently overwritten with no
-    trace. Fixed: `escalation` is current-state only, `escalation_history` is a real append-only
-    table, one full snapshot per update, never lost again.
+    Full rebuild, 2026-08-20 (`iba/docs/escalation-rebuild-design-v1-20260820.md`) — the
+    2026-08-19/20 redesign fixed the loss-of-history bug (#715) but shipped with no config
+    representation for its own validate/complete rules and stored full CUMULATIVE snapshots in
+    `escalation_history` instead of per-version deltas; both reset and rebuilt 2026-08-20. Now:
+    `escalation` is current-state (cumulative, unchanged), `escalation_history` is a true delta —
+    each row shows only what THAT version actually changed, envelope fields (state/next_action/
+    assigned_to/originator/when) always present, content fields blank unless this version touched
+    them. State-derivation and field-requirement rules are config-driven
+    (`cfg_escalation_transition`/`cfg_escalation_requirement`), not hardcoded.
+
+    **`-AnsweredBy` is REQUIRED on every write action (AnswerRun/Raise/Update) — no default.** A
+    silent `'Researcher'` default previously misattributed >=39 history rows to the wrong party in
+    one session; there is no safe default for "who is actually running this command."
 
     **Two shapes, two vocabularies, one mechanism** (deliberately not unified — they answer
     different questions):
@@ -44,34 +53,39 @@
                         -Action Update.
     -Action Update        every subsequent change to a MANUAL item — comments, decisions,
                         reassignment, state changes, all through this one action; the resulting
-                        state is DERIVED from what you set, not chosen directly (plan v3 §3):
-                          next_action=approved (+ -Resolution)      -> completed
+                        state is DERIVED from what you set via cfg_escalation_transition, not
+                        chosen directly:
+                          next_action=approved (+ resolution present)      -> completed
                           next_action=reject (+ -State withdraw|supersede, -Comment required) -> that state
                           next_action=revise                        -> in-progress
                           next_action=noted                         -> closed
                           -AssignedTo changed, nothing else matches -> re-assigned
-                        Needs -Id. -Comment/-Context are CUMULATIVE — what you pass is the
-                        increment, appended onto the existing text, not a replacement.
+                        Needs -Id. -Comment/-Context are CUMULATIVE in `escalation` — what you pass
+                        is the increment, appended onto the existing text — but `escalation_history`
+                        now stores only that increment for this version, not the running total.
+                        `next_action=approved` is REJECTED if you are the same party who most
+                        recently set `ready_for_approval` on this item (two-stage approval needs
+                        two different parties).
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
 .EXAMPLE
     .\Escalation.ps1 -Action History -Id 741
 .EXAMPLE
-    .\Escalation.ps1 -Action AnswerRun -RunId RUN-20260721_163604_125-CANDIDATE-QUALITY -Decision Approve
+    .\Escalation.ps1 -Action AnswerRun -RunId RUN-20260721_163604_125-CANDIDATE-QUALITY -Decision Approve -AnsweredBy Researcher
 .EXAMPLE
-    .\Escalation.ps1 -Action AnswerRun -RunId RUN-... -Decision Revise -Comment "check the H0430 cluster first"
+    .\Escalation.ps1 -Action AnswerRun -RunId RUN-... -Decision Revise -AnsweredBy Researcher -Comment "check the H0430 cluster first"
 .EXAMPLE
-    .\Escalation.ps1 -Action Raise -Question "word_full_extract.py throws on H1234" -Comment "ValueError at line 210, traceback in context" -Type run_error
+    .\Escalation.ps1 -Action Raise -Question "word_full_extract.py throws on H1234" -Comment "ValueError at line 210, traceback in context" -Type run_error -AnsweredBy Claude
 .EXAMPLE
-    .\Escalation.ps1 -Action Update -Id 741 -NextAction revise -AssignedTo Researcher -Comment "can you confirm the verse span is intact?"
+    .\Escalation.ps1 -Action Update -Id 741 -NextAction revise -AssignedTo Researcher -AnsweredBy Claude -Comment "can you confirm the verse span is intact?"
 .EXAMPLE
-    .\Escalation.ps1 -Action Update -Id 741 -NextAction approved -Resolution "confirmed and fixed; re-ran clean"
+    .\Escalation.ps1 -Action Update -Id 741 -NextAction approved -AnsweredBy Researcher -Resolution "confirmed and fixed; re-ran clean"
 .EXAMPLE
-    .\Escalation.ps1 -Action Update -Id 741 -NextAction reject -State withdraw -Comment "superseded by #900"
+    .\Escalation.ps1 -Action Update -Id 741 -NextAction reject -State withdraw -AnsweredBy Researcher -Comment "superseded by #900"
 #>
 
-[CmdletBinding()]
+[CmdletBinding(PositionalBinding = $false)]
 param(
     [Parameter(Mandatory = $true)]
     [ValidateSet('List', 'History', 'AnswerRun', 'Raise', 'Update')]
@@ -85,7 +99,7 @@ param(
     [string] $Question,
     [string] $Resolution,
     [string] $Tried,
-    [ValidateSet('Claude', 'Researcher')] [string] $AnsweredBy = 'Researcher',
+    [ValidateSet('Claude', 'Researcher')] [string] $AnsweredBy,
     [ValidateSet('Claude', 'Researcher')] [string] $AssignedTo,
     [ValidateSet('task', 'run_error', 'issue', 'notice', 'config')] [string] $Type = 'task',
     [string] $Source = 'researcher',
@@ -116,6 +130,10 @@ switch ($Action) {
             Write-Host "AnswerRun needs -RunId and -Decision (Approve|Reject|Revise|Hold|Noted)." -ForegroundColor Yellow
             exit 1
         }
+        if (-not $AnsweredBy) {
+            Write-Host "AnswerRun needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default previously misattributed >=39 history rows in one session)." -ForegroundColor Yellow
+            exit 1
+        }
         if ($Decision -eq 'Revise' -and -not $Comment) {
             Write-Host "Revise needs -Comment — what should be checked/changed." -ForegroundColor Yellow
             exit 1
@@ -133,6 +151,10 @@ switch ($Action) {
             Write-Host "Raise needs -Question and -Comment (minimum: what this item is about)." -ForegroundColor Yellow
             exit 1
         }
+        if (-not $AnsweredBy) {
+            Write-Host "Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default previously misattributed >=39 history rows in one session)." -ForegroundColor Yellow
+            exit 1
+        }
         $flags = @("--source=$Source", "--type=$Type", "--comment=$Comment", "--originator=$AnsweredBy")
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
@@ -142,6 +164,10 @@ switch ($Action) {
     'Update' {
         if (-not $Id) {
             Write-Host "Update needs -Id." -ForegroundColor Yellow
+            exit 1
+        }
+        if (-not $AnsweredBy) {
+            Write-Host "Update needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default previously misattributed >=39 history rows in one session)." -ForegroundColor Yellow
             exit 1
         }
         if ($NextAction -eq 'reject' -and (-not $State -or -not $Comment)) {
