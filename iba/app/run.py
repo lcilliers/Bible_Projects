@@ -22,7 +22,7 @@ from .lib.db import Db
 from .lib.stepapi import Step
 from .lib.words import normalise
 from .lib import dbsnapshot
-from .lib.escalation import word_source
+from .lib.escalation import word_source, raise_ as esc_raise
 from .handlers.base import Ctx, Outcome
 
 # path -> what the run does + the process exit code
@@ -144,7 +144,7 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
     _module = _source_for_step(step_id)
     _blocker = cfg.conn.execute(
         "SELECT id, short_description FROM escalation "
-        "WHERE state IN ('raised','re-assign') AND (at_step=? OR source=?) "
+        "WHERE state IN ('raised','re-assigned') AND (at_step=? OR source=?) "
         "ORDER BY id LIMIT 1", (step_id, _module)).fetchone()
     if _blocker:
         cfg.close()
@@ -189,16 +189,11 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         # permanent, visible record either way (that part was already correct); it just no longer
         # drags the crash's own half-finished writes in with it.
         db.conn.rollback()
-        _grant(cfg, "escalation")
-        db.write("escalation", {
-            "run_id": run_id, "source": _source_for_step(step_id), "at_step": step_id,
-            "type": "run_error",
-            "short_description": f"{step_id} crashed: {exc}",
-            "context": json.dumps({"traceback": traceback.format_exc()}),
-            "tried": "uncaught exception — not a routed fail()/escalate() Outcome",
-            "state": "raised", "next_action": None, "answered_at": None, "raised_at": _now(),
-            "resolution": None, "related_activity": step_id,
-            "next_action_assigned_to": "Claude", "answered_by": None})
+        esc_raise(db, run_id, _source_for_step(step_id), step_id,
+                 f"{step_id} crashed: {exc}",
+                 {"traceback": traceback.format_exc()},
+                 "uncaught exception — not a routed fail()/escalate() Outcome",
+                 etype="run_error", assigned_to="Claude")
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(),
                   outcome=f"crashed: {exc}")
         db.close()
@@ -224,16 +219,9 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         already = db.rows("SELECT id FROM escalation WHERE run_id=? AND at_step=? "
                           "AND state='raised'", (run_id, step_id))
         if not already:
-            _grant(cfg, "escalation")
             source = word_source(ctx.word) if ctx.word else _source_for_step(step_id)
-            db.write("escalation", {
-                "run_id": run_id, "source": source, "at_step": step_id,
-                "type": _escalation_type_for(step_id, ctx.word),
-                "short_description": e["question"], "context": json.dumps(e["preset"]),
-                "tried": e["tried"],
-                "state": "raised", "next_action": None, "answered_at": None, "raised_at": _now(),
-                "resolution": None, "related_activity": step_id,
-                "next_action_assigned_to": "Researcher", "answered_by": None})
+            esc_raise(db, run_id, source, step_id, e["question"], e["preset"], e["tried"],
+                     etype=_escalation_type_for(step_id, ctx.word), assigned_to="Researcher")
         db.update("run", {"run_id": run_id}, state="paused", resume_point=step_id)
     elif path == "report-stop":
         # Added 2026-07-30 (the same standing rule): report-stop used to only flip run.state to
@@ -244,7 +232,6 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         already = db.rows("SELECT id FROM escalation WHERE run_id=? AND at_step=? "
                           "AND state='raised'", (run_id, step_id))
         if not already:
-            _grant(cfg, "escalation")
             # Found 2026-07-30 (escalation #383, "it is unclear what the issue is"): `message` here
             # is often just a bare count (e.g. fail()'s own message arg, "1 coherence error(s)") —
             # the actual error text lives in `outcome.counts` (e.g. counts["errors"]), which the
@@ -254,15 +241,11 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
             detail = "; ".join(f"{k}: {v}" for k, v in outcome.counts.items() if v)
             question = f"{message} — {detail}" if detail else message
             source = word_source(ctx.word) if ctx.word else _source_for_step(step_id)
-            db.write("escalation", {
-                "run_id": run_id, "source": source, "at_step": step_id, "type": "run_error",
-                "short_description": question,
-                "context": json.dumps(outcome.counts) if outcome.counts else "{}",
-                "tried": "hard error (report-stop) — recorded for visibility; answering this does "
-                        "not resume the run, which is already terminal",
-                "state": "raised", "next_action": None, "answered_at": None, "raised_at": _now(),
-                "resolution": None, "related_activity": step_id,
-                "next_action_assigned_to": "Claude", "answered_by": None})
+            esc_raise(db, run_id, source, step_id, question,
+                     outcome.counts if outcome.counts else {},
+                     "hard error (report-stop) — recorded for visibility; answering this does "
+                     "not resume the run, which is already terminal",
+                     etype="run_error", assigned_to="Claude")
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(), outcome=message)
     else:
         db.update("run", {"run_id": run_id}, resume_point=step_id)

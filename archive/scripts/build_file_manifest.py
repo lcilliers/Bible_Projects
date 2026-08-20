@@ -1,5 +1,14 @@
 #!/usr/bin/env python3
 """
+★ RETIRED 2026-08-18 (escalation #730, governance-alignment register item #6) — superseded by
+IBA's `manifest.rebuild`/`manifest.search` (`iba/app/lib/manifest.py`, escalation #691, applied
+2026-08-15; `USER-GUIDE.md` §13a). This file is kept for provenance only, moved from
+`scripts/` to `archive/scripts/`, not deleted. The output file this script used to write,
+`database/file_manifest.json`, has likewise moved to `database/archive/file_manifest.json` (last
+generated 2026-08-15, frozen) — the live manifest is the `file_manifest` DB table in `iba.db`,
+kept current via `Manifest-Rebuild.ps1`/`Manifest-Search.ps1`, not this JSON file. Do not run this
+script or read its output as current.
+
 build_file_manifest.py — Generates database/file_manifest.json
 
 Scans the project tree and produces a machine-readable index of every

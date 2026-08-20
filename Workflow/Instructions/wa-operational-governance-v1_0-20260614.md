@@ -1,5 +1,22 @@
 # Operational & Safeguard Governance — v1.0
 
+> **★ RETIRED 2026-08-18 — superseded by `iba.db` cfg_* (escalation #715, cycle 3).** Found during
+> the #715 sweep: this doc was itself a "prior attempt to regulate the system" — created 2026-06-14
+> to stop operational rules scattering across documents, but never wired into any live read path
+> (its own "read at session start via `docs/project-orientation-core-memory-map.md`" claim below is
+> no longer true — that map is *also* retired, see its own banner — and the current `start-project`
+> skill/`iba/app/GOVERNANCE.md` never reference this file). Exactly the failure mode
+> `cfg_behaviour_rule (documentation, consolidation-doc-must-be-load-bearing-or-retired)` now names:
+> a consolidation doc is only as good as its live enforcement. Live homes for this doc's content,
+> by section: **§1 git/commit** → `cfg_behaviour_rule` class `terminal` (`git-commit-and-push-
+> together`) + `CLAUDE.md` §12. **§2 backups & recovery** → `cfg_behaviour_rule` class `sqlite`
+> (`writes-must-be-replayable`) + `CLAUDE.md` §13 (schedule/path facts, not yet cfg-resident — a
+> known further gap, not fixed here). **§3 file manifest** → `docs/file-organisation-rules.md` §6
+> (unchanged; filing is escalation #650, separately parked). **§4 interaction protocols & cost** →
+> `cfg_behaviour_rule` class `chat` (9 rules) — `docs/interaction-preferences.md` and `CLAUDE.md` §9
+> remain the live documents for now (not yet pointer-ified; that edit is quantified, not applied,
+> this cycle — see the #715 cycle-3 report). Kept below for provenance, not deleted.
+>
 > Consolidated governing doc for programme-wide operations: **git/commit · backups & recovery · the file manifest · interaction protocols & cost.** Created 2026-06-14. Consolidates what was scattered across CLAUDE.md §9/§12/§13 (which can lag); this doc is the canonical home. Read at session start via `docs/project-orientation-core-memory-map.md`.
 
 ---

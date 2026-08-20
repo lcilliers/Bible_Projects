@@ -29,12 +29,13 @@
 > correction, that layer is now owned entirely by `iba.db`/`iba/app/` — these four sections are
 > **provenance-only** (accurate history of how it used to be done), not live instruction. For current
 > base-layer work, start at [`iba/app/USER-GUIDE.md`](iba/app/USER-GUIDE.md). Each section carries
-> its own short pointer back to this banner. Governance-alignment register item #1
-> (`docs/governance-alignment-register.md`); full record: `iba/app/BUILD.md`.
+> its own short pointer back to this banner. Originated as governance-alignment register item #1
+> (`docs/governance-alignment-register.md`, now retired-for-provenance — see its own banner);
+> live tracking of this item is escalation #687 (completed). Full record: `iba/app/BUILD.md`.
 >
 > Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions — see §10). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
 >
-> **Orientation (2026-06-14):** §3 (schema) and §10 (programme state) refreshed to live **v3.31.0** + the finding-centric model. **Start each session at [`docs/project-orientation-core-memory-map.md`](docs/project-orientation-core-memory-map.md)** — it fans out to instructions, the current-state reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01–04), the reusable-scripts catalogue, and operational governance. This compact file can still lag the written record; when in doubt, the reconstruction is authoritative.
+> **Orientation (2026-06-14; entry point corrected 2026-08-18):** §3 (schema) and §10 (programme state) refreshed to live **v3.31.0** + the finding-centric model. `docs/project-orientation-core-memory-map.md` — the former session-start fan-out map named here — was **retired 2026-08-18** (escalation #715 cycle 3: it had drifted pre-reset and pre-IBA with no live reader). **Start each session via the `start-project` skill** (`iba/app/GOVERNANCE.md` + `iba/app/BUILD.md` for IBA, the `escalation` table for open items project-wide); the current-state reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01–04) and the reusable-scripts catalogue remain valid background reading, just no longer fanned out from that retired map. This compact file can still lag the written record; when in doubt, the reconstruction is authoritative.
 >
 > # ★ LIVE METHOD — 2026-07-02 — verse-first / passage / self-learning lexical (schema 3.35.0)
 > **The lexical process has fundamentally shifted** to a **self-learning, self-checking, passage-anchored, term-driven** method. **Authoritative now:** [`Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md`](Workflow/Instructions/wa-verse-analysis-method-v1-20260702.md) (the method) + [`Workflow/Catalogue/wa-ve-lexical-catalogue-v1-20260702.md`](Workflow/Catalogue/wa-ve-lexical-catalogue-v1-20260702.md) (the item list). Key points: the ve-lexical is **verse-first**; a **passage = a maximal run of consecutive verses** (`verse.passage_id`, anchor = first verse); processing is **term-driven** (owner term's anchor verse first, then all its verses, `verse.process_marker` tracks completion); **genre-aware** (`verse.genre` → prose = cross-verse items on, poetic = two-phase); dimensions **D1–D14** are ve-lexical items (D10 valence / D12 hidden / D13 cohabitation **dropped**; `related_tier` deprecated); items are **pairs / events / flags** (`ve_lexical.from_span/to_span/resolution/pair_kind`). **Read-back + sensibility + rule-adjustment is core.** Schema now **3.35.0** (M61). Memory: `project_term_driven_genre_aware_lexical_method`, `project_ve_lexical_is_verse_first`. §3/§10 below are pre-this-work (legacy substrate).
@@ -71,7 +72,7 @@ Bible_study_projects/             ← working dir (C:\Bible_study_projects — m
 │   └── analytics/                ← STEP/Zotero clients, db_client, word_export
 ├── database/
 │   ├── bible_research.db         ← SQLite (~766 MB, NOT in Git)
-│   └── file_manifest.json        ← Machine-readable file index
+│   └── archive/file_manifest.json ← RETIRED 2026-08-18 (escalation #730), frozen 2026-08-15 snapshot — live manifest is IBA's `file_manifest` DB table, see §9 item 5
 ├── Sessions-v2/                  ← **per-cluster working tree (cluster-rework phase from 2026-06-05) — HOME for ALL new cluster output**
 │   └── {CODE}-{Name}/            ← one folder per cluster (M01-Fear … M46-Abundance, FLAG, T2); see README + file-organisation-rules §3.0
 ├── Sessions/                     ← Session-staged inputs and outputs (now READ-ONLY cross-reference)
@@ -99,7 +100,7 @@ Bible_study_projects/             ← working dir (C:\Bible_study_projects — m
 └── backups/                      ← DB snapshots (NOT in Git)
 ```
 
-For exact file lookup use `python scripts/build_file_manifest.py --search "..."`.
+For exact file lookup use `iba\app\ps\Manifest-Search.ps1 -Query "..."` (`scripts/build_file_manifest.py` retired 2026-08-18, escalation #730 — see §9 item 5).
 
 ---
 
@@ -213,7 +214,7 @@ Detailed engine architecture and audit-check enumeration: `docs/Session-A-v9-Arc
 | `apply_session_patch.py` | Apply Session/VC/REPAIR JSON patches | **No** |
 | `build_*`, `generate_*`, `export_*`, `_produce_*`, `_generate_*`, `word_*_extract.py`, `_exploratory_*` | Read-only reports/exports | Yes |
 
-For full file lookup: `python scripts/build_file_manifest.py --search "..."`.
+For full file lookup: `iba\app\ps\Manifest-Search.ps1 -Query "..."` (`scripts/build_file_manifest.py` retired 2026-08-18, escalation #730).
 
 ---
 
@@ -252,7 +253,7 @@ Detail: `wa-patch-instruction [current]` (patch ops, REPAIR catalogue, failure p
 2. **Output & Workings → `.md` Always.** All outputs and workings (analysis, plans, decisions, intermediate results, reports) must be written to a `.md` file in `docs/`, `outputs/`, or a relevant subfolder. Chat is for **alerts and brief summaries only** — every substantive deliverable in chat must include a link to the `.md` file that holds the full content. Never present final output only in chat.
 3. **Factual Discipline:** Work with explicit facts. Don't guess. Stop and ask if unclear.
 4. **File Organisation & Versioning:** Follow `docs/file-organisation-rules.md`. **Same-name = version bump:** if a file with the same base name already exists (regardless of date), the new file must carry an incremented `-v{n}` suffix (integer, no leading zero). This applies even within the same day — a revised report produced later the same day becomes `-v2-`, the next revision `-v3-`, and so on. Archive superseded versions promptly. Never overwrite a prior version in place.
-5. **Manifest Maintenance:** Run `python scripts/build_file_manifest.py` after session-log processing or batch file moves.
+5. **Manifest Maintenance:** Run `iba\app\ps\Manifest-Rebuild.ps1` after session-log processing or batch file moves — **retired 2026-08-18** (escalation #730): `scripts/build_file_manifest.py` → `archive/scripts/`; `database/file_manifest.json` → `database/archive/` (frozen 2026-08-15 snapshot). The live manifest is IBA's `file_manifest` DB table (`USER-GUIDE.md` §13a).
 6. **Cost Awareness:** Cost is a real constraint. Where a task can be done more cheaply without sacrificing the outcome, advise the cheaper path **before** acting. Flag: (a) Opus on routine pipeline work; (b) whole-file reads when targeted Read/Grep would suffice; (c) subagents when a direct query is enough; (d) duplicate artefacts; (e) `--dry-run` then `--live` for routine patches; (f) ad-hoc scripts duplicating existing reports. Detail: [`outputs/markdown/cost management 20260426.md`](outputs/markdown/cost%20management%2020260426.md).
 
 ---
@@ -320,11 +321,11 @@ python scripts/build_dimension_extract.py --cluster|--pointers|--rootfamily C17
 python scripts/_exploratory_sessionb_export_v1_20260415.py --registry=N
 python scripts/export_database_schema.py
 
-# File manifest (rebuild + search)
-python scripts/build_file_manifest.py
-python scripts/build_file_manifest.py --search "grace"
-python scripts/build_file_manifest.py --search "registry:068"
-python scripts/build_file_manifest.py --search "type:observations"
+# File manifest (rebuild + search) — retired 2026-08-18 (escalation #730), now IBA-governed
+iba\app\ps\Manifest-Rebuild.ps1
+iba\app\ps\Manifest-Search.ps1 -Query "grace"
+iba\app\ps\Manifest-Search.ps1 -Query "registry:68"
+iba\app\ps\Manifest-Search.ps1 -Query "type:observations"
 
 # STEP discovery (no DB writes)
 python scripts/word_study_extract.py --word anger --anchors H2734

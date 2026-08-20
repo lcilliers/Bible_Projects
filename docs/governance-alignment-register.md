@@ -1,5 +1,36 @@
 # Governance Alignment Register
 
+> **★ RETIRED 2026-08-18 — superseded by the escalation table.** Researcher instruction, 2026-08-18:
+> "you should retire the open register. The authoritative task and open item system is the
+> escalation table" — matching `governance.escalation.scope` (already live: *"all open items,
+> discovery of anomalies, clarifications and other forms of escalation must be recorded in
+> escalation using escalation rules"*). This file is kept for provenance (history of the
+> 2026-08-15 alignment plan and how each item was actually worked) — not deleted, per
+> [[feedback_single_living_register]] — but is no longer the live tracker: don't add new rows here,
+> don't read it at session start. Every open item, past or future, lives in `escalation` from now
+> on (`iba/app/ps/Escalation.ps1 -Action List`). `CLAUDE.md` and `start-project` updated to point
+> to the escalation table instead of this file.
+>
+> **Correlation of each numbered item below to its actual escalation row** (verified against the
+> live `escalation` table 2026-08-18, not assumed):
+>
+> | Register # | Escalation | State | Note |
+> |---|---|---|---|
+> | 1 | #687 | completed | Direct match. |
+> | 2 | #650 | **on-hold** | #688 (a later duplicate registration of the same item) was closed 2026-08-17 "duplicate of 650" — #650 is the substantive row, still on-hold pending the researcher's deeper filing review. |
+> | 3 | — | acknowledged, no action item | Practice change, never tracked as its own escalation — correctly so, nothing to close. |
+> | 4 | #689 | completed | Resolved via #5/#690 per the register's own note. |
+> | 5 | #690 | completed | Direct match. |
+> | 6 | #691 | **completed** | Direct match — and this corrects the register's own stale text below ("B: Proposed... not started"): #691's resolution shows part B (content-index round B) was actually built and run for real 2026-08-17, 7,869 files / 14.1M rows. The register file was not updated after the fact; the escalation row is what's current. |
+> | 6, minor loose thread (retire `build_file_manifest.py`) | #730 | raised (new, 2026-08-18) | Not covered by #691 — had no escalation row until this retirement pass surfaced it. |
+> | 7 | #648 / #698 / #699 | all complete | Direct match, register's own text already current. |
+> | "Not yet surveyed" section | #714/#715 (partial) + #731 (new, 2026-08-18) | in-progress / raised | #714/#715 cover only the narrower 6-unhomed-global-rule subset (GR-DB-001/PROC-001/REF-001/PROG-001/PROG-002/PROG-009); the broader systematic sweep of `Workflow/Instructions/`, `docs/interaction-preferences.md`, `README.md` had no escalation row until #731. |
+>
+> Two gaps found and closed during this retirement (per `governance.escalation.scope` — an open
+> item cannot be allowed to fall out of tracking just because its container document is retired):
+> escalations **#730** and **#731** raised 2026-08-18, both `raised`/unanswered, assigned to
+> Researcher.
+
 > Living register for the project-wide governance/documentation alignment work (step 1 of the
 > 2026-08-15 consolidation plan — see
 > [`outputs/markdown/project-review-response-2-20260815.md`](../outputs/markdown/project-review-response-2-20260815.md)).

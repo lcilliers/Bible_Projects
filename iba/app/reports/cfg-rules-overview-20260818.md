@@ -1,4 +1,4 @@
-# The IBA config, told as a story — 2026-08-18
+# The IBA config, told as a story — 2026-08-18 (rebuilt, same day, later — cycle 4)
 
 **What this is.** A narrative walk through everything currently live in `iba.db`'s `cfg_*` tables
 — not a table-by-table dump (that's `CONFIG-REPORT.md`'s job), a *story*: how the project comes
@@ -7,12 +7,35 @@ built on, and how its working parts move. Every claim below is a live query agai
 today, not a summary of documentation — where a rule is still thin or a gap is open, that's said
 plainly rather than smoothed over.
 
-**Snapshot at time of writing:** 29 `cfg_*` tables, 153 settings, 27 work packages, 55 dispatcher
-steps, 37 analytical method rules, 17 quality checks, 15 operational-behaviour rules across 5
-classes, 2 databases, 7 programme-prose chapters. All of it reachable from one entry point:
-`governance.rules_must_be_config_driven` — *"no operational or process rule may exist only in a
-document or memory without a referenced `cfg_*` row recording it as the evidence that the
-configuration control is in operation."* Everything that follows is that principle, applied.
+> **Rebuild note (escalation `#715` cycle 3):** this version was checked both directions against
+> the live tables, not written from memory of the first draft — from the story out (every number
+> and named table below re-queried) and from the tables in (all 31 `cfg_*` tables enumerated and
+> checked against what the story actually says). What that audit found: the original draft's
+> snapshot numbers had already drifted (tables 29→31, settings 153→156 even before this cycle's own
+> additions) — both corrected below. Two real subsystems the story never named are now covered:
+> `cfg_connection`/`cfg_api` (§1, the STEP integration the pre-flight check actually reads) and
+> `cfg_content_index_exclude`/`cfg_content_index_size_override` (§5). One real gap is flagged, not
+> yet folded into the narrative voice: `cfg_candidate_rule` (289 rows — accept/reject overrides for
+> candidate Strong's numbers during onboarding) is a sibling of `cfg_method_rule`'s "37 rules across
+> five steps" in kind (analytical-content-shaping config) but a different shape (override table, not
+> prose rule) and deserves its own telling, not a retrofit into §5's existing paragraph — left as a
+> named follow-on rather than force-fit here. The remaining unmentioned tables
+> (`cfg_change_detail`, `cfg_change_log`, `cfg_report`, `cfg_report_csv_table`,
+> `cfg_report_section`, `cfg_index`, `cfg_unique`, `cfg_book_order`) were checked individually and
+> are correctly omitted by the story's own stated scope — implementation plumbing, not governance
+> shape; that is exactly what `CONFIG-REPORT.md` is for.
+
+**Snapshot at time of writing:** 31 `cfg_*` tables, 161 settings, 27 work packages, 55 dispatcher
+steps, 37 analytical method rules, 17 quality checks, **42** operational-behaviour rules across
+**6** classes (was 15 rules / 5 classes as of the first draft this morning — cycle 3 populated
+`chat` from empty and added real content to `terminal`/`sqlite`/`documentation`/`llm_output`;
+cycle 4 added a 6th class, `development`, after a structural read-through of cycles 1–3 found no
+literal duplication but did find two rules that would have duplicated existing `governance.*`
+settings — not added, once found), 2 databases, 7 programme-prose chapters. All of it reachable
+from one entry point: `governance.rules_must_be_config_driven` — *"no operational or process rule
+may exist only in a document or memory without a referenced `cfg_*` row recording it as the
+evidence that the configuration control is in operation."* Everything that follows is that
+principle, applied.
 
 ---
 
@@ -29,7 +52,11 @@ run — the app boots through one idempotent sequence, `iba/app/init.py`, invoke
    drops data — a deliberately loud, opt-in flag).
 4. **Pre-flight STEP** — not just "is port 8989 listening," but *up and answering with the tagged
    module* (a known-answer probe: `H0430 → H0430G gloss 'God'`). A live port with the wrong module
-   loaded would pass a weaker check and silently corrupt every lexical read downstream.
+   loaded would pass a weaker check and silently corrupt every lexical read downstream. The
+   connection itself is config, not a literal in a client class: `cfg_connection` holds the base
+   URL, module version, and timeout; `cfg_api` catalogues the three actual REST calls the app
+   issues (route template, input, response shape) — the IBA-side equivalent of
+   `scripts/analytics/step_client.py`'s method list on the main-project side.
 5. **Orient on `BUILD.md` + `GOVERNANCE.md`** — what's built, and how config governs it. The
    startup sequence itself points at the record of its own history before doing anything new.
 6. **Print every `governance.*` setting explicitly.** This is the one deliberate exception to
@@ -46,40 +73,86 @@ from that one seed, in that one order, every time. There is no other path into a
 
 ## 2. How the different interfaces behave
 
-Five behaviour classes, one shared mechanism (`cfg_behaviour_class` + `cfg_behaviour_rule`,
-`governance.operational_behaviour_control` as the anchor) — this is new work, still mid-build
-(escalation `#715`, two cycles in), and it says so about itself: `authoritative_doc` is `NULL` on
-every class today. The guide-consolidation this table exists to eventually replace hasn't
-happened yet; this table is where it's *going*, not a finished picture.
+Six behaviour classes, one shared mechanism (`cfg_behaviour_class` + `cfg_behaviour_rule`,
+`governance.operational_behaviour_control` as the anchor). Four cycles in now (escalation `#715`):
+cycle 1 seeded "the obvious ones" from the retired `wa_rule_registry`, cycle 2 swept three
+never-`CLAUDE.md`-referenced `Workflow/*` guides, cycle 3 did the sweeps the researcher named
+directly — `docs/interaction-preferences.md`, `CLAUDE.md` §9, confirmed `feedback_*` memory, and
+`Workflow/Instructions/` for prior attempts — and populated `chat` from empty, cycle 4 (escalation
+`#732`, after a structural read-through under `#733`) added a 6th class, `development`.
+`authoritative_doc` is set on 5 of 6 classes (all but `development`, which has no single source —
+its content is memory + this sweep's own findings), though for `chat`/`terminal` it still names
+the main-project document the content came *from* (`docs/interaction-preferences.md`), not a
+cfg-native replacement — real duplication, quantified not yet resolved (see §3).
 
-**`sqlite`** — 5 rules, the most populated class. Never act on assumed or remembered database
-state; verify live. Open connections read-only by default. Never write to either database through
-an ad-hoc tool (a patch for `bible_research.db`, `Config-Maintenance.ps1 -Step Propose` or a
-registered utility for `iba.db` — inspection and the fix are different paths, deliberately). Don't
-assume which database a table lives in — the two share names (`cluster`, `passage`, `verse`,
-`word_registry`) for genuinely different tables. Keep scratch query files named, findable, and
-committed if they're worth re-running.
+**`chat`** — 9 rules, no longer empty. The AskUserQuestion tool is never used (config-blocked after
+three prior memory-only bans failed); non-trivial work is summarised and confirmed before it
+starts, but an already-approved plan runs to completion without re-confirming every step; all
+substantive output goes to a file, chat carries only a pointer; work proceeds from verified facts,
+never a guess; the cheaper technical path is flagged before acting; a genuine open item raised in
+chat becomes an escalation the same turn (a pointer to `cfg_escalation.chat_routing`'s own fuller
+rule, not a restatement of it); a review closes with a verified fix, not just a finding; and
+reporting shows the actual evidence rather than a smoothed-over summary.
 
-**`llm_output`** — 7 rules, the newest class and the one with the clearest present-tense stakes
-(this is where real money gets spent). A claim generated by an LLM/API call is inferential until
-it's grounded in verifiable data — never silently upgraded to confirmed. No hardcoded model IDs,
-rates, paths, or caps in a handler — every one is a setting. No live call before a pre-call cost
-estimate *and* a hard cap check (refuse over the cap, escalate under it). Every real call's usage
-gets logged. Sonnet 5 is the default; Opus needs a reason. The API key is never written anywhere,
-by anyone, for any reason. No second dependency (the `anthropic` SDK) without raising that as its
-own decision.
+**`sqlite`** — 6 rules. Never act on assumed or remembered database state; verify live. Open
+connections read-only by default. Never write to either database through an ad-hoc tool (a patch
+for `bible_research.db`, `Config-Maintenance.ps1 -Step Propose` or a registered utility for
+`iba.db` — inspection and the fix are different paths, deliberately). Don't assume which database a
+table lives in — the two share names (`cluster`, `passage`, `verse`, `word_registry`) for
+genuinely different tables. Keep scratch query files named, findable, and committed if they're
+worth re-running. And — folded in this cycle under a `governance.behaviour_boundary.*` decision
+rather than a new class — study work is captured only through a replayable mechanism (a patch, a
+registered utility, an engine run); the 2026-06-03 DB-loss incident traces directly to an
+interactive mutation that wasn't.
 
-**`terminal`** — 1 rule so far: a step isn't done until its output is confirmed to exist and match
-what it was supposed to produce, not just "the command appeared to succeed."
+**`llm_output`** — 9 rules, the one with the clearest present-tense stakes (this is where real
+money gets spent). A claim generated by an LLM/API call is inferential until it's grounded in
+verifiable data — never silently upgraded to confirmed, and a superlative ("most", "clearest") is
+the same failure made concrete: never written unless every candidate was actually checked. New
+analytical work derives from the authoritative instruction, never from a prior run's unreviewed
+output used as an implicit template. No hardcoded model IDs, rates, paths, or caps in a handler —
+every one is a setting. No live call before a pre-call cost estimate *and* a hard cap check
+(refuse over the cap, escalate under it). Every real call's usage gets logged. Sonnet 5 is the
+default; Opus needs a reason. The API key is never written anywhere, by anyone, for any reason. No
+second dependency (the `anthropic` SDK) without raising that as its own decision.
 
-**`documentation`** — 2 rules: pointer, not copy — one authoritative source per content type, a
-rule never lives in both a document and a `cfg_*` row at once. An Obsidian-edited copy of a
-DB-generated file is never itself authoritative — the database wins, always.
+**`terminal`** — 6 rules, up from 1. A step isn't done until its output is confirmed to exist and
+match what it was supposed to produce — extended this cycle: a fix isn't done until tested against
+both a synthetic bad case and real data, and re-verified per site when applied more than once. A
+read-only command needs no upfront permission; one that writes stays inside an approved task. A
+reported console error is the thing to diagnose, never quietly routed around. A multi-line
+here-string is PowerShell syntax, never Bash heredoc syntax, in this environment. And — the other
+`governance.behaviour_boundary.*` decision — git commit and push are one unit, never left split,
+committed incrementally through the session rather than gathered at the end.
 
-**`chat`** — zero rules. Deliberately empty, not forgotten: its real content (`CLAUDE.md` §9,
-`docs/interaction-preferences.md`, the `feedback_*` memory set, `cfg_escalation.chat_routing`) is
-a named, un-started audit — populating it with a guessed partial set would misrepresent the class
-as covered when it isn't.
+**`documentation`** — 7 rules, up from 2. Pointer, not copy — one authoritative source per content
+type, a rule never lives in both a document and a `cfg_*` row at once. An Obsidian-edited copy of a
+DB-generated file is never itself authoritative. New this cycle: guidance given mid-session gets
+baked into the authoritative record the same session, not left in memory alone; a "complete" record
+never hedges with a "see raw data" pointer in place of a resolved answer; an ongoing
+investigation is one living document updated in place, not a new competing file each pass; a claim
+about project history is grounded in the written record and cited, not recollected; and — the
+rule this cycle's own retirement work is itself an instance of — a consolidation document is only
+as good as its live enforcement, and one with no live reader is retired (banner + pointer,
+provenance kept), however recently written. Applied live, same session: two orphaned 2026-06-14
+consolidation docs (`wa-operational-governance-v1_0`, `docs/project-orientation-core-memory-map.md`)
+retired under exactly this rule.
+
+**`development`** — 5 rules, the newest class (added cycle 4, escalation `#732`, after a structural
+read-through of the other five found the base coherent). Governs how work on this project *itself*
+gets done, not a specific interaction channel: fix the cause, not the instance — a defect that's an
+instance of a class gets fixed at the shared mechanism, never remediated case-by-case; work is
+built in simple, direct steps, not machinery-heavy speculative designs; every open item discovered
+anywhere — a review finding, a validation run, a sweep — routes through the escalation table, the
+general case of `chat.chat-items-become-escalations`'s conversation-timing instance; a module a
+person operates by hand gets a dedicated PS entry point, not just raw Python/SQL (found violated by
+this very system: 3 build cycles before `Behaviour.ps1` existed); and a tool/module/behaviour
+change isn't complete until `USER-GUIDE.md` reflects it, in the same unit of work (found violated
+the same way — zero guide coverage across those same 3 cycles, closed in the cycle that named the
+rule). Two candidate rules from the same request were checked and **not** added, because they
+already existed: temp-file discipline is `governance.scripts_and_routines`; script-folder
+destination is `governance.scripts_ps_dir`/`governance.scripts_python_dir` — exactly the
+duplication risk the researcher flagged before this class was built, avoided by checking first.
 
 ---
 
@@ -124,7 +197,14 @@ step is itself the signal that a piece of config is missing, not a puzzle to sol
 And the loop *has* failed before — `wa_rule_registry`, the direct predecessor of everything in
 this document, ran 59 rules for four months with no `enforced_by` mechanism, drifted across every
 method pivot, and was retired 2026-08-17. The lesson carried forward isn't "rules work now" — it's
-that a rule without a live check tends to rot regardless of how it's stored.
+that a rule without a live check tends to rot regardless of how it's stored. The same lesson
+recurred one level up during this document's own cycle-3 rebuild: two documents written 2026-06-14
+specifically to *consolidate* scattered operational rules (`wa-operational-governance-v1_0`,
+`docs/project-orientation-core-memory-map.md`) had themselves silently drifted out of every live
+read path — neither the current `start-project` skill nor this app's own governance ever pointed at
+them — and sat unretired for two months until this sweep found and closed them. A rules table and
+a consolidation document fail the same way: written with good intent, never wired to anything that
+actually reads it, and nothing notices until someone goes looking.
 
 ---
 
@@ -173,7 +253,13 @@ Two different kinds of "step" live side by side in this system, and the split ma
 **operations** (34 live steps — the study's substantive analytic content: `hib.set`,
 `operation.set`, `phenomenon.set`, `closing.set`, `passage.build`, and the report/registry/word
 work around them) and **utility** (21 live steps — the app running itself: `configmaint.*`,
-`content_index.*`, `manifest.*`, backups, escalation plumbing). 27 registered work packages carry
+`content_index.*`, `manifest.*`, backups, escalation plumbing). `content_index.*`'s own scope is
+config, not a hardcoded skip-list: `cfg_content_index_exclude` names path patterns the rebuild
+skips outright (today: `Workflow/Programme/programme_prose/`, excluded 2026-08-17 because generated
+analysis prose saturated with biblical vocabulary was drowning every search — one file alone
+produced ~597,000 hits), `cfg_content_index_size_override` is the manual-release valve for a
+specific oversized file that should be indexed anyway (empty by default — nothing released until
+named). 27 registered work packages carry
 those 55 steps between them — most (`configuration-maintenance`, `reports`, `table-export`, the
 content-index and file-manifest trio) run standalone, `runs_over='none'`; the ones that operate
 over real study content (`new-word`, `word-audit`, `verse-lexical`, `book-narrative`,
@@ -205,6 +291,11 @@ document at all**: a start-up sequence that refuses to proceed on bad input, an 
 whose own rules are as governed as the questions it asks, a change-control loop that requires
 proof before it trusts itself, a founding definition of the project that now lives in one place
 addressable by pointer, and an analytical engine whose every step carries both a rule for what to
-do and a check for whether it was done right. None of it is finished — §2's `chat` class is empty,
-§4's chapters 4–6 are flagged not-aligned, §3's own predecessor system failed once already. But the
-shape is the same shape everywhere, which is the thing `wa_rule_registry` never had.
+do and a check for whether it was done right. None of it is finished — every rule in §2 states
+`enforced_by: not yet mechanically checked`, a deviation-monitoring mechanism still named as
+missing everywhere it's cited; `docs/interaction-preferences.md`/`CLAUDE.md` §9 still duplicate
+what §2's `chat`/`terminal` classes now state natively, quantified not resolved; §4's chapters 4–6
+are flagged not-aligned; §3's own predecessor system failed once already, and so — one level up —
+did two of the very documents meant to stop rules scattering in the first place (§3's closing
+paragraph). But the shape is the same shape everywhere, which is the thing `wa_rule_registry`
+never had.

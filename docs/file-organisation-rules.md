@@ -482,7 +482,16 @@ Documents that are outdated but contain valuable content are archived, not delet
 
 ## 6. File Manifest
 
-The project maintains a machine-readable file manifest at `database/file_manifest.json`.
+> **★ RETIRED 2026-08-18 (escalation #730, governance-alignment register item #6).** `scripts/
+> build_file_manifest.py` → `archive/scripts/`; `database/file_manifest.json` → `database/archive/`
+> (frozen 2026-08-15 snapshot, not regenerated since). Superseded by IBA's `manifest.rebuild`/
+> `manifest.search` — `iba\app\ps\Manifest-Rebuild.ps1` / `Manifest-Search.ps1 -Query "..."`, live
+> manifest is the `file_manifest` table in `iba.db`, not a JSON file (`USER-GUIDE.md` §13a). The
+> field/search-syntax table below (§6.4) still describes the *shape* of the data accurately — the
+> new system carries the same fields — but the commands and file path are dead. Kept below for
+> provenance, not deleted.
+
+The project maintained a machine-readable file manifest at `database/file_manifest.json`.
 
 **Principle (2026-06-05, researcher direction): every file in the study directory is indexed** — the
 manifest scans the *whole tree* from the project root, including **archives, old reports and the

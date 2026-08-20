@@ -60,13 +60,17 @@ or the script errors, say so as-is — do not proceed as though it passed.
 
 ## 4. Orient on open threads
 
-Read (from the files, not from memory — per `feedback_iba_session_start_read_live_docs_not_memory`
-and register item #3 in the governance-alignment register):
+Read from the live system, not from memory — per `feedback_iba_session_start_read_live_docs_not_memory`.
+The escalation table is the project's single authoritative open-item/task system
+(`governance.escalation.scope`, project-wide, not IBA-only — `docs/governance-alignment-register.md`
+was retired 2026-08-18 in favour of it):
 
-- [`docs/governance-alignment-register.md`](../../docs/governance-alignment-register.md) — report
-  any row still `Proposed`/`Approved`-but-not-`Applied`, awaiting a researcher decision or action.
-- The most recent file(s) under `outputs/markdown/` and `outputs/session-logs/` if the register or
-  the last commit message points to an in-progress thread worth naming.
+- Run `iba/app/ps/Escalation.ps1 -Action List` and read the report it writes
+  (`iba/app/reports/escalation-list.md` by default) — note anything `raised`/`in-progress`/
+  `on-hold`/`re-assign` that's relevant to this session, especially rows `next_action_assigned_to`
+  Claude.
+- The most recent file(s) under `outputs/markdown/` and `outputs/session-logs/` if an open
+  escalation or the last commit message points to an in-progress thread worth naming.
 
 ## 5. Report and stop
 
@@ -75,6 +79,6 @@ Summarise, briefly, in chat (not a new `.md` file — this is a status check, no
 - Git state (clean/dirty; anything uncommitted flagged).
 - STEP (was it already up, or did this command start it — and did it come up in time).
 - IBA bootstrap result (READY or what went wrong).
-- Open register items and any other loose end found.
+- Open escalations relevant to this session, and any other loose end found.
 
 Then stop and ask what to work on this session. Do not start a task on your own initiative.

@@ -208,14 +208,24 @@ exactly how book order and span_html went undocumented here.**
 
 ## 6. What is still stubbed (honest) — CORRECTED 2026-07-22
 
-- **The approval escalation for a new word is REAL, not stubbed** (correcting this section's prior
-  claim). `handlers/registry.py:create()` raises a genuine `registry.create` escalation and pauses
-  the run; the researcher answers `Escalation.ps1 -Action Answer -Word <w> -Decision Yes|No`
-  (confirmed live: escalation `#169`, `[blindness (spiritual]`, currently open). What remains a
-  named, deliberate fast-follow (per §9A) is only the **answer shape** — still yes/no, not yet the
-  three-way approve/reject/revise every other escalation in this app uses. *(Historical note, left
-  as-is per researcher decision 2026-08-17, escalation #664: the vocabulary itself has since moved
-  on — see §39 and `BUILD.md` §115–117 for the current `type`/`next_action`/`state` model.)*
+- **SUPERSEDED 2026-08-20 (`BUILD.md` §153) — the new-word approval escalation described below is
+  GONE, not just revised.** `registry.create` is a standard operational routine, not a development/
+  design control (the researcher's own distinction, drawn after a 79%-of-all-escalation-rows volume
+  review found `registry.create` alongside `configmaint.propose`/`validate` as routine pipeline
+  plumbing crowding out genuine issues). `handlers/registry.py:create()` no longer raises an
+  escalation or pauses the run at all — a new word is created `'approved'` directly, in one call;
+  its outcome (including the old duplicate/typo warning) is logged via `run.outcome`, the engine's
+  own standard-run log. `Escalation.ps1 -Action Answer -Word ...` is dead for this handler.
+  *(Historical text below, left for provenance — describes 2026-07-22 through 2026-08-19 behaviour,
+  not current.)*
+  - **The approval escalation for a new word is REAL, not stubbed** (correcting this section's prior
+    claim). `handlers/registry.py:create()` raises a genuine `registry.create` escalation and pauses
+    the run; the researcher answers `Escalation.ps1 -Action Answer -Word <w> -Decision Yes|No`
+    (confirmed live: escalation `#169`, `[blindness (spiritual]`, currently open). What remains a
+    named, deliberate fast-follow (per §9A) is only the **answer shape** — still yes/no, not yet the
+    three-way approve/reject/revise every other escalation in this app uses. *(Historical note, left
+    as-is per researcher decision 2026-08-17, escalation #664: the vocabulary itself has since moved
+    on — see §39 and `BUILD.md` §115–117 for the current `type`/`next_action`/`state` model.)*
 - **`source` / `filled_by`** are in `cfg_column` but not yet *enforced* — `validation.py` only
   checks a column's `source` is non-empty (informational WARN), not that the value it holds
   actually matches what its declared source says fed it. `expectation` IS enforced (value-quality
@@ -1862,8 +1872,35 @@ individually against their content before adding the module, not assumed).
 **Two new governance-layer mechanisms exist as of today, both still mid-build:**
 `governance.operational_behaviour_control` (`cfg_behaviour_class`/`cfg_behaviour_rule` — chat/
 terminal/sqlite/documentation/llm_output operational-behaviour rules, project-wide scope, escalation
-`#715`, 2 cycles in, `chat` still empty) and `governance.prose_canonical_authority`
+`#715`, cycle 3 as of §41 below — `chat` no longer empty) and `governance.prose_canonical_authority`
 (`cfg_prose_chapter`/`cfg_prose_concept` — the programme prose as the project's canonical
 definition source, pointed at rather than restated, escalation `#714`, chapters 4-6 still
 unaligned). Neither is finished; both are named here because they're new *governing* mechanisms,
 not because the work is done.
+
+## §41. `#715` cycle 3 — `chat` populated, three new `governance.*` settings (2026-08-18)
+
+Content-only cycle (no mechanism/code change to `configmaint`/`cfgquality` themselves), so full
+detail lives in `BUILD.md` §149 per this file's own scope discipline (§40's precedent — mechanism
+changes here, build content there). Recorded here because three new rows are new *governing*
+settings: `governance.behaviour_boundary.git_commit` and `.backup_recovery` (git/commit and
+backup/durability discipline classified under the existing `terminal`/`sqlite` classes rather than
+new ones — the researcher's own fallback: "if in doubt, define it and let it live in
+settings.governance"), and `governance.procedural_document_taxonomy` (the researcher's 4-way future-
+document taxonomy — planning · config-extract · history-of-changes · guidance/baseline — recorded
+verbatim, not yet applied to the existing document set). `cfg_behaviour_rule` `chat` class populated
+from empty (9 rules); `governance.operational_behaviour_control`'s "chat still empty" caveat in §40
+above no longer applies. Two orphaned 2026-06-14 consolidation documents retired in the same pass —
+see `BUILD.md` §149 for which, and for the new `documentation.consolidation-doc-must-be-load-
+bearing-or-retired` rule they're the concrete instance of.
+
+## §42. `#715` cycle 4 — a 6th behaviour class (`development`), `Behaviour.ps1` built (2026-08-18)
+
+Full detail `BUILD.md` §150, same scope split as §41. Recorded here for one new *governing*
+setting: `governance.engineering_documentation_folder` designates `iba/docs/` as the IBA-side home
+for planning/design documentation — main-project-side consolidation of the equivalent scattered
+content stays explicitly out of scope, parked alongside escalation `#650`. `cfg_behaviour_class`
+now has 6 members, not 5 — `chat`/`terminal`/`sqlite`/`documentation`/`llm_output`/`development` —
+42 active rules total. The operational-behaviour system's own completeness gap (no supporting PS
+script across 3 build cycles) was found and closed in the same pass that added the rule naming it:
+`iba/app/lib/behaviour.py` + `iba/app/ps/Behaviour.ps1 -Action List`.

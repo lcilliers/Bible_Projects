@@ -1,104 +1,96 @@
 <#
 .SYNOPSIS
-    The researcher's side of every escalation — list open ones, answer a word approval, or
-    answer a run-scoped (config proposal / quality-check) escalation. The one PS front door for
-    lib/escalation.py, which every other governed operation already has and this one didn't.
+    The researcher's side of every escalation — list open ones, answer a dispatcher-tied (config
+    write / quality-check) pause, or raise/update a manual item. The one PS front door for
+    lib/escalation.py.
 
 .DESCRIPTION
-    Escalation-reset 2026-08-16 (see USER-GUIDE.md §4, GOVERNANCE.md §39): `next_action` replaces
-    `answer` (adds Hold/Noted — not every escalation is a decision gate), `resolution` records what
-    was actually done, `-By`/`-AnsweredBy` attributes who answered (Claude|Researcher, defaults to
-    Researcher since this script IS the researcher's own terminal).
+    Escalation redesign, 2026-08-19/20 (`iba/docs/escalation-redesign-plan-v3-20260819.md`,
+    `BUILD.md` §152-154) — root cause: escalation #715's updates were silently overwritten with no
+    trace. Fixed: `escalation` is current-state only, `escalation_history` is a real append-only
+    table, one full snapshot per update, never lost again.
 
-    -Action List        writes every open (unanswered) escalation to escalation.list_report_path
-                        (default iba/app/reports/escalation-list.md; archived on regenerate, same
-                        convention as every other report) and prints a one-line pointer + count —
-                        fixed 2026-07-23, it used to dump the full list to the terminal only.
-    -Action Answer       answer a WORD-scoped escalation (new-word approval). Needs -Word and
-                         -Decision (Approve|Reject; Yes|No still accepted as aliases).
-    -Action AnswerRun    answer a RUN-scoped escalation (a config proposal, or a quality-check
-                         finding from Candidate-Quality.ps1 / Passage-Quality.ps1 / Config-
-                         Maintenance.ps1). Needs -RunId and -Decision (Approve|Reject|Revise|Hold|
-                         Noted); -Comment is required with Revise, optional otherwise. -Resolution
-                         optional — what was actually done, if anything.
-    -Action Raise        add your OWN item to the escalation table — a researcher-initiated
-                         flag/note, not raised by a running step. Needs -Question. Prints the
-                         synthetic run_id to answer it with later (AnswerRun, same as any other).
-                         -AssignedTo (Claude|Researcher, default Researcher) and -Type
-                         (task|run_error|issue|notice|config, default task) optional.
-                         -RelatedActivity groups this with other escalations on the same package
-                         of work — if given, -ReferenceDoc (the planning document) is REQUIRED too
-                         (cfg_escalation.document_reference_grouping, mechanically enforced since
-                         2026-08-16 — a grouped item with no reference doc is refused, not written
-                         silently ungrounded).
+    **Two shapes, two vocabularies, one mechanism** (deliberately not unified — they answer
+    different questions):
+      - DISPATCHER-TIED (a real run.py pause — configmaint.propose/validate, a quality-check
+        finding, a crash, a report-stop): vocabulary UNCHANGED — approve/reject/revise/hold/noted.
+        Answered with -Action AnswerRun, same as always. These are development/design controls
+        (changes to the app's own behaviour) and correctly keep a real, gated approval.
+      - MANUAL (the researcher/Claude backlog-of-work-and-issues workflow): vocabulary
+        ready_for_approval/approved/reject/revise/noted/review — a two-stage approval handshake
+        (ready_for_approval -> approved -> system-validated completed). Raised/updated with
+        -Action Raise / -Action Update — REPLACING the six single-purpose actions
+        (Edit/Pause/Resume/Retract/Reassign/Complete) the pre-redesign script had: "in principle
+        there are only two transaction types... the resulting state is determined by the values
+        in the fields" (researcher, plan v3 §5). A standard operational routine (registry.create
+        and similar) no longer escalates at all — logged by the engine, errors only (`BUILD.md`
+        §153) — word-scoped -Action Answer is RETIRED, not replaced.
 
-    Added 2026-07-23 — for working the escalation table as a backlog of items for Claude, not only
-    design decisions awaiting approval. Run-scoped/manual only (same boundary AnswerRun already
-    draws against word-scoped Answer):
-    -Action Edit         replace a still-open (raised or on-hold) escalation's question wording.
-                         Needs -RunId and -Question. The old wording is preserved (not lost) in
-                         the row's `tried` field with a timestamp.
-    -Action Pause        set a raised escalation aside without answering it — excluded from the
-                         active queue a real dispatcher run would resume against, but still shown
-                         in -Action List, flagged. Needs -RunId; -Comment optional.
-    -Action Resume       bring an on-hold escalation back into the active (raised) queue. Needs -RunId.
-    -Action Retract      withdraw an open escalation — "never mind", not a reviewed decision.
-                         Terminal, like a completed answer, but distinguishable from one in the
-                         record. Needs -RunId; -Comment optional.
-    -Action Reassign     bounce an open escalation to the other party (Claude<->Researcher)
-                         without treating it as a decision — state becomes `re-assign`, still
-                         open, still shown in -Action List. Needs -RunId and -AssignedTo
-                         (Claude|Researcher); -Comment optional. Added 2026-08-16 — the state
-                         value existed in the schema/docs before this, but nothing produced it.
-    -Action Complete     Claude marks an `in-progress` MANUAL escalation genuinely done. Added
-                         2026-08-17 (escalations #673/#674) — `AnswerRun -Decision Approve/Revise`
-                         on a MANUAL item now resolves to `in-progress` ("go do it"), not
-                         `completed` ("already done") — this is what actually closes it out, with
-                         a real record via -Resolution of what was done. Needs -RunId and
-                         -Resolution.
+    -Action List        writes every open escalation, WITH FULL HISTORY INLINE (plan v3 §5a — the
+                        old report only ever showed current state), to escalation.list_report_path
+                        (default iba/app/reports/escalation-list.md; archived on regenerate).
+    -Action History      deep-history report for ONE item (plan v3 §5b) — its full history, plus
+                        the same for every item its related_activity text names or is named by.
+                        Needs -Id.
+    -Action AnswerRun    answer a DISPATCHER-TIED escalation (config proposal, quality-check
+                        finding, crash, report-stop). Needs -RunId and -Decision (Approve|Reject|
+                        Revise|Hold|Noted); -Comment required with Revise, optional otherwise.
+                        -Resolution optional. UNCHANGED from pre-redesign.
+    -Action Raise        raise a new MANUAL item — an error/issue/task, not raised by a running
+                        step. Needs -Question (becomes short_description) and -Comment (required —
+                        minimum: what this is about, plan v3 §6). -Source (default 'researcher'),
+                        -Type (default task), -AssignedTo (default Claude), -RelatedActivity
+                        (free text, optional) optional. Prints the new id — update it with
+                        -Action Update.
+    -Action Update        every subsequent change to a MANUAL item — comments, decisions,
+                        reassignment, state changes, all through this one action; the resulting
+                        state is DERIVED from what you set, not chosen directly (plan v3 §3):
+                          next_action=approved (+ -Resolution)      -> completed
+                          next_action=reject (+ -State withdraw|supersede, -Comment required) -> that state
+                          next_action=revise                        -> in-progress
+                          next_action=noted                         -> closed
+                          -AssignedTo changed, nothing else matches -> re-assigned
+                        Needs -Id. -Comment/-Context are CUMULATIVE — what you pass is the
+                        increment, appended onto the existing text, not a replacement.
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
 .EXAMPLE
-    .\Escalation.ps1 -Action Answer -Word hypocrisy -Decision Approve
+    .\Escalation.ps1 -Action History -Id 741
 .EXAMPLE
     .\Escalation.ps1 -Action AnswerRun -RunId RUN-20260721_163604_125-CANDIDATE-QUALITY -Decision Approve
 .EXAMPLE
     .\Escalation.ps1 -Action AnswerRun -RunId RUN-... -Decision Revise -Comment "check the H0430 cluster first"
 .EXAMPLE
-    .\Escalation.ps1 -Action AnswerRun -RunId RUN-... -Decision Noted -Resolution "acknowledged, no action needed"
+    .\Escalation.ps1 -Action Raise -Question "word_full_extract.py throws on H1234" -Comment "ValueError at line 210, traceback in context" -Type run_error
 .EXAMPLE
-    .\Escalation.ps1 -Action Raise -Question "Revisit the anger/spirit dual-characteristic overlap in candidate_seed"
+    .\Escalation.ps1 -Action Update -Id 741 -NextAction revise -AssignedTo Researcher -Comment "can you confirm the verse span is intact?"
 .EXAMPLE
-    .\Escalation.ps1 -Action Edit -RunId MANUAL-20260723_055356_776621 -Question "Corrected wording..."
+    .\Escalation.ps1 -Action Update -Id 741 -NextAction approved -Resolution "confirmed and fixed; re-ran clean"
 .EXAMPLE
-    .\Escalation.ps1 -Action Pause -RunId MANUAL-20260723_060301_575459 -Comment "waiting on the STEP schema question first"
-.EXAMPLE
-    .\Escalation.ps1 -Action Resume -RunId MANUAL-20260723_060301_575459
-.EXAMPLE
-    .\Escalation.ps1 -Action Retract -RunId MANUAL-20260723_061922_821483 -Comment "superseded by #274's rework"
-.EXAMPLE
-    .\Escalation.ps1 -Action Reassign -RunId MANUAL-20260816_... -AssignedTo Researcher -Comment "needs your judgement, not mine"
-.EXAMPLE
-    .\Escalation.ps1 -Action Complete -RunId MANUAL-20260817_... -Resolution "Built and verified live; BUILD.md sec128"
+    .\Escalation.ps1 -Action Update -Id 741 -NextAction reject -State withdraw -Comment "superseded by #900"
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('List', 'Answer', 'AnswerRun', 'Raise', 'Edit', 'Pause', 'Resume', 'Retract', 'Reassign', 'Complete')]
+    [ValidateSet('List', 'History', 'AnswerRun', 'Raise', 'Update')]
     [string] $Action,
-    [string] $Word,
+    [int] $Id,
     [string] $RunId,
-    [ValidateSet('Yes', 'No', 'Approve', 'Reject', 'Revise', 'Hold', 'Noted')] [string] $Decision,
+    [ValidateSet('Approve', 'Reject', 'Revise', 'Hold', 'Noted')] [string] $Decision,
+    [ValidateSet('ready_for_approval', 'approved', 'reject', 'revise', 'noted', 'review')] [string] $NextAction,
     [string] $Comment,
+    [string] $Context,
     [string] $Question,
     [string] $Resolution,
+    [string] $Tried,
     [ValidateSet('Claude', 'Researcher')] [string] $AnsweredBy = 'Researcher',
-    [ValidateSet('Claude', 'Researcher')] [string] $AssignedTo = 'Researcher',
+    [ValidateSet('Claude', 'Researcher')] [string] $AssignedTo,
     [ValidateSet('task', 'run_error', 'issue', 'notice', 'config')] [string] $Type = 'task',
-    [string] $RelatedActivity,
-    [string] $ReferenceDoc
+    [string] $Source = 'researcher',
+    [ValidateSet('on-hold', 'in-progress', 'closed', 'withdraw', 'supersede')] [string] $State,
+    [string] $RelatedActivity
 )
 
 Set-StrictMode -Version Latest
@@ -112,24 +104,16 @@ switch ($Action) {
     'List' {
         python -m iba.app.lib.escalation list
     }
-    'Answer' {
-        if (-not $Word -or -not $Decision) {
-            Write-Host "Answer needs -Word and -Decision (Approve|Reject; Yes|No accepted as aliases)." -ForegroundColor Yellow
+    'History' {
+        if (-not $Id) {
+            Write-Host "History needs -Id." -ForegroundColor Yellow
             exit 1
         }
-        if ($Decision -notin @('Yes', 'No', 'Approve', 'Reject')) {
-            Write-Host "Answer's -Decision must be Approve or Reject (word-scoped approval)." -ForegroundColor Yellow
-            exit 1
-        }
-        python -m iba.app.lib.escalation answer $Word $Decision.ToLower() "--by=$AnsweredBy"
+        python -m iba.app.lib.escalation history $Id
     }
     'AnswerRun' {
         if (-not $RunId -or -not $Decision) {
             Write-Host "AnswerRun needs -RunId and -Decision (Approve|Reject|Revise|Hold|Noted)." -ForegroundColor Yellow
-            exit 1
-        }
-        if ($Decision -notin @('Approve', 'Reject', 'Revise', 'Hold', 'Noted')) {
-            Write-Host "AnswerRun's -Decision must be Approve, Reject, Revise, Hold, or Noted." -ForegroundColor Yellow
             exit 1
         }
         if ($Decision -eq 'Revise' -and -not $Comment) {
@@ -145,71 +129,40 @@ switch ($Action) {
         }
     }
     'Raise' {
-        if (-not $Question) {
-            Write-Host "Raise needs -Question." -ForegroundColor Yellow
+        if (-not $Question -or -not $Comment) {
+            Write-Host "Raise needs -Question and -Comment (minimum: what this item is about)." -ForegroundColor Yellow
             exit 1
         }
-        if ($RelatedActivity -and -not $ReferenceDoc) {
-            Write-Host "-RelatedActivity groups this with other escalations -- -ReferenceDoc (the planning document) is required too." -ForegroundColor Yellow
-            exit 1
-        }
-        $flags = @("--source=researcher", "--assigned-to=$AssignedTo", "--type=$Type")
+        $flags = @("--source=$Source", "--type=$Type", "--comment=$Comment", "--originator=$AnsweredBy")
+        if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
-        if ($ReferenceDoc) { $flags += "--reference-doc=$ReferenceDoc" }
+        if ($Context) { $flags += "--context=$Context" }
         python -m iba.app.lib.escalation raise @flags $Question
     }
-    'Edit' {
-        if (-not $RunId -or -not $Question) {
-            Write-Host "Edit needs -RunId and -Question." -ForegroundColor Yellow
+    'Update' {
+        if (-not $Id) {
+            Write-Host "Update needs -Id." -ForegroundColor Yellow
             exit 1
         }
-        python -m iba.app.lib.escalation edit $RunId $Question
-    }
-    'Pause' {
-        if (-not $RunId) {
-            Write-Host "Pause needs -RunId." -ForegroundColor Yellow
+        if ($NextAction -eq 'reject' -and (-not $State -or -not $Comment)) {
+            Write-Host "-NextAction reject needs -State (withdraw|supersede) and -Comment (the reason)." -ForegroundColor Yellow
             exit 1
         }
+        # -NextAction approved with no -Resolution here is NOT rejected client-side -- a resolution
+        # may already be on the row from an earlier ready_for_approval update; update() itself
+        # makes that call against the real current row, not guessed here from a second query.
+        $flags = @("--originator=$AnsweredBy")
+        if ($NextAction) { $flags += "--next-action=$NextAction" }
+        if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
+        if ($State) { $flags += "--state=$State" }
+        if ($Resolution) { $flags += "--resolution=$Resolution" }
+        if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
+        if ($Tried) { $flags += "--tried=$Tried" }
+        if ($Context) { $flags += "--context=$Context" }
         if ($Comment) {
-            python -m iba.app.lib.escalation pause $RunId $Comment
+            python -m iba.app.lib.escalation update $Id @flags $Comment
         } else {
-            python -m iba.app.lib.escalation pause $RunId
+            python -m iba.app.lib.escalation update $Id @flags
         }
-    }
-    'Resume' {
-        if (-not $RunId) {
-            Write-Host "Resume needs -RunId." -ForegroundColor Yellow
-            exit 1
-        }
-        python -m iba.app.lib.escalation resume $RunId
-    }
-    'Retract' {
-        if (-not $RunId) {
-            Write-Host "Retract needs -RunId." -ForegroundColor Yellow
-            exit 1
-        }
-        if ($Comment) {
-            python -m iba.app.lib.escalation retract $RunId "--by=$AnsweredBy" $Comment
-        } else {
-            python -m iba.app.lib.escalation retract $RunId "--by=$AnsweredBy"
-        }
-    }
-    'Reassign' {
-        if (-not $RunId -or -not $AssignedTo) {
-            Write-Host "Reassign needs -RunId and -AssignedTo (Claude|Researcher)." -ForegroundColor Yellow
-            exit 1
-        }
-        if ($Comment) {
-            python -m iba.app.lib.escalation reassign $RunId $AssignedTo $Comment
-        } else {
-            python -m iba.app.lib.escalation reassign $RunId $AssignedTo
-        }
-    }
-    'Complete' {
-        if (-not $RunId -or -not $Resolution) {
-            Write-Host "Complete needs -RunId and -Resolution (what was actually done)." -ForegroundColor Yellow
-            exit 1
-        }
-        python -m iba.app.lib.escalation complete $RunId "--resolution=$Resolution"
     }
 }

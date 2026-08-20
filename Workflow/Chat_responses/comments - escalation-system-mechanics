@@ -1,0 +1,244 @@
+comments related to the after effect of a claude system failure
+2026-08-18
+
+background
+
+Claude system went down at approx 14h00 today. just before the crash I noticed that claude is asking about notes I just completed writing in the terminal using escalation.ps1 routine.
+
+after restarting the system, I explored to see why claude is not aware of the terminal entry.  It turns out claude somehow silently drops notes or instructions, not recording anything, or only certain columns, but not the full content of the notes, in certain circumstances.
+
+This alerted me that the escalation utility is not fit for purpose.
+
+Escalation routine was redesigned yesterday. Unfortunately non of my comments during the process was ever recorded. following is related extracts from escalation table. 
+#640 5 genuine orphaned escalation.run_id values surfaced by the escalation-reset retrofit's FK check (never run before -- PRAGMA foreign_keys is OFF app-wide): escalation #539, #550, #559, #561 (all historical, state=completed) and #579 (state=raised, same run_id as the open configmaint.propose crash escalation -- likely corroborating evidence for that bug's root cause: the run row was never committed before the crash). Investigate #579's crash with this in hand; the other 4 are lower-priority historical cleanup.
+#653 GOVERNANCE.md sec6 (dated CORRECTED 2026-07-22) still shows the escalation Decision as Yes|No for word-scoped approval. Judgement call made 2026-08-16 without escalating it: left the historical claim itself unedited (it was accurate at the time, Yes|No still works today as an alias, editing it would layer a correction onto an already-superseded note) but did NOT add a forward cross-reference to sec39/BUILD.md sec115-117 where the vocabulary actually changed. Researcher to confirm: leave as pure history, or add a one-line forward pointer so a reader landing on sec6 cold knows the vocabulary moved on?
+#677 Design gap, 2026-08-17 (widened after researcher pushback in chat: 'it does not make a lot of sense that all progression must go back to a new raise, and reapprove'). Root problem is broader than the original re-assign-to-raised note: reassign_run() accepts 'in-progress' as a valid source state (escalation.py:412) and unconditionally flips it to state='re-assign', with no code path back except Pause (re-assign->on-hold) then Resume (on-hold->raised, escalation.py:478) then a FRESH AnswerRun decision (Approve/Reject/Revise/Hold/Noted). So bouncing an already-decided, mid-work manual item to the other party (e.g. 'can you take a look at this one further') discards its in-progress status entirely -- getting it moving again requires re-approving it from scratch, as if it had never been decided. next_action (still holding the original 'approve') is left stale on the row and never consulted on the way back. Pattern: ANY lateral move (Pause or Reassign) currently forces a full raised-and-redecide cycle to resume forward progress -- there is no 'hand off/park but keep the decision' move. Options for researcher decision, not guessed: (a) Reassign should NOT touch state at all when bouncing an in-progress item -- just change next_action_assigned_to/comment, leaving state='in-progress' so the new assignee can go straight to -Action Complete; (b) give on-hold/re-assign a memory of the state they were parked FROM (a new column, or reuse next_action) so Resume restores in-progress instead of dropping to raised when that's where it came from; (c) leave raised as the sole re-entry point but make AnswerRun cheaper to re-approve (e.g. a -Decision Continue that re-applies the prior next_action without asking the question again). Not fixed in code -- needs your call on which model is right before any of this is built.
+
+iba/app/reports/escalation-system-mechanics-20260818.md is a full extract of what the utility currently does.
+
+comments on configs:
+this is a development report/explore/investigation - there should be a development config in place to set the folder for this report, it should not be iba\app\reports
+
+Comments on §1 what escalation is
+this does not describe the purpose of escalation as defined and set yesterday.
+
+**Escalation use: the only sanctioned researcher interaction. all runtime errors is reported in it; both Claude and Researcher record emerging issues, tasks, followups as feedback or to get feedback. It is the authorative record of open items in the project. It will pause a running process, and allow to resume at resume_point when answered.**
+
+Comments on §2 The table
+
+The table have most of the fields defined that would be required.  The current routine does not allow for proper updating of the fields, neither does not respond to the content of the fields appropriately.
+
+The lack of a history record is the single most critical failure of this system.
+
+The table design should continue to use escalation as the current status of the id.
+I history table must be written for each update to the table.
+escalation should include the version number for each id, to correspond to the history table.
+the comment and context in escalation is not cummulative. the full story of the item is the sum total of all the history rows for the item. 
+
+escalation table columns
+ID = NNNN-NN : serial number (4 digits) + Version (2 digits) each item runs its own version increments - this comes from history record.
+source = what triggered the item: script name|module|issue area
+at_step= only used for pipeline reference if code generated
+short_description = label or title of item.  What this item is about.
+context = what must be done or error message, and link to external documents
+Comment = additional information for the re-assign party
+tried = record of the iterations of self correction
+answered_at = history record datetime
+raised_at = first creation datetime
+resolution = what was done
+related_activity = links this item with any other items that relates to it. Item id
+next action assigned to = Claude / Researcher
+answered_by : change this to originator - this it automatically updated from the history record creator.
+
+
+comment on §3 state machine
+
+The state machine is currently built around decision response. This must change. every step destination is not a decision.
+
+raised = new open item
+re-assign = mechanism to raise the attention of a party, show who has responsibility for the current action
+on-hold = action is paused.
+in-progress = item is worked on. multiple iterations of updates is likely
+closed = item has no actions associated and need no further attention.
+completed = item actions have all been fulfilled and validated.
+withdraw = item is no longer required.
+
+answered and paused is already covered above, then can be removed.
+
+type = differentiate to type of item. active list is fine
+
+next action = what is expected to be done. Note these are not decisions. the current list does not make sense.  I suggest
+
+approve = the comment + context is accepted , re-assigned party can act on the full history context.
+reject = the item is rejected. comment + context provide detail for the decision
+revise = this item need to be revised based on the comment + context
+
+hold is already a state, so does not need to be an action also
+
+comments for §4 entry points
+the entry point for errors must be adapted to put the right values in the right columns per the new definition 
+the entry point for user interface (PS) is much more involved because it means you need to have checks for data entry completeness.
+processing the data entry will change as it need to write to history
+you will also need a second processor which will be triggered by the history update, to update the escalation.
+
+comments for §5 entry points
+most of the items in this section will need to change or be replaced.  your plan should have a similar table but working through the new logic for updating from history. 
+it also need a second table to show the knock on effect on what you need to do to create a update / new record and what you should put into the different columns
+the whole intent is that you would consume, based on different triggers and you would push either new or updates based on triggers.
+
+following working through everything, I think it is feasible, and would be less work to re-write the escalation routine to make it fit for purpose, rather than implement a new application.
+
+your next step is to digest this and prepare a new plan for my review.
+
+###############################################
+# Comments escalation-redesign-plan-V1 
+
+## General comments
+
+### column by column definition
+missing columns: state, next_action
+
+### history table columns
+it appears from the table in §3 that history does not carry all the columns. I disagree with that.  the history record include all the fields set in the transaction, including the auto generated fields. fields that is not set because the do not change and are not included in the input is derived from the current escalation record. There are different ways to achieve this, and your comments on it is welcomed.
+
+### missing state
+add the state : supercede
+
+
+## §10 Open questions
+
+1 - it is likely easier to have it as two fields in history and as a derived display format in escalation table
+2 - free text field at this stage, it is just an information fields
+3 - retain noted as a next action for information only updates, no action required. This can pair with state=closed. Add new next_action 'review'. This is to trigger the assigned person to act on the raised item
+4 - this depends on what work better within the chosen technology, script success is based on both routines ran successfully.
+5 - 7a comments
+there is quite a few comments - see below for detail. In principle there are only two transaction types. The resulting state will be determined by the values in the fields. Types are Raise, Update.
+
+## Transaction types
+
+### auto generated fields
+
+Some fields are auto generated
+id, version, raised_at
+
+### logic generated fields
+
+Some fields are only generated by code but are conditional
+at_step - if run error/code generated
+
+### Other fields
+
+#### The remainder of fields are input or code generated, depending on conditions. see below.
+
+### Raise 
+
+#### use
+Raise is used for a new item
+
+#### required
+
+raise: required fields: short_description, source, type, comments (this is required to indicate what the item is about, as a minimum), next_action_assign_to (default to Claude), next_action (default to review)
+
+#### other
+
+optional fields: context, related_activity
+blank fields (is not filled on creation): tried, answered_at, resolution, answered_by
+
+#### automation
+
+resulting state = raise
+resulting operation = alert next_action_assign_to
+
+### Update
+
+#### use
+
+Update is used for any subsequent update
+
+#### requirement
+item ID. 
+fields that remain the same as the values in escalation table for the id does not have to be specified again.
+Valid From states: any open state
+
+#### auto generated field
+answered_by (originator) auto populated from who ever created the update
+version
+
+#### fields that cannot be edited by update
+source
+at_step
+version
+short_description
+
+#### field updates
+only fields that change requires a value, else if the param is ignored, the field retains it previous value
+context - provide incremental updates, no need to repeat previous version data. if context is not null, then only escalation will add the context to the previous context.
+comment - provide incremental updates, no need to repeat previous version data. if comment is not null, then only escalation will add the comment to the previous comment.
+related_activity - optional information field
+next_action_assigned_to - if not changed, then the item remains under to control of the current assignee,  if changed, then the item changes control to the new assigned party
+
+#### field level logic 
+
+answered _at: date set by code on update 
+
+tried - this field is required if next_action_assign_to = Claude, and the corrective action failed. the value in this field is the corrective action taken.
+resolution - required field when next_action is set to approve
+
+to get feedback from the other party (clarification for a step of further detail required) the asking party change the state to revise, and the next_action_assigned_to the other party with the comments and context as the detail of what information is required.
+
+Claude will channel all requests for action from researcher through escalations
+Nothing is signed off until researcher has approved and resolution is filled in
+
+auto set of state
+next_action = approve then completed
+next_action = revise then in-progress
+
+when state = re-assign, the next history record must have originator = re-assign of the current record 
+when next_action = reject then state must be completed and be either withdraw or supercede and comment must be filled in
+
+the following states can be set by either party : on-hold, in-progress, closed
+the following states cannot be set by either party - it is set by logic: completed, withdraw
+
+setting the state to approve requires a resolution
+
+#653  can you explain why the yes/no wording is still causing an issue and remain open.
+
+#677 is now superceded with this work complete.
+
+################################################################
+
+# Comments escalation-redesign-plan-V2
+
+Good work!
+
+## general comments
+
+you point of fixing an error in the short_description is: the short_description becomes the key identifier for the task. My current inclination is if the short_description is wrong, then a new item is raised with a supercede of the old.
+
+superceded means the later item redefines, or build on the previous item.
+
+approve process need a split between ready_for_approval and approved. change current action approve to ready_for_approval, and add new approved state.
+
+when thinking through the logic, it is important to consider the incoming and outgoing field values, especially the actions and states. the action incoming (present value) is about what is expected from the reader, the action (update value) is about what action the next reader should take or be aware of. In the same way, state incoming (current value) designate where the item is now, the new state (set by system or party) is the state that the update causes it to be in.
+
+lets revise the approval process:  the item work is done and is ready for to be approved. the party requesting the item to be approved, set the next_action to ready_for_approval, set the next_assigned to the other party, and fill in the detail in resolution.  The next party then set the action to approved and add any further comments if needed.  When this item is posted, the system do the validity checks, and change the state to completed.
+
+the revised report should include the full history of the open items.
+
+a new report for a full history of a specific item, including all the related items (related and superceded) must be included
+
+## §7 full cycle illustration
+
+I am expecting to see two history rows for an approval.  the first would be the request to approve. The second is the completion of the resolution 
+
+see revised approval process
+
+## §9 open questions
+
+1 - re-assign signals to the next_action_assign_to that the item was passed over to him and requires action.  re-assign is set by the code when it detects that the next-action_assign_to have changed. it would be better the rename it to re-assigned, this will be more meaningful.
+2 - reject rules restated: reject allows either party to set an item was not relevant (withdraw) or replaced by another item (supercede). Reject is the action taken, the state is set by the party (not the system) as the choice, and in both events it requires comments to include the reason.
+3- supercede is explained in 2. it is not an automated state, but it does carry conditions for validity, action = reject and comment is not empty, other fields are optional in terms of updating
+4- I think general comments, and 1 should clarify this now.
+5- I expected you to pick this up.  at the moment the notification will be through the chat for both parties. maybe a pre-formatted chat item jumping up based on a new entry in the table could be done. I am OK for the moment to just use chat.
+6- in principle, claude can approve (and therefore complete) some items.  For instance, claude raise an issue (code error or during operations), the item is noticed, claude can fix, tried is filled in, and no further action is required from researcher - this can be completed by Claude. The entire process is recorded and claude decision making can be verified. In other cases where researcher judgement and review is needed, or was raised by researcher, then researcher should approve.
+

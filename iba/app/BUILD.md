@@ -8370,3 +8370,338 @@ module/backup backlog — nothing newly broken.
 
 **Files:** `iba/app/lib/cfg.py` (`database_path`), `iba/app/init.py` (startup check),
 `iba/app/handlers/configmaint.py` (`_validate_live`), `iba/app/GOVERNANCE.md` §40.
+
+## 149. `#715` cycle 3 — the full sweep, `chat` populated, two orphaned consolidation docs retired, three new `governance.behaviour_boundary.*`/taxonomy settings (2026-08-18, later still)
+
+Researcher instruction: complete `#715`; do the sweeps named in the parked plan (`Workflow/*`
+prior-attempts, session logs, `CLAUDE.md`+memory for chat content); bring in what the sweeps find;
+retire or update documents no longer valid; then redo `cfg-rules-overview-20260818.md` checked both
+directions against the live tables, "read the value/use column, don't work from memory."
+
+**22 new `cfg_behaviour_rule` rows** (`migration/bootstrap_behaviour_rules_cycle3_v1_20260818.py`):
+9 `chat` (was empty — `docs/interaction-preferences.md` + `CLAUDE.md` §9 + confirmed `feedback_*`
+memory), 5 `terminal`, 5 `documentation`, 2 `llm_output`, 1 `sqlite` — full text and per-rule source
+in the migration script's own docstring/table, not restated here. `cfg_escalation.chat_routing`
+deliberately **not** physically moved into `cfg_behaviour_rule` — cross-referenced by a new pointer
+rule (`chat.chat-items-become-escalations`) instead, keeping its live enforcement wiring in one
+place, per `documentation.single-authority-pointer-not-copy` read as "one CANONICAL location," not
+"zero other mentions anywhere."
+
+**Two boundary decisions the researcher's own fallback governs** ("if in doubt, define it and let
+it live in settings.governance"): git/commit discipline → `terminal` class, not a new class
+(`governance.behaviour_boundary.git_commit`); backup/durability discipline → `sqlite` class, not a
+new class (`governance.behaviour_boundary.backup_recovery`). A third new setting,
+`governance.procedural_document_taxonomy`, records the researcher's own 4-way future-document
+taxonomy (planning · config-extract · history-of-changes · guidance/baseline) verbatim — not yet
+applied to the existing document set, a follow-on cycle.
+
+**Two prior "consolidation attempt" documents found and retired** (banner + pointer, provenance
+kept, not deleted) — the concrete instance of `documentation.consolidation-doc-must-be-load-bearing-
+or-retired`, itself a new rule this cycle: `Workflow/Instructions/wa-operational-governance-v1_0-
+20260614.md` and `docs/project-orientation-core-memory-map.md`, both dated 2026-06-14, neither
+referenced by the current `start-project` skill or `GOVERNANCE.md` — silently orphaned by the
+2026-08-15 IBA architecture correction, never formally retired until now. `CLAUDE.md`'s own
+top-banner pointer to the second doc corrected in the same pass.
+
+**A registration gap found and fixed mid-sweep:** cycle 2's own migration script
+(`bootstrap_behaviour_rules_cycle2_v1_20260818.py`) had never been registered in `cfg_utility` —
+`governance.new_utility_registration_timing` violated by this session's own earlier work.
+Registered retroactively, alongside cycle 3's own script, in the same unit of work as this entry.
+
+**Explicitly deferred, not done here** (per the researcher's own "quantify, not rectify" — impact on
+existing documents is counted, not fixed this cycle): `docs/interaction-preferences.md` and
+`CLAUDE.md` §9 still duplicate what's now `cfg_behaviour_rule`/`chat` content — real, quantified
+duplication (2 live main-project documents), not the dozens of history/log hits the same grep
+surfaces (those are records/references, not restatements). Full doc-taxonomy classification of the
+existing document set. The deviation-monitoring/`enforced_by` mechanism, still named as missing
+everywhere it's cited. Both flagged as follow-on escalations, not applied silently.
+
+**Verified:** manual structural check (no `configmaint.validate` run possible — blocked all session
+by pre-existing escalation `#729`, unrelated to this work, still open): 0 duplicate `cfg_setting`
+keys, 0 `cfg_behaviour_rule` rows referencing an unregistered class, 37 active behaviour rules
+across 5 classes (9/9/7/6/6), 159 settings total.
+
+**Files:** `iba/app/migration/bootstrap_behaviour_rules_cycle3_v1_20260818.py`,
+`Workflow/Instructions/wa-operational-governance-v1_0-20260614.md` (retirement banner),
+`docs/project-orientation-core-memory-map.md` (retirement banner), `CLAUDE.md` (banner pointer
+correction), `iba/app/reports/cfg-rules-overview-20260818.md` (rebuilt, see its own changelog),
+`iba/app/GOVERNANCE.md` §41 (pointer only — full detail here per this file's own scope discipline).
+
+## 150. `#715` cycle 4 — `#733`'s structural read-through, then `#732`'s new `development` class + `Behaviour.ps1` (2026-08-18, later still)
+
+Researcher: do `#733` first ("cycle a read through to avoid rework"), then `#732` ("naming:
+development... completing the underlying work involved").
+
+**`#733` — structural read-through of cycles 1–3, checked live, not assumed:**
+
+- Re-read the 6 densest existing rules (the epistemic-discipline cluster spanning `chat`/
+  `llm_output`/`documentation`) for literal duplication — genuinely distinct facets (proceeding /
+  reporting-format / labelling / a labelling instance / citation / derivation-source). No merge.
+- Grepped all live code (excluding this session's own migration scripts) for references to the two
+  docs retired in cycle 3 — none found.
+- Checked `cfg_write_grant` for `cfg_behaviour_class`/`cfg_behaviour_rule` — correct.
+- **Found `cfg_behaviour_class.description` for `chat` still read "No rules seeded yet"** after
+  cycle 3 populated 9 rows into it — fixed directly.
+- **Found the real gap `#732`'s "USER-GUIDE for every change" rule targets**: 3 build cycles of
+  this system, zero `USER-GUIDE.md` coverage, despite `governance.User_Guide_scope` already
+  requiring exactly that. The rule existed; nothing enforced it. Closed in the same pass: `USER-
+  GUIDE.md` §13c added.
+- **Found two of `#732`'s "other items" already fully covered** — avoided exactly the duplication
+  `#733` warned about by checking before writing: temp-file discipline is already
+  `governance.scripts_and_routines`; script-folder-destination is already
+  `governance.scripts_ps_dir`/`governance.scripts_python_dir`. Neither got a new rule.
+- **Found the operational-behaviour module itself had no supporting PS script** — reachable only
+  via raw sqlite3/ad-hoc Python across 3 cycles, exactly the gap
+  `development.every-interactive-module-needs-ps-script` (below) exists to catch. Built first, so
+  the rule ships already-compliant: `iba/app/lib/behaviour.py` (`list` command, writes
+  `behaviour.list_report_path`, default `iba/app/reports/behaviour-rules-list.md`, archived on
+  regenerate) + `iba/app/ps/Behaviour.ps1` (`-Action List [-Class <name>]`). Registered in
+  `cfg_utility` + `cfg_setting`; verified live (`37` then `42` active rules reported correctly
+  pre/post cycle 4).
+
+**`#732` — new `development` class**, built after the read-through
+(`migration/bootstrap_behaviour_rules_cycle4_v1_20260818.py`): `cfg_behaviour_class` row added; 5
+rules — `root-fix-not-one-off`, `simple-steps-not-engineered-designs` (2 memory items moved in per
+the researcher's own list), `open-items-route-through-escalation` (the general case;
+`chat.chat-items-become-escalations` stays as its chat-conversation-timing instance, not merged —
+distinct enough to keep separate), `every-interactive-module-needs-ps-script`,
+`user-guide-updated-same-unit-of-work`. One new setting:
+`governance.engineering_documentation_folder` — designates `iba/docs/` (already functioning as
+this in practice, 30+ files) as the IBA-side home for planning/design documentation
+(`procedural_document_taxonomy` category (a)); main-project-side consolidation of the equivalent
+scattered content explicitly left out of scope, parked alongside escalation `#650`.
+
+**Verified:** manual structural check (`#729` still blocks `configmaint.validate`, unrelated,
+still open): 0 duplicate `cfg_setting` keys, 42 active `cfg_behaviour_rule` rows across 6 classes
+(chat 9, development 5, documentation 7, llm_output 9, sqlite 6, terminal 6). `Behaviour.ps1
+-Action List` and `-Action List -Class development` both run live, correct counts.
+
+**Files:** `iba/app/migration/bootstrap_behaviour_rules_cycle4_v1_20260818.py`,
+`iba/app/lib/behaviour.py`, `iba/app/ps/Behaviour.ps1`, `iba/app/USER-GUIDE.md` §13c.
+
+## 151. `cfg_candidate_rule` retired (`#734`), `#729`'s 110-module disposition applied, `#730`'s actual file retirement done (2026-08-18, later still)
+
+Three separate researcher decisions actioned, each with its own dependency check done first —
+not assumed:
+
+**`cfg_candidate_rule` (escalation `#734`).** Researcher flagged it as redundant. Checked before
+acting: all 289 rows already `inactive=1` since 2026-07-23 (`migration/retract_candidate_system.py`,
+`#306`/`#310`) — that migration's own docstring records `#306` already asked this exact question
+and found the table load-bearing *at the time* (shared by old `candidate.seed` and new `candidate.
+load`/`candidate.curate` via `handlers/candidate.py`'s `ctx.cfg.candidate_rules(kind)`), so it was
+deactivated, not deleted, pending a "coming replacement." 26 days later: all 3 consuming work
+packages/5 steps are still `inactive=1`, no replacement has landed. `handlers/candidate.py` still
+calls the table in code, but only through those inactive dispatcher steps — no live path reads it
+today. Action: `cfg_table.inactive` set to `1` for `cfg_candidate_rule` (the table's own
+registration was never flipped when its data/consumers were) — completes rather than re-decides
+the `#310` retraction. Write grant left active (reversible if a replacement lands).
+
+**`#729`'s 110-module disposition.** Researcher's resolution: *"set these 110 module to inactive.
+if the time arise when they need to be used, then the script can be updated to be fully
+compliant"* — overriding the escalation's own suggested default (`config_exempt=1`). Parsed all
+110 module names from the escalation's own `context.low_config_density_utilities` list (not
+retyped by hand), verified all 110 exist in `cfg_utility`, confirmed 0/110 already inactive, batch-
+set `inactive=1` with a dated reason appended to each row's `purpose`. `cfg_utility` now 358/393
+inactive (was 248/393) — consistent with the accumulated retractions already on record this month
+(`#310`'s candidate system, `#648`/`#699`/`#706`'s engine-controls sweep) plus this batch.
+
+**`#730`'s actual retirement** (approval had been recorded; the file moves hadn't happened yet).
+Dependency check: grepped all live `.py`/`.ps1` for `build_file_manifest`/`file_manifest.json` —
+only `iba/app/lib/manifest.py` (the replacement) and `iba/app/migration/bootstrap_file_manifest.py`
+(a one-off 2026-08-15 port, not an ongoing dependency) referenced it; no scheduled task found.
+`git mv scripts/build_file_manifest.py archive/scripts/` (history preserved; deprecation docstring
+added) — was already `cfg_utility.inactive=1`, `file_path` updated to match. `git mv database/
+file_manifest.json database/archive/` (8.3MB, git-tracked, frozen 2026-08-15 snapshot). Live
+pointers fixed in the same pass, not left dangling: `CLAUDE.md` (directory map + 4 command
+references across §§2/6/9/11), `docs/file-organisation-rules.md` §6 (superseded banner, kept for
+provenance — the field/search-syntax table underneath still describes the live system's shape
+accurately, only the commands/path are dead).
+
+**Verified:** `cfg_table`/`cfg_utility` updates checked live post-write (spot-queried, not assumed
+from the UPDATE statement's row count alone). Escalations `#734` (raised, resolution recorded
+inline — could not `-Action Complete` a `raised` item, left for researcher acknowledgement),
+`#730` (`-Action Complete`, resolution recorded). `#729` was already `state=completed`.
+
+**Files:** `archive/scripts/build_file_manifest.py`, `database/archive/file_manifest.json`,
+`CLAUDE.md`, `docs/file-organisation-rules.md` §6.
+
+## 152. Escalation redesign — schema cutover attempted, hit a real gap, rolled back same day (2026-08-19)
+
+Full design record: `iba/docs/escalation-redesign-plan-v3-20260819.md` (three researcher review
+rounds, triggered by escalation `#715`'s updates being silently lost — see
+`iba/docs/escalation-system-mechanics-20260818.md` for the root-cause investigation). Researcher's
+explicit cutover instruction: rename the live table to `escalations_old` (frozen, isolated), stand
+up a fresh `escalation` + `escalation_history` under the new append-only-history schema, re-raise
+the 4 genuinely open items (`#650`/`#654`/`#668`/`#725`) fresh rather than migrate them in place.
+
+**Built and ran** `migration/escalation_redesign_v1_20260819.py`: safety-snapshotted the live 722-
+row table to JSON first, renamed it to `escalations_old` (`cfg_table.inactive=1`), built
+`escalation` and `escalation_history` from `cfg_column`/`table_ddl()` per plan v3's schema, seeded
+`sqlite_sequence` so new ids continue from 735 (not reused), updated `cfg_enum` (`escalation_state`
++= `supersede`/`re-assigned`; `escalation_next_action` -> `ready_for_approval|approved|reject|
+revise|noted|review`), re-raised the 4 carryover items as `#735`-`#738`. Committed clean.
+
+**Then `configmaint.validate` broke on the very next dispatch** — surfaced a real gap none of the
+three plan review rounds covered, because all three scoped entirely to the MANUAL/researcher-
+workflow case: `run.py`'s DISPATCHER-TIED pauses (`configmaint.propose`, `candidate.validate`, and
+5+ other handlers) correlate one specific pipeline execution to its escalation via `run_id` — a
+column the new schema dropped entirely (plan v3's column table has no `run_id`, since the MANUAL
+workflow never needed one). Worse: the new `next_action` vocabulary has no `approve` value left at
+all (split into `ready_for_approval`/`approved`), but 7+ handlers' `answered_for_run` consumers
+branch on literally `decision=='approve'` — load-bearing production logic that the redesign would
+silently break, not something to guess a reconciliation for on a live system.
+
+**Rolled back same session**, `migration/escalation_redesign_v1_20260819_ROLLBACK.py`: restored
+`escalation` from `escalations_old` (verified 722/722 rows, spot-checked several ids byte-for-byte
+against the pre-migration JSON snapshot), reverted `cfg_table`/`cfg_column`/`cfg_index`/`cfg_unique`/
+`cfg_enum`, dropped `escalation_history`. `configmaint.validate` re-run clean immediately after
+(paused normally on 2 real advisory findings — ordinary behaviour, not an error). App confirmed
+back to its pre-redesign working state before reporting to the researcher.
+
+**Both migration scripts kept in the tree** (matching the project's convention of retaining one-off
+migration history, e.g. `escalation_reset_v1_20260816.py`) — the forward one is not safe to re-run
+as-is; it needs the `run_id`/dispatcher-tied question answered first (open question raised back to
+the researcher, not guessed).
+
+**Files:** `iba/app/migration/escalation_redesign_v1_20260819.py`,
+`iba/app/migration/escalation_redesign_v1_20260819_ROLLBACK.py`,
+`iba/app/reports/archive/escalation-table-snapshot-pre-redesign-20260819.json`.
+
+## 153. `registry.create`'s approval gate removed — the real principle behind #152's rollback (2026-08-20)
+
+Direct continuation of #152's finding: the rollback surfaced that `run.py`'s dispatcher-tied pause
+mechanism doesn't cleanly map onto the new escalation design. Investigated with real numbers rather
+than guessing at a fix: `configmaint.propose` (307), `registry.create` (180), and
+`configmaint.validate` (84) together are **571 of 723 escalation rows (79%)** — routine pipeline
+plumbing, not genuine errors/issues, proven starkly by `configmaint.propose`'s own self-test rows
+sitting in the same table as real crashes (*"Self-test: insert a harmless cfg_setting row to prove
+propose()'s approval cycle end to end,"* *"change selftest value again"*).
+
+Put to the researcher, who drew the real line: **config writes (`configmaint.propose`/`validate`)
+are development/design controls — changes to the app's own behaviour — and correctly keep their
+escalation-gated approval. A standard operational routine, run through already-approved app PS
+scripts, needs no separate approval mechanism at all — the engine (`run.state`/`resume_point`/
+`outcome`, already built and already firing on every successful step) logs it; only a genuine
+error escalates.** Applied specifically and explicitly to `registry.create`, closing a question the
+researcher has raised more than once (word-scoped yes/no approval predates this session by a long
+way): *"if the standard new word create routine are used, then running should be logged in the
+engine, it does not need another approval mechanism."*
+
+**Built:** `handlers/registry.py`'s `create()` no longer creates a word as `'proposed'`+escalates —
+it creates it `'approved'` directly, in one call (`_register()`, replacing `_ask_approval()`'s
+escalate-and-pause). The duplicate/typo detection `_ask_approval` used to gate on (an existing word
+already holding 100% of the new word's strongs) is kept as a signal — not removed — but now surfaces
+as a note in the `ok()` outcome message, which lands in `run.outcome` (the engine's own log) rather
+than blocking on a fresh decision, since the researcher's instruction named the standard routine
+generally, with no carved-out exception for this case; flagged as a judgement call I made, not
+silently decided. Legacy `'proposed'`/`'rejected'` rows (none live — checked, 0 rows) fall through
+to the same no-gate registration path if one ever surfaces from an old backup. `GOVERNANCE.md` §6
+and `USER-GUIDE.md`'s `registry.create` examples corrected in the same pass (§154 below records
+where).
+
+**Not yet done, deliberately separate:** the escalation schema redesign itself (`#152`'s rollback)
+is still unresolved — this fix only removes `registry.create` from the volume problem; it doesn't
+touch `configmaint.propose`/`validate`, which correctly still need a real approval-gate mechanism,
+still on the OLD `escalation` table shape (the redesign's `run_id`/`approve`-vocabulary gap from
+`#152` is unaddressed). Next step, per the researcher's request, is folding this newly-clarified
+principle (engine-logs-standard-runs / escalation-is-errors-and-design-controls-only) back into the
+escalation redesign plan before attempting the schema cutover again.
+
+**Files:** `iba/app/handlers/registry.py`.
+
+## 154. Escalation redesign — live, v2 cutover succeeded (2026-08-20, same day as #153)
+
+Corrected retry of #152's rolled-back attempt. The gap #152 found — `run_id` dropped, dispatcher-
+tied `approve`/`hold` vocabulary retired — is resolved by #153's own principle, not by bending the
+new schema back to fit old plumbing: **two shapes, two vocabularies, one mechanism.**
+Dispatcher-tied items (config writes, quality-check findings — legitimate design controls) keep
+`run_id` correlation and the unchanged `approve|reject|revise|hold|noted` vocabulary; manual items
+(the researcher/Claude backlog workflow, plan v3) use the new `ready_for_approval|approved|reject|
+revise|noted|review` vocabulary. Both write through the same full-snapshot `_snapshot()` primitive,
+so both get real append-only history for the first time — including dispatcher-tied items, which
+never had it either.
+
+**Verified before writing this, not assumed:** grepped all 9 real call sites of
+`answered_for_run()` across `handlers/*.py` — every one reads only `["next_action"]`/`["comment"]`,
+so zero handler code needed to change. `lib/retention.py`/`tools/purge_word.py` checked too —
+neither references a column the redesign removed (`word`, `answered_by`); both work unchanged.
+
+**Built:** `lib/escalation.py` fully rewritten — dispatcher-tied `raise_`/`pending_for_run`/
+`answered_for_run`/`answer_for_run`/`open_duplicate` ported with unchanged semantics; new
+`raise_new`/`update` for the manual shape (plan v3's two-transaction model, auto-state priority
+rules, cumulative context/comment, resolution-required-on-approved, all as designed). `run.py`'s 3
+direct writes + the `module_blocking` query updated to the new schema (`re-assign` -> `re-assigned`
+throughout). `migration/escalation_redesign_v2_20260820.py` — same shape as the rolled-back v1
+(rename to `escalations_old`, build `escalation`/`escalation_history` from `cfg_column`/
+`table_ddl()`, re-raise the 4 carryover items) plus `run_id` restored on both tables and
+`escalation_next_action` only ADDING the 3 new manual values, not retiring `approve`/`hold`.
+
+**One real bug caught by live-testing, not left for the researcher to hit**:
+`escalation_history.answered_at` is `NOT NULL` but `raise_()` was writing `None` for it (correct
+for `escalation.answered_at`, which really does mean "not yet decided" — wrong for the history
+row's own field, which means "when this row was written," never null). Fixed: both `raise_()` and
+`raise_new()` now stamp it at creation.
+
+**Live-verified end to end, not just compiled:** ran real `configmaint.validate` dispatch through
+the new schema — paused correctly, `escalation #740` created with `run_id` correlation intact,
+answered `noted` via `Escalation.ps1 -Action AnswerRun`, produced 2 real history rows (v1 raise, v2
+answer — the exact shape #715 lost). Manual shape tested via the CLI directly: `raise_new` ->
+`update` through `ready_for_approval` -> `re-assigned` (on a real assignee change) -> `approved` ->
+`completed`, resolution-required-on-approved refused correctly on a clean item and accepted once a
+resolution existed, `reject`+`state=withdraw` closed a second test item cleanly. `Escalation.ps1
+-Action List` regenerated correctly, full history inline. Both smoke-test items closed out, not
+left dangling.
+
+**Not yet done:** `GOVERNANCE.md`/`USER-GUIDE.md` still describe the OLD escalation shape in most
+places (§153's edits only corrected the `registry.create`-specific passages) — a full documentation
+pass for the new two-vocabulary model is a separate, explicitly flagged next step, not silently
+skipped. `Escalation.ps1` itself is unchanged (still only wraps the dispatcher-tied `AnswerRun`/
+`List` verbs) — the manual shape currently only has a CLI front door
+(`python -m iba.app.lib.escalation raise|update`), no PS wrapper yet.
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/run.py`,
+`iba/app/migration/escalation_redesign_v2_20260820.py`.
+
+## 155. Escalation follow-ups registered and worked through the live system itself (2026-08-20)
+
+Every open loose end from #152–154 was registered as its own item through the now-live system
+(escalations `#743`–`#750`, `related_activity=escalation-redesign-followups-20260820`) — using the
+new mechanism to track fixing itself, per the researcher's instruction. Ordered `#745, 743, 747,
+744`; `#746` left for the researcher's own review; `#748`/`#749`/`#750` left open, assigned
+Researcher.
+
+**`#745`** (real gap, not cosmetic): `cfg_write_grant` had no row for `escalation_history` at all —
+every write bypassed the grant check. Fixed at the root, not just the DB row:
+`migration/fix_escalation_history_write_grant_20260820.py` adds the missing grant, and
+`lib/escalation.py`'s `_grant_both()` now checks BOTH `escalation` and `escalation_history`
+explicitly on every `_create()`/`_snapshot()` call — the actual bug was that only one table was ever
+checked, so the missing row went uncaught by the mechanism meant to catch exactly this. Live-tested
+post-fix.
+
+**`#743`** (bigger than registered): building the PS wrapper surfaced that the pre-redesign
+`Edit`/`Pause`/`Resume`/`Retract`/`Reassign`/`Complete`/`Answer` actions were silently no-op-ing —
+calling Python verbs `escalation.py`'s rewrite had removed, printing a usage line and exiting 0,
+looking harmless. `Escalation.ps1` fully rewritten: `List`/`AnswerRun` unchanged (dispatcher-tied),
+`Raise`/`Update` new (manual shape, the six retired actions collapsed into `Update` per plan v3's
+two-transaction design), `History` new (closes `#747` in the same build). A real bug caught live
+during this build, not left for the researcher to hit: `escalation_history.answered_at` is `NOT
+NULL` but `raise_()` wrote `None` for it — fixed (both raise paths now stamp it at creation; it
+means "this row's write time," never "not yet decided"). Also fixed the CLI's `raise`/`update`
+verbs, which were conflating `short_description`/`comment` into one blob — added proper
+`--comment=`/`--context=` flags. Live-tested every action through the actual `.ps1` file: `Raise`
+split fields correctly, `Update` derived state correctly (`noted`→`closed`), `History` produced
+correct full version-by-version output.
+
+**`#747`**: `write_history_report()` wired to both `python -m iba.app.lib.escalation history <id>`
+and `Escalation.ps1 -Action History` (built alongside `#743`, same gap). Registered the
+`escalation.history_report_dir` setting it reads.
+
+**`#744`**: `USER-GUIDE.md` §4 (Escalations — the complete reference) rewritten wholesale, §4.1–4.7
+— the two-table model, the two-shape/two-vocabulary split, the priority-ordered auto-state table,
+the two-stage approval, `registry.create`'s retirement, the 4 live actions, correcting a wrong
+title via supersede. `GOVERNANCE.md` left as-is beyond §153's earlier fix — remaining old-vocabulary
+mentions are dated historical narrative, correctly left as pure history per the researcher's own
+`#664` ruling, not live instruction.
+
+**Files:** `iba/app/migration/fix_escalation_history_write_grant_20260820.py`,
+`iba/app/lib/escalation.py`, `iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`.

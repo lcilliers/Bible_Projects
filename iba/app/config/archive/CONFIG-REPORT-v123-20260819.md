@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-20T03:25:58Z |
+| generated_at | 2026-08-19T19:53:29Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -69,7 +69,7 @@ _(none)_
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
 
-**Inactive configs** (382 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 355 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 8 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **19 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.verse-analysis-report, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=re-assign, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop.
+**Inactive configs** (384 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 355 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 8 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **21 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.verse-analysis-report, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_next_action=approve, cfg_enum.escalation_next_action=hold, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=re-assign, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop.
 - **cfg_setting** (7): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.load_report_path`, `candidate.quality_report_path`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`
 - **cfg_step** (13): `book-narrative-generate/report.book_narrative_generate`, `book-narrative-validate/report.book_narrative_validate`, `candidate-curation/candidate.curate`, `candidate-curation/candidate.load`, `candidate-quality/candidate.validate`, `chapter-generate/report.passage_debate`, `chapter-generate/report.verse_span_meaning`, `passage-debate-report/report.passage_debate`, `passage-debate-sync/passage.debate_sync`, `seed-candidate-report/report.seed_candidate`, `set-candidates/candidate.seed`, `set-candidates/candidate.set`, `verse-analysis-report/report.verse_span_meaning`
 - **cfg_work_package** (10): `book-narrative-generate`, `book-narrative-validate`, `candidate-curation`, `candidate-quality`, `chapter-generate`, `passage-debate-report`, `passage-debate-sync`, `seed-candidate-report`, `set-candidates`, `verse-analysis-report`
@@ -77,7 +77,7 @@ _(none)_
 - **cfg_report** (3): `candidate.load`, `candidate.validate`, `report.seed_candidate`
 - **cfg_report_section** (10): `candidate.load/duplicates`, `candidate.load/exceptions`, `candidate.validate/gloss`, `candidate.validate/orphan_lemmas`, `candidate.validate/seed_tag`, `candidate.validate/span_tag`, `report.seed_candidate/distribution`, `report.seed_candidate/over_time`, `report.seed_candidate/summary`, `report.seed_candidate/top_lemmas`
 - **cfg_report_csv_table** (5): `candidate.load/candidate_seed`, `candidate.validate/candidate_seed`, `candidate.validate/lemma_inventory`, `candidate.validate/span_candidate`, `report.seed_candidate/candidate_seed`
-- **cfg_enum** (28): `candidate_decision=candidate`, `candidate_decision=exception`, `candidate_decision=rejected`, `candidate_decision=undecided`, `candidate_ib_referent=body_part`, `candidate_ib_referent=characteristic`, `candidate_ib_referent=other_being`, `candidate_source=curated-synonym`, `candidate_source=ib-judgement`, `candidate_source=read-emergent`, `candidate_source=registry-direct`, `candidate_step_status=in_strong`, `candidate_step_status=not_in_step`, `candidate_step_status=step_has_verses_pending`, `candidate_step_status=step_no_verses`, `escalation_answer=approve`, `escalation_answer=reject`, `escalation_answer=revise`, `escalation_state=answered`, `escalation_state=paused`, `escalation_state=re-assign`, `escalation_state=retracted`, `escalation_type=crash`, `escalation_type=interactive`, `escalation_type=prompted`, `escalation_type=report-stop`, `passage_source=passage-build`, `passage_source=single-verse-emergent`
+- **cfg_enum** (30): `candidate_decision=candidate`, `candidate_decision=exception`, `candidate_decision=rejected`, `candidate_decision=undecided`, `candidate_ib_referent=body_part`, `candidate_ib_referent=characteristic`, `candidate_ib_referent=other_being`, `candidate_source=curated-synonym`, `candidate_source=ib-judgement`, `candidate_source=read-emergent`, `candidate_source=registry-direct`, `candidate_step_status=in_strong`, `candidate_step_status=not_in_step`, `candidate_step_status=step_has_verses_pending`, `candidate_step_status=step_no_verses`, `escalation_answer=approve`, `escalation_answer=reject`, `escalation_answer=revise`, `escalation_next_action=approve`, `escalation_next_action=hold`, `escalation_state=answered`, `escalation_state=paused`, `escalation_state=re-assign`, `escalation_state=retracted`, `escalation_type=crash`, `escalation_type=interactive`, `escalation_type=prompted`, `escalation_type=report-stop`, `passage_source=passage-build`, `passage_source=single-verse-emergent`
 - **cfg_on_fail** (11): `candidate.curate/change-rejected`, `candidate.curate/invalid-proposal`, `candidate.curate/needs-approval`, `candidate.curate/needs-revision`, `candidate.load/needs-review`, `candidate.seed/no-inventory`, `candidate.set/no-spans`, `candidate.validate/findings-rejected`, `candidate.validate/needs-review`, `candidate.validate/needs-revision`, `passage.build/no-candidates`
 - **cfg_candidate_rule** (by kind): accept=289
 
@@ -1150,7 +1150,7 @@ _one row per check a validate step ran_ — util.validation — the outcome of a
 | deleted | INTEGER |  |  |  |  | soft delete |  |
 
 ### escalations_old
-_one row per researcher interaction — the pause_ — Historical escalation data, frozen at the 2026-08-20 redesign cutover (v2, corrected retry of the rolled-back 2026-08-19 v1) -- 723 rows, pre-dates escalation_history entirely. Read-only reference only, excluded from all new validation/correction (researcher instruction, 2026-08-19). Superseded by escalation + escalation_history.
+_one row per researcher interaction — the pause_ — Historical escalation data, frozen at the 2026-08-19 redesign cutover -- 722 rows, pre-dates escalation_history entirely. Read-only reference only, excluded from all new validation/correction (researcher instruction, 2026-08-19). Superseded by escalation + escalation_history.
 | column | type | pk | notnull | unique | fk | use | source/filled_by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | INTEGER | ✓ |  |  |  | surrogate key |  |
@@ -1845,12 +1845,11 @@ _one row per key project concept pointed at its defining prose location_ — a p
 | added_at | TEXT |  | ✓ |  |  | when this concept was registered | migration/bootstrap_prose_authority_v1_20260818.py |
 
 ### escalation
-_one row per item, current status_ — One row per item, CURRENT STATE ONLY -- the escalation redesign (2026-08-19/20, escalation-redesign-plan-v3 + BUILD.md §153's engine-vs-escalation split). Redundant with the latest escalation_history row by construction: every write updates both, in one transaction. New ids continue from escalations_old's max (735) -- see escalation_history for the full append-only record.
+_one row per item, current status_ — One row per item, CURRENT STATE ONLY -- the escalation redesign (2026-08-19, escalation-redesign-plan-v3). Redundant with the latest escalation_history row by construction: every write updates both, in one transaction. New ids continue from escalations_old's max (734) -- see escalation_history for the full append-only record.
 | column | type | pk | notnull | unique | fk | use | source/filled_by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| id | INTEGER | ✓ | ✓ |  |  | serial PK, 4-digit display; continues from escalations_old's max (735) so ids stay unambiguous across the cutover |  |
+| id | INTEGER | ✓ | ✓ |  |  | serial PK, 4-digit display; continues from escalations_old's max (734) so ids stay unambiguous across the cutover |  |
 | version | INTEGER |  | ✓ |  |  | current version number for this id -- count of its escalation_history rows; the NNNN-NN display format is id+version, not a stored key | escalation.raise_new/update |
-| run_id | TEXT |  |  |  |  | restored 2026-08-20 (v1 dropped it, broke dispatch, rolled back -- BUILD.md §152/§153). Set for a DISPATCHER-TIED item (a real run.py pause, correlates back to the run being resumed) or a synthetic MANUAL-<timestamp> for a manual item. NULL for neither. | escalation.raise_/raise_new |
 | source | TEXT |  | ✓ |  |  | what triggered the item: script name \| module \| issue area. Immutable after Raise. | escalation.raise_new |
 | at_step | TEXT |  |  |  |  | pipeline reference, only set if code-generated/run-error. Immutable after Raise. | escalation.raise_new |
 | type | TEXT |  | ✓ |  |  | differentiates the kind of item | escalation.raise_new |
@@ -1859,7 +1858,7 @@ _one row per item, current status_ — One row per item, CURRENT STATE ONLY -- t
 | comment | TEXT |  |  |  |  | additional information for the assigned party. Cumulative, same rule as context. | escalation.raise_new/update |
 | tried | TEXT |  |  |  |  | the corrective action taken -- REQUIRED when next_action_assigned_to=Claude and a prior corrective action failed (plan v3 §6/v2 §6). | escalation.update |
 | state | TEXT |  | ✓ |  |  | current status -- raised at Raise; mostly logic-derived on Update per the auto-state rules (plan v3 §3), some values either-party-settable (on-hold/in-progress/closed). | escalation.raise_new/update |
-| next_action | TEXT |  |  |  |  | what's expected of the current reader (incoming) / what the next reader should do (outgoing) -- TWO vocabularies share this column: dispatcher-tied (approve/reject/revise/hold/noted, unchanged) and manual (ready_for_approval/approved/reject/revise/noted/review) -- see lib/escalation.py module docstring, 2026-08-20. | escalation.raise_new/update |
+| next_action | TEXT |  |  |  |  | what's expected of the current reader (incoming) / what the next reader should do (outgoing) -- plan v3 §1's incoming/outgoing framing. | escalation.raise_new/update |
 | next_action_assigned_to | TEXT |  |  |  |  | Claude \| Researcher | escalation.raise_new/update |
 | originator | TEXT |  |  |  |  | who created the latest escalation_history row -- auto-populated, replaces `answered_by`. Not caller-supplied. | escalation.raise_new/update |
 | resolution | TEXT |  |  |  |  | what was actually done -- REQUIRED when next_action=approved (validity check, plan v3 §3). | escalation.update |
@@ -1875,7 +1874,6 @@ dedup key: `escalation_id, version`
 | id | INTEGER | ✓ | ✓ |  |  | surrogate PK, row order = write order |  |
 | escalation_id | INTEGER |  | ✓ |  | escalation.id | which item this snapshot belongs to | escalation.raise_new/update |
 | version | INTEGER |  | ✓ |  |  | this item's version number at the time of this snapshot -- matches escalation.version at the moment this row was the latest | escalation.raise_new/update |
-| run_id | TEXT |  |  |  |  | snapshot of escalation.run_id (constant per item) |  |
 | source | TEXT |  | ✓ |  |  | snapshot of escalation.source at this version |  |
 | at_step | TEXT |  |  |  |  | snapshot of escalation.at_step at this version |  |
 | type | TEXT |  | ✓ |  |  | snapshot of escalation.type at this version |  |

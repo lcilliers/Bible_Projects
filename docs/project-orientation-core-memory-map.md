@@ -1,5 +1,18 @@
 # Project Orientation — Core Memory Map
 
+> **★ RETIRED 2026-08-18 — superseded by the IBA governance system (escalation #715, cycle 3).**
+> Found during the #715 sweep alongside `wa-operational-governance-v1_0-20260614.md` (also retired
+> today, same finding): this doc already flagged *itself* as pre-reset/legacy below (2026-06-25
+> banner) and was never updated for the 2026-08-15 architecture correction or the IBA governance
+> system that followed — the current `start-project` skill reads `docs/governance-alignment-
+> register.md`'s successor (the `escalation` table) and `iba/app/GOVERNANCE.md`/`BUILD.md`, not this
+> map, and hasn't for some time. A second instance of the same lesson `cfg_behaviour_rule
+> (documentation, consolidation-doc-must-be-load-bearing-or-retired)` now names directly: an
+> orientation doc with no live reader is stale by construction regardless of how recently it claims
+> to be current. Live entry points now: `CLAUDE.md` (main project, loaded every session) → `iba/app/
+> GOVERNANCE.md` + `iba/app/BUILD.md` (IBA, read via the `start-project` skill/`Start-Iba.ps1`) →
+> the `escalation` table (open items, project-wide). Kept below for provenance, not deleted.
+>
 > **★ METHOD RESET 2026-06-25 — "Characteristics → Movements."** The study's object changed: no longer naming/describing individual *characteristics*, now analysing the **movements, associations, emergence** of the inner being (process/web, not parts-list). **Live method = the two reset specs** (`Workflow/Instructions/wa-lexical-analysis-rules-reset-v1` + `wa-synthesis-B-spec-reset-v1`); **milestone = `Workflow/methodology/wa-RESET-baseline-review-and-changeover-v1`**. The characteristic/object-type/faculty-ontology/tier-grid/unit framing is **closed (provenance-only)**; all prior lexical + M01–M11 "completed" + in-progress work is **legacy to be revisited**. Read everything below as the *pre-reset* map (the legacy substrate). To brief Claude AI: `Workflow/methodology/wa-RESET-briefing-for-Claude-AI-v1-20260625.md`.
 >
 > **Start here every session.** This is the map of the guides and documents that direct continued work on this project. **CLAUDE.md is the core entry point; from there it fans out** (instructions → current-truth reconstruction → open-items → memory). Created 2026-06-14.
