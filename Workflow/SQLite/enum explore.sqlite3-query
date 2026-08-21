@@ -1,0 +1,12 @@
+-- database: ../../iba/app/db/iba.db
+
+SELECT id,version, short_description, related_activity, comment, context, resolution, type, state FROM escalation
+WHERE state in ('completed','withdraw','closed');
+
+SELECT id,version, short_description, next_action_assigned_to, related_activity, comment, context, resolution, type, state FROM escalation
+WHERE state not in ('completed','withdraw','closed');
+
+
+SELECT id,version, short_description, related_activity, comment, context, resolution, type, state FROM escalation;
+
+select * from escalation_history;
