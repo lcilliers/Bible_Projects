@@ -94,16 +94,46 @@ class _Sim:
         return merged
 
 
-def _diff_versions(prev: dict | None, cur: dict) -> dict:
+_APPEND_FIELDS = ("comment", "context")           # matches escalation.py's own _APPEND_COLS
+
+
+def _diff_versions(prev: dict | None, cur: dict) -> tuple[dict, list[str]]:
     """The true delta a version's own transaction set, vs. the FULL-SNAPSHOT previous version
-    (undoing the retired design's over-population — the whole reason D1 exists)."""
+    (undoing the retired design's over-population — the whole reason D1 exists). Returns
+    (delta, warnings).
+
+    FOUND LIVE, 2026-08-21 (researcher, reviewing #736's v2/v3 in the JSON output): `comment`/
+    `context` are CUMULATIVE-APPEND columns (matching `escalation.comment`'s own current-state
+    semantics, `_APPEND_COLS` in escalation.py, applied via `_append()`: `f"{current}\n{addition}"`)
+    — under the export's retired full-snapshot design, EACH version's `comment` is the WHOLE
+    running cumulative text, not an increment. Treating a changed comment as "the new value IS the
+    delta" (as this function used to, identically to the genuinely-replace columns below) means
+    replaying it through the real `update()` would hand the WHOLE cumulative text to `_append()`
+    again — doubling every earlier increment back in. Fixed: when `cv` cleanly extends `pv` (starts
+    with `pv + "\n"`), the true increment is `cv[len(pv)+1:]` — stripping exactly the one `\n`
+    `_append()` itself re-inserts on replay, so `_append(pv, increment) == cv` exactly. When it
+    does NOT cleanly extend (an edit that isn't a pure append — text inserted/changed mid-string,
+    not just added at the end), that's a genuine non-mechanical edit and is NOT guessed at: the
+    whole `cv` is kept as the delta (old behaviour) and a warning is returned so it surfaces as a
+    finding needing a look, the same way a title-shape violation does."""
     delta = {}
+    warnings: list[str] = []
     for f in CONTENT_FIELDS:
         pv = prev.get(f) if prev else None
         cv = cur.get(f)
-        if cv != pv:
+        if cv == pv:
+            continue
+        if f in _APPEND_FIELDS and pv and cv and cv.startswith(pv + "\n"):
+            delta[f] = cv[len(pv) + 1:]
+        elif f in _APPEND_FIELDS and pv and cv and cv != pv:
+            delta[f] = cv          # not a clean append -- keep whole value, but flag it
+            warnings.append(f"{f} changed but is NOT a clean append of the previous version "
+                            f"(doesn't start with prev+'\\n') -- kept as a whole-value delta, "
+                            f"replaying via update()'s _append() would NOT reproduce this "
+                            f"reliably; needs a look, not auto-resolved")
+        else:
             delta[f] = cv
-    return delta
+    return delta, warnings
 
 
 def _from_id_candidates(text: str, batch_old_ids: set[int]) -> list[int]:
@@ -213,7 +243,10 @@ def dry_run() -> tuple[list[str], list[str], dict]:
 
         prev_snapshot = v1
         for h in versions[1:]:
-            delta = _diff_versions(prev_snapshot, h)
+            delta, diff_warnings = _diff_versions(prev_snapshot, h)
+            for w in diff_warnings:
+                findings.append(f"old #{old_id} v{h['version']}: {w}")
+                L.append(f"    ⚠ {w}")
             env_changed = {f: h[f] for f in ("state", "next_action", "next_action_assigned_to")
                           if h[f] != prev_snapshot.get(f)}
             summary = ", ".join(f"{k}={v!r}" for k, v in delta.items()) or "(envelope only)"
@@ -278,7 +311,18 @@ def dry_run() -> tuple[list[str], list[str], dict]:
                 "next_action_validation_error": next_action_err,
             })
 
-            sim.snapshot(new_id, delta, env_changed)
+            merged = sim.snapshot(new_id, delta, env_changed)
+            # Self-verification: replaying the extracted increment through _append() (sim.snapshot
+            # uses the identical "\n".join logic) must reproduce the export's OWN recorded
+            # cumulative value exactly -- proves the comment/context fix actually round-trips,
+            # not just "looks shorter". A mismatch means the append-detection above missed a case.
+            for f in _APPEND_FIELDS:
+                if merged.get(f) != h.get(f):
+                    msg = (f"comment/context reconstruction mismatch on {f} -- extracted delta, "
+                          f"re-applied via _append(), does NOT reproduce the export's own v{h['version']} "
+                          f"value. Needs a manual look, not auto-resolved.")
+                    findings.append(f"old #{old_id} v{h['version']}: {msg}")
+                    L.append(f"    ⚠ {msg}")
             prev_snapshot = h
         L.append("")
         json_items.append(item_json)
