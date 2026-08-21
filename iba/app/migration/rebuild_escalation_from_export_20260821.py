@@ -15,6 +15,13 @@ meaningful. `escalations_old` (735 rows) is untouched — this only concerns `es
       and corrected." That is a deliberate, separate, human-reviewed step — building and running it
       in the same pass as the dry run would erase the checkpoint the design exists to provide.
 
+**Two output files, same computation** (researcher request, 2026-08-21): the `.md` report is prose
+for reading; `escalation-rebuild-dry-run-20260821.json` alongside it is the same data as the EXACT
+keyword arguments `raise_new()`/`update()` would be called with — every column named explicitly,
+`null` where a version genuinely doesn't touch that field (matching `escalation_history`'s own delta
+semantics), so it's directly readable AND directly hand-editable (e.g. to supply one of the 3 new
+titles the dry run flags as still needed) ahead of whatever execute script eventually reads it.
+
 **What this dry run actually reconstructs**:
   1. The 25 export rows (`escalation-export-20260820.json`), each with its full version history
      (`escalation_history-export-20260820.json`, 97 rows, FULL SNAPSHOTS under the retired design)
@@ -106,11 +113,12 @@ def _from_id_candidates(text: str, batch_old_ids: set[int]) -> list[int]:
     return sorted({int(m) for m in re.findall(r"#(\d+)", text or "") if int(m) in batch_old_ids})
 
 
-def dry_run() -> tuple[list[str], list[str]]:
-    """Returns (report_lines, hard_findings) — hard_findings is non-empty if ANY simulated call
-    would be REFUSED by the real validation engine (title-shape/_check_requirements/
+def dry_run() -> tuple[list[str], list[str], dict]:
+    """Returns (report_lines, hard_findings, json_doc). hard_findings is non-empty if ANY simulated
+    call would be REFUSED by the real validation engine (title-shape/_check_requirements/
     _evaluate_transition) as it stands live today; these need a researcher decision before execute
-    can be attempted, per D1's own two-phase gate."""
+    can be attempted, per D1's own two-phase gate. `json_doc` is the SAME computation, shaped as the
+    exact keyword arguments raise_new()/update() would be called with — see module docstring."""
     cfg = Cfg()                                    # live, read-only for this whole run
     db = Db(cfg)
 
@@ -132,8 +140,12 @@ def dry_run() -> tuple[list[str], list[str]]:
     L: list[str] = ["# Escalation rebuild — dry run (D1, register v9)", "",
                     f"Reseeded at {sim.next_id - 1} (escalations_old's max). {len(export['rows'])} "
                     f"export item(s), {len(hist['rows'])} history version(s) total, replayed in "
-                    f"raised_at order, followed by this session's {9} live post-wipe row(s).", ""]
+                    f"raised_at order, followed by this session's {9} live post-wipe row(s). See "
+                    f"the sibling .json in this same directory for the exact per-version column "
+                    f"values (this prose report can't show every column, the json shows all of "
+                    f"them, null where a version doesn't touch that field).", ""]
     findings: list[str] = []
+    json_items: list[dict] = []
 
     ordered = sorted(export["rows"], key=lambda r: hist_by_id[r["id"]][0]["raised_at"])
     for r in ordered:
@@ -170,6 +182,35 @@ def dry_run() -> tuple[list[str], list[str]]:
         L.append(f"  Raise: type={v1['type']} assigned_to={v1['next_action_assigned_to']} "
                  f"originator={v1['originator']}")
 
+        # JSON: EXACTLY escalation.raise_new()'s own keyword arguments, one key per parameter —
+        # editable in place (e.g. fix short_description here for #749/#751/#757-shaped items).
+        item_json = {
+            "old_id": old_id,
+            "proposed_new_id": new_id,
+            "raise_new_kwargs": {
+                "short_description": v1["short_description"],
+                "source": v1["source"],
+                "etype": v1["type"],
+                "comment": v1["comment"],
+                "context": v1["context"],
+                "related_activity": v1["related_activity"],
+                "assigned_to": v1["next_action_assigned_to"],
+                "from_id": from_id_new,
+                "originator": v1["originator"],
+            },
+            "historical_reference_only": {
+                "_note": "NOT passed to raise_new() -- raise_new() always sets raised_at=now() and "
+                        "resolution/tried=None at creation. Shown so the original timing/values "
+                        "are visible for review, not as fields an execute script should apply.",
+                "raised_at": v1["raised_at"], "state": v1["state"],
+                "next_action": v1["next_action"], "resolution": v1["resolution"],
+                "tried": v1["tried"],
+            },
+            "title_shape_error": title_err,
+            "from_id_candidate_old_id": cands[0] if cands else None,
+            "updates": [],
+        }
+
         prev_snapshot = v1
         for h in versions[1:]:
             delta = _diff_versions(prev_snapshot, h)
@@ -183,29 +224,76 @@ def dry_run() -> tuple[list[str], list[str]]:
             # exercise the REAL validation for anything a live Update call would check —
             # title-shape (if short_description changed) and the two requirement/transition
             # engines, using the LIVE config (read-only) but never writing.
+            update_title_err = None
             if delta.get("short_description"):
-                err = esc._title_shape_error(delta["short_description"])
-                if err:
+                update_title_err = esc._title_shape_error(delta["short_description"])
+                if update_title_err:
                     findings.append(f"old #{old_id} v{h['version']}: title-shape violation on a "
-                                    f"corrected short_description — {err}")
-                    L.append(f"    ⚠ TITLE-SHAPE VIOLATION on corrected title: {err}")
+                                    f"corrected short_description — {update_title_err}")
+                    L.append(f"    ⚠ TITLE-SHAPE VIOLATION on corrected title: {update_title_err}")
 
+            next_action_err = None
             if h["next_action"] and h["next_action"] != prev_snapshot.get("next_action"):
                 try:
                     esc._check_next_action_manual(db, h["next_action"])
                 except ValueError as e:
+                    next_action_err = str(e)
                     findings.append(f"old #{old_id} v{h['version']}: {e}")
                     L.append(f"    ⚠ {e}")
+
+            # JSON: EXACTLY escalation.update()'s own keyword arguments for this version — every
+            # content column present (null = this version doesn't touch it, matching
+            # escalation_history's own delta semantics), envelope fields only when changed.
+            item_json["updates"].append({
+                "version": h["version"],
+                "update_kwargs": {
+                    "next_action": h["next_action"] if "next_action" in env_changed else None,
+                    "next_action_assigned_to": h["next_action_assigned_to"]
+                        if "next_action_assigned_to" in env_changed else None,
+                    "comment": delta.get("comment"),
+                    "context": delta.get("context"),
+                    "tried": delta.get("tried"),
+                    "resolution": delta.get("resolution"),
+                    "related_activity": delta.get("related_activity"),
+                    "state": h["state"] if h["next_action"] == "reject" else None,
+                    "originator": h["originator"],
+                    # NOT a real update() parameter -- see "short_description_gap" below. Shown
+                    # anyway because the historical data genuinely has this delta (e.g. #736 v2/v3,
+                    # the #759 title-shape corrections) and hiding it would make the JSON silently
+                    # incomplete for exactly the field a reviewer is most likely to need to edit.
+                    "short_description": delta.get("short_description"),
+                },
+                "short_description_gap": (
+                    "escalation.update() has NO short_description parameter today -- this delta is "
+                    "real (present in the 2026-08-20 export) but CANNOT be applied by calling "
+                    "update() as it currently exists. Raised as escalation #10, 2026-08-21."
+                    if delta.get("short_description") else None),
+                "historical_reference_only": {
+                    "_note": "answered_at when this version was ORIGINALLY written -- update() "
+                            "always sets answered_at=now() when replayed, not this value.",
+                    "answered_at": h["answered_at"],
+                    "state_became": h["state"] if "state" in env_changed else None,
+                },
+                "title_shape_error": update_title_err,
+                "next_action_validation_error": next_action_err,
+            })
 
             sim.snapshot(new_id, delta, env_changed)
             prev_snapshot = h
         L.append("")
+        json_items.append(item_json)
 
     L.append(f"## This session's live rows (#1-9) — replayed unchanged, land as "
              f"#{sim.next_id}-#{sim.next_id + 8}")
     L.append("")
-    for r in db.rows("SELECT id, short_description FROM escalation ORDER BY id"):
+    json_live_rows = []
+    for r in db.rows("SELECT * FROM escalation ORDER BY id"):
         L.append(f"  old (this session) #{r['id']} -> new #{sim.next_id}  — {r['short_description']}")
+        json_live_rows.append({
+            "old_id_this_session": r["id"], "proposed_new_id": sim.next_id,
+            "short_description": r["short_description"],
+            "note": "this session's live row (raised after the 2026-08-20 wipe, not in the "
+                    "export) -- replayed unchanged, full row already matches today's rules"})
         sim.next_id += 1
     L.append("")
 
@@ -223,7 +311,27 @@ def dry_run() -> tuple[list[str], list[str]]:
 
     db.conn.rollback()          # this connection touched nothing but SELECTs, but explicit > implied
     db.conn.close()
-    return L, findings
+
+    json_doc = {
+        "_readme": "Same computation as the sibling .md report. 'raise_new_kwargs'/'update_kwargs' "
+                  "are EXACTLY escalation.py's own function parameter names -- edit values here "
+                  "(e.g. short_description for a title-shape finding) ahead of whatever execute "
+                  "script eventually reads this file. 'historical_reference_only' blocks are NOT "
+                  "passed to either function (raised_at/answered_at are always set to now() at "
+                  "replay time) -- shown for review context only. EXCEPTION: "
+                  "'update_kwargs.short_description' is NOT a real update() parameter either -- "
+                  "update() has no way to correct a title after Raise today (escalation #10, "
+                  "found 2026-08-21 reviewing this exact file). Shown because the historical delta "
+                  "is real and a reviewer needs to see it, but applying it needs either a code fix "
+                  "(add the parameter) or a different mechanism -- not a plain update() call.",
+        "reseed_from": 735,
+        "source_files": ["iba/app/db/archive/escalation-export-20260820.json",
+                         "iba/app/db/archive/escalation_history-export-20260820.json"],
+        "items": json_items,
+        "live_rows_appended": json_live_rows,
+        "findings": findings,
+    }
+    return L, findings, json_doc
 
 
 def main() -> int:
@@ -239,11 +347,16 @@ def main() -> int:
                          "run is reviewed and corrected'). Review the report, then this needs a "
                          "second, separate script/pass.")
 
-    lines, findings = dry_run()
+    lines, findings, json_doc = dry_run()
     out = pathlib.Path("iba/app/reports/escalation-rebuild-dry-run-20260821.md")
     out.parent.mkdir(parents=True, exist_ok=True)
     out.write_text("\n".join(lines) + "\n", encoding="utf-8")
+
+    json_out = pathlib.Path("iba/app/reports/escalation-rebuild-dry-run-20260821.json")
+    json_out.write_text(json.dumps(json_doc, indent=2, ensure_ascii=False) + "\n", encoding="utf-8")
+
     print(f"dry run complete -> {out}")
+    print(f"                 -> {json_out} (same data, per-version columns explicit, editable)")
     print(f"{len(findings)} finding(s) needing a decision before --execute")
     return 0
 

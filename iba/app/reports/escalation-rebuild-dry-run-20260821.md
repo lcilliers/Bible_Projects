@@ -1,6 +1,6 @@
 # Escalation rebuild — dry run (D1, register v9)
 
-Reseeded at 735 (escalations_old's max). 25 export item(s), 97 history version(s) total, replayed in raised_at order, followed by this session's 9 live post-wipe row(s).
+Reseeded at 735 (escalations_old's max). 25 export item(s), 97 history version(s) total, replayed in raised_at order, followed by this session's 9 live post-wipe row(s). See the sibling .json in this same directory for the exact per-version column values (this prose report can't show every column, the json shows all of them, null where a version doesn't touch that field).
 
 ## old #736 -> new #736  — Filing/consolidation decision needed: think through filing between the main project and IBA -- anything related to the phases should be filed together, not split across branches; topic-specific reports must not be dumped in the general one-off reports folder. Also resolves the deferred governance.oneoff_report_dir CSV row.
   ⚠ TITLE-SHAPE VIOLATION: short_description is 324 chars, over the 60-char title limit. It must read like a title/subject naming the topic -- move the detail into context (background needed to understand/decide) or comment (what needs to be done, or the error).
