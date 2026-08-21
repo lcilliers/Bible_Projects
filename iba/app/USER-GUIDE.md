@@ -284,8 +284,9 @@ order per shape (`manual`/`dispatcher`), first match wins:
 | 3 | manual | `revise` | always | `in-progress` |
 | 4 | manual | `noted` | always | `closed` |
 | 5 | manual | `ready_for_approval` | always | `re-assigned` (register v9, D27 — its own explicit row; previously relied on rule 6's `-AssignedTo`-changed condition, which isn't guaranteed true) |
-| 6 | manual | any | `-AssignedTo` changed, no more specific rule matched | `re-assigned` |
-| 7 | manual | any | nothing else matched | state unchanged, or your explicit `-State` |
+| 6 | manual | any | you gave an explicit `-State` | that `-State` (escalation #762, 2026-08-21 — outranks rule 7 below; previously `-AssignedTo X -State on-hold` silently landed on `re-assigned`, the explicit `-State` had no way to win) |
+| 7 | manual | any | `-AssignedTo` changed, no more specific rule matched | `re-assigned` |
+| 8 | manual | any | nothing else matched | state unchanged |
 | 1 | dispatcher | `hold` | always | `on-hold` |
 | 2 | dispatcher | `noted` | always | `closed` |
 | 3 | dispatcher | any | always | `completed` |

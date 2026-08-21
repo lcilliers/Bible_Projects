@@ -196,7 +196,7 @@ def _status_for(db: Db, set_by_substr: str, fallback: str) -> str:
 
 # ── the config-driven state-derivation rule engine ───────────────────────────────────────────────
 def _condition_true(condition_key: str, *, next_action: str | None, has_resolution: bool,
-                    assignee_changed: bool) -> bool:
+                    assignee_changed: bool, has_explicit_state: bool = False) -> bool:
     """The fixed, small vocabulary cfg_escalation_transition.condition_key draws from -- see
     escalation-rebuild-design-v1-20260820.md sec2.4. A new condition needs a code change here
     (a new named boolean); which RULE consumes it, in what priority, with what resulting status,
@@ -207,6 +207,10 @@ def _condition_true(condition_key: str, *, next_action: str | None, has_resoluti
         return bool(has_resolution)
     if condition_key == "assignee_changed":
         return bool(assignee_changed)
+    if condition_key == "explicit_state_given":               # found live 2026-08-21 (#762): an
+        return bool(has_explicit_state)                        # explicit -State must outrank the
+                                                                # assignee_changed inference, not
+                                                                # lose to it -- see priority 6 below
     raise ValueError(f"unknown cfg_escalation_transition.condition_key {condition_key!r}")
 
 
@@ -216,7 +220,14 @@ def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_res
     """Reads cfg_escalation_transition for `shape`, in priority order, first match wins -- replaces
     the old hardcoded if/elif chain. `resulting_status_key` of `__explicit__` means the reject
     branch: state comes from the caller's own choice, validated here (withdraw|supersede only).
-    `__unchanged__` means no rule truly fires: state carries forward (or the caller's -State)."""
+    `__unchanged__` means no rule truly fires: state carries forward (or the caller's -State).
+
+    D-fix 2026-08-21 (#762): the caller's own explicit -State must outrank an INFERRED
+    assignee_changed result -- `-AssignedTo Researcher -State on-hold` was silently landing on
+    `re-assigned` (assignee_changed's rule fired first, matching next_action=None the same way the
+    catch-all does, but at an earlier priority) with no way to combine an explicit state with a
+    reassignment. cfg_escalation_transition priority 6 (condition_key='explicit_state_given') now
+    sits ahead of assignee_changed (shifted to 7) for exactly this."""
     rows = db.rows(
         "SELECT priority, next_action, condition_key, resulting_status_key FROM "
         "cfg_escalation_transition WHERE shape=? AND active=1 ORDER BY priority", (shape,))
@@ -227,7 +238,8 @@ def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_res
         if r["next_action"] is not None and r["next_action"] != next_action:
             continue
         if not _condition_true(r["condition_key"], next_action=next_action,
-                               has_resolution=has_resolution, assignee_changed=assignee_changed):
+                               has_resolution=has_resolution, assignee_changed=assignee_changed,
+                               has_explicit_state=explicit_state is not None):
             continue
         key = r["resulting_status_key"]
         if key == "__explicit__":

@@ -9146,3 +9146,34 @@ human-reviewed step, not built this pass.
 `iba/app/migration/escalation_register_v9_build_20260821.py`,
 `iba/app/migration/escalation_crash_review_rollout_20260821.py`,
 `iba/app/migration/rebuild_escalation_from_export_20260821.py`, `iba/app/GOVERNANCE.md`.
+
+## 163. Explicit `-State` was losing to `assignee_changed` — priority fix, escalation #762 (2026-08-21)
+
+Researcher, live use: `Escalation.ps1 -Action Update -Id 737 -NextAction review -AssignedTo
+Researcher -State on-hold -Comment "..."` landed on `state='re-assigned'`, not `on-hold`. Root
+cause: `cfg_escalation_transition` priority 6 (manual, `next_action=None` — matches ANY next_action,
+same as the catch-all — condition `assignee_changed`) fired before priority 7's catch-all, the ONLY
+rule that honoured the caller's own `-State`. `#737`'s assignee genuinely changed
+(`Claude`→`Researcher`), so `assignee_changed=True` won regardless of the explicit `-State` given —
+no way existed to combine an explicit state with a reassignment in one call.
+
+Fixed at the root, not the instance: new `condition_key='explicit_state_given'`
+(`_condition_true()`/`_evaluate_transition()`, `lib/escalation.py`) — true when the caller supplied
+`-State` at all. New priority-6 `cfg_escalation_transition` row (manual, `next_action=None`,
+`explicit_state_given` → `__unchanged__`, which honours `-State`) sits ahead of `assignee_changed`
+(shifted 6→7) and the catch-all (7→8). D27's `ready_for_approval` row (priority 5) is unaffected —
+still fires before this new rule even when `-State` is also passed.
+
+**Tested before applying** (rollback, 5 scenarios, all passed): the exact failing case (explicit
+`-State` + assignee change → now honours `-State`); 3 regressions confirmed unaffected (bare
+reassignment still → `re-assigned`; no assignee/state change still carries forward; explicit
+`-State` alone, unchanged from before, still works); D27's rule still wins when it should. `#737`
+corrected live afterward — re-applied `-State on-hold`, now genuinely `on-hold`.
+
+Escalation #762 raised (verbatim-quoting the researcher's report, per `chat_routing`) and closed
+out with the fix as its resolution — this is the second self-caught `chat_routing` miss this same
+session (the first: the `-AnsweredBy` friction report, #761); this one was raised correctly the
+first time, on its own account, worth naming as the corrected behaviour actually holding.
+
+**Files:** `iba/app/lib/escalation.py`,
+`iba/app/migration/escalation_explicit_state_priority_fix_20260821.py`, `iba/app/USER-GUIDE.md`.
