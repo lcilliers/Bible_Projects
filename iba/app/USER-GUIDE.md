@@ -386,9 +386,14 @@ iba\app\ps\Escalation.ps1 -Action Update -Id <id> -AnsweredBy Claude|Researcher 
 `-Action Raise`'s `-Question`/`-Comment` are stored **verbatim** — they don't get reworded or have
 analysis folded in (beyond the title-shape check above). What you write is the record.
 `short_description` (the `-Question` text) is **immutable after Raise** — see §4.7 for how to
-correct a wrong one. **`-AnsweredBy` has no default anywhere in this tool** — a silent
+correct a wrong one. **`-AnsweredBy` has no default inside `lib/escalation.py` itself** — a silent
 `'Researcher'` default previously misattributed dozens of history rows to the wrong party in one
-session; every write says explicitly who's making it.
+session, when Claude was the one actually running the command. `Escalation.ps1` (2026-08-21) adds
+one safe, narrow auto-attribution on top of that: if `-AnsweredBy` is omitted AND the shell is NOT
+running under Claude Code (`$env:CLAUDECODE` — set in every shell Claude Code drives, never set in
+a terminal you open yourself), it defaults to `Researcher` — closing the friction of typing it by
+hand every time, without reopening the original bug: Claude's own invocations always have
+`$env:CLAUDECODE=1` set, so they still hit the hard stop, unchanged.
 
 The six single-purpose pre-redesign actions (`Edit`/`Pause`/`Resume`/`Retract`/`Reassign`/
 `Complete`) no longer exist — they're all just `-Action Update` calls now, with the right

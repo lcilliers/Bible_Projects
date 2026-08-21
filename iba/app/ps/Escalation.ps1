@@ -134,6 +134,20 @@ $env:PYTHONUTF8 = '1'
 $RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
 Set-Location $RepoRoot
 
+# -AnsweredBy auto-attribution (researcher, 2026-08-21): the 2026-08-20 rebuild made -AnsweredBy
+# mandatory everywhere with NO default, deliberately -- a silent 'Researcher' default previously
+# misattributed >=39 history rows in one session when CLAUDE was the one actually running the
+# command. That risk is real specifically when Claude Code is driving this script (it always sets
+# $env:CLAUDECODE=1 in every shell it runs -- confirmed live, not assumed). A human typing this
+# command in their OWN terminal window never has that variable set, and in this single-researcher
+# project nothing else plausibly runs it -- so THAT case can safely auto-attribute to Researcher
+# without reintroducing the original bug, closing the friction of typing -AnsweredBy Researcher
+# by hand every time. Claude's own invocations still get the hard stop below, unchanged.
+if (-not $AnsweredBy -and -not $env:CLAUDECODE) {
+    $AnsweredBy = 'Researcher'
+    Write-Host "  (-AnsweredBy not given, not running under Claude Code -- defaulting to Researcher)" -ForegroundColor DarkGray
+}
+
 switch ($Action) {
     'List' {
         # D4/D16/D23 (register v9): report-producing steps go through the dispatcher like every
