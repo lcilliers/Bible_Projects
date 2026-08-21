@@ -702,21 +702,31 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
         f"(advisory heuristic, D15)" for i, ref in incoherent))
     L.append("")
 
+    # Found live 2026-08-21 (researcher, reading this exact table): no short_description column at
+    # all -- a resolution-text-only row gives no way to tell what the item was ABOUT without going
+    # to look it up elsewhere. Fixed: short_description now selected and shown first. Widened the
+    # WHERE too -- `resolution IS NOT NULL` silently excluded closed notice-type items whose
+    # resolution text was folded into `comment` instead (raise_new() can't set `resolution` on an
+    # auto-closed notice) -- those items are just as "recently resolved" as any other; requiring a
+    # non-null resolution was accidentally hiding a whole class of legitimately-closed items, not a
+    # deliberate filter.
     resolved = db.rows(
-        "SELECT id, state, related_activity, resolution, answered_at FROM escalation "
-        "WHERE state IN ('completed','closed','withdraw','supersede') AND resolution IS NOT NULL "
+        "SELECT id, short_description, state, related_activity, resolution, answered_at "
+        "FROM escalation WHERE state IN ('completed','closed','withdraw','supersede') "
         "ORDER BY answered_at DESC LIMIT 15")
     L += ["## Recently resolved (last 15)", ""]
     if not resolved:
         L.append("_none yet_")
     else:
-        L += ["| # | state | related activity | resolution | answered |",
-             "|---|---|---|---|---|"]
+        L += ["| # | short_description | state | related activity | resolution | answered |",
+             "|---|---|---|---|---|---|"]
         for r in resolved:
-            res = str(r["resolution"]).replace("|", "\\|").replace("\n", " ")
+            sd = str(r["short_description"]).replace("|", "\\|")
+            res = str(r["resolution"]).replace("|", "\\|").replace("\n", " ") if r["resolution"] \
+                else "_(see comment -- notice-type items can't carry a separate resolution)_"
             if len(res) > 200:
                 res = res[:200] + "… (full text in escalation.resolution, id " + str(r["id"]) + ")"
-            L.append(f"| {r['id']} | {r['state']} | {r['related_activity']} | {res} | "
+            L.append(f"| {r['id']} | {sd} | {r['state']} | {r['related_activity']} | {res} | "
                      f"{r['answered_at']} |")
 
     reportkit.archive_before_write(path)
