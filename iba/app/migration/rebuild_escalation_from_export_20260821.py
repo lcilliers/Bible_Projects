@@ -1,4 +1,14 @@
-"""rebuild_escalation_from_export_20260821.py — D1 (register v9): rebuild `escalation` from both
+"""rebuild_escalation_from_export_20260821.py — SUPERSEDED 2026-08-21, same day, by
+`escalation_v1_snapshot_20260821.py` (researcher, direct instruction: "trying to fix all the
+issues and use versioning will create more problems. lets change the D1 strategy. add the current
+values of each item as v1"). Kept for provenance — this file's own dry run is what surfaced the two
+findings (#10's short_description gap; 22/25 items' comment/context can't be replayed as clean
+append increments) that led to the strategy change. Do not extend or run --execute against this
+file; `escalation_v1_snapshot_20260821.py` is the live D1 script going forward.
+
+Original docstring follows, unchanged, for historical accuracy:
+
+D1 (register v9): rebuild `escalation` from both
 sources (the 2026-08-20 JSON export + this session's own live post-wipe rows), replayed through the
 REAL validation engine (`_title_shape_error`, `_evaluate_transition`, `_check_requirements` — the
 same functions `raise_new()`/`update()` call), in true chronological order, so numbering continues
