@@ -9177,3 +9177,52 @@ first time, on its own account, worth naming as the corrected behaviour actually
 
 **Files:** `iba/app/lib/escalation.py`,
 `iba/app/migration/escalation_explicit_state_priority_fix_20260821.py`, `iba/app/USER-GUIDE.md`.
+
+## 164. `from_id` built immutable, contradicting a recorded researcher instruction — traced, fixed, escalation #763 (2026-08-21)
+
+Researcher, on `#746`'s resolution flagging `from_id` as immutable-after-Raise: "I think you never
+carried forward my instruction that setting related items can take place at any time. register this
+as a escalation. investigate why this was missed, ensure the configs are updated, and the blockage
+for setting the related items are fixed."
+
+Confirmed against the record: escalation `#6` v5 (2026-08-20T16:19:15Z), verbatim: *"both fields
+are available as an optional pair on BOTH Raise and Update (not immutable-after-raise -- researcher
+confirmed it can be re-pointed/corrected later, which also lets legacy messy chains like the #712
+cascade be retrofitted after the fact)."* This is the researcher's own explicit instruction, read
+multiple times this same session while investigating `#6`/`#8`'s deep history — and D14 as built
+(this same session) did the opposite: `from_id` added to `_IMMUTABLE_COLS`, `update()` had no
+`from_id` parameter at all.
+
+**Root cause, traced through the register's own version history, not guessed**: register v7
+(`escalation-design-decision-register-v7-20260821.md`) recorded D14 in full and correctly — its
+`cfg_column.use` text literally says *"optional, mutable (settable on Raise or Update alike)"*, and
+all 4 `cfg_escalation_requirement` rows are written `action='raise'/'update'`. Register v8 didn't
+touch D14 (correctly out of that batch's scope). The v9 consolidation pass (superseding v1-v8,
+this same session) summarised D14 more tersely and silently dropped the mutability/dual-action
+detail. The code was then built from v9's thinner text without checking back against v7 or the `#6`
+history — filling the resulting ambiguity with the wrong default (modelled on `run_id`'s
+immutability) instead of verifying against the fuller record.
+
+**Fixed**: `from_id` moved from `_IMMUTABLE_COLS` to `_REPLACE_COLS` (`lib/escalation.py`);
+`update()` gained a `from_id` parameter, threaded through the same `exists`/`not_self`/`paired`
+checks `raise_new()` already had — `related_activity` falls back to the item's CURRENT value when
+the call isn't also changing it, so re-pointing `from_id` alone doesn't wrongly fail the pairing
+check. `cfg_escalation_requirement` gained 3 new `action='update'` rows mirroring the 3
+`action='raise'` ones (`migration/fix_from_id_mutability_20260821.py`). `cfg_column.use` corrected
+on both `escalation`/`escalation_history` — "mutable", not "structural like `run_id`". CLI
+(`--from-id=` on the `update` verb) and `Escalation.ps1` (`-FromId` on `-Action Update`) both
+updated to expose it.
+
+**Tested via rollback before applying anything** (7 scenarios): set via `update()` on an
+already-raised item; re-pointing a second time; pairing check fires when `related_activity` is
+genuinely absent anywhere; pairing check correctly falls back to the EXISTING `related_activity`
+when not re-passed; `not_self`/`exists` checks both fire on `update()` too; raise-time behaviour
+unchanged. All passed. Re-ran the full D12/D14/D25/D26/D27/D15/D3 regression suite from earlier
+this session afterward to confirm nothing else broke — clean.
+
+`#746` completed for real once the fix landed — `from_id=759` actually set this time, closing the
+exact gap its own earlier resolution had flagged as impossible. `#763` closed out with the fix as
+its resolution. `GOVERNANCE.md` §43 point 6 and `USER-GUIDE.md` corrected in the same pass.
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/migration/fix_from_id_mutability_20260821.py`,
+`iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`, `iba/app/GOVERNANCE.md`.

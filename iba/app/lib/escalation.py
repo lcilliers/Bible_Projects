@@ -71,7 +71,8 @@ CLI (module path: iba.app.lib.escalation, invoked as `python -m iba.app.lib.esca
         [--type=task|...] [--related-activity=...] --comment=...
     python -m iba.app.lib.escalation update <id> --originator=Claude|Researcher
         [--next-action=...] [--assigned-to=...] [--state=on-hold|in-progress|closed|withdraw|supersede]
-        [--resolution=...] [--related-activity=...] [--tried=...] [comment/context words...]
+        [--resolution=...] [--related-activity=...] [--tried=...] [--from-id=...]
+        [comment/context words...]
 
 `--originator`/`--by` are now REQUIRED on every write verb — no default, see above.
 """
@@ -93,12 +94,16 @@ _OPEN_STATES = ("raised", "re-assigned", "on-hold", "in-progress")
 # -- those are structural, not part of a snapshot's business content)
 _ENVELOPE_COLS = ("state", "next_action", "next_action_assigned_to", "originator", "answered_at")
 _APPEND_COLS = ("comment", "context")            # escalation: cumulative. history: raw increment.
-_REPLACE_COLS = ("resolution", "related_activity", "tried", "short_description")
-# from_id (D14, register v9): set once at Raise, like run_id/source/at_step/type/raised_at -- the
-# item this one was spawned from (e.g. a documentation-task's from_id points back at the issue that
-# produced it). Never changes after creation, so it belongs alongside the other structural facts,
-# not the mutable envelope/content columns.
-_IMMUTABLE_COLS = ("run_id", "source", "at_step", "type", "raised_at", "from_id")
+# from_id (D14): the item this one builds on -- MUTABLE, settable on Raise or Update alike
+# (escalation #6 v5, researcher, 2026-08-20: "not immutable-after-raise -- researcher confirmed it
+# can be re-pointed/corrected later, which also lets legacy messy chains ... be retrofitted after
+# the fact"; register v7's D14 recorded this in full -- 4 cfg_escalation_requirement rows,
+# action='raise'/'update' on each -- before the v9 consolidation pass silently thinned that detail
+# out and the code (this session, same day) was built from the thinner text without checking back.
+# Corrected 2026-08-21, escalation #763.). A REPLACE column like resolution/related_activity, not
+# an immutable structural fact.
+_REPLACE_COLS = ("resolution", "related_activity", "tried", "short_description", "from_id")
+_IMMUTABLE_COLS = ("run_id", "source", "at_step", "type", "raised_at")
 _COLS = _ENVELOPE_COLS + _APPEND_COLS + _REPLACE_COLS + _IMMUTABLE_COLS
 
 
@@ -507,10 +512,15 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
           next_action_assigned_to: str | None = None, comment: str | None = None,
           context: str | None = None, tried: str | None = None, resolution: str | None = None,
           related_activity: str | None = None, state: str | None = None,
-          originator: str) -> str:
+          from_id: int | None = None, originator: str) -> str:
     """Update -- every subsequent change to a MANUAL item. `originator` is required, no default.
     Two-stage approval separation of duties: the party that sets `approved` must differ from the
-    party that most recently set `ready_for_approval` on this item."""
+    party that most recently set `ready_for_approval` on this item.
+
+    `from_id` (D14) is settable HERE too, not just at Raise (escalation #6 v5, researcher,
+    2026-08-20; corrected 2026-08-21 after being built immutable, escalation #763) -- an existing
+    item can be re-pointed/corrected later, letting a messy legacy chain be retrofitted after the
+    fact."""
     cur = _current(db, escalation_id)
     if not cur["run_id"].startswith("MANUAL-"):
         return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
@@ -555,13 +565,22 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     # D26 (register v9): work cannot land on a `raised` item -- comment/context/tried content
     # requires the state to actually move first (e.g. -State in-progress), mechanically enforced
     # here via cfg_escalation_requirement (action='update', check_kind='not_raised_with_content').
+    # D14 (corrected 2026-08-21, escalation #763): from_id/related_activity checks (exists/
+    # not_self/paired) now also apply here, not just at Raise -- same `action='update'` rows,
+    # checked in the same call. `related_activity` falls back to the CURRENT value when this call
+    # isn't itself changing it, so re-pointing from_id alone on an item that already has a
+    # related_activity doesn't wrongly fail the pairing check.
     _check_requirements(db, "update", originator=who, checked_action=checked_action,
                         values={"state": new_state, "comment": comment, "context": context,
-                               "tried": tried})
+                               "tried": tried, "from_id": from_id,
+                               "related_activity": related_activity if related_activity is not None
+                                                   else cur["related_activity"]},
+                        self_id=escalation_id)
 
     merged = _snapshot(cfg, db, escalation_id,
                        deltas={"comment": comment, "context": context, "tried": tried,
-                              "resolution": resolution, "related_activity": related_activity},
+                              "resolution": resolution, "related_activity": related_activity,
+                              "from_id": from_id},
                        envelope={
                            "next_action": checked_action if checked_action is not None else cur["next_action"],
                            "next_action_assigned_to": _check_assignee(db, next_action_assigned_to, required=False) or cur["next_action_assigned_to"],
@@ -896,11 +915,13 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
         rest, tried = _extract_flag(rest, "tried")
         rest, originator = _extract_flag(rest, "originator")
         rest, context = _extract_flag(rest, "context")
+        rest, from_id = _extract_flag(rest, "from-id")
         comment = " ".join(rest) or None
         print("  " + update(cfg, db, int(argv[1]), next_action=next_action,
                             next_action_assigned_to=assigned_to, comment=comment, context=context,
                             tried=tried, resolution=resolution, related_activity=related_activity,
-                            state=state, originator=_require_flag(originator, "originator")))
+                            state=state, from_id=int(from_id) if from_id else None,
+                            originator=_require_flag(originator, "originator")))
     elif len(argv) >= 2 and argv[0] == "history":
         path = pathlib.Path(cfg.setting("escalation.history_report_dir",
                                         "iba/app/reports")) / f"escalation-{argv[1]}-history.md"
@@ -916,7 +937,7 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
              "[--context=...] [--from-id=...]"
              " | update <id> --originator=Claude|Researcher [--next-action=...] [--assigned-to=...] "
              "[--state=...] [--resolution=...] [--related-activity=...] [--tried=...] "
-             "[--context=...] [comment...]")
+             "[--context=...] [--from-id=...] [comment...]")
     db.close()
     return 0
 

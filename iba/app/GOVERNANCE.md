@@ -1926,9 +1926,14 @@ Full detail `BUILD.md` §162 (D-numbers below refer to
    `state='closed'`, `next_action=NULL`, no review cycle); every other type still defaults
    `raised`/`review`. `issue` continues to reuse the manual vocabulary in full (D11/D21,
    reconfirmed, no separate scheme).
-6. **`from_id`/`related_activity`** (D14) — new `escalation.from_id` column (immutable, set only at
-   Raise): which item this one was spawned from. Enforced (when set): references a real row, isn't
-   self-referential, and is paired with `related_activity`.
+6. **`from_id`/`related_activity`** (D14) — new `escalation.from_id` column: which item this one
+   was spawned from. Enforced (when set): references a real row, isn't self-referential, and is
+   paired with `related_activity`. **Mutable, settable on Raise or Update alike** (corrected
+   2026-08-21, escalation #763 — built immutable-after-Raise the first time, contradicting the
+   researcher's own recorded instruction, `#6` v5: "not immutable-after-raise ... can be
+   re-pointed/corrected later"; root cause traced to register v7's fuller wording being thinned
+   during the v9 consolidation pass, then the code built from the thinner text without checking
+   back).
 7. **`chat_routing`** — extended with the verbatim-quote convention (D19): content captured under
    this rule quotes the operative instruction/correction VERBATIM, Claude's own framing kept
    distinguishable from the quoted part.

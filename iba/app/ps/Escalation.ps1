@@ -39,7 +39,12 @@
     `escalation-design-decision-register-v9-20260821.md`): List/History now dispatch through
     run.py (work package 'escalation-reporting') instead of calling the module directly, matching
     every other report script (D4/D16/D23). `from_id` (D14) — which item this one was spawned from
-    — can be set at Raise via -FromId. `-NextAction ready_for_approval` now resolves explicitly
+    — is MUTABLE, settable via -FromId on Raise or Update alike (corrected 2026-08-21, escalation
+    #763 — built immutable-after-Raise the first time, contradicting the researcher's own recorded
+    instruction, #6 v5: "not immutable-after-raise ... can be re-pointed/corrected later"). Same
+    pairing rule either way: setting -FromId requires -RelatedActivity too (naming what the
+    relationship documents), checked whether it's the current value or one you're also setting this
+    call. `-NextAction ready_for_approval` now resolves explicitly
     (D27) rather than depending on -AssignedTo happening to change. Two-stage approval (`approved`)
     is now an AUTHORITY check, not identity (D25) — the party ready_for_approval assigned it to may
     approve, even if that's the same party who set ready_for_approval. `-Type notice` closes on
@@ -74,8 +79,16 @@
                           next_action=reject (+ -State withdraw|supersede, -Comment required) -> that state
                           next_action=revise                        -> in-progress
                           next_action=noted                         -> closed
+                          your own explicit -State                 -> that state (D-fix, #762 —
+                                                                        outranks the -AssignedTo
+                                                                        row above; previously an
+                                                                        explicit -State silently
+                                                                        lost to a same-call
+                                                                        reassignment)
                           -AssignedTo changed, nothing else matches -> re-assigned
-                        Needs -Id. -Comment/-Context are CUMULATIVE in `escalation` — what you pass
+                        Needs -Id. -FromId re-points from_id (D14, mutable — #763), pairs with
+                        -RelatedActivity same as at Raise. -Comment/-Context are CUMULATIVE in
+                        `escalation` — what you pass
                         is the increment, appended onto the existing text — but `escalation_history`
                         now stores only that increment for this version, not the running total.
                         `next_action=approved` is REJECTED if you are NOT the party
@@ -232,6 +245,7 @@ switch ($Action) {
         if ($Resolution) { $flags += "--resolution=$Resolution" }
         if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Tried) { $flags += "--tried=$Tried" }
+        if ($FromId) { $flags += "--from-id=$FromId" }
         if ($Context) { $flags += "--context=$Context" }
         if ($Comment) {
             python -m iba.app.lib.escalation update $Id @flags $Comment

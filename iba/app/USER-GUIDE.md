@@ -297,9 +297,12 @@ state@reject, tried@Claude-revising-own-item) are config-driven too, in
 Python. Register v9 (D26, 2026-08-21) added a mechanical guard: an Update carrying `-Comment`/
 `-Context`/`-Tried` is refused outright if the resulting state would still be `raised` — move it off
 `raised` first (`-State in-progress`, or via `-NextAction revise`/etc.). Also added (D14): `from_id`
-— set only at `-Action Raise`, never changed after — names which item THIS one was spawned from
-(e.g. a documentation-task pointing back at the issue that produced it); enforced when set:
-references a real item, isn't self-referential, and is paired with `-RelatedActivity`.
+— names which item THIS one was spawned from (e.g. a documentation-task pointing back at the issue
+that produced it); enforced when set: references a real item, isn't self-referential, and is paired
+with `-RelatedActivity`. **Settable via `-FromId` on `-Action Raise` OR `-Action Update` alike** —
+mutable, not immutable-after-Raise (corrected 2026-08-21, escalation #763 — built immutable the
+first time, contradicting the researcher's own recorded instruction; a legacy or messy chain can be
+re-pointed/corrected on an already-raised item at any time).
 
 **Two-stage approval now actually enforces separation of duties — but as an AUTHORITY check, not an
 identity check** (register v9, D25, 2026-08-21, correcting a shipped defect): `next_action=approved`
