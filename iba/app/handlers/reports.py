@@ -347,3 +347,25 @@ def cluster_report(ctx: Ctx) -> Outcome:
                                         "iba/app/reports/cluster.md"))
     out = clusterreport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
+
+
+def escalation_list(ctx: Ctx) -> Outcome:
+    """D4/D16/D23 (register v9) — the escalation-reporting work package's List step, now dispatched
+    through run.py like every other report instead of Escalation.ps1 invoking
+    `python -m iba.app.lib.escalation list` directly. Content unchanged — esc.write_list_report
+    already writes the full open-items report, now including the D15 exception sections."""
+    path = pathlib.Path(ctx.cfg.setting("escalation.list_report_path",
+                                        "iba/app/reports/escalation-list.md"))
+    out, rows = esc.write_list_report(ctx.cfg, ctx.db, path)
+    return ok(f"{len(rows)} open escalation(s) -> {out}", path=str(out), open_count=len(rows))
+
+
+def escalation_history(ctx: Ctx) -> Outcome:
+    """D4/D16/D23 — the escalation-reporting work package's History step. Needs -Id."""
+    eid = ctx.params.get("Id")
+    if not eid:
+        return fail("missing-id", "escalation.history requires a -Id parameter")
+    path = pathlib.Path(ctx.cfg.setting("escalation.history_report_dir",
+                                        "iba/app/reports")) / f"escalation-{eid}-history.md"
+    out = esc.write_history_report(ctx.cfg, ctx.db, int(eid), path)
+    return ok(f"wrote {out}", path=str(out))

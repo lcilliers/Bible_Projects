@@ -41,6 +41,27 @@ implementation."* Both tables were exported (`iba/app/db/archive/escalation{,_hi
 Both write through the SAME snapshot mechanism (`_snapshot()`), so both get real (now correctly
 delta-shaped) history for free.
 
+**Register v9 build, 2026-08-21** (`iba/docs/escalation-design-plan-v5-20260821.md` +
+`iba/docs/escalation-design-decision-register-v9-20260821.md`, both narrated D1-D28):
+  - D12: `raise_new()` now special-cases `type='notice'` at creation (`state='closed'`,
+    `next_action=None`, no review/decision cycle) -- every other type still defaults
+    `state='raised'`/`next_action='review'`.
+  - D14: new `from_id` column (immutable, set only at Raise) -- which item this one was spawned
+    from. `cfg_escalation_requirement` enforces it (when set) references a real row, isn't
+    self-referential, and is paired with `related_activity`.
+  - D25: two-stage approval is now an AUTHORITY check, not an identity check -- `approved` is
+    refused only if the caller differs from whoever `ready_for_approval` assigned the item to (the
+    old same-party refusal wrongly blocked legitimate self-authorisation).
+  - D26: `update()` refuses to attach `comment`/`context`/`tried` while the resulting state would
+    still be `raised` -- work has to be explicitly moved off `raised` first
+    (`cfg_escalation_requirement`, `check_kind='not_raised_with_content'`).
+  - D27 (config only, `cfg_escalation_transition`): `ready_for_approval` now has its own explicit
+    transition row, rather than relying on the incidental `assignee_changed` rule.
+  - D3: the crash-wrapper (`main()`) now sets `from_id` to whatever item a failing `update`/
+    `history` command was operating on.
+  - `cfg_escalation_requirement` gained a `check_kind` column (`field_required` — the pre-existing
+    implicit behaviour, now named — plus `not_raised_with_content`/`exists`/`not_self`).
+
 CLI (module path: iba.app.lib.escalation, invoked as `python -m iba.app.lib.escalation`):
     python -m iba.app.lib.escalation list
     python -m iba.app.lib.escalation answer-run <run_id> <approve|reject|revise|hold|noted>
@@ -73,7 +94,11 @@ _OPEN_STATES = ("raised", "re-assigned", "on-hold", "in-progress")
 _ENVELOPE_COLS = ("state", "next_action", "next_action_assigned_to", "originator", "answered_at")
 _APPEND_COLS = ("comment", "context")            # escalation: cumulative. history: raw increment.
 _REPLACE_COLS = ("resolution", "related_activity", "tried", "short_description")
-_IMMUTABLE_COLS = ("run_id", "source", "at_step", "type", "raised_at")
+# from_id (D14, register v9): set once at Raise, like run_id/source/at_step/type/raised_at -- the
+# item this one was spawned from (e.g. a documentation-task's from_id points back at the issue that
+# produced it). Never changes after creation, so it belongs alongside the other structural facts,
+# not the mutable envelope/content columns.
+_IMMUTABLE_COLS = ("run_id", "source", "at_step", "type", "raised_at", "from_id")
 _COLS = _ENVELOPE_COLS + _APPEND_COLS + _REPLACE_COLS + _IMMUTABLE_COLS
 
 
@@ -219,27 +244,51 @@ def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_res
 
 
 # ── the config-driven field-requirement checker ──────────────────────────────────────────────────
-def _requirement_condition_true(condition_key: str, *, originator: str, checked_action: str | None) -> bool:
+def _requirement_condition_true(condition_key: str, *, originator: str, checked_action: str | None,
+                                values: dict) -> bool:
+    """`values` (register v9 D14/D26) -- some conditions need to look at what the caller is
+    actually supplying this transaction, not just who they are / what action they're taking."""
     if condition_key == "always":
         return True
     if condition_key == "claude_revising":
         return originator == "Claude" and checked_action == "revise"
+    if condition_key == "from_id_set":                        # D14
+        return bool(values.get("from_id"))
+    if condition_key == "has_content":                         # D26
+        return bool(values.get("comment") or values.get("context") or values.get("tried"))
     raise ValueError(f"unknown cfg_escalation_requirement.condition_key {condition_key!r}")
 
 
 def _check_requirements(db: Db, action: str, *, originator: str, checked_action: str | None,
-                        values: dict) -> None:
+                        values: dict, self_id: int | None = None) -> None:
     """Raises ValueError on the first unmet requirement. `values` = the field->value the caller is
-    actually supplying this transaction (already-merged where relevant, e.g. resolution)."""
+    actually supplying this transaction (already-merged where relevant, e.g. resolution). `check_kind`
+    (register v9 D14/D25/D26 -- column added alongside these rules, previously only 'field_required'
+    existed implicitly) selects which comparison runs; `self_id` is the item's own id, needed by
+    `not_self` (D14) -- None at Raise (the new id does not exist yet, so self-reference is moot)."""
     rows = db.rows(
-        "SELECT field, condition_key, message FROM cfg_escalation_requirement "
+        "SELECT field, condition_key, check_kind, message FROM cfg_escalation_requirement "
         "WHERE action=? AND active=1", (action,))
     for r in rows:
         if not _requirement_condition_true(r["condition_key"], originator=originator,
-                                           checked_action=checked_action):
+                                           checked_action=checked_action, values=values):
             continue
-        if not values.get(r["field"]):
-            raise ValueError(r["message"])
+        kind = r["check_kind"] or "field_required"
+        field_val = values.get(r["field"])
+        if kind == "field_required":
+            if not field_val:
+                raise ValueError(r["message"])
+        elif kind == "not_raised_with_content":                # D26
+            if field_val == "raised":
+                raise ValueError(r["message"])
+        elif kind == "exists":                                 # D14
+            if field_val and not db.rows("SELECT 1 FROM escalation WHERE id=?", (field_val,)):
+                raise ValueError(r["message"])
+        elif kind == "not_self":                               # D14
+            if field_val and self_id is not None and field_val == self_id:
+                raise ValueError(r["message"])
+        else:
+            raise ValueError(f"unknown cfg_escalation_requirement.check_kind {kind!r}")
 
 
 # ── the shared core: every write, either shape, goes through this ───────────────────────────────
@@ -317,6 +366,16 @@ def _last_next_action_originator(db: Db, escalation_id: int, next_action: str) -
         "SELECT originator FROM escalation_history WHERE escalation_id=? AND next_action=? "
         "ORDER BY version DESC LIMIT 1", (escalation_id, next_action))
     return rows[0]["originator"] if rows else None
+
+
+def _last_next_action_assigned_to(db: Db, escalation_id: int, next_action: str) -> str | None:
+    """D25: who a past transaction ASSIGNED the item to when it set `next_action` -- distinct from
+    `_last_next_action_originator` (who DID it). Used to answer 'ready_for_approval assigned this to
+    whom' for the authority check."""
+    rows = db.rows(
+        "SELECT next_action_assigned_to FROM escalation_history WHERE escalation_id=? AND "
+        "next_action=? ORDER BY version DESC LIMIT 1", (escalation_id, next_action))
+    return rows[0]["next_action_assigned_to"] if rows else None
 
 
 # ── DISPATCHER-TIED shape (run_id set) -- vocabulary/semantics unchanged, engine now config-driven
@@ -399,23 +458,34 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
 def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str = "task",
              comment: str | None = None, context: str | None = None,
              related_activity: str | None = None, assigned_to: str = "Claude",
-             *, originator: str) -> int:
+             from_id: int | None = None, *, originator: str) -> int:
     """Raise -- a new MANUAL item. `originator` is required, no default. `comment`/
-    `short_description` requirements come from cfg_escalation_requirement (action='raise')."""
+    `short_description` requirements come from cfg_escalation_requirement (action='raise'), as does
+    the `from_id`/`related_activity` pairing check (D14) when `from_id` is supplied.
+
+    D12 (register v9, type-keyed Raise defaults): only `notice` is special -- it closes on arrival
+    (`state='closed'`, `next_action=NULL`), never entering the review/decision machinery. Every
+    other type (`task`/`issue`/`run_error`/`config`) defaults identically: `state='raised'`,
+    `next_action='review'`."""
+    checked_type = _check_type(db, etype)
     _check_requirements(db, "raise", originator=originator or "", checked_action=None,
-                        values={"comment": comment, "short_description": short_description})
+                        values={"comment": comment, "short_description": short_description,
+                               "from_id": from_id, "related_activity": related_activity})
     title_error = _title_shape_error(short_description)
     if title_error:
         raise ValueError(title_error)
     run_id = f"MANUAL-{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d_%H%M%S_%f')}"
     now = _now()
+    if checked_type == "notice":
+        state, next_action = _check_state(db, "closed"), None
+    else:
+        state, next_action = _check_state(db, _status_for(db, "at Raise", "raised")), "review"
     fields = {
-        "run_id": run_id, "source": source, "at_step": "manual", "type": _check_type(db, etype),
+        "run_id": run_id, "source": source, "at_step": "manual", "type": checked_type,
         "short_description": short_description, "context": context, "comment": comment,
-        "tried": None, "state": _check_state(db, _status_for(db, "at Raise", "raised")),
-        "next_action": "review",
+        "tried": None, "state": state, "next_action": next_action,
         "answered_at": now, "raised_at": now, "resolution": None,
-        "related_activity": related_activity,
+        "related_activity": related_activity, "from_id": from_id,
         "next_action_assigned_to": _check_assignee(db, assigned_to),
         "originator": _check_assignee(db, originator)}
     return _create(cfg, db, **fields)
@@ -440,13 +510,21 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     checked_action = _check_next_action_manual(db, next_action)
     new_resolution = resolution if resolution is not None else cur["resolution"]
 
+    # D25 (register v9, corrects a shipped defect): approval is an AUTHORITY check, not an identity
+    # check. The party ready_for_approval assigned the item to is who may approve -- Claude assigning
+    # to itself is a legitimate, visible self-authorisation for items Claude holds authority over;
+    # assigning to the researcher means only the researcher may approve. Same-party is fine when
+    # that party holds the authority; what's refused is approving something assigned to someone else.
     if checked_action == "approved":
-        last_rfa_by = _last_next_action_originator(db, escalation_id, "ready_for_approval")
-        if last_rfa_by and last_rfa_by == who:
-            return (f"escalation #{escalation_id}: {who} cannot set 'approved' -- {who} is also "
-                   f"who most recently set 'ready_for_approval' on this item. Approval needs a "
-                   f"different party.")
+        rfa_assigned_to = _last_next_action_assigned_to(db, escalation_id, "ready_for_approval")
+        if rfa_assigned_to and who != rfa_assigned_to:
+            return (f"escalation #{escalation_id}: {who} cannot set 'approved' -- "
+                   f"'ready_for_approval' assigned this to {rfa_assigned_to!r}; only "
+                   f"{rfa_assigned_to} may approve it (authority check, not identity -- D25).")
 
+    if checked_action == "ready_for_approval":
+        _check_requirements(db, "ready_for_approval", originator=who, checked_action=checked_action,
+                            values={"resolution": new_resolution})
     if checked_action == "approved":
         _check_requirements(db, "approved", originator=who, checked_action=checked_action,
                             values={"resolution": new_resolution})
@@ -461,6 +539,13 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     new_state = _evaluate_transition(db, "manual", checked_action, has_resolution=bool(new_resolution),
                                      assignee_changed=assignee_changed, explicit_state=state,
                                      cur_state=cur["state"])
+
+    # D26 (register v9): work cannot land on a `raised` item -- comment/context/tried content
+    # requires the state to actually move first (e.g. -State in-progress), mechanically enforced
+    # here via cfg_escalation_requirement (action='update', check_kind='not_raised_with_content').
+    _check_requirements(db, "update", originator=who, checked_action=checked_action,
+                        values={"state": new_state, "comment": comment, "context": context,
+                               "tried": tried})
 
     merged = _snapshot(cfg, db, escalation_id,
                        deltas={"comment": comment, "context": context, "tried": tried,
@@ -478,6 +563,80 @@ def _gist(raw, width: int = 80) -> str:
     if not raw:
         return ""
     return str(raw).replace("\n", " ")[:width]
+
+
+# D15 (register v9) -- the report exception categories, over the WHOLE table (not just open items):
+# these are referential-integrity concerns about the from_id/related_activity graph, so a stale
+# historical broken link is still worth surfacing even once the item itself is closed. Config side
+# is D4's cfg_report_section rows; this is the detection logic those sections need.
+import re as _re
+
+
+def _link_graph(db: Db) -> dict[int, dict]:
+    return {r["id"]: dict(r) for r in db.rows("SELECT id, from_id, related_activity FROM escalation")}
+
+
+def _find_cycles(graph: dict[int, dict]) -> list[list[int]]:
+    """Following from_id pointers (id -> from_id -> from_id -> ...) should terminate -- from_id is
+    meant to be a DAG pointing strictly at an earlier item. A cycle is a data bug."""
+    found = []
+    for start in graph:
+        chain, cur = [start], start
+        while True:
+            nxt = graph.get(cur, {}).get("from_id")
+            if not nxt:
+                break
+            if nxt in chain:
+                found.append(chain + [nxt])
+                break
+            chain.append(nxt)
+            cur = nxt
+            if cur not in graph:
+                break
+    return found
+
+
+def _find_dangling(graph: dict[int, dict]) -> list[tuple[int, int]]:
+    """from_id set but pointing at an id that doesn't exist."""
+    return [(i, r["from_id"]) for i, r in graph.items() if r["from_id"] and r["from_id"] not in graph]
+
+
+def _find_mismatched_pairing(graph: dict[int, dict]) -> list[int]:
+    """from_id set but related_activity is not -- the D14 pairing rule, checked defensively over
+    ALL rows (replayed/pre-enforcement data may violate it even though new writes can't)."""
+    return sorted(i for i, r in graph.items() if r["from_id"] and not r["related_activity"])
+
+
+def _find_missing_link(graph: dict[int, dict]) -> list[tuple[int, int]]:
+    """related_activity's free-text '#NNN' mentions (the same convention write_history_report
+    already follows to walk related items) that don't resolve to a real id -- distinct from
+    `dangling`, which is the structured from_id column, not this free-text convention."""
+    out = []
+    for i, r in graph.items():
+        for m in _re.findall(r"#(\d+)", r["related_activity"] or ""):
+            ref = int(m)
+            if ref not in graph:
+                out.append((i, ref))
+    return out
+
+
+def _find_incoherent_link(graph: dict[int, dict]) -> list[tuple[int, int]]:
+    """Advisory heuristic (D15: no tunable threshold built yet -- only if a dry run shows it's
+    needed): A's related_activity names #B, B is a real item, A/B are not in a from_id parent-child
+    relationship (legitimately one-directional), and B's own related_activity does NOT name A back
+    -- a one-way reference where a mutual one looks intended."""
+    out = []
+    for i, r in graph.items():
+        for m in _re.findall(r"#(\d+)", r["related_activity"] or ""):
+            ref = int(m)
+            if ref == i or ref not in graph:
+                continue
+            if r["from_id"] == ref or graph[ref].get("from_id") == i:
+                continue
+            back = {int(x) for x in _re.findall(r"#(\d+)", graph[ref]["related_activity"] or "")}
+            if i not in back:
+                out.append((i, ref))
+    return out
 
 
 def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Path, list]:
@@ -515,6 +674,33 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
             L.append(f"| {h['version']} | {h['state']} | {h['next_action'] or ''} | "
                      f"{h['originator'] or ''} | {summary} | {h['answered_at']} |")
         L.append("")
+
+    # D15 exception sections (cfg_report_section: cycle/dangling/mismatched_pairing/missing_link/
+    # incoherent_link) -- over the whole table, see _link_graph's docstring group above.
+    graph = _link_graph(db)
+    cycles = _find_cycles(graph)
+    dangling = _find_dangling(graph)
+    mismatched = _find_mismatched_pairing(graph)
+    missing = _find_missing_link(graph)
+    incoherent = _find_incoherent_link(graph)
+
+    L += ["## Cycle", ""]
+    L.append("_none_" if not cycles else "\n".join(
+        f"- {' -> '.join(f'#{c}' for c in chain)}" for chain in cycles))
+    L += ["", "## Dangling", ""]
+    L.append("_none_" if not dangling else "\n".join(
+        f"- #{i} from_id={fid} does not exist" for i, fid in dangling))
+    L += ["", "## Mismatched pairing", ""]
+    L.append("_none_" if not mismatched else "\n".join(
+        f"- #{i} has from_id set but no related_activity" for i in mismatched))
+    L += ["", "## Missing link", ""]
+    L.append("_none_" if not missing else "\n".join(
+        f"- #{i} related_activity mentions #{ref}, which does not exist" for i, ref in missing))
+    L += ["", "## Incoherent link", ""]
+    L.append("_none_" if not incoherent else "\n".join(
+        f"- #{i} names #{ref} in related_activity; #{ref} does not name #{i} back "
+        f"(advisory heuristic, D15)" for i, ref in incoherent))
+    L.append("")
 
     resolved = db.rows(
         "SELECT id, state, related_activity, resolution, answered_at FROM escalation "
@@ -559,7 +745,8 @@ def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Pat
         hist = db.rows("SELECT * FROM escalation_history WHERE escalation_id=? ORDER BY version",
                        (eid,))
         L.append(f"## #{eid} — {r['short_description']}")
-        L.append(f"type={r['type']} source={r['source']} related_activity={r['related_activity'] or ''}")
+        L.append(f"type={r['type']} source={r['source']} related_activity={r['related_activity'] or ''} "
+                 f"from_id={r['from_id'] or ''}")
         L.append("")
         for h in hist:
             L.append(f"**v{h['version']}** ({h['answered_at']}, {h['originator'] or '?'}) "
@@ -571,6 +758,16 @@ def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Pat
                     label = c.replace("_", " ")
                     L.append(f"> **{label} (set this version):** {h[c]}")
             L.append("")
+        # D5 item 6 / D4's "downward_chain" section -- items SPAWNED FROM this one (from_id child),
+        # distinct from the related_activity-text traversal below (a lateral/named-reference walk).
+        children = db.rows("SELECT id FROM escalation WHERE from_id=? ORDER BY id", (eid,))
+        if children:
+            L.append(f"**downward chain (spawned from #{eid}):** " +
+                     ", ".join(f"#{c['id']}" for c in children))
+            L.append("")
+            queue.extend(c["id"] for c in children)
+        if r["from_id"]:
+            queue.append(r["from_id"])
         if r["related_activity"]:
             others = db.rows(
                 "SELECT id FROM escalation WHERE related_activity LIKE ? AND id != ?",
@@ -596,6 +793,18 @@ def _extract_flag(args: list[str], name: str) -> tuple[list[str], str | None]:
     return remaining, value
 
 
+def _crash_from_id(argv: list[str]) -> int | None:
+    """D3 (register v9): the crash-wrapper's own from_id-awareness -- whatever escalation id the
+    failing command was OPERATING ON, if any (`update <id> ...` / `history <id>`). `raise ...` has
+    no target yet (the crash means the new row was never created) -- from_id stays None there."""
+    if len(argv) >= 2 and argv[0] in ("update", "history"):
+        try:
+            return int(argv[1])
+        except ValueError:
+            return None
+    return None
+
+
 def main() -> int:
     cfg = Cfg()
     db = Db(cfg)
@@ -613,6 +822,7 @@ def main() -> int:
                      etype="run_error", comment=f"argv={argv!r}\n{tb}",
                      context=json.dumps(extra),
                      related_activity="escalation-cli-crash", assigned_to="Claude",
+                     from_id=_crash_from_id(argv),
                      originator="Claude")
         except Exception:
             pass   # never let a failure recording the crash mask the original crash itself
@@ -646,11 +856,13 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
         rest, originator = _extract_flag(rest, "originator")
         rest, comment = _extract_flag(rest, "comment")
         rest, context = _extract_flag(rest, "context")
+        rest, from_id = _extract_flag(rest, "from-id")
         question = " ".join(rest)
         new_id = raise_new(cfg, db, question, source or "claude", etype=etype or "task",
                            comment=comment or question, context=context,
                            assigned_to=assigned_to or "Researcher",
                            related_activity=related_activity,
+                           from_id=int(from_id) if from_id else None,
                            originator=_require_flag(originator, "originator"))
         print(f"  raised — #{new_id}. Update with: python -m iba.app.lib.escalation update {new_id} ...")
     elif len(argv) >= 2 and argv[0] == "update":
@@ -679,7 +891,7 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
              "[--resolution=...] [comment...]"
              " | raise <short_description...> --comment=... --originator=Claude|Researcher "
              "[--source=...] [--assigned-to=...] [--type=...] [--related-activity=...] "
-             "[--context=...]"
+             "[--context=...] [--from-id=...]"
              " | update <id> --originator=Claude|Researcher [--next-action=...] [--assigned-to=...] "
              "[--state=...] [--resolution=...] [--related-activity=...] [--tried=...] "
              "[--context=...] [comment...]")

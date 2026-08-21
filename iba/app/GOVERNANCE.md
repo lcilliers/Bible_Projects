@@ -1904,3 +1904,57 @@ now has 6 members, not 5 — `chat`/`terminal`/`sqlite`/`documentation`/`llm_out
 42 active rules total. The operational-behaviour system's own completeness gap (no supporting PS
 script across 3 build cycles) was found and closed in the same pass that added the rule naming it:
 `iba/app/lib/behaviour.py` + `iba/app/ps/Behaviour.ps1 -Action List`.
+
+## §43. Escalation design plan v5 / decision register v9 built (2026-08-21)
+
+Full detail `BUILD.md` §162 (D-numbers below refer to
+`iba/docs/escalation-design-decision-register-v9-20260821.md`). Ten governing changes this round:
+
+1. **Current-state/history split, true-delta model** — unchanged from the 2026-08-20 rebuild
+   (§39); reconfirmed, not reopened.
+2. **State-derivation engine** (`cfg_escalation_transition`) — `ready_for_approval` now has its own
+   explicit priority-5 row (D27) rather than depending on the incidental `assignee_changed`
+   condition; the two generic fallback rules shifted to priority 6/7.
+3. **Field-requirement engine** (`cfg_escalation_requirement`) — gained a `check_kind` column
+   (`field_required` — the prior, only, implicit behaviour, now named — plus
+   `not_raised_with_content`/`exists`/`not_self`, D14/D25/D26).
+4. **Two-stage approval is AUTHORITY-based, not same-party** (D25) — `approved` is refused only if
+   the caller differs from whoever `ready_for_approval` assigned the item to; same-party is fine
+   when that party holds the authority. Corrects a shipped defect: the prior same-party refusal
+   blocked legitimate self-authorisation.
+5. **Five-type model, per-type behaviour** — `notice` now closes on arrival at Raise (D12:
+   `state='closed'`, `next_action=NULL`, no review cycle); every other type still defaults
+   `raised`/`review`. `issue` continues to reuse the manual vocabulary in full (D11/D21,
+   reconfirmed, no separate scheme).
+6. **`from_id`/`related_activity`** (D14) — new `escalation.from_id` column (immutable, set only at
+   Raise): which item this one was spawned from. Enforced (when set): references a real row, isn't
+   self-referential, and is paired with `related_activity`.
+7. **`chat_routing`** — extended with the verbatim-quote convention (D19): content captured under
+   this rule quotes the operative instruction/correction VERBATIM, Claude's own framing kept
+   distinguishable from the quoted part.
+8. **This register's own "configs touched" discipline** — each decision in the register states
+   exactly which `cfg_*` rows it touches, so a build pass can be checked against the register
+   directly rather than re-deriving scope from prose.
+9. **Produced-documentation-task pattern** (D18) and the **raised-state guard** (D26, next item) —
+   both now `cfg_escalation` rule rows, not prose-only conventions.
+10. **`update()` refuses content on a still-`raised` item** (D26) — `comment`/`context`/`tried`
+    requires the state to actually move first (e.g. `-State in-progress`); mechanically enforced,
+    not just a session-practice convention (the "researcher says 'start work'" half stays
+    session-practice, honestly distinguished from the enforced half).
+
+Also this round, not separately numbered above: `escalation.list`/`escalation.history` now dispatch
+through `run.py` like every other report (`cfg_work_package`/`cfg_step`/`cfg_report`/
+`cfg_report_section`/`cfg_report_csv_table`, D4/D16/D23) instead of `Escalation.ps1` calling the
+module directly; the report gained five D15 exception sections (cycle/dangling/mismatched-pairing/
+missing-link/incoherent-link) computed over the `from_id`/`related_activity` graph; a new
+`configmaint.validate` advisory check (D28) flags drift between `Escalation.ps1`'s `ValidateSet`
+literals and the live `cfg_enum` groups they're meant to mirror; `cfg_utility` gained
+`crash_escalation_reviewed`/`crash_escalation_note` columns, and all 39 active modules were reviewed
+under them (D3) — three genuine, unfixed crash-recovery gaps flagged (`bootstrap_behaviour_rules*`,
+`engine_migrate`, `cfgload` — each mixes DDL with a single end-of-script commit and has no
+try/except, so a mid-script crash can leave inconsistent partial state with no escalation record;
+not fixed this round, out of D3's scope). D1 (rebuilding `escalation` from the 2026-08-20 export +
+this session's live rows) has a dry run built and run
+(`iba/app/reports/escalation-rebuild-dry-run-20260821.md`) but deliberately NOT executed — the
+register's own two-phase gate ("execute — only after the dry run is reviewed and corrected") is a
+human-review checkpoint, not a step to auto-chain through.

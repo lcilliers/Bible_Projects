@@ -35,12 +35,25 @@
         and similar) no longer escalates at all — logged by the engine, errors only (`BUILD.md`
         §153) — word-scoped -Action Answer is RETIRED, not replaced.
 
+    **Register v9 build, 2026-08-21** (`escalation-design-plan-v5-20260821.md` +
+    `escalation-design-decision-register-v9-20260821.md`): List/History now dispatch through
+    run.py (work package 'escalation-reporting') instead of calling the module directly, matching
+    every other report script (D4/D16/D23). `from_id` (D14) — which item this one was spawned from
+    — can be set at Raise via -FromId. `-NextAction ready_for_approval` now resolves explicitly
+    (D27) rather than depending on -AssignedTo happening to change. Two-stage approval (`approved`)
+    is now an AUTHORITY check, not identity (D25) — the party ready_for_approval assigned it to may
+    approve, even if that's the same party who set ready_for_approval. `-Type notice` closes on
+    arrival (D12) — no review/decision cycle. An Update carrying -Comment/-Context/-Tried is
+    refused if the resulting state would still be 'raised' (D26) — move it off raised first.
+
     -Action List        writes every open escalation, WITH FULL HISTORY INLINE (plan v3 §5a — the
-                        old report only ever showed current state), to escalation.list_report_path
-                        (default iba/app/reports/escalation-list.md; archived on regenerate).
-    -Action History      deep-history report for ONE item (plan v3 §5b) — its full history, plus
-                        the same for every item its related_activity text names or is named by.
-                        Needs -Id.
+                        old report only ever showed current state), plus the D15 exception
+                        sections (cycle/dangling/mismatched pairing/missing link/incoherent link),
+                        to escalation.list_report_path (default
+                        iba/app/reports/escalation-list.md; archived on regenerate).
+    -Action History      deep-history report for ONE item (plan v3 §5b) — its full history, its
+                        downward chain (from_id children, D14), plus the same for every item its
+                        related_activity text names or is named by. Needs -Id.
     -Action AnswerRun    answer a DISPATCHER-TIED escalation (config proposal, quality-check
                         finding, crash, report-stop). Needs -RunId and -Decision (Approve|Reject|
                         Revise|Hold|Noted); -Comment required with Revise, optional otherwise.
@@ -48,9 +61,11 @@
     -Action Raise        raise a new MANUAL item — an error/issue/task, not raised by a running
                         step. Needs -Question (becomes short_description) and -Comment (required —
                         minimum: what this is about, plan v3 §6). -Source (default 'researcher'),
-                        -Type (default task), -AssignedTo (default Claude), -RelatedActivity
-                        (free text, optional) optional. Prints the new id — update it with
-                        -Action Update.
+                        -Type (default task; 'notice' closes on arrival, D12), -AssignedTo
+                        (default Claude), -RelatedActivity (free text, optional), -FromId (D14 —
+                        the item this one was spawned from; if set, -RelatedActivity becomes
+                        required too, naming what the relationship documents) optional. Prints the
+                        new id — update it with -Action Update.
     -Action Update        every subsequent change to a MANUAL item — comments, decisions,
                         reassignment, state changes, all through this one action; the resulting
                         state is DERIVED from what you set via cfg_escalation_transition, not
@@ -63,9 +78,13 @@
                         Needs -Id. -Comment/-Context are CUMULATIVE in `escalation` — what you pass
                         is the increment, appended onto the existing text — but `escalation_history`
                         now stores only that increment for this version, not the running total.
-                        `next_action=approved` is REJECTED if you are the same party who most
-                        recently set `ready_for_approval` on this item (two-stage approval needs
-                        two different parties).
+                        `next_action=approved` is REJECTED if you are NOT the party
+                        `ready_for_approval` most recently assigned this item to — an AUTHORITY
+                        check (D25, register v9), not identity: the same party is fine when it
+                        holds the authority (e.g. Claude self-authorising an item within its own
+                        remit). An Update carrying -Comment/-Context/-Tried is refused outright if
+                        the resulting state would still be 'raised' (D26) — -State in-progress (or
+                        similar) first.
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
@@ -104,7 +123,8 @@ param(
     [ValidateSet('task', 'run_error', 'issue', 'notice', 'config')] [string] $Type = 'task',
     [string] $Source = 'researcher',
     [ValidateSet('on-hold', 'in-progress', 'closed', 'withdraw', 'supersede')] [string] $State,
-    [string] $RelatedActivity
+    [string] $RelatedActivity,
+    [int] $FromId
 )
 
 Set-StrictMode -Version Latest
@@ -116,14 +136,27 @@ Set-Location $RepoRoot
 
 switch ($Action) {
     'List' {
-        python -m iba.app.lib.escalation list
+        # D4/D16/D23 (register v9): report-producing steps go through the dispatcher like every
+        # other report in the app (Reports.ps1/Manifest-Rebuild.ps1 pattern), not a direct module
+        # invocation — registered as work package 'escalation-reporting', step 'escalation.list'.
+        $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-ESCALATION-LIST"
+        $json = python -m iba.app.run escalation-reporting --step escalation.list --run-id $runId
+        $code = $LASTEXITCODE
+        $res = $json | ConvertFrom-Json
+        Write-Host "  $($res.message)"
+        exit $code
     }
     'History' {
         if (-not $Id) {
             Write-Host "History needs -Id." -ForegroundColor Yellow
             exit 1
         }
-        python -m iba.app.lib.escalation history $Id
+        $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-ESCALATION-HISTORY"
+        $json = python -m iba.app.run escalation-reporting --step escalation.history --run-id $runId --param "Id=$Id"
+        $code = $LASTEXITCODE
+        $res = $json | ConvertFrom-Json
+        Write-Host "  $($res.message)"
+        exit $code
     }
     'AnswerRun' {
         if (-not $RunId -or -not $Decision) {
@@ -159,6 +192,7 @@ switch ($Action) {
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Context) { $flags += "--context=$Context" }
+        if ($FromId) { $flags += "--from-id=$FromId" }
         python -m iba.app.lib.escalation raise @flags $Question
     }
     'Update' {

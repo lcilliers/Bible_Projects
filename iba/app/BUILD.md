@@ -9021,3 +9021,128 @@ escalating every other standalone-CLI module's crashes, not just this one.
 `iba/app/migration/rebuild_escalation_rules_config_20260820.py`, `iba/app/lib/escalation.py`,
 `iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`, `iba/docs/escalation-config-review-v2-
 20260820.md`, `iba/docs/escalation-rebuild-design-v1-20260820.md`.
+
+## 162. Escalation design plan v5 / decision register v9 built — 14 open decisions, tested live (2026-08-21)
+
+Implements `iba/docs/escalation-design-plan-v5-20260821.md` +
+`iba/docs/escalation-design-decision-register-v9-20260821.md` (researcher: "proceed to implement the
+design plan per the attached and decision register v9"). All 14 `OPEN` decisions built; the 3
+`SETTLED`-but-unbuilt ones (D9 five-type model, D11/D21 issue-reuses-manual, D12 notice default)
+verified/completed. `D1` (data rebuild) deliberately stops at the dry run — see below.
+
+**D12 — type-keyed Raise defaults, the gap found mid-build.** `raise_new()` never actually
+special-cased `type='notice'` despite D12 being marked SETTLED — every type defaulted
+`state='raised'`/`next_action='review'` identically. Fixed: `notice` now sets `state='closed'`,
+`next_action=None` at creation, no review cycle; every other type unchanged.
+
+**D14 — `from_id`/`related_activity`.** New `escalation.from_id INTEGER` column (also added to
+`escalation_history` — it's one of the immutable envelope-adjacent columns every history row
+carries too, missed in the first pass of this migration and caught by the test run below, not
+shipped broken). `cfg_escalation_requirement` gained a `check_kind` column (`field_required` names
+the pre-existing implicit behaviour; `exists`/`not_self`/`not_raised_with_content` are new). Built 3
+requirement rows, not the register's literal 4 — documented judgement call (migration script's own
+docstring): a rule requiring `from_id` whenever `related_activity` is set would break virtually
+every existing item (`related_activity` is used constantly as plain prose with no `from_id`
+involved); the only real-world pairing is one-directional (`from_id` set -> `related_activity`
+required), which is what's built.
+
+**D15 — report exception sections**, computed over the whole `from_id`/`related_activity` graph
+(not just open items — referential-integrity concerns outlive an item's own open/closed state):
+`_find_cycles`/`_find_dangling`/`_find_mismatched_pairing`/`_find_missing_link`/
+`_find_incoherent_link`, wired into `write_list_report`. Live-tested against the real table: found a
+genuine, previously-invisible finding — `#8`'s `related_activity` names `#6` but `#6`'s doesn't name
+`#8` back (`incoherent_link`).
+
+**D25 — authority-based approval, fixing shipped code.** `update()`'s same-party refusal
+(`#753`/`#755`'s original design) is replaced: `approved` is refused only if the caller differs from
+whoever `ready_for_approval` assigned the item to (`_last_next_action_assigned_to`, new helper) —
+same party is fine when that party holds the authority (Claude self-assigning-then-approving an item
+within its own remit is legitimate; approving something assigned to the OTHER party is not).
+
+**D26 — work cannot land on a `raised` item.** New `check_kind='not_raised_with_content'`:
+`update()` refuses any `comment`/`context`/`tried` write whose resulting state would still be
+`raised`. New `condition_key='has_content'` (does this transaction carry comment/context/tried).
+`cfg_escalation` rule `chat_start_work_moves_to_in_progress` records the session-practice half
+(researcher says "start work" -> next Update carries `-State in-progress`) as distinct from the
+mechanically-enforced half.
+
+**D27 — `ready_for_approval`'s missing transition rule.** New priority-5 `cfg_escalation_transition`
+row (`manual`/`ready_for_approval`/`always` -> `re-assigned`); the two generic fallback rules shift
+to priority 6/7. Fixes a real gap: re-affirming the SAME assignee at `ready_for_approval` previously
+fell through to `__unchanged__` (state stayed wherever it was) rather than resolving.
+
+**D28 — `Escalation.ps1` `ValidateSet` drift check.** New `cfgquality.find_escalation_ps_
+validateset_drift`, wired into `configmaint.validate`'s advisory findings: compares `-NextAction`/
+`-Decision`/`-Type`/`-AnsweredBy`/`-AssignedTo`'s `[ValidateSet(...)]` literals against the live
+`cfg_enum` groups they're meant to mirror (`-State`'s ValidateSet is a deliberate curated subset —
+excluded, not overlooked). Clean today (0 drift).
+
+**D4/D16/D23 — report registration.** `escalation.list`/`escalation.history` registered
+(`cfg_work_package`/`cfg_step`/`cfg_report`/`cfg_report_section` x9/`cfg_report_csv_table`, 15 rows)
+and dispatched through `run.py` (`escalation-reporting` work package) instead of `Escalation.ps1`
+calling the module directly — matching every other report script's pattern
+(`Reports.ps1`/`Manifest-Rebuild.ps1`). Two new handlers,
+`handlers/reports.py:escalation_list`/`:escalation_history`. The CSV pairing is the corrected raw
+table dump (`table_name='escalation'`), not the exception sections — those are markdown-only, v4's
+original claim was backwards.
+
+**D3 — crash-escalation control.** New `cfg_utility.crash_escalation_reviewed`/
+`.crash_escalation_note` columns. Genuine, differentiated review of all 39 active modules (not
+bulk-defaulted — each note reflects an actual grep for `.commit()`/`try`/`except`/`__main__`):
+every `iba/app/lib/*.py` report/support module has no `__main__` and is only ever reached through a
+dispatcher-called `handlers/*.py` function, so its crash-recovery is INHERITED from `run.py`'s own
+except block (`db.conn.rollback()` then a permanent `escalation` record, before re-raising) — real,
+not assumed (`Db`/`Cfg` share one connection per process; neither `write()` nor `update()` calls
+`.commit()`, only `close()` does, which the except block never reaches on a crash). **Three genuine
+gaps found and flagged, not fixed** (out of D3's scope): `bootstrap_behaviour_rules_v1/cycle2/3/4`,
+`engine/migrate.py`, and `cfgload.py` each have their own `__main__`, mix DDL with a single
+end-of-script `commit()`, and have no top-level `try`/`except` — Python's sqlite3 legacy transaction
+handling auto-commits before DDL, so a mid-script crash after a `CREATE`/`ALTER TABLE` but before the
+final `commit()` can leave inconsistent partial state with zero escalation record. `cfgload.py` is
+the highest-traffic of the three (Start-Iba.ps1's own config bootstrap) — mitigated somewhat by its
+own idempotency (a partial load self-heals on the next session start) but not a substitute for a
+crash record.
+
+**D2/D6/D7/D18/D19 — straightforward config corrections/additions**, one migration
+(`escalation_register_v9_build_20260821.py`): `cfg_table.use` corrected for both tables (D2);
+`cfg_utility.escalation.purpose` corrected from a one-line stub to the full text (D7); three new
+`cfg_escalation` rows (`standing_items_survive_reset` D6, `issue_decisions_produce_documentation_
+tasks` D18 — its `rule_text` corrected in the same pass, since D11/D21's simplification retired the
+`next_action=decided` value it originally cited, `chat_start_work_moves_to_in_progress` D26);
+`chat_routing` extended with the verbatim-quote convention (D19).
+
+**Tested, not just written** (own scratch script, run against the LIVE `iba.db` inside an
+uncommitted transaction never closed/committed — real front door, real config, real data, zero risk
+to the live table; verified after with a direct row-count that nothing landed): D12 notice-vs-task
+defaults; D14 exists/not_self/pairing all refuse correctly, a paired raise succeeds; D26 refuses
+content on a raised item, succeeds after `-State in-progress`; D25 refuses the wrong party, succeeds
+for the assigned party AND for legitimate self-authorisation; D27 resolves `ready_for_approval` with
+no assignee change; D15's five sections render without crashing; D3's `_crash_from_id` extracts the
+right target. Then `configmaint.validate`'s full `_validate_live` + every advisory check run for
+real against the live DB: 0 hard errors, 0 findings touching any of this round's work. Then
+`escalation.list`/`escalation.history` run for REAL (not simulated) through `python -m iba.app.run`
+— both succeeded, the real report shows the genuine `incoherent_link` finding above.
+
+**D1 — deliberately NOT executed.** Built and ran the dry-run phase only
+(`iba/app/migration/rebuild_escalation_from_export_20260821.py --dry-run` ->
+`iba/app/reports/escalation-rebuild-dry-run-20260821.md`): simulates every Raise/Update from both
+sources (the 25-row 2026-08-20 export + this session's live `#1`-`#9`) through the REAL
+`_title_shape_error`/`_evaluate_transition`/`_check_requirements` functions, in memory, against live
+config, writing nothing. Confirmed: the export's `raised_at` timestamps already fall in strict
+non-overlapping chronological order and every current live row postdates them, so a straight
+reseed-and-replay reproduces the ORIGINAL id numbers (736-759) exactly, with the one out-of-band
+item (export id=1, chronologically last) landing on a fresh `#760` and the current live rows
+becoming `#761-769` — no existing `#7xx` citation breaks. Real finding: 22 of 25 items' v1
+`short_description` would be refused by today's title-shape check (the un-corrected original text —
+`#759`'s historical fix landed at v3+, not v1) — mechanically resolvable by raising with each item's
+FINAL corrected title instead of literally replaying the original. 3 items (`#749`/`#751`/`#757`)
+still violate the rule even at their most-recent historical version (contain `--`) — these need an
+actual new title chosen, a genuine decision, not a mechanical one. Per the register's own two-phase
+design ("execute — only after the dry run is reviewed and corrected"), execute is a separate,
+human-reviewed step, not built this pass.
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/lib/cfgquality.py`, `iba/app/handlers/configmaint.py`,
+`iba/app/handlers/reports.py`, `iba/app/ps/Escalation.ps1`,
+`iba/app/migration/escalation_register_v9_build_20260821.py`,
+`iba/app/migration/escalation_crash_review_rollout_20260821.py`,
+`iba/app/migration/rebuild_escalation_from_export_20260821.py`, `iba/app/GOVERNANCE.md`.

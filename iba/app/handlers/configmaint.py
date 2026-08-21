@@ -352,6 +352,11 @@ def validate(ctx: Ctx) -> Outcome:
         # source, this is the active detector that a future regression doesn't silently recur.
         "report_version_clutter": (cfgquality.find_report_version_clutter(ctx.db.conn, APP_ROOT),
                                   "report lineage(s) with more than one live version"),
+        # D28 (register v9) — Escalation.ps1's ValidateSet literals vs. the live cfg_enum groups
+        # they're meant to mirror.
+        "escalation_ps_validateset_drift": (
+            cfgquality.find_escalation_ps_validateset_drift(ctx.db.conn, APP_ROOT),
+            "Escalation.ps1 ValidateSet drift finding(s)"),
     }
     preset = {k: v[0] for k, v in findings.items()}
     if not any(preset.values()):
@@ -359,7 +364,8 @@ def validate(ctx: Ctx) -> Outcome:
                   "status flow, regex settings, report fields all check out; no orphans, no "
                   "settings needing justification, no stale filled_by references, GOVERNANCE.md "
                   "current, every lib module registered, no zero-config-density utilities, no "
-                  "book_order/connection/candidate_rule usage gaps, no report-version clutter")
+                  "book_order/connection/candidate_rule usage gaps, no report-version clutter, no "
+                  "Escalation.ps1 ValidateSet drift")
 
     # Full detail persists to CONFIG-REPORT.md's "findings" section (cfgreport.py mirrors the
     # same cfgquality functions) — refreshed here so the report reflects THIS run's findings, not

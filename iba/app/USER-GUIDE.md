@@ -263,7 +263,11 @@ They answer genuinely different questions, so they don't share one decision voca
 `escalation.type` — `task \| run_error \| issue \| notice \| config` — is a separate, orthogonal
 axis: classification for humans reading the list, set at raise-time (`-Type` on `-Action Raise`,
 default `task`; the app picks it for code-raised rows — crashes/report-stops are `run_error`, a
-`configmaint.propose` pause is `config`). Nothing in the app branches behaviour on `type`.
+`configmaint.propose` pause is `config`). **One type DOES branch behaviour** (register v9, D12,
+2026-08-21): `-Type notice` closes on arrival — `state='closed'`, no `next_action`, no review/
+decision cycle at all, for a pure FYI that needs no response. Every other type (including `issue`,
+which reuses this same manual vocabulary in full — no separate scheme) defaults identically:
+`raised`/`review`.
 
 ### 4.3 States — config-driven, not hardcoded
 
@@ -279,19 +283,29 @@ order per shape (`manual`/`dispatcher`), first match wins:
 | 2 | manual | `reject` | always | the party's explicit `-State withdraw`/`supersede` choice, `-Comment` required |
 | 3 | manual | `revise` | always | `in-progress` |
 | 4 | manual | `noted` | always | `closed` |
-| 5 | manual | any | `-AssignedTo` changed, no more specific rule matched | `re-assigned` |
-| 6 | manual | any | nothing else matched | state unchanged, or your explicit `-State` |
+| 5 | manual | `ready_for_approval` | always | `re-assigned` (register v9, D27 — its own explicit row; previously relied on rule 6's `-AssignedTo`-changed condition, which isn't guaranteed true) |
+| 6 | manual | any | `-AssignedTo` changed, no more specific rule matched | `re-assigned` |
+| 7 | manual | any | nothing else matched | state unchanged, or your explicit `-State` |
 | 1 | dispatcher | `hold` | always | `on-hold` |
 | 2 | dispatcher | `noted` | always | `closed` |
 | 3 | dispatcher | any | always | `completed` |
 
-Field requirements (comment@Raise, resolution@approved, state@reject, tried@Claude-revising-own-
-item) are config-driven too, in **`cfg_escalation_requirement`** — same reason: no longer a rule a
-reader has to find by reading Python.
+Field requirements (comment@Raise, resolution@ready_for_approval and re-confirmed@approved,
+state@reject, tried@Claude-revising-own-item) are config-driven too, in
+**`cfg_escalation_requirement`** — same reason: no longer a rule a reader has to find by reading
+Python. Register v9 (D26, 2026-08-21) added a mechanical guard: an Update carrying `-Comment`/
+`-Context`/`-Tried` is refused outright if the resulting state would still be `raised` — move it off
+`raised` first (`-State in-progress`, or via `-NextAction revise`/etc.). Also added (D14): `from_id`
+— set only at `-Action Raise`, never changed after — names which item THIS one was spawned from
+(e.g. a documentation-task pointing back at the issue that produced it); enforced when set:
+references a real item, isn't self-referential, and is paired with `-RelatedActivity`.
 
-**Two-stage approval now actually enforces separation of duties**: `next_action=approved` is
-refused if you're the same party who most recently set `ready_for_approval` on this item — the
-prior redesign never checked this at all.
+**Two-stage approval now actually enforces separation of duties — but as an AUTHORITY check, not an
+identity check** (register v9, D25, 2026-08-21, correcting a shipped defect): `next_action=approved`
+is refused only if you are NOT the party `ready_for_approval` most recently assigned the item to.
+Same party is fine when that party holds the authority (Claude assigning an item to itself, then
+approving it, is a legitimate, visible self-authorisation for items within Claude's own remit) —
+what's refused is approving something `ready_for_approval` assigned to someone ELSE.
 
 ### 4.4 The two-stage approval (manual items only)
 
@@ -299,11 +313,12 @@ Splitting "I think this is done" from "confirmed done" was a deliberate correcti
 wanted two real history rows for an approval, not one:
 
 1. The party who did the work sets `-NextAction ready_for_approval`, `-AssignedTo <the reviewer>`,
-   `-Resolution "<what was done>"`. Lands on `re-assigned` (rule 5 above — nothing more specific
-   matches `ready_for_approval` itself).
+   `-Resolution "<what was done>"` (resolution required here — register v9, D25). Lands on
+   `re-assigned` (rule 5 above, its own explicit row as of D27).
 2. The reviewer sets `-NextAction approved` (plus any further `-Comment`). Since `resolution` is
-   already on the row, rule 1 fires → `completed`. **Refused if the reviewer is the same party who
-   set `ready_for_approval`** — enforced since the 2026-08-20 rebuild, not just a convention.
+   already on the row, rule 1 fires → `completed`. **Refused if the approver is NOT the party
+   `ready_for_approval` assigned it to** — an authority check (D25), not identity: the same party
+   approving its own `ready_for_approval` is fine when it holds the authority.
 
 Claude may complete its own straightforward, fully-recorded fixes this way without the researcher
 in the loop for step 2 — e.g. Claude raises a code error, fixes it, records what was tried, and
@@ -328,14 +343,21 @@ DUPLICATE: ...`), logged by the engine, not a blocking question.
 
 ### 4.6 The four actions that exist today
 
+**List/History now dispatch through `run.py`** (register v9, D4/D16/D23, 2026-08-21) — work package
+`escalation-reporting`, steps `escalation.list`/`escalation.history` — instead of `Escalation.ps1`
+calling the Python module directly, matching every other report script's pattern. `-Action List`
+also now renders five exception sections (D15) computed over the whole `from_id`/`related_activity`
+graph: Cycle, Dangling, Mismatched pairing, Missing link, Incoherent link.
+
 ```powershell
-# see what's open, WITH FULL HISTORY inline underneath each item (not just current state) --
-# writes escalation.list_report_path (default iba/app/reports/escalation-list.md, archived on
-# regenerate):
+# see what's open, WITH FULL HISTORY inline underneath each item (not just current state), plus
+# the D15 exception sections -- writes escalation.list_report_path (default
+# iba/app/reports/escalation-list.md, archived on regenerate):
 iba\app\ps\Escalation.ps1 -Action List
 
-# deep-history report for ONE item -- its full version-by-version story, plus the same for every
-# item its related_activity text names or is named by (e.g. a wrong-title correction, §4.7):
+# deep-history report for ONE item -- its full version-by-version story, its downward chain
+# (from_id children, D14), plus the same for every item its related_activity text names or is
+# named by (e.g. a wrong-title correction, §4.7):
 iba\app\ps\Escalation.ps1 -Action History -Id 741
 
 # answer a DISPATCHER-TIED pause (config proposal, quality-check finding, crash, report-stop) --

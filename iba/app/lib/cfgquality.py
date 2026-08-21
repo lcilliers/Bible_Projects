@@ -714,6 +714,65 @@ def find_utility_config_density(conn: sqlite3.Connection) -> list[str]:
     return out
 
 
+# D28 (register v9): Escalation.ps1's `[ValidateSet(...)]` literals are a THIRD, hardcoded copy of
+# the escalation vocabulary — alongside the two live cfg_enum groups (escalation_next_action_manual/
+# _dispatcher) lib/escalation.py actually validates against. Nothing keeps the PS copy in sync if the
+# enum changes (D27's own fix wouldn't reach it without a manual edit). A drift-detection check, not
+# a dynamically-querying ValidateSet — disproportionate machinery for a rarely-changing list (per the
+# register's own reasoning). Maps PS -Parameter name -> (cfg_enum group, value-transform) — only the
+# groups meant to be an EXACT match; -State's ValidateSet is a deliberate curated SUBSET (only the
+# explicitly-settable states — raised/re-assigned/completed are system-derived) and is excluded here
+# for that reason, not because it was overlooked.
+_PS_VALIDATESET_ENUM_MAP = {
+    "NextAction": ("escalation_next_action_manual", lambda v: v),
+    "Decision": ("escalation_next_action_dispatcher", lambda v: v.lower()),
+    "Type": ("escalation_type", lambda v: v),
+    "AnsweredBy": ("escalation_assignee", lambda v: v),
+    "AssignedTo": ("escalation_assignee", lambda v: v),
+}
+_VALIDATESET_RE = re.compile(
+    r"\[ValidateSet\((?P<items>(?:'[^']*'|\"[^\"]*\"|\s*,\s*)+)\)\]\s*\[\w+(?:\[\])?\]\s*\$(?P<param>\w+)")
+_VALIDATESET_ITEM_RE = re.compile(r"'([^']*)'|\"([^\"]*)\"")
+
+
+def find_escalation_ps_validateset_drift(conn: sqlite3.Connection, app_root: pathlib.Path
+                                         ) -> list[str]:
+    """Every `_PS_VALIDATESET_ENUM_MAP` parameter's `[ValidateSet(...)]` values must exactly match
+    the live `cfg_enum` group it's supposed to mirror (after `-Decision`'s lowercase transform).
+    ADVISORY — a real drift is a genuine finding needing a look, not necessarily a hard structural
+    fault (the PS script may simply not have been updated yet)."""
+    ps_path = app_root / "ps" / "Escalation.ps1"
+    if not ps_path.exists():
+        return [f"Escalation.ps1 not found at {ps_path} — cannot check ValidateSet drift"]
+    text = ps_path.read_text(encoding="utf-8", errors="ignore")
+    found: dict[str, list[str]] = {}
+    for m in _VALIDATESET_RE.finditer(text):
+        param = m.group("param")
+        if param not in _PS_VALIDATESET_ENUM_MAP:
+            continue
+        items = [a or b for a, b in _VALIDATESET_ITEM_RE.findall(m.group("items"))]
+        found[param] = items
+
+    out = []
+    for param, (enum_name, transform) in _PS_VALIDATESET_ENUM_MAP.items():
+        if param not in found:
+            out.append(f"Escalation.ps1: -{param} has no [ValidateSet(...)] found (expected to "
+                      f"mirror cfg_enum {enum_name!r})")
+            continue
+        ps_values = {transform(v) for v in found[param]}
+        live_values = {r[0] for r in conn.execute(
+            "SELECT value FROM cfg_enum WHERE name=? AND inactive=0", (enum_name,))}
+        missing = live_values - ps_values
+        extra = ps_values - live_values
+        if missing:
+            out.append(f"Escalation.ps1: -{param} ValidateSet is missing {sorted(missing)} "
+                      f"(present in live cfg_enum {enum_name!r} but not the PS ValidateSet)")
+        if extra:
+            out.append(f"Escalation.ps1: -{param} ValidateSet has {sorted(extra)} which is not in "
+                      f"live cfg_enum {enum_name!r} — stale or renamed")
+    return out
+
+
 def find_unclassified_active_steps(conn: sqlite3.Connection) -> list[str]:
     """Every ACTIVE `cfg_step` must have `kind` set (`operations` | `utility` — the researcher's
     own classification, 2026-07-30, `migration/bootstrap_step_kind.py`). A HARD error, not a
