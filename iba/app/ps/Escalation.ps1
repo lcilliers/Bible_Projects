@@ -15,9 +15,10 @@
     them. State-derivation and field-requirement rules are config-driven
     (`cfg_escalation_transition`/`cfg_escalation_requirement`), not hardcoded.
 
-    **`-AnsweredBy` is REQUIRED on every write action (AnswerRun/Raise/Update) — no default.** A
-    silent `'Researcher'` default previously misattributed >=39 history rows to the wrong party in
-    one session; there is no safe default for "who is actually running this command."
+    **`-AnsweredBy` is REQUIRED on every write action (AnswerRun/Raise/Update/Correction) — no
+    default.** A silent `'Researcher'` default previously misattributed >=39 history rows to the
+    wrong party in one session; there is no safe default for "who is actually running this
+    command."
 
     **Two shapes, two vocabularies, one mechanism** (deliberately not unified — they answer
     different questions):
@@ -98,6 +99,19 @@
                         remit). An Update carrying -Comment/-Context/-Tried is refused outright if
                         the resulting state would still be 'raised' (D26) — -State in-progress (or
                         similar) first.
+    -Action Correction   ★ ERROR CORRECTION ONLY (escalation #774, 2026-08-21) — NOT a normal
+                        workflow action, do not use for ordinary changes (use -Action Update for
+                        those; a runtime warning prints on every call as a reminder). A copy of
+                        Update that works on an item in ANY state, including closed/completed
+                        (Update structurally refuses those), and can set -ShortDescription (Update
+                        has no such parameter — the title is otherwise immutable after Raise,
+                        §4.7/below). state/next_action are taken EXACTLY as given, never
+                        auto-derived via cfg_escalation_transition — omit them and the item's
+                        current state/assignment carry forward unchanged, the normal case (most
+                        corrections fix content, not workflow position). -FromId still checks
+                        exists/not_self, but accepts -1 (escalation #773 — "checked, no
+                        discoverable spawn parent", deliberately non-falsy so it reads as genuinely
+                        set, not the same as never having checked).
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
@@ -115,12 +129,14 @@
     .\Escalation.ps1 -Action Update -Id 741 -NextAction approved -AnsweredBy Researcher -Resolution "confirmed and fixed; re-ran clean"
 .EXAMPLE
     .\Escalation.ps1 -Action Update -Id 741 -NextAction reject -State withdraw -AnsweredBy Researcher -Comment "superseded by #900"
+.EXAMPLE
+    .\Escalation.ps1 -Action Correction -Id 741 -ShortDescription "corrected title" -AnsweredBy Researcher -Comment "original title had a typo"
 #>
 
 [CmdletBinding(PositionalBinding = $false)]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('List', 'History', 'AnswerRun', 'Raise', 'Update')]
+    [ValidateSet('List', 'History', 'AnswerRun', 'Raise', 'Update', 'Correction')]
     [string] $Action,
     [int] $Id,
     [string] $RunId,
@@ -135,9 +151,15 @@ param(
     [ValidateSet('Claude', 'Researcher')] [string] $AssignedTo,
     [ValidateSet('task', 'run_error', 'issue', 'notice', 'config')] [string] $Type = 'task',
     [string] $Source = 'researcher',
-    [ValidateSet('on-hold', 'in-progress', 'closed', 'withdraw', 'supersede')] [string] $State,
+    # -Action Correction (escalation #774) can set state to ANY value, not just the 5 Update
+    # allows explicitly (raised/re-assigned/completed are normally system-derived for Update, but
+    # a Correction has to be able to fix any of them directly) -- widened here rather than a
+    # parallel duplicate parameter, since Update's own explicit-state precedence (D-fix #762) is
+    # unaffected either way.
+    [ValidateSet('raised', 'in-progress', 'on-hold', 're-assigned', 'closed', 'withdraw', 'supersede', 'completed')] [string] $State,
     [string] $RelatedActivity,
-    [int] $FromId
+    [int] $FromId,
+    [string] $ShortDescription
 )
 
 Set-StrictMode -Version Latest
@@ -251,6 +273,32 @@ switch ($Action) {
             python -m iba.app.lib.escalation update $Id @flags $Comment
         } else {
             python -m iba.app.lib.escalation update $Id @flags
+        }
+    }
+    'Correction' {
+        if (-not $Id) {
+            Write-Host "Correction needs -Id." -ForegroundColor Yellow
+            exit 1
+        }
+        if (-not $AnsweredBy) {
+            Write-Host "Correction needs -AnsweredBy Claude|Researcher -- no default." -ForegroundColor Yellow
+            exit 1
+        }
+        Write-Host "  ** Correction is for ERROR CORRECTION ONLY (escalation #774) -- fixing something already recorded wrong, not normal workflow. Use -Action Update for ordinary changes. **" -ForegroundColor Yellow
+        $flags = @("--originator=$AnsweredBy")
+        if ($ShortDescription) { $flags += "--short-description=$ShortDescription" }
+        if ($NextAction) { $flags += "--next-action=$NextAction" }
+        if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
+        if ($State) { $flags += "--state=$State" }
+        if ($Resolution) { $flags += "--resolution=$Resolution" }
+        if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
+        if ($Tried) { $flags += "--tried=$Tried" }
+        if ($FromId) { $flags += "--from-id=$FromId" }
+        if ($Context) { $flags += "--context=$Context" }
+        if ($Comment) {
+            python -m iba.app.lib.escalation correction $Id @flags $Comment
+        } else {
+            python -m iba.app.lib.escalation correction $Id @flags
         }
     }
 }

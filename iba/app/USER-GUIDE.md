@@ -345,7 +345,7 @@ The old duplicate/typo check (an existing word already holding all of the new wo
 kept as a signal, not removed — it now surfaces as a note in that same `ok` line (`-- POSSIBLE
 DUPLICATE: ...`), logged by the engine, not a blocking question.
 
-### 4.6 The four actions that exist today
+### 4.6 The five actions that exist today
 
 **List/History now dispatch through `run.py`** (register v9, D4/D16/D23, 2026-08-21) — work package
 `escalation-reporting`, steps `escalation.list`/`escalation.history` — instead of `Escalation.ps1`
@@ -385,6 +385,15 @@ iba\app\ps\Escalation.ps1 -Action Raise -Question "Short Title, <=60 Chars" -Com
 iba\app\ps\Escalation.ps1 -Action Update -Id <id> -AnsweredBy Claude|Researcher [-NextAction ready_for_approval|approved|reject|revise|noted|review] [-AssignedTo Claude|Researcher] [-State on-hold|in-progress|closed|withdraw|supersede] [-Resolution "..."] [-Tried "..."] [-RelatedActivity "..."] [-Comment "..."] [-Context "..."]
 # -Comment must be passed with the -Comment flag, never as a bare trailing argument -- positional
 # binding is off, so an unflagged argument errors instead of silently landing on the wrong parameter.
+
+# ★ ERROR CORRECTION ONLY (escalation #774, 2026-08-21) -- NOT a normal workflow action, do not
+# use this for ordinary changes (use -Action Update above for those). A copy of Update that works
+# on an item in ANY state, including closed/completed (Update structurally refuses those), and can
+# set -ShortDescription (Update has no such parameter at all -- the title is otherwise immutable
+# after Raise, §4.7). state/next_action are taken EXACTLY as given, never auto-derived via
+# cfg_escalation_transition -- if you omit them, the item's current state/assignment carry forward
+# unchanged, which is the normal case: most corrections fix content, not workflow position.
+iba\app\ps\Escalation.ps1 -Action Correction -Id <id> -AnsweredBy Claude|Researcher [-ShortDescription "corrected title, <=60 chars"] [-NextAction ...] [-AssignedTo Claude|Researcher] [-State raised|in-progress|on-hold|re-assigned|closed|withdraw|supersede|completed] [-Resolution "..."] [-Tried "..."] [-RelatedActivity "..."] [-FromId <id-or--1>] [-Comment "..."] [-Context "..."]
 ```
 
 `-Action Raise`'s `-Question`/`-Comment` are stored **verbatim** — they don't get reworded or have
@@ -407,11 +416,27 @@ retired outright, not replaced (§4.5).
 
 ### 4.7 Correcting a wrong title, or superseding an item entirely
 
-`short_description` can't be edited after Raise. If it's wrong, or an item needs to be replaced by
-newer, better-scoped work: raise a new item with the correct title and `-RelatedActivity` naming
-the old one ("supersedes #900"), then update the OLD item with `-NextAction reject -State supersede
--Comment "superseded by #901 — <why>"`. A `-Action History` request on either id then shows both
-items together, in full, as one thread (§4.1).
+`short_description` can't be edited via `-Action Update` — but it CAN via `-Action Correction`
+(§4.6, escalation #774), which exists exactly for this: `-Action Correction -Id <id>
+-ShortDescription "the real title" -AnsweredBy ... -Comment "why"`. Use this for a genuine mistake
+(a typo, an over-long title the raise-time guardrail should have caught but predates it, a title
+that turns out to describe the wrong thing) — it's still the SAME item, same history thread, just
+with a corrected fact recorded on top (a new version, old versions untouched).
+
+Superseding is a DIFFERENT situation — not a correction, a replacement: the item needs to be
+replaced by newer, better-scoped work, not just have its title fixed. Raise a new item with the
+correct title and `-RelatedActivity` naming the old one ("supersedes #900"), then update the OLD
+item with `-NextAction reject -State supersede -Comment "superseded by #901 — <why>"`. A
+`-Action History` request on either id then shows both items together, in full, as one thread
+(§4.1).
+
+**`from_id` sentinel** (escalation #773, 2026-08-21): a `related_activity`-carrying item that was
+audited and genuinely has no discoverable single spawn parent gets `-FromId -1`, not left `NULL` —
+`-1` is deliberately non-falsy so every check that reads `from_id` (the D15 exception sections,
+the pairing requirement) can tell "checked, none" apart from "never checked." No real escalation id
+is negative, so it can never collide with a genuine reference. `-1` is set via `-Action Correction`
+in practice, since most items needing this audit are already closed/completed by the time the gap
+is found.
 
 ---
 

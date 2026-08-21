@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-21T16:04:45Z |
+| generated_at | 2026-08-21T15:19:45Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -45,7 +45,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-1. GOVERNANCE.md was last modified 2026-08-21T15:35:57Z, before the newest applied cfg_change_detail row (2026-08-21T16:04:17Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+1. GOVERNANCE.md was last modified 2026-08-21T14:33:52Z, before the newest applied cfg_change_detail row (2026-08-21T15:19:20Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -121,7 +121,7 @@ _(none)_
 | engine_run_log | engine/run_log.py | engine_run_log/word_run_state write helpers. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_softdelete | engine/softdelete.py | Shared soft-delete cascade helpers (H1-H3, H5). -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_span_filter | engine/span_filter.py | STEP masterSearch HTML span filtering (Sec5.2 v4). -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
-| escalation | iba/app/lib/escalation.py | escalation.py -- util.escalation. The authoritative record of open items in the project: errors, issues, and building tasks. All runtime errors are reported in it; both Claude and Researcher record emerging issues, tasks, followups as feedback or to get feedback. It pauses a running process and allows it to resume at resume_point when answered (dispatcher-tied), or tracks a backlog item through raise/update/correction (manual -- correction is error-correction only, escalation #774). Five types (task/issue/notice/run_error/config), each a distinct shape of life -- see USER-GUIDE.md sec4. | ✓ |  |  |
+| escalation | iba/app/lib/escalation.py | escalation.py -- util.escalation. The authoritative record of open items in the project: errors, issues, and building tasks. All runtime errors are reported in it; both Claude and Researcher record emerging issues, tasks, followups as feedback or to get feedback. It pauses a running process and allows it to resume at resume_point when answered (dispatcher-tied), or tracks a backlog item through raise/update (manual). Five types (task/issue/notice/run_error/config), each a distinct shape of life -- see USER-GUIDE.md sec4. | ✓ |  |  |
 | fix_from_id_closed_items | iba/app/migration/fix_from_id_closed_items_20260821.py | One-off data repair: escalation #767 v3 -- corrects from_id on 10 closed/completed escalation rows where the correct spawn parent was discoverable from the item's own recorded text; update() cannot touch closed items, so this calls _snapshot() directly. | ✓ | ✓ | one-off migration script -- calls the real escalation._snapshot() mechanism directly, same class as fix_escalation_short_description_and_columns_20260820.py |
 | iba_prototype_build_layers | iba/prototype/build_layers.py | build_layers.py — the STEP pull as SEARCH LAYERS, one table per layer. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | iba_prototype_build_prototype | iba/prototype/build_prototype.py | build_prototype.py — test the term -> sense -> span model against real STEP data. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
@@ -1885,7 +1885,7 @@ _one row per item, current status_ — One row per item, CURRENT STATE ONLY. NOT
 | related_activity | TEXT |  |  |  |  | free-text information field linking this item to any other item(s) that relate to it -- plain text at this stage, not a structural link table (plan v3 §9.2, decided). | escalation.raise_new/update |
 | raised_at | TEXT |  | ✓ |  |  | first creation datetime -- set once, immutable | escalation.raise_new |
 | answered_at | TEXT |  |  |  |  | mirrors the latest escalation_history row's timestamp | escalation.update |
-| from_id | INTEGER |  |  |  | escalation.id | The id of the escalation this item builds on -- optional, MUTABLE (settable on Raise or Update alike, D14, register v7's own recorded wording -- corrected 2026-08-21, escalation #763). Paired with related_activity describing the relationship. State of the referenced item is irrelevant -- any state is a valid target. SENTINEL -1 (escalation #773, 2026-08-21): a related_activity-carrying item audited and confirmed to have no discoverable single spawn parent -- deliberately non-falsy so it is distinguishable from NULL/never-checked everywhere from_id is read. Set via -Action Correction (#774), since most items needing this audit are already closed/completed. | escalation.raise_new |
+| from_id | INTEGER |  |  |  | escalation.id | The id of the escalation this item builds on -- optional, MUTABLE (settable on Raise or Update alike, D14, register v7's own recorded wording -- corrected 2026-08-21, escalation #763, after being built immutable-after-Raise the first time, contradicting the researcher's own recorded instruction, escalation #6 v5). Paired with related_activity describing the relationship. State of the referenced item is irrelevant -- any state is a valid target. | escalation.raise_new |
 
 ### escalation_history
 _one row per update to an item, ever_ — One row per update to an item, ever -- append-only, a TRUE DELTA per version (most fields NULL per row unless that version's own transaction set them), not a full snapshot. Envelope fields (state/next_action/next_action_assigned_to/originator/answered_at) always populated; content fields (comment/context/resolution/tried/short_description/related_activity) NULL unless touched this version. escalation is the current-state materialisation of the latest row here, not the reverse.
@@ -1911,7 +1911,7 @@ dedup key: `escalation_id, version`
 | related_activity | TEXT |  |  |  |  | snapshot of escalation.related_activity at this version |  |
 | raised_at | TEXT |  |  |  |  | delta, structural: only ever set at v1 (the item's true creation time; never changes) -- was wrongly NOT NULL every version under the retired full-snapshot design |  |
 | answered_at | TEXT |  | ✓ |  |  | THIS row's own write timestamp -- the real per-update datetime | escalation.raise_new/update |
-| from_id | INTEGER |  |  |  | escalation.id | Delta: NULL unless THIS versions own transaction set/changed from_id -- mutable (D14, corrected 2026-08-21, escalation #763), not structural/immutable like run_id/source/at_step/type/raised_at. -1 (escalation #773) is a legitimate value here too -- the checked, no parent sentinel, not a broken reference. | escalation.raise_new |
+| from_id | INTEGER |  |  |  | escalation.id | Delta: NULL unless THIS version's own transaction set/changed from_id -- mutable (D14, corrected 2026-08-21, escalation #763), not structural/immutable like run_id/source/at_step/type/raised_at. | escalation.raise_new |
 
 ### cfg_escalation_transition
 _one row per (shape, priority) state-derivation rule_ — The escalation state-derivation rule engine, evaluated in priority order per shape -- replaces the hardcoded if/elif chain _derive_state()/_terminal_state_for() used to be. Built 2026-08-20 as part of the post-reset rebuild (escalation-rebuild-design-v1).

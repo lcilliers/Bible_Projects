@@ -73,6 +73,15 @@ CLI (module path: iba.app.lib.escalation, invoked as `python -m iba.app.lib.esca
         [--next-action=...] [--assigned-to=...] [--state=on-hold|in-progress|closed|withdraw|supersede]
         [--resolution=...] [--related-activity=...] [--tried=...] [--from-id=...]
         [comment/context words...]
+    python -m iba.app.lib.escalation correction <id> --originator=Claude|Researcher
+        [--short-description=...] [--next-action=...] [--assigned-to=...] [--state=...]
+        [--resolution=...] [--related-activity=...] [--tried=...] [--from-id=...]
+        [comment/context words...]
+        — ★ ERROR CORRECTION ONLY (escalation #774) — a copy of Update that works on ANY item state
+        (closed/completed included, unlike Update) and can touch short_description (which Update
+        never exposes). Not a workflow action: state/next_action are taken exactly as given, never
+        auto-derived, and carry forward unchanged if omitted. Use Update for every ordinary change;
+        use Correction only to fix something already recorded wrong.
 
 `--originator`/`--by` are now REQUIRED on every write verb — no default, see above.
 """
@@ -89,6 +98,13 @@ from .cfg import Cfg
 from .db import Db
 
 _OPEN_STATES = ("raised", "re-assigned", "on-hold", "in-progress")
+
+# from_id sentinel (escalation #773, researcher's decision): "checked, no discoverable spawn
+# parent" -- deliberately non-falsy (bool(-1) is True in Python, unlike 0) so it is genuinely
+# distinguishable from NULL/unset everywhere from_id is read: _find_dangling/_find_cycles/
+# _find_mismatched_pairing/the paired-requirement 'from_id_set' test/the downward-chain walk. No
+# real escalation id is negative, so it can never collide with a genuine reference.
+_NO_PARENT_SENTINEL = -1
 
 # every business column on `escalation` / `escalation_history` (id/version/escalation_id excluded
 # -- those are structural, not part of a snapshot's business content)
@@ -299,7 +315,8 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
             if field_val == "raised":
                 raise ValueError(r["message"])
         elif kind == "exists":                                 # D14
-            if field_val and not db.rows("SELECT 1 FROM escalation WHERE id=?", (field_val,)):
+            if (field_val and field_val != _NO_PARENT_SENTINEL
+                    and not db.rows("SELECT 1 FROM escalation WHERE id=?", (field_val,))):
                 raise ValueError(r["message"])
         elif kind == "not_self":                               # D14
             if field_val and self_id is not None and field_val == self_id:
@@ -589,6 +606,75 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     return f"escalation #{escalation_id} v{merged['version']} -> state={new_state!r}"
 
 
+def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str | None = None,
+              comment: str | None = None, context: str | None = None, tried: str | None = None,
+              resolution: str | None = None, related_activity: str | None = None,
+              state: str | None = None, next_action: str | None = None,
+              next_action_assigned_to: str | None = None, from_id: int | None = None,
+              originator: str) -> str:
+    """Correction — escalation #774 v2, researcher verbatim: "create a copy of update transaction
+    as Correction and allow the Correction transaction to update any column in any state... ensure
+    that this is update in the documentation and that correction is stated as only to be used for
+    error correction."
+
+    ★ ERROR CORRECTION ONLY — not a normal workflow action. Use Update for every ordinary change
+    (comments, decisions, reassignment, state changes); use Correction only to fix something
+    already recorded wrong (a wrong from_id, a bad title, a typo in a resolution). Correction does
+    NOT advance an item through its lifecycle — state/next_action are taken EXACTLY as given, never
+    auto-derived via cfg_escalation_transition, and default to the item's CURRENT values (carried
+    forward unchanged) when omitted, which is the normal case: most corrections touch content, not
+    workflow.
+
+    Differs from `update()` in exactly the two ways the researcher asked for, nothing more:
+    1. No `_OPEN_STATES` gate — works on closed/completed/withdraw/supersede items, which `update()`
+       structurally refuses (escalation #774's own finding; 9 of the 10 `from_id` repairs in #767
+       needed a one-off migration script for exactly this reason — this replaces that class of
+       workaround with a real, sanctioned mechanism).
+    2. `short_description` is a real parameter — `update()` has none at all (escalation #10's
+       finding; `_REPLACE_COLS` already lists it as an eligible delta column, nothing before this
+       ever wired it through). Still subject to the same title-shape spec as Raise (#759's
+       guardrail) — a Correction cannot write an over-length/dashed/multi-line title either.
+
+    Deliberately NOT copied from `update()`: the D25 same-approval-authority check and the D26
+    raised-state content guard — both are workflow-transition safeguards, not data-integrity ones,
+    and a correction has to be able to fix ANY state (including a `raised` item with a wrong
+    title) without being routed through the two-stage approval machinery. The `from_id`
+    exists/not_self checks (D14) DO still apply — a correction should never introduce a genuinely
+    broken reference — but `-1` (escalation #773's sentinel, "checked, no discoverable parent") is
+    accepted without an `exists` lookup, since it is deliberately not a real escalation id."""
+    cur = _current(db, escalation_id)
+    if not cur["run_id"].startswith("MANUAL-"):
+        return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
+               f"manual -- Correction only applies to manual items")
+    who = _check_assignee(db, originator)
+
+    if from_id is not None and from_id != _NO_PARENT_SENTINEL:
+        if from_id == escalation_id:
+            raise ValueError(f"from_id cannot equal this item's own id ({escalation_id})")
+        if not db.rows("SELECT 1 FROM escalation WHERE id=?", (from_id,)):
+            raise ValueError(f"from_id={from_id} does not reference an existing escalation")
+
+    if short_description is not None:
+        title_error = _title_shape_error(short_description)
+        if title_error:
+            raise ValueError(title_error)
+
+    resolved_state = _check_state(db, state) if state is not None else cur["state"]
+    resolved_next_action = (_check_next_action_manual(db, next_action) if next_action is not None
+                            else cur["next_action"])
+    resolved_assigned_to = (_check_assignee(db, next_action_assigned_to, required=False)
+                            or cur["next_action_assigned_to"])
+
+    merged = _snapshot(cfg, db, escalation_id,
+                       deltas={"comment": comment, "context": context, "tried": tried,
+                              "resolution": resolution, "related_activity": related_activity,
+                              "from_id": from_id, "short_description": short_description},
+                       envelope={"state": resolved_state, "next_action": resolved_next_action,
+                                "next_action_assigned_to": resolved_assigned_to},
+                       originator=who)
+    return f"escalation #{escalation_id} v{merged['version']} CORRECTED -> state={resolved_state!r}"
+
+
 # ── reports ───────────────────────────────────────────────────────────────────────────────────
 def _gist(raw, width: int = 80) -> str:
     if not raw:
@@ -628,8 +714,11 @@ def _find_cycles(graph: dict[int, dict]) -> list[list[int]]:
 
 
 def _find_dangling(graph: dict[int, dict]) -> list[tuple[int, int]]:
-    """from_id set but pointing at an id that doesn't exist."""
-    return [(i, r["from_id"]) for i, r in graph.items() if r["from_id"] and r["from_id"] not in graph]
+    """from_id set but pointing at an id that doesn't exist. Excludes _NO_PARENT_SENTINEL (-1,
+    escalation #773) -- a deliberate "checked, no discoverable spawn parent" marker, not a broken
+    reference; flagging it here would recreate exactly the noise #773 was raised to avoid."""
+    return [(i, r["from_id"]) for i, r in graph.items()
+           if r["from_id"] and r["from_id"] != _NO_PARENT_SENTINEL and r["from_id"] not in graph]
 
 
 def _find_mismatched_pairing(graph: dict[int, dict]) -> list[int]:
@@ -927,6 +1016,24 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
                                         "iba/app/reports")) / f"escalation-{argv[1]}-history.md"
         out = write_history_report(cfg, db, int(argv[1]), path)
         print(f"  -> {out}")
+    elif len(argv) >= 2 and argv[0] == "correction":
+        rest, next_action = _extract_flag(argv[2:], "next-action")
+        rest, assigned_to = _extract_flag(rest, "assigned-to")
+        rest, state = _extract_flag(rest, "state")
+        rest, resolution = _extract_flag(rest, "resolution")
+        rest, related_activity = _extract_flag(rest, "related-activity")
+        rest, tried = _extract_flag(rest, "tried")
+        rest, originator = _extract_flag(rest, "originator")
+        rest, context = _extract_flag(rest, "context")
+        rest, from_id = _extract_flag(rest, "from-id")
+        rest, short_description = _extract_flag(rest, "short-description")
+        comment = " ".join(rest) or None
+        print("  " + correction(cfg, db, int(argv[1]), short_description=short_description,
+                                next_action=next_action, next_action_assigned_to=assigned_to,
+                                comment=comment, context=context, tried=tried,
+                                resolution=resolution, related_activity=related_activity,
+                                state=state, from_id=int(from_id) if from_id else None,
+                                originator=_require_flag(originator, "originator")))
     else:
         print("usage: python -m iba.app.lib.escalation list"
              " | history <id>"
@@ -937,7 +1044,11 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
              "[--context=...] [--from-id=...]"
              " | update <id> --originator=Claude|Researcher [--next-action=...] [--assigned-to=...] "
              "[--state=...] [--resolution=...] [--related-activity=...] [--tried=...] "
-             "[--context=...] [--from-id=...] [comment...]")
+             "[--context=...] [--from-id=...] [comment...]"
+             " | correction <id> --originator=Claude|Researcher — ERROR CORRECTION ONLY, works in "
+             "any state, unlike update: [--short-description=...] [--next-action=...] "
+             "[--assigned-to=...] [--state=...] [--resolution=...] [--related-activity=...] "
+             "[--tried=...] [--context=...] [--from-id=...] [comment...]")
     db.close()
     return 0
 

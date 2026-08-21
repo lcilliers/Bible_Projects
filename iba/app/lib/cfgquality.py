@@ -111,6 +111,12 @@ def find_settings_needing_justification(conn: sqlite3.Connection) -> list[str]:
 # Add a module here only after checking its live rows the same way, not by assumption.
 _NARRATIVE_MODULES = frozenset({"backup"})
 
+# module='database' keys of the shape `database.<name>.path` -- read via Cfg.database_path()'s
+# `self.setting(f"database.{name}.path")`, an f-string-composed key the literal-string scan in
+# find_orphan_configs cannot see. Narrowly matched against this exact known indirection (see the
+# call-site check where this is used), not a blanket module exemption. Escalation #748.
+_DATABASE_PATH_KEY = re.compile(r"^database\.[^.]+\.path$")
+
 
 def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> list[str]:
     """cfg_setting keys / cfg_enum groups without REAL usage — configs the app would not actually
@@ -201,6 +207,23 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
             continue
         used = any((f'"{key}"' in text or f"'{key}'" in text) and ".setting(" in text
                    for text in per_file.values())
+        if not used and module == "database" and _DATABASE_PATH_KEY.match(key):
+            # Escalation #748, 2026-08-21: Cfg.database_path() (lib/cfg.py) is the real, live
+            # consumer -- `self.setting(f"database.{name}.path")`, an f-string-composed key, so
+            # the literal key text never appears in source for the same-file/same-call-site scan
+            # above to find. Same class of indirection the validation.py dict-lookup case already
+            # documents in this function's docstring, just via string interpolation instead of a
+            # dict. Verified live both ways: (a) the exact call-site text is still present in
+            # cfg.py, (b) init.py's startup path-integrity check (step 3b) genuinely calls
+            # database_path() for every cfg.enum('project_database') member, applying the value,
+            # not just reading and discarding it. Recurred as a false positive on every validate
+            # run since escalation #727 added the real consumer without ever teaching this checker
+            # the new call shape -- narrowly matched (module='database' AND the exact call-site
+            # text), not a blanket module exemption, so a genuinely new orphan under module=
+            # 'database' would still be caught.
+            cfgpy = per_file.get(app_root / "lib" / "cfg.py", "")
+            if 'self.setting(f"database.{name}.path")' in cfgpy:
+                used = True
         if not used:
             orphans.append(f"cfg_setting {key!r} (key not found together with a "
                            f"cfg.setting(...) call in any one file)")

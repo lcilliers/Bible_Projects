@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-21T16:04:45Z |
+| generated_at | 2026-08-21T13:53:40Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -32,8 +32,9 @@
 
 _Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s escalation, which references this section by path rather than repeating it. Not errors — advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every category below) so any one item can be referenced by number, e.g. "item 7" — the numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/already-decided records (inactive configs) are §1, not here — everything below is something that actually needs your judgement.
 
-**Orphan configs** (0) — a `cfg_setting`/`cfg_enum` not referenced by any code:
-_(none)_
+**Orphan configs** (2) — a `cfg_setting`/`cfg_enum` not referenced by any code:
+1. cfg_setting 'database.iba.path' (key not found together with a cfg.setting(...) call in any one file)
+2. cfg_setting 'database.bible_research.path' (key not found together with a cfg.setting(...) call in any one file)
 
 **Settings needing justification** (0) — module already has its own dedicated table:
 _(none)_
@@ -44,8 +45,8 @@ _(none)_
 **Stale filled_by** (0) — cfg_column.filled_by names a now-inactive step:
 _(none)_
 
-**Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-1. GOVERNANCE.md was last modified 2026-08-21T15:35:57Z, before the newest applied cfg_change_detail row (2026-08-21T16:04:17Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+**Stale governance docs** (0) — GOVERNANCE.md older than the newest applied config change:
+_(none)_
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -83,11 +84,10 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**400** registered module(s) — **23** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **358** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**397** registered module(s) — **20** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **358** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
-| add_ps_scripts_dispatch_through_run_py_rule | iba/app/migration/add_ps_scripts_dispatch_through_run_py_rule_20260821.py | One-off migration: escalation #8 -- adds cfg_behaviour_rule (development, every-active-ps-script-dispatches-through-run-py). | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
 | behaviour | iba/app/lib/behaviour.py | Read-only query/report front end for cfg_behaviour_class/cfg_behaviour_rule (escalations #715/#732/#733) -- writes the live rule set to a report path. Content is written by the bootstrap_behaviour_rules_* migration scripts, never by this module. | ✓ |  |  |
 | bootstrap_behaviour_rules | iba/app/migration/bootstrap_behaviour_rules_v1_20260818.py | One-off migration: creates cfg_behaviour_class/cfg_behaviour_rule and seeds cycle-1 ('the obvious ones') content -- GR-DB-001/GR-PROC-001/GR-REF-001/GR-PROG-009 reworded as definitive statements. Escalation #715. | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3 (creates + populates them), same class as cfgload.py, already exempted from usage-checks for the same reason. |
 | bootstrap_behaviour_rules_cycle2 | iba/app/migration/bootstrap_behaviour_rules_cycle2_v1_20260818.py | One-off migration: escalation #715 cycle 2 -- seeds cfg_behaviour_rule content from the Workflow/Claude_API, Workflow/SQLite, Workflow/Obsidian usage guides (2026-08-15, never previously folded in). Found unregistered during cycle 3's sweep (governance.new_utility_registration_timing gap) and registered retroactively. | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
@@ -98,7 +98,6 @@ _(none)_
 | cfgload | iba/app/lib/cfgload.py | cfgload.py — load the JSON SEEDS into the config tables in the DATABASE. | ✓ | ✓ | writes the seed INTO the cfg_* tables (creates + populates them) — same class as migration/ scripts, already excluded from usage-checks for the same reason. |
 | cfgquality | iba/app/lib/cfgquality.py | cfgquality.py — shared config-quality checks, used by BOTH handlers/configmaint.py (the | ✓ | ✓ | works directly against a raw sqlite3.Connection (not a Cfg wrapper), by design — usable from both configmaint.py (has a Cfg) and cfgreport.py (doesn't); queries cfg_setting/cfg_enum via raw SQL, not Cfg's convenience methods. Found 2026-07-30 only after fixing this same check's own text-collision false negative for this file — same class of legitimate zero as the other 11, not an oversight. |
 | cfgreport | iba/app/lib/cfgreport.py | cfgreport.py — full-visibility config report, generated FROM the config store. | ✓ | ✓ | generates reports by querying cfg_* tables directly; the paths it needs (out_path/db_path) are resolved by its caller (configmaint.report), not read here. |
-| clear_content_index | iba/app/migration/clear_content_index_20260821.py | One-off migration: escalation #758 -- empties content_index + content_index_scan (the current design judged unsupportable, decommissioned pending redesign #770). | ✓ | ✓ | one-off migration script -- writes directly into content_index/content_index_scan via raw sqlite3, same class as cfgload.py |
 | clusterassign | iba/app/lib/clusterassign.py | cluster.assign -- allocates strongs to M-code clusters | ✓ |  |  |
 | clusterreport | iba/app/lib/clusterreport.py | report.cluster -- cluster content/quality report | ✓ |  |  |
 | contentindex | iba/app/lib/contentindex.py | contentindex.py — file-content concordance search over .md files, keyed on Strong's numbers/glosses/words sourced from strong/word_registry. Round 2 of the manifest + content-search plan; file_manifest (round 1) is its coverage baseline. | ✓ |  |  |
@@ -121,8 +120,7 @@ _(none)_
 | engine_run_log | engine/run_log.py | engine_run_log/word_run_state write helpers. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_softdelete | engine/softdelete.py | Shared soft-delete cascade helpers (H1-H3, H5). -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_span_filter | engine/span_filter.py | STEP masterSearch HTML span filtering (Sec5.2 v4). -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
-| escalation | iba/app/lib/escalation.py | escalation.py -- util.escalation. The authoritative record of open items in the project: errors, issues, and building tasks. All runtime errors are reported in it; both Claude and Researcher record emerging issues, tasks, followups as feedback or to get feedback. It pauses a running process and allows it to resume at resume_point when answered (dispatcher-tied), or tracks a backlog item through raise/update/correction (manual -- correction is error-correction only, escalation #774). Five types (task/issue/notice/run_error/config), each a distinct shape of life -- see USER-GUIDE.md sec4. | ✓ |  |  |
-| fix_from_id_closed_items | iba/app/migration/fix_from_id_closed_items_20260821.py | One-off data repair: escalation #767 v3 -- corrects from_id on 10 closed/completed escalation rows where the correct spawn parent was discoverable from the item's own recorded text; update() cannot touch closed items, so this calls _snapshot() directly. | ✓ | ✓ | one-off migration script -- calls the real escalation._snapshot() mechanism directly, same class as fix_escalation_short_description_and_columns_20260820.py |
+| escalation | iba/app/lib/escalation.py | escalation.py -- util.escalation. The authoritative record of open items in the project: errors, issues, and building tasks. All runtime errors are reported in it; both Claude and Researcher record emerging issues, tasks, followups as feedback or to get feedback. It pauses a running process and allows it to resume at resume_point when answered (dispatcher-tied), or tracks a backlog item through raise/update (manual). Five types (task/issue/notice/run_error/config), each a distinct shape of life -- see USER-GUIDE.md sec4. | ✓ |  |  |
 | iba_prototype_build_layers | iba/prototype/build_layers.py | build_layers.py — the STEP pull as SEARCH LAYERS, one table per layer. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | iba_prototype_build_prototype | iba/prototype/build_prototype.py | build_prototype.py — test the term -> sense -> span model against real STEP data. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | iba_prototype_export_md | iba/prototype/export_md.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). export_md.py — render the prototype's JSON "tables" as markdown for review. |  |  |  |
@@ -644,7 +642,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | report | report.whole_book_read_naming_pattern | WA-{book}-whole-book-read.md | filename pattern for report.whole_book_read ({book} substituted); stable scheme — reportkit archives the prior version on regenerate, same convention report.passage_debate_naming_pattern already uses |
 | report | report.word_registry_span_output_dir | iba/app/verse-analysis/word_registry | base folder for report.word_registry_span output — one file per registry word |
 | retention | retention.report_path | iba/app/reports/log-retention.md | where the run/escalation/validation_result log-retention & run-health report is written |
-| retention | retention.snapshot_keep_count | 5 | how many pre-run DB snapshots to keep (oldest pruned first) -- lib/dbsnapshot.py, wired into run.py so every NEW run gets a rollback point; built 2026-07-22 after a candidate.load bug corrupted 1029 candidate_seed rows with no fine-grained rollback available |
+| retention | retention.snapshot_keep_count | 20 | how many pre-run DB snapshots to keep (oldest pruned first) -- lib/dbsnapshot.py, wired into run.py so every NEW run gets a rollback point; built 2026-07-22 after a candidate.load bug corrupted 1029 candidate_seed rows with no fine-grained rollback available |
 | step | discovery.particle_pattern | ^[HG]9\d{3}$ | grammar-particle codes; excluded from discovery, flagged on a span |
 | step | step.cap | 60 | STEP's hard result cap; > this triggers the forward-walk |
 | step | step.expect_gloss_contains | God | STEP preflight known-answer probe |
@@ -1885,7 +1883,7 @@ _one row per item, current status_ — One row per item, CURRENT STATE ONLY. NOT
 | related_activity | TEXT |  |  |  |  | free-text information field linking this item to any other item(s) that relate to it -- plain text at this stage, not a structural link table (plan v3 §9.2, decided). | escalation.raise_new/update |
 | raised_at | TEXT |  | ✓ |  |  | first creation datetime -- set once, immutable | escalation.raise_new |
 | answered_at | TEXT |  |  |  |  | mirrors the latest escalation_history row's timestamp | escalation.update |
-| from_id | INTEGER |  |  |  | escalation.id | The id of the escalation this item builds on -- optional, MUTABLE (settable on Raise or Update alike, D14, register v7's own recorded wording -- corrected 2026-08-21, escalation #763). Paired with related_activity describing the relationship. State of the referenced item is irrelevant -- any state is a valid target. SENTINEL -1 (escalation #773, 2026-08-21): a related_activity-carrying item audited and confirmed to have no discoverable single spawn parent -- deliberately non-falsy so it is distinguishable from NULL/never-checked everywhere from_id is read. Set via -Action Correction (#774), since most items needing this audit are already closed/completed. | escalation.raise_new |
+| from_id | INTEGER |  |  |  | escalation.id | The id of the escalation this item builds on -- optional, MUTABLE (settable on Raise or Update alike, D14, register v7's own recorded wording -- corrected 2026-08-21, escalation #763, after being built immutable-after-Raise the first time, contradicting the researcher's own recorded instruction, escalation #6 v5). Paired with related_activity describing the relationship. State of the referenced item is irrelevant -- any state is a valid target. | escalation.raise_new |
 
 ### escalation_history
 _one row per update to an item, ever_ — One row per update to an item, ever -- append-only, a TRUE DELTA per version (most fields NULL per row unless that version's own transaction set them), not a full snapshot. Envelope fields (state/next_action/next_action_assigned_to/originator/answered_at) always populated; content fields (comment/context/resolution/tried/short_description/related_activity) NULL unless touched this version. escalation is the current-state materialisation of the latest row here, not the reverse.
@@ -1911,7 +1909,7 @@ dedup key: `escalation_id, version`
 | related_activity | TEXT |  |  |  |  | snapshot of escalation.related_activity at this version |  |
 | raised_at | TEXT |  |  |  |  | delta, structural: only ever set at v1 (the item's true creation time; never changes) -- was wrongly NOT NULL every version under the retired full-snapshot design |  |
 | answered_at | TEXT |  | ✓ |  |  | THIS row's own write timestamp -- the real per-update datetime | escalation.raise_new/update |
-| from_id | INTEGER |  |  |  | escalation.id | Delta: NULL unless THIS versions own transaction set/changed from_id -- mutable (D14, corrected 2026-08-21, escalation #763), not structural/immutable like run_id/source/at_step/type/raised_at. -1 (escalation #773) is a legitimate value here too -- the checked, no parent sentinel, not a broken reference. | escalation.raise_new |
+| from_id | INTEGER |  |  |  | escalation.id | Delta: NULL unless THIS version's own transaction set/changed from_id -- mutable (D14, corrected 2026-08-21, escalation #763), not structural/immutable like run_id/source/at_step/type/raised_at. | escalation.raise_new |
 
 ### cfg_escalation_transition
 _one row per (shape, priority) state-derivation rule_ — The escalation state-derivation rule engine, evaluated in priority order per shape -- replaces the hardcoded if/elif chain _derive_state()/_terminal_state_for() used to be. Built 2026-08-20 as part of the post-reset rebuild (escalation-rebuild-design-v1).

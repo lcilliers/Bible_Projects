@@ -1963,3 +1963,96 @@ this session's live rows) has a dry run built and run
 (`iba/app/reports/escalation-rebuild-dry-run-20260821.md`) but deliberately NOT executed — the
 register's own two-phase gate ("execute — only after the dry run is reviewed and corrected") is a
 human-review checkpoint, not a step to auto-chain through.
+
+## §44. Every active PS script dispatches through `run.py` — new `cfg_behaviour_rule`, escalation #8 (2026-08-21)
+
+Researcher, on `#8` (the 2026-08-20 finding that 8 of 45 PS scripts under `iba/app/ps/` bypass
+`run.py`): "confirm that there are a governance rule that every active PS script must use run.py to
+ensure that it is recorded in the engine. If it exists, then this item can be closed down with that
+as the action, if not then create the config and then close both down."
+
+Checked live against `cfg_behaviour_rule` and this document directly, not assumed: no such rule
+existed. Rule 41 (`every-interactive-module-needs-ps-script`, §42) is the adjacent-but-different
+rule — a hand-operated module MUST have a PS script, not a PS script MUST dispatch through
+`run.py`. Created `cfg_behaviour_rule` id 43, class `development`, key
+`every-active-ps-script-dispatches-through-run-py`
+(`iba/app/migration/add_ps_scripts_dispatch_through_run_py_rule_20260821.py`).
+
+Written to be honest against live reality, not a blanket claim of compliance: the rule names two
+permanent, legitimate exceptions — (1) `Start-Iba.ps1`, necessarily, since it bootstraps what
+`run.py` itself depends on; (2) `Escalation.ps1`'s `-Action Raise/Update/AnswerRun`, a deliberate
+manual front door onto the escalation backlog, not a pipeline run (`-Action List/History` already
+dispatch through `run.py`, §43). The other 6 scripts `#8` found still bypassing `run.py`
+(`Behaviour.ps1`, `Debate-Run.ps1`'s ungoverned post-run side-call, and 5 lowercase one-off
+scripts) are real, current non-compliance — NOT retroactively fixed by the rule's existence, and
+NOT silently dropped when `#8` closes: split off as its own escalation, `#767`, for a scoping
+decision. `enforced_by`: no `configmaint.validate` scan exists yet for this rule; honestly
+recorded as unmechanised, matching this project's own convention elsewhere (e.g. rule 41).
+
+## §45. `retention.snapshot_keep_count` lowered 20 → 5 — escalation #771 (2026-08-21)
+
+Researcher, on `#771` (spawned from `#758`'s disk-space investigation — `run.py`'s `_ensure_run()`
+snapshots the full `iba.db` before every new run, unconditionally, including pure read-only
+reports): *"Set the retention of snapshots to a maximum of 5 ensure that it is maintained as
+such."* A stopgap, not the root fix — the per-step write-classification design that would let
+read-only steps skip the snapshot entirely is still open, tracked in `#771` itself.
+
+Applied via `configmaint.propose` (the sanctioned path — `cfg_setting` update, `Where
+{"key":"retention.snapshot_keep_count"}` / `Set {"value":"5"}`), approved same turn per the
+researcher's own direct instruction. "Maintained as such" taken literally, not just the config
+value: the existing snapshot directory (`iba/app/db/snapshots/`, 14 files/67.8GB — a mix of
+pre-`content_index`-clear 8.06GB snapshots and post-clear 0.66GB ones) was NOT going to self-prune
+until the next incidental `snapshot()` call happened to fire `prune()` internally — called
+`dbsnapshot.prune()` directly to enforce the new count immediately: 14 → 5 files, 67.8GB → 3.3GB.
+
+**Files:** none beyond `cfg_setting` (`retention.snapshot_keep_count`) and the snapshot directory's
+own contents.
+
+## §46. `from_id` `-1` sentinel + the `Correction` transaction — escalations #773/#774 (2026-08-21)
+
+Researcher's decisions on the two items `#767`'s full `related_activity`/`from_id` audit spawned
+(`BUILD.md` §168):
+
+- `#773`: *"Use a sentinal of -1."*
+- `#774`: *"create a copy of update transaction as Correction and allow the Correction transaction
+  to update any column in any state. ensure that this is update in the documentation and that
+  correction is stated as only to be used for error correction."*
+
+`_NO_PARENT_SENTINEL = -1` (`lib/escalation.py`) — non-falsy in Python, unlike `0`, so genuinely
+distinguishable from `NULL` wherever `from_id` is read. Wired into the write-time `exists` check
+(shared by `raise_new()`/`update()`/`correction()`) and `_find_dangling` (the D15 report check) —
+both explicitly treat `-1` as valid, not a broken reference. `cfg_column.use` corrected on both
+`escalation`/`escalation_history`'s `from_id` to document it (`configmaint.propose`).
+
+**`correction()`** — new function, `lib/escalation.py`, exposed as `-Action Correction`
+(`Escalation.ps1`) and `python -m iba.app.lib.escalation correction`. Differs from `update()` in
+exactly the two ways asked for: works on ANY item state (including closed/completed, which
+`update()` structurally refuses — `#774`'s own finding), and exposes `short_description` as a real
+parameter (`update()` has none — `#10`'s finding). Does NOT auto-derive state/next_action via
+`cfg_escalation_transition` (not a workflow action), does NOT apply the D25 authority check or the
+D26 raised-state guard (both workflow-transition safeguards, irrelevant to a data-repair
+transaction). A runtime warning prints on every invocation: *"Correction is for ERROR CORRECTION
+ONLY... Use -Action Update for ordinary changes."* `USER-GUIDE.md` §4.6/§4.7 updated in the same
+unit of work, per the researcher's explicit instruction to document it.
+
+Live-tested against real data: `#1` correctly refused (dispatcher-tied — revealed that
+dispatcher-tied items structurally cannot carry `from_id` through any front door at all, not a
+bug; `#1`/`#7` left genuinely exempt, not "no parent found"). The 17 genuinely-manual no-parent
+rows from `#767`'s audit corrected via `-Action Correction -FromId -1`, several already
+closed/completed — the open-state bypass proven live, not just in principle.
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`.
+
+## §47. `#768` closure check — 3 completeness gaps found and fixed (2026-08-21)
+
+Researcher, on `#768`: *"is the actual configs and code, and guides now updated with the completion
+of related_activity and from_id. Are there any confusion on using it still."* Checked live, found
+real gaps: `Escalation.ps1`'s own top-of-file help block never mentioned `-Action Correction`;
+`cfg_escalation_requirement`'s `from_id` `exists`-check messages (raise + update) didn't document
+the `-1` sentinel exception; `cfg_utility.escalation.purpose` still said "raise/update", missing the
+third verb. All three fixed (`BUILD.md` §171 has the detail; the two config text changes via
+`configmaint.propose`). `#768`'s own original subject — the mismatched-pairing check only catching
+one direction — remains genuinely open, not resolved by this pass, still awaiting the researcher's
+choice of fix-shape.
+
+**Files:** `iba/app/ps/Escalation.ps1`.

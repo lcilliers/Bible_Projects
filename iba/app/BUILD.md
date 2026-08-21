@@ -9226,3 +9226,257 @@ its resolution. `GOVERNANCE.md` §43 point 6 and `USER-GUIDE.md` corrected in th
 
 **Files:** `iba/app/lib/escalation.py`, `iba/app/migration/fix_from_id_mutability_20260821.py`,
 `iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`, `iba/app/GOVERNANCE.md`.
+
+## 165. `configmaint.validate`'s orphan-config checker false-flagged `database.*.path` every run — fixed at the root, escalation #748 (2026-08-21)
+
+Working the escalation backlog assigned to Claude (researcher: "There is a number of in progress
+reviews assigned to you to proceed with"). `#748` was blocked on `#756`/`#760` (both `configmaint`-
+sourced, `module_blocking`); once the researcher approved both, re-ran `configmaint.validate` for
+real as the item's own plan said to.
+
+Re-run raised a fresh escalation (`#766`) for the same 2 orphan findings `#735` had originally
+flagged: `cfg_setting 'database.iba.path'` / `'database.bible_research.path'` — "key not found
+together with a `cfg.setting(...)` call in any one file". Investigated rather than re-raising
+again: both settings ARE live-read, via `Cfg.database_path()`'s `self.setting(f"database.{name}.path")`
+(`lib/cfg.py`) — an f-string-composed key, so the literal key text never appears anywhere in
+source for `find_orphan_configs`'s same-file/same-literal scan to find. Confirmed genuinely
+applied, not just read-and-discarded: `init.py` step 3b calls `database_path()` for every
+`cfg.enum('project_database')` member at every startup, a real drift check against `DB_PATH`.
+
+This is a checker false positive, not a config gap — and it has recurred on every `configmaint.
+validate` run since escalation `#727` added the real consumer, because the checker itself was
+never taught the new call shape.
+
+**Fixed at the root** (`iba/app/lib/cfgquality.py`, `find_orphan_configs`): added a narrow,
+explicit exception — `module='database'` AND key matches `database.<name>.path` AND the exact
+known call-site text is present in `lib/cfg.py` — not a blanket module exemption, so a genuinely
+new orphan under `module='database'` would still be caught. Verified live: re-ran
+`configmaint.validate` before the fix (raised `#766` again, same 2 findings), answered `#766`
+`Noted` with the root-cause explanation, applied the fix, re-ran again — genuinely clean, 0
+orphans, no escalation raised.
+
+`#748` staged `ready_for_approval` with the full trace. `#750` (a second item from the same
+`#735` follow-up batch, `cfg_write_grant` orphan for `writer='run'`) investigated in the same
+pass — already `inactive=1`, recommended withdraw as redundant. `#749` (formal closure of
+`escalations_old #677`) and `#754` (positional-binding fix) validated live and staged. `#755`
+(escalation config review) double-checked against live config: 3 of 4 findings genuinely fixed
+(`cfg_status_flow` populated, `escalation_next_action` enum split into dispatcher/manual
+groups, `cfg_write_grant` orphan cleared via `#756`) — finding 3 (both reports still bypass
+`reportkit.render_scaffold()`) remains open, a deliberate hold per `#753`'s own note, not a
+miss. `#753` (the master tracking item) updated with a status rollup — not ready for final
+sign-off, its own root-cause config-representation question is still awaiting the researcher's
+direction.
+
+**Files:** `iba/app/lib/cfgquality.py`.
+
+## 166. Every active PS script dispatches through `run.py` — new governance rule, escalation #8 (2026-08-21)
+
+Researcher, on `#8` (2026-08-20's finding that 8 of 45 PS scripts under `iba/app/ps/` bypass
+`run.py` entirely — no `run` row, no `run_id`, no `cfg_step` registration, no `module_blocking`
+protection): "confirm that there are a governance rule that every active PS script must use run.py
+to ensure that it is recorded in the engine. If it exists, then this item can be closed down with
+that as the action, if not then create the config and then close both down."
+
+Checked live against `cfg_behaviour_rule` and `GOVERNANCE.md` directly, not assumed: no such rule
+existed. Rule 41 (`every-interactive-module-needs-ps-script`) is the adjacent-but-different rule —
+a hand-operated module MUST have a PS script; nothing said that PS script MUST dispatch through
+`run.py`.
+
+**Created**: `cfg_behaviour_rule` id 43, class `development`, key
+`every-active-ps-script-dispatches-through-run-py`
+(`iba/app/migration/add_ps_scripts_dispatch_through_run_py_rule_20260821.py`, registered in
+`cfg_utility` in the same pass). Written to be honest against live reality rather than a blanket
+compliance claim: names two permanent, legitimate exceptions — `Start-Iba.ps1` (necessarily, it
+bootstraps what `run.py` itself depends on) and `Escalation.ps1`'s `-Action Raise/Update/AnswerRun`
+(a deliberate manual front door onto the escalation backlog, not a pipeline run — `-Action
+List/History` already dispatch through `run.py`, §162). The other 6 scripts `#8` found still
+bypassing `run.py` (`Behaviour.ps1`; `Debate-Run.ps1`'s ungoverned post-run side-call to
+`iba.app.tools.build_debate_report`; 5 lowercase-hyphenated one-off scripts) are real, current
+non-compliance — not retroactively fixed by the rule's existence, and not silently dropped when
+`#8` closes: split off as its own escalation, `#767`, for a scoping decision before any of them are
+touched. `GOVERNANCE.md` §44 added in the same unit of work; `configmaint.validate` re-run clean
+afterward (schema/GOVERNANCE.md-currency/utility-registration checks all pass).
+
+**Files:** `iba/app/migration/add_ps_scripts_dispatch_through_run_py_rule_20260821.py`,
+`iba/app/GOVERNANCE.md`.
+
+## 167. `content_index` cleared, `iba.db` 8.06GB → 0.66GB — escalation #758 closed out, two follow-ons spawned (2026-08-21)
+
+Researcher, closing out `#758` (the content-index bloat investigation, §141-143): "excluding the
+suggested folders to reduce the size defeats the object of the index. The index functionality
+needs to be re-considered. Create a new escalation for indexed Search... after creating the new
+escalation, delete all the rows in the index table so that the size of the database can reduce
+again... finally, another escalation, spawned from this item, must be created to investigate the
+snapshot creation, which is running out of control."
+
+Three actions, in the instructed order:
+
+1. **`#770` raised** ("Content-Index Search: Current Design Unsupportable"), `from_id=758` set
+   correctly this time (the `#767`/`#768` lesson from earlier this same session — a spawned item
+   must actually record the relationship, not just say so in chat). Context carries the full design
+   lineage quoted, not summarised: the original plan doc's §2.1-2.4 design decisions (predefined
+   Strong's/gloss/word concordance keys, chosen explicitly over free-text FTS), `BUILD.md` §141-143
+   in full (the 597K-hit single-file finding, the stopword/T2/size-threshold mitigations already
+   tried, and §143's own never-actioned warning: *"common domain-central gloss/word keys will
+   always produce very large hit counts... e.g. a per-search result cap, rarity-based ranking, or
+   dropping single-word gloss/word matching in favour of Strong's-number-only"*), and `#758`'s own
+   live scale figures (14.1M rows, 76% `key_type=gloss`, ordinary English words not caught by the
+   existing stopword filter).
+2. **`content_index`/`content_index_scan` emptied** — `iba/app/migration/clear_content_index_20260821.py`
+   (registered in `cfg_utility` same pass), 14,118,338 → 0 and 7,869 → 0 rows. Cleared both tables
+   together, not `content_index` alone: leaving `content_index_scan` populated while the index
+   itself is empty would have silently broken `contentindex.refresh()` forever after (every file
+   reads as "already scanned," never re-populates, no error raised). `VACUUM` run afterward (SQLite
+   does not shrink the file on `DELETE` alone) — **`iba.db`: 8.06GB → 0.66GB**, 17.6s.
+3. **`#771` raised** ("Snapshot Creation Running Out of Control"), `from_id=758`, carrying forward
+   `#758`'s own already-established investigation (`_ensure_run()` unconditional pre-run snapshot,
+   `cfg_step.kind` confirmed NOT a safe read-only proxy, the three options already on the table) as
+   its starting point rather than re-deriving it.
+
+`#758` itself staged for closure — all three instructed actions complete, live-verified, not just
+reported.
+
+**Files:** `iba/app/migration/clear_content_index_20260821.py`.
+
+## 168. `from_id` audit — 10 of 30 rows corrected, 2 new gaps found doing it, escalation #767 v3 (2026-08-21)
+
+Researcher, on `#767` (spotting that a spawned item's own `related_activity` named `#753` while
+`from_id` sat `NULL`): *"I notice that you recently created new and changed items where you entered
+in the related_activity details that indicate that it should have 753 as From_id. The fact that you
+did not do it, tells me that you are not reading the configs for the column requirements. that is a
+serious omission. what you now need to do is to work through every instance where related_activity
+is not null, and check if you can find the correct from_id. if you can, do a update for the item. if
+not put a 0 in the from_id. Then change the rule to enforce from_id completion."*
+
+**Audit**: 39 live rows carry `related_activity`; 9 already correct. Of the remaining 30, 10 had a
+genuine, identifiable single spawn parent recoverable from the item's own recorded text — all 10
+fixed (`#6`/`#750`/`#754`/`#755`/`#759` → `753`; `#8`/`#743`/`#744`/`#745`/`#747` → `6`; `#10`
+corrected 6→5, its own text said "see #5"). `#8` (the one still-`open` item) went through the real
+`update()` front door; the other 9 were `closed`/`completed` — corrected via
+`iba/app/migration/fix_from_id_closed_items_20260821.py`, calling `escalation._snapshot()` directly
+(the same class of exception already established for the `#759` short_description repair), not a
+hand-rolled reimplementation.
+
+**Two real gaps found doing this, neither guessed past, both raised rather than silently worked
+around:**
+
+1. **`#773`**: `from_id=0` — the researcher's own proposed "checked, no parent" sentinel — is
+   indistinguishable from `NULL` throughout `lib/escalation.py`. Every from_id check
+   (`_find_dangling`/`_find_cycles`/`_find_mismatched_pairing`/the paired-requirement test/the
+   downward-chain walk) uses a plain Python truthy test, and `bool(0)` is `False`. Writing `0` on
+   the remaining 19 no-parent rows would have looked like real data in a raw query while every
+   piece of code that actually reads `from_id` treated it exactly as unset — not fixed, three
+   options proposed, awaiting the researcher's choice of sentinel before those 19 rows are touched
+   or the "enforce completion" rule is built.
+2. **`#774`**: `update()` structurally refuses any item outside `_OPEN_STATES`
+   (`raised`/`re-assigned`/`on-hold`/`in-progress`) — there is currently no sanctioned front-door
+   path to correct a closed/completed record at all. 9 of the 10 corrections above needed the
+   migration-script workaround for exactly this reason. Same root class as `#746`/`#763`'s earlier
+   finding on this column (immutability was fixed; this is the other half — mutability only helps
+   while the item is still open).
+
+`configmaint.validate` re-run clean after all 10 corrections.
+
+**Files:** `iba/app/migration/fix_from_id_closed_items_20260821.py`.
+
+## 169. `retention.snapshot_keep_count` 20 → 5, existing snapshot directory pruned to match — escalation #771 (2026-08-21)
+
+Researcher, on `#771`: *"Set the retention of snapshots to a maximum of 5 ensure that it is
+maintained as such."* The stopgap option from `#771`'s own investigation (§169 predecessor, BUILD.md
+§167) — not the per-step write-classification root fix, still open in `#771` itself.
+
+Applied via `configmaint.propose` (`cfg_setting` update), approved same turn per the researcher's
+direct instruction — the sanctioned two-phase pause-continue path, not a direct write. "Maintained
+as such" taken literally: the config value alone would not have touched the 14 snapshot files
+(67.8GB) already on disk — `prune()` only fires inside the next `snapshot()` call. Called
+`dbsnapshot.prune()` directly to enforce immediately: **14 files/67.8GB → 5 files/3.3GB**.
+
+`configmaint.validate` flagged `GOVERNANCE.md` as stale relative to the newly-applied
+`cfg_change_detail` row (§8's own rule) — `GOVERNANCE.md` §45 added in the same unit of work,
+re-validated clean.
+
+**Files:** none beyond `cfg_setting` and the snapshot directory's own contents; `GOVERNANCE.md`.
+
+## 170. `-1` sentinel wired through, `Correction` transaction built, 19 remaining `from_id` rows fixed — escalations #773/#774 (2026-08-21)
+
+Researcher's decisions on the two items `#767`'s audit spawned (§168):
+
+- **`#773`**: *"Use a sentinal of -1."*
+- **`#774`**: *"create a copy of update transaction as Correction and allow the Correction
+  transaction to update any column in any state. ensure that this is update in the documentation
+  and that correction is stated as only to be used for error correction."*
+
+**`_NO_PARENT_SENTINEL = -1`** added (`lib/escalation.py`) — genuinely non-falsy in Python (unlike
+`0`), so distinguishable from `NULL` everywhere `from_id` is read. Wired into every site `#773`
+named: the write-time `exists` check (`_check_requirements`, now shared by `raise_new()`/`update()`/
+`correction()`) and `_find_dangling` (the D15 report check) both special-case it explicitly, so it
+neither gets rejected as a bad reference nor reported as a broken one. (`_find_cycles` and the
+downward-chain walk in `write_history_report()` needed no change — both already terminate safely on
+`-1` without misreporting, checked by tracing the actual code path, not assumed.)
+
+**`correction()`** built (`lib/escalation.py`, new function, ~60 lines) — a deliberate near-copy of
+`update()`, differing in exactly the two ways asked for: (1) no `_OPEN_STATES` gate, so it works on
+closed/completed/withdraw/supersede items, which `update()` structurally refuses (`#774`'s own
+finding — 9 of the 10 `from_id` repairs in `#767` needed a one-off migration script for exactly this
+reason); (2) a real `short_description` parameter, which `update()` never exposed at all (`#10`'s
+finding). Deliberately NOT copied: the D25 same-approval-authority check and the D26 raised-state
+content guard — both are workflow-transition safeguards, irrelevant to a data-repair transaction
+that has to be able to fix ANY state including `raised`. The `from_id` `exists`/`not_self` checks DO
+still apply (hand-coded, since `correction()` doesn't route through the `action='update'`
+`cfg_escalation_requirement` rows at all — a deliberate, documented departure, not an oversight).
+Wired into the CLI (`python -m iba.app.lib.escalation correction <id> ...`) and `Escalation.ps1`
+(`-Action Correction`, `-State`'s `ValidateSet` widened from 5 to all 8 live states since Correction
+has to be able to set any of them directly, `-ShortDescription` added) — a runtime warning banner
+prints on every invocation: *"Correction is for ERROR CORRECTION ONLY... Use -Action Update for
+ordinary changes."* `USER-GUIDE.md` §4.6/§4.7 updated in the same pass, per the researcher's explicit
+instruction — §4.7's old "supersede" workaround for a wrong title is now correctly split from the
+new direct-fix path (Correction for a genuine mistake on the same item; supersede for an actual
+scope replacement).
+
+**Live-tested against real data, not a scratch copy** (`#1` first — correctly refused as
+dispatcher-tied, revealing that dispatcher-tied items structurally cannot carry `from_id` through
+ANY front door, `raise_()` has no such parameter at all; not a bug, `related_activity` means
+something different for an auto-raised pause than for a manual item's spawn-parent claim — `#1`/`#7`
+left untouched, genuinely exempt, not "no parent found"). The remaining 17 genuinely-manual
+no-parent rows from `#767`'s audit (`#2`/`#3`/`#4`/`#5`/`#9`/`#736`/`#737`/`#738`/`#739`/`#740`/
+`#748`/`#749`/`#756`/`#760`/`#761`/`#762`/`#764`) corrected via `-Action Correction -FromId -1`,
+including several already `closed`/`completed` — proving the open-state bypass works for real, not
+just in principle. `configmaint.validate` clean afterward; `escalation.list`'s D15 Dangling/Cycle/
+Mismatched-pairing sections confirmed empty (Dangling briefly showed all 17 as false positives
+before the `_find_dangling` fix landed — caught and fixed in the same pass, not left for a future
+session).
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/ps/Escalation.ps1`, `iba/app/USER-GUIDE.md`.
+
+## 171. `#768` closure check — 3 real doc/config completeness gaps found and fixed (2026-08-21)
+
+Researcher, on `#768`: *"is the actual configs and code, and guides now updated with the completion
+of related_activity and from_id. Are there any confusion on using it still."* Checked live rather
+than assumed complete — genuinely found gaps, not a clean bill of health:
+
+1. **`Escalation.ps1`'s own top-of-file `.SYNOPSIS`/`.DESCRIPTION`/`.EXAMPLE` help block never
+   mentioned `-Action Correction` at all** — added in §170 (the switch case, param validation) but
+   the comment-based help was missed. Fixed: `-AnsweredBy` line now lists it, a full paragraph added
+   describing it (mirroring the Update paragraph's shape), an `.EXAMPLE` added.
+2. **`cfg_escalation_requirement`'s `from_id` `exists`-check messages** (both `action='raise'` and
+   `action='update'` rows) still read *"must reference an existing escalation id"* with no mention
+   of `-1` — accurate when it fires (since `-1` never triggers it, §170's fix), but incomplete: a
+   reader relying on this table alone (not `cfg_column`) would not learn the sentinel exists. Fixed
+   via `configmaint.propose`, both rows.
+3. **`cfg_utility.escalation.purpose`** still said *"tracks a backlog item through raise/update"* —
+   missing the third manual verb entirely. Fixed via `configmaint.propose`.
+
+Checked and confirmed CORRECT, no change needed: `_find_incoherent_link`'s `from_id`/`ref`
+comparisons (`ref` only ever comes from a `#(\d+)` regex match, never negative, so `-1` can't
+spuriously match); the CLI flag parser (`from_id=int(from_id) if from_id else None` — the string
+`"-1"` is truthy, parses correctly); `cfg_enum.escalation_shape` (Correction is a manual-only verb,
+doesn't need a new shape value).
+
+**Still genuinely open, not fixed here, distinct from the completeness question above**: `#768`'s
+own ORIGINAL subject — `_find_mismatched_pairing()` only checking one direction — remains
+unresolved, still awaiting the researcher's choice between the 3 proposed fix-shapes. Restated
+plainly rather than left implicit.
+
+`configmaint.validate` re-run clean after all three fixes.
+
+**Files:** `iba/app/ps/Escalation.ps1`.
