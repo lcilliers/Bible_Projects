@@ -37,8 +37,8 @@ def scope_token(chapters: str | None, range_: str | None) -> str:
 
 def staging_path(cfg, book: str, scope: str, step: str):
     import pathlib
-    pattern = cfg.setting("passage.debate_staging_path_pattern",
-                          "iba/app/staging/operations/{book_lower}-{scope}-{step}.json")
+    pattern = cfg.module_setting("cfg_passage", "passage.debate_staging_path_pattern",
+                                "iba/app/staging/operations/{book_lower}-{scope}-{step}.json")
     return pathlib.Path(pattern.format(book_lower=book.lower(), scope=scope, step=step))
 
 

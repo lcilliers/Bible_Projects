@@ -46,7 +46,15 @@ def fail(condition: str, message="", **counts) -> Outcome:
     return Outcome(condition, message, counts)
 
 
-def escalate(condition: str, question: str, preset: dict, tried: str, **counts) -> Outcome:
+def escalate(condition: str, question: str, preset: dict, tried: str,
+            resolution_kind: str = "decision_required", **counts) -> Outcome:
+    """`resolution_kind` (escalation #798/#799): every handler-authored `escalate()` call is, by
+    construction, a genuine judgement point the handler's own logic decided it can't resolve --
+    that's why it's calling this at all, not the config the handler is checking against. Default
+    is `decision_required` for exactly that reason; a handler would only ever override it if it
+    has its own, narrower reason to believe a given call is self_correctable instead (none do,
+    as of this build -- see the design doc's SS3 review)."""
     o = Outcome(condition, question, counts)
-    o.escalation = {"question": question, "preset": preset, "tried": tried, "type": "prompted"}
+    o.escalation = {"question": question, "preset": preset, "tried": tried, "type": "prompted",
+                    "resolution_kind": resolution_kind}
     return o

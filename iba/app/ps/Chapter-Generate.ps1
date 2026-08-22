@@ -28,7 +28,7 @@
     ordinal in its sequence from the top, which would silently overwrite an already-filled
     scaffold with a fresh blank one.
 
-    Guideline (advisory, not enforced — see cfg_setting passage.debate_session_chapter_guideline):
+    Guideline (advisory, not enforced — see cfg_passage passage.debate_session_chapter_guideline):
     fill roughly 3 chapters' worth of debates per Claude Code session, then clear context and
     start a fresh one, before generating the next batch. See
     iba/app/reports/token-consumption-diagnostic-20260802.md for why.
@@ -102,7 +102,7 @@ if ($tracked -ne '1') {
 }
 Write-Host ""
 
-$guideline = python -c "from iba.app.lib.cfg import Cfg; c=Cfg(); print(c.setting('passage.debate_session_chapter_guideline', 3)); c.close()"
+$guideline = python -c "from iba.app.lib.cfg import Cfg; c=Cfg(); print(c.module_setting('cfg_passage', 'passage.debate_session_chapter_guideline', 3)); c.close()"
 
 $seq   = python -c "import json; from iba.app.lib.cfg import Cfg; c=Cfg(); print(json.dumps([dict(r) for r in c.sequence('chapter-generate')])); c.close()" | ConvertFrom-Json
 $runId = if ($RunId) { $RunId } else { "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-CHAPTER-GENERATE" }

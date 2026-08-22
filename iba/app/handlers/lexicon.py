@@ -197,7 +197,9 @@ def validate(ctx: Ctx) -> Outcome:
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision, comment = answered["next_action"], answered["comment"]
-        if decision == "approve":
+        # escalation #798/#799 SS4: decision_required now resolves via Update()'s manual
+        # vocabulary (approved) not AnswerRun's dispatcher vocabulary (approve).
+        if decision in ("approve", "approved"):
             return ok(f"acknowledged: {no_lsj} strong_lexicon row(s) with no lsj parse, {no_mounce} "
                       f"with no mounce parse, {no_related} strong row(s) with no related fetch, "
                       f"{value_violations} value-quality violation(s) — researcher confirmed known/"
@@ -223,4 +225,5 @@ def validate(ctx: Ctx) -> Outcome:
         preset={"no_lsj": no_lsj, "no_mounce": no_mounce, "no_related": no_related,
                "value_violations": value_violations, "report_path": str(report_path)},
         tried="coverage check (LEFT JOIN / NOT EXISTS against strong_lexicon and strong) + "
-              "lib.valuequality's generic notblank/nohtml/pattern engine on the 4 parsed tables")
+              "lib.valuequality's generic notblank/nohtml/pattern engine on the 4 parsed tables",
+        resolution_kind="decision_required")

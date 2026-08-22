@@ -378,7 +378,9 @@ def validate(ctx: Ctx) -> Outcome:
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["next_action"]
-        if decision == "approve":
+        # escalation #798/#799 SS4: decision_required now resolves via Update()'s manual
+        # vocabulary (approved) not AnswerRun's dispatcher vocabulary (approve).
+        if decision in ("approve", "approved"):
             return ok(f"acknowledged: {summary} — researcher confirmed these are known/acceptable "
                       f"(full detail in {report_path})",
                       **preset)
@@ -409,7 +411,8 @@ def validate(ctx: Ctx) -> Outcome:
         preset={**preset, "report_path": str(report_path)},
         tried="coherence checks passed; these are advisory findings, not errors — approve to "
               "acknowledge as known/acceptable, reject to flag for action, or revise with a "
-              "comment on what to check")
+              "comment on what to check",
+        resolution_kind="decision_required")
 
 
 # ── propose: DB-direct, single-row, approval-gated ──────────────────────────────
@@ -532,7 +535,11 @@ def propose(ctx: Ctx) -> Outcome:
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["next_action"]
-        if decision == "approve":
+        # escalation #798/#799 SS4: found live (escalation #809) -- decision_required now
+        # resolves via Update()'s manual vocabulary (approved) not AnswerRun's dispatcher
+        # vocabulary (approve); without this, an approved decision_required proposal silently
+        # fell through to "needs-revision" with no actual revision requested.
+        if decision in ("approve", "approved"):
             before = _apply(ctx, table, op, where, set_)
             ctx.db.conn.execute(
                 'INSERT INTO cfg_change_detail (run_id, table_name, op, where_json, set_json, '
@@ -559,10 +566,14 @@ def propose(ctx: Ctx) -> Outcome:
         "needs-approval",
         question=question,
         preset={"table": table, "op": op, "where": where, "set": set_},
-        tried="coherence-checked against the live cfg_* schema — awaiting researcher decision "
-              "(approve / reject / revise-with-comment via "
-              "`Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision <Approve|Reject|Revise|Hold|Noted> "
-              "[-Comment ...]`)")
+        # escalation #798/#799: this is decision_required, which now resolves via Update() (the
+        # manual ready_for_approval -> approved handshake), not AnswerRun -- corrected from the
+        # pre-#798 text, which pointed at the wrong mechanism entirely.
+        tried="coherence-checked against the live cfg_* schema — awaiting researcher decision via "
+              "`Escalation.ps1 -Action Update -Id <id> -NextAction ready_for_approval` then "
+              "`-NextAction approved` (or reject/revise), then re-run this exact "
+              "Config-Maintenance.ps1 command with -RunId to apply",
+        resolution_kind="decision_required")
 
 
 # ── report: regenerate CONFIG-REPORT.md ─────────────────────────────────────────

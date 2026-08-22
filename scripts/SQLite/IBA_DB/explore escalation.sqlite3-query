@@ -1,10 +1,10 @@
 -- database: c:\Bible_study_projects\iba\app\db\iba.db
 
-SELECT id,type,state,short_description,context FROM escalation 
+SELECT id, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution,related_activity, from_id FROM escalation 
 WHERE state not in ('completed','withdraw','closed');
 
 SELECT * FROM escalation 
-WHERE id in (671);
+WHERE id in (767);
 
 SELECT id, related_activity, resolution, short_description, type, state FROM escalation 
 WHERE state in ('completed','withdraw','closed');

@@ -17,8 +17,7 @@ from __future__ import annotations
 import pathlib
 import re
 
-from .base import Ctx, Outcome, ok, fail, escalate
-from ..lib import escalation as esc
+from .base import Ctx, Outcome, ok, fail
 from ..lib import narrativegenerate, reportkit
 
 # Fallback only — the real value is `cfg_enum` group `narrative_required_channel` (added
@@ -135,10 +134,17 @@ def validate(ctx: Ctx) -> Outcome:
 
 
 def generate(ctx: Ctx) -> Outcome:
-    """Assemble a book's filled debates + the two governing docs, get researcher approval on the
-    estimated cost (pause-continue, same shape `configmaint.propose`/`registry.create` already use
-    for anything that writes/spends), then make ONE live Anthropic API call and file the result.
-    See `lib/narrativegenerate.py`'s module docstring for the full cost/config mechanism."""
+    """Assemble a book's filled debates + the two governing docs, then make ONE live Anthropic API
+    call and file the result. See `lib/narrativegenerate.py`'s module docstring for the full
+    cost/config mechanism.
+
+    escalation #798/#799 SS3.4: no longer a pause-continue approval step. `narrative.
+    generate_max_cost` is itself the approval, already enforced below as a hard `fail()` when
+    exceeded -- asking again for every call that's already within the approved cap added a
+    decision that wasn't needed (researcher, 2026-08-22: "if spend above then it is a failure...
+    an approved specification is the approval"). Any call within the cap now completes in one
+    invocation; only exceeding the cap still needs a decision, and that was already correctly a
+    `fail()`, unaffected by this change."""
     book = ctx.params["Book"]
     book_label = ctx.params.get("BookLabel") or book
     try:
@@ -158,41 +164,21 @@ def generate(ctx: Ctx) -> Outcome:
     missing_note = (f" ({len(package['missing_debates'])} debate file(s) missing on disk, "
                     f"skipped: {package['missing_debates']})" if package["missing_debates"] else "")
 
-    answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
-    if answered:
-        decision = answered["next_action"]
-        if decision == "reject":
-            return fail("declined", f"researcher declined generating {book_label}'s narrative")
-        if decision == "revise":
-            return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
-        try:
-            result = narrativegenerate.call_api(package)
-        except narrativegenerate.ApiKeyMissing as e:
-            return fail("api-key-missing", str(e))
-        except narrativegenerate.ApiCallFailed as e:
-            return fail("api-error", str(e))
-        rate_in = float(ctx.cfg.setting("narrative.rate_input_per_million", 3.00))
-        rate_out = float(ctx.cfg.setting("narrative.rate_output_per_million", 15.00))
-        real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
-                    result["output_tokens"] / 1_000_000 * rate_out)
-        out = narrativegenerate.write_narrative(ctx.cfg, book, book_label, result["text"])
-        log_path = narrativegenerate.log_usage(
-            ctx.cfg, ctx.run_id, book, package["model"], result["input_tokens"],
-            result["output_tokens"], real_cost, str(out))
-        return ok(f"wrote {out} — {result['input_tokens']:,} in / {result['output_tokens']:,} out "
-                 f"tokens, ${real_cost:.4f} (logged to {log_path}){missing_note}",
-                 path=str(out), input_tokens=result["input_tokens"],
-                 output_tokens=result["output_tokens"], cost_usd=round(real_cost, 4))
-
-    return escalate(
-        "needs-approval",
-        question=f"Generate {book_label}'s inner-being narrative via {package['model']} from "
-                f"{len(package['entries'])} filled debate(s) — estimated ~"
-                f"{package['est_input_tokens']:,} input tokens, up to "
-                f"{package['max_output_tokens']:,} output tokens, ~${package['est_cost_usd']:.2f}. "
-                f"Approve to make the live API call and write the narrative{missing_note}.",
-        preset={"book": book, "book_label": book_label, "model": package["model"],
-               "est_input_tokens": package["est_input_tokens"],
-               "max_output_tokens": package["max_output_tokens"],
-               "est_cost_usd": package["est_cost_usd"]},
-        tried="assembled the package (instructions + debates) — no API call made yet")
+    try:
+        result = narrativegenerate.call_api(package)
+    except narrativegenerate.ApiKeyMissing as e:
+        return fail("api-key-missing", str(e))
+    except narrativegenerate.ApiCallFailed as e:
+        return fail("api-error", str(e))
+    rate_in = float(ctx.cfg.setting("narrative.rate_input_per_million", 3.00))
+    rate_out = float(ctx.cfg.setting("narrative.rate_output_per_million", 15.00))
+    real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                result["output_tokens"] / 1_000_000 * rate_out)
+    out = narrativegenerate.write_narrative(ctx.cfg, book, book_label, result["text"])
+    log_path = narrativegenerate.log_usage(
+        ctx.cfg, ctx.run_id, book, package["model"], result["input_tokens"],
+        result["output_tokens"], real_cost, str(out))
+    return ok(f"wrote {out} — {result['input_tokens']:,} in / {result['output_tokens']:,} out "
+             f"tokens, ${real_cost:.4f} (logged to {log_path}){missing_note}",
+             path=str(out), input_tokens=result["input_tokens"],
+             output_tokens=result["output_tokens"], cost_usd=round(real_cost, 4))

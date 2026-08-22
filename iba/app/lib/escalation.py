@@ -69,6 +69,13 @@ CLI (module path: iba.app.lib.escalation, invoked as `python -m iba.app.lib.esca
     python -m iba.app.lib.escalation raise <question...>
         --originator=Claude|Researcher [--source=claude|researcher] [--assigned-to=Claude|Researcher]
         [--type=task|...] [--related-activity=...] --comment=...
+        --resolution-kind=decision_required|self_correctable
+    python -m iba.app.lib.escalation resolve-self-correctable <id> --originator=Claude
+        --resolution=... — closes a self_correctable item. No AnswerRun, no decision vocabulary
+        (escalation #798/#799): Claude fixes it, states the resolution, done.
+    python -m iba.app.lib.escalation escalate-to-decision <id> --originator=Claude --tried=...
+        — converts a self_correctable item to decision_required when a fix attempt reveals a real
+        decision is needed (`tried`'s original purpose). Does not change `type`.
     python -m iba.app.lib.escalation update <id> --originator=Claude|Researcher
         [--next-action=...] [--assigned-to=...] [--state=on-hold|in-progress|closed|withdraw|supersede]
         [--resolution=...] [--related-activity=...] [--tried=...] [--from-id=...]
@@ -108,7 +115,8 @@ _NO_PARENT_SENTINEL = -1
 
 # every business column on `escalation` / `escalation_history` (id/version/escalation_id excluded
 # -- those are structural, not part of a snapshot's business content)
-_ENVELOPE_COLS = ("state", "next_action", "next_action_assigned_to", "originator", "answered_at")
+_ENVELOPE_COLS = ("state", "next_action", "next_action_assigned_to", "originator", "answered_at",
+                 "resolution_kind")
 _APPEND_COLS = ("comment", "context")            # escalation: cumulative. history: raw increment.
 # from_id (D14): the item this one builds on -- MUTABLE, settable on Raise or Update alike
 # (escalation #6 v5, researcher, 2026-08-20: "not immutable-after-raise -- researcher confirmed it
@@ -148,6 +156,15 @@ def _check_type(db: Db, etype: str) -> str:
     if etype not in valid:
         raise ValueError(f"{etype!r} is not a member of cfg_enum 'escalation_type' ({valid!r})")
     return etype
+
+
+def _check_resolution_kind(db: Db, value: str) -> str:
+    """decision_required | self_correctable (cfg_enum resolution_kind) -- escalation #798/#799,
+    cfg_behaviour_rule 'decision-points-are-terminal-not-inline'."""
+    valid = db.cfg.enum("resolution_kind")
+    if value not in valid:
+        raise ValueError(f"{value!r} is not a member of cfg_enum 'resolution_kind' ({valid!r})")
+    return value
 
 
 def _check_next_action_manual(db: Db, next_action: str | None) -> str | None:
@@ -427,19 +444,59 @@ def _sanitise_dispatcher_title(question: str, preset: dict) -> tuple[str, dict]:
 
 
 def raise_(db: Db, run_id: str, source: str, at_step: str, question: str,
-          preset: dict, tried: str, etype: str = "task", assigned_to: str = "Researcher") -> int:
-    """Record a pause -- called by run.py at a real dispatcher pause point."""
+          preset: dict, tried: str, etype: str = "task", assigned_to: str = "Researcher",
+          resolution_kind: str | None = None) -> int:
+    """Record a pause -- called by run.py at a real dispatcher pause point.
+
+    `resolution_kind` (escalation #798/#799): every real call site now supplies one explicitly
+    (crash/report-stop pass `self_correctable` -- "pure coding logic", researcher 2026-08-22;
+    pause-continue passes through whatever the handler's own `escalate()` call decided). The
+    `None` fallback below (-> `decision_required`, the conservative "we don't know, ask" default)
+    exists only as the same sanitise-don't-crash safety net this function already follows
+    elsewhere -- never intended to be the normal path. If `decision_required` and `etype` isn't
+    `notice`, `type` is forced to `issue` (same rule as `raise_new()`).
+
+    Escalation #790 (2026-08-22, researcher: "Proceed to fix this bug"): this shape used to leave
+    `comment`/`originator`/`from_id` unset (NULL), even though `cfg_escalation_requirement` states
+    `comment` is required "always" at Raise, with no carve-out for the dispatcher shape, and D14's
+    -1 no-parent sentinel (escalation #773) was never applied here either -- #787 was the live
+    example. Fixed by ALWAYS populating all three, not by calling `_check_requirements()` (which
+    raises on failure): this function already fires from inside crash/pause handling
+    (`run.py`), where the module's own long-standing rule for `_sanitise_dispatcher_title` applies
+    equally -- "raising here would mask the real crash. Sanitise instead of reject, never lose
+    data." `comment` reuses `tried` (every real call site already passes a real, non-empty
+    explanation there -- the same content a comment is meant to hold, e.g. "ran the full
+    validation report -- {out}"); `originator` is 'Claude' (every current call site is invoked by
+    Claude Code, and 'Claude'/'Researcher' are the only two values `cfg_enum
+    escalation_assignee` allows -- there is no third 'system' option); `from_id` is the sentinel.
+    `next_action` is `'review'` (researcher, 2026-08-22: "it just does not have a next-action and
+    the state should be review" -- correcting an earlier, wrong version of this docstring, which
+    reasoned `next_action` had to be a member of `cfg_enum escalation_next_action_dispatcher`
+    (approve/reject/revise/hold/noted) and left it `None` on that basis. That enum is only ever
+    consulted by `_check_next_action_dispatcher()`, which fires solely inside `answer_for_run()`
+    -- it validates the ANSWER decision, never the value a freshly-raised item starts at.
+    `raise_new()` (the manual shape) already sets its own initial `next_action = "review"` as a
+    bare literal, with no enum check at all at creation -- `'review'` here does exactly the same,
+    for the same reason: it means "this needs a decision", not "the decision is X"."""
     now = _now()
     short_description, preset = _sanitise_dispatcher_title(question, preset)
+    checked_type = _check_type(db, etype)
+    try:
+        checked_kind = _check_resolution_kind(db, resolution_kind) if resolution_kind else "decision_required"
+    except ValueError:
+        checked_kind = "decision_required"   # sanitise, never crash the raise itself
+    if checked_kind == "decision_required" and checked_type != "notice":
+        checked_type = "issue"
+    comment = tried or f"dispatcher pause at {at_step}"
     fields = {
         "run_id": run_id, "source": source, "at_step": at_step,
-        "type": _check_type(db, etype), "short_description": short_description,
-        "context": json.dumps(preset),
+        "type": checked_type, "short_description": short_description,
+        "context": json.dumps(preset), "comment": comment,
         "tried": tried, "state": _check_state(db, _status_for(db, "at Raise", "raised")),
-        "next_action": None,
+        "next_action": "review", "resolution_kind": checked_kind,
         "answered_at": now, "raised_at": now,
-        "resolution": None, "related_activity": at_step,
-        "next_action_assigned_to": _check_assignee(db, assigned_to), "originator": None}
+        "resolution": None, "related_activity": at_step, "from_id": _NO_PARENT_SENTINEL,
+        "next_action_assigned_to": _check_assignee(db, assigned_to), "originator": "Claude"}
     return _create(db.cfg, db, **fields)
 
 
@@ -482,7 +539,8 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
     merged = _snapshot(cfg, db, esc_row["id"],
                        deltas={"comment": comment, "resolution": resolution},
                        envelope={"state": _check_state(db, new_state), "next_action": decision,
-                                "next_action_assigned_to": esc_row["next_action_assigned_to"]},
+                                "next_action_assigned_to": esc_row["next_action_assigned_to"],
+                                "resolution_kind": esc_row["resolution_kind"]},
                        originator=who)
     return (f"escalation {esc_row['id']} (run {run_id!r}, step {esc_row['at_step']!r}) answered "
            f"{decision!r} -> {new_state}" + (f" — {comment!r}" if comment else ""))
@@ -492,19 +550,30 @@ def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | 
 def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str = "task",
              comment: str | None = None, context: str | None = None,
              related_activity: str | None = None, assigned_to: str = "Claude",
-             from_id: int | None = None, *, originator: str) -> int:
+             from_id: int | None = None, resolution_kind: str | None = None,
+             *, originator: str) -> int:
     """Raise -- a new MANUAL item. `originator` is required, no default. `comment`/
     `short_description` requirements come from cfg_escalation_requirement (action='raise'), as does
     the `from_id`/`related_activity` pairing check (D14) when `from_id` is supplied.
+
+    `resolution_kind` (escalation #798/#799): `decision_required` or `self_correctable`, required
+    at Raise (`cfg_escalation_requirement`). If `decision_required` and `etype` isn't `notice`
+    (which never enters the decision machinery at all), `type` is forced to `issue` regardless of
+    what `etype` was passed -- `decision_required` items always use the issue vocabulary
+    (`cfg_behaviour_rule 'decision-points-are-terminal-not-inline'`).
 
     D12 (register v9, type-keyed Raise defaults): only `notice` is special -- it closes on arrival
     (`state='closed'`, `next_action=NULL`), never entering the review/decision machinery. Every
     other type (`task`/`issue`/`run_error`/`config`) defaults identically: `state='raised'`,
     `next_action='review'`."""
     checked_type = _check_type(db, etype)
+    checked_kind = _check_resolution_kind(db, resolution_kind) if resolution_kind else None
+    if checked_kind == "decision_required" and checked_type != "notice":
+        checked_type = "issue"
     _check_requirements(db, "raise", originator=originator or "", checked_action=None,
                         values={"comment": comment, "short_description": short_description,
-                               "from_id": from_id, "related_activity": related_activity})
+                               "from_id": from_id, "related_activity": related_activity,
+                               "resolution_kind": checked_kind})
     title_error = _title_shape_error(short_description)
     if title_error:
         raise ValueError(title_error)
@@ -520,6 +589,7 @@ def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str 
         "tried": None, "state": state, "next_action": next_action,
         "answered_at": now, "raised_at": now, "resolution": None,
         "related_activity": related_activity, "from_id": from_id,
+        "resolution_kind": checked_kind,
         "next_action_assigned_to": _check_assignee(db, assigned_to),
         "originator": _check_assignee(db, originator)}
     return _create(cfg, db, **fields)
@@ -537,9 +607,17 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     `from_id` (D14) is settable HERE too, not just at Raise (escalation #6 v5, researcher,
     2026-08-20; corrected 2026-08-21 after being built immutable, escalation #763) -- an existing
     item can be re-pointed/corrected later, letting a messy legacy chain be retrofitted after the
-    fact."""
+    fact.
+
+    Dispatcher-tied carve-out (escalation #798/#799): a dispatcher-tied item is still refused
+    UNLESS `resolution_kind='decision_required'`, in which case it's handled exactly like a
+    manual item from here on -- `decision_required` always uses the manual ready_for_approval/
+    approved vocabulary, regardless of which shape raised it (`cfg_behaviour_rule
+    'decision-points-are-terminal-not-inline'`). A dispatcher-tied `self_correctable` item still
+    has no `Update`/`AnswerRun` path at all -- see `resolve_self_correctable()`/
+    `escalate_to_decision()` instead."""
     cur = _current(db, escalation_id)
-    if not cur["run_id"].startswith("MANUAL-"):
+    if not cur["run_id"].startswith("MANUAL-") and cur["resolution_kind"] != "decision_required":
         return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
                f"manual -- answer it via AnswerRun, not Update")
     if cur["state"] not in _OPEN_STATES:
@@ -601,7 +679,8 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
                        envelope={
                            "next_action": checked_action if checked_action is not None else cur["next_action"],
                            "next_action_assigned_to": _check_assignee(db, next_action_assigned_to, required=False) or cur["next_action_assigned_to"],
-                           "state": _check_state(db, new_state)},
+                           "state": _check_state(db, new_state),
+                           "resolution_kind": cur["resolution_kind"]},
                        originator=who)
     return f"escalation #{escalation_id} v{merged['version']} -> state={new_state!r}"
 
@@ -670,9 +749,63 @@ def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str |
                               "resolution": resolution, "related_activity": related_activity,
                               "from_id": from_id, "short_description": short_description},
                        envelope={"state": resolved_state, "next_action": resolved_next_action,
-                                "next_action_assigned_to": resolved_assigned_to},
+                                "next_action_assigned_to": resolved_assigned_to,
+                                "resolution_kind": cur["resolution_kind"]},
                        originator=who)
     return f"escalation #{escalation_id} v{merged['version']} CORRECTED -> state={resolved_state!r}"
+
+
+# ── resolution_kind transactions (escalation #798/#799) ─────────────────────────────────────────
+def resolve_self_correctable(cfg: Cfg, db: Db, escalation_id: int, resolution: str,
+                             *, originator: str) -> str:
+    """Closes a `self_correctable` escalation. No `approve`/`reject`/`revise`/`hold`/`noted`
+    vocabulary and no `AnswerRun` involvement -- `cfg_behaviour_rule
+    'decision-points-are-terminal-not-inline'`: a researcher never fixes code, so there is no
+    decision for them to make here. Claude fixes it, states what was wrong and what changed
+    (`resolution`, required), and this closes the item directly."""
+    cur = _current(db, escalation_id)
+    if cur["resolution_kind"] != "self_correctable":
+        raise ValueError(f"escalation #{escalation_id} is not self_correctable "
+                        f"(resolution_kind={cur['resolution_kind']!r}) -- use Update/AnswerRun "
+                        f"instead, or escalate_to_decision() if it turned out to need one")
+    if not resolution:
+        raise ValueError("resolution is required -- state what was wrong and what changed")
+    who = _check_assignee(db, originator)
+    merged = _snapshot(cfg, db, escalation_id,
+                       deltas={"resolution": resolution},
+                       envelope={"state": _check_state(db, "completed"), "next_action": None,
+                                "next_action_assigned_to": cur["next_action_assigned_to"],
+                                "resolution_kind": "self_correctable"},
+                       originator=who)
+    return f"escalation #{escalation_id} v{merged['version']} resolved (self_correctable) -> completed"
+
+
+def escalate_to_decision(cfg: Cfg, db: Db, escalation_id: int, tried: str,
+                         *, originator: str) -> str:
+    """Converts an existing `self_correctable` escalation to `decision_required` -- the mechanism
+    named in `cfg_behaviour_rule 'decision-points-are-terminal-not-inline'`: a self-correction
+    attempt that reveals a genuine new decision is needed, not just an execution slip (this is
+    `tried`'s original purpose: what was attempted before escalating further). Does NOT change
+    `type` -- immutable, same as `run_id`/`source`/`at_step`/`raised_at`; the item keeps whatever
+    type it was raised with, only `resolution_kind`/`state`/`next_action` change. `tried` is
+    required and non-empty."""
+    cur = _current(db, escalation_id)
+    if cur["resolution_kind"] != "self_correctable":
+        raise ValueError(f"escalation #{escalation_id} is not self_correctable "
+                        f"(resolution_kind={cur['resolution_kind']!r}) -- nothing to convert")
+    if not tried:
+        raise ValueError("tried is required -- describe what was attempted before converting to "
+                        "decision_required")
+    who = _check_assignee(db, originator)
+    new_state = "in-progress" if cur["state"] == "raised" else cur["state"]
+    merged = _snapshot(cfg, db, escalation_id,
+                       deltas={"tried": tried},
+                       envelope={"state": _check_state(db, new_state), "next_action": "review",
+                                "next_action_assigned_to": cur["next_action_assigned_to"],
+                                "resolution_kind": "decision_required"},
+                       originator=who)
+    return (f"escalation #{escalation_id} v{merged['version']} converted to decision_required "
+           f"(state={new_state!r})")
 
 
 # ── reports ───────────────────────────────────────────────────────────────────────────────────
@@ -953,9 +1086,19 @@ def main() -> int:
                      context=json.dumps(extra),
                      related_activity="escalation-cli-crash", assigned_to="Claude",
                      from_id=_crash_from_id(argv),
+                     resolution_kind="self_correctable",  # "pure coding logic" (researcher,
+                     # 2026-08-22) -- same reasoning as run.py's crash/report-stop sites;
+                     # escalate_to_decision() converts it if a fix reveals a real decision needed.
                      originator="Claude")
-        except Exception:
-            pass   # never let a failure recording the crash mask the original crash itself
+        except Exception as record_exc:
+            # escalation #798/#799 SS7 fix: never SILENTLY discard a secondary failure -- the
+            # original crash still re-raises unmasked (that guarantee is unchanged), but a failure
+            # in the recording path itself must be visible, not invisible. Real risk right now:
+            # raise_new() just gained a resolution_kind requirement (this call doesn't supply one
+            # -- deliberately, a CLI crash is always decision_required by nature, no code path here
+            # to decide otherwise -- but if that ever regresses, this is exactly the failure that
+            # would go unnoticed under the old `except Exception: pass`).
+            print(f"[WARN] failed to record crash escalation: {record_exc!r}", file=sys.stderr)
         db.close()
         raise
 
@@ -987,14 +1130,28 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
         rest, comment = _extract_flag(rest, "comment")
         rest, context = _extract_flag(rest, "context")
         rest, from_id = _extract_flag(rest, "from-id")
+        rest, resolution_kind = _extract_flag(rest, "resolution-kind")
         question = " ".join(rest)
         new_id = raise_new(cfg, db, question, source or "claude", etype=etype or "task",
                            comment=comment or question, context=context,
                            assigned_to=assigned_to or "Researcher",
                            related_activity=related_activity,
                            from_id=int(from_id) if from_id else None,
+                           resolution_kind=resolution_kind,
                            originator=_require_flag(originator, "originator"))
         print(f"  raised — #{new_id}. Update with: python -m iba.app.lib.escalation update {new_id} ...")
+    elif len(argv) >= 2 and argv[0] == "resolve-self-correctable":
+        rest, resolution = _extract_flag(argv[2:], "resolution")
+        rest, originator = _extract_flag(rest, "originator")
+        print("  " + resolve_self_correctable(cfg, db, int(argv[1]),
+                                              _require_flag(resolution, "resolution"),
+                                              originator=_require_flag(originator, "originator")))
+    elif len(argv) >= 2 and argv[0] == "escalate-to-decision":
+        rest, tried = _extract_flag(argv[2:], "tried")
+        rest, originator = _extract_flag(rest, "originator")
+        print("  " + escalate_to_decision(cfg, db, int(argv[1]),
+                                          _require_flag(tried, "tried"),
+                                          originator=_require_flag(originator, "originator")))
     elif len(argv) >= 2 and argv[0] == "update":
         rest, next_action = _extract_flag(argv[2:], "next-action")
         rest, assigned_to = _extract_flag(rest, "assigned-to")

@@ -9480,3 +9480,108 @@ plainly rather than left implicit.
 `configmaint.validate` re-run clean after all three fixes.
 
 **Files:** `iba/app/ps/Escalation.ps1`.
+
+## 172. `resolution_kind` axis — decision-required vs self-correctable, 4 build stages, tested live at each stage (2026-08-22, escalations #798/#799)
+
+Implements `iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md` (approved after 4
+review rounds; researcher: *"798 approved... on approval, you can also create a new related
+escalation for the actual build that can start as soon as I have approved"* → `#799` tracks the
+build). Full design rationale in `GOVERNANCE.md` §48 — this entry is the build record.
+
+**Stage 1 — bootstrap migration** (`bootstrap_decision_vs_defect_axis_v1_20260822.py`): new
+`cfg_behaviour_rule` row (`class='development'`, `rule_key='decision-points-are-terminal-not-inline'`
+— full text quoted in GOVERNANCE §48); new `cfg_enum` group `resolution_kind`
+(`decision_required`/`self_correctable`); new `cfg_escalation_requirement` row (`raise` +
+`resolution_kind` = `field_required`, no default); new `cfg_write_grant` entries for the two new
+transactions; new `cfg_passage` table (key/value/use/inactive, mirrors `cfg_setting` minus `module`),
+plus the two threshold rows (`passage.max_single_verse_pct=20`,
+`passage.max_avg_verses_per_passage=30`) moved out of `cfg_setting` into it, per the researcher's
+explicit instruction that these belong in a module table, not generic settings;
+`raw.zero_strongs_action` (`cfg_setting`, default `"reject"`, module `raw`). **Live gap found immediately after landing**: the new `cfg_escalation_requirement`
+row broke ALL escalation raising project-wide (Stage 2's code to actually populate/check
+`resolution_kind` didn't exist yet) — fixed by temporarily deactivating the row until Stage 2
+landed, then reactivating.
+
+**Stage 2 — schema + core mechanism**: `add_resolution_kind_column_v1_20260822.py` (ALTER TABLE on
+`escalation`/`escalation_history` + `cfg_column` registration). `lib/escalation.py`: `_ENVELOPE_COLS`
+extended; new `_check_resolution_kind()`; `raise_new()`/`raise_()` gained `resolution_kind` params
+(`raise_new()` forces `type='issue'` when `resolution_kind='decision_required'`; `raise_()` — the
+dispatcher-shape path — defaults to `"decision_required"` on any validation failure, never crashes);
+`update()`'s dispatcher-refusal gate extended so a `resolution_kind='decision_required'`
+dispatcher-tied item CAN still be answered via `Update` (previously only `MANUAL-` run_ids could);
+`resolution_kind` added to the envelope dicts carried through `answer_for_run()`/`update()`/
+`correction()`. New transactions `resolve_self_correctable()` / `escalate_to_decision()`. Also fixed
+in this pass: the CLI crash-wrapper's silent `except Exception: pass` was logging nothing — now logs
+to stderr; that same call site now correctly passes `resolution_kind="self_correctable"` (a CLI
+crash is definitionally not a new judgement call).
+
+**Stage 3 — wiring every existing escalation site**: `handlers/base.py`'s `escalate()` gained
+`resolution_kind: str = "decision_required"`. **Two different run.py-adjacent decisions, not one
+uniform rule**: `run.py`'s own crash and fail()-shaped report-stop sites (no handler-supplied
+`escalate()`) pass `resolution_kind="self_correctable"` by default (proposal v4 §4, the
+researcher's own later correction that these are "code-bug territory by nature, not open design
+questions" — the opposite conclusion from an earlier, less specific framing of the same 3 sites);
+`escalate_to_decision()` converts the same item if a fix attempt reveals a genuine new decision.
+`configmaint.propose`'s pause and `reports.py`'s `.validate()`-step escalations
+(`_validation_outcome()`) DO pass `decision_required` explicitly — per a separate, later
+instruction, §6.1 of the v1 proposal (quoted in GOVERNANCE §48), about that different code path.
+New `path` reassignment in `run.py`: a `pause-continue` outcome whose escalation is
+`decision_required` is forced to `report-stop` BEFORE dispatch, not after — **live bug found and
+fixed**: the original placement reassigned `path` only inside the branch body, after
+`PATH_EXIT.get(path)` had already been evaluated at the point of use, so the exit code stayed `2`
+(paused) even though `run.state` was correctly written `'failed'`. `cluster.py`/`lexicon.py`/
+`configmaint.py`/`reports.py` all updated to pass `resolution_kind="decision_required"` on their
+`escalate()` calls (uniform — the design proposal explicitly deferred per-check classification for
+`reports.py`'s many validation checks, built uniformly as instructed). **Live vocabulary bug found
+during this stage's testing** (escalation `#809`, a real false-positive failure): all 4 of those
+handler sites checked `if decision == "approve":`, but a `decision_required` item resolved through
+the MANUAL vocabulary (`Update -NextAction approved`) stores the past-tense `"approved"` —
+`"approve"` is only ever a dispatcher `-Decision` literal. Fixed everywhere with
+`decision in ("approve", "approved")`. `configmaint.py`'s `propose()` `tried` text also corrected —
+it referenced the now-wrong `AnswerRun -Decision` path; rewritten to name
+`Update -NextAction ready_for_approval`/`approved`.
+
+**Stage 3b — closing the "constant decision_required" design gap**, the researcher's explicit
+correction that a recurring identical escalation is itself a design defect, not a pattern:
+`narrative.py:generate()` rewritten to remove its pause-continue/escalate() entirely — proceeds
+straight to `call_api()` once within the pre-existing `narrative.generate_max_cost` config cap (over
+cap is now a hard refusal, never a question). `raw.py:discover()`'s zero-strongs branch rewritten to
+read the new `raw.zero_strongs_action` config instead of escalating every time. `passage.py:validate()`
+rewritten around the two new `cfg_passage` thresholds: a new per-book query (`SUBSTR(osisId,...)` for
+book extraction, verse-count denominator) computes each book's single-verse-pct and average
+verses-per-passage; returns `ok()` directly when every book is within both thresholds; escalates
+(`decision_required`) naming only the specific breaching books when one is actually exceeded.
+`_write_quality_report()`'s report-path read switched to the new `Cfg.module_setting()`. New
+`Cfg.module_setting(table, key, default)` generic reader added to `lib/cfg.py` (reads any
+key/value/inactive-shaped module table, not just `cfg_setting`); `debaterun.py:staging_path()` and
+the inline `python -c` snippets in `Chapter-Generate.ps1`/`Debate-Run.ps1` switched to it, since the
+`cfg_passage` migration moved `passage.quality_report_path` and related keys out of `cfg_setting`.
+**Live gap found and fixed in this same pass**: `cfgquality.py`'s `find_missing_report_paths()` had
+`QUALITY_CHECK_REPORT_PATH` hardcoded to `cfg_setting` lookups — broke immediately once the
+`cfg_passage` migration landed; fixed by changing the constant to `(table, key)` tuples.
+
+**Stage 4 — CLI/PS surface** (`iba/app/ps/Escalation.ps1`): `-Action` `ValidateSet` gained
+`'ResolveSelfCorrectable'`, `'EscalateToDecision'`; new `-ResolutionKind
+[ValidateSet('DecisionRequired','SelfCorrectable')]` parameter, required (no default) on
+`-Action Raise`, mapped to the lowercase `cfg_enum` values and passed as `--resolution-kind=`. Two
+new switch-case blocks call `python -m iba.app.lib.escalation resolve-self-correctable`/
+`escalate-to-decision` respectively, each validating its own required flags (`-Id`/`-Resolution` and
+`-Id`/`-Tried`, plus `-AnsweredBy` on both — no silent default, matching every other write action).
+Comment-based help (`.SYNOPSIS`/`.DESCRIPTION`/`.EXAMPLE`) updated to document the whole mechanism.
+**Tested live, not just written**: `-Action Raise -ResolutionKind SelfCorrectable` (raised `#813`,
+verified via direct row read that `type` stayed `run_error` — NOT forced to `issue`, correctly, since
+`SelfCorrectable` was passed — and `resolution_kind` persisted); `-Action ResolveSelfCorrectable`
+closed `#813` to `completed` in one call; a second raise (`#814`) + `-Action EscalateToDecision`
+converted it to `resolution_kind='decision_required'`/`state='in-progress'` correctly. Both test
+items cleaned up afterward (`#813` genuinely resolved; `#814` withdrawn via `Correction` as
+test-only, not a real issue) — no gaps found, all 3 new flags/actions worked as designed on first
+live run.
+
+**Stage 5 — docs**: this entry; `GOVERNANCE.md` §48; `USER-GUIDE.md` §4 (resolution_kind
+explanation, updated flag/action reference).
+
+**Files:** `iba/app/migration/bootstrap_decision_vs_defect_axis_v1_20260822.py`,
+`add_resolution_kind_column_v1_20260822.py`; `iba/app/lib/escalation.py`, `cfg.py`, `debaterun.py`;
+`iba/app/handlers/base.py`, `run.py`, `narrative.py`, `raw.py`, `passage.py`, `configmaint.py`,
+`cluster.py`, `lexicon.py`, `reports.py`; `iba/app/ps/Escalation.ps1`, `Chapter-Generate.ps1`,
+`Debate-Run.ps1`; `iba/app/GOVERNANCE.md`, `USER-GUIDE.md`.

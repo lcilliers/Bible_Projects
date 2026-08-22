@@ -1,3 +1,5 @@
 -- database: ../../../database/bible_research.db
 
-SELECT * FROM prose_section_type;
+SELECT * FROM prose_section_type
+
+where book_label = 'Programme' and chapter_no = 4;

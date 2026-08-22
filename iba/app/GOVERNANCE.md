@@ -2056,3 +2056,92 @@ one direction — remains genuinely open, not resolved by this pass, still await
 choice of fix-shape.
 
 **Files:** `iba/app/ps/Escalation.ps1`.
+
+## §48. `resolution_kind` — decision-required vs self-correctable, the axis missing from escalation itself (2026-08-22, escalations #798/#799)
+
+The researcher's own diagnosis of why `#753` (the escalation module rebuild) was never signed off:
+*"I read through the escalation routing. We are mixing two things and working with two different
+methods which is causing all the confusion. You like to build, find a problem, go through a
+process of clarification, then proceed where you left off. My aim is to design, specify, and
+resolve all the open issues through debate and validate, and then build and test thereafter... a
+build validation or other stoppage for clarification should be TERMINAL. This is always a sign of
+poor upfront design."* A follow-up correction sharpened the OTHER half: *"the self-correctable must
+be able to escalate to a decision_required (that was the original idea behind the `tried`
+column)... there should be very few cases where decision_required is a constant output from every
+run. This means the design is inadequate."* Both halves are now `cfg_behaviour_rule`
+`decision-points-are-terminal-not-inline` (class `development`, quoted in full — see the rule row
+itself; enforced_by names `escalation.resolution_kind`), the first project-wide working-method rule
+recorded there rather than only in a session log.
+
+**The mechanism**, built via `iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md`
+(4 review rounds, approved v5) and tracked through 4 build stages on `#799`:
+
+- New `cfg_enum` group `resolution_kind`: `decision_required` | `self_correctable`.
+- New `escalation.resolution_kind` / `escalation_history.resolution_kind` columns (migration
+  `add_resolution_kind_column_v1_20260822.py`).
+- New `cfg_escalation_requirement` row: `raise` + `resolution_kind` is `field_required` — no
+  default, mirroring `-AnsweredBy`'s own no-silent-default rule (§ various). `raise_new()` also
+  forces `type='issue'` whenever `resolution_kind='decision_required'` is passed — a
+  decision-required item is definitionally an issue — but only AT RAISE, never on conversion
+  (`type` stays immutable after Raise everywhere else, same as `run_id`/`source`/`at_step`/
+  `raised_at`).
+- Two new transactions in `lib/escalation.py`: `resolve_self_correctable()` (closes a
+  self-correctable item directly — no approval step, because the design was already approved and
+  only the execution slipped) and `escalate_to_decision()` (converts a self-correctable item to
+  decision_required mid-fix, when the attempted correction reveals a genuine judgement call the
+  design didn't anticipate — this is `tried`'s original purpose, now load-bearing). Both exposed on
+  `Escalation.ps1` as `-Action ResolveSelfCorrectable` / `-Action EscalateToDecision`.
+- **Two DIFFERENT run.py-adjacent decisions, easy to conflate, kept distinct on purpose:**
+  `run.py`'s own crash and fail()-shaped report-stop sites (uncaught exception, hard error with no
+  handler-supplied `escalate()`) are `self_correctable` by DEFAULT — proposal v4 §4, the
+  researcher's own later, more specific correction: *"these are code-bug territory by nature, not
+  open design questions"* — Claude fixes it directly and `escalate_to_decision()` converts the
+  SAME item to `decision_required` (never closed-and-reopened) only if the fix attempt itself
+  reveals a genuine new judgement call. Separately, `reports.py`'s `.validate()`-step escalations
+  (`_validation_outcome()`) are always `decision_required` — a DIFFERENT, later instruction, §6.1
+  of the v1 proposal, about a different code path: *"§6.1 build these now as decision_required. I
+  will very quickly complain if there are missing configs when these modules are run."*
+  `configmaint.propose`'s pause is likewise always `decision_required` (a config change is
+  definitionally a design decision). `run.py`'s dispatch was fixed so ANY `decision_required`
+  pause — whichever site raised it — always routes to a terminal `report-stop` (never resumes
+  inline as `pause-continue`) — found live during build: the `path` reassignment originally
+  happened too late (inside the branch, after `PATH_EXIT` had already been read at the point of
+  use), so exit code stayed 2 (paused) even though `run.state` was
+  correctly `'failed'`; fixed by moving the reassignment before the dispatch `if/elif`.
+
+**The other half — closing the "constant decision_required" gap** — required real config, not more
+escalation machinery, in the three modules the researcher named directly:
+
+- `narrative.generate()` — no config existed to approve/reject an over-budget API cost; correction:
+  *"narrative API spend should be a config limit that is approved, if spend above then it is a
+  failure that requires a review of either to call, or the limit."* Fixed by removing the
+  pause-continue/escalate() entirely — `narrative.generate_max_cost` (already a `cfg_setting`, §30)
+  is now the sole gate: over cap is a hard refusal (`cost-cap-exceeded`), never a question asked at
+  run time.
+  - `raw.discover()`'s zero-strongs branch previously escalated every time; correction: *"When this
+  happen it will give me a chance to rethink the system because it should not happen"* → new
+  `raw.zero_strongs_action` setting (`cfg_setting`, module `raw`), default `"reject"` — a hard
+  refusal by config, not a question.
+- `passage.validate()` had no threshold at all — any passage distribution asked the researcher a
+  question. Correction: *"single verse passages per book should not be > 20% of the total verses in
+  the book. average verses per passage should not be > 30 ... these configs should not be in
+  cfg_settings, it should be in cfg_passage and it does not exist, create it."* Built as the
+  project's second per-module settings table (`governance.module.config`, precedent `cfg_passage`
+  already existed from an earlier build) — `passage.max_single_verse_pct` / `_max_avg_verses_per_passage`
+  as new `cfg_passage` rows, read via new `Cfg.module_setting(table, key, default)`. `validate()`
+  now returns `ok()` directly when a book is within both thresholds and only escalates
+  (`decision_required`) naming the specific breaching books when one is actually exceeded — the
+  common case no longer asks anything.
+
+**A vocabulary bug found live during Stage 3 testing** (escalation #809, a real false positive):
+`configmaint.py`/`cluster.py`/`lexicon.py`/`reports.py` all checked `if decision == "approve":`, but
+a `decision_required` item resolved via the MANUAL vocabulary (`Update -NextAction approved`) stores
+the PAST TENSE `"approved"`, not `"approve"` — `"approve"` is only ever a dispatcher-shape
+`-Decision` literal. Fixed across all 4 handler sites with `decision in ("approve", "approved")`.
+
+**Files:** `iba/app/migration/bootstrap_decision_vs_defect_axis_v1_20260822.py`,
+`add_resolution_kind_column_v1_20260822.py`; `iba/app/lib/escalation.py`, `cfg.py`,
+`debaterun.py`; `iba/app/handlers/base.py`, `run.py`, `narrative.py`, `raw.py`, `passage.py`,
+`configmaint.py`, `cluster.py`, `lexicon.py`, `reports.py`; `iba/app/ps/Escalation.ps1`,
+`Chapter-Generate.ps1`, `Debate-Run.ps1`. Full design: the 5 proposal versions in `iba/docs/`; build
+tracking: `#799`.

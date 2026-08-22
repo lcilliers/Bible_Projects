@@ -2,6 +2,7 @@
 
   - the seed filter (particle pattern)          cfg discovery.particle_pattern (via Step)
   - whether to follow relatedNos                cfg discovery.follow_related
+  - what to do on a zero-strongs word           cfg raw.zero_strongs_action
   - the meaning head/tree split marker          cfg meaning.head_marker
   - the Greek prefix                            cfg language.greek_prefix
   - which API may write which table (may_source) cfg may_source — ENFORCED at write
@@ -17,7 +18,7 @@ from __future__ import annotations
 import datetime
 import re
 
-from .base import Ctx, Outcome, ok, fail, escalate
+from .base import Ctx, Outcome, ok, fail
 from ..lib.stepapi import StepUnavailable
 
 # Fallback only — the real value is `cfg_setting raw.strong_base_pattern` (module `raw`), the
@@ -91,10 +92,16 @@ def discover(ctx: Ctx) -> Outcome:
                    "implemented — set it back to false, or implement the expansion before relying "
                    "on it (see handlers/raw.py:discover)")
     if not seeds:
-        return escalate("zero-strongs",
-                        question=f"{ctx.word!r} maps to no strongs. Register anyway, or reject?",
-                        preset={"word": ctx.word, "meanings_total": d.get("total")},
-                        tried="masterSearch meanings= returned no usable definitions")
+        # escalation #798/#799 SS3.6: word registration is researcher-instructed (the researcher
+        # named this exact word); re-asking "register anyway?" every time is redundant. Config-
+        # driven instead -- default 'reject' (researcher, 2026-08-22: "it should not happen",
+        # treated as anomalous until decided otherwise for a specific case).
+        action = ctx.cfg.setting("raw.zero_strongs_action", "reject")
+        if action == "reject":
+            return fail("zero-strongs",
+                       f"{ctx.word!r} maps to no strongs (raw.zero_strongs_action=reject)")
+        return ok(f"{ctx.word!r} maps to no strongs — proceeding per "
+                 f"raw.zero_strongs_action=proceed", word_strong_new=0)
     wid = _word_id(ctx)
     n = sum(_write(ctx, "call1_meanings", "word_strong",
                    {"word_id": wid, "strong": s, "deleted": 0})[1] for s in seeds)

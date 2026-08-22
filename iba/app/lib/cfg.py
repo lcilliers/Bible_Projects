@@ -73,6 +73,17 @@ class Cfg:
         _trace(f"setting {key}", val)
         return val
 
+    def module_setting(self, table: str, key: str, default=None):
+        """Generic reader for a per-module settings table shaped like cfg_setting (key/value/use/
+        inactive) but scoped to one module -- e.g. cfg_passage (escalation #798/#799,
+        governance.module.config). `table` is always a literal name supplied by the calling code,
+        never external input."""
+        r = self.conn.execute(
+            f'SELECT value FROM "{table}" WHERE key=? AND inactive=0', (key,)).fetchone()
+        val = json.loads(r["value"]) if r else default
+        _trace(f"module_setting({table}, {key})", val)
+        return val
+
     def database_path(self, name: str) -> pathlib.Path:
         """Project-root-relative path to a registered project database, per `cfg_enum
         'project_database'`/`database.<name>.path` (escalation #723's settings; this method is

@@ -189,11 +189,20 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         # permanent, visible record either way (that part was already correct); it just no longer
         # drags the crash's own half-finished writes in with it.
         db.conn.rollback()
-        esc_raise(db, run_id, _source_for_step(step_id), step_id,
-                 f"{step_id} crashed: {exc}",
-                 {"traceback": traceback.format_exc()},
-                 "uncaught exception — not a routed fail()/escalate() Outcome",
-                 etype="run_error", assigned_to="Claude")
+        # escalation #798/#799 SS4: "pure coding logic" (researcher, 2026-08-22) -- an uncaught
+        # exception is always self_correctable at raise time; escalate_to_decision() converts it
+        # if Claude's fix attempt reveals a genuine new decision is needed.
+        try:
+            esc_raise(db, run_id, _source_for_step(step_id), step_id,
+                     f"{step_id} crashed: {exc}",
+                     {"traceback": traceback.format_exc()},
+                     "uncaught exception — not a routed fail()/escalate() Outcome",
+                     etype="run_error", assigned_to="Claude",
+                     resolution_kind="self_correctable")
+        except Exception as record_exc:
+            # SS7 fix: never let a secondary failure here replace the original crash's clean
+            # traceback -- log it, don't let it propagate over the `raise` below.
+            print(f"[WARN] failed to record crash escalation: {record_exc!r}", file=sys.stderr)
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(),
                   outcome=f"crashed: {exc}")
         db.close()
@@ -207,21 +216,34 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         path = rule["path"] if rule else "report-stop"
         message = (rule["message"] + " — " if rule and rule["message"] else "") + outcome.message
 
+    # escalation #798/#799 SS5: a decision_required escalation is always terminal -- reassign
+    # `path` itself (not just internal behaviour) so the exit code this process returns (via
+    # PATH_EXIT below) and anything else keyed on `path` correctly say "stopped", not "paused
+    # resumably". Content is still built from the handler's own escalate() call, not this
+    # generic report-stop reassignment -- see the branch below, which keeps using
+    # outcome.escalation's question/preset/tried rather than falling into the plain report-stop
+    # block's message+counts synthesis (meant for fail()-shaped outcomes, would lose detail here).
+    if (path == "pause-continue" and outcome.escalation
+            and outcome.escalation.get("resolution_kind", "decision_required") == "decision_required"):
+        path = "report-stop"
+
     # act on the path
     if path == "pause-continue" and outcome.escalation:
+        # Only reachable for self_correctable now -- decision_required was reassigned to
+        # report-stop above, before this dispatch, precisely so it's handled by that branch
+        # instead (same content-building, correct terminal exit code).
         e = outcome.escalation
-        # idempotent: do not raise a duplicate if THIS run already has one pending at this step.
-        # Keyed on run_id, not (word, step): a word-less run (every config/quality-check step —
-        # configmaint.propose, candidate.validate, ...) has ctx.word == "" for every invocation, so
-        # keying on word alone silently treated any second concurrent proposal as a "duplicate" of
-        # the first and never wrote its escalation row at all (found 2026-07-22, proposing two
-        # governance settings back to back — the run still paused, but only one escalation existed).
         already = db.rows("SELECT id FROM escalation WHERE run_id=? AND at_step=? "
                           "AND state='raised'", (run_id, step_id))
         if not already:
             source = word_source(ctx.word) if ctx.word else _source_for_step(step_id)
-            esc_raise(db, run_id, source, step_id, e["question"], e["preset"], e["tried"],
-                     etype=_escalation_type_for(step_id, ctx.word), assigned_to="Researcher")
+            try:
+                esc_raise(db, run_id, source, step_id, e["question"], e["preset"], e["tried"],
+                         etype=_escalation_type_for(step_id, ctx.word),
+                         assigned_to="Researcher", resolution_kind="self_correctable")
+            except Exception as record_exc:
+                print(f"[WARN] failed to record self_correctable escalation: {record_exc!r}",
+                     file=sys.stderr)
         db.update("run", {"run_id": run_id}, state="paused", resume_point=step_id)
     elif path == "report-stop":
         # Added 2026-07-30 (the same standing rule): report-stop used to only flip run.state to
@@ -229,23 +251,40 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
         # still an error; it now leaves the same permanent, visible record a pause-continue
         # finding does, even though (unlike pause-continue) answering it doesn't resume anything —
         # the run is already terminal. Same idempotency guard as the pause-continue block above.
+        # escalation #798/#799 SS4/SS5: two ways to land here now --
+        #   (a) a genuine fail()-shaped outcome (outcome.escalation is None) -- always
+        #       self_correctable at raise time ("pure coding logic"); escalate_to_decision()
+        #       converts it if a fix attempt reveals a real decision is needed.
+        #   (b) a handler's own escalate() call whose resolution_kind was decision_required,
+        #       reassigned here from pause-continue above -- keeps ITS OWN question/preset/tried
+        #       (richer than the generic message+counts synthesis below) and decision_required.
         already = db.rows("SELECT id FROM escalation WHERE run_id=? AND at_step=? "
                           "AND state='raised'", (run_id, step_id))
         if not already:
-            # Found 2026-07-30 (escalation #383, "it is unclear what the issue is"): `message` here
-            # is often just a bare count (e.g. fail()'s own message arg, "1 coherence error(s)") —
-            # the actual error text lives in `outcome.counts` (e.g. counts["errors"]), which the
-            # pause-continue path above gets for free via the handler's own escalate() question but
-            # this auto-generated path never surfaced at all. Append it so the question is
-            # self-contained — full detail also still in `preset` for programmatic use.
-            detail = "; ".join(f"{k}: {v}" for k, v in outcome.counts.items() if v)
-            question = f"{message} — {detail}" if detail else message
+            if outcome.escalation:
+                e = outcome.escalation
+                question, preset, tried, kind, whom = (
+                    e["question"], e["preset"], e["tried"], "decision_required", "Researcher")
+            else:
+                # Found 2026-07-30 (escalation #383, "it is unclear what the issue is"): `message`
+                # here is often just a bare count (e.g. fail()'s own message arg, "1 coherence
+                # error(s)") — the actual error text lives in `outcome.counts` (e.g.
+                # counts["errors"]). Append it so the question is self-contained — full detail
+                # also still in `preset` for programmatic use.
+                detail = "; ".join(f"{k}: {v}" for k, v in outcome.counts.items() if v)
+                question = f"{message} — {detail}" if detail else message
+                preset = outcome.counts if outcome.counts else {}
+                tried = ("hard error (report-stop) — recorded for visibility; answering this "
+                        "does not resume the run, which is already terminal")
+                kind, whom = "self_correctable", "Claude"
             source = word_source(ctx.word) if ctx.word else _source_for_step(step_id)
-            esc_raise(db, run_id, source, step_id, question,
-                     outcome.counts if outcome.counts else {},
-                     "hard error (report-stop) — recorded for visibility; answering this does "
-                     "not resume the run, which is already terminal",
-                     etype="run_error", assigned_to="Claude")
+            try:
+                esc_raise(db, run_id, source, step_id, question, preset, tried,
+                         etype=_escalation_type_for(step_id, ctx.word), assigned_to=whom,
+                         resolution_kind=kind)
+            except Exception as record_exc:
+                print(f"[WARN] failed to record report-stop escalation: {record_exc!r}",
+                     file=sys.stderr)
         db.update("run", {"run_id": run_id}, state="failed", ended_at=_now(), outcome=message)
     else:
         db.update("run", {"run_id": run_id}, resume_point=step_id)

@@ -36,6 +36,24 @@
         and similar) no longer escalates at all — logged by the engine, errors only (`BUILD.md`
         §153) — word-scoped -Action Answer is RETIRED, not replaced.
 
+    **Decision-vs-defect axis, 2026-08-22** (`iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md`,
+    escalation #798/#799 — `cfg_behaviour_rule` 'decision-points-are-terminal-not-inline'): every
+    item now carries `resolution_kind` — `decision_required` (a genuine judgement call; the ONLY
+    thing this vocabulary answers) or `self_correctable` (a code/config execution slip against an
+    already-approved design; Claude fixes it directly, no approval needed). `-Action Raise` now
+    REQUIRES `-ResolutionKind DecisionRequired|SelfCorrectable` — no default, mirroring
+    `-AnsweredBy`'s own no-silent-default rule. Raising `-ResolutionKind DecisionRequired` forces
+    `-Type issue` (a decision-required item is definitionally an issue; `type` is otherwise
+    immutable after Raise, same as `run_id`/`source`/`at_step`/`raised_at`). Two new actions close
+    the loop a self-correctable item can still take: `-Action ResolveSelfCorrectable` (fixed it,
+    done — needs `-Id`/`-Resolution`/`-AnsweredBy`) or `-Action EscalateToDecision` (the fix, once
+    attempted, turned out to need a real judgement call after all — needs `-Id`/`-Tried`/
+    `-AnsweredBy`; this was `-Tried`'s original purpose). A dispatcher-tied item whose
+    `resolution_kind` is `self_correctable` is answered the same way as before (report-stop/
+    pause-continue via run.py); one recorded as `decision_required` always routes to a terminal
+    report-stop, never resumes inline — per the researcher's own framing: "when a build has
+    validation or other stoppages for clarification it should be terminal."
+
     **Register v9 build, 2026-08-21** (`escalation-design-plan-v5-20260821.md` +
     `escalation-design-decision-register-v9-20260821.md`): List/History now dispatch through
     run.py (work package 'escalation-reporting') instead of calling the module directly, matching
@@ -65,13 +83,28 @@
                         Revise|Hold|Noted); -Comment required with Revise, optional otherwise.
                         -Resolution optional. UNCHANGED from pre-redesign.
     -Action Raise        raise a new MANUAL item — an error/issue/task, not raised by a running
-                        step. Needs -Question (becomes short_description) and -Comment (required —
-                        minimum: what this is about, plan v3 §6). -Source (default 'researcher'),
-                        -Type (default task; 'notice' closes on arrival, D12), -AssignedTo
-                        (default Claude), -RelatedActivity (free text, optional), -FromId (D14 —
-                        the item this one was spawned from; if set, -RelatedActivity becomes
-                        required too, naming what the relationship documents) optional. Prints the
-                        new id — update it with -Action Update.
+                        step. Needs -Question (becomes short_description), -Comment (required —
+                        minimum: what this is about, plan v3 §6), and -ResolutionKind
+                        DecisionRequired|SelfCorrectable (required — no default, escalation
+                        #798/#799). -ResolutionKind DecisionRequired forces -Type issue regardless
+                        of what -Type is passed. -Source (default 'researcher'), -Type (default
+                        task; 'notice' closes on arrival, D12), -AssignedTo (default Claude),
+                        -RelatedActivity (free text, optional), -FromId (D14 — the item this one
+                        was spawned from; if set, -RelatedActivity becomes required too, naming
+                        what the relationship documents) optional. Prints the new id — update it
+                        with -Action Update.
+    -Action ResolveSelfCorrectable
+                        close out a `self_correctable` item you already fixed — no approval step,
+                        this IS the approval (the design was already approved; only the execution
+                        slipped). Needs -Id, -Resolution (what was wrong, what changed), and
+                        -AnsweredBy. Refuses items whose resolution_kind is decision_required —
+                        those close via -Action Update / -Action AnswerRun instead.
+    -Action EscalateToDecision
+                        convert a `self_correctable` item into `decision_required` mid-fix — the
+                        attempted self-correction surfaced a genuine judgement call the original
+                        design didn't anticipate. Needs -Id, -Tried (what was attempted and what it
+                        revealed), and -AnsweredBy. Sets type=issue and routes the item to a
+                        terminal stop, same as any other decision_required item.
     -Action Update        every subsequent change to a MANUAL item — comments, decisions,
                         reassignment, state changes, all through this one action; the resulting
                         state is DERIVED from what you set via cfg_escalation_transition, not
@@ -122,7 +155,11 @@
 .EXAMPLE
     .\Escalation.ps1 -Action AnswerRun -RunId RUN-... -Decision Revise -AnsweredBy Researcher -Comment "check the H0430 cluster first"
 .EXAMPLE
-    .\Escalation.ps1 -Action Raise -Question "word_full_extract.py throws on H1234" -Comment "ValueError at line 210, traceback in context" -Type run_error -AnsweredBy Claude
+    .\Escalation.ps1 -Action Raise -Question "word_full_extract.py throws on H1234" -Comment "ValueError at line 210, traceback in context" -Type run_error -ResolutionKind SelfCorrectable -AnsweredBy Claude
+.EXAMPLE
+    .\Escalation.ps1 -Action ResolveSelfCorrectable -Id 812 -Resolution "off-by-one in the span index, fixed and re-ran clean" -AnsweredBy Claude
+.EXAMPLE
+    .\Escalation.ps1 -Action EscalateToDecision -Id 812 -Tried "widened the retry window but the underlying limit is a design choice, not a bug -- needs a researcher call" -AnsweredBy Claude
 .EXAMPLE
     .\Escalation.ps1 -Action Update -Id 741 -NextAction revise -AssignedTo Researcher -AnsweredBy Claude -Comment "can you confirm the verse span is intact?"
 .EXAMPLE
@@ -136,7 +173,8 @@
 [CmdletBinding(PositionalBinding = $false)]
 param(
     [Parameter(Mandatory = $true)]
-    [ValidateSet('List', 'History', 'AnswerRun', 'Raise', 'Update', 'Correction')]
+    [ValidateSet('List', 'History', 'AnswerRun', 'Raise', 'Update', 'Correction',
+                 'ResolveSelfCorrectable', 'EscalateToDecision')]
     [string] $Action,
     [int] $Id,
     [string] $RunId,
@@ -159,7 +197,11 @@ param(
     [ValidateSet('raised', 'in-progress', 'on-hold', 're-assigned', 'closed', 'withdraw', 'supersede', 'completed')] [string] $State,
     [string] $RelatedActivity,
     [int] $FromId,
-    [string] $ShortDescription
+    [string] $ShortDescription,
+    # escalation #798/#799: required on Raise (cfg_behaviour_rule
+    # 'decision-points-are-terminal-not-inline'). DecisionRequired/SelfCorrectable map to the
+    # lowercase cfg_enum values the Python side expects.
+    [ValidateSet('DecisionRequired', 'SelfCorrectable')] [string] $ResolutionKind
 )
 
 Set-StrictMode -Version Latest
@@ -237,12 +279,40 @@ switch ($Action) {
             Write-Host "Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default previously misattributed >=39 history rows in one session)." -ForegroundColor Yellow
             exit 1
         }
-        $flags = @("--source=$Source", "--type=$Type", "--comment=$Comment", "--originator=$AnsweredBy")
+        if (-not $ResolutionKind) {
+            Write-Host "Raise needs -ResolutionKind DecisionRequired|SelfCorrectable (escalation #798/#799, cfg_behaviour_rule 'decision-points-are-terminal-not-inline')." -ForegroundColor Yellow
+            exit 1
+        }
+        $kindMap = @{ DecisionRequired = 'decision_required'; SelfCorrectable = 'self_correctable' }
+        $flags = @("--source=$Source", "--type=$Type", "--comment=$Comment", "--originator=$AnsweredBy",
+                  "--resolution-kind=$($kindMap[$ResolutionKind])")
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Context) { $flags += "--context=$Context" }
         if ($FromId) { $flags += "--from-id=$FromId" }
         python -m iba.app.lib.escalation raise @flags $Question
+    }
+    'ResolveSelfCorrectable' {
+        if (-not $Id -or -not $Resolution) {
+            Write-Host "ResolveSelfCorrectable needs -Id and -Resolution (what was wrong, what changed)." -ForegroundColor Yellow
+            exit 1
+        }
+        if (-not $AnsweredBy) {
+            Write-Host "ResolveSelfCorrectable needs -AnsweredBy Claude|Researcher -- no default." -ForegroundColor Yellow
+            exit 1
+        }
+        python -m iba.app.lib.escalation resolve-self-correctable $Id --originator=$AnsweredBy --resolution=$Resolution
+    }
+    'EscalateToDecision' {
+        if (-not $Id -or -not $Tried) {
+            Write-Host "EscalateToDecision needs -Id and -Tried (what was attempted before converting)." -ForegroundColor Yellow
+            exit 1
+        }
+        if (-not $AnsweredBy) {
+            Write-Host "EscalateToDecision needs -AnsweredBy Claude|Researcher -- no default." -ForegroundColor Yellow
+            exit 1
+        }
+        python -m iba.app.lib.escalation escalate-to-decision $Id --originator=$AnsweredBy --tried=$Tried
     }
     'Update' {
         if (-not $Id) {

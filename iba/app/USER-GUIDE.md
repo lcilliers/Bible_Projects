@@ -311,6 +311,50 @@ Same party is fine when that party holds the authority (Claude assigning an item
 approving it, is a legitimate, visible self-authorisation for items within Claude's own remit) —
 what's refused is approving something `ready_for_approval` assigned to someone ELSE.
 
+### 4.3a `resolution_kind` — decision-required vs self-correctable (2026-08-22, escalations #798/#799)
+
+A second axis, orthogonal to shape/type/state: **every item raised now carries
+`resolution_kind`** — `decision_required` or `self_correctable` — answering one question: *does
+closing this item require deciding something new, or only correcting execution against something
+already decided?* This is `cfg_behaviour_rule` `decision-points-are-terminal-not-inline` (class
+`development`), the project's working-method rule, not just an escalation-module detail:
+
+> *"A point that requires a NEW decision (a judgement call, an ambiguity, something not already
+> specified) is TERMINAL: it must not be answered inline and resumed. It is recorded as an open
+> item and routed back into design/specification... A point that instead reveals Claude's own
+> execution error against an ALREADY-settled, already-approved design (a typo, a wrong parameter, a
+> slip) is SELF-CORRECTABLE: Claude fixes it directly, records what was wrong and what changed, and
+> continues — no new approval is required, because no new decision was made."*
+
+`-ResolutionKind DecisionRequired|SelfCorrectable` is **required on `-Action Raise` — no default**,
+same discipline as `-AnsweredBy`. Raising `DecisionRequired` forces `type=issue` regardless of
+`-Type` (a decision-required item is definitionally an issue); this only happens at raise time —
+`type` stays immutable after that, same as `run_id`/`source`/`at_step`/`raised_at`.
+
+Two actions close a self-correctable item without a design-approval cycle, and one converts it
+mid-flight if the "simple fix" turns out not to be simple:
+
+- **`-Action ResolveSelfCorrectable`** — fixed it, done. No approval step, because the approval
+  already happened when the design itself was approved; only the execution slipped.
+- **`-Action EscalateToDecision`** — the attempted self-correction surfaced a genuine judgement call
+  the design didn't anticipate. Converts the item to `resolution_kind=decision_required` and routes
+  it to a real decision, same as any other decision-required item. This is what `-Tried` was
+  originally for.
+
+A `decision_required` dispatcher-tied pause (a `run.py` config proposal, crash, or report-stop) now
+always routes to a terminal stop when answered — it never silently resumes inline the way a
+`self_correctable` one can.
+
+**A recurring `decision_required` result on the SAME routine, run after run, is itself a design
+defect** — the rule's own words: *"it means a threshold or parameter that should have been
+specified once, in config, during design, was left to be re-asked every time instead. That is a
+design gap to close (add the missing config), not a pattern to formalise."* Three examples fixed
+this way in the same build: `narrative.py` (an API cost cap — now a hard `narrative.generate_max_cost`
+refusal, no question asked), `raw.py` (`raw.zero_strongs_action` config, default `reject`), and
+`passage.py` (per-book thresholds `cfg_passage.passage.max_single_verse_pct`/
+`max_avg_verses_per_passage` — a book within bounds is accepted automatically, only a genuine
+breach still asks).
+
 ### 4.4 The two-stage approval (manual items only)
 
 Splitting "I think this is done" from "confirmed done" was a deliberate correction — the researcher
@@ -345,7 +389,10 @@ The old duplicate/typo check (an existing word already holding all of the new wo
 kept as a signal, not removed — it now surfaces as a note in that same `ok` line (`-- POSSIBLE
 DUPLICATE: ...`), logged by the engine, not a blocking question.
 
-### 4.6 The five actions that exist today
+### 4.6 The seven actions that exist today
+
+(List, History, AnswerRun, Raise, Update, Correction, plus the two `resolution_kind` actions added
+2026-08-22 — ResolveSelfCorrectable, EscalateToDecision, §4.3a.)
 
 **List/History now dispatch through `run.py`** (register v9, D4/D16/D23, 2026-08-21) — work package
 `escalation-reporting`, steps `escalation.list`/`escalation.history` — instead of `Escalation.ps1`
@@ -371,10 +418,21 @@ iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Re
 # raise a new MANUAL item -- -Question becomes the (immutable-after-raise) title, MAX 60
 # CHARACTERS, must read like a title/subject -- a bare '--' anywhere in it is rejected (a reliable
 # sign it's a compressed sentence, not a title). -Comment is required (minimum: what this is
-# about). -AnsweredBy is REQUIRED. -Source (default 'researcher'), -Type (default task),
-# -AssignedTo (default Claude), -RelatedActivity (free text, optional):
-iba\app\ps\Escalation.ps1 -Action Raise -Question "Short Title, <=60 Chars" -Comment "what this item is about, and any detail" -AnsweredBy Claude|Researcher [-Type task] [-AssignedTo Claude] [-RelatedActivity "..."]
+# about). -AnsweredBy is REQUIRED. -ResolutionKind DecisionRequired|SelfCorrectable is REQUIRED --
+# no default (§4.3a) -- DecisionRequired forces -Type issue regardless of what -Type is passed.
+# -Source (default 'researcher'), -Type (default task), -AssignedTo (default Claude),
+# -RelatedActivity (free text, optional):
+iba\app\ps\Escalation.ps1 -Action Raise -Question "Short Title, <=60 Chars" -Comment "what this item is about, and any detail" -ResolutionKind DecisionRequired|SelfCorrectable -AnsweredBy Claude|Researcher [-Type task] [-AssignedTo Claude] [-RelatedActivity "..."]
 # prints the new id -- update it with -Action Update
+
+# close a SELF-CORRECTABLE item you already fixed -- no approval step, the design was already
+# approved, only the execution slipped (§4.3a):
+iba\app\ps\Escalation.ps1 -Action ResolveSelfCorrectable -Id <id> -Resolution "what was wrong, what changed" -AnsweredBy Claude|Researcher
+
+# convert a SELF-CORRECTABLE item to DECISION_REQUIRED mid-fix -- the attempted correction
+# surfaced a genuine judgement call the design didn't anticipate (§4.3a, -Tried's original
+# purpose):
+iba\app\ps\Escalation.ps1 -Action EscalateToDecision -Id <id> -Tried "what was attempted, what it revealed" -AnsweredBy Claude|Researcher
 
 # every subsequent change to a MANUAL item -- comments, decisions, reassignment, state changes,
 # ALL through this one action; resulting state is DERIVED from what you set via

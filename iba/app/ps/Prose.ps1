@@ -1,0 +1,101 @@
+<#
+.SYNOPSIS
+    The DB-canonical prose store's four operations, registered and config-governed
+    (escalation #784, 2026-08-21). Step-selection, not a fixed pipeline.
+
+.DESCRIPTION
+    -Step Extract        programme-prose extract (JSON/MD/DOCX) — iba/app/lib/prosestore.py
+    -Step Search         FTS5 search across active prose sections
+    -Step ExportChapter  export one chapter/section as an editable Markdown file
+    -Step ImportChapter  turn an edited chapter file into a PROSE supersede patch (no DB write)
+
+    EXTRACTOR_VERSION / CHAPTER_NAMES / BOOK_STAGE_MAP / search default limit are config
+    (cfg_setting, module='prose') — see Config-Maintenance.ps1 -Step Propose to change them.
+
+.PARAMETER Step         Extract | Search | ExportChapter | ImportChapter
+.PARAMETER Book         book_label (Extract/ExportChapter)
+.PARAMETER Chapter      chapter number (Extract/ExportChapter, combine with -Book)
+.PARAMETER TypeId       single prose_section_type.id (ExportChapter, instead of -Book/-Chapter)
+.PARAMETER IncludeBody  include full prose body text in the JSON extract (Extract)
+.PARAMETER AlsoMarkdown also emit a readable Markdown view (Extract)
+.PARAMETER AlsoDocx     also emit a readable .docx view (Extract)
+.PARAMETER Query        search text (Search)
+.PARAMETER Limit        result cap (Search); default: prose.search_default_limit
+.PARAMETER Fts          treat -Query as a raw SQLite FTS5 MATCH expression (Search)
+.PARAMETER Input        path to an edited chapter Markdown file (ImportChapter)
+.PARAMETER Author       patch author, default 'researcher' (ImportChapter)
+.PARAMETER Out          output path override (all steps)
+.PARAMETER Trace        Print every config read (IBA_TRACE).
+
+.EXAMPLE
+    .\Prose.ps1 -Step Extract -Book Programme -AlsoMarkdown
+.EXAMPLE
+    .\Prose.ps1 -Step Search -Query grace -Book Programme
+.EXAMPLE
+    .\Prose.ps1 -Step ExportChapter -Book Programme -Chapter 1
+.EXAMPLE
+    .\Prose.ps1 -Step ImportChapter -Input outputs/markdown/prose-edit-programme-chapter-1-20260821.md
+#>
+
+[CmdletBinding()]
+param(
+    [Parameter(Mandatory = $true)] [ValidateSet('Extract', 'Search', 'ExportChapter', 'ImportChapter')] [string] $Step,
+    [string] $Book,
+    [int] $Chapter,
+    [int] $TypeId,
+    [switch] $IncludeBody,
+    [switch] $AlsoMarkdown,
+    [switch] $AlsoDocx,
+    [string] $Query,
+    [int] $Limit,
+    [switch] $Fts,
+    [string] $Input,
+    [string] $Author,
+    [string] $Out,
+    [switch] $Trace
+)
+
+Set-StrictMode -Version Latest
+$ErrorActionPreference = 'Stop'
+$env:PYTHONUTF8 = '1'
+if ($Trace) { $env:IBA_TRACE = '1' }
+
+$RepoRoot = Split-Path -Parent (Split-Path -Parent (Split-Path -Parent $PSScriptRoot))
+Set-Location $RepoRoot
+. $PSScriptRoot\_lib\Notify.ps1
+
+$ready = python -c "from iba.app.init import _config_loaded, _data_tables_exist; from iba.app.lib.cfg import Cfg; print('1' if (_config_loaded() and _data_tables_exist(Cfg())) else '0')" 2>$null
+if ($ready -ne '1') {
+    Write-IbaNotInitialised
+    exit 1
+}
+
+$stepMap = @{ Extract = 'prose.extract'; Search = 'prose.search'; ExportChapter = 'prose.export_chapter'; ImportChapter = 'prose.import_chapter' }
+$stepId  = $stepMap[$Step]
+$runId   = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-PROSE"
+
+$paramArgs = @()
+if ($Book) { $paramArgs += @('--param', "Book=$Book") }
+if ($Chapter) { $paramArgs += @('--param', "Chapter=$Chapter") }
+if ($TypeId) { $paramArgs += @('--param', "TypeId=$TypeId") }
+if ($IncludeBody) { $paramArgs += @('--param', "IncludeBody=true") }
+if ($AlsoMarkdown) { $paramArgs += @('--param', "AlsoMarkdown=true") }
+if ($AlsoDocx) { $paramArgs += @('--param', "AlsoDocx=true") }
+if ($Query) { $paramArgs += @('--param', "Query=$Query") }
+if ($Limit) { $paramArgs += @('--param', "Limit=$Limit") }
+if ($Fts) { $paramArgs += @('--param', "Fts=true") }
+if ($Input) { $paramArgs += @('--param', "Input=$Input") }
+if ($Author) { $paramArgs += @('--param', "Author=$Author") }
+if ($Out) { $paramArgs += @('--param', "Out=$Out") }
+
+if ($Step -eq 'Search' -and -not $Query) { Write-Host "Search needs -Query." -ForegroundColor Yellow; exit 1 }
+if ($Step -eq 'ImportChapter' -and -not $Input) { Write-Host "ImportChapter needs -Input." -ForegroundColor Yellow; exit 1 }
+if ($Step -eq 'ExportChapter' -and -not $TypeId -and -not $Book) { Write-Host "ExportChapter needs -TypeId or -Book (+ -Chapter)." -ForegroundColor Yellow; exit 1 }
+
+Write-IbaRunHeader -WorkPackage 'prose' -Step $stepId -RunId $runId
+
+$json = python -m iba.app.run prose --step $stepId --run-id $runId @paramArgs
+$code = $LASTEXITCODE
+$res  = $json | ConvertFrom-Json
+Write-IbaStepResult -Step $stepId -Path $res.path -Message $res.message -Code $code
+exit $code

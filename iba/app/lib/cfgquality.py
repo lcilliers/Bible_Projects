@@ -21,16 +21,20 @@ MODULE_DEDICATED_TABLE = {
     "candidate": "cfg_candidate_rule",
 }
 
-# module -> the cfg_setting key that must hold WHERE that module's quality-check findings persist.
-# Per the researcher's 2026-07-21 rule ("errors is not optional to fix... why is there a standard
-# if you don't follow it"): every step whose Outcome is advisory findings (not a data write) must
-# persist those findings to a report file, matching report.py/validation.py/cfgreport.py's
-# established pattern — not just a terminal print + an escalation row that scrolls away.
+# module -> (table, key) locating the setting that must hold WHERE that module's quality-check
+# findings persist. `table` is almost always 'cfg_setting', but a module with its own dedicated
+# settings table (governance.module.config — e.g. cfg_passage, escalation #798/#799) keeps its
+# report-path setting there instead; each entry names its own home rather than assuming one table
+# for all. Per the researcher's 2026-07-21 rule ("errors is not optional to fix... why is there a
+# standard if you don't follow it"): every step whose Outcome is advisory findings (not a data
+# write) must persist those findings to a report file, matching report.py/validation.py/
+# cfgreport.py's established pattern — not just a terminal print + an escalation row that scrolls
+# away.
 QUALITY_CHECK_REPORT_PATH = {
-    "configmaint.validate": "configmaint.report_path",     # findings folded into CONFIG-REPORT.md
-    "candidate.validate": "candidate.quality_report_path",
-    "passage.validate": "passage.quality_report_path",
-    "lexicon.validate": "lexicon.quality_report_path",
+    "configmaint.validate": ("cfg_setting", "configmaint.report_path"),  # -> CONFIG-REPORT.md
+    "candidate.validate": ("cfg_setting", "candidate.quality_report_path"),
+    "passage.validate": ("cfg_passage", "passage.quality_report_path"),
+    "lexicon.validate": ("cfg_setting", "lexicon.quality_report_path"),
 }
 
 # Every step known to write a persistent report via lib/reportkit.render_scaffold — the ground
@@ -553,14 +557,14 @@ def find_missing_report_paths(conn: sqlite3.Connection) -> list[str]:
     standard violation the researcher found and required fixed 2026-07-21. A retired (inactive)
     step is skipped entirely (escalation #310)."""
     missing = []
-    for step, key in QUALITY_CHECK_REPORT_PATH.items():
+    for step, (table, key) in QUALITY_CHECK_REPORT_PATH.items():
         if _step_inactive(conn, step):
             continue
         row = conn.execute(
-            "SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
+            f'SELECT value FROM "{table}" WHERE key=? AND inactive=0', (key,)).fetchone()
         if not row or not row[0]:
-            missing.append(f"{step} has no active {key} setting — its findings would not persist "
-                          f"to a report")
+            missing.append(f"{step} has no active {key} setting in {table} — its findings would "
+                          f"not persist to a report")
     return missing
 
 

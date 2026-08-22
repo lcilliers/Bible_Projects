@@ -52,7 +52,9 @@ def _validation_outcome(ctx: Ctx, scope_label: str, out, overall: str, p: int, w
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["next_action"]
-        if decision == "approve":
+        # escalation #798/#799 SS4: decision_required now resolves via Update()'s manual
+        # vocabulary (approved) not AnswerRun's dispatcher vocabulary (approve).
+        if decision in ("approve", "approved"):
             return ok(f"acknowledged: {overall} ({p} pass, {w} warn, {f} fail) -> {out} — "
                       f"researcher confirmed these findings are known/acceptable",
                       path=str(out), overall=overall, passes=p, warns=w, fails=f)
@@ -62,6 +64,10 @@ def _validation_outcome(ctx: Ctx, scope_label: str, out, overall: str, p: int, w
                        path=str(out), overall=overall, passes=p, warns=w, fails=f)
         return fail("needs-revision", f"researcher comment: {answered['comment'] or '(none)'}")
 
+    # escalation #798/#799 SS3.7 (researcher, 2026-08-22): built now as uniformly
+    # decision_required, per instruction -- the per-check classification (some findings look like
+    # real code bugs, some like genuine open questions, per the design doc's own worked examples
+    # from validation.py) is NOT built in this pass.
     return escalate(
         "needs-review",
         question=f"Validation for {scope_label}: {overall} ({p} pass, {w} warn, {f} fail) — see "
@@ -69,7 +75,8 @@ def _validation_outcome(ctx: Ctx, scope_label: str, out, overall: str, p: int, w
                  f"flag for action, or revise with a comment.",
         preset={"scope": scope_label, "overall": overall, "passes": p, "warns": w, "fails": f,
                "report_path": str(out)},
-        tried=f"ran the full validation report — {out}")
+        tried=f"ran the full validation report — {out}",
+        resolution_kind="decision_required")
 
 
 def validation_word(ctx: Ctx) -> Outcome:

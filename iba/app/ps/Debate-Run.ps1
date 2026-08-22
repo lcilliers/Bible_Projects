@@ -11,7 +11,7 @@
     (lib/debaterun.py:lexical_complete_for_scope). Verses genuinely absent from the `verse` table
     are intentional (governance.verse_gap_by_design) and never counted as missing.
 
-    Then reads the live step order from `cfg_setting` (`passage.debate_run_sequence`), not a
+    Then reads the live step order from `cfg_passage` (`passage.debate_run_sequence`), not a
     hardcoded array — walks: hib.set -> passage.build -> phenomenon.set -> operation.set ->
     closing.set,
     each still under its OWN existing work package (operations-ingest / build-passages —
@@ -144,10 +144,10 @@ if (-not $lex.ok) {
 }
 
 # Sequence comes from the DB config store, not a hardcoded array here.
-$seqJson = python -c "import json; from iba.app.lib.cfg import Cfg; c=Cfg(); print(json.dumps(c.setting('passage.debate_run_sequence', []))); c.close()"
+$seqJson = python -c "import json; from iba.app.lib.cfg import Cfg; c=Cfg(); print(json.dumps(c.module_setting('cfg_passage', 'passage.debate_run_sequence', []))); c.close()"
 $seq = $seqJson | ConvertFrom-Json
 if (-not $seq -or $seq.Count -eq 0) {
-    Write-Host "passage.debate_run_sequence is empty/missing in cfg_setting -- nothing to run." -ForegroundColor Yellow
+    Write-Host "passage.debate_run_sequence is empty/missing in cfg_passage -- nothing to run." -ForegroundColor Yellow
     exit 1
 }
 if ($Step) { $seq = $seq | Where-Object { $_.step -eq $Step } }
@@ -155,7 +155,7 @@ if ($Step) { $seq = $seq | Where-Object { $_.step -eq $Step } }
 Write-Host "work package : debate-run (steps under their own existing work packages)"
 Write-Host "run_id       : $runId"
 Write-Host "runs over    : scope = '$scopeLabel'"
-Write-Host "sequence     : $($seq.Count) step(s), loaded from the DB config store (cfg_setting.passage.debate_run_sequence)"
+Write-Host "sequence     : $($seq.Count) step(s), loaded from the DB config store (cfg_passage.passage.debate_run_sequence)"
 Write-Host ""
 
 $exitCode = 0

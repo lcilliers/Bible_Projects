@@ -246,8 +246,8 @@ def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: l
     """Persist the current distribution — per the researcher's 2026-07-21 ruling that a quality
     check's output must persist to a report file like every other report in the app, not live
     only in a terminal print + an escalation row."""
-    path = pathlib.Path(ctx.cfg.setting("passage.quality_report_path",
-                                       "iba/app/reports/passage-quality.md"))
+    path = pathlib.Path(ctx.cfg.module_setting("cfg_passage", "passage.quality_report_path",
+                                              "iba/app/reports/passage-quality.md"))
     intro = [
         f"> Generated {_now()} by `passage.validate`. Read-only findings, not a gate.", "",
         f"- total passages: **{total}**",
@@ -288,7 +288,14 @@ def validate(ctx: Ctx) -> Outcome:
     a spot-check on the debate-range sizes `report.passage_debate` produced for a completed book
     (e.g. Dan 11's 45-verse range — was that the right call?), not on raw span fragmentation. Both
     purposes share one query/report/escalation shape since both are ultimately "look at the live
-    verse_count distribution and judge it" — scoping is the only difference that matters."""
+    verse_count distribution and judge it" — scoping is the only difference that matters.
+
+    escalation #798/#799 SS3.5: used to `escalate()` unconditionally on every run, no threshold
+    at all -- "iterative design, ask every time" (researcher, 2026-08-22). Now checks each book's
+    distribution against `cfg_passage.passage.max_single_verse_pct`/
+    `passage.max_avg_verses_per_passage` and only escalates if at least one book actually breaches
+    a bound; an already-in-bounds distribution is accepted automatically, same shape as
+    `cluster.validate`/`lexicon.validate`."""
     book = ctx.params.get("Book")
     scope_sql = " AND book=?" if book else ""
     scope_args = (book,) if book else ()
@@ -312,10 +319,41 @@ def validate(ctx: Ctx) -> Outcome:
     report_path = _write_quality_report(ctx, total, avg, single, dist, by_book,
                                         scope_sql, scope_args)
 
+    # per-book breach check against cfg_passage's thresholds -- the book's own TOTAL verse count
+    # (from `verse`, via osisId's book prefix) is the single-verse-pct denominator, not the book's
+    # passage count.
+    verse_book_filter = " AND SUBSTR(osisId, 1, INSTR(osisId, '.') - 1) = ?" if book else ""
+    verse_totals = {r["book"]: r["n"] for r in ctx.db.rows(
+        f"SELECT SUBSTR(osisId, 1, INSTR(osisId, '.') - 1) book, COUNT(*) n FROM verse "
+        f"WHERE deleted=0{verse_book_filter} GROUP BY book", scope_args)}
+    max_single_pct = float(ctx.cfg.module_setting("cfg_passage", "passage.max_single_verse_pct", 20))
+    max_avg = float(ctx.cfg.module_setting("cfg_passage", "passage.max_avg_verses_per_passage", 30))
+    breaches = []
+    for row in by_book:
+        book_total_verses = verse_totals.get(row["book"], 0)
+        single_pct = (row["single"] / book_total_verses * 100) if book_total_verses else 0.0
+        reasons = []
+        if single_pct > max_single_pct:
+            reasons.append(f"{single_pct:.1f}% single-verse (limit {max_single_pct:.0f}%)")
+        if row["avg"] > max_avg:
+            reasons.append(f"avg {row['avg']:.2f} verses/passage (limit {max_avg:.0f})")
+        if reasons:
+            breaches.append(f"{row['book']}: {'; '.join(reasons)}")
+
+    if not breaches:
+        return ok(f"{total} passages {scope_label}, {min_vc}-{max_vc} verses/passage "
+                 f"(avg {avg:.2f}), {single} ({100*single/total:.0f}%) single-verse — every book "
+                 f"within passage.max_single_verse_pct/max_avg_verses_per_passage, no review "
+                 f"needed; full detail in {report_path}",
+                 total=total, avg_verses=avg, min_verses=min_vc, max_verses=max_vc,
+                 single_verse=single)
+
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision = answered["next_action"]
-        if decision == "approve":
+        # escalation #798/#799 SS4: decision_required now resolves via Update()'s manual
+        # vocabulary (approved) not AnswerRun's dispatcher vocabulary (approve).
+        if decision in ("approve", "approved"):
             return ok(f"acknowledged: {total} passages {scope_label}, {min_vc}-{max_vc} "
                       f"verses/passage (avg {avg:.2f}), {single} ({100*single/total:.0f}%) "
                       f"single-verse — researcher confirmed this distribution is acceptable; "
@@ -331,16 +369,19 @@ def validate(ctx: Ctx) -> Outcome:
 
     return escalate(
         "needs-review",
-        question=(f"Passage distribution {scope_label}: {total} passages, {min_vc}-{max_vc} "
-                 f"verses/passage (average {avg:.2f}), {single} ({100*single/total:.0f}%) are "
-                 f"single-verse. Is this distribution acceptable — no debate range (or raw span, "
-                 f"if unscoped) looks like an outlier that should be reconsidered? "
-                 f"Full per-book breakdown written to {report_path}."),
+        question=(f"Passage distribution {scope_label} breaches its threshold in "
+                 f"{len(breaches)} book(s): {'; '.join(breaches)}. {total} passages total, "
+                 f"{min_vc}-{max_vc} verses/passage (average {avg:.2f}), {single} "
+                 f"({100*single/total:.0f}%) single-verse overall. Full per-book breakdown "
+                 f"written to {report_path}."),
         preset={"total": total, "avg_verses": round(avg, 2), "min_verses": min_vc,
-               "max_verses": max_vc, "single_verse": single,
+               "max_verses": max_vc, "single_verse": single, "breaches": breaches,
                "distribution": [dict(r) for r in dist[:30]], "report_path": str(report_path)},
-        tried=f"computed the live verse_count distribution {scope_label} — approve to accept "
-              f"as-is, reject to flag it for revisiting, or revise with a comment")
+        tried=f"computed the live verse_count distribution {scope_label}, checked against "
+              f"passage.max_single_verse_pct ({max_single_pct:.0f}%) and "
+              f"passage.max_avg_verses_per_passage ({max_avg:.0f}) — approve to accept as-is, "
+              f"reject to flag it for revisiting, or revise with a comment",
+        resolution_kind="decision_required")
 
 
 # ── debate_sync (standalone, on-demand) ───────────────────────────────────────

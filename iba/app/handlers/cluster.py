@@ -111,7 +111,11 @@ def validate(ctx: Ctx) -> Outcome:
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
         decision, comment = answered["next_action"], answered["comment"]
-        if decision == "approve":
+        # escalation #798/#799 SS4: this is decision_required, so it's now resolved via Update()'s
+        # manual vocabulary (approved/reject/revise/noted), not AnswerRun's dispatcher vocabulary
+        # (approve/reject/revise/hold/noted) -- only 'approve'/'approved' differ in spelling
+        # between the two, everything else already matches.
+        if decision in ("approve", "approved"):
             return ok(f"acknowledged: {len(no_word)} no-word / {len(sibling_rows)} sibling-conflict "
                      f"exception(s) — researcher confirmed known/acceptable; full detail in "
                      f"{report_path}", **counts, no_word=len(no_word), sibling_conflict=len(sibling_rows))
@@ -132,4 +136,5 @@ def validate(ctx: Ctx) -> Outcome:
         preset={"no_word": len(no_word), "sibling_conflict": len(sibling_rows),
                "report_path": str(report_path)},
         tried="reconcile()'s own exception checks, run DB-wide across every backfill-origin strong "
-              "with a cluster assignment")
+              "with a cluster assignment",
+        resolution_kind="decision_required")
