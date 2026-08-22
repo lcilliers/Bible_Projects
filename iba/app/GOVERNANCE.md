@@ -2145,3 +2145,106 @@ the PAST TENSE `"approved"`, not `"approve"` — `"approve"` is only ever a disp
 `configmaint.py`, `cluster.py`, `lexicon.py`, `reports.py`; `iba/app/ps/Escalation.ps1`,
 `Chapter-Generate.ps1`, `Debate-Run.ps1`. Full design: the 5 proposal versions in `iba/docs/`; build
 tracking: `#799`.
+
+## §49. `AnswerRun` fixed + `decision_required` now closed off from it entirely — escalation #795 (2026-08-22)
+
+Three real defects in the dispatcher-tied `AnswerRun` path, none touched by §48's build (that build
+gave `decision_required` items an *alternate* route via `Update`; it never closed the old route off).
+
+**Items 1-2** — researcher, verbatim: *"Calling AnswerRun with approve, reject, or revise all land
+on the same completed state is still not solved then solve it. it is a bug. that is not the correct
+behaviour... the runid should be allowed to use the number."* `cfg_escalation_transition`
+(`shape='dispatcher'`) had one catch-all rule sending approve/reject/revise all to `completed` —
+split into 3 rules matching the manual shape's own outcomes (`approve`→`completed`,
+`reject`→`withdraw`, `revise`→`in-progress`); `cfg_status_flow` retargeted to name each specific
+`decision=` key. `pending_for_run()` now also accepts the bare escalation id, not only the full
+generated `run_id` string.
+
+**Item 3** — the A/B routing question §48 itself never answered. Researcher, verbatim: *"I suggest
+to check and test the answer to the question in the configs, my expectation is that it should not
+be possible and that the configs should now state that."* Checked live BEFORE fixing, per that
+instruction: raised a real `decision_required` item (escalation #820) and confirmed `AnswerRun`
+would silently flat-approve it — no refusal existed. Fixed: `answer_for_run()` now refuses any item
+with `resolution_kind='decision_required'` at the top of the function, before evaluating any
+decision — the exact mirror of `update()`'s own existing carve-out (`update()` refuses a
+dispatcher-tied item UNLESS `decision_required`; `answer_for_run()` now refuses one IF
+`decision_required`). Together the two guards mean a `decision_required` item is answerable **only**
+through `Update`'s richer vocabulary — `AnswerRun` is `self_correctable`-only from now on. The rule
+itself is recorded in `cfg_behaviour_rule` (class=`development`,
+`rule_key='decision-required-answered-via-update-not-answerrun'`), not just in code, per the
+researcher's explicit instruction.
+
+**Tested live throughout, not unit tests alone**: 6 real throwaway escalations (`#815`-`#822`) —
+approve/reject/revise transition outcomes, short-id `AnswerRun`, the pre-fix `decision_required`
+gap confirmed on `#820`, the post-fix refusal confirmed on `#821` (then successfully closed via
+`Update`'s full `ready_for_approval`→`approved` flow instead), and `#822` confirming
+`self_correctable` items are unaffected. `configmaint.validate` re-run clean after each change.
+
+**Still open, not part of this fix**: none — items 1-3 were the entirety of what `#795` and its
+attached routing proposal (`iba/docs/escalation-type-routing-proposal-v1-20260822.md`) asked for;
+the proposal's option A (stop `.validate`-style steps pausing at all) is now moot, since option B
+(unblock only via the richer flow) is what got built.
+
+**A second gap found checking this, not from the researcher's instruction but from re-reading
+#799's own approved spec while fixing item 3**: the ORIGINAL approved proposal
+(`escalation-decision-vs-defect-axis-proposal-v4-20260822.md` §6 + §11 Stage 2's own named test)
+already required `self_correctable` items to have "no reachable AnswerRun path (attempting it
+should refuse, citing resolution_kind)" — the opposite direction from item 3's `decision_required`
+guard. **This was never built in #799 either**, and #799's own Stage 2 test record (`BUILD.md`
+§172) never mentions testing it — confirmed live (escalation #822): a flat `approve` via AnswerRun
+succeeded on a self_correctable item with no refusal. Fixed in the same pass: `answer_for_run()`
+now refuses BOTH `resolution_kind` values. **Net effect, stated plainly**: `AnswerRun`'s flat
+vocabulary is now unreachable for any item raised since #799 (resolution_kind required at every
+Raise) — this is what the approved design actually specified throughout, not a new decision made
+here. Zero live disruption: checked first, no pending dispatcher-tied escalation existed at the
+time of the fix. This is the second of two real "approved-but-not-built" gaps found in one review
+pass of #799's own spec — see the researcher's follow-up question about build trustworthiness,
+answered directly in escalation #795's own record.
+
+**Files:** `iba/app/migration/fix_dispatcher_answerrun_795_20260822.py` (new);
+`iba/app/lib/escalation.py` (`pending_for_run()`, `answer_for_run()`). Build record: `iba/app/
+BUILD.md` §173.
+
+## §50. New governance rule — a test plan per module/utility, run after build, results in the resolution (2026-08-22)
+
+Direct consequence of §49: the approved design for #798/#799 contained a specific, named test
+(§6/§11 Stage 2 of `escalation-decision-vs-defect-axis-proposal-v4-20260822.md`) that was never
+actually run before the build was reported complete — found twice, once per half of the same
+function. Researcher, verbatim: *"I think we got to the stage where we need to have a re-usable
+test pack for all development tasks... each module or utility in future must have a test plan. the
+test plan must include testing all the different interations, params options of each of the
+module/utility intended functionality. this test plan must be updated to include modifying the
+testing plan for each functional component after a change. the test plan must then run through
+after the design, and the results of the test must be included in the resolution of the build...
+however, the test plan method will be introduced case by case as further development takes place,
+rather than trying to develop test plans for all modules."*
+
+**The rule, anchored in two places** (`iba/app/migration/
+anchor_test_plan_governance_rule_20260822.py`):
+
+- `cfg_behaviour_rule` (class=`development`, `rule_key='test-plan-per-module-utility'`) — full text
+  and rationale, same shape as `decision-points-are-terminal-not-inline`.
+- `cfg_setting` (`module=governance`, `key='governance.module_utility_test_plan'`) — the compact
+  form, because this is the row `init.py` actually prints at every `Start-Iba.ps1` run — the
+  mechanism that makes a process rule genuinely "anchored" rather than an unread database row (per
+  `init.py`'s own comment on why `governance.*` settings exist).
+
+**What the rule requires, going forward, case-by-case (NOT retrofitted to existing modules):**
+
+1. Every module/utility design, from now on, includes a test plan covering its meaningfully
+   different interaction/parameter/option combinations — not one happy-path example.
+2. The test plan is a living artifact: a change to the functional component updates its test plan
+   in the same unit of work, before the change is considered complete (same discipline as
+   `governance.build_md_on_code_change`).
+3. The test plan RUNS after the approved design is built — a required stage inside the existing
+   plan/propose/design (in detail) → approve → build per the plan → approve cycle, not optional and
+   not skippable.
+4. The test's actual results go INTO the build's escalation resolution — not a prose claim of
+   "tested live" without the per-case results shown.
+
+**Deliberately not built now**: no `cfg_test_plan` table, no template, no retrofit of any existing
+module's tests — rollout is case-by-case, starting the next time a module/utility is designed or
+changed, per the researcher's explicit instruction not to speculatively engineer this ahead of a
+real case.
+
+**Files:** `iba/app/migration/anchor_test_plan_governance_rule_20260822.py` (new).

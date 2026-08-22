@@ -9585,3 +9585,72 @@ explanation, updated flag/action reference).
 `iba/app/handlers/base.py`, `run.py`, `narrative.py`, `raw.py`, `passage.py`, `configmaint.py`,
 `cluster.py`, `lexicon.py`, `reports.py`; `iba/app/ps/Escalation.ps1`, `Chapter-Generate.ps1`,
 `Debate-Run.ps1`; `iba/app/GOVERNANCE.md`, `USER-GUIDE.md`.
+
+## 173. `AnswerRun` fixed — approve/reject/revise no longer collapse to one status; short escalation id now accepted (2026-08-22, escalation #795)
+
+Two real, live-confirmed defects in the dispatcher-tied (`run_id` set) `AnswerRun` path, both
+unchanged since the escalation-module-rebuild-20260820 and untouched by #798/#799 (that build added
+an *alternate* route via `Update` for `decision_required` items; it never touched this mechanism).
+Researcher, 2026-08-22, verbatim: *"Calling AnswerRun with approve, reject, or revise all land on
+the same completed state is still not solved then solve it. it is a bug. that is not the correct
+behaviour... the runid should be allowed to use the number."*
+
+**Fix 1 — the collapsed transition.** `cfg_escalation_transition` for `shape='dispatcher'` had one
+catch-all rule (`next_action IS NULL`) matching approve/reject/revise alike →
+`'dispatcher-tied default'` → status `completed`. `iba/app/migration/
+fix_dispatcher_answerrun_795_20260822.py` (idempotent, one-off) replaced it with three specific
+rules, each resolving to the status its MANUAL-shape equivalent already uses: `approve` → `completed`
+(unchanged outcome), `reject` → `withdraw` (matches manual shape's own reject default), `revise` →
+`in-progress` (matches manual shape's revise → in-progress exactly). `cfg_status_flow` (entity=
+`escalation`, statuses `completed`/`withdraw`/`in-progress`) `set_by` text retargeted to name the
+specific `decision=` key each now resolves from, replacing the old shared "decision not hold/noted"
+wording.
+
+**Fix 2 — short-id `RunId`.** `pending_for_run()` (`iba/app/lib/escalation.py`) matched only the
+literal `run_id` column — the researcher hit this live on #796 (tried the short escalation number,
+got `"no pending escalation for run 796"`). Now: if the string passed is all digits, it resolves by
+`escalation.id` instead (still requiring `run_id IS NOT NULL AND state='raised'`, so a manual-shaped
+item can never be answered through this path just by guessing its id); otherwise unchanged
+(matches the literal `run_id` column as before).
+
+**Tested live** (not unit tests alone): raised 4 real throwaway dispatcher-tied escalations
+(`#815`-`#818`), answered them `approve`/`reject`/`revise`/`approve-by-short-id` respectively,
+confirmed from a fresh DB connection: `815 completed`, `816 withdraw`, `817 in-progress` (then
+closed as cleanup), `818 completed` (answered via `answer-run 818 approve`, not the full run_id
+string). `configmaint.validate` re-run clean after the change (schema/FK/status-flow/report checks
+all pass). Test rows resolved (withdrawn/closed) after verification, not left open.
+
+**Item 3 — the routing question, answered.** Researcher, 2026-08-22, verbatim: *"I suggest to check
+and test the answer to the question in the configs, my expectation is that it should not be
+possible and that the configs should now state that."* Checked live BEFORE fixing: raised a real
+`decision_required` item (#820), confirmed `AnswerRun` silently flat-approved it — no guard existed.
+Fixed: `answer_for_run()` now refuses any `resolution_kind='decision_required'` item at the top of
+the function (mirrors `update()`'s own opposite-direction carve-out from #798/#799: `update()`
+refuses dispatcher-tied items UNLESS `decision_required`; `answer_for_run()` now refuses them IF
+`decision_required`). Together: a `decision_required` item is answerable *only* via `Update`'s
+richer vocabulary, never `AnswerRun`'s flat approve/reject/revise. Rule recorded as
+`cfg_behaviour_rule` (class=`development`,
+`rule_key='decision-required-answered-via-update-not-answerrun'`) by the same migration script, not
+left code-only — per the researcher's explicit instruction that the configs state it.
+
+Live-tested: `#821` raised `decision_required`, `AnswerRun approve` correctly refused (state
+unchanged, `raised`/`review`), then closed correctly end-to-end via `Update`
+(`ready_for_approval`→`approved`, final state `completed`). `#822` raised `self_correctable`,
+`AnswerRun approve` initially still succeeded — see item 4 below, corrected in the same pass.
+`configmaint.validate` re-run clean after the `cfg_behaviour_rule` addition too.
+
+**Item 4 — a second gap, self-found while fixing item 3, not separately instructed.** Re-reading
+the approved spec (`escalation-decision-vs-defect-axis-proposal-v4-20260822.md` §6 + its own §11
+Stage 2 test) surfaced that it ALREADY required `self_correctable` items to have "no reachable
+AnswerRun path (attempting it should refuse, citing resolution_kind)" — never built or tested in
+#799's Stage 2 (its own test record, §172 above, never mentions this check). Confirmed live on
+`#822` the same way item 3 was confirmed on `#820`: flat `approve` succeeded with no refusal. Fixed
+in the same pass — `answer_for_run()` now refuses BOTH `resolution_kind` values, matching what the
+approved spec specified throughout, not a new decision made here. `cfg_behaviour_rule` text widened
+to state both halves. Zero live disruption (checked first: no pending dispatcher-tied escalation
+existed at fix time). This closes out escalation #795's routing question in full — proposal option
+A (stop `.validate`-style steps pausing) is now moot, option B (unblock only via the richer flow)
+is what's built, for both kinds. Full record: `GOVERNANCE.md` §49.
+
+**Files:** `iba/app/migration/fix_dispatcher_answerrun_795_20260822.py` (new); `iba/app/lib/
+escalation.py` (`pending_for_run()`, `answer_for_run()`); `iba/app/GOVERNANCE.md` §49.

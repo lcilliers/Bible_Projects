@@ -501,6 +501,16 @@ def raise_(db: Db, run_id: str, source: str, at_step: str, question: str,
 
 
 def pending_for_run(db: Db, run_id: str):
+    """`run_id` accepts either the full dispatcher run_id string, or (as a convenience) the short
+    escalation id, e.g. '796' -- researcher-reported UX gap, escalation #795 v4 (2026-08-22): the
+    researcher tried the short numeric id instead of the long generated string and got 'no pending
+    escalation for run 796'; the long string is error-prone to copy correctly. Short-id resolution
+    still requires the row to actually be dispatcher-tied (run_id IS NOT NULL) so a manual-shaped
+    item can never be answered through this path just by guessing its id."""
+    if run_id.isdigit():
+        return db.rows(
+            "SELECT * FROM escalation WHERE id=? AND run_id IS NOT NULL AND state='raised' "
+            "ORDER BY id DESC LIMIT 1", (int(run_id),))
     return db.rows(
         "SELECT * FROM escalation WHERE run_id=? AND state='raised' "
         "ORDER BY id DESC LIMIT 1", (run_id,))
@@ -525,12 +535,54 @@ def open_duplicate(db: Db, at_step: str, stable_key: str):
 def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | None = None,
                    *, answered_by: str, resolution: str | None = None) -> str:
     """Record the decision on a run-scoped (dispatcher-tied) escalation. `answered_by` is required,
-    no default (escalation-rebuild-design-v1 sec6)."""
+    no default (escalation-rebuild-design-v1 sec6).
+
+    escalation #795 (researcher, 2026-08-22) -- BOTH `resolution_kind` values now refuse this
+    path, checked and confirmed live as real gaps before either guard existed, not assumed:
+
+    - `decision_required` (checked live 2026-08-22, escalation #820: a flat 'approve' via AnswerRun
+      silently succeeded on a decision_required item -- researcher's own words, "it should not be
+      possible"). Mirrors `update()`'s own carve-out the OTHER way: `update()` refuses a
+      dispatcher-tied item UNLESS `resolution_kind='decision_required'`; this refuses one IF
+      `resolution_kind='decision_required'` -- together, a decision_required item is answerable
+      ONLY through Update's richer vocabulary (ready_for_approval -> approved, -State on-hold,
+      next_action=reject/revise/noted).
+    - `self_correctable` (this was always the APPROVED spec -- proposal
+      `escalation-decision-vs-defect-axis-proposal-v4-20260822.md` §6: "No approve/reject/revise/
+      hold/noted vocabulary. AnswerRun is never invoked" -- and its own §11 Stage 2 test named this
+      exact check by name: "confirm the second [a self_correctable item] has no reachable AnswerRun
+      path (attempting it should refuse, citing resolution_kind)". #799's Stage 2 build never
+      actually implemented or tested this specific line of its own approved spec -- found live
+      2026-08-22 re-checking #795, escalation #822, the same way #820 was found: a flat 'approve'
+      succeeded with no refusal at all. A self_correctable item is closed ONLY via
+      `resolve_self_correctable()` / converted via `escalate_to_decision()`, never AnswerRun.
+
+    Net effect: `AnswerRun`'s flat approve/reject/revise/hold/noted vocabulary is now unreachable
+    for EVERY item raised under the resolution_kind regime (i.e. every item raised since #799,
+    resolution_kind being required at Raise) -- both branches refuse. This is a real, deliberate
+    consequence of the approved design, not a partial/temporary state: `decision_required` runs
+    terminate and never resume the same run_id (a fresh run is the test, per §5), and
+    `self_correctable` items never carried decision vocabulary to begin with (per §6) -- neither
+    kind ever had a genuine use for AnswerRun's original 'answer and resume' semantics. See
+    `cfg_behaviour_rule` (class=development,
+    rule_key='decision-required-answered-via-update-not-answerrun') -- text covers both halves."""
     decision = decision.lower()
     rows = pending_for_run(db, run_id)
     if not rows:
         return f"no pending escalation for run {run_id!r}"
     esc_row = rows[0]
+    if esc_row["resolution_kind"] == "decision_required":
+        return (f"escalation #{esc_row['id']} is resolution_kind='decision_required' -- answer it "
+               f"via Update (ready_for_approval -> approved, or -State/-NextAction directly), not "
+               f"AnswerRun. AnswerRun's flat approve/reject/revise is for self_correctable items "
+               f"only (cfg_behaviour_rule 'decision-required-answered-via-update-not-answerrun').")
+    if esc_row["resolution_kind"] == "self_correctable":
+        return (f"escalation #{esc_row['id']} is resolution_kind='self_correctable' -- close it via "
+               f"resolve-self-correctable (or convert it via escalate-to-decision if a fix reveals "
+               f"a genuine new judgement call), not AnswerRun. Per the approved spec "
+               f"(escalation-decision-vs-defect-axis-proposal-v4-20260822.md §6): self_correctable "
+               f"items carry no approve/reject/revise/hold/noted vocabulary at all "
+               f"(cfg_behaviour_rule 'decision-required-answered-via-update-not-answerrun').")
     who = _check_assignee(db, answered_by)
     decision = _check_next_action_dispatcher(db, decision)
     new_state = _evaluate_transition(db, "dispatcher", decision, has_resolution=bool(resolution),
