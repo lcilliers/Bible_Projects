@@ -9654,3 +9654,58 @@ is what's built, for both kinds. Full record: `GOVERNANCE.md` §49.
 
 **Files:** `iba/app/migration/fix_dispatcher_answerrun_795_20260822.py` (new); `iba/app/lib/
 escalation.py` (`pending_for_run()`, `answer_for_run()`); `iba/app/GOVERNANCE.md` §49.
+
+## 174. Prose store round-trip fixes — file-control regression, naming/archiving, section-level supersede (2026-08-22/23, escalation #784)
+
+Three real defects found and fixed live while designing prose-management file control, none of
+them speculative — each confirmed by tracing the code or testing against real (throwaway) data
+before being touched.
+
+**Fix 1 — `CHAPTER_EDIT_OUT_DIR` regression.** `iba/app/lib/prosestore.py`'s own code comment
+claimed output locations were "unchanged from the original scripts," but this one constant pointed
+at `outputs/markdown/` flat, when the established convention (33 files, dated 2026-08-14, from the
+pre-rebuild script) was `outputs/markdown/prose-edits/`. Fixed; 8 misplaced files (5 chapter
+exports + 3 type-based exports) moved into the correct folder.
+
+**Fix 2 — no versioning, no archiving.** Chapter-edit exports carried no `-v{n}-` component — a
+same-day re-export silently overwrote a prior one, observed live during the fix above. And nothing
+archived an edit file once imported, even though `docs/prose-store-architecture.md` §8.1 claimed
+edit files were disposable — untrue: `run_import_chapter` writes the edit file's own path into
+`prose_section.source_file` **permanently**, as real provenance, not a transient log line. Fixed:
+`run_export_chapter` now names every export `{stem}-v{n}-{date}.md` (version scanned across both
+the active folder and its archive); `run_import_chapter` computes the archive destination *before*
+building the patch, uses that archived path (not the pre-move path) as `source_file`, writes the
+patch, then moves the file — so the DB's provenance pointer is never briefly dangling.
+`docs/prose-store-architecture.md` §8.1 corrected to state the real (permanent, auto-archived)
+behaviour.
+
+**Fix 3 — unconditional supersede.** `run_import_chapter` built a `supersede` operation for every
+section block in an edit file, unconditionally — `ps.body` wasn't even in the row query, so nothing
+was ever compared against it. A chapter-edit file bundles several independently-versioned sections
+purely for editing convenience; re-exporting a 7-section chapter to fix one typo and importing it
+back would have superseded all 7, bumping every version for zero actual change in 6 of them.
+Confirmed live: an earlier unedited test import (during Fix 2's own testing) had generated 7
+supersede operations despite touching nothing — harmless only because that patch was never applied.
+Fixed: the import now fetches `ps.body`, skips any block whose text matches the current row exactly,
+and refuses outright ("nothing to import") if every block is unchanged, correctly leaving the file
+in place rather than archiving it.
+
+**Tested live throughout** (throwaway artifacts only, cleaned up after each round, DB
+`prose_section` max id unchanged at 1040 throughout, confirmed by query): exporting the same
+chapter twice produced `v1` then `v2`, no overwrite; a type-id export with a real book+chapter used
+the chapter stem, one with no book at all fell back to an unbooked-section name; importing an
+unedited export was refused and the file confirmed still present; editing exactly 1 of 7 sections
+produced a patch with exactly 1 operation, matching the edited section, file archived only on this
+real-change path (confirmed by reading the written patch JSON, not assumed). Delete/add/move
+behaviour on the edit-file round-trip was also tested live and found to differ sharply: add and move
+both refuse outright with a clear error; delete is silently ignored (the removed section's DB row
+comes back completely untouched, no warning) — flagged as a genuine open design decision, not
+fixed, since it isn't a defect in the same sense as the three above (no wrong behaviour occurred,
+just an absence of any signal).
+
+**Files:** `iba/app/lib/prosestore.py` (`run_export_chapter`, `run_import_chapter`, new
+`_next_edit_version` helper); `docs/prose-store-architecture.md` §8.1.
+
+Full design record and the much wider conversation this build sits inside (prose management scope,
+the four-book purpose model, the verse-linkage gap, the Concordance risk decomposition — none of it
+built yet, all of it captured): `iba/docs/prose-management-784-conversation-capture-v1-20260823.md`.

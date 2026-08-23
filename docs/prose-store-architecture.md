@@ -268,8 +268,15 @@ python scripts/apply_session_patch.py path/to/generated-patch.json
 The importer validates the book, section, chapter, title, sort order, current
 version, and source-file markers. It never changes structure and never writes
 directly to the database. The old prose version remains preserved through the
-supersede chain. Temporary edit files may be discarded after the patch has
-been reviewed and applied.
+supersede chain.
+
+**Correction, 2026-08-22 (escalation #784):** edit files are not disposable once
+imported — the importer writes the edit file's own path into the new
+`prose_section.source_file` row as permanent provenance, so it must never be
+deleted by hand. On successful import, the file is moved automatically to
+`outputs/markdown/prose-edits/archive/`, never discarded — see
+`iba/docs/prose-file-control-v1-20260822.md` for the full file-lifecycle design.
+An export not yet imported remains a disposable draft.
 
 ### 8.2 FTS5 search
 

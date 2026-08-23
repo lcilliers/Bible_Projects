@@ -43,7 +43,12 @@ from pathlib import Path
 OUT_DIR = Path("Workflow") / "Programme" / "programme_prose"
 DOCX_OUT_DIR = Path("outputs") / "docx"
 SEARCH_OUT_DIR = Path("outputs") / "markdown"
-CHAPTER_EDIT_OUT_DIR = Path("outputs") / "markdown"
+# CHAPTER_EDIT_OUT_DIR: NOT "unchanged from the original scripts" as the comment above claims for
+# its siblings -- found live 2026-08-22 (researcher correction, escalation #784) to be a real
+# regression from the rebuild: outputs/markdown/prose-edits/ already existed as the established
+# convention (33 files, 2026-08-14, from the pre-rebuild script), but this constant pointed one
+# level up. Fixed to match live convention rather than the incorrect prior comment.
+CHAPTER_EDIT_OUT_DIR = Path("outputs") / "markdown" / "prose-edits"
 PATCH_OUT_DIR = Path("Sessions") / "Patches"
 
 MARKER_RE = re.compile(r"<!-- PROSE_([A-Z_]+): ?(.*?) -->")
@@ -80,6 +85,29 @@ def now_iso() -> str:
 
 def today_compact() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d")
+
+
+def _next_edit_version(stem: str) -> int:
+    """Next edit-cycle version number for a chapter-edit export with this book/chapter/section
+    stem. Researcher, 2026-08-22 (escalation #784): 'all files must be version controlled' --
+    'currently the name of the file makes it impossible to link the file with the book-chapter-
+    session' (read as: without a version number, two edit exports of the same book+chapter can't be
+    told apart, and a same-day re-export silently overwrites -- found live this same session,
+    testing the CHAPTER_EDIT_OUT_DIR path fix). This is an edit-CYCLE version, distinct from
+    prose_section.version -- one exported file can bundle several section rows that may each sit at
+    a different DB version, so the file's own version is a separate counter. Scans both the active
+    folder and its archive (§5 below moves imported files there) so a version is never reused even
+    after archiving."""
+    pattern = re.compile(re.escape(stem) + r"-v(\d+)-\d{8}\.md$")
+    max_v = 0
+    for folder in (CHAPTER_EDIT_OUT_DIR, CHAPTER_EDIT_OUT_DIR / "archive"):
+        if not folder.exists():
+            continue
+        for f in folder.iterdir():
+            m = pattern.match(f.name)
+            if m:
+                max_v = max(max_v, int(m.group(1)))
+    return max_v + 1
 
 
 def get_schema_version(conn) -> str:
@@ -579,15 +607,24 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
         book_name = rows[0]["book_label"] or "unassigned-book"
         chapter_no = rows[0]["chapter_no"]
         title = f"{book_name} — Chapter {chapter_no}" if chapter_no is not None else book_name
-        output = Path(out) if out else CHAPTER_EDIT_OUT_DIR / (
+        # Filename stem: book + chapter, or book + section code when there's no chapter to key on
+        # (e.g. a single-type export). Researcher, 2026-08-22 (escalation #784): the un-versioned
+        # name made it "impossible to link the file with the book-chapter-session" -- two exports
+        # of the same book/chapter were indistinguishable, and a same-day re-export silently
+        # overwrote (found live this session). -v{n}- (an edit-cycle counter, see
+        # _next_edit_version) is what makes each export traceable to its own edit session.
+        stem = (
             f"prose-edit-{book_name.lower().replace(' ', '-')}-"
-            f"{('chapter-' + str(chapter_no)) if chapter_no is not None else ('type-' + str(rows[0]['code']))}-"
-            f"{stamp}.md"
+            f"{('chapter-' + str(chapter_no)) if chapter_no is not None else ('section-' + str(rows[0]['code']))}"
+        )
+        output = Path(out) if out else CHAPTER_EDIT_OUT_DIR / (
+            f"{stem}-v{_next_edit_version(stem)}-{stamp}.md"
         )
         lines = [
             f"# Prose Edit — {title}", "",
             "<!-- Edit only the prose body below each chapter heading. Do not change markers. -->",
-            "<!-- This file is temporary and can be discarded after patch application. -->", "",
+            "<!-- This file becomes permanent provenance once imported (prose_section.source_file) --",
+            "<!-- do not delete by hand; the import step archives it automatically on success. -->", "",
         ]
         for row in rows:
             lines.extend([
@@ -636,6 +673,9 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     database itself — apply the reviewed patch with scripts/apply_session_patch.py, same as before
     this operation was incorporated (the write-authorisation boundary is unchanged)."""
     input_path = Path(input_path)
+    # Computed up front (before any move happens) so it can be used as the DB-facing source_file
+    # value even though the physical move only happens after the patch is successfully written.
+    archived_source = CHAPTER_EDIT_OUT_DIR / "archive" / input_path.name
     text = input_path.read_text(encoding="utf-8")
     blocks = _parse_edit_blocks(text)
     conn = open_db(cfg)
@@ -649,7 +689,7 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                 raise ValueError(f"section {block.get('SECTION_ID')} missing markers: {missing}")
             row = conn.execute(
                 """
-                SELECT ps.id, ps.version, ps.heading, ps.source_file,
+                SELECT ps.id, ps.version, ps.heading, ps.source_file, ps.body,
                        pst.code, pst.book_label, pst.section_label,
                        pst.chapter_no, pst.label AS chapter_title, pst.sort_order
                 FROM prose_section ps
@@ -674,6 +714,15 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                         f"file={block[key]!r}, database={expected!r}")
             if not block["BODY"]:
                 raise ValueError(f"section {row['id']} has an empty body")
+            # The section is the editing unit, not the chapter a bundled export happens to cover
+            # (researcher, 2026-08-22, escalation #784: "each chapter can have multiple sections,
+            # the section is the editing unit... if a chapter export is exported then all the
+            # sections in the chapter will have to change version which is not necessary"). A
+            # chapter-edit file bundles several independently-versioned sections purely for editing
+            # convenience -- importing it back must only supersede the sections whose body actually
+            # changed, not every block the file happens to contain.
+            if block["BODY"].strip() == (row["body"] or "").strip():
+                continue
             operations.append({
                 "op_id": f"PROSE-{row['id']}-SUPERSEDE",
                 "table": "prose_section",
@@ -681,7 +730,12 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                 "supersedes_id": row["id"],
                 "record": {
                     "body": block["BODY"], "heading": row["heading"], "author": author,
-                    "status": "draft", "source_file": str(input_path).replace("\\", "/"),
+                    # source_file records where this edit file ends up (its archived path, see
+                    # below), not its transient pre-archive location -- so the DB's own provenance
+                    # pointer stays resolvable after this function moves the file. Getting this
+                    # wrong would recreate exactly the dangling-pointer problem this fix exists to
+                    # close (escalation #784, 2026-08-22).
+                    "status": "draft", "source_file": str(archived_source).replace("\\", "/"),
                     "metadata_json": json.dumps({
                         "roundtrip_import": "iba.app.lib.prosestore.run_import_chapter",
                         "source_version": row["version"],
@@ -690,6 +744,12 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
             })
     finally:
         conn.close()
+
+    if not operations:
+        raise ValueError(
+            f"no changed sections in {input_path} -- every section's body matches the current "
+            f"database row, nothing to import. The file is left in place (not archived): an "
+            f"unedited export is still a disposable draft, not provenance for anything.")
 
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
     patch_id = f"PATCH-{stamp}-PROSE-CHAPTER-SUPERSEDE"
@@ -702,10 +762,16 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
         "operations": operations,
         "_patch_summary": {
             "total_operations": len(operations), "prose_section_supersedes": len(operations),
-            "source_edit_file": str(input_path).replace("\\", "/"),
+            "source_edit_file": str(archived_source).replace("\\", "/"),
         },
     }
     output = Path(out) if out else PATCH_OUT_DIR / f"wa-prose-chapter-supersede-{stamp}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
-    return {"path": str(output), "sections": len(operations)}
+    # On successful patch generation, archive the edit file -- researcher, 2026-08-22 (escalation
+    # #784): "the import must get the file from the editing location, and on successful update move
+    # the file to archive." Move, not copy or delete: the file is now permanent provenance
+    # (prose_section.source_file above), never discarded, per this session's #1 finding.
+    archived_source.parent.mkdir(parents=True, exist_ok=True)
+    input_path.replace(archived_source)
+    return {"path": str(output), "sections": len(operations), "archived_source": str(archived_source)}
