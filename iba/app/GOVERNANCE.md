@@ -2248,3 +2248,73 @@ changed, per the researcher's explicit instruction not to speculatively engineer
 real case.
 
 **Files:** `iba/app/migration/anchor_test_plan_governance_rule_20260822.py` (new).
+
+## §51. Flag Management — `wa_quality_flag_types`/`wa_data_quality_flags` repurposed for prose quality; `cfg_column.inactive` added; `wa_session_research_flags` retained (2026-08-23, escalation #833)
+
+**What this closes.** Escalation #833 ("Flag Management," spawned from #784/#829's storage-layer
+audit) found the project's flag-related tables badly fragmented across four generations built over
+five months, each because the previous shape wasn't working (full history:
+`iba/docs/flag-management-current-status-v1-20260823.md` §2.1). This section records the
+researcher's decisions on the first slice of that fragmentation, dictated directly and captured
+verbatim before being built (`iba/docs/flag-management-prose-quality-repurpose-capture-v1-20260823.md`,
+`iba/docs/flag-management-proposal-v1-20260823.md`).
+
+**1. `wa_quality_flag_types`/`wa_data_quality_flags` — repurposed, not merely cleaned up.** All
+prior content (29 term-quality flag types, 19,866 instances) was **hard-deleted** — a deliberate,
+one-time, researcher-authorised purge of data confirmed invalid (the term-quality vocabulary
+predates IBA's reworked Strong's handling), not a change to the project's standing
+no-physical-delete-in-automated-flows convention. Both tables were rebuilt (`DROP`/`CREATE`, since
+no data survived to preserve) as the **prose-quality-check** mechanism:
+
+- `wa_quality_flag_types.deprecated` → `delete_flagged` (project-standard soft-delete naming).
+- `wa_data_quality_flags` gains `delete_flagged` (had none); `term_id` → `strong_id`, `file_id` →
+  `verse_id` (both optional, documented-only references — SQLite cannot enforce a foreign key
+  across `bible_research.db`/`iba.db`, the same limitation every other cross-database reference in
+  this project already has); two new columns, `corrective_action` and `correction_date`.
+- A cascade trigger (`wa_quality_flag_types_cascade_delete`) enforces, automatically: soft-deleting
+  a flag type soft-deletes every `wa_data_quality_flags` row using it. Tested live (throwaway
+  rows): confirmed the cascade fires correctly and does not touch unrelated rows.
+- Seeded with 3 real types (`flag_group='PROSE_QUALITY'`): `Terminology change`, `Methodology
+  change`, `Style change` — explicitly open-ended, more will be added as they come up in practice.
+
+**2. `cfg_column.inactive` — new column, project-wide.** `cfg_column` had no `inactive` field at
+all (only `cfg_table` did, since escalation #678). Added, mirroring `cfg_table.inactive`'s own
+bootstrap exactly (`add_cfg_table_inactive_column.py`) — not DB-enforced (nothing stops a write to
+a column marked inactive), but makes "this column is config-known dead" a real, queryable fact for
+the first time, general to the whole project. Researcher, verbatim: *"this may not be DB
+enforceable, but at least it sets the config that the column is not used."* First real use: `passage
+.review_flag` (`bible_research.db`; barely populated, TEXT-typed holding only `'0'`) and
+`session_d_observations.researcher_flag` (the whole table is empty — the abandoned Session D
+workstream) both marked `inactive=1`.
+
+**3. `phase2_flag_types` → `inactive=1`**, matching its two junction tables (`mti_term_flags`,
+`wa_term_phase2_flags`), which were already inactive — a different-purpose vocabulary (content
+classification, not a "needs attention" signal) not touched by item 1's repurpose.
+
+**4. `wa_session_research_flags` (715 rows) — kept exactly as-is, deliberately.** Researcher:
+*"wa_session_research_flags are analysis phase, and at this point stay as is, and should be alive
+and incorporated in IBA."* No schema change. "Incorporated" is scoped narrowly here — a
+`cfg_behaviour_rule` (`sqlite`, `wa-session-research-flags-retained-as-is`) now records that this is
+the live, deliberate analysis-phase flag mechanism; **no `cfg_write_grant` was added**, since
+nothing in governed code currently writes to it (checked directly) — one gets built when analytics
+work actually resumes and a real writer exists, not invented ahead of need. Its own known
+data-quality issues (`priority`/`session_target` vocabulary drift, `cluster_link` as a
+comma-separated string rather than a junction) are explicitly deferred, per the researcher: *"the
+value of the data can only be assessed when analytics kicks back in."*
+
+**5. `wa_flag_type_question_link` (12 rows) — untouched, "for now."** Its rows FK to the *old*
+`wa_quality_flag_types` ids that item 1 just deleted — a known, accepted orphan, not fixed here, per
+direct instruction.
+
+**Explicitly deferred, registered not dropped** (full list:
+`iba/docs/flag-management-proposal-v1-20260823.md` §4): the flags-vs-escalation weight-class
+question; `verse_context.flagged_for_review` vs. `triage_status='ESCALATE'` (an apparent duplicate);
+which generation's shape (on-record vs. separate-table) should be the general pattern going
+forward. All wait on the analytics-phase restart.
+
+**Files:** `iba/app/migration/flag_management_build_v1_20260823.py` (idempotent — re-running it is
+always safe). Pre-op backup: `backups/bible_research_pre_flagmgmt_<timestamp>.db`. Full design
+record: `iba/docs/flag-management-current-status-v1-20260823.md` (explore),
+`iba/docs/flag-management-prose-quality-repurpose-capture-v1-20260823.md` (dictated decisions),
+`iba/docs/flag-management-proposal-v1-20260823.md` (proposal + test plan + results). Test plan: all
+12 cases passed, including a clean `configmaint.validate` run after the build.

@@ -9709,3 +9709,59 @@ just an absence of any signal).
 Full design record and the much wider conversation this build sits inside (prose management scope,
 the four-book purpose model, the verse-linkage gap, the Concordance risk decomposition — none of it
 built yet, all of it captured): `iba/docs/prose-management-784-conversation-capture-v1-20260823.md`.
+
+## 175. Flag Management — `wa_quality_flag_types`/`wa_data_quality_flags` repurposed for prose quality, `cfg_column.inactive` added, `wa_session_research_flags` retained (2026-08-23, escalation #833)
+
+Built per the approved proposal (`iba/docs/flag-management-proposal-v1-20260823.md`), which was
+itself built from two dictated capture documents
+(`iba/docs/flag-management-current-status-v1-20260823.md`,
+`iba/docs/flag-management-prose-quality-repurpose-capture-v1-20260823.md`) — full rationale in
+`GOVERNANCE.md` §51, not repeated here.
+
+**Sequence run, live:**
+
+1. Pre-op backup of `bible_research.db` (`backups/bible_research_pre_flagmgmt_20260823_162030.db`,
+   verified same size as source, 766MB).
+2. Row counts confirmed before touching anything: `wa_data_quality_flags`=19,866,
+   `wa_quality_flag_types`=29.
+3. Hard delete (children first): both tables emptied.
+4. `DROP`/`CREATE` rebuild to the new prose-quality shape (renamed/new columns per GOVERNANCE.md
+   §51) — a straight rebuild rather than `ALTER`/rename, since no data survived to preserve.
+5. Cascade trigger `wa_quality_flag_types_cascade_delete` created.
+6. 3 types reseeded (`Terminology change`/`Methodology change`/`Style change`, `flag_group=
+   'PROSE_QUALITY'`).
+7. `flag_management_build_v1_20260823.py` written and run — idempotently confirmed steps 3–6 already
+   applied (no-op on this run), then did the `iba.db` side: `cfg_column.inactive` column + its own
+   self-documenting `cfg_column` row (mirroring `add_cfg_table_inactive_column.py`'s #678 pattern
+   exactly); `cfg_table`/`cfg_column` re-catalogue for both repurposed tables (new `use` text,
+   `wa_data_quality_flags.inactive` `1→0`); `phase2_flag_types.inactive` `0→1`; `cfg_column.inactive
+   =1` on `passage.review_flag` and `session_d_observations.researcher_flag`; `cfg_behaviour_rule`
+   row for `wa_session_research_flags`' retention; the migration's own `cfg_utility` registration.
+
+**Tested live, all 12 test-plan cases** (`iba/docs/flag-management-proposal-v1-20260823.md` §5),
+not just asserted:
+
+- Cascade trigger: inserted a throwaway type + 2 data rows, set the type's `delete_flagged=1`, both
+  data rows flipped to `1` automatically. A second throwaway type with zero data rows was
+  soft-deleted with no error, nothing unrelated touched. Both cleaned up after.
+- Optional columns: inserted a row with `strong_id`/`verse_id` both NULL — succeeded.
+- `phase2_flag_types.inactive=1`, confirmed alongside its two already-inactive junctions
+  (`mti_term_flags`, `wa_term_phase2_flags`).
+- `cfg_column.inactive` column exists, defaults `0` on all 1,712 existing rows; the 2 named rows
+  confirmed `inactive=1`.
+- `wa_session_research_flags` — row count unchanged at 715; its `cfg_behaviour_rule` row confirmed
+  present.
+- `wa_flag_type_question_link` — unchanged at 12 rows (now pointing at deleted
+  `wa_quality_flag_types` ids — a known, accepted, not-fixed orphan per direct instruction).
+- `python -m iba.app.run configuration-maintenance --step configmaint.validate` — **clean**: *"cfg_*
+  tables are coherent — schema FKs, may_source, handlers, on_fail, status flow, regex settings,
+  report fields all check out; no orphans, ... every lib module registered..."*
+
+**Deferred, not built this round** (registered, not dropped — full list in GOVERNANCE.md §51 /
+proposal §4): the flags-vs-escalation weight-class design question; `wa_session_research_flags`'
+own vocabulary drift; `verse_context.flagged_for_review` vs. `triage_status` duplication; which
+generation's on-record-vs-separate-table shape should generalise. All explicitly wait on the
+analytics-phase restart, per the researcher's own framing.
+
+**Files:** `iba/app/migration/flag_management_build_v1_20260823.py` (new, idempotent, registered in
+`cfg_utility`); `GOVERNANCE.md` §51.
