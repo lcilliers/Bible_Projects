@@ -1,0 +1,19 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-TEST-829-WRITEPATH-REVERT",
+    "patch_type": "PROSE",
+    "produced_at": "2026-08-24T18:22:00Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Revert of PATCH-TEST-829-WRITEPATH-FORWARD -- restores prose_section_type id=1's description to its pre-test value (NULL)."
+  },
+  "operations": [
+    {
+      "op_id": "TEST-829-1-REVERT",
+      "table": "prose_section_type",
+      "operation": "update",
+      "match": {"id": 1},
+      "set": {"description": null}
+    }
+  ]
+}
