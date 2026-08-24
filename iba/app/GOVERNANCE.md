@@ -2318,3 +2318,90 @@ record: `iba/docs/flag-management-current-status-v1-20260823.md` (explore),
 `iba/docs/flag-management-prose-quality-repurpose-capture-v1-20260823.md` (dictated decisions),
 `iba/docs/flag-management-proposal-v1-20260823.md` (proposal + test plan + results). Test plan: all
 12 cases passed, including a clean `configmaint.validate` run after the build.
+
+## §52. `prose_section`/`prose_section_type` rebuilt onto Model A (system-versioned temporal tables); `record_change_log` — a project-wide change-audit log, not prose-specific (2026-08-24, escalation #836)
+
+**What this closes.** `prose_section` had only `created_at` (silently stale — the one sanctioned
+in-place write, `session_a_replace`, never touched it), and `prose_section_type` had **no**
+version/last-modified concept at all despite being edited in place. Nine rounds of design
+(`iba/docs/prose-change-log-design-v1` through `-v9-20260824.md`) and three of consolidated proposal
+(`iba/docs/prose-change-log-proposal-v1` through `-v3-20260824.md`) settled the shape; this section
+records the approved, built result.
+
+**1. The model — mutate-in-place, current-state-only tables.** Both tables now hold **current
+content only**; no historical row is retained live. This is the SQL-standard *system-versioned
+temporal table* pattern (`iba/docs/prose-change-log-design-v5-20260824.md` §16.1 — researched
+directly, not invented for this project), not the old insert-a-new-row-per-supersede mechanism.
+
+**2. `record_change_log` (new, `bible_research.db`) — the paired history table, deliberately
+generic.** One row per change event, keyed by `target_table`/`target_id` so it isn't prose-specific
+(researcher, direct instruction: *"this is opening a big door, and I think we should consider
+it"*) — this build wires up write paths for `prose_section`/`prose_section_type` only; `finding` is
+the named future candidate (`bible_research.db` already has an unrelated, unused `finding_revision`
+table — a genuinely different field-level-delta shape, found live and left for whoever picks up
+findings-integration to reconcile, not solved here). Columns: `target_table`/`target_id`,
+`change_type` (`insert`/`change`/`delete`), `change_datetime` (system-applied time, not the
+underlying event's real-world date), `change_source` (file name or originating script/module),
+`change_reason` (population rule: flag type for a flag-driven change, otherwise the source
+reference), `changed_by` (who/what executed the change — a third concept, distinct from
+`prose_section.author`'s authorial voice and `.approved_by`'s accountable sign-off), `status`
+(`change_proposed`/`change_applied`/`declined` — the `change_proposed` state is the intended home for
+#835's not-yet-built flag-fix workflow), and `payload` (gzip-compressed JSON — **the prior content a
+change overwrote, never the resulting content**; NULL for inserts and migration-baseline rows). A
+target row's own `version` column **is** the corresponding `record_change_log.id` — a literal
+pointer, not an incrementing per-item counter (researcher, direct: *"individual row version
+sequencing is meaningless... the log id is as good as anything"*) — this **corrects** the
+`version = old.version + 1` text #829 §5 drafted before this item existed; that text is superseded
+by `cfg_behaviour_rule` `record-change-log-version-is-pointer`, not left standing alongside it.
+
+**3. Schema deltas.** `prose_section`: `supersedes_id`/`superseded_by_id`/`source_file` dropped
+(nothing to chain once only one row per section exists; `source_file`'s value lives inside migrated
+`payload` blobs, not as a live column); `updated_at` added (touched on every write, closing the
+staleness gap). `prose_section_type`: `version` and `updated_at` added (had neither before).
+
+**4. Migration — real facts found live, not assumed from the design.** 91 rows were superseded
+(9% of 1,040) at build time; each was logged (its own content as `payload`, `change_reason=
+'migration'`) then **hard-deleted** — a one-time, researcher-instructed exception to the standing
+no-physical-delete convention, matching #833's own precedent (now generalised as
+`cfg_behaviour_rule` `one-time-hard-delete-exception`). **4 of the 91 sat in 2-hop supersede chains**
+(e.g. id 45 → 52 → 54) — found only by walking the live data, not visible in the design docs; each
+such row's log entry targets the chain's *final* live row, not its immediate successor (which, in
+these 4 cases, was itself also being deleted). The 949 surviving `prose_section` rows and all 108
+`prose_section_type` rows each received one baseline `record_change_log` row
+(`change_reason='migration baseline'`, `payload=NULL` — nothing preceded them) so every row's new
+`version` pointer is valid from the moment the migration completes; **0 dangling pointers**, verified
+directly. A second real finding, only surfaced by testing the migration against a full copy before
+running it live: **3 partial indexes** (`idx_ps_supersedes`, and two others whose `WHERE` clause
+itself referenced `superseded_by_id`) blocked the column drops outright — SQLite refuses to drop a
+column an index references. Dropped and recreated against `delete_flagged = 0` only, the sole
+meaning "current row" retains under Model A. Side effect, not a separate fix: `prose_section_fts`'s
+row count fell from 1,040 to 949 automatically (its sync trigger fired on the `DELETE`) — the
+superseded rows' stale text is no longer searchable, fixing a live defect found during design (every
+row, including retired ones, was previously indexed).
+
+**5. `apply_session_patch.py` rewritten, not just wrapped.** All 6 `prose_section` operations
+(`insert`, `supersede`, `delete`, `approve`, `session_a_replace`, `bulk_supersede`) and both
+`prose_section_type` operations (`insert`, `update`) now go through one shared helper,
+`_write_change_log()` — the choke-point `cfg_behaviour_rule` requires every one of them to, closing
+the exact selective-coverage gap that motivated this item (`session_a_replace` and `prose_section_
+type.update` previously bypassed all tracking entirely). `supersede` and `bulk_supersede` are genuine
+rewrites (in-place `UPDATE`, not insert-a-new-row) rather than additions. `session_a_replace`'s own
+long-standing defect — it wrote `created_at = now()` on every replace, silently corrupting the "true
+creation time" meaning — is fixed in the same change: it now touches `updated_at` instead,
+`created_at` is never written again after a row's first insert. All 8 operations were tested directly
+(a synthetic patch run against a full copy of the live, post-migration schema) before the real
+migration ran.
+
+**6. One advisory finding from `configmaint.validate`, not treated as a defect.** The two new
+`cfg_enum` groups (`record_change_log_change_type`, `record_change_log_status`) are flagged as
+"orphan" — no runtime `cfg.enum(...)` call site reads them, because `change_type`/`status` are
+enforced by the table's own `CHECK` constraint directly. This is the same shape already accepted at
+#833's `wa-session-research-flags-retained-as-is` rule (`cfg_enum` as documentation-of-record
+alongside DB-level enforcement, not a code-driven lookup) — recorded here rather than silently
+suppressed, per the standing practice of surfacing every finding.
+
+**Files:** `iba/app/migration/prose_change_log_build_v1_20260824.py` (idempotent — re-running it
+after the schema already exists is a safe no-op). Pre-op backup:
+`backups/bible_research_pre_changelog_<timestamp>.db`. Full design record: `iba/docs/prose-change-
+log-design-v1` through `-v9-20260824.md`; proposal + literal config content + test plan:
+`iba/docs/prose-change-log-proposal-v1` through `-v3-20260824.md`.

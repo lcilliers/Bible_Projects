@@ -1,12 +1,12 @@
 {
   "database": "bible_research",
   "database_path": "database/bible_research.db",
-  "database_bytes": 802877440,
+  "database_bytes": 803000320,
   "schema_version": "3.40.0",
-  "exported_date": "2026-08-17",
+  "exported_date": "2026-08-24",
   "captured_by": "iba/scripts/build_dbschema.py",
   "★ what_this_is": "CAPTURED DATA -- the live schema of this database, read from the DB itself. Not a rulebook: it records what the schema IS, never what it should be. Rules governing it: iba/config/utility/DBSchema_maintenance.json (util.dbschema). Every description is derived from the `profile` beside it (dbschema.description-from-data).",
-  "table_count": 110,
+  "table_count": 111,
   "tables": {
     "book_code_variants": {
       "description": "Alias table mapping the many book abbreviation forms encountered in source data onto a single books row, so that '1Chr', '1Ki' and '1Kgs' all resolve to the same book. 112 aliases cover all 66 books, with the busiest books carrying up to three variants each.",
@@ -12363,8 +12363,8 @@
     "prose_section": {
       "description": "The DB-canonical store of authored prose: one row per titled section of narrative — chapter readings, cluster essays, synthesis passages and programme documentation — with its full body text, version lineage and approval state. Almost all of it is machine-authored (claude_code or claude_ai); exactly one row is attributed to the researcher.",
       "description_source": "profiler",
-      "row_count": 1040,
-      "sql": "CREATE TABLE \"prose_section\" (\n            id                INTEGER PRIMARY KEY,\n            registry_id       INTEGER REFERENCES word_registry(id),\n            section_type_id   INTEGER NOT NULL REFERENCES prose_section_type(id),\n            heading           TEXT,\n            body              TEXT    NOT NULL,\n            word_count        INTEGER NOT NULL DEFAULT 0,\n            status            TEXT    NOT NULL,\n            version           INTEGER NOT NULL DEFAULT 1,\n            supersedes_id     INTEGER REFERENCES prose_section(id),\n            superseded_by_id  INTEGER REFERENCES prose_section(id),\n            author            TEXT    NOT NULL,\n            created_at        TEXT    NOT NULL,\n            approved_at       TEXT,\n            approved_by       TEXT,\n            metadata_json     TEXT,\n            source_file       TEXT,\n            delete_flagged    INTEGER NOT NULL DEFAULT 0, cluster_code TEXT, characteristic_id INTEGER, cluster_subgroup_id INTEGER,\n            CHECK (status IN ('draft','in_review','approved','archived')),\n            CHECK (author IN ('claude_ai','claude_code','researcher'))\n        )",
+      "row_count": 949,
+      "sql": "CREATE TABLE \"prose_section\" (\n            id                INTEGER PRIMARY KEY,\n            registry_id       INTEGER REFERENCES word_registry(id),\n            section_type_id   INTEGER NOT NULL REFERENCES prose_section_type(id),\n            heading           TEXT,\n            body              TEXT    NOT NULL,\n            word_count        INTEGER NOT NULL DEFAULT 0,\n            status            TEXT    NOT NULL,\n            version           INTEGER NOT NULL DEFAULT 1,\n            author            TEXT    NOT NULL,\n            created_at        TEXT    NOT NULL,\n            approved_at       TEXT,\n            approved_by       TEXT,\n            metadata_json     TEXT,\n            delete_flagged    INTEGER NOT NULL DEFAULT 0, cluster_code TEXT, characteristic_id INTEGER, cluster_subgroup_id INTEGER, updated_at TEXT,\n            CHECK (status IN ('draft','in_review','approved','archived')),\n            CHECK (author IN ('claude_ai','claude_code','researcher'))\n        )",
       "primary_key": [
         "id"
       ],
@@ -12379,13 +12379,13 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1040,
+            "distinct_count": 949,
             "distinct_bucket": "high-cardinality",
-            "min": 1,
+            "min": 2,
             "max": 1040,
             "looks_categorical": false
           }
@@ -12400,9 +12400,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 894,
-            "null_rate": 0.8596,
+            "rows_scanned": 949,
+            "null_count": 808,
+            "null_rate": 0.8514,
             "null_bucket": "over-50pct",
             "distinct_count": 21,
             "distinct_bucket": "11-200",
@@ -12410,10 +12410,6 @@
             "max": 216,
             "looks_categorical": true,
             "top_values": [
-              {
-                "v": 67,
-                "n": 16
-              },
               {
                 "v": 30,
                 "n": 11
@@ -12424,6 +12420,10 @@
               },
               {
                 "v": 64,
+                "n": 11
+              },
+              {
+                "v": 67,
                 "n": 11
               },
               {
@@ -12443,7 +12443,7 @@
                 "n": 6
               }
             ],
-            "top_values_cover": 0.5
+            "top_values_cover": 0.4823
           }
         },
         {
@@ -12456,7 +12456,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12468,15 +12468,15 @@
             "top_values": [
               {
                 "v": 104,
-                "n": 503
-              },
-              {
-                "v": 108,
-                "n": 125
+                "n": 452
               },
               {
                 "v": 98,
                 "n": 124
+              },
+              {
+                "v": 108,
+                "n": 117
               },
               {
                 "v": 1,
@@ -12499,7 +12499,7 @@
                 "n": 20
               }
             ],
-            "top_values_cover": 0.8192
+            "top_values_cover": 0.8356
           }
         },
         {
@@ -12512,11 +12512,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 841,
+            "distinct_count": 818,
             "distinct_bucket": "high-cardinality",
             "min": "Amo 1 - inner-being reading",
             "max": "Zephaniah 3 - inner-being oracle readings",
@@ -12533,11 +12533,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1037,
+            "distinct_count": 948,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
             "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
@@ -12554,11 +12554,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 796,
+            "distinct_count": 740,
             "distinct_bucket": "high-cardinality",
             "min": 0,
             "max": 74071,
@@ -12575,27 +12575,23 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 3,
-            "distinct_bucket": "2-10",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
             "min": "approved",
             "max": "draft",
             "looks_categorical": true,
             "top_values": [
               {
                 "v": "approved",
-                "n": 922
+                "n": 863
               },
               {
                 "v": "draft",
-                "n": 107
-              },
-              {
-                "v": "archived",
-                "n": 11
+                "n": 86
               }
             ],
             "top_values_cover": 1.0
@@ -12611,163 +12607,15 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 11,
-            "distinct_bucket": "11-200",
-            "min": 1,
-            "max": "v3",
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": 1,
-                "n": 804
-              },
-              {
-                "v": "1_0",
-                "n": 103
-              },
-              {
-                "v": 2,
-                "n": 86
-              },
-              {
-                "v": "2_0",
-                "n": 18
-              },
-              {
-                "v": "v1",
-                "n": 8
-              },
-              {
-                "v": "1_1",
-                "n": 7
-              },
-              {
-                "v": "1_2",
-                "n": 7
-              },
-              {
-                "v": 3,
-                "n": 3
-              }
-            ],
-            "top_values_cover": 0.9962,
-            "uncontrolled_vocabulary": true
-          }
-        },
-        {
-          "name": "supersedes_id",
-          "type": "INTEGER",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "The earlier prose_section this row replaces. Present on 90 rows, forming a self-referential revision chain within the table.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 949,
-            "null_rate": 0.9125,
-            "null_bucket": "over-50pct",
-            "distinct_count": 91,
-            "distinct_bucket": "11-200",
-            "min": 1,
-            "max": 988,
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": 1,
-                "n": 1
-              },
-              {
-                "v": 17,
-                "n": 1
-              },
-              {
-                "v": 19,
-                "n": 1
-              },
-              {
-                "v": 29,
-                "n": 1
-              },
-              {
-                "v": 45,
-                "n": 1
-              },
-              {
-                "v": 46,
-                "n": 1
-              },
-              {
-                "v": 48,
-                "n": 1
-              },
-              {
-                "v": 49,
-                "n": 1
-              }
-            ],
-            "top_values_cover": 0.0879
-          }
-        },
-        {
-          "name": "superseded_by_id",
-          "type": "INTEGER",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "The inverse pointer to the row that replaced this one, maintained symmetrically with supersedes_id on the same 90 rows.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 949,
-            "null_rate": 0.9125,
-            "null_bucket": "over-50pct",
-            "distinct_count": 91,
-            "distinct_bucket": "11-200",
-            "min": 15,
+            "distinct_count": 949,
+            "distinct_bucket": "high-cardinality",
+            "min": 92,
             "max": 1040,
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": 15,
-                "n": 1
-              },
-              {
-                "v": 52,
-                "n": 1
-              },
-              {
-                "v": 53,
-                "n": 1
-              },
-              {
-                "v": 54,
-                "n": 1
-              },
-              {
-                "v": 55,
-                "n": 1
-              },
-              {
-                "v": 61,
-                "n": 1
-              },
-              {
-                "v": 62,
-                "n": 1
-              },
-              {
-                "v": 63,
-                "n": 1
-              }
-            ],
-            "top_values_cover": 0.0879
+            "looks_categorical": false
           }
         },
         {
@@ -12780,7 +12628,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -12792,11 +12640,11 @@
             "top_values": [
               {
                 "v": "claude_code",
-                "n": 782
+                "n": 719
               },
               {
                 "v": "claude_ai",
-                "n": 256
+                "n": 228
               },
               {
                 "v": "researcher",
@@ -12816,11 +12664,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 602,
+            "distinct_count": 545,
             "distinct_bucket": "high-cardinality",
             "min": "2026-04-21T16:06:38Z",
             "max": "2026-08-14T19:00:57Z",
@@ -12837,9 +12685,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 906,
-            "null_rate": 0.8712,
+            "rows_scanned": 949,
+            "null_count": 815,
+            "null_rate": 0.8588,
             "null_bucket": "over-50pct",
             "distinct_count": 22,
             "distinct_bucket": "11-200",
@@ -12894,9 +12742,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 906,
-            "null_rate": 0.8712,
+            "rows_scanned": 949,
+            "null_count": 815,
+            "null_rate": 0.8588,
             "null_bucket": "over-50pct",
             "distinct_count": 2,
             "distinct_bucket": "binary",
@@ -12927,35 +12775,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 86,
-            "null_rate": 0.0827,
+            "rows_scanned": 949,
+            "null_count": 71,
+            "null_rate": 0.0748,
             "null_bucket": "under-50pct",
-            "distinct_count": 790,
+            "distinct_count": 747,
             "distinct_bucket": "high-cardinality",
             "min": "{\"book\": \"Amo\", \"chapter\": 1, \"verses\": [\"Amo 1:1\", \"Amo 1:2\", \"Amo 1:3\", \"Amo 1:4\", \"Amo 1:5\", \"Amo 1:6\", \"Amo 1:7\", \"A… (+446 chars)",
             "max": "{\"term\": \"H6531\", \"cluster_code\": \"M06\", \"source\": \"lexical-model-2026\", \"verses\": [\"Exo 1:13\", \"Exo 1:14\", \"Lev 25:43\",… (+233 chars)",
-            "looks_categorical": false
-          }
-        },
-        {
-          "name": "source_file",
-          "type": "TEXT",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "The markdown file the prose was ingested from, recording the path or filename it came in on. Near-universally populated, showing the store was built by importing files rather than authoring in place.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 20,
-            "null_rate": 0.0192,
-            "null_bucket": "under-50pct",
-            "distinct_count": 871,
-            "distinct_bucket": "high-cardinality",
-            "min": "Sessions/Session_Clusters/M01/Published/wa-cluster-M01-ch1-draft-v1-20260523.md",
-            "max": "wa-prose_ch5-obslog-v1_0-20260423.md",
             "looks_categorical": false
           }
         },
@@ -12969,27 +12796,22 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 2,
-            "distinct_bucket": "binary",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
             "min": 0,
-            "max": 1,
+            "max": 0,
             "looks_categorical": true,
             "top_values": [
               {
                 "v": 0,
-                "n": 981
-              },
-              {
-                "v": 1,
-                "n": 59
+                "n": 949
               }
             ],
-            "top_values_cover": 1.0,
-            "uncontrolled_vocabulary": true
+            "top_values_cover": 1.0
           }
         },
         {
@@ -13002,9 +12824,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 848,
-            "null_rate": 0.8154,
+            "rows_scanned": 949,
+            "null_count": 774,
+            "null_rate": 0.8156,
             "null_bucket": "over-50pct",
             "distinct_count": 11,
             "distinct_bucket": "11-200",
@@ -13017,12 +12839,12 @@
                 "n": 30
               },
               {
-                "v": "M01",
-                "n": 28
-              },
-              {
                 "v": "M09",
                 "n": 25
+              },
+              {
+                "v": "M01",
+                "n": 21
               },
               {
                 "v": "M07",
@@ -13033,19 +12855,19 @@
                 "n": 16
               },
               {
-                "v": "M05",
-                "n": 16
-              },
-              {
                 "v": "M08",
                 "n": 16
               },
               {
                 "v": "M06",
                 "n": 15
+              },
+              {
+                "v": "M05",
+                "n": 14
               }
             ],
-            "top_values_cover": 0.8646,
+            "top_values_cover": 0.8971,
             "uncontrolled_vocabulary": true
           }
         },
@@ -13059,9 +12881,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 916,
-            "null_rate": 0.8808,
+            "rows_scanned": 949,
+            "null_count": 825,
+            "null_rate": 0.8693,
             "null_bucket": "over-50pct",
             "distinct_count": 71,
             "distinct_bucket": "11-200",
@@ -13115,8 +12937,8 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 1040,
+            "rows_scanned": 949,
+            "null_count": 949,
             "null_rate": 1.0,
             "null_bucket": "all",
             "distinct_count": 0,
@@ -13125,21 +12947,37 @@
             "max": null,
             "looks_categorical": false
           }
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 949,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": "2026-08-24T09:58:29Z",
+            "max": "2026-08-24T09:58:29Z",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "2026-08-24T09:58:29Z",
+                "n": 949
+              }
+            ],
+            "top_values_cover": 1.0
+          }
         }
       ],
       "foreign_keys": [
-        {
-          "column": "superseded_by_id",
-          "references": "prose_section.id",
-          "on_delete": "NO ACTION",
-          "on_update": "NO ACTION"
-        },
-        {
-          "column": "supersedes_id",
-          "references": "prose_section.id",
-          "on_delete": "NO ACTION",
-          "on_update": "NO ACTION"
-        },
         {
           "column": "section_type_id",
           "references": "prose_section_type.id",
@@ -13158,6 +12996,23 @@
         "author IN ('claude_ai','claude_code','researcher')"
       ],
       "indexes": [
+        {
+          "name": "idx_ps_status",
+          "unique": false,
+          "columns": [
+            "status"
+          ],
+          "origin": "c"
+        },
+        {
+          "name": "idx_ps_registry_type_current",
+          "unique": false,
+          "columns": [
+            "registry_id",
+            "section_type_id"
+          ],
+          "origin": "c"
+        },
         {
           "name": "idx_prose_section_cluster_subgroup_id",
           "unique": false,
@@ -13181,33 +13036,146 @@
             "cluster_code"
           ],
           "origin": "c"
-        },
-        {
-          "name": "idx_ps_supersedes",
-          "unique": false,
-          "columns": [
-            "supersedes_id"
-          ],
-          "origin": "c"
-        },
-        {
-          "name": "idx_ps_status",
-          "unique": false,
-          "columns": [
-            "status"
-          ],
-          "origin": "c"
-        },
-        {
-          "name": "idx_ps_registry_type_current",
-          "unique": false,
-          "columns": [
-            "registry_id",
-            "section_type_id"
-          ],
-          "origin": "c"
         }
-      ]
+      ],
+      "retired_columns": {
+        "supersedes_id": {
+          "name": "supersedes_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": "The earlier prose_section this row replaces. Present on 90 rows, forming a self-referential revision chain within the table.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1040,
+            "null_count": 949,
+            "null_rate": 0.9125,
+            "null_bucket": "over-50pct",
+            "distinct_count": 91,
+            "distinct_bucket": "11-200",
+            "min": 1,
+            "max": 988,
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": 1,
+                "n": 1
+              },
+              {
+                "v": 17,
+                "n": 1
+              },
+              {
+                "v": 19,
+                "n": 1
+              },
+              {
+                "v": 29,
+                "n": 1
+              },
+              {
+                "v": 45,
+                "n": 1
+              },
+              {
+                "v": 46,
+                "n": 1
+              },
+              {
+                "v": 48,
+                "n": 1
+              },
+              {
+                "v": 49,
+                "n": 1
+              }
+            ],
+            "top_values_cover": 0.0879
+          },
+          "retired_at": "2026-08-24"
+        },
+        "superseded_by_id": {
+          "name": "superseded_by_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": "The inverse pointer to the row that replaced this one, maintained symmetrically with supersedes_id on the same 90 rows.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1040,
+            "null_count": 949,
+            "null_rate": 0.9125,
+            "null_bucket": "over-50pct",
+            "distinct_count": 91,
+            "distinct_bucket": "11-200",
+            "min": 15,
+            "max": 1040,
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": 15,
+                "n": 1
+              },
+              {
+                "v": 52,
+                "n": 1
+              },
+              {
+                "v": 53,
+                "n": 1
+              },
+              {
+                "v": 54,
+                "n": 1
+              },
+              {
+                "v": 55,
+                "n": 1
+              },
+              {
+                "v": 61,
+                "n": 1
+              },
+              {
+                "v": 62,
+                "n": 1
+              },
+              {
+                "v": 63,
+                "n": 1
+              }
+            ],
+            "top_values_cover": 0.0879
+          },
+          "retired_at": "2026-08-24"
+        },
+        "source_file": {
+          "name": "source_file",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": "The markdown file the prose was ingested from, recording the path or filename it came in on. Near-universally populated, showing the store was built by importing files rather than authoring in place.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1040,
+            "null_count": 20,
+            "null_rate": 0.0192,
+            "null_bucket": "under-50pct",
+            "distinct_count": 871,
+            "distinct_bucket": "high-cardinality",
+            "min": "Sessions/Session_Clusters/M01/Published/wa-cluster-M01-ch1-draft-v1-20260523.md",
+            "max": "wa-prose_ch5-obslog-v1_0-20260423.md",
+            "looks_categorical": false
+          },
+          "retired_at": "2026-08-24"
+        }
+      }
     },
     "prose_section_dimension_link": {
       "description": "Declared as a many-to-many link between prose sections and dimensions, with a link_type qualifying the relationship, but it holds 0 rows. It was created, keyed and uniquely indexed, and never used — a plausible casualty of the dimension layer's retirement.",
@@ -13398,7 +13366,7 @@
     "prose_section_fts": {
       "description": "An SQLite FTS5 virtual table providing full-text search over prose_section. Its columns mirror the source table one-for-one and hold no independent data; the underlying storage lives in the prose_section_fts_data/idx/content/docsize/config shadow tables. Because FTS5 columns are untyped, every column reports as type '?'.",
       "description_source": "profiler",
-      "row_count": 1040,
+      "row_count": 949,
       "sql": "CREATE VIRTUAL TABLE prose_section_fts USING fts5(\n            body,\n            heading,\n            section_type_code UNINDEXED,\n            registry_id UNINDEXED,\n            cluster_code UNINDEXED,\n            characteristic_id UNINDEXED,\n            status UNINDEXED,\n            tokenize='porter unicode61 remove_diacritics 2'\n        )",
       "primary_key": [],
       "columns": [
@@ -13412,11 +13380,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1037,
+            "distinct_count": 948,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
             "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
@@ -13433,11 +13401,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 841,
+            "distinct_count": 818,
             "distinct_bucket": "high-cardinality",
             "min": "Amo 1 - inner-being reading",
             "max": "Zephaniah 3 - inner-being oracle readings",
@@ -13454,7 +13422,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -13466,15 +13434,15 @@
             "top_values": [
               {
                 "v": "lexical_prose_chapter",
-                "n": 503
-              },
-              {
-                "v": "lexical_prose_passage",
-                "n": 125
+                "n": 452
               },
               {
                 "v": "cf_char_synth",
                 "n": 124
+              },
+              {
+                "v": "lexical_prose_passage",
+                "n": 117
               },
               {
                 "v": "sa_s1_d1",
@@ -13497,7 +13465,7 @@
                 "n": 20
               }
             ],
-            "top_values_cover": 0.8192
+            "top_values_cover": 0.8356
           }
         },
         {
@@ -13510,9 +13478,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 894,
-            "null_rate": 0.8596,
+            "rows_scanned": 949,
+            "null_count": 808,
+            "null_rate": 0.8514,
             "null_bucket": "over-50pct",
             "distinct_count": 21,
             "distinct_bucket": "11-200",
@@ -13520,10 +13488,6 @@
             "max": 216,
             "looks_categorical": true,
             "top_values": [
-              {
-                "v": 67,
-                "n": 16
-              },
               {
                 "v": 30,
                 "n": 11
@@ -13534,6 +13498,10 @@
               },
               {
                 "v": 64,
+                "n": 11
+              },
+              {
+                "v": 67,
                 "n": 11
               },
               {
@@ -13553,7 +13521,7 @@
                 "n": 6
               }
             ],
-            "top_values_cover": 0.5,
+            "top_values_cover": 0.4823,
             "uncontrolled_vocabulary": true
           }
         },
@@ -13567,9 +13535,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 848,
-            "null_rate": 0.8154,
+            "rows_scanned": 949,
+            "null_count": 774,
+            "null_rate": 0.8156,
             "null_bucket": "over-50pct",
             "distinct_count": 11,
             "distinct_bucket": "11-200",
@@ -13582,12 +13550,12 @@
                 "n": 30
               },
               {
-                "v": "M01",
-                "n": 28
-              },
-              {
                 "v": "M09",
                 "n": 25
+              },
+              {
+                "v": "M01",
+                "n": 21
               },
               {
                 "v": "M07",
@@ -13598,19 +13566,19 @@
                 "n": 16
               },
               {
-                "v": "M05",
-                "n": 16
-              },
-              {
                 "v": "M08",
                 "n": 16
               },
               {
                 "v": "M06",
                 "n": 15
+              },
+              {
+                "v": "M05",
+                "n": 14
               }
             ],
-            "top_values_cover": 0.8646,
+            "top_values_cover": 0.8971,
             "uncontrolled_vocabulary": true
           }
         },
@@ -13624,9 +13592,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 916,
-            "null_rate": 0.8808,
+            "rows_scanned": 949,
+            "null_count": 825,
+            "null_rate": 0.8693,
             "null_bucket": "over-50pct",
             "distinct_count": 71,
             "distinct_bucket": "11-200",
@@ -13680,27 +13648,23 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 3,
-            "distinct_bucket": "2-10",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
             "min": "approved",
             "max": "draft",
             "looks_categorical": true,
             "top_values": [
               {
                 "v": "approved",
-                "n": 922
+                "n": 863
               },
               {
                 "v": "draft",
-                "n": 107
-              },
-              {
-                "v": "archived",
-                "n": 11
+                "n": 86
               }
             ],
             "top_values_cover": 1.0,
@@ -13794,7 +13758,7 @@
     "prose_section_fts_content": {
       "description": "An FTS5-managed shadow table storing the raw column values of each indexed row, so the virtual table can return original text and support content-requiring operations. It is SQLite's internal copy of prose_section's indexed columns, positionally numbered c0..c6, not a hand-designed table.",
       "description_source": "profiler",
-      "row_count": 1040,
+      "row_count": 949,
       "sql": "CREATE TABLE 'prose_section_fts_content'(id INTEGER PRIMARY KEY, c0, c1, c2, c3, c4, c5, c6)",
       "primary_key": [
         "id"
@@ -13810,13 +13774,13 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1040,
+            "distinct_count": 949,
             "distinct_bucket": "high-cardinality",
-            "min": 1,
+            "min": 2,
             "max": 1040,
             "looks_categorical": false
           }
@@ -13831,11 +13795,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1037,
+            "distinct_count": 948,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
             "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
@@ -13852,11 +13816,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 841,
+            "distinct_count": 818,
             "distinct_bucket": "high-cardinality",
             "min": "Amo 1 - inner-being reading",
             "max": "Zephaniah 3 - inner-being oracle readings",
@@ -13873,7 +13837,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -13885,15 +13849,15 @@
             "top_values": [
               {
                 "v": "lexical_prose_chapter",
-                "n": 503
-              },
-              {
-                "v": "lexical_prose_passage",
-                "n": 125
+                "n": 452
               },
               {
                 "v": "cf_char_synth",
                 "n": 124
+              },
+              {
+                "v": "lexical_prose_passage",
+                "n": 117
               },
               {
                 "v": "sa_s1_d1",
@@ -13916,7 +13880,7 @@
                 "n": 20
               }
             ],
-            "top_values_cover": 0.8192
+            "top_values_cover": 0.8356
           }
         },
         {
@@ -13929,9 +13893,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 894,
-            "null_rate": 0.8596,
+            "rows_scanned": 949,
+            "null_count": 808,
+            "null_rate": 0.8514,
             "null_bucket": "over-50pct",
             "distinct_count": 21,
             "distinct_bucket": "11-200",
@@ -13939,10 +13903,6 @@
             "max": 216,
             "looks_categorical": true,
             "top_values": [
-              {
-                "v": 67,
-                "n": 16
-              },
               {
                 "v": 30,
                 "n": 11
@@ -13953,6 +13913,10 @@
               },
               {
                 "v": 64,
+                "n": 11
+              },
+              {
+                "v": 67,
                 "n": 11
               },
               {
@@ -13972,7 +13936,7 @@
                 "n": 6
               }
             ],
-            "top_values_cover": 0.5,
+            "top_values_cover": 0.4823,
             "uncontrolled_vocabulary": true
           }
         },
@@ -13986,9 +13950,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 848,
-            "null_rate": 0.8154,
+            "rows_scanned": 949,
+            "null_count": 774,
+            "null_rate": 0.8156,
             "null_bucket": "over-50pct",
             "distinct_count": 11,
             "distinct_bucket": "11-200",
@@ -14001,12 +13965,12 @@
                 "n": 30
               },
               {
-                "v": "M01",
-                "n": 28
-              },
-              {
                 "v": "M09",
                 "n": 25
+              },
+              {
+                "v": "M01",
+                "n": 21
               },
               {
                 "v": "M07",
@@ -14017,19 +13981,19 @@
                 "n": 16
               },
               {
-                "v": "M05",
-                "n": 16
-              },
-              {
                 "v": "M08",
                 "n": 16
               },
               {
                 "v": "M06",
                 "n": 15
+              },
+              {
+                "v": "M05",
+                "n": 14
               }
             ],
-            "top_values_cover": 0.8646,
+            "top_values_cover": 0.8971,
             "uncontrolled_vocabulary": true
           }
         },
@@ -14043,9 +14007,9 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 916,
-            "null_rate": 0.8808,
+            "rows_scanned": 949,
+            "null_count": 825,
+            "null_rate": 0.8693,
             "null_bucket": "over-50pct",
             "distinct_count": 71,
             "distinct_bucket": "11-200",
@@ -14099,27 +14063,23 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 3,
-            "distinct_bucket": "2-10",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
             "min": "approved",
             "max": "draft",
             "looks_categorical": true,
             "top_values": [
               {
                 "v": "approved",
-                "n": 922
+                "n": 863
               },
               {
                 "v": "draft",
-                "n": 107
-              },
-              {
-                "v": "archived",
-                "n": 11
+                "n": 86
               }
             ],
             "top_values_cover": 1.0,
@@ -14134,7 +14094,7 @@
     "prose_section_fts_data": {
       "description": "An FTS5-managed shadow table holding the inverted index itself as opaque binary segment blobs. It is SQLite internal machinery — the contents are not human-readable and must never be written or interpreted directly; the index is maintained automatically as prose_section changes.",
       "description_source": "profiler",
-      "row_count": 1063,
+      "row_count": 1086,
       "sql": "CREATE TABLE 'prose_section_fts_data'(id INTEGER PRIMARY KEY, block BLOB)",
       "primary_key": [
         "id"
@@ -14150,14 +14110,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1063,
+            "rows_scanned": 1086,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1063,
+            "distinct_count": 1086,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 1924145348609,
+            "max": 3435973836815,
             "looks_categorical": false
           }
         },
@@ -14171,14 +14131,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1063,
+            "rows_scanned": 1086,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1063,
+            "distinct_count": 1086,
             "distinct_bucket": "high-cardinality",
-            "min": "b'\\x00\\x00\\x00\\x00\\x04\\x0e\\x91P\\x00\\t\\x03\\x01\\x02\\x07\\x01\\x02\\x08\\x01\\x02\\t\\x01\\x02\\n\\x01\\x02\\x0b\\x01\\x02\\x0c\\x01\\x01\\r\\… (+103 chars)",
-            "max": "b'\\x88\\x10\\x81\\x86\\xdc\\x04\\xba\\x08\\x00\\x00\\x00\\x00\\x00'",
+            "min": "b'\\x00\\x00\\x00\\x00\\x05\\x08\\xa1\\x1c\\x00\\x02\\x03\\x01\\x02\\x05\\x01\\x02\\x00\\x03\\x18\\x01\\x10\\x19\\x01\\x0f\\x14\\x01\\x10\\x00\\x02\\x… (+49 chars)",
+            "max": "b'\\x875\\xfc\\xddX\\xb5\\x06\\x00\\x00\\x00\\x00\\x00'",
             "looks_categorical": false
           }
         }
@@ -14190,7 +14150,7 @@
     "prose_section_fts_docsize": {
       "description": "An FTS5-managed shadow table recording, per indexed document, the token count of each column in a packed binary form. FTS5 uses it for relevance ranking; it is internal machinery with one row per prose_section row.",
       "description_source": "profiler",
-      "row_count": 1040,
+      "row_count": 949,
       "sql": "CREATE TABLE 'prose_section_fts_docsize'(id INTEGER PRIMARY KEY, sz BLOB)",
       "primary_key": [
         "id"
@@ -14206,13 +14166,13 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1040,
+            "distinct_count": 949,
             "distinct_bucket": "high-cardinality",
-            "min": 1,
+            "min": 2,
             "max": 1040,
             "looks_categorical": false
           }
@@ -14227,11 +14187,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1040,
+            "rows_scanned": 949,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 916,
+            "distinct_count": 845,
             "distinct_bucket": "high-cardinality",
             "min": "b'\\x81 \\x03\\x00\\x00\\x00\\x00\\x00'",
             "max": "b'\\xf8Y\\x08\\x00\\x00\\x00\\x00\\x00'",
@@ -14246,7 +14206,7 @@
     "prose_section_fts_idx": {
       "description": "An FTS5-managed shadow table mapping index segments and term prefixes to the pages within prose_section_fts_data where their postings live — the b-tree lookup layer of the index. Internal machinery; the 'term' values are binary prefix keys, not words from the prose.",
       "description_source": "profiler",
-      "row_count": 898,
+      "row_count": 841,
       "sql": "CREATE TABLE 'prose_section_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID",
       "primary_key": [
         "segid",
@@ -14263,50 +14223,50 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 898,
+            "rows_scanned": 841,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 14,
-            "distinct_bucket": "11-200",
+            "distinct_count": 8,
+            "distinct_bucket": "2-10",
             "min": 1,
-            "max": 14,
+            "max": 25,
             "looks_categorical": true,
             "top_values": [
               {
-                "v": 5,
-                "n": 538
+                "v": 1,
+                "n": 708
               },
               {
                 "v": 4,
-                "n": 208
-              },
-              {
-                "v": 1,
-                "n": 56
+                "n": 54
               },
               {
                 "v": 2,
-                "n": 52
+                "n": 28
               },
               {
-                "v": 6,
-                "n": 28
+                "v": 20,
+                "n": 16
+              },
+              {
+                "v": 24,
+                "n": 16
+              },
+              {
+                "v": 25,
+                "n": 15
               },
               {
                 "v": 3,
                 "n": 2
               },
               {
-                "v": 7,
-                "n": 2
-              },
-              {
-                "v": 8,
+                "v": 5,
                 "n": 2
               }
             ],
-            "top_values_cover": 0.9889
+            "top_values_cover": 1.0
           }
         },
         {
@@ -14319,14 +14279,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 898,
+            "rows_scanned": 841,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 794,
+            "distinct_count": 809,
             "distinct_bucket": "high-cardinality",
             "min": "b''",
-            "max": "b'0zi'",
+            "max": "b'0\\xd7\\x95'",
             "looks_categorical": false
           }
         },
@@ -14340,14 +14300,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 898,
+            "rows_scanned": 841,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 578,
+            "distinct_count": 732,
             "distinct_bucket": "high-cardinality",
             "min": 2,
-            "max": 1338,
+            "max": 1866,
             "looks_categorical": false
           }
         }
@@ -14370,7 +14330,7 @@
       "description": "The controlled vocabulary of prose section kinds — 108 codes spanning programme documentation, per-session outputs, cluster findings and lexical prose — each with a label, the stage that produces it, and expected length bounds. It is the only real enforcement behind prose_section.section_type_id, and it has grown by accretion: over half the types belong to 'programme' rather than to any analytical stage.",
       "description_source": "profiler",
       "row_count": 108,
-      "sql": "CREATE TABLE prose_section_type (\n            id                   INTEGER PRIMARY KEY,\n            code                 TEXT    NOT NULL UNIQUE,\n            label                TEXT    NOT NULL,\n            source_stage         TEXT    NOT NULL,\n            lifecycle_tag        TEXT,\n            chapter_no           INTEGER,\n            description          TEXT,\n            expected_length_min  INTEGER,\n            expected_length_max  INTEGER,\n            sort_order           INTEGER NOT NULL DEFAULT 0,\n            delete_flagged       INTEGER NOT NULL DEFAULT 0,\n            created_at           TEXT    NOT NULL DEFAULT (datetime('now'))\n        , book_order INTEGER, book_label TEXT, section_order INTEGER, section_label TEXT)",
+      "sql": "CREATE TABLE prose_section_type (\n            id                   INTEGER PRIMARY KEY,\n            code                 TEXT    NOT NULL UNIQUE,\n            label                TEXT    NOT NULL,\n            source_stage         TEXT    NOT NULL,\n            lifecycle_tag        TEXT,\n            chapter_no           INTEGER,\n            description          TEXT,\n            expected_length_min  INTEGER,\n            expected_length_max  INTEGER,\n            sort_order           INTEGER NOT NULL DEFAULT 0,\n            delete_flagged       INTEGER NOT NULL DEFAULT 0,\n            created_at           TEXT    NOT NULL DEFAULT (datetime('now'))\n        , book_order INTEGER, book_label TEXT, section_order INTEGER, section_label TEXT, version INTEGER, updated_at TEXT)",
       "primary_key": [
         "id"
       ],
@@ -15192,6 +15152,90 @@
             "top_values_cover": 0.9806,
             "uncontrolled_vocabulary": true
           }
+        },
+        {
+          "name": "version",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 108,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 108,
+            "distinct_bucket": "11-200",
+            "min": 1041,
+            "max": 1148,
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": 1041,
+                "n": 1
+              },
+              {
+                "v": 1042,
+                "n": 1
+              },
+              {
+                "v": 1043,
+                "n": 1
+              },
+              {
+                "v": 1044,
+                "n": 1
+              },
+              {
+                "v": 1045,
+                "n": 1
+              },
+              {
+                "v": 1046,
+                "n": 1
+              },
+              {
+                "v": 1047,
+                "n": 1
+              },
+              {
+                "v": 1048,
+                "n": 1
+              }
+            ],
+            "top_values_cover": 0.0741
+          }
+        },
+        {
+          "name": "updated_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 108,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": "2026-08-24T09:58:29Z",
+            "max": "2026-08-24T09:58:29Z",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "2026-08-24T09:58:29Z",
+                "n": 108
+              }
+            ],
+            "top_values_cover": 1.0
+          }
         }
       ],
       "foreign_keys": [],
@@ -15213,6 +15257,341 @@
             "code"
           ],
           "origin": "u"
+        }
+      ]
+    },
+    "record_change_log": {
+      "description": null,
+      "description_source": null,
+      "row_count": 1148,
+      "sql": "CREATE TABLE record_change_log (\n                id              INTEGER PRIMARY KEY AUTOINCREMENT,\n                target_table    TEXT    NOT NULL,\n                target_id       INTEGER NOT NULL,\n                change_type     TEXT    NOT NULL CHECK (change_type IN ('insert','change','delete')),\n                change_datetime TEXT    NOT NULL,\n                change_source   TEXT,\n                change_reason   TEXT,\n                changed_by      TEXT    NOT NULL,\n                status          TEXT    NOT NULL DEFAULT 'change_applied'\n                                    CHECK (status IN ('change_proposed','change_applied','declined')),\n                payload         BLOB\n            )",
+      "primary_key": [
+        "id"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": true,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 1148,
+            "distinct_bucket": "high-cardinality",
+            "min": 1,
+            "max": 1148,
+            "looks_categorical": false
+          }
+        },
+        {
+          "name": "target_table",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
+            "min": "prose_section",
+            "max": "prose_section_type",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "prose_section",
+                "n": 1040
+              },
+              {
+                "v": "prose_section_type",
+                "n": 108
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "target_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 964,
+            "distinct_bucket": "high-cardinality",
+            "min": 1,
+            "max": 1040,
+            "looks_categorical": false
+          }
+        },
+        {
+          "name": "change_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
+            "min": "change",
+            "max": "insert",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "insert",
+                "n": 1057
+              },
+              {
+                "v": "change",
+                "n": 91
+              }
+            ],
+            "top_values_cover": 1.0
+          }
+        },
+        {
+          "name": "change_datetime",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": "2026-08-24T09:58:29Z",
+            "max": "2026-08-24T09:58:29Z",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "2026-08-24T09:58:29Z",
+                "n": 1148
+              }
+            ],
+            "top_values_cover": 1.0
+          }
+        },
+        {
+          "name": "change_source",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": "migration/prose_change_log_build_v1_20260824.py",
+            "max": "migration/prose_change_log_build_v1_20260824.py",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "migration/prose_change_log_build_v1_20260824.py",
+                "n": 1148
+              }
+            ],
+            "top_values_cover": 1.0
+          }
+        },
+        {
+          "name": "change_reason",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
+            "min": "migration",
+            "max": "migration baseline",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "migration baseline",
+                "n": 1057
+              },
+              {
+                "v": "migration",
+                "n": 91
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "changed_by",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": "claude_code",
+            "max": "claude_code",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "claude_code",
+                "n": 1148
+              }
+            ],
+            "top_values_cover": 1.0
+          }
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'change_applied'",
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": "change_applied",
+            "max": "change_applied",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "change_applied",
+                "n": 1148
+              }
+            ],
+            "top_values_cover": 1.0
+          }
+        },
+        {
+          "name": "payload",
+          "type": "BLOB",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 1148,
+            "null_count": 1057,
+            "null_rate": 0.9207,
+            "null_bucket": "over-50pct",
+            "distinct_count": 91,
+            "distinct_bucket": "11-200",
+            "min": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffeTK\\x8f\\xdc6\\x0c\\xfe+\\xc4\\\\z\\x19\\x0ff\\xbc\\x8b\\xa0\\xd8\\x9e\\xf2\\xe8!=$@\\xb2h\\x81… (+2171 chars)",
+            "max": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff\\xed\\xbdk\\x93\\xdbV\\x96%\\xfaW\\xd0\\xea\\x0fJ9\\x98\\xe9|K\\xca\\x9c\\x18\\x87,\\xd9.\\xb9… (+64527 chars)",
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffeTK\\x8f\\xdc6\\x0c\\xfe+\\xc4\\\\z\\x19\\x0ff\\xbc\\x8b\\xa0\\xd8\\x9e\\xf2\\xe8!=$@\\xb2h\\x81… (+2171 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffeUMo\\xdb0\\x0c\\xfd+B\\x0e\\xfb\\x00\\xea q\\x8bb\\xc8mk/;\\r[{\\x1a\\n\\x04\\xb4\\xcc\\xd8\\x… (+2258 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffmTMo\\xdbH\\x0c\\xfd+\\x84/m\\x01\\xcb\\xb0\\x95\\xa0(|\\xeb\\xa6\\x97\\x9e\\x16hsZ\\x040\\x98… (+2231 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffuY\\xefo\\xdb8\\x12\\xfdW\\x88\\x14\\xb8&\\x81\\x9d\\x8b\\x9d\\x1fM\\xd4O\\xbdv\\xd1\\xdb\\xc5\\… (+8278 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff}U[\\x8b\\xdbF\\x14\\xfe+\\x07\\xbf\\xa4\\x01\\xcbx\\xb5K\\x08\\xbbOM\\x08m\\xfa\\xd0\\x16vi ,… (+2389 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff}WMo\\x1b7\\x10\\xfd+\\x84/\\xb9H\\x82\\xed\\xb8F\\xe1\\x9e\\xdc[.E\\x0e\\x01\\x02\\x14\\x06\\x… (+4095 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff}W\\xdb\\x8e\\xdb6\\x10\\xfd\\x15b_\\x92\\x00\\x96\\xb3\\xd9n\\nt\\xf7\\xa1\\xc8\\xb5\\xedK\\x0b… (+4814 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff\\x85W\\xdbn\\xdc6\\x10\\xfd\\x15\\xc2/\\x05\\x8c\\xdd\\x85\\xed\\xb8\\x01\\xea<\\xa5i\\x81\\x06… (+4913 chars)",
+                "n": 1
+              }
+            ],
+            "top_values_cover": 0.0879
+          }
+        }
+      ],
+      "foreign_keys": [],
+      "checks": [
+        "change_type IN ('insert','change','delete')",
+        "status IN ('change_proposed','change_applied','declined')"
+      ],
+      "indexes": [
+        {
+          "name": "idx_record_change_log_target",
+          "unique": false,
+          "columns": [
+            "target_table",
+            "target_id"
+          ],
+          "origin": "c"
         }
       ]
     },
@@ -29796,8 +30175,8 @@
     "wa_data_quality_flags": {
       "description": "Engine-derived data-quality evidence raised against a term in a word-study file (19,866 rows) — automated observations such as thin verse coverage or a concrete/physical gloss. All rows resolve to just 7 flag types, and the table has no resolution or soft-delete column, so it is an append-only log with no lifecycle.",
       "description_source": "profiler",
-      "row_count": 19866,
-      "sql": "CREATE TABLE wa_data_quality_flags (\n            id           INTEGER PRIMARY KEY AUTOINCREMENT,\n            file_id      INTEGER NOT NULL REFERENCES wa_file_index(id),\n            term_id      TEXT,\n            flag_id      INTEGER NOT NULL REFERENCES wa_quality_flag_types(id),\n            description  TEXT,\n            last_changed TEXT\n        )",
+      "row_count": 0,
+      "sql": "CREATE TABLE wa_data_quality_flags (\n    id               INTEGER PRIMARY KEY AUTOINCREMENT,\n    strong_id        TEXT,\n    verse_id         INTEGER,\n    flag_id          INTEGER NOT NULL REFERENCES wa_quality_flag_types(id),\n    description      TEXT,\n    corrective_action TEXT,\n    correction_date  TEXT,\n    delete_flagged   INTEGER NOT NULL DEFAULT 0,\n    last_changed     TEXT\n)",
       "primary_key": [
         "id"
       ],
@@ -29812,18 +30191,135 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 19866,
-            "null_count": 0,
-            "null_rate": 0.0,
-            "null_bucket": "none",
-            "distinct_count": 19866,
-            "distinct_bucket": "high-cardinality",
-            "min": 8696,
-            "max": 43245,
-            "looks_categorical": false
+            "rows_scanned": 0,
+            "empty_table": true
           }
         },
         {
+          "name": "strong_id",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "verse_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "flag_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": "FK to wa_quality_flag_types. Only 7 distinct types are actually used, dominated by ids 4 (7,781), 47 (5,759) and 3 (5,014); the flag's meaning lives in the type table, not here.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "description",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": "The flag's specific evidence text, e.g. 'sabaōth (hosts, occ=67) — 2 verses, 3% coverage' — the per-row detail that makes the flag actionable.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "corrective_action",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "correction_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0",
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "last_changed",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": "Populated on only 323 of 19,866 rows and with just 4 distinct values from March 2026. The field was effectively abandoned; row age cannot be established from this table.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column": "flag_id",
+          "references": "wa_quality_flag_types.id",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION"
+        }
+      ],
+      "checks": [],
+      "indexes": [],
+      "retired_columns": {
+        "file_id": {
           "name": "file_id",
           "type": "INTEGER",
           "notnull": true,
@@ -29842,9 +30338,10 @@
             "min": 1,
             "max": 344,
             "looks_categorical": false
-          }
+          },
+          "retired_at": "2026-08-24"
         },
-        {
+        "term_id": {
           "name": "term_id",
           "type": "TEXT",
           "notnull": false,
@@ -29863,156 +30360,10 @@
             "min": "107",
             "max": "NO STRONG-135-metameleia",
             "looks_categorical": false
-          }
-        },
-        {
-          "name": "flag_id",
-          "type": "INTEGER",
-          "notnull": true,
-          "default": null,
-          "pk": false,
-          "description": "FK to wa_quality_flag_types. Only 7 distinct types are actually used, dominated by ids 4 (7,781), 47 (5,759) and 3 (5,014); the flag's meaning lives in the type table, not here.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 19866,
-            "null_count": 0,
-            "null_rate": 0.0,
-            "null_bucket": "none",
-            "distinct_count": 7,
-            "distinct_bucket": "2-10",
-            "min": 1,
-            "max": 310,
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": 4,
-                "n": 7781
-              },
-              {
-                "v": 47,
-                "n": 5759
-              },
-              {
-                "v": 3,
-                "n": 5014
-              },
-              {
-                "v": 1,
-                "n": 508
-              },
-              {
-                "v": 310,
-                "n": 315
-              },
-              {
-                "v": 36,
-                "n": 278
-              },
-              {
-                "v": 2,
-                "n": 211
-              }
-            ],
-            "top_values_cover": 1.0
-          }
-        },
-        {
-          "name": "description",
-          "type": "TEXT",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "The flag's specific evidence text, e.g. 'sabaōth (hosts, occ=67) — 2 verses, 3% coverage' — the per-row detail that makes the flag actionable.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 19866,
-            "null_count": 0,
-            "null_rate": 0.0,
-            "null_bucket": "none",
-            "distinct_count": 9625,
-            "distinct_bucket": "high-cardinality",
-            "min": "Gloss indicates concrete/physical: City [of On]",
-            "max": "sabaōth (hosts, occ=67) — 2 verses, 3% coverage",
-            "looks_categorical": false
-          }
-        },
-        {
-          "name": "last_changed",
-          "type": "TEXT",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "Populated on only 323 of 19,866 rows and with just 4 distinct values from March 2026. The field was effectively abandoned; row age cannot be established from this table.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 19866,
-            "null_count": 19543,
-            "null_rate": 0.9837,
-            "null_bucket": "over-50pct",
-            "distinct_count": 4,
-            "distinct_bucket": "2-10",
-            "min": "2026-03-25T17:04:02Z",
-            "max": "2026-03-28 16:30:25",
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": "2026-03-28 16:30:25",
-                "n": 315
-              },
-              {
-                "v": "2026-03-25T17:04:02Z",
-                "n": 4
-              },
-              {
-                "v": "2026-03-25T18:08:28Z",
-                "n": 3
-              },
-              {
-                "v": "2026-03-25T17:29:46Z",
-                "n": 1
-              }
-            ],
-            "top_values_cover": 1.0,
-            "uncontrolled_vocabulary": true
-          }
+          },
+          "retired_at": "2026-08-24"
         }
-      ],
-      "foreign_keys": [
-        {
-          "column": "flag_id",
-          "references": "wa_quality_flag_types.id",
-          "on_delete": "NO ACTION",
-          "on_update": "NO ACTION"
-        },
-        {
-          "column": "file_id",
-          "references": "wa_file_index.id",
-          "on_delete": "NO ACTION",
-          "on_update": "NO ACTION"
-        }
-      ],
-      "checks": [],
-      "indexes": [
-        {
-          "name": "idx_wdqf_flag",
-          "unique": false,
-          "columns": [
-            "flag_id"
-          ],
-          "origin": "c"
-        },
-        {
-          "name": "idx_wdqf_file",
-          "unique": false,
-          "columns": [
-            "file_id"
-          ],
-          "origin": "c"
-        }
-      ]
+      }
     },
     "wa_dim_review_cluster_log": {
       "description": "A completion log for the retired dimension review: one row per C-code cluster finished, six in all (C10, C13, C17, C20, C21, C22), recorded between 2026-04-09 and 2026-05-02. Against the 22 C-codes present in wa_dimension_index it shows the review was closed out for only six clusters before the layer was abandoned.",
@@ -37415,8 +37766,8 @@
     "wa_quality_flag_types": {
       "description": "Lookup of the 29 data-quality and research flag codes, grouped by kind and each defined in prose. Unlike phase2_flag_types it carries a deprecation mechanism and has been through at least one merge (THIN_DATA folded into VERSE_EVIDENCE_CONCENTRATED), so 4 codes are retired but retained.",
       "description_source": "profiler",
-      "row_count": 29,
-      "sql": "CREATE TABLE wa_quality_flag_types (\n            id          INTEGER PRIMARY KEY AUTOINCREMENT,\n            flag_group  TEXT NOT NULL,\n            flag_code   TEXT NOT NULL UNIQUE,\n            description TEXT\n        , deprecated INTEGER DEFAULT 0, deprecation_note TEXT, category TEXT, research_actions TEXT)",
+      "row_count": 3,
+      "sql": "CREATE TABLE wa_quality_flag_types (\n    id            INTEGER PRIMARY KEY AUTOINCREMENT,\n    flag_group    TEXT NOT NULL,\n    flag_code     TEXT NOT NULL UNIQUE,\n    description   TEXT,\n    delete_flagged INTEGER NOT NULL DEFAULT 0,\n    deprecation_note TEXT,\n    category      TEXT,\n    research_actions TEXT\n)",
       "primary_key": [
         "id"
       ],
@@ -37431,14 +37782,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 29,
+            "rows_scanned": 3,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 29,
-            "distinct_bucket": "11-200",
+            "distinct_count": 3,
+            "distinct_bucket": "2-10",
             "min": 1,
-            "max": 333,
+            "max": 3,
             "looks_categorical": true,
             "top_values": [
               {
@@ -37452,29 +37803,9 @@
               {
                 "v": 3,
                 "n": 1
-              },
-              {
-                "v": 4,
-                "n": 1
-              },
-              {
-                "v": 23,
-                "n": 1
-              },
-              {
-                "v": 24,
-                "n": 1
-              },
-              {
-                "v": 36,
-                "n": 1
-              },
-              {
-                "v": 47,
-                "n": 1
               }
             ],
-            "top_values_cover": 0.2759
+            "top_values_cover": 1.0
           }
         },
         {
@@ -37487,47 +37818,22 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 29,
+            "rows_scanned": 3,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 7,
-            "distinct_bucket": "2-10",
-            "min": "DATA_COVERAGE",
-            "max": "STUDY_REQUIRED",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": "PROSE_QUALITY",
+            "max": "PROSE_QUALITY",
             "looks_categorical": true,
             "top_values": [
               {
-                "v": "DATA_COVERAGE",
-                "n": 9
-              },
-              {
-                "v": "DATA_QUALITY",
-                "n": 6
-              },
-              {
-                "v": "RESEARCHER_DECISION",
+                "v": "PROSE_QUALITY",
                 "n": 3
-              },
-              {
-                "v": "SESSION_B",
-                "n": 3
-              },
-              {
-                "v": "SESSION_D_POINTER",
-                "n": 3
-              },
-              {
-                "v": "STUDY_REQUIRED",
-                "n": 3
-              },
-              {
-                "v": "SESSION_D",
-                "n": 2
               }
             ],
-            "top_values_cover": 1.0,
-            "uncontrolled_vocabulary": true
+            "top_values_cover": 1.0
           }
         },
         {
@@ -37540,50 +37846,30 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 29,
+            "rows_scanned": 3,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 29,
-            "distinct_bucket": "11-200",
-            "min": "CANDIDATE_REGISTRY_WORD",
-            "max": "VERSE_EVIDENCE_MINIMAL",
+            "distinct_count": 3,
+            "distinct_bucket": "2-10",
+            "min": "Methodology change",
+            "max": "Terminology change",
             "looks_categorical": true,
             "top_values": [
               {
-                "v": "CANDIDATE_REGISTRY_WORD",
+                "v": "Methodology change",
                 "n": 1
               },
               {
-                "v": "CONCRETE_PHYSICAL",
+                "v": "Style change",
                 "n": 1
               },
               {
-                "v": "DATA_INTEGRITY",
-                "n": 1
-              },
-              {
-                "v": "DIMREVIEW_SESSION_D",
-                "n": 1
-              },
-              {
-                "v": "NO_WORD_ANALYSIS",
-                "n": 1
-              },
-              {
-                "v": "PH2_BOUNDARY_QUESTION",
-                "n": 1
-              },
-              {
-                "v": "PH2_CROSS_REF_ENRICHMENT",
-                "n": 1
-              },
-              {
-                "v": "PH2_CROSS_REGISTRY_REQUIRED",
+                "v": "Terminology change",
                 "n": 1
               }
             ],
-            "top_values_cover": 0.2759
+            "top_values_cover": 1.0
           }
         },
         {
@@ -37596,53 +37882,138 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 29,
+            "rows_scanned": 3,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 29,
-            "distinct_bucket": "11-200",
-            "min": "A scope or boundary question about this term's registry assignment or analytical treatment requires researcher input to … (+8 chars)",
-            "max": "Thematic connection between registries identified during Session B analysis. Distinct from SD_POINTER in that it describ… (+70 chars)",
+            "distinct_count": 3,
+            "distinct_bucket": "2-10",
+            "min": "Prose describes a process or method that has since changed.",
+            "max": "Prose text uses terminology superseded by a later methodology/naming decision.",
             "looks_categorical": true,
             "top_values": [
               {
-                "v": "A scope or boundary question about this term's registry assignment or analytical treatment requires researcher input to … (+8 chars)",
+                "v": "Prose describes a process or method that has since changed.",
                 "n": 1
               },
               {
-                "v": "A word or concept has been identified as a candidate for a new registry entry. Requires researcher decision on whether t… (+25 chars)",
+                "v": "Prose doesn't conform to the current style/authoring convention.",
                 "n": 1
               },
               {
-                "v": "An item requiring researcher input to resolve — Claude AI has exhausted its analytical resources and cannot proceed with… (+62 chars)",
-                "n": 1
-              },
-              {
-                "v": "Cross-reference enrichment opportunity identified — a formal connection between registries via this term merits Session … (+16 chars)",
-                "n": 1
-              },
-              {
-                "v": "Cross-registry analysis is required before synthesis conclusions can be drawn for this term. Cannot be resolved within t… (+25 chars)",
-                "n": 1
-              },
-              {
-                "v": "Data integrity concern that does not fit a more specific code — includes FK inconsistencies, orphaned records, and cross… (+22 chars)",
-                "n": 1
-              },
-              {
-                "v": "Data quality error identified during Session B pre-analysis — includes homonyms with shared counts, function word contam… (+76 chars)",
-                "n": 1
-              },
-              {
-                "v": "Dedicated exegetical study of the named passage is required — the verse raises an interpretive question that cannot be r… (+31 chars)",
+                "v": "Prose text uses terminology superseded by a later methodology/naming decision.",
                 "n": 1
               }
             ],
-            "top_values_cover": 0.2759
+            "top_values_cover": 1.0
           }
         },
         {
+          "name": "delete_flagged",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": "0",
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 3,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": 0,
+            "max": 0,
+            "looks_categorical": true,
+            "top_values": [
+              {
+                "v": 0,
+                "n": 3
+              }
+            ],
+            "top_values_cover": 1.0
+          }
+        },
+        {
+          "name": "deprecation_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": "Why the code was retired and where its meaning went, e.g. 'Merged into VERSE_EVIDENCE_CONCENTRATED (id=3) in M29 (2026-04-20). All existing THIN_DATA rows repointed'. Present for the 4 deprecated codes.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 3,
+            "null_count": 3,
+            "null_rate": 1.0,
+            "null_bucket": "all",
+            "distinct_count": 0,
+            "distinct_bucket": "constant",
+            "min": null,
+            "max": null,
+            "looks_categorical": false
+          }
+        },
+        {
+          "name": "category",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": "A second grouping axis that largely duplicates flag_group — its four values (DATA_QUALITY, RESEARCHER_DECISION, SESSION_D_POINTER, STUDY_REQUIRED) all appear in flag_group with the same counts. NULL in 14 rows, so it is a partly-populated redundant column.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 3,
+            "null_count": 3,
+            "null_rate": 1.0,
+            "null_bucket": "all",
+            "distinct_count": 0,
+            "distinct_bucket": "constant",
+            "min": null,
+            "max": null,
+            "looks_categorical": false
+          }
+        },
+        {
+          "name": "research_actions",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": "Semicolon-separated codes for the follow-up actions a flag triggers, e.g. 'R_STEP_EXHAUST_CHECK;R_AI_WIDER_CONTEXT'. Present for only 4 rows, and the action codes themselves are not defined in any lookup table.",
+          "description_source": "profiler",
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 3,
+            "null_count": 3,
+            "null_rate": 1.0,
+            "null_bucket": "all",
+            "distinct_count": 0,
+            "distinct_bucket": "constant",
+            "min": null,
+            "max": null,
+            "looks_categorical": false
+          }
+        }
+      ],
+      "foreign_keys": [],
+      "checks": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_wa_quality_flag_types_1",
+          "unique": true,
+          "columns": [
+            "flag_code"
+          ],
+          "origin": "u"
+        }
+      ],
+      "retired_columns": {
+        "deprecated": {
           "name": "deprecated",
           "type": "INTEGER",
           "notnull": false,
@@ -37673,130 +38044,10 @@
             ],
             "top_values_cover": 1.0,
             "uncontrolled_vocabulary": true
-          }
-        },
-        {
-          "name": "deprecation_note",
-          "type": "TEXT",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "Why the code was retired and where its meaning went, e.g. 'Merged into VERSE_EVIDENCE_CONCENTRATED (id=3) in M29 (2026-04-20). All existing THIN_DATA rows repointed'. Present for the 4 deprecated codes.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 29,
-            "null_count": 25,
-            "null_rate": 0.8621,
-            "null_bucket": "over-50pct",
-            "distinct_count": 2,
-            "distinct_bucket": "binary",
-            "min": "Merged into VERSE_EVIDENCE_CONCENTRATED (id=3) in M29 (2026-04-20). All existing THIN_DATA rows repointed; new inserts m… (+36 chars)",
-            "max": "Superseded — Session B analytical outputs route to wa_session_b_findings, wa_session_b_dimensions, and word_registry.sb_… (+38 chars)",
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": "Superseded — Session B analytical outputs route to wa_session_b_findings, wa_session_b_dimensions, and word_registry.sb_… (+38 chars)",
-                "n": 3
-              },
-              {
-                "v": "Merged into VERSE_EVIDENCE_CONCENTRATED (id=3) in M29 (2026-04-20). All existing THIN_DATA rows repointed; new inserts m… (+36 chars)",
-                "n": 1
-              }
-            ],
-            "top_values_cover": 1.0
-          }
-        },
-        {
-          "name": "category",
-          "type": "TEXT",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "A second grouping axis that largely duplicates flag_group — its four values (DATA_QUALITY, RESEARCHER_DECISION, SESSION_D_POINTER, STUDY_REQUIRED) all appear in flag_group with the same counts. NULL in 14 rows, so it is a partly-populated redundant column.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 29,
-            "null_count": 14,
-            "null_rate": 0.4828,
-            "null_bucket": "under-50pct",
-            "distinct_count": 4,
-            "distinct_bucket": "2-10",
-            "min": "DATA_QUALITY",
-            "max": "STUDY_REQUIRED",
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": "DATA_QUALITY",
-                "n": 6
-              },
-              {
-                "v": "RESEARCHER_DECISION",
-                "n": 3
-              },
-              {
-                "v": "SESSION_D_POINTER",
-                "n": 3
-              },
-              {
-                "v": "STUDY_REQUIRED",
-                "n": 3
-              }
-            ],
-            "top_values_cover": 1.0,
-            "uncontrolled_vocabulary": true
-          }
-        },
-        {
-          "name": "research_actions",
-          "type": "TEXT",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "Semicolon-separated codes for the follow-up actions a flag triggers, e.g. 'R_STEP_EXHAUST_CHECK;R_AI_WIDER_CONTEXT'. Present for only 4 rows, and the action codes themselves are not defined in any lookup table.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 29,
-            "null_count": 25,
-            "null_rate": 0.8621,
-            "null_bucket": "over-50pct",
-            "distinct_count": 3,
-            "distinct_bucket": "2-10",
-            "min": "R_AI_WIDER_CONTEXT",
-            "max": "R_STEP_EXHAUST_CHECK;R_EXTERNAL_BIBLE;R_AI_WIDER_CONTEXT;R_RELEVANCE_REVIEW",
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": "R_STEP_EXHAUST_CHECK;R_AI_WIDER_CONTEXT",
-                "n": 2
-              },
-              {
-                "v": "R_AI_WIDER_CONTEXT",
-                "n": 1
-              },
-              {
-                "v": "R_STEP_EXHAUST_CHECK;R_EXTERNAL_BIBLE;R_AI_WIDER_CONTEXT;R_RELEVANCE_REVIEW",
-                "n": 1
-              }
-            ],
-            "top_values_cover": 1.0
-          }
+          },
+          "retired_at": "2026-08-24"
         }
-      ],
-      "foreign_keys": [],
-      "checks": [],
-      "indexes": [
-        {
-          "name": "sqlite_autoindex_wa_quality_flag_types_1",
-          "unique": true,
-          "columns": [
-            "flag_code"
-          ],
-          "origin": "u"
-        }
-      ]
+      }
     },
     "wa_rule_registry": {
       "description": "The programme's global rules held as data: 59 rules with their text, rationale, application notes and supersession chain, all imported from a single JSON document. It is a live governance record only in the historical sense — 25 of the 59 rules are already marked obsolete and nothing has been written since April.",
@@ -38290,39 +38541,19 @@
             "null_count": 23,
             "null_rate": 0.3898,
             "null_bucket": "under-50pct",
-            "distinct_count": 7,
-            "distinct_bucket": "2-10",
-            "min": "2026-04-21T07:08:02Z",
-            "max": "20260417",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
+            "min": "2026-04-26T07:02:42Z",
+            "max": "2026-08-17T11:27:10Z",
             "looks_categorical": true,
             "top_values": [
               {
-                "v": "2026-04-21T08:48:04Z",
-                "n": 13
-              },
-              {
-                "v": "2026-04-21T08:47:50Z",
-                "n": 9
-              },
-              {
-                "v": "2026-04-21T07:08:02Z",
-                "n": 6
-              },
-              {
-                "v": "2026-04-21T08:47:37Z",
-                "n": 4
+                "v": "2026-08-17T11:27:10Z",
+                "n": 34
               },
               {
                 "v": "2026-04-26T07:02:42Z",
                 "n": 2
-              },
-              {
-                "v": "2026-04-27T09:48:28Z",
-                "n": 1
-              },
-              {
-                "v": "20260417",
-                "n": 1
               }
             ],
             "top_values_cover": 1.0,
@@ -38343,23 +38574,18 @@
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 2,
-            "distinct_bucket": "binary",
-            "min": 0,
+            "distinct_count": 1,
+            "distinct_bucket": "constant",
+            "min": 1,
             "max": 1,
             "looks_categorical": true,
             "top_values": [
               {
-                "v": 0,
-                "n": 34
-              },
-              {
                 "v": 1,
-                "n": 25
+                "n": 59
               }
             ],
-            "top_values_cover": 1.0,
-            "uncontrolled_vocabulary": true
+            "top_values_cover": 1.0
           }
         },
         {
@@ -38373,15 +38599,19 @@
           "profile": {
             "scope": "exact",
             "rows_scanned": 59,
-            "null_count": 34,
-            "null_rate": 0.5763,
-            "null_bucket": "over-50pct",
-            "distinct_count": 18,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 19,
             "distinct_bucket": "11-200",
             "min": "Absorbed into GR-OBS-001 2_0 as part of v2_8 consolidation.",
-            "max": "Substance folded into GR-OBS-001 v2_2 (version increment clause; semantic reversed from new-session bump to in-session b… (+40 chars)",
+            "max": "Superseded 2026-08-17 (researcher decision, escalation #696): the whole table is no longer operational, not selectively … (+141 chars)",
             "looks_categorical": true,
             "top_values": [
+              {
+                "v": "Superseded 2026-08-17 (researcher decision, escalation #696): the whole table is no longer operational, not selectively … (+141 chars)",
+                "n": 34
+              },
               {
                 "v": "Retired in v2_9. The rigid six-field RESEARCHER_DECISION item format prescribed by GR-RD-001 through -006 is superseded … (+81 chars)",
                 "n": 6
@@ -38409,13 +38639,10 @@
               {
                 "v": "Migrated to addendum_patch_directive ADD-PATCHDIR-001 in v2_9 per researcher direction that all GR-DIR rules move to the… (+80 chars)",
                 "n": 1
-              },
-              {
-                "v": "Migrated to addendum_patch_directive ADD-PATCHDIR-003 in v2_8. Rule text preserved in addendum item; consolidation sessi… (+44 chars)",
-                "n": 1
               }
             ],
-            "top_values_cover": 0.6
+            "top_values_cover": 0.8136,
+            "uncontrolled_vocabulary": true
           }
         },
         {
@@ -38429,15 +38656,19 @@
           "profile": {
             "scope": "exact",
             "rows_scanned": 59,
-            "null_count": 43,
-            "null_rate": 0.7288,
-            "null_bucket": "over-50pct",
-            "distinct_count": 8,
+            "null_count": 9,
+            "null_rate": 0.1525,
+            "null_bucket": "under-50pct",
+            "distinct_count": 9,
             "distinct_bucket": "2-10",
             "min": "GR-FILE-003 v3_0 and GR-OBS-004",
-            "max": "GR-RD-007 v1_0",
+            "max": "iba.db cfg_* configuration system (iba/app/GOVERNANCE.md)",
             "looks_categorical": true,
             "top_values": [
+              {
+                "v": "iba.db cfg_* configuration system (iba/app/GOVERNANCE.md)",
+                "n": 34
+              },
               {
                 "v": "GR-RD-007 v1_0",
                 "n": 6
@@ -38465,13 +38696,10 @@
               {
                 "v": "GR-OBS-003",
                 "n": 1
-              },
-              {
-                "v": "GR-PROC-002",
-                "n": 1
               }
             ],
-            "top_values_cover": 1.0
+            "top_values_cover": 0.98,
+            "uncontrolled_vocabulary": true
           }
         },
         {
@@ -46937,6 +47165,12 @@
       "description": null,
       "description_source": null
     },
+    "wa_quality_flag_types_cascade_delete": {
+      "table": "wa_quality_flag_types",
+      "sql": "CREATE TRIGGER wa_quality_flag_types_cascade_delete\nAFTER UPDATE OF delete_flagged ON wa_quality_flag_types\nWHEN NEW.delete_flagged = 1 AND OLD.delete_flagged = 0\nBEGIN\n    UPDATE wa_data_quality_flags SET delete_flagged = 1 WHERE flag_id = NEW.id;\nEND",
+      "description": null,
+      "description_source": null
+    },
     "wa_verse_records_updated_at": {
       "table": "wa_verse_records",
       "sql": "CREATE TRIGGER wa_verse_records_updated_at\nAFTER UPDATE ON wa_verse_records\nBEGIN\n    UPDATE wa_verse_records\n    SET updated_at = strftime('%Y-%m-%dT%H:%M:%S','now')\n    WHERE id = NEW.id;\nEND",
@@ -46945,13 +47179,13 @@
     }
   },
   "counts": {
-    "tables": 110,
-    "columns": 1181,
-    "pk_columns": 105,
-    "foreign_keys": 77,
-    "checks": 6,
-    "indexes": 169,
-    "triggers": 4,
+    "tables": 111,
+    "columns": 1194,
+    "pk_columns": 106,
+    "foreign_keys": 74,
+    "checks": 8,
+    "indexes": 167,
+    "triggers": 5,
     "views": 2
   }
 }

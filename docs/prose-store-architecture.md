@@ -19,7 +19,7 @@
 │     │        ├──►  prose_section_dimension_link          │
 │     │        └──►  prose_section_finding_link            │
 │     │                                                    │
-│     └──►  supersedes_id / superseded_by_id (versioning)  │
+│     └──►  version → record_change_log.id (Model A)       │
 │                                                          │
 └──────────┬───────────────────────────▲───────────────────┘
            │                           │
@@ -84,13 +84,15 @@ One row per authored prose body. Key columns:
 | `body` | The prose itself. UTF-8, markdown-compatible. |
 | `word_count` | Derived at insert. |
 | `status` | Lifecycle — `draft` / `in_review` / `approved` / `archived` (see §6). |
-| `version` | Starts at 1; increments on supersede. |
-| `supersedes_id` / `superseded_by_id` | Version chain — the revision history is in the rows, not in diffs. |
+| `version` | **(escalation #836, 2026-08-24)** A literal pointer to `record_change_log.id` — the log row describing this section's own most recent change — not an incrementing counter. |
+| `updated_at` | **(escalation #836)** Touched on every write, including `session_a_replace`. `created_at` is reserved for true, immutable original-creation time only. |
 | `author` | `claude_ai` / `claude_code` / `researcher`. |
 | `approved_at` / `approved_by` | Set by the `approve` op. |
-| `source_file` | The `.md` draft the prose was authored in (provenance). |
 | `metadata_json` | Free-form metadata (rarely needed). |
 | `delete_flagged` | Soft delete. |
+
+`supersedes_id`/`superseded_by_id`/`source_file` were **dropped 2026-08-24 (escalation #836)** — see
+§6 below. The table now holds current content only, one row per section, mutated in place.
 
 ### 3.3 `prose_section_fts` — full-text search
 
@@ -186,16 +188,27 @@ Status transitions for a `prose_section` row:
 ```
     draft ──────► in_review ──────► approved ──────► archived
       │                │                │                │
-      └────────────────┴────────────────┴───► superseded (new row, supersedes_id linked)
+      └────────────────┴────────────────┴───► edited in place (record_change_log captures the prior state)
                                                         │
                                              or delete_flagged = 1 (soft retire)
 ```
 
-### 6.1 Supersede-only discipline for narrative prose
+### 6.1 Mutate-in-place, logged discipline for narrative prose (rebuilt 2026-08-24, escalation #836)
 
-Narrative prose is immutable at the row level. A revision creates a new row with `version = old.version + 1`, `supersedes_id = old.id`, and the old row's `superseded_by_id = new.id`. The row history is queryable; no edit is ever silently lost.
+**Superseded description, kept for history only — the "new row per revision" mechanism this
+subsection used to describe was retired 2026-08-24.** `prose_section` is now a **Model A** table
+(the SQL-standard *system-versioned temporal table* pattern): one permanent row per section, edited
+in place. A revision `UPDATE`s the existing row's content and writes the row's *prior* state into the
+new `record_change_log` table first, in the same transaction — the row's `version` column is then set
+to that log entry's `id` (a pointer, not an incrementing counter). No row is ever duplicated to hold
+history; nothing is lost, because every prior state lives in `record_change_log`, keyed by
+`target_table`/`target_id`. Full design/build record: `iba/docs/prose-change-log-design-v1` through
+`-v9-20260824.md`; `iba/docs/prose-change-log-proposal-v1` through `-v3-20260824.md`;
+`iba/app/GOVERNANCE.md` §52.
 
-Only Session A mechanical extracts permit in-place update, through the `session_a_replace` operation. That operation is gated on `author = 'claude_code'`.
+Session A mechanical extracts still use the same in-place path (`session_a_replace`, gated on
+`author = 'claude_code'`) — the only behavioural change is that it now touches `updated_at`, not
+`created_at`, fixing a real defect (`created_at` used to silently drift with every replace).
 
 ### 6.2 Soft delete
 
@@ -221,7 +234,12 @@ Worked precedent now in the commit history:
 
 ### 7.1 Revisions
 
-A revision follows the same shape but uses the `supersede` operation on `prose_section`. The applicator writes the new row, sets `supersedes_id` / `superseded_by_id`, and transfers any approval state per instruction.
+A revision follows the same shape but uses the `supersede` operation on `prose_section`. **Since
+escalation #836 (2026-08-24)** the applicator edits the target row in place (Model A) rather than
+inserting a new row — it captures the row's prior state into `record_change_log`, then updates the
+row and sets `version` to the new log entry's `id`. The `supersedes_id` field name in a patch's
+`supersede` operation is kept for compatibility (it names the row being edited), but no new row is
+created and no `supersedes_id` column exists on `prose_section` any more.
 
 ### 7.2 Status transitions
 

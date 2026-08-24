@@ -162,12 +162,10 @@ def extract_programme_prose(
         type_count += 1
         sections = conn.execute(
             """SELECT id, registry_id, heading, status, version, author,
-                      word_count, created_at, approved_at, supersedes_id,
-                      source_file
+                      word_count, created_at, approved_at
                  FROM prose_section
                 WHERE section_type_id = ?
                   AND delete_flagged = 0
-                  AND superseded_by_id IS NULL
                 ORDER BY version DESC""",
             (t["id"],),
         ).fetchall()
@@ -282,12 +280,10 @@ def render_markdown_view(cfg, extract: dict) -> str:
                                 lines.append(f"*(metadata only — body not included in this extract. "
                                              f"Run `build_programme_prose_extract.py --include-body` to render full text.)*")
                                 lines.append(f"- Section id {s['id']} · status `{s['status']}` · "
-                                             f"v{s['version']} · {s['word_count']} words · author `{s['author']}` · "
-                                             f"source `{s['source_file'] or 'not recorded'}`\n")
+                                             f"v{s['version']} · {s['word_count']} words · author `{s['author']}`\n")
                             else:
                                 meta_line = (f"*Section id {s['id']} · status `{s['status']}` · "
-                                             f"v{s['version']} · {s['word_count']} words · author `{s['author']}` · "
-                                             f"source `{s['source_file'] or 'not recorded'}`*")
+                                             f"v{s['version']} · {s['word_count']} words · author `{s['author']}`*")
                                 lines.append(meta_line + "\n")
                                 lines.append(body.rstrip())
                                 lines.append("")
@@ -486,7 +482,6 @@ def search_prose(conn, query, book=None, limit=100, raw_fts=False):
         JOIN prose_section_type pst ON pst.id = ps.section_type_id
         WHERE prose_section_fts MATCH ?
           AND COALESCE(ps.delete_flagged, 0) = 0
-          AND ps.superseded_by_id IS NULL
           AND COALESCE(pst.delete_flagged, 0) = 0
           {book_clause}
     """
@@ -496,7 +491,7 @@ def search_prose(conn, query, book=None, limit=100, raw_fts=False):
     rows = conn.execute(
         f"""
         SELECT
-            ps.id, ps.heading, ps.status, ps.version, ps.author, ps.source_file,
+            ps.id, ps.heading, ps.status, ps.version, ps.author,
             pst.source_stage, pst.book_order, pst.book_label, pst.section_order,
             pst.section_label, pst.chapter_no, pst.label AS chapter_title, pst.sort_order,
             snippet(prose_section_fts, 0, '**', '**', ' ... ', 36) AS context,
@@ -532,7 +527,7 @@ def render_search_markdown(query, rows, total_matches, book):
             f"## {index}. {row['heading']}", "",
             f"**Reference:** {' / '.join(location)}",
             f"**Prose section ID:** `{row['id']}` · **status:** `{row['status']}` · **version:** `{row['version']}`",
-            f"**Source file:** `{row['source_file'] or 'not recorded'}`", "",
+            "",
             f"> {row['context']}", "",
         ])
     return "\n".join(lines)
@@ -567,7 +562,7 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
     try:
         if type_id is not None:
             sql = """
-            SELECT ps.id, ps.heading, ps.body, ps.version, ps.source_file,
+            SELECT ps.id, ps.heading, ps.body, ps.version,
                    pst.code, pst.book_order, pst.book_label, pst.section_order,
                    pst.section_label, pst.chapter_no, pst.label AS chapter_title,
                    pst.description, pst.sort_order
@@ -576,7 +571,6 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
             WHERE pst.id = ?
               AND COALESCE(pst.delete_flagged, 0) = 0
               AND COALESCE(ps.delete_flagged, 0) = 0
-              AND ps.superseded_by_id IS NULL
             ORDER BY pst.sort_order, ps.id
             """
             query_params = (type_id,)
@@ -584,7 +578,7 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
             if chapter is None:
                 raise ValueError("chapter is required with book")
             sql = """
-            SELECT ps.id, ps.heading, ps.body, ps.version, ps.source_file,
+            SELECT ps.id, ps.heading, ps.body, ps.version,
                    pst.code, pst.book_order, pst.book_label, pst.section_order,
                    pst.section_label, pst.chapter_no, pst.label AS chapter_title,
                    pst.description, pst.sort_order
@@ -594,7 +588,6 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
               AND pst.chapter_no = ?
               AND COALESCE(pst.delete_flagged, 0) = 0
               AND COALESCE(ps.delete_flagged, 0) = 0
-              AND ps.superseded_by_id IS NULL
             ORDER BY pst.sort_order, ps.id
             """
             query_params = (book, chapter)
@@ -623,8 +616,9 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
         lines = [
             f"# Prose Edit — {title}", "",
             "<!-- Edit only the prose body below each chapter heading. Do not change markers. -->",
-            "<!-- This file becomes permanent provenance once imported (prose_section.source_file) --",
-            "<!-- do not delete by hand; the import step archives it automatically on success. -->", "",
+            "<!-- This file becomes permanent provenance once imported (its archived path is -->",
+            "<!-- recorded as record_change_log.change_source, escalation #836) -- do not delete -->",
+            "<!-- by hand; the import step archives it automatically on success. -->", "",
         ]
         for row in rows:
             lines.extend([
@@ -636,7 +630,6 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
                 f"<!-- PROSE_CHAPTER_TITLE: {row['chapter_title']} -->",
                 f"<!-- PROSE_SORT_ORDER: {row['sort_order']} -->",
                 f"<!-- PROSE_VERSION: {row['version']} -->",
-                f"<!-- PROSE_SOURCE_FILE: {row['source_file'] or ''} -->",
                 "", f"## {row['heading']}", "", row["body"].rstrip(), "", "---", "",
             ])
 
@@ -673,8 +666,8 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     database itself — apply the reviewed patch with scripts/apply_session_patch.py, same as before
     this operation was incorporated (the write-authorisation boundary is unchanged)."""
     input_path = Path(input_path)
-    # Computed up front (before any move happens) so it can be used as the DB-facing source_file
-    # value even though the physical move only happens after the patch is successfully written.
+    # Computed up front (before any move happens) so the patch's own _patch_summary can name it
+    # even though the physical move only happens after the patch is successfully written.
     archived_source = CHAPTER_EDIT_OUT_DIR / "archive" / input_path.name
     text = input_path.read_text(encoding="utf-8")
     blocks = _parse_edit_blocks(text)
@@ -683,19 +676,18 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     try:
         for block in blocks:
             required = ["SECTION_ID", "SECTION_TYPE", "BOOK", "SECTION", "CHAPTER_NO",
-                       "CHAPTER_TITLE", "SORT_ORDER", "VERSION", "SOURCE_FILE", "BODY"]
+                       "CHAPTER_TITLE", "SORT_ORDER", "VERSION", "BODY"]
             missing = [key for key in required if key not in block]
             if missing:
                 raise ValueError(f"section {block.get('SECTION_ID')} missing markers: {missing}")
             row = conn.execute(
                 """
-                SELECT ps.id, ps.version, ps.heading, ps.source_file, ps.body,
+                SELECT ps.id, ps.version, ps.heading, ps.body,
                        pst.code, pst.book_label, pst.section_label,
                        pst.chapter_no, pst.label AS chapter_title, pst.sort_order
                 FROM prose_section ps
                 JOIN prose_section_type pst ON pst.id = ps.section_type_id
                 WHERE ps.id = ? AND COALESCE(ps.delete_flagged, 0) = 0
-                  AND ps.superseded_by_id IS NULL
                 """,
                 (int(block["SECTION_ID"]),),
             ).fetchone()
@@ -705,7 +697,6 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                 "SECTION_TYPE": row["code"], "BOOK": row["book_label"], "SECTION": row["section_label"],
                 "CHAPTER_NO": str(row["chapter_no"]), "CHAPTER_TITLE": row["chapter_title"],
                 "SORT_ORDER": str(row["sort_order"]), "VERSION": str(row["version"]),
-                "SOURCE_FILE": row["source_file"] or "",
             }
             for key, expected in checks.items():
                 if block[key] != (expected or ""):
@@ -727,15 +718,12 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                 "op_id": f"PROSE-{row['id']}-SUPERSEDE",
                 "table": "prose_section",
                 "operation": "supersede",
+                # `supersedes_id` names the row being edited (Model A, escalation #836 --
+                # apply_session_patch.py mutates it in place, no new row is created).
                 "supersedes_id": row["id"],
                 "record": {
                     "body": block["BODY"], "heading": row["heading"], "author": author,
-                    # source_file records where this edit file ends up (its archived path, see
-                    # below), not its transient pre-archive location -- so the DB's own provenance
-                    # pointer stays resolvable after this function moves the file. Getting this
-                    # wrong would recreate exactly the dangling-pointer problem this fix exists to
-                    # close (escalation #784, 2026-08-22).
-                    "status": "draft", "source_file": str(archived_source).replace("\\", "/"),
+                    "status": "draft",
                     "metadata_json": json.dumps({
                         "roundtrip_import": "iba.app.lib.prosestore.run_import_chapter",
                         "source_version": row["version"],
@@ -770,8 +758,10 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
     # On successful patch generation, archive the edit file -- researcher, 2026-08-22 (escalation
     # #784): "the import must get the file from the editing location, and on successful update move
-    # the file to archive." Move, not copy or delete: the file is now permanent provenance
-    # (prose_section.source_file above), never discarded, per this session's #1 finding.
+    # the file to archive." Move, not copy or delete: the file is now permanent provenance (its
+    # archived path is what apply_session_patch.py's _write_change_log() records as
+    # record_change_log.change_source via the patch's own patch_id, escalation #836), never
+    # discarded, per this session's #1 finding.
     archived_source.parent.mkdir(parents=True, exist_ok=True)
     input_path.replace(archived_source)
     return {"path": str(output), "sections": len(operations), "archived_source": str(archived_source)}

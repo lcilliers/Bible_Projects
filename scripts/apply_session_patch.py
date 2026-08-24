@@ -57,6 +57,7 @@ Usage:
 __version__ = "20260416"
 
 import argparse
+import gzip
 import json
 import os
 import shutil
@@ -641,6 +642,57 @@ def _resolve_group_id(raw_id: str, counts: dict, conn, op_id: str):
 class ApplicatorError(Exception):
     """Raised when an applicator invariant is violated."""
     pass
+
+
+def _write_change_log(conn, target_table: str, target_id: int, change_type: str,
+                       payload_dict: dict | None, meta: dict | None,
+                       change_reason: str | None = None) -> int:
+    """record_change_log choke-point writer -- escalation #836. Every write to
+    prose_section/prose_section_type must go through this helper, in the same
+    transaction as the write itself (cfg_behaviour_rule
+    'record-change-log-choke-point'). `payload_dict` holds the PRIOR content this
+    change is about to overwrite/remove -- never the resulting content (rule
+    'record-change-log-payload-is-prior-state'); pass None for insert events (there
+    is no prior state). Returns the new log row's id -- the caller writes this into
+    the target row's own `version` column (rule
+    'record-change-log-version-is-pointer'), it is not an incrementing counter."""
+    meta = meta or {}
+    change_source = meta.get("patch_id") or meta.get("source")
+    reason = change_reason or change_source or "unknown"
+    payload_blob = None
+    if payload_dict is not None:
+        payload_blob = gzip.compress(json.dumps(payload_dict, default=str).encode("utf-8"))
+    cur = conn.execute(
+        """INSERT INTO record_change_log
+           (target_table, target_id, change_type, change_datetime, change_source,
+            change_reason, changed_by, status, payload)
+           VALUES (?, ?, ?, ?, ?, ?, 'claude_code', 'change_applied', ?)""",
+        (target_table, target_id, change_type, _now(), change_source, reason, payload_blob),
+    )
+    return cur.lastrowid
+
+
+def _prose_section_snapshot(conn, section_id: int) -> dict:
+    """Prior-state capture for record_change_log.payload (escalation #836) --
+    called BEFORE the caller's own UPDATE, so this reads what's about to be
+    overwritten, not the result."""
+    row = conn.execute(
+        "SELECT heading, body, word_count, status, author, approved_at, approved_by, "
+        "metadata_json, created_at FROM prose_section WHERE id = ?", (section_id,)
+    ).fetchone()
+    return dict(row) if row else {}
+
+
+def _prose_section_type_snapshot(conn, type_id: int) -> dict:
+    """Prior-state capture for record_change_log.payload (escalation #836) --
+    called BEFORE the caller's own UPDATE."""
+    row = conn.execute(
+        "SELECT code, label, source_stage, lifecycle_tag, chapter_no, description, "
+        "expected_length_min, expected_length_max, sort_order, book_order, book_label, "
+        "section_order, section_label, created_at FROM prose_section_type WHERE id = ?",
+        (type_id,)
+    ).fetchone()
+    return dict(row) if row else {}
 
 
 def _exec_update_strict(conn, sql: str, params, op_id: str, table: str) -> int:
@@ -1658,6 +1710,14 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
     # ── Post-DBR additions (2026-04-19) ───────────────────────────────────────
     # PROSE store operations per wa-prose-store-design-v1 §7.3 +
     # 3 pre-existing applicator gaps per CLAUDE.md §3.3.
+    #
+    # Model A rebuild (escalation #836, 2026-08-24): prose_section/prose_section_type
+    # are now mutate-in-place, current-state-only tables (no historical rows retained
+    # live) -- record_change_log captures what each write overwrote. Every operation
+    # below goes through _write_change_log() in the same transaction as its own write
+    # (cfg_behaviour_rule 'record-change-log-choke-point') and writes the returned log
+    # id into the target row's own `version` column (rule
+    # 'record-change-log-version-is-pointer') plus `updated_at`.
 
     elif table == "prose_section" and operation == "insert":
         # New prose section (v1; supersedes_id NULL).
@@ -1687,83 +1747,89 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         cur = conn.execute(
             """INSERT INTO prose_section
                (registry_id, section_type_id, heading, body, word_count,
-                status, version, supersedes_id, author, created_at,
-                approved_at, approved_by, metadata_json, source_file, delete_flagged)
-               VALUES (?, ?, ?, ?, ?, ?, ?, NULL, ?, ?, ?, ?, ?, ?, 0)""",
+                status, version, author, created_at,
+                approved_at, approved_by, metadata_json, delete_flagged)
+               VALUES (?, ?, ?, ?, ?, ?, 0, ?, ?, ?, ?, ?, 0)""",
             (
                 rec.get("registry_id"), rec["section_type_id"],
                 rec.get("heading"), body, word_count,
-                rec["status"], rec.get("version", 1),
+                rec["status"],
                 rec["author"], rec.get("created_at", _now()),
                 rec.get("approved_at"), rec.get("approved_by"),
-                rec.get("metadata_json"), rec.get("source_file"),
+                rec.get("metadata_json"),
             ),
         )
+        new_id = cur.lastrowid
+        log_id = _write_change_log(conn, "prose_section", new_id, "insert", None, meta)
+        conn.execute(
+            "UPDATE prose_section SET version = ?, updated_at = ? WHERE id = ?",
+            (log_id, _now(), new_id),
+        )
         counts["prose_section_inserted"] = counts.get("prose_section_inserted", 0) + 1
-        print(f"  {op_id}: prose_section INSERT id={cur.lastrowid} (registry_id={rec.get('registry_id')!r})")
+        print(f"  {op_id}: prose_section INSERT id={new_id} v-log={log_id} (registry_id={rec.get('registry_id')!r})")
 
     elif table == "prose_section" and operation == "supersede":
-        # Insert new version; update old.superseded_by_id. Used for narrative
-        # prose revisions (not for Session A mechanical extracts — see
-        # session_a_replace operation for those). Default: inherit
-        # registry_id + section_type_id from the predecessor row, so the
-        # caller only needs to supply the changed fields (body + author).
+        # Model A (escalation #836): mutate the target row in place -- no new
+        # row is created. `supersedes_id` names the row being edited (patch-
+        # format field name kept for compatibility with existing patch
+        # generators; semantics changed from "the row this new row replaces"
+        # to "the row this edit applies to"). Default: inherit registry_id +
+        # section_type_id from the row's current values, so the caller only
+        # needs to supply the changed fields (body + author).
         rec = op.get("record") or op.get("values") or {}
-        old_id = op.get("supersedes_id") or rec.get("supersedes_id")
-        if not old_id:
+        target_id = op.get("supersedes_id") or rec.get("supersedes_id")
+        if not target_id:
             raise ValueError(f"{op_id}: prose_section supersede requires supersedes_id")
         old = conn.execute(
-            "SELECT registry_id, section_type_id, heading, version "
-            "FROM prose_section WHERE id = ?", (old_id,)
+            "SELECT registry_id, section_type_id, heading "
+            "FROM prose_section WHERE id = ?", (target_id,)
         ).fetchone()
         if not old:
-            raise ValueError(f"{op_id}: supersedes_id {old_id} not found")
-        new_version = old["version"] + 1
+            raise ValueError(f"{op_id}: supersedes_id {target_id} not found")
         body = rec.get("body") or ""
         if not body:
             raise ValueError(f"{op_id}: prose_section supersede requires body")
         if not rec.get("author"):
             raise ValueError(f"{op_id}: prose_section supersede requires author")
         word_count = rec.get("word_count") or len(body.split())
-        # Inherit registry_id + section_type_id from predecessor unless caller
-        # explicitly overrides (rare — e.g. relocating prose to a new type).
+        # Inherit registry_id + section_type_id from current values unless
+        # caller explicitly overrides (rare — e.g. relocating prose to a new type).
         registry_id = rec["registry_id"] if "registry_id" in rec else old["registry_id"]
         section_type_id = rec.get("section_type_id") or old["section_type_id"]
         heading = rec.get("heading") if "heading" in rec else old["heading"]
-        cur = conn.execute(
-            """INSERT INTO prose_section
-               (registry_id, section_type_id, heading, body, word_count,
-                status, version, supersedes_id, author, created_at,
-                approved_at, approved_by, metadata_json, source_file, delete_flagged)
-               VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, 0)""",
+
+        snapshot = _prose_section_snapshot(conn, target_id)
+        log_id = _write_change_log(conn, "prose_section", target_id, "change", snapshot, meta)
+
+        conn.execute(
+            """UPDATE prose_section
+               SET registry_id = ?, section_type_id = ?, heading = ?, body = ?,
+                   word_count = ?, status = ?, author = ?, approved_at = ?,
+                   approved_by = ?, metadata_json = ?, version = ?, updated_at = ?
+               WHERE id = ?""",
             (
-                registry_id, section_type_id,
-                heading, body, word_count,
-                rec.get("status", "draft"), new_version, old_id,
-                rec["author"], rec.get("created_at", _now()),
+                registry_id, section_type_id, heading, body, word_count,
+                rec.get("status", "draft"), rec["author"],
                 rec.get("approved_at"), rec.get("approved_by"),
-                rec.get("metadata_json"), rec.get("source_file"),
+                rec.get("metadata_json"), log_id, _now(), target_id,
             ),
         )
-        new_id = cur.lastrowid
-        conn.execute(
-            "UPDATE prose_section SET superseded_by_id = ? WHERE id = ?",
-            (new_id, old_id),
-        )
         counts["prose_section_superseded"] = counts.get("prose_section_superseded", 0) + 1
-        print(f"  {op_id}: prose_section SUPERSEDE {old_id} -> new id={new_id} v{new_version} (author={rec['author']})")
+        print(f"  {op_id}: prose_section SUPERSEDE (in-place) id={target_id} v-log={log_id} (author={rec['author']})")
 
     elif table == "prose_section" and operation == "delete":
         # Soft-delete.
         target_id = op.get("id") or (op.get("match") or {}).get("id")
         if not target_id:
             raise ValueError(f"{op_id}: prose_section delete requires id")
+        snapshot = _prose_section_snapshot(conn, target_id)
+        log_id = _write_change_log(conn, "prose_section", target_id, "delete", snapshot, meta)
         conn.execute(
-            "UPDATE prose_section SET delete_flagged = 1 WHERE id = ?",
-            (target_id,),
+            "UPDATE prose_section SET delete_flagged = 1, version = ?, updated_at = ? WHERE id = ?",
+            (log_id, _now(), target_id),
         )
         counts["prose_section_deleted"] = counts.get("prose_section_deleted", 0) + 1
-        print(f"  {op_id}: prose_section DELETE id={target_id} (soft)")
+        print(f"  {op_id}: prose_section DELETE id={target_id} (soft) v-log={log_id}")
 
     elif table == "prose_section" and operation == "approve":
         # Status transition + approval metadata. Accepts either a single id
@@ -1778,14 +1844,20 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         stamp = _now()
         applied = 0
         for tid in target_ids:
-            cur = conn.execute(
+            current = conn.execute(
+                "SELECT status FROM prose_section WHERE id = ?", (tid,)
+            ).fetchone()
+            if not current or current["status"] == "approved":
+                continue
+            snapshot = _prose_section_snapshot(conn, tid)
+            log_id = _write_change_log(conn, "prose_section", tid, "change", snapshot, meta)
+            conn.execute(
                 "UPDATE prose_section "
-                "SET status = 'approved', approved_at = ?, approved_by = ? "
-                "WHERE id = ? AND status != 'approved'",
-                (stamp, approved_by, tid),
+                "SET status = 'approved', approved_at = ?, approved_by = ?, "
+                "version = ?, updated_at = ? WHERE id = ?",
+                (stamp, approved_by, log_id, stamp, tid),
             )
-            if cur.rowcount:
-                applied += 1
+            applied += 1
         counts["prose_section_approved"] = counts.get("prose_section_approved", 0) + applied
         if len(target_ids) == 1:
             print(f"  {op_id}: prose_section APPROVE id={target_ids[0]} (applied={applied})")
@@ -1794,56 +1866,58 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
 
     elif table == "prose_section" and operation == "session_a_replace":
         # In-place UPDATE for Session A mechanical extracts (exception to
-        # supersede immutability, per Session A advice Q5).
+        # supersede immutability, per Session A advice Q5). Escalation #836:
+        # this path used to touch created_at on every write, leaving it
+        # meaning "last write" rather than "true creation time" -- fixed to
+        # touch updated_at instead; created_at is never written again after
+        # the row's first insert.
         target_id = op.get("id") or (op.get("match") or {}).get("id")
         rec = op.get("record") or op.get("values") or {}
         if not target_id:
             raise ValueError(f"{op_id}: session_a_replace requires id")
         body = rec.get("body") or ""
         word_count = rec.get("word_count") or len(body.split())
+        snapshot = _prose_section_snapshot(conn, target_id)
+        log_id = _write_change_log(conn, "prose_section", target_id, "change", snapshot, meta)
         conn.execute(
             """UPDATE prose_section
                SET body = ?, word_count = ?, heading = ?, metadata_json = ?,
-                   source_file = ?, created_at = ?
+                   version = ?, updated_at = ?
                WHERE id = ? AND author = 'claude_code'""",
             (body, word_count, rec.get("heading"),
-             rec.get("metadata_json"), rec.get("source_file"),
-             _now(), target_id),
+             rec.get("metadata_json"), log_id, _now(), target_id),
         )
         counts["prose_section_sa_replaced"] = counts.get("prose_section_sa_replaced", 0) + 1
-        print(f"  {op_id}: prose_section SESSION_A_REPLACE id={target_id}")
+        print(f"  {op_id}: prose_section SESSION_A_REPLACE id={target_id} v-log={log_id}")
 
     elif table == "prose_section" and operation == "bulk_supersede":
-        # Programme-wide systematic edit. Each target in op['targets'] is
-        # superseded with rec contents; all in a single transaction.
+        # Programme-wide systematic edit. Escalation #836: each target in
+        # op['targets'] is now mutated in place (Model A) rather than
+        # superseded by a new row; all in a single transaction.
         targets = op.get("targets") or []
         rec_template = op.get("rec_template") or {}
         applied = 0
         for target_id in targets:
             old = conn.execute(
-                "SELECT registry_id, section_type_id, version FROM prose_section WHERE id = ?",
+                "SELECT registry_id, section_type_id FROM prose_section WHERE id = ?",
                 (target_id,),
             ).fetchone()
             if not old:
                 continue
-            new_version = old["version"] + 1
             body = rec_template.get("body_template", "") or ""
             word_count = len(body.split())
-            cur = conn.execute(
-                """INSERT INTO prose_section
-                   (registry_id, section_type_id, body, word_count, status,
-                    version, supersedes_id, author, created_at, delete_flagged)
-                   VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, 0)""",
-                (
-                    old["registry_id"], old["section_type_id"],
-                    body, word_count,
-                    rec_template.get("status", "draft"), new_version, target_id,
-                    rec_template.get("author", "claude_ai"), _now(),
-                ),
-            )
+            snapshot = _prose_section_snapshot(conn, target_id)
+            log_id = _write_change_log(conn, "prose_section", target_id, "change", snapshot, meta)
             conn.execute(
-                "UPDATE prose_section SET superseded_by_id = ? WHERE id = ?",
-                (cur.lastrowid, target_id),
+                """UPDATE prose_section
+                   SET body = ?, word_count = ?, status = ?, author = ?,
+                       version = ?, updated_at = ?
+                   WHERE id = ?""",
+                (
+                    body, word_count,
+                    rec_template.get("status", "draft"),
+                    rec_template.get("author", "claude_ai"), log_id, _now(), target_id,
+                ),
             )
             applied += 1
         counts["prose_section_bulk_superseded"] = counts.get("prose_section_bulk_superseded", 0) + applied
@@ -1855,7 +1929,7 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         missing = [k for k in required if rec.get(k) is None]
         if missing:
             raise ValueError(f"{op_id}: prose_section_type insert missing {missing}")
-        conn.execute(
+        cur = conn.execute(
             """INSERT OR IGNORE INTO prose_section_type
                (code, label, source_stage, lifecycle_tag, chapter_no,
                 description, expected_length_min, expected_length_max, sort_order)
@@ -1868,8 +1942,19 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
                 rec.get("sort_order", 999),
             ),
         )
-        counts["prose_section_type_inserted"] = counts.get("prose_section_type_inserted", 0) + 1
-        print(f"  {op_id}: prose_section_type INSERT code={rec['code']}")
+        if cur.rowcount == 0:
+            # INSERT OR IGNORE hit an existing code -- nothing was actually
+            # inserted or changed, so no record_change_log row either.
+            print(f"  {op_id}: [NOTE] prose_section_type code={rec['code']!r} already exists, no-op")
+        else:
+            new_id = cur.lastrowid
+            log_id = _write_change_log(conn, "prose_section_type", new_id, "insert", None, meta)
+            conn.execute(
+                "UPDATE prose_section_type SET version = ?, updated_at = ? WHERE id = ?",
+                (log_id, _now(), new_id),
+            )
+            counts["prose_section_type_inserted"] = counts.get("prose_section_type_inserted", 0) + 1
+            print(f"  {op_id}: prose_section_type INSERT code={rec['code']} v-log={log_id}")
 
     elif table == "prose_section_type" and operation == "update":
         # Edit metadata on an existing section type: label, description,
@@ -1898,13 +1983,22 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
             print(f"  {op_id}: [NOTE] prose_section_type update — dropping immutable/unknown fields: {dropped}")
         if not applied:
             raise ValueError(f"{op_id}: prose_section_type update set had no mutable fields; received {list(set_clause.keys())}")
+        target_row = conn.execute(
+            f"SELECT id FROM prose_section_type WHERE {where_sql}", where_args
+        ).fetchone()
+        if not target_row:
+            raise ValueError(f"{op_id}: prose_section_type not found for match={match}")
+        target_id = target_row["id"]
+        snapshot = _prose_section_type_snapshot(conn, target_id)
+        log_id = _write_change_log(conn, "prose_section_type", target_id, "change", snapshot, meta)
         set_sql = ", ".join(f"{k} = ?" for k in applied)
-        args = tuple(applied.values()) + where_args
+        args = tuple(applied.values()) + (log_id, _now(), target_id)
         cur = conn.execute(
-            f"UPDATE prose_section_type SET {set_sql} WHERE {where_sql}", args
+            f"UPDATE prose_section_type SET {set_sql}, version = ?, updated_at = ? WHERE id = ?",
+            args,
         )
         counts["prose_section_type_updated"] = counts.get("prose_section_type_updated", 0) + cur.rowcount
-        print(f"  {op_id}: prose_section_type UPDATE match={match} set={list(applied.keys())} rows={cur.rowcount}")
+        print(f"  {op_id}: prose_section_type UPDATE match={match} set={list(applied.keys())} rows={cur.rowcount} v-log={log_id}")
 
     elif table == "prose_section_dimension_link" and operation == "insert":
         rec = op.get("record") or op.get("values") or {}
