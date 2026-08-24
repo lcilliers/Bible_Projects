@@ -1,11 +1,13 @@
 """prose handlers — thin dispatcher adapters over `iba.app.lib.prosestore`.
 
-Registers the DB-canonical prose store's four operations (extract, search, chapter export,
-chapter import) as the `prose` work package — escalation #784: these tables/columns were fully
-catalogued in `cfg_table`/`cfg_column` but had zero live IBA code operating on them. All four
-handlers are read-only against `prose_section`/`prose_section_type`; `prose.import_chapter`
-generates a patch file but writes nothing to the database itself (same boundary the standalone
-script always had — apply via `scripts/apply_session_patch.py`).
+Registers the DB-canonical prose store's operations as the `prose` work package. The original four
+(extract, search, chapter export, chapter import — escalation #784: these tables/columns were fully
+catalogued in `cfg_table`/`cfg_column` but had zero live IBA code operating on them) are read-only
+against `prose_section`/`prose_section_type`; `prose.import_chapter` generates a patch file but
+writes nothing to the database itself (same boundary the standalone script always had — apply via
+`scripts/apply_session_patch.py`). A fifth, `prose.flag` (escalation #829 sec12.4, angle a), writes
+directly to `wa_data_quality_flags` — the one write this module performs itself, not gated behind a
+patch file.
 """
 
 from __future__ import annotations
@@ -81,3 +83,12 @@ def import_chapter(ctx: Ctx) -> Outcome:
         f"(review + apply with scripts/apply_session_patch.py)",
         **result,
     )
+
+
+def flag(ctx: Ctx) -> Outcome:
+    p = ctx.params
+    try:
+        result = prosestore.run_flag(ctx.cfg, p.get("FlagCode"), p.get("Description"))
+    except ValueError as e:
+        return fail("bad-params", str(e))
+    return ok(f"raised flag #{result['id']} ({result['flag_code']})", **result)

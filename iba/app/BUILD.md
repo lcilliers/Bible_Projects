@@ -9765,3 +9765,87 @@ analytics-phase restart, per the researcher's own framing.
 
 **Files:** `iba/app/migration/flag_management_build_v1_20260823.py` (new, idempotent, registered in
 `cfg_utility`); `GOVERNANCE.md` §51.
+
+## 176. Prose module — dispatcher registration, write-layer governance, `cfg_prose`, `prose.flag` (2026-08-24, escalation #829)
+
+Built per the approved consolidated proposal
+(`iba/docs/prose-management-iba-first-layer-proposal-v9-20260824.md`), which itself consolidated 8
+prior rounds (v1–v8) per the researcher's own instruction — full rationale in `GOVERNANCE.md` §53,
+not repeated here. D10 (`prose.book_stage_map` vs. `book_label` disagreement on 1 row) explicitly
+deferred by researcher instruction, not built this round.
+
+**Sequence run, live:**
+
+1. `iba/app/migration/prose_first_layer_build_v1_20260824.py` written and run — `cfg_prose` table +
+   4 rows; `cfg_column` fills/corrections (8 rows); `cfg_enum` (5 new groups); `cfg_status_flow` (4
+   rows); `cfg_behaviour_rule` (3 rows); `cfg_write_grant` (3 rows); `cfg_work_package` `prose` + 5
+   `cfg_step` rows; reactivated the 4 original scripts.
+2. `configmaint.validate` first run: 1 hard coherence error — `cfg_prose` had no `cfg_write_grant`
+   row for writer `configmaint.propose` (governance.config_control), because the migration created
+   the table but never self-registered it (`cfg_table`/`cfg_column`/the grant itself). Self-found,
+   self-fixed live (escalation #839): migration script widened, re-run, confirmed clean on the
+   specific error. Re-ran the full migration twice more to confirm idempotency — second and third
+   runs both all-no-op except the always-rerun `cfg_column.use` writes (by design, matching
+   `flag_management_build_v1_20260823.py`'s own pattern).
+3. Code: `iba/app/lib/prosestore.py` — `chapter_names()`/`book_stage_map()`/`search_default_limit()`
+   switched from `cfg.setting()` (generic `cfg_setting`) to `cfg.module_setting("cfg_prose", ...)`;
+   new `edit_file_dir()` function; `_next_edit_version()` widened to take an `edit_dir` parameter
+   instead of reading the module constant directly; both call sites (`run_export_chapter`,
+   `run_import_chapter`) updated; `_DEFAULT_BOOK_STAGE_MAP`'s `"Findings"` list corrected to include
+   `"findings"` (the same omission the architecture doc and the pre-#829 code both had); new
+   `run_flag()` function (the module's one direct DB write). `iba/app/handlers/prose.py` — new
+   `flag()` handler. `iba/app/ps/Prose.ps1` — `Flag` step added to the dispatcher surface;
+   **`-Input` renamed to `-InputFile`** (found live during this build's own dispatcher testing — a
+   real, pre-existing bug: `$Input` is a PowerShell automatic variable and cannot be set from the
+   command line under that name; reproduced 3 ways, all failed identically; `ImportChapter` had
+   never been dispatcher-tested end-to-end before this build).
+4. `configmaint.validate` second run: structurally clean, 2 categories of advisory finding — 7
+   orphan `cfg_enum` groups (this build's 5 new `prose_section_*` groups + 2 pre-existing
+   `record_change_log_*` groups from escalation #836), 4 low-config-density utilities (the 4
+   reactivated scripts). Orphans: same shape the researcher already accepted for
+   `record_change_log`'s own 2 groups (escalation #838, "CHECK-only enforcement accepted for now") —
+   applied to this round's 5 new instances, flagged transparently as applying an existing precedent
+   rather than a fresh researcher decision (escalation #840, closed). Low-config-density: acted on,
+   not accepted — all 4 scripts verified live to be thin wrappers around `prosestore.py` with no
+   duplicate logic; `cfg_utility.config_exempt=1` proposed and approved individually via
+   `configmaint.propose` for each (escalations #841–#844), matching 11 other already-exempt
+   pass-through scripts.
+5. `configmaint.validate` third run: 1 new advisory — `GOVERNANCE.md` stale relative to this build's
+   own applied config changes (a real, expected consequence of writing the config before the docs in
+   the same session — closed by writing this section + `GOVERNANCE.md` §53, escalation #845).
+
+**Tested live** (`iba/docs/prose-management-iba-first-layer-proposal-v9-20260824.md` §10), via the
+actual `Prose.ps1` dispatcher, not the underlying Python functions directly — the researcher's own
+finding this round was that no prior build had confirmed real PS-level accessibility:
+
+- `Extract -Book Programme`: 51 types, 51 sections, wrote the JSON extract.
+- `Extract -Book "Detail design"`: 45 types, 169 sections.
+- `Extract -Book "NotARealBook"`: clean rejection, real 4-book choice list, not a crash (escalation
+  #846, closed as a deliberate test case).
+- `Search -Query grace -Book Programme`: 1 hit, wrote the results file.
+- `ExportChapter -Book Programme -Chapter 1`: 6 sections, wrote to
+  `outputs/markdown/prose-edits/` — confirms `edit_file_dir(cfg)` reads `cfg_prose` correctly (was a
+  hardcoded constant before this build).
+- `ImportChapter` on that same unedited export: refused ("no changed sections... nothing to
+  import"), not a silent no-op (escalation #848, closed as a deliberate test case) — also the case
+  that surfaced the `-Input`/`-InputFile` binding bug (item 3 above), fixed and re-confirmed working
+  in the same test round.
+- `Flag -FlagCode "Terminology change" -Description "TEST..."`: raised `wa_data_quality_flags` row
+  #4, verified live, then deleted (throwaway test row, matching `flag_management_build_v1_
+  20260823.py`'s own precedent for test cleanup).
+- `Flag -FlagCode "Not a real code" ...`: clean rejection listing the 3 real live codes, not a crash
+  (escalation #847, closed as a deliberate test case).
+- `configmaint.validate` — clean after all of the above (no hard errors; advisory findings triaged
+  as described in steps 2/4/5).
+
+**Deferred, registered not dropped:** D10 (`prose.book_stage_map`/`book_label` disagreement) — to
+the prose-edit stage, per direct researcher instruction. D3/D4/D5 (`prose_section_finding_link`'s
+FK, `prose_section_dimension_link`'s retirement, `cluster_code`'s FK) — escalation #832. Angle (b)
+of the quality-flag mechanism — escalation #835, on-hold. **Also found, not part of this build's own
+scope, flagged for visibility:** escalation #836's own build (`GOVERNANCE.md` §52, 2026-08-24) has
+no corresponding `BUILD.md` entry — a real gap against `governance.build_md_on_code_change`, not
+backfilled here since it belongs to that escalation's own record, not this one's.
+
+**Files:** `iba/app/migration/prose_first_layer_build_v1_20260824.py` (new, idempotent, registered
+in `cfg_utility`); `iba/app/lib/prosestore.py`, `iba/app/handlers/prose.py`, `iba/app/ps/Prose.ps1`
+(modified); `GOVERNANCE.md` §53; `USER-GUIDE.md` §13d.

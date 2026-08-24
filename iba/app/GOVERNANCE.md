@@ -2405,3 +2405,93 @@ after the schema already exists is a safe no-op). Pre-op backup:
 `backups/bible_research_pre_changelog_<timestamp>.db`. Full design record: `iba/docs/prose-change-
 log-design-v1` through `-v9-20260824.md`; proposal + literal config content + test plan:
 `iba/docs/prose-change-log-proposal-v1` through `-v3-20260824.md`.
+
+---
+
+## §53. Prose module — dispatcher registration, write-layer governance, `cfg_prose`, `prose.flag` (2026-08-24, escalation #829)
+
+**What this closes.** `prose_section`/`prose_section_type` were fully catalogued in `cfg_table`/
+`cfg_column` (and, after §52, under `record_change_log` versioning discipline) but had zero
+`cfg_work_package`/`cfg_step`/`cfg_prose`/`cfg_enum`/`cfg_status_flow`/`cfg_write_grant` governing
+the module itself — the schema described the tables, nothing in config operated the app around
+them. Eight rounds of proposal (`iba/docs/prose-management-iba-first-layer-proposal-v1` through
+`-v8-20260824.md`) converged on a design; the researcher then asked for one consolidated,
+self-contained document rather than a chain of deltas — `-v9-20260824.md` is that consolidation
+(found live, not carried from memory: a "drop 3 stale `cfg_column` rows" item v7/v8 both listed as
+outstanding was already done via `inactive=1`, and a new tension between `prose.book_stage_map`
+and `book_label` on 1/949 rows, D10). Researcher approved v9 as written, D10 explicitly deferred
+("D10 will be edited in prose edit stage, not in this IBA processing build").
+
+**1. `cfg_prose` — new per-module table, 4 keys** (`governance.module.config`, matching
+`cfg_passage`'s precedent): `prose.chapter_names`, `prose.book_stage_map` (corrected to include the
+`findings` stage, a gap the architecture doc and the code's own hardcoded default both had),
+`prose.search_default_limit`, `prose.edit_file_dir`. `prosestore.py`'s `chapter_names()`/
+`book_stage_map()`/`search_default_limit()` now read `cfg.module_setting("cfg_prose", ...)` (were
+`cfg.setting(...)`, the generic project-wide table — an earlier-round mistake this build corrects);
+a new `edit_file_dir()` replaces the `CHAPTER_EDIT_OUT_DIR` hardcoded constant. `cfg_prose` is
+itself catalogued in `cfg_table`/`cfg_column` (4 rows) and granted to `configmaint.propose` — found
+live during this build's own `configmaint.validate` run (escalation #839, self-corrected): the
+first version of the migration script created the table and its content rows but never
+self-registered the table, the same gap every other project table avoids.
+
+**2. Dispatcher registration.** `prose` as a `cfg_work_package` (`Prose.ps1`, `runs_over='none'`) +
+5 `cfg_step` rows: the original 4 (`prose.extract`/`.search`/`.export_chapter`/`.import_chapter`,
+code already built under escalation #784, config was the only missing piece) plus `prose.flag`
+(new, §4 below).
+
+**3. Write-layer governance.** `cfg_enum` for `prose_section.status`(4)/`.author`(3); `cfg_status_
+flow` (4 rows, `entity='prose_section'`); `cfg_behaviour_rule` — 2 rows
+(`prose-section-session-a-replace-author-gate`, `prose-section-two-patch-ordering`) — a third,
+drafted in earlier rounds (`prose-section-supersede-only-discipline`, asserting `version = old.
+version + 1`), is **not built**: §52's Model A rebuild already made that assertion false and built
+the correct rule (`record-change-log-version-is-pointer`) — building both would leave two rules
+disagreeing about the same table. `cfg_write_grant` — `apply_session_patch`→`prose_section`/
+`prose_section_type` (`database='bible_research'`; the `record_change_log` grant already existed
+from §52).
+
+**4. `prose_section_type` column governance.** `cfg_enum` for `source_stage`(11)/`lifecycle_tag`(4)/
+`book_label`(4) — documentation-of-record against columns with no CHECK constraint, not a runtime
+lookup (matches §52.6's already-accepted `record_change_log` orphan-enum precedent, confirmed again
+this round, escalations #840/#845). `cfg_column.use` filled for 4 previously-blank
+`prose_section_type` columns (`book_order`/`book_label`/`section_order`/`section_label`) and
+corrected for `prose_section`'s 4 citation columns (`registry_id`/`cluster_code`/
+`characteristic_id`/`cluster_subgroup_id` — researcher: these belong in a future Concordance index
+table, not decided/moved in this build).
+
+**5. `prose.flag` — angle (a) of the quality-flag mechanism (proposal §12).** One new dispatcher
+step, `iba.app.handlers.prose:flag` → `prosestore.run_flag()` — the only direct DB write
+`prosestore.py` performs itself (every other operation is read-only or generates a patch file).
+Raises one `wa_data_quality_flags` row (`flag_group='PROSE_QUALITY'`, escalation #833), deliberately
+**with no `prose_section` reference** — which rows a flag concerns is found by search when a fix
+actually runs (angle b, escalation #835, not built), never stored from raise time. `cfg_write_grant`
+`prose_flag`→`wa_data_quality_flags`. A third `cfg_behaviour_rule` row,
+`prose-quality-flag-on-upstream-change`, records the governing discipline (a methodology/
+terminology/finding change touching live prose obligates a flag, not an immediate fix).
+
+**6. `Prose.ps1` bug found and fixed during this build's own testing.** `-Input` (the
+`ImportChapter` file parameter) silently failed to bind from the command line — `$Input` is a
+PowerShell automatic variable (the pipeline-input enumerator); assigning a same-named parameter is
+accepted at parse time but never actually set. Reproduced three ways (direct, splatted, colon
+syntax), all failed identically. Renamed to `-InputFile` project-wide in the script; confirmed fixed
+live. Not previously caught because `ImportChapter` had never been dispatcher-tested end-to-end
+before this build (escalation #784 built it, but v1's own test plan tested the underlying Python
+function, not the PS wrapper's argument binding).
+
+**7. Reactivation.** The 4 original scripts (`build_programme_prose_extract.py`,
+`export_prose_chapter_edit.py`, `import_prose_chapter_edit.py`, `search_prose.py`) —
+`cfg_utility.inactive` `1→0`, `purpose` text rewritten to point at `prosestore.py` as the real
+implementation. All 4 verified live (this round, not assumed) to already be thin wrappers with no
+duplicate logic — `configmaint.validate` flagged them as "low config-density" (no direct
+`cfg.setting()`/`cfg.enum()` call site of their own, since they delegate entirely); resolved as
+`config_exempt=1`, matching 11 other pass-through scripts already carrying that flag, not left as a
+standing advisory.
+
+**Explicitly deferred, not silently dropped:** D10 (`prose.book_stage_map` vs. `book_label`
+disagreement on 1 row) — researcher instruction, to the prose-edit stage, not this build. D3/D4/D5
+(`prose_section_finding_link`'s FK, `prose_section_dimension_link`'s retirement, `cluster_code`'s
+FK) — escalation #832. Angle (b) of the quality-flag mechanism (propose/approve/apply against real
+flags) — escalation #835, on-hold.
+
+**Files:** `iba/app/migration/prose_first_layer_build_v1_20260824.py` (idempotent, confirmed by a
+clean re-run). Full design record: `iba/docs/prose-management-iba-first-layer-proposal-v1` through
+`-v9-20260824.md`. Test results: `BUILD.md` §177.

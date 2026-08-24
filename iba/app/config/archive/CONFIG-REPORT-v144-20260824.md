@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-24T17:12:17Z |
+| generated_at | 2026-08-24T17:04:38Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -50,8 +50,8 @@ _(none)_
 **Stale filled_by** (0) — cfg_column.filled_by names a now-inactive step:
 _(none)_
 
-**Stale governance docs** (0) — GOVERNANCE.md older than the newest applied config change:
-_(none)_
+**Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
+8. GOVERNANCE.md was last modified 2026-08-24T10:01:19Z, before the newest applied cfg_change_detail row (2026-08-24T17:04:27Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_

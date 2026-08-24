@@ -28,6 +28,10 @@ The four `scripts/*.py` CLI entry points remain the documented CLI usage
 (`docs/prose-store-architecture.md` §8) — they now import their core logic from here instead of
 defining it locally, so there is exactly one implementation, exercised both by direct CLI use and
 by the registered `prose` work package (`python -m iba.app.run prose --step prose.extract ...`).
+
+`run_flag()` (escalation #829 sec12.4, angle a) is the one exception to "read-only against
+`prose_section`/`prose_section_type`" above — it writes directly to `wa_data_quality_flags`
+(`bible_research.db`), a different table family entirely, not gated behind a generated patch file.
 """
 from __future__ import annotations
 
@@ -66,10 +70,11 @@ _DEFAULT_CHAPTER_NAMES = {
 _DEFAULT_BOOK_STAGE_MAP = {
     "Programme": ["programme"],
     "Detail design": ["session_a", "session_b", "session_b_phase9", "session_c", "session_d"],
-    "Findings": ["synthesis", "verse-analysis"],
+    "Findings": ["synthesis", "verse-analysis", "findings"],
     "Essays": ["essay"],
 }
 _DEFAULT_SEARCH_LIMIT = 100
+_DEFAULT_EDIT_FILE_DIR = "outputs/markdown/prose-edits"
 
 
 def open_db(cfg) -> sqlite3.Connection:
@@ -87,7 +92,7 @@ def today_compact() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d")
 
 
-def _next_edit_version(stem: str) -> int:
+def _next_edit_version(stem: str, edit_dir: Path = CHAPTER_EDIT_OUT_DIR) -> int:
     """Next edit-cycle version number for a chapter-edit export with this book/chapter/section
     stem. Researcher, 2026-08-22 (escalation #784): 'all files must be version controlled' --
     'currently the name of the file makes it impossible to link the file with the book-chapter-
@@ -100,7 +105,7 @@ def _next_edit_version(stem: str) -> int:
     after archiving."""
     pattern = re.compile(re.escape(stem) + r"-v(\d+)-\d{8}\.md$")
     max_v = 0
-    for folder in (CHAPTER_EDIT_OUT_DIR, CHAPTER_EDIT_OUT_DIR / "archive"):
+    for folder in (edit_dir, edit_dir / "archive"):
         if not folder.exists():
             continue
         for f in folder.iterdir():
@@ -119,16 +124,32 @@ def get_schema_version(conn) -> str:
 
 def chapter_names(cfg) -> dict:
     """`prose.chapter_names` — keys are strings (JSON object keys always are); callers look up by
-    `str(chapter_no)`."""
-    return cfg.setting("prose.chapter_names", _DEFAULT_CHAPTER_NAMES)
+    `str(chapter_no)`. Reads the dedicated `cfg_prose` module table (escalation #829,
+    `governance.module.config`), not generic `cfg_setting` — corrects this function's own earlier
+    (pre-#829) use of `cfg.setting()`, which duplicated table-driven module config into the
+    project-wide settings table."""
+    return cfg.module_setting("cfg_prose", "prose.chapter_names", _DEFAULT_CHAPTER_NAMES)
 
 
 def book_stage_map(cfg) -> dict:
-    return cfg.setting("prose.book_stage_map", _DEFAULT_BOOK_STAGE_MAP)
+    """`prose.book_stage_map` — KNOWN LIMITATION (escalation #829 D10, deferred by researcher
+    instruction 2026-08-24 to the prose edit stage, not fixed here): this is a stage-based map
+    (source_stage -> book), but 1 of 949 `prose_section_type` rows has a `source_stage`/`book_label`
+    pair that disagrees with it (id 78, `prog_purp_observations_framework` — `source_stage=
+    'programme'`, `book_label='Detail design'`). That row will be filed under "Programme" by this
+    function, not "Detail design"."""
+    return cfg.module_setting("cfg_prose", "prose.book_stage_map", _DEFAULT_BOOK_STAGE_MAP)
 
 
 def search_default_limit(cfg) -> int:
-    return cfg.setting("prose.search_default_limit", _DEFAULT_SEARCH_LIMIT)
+    return cfg.module_setting("cfg_prose", "prose.search_default_limit", _DEFAULT_SEARCH_LIMIT)
+
+
+def edit_file_dir(cfg) -> Path:
+    """`prose.edit_file_dir` — replaces the `CHAPTER_EDIT_OUT_DIR` hardcoded constant (escalation
+    #829, `governance.rules_must_be_config_driven`). `CHAPTER_EDIT_OUT_DIR` stays defined above as
+    the Python-level default only, used when `cfg_prose` is inactive/absent."""
+    return Path(cfg.module_setting("cfg_prose", "prose.edit_file_dir", _DEFAULT_EDIT_FILE_DIR))
 
 
 # ── extract (was scripts/build_programme_prose_extract.py) ─────────────────
@@ -610,8 +631,9 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
             f"prose-edit-{book_name.lower().replace(' ', '-')}-"
             f"{('chapter-' + str(chapter_no)) if chapter_no is not None else ('section-' + str(rows[0]['code']))}"
         )
-        output = Path(out) if out else CHAPTER_EDIT_OUT_DIR / (
-            f"{stem}-v{_next_edit_version(stem)}-{stamp}.md"
+        edit_dir = edit_file_dir(cfg)
+        output = Path(out) if out else edit_dir / (
+            f"{stem}-v{_next_edit_version(stem, edit_dir)}-{stamp}.md"
         )
         lines = [
             f"# Prose Edit — {title}", "",
@@ -668,7 +690,7 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     input_path = Path(input_path)
     # Computed up front (before any move happens) so the patch's own _patch_summary can name it
     # even though the physical move only happens after the patch is successfully written.
-    archived_source = CHAPTER_EDIT_OUT_DIR / "archive" / input_path.name
+    archived_source = edit_file_dir(cfg) / "archive" / input_path.name
     text = input_path.read_text(encoding="utf-8")
     blocks = _parse_edit_blocks(text)
     conn = open_db(cfg)
@@ -765,3 +787,42 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     archived_source.parent.mkdir(parents=True, exist_ok=True)
     input_path.replace(archived_source)
     return {"path": str(output), "sections": len(operations), "archived_source": str(archived_source)}
+
+
+# ── flag (angle a of escalation #829 sec12.4 -- create only, no prose-section reference) ────
+
+def run_flag(cfg, flag_code: str | None, description: str | None) -> dict:
+    """Raise one `wa_data_quality_flags` instance, `flag_group='PROSE_QUALITY'`. This is the only
+    direct DB write `prosestore.py` performs itself (every other operation here is read-only or
+    generates a patch file for `apply_session_patch.py` to apply) — `wa_data_quality_flags` is not
+    under `record_change_log` discipline (that covers `prose_section`/`prose_section_type` only,
+    escalation #836), so no choke-point call applies here.
+
+    Deliberately does NOT take a `prose_section` reference — escalation #829 sec12.2: which prose
+    rows a flag touches is discovered by search at fix time (angle b, escalation #835, not built),
+    not stored and kept in sync from raise time.
+    """
+    if not flag_code:
+        raise ValueError("prose.flag needs --flag-code")
+    if not description:
+        raise ValueError("prose.flag needs --description")
+    conn = open_db(cfg)
+    try:
+        row = conn.execute(
+            "SELECT id FROM wa_quality_flag_types WHERE flag_group='PROSE_QUALITY' "
+            "AND flag_code=? AND delete_flagged=0", (flag_code,)).fetchone()
+        if not row:
+            live_codes = [r["flag_code"] for r in conn.execute(
+                "SELECT flag_code FROM wa_quality_flag_types "
+                "WHERE flag_group='PROSE_QUALITY' AND delete_flagged=0 ORDER BY id")]
+            raise ValueError(
+                f"unknown --flag-code {flag_code!r} -- live PROSE_QUALITY codes: {live_codes}")
+        flag_id = row["id"]
+        cur = conn.execute(
+            "INSERT INTO wa_data_quality_flags (flag_id, description, delete_flagged) "
+            "VALUES (?,?,0)", (flag_id, description))
+        conn.commit()
+        return {"id": cur.lastrowid, "flag_id": flag_id, "flag_code": flag_code,
+                "description": description}
+    finally:
+        conn.close()

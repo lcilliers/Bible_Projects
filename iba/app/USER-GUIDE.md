@@ -1262,6 +1262,55 @@ standard, not (yet) an automatically-checked one.
 
 ---
 
+## 13d. Prose module (added 2026-08-24, escalation #829)
+
+`Prose.ps1` — the DB-canonical prose store (`prose_section`/`prose_section_type`,
+`bible_research.db`), 5 dispatcher steps, `kind='utility'`:
+
+```powershell
+iba\app\ps\Prose.ps1 -Step Extract -Book Programme [-AlsoMarkdown] [-AlsoDocx] [-IncludeBody]
+iba\app\ps\Prose.ps1 -Step Search -Query "grace" [-Book Programme] [-Limit 50] [-Fts]
+iba\app\ps\Prose.ps1 -Step ExportChapter -Book "Detail design" -Chapter 1
+iba\app\ps\Prose.ps1 -Step ImportChapter -InputFile outputs\markdown\prose-edits\<edited-file>.md
+iba\app\ps\Prose.ps1 -Step Flag -FlagCode "Terminology change" -Description "..."
+```
+
+**The 4 live books:** `Programme` / `Detail design` / `Findings` / `Essays` — a 5th, `Concordance`,
+is not yet built (out of scope, `iba/docs/prose-management-iba-first-layer-proposal-v9-20260824.md`
+§7). Which `prose_section_type.source_stage` values belong to which book is `cfg_prose`'s
+`prose.book_stage_map` key — **known limitation (escalation #829 D10, deferred to a future prose-edit
+stage):** 1 of 949 rows (`prog_purp_observations_framework`) has a `source_stage`/`book_label` pair
+this stage-based map doesn't correctly resolve; not fixed in this build, by direct researcher
+instruction.
+
+**Extract/Search/ExportChapter/ImportChapter are read-only against the DB** — `ImportChapter`
+generates a `PROSE` supersede patch file, applied separately via `scripts/apply_session_patch.py`
+(never writes the database itself). Every `prose_section`/`prose_section_type` write that patch
+script makes is routed through `record_change_log` (escalation #836, `GOVERNANCE.md` §52) — `version`
+is a pointer to the log row describing the row's own last change, not an incrementing counter.
+
+**`Flag` is the one step that writes directly** — one `wa_data_quality_flags` row
+(`flag_group='PROSE_QUALITY'`), no `prose_section` reference. Deliberate design (escalation #829
+§12.2): which prose rows a flag concerns is found by search *when the fix actually runs* (a separate,
+not-yet-built "angle b" utility, escalation #835, on-hold until prose editing comes into active use),
+not stored and kept in sync from the moment the flag is raised. Live `--FlagCode` values: query
+`wa_quality_flag_types WHERE flag_group='PROSE_QUALITY' AND delete_flagged=0` (3 seeded today:
+`Terminology change` / `Methodology change` / `Style change`, escalation #833 — more will be added
+as real cases come up).
+
+Config: `cfg_prose` (module table, 4 keys — `chapter_names`/`book_stage_map`/
+`search_default_limit`/`edit_file_dir`); `cfg_enum` groups
+`prose_section_status`/`prose_section_author`/`prose_section_type_source_stage`/
+`prose_section_type_lifecycle_tag`/`prose_section_type_book_label` (documentation-of-record against
+each table's own CHECK constraint, not a runtime lookup — same shape as `record_change_log`'s own 2
+enum groups, `GOVERNANCE.md` §52.6); `cfg_write_grant` (`apply_session_patch`→`prose_section`/
+`prose_section_type`, `prose_flag`→`wa_data_quality_flags`, all `database='bible_research'`).
+
+Full design record: `iba/docs/prose-management-iba-first-layer-proposal-v9-20260824.md`. Build
+record: `BUILD.md` §177.
+
+---
+
 ## 14. Everyday commands, in order
 
 **Corrected 2026-08-08** — this list still showed the retired `VerseSpanMeaning-Report.ps1`/

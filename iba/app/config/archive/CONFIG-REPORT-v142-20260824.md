@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-24T17:12:17Z |
+| generated_at | 2026-08-24T17:04:06Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -50,14 +50,14 @@ _(none)_
 **Stale filled_by** (0) — cfg_column.filled_by names a now-inactive step:
 _(none)_
 
-**Stale governance docs** (0) — GOVERNANCE.md older than the newest applied config change:
-_(none)_
+**Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
+8. GOVERNANCE.md was last modified 2026-08-24T10:01:19Z, before the newest applied cfg_change_detail row (2026-08-24T17:04:05Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
-**Low config-density utilities** (0) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-_(none)_
+**Low config-density utilities** (1) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
+9. cfg_utility 'scripts_search_prose' (scripts\search_prose.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -89,7 +89,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**408** registered module(s) — **31** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **357** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**408** registered module(s) — **30** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **357** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -475,7 +475,7 @@ _(none)_
 | scripts_run_proverbs_stage1_onboard_v1_20260712 | scripts/_run_proverbs_stage1_onboard_v1_20260712.py | Proverbs Stage-1 onboarding (registry path) — the 30 candidate terms absent from |  |  |  |
 | scripts_run_ve_reads_governed | scripts/_run_ve_reads_governed.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). _run_ve_reads_governed.py (2026-06-17) — governed corpus API read for ONE VE field. |  |  |  |
 | scripts_schema_dump | scripts/_schema_dump.py | (no module docstring or leading comment found -- needs a manual purpose write-up) -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
-| scripts_search_prose | scripts/search_prose.py | Superseded by iba/app/lib/prosestore.py (escalation #784) -- logic now lives there, exercised via prose.search (Prose.ps1 -Step Search). Kept as the documented CLI entry point, reactivated (escalation #829). | ✓ | ✓ | Thin CLI wrapper delegating entirely to iba/app/lib/prosestore.py (escalation #784/#829) -- no cfg.setting()/cfg.enum() call site of its own by design, same class as the other already-exempt pass-through scripts. Verified live: no duplicate logic, imports and calls prosestore.run_*() directly. |
+| scripts_search_prose | scripts/search_prose.py | Superseded by iba/app/lib/prosestore.py (escalation #784) -- logic now lives there, exercised via prose.search (Prose.ps1 -Step Search). Kept as the documented CLI entry point, reactivated (escalation #829). | ✓ |  |  |
 | scripts_snapshot_db_v1_20260714 | scripts/_snapshot_db_v1_20260714.py | Cadence-aware DB snapshot + prune helper (v1, 2026-07-14). |  |  |  |
 | scripts_term_sharing_spider | scripts/_term_sharing_spider.py | Generate term-sharing spider/network diagram showing pools of connected words. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | scripts_tmp_read_cycle2_rest | scripts/_tmp_read_cycle2_rest.py | Build the remaining cycle-2 passage readings (Pro 1:24 - 2:3) via _pro_read_lib. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |

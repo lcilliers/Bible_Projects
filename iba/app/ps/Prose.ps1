@@ -1,18 +1,22 @@
 <#
 .SYNOPSIS
-    The DB-canonical prose store's four operations, registered and config-governed
-    (escalation #784, 2026-08-21). Step-selection, not a fixed pipeline.
+    The DB-canonical prose store's operations, registered and config-governed
+    (escalation #784, 2026-08-21; -Step Flag added escalation #829, 2026-08-24). Step-selection,
+    not a fixed pipeline.
 
 .DESCRIPTION
     -Step Extract        programme-prose extract (JSON/MD/DOCX) — iba/app/lib/prosestore.py
     -Step Search         FTS5 search across active prose sections
     -Step ExportChapter  export one chapter/section as an editable Markdown file
     -Step ImportChapter  turn an edited chapter file into a PROSE supersede patch (no DB write)
+    -Step Flag           raise one wa_data_quality_flags instance (PROSE_QUALITY) — writes directly,
+                          no prose-section reference (escalation #829 sec12.2 — sections a flag
+                          touches are found by search at fix time, not stored from raise time)
 
-    EXTRACTOR_VERSION / CHAPTER_NAMES / BOOK_STAGE_MAP / search default limit are config
-    (cfg_setting, module='prose') — see Config-Maintenance.ps1 -Step Propose to change them.
+    CHAPTER_NAMES / BOOK_STAGE_MAP / search default limit / edit file dir are config
+    (cfg_prose, escalation #829) — see Config-Maintenance.ps1 -Step Propose to change them.
 
-.PARAMETER Step         Extract | Search | ExportChapter | ImportChapter
+.PARAMETER Step         Extract | Search | ExportChapter | ImportChapter | Flag
 .PARAMETER Book         book_label (Extract/ExportChapter)
 .PARAMETER Chapter      chapter number (Extract/ExportChapter, combine with -Book)
 .PARAMETER TypeId       single prose_section_type.id (ExportChapter, instead of -Book/-Chapter)
@@ -22,8 +26,14 @@
 .PARAMETER Query        search text (Search)
 .PARAMETER Limit        result cap (Search); default: prose.search_default_limit
 .PARAMETER Fts          treat -Query as a raw SQLite FTS5 MATCH expression (Search)
-.PARAMETER Input        path to an edited chapter Markdown file (ImportChapter)
+.PARAMETER InputFile    path to an edited chapter Markdown file (ImportChapter). Named InputFile,
+                        not Input -- $Input is a PowerShell automatic variable (the pipeline-input
+                        enumerator); a same-named parameter cannot be set from the command line
+                        (found live, escalation #829 build testing, 2026-08-24 -- reproduced with
+                        three separate binding syntaxes, all silently failed to set it).
 .PARAMETER Author       patch author, default 'researcher' (ImportChapter)
+.PARAMETER FlagCode      one of the live PROSE_QUALITY flag_code values (Flag)
+.PARAMETER Description   the issue, in prose — required (Flag)
 .PARAMETER Out          output path override (all steps)
 .PARAMETER Trace        Print every config read (IBA_TRACE).
 
@@ -34,12 +44,14 @@
 .EXAMPLE
     .\Prose.ps1 -Step ExportChapter -Book Programme -Chapter 1
 .EXAMPLE
-    .\Prose.ps1 -Step ImportChapter -Input outputs/markdown/prose-edit-programme-chapter-1-20260821.md
+    .\Prose.ps1 -Step ImportChapter -InputFile outputs/markdown/prose-edit-programme-chapter-1-20260821.md
+.EXAMPLE
+    .\Prose.ps1 -Step Flag -FlagCode "Terminology change" -Description "Session A/B/C/D superseded by Base_data/Analysis/Publishing"
 #>
 
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)] [ValidateSet('Extract', 'Search', 'ExportChapter', 'ImportChapter')] [string] $Step,
+    [Parameter(Mandatory = $true)] [ValidateSet('Extract', 'Search', 'ExportChapter', 'ImportChapter', 'Flag')] [string] $Step,
     [string] $Book,
     [int] $Chapter,
     [int] $TypeId,
@@ -49,8 +61,10 @@ param(
     [string] $Query,
     [int] $Limit,
     [switch] $Fts,
-    [string] $Input,
+    [string] $InputFile,
     [string] $Author,
+    [string] $FlagCode,
+    [string] $Description,
     [string] $Out,
     [switch] $Trace
 )
@@ -70,7 +84,7 @@ if ($ready -ne '1') {
     exit 1
 }
 
-$stepMap = @{ Extract = 'prose.extract'; Search = 'prose.search'; ExportChapter = 'prose.export_chapter'; ImportChapter = 'prose.import_chapter' }
+$stepMap = @{ Extract = 'prose.extract'; Search = 'prose.search'; ExportChapter = 'prose.export_chapter'; ImportChapter = 'prose.import_chapter'; Flag = 'prose.flag' }
 $stepId  = $stepMap[$Step]
 $runId   = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-PROSE"
 
@@ -84,13 +98,16 @@ if ($AlsoDocx) { $paramArgs += @('--param', "AlsoDocx=true") }
 if ($Query) { $paramArgs += @('--param', "Query=$Query") }
 if ($Limit) { $paramArgs += @('--param', "Limit=$Limit") }
 if ($Fts) { $paramArgs += @('--param', "Fts=true") }
-if ($Input) { $paramArgs += @('--param', "Input=$Input") }
+if ($InputFile) { $paramArgs += @('--param', "Input=$InputFile") }
 if ($Author) { $paramArgs += @('--param', "Author=$Author") }
+if ($FlagCode) { $paramArgs += @('--param', "FlagCode=$FlagCode") }
+if ($Description) { $paramArgs += @('--param', "Description=$Description") }
 if ($Out) { $paramArgs += @('--param', "Out=$Out") }
 
 if ($Step -eq 'Search' -and -not $Query) { Write-Host "Search needs -Query." -ForegroundColor Yellow; exit 1 }
-if ($Step -eq 'ImportChapter' -and -not $Input) { Write-Host "ImportChapter needs -Input." -ForegroundColor Yellow; exit 1 }
+if ($Step -eq 'ImportChapter' -and -not $InputFile) { Write-Host "ImportChapter needs -InputFile." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'ExportChapter' -and -not $TypeId -and -not $Book) { Write-Host "ExportChapter needs -TypeId or -Book (+ -Chapter)." -ForegroundColor Yellow; exit 1 }
+if ($Step -eq 'Flag' -and (-not $FlagCode -or -not $Description)) { Write-Host "Flag needs -FlagCode and -Description." -ForegroundColor Yellow; exit 1 }
 
 Write-IbaRunHeader -WorkPackage 'prose' -Step $stepId -RunId $runId
 
