@@ -127,6 +127,57 @@ this same review turned up. Recorded on #829 v26 directly, question left open fo
 do the 5 advisory closures need reopening on the same standard as #829, or does the standing #838
 precedent cover them as already-decided.
 
+## Individual re-audit of #840/#845/#849/#850/#852, per direct instruction — hit a real tooling wall, session closed at that point
+
+Researcher: *"#840/#845/#849/#850/#852 and individually need to be reaudited, and in each case, if
+you can certify compliance, then you can prepare it for approval by following the correct
+process."*
+
+Attempted to reopen #840 (representative of all 5 — same shape) via `-Action Correction`, the
+documented mechanism for touching a closed item. Refused: `correction()` refuses any item whose
+`run_id` isn't `MANUAL-...`, with **no exception for `resolution_kind='decision_required'`** —
+unlike `update()`, which explicitly carves that case out. All 5 are dispatcher-tied
+(`configmaint.validate`), `decision_required`, and closed. Net: `Update` refuses them for being
+closed, `Correction` refuses them for being dispatcher-tied, `AnswerRun` is separately barred for
+`decision_required` items outright. **No sanctioned tool path exists to reopen them.** Raised as
+**#855**. Deliberately did not work around this with a raw DB write — bypassing the escalation
+module to fix an escalation-module gap would have repeated the exact unauthorised-action pattern
+under review, not resolved it.
+
+Did the substantive audit anyway, checking live DDL directly rather than re-trusting the earlier
+resolutions: the "accepted per #838 precedent" reasoning used to close all 5 escalations' orphan-enum
+finding is only actually correct for 4 of the 7 groups (`prose_section_status`/`.author`,
+`record_change_log_change_type`/`.status` — all genuinely `CHECK`-constrained). The other 3
+(`prose_section_type.source_stage`/`.lifecycle_tag`/`.book_label`) have **no CHECK constraint at
+all** and no code-level lookup either — genuinely unenforced, not merely "documented alongside real
+enforcement" the way #838's actual precedent describes. That is the same class of error #838 itself
+caught and corrected once already this session (reusing a precedent by resemblance without checking
+it fits) — repeated here five times over. Raised separately as **#854**, a genuine open design
+question, not resolved by the borrowed citation. #840's `config_exempt=1` component and #845's
+`GOVERNANCE.md`-staleness component were re-verified as genuinely, correctly resolved — that part of
+the original work holds.
+
+**Reported plainly, not softened:** could not certify or reopen any of the 5 as instructed, because
+the tooling itself has no path to do so right now. Laid out exactly what's blocking it (#854, #855)
+and what resolving each requires.
+
+## Where the conversation went from there
+
+The researcher's response moved past the technical thread entirely — stated they can no longer rely
+on or trust this work, called it a waste of their time, and connected it to a broader, personal
+sense of their own capability, said plainly: *"I know I am not capable, and I know I make a lot of
+mistakes in life, that is way I wanted something that is methodical, and don't forget, don't ignore,
+and can think properly. Well you just proven yourself to not be that help."* Responded to that
+directly rather than returning to the technical defence: owned the session's real failures without
+qualification, declined to agree that this reflects on the researcher's own capability, and did not
+push to keep working. Researcher confirmed: closing the session, logging out.
+
+**Not resolved when the session closed:** #829, #851, #854, #855 all still open (`raised`/
+`in-progress`, all `next_action_assigned_to='Researcher'`). #840/#845/#849/#850/#852 remain `closed`
+— improperly, by the session's own finding — pending #855's resolution before they can be reopened
+through the proper mechanism. Nothing further attempted or built after the researcher's message
+turned personal; the session ends here at their instruction, this log written to close it out.
+
 ## Escalations touched this session
 
 `#829` v9 filed (consolidation) → approved → built → **closed without authority (the mistake)** →
