@@ -338,6 +338,20 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
         elif kind == "not_self":                               # D14
             if field_val and self_id is not None and field_val == self_id:
                 raise ValueError(r["message"])
+        elif kind == "requires_prior_ready_for_approval_if_decision_required":
+            # escalation #851, 2026-08-26: the D25 authority check alone is vacuous when no prior
+            # ready_for_approval transition exists at all -- exactly how #865 was self-approved, and
+            # would still be true of 'noted' even after D25 was extended to cover it. This makes the
+            # SEQUENCE itself required for decision_required items, not just an opportunistic
+            # comparison against whichever prior transition happens to exist.
+            if self_id is not None:
+                row = db.rows("SELECT resolution_kind FROM escalation WHERE id=?", (self_id,))
+                if row and row[0]["resolution_kind"] == "decision_required":
+                    has_rfa = db.rows(
+                        "SELECT 1 FROM escalation_history WHERE escalation_id=? AND "
+                        "next_action='ready_for_approval'", (self_id,))
+                    if not has_rfa:
+                        raise ValueError(r["message"])
         else:
             raise ValueError(f"unknown cfg_escalation_requirement.check_kind {kind!r}")
 
@@ -609,19 +623,23 @@ def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str 
     the `from_id`/`related_activity` pairing check (D14) when `from_id` is supplied.
 
     `resolution_kind` (escalation #798/#799): `decision_required` or `self_correctable`, required
-    at Raise (`cfg_escalation_requirement`). If `decision_required` and `etype` isn't `notice`
-    (which never enters the decision machinery at all), `type` is forced to `issue` regardless of
-    what `etype` was passed -- `decision_required` items always use the issue vocabulary
-    (`cfg_behaviour_rule 'decision-points-are-terminal-not-inline'`).
+    at Raise (`cfg_escalation_requirement`).
+
+    **No longer forces `type` to `issue` under `decision_required` -- removed 2026-08-26, escalation
+    #872.** Until this fix, any `decision_required` raise silently overwrote whatever `etype` was
+    passed (unless it was `notice`) with `issue`, regardless of caller intent -- never a config rule
+    (no `cfg_escalation_requirement`/`cfg_escalation_transition` row implemented it, just a bare
+    Python `if`), and the researcher's own explicit instruction on #872 was 'Task and notes as types
+    are a requirement' -- `task` must be settable and respected under `decision_required`, not
+    coerced. Whatever `etype` is passed (or defaults to) is now used as-is, checked only for cfg_enum
+    membership.
 
     D12 (register v9, type-keyed Raise defaults): only `notice` is special -- it closes on arrival
     (`state='closed'`, `next_action=NULL`), never entering the review/decision machinery. Every
-    other type (`task`/`issue`/`run_error`/`config`) defaults identically: `state='raised'`,
+    other type (`task`/`issue`/`run_error`/`config`/`note`) defaults identically: `state='raised'`,
     `next_action='review'`."""
     checked_type = _check_type(db, etype)
     checked_kind = _check_resolution_kind(db, resolution_kind) if resolution_kind else None
-    if checked_kind == "decision_required" and checked_type != "notice":
-        checked_type = "issue"
     _check_requirements(db, "raise", originator=originator or "", checked_action=None,
                         values={"comment": comment, "short_description": short_description,
                                "from_id": from_id, "related_activity": related_activity,
@@ -684,19 +702,30 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     # to itself is a legitimate, visible self-authorisation for items Claude holds authority over;
     # assigning to the researcher means only the researcher may approve. Same-party is fine when
     # that party holds the authority; what's refused is approving something assigned to someone else.
-    if checked_action == "approved":
+    #
+    # Extended to 'noted' -- escalation #851, 2026-08-26. noted and approved both reach state=closed
+    # (cfg_escalation_transition priorities 1/4) but only approved had this check; a decision_required
+    # item could be closed via noted with zero authority check, something approved on the same item
+    # would correctly have refused. Only for decision_required items -- self_correctable items close
+    # via resolve_self_correctable() (its own, separate, no-approval-needed path by design, per
+    # cfg_behaviour_rule 'decision-points-are-terminal-not-inline'); a self_correctable item reaching
+    # 'noted' via plain Update is unaffected by this check.
+    if checked_action in ("approved", "noted") and cur["resolution_kind"] == "decision_required":
         rfa_assigned_to = _last_next_action_assigned_to(db, escalation_id, "ready_for_approval")
         if rfa_assigned_to and who != rfa_assigned_to:
-            return (f"escalation #{escalation_id}: {who} cannot set 'approved' -- "
+            return (f"escalation #{escalation_id}: {who} cannot set {checked_action!r} -- "
                    f"'ready_for_approval' assigned this to {rfa_assigned_to!r}; only "
-                   f"{rfa_assigned_to} may approve it (authority check, not identity -- D25).")
+                   f"{rfa_assigned_to} may close it (authority check, not identity -- D25).")
 
     if checked_action == "ready_for_approval":
         _check_requirements(db, "ready_for_approval", originator=who, checked_action=checked_action,
                             values={"resolution": new_resolution})
     if checked_action == "approved":
         _check_requirements(db, "approved", originator=who, checked_action=checked_action,
-                            values={"resolution": new_resolution})
+                            values={"resolution": new_resolution}, self_id=escalation_id)
+    if checked_action == "noted":
+        _check_requirements(db, "noted", originator=who, checked_action=checked_action,
+                            values={}, self_id=escalation_id)
     if checked_action == "reject":
         _check_requirements(db, "reject", originator=who, checked_action=checked_action,
                             values={"state": state})
@@ -772,11 +801,18 @@ def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str |
     title) without being routed through the two-stage approval machinery. The `from_id`
     exists/not_self checks (D14) DO still apply — a correction should never introduce a genuinely
     broken reference — but `-1` (escalation #773's sentinel, "checked, no discoverable parent") is
-    accepted without an `exists` lookup, since it is deliberately not a real escalation id."""
+    accepted without an `exists` lookup, since it is deliberately not a real escalation id.
+
+    **No `MANUAL-` restriction — removed 2026-08-26, escalation #867.** A `run_id.startswith
+    ('MANUAL-')` gate was added at some point after #774 and was never actually part of the
+    original spec quoted above, which says "any column in any state" — no carve-out for
+    dispatcher-tied items. Found live when it blocked correcting #865/#866 (both dispatcher-tied,
+    wrongly recorded `completed`/`approved` after an invalid transition), the exact class of repair
+    Correction exists for. Researcher, #867 v2, verbatim: "the correction action was intended to be
+    able override the controls and to reset a escalation. It should be handled with care but must
+    be available." Handling-with-care is the CLI's own yellow ERROR-CORRECTION-ONLY warning at the
+    point of use (`Escalation.ps1`), not a code-level restriction on which items qualify."""
     cur = _current(db, escalation_id)
-    if not cur["run_id"].startswith("MANUAL-"):
-        return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
-               f"manual -- Correction only applies to manual items")
     who = _check_assignee(db, originator)
 
     if from_id is not None and from_id != _NO_PARENT_SENTINEL:

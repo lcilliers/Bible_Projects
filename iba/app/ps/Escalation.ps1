@@ -42,9 +42,11 @@
     thing this vocabulary answers) or `self_correctable` (a code/config execution slip against an
     already-approved design; Claude fixes it directly, no approval needed). `-Action Raise` now
     REQUIRES `-ResolutionKind DecisionRequired|SelfCorrectable` — no default, mirroring
-    `-AnsweredBy`'s own no-silent-default rule. Raising `-ResolutionKind DecisionRequired` forces
-    `-Type issue` (a decision-required item is definitionally an issue; `type` is otherwise
-    immutable after Raise, same as `run_id`/`source`/`at_step`/`raised_at`). Two new actions close
+    `-AnsweredBy`'s own no-silent-default rule. `-Type` is respected as given regardless of
+    `-ResolutionKind` — it no longer forces `issue` under `decision_required` (removed 2026-08-26,
+    escalation #872: `task`/`note` must be usable types too, researcher's explicit instruction);
+    `type` is still immutable after Raise, same as `run_id`/`source`/`at_step`/`raised_at`. Two new
+    actions close
     the loop a self-correctable item can still take: `-Action ResolveSelfCorrectable` (fixed it,
     done — needs `-Id`/`-Resolution`/`-AnsweredBy`) or `-Action EscalateToDecision` (the fix, once
     attempted, turned out to need a real judgement call after all — needs `-Id`/`-Tried`/
@@ -86,9 +88,11 @@
                         step. Needs -Question (becomes short_description), -Comment (required —
                         minimum: what this is about, plan v3 §6), and -ResolutionKind
                         DecisionRequired|SelfCorrectable (required — no default, escalation
-                        #798/#799). -ResolutionKind DecisionRequired forces -Type issue regardless
-                        of what -Type is passed. -Source (default 'researcher'), -Type (default
-                        task; 'notice' closes on arrival, D12), -AssignedTo (default Claude),
+                        #798/#799). -Type is respected as given, no longer forced to issue under
+                        decision_required (escalation #872, 2026-08-26). -Source (default
+                        'researcher'), -Type (default task; 'notice' closes on arrival, D12; 'note'
+                        added 2026-08-26 for searchability, no special close behaviour, #872),
+                        -AssignedTo (default Claude),
                         -RelatedActivity (free text, optional), -FromId (D14 — the item this one
                         was spawned from; if set, -RelatedActivity becomes required too, naming
                         what the relationship documents) optional. Prints the new id — update it
@@ -284,8 +288,13 @@ switch ($Action) {
             exit 1
         }
         $kindMap = @{ DecisionRequired = 'decision_required'; SelfCorrectable = 'self_correctable' }
-        $flags = @("--source=$Source", "--type=$Type", "--comment=$Comment", "--originator=$AnsweredBy",
-                  "--resolution-kind=$($kindMap[$ResolutionKind])")
+        # .ToLower() -- escalation #872, 2026-08-26: ValidateSet matches case-INsensitively, so
+        # e.g. -Type Task passes PS validation, but Python's cfg_enum check is exact-match and
+        # crashed on it uncaught. Every ValidateSet value in this script is already lowercase, so
+        # folding case here is enough (unlike -ResolutionKind, which needs an actual word mapping,
+        # not just case-folding).
+        $flags = @("--source=$Source", "--type=$($Type.ToLower())", "--comment=$Comment",
+                  "--originator=$AnsweredBy", "--resolution-kind=$($kindMap[$ResolutionKind])")
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Context) { $flags += "--context=$Context" }
@@ -330,10 +339,12 @@ switch ($Action) {
         # -NextAction approved with no -Resolution here is NOT rejected client-side -- a resolution
         # may already be on the row from an earlier ready_for_approval update; update() itself
         # makes that call against the real current row, not guessed here from a second query.
+        # .ToLower() -- escalation #872, 2026-08-26: same case-fold as -Type (see 'Raise' above).
+        # -NextAction/-State's ValidateSet values are already lowercase, so this is enough.
         $flags = @("--originator=$AnsweredBy")
-        if ($NextAction) { $flags += "--next-action=$NextAction" }
+        if ($NextAction) { $flags += "--next-action=$($NextAction.ToLower())" }
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
-        if ($State) { $flags += "--state=$State" }
+        if ($State) { $flags += "--state=$($State.ToLower())" }
         if ($Resolution) { $flags += "--resolution=$Resolution" }
         if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Tried) { $flags += "--tried=$Tried" }
@@ -357,9 +368,9 @@ switch ($Action) {
         Write-Host "  ** Correction is for ERROR CORRECTION ONLY (escalation #774) -- fixing something already recorded wrong, not normal workflow. Use -Action Update for ordinary changes. **" -ForegroundColor Yellow
         $flags = @("--originator=$AnsweredBy")
         if ($ShortDescription) { $flags += "--short-description=$ShortDescription" }
-        if ($NextAction) { $flags += "--next-action=$NextAction" }
+        if ($NextAction) { $flags += "--next-action=$($NextAction.ToLower())" }
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
-        if ($State) { $flags += "--state=$State" }
+        if ($State) { $flags += "--state=$($State.ToLower())" }
         if ($Resolution) { $flags += "--resolution=$Resolution" }
         if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Tried) { $flags += "--tried=$Tried" }

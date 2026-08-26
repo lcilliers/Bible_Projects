@@ -327,9 +327,10 @@ already decided?* This is `cfg_behaviour_rule` `decision-points-are-terminal-not
 > continues — no new approval is required, because no new decision was made."*
 
 `-ResolutionKind DecisionRequired|SelfCorrectable` is **required on `-Action Raise` — no default**,
-same discipline as `-AnsweredBy`. Raising `DecisionRequired` forces `type=issue` regardless of
-`-Type` (a decision-required item is definitionally an issue); this only happens at raise time —
-`type` stays immutable after that, same as `run_id`/`source`/`at_step`/`raised_at`.
+same discipline as `-AnsweredBy`. `-Type` is respected as given regardless of `-ResolutionKind` —
+it no longer forces `issue` under `decision_required` (removed 2026-08-26, escalation #872:
+`task`/`note` must be usable types too). `type` stays immutable after Raise, same as
+`run_id`/`source`/`at_step`/`raised_at`.
 
 Two actions close a self-correctable item without a design-approval cycle, and one converts it
 mid-flight if the "simple fix" turns out not to be simple:
@@ -419,10 +420,12 @@ iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Re
 # CHARACTERS, must read like a title/subject -- a bare '--' anywhere in it is rejected (a reliable
 # sign it's a compressed sentence, not a title). -Comment is required (minimum: what this is
 # about). -AnsweredBy is REQUIRED. -ResolutionKind DecisionRequired|SelfCorrectable is REQUIRED --
-# no default (§4.3a) -- DecisionRequired forces -Type issue regardless of what -Type is passed.
-# -Source (default 'researcher'), -Type (default task), -AssignedTo (default Claude),
-# -RelatedActivity (free text, optional):
-iba\app\ps\Escalation.ps1 -Action Raise -Question "Short Title, <=60 Chars" -Comment "what this item is about, and any detail" -ResolutionKind DecisionRequired|SelfCorrectable -AnsweredBy Claude|Researcher [-Type task] [-AssignedTo Claude] [-RelatedActivity "..."]
+# no default (§4.3a) -- -Type is respected as given regardless of -ResolutionKind (no longer forced
+# to issue under decision_required, escalation #872, 2026-08-26).
+# -Source (default 'researcher'), -Type (default task; task|run_error|issue|notice|config|note --
+# 'notice' closes on arrival, D12; 'note' is a plain searchable category, no special behaviour),
+# -AssignedTo (default Claude), -RelatedActivity (free text, optional):
+iba\app\ps\Escalation.ps1 -Action Raise -Question "Short Title, <=60 Chars" -Comment "what this item is about, and any detail" -ResolutionKind DecisionRequired|SelfCorrectable -AnsweredBy Claude|Researcher [-Type task|run_error|issue|notice|config|note] [-AssignedTo Claude] [-RelatedActivity "..."]
 # prints the new id -- update it with -Action Update
 
 # close a SELF-CORRECTABLE item you already fixed -- no approval step, the design was already

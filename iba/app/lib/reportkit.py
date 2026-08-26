@@ -179,18 +179,33 @@ def write_report(conn: sqlite3.Connection, step: str, path: pathlib.Path,
     removed.
 
     **Also refreshes the plain-named `path` even when versioning is on — fixed 2026-08-17,
-    escalation #702.** `_archive_prior_versions`/`next_versioned_path` both deliberately ignore a
-    pre-existing plain-named file "untouched by this scan" — true, but the consequence went
-    unnoticed for 12 days: `CONFIG-REPORT.md`, the fixed filename `GOVERNANCE.md`/`USER-GUIDE.md`
-    tell every reader to check, silently froze at whatever content existed the moment versioning was
-    turned on (2026-08-05) and was never touched again — every regenerate since only added a new
-    `-vNNN-` file alongside it. The researcher found this by hitting stale, wrong orphan-config
-    findings live. Both purposes are real and not in tension: versioning preserves history
-    (`archive_dir`), the plain name is what every doc and habit actually checks — so both get written
-    on every regenerate now, not one traded off against the other."""
+    escalation #702 — but only for `cfg_report.naming_scheme='stable'` reports.**
+    `_archive_prior_versions`/`next_versioned_path` both deliberately ignore a pre-existing
+    plain-named file "untouched by this scan" — true, but the consequence went unnoticed for 12
+    days: `CONFIG-REPORT.md`, the fixed filename `GOVERNANCE.md`/`USER-GUIDE.md` tell every reader
+    to check, silently froze at whatever content existed the moment versioning was turned on
+    (2026-08-05) and was never touched again — every regenerate since only added a new `-vNNN-`
+    file alongside it. The researcher found this by hitting stale, wrong orphan-config findings
+    live. Both purposes are real and not in tension for a *stable* report: versioning preserves
+    history (`archive_dir`), the plain name is what every doc and habit actually checks — so both
+    get written for those.
+
+    **naming_scheme='dated' reports skip the plain-name write entirely — fixed 2026-08-26,
+    escalation #857.** A "dated" report (per-id/per-run snapshots like `escalation.history`, or a
+    `{word}`/`{strong}`-keyed report) has no fixed name anything else links to — `naming_scheme`
+    already documented this distinction (PLAN-reports-config-governance-v1-20260722.md §6:
+    'stable' (fixed filename) | 'dated' (versioned filename per report)) but `write_report()` never
+    actually read the column, so every regenerate produced BOTH the versioned file AND a redundant,
+    never-linked plain-named duplicate (`857-escalation-history.md` sitting alongside
+    `857-escalation-history-v3-20260826.md` with identical content — found live, researcher
+    instruction this escalation). For `naming_scheme='dated'`: only the freshly versioned file is
+    written; a stale plain-named file left over from before this fix is archived (not silently
+    deleted) the first time the report regenerates, same as any other superseded version."""
     path.parent.mkdir(parents=True, exist_ok=True)
-    rep = conn.execute("SELECT archive_dir FROM cfg_report WHERE step=?", (step,)).fetchone()
+    rep = conn.execute("SELECT archive_dir, naming_scheme FROM cfg_report WHERE step=?",
+                       (step,)).fetchone()
     archive_dir = (rep["archive_dir"] if rep else None) or "archive"
+    dated = bool(rep and rep["naming_scheme"] == "dated")
     text = "\n".join(lines)
     if not text.endswith("\n"):
         text += "\n"
@@ -198,7 +213,14 @@ def write_report(conn: sqlite3.Connection, step: str, path: pathlib.Path,
         _archive_prior_versions(path, archive_dir)
         versioned_path = next_versioned_path(path, archive_dir)
         versioned_path.write_text(text, encoding="utf-8")
-        path.write_text(text, encoding="utf-8")  # keep the fixed name current too, see docstring
+        if dated:
+            if path.exists():  # stale pre-fix plain-named duplicate -- archive it, don't leave it
+                adir = path.parent / archive_dir
+                adir.mkdir(parents=True, exist_ok=True)
+                stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
+                path.replace(adir / f"{path.stem}-{stamp}{path.suffix}")
+        else:
+            path.write_text(text, encoding="utf-8")  # keep the fixed name current, see docstring
         return versioned_path
     else:
         archive_before_write(path, archive_dir)

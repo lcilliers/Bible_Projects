@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-26T16:01:09Z |
+| generated_at | 2026-08-26T10:18:31Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -51,7 +51,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-8. GOVERNANCE.md was last modified 2026-08-26T10:19:31Z, before the newest applied cfg_change_detail row (2026-08-26T16:01:09Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+8. GOVERNANCE.md was last modified 2026-08-24T17:09:32Z, before the newest applied cfg_change_detail row (2026-08-26T10:18:30Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -2003,7 +2003,7 @@ _one row per key_ — Module-specific settings for the prose module (governance.
 | escalation_requirement_check_kind | field_required, not_raised_with_content, exists, not_self |
 | escalation_shape | manual, dispatcher |
 | escalation_state | raised, answered, re-assign, on-hold, paused, closed, retracted, withdraw, completed, in-progress, supersede, re-assigned |
-| escalation_type | prompted, task, interactive, run_error, issue, report-stop, crash, notice, config, note |
+| escalation_type | prompted, task, interactive, run_error, issue, report-stop, crash, notice, config |
 | hib_kind | named_individual, unnamed_individual, named_collection, unnamed_collection, implicit_individual, implicit_collection |
 | narrative_required_channel | Non-human ↔ human, Human ↔ human, Physical world ↔ human |
 | on_fail | report-continue, pause-continue, report-stop, self-heal |

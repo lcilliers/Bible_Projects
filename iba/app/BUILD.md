@@ -9934,3 +9934,194 @@ required for this fix to work.
 
 **Files:** `iba/app/lib/escalation.py` (`write_list_report`, `write_history_report`, `_dispatch`'s
 `history` branch); `iba/app/handlers/reports.py` (`escalation_history`).
+
+## 179. `cfg_report.naming_scheme` wired live — `'dated'` reports stop getting a redundant plain-named duplicate (2026-08-26, escalation #857)
+
+**What this closes.** §178 above flagged `naming_scheme` as "inert, undocumented-by-code metadata"
+and left it. Researcher, same session, reopening `857-escalation-history-v3-20260826.md`: the two
+files it produces (`857-escalation-history.md` + the versioned copy, identical content) are wrong
+— only the versioned file should be retained, the plain one archived. Confirmed live:
+`escalation.history` AND `escalation.list` (same code shape) were both writing the redundant plain
+copy on every regenerate.
+
+**Root cause.** `reportkit.write_report()`'s escalation-#702 fix (2026-08-17) made it *unconditionally*
+refresh the plain-named `path` alongside the versioned file, for every report, regardless of
+`cfg_report.naming_scheme` — even though the column already documents exactly this distinction
+(`PLAN-reports-config-governance-v1-20260722.md` §6: `'stable'` = fixed filename | `'dated'` =
+versioned filename per report) and was simply never read by the code.
+
+**Fix.** `write_report()` now reads `naming_scheme`. `'dated'`: only the freshly versioned file is
+written — no plain-name refresh; a stale plain-named file left over from before this fix is archived
+(timestamp-suffixed, `archive_before_write`-style — not deleted) the first time the report
+regenerates. `'stable'` (CONFIG-REPORT.md, GOVERNANCE.md, USER-GUIDE.md, etc.): **completely
+unchanged** — both files still written, exactly as §702/§178 established. No other report step's
+behaviour changes; only a step whose `naming_scheme` is explicitly `'dated'` is affected.
+
+**Config change (approval-gated, `configmaint.propose`):** `cfg_report.naming_scheme` flipped
+`'stable'` → `'dated'` for both `escalation.history` (escalation #865) and `escalation.list`
+(escalation #866, researcher verbatim: "yes, you can fix escalation list") — both are per-run
+point-in-time snapshots, not living docs anything links to by a fixed name, so `'dated'` is the
+correct classification, not a special case. Researcher, same turn: "nothing else without first
+checking with me" — no other report's `naming_scheme` touched.
+
+**Verified live:** `Escalation.ps1 -Action History -Id 857` → wrote only
+`857-escalation-history-v4-20260826.md`; the stale `857-escalation-history.md` moved to
+`archive/857-escalation-history-20260826-111840.md`. `Escalation.ps1 -Action List` → wrote only
+`escalation-list-v3-20260826.md`; stale `escalation-list.md` moved to
+`archive/escalation-list-20260826-111842.md`. Confirmed via directory listing: no plain-named file
+remains live in `iba/app/reports/` for either stem.
+
+**Files:** `iba/app/lib/reportkit.py` (`write_report`).
+
+## 180. Escalation `-Type` no longer forced/miscased — `decision_required` coercion removed, `note` added, case-insensitive `-Type`/`-State`/`-NextAction` crash fixed (2026-08-26, escalation #872)
+
+**What this closes.** Researcher hand-tested every action permutation of `Escalation.ps1` this
+session and found two real, live defects on `-Action Raise`:
+
+1. **`-Type Task` (mixed case) crashed the CLI with an unhandled Python traceback.** PowerShell's
+   `[ValidateSet]` matches case-*insensitively*, so `Task`/`On-Hold`/`Approved` all pass PS-side
+   validation, but the value is forwarded to Python verbatim — and every `_check_*` validator there
+   (`_check_type`, `_check_state`, `_check_next_action_manual`) is an exact-match check against
+   lowercase `cfg_enum` rows, with no normalisation. `-ResolutionKind`/`-Decision` happened to be
+   safe only because the PS wrapper already hand-mapped/lowered them for unrelated reasons — `-Type`,
+   `-State`, `-NextAction` had no such protection and crashed uncaught (self-recorded as run_error
+   #872 by the CLI's own crash-handler).
+2. **`decision_required` silently forced `type` to `issue`**, discarding whatever `-Type` was
+   actually passed (`raise_new()`, unconditional, not a config rule — no `cfg_escalation_requirement`/
+   `cfg_escalation_transition` row implemented it). Researcher's decision on #872 v5, verbatim:
+   *"Task and notes as types are a requirement."* — `task` must be settable and respected, not
+   coerced.
+
+Also decided on #872 v6: `note` should be a **separate** `escalation_type` value from `notice`
+(verbatim: *"having a separate type makes it easier to find and search. and it will use the notice
+action n[in] update to close it"*) — i.e. `note` gets NO special raise-time behaviour (unlike
+`notice`, which auto-closes on arrival, `state='closed'`, D12) — it raises normally
+(`state='raised'`, `next_action='review'`) and is closed later the ordinary way, via
+`Update -NextAction noted` (already available to any manual item), not a new closing mechanism.
+
+**Fix:**
+- `raise_new()` (`lib/escalation.py`): removed the `decision_required → issue` override entirely.
+  Whatever `etype` is passed is used as-is (still checked for `cfg_enum` membership). `notice`'s
+  own special-case (auto-close on arrival) is untouched.
+- `Escalation.ps1`: `-Type`/`-State`/`-NextAction` are now `.ToLower()`'d before being forwarded to
+  Python, at all three forwarding sites (`Raise`, `Update`, `Correction`) — same fix shape as the
+  case-folding `-ResolutionKind`/`-Decision` already had, closing the gap for the three parameters
+  that didn't.
+- `cfg_enum(name='escalation_type', value='note', ordinal=5, inactive=0)` — added via
+  `configmaint.propose` (escalation #879, approval-gated, moved to `ready_for_approval` and left for
+  the researcher to approve themselves, per the researcher's explicit withdrawal of Claude's
+  self-approval authority earlier this session — not self-approved).
+- `USER-GUIDE.md`/`Escalation.ps1`'s own header docs corrected — both previously stated
+  `DecisionRequired` forces `-Type issue`, now false.
+
+**Verified live:** `-Action Raise -Type Task -ResolutionKind DecisionRequired` (mixed case, no
+`-Type` coercion) → raised cleanly, stored `type='task'`, not `'issue'`, not crashed. Test item
+withdrawn immediately after (#880). `note`'s actual availability is still pending #879's approval —
+not yet tested end-to-end, since the `cfg_enum` row doesn't exist live yet.
+
+**Also closed this session (same run_error sweep, not part of the #872 fix, non-issues — guards
+worked as designed, not code defects):** #858 (title-shape guard caught a `--` in a title I wrote),
+#864 (D26 caught an update-with-content left on `state='raised'`), #876/#877 (duplicate — D25
+caught a `ready_for_approval` update with no `-Resolution`). #768 (a genuinely open, researcher
+-owned `on-hold` finding, not a crash artifact) deliberately left untouched.
+
+**Files:** `iba/app/lib/escalation.py` (`raise_new`); `iba/app/ps/Escalation.ps1` (`Raise`/`Update`/
+`Correction` cases, header docs); `iba/app/USER-GUIDE.md`.
+
+## 181. `Correction`'s `MANUAL-`-only restriction removed (2026-08-26, escalation #867)
+
+**What this closes.** `correction()` refused any item whose `run_id` didn't start `MANUAL-` —
+dispatcher-tied items (config proposals, crashes, quality-check findings) had no Correction path at
+all, only `Update` (itself blocked on closed states). Found live this session: correcting #865/#866
+(both dispatcher-tied, wrongly recorded `completed`/`approved` after an invalid `review→approved`
+transition) was impossible through either mechanism. But the restriction was never actually part of
+the original spec — `correction()`'s own docstring quotes escalation #774 v2 verbatim: *"allow the
+Correction transaction to update any column in any state"* — no run_id carve-out. The `MANUAL-` gate
+was added at some later point, unauthorised by that spec. Researcher, #867 v2, verbatim: *"the
+correction action was intended to be able override the controls and to reset a escalation. It should
+be handled with care but must be available."*
+
+**Fix:** the `if not cur["run_id"].startswith("MANUAL-"): return (...)` gate removed entirely from
+`correction()`. "Handled with care" is met by the CLI's pre-existing yellow warning at the point of
+use (`Escalation.ps1`'s `'Correction'` case: *"ERROR CORRECTION ONLY ... not normal workflow"*), not
+a new code-level restriction on which items qualify.
+
+**Verified live:** `Escalation.ps1 -Action Correction -Id 861` (dispatcher-tied, `state='completed'`)
+— previously would have been refused ("is dispatcher-tied ... not manual"); now succeeds, state
+correctly carried forward unchanged (`completed`, since no `-State` was passed).
+
+**Also resolves #855** ("Correction lacks the decision_required carve-out Update has") as moot, not
+closed unilaterally — flagged there for the researcher: removing the restriction outright makes a
+narrower `decision_required`-only carve-out unnecessary.
+
+**Not done:** #865/#866 themselves were NOT corrected — researcher's explicit instruction earlier
+this session was "leave 965 [865] and 866 as completed." The tool can now fix records like them; these
+two specifically were told to stay as-is.
+
+**Files:** `iba/app/lib/escalation.py` (`correction`).
+
+## 182. `noted` gets the same authority check as `approved`, and both now require `ready_for_approval` to have actually happened first (2026-08-26, escalation #851)
+
+**What this closes.** #851 (raised 2026-08-24) found `noted` and `approved` both reach
+`state='closed'` for a `decision_required` item, but only `approved` had an authority check (D25) —
+`noted` had zero requirement checking of any kind. Not fixed at the time (v2's "hope it does not
+happen again" had no code behind it). Confirmed still true today, and used ungated 3 times this same
+session (#856/#860/#859) before being caught.
+
+**Deeper issue found while fixing it, not just the originally-named one:** D25's authority check
+(`if rfa_assigned_to and who != rfa_assigned_to`) is only meaningful when a prior `ready_for_approval`
+transition actually exists — when none does, the comparison has nothing to compare against and
+silently passes. This is exactly how #865 was self-approved earlier this same session (`approved` set
+directly from `review`, skipping `ready_for_approval` entirely). Extending D25 to `noted` alone would
+have reproduced the identical hole on a second `next_action` value, not closed it.
+
+**Fix, both halves together:**
+1. D25's authority check extended to cover `checked_action in ("approved", "noted")`, still gated to
+   `resolution_kind == 'decision_required'` only — `self_correctable` items are unaffected; they close
+   via `resolve_self_correctable()`, a separate, deliberately approval-free path.
+2. New `cfg_escalation_requirement.check_kind = 'requires_prior_ready_for_approval_if_decision_required'`
+   — for a `decision_required` item, `approved` and `noted` now both structurally require a prior
+   `escalation_history` row with `next_action='ready_for_approval'` to already exist, not just an
+   opportunistic comparison. Two rows added (`action='approved'` and `action='noted'`), via
+   `configmaint.propose` (escalations #881/#882, approval-gated, routed to `ready_for_approval` and
+   correctly assigned to the researcher — not self-approved).
+3. `update()`'s `noted` branch now calls `_check_requirements(db, "noted", ...)` at all — previously
+   missing entirely, so `noted` had no requirement-checking hook to begin with, config-driven or not.
+
+**Verified:** code compiles clean. Full live test of the new requirement is blocked on #881/#882's
+approval (the check_kind exists in code but has no live `cfg_escalation_requirement` row to act on
+until then) — not claiming end-to-end verification that hasn't actually run.
+
+**Files:** `iba/app/lib/escalation.py` (`update`, `_check_requirements`).
+
+## 183. `prose_section.word_count` backfilled for 25 rows (2026-08-26, escalation #832 item 2)
+
+**What this closes.** #832 found 25 `prose_section` rows with `word_count=0` despite holding real
+body text — never computed by whichever write path created them. Researcher approved the correction
+as proposed.
+
+**Fix:** one-off script (`temp_backfill_word_count_20260826.py`, run then archived to
+`iba/app/tools/archive/` per `governance.scripts_and_routines`) recomputed each row via
+`len(body.split())` — the same formula already used live in `scripts/apply_session_patch.py` — and
+wrote it through the same `record_change_log` choke-point every other `prose_section` write already
+uses: prior state snapshotted, a `record_change_log` row written (`change_type='change'`, not
+`'correction'` — the live `CHECK` constraint only allows `insert`/`change`/`delete`, caught by the
+first run failing cleanly, nothing partially committed), then `prose_section.word_count`/`version`
+(pointing at the new log row, not incremented) updated.
+
+**Verified live:** all 25 rows fixed (ids 61–127, listed in full in the run output and on #832's own
+record); re-queried after — zero `word_count=0`-with-real-body rows remain. Spot-checked row 61:
+`version` correctly points at `record_change_log` id 1151, whose payload correctly captured the
+prior `word_count=0` before it was overwritten.
+
+**Item 3 (`approved_at` NULL on 729 rows), same escalation:** researcher agreed with the
+recommendation — **not** backfilled. No reliable source exists for the true historical approval
+date (drift traced to multiple write paths, not one clean cause); inventing a timestamp would be
+fabricating data. Left `NULL`, documented as unrecoverable — no code or data change.
+
+**Not done — explicitly still blocked:** items 4/5 (no FK on `cluster_code`/`characteristic_id`,
+`prose_section_finding_link`'s stale FK target) remain dependent on #829's own build decision.
+Researcher, verbatim: *"items 4 and 5 is dependent on 829. so we first need to complete 829 before
+832 can be approved."* #832 stays open, `on-hold`, not approved as a whole.
+
+**Files:** `iba/app/tools/archive/temp_backfill_word_count_20260826.py` (one-off, already run).

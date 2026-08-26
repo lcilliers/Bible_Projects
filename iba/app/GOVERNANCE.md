@@ -787,7 +787,7 @@ conflict with each other" instruction (9.1):**
 |---|---|
 | `cfg_step` / `cfg_work_package.ps_script` | which step exists, which PS script runs it |
 | `cfg_report.title` / `.show_toc` / `.footer_text` | the report's title, ToC, footer |
-| `cfg_report.output_kind` / `.naming_scheme` / `.archive_dir` | md vs md+csv, filename stability, archive folder |
+| `cfg_report.output_kind` / `.naming_scheme` / `.archive_dir` | md vs md+csv, filename stability, archive folder — `naming_scheme='stable'` writes both a versioned file AND keeps a fixed-name copy current (CONFIG-REPORT.md-style, living docs other files link to); `naming_scheme='dated'` writes ONLY the versioned file, no fixed-name duplicate (point-in-time snapshots — `escalation.history`/`escalation.list`/word-registry-span reports). Wired live 2026-08-26 (BUILD.md §179, escalation #857) — the column existed since 2026-07-22 but `reportkit.write_report()` ignored it until then. |
 | `cfg_report_section` | which sections, heading, order, ToC inclusion — **except** `report.word`/`validation.word`/`validation.book`, where the pre-existing `report.show_*`/`validation.show_*` settings own inclusion; `cfg_report_section` there only supplies heading text/order for whatever those toggles already chose |
 | `cfg_report_csv_table` | which tables (+ joins) the CSV half dumps |
 | `cfg_on_fail(step, condition)` | which PATH a condition takes + its message + route |
