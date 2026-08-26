@@ -1034,11 +1034,13 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
             L.append(f"| {r['id']} | {sd} | {r['state']} | {r['related_activity']} | {res} | "
                      f"{r['answered_at']} |")
 
-    reportkit.archive_before_write(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    text = "\n".join(L).rstrip() + "\n"
-    path.write_text(text, encoding="utf-8")
-    return path, rows
+    # 2026-08-26 (escalation #857): was manual archive_before_write()+write_text(), bypassing the
+    # app-wide report.version_on_regenerate mechanism (BUILD.md sec60) every other report writer
+    # goes through -- this report never got versioned/archived-with-history like the rest of the
+    # app. Now uses reportkit.write_report() like everything else; return value captured and
+    # returned (not the pre-write `path`), per sec60's own fixed 19-site systemic bug.
+    out = reportkit.write_report(db.conn, "escalation.list", path, L)
+    return out, rows
 
 
 def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Path) -> pathlib.Path:
@@ -1091,10 +1093,13 @@ def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Pat
             import re
             for m in re.findall(r"#(\d+)", r["related_activity"] or ""):
                 queue.append(int(m))
-    reportkit.archive_before_write(path)
-    path.parent.mkdir(parents=True, exist_ok=True)
-    path.write_text("\n".join(L).rstrip() + "\n", encoding="utf-8")
-    return path
+    # 2026-08-26 (escalation #857): same fix as write_list_report above -- was manual
+    # archive_before_write()+write_text(), bypassing report.version_on_regenerate (BUILD.md
+    # sec60) entirely. Now goes through reportkit.write_report(); `path`'s stem (built by the
+    # caller, id-prefixed per the researcher's direct instruction this escalation) becomes the
+    # versioned {stem}-v{n}-{date}.md filename automatically -- no separate filename-pattern
+    # setting needed, the app-wide mechanism already provides it.
+    return reportkit.write_report(db.conn, "escalation.history", path, L)
 
 
 def _extract_flag(args: list[str], name: str) -> tuple[list[str], str | None]:
@@ -1221,8 +1226,9 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
                             state=state, from_id=int(from_id) if from_id else None,
                             originator=_require_flag(originator, "originator")))
     elif len(argv) >= 2 and argv[0] == "history":
+        # id-prefixed stem, 2026-08-26 (escalation #857) -- matches handlers/reports.py's copy
         path = pathlib.Path(cfg.setting("escalation.history_report_dir",
-                                        "iba/app/reports")) / f"escalation-{argv[1]}-history.md"
+                                        "iba/app/reports")) / f"{argv[1]}-escalation-history.md"
         out = write_history_report(cfg, db, int(argv[1]), path)
         print(f"  -> {out}")
     elif len(argv) >= 2 and argv[0] == "correction":

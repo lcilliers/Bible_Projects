@@ -9849,3 +9849,88 @@ backfilled here since it belongs to that escalation's own record, not this one's
 **Files:** `iba/app/migration/prose_first_layer_build_v1_20260824.py` (new, idempotent, registered
 in `cfg_utility`); `iba/app/lib/prosestore.py`, `iba/app/handlers/prose.py`, `iba/app/ps/Prose.ps1`
 (modified); `GOVERNANCE.md` §53; `USER-GUIDE.md` §13d.
+
+## 177. Module-blocking dispatch gate DISABLED pending redesign (2026-08-26, escalation #859)
+
+**What happened.** `run_step()`'s third dispatch gate (`cfg_escalation.module_blocking`,
+escalation #646, 2026-08-17 — blocks a step/module while it has an unresolved `raised`/
+`re-assigned` escalation against it) blocked `configmaint.propose` outright while working
+escalation #857, because of an unrelated advisory finding, escalation #856 (7 already-5×-accepted
+`cfg_enum` orphans from the prose build, escalations #838→#840→#845→#849→#850→#852). Traced live,
+not assumed: `_source_for_step()` derives a step's "module" by splitting `step_id` on its first
+dot — `configmaint.validate`, `configmaint.propose`, and `configmaint.report` all collapse to the
+same string, `"configmaint"`. The gate's `source=?` match clause then treats an escalation raised
+against *one* of those three steps as blocking *all three* — an advisory finding from `.validate`
+stopped `.propose` from ever dispatching.
+
+**Researcher's ruling (2026-08-26, verbatim):** *"this module blocker was added in an attempt to
+ensure that you do not run code with errors in the pipeline. but because the errors was ignored
+and just bypast in the pass, there is now such an accumulation of errors and bugs that this
+control is null not fulfilling its function. and because you get some type of work around every
+time it is defunct. I suggest you raise a escalation to highlight that the module blocker must be
+redesigned and then comment the code for the blocker out as it serves no purpose at the moment."*
+The `_source_for_step` collapsing bug is one concrete symptom; the substantive problem is broader
+— an accumulated backlog of long-lived `raised`/`re-assigned` escalations (many advisory-only) has
+made this gate block routine dispatch often enough that finding a workaround around it, rather
+than the gate actually stopping a broken module from running, had become the normal pattern.
+
+**Action taken — disable, not fix.** The gate's body (`iba/app/run.py:run_step()`, the block
+immediately following the second gate's `cfg_step.kind` check) is **commented out, not deleted and
+not patched** — the `_source_for_step` bug is left visible in the comment, not silently repaired,
+because fixing the matching logic without addressing the backlog-volume problem would not actually
+restore the gate's function. Escalation **#859** (`decision_required`, assigned to Researcher)
+records the defect and this decision; a redesign (candidates named there, not decided: key
+blocking off `resolution_kind` rather than raw `state`, exclude long-lived advisory items, match
+on the full `step_id` rather than a first-dot-split guess) is a separate, future unit of work.
+**Do not re-enable this block without #859 being resolved first.**
+
+**Verified live:** `run.py` recompiles clean (`python -m py_compile`); a `configmaint.validate`
+dispatch that would previously have raised `PermissionError` (blocked by #856) now runs to
+completion and reaches its own, unrelated `report-stop` (the same 7 orphan findings, handled
+normally — not a module-blocking refusal).
+
+**Escalation #856 itself was explicitly NOT touched** — per direct researcher instruction this
+session ("do not touch any other escalation"), it remains open, unanswered, exactly as it was.
+
+**Files:** `iba/app/run.py` (`run_step()`, gate commented out).
+
+## 178. Escalation report filenames — id-prefixed, wired into the app-wide versioning mechanism (2026-08-26, escalation #857)
+
+**What this closes.** Escalation #857 found `escalation.history`'s report filename
+(`escalation-{eid}-history.md`) had no config-governed naming convention at all — a hardcoded
+f-string in two call sites. First fix attempt (escalation #862: a new `cfg_setting`
+`escalation.history_filename_pattern`) was wrong and withdrawn — researcher correction: it had no
+version control, when the app already has one (`report.version_on_regenerate` →
+`reportkit.write_report()`, §60 above), which `write_list_report()`/`write_history_report()`
+(`iba/app/lib/escalation.py`) turned out to bypass **entirely** — both called the old manual
+`archive_before_write()` + direct `path.write_text()` instead of `write_report()`, so neither ever
+got the app-wide versioning/archiving every other report writer already has.
+
+**Fix — wire into the existing mechanism, not a new setting.** Both functions' write tails now
+call `reportkit.write_report(db.conn, "<step>", path, L)` and return its actual result (per §60's
+own "capture the return value" fix). The two call sites building `escalation.history`'s `path`
+(`iba/app/handlers/reports.py:escalation_history()`, `iba/app/lib/escalation.py:_dispatch()`'s
+`history` branch) changed their stem from `escalation-{eid}-history` to `{eid}-escalation-history`
+— id is the prefix, per the researcher's original instruction. No new `cfg_setting` needed:
+`write_report()`'s existing `{stem}-v{n}-{date}{suffix}` versioning applies automatically once the
+stem is right, exactly like every other report in the app.
+
+**Verified live:** both files compile clean. `Escalation.ps1 -Action History -Id 857` run twice in
+a row: first wrote `857-escalation-history-v1-20260826.md` (+ the always-current
+`857-escalation-history.md`, per `write_report`'s own escalation-#702 behaviour), second wrote
+`...-v2-20260826.md`, confirming version increment and that the v1 copy moved to `archive/` intact.
+`Escalation.ps1 -Action List` correspondingly now writes `escalation-list-v1-20260826.md` +
+`escalation-list.md`.
+
+**Not done, flagged for the researcher rather than assumed:** the 43 pre-existing
+`escalation-<id>-history.md` files (old stem, from before this fix) are untouched — a different
+stem from the new `{id}-escalation-history` scheme, so `write_report()`'s own version-scan doesn't
+see them and won't collide with them, but they don't match the new convention either. Renaming
+them to fit is a bulk, semi-irreversible file operation on 43 files — held for explicit
+confirmation, not done unprompted. `cfg_report.naming_scheme` for both steps still reads `'stable'`
+(confirmed elsewhere in this same escalation's own audit to be inert, undocumented-by-code
+metadata, not actually read anywhere) — left as-is, a candidate for a later accuracy pass, not
+required for this fix to work.
+
+**Files:** `iba/app/lib/escalation.py` (`write_list_report`, `write_history_report`, `_dispatch`'s
+`history` branch); `iba/app/handlers/reports.py` (`escalation_history`).

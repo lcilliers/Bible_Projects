@@ -372,7 +372,10 @@ def escalation_history(ctx: Ctx) -> Outcome:
     eid = ctx.params.get("Id")
     if not eid:
         return fail("missing-id", "escalation.history requires a -Id parameter")
+    # id-prefixed stem, 2026-08-26 (escalation #857, researcher direct instruction) -- was
+    # escalation-{eid}-history.md (id buried mid-name); versioning is now write_report()'s job
+    # (BUILD.md sec60), not this path's -- write_history_report returns the actual written path.
     path = pathlib.Path(ctx.cfg.setting("escalation.history_report_dir",
-                                        "iba/app/reports")) / f"escalation-{eid}-history.md"
+                                        "iba/app/reports")) / f"{eid}-escalation-history.md"
     out = esc.write_history_report(ctx.cfg, ctx.db, int(eid), path)
     return ok(f"wrote {out}", path=str(out))
