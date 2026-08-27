@@ -2757,3 +2757,35 @@ all succeeded, output confirmed clean of any `related_activity`/`from_id` trace;
 **Files:** `iba/app/lib/escalation.py`, `iba/app/ps/Escalation.ps1`,
 `iba/app/migration/retire_from_id_related_activity_v1_20260827.py`, `USER-GUIDE.md`. Full build
 record: `BUILD.md` §187.
+
+## §58. `governance.session_log_required_content` — a session log's minimum content, finally stated as config (2026-08-27, escalation #911, setting added via #926)
+
+**The gap.** Two `cfg_setting` rows touched session logs — `governance.session_log_dir` (where)
+and `governance.session_log_triggers_commit` (the commit consequence) — but nothing anywhere,
+`cfg_*` or prose, said what a session log had to actually *contain*. The researcher caught this
+directly: *"you can proceed with a session log — I notice that you check back to the previous logs
+instead of validating that what is in configs and governance every time you do a session log."*
+Checking old logs for format was itself the tell, per `governance.past_precedent_investigation_
+signals_missing_config` — the config was missing, not a puzzle to solve from precedent.
+
+**The setting**, `cfg_setting` module `governance`, added via `Config-Maintenance.ps1 -Step
+Propose` (escalation #926, approved 2026-08-27): a session log must carry, at minimum — (1) date +
+one-line scope; (2) every escalation touched, by id, with outcome, not narrative paraphrase; (3)
+every file/deliverable changed, with path; (4) decisions made, the researcher's own vs. a
+`self_correctable` fix Claude closed directly, distinguished; (5) open items for the next session,
+named for whom; (6) the actual git state the log's own completion triggers (branch, commit hash,
+push confirmed) — not asserted, shown.
+
+**Found the same day, by the researcher, not self-caught:** the `cfg_setting` write itself sat
+approved-but-uncommitted for one commit cycle — `Update -NextAction approved` on the escalation is
+not the same act as re-running the original `Config-Maintenance.ps1 Propose ... -RunId` command,
+and the second step was missed. Caught in chat (*"it seems that 926 was left dangling... I approved
+it"*), the run_id re-run completed the write the same session. **This very entry is itself late
+for the same reason** — `governance.governance_md_on_rule_change` requires this file updated in
+the same unit of work as the `cfg_*` write, and it wasn't, until the researcher asked directly
+whether `CLAUDE.md`/`GOVERNANCE.md`/`BUILD.md`/`USER-GUIDE.md` were being kept current. They
+weren't, on this one. Two misses on the same setting, both caught by the researcher, neither
+self-caught — recorded plainly, not smoothed over.
+
+**Files:** `cfg_setting` (row added, module `governance`); this file. No code change; `BUILD.md`/
+`USER-GUIDE.md` not applicable (no code, no user-facing command changed).
