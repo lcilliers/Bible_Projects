@@ -112,5 +112,13 @@ physical files.
 
 ## Git state
 
-Committing this log now — see chat for the actual `git log`/`git status` output confirming branch,
-commit hash, and push, per `governance.session_log_required_content` item 6.
+Branch `main`, commit `d60f087b440c13b98a047dbcf59e40cd3fee19eb` ("session 20260827 (cont.):
+folder-destination realignment ..."), pushed to `origin/main` — confirmed via
+`git log -1`/`git status` after push: "Your branch is up to date with 'origin/main'." / "nothing to
+commit, working tree clean."
+
+One small casing note found while confirming this: `_analytics/essay` (as written into the two
+`cfg_setting` values) resolved on disk to an already-existing `_analytics/Essay` (capital E) —
+Windows' case-insensitive filesystem treats them as the same folder, so nothing is broken, but the
+`cfg_setting` text itself doesn't match the real on-disk casing. Harmless on Windows; worth a quick
+normalise whenever this area is next touched.
