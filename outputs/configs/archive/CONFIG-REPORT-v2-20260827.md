@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-27T12:19:05Z |
+| generated_at | 2026-08-27T19:22:56Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -45,7 +45,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-1. GOVERNANCE.md was last modified 2026-08-27T05:15:31Z, before the newest applied cfg_change_detail row (2026-08-27T12:19:04Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+1. GOVERNANCE.md was last modified 2026-08-27T15:23:50Z, before the newest applied cfg_change_detail row (2026-08-27T19:22:56Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -520,7 +520,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | backup | backup.nas_full_mirror_schedule | whole project folder + memory mirrored daily 18:30 (Windows scheduled task 'BibleResearch Full Mirror to NAS', scripts/mirror_to_nas.ps1, robocopy /MIR) to \LSUK-SYNRACK\HomeMedia\bible_study_projects\mirror\ + claude-backup\ -- this DOES include iba/app/db/iba.db as a side effect of mirroring the whole tree, but with no DB-specific integrity check the way backup_db_to_nas.py gives bible_research.db. |  |
 | backup | backup.pre_run_snapshot_policy | a full DB file snapshot (WAL-checkpointed first) is taken automatically before every NEW run (run.py:_ensure_run -> lib/dbsnapshot.snapshot()), never on resume -- this already covers every step in every pipeline; retention.snapshot_keep_count controls how many are kept (oldest pruned first). IBA_NO_SNAPSHOT=1 skips it for a tight loop. |  |
 | backup | backup.write_atomicity_guarantee | every DB write happens inside one atomic transaction -- sqlite3 default deferred-transaction isolation, nothing commits until a handler's own single final commit(). A hard kill (power loss, session breakdown, process death) at any point before that commits NOTHING -- the DB file is left exactly as it was before the call started, and re-submitting the identical call is always safe. |  |
-| behaviour | behaviour.list_report_path | iba/app/reports/behaviour-rules-list.md | output path for Behaviour.ps1 -Action List / python -m iba.app.lib.behaviour list |
+| behaviour | behaviour.list_report_path | outputs/configs/behaviour-rules-list.md | output path for Behaviour.ps1 -Action List / python -m iba.app.lib.behaviour list |
 | candidate | candidate.concept_delimiter_pattern | [:/] | a character in a candidate.load input word signalling more than one concept -- split into one sub-item per piece before validating, rather than reject or guess which half is right |
 | candidate | candidate.lemma_base_pattern | ^([HG]\d+)([A-Z]?)$ | capture group 1 = the base Strong's (sub-letters stripped) — the lemma key. The seed/stamp key on this. |
 | candidate | candidate.load_report_path | iba/app/reports/candidate-load.md | where candidate.load persists its per-run duplicates/exceptions report |
@@ -532,16 +532,16 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster | cluster.assign.word_optional_clusters | ['T2', 'T3'] | cluster codes exempt from the needs-a-word_registry-link rule (Q2.4.1 exception 1) -- researcher correction 2026-08-12: a word generates the verse, it does not need to own every strong later found in it; T3 is inherently not word-specific |
 | cluster | cluster.quality_report_path | iba/app/reports/cluster-assign.md | report path for cluster.validate, same convention as lexicon.quality_report_path |
 | configmaint | configmaint.auto_report | True | whether an approved configmaint.propose automatically chains to configmaint.report |
-| configmaint | configmaint.report_path | iba/app/config/CONFIG-REPORT.md | where configmaint.report writes the snapshot |
+| configmaint | configmaint.report_path | outputs/configs/CONFIG-REPORT.md | where configmaint.report writes the snapshot |
 | content_index | content_index.exclude_size_threshold_bytes | 52428800 | a .md file this size or larger (bytes; default 50MB) is excluded from content_index.rebuild/.refresh by default, unless it matches an active cfg_content_index_size_override pattern |
-| content_index | content_index.report_path | iba/app/reports/content-index-rebuild.md | where content_index.rebuild writes its summary report |
+| content_index | content_index.report_path | outputs/content_index/content-index-rebuild.md | where content_index.rebuild writes its summary report |
 | content_index | content_index.size_profile_report_path | iba/app/reports/content-index-size-profile.md | where content_index.size_profile writes its .md-file-size report |
 | database | database.bible_research.path | database/bible_research.db | bible_research.db's file path, project-root-relative (aka research_db in prose elsewhere -- that alias isn't repeated here, see governance.project_databases). Structured counterpart, escalation #723. |
 | database | database.iba.path | iba/app/db/iba.db | iba.db's file path, project-root-relative -- structured counterpart to governance.project_databases' prose, part of escalation #723's project_database enum + path settings. |
 | escalation | escalation.control_objectives | the escalation table manages all open items, irrespective of source or reason -- AI or researcher raise the escalation when discovered or raised, using the escalation module |  |
 | escalation | escalation.control_process | escalations are raised, processed, and completed using the escalation utility module |  |
-| escalation | escalation.history_report_dir | iba/app/reports |  |
-| escalation | escalation.list_report_path | iba/app/reports/escalation-list.md |  |
+| escalation | escalation.history_report_dir | outputs/escalation |  |
+| escalation | escalation.list_report_path | outputs/escalation/escalation-list.md |  |
 | governance | governance.User_Guide_scope | The user guide must reflect the latest state of all the tools and details on the use of the tools, geared towards user interaction for the entire project. |  |
 | governance | governance.behaviour_boundary.backup_recovery | Backup/recovery and data-durability discipline is classified under the `sqlite` behaviour class (database-interaction discipline), not a separate class -- ensuring a write is replayable/captured is a database-state concern. Content: cfg_behaviour_rule (sqlite, writes-must-be-replayable). | boundary decision -- backup/durability class placement, escalation #715 cycle 3 |
 | governance | governance.behaviour_boundary.git_commit | Git/commit discipline is classified under the `terminal` behaviour class (command/script-execution discipline), not a separate class -- committing and pushing is itself a terminal operation with a definable 'done' state. Content: cfg_behaviour_rule (terminal, git-commit-and-push-together). | boundary decision -- git/commit class placement, escalation #715 cycle 3 |

@@ -2789,3 +2789,55 @@ self-caught — recorded plainly, not smoothed over.
 
 **Files:** `cfg_setting` (row added, module `governance`); this file. No code change; `BUILD.md`/
 `USER-GUIDE.md` not applicable (no code, no user-facing command changed).
+
+## §59. `iba/app/reports/` discontinued as a filing destination, step 1: escalation reports repointed to `outputs/escalation` (2026-08-27, escalations #929/#736/#934/#935)
+
+**The trigger.** Escalation #929 (folder analysis) produced a full project-wide analytic-file
+census (`outputs/markdown/folder-analytic-file-management-analysis-v1/v2-20260827.md`) and, in the
+same session, the researcher applied a large-scale folder reorganisation directly in the working
+tree. Researcher's own framing: *"folders have been defined in various places in the configs, and
+there is no consistent way where the folders and file formats are defined... `iba/app/reports`
+should be discontinued, although I did not remove the folder in anticipation it may break some
+scripts... work through it step by step, not everything in one big swoop — let's start with
+repointing escalation files."* This reopened escalation **#736** (Main-Project / IBA Filing
+Consolidation, on-hold since 2026-08-21) — its own carried-forward finding, from the superseded
+**#863**, already named the underlying gap: only two narrow mechanisms
+(`report.version_on_regenerate`, `governance.oneoff_*`) govern any filing destination at all,
+both scoped to `iba/app/reports/`, with **zero project-wide `cfg_folder_purpose`-style table**
+naming where anything else belongs. `iba/docs/file-naming-and-location-governance-plan-v1-20260826.md`
+is the standing scope plan for that larger mechanism — not built here; this section is step 1 of
+the researcher's step-by-step sequencing, escalation-reports only.
+
+**The change** (two `cfg_setting` rows, `module=escalation`, each proposed via
+`Config-Maintenance.ps1 -Step Propose` and approved by the researcher as its own escalation
+(#934, #935) — then applied by re-running the same command with `-RunId`):
+
+- `escalation.list_report_path`: `iba/app/reports/escalation-list.md` → `outputs/escalation/escalation-list.md`
+- `escalation.history_report_dir`: `iba/app/reports` → `outputs/escalation`
+
+`cfg_report.archive_dir` for both `escalation.list`/`escalation.history` stays the literal
+`"archive"` (relative to whichever base path the setting above names) — no separate change needed;
+`reportkit.write_report()`'s versioning/archiving logic resolves it under the new base
+automatically, verified live (`Escalation.ps1 -Action List`/`-Action History` both now write under
+`outputs/escalation/`, confirmed by a fresh run after the config change).
+
+**Historical files migrated, not left stranded:** every existing escalation-list/escalation-history
+file under `iba/app/reports/` (3 live + 183 archived) moved into `outputs/escalation/` (44 live +
+188 archived, folded in against files already accumulated there by hand across prior sessions). 4
+same-name/different-content collisions from the two locations' independent version-numbering
+during the transition — resolved by suffixing the older copy `-from-iba-app-reports` rather than
+overwriting or discarding either side; nothing deleted. `iba/app/reports/` itself is **not**
+deleted (per the researcher's own instruction, in case any not-yet-found script still reads a
+plain path there) but now holds no escalation content.
+
+**Not done here, deliberately (see #736, still open):** `governance.oneoff_report_dir` and every
+other module still pointing at `iba/app/reports/` (behaviour, cluster, configmaint,
+content_index, lexicon, manifest, narrative, `report.*`, retention, table_export, validation) —
+untouched this round; each is its own step in the same sequence. The `cfg_folder_purpose` table
+the researcher endorsed in chat ("the idea... is really good") is also not built here — a second,
+larger design item once more individual folders' correct destinations are decided the same way.
+
+**Files:** `cfg_setting` (2 rows updated, module `escalation`); `outputs/escalation/**` (187 files
+migrated); `iba/app/reports/**` (emptied of escalation content); this file. No code change;
+`BUILD.md`/`USER-GUIDE.md` not applicable (no code, no user-facing command changed — the same
+`Escalation.ps1 -Action List/History` commands now resolve to a different path via config alone).
