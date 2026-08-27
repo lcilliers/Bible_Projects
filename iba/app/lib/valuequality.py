@@ -127,23 +127,75 @@ def find_enum_violations(conn) -> list[str]:
     Found 2026-07-21: candidate_seed.decision/.layer already declared enum.candidate_decision/
     enum.candidate_source in cfg_column, but nothing ever checked live values against them —
     confirmed by grep, the enums are referenced nowhere in the app's code. Clean today by luck
-    (2,013 candidate/73 rejected, no stray values), not by anything enforced."""
+    (2,013 candidate/73 rejected, no stray values), not by anything enforced.
+
+    FIXED 2026-08-26 (escalations #896/#900/#901/#902's own follow-on): this function only ever
+    queried `conn` directly for the target table's data, silently assuming every `expectation=
+    'enum.*'` column lives in the SAME database as `cfg_column`/`cfg_enum` themselves (iba.db) —
+    true for every case it was built/tested against (candidate_seed, an iba.db table), but
+    `cfg_column.database` can be `'bible_research'` too, and nothing here ever branched on it.
+    Crashed live the first time a `bible_research.db` column was actually wired
+    (`prose_section.status`, etc.): `sqlite3.OperationalError: no such table: prose_section` --
+    the table is real, just not IN the connection this function was handed. Opens a real
+    connection to the target database per `cfg_column.database` (cached, one connection per
+    database for the life of one call) instead of assuming `conn` covers everything. Also widened
+    the dead-row exclusion this same pass: it only ever recognised a column literally named
+    `deleted` (iba.db's own convention) — `bible_research.db`'s parallel convention,
+    `delete_flagged`, was silently never excluded, meaning a soft-deleted row there could still
+    trip a false violation. Checks for either, whichever the table actually has."""
     out: list[str] = []
-    for r in conn.execute(
-            "SELECT table_name, name, expectation FROM cfg_column "
-            "WHERE expectation LIKE 'enum.%'"):
-        table, column, enum_name = r["table_name"], r["name"], r["expectation"][len("enum."):]
-        valid = {v[0] for v in conn.execute(
-            "SELECT value FROM cfg_enum WHERE name=?", (enum_name,))}
-        if not valid:
-            out.append(f"value-quality: {table}.{column} declares expectation enum.{enum_name!r} "
-                       f"but that enum has no members in cfg_enum")
-            continue
-        live = "WHERE deleted=0" if conn.execute(
-            "SELECT 1 FROM pragma_table_info(?) WHERE name='deleted'", (table,)).fetchone() else ""
-        rows = conn.execute(f'SELECT DISTINCT "{column}" v FROM "{table}" {live}').fetchall()
-        bad = sorted({r2["v"] for r2 in rows if r2["v"] is not None and r2["v"] not in valid})
-        if bad:
-            out.append(f"value-quality: {table}.{column} has value(s) outside enum.{enum_name} "
-                       f"{sorted(valid)}: {bad}")
+    other_conns: dict[str, object] = {}
+
+    def _conn_for(database: str):
+        if database in (None, "iba"):
+            return conn
+        if database not in other_conns:
+            # Same lookup Cfg.database_path() does (database.<name>.path), read directly off the
+            # already-open iba.db connection rather than opening a second Cfg/connection just to
+            # make that one call -- this connection already has everything the lookup needs.
+            import json
+            import pathlib
+            import sqlite3 as _sqlite3
+            row = conn.execute(
+                "SELECT value FROM cfg_setting WHERE key=? AND inactive=0",
+                (f"database.{database}.path",)).fetchone()
+            if row is None:
+                raise KeyError(f"no database.{database}.path setting -- is {database!r} a "
+                               f"registered project_database?")
+            repo_root = pathlib.Path(conn.execute("PRAGMA database_list").fetchone()[2]
+                                     ).resolve().parent.parent.parent.parent
+            target_conn = _sqlite3.connect(repo_root / json.loads(row["value"]))
+            target_conn.row_factory = conn.row_factory
+            other_conns[database] = target_conn
+        return other_conns[database]
+
+    try:
+        for r in conn.execute(
+                "SELECT database, table_name, name, expectation FROM cfg_column "
+                "WHERE expectation LIKE 'enum.%'"):
+            database, table, column = r["database"], r["table_name"], r["name"]
+            enum_name = r["expectation"][len("enum."):]
+            valid = {v[0] for v in conn.execute(
+                "SELECT value FROM cfg_enum WHERE name=?", (enum_name,))}
+            if not valid:
+                out.append(f"value-quality: {table}.{column} declares expectation "
+                           f"enum.{enum_name!r} but that enum has no members in cfg_enum")
+                continue
+            target = _conn_for(database)
+            dead_col = None
+            for candidate in ("deleted", "delete_flagged"):
+                if target.execute(
+                        "SELECT 1 FROM pragma_table_info(?) WHERE name=?",
+                        (table, candidate)).fetchone():
+                    dead_col = candidate
+                    break
+            live = f"WHERE {dead_col}=0" if dead_col else ""
+            rows = target.execute(f'SELECT DISTINCT "{column}" v FROM "{table}" {live}').fetchall()
+            bad = sorted({r2["v"] for r2 in rows if r2["v"] is not None and r2["v"] not in valid})
+            if bad:
+                out.append(f"value-quality: {table}.{column} has value(s) outside "
+                           f"enum.{enum_name} {sorted(valid)}: {bad}")
+    finally:
+        for c in other_conns.values():
+            c.close()
     return out

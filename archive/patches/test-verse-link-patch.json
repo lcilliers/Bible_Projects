@@ -1,0 +1,22 @@
+{
+  "_patch_meta": {
+    "patch_id": "TEST-PROSE-VERSE-LINK-20260826",
+    "patch_type": "PROSE",
+    "produced_at": "2026-08-26T18:32:00Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Escalation #890 D4 test -- insert one prose_section_verse_link row against a real prose_section, throwaway test data."
+  },
+  "operations": [
+    {
+      "op_id": "TEST-VERSE-LINK-1",
+      "table": "prose_section_verse_link",
+      "operation": "insert",
+      "record": {
+        "prose_section_id": 27,
+        "verse_reference": "Ps 32:1",
+        "link_type": "discusses"
+      }
+    }
+  ]
+}

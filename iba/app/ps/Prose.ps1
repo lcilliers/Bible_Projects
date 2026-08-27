@@ -12,11 +12,18 @@
     -Step Flag           raise one wa_data_quality_flags instance (PROSE_QUALITY) — writes directly,
                           no prose-section reference (escalation #829 sec12.2 — sections a flag
                           touches are found by search at fix time, not stored from raise time)
+    -Step FlagFixPropose search active prose for -Find, write a review report of proposed
+                          -Replace text per matching section (no DB write, no patch) — angle b of
+                          the flag mechanism, escalation #890 D5
+    -Step FlagFixApply   after reviewing a FlagFixPropose report, generate a PROSE supersede patch
+                          for the approved -SectionIds (re-checks each section fresh; no DB write —
+                          apply via scripts/apply_session_patch.py, same as ImportChapter)
 
     CHAPTER_NAMES / BOOK_STAGE_MAP / search default limit / edit file dir are config
     (cfg_prose, escalation #829) — see Config-Maintenance.ps1 -Step Propose to change them.
 
-.PARAMETER Step         Extract | Search | ExportChapter | ImportChapter | Flag
+.PARAMETER Step         Extract | Search | ExportChapter | ImportChapter | Flag | FlagFixPropose |
+                         FlagFixApply
 .PARAMETER Book         book_label (Extract/ExportChapter)
 .PARAMETER Chapter      chapter number (Extract/ExportChapter, combine with -Book)
 .PARAMETER TypeId       single prose_section_type.id (ExportChapter, instead of -Book/-Chapter)
@@ -32,8 +39,12 @@
                         (found live, escalation #829 build testing, 2026-08-24 -- reproduced with
                         three separate binding syntaxes, all silently failed to set it).
 .PARAMETER Author       patch author, default 'researcher' (ImportChapter)
-.PARAMETER FlagCode      one of the live PROSE_QUALITY flag_code values (Flag)
+.PARAMETER FlagCode      one of the live PROSE_QUALITY flag_code values (Flag/FlagFixPropose/FlagFixApply)
 .PARAMETER Description   the issue, in prose — required (Flag)
+.PARAMETER Find          literal substring to search prose body for (FlagFixPropose)
+.PARAMETER Replace       literal replacement text (FlagFixPropose)
+.PARAMETER ProposalFile  path to a FlagFixPropose report .json (FlagFixApply)
+.PARAMETER SectionIds    comma-separated prose_section.id list, approved from the report (FlagFixApply)
 .PARAMETER Out          output path override (all steps)
 .PARAMETER Trace        Print every config read (IBA_TRACE).
 
@@ -47,11 +58,15 @@
     .\Prose.ps1 -Step ImportChapter -InputFile outputs/markdown/prose-edit-programme-chapter-1-20260821.md
 .EXAMPLE
     .\Prose.ps1 -Step Flag -FlagCode "Terminology change" -Description "Session A/B/C/D superseded by Base_data/Analysis/Publishing"
+.EXAMPLE
+    .\Prose.ps1 -Step FlagFixPropose -FlagCode "Terminology change" -Find "Session A/B/C/D" -Replace "Base_data/Analysis/Publishing"
+.EXAMPLE
+    .\Prose.ps1 -Step FlagFixApply -ProposalFile outputs/markdown/prose-flag-fix-proposal-20260826T120000Z.json -SectionIds 12,47 -FlagCode "Terminology change"
 #>
 
 [CmdletBinding()]
 param(
-    [Parameter(Mandatory = $true)] [ValidateSet('Extract', 'Search', 'ExportChapter', 'ImportChapter', 'Flag')] [string] $Step,
+    [Parameter(Mandatory = $true)] [ValidateSet('Extract', 'Search', 'ExportChapter', 'ImportChapter', 'Flag', 'FlagFixPropose', 'FlagFixApply')] [string] $Step,
     [string] $Book,
     [int] $Chapter,
     [int] $TypeId,
@@ -65,6 +80,10 @@ param(
     [string] $Author,
     [string] $FlagCode,
     [string] $Description,
+    [string] $Find,
+    [string] $Replace,
+    [string] $ProposalFile,
+    [string] $SectionIds,
     [string] $Out,
     [switch] $Trace
 )
@@ -84,7 +103,7 @@ if ($ready -ne '1') {
     exit 1
 }
 
-$stepMap = @{ Extract = 'prose.extract'; Search = 'prose.search'; ExportChapter = 'prose.export_chapter'; ImportChapter = 'prose.import_chapter'; Flag = 'prose.flag' }
+$stepMap = @{ Extract = 'prose.extract'; Search = 'prose.search'; ExportChapter = 'prose.export_chapter'; ImportChapter = 'prose.import_chapter'; Flag = 'prose.flag'; FlagFixPropose = 'prose.flag_fix_propose'; FlagFixApply = 'prose.flag_fix_apply' }
 $stepId  = $stepMap[$Step]
 $runId   = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-PROSE"
 
@@ -102,12 +121,18 @@ if ($InputFile) { $paramArgs += @('--param', "Input=$InputFile") }
 if ($Author) { $paramArgs += @('--param', "Author=$Author") }
 if ($FlagCode) { $paramArgs += @('--param', "FlagCode=$FlagCode") }
 if ($Description) { $paramArgs += @('--param', "Description=$Description") }
+if ($PSBoundParameters.ContainsKey('Find')) { $paramArgs += @('--param', "Find=$Find") }
+if ($PSBoundParameters.ContainsKey('Replace')) { $paramArgs += @('--param', "Replace=$Replace") }
+if ($ProposalFile) { $paramArgs += @('--param', "ProposalFile=$ProposalFile") }
+if ($SectionIds) { $paramArgs += @('--param', "SectionIds=$SectionIds") }
 if ($Out) { $paramArgs += @('--param', "Out=$Out") }
 
 if ($Step -eq 'Search' -and -not $Query) { Write-Host "Search needs -Query." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'ImportChapter' -and -not $InputFile) { Write-Host "ImportChapter needs -InputFile." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'ExportChapter' -and -not $TypeId -and -not $Book) { Write-Host "ExportChapter needs -TypeId or -Book (+ -Chapter)." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'Flag' -and (-not $FlagCode -or -not $Description)) { Write-Host "Flag needs -FlagCode and -Description." -ForegroundColor Yellow; exit 1 }
+if ($Step -eq 'FlagFixPropose' -and (-not $FlagCode -or -not $PSBoundParameters.ContainsKey('Find') -or -not $PSBoundParameters.ContainsKey('Replace'))) { Write-Host "FlagFixPropose needs -FlagCode, -Find and -Replace." -ForegroundColor Yellow; exit 1 }
+if ($Step -eq 'FlagFixApply' -and (-not $ProposalFile -or -not $SectionIds)) { Write-Host "FlagFixApply needs -ProposalFile and -SectionIds." -ForegroundColor Yellow; exit 1 }
 
 Write-IbaRunHeader -WorkPackage 'prose' -Step $stepId -RunId $runId
 

@@ -32,6 +32,13 @@ by the registered `prose` work package (`python -m iba.app.run prose --step pros
 `run_flag()` (escalation #829 sec12.4, angle a) is the one exception to "read-only against
 `prose_section`/`prose_section_type`" above — it writes directly to `wa_data_quality_flags`
 (`bible_research.db`), a different table family entirely, not gated behind a generated patch file.
+
+`run_flag_fix_propose()`/`run_flag_fix_apply()` (escalation #890 D5, angle b) add propose/apply on
+top of angle a: propose writes a review report (no DB write); apply re-checks each approved
+section fresh and generates a `PROSE` supersede patch, same shape/boundary as `run_import_chapter`
+— neither is a new exception to the read-only/patch-generating rule above. `run_import_chapter`
+also gained delete-detection (escalation #890 D3) — a section missing from an edit file now
+refuses the import, matching add/move's existing behaviour, instead of silently no-op'ing.
 """
 from __future__ import annotations
 
@@ -132,12 +139,19 @@ def chapter_names(cfg) -> dict:
 
 
 def book_stage_map(cfg) -> dict:
-    """`prose.book_stage_map` — KNOWN LIMITATION (escalation #829 D10, deferred by researcher
-    instruction 2026-08-24 to the prose edit stage, not fixed here): this is a stage-based map
-    (source_stage -> book), but 1 of 949 `prose_section_type` rows has a `source_stage`/`book_label`
-    pair that disagrees with it (id 78, `prog_purp_observations_framework` — `source_stage=
-    'programme'`, `book_label='Detail design'`). That row will be filed under "Programme" by this
-    function, not "Detail design"."""
+    """`prose.book_stage_map` — D10 RESOLVED (escalation #890 D6, 2026-08-26): this function's own
+    docstring previously claimed the stage-based map drives which book a `prose_section_type` row
+    is filed under, and that 1 of 949 rows (id 78, `prog_purp_observations_framework` —
+    `source_stage='programme'`, `book_label='Detail design'`) would be misfiled as a result. That
+    claim was checked against the actual call sites this round and found **false** — this function
+    is used ONLY to validate the `--book` CLI argument against the list of real book names
+    (`run_extract`'s `book not in book_stage_map(cfg)` check); the actual row filtering
+    (`extract_programme_prose`) already queries `WHERE book_label = ?` directly and always has.
+    Id 78 is therefore already correctly filed under 'Detail design' (its own `book_label`), not
+    'Programme' — there was no functional bug, only a stale comment describing a design that was
+    superseded by the time the code was actually written. Kept as the `--book` choice-list source
+    (still useful for CLI validation) — not dropped, since nothing else currently enumerates the 4
+    live book names."""
     return cfg.module_setting("cfg_prose", "prose.book_stage_map", _DEFAULT_BOOK_STAGE_MAP)
 
 
@@ -640,7 +654,15 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
             "<!-- Edit only the prose body below each chapter heading. Do not change markers. -->",
             "<!-- This file becomes permanent provenance once imported (its archived path is -->",
             "<!-- recorded as record_change_log.change_source, escalation #836) -- do not delete -->",
-            "<!-- by hand; the import step archives it automatically on success. -->", "",
+            "<!-- by hand; the import step archives it automatically on success. -->",
+            # Escalation #890 D3: the authoritative record of which section ids this export
+            # covered -- read back at import time to detect a whole block silently removed by
+            # hand. Deliberately NOT re-derived from whichever blocks happen to survive in the
+            # file (a section_type-code-based inference was tried and found live to blind itself
+            # exactly when the deleted block was the ONLY one of its type left in the file --
+            # its code then vanishes from the surviving blocks too, so nothing is left to detect
+            # against). This marker is fixed at export time and can't be fooled by any deletion.
+            f"<!-- PROSE_EXPORT_SECTION_IDS: {','.join(str(r['id']) for r in rows)} -->", "",
         ]
         for row in rows:
             lines.extend([
@@ -696,6 +718,36 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
     conn = open_db(cfg)
     operations = []
     try:
+        # Delete-detection (escalation #890 D3, resolving #784 sec6's open decision): a section
+        # silently vanishing from an edit file used to be a no-op -- the removed row's DB state
+        # came back completely untouched, no error, no trace. Add and move both already refuse
+        # outright (found live at #784); this makes delete symmetric with them, for the same
+        # reason -- an edit file is a round-trip artefact (export -> edit -> import), not an
+        # authoring surface for structural changes. Compares against the PROSE_EXPORT_SECTION_IDS
+        # marker `run_export_chapter` now writes -- a fixed record of the export's own original
+        # scope, not re-derived from whichever blocks happen to survive (an earlier
+        # section_type-code-based version of this check was tried and found live, by actual
+        # testing, to blind itself exactly when the deleted block was the only one of its type
+        # left in the file). Files exported before this fix carry no marker -- skipped, not
+        # crashed, with a visible note, rather than refusing every pre-existing edit file in
+        # flight.
+        export_ids_match = re.search(r"<!-- PROSE_EXPORT_SECTION_IDS: ([\d,]*) -->", text)
+        if export_ids_match:
+            expected_ids = {int(x) for x in export_ids_match.group(1).split(",") if x}
+            seen_ids = {int(b["SECTION_ID"]) for b in blocks if b.get("SECTION_ID")}
+            missing_ids = expected_ids - seen_ids
+            if missing_ids:
+                raise ValueError(
+                    f"{len(missing_ids)} section(s) {sorted(missing_ids)} present in this "
+                    f"file's original export are missing from it now -- refusing to import "
+                    f"(escalation #890 D3: a section vanishing from an edit file is refused, "
+                    f"matching add/move's existing behaviour, not silently ignored). If "
+                    f"retiring a section is genuinely intended, do that explicitly "
+                    f"(status='archived') rather than by omission from an edit file.")
+        else:
+            print(f"  [NOTE] {input_path} has no PROSE_EXPORT_SECTION_IDS marker (exported "
+                  f"before escalation #890's delete-detection fix) -- delete-detection skipped "
+                  f"for this file.")
         for block in blocks:
             required = ["SECTION_ID", "SECTION_TYPE", "BOOK", "SECTION", "CHAPTER_NO",
                        "CHAPTER_TITLE", "SORT_ORDER", "VERSION", "BODY"]
@@ -826,3 +878,166 @@ def run_flag(cfg, flag_code: str | None, description: str | None) -> dict:
                 "description": description}
     finally:
         conn.close()
+
+
+# ── flag-fix (angle b of escalation #829 sec12.4 / #890 D5 -- propose -> approve -> apply) ──
+
+def run_flag_fix_propose(cfg, flag_code: str | None, find: str | None, replace: str | None,
+                          out=None) -> dict:
+    """**Propose** step. Searches active `prose_section.body` for a literal `find` substring and
+    writes a review report (a `.json` file, not a DB write or a patch) listing every matching
+    section with its proposed replacement text. Read-only against the database — matches this
+    module's existing convention (every operation except `run_flag` is read-only or
+    patch-generating, never a direct write).
+
+    Deliberately does NOT write to `record_change_log` with `status='change_proposed'`, even
+    though that vocabulary already exists on the column — checked live before building (escalation
+    #890): `record_change_log.payload` has its own hard rule (`record-change-log-payload-is-
+    prior-state`) that it holds ONLY the content a change overwrote, never the resulting content.
+    A pending proposal's payload is the opposite — the content that WOULD result, not yet applied
+    — so writing it into that same field under a different status would make the field mean two
+    different things depending on status, silently breaking that rule for any code/report that
+    reads `payload` assuming "prior state" unconditionally. A plain review file avoids the
+    collision entirely and matches how every other approval step in this project works (a written
+    record the researcher reviews, then a separate explicit go-ahead) rather than inventing a new,
+    narrower meaning for an already-governed field.
+    """
+    if not flag_code:
+        raise ValueError("prose.flag_fix_propose needs --flag-code")
+    if not find:
+        raise ValueError("prose.flag_fix_propose needs --find")
+    if replace is None:
+        raise ValueError("prose.flag_fix_propose needs --replace (may be empty string)")
+    conn = open_db(cfg)
+    try:
+        flag_row = conn.execute(
+            "SELECT id FROM wa_quality_flag_types WHERE flag_group='PROSE_QUALITY' "
+            "AND flag_code=? AND delete_flagged=0", (flag_code,)).fetchone()
+        if not flag_row:
+            live_codes = [r["flag_code"] for r in conn.execute(
+                "SELECT flag_code FROM wa_quality_flag_types "
+                "WHERE flag_group='PROSE_QUALITY' AND delete_flagged=0 ORDER BY id")]
+            raise ValueError(
+                f"unknown --flag-code {flag_code!r} -- live PROSE_QUALITY codes: {live_codes}")
+        rows = conn.execute(
+            """SELECT ps.id, ps.heading, ps.body, pst.code AS section_type_code
+                 FROM prose_section ps
+                 JOIN prose_section_type pst ON pst.id = ps.section_type_id
+                WHERE COALESCE(ps.delete_flagged, 0) = 0 AND ps.body LIKE '%' || ? || '%'""",
+            (find,),
+        ).fetchall()
+        matches = []
+        for row in rows:
+            body = row["body"] or ""
+            matches.append({
+                "prose_section_id": row["id"],
+                "section_type_code": row["section_type_code"],
+                "heading": row["heading"],
+                "occurrences": body.count(find),
+                "proposed_body": body.replace(find, replace),
+            })
+    finally:
+        conn.close()
+    report = {
+        "generated_at": now_iso(), "flag_code": flag_code, "find": find, "replace": replace,
+        "match_count": len(matches), "matches": matches,
+    }
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    output = Path(out) if out else SEARCH_OUT_DIR / f"prose-flag-fix-proposal-{stamp}.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
+    return {"path": str(output), "match_count": len(matches)}
+
+
+def run_flag_fix_apply(cfg, proposal_file, section_ids: list[int], flag_code: str | None,
+                        out=None) -> dict:
+    """**Apply** step (run only after the researcher has reviewed the proposal report and chosen
+    which `section_ids` to act on — the "approve" stage of propose/approve/apply is that review,
+    done by reading the file, not a separate mechanised gate). Re-reads each approved section's
+    CURRENT body fresh from the database (never trusts the proposal file's cached snapshot, in
+    case the row changed between propose and apply) and generates a `PROSE` supersede patch —
+    the same, already-built-and-tested operation `run_import_chapter` already uses. Writes no DB
+    row itself; apply the reviewed patch with `scripts/apply_session_patch.py`, same boundary as
+    every other patch-generating operation in this module.
+
+    Does NOT close the `wa_data_quality_flags` row itself — that write is deliberately left as a
+    separate, explicit step taken once the generated patch has actually been applied (closing it
+    here, before the patch is live, would let a flag read "corrected" while the body text hasn't
+    actually changed yet if the patch is never applied)."""
+    if not section_ids:
+        raise ValueError("prose.flag_fix_apply needs --section-ids")
+    proposal_path = Path(proposal_file)
+    if not proposal_path.exists():
+        raise FileNotFoundError(f"proposal file not found: {proposal_path}")
+    proposal = json.loads(proposal_path.read_text(encoding="utf-8"))
+    find = proposal["find"]
+    replace = proposal["replace"]
+    proposed_ids = {m["prose_section_id"] for m in proposal["matches"]}
+    unknown_ids = [sid for sid in section_ids if sid not in proposed_ids]
+    if unknown_ids:
+        raise ValueError(
+            f"section id(s) {unknown_ids} are not in the proposal file {proposal_path} -- "
+            f"re-run prose.flag_fix_propose if the target set has changed")
+
+    conn = open_db(cfg)
+    operations = []
+    skipped = []
+    try:
+        for section_id in section_ids:
+            row = conn.execute(
+                "SELECT id, heading, body FROM prose_section "
+                "WHERE id = ? AND COALESCE(delete_flagged, 0) = 0", (section_id,)).fetchone()
+            if not row:
+                skipped.append({"id": section_id, "reason": "no longer an active row"})
+                continue
+            body = row["body"] or ""
+            if find not in body:
+                skipped.append({"id": section_id,
+                                 "reason": f"current body no longer contains {find!r} -- content "
+                                           f"changed since the proposal was generated"})
+                continue
+            operations.append({
+                "op_id": f"PROSE-{section_id}-FLAGFIX-SUPERSEDE",
+                "table": "prose_section",
+                "operation": "supersede",
+                "supersedes_id": section_id,
+                "record": {
+                    "body": body.replace(find, replace), "heading": row["heading"],
+                    "author": "claude_code", "status": "draft",
+                    "metadata_json": json.dumps({
+                        "flag_fix": "iba.app.lib.prosestore.run_flag_fix_apply",
+                        "flag_code": flag_code, "find": find, "replace": replace,
+                    }),
+                },
+            })
+    finally:
+        conn.close()
+
+    if not operations:
+        raise ValueError(
+            f"none of the requested section(s) are still fixable -- skipped: {skipped}")
+
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    patch_id = f"PATCH-{stamp}-PROSE-FLAGFIX-SUPERSEDE"
+    patch = {
+        "_patch_meta": {
+            "patch_id": patch_id, "patch_type": "PROSE", "produced_at": now_iso(),
+            "session_b_status": None, "researcher_approval": "PENDING",
+            "description": f"Flag-fix ({flag_code}): supersede {len(operations)} prose "
+                            f"section(s), {find!r} -> {replace!r}.",
+        },
+        "operations": operations,
+        "_patch_summary": {
+            "total_operations": len(operations), "prose_section_supersedes": len(operations),
+            "flag_code": flag_code, "skipped": skipped,
+            "post_apply_note": "Once this patch is applied, close the corresponding "
+                                "wa_data_quality_flags row(s) for this flag_code via a direct "
+                                "update (corrective_action/correction_date) -- not automated by "
+                                "this step, per this module's read-only/patch-generating "
+                                "convention (run_flag is the sole direct-write exception).",
+        },
+    }
+    output = Path(out) if out else PATCH_OUT_DIR / f"wa-prose-flag-fix-supersede-{stamp}.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
+    return {"path": str(output), "sections": len(operations), "skipped": skipped}

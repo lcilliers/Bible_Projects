@@ -2022,6 +2022,31 @@ def _apply_operation(conn, op: dict, counts: dict, meta: dict | None = None) -> 
         counts["prose_finding_link_inserted"] = counts.get("prose_finding_link_inserted", 0) + 1
         print(f"  {op_id}: prose_section_finding_link INSERT")
 
+    elif table == "prose_section_verse_link" and operation == "insert":
+        # Escalation #890 D4 -- the verse-grounding gap named at #784 sec13 ("the citation
+        # principle and the table design is there, the fact that it has not been enforced is
+        # part of the issue"). Loose verse_reference string (matches wa_verse_records.reference
+        # format, e.g. "Ps 32:1"), not an FK -- bible_research.db cannot FK to iba.db's own verse
+        # table, and there is no single "one row per verse" table inside bible_research.db itself
+        # to target either (verse_context/wa_verse_records are both keyed (reference, term), not
+        # (verse) alone). Same loose-reference shape already accepted for wa_data_quality_flags's
+        # strong_id/verse_id. Citations are supplied explicitly by the caller, never text-mined
+        # from body -- free-form citation extraction is unreliable and would silently under- or
+        # over-link (escalation #890 proposal sec4).
+        rec = op.get("record") or op.get("values") or {}
+        missing = [k for k in ("prose_section_id", "verse_reference") if rec.get(k) is None]
+        if missing:
+            raise ValueError(f"{op_id}: prose_section_verse_link insert missing {missing}")
+        conn.execute(
+            "INSERT OR IGNORE INTO prose_section_verse_link "
+            "(prose_section_id, verse_reference, link_type) VALUES (?, ?, ?)",
+            (rec["prose_section_id"], rec["verse_reference"],
+             rec.get("link_type", "discusses")),
+        )
+        counts["prose_verse_link_inserted"] = counts.get("prose_verse_link_inserted", 0) + 1
+        print(f"  {op_id}: prose_section_verse_link INSERT prose_section_id="
+              f"{rec['prose_section_id']} verse_reference={rec['verse_reference']!r}")
+
     # ── Pre-existing applicator gaps now closed (per CLAUDE.md §3.3) ──────────
 
     elif table == "wa_session_research_flags" and operation == "update":

@@ -2495,3 +2495,248 @@ flags) — escalation #835, on-hold.
 **Files:** `iba/app/migration/prose_first_layer_build_v1_20260824.py` (idempotent, confirmed by a
 clean re-run). Full design record: `iba/docs/prose-management-iba-first-layer-proposal-v1` through
 `-v9-20260824.md`. Test results: `BUILD.md` §177.
+
+---
+
+## §54. Prose add/edit operational rules — creation-mode processes, delete-detection, `prose_section_verse_link`, flag-fix angle (b), D10 resolved (2026-08-26, escalation #890)
+
+**What this closes.** #829/§53 built the mechanical/storage layer; #831/#832/#835 (raised
+2026-08-23/24 to design the operational layer on top of it) accumulated 38 combined versions of
+cross-referencing and audit findings without ever reaching a design, and were rejected outright
+2026-08-26 as unreadable from their own history — the researcher's own finding, confirmed by a
+fresh live-state check (`iba/app/reports/prose-management-current-state-20260826.md`) that #829's
+build was in fact complete and correct throughout; the escalation *metadata* had simply drifted
+from the real build state (#831 v5 cited #829 as "not yet approved/built" two days after it
+actually was). #890 was raised fresh against that clean state, not the rejected threads — one
+self-contained proposal (`iba/docs/prose-add-edit-rules-proposal-v1-20260826.md`), six decisions
+(D1–D6), approved as recommended, built and tested the same session.
+
+**D1 — no action.** `prose_section_finding_link`'s FK stays pointed at the legacy
+`wa_session_b_findings`, unchanged — not urgent until the `Findings` book has real content
+(3 types, still unpopulated).
+
+**D2 — `prose_section_type` creation gate.** New `cfg_behaviour_rule`
+`prose-section-type-creation-requires-researcher-instruction` — a discipline rule (not
+mechanically enforced, matching `prose-quality-flag-on-upstream-change`'s own precedent): a new
+`prose_section_type` row may only be inserted on explicit researcher instruction, since it is
+controlled vocabulary, not Claude-originated content.
+
+**D3 — edit-file delete-detection.** `run_import_chapter` used to let a section silently vanish
+from an edit file with zero trace (add/move already refused outright; delete was the one
+inconsistent case). Fixed by having `run_export_chapter` write a
+`PROSE_EXPORT_SECTION_IDS` marker recording the export's own original scope, checked back at
+import time. **A first implementation (comparing against every active row sharing a
+section_type code seen in the file) was built, tested live, and found broken by that same test**
+— deleting the *only* surviving block of a given type made that type's own code vanish from the
+comparison set too, silently defeating the check exactly in the case it most needed to catch. The
+marker-based fix has no such blind spot (it is fixed at export time, immune to whatever survives
+deletion) and was re-tested live to confirm the fix: exporting chapter 1, removing one section
+block, and re-importing now refuses outright (`"1 section(s) [4] present in this file's original
+export are missing from it now"`), file left in place, nothing written.
+
+**D4 — `prose_section_verse_link`.** New table (`bible_research.db`), catalogued in
+`cfg_table`/`cfg_column`/`cfg_write_grant`, resolving #784 §13's "verse is king" structural gap —
+distinct from (and more urgent than) the citation columns #832 correctly deferred to a
+not-yet-scoped future Concordance book. Composite PK
+`(prose_section_id, verse_reference, link_type)`, same shape as the precedent
+`prose_section_finding_link`/`prose_section_dimension_link` tables; `verse_reference` is a loose
+string (matching `wa_verse_records.reference`'s own format, e.g. `"Ps 32:1"`), not an FK —
+`bible_research.db` cannot FK to `iba.db`'s canonical verse table, and no single
+one-row-per-verse table exists inside `bible_research.db` itself to target instead (same
+constraint already accepted for `wa_data_quality_flags`). **`cfg_column.is_pk`: 0 on all four
+columns, even though the live table has a real 3-column composite PK** — found live during this
+build's own `configmaint.validate` run that the checker treats any table with `is_pk` COUNT>1 as
+a hard coherence error with no junction-table exemption; the two precedent link tables already
+sidestep this by cataloguing `is_pk=0` throughout despite their own composite PKs — matched
+exactly, not a new convention. New `apply_session_patch.py` operation
+(`prose_section_verse_link insert`), same shape as the finding/dimension link precedents. Citations
+are supplied explicitly by the writer, never text-mined from `body` — unreliable, would silently
+under- or over-link. Tested live: inserted one real row (`prose_section_id=27`, `"Ps 32:1"`)
+via a dry-run then live patch, confirmed written, then deleted as throwaway test data.
+
+**D5 — flag-fix angle (b).** `run_flag_fix_propose`/`run_flag_fix_apply` (new
+`prose.flag_fix_propose`/`prose.flag_fix_apply` dispatcher steps). Propose searches active
+`prose_section.body` for a literal `--find` substring and writes a review report (`.json`, no DB
+write) of every match with its proposed replacement. Apply re-reads each researcher-approved
+section fresh (never trusts the cached proposal, in case content changed) and generates a `PROSE`
+supersede patch — same operation `run_import_chapter` already uses, same
+patch-then-`apply_session_patch.py` boundary, no new write path. **Deliberately does not reuse
+`record_change_log.status='change_proposed'/'declined'`, even though that vocabulary already
+exists on the column** — checked live before building: `payload`'s own hard rule
+(`record-change-log-payload-is-prior-state`) says it holds only content a change overwrote, never
+the resulting content; a pending proposal's payload is the opposite. Reusing the field under a
+different status would make it mean two things depending on status, silently breaking that rule
+for any reader that assumes "prior state" unconditionally. A plain review file avoids the
+collision and matches how every other approval in this project works (a written record, reviewed,
+then an explicit go-ahead). Tested live against real content (17 sections genuinely contain
+"Session A", the Session A/B/C/D terminology case named at #829 §12.6): propose found all 17,
+apply generated a correct single-section patch, an unknown-id apply request was refused cleanly.
+Test patches discarded, no real prose content changed by this build.
+
+**D6 — D10 resolved as a non-issue, not a fix.** The `book_stage_map()` docstring and
+`cfg_prose.book_stage_map`'s own `use` text both claimed the stage-based map drove which book a
+`prose_section_type` row was filed under, with 1 row (id 78,
+`prog_purp_observations_framework`) consequently misfiled. **Checked against the actual call
+sites this round and found false** — `book_stage_map()` is used ONLY to validate the `--book` CLI
+argument against the list of real book names (`run_extract`); the real filter
+(`extract_programme_prose`) already queries `WHERE book_label = ?` directly and always has. Live
+extracts confirm id 78 was already correctly filed under `"Detail design"` (its own `book_label`),
+absent from `"Programme"` — there was no functional bug, only a stale claim carried forward since
+before the code that would have needed it was actually written. Docstring and config text
+corrected; no filtering logic changed, because none was needed.
+
+**Also found and fixed, unrelated to D1–D6:** `configmaint.validate` was blocked entirely (hard
+error, not this build's own advisory) by a pre-existing gap from earlier the same session —
+`cfg_escalation_requirement.check_kind='requires_prior_ready_for_approval_if_decision_required'`
+(escalation #851/#881/#882) had never been added to `cfg_enum` group
+`escalation_requirement_check_kind`. Added directly (one row); unrelated to #890's own scope,
+noted here rather than silently folded in.
+
+**Files:** `iba/app/migration/prose_add_edit_rules_build_v1_20260826.py` (idempotent, confirmed by
+a clean re-run); `iba/app/lib/prosestore.py`, `iba/app/handlers/prose.py`, `iba/app/ps/Prose.ps1`,
+`scripts/apply_session_patch.py` (modified). Full design + decisions:
+`iba/docs/prose-add-edit-rules-proposal-v1-20260826.md`. `configmaint.validate`: clean
+(structurally coherent; remaining advisories are pre-existing #829/#836 orphan-enum acceptances,
+unrelated to this build). Test results: `BUILD.md` §184.
+
+---
+
+## §55. Orphan `cfg_enum` findings (escalations #896/#900/#901/#902) closed — validator adjusted where the config was already enforced, code adjusted where it genuinely wasn't (2026-08-26)
+
+**Governing rule, researcher's own words (2026-08-26), correcting an earlier over-cautious framing
+this session had wrongly put to them as "your decision to make":** *"if the config is enforced but
+the validation does[n't] pick it up, then the validation must be adjusted; if the config is not
+used, then adjust the script to make use of it; if the config is useless then remove it. I cannot
+make a decision on how to treat each config, I am not the coder."* Applied directly, no further
+researcher decision needed — full comparison of all 7 findings against the actual check logic:
+`iba/app/reports/orphan-enum-findings-896-900-901-902-20260826.md`.
+
+**4 of the 7** (`prose_section_status`/`_author`, `record_change_log_change_type`/`_status`) were
+already `CHECK`-constrained live — genuinely enforced, the *validator* just couldn't see it.
+`cfg_column.expectation = 'enum.<name>'` wired on each backing column, the project's existing
+exemption/enforcement mechanism (same shape as `cfg_setting`'s `pattern:<key>`).
+
+**3 of the 7** (`prose_section_type.source_stage`/`.lifecycle_tag`/`.book_label`) had no
+enforcement anywhere — the *code/schema* was the actual gap. Real `CHECK` constraints added to
+`prose_section_type` (rebuilt via SQLite's create-new/copy/drop/rename technique — `ALTER TABLE
+ADD CONSTRAINT` doesn't exist), then the identical `expectation` wiring, so all 7 now carry the
+same real enforcement level, none second-class.
+
+**A genuine bug found and fixed one level deeper, not part of either branch's plan:**
+`lib/valuequality.py:find_enum_violations()` — the structural check `expectation` wiring activates
+— had only ever been built and tested against `iba.db`-resident columns (`candidate_seed`); it
+always queried the target table through the same connection `cfg_column` lives on, with no
+awareness that `cfg_column.database` can be `'bible_research'`. Crashed the moment anything real
+was wired onto a `bible_research.db` column (this build, the first ever). Fixed to open a real
+connection to the target database, resolved from `cfg_setting`, cached per call. A second, smaller
+gap fixed in the same pass: the dead-row exclusion only recognised `iba.db`'s own `deleted`
+convention, never `bible_research.db`'s `delete_flagged` — widened to check for either.
+
+**Verified live:** `configmaint.validate` now reports `condition: "ok"` — zero findings, not just
+zero hard errors (every run since #829's own build had reported "7 orphan config(s)" as a standing
+advisory). The new `CHECK` constraints actually reject a bad value (tested). `find_enum_violations`
+actually detects a real violation across databases, not just avoids crashing (tested against a
+synthetic narrowed enum, then restored). The 3 FTS sync triggers on `prose_section` survived the
+`prose_section_type` rebuild intact, confirmed by direct query.
+
+**Files:** `iba/app/migration/prose_orphan_enum_fix_v1_20260826.py`;
+`iba/app/lib/valuequality.py`. Full build record: `BUILD.md` §185.
+
+---
+
+## §56. `#768` closed — `_find_mismatched_pairing`'s reverse direction is a deliberate limitation, not a gap (2026-08-26)
+
+Open since 2026-08-21 (10 versions), the last live open item from `#8`'s escalation-module-rebuild
+thread. `_find_mismatched_pairing()` (D14/D15) only ever checked one direction — `from_id` set,
+`related_activity` blank. The reverse (`related_activity` set, `from_id` NULL) was proposed twice
+(v2, v8), 3 fix-shapes put to the researcher both times, never decided; researcher's v9/v10, twice,
+verbatim: *"Review aqnd fix these gaps"* — read as delegating the decision rather than asking for a
+4th restatement.
+
+**Recomputed against the live table (183 rows, not the 42-row snapshot v2 was measured against):**
+a blanket reverse check still flags ~20% (36/183) — confirms v2's finding wasn't stale. Narrowed to
+"an explicit `#NNN` reference with no matching `from_id`": 10 candidates — but **7 of the 10 cite
+multiple prior escalations** (`from_id` is a single `INTEGER` column, structurally incapable of
+representing them regardless of researcher intent). v2's hedging-language suppression, re-checked
+against its own original 3 example phrases (not the wider list a first pass of this analysis
+mistakenly used, including "spawned from" — which asserts a parent relationship rather than
+disclaiming one, caught before this closed, not after): suppresses none of the 10 on live data.
+
+**Decided: the reverse direction stays undetected, permanently, by design — documented in the
+function's own docstring with the numbers behind it**, not left ambiguous between "not built yet"
+and "decided against." Building it would create a false-positive backlog concentrated in the
+best-documented items (multi-source citations), rewarding thin `related_activity` text over
+thorough provenance narration. `_find_incoherent_link` (D15) already covers the one sub-case worth
+flagging — a one-way `#NNN` reference where a mutual one looks intended — without this problem,
+since it checks reciprocity rather than presence-of-`from_id`.
+
+No functional change — `_find_mismatched_pairing`'s actual logic is untouched, re-verified against
+a fresh `Escalation.ps1 -Action List` run (no regression). Only the docstring changed, from silent
+(reads as an oversight) to an explicit, evidenced decision.
+
+**Files:** `iba/app/lib/escalation.py`. Full record: `BUILD.md` §186.
+
+---
+
+## §57. D14 (`from_id`) and D15 (`related_activity`'s pairing/graph role) fully retired (2026-08-27, escalation #909)
+
+**Researcher's own decision, verbatim, after two live audits this session** (both raised by the
+researcher, not self-initiated) found the mechanism unreliable and never actually used:
+
+> *"I think I proved my point. the related-activity and fromid columns in the table is unreliable,
+> and does not serve a purpose, and is very confusing and distracting in the history report. I
+> dont think you can solve the problem, and I dont think it is worth it, because you in any case
+> are not using it. so scrap it."*
+
+**Evidence behind that finding, all live, not assumed:**
+- `iba/app/reports/related-activity-summary-mockup-20260826.md` — a proposed rollup-by-
+  `related_activity` for the list report was mocked up on request; exact-string grouping was found
+  to *fragment* the biggest real threads instead of revealing them (the escalation-module-rebuild
+  saga showed as "7 items" across one row when it was actually 17 across ten, because each
+  escalation wrote its own slightly different sentence).
+- `iba/app/reports/from-id-data-quality-audit-20260826.md` — 30% of the table (55/183) had never
+  even had `from_id` checked; of the 10 that DID name an explicit parent in their own
+  `related_activity`, 7 named MULTIPLE parents, which the single-valued `from_id` column
+  structurally cannot represent regardless of how carefully it's maintained.
+- Escalation #768 itself — 10 rounds, 6 days, to reach the conclusion (§56 above) that the
+  REVERSE-direction pairing check couldn't be built at all without the same structural problem.
+
+Taken together: the mechanism was unreliable in three independent ways (fragmented grouping,
+un-auditable `from_id`, an unbuildable second check), and — the researcher's own closing point —
+**never actually consulted by Claude in practice**, who works from the escalation's own
+comment/context/resolution text directly, not by walking a relationship graph.
+
+**Removed, not deprecated — the researcher's instruction named both columns together, not just the
+graph mechanism built on top of one of them; keeping the free-text field while dropping only its
+enforcement would have been exactly the "smoke and mirrors" the instruction explicitly rejected:**
+
+1. **Code** (`iba/app/lib/escalation.py`): `from_id`/`related_activity` removed from
+   `_REPLACE_COLS`/`_COLS`; `_NO_PARENT_SENTINEL` removed; the `exists`/`not_self` requirement
+   check-kinds removed (D14-only, no other field ever used them); `raise_()`/`raise_new()`/
+   `update()`/`correction()` no longer accept either parameter; the entire D15 detection layer
+   (`_link_graph`, `_find_cycles`, `_find_dangling`, `_find_mismatched_pairing`,
+   `_find_missing_link`, `_find_incoherent_link`) deleted outright, not left unreachable;
+   `write_list_report()` no longer groups by or renders `related_activity`, and drops the five D15
+   exception sections; `write_history_report()` no longer walks `from_id`/`related_activity` —
+   shows one item's own history only; the crash-wrapper's `_crash_from_id()` helper removed.
+2. **CLI** (`iba/app/ps/Escalation.ps1`): `-RelatedActivity`/`-FromId` removed from the param block
+   and all three write actions (Raise/Update/Correction); doc comments rewritten.
+3. **Schema** (`iba/app/migration/retire_from_id_related_activity_v1_20260827.py`, idempotent):
+   6 `cfg_escalation_requirement` rows deleted (the from_id/related_activity pairing rules); 6
+   `cfg_report_section` rows deleted (the 5 D15 exception sections + `escalation.history`'s
+   `downward_chain`); 4 `cfg_column` rows deleted; **`from_id`/`related_activity` columns
+   physically dropped** from both `escalation` and `escalation_history` via
+   `ALTER TABLE ... DROP COLUMN` (SQLite 3.35+) — not left as dead columns.
+4. **Docs**: `USER-GUIDE.md` §4 (multiple subsections) — every `-RelatedActivity`/`-FromId`
+   reference and the D15/D14 explanations removed or rewritten.
+
+**Verified live, not asserted:** pre-migration backup taken
+(`backups/iba_backup_20260827_*_RETIRE-FROM-ID-RELATED-ACTIVITY.db`); migration re-run twice,
+second run fully idempotent (every step reports "already dropped"/"0 row(s) deleted"); full
+round-trip smoke test post-retirement — `Raise` → `Update` → `List` → `History` → `Correction`,
+all succeeded, output confirmed clean of any `related_activity`/`from_id` trace;
+`configmaint.validate` reports `condition: "ok"` (zero findings) after.
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/ps/Escalation.ps1`,
+`iba/app/migration/retire_from_id_related_activity_v1_20260827.py`, `USER-GUIDE.md`. Full build
+record: `BUILD.md` §187.

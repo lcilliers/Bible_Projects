@@ -1,10 +1,10 @@
 -- database: c:\Bible_study_projects\iba\app\db\iba.db
 
 --list of work in progress escalations
-SELECT id, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution,related_activity, from_id FROM escalation 
+SELECT id, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution FROM escalation 
 WHERE state not in ('completed','withdraw','closed','on-hold','supersede');
 --all open escalations
-SELECT id, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution,related_activity, from_id FROM escalation 
+SELECT id, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution FROM escalation 
 WHERE state not in ('completed','withdraw','closed','supersede');
 --a specific escalation
 SELECT * FROM escalation 

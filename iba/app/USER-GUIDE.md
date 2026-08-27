@@ -244,12 +244,11 @@ Two real tables, not one:
   cumulative copy every version, which is wrong: a reader can't see what actually changed without
   diffing consecutive rows by hand). Envelope fields (`state`/`next_action`/`next_action_assigned_to`/
   `originator`/`answered_at`) are always present — they describe this transaction's outcome. Content
-  fields (`comment`/`context`/`resolution`/`tried`/`short_description`/`related_activity`) are
+  fields (`comment`/`context`/`resolution`/`tried`/`short_description`) are
   `NULL` unless THIS version actually set them.
 
 `-Action History -Id <id>` is how you actually see this — the full version-by-version story for
-one item (each row showing only what that version changed), plus the same for anything its
-`related_activity` text names or is named by (§4.6).
+one item (§4.6).
 
 ### 4.2 Two shapes, two vocabularies — deliberately not unified
 
@@ -296,13 +295,16 @@ state@reject, tried@Claude-revising-own-item) are config-driven too, in
 **`cfg_escalation_requirement`** — same reason: no longer a rule a reader has to find by reading
 Python. Register v9 (D26, 2026-08-21) added a mechanical guard: an Update carrying `-Comment`/
 `-Context`/`-Tried` is refused outright if the resulting state would still be `raised` — move it off
-`raised` first (`-State in-progress`, or via `-NextAction revise`/etc.). Also added (D14): `from_id`
-— names which item THIS one was spawned from (e.g. a documentation-task pointing back at the issue
-that produced it); enforced when set: references a real item, isn't self-referential, and is paired
-with `-RelatedActivity`. **Settable via `-FromId` on `-Action Raise` OR `-Action Update` alike** —
-mutable, not immutable-after-Raise (corrected 2026-08-21, escalation #763 — built immutable the
-first time, contradicting the researcher's own recorded instruction; a legacy or messy chain can be
-re-pointed/corrected on an already-raised item at any time).
+`raised` first (`-State in-progress`, or via `-NextAction revise`/etc.).
+
+**D14/D15 RETIRED 2026-08-27, escalation #909** — `from_id` (which item this one was spawned from)
+and `related_activity`'s pairing/graph role are both gone, columns physically dropped from
+`escalation`/`escalation_history`. Two live audits this session found the mechanism unreliable and
+never actually used, on top of escalation #768's own 10-round closure (`GOVERNANCE.md` §56).
+Researcher, verbatim: *"the related-activity and fromid columns in the table is unreliable, and
+does not serve a purpose, and is very confusing and distracting in the history report... so scrap
+it."* `-RelatedActivity`/`-FromId` no longer exist as parameters anywhere in this guide. Full
+record: `GOVERNANCE.md` §57.
 
 **Two-stage approval now actually enforces separation of duties — but as an AUTHORITY check, not an
 identity check** (register v9, D25, 2026-08-21, correcting a shipped defect): `next_action=approved`
@@ -398,18 +400,16 @@ DUPLICATE: ...`), logged by the engine, not a blocking question.
 **List/History now dispatch through `run.py`** (register v9, D4/D16/D23, 2026-08-21) — work package
 `escalation-reporting`, steps `escalation.list`/`escalation.history` — instead of `Escalation.ps1`
 calling the Python module directly, matching every other report script's pattern. `-Action List`
-also now renders five exception sections (D15) computed over the whole `from_id`/`related_activity`
-graph: Cycle, Dangling, Mismatched pairing, Missing link, Incoherent link.
+no longer renders the D15 exception sections (Cycle/Dangling/Mismatched pairing/Missing link/
+Incoherent link) — retired along with `from_id`/`related_activity` themselves, escalation #909.
 
 ```powershell
-# see what's open, WITH FULL HISTORY inline underneath each item (not just current state), plus
-# the D15 exception sections -- writes escalation.list_report_path (default
-# iba/app/reports/escalation-list.md, archived on regenerate):
+# see what's open, WITH FULL HISTORY inline underneath each item (not just current state) --
+# writes escalation.list_report_path (default iba/app/reports/escalation-list.md, archived on
+# regenerate):
 iba\app\ps\Escalation.ps1 -Action List
 
-# deep-history report for ONE item -- its full version-by-version story, its downward chain
-# (from_id children, D14), plus the same for every item its related_activity text names or is
-# named by (e.g. a wrong-title correction, §4.7):
+# deep-history report for ONE item -- its full version-by-version story:
 iba\app\ps\Escalation.ps1 -Action History -Id 741
 
 # answer a DISPATCHER-TIED pause (config proposal, quality-check finding, crash, report-stop) --
@@ -424,8 +424,8 @@ iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Re
 # to issue under decision_required, escalation #872, 2026-08-26).
 # -Source (default 'researcher'), -Type (default task; task|run_error|issue|notice|config|note --
 # 'notice' closes on arrival, D12; 'note' is a plain searchable category, no special behaviour),
-# -AssignedTo (default Claude), -RelatedActivity (free text, optional):
-iba\app\ps\Escalation.ps1 -Action Raise -Question "Short Title, <=60 Chars" -Comment "what this item is about, and any detail" -ResolutionKind DecisionRequired|SelfCorrectable -AnsweredBy Claude|Researcher [-Type task|run_error|issue|notice|config|note] [-AssignedTo Claude] [-RelatedActivity "..."]
+# -AssignedTo (default Claude):
+iba\app\ps\Escalation.ps1 -Action Raise -Question "Short Title, <=60 Chars" -Comment "what this item is about, and any detail" -ResolutionKind DecisionRequired|SelfCorrectable -AnsweredBy Claude|Researcher [-Type task|run_error|issue|notice|config|note] [-AssignedTo Claude]
 # prints the new id -- update it with -Action Update
 
 # close a SELF-CORRECTABLE item you already fixed -- no approval step, the design was already
@@ -443,7 +443,7 @@ iba\app\ps\Escalation.ps1 -Action EscalateToDecision -Id <id> -Tried "what was a
 # `escalation` -- pass only the increment, it's appended onto the existing text -- but
 # `escalation_history` stores only that increment for this version, not the running total.
 # -AnsweredBy is REQUIRED:
-iba\app\ps\Escalation.ps1 -Action Update -Id <id> -AnsweredBy Claude|Researcher [-NextAction ready_for_approval|approved|reject|revise|noted|review] [-AssignedTo Claude|Researcher] [-State on-hold|in-progress|closed|withdraw|supersede] [-Resolution "..."] [-Tried "..."] [-RelatedActivity "..."] [-Comment "..."] [-Context "..."]
+iba\app\ps\Escalation.ps1 -Action Update -Id <id> -AnsweredBy Claude|Researcher [-NextAction ready_for_approval|approved|reject|revise|noted|review] [-AssignedTo Claude|Researcher] [-State on-hold|in-progress|closed|withdraw|supersede] [-Resolution "..."] [-Tried "..."] [-Comment "..."] [-Context "..."]
 # -Comment must be passed with the -Comment flag, never as a bare trailing argument -- positional
 # binding is off, so an unflagged argument errors instead of silently landing on the wrong parameter.
 
@@ -454,7 +454,7 @@ iba\app\ps\Escalation.ps1 -Action Update -Id <id> -AnsweredBy Claude|Researcher 
 # after Raise, §4.7). state/next_action are taken EXACTLY as given, never auto-derived via
 # cfg_escalation_transition -- if you omit them, the item's current state/assignment carry forward
 # unchanged, which is the normal case: most corrections fix content, not workflow position.
-iba\app\ps\Escalation.ps1 -Action Correction -Id <id> -AnsweredBy Claude|Researcher [-ShortDescription "corrected title, <=60 chars"] [-NextAction ...] [-AssignedTo Claude|Researcher] [-State raised|in-progress|on-hold|re-assigned|closed|withdraw|supersede|completed] [-Resolution "..."] [-Tried "..."] [-RelatedActivity "..."] [-FromId <id-or--1>] [-Comment "..."] [-Context "..."]
+iba\app\ps\Escalation.ps1 -Action Correction -Id <id> -AnsweredBy Claude|Researcher [-ShortDescription "corrected title, <=60 chars"] [-NextAction ...] [-AssignedTo Claude|Researcher] [-State raised|in-progress|on-hold|re-assigned|closed|withdraw|supersede|completed] [-Resolution "..."] [-Tried "..."] [-Comment "..."] [-Context "..."]
 ```
 
 `-Action Raise`'s `-Question`/`-Comment` are stored **verbatim** — they don't get reworded or have
@@ -486,18 +486,10 @@ with a corrected fact recorded on top (a new version, old versions untouched).
 
 Superseding is a DIFFERENT situation — not a correction, a replacement: the item needs to be
 replaced by newer, better-scoped work, not just have its title fixed. Raise a new item with the
-correct title and `-RelatedActivity` naming the old one ("supersedes #900"), then update the OLD
-item with `-NextAction reject -State supersede -Comment "superseded by #901 — <why>"`. A
-`-Action History` request on either id then shows both items together, in full, as one thread
-(§4.1).
-
-**`from_id` sentinel** (escalation #773, 2026-08-21): a `related_activity`-carrying item that was
-audited and genuinely has no discoverable single spawn parent gets `-FromId -1`, not left `NULL` —
-`-1` is deliberately non-falsy so every check that reads `from_id` (the D15 exception sections,
-the pairing requirement) can tell "checked, none" apart from "never checked." No real escalation id
-is negative, so it can never collide with a genuine reference. `-1` is set via `-Action Correction`
-in practice, since most items needing this audit are already closed/completed by the time the gap
-is found.
+correct title, naming the old one in `-Comment`/`-Context` ("supersedes #900"), then update the OLD
+item with `-NextAction reject -State supersede -Comment "superseded by #901 — <why>"`. Check each
+item's own `-Action History` separately (escalation #909, 2026-08-27: they're no longer linked
+into one combined thread — see the retirement note above).
 
 ---
 
@@ -1276,15 +1268,16 @@ iba\app\ps\Prose.ps1 -Step Search -Query "grace" [-Book Programme] [-Limit 50] [
 iba\app\ps\Prose.ps1 -Step ExportChapter -Book "Detail design" -Chapter 1
 iba\app\ps\Prose.ps1 -Step ImportChapter -InputFile outputs\markdown\prose-edits\<edited-file>.md
 iba\app\ps\Prose.ps1 -Step Flag -FlagCode "Terminology change" -Description "..."
+iba\app\ps\Prose.ps1 -Step FlagFixPropose -FlagCode "Terminology change" -Find "old text" -Replace "new text"
+iba\app\ps\Prose.ps1 -Step FlagFixApply -ProposalFile <report from FlagFixPropose>.json -SectionIds 12,47 -FlagCode "Terminology change"
 ```
 
 **The 4 live books:** `Programme` / `Detail design` / `Findings` / `Essays` — a 5th, `Concordance`,
 is not yet built (out of scope, `iba/docs/prose-management-iba-first-layer-proposal-v9-20260824.md`
-§7). Which `prose_section_type.source_stage` values belong to which book is `cfg_prose`'s
-`prose.book_stage_map` key — **known limitation (escalation #829 D10, deferred to a future prose-edit
-stage):** 1 of 949 rows (`prog_purp_observations_framework`) has a `source_stage`/`book_label` pair
-this stage-based map doesn't correctly resolve; not fixed in this build, by direct researcher
-instruction.
+§7). `cfg_prose`'s `prose.book_stage_map` key validates the `--Book` argument's choice list only —
+**D10 RESOLVED (escalation #890, 2026-08-26):** which book a row actually lands in is decided by
+`prose_section_type.book_label` directly, always was; a prior claim that the stage-based map itself
+misfiled 1 of 949 rows was checked against the real code and found false. See §13e.
 
 **Extract/Search/ExportChapter/ImportChapter are read-only against the DB** — `ImportChapter`
 generates a `PROSE` supersede patch file, applied separately via `scripts/apply_session_patch.py`
@@ -1311,6 +1304,45 @@ enum groups, `GOVERNANCE.md` §52.6); `cfg_write_grant` (`apply_session_patch`�
 
 Full design record: `iba/docs/prose-management-iba-first-layer-proposal-v9-20260824.md`. Build
 record: `BUILD.md` §177.
+
+## 13e. Prose add/edit operational rules (added 2026-08-26, escalation #890)
+
+Builds on §13d — the storage/dispatcher layer there is unchanged; this adds the operational rules
+around creating and editing prose, and the flag-fix "angle b" workflow.
+
+**New `prose_section_type` rows are researcher-gated, not code-gated.** Discipline rule
+(`cfg_behaviour_rule` `prose-section-type-creation-requires-researcher-instruction`, not
+mechanically enforced): a new type may only be inserted on your explicit instruction — it's
+controlled vocabulary, the same standard already applied to `cfg_enum`.
+
+**`ImportChapter` now refuses if a section silently vanished from an edit file** — matching
+`add`/`move`, which already refused. If you deliberately mean to retire a section, do that
+explicitly (`status='archived'`) rather than by deleting its block from an edit file.
+
+**Verse citations — `prose.verse_link`.** `prose_section_verse_link` (new table) records which
+verse(s) a section discusses, as an explicit, patch-supplied `verse_reference` string (e.g.
+`"Ps 32:1"`, matching how verses are referenced elsewhere in this DB) — not text-mined from body.
+No dispatcher step of its own yet (write it via an `apply_session_patch.py` patch,
+`table: "prose_section_verse_link", operation: "insert"`, same shape as the pre-existing
+finding/dimension link operations).
+
+**Flag-fix, angle (b) — `FlagFixPropose` / `FlagFixApply`.** Once a `PROSE_QUALITY` flag exists
+(raised via `-Step Flag`, angle a):
+
+1. `-Step FlagFixPropose -FlagCode <code> -Find <text> -Replace <text>` — searches every active
+   section for a literal match, writes a review report (`.json`) listing every hit with its
+   proposed replacement. No DB write, no patch yet.
+2. Read the report, pick which `prose_section_id`s to actually fix.
+3. `-Step FlagFixApply -ProposalFile <report> -SectionIds <comma-list> -FlagCode <code>` —
+   re-checks each chosen section's *current* body (not the cached report) and generates a `PROSE`
+   supersede patch, same shape as `ImportChapter`'s. Apply it the normal way,
+   `scripts/apply_session_patch.py`.
+4. Once that patch is actually applied, close the flag yourself — `corrective_action`/
+   `correction_date` on the `wa_data_quality_flags` row. Not automated (deliberately — closing it
+   before the patch is confirmed applied would let a flag read "fixed" before anything changed).
+
+Full design + the 6 decisions behind this: `iba/docs/prose-add-edit-rules-proposal-v1-20260826.md`.
+Build record: `BUILD.md` §184.
 
 ---
 

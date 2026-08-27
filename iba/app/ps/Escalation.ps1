@@ -56,16 +56,23 @@
     report-stop, never resumes inline — per the researcher's own framing: "when a build has
     validation or other stoppages for clarification it should be terminal."
 
+    **D14/D15 RETIRED 2026-08-27, escalation #909.** `from_id` and `related_activity` — the
+    "which item this one was spawned from" column and its free-text pairing/graph companion — are
+    both gone: not deprecated, removed. Two live audits this session found the mechanism
+    unreliable and never actually used
+    (`iba/app/reports/related-activity-summary-mockup-20260826.md`,
+    `iba/app/reports/from-id-data-quality-audit-20260826.md`), on top of escalation #768's own
+    10-round closure (`GOVERNANCE.md` §56). Researcher, verbatim: *"the related-activity and
+    fromid columns in the table is unreliable, and does not serve a purpose, and is very confusing
+    and distracting in the history report... so scrap it."* `-RelatedActivity`/`-FromId` no longer
+    exist as parameters anywhere below; the List report's D15 exception sections (cycle/dangling/
+    mismatched pairing/missing link/incoherent link) and the History report's relationship-walk
+    are both gone too. Full record: `GOVERNANCE.md` §57.
+
     **Register v9 build, 2026-08-21** (`escalation-design-plan-v5-20260821.md` +
     `escalation-design-decision-register-v9-20260821.md`): List/History now dispatch through
     run.py (work package 'escalation-reporting') instead of calling the module directly, matching
-    every other report script (D4/D16/D23). `from_id` (D14) — which item this one was spawned from
-    — is MUTABLE, settable via -FromId on Raise or Update alike (corrected 2026-08-21, escalation
-    #763 — built immutable-after-Raise the first time, contradicting the researcher's own recorded
-    instruction, #6 v5: "not immutable-after-raise ... can be re-pointed/corrected later"). Same
-    pairing rule either way: setting -FromId requires -RelatedActivity too (naming what the
-    relationship documents), checked whether it's the current value or one you're also setting this
-    call. `-NextAction ready_for_approval` now resolves explicitly
+    every other report script (D4/D16/D23). `-NextAction ready_for_approval` now resolves explicitly
     (D27) rather than depending on -AssignedTo happening to change. Two-stage approval (`approved`)
     is now an AUTHORITY check, not identity (D25) — the party ready_for_approval assigned it to may
     approve, even if that's the same party who set ready_for_approval. `-Type notice` closes on
@@ -73,13 +80,10 @@
     refused if the resulting state would still be 'raised' (D26) — move it off raised first.
 
     -Action List        writes every open escalation, WITH FULL HISTORY INLINE (plan v3 §5a — the
-                        old report only ever showed current state), plus the D15 exception
-                        sections (cycle/dangling/mismatched pairing/missing link/incoherent link),
-                        to escalation.list_report_path (default
-                        iba/app/reports/escalation-list.md; archived on regenerate).
-    -Action History      deep-history report for ONE item (plan v3 §5b) — its full history, its
-                        downward chain (from_id children, D14), plus the same for every item its
-                        related_activity text names or is named by. Needs -Id.
+                        old report only ever showed current state), to escalation.list_report_path
+                        (default iba/app/reports/escalation-list.md; archived on regenerate).
+    -Action History      deep-history report for ONE item (plan v3 §5b) — its own full history.
+                        Needs -Id.
     -Action AnswerRun    answer a DISPATCHER-TIED escalation (config proposal, quality-check
                         finding, crash, report-stop). Needs -RunId and -Decision (Approve|Reject|
                         Revise|Hold|Noted); -Comment required with Revise, optional otherwise.
@@ -92,10 +96,7 @@
                         decision_required (escalation #872, 2026-08-26). -Source (default
                         'researcher'), -Type (default task; 'notice' closes on arrival, D12; 'note'
                         added 2026-08-26 for searchability, no special close behaviour, #872),
-                        -AssignedTo (default Claude),
-                        -RelatedActivity (free text, optional), -FromId (D14 — the item this one
-                        was spawned from; if set, -RelatedActivity becomes required too, naming
-                        what the relationship documents) optional. Prints the new id — update it
+                        -AssignedTo (default Claude). Prints the new id — update it
                         with -Action Update.
     -Action ResolveSelfCorrectable
                         close out a `self_correctable` item you already fixed — no approval step,
@@ -124,8 +125,7 @@
                                                                         lost to a same-call
                                                                         reassignment)
                           -AssignedTo changed, nothing else matches -> re-assigned
-                        Needs -Id. -FromId re-points from_id (D14, mutable — #763), pairs with
-                        -RelatedActivity same as at Raise. -Comment/-Context are CUMULATIVE in
+                        Needs -Id. -Comment/-Context are CUMULATIVE in
                         `escalation` — what you pass
                         is the increment, appended onto the existing text — but `escalation_history`
                         now stores only that increment for this version, not the running total.
@@ -145,10 +145,7 @@
                         §4.7/below). state/next_action are taken EXACTLY as given, never
                         auto-derived via cfg_escalation_transition — omit them and the item's
                         current state/assignment carry forward unchanged, the normal case (most
-                        corrections fix content, not workflow position). -FromId still checks
-                        exists/not_self, but accepts -1 (escalation #773 — "checked, no
-                        discoverable spawn parent", deliberately non-falsy so it reads as genuinely
-                        set, not the same as never having checked).
+                        corrections fix content, not workflow position).
 
 .EXAMPLE
     .\Escalation.ps1 -Action List
@@ -191,7 +188,7 @@ param(
     [string] $Tried,
     [ValidateSet('Claude', 'Researcher')] [string] $AnsweredBy,
     [ValidateSet('Claude', 'Researcher')] [string] $AssignedTo,
-    [ValidateSet('task', 'run_error', 'issue', 'notice', 'config')] [string] $Type = 'task',
+    [ValidateSet('task', 'run_error', 'issue', 'notice', 'config', 'note')] [string] $Type = 'task',
     [string] $Source = 'researcher',
     # -Action Correction (escalation #774) can set state to ANY value, not just the 5 Update
     # allows explicitly (raised/re-assigned/completed are normally system-derived for Update, but
@@ -199,8 +196,6 @@ param(
     # parallel duplicate parameter, since Update's own explicit-state precedence (D-fix #762) is
     # unaffected either way.
     [ValidateSet('raised', 'in-progress', 'on-hold', 're-assigned', 'closed', 'withdraw', 'supersede', 'completed')] [string] $State,
-    [string] $RelatedActivity,
-    [int] $FromId,
     [string] $ShortDescription,
     # escalation #798/#799: required on Raise (cfg_behaviour_rule
     # 'decision-points-are-terminal-not-inline'). DecisionRequired/SelfCorrectable map to the
@@ -296,9 +291,7 @@ switch ($Action) {
         $flags = @("--source=$Source", "--type=$($Type.ToLower())", "--comment=$Comment",
                   "--originator=$AnsweredBy", "--resolution-kind=$($kindMap[$ResolutionKind])")
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
-        if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Context) { $flags += "--context=$Context" }
-        if ($FromId) { $flags += "--from-id=$FromId" }
         python -m iba.app.lib.escalation raise @flags $Question
     }
     'ResolveSelfCorrectable' {
@@ -346,9 +339,7 @@ switch ($Action) {
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($State) { $flags += "--state=$($State.ToLower())" }
         if ($Resolution) { $flags += "--resolution=$Resolution" }
-        if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Tried) { $flags += "--tried=$Tried" }
-        if ($FromId) { $flags += "--from-id=$FromId" }
         if ($Context) { $flags += "--context=$Context" }
         if ($Comment) {
             python -m iba.app.lib.escalation update $Id @flags $Comment
@@ -372,9 +363,7 @@ switch ($Action) {
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($State) { $flags += "--state=$($State.ToLower())" }
         if ($Resolution) { $flags += "--resolution=$Resolution" }
-        if ($RelatedActivity) { $flags += "--related-activity=$RelatedActivity" }
         if ($Tried) { $flags += "--tried=$Tried" }
-        if ($FromId) { $flags += "--from-id=$FromId" }
         if ($Context) { $flags += "--context=$Context" }
         if ($Comment) {
             python -m iba.app.lib.escalation correction $Id @flags $Comment
