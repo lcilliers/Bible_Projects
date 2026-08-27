@@ -10388,3 +10388,98 @@ for the researcher's verbatim instruction and the evidence behind it (the two li
 **Files:** `iba/app/lib/escalation.py`, `iba/app/ps/Escalation.ps1` (modified);
 `iba/app/migration/retire_from_id_related_activity_v1_20260827.py` (new, idempotent, registered in
 `cfg_utility`); `USER-GUIDE.md` (modified). `GOVERNANCE.md` §57.
+
+## 188. `GOVERNANCE.md` §3A corrected — it still taught the retired `AnswerRun` flow for
+`decision_required` items (2026-08-27, escalation #917)
+
+**What happened.** During the Programme Prose Realignment work (#739/#786, chapters 4–6), three
+`configmaint.propose` proposals (`cfg_prose_chapter.status` → `reviewed`) paused as
+`decision_required`, exactly as designed. Reporting this back, I followed §3A's own worked example
+literally and told the researcher to answer via `Escalation.ps1 -Action AnswerRun -RunId <run_id>
+-Decision Approve`, and surfaced only the raw `run_id` string, not the escalation's own numeric id.
+Both were wrong: §48/§49 (2026-08-22, escalations #798/#799/#795) had already closed
+`decision_required` items off from `AnswerRun` entirely — the only route is `Update -NextAction
+ready_for_approval` then `approved` (or reject/revise), addressed by the escalation's own id. §3A
+was never updated when §48/§49 landed; it is the one section written as a living quick-reference
+rather than a dated increment, so the append-only discipline that keeps every other section
+accurate as of its own date did not apply to it. The researcher rejected both the reference and the
+mechanism (rightly) and the three proposals (`#912`–`#914`) as withdrawn.
+
+**Fixed, same unit of work:** `GOVERNANCE.md` §3A rewritten in place with a dated correction block
+(not a silent rewrite) naming the real path, and stating explicitly that `AnswerRun` is
+`self_correctable`-only. Two memory files that still described the pre-#795 flow
+(`feedback_iba_preapproved_instructions_self_approve_configmaint`,
+`project_iba_configmaint_escalation_self_answered_anomaly`) corrected with the same pointer.
+Escalation #917 raised and resolved self-correctable in the same pass (found + fixed, no design
+judgement needed — the correct mechanism was already built and documented at §48/§49, just not
+propagated to §3A). Two run-error escalations auto-raised by my own CLI mistakes while fixing this
+(`#915`: wrong enum casing calling the python module directly instead of the `Escalation.ps1`
+wrapper; `#916`: a title-shaped `-Question` limit tripped by a too-long string) were cleared the
+same session.
+
+**Files:** `GOVERNANCE.md` §3A (modified); two memory files under
+`C:\Users\lerouxc\.claude\projects\...\memory\` (modified, outside this repo).
+
+## 189. `cfg_prose_chapter` removed — it was workflow data in a rule table; `prose_section.status`
++ a new `Prose.ps1 -Step SetStatus` is the live replacement (2026-08-27, escalation #918)
+
+**The researcher's diagnosis, verbatim:** *"I have a problem that the status of a prose chapter is
+in configs. Are you not using the configs in this case for data, rather than policies and rules...
+cfg_prose_chapter is redundant. it must be removed. The prose_section [table] have a status column
+with defined statuses. this should satisfy the prose_section.status destination which should be
+updatable with a separate command via the prose method. I want to be able to set, or reset this
+status when I completed reading through a section."* Confirmed live before building anything:
+`cfg_prose_chapter`'s own `cfg_table.use` text already called itself "the index, not a copy" —  a
+data index, self-described, sitting in the `cfg_*` series anyway. `prose_section_type.chapter_no`
+already derived "which chapters exist" with no separate table needed; `prose_section.status`
+(`cfg_enum prose_section_status`: `draft`/`in_review`/`approved`/`archived`) already carried
+exactly this kind of lifecycle state, at the finer section grain. No command existed to set it
+directly, though — only `approve` (one-directional, always to `approved`) and `supersede` (requires
+a full body rewrite) touched `status` at all.
+
+**Built:**
+
+- `iba/app/migration/retire_cfg_prose_chapter_v1_20260827.py` — drops `cfg_prose_chapter`; rebuilds
+  `cfg_prose_concept` without its stale `REFERENCES cfg_prose_chapter(chapter)` clause (2 rows
+  preserved, `chapter` now a plain int against `prose_section_type.chapter_no`); removes its
+  `cfg_table`/`cfg_column`/`cfg_write_grant`/`cfg_enum` (`prose_chapter_status`) rows; updates
+  `governance.prose_canonical_authority` to stop citing the removed table and name the live
+  mechanism instead. Direct DB writes throughout, mirroring how `bootstrap_prose_authority_v1_
+  20260818.py` created these rows directly — schema bootstrap/retirement is migration-script
+  territory, `configmaint.propose` is for ongoing row-level rule changes during normal operation.
+- `iba/app/handlers/configmaint.py` — `_validate_live`'s dead `cfg_prose_chapter.status` vs.
+  `enum.prose_chapter_status` check (the thing that broke first, loudly, on the next `.validate`
+  run) removed, not patched around; the comment left in its place says why no replacement check
+  lives there (this validator never `ATTACH`es `bible_research.db`, so it cannot see
+  `prose_section.status` directly — a pre-existing, named limitation, not something to paper over
+  here).
+- `iba/app/lib/prosestore.py:run_set_status` / `iba/app/handlers/prose.py:set_status` / a new
+  `prose_section`/`set_status` operation in `scripts/apply_session_patch.py` — sets or resets
+  `-Status` for one or more `-SectionIds`, no body touched. Validates against the live
+  `prose_section_status` enum before writing a patch at all; skips a section already at the
+  requested status as a no-op; stamps `approved_at`/`approved_by` moving *to* `approved`, clears
+  both moving away from it (a reset genuinely reopens the section, it doesn't leave a stale
+  approval stamp behind). Writes no DB row itself — generates a `PROSE` patch, applied via
+  `scripts/apply_session_patch.py` like every other prose write, the one boundary this whole
+  module holds without exception (bar `prose.flag`).
+- `iba/app/migration/register_prose_set_status_v1_20260827.py` — registers `prose.set_status` in
+  `cfg_step` (ordinal 7, `kind='utility'`). No `cfg_write_grant` row needed — like
+  `export_chapter`/`import_chapter`/`flag_fix_propose`/`flag_fix_apply`, it never writes
+  `prose_section` directly.
+
+**Tested live:** `Config-Maintenance.ps1 -Step Validate` — failed first (`no such table:
+cfg_prose_chapter`, the dead check above) — fixed, then clean. `Prose.ps1 -Step SetStatus
+-SectionIds 22 -Status in_review` → dry-run clean → applied → `prose_section.id=22` confirmed
+`status='in_review'`. Reset the same row to `approved` → `approved_at`/`approved_by` both stamped.
+Reset again to `draft` (the section's true state — it had just been rewritten as part of #739/#786
+and not yet reviewed; the test itself had left a false `approved` stamp on it, corrected
+immediately once noticed) → both cleared. No-op guard confirmed (`-Status draft` again on the
+already-`draft` row → refused, "already 'draft' -- no-op", no patch written). Invalid-enum guard
+confirmed directly against `run_set_status` (`bogus_status` → `ValueError` naming the live enum,
+before any patch file is written).
+
+**Files:** `iba/app/migration/retire_cfg_prose_chapter_v1_20260827.py` (new),
+`iba/app/migration/register_prose_set_status_v1_20260827.py` (new),
+`iba/app/lib/prosestore.py`, `iba/app/handlers/prose.py`, `iba/app/handlers/configmaint.py`,
+`scripts/apply_session_patch.py`, `iba/app/ps/Prose.ps1`, `USER-GUIDE.md` §13d (all modified).
+Escalations #912/#913/#914 (rejected, superseded by this fix) and #918 (this item) closed.

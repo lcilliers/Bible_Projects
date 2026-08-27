@@ -1041,3 +1041,72 @@ def run_flag_fix_apply(cfg, proposal_file, section_ids: list[int], flag_code: st
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
     return {"path": str(output), "sections": len(operations), "skipped": skipped}
+
+
+# ── status set/reset (escalation #918, 2026-08-27) ──────────────────────────────
+def run_set_status(cfg, section_ids: list[int], status: str, author="researcher",
+                    out=None) -> dict:
+    """Set (or reset) `prose_section.status` for one or more sections directly, as its own
+    reviewer action -- distinct from `run_import_chapter`'s content-edit round trip, which also
+    happens to touch `status` (always to 'draft') as a side effect of a body rewrite. This is the
+    dedicated command: read a section, decide it's read/approved (or that an earlier approval
+    needs reopening), and record just that, with no body change at all.
+
+    `status` must be a live value of `cfg_enum prose_section_status` (draft / in_review / approved
+    / archived) -- checked here, not left for the applicator to discover. Generates a `PROSE`
+    patch (`prose_section`/`set_status`, a new, narrower sibling of the existing `approve` op —
+    that one is approve-only and one-directional; this one moves either way and is the general
+    case). Writes no DB row itself; apply with `scripts/apply_session_patch.py`, the same boundary
+    every other operation in this module keeps."""
+    if not section_ids:
+        raise ValueError("prose.set_status needs --section-ids")
+    valid_statuses = cfg.enum("prose_section_status")
+    if status not in valid_statuses:
+        raise ValueError(f"status {status!r} is not a live value of cfg_enum "
+                          f"'prose_section_status' ({valid_statuses!r})")
+
+    conn = open_db(cfg)
+    operations = []
+    skipped = []
+    try:
+        for section_id in section_ids:
+            row = conn.execute(
+                "SELECT id, status FROM prose_section "
+                "WHERE id = ? AND COALESCE(delete_flagged, 0) = 0", (section_id,)).fetchone()
+            if not row:
+                skipped.append({"id": section_id, "reason": "no longer an active row"})
+                continue
+            if row["status"] == status:
+                skipped.append({"id": section_id, "reason": f"already {status!r} -- no-op"})
+                continue
+            operations.append({
+                "op_id": f"PROSE-{section_id}-SET-STATUS",
+                "table": "prose_section",
+                "operation": "set_status",
+                "id": section_id,
+                "record": {"status": status, "approved_by": author if status == "approved" else None},
+            })
+    finally:
+        conn.close()
+
+    if not operations:
+        raise ValueError(f"no section needed a status change -- skipped: {skipped}")
+
+    stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
+    patch_id = f"PATCH-{stamp}-PROSE-SET-STATUS"
+    patch = {
+        "_patch_meta": {
+            "patch_id": patch_id, "patch_type": "PROSE", "produced_at": now_iso(),
+            "session_b_status": None, "researcher_approval": "PENDING",
+            "description": f"Set {len(operations)} prose_section row(s) to status={status!r}.",
+        },
+        "operations": operations,
+        "_patch_summary": {
+            "total_operations": len(operations), "prose_section_status_set": len(operations),
+            "status": status, "skipped": skipped,
+        },
+    }
+    output = Path(out) if out else PATCH_OUT_DIR / f"wa-prose-set-status-{stamp}.json"
+    output.parent.mkdir(parents=True, exist_ok=True)
+    output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
+    return {"path": str(output), "sections": len(operations), "skipped": skipped}

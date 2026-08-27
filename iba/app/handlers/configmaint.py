@@ -171,15 +171,13 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
         if r["status"] not in valid_status:
             e.append(f"rules: status {r['status']!r} not in enum.word_status {sorted(valid_status)}")
 
-    # cfg_prose_chapter.status in enum.prose_chapter_status (escalation #714/#727 — the enum
-    # existed with no check actually using it, a genuine gap in the same session that created it,
-    # not a pre-existing one; same shape as the word_status check just above).
-    valid_prose_status = {r["value"] for r in
-                          q("SELECT value FROM cfg_enum WHERE name='prose_chapter_status'")}
-    for r in q("SELECT chapter, status FROM cfg_prose_chapter"):
-        if r["status"] not in valid_prose_status:
-            e.append(f"rules: prose chapter {r['chapter']} status {r['status']!r} not in "
-                     f"enum.prose_chapter_status {sorted(valid_prose_status)}")
+    # cfg_prose_chapter + enum.prose_chapter_status REMOVED 2026-08-27 (escalation #918 --
+    # chapter-review status was workflow data about content, not a rule, and required the full
+    # config-approval cycle for what is an ordinary content edit; the live equivalent is
+    # bible_research.db's prose_section.status, set via Prose.ps1 -Step SetStatus, which this
+    # iba.db-only validator cannot check directly -- it never ATTACHes bible_research.db (see this
+    # function's own note above on that limitation). The check that used to live here is not
+    # replaced; it is gone along with the table it checked.
 
     # settings: a *pattern setting must compile; report.*_fields must name real columns
     span_cols = columns.get("span", set()) | {"sense"}

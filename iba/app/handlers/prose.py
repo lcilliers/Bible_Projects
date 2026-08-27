@@ -126,3 +126,26 @@ def flag_fix_apply(ctx: Ctx) -> Outcome:
         f"(review + apply with scripts/apply_session_patch.py)",
         **result,
     )
+
+
+def set_status(ctx: Ctx) -> Outcome:
+    p = ctx.params
+    section_ids_raw = p.get("SectionIds")
+    if not section_ids_raw or not p.get("Status"):
+        return fail("bad-params", "set_status needs -SectionIds and -Status")
+    try:
+        section_ids = [int(x) for x in str(section_ids_raw).split(",") if x.strip()]
+    except ValueError:
+        return fail("bad-params", f"-SectionIds must be a comma-separated list of ints, got "
+                                   f"{section_ids_raw!r}")
+    try:
+        result = prosestore.run_set_status(
+            ctx.cfg, section_ids, p["Status"], author=p.get("Author", "researcher"),
+            out=p.get("Out"))
+    except ValueError as e:
+        return fail("bad-params", str(e))
+    return ok(
+        f"generated patch for {result['sections']} section(s) -> {result['path']} "
+        f"(review + apply with scripts/apply_session_patch.py)",
+        **result,
+    )

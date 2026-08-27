@@ -102,23 +102,40 @@ on: `New-Word.ps1 -Trace`, or `IBA_TRACE=1`.
 
 ## 3A. Changing a rule — the ONE sanctioned path
 
+> **CORRECTED 2026-08-27** — this section's own worked example still showed the `AnswerRun`
+> flow below, silently un-updated since `configmaint.propose`'s pause is *always*
+> `decision_required` (§48) and `AnswerRun` was closed off from every `decision_required` item
+> on 2026-08-22 (§49: *"a `decision_required` item is answerable **only** through `Update`'s
+> richer vocabulary — `AnswerRun` is `self_correctable`-only from now on"*). Anyone reading only
+> this quick-reference and not §48/§49 would follow a command that the code has refused for five
+> days — exactly the documentation-to-documentation drift `governance.rules_must_be_config_driven`
+> and Chapter 5 of the programme prose exist to catch. Found live 2026-08-27 (escalation #917)
+> when the researcher was handed a raw `run_id` and an `AnswerRun` instruction for three genuinely
+> `decision_required` proposals (`#912`–`#914`) and rejected both the reference and the mechanism.
+
 **`iba\app\ps\Config-Maintenance.ps1 -Step Propose`** is the only sanctioned way to change a
-`cfg_*` row — DB-direct, single-row, **approval-gated, never silent**. Full mechanism: §9A. In
-short:
+`cfg_*` row — DB-direct, single-row, **approval-gated, never silent**. Full mechanism: §9A. The
+pause it produces is always a genuine `escalation` row with its own numeric `id` — that id, not
+the `run_id` string, is the reference to work from:
 
 ```powershell
 iba\app\ps\Config-Maintenance.ps1 -Step Propose -Table cfg_setting -Op update `
     -Where '{"key":"passage.review_over"}' -Set '{"value":"12"}' `
     -Question "Raise passage.review_over from 10 to 12 — why, what it affects."
-# -> PAUSED, run_id printed.
-iba\app\ps\Escalation.ps1 -Action AnswerRun -RunId <run_id> -Decision Approve|Reject|Revise|Hold|Noted [-Comment ...]
-# then re-run the SAME Propose command with -RunId <run_id> to act on the answer.
+# -> PAUSED, run_id printed. Find the escalation it raised — Escalation.ps1 -Action List, or the
+#    numeric id printed alongside "needs-approval" in the run's own output — and review it there.
+iba\app\ps\Escalation.ps1 -Action Update -Id <escalation-id> -AnsweredBy Researcher -NextAction ready_for_approval -Resolution "..."
+iba\app\ps\Escalation.ps1 -Action Update -Id <escalation-id> -AnsweredBy Researcher -NextAction approved -Resolution "..."   # or reject / revise
+# then re-run the SAME Propose command with -RunId <run_id> to act on the decision now recorded.
 ```
 
-Coherence-checked before it ever reaches you (unknown table/column, bad enum, invalid JSON, a
-`cfg_setting` insert missing `module`); only on **Approve** does the write commit, logged to
-`cfg_change_detail`. **Hard technical enforcement** that *only* this path may write a `cfg_*` row
-(vs. it being the one sanctioned path by convention) is not built — named in §6.
+`AnswerRun` still exists but is `self_correctable`-only (§49) — it is not the path for a
+`configmaint.propose` pause, which is unconditionally `decision_required` (a config change is
+definitionally a design decision, §48). Coherence-checked before it ever reaches you (unknown
+table/column, bad enum, invalid JSON, a `cfg_setting` insert missing `module`); only on
+**`approved`** does the write commit, logged to `cfg_change_detail`. **Hard technical enforcement**
+that *only* this path may write a `cfg_*` row (vs. it being the one sanctioned path by convention)
+is not built — named in §6.
 
 ---
 

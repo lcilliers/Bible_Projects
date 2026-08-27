@@ -1,0 +1,28 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260827T054536Z-PROSE-SET-STATUS",
+    "patch_type": "PROSE",
+    "produced_at": "2026-08-27T05:45:36Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Set 1 prose_section row(s) to status='approved'."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-22-SET-STATUS",
+      "table": "prose_section",
+      "operation": "set_status",
+      "id": 22,
+      "record": {
+        "status": "approved",
+        "approved_by": "researcher"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "prose_section_status_set": 1,
+    "status": "approved",
+    "skipped": []
+  }
+}

@@ -1,0 +1,186 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260827T050325Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-08-27T05:03:25Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 13 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-39-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 39,
+      "record": {
+        "body": "The global rules document this section described — a single file of programme-wide binding rules, held in `wa_rule_registry` with companion guidance in `wa_addendum_registry`, cited by stable codes such as `GR-LOAD-001` — is retired. All 59 rules in `wa_rule_registry` were marked obsolete on 2026-08-17, and the table is superseded by `iba.db`'s `cfg_*` configuration system. `wa_addendum_registry`'s 22 rows are likewise entirely historical. Both tables remain in `bible_research.db`, readable, for provenance; neither is where a current rule is read from.\n\nThe live equivalent is not one document but two, working together at different levels. `CLAUDE.md`, at the project root, is the compact reference loaded into every session — file map, schema orientation, script conventions, and the standing pointers to where authoritative detail actually lives; it explicitly states that it can lag the written record and that the config or the live schema wins whenever the two disagree. `iba/app/GOVERNANCE.md` is the mechanism document for `iba.db`'s rule store: how a `cfg_*` row is changed, what is enforced versus still a convention, and — from §9 onward — a dated history of every increment, kept for provenance rather than pruned as new sections are appended.\n\nThe rules themselves are `cfg_setting` (scalar rules, always attributed to a `module`), `cfg_enum` (controlled vocabularies), `cfg_behaviour_rule` paired with `cfg_behaviour_class` (six classes at present — chat, terminal, sqlite, documentation, llm_output, and development — each with its own rules for how operational behaviour in that class is expected to run), and the other `cfg_*` tables described in Chapter 5. Where the old architecture had one rule-registry table carrying every kind of rule as free text with a rationale field, the live architecture has typed, module-attributed rows, each readable and changeable through exactly one path (`Config-Maintenance.ps1 -Step Propose`, Chapter 5), and each enforced by code that reads it rather than by an instruction telling a person or an AI to comply.\n\n`governance.rules_must_be_config_driven` is the rule that stands in the old global-rules document's place as the binding constraint on every other rule: no operational or process rule may exist only in prose or in memory, without a `cfg_*` row as the evidence that it is actually governing something. Where the old system's answer to \"what binds every other instruction\" was the global rules file, the live answer is this one setting, and the `cfg_*` store it points back to.",
+        "heading": "Global rules",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 126}"
+      }
+    },
+    {
+      "op_id": "PROSE-40-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 40,
+      "record": {
+        "body": "`wa_vocab_set` and `wa_vocab_member` — 8 declared vocabularies and 39 permitted values, each vocabulary naming the DB column it governs and the instruction that ratified it — still exist and are still marked active in the project's own table register. What has changed is what they govern: all 8 vocabularies (dimension labels, dominant subject, confidence markers, Stage 2c outcomes) belong to the retired Dimension Review/Session B pipeline described later in this chapter. They are a live table describing a retired mechanism — a governance state worth naming plainly rather than glossing over, and not yet resolved one way or the other: neither marked inactive nor rebuilt to cover any current vocabulary.\n\nThe reference layer that is actually live today is `iba.db`'s own: `cfg_enum` holds every controlled vocabulary project-wide, `cfg_column` holds every field's definition, and `iba/app/config/CONFIG-REPORT.md` is the auto-regenerated snapshot of every value in the config store — settings by module, STEP API routes, every work package's steps, the write-grant table, the schema, the enums, book order, and the change log. The report is never hand-edited; it is regenerated from the database, the same relationship the old reference snapshot had to `wa_vocab_set`/`wa_vocab_member`, except the live version is regenerated far more often and covers the whole app's configuration, not vocabulary alone.\n\nThe principle this section stated before still holds without qualification: any controlled-vocabulary question is answered by pointing at the live reference rather than by restating a value inline, and the concentration this achieves is what keeps a vocabulary change from requiring a document-by-document update. What has moved is which table is authoritative, and — per the previous sub-section — which document points a reader to it.",
+        "heading": "Reference",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 127}"
+      }
+    },
+    {
+      "op_id": "PROSE-41-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 41,
+      "record": {
+        "body": "The patch mechanism this section describes is still live, and its shape is unchanged: a JSON object with a `_patch_meta` header, an `operations` array of typed operations against named tables, and a `_patch_summary` footer; `scripts/apply_session_patch.py` is the applicator, run with `--dry-run` before every live application. `wa-patch-instruction-v2_11-20260507.md` is still the authoritative reference document for the format. What has narrowed is scope: the patch mechanism now applies to `bible_research.db` specifically — prose, findings, and the retained analytical tables — not to `iba.db`, which changes through `Config-Maintenance.ps1 -Step Propose` instead (Chapter 5).\n\nThe set of operation types has grown since this section was last drafted. Alongside the older verse-context, Session B, and dimension-assignment operations — all now writing against retired tables, and rarely if ever exercised — the current, actively-used operation type is `PROSE` (`supersede` against `prose_section`, `insert` against a new section): the mechanism used to produce every revision in this chapter. `REPAIR` operations, for cascading resets, remain part of the format.\n\nPatches are still authored, reviewed, and applied through the same three-role division — authored by the AI producing the content, reviewed by the researcher (or, per the current chapter's own workflow, self-reviewed against a dry run before a live apply where the researcher has authorised that pattern), applied by the operational agent. `_patch_meta.researcher_approval` still tracks the approval state on every patch, `PENDING` until it is actually reviewed. No patch reaches `bible_research.db` without passing through this format and its dry-run gate.",
+        "heading": "Patches",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 128}"
+      }
+    },
+    {
+      "op_id": "PROSE-42-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 42,
+      "record": {
+        "body": "The directive mechanism this section describes is likewise still live for `bible_research.db`: a plain-language instruction with the same five required elements, used where a change cannot be captured as a declarative patch — most often schema preparation ahead of a patch that depends on it. `wa-directive-instruction-v1_4-20260506.md` remains the authoritative reference. As with patches, the scope is now `bible_research.db` specifically; `iba.db`'s schema changes (its own migrations, new `cfg_*` tables, new data tables) happen through the app's own migration scripts under `iba/app/migration/`, each one recorded in `BUILD.md` in the same unit of work per `governance.build_md_on_code_change` — the directive-and-review discipline's counterpart on the `iba.db` side, differently mechanised but serving the same purpose.\n\nDirectives and patches remain equal peers within their shared scope: together they are still the exhaustive set of ways `bible_research.db` changes, and a directive, like a patch, does not reach the database without review.",
+        "heading": "Directives",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 129}"
+      }
+    },
+    {
+      "op_id": "PROSE-43-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 43,
+      "record": {
+        "body": "`wa-claudecode-instruction-v4_5-20260514.md` still exists and still describes Claude Code's role as executor of patches and directives against `bible_research.db`. Most of what it covers in detail, though, is now provenance rather than live instruction: the data-foundation pipeline it walks through — new-word registration, STEP extraction, `audit_word` reconciliation, the JSON export workflow — is the Session A/engine pipeline that `CLAUDE.md`'s own §4/§5/§7/§8 banners mark superseded as of 2026-08-17, with base-layer work moved to `iba.db` and `iba/app/`. The guide's account of Verse Context batch construction and anchor integrity describes a table (`verse_context`) that no longer exists in the live schema at all.\n\nThe live operational guidance for the work this document used to cover is now split across a different document set entirely: `iba/app/GOVERNANCE.md` and `iba/app/BUILD.md` for how the base-data and process-control layer in `iba.db` actually runs, `iba/app/USER-GUIDE.md` as the entry point for using the app, and this chapter's own sub-sections for what remains live on the `bible_research.db` side — the patch and directive mechanisms just described, and the prose-store operations described in Chapter 4. There is no single document today that plays the unifying role `wa-claudecode-instruction` once played across the whole pipeline; the pipeline itself no longer runs as one unified thing, split instead between the two databases and their two distinct governance mechanisms.",
+        "heading": "Claude Code operating guide",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 130}"
+      }
+    },
+    {
+      "op_id": "PROSE-44-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 44,
+      "record": {
+        "body": "The registry management guide describes `word_registry` fields, status values, and the OWNER/XREF term distinction as they applied to `bible_research.db`'s registry and `mti_terms` — both now retired, as Chapter 4 describes in full. The guide's content is therefore historical: an accurate account of a registry architecture the programme no longer writes to, not a live reference for the registry now in use.\n\nThere is, at present, no equivalent guide for `iba.db`'s live `word_registry` — a deliberately thin table (`word`, `source`, `status`, and timestamps only) that has not needed the same depth of documentation because it does not carry the same depth of state. This is named here as an honest gap rather than papered over: if the live registry accretes more fields as the current method matures, a live registry-management reference will need writing, and this retired guide is not the document to extend for that purpose — its OWNER/XREF and cluster-assignment content does not transfer.",
+        "heading": "Registry management guide",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 131}"
+      }
+    },
+    {
+      "op_id": "PROSE-54-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 54,
+      "record": {
+        "body": "Session A — the mechanical STEP-extraction stage this section describes in detail, producing `wa_term_inventory`, `mti_terms`, and `wa_verse_records` — is retired along with the tables it wrote to. 120 `prose_section` rows under the `session_a` stage remain in the database as the output that stage produced while it ran; they are historical record, not a growing corpus. The engine commands this section names (`--export-word`, `audit_word`) belong to the same superseded pipeline `CLAUDE.md`'s own banner marks provenance-only.\n\nThe live equivalent of Session A's role — getting Hebrew, Greek, and Aramaic term data from STEP into a structured, addressable form — is `iba.db`'s base-data layer described in full in Chapter 4: `word_strong`/`strong` for discovery and identity, `span`/`span_candidate`/`candidate_seed`/`lemma_inventory` for the candidate net, `verse_lexical` for the derived mechanical reading. The onboarding entry point is `iba\\app\\ps\\New-Word.ps1`, governed by `cfg_step`/`cfg_work_package` rather than by a standalone instruction document. No single document today plays the role this section's instruction played — the operational detail lives in the config the app reads at each step, per the mechanism Chapter 5 describes, rather than in a written procedure a reader follows by hand.",
+        "heading": "Session A — extraction and the Phase 1 data layer",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 135}"
+      }
+    },
+    {
+      "op_id": "PROSE-55-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 55,
+      "record": {
+        "body": "Verse Context — the term-level relevance/anchor/group classification this section describes — is retired; `verse_context` and `verse_context_group`, the tables it wrote to, do not exist in the live schema at all, as Chapter 4 states plainly. The four-output-class discipline this section details (new classifications, revisions, Session B observations, SD pointers) governed a process that no longer runs.\n\nThe live analytical reading of the verse corpus is the book-by-book debate pipeline described in Chapter 4: `hib`, `phenomenon`, `operation`, and `passage`'s own `debate_status` field, working at the level of a Human Inner Being within a book and a passage, rather than at the level of a term across the whole corpus. It is not a like-for-like replacement — it does not classify every occurrence of every term the way Verse Context did, and its current reach (49 of 18,558 passages, across six books) is far narrower than Verse Context's whole-registry coverage was. It is, at present, the live mechanism doing the closest equivalent work, and it is governed by `cfg_step`/`cfg_setting` rows rather than by an instruction document of its own.",
+        "heading": "Verse Context",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 136}"
+      }
+    },
+    {
+      "op_id": "PROSE-47-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 47,
+      "record": {
+        "body": "Dimension Review — the cluster-level dimension-assignment stage this section describes — is retired; `wa_dimension_index`, the table it wrote to, is explicitly named as a retired layer in the project's own table register (Chapter 4). The eleven-label dimension vocabulary it worked from, and the confidence-progression mechanism (`KEYWORD_WEAK`/`KEYWORD_STRONG` → `CLAUDE_AI` → `RESEARCHER_CONFIRMED`) it used to move a cluster's assignments toward confirmed status, are recorded there as history.\n\nThe live analytical grouping mechanism is the cluster/characteristic model — also described in Chapter 4 — which works by allocating a Strong's code directly to a cluster (`cluster_strong`) rather than by assigning a dimension label to a verse-context group. There is not yet an instruction document governing this allocation with the depth Dimension Review's instruction gave its own process; the one standing rule on record is the researcher's 2026-08-13 correction that allocation must be grounded in verse-context analysis, not bulk keyword-crossmatch. Whether a fuller method instruction for cluster/characteristic allocation is written, and where, is open — named here rather than assumed.",
+        "heading": "Dimension Review",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 132}"
+      }
+    },
+    {
+      "op_id": "PROSE-67-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 67,
+      "record": {
+        "body": "Session B Analysis Readiness — the per-registry readiness `.md`/`.json` generation this section describes, and the `wa_session_b_findings`-driven §N open-item discipline built on it — is retired along with `wa_session_b_findings` as a live table (Chapter 4 records it as superseded, 2,883 findings retained from April–May 2026). 20 `prose_section` rows under the `session_b` stage remain as the output that stage produced while it ran.\n\nNo live process currently plays this stage's specific role — preparing a structured, deterministic readiness artefact ahead of an analytical session. The escalation table's own `next_action`/`resolution_kind` mechanism (Chapter 5) covers the adjacent but distinct need of tracking an open item to closure; it does not generate a per-word data-readiness report the way this instruction's pipeline did.",
+        "heading": "Session B — Analysis Readiness",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1157}"
+      }
+    },
+    {
+      "op_id": "PROSE-68-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 68,
+      "record": {
+        "body": "Session B Analysis Output — the obslog-to-DB capture pipeline this section describes, producing the five (plus one) analytical chapters and citation-disciplined prose per registry — is retired; Chapter 4's own capture-pipeline sub-section states this directly and names the three mechanisms that do capture work today (the `Prose.ps1` round trip, `debate_change_detail` for the debate writers, and the escalation table for judgement calls), none of which resembles the single obslog-parse-and-dispatch design this section describes.\n\nThe 20 `session_b`-stage `prose_section` rows this stage produced while it ran remain in the database, readable, as the analytical record of the registries that reached this stage before the method reset. No registry is currently progressing through this stage; `word_registry.session_b_status` (on the retired `bible_research.db` registry) does not advance further for any word.",
+        "heading": "Session B — Analysis Output",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1158}"
+      }
+    },
+    {
+      "op_id": "PROSE-50-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 50,
+      "record": {
+        "body": "Session C — the per-word reader-facing publication stage this section describes, moving a word's account through v1 (from Session A data) to v2 (annotated) to v3 (synthesised) — is retired along with the Session A/B input it depended on. 28 `prose_section` rows under the `session_c` stage remain as the word studies that reached publication before the method reset; none has been added to since, and none is currently in progress.\n\nThe live equivalent of reader-facing publication is not word-driven at all: the book-by-book debate pipeline's `passage.story_summary` field — populated for the passages that have reached `filled`/`complete` debate status across Daniel, Jonah, Joel, Obadiah, Micah, and Hosea — is a book-driven narrative account, not a per-word one. The programme currently has no single mechanism producing the kind of per-word reader-facing document Session C was built to produce; whether that need is picked up again, and in what form, is unresolved.",
+        "heading": "Session C",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 133}"
+      }
+    },
+    {
+      "op_id": "PROSE-51-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 51,
+      "record": {
+        "body": "Session D — the cross-registry synthesis stage this section describes — has never executed: `session_d_runs` and `session_d_observations` hold zero rows today, exactly as they did when this section was last drafted, and Chapter 4's synthesis-bridge sub-section records the same fact plainly rather than as a still-pending near-term milestone. The 13 `prose_section` rows under the `synthesis` stage are not Session D output in the sense this instruction describes; they predate or sit alongside the SD-pointer-driven design this section documents, and their relationship to a would-be Session D run has not been reconciled.\n\n357 `SD_POINTER`-flagged rows in `wa_session_research_flags` remain the accumulated material a Session D run would draw on, concentrated as this section's earlier version recorded — largely across the compassion/mercy/grace cluster of registries. Whether Session D runs as this instruction describes, or whether the cluster/characteristic model described in Chapter 4 comes to do this synthesis work in a different shape entirely, is the open question this chapter leaves unresolved, consistent with Chapter 4's own account of the same gap.",
+        "heading": "Session D",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 134}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 13,
+    "prose_section_supersedes": 13,
+    "source_edit_file": "outputs/markdown/prose-edits/archive/prose-edit-programme-chapter-6-v1-20260827.md"
+  }
+}

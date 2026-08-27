@@ -1,0 +1,955 @@
+# Prose Extract — Programme — 2026-08-27
+
+_Schema 3.40.0 · source: `prose_section_type` + `prose_section`._
+
+---
+
+## Summary
+
+**Section types seeded:** 51  ·  **Content sections populated:** 51
+
+---
+
+## Programme
+
+#### Chapter 0 — Preamble
+
+> Opening orientation for the programme prose corpus. Sets the tone for readers, makes the boundary between descriptive prose and procedural instruction explicit for drafters, and maps the six-area structure that follows.
+
+##### Programme Preamble
+
+_`preamble`  ·  type id 35  ·  chapter 0  ·  sort 1_
+
+*Section id 15 · status `draft` · v105 · 465 words · author `claude_ai`*
+
+The programme prose describes the research programme — what it is, how it fits together, and how it operates. It is the programme's narrative description, written to stand on its own: a reader encountering the work for the first time can use it to understand what the programme is, what it produces, and the disciplines by which it operates.
+
+The prose is not the place for instructions on how to perform specific tasks. Procedural content — the exact format of a patch, the step sequence for executing a directive, the completeness tests applied at an inflection point — lives in the instruction documents and the global rules. The prose describes the programme; the instructions direct the work.
+
+The corpus covers six areas. **Area 1** is the programme's purpose — the governing question, how inner being is defined, where this study sits within the researcher's wider work, what a successful outcome would look like, and the relationship between Scripture and contemporary science as the two lenses through which the inner being is studied. **Area 2** is the research methodology — the three building blocks of registry, data collation, and analysis; the six-phase pipeline from word selection to publication; the role of science in the work; the methodological principles that govern every phase; and the constraints the programme deliberately accepts. **Area 3** is the disciplines, tools, and evidential principles by which the programme operates — how findings are distinguished from hypotheses, how the two-AI division of responsibility functions, how memory is managed across sessions. **Area 4** describes the data architecture — the registry, the terms, the verse groups, the dimensional profiles, the question catalogue, and the cross-references that hold them together. **Area 5** covers the governance that keeps the data correct over time — the soft-delete discipline, validation standards, backup regime, patch-failure protocol, and field authority rules. **Area 6** describes the instruction corpus itself: how rules and instructions are versioned, referenced, and updated.
+
+Individual prose records within each area describe specific components in enough detail that a reader can understand the component without leaving the corpus. Where a record points outward to a rule, an instruction, or a schema table, the pointer serves the reader reaching the binding source.
+
+**On style.** The programme's prose is direct and factual. Every sentence is either a statement about the programme or carries information the reader needs. The prose avoids framing that introduces rather than states, motive attribution, rhetorical closings, and metaphors layered on facts. Where the researcher has articulated a principle in their own words, those words are used. Factual claims are traceable to source documents — instructions, the database schema, the Science Framework, the registry construction files. This style carries forward through every sub-section of the corpus and is the reference register for all future prose additions and revisions.
+
+
+#### Chapter 1 — Programme purpose
+
+> The programme's originating mission — why the research began, the theological conviction that shaped its scope, and the two Framework documents it produced.
+
+##### Mission
+
+_`prog_purp_mission`  ·  type id 36  ·  chapter 1  ·  sort 2_
+
+*Section id 2 · status `draft` · v92 · 178 words · author `claude_ai`*
+
+This research programme began in January 2026 from a desire to understand the human spirit, soul, and body more deeply than existing accounts allowed. As the work developed, a conviction settled: an honest account of the human inner being is incomplete without a parallel account of the Holy Spirit. The two stand in relation to one another — the human inner life is shaped, inhabited, and addressed by the Spirit throughout Scripture — and neither can be studied at depth while leaving the other undefined.
+
+The mission that followed was straightforward in statement and substantial in commitment: take a deep dive. Investigate both subjects on their own terms; let Scripture lead the evidence; hold the enquiry open long enough to reach findings rather than assumptions. The commitment produced two elaborate documents, each a collection of deep-dive studies in its own right:
+
+- Framework A — *The Holy Spirit: Origin, Nature, Work, Character, and Interaction. A Five-Thousand-Year Investigation from Genesis to the Present Day.* An investigation of the Holy Spirit across the full biblical canon and beyond it into the receiving tradition.
+- Framework B — *Spirit, Soul, and Body: The Composition of Human Beings. A Comprehensive Biblical and Scientific Investigation.* An investigation of the human person as Scripture describes the composition, and as scientific enquiry approaches the same subject from a different direction.
+
+
+> The programme's scope boundary — what it includes, what it excludes, and how the boundary was set. The ~200-word inner-being registry as the operational scope against which all downstream work is defined.
+
+##### Scope
+
+_`prog_purp_scope`  ·  type id 37  ·  chapter 1  ·  sort 3_
+
+*Section id 3 · status `draft` · v93 · 200 words · author `claude_ai`*
+
+The advent of the Framework A and Framework B documents did not close the work. By February 2026, with both studies in a readable state, it had become clear that each would benefit from further research and refinement — in style and in depth. Further reading into Framework B's subject made the sharper point: the study had only touched the surface of what the soul actually consists of. A cursory overview counted some twenty-eight distinct characteristics — an order of magnitude short of what a careful treatment of the biblical evidence plainly contains.
+
+That shortfall triggered a deliberate extension of scope: an in-depth exploration of the soul, set within the wider frame of the inner being so that soul, spirit, and body could be treated in their actual relation rather than in isolation. A thorough collation of Scripture's inner-being vocabulary was assembled — approximately two hundred English words, mapped to their Hebrew and Greek originals. That registry became the scope of the present focus of the programme. Every word in it is in scope; every word outside it is out of scope. The registry is the boundary, and the boundary is the basis on which everything downstream — verse selection, term classification, dimensional analysis, cross-registry synthesis — is defined.
+
+
+> The current research programme — a corpus-level continuation of Framework B's work; the per-word analytical unit; the phased pipeline; the two-agent architecture; and the three orders of programme output.
+
+##### This Inner-Being Programme
+
+_`prog_purp_this_inner_being_programme`  ·  type id 38  ·  chapter 1  ·  sort 4_
+
+*Section id 4 · status `draft` · v94 · 395 words · author `claude_ai`*
+
+The Soul Word Analysis Programme is the direct continuation of the work the two Frameworks began. It takes the registry of inner-being words — scope defined — and subjects each one to systematic examination: what the term means across its Hebrew and Greek originals, how it occurs across its verses, what contexts the occurrences share, what it contributes to the larger account of the inner person. The programme's intellectual frame is Framework B's; its scale and discipline are new. The earlier work was comprehensive and synthetic; this programme is corpus-level and analytical.
+
+The unit of work is the word. For each word in the registry, the programme builds a complete analytical record — from the Strong's-level term data through the verse inventory and the occurrence contexts, into the characteristic patterns the verses reveal, through to a written word study and, beyond that, cross-registry synthesis. The work runs in phases. Each phase has a defined input, a defined output, and an inflection point at which the word is ready to move to the next phase. A word that has not satisfied the inflection point stays where it is; no phase is skipped; no assessment made at one phase is treated as final before the next phase confirms it.
+
+The programme is organised around a two-agent architecture. The research judgement — what a verse is about, how a term functions in context, which dimensions of the inner being the evidence engages, what the written study should say — is held by the analytical agent working with the researcher. The database operations — extraction, classification persistence, patch application, extract production — are held by a separate operational agent. The separation is deliberate: analytical judgement is the programme's scarce resource, and the architecture protects it from the distraction of mechanical work. The two agents interact through structured artefacts — patches and directives — that make every database change reviewable by the researcher before it takes effect.
+
+The programme's outputs have three orders. First-order outputs are the per-word records and written studies produced one word at a time. Second-order outputs are the cross-word syntheses that emerge when groups of words are examined together — clusters of related characteristics, recurrent patterns across the inner-being vocabulary, places where two frameworks of description illuminate each other. Third-order output is the programme-wide account that these syntheses contribute to: an in-depth description of the human inner being as Scripture reveals it, built from the bottom up on the evidence of every word in scope. The present prose corpus is itself part of that third-order work — the self-description that makes the programme's findings readable as a whole.
+
+
+> The programme's working definition of inner-being characteristics — verbatim, with the three boundary decisions embedded in it, the spirit/soul distinction it holds open, and the inclusion rule that governs its application.
+
+##### Defining Inner Being
+
+_`prog_purp_defining_inner_being`  ·  type id 39  ·  chapter 1  ·  sort 6_
+
+*Section id 5 · status `draft` · v95 · 470 words · author `claude_ai`*
+
+Before any word could be examined, a prior question had to be settled: what is being studied when Scripture's "inner-being" vocabulary is read word by word? The answer is the programme's working definition of inner-being characteristics — a single sentence, carefully composed, precise enough to test any English word for inclusion in the scope, broad enough to capture the full range of what Scripture describes.
+
+**The definition.** *Inner-being characteristics are the non-physical, internal states, capacities, and expressions that constitute a person's invisible life — encompassing how a person thinks, feels, chooses, relates, and orients themselves toward meaning, others, and God.*
+
+This is a working definition, not a theological statement. Theological accounts of the soul and spirit have been abundantly written; this programme does not add another to the list. What the programme needed instead was an evaluative filter: a formula that could be applied to any word in the English language and return a reliable yes-or-no on whether its meaning qualifies as inner-being content. The definition is that filter.
+
+Three decisions are embedded in the definition and govern how it is applied. First, the *non-physical* test: bodily processes, external behaviours, and material realities do not qualify unless they are used to express an internal state. Weeping qualifies when it is Scripture's language for inner grief; walking does not qualify when it is only physical locomotion. Second, the *internal* test: states that originate within the person — capacities, dispositions, operations of mind and heart. The boundary here is porous because inner states can be caused by external agents, including God, other people, and spiritual forces, and the programme's analysis expects and examines that permeability. Third, the *operational range* — thinks, feels, chooses, relates, orients — which names the full working field of the inner person. These are not five sealed domains but five dimensions of a single integrated life.
+
+The definition deliberately holds spirit and soul together under the term "inner being". Inner being is the totality of the person's non-physical existence — everything that is not the body, encompassing spirit and soul together. Soulish characteristics are a subset of that totality — the specific functions and expressions that belong to the *psyche / nephesh*: thought, emotion, will, desire, conscience, self-awareness. All soulish characteristics are inner-being characteristics; not all inner-being characteristics are soulish. The spiritual dimension — the person's orientation toward God, the capacity for divine encounter, the operations of the spirit — belongs to the inner being without being reducible to soul function. Whether a given word belongs primarily to the soul domain, primarily to the spirit domain, or to the boundary between them is one of the research questions the programme is designed to answer — not a premise it brings to the text.
+
+A governing rule of application extends the definition's reach. Borderline words are included, not excluded. Where a word sits close to the edge of the definition, the programme includes it and flags the borderline status for later review. The cost of over-inclusion is visible and recoverable; the cost of silent omission is invisible and not recoverable. Completeness is chosen over tidiness, and the filter errs on the side of admitting words that may later be ruled out rather than excluding words that should have been ruled in.
+
+
+> The programme's two-lens architecture — Scripture as primary lens, science as second lens — what each provides and cannot provide, the convergence and divergence framework, and the governing principles of their interaction.
+
+##### Science and the Bible
+
+_`prog_purp_science_and_bible`  ·  type id 40  ·  chapter 1  ·  sort 7_
+
+*Section id 6 · status `draft` · v96 · 535 words · author `claude_ai`*
+
+The subject this programme investigates — the human inner being — is not studied only by Scripture. Neuroscience, psychology, physiology, behavioural science, and other empirical fields examine the same territory from a different direction. The programme holds both accounts open, not by accident and not as a concession, but as a deliberate methodological stance: Scripture and science together provide a fuller picture of the human person than either one produces on its own.
+
+The two accounts are not of equal weight in this programme. Scripture is the primary lens; science is the second lens. Framework B is biblical research — its primary data is the biblical text, its primary method is lexical and contextual analysis, its conclusions are grounded in and accountable to what Scripture says. The scientific literature is engaged to illuminate, ground, and sometimes challenge the biblical account, not to generate an independent parallel dataset of equal authority. The distinction matters because a co-equal scientific programme would require a second corpus-level effort as large as the biblical one; a second-lens engagement requires disciplined, targeted use of what science has already established.
+
+Each lens provides what the other cannot. Scripture carries the theological frame that science has no instrument for: the human being created by God, bearing the divine image, corrupted by sin, being renewed by the Spirit. Scripture names the divine dimension — God as active agent within the inner life, who causes, sustains, judges, and transforms inner states. Scripture speaks of realities that empirical observation cannot reach: conscience, worship, the fear of the Lord, the operations of the Spirit, spiritual oppression and freedom. Science, for its part, provides empirical grounding — the observable expressions, biological substrates, and measurable patterns of inner life. Science describes how inner states are implemented in the body: the neurochemistry of fear, the physiology of grief, the neural correlates of shame, the brain-body systems through which cognition and emotion operate. Science offers phenomenological depth on what inner states feel like, how they develop, and what conditions produce or diminish them. And science provides a contemporary bridge: the programme's findings need to be readable by people living now, and scientific grounding gives them traction in present conversation.
+
+Where the two accounts converge, the convergence is significant — two very different instruments pointing at the same reality. Where they diverge, the divergence is equally significant and is named rather than papered over. The programme identifies three kinds of convergence — phenomenological (the same experience described from different angles), mechanistic (science describing the how of what Scripture describes as a reality), and structural (the architecture of the inner life having the same shape in both accounts). It identifies three kinds of divergence — register divergence (the accounts addressing different levels of the same reality and only appearing to conflict), reductive divergence (a scientific account that loses dimensions the biblical account treats as primary), and genuine divergence (claims in actual tension that cannot be harmonised by reframing). The discipline is honest engagement, not forced harmonisation.
+
+Three principles govern the interaction of the two lenses. Scripture is not subordinate to science, and science is not subordinate to Scripture; they are different instruments addressing different aspects of the same reality, and neither should be forced into the other's register. The scientific account addresses the creaturely dimension of the inner being — what can be observed, measured, described from outside — while the biblical account addresses the full dimension, including the theological and spiritual realities that are invisible to empirical observation. The goal is not harmonisation but honest engagement: where science says something the biblical account does not address, the observation is noted; where science says something that appears to contradict the biblical account, the apparent contradiction is examined carefully rather than quickly resolved in either direction.
+
+
+> What success looks like for the programme — at the level of the individual word study, at the level of the corpus of studies, and at the level of the programme's complete account. The intended audience and the three criteria by which the finished output will be judged.
+
+##### Expected Outcome
+
+_`prog_purp_expected_outcome`  ·  type id 41  ·  chapter 1  ·  sort 8_
+
+*Section id 7 · status `draft` · v97 · 530 words · author `claude_ai`*
+
+Success for this programme has a definite shape. At the level of the individual word, it is a written study that treats the word on its own terms — what the term means across its Hebrew and Greek originals, how its occurrences distribute across Scripture, what contexts and characteristics the verses reveal, how the term engages the spirit-soul-body continuum, how the biblical account and the relevant scientific literature relate at the point this word occupies. The study stands on its own: a reader encountering a single word study gains a considered account of that aspect of the inner being, grounded in the evidence and transparent about what remains uncertain.
+
+At the level of the corpus, success is the accumulation of these studies into a set that covers the inner-being vocabulary comprehensively, together with the cross-word syntheses that become possible only once the individual work is complete. When a word has been studied, its relationship to adjacent words — the ones it overlaps with, the ones it opposes, the ones that cause or are caused by it — becomes newly visible. When groups of words have been studied, patterns across the vocabulary emerge: clusters of related characteristics, recurrent structural features, places where two concepts turn out to be different angles on a single reality or where one concept splits into two that had been wrongly conflated. These syntheses are not added on top of the word studies; they are latent in them, and cross-registry analysis is the instrument that surfaces them.
+
+At the level of the programme as a whole, success is a sustained and defensible account of the human inner being as Scripture reveals it — assembled from the bottom up, word by word, on the evidence of the biblical text, in honest engagement with what contemporary science observes of the same territory. Such an account is not the final word on any of its subjects; no such word is achievable from inside a research programme. It is, rather, a careful description that is accountable to the evidence it is built on, open about its boundary cases and unresolved questions, and structured so that subsequent work — the researcher's or another's — can extend or correct it from the same base.
+
+The programme's audience is not primarily academic, though the work should be defensible in an academic setting. The intended readers are people who care about the subject — teachers, practitioners, thoughtful readers who have encountered Scripture's vocabulary of the inner life and want a careful treatment of it. The work is written for them: theologically serious without being technical for its own sake, empirically grounded without being reductively scientific, slow enough to treat its subject with respect, structured enough to be navigated rather than merely read through.
+
+The programme will be judged a success if three things are true of its completed output. First, the account it produces is demonstrably grounded in the evidence — every substantive claim can be traced back to the verses, terms, and contextual patterns that produced it. Second, the account is open where the evidence is open — unresolved questions are named as unresolved, inferences are labelled as inferences, and the reader is trusted to work with provisional findings rather than protected from them. Third, the account is useful — it changes how someone reading it thinks about the subject, gives them vocabulary and distinctions they did not previously have, and equips them to read Scripture's inner-being texts with sharper attention.
+
+
+#### Chapter 2 — Research methodology
+
+> The programme's research method at a glance — the three building blocks (registry, collation, analysis), the fourth synthesis arc that closes the work, and the sequencing commitments that hold them in order.
+
+##### Research method
+
+_`prog_meth_overview`  ·  type id 42  ·  chapter 2  ·  sort 9_
+
+*Section id 8 · status `draft` · v98 · 534 words · author `claude_ai`*
+
+The programme investigates what Scripture reveals about the human inner being. The method proceeds corpus-level from the biblical text, word by word, through a disciplined sequence that separates data gathering from analysis and returns to the full body of findings only once every word has been worked through.
+
+The method rests on three building blocks, in a fixed order. **First, the registry** — a list of English words that name inner-being characteristics, each mapped to the Hebrew and Greek terms through which Scripture expresses it. The registry is built against the programme's working definition of the inner being and is completed before any word is studied. It is the scope: which verses are read, which terms are classified, and which findings the programme produces are all defined by what is in it. **Second, data collation** — for every word in the registry, the programme assembles every verse in which the word or any of its related Hebrew or Greek terms occurs, together with the lexicon data for all those terms. A verse qualifies because the original-language term is present in it, not because a particular reading of the verse has been proposed. Collation is completed for the whole registry before analysis begins. **Third, analysis** — once the data is complete, each word is examined in its full corpus. Similar verses are grouped into characteristic-perspective groups; each group is given an anchor verse that represents it; the groups are assigned to dimensions of the inner being; and each word is then worked through a standing catalogue of questions that interrogate the verse evidence and the lexical data. The answers are persisted in the database and become the findings for that word.
+
+The final step is synthesis. Once every word has been analysed, the findings are read across the corpus to identify interrelationships and impacts between words and concepts at the level of the inner being as a whole. Synthesis does not begin until the per-word analysis is complete.
+
+The sequencing between the three blocks is a methodological commitment. Building the registry before collation means the programme's scope is settled before the evidence is gathered. Completing collation before analysis means the analytical frame is not built from the early words and then imposed on the later ones; every word is read against the same completed corpus of data. Persisting analytical findings into the database — with prior findings discarded each time the data is re-read — keeps findings anchored to the evidence that produced them.
+
+Scripture is the primary lens. The analytical work is work on the biblical text. Contemporary scientific literature on the inner life is held as a second lens, engaged at a defined point in the per-word analysis rather than running in parallel. The reasoning and the operational engagement are described in the sub-section on science in action.
+
+Categories are not imposed on the data; they emerge from it. Dimensions of the inner being are identified by reading the verses and asking what the verses engage. A category that cannot be grounded in verse evidence is not a category the programme uses. A finding that cannot be traced back to a specific verse or lexical source is not a finding the programme records.
+
+
+> How the inner-being registry was built — direct extraction, inferential extension with explicit flags, systematic gap analysis against primary lexica, and continuous discovery during collation. What every registry entry carries.
+
+##### Word selection and the registry
+
+_`prog_meth_registry`  ·  type id 43  ·  chapter 2  ·  sort 10_
+
+*Section id 9 · status `draft` · v99 · 548 words · author `claude_ai`*
+
+The programme's scope is the registry of inner-being words. Every word it contains is a word the programme will study; every word outside it is outside the programme's scope. The registry is built against the programme's working definition of the inner being, and that definition is the sole admission criterion.
+
+Registry construction proceeded in four stages.
+
+The first stage was **direct extraction** from prior work. The programme drew on the vocabulary of inner-being characteristics already identified in Framework B, retaining those words where a single Hebrew or Greek term carried the English sense in a lexically direct way. Each modern English word mapped to one or more biblical terms through their standard meanings in the primary lexica. This stage produced the High Confidence list — 75 words.
+
+The second stage was **inferential extension**. A set of modern psychological and conceptual terms — emotion, personality, intuition, manipulation, ambition, among others — names territory that Scripture engages but does not lexicalise under a single matching term. Each entry in this stage carries one of three inference flags. *Inferred* indicates that no biblical term directly translates the modern word, but the closest semantic equivalents have been identified. *Partial* indicates that a biblical term covers part of what the modern word means but not all of it. *Absent* indicates that the concept is present in Scripture narratively but has no single lexical expression. This stage produced the Low Confidence list — 21 words, each carrying its inference flag into subsequent work.
+
+The third stage was **systematic gap analysis**. The first two stages had been shaped by Framework B's prior analytical focus — the distinction between soul and spirit. That focus produced a vocabulary weighted toward the soul-spirit question and under-represented adjacent domains: the cognitive and mental vocabulary, the moral and conscience vocabulary, the relational and social vocabulary. The gap analysis applied the inner-being definition to the full semantic range of biblical Hebrew and Greek, working from the primary lexica — Brown-Driver-Briggs, Köhler-Baumgartner, Bauer-Danker-Arndt-Gingrich, Thayer — and from standard treatments of biblical anthropology. It added approximately 85 words across eight domains: cognitive and mental, volitional, affective and emotional, moral and conscience, relational and social, spiritual and God-ward, character and disposition, and identity and selfhood.
+
+The fourth stage runs continuously during data collation. As STEP retrieval assembles the verse and lexicon data for each registry word, it sometimes surfaces related Hebrew or Greek terms that meet the inner-being definition but were not on the list. A term that satisfies the definition — presence in the original-language text of verses that engage the inner being — is added to the registry. Approximately 30 words have been added through this stage to date. The registry is stable in its boundary criterion but open to evidence surfacing during collation.
+
+Every registry entry carries: Hebrew terms with transliteration, gloss, and sample verses; Greek terms in the same shape; a list of conceptual search terms — alternate English glosses and theological synonyms that support cross-checking; and a STEP Bible search suggestion identifying the landmark verses that seed the analysis.
+
+The active registry stands at approximately two hundred words. The total record count is larger because the registry retains entries that have been excluded on considered grounds rather than deleting them, so the reasoning behind exclusion remains visible and reviewable.
+
+
+> The six-phase pipeline — Session A, Verse Context, Dimension Review, Session B, Session C, Session D — with input, output, and inflection point for each, and the role of the database as state carrier between phases.
+
+##### Programme flow
+
+_`prog_meth_flow`  ·  type id 44  ·  chapter 2  ·  sort 11_
+
+*Section id 10 · status `draft` · v1241 · 341 words · author `claude_code`*
+
+The programme organises its work into three stages: **Base_data** (STEP through lexical), **Analysis** (deriving understanding of the inner being), and **Publishing** (essays and output for the results). Each stage has its own live mechanism, governed by its own configuration; the stages are not a single tightly chained pipeline the way an earlier phase model once described them, and this section states that plainly rather than presenting a continuity the current architecture does not have.
+
+**Base_data.** For each English word onboarded, the base-data layer assembles the Hebrew and Greek term data that carries the word's meaning — the Strong's identities, the verse occurrences, the lexical and morphological detail — sourced from STEP Bible and built up through `iba.db`'s chain of processing tables (Chapter 4 describes this in full: discovery, identity, the candidate net, and the derived mechanical reading). The onboarding entry point is `iba\app\ps\New-Word.ps1`, governed by `cfg_step`/`cfg_work_package` rather than by a hand-followed procedure.
+
+**Analysis.** Deriving understanding of the inner being currently runs through two mechanisms that have not been unified into one pipeline. The book-by-book debate work reads a passage at a time, identifies the Human Inner Beings it engages, and registers the phenomena and operations that constitute the analytical claim — reaching 49 of 18,558 passages so far, across six books. Separately, the cluster/characteristic model allocates Strong's codes directly to the programme's thematic clusters, grounded in verse-context analysis rather than bulk matching. Both are described in full in Chapter 4; the programme has not yet reconciled the two into a single analytical account of a word.
+
+**Publishing.** The live reader-facing output is book-driven, not word-driven: the debate pipeline's `story_summary` field, populated for the passages that have reached a completed debate status. The programme does not currently have a mechanism producing a per-word reader-facing study.
+
+The database carries each stage's state; work is taken up at whatever point the database shows it left off. Methodologies and processes within each stage have changed materially over the programme's life — this section describes what currently operates, not the full history of what preceded it.
+
+
+> The operational methodology of the second lens — when science enters the work, the three-question structure, the six scientific fields with their corpus positioning, the reference shelf, the no-database decision, and the convergence/divergence framework.
+
+##### Science in action
+
+_`prog_meth_science`  ·  type id 45  ·  chapter 2  ·  sort 12_
+
+*Section id 11 · status `draft` · v101 · 925 words · author `claude_ai`*
+
+The relationship between Scripture and contemporary science is described conceptually in the sub-section on science and the Bible. This sub-section describes the operational consequence: how the scientific lens is engaged within the programme's work, at what point, and through what instrument.
+
+The governing premise is the second-lens position. Scientific literature relevant to the inner being is vast — psychology, neuroscience, physiology, behavioural science, developmental and cognitive psychology, and evolutionary biology each address territory the programme's corpus covers. Treated as a co-equal research programme, the scientific material would demand a second corpus-level effort matching the biblical one in scope and rigour. The programme does not attempt this. It requires representative and reliable coverage of the landmark findings in each relevant field, held alongside the biblical analysis as the second lens through which the same territory is read.
+
+**When science enters the work.** Scientific engagement happens during Session B and is sequenced after the biblical pass is complete. Steps 1–6 of Session B's analytical protocol are the biblical pass — semantic characterisation, dimensional placement, divine and somatic dimensions, relational and causative analysis, anchor-verse work. Steps 7–8 are the scientific pass. Steps 9–10 are the integrating synthesis. The sequencing is a methodological commitment. Running the two passes simultaneously risks the scientific frame distorting the biblical reading before the biblical analysis is complete, particularly for words where the scientific literature is substantial (shame, fear, grief, and comparable affective territory).
+
+**The three-question structure.** The scientific pass proceeds through three questions. First, what is the primary scientific field for this word? Second, what are the landmark findings in that field for this characteristic? These are the settled, well-replicated observations that researchers in the field would cite — not a literature review. Third, where does the scientific finding engage the biblical analysis? One substantive paragraph per word, identifying the specific point of convergence or divergence. The third question is the analytical work of the pass; the first two are preparation for it.
+
+**The six scientific fields.** The programme works with six fields.
+
+- *Neuroscience* — body-soul boundary and somatic dimension. Neural correlates of inner states, the brain-body connection, how emotion is implemented biologically.
+- *Clinical and social psychology* — soul operations. Emotion theory, attachment, moral psychology, shame and guilt research, the psychology of will, motivation, and virtue. Most Session B words draw on this field.
+- *Physiology and epigenetics* — body circle and generational transmission. Stress physiology, the HPA axis, the bodily expression of grief and joy, the inheritance of patterns across generations.
+- *Behavioural science* — relational circle. How inner states express in behaviour and social context, how cooperation and competition shape inner life, the social functions of emotion.
+- *Developmental and cognitive psychology* — cognitive circle and the formation of character. How cognitive capacities develop, moral development, conscience, executive function and self-regulation, character formation.
+- *Genetics and evolutionary biology* — the created endowment. What is built into the human creature by nature, the heritability of temperament, the evolutionary origins of social emotions, the genetic basis of empathy and conscience.
+
+Most words have a clear primary field; some span two. Field assignment is made at the head of the scientific pass.
+
+**The reference shelf.** The scientific pass uses a curated reference shelf — a set of foundational texts and landmark papers organised by field, chosen for breadth of coverage against the corpus. The shelf is not a reading list to complete before analysis begins; it is consulted during the scientific pass of each word. Where the shelf carries a text of high relevance to the word being analysed, that text is the primary scientific reference for the session. Where a word falls outside the shelf's coverage, a targeted search fills the gap. A recurring gap across multiple words signals that the shelf should be extended.
+
+**The no-database decision.** The programme does not build a structured scientific database to match its biblical database. Three reasons. A parallel scientific database at the depth of the biblical one would constitute a second programme of comparable scale and would defer synthesis. The data types are not structurally equivalent: biblical data is lexical and classifiable, while scientific findings are arguments, observations, and interpretations that require judgement to apply. And the programme does not need it — the second-lens role is served by the reference shelf.
+
+**Convergence and divergence.** The analytical work of the scientific pass is organised by a framework that distinguishes three kinds of convergence and three kinds of divergence. Convergence can be phenomenological — the two accounts describing the same experience from different angles. It can be mechanistic — science describing the mechanism of what Scripture describes as a reality. It can be structural — the architecture of the inner life having the same shape in both accounts. Divergence can be register divergence — the accounts addressing different levels of the same reality and only appearing to conflict. It can be reductive divergence — a scientific account that reduces the inner-being characteristic to its biological substrate and loses dimensions the biblical account treats as primary. It can be genuine divergence — claims in actual tension that cannot be harmonised by reframing. Genuine divergence is flagged for the cross-registry synthesis phase rather than resolved at the word level.
+
+**What the pass produces.** The output of the scientific pass for each word is a concise annotation: the primary field, the two or three landmark findings drawn on, and the paragraph identifying the convergence or divergence with the biblical analysis. The annotation is carried into the word's Session B record and appears in the published word study.
+
+
+> The three orders of programme output — per-word studies, cross-word syntheses, programme-level account — with the intended audience, the register, and the relationship between the analytical record in the database and the curated published view.
+
+##### Publishing
+
+_`prog_meth_publishing`  ·  type id 46  ·  chapter 2  ·  sort 13_
+
+*Section id 12 · status `draft` · v102 · 395 words · author `claude_ai`*
+
+Publishing is the output side of the pipeline: the production of documents that carry the programme's findings to its audience. The programme produces three orders of published output.
+
+The first order is the **per-word study**. Each word in the registry receives a written study produced at Session C. The study is the reader-facing form of the word's analytical record: what the term means across its Hebrew and Greek originals, how its occurrences distribute across Scripture, what contexts and characteristics the verses reveal, how the term engages the spirit-soul-body continuum, and how the biblical analysis relates to the relevant scientific findings. The per-word study is designed to stand alone: a reader encountering a single study, without having read any of the others, gets a complete treatment of that word.
+
+The second order is the **cross-word synthesis**. Once a cluster of related words has been studied individually, Session D reads across them and produces the synthesis findings that single-word studies cannot carry: interrelationships between words, patterns that run across a group of words, and impacts of one characteristic on another at the level of the inner being as a whole. Syntheses are produced when the per-word studies for their cluster are complete.
+
+The third order is the **programme-level account**. When clusters have been worked through and their syntheses produced, the programme's description of the human inner being becomes assemblable — built from the bottom up, word by word. The present prose corpus is part of this third-order work: the self-description that makes the programme's structure and findings readable as a whole.
+
+Publishing in this sub-section means the production of readable documents that carry the programme's findings. It does not mean commercial publication, external release, or any particular distribution channel. The documents produced at Session C and Session D are the programme's published output regardless of how they are subsequently made available externally. Publication decisions of the external kind are outside the programme's methodological scope.
+
+The analytical record — the per-word findings held in the database — is the research. The published studies are the form in which the research reaches the reader. The database carries the full set of answers to the standing catalogue of questions for every word; the published study is a curated presentation of that record. Where a reader's question is more specific than the published study's treatment, the database supports the deeper look.
+
+
+> The nine methodological principles governing how the research operates — registry completeness, data before analysis, inductive categorisation, evidence-first findings, uniform catalogue, database as analytical memory, biblical-first lens, bottom-up synthesis — and the reproducibility property they produce.
+
+##### Key methodological principles
+
+_`prog_meth_principles`  ·  type id 47  ·  chapter 2  ·  sort 14_
+
+*Section id 13 · status `draft` · v103 · 591 words · author `claude_ai`*
+
+The method rests on nine principles. They govern every phase of the work.
+
+**Registry completeness against the inner-being definition.** The scope of the study is defined by a word list built against the programme's working definition of an inner-being characteristic, and the list is as complete as the evidence permits before any word is studied.
+
+**Data collation is separated from analysis.** The full data for every registry word is collated before analytical work begins on any of them. Every word is read against the same completed body of data.
+
+**Words are not forced into preconceived categories or assumptions.** Dimensions of the inner being are identified from the verse evidence; groups are formed from what the verses engage; findings emerge from the questions applied to the data. A category that cannot be grounded in verse evidence is not a category the programme uses.
+
+**Verses qualify by original-language occurrence, not by interpretation.** A verse is included in a word's corpus because the relevant Hebrew or Greek term is present in it, irrespective of what contribution or meaning the verse may have. This is the same criterion that admits a word to the registry: lexical presence, not interpretive fit.
+
+**Every finding is substantiated by data — no guessing, no assumptions, no made-up results.** A finding is a statement that can be traced back to a specific verse, a specific term, or a specific pattern in the evidence. A statement that cannot be so traced is not a finding the programme records.
+
+**Analysis reads the data as a whole; it does not pick and choose angles.** The analytical work for each word runs through a standing catalogue of questions that every word is worked through in the same way. The catalogue is applied in full. A word's answer to every question is part of its record.
+
+**The database is the analytical memory.** Every answer to every question is persisted in the database, and the database is where the word's findings live. When re-analysis occurs, the prior finding is set aside and the data is read freshly; the new finding replaces the old in the database.
+
+**Biblical lens primary, scientific lens secondary.** Scripture is the primary lens; science is the second lens. The biblical pass is completed before the scientific pass begins, at each word. The operational consequences are described in the sub-section on science in action.
+
+**Synthesis follows analysis — bottom-up, not top-down.** Cross-word synthesis is produced after the per-word analytical work for those words is complete. The programme-level account is produced when the cluster-level syntheses have been completed.
+
+The nine principles are not independent. Building the registry against a definition makes a complete collation meaningful. Completing collation before analysis makes inductive reading possible. Inductive reading makes the catalogue of questions applicable as a uniform instrument. Uniform application makes the database a neutral record of findings. The database supports re-analysis on the same footing as original analysis. Re-analysis on a stable footing makes cross-word synthesis possible.
+
+A word can be revisited at any point by returning to any stage of the pipeline and processing all subsequent stages in sequence. A new Verse Context grouping re-runs Dimension Review, Session B analysis, Session C publication, and feeds Session D synthesis for that word. The database is the final authority of the data and the analysis. Because the data read at re-run is the same data the prior run read, and because the discipline discards the prior finding and reads the data freshly, the re-run arrives at the same result as the prior run. The method is reproducible.
+
+
+> The deliberate limits the programme accepts as methodological commitments — registry-bounded scope, second-lens bound on science, no scientific database, synthesis after evidence, corpus-level treatment, no publication before analytical closure, and registry not reopened on interpretive grounds.
+
+##### Key constraints
+
+_`prog_meth_constraints`  ·  type id 48  ·  chapter 2  ·  sort 15_
+
+*Section id 14 · status `draft` · v104 · 422 words · author `claude_ai`*
+
+The principles described in the preceding sub-section shape how the programme works. The constraints described here shape what the programme does not attempt.
+
+**Scope is bounded by the registry.** The programme studies the words in the registry and does not study other vocabulary. Registry membership is open to evidence surfacing from within the corpus, as described in the sub-section on word selection. It is not open to interpretive expansion from outside it.
+
+**The scientific lens is bounded by the second-lens decision.** The programme does not engage scientific literature at the depth of its biblical engagement. The scope of scientific engagement is set by the three-question structure, the reference shelf, and the per-word annotation, described in the sub-section on science in action. The reasons are practical (the scale of a parallel corpus-level effort), methodological (the data types are not structurally equivalent), and structural (the programme is biblical research, with science as the second lens).
+
+**No structured scientific database.** The programme does not build a structured scientific-literature database alongside its biblical database. Scientific findings are carried in Session B's written record and in the reference shelf. The database holds the biblical research.
+
+**Synthesis does not run ahead of its evidence.** A per-word study is produced when its analytical work is complete. A cross-word synthesis is produced when the studies for its cluster are complete. A programme-level account is assembled when the cluster syntheses are complete. Larger claims are not made before the smaller claims on which they rest.
+
+**The programme is corpus-level, not survey-level.** Each word in the registry receives a full analytical treatment: every verse read, every term classified, every standing question answered. The programme does not treat its subject at survey level.
+
+**No per-word publication before analytical closure.** A word's published study is not produced before its analysis is closed. Prior findings are set aside on re-analysis and replaced with current readings; a published study produced ahead of analytical closure would carry a retraction risk.
+
+**Registry membership is not reopened on interpretive grounds.** Once a word has been admitted to the registry under the inner-being definition, it is not re-examined for admission because a particular interpretive frame would exclude it, or because the analytical work on it has produced findings that conflict with a current reading. A word's membership is a matter of the original-language evidence that admits it. Where analytical findings raise a definition-level question — what the inner being is, where its edges are — that question is handled at the level of the definition, not by editing the registry.
+
+
+#### Chapter 3 — Research approach
+
+> The discipline that distinguishes a finding from a hypothesis and an inferential claim — every claim traceable to a verse, term, lexical source, or extract field; the verse as primary unit of evidence; the extract as authoritative over prior outputs; DB state verified, not assumed.
+
+##### Traceability and evidential warrant
+
+_`prog_disc_traceability`  ·  type id 49  ·  chapter 3  ·  sort 16_
+
+*Section id 16 · status `draft` · v106 · 673 words · author `claude_ai`*
+
+The programme records findings and it records hypotheses; the two are not the same. A finding is a claim that can be traced back to a specific verse record, term entry, lexical source, correlation signal, or extract field in the database. A claim that cannot be traced that way is a hypothesis. Hypotheses are labelled as such or discarded. A hypothesis is upgraded to a finding when subsequent evidence supports it on its own terms; when that happens, the hypothesis-form language is replaced with the evidence-grounded statement rather than left in place with the evidence tacked on.
+
+The traceability requirement is the programme's working definition of evidential warrant. It governs every analytical output — verse-context classifications, dimensional placements, per-word answers in the standing catalogue, the per-word written studies, and the cross-registry syntheses that read across them. The standing of a claim in the programme's record is a function of whether the data supports it, and the data that supports it is specifiable: a verse, a term, a lexicon entry, a flag, a cross-reference, an extract field. Where the support is specifiable, the claim is a finding. Where it is not, the claim is a hypothesis.
+
+Between finding and hypothesis sits a third category: the **inferential**. Where a claim is analytically plausible or theologically reasonable but is not directly supported by data in the current extract, it is labelled inferential. Inferential claims are retained in the record because the work benefits from visible reasoning, but they are not presented as confirmed. An inferential label is an accurate description of the evidence state; it is not a softening of the claim. An inferential reading may later be supported by evidence and become a finding, or be left as inferential, or be discarded. What it does not do is quietly become a finding without the supporting evidence.
+
+The verse leads. All analytical work begins with what the verse says, not with a category, a tradition, or a prior interpretation. Dimensions, groupings, and classifications emerge from the verse evidence; the verse is never bent to fit a pre-existing category. This holds at every phase. Verse Context groups are formed from what the verses engage. Dimensions are assigned from what the groups evidence. Session B findings are produced from the verse, term, and lexical data held in the database. A classification that cannot be grounded in at least one verse in a registry's corpus is not a classification the programme uses for that registry.
+
+The relevance filter that admits a verse into a word's analytical corpus operates at term level, not at verse-theme level. A verse is in the corpus because the original-language term is present in it in a use that either directly engages the inner being or is implicated in an inner-being characteristic. A term present in a verse that plays no role in any inner-being dynamic — purely syntactic, purely locational — does not pass. This is the same discipline that admits a word to the registry: lexical presence in an inner-being use, not interpretive fit.
+
+The current versioned extract produced by the operational agent is the authoritative data source for analytical work. Prior session outputs — earlier observation logs, drafts of word studies, analytical briefs produced before the latest extract was taken — are reference material. Where a prior output conflicts with the current extract, the extract is correct and the prior output requires correction. This rule prevents the subtle displacement by which an earlier analytical framing becomes the working source in place of the data it was drawn from.
+
+Database state is verified, not assumed. Before any operation whose outcome depends on DB state — row counts, field values, flag settings, the presence or absence of a patch — the state is checked. Memory of a previous session's state is not current state. "Recent" is not "current." A check that costs little prevents the class of errors where the fix is harder than the original operation would have been. **Every finding is substantiated by data — no guessing, no assumptions, no made-up results.**
+
+
+> The strict division between Claude AI (analysis, interpretation, authorship; proposes patches and directives) and Claude Code (database operations; applies patches and directives); researcher review at every gate; Claude AI works from versioned extracts without assuming DB state between turns.
+
+##### The two-AI division of responsibility
+
+_`prog_disc_two_ai`  ·  type id 50  ·  chapter 3  ·  sort 17_
+
+*Section id 69 · status `draft` · v1159 · 521 words · author `claude_code`*
+
+The programme runs on two AI agents with a strict division of responsibility between them. **Claude AI** is the analytical agent. It decides what should be done and why: it reads verses, classifies them into groups, assigns groups to dimensions, answers the standing catalogue of questions for each word, drafts the written word studies, and authors the programme's prose. It holds the analytical judgement. **Claude Code** is the operational agent. It determines how a change should be executed and it executes it: it runs SQL against the database, applies patches, fulfils directives, produces extracts, and performs schema migrations. It holds the database operations.
+
+The division is strict. Claude AI does not execute database operations. It does not run SQL, apply patches directly, or modify database state. Claude Code does not produce analytical findings, interpretations, or documents. It does not decide which verses belong to which group, which dimension a group expresses, or what the written study for a word should say. An instruction that crosses the boundary — a request to Claude Code for an analytical opinion, or an analytical finding written by Claude Code into the database without going through a patch — is a breach of the architecture, not a shortcut.
+
+The separation is deliberate. Analytical judgement is the programme's scarce resource. The architecture protects it from the distraction of mechanical work. A single agent carrying both functions would, turn after turn, divert judgement into execution and execution into judgement; the programme's findings would be shaped by whichever function was dominant in a given session. Holding the two separate means analytical turns stay analytical and operational turns stay operational.
+
+The two agents interact through three structured artefacts: **patches**, **directives**, and **obslogs**. Patches remain the instrument for discrete database changes — Verse Context corrections, REPAIR work, dimension review writes — under the existing patch instruction. Directives remain the instrument for operations outside the patch format — schema migrations, ad-hoc queries, structural operations. Under Architecture v2 (2026-04-27), the **obslog** joins them as the canonical artefact for analytical sessions: Claude AI produces a comprehensive obslog `.md` and Claude Code parses it into the database via the Phase 2 writer pipeline. The writer maps every category of analytical content — observations, Q&A pairs, chapters, SD pointers, anchor-verse analyses, new catalogue questions, review notes, status updates — to its DB target table, with pre-write backup, transactional commit, and post-write validation.
+
+The researcher sits at the gate between the two agents. Patches and directives are reviewed before Claude Code applies them. Obslogs follow the same discipline — Claude AI produces the obslog, the researcher reviews the analytical work, Claude Code parses it into the database. Under v2 this workflow is more integrated: Claude Code's role expanded to include the readiness output generation that prompts AI's analytical work, the analytic status generation that supports revision sessions, and the anomaly detection that surfaces data inconsistencies as open findings for AI to address in the next session. The bidirectional channel — AI's analytical observations and CC's data anomalies both landing as `wa_session_b_findings` rows for resolution — is the mechanism that keeps the analytical record and the database coherent.
+
+
+> The database as the programme's authoritative analytical memory; Claude AI's five memory layers and their limits; the obslog as continuous session record; the session log as handoff; pass-close as the mechanism by which session work reaches the DB; prose written to survive storage across sessions.
+
+##### Session continuity and memory discipline
+
+_`prog_disc_session_continuity`  ·  type id 51  ·  chapter 3  ·  sort 18_
+
+*Section id 18 · status `draft` · v107 · 879 words · author `claude_ai`*
+
+The programme's analytical memory lives in the database. The classifications produced at Verse Context, the dimensions assigned at Dimension Review, the answers to the standing catalogue of questions produced at Session B, the written word studies produced at Session C, the cross-registry syntheses produced at Session D, and the programme-level prose that describes the whole — all of these are held in the database. The database is where the programme's findings, interpretations, and analytical output are kept. It is not a storage layer beneath the research; it is the research's memory.
+
+Claude AI does not live inside the database. Claude AI is an analytical instrument applied to snapshots — slices of the corpus loaded into the current working context. At any moment of thinking, Claude AI sees only what has been loaded: the files in the current session, the extract drawn from the database for the current pass, the instruction documents bearing on the current instruction. The database continues to hold the authoritative record whether Claude AI is looking at it or not. Getting the right snapshot in front of Claude AI for a given question is itself a research act — the shape of the snapshot determines the shape of what Claude AI can say.
+
+Claude AI's available memory arrives in five layers, and they are not equivalent. The **immediate chat context** carries the current conversation — verbatim but bounded; earlier content is pushed out as the window fills. The **userMemories summary** is an automated prose digest of past conversations — a pointer to what has been decided or found, not the decision or finding itself, and subject to drift between updates. **Retrievable past chats** return fragments of earlier sessions through keyword or time-window search, not full transcripts. **Project files on disk** — session logs, instruction documents, extracts, the database accessed through the operational agent — are authoritative by programme convention. **Training** is general knowledge: Hebrew, Greek, biblical studies, methodology. Training is pattern, not record; it does not substitute for reading the database. Where analytical precision matters, the discipline is to read the authoritative source rather than rely on what a summary layer says about it.
+
+"Collective learning" does not cross users or projects. Each conversation Claude AI holds is isolated from every other conversation held with any other user and from any other project in this user's workspace. What can feel like accumulated collective insight is retrieval from this programme's own session trail, pattern-matching from training, or in-context reasoning over what has been loaded. It is not a shared pool of knowledge about the subject built up across users. Stating this plainly keeps the work honest: the programme's findings are the programme's findings, traceable to the evidence this programme has gathered.
+
+The session discipline that reaches across the boundaries between sessions runs on two documents. The **observations log** — the obslog — is the session's working paper. It is opened at session start as a required step, and from that point every finding, decision, gap, patch consequence, and open question is written to it at the moment it is determined. Every substantive chat output also appears in the obslog. Researcher feedback is captured verbatim. The obslog is continuous while the session runs; nothing substantive exists only in chat or only in memory.
+
+The **session log** is the handoff record. It is produced at session close and at any named batch boundary within a session. Where the obslog carries continuous detail, the session log carries the closing state: what was done, what was decided, what remains open, and what the next session needs at startup to resume cleanly. A session that closes without a session log has not closed cleanly.
+
+At **pass close** — the boundary at which a phase of work completes and a fresh analytical slice becomes the working source — items requiring database persistence are written through a patch or a directive, researcher-reviewed, and applied by the operational agent. A fresh extract confirming the write becomes the source of truth for the next pass. This is the mechanism by which session work reaches the database: the obslog captures the work in flight; the patch or directive commits it; the fresh extract verifies the commit and carries the state forward.
+
+Extracts are versioned. At session start, Claude AI confirms the version of the extract it is working from; an extract whose version is not confirmed is not worked on. Between turns, the database state held in the current extract is not assumed to be still current; where an operation depends on state that may have changed, a refresh is requested from the operational agent before the operation proceeds.
+
+Prose written to the database is written to survive storage. The sub-section of prose produced in one session will be read and built on in another, possibly with a different snapshot loaded. To survive that transition, the prose is self-contained — readable without the session that produced it; scoped — clear about what it refers to (registry, cluster, group, dimension, or programme-wide); and grounded — clear about the evidence it rests on. Prose that only makes sense inside its session of origin is fragile under this model. The database carries interpretation as well as evidence, and interpretation held in the database survives session boundaries the way evidence does.
+
+
+> The programme's small set of instruments — STEP Bible; VSCode with Claude Code; Claude AI as analytical agent; the SQLite database as corpus; markdown and JSON as working formats; the instruction corpus for process control; programme prose in the DB as a phase-by-phase production chain across Session A extraction, Session B Readiness, Session B Analysis, Session C, Session D; the standing catalogue of questions as analytical instrument.
+
+##### Tools and their roles
+
+_`prog_disc_tools`  ·  type id 52  ·  chapter 3  ·  sort 19_
+
+*Section id 1040 · status `draft` · v1040 · 1284 words · author `researcher`*
+
+The programme runs on a small set of tools, each with a defined role. Over time, and as the programme continued to wrestle with consistency and repeatability the tool set migrated from a range of scripts, tools and instruction sets to the concept of a integrated Inner Being Application. This IBA App is the result a complete rebuild of the database and all its dependencies. The IBA App is described in more detail in subsequent sections.
+
+In principle the initial script and instructions, migrated to the IBA App allows the research to operate on text evidence held in a structured record, interrogated by two AI agents under researcher direction. The tools are the instruments through which this work is performed.
+
+**STEP Bible** is the source of biblical-language data. For each word in the registry, STEP provides the Hebrew and Greek terms that carry the word's sense, the full set of verses in which those terms occur, and the lexicon data for every term. STEP is consumed at Session A, where the per-word dataset is assembled, and again during continuous-discovery extension of the registry — when retrieval surfaces a related original-language term that meets the inner-being definition but was not on the list, the term is added.
+
+**VSCode with Claude Code** is the operational environment. The operational agent runs inside the editor, executing SQL against the database, applying patches, fulfilling directives, producing extracts, and performing schema migrations. The combination is both the execution surface and the audit surface: every database operation takes place in a tool the researcher can observe directly.
+
+**IBA App** is the control system to allow for standard operations to be performed consistently with minimal deviation over time.  The App is used by the researcher and in the VSCode editor to run pre-designed operations.
+
+**Claude AI** is the analytical agent. It reads the verse evidence, classifies verses into groups, assigns groups to dimensions, answers the standing catalogue of questions for each word, drafts the written word studies, and authors the programme's prose. It constructs patches and directives but does not apply them. Its role is analysis, interpretation, and authorship.
+
+**The SQLite database** holds the corpus. Components — terms, verses, classifications, dimensions, groups, registry entries, cross-references — live in it. Prose — programme narrative, per-word studies, cross-registry syntheses — lives in it under the same schema. It is a single analytical memory carrying both the evidence and the interpretation built on the evidence. Every finding the programme records is held here; an extract drawn from it is the working source for each analytical pass.  Two databases are currently in operation: bible_research.db is the first database. With the advent of the IBA App, the iba.db was created. The base data layer (from STEP to verse lexical) is fully migrated from bible_research.db to iba.db.
+
+**Markdown and JSON** are the working file formats. Descriptive content — instruction documents, the observations log, the session log, draft prose, governance documents — is written in markdown. Structured content — patches, directives, extracts, schema documentation, the global rules extract, reference files — is written in JSON. Both formats are plain text, diff-able, and auditable; a reviewer can open any file and read it without proprietary tooling. Word processors and PDFs are produced only when the researcher requests them as a deliverable.
+
+**The instruction corpus** Initially the programme's process control was controlled by a series of instruction sets. Each phase of the work — Session A, Verse Context, Dimension Review, Session B, Session C, Session D — had authoritative instruction documents that sets out what is done, in what order, to what standard. The many iterations of, and differences and omissions accross the instructions lead to the development of the IBA App where all rules are governed by sets of configurations in the App. Programme-wide rules for AI Chat sit in the global rules document loaded at every session start. 
+
+The elaborate design and structuring of a set of instructions included : The registry-management guide governs how the registry is extended and maintained; the patch and directive specifications govern how database changes are authored. The instruction corpus is the mechanism by which process is controlled rather than re-negotiated each session; referring to it is how the programme keeps its discipline stable across months of work. All of this turned out to be failing when applying the rules over time in AI Chat. A lack of consistency, predictability and quality emerged, giving rise to the redevelopment of the entire approach in the IBA App.
+
+**Programme prose held in the database** is the production chain through which the research is articulated and, eventually, published. Prose is produced and captured at each successive phase of the per-word work, and every order of prose is held in the database so that the next phase can draw on it. *At Session A*, the per-word prose is the listing of the extracted STEP data — the terms, the verses, the lexicon entries assembled as the word's source record. *At Session B Readiness*, the prose is a data extract that brings together all the different angles of the word's data after Verse Context and Dimension Review have been applied — groups, dimensions, anchor verses, cross-references, term flags — and this extract becomes the primary input for the analytical pass. *At Session B Analysis*, the prose is the primary result of the standing catalogue of questions: every analytic finding captured, every pointer for cross-registry synthesis recorded, the full record generated from the database. *At Session C*, the reader-facing written study for the word is produced in plain, accessible language for an intelligent non-specialist reader, drawing on the prior orders of prose; the study is updated as Session B's analytical findings are incorporated and again as Session D's cross-registry synthesis informs it. *At Session D*, prose is produced at the level of clusters of related words, examining the inter-relationships of the inner-being characteristics and their impact on the inner being; this prose is built from the accumulated pointer record in the database and from the cross-registry analysis performed against it. Alongside this per-word and per-cluster production chain, the programme-wide prose — the self-description of the programme that this corpus is itself part of — is held in the same database under the same schema, so that every session has a consistent, queryable self-description to draw on.
+
+**The standing catalogue of questions** is the programme's analytical instrument. At Session B, every word is interrogated through the same pre-prepared set of questions that examine the verse evidence and the lexical data from every angle the programme has committed to covering. The catalogue is applied in full, on every word. Analytical rigour comes from this uniformity: the depth of a word's treatment does not depend on which session it was studied in, which mood the analyst was in, or which aspects of the word happened to catch attention. Every word gets the same instrument applied to it, and every answer is persisted in the database as part of that word's record.
+
+The tools combine to support the programme's working arrangement. STEP feeds Session A; Session A outputs are imported through patches into the SQLite database. The analytical agent reads from extracts and authors patches, directives, and prose. The operational agent executes the database operations. Markdown and JSON files carry the artefacts of this exchange between turns; the instruction corpus governs how the work is done; the prose corpus in the database keeps the description of how the work is done accessible to every session, and carries the phase-by-phase prose that the research produces about the words it studies; the standing catalogue keeps the analytical depth consistent across every word. Each tool is bounded; together they are the whole of what the programme uses.
+
+
+> The foundation of the programme's authorship framework — all intellectual work originates with and remains the responsibility of the researcher; Claude AI as research assistant, never deciding; what AI did and did not do; integrity of primary sources via STEP Bible and the auditable patch system; alignment with publisher criteria for legitimate AI use in scholarship.
+
+##### Researcher decision authority
+
+_`prog_disc_research_decisions`  ·  type id 53  ·  chapter 3  ·  sort 20_
+
+*Section id 20 · status `draft` · v108 · 926 words · author `claude_ai`*
+
+All intellectual work in this programme originates with and remains the responsibility of the researcher. The research question, the corpus design, every methodological decision, every analytical judgement, and every conclusion are the researcher's. AI did not author, conceptualise, or decide anything. The researcher directed every session, evaluated every output, corrected errors, overrode proposals, and accepted or rejected suggestions on their merits against the primary biblical data. Claude AI functioned as a research assistant — executing, querying, drafting, and proposing — never deciding. This is not a description of the programme's attitude; it is a description of how the programme actually operated, turn by turn, session by session, through every registry and every finding.
+
+The division at each decision point is concrete. Claude AI reads the verse evidence and proposes a classification; the researcher accepts, modifies, or rejects. Claude AI drafts a paragraph of prose; the researcher reviews, corrects, or replaces. Claude AI constructs a patch that would commit findings to the database; the researcher reviews the patch before the operational agent applies it. Claude AI raises an observation with two possible readings; the researcher decides which reading governs. At every one of these decision points, the record of what was proposed, what was decided, and what follow-up was logged is captured in the session's observations log. The log is the auditable record that the decision was the researcher's.
+
+**What Claude AI did, within researcher direction.** Claude AI queried the SQLite research database on the researcher's instruction. All queries were specified by the researcher; all outputs were reviewed and verified. Claude AI produced drafts from structured briefs supplied by the researcher. All drafts were reviewed, corrected, and approved; no draft was accepted without critical evaluation. Claude AI generated structured JSON data files from researcher-supplied source material. The researcher specified all classification decisions and validated every output. Claude AI contributed proposals to the analytical framework. All proposals were evaluated against the corpus data by the researcher, who accepted, rejected, or modified them.
+
+**What Claude AI did not do.** Claude AI did not select the research question. It did not make authorship decisions. It did not interpret Scripture independently. It did not supply citations without verification. It did not produce any output that was accepted without the researcher's critical review. Where a reading of the biblical text was contested, Claude AI surfaced the readings with their evidence and escalated the decision; it did not choose between them. Where a rule's application was uncertain or a scope question was unresolved, Claude AI did not guess — it escalated. The researcher's in-session direction supersedes stale text in the rules file until the file is updated; the researcher's standing authority does not depend on whether a particular rule has been updated to reflect it.
+
+**Integrity of content and primary sources.** The primary source for all lexical claims in the programme is STEP Bible, a peer-maintained scholarly tool for Hebrew and Greek biblical analysis. Every term, every Strong's number, and every verse record was drawn from STEP and verified against it. The researcher personally reviewed all source data and is accountable for every claim. Claude AI was not used to supply citations independently; it organised and structured data the researcher supplied. All changes to the research database are held in a versioned, auditable patch system with a complete decision history. Every patch records what was proposed, who approved it, when it was applied, and what the confirmation output showed. The chain from primary source to database entry to finding is traceable end-to-end, by design.
+
+**Assessment against publisher criteria.** The framework of authorship on which this programme is built corresponds to the criteria articulated by COPE, Elsevier, Wiley, Springer Nature, Taylor & Francis, and SAGE for the legitimate use of AI in scholarship. One human researcher holds full intellectual responsibility for the programme and can defend every claim it makes. AI use is declared specifically and categorised by function, consistent with current disclosure requirements. All primary-source claims are verifiable against STEP Bible and the auditable database; no AI-generated citation was accepted without independent verification. The research question, the corpus design, the analytical framework, and the findings are the researcher's own; AI did not supply substantive interpretive content. No confidential third-party material was processed through AI tools; the programme was conducted on data owned and assembled by the researcher. These are not aspirational commitments — they are the programme's operating record, recoverable from the observations logs, the patch history, and the session outputs that have been produced in the course of the work.
+
+**The analogy that holds.** The use of AI in this programme is analogous to the use of any powerful research tool — a lexical database, a concordance, a statistical package, a research assistant. The tool did not produce the scholarship. The researcher did. That is the standard by which this work asks to be evaluated, and it is the standard the work meets.
+
+The framework of authorship is not a concession to publishing convention and not a disclaimer attached to the research. It is the condition under which the research was conducted. Every discipline described in this chapter — the traceability requirement, the two-AI division, the session-continuity and memory-discipline, the tooling, the scope discipline that follows — is framed by it. The programme's analytical architecture exists to give the researcher the auditable conditions under which decisions can actually be made, verified, and defended. Without that authority structure, the architecture would be assistance in search of a principal. The principal is the researcher, and the architecture serves the research that the researcher does.
+
+
+> The in-session operating discipline that keeps Claude AI focused on the task the researcher has set — help-forward default bounded by researcher scope; no autonomous extension of scope; observations surfaced, not enlarged into recommendations; escalation to researcher on uncertainty; the positive work of exploration preserved within the discipline.
+
+##### Scope and help-forward discipline
+
+_`prog_disc_scope_integrity`  ·  type id 54  ·  chapter 3  ·  sort 21_
+
+*Section id 21 · status `draft` · v109 · 758 words · author `claude_ai`*
+
+The programme's analytical architecture works only if Claude AI stays on the work the researcher has set. The disciplines already described — traceability, the two-AI division, session continuity, tool use, researcher authority — all assume an analytical agent that is focused on the task at hand and does not drift. Without that focus, the architecture becomes a stage on which Claude AI generates volume; with it, the architecture produces research.
+
+The operating default is **help forward**. Where the path the researcher has set is clear, Claude AI advances the work. It does not wait for explicit instruction on every step within a task that has already been scoped. It does not pause to request permission for the analytical steps that the task evidently requires. Help-forward is the reason the researcher can direct a session rather than dictate every move within it.
+
+Help-forward is bounded. It means help on the task the researcher has set, not help in the form of proposing adjacent tasks, speculating about related questions, or volunteering a next-phase agenda. A task is advanced; it is not enlarged. Where Claude AI notices something that warrants attention but lies outside the current task — a finding elsewhere that bears on this one, an instruction that appears inconsistent with another, a pattern that a future session might want to examine — the observation is recorded as an open item, and the work continues on what was asked.
+
+Scope is not extended autonomously. Where additional work appears warranted, it is flagged for researcher decision, not undertaken. The flag is explicit: *this is outside current scope; the researcher decides whether it enters scope*. The decision to extend is the researcher's. Claude AI's role is to surface, not to enlarge.
+
+The same discipline applies to looking forward. Claude AI explores within the task, reads, interrogates the data, compares options, and produces reasoning that the researcher can evaluate. What it does not do is propose what the programme should do next, suggest what the next session should prioritise, or construct a forward agenda from what the current work has raised. Forward direction is a programme-level decision, and programme-level decisions are the researcher's. An observation that bears on forward work is surfaced as an observation; it is not framed as a recommendation that the researcher then has to push back against.
+
+The failure mode the discipline prevents is **drift**: the slow transformation of a focused task into something broader, shaped by Claude AI's pattern-matching and accumulated in-context associations rather than by the researcher's direction. Drift looks plausible turn-by-turn — each step seems a reasonable adjacency to the last — and only becomes visible as drift when the session is read end-to-end against what was originally asked. The discipline against drift is turn-by-turn: every turn is bounded by what was asked, what was needed to answer it, and the write-and-audit cadence that closes the turn. A session that stays disciplined turn-by-turn stays disciplined across the session.
+
+**Escalation**, not guessing, is the standing response to uncertainty. Where a rule's application is not clear, where a scope question is ambiguous, or where two readings of an instruction are both defensible, Claude AI does not choose — it surfaces the uncertainty and escalates to the researcher. Guessing at what the researcher would want is not a time-saver; it is drift wearing a different label. The researcher's direction takes the same amount of time to obtain whether Claude AI has guessed first or not, and if Claude AI has guessed first, the work done under the guess may need to be redone.
+
+The positive work this discipline protects is the work of exploration. Claude AI reads widely within the task, considers alternative readings, surfaces options with their evidence, notices patterns, and produces analytical material the researcher can evaluate. This is substantial work and it is the work Claude AI contributes. What it does not do — the deciding, the expanding, the forward-planning — is not a suppression of Claude AI's capabilities. It is the division by which those capabilities become useful to the research rather than a drain on it.
+
+The chapter describes the disciplines under which the programme operates. Scope integrity is the discipline that keeps each session recognisable as the session the researcher opened — not a related session, not a broader session, not the session Claude AI would have chosen to run. It is, with the authorship framework that precedes it, the foundation on which the programme's auditable record can actually be audited: what was asked, what was done, what was decided, and by whom.
+
+
+#### Chapter 4 — Data architecture
+
+> The database as the programme's working memory — DB-canonical principle, role as the authoritative record of both evidence and interpretation, the controlled-vocabulary scaffolding that keeps shared types consistent, and the boundary with STEP Bible as the primary source that the database draws from rather than replaces.
+
+##### The database as the programme's working memory
+
+_`prog_data_database`  ·  type id 55  ·  chapter 4  ·  sort 22_
+
+*Section id 22 · status `draft` · v1210 · 409 words · author `claude_code`*
+
+The programme runs on two SQLite databases. `iba/app/db/iba.db` is the home for all project process control and base data — every table from STEP extraction through Strong's, verses, meaning, and lexical detail, and the `cfg_*` configuration store that governs how every script and module behaves. `database/bible_research.db` is the home for prose and findings — the analytical output built on top of the base data, and the DB-canonical prose store the programme's written account is authored into.
+
+`iba.db` is governed by its own `cfg_*` system — twenty tables, on the order of a thousand rows, that hold every rule the app's code obeys: which API may write which table, what a step's failure path is, what a controlled vocabulary's allowed values are, what a report's structure is. The principle is that the code decides nothing; every choice the code used to make in a literal is now a row a live check can read. This governing layer is itself part of the data architecture — not a separate concern bolted on afterward — because it is what makes the base-data layer's behaviour traceable and changeable without a code edit. Chapter 5 describes the governance mechanism itself in full; this chapter describes what the two databases hold.
+
+Neither database is the primary source for the Hebrew, Greek, and Aramaic material the programme works with. STEP Bible, a peer-maintained scholarly resource, remains the source every Strong's number, gloss, meaning parse, and verse reference traces back to. `iba.db`'s base-data layer is the programme's verified, structured copy of what STEP returns — not a replacement for STEP, a working record built from it.
+
+`iba.db` is primary for all base-data and process-control work; a handful of the analytical tables it currently carries — the book-by-book passage/phenomenon/debate pipeline described later in this chapter — are expected to migrate back into `research_db` once the analysis phase is properly under way (escalation #737, on hold). `bible_research.db` is primary for prose and findings, including the cluster/characteristic analytical model that is the programme's current analytical grouping mechanism.
+
+The sub-sections that follow work through what is live in each database, table by table: the registry, the term/lexical substrate, the verse and passage layer, the anchor-verse mechanism, the cluster/characteristic analytical grouping, the question catalogue and the finding store, the synthesis bridge, and the prose store. Each describes the architecture as it operates today — a data table this chapter does not name is not part of the current architecture, whatever its history.
+
+
+> The registry as the programme's expression of scope — word_registry as the 214-row atomic list, what each row carries across the phase-status, analytical, and automation-tracking fields, the registry word as the atomic unit of research, wa_file_index as the per-word file track, and the cluster_assignment field as an administrative run-batch tranching mechanism distinct from the analytical grouping carried by dimensions.
+
+##### The registry
+
+_`prog_data_registry`  ·  type id 56  ·  chapter 4  ·  sort 23_
+
+*Section id 23 · status `draft` · v1211 · 136 words · author `claude_code`*
+
+`iba.db`'s `word_registry` (180 rows) is the programme's live registry — the scope of a new-word onboarding run. A row carries `word` (the English headword), `source` (why it entered scope), `status` (its onboarding state), and the timestamps a run needs. It is deliberately thin: it answers one question — is this English word in scope, and what is its onboarding status — and nothing more.
+
+The registry's analytical weight sits elsewhere. A word's actual lexical and analytical record is not accreted onto the registry row itself; it is built in the base-data and cluster tables the rest of this chapter describes, keyed off the Strong's code a word's onboarding run discovers, not off the registry row. The registry is the entry point and the scope list; it is not where the programme's findings about a word live.
+
+
+> The Hebrew, Greek, and Aramaic term layer — mti_terms as the canonical term index, wa_term_inventory as the extraction-time record, STEP Bible as the primary source for all lexical claims, the parsed meaning hierarchy (wa_meaning_parsed + wa_meaning_sense + wa_meaning_stem + wa_lsj_parsed), the associative layers (wa_term_related_words, wa_term_root_family), term flags, and the extraction-provenance log.
+
+##### Terms
+
+_`prog_data_terms`  ·  type id 57  ·  chapter 4  ·  sort 24_
+
+*Section id 24 · status `draft` · v1212 · 354 words · author `claude_code`*
+
+The term layer lives in `iba.db`, as a chain of small, single-purpose tables, each named for the processing layer it represents.
+
+`word_strong` is the discovery record (L1): one row per (word, Strong's) pair that STEP's word-search returned, 4,874 rows. It carries the link only — no term detail — and is the starting point that determines which Strong's numbers a given English word's onboarding run will touch.
+
+`strong` is the term's identity (L2): one row per Strong's number, unique and global to the whole study, 15,293 rows. Meaning is deliberately not carried on this row; it is normalised out into its own set of tables — `strong_sense`, `strong_meaning_tree`, `strong_lexicon`, `strong_lsj_parsed`, `strong_mounce_parsed` — the sense-hierarchy, LSJ, and Mounce enrichment for the term. `strong_related` (87,535 rows) carries the term's associative and root-family relationships.
+
+`lemma_inventory` (11,781 rows) is the independent substrate the seed net runs over — imported from the old study, deliberately not derived from the registry, so that it functions as a genuine completeness control rather than a reflection of what the registry already expected to find. `candidate_seed` (2,087 rows) is the over-inclusive Axis-A candidate assessment built from it: a potential, not yet definite, decision about whether a lemma belongs in scope, with the lexical stage as the real test.
+
+The verse-level lexical substrate is a further chain. `span` (391,417 rows) is the immutable source parse — one row per HTML `<span>` tag STEP's own interlinear presents for a verse, kept verbatim so the parse is re-derivable; a combined-unit tag (more than one Strong's or morph code on one `<span>`) is kept as one row, not split, after a 2026-07-25 correction found the earlier one-row-per-code model misattributed surface text. `span_candidate` (83,914 rows) is the L4b candidate stamp over a span — existence itself is the stamp, before the lexical stage tests it in context. `verse_lexical` (960,064 rows) is the derived, version-aware mechanical reading: the T1–T3 role classification, stem/voice-selected sense, and named-not-resolved ambiguity, one row per Strong's code within a span. It is read by `report.verse_lexical` and, downstream, never re-derived from `span`/`strong` directly — the derivation happens once, and everything after it reads the derived row.
+
+
+> Ownership and cross-registry reference architecture — one term has one OWNER registry, XREF rows record analytical relevance to other registries without duplicating classification, wa_term_inventory.term_owner_type carries the label, mti_terms.owning_registry_fk carries the canonical pointer, mti_term_cross_refs holds the XREF rows, and the pure XREF registry is a legitimate complete state.
+
+##### Ownership and cross-registry references
+
+_`prog_xref_architecture`  ·  type id 28  ·  chapter 4  ·  sort 25_
+
+*Section id 25 · status `draft` · v1213 · 300 words · author `claude_code`*
+
+Inner-being vocabulary overlaps across registry words, and the architecture answers a direct question about that overlap: does a Strong's code belong to a cluster (an M-code thematic grouping)? It answers this as a property of the Strong's code itself, with no dependency on any registry row at all. `cluster_strong` (7,609 rows) is the strong-to-cluster link, deliberately built with no foreign key to `word_registry`. A Strong's code's cluster membership is decided directly, not inherited through which English word happened to introduce it.
+
+Every table in the term layer described in the previous sub-section is already keyed on the Strong's code or the span, never on a registry. A term's analytical record — its lexical readings, its cluster membership — accumulates at the Strong's-code level from the start; there is no per-registry copy of that record to reconcile across words that share a term.
+
+`cluster_strong`'s allocation has happened in several distinct passes, each recorded by its own `source` value rather than overwriting a prior row in place: 2,801 rows carry `old-system-migration` (the 2026-08-11 migration that seeded the table), 1,612 carry `llm-allocation-v1_3-20260811`, 203 carry `llm-reassignment-v1_1-20260811`, 1,414 carry `auto-precedent`, 1,574 carry `manual-backfill-triage-20260813`, and 5 carry `manual-covenant-cluster-20260813`. The `manual-backfill-triage` batch followed a researcher correction (2026-08-13) that a bulk keyword-crossmatch allocation of the backfill Strong's codes into clusters was not an acceptable substitute for allocation grounded in actual verse-context analysis; the batch recorded under that source name is the analysis-grounded correction, not the automation it replaced. That correction is the standing rule for how any further allocation work must proceed.
+
+`word_strong` is a many-to-many link — a Strong's code can be discovered through more than one English word's onboarding run — but this does not create an ownership question, because the analytical record a Strong's code accumulates does not live under any one word's registry row.
+
+
+> The verse base and the classification layer — wa_verse_records as the verse occurrences, wa_verse_term_links carrying STEP sub-gloss codes, books and book_code_variants for reference normalisation, verse_context as the classification grid with its three flags and set-aside vocabulary, verse_context_group as the contextual-meaning cluster layer, and the term-level filter as the governing principle.
+
+##### Verses and the context layer
+
+_`prog_data_verses`  ·  type id 58  ·  chapter 4  ·  sort 26_
+
+*Section id 26 · status `draft` · v1214 · 265 words · author `claude_code`*
+
+`iba.db`'s `verse` table (29,759 rows) carries the addressable identity of a verse — `osisId`, `reference`, and `preview` (the full interlinear HTML, kept verbatim so `span` is re-derivable).
+
+The live passage layer sits above it: `verse_passage` (25,690 rows — passage membership, `is_anchor` flag per verse-in-passage) and `passage` (18,558 rows — the reading-frame register; a passage is a maximal run of consecutive verses, chapter-bounded in practice, anchored on its first verse via `anchor_verse_id`).
+
+The book-by-book debate pipeline adds a further, distinctly analytical layer on top of the passage register: `hib` (63 rows — a Human Inner Being identified within a book's scope, recurring across many passages of that book), `phenomenon` (177 rows — one row per HIB per verse per passage, Step 3 of the debate digest), and `operation` (177 rows — the operation registered for a phenomenon, Step 4–5 output; a `phenomenon_id NOT NULL` constraint enforces that an operation always traces to a phenomenon). `passage_linkage`, `passage_insufficiency`, `passage_emergent_question`, and `passage_validation_note` carry the debate's supporting judgement calls, and `debate_change_detail` (242 rows) is the shared per-run CRUD audit trail across every debate writer (`hib.set`, `passage.build`, `phenomenon.set`, `operation.set`, `closing.set`).
+
+The `passage` table's `debate_status` field shows exactly how far this analytical work has reached: of 18,558 passages spanning the whole Bible, only 49 currently carry a debate status (45 `filled`, 4 `complete`), concentrated in six books — Daniel, Jonah, Joel, Obadiah, Micah, and Hosea. The great majority of the passage register (18,504 rows, carrying `rule='char-continuity'`) exists as the reading-frame substrate the debate work will draw on as it proceeds; it is not itself evidence that those passages have been analytically read.
+
+
+> The anchor verse as canonical citation and primary Session B input — definition, dual purpose (efficiency instrument and citation instrument), selection criteria, the one-anchor-per-term minimum as an absolute gate before Session B, the no-clear-anchor handling, revision mechanics, and the upstream role in dimensional analysis.
+
+##### The anchor verse
+
+_`prog_anchor_verse`  ·  type id 27  ·  chapter 4  ·  sort 27_
+
+*Section id 27 · status `draft` · v1215 · 151 words · author `claude_code`*
+
+`verse_passage.is_anchor` marks the verse chosen to represent its passage — the (passage × verse) row that carries the flag is the passage's anchor. `passage.anchor_verse_id` duplicates the same designation at the passage-row level, for direct lookup without a join.
+
+`hib.first_verse_id` plays an analogous role for a Human Inner Being: the verse at which that HIB was first identified within its book's scope. Because a HIB recurs across many passages of the same book rather than being scoped to one passage, its first-verse designation gives the reader-facing account and the analytical writer a specific verse to point to at the HIB level, distinct from the passage-level anchor above it.
+
+Both anchors are simple and coarse by design: one flagged verse per passage, one first-identified verse per HIB. Each exists to give a reader a specific piece of verse evidence to cite, not to arbitrate between competing candidate verses within a larger classification structure.
+
+
+> Dimensions as the analytical grouping mechanism — the governing principle that dimensions follow the verse, wa_dimension_index as the per-group dimensional record, the eleven-label working vocabulary derived from the data, dominant_subject and dimension_confidence progression, the manual-override lock, wa_dim_review_cluster_log, the per-word wa_session_b_dimensions profile, and the architectural distinction between dimensions (analytical) and C01-C22 clusters (administrative).
+
+##### Dimensions — the analytical grouping mechanism
+
+_`prog_data_dimensions`  ·  type id 59  ·  chapter 4  ·  sort 28_
+
+*Section id 28 · status `draft` · v1216 · 209 words · author `claude_code`*
+
+The programme's analytical grouping mechanism is the M-code cluster model. `cluster` (49 rows: M01 through M46-numbered codes, plus FLAG and T2) names the top-level thematic groupings of the study — Anger, Wisdom, Peace, and so on — keyed on the M-code itself so the code is the stable identifier used everywhere else in the model. `characteristic` (277 rows across 35 of the 49 clusters) names the distinct inner-being traits a cluster resolves into, each with its own definition; the rows accumulated across several eras — 53 backfilled directly from sub-groups in May, 78 added in July as explicitly provisional top-down exemplars. `cluster_subgroup` (sub-divisions such as M01-A or M01-BOUNDARY) exists for only 17 of the 49 clusters, with 19 of its rows delete-flagged, so the table records the sub-group design's history as much as its current state.
+
+`cluster_strong`'s allocation passes (described in the sub-section on ownership) are the live mechanism by which a Strong's code enters the M-code analytical model — and the 2026-08-13 correction recorded there (rejecting bulk keyword-crossmatch allocation in favour of allocation grounded in verse-context analysis) is the standing rule for how any further allocation work must proceed. A cluster's characteristics, and the Strong's codes assigned to it, are the current form the programme's analytical grouping takes.
+
+
+> The observation question catalogue and findings layer — wa_obs_question_catalogue as the instrument of inquiry with universal and word-specific scopes, wa_session_b_findings as the analytical output, the three-outcome model for a finding (absorbed, promoted to new word-specific question, or obsoleted), the wa_finding_catalogue_links and wa_finding_entity_links junctions, and the research-flag-to-question bridge.
+
+##### The question catalogue and findings
+
+_`prog_data_questions`  ·  type id 60  ·  chapter 4  ·  sort 29_
+
+*Section id 70 · status `draft` · v1217 · 275 words · author `claude_code`*
+
+`wa_obs_question_catalogue` is a live table in `bible_research.db` — 424 prompts organised by tier and component, each with its text, scope, provenance, and lifecycle status — but its own state is worth stating plainly rather than glossing over: 243 of the 424 rows are marked `deleted` and only 239 are marked `active`, the residue of a v2 restructure that retired 159 questions as redundant. The two lifecycle markers (`deleted` and `status`) do not agree in count, which means the table's own bookkeeping of what is and isn't current is not fully self-consistent. A reader drawing questions from this catalogue should check both fields, not one.
+
+`finding` is the programme's universal finding store — one row per typed analytical finding at VERSE, CLUSTER, or GLOBAL level, 438,000 rows in total, with VERSE dominating at over 430,000 of them. The fact that matters most about this table today is not its size but its state: roughly 92% of its rows carry `delete_flagged = 1`, leaving on the order of 35,000 live findings. A query against it should filter on `delete_flagged` deliberately, and a claim that findings "drive" current analysis should be checked against that 35,000-row live subset, not the 438,000-row total.
+
+`wa_session_research_flags` is an actively populated table (715 rows), and its distribution shows where the live cross-registry and structural-observation work actually sits today: `SD_POINTER` (357 rows) is the largest single flag code, followed by `SB_FINDING` (203) and `VERSE_EVIDENCE_BREADTH_NOTE` (52); the remainder are smaller, specific markers accumulated across the programme's various analytical passes. This table is the bridge to the next sub-section: the SD pointer is the mechanism by which a single-registry observation is carried forward toward cross-registry synthesis.
+
+
+> The synthesis bridge from per-word records to cross-registry work — wa_cross_registry_links with wa_crosslink_type as the explicit relationship layer, SD pointers (wa_session_research_flags where flag_code='SD_POINTER') as the concrete Session B to Session D bridge, the pointer lifecycle, the current cluster-C17 concentration, and the four session_d_* tables as the architected scaffold for synthesis outputs when Session D runs.
+
+##### The synthesis bridge — from per-word records to cross-registry work
+
+_`prog_data_synthesis`  ·  type id 61  ·  chapter 4  ·  sort 30_
+
+*Section id 30 · status `draft` · v1218 · 133 words · author `claude_code`*
+
+The SD pointer mechanism described in the previous sub-section — a `wa_session_research_flags` row with `flag_code = 'SD_POINTER'` — is the programme's standing bridge from a single registry's analytical observation to a cross-registry question worth investigating. 357 such pointers exist. `session_d_runs` and `session_d_observations` both hold zero rows: the pointer record has accumulated; the investigation it is meant to feed has not yet been declared.
+
+The live cluster/characteristic model described earlier in this chapter is, in practice, doing a version of the cross-word synthesis work the SD pointer mechanism was built to feed — a cluster's characteristics group Strong's codes across whatever English registry words happen to touch them. The two mechanisms exist side by side in the database; they have not been formally reconciled with each other, and that reconciliation is not attempted here.
+
+
+> The prose store as phase-bridge architecture — each phase's store holds the authoritative truth at that phase, the five source_stage values (programme, session_a, session_b, session_c, session_d) as separate phase-stores, supersede-only lifecycle with the session_a_replace exception, version chains and row immutability, FTS5 search, link tables bridging back to dimensions and findings, and the governing principle that the database is the programme's analytical memory, not only its evidentiary substrate.
+
+##### The prose store — phase-bridge architecture
+
+_`prog_data_prose_store`  ·  type id 62  ·  chapter 4  ·  sort 31_
+
+*Section id 31 · status `draft` · v1219 · 458 words · author `claude_code`*
+
+The prose store is `bible_research.db`'s DB-canonical mechanism for authored narrative, and it is the most actively developed part of the architecture described in this chapter — this very chapter is being written through it. `prose_section_type` is the dictionary of stable named slots prose can be written into — 108 codes, spanning programme documentation, per-session outputs, cluster findings, and lexical prose, more than half of them belonging to the `programme` book rather than to any single analytical stage. `prose_section` is the content — one row per titled section, carrying its body, version, and lifecycle state. Nearly all of it is machine-authored (`claude_code` or `claude_ai`); at the time of writing, exactly one row is attributed directly to the researcher.
+
+The store's lifecycle mechanism is Model A: system-versioned temporal tables (escalation #836, 2026-08-24). `apply_session_patch.py` mutates a superseded `prose_section` row in place rather than inserting a new row; the prior content is preserved automatically by SQLite's own temporal-versioning mechanism. The practical consequence for an author is that no edit is silently lost and the full history is queryable, guaranteed by the database engine's own versioning rather than application-level bookkeeping. `record_change_log` is a project-wide change-audit log, not a prose-specific one; prose edits are one of the kinds of change it records.
+
+`prose_section_verse_link`, `prose_section_dimension_link`, and `prose_section_finding_link` are three link tables connecting a prose row to the specific verses, dimensions, and findings it discusses. Together they let a query start from a verse, a dimension, or a finding and find every prose passage that discusses it, or start from a prose passage and find the evidence it rests on.
+
+The prose store also carries its own quality-flagging mechanism: a `PROSE_QUALITY` flag can be raised against the corpus generally (not tied to a specific `prose_section` row, since the section a flag concerns is found by search at fix time, not stored from raise time), a fix can be proposed by searching the active corpus for a literal match and previewing the replacement, and an approved fix is applied as a PROSE supersede patch — the same patch mechanism this chapter's own edit goes through.
+
+`Prose.ps1` is the registered operational front door onto all of this: `Extract` (JSON/Markdown/DOCX programme-prose extracts), `Search` (FTS5 search across active sections), `ExportChapter`/`ImportChapter` (the editable-Markdown round trip this chapter's own revision used), `Flag`/`FlagFixPropose`/`FlagFixApply` (the quality-flag workflow just described), and `SetStatus` (setting or resetting a section's own review status directly, no body change). Every step reads its configuration — chapter names, the book/stage map, the search result limit, the edit-file directory — from `cfg_prose`, not from a hardcoded constant. The database remains the store's canonical form throughout: a draft Markdown file is the input, the PROSE patch reads it, `apply_session_patch.py` writes it to the database, and any extract is regenerated from the database afterward.
+
+
+> Architecture v2 obslog→DB pipeline: parse → write → audit. Companion to prog_data_database in chapter 4 (data architecture).
+
+##### Programme — Obslog-to-DB capture pipeline
+
+_`prog_data_obslog_pipeline`  ·  type id 77  ·  chapter 4  ·  sort 32_
+
+*Section id 66 · status `draft` · v1220 · 303 words · author `claude_code`*
+
+The programme's live capture mechanisms are three, each serving a different kind of work.
+
+First, for programme and analytical prose: the `Prose.ps1` round trip described in the previous sub-section — export a chapter to editable Markdown, edit the body under each section's fixed heading, import to generate a PROSE supersede patch, apply the patch with `scripts/apply_session_patch.py`. No step in that chain writes to the database directly; the patch step is always a distinct, reviewable operation from the write step. This chapter's own revision is an instance of that pipeline.
+
+Second, for the book-by-book debate work: `debate_change_detail` is the shared per-run CRUD audit trail across every debate writer — `hib.set`, `passage.build`, `phenomenon.set`, `operation.set`, and `closing.set` each log their inserts, updates, and soft-deletes to this one table (242 rows to date), giving the debate pipeline the same kind of write-provenance record the prose store gets from its own versioning. `passage.debate_sync` is the registered step that re-checks an already-written debate file for its fill-in-placeholder marker and updates `passage.debate_status` accordingly — a deliberately narrow, config-registered mechanism, built precisely because reconstructing a missing step from past output files is itself the signal that a required step is missing, not a puzzle to solve from precedent.
+
+Third, for anomalies, judgement calls, and anything requiring a decision the running code cannot make on its own: the `escalation` table, described in full in the next chapter. The live mechanism raises a typed escalation with an explicit `resolution_kind` (decision-required or self-correctable) and a `next_action`, tracked to closure through `Escalation.ps1`.
+
+What the three mechanisms share is the same underlying discipline: a write to the database is always a distinct, auditable step from the analytical or editorial work that produced it, and the record of that write — a patch, a `debate_change_detail` row, an escalation history row — outlives the session that made it.
+
+
+#### Chapter 5 — Data integrity & governance
+
+> Inflection-point completeness; controlled gap-status vocabulary (Pending, In-Progress, Complete, Blocked); cross-document consistency; controlled-vocabulary validators; the anchor-verse gate; and the quality-flag architecture (wa_data_quality_flags, wa_session_research_flags, wa_flag_type_question_link) as the programme's validation-over-time mechanism.
+
+##### Programme — Document Validation Standard
+
+_`prog_validation_standard`  ·  type id 29  ·  chapter 5  ·  sort 104_
+
+*Section id 32 · status `draft` · v1221 · 407 words · author `claude_code`*
+
+The programme's validation architecture is `iba.db`'s own, and it operates continuously rather than at fixed phase boundaries: `configmaint.validate` is the standing check that sweeps the entire `cfg_*` config store and the data it governs, and it is what a session runs to know whether the app's own rules are internally coherent.
+
+`configmaint.validate` covers a growing list of concerns, each added as a real gap was found live rather than designed in advance: enum violations (a value that should be drawn from a `cfg_enum` list but isn't), orphan-config detection (a `cfg_*` row that nothing reads), inactive-reference coherence (something still pointing at a row marked `inactive`), write-grant completeness (every writer that touches a table actually holds a grant for it), stale `filled_by` claims, report-path persistence (every quality-check step must write its output somewhere config says it should, not just print to the terminal), and doc-currency checks tying `GOVERNANCE.md`/`BUILD.md` claims back to the config they describe.
+
+For the book-by-book debate pipeline specifically, the inflection point is `passage.debate_status`: a passage moves from having no debate status, to `filled` (the debate content has been authored), to `complete`. `passage.debate_sync` is the registered step that checks an already-written debate file against its fill-in-placeholder marker and advances the status accordingly — a config-driven check, not something inferred from reading how a prior book's debate happened to reach `complete`.
+
+Gap status generally is expressed as a controlled vocabulary wherever the schema has one — `cfg_enum` names every allowed value for every enumerated column, project-wide, and `configmaint.validate`'s enum check is what catches a value that has drifted outside its declared set.
+
+**Quality flags.** `wa_quality_flag_types` and `wa_data_quality_flags` serve the prose store: a `PROSE_QUALITY` flag names a concern about the prose corpus generally — a stale terminology reference, a superseded claim — without being tied to one `prose_section` row at raise time, because the section a flag concerns is found by search at fix time (`Prose.ps1 -Step FlagFixPropose`), not stored from when the flag was raised.
+
+Quality flags are distinct from findings and from escalations: a flag names that attention is due, not an analytical conclusion, and it does not block anything from proceeding on its own. Where a flag concerns a genuine judgement call rather than a mechanical fix, it is raised as an escalation instead — the mechanism described in the sub-section on instruction override, which names a state that needs resolution, tracks it to closure, and leaves a permanent record of what was decided and why.
+
+
+> Delete_flagged semantics; cascade rules; no physical deletes in automated flows; audit-trail retention.
+
+##### Programme — Soft-Delete Discipline
+
+_`prog_delete_discipline`  ·  type id 30  ·  chapter 5  ·  sort 105_
+
+*Section id 33 · status `draft` · v1222 · 310 words · author `claude_code`*
+
+The programme does not physically delete rows as a matter of course, and the discipline spans both databases. `iba.db`'s base-data and process-control tables carry a uniform `deleted` column; `bible_research.db`'s analytical tables carry `delete_flagged` (or, on some tables, `delete_flag`). Both are the same convention under different names: the row stays in the database, queryable for audit, excluded from active queries by a filter on the flag.
+
+A table-level form of the same discipline sits above the row-level one. `cfg_table.inactive` marks a whole table as superseded, not just individual rows within it — the mechanism by which the project's own governance record can state precisely which of a database's tables are the live source of truth and which are not, without deleting or hiding either.
+
+The prose store's own lifecycle mechanism is Model A: system-versioned temporal tables (escalation #836, 2026-08-24). A revision mutates the row in place under SQLite's own system-versioned mechanism rather than inserting a new row and chaining it by hand; nothing is silently lost, the full history is queryable, and the guarantee now comes from the database engine itself rather than application bookkeeping.
+
+The discipline is not absolute. A hard delete is reserved for content that genuinely has no future reader and has no live consumer to preserve continuity for — a decision made deliberately when it happens, not a default falling-through. Soft-delete is the default because the programme revisits its own work and needs the trail that decision-making left behind.
+
+Soft-delete is not the same as set-aside: a row marked not-relevant to the current analytical scope is a different fact from a row marked removed from scope entirely. The purpose of the whole discipline is continuity under revision — the programme revisits words, re-derives readings, and rebuilds mechanisms; a database that deleted rows as its understanding changed would lose the very trail that makes its current state defensible.
+
+
+> Record consistency with sources — field authority (which field wins on conflict; mti_term_flags canonical for somatic, god_as_subject verification-required, deprecation path for superseded fields); finding-reference consistency (how references to a finding behave across supersede chains, obsolete_reason closures, and the prose_section_finding_link bridge); STEP data provenance (the extraction chain from STEP Bible to wa_term_inventory and mti_terms, the term_fetch_log as provenance log, strongs_reconciled and extraction_date as row-level markers, re-extraction as the current-bringing mechanism).
+
+##### Programme — Record consistency with sources
+
+_`prog_field_authority`  ·  type id 31  ·  chapter 5  ·  sort 106_
+
+*Section id 34 · status `draft` · v1223 · 302 words · author `claude_code`*
+
+The programme's research record is a derived record, resting on STEP Bible for lexical and verse data and on the researcher's own judgement for classification and analysis. Three disciplines keep the record consistent with those sources.
+
+**Field authority.** The mechanism for declaring which field wins when two hold the same information is `cfg_column`: every column in every table, in both databases, is required to be listed with a `use` text, and — where relevant — a `source`, an `expectation`, and a `filled_by`. `expectation` is enforced at write time (value-quality plus `enum.*` checks, part of `configmaint.validate`); `source`/`filled_by` are recorded but only checked for non-emptiness today — a named, open gap, not a silent one. `use` remains documentation only. Where the schema itself carries the same fact in two places across the two databases, the `inactive` flag on the `cfg_table` row for each copy is the authority declaration: the active copy is the one that wins.
+
+**Finding-reference consistency.** `finding` carries `superseded_by_id` when a row is superseded by a revised finding, and `obsolete_reason`/`obsolete_date` when a row is obsoleted; both rows remain in the database, linked through the chain. A reference into `finding` is a reference to the finding's identity, not to its state at the moment of reference — its meaning is read by following the chain rather than assumed fixed.
+
+**STEP data provenance.** STEP Bible remains the primary source for every Strong's number, gloss, meaning parse, and verse reference in the corpus. The live provenance record for `iba.db`'s base-data layer is the `run` table (1,871 rows) together with `cfg_connection`/`cfg_api`, which record what STEP route was called, under what configuration, and what came back.
+
+The governing principle is unchanged across all three: the record is derived, not primary, and its integrity depends on the chain from source to stored row staying traceable across every revision.
+
+
+> Backup and schema migration discipline — backup as the mechanism that makes state-changing operations reversible; schema_version table and M-numbered migration history; migrations authored through the directive channel; the paired discipline that an un-backed migration is un-reversible and an un-migrated change is un-audited. Principle only; operational specifics belong in the instruction corpus.
+
+##### Programme — Backup and schema migration discipline
+
+_`prog_backup_discipline`  ·  type id 32  ·  chapter 5  ·  sort 107_
+
+*Section id 35 · status `draft` · v1224 · 270 words · author `claude_code`*
+
+Each of the programme's two databases carries its own backup and versioning discipline, governed by the same underlying principle: every state-changing operation is recoverable, and every schema or configuration change is traceable to a specific, dated event.
+
+**`bible_research.db`.** `schema_version` carries the schema's own migration history — sixteen recorded migrations at time of writing, the schema currently at `3.40.0`, each entry an M-number with a description and an applied timestamp. `apply_session_patch.py` takes a backup of the whole database before every live write, automatically, as a normal part of applying a patch. Off-repository durability is handled outside the patch mechanism: a daily NAS backup of the database file, a daily full-project mirror, both alerting on failure.
+
+**`iba.db`.** Configuration versioning is `cfg_meta.config_version` rather than a `schema_version` table, and every whole-reload event is logged to `cfg_change_log`; every row-level change made through `configmaint.propose` is logged to `cfg_change_detail` — table, operation, the `where`/`set` clauses, the before-state, and when it was applied. `run.py` takes a pre-run database snapshot before every new run, wired in after a 2026-07-22 incident in which a bug corrupted candidate-seed data with no fine-grained rollback point available; `retention.snapshot_keep_count` (currently 5) governs how many of these snapshots are kept before the oldest is pruned. A routine that would otherwise take a snapshot on every iteration of a large batch can suppress it deliberately (`--no-backup`) where the cost is disproportionate to the risk.
+
+The principle that unifies both databases' disciplines: a change without a recoverable prior state is a risk the programme does not accept, and a change without a record of what changed and when is a change the programme cannot later account for.
+
+
+> Three failure modes — rejection at constraint check; mid-pool failure with atomic-pool-or-split discipline; post-application error reversed through a failure patch that supersedes the original while preserving history.
+
+##### Programme — Patch and directive failure protocol
+
+_`prog_patch_failure_protocol`  ·  type id 33  ·  chapter 5  ·  sort 108_
+
+*Section id 36 · status `draft` · v1225 · 261 words · author `claude_code`*
+
+Patches and directives remain the two channels by which changes reach `bible_research.db`. `apply_session_patch.py`'s dry-run mode, used before every live apply, is the standing rejection check: a patch that violates a schema constraint or a controlled-vocabulary rule is caught before it ever reaches the live database.
+
+`iba.db` runs a parallel failure protocol, built around `cfg_on_fail` rather than around patch review. Every step in the app's run sequence has a registered `(step, condition) → path` entry: `report-stop` halts the run and surfaces the failure; `pause-continue` and `report-continue` let the run proceed past a non-fatal condition while still surfacing it; `self-heal` lets a step correct a known, narrow condition on its own. Changing how a specific failure is handled is itself a config change — moving `cfg_on_fail` for a given `(step, condition)` from one path to another through `Config-Maintenance.ps1 -Step Propose` changes the app's behaviour with no code touched.
+
+Where a failure — on either side of the split — cannot be resolved by a mechanical retry or a rejected patch, it is raised as an escalation. An escalation carries a `resolution_kind`: `decision_required` for a genuine judgement call that must go to the researcher and stops there, or `self_correctable` for a condition Claude can fix and record, with the fix itself named in the resolution.
+
+The protocol's governing principle: no failure is allowed to leave either database in an inconsistent, unrecorded state. The mechanism enforcing it is split along the same line as the databases themselves — patch review for `bible_research.db`'s analytical content, `cfg_on_fail` routing and escalation resolution for `iba.db`'s process-control and base-data operations.
+
+
+> Instruction override protocol — researcher direction captured verbatim in obslog, carried in session log, absorbed into wa_rule_registry or wa_addendum_registry via patch/directive, retired from override status on absorption; migration_status on addendum registry as the in-flight marker. Plus cross-document reference discipline — the five sub-disciplines of GR-REF-001 (pointer not copy, versioned references, single authoritative document per content type, consistency check at version bumps, documents stay within their named content type) and the GR-REF-002 [current] token convention.
+
+##### Programme — Instruction override and cross-document reference discipline
+
+_`prog_instruction_override_protocol`  ·  type id 34  ·  chapter 5  ·  sort 109_
+
+*Section id 37 · status `draft` · v1226 · 358 words · author `claude_code`*
+
+**Instruction override.** The researcher's in-session direction is authoritative, and it does not wait on document revision to take effect. The path it travels is `iba\app\ps\Config-Maintenance.ps1 -Step Propose`, the one sanctioned route to changing any `cfg_*` row. A proposed change names the table, the operation, the `where`/`set` clauses, and a question stating why the change is wanted and what it affects; the command runs a coherence check before it ever reaches the researcher, then pauses and prints a run id. The researcher answers through `Escalation.ps1 -Action Update`, moving the raised escalation through `ready_for_approval` to `approved` (or `reject`/`revise`), each with a `resolution`; only then does the same Propose command, re-run against the same run id, commit the write, logged row-by-row to `cfg_change_detail`. An override that is approved this way is, from that point on, no longer an override — it is the rule the config holds, and every part of the app that reads that setting sees the new value immediately, with no code edit required.
+
+For anything that is not a `cfg_*` value — a genuine open question, a discovered anomaly, a clarification needed, a piece of work assigned across a session boundary — the `escalation` table is the single project-wide mechanism: "all open items, discovery of anomalies, clarifications and other forms of escalation must be recorded in escalation using escalation rules" (`governance.escalation.scope`), covering the whole project. An escalation carries a `type`, a `state` that moves through `raised` → (`re-assigned` / `on-hold` / `in-progress`) → a terminal state, a `next_action`, and a `resolution_kind` (`decision_required` / `self_correctable`). `Escalation.ps1 -Action Raise|Update|History|List|Correction|ResolveSelfCorrectable|EscalateToDecision` is the operational front door.
+
+**The `[current]` convention, retained.** The instruction corpus under `Workflow/Instructions/` still uses the `[current]` token for operational cross-references, resolving to the highest-numbered version present at read time, with specific version strings reserved for provenance. This convention is defined directly in `CLAUDE.md` §10.
+
+The two disciplines together describe a cleanly split system: a `cfg_*` rule change is proposed, coherence-checked, approved by explicit decision, and committed with a full audit trail — `Config-Maintenance.ps1` end to end. A genuine open question or anomaly, anywhere in the project, is raised, tracked, and resolved through `escalation` — `Escalation.ps1` end to end.
+
+
+> The standing governance principle that the programme's rules, slot descriptions, schema, and documentation are not assumed to be fully synchronised at any point. Where a rule names a field or a concept the implementation or the documentation does not match, the mismatch is named as a governance item and resolved through migration, patch, or documentation revision — not tolerated silently.
+
+##### Programme — Documentation–implementation alignment
+
+_`prog_doc_impl_alignment`  ·  type id 63  ·  chapter 5  ·  sort 110_
+
+*Section id 38 · status `draft` · v1227 · 337 words · author `claude_code`*
+
+The programme's rules, its database schema, its instruction documents, and the prose that describes the work are four surfaces that must stay in alignment for the record to be trustworthy — the alignment is not a state the programme can declare once and rely on thereafter, and this principle is itself now a config-governed rule, not only a value this chapter asserts.
+
+`governance.rules_must_be_config_driven` (`cfg_setting`, module `governance`) states it directly: no operational or process rule may exist only in `GOVERNANCE.md`, `BUILD.md`, `USER-GUIDE.md`, or memory, without a referenced `cfg_*` row recording it as the evidence that the configuration control is actually in operation; any deviation found requires an escalation. `governance.governance_md_on_rule_change` pairs it on the documentation side: a governance or process rule change must be set in `cfg_*` first, via `configmaint.propose`, and `GOVERNANCE.md` updated to reflect it in the same unit of work. `governance.build_md_on_code_change` runs the equivalent check for code: any change under `iba/app/**` must update `BUILD.md`'s build record in the same unit of work.
+
+A fourth rule closes the loop the other three depend on: `governance.past_precedent_investigation_signals_missing_config`. If running an already-registered instruction requires first reconstructing how it was done in the past — reading `BUILD.md` history, diffing archived output files, inferring a missing step from precedent — rather than a live `cfg_step`/`cfg_setting` row saying directly what to run, that investigation is itself the signal that a required config or mechanism is missing, and the correct response is to stop and close the gap, not to proceed on the reconstructed precedent and present it as the standard process.
+
+Where a mismatch between surfaces is detected, the response the four rules above prescribe is consistent in shape: the mismatch is named, an escalation is raised if it isn't self-evidently a mechanical fix, and the resolution updates whichever surface was wrong, in the same unit of work, with the change recorded in `cfg_change_detail` or `BUILD.md`'s history as appropriate. A mismatch is not left open on the assumption that documentation will eventually catch up to practice, or practice will eventually catch up to documentation.
+
+
+#### Chapter 6 — Instruction corpus
+
+> The global rules document — the single file of programme-wide binding rules held in wa_rule_registry and exported as the session-start rules extract. Its role as the document read in full before any other instruction, extract, or data file at every session start. Short brief-description register; points to GR-LOAD-001 for the load gate and to the rules themselves for governance; does not restate rule content.
+
+##### Programme — Global rules
+
+_`prog_instr_global_rules`  ·  type id 64  ·  chapter 6  ·  sort 111_
+
+*Section id 39 · status `draft` · v1228 · 217 words · author `claude_code`*
+
+The programme's binding rules live in two places today, working at different levels. `CLAUDE.md`, at the project root, is the compact reference loaded into every session — file map, schema orientation, script conventions, and the standing pointers to where authoritative detail actually lives; it explicitly states that it can lag the written record and that the live config or schema wins whenever the two disagree. `iba/app/GOVERNANCE.md` is the mechanism document for `iba.db`'s rule store: how a `cfg_*` row is changed, what is enforced versus still a convention, and — from §9 onward — a dated history of every increment.
+
+The rules themselves are `cfg_setting` (scalar rules, always attributed to a `module`), `cfg_enum` (controlled vocabularies), `cfg_behaviour_rule` paired with `cfg_behaviour_class` (six classes at present — chat, terminal, sqlite, documentation, llm_output, and development — each with its own rules for how operational behaviour in that class is expected to run), and the other `cfg_*` tables described in Chapter 5. Rules are typed, module-attributed rows, each readable and changeable through exactly one path (`Config-Maintenance.ps1 -Step Propose`, Chapter 5), and each enforced by code that reads it.
+
+`governance.rules_must_be_config_driven` is the rule that binds every other rule: no operational or process rule may exist only in prose or in memory, without a `cfg_*` row as the evidence that it is actually governing something.
+
+
+> The reference document — the programme's dictionary for controlled vocabularies, schema field definitions, and file-naming extensions. Held in wa_vocab_set + wa_vocab_member + schema tables; exported as the reference snapshot. Role as the authoritative lookup that other instructions point to rather than restating vocabulary content.
+
+##### Programme — Reference
+
+_`prog_instr_reference`  ·  type id 65  ·  chapter 6  ·  sort 112_
+
+*Section id 40 · status `draft` · v1229 · 101 words · author `claude_code`*
+
+The programme's live reference layer is `iba.db`'s own: `cfg_enum` holds every controlled vocabulary project-wide, `cfg_column` holds every field's definition, and `iba/app/config/CONFIG-REPORT.md` is the auto-regenerated snapshot of every value in the config store — settings by module, STEP API routes, every work package's steps, the write-grant table, the schema, the enums, book order, and the change log. The report is never hand-edited; it is regenerated from the database.
+
+Any controlled-vocabulary question is answered by pointing at this live reference rather than by restating a value inline — the concentration this achieves is what keeps a vocabulary change from requiring a document-by-document update.
+
+
+> The patches method instruction — the authoritative reference for the JSON patch format, operation types, filename and patch-id conventions, self-check, and completion confirmation. One of the two DB-change mechanisms (alongside directives); used when the change is fully specified in data terms.
+
+##### Programme — Patches
+
+_`prog_instr_patches`  ·  type id 66  ·  chapter 6  ·  sort 113_
+
+*Section id 41 · status `draft` · v1230 · 132 words · author `claude_code`*
+
+The patch mechanism is live for `bible_research.db`: a JSON object with a `_patch_meta` header, an `operations` array of typed operations against named tables, and a `_patch_summary` footer; `scripts/apply_session_patch.py` is the applicator, run with `--dry-run` before every live application. `wa-patch-instruction-v2_11-20260507.md` is the authoritative reference document for the format.
+
+The actively-used operation type today is `PROSE` (`insert`/`supersede`/`set_status` against `prose_section`) — the mechanism used to produce every revision in this chapter. `REPAIR` operations, for cascading resets, remain part of the format.
+
+Patches are authored, reviewed, and applied through a three-role division — authored by the party producing the content, reviewed by the researcher, applied by the operational agent. `_patch_meta.researcher_approval` tracks the approval state on every patch, `PENDING` until it is actually reviewed. No patch reaches `bible_research.db` without passing through this format and its dry-run gate.
+
+
+> The directives method instruction — the authoritative reference for the plain-language directive format, its five required elements, filename convention, self-check, and completion confirmation. The second of the two DB-change mechanisms; used when the change cannot be captured adequately in a JSON patch (schema enablement, re-run triggers, operations requiring reasoning beyond declarative operations).
+
+##### Programme — Directives
+
+_`prog_instr_directives`  ·  type id 67  ·  chapter 6  ·  sort 114_
+
+*Section id 42 · status `draft` · v1231 · 125 words · author `claude_code`*
+
+The directive mechanism is live for `bible_research.db`: a plain-language instruction with five required elements — title and identifier, what is to be done and why, the operations asked for, the expected outcome, and the confirmation to be returned — used where a change cannot be captured as a declarative patch, most often schema preparation ahead of a patch that depends on it. `wa-directive-instruction-v1_4-20260506.md` is the authoritative reference. `iba.db`'s own schema changes happen through the app's own migration scripts under `iba/app/migration/`, each recorded in `BUILD.md` in the same unit of work per `governance.build_md_on_code_change`.
+
+Directives and patches are equal peers within their shared scope: together they are the exhaustive set of ways `bible_research.db` changes, and a directive, like a patch, does not reach the database without review.
+
+
+> The Claude Code method instruction — CC's role as executor, the data-foundation pipeline (STEP extraction, audit_word, JSON export), schema and implementation tasks, CC-side programme-state queries, engine and script status, Verse Context operations from CC's perspective, re-run mechanisms (STALE_TERM), and recurring anomaly resolutions. Governs what CC does with what it receives.
+
+##### Programme — Claude Code operating guide
+
+_`prog_instr_claudecode`  ·  type id 68  ·  chapter 6  ·  sort 115_
+
+*Section id 43 · status `draft` · v1232 · 103 words · author `claude_code`*
+
+The live operational guidance for how Claude Code works is split across a document set matched to the two-database architecture: `iba/app/GOVERNANCE.md` and `iba/app/BUILD.md` for how the base-data and process-control layer in `iba.db` runs, `iba/app/USER-GUIDE.md` as the entry point for using the app, and this chapter's own sub-sections for the patch and directive mechanisms and the prose-store operations that remain live on the `bible_research.db` side.
+
+There is no single document today that plays a unifying role across the whole pipeline — the pipeline itself does not run as one unified thing; it is split between the two databases and their two distinct governance mechanisms.
+
+
+> The registry management guide — the programme's reference document for the word registry. Defines every field on word_registry, the status lifecycle values, the OWNER/XREF distinction, cluster assignments and processing sequence, and registry-level audit-integrity rules. Self-described as reference guide, not an operational instruction.
+
+##### Programme — Registry management guide
+
+_`prog_instr_registry_guide`  ·  type id 69  ·  chapter 6  ·  sort 116_
+
+*Section id 44 · status `draft` · v1233 · 82 words · author `claude_code`*
+
+`iba.db`'s live `word_registry` is a deliberately thin table (`word`, `source`, `status`, and timestamps only), described in full in Chapter 4. It has not needed a dedicated reference guide, because it does not carry the depth of state that would call for one.
+
+There is, at present, no live registry-management guide. This is named here as an honest gap rather than papered over: if the live registry accretes more fields as the current method matures, a guide will need writing at that point.
+
+
+> The Session A pipeline-stage instruction — mechanical extraction of Hebrew/Greek term data from STEP Bible into the database, audit_word reconciliation, assembly of the complete word data export, and handoff to Verse Context. Entry point of the analytical pipeline. Currently exists in Word document form (v8); migration to markdown pending.
+
+##### Programme — Session A — extraction
+
+_`prog_instr_session_a`  ·  type id 70  ·  chapter 6  ·  sort 117_
+
+*Section id 54 · status `draft` · v1234 · 87 words · author `claude_code`*
+
+The live mechanism for getting Hebrew, Greek, and Aramaic term data from STEP into a structured, addressable form is `iba.db`'s base-data layer, described in full in Chapter 4. The onboarding entry point is `iba\app\ps\New-Word.ps1`, governed by `cfg_step`/`cfg_work_package` rather than by a standalone instruction document. No single document today plays the role of a Session A instruction — the operational detail lives in the config the app reads at each step, per the mechanism Chapter 5 describes, rather than in a written procedure a reader follows by hand.
+
+
+> The Verse Context pipeline-stage instruction — the stage between Session A and Dimension Review. Batch construction, verse reading for active OWNER terms, term-level relevance filter, contextual grouping, anchor designation, and patch production populating verse_context_group and verse_context. Operates in batches; re-exports the full word JSON per registry on completion.
+
+##### Programme — Verse Context
+
+_`prog_instr_verse_context`  ·  type id 71  ·  chapter 6  ·  sort 118_
+
+*Section id 55 · status `draft` · v1235 · 66 words · author `claude_code`*
+
+The live analytical reading of the verse corpus is the book-by-book debate pipeline described in Chapter 4: `hib`, `phenomenon`, `operation`, and `passage`'s own `debate_status` field, working at the level of a Human Inner Being within a book and a passage. Its current reach is 49 of 18,558 passages, across six books. It is governed by `cfg_step`/`cfg_setting` rows rather than by an instruction document of its own.
+
+
+> The Dimension Review pipeline-stage instruction — cluster-level analytical stage between Verse Context and Session B. Cluster coherence validation, group description quality, anchor verification, dimension and dominant-subject assignment, confidence progression, manual_override locking, and Session B / Session D pointer capture. First stage where cross-registry reading begins.
+
+##### Programme — Dimension Review
+
+_`prog_instr_dimension_review`  ·  type id 72  ·  chapter 6  ·  sort 119_
+
+*Section id 47 · status `draft` · v1236 · 91 words · author `claude_code`*
+
+The live analytical grouping mechanism is the cluster/characteristic model described in Chapter 4, which allocates a Strong's code directly to a cluster (`cluster_strong`) rather than assigning a label to a verse-level grouping. There is not yet an instruction document governing this allocation with the depth a dedicated method instruction would give it. The one standing rule on record is the researcher's 2026-08-13 correction that allocation must be grounded in verse-context analysis, not bulk keyword-crossmatch. Whether a fuller method instruction is written, and where, is open — named here rather than assumed.
+
+
+> The Session B Analysis Readiness instruction — Stage 1 of Session B. Data audit, resolution-path assignment, Type (a) patch accumulation, directives for CC re-run, and the Stage 1 Completion Record producing the Stage 2 Readiness Declaration. Does not produce analytical output; produces the readiness state.
+
+##### Programme — Session B — Analysis Readiness
+
+_`prog_instr_session_b_readiness`  ·  type id 73  ·  chapter 6  ·  sort 120_
+
+*Section id 67 · status `draft` · v1237 · 49 words · author `claude_code`*
+
+No live process currently plays this stage's role — preparing a structured, deterministic readiness artefact ahead of an analytical session. The escalation table's own `next_action`/`resolution_kind` mechanism (Chapter 5) covers the adjacent but distinct need of tracking an open item to closure; it does not generate a per-word data-readiness report.
+
+
+> The Session B Analysis Output instruction — Stage 2 of Session B. Stage 2a comprehensive reading with observations log; Stage 2b Q&A partitioning against the observation question catalogue; Stage 2c six-chapter analytic word output. Also produces SD pointers for Session D; closes via closing patch advancing the registry to Analysis Complete.
+
+##### Programme — Session B — Analysis Output
+
+_`prog_instr_session_b_output`  ·  type id 74  ·  chapter 6  ·  sort 121_
+
+*Section id 68 · status `draft` · v1238 · 55 words · author `claude_code`*
+
+The live capture mechanisms for analytical and programme content are described in full in Chapter 4's closing sub-section: the `Prose.ps1` round trip for prose, `debate_change_detail` for the book-by-book debate writers, and the `escalation` table for judgement calls. No registry is currently progressing through a per-word analytical output stage of the kind this section's heading names.
+
+
+> The Session C instruction — the word publication layer. A single reader-facing document per word, written in plain accessible language for an intelligent non-specialist reader. Living document updated v1 → v2 → v3 as Session B annotations and Session D findings become available. The primary articulation layer of the programme.
+
+##### Programme — Session C
+
+_`prog_instr_session_c`  ·  type id 75  ·  chapter 6  ·  sort 122_
+
+*Section id 50 · status `draft` · v1239 · 61 words · author `claude_code`*
+
+The live reader-facing narrative mechanism is not word-driven: the book-by-book debate pipeline's `passage.story_summary` field, populated for the passages that have reached `filled`/`complete` debate status across the six books named in Chapter 4, is a book-driven narrative account. The programme currently has no mechanism producing a per-word reader-facing document; whether that need is picked up again, and in what form, is unresolved.
+
+
+> The Session D orientation — cross-registry synthesis. Works in the opposite direction from Sessions A/B/C: begins with questions about the inner life, asks what the accumulated data reveals in the aggregate. Starts from SD pointers Session B raises; produces synthesis documents at named runs. Currently a governing document rather than a complete instruction.
+
+##### Programme — Session D
+
+_`prog_instr_session_d`  ·  type id 76  ·  chapter 6  ·  sort 123_
+
+*Section id 51 · status `draft` · v1240 · 82 words · author `claude_code`*
+
+Cross-registry synthesis has never executed as its own run: the relevant run/observation tables hold zero rows, exactly as Chapter 4's synthesis-bridge sub-section records. The material that would feed such a run — the SD pointer accumulation described in Chapter 4 — continues to build. Whether a dedicated synthesis run executes as originally designed, or whether the cluster/characteristic model comes to do this work in a different shape entirely, is the open question Chapter 4 leaves unresolved and this section does not re-litigate.
+
+
+---
+*Generated 2026-08-27T09:24:17Z.*

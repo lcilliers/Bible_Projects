@@ -1,0 +1,30 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260827T094209Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-08-27T09:42:09Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 1 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-69-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 69,
+      "record": {
+        "body": "The programme no longer runs on two separate AI agents handing work to each other through a batch artefact. Claude Code is the one working agent — it investigates, proposes, builds, and operates the database directly, in the same live conversation the researcher directs it in. Where a task genuinely needs substantial generated prose beyond what direct authorship in that conversation covers — the book-by-book inner-being narrative, most prominently — Claude Code calls the Anthropic Messages API directly (`report.book_narrative_generate`, model `claude-sonnet-5`) rather than handing off to a separate persona. That call is itself governed: a pre-call cost estimate against `narrative.generate_max_cost` refuses outright rather than pausing for approval when a book would exceed it, every real call's tokens and cost are logged to an on-disk usage ledger, and the returned narrative is structurally validated (`report.book_narrative_validate`) before it is treated as complete.\n\nThe researcher's role has not diminished with the two-agent split gone — it has moved from reviewing a batch artefact after the fact to deciding things as they arise, in the conversation itself. Two mechanisms carry this: the `escalation` table (Chapter 5) is where any genuine judgement call, discovered anomaly, or open question is raised the moment it surfaces, tracked through `raised` → (Claude prepares, investigates, or builds a proposal) → `ready_for_approval` → the researcher's own `approved`/`reject`/`revise` decision; and `Config-Maintenance.ps1 -Step Propose` (Chapter 5) is the equivalent gate specifically for `cfg_*` rule changes — coherence-checked automatically, then paused for the same explicit decision. Design or build work is never closed by Claude Code alone; only a genuinely mechanical correction against an already-approved design is (`resolution_kind = self_correctable`), and that distinction is itself a standing rule, not a judgement Claude Code is trusted to apply silently — a violation of it, and the fix, are both part of this programme's own recorded history (escalations #920/#921).\n\nPatches and directives remain the two channels by which a change actually reaches `bible_research.db` (Chapter 6): Claude Code drafts and applies them, the researcher reviews before a live apply where review is warranted, and every application is a distinct, auditable, reversible step from the work that produced it. Nothing in the current model routes analytical content through a separate authored artefact the way the retired obslog pipeline did — the conversation, the escalation record, and the patch itself are the record now.",
+        "heading": "The two-AI division of responsibility",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1159}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "prose_section_supersedes": 1,
+    "source_edit_file": "outputs/markdown/prose-edits/archive/prose-edit-programme-chapter-3-v1-20260827.md"
+  }
+}

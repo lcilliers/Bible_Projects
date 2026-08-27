@@ -1257,10 +1257,10 @@ standard, not (yet) an automatically-checked one.
 
 ---
 
-## 13d. Prose module (added 2026-08-24, escalation #829)
+## 13d. Prose module (added 2026-08-24, escalation #829; `SetStatus` added 2026-08-27, escalation #918)
 
 `Prose.ps1` — the DB-canonical prose store (`prose_section`/`prose_section_type`,
-`bible_research.db`), 5 dispatcher steps, `kind='utility'`:
+`bible_research.db`), 8 dispatcher steps, `kind='utility'`:
 
 ```powershell
 iba\app\ps\Prose.ps1 -Step Extract -Book Programme [-AlsoMarkdown] [-AlsoDocx] [-IncludeBody]
@@ -1270,7 +1270,23 @@ iba\app\ps\Prose.ps1 -Step ImportChapter -InputFile outputs\markdown\prose-edits
 iba\app\ps\Prose.ps1 -Step Flag -FlagCode "Terminology change" -Description "..."
 iba\app\ps\Prose.ps1 -Step FlagFixPropose -FlagCode "Terminology change" -Find "old text" -Replace "new text"
 iba\app\ps\Prose.ps1 -Step FlagFixApply -ProposalFile <report from FlagFixPropose>.json -SectionIds 12,47 -FlagCode "Terminology change"
+iba\app\ps\Prose.ps1 -Step SetStatus -SectionIds 22 -Status approved
 ```
+
+**`SetStatus`** — set or reset a section's own `status` (`draft` / `in_review` / `approved` /
+`archived`, `cfg_enum prose_section_status`) directly, with no body change: the reviewer's "I've
+read this" (or "reopen this") action, distinct from an `ImportChapter` content edit. `-SectionIds`
+takes one or more comma-separated ids; a section already at the requested status is skipped as a
+no-op, and an unrecognised `-Status` is refused against the live enum before a patch is even
+written. Like `ExportChapter`/`ImportChapter`/`FlagFixPropose`/`FlagFixApply`, it writes no DB row
+itself — it generates a `PROSE` patch (`prose_section`/`set_status`), applied the same way as
+every other prose patch, via `scripts/apply_session_patch.py`. Added to close escalation #918: the
+chapter-level review status previously tracked in `cfg_prose_chapter` (a `cfg_*`/`iba.db` table)
+was workflow data about content, not a rule, and needed the full `Config-Maintenance.ps1 -Step
+Propose` approval cycle for what is an ordinary content edit — `cfg_prose_chapter` is now removed
+entirely (`iba/app/migration/retire_cfg_prose_chapter_v1_20260827.py`); `prose_section.status`,
+set per section via this step and rolled up per chapter through `prose_section_type.chapter_no`,
+is the live equivalent.
 
 **The 4 live books:** `Programme` / `Detail design` / `Findings` / `Essays` — a 5th, `Concordance`,
 is not yet built (out of scope, `iba/docs/prose-management-iba-first-layer-proposal-v9-20260824.md`

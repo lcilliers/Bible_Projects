@@ -1,0 +1,30 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260827T091719Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-08-27T09:17:19Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 1 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-10-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 10,
+      "record": {
+        "body": "The programme organises its work into three stages: **Base_data** (STEP through lexical), **Analysis** (deriving understanding of the inner being), and **Publishing** (essays and output for the results). Each stage has its own live mechanism, governed by its own configuration; the stages are not a single tightly chained pipeline the way an earlier phase model once described them, and this section states that plainly rather than presenting a continuity the current architecture does not have.\n\n**Base_data.** For each English word onboarded, the base-data layer assembles the Hebrew and Greek term data that carries the word's meaning — the Strong's identities, the verse occurrences, the lexical and morphological detail — sourced from STEP Bible and built up through `iba.db`'s chain of processing tables (Chapter 4 describes this in full: discovery, identity, the candidate net, and the derived mechanical reading). The onboarding entry point is `iba\\app\\ps\\New-Word.ps1`, governed by `cfg_step`/`cfg_work_package` rather than by a hand-followed procedure.\n\n**Analysis.** Deriving understanding of the inner being currently runs through two mechanisms that have not been unified into one pipeline. The book-by-book debate work reads a passage at a time, identifies the Human Inner Beings it engages, and registers the phenomena and operations that constitute the analytical claim — reaching 49 of 18,558 passages so far, across six books. Separately, the cluster/characteristic model allocates Strong's codes directly to the programme's thematic clusters, grounded in verse-context analysis rather than bulk matching. Both are described in full in Chapter 4; the programme has not yet reconciled the two into a single analytical account of a word.\n\n**Publishing.** The live reader-facing output is book-driven, not word-driven: the debate pipeline's `story_summary` field, populated for the passages that have reached a completed debate status. The programme does not currently have a mechanism producing a per-word reader-facing study.\n\nThe database carries each stage's state; work is taken up at whatever point the database shows it left off. Methodologies and processes within each stage have changed materially over the programme's life — this section describes what currently operates, not the full history of what preceded it.",
+        "heading": "Programme flow",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 100}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 1,
+    "prose_section_supersedes": 1,
+    "source_edit_file": "outputs/markdown/prose-edits/archive/prose-edit-programme-chapter-2-v1-20260827.md"
+  }
+}
