@@ -94,12 +94,12 @@ researcher caught it. Corrected as #921; the fix (requiring a `tried` citation o
 
 ## Open items for next session
 
-1. **`#926`'s `cfg_setting` write was never actually committed** — the escalation shows
-   `approved`, but per the documented flow that only unblocks re-running the original
-   `Config-Maintenance.ps1 -Step Propose ... -RunId RUN-20260827_093522_884-CONFIGMAINT` to commit
-   it, and that re-run never happened. `governance.session_log_required_content` does not exist in
-   `cfg_setting` as of this log's own writing — this log was written to the best available draft of
-   that spec regardless, per the researcher's earlier direct instruction to proceed.
+1. ~~`#926`'s `cfg_setting` write was never actually committed~~ — **corrected same session,
+   after this log was first written and committed:** the researcher caught the dangling write in
+   chat; the original `Config-Maintenance.ps1 -Step Propose ... -RunId
+   RUN-20260827_093522_884-CONFIGMAINT` was re-run and `governance.session_log_required_content`
+   is now confirmed live in `cfg_setting`. Left struck through rather than silently deleted, so the
+   log still shows the gap existed.
 2. **`#921`'s approved fix is not built** — `resolve_self_correctable()` needs the `tried`
    parameter added, per the exact before/after wording in
    `iba/docs/escalation-resolution-kind-gate-proposal-v2-20260827.md`.
