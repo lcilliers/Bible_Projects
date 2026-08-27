@@ -1,0 +1,1560 @@
+{
+  "metadata": {
+    "cluster_code": "M15",
+    "cluster_subgroup_code": "M15-E",
+    "source_input": "wa-m15e-vcg-groups-v1-20260511.json",
+    "generated_at": "2026-05-11T18:31:23Z",
+    "purpose": "DB-load staging for M15-E VCG cleanup.",
+    "needs_subgroup_creation": false,
+    "subgroup_to_create": null,
+    "totals": {
+      "vcgs_to_create": 8,
+      "verses_to_assign_to_vcgs": 193,
+      "verses_to_set_aside": 2,
+      "sum_check": 195
+    },
+    "anchor_status": "8/8 VCGs have anchor_proposed."
+  },
+  "vcg_creations": [
+    {
+      "code": "M15-E-VCG01",
+      "label": "Purposive willing and intentional resolve (boulomai/bouleuō/protithēmi)",
+      "context_description": "The term names the inner volitional act of purposive willing — Joseph's resolution to divorce Mary quietly, Pilate's will to satisfy the crowd, Christ's sovereign will to disclose the Father, the Spirit's will in distributing gifts, God's will that none should perish. The phenomenon is the inner act of forming and holding a deliberate intention. Inner-being phenomenon: purposive volitional willing.",
+      "cluster_subgroup_code": "M15-E",
+      "mti_term_ids": [
+        509,
+        2109,
+        3280
+      ],
+      "verse_count": 44,
+      "verses": [
+        {
+          "vr_id": 131760,
+          "reference": "Luk 14:31",
+          "strongs": "G1011",
+          "mti_term_id": 2109,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 131758,
+          "reference": "Joh 11:53",
+          "strongs": "G1011",
+          "mti_term_id": 2109,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 131759,
+          "reference": "Joh 12:10",
+          "strongs": "G1011",
+          "mti_term_id": 2109,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 131757,
+          "reference": "Act 5:33",
+          "strongs": "G1011",
+          "mti_term_id": 2109,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 131755,
+          "reference": "Act 15:37",
+          "strongs": "G1011",
+          "mti_term_id": 2109,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 131756,
+          "reference": "Act 27:39",
+          "strongs": "G1011",
+          "mti_term_id": 2109,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 131754,
+          "reference": "2Cor 1:17",
+          "strongs": "G1011",
+          "mti_term_id": 2109,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1714,
+          "reference": "Mat 1:19",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1715,
+          "reference": "Mat 11:27",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1716,
+          "reference": "Mar 15:15",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59210,
+          "reference": "Luk 10:22",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1717,
+          "reference": "Luk 22:42",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59208,
+          "reference": "Joh 18:39",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1718,
+          "reference": "Act 5:28",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1719,
+          "reference": "Act 12:4",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1720,
+          "reference": "Act 17:20",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59199,
+          "reference": "Act 18:15",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1721,
+          "reference": "Act 18:27",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59200,
+          "reference": "Act 19:30",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59201,
+          "reference": "Act 22:30",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59202,
+          "reference": "Act 23:28",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59203,
+          "reference": "Act 25:20",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59204,
+          "reference": "Act 25:22",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59205,
+          "reference": "Act 27:43",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59206,
+          "reference": "Act 28:18",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1722,
+          "reference": "1Cor 12:11",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59196,
+          "reference": "2Cor 1:15",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59212,
+          "reference": "Phili 1:12",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1723,
+          "reference": "1Ti 2:8",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1724,
+          "reference": "1Ti 5:14",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1725,
+          "reference": "1Ti 6:9",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59213,
+          "reference": "Tit 3:8",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1726,
+          "reference": "Heb 6:17",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1727,
+          "reference": "Jam 1:18",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59207,
+          "reference": "Jam 3:4",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1728,
+          "reference": "Jam 4:4",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 1729,
+          "reference": "2Pe 3:9",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59211,
+          "reference": "Phile 13",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59197,
+          "reference": "2Jo 12",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59198,
+          "reference": "3Jo 10",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 59209,
+          "reference": "Jude 5",
+          "strongs": "G1014",
+          "mti_term_id": 509,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 137854,
+          "reference": "Rom 1:13",
+          "strongs": "G4388",
+          "mti_term_id": 3280,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 137855,
+          "reference": "Rom 3:25",
+          "strongs": "G4388",
+          "mti_term_id": 3280,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 137853,
+          "reference": "Eph 1:9",
+          "strongs": "G4388",
+          "mti_term_id": 3280,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 1729,
+        "reference": "2Pe 3:9",
+        "strongs": "G1014",
+        "translit": "boulomai",
+        "anchor_rationale": "'The Lord is not slow to fulfill his promise...not wishing that any should perish, but that all should reach repentance.' God's purposive will directed universally toward repentance and life is stated here in its most expansive form. The verb carries its full theological weight: the divine boulomai is an inner volitional act that defines what God actively desires and purposes toward the world."
+      }
+    },
+    {
+      "code": "M15-E-VCG02",
+      "label": "Considered inner resolution and authoritative judgment (gnōmē)",
+      "context_description": "The term names the inner considered resolution — Paul's deliberate judgment offered without a dominical command, the collective resolution that unites or divides a community, the unified purpose God places in the hearts of the hostile kings. The phenomenon is a formed inner judgment held as a resolution rather than an impulse. Inner-being phenomenon: considered inner resolution.",
+      "cluster_subgroup_code": "M15-E",
+      "mti_term_ids": [
+        1001
+      ],
+      "verse_count": 8,
+      "verses": [
+        {
+          "vr_id": 128883,
+          "reference": "Act 20:3",
+          "strongs": "G1106",
+          "mti_term_id": 1001,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 32500,
+          "reference": "1Cor 1:10",
+          "strongs": "G1106",
+          "mti_term_id": 1001,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 32501,
+          "reference": "1Cor 7:25",
+          "strongs": "G1106",
+          "mti_term_id": 1001,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 32502,
+          "reference": "1Cor 7:40",
+          "strongs": "G1106",
+          "mti_term_id": 1001,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 32503,
+          "reference": "2Cor 8:10",
+          "strongs": "G1106",
+          "mti_term_id": 1001,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 32504,
+          "reference": "Rev 17:13",
+          "strongs": "G1106",
+          "mti_term_id": 1001,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 32505,
+          "reference": "Rev 17:17",
+          "strongs": "G1106",
+          "mti_term_id": 1001,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 128884,
+          "reference": "Phile 14",
+          "strongs": "G1106",
+          "mti_term_id": 1001,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 32505,
+        "reference": "Rev 17:17",
+        "strongs": "G1106",
+        "translit": "gnōmē",
+        "anchor_rationale": "'For God has put it into their hearts to carry out his purpose by being of one mind.' The gnōmē of the hostile kings is a shared inner resolution placed by God himself — the most revealing use because it shows the phenomenon (unified inner resolution) operating within God's sovereign overriding purpose. The kings have one gnōmē; God uses that gnōmē for his own ends."
+      }
+    },
+    {
+      "code": "M15-E-VCG03",
+      "label": "God's sovereign purposive counsel (ya.ats: divine planning)",
+      "context_description": "The term names the divine counsel as irresistible sovereign intent — 'as I have planned, so shall it be; as I have purposed, so shall it stand' (Isa 14:24). God's ya.ats is unalterable: no one counselled him (Isa 40:14), his counsel against nations will stand, and the Messiah is the Wonderful Counselor whose inner wisdom directs his people. Inner-being phenomenon: divine sovereign purposive counsel.",
+      "cluster_subgroup_code": "M15-E",
+      "mti_term_ids": [
+        749
+      ],
+      "verse_count": 13,
+      "verses": [
+        {
+          "vr_id": 15173,
+          "reference": "Isa 14:24",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15174,
+          "reference": "Isa 14:26",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15175,
+          "reference": "Isa 14:27",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15176,
+          "reference": "Isa 19:12",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15177,
+          "reference": "Isa 19:17",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15178,
+          "reference": "Isa 23:8",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15179,
+          "reference": "Isa 23:9",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15183,
+          "reference": "Isa 40:14",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15184,
+          "reference": "Isa 41:28",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15185,
+          "reference": "Isa 45:21",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15189,
+          "reference": "Jer 49:20",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15190,
+          "reference": "Jer 49:30",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15191,
+          "reference": "Jer 50:45",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 15173,
+        "reference": "Isa 14:24",
+        "strongs": "H3289",
+        "translit": "ya.ats",
+        "anchor_rationale": "'The Lord of hosts has sworn: As I have planned, so shall it be, and as I have purposed, so shall it stand.' The irresistibility and finality of divine counsel stated with an oath. The verb (ya.ats) names the divine inner purposing that cannot be undone — what God has formed as intent will come to be, sworn by himself."
+      }
+    },
+    {
+      "code": "M15-E-VCG04",
+      "label": "Human counsel: seeking, giving, receiving purposive wisdom (ya.ats: human)",
+      "context_description": "The term names the human counseling relationship — advisors sought, wisdom given, counsel rejected or followed, the counselor role as the expression of inner wisdom in the service of governance. Includes good counsel (Jethro, Hushai's counter-counsel), wicked counsel (Ahab's house), hostile counsel (enemies conspiring), and the prophetic refusal to give counsel when it will not be heard. Inner-being phenomenon: purposive wisdom given and received between persons.",
+      "cluster_subgroup_code": "M15-E",
+      "mti_term_ids": [
+        528,
+        749,
+        754,
+        932,
+        958
+      ],
+      "verse_count": 66,
+      "verses": [
+        {
+          "vr_id": 148522,
+          "reference": "Exo 18:19",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15199,
+          "reference": "Num 24:14",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148516,
+          "reference": "2Sa 15:12",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148517,
+          "reference": "2Sa 16:23",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148521,
+          "reference": "2Sa 17:7",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148518,
+          "reference": "2Sa 17:11",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148519,
+          "reference": "2Sa 17:15",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148520,
+          "reference": "2Sa 17:21",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148498,
+          "reference": "1Ki 1:12",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148501,
+          "reference": "1Ki 12:6",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148502,
+          "reference": "1Ki 12:8",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148503,
+          "reference": "1Ki 12:9",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148499,
+          "reference": "1Ki 12:13",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148500,
+          "reference": "1Ki 12:28",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148515,
+          "reference": "2Ki 6:8",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148494,
+          "reference": "1Ch 13:1",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148495,
+          "reference": "1Ch 26:14",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148496,
+          "reference": "1Ch 27:32",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148497,
+          "reference": "1Ch 27:33",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148504,
+          "reference": "2Ch 10:6",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148505,
+          "reference": "2Ch 10:8",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148506,
+          "reference": "2Ch 10:9",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148507,
+          "reference": "2Ch 20:21",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148508,
+          "reference": "2Ch 22:3",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148509,
+          "reference": "2Ch 22:4",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148510,
+          "reference": "2Ch 25:16",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148511,
+          "reference": "2Ch 25:17",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148512,
+          "reference": "2Ch 30:2",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148513,
+          "reference": "2Ch 30:23",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148514,
+          "reference": "2Ch 32:3",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148524,
+          "reference": "Ezr 4:5",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148525,
+          "reference": "Ezr 7:28",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148526,
+          "reference": "Ezr 8:25",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15198,
+          "reference": "Neh 6:7",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148527,
+          "reference": "Pro 11:14",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148528,
+          "reference": "Pro 12:20",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148529,
+          "reference": "Pro 13:10",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148530,
+          "reference": "Pro 15:22",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148531,
+          "reference": "Pro 24:6",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15172,
+          "reference": "Isa 1:26",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15180,
+          "reference": "Isa 3:3",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15186,
+          "reference": "Isa 7:5",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15171,
+          "reference": "Hab 2:10",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15181,
+          "reference": "Isa 32:7",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15182,
+          "reference": "Isa 32:8",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15195,
+          "reference": "Mic 4:9",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15196,
+          "reference": "Mic 6:5",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15197,
+          "reference": "Nah 1:11",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148523,
+          "reference": "Eze 11:2",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148532,
+          "reference": "Psa 16:7",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148533,
+          "reference": "Psa 32:8",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148534,
+          "reference": "Psa 62:4",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148535,
+          "reference": "Psa 71:10",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148536,
+          "reference": "Psa 83:3",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 148537,
+          "reference": "Psa 83:5",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15187,
+          "reference": "Isa 9:6",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15188,
+          "reference": "Jer 38:15",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 27716,
+          "reference": "Isa 3:3",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 7430,
+          "reference": "Isa 3:3",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 7433,
+          "reference": "Isa 19:12",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15332,
+          "reference": "Judg 19:30",
+          "strongs": "H5779",
+          "mti_term_id": 754,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15331,
+          "reference": "Isa 8:10",
+          "strongs": "H5779",
+          "mti_term_id": 754,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29601,
+          "reference": "Isa 19:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15192,
+          "reference": "Job 12:17",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15193,
+          "reference": "Job 26:3",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 15194,
+          "reference": "Job 3:14",
+          "strongs": "H3289",
+          "mti_term_id": 749,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 148517,
+        "reference": "2Sa 16:23",
+        "strongs": "H3289",
+        "translit": "ya.ats",
+        "anchor_rationale": "'Now in those days the counsel that Ahithophel gave was as if one consulted the word of God; so was all the counsel of Ahithophel esteemed.' The most explicit statement of the counselor phenomenon: Ahithophel's inner wisdom was so accurate that receiving it was like receiving divine speech. The verse shows the entire phenomenon at its most concentrated — what counsel is, what makes it authoritative, and what its reception means."
+      }
+    },
+    {
+      "code": "M15-E-VCG05",
+      "label": "Deliberate inner devising of plans (cha.shav H2803I: purposive scheming)",
+      "context_description": "The term names deliberate purposive devising — the forming of plans in the heart, whether for good (Pro 16:9 the heart plans its way) or for evil (schemes formed on the bed, Mic 2:1; Ezekiel's men devising wickedness; the Assyrian king's destructive intent). God also devises — disaster against those who devised wickedness, plans for welfare in Jer 29:11. Inner-being phenomenon: purposive plan-forming in the inner person.",
+      "cluster_subgroup_code": "M15-E",
+      "mti_term_ids": [
+        3334,
+        4486
+      ],
+      "verse_count": 43,
+      "verses": [
+        {
+          "vr_id": 130773,
+          "reference": "Gen 50:20",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130766,
+          "reference": "1Sa 18:25",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130767,
+          "reference": "2Sa 14:13",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130793,
+          "reference": "Neh 6:2",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130794,
+          "reference": "Neh 6:6",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130770,
+          "reference": "Est 9:24",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130798,
+          "reference": "Psa 10:2",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130801,
+          "reference": "Psa 21:11",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130802,
+          "reference": "Psa 35:4",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130803,
+          "reference": "Psa 36:4",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130804,
+          "reference": "Psa 40:17",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130805,
+          "reference": "Psa 41:7",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130806,
+          "reference": "Psa 52:2",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130799,
+          "reference": "Psa 140:2",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130800,
+          "reference": "Psa 140:4",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130796,
+          "reference": "Pro 16:9",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130795,
+          "reference": "Pro 16:30",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130797,
+          "reference": "Pro 24:8",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130775,
+          "reference": "Isa 10:7",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130776,
+          "reference": "Jer 11:19",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130779,
+          "reference": "Jer 18:8",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130777,
+          "reference": "Jer 18:11",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130778,
+          "reference": "Jer 18:18",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130780,
+          "reference": "Jer 26:3",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130781,
+          "reference": "Jer 29:11",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130782,
+          "reference": "Jer 36:3",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130783,
+          "reference": "Jer 48:2",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130784,
+          "reference": "Jer 49:20",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130785,
+          "reference": "Jer 49:30",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130786,
+          "reference": "Jer 50:45",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130788,
+          "reference": "Lam 2:8",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130771,
+          "reference": "Eze 11:2",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130772,
+          "reference": "Eze 38:10",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130768,
+          "reference": "Dan 11:24",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130769,
+          "reference": "Dan 11:25",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130774,
+          "reference": "Hos 7:15",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130789,
+          "reference": "Mic 2:1",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130790,
+          "reference": "Mic 2:3",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130792,
+          "reference": "Nah 1:9",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130791,
+          "reference": "Nah 1:11",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130807,
+          "reference": "Zec 7:10",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 130808,
+          "reference": "Zec 8:17",
+          "strongs": "H2803I",
+          "mti_term_id": 3334,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 208332,
+          "reference": "Psa 83:3",
+          "strongs": "H6191",
+          "mti_term_id": 4486,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 130781,
+        "reference": "Jer 29:11",
+        "strongs": "H2803I",
+        "translit": "cha.shav",
+        "anchor_rationale": "'For I know the plans I have for you, declares the Lord, plans for welfare and not for evil, to give you a future and a hope.' The most significant divine devising verse. God's cha.shav is purposive and content-specific: plans for welfare, not evil. The phenomenon — inner purposive plan-forming — is at its most theologically significant here: what God has deliberated and resolved within himself defines the exile community's future."
+      }
+    },
+    {
+      "code": "M15-E-VCG06",
+      "label": "Resolute purposing formed and executed (za.mam)",
+      "context_description": "The term names purpose so firmly resolved that it cannot be revoked — human unified purposing (Gen 11:6, Tower of Babel), and divine irrevocable decisions (Jer 4:28, Jer 51:12, Lam 2:17). The phenomenon is the inner intentional act at its most fixed: what has been za.mam-ed has been purposed and will not be relented from. Inner-being phenomenon: irrevocable inner resolving.",
+      "cluster_subgroup_code": "M15-E",
+      "mti_term_ids": [
+        847
+      ],
+      "verse_count": 4,
+      "verses": [
+        {
+          "vr_id": 21542,
+          "reference": "Gen 11:6",
+          "strongs": "H2161",
+          "mti_term_id": 847,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 21543,
+          "reference": "Jer 4:28",
+          "strongs": "H2161",
+          "mti_term_id": 847,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 21544,
+          "reference": "Jer 51:12",
+          "strongs": "H2161",
+          "mti_term_id": 847,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 21545,
+          "reference": "Lam 2:17",
+          "strongs": "H2161",
+          "mti_term_id": 847,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 21545,
+        "reference": "Lam 2:17",
+        "strongs": "H2161",
+        "translit": "za.mam",
+        "anchor_rationale": "'The Lord has done what he purposed; he has carried out his word, which he commanded long ago.' The za.mam is ancient, fixed, and now executed. The verse names the full arc of za.mam: the inner purposing preceded the event by a long time and was carried through without relenting. The phenomenon — irrevocable inner resolve — is shown in its complete form."
+      }
+    },
+    {
+      "code": "M15-E-VCG07",
+      "label": "Deliberate inner attending: setting the heart (shit H7896K)",
+      "context_description": "The term names the deliberate act of directing the heart's attention — setting the heart toward something, or the failure to do so. Pharaoh deliberately does not set his heart to the signs; the dying woman cannot set her attention to what is said; Absalom counsels Tamar not to set her heart to what happened; the psalmist takes counsel in his soul. Inner-being phenomenon: the deliberate directing of inner attention.",
+      "cluster_subgroup_code": "M15-E",
+      "mti_term_ids": [
+        3578
+      ],
+      "verse_count": 7,
+      "verses": [
+        {
+          "vr_id": 132800,
+          "reference": "Exo 7:23",
+          "strongs": "H7896K",
+          "mti_term_id": 3578,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 132798,
+          "reference": "1Sa 4:20",
+          "strongs": "H7896K",
+          "mti_term_id": 3578,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 132799,
+          "reference": "2Sa 13:20",
+          "strongs": "H7896K",
+          "mti_term_id": 3578,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 132803,
+          "reference": "Psa 13:2",
+          "strongs": "H7896K",
+          "mti_term_id": 3578,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 132804,
+          "reference": "Psa 48:13",
+          "strongs": "H7896K",
+          "mti_term_id": 3578,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 132802,
+          "reference": "Pro 24:32",
+          "strongs": "H7896K",
+          "mti_term_id": 3578,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 132801,
+          "reference": "Jer 31:21",
+          "strongs": "H7896K",
+          "mti_term_id": 3578,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 132800,
+        "reference": "Exo 7:23",
+        "strongs": "H7896K",
+        "translit": "shit",
+        "anchor_rationale": "'Pharaoh turned and went into his house, and he did not take even this to heart.' The negative instance is the most diagnostic: not setting the heart to the signs is a deliberate act of non-attending, not mere ignorance. The term reveals the phenomenon by its absence — the inner attending that could have been directed toward God's act was withheld."
+      }
+    },
+    {
+      "code": "M15-E-VCG08",
+      "label": "Foresight, provision, and the rational planning faculty",
+      "context_description": "The term names the inner capacity for purposive foresight — the governor's capacity to plan for his community's welfare (pronoia), the person who makes provision for the flesh's desires, Qoheleth's quest for the rational scheme of things (chesh.bon), thought as a capacity belonging only to the living, and the divine inner attending being appealed to by a desperate captain. Inner-being phenomenon: rational planning capacity and purposive foresight.",
+      "cluster_subgroup_code": "M15-E",
+      "mti_term_ids": [
+        958,
+        1179,
+        3373,
+        3445,
+        3482
+      ],
+      "verse_count": 8,
+      "verses": [
+        {
+          "vr_id": 110345,
+          "reference": "Act 24:2",
+          "strongs": "G4307",
+          "mti_term_id": 3373,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 110346,
+          "reference": "Rom 13:14",
+          "strongs": "G4307",
+          "mti_term_id": 3373,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54627,
+          "reference": "Ecc 7:25",
+          "strongs": "H2808",
+          "mti_term_id": 1179,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54628,
+          "reference": "Ecc 7:27",
+          "strongs": "H2808",
+          "mti_term_id": 1179,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54629,
+          "reference": "Ecc 9:10",
+          "strongs": "H2808",
+          "mti_term_id": 1179,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103351,
+          "reference": "Jon 1:6",
+          "strongs": "H6245B",
+          "mti_term_id": 3445,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 104217,
+          "reference": "Dan 6:3",
+          "strongs": "H6246",
+          "mti_term_id": 3482,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178278,
+          "reference": "Ecc 7:25",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 110346,
+        "reference": "Rom 13:14",
+        "strongs": "G4307",
+        "translit": "pronoia",
+        "anchor_rationale": "'Make no provision for the flesh, to gratify its desires.' Pronoia names purposive planning ahead for the satisfaction of desire — the negative command reveals the phenomenon clearly: the inner act of foreseeing desire and arranging for its fulfillment is what must not be done for the flesh. The phenomenon is inner forward-planning in service of an end."
+      }
+    }
+  ],
+  "setasides": {
+    "reason_code": "no_inner_being_phenomenon",
+    "context_description": "Jon 1:4 where cha.shav is applied to the inanimate ship — unusual figurative use without an inner-being subject. Rom 1:13 agnoeō — this verse is a duplicate from M15-C (the term carries the same phenomenon and was classified there).",
+    "verse_count": 2,
+    "verses": [
+      {
+        "vr_id": 130787,
+        "reference": "Jon 1:4",
+        "strongs": "H2803I",
+        "mti_term_id": 3334,
+        "assignment_note": null
+      },
+      {
+        "vr_id": 82264,
+        "reference": "Rom 1:13",
+        "strongs": "G0050",
+        "mti_term_id": 1838,
+        "assignment_note": null
+      }
+    ]
+  },
+  "reroutes": {
+    "target_subgroup_code": null,
+    "verse_count": 0,
+    "verses": []
+  }
+}

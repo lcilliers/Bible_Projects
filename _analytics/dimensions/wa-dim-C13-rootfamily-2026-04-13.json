@@ -1,0 +1,4710 @@
+{
+  "extract_meta": {
+    "extract_type": "dimension_review_rootfamily",
+    "cluster": "C13",
+    "produced_date": "2026-04-13",
+    "produced_by": "Claude Code — WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "governing_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "root_count": 32,
+    "group_count": 116,
+    "cross_registry_root_count": 1
+  },
+  "roots": [
+    {
+      "root_code": "MISHPAT",
+      "root_language": "Hebrew",
+      "root_gloss": "justice",
+      "in_cluster_registries": [
+        24
+      ],
+      "cross_registry": false,
+      "term_count": 7,
+      "group_count": 5,
+      "terms": [
+        {
+          "strongs_number": "H4941H",
+          "transliteration": "mish.pat",
+          "gloss": "justice",
+          "language": "Hebrew",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H4941I",
+          "transliteration": "mish.pat",
+          "gloss": "justice: rule",
+          "language": "Hebrew",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H4941J",
+          "transliteration": "mish.pat",
+          "gloss": "justice: custom",
+          "language": "Hebrew",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H4941K",
+          "transliteration": "mish.pat",
+          "gloss": "[Hall of] Judgment",
+          "language": "Hebrew",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8196",
+          "transliteration": "she.phot",
+          "gloss": "judgment",
+          "language": "Hebrew",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8200",
+          "transliteration": "she.phat",
+          "gloss": "to judge",
+          "language": "Hebrew",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8201",
+          "transliteration": "she.phet",
+          "gloss": "judgment",
+          "language": "Hebrew",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "3189-001",
+          "context_description": "Term names justice as the defining inner character of God — the disposition of right dealing that flows from who God is",
+          "strongs_number": "H4941H",
+          "transliteration": "mish.pat",
+          "gloss": "justice",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 146081,
+              "book": "Deuteronomy",
+              "chapter": 32,
+              "verse": 4,
+              "reference": "Deu 32:4",
+              "verse_text": "Deu 32:4 “The Rock , his work is perfect , for all his ways are justice . A God of faithfulness and without iniquity , just and upright is he ."
+            },
+            {
+              "verse_record_id": 146118,
+              "book": "Isaiah",
+              "chapter": 5,
+              "verse": 16,
+              "reference": "Isa 5:16",
+              "verse_text": "Isa 5:16 But the Lord of hosts is exalted in justice , and the Holy God shows himself holy in righteousness ."
+            }
+          ]
+        },
+        {
+          "group_code": "3189-002",
+          "context_description": "Term names justice as the inner moral orientation of the person — the disposition to seek, do, and love what is right in relation to others",
+          "strongs_number": "H4941H",
+          "transliteration": "mish.pat",
+          "gloss": "justice",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 146153,
+              "book": "Job",
+              "chapter": 29,
+              "verse": 14,
+              "reference": "Job 29:14",
+              "verse_text": "Job 29:14 I put on righteousness , and it clothed me; my justice was like a robe and a turban ."
+            },
+            {
+              "verse_record_id": 146173,
+              "book": "Micah",
+              "chapter": 6,
+              "verse": 8,
+              "reference": "Mic 6:8",
+              "verse_text": "Mic 6:8 He has told you , O man , what is good ; and what does the Lord require of you but to do justice , and to love kindness , and to walk humbly with your God ?"
+            }
+          ]
+        },
+        {
+          "group_code": "3189-003",
+          "context_description": "Term names the inner cry for justice — the longing of the person denied their right, reaching toward God for vindication",
+          "strongs_number": "H4941H",
+          "transliteration": "mish.pat",
+          "gloss": "justice",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Negative",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 146150,
+              "book": "Job",
+              "chapter": 19,
+              "verse": 7,
+              "reference": "Job 19:7",
+              "verse_text": "Job 19:7 Behold , I cry out , ‘ Violence !’ but I am not answered ; I call for help , but there is no justice ."
+            },
+            {
+              "verse_record_id": 146095,
+              "book": "Habakkuk",
+              "chapter": 1,
+              "verse": 4,
+              "reference": "Hab 1:4",
+              "verse_text": "Hab 1:4 So the law is paralyzed , and justice never goes forth . For the wicked surround the righteous ; so justice goes forth perverted ."
+            }
+          ]
+        },
+        {
+          "group_code": "3252-001",
+          "context_description": "Term names divine judgment as the event before which the inner person stands in appeal — the plea-context of God's judicial acts",
+          "strongs_number": "H8196",
+          "transliteration": "she.phot",
+          "gloss": "judgment",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Dependence / Creatureliness",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 146255,
+              "book": "2 Chronicles",
+              "chapter": 20,
+              "verse": 9,
+              "reference": "2Ch 20:9",
+              "verse_text": "2Ch 20:9 ‘ If disaster comes upon us, the sword , judgment , or pestilence , or famine , we will stand before this house and before you— for your name is in this house —and cry out to you in our affliction , and you will hear and save .’"
+            }
+          ]
+        },
+        {
+          "group_code": "736-001",
+          "context_description": "Term names God's judicial acts as the consequence flowing from inner moral failure — the execution of judgment that reflects the inner state and conduct of those judged",
+          "strongs_number": "H8201",
+          "transliteration": "she.phet",
+          "gloss": "judgment",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 145667,
+              "book": "Proverbs",
+              "chapter": 19,
+              "verse": 29,
+              "reference": "Pro 19:29",
+              "verse_text": "Pro 19:29 Condemnation is ready for scoffers , and beating for the backs of fools ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "KATADIK",
+      "root_language": "Greek",
+      "root_gloss": "judgment",
+      "in_cluster_registries": [
+        24
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 0,
+      "terms": [
+        {
+          "strongs_number": "G6048",
+          "transliteration": "katadikē",
+          "gloss": "judgment",
+          "language": "Greek",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": []
+    },
+    {
+      "root_code": "KATAKRINŌ",
+      "root_language": "Greek",
+      "root_gloss": "to condemn",
+      "in_cluster_registries": [
+        24
+      ],
+      "cross_registry": false,
+      "term_count": 4,
+      "group_count": 4,
+      "terms": [
+        {
+          "strongs_number": "G0178",
+          "transliteration": "akatakritos",
+          "gloss": "uncondemned",
+          "language": "Greek",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0843",
+          "transliteration": "autokatakritos",
+          "gloss": "self-condemned",
+          "language": "Greek",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G2632",
+          "transliteration": "katakrinō",
+          "gloss": "to condemn",
+          "language": "Greek",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G2633",
+          "transliteration": "katakrisis",
+          "gloss": "condemnation",
+          "language": "Greek",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "4848-001",
+          "context_description": "Term names the condition of the inner person whose own beliefs or conduct become the instrument of their condemnation — the conscience turned against the self",
+          "strongs_number": "G0843",
+          "transliteration": "autokatakritos",
+          "gloss": "self-condemned",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 145652,
+              "book": "Titus",
+              "chapter": 3,
+              "verse": 11,
+              "reference": "Tit 3:11",
+              "verse_text": "Tit 3:11 knowing that such a person is warped and sinful ; he is self-condemned ."
+            }
+          ]
+        },
+        {
+          "group_code": "4846-001",
+          "context_description": "Term describes condemnation as the verdict passed on the inner person on the basis of their inner state — unbelief, doubt, or moral failure becoming the grounds of condemnation",
+          "strongs_number": "G2632",
+          "transliteration": "katakrinō",
+          "gloss": "to condemn",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 145641,
+              "book": "Mark",
+              "chapter": 16,
+              "verse": 16,
+              "reference": "Mar 16:16",
+              "verse_text": "Mar 16:16 Whoever believes and is baptized will be saved , but whoever does not believe will be condemned ."
+            },
+            {
+              "verse_record_id": 145646,
+              "book": "Romans",
+              "chapter": 14,
+              "verse": 23,
+              "reference": "Rom 14:23",
+              "verse_text": "Rom 14:23 But whoever has doubts is condemned if he eats , because the eating is not from faith . For whatever does not proceed from faith is sin ."
+            }
+          ]
+        },
+        {
+          "group_code": "4846-002",
+          "context_description": "Term names the freedom from condemnation — the security of the inner person before God when condemnation is withheld or overcome",
+          "strongs_number": "G2632",
+          "transliteration": "katakrinō",
+          "gloss": "to condemn",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Dependence / Creatureliness",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 145636,
+              "book": "John",
+              "chapter": 8,
+              "verse": 11,
+              "reference": "Joh 8:11",
+              "verse_text": "Joh 8:11 She said , “ No one , Lord .” And Jesus said , “ Neither do I condemn you ; go , and from now on sin no more .” ]]"
+            },
+            {
+              "verse_record_id": 145649,
+              "book": "Romans",
+              "chapter": 8,
+              "verse": 34,
+              "reference": "Rom 8:34",
+              "verse_text": "Rom 8:34 Who is to condemn ? Christ Jesus is the one who died — more than that , who was raised — who is at the right hand of God , who indeed is interceding for us ."
+            }
+          ]
+        },
+        {
+          "group_code": "738-001",
+          "context_description": "Term names condemnation as an inner state produced by the law's verdict — the weight of moral judgment falling on the conscience, contrasted with the freedom of righteousness",
+          "strongs_number": "G2633",
+          "transliteration": "katakrisis",
+          "gloss": "condemnation",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Negative",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 14716,
+              "book": "2 Corinthians",
+              "chapter": 3,
+              "verse": 9,
+              "reference": "2Cor 3:9",
+              "verse_text": "2Cor 3:9 For if there was glory in the ministry of condemnation , the ministry of righteousness must far exceed it in glory ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "KRI",
+      "root_language": "Greek",
+      "root_gloss": "judgment",
+      "in_cluster_registries": [
+        24
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "G2920",
+          "transliteration": "krisis",
+          "gloss": "judgment",
+          "language": "Greek",
+          "reg_no": 24,
+          "reg_word": "condemnation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "739-001",
+          "context_description": "Term names judgment as the coming event that orients and shapes the inner life — the fearful expectation of divine verdict that calls for moral accountability and reverence",
+          "strongs_number": "G2920",
+          "transliteration": "krisis",
+          "gloss": "judgment",
+          "registry_no": 24,
+          "registry_word": "condemnation",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Negative",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 14719,
+              "book": "Hebrews",
+              "chapter": 9,
+              "verse": 27,
+              "reference": "Heb 9:27",
+              "verse_text": "Heb 9:27 And just as it is appointed for man to die once , and after that comes judgment ,"
+            },
+            {
+              "verse_record_id": 14718,
+              "book": "Hebrews",
+              "chapter": 10,
+              "verse": 27,
+              "reference": "Heb 10:27",
+              "verse_text": "Heb 10:27 but a fearful expectation of judgment , and a fury of fire that will consume the adversaries ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "KLY",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        26
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "H3629",
+          "transliteration": "kil.yah",
+          "gloss": "kidney",
+          "language": "Hebrew",
+          "reg_no": 26,
+          "reg_word": "conscience",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "455-001",
+          "context_description": "Term names the inward parts as the seat of the innermost self — the deepest layer of the person's inner life that God searches, tests, and knows",
+          "strongs_number": "H3629",
+          "transliteration": "kil.yah",
+          "gloss": "kidney",
+          "registry_no": 26,
+          "registry_word": "conscience",
+          "cluster_assignment": "C13",
+          "dimension": "Vitality / Existence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 1198,
+              "book": "Psalms",
+              "chapter": 139,
+              "verse": 13,
+              "reference": "Psa 139:13",
+              "verse_text": "Psa 139:13 For you formed my inward parts ; you knitted me together in my mother’s womb ."
+            },
+            {
+              "verse_record_id": 1203,
+              "book": "Jeremiah",
+              "chapter": 17,
+              "verse": 10,
+              "reference": "Jer 17:10",
+              "verse_text": "Jer 17:10 “ I the Lord search the heart and test the mind , to give every man according to his ways , according to the fruit of his deeds .”"
+            }
+          ]
+        },
+        {
+          "group_code": "455-002",
+          "context_description": "Term names the inward parts as the seat of inner experience — the deepest place in the person where joy, pain, instruction, and affliction are felt",
+          "strongs_number": "H3629",
+          "transliteration": "kil.yah",
+          "gloss": "kidney",
+          "registry_no": 26,
+          "registry_word": "conscience",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Positive",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 1195,
+              "book": "Psalms",
+              "chapter": 16,
+              "verse": 7,
+              "reference": "Psa 16:7",
+              "verse_text": "Psa 16:7 I bless the Lord who gives me counsel ; in the night also my heart instructs me."
+            },
+            {
+              "verse_record_id": 1199,
+              "book": "Proverbs",
+              "chapter": 23,
+              "verse": 16,
+              "reference": "Pro 23:16",
+              "verse_text": "Pro 23:16 My inmost being will exult when your lips speak what is right ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "SUNOID",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        26
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "G4894",
+          "transliteration": "suneidō",
+          "gloss": "be aware",
+          "language": "Greek",
+          "reg_no": 26,
+          "reg_word": "conscience",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "454-001",
+          "context_description": "Term names a conscious inner awareness — moral complicity or cognitive recognition — that informs volitional response",
+          "strongs_number": "G4894",
+          "transliteration": "suneidō",
+          "gloss": "be aware",
+          "registry_no": 26,
+          "registry_word": "conscience",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 1177,
+              "book": "Acts",
+              "chapter": 5,
+              "verse": 2,
+              "reference": "Act 5:2",
+              "verse_text": "Act 5:2 and with his wife’s knowledge he kept back for himself some of the proceeds and brought only a part of it and laid it at the apostles ’ feet ."
+            },
+            {
+              "verse_record_id": 1178,
+              "book": "Acts",
+              "chapter": 12,
+              "verse": 12,
+              "reference": "Act 12:12",
+              "verse_text": "Act 12:12 When he realized this, he went to the house of Mary , the mother of John whose other name was Mark , where many were gathered together and were praying ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "PLEONEX",
+      "root_language": "Greek",
+      "root_gloss": "greediness",
+      "in_cluster_registries": [
+        35
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G4124",
+          "transliteration": "pleonexia",
+          "gloss": "greediness",
+          "language": "Greek",
+          "reg_no": 35,
+          "reg_word": "covetousness",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "778-001",
+          "context_description": "Covetousness as the insatiable inner orientation toward possessing more",
+          "strongs_number": "G4124",
+          "transliteration": "pleonexia",
+          "gloss": "greediness",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Relational Disposition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151157,
+              "book": "2 Peter",
+              "chapter": 2,
+              "verse": 14,
+              "reference": "2Pe 2:14",
+              "verse_text": "2Pe 2:14 They have eyes full of adultery , insatiable for sin . They entice unsteady souls . They have hearts trained in greed . Accursed children !"
+            }
+          ]
+        },
+        {
+          "group_code": "778-002",
+          "context_description": "Covetousness as idolatry — the ultimate inner-being misalignment",
+          "strongs_number": "G4124",
+          "transliteration": "pleonexia",
+          "gloss": "greediness",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Relational Disposition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 17722,
+              "book": "Colossians",
+              "chapter": 3,
+              "verse": 5,
+              "reference": "Col 3:5",
+              "verse_text": "Col 3:5 Put to death therefore what is earthly in you: sexual immorality , impurity , passion , evil desire , and covetousness , which is idolatry ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "ATHUM",
+      "root_language": "Greek",
+      "root_gloss": "eager",
+      "in_cluster_registries": [
+        35
+      ],
+      "cross_registry": false,
+      "term_count": 6,
+      "group_count": 8,
+      "terms": [
+        {
+          "strongs_number": "G0120",
+          "transliteration": "athumeō",
+          "gloss": "be discouraged",
+          "language": "Greek",
+          "reg_no": 35,
+          "reg_word": "covetousness",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G2114",
+          "transliteration": "euthumeō",
+          "gloss": "be cheerful",
+          "language": "Greek",
+          "reg_no": 35,
+          "reg_word": "covetousness",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G2115",
+          "transliteration": "euthumos",
+          "gloss": "encouraging",
+          "language": "Greek",
+          "reg_no": 35,
+          "reg_word": "covetousness",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G4288",
+          "transliteration": "prothumia",
+          "gloss": "eagerness",
+          "language": "Greek",
+          "reg_no": 35,
+          "reg_word": "covetousness",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G4289",
+          "transliteration": "prothumos",
+          "gloss": "eager",
+          "language": "Greek",
+          "reg_no": 35,
+          "reg_word": "covetousness",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G4290",
+          "transliteration": "prothumōs",
+          "gloss": "eagerly",
+          "language": "Greek",
+          "reg_no": 35,
+          "reg_word": "covetousness",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "2078-001",
+          "context_description": "The inner state of discouragement — loss of heart produced by provocation",
+          "strongs_number": "G0120",
+          "transliteration": "athumeō",
+          "gloss": "be discouraged",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Negative",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151231,
+              "book": "Colossians",
+              "chapter": 3,
+              "verse": 21,
+              "reference": "Col 3:21",
+              "verse_text": "Col 3:21 Fathers , do not provoke your children , lest they become discouraged ."
+            }
+          ]
+        },
+        {
+          "group_code": "2075-001",
+          "context_description": "Inner courage/cheerfulness grounded in faith amid crisis",
+          "strongs_number": "G2114",
+          "transliteration": "euthumeō",
+          "gloss": "be cheerful",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Positive",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151224,
+              "book": "Acts",
+              "chapter": 27,
+              "verse": 25,
+              "reference": "Act 27:25",
+              "verse_text": "Act 27:25 So take heart , men , for I have faith in God that it will be exactly as I have been told ."
+            }
+          ]
+        },
+        {
+          "group_code": "2075-002",
+          "context_description": "Cheerfulness as the inner-being ground of praise",
+          "strongs_number": "G2114",
+          "transliteration": "euthumeō",
+          "gloss": "be cheerful",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Positive",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151225,
+              "book": "James",
+              "chapter": 5,
+              "verse": 13,
+              "reference": "Jam 5:13",
+              "verse_text": "Jam 5:13 Is anyone among you suffering ? Let him pray . Is anyone cheerful ? Let him sing praise ."
+            }
+          ]
+        },
+        {
+          "group_code": "2077-001",
+          "context_description": "Cheerful inner composure and confidence in adversarial or crisis contexts",
+          "strongs_number": "G2115",
+          "transliteration": "euthumos",
+          "gloss": "encouraging",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Positive",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151229,
+              "book": "Acts",
+              "chapter": 24,
+              "verse": 10,
+              "reference": "Act 24:10",
+              "verse_text": "Act 24:10 And when the governor had nodded to him to speak , Paul replied : “ Knowing that for many years you have been a judge over this nation , I cheerfully make my defense ."
+            }
+          ]
+        },
+        {
+          "group_code": "2074-001",
+          "context_description": "Eagerness as the inner disposition of forward-leaning readiness toward God and good",
+          "strongs_number": "G4288",
+          "transliteration": "prothumia",
+          "gloss": "eagerness",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Volition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151222,
+              "book": "Acts",
+              "chapter": 17,
+              "verse": 11,
+              "reference": "Act 17:11",
+              "verse_text": "Act 17:11 Now these Jews were more noble than those in Thessalonica ; they received the word with all eagerness , examining the Scriptures daily to see if these things were so ."
+            }
+          ]
+        },
+        {
+          "group_code": "2076-001",
+          "context_description": "The willing spirit — inner eagerness toward God in tension with fleshly weakness",
+          "strongs_number": "G4289",
+          "transliteration": "prothumos",
+          "gloss": "eager",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Volition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151227,
+              "book": "Matthew",
+              "chapter": 26,
+              "verse": 41,
+              "reference": "Mat 26:41",
+              "verse_text": "Mat 26:41 Watch and pray that you may not enter into temptation . The spirit indeed is willing , but the flesh is weak .”"
+            }
+          ]
+        },
+        {
+          "group_code": "2076-002",
+          "context_description": "Eagerness as the inner motivation for mission",
+          "strongs_number": "G4289",
+          "transliteration": "prothumos",
+          "gloss": "eager",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Volition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151228,
+              "book": "Romans",
+              "chapter": 1,
+              "verse": 15,
+              "reference": "Rom 1:15",
+              "verse_text": "Rom 1:15 So I am eager to preach the gospel to you also who are in Rome ."
+            }
+          ]
+        },
+        {
+          "group_code": "2079-001",
+          "context_description": "Eager willing service — inner orientation of freedom and genuine care contrasted with compulsion and greed",
+          "strongs_number": "G4290",
+          "transliteration": "prothumōs",
+          "gloss": "eagerly",
+          "registry_no": 35,
+          "registry_word": "covetousness",
+          "cluster_assignment": "C13",
+          "dimension": "Volition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 151233,
+              "book": "1 Peter",
+              "chapter": 5,
+              "verse": 2,
+              "reference": "1Pe 5:2",
+              "verse_text": "1Pe 5:2 shepherd the flock of God that is among you , exercising oversight , not under compulsion , but willingly , as God would have you; not for shameful gain , but eagerly ;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "APEITHĒS",
+      "root_language": "Greek",
+      "root_gloss": "disobedient",
+      "in_cluster_registries": [
+        50
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G0543",
+          "transliteration": "apeitheia",
+          "gloss": "disobedience",
+          "language": "Greek",
+          "reg_no": 50,
+          "reg_word": "disobedience",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "819-001",
+          "context_description": "Term names disobedience as the inner condition and defining orientation of the person before God — the state of being characterised by active resistance or refusal; the inner disposition from which the wrath of God follows",
+          "strongs_number": "G0543",
+          "transliteration": "apeitheia",
+          "gloss": "disobedience",
+          "registry_no": 50,
+          "registry_word": "disobedience",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 19559,
+              "book": "Ephesians",
+              "chapter": 2,
+              "verse": 2,
+              "reference": "Eph 2:2",
+              "verse_text": "Eph 2:2 in which you once walked , following the course of this world , following the prince of the power of the air , the spirit that is now at work in the sons of disobedience —"
+            }
+          ]
+        },
+        {
+          "group_code": "819-002",
+          "context_description": "Term names disobedience as the inner failure that excludes from rest — the disposition of the heart that prevents entry into what God offers; disobedience as spiritual self-exclusion",
+          "strongs_number": "G0543",
+          "transliteration": "apeitheia",
+          "gloss": "disobedience",
+          "registry_no": 50,
+          "registry_word": "disobedience",
+          "cluster_assignment": "C13",
+          "dimension": "Volition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 19562,
+              "book": "Hebrews",
+              "chapter": 4,
+              "verse": 6,
+              "reference": "Heb 4:6",
+              "verse_text": "Heb 4:6 Since therefore it remains for some to enter it , and those who formerly received the good news failed to enter because of disobedience ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "PARAKO",
+      "root_language": "Greek",
+      "root_gloss": "to ignore",
+      "in_cluster_registries": [
+        50
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G3876",
+          "transliteration": "parakoē",
+          "gloss": "disobedience",
+          "language": "Greek",
+          "reg_no": 50,
+          "reg_word": "disobedience",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G3878",
+          "transliteration": "parakouō",
+          "gloss": "to ignore",
+          "language": "Greek",
+          "reg_no": 50,
+          "reg_word": "disobedience",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "820-001",
+          "context_description": "Term names disobedience as the defining inner act with moral and covenantal consequence — the primal refusal that constituted the human condition; the act or disposition of disobedience that draws retribution and demands correction",
+          "strongs_number": "G3876",
+          "transliteration": "parakoē",
+          "gloss": "disobedience",
+          "registry_no": 50,
+          "registry_word": "disobedience",
+          "cluster_assignment": "C13",
+          "dimension": "Volition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 19567,
+              "book": "Romans",
+              "chapter": 5,
+              "verse": 19,
+              "reference": "Rom 5:19",
+              "verse_text": "Rom 5:19 For as by the one man’s disobedience the many were made sinners , so by the one man’s obedience the many will be made righteous ."
+            }
+          ]
+        },
+        {
+          "group_code": "5111-001",
+          "context_description": "Term names the wilful refusal to hear — the inner orientation of closed attention or contempt expressed through the repeated failure to receive the voice of the community",
+          "strongs_number": "G3878",
+          "transliteration": "parakouō",
+          "gloss": "to ignore",
+          "registry_no": 50,
+          "registry_word": "disobedience",
+          "cluster_assignment": "C13",
+          "dimension": "Relational Disposition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 155906,
+              "book": "Matthew",
+              "chapter": 18,
+              "verse": 17,
+              "reference": "Mat 18:17",
+              "verse_text": "Mat 18:17 If he refuses to listen to them , tell it to the church . And if he refuses to listen even to the church , let him be to you as a Gentile and a tax collector ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "HARPAG",
+      "root_language": "Greek",
+      "root_gloss": "plunder",
+      "in_cluster_registries": [
+        70
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 3,
+      "terms": [
+        {
+          "strongs_number": "G0724",
+          "transliteration": "harpagē",
+          "gloss": "plunder",
+          "language": "Greek",
+          "reg_no": 70,
+          "reg_word": "greed",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0726",
+          "transliteration": "harpazō",
+          "gloss": "to seize",
+          "language": "Greek",
+          "reg_no": 70,
+          "reg_word": "greed",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "892-001",
+          "context_description": "Term names greed as an inner-being condition of the person — the inner fullness of rapacious desire that contradicts external religious propriety, and whose opposite is the inner freedom that accepts loss with joy",
+          "strongs_number": "G0724",
+          "transliteration": "harpagē",
+          "gloss": "plunder",
+          "registry_no": 70,
+          "registry_word": "greed",
+          "cluster_assignment": "C13",
+          "dimension": "Emotion — Negative",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 167990,
+              "book": "Matthew",
+              "chapter": 23,
+              "verse": 25,
+              "reference": "Mat 23:25",
+              "verse_text": "Mat 23:25 “ Woe to you , scribes and Pharisees , hypocrites ! For you clean the outside of the cup and the plate , but inside they are full of greed and self-indulgence ."
+            }
+          ]
+        },
+        {
+          "group_code": "5493-001",
+          "context_description": "Term names the snatching that threatens or violates the inner being — the evil one taking the word from the heart, the wolf scattering the sheep, and the divine security that makes such snatching impossible",
+          "strongs_number": "G0726",
+          "transliteration": "harpazō",
+          "gloss": "to seize",
+          "registry_no": 70,
+          "registry_word": "greed",
+          "cluster_assignment": "C13",
+          "dimension": "Dependence / Creatureliness",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 168002,
+              "book": "Matthew",
+              "chapter": 13,
+              "verse": 19,
+              "reference": "Mat 13:19",
+              "verse_text": "Mat 13:19 When anyone hears the word of the kingdom and does not understand it, the evil one comes and snatches away what has been sown in his heart . This is what was sown along the path ."
+            },
+            {
+              "verse_record_id": 167998,
+              "book": "John",
+              "chapter": 10,
+              "verse": 29,
+              "reference": "Joh 10:29",
+              "verse_text": "Joh 10:29 My Father , who has given them to me , is greater than all , and no one is able to snatch them out of the Father’s hand ."
+            }
+          ]
+        },
+        {
+          "group_code": "5493-002",
+          "context_description": "Term names the divine catching away of the person — eschatological rapture, Spirit transportation, and protective snatching to God — acts in which the inner person is taken into the divine presence or safety",
+          "strongs_number": "G0726",
+          "transliteration": "harpazō",
+          "gloss": "to seize",
+          "registry_no": 70,
+          "registry_word": "greed",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "NONE",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 167991,
+              "book": "1 Thessalonians",
+              "chapter": 4,
+              "verse": 17,
+              "reference": "1Th 4:17",
+              "verse_text": "1Th 4:17 Then we who are alive , who are left , will be caught up together with them in the clouds to meet the Lord in the air , and so we will always be with the Lord ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "PLEONEK",
+      "root_language": "Greek",
+      "root_gloss": "greedy",
+      "in_cluster_registries": [
+        70
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "G4123",
+          "transliteration": "pleonektēs",
+          "gloss": "greedy",
+          "language": "Greek",
+          "reg_no": 70,
+          "reg_word": "greed",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "893-001",
+          "context_description": "Term names the greedy person as a moral-character type — the inner disposition of insatiable acquisitive desire that constitutes idolatry, excludes from the kingdom, and disqualifies from community in Christ",
+          "strongs_number": "G4123",
+          "transliteration": "pleonektēs",
+          "gloss": "greedy",
+          "registry_no": 70,
+          "registry_word": "greed",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24871,
+              "book": "Ephesians",
+              "chapter": 5,
+              "verse": 5,
+              "reference": "Eph 5:5",
+              "verse_text": "Eph 5:5 For you may be sure of this , that everyone who is sexually immoral or impure , or who is covetous ( that is , an idolater ), has no inheritance in the kingdom of Christ and God ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "ASHAM",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        73
+      ],
+      "cross_registry": false,
+      "term_count": 4,
+      "group_count": 5,
+      "terms": [
+        {
+          "strongs_number": "H0816",
+          "transliteration": "a.sham",
+          "gloss": "be guilty",
+          "language": "Hebrew",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H0817",
+          "transliteration": "a.sham",
+          "gloss": "guilt [offering]",
+          "language": "Hebrew",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H0818",
+          "transliteration": "a.shem",
+          "gloss": "guilty",
+          "language": "Hebrew",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H0819",
+          "transliteration": "ash.mah",
+          "gloss": "guiltiness",
+          "language": "Hebrew",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "86-001",
+          "context_description": "Term names the inner-being event of incurring and realising guilt — the moment when a person becomes guilty before God and the recognition of that guilt that precedes confession and atonement",
+          "strongs_number": "H0816",
+          "transliteration": "a.sham",
+          "gloss": "be guilty",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 75413,
+              "book": "Leviticus",
+              "chapter": 5,
+              "verse": 5,
+              "reference": "Lev 5:5",
+              "verse_text": "Lev 5:5 when he realizes his guilt in any of these and confesses the sin he has committed,"
+            }
+          ]
+        },
+        {
+          "group_code": "86-002",
+          "context_description": "Term names the bearing of guilt and its communal consequences — the guilt that brings judgment on individuals and nations who persist in sin, including inner acknowledgement and confession",
+          "strongs_number": "H0816",
+          "transliteration": "a.sham",
+          "gloss": "be guilty",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3112,
+              "book": "Hosea",
+              "chapter": 5,
+              "verse": 15,
+              "reference": "Hos 5:15",
+              "verse_text": "Hos 5:15 I will return again to my place , until they acknowledge their guilt and seek my face , and in their distress earnestly seek me ."
+            }
+          ]
+        },
+        {
+          "group_code": "87-001",
+          "context_description": "Term names the guilt offering as the divinely instituted response to guilt — the atonement mechanism that addresses the inner-being condition of guilt, supremely fulfilled in the Servant's soul as the guilt offering",
+          "strongs_number": "H0817",
+          "transliteration": "a.sham",
+          "gloss": "guilt [offering]",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "NONE",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3232,
+              "book": "Isaiah",
+              "chapter": 53,
+              "verse": 10,
+              "reference": "Isa 53:10",
+              "verse_text": "Isa 53:10 Yet it was the will of the Lord to crush him; he has put him to grief ; when his soul makes an offering for guilt , he shall see his offspring ; he shall prolong his days ; the will of the Lord shall prosper in his hand ."
+            }
+          ]
+        },
+        {
+          "group_code": "88-001",
+          "context_description": "Term names the state of being guilty — the inner recognition of guilt named by the person themselves, including the communal conscience that speaks before God",
+          "strongs_number": "H0818",
+          "transliteration": "a.shem",
+          "gloss": "guilty",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3250,
+              "book": "Genesis",
+              "chapter": 42,
+              "verse": 21,
+              "reference": "Gen 42:21",
+              "verse_text": "Gen 42:21 Then they said to one another , “In truth we are guilty concerning our brother , in that we saw the distress of his soul , when he begged us and we did not listen . That is why this distress has come upon us.”"
+            }
+          ]
+        },
+        {
+          "group_code": "89-001",
+          "context_description": "Term names guiltiness as the accumulated inner-spiritual condition of a person or community before God — the weight of guilt that accumulates, is confessed, and is addressed through atonement",
+          "strongs_number": "H0819",
+          "transliteration": "ash.mah",
+          "gloss": "guiltiness",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 75423,
+              "book": "Ezra",
+              "chapter": 9,
+              "verse": 6,
+              "reference": "Ezr 9:6",
+              "verse_text": "Ezr 9:6 saying : “O my God , I am ashamed and blush to lift my face to you, my God , for our iniquities have risen higher than our heads , and our guilt has mounted up to the heavens ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "AVON",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        73
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "H5771G",
+          "transliteration": "a.von",
+          "gloss": "iniquity: crime",
+          "language": "Hebrew",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "182-001",
+          "context_description": "Term names iniquity as the inner-being condition of moral debt before God — the accumulated perversion of the human heart that God marks, bears, forgives, and will ultimately remember no more",
+          "strongs_number": "H5771G",
+          "transliteration": "a.von",
+          "gloss": "iniquity: crime",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3275,
+              "book": "Isaiah",
+              "chapter": 53,
+              "verse": 6,
+              "reference": "Isa 53:6",
+              "verse_text": "Isa 53:6 All we like sheep have gone astray ; we have turned —every one —to his own way ; and the Lord has laid on him the iniquity of us all ."
+            },
+            {
+              "verse_record_id": 3278,
+              "book": "Jeremiah",
+              "chapter": 31,
+              "verse": 34,
+              "reference": "Jer 31:34",
+              "verse_text": "Jer 31:34 And no longer shall each one teach his neighbor and each his brother , saying , ‘ Know the Lord ,’ for they shall all know me, from the least of them to the greatest , declares the Lord . For I will forgive their iniquity , and I will remember their sin no more .”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "CHATA",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        73
+      ],
+      "cross_registry": false,
+      "term_count": 3,
+      "group_count": 5,
+      "terms": [
+        {
+          "strongs_number": "H2398",
+          "transliteration": "cha.ta",
+          "gloss": "to sin",
+          "language": "Hebrew",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2399",
+          "transliteration": "chet",
+          "gloss": "sin",
+          "language": "Hebrew",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2401",
+          "transliteration": "cha.ta.ah",
+          "gloss": "sin",
+          "language": "Hebrew",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "125-001",
+          "context_description": "Term names the personal confession of sin before God — the inner turning point at which the sinner names their sin, takes ownership, and turns toward God in acknowledgement",
+          "strongs_number": "H2398",
+          "transliteration": "cha.ta",
+          "gloss": "to sin",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3336,
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": 4,
+              "reference": "Psa 51:4",
+              "verse_text": "Psa 51:4 Against you, you only , have I sinned and done what is evil in your sight , so that you may be justified in your words and blameless in your judgment ."
+            },
+            {
+              "verse_record_id": 3337,
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": 11,
+              "reference": "Psa 119:11",
+              "verse_text": "Psa 119:11 I have stored up your word in my heart , that I might not sin against you ."
+            }
+          ]
+        },
+        {
+          "group_code": "125-002",
+          "context_description": "Term names sin as the sustained inner-being orientation away from God — the pattern of covenantal unfaithfulness characterising individuals and generations who walk in idolatry",
+          "strongs_number": "H2398",
+          "transliteration": "cha.ta",
+          "gloss": "to sin",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3331,
+              "book": "2 Kings",
+              "chapter": 17,
+              "verse": 7,
+              "reference": "2Ki 17:7",
+              "verse_text": "2Ki 17:7 And this occurred because the people of Israel had sinned against the Lord their God , who had brought them up out of the land of Egypt from under the hand of Pharaoh king of Egypt , and had feared other gods"
+            }
+          ]
+        },
+        {
+          "group_code": "125-003",
+          "context_description": "Term names the moral wisdom about sin — the universal reality that no one is without sin, the consequences sin brings, and the inner posture that safeguards against it",
+          "strongs_number": "H2398",
+          "transliteration": "cha.ta",
+          "gloss": "to sin",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3338,
+              "book": "Ecclesiastes",
+              "chapter": 7,
+              "verse": 20,
+              "reference": "Ecc 7:20",
+              "verse_text": "Ecc 7:20 Surely there is not a righteous man on earth who does good and never sins ."
+            }
+          ]
+        },
+        {
+          "group_code": "126-001",
+          "context_description": "Term names sin as the offence and burden carried by persons and peoples before God — the sin confessed, forgiven, covered, borne, and purged through divine grace",
+          "strongs_number": "H2399",
+          "transliteration": "chet",
+          "gloss": "sin",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 76603,
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": 5,
+              "reference": "Psa 51:5",
+              "verse_text": "Psa 51:5 Behold , I was brought forth in iniquity , and in sin did my mother conceive me."
+            },
+            {
+              "verse_record_id": 3302,
+              "book": "Isaiah",
+              "chapter": 1,
+              "verse": 18,
+              "reference": "Isa 1:18",
+              "verse_text": "Isa 1:18 “ Come now , let us reason together, says the Lord : though your sins are like scarlet , they shall be as white as snow ; though they are red like crimson , they shall become like wool ."
+            }
+          ]
+        },
+        {
+          "group_code": "127-001",
+          "context_description": "Term names sin as the named offence confessed to and before God — the great sin acknowledged and the prayer for covering and forgiveness that follows",
+          "strongs_number": "H2401",
+          "transliteration": "cha.ta.ah",
+          "gloss": "sin",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3289,
+              "book": "Psalms",
+              "chapter": 32,
+              "verse": 1,
+              "reference": "Psa 32:1",
+              "verse_text": "A Maskil of David . Psa 32:1 Blessed is the one whose transgression is forgiven , whose sin is covered ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "AITIA",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        73
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G0156",
+          "transliteration": "aitia",
+          "gloss": "cause/charge",
+          "language": "Greek",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0159",
+          "transliteration": "aitios",
+          "gloss": "causer",
+          "language": "Greek",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "4-001",
+          "context_description": "Term names the moral ground of a person's standing — the charge, reason, or basis for guilt or innocence, including the declared innocence of Christ and the inner conviction that grounds Paul's suffering without shame",
+          "strongs_number": "G0156",
+          "transliteration": "aitia",
+          "gloss": "cause/charge",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3125,
+              "book": "John",
+              "chapter": 19,
+              "verse": 4,
+              "reference": "Joh 19:4",
+              "verse_text": "Joh 19:4 Pilate went out again and said to them , “ See , I am bringing him out to you that you may know that I find no guilt in him .”"
+            }
+          ]
+        },
+        {
+          "group_code": "5-001",
+          "context_description": "Term names the causal ground of guilt or salvation — the found absence of guilt in Christ and his being the source of eternal salvation",
+          "strongs_number": "G0159",
+          "transliteration": "aitios",
+          "gloss": "causer",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Agency / Power",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3143,
+              "book": "Hebrews",
+              "chapter": 5,
+              "verse": 9,
+              "reference": "Heb 5:9",
+              "verse_text": "Heb 5:9 And being made perfect , he became the source of eternal salvation to all who obey him ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "SUNEIDESIS",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        73
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 4,
+      "terms": [
+        {
+          "strongs_number": "G4893",
+          "transliteration": "suneidesis",
+          "gloss": "conscience",
+          "language": "Greek",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "53-001",
+          "context_description": "Term names the conscience as inner moral witness — it bears testimony, accuses, or excuses the person regarding their conduct before God and others",
+          "strongs_number": "G4893",
+          "transliteration": "suneidesis",
+          "gloss": "conscience",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3144,
+              "book": "Acts",
+              "chapter": 23,
+              "verse": 1,
+              "reference": "Act 23:1",
+              "verse_text": "Act 23:1 And looking intently at the council , Paul said , “ Brothers , I have lived my life before God in all good conscience up to this day .”"
+            },
+            {
+              "verse_record_id": 3146,
+              "book": "Romans",
+              "chapter": 2,
+              "verse": 15,
+              "reference": "Rom 2:15",
+              "verse_text": "Rom 2:15 They show that the work of the law is written on their hearts , while their conscience also bears witness , and their conflicting thoughts accuse or even excuse them"
+            }
+          ]
+        },
+        {
+          "group_code": "53-002",
+          "context_description": "Term names the conscience as morally vulnerable — susceptible to defilement, weakening through wrong associations, or cauterisation by persistent sin",
+          "strongs_number": "G4893",
+          "transliteration": "suneidesis",
+          "gloss": "conscience",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3149,
+              "book": "1 Corinthians",
+              "chapter": 8,
+              "verse": 7,
+              "reference": "1Cor 8:7",
+              "verse_text": "1Cor 8:7 However , not all possess this knowledge . But some , through former association with idols , eat food as really offered to an idol , and their conscience , being weak , is defiled ."
+            },
+            {
+              "verse_record_id": 3162,
+              "book": "1 Timothy",
+              "chapter": 4,
+              "verse": 2,
+              "reference": "1Ti 4:2",
+              "verse_text": "1Ti 4:2 through the insincerity of liars whose consciences are seared ,"
+            }
+          ]
+        },
+        {
+          "group_code": "53-003",
+          "context_description": "Term names the conscience as the interior moral foundation of godly living — holding faith and conduct with a clear or good conscience",
+          "strongs_number": "G4893",
+          "transliteration": "suneidesis",
+          "gloss": "conscience",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3148,
+              "book": "Romans",
+              "chapter": 13,
+              "verse": 5,
+              "reference": "Rom 13:5",
+              "verse_text": "Rom 13:5 Therefore one must be in subjection , not only to avoid God’s wrath but also for the sake of conscience ."
+            },
+            {
+              "verse_record_id": 3159,
+              "book": "1 Timothy",
+              "chapter": 1,
+              "verse": 5,
+              "reference": "1Ti 1:5",
+              "verse_text": "1Ti 1:5 The aim of our charge is love that issues from a pure heart and a good conscience and a sincere faith ."
+            }
+          ]
+        },
+        {
+          "group_code": "53-004",
+          "context_description": "Term names the conscience as the object of Christ's redemptive purification — what the old sacrificial system could not cleanse, his blood can",
+          "strongs_number": "G4893",
+          "transliteration": "suneidesis",
+          "gloss": "conscience",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Transformation",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3166,
+              "book": "Hebrews",
+              "chapter": 9,
+              "verse": 14,
+              "reference": "Heb 9:14",
+              "verse_text": "Heb 9:14 how much more will the blood of Christ , who through the eternal Spirit offered himself without blemish to God , purify our conscience from dead works to serve the living God ."
+            },
+            {
+              "verse_record_id": 3168,
+              "book": "Hebrews",
+              "chapter": 10,
+              "verse": 22,
+              "reference": "Heb 10:22",
+              "verse_text": "Heb 10:22 let us draw near with a true heart in full assurance of faith , with our hearts sprinkled clean from an evil conscience and our bodies washed with pure water ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "HAMARTIA",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        73
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 3,
+      "terms": [
+        {
+          "strongs_number": "G0266",
+          "transliteration": "hamartia",
+          "gloss": "sin",
+          "language": "Greek",
+          "reg_no": 73,
+          "reg_word": "guilt",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "9-001",
+          "context_description": "Term names sin as the guilt and offence before God that requires forgiveness — the relational breach that Christ came to address, that is confessed, atoned for, and forgiven through his blood",
+          "strongs_number": "G0266",
+          "transliteration": "hamartia",
+          "gloss": "sin",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3347,
+              "book": "Matthew",
+              "chapter": 1,
+              "verse": 21,
+              "reference": "Mat 1:21",
+              "verse_text": "Mat 1:21 She will bear a son , and you shall call his name Jesus , for he will save his people from their sins .”"
+            },
+            {
+              "verse_record_id": 3362,
+              "book": "2 Corinthians",
+              "chapter": 5,
+              "verse": 21,
+              "reference": "2Cor 5:21",
+              "verse_text": "2Cor 5:21 For our sake he made him to be sin who knew no sin , so that in him we might become the righteousness of God ."
+            }
+          ]
+        },
+        {
+          "group_code": "9-002",
+          "context_description": "Term names sin as an indwelling power that rules, enslaves, and deceives the inner being — the force that reigns in the mortal body, dwells within the person, and wages war against the law of the mind",
+          "strongs_number": "G0266",
+          "transliteration": "hamartia",
+          "gloss": "sin",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Agency / Power",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "UNSEEN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3349,
+              "book": "John",
+              "chapter": 8,
+              "verse": 34,
+              "reference": "Joh 8:34",
+              "verse_text": "Joh 8:34 Jesus answered them , “ Truly , truly , I say to you , everyone who practices sin is a slave to sin ."
+            },
+            {
+              "verse_record_id": 3358,
+              "book": "Romans",
+              "chapter": 7,
+              "verse": 17,
+              "reference": "Rom 7:17",
+              "verse_text": "Rom 7:17 So now it is no longer I who do it , but sin that dwells within me ."
+            }
+          ]
+        },
+        {
+          "group_code": "9-003",
+          "context_description": "Term names sin as the universal human condition and objective state of all persons apart from Christ — the condition that defines, condemns, and is overcome only by the righteousness of God",
+          "strongs_number": "G0266",
+          "transliteration": "hamartia",
+          "gloss": "sin",
+          "registry_no": 73,
+          "registry_word": "guilt",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 3351,
+              "book": "John",
+              "chapter": 16,
+              "verse": 8,
+              "reference": "Joh 16:8",
+              "verse_text": "Joh 16:8 And when he comes , he will convict the world concerning sin and righteousness and judgment :"
+            },
+            {
+              "verse_record_id": 3353,
+              "book": "Romans",
+              "chapter": 3,
+              "verse": 9,
+              "reference": "Rom 3:9",
+              "verse_text": "Rom 3:9 What then ? Are we Jews any better off? No , not at all . For we have already charged that all, both Jews and Greeks , are under sin ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "ULAM",
+      "root_language": "Hebrew",
+      "root_gloss": "to judge",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": false,
+      "term_count": 5,
+      "group_count": 11,
+      "terms": [
+        {
+          "strongs_number": "H0197H",
+          "transliteration": "u.lam",
+          "gloss": "Hall [of Justice]",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H0197I",
+          "transliteration": "u.lam",
+          "gloss": "Hall [of the Throne]",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H4941G",
+          "transliteration": "mish.pat",
+          "gloss": "justice: judgement",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8199",
+          "transliteration": "sha.phat",
+          "gloss": "to judge",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8614",
+          "transliteration": "tiph.ta.ye",
+          "gloss": "magistrate",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "3186-001",
+          "context_description": "Term names the physical structure of justice — the hall where right judgment is pronounced, embodying the inner commitment to justice in institutional form",
+          "strongs_number": "H0197H",
+          "transliteration": "u.lam",
+          "gloss": "Hall [of Justice]",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93377,
+              "book": "1 Kings",
+              "chapter": 7,
+              "verse": 7,
+              "reference": "1Ki 7:7",
+              "verse_text": "1Ki 7:7 And he made the Hall of the Throne where he was to pronounce judgment, even the Hall of Judgment . It was finished with cedar from floor to rafters ."
+            }
+          ]
+        },
+        {
+          "group_code": "3188-001",
+          "context_description": "Term names the hall of royal authority — the place where sovereign power and its inner orientation toward justice are made manifest",
+          "strongs_number": "H0197I",
+          "transliteration": "u.lam",
+          "gloss": "Hall [of the Throne]",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Agency / Power",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93381,
+              "book": "1 Kings",
+              "chapter": 7,
+              "verse": 7,
+              "reference": "1Ki 7:7",
+              "verse_text": "1Ki 7:7 And he made the Hall of the Throne where he was to pronounce judgment, even the Hall of Judgment . It was finished with cedar from floor to rafters ."
+            }
+          ]
+        },
+        {
+          "group_code": "940-001",
+          "context_description": "Soul's orientation toward God's mishpat — longing, delight, fear, praise, hope",
+          "strongs_number": "H4941G",
+          "transliteration": "mish.pat",
+          "gloss": "justice: judgement",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Relational Disposition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93492,
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": 20,
+              "reference": "Psa 119:20",
+              "verse_text": "Psa 119:20 My soul is consumed with longing for your rules at all times ."
+            },
+            {
+              "verse_record_id": 93485,
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": 120,
+              "reference": "Psa 119:120",
+              "verse_text": "Psa 119:120 My flesh trembles for fear of you, and I am afraid of your judgments ."
+            }
+          ]
+        },
+        {
+          "group_code": "940-002",
+          "context_description": "Moral-spiritual orientation of the heart — faithfulness, rebellion, or Spirit-enabled transformation",
+          "strongs_number": "H4941G",
+          "transliteration": "mish.pat",
+          "gloss": "justice: judgement",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Transformation",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93419,
+              "book": "Deuteronomy",
+              "chapter": 26,
+              "verse": 16,
+              "reference": "Deu 26:16",
+              "verse_text": "Deu 26:16 “ This day the Lord your God commands you to do these statutes and rules . You shall therefore be careful to do them with all your heart and with all your soul ."
+            },
+            {
+              "verse_record_id": 93462,
+              "book": "Ezekiel",
+              "chapter": 36,
+              "verse": 27,
+              "reference": "Eze 36:27",
+              "verse_text": "Eze 36:27 And I will put my Spirit within you, and cause you to walk in my statutes and be careful to obey my rules ."
+            }
+          ]
+        },
+        {
+          "group_code": "940-003",
+          "context_description": "Inner moral standard for human judgement — impartiality, righteousness, God-accountability",
+          "strongs_number": "H4941G",
+          "transliteration": "mish.pat",
+          "gloss": "justice: judgement",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28219,
+              "book": "Leviticus",
+              "chapter": 19,
+              "verse": 15,
+              "reference": "Lev 19:15",
+              "verse_text": "Lev 19:15 “You shall do no injustice in court . You shall not be partial to the poor or defer to the great , but in righteousness shall you judge your neighbor ."
+            },
+            {
+              "verse_record_id": 93396,
+              "book": "2 Chronicles",
+              "chapter": 19,
+              "verse": 6,
+              "reference": "2Ch 19:6",
+              "verse_text": "2Ch 19:6 and said to the judges , “ Consider what you do , for you judge not for man but for the Lord . He is with you in giving judgment ."
+            }
+          ]
+        },
+        {
+          "group_code": "940-004",
+          "context_description": "Judicial arena where inner life meets divine justice — humility, complaint, vindication-hope",
+          "strongs_number": "H4941G",
+          "transliteration": "mish.pat",
+          "gloss": "justice: judgement",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Dependence / Creatureliness",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93502,
+              "book": "Psalms",
+              "chapter": 143,
+              "verse": 2,
+              "reference": "Psa 143:2",
+              "verse_text": "Psa 143:2 Enter not into judgment with your servant , for no one living is righteous before you."
+            },
+            {
+              "verse_record_id": 28199,
+              "book": "Jeremiah",
+              "chapter": 12,
+              "verse": 1,
+              "reference": "Jer 12:1",
+              "verse_text": "Jer 12:1 Righteous are you , O Lord , when I complain to you; yet I would plead my case before you. Why does the way of the wicked prosper ? Why do all who are treacherous thrive ?"
+            }
+          ]
+        },
+        {
+          "group_code": "940-005",
+          "context_description": "Justice as spirit-given capacity for inner discernment and righteous action",
+          "strongs_number": "H4941G",
+          "transliteration": "mish.pat",
+          "gloss": "justice: judgement",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28189,
+              "book": "Isaiah",
+              "chapter": 28,
+              "verse": 6,
+              "reference": "Isa 28:6",
+              "verse_text": "Isa 28:6 and a spirit of justice to him who sits in judgment , and strength to those who turn back the battle at the gate ."
+            }
+          ]
+        },
+        {
+          "group_code": "941-001",
+          "context_description": "Judging as requiring inner moral discernment — righteousness, impartiality, God-accountability in the judge",
+          "strongs_number": "H8199",
+          "transliteration": "sha.phat",
+          "gloss": "to judge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96094,
+              "book": "2 Chronicles",
+              "chapter": 19,
+              "verse": 6,
+              "reference": "2Ch 19:6",
+              "verse_text": "2Ch 19:6 and said to the judges , “ Consider what you do , for you judge not for man but for the Lord . He is with you in giving judgment ."
+            },
+            {
+              "verse_record_id": 28259,
+              "book": "Isaiah",
+              "chapter": 11,
+              "verse": 3,
+              "reference": "Isa 11:3",
+              "verse_text": "Isa 11:3 And his delight shall be in the fear of the Lord . He shall not judge by what his eyes see , or decide disputes by what his ears hear ,"
+            }
+          ]
+        },
+        {
+          "group_code": "941-002",
+          "context_description": "Inner appeal to God as judge — cry for divine vindication, justice, or moral verdict",
+          "strongs_number": "H8199",
+          "transliteration": "sha.phat",
+          "gloss": "to judge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Dependence / Creatureliness",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28251,
+              "book": "Genesis",
+              "chapter": 18,
+              "verse": 25,
+              "reference": "Gen 18:25",
+              "verse_text": "Gen 18:25 Far be it from you to do such a thing , to put the righteous to death with the wicked , so that the righteous fare as the wicked ! Far be that from you! Shall not the Judge of all the earth do what is just ?”"
+            },
+            {
+              "verse_record_id": 96077,
+              "book": "1 Samuel",
+              "chapter": 24,
+              "verse": 12,
+              "reference": "1Sa 24:12",
+              "verse_text": "1Sa 24:12 May the Lord judge between me and you, may the Lord avenge me against you, but my hand shall not be against you ."
+            }
+          ]
+        },
+        {
+          "group_code": "941-003",
+          "context_description": "Divine judgement engaging inner moral condition — judged according to ways, wickedness, spiritual orientation",
+          "strongs_number": "H8199",
+          "transliteration": "sha.phat",
+          "gloss": "to judge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96169,
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": 4,
+              "reference": "Psa 51:4",
+              "verse_text": "Psa 51:4 Against you, you only , have I sinned and done what is evil in your sight , so that you may be justified in your words and blameless in your judgment ."
+            },
+            {
+              "verse_record_id": 96126,
+              "book": "Ezekiel",
+              "chapter": 18,
+              "verse": 30,
+              "reference": "Eze 18:30",
+              "verse_text": "Eze 18:30 “ Therefore I will judge you, O house of Israel , every one according to his ways , declares the Lord God . Repent and turn from all your transgressions , lest iniquity be your ruin ."
+            }
+          ]
+        },
+        {
+          "group_code": "941-004",
+          "context_description": "God as righteous judge whose inner character is expressed through just acts — indignation, equity, faithfulness",
+          "strongs_number": "H8199",
+          "transliteration": "sha.phat",
+          "gloss": "to judge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96173,
+              "book": "Psalms",
+              "chapter": 7,
+              "verse": 11,
+              "reference": "Psa 7:11",
+              "verse_text": "Psa 7:11 God is a righteous judge , and a God who feels indignation every day ."
+            },
+            {
+              "verse_record_id": 28264,
+              "book": "Isaiah",
+              "chapter": 33,
+              "verse": 22,
+              "reference": "Isa 33:22",
+              "verse_text": "Isa 33:22 For the Lord is our judge ; the Lord is our lawgiver ; the Lord is our king ; he will save us ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "TSADEQ",
+      "root_language": "Hebrew",
+      "root_gloss": "to justify",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 6,
+      "terms": [
+        {
+          "strongs_number": "H6663",
+          "transliteration": "tsa.deq",
+          "gloss": "to justify",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H6664G",
+          "transliteration": "tse.deq",
+          "gloss": "righteousness",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "947-001",
+          "context_description": "Inner moral standing before God — being righteous, accounted righteous, or incapacity to be righteous",
+          "strongs_number": "H6663",
+          "transliteration": "tsa.deq",
+          "gloss": "to justify",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96052,
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": 4,
+              "reference": "Psa 51:4",
+              "verse_text": "Psa 51:4 Against you, you only , have I sinned and done what is evil in your sight , so that you may be justified in your words and blameless in your judgment ."
+            },
+            {
+              "verse_record_id": 28451,
+              "book": "Isaiah",
+              "chapter": 53,
+              "verse": 11,
+              "reference": "Isa 53:11",
+              "verse_text": "Isa 53:11 Out of the anguish of his soul he shall see and be satisfied ; by his knowledge shall the righteous one , my servant , make many to be accounted righteous , and he shall bear their iniquities ."
+            }
+          ]
+        },
+        {
+          "group_code": "947-002",
+          "context_description": "Judicial act of vindicating the righteous or condemning the wicked — requiring inner moral discernment",
+          "strongs_number": "H6663",
+          "transliteration": "tsa.deq",
+          "gloss": "to justify",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96045,
+              "book": "Deuteronomy",
+              "chapter": 25,
+              "verse": 1,
+              "reference": "Deu 25:1",
+              "verse_text": "Deu 25:1 “ If there is a dispute between men and they come into court and the judges decide between them, acquitting the innocent and condemning the guilty ,"
+            },
+            {
+              "verse_record_id": 96042,
+              "book": "1 Kings",
+              "chapter": 8,
+              "verse": 32,
+              "reference": "1Ki 8:32",
+              "verse_text": "1Ki 8:32 then hear in heaven and act and judge your servants , condemning the guilty by bringing his conduct on his own head , and vindicating the righteous by rewarding him according to his righteousness ."
+            }
+          ]
+        },
+        {
+          "group_code": "942-001",
+          "context_description": "Righteousness as defining inner quality of the person — moral character, integrity, standing before God",
+          "strongs_number": "H6664G",
+          "transliteration": "tse.deq",
+          "gloss": "righteousness",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28338,
+              "book": "Job",
+              "chapter": 29,
+              "verse": 14,
+              "reference": "Job 29:14",
+              "verse_text": "Job 29:14 I put on righteousness , and it clothed me; my justice was like a robe and a turban ."
+            },
+            {
+              "verse_record_id": 96028,
+              "book": "Psalms",
+              "chapter": 7,
+              "verse": 8,
+              "reference": "Psa 7:8",
+              "verse_text": "Psa 7:8 The Lord judges the peoples ; judge me, O Lord , according to my righteousness and according to the integrity that is in me ."
+            }
+          ]
+        },
+        {
+          "group_code": "942-002",
+          "context_description": "Righteousness as attribute of God — character expressed in just acts, judgements, steadfast faithfulness",
+          "strongs_number": "H6664G",
+          "transliteration": "tse.deq",
+          "gloss": "righteousness",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96033,
+              "book": "Psalms",
+              "chapter": 89,
+              "verse": 14,
+              "reference": "Psa 89:14",
+              "verse_text": "Psa 89:14 Righteousness and justice are the foundation of your throne ; steadfast love and faithfulness go before you ."
+            }
+          ]
+        },
+        {
+          "group_code": "942-003",
+          "context_description": "Righteousness as inner orientation pursued and cultivated — active seeking, learning, walking in righteousness",
+          "strongs_number": "H6664G",
+          "transliteration": "tse.deq",
+          "gloss": "righteousness",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28324,
+              "book": "Isaiah",
+              "chapter": 51,
+              "verse": 1,
+              "reference": "Isa 51:1",
+              "verse_text": "Isa 51:1 “ Listen to me, you who pursue righteousness , you who seek the Lord : look to the rock from which you were hewn , and to the quarry from which you were dug ."
+            },
+            {
+              "verse_record_id": 28326,
+              "book": "Isaiah",
+              "chapter": 51,
+              "verse": 7,
+              "reference": "Isa 51:7",
+              "verse_text": "Isa 51:7 “ Listen to me, you who know righteousness , the people in whose heart is my law ; fear not the reproach of man , nor be dismayed at their revilings ."
+            }
+          ]
+        },
+        {
+          "group_code": "942-004",
+          "context_description": "Righteousness as moral basis for just governance — inner character required of kings, judges, and rulers",
+          "strongs_number": "H6664G",
+          "transliteration": "tse.deq",
+          "gloss": "righteousness",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96020,
+              "book": "Psalms",
+              "chapter": 45,
+              "verse": 7,
+              "reference": "Psa 45:7",
+              "verse_text": "Psa 45:7 you have loved righteousness and hated wickedness . Therefore God , your God , has anointed you with the oil of gladness beyond your companions ;"
+            },
+            {
+              "verse_record_id": 28312,
+              "book": "Isaiah",
+              "chapter": 11,
+              "verse": 5,
+              "reference": "Isa 11:5",
+              "verse_text": "Isa 11:5 Righteousness shall be the belt of his waist , and faithfulness the belt of his loins ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "DIN",
+      "root_language": "Hebrew",
+      "root_gloss": "judge",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": false,
+      "term_count": 4,
+      "group_count": 6,
+      "terms": [
+        {
+          "strongs_number": "H1777",
+          "transliteration": "din",
+          "gloss": "to judge",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H1779",
+          "transliteration": "din",
+          "gloss": "judgment",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H1780",
+          "transliteration": "din",
+          "gloss": "judgment",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H1781",
+          "transliteration": "day.yan",
+          "gloss": "judge",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "3233-001",
+          "context_description": "Term names the divine act of judging — God's inner determination to vindicate his people, execute justice among the nations, and rule with righteousness",
+          "strongs_number": "H1777",
+          "transliteration": "din",
+          "gloss": "to judge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95391,
+              "book": "Deuteronomy",
+              "chapter": 32,
+              "verse": 36,
+              "reference": "Deu 32:36",
+              "verse_text": "Deu 32:36 For the Lord will vindicate his people and have compassion on his servants , when he sees that their power is gone and there is none remaining, bond or free ."
+            },
+            {
+              "verse_record_id": 95409,
+              "book": "Psalms",
+              "chapter": 72,
+              "verse": 2,
+              "reference": "Psa 72:2",
+              "verse_text": "Psa 72:2 May he judge your people with righteousness , and your poor with justice !"
+            }
+          ]
+        },
+        {
+          "group_code": "3233-002",
+          "context_description": "Term names the human act of judging on behalf of the poor — the inner moral obligation to give right judgment to the vulnerable",
+          "strongs_number": "H1777",
+          "transliteration": "din",
+          "gloss": "to judge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95403,
+              "book": "Proverbs",
+              "chapter": 31,
+              "verse": 9,
+              "reference": "Pro 31:9",
+              "verse_text": "Pro 31:9 Open your mouth , judge righteously , defend the rights of the poor and needy ."
+            },
+            {
+              "verse_record_id": 95399,
+              "book": "Jeremiah",
+              "chapter": 22,
+              "verse": 16,
+              "reference": "Jer 22:16",
+              "verse_text": "Jer 22:16 He judged the cause of the poor and needy ; then it was well . Is not this to know me? declares the Lord ."
+            }
+          ]
+        },
+        {
+          "group_code": "943-001",
+          "context_description": "Term names the cause or right of the person — the just claim that calls for inner moral commitment from the judge and from God",
+          "strongs_number": "H1779",
+          "transliteration": "din",
+          "gloss": "judgment",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95348,
+              "book": "Psalms",
+              "chapter": 9,
+              "verse": 4,
+              "reference": "Psa 9:4",
+              "verse_text": "Psa 9:4 For you have maintained my just cause ; you have sat on the throne , giving righteous judgment."
+            },
+            {
+              "verse_record_id": 28348,
+              "book": "Jeremiah",
+              "chapter": 22,
+              "verse": 16,
+              "reference": "Jer 22:16",
+              "verse_text": "Jer 22:16 He judged the cause of the poor and needy ; then it was well . Is not this to know me? declares the Lord ."
+            }
+          ]
+        },
+        {
+          "group_code": "943-002",
+          "context_description": "Term names divine and judicial verdict — the authoritative inner determination of guilt or innocence pronounced by God or the court",
+          "strongs_number": "H1779",
+          "transliteration": "din",
+          "gloss": "judgment",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Agency / Power",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28353,
+              "book": "Job",
+              "chapter": 36,
+              "verse": 17,
+              "reference": "Job 36:17",
+              "verse_text": "Job 36:17 “But you are full of the judgment on the wicked ; judgment and justice seize you."
+            },
+            {
+              "verse_record_id": 95347,
+              "book": "Psalms",
+              "chapter": 76,
+              "verse": 8,
+              "reference": "Psa 76:8",
+              "verse_text": "Psa 76:8 From the heavens you uttered judgment ; the earth feared and was still ,"
+            }
+          ]
+        },
+        {
+          "group_code": "3236-001",
+          "context_description": "Term names the judgment that determines the outcome for powers and persons — the authoritative verdict of God or the court that shapes inner destiny",
+          "strongs_number": "H1780",
+          "transliteration": "din",
+          "gloss": "judgment",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Agency / Power",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95435,
+              "book": "Daniel",
+              "chapter": 7,
+              "verse": 22,
+              "reference": "Dan 7:22",
+              "verse_text": "Dan 7:22 until the Ancient of Days came , and judgment was given for the saints of the Most High , and the time came when the saints possessed the kingdom ."
+            },
+            {
+              "verse_record_id": 95436,
+              "book": "Daniel",
+              "chapter": 7,
+              "verse": 26,
+              "reference": "Dan 7:26",
+              "verse_text": "Dan 7:26 But the court shall sit in judgment, and his dominion shall be taken away , to be consumed and destroyed to the end ."
+            }
+          ]
+        },
+        {
+          "group_code": "3237-001",
+          "context_description": "Term names God as the divine judge — the one whose inner justice and attentiveness to the wronged defines the nature of true judgment",
+          "strongs_number": "H1781",
+          "transliteration": "day.yan",
+          "gloss": "judge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95438,
+              "book": "1 Samuel",
+              "chapter": 24,
+              "verse": 15,
+              "reference": "1Sa 24:15",
+              "verse_text": "1Sa 24:15 May the Lord therefore be judge and give sentence between me and you, and see to it and plead my cause and deliver me from your hand .”"
+            },
+            {
+              "verse_record_id": 95439,
+              "book": "Psalms",
+              "chapter": 68,
+              "verse": 5,
+              "reference": "Psa 68:5",
+              "verse_text": "Psa 68:5 Father of the fatherless and protector of widows is God in his holy habitation ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "DIK",
+      "root_language": "Greek",
+      "root_gloss": "just",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": false,
+      "term_count": 18,
+      "group_count": 22,
+      "terms": [
+        {
+          "strongs_number": "G0092",
+          "transliteration": "adikēma",
+          "gloss": "crime",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0094",
+          "transliteration": "adikos",
+          "gloss": "unjust",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0095",
+          "transliteration": "adikōs",
+          "gloss": "unjustly",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0476",
+          "transliteration": "antidikos",
+          "gloss": "opponent",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1341",
+          "transliteration": "dikaiokrisia",
+          "gloss": "justice",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1342",
+          "transliteration": "dikaios",
+          "gloss": "just",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1343",
+          "transliteration": "dikaiosunē",
+          "gloss": "righteousness",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1344",
+          "transliteration": "dikaioō",
+          "gloss": "to justify",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1346",
+          "transliteration": "dikaiōs",
+          "gloss": "rightly",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1347",
+          "transliteration": "dikaiōsis",
+          "gloss": "justification",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1348",
+          "transliteration": "dikastēs",
+          "gloss": "magistrate",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1349",
+          "transliteration": "dikē",
+          "gloss": "condemnation",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1556",
+          "transliteration": "ekdikeō",
+          "gloss": "to avenge",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1557",
+          "transliteration": "ekdikēsis",
+          "gloss": "vengeance",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1558",
+          "transliteration": "ekdikos",
+          "gloss": "avenging",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1738",
+          "transliteration": "endikos",
+          "gloss": "just",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G2613",
+          "transliteration": "katadikazō",
+          "gloss": "to condemn",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G5267",
+          "transliteration": "hupodikos",
+          "gloss": "accountable",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "3202-001",
+          "context_description": "Term names the act or condition of moral wrongdoing — the inner moral deficit that constitutes crime before God and human courts",
+          "strongs_number": "G0092",
+          "transliteration": "adikēma",
+          "gloss": "crime",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93937,
+              "book": "Acts",
+              "chapter": 18,
+              "verse": 14,
+              "reference": "Act 18:14",
+              "verse_text": "Act 18:14 But when Paul was about to open his mouth , Gallio said to the Jews , “ If it were a matter of wrongdoing or vicious crime , O Jews , I would have reason to accept your complaint."
+            },
+            {
+              "verse_record_id": 93939,
+              "book": "Revelation",
+              "chapter": 18,
+              "verse": 5,
+              "reference": "Rev 18:5",
+              "verse_text": "Rev 18:5 for her sins are heaped high as heaven , and God has remembered her iniquities ."
+            }
+          ]
+        },
+        {
+          "group_code": "3197-001",
+          "context_description": "Term characterises the person or action as morally unjust — the inner condition of unrighteousness that stands opposed to God and his standards",
+          "strongs_number": "G0094",
+          "transliteration": "adikos",
+          "gloss": "unjust",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93904,
+              "book": "1 Corinthians",
+              "chapter": 6,
+              "verse": 9,
+              "reference": "1Cor 6:9",
+              "verse_text": "1Cor 6:9 Or do you not know that the unrighteous will not inherit the kingdom of God ? Do not be deceived : neither the sexually immoral , nor idolaters , nor adulterers , nor men who practice homosexuality ,"
+            },
+            {
+              "verse_record_id": 93905,
+              "book": "1 Peter",
+              "chapter": 3,
+              "verse": 18,
+              "reference": "1Pe 3:18",
+              "verse_text": "1Pe 3:18 For Christ also suffered once for sins , the righteous for the unrighteous , that he might bring us to God , being put to death in the flesh but made alive in the spirit ,"
+            }
+          ]
+        },
+        {
+          "group_code": "3206-001",
+          "context_description": "Term names the quality of enduring unjust suffering — the inner disposition of patient endurance before God when wronged",
+          "strongs_number": "G0095",
+          "transliteration": "adikōs",
+          "gloss": "unjustly",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Dependence / Creatureliness",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93946,
+              "book": "1 Peter",
+              "chapter": 2,
+              "verse": 19,
+              "reference": "1Pe 2:19",
+              "verse_text": "1Pe 2:19 For this is a gracious thing , when , mindful of God , one endures sorrows while suffering unjustly ."
+            }
+          ]
+        },
+        {
+          "group_code": "3200-001",
+          "context_description": "Term names the adversary in legal or spiritual contest — the opposition that calls forth inner urgency, persistence, or vigilance",
+          "strongs_number": "G0476",
+          "transliteration": "antidikos",
+          "gloss": "opponent",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Dependence / Creatureliness",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93931,
+              "book": "Luke",
+              "chapter": 18,
+              "verse": 3,
+              "reference": "Luk 18:3",
+              "verse_text": "Luk 18:3 And there was a widow in that city who kept coming to him and saying , ‘Give me justice against my adversary .’"
+            },
+            {
+              "verse_record_id": 93929,
+              "book": "1 Peter",
+              "chapter": 5,
+              "verse": 8,
+              "reference": "1Pe 5:8",
+              "verse_text": "1Pe 5:8 Be sober-minded ; be watchful . Your adversary the devil prowls around like a roaring lion , seeking someone to devour ."
+            }
+          ]
+        },
+        {
+          "group_code": "3207-001",
+          "context_description": "Term names the righteous judgment of God — the divine standard of just assessment that confronts the hard-hearted inner condition",
+          "strongs_number": "G1341",
+          "transliteration": "dikaiokrisia",
+          "gloss": "justice",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93947,
+              "book": "Romans",
+              "chapter": 2,
+              "verse": 5,
+              "reference": "Rom 2:5",
+              "verse_text": "Rom 2:5 But because of your hard and impenitent heart you are storing up wrath for yourself on the day of wrath when God’s righteous judgment will be revealed ."
+            }
+          ]
+        },
+        {
+          "group_code": "3193-001",
+          "context_description": "Term characterises the person as morally righteous — the inner quality of justice and uprightness that defines the person who stands rightly before God and others",
+          "strongs_number": "G1342",
+          "transliteration": "dikaios",
+          "gloss": "just",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93791,
+              "book": "Matthew",
+              "chapter": 1,
+              "verse": 19,
+              "reference": "Mat 1:19",
+              "verse_text": "Mat 1:19 And her husband Joseph , being a just man and unwilling to put her to shame , resolved to divorce her quietly ."
+            },
+            {
+              "verse_record_id": 93773,
+              "book": "James",
+              "chapter": 5,
+              "verse": 16,
+              "reference": "Jam 5:16",
+              "verse_text": "Jam 5:16 Therefore , confess your sins to one another and pray for one another , that you may be healed . The prayer of a righteous person has great power as it is working ."
+            }
+          ]
+        },
+        {
+          "group_code": "3193-002",
+          "context_description": "Term characterises God or Christ as just and righteous — the divine inner attribute of perfect moral justice",
+          "strongs_number": "G1342",
+          "transliteration": "dikaios",
+          "gloss": "just",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93775,
+              "book": "John",
+              "chapter": 17,
+              "verse": 25,
+              "reference": "Joh 17:25",
+              "verse_text": "Joh 17:25 O righteous Father , even though the world does not know you , I know you , and these know that you have sent me ."
+            },
+            {
+              "verse_record_id": 93808,
+              "book": "Revelation",
+              "chapter": 16,
+              "verse": 5,
+              "reference": "Rev 16:5",
+              "verse_text": "Rev 16:5 And I heard the angel in charge of the waters say , “ Just are you, O Holy One , who is and who was , for you brought these judgments ."
+            }
+          ]
+        },
+        {
+          "group_code": "950-001",
+          "context_description": "Term names the divine righteousness revealed and imputed — the righteousness of God that becomes the ground of the person's standing before him",
+          "strongs_number": "G1343",
+          "transliteration": "dikaiosunē",
+          "gloss": "righteousness",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28744,
+              "book": "Romans",
+              "chapter": 1,
+              "verse": 17,
+              "reference": "Rom 1:17",
+              "verse_text": "Rom 1:17 For in it the righteousness of God is revealed from faith for faith , as it is written , “The righteous shall live by faith .”"
+            },
+            {
+              "verse_record_id": 28726,
+              "book": "2 Corinthians",
+              "chapter": 5,
+              "verse": 21,
+              "reference": "2Cor 5:21",
+              "verse_text": "2Cor 5:21 For our sake he made him to be sin who knew no sin , so that in him we might become the righteousness of God ."
+            }
+          ]
+        },
+        {
+          "group_code": "950-002",
+          "context_description": "Term names human righteousness as an inner quality and lived conduct — the moral character and orientation of the person who lives rightly before God",
+          "strongs_number": "G1343",
+          "transliteration": "dikaiosunē",
+          "gloss": "righteousness",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93739,
+              "book": "Matthew",
+              "chapter": 5,
+              "verse": 6,
+              "reference": "Mat 5:6",
+              "verse_text": "Mat 5:6 “ Blessed are those who hunger and thirst for righteousness , for they shall be satisfied ."
+            },
+            {
+              "verse_record_id": 28738,
+              "book": "Hebrews",
+              "chapter": 1,
+              "verse": 9,
+              "reference": "Heb 1:9",
+              "verse_text": "Heb 1:9 You have loved righteousness and hated wickedness ; therefore God , your God , has anointed you with the oil of gladness beyond your companions .”"
+            }
+          ]
+        },
+        {
+          "group_code": "950-003",
+          "context_description": "Term names righteousness obtained and pursued by faith — the inner orientation of seeking righteousness through trust in God rather than works",
+          "strongs_number": "G1343",
+          "transliteration": "dikaiosunē",
+          "gloss": "righteousness",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28771,
+              "book": "Romans",
+              "chapter": 9,
+              "verse": 30,
+              "reference": "Rom 9:30",
+              "verse_text": "Rom 9:30 What shall we say , then ? That Gentiles who did not pursue righteousness have attained it, that is , a righteousness that is by faith ;"
+            },
+            {
+              "verse_record_id": 28737,
+              "book": "Galatians",
+              "chapter": 5,
+              "verse": 5,
+              "reference": "Gal 5:5",
+              "verse_text": "Gal 5:5 For through the Spirit , by faith , we ourselves eagerly wait for the hope of righteousness ."
+            }
+          ]
+        },
+        {
+          "group_code": "3194-001",
+          "context_description": "Term names the divine act of justification — the declaration that transforms the person's inner moral standing before God, received through faith",
+          "strongs_number": "G1344",
+          "transliteration": "dikaioō",
+          "gloss": "to justify",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93843,
+              "book": "Romans",
+              "chapter": 3,
+              "verse": 24,
+              "reference": "Rom 3:24",
+              "verse_text": "Rom 3:24 and are justified by his grace as a gift, through the redemption that is in Christ Jesus ,"
+            },
+            {
+              "verse_record_id": 93850,
+              "book": "Romans",
+              "chapter": 5,
+              "verse": 1,
+              "reference": "Rom 5:1",
+              "verse_text": "Rom 5:1 Therefore , since we have been justified by faith , we have peace with God through our Lord Jesus Christ ."
+            }
+          ]
+        },
+        {
+          "group_code": "3199-001",
+          "context_description": "Term names the quality of acting or suffering in a morally right manner — the adverbial dimension of inner moral alignment expressed in conduct",
+          "strongs_number": "G1346",
+          "transliteration": "dikaiōs",
+          "gloss": "rightly",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93927,
+              "book": "Luke",
+              "chapter": 23,
+              "verse": 41,
+              "reference": "Luk 23:41",
+              "verse_text": "Luk 23:41 And we indeed justly , for we are receiving the due reward of our deeds ; but this man has done nothing wrong .”"
+            },
+            {
+              "verse_record_id": 93928,
+              "book": "Titus",
+              "chapter": 2,
+              "verse": 12,
+              "reference": "Tit 2:12",
+              "verse_text": "Tit 2:12 training us to renounce ungodliness and worldly passions , and to live self-controlled , upright , and godly lives in the present age ,"
+            }
+          ]
+        },
+        {
+          "group_code": "3203-001",
+          "context_description": "Term names justification as the act that restores right standing before God — the inner transformation of moral status through Christ's work",
+          "strongs_number": "G1347",
+          "transliteration": "dikaiōsis",
+          "gloss": "justification",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Transformation",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93940,
+              "book": "Romans",
+              "chapter": 4,
+              "verse": 25,
+              "reference": "Rom 4:25",
+              "verse_text": "Rom 4:25 who was delivered up for our trespasses and raised for our justification ."
+            },
+            {
+              "verse_record_id": 93941,
+              "book": "Romans",
+              "chapter": 5,
+              "verse": 18,
+              "reference": "Rom 5:18",
+              "verse_text": "Rom 5:18 Therefore , as one trespass led to condemnation for all men , so one act of righteousness leads to justification and life for all men ."
+            }
+          ]
+        },
+        {
+          "group_code": "3204-001",
+          "context_description": "Term names the human judge or ruler in the context of the inner act of rejecting divinely appointed authority",
+          "strongs_number": "G1348",
+          "transliteration": "dikastēs",
+          "gloss": "magistrate",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Volition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93942,
+              "book": "Acts",
+              "chapter": 7,
+              "verse": 27,
+              "reference": "Act 7:27",
+              "verse_text": "Act 7:27 But the man who was wronging his neighbor thrust him aside , saying , ‘ Who made you a ruler and a judge over us ?"
+            },
+            {
+              "verse_record_id": 93943,
+              "book": "Acts",
+              "chapter": 7,
+              "verse": 35,
+              "reference": "Act 7:35",
+              "verse_text": "Act 7:35 “ This Moses , whom they rejected , saying , ‘ Who made you a ruler and a judge ?’—this man God sent as both ruler and redeemer by the hand of the angel who appeared to him in the bush ."
+            }
+          ]
+        },
+        {
+          "group_code": "949-001",
+          "context_description": "Term names the just punishment or condemnation that follows moral transgression — the consequence of the inner condition of wickedness before divine justice",
+          "strongs_number": "G1349",
+          "transliteration": "dikē",
+          "gloss": "condemnation",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93720,
+              "book": "2 Thessalonians",
+              "chapter": 1,
+              "verse": 9,
+              "reference": "2Th 1:9",
+              "verse_text": "2Th 1:9 They will suffer the punishment of eternal destruction , away from the presence of the Lord and from the glory of his might ,"
+            },
+            {
+              "verse_record_id": 28722,
+              "book": "Jude",
+              "chapter": 1,
+              "verse": 7,
+              "reference": "Jude 7",
+              "verse_text": "Jude 7 just as Sodom and Gomorrah and the surrounding cities , which likewise indulged in sexual immorality and pursued unnatural desire , serve as an example by undergoing a punishment of eternal fire ."
+            }
+          ]
+        },
+        {
+          "group_code": "944-001",
+          "context_description": "Term names the inner cry and petition for divine justice — the persistent appeal of the wronged person to God for vindication",
+          "strongs_number": "G1556",
+          "transliteration": "ekdikeō",
+          "gloss": "to avenge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Dependence / Creatureliness",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96057,
+              "book": "Luke",
+              "chapter": 18,
+              "verse": 3,
+              "reference": "Luk 18:3",
+              "verse_text": "Luk 18:3 And there was a widow in that city who kept coming to him and saying , ‘Give me justice against my adversary .’"
+            },
+            {
+              "verse_record_id": 28356,
+              "book": "Revelation",
+              "chapter": 6,
+              "verse": 10,
+              "reference": "Rev 6:10",
+              "verse_text": "Rev 6:10 They cried out with a loud voice , “O Sovereign Lord , holy and true , how long before you will judge and avenge our blood on those who dwell on the earth ?”"
+            }
+          ]
+        },
+        {
+          "group_code": "944-002",
+          "context_description": "Term names the execution of divine vengeance and justice — God's inner determination to right wrongs and vindicate the oppressed",
+          "strongs_number": "G1556",
+          "transliteration": "ekdikeō",
+          "gloss": "to avenge",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28357,
+              "book": "Romans",
+              "chapter": 12,
+              "verse": 19,
+              "reference": "Rom 12:19",
+              "verse_text": "Rom 12:19 Beloved , never avenge yourselves , but leave it to the wrath of God, for it is written , “ Vengeance is mine , I will repay , says the Lord .”"
+            },
+            {
+              "verse_record_id": 28355,
+              "book": "Revelation",
+              "chapter": 19,
+              "verse": 2,
+              "reference": "Rev 19:2",
+              "verse_text": "Rev 19:2 for his judgments are true and just ; for he has judged the great prostitute who corrupted the earth with her immorality , and has avenged on her the blood of his servants .”"
+            }
+          ]
+        },
+        {
+          "group_code": "945-001",
+          "context_description": "Term names the divine vengeance and justice that arises from God's inner righteousness in response to evil — and the human cry for such justice",
+          "strongs_number": "G1557",
+          "transliteration": "ekdikēsis",
+          "gloss": "vengeance",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "NONE",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96062,
+              "book": "Luke",
+              "chapter": 18,
+              "verse": 7,
+              "reference": "Luk 18:7",
+              "verse_text": "Luk 18:7 And will not God give justice to his elect , who cry to him day and night ? , Will he delay long over them ?"
+            },
+            {
+              "verse_record_id": 28359,
+              "book": "Hebrews",
+              "chapter": 10,
+              "verse": 30,
+              "reference": "Heb 10:30",
+              "verse_text": "Heb 10:30 For we know him who said , “ Vengeance is mine ; I will repay .” And again , “The Lord will judge his people .”"
+            }
+          ]
+        },
+        {
+          "group_code": "3250-001",
+          "context_description": "Term names the avenging character of divine authority — the inner justice that punishes wrongdoing and protects the wronged",
+          "strongs_number": "G1558",
+          "transliteration": "ekdikos",
+          "gloss": "avenging",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Agency / Power",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96066,
+              "book": "Romans",
+              "chapter": 13,
+              "verse": 4,
+              "reference": "Rom 13:4",
+              "verse_text": "Rom 13:4 for he is God’s servant for your good . But if you do wrong , be afraid , for he does not bear the sword in vain . For he is the servant of God , an avenger who carries out God’s wrath on the wrongdoer ."
+            },
+            {
+              "verse_record_id": 96065,
+              "book": "1 Thessalonians",
+              "chapter": 4,
+              "verse": 6,
+              "reference": "1Th 4:6",
+              "verse_text": "1Th 4:6 that no one transgress and wrong his brother in this matter , because the Lord is an avenger in all these things , as we told you beforehand and solemnly warned you."
+            }
+          ]
+        },
+        {
+          "group_code": "3205-001",
+          "context_description": "Term names the just or righteous character of a consequence or penalty — the inner moral logic of appropriate retribution",
+          "strongs_number": "G1738",
+          "transliteration": "endikos",
+          "gloss": "just",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93945,
+              "book": "Romans",
+              "chapter": 3,
+              "verse": 8,
+              "reference": "Rom 3:8",
+              "verse_text": "Rom 3:8 And why not do evil that good may come ?— as some people slanderously charge us with saying . Their condemnation is just ."
+            },
+            {
+              "verse_record_id": 93944,
+              "book": "Hebrews",
+              "chapter": 2,
+              "verse": 2,
+              "reference": "Heb 2:2",
+              "verse_text": "Heb 2:2 For since the message declared by angels proved to be reliable , and every transgression or disobedience received a just retribution ,"
+            }
+          ]
+        },
+        {
+          "group_code": "3201-001",
+          "context_description": "Term names the inner act of moral condemnation — the judgment that pronounces another guilty and the divine prohibition of such judgment by the unmerciful",
+          "strongs_number": "G2613",
+          "transliteration": "katadikazō",
+          "gloss": "to condemn",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93935,
+              "book": "Matthew",
+              "chapter": 12,
+              "verse": 37,
+              "reference": "Mat 12:37",
+              "verse_text": "Mat 12:37 for by your words you will be justified , and by your words you will be condemned .”"
+            },
+            {
+              "verse_record_id": 93934,
+              "book": "Luke",
+              "chapter": 6,
+              "verse": 37,
+              "reference": "Luk 6:37",
+              "verse_text": "Luk 6:37 , “ Judge not , and you will not be judged ; condemn not , and you will not be condemned ; forgive , and you will be forgiven ;"
+            }
+          ]
+        },
+        {
+          "group_code": "3208-001",
+          "context_description": "Term names the condition of moral accountability before God — the inner standing of being answerable to divine judgment",
+          "strongs_number": "G5267",
+          "transliteration": "hupodikos",
+          "gloss": "accountable",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 93948,
+              "book": "Romans",
+              "chapter": 3,
+              "verse": 19,
+              "reference": "Rom 3:19",
+              "verse_text": "Rom 3:19 Now we know that whatever the law says it speaks to those who are under the law , so that every mouth may be stopped , and the whole world may be held accountable to God ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "DIKASTĒRI",
+      "root_language": "Greek",
+      "root_gloss": "court of justice",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 0,
+      "terms": [
+        {
+          "strongs_number": "G6928",
+          "transliteration": "dikastērion",
+          "gloss": "court of justice",
+          "language": "Greek",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": []
+    },
+    {
+      "root_code": "ASAH",
+      "root_language": "Hebrew",
+      "root_gloss": "deed",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": true,
+      "term_count": 3,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "H4639H",
+          "transliteration": "ma.a.seh",
+          "gloss": "deed: justice",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H4639I",
+          "transliteration": "ma.a.seh",
+          "gloss": "deed: judgement",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H6213A",
+          "transliteration": "a.sah",
+          "gloss": "to make: do",
+          "language": "Hebrew",
+          "reg_no": 173,
+          "reg_word": "will",
+          "cluster_assignment": "C14",
+          "in_current_cluster": false
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1228-001",
+          "context_description": "Term names deliberate human action as the expression of inner character and will — what a person does as the outward enactment of their inner being",
+          "strongs_number": "H6213A",
+          "transliteration": "a.sah",
+          "gloss": "to make: do",
+          "registry_no": 173,
+          "registry_word": "will",
+          "cluster_assignment": "C14",
+          "dimension": null,
+          "dimension_confidence": "UNCLASSIFIED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 47341,
+              "book": "Isaiah",
+              "chapter": 56,
+              "verse": 1,
+              "reference": "Isa 56:1",
+              "verse_text": "Isa 56:1 Thus says the Lord : “ Keep justice , and do righteousness , for soon my salvation will come , and my righteousness be revealed ."
+            },
+            {
+              "verse_record_id": 47396,
+              "book": "Micah",
+              "chapter": 6,
+              "verse": 8,
+              "reference": "Mic 6:8",
+              "verse_text": "Mic 6:8 He has told you , O man , what is good ; and what does the Lord require of you but to do justice , and to love kindness , and to walk humbly with your God ?"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "DAT",
+      "root_language": "Hebrew",
+      "root_gloss": "arm",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "H1882",
+          "transliteration": "dat",
+          "gloss": "law",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H1884",
+          "transliteration": "de.ta.var",
+          "gloss": "judge",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "3220-001",
+          "context_description": "Term names the law or decree as the framework within which inner moral and religious commitment is tested — the external standard that reveals the inner orientation of the person",
+          "strongs_number": "H1882",
+          "transliteration": "dat",
+          "gloss": "law",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95086,
+              "book": "Ezra",
+              "chapter": 7,
+              "verse": 26,
+              "reference": "Ezr 7:26",
+              "verse_text": "Ezr 7:26 Whoever will not obey the law of your God and the law of the king , let judgment be strictly executed on him , whether for death or for banishment or for confiscation of his goods or for imprisonment .”"
+            },
+            {
+              "verse_record_id": 95079,
+              "book": "Daniel",
+              "chapter": 6,
+              "verse": 5,
+              "reference": "Dan 6:5",
+              "verse_text": "Dan 6:5 Then these men said , “We shall not find any ground for complaint against this Daniel unless we find it in connection with the law of his God .”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "YASHAR",
+      "root_language": "Hebrew",
+      "root_gloss": "to smooth",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 3,
+      "terms": [
+        {
+          "strongs_number": "H3474",
+          "transliteration": "ya.shar",
+          "gloss": "to smooth",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H3477I",
+          "transliteration": "ya.shar",
+          "gloss": "upright:straight",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "3241-001",
+          "context_description": "Term names the inner act of perceiving or approving something as right — the moral/personal assessment that something accords with what is right and true",
+          "strongs_number": "H3474",
+          "transliteration": "ya.shar",
+          "gloss": "to smooth",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95593,
+              "book": "Judges",
+              "chapter": 14,
+              "verse": 3,
+              "reference": "Judg 14:3",
+              "verse_text": "Judg 14:3 But his father and mother said to him, “Is there not a woman among the daughters of your relatives , or among all our people , that you must go to take a wife from the uncircumcised Philistines ?” But Samson said to his father , “ Get her for me, for she is right in my eyes .”"
+            },
+            {
+              "verse_record_id": 95601,
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": 128,
+              "reference": "Psa 119:128",
+              "verse_text": "Psa 119:128 Therefore I consider all your precepts to be right ; I hate every false way ."
+            }
+          ]
+        },
+        {
+          "group_code": "3241-002",
+          "context_description": "Term names the quality of moral uprightness — the straight inner path and conduct that reflects alignment with God's ways",
+          "strongs_number": "H3474",
+          "transliteration": "ya.shar",
+          "gloss": "to smooth",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95602,
+              "book": "Psalms",
+              "chapter": 5,
+              "verse": 8,
+              "reference": "Psa 5:8",
+              "verse_text": "Psa 5:8 Lead me, O Lord , in your righteousness because of my enemies ; make your way straight before me."
+            },
+            {
+              "verse_record_id": 95587,
+              "book": "Habakkuk",
+              "chapter": 2,
+              "verse": 4,
+              "reference": "Hab 2:4",
+              "verse_text": "Hab 2:4 “ Behold , his soul is puffed up ; it is not upright within him, but the righteous shall live by his faith ."
+            }
+          ]
+        },
+        {
+          "group_code": "3244-001",
+          "context_description": "Term names the quality of moral and spiritual uprightness — the inner straightness of the person who walks rightly before God and detests what perverts justice",
+          "strongs_number": "H3477I",
+          "transliteration": "ya.shar",
+          "gloss": "upright:straight",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 95637,
+              "book": "Ezra",
+              "chapter": 8,
+              "verse": 21,
+              "reference": "Ezr 8:21",
+              "verse_text": "Ezr 8:21 Then I proclaimed a fast there , at the river Ahava , that we might humble ourselves before our God , to seek from him a safe journey for ourselves, our children , and all our goods ."
+            },
+            {
+              "verse_record_id": 95639,
+              "book": "Micah",
+              "chapter": 3,
+              "verse": 9,
+              "reference": "Mic 3:9",
+              "verse_text": "Mic 3:9 Hear this , you heads of the house of Jacob and rulers of the house of Israel , who detest justice and make crooked all that is straight ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "MATTEH",
+      "root_language": "Hebrew",
+      "root_gloss": "bed",
+      "in_cluster_registries": [
+        98
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "H4297",
+          "transliteration": "mut.teh",
+          "gloss": "perversion",
+          "language": "Hebrew",
+          "reg_no": 98,
+          "reg_word": "justice",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "3262-001",
+          "context_description": "Term names the perversion of justice — the inner moral distortion of a people that has abandoned divine standards and denies God's seeing",
+          "strongs_number": "H4297",
+          "transliteration": "mut.teh",
+          "gloss": "perversion",
+          "registry_no": 98,
+          "registry_word": "justice",
+          "cluster_assignment": "C13",
+          "dimension": "Moral Character",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 96569,
+              "book": "Ezekiel",
+              "chapter": 9,
+              "verse": 9,
+              "reference": "Eze 9:9",
+              "verse_text": "Eze 9:9 Then he said to me, “The guilt of the house of Israel and Judah is exceedingly great . The land is full of blood , and the city full of injustice . For they say , ‘The Lord has forsaken the land , and the Lord does not see .’"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "KATALLAG",
+      "root_language": "Greek",
+      "root_gloss": "to reconcile",
+      "in_cluster_registries": [
+        130
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G2643",
+          "transliteration": "katallagē",
+          "gloss": "reconciliation",
+          "language": "Greek",
+          "reg_no": 130,
+          "reg_word": "reconciliation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G2644",
+          "transliteration": "katallassō",
+          "gloss": "to reconcile",
+          "language": "Greek",
+          "reg_no": 130,
+          "reg_word": "reconciliation",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1093-001",
+          "context_description": "Term names reconciliation as the inner-relational restoration of broken relationship between God and humanity — the ending of enmity and establishment of peace at the relational core of personhood",
+          "strongs_number": "G2643",
+          "transliteration": "katallagē",
+          "gloss": "reconciliation",
+          "registry_no": 130,
+          "registry_word": "reconciliation",
+          "cluster_assignment": "C17",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 36653,
+              "book": "2 Corinthians",
+              "chapter": 5,
+              "verse": 18,
+              "reference": "2Cor 5:18",
+              "verse_text": "2Cor 5:18 All this is from God , who through Christ reconciled us to himself and gave us the ministry of reconciliation ;"
+            }
+          ]
+        },
+        {
+          "group_code": "6114-001",
+          "context_description": "Term names the act of reconciliation — the active work of restoring broken inner-relational standing, whether between God and humanity or within human relationships",
+          "strongs_number": "G2644",
+          "transliteration": "katallassō",
+          "gloss": "to reconcile",
+          "registry_no": 130,
+          "registry_word": "reconciliation",
+          "cluster_assignment": "C17",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 188456,
+              "book": "Romans",
+              "chapter": 5,
+              "verse": 10,
+              "reference": "Rom 5:10",
+              "verse_text": "Rom 5:10 For if while we were enemies we were reconciled to God by the death of his Son , much more , now that we are reconciled , shall we be saved by his life ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "NACHAM",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        135
+      ],
+      "cross_registry": false,
+      "term_count": 3,
+      "group_count": 5,
+      "terms": [
+        {
+          "strongs_number": "H5162G",
+          "transliteration": "na.cham",
+          "gloss": "to be sorry: comfort",
+          "language": "Hebrew",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H5162H",
+          "transliteration": "na.cham",
+          "gloss": "to be sorry: relent",
+          "language": "Hebrew",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H5164",
+          "transliteration": "no.cham",
+          "gloss": "repentance",
+          "language": "Hebrew",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "445-001",
+          "context_description": "Term names the human act of comforting — bringing relief to inner grief through presence, words, or care",
+          "strongs_number": "H5162G",
+          "transliteration": "na.cham",
+          "gloss": "to be sorry: comfort",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Relational Disposition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 6008,
+              "book": "Psalms",
+              "chapter": 23,
+              "verse": 4,
+              "reference": "Psa 23:4",
+              "verse_text": "Psa 23:4 Even though I walk through the valley of the shadow of death , I will fear no evil , for you are with me; your rod and your staff , they comfort me ."
+            },
+            {
+              "verse_record_id": 59547,
+              "book": "Lamentations",
+              "chapter": 1,
+              "verse": 16,
+              "reference": "Lam 1:16",
+              "verse_text": "Lam 1:16 “ For these things I weep ; my eyes flow with tears ; for a comforter is far from me, one to revive my spirit ; my children are desolate , for the enemy has prevailed .”"
+            }
+          ]
+        },
+        {
+          "group_code": "445-002",
+          "context_description": "Term names divine comfort — God actively bringing relief and restoration to the inner grief of his people",
+          "strongs_number": "H5162G",
+          "transliteration": "na.cham",
+          "gloss": "to be sorry: comfort",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Relational Disposition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 6012,
+              "book": "Isaiah",
+              "chapter": 40,
+              "verse": 1,
+              "reference": "Isa 40:1",
+              "verse_text": "Isa 40:1 Comfort , comfort my people , says your God ."
+            },
+            {
+              "verse_record_id": 6016,
+              "book": "Isaiah",
+              "chapter": 66,
+              "verse": 13,
+              "reference": "Isa 66:13",
+              "verse_text": "Isa 66:13 As one whom his mother comforts , so I will comfort you; you shall be comforted in Jerusalem ."
+            }
+          ]
+        },
+        {
+          "group_code": "446-001",
+          "context_description": "Term names human relenting — the inner change of heart toward repentance before God or reversal of a previous disposition",
+          "strongs_number": "H5162H",
+          "transliteration": "na.cham",
+          "gloss": "to be sorry: relent",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Transformation",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 59587,
+              "book": "Job",
+              "chapter": 42,
+              "verse": 6,
+              "reference": "Job 42:6",
+              "verse_text": "Job 42:6 therefore I despise myself, and repent in dust and ashes .”"
+            }
+          ]
+        },
+        {
+          "group_code": "446-002",
+          "context_description": "Term names divine relenting — God's inner-being disposition changing in response to human repentance or intercession, turning from intended judgment",
+          "strongs_number": "H5162H",
+          "transliteration": "na.cham",
+          "gloss": "to be sorry: relent",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 59572,
+              "book": "Exodus",
+              "chapter": 32,
+              "verse": 14,
+              "reference": "Exo 32:14",
+              "verse_text": "Exo 32:14 And the Lord relented from the disaster that he had spoken of bringing on his people ."
+            },
+            {
+              "verse_record_id": 59590,
+              "book": "Jonah",
+              "chapter": 3,
+              "verse": 10,
+              "reference": "Jon 3:10",
+              "verse_text": "Jon 3:10 When God saw what they did , how they turned from their evil way , God relented of the disaster that he had said he would do to them, and he did not do it."
+            }
+          ]
+        },
+        {
+          "group_code": "443-001",
+          "context_description": "Term names the withholding of divine compassion — the inner-relational disposition of God toward a people under judgment, where compassion is deliberately hidden",
+          "strongs_number": "H5164",
+          "transliteration": "no.cham",
+          "gloss": "repentance",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Relational Disposition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 5981,
+              "book": "Hosea",
+              "chapter": 13,
+              "verse": 14,
+              "reference": "Hos 13:14",
+              "verse_text": "Hos 13:14 I shall ransom them from the power of Sheol ; I shall redeem them from Death . O Death , where are your plagues ? O Sheol , where is your sting ? Compassion is hidden from my eyes ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "SHUV",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        135
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 3,
+      "terms": [
+        {
+          "strongs_number": "H7725N",
+          "transliteration": "shuv",
+          "gloss": "to return: recall",
+          "language": "Hebrew",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H7725O",
+          "transliteration": "shuv",
+          "gloss": "to return: repent",
+          "language": "Hebrew",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "450-001",
+          "context_description": "Term names the inner act of recalling and turning to mind — deliberate inner movement of memory and reflection that leads to repentance, discernment, or hope",
+          "strongs_number": "H7725N",
+          "transliteration": "shuv",
+          "gloss": "to return: recall",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 59657,
+              "book": "Lamentations",
+              "chapter": 3,
+              "verse": 21,
+              "reference": "Lam 3:21",
+              "verse_text": "Lam 3:21 But this I call to mind , and therefore I have hope :"
+            }
+          ]
+        },
+        {
+          "group_code": "451-001",
+          "context_description": "Term names repentance as the inner act of turning toward God — the deliberate inner reorientation of the whole person from evil ways back to covenantal faithfulness, with all the heart and soul",
+          "strongs_number": "H7725O",
+          "transliteration": "shuv",
+          "gloss": "to return: repent",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Transformation",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 59687,
+              "book": "Ezekiel",
+              "chapter": 33,
+              "verse": 11,
+              "reference": "Eze 33:11",
+              "verse_text": "Eze 33:11 Say to them, As I live , declares the Lord God , I have no pleasure in the death of the wicked , but that the wicked turn from his way and live ; turn back , turn back from your evil ways , for why will you die , O house of Israel ?"
+            }
+          ]
+        },
+        {
+          "group_code": "451-002",
+          "context_description": "Term names God's relenting as a divine inner-relational response to human repentance — God turning from judgment when his people turn, expressing the inner disposition of divine compassion and the withholding of wrath",
+          "strongs_number": "H7725O",
+          "transliteration": "shuv",
+          "gloss": "to return: repent",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Divine-Human Correspondence",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "GOD",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 59716,
+              "book": "Jonah",
+              "chapter": 3,
+              "verse": 10,
+              "reference": "Jon 3:10",
+              "verse_text": "Jon 3:10 When God saw what they did , how they turned from their evil way , God relented of the disaster that he had said he would do to them, and he did not do it."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "METAMEL",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        135
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G0278",
+          "transliteration": "ametameletos",
+          "gloss": "irrevocable",
+          "language": "Greek",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G3338",
+          "transliteration": "metamellomai",
+          "gloss": "to repent",
+          "language": "Greek",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "440-001",
+          "context_description": "Term names the irrevocable quality of God's gifts and calling (grounding identity) and the quality of genuine repentance that produces no regret — immutability as a characteristic of both divine commitment and authentic inner transformation",
+          "strongs_number": "G0278",
+          "transliteration": "ametameletos",
+          "gloss": "irrevocable",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Transformation",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 5958,
+              "book": "2 Corinthians",
+              "chapter": 7,
+              "verse": 10,
+              "reference": "2Cor 7:10",
+              "verse_text": "2Cor 7:10 For godly grief produces a repentance that leads to salvation without regret , whereas worldly grief produces death ."
+            }
+          ]
+        },
+        {
+          "group_code": "448-001",
+          "context_description": "Term names the inner reversal of a previous decision — the change of mind or feeling of regret that follows a prior action or stance",
+          "strongs_number": "G3338",
+          "transliteration": "metamellomai",
+          "gloss": "to repent",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Volition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 6039,
+              "book": "Matthew",
+              "chapter": 27,
+              "verse": 3,
+              "reference": "Mat 27:3",
+              "verse_text": "Mat 27:3 Then when Judas , his betrayer , saw that Jesus was condemned , he changed his mind and brought back the thirty pieces of silver to the chief priests and the elders ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "META-NOO",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        135
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G3340",
+          "transliteration": "metanoeo",
+          "gloss": "to repent",
+          "language": "Greek",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G3341",
+          "transliteration": "metanoia",
+          "gloss": "repentance",
+          "language": "Greek",
+          "reg_no": 135,
+          "reg_word": "repentance",
+          "cluster_assignment": "C13",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "447-001",
+          "context_description": "Term names repentance as the inner-being act of turning — the complete reorientation of the person from sin toward God, called for by prophets, apostles, and Christ himself",
+          "strongs_number": "G3340",
+          "transliteration": "metanoeo",
+          "gloss": "to repent",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Transformation",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 6047,
+              "book": "Mark",
+              "chapter": 1,
+              "verse": 15,
+              "reference": "Mar 1:15",
+              "verse_text": "Mar 1:15 and saying , “The time is fulfilled , and the kingdom of God is at hand ; repent and believe in the gospel .”"
+            },
+            {
+              "verse_record_id": 6062,
+              "book": "Acts",
+              "chapter": 26,
+              "verse": 20,
+              "reference": "Act 26:20",
+              "verse_text": "Act 26:20 but declared first to those in Damascus , then in Jerusalem and throughout all the region of Judea , and also to the Gentiles , that they should repent and turn to God , performing deeds in keeping with their repentance ."
+            }
+          ]
+        },
+        {
+          "group_code": "441-001",
+          "context_description": "Term names repentance as the inner-being transformation — the godly grief that leads to reorientation of life toward God, given as a divine gift and leading to forgiveness and life",
+          "strongs_number": "G3341",
+          "transliteration": "metanoia",
+          "gloss": "repentance",
+          "registry_no": 135,
+          "registry_word": "repentance",
+          "cluster_assignment": "C13",
+          "dimension": "Transformation",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "HUMAN",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 5968,
+              "book": "Acts",
+              "chapter": 11,
+              "verse": 18,
+              "reference": "Act 11:18",
+              "verse_text": "Act 11:18 When they heard these things they fell silent . And they glorified God , saying , “ Then to the Gentiles also God has granted repentance that leads to life .”"
+            },
+            {
+              "verse_record_id": 5975,
+              "book": "2 Corinthians",
+              "chapter": 7,
+              "verse": 10,
+              "reference": "2Cor 7:10",
+              "verse_text": "2Cor 7:10 For godly grief produces a repentance that leads to salvation without regret , whereas worldly grief produces death ."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

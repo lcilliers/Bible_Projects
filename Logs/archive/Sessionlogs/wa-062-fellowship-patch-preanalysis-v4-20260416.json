@@ -1,0 +1,48 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260416-062-PREANALYSIS-V4",
+    "registry_id": 62,
+    "word": "fellowship",
+    "produced_date": "20260416",
+    "produced_by": "wa-sessionb-analysis-readiness-v1_3-20260416.md \u2014 Step 1.4 Type (a) patch V4",
+    "patch_type": "PREANALYSIS",
+    "session_b_status": "Pre-Analysis Complete",
+    "description": "Pre-analysis corrections for registry 062 (fellowship): (1) delete_flagged consistency fix on deleted term H2269; (2) soft-delete of SEMANTIC_RANGE_BREADTH phase2_flag on G2842, rejected on verse evidence. V4 \u2014 filename updated to new convention wa-{nnn}-{word}-patch-{type}-v{n}-{YYYYMMDD}.json."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_term_inventory",
+      "match": {
+        "id": 7733,
+        "strongs_number": "H2269"
+      },
+      "set": {
+        "delete_flagged": 1
+      },
+      "description": "H2269 (cha.var) \u2014 mti_terms.status is 'delete' but delete_flagged was 0 on wa_term_inventory. Setting delete_flagged=1 for cross-table consistency. Section B3 correction."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_term_phase2_flags",
+      "match": {
+        "term_inv_id": 911,
+        "flag_id": 16
+      },
+      "set": {
+        "delete_flagged": 1,
+        "obsolete_reason": "Inner-being verse corpus (17 active records) does not support 4+ distinct semantic domains. Active verse set concentrates in two territories: divine-human correspondence and relational disposition. Bulk-patch flag rejected on verse evidence in Session B Stage 1 Step 1.3a."
+      },
+      "description": "G2842 (koin\u014dnia) \u2014 SEMANTIC_RANGE_BREADTH flag (term_inv_id=911, flag_id=16, source=bulk_patch). Assessed against 17 active verse records. Rejected: inner-being corpus does not confirm 4+ distinct semantic domains. Soft-deleting via composite PK per schema v3.9.0."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 2,
+    "wa_term_inventory_updates": 1,
+    "wa_term_phase2_flags_updates": 1,
+    "b_target_flag_resolutions": 0,
+    "hard_gate_b_target_status": "CONFIRMED \u2014 0 open B-target flags (no B-target flags existed for this registry)"
+  }
+}

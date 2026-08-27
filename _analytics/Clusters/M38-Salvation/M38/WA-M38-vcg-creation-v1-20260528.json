@@ -1,0 +1,641 @@
+{
+  "_meta": {
+    "cluster_code": "M38",
+    "date": "20260528",
+    "subgroups_processed": [
+      "M38-B",
+      "M38-C",
+      "M38-D",
+      "M38-E",
+      "M38-F",
+      "M38-G"
+    ],
+    "total_usage": {
+      "input_tokens": 27469,
+      "output_tokens": 14541,
+      "cache_creation": 0,
+      "cache_read": 0
+    },
+    "failures": [
+      [
+        "M38-A",
+        "Expecting ',' delimiter: line 56 column 41 (char 5605)"
+      ],
+      [
+        "M38-E",
+        "Verification: VCG member sums = 44, matches M38-E input count of 44 ⚠"
+      ],
+      [
+        "M38-F",
+        "Verification: VCG member sums = 43, matches M38-F input count of 37 ⚠"
+      ],
+      [
+        "M38-G",
+        "Verification: VCG member sums = 47, matches M38-G input count of 42 ⚠"
+      ]
+    ]
+  },
+  "subgroups": {
+    "M38-B": {
+      "subgroup_code": "M38-B",
+      "subgroup_label": "Physical rescue from mortal danger",
+      "verse_count": 15,
+      "vcgs": [
+        {
+          "provisional_code": "M38-B-VCG-01",
+          "context_description": "The desperate cry of the endangered self: verses in which an individual inner being lurches from ordinary existence or bold venture into acute mortal threat, and the only movement available is an urgent, panic-driven cry to a rescuing presence. The inner-being trajectory is terror → desperate faith-cry → rescue (or hoped-for rescue). The body is visibly imperilled — drowning, enemies closing in, physical dissolution — and the cry is the sole act of the creaturely will. These verses share the co-occurrence of 'endangered,' 'fear,' 'urgent cry,' and the movement of faith under duress, making them the purest register of the sub-group's hallmark phenomenon.",
+          "verses": [
+            9026,
+            9025,
+            13830
+          ],
+          "anchor_vc_id": 9025
+        },
+        {
+          "provisional_code": "M38-B-VCG-02",
+          "context_description": "Crucifixion mockery and the irony of withheld self-rescue: verses in which sōzō is deployed sarcastically by observers to demand or expect that Jesus physically rescue himself from the cross, while the deeper irony is that his refusal to exercise this capacity is precisely what enacts salvation for others. The inner-being phenomenon is not faith or fear but the collision between creaturely logic (self-preservation) and redemptive surrender: the one who saved others will not save himself, and the taunts inadvertently testify to both dimensions. These verses share the keywords 'mockery,' 'irony salvation,' 'self withheld,' and 'rescue physical' as their distinguishing cluster.",
+          "verses": [
+            9002,
+            9027,
+            9028,
+            9029,
+            9030,
+            9031,
+            9032
+          ],
+          "anchor_vc_id": 9029
+        },
+        {
+          "provisional_code": "M38-B-VCG-03",
+          "context_description": "The Son's own anguished petition: verses in which Jesus himself — as the one endangered by the appointed hour of suffering and death — engages in desperate, reverent prayer asking the Father to rescue him from physical death, yet submits that anguish to redemptive purpose. The inner being here is uniquely layered: genuine creaturely distress and anguished petition coexist with deep reverence and volitional surrender. These verses stand apart from both the disciples' panic-cry (VCG-01) and the mockery irony (VCG-02) because the subject is the Son himself, the petition is heard, and the resolution is not physical rescue but willed surrender.",
+          "verses": [
+            9033,
+            8990
+          ],
+          "anchor_vc_id": 8990
+        },
+        {
+          "provisional_code": "M38-B-VCG-04",
+          "context_description": "Corporate and household physical deliverance through faith-action: verses in which the rescue from mortal physical threat is not a single individual's panic-cry but a corporate or familial deliverance, and the inner-being agency is not terror but active, reverent, obedient faith that produces embodied action over time. Noah builds the ark; the Benedictus announces rescue from enemies for a whole people. The inner-being quality distinguishing these verses is faith expressed through sustained obedience and anticipatory reverence, producing safety for those entrusted to one's care — a register entirely absent from the storm-cry or crucifixion-irony verses.",
+          "verses": [
+            51533,
+            51563
+          ],
+          "anchor_vc_id": 51563
+        },
+        {
+          "provisional_code": "M38-B-VCG-05",
+          "context_description": "Abandoned hope and total despair in extremis: the single verse in which the inner-being state is not a cry or a surrender but the collapse of all expectation of rescue — hope itself is given up, and the inner state is one of pure despair and resignation to perishing. This is sōzō in its purely temporal-physical sense, but the phenomenological register is the inverse of the faith-cry: rather than crying out, the endangered inner being falls silent in hopelessness. This verse stands alone because no other verse in the sub-group captures the specific inner-being movement of hope's extinction as the primary phenomenon.",
+          "verses": [
+            9005
+          ],
+          "anchor_vc_id": 9005
+        }
+      ],
+      "dual_memberships": [
+        {
+          "vc_id": 9002,
+          "primary": "M38-B-VCG-02",
+          "secondary": "M38-B-VCG-03",
+          "rationale": "Mat 27:40 shares the mockery-irony register of VCG-02 but also carries the 'will surrendered' keyword that connects it to the Gethsemane/Heb 5:7 phenomenon of VCG-03, since the taunt to come down presupposes a real volitional choice by Jesus to remain — his refusal is itself a willed surrender of self-rescue, paralleling the inner-being dynamic of VCG-03."
+        },
+        {
+          "vc_id": 13830,
+          "primary": "M38-B-VCG-01",
+          "secondary": "M38-B-VCG-04",
+          "rationale": "Psa 69:18 is primarily an individual urgent cry for rescue (VCG-01: 'soul distressed,' 'cry personal,' 'endangered'), but its corporate-covenantal framing — God drawing near to ransom — resonates with the corporate deliverance register of VCG-04, where rescue extends beyond the solitary individual to a relational-communal horizon."
+        }
+      ]
+    },
+    "M38-C": {
+      "subgroup_code": "M38-C",
+      "subgroup_label": "Healing wholeness through faith exercised",
+      "verse_count": 12,
+      "vcgs": [
+        {
+          "provisional_code": "M38-C-VCG-01",
+          "context_description": "These verses centre on the inner faith-speech or interior conviction that precedes and accompanies physical healing, where the person's trust is the operative inner-being faculty that activates sōzō. The characteristic topology is: the healing-seeker forms an interior conviction (spoken or unspoken) before any outward act is complete, Jesus then names faith as the cause, and the sōzō event carries a spiritual overtone that exceeds mere physical cure. The woman's pre-touch inner monologue and Jesus's confirmation ('your faith has made you well') together with Bartimaeus's persistent cry and the Samaritan leper's return all exhibit this structure: faith as the named interior activator, wholeness as the named result. Where peace or discipleship follows, it signals that the inner being — not only the body — has been restored to right standing.",
+          "verses": [
+            9010,
+            9011,
+            9013,
+            9014,
+            9016,
+            9017,
+            9019,
+            9020
+          ],
+          "anchor_vc_id": 9011
+        },
+        {
+          "provisional_code": "M38-C-VCG-02",
+          "context_description": "These verses cluster around faith exercised in the face of death or mortal threat, where sōzō names urgent physical rescue and faith is explicitly set against fear or desperation. The inner-being phenomenon here is not quiet interior conviction building toward a hopeful touch, but crisis-driven faith — a father's desperate plea for his dying daughter, the hemorrhaging woman's desperate press through a crowd, and Jesus's counter-command 'only believe' set directly against fear when news of death arrives. The sōzō event is still healing-with-spiritual-overtone, but the presenting inner-being register is urgency, fear displacement, and faith as the active counter-posture to mortal dread rather than the composure of pre-formed interior conviction.",
+          "verses": [
+            9012,
+            9018
+          ],
+          "anchor_vc_id": 9018
+        },
+        {
+          "provisional_code": "M38-C-VCG-03",
+          "context_description": "These verses extend sōzō beyond individual touch-and-heal episodes into mediated or corporate faith-acts that restore the whole person at the level of conscience and body together. James 5:15 names the prayer of faith as the vehicle by which the sick are healed and sins forgiven — the inner faculty engaged is intercessory faith on behalf of another, and the result converges healing of body with cleansing of conscience. First Peter 3:21 moves the same conscience-and-body axis into the baptismal appeal: baptism saves not as external washing but as an interior petition to God for a good conscience grounded in resurrection. Both verses share the distinctive inner-being topology of conscience as the primary organ restored, with the physical or ritual dimension serving as the outward correlate of an inward appeal — a register absent from the individual synoptic healing narratives.",
+          "verses": [
+            9024,
+            8992
+          ],
+          "anchor_vc_id": 9024
+        }
+      ],
+      "dual_memberships": [
+        {
+          "vc_id": 9013,
+          "primary": "M38-C-VCG-01",
+          "secondary": "M38-C-VCG-02",
+          "rationale": "Mar 5:28 is the hemorrhaging woman's interior conviction before touching (VCG-01 register), but the broader Markan pericope also involves desperate press through a crowd under long-suffered illness that edges toward the crisis-urgency register of VCG-02; primary assignment is VCG-01 because the verse itself foregrounds interior faith-speech rather than mortal urgency."
+        }
+      ]
+    },
+    "M38-D": {
+      "subgroup_code": "M38-D",
+      "subgroup_label": "Conscience cleansed through atonement received",
+      "verse_count": 39,
+      "vcgs": [
+        {
+          "provisional_code": "M38-D-VCG-01",
+          "context_description": "This VCG names the core inner-being movement of the person who receives priestly atonement and is declared forgiven — guilt is objectively removed, conscience is cleared, and the person stands before God in restored standing. The mechanism is sacrificial mediation: a specified offering, priest-enacted, results in the explicit pronouncement of forgiveness. The inner-being register is sin-burdened moving to forgiven-and-at-peace, with the conscience shift being the definitive marker. These verses share the direct outcome-structure: sin presented, atonement made, forgiveness granted — the tightest functional cluster in the sub-group.",
+          "verses": [
+            29586,
+            29595,
+            29596,
+            29597,
+            29598,
+            29599,
+            29600,
+            29601,
+            29602,
+            29603,
+            29629
+          ],
+          "anchor_vc_id": 29586
+        },
+        {
+          "provisional_code": "M38-D-VCG-02",
+          "context_description": "This VCG names the inner-being phenomenon where atonement is structurally grounded in substitution — life given for life, blood offered for soul, the offerer's identity transferred to the sacrifice through ritual act. The worshipper's inner being is covered not by moral improvement but by the substituted life of the animal accepted in their place. These verses share the theological axis of substitutionary mechanism as the ground of the covering received: Lev 1:4 (hand-laying as identification), Lev 17:11 (blood as life-for-life), and the priestly ordination meal of Exo 29:33 (consecration sealed through atoned status). The inner-being state produced is 'accepted through another's life,' which is distinct from the simple forgiveness-outcome cluster.",
+          "verses": [
+            29594,
+            29585,
+            29591
+          ],
+          "anchor_vc_id": 29585
+        },
+        {
+          "provisional_code": "M38-D-VCG-03",
+          "context_description": "This VCG names the inner-being phenomenon of atonement as ransom, remembrance, and sustained relational coverage — where the covering is not tied to a specific sin-event but to the ongoing status of a life held before God. The equal-ransom motif (Exo 30:15–16) establishes that every soul requires identical covering regardless of status, and that the atonement act keeps the person in divine remembrance and protection. The warriors' voluntary gold offering (Num 31:50) and Hezekiah's royal intercession for sincere but ritually irregular seekers (2Ch 30:18) and David's guilt-seeking-resolution inquiry (2Sa 21:3) share the register of atonement as an ongoing relational posture rather than a one-time sin-specific transaction. The inner-being movement is toward sustained acknowledged standing before God.",
+          "verses": [
+            29592,
+            29593,
+            29665,
+            29663,
+            29660
+          ],
+          "anchor_vc_id": 29592
+        },
+        {
+          "provisional_code": "M38-D-VCG-04",
+          "context_description": "This VCG names the inner-being phenomenon of God himself acting as the source and agent of atonement — where the covering comes from divine initiative, compassion, or love rather than from human ritual offering. The psalmist is relieved of sin that overwhelms because God covers it (Psa 65:3); God repeatedly atones for Israel's iniquity out of compassion and restrains wrath (Psa 78:38); the community pleads for atonement for his name's sake (Psa 79:9); Isaiah's lips are cleansed by the divine coal-touch (Isa 6:7); atonement through steadfast love and faithfulness (Pro 16:6); the New Covenant promise that God will be hileōs toward iniquities and remember sins no more (Heb 8:12); and God's prior love sending his Son as hilasmos (1Jo 4:10). The unifying inner-being register is atonement received as pure gift from divine initiative, producing conscience-cleared relief that the person could not achieve by their own action.",
+          "verses": [
+            29655,
+            29587,
+            29656,
+            29649,
+            29651,
+            29071,
+            29068
+          ],
+          "anchor_vc_id": 29068
+        },
+        {
+          "provisional_code": "M38-D-VCG-05",
+          "context_description": "This VCG names the NT propitiation cluster — where Christ is the wrath-averting, sin-covering provision received by faith, making atonement universally and definitively available. These verses share the Greek hilaskomai/hilasmos/hilastērios register and the Christ-as-mechanism axis: Rom 3:25 (Christ set forth as hilastērios through his blood, received by faith); Heb 2:17 (Christ as merciful high priest making propitiation through solidarity); 1Jo 2:2 (Christ as hilasmos for the whole world); and Luk 18:13 (the tax collector's cry for propitiatory mercy — the inner-being posture of crushed, sin-aware dependence on divine mercy). The inner-being register across these verses is the conscience-cleared, wrath-averted state produced by Christ's once-for-all mediatorial act, received through faith and contrition rather than repeated ritual.",
+          "verses": [
+            29069,
+            29066,
+            29067,
+            29065
+          ],
+          "anchor_vc_id": 29069
+        },
+        {
+          "provisional_code": "M38-D-VCG-06",
+          "context_description": "This VCG names the inner-being phenomenon of atonement withheld, unavailable, or permanently refused — where guilt remains unresolved and the inner person faces judgment unrelieved. The atonement-pathway is closed: by persistent priestly sin (1Sa 3:14), by God's judicial declaration (Isa 22:14), by the defiant city's helplessness before disaster (Isa 47:11), by the prophet's inverse intercession calling for enemies' guilt not to be covered (Jer 18:23), and by the uncoverable blood-guilt of murder (Num 35:33). The inner-being register is the weight of permanent, unresolved guilt — the mirror image of conscience-cleared atonement received, where instead the conscience remains condemned and wrath is not averted. This negative pole is structurally essential to the sub-group's meaning.",
+          "verses": [
+            29652,
+            29653,
+            29654,
+            29661,
+            66079
+          ],
+          "anchor_vc_id": 29652
+        },
+        {
+          "provisional_code": "M38-D-VCG-07",
+          "context_description": "This VCG names the inner-being phenomenon of atonement producing shame, contrition, corporate guilt-bearing, or eschatological transformation — where the receipt of covering generates a secondary inner-being movement beyond simple forgiveness. Eze 16:63 uniquely depicts humbled, wordless shame as the response to being atoned-for, where remembered guilt and forgiveness coexist. Deu 21:8 shows corporate conscience-clearing through intercessory prayer for blood guilt. Isa 27:9 links atonement to genuine inner and cultic turning from idolatry. Dan 9:24 frames atonement as an eschatological, once-for-all cosmic act producing everlasting righteousness. These verses share the register of atonement received as transformative event with lasting inner-being consequences — shame, corporate identity, moral turning, or cosmic culmination — rather than the immediate individual forgiveness-outcome.",
+          "verses": [
+            29588,
+            29590,
+            29650,
+            29658
+          ],
+          "anchor_vc_id": 29588
+        }
+      ],
+      "dual_memberships": [
+        {
+          "vc_id": 29065,
+          "primary": "M38-D-VCG-05",
+          "secondary": "M38-D-VCG-04",
+          "rationale": "Luk 18:13 (hilaskomai) belongs primarily in the NT propitiation cluster (VCG-05) as a plea for propitiatory mercy, but its inner-being posture of crushed dependence on divine initiative also resonates with VCG-04's register of atonement as gift received from God rather than ritual achieved by the person."
+        },
+        {
+          "vc_id": 29590,
+          "primary": "M38-D-VCG-07",
+          "secondary": "M38-D-VCG-03",
+          "rationale": "Deu 21:8 belongs primarily in VCG-07 for its corporate and intercessory register, but its ransom-and-remembrance motif ('you have redeemed') also connects to VCG-03's sustained relational coverage cluster."
+        }
+      ]
+    },
+    "M38-E": {
+      "subgroup_code": "M38-E",
+      "subgroup_label": "Priestly mediation machinery of atonement",
+      "verse_count": 44,
+      "vcgs": [
+        {
+          "provisional_code": "M38-E-VCG-01",
+          "context_description": "The ordered sequence of self-covering before mediating for others: the high priest must first atone for himself and his household before he can effect atonement for others. This VCG captures the inner-being logic of the priestly covering sequence — the principle that an uncovered mediator cannot cover others, that the priest's own sin-laden state must be resolved before he stands between God and the people. The subjective weight here is the ordered readiness of the mediator: consecration, anointing, holy garments, and self-atonement are prerequisites for the work of intercession. The full Day of Atonement sequence (Lev 16) is the primary locus, extending to ordination and Levitical consecration wherever the 'priest covered first' logic governs.",
+          "verses": [
+            29606,
+            29607,
+            29619,
+            29621,
+            29623,
+            29624,
+            29626,
+            29633,
+            29635
+          ],
+          "anchor_vc_id": 29619
+        },
+        {
+          "provisional_code": "M38-E-VCG-02",
+          "context_description": "The comprehensive scope of what is covered on the Day of Atonement and the annual-reset function: sanctuary, tent of meeting, altar, priests, and all the assembly are covered in sequence, with nothing in the worshipping community left unaddressed. These verses evidence the inner-being phenomenon of total, structured corporate cleansing — the conscience of the whole community unburdened from a year's accumulated sin-guilt through a single divinely mandated event. The annual perpetual statute frames this as a recurring reset of Israel's standing before God, with the scapegoat providing the complementary image of guilt physically removed and banished. The Day of Atonement's exclusive, work-stopped focus on covering underscores that the community's entire relational standing before God depends on this mechanism.",
+          "verses": [
+            29620,
+            29622,
+            29627,
+            29628,
+            29625,
+            29630,
+            66078
+          ],
+          "anchor_vc_id": 29627
+        },
+        {
+          "provisional_code": "M38-E-VCG-03",
+          "context_description": "Priestly atonement restoring individuals from ritual uncleanness — skin disease, bodily discharges, childbirth, corpse-contact — to clean standing before God. The inner-being movement in all these verses is from a state of bodily-conditioned uncleanness (which carries real guilt-weight before a holy God) through priestly sacrifice to full restoration of purity and relational standing. Accessibility is a sub-note: provision of scaled-down offerings for the poor ensures that the covering mechanism reaches every economic level, making the inner-being need for cleansing universally addressable. The priest's mediating act is the bridge between the defiled state and the restored state; the person's own self-purification is necessary but insufficient without the priestly atonement that finalizes clean standing.",
+          "verses": [
+            29609,
+            29610,
+            29611,
+            29612,
+            29613,
+            29614,
+            29615,
+            29616,
+            29617,
+            29618,
+            29631,
+            29632
+          ],
+          "anchor_vc_id": 29611
+        },
+        {
+          "provisional_code": "M38-E-VCG-04",
+          "context_description": "The regularized, scheduled provision of sin-offering atonement for the corporate community — the prescribed sacrificial machinery that keeps Israel's collective guilt covered before God on a recurring, institutional basis. These verses evidence the inner-being phenomenon of structured communal guilt-management: appointed feasts, monthly and annual cycles, and the ongoing priestly and Levitical vocation all supply the ritual means by which corporate sin is addressed before it accumulates into catastrophe. The inner-being register is one of maintained standing rather than crisis response — the community's continuous covered state before God is sustained by the ordered, mediated offering system. The prince's and community's responsibility to resource and sustain this system (Ezekiel, Nehemiah) extends the phenomenon into post-exilic institutional commitment.",
+          "verses": [
+            29633,
+            29636,
+            29637,
+            29641,
+            29642,
+            29643,
+            29644,
+            29645,
+            29646,
+            29647,
+            29648,
+            29634,
+            29640
+          ],
+          "anchor_vc_id": 29644
+        },
+        {
+          "provisional_code": "M38-E-VCG-05",
+          "context_description": "Atonement as urgent wrath-interruption: priestly intercession that arrests active divine judgment already in motion. The inner-being register here is crisis and peril — plague has broken out, God's anger is not prospective but present, and the atoning act is the pivot between destruction and survival. Moses ascending to intercede after the golden calf (Exo 32:30) and Aaron running with incense into the plague (Num 16:46–47) share this register: the mediator places himself between divine wrath and the endangered people at personal cost, and the outcome of atonement is survival rather than mere forgiveness. Phinehas's zealous priestly action (Num 25:13) belongs here because its motivation and effect is the same crisis-aversion logic, with a covenant of perpetual priesthood as the distinctive reward for wrath-intercepting zeal.",
+          "verses": [
+            29664,
+            29638,
+            29639
+          ],
+          "anchor_vc_id": 29638
+        }
+      ],
+      "dual_memberships": [
+        {
+          "vc_id": 29633,
+          "primary": "M38-E-VCG-01",
+          "secondary": "M38-E-VCG-04",
+          "rationale": "Num 8:12 atones for the Levites at consecration (priestly self-covering-first logic, VCG-01) but also initiates their ongoing service role as the tribe that makes atonement for Israel (scheduled corporate mediation, VCG-04). It appears in VCG-01 as primary and is noted as a secondary member of VCG-04."
+        },
+        {
+          "vc_id": 29640,
+          "primary": "M38-E-VCG-04",
+          "secondary": "M38-E-VCG-05",
+          "rationale": "Num 25:13 is a crisis-aversion atonement (plague/wrath context, VCG-05) but its outcome — a perpetual priestly covenant as reward for atoning action — places it equally in the institutional priestly-mediation register (VCG-04). Listed in VCG-04 as primary given the covenantal-institutional framing of the verse."
+        }
+      ]
+    },
+    "M38-F": {
+      "subgroup_code": "M38-F",
+      "subgroup_label": "Salvation anticipated and hope sustained",
+      "verse_count": 37,
+      "vcgs": [
+        {
+          "provisional_code": "M38-F-VCG-01",
+          "context_description": "This VCG names the inner-being posture of active, forward-oriented waiting and longing for salvation not yet received. The soul is suspended between the promise and its fulfillment — waiting is itself the characteristic inner act. These verses evidence an inner being that consciously orients itself toward divine rescue as its only source, experiencing the tension of hope deferred without collapsing into despair. The waiting is volitional and expectant, not passive resignation: the soul names God as its deliverer (Gen 49:18), the community pleads as those whose only arm is God (Isa 33:2), the inner being mourns that salvation is far off (Isa 59:11), prophets searched intensely for a salvation they would not themselves receive (1Pe 1:10), and believers are actively held through faith toward a salvation not yet revealed (1Pe 1:5). The dominant inner faculty is hope as active orientation — the soul leaning forward toward what it has not yet grasped.",
+          "verses": [
+            55480,
+            55487,
+            55495,
+            55496,
+            51565,
+            51564,
+            51562,
+            9048,
+            9050,
+            51552,
+            9047
+          ],
+          "anchor_vc_id": 55480
+        },
+        {
+          "provisional_code": "M38-F-VCG-02",
+          "context_description": "This VCG names the inner-being phenomenon of eschatological security — salvation understood as an everlasting, enduring reality that time, cosmic decay, and enemy power cannot erode. The inner being finds its anchor not in present circumstances but in the permanent character of God's saving work that outlasts all created things. These verses evidence a soul that has grasped salvation as categorically eternal: contrasted with a perishing cosmos (Isa 51:6), outlasting enemy decay generation to generation (Isa 51:8), figured as the city's very walls (Isa 26:1, Isa 60:18), and extended to all nations in scope (Isa 49:6, Isa 52:10, Luk 3:6). The characteristic inner-being state is settled confidence grounded not in anything present and visible but in the unshakeable permanence of God's salvific purpose.",
+          "verses": [
+            55485,
+            55491,
+            55492,
+            55498,
+            55489,
+            55493,
+            9071,
+            51531
+          ],
+          "anchor_vc_id": 55491
+        },
+        {
+          "provisional_code": "M38-F-VCG-03",
+          "context_description": "This VCG names the inner-being phenomenon of the Savior as the personal object of eschatological hope — verses where the soul's forward orientation is explicitly anchored in the appearing or identity of the Savior (sōtēr) rather than in salvation as an abstract event. The inner being is characterized by a relational, person-directed expectancy: citizenship is in heaven from which the Savior is awaited (Phili 3:20), the blessed hope is the glorious appearing of the great God and Savior (Tit 2:13), Christ will appear a second time to bring salvation to those eagerly waiting (Heb 9:28), and the living God as Savior of all grounds the soul's hope (1Ti 4:10). The Savior's past appearing already abolished death and unveiled immortality (2Ti 1:10), so the soul's hope is anchored in a revealed person whose eschatological return is the object of sustained anticipation. The inner faculty is hope as personal trust oriented toward the returning Christ.",
+          "verses": [
+            9048,
+            9050,
+            51562,
+            9047,
+            9060,
+            9051
+          ],
+          "anchor_vc_id": 9050
+        },
+        {
+          "provisional_code": "M38-F-VCG-04",
+          "context_description": "This VCG names the inner-being phenomenon of salvation as divinely assured imminence and militant certainty — verses where the accent falls on God's active, urgent, warrior-like movement toward completing the deliverance he has promised. The soul is not merely waiting passively but is being addressed by divine declarations that salvation will not be withheld and that God himself is mobilized toward rescue. God rides a chariot of salvation into cosmic battle (Hab 3:8), arms himself as divine warrior with a helmet of salvation (Isa 59:17), declares he will not rest until Jerusalem's salvation blazes forth (Isa 62:1), and is revealed as the one who helps in a divinely appointed day (Isa 49:8). The inner-being response is assurance and stabilized confidence — not because the soul has achieved this but because divine intent is irreversibly bent toward completion.",
+          "verses": [
+            55482,
+            55497,
+            55499,
+            55490
+          ],
+          "anchor_vc_id": 55482
+        },
+        {
+          "provisional_code": "M38-F-VCG-05",
+          "context_description": "This VCG names the inner-being phenomenon of salvation experienced within present circumstances — rescue, comfort, and sustaining grace received in the midst of ongoing life rather than anticipated at an eschatological horizon. The characteristic inner content is salvation as present reality: already possessed in hope though not yet fully visible (Rom 8:24), counting affliction as producing salvation in others (2Cor 1:6), expecting personal deliverance from a crisis through prayer and the Spirit (Phili 1:19), the Lord's patience in delay itself being salvation (2Pe 3:15), Job's confidence before God as the ground of his present hope (Job 13:16), and salvation as an enduring abundance alongside wisdom (Isa 33:6). These verses share the inner-being quality of finding or appropriating salvation as something already operative in the present moment, even when its fullness remains future.",
+          "verses": [
+            55500,
+            55488,
+            8968,
+            51546,
+            51550,
+            51566
+          ],
+          "anchor_vc_id": 8968
+        },
+        {
+          "provisional_code": "M38-F-VCG-06",
+          "context_description": "This VCG names the inner-being phenomenon of salvation as received gift and bestowed identity — verses where the soul's posture is one of reception, inheritance, and assurance of what is already granted or certain to be given. Salvation shapes the inner being's dignity and status: believers are heirs for whom angels minister (Heb 1:14), the author confidently asserts his readers possess things belonging to salvation (Heb 6:9), an entrance into the eternal kingdom is richly provided (2Pe 1:11), the Spirit is poured out richly through the Savior as overflowing gift (Tit 3:6), and God's goodness and kindness appeared as Savior revealing the character of rescue (Tit 3:4). Mary's spirit exults in God as her personal Savior, naming completed rescue as the ground of worship (Luk 1:47), and the Davidic horn of salvation is raised as covenantal fulfillment of ancestral promise (Luk 1:69). The inner faculty is receptive trust and assured identity, the soul inhabiting the gift rather than reaching toward it.",
+          "verses": [
+            51557,
+            51561,
+            9051,
+            9064,
+            9063,
+            9046,
+            51532
+          ],
+          "anchor_vc_id": 51557
+        },
+        {
+          "provisional_code": "M38-F-VCG-07",
+          "context_description": "This VCG names the inner-being phenomenon of confronting the failure or absence of salvation — specifically the collapse of human effort to achieve deliverance and the anguish of a salvation hoped for but experienced as absent. These verses evidence a soul that has encountered the limits of creaturely rescue and is left with either despair or the forced recognition that only God can save. Human labor at deliverance produces nothing (Isa 26:18), the community groans that salvation is far off (Isa 59:11 — dual), and the soul's inner movement is grief, mourning, and the acknowledgment of human incapacity. This VCG is the shadow-side of M38-F: salvation anticipated means that its absence is acutely felt, and the inner being is marked precisely by the unfulfilled longing that exposes the impossibility of self-rescue.",
+          "verses": [
+            55486
+          ],
+          "anchor_vc_id": 55486
+        }
+      ],
+      "dual_memberships": [
+        {
+          "vc_id": 9048,
+          "primary": "M38-F-VCG-01",
+          "secondary": "M38-F-VCG-03",
+          "rationale": "Phili 3:20 evidences both the active waiting/longing posture (VCG-01) and the explicit orientation toward the Savior as personal eschatological object (VCG-03); the soul's citizenship and expectation are simultaneously the act of waiting and the naming of the Savior as the one awaited."
+        },
+        {
+          "vc_id": 51562,
+          "primary": "M38-F-VCG-03",
+          "secondary": "M38-F-VCG-01",
+          "rationale": "Heb 9:28 is anchored in the Savior's return as the object of hope (VCG-03) but equally evidences the inner-being posture of active, eager anticipation characteristic of VCG-01 ('those eagerly waiting')."
+        },
+        {
+          "vc_id": 55496,
+          "primary": "M38-F-VCG-01",
+          "secondary": "M38-F-VCG-07",
+          "rationale": "Isa 59:11 belongs primarily in VCG-01 as an instance of hope-deferred waiting, but its content — salvation experienced as absent, the inner being groaning — makes it genuinely descriptive of VCG-07's phenomenon of confronting salvation's absence."
+        },
+        {
+          "vc_id": 9051,
+          "primary": "M38-F-VCG-06",
+          "secondary": "M38-F-VCG-03",
+          "rationale": "2Pe 1:11 describes the richly provided entrance into the eternal kingdom through the Savior, making it fit VCG-06 (salvation as received inheritance/identity) and VCG-03 (the Savior as the mediating agent of eschatological completion)."
+        }
+      ]
+    },
+    "M38-G": {
+      "subgroup_code": "M38-G",
+      "subgroup_label": "Ransomed identity gratitude and memory",
+      "verse_count": 42,
+      "vcgs": [
+        {
+          "provisional_code": "M38-G-VCG-01",
+          "context_description": "The Exodus-grounded redemption as the constitutive inner-being anchor for covenant identity, allegiance, and ethical obligation. These verses share the register of past ransom — specifically God's historic rescue of Israel from slavery — functioning as the foundation that shapes present loyalty, communal identity, and moral will. The inner being of the ransomed person is defined by who they are because of what God did: they are the redeemed, and that identity carries weight in how they treat others, what they owe God, and what constitutes betrayal. Memory of the redemptive event is not merely cognitive but identity-forming — to forget it is to lose one's covenantal self, and to remember it is to be motivated in will and action.",
+          "verses": [
+            13833,
+            13834,
+            66093,
+            66094,
+            66095,
+            66096,
+            13837,
+            13838,
+            13839,
+            13841,
+            13840
+          ],
+          "anchor_vc_id": 13834
+        },
+        {
+          "provisional_code": "M38-G-VCG-02",
+          "context_description": "Ransom as the basis for intercessory appeal and corporate pleading, where the remembered fact of past redemption becomes the ground on which the soul — or a mediating figure — cries out to God for continued mercy, atonement, or rescue. These verses share the inner-being register of pleading trust: the speaker holds the memory of divine ransom and deploys it as leverage in prayer, whether interceding for a nation (Moses in Deu 9:26, Nehemiah in Neh 1:10), appealing for atonement of corporate guilt (Deu 21:8), or crying from communal distress and shame (Psa 25:22, Psa 44:26). The inner being is neither triumphant nor despairing but is in the posture of urgent appeal anchored in covenantal confidence.",
+          "verses": [
+            13832,
+            66093,
+            13837,
+            13844,
+            13847
+          ],
+          "anchor_vc_id": 13832
+        },
+        {
+          "provisional_code": "M38-G-VCG-03",
+          "context_description": "God's ransom of the individual soul from physical, mortal, or existential danger — the personal, experiential register of redemption where a specific person's life is rescued from death, enemies, famine, war, the pit, or Sheol. These verses share the inner-being phenomenon of the soul that has been personally pulled back from annihilation through divine intervention, and whose trust is grounded in that experienced deliverance. The characteristic inner-being posture here is personal trust born of lived rescue: David swearing by the God who redeemed his soul from every adversity, Job's interlocutor describing ransom from mortal dangers, the psalmist committing his spirit into the hands of the faithful redeemer. The soul knows itself as one who was in the grip of death and was bought back.",
+          "verses": [
+            13835,
+            13836,
+            13843,
+            13829,
+            13846,
+            13849,
+            13848,
+            13860,
+            13842,
+            13855
+          ],
+          "anchor_vc_id": 13835
+        },
+        {
+          "provisional_code": "M38-G-VCG-04",
+          "context_description": "Ransom that enables the freed will — verses where the inner-being significance of redemption is specifically that it frees the person or community to respond rightly: to obey, to repent, to walk in integrity, to receive dignity, or to be gathered into belonging. The ransom is not the end-point but the precondition for a renewed inner life directed toward God. Psa 26:11 pairs integrity with the plea for ransom; Psa 119:134 explicitly frames ransom from oppression as enabling obedience to God's precepts; Isa 1:27 conditions the redemptive rescue on the turn of repentance; Isa 29:22 shows ransom replacing shame with restored dignity; Zec 10:8 shows accomplished redemption as the ground of regathering to fullness. The characteristic inner-being faculty engaged is the will that has been freed — or is pleading to be freed — so that it can orient itself rightly.",
+          "verses": [
+            13845,
+            13851,
+            66098,
+            13841,
+            13840
+          ],
+          "anchor_vc_id": 13851
+        },
+        {
+          "provisional_code": "M38-G-VCG-05",
+          "context_description": "Eschatological and ultimate ransom — verses where the inner-being register is hope directed toward a redemption that transcends present circumstance, reaching to death itself, Sheol, iniquity's total hold, or the final reversal of sorrow. These verses share the phenomenon of the soul's deepest hope: that God's ransoming power extends even to the ultimate threats of sin, death, and cosmic annihilation. Psa 49:7 establishes that no human can ransom from death, which sharpens the inner-being register of Psa 49:15 — God alone will ransom from Sheol. Psa 130:8 envisions total ransom from all iniquity. Hos 13:14 reaches the furthest register: God ransoms from Death and Sheol themselves. The soul holding this hope is not rescued yet but rests in a confidence that transcends present mortality.",
+          "verses": [
+            66097,
+            13848,
+            13852,
+            13858
+          ],
+          "anchor_vc_id": 13858
+        },
+        {
+          "provisional_code": "M38-G-VCG-06",
+          "context_description": "The ransomed state issuing in overflowing joy, praise, and glad reception of salvation — the experiential-affective register where redemption has arrived and the soul's response is exultation, song, drawing from the wells of salvation with gladness, and the transformation of sorrow into sustained rejoicing. These verses share the inner-being phenomenon of the fully ransomed person whose emotional life has been transformed by the accomplished fact of deliverance: sorrow and sighing are displaced, fear is replaced by trust and strength, the lips and soul sing together, and the community that waited in tension erupts into joyful celebration. This is the culminating inner-being register of M38-G — not the cry for ransom but the joy of the ransomed.",
+          "verses": [
+            13850,
+            13853,
+            13854,
+            55481,
+            55483,
+            55484,
+            55494,
+            13856
+          ],
+          "anchor_vc_id": 13853
+        },
+        {
+          "provisional_code": "M38-G-VCG-07",
+          "context_description": "Ransom offered but blocked, refused, or defined by human inability — the negative register within the sub-group, where the inner being either actively turns away from offered ransom (Hos 7:13: deceptive rebellion blocks the rescue God declares he desires to give) or is confronted with the absolute limit of human ransoming power (Psa 49:7: no human can pay the ransom price for another's life). These verses share the inner-being phenomenon of ransom's negation: the will that refuses rescue, remaining in self-imposed danger, or the soul confronted with humanity's structural inability to save itself. They sharpen the sub-group's characteristic by contrast — the ransomed identity that defines M38-G is shown to be entirely dependent on divine initiative, since human power cannot supply it and human rebellion can refuse it.",
+          "verses": [
+            13857,
+            66097
+          ],
+          "anchor_vc_id": 13857
+        },
+        {
+          "provisional_code": "M38-G-VCG-08",
+          "context_description": "Substitutionary and solidarity-based ransom — verses where the ransoming act involves one life standing in for or alongside another, whether through sacrificial substitution (Exo 13:15: the firstborn sons ransomed through a substitute animal, echoing Israel's deliverance from Egypt) or through communal solidarity that preserves an endangered life (1Sa 14:45: the community ransoms Jonathan from a death sentence through collective action). The inner-being register here is gratitude enacted in ritual form or expressed through communal protection of life. These verses have a relational and participatory texture: the ransom is not simply God acting on the soul alone but involves the mediation of sacrifice, ritual acknowledgment, or the solidarity of others.",
+          "verses": [
+            66084,
+            13859
+          ],
+          "anchor_vc_id": 66084
+        }
+      ],
+      "dual_memberships": [
+        {
+          "vc_id": 66093,
+          "primary": "M38-G-VCG-01",
+          "secondary": "M38-G-VCG-02",
+          "rationale": "Deu 21:8 invokes Israel's redeemed identity as the basis for a corporate appeal for atonement — it belongs to VCG-01 insofar as redemptive identity grounds the appeal, and to VCG-02 insofar as the inner-being register is intercessory pleading for divine forgiveness."
+        },
+        {
+          "vc_id": 13841,
+          "primary": "M38-G-VCG-01",
+          "secondary": "M38-G-VCG-04",
+          "rationale": "Isa 29:22 grounds present promise in past redemption of Abraham (VCG-01 register: covenant identity) while the content of that promise is restoration of dignity from shame — the freed/restored will register of VCG-04."
+        },
+        {
+          "vc_id": 13840,
+          "primary": "M38-G-VCG-01",
+          "secondary": "M38-G-VCG-04",
+          "rationale": "Zec 10:8 grounds the regathering in accomplished redemption (VCG-01 register: past ransom constitutes identity) while the inner-being effect is restoration to fullness and belonging — the renewed-will/freed-self register of VCG-04."
+        },
+        {
+          "vc_id": 13848,
+          "primary": "M38-G-VCG-05",
+          "secondary": "M38-G-VCG-03",
+          "rationale": "Psa 49:15 is primarily eschatological hope (VCG-05) but is also a personal soul-level trust in God's rescue — the same experiential-trust register as VCG-03 personal ransom."
+        },
+        {
+          "vc_id": 66097,
+          "primary": "M38-G-VCG-07",
+          "secondary": "M38-G-VCG-05",
+          "rationale": "Psa 49:7 names the human inability to ransom from death (VCG-07 negation) and simultaneously belongs to the eschatological register (VCG-05) by establishing the existential stakes that make divine eschatological ransom the only hope."
+        },
+        {
+          "vc_id": 13856,
+          "primary": "M38-G-VCG-06",
+          "secondary": "M38-G-VCG-01",
+          "rationale": "Jer 31:11 describes the accomplished covenant rescue of the people from overpowering enemies — its identity-constituting covenant register belongs to VCG-01, but its position in Jeremiah's new-covenant restoration context and the inner-being tone of accomplished joyful rescue align it with VCG-06."
+        }
+      ]
+    }
+  }
+}

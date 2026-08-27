@@ -1,0 +1,913 @@
+{
+  "meta": {
+    "json_template_version": "final_v1.0",
+    "json_filename": "wa-112-mind-final-20260328.json",
+    "registry_id": 112,
+    "word": "mind",
+    "cluster_assignment": "C01",
+    "produced_date": "20260328",
+    "session_b_instruction_version": "WA-SessionB-Analysis-Instruction-v5",
+    "extraction_instruction_version": "WA-SessionB-Extraction-Instruction-v5.2"
+  },
+  "registry_summary": {
+    "word_label": "mind",
+    "dimensions": "Cognitive/Mind, Volitional, Relational/Social, Spiritual/God-ward, Moral/Conscience",
+    "cluster_assignment": "C01",
+    "phase1_term_count": 78,
+    "phase1_verse_count": 1424,
+    "active_term_count": 78,
+    "confirmed_count": 52,
+    "plausible_count": 23,
+    "uncertain_count": 3,
+    "session_b_status": "Analysis Complete",
+    "sb_classification": "confirmed_characteristic",
+    "carry_forward": true,
+    "dimensional_profile": {
+      "relational_environment": {
+        "weight": "PRIMARY",
+        "note": "All four rings active. Ring 1 dominates — corpus overwhelmingly concerns inner cognitive and dispositional life. Ring 2 substantially present: God remembers, commands remembering, renews the nous (Rom 12:2), writes law on dianoia (Heb 8:10), gives mind of Christ (1Cor 2:16). Ring 3 present through shared-mind vocabulary, remembrance in prayer, conscience in community. Ring 4 marginal through noēma (Satan's designs, 2Cor 2:11, 4:4)."
+      },
+      "spirit_soul_body": {
+        "weight": "SECONDARY",
+        "note": "Mind operates primarily at soul-level (seat of intentions, thoughts, memory). Spirit-level engagement explicit in 1Cor 14:14-15 (nous vs pneuma in prayer). Body appears as instrument and marker of mind-states. Somatic-attention connection implicit throughout sha.mar corpus."
+      },
+      "inner_operations": {
+        "weight": "PRIMARY",
+        "note": "Full range documented: remembering and forgetting, planning and devising, inclining and orienting, evaluating from within (conscience), changing (metanoeō, na.cham), collapsing into madness or maintaining sobriety, attending deliberately. Renewal of the mind (Rom 12:2) is the most distinctive inner operation — divine action transforming the mind's fundamental orientation."
+      },
+      "being": {
+        "weight": "PRIMARY",
+        "note": "Ye.tser (formed inclination) documents the dispositional substrate of inner life. Sōfrōn family documents formed character of sound-mindedness. Froneō in Phil 2:5 operates as permanent characterising disposition. Mind of Christ (1Cor 2:16) is the supreme example of transferred orientation of being — not a moment of insight but a transferred character."
+      }
+    },
+    "evidential_weight": {
+      "confirmed_verse_count": 991,
+      "plausible_verse_count": 433,
+      "uncertain_verse_count": 0,
+      "dominant_terms": [
+        {
+          "strongs_id": "H2142",
+          "transliteration": "za.khar",
+          "verse_count": 215,
+          "evidential_status": "confirmed"
+        },
+        {
+          "strongs_id": "H8104G",
+          "transliteration": "sha.mar",
+          "verse_count": 195,
+          "evidential_status": "plausible"
+        },
+        {
+          "strongs_id": "H8104H",
+          "transliteration": "sha.mar",
+          "verse_count": 151,
+          "evidential_status": "plausible"
+        },
+        {
+          "strongs_id": "H8104J",
+          "transliteration": "sha.mar",
+          "verse_count": 75,
+          "evidential_status": "confirmed"
+        },
+        {
+          "strongs_id": "H5162G",
+          "transliteration": "na.cham",
+          "verse_count": 66,
+          "evidential_status": "confirmed"
+        }
+      ]
+    }
+  },
+  "terms": [
+    {
+      "strongs_id": "G0363",
+      "transliteration": "anamimnēskō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 6,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G0364",
+      "transliteration": "anamnēsis",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 4,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1011",
+      "transliteration": "bouleuō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 7,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1012",
+      "transliteration": "boulē",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 12,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1013",
+      "transliteration": "boulēma",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 2,
+      "evidential_status": "plausible",
+      "retention_note": "Thin corpus; both verses relevant. Retained."
+    },
+    {
+      "strongs_id": "G1014",
+      "transliteration": "boulomai",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 34,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1106",
+      "transliteration": "gnōmē",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 8,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1260",
+      "transliteration": "dialogizomai",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 14,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1261",
+      "transliteration": "dialogismos",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 14,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1271",
+      "transliteration": "dianoia",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 12,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1374",
+      "transliteration": "dipsuchos",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 2,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1771",
+      "transliteration": "ennoia",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 2,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1950",
+      "transliteration": "epilanthanō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 8,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G2473",
+      "transliteration": "isopsuchos",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse; compound with psychē makes it relevant. Retained."
+    },
+    {
+      "strongs_id": "G3105",
+      "transliteration": "mainomai",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 5,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3130",
+      "transliteration": "mania",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 1,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3328",
+      "transliteration": "metaballō",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse; genuine mind-change usage. Retained."
+    },
+    {
+      "strongs_id": "G3338",
+      "transliteration": "metamellomai",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 5,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3340",
+      "transliteration": "metanoeō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 32,
+      "evidential_status": "confirmed",
+      "retention_note": "Shared with Reg 135; mind-change primary function."
+    },
+    {
+      "strongs_id": "G3341",
+      "transliteration": "metanoia",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 22,
+      "evidential_status": "confirmed",
+      "retention_note": "Shared with Reg 135; definitionally a mind vocabulary term."
+    },
+    {
+      "strongs_id": "G3403",
+      "transliteration": "mimnēskō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 2,
+      "evidential_status": "plausible",
+      "retention_note": "Occurrence count anomaly (PH2-112-001); verse pool correct. Retained."
+    },
+    {
+      "strongs_id": "G3415",
+      "transliteration": "mnaomai",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 21,
+      "evidential_status": "confirmed",
+      "retention_note": "Occurrence count anomaly (PH2-112-002); verse pool correct."
+    },
+    {
+      "strongs_id": "G3417",
+      "transliteration": "mneia",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 6,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3420",
+      "transliteration": "mnēmē",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse; genuine memory term. Retained."
+    },
+    {
+      "strongs_id": "G3421",
+      "transliteration": "mnēmoneuō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 21,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3510",
+      "transliteration": "nefros",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "Rev 2:23 significant; Hebrew background of kidney as inner seat. Retained."
+    },
+    {
+      "strongs_id": "G3524",
+      "transliteration": "nēfaleos",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 3,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3525",
+      "transliteration": "nēfō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 6,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3540",
+      "transliteration": "noēma",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 6,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3563",
+      "transliteration": "nous",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 22,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3675",
+      "transliteration": "homofrōn",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 1,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G3912",
+      "transliteration": "parafroneō",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse; attests boundary of mind vocabulary. Retained."
+    },
+    {
+      "strongs_id": "G3913",
+      "transliteration": "parafronia",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse; attests boundary of mind vocabulary. Retained."
+    },
+    {
+      "strongs_id": "G4893",
+      "transliteration": "suneidēsis",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 29,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G4894",
+      "transliteration": "suneidō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 3,
+      "evidential_status": "plausible",
+      "retention_note": "Shared root with suneidēsis; Acts usage only. Retained."
+    },
+    {
+      "strongs_id": "G4993",
+      "transliteration": "sōfroneō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 6,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G4994",
+      "transliteration": "sōfronizō",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "Thin; family is confirmed. Retained."
+    },
+    {
+      "strongs_id": "G4996",
+      "transliteration": "sōfronōs",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "Thin; family is confirmed. Retained."
+    },
+    {
+      "strongs_id": "G4997",
+      "transliteration": "sōfrosunē",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 3,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G4998",
+      "transliteration": "sōfrōn",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 4,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5279",
+      "transliteration": "hupomimnēskō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 7,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5280",
+      "transliteration": "hupomnēsis",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 3,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5391",
+      "transliteration": "filofrōn",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse (1 Pet 3:8); inner disposition context. Retained."
+    },
+    {
+      "strongs_id": "G5424",
+      "transliteration": "frēn",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5426",
+      "transliteration": "froneō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 19,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5427",
+      "transliteration": "fronēma",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 3,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G7774",
+      "transliteration": "kakofrōn",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 0,
+      "evidential_status": "uncertain",
+      "retention_note": "Zero verses. Cannot contribute to corpus. Retained per default."
+    },
+    {
+      "strongs_id": "G8272",
+      "transliteration": "megalofrōn",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 0,
+      "evidential_status": "uncertain",
+      "retention_note": "Zero verses. Cannot contribute to corpus. Retained per default."
+    },
+    {
+      "strongs_id": "G8878",
+      "transliteration": "prauthumos",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 0,
+      "evidential_status": "uncertain",
+      "retention_note": "Zero verses. Cannot contribute to corpus. Retained per default."
+    },
+    {
+      "strongs_id": "H0234",
+      "transliteration": "az.ka.rah",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 7,
+      "evidential_status": "plausible",
+      "retention_note": "Ritual memory; indirect inner-being connection. Retained."
+    },
+    {
+      "strongs_id": "H1079",
+      "transliteration": "bal",
+      "language": "Hebrew",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse Dan 6:14; genuine 'set mind' usage. Retained."
+    },
+    {
+      "strongs_id": "H1947",
+      "transliteration": "ho.le.lah",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 4,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H1948",
+      "transliteration": "ho.le.lut",
+      "language": "Hebrew",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse; madness vocabulary. Retained."
+    },
+    {
+      "strongs_id": "H1984C",
+      "transliteration": "ha.lal",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 9,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H1984I",
+      "transliteration": "ha.lal",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 5,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H2142",
+      "transliteration": "za.khar",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 215,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H2143",
+      "transliteration": "ze.kher",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 23,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H2146",
+      "transliteration": "zik.ka.ron",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 22,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H2803G",
+      "transliteration": "cha.shav",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 19,
+      "evidential_status": "plausible",
+      "retention_note": "Artistic design sub-gloss; devising faculty present but indirect. Retained."
+    },
+    {
+      "strongs_id": "H2803H",
+      "transliteration": "cha.shav",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 34,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H2803I",
+      "transliteration": "cha.shav",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 43,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H2803J",
+      "transliteration": "cha.shav",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 26,
+      "evidential_status": "confirmed",
+      "retention_note": "Occurrence count anomaly (PH2-112-003); verse pool correct."
+    },
+    {
+      "strongs_id": "H2808",
+      "transliteration": "chesh.bon",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 3,
+      "evidential_status": "plausible",
+      "retention_note": "Ecclesiastes reckoning; cognitive activity present. Retained."
+    },
+    {
+      "strongs_id": "H2810",
+      "transliteration": "chish.sha.von",
+      "language": "Hebrew",
+      "mti_status": "extracted_thin",
+      "verse_count": 2,
+      "evidential_status": "plausible",
+      "retention_note": "One Ecc verse relevant; thin corpus. Retained."
+    },
+    {
+      "strongs_id": "H3335I",
+      "transliteration": "ya.tsar",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 6,
+      "evidential_status": "plausible",
+      "retention_note": "Divine planning; same root as ye.tser. Retained."
+    },
+    {
+      "strongs_id": "H3336",
+      "transliteration": "ye.tser",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 9,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H4284",
+      "transliteration": "ma.cha.sha.vah",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 52,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5068",
+      "transliteration": "na.dav",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 15,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5069",
+      "transliteration": "ne.dav",
+      "language": "Hebrew",
+      "mti_status": "extracted_thin",
+      "verse_count": 3,
+      "evidential_status": "plausible",
+      "retention_note": "Aramaic counterpart; Ezra context. Retained."
+    },
+    {
+      "strongs_id": "H5162G",
+      "transliteration": "na.cham",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 66,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5162H",
+      "transliteration": "na.cham",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 34,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5587B",
+      "transliteration": "se.ip.pim",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 2,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5588",
+      "transliteration": "se.eph",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 1,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H7896K",
+      "transliteration": "shit",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 7,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H8104G",
+      "transliteration": "sha.mar",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 195,
+      "evidential_status": "plausible",
+      "retention_note": "Primary semantic field is obedience; inner-being connection indirect. Cross-registry review warranted."
+    },
+    {
+      "strongs_id": "H8104H",
+      "transliteration": "sha.mar",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 151,
+      "evidential_status": "plausible",
+      "retention_note": "Primary field is guarding; inner-facing subset relevant. Retained."
+    },
+    {
+      "strongs_id": "H8104I",
+      "transliteration": "sha.mar",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 29,
+      "evidential_status": "plausible",
+      "retention_note": "Surveillance/watching; inner-being connection through attentiveness. Retained."
+    },
+    {
+      "strongs_id": "H8104J",
+      "transliteration": "sha.mar",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 75,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    }
+  ],
+  "dimensions": {
+    "relational_environment": {
+      "present": true,
+      "note": "All four rings active. Ring 1 dominates. Ring 2 substantially present: God remembers, commands remembering, searches minds, renews the mind, writes law on the dianoia, gives the mind of Christ, relents/changes his own mind (na.cham), and defines himself as one who plans and purposes (boulē, ya.tsar). Ring 3 present through shared-mind vocabulary, remembrance in prayer for others, comfort/consolation (na.cham/G), and conscience in community. Ring 4 is marginal but present through noēma: Satan's designs on the mind (2Cor 2:11) and blinding of minds (2Cor 4:4)."
+    },
+    "spirit_soul_body": {
+      "present": true,
+      "note": "Mind operates primarily at soul-level in the sense of the animating, inner personal centre — the seat of intentions, thoughts, and memory. Spirit-level engagement explicit in 1Cor 14:14-15 where Paul distinguishes praying with my spirit from praying with my mind (nous), indicating the nous operates at a level distinct from the pneuma. Body appears as instrument and as marker of mind-states."
+    },
+    "inner_operations": {
+      "present": true,
+      "note": "Full range documented: remembers and forgets; plans and devises; inclines and orients; evaluates from within (suneidēsis); changes (metanoeō, metamellomai, na.cham/H); collapses into madness (mainomai, ha.lal) or is maintained in sobriety (sōfroneō, nēfō); attends deliberately (H8104J). The most distinctive inner operation is renewal: transformation of the mind's fundamental orientation (Rom 12:2), which is divine action on the inner person."
+    },
+    "being": {
+      "present": true,
+      "note": "Ye.tser (formed inclination) is the primary Hebrew term for the dispositional substrate of inner life. Sōfrōn family documents formed character of sound-mindedness. Froneō in Philippians operates as a characterising disposition. Conscience, once trained or damaged, operates as a formed inner capacity. The mind of Christ (1Cor 2:16) is the supreme example: not a moment of insight but a transferred orientation of being."
+    }
+  },
+  "inner_being_standing": {
+    "classification": "confirmed_characteristic",
+    "reasoning": null,
+    "carry_forward": true
+  },
+  "key_findings": [
+    {
+      "finding_id": "112-F001",
+      "finding_type": "term_behaviour",
+      "finding": "Memory in biblical vocabulary is an active, covenantal, morally significant act — not passive cognitive retrieval. God's remembering produces redemptive action; Israel's commanded remembering constitutes covenant identity; forgetting is moral defection.",
+      "anchor_verses": [
+        "Gen 8:1",
+        "Exo 2:24",
+        "Deu 5:15",
+        "Deu 8:2",
+        "Joh 14:26"
+      ]
+    },
+    {
+      "finding_id": "112-F002",
+      "finding_type": "theological_note",
+      "finding": "The mind is a moral organ before it is an intellectual one. It can be debased, blinded, corrupted, renewed, and transferred (mind of Christ). Romans 12:2 presents renewal of the nous as the locus of personal transformation.",
+      "anchor_verses": [
+        "Rom 1:28",
+        "Rom 12:2",
+        "Eph 4:17",
+        "Col 1:21",
+        "1Cor 2:16"
+      ]
+    },
+    {
+      "finding_id": "112-F003",
+      "finding_type": "etymology",
+      "finding": "The ye.tser (formed inclination) is the OT anthropology's closest approach to a foundational moral disposition. Gen 6:5 and 8:21 establish it as bent toward evil from youth — the dispositional substrate generating particular thoughts and plans.",
+      "anchor_verses": [
+        "Gen 6:5",
+        "Gen 8:21",
+        "Isa 26:3"
+      ]
+    },
+    {
+      "finding_id": "112-F004",
+      "finding_type": "verse_pattern",
+      "finding": "The cha.shav root documents that the same mental faculty produces artistic design, moral reasoning, and malicious plotting — there is no separate creative vs rational faculty in Hebrew anthropology. God's planning uses the same root as wicked scheming.",
+      "anchor_verses": [
+        "Pro 12:5",
+        "Pro 15:26",
+        "Jer 29:11",
+        "Psa 140:2"
+      ]
+    },
+    {
+      "finding_id": "112-F005",
+      "finding_type": "theological_note",
+      "finding": "Fronēma (the set mindset) in Romans 8:5-7 is the determinative factor for life or death, peace or enmity with God — making the mind's fundamental orientation soteriologically significant, not merely morally relevant.",
+      "anchor_verses": [
+        "Rom 8:5",
+        "Rom 8:6",
+        "Rom 8:7"
+      ]
+    },
+    {
+      "finding_id": "112-F006",
+      "finding_type": "theological_note",
+      "finding": "Suneidēsis (conscience) is the NT's distinctive contribution with no direct Hebrew equivalent. The conscience can be weak, clear, seared, or purified (Heb 9:14), and functions as a bridge between inner life and relational/covenantal domains.",
+      "anchor_verses": [
+        "Rom 2:15",
+        "1Cor 8:7",
+        "Heb 9:14",
+        "1Tim 4:2"
+      ]
+    },
+    {
+      "finding_id": "112-F007",
+      "finding_type": "verse_pattern",
+      "finding": "Deu 4:9 functionally links the sha.mar attentiveness cluster with the za.khar memory cluster: vigilant attentiveness is the means by which memory is maintained; forgetting is the product of failed attentiveness.",
+      "anchor_verses": [
+        "Deu 4:9"
+      ]
+    },
+    {
+      "finding_id": "112-F008",
+      "finding_type": "term_behaviour",
+      "finding": "The 1 Cor 14:14-15 nous/pneuma distinction is the sharpest NT terminological boundary between mind-level and spirit-level inner operation — directly relevant to the Framework B spirit-soul-body boundary investigation.",
+      "anchor_verses": [
+        "1Cor 14:14",
+        "1Cor 14:15"
+      ]
+    },
+    {
+      "finding_id": "112-F009",
+      "finding_type": "verse_pattern",
+      "finding": "Double-mindedness (dipsuchos/se.eph) documents inner division as a cross-testament pathology. James presents inner unity as a condition for receiving from God and for effective action; Ps 119:113 makes it a moral stance.",
+      "anchor_verses": [
+        "Jas 1:8",
+        "Jas 4:8",
+        "Psa 119:113"
+      ]
+    },
+    {
+      "finding_id": "112-F010",
+      "finding_type": "theological_note",
+      "finding": "The Hebrews new covenant quotation (Heb 8:10; 10:16) names both dianoia (mind) and kardia (heart) as sites of internalized law — anticipating the structural relationship between Registries 112 and 183 for Session D investigation.",
+      "anchor_verses": [
+        "Heb 8:10",
+        "Heb 10:16"
+      ]
+    }
+  ],
+  "session_b_revision_candidates": []
+}

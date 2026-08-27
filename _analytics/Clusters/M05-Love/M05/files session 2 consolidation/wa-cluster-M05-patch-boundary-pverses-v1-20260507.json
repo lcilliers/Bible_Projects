@@ -1,0 +1,48 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCREVISE",
+    "patch_id": "wa-cluster-M05-patch-boundary-pverses-v1-20260507",
+    "description": "Assign the two remaining P-status verses in M05-BOUNDARY to G-status with group assignments. Amo 5:21 (H6116 a.tsa.rah, vr=192566) assigned to Group 2148 (solemn assembly group). 2Pe 1:3 (G1433 dōreō, vr=215044) assigned to Group 2597 (God's granting group). Both held as G-status in BOUNDARY to enable later analysis. Researcher decision confirmed 20260507: assign as G-status rather than set-aside, per BOUNDARY structural characterisation (WA-M05-BOUNDARY-findings-v1-20260507).",
+    "session_reference": "wa-obslog-M05-love-compassion-kindness-v1-20260507 Phase 8 BOUNDARY",
+    "source_document": "WA-M05-BOUNDARY-findings-v1-20260507.md",
+    "terms_covered": {
+      "6209": 2,
+      "6845": 2
+    },
+    "input_versions": {
+      "6209": 2,
+      "6845": 2
+    },
+    "operations_count": 2
+  },
+  "operations": [
+    {
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "verse_record_id": 192566,
+        "mti_term_id": 6209
+      },
+      "values": {
+        "is_relevant": 1,
+        "group_id": 2148,
+        "set_aside_reason": null,
+        "notes": "Amo 5:21 — divine rejection of solemn assembly lacking inner characteristics (love, justice). Assigned G-status to Group 2148 (solemn assembly group) in BOUNDARY for later analysis. Inner characteristic content (love, goodness) belongs to M05-A and M05-D; assembly occasion is the BOUNDARY term. Researcher decision 20260507."
+      }
+    },
+    {
+      "operation": "update",
+      "table": "verse_context",
+      "match": {
+        "verse_record_id": 215044,
+        "mti_term_id": 6845
+      },
+      "values": {
+        "is_relevant": 1,
+        "group_id": 2597,
+        "set_aside_reason": null,
+        "notes": "2Pe 1:3 — divine granting of all things for life and godliness. Assigned G-status to Group 2597 (God's granting group) in BOUNDARY. The granting act enables koinōnos participation in divine nature (M05-G Group 1057, 2Pe 1:4); dōreō names the enabling giving-act, not the participation characteristic itself. Researcher decision 20260507."
+      }
+    }
+  ]
+}

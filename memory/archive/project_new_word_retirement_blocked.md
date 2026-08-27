@@ -1,0 +1,29 @@
+---
+name: project_new_word_retirement_blocked
+description: FINDING (2026-06-15) - new_word/gap_fill superseded for AUDITING but audit_word still DEPENDS on them for wa_file_index creation; cannot be cleanly archived until that handoff moves
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: 8a5e10ea-2d9d-4bb9-8ca3-fb979500309e
+---
+
+FINDING (2026-06-15): the decision to retire `new_word.py` (and `gap_fill.py`) and use `audit_word` for both new + existing words is **only partly true in the code**, so they are **NOT yet safe to archive**.
+
+- `audit_word.py` header says it "Supersedes new_word.py and gap_fill.py (retained for reference only)", and CLAUDE.md §4 claims they're superseded. `audit_word` DOES handle the audit + re-sync + a "first-time population" path (A2).
+- **BUT `audit_word` does NOT create `wa_file_index`** — it REQUIRES it (A1, audit_word.py:1638 stops with "Run --mode=new_word first" if absent). The only things that INSERT `wa_file_index` are `new_word.py:370`, `gap_fill.py:596`, and `scripts/_repair_03_wa_file_index.py`. So a brand-NEW word (no file_index) still needs new_word/gap_fill to onboard. Removing them breaks new-word onboarding.
+- `--mode=new_word` is also **still wired** in `engine/engine.py` (import :54, choices :83, invocation :310-323).
+- This matches the researcher's note that "new_word was not updated with many underlying routines/rules" — it's stale/divergent (no H4 link+morph at insert, etc.), so it should NOT be used for analysis, but it is still load-bearing for file_index creation.
+
+**Proper retirement = complete the handoff FIRST:** move `wa_file_index` creation into `audit_word`'s first-time-population path (A2) or into `--register`, validate a brand-new word end-to-end through audit_word, THEN remove the CLI wiring + archive new_word + gap_fill and update the stale "Run --mode=new_word first" messages (audit_word.py:1638, 1698) and CLAUDE.md §4.
+
+**⚠ ADDING A NEW WORD = TREAT WITH CARE (rare but possible).** The from-scratch onboarding path (audit_word stub → extract → insert → link → morph → bypass FK) is wired but NOT yet validated end-to-end on a genuinely new word — only the insert mechanics were proven on an existing word (R211). It happens very infrequently, but when it does: run it carefully (dry-run first where possible), watch the A12 integrity check, and verify the new verses are linked + morphed + carry word_registry_fk before trusting the run. Do not assume it "just works."
+
+**H4 validated 2026-06-15** on a live audit of R211 'being': 497 verses inserted 0 errors, link-at-insert worked (511/572 linked), the H5 integrity check (A12) caught the residual 61 orphans of a dead term, which were then cleaned. See [[project_morph_is_source_of_truth]].
+
+**RESOLVED 2026-06-28 — brand-new-word onboarding now works end-to-end (validated on a genuinely new word).** Two remaining gaps were fixed while onboarding `perek` H6531 → reg216 "Ruthlessness":
+- `audit_word` DOES now create the `wa_file_index` stub itself (audit_word.py ~1648, "auto-stub … bypass FK authoritative") — the handoff this memory said was missing has moved. **But** the stub INSERT omitted the NOT NULL `filename` column → `IntegrityError` on every new onboard; **fixed** (synthetic stub filename).
+- The Step-1 extract had to be hand-built each time (recurring trip-up); **fixed** by new flag **`audit_word --fetch-step [--anchors …]`** which auto-runs `word_study_extract.py` to generate it.
+- ⚠ **Triage gate still required:** the auto-fetched `include_codes` carry STEP relatedNos noise (perek's pulled `H6532` curtain homonym) — curate the extract to the intended codes BEFORE the live write, or it onboards junk.
+- End-to-end validated: perek onboarded (1 owner term, 6 verses, M06), integrity controls (`_check_integrity_controls.py`) confirmed exactly the predicted deltas + no contamination. So new-word onboarding is no longer "unvalidated" — but still run with the integrity snapshot/compare gate. `new_word`/`gap_fill` CLI remains wired (not yet archived).
+
+**★ CLOSED 2026-07-11.** `new_word.py` **DELETED** (researcher: "retired, replaced, not correct — DO NOT USE"); removed from `engine/engine.py` (import/dispatch/`--mode` choice/`--terms`/`--pause`) — engine imports clean. `gap_fill` left wired but superseded. **THE single authoritative reference for adding/updating a term is now [[reference_term_add_update_authoritative]] → `Workflow/Instructions/wa-term-add-update-AUTHORITATIVE-pipeline-v1-20260711.md`** — every field of every table enumerated, 3 single steps. Stale `audit_word.py` header + CLAUDE.md §4 caveat corrected the same day. Do not reconstruct this flow from source headers again.

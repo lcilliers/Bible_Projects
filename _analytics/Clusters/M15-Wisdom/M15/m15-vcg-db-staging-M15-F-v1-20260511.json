@@ -1,0 +1,594 @@
+{
+  "metadata": {
+    "cluster_code": "M15",
+    "cluster_subgroup_code": "M15-F",
+    "source_input": "wa-m15f-vcg-groups-v1-20260511.json",
+    "generated_at": "2026-05-11T18:31:23Z",
+    "purpose": "DB-load staging for M15-F VCG cleanup.",
+    "needs_subgroup_creation": false,
+    "subgroup_to_create": null,
+    "totals": {
+      "vcgs_to_create": 4,
+      "verses_to_assign_to_vcgs": 67,
+      "verses_to_set_aside": 1,
+      "sum_check": 68
+    },
+    "anchor_status": "4/4 VCGs have anchor_proposed."
+  },
+  "vcg_creations": [
+    {
+      "code": "M15-F-VCG01",
+      "label": "Inner deliberative reasoning and questioning (dialogizomai/dialogismos)",
+      "context_description": "The term names inner deliberative reasoning — questioning in the heart, calculating political consequences, reasoning within oneself in an interior monologue, and the evil thoughts that arise from the heart and produce sinful action. Jesus regularly perceives and names this inner deliberating; the dialogismos of the heart is the site of both corrupt reasoning and honest questioning. Inner-being phenomenon: inner deliberative reasoning.",
+      "cluster_subgroup_code": "M15-F",
+      "mti_term_ids": [
+        1081,
+        1184
+      ],
+      "verse_count": 27,
+      "verses": [
+        {
+          "vr_id": 54642,
+          "reference": "Mat 16:7",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54643,
+          "reference": "Mat 16:8",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54644,
+          "reference": "Mat 21:25",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54637,
+          "reference": "Mar 2:6",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54638,
+          "reference": "Mar 2:8",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54639,
+          "reference": "Mar 8:16",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54641,
+          "reference": "Mar 9:33",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54631,
+          "reference": "Luk 1:29",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54634,
+          "reference": "Luk 3:15",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54635,
+          "reference": "Luk 5:21",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54636,
+          "reference": "Luk 5:22",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54632,
+          "reference": "Luk 12:17",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54633,
+          "reference": "Luk 20:14",
+          "strongs": "G1260",
+          "mti_term_id": 1184,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187534,
+          "reference": "Mat 15:19",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187533,
+          "reference": "Mar 7:21",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187527,
+          "reference": "Luk 2:35",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187529,
+          "reference": "Luk 5:22",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187530,
+          "reference": "Luk 6:8",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187531,
+          "reference": "Luk 9:46",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187532,
+          "reference": "Luk 9:47",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187528,
+          "reference": "Luk 24:38",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 36284,
+          "reference": "Rom 1:21",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 36285,
+          "reference": "Rom 14:1",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 36283,
+          "reference": "1Cor 3:20",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187535,
+          "reference": "Phili 2:14",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187525,
+          "reference": "1Ti 2:8",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 187526,
+          "reference": "Jam 2:4",
+          "strongs": "G1261",
+          "mti_term_id": 1081,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 54636,
+        "reference": "Luk 5:22",
+        "strongs": "G1260",
+        "translit": "dialogizomai",
+        "anchor_rationale": "'And immediately Jesus, perceiving in his spirit that they thus questioned within themselves, said to them, Why do you question these things in your hearts?' The phenomenon at its clearest: inner deliberative reasoning (dialogizomai) located explicitly in the heart, perceived by Jesus in his spirit, named and challenged. The verse makes the inner activity, its location, and its perceptibility to Christ all explicit simultaneously."
+      }
+    },
+    {
+      "code": "M15-F-VCG02",
+      "label": "Inner reflection and conceived thought (enthumeomai/enthumēsis)",
+      "context_description": "The term names sustained inner reflection that produces conceived thoughts — Joseph contemplating his situation before the angel appears, Peter pondering the vision before the Spirit speaks, the Pharisees thinking evil in their hearts, and the formed inner thoughts that the word of God discerns. The phenomenon is the inner conceiving activity that generates thought-content. Inner-being phenomenon: inner reflective conceiving of thought.",
+      "cluster_subgroup_code": "M15-F",
+      "mti_term_ids": [
+        917,
+        3392
+      ],
+      "verse_count": 7,
+      "verses": [
+        {
+          "vr_id": 169907,
+          "reference": "Mat 1:20",
+          "strongs": "G1760",
+          "mti_term_id": 3392,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 169908,
+          "reference": "Mat 9:4",
+          "strongs": "G1760",
+          "mti_term_id": 3392,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 169906,
+          "reference": "Act 10:19",
+          "strongs": "G1760",
+          "mti_term_id": 3392,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 169905,
+          "reference": "Mat 9:4",
+          "strongs": "G1761",
+          "mti_term_id": 917,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 169904,
+          "reference": "Mat 12:25",
+          "strongs": "G1761",
+          "mti_term_id": 917,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 169903,
+          "reference": "Act 17:29",
+          "strongs": "G1761",
+          "mti_term_id": 917,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 25237,
+          "reference": "Heb 4:12",
+          "strongs": "G1761",
+          "mti_term_id": 917,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 25237,
+        "reference": "Heb 4:12",
+        "strongs": "G1761",
+        "translit": "enthumēsis",
+        "anchor_rationale": "'Discerning the thoughts and intentions of the heart.' The word of God penetrates to the enthumēseis (conceived thoughts) and intentions of the heart. This verse names the phenomenon directly: the thoughts that are conceived in the heart are the inner realities that the living word reaches. The dynamic (word penetrating to conceived thoughts) reveals what the term names — formed inner conceptions."
+      }
+    },
+    {
+      "code": "M15-F-VCG03",
+      "label": "Sustained meditative dwelling (si.ach, si.chah, ha.gig, hig.ga.von)",
+      "context_description": "The term names the sustained inner activity of meditation — dwelling on God's precepts, pondering his mighty acts, musing until the heart burns, the heart's meditation offered as worship. The meditative inner life is directed toward God's word and works, producing understanding, praise, and orientation through distress. Inner-being phenomenon: sustained inward meditative dwelling.",
+      "cluster_subgroup_code": "M15-F",
+      "mti_term_ids": [
+        242,
+        519,
+        524,
+        896,
+        932,
+        975,
+        977,
+        5883
+      ],
+      "verse_count": 31,
+      "verses": [
+        {
+          "vr_id": 157984,
+          "reference": "Judg 5:10",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157981,
+          "reference": "1Ch 16:9",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 12470,
+          "reference": "Job 7:11",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157983,
+          "reference": "Job 12:8",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 12467,
+          "reference": "Psa 55:17",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157995,
+          "reference": "Psa 69:12",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 12468,
+          "reference": "Psa 77:3",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157997,
+          "reference": "Psa 77:6",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157996,
+          "reference": "Psa 77:12",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157986,
+          "reference": "Psa 105:2",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157988,
+          "reference": "Psa 119:15",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157989,
+          "reference": "Psa 119:23",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157990,
+          "reference": "Psa 119:27",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157991,
+          "reference": "Psa 119:48",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157992,
+          "reference": "Psa 119:78",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157987,
+          "reference": "Psa 119:148",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157993,
+          "reference": "Psa 143:5",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157994,
+          "reference": "Psa 145:5",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157985,
+          "reference": "Pro 6:22",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 157982,
+          "reference": "Isa 53:8",
+          "strongs": "H7878",
+          "mti_term_id": 242,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 30266,
+          "reference": "Job 15:4",
+          "strongs": "H7881",
+          "mti_term_id": 975,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 181404,
+          "reference": "Psa 119:97",
+          "strongs": "H7881",
+          "mti_term_id": 975,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 181405,
+          "reference": "Psa 119:99",
+          "strongs": "H7881",
+          "mti_term_id": 975,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54566,
+          "reference": "Psa 49:3",
+          "strongs": "H1900",
+          "mti_term_id": 977,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54542,
+          "reference": "Psa 5:1",
+          "strongs": "H1901",
+          "mti_term_id": 896,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 54541,
+          "reference": "Psa 39:3",
+          "strongs": "H1901",
+          "mti_term_id": 896,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 181464,
+          "reference": "Psa 19:14",
+          "strongs": "H1902H",
+          "mti_term_id": 5883,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 181463,
+          "reference": "Lam 3:62",
+          "strongs": "H1902H",
+          "mti_term_id": 5883,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 173406,
+          "reference": "Psa 119:27",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 7109,
+          "reference": "Psa 49:3",
+          "strongs": "H8394",
+          "mti_term_id": 524,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 6955,
+          "reference": "Psa 119:99",
+          "strongs": "H7919A",
+          "mti_term_id": 519,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 181404,
+        "reference": "Psa 119:97",
+        "strongs": "H7881",
+        "translit": "si.chah",
+        "anchor_rationale": "'Oh how I love your law! It is my meditation all the day.' Love for the law finds its expression and sustaining in si.chah — all-day meditative dwelling on what God has said. The verse names the object (the law), the quality (all-day continuousness), and the relational tone (love) of meditative dwelling. No other verse states the phenomenon so fully."
+      }
+    },
+    {
+      "code": "M15-F-VCG04",
+      "label": "Contemplation in vision and divine knowledge of human thought",
+      "context_description": "The term names either Daniel's focused contemplative attention directed at the revelatory vision (se.khal), or the divine knowing and declaring of what is in the creature's thought (se.ach in Amos 4:13). The phenomenon is either the intense contemplative attending of the person in a revelatory context, or the divine penetrating awareness of human inner thought. Inner-being phenomenon: concentrated contemplation or divine attending to inner thought.",
+      "cluster_subgroup_code": "M15-F",
+      "mti_term_ids": [
+        1181,
+        5662
+      ],
+      "verse_count": 2,
+      "verses": [
+        {
+          "vr_id": 54630,
+          "reference": "Amo 4:13",
+          "strongs": "H7808",
+          "mti_term_id": 1181,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 173688,
+          "reference": "Dan 7:8",
+          "strongs": "H7920",
+          "mti_term_id": 5662,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 173688,
+        "reference": "Dan 7:8",
+        "strongs": "H7920",
+        "translit": "se.khal",
+        "anchor_rationale": "'I considered the horns, and behold, there came up among them another horn.' Daniel's se.khal is a focused, active inner attending directed at the vision — each element is being contemplated in turn. The verb names not passive reception but engaged inner attending that notices, attends, and discerns within the revelatory space."
+      }
+    }
+  ],
+  "setasides": {
+    "reason_code": "no_inner_being_phenomenon",
+    "context_description": "Psa 92:3 where hig.ga.von names the sound of a musical instrument, not an inner meditative activity.",
+    "verse_count": 1,
+    "verses": [
+      {
+        "vr_id": 181465,
+        "reference": "Psa 92:3",
+        "strongs": "H1902H",
+        "mti_term_id": 5883,
+        "assignment_note": null
+      }
+    ]
+  },
+  "reroutes": {
+    "target_subgroup_code": null,
+    "verse_count": 0,
+    "verses": []
+  }
+}

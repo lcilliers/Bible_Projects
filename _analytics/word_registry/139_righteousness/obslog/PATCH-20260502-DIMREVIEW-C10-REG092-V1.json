@@ -1,0 +1,103 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG092-V1",
+    "registry_id": 92,
+    "word": "integrity",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R092 integrity — 5 group dimension assignments + registry stamp. 2 dimension changes from automated labels. Manual application required."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7560 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "933-001 H8538 tummah — Moral Character / HUMAN. Automated label confirmed; vocabulary converted."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7561 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "934-001 H8549G tamim (God's way/works as perfect) — Moral Character / GOD. CHANGED from Cognition: God's perfection is moral character, not a cognitive act."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7562 },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "934-002 H8549G tamim (Torah as perfect — reviving the soul) — Transformation / HUMAN. Automated label confirmed on dimension; dominant_subject set."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7558 },
+      "set": {
+        "dimension": "Transformation",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "935-001 G0861 aftharsia (eschatological incorruptibility) — Transformation / HUMAN. CHANGED from Vitality/Existence: putting on incorruption is transformation, not a state of existence."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7559 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "935-002 G0861 aftharsia (incorruptible love) — Relational Disposition / HUMAN. Automated label confirmed; vocabulary converted."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 92 },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R092 integrity DimReview Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 6,
+    "dimension_index_updates": 5,
+    "registry_stamps": 1,
+    "research_flag_inserts": 0,
+    "dimension_changes": 2,
+    "vocabulary_conversions": 3
+  }
+}

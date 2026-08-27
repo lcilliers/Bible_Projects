@@ -1,0 +1,538 @@
+{
+  "document": {
+    "title": "Session B Complete Word Data Export — JSON Specification",
+    "filename": "wa-global-sessionb-export-spec-v1_1-20260415.json",
+    "version": "1.1",
+    "date": "20260415",
+    "status": "Draft — for CC verification against database schema and live export production",
+    "supersedes": "wa-global-sessionb-export-spec-v1-20260415.json",
+    "change_note": "v1.1: Corrected against actual schema (database-table-analysis.md updated 2026-04-15). Field name corrections throughout. Superseded fields retained as consistency check targets. wa_meaning_sense and mti_term_cross_refs added. wa_verse_term_links excluded (engine internal). wa_session_b_dimensions retained as consistency check target. word_registry.inference_note constraint flagged. Legacy fields noted. All tables included — Session B audits data preparation completeness, not just analytical content.",
+    "purpose": "Defines the exact structure, sections, fields, and source tables for the complete word data export that Session B v5.0 loads as its authoritative input. Every table and field in the database that pertains to a registry is included. Session B uses this export to: (1) verify that all data preparation processes have functioned correctly, (2) identify gaps and inconsistencies, (3) take corrective action where data preparation has failed. Superseded fields are included because Session B must verify consistency between superseded and replacement fields. Legacy fields are noted but not audited for content.",
+    "governed_by": "wa-global-general-rules-v2.2-20260415.json",
+    "consumed_by": "wa-global-sessionb-instruction-v5.0-20260415.md — Stage 1 through Stage 3",
+    "produced_by": "python -m engine.engine --export-word --registry=N",
+    "output_path": "data/exports/{word}_{registry}_full_{YYYYMMDD}_v{N}.json",
+    "session_b_audit_principle": "Every field in this export is present for a reason. Session B does not skip fields because they appear sparse, legacy, or superseded. It asks: is this field correctly populated? Is it consistent with related fields? If not — why not, and what corrective action is required?"
+  },
+
+  "export_structure": {
+
+    "meta": {
+      "description": "Export identity and version information. Claude AI confirms version at Step 1.1 before any audit work begins. Per GR-DB-001 — never assume currency.",
+      "fields": {
+        "export_version": "INTEGER — auto-incremented per day. Must be confirmed against CC at session start.",
+        "export_date": "TEXT YYYYMMDD",
+        "registry_no": "INTEGER",
+        "word": "TEXT",
+        "scope": "TEXT — 'full' pre-analysis / 'final' post-analysis",
+        "schema_version": "TEXT — database schema version at export time",
+        "instruction_version": "TEXT — CC instruction version that produced this export"
+      },
+      "source_tables": ["word_registry", "schema_version"]
+    },
+
+    "registry": {
+      "description": "All fields from word_registry for this registry. Includes legacy and sparse fields — Session B assesses whether each is correctly populated or correctly NULL.",
+      "audit_notes": {
+        "inference_note": "CONSTRAINT: Session B patches must NEVER overwrite this field. It is researcher-only. Read for context only.",
+        "legacy_fields": "phase1_input_file, phase1_output_file, phase2_datasets, category_hint are legacy. Include in export. Session B notes if they contain data conflicting with active fields but does not audit for content.",
+        "dim_review_status": "Populated for Dimension Review completed registries only. Session B checks consistency with wa_dimension_index confidence levels.",
+        "sb_classification": "NULL until Stage 2 Pass 4. If populated, Session B verifies it matches the analytical picture from prior work."
+      },
+      "fields": {
+        "id": "INTEGER PK",
+        "no": "INTEGER — registry number",
+        "word": "TEXT",
+        "source_list": "TEXT — High Confidence / Low Confidence / Inferred / Missing Inner Being Words / Programme Addition",
+        "category_hint": "TEXT — LEGACY. Sparse (17%). Superseded by cluster_assignment. Include — note if conflicts.",
+        "phase1_input_file": "TEXT — LEGACY. Sparse (22%). Include — content not audited.",
+        "phase1_status": "TEXT — Pending / Complete / Excluded / In Progress",
+        "phase1_output_file": "TEXT — LEGACY. Sparse (15%). Include — content not audited.",
+        "phase2_datasets": "REAL — LEGACY. Sparse (14%). Include — content not audited.",
+        "notes": "TEXT",
+        "automation_eligible": "INTEGER",
+        "last_automation_run": "TEXT — IN_PROGRESS or AUDITED",
+        "automation_run_id": "TEXT",
+        "phase1_term_count": "INTEGER — Phase 1 snapshot only. Not updated by Session B.",
+        "phase1_verse_count": "INTEGER — Phase 1 snapshot only.",
+        "strongs_list": "TEXT — comma-separated Strong's numbers",
+        "description": "TEXT",
+        "origin": "TEXT — original_list or programme_addition",
+        "dimensions": "TEXT — comma-delimited dimension labels from Dimension Review",
+        "inference_note": "TEXT — RESEARCHER ONLY. Never overwrite. Read for context.",
+        "session_b_status": "TEXT — controlled vocabulary",
+        "cluster_assignment": "TEXT — C01–C22",
+        "sb_classification": "TEXT — confirmed_characteristic / plausible / uncertain / instrumental / relational_only",
+        "sb_classification_reasoning": "TEXT",
+        "carry_forward": "INTEGER — default 1",
+        "unique_term_count": "INTEGER — Phase 1 snapshot only",
+        "shared_term_count": "INTEGER — Phase 1 snapshot only",
+        "term_sharing_ratio": "REAL — Phase 1 snapshot only",
+        "verse_context_status": "TEXT — NULL / In Progress / Complete",
+        "dim_review_status": "TEXT — Dimension Review completion stamp. Sparse (16%).",
+        "dim_review_version": "TEXT — instruction version used for Dimension Review. Sparse (16%)."
+      },
+      "source_tables": ["word_registry"]
+    },
+
+    "file_index": {
+      "description": "wa_file_index rows for this registry. One row per Session A JSON file. The parent for all WA term and verse data. Session B verifies that file index entries are present and correctly linked.",
+      "audit_notes": {
+        "part_number": "Only populated for multi-part files. Session B checks that split registries have all parts present.",
+        "schema_version": "Sparse (28%) — pre-versioning imports lack this. Accept NULL for older entries.",
+        "category": "LEGACY field — superseded by word_registry.cluster_assignment."
+      },
+      "fields_per_file": {
+        "id": "INTEGER PK",
+        "filename": "TEXT",
+        "registry_id": "TEXT — string form of registry number",
+        "word_registry_fk": "INTEGER FK — links to word_registry.id",
+        "word": "TEXT",
+        "part_number": "INTEGER — NULL for single-part files",
+        "total_parts": "INTEGER — NULL for single-part files",
+        "is_split": "INTEGER — 0/1",
+        "schema_version": "TEXT — Sparse (28%). NULL for older imports.",
+        "phase": "TEXT",
+        "produced_date": "TEXT",
+        "source_file": "TEXT — Sparse (28%)",
+        "translation_used": "TEXT — always ESV",
+        "specification": "TEXT",
+        "revision_note": "TEXT — Sparse (3%)",
+        "source_list": "TEXT",
+        "category": "TEXT — LEGACY. Sparse (6%). Superseded by cluster_assignment.",
+        "testament_coverage": "TEXT — OT_only / NT_only / both",
+        "root_families_in_prior_parts": "TEXT — only for multi-part files",
+        "last_changed": "TEXT"
+      },
+      "source_tables": ["wa_file_index"]
+    },
+
+    "terms": {
+      "description": "All terms for this registry from wa_term_inventory joined to mti_terms. Active terms (delete_flagged=0, mti_terms.status IN ('extracted','extracted_thin')) are the analytical set. Deleted terms are included for Stage 1 audit — Session B verifies that deletions are justified and that phase2 flags on deleted terms are correctly handled. Per GR-DATA-001.",
+      "active_terms": {
+        "description": "Terms in analytical scope",
+        "audit_notes": {
+          "god_as_subject": "SUPERSEDED by mti_term_flags. Do not write. Session B checks consistency: if god_as_subject=1 here, a GOD_AS_SUBJECT flag must exist in mti_term_flags. Inconsistency is a Stage 1 finding requiring corrective action.",
+          "somatic_link": "SUPERSEDED by mti_term_flags. Do not write. Same consistency check as god_as_subject.",
+          "meaning_meaning_numbered": "SUPERSEDED by wa_meaning_parsed. Include — Session B checks whether wa_meaning_parsed is populated for this term. If wa_meaning_parsed is NULL but meaning is present here, that is a data preparation gap.",
+          "status_note": "NULL across nearly all records. No pipeline purpose. Include — Session B notes if unexpectedly populated.",
+          "term_owner_type": "457 NULL from pre-OWNER/XREF era. Session B flags any NULL term_owner_type as a data preparation gap requiring CC resolution.",
+          "evidential_status": "NULL until Stage 2. Sparse (2%) — only set for Session B completed registries.",
+          "lsj_entry": "Greek terms only. Sparse (29% of total — 100% of Greek terms). Accept NULL for Hebrew terms."
+        },
+        "fields_per_term": {
+          "term_inv_id": "INTEGER — wa_term_inventory.id",
+          "file_id": "INTEGER FK — wa_file_index.id",
+          "language": "TEXT — Hebrew or Greek",
+          "term_id": "TEXT — Strong's or composite identifier",
+          "strongs_number": "TEXT — H/G prefix. 9 NULL from legacy — flag as gap.",
+          "transliteration": "TEXT",
+          "step_search_gloss": "TEXT",
+          "word_analysis_gloss": "TEXT",
+          "occurrence_count": "INTEGER",
+          "occurrence_count_qualifier": "TEXT — Sparse (9%). NULL when not applicable.",
+          "meaning": "TEXT — SUPERSEDED by wa_meaning_parsed. Include for consistency check.",
+          "meaning_numbered": "TEXT — SUPERSEDED by wa_meaning_parsed. Include for consistency check.",
+          "also_spelled": "TEXT — Sparse (0.2%). NULL when not applicable.",
+          "lsj_entry": "TEXT — Greek only. Sparse overall.",
+          "testament": "TEXT — OT or NT",
+          "god_as_subject": "INTEGER — SUPERSEDED. Include for consistency check against mti_term_flags.",
+          "somatic_link": "INTEGER — SUPERSEDED. Include for consistency check against mti_term_flags.",
+          "causative_form_present": "INTEGER",
+          "status_note": "TEXT — NULL across nearly all records. Include — note if unexpectedly populated.",
+          "last_changed": "TEXT",
+          "short_def_mounce": "TEXT — Greek only",
+          "parsed_meaning_id": "INTEGER — FK to wa_meaning_parsed.id",
+          "delete_flagged": "INTEGER — 0 for active terms",
+          "evidential_status": "TEXT — NULL until Stage 2",
+          "retention_note": "TEXT — NULL unless term retained despite low evidence",
+          "term_owner_type": "TEXT — OWNER or XREF. NULL = pre-era gap, flag for CC.",
+          "mti_term_id": "INTEGER — FK to mti_terms.id",
+          "mti_status": "TEXT — mti_terms.status: extracted / extracted_thin / etc.",
+          "mti_gloss": "TEXT — mti_terms.gloss",
+          "owning_registry_no": "INTEGER — for XREF terms: the owning registry",
+          "owning_registry_word": "TEXT — for XREF terms",
+          "quality_flags": {
+            "description": "Engine-derived DATA_COVERAGE flags from wa_data_quality_flags. Reset and re-derived on every audit_word run. Session B checks these are present and reflect current data state.",
+            "fields": ["flag_code", "flag_group", "description", "last_changed"]
+          },
+          "phase2_flags": {
+            "description": "Analytical flags from wa_term_phase2_flags. Advisory — prior-session hypotheses. Session B verifies each against verse evidence in Step 1.4. Source and raised_date sparse (29% NULL) for flags pre-dating M14.",
+            "fields": ["flag_id", "flag_code", "description", "source", "raised_date"]
+          },
+          "mti_flags": {
+            "description": "Analytical flags from mti_term_flags. Session B verified flags — authoritative for GOD_AS_SUBJECT and SOMATIC properties. Session B checks consistency with wa_term_inventory.god_as_subject and somatic_link.",
+            "fields": ["flag_id", "flag_code", "description", "source", "created_date"]
+          },
+          "related_words": {
+            "description": "Lexical relatives from wa_term_related_words. Re-inserted on STALE_TERM updates. Session B checks that related words are present for terms with expected lexical families.",
+            "fields": ["gloss", "transliteration", "strongs_number", "relationship_note"]
+          },
+          "mti_cross_refs": {
+            "description": "Cross-references between MTI terms from mti_term_cross_refs. Used for root family and related term identification. Session B checks whether expected cross-references are present, particularly for root family completeness (gap G-13).",
+            "fields": ["ref_strongs", "ref_gloss", "ref_transliteration", "relationship_type"]
+          },
+          "meaning_parse": {
+            "description": "Structured meaning parse from wa_meaning_parsed (engine step A7). Session B verifies A7 ran correctly — parsed_meaning_id should be populated and wa_meaning_parsed should have a row. If meaning is in the legacy field but wa_meaning_parsed is NULL, that is a data preparation gap.",
+            "fields": {
+              "wa_meaning_parsed": ["id", "prose_definition", "raw_meaning_text", "parse_method", "last_updated"],
+              "wa_meaning_sense": {
+                "description": "Sense-level parse from wa_meaning_sense (15,981 rows). Each row is one sense of the term. Session B uses senses as the primary meaning input for Pass 1. Verifies that senses are present for terms where A7 ran.",
+                "fields": ["sense_number", "sense_text", "domain", "gloss"]
+              },
+              "wa_meaning_stem": {
+                "description": "Stem-level parse from wa_meaning_stem (13 rows). Hebrew stem-structured terms only. Very sparse — Session B notes if absent for expected Hebrew stems.",
+                "fields": ["stem_code", "stem_label", "stem_definition"]
+              }
+            }
+          },
+          "root_family": {
+            "description": "Root family data from wa_term_root_family. 22% gap from pre-backfill era (gap G-13). Session B checks whether a root family record exists. If absent for a term that should have one, raises a CC directive to create the root record before entity links can be written.",
+            "fields": ["id", "root_code", "root_label", "root_description", "family_members"]
+          },
+          "lsj_parse": {
+            "description": "LSJ lexicon parse from wa_lsj_parsed (2 rows only — prototyped, not scaled). Greek terms. Session B notes if present but does not audit for content — pipeline not operationalised.",
+            "fields": ["id", "lsj_entry_text", "parse_notes"]
+          }
+        }
+      },
+      "deleted_terms": {
+        "description": "Terms with delete_flagged=1 OR mti_terms.status='delete'. Included for Stage 1 audit. Session B critically evaluates each deletion — is it justified? Are phase2 flags on deleted terms correctly handled (irrelevant if term is deleted)?",
+        "fields_per_term": {
+          "strongs_number": "TEXT",
+          "transliteration": "TEXT",
+          "gloss": "TEXT",
+          "mti_status": "TEXT — should be 'delete'",
+          "delete_flagged": "INTEGER — 1",
+          "term_owner_type": "TEXT",
+          "phase2_flags": "array — phase2 flags on this deleted term. Session B assesses each as irrelevant and notes in observations log."
+        }
+      },
+      "source_tables": ["wa_term_inventory", "mti_terms", "wa_quality_flag_types", "wa_data_quality_flags", "wa_term_phase2_flags", "mti_term_flags", "wa_term_related_words", "mti_term_cross_refs", "wa_meaning_parsed", "wa_meaning_sense", "wa_meaning_stem", "wa_term_root_family", "wa_lsj_parsed"]
+    },
+
+    "verse_records_summary": {
+      "description": "Summary verse statistics per term from wa_verse_records. Session B uses this to verify verse corpus completeness — not to read individual verses (verse text comes through verse_context anchor verses). Session B checks: does the verse count match the occurrence count reasonably? Are there zero-verse OWNER terms? Note: wa_verse_term_links is engine-internal (span matching) and is NOT included in this export.",
+      "fields_per_term": {
+        "strongs_number": "TEXT",
+        "total_verse_records": "INTEGER — count of wa_verse_records where delete_flagged=0",
+        "span_match_count": "INTEGER — count where span_strong_match=1",
+        "delete_flagged_count": "INTEGER — count of deleted verse records",
+        "book_coverage": "TEXT — list of distinct book names covered"
+      },
+      "source_tables": ["wa_verse_records"]
+    },
+
+    "verse_context_groups": {
+      "description": "All verse context groups for OWNER terms from verse_context_group, joined to wa_dimension_index for dimension assignments. This is the primary analytical input for Session B Stage 2. Session B verifies: all OWNER terms have groups, all groups have descriptions, all groups have dimension assignments at CLAUDE_AI or RESEARCHER confidence, all groups have dominant_subject populated.",
+      "audit_notes": {
+        "set_aside_reason": "Extreme sparseness (0.8%) is expected — only populated from VCB-032 onward. Do not flag as a gap for batches prior to VCB-032.",
+        "vertical_pass_flag": "All 0 currently — not yet activated. Include — Session B notes if unexpectedly populated.",
+        "dominant_subject": "Sparse (27%) programme-wide — reflects Dimension Review progress. For this registry, must be populated on all groups before Stage 2 begins."
+      },
+      "fields_per_group": {
+        "group_id": "INTEGER — verse_context_group.id",
+        "mti_term_id": "INTEGER FK — mti_terms.id",
+        "group_code": "TEXT — e.g. H7965-G1",
+        "context_description": "TEXT — characteristic-perspective description",
+        "notes": "TEXT — Sparse (9%). NULL when not needed.",
+        "delete_flagged": "INTEGER",
+        "vertical_pass_flag": "INTEGER — all 0 currently",
+        "dimension_assignment": {
+          "description": "From wa_dimension_index (1:1 with verse_context_group). Session B verifies: dimension present, confidence at CLAUDE_AI or RESEARCHER, dominant_subject populated. AUTOMATED confidence is a Stage 1 trigger for Dimension Review sub-process.",
+          "fields": {
+            "dimension_index_id": "INTEGER — wa_dimension_index.id",
+            "dimension": "TEXT — emergent dimension label. NULL (7%) = not yet reviewed.",
+            "dimension_confidence": "TEXT — AUTOMATED / CLAUDE_AI / RESEARCHER",
+            "manual_override": "INTEGER — 0/1",
+            "dominant_subject": "TEXT — GOD / HUMAN / OTHER_HUMAN / UNSEEN / NONE. NULL = not yet assigned.",
+            "notes": "TEXT — Sparse (40%). Analytical notes where present.",
+            "anchor_count": "INTEGER — from wa_dimension_index computed field",
+            "related_count": "INTEGER",
+            "set_aside_count": "INTEGER",
+            "total_verse_count": "INTEGER",
+            "last_modified": "TEXT"
+          }
+        },
+        "anchor_verses": {
+          "description": "Anchor verses for this group — is_anchor=1 in verse_context, joined to wa_verse_records. These are the primary reading material for Stage 2.",
+          "fields_per_verse": {
+            "verse_context_id": "INTEGER — verse_context.id",
+            "verse_record_id": "INTEGER — wa_verse_records.id",
+            "mti_term_id": "INTEGER",
+            "reference": "TEXT — e.g. Gen 1:1",
+            "verse_text": "TEXT — ESV",
+            "target_word": "TEXT",
+            "span_strong_match": "INTEGER — 0/1",
+            "is_anchor": "INTEGER — 1",
+            "is_relevant": "INTEGER — 1",
+            "is_related": "INTEGER — 0",
+            "notes": "TEXT — Sparse (10%)",
+            "set_aside_reason": "TEXT — NULL for anchor verses",
+            "vertical_pass_flag": "INTEGER — all 0 currently",
+            "delete_flagged": "INTEGER — 0"
+          }
+        },
+        "related_verses": {
+          "description": "Related (supporting) verses for this group — is_related=1. Included for completeness but not primary reading material.",
+          "fields_per_verse": {
+            "verse_context_id": "INTEGER",
+            "verse_record_id": "INTEGER",
+            "reference": "TEXT",
+            "verse_text": "TEXT",
+            "target_word": "TEXT",
+            "notes": "TEXT"
+          }
+        }
+      },
+      "source_tables": ["verse_context_group", "verse_context", "wa_verse_records", "wa_dimension_index"]
+    },
+
+    "set_aside_verses": {
+      "description": "All set-aside verses (is_relevant=0) for this registry's OWNER terms. Session B may challenge set-aside decisions during Stage 1 audit. set_aside_reason is extremely sparse (0.8%) for batches prior to VCB-032 — absence of this field does not constitute a gap for those batches.",
+      "fields_per_verse": {
+        "verse_context_id": "INTEGER",
+        "strongs_number": "TEXT",
+        "mti_term_id": "INTEGER",
+        "reference": "TEXT",
+        "verse_text": "TEXT",
+        "set_aside_reason": "TEXT — extremely sparse for pre-VCB-032 records. NULL is expected.",
+        "notes": "TEXT"
+      },
+      "source_tables": ["verse_context", "wa_verse_records", "mti_terms"]
+    },
+
+    "session_b_findings": {
+      "description": "All rows from wa_session_b_findings for this registry — active (delete_flag=0) and deleted/superseded (delete_flag=1). Per GR-OBS-005 — deleted records are retained for audit. Session B reviews all prior-phase findings and dispositions each one during the relevant Stage 2 pass.",
+      "fields_per_finding": {
+        "id": "INTEGER",
+        "finding_id": "TEXT — e.g. 023-F001",
+        "registry_id": "INTEGER FK",
+        "file_id": "INTEGER FK — NULL for registry-level findings",
+        "finding_type": "TEXT — UPPER_SNAKE_CASE controlled vocabulary",
+        "finding": "TEXT",
+        "anchor_verses": "TEXT",
+        "raised_date": "TEXT",
+        "session_b_instruction": "TEXT",
+        "pass_ref": "TEXT — NULL for pre-v5.0 findings. Session B notes if absent.",
+        "study_segment": "TEXT — NULL for pre-v5.0 findings",
+        "delete_flag": "INTEGER — 0 active / 1 superseded or set aside",
+        "obsolete_reason": "TEXT — required when delete_flag=1",
+        "obsolete_date": "TEXT",
+        "superseded_by_id": "INTEGER — self-referential FK",
+        "related_finding_id": "INTEGER — FK to related finding",
+        "resolution_note": "TEXT",
+        "thin_evidence": "INTEGER — 0/1"
+      },
+      "source_tables": ["wa_session_b_findings"]
+    },
+
+    "finding_entity_links": {
+      "description": "All rows from wa_finding_entity_links for findings in this registry. New table created 2026-04-15. Will be empty for registries where Session B v5.0 has not yet run. Session B uses this to check whether prior findings have entity links, and writes new entity links at each pass close.",
+      "fields_per_link": {
+        "id": "INTEGER",
+        "finding_id": "INTEGER FK — wa_session_b_findings.id",
+        "entity_type": "TEXT — term / verse / group / dimension / registry / root_family / cross_registry",
+        "entity_id": "INTEGER — polymorphic",
+        "entity_strongs": "TEXT — denormalised for term links",
+        "raised_date": "TEXT"
+      },
+      "source_tables": ["wa_finding_entity_links"]
+    },
+
+    "session_b_dimensions": {
+      "description": "Rows from wa_session_b_dimensions for this registry. 2 rows programme-wide — largely superseded by wa_dimension_index. Included because Session B must verify consistency: if a row exists here, its dimension flags must be consistent with the wa_dimension_index assignments for this registry. If inconsistent, Session B raises a finding. If consistent and redundant, Session B notes it as a candidate for retirement via RESEARCHER_DECISION when sufficient evidence accumulates.",
+      "fields_per_row": {
+        "id": "INTEGER",
+        "registry_id": "INTEGER FK",
+        "file_id": "INTEGER FK",
+        "relational_environment": "INTEGER — 0/1",
+        "relational_environment_note": "TEXT",
+        "spirit_soul_body": "INTEGER — 0/1",
+        "spirit_soul_body_note": "TEXT",
+        "inner_operations": "INTEGER — 0/1",
+        "inner_operations_note": "TEXT",
+        "being": "INTEGER — 0/1",
+        "being_note": "TEXT",
+        "raised_date": "TEXT",
+        "session_b_instruction": "TEXT"
+      },
+      "source_tables": ["wa_session_b_dimensions"]
+    },
+
+    "session_research_flags": {
+      "description": "All wa_session_research_flags rows for this registry. Separated by session_target for Stage 1 clarity. Note: flag_code is stored as a string directly on the row — no FK constraint exists. The category field is now available via wa_quality_flag_types lookup.",
+      "session_b_flags": {
+        "description": "Flags requiring resolution within this Session B run — session_target='B', resolved=0. Hard gate: all must be resolved before Stage 2 closes.",
+        "fields_per_flag": {
+          "id": "INTEGER",
+          "registry_id": "INTEGER FK",
+          "file_id": "INTEGER FK — Sparse (38%). NULL for registry-level flags.",
+          "flag_code": "TEXT",
+          "flag_label": "TEXT — unique identifier",
+          "category": "TEXT — looked up from wa_quality_flag_types.category",
+          "strongs_reference": "TEXT — Sparse (49%). NULL for registry-level flags.",
+          "cross_registry_id": "INTEGER FK — Sparse (46%)",
+          "cross_registry_word": "TEXT — denormalised from word_registry",
+          "priority": "TEXT — HIGH / MEDIUM / LOW",
+          "session_target": "TEXT — B",
+          "description": "TEXT",
+          "session_raised": "TEXT",
+          "raised_date": "TEXT",
+          "resolved": "INTEGER — 0",
+          "resolved_date": "TEXT — NULL",
+          "resolved_note": "TEXT — NULL"
+        }
+      },
+      "sd_pointers": {
+        "description": "Session D pointers previously raised for this registry — session_target='D'. Included for Pass 6 review and Analytical Brief Section 8.",
+        "fields_per_pointer": {
+          "id": "INTEGER",
+          "flag_label": "TEXT — e.g. 023-SD001",
+          "flag_code": "TEXT — SD_POINTER",
+          "category": "TEXT — SESSION_D_POINTER",
+          "priority": "TEXT",
+          "description": "TEXT",
+          "strongs_reference": "TEXT",
+          "cross_registry_id": "INTEGER FK",
+          "cross_registry_word": "TEXT — denormalised",
+          "resolved": "INTEGER",
+          "raised_date": "TEXT"
+        }
+      },
+      "source_tables": ["wa_session_research_flags", "wa_quality_flag_types", "word_registry"]
+    },
+
+    "dimension_review_log": {
+      "description": "wa_dim_review_cluster_log row for this registry's cluster (if present). Session B uses this to confirm that Dimension Review for this cluster was formally completed and which instruction version was used.",
+      "fields": {
+        "id": "INTEGER",
+        "cluster": "TEXT",
+        "completed_date": "TEXT",
+        "instruction_version": "TEXT",
+        "registry_count": "INTEGER",
+        "group_count": "INTEGER",
+        "anchored_count": "INTEGER",
+        "notes": "TEXT"
+      },
+      "source_tables": ["wa_dim_review_cluster_log"]
+    },
+
+    "cross_registry_links": {
+      "description": "Session A era cross-registry links from wa_cross_registry_links for this registry. Historical reference. connecting_term stores transliterations, not Strong's numbers — cannot be joined programmatically. Session B includes these as context for Pass 6 connection verification.",
+      "fields_per_link": {
+        "id": "INTEGER",
+        "linked_word": "TEXT",
+        "linked_registry_id": "INTEGER FK — NULL for 7 unresolved links",
+        "connection_type": "TEXT — from wa_crosslink_type.type_code",
+        "connecting_term": "TEXT — transliteration form. Cannot be joined to mti_terms.",
+        "note": "TEXT",
+        "last_changed": "TEXT — Sparse (92%)"
+      },
+      "source_tables": ["wa_cross_registry_links", "wa_crosslink_type"]
+    },
+
+    "correlation_signals": {
+      "description": "Correlation signals for this registry — primary input for Pass 6. CC to confirm: are correlation signals embedded in the export or provided as a separate file? If separate: confirm whether Pass 6 requires the correlation file to be attached at session start or only when Pass 6 begins.",
+      "status": "TBC — CC to confirm source table name, field names, and whether embedded or separate file",
+      "fields_per_signal": {
+        "target_registry_no": "INTEGER",
+        "target_registry_word": "TEXT",
+        "signal_type": "TEXT",
+        "signal_strength": "REAL or INTEGER",
+        "shared_terms": "TEXT",
+        "shared_verses": "TEXT"
+      },
+      "source_tables": ["TBC — CC to confirm"]
+    },
+
+    "patch_history": {
+      "description": "Recent patch and engine run history for this registry from engine_run_log and word_run_state. Session B uses this to understand what has been done to this registry and when. Provides Stage 1 audit context.",
+      "engine_runs": {
+        "fields_per_run": {
+          "run_id": "TEXT",
+          "mode": "TEXT",
+          "started_at": "TEXT",
+          "completed_at": "TEXT",
+          "outcome": "TEXT — PASS / REVIEW / STOP",
+          "total_terms_new": "INTEGER",
+          "total_verses_inserted": "INTEGER",
+          "error_detail": "TEXT"
+        }
+      },
+      "word_run_states": {
+        "fields_per_state": {
+          "run_id": "TEXT",
+          "phase_reached": "TEXT",
+          "audit_result": "TEXT",
+          "audit_detail": "TEXT",
+          "stop_reason": "TEXT",
+          "researcher_approved": "INTEGER",
+          "approved_at": "TEXT"
+        }
+      },
+      "source_tables": ["engine_run_log", "word_run_state"]
+    },
+
+    "statistics": {
+      "description": "Derived counts for quick audit reference at Step 1.1. Session B uses these to spot obvious gaps before reading the full data.",
+      "fields": {
+        "active_owner_term_count": "INTEGER — delete_flagged=0, term_owner_type=OWNER",
+        "active_xref_term_count": "INTEGER — delete_flagged=0, term_owner_type=XREF",
+        "null_owner_type_count": "INTEGER — terms with term_owner_type NULL. Should be 0.",
+        "deleted_term_count": "INTEGER — delete_flagged=1",
+        "total_anchor_verses": "INTEGER",
+        "total_related_verses": "INTEGER",
+        "total_set_aside_verses": "INTEGER",
+        "active_group_count": "INTEGER — delete_flagged=0",
+        "groups_without_dimension": "INTEGER — dimension NULL in wa_dimension_index. Should be 0 before Stage 2.",
+        "groups_at_automated_confidence": "INTEGER — should be 0 before Stage 2",
+        "groups_without_dominant_subject": "INTEGER — should be 0 before Stage 2",
+        "terms_without_meaning_parse": "INTEGER — parsed_meaning_id NULL. Should be 0.",
+        "terms_without_mti_cross_refs": "INTEGER — 0 mti_term_cross_refs rows. Note if unexpected.",
+        "active_session_b_findings": "INTEGER — delete_flag=0",
+        "thin_evidence_findings": "INTEGER — thin_evidence=1. Must be 0 at session close.",
+        "session_b_flags_unresolved": "INTEGER — session_target=B, resolved=0. Must be 0 at Stage 2 close.",
+        "sd_pointers_raised": "INTEGER — all SD_POINTERs for this registry",
+        "phase2_flags_total": "INTEGER",
+        "god_as_subject_inventory_count": "INTEGER — wa_term_inventory.god_as_subject=1",
+        "god_as_subject_mti_flag_count": "INTEGER — GOD_AS_SUBJECT in mti_term_flags. Should equal inventory count.",
+        "somatic_link_inventory_count": "INTEGER — wa_term_inventory.somatic_link=1",
+        "somatic_link_mti_flag_count": "INTEGER — SOMATIC_INNER_LINK in mti_term_flags. Should equal inventory count.",
+        "session_b_dimensions_rows": "INTEGER — rows in wa_session_b_dimensions for this registry. Expected 0 for most registries.",
+        "root_family_gap_count": "INTEGER — active OWNER terms with no wa_term_root_family row"
+      }
+    }
+
+  },
+
+  "cc_verification_tasks": {
+    "description": "Tasks for CC before producing the first live export against this spec. CC must confirm each item and return results before the export is considered valid for Session B use.",
+    "tasks": [
+      {
+        "task_id": "CV-001",
+        "item": "word_export.py field coverage",
+        "question": "Does word_export.py currently export all sections in this spec? Specifically: (1) wa_finding_entity_links — new table from 2026-04-15; (2) all 18 fields of wa_session_b_findings including the 9 new lifecycle fields; (3) wa_quality_flag_types.category for each flag in session_research_flags; (4) wa_meaning_sense rows per term; (5) mti_term_cross_refs per term; (6) wa_session_b_dimensions rows; (7) wa_dim_review_cluster_log for the registry's cluster; (8) word_run_state rows for this registry.",
+        "impact": "Any section not yet in the export script requires a CC update before Session B v5.0 can run against the full spec"
+      },
+      {
+        "task_id": "CV-002",
+        "item": "correlation signals",
+        "question": "Are correlation signals embedded in the word export JSON, or provided as a separate file (e.g. wa-correlations-{date}.json)? If separate: what is the current filename and where does it live? What fields does it contain per signal?",
+        "impact": "Pass 6 depends on correlation data. Session B needs to know whether to attach it separately or whether it comes through the export."
+      },
+      {
+        "task_id": "CV-003",
+        "item": "statistics block",
+        "question": "The statistics section includes god_as_subject and somatic_link consistency counts (comparing wa_term_inventory fields against mti_term_flags). Confirm that word_export.py can produce these derived counts, or whether they require a separate query at session start.",
+        "impact": "Stage 1 audit checklist — consistency check between superseded fields and replacement fields"
+      },
+      {
+        "task_id": "CV-004",
+        "item": "produce sample export",
+        "question": "Produce a complete export for registry 023 (compassion) against this spec. Return the export file for Claude AI cross-reference against the Stage 1 audit checklist. Note in the export which sections are currently missing from word_export.py.",
+        "impact": "Primary verification step — the live export will confirm what is present, what is absent, and what requires export script updates before Session B v5.0 runs"
+      }
+    ]
+  }
+}

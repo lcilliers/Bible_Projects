@@ -1,0 +1,4313 @@
+{
+  "metadata": {
+    "cluster_code": "M15",
+    "cluster_subgroup_code": "M15-C",
+    "source_input": "wa-m15c-vcg-groups-v1-20260511.json",
+    "generated_at": "2026-05-11T17:34:25Z",
+    "purpose": "DB-load staging for M15-C VCG cleanup. Two operations: (1) create new VCGs + assign verses + mark anchors; (2) set-aside verses with the file's no_inner_being_phenomenon reason.",
+    "totals": {
+      "vcgs_to_create": 12,
+      "verses_to_assign_to_vcgs": 572,
+      "verses_to_set_aside": 4,
+      "verses_to_reroute": 0,
+      "sum_check": 576
+    },
+    "anchor_status": "Designated. 12/12 VCGs have anchor_proposed."
+  },
+  "vcg_creations": [
+    {
+      "code": "M15-C-VCG01",
+      "label": "God's omniscient knowing (his attribute)",
+      "context_description": "The term names God's comprehensive, self-sufficient knowing of all things — hearts, plans, character, deeds. No one gave him this knowing; his understanding is unsearchable. Distinct from his elective knowing of persons (VCG02) and his redemptive self-disclosure through acts (VCG03). Inner-being phenomenon: divine omniscient attribute.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        955,
+        958,
+        959,
+        961,
+        962,
+        963
+      ],
+      "verse_count": 39,
+      "verses": [
+        {
+          "vr_id": 178460,
+          "reference": "1Sa 2:3",
+          "strongs": "H1844",
+          "mti_term_id": 959,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178461,
+          "reference": "Psa 73:11",
+          "strongs": "H1844",
+          "mti_term_id": 959,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29487,
+          "reference": "Job 10:7",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29491,
+          "reference": "Job 21:22",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29680,
+          "reference": "Job 22:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29681,
+          "reference": "Job 23:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29700,
+          "reference": "Job 37:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29701,
+          "reference": "Job 37:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29781,
+          "reference": "Job 37:16",
+          "strongs": "H1843",
+          "mti_term_id": 961,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29774,
+          "reference": "Job 36:4",
+          "strongs": "H1844",
+          "mti_term_id": 959,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29612,
+          "reference": "Isa 40:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29613,
+          "reference": "Isa 40:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29477,
+          "reference": "Isa 40:14",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29610,
+          "reference": "Isa 37:28",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178195,
+          "reference": "Psa 139:6",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29635,
+          "reference": "Isa 48:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29638,
+          "reference": "Isa 48:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178217,
+          "reference": "Amo 5:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29808,
+          "reference": "2Cor 11:11",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29809,
+          "reference": "2Cor 11:31",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29812,
+          "reference": "2Cor 5:11",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29840,
+          "reference": "Rom 8:27",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178243,
+          "reference": "Deu 31:27",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178244,
+          "reference": "Deu 31:29",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29752,
+          "reference": "Neh 9:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29539,
+          "reference": "Gen 20:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29534,
+          "reference": "Gen 18:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29590,
+          "reference": "Hos 5:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178197,
+          "reference": "Psa 94:10",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29782,
+          "reference": "Dan 2:21",
+          "strongs": "H4486",
+          "mti_term_id": 962,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178187,
+          "reference": "Pro 3:20",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29699,
+          "reference": "Job 36:26",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178369,
+          "reference": "Zec 14:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29625,
+          "reference": "Isa 44:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29692,
+          "reference": "Job 31:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178242,
+          "reference": "Deu 31:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178298,
+          "reference": "Exo 2:25",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178300,
+          "reference": "Exo 3:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178317,
+          "reference": "Jos 22:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 178195,
+        "reference": "Psa 139:6",
+        "strongs": "H1847",
+        "translit": "da.at",
+        "anchor_rationale": "God's knowing of the psalmist stated in its most personal and overwhelming form: 'Such knowledge is too wonderful for me; it is high; I cannot attain it.' The verse names the attribute (God's knowing of the inner person), its quality (too wonderful to comprehend), and its effect (the human person cannot reach or contain it). The phenomenon — omniscient divine knowing — is stated at its most direct."
+      }
+    },
+    {
+      "code": "M15-C-VCG02",
+      "label": "God's elective / covenantal knowing of persons",
+      "context_description": "The term names God's knowing as an act of electing, choosing, and entering into intimate covenantal relationship — face to face knowing, knowing in the wilderness, 'You only have I known of all the families of the earth.' This is not God's omniscient knowing of everyone but his specific relational knowing that constitutes covenant identity. Inner-being phenomenon: divine elective knowing.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        958
+      ],
+      "verse_count": 9,
+      "verses": [
+        {
+          "vr_id": 29533,
+          "reference": "Gen 18:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29542,
+          "reference": "Gen 22:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178299,
+          "reference": "Exo 2:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178216,
+          "reference": "Amo 3:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29541,
+          "reference": "Gen 21:26",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29743,
+          "reference": "Nah 1:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29684,
+          "reference": "Job 24:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29586,
+          "reference": "Hos 13:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178247,
+          "reference": "Deu 34:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 178216,
+        "reference": "Amo 3:2",
+        "strongs": "H3045",
+        "translit": "ya.da",
+        "anchor_rationale": "'You only have I known of all the families of the earth; therefore I will punish you for all your iniquities.' The most concentrated statement of election-as-knowing in Scripture. The verb's force is completely clear: knowing = choosing = entering covenant relationship. Its consequence (accountability) shows the weight of what this knowing establishes."
+      }
+    },
+    {
+      "code": "M15-C-VCG03",
+      "label": "God making himself known through acts",
+      "context_description": "The term names God's redemptive self-disclosure through historical events — 'that you/they may know that I am the Lord.' The pattern runs through Exodus, the wilderness, the Jordan crossing, the prophets, and the apocalyptic oracles. The goal is always inner recognition produced by the event. Inner-being phenomenon: God's self-revealing disclosure through history.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        955,
+        958
+      ],
+      "verse_count": 88,
+      "verses": [
+        {
+          "vr_id": 178239,
+          "reference": "Deu 29:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178304,
+          "reference": "Joe 2:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178324,
+          "reference": "Jos 3:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178322,
+          "reference": "Jos 3:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178325,
+          "reference": "Jos 4:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178326,
+          "reference": "Jos 4:24",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178318,
+          "reference": "Jos 22:31",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178319,
+          "reference": "Jos 23:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178320,
+          "reference": "Jos 23:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178321,
+          "reference": "Jos 24:31",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178310,
+          "reference": "Jon 3:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178213,
+          "reference": "1Sa 6:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178214,
+          "reference": "1Sa 6:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178201,
+          "reference": "1Sa 12:17",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29750,
+          "reference": "Neh 6:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29753,
+          "reference": "Neh 9:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29599,
+          "reference": "Isa 12:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29600,
+          "reference": "Isa 12:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29602,
+          "reference": "Isa 19:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29609,
+          "reference": "Isa 37:20",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29611,
+          "reference": "Isa 38:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29623,
+          "reference": "Isa 43:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29628,
+          "reference": "Isa 45:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29631,
+          "reference": "Isa 45:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29637,
+          "reference": "Isa 48:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29641,
+          "reference": "Isa 5:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29642,
+          "reference": "Isa 5:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178305,
+          "reference": "Joe 2:27",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178306,
+          "reference": "Joe 3:17",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178371,
+          "reference": "Zec 2:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178370,
+          "reference": "Zec 2:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178374,
+          "reference": "Zec 4:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178375,
+          "reference": "Zec 6:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29739,
+          "reference": "Mal 2:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29531,
+          "reference": "Gen 15:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29640,
+          "reference": "Isa 49:26",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29646,
+          "reference": "Isa 52:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29720,
+          "reference": "Judg 13:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29736,
+          "reference": "Judg 3:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178307,
+          "reference": "Jon 1:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178196,
+          "reference": "Psa 19:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29592,
+          "reference": "Hos 5:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29674,
+          "reference": "Job 19:29",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178309,
+          "reference": "Jon 1:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29543,
+          "reference": "Gen 24:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29545,
+          "reference": "Gen 24:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178200,
+          "reference": "1Sa 10:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178206,
+          "reference": "1Sa 16:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29540,
+          "reference": "Gen 20:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29583,
+          "reference": "Hab 3:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29597,
+          "reference": "Hos 9:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29608,
+          "reference": "Isa 33:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29617,
+          "reference": "Isa 41:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29618,
+          "reference": "Isa 41:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29619,
+          "reference": "Isa 41:26",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29636,
+          "reference": "Isa 48:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29639,
+          "reference": "Isa 49:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29657,
+          "reference": "Isa 9:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29663,
+          "reference": "Job 12:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29678,
+          "reference": "Job 21:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29704,
+          "reference": "Job 37:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29710,
+          "reference": "Job 5:24",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29711,
+          "reference": "Job 5:25",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29727,
+          "reference": "Judg 18:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29737,
+          "reference": "Judg 6:37",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29742,
+          "reference": "Mic 6:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29756,
+          "reference": "Num 12:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29757,
+          "reference": "Num 14:31",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29758,
+          "reference": "Num 14:34",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29759,
+          "reference": "Num 16:28",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29760,
+          "reference": "Num 16:30",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29761,
+          "reference": "Num 16:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29763,
+          "reference": "Num 22:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178225,
+          "reference": "Deu 13:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178226,
+          "reference": "Deu 13:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178228,
+          "reference": "Deu 18:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178229,
+          "reference": "Deu 2:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178238,
+          "reference": "Deu 29:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178249,
+          "reference": "Deu 4:35",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178254,
+          "reference": "Deu 8:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178255,
+          "reference": "Deu 8:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178256,
+          "reference": "Deu 8:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178301,
+          "reference": "Exo 3:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178302,
+          "reference": "Exo 4:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178323,
+          "reference": "Jos 3:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178329,
+          "reference": "Pro 1:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178338,
+          "reference": "Pro 22:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178368,
+          "reference": "Zec 11:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 178326,
+        "reference": "Jos 4:24",
+        "strongs": "H3045",
+        "translit": "ya.da",
+        "anchor_rationale": "The explicit statement of God's purpose in the Jordan crossing: 'so that all the peoples of the earth may know that the hand of the Lord is mighty, that you may fear the Lord your God forever.' Names the event, the intended inner knowing it will produce, the scope (all peoples), and the relational goal (fear = covenant orientation). The pattern of the entire VCG stated in a single verse."
+      }
+    },
+    {
+      "code": "M15-C-VCG04",
+      "label": "Human covenantal knowing of God",
+      "context_description": "The term names the human person's relational inner knowing of God — pressing on to know him, finding the knowledge of God, knowing him in the act of doing justice. This is the human side of the covenantal encounter: the person's inner recognition of who God is, sustained by covenant practice. Inner-being phenomenon: human covenantal knowledge of God.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        932,
+        955,
+        958
+      ],
+      "verse_count": 49,
+      "verses": [
+        {
+          "vr_id": 29593,
+          "reference": "Hos 6:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29588,
+          "reference": "Hos 2:20",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29532,
+          "reference": "Gen 15:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29585,
+          "reference": "Hos 13:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29474,
+          "reference": "Hos 6:6",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29496,
+          "reference": "Job 38:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29497,
+          "reference": "Job 42:3",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29488,
+          "reference": "Job 13:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29489,
+          "reference": "Job 15:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178349,
+          "reference": "Pro 3:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29595,
+          "reference": "Hos 8:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29645,
+          "reference": "Isa 51:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29553,
+          "reference": "Gen 30:26",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178241,
+          "reference": "Deu 31:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178176,
+          "reference": "Pro 2:5",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178193,
+          "reference": "Pro 9:10",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29643,
+          "reference": "Isa 50:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29485,
+          "reference": "Jer 22:16",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178316,
+          "reference": "Jos 2:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 27719,
+          "reference": "Isa 40:21",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 27720,
+          "reference": "Isa 43:10",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29482,
+          "reference": "Isa 53:11",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29499,
+          "reference": "Num 24:16",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29569,
+          "reference": "Gen 41:39",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29606,
+          "reference": "Isa 29:24",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29607,
+          "reference": "Isa 32:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29614,
+          "reference": "Isa 40:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29615,
+          "reference": "Isa 40:28",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29622,
+          "reference": "Isa 43:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29659,
+          "reference": "Job 10:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29666,
+          "reference": "Job 13:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29682,
+          "reference": "Job 23:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29683,
+          "reference": "Job 23:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29740,
+          "reference": "Mic 3:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29745,
+          "reference": "Neh 10:28",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29766,
+          "reference": "Num 24:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 173392,
+          "reference": "Pro 28:5",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178222,
+          "reference": "Deu 11:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178250,
+          "reference": "Deu 4:39",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178253,
+          "reference": "Deu 7:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178257,
+          "reference": "Deu 8:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178260,
+          "reference": "Deu 9:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178261,
+          "reference": "Deu 9:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178312,
+          "reference": "Jon 4:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178313,
+          "reference": "Jos 14:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178332,
+          "reference": "Pro 12:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178342,
+          "reference": "Pro 24:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178348,
+          "reference": "Pro 29:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178352,
+          "reference": "Pro 30:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 29593,
+        "reference": "Hos 6:3",
+        "strongs": "H3045",
+        "translit": "ya.da",
+        "anchor_rationale": "'Let us know; let us press on to know the Lord; his going out is sure as the dawn.' The most direct statement of human covenantal pursuit of knowing God. The verb is active — pressing on, seeking — and the object is the Lord himself as a relational reality. The simile (dawn, spring rain) names the certainty and fruitfulness of what this inner pursuit will encounter."
+      }
+    },
+    {
+      "code": "M15-C-VCG05",
+      "label": "Covenantal absence: not knowing God",
+      "context_description": "The term names the structural opposite — a person, community, or nation that does not know God, refuses the knowledge of God, or lacks it. The sons of Eli did not know the Lord. Israel has no knowledge of God in the land. The wicked do not desire the knowledge of his ways. Sometimes the absence is culpable refusal; sometimes it is the condition of those outside the covenant. Inner-being phenomenon: absent or refused covenantal knowing.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        524,
+        955,
+        958,
+        959
+      ],
+      "verse_count": 50,
+      "verses": [
+        {
+          "vr_id": 178207,
+          "reference": "1Sa 2:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178210,
+          "reference": "1Sa 3:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29730,
+          "reference": "Judg 2:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29472,
+          "reference": "Hos 4:1",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29473,
+          "reference": "Hos 4:6",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29494,
+          "reference": "Job 35:16",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29584,
+          "reference": "Hos 11:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29649,
+          "reference": "Isa 56:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29481,
+          "reference": "Isa 5:13",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29480,
+          "reference": "Isa 47:10",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29483,
+          "reference": "Isa 58:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29484,
+          "reference": "Jer 10:14",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29486,
+          "reference": "Jer 51:17",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29591,
+          "reference": "Hos 5:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178345,
+          "reference": "Pro 27:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29773,
+          "reference": "Jer 3:15",
+          "strongs": "H1844",
+          "mti_term_id": 959,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178188,
+          "reference": "Pro 30:3",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178156,
+          "reference": "Pro 1:29",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 7134,
+          "reference": "Isa 44:19",
+          "strongs": "H8394",
+          "mti_term_id": 524,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29627,
+          "reference": "Isa 45:20",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29478,
+          "reference": "Isa 44:19",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29479,
+          "reference": "Isa 44:25",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29490,
+          "reference": "Job 21:14",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29495,
+          "reference": "Job 36:12",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29589,
+          "reference": "Hos 2:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29594,
+          "reference": "Hos 7:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29596,
+          "reference": "Hos 8:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29598,
+          "reference": "Isa 1:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29605,
+          "reference": "Isa 29:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29621,
+          "reference": "Isa 42:25",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29626,
+          "reference": "Isa 44:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29629,
+          "reference": "Isa 45:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29630,
+          "reference": "Isa 45:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29632,
+          "reference": "Isa 47:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29634,
+          "reference": "Isa 47:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29651,
+          "reference": "Isa 58:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29652,
+          "reference": "Isa 59:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29670,
+          "reference": "Job 18:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29685,
+          "reference": "Job 24:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29723,
+          "reference": "Judg 16:20",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178215,
+          "reference": "Amo 3:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178223,
+          "reference": "Deu 11:28",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178224,
+          "reference": "Deu 13:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178237,
+          "reference": "Deu 29:26",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178245,
+          "reference": "Deu 32:17",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178272,
+          "reference": "Ecc 5:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178303,
+          "reference": "Exo 5:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178351,
+          "reference": "Pro 30:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178358,
+          "reference": "Pro 9:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178377,
+          "reference": "Zep 3:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 29473,
+        "reference": "Hos 4:6",
+        "strongs": "H1847",
+        "translit": "da.at",
+        "anchor_rationale": "'My people are destroyed for lack of knowledge; because you have rejected knowledge, I reject you from being a priest to me.' The most explicit statement of covenantal ignorance's consequence: destruction, priestly rejection, divine forgetting of the next generation. The verse names the absence (lack of knowledge), the act behind it (rejection), and the catastrophic result. The full weight of not knowing God is stated here."
+      }
+    },
+    {
+      "code": "M15-C-VCG06",
+      "label": "da.at as inner content and capacity held by the person",
+      "context_description": "The term names knowledge as an inner content or capacity possessed, accumulated, guarded, and transmitted — the Proverbs portrait of da.at as a valued inner endowment. The wise lay up knowledge; lips of the wise spread it; knowledge is pleasant to the soul; the prudent guard it. Includes knowledge as the content of wise speech, as God's creative-ordering capacity, and as the transmissible substance of wisdom instruction. Inner-being phenomenon: knowledge as inner content held and exercised.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        528,
+        932,
+        955,
+        958,
+        959,
+        961,
+        962
+      ],
+      "verse_count": 63,
+      "verses": [
+        {
+          "vr_id": 178157,
+          "reference": "Pro 1:4",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178158,
+          "reference": "Pro 1:7",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178155,
+          "reference": "Pro 1:22",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178177,
+          "reference": "Pro 2:6",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178189,
+          "reference": "Pro 5:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178192,
+          "reference": "Pro 8:9",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178190,
+          "reference": "Pro 8:10",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178191,
+          "reference": "Pro 8:12",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178159,
+          "reference": "Pro 10:14",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178160,
+          "reference": "Pro 11:9",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178161,
+          "reference": "Pro 12:1",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178162,
+          "reference": "Pro 12:23",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178163,
+          "reference": "Pro 13:16",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178165,
+          "reference": "Pro 14:6",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178166,
+          "reference": "Pro 14:7",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178164,
+          "reference": "Pro 14:18",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178168,
+          "reference": "Pro 15:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178169,
+          "reference": "Pro 15:7",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178167,
+          "reference": "Pro 15:14",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178170,
+          "reference": "Pro 17:27",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178171,
+          "reference": "Pro 18:15",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178172,
+          "reference": "Pro 19:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178173,
+          "reference": "Pro 19:25",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178174,
+          "reference": "Pro 19:27",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178178,
+          "reference": "Pro 20:15",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178179,
+          "reference": "Pro 21:11",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178180,
+          "reference": "Pro 22:12",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178181,
+          "reference": "Pro 22:17",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178182,
+          "reference": "Pro 22:20",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178183,
+          "reference": "Pro 23:12",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178144,
+          "reference": "Ecc 1:16",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178145,
+          "reference": "Ecc 1:18",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178147,
+          "reference": "Ecc 2:21",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178148,
+          "reference": "Ecc 2:26",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178149,
+          "reference": "Ecc 7:12",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178150,
+          "reference": "Ecc 9:10",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178146,
+          "reference": "Ecc 12:9",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29476,
+          "reference": "Isa 33:6",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29468,
+          "reference": "Dan 1:4",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29469,
+          "reference": "Dan 12:4",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29772,
+          "reference": "Isa 28:9",
+          "strongs": "H1844",
+          "mti_term_id": 959,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29779,
+          "reference": "Job 32:6",
+          "strongs": "H1843",
+          "mti_term_id": 961,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29777,
+          "reference": "Job 32:10",
+          "strongs": "H1843",
+          "mti_term_id": 961,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29778,
+          "reference": "Job 32:17",
+          "strongs": "H1843",
+          "mti_term_id": 961,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29780,
+          "reference": "Job 36:3",
+          "strongs": "H1843",
+          "mti_term_id": 961,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29785,
+          "reference": "Dan 5:12",
+          "strongs": "H4486",
+          "mti_term_id": 962,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29498,
+          "reference": "Mal 2:7",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178194,
+          "reference": "Psa 119:66",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 7383,
+          "reference": "Pro 15:2",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 7384,
+          "reference": "Pro 15:7",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 7397,
+          "reference": "Pro 22:17",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29475,
+          "reference": "Isa 11:2",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178154,
+          "reference": "Jos 20:5",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 27687,
+          "reference": "Dan 1:4",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 27713,
+          "reference": "Isa 28:9",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29492,
+          "reference": "Job 33:3",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29493,
+          "reference": "Job 34:35",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178175,
+          "reference": "Pro 2:10",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178184,
+          "reference": "Pro 24:4",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178185,
+          "reference": "Pro 24:5",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178186,
+          "reference": "Pro 29:7",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178262,
+          "reference": "Ecc 1:17",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178281,
+          "reference": "Ecc 8:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 178158,
+        "reference": "Pro 1:7",
+        "strongs": "H1847",
+        "translit": "da.at",
+        "anchor_rationale": "'The fear of the Lord is the beginning of knowledge; fools despise wisdom and instruction.' Names knowledge as having a covenantal ground (fear of the Lord), a positive possessor (those who begin with this), and a structural opponent (fools who despise it). The whole Proverbs portrait of da.at as constituted inner capacity is implied in this programmatic statement."
+      }
+    },
+    {
+      "code": "M15-C-VCG07",
+      "label": "Knowledge of good and evil (moral-discriminating knowing)",
+      "context_description": "The term names the specifically moral knowing that distinguishes good from evil — named in the tree of the knowledge of good and evil, acquired through the fall, withheld from moral infants, and called for as a developmental marker. This is knowing as a moral-discriminating capacity: the person who can distinguish right from wrong, choose the good, refuse the evil. Inner-being phenomenon: moral discriminating knowledge.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        955,
+        958
+      ],
+      "verse_count": 12,
+      "verses": [
+        {
+          "vr_id": 29550,
+          "reference": "Gen 3:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29471,
+          "reference": "Gen 2:9",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29470,
+          "reference": "Gen 2:17",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29551,
+          "reference": "Gen 3:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29552,
+          "reference": "Gen 3:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29654,
+          "reference": "Isa 7:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29655,
+          "reference": "Isa 7:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29656,
+          "reference": "Isa 8:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178142,
+          "reference": "Deu 19:4",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178143,
+          "reference": "Deu 4:42",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178153,
+          "reference": "Jos 20:3",
+          "strongs": "H1847",
+          "mti_term_id": 955,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178221,
+          "reference": "Deu 1:39",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 29470,
+        "reference": "Gen 2:17",
+        "strongs": "H1847",
+        "translit": "da.at",
+        "anchor_rationale": "'But of the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die.' The naming of the prohibited inner capacity. The tree is defined by what it contains: knowledge of good and evil as a transformative moral orientation. The prohibition reveals what is at stake — this knowledge is not information but a capacity that will reshape the inner person, with consequences."
+      }
+    },
+    {
+      "code": "M15-C-VCG08",
+      "label": "Settled inner conviction (knowing as certainty held within)",
+      "context_description": "The term names knowing as a settled inner conviction — the 'we know that' pattern of the Pauline letters; Job's sustained convictions about God, his situation, and his Redeemer; Qoheleth's recognitions about what he has perceived. The phenomenon is not the relational knowing of God (VCG04) but the inner state of holding something as certain. Inner-being phenomenon: inner certainty or conviction.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        958,
+        962,
+        963
+      ],
+      "verse_count": 87,
+      "verses": [
+        {
+          "vr_id": 29831,
+          "reference": "Rom 2:2",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29832,
+          "reference": "Rom 3:19",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29833,
+          "reference": "Rom 5:3",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29835,
+          "reference": "Rom 6:9",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29834,
+          "reference": "Rom 6:16",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29836,
+          "reference": "Rom 7:14",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29837,
+          "reference": "Rom 7:18",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29838,
+          "reference": "Rom 8:22",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29839,
+          "reference": "Rom 8:26",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29841,
+          "reference": "Rom 8:28",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29827,
+          "reference": "Rom 11:2",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29828,
+          "reference": "Rom 13:11",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29829,
+          "reference": "Rom 14:14",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29830,
+          "reference": "Rom 15:29",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29786,
+          "reference": "1Cor 1:16",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29795,
+          "reference": "1Cor 2:2",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29794,
+          "reference": "1Cor 2:11",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29796,
+          "reference": "1Cor 3:16",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29797,
+          "reference": "1Cor 5:6",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29800,
+          "reference": "1Cor 6:2",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29801,
+          "reference": "1Cor 6:3",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29802,
+          "reference": "1Cor 6:9",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29798,
+          "reference": "1Cor 6:15",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29799,
+          "reference": "1Cor 6:16",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29803,
+          "reference": "1Cor 8:1",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29804,
+          "reference": "1Cor 8:4",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29805,
+          "reference": "1Cor 9:13",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29806,
+          "reference": "1Cor 9:24",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29787,
+          "reference": "1Cor 11:3",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29788,
+          "reference": "1Cor 12:2",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29789,
+          "reference": "1Cor 13:2",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29790,
+          "reference": "1Cor 14:11",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29791,
+          "reference": "1Cor 14:16",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29792,
+          "reference": "1Cor 15:58",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29793,
+          "reference": "1Cor 16:15",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29807,
+          "reference": "2Cor 1:7",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29810,
+          "reference": "2Cor 4:14",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29811,
+          "reference": "2Cor 5:1",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29814,
+          "reference": "2Cor 5:6",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29813,
+          "reference": "2Cor 5:16",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29815,
+          "reference": "2Cor 9:2",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29824,
+          "reference": "Gal 2:16",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29826,
+          "reference": "Gal 4:8",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29825,
+          "reference": "Gal 4:13",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29819,
+          "reference": "Eph 1:18",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29820,
+          "reference": "Eph 5:5",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29822,
+          "reference": "Eph 6:8",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29823,
+          "reference": "Eph 6:9",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29821,
+          "reference": "Eph 6:21",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29816,
+          "reference": "Col 2:1",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29817,
+          "reference": "Col 3:24",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29818,
+          "reference": "Col 4:1",
+          "strongs": "G6063",
+          "mti_term_id": 963,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29673,
+          "reference": "Job 19:25",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29664,
+          "reference": "Job 13:18",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29658,
+          "reference": "Job 10:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29694,
+          "reference": "Job 32:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29693,
+          "reference": "Job 32:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29714,
+          "reference": "Job 9:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29716,
+          "reference": "Job 9:28",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29679,
+          "reference": "Job 21:27",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29783,
+          "reference": "Dan 4:34",
+          "strongs": "H4486",
+          "mti_term_id": 962,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29784,
+          "reference": "Dan 4:36",
+          "strongs": "H4486",
+          "mti_term_id": 962,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29538,
+          "reference": "Gen 19:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178280,
+          "reference": "Ecc 8:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178294,
+          "reference": "Est 4:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29644,
+          "reference": "Isa 50:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29665,
+          "reference": "Job 13:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29668,
+          "reference": "Job 15:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29669,
+          "reference": "Job 15:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29675,
+          "reference": "Job 19:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29691,
+          "reference": "Job 30:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29696,
+          "reference": "Job 34:33",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29712,
+          "reference": "Job 5:27",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29715,
+          "reference": "Job 9:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29725,
+          "reference": "Judg 17:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178266,
+          "reference": "Ecc 2:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178268,
+          "reference": "Ecc 3:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178269,
+          "reference": "Ecc 3:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178270,
+          "reference": "Ecc 3:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178271,
+          "reference": "Ecc 4:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178277,
+          "reference": "Ecc 7:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178282,
+          "reference": "Ecc 8:17",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178285,
+          "reference": "Ecc 9:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178287,
+          "reference": "Ecc 9:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178288,
+          "reference": "Ecc 9:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178308,
+          "reference": "Jon 1:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178334,
+          "reference": "Pro 14:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 29841,
+        "reference": "Rom 8:28",
+        "strongs": "G6063",
+        "translit": "oida",
+        "anchor_rationale": "'And we know that for those who love God all things work together for good.' The most recognisable instance of the oida-conviction pattern: a settled inner knowing held by the community, grounding their orientation amid suffering. The 'we know that' form is the paradigm of the group — knowledge as an inner certainty that shapes how life is navigated."
+      }
+    },
+    {
+      "code": "M15-C-VCG09",
+      "label": "Culpable ignorance (agnoeō and equivalents)",
+      "context_description": "The term names ignorance that is culpable, structural, or judicially significant — the agnoeō (G0050) pattern: those who do not know because they have not perceived, those whose ignorance becomes the mechanism of their actions, those Paul corrects by disclosure. Includes innocent ignorance where the absence rather than the culpability is what the term names. Inner-being phenomenon: inner state of ignorance with moral or judicial significance.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        958,
+        1838
+      ],
+      "verse_count": 21,
+      "verses": [
+        {
+          "vr_id": 82263,
+          "reference": "Mar 9:32",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82262,
+          "reference": "Luk 9:45",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82258,
+          "reference": "Act 13:27",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82259,
+          "reference": "Act 17:23",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82267,
+          "reference": "Rom 2:4",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82268,
+          "reference": "Rom 6:3",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82269,
+          "reference": "Rom 7:1",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82265,
+          "reference": "Rom 10:3",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82266,
+          "reference": "Rom 11:25",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82249,
+          "reference": "1Cor 10:1",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82250,
+          "reference": "1Cor 12:1",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82251,
+          "reference": "1Cor 14:38",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82254,
+          "reference": "2Cor 1:8",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82255,
+          "reference": "2Cor 2:11",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82256,
+          "reference": "2Cor 6:9",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82260,
+          "reference": "Gal 1:22",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82252,
+          "reference": "1Th 4:13",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82253,
+          "reference": "1Ti 1:13",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82261,
+          "reference": "Heb 5:2",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 82257,
+          "reference": "2Pe 2:12",
+          "strongs": "G0050",
+          "mti_term_id": 1838,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178311,
+          "reference": "Jon 4:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 82265,
+        "reference": "Rom 10:3",
+        "strongs": "G0050",
+        "translit": "agnoeō",
+        "anchor_rationale": "'For, being ignorant of the righteousness of God, and seeking to establish their own, they did not submit to God's righteousness.' The most theologically weighted instance of agnoeō: ignorance of God's righteousness is the inner root of the whole pattern of self-righteous religious effort. Names the content of the ignorance (God's righteousness), the alternative inner pursuit it produces (self-righteousness), and the consequence (non-submission)."
+      }
+    },
+    {
+      "code": "M15-C-VCG10",
+      "label": "Practical and experiential knowing",
+      "context_description": "The term names the ordinary, practical knowing of persons, facts, situations, and skills — knowing where someone went, knowing that a person is trustworthy, knowing a skill, recognising someone. This is knowing as everyday awareness and competence, not covenantal or moral. The largest group by verse count, spanning narrative throughout Genesis–Malachi and the NT. Inner-being phenomenon: practical inner awareness and recognition.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        958
+      ],
+      "verse_count": 134,
+      "verses": [
+        {
+          "vr_id": 29530,
+          "reference": "Gen 12:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29546,
+          "reference": "Gen 25:27",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29547,
+          "reference": "Gen 27:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29548,
+          "reference": "Gen 28:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29549,
+          "reference": "Gen 29:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29554,
+          "reference": "Gen 30:29",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29556,
+          "reference": "Gen 31:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29555,
+          "reference": "Gen 31:32",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29557,
+          "reference": "Gen 33:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29560,
+          "reference": "Gen 38:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29561,
+          "reference": "Gen 39:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29562,
+          "reference": "Gen 39:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29567,
+          "reference": "Gen 41:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29568,
+          "reference": "Gen 41:31",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29570,
+          "reference": "Gen 42:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29571,
+          "reference": "Gen 42:33",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29572,
+          "reference": "Gen 42:34",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29574,
+          "reference": "Gen 43:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29573,
+          "reference": "Gen 43:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29575,
+          "reference": "Gen 44:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29576,
+          "reference": "Gen 44:27",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29578,
+          "reference": "Gen 47:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178296,
+          "reference": "Exo 1:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178297,
+          "reference": "Exo 2:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29754,
+          "reference": "Num 10:31",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29755,
+          "reference": "Num 11:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29762,
+          "reference": "Num 20:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29764,
+          "reference": "Num 22:34",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178240,
+          "reference": "Deu 3:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178252,
+          "reference": "Deu 7:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178258,
+          "reference": "Deu 9:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178230,
+          "reference": "Deu 20:20",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178231,
+          "reference": "Deu 21:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178232,
+          "reference": "Deu 22:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178233,
+          "reference": "Deu 28:33",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178234,
+          "reference": "Deu 28:36",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178235,
+          "reference": "Deu 28:64",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178236,
+          "reference": "Deu 29:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178246,
+          "reference": "Deu 33:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178248,
+          "reference": "Deu 34:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178314,
+          "reference": "Jos 2:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178315,
+          "reference": "Jos 2:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178327,
+          "reference": "Jos 8:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29734,
+          "reference": "Judg 3:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29735,
+          "reference": "Judg 3:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29738,
+          "reference": "Judg 8:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29722,
+          "reference": "Judg 15:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29724,
+          "reference": "Judg 16:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29726,
+          "reference": "Judg 18:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29731,
+          "reference": "Judg 20:34",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29747,
+          "reference": "Neh 2:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29748,
+          "reference": "Neh 4:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29749,
+          "reference": "Neh 4:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29746,
+          "reference": "Neh 13:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178290,
+          "reference": "Est 2:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178291,
+          "reference": "Est 2:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178292,
+          "reference": "Est 4:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178295,
+          "reference": "Est 4:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178293,
+          "reference": "Est 4:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29671,
+          "reference": "Job 19:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29672,
+          "reference": "Job 19:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29677,
+          "reference": "Job 20:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29676,
+          "reference": "Job 20:20",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29689,
+          "reference": "Job 28:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29707,
+          "reference": "Job 38:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29709,
+          "reference": "Job 38:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178336,
+          "reference": "Pro 14:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178337,
+          "reference": "Pro 17:27",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178340,
+          "reference": "Pro 23:35",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178343,
+          "reference": "Pro 24:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178344,
+          "reference": "Pro 27:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178275,
+          "reference": "Ecc 6:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178273,
+          "reference": "Ecc 6:10",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178274,
+          "reference": "Ecc 6:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178284,
+          "reference": "Ecc 8:7",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178286,
+          "reference": "Ecc 9:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178263,
+          "reference": "Ecc 10:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178264,
+          "reference": "Ecc 10:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178265,
+          "reference": "Ecc 11:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178218,
+          "reference": "Amo 5:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178198,
+          "reference": "1Sa 1:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178199,
+          "reference": "1Sa 10:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178202,
+          "reference": "1Sa 14:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178203,
+          "reference": "1Sa 14:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178204,
+          "reference": "1Sa 14:38",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178205,
+          "reference": "1Sa 16:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29744,
+          "reference": "Nah 3:17",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178373,
+          "reference": "Zec 4:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178372,
+          "reference": "Zec 4:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178376,
+          "reference": "Zec 7:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29566,
+          "reference": "Gen 4:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29577,
+          "reference": "Gen 45:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29579,
+          "reference": "Gen 48:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29580,
+          "reference": "Gen 8:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29581,
+          "reference": "Gen 9:24",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29603,
+          "reference": "Isa 29:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29604,
+          "reference": "Isa 29:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29620,
+          "reference": "Isa 42:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29633,
+          "reference": "Isa 47:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29648,
+          "reference": "Isa 55:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29662,
+          "reference": "Job 11:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29687,
+          "reference": "Job 28:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29690,
+          "reference": "Job 29:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29697,
+          "reference": "Job 34:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29702,
+          "reference": "Job 37:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29703,
+          "reference": "Job 37:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29713,
+          "reference": "Job 8:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29719,
+          "reference": "Judg 13:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29721,
+          "reference": "Judg 14:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29751,
+          "reference": "Neh 8:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29765,
+          "reference": "Num 22:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29770,
+          "reference": "Num 32:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178208,
+          "reference": "1Sa 3:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178209,
+          "reference": "1Sa 3:20",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178211,
+          "reference": "1Sa 4:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178212,
+          "reference": "1Sa 6:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178227,
+          "reference": "Deu 13:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178251,
+          "reference": "Deu 4:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178259,
+          "reference": "Deu 9:24",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178330,
+          "reference": "Pro 10:32",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178339,
+          "reference": "Pro 22:21",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178347,
+          "reference": "Pro 28:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178350,
+          "reference": "Pro 30:18",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178353,
+          "reference": "Pro 31:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178355,
+          "reference": "Pro 4:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178356,
+          "reference": "Pro 5:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178357,
+          "reference": "Pro 7:23",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178359,
+          "reference": "Pro 9:18",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178362,
+          "reference": "Rut 3:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178363,
+          "reference": "Rut 3:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178364,
+          "reference": "Rut 3:18",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178365,
+          "reference": "Rut 3:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178366,
+          "reference": "Rut 3:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178367,
+          "reference": "Rut 4:4",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 29580,
+        "reference": "Gen 8:11",
+        "strongs": "H3045",
+        "translit": "ya.da",
+        "anchor_rationale": "'And the dove came back to him in the evening, and behold, in her mouth was a freshly plucked olive leaf. So Noah knew that the waters had subsided from the earth.' The phenomenon is unmistakably clear: inference from evidence produces inner knowledge of a fact about the world. The term names the cognitive movement from sign to certainty — simple, practical, grounded. A clean instantiation of the phenomenon without covenantal or moral overlay."
+      }
+    },
+    {
+      "code": "M15-C-VCG11",
+      "label": "Sexual knowing (intimate union expressed as knowing)",
+      "context_description": "The term names sexual union through the verb 'to know' — the Hebraic expression of the deepest intimacy between persons. Includes positive descriptions of marital union, statements of virginity ('had not known a man'), and instances of sexual violation. The phenomenon is intimate union — the most personal form of human knowing — expressed through the same verb that names all other forms of knowing. Inner-being phenomenon: intimate union as knowing.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        958
+      ],
+      "verse_count": 18,
+      "verses": [
+        {
+          "vr_id": 29563,
+          "reference": "Gen 4:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29564,
+          "reference": "Gen 4:17",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29565,
+          "reference": "Gen 4:25",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29537,
+          "reference": "Gen 19:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29535,
+          "reference": "Gen 19:33",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29536,
+          "reference": "Gen 19:35",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29559,
+          "reference": "Gen 38:26",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29767,
+          "reference": "Num 31:17",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29768,
+          "reference": "Num 31:18",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29769,
+          "reference": "Num 31:35",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29718,
+          "reference": "Judg 11:39",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29728,
+          "reference": "Judg 19:22",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29729,
+          "reference": "Judg 19:25",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29732,
+          "reference": "Judg 21:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29733,
+          "reference": "Judg 21:12",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178361,
+          "reference": "Rut 2:11",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29544,
+          "reference": "Gen 24:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29558,
+          "reference": "Gen 38:16",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 29563,
+        "reference": "Gen 4:1",
+        "strongs": "H3045",
+        "translit": "ya.da",
+        "anchor_rationale": "'Now Adam knew Eve his wife, and she conceived and bore Cain.' The paradigmatic use: intimate union expressed as knowing, with its fruit immediately named. The verse makes the connection between knowing and the deepest human relational act as natural and unremarkable — which is precisely what shows how fundamental the verb is to the inner-being category of knowing."
+      }
+    },
+    {
+      "code": "M15-C-VCG12",
+      "label": "Eschatological knowing (earth filled with knowledge of God)",
+      "context_description": "The term names the universal knowing of God that marks the end of history — 'the earth shall be full of the knowledge of the Lord as the waters cover the sea.' This is not the present covenantal knowing of the faithful few but the future universal inner knowing of all creation. Inner-being phenomenon: eschatological universal knowing.",
+      "cluster_subgroup_code": "M15-C",
+      "mti_term_ids": [
+        958,
+        959
+      ],
+      "verse_count": 2,
+      "verses": [
+        {
+          "vr_id": 29771,
+          "reference": "Isa 11:9",
+          "strongs": "H1844",
+          "mti_term_id": 959,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29582,
+          "reference": "Hab 2:14",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 29582,
+        "reference": "Hab 2:14",
+        "strongs": "H3045",
+        "translit": "ya.da",
+        "anchor_rationale": "'For the earth will be filled with the knowledge of the glory of the Lord as the waters cover the sea.' The most complete statement of the eschatological knowing: universal (the whole earth), thorough (as waters cover the sea), glorious in content (knowledge of God's glory). The comparison with the covering waters names total saturation — no part of creation excluded."
+      }
+    }
+  ],
+  "setasides": {
+    "reason_code": "no_inner_being_phenomenon",
+    "context_description": "Verses where the M15-C term applies to inanimate objects (mountains not knowing when overturned; the dawn knowing its place; Job 35:15 — God's alleged inattention as a challenged claim) or where the term names a phenomenon that lies outside the inner-being scope of M15-C.",
+    "verse_count": 4,
+    "verses": [
+      {
+        "vr_id": 29717,
+        "reference": "Job 9:5",
+        "strongs": "H3045",
+        "mti_term_id": 958,
+        "assignment_note": null
+      },
+      {
+        "vr_id": 29705,
+        "reference": "Job 38:12",
+        "strongs": "H3045",
+        "mti_term_id": 958,
+        "assignment_note": null
+      },
+      {
+        "vr_id": 178331,
+        "reference": "Pro 10:9",
+        "strongs": "H3045",
+        "mti_term_id": 958,
+        "assignment_note": null
+      },
+      {
+        "vr_id": 29698,
+        "reference": "Job 35:15",
+        "strongs": "H3045",
+        "mti_term_id": 958,
+        "assignment_note": null
+      }
+    ]
+  },
+  "reroutes": {
+    "target_subgroup_code": null,
+    "verse_count": 0,
+    "verses": []
+  }
+}

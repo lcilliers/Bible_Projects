@@ -1,0 +1,498 @@
+{
+  "provenance": "leviticus-lexical-v1",
+  "batch": "Leviticus 27 - vows, valuations, dedication to the LORD, redemption (Phase A pure coding). FINAL chapter.",
+  "occurrences": [
+    {
+      "ref": "27:2",
+      "strong": "H6381",
+      "note": "pala = if anyone makes a SPECIAL/difficult VOW dedicating a person to the LORD",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "special-vow",
+        "operation": "make-vow",
+        "bearer": "person",
+        "role": "vow-context",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:2",
+      "strong": "H5315",
+      "note": "nephesh = the VALUATION of persons vowed to the LORD (a person can be dedicated/valued)",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "soul-person-valued",
+        "bearer": "person",
+        "role": "vowed-person",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:3",
+      "note": "T2-only (valuation of a male 20-60)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "27:4",
+      "note": "T2-only (valuation of a female)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "27:5",
+      "note": "T2-only (valuation 5-20 years)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "27:6",
+      "note": "T2-only (valuation infants)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "27:7",
+      "note": "T2-only (valuation over 60)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "27:9",
+      "strong": "H5414",
+      "note": "natan = an animal vowed and GIVEN to the LORD becomes holy",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "sense": "give-to-LORD",
+        "operation": "dedicate-animal",
+        "bearer": "animal",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:10",
+      "strong": "H2896",
+      "note": "tov = do not exchange a GOOD animal for a bad (the vowed animal fixed)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "good-valuation",
+        "role": "valuation-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:10",
+      "strong": "H7451",
+      "note": "ra = ...for a BAD one (no substitution good/bad)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "bad-valuation",
+        "role": "valuation-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:11",
+      "strong": "H2931",
+      "note": "tame = an UNCLEAN animal (not offerable) that was vowed is valued for redemption",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "status",
+        "sense": "unclean",
+        "bearer": "animal",
+        "source_domain": "dietary",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:12",
+      "strong": "H2896",
+      "note": "tov = the priest values it, whether GOOD...",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "good-valuation",
+        "role": "valuation-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:12",
+      "strong": "H7451",
+      "note": "ra = ...or BAD (the priest's valuation stands)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "bad-valuation",
+        "role": "valuation-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:14",
+      "strong": "H6942",
+      "note": "qadash = if a man DEDICATES his house as holy to the LORD",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "dedicate-to-LORD",
+        "operation": "dedicate",
+        "bearer": "object",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:14",
+      "strong": "H2896",
+      "note": "tov = the priest values it good...",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "good-valuation",
+        "role": "valuation-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:14",
+      "strong": "H7451",
+      "note": "ra = ...or bad; so it shall stand",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "bad-valuation",
+        "role": "valuation-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:15",
+      "strong": "H6942",
+      "note": "qadash = if he who DEDICATED the house wishes to redeem it, add a fifth",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "dedicate-to-LORD",
+        "operation": "dedicate",
+        "bearer": "object",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:16",
+      "strong": "H6942",
+      "note": "qadash = if a man DEDICATES part of his field to the LORD",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "dedicate-to-LORD",
+        "operation": "dedicate",
+        "bearer": "object",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:17",
+      "strong": "H6942",
+      "note": "qadash = if he dedicates his field from the Jubilee year",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "dedicate-to-LORD",
+        "operation": "dedicate",
+        "bearer": "object",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:18",
+      "strong": "H2803",
+      "note": "chashav = the priest RECKONS the price by the years to Jubilee",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "reckon-count",
+        "operation": "compute-valuation",
+        "bearer": "person",
+        "role": "valuation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:18",
+      "strong": "H6942",
+      "note": "qadash = the dedicated field's price computed",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "dedicate-to-LORD",
+        "bearer": "object",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:19",
+      "strong": "H6942",
+      "note": "qadash = if he who DEDICATED the field redeems it, add a fifth",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "dedicate-to-LORD",
+        "operation": "dedicate",
+        "bearer": "object",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:22",
+      "strong": "H6942",
+      "note": "qadash = a bought (non-inherited) field DEDICATED to the LORD",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "dedicate-to-LORD",
+        "operation": "dedicate",
+        "bearer": "object",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:23",
+      "strong": "H2803",
+      "note": "chashav = the priest RECKONS the valuation to the Jubilee",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "reckon-count",
+        "operation": "compute-valuation",
+        "bearer": "person",
+        "role": "valuation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:25",
+      "note": "T2-only (all valuations by the sanctuary shekel)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "27:26",
+      "strong": "H6942",
+      "note": "qadash = a firstborn animal, already the LORD's, cannot be DEDICATED again",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "dedicate-to-LORD",
+        "operation": "dedicate",
+        "bearer": "animal",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:27",
+      "strong": "H2931",
+      "note": "tame = an UNCLEAN firstborn animal is redeemed at valuation + a fifth",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "status",
+        "sense": "unclean",
+        "bearer": "animal",
+        "source_domain": "dietary",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:27",
+      "strong": "H6299",
+      "note": "padah = the unclean firstborn RANSOMED/redeemed at valuation + a fifth",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "ransom-redeem",
+        "operation": "redeem",
+        "bearer": "animal",
+        "reset": "redemption-price",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:28",
+      "note": "T2-only (devoted things - cherem - not sold)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "27:29",
+      "strong": "H6299",
+      "note": "padah = a person devoted (cherem) to destruction cannot be RANSOMED (the irredeemable devotion)",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "ransom-redeem",
+        "operation": "no-redemption-cherem",
+        "bearer": "person",
+        "effect": "irredeemable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:30",
+      "note": "T2-only (the tithe is the LORD's, holy)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "27:33",
+      "strong": "H2896",
+      "note": "tov = the tithed animal not examined GOOD...",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "good-valuation",
+        "role": "valuation-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:33",
+      "strong": "H7451",
+      "note": "ra = ...or BAD; the tenth is holy, not exchanged",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "bad-valuation",
+        "role": "valuation-quality",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:13",
+      "strong": "H1350",
+      "note": "gaal = if he wishes to REDEEM the dedicated animal, add a fifth",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-dedicated",
+        "operation": "redeem",
+        "bearer": "animal",
+        "reset": "redemption-price-plus-fifth",
+        "effect": "restored-to-owner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:15",
+      "strong": "H1350",
+      "note": "gaal = if he wishes to REDEEM his dedicated house, add a fifth",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-dedicated",
+        "operation": "redeem",
+        "bearer": "object",
+        "reset": "redemption-price-plus-fifth",
+        "effect": "restored-to-owner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:19",
+      "strong": "H1350",
+      "note": "gaal = if he wishes to REDEEM his dedicated field, add a fifth",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-dedicated",
+        "operation": "redeem",
+        "bearer": "object",
+        "reset": "redemption-price-plus-fifth",
+        "effect": "restored-to-owner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:27",
+      "strong": "H1350",
+      "note": "gaal = an unclean animal bought back / REDEEMED at valuation; if not redeemed, sold",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-unclean-animal",
+        "operation": "redeem",
+        "bearer": "animal",
+        "reset": "redemption-price-plus-fifth",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:28",
+      "strong": "H1350",
+      "note": "gaal = NO devoted thing (cherem) may be REDEEMED - the irredeemable devotion (most holy to the LORD)",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-forbidden",
+        "operation": "no-redemption-cherem",
+        "bearer": "object",
+        "effect": "irredeemable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:33",
+      "strong": "H1350",
+      "note": "gaal = the tithe not REDEEMED/exchanged; the tenth is holy to the LORD",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-forbidden",
+        "operation": "no-redemption-tithe",
+        "bearer": "animal",
+        "effect": "irredeemable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:2",
+      "strong": "H5088",
+      "note": "neder = a special VOW (dedicating persons to the LORD)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "vow",
+        "operation": "make-vow",
+        "bearer": "person",
+        "role": "volitional-commitment",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "27:8",
+      "strong": "H5087",
+      "note": "nadar = the VOWER valued by the priest per his means",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "vow",
+        "operation": "make-vow",
+        "bearer": "person",
+        "role": "volitional-commitment",
+        "coverage": "ib-coded"
+      }
+    }
+  ]
+}

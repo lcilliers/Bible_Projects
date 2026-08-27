@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 29,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4345 (Pro 29:12) — if a ruler listens to falsehood, all his officials become wicked.",
+ "spans": {
+  "266770": {
+   "gloss": "ruler heeds falsehood (qashab)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "corrupting credulity — a ruler who listens to lies breeds a wicked court"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the ruler",
+     "to": 266770,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the listening of a ruler to falsehood — the credulity or complicity at the top that corrupts the whole administration, since officials become what the ruler rewards"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the wickedness it breeds in officials (266775)",
+     "to": 266770,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the corrupt servants his credulity produces",
+     "to": 266775,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "qashab (attend/listen) — 'if a ruler LISTENS to falsehood, all his officials will be wicked'; a leader who heeds lies breeds liars — the whole court takes its character from what the ruler will hear. Corruption flows down from the top."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "266775": {
+   "gloss": "wicked officials (rasha)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "institutional corruption — the servants a lie-heeding ruler breeds"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the officials",
+     "to": 266775,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the wickedness of all a ruler's officials when he listens to falsehood — the institutional corruption that follows a corrupt or credulous head, servants shaped to match the master's ear"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the ruler's credulity that breeds it (266770)",
+     "to": 266775,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the lie-heeding rule that produces it",
+     "to": 266775,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "rasha — 'all his OFFICIALS will be wicked'; a court takes its character from its ruler. Where the head heeds lies, the whole body turns corrupt. Leadership shapes the institution."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

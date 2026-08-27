@@ -1,0 +1,2388 @@
+{
+  "meta": {
+    "task": "cause-resolution",
+    "cluster": "M01",
+    "items": 297,
+    "instruction": "TASK (do ONLY this): determine the CAUSE of an inner-being state, per item.\nFor each item: read `verse_text`; in a SHORT phrase (<=8 words) state what AROUSES the inner state named by `term` in THIS verse. `cause_clause` is a mechanical hint (the clause after a 'because/for' marker) — it may or may not be the real cause; judge from the verse. If the verse does NOT actually state what causes the state, return \"NONE\". Do not infer beyond the text; do not add commentary.\nOUTPUT: a JSON array only — [{\"vcid\": <int>, \"cause\": \"<phrase or NONE>\"}] — one object per input item.",
+    "output_schema": "[{vcid:int, cause:string(<=8 words) | 'NONE'}]",
+    "apply_with": "scripts/_apply_cause_from_api.py --input <api-output.json>"
+  },
+  "items": [
+    {
+      "vcid": 15071,
+      "reference": "Gen 3:10",
+      "verse_text": "Gen 3:10 And he said , “I heard the sound of you in the garden , and I was afraid , because I was naked , and I hid myself.”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "hid"
+    },
+    {
+      "vcid": 15166,
+      "reference": "Gen 18:15",
+      "verse_text": "Gen 18:15 But Sarah denied it, saying , “I did not laugh ,” for she was afraid . He said , “ No , but you did laugh .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "said No laugh"
+    },
+    {
+      "vcid": 15167,
+      "reference": "Gen 19:30",
+      "verse_text": "Gen 19:30 Now Lot went up out of Zoar and lived in the hills with his two daughters , for he was afraid to live in Zoar . So he lived in a cave with his two daughters .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "live Zoar lived cave two daughters"
+    },
+    {
+      "vcid": 14872,
+      "reference": "Gen 20:11",
+      "verse_text": "Gen 20:11 Abraham said , “I did it because I thought , ‘ There is no fear of God at all in this place , and they will kill me because of my wife .’",
+      "term": "yir.ah",
+      "gloss": "fear",
+      "cause_clause": "There no fear God place they kill me because"
+    },
+    {
+      "vcid": 15074,
+      "reference": "Gen 21:17",
+      "verse_text": "Gen 21:17 And God heard the voice of the boy , and the angel of God called to Hagar from heaven and said to her, “What troubles you, Hagar ? Fear not, for God has heard the voice of the boy where he is.",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "voice boy where he"
+    },
+    {
+      "vcid": 4314,
+      "reference": "Gen 22:12",
+      "verse_text": "Gen 22:12 He said , “Do not lay your hand on the boy or do anything to him, for now I know that you fear God , seeing you have not withheld your son , your only son, from me .”",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "know fear God you not withheld son your"
+    },
+    {
+      "vcid": 15168,
+      "reference": "Gen 26:7",
+      "verse_text": "Gen 26:7 When the men of the place asked him about his wife , he said , “She is my sister ,” for he feared to say , “My wife ,” thinking, “lest the men of the place should kill me because of Rebekah ,” because she was attractive in appearance .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "say wife men place kill Rebekah she attractive"
+    },
+    {
+      "vcid": 15075,
+      "reference": "Gen 26:24",
+      "verse_text": "Gen 26:24 And the Lord appeared to him the same night and said , “ I am the God of Abraham your father . Fear not, for I am with you and will bless you and multiply your offspring for my servant Abraham’s sake .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "bless multiply offspring my servant Abraham’s sake"
+    },
+    {
+      "vcid": 4222,
+      "reference": "Gen 28:17",
+      "verse_text": "Gen 28:17 And he was afraid and said , “ How awesome is this place ! This is none other than the house of God , and this is the gate of heaven .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "than house God this gate heaven"
+    },
+    {
+      "vcid": 15169,
+      "reference": "Gen 31:31",
+      "verse_text": "Gen 31:31 Jacob answered and said to Laban , “ Because I was afraid , for I thought that you would take your daughters from me by force .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "afraid for thought that you would your daughters from me"
+    },
+    {
+      "vcid": 13955,
+      "reference": "Gen 31:42",
+      "verse_text": "Gen 31:42 If the God of my father , the God of Abraham and the Fear of Isaac , had not been on my side, surely now you would have sent me away empty-handed . God saw my affliction and the labor of my hands and rebuked you last night .”",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "now sent me away empty-handed God saw affliction labor hands"
+    },
+    {
+      "vcid": 4322,
+      "reference": "Gen 32:11",
+      "verse_text": "Gen 32:11 Please deliver me from the hand of my brother , from the hand of Esau , for I fear him, that he may come and attack me , the mothers with the children .",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "come attack me mothers with children"
+    },
+    {
+      "vcid": 15171,
+      "reference": "Gen 35:17",
+      "verse_text": "Gen 35:17 And when her labor was at its hardest , the midwife said to her, “Do not fear , for you have another son .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": null
+    },
+    {
+      "vcid": 15173,
+      "reference": "Gen 43:18",
+      "verse_text": "Gen 43:18 And the men were afraid because they were brought to Joseph’s house , and they said , “It is because of the money , which was replaced in our sacks the first time , that we are brought in , so that he may assault us and fall upon us to make us servants and seize our donkeys .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "brought Joseph’s house said because money replaced sacks"
+    },
+    {
+      "vcid": 12441,
+      "reference": "Gen 45:3",
+      "verse_text": "Gen 45:3 And Joseph said to his brothers , “ I am Joseph ! Is my father still alive ?” But his brothers could not answer him, for they were dismayed at his presence .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "dismayed his presence"
+    },
+    {
+      "vcid": 15076,
+      "reference": "Gen 46:3",
+      "verse_text": "Gen 46:3 Then he said , “ I am God , the God of your father . Do not be afraid to go down to Egypt , for there I will make you into a great nation .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "there make great nation"
+    },
+    {
+      "vcid": 15077,
+      "reference": "Gen 50:19",
+      "verse_text": "Gen 50:19 But Joseph said to them, “Do not fear , for am I in the place of God ?",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "I place God"
+    },
+    {
+      "vcid": 4959,
+      "reference": "Exo 1:21",
+      "verse_text": "Exo 1:21 And because the midwives feared God , he gave them families .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "God gave families"
+    },
+    {
+      "vcid": 15176,
+      "reference": "Exo 3:6",
+      "verse_text": "Exo 3:6 And he said , “ I am the God of your father , the God of Abraham , the God of Isaac , and the God of Jacob .” And Moses hid his face , for he was afraid to look at God .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "look God"
+    },
+    {
+      "vcid": 4950,
+      "reference": "Exo 9:30",
+      "verse_text": "Exo 9:30 But as for you and your servants , I know that you do not yet fear the Lord God .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "yet fear the Lord God"
+    },
+    {
+      "vcid": 15079,
+      "reference": "Exo 14:13",
+      "verse_text": "Exo 14:13 And Moses said to the people , “ Fear not, stand firm , and see the salvation of the Lord , which he will work for you today . For the Egyptians whom you see today , you shall never see again .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "see today never see again"
+    },
+    {
+      "vcid": 14873,
+      "reference": "Exo 20:20",
+      "verse_text": "Exo 20:20 Moses said to the people , “Do not fear , for God has come to test you, that the fear of him may be before you , that you may not sin .”",
+      "term": "yir.ah",
+      "gloss": "fear",
+      "cause_clause": "test fear before you not sin"
+    },
+    {
+      "vcid": 15136,
+      "reference": "Exo 20:20",
+      "verse_text": "Exo 20:20 Moses said to the people , “Do not fear , for God has come to test you, that the fear of him may be before you , that you may not sin .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "test fear before you not sin"
+    },
+    {
+      "vcid": 4225,
+      "reference": "Exo 34:10",
+      "verse_text": "Exo 34:10 And he said , “ Behold , I am making a covenant . Before all your people I will do marvels , such as have not been created in all the earth or in any nation . And all the people among whom you are shall see the work of the Lord , for it is an awesome thing that I will do with you .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "awesome thing I do with you"
+    },
+    {
+      "vcid": 4210,
+      "reference": "Lev 25:17",
+      "verse_text": "Lev 25:17 You shall not wrong one another , but you shall fear your God , for I am the Lord your God .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "God"
+    },
+    {
+      "vcid": 15180,
+      "reference": "Num 14:9",
+      "verse_text": "Num 14:9 Only do not rebel against the Lord . And do not fear the people of the land , for they are bread for us. Their protection is removed from them, and the Lord is with us; do not fear them .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "bread protection removed from Lord with not fear"
+    },
+    {
+      "vcid": 15080,
+      "reference": "Num 21:34",
+      "verse_text": "Num 21:34 But the Lord said to Moses , “Do not fear him, for I have given him into your hand , and all his people , and his land . And you shall do to him as you did to Sihon king of the Amorites , who lived at Heshbon .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "did Sihon king Amorites who lived Heshbon"
+    },
+    {
+      "vcid": 14965,
+      "reference": "Num 22:3",
+      "verse_text": "Num 22:3 And Moab was in great dread of the people , because they were many . Moab was overcome with fear of the people of Israel .",
+      "term": "gur",
+      "gloss": "to dread",
+      "cause_clause": "many Moab fear of people Israel"
+    },
+    {
+      "vcid": 14966,
+      "reference": "Deu 1:17",
+      "verse_text": "Deu 1:17 You shall not be partial in judgment . You shall hear the small and the great alike. You shall not be intimidated by anyone , for the judgment is God’s . And the case that is too hard for you, you shall bring to me, and I will hear it .’",
+      "term": "gur",
+      "gloss": "to dread",
+      "cause_clause": "judgment God’s case that hard bring to hear"
+    },
+    {
+      "vcid": 15082,
+      "reference": "Deu 3:2",
+      "verse_text": "Deu 3:2 But the Lord said to me, ‘Do not fear him, for I have given him and all his people and his land into your hand . And you shall do to him as you did to Sihon the king of the Amorites , who lived at Heshbon .’",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "given all people land hand do as did"
+    },
+    {
+      "vcid": 15083,
+      "reference": "Deu 3:22",
+      "verse_text": "Deu 3:22 You shall not fear them, for it is the Lord your God who fights for you .’",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "Lord God fights you"
+    },
+    {
+      "vcid": 64508,
+      "reference": "Deu 5:5",
+      "verse_text": "Deu 5:5 while I stood between the Lord and you at that time , to declare to you the word of the Lord . For you were afraid because of the fire , and you did not go up into the mountain . He said :",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "afraid because fire not go up mountain said"
+    },
+    {
+      "vcid": 4226,
+      "reference": "Deu 7:21",
+      "verse_text": "Deu 7:21 You shall not be in dread of them , for the Lord your God is in your midst , a great and awesome God .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "God in midst great awesome God"
+    },
+    {
+      "vcid": 17305,
+      "reference": "Deu 7:21",
+      "verse_text": "Deu 7:21 You shall not be in dread of them , for the Lord your God is in your midst , a great and awesome God .",
+      "term": "a.rats",
+      "gloss": "to tremble",
+      "cause_clause": "God in midst great awesome God"
+    },
+    {
+      "vcid": 15064,
+      "reference": "Deu 9:19",
+      "verse_text": "Deu 9:19 For I was afraid of the anger and hot displeasure that the Lord bore against you, so that he was ready to destroy you. But the Lord listened to me that time also.",
+      "term": "ya.gor",
+      "gloss": "to fear",
+      "cause_clause": "of anger hot displeasure Lord bore against destroy Lord"
+    },
+    {
+      "vcid": 4189,
+      "reference": "Deu 10:12",
+      "verse_text": "Deu 10:12 “And now , Israel , what does the Lord your God require of you, but to fear the Lord your God , to walk in all his ways , to love him, to serve the Lord your God with all your heart and with all your soul ,",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "to fear Lord God to walk all ways"
+    },
+    {
+      "vcid": 4227,
+      "reference": "Deu 10:17",
+      "verse_text": "Deu 10:17 For the Lord your God is God of gods and Lord of lords , the great , the mighty , and the awesome God , who is not partial and takes no bribe .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "Lord God God gods Lord lords great mighty"
+    },
+    {
+      "vcid": 15084,
+      "reference": "Deu 20:1",
+      "verse_text": "Deu 20:1 “When you go out to war against your enemies , and see horses and chariots and an army larger than your own, you shall not be afraid of them, for the Lord your God is with you, who brought you up out of the land of Egypt .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "Lord God with up land Egypt"
+    },
+    {
+      "vcid": 15151,
+      "reference": "Deu 28:10",
+      "verse_text": "Deu 28:10 And all the peoples of the earth shall see that you are called by the name of the Lord , and they shall be afraid of you .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "called name Lord afraid of you"
+    },
+    {
+      "vcid": 15086,
+      "reference": "Deu 31:6",
+      "verse_text": "Deu 31:6 Be strong and courageous . Do not fear or be in dread of them , for it is the Lord your God who goes with you. He will not leave you or forsake you .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "Lord God goes with not leave forsake you"
+    },
+    {
+      "vcid": 17306,
+      "reference": "Deu 31:6",
+      "verse_text": "Deu 31:6 Be strong and courageous . Do not fear or be in dread of them , for it is the Lord your God who goes with you. He will not leave you or forsake you .”",
+      "term": "a.rats",
+      "gloss": "to tremble",
+      "cause_clause": "Lord God goes with not leave forsake you"
+    },
+    {
+      "vcid": 17307,
+      "reference": "Jos 1:9",
+      "verse_text": "Jos 1:9 Have I not commanded you? Be strong and courageous . Do not be frightened , and do not be dismayed , for the Lord your God is with you wherever you go .”",
+      "term": "a.rats",
+      "gloss": "to tremble",
+      "cause_clause": "God go"
+    },
+    {
+      "vcid": 14944,
+      "reference": "Jos 2:9",
+      "verse_text": "Jos 2:9 and said to the men , “I know that the Lord has given you the land , and that the fear of you has fallen upon us, and that all the inhabitants of the land melt away before you.",
+      "term": "e.mah",
+      "gloss": "terror",
+      "cause_clause": "land fear fallen all inhabitants land melt away before"
+    },
+    {
+      "vcid": 4265,
+      "reference": "Jos 4:24",
+      "verse_text": "Jos 4:24 so that all the peoples of the earth may know that the hand of the Lord is mighty , that you may fear the Lord your God forever .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "fear Lord God forever"
+    },
+    {
+      "vcid": 15181,
+      "reference": "Jos 9:24",
+      "verse_text": "Jos 9:24 They answered Joshua , “Because it was told to your servants for a certainty that the Lord your God had commanded his servant Moses to give you all the land and to destroy all the inhabitants of the land from before you—so we feared greatly for our lives because of you and did this thing .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "servants certainty Lord God commanded servant Moses give"
+    },
+    {
+      "vcid": 15182,
+      "reference": "Jos 10:2",
+      "verse_text": "Jos 10:2 he feared greatly , because Gibeon was a great city , like one of the royal cities , and because it was greater than Ai , and all its men were warriors .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "Gibeon great city one royal cities it greater"
+    },
+    {
+      "vcid": 15089,
+      "reference": "Jos 10:8",
+      "verse_text": "Jos 10:8 And the Lord said to Joshua , “Do not fear them, for I have given them into your hands . Not a man of them shall stand before you.”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "man stand before"
+    },
+    {
+      "vcid": 15090,
+      "reference": "Jos 10:25",
+      "verse_text": "Jos 10:25 And Joshua said to them, “Do not be afraid or dismayed ; be strong and courageous . For thus the Lord will do to all your enemies against whom you fight .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "all enemies whom you fight"
+    },
+    {
+      "vcid": 15091,
+      "reference": "Jos 11:6",
+      "verse_text": "Jos 11:6 And the Lord said to Joshua , “Do not be afraid of them, for tomorrow at this time I will give over all of them, slain , to Israel . You shall hamstring their horses and burn their chariots with fire .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "time I give over all slain to Israel hamstring"
+    },
+    {
+      "vcid": 15184,
+      "reference": "Judg 8:20",
+      "verse_text": "Judg 8:20 So he said to Jether his firstborn , “ Rise and kill them!” But the young man did not draw his sword , for he was afraid , because he was still a young man .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "afraid because still young man"
+    },
+    {
+      "vcid": 12443,
+      "reference": "Judg 20:41",
+      "verse_text": "Judg 20:41 Then the men of Israel turned , and the men of Benjamin were dismayed , for they saw that disaster was close upon them.",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "saw that disaster close upon"
+    },
+    {
+      "vcid": 15094,
+      "reference": "Rut 3:11",
+      "verse_text": "Rut 3:11 And now , my daughter , do not fear . I will do for you all that you ask , for all my fellow townsmen know that you are a worthy woman .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "you worthy woman"
+    },
+    {
+      "vcid": 15186,
+      "reference": "1Sa 4:7",
+      "verse_text": "1Sa 4:7 the Philistines were afraid , for they said , “A god has come into the camp .” And they said , “ Woe to us! For nothing like this has happened before .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "god come camp said Woe nothing this happened"
+    },
+    {
+      "vcid": 15321,
+      "reference": "1Sa 4:13",
+      "verse_text": "1Sa 4:13 When he arrived , Eli was sitting on his seat by the road watching , for his heart trembled for the ark of God . And when the man came into the city and told the news, all the city cried out .",
+      "term": "cha.red",
+      "gloss": "trembling",
+      "cause_clause": "trembled ark God man came city told all"
+    },
+    {
+      "vcid": 15187,
+      "reference": "1Sa 4:20",
+      "verse_text": "1Sa 4:20 And about the time of her death the women attending her said to her, “Do not be afraid , for you have borne a son .” But she did not answer or pay attention .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "not answer pay attention"
+    },
+    {
+      "vcid": 15188,
+      "reference": "1Sa 7:7",
+      "verse_text": "1Sa 7:7 Now when the Philistines heard that the people of Israel had gathered at Mizpah , the lords of the Philistines went up against Israel . And when the people of Israel heard of it, they were afraid of the Philistines .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "people Israel gathered Mizpah lords Philistines went up against"
+    },
+    {
+      "vcid": 4214,
+      "reference": "1Sa 12:24",
+      "verse_text": "1Sa 12:24 Only fear the Lord and serve him faithfully with all your heart . For consider what great things he has done for you .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "consider what done for you"
+    },
+    {
+      "vcid": 15189,
+      "reference": "1Sa 14:26",
+      "verse_text": "1Sa 14:26 And when the people entered the forest , behold , the honey was dropping , but no one put his hand to his mouth , for the people feared the oath .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "people feared oath"
+    },
+    {
+      "vcid": 15190,
+      "reference": "1Sa 15:24",
+      "verse_text": "1Sa 15:24 Saul said to Samuel , “I have sinned , for I have transgressed the commandment of the Lord and your words , because I feared the people and obeyed their voice .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "transgressed commandment Lord words because feared people obeyed"
+    },
+    {
+      "vcid": 15193,
+      "reference": "1Sa 18:12",
+      "verse_text": "1Sa 18:12 Saul was afraid of David because the Lord was with him but had departed from Saul .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "Lord with departed from Saul"
+    },
+    {
+      "vcid": 15096,
+      "reference": "1Sa 22:23",
+      "verse_text": "1Sa 22:23 Stay with me; do not be afraid , for he who seeks my life seeks your life . With me you shall be in safekeeping .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "who seeks life seeks life With me you"
+    },
+    {
+      "vcid": 4323,
+      "reference": "1Sa 23:3",
+      "verse_text": "1Sa 23:3 But David’s men said to him, “ Behold , we are afraid here in Judah ; how much more then if we go to Keilah against the armies of the Philistines ?”",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "go Keilah against armies Philistines"
+    },
+    {
+      "vcid": 15097,
+      "reference": "1Sa 23:17",
+      "verse_text": "1Sa 23:17 And he said to him, “Do not fear , for the hand of Saul my father shall not find you . You shall be king over Israel , and I shall be next to you. Saul my father also knows this .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "hand Saul father not find you king over"
+    },
+    {
+      "vcid": 15196,
+      "reference": "1Sa 28:13",
+      "verse_text": "1Sa 28:13 The king said to her, “Do not be afraid . What do you see ?” And the woman said to Saul , “I see a god coming up out of the earth .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "see woman said to Saul see god coming up"
+    },
+    {
+      "vcid": 15197,
+      "reference": "1Sa 28:20",
+      "verse_text": "1Sa 28:20 Then Saul fell at once full length on the ground , filled with fear because of the words of Samuel . And there was no strength in him, for he had eaten nothing all day and all night .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "eaten nothing all day all night"
+    },
+    {
+      "vcid": 12444,
+      "reference": "1Sa 28:21",
+      "verse_text": "1Sa 28:21 And the woman came to Saul , and when she saw that he was terrified , she said to him, “ Behold , your servant has obeyed you . I have taken my life in my hand and have listened to what you have said to me .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "terrified said to Behold servant obeyed you taken"
+    },
+    {
+      "vcid": 15198,
+      "reference": "1Sa 31:4",
+      "verse_text": "1Sa 31:4 Then Saul said to his armor-bearer , “ Draw your sword , and thrust me through with it, lest these uncircumcised come and thrust me through , and mistreat me.” But his armor-bearer would not , for he feared greatly . Therefore Saul took his own sword and fell upon it .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "feared greatly Saul took sword fell upon it"
+    },
+    {
+      "vcid": 1630,
+      "reference": "2Sa 1:9",
+      "verse_text": "2Sa 1:9 And he said to me, ‘ Stand beside me and kill me, for anguish has seized me , and yet my life still lingers .’",
+      "term": "sha.vats",
+      "gloss": "agony",
+      "cause_clause": "me my life still lingers"
+    },
+    {
+      "vcid": 12445,
+      "reference": "2Sa 4:1",
+      "verse_text": "2Sa 4:1 When Ish-bosheth, Saul’s son , heard that Abner had died at Hebron , his courage failed , and all Israel was dismayed .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "Hebron courage failed all Israel dismayed"
+    },
+    {
+      "vcid": 15201,
+      "reference": "2Sa 9:7",
+      "verse_text": "2Sa 9:7 And David said to him, “Do not fear , for I will show you kindness for the sake of your father Jonathan , and I will restore to you all the land of Saul your father , and you shall eat at my table always .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "show kindness father Jonathan restore all land Saul"
+    },
+    {
+      "vcid": 15202,
+      "reference": "2Sa 10:19",
+      "verse_text": "2Sa 10:19 And when all the kings who were servants of Hadadezer saw that they had been defeated by Israel , they made peace with Israel and became subject to them. So the Syrians were afraid to save the Ammonites anymore .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "by Israel made peace with Israel became subject Syrians afraid"
+    },
+    {
+      "vcid": 15203,
+      "reference": "2Sa 12:18",
+      "verse_text": "2Sa 12:18 On the seventh day the child died . And the servants of David were afraid to tell him that the child was dead , for they said , “ Behold , while the child was yet alive , we spoke to him, and he did not listen to us . How then can we say to him the child is dead ? He may do himself some harm .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "said Behold child alive spoke not listen us"
+    },
+    {
+      "vcid": 15204,
+      "reference": "2Sa 13:28",
+      "verse_text": "2Sa 13:28 Then Absalom commanded his servants , “ Mark when Amnon’s heart is merry with wine , and when I say to you, ‘ Strike Amnon ,’ then kill him. Do not fear ; have I not commanded you? Be courageous and be valiant .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "courageous be valiant"
+    },
+    {
+      "vcid": 15205,
+      "reference": "2Sa 14:15",
+      "verse_text": "2Sa 14:15 Now I have come to say this to my lord the king because the people have made me afraid , and your servant thought , ‘I will speak to the king ; it may be that the king will perform the request of his servant .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "servant thought speak to king be king perform"
+    },
+    {
+      "vcid": 4902,
+      "reference": "2Sa 22:5",
+      "verse_text": "2Sa 22:5 “For the waves of death encompassed me, the torrents of destruction assailed me;",
+      "term": "mish.bar",
+      "gloss": "wave",
+      "cause_clause": "torrents destruction assailed"
+    },
+    {
+      "vcid": 64537,
+      "reference": "2Sa 22:8",
+      "verse_text": "2Sa 22:8 “Then the earth reeled and rocked ; the foundations of the heavens trembled and quaked , because he was angry .",
+      "term": "ra.gaz",
+      "gloss": "to tremble",
+      "cause_clause": "he angry"
+    },
+    {
+      "vcid": 4266,
+      "reference": "1Ki 3:28",
+      "verse_text": "1Ki 3:28 And all Israel heard of the judgment that the king had rendered , and they stood in awe of the king , because they perceived that the wisdom of God was in him to do justice .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "perceived that wisdom God in do justice"
+    },
+    {
+      "vcid": 15070,
+      "reference": "1Ki 8:43",
+      "verse_text": "1Ki 8:43 hear in heaven your dwelling place and do according to all for which the foreigner calls to you, in order that all the peoples of the earth may know your name and fear you, as do your people Israel , and that they may know that this house that I have built is called by your name .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": null
+    },
+    {
+      "vcid": 4312,
+      "reference": "2Ki 4:1",
+      "verse_text": "2Ki 4:1 Now the wife of one of the sons of the prophets cried to Elisha , “Your servant my husband is dead , and you know that your servant feared the Lord , but the creditor has come to take my two children to be his slaves .”",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "servant feared Lord creditor come take two children"
+    },
+    {
+      "vcid": 15100,
+      "reference": "2Ki 6:16",
+      "verse_text": "2Ki 6:16 He said , “Do not be afraid , for those who are with us are more than those who are with them .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "more than who with them"
+    },
+    {
+      "vcid": 4268,
+      "reference": "2Ki 17:7",
+      "verse_text": "2Ki 17:7 And this occurred because the people of Israel had sinned against the Lord their God , who had brought them up out of the land of Egypt from under the hand of Pharaoh king of Egypt , and had feared other gods",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "people Israel sinned Lord God brought them up land Egypt"
+    },
+    {
+      "vcid": 15141,
+      "reference": "2Ki 17:36",
+      "verse_text": "2Ki 17:36 but you shall fear the Lord , who brought you out of the land of Egypt with great power and with an outstretched arm . You shall bow yourselves to him, and to him you shall sacrifice .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "who brought land Egypt great power outstretched arm"
+    },
+    {
+      "vcid": 15144,
+      "reference": "2Ki 17:39",
+      "verse_text": "2Ki 17:39 but you shall fear the Lord your God , and he will deliver you out of the hand of all your enemies .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "God he deliver hand your enemies"
+    },
+    {
+      "vcid": 15211,
+      "reference": "2Ki 25:26",
+      "verse_text": "2Ki 25:26 Then all the people , both small and great , and the captains of the forces arose and went to Egypt , for they were afraid of the Chaldeans .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "of Chaldeans"
+    },
+    {
+      "vcid": 15208,
+      "reference": "1Ch 10:4",
+      "verse_text": "1Ch 10:4 Then Saul said to his armor-bearer , “ Draw your sword and thrust me through with it, lest these uncircumcised come and mistreat me.” But his armor-bearer would not, for he feared greatly . Therefore Saul took his own sword and fell upon it .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "greatly Saul took sword fell upon it"
+    },
+    {
+      "vcid": 15145,
+      "reference": "1Ch 16:25",
+      "verse_text": "1Ch 16:25 For great is the Lord , and greatly to be praised , and he is to be feared above all gods .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "great Lord greatly praised feared above all gods"
+    },
+    {
+      "vcid": 15104,
+      "reference": "1Ch 28:20",
+      "verse_text": "1Ch 28:20 Then David said to Solomon his son , “Be strong and courageous and do it . Do not be afraid and do not be dismayed , for the Lord God , even my God , is with you. He will not leave you or forsake you, until all the work for the service of the house of the Lord is finished .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "God God not leave forsake until all work"
+    },
+    {
+      "vcid": 4964,
+      "reference": "2Ch 6:33",
+      "verse_text": "2Ch 6:33 hear from heaven your dwelling place and do according to all for which the foreigner calls to you, in order that all the peoples of the earth may know your name and fear you, as do your people Israel , and that they may know that this house that I have built is called by your name .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "this house that built called name"
+    },
+    {
+      "vcid": 13980,
+      "reference": "2Ch 14:14",
+      "verse_text": "2Ch 14:14 And they attacked all the cities around Gerar , for the fear of the Lord was upon them. They plundered all the cities , for there was much plunder in them .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "Lord upon plundered all cities was much plunder"
+    },
+    {
+      "vcid": 13964,
+      "reference": "2Ch 19:7",
+      "verse_text": "2Ch 19:7 Now then, let the fear of the Lord be upon you. Be careful what you do , for there is no injustice with the Lord our God , or partiality or taking bribes .”",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "no injustice with Lord God partiality taking bribes"
+    },
+    {
+      "vcid": 13982,
+      "reference": "2Ch 20:29",
+      "verse_text": "2Ch 20:29 And the fear of God came on all the kingdoms of the countries when they heard that the Lord had fought against the enemies of Israel .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "Lord fought against enemies Israel"
+    },
+    {
+      "vcid": 64471,
+      "reference": "2Ch 26:20",
+      "verse_text": "2Ch 26:20 And Azariah the chief priest and all the priests looked at him, and behold , he was leprous in his forehead ! And they rushed him out quickly, and he himself hurried to go out , because the Lord had struck him.",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "Lord struck"
+    },
+    {
+      "vcid": 64473,
+      "reference": "2Ch 35:21",
+      "verse_text": "2Ch 35:21 But he sent envoys to him, saying , “ What have we to do with each other, king of Judah ? I am not coming against you this day , but against the house with which I am at war . And God has commanded me to hurry . Cease opposing God , who is with me, lest he destroy you .”",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "against house war God commanded hurry Cease God"
+    },
+    {
+      "vcid": 14950,
+      "reference": "Ezr 3:3",
+      "verse_text": "Ezr 3:3 They set the altar in its place , for fear was on them because of the peoples of the lands , and they offered burnt offerings on it to the Lord , burnt offerings morning and evening .",
+      "term": "e.mah",
+      "gloss": "terror",
+      "cause_clause": "fear on because peoples lands offered burnt offerings on"
+    },
+    {
+      "vcid": 15212,
+      "reference": "Neh 2:2",
+      "verse_text": "Neh 2:2 And the king said to me, “ Why is your face sad , seeing you are not sick ? This is nothing but sadness of the heart .” Then I was very much afraid .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "sadness heart very much afraid"
+    },
+    {
+      "vcid": 15213,
+      "reference": "Neh 6:9",
+      "verse_text": "Neh 6:9 For they all wanted to frighten us, thinking , “Their hands will drop from the work , and it will not be done .” But now , O God, strengthen my hands .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "all frighten thinking hands drop from work not"
+    },
+    {
+      "vcid": 15215,
+      "reference": "Neh 6:16",
+      "verse_text": "Neh 6:16 And when all our enemies heard of it, all the nations around us were afraid and fell greatly in their own esteem , for they perceived that this work had been accomplished with the help of our God .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "perceived this work accomplished with God"
+    },
+    {
+      "vcid": 4220,
+      "reference": "Neh 7:2",
+      "verse_text": "Neh 7:2 I gave my brother Hanani and Hananiah the governor of the castle charge over Jerusalem , for he was a more faithful and God-fearing man than many .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "faithful God-fearing man than many"
+    },
+    {
+      "vcid": 13983,
+      "reference": "Est 8:17",
+      "verse_text": "Est 8:17 And in every province and in every city , wherever the king’s command and his edict reached , there was gladness and joy among the Jews , a feast and a holiday . And many from the peoples of the country declared themselves Jews , for fear of the Jews had fallen on them .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "on them"
+    },
+    {
+      "vcid": 13984,
+      "reference": "Est 9:2",
+      "verse_text": "Est 9:2 The Jews gathered in their cities throughout all the provinces of King Ahasuerus to lay hands on those who sought their harm . And no one could stand against them, for the fear of them had fallen on all peoples .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "on all peoples"
+    },
+    {
+      "vcid": 13985,
+      "reference": "Est 9:3",
+      "verse_text": "Est 9:3 All the officials of the provinces and the satraps and the governors and the royal agents also helped the Jews , for the fear of Mordecai had fallen on them .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "on them"
+    },
+    {
+      "vcid": 4275,
+      "reference": "Job 1:8",
+      "verse_text": "Job 1:8 And the Lord said to Satan , “Have you considered my servant Job , that there is none like him on the earth , a blameless and upright man , who fears God and turns away from evil ?”",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "like earth blameless upright man fears God away"
+    },
+    {
+      "vcid": 4276,
+      "reference": "Job 2:3",
+      "verse_text": "Job 2:3 And the Lord said to Satan , “Have you considered my servant Job , that there is none like him on the earth , a blameless and upright man , who fears God and turns away from evil ? He still holds fast his integrity , although you incited me against him to destroy him without reason .”",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "none like him earth blameless upright man fears God"
+    },
+    {
+      "vcid": 13952,
+      "reference": "Job 3:25",
+      "verse_text": "Job 3:25 For the thing that I fear comes upon me, and what I dread befalls me .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "thing fear comes dread befalls me"
+    },
+    {
+      "vcid": 15062,
+      "reference": "Job 3:25",
+      "verse_text": "Job 3:25 For the thing that I fear comes upon me, and what I dread befalls me .",
+      "term": "ya.gor",
+      "gloss": "to fear",
+      "cause_clause": "thing fear comes dread befalls me"
+    },
+    {
+      "vcid": 17320,
+      "reference": "Job 3:25",
+      "verse_text": "Job 3:25 For the thing that I fear comes upon me, and what I dread befalls me .",
+      "term": "pa.chad",
+      "gloss": "to dread",
+      "cause_clause": "thing fear comes dread befalls me"
+    },
+    {
+      "vcid": 12446,
+      "reference": "Job 4:5",
+      "verse_text": "Job 4:5 But now it has come to you, and you are impatient ; it touches you, and you are dismayed .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "come to impatient touches dismayed"
+    },
+    {
+      "vcid": 15217,
+      "reference": "Job 5:21",
+      "verse_text": "Job 5:21 You shall be hidden from the lash of the tongue , and shall not fear destruction when it comes .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "comes"
+    },
+    {
+      "vcid": 15219,
+      "reference": "Job 6:21",
+      "verse_text": "Job 6:21 For you have now become nothing ; you see my calamity and are afraid .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "now become nothing see calamity afraid"
+    },
+    {
+      "vcid": 17235,
+      "reference": "Job 6:21",
+      "verse_text": "Job 6:21 For you have now become nothing ; you see my calamity and are afraid .",
+      "term": "cha.tat",
+      "gloss": "terror",
+      "cause_clause": "now become nothing see calamity afraid"
+    },
+    {
+      "vcid": 15066,
+      "reference": "Job 9:28",
+      "verse_text": "Job 9:28 I become afraid of all my suffering, for I know you will not hold me innocent .",
+      "term": "ya.gor",
+      "gloss": "to fear",
+      "cause_clause": null
+    },
+    {
+      "vcid": 15220,
+      "reference": "Job 9:35",
+      "verse_text": "Job 9:35 Then I would speak without fear of him, for I am not so in myself .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "in myself"
+    },
+    {
+      "vcid": 15221,
+      "reference": "Job 11:15",
+      "verse_text": "Job 11:15 Surely then you will lift up your face without blemish ; you will be secure and will not fear .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "face blemish be secure not fear"
+    },
+    {
+      "vcid": 14970,
+      "reference": "Job 19:29",
+      "verse_text": "Job 19:29 be afraid of the sword , for wrath brings the punishment of the sword , that you may know there is a judgment .”",
+      "term": "gur",
+      "gloss": "to dread",
+      "cause_clause": "wrath punishment sword that know judgment"
+    },
+    {
+      "vcid": 40260,
+      "reference": "Job 24:17",
+      "verse_text": "Job 24:17 For deep darkness is morning to all of them ; for they are friends with the terrors of deep darkness .",
+      "term": "bal.la.hah",
+      "gloss": "terror",
+      "cause_clause": "deep darkness morning all of them for friends terrors deep darkness"
+    },
+    {
+      "vcid": 13959,
+      "reference": "Job 31:23",
+      "verse_text": "Job 31:23 For I was in terror of calamity from God , and I could not have faced his majesty .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "calamity God could not majesty"
+    },
+    {
+      "vcid": 4154,
+      "reference": "Job 31:34",
+      "verse_text": "Job 31:34 because I stood in great fear of the multitude , and the contempt of families terrified me, so that I kept silence , and did not go out of doors —",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "multitude contempt families terrified kept silence not go out doors"
+    },
+    {
+      "vcid": 17302,
+      "reference": "Job 31:34",
+      "verse_text": "Job 31:34 because I stood in great fear of the multitude , and the contempt of families terrified me, so that I kept silence , and did not go out of doors —",
+      "term": "a.rats",
+      "gloss": "to tremble",
+      "cause_clause": "multitude contempt families terrified kept silence not go out doors"
+    },
+    {
+      "vcid": 12452,
+      "reference": "Psa 6:2",
+      "verse_text": "Psa 6:2 Be gracious to me, O Lord , for I am languishing ; heal me, O Lord , for my bones are troubled .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "heal Lord my bones troubled"
+    },
+    {
+      "vcid": 13986,
+      "reference": "Psa 14:5",
+      "verse_text": "Psa 14:5 There they are in great terror , for God is with the generation of the righteous .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "generation righteous"
+    },
+    {
+      "vcid": 17322,
+      "reference": "Psa 14:5",
+      "verse_text": "Psa 14:5 There they are in great terror , for God is with the generation of the righteous .",
+      "term": "pa.chad",
+      "gloss": "to dread",
+      "cause_clause": "generation righteous"
+    },
+    {
+      "vcid": 64543,
+      "reference": "Psa 18:7",
+      "verse_text": "Psa 18:7 Then the earth reeled and rocked ; the foundations also of the mountains trembled and quaked , because he was angry .",
+      "term": "ra.gaz",
+      "gloss": "to tremble",
+      "cause_clause": "he angry"
+    },
+    {
+      "vcid": 15224,
+      "reference": "Psa 23:4",
+      "verse_text": "Psa 23:4 Even though I walk through the valley of the shadow of death , I will fear no evil , for you are with me; your rod and your staff , they comfort me .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "you with rod staff they comfort me"
+    },
+    {
+      "vcid": 14954,
+      "reference": "Psa 31:13",
+      "verse_text": "Psa 31:13 For I hear the whispering of many — terror on every side !— as they scheme together against me, as they plot to take my life .",
+      "term": "ma.gor",
+      "gloss": "terror",
+      "cause_clause": "whispering many terror side scheme together against plot"
+    },
+    {
+      "vcid": 4217,
+      "reference": "Psa 34:9",
+      "verse_text": "Psa 34:9 Oh, fear the Lord , you his saints , for those who fear him have no lack !",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "fear no lack"
+    },
+    {
+      "vcid": 4285,
+      "reference": "Psa 34:9",
+      "verse_text": "Psa 34:9 Oh, fear the Lord , you his saints , for those who fear him have no lack !",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "fear no lack"
+    },
+    {
+      "vcid": 4231,
+      "reference": "Psa 47:2",
+      "verse_text": "Psa 47:2 For the Lord , the Most High , is to be feared , a great king over all the earth .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "Most High feared great king over all earth"
+    },
+    {
+      "vcid": 15228,
+      "reference": "Psa 49:16",
+      "verse_text": "Psa 49:16 Be not afraid when a man becomes rich , when the glory of his house increases .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "man rich when glory his house increases"
+    },
+    {
+      "vcid": 13987,
+      "reference": "Psa 53:5",
+      "verse_text": "Psa 53:5 There they are, in great terror , where there is no terror ! For God scatters the bones of him who encamps against you; you put them to shame , for God has rejected them .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "God scatters bones encamps put them to shame for God rejected"
+    },
+    {
+      "vcid": 17323,
+      "reference": "Psa 53:5",
+      "verse_text": "Psa 53:5 There they are, in great terror , where there is no terror ! For God scatters the bones of him who encamps against you; you put them to shame , for God has rejected them .",
+      "term": "pa.chad",
+      "gloss": "to dread",
+      "cause_clause": "God scatters bones encamps put them to shame for God rejected"
+    },
+    {
+      "vcid": 12761,
+      "reference": "Psa 55:3",
+      "verse_text": "Psa 55:3 because of the noise of the enemy , because of the oppression of the wicked . For they drop trouble upon me, and in anger they bear a grudge against me .",
+      "term": "a.qah",
+      "gloss": "pressure",
+      "cause_clause": "drop trouble upon anger grudge me"
+    },
+    {
+      "vcid": 4287,
+      "reference": "Psa 61:5",
+      "verse_text": "Psa 61:5 For you , O God , have heard my vows ; you have given me the heritage of those who fear your name .",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "heard vows given heritage fear your name"
+    },
+    {
+      "vcid": 12458,
+      "reference": "Psa 90:7",
+      "verse_text": "Psa 90:7 For we are brought to an end by your anger ; by your wrath we are dismayed .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "end anger by wrath dismayed"
+    },
+    {
+      "vcid": 4239,
+      "reference": "Psa 96:4",
+      "verse_text": "Psa 96:4 For great is the Lord , and greatly to be praised ; he is to be feared above all gods .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "great Lord greatly praised feared above all gods"
+    },
+    {
+      "vcid": 4290,
+      "reference": "Psa 103:11",
+      "verse_text": "Psa 103:11 For as high as the heavens are above the earth , so great is his steadfast love toward those who fear him;",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "heavens above earth great steadfast love fear"
+    },
+    {
+      "vcid": 13988,
+      "reference": "Psa 105:38",
+      "verse_text": "Psa 105:38 Egypt was glad when they departed , for dread of them had fallen upon it .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "dread fallen upon it"
+    },
+    {
+      "vcid": 4297,
+      "reference": "Psa 118:4",
+      "verse_text": "Psa 118:4 Let those who fear the Lord say , “ His steadfast love endures forever .”",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": null
+    },
+    {
+      "vcid": 15063,
+      "reference": "Psa 119:39",
+      "verse_text": "Psa 119:39 Turn away the reproach that I dread , for your rules are good .",
+      "term": "ya.gor",
+      "gloss": "to fear",
+      "cause_clause": "good"
+    },
+    {
+      "vcid": 4298,
+      "reference": "Psa 119:74",
+      "verse_text": "Psa 119:74 Those who fear you shall see me and rejoice , because I have hoped in your word .",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "hoped word"
+    },
+    {
+      "vcid": 4301,
+      "reference": "Psa 128:4",
+      "verse_text": "Psa 128:4 Behold , thus shall the man be blessed who fears the Lord .",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "thus man blessed fears Lord"
+    },
+    {
+      "vcid": 4273,
+      "reference": "Psa 130:4",
+      "verse_text": "Psa 130:4 But with you there is forgiveness , that you may be feared .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "with forgiveness that feared"
+    },
+    {
+      "vcid": 4244,
+      "reference": "Psa 139:14",
+      "verse_text": "Psa 139:14 I praise you, for I am fearfully and wonderfully made . Wonderful are your works ; my soul knows it very well .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "fearfully wonderfully made Wonderful works soul knows well"
+    },
+    {
+      "vcid": 14863,
+      "reference": "Pro 1:29",
+      "verse_text": "Pro 1:29 Because they hated knowledge and did not choose the fear of the Lord ,",
+      "term": "yir.ah",
+      "gloss": "fear",
+      "cause_clause": "hated knowledge not choose fear Lord"
+    },
+    {
+      "vcid": 13971,
+      "reference": "Pro 3:25",
+      "verse_text": "Pro 3:25 Do not be afraid of sudden terror or of the ruin of the wicked , when it comes ,",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "comes"
+    },
+    {
+      "vcid": 15234,
+      "reference": "Pro 3:25",
+      "verse_text": "Pro 3:25 Do not be afraid of sudden terror or of the ruin of the wicked , when it comes ,",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "comes"
+    },
+    {
+      "vcid": 14867,
+      "reference": "Pro 23:17",
+      "verse_text": "Pro 23:17 Let not your heart envy sinners , but continue in the fear of the Lord all the day .",
+      "term": "yir.ah",
+      "gloss": "fear",
+      "cause_clause": "fear Lord all day"
+    },
+    {
+      "vcid": 12469,
+      "reference": "Pro 28:22",
+      "verse_text": "Pro 28:22 A stingy man hastens after wealth and does not know that poverty will come upon him .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "poverty come him"
+    },
+    {
+      "vcid": 15235,
+      "reference": "Pro 31:21",
+      "verse_text": "Pro 31:21 She is not afraid of snow for her household , for all her household are clothed in scarlet .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "all household clothed scarlet"
+    },
+    {
+      "vcid": 4269,
+      "reference": "Ecc 3:14",
+      "verse_text": "Ecc 3:14 I perceived that whatever God does endures forever ; nothing can be added to it, nor anything taken from it. God has done it, so that people fear before him.",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "whatever God does endures forever nothing added nor anything"
+    },
+    {
+      "vcid": 12467,
+      "reference": "Ecc 5:2",
+      "verse_text": "Ecc 5:2 Be not rash with your mouth , nor let your heart be hasty to utter a word before God , for God is in heaven and you are on earth . Therefore let your words be few .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "God in heaven on earth Therefore words be"
+    },
+    {
+      "vcid": 4270,
+      "reference": "Ecc 5:7",
+      "verse_text": "Ecc 5:7 For when dreams increase and words grow many , there is vanity ; but God is the one you must fear .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "words many vanity God fear"
+    },
+    {
+      "vcid": 17369,
+      "reference": "Ecc 5:8",
+      "verse_text": "Ecc 5:8 If you see in a province the oppression of the poor and the violation of justice and righteousness , do not be amazed at the matter , for the high official is watched by a higher , and there are yet higher ones over them .",
+      "term": "ta.mah",
+      "gloss": "to astounded",
+      "cause_clause": "high official watched by higher higher over them"
+    },
+    {
+      "vcid": 12440,
+      "reference": "Ecc 7:9",
+      "verse_text": "Ecc 7:9 Be not quick in your spirit to become angry , for anger lodges in the heart of fools .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "lodges heart fools"
+    },
+    {
+      "vcid": 4307,
+      "reference": "Ecc 7:18",
+      "verse_text": "Ecc 7:18 It is good that you should take hold of this , and from that withhold not your hand , for the one who fears God shall come out from both of them.",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "fears God come out both"
+    },
+    {
+      "vcid": 12468,
+      "reference": "Ecc 8:3",
+      "verse_text": "Ecc 8:3 Be not hasty to go from his presence . Do not take your stand in an evil cause , for he does whatever he pleases .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "does whatever pleases"
+    },
+    {
+      "vcid": 4271,
+      "reference": "Ecc 8:12",
+      "verse_text": "Ecc 8:12 Though a sinner does evil a hundred times and prolongs his life, yet I know that it will be well with those who fear God , because they fear before him.",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "I know that be well fear God because"
+    },
+    {
+      "vcid": 4308,
+      "reference": "Ecc 8:12",
+      "verse_text": "Ecc 8:12 Though a sinner does evil a hundred times and prolongs his life, yet I know that it will be well with those who fear God , because they fear before him.",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "I know that be well fear God because"
+    },
+    {
+      "vcid": 15236,
+      "reference": "Ecc 12:5",
+      "verse_text": "Ecc 12:5 they are afraid also of what is high , and terrors are in the way ; the almond tree blossoms , the grasshopper drags itself along, and desire fails , because man is going to his eternal home , and the mourners go about the streets —",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "man going eternal home mourners go streets"
+    },
+    {
+      "vcid": 17234,
+      "reference": "Ecc 12:5",
+      "verse_text": "Ecc 12:5 they are afraid also of what is high , and terrors are in the way ; the almond tree blossoms , the grasshopper drags itself along, and desire fails , because man is going to his eternal home , and the mourners go about the streets —",
+      "term": "chat.chat",
+      "gloss": "terror",
+      "cause_clause": "man going eternal home mourners go streets"
+    },
+    {
+      "vcid": 4184,
+      "reference": "Ecc 12:13",
+      "verse_text": "Ecc 12:13 The end of the matter ; all has been heard . Fear God and keep his commandments , for this is the whole duty of man .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "this whole man"
+    },
+    {
+      "vcid": 64496,
+      "reference": "Isa 7:8",
+      "verse_text": "Isa 7:8 For the head of Syria is Damascus , and the head of Damascus is Rezin . And within sixty-five years Ephraim will be shattered from being a people .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "head Syria Damascus head Damascus Rezin sixty-five years"
+    },
+    {
+      "vcid": 64498,
+      "reference": "Isa 9:4",
+      "verse_text": "Isa 9:4 For the yoke of his burden , and the staff for his shoulder , the rod of his oppressor , you have broken as on the day of Midian .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "yoke burden staff shoulder rod oppressor broken day"
+    },
+    {
+      "vcid": 17339,
+      "reference": "Isa 12:2",
+      "verse_text": "Isa 12:2 “ Behold , God is my salvation ; I will trust , and will not be afraid ; for the Lord God is my strength and my song , and he has become my salvation .”",
+      "term": "pa.chad",
+      "gloss": "to dread",
+      "cause_clause": "Lord God strength song become salvation"
+    },
+    {
+      "vcid": 13990,
+      "reference": "Isa 24:18",
+      "verse_text": "Isa 24:18 He who flees at the sound of the terror shall fall into the pit , and he who climbs out of the pit shall be caught in the snare . For the windows of heaven are opened , and the foundations of the earth tremble .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "windows heaven opened foundations earth tremble"
+    },
+    {
+      "vcid": 40265,
+      "reference": "Isa 28:19",
+      "verse_text": "Isa 28:19 As often as it passes through it will take you; for morning by morning it will pass through , by day and by night ; and it will be sheer terror to understand the message .",
+      "term": "ze.va.ah",
+      "gloss": "trembling",
+      "cause_clause": "morning morning pass through by day night be sheer terror"
+    },
+    {
+      "vcid": 64552,
+      "reference": "Isa 28:21",
+      "verse_text": "Isa 28:21 For the Lord will rise up as on Mount Perazim ; as in the Valley of Gibeon he will be roused ; to do his deed — strange is his deed ! and to work his work — alien is his work !",
+      "term": "ra.gaz",
+      "gloss": "to tremble",
+      "cause_clause": "Lord up as Mount Perazim as Valley Gibeon"
+    },
+    {
+      "vcid": 14884,
+      "reference": "Isa 29:13",
+      "verse_text": "Isa 29:13 And the Lord said : “ Because this people draw near with their mouth and honor me with their lips , while their hearts are far from me, and their fear of me is a commandment taught by men ,",
+      "term": "yir.ah",
+      "gloss": "fear",
+      "cause_clause": "is commandment taught men"
+    },
+    {
+      "vcid": 17316,
+      "reference": "Isa 29:23",
+      "verse_text": "Isa 29:23 For when he sees his children , the work of my hands , in his midst , they will sanctify my name ; they will sanctify the Holy One of Jacob and will stand in awe of the God of Israel .",
+      "term": "a.rats",
+      "gloss": "to tremble",
+      "cause_clause": "sees children work hands midst they sanctify name"
+    },
+    {
+      "vcid": 4169,
+      "reference": "Isa 30:31",
+      "verse_text": "Isa 30:31 The Assyrians will be terror-stricken at the voice of the Lord , when he strikes with his rod .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "Lord strikes rod"
+    },
+    {
+      "vcid": 4163,
+      "reference": "Isa 31:4",
+      "verse_text": "Isa 31:4 For thus the Lord said to me, “As a lion or a young lion growls over his prey , and when a band of shepherds is called out against him he is not terrified by their shouting or daunted at their noise , so the Lord of hosts will come down to fight on Mount Zion and on its hill .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "thus Lord said lion young lion growls over prey"
+    },
+    {
+      "vcid": 1850,
+      "reference": "Isa 32:10",
+      "verse_text": "Isa 32:10 In little more than a year you will shudder , you complacent women ; for the grape harvest fails , the fruit harvest will not come .",
+      "term": "ra.gaz",
+      "gloss": "to tremble",
+      "cause_clause": "grape harvest fails fruit harvest not come"
+    },
+    {
+      "vcid": 15067,
+      "reference": "Isa 41:10",
+      "verse_text": "Isa 41:10 fear not , for I am with you; be not dismayed , for I am your God ; I will strengthen you, I will help you, I will uphold you with my righteous right hand .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "I with not dismayed for I God strengthen"
+    },
+    {
+      "vcid": 15110,
+      "reference": "Isa 41:13",
+      "verse_text": "Isa 41:13 For I , the Lord your God , hold your right hand ; it is I who say to you, “ Fear not , I am the one who helps you .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "I Lord God hold right hand say Fear not"
+    },
+    {
+      "vcid": 15068,
+      "reference": "Isa 43:1",
+      "verse_text": "Isa 43:1 But now thus says the Lord , he who created you, O Jacob , he who formed you, O Israel : “ Fear not , for I have redeemed you; I have called you by name , you are mine .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "redeemed called you name you mine"
+    },
+    {
+      "vcid": 15112,
+      "reference": "Isa 43:5",
+      "verse_text": "Isa 43:5 Fear not , for I am with you; I will bring your offspring from the east , and from the west I will gather you .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "I bring offspring from east from west gather"
+    },
+    {
+      "vcid": 64499,
+      "reference": "Isa 51:6",
+      "verse_text": "Isa 51:6 Lift up your eyes to the heavens , and look at the earth beneath ; for the heavens vanish like smoke , the earth will wear out like a garment , and they who dwell in it will die in like manner ; but my salvation will be forever , and my righteousness will never be dismayed .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "heavens vanish smoke earth wear out garment dwell die"
+    },
+    {
+      "vcid": 15115,
+      "reference": "Isa 54:4",
+      "verse_text": "Isa 54:4 “ Fear not , for you will not be ashamed ; be not confounded , for you will not be disgraced ; for you will forget the shame of your youth , and the reproach of your widowhood you will remember no more .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "not ashamed not confounded not disgraced forget shame"
+    },
+    {
+      "vcid": 15116,
+      "reference": "Isa 54:14",
+      "verse_text": "Isa 54:14 In righteousness you shall be established ; you shall be far from oppression , for you shall not fear ; and from terror , for it shall not come near you .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "fear from terror not near you"
+    },
+    {
+      "vcid": 40281,
+      "reference": "Isa 54:14",
+      "verse_text": "Isa 54:14 In righteousness you shall be established ; you shall be far from oppression , for you shall not fear ; and from terror , for it shall not come near you .",
+      "term": "me.chit.tah",
+      "gloss": "terror",
+      "cause_clause": "fear from terror not near you"
+    },
+    {
+      "vcid": 4206,
+      "reference": "Isa 57:11",
+      "verse_text": "Isa 57:11 Whom did you dread and fear , so that you lied , and did not remember me, did not lay it to heart ? Have I not held my peace , even for a long time , and you do not fear me?",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "lied not remember not lay to heart not"
+    },
+    {
+      "vcid": 4968,
+      "reference": "Isa 59:19",
+      "verse_text": "Isa 59:19 So they shall fear the name of the Lord from the west , and his glory from the rising of the sun ; for he will come like a rushing stream , which the wind of the Lord drives .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "come rushing stream wind Lord drives"
+    },
+    {
+      "vcid": 17335,
+      "reference": "Isa 60:5",
+      "verse_text": "Isa 60:5 Then you shall see and be radiant ; your heart shall thrill and exult , because the abundance of the sea shall be turned to you, the wealth of the nations shall come to you .",
+      "term": "pa.chad",
+      "gloss": "to dread",
+      "cause_clause": "abundance sea turned to wealth nations come you"
+    },
+    {
+      "vcid": 40256,
+      "reference": "Isa 65:23",
+      "verse_text": "Isa 65:23 They shall not labor in vain or bear children for calamity , for they shall be the offspring of the blessed of the Lord , and their descendants with them .",
+      "term": "be.ha.lah",
+      "gloss": "dismay",
+      "cause_clause": "offspring blessed Lord their descendants with them"
+    },
+    {
+      "vcid": 15117,
+      "reference": "Jer 1:8",
+      "verse_text": "Jer 1:8 Do not be afraid of them , for I am with you to deliver you, declares the Lord .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "I with deliver declares Lord"
+    },
+    {
+      "vcid": 17342,
+      "reference": "Jer 2:19",
+      "verse_text": "Jer 2:19 Your evil will chastise you, and your apostasy will reprove you. Know and see that it is evil and bitter for you to forsake the Lord your God ; the fear of me is not in you, declares the Lord God of hosts .",
+      "term": "pach.dah",
+      "gloss": "dread",
+      "cause_clause": "evil bitter forsake Lord God fear not declares"
+    },
+    {
+      "vcid": 15162,
+      "reference": "Jer 3:8",
+      "verse_text": "Jer 3:8 She saw that for all the adulteries of that faithless one, Israel , I had sent her away with a decree of divorce . Yet her treacherous sister Judah did not fear , but she too went and played the whore .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "for all adulteries faithless Israel away with decree"
+    },
+    {
+      "vcid": 14957,
+      "reference": "Jer 6:25",
+      "verse_text": "Jer 6:25 Go not out into the field , nor walk on the road , for the enemy has a sword ; terror is on every side .",
+      "term": "ma.gor",
+      "gloss": "terror",
+      "cause_clause": "enemy sword terror on side"
+    },
+    {
+      "vcid": 4164,
+      "reference": "Jer 10:2",
+      "verse_text": "Jer 10:2 Thus says the Lord : “ Learn not the way of the nations , nor be dismayed at the signs of the heavens because the nations are dismayed at them ,",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "nations dismayed them"
+    },
+    {
+      "vcid": 15118,
+      "reference": "Jer 10:5",
+      "verse_text": "Jer 10:5 Their idols are like scarecrows in a cucumber field , and they cannot speak ; they have to be carried , for they cannot walk . Do not be afraid of them, for they cannot do evil , neither is it in them to do good .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "cannot walk not afraid of for evil neither"
+    },
+    {
+      "vcid": 4252,
+      "reference": "Jer 10:7",
+      "verse_text": "Jer 10:7 Who would not fear you, O King of the nations ? For this is your due ; for among all the wise ones of the nations and in all their kingdoms there is none like you .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "due for all wise ones nations all kingdoms none"
+    },
+    {
+      "vcid": 64500,
+      "reference": "Jer 14:4",
+      "verse_text": "Jer 14:4 Because of the ground that is dismayed , since there is no rain on the land , the farmers are ashamed ; they cover their heads .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "no rain land farmers ashamed cover their heads"
+    },
+    {
+      "vcid": 14958,
+      "reference": "Jer 20:4",
+      "verse_text": "Jer 20:4 For thus says the Lord : Behold , I will make you a terror to yourself and to all your friends . They shall fall by the sword of their enemies while you look on . And I will give all Judah into the hand of the king of Babylon . He shall carry them captive to Babylon , and shall strike them down with the sword .",
+      "term": "ma.gor",
+      "gloss": "terror",
+      "cause_clause": "thus says Lord Behold make terror all friends"
+    },
+    {
+      "vcid": 14955,
+      "reference": "Jer 20:10",
+      "verse_text": "Jer 20:10 For I hear many whispering . Terror is on every side ! “ Denounce him! Let us denounce him!” say all my close friends , watching for my fall . “ Perhaps he will be deceived ; then we can overcome him and take our revenge on him .”",
+      "term": "ma.gor",
+      "gloss": "terror",
+      "cause_clause": "hear many whispering Terror side Denounce denounce all"
+    },
+    {
+      "vcid": 64570,
+      "reference": "Jer 25:38",
+      "verse_text": "Jer 25:38 Like a lion he has left his lair , for their land has become a waste because of the sword of the oppressor , and because of his fierce anger .”",
+      "term": "sham.mah",
+      "gloss": "horror: destroyed",
+      "cause_clause": "waste because sword oppressor because fierce anger"
+    },
+    {
+      "vcid": 13974,
+      "reference": "Jer 30:5",
+      "verse_text": "Jer 30:5 “ Thus says the Lord : We have heard a cry of panic , of terror , and no peace .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "says Lord heard cry panic terror no peace"
+    },
+    {
+      "vcid": 15316,
+      "reference": "Jer 30:5",
+      "verse_text": "Jer 30:5 “ Thus says the Lord : We have heard a cry of panic , of terror , and no peace .",
+      "term": "cha.ra.dah",
+      "gloss": "trembling",
+      "cause_clause": "says Lord heard cry panic terror no peace"
+    },
+    {
+      "vcid": 4167,
+      "reference": "Jer 30:10",
+      "verse_text": "Jer 30:10 “Then fear not , O Jacob my servant , declares the Lord , nor be dismayed , O Israel ; for behold , I will save you from far away , and your offspring from the land of their captivity . Jacob shall return and have quiet and ease , and none shall make him afraid .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "behold I save from far away offspring from land"
+    },
+    {
+      "vcid": 15120,
+      "reference": "Jer 30:10",
+      "verse_text": "Jer 30:10 “Then fear not , O Jacob my servant , declares the Lord , nor be dismayed , O Israel ; for behold , I will save you from far away , and your offspring from the land of their captivity . Jacob shall return and have quiet and ease , and none shall make him afraid .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "behold I save from far away offspring from land"
+    },
+    {
+      "vcid": 15267,
+      "reference": "Jer 30:10",
+      "verse_text": "Jer 30:10 “Then fear not , O Jacob my servant , declares the Lord , nor be dismayed , O Israel ; for behold , I will save you from far away , and your offspring from the land of their captivity . Jacob shall return and have quiet and ease , and none shall make him afraid .",
+      "term": "cha.rad",
+      "gloss": "to tremble",
+      "cause_clause": "behold I save from far away offspring from land"
+    },
+    {
+      "vcid": 15243,
+      "reference": "Jer 41:18",
+      "verse_text": "Jer 41:18 because of the Chaldeans . For they were afraid of them, because Ishmael the son of Nethaniah had struck down Gedaliah the son of Ahikam , whom the king of Babylon had made governor over the land .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "afraid of because Ishmael son Nethaniah struck down Gedaliah"
+    },
+    {
+      "vcid": 4328,
+      "reference": "Jer 42:11",
+      "verse_text": "Jer 42:11 Do not fear the king of Babylon , of whom you are afraid . Do not fear him, declares the Lord , for I am with you, to save you and to deliver you from his hand .",
+      "term": "ya.re",
+      "gloss": "afraid",
+      "cause_clause": "I save deliver his hand"
+    },
+    {
+      "vcid": 15122,
+      "reference": "Jer 42:11",
+      "verse_text": "Jer 42:11 Do not fear the king of Babylon , of whom you are afraid . Do not fear him, declares the Lord , for I am with you, to save you and to deliver you from his hand .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "I save deliver his hand"
+    },
+    {
+      "vcid": 64572,
+      "reference": "Jer 46:19",
+      "verse_text": "Jer 46:19 Prepare yourselves baggage for exile , O inhabitants of Egypt ! For Memphis shall become a waste , a ruin , without inhabitant .",
+      "term": "sham.mah",
+      "gloss": "horror: destroyed",
+      "cause_clause": "Memphis waste ruin without inhabitant"
+    },
+    {
+      "vcid": 4168,
+      "reference": "Jer 46:27",
+      "verse_text": "Jer 46:27 “But fear not , O Jacob my servant , nor be dismayed , O Israel , for behold , I will save you from far away , and your offspring from the land of their captivity . Jacob shall return and have quiet and ease , and none shall make him afraid .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "behold save from far away offspring from land captivity"
+    },
+    {
+      "vcid": 15123,
+      "reference": "Jer 46:27",
+      "verse_text": "Jer 46:27 “But fear not , O Jacob my servant , nor be dismayed , O Israel , for behold , I will save you from far away , and your offspring from the land of their captivity . Jacob shall return and have quiet and ease , and none shall make him afraid .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "behold save from far away offspring from land captivity"
+    },
+    {
+      "vcid": 15289,
+      "reference": "Jer 46:27",
+      "verse_text": "Jer 46:27 “But fear not , O Jacob my servant , nor be dismayed , O Israel , for behold , I will save you from far away , and your offspring from the land of their captivity . Jacob shall return and have quiet and ease , and none shall make him afraid .",
+      "term": "cha.rad",
+      "gloss": "to tremble",
+      "cause_clause": "behold save from far away offspring from land captivity"
+    },
+    {
+      "vcid": 15124,
+      "reference": "Jer 46:28",
+      "verse_text": "Jer 46:28 Fear not , O Jacob my servant , declares the Lord , for I am with you. I will make a full end of all the nations to which I have driven you, but of you I will not make a full end . I will discipline you in just measure , and I will by no means leave you unpunished .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "I make full end all nations which driven not"
+    },
+    {
+      "vcid": 64501,
+      "reference": "Jer 48:1",
+      "verse_text": "Jer 48:1 Concerning Moab . Thus says the Lord of hosts , the God of Israel : “ Woe to Nebo , for it is laid waste ! Kiriathaim is put to shame , it is taken ; the fortress is put to shame and broken down ;",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "laid waste Kiriathaim put to shame taken fortress shame broken down"
+    },
+    {
+      "vcid": 64573,
+      "reference": "Jer 48:9",
+      "verse_text": "Jer 48:9 “ Give wings to Moab , for she would fly away ; her cities shall become a desolation , with no inhabitant in them .",
+      "term": "sham.mah",
+      "gloss": "horror: destroyed",
+      "cause_clause": "away cities desolation with no inhabitant them"
+    },
+    {
+      "vcid": 4159,
+      "reference": "Jer 48:20",
+      "verse_text": "Jer 48:20 Moab is put to shame , for it is broken ; wail and cry ! Tell it beside the Arnon , that Moab is laid waste .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "broken wail cry Tell Arnon that Moab laid waste"
+    },
+    {
+      "vcid": 13992,
+      "reference": "Jer 48:44",
+      "verse_text": "Jer 48:44 He who flees from the terror shall fall into the pit , and he who climbs out of the pit shall be caught in the snare . For I will bring these things upon Moab , the year of their punishment , declares the Lord .",
+      "term": "pa.chad",
+      "gloss": "dread",
+      "cause_clause": "bring upon Moab year punishment declares Lord"
+    },
+    {
+      "vcid": 1902,
+      "reference": "Jer 49:16",
+      "verse_text": "Jer 49:16 The horror you inspire has deceived you, and the pride of your heart , you who live in the clefts of the rock , who hold the height of the hill . Though you make your nest as high as the eagle’s , I will bring you down from there , declares the Lord .",
+      "term": "tiph.le.tset",
+      "gloss": "terror",
+      "cause_clause": "nest high eagle’s down from there declares Lord"
+    },
+    {
+      "vcid": 38273,
+      "reference": "Jer 49:23",
+      "verse_text": "Jer 49:23 Concerning Damascus : “ Hamath and Arpad are confounded , for they have heard bad news ; they melt in fear , they are troubled like the sea that cannot be quiet .",
+      "term": "de.a.gah",
+      "gloss": "anxiety",
+      "cause_clause": "heard bad news fear troubled sea cannot quiet"
+    },
+    {
+      "vcid": 64574,
+      "reference": "Jer 50:3",
+      "verse_text": "Jer 50:3 “ For out of the north a nation has come up against her, which shall make her land a desolation , and none shall dwell in it; both man and beast shall flee away .",
+      "term": "sham.mah",
+      "gloss": "horror: destroyed",
+      "cause_clause": "out north nation come up against make land desolation"
+    },
+    {
+      "vcid": 64470,
+      "reference": "Jer 50:38",
+      "verse_text": "Jer 50:38 A drought against her waters , that they may be dried up ! For it is a land of images , and they are mad over idols .",
+      "term": "e.mah",
+      "gloss": "terror",
+      "cause_clause": "land images mad idols"
+    },
+    {
+      "vcid": 64575,
+      "reference": "Jer 51:29",
+      "verse_text": "Jer 51:29 The land trembles and writhes in pain , for the Lord’s purposes against Babylon stand , to make the land of Babylon a desolation , without inhabitant .",
+      "term": "sham.mah",
+      "gloss": "horror: destroyed",
+      "cause_clause": "Lord’s purposes against Babylon stand to make land"
+    },
+    {
+      "vcid": 64503,
+      "reference": "Jer 51:56",
+      "verse_text": "Jer 51:56 for a destroyer has come upon her, upon Babylon ; her warriors are taken ; their bows are broken in pieces , for the Lord is a God of recompense ; he will surely repay .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "destroyer come upon upon Babylon warriors taken bows"
+    },
+    {
+      "vcid": 15126,
+      "reference": "Eze 2:6",
+      "verse_text": "Eze 2:6 And you , son of man , be not afraid of them, nor be afraid of their words , though briers and thorns are with you and you sit on scorpions . Be not afraid of their words , nor be dismayed at their looks , for they are a rebellious house .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "briers thorns you sit on scorpions not afraid of"
+    },
+    {
+      "vcid": 15127,
+      "reference": "Eze 3:9",
+      "verse_text": "Eze 3:9 Like emery harder than flint have I made your forehead . Fear them not , nor be dismayed at their looks , for they are a rebellious house .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "they rebellious house"
+    },
+    {
+      "vcid": 12463,
+      "reference": "Eze 7:27",
+      "verse_text": "Eze 7:27 The king mourns , the prince is wrapped in despair , and the hands of the people of the land are paralyzed by terror . According to their way I will do to them, and according to their judgments I will judge them, and they shall know that I am the Lord .”",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "I Lord"
+    },
+    {
+      "vcid": 15287,
+      "reference": "Eze 30:9",
+      "verse_text": "Eze 30:9 “On that day messengers shall go out from me in ships to terrify the unsuspecting people of Cush , and anguish shall come upon them on the day of Egypt’s doom; for , behold , it comes !",
+      "term": "cha.rad",
+      "gloss": "to tremble",
+      "cause_clause": "behold comes"
+    },
+    {
+      "vcid": 40277,
+      "reference": "Eze 32:25",
+      "verse_text": "Eze 32:25 They have made her a bed among the slain with all her multitude , her graves all around it, all of them uncircumcised , slain by the sword ; for terror of them was spread in the land of the living , and they bear their shame with those who go down to the pit ; they are placed among the slain .",
+      "term": "chit.tit",
+      "gloss": "terror",
+      "cause_clause": "terror spread land living bear shame with go down"
+    },
+    {
+      "vcid": 40278,
+      "reference": "Eze 32:26",
+      "verse_text": "Eze 32:26 “ Meshech-Tubal is there , and all her multitude , her graves all around it, all of them uncircumcised , slain by the sword ; for they spread their terror in the land of the living .",
+      "term": "chit.tit",
+      "gloss": "terror",
+      "cause_clause": "spread terror land living"
+    },
+    {
+      "vcid": 40272,
+      "reference": "Eze 32:27",
+      "verse_text": "Eze 32:27 And they do not lie with the mighty , the fallen from among the uncircumcised , who went down to Sheol with their weapons of war , whose swords were laid under their heads , and whose iniquities are upon their bones ; for the terror of the mighty men was in the land of the living .",
+      "term": "chit.tit",
+      "gloss": "terror",
+      "cause_clause": "terror mighty land living"
+    },
+    {
+      "vcid": 40273,
+      "reference": "Eze 32:32",
+      "verse_text": "Eze 32:32 For I spread terror in the land of the living ; and he shall be laid to rest among the uncircumcised , with those who are slain by the sword , Pharaoh and all his multitude , declares the Lord God .”",
+      "term": "chit.tit",
+      "gloss": "terror",
+      "cause_clause": "spread terror in land living rest among uncircumcised"
+    },
+    {
+      "vcid": 17349,
+      "reference": "Dan 10:11",
+      "verse_text": "Dan 10:11 And he said to me, “O Daniel , man greatly loved , understand the words that I speak to you, and stand upright , for now I have been sent to you.” And when he had spoken this word to me, I stood up trembling .",
+      "term": "ra.ad",
+      "gloss": "to tremble",
+      "cause_clause": "now sent to spoken word to stood up trembling"
+    },
+    {
+      "vcid": 15128,
+      "reference": "Dan 10:12",
+      "verse_text": "Dan 10:12 Then he said to me, “ Fear not , Daniel , for from the first day that you set your heart to understand and humbled yourself before your God , your words have been heard , and I have come because of your words .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "from first day that set heart understand humbled"
+    },
+    {
+      "vcid": 15129,
+      "reference": "Dan 10:19",
+      "verse_text": "Dan 10:19 And he said , “O man greatly loved , fear not , peace be with you; be strong and of good courage .” And as he spoke to me, I was strengthened and said , “Let my lord speak , for you have strengthened me .”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "strengthened me"
+    },
+    {
+      "vcid": 4204,
+      "reference": "Hos 10:3",
+      "verse_text": "Hos 10:3 For now they will say : “We have no king , for we do not fear the Lord ; and a king — what could he do for us ?”",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "now say no king for not fear Lord"
+    },
+    {
+      "vcid": 14972,
+      "reference": "Hos 10:5",
+      "verse_text": "Hos 10:5 The inhabitants of Samaria tremble for the calf of Beth-aven . Its people mourn for it, and so do its idolatrous priests — those who rejoiced over it and over its glory — for it has departed from them .",
+      "term": "gur",
+      "gloss": "to dread",
+      "cause_clause": "idolatrous priests rejoiced over over glory has departed from them"
+    },
+    {
+      "vcid": 15272,
+      "reference": "Hos 11:10",
+      "verse_text": "Hos 11:10 They shall go after the Lord ; he will roar like a lion ; when he roars , his children shall come trembling from the west ;",
+      "term": "cha.rad",
+      "gloss": "to tremble",
+      "cause_clause": "he roars children trembling from west"
+    },
+    {
+      "vcid": 64557,
+      "reference": "Joe 2:1",
+      "verse_text": "Joe 2:1 Blow a trumpet in Zion ; sound an alarm on my holy mountain ! Let all the inhabitants of the land tremble , for the day of the Lord is coming ; it is near ,",
+      "term": "ra.gaz",
+      "gloss": "to tremble",
+      "cause_clause": "near"
+    },
+    {
+      "vcid": 4253,
+      "reference": "Joe 2:11",
+      "verse_text": "Joe 2:11 The Lord utters his voice before his army , for his camp is exceedingly great ; he who executes his word is powerful . For the day of the Lord is great and very awesome ; who can endure it ?",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "For day Lord great very awesome can endure it"
+    },
+    {
+      "vcid": 15130,
+      "reference": "Joe 2:21",
+      "verse_text": "Joe 2:21 “ Fear not , O land ; be glad and rejoice , for the Lord has done great things !",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "Lord done great things"
+    },
+    {
+      "vcid": 15131,
+      "reference": "Joe 2:22",
+      "verse_text": "Joe 2:22 Fear not , you beasts of the field , for the pastures of the wilderness are green ; the tree bears its fruit ; the fig tree and vine give their full yield .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "pastures wilderness green tree bears fruit fig tree vine"
+    },
+    {
+      "vcid": 14889,
+      "reference": "Jon 1:10",
+      "verse_text": "Jon 1:10 Then the men were exceedingly afraid and said to him, “ What is this that you have done !” For the men knew that he was fleeing from the presence of the Lord , because he had told them .",
+      "term": "yir.ah",
+      "gloss": "fear",
+      "cause_clause": "men knew he was fleeing presence Lord because told"
+    },
+    {
+      "vcid": 15248,
+      "reference": "Jon 1:10",
+      "verse_text": "Jon 1:10 Then the men were exceedingly afraid and said to him, “ What is this that you have done !” For the men knew that he was fleeing from the presence of the Lord , because he had told them .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "men knew he was fleeing presence Lord because told"
+    },
+    {
+      "vcid": 15292,
+      "reference": "Mic 4:4",
+      "verse_text": "Mic 4:4 but they shall sit every man under his vine and under his fig tree , and no one shall make them afraid , for the mouth of the Lord of hosts has spoken .",
+      "term": "cha.rad",
+      "gloss": "to tremble",
+      "cause_clause": "mouth Lord hosts spoken"
+    },
+    {
+      "vcid": 17366,
+      "reference": "Hab 1:5",
+      "verse_text": "Hab 1:5 “ Look among the nations , and see ; wonder and be astounded . For I am doing a work in your days that you would not believe if told .",
+      "term": "ta.mah",
+      "gloss": "to astounded",
+      "cause_clause": "am doing work days you would believe if told"
+    },
+    {
+      "vcid": 64504,
+      "reference": "Hab 2:17",
+      "verse_text": "Hab 2:17 The violence done to Lebanon will overwhelm you, as will the destruction of the beasts that terrified them, for the blood of man and violence to the earth , to cities and all who dwell in them .",
+      "term": "cha.tat",
+      "gloss": "to to be dismayed",
+      "cause_clause": "Lebanon overwhelm destruction beasts terrified for blood man"
+    },
+    {
+      "vcid": 64478,
+      "reference": "Zep 1:18",
+      "verse_text": "Zep 1:18 Neither their silver nor their gold shall be able to deliver them on the day of the wrath of the Lord . In the fire of his jealousy , all the earth shall be consumed ; for a full and sudden end he will make of all the inhabitants of the earth .",
+      "term": "ba.hal",
+      "gloss": "to dismay",
+      "cause_clause": "sudden make all inhabitants earth"
+    },
+    {
+      "vcid": 4255,
+      "reference": "Zep 2:11",
+      "verse_text": "Zep 2:11 The Lord will be awesome against them; for he will famish all the gods of the earth , and to him shall bow down, each in its place , all the lands of the nations .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "all gods earth bow each place all lands"
+    },
+    {
+      "vcid": 15293,
+      "reference": "Zep 3:13",
+      "verse_text": "Zep 3:13 those who are left in Israel ; they shall do no injustice and speak no lies , nor shall there be found in their mouth a deceitful tongue . For they shall graze and lie down , and none shall make them afraid .”",
+      "term": "cha.rad",
+      "gloss": "to tremble",
+      "cause_clause": "they graze lie down none make them afraid"
+    },
+    {
+      "vcid": 15246,
+      "reference": "Zec 9:5",
+      "verse_text": "Zec 9:5 Ashkelon shall see it, and be afraid ; Gaza too, and shall writhe in anguish ; Ekron also, because its hopes are confounded . The king shall perish from Gaza ; Ashkelon shall be uninhabited ;",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "hopes confounded king perish Gaza Ashkelon uninhabited"
+    },
+    {
+      "vcid": 4971,
+      "reference": "Mal 1:14",
+      "verse_text": "Mal 1:14 Cursed be the cheat who has a male in his flock , and vows it, and yet sacrifices to the Lord what is blemished . For I am a great King , says the Lord of hosts , and my name will be feared among the nations .",
+      "term": "ya.re",
+      "gloss": "to fear: revere",
+      "cause_clause": "great King says Lord hosts name feared among the nations"
+    },
+    {
+      "vcid": 14979,
+      "reference": "Mat 1:20",
+      "verse_text": "Mat 1:20 But as he considered these things , behold , an angel of the Lord appeared to him in a dream , saying , “ Joseph , son of David , do not fear to take Mary as your wife , for that which is conceived in her is from the Holy Spirit .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "conceived in her is from Holy Spirit"
+    },
+    {
+      "vcid": 15026,
+      "reference": "Mat 2:22",
+      "verse_text": "Mat 2:22 But when he heard that Archelaus was reigning over Judea in place of his father Herod , he was afraid to go there , and being warned in a dream he withdrew to the district of Galilee .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "Archelaus reigning Judea place his father Herod afraid"
+    },
+    {
+      "vcid": 15027,
+      "reference": "Mat 10:26",
+      "verse_text": "Mat 10:26 “ So have no fear of them , for nothing is covered that will not be revealed , or hidden that will not be known .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "nothing is covered that not revealed or hidden"
+    },
+    {
+      "vcid": 14977,
+      "reference": "Mat 14:5",
+      "verse_text": "Mat 14:5 And though he wanted to put him to death , he feared the people , because they held him to be a prophet .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "held him be prophet"
+    },
+    {
+      "vcid": 15029,
+      "reference": "Mat 21:26",
+      "verse_text": "Mat 21:26 But if we say , ‘ From man ,’ we are afraid of the crowd , for they all hold that John was a prophet .”",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "all hold John was prophet"
+    },
+    {
+      "vcid": 14984,
+      "reference": "Mat 28:5",
+      "verse_text": "Mat 28:5 But the angel said to the women , “Do not be afraid , for I know that you seek Jesus who was crucified .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "know that you seek Jesus crucified"
+    },
+    {
+      "vcid": 14813,
+      "reference": "Mar 4:41",
+      "verse_text": "Mar 4:41 And they were filled with great fear and said to one another , “ Who then is this , that even the wind and the sea obey him ?”",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "even wind and sea obey him"
+    },
+    {
+      "vcid": 14986,
+      "reference": "Mar 4:41",
+      "verse_text": "Mar 4:41 And they were filled with great fear and said to one another , “ Who then is this , that even the wind and the sea obey him ?”",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "even wind and sea obey him"
+    },
+    {
+      "vcid": 15031,
+      "reference": "Mar 6:20",
+      "verse_text": "Mar 6:20 for Herod feared John , knowing that he was a righteous and holy man , and he kept him safe . When he heard him , he was greatly perplexed , and yet he heard him gladly .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "Herod feared John knowing righteous and holy man"
+    },
+    {
+      "vcid": 14990,
+      "reference": "Mar 6:50",
+      "verse_text": "Mar 6:50 for they all saw him and were terrified . But immediately he spoke to them and said , “Take heart ; it is I . Do not be afraid .”",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "all saw and terrified But immediately spoke to"
+    },
+    {
+      "vcid": 14936,
+      "reference": "Mar 9:6",
+      "verse_text": "Mar 9:6 For he did not know what to say , for they were terrified .",
+      "term": "ekfobos",
+      "gloss": "terrified",
+      "cause_clause": "not know what say for were terrified"
+    },
+    {
+      "vcid": 15032,
+      "reference": "Mar 11:18",
+      "verse_text": "Mar 11:18 And the chief priests and the scribes heard it and were seeking a way to destroy him , for they feared him , because all the crowd was astonished at his teaching .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "feared him because all crowd astonished at his"
+    },
+    {
+      "vcid": 15033,
+      "reference": "Mar 11:32",
+      "verse_text": "Mar 11:32 But shall we say , ‘ From man ’?”— they were afraid of the people , for they all held that John really was a prophet .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "all held that John really was prophet"
+    },
+    {
+      "vcid": 15034,
+      "reference": "Mar 12:12",
+      "verse_text": "Mar 12:12 And they were seeking to arrest him but feared the people , for they perceived that he had told the parable against them . So they left him and went away .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "perceived that told parable against them So left"
+    },
+    {
+      "vcid": 14993,
+      "reference": "Mar 16:8",
+      "verse_text": "Mar 16:8 And they went out and fled from the tomb , for trembling and astonishment had seized them, and they said nothing to anyone , for they were afraid .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "afraid"
+    },
+    {
+      "vcid": 15305,
+      "reference": "Mar 16:8",
+      "verse_text": "Mar 16:8 And they went out and fled from the tomb , for trembling and astonishment had seized them, and they said nothing to anyone , for they were afraid .",
+      "term": "tromos",
+      "gloss": "trembling",
+      "cause_clause": "afraid"
+    },
+    {
+      "vcid": 14994,
+      "reference": "Luk 1:13",
+      "verse_text": "Luk 1:13 But the angel said to him , “Do not be afraid , Zechariah , for your prayer has been heard , and your wife Elizabeth will bear you a son , and you shall call his name John .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "your prayer heard and your wife Elizabeth bear"
+    },
+    {
+      "vcid": 14995,
+      "reference": "Luk 1:30",
+      "verse_text": "Luk 1:30 And the angel said to her , “Do not be afraid , Mary , for you have found favor with God .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "found favor with God"
+    },
+    {
+      "vcid": 14997,
+      "reference": "Luk 2:10",
+      "verse_text": "Luk 2:10 And the angel said to them , “ Fear not , for behold , I bring you good news of great joy that will be for all the people .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "behold you good news great joy that be all"
+    },
+    {
+      "vcid": 14999,
+      "reference": "Luk 8:25",
+      "verse_text": "Luk 8:25 He said to them , “ Where is your faith ?” And they were afraid , and they marveled , saying to one another , “Who then is this , that he commands even winds and water , and they obey him ?”",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "commands even winds and water and obey him"
+    },
+    {
+      "vcid": 14817,
+      "reference": "Luk 8:37",
+      "verse_text": "Luk 8:37 Then all the people of the surrounding country of the Gerasenes asked him to depart from them , for they were seized with great fear . So he got into the boat and returned .",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "seized great fear So he got into boat returned"
+    },
+    {
+      "vcid": 15039,
+      "reference": "Luk 12:32",
+      "verse_text": "Luk 12:32 “ Fear not , little flock , for it is your Father’s good pleasure to give you the kingdom .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "your Father’s good pleasure give you kingdom"
+    },
+    {
+      "vcid": 15040,
+      "reference": "Luk 19:21",
+      "verse_text": "Luk 19:21 for I was afraid of you , because you are a severe man . You take what you did not deposit , and reap what you did not sow .’",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "afraid you because are severe man take what"
+    },
+    {
+      "vcid": 15041,
+      "reference": "Luk 20:19",
+      "verse_text": "Luk 20:19 The scribes and the chief priests sought to lay hands on him at that very hour , for they perceived that he had told this parable against them , but they feared the people .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "perceived that told this parable against them but"
+    },
+    {
+      "vcid": 4143,
+      "reference": "Luk 21:9",
+      "verse_text": "Luk 21:9 And when you hear of wars and tumults , do not be terrified , for these things must first take place , but the end will not be at once .”",
+      "term": "ptoeō",
+      "gloss": "to frighten",
+      "cause_clause": "things must first take place but end not once"
+    },
+    {
+      "vcid": 12345,
+      "reference": "Luk 21:23",
+      "verse_text": "Luk 21:23 Alas for women who are pregnant and for those who are nursing infants in those days ! For there will be great distress upon the earth and wrath against this people .",
+      "term": "anankē",
+      "gloss": "necessity",
+      "cause_clause": "be great distress upon earth and wrath this"
+    },
+    {
+      "vcid": 14841,
+      "reference": "Luk 21:26",
+      "verse_text": "Luk 21:26 people fainting with fear and with foreboding of what is coming on the world . For the powers of the heavens will be shaken .",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "powers heavens shaken"
+    },
+    {
+      "vcid": 15042,
+      "reference": "Luk 22:2",
+      "verse_text": "Luk 22:2 And the chief priests and the scribes were seeking how to put him to death , for they feared the people .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "feared people"
+    },
+    {
+      "vcid": 15010,
+      "reference": "Luk 23:40",
+      "verse_text": "Luk 23:40 But the other rebuked him , saying , “Do you not fear God , since you are under the same sentence of condemnation ?",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "are under same condemnation"
+    },
+    {
+      "vcid": 15043,
+      "reference": "Joh 9:22",
+      "verse_text": "Joh 9:22 ( His parents said these things because they feared the Jews , for the Jews had already agreed that if anyone should confess Jesus to be Christ , he was to be put out of the synagogue .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "feared Jews for Jews already agreed that if"
+    },
+    {
+      "vcid": 15045,
+      "reference": "Act 5:26",
+      "verse_text": "Act 5:26 Then the captain with the officers went and brought them , but not by force , for they were afraid of being stoned by the people .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "afraid stoned people"
+    },
+    {
+      "vcid": 15046,
+      "reference": "Act 9:26",
+      "verse_text": "Act 9:26 And when he had come to Jerusalem , he attempted to join the disciples . And they were all afraid of him , for they did not believe that he was a disciple .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "was disciple"
+    },
+    {
+      "vcid": 14823,
+      "reference": "Rom 8:15",
+      "verse_text": "Rom 8:15 For you did not receive the spirit of slavery to fall back into fear , but you have received the Spirit of adoption as sons, by whom we cry , “ Abba ! Father !”",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "not receive spirit slavery fall back into fear but"
+    },
+    {
+      "vcid": 14839,
+      "reference": "Rom 13:3",
+      "verse_text": "Rom 13:3 For rulers are not a terror to good conduct , but to bad . Would you have no fear of the one who is in authority ? Then do what is good , and you will receive his approval ,",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "rulers are not terror good conduct but bad"
+    },
+    {
+      "vcid": 15047,
+      "reference": "Rom 13:3",
+      "verse_text": "Rom 13:3 For rulers are not a terror to good conduct , but to bad . Would you have no fear of the one who is in authority ? Then do what is good , and you will receive his approval ,",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "rulers are not terror good conduct but bad"
+    },
+    {
+      "vcid": 15014,
+      "reference": "Rom 13:4",
+      "verse_text": "Rom 13:4 for he is God’s servant for your good . But if you do wrong , be afraid , for he does not bear the sword in vain . For he is the servant of God , an avenger who carries out God’s wrath on the wrongdoer .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "is God’s servant for your good But if"
+    },
+    {
+      "vcid": 12344,
+      "reference": "1Cor 9:16",
+      "verse_text": "1Cor 9:16 For if I preach the gospel , that gives me no ground for boasting . For necessity is laid upon me . Woe to me if I do not preach the gospel !",
+      "term": "anankē",
+      "gloss": "necessity",
+      "cause_clause": "if preach the gospel gives me no boasting For necessity"
+    },
+    {
+      "vcid": 14842,
+      "reference": "2Cor 7:5",
+      "verse_text": "2Cor 7:5 For even when we came into Macedonia , our bodies had no rest , but we were afflicted at every turn— fighting without and fear within .",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "even we came into Macedonia our bodies had"
+    },
+    {
+      "vcid": 14825,
+      "reference": "2Cor 7:11",
+      "verse_text": "2Cor 7:11 For see what earnestness this godly grief has produced in you , but also what eagerness to clear yourselves, what indignation , what fear , what longing , what zeal , what punishment ! At every point you have proved yourselves innocent in the matter .",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "see what earnestness this godly grief produced you"
+    },
+    {
+      "vcid": 12350,
+      "reference": "2Cor 9:7",
+      "verse_text": "2Cor 9:7 Each one must give as he has decided in his heart , not reluctantly or under compulsion , for God loves a cheerful giver .",
+      "term": "anankē",
+      "gloss": "necessity",
+      "cause_clause": "God loves cheerful giver"
+    },
+    {
+      "vcid": 12347,
+      "reference": "2Cor 12:10",
+      "verse_text": "2Cor 12:10 For the sake of Christ , then, I am content with weaknesses , insults , hardships , persecutions , and calamities . For when I am weak , then I am strong .",
+      "term": "anankē",
+      "gloss": "necessity",
+      "cause_clause": "when weak then am strong"
+    },
+    {
+      "vcid": 15049,
+      "reference": "2Cor 12:20",
+      "verse_text": "2Cor 12:20 For I fear that perhaps when I come I may find you not as I wish , and that you may find me not as you wish — that perhaps there may be quarreling , jealousy , anger , hostility , slander , gossip , conceit , and disorder .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "fear that perhaps come find you not as"
+    },
+    {
+      "vcid": 15050,
+      "reference": "Gal 2:12",
+      "verse_text": "Gal 2:12 For before certain men came from James , he was eating with the Gentiles ; but when they came he drew back and separated himself , fearing the circumcision party.",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "before certain men came from James eating with Gentiles"
+    },
+    {
+      "vcid": 12312,
+      "reference": "Phili 2:26",
+      "verse_text": "Phili 2:26 for he has been longing for you all and has been distressed because you heard that he was ill .",
+      "term": "ademoneo",
+      "gloss": "be distressed",
+      "cause_clause": "heard that ill"
+    },
+    {
+      "vcid": 14962,
+      "reference": "2Ti 1:7",
+      "verse_text": "2Ti 1:7 for God gave us a spirit not of fear but of power and love and self-control .",
+      "term": "deilia",
+      "gloss": "timidity",
+      "cause_clause": "God gave us spirit not fear but power"
+    },
+    {
+      "vcid": 15052,
+      "reference": "Heb 11:23",
+      "verse_text": "Heb 11:23 By faith Moses , when he was born , was hidden for three months by his parents , because they saw that the child was beautiful , and they were not afraid of the king’s edict .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "saw child beautiful and not afraid king’s edict"
+    },
+    {
+      "vcid": 15053,
+      "reference": "Heb 11:27",
+      "verse_text": "Heb 11:27 By faith he left Egypt , not being afraid of the anger of the king , for he endured as seeing him who is invisible .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "endured as seeing invisible"
+    },
+    {
+      "vcid": 14834,
+      "reference": "1Jo 4:18",
+      "verse_text": "1Jo 4:18 There is no fear in love , but perfect love casts out fear . For fear has to do with punishment , and whoever fears has not been perfected in love .",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "fear has punishment and whoever fears not perfected in"
+    },
+    {
+      "vcid": 15018,
+      "reference": "1Jo 4:18",
+      "verse_text": "1Jo 4:18 There is no fear in love , but perfect love casts out fear . For fear has to do with punishment , and whoever fears has not been perfected in love .",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "fear has punishment and whoever fears not perfected in"
+    },
+    {
+      "vcid": 15020,
+      "reference": "Rev 14:7",
+      "verse_text": "Rev 14:7 And he said with a loud voice , “ Fear God and give him glory , because the hour of his judgment has come , and worship him who made heaven and earth , the sea and the springs of water .”",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "hour his judgment come and worship made heaven"
+    },
+    {
+      "vcid": 15021,
+      "reference": "Rev 15:4",
+      "verse_text": "Rev 15:4 Who will not fear , O Lord , and glorify your name ? For you alone are holy . All nations will come and worship you , for your righteous acts have been revealed .”",
+      "term": "fobeō",
+      "gloss": "to fear",
+      "cause_clause": "alone holy All nations come and worship you"
+    },
+    {
+      "vcid": 14845,
+      "reference": "Rev 18:10",
+      "verse_text": "Rev 18:10 They will stand far off , in fear of her torment , and say , “ Alas ! Alas ! You great city , you mighty city , Babylon ! For in a single hour your judgment has come .”",
+      "term": "fobos",
+      "gloss": "fear",
+      "cause_clause": "in single hour your judgment come"
+    }
+  ]
+}

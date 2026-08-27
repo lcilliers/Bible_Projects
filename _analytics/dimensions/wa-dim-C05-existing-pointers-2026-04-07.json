@@ -1,0 +1,18 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C05",
+    "produced_date": "2026-04-07"
+  },
+  "session_b_findings": [
+    {
+      "finding_id": "DIM-051-001",
+      "registry_id": 51,
+      "finding_type": "DIMENSION_REVIEW",
+      "finding": "H7379 (riv, strife/contention) has 2 healthy active groups in distress (#51): 234-001 (strife/contention, 19 verses) and 234-002 (pleading one's cause, 26 verses). A third group was created for the indictment/controversy sense — God's legal case against his people in the prophetic tradition — but was never populated with verse_context records and has been delete_flagged. Session B analyst should assess whether this prophetic lawsuit dimension of H7379 belongs within distress and whether the verse evidence warrants a third group. Candidate verses would be found in prophetic lawsuit texts (Isaiah, Jeremiah, Micah) where H7379 names God's formal contention with Israel.",
+      "raised_date": "2026-04-06",
+      "session_b_instruction": "WA-DimensionReview-Instruction-v1.2-2026-04-06"
+    }
+  ],
+  "session_d_pointers": []
+}

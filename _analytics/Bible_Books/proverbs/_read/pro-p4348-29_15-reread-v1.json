@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 29,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4348 (Pro 29:15) — the rod and reproof give wisdom; a child left to himself shames his mother.",
+ "spans": {
+  "266786": {
+   "gloss": "wisdom from correction (chokmah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "discipline's fruit — the wisdom the rod and reproof impart"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the child",
+     "to": 266786,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the wisdom that the rod and reproof give — the fruit of loving correction in a child, the opposite of the shame an undisciplined child brings, correction as the making of a wise person"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the shame of neglect it is set against (266789)",
+     "to": 266786,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "set against the disgrace a child left to himself brings",
+     "to": 266789,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "chokmah (wisdom) — 'the rod and reproof give WISDOM'; correction, firmly and lovingly given, makes a child wise. Discipline is not cruelty but the imparting of wisdom (cf 13:24; 22:15; 29:17)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "266789": {
+   "gloss": "shame of neglect (bosh)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "disgrace — the shame an undisciplined child brings his mother"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the mother",
+     "to": 266789,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the shame brought on a mother by a child left to himself — the disgrace of the undisciplined child, the bitter fruit of neglected correction, against the wisdom discipline would have given"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the wisdom of correction it is set against (266786)",
+     "to": 266789,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the wisdom the rod and reproof impart",
+     "to": 266789,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "bosh (be ashamed) — 'but a child left to himself brings SHAME to his mother'; neglected discipline yields a child who disgraces his parent. To withhold correction is to prepare shame (cf 29:15a; 10:1)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

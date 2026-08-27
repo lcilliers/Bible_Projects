@@ -1,0 +1,165 @@
+{
+  "cluster_code": "M02",
+  "generated_at": "2026-05-16T00:00:00Z",
+  "governing_instruction": "wa-sessionb-cluster-instruction-v2_2-20260516 §8",
+  "primary_input": "wa-cluster-M02-constitution-v2-20260516.md",
+  "note": "verse_assignments maps mti_term_id to sub-group code. CC should use this to route every is_relevant vc row: match on mti_term_id (from mti_terms) to assign cluster_subgroup_id. For terms with secondary sub-group placement, the verse-level assignment follows the primary sub-group. The verse_assignments section provides the term-level routing; CC derives the vc-level routing from this.",
+  "subgroups": [
+    {
+      "subgroup_code": "M02-A",
+      "label": "Divine Wrath as Judicial Force",
+      "core_description": "Anger understood as settled, purposeful, and judicially operative — a divine inner disposition that responds to moral failure with binding consequence. Wrath as the ground of oaths and exclusion, a revealed reality descending from heaven, the destiny of those outside covenant, and the force behind institutional and eschatological judgment. The inner-being characteristic is wrath as settled moral verdict with covenantal and legal weight.",
+      "sort_order": 1,
+      "term_placements": [
+        {"mti_term_id": 37, "strongs": "G3709", "translit": "orgē", "placement": "primary"},
+        {"mti_term_id": 223, "strongs": "H7110A", "translit": "qe.tseph", "placement": "primary"},
+        {"mti_term_id": 256, "strongs": "H7109", "translit": "qe.tsaph", "placement": "primary"},
+        {"mti_term_id": 1405, "strongs": "H0599", "translit": "a.naph", "placement": "primary"},
+        {"mti_term_id": 114, "strongs": "H2194", "translit": "za.am_verb", "placement": "secondary"},
+        {"mti_term_id": 115, "strongs": "H2195", "translit": "za.am_noun", "placement": "secondary"},
+        {"mti_term_id": 222, "strongs": "H7107", "translit": "qa.tsaph", "placement": "primary"},
+        {"mti_term_id": 227, "strongs": "H7265", "translit": "re.gaz", "placement": "primary"},
+        {"mti_term_id": 136, "strongs": "H2534", "translit": "che.mah", "placement": "secondary"}
+      ]
+    },
+    {
+      "subgroup_code": "M02-B",
+      "label": "Burning Rage and Inner Heat",
+      "core_description": "Anger understood as consuming inner fire — an intensity of heat that wells up, fills the person, pours out, and burns. The inner-being characteristic is anger as thermal force: an inner intensity that kindles, ignites, fills, pours, and burns. Encompasses both divine and human subjects. Distinguished from M02-A by phenomenology (heat vs. judicial structure) and from M02-C by intensity register (eruption vs. moral standing).",
+      "sort_order": 2,
+      "term_placements": [
+        {"mti_term_id": 136, "strongs": "H2534", "translit": "che.mah", "placement": "primary"},
+        {"mti_term_id": 139, "strongs": "H2734", "translit": "cha.rah", "placement": "primary"},
+        {"mti_term_id": 140, "strongs": "H2740", "translit": "cha.ron", "placement": "primary"},
+        {"mti_term_id": 135, "strongs": "H2528", "translit": "che.ma", "placement": "primary"},
+        {"mti_term_id": 1552, "strongs": "H2750", "translit": "cho.ri", "placement": "primary"},
+        {"mti_term_id": 921, "strongs": "H2152", "translit": "zal.a.phah", "placement": "primary"},
+        {"mti_term_id": 254, "strongs": "H2196", "translit": "za.aph_verb", "placement": "primary"},
+        {"mti_term_id": 255, "strongs": "H2197", "translit": "za.aph_noun", "placement": "primary"},
+        {"mti_term_id": 6801, "strongs": "H2198", "translit": "za.eph", "placement": "primary"},
+        {"mti_term_id": 38, "strongs": "G3710", "translit": "orgizō", "placement": "primary"},
+        {"mti_term_id": 37, "strongs": "G3709", "translit": "orgē", "placement": "secondary"},
+        {"mti_term_id": 1411, "strongs": "G3950", "translit": "parorgismos", "placement": "secondary"}
+      ]
+    },
+    {
+      "subgroup_code": "M02-C",
+      "label": "Indignation and Moral Displeasure",
+      "core_description": "Anger understood as a standing moral posture — principled inner displeasure at wrongdoing that is less explosive than burning rage and more characteristic than momentary kindling. The inner-being characteristic is displeasure held as a moral verdict: the person knows what is wrong and maintains that position inwardly. Includes righteous indignation proving repentance, divine moral displeasure as a daily stance, brooding sullen anger, and dispositional anger-susceptibility as a character flaw.",
+      "sort_order": 3,
+      "term_placements": [
+        {"mti_term_id": 922, "strongs": "G0024", "translit": "aganaktēsis", "placement": "primary"},
+        {"mti_term_id": 1411, "strongs": "G3950", "translit": "parorgismos", "placement": "primary"},
+        {"mti_term_id": 114, "strongs": "H2194", "translit": "za.am_verb", "placement": "primary"},
+        {"mti_term_id": 115, "strongs": "H2195", "translit": "za.am_noun", "placement": "primary"},
+        {"mti_term_id": 6801, "strongs": "H2198", "translit": "za.eph", "placement": "secondary"},
+        {"mti_term_id": 91, "strongs": "H0888", "translit": "be.esh", "placement": "primary"},
+        {"mti_term_id": 1410, "strongs": "G3711", "translit": "orgilos", "placement": "primary"}
+      ]
+    },
+    {
+      "subgroup_code": "M02-D",
+      "label": "Provocation — Anger Aroused",
+      "core_description": "Anger understood from the side of its being stirred — the relational dynamic of one party's action kindling anger in another. The inner-being characteristic is the arousal dynamic itself: the movement from offense to ignition. Includes the act of provoking God to anger through idolatry, the act of provoking another person's anger, the moment of inner anger being stirred by moral outrage, and the physical or behavioral signal of anger's arrival. Structured around agent (who provokes) and subject (whose anger is aroused).",
+      "sort_order": 4,
+      "term_placements": [
+        {"mti_term_id": 149, "strongs": "H3707", "translit": "ka.as", "placement": "primary"},
+        {"mti_term_id": 40, "strongs": "G3949", "translit": "parorgizō", "placement": "primary"},
+        {"mti_term_id": 39, "strongs": "G3947", "translit": "paroxunō", "placement": "primary"},
+        {"mti_term_id": 1141, "strongs": "H4808", "translit": "me.ri.vah", "placement": "primary"},
+        {"mti_term_id": 177, "strongs": "H5307K", "translit": "na.phal", "placement": "primary"},
+        {"mti_term_id": 227, "strongs": "H7265", "translit": "re.gaz", "placement": "secondary"},
+        {"mti_term_id": 91, "strongs": "H0888", "translit": "be.esh", "placement": "secondary"}
+      ]
+    },
+    {
+      "subgroup_code": "M02-E",
+      "label": "Jealousy, Zeal and Possessive Passion",
+      "core_description": "Anger rooted in exclusive claim and possessive devotion — the response to rival attachment or the violation of a jealous claim. The inner-being characteristic is a passionately possessive inner claim that generates fury when violated, spanning divine constitutional jealousy, divine protective zeal, human spousal jealousy as a spirit requiring divine adjudication, human prophetic zeal consuming the bearer in service of God's honor, and destructive human covetous jealousy that proves fiercer than wrath.",
+      "sort_order": 5,
+      "term_placements": [
+        {"mti_term_id": 341, "strongs": "H7065", "translit": "qa.na", "placement": "primary"},
+        {"mti_term_id": 344, "strongs": "H7068", "translit": "qin.ah", "placement": "primary"},
+        {"mti_term_id": 2528, "strongs": "H7067H", "translit": "qan.na", "placement": "primary"},
+        {"mti_term_id": 2756, "strongs": "H7072", "translit": "qan.no", "placement": "primary"}
+      ]
+    },
+    {
+      "subgroup_code": "M02-F",
+      "label": "Strife, Quarrel and Contentious Anger",
+      "core_description": "Anger expressed outward as relational contention — the disputatious inner will that generates, sustains, and seeks conflict with others. The inner-being characteristic is anger as contentious relational force: quarreling as a corruption of community, strife rooted in pride and insolence, a dispute-loving disposition as an inner character tendency, and contentious anger that the wise avoid and fools cannot. Distinguished from M02-B (heat) and M02-A (judicial weight) by its relational outworking in ongoing conflict.",
+      "sort_order": 6,
+      "term_placements": [
+        {"mti_term_id": 1139, "strongs": "G2054", "translit": "eris", "placement": "primary"},
+        {"mti_term_id": 1431, "strongs": "G2371", "translit": "thumomacheō", "placement": "primary"},
+        {"mti_term_id": 6464, "strongs": "G3055", "translit": "logomachia", "placement": "primary"},
+        {"mti_term_id": 560, "strongs": "G5380", "translit": "filoneikos", "placement": "primary"},
+        {"mti_term_id": 1140, "strongs": "H4683", "translit": "mats.tsah", "placement": "primary"},
+        {"mti_term_id": 6467, "strongs": "H4695", "translit": "mats.tsut", "placement": "primary"},
+        {"mti_term_id": 38, "strongs": "G3710", "translit": "orgizō", "placement": "secondary"}
+      ]
+    },
+    {
+      "subgroup_code": "M02-BOUNDARY",
+      "label": "Boundary — Pending Researcher Disposition",
+      "core_description": "Terms whose Phase 3 corpus was mixed-register, thin, or edge-case relative to M02's characteristic anger/wrath/indignation/jealousy/provocation/dispute/vexation register. Held for researcher disposition at Phase 12. No characteristic-bearing catalogue prompts run on these terms. H6696B tsur has no active relevant corpus (all UT verses set aside as rock/cliff homonym); placement is structural only.",
+      "sort_order": 7,
+      "term_placements": [
+        {"mti_term_id": 1091, "strongs": "G0485", "translit": "antilogia", "placement": "primary"},
+        {"mti_term_id": 4556, "strongs": "G2042", "translit": "erethizō", "placement": "primary"},
+        {"mti_term_id": 2747, "strongs": "G2200", "translit": "zestos", "placement": "primary"},
+        {"mti_term_id": 151, "strongs": "H3708B", "translit": "ka.a.s", "placement": "primary"},
+        {"mti_term_id": 234, "strongs": "H7379", "translit": "riv", "placement": "primary"},
+        {"mti_term_id": 205, "strongs": "H6696B", "translit": "tsur", "placement": "primary"}
+      ]
+    }
+  ],
+  "verse_assignments_by_term": {
+    "note": "All is_relevant vc rows for each mti_term_id route to the sub-group listed below. CC uses mti_term_id from the vc table to derive cluster_subgroup_id assignments.",
+    "mti_term_id_to_subgroup": {
+      "37": "M02-A",
+      "38": "M02-B",
+      "39": "M02-D",
+      "40": "M02-D",
+      "91": "M02-C",
+      "114": "M02-C",
+      "115": "M02-C",
+      "135": "M02-B",
+      "136": "M02-B",
+      "139": "M02-B",
+      "140": "M02-B",
+      "149": "M02-D",
+      "151": "M02-BOUNDARY",
+      "177": "M02-D",
+      "205": "M02-BOUNDARY",
+      "222": "M02-A",
+      "223": "M02-A",
+      "227": "M02-A",
+      "234": "M02-BOUNDARY",
+      "254": "M02-B",
+      "255": "M02-B",
+      "256": "M02-A",
+      "341": "M02-E",
+      "344": "M02-E",
+      "560": "M02-F",
+      "921": "M02-B",
+      "922": "M02-C",
+      "1091": "M02-BOUNDARY",
+      "1139": "M02-F",
+      "1140": "M02-F",
+      "1141": "M02-D",
+      "1405": "M02-A",
+      "1410": "M02-C",
+      "1411": "M02-C",
+      "1431": "M02-F",
+      "1552": "M02-B",
+      "2528": "M02-E",
+      "2747": "M02-BOUNDARY",
+      "2756": "M02-E",
+      "4556": "M02-BOUNDARY",
+      "6464": "M02-F",
+      "6467": "M02-F",
+      "6801": "M02-B"
+    }
+  }
+}

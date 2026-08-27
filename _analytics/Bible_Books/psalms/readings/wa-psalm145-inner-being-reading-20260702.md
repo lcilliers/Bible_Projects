@@ -1,0 +1,27 @@
+# Psalm 145 — what it tells us about the inner being (Phase-2 chapter reading)
+
+- **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 145:1–21 (chapter-driven poetic build; roles sanity-checked; aheb-fix build). Complete chapter (1 v. backfilled with the fixed full-text logic). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens:** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`).
+- **Continual praise and meditation; the *desire* of every living thing satisfied; calling *in truth*.** Psalm 145 is the great acrostic hymn (the last psalm ascribed to David). Its inner-being findings: the **resolve of daily praise and meditation** (vv.1–2, 5); the **desire of every creature satisfied by God's open hand** (vv.15–16, 19); and nearness to those who **call in truth** (v.18).
+
+## The reading
+
+**I. The resolve of daily praise and meditation (vv.1–2, 5).**
+"I will **extol** you, my God and King… **every day I will bless you**… On the glorious splendor of your majesty, and on your wondrous works, **I will meditate**" (vv.1–2, 5). The finding: the self commits to **continual praise** — *every day* — and to **meditating** on God's majesty and works *(stated)*. The operation: the inner being **sustains a settled habit of blessing and pondering God** — praise not as an occasional burst but a *daily resolve*, and meditation as the mind's dwelling on God's splendour *(inferred: "every day I will bless you… I will meditate" makes praise a *durable practice* and meditation the deliberate turning of the mind onto God's works; the self orders its days around blessing God, cf. Ps 34:1, 71:8)*.
+
+**II. The *desire* of every living thing satisfied by God's open hand (vv.15–16, 19).**
+"The **eyes of all look to you**, and you give them their food in due season. You **open your hand**; you **satisfy the desire** (H7522) of **every living thing**… He **fulfills the desire** of those who **fear** (H3373, M01) him; he also **hears their cry** and saves them" (vv.15–16, 19). The gem-finding: God **satisfies the *desire* of every creature** and **fulfills the desire of those who fear him** *(stated)*. The operation: the inner being's ***desire* finds its answer in God** — the longing that runs through every living thing (and, more, through the God-fearer) is *met* at God's open hand; the self's appetite is not left gnawing but *satisfied* by the One to whom "the eyes of all look" *(inferred: "you open your hand, you satisfy the desire of every living thing… he fulfills the desire of those who fear him" makes God the *satisfier of longing* — the inner being's desire, when directed to God (the God-fearer's, v.19), is *fulfilled*; the appetite that Ps 107:9, 103:5, 63:5 track finds here its universal resolution — God as the answer to desire itself; and "the eyes of all look to you" (v.15) re-attests the dependent gaze)*.
+
+**III. Calling *in truth* (v.18).**
+"The LORD is **near to all who call on him**, to all who **call on him in truth**" (v.18). The finding: God's nearness is to those who call *in truth* — sincerely *(stated)*. The operation: the inner being's ***sincerity* conditions the nearness** — not the mere form of calling but calling "in truth" (genuinely, without pretence) is what God draws near to; the honesty of the calling heart matters *(inferred: "near to all who call on him in truth" makes the *genuineness* of the appeal the thing — the self that calls without pretence finds God near; cf. Ps 51:6 "you delight in truth in the inward being", John 4:24)*.
+
+## What Psalm 145 says about the inner being
+- **Praise and meditation are a *daily resolve* (vv.1–2, 5).** The self orders its days around blessing God and pondering his works — praise as durable practice, not occasional burst; the mind deliberately dwelling on God's splendour.
+- **The self's *desire* is *satisfied* by God (vv.15–16, 19).** The longing that runs through every living thing, and especially the God-fearer's, is *met* at God's open hand — the inner being's appetite not left gnawing but *fulfilled*; God as the answer to desire itself.
+- **Nearness is to those who *call in truth* (v.18).** The *sincerity* of the appeal conditions the nearness — the honest, unpretending calling heart is what God draws near to.
+
+## Honest notes
+- **A desire-resolution datum:** v.16/19's "satisfy/fulfill the desire" is the Psalter's most universal statement that *God satisfies longing* — the resolution of the appetite-thread running through 107:9, 103:5, 63:5, 42:1. Foregrounded as a key inner-being finding (the desire *directed to God* is the desire *met*).
+- **Scope honesty:** most of the psalm describes *God's* greatness, goodness, kingdom, and compassion (vv.3–4, 6–14, 17, 20 — the arena of praise-content). The inner-being weight is the self's daily-praise resolve (vv.1–2, 5), the satisfied desire (vv.15–16, 19), and calling-in-truth (v.18).
+- **Systemic Phase-1 residuals** (bearer=David/LORD bleed pervasive; God's-attribute terms gate-1 but arena; backfilled v. now full-text) — per the tracker's *Known Phase-1 residuals*; not re-detailed.
+- **Characteristics (sanity-checked, inner-being-relevant):** *extol/bless/meditate* (M22, vv.1–2,5); *desire-satisfied* (H7522, vv.16,19); *fear* (H3373, M01, v.19); *call-in-truth* (M37 + truth, v.18). The extensive God-attribute terms (gracious, merciful, righteous, etc.) are the praise arena.

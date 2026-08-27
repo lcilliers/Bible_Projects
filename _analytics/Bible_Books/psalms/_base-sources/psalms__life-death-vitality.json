@@ -1,0 +1,2139 @@
+{
+ "meta": {
+  "WORK_CONTRACT": {
+   "objective": "For each distinct reading (anchor) below, write a narrative answering: what does this passage say about the ib_char item for the inner-being operations. Unit of work = the passage.",
+   "unit_of_work": "passage",
+   "narrative_directives": [
+    "1. Cover everything — leave nothing out. Interpret every dimension present in each lexical, and every absence. A narrative that addresses only some dimensions is incomplete.",
+    "2. Silence is evidence. value 'none' = the reader explicitly found none; present:false = no row recorded. Interpret what the silence says (e.g. no seat -> the operation is not organ-located); never skip a dimension for being empty.",
+    "3. Read in relation to the inner being. Describe what the char DOES within the human inner life — God and others are the arena it acts toward, not the subject. Keep the lens on the inner-being process.",
+    "4. Describe the full process, not a label. Trace the movement: source -> operation -> target -> coupling -> effect. Show the flow, not a static tag.",
+    "5. No valence bias. Read the descent with the same weight as the ascent — pride, malice, the wicked's interior, failure, the dark movement as fully as praise or trust. Do not privilege the edifying.",
+    "6. Do not filter uncomfortable results. Report what the data supports even when uncomfortable or against expectation. Completeness over comfort.",
+    "7. Grounded + backtrackable. Only what the passage and its lexicals support; cite ve_lexical_id / reference for each claim; no imported theology, no invention. If evidence is thin, say so.",
+    "8. Preserve distinctions. Where a passage holds several lexicals, do not collapse them — the difference between them is a finding.",
+    "9. Narrate each distinct reading once. A lexical marked duplicate shares its anchor's outcome (same_as) — do not re-narrate it; reference the anchor. Write the narrative at the anchor and there note the recurrences.",
+    "10. Interrogate difference — variation is a finding. Where the same item has >1 distinct reading (see meta.reading_map), ask WHY they differ and whether the difference carries meaning or impact (a shift in bearer/source/target/coupling/intensity, or ascent->descent). How a characteristic varies across contexts is evidence of how it operates."
+   ],
+   "worklist": [
+    "Psa 49:5-20",
+    "Psa 54:1-7",
+    "Psa 56:1-13",
+    "Psa 59:1-5",
+    "Psa 86:2-7",
+    "Psa 89:28-52",
+    "Psa 118:14-21",
+    "Psa 119:104-116",
+    "Psa 121:7-8"
+   ],
+   "narratives_needed": "one per distinct reading (anchor) = scope_counts.distinct_readings; duplicates (same_as) are cross-referenced, not re-narrated.",
+   "completeness": {
+    "rule": "Complete iff every anchor reading has a narrative, every duplicate is cross-referenced to its anchor, and within each anchor every dimension (incl. none/absent) is interpreted. Nothing here is pre-filtered.",
+    "this_file_contains": "EVERY ve_lexical row (all 101..116 dimensions, incl. value \"none\"; absences shown present:false) for this family's char-spans.",
+    "verify_against_db": "SELECT COUNT(*) FROM ve_lexical x JOIN verse_span_index si ON si.id=x.verse_span_id WHERE COALESCE(x.delete_flagged,0)=0 AND si.ib_char_id IN (SELECT id FROM ib_characteristic WHERE book_scope=19 AND family='life-death-vitality');  -- must equal scope_counts.ve_lexical_rows"
+   },
+   "backtracking": {
+    "key": "ve_lexical.id — on every present dimension (and collected per lexical in ve_lexical_ids).",
+    "how": "Raw row: SELECT * FROM ve_lexical WHERE id = <ve_lexical_id>.",
+    "derivation": "ib_characteristic(family) -[ib_char_id]-> verse_span_index -[verse_span_id]-> ve_lexical; verse_span_index.verse_id -> verse -> passage. verse_span_index is the join only, not emitted."
+   },
+   "output": {
+    "format": "TWO artefacts per family, both required: (1) a companion JSON keyed to this base source by reading_id; (2) a rendered markdown.",
+    "json_file": "verse-analysis/psalms/_narratives/psalms__life-death-vitality__narratives.json",
+    "md_file": "verse-analysis/psalms/_narratives/psalms__life-death-vitality__narratives.md",
+    "granularity": "One record per ANCHOR reading (reading_id). Duplicates (same_as) are NOT re-narrated — reference the anchor.",
+    "record_shape": {
+     "reading_id": "str",
+     "char_key": "str",
+     "ib_char": "str",
+     "anchor_ref": "str",
+     "passage_ref": "str",
+     "narrative": "the RAW/analytical read — grounded prose meeting directives 1-10, citing the dimensions it rests on (may use study terms).",
+     "story": "the SAME content retold as FLOWING PROSE for a GENERAL ENGLISH READER — a story, with NO study language or technical jargon: no dimension numbers/labels, no sense/operation/bearer/coupling/locus, no ve_lexical/ib_char/anchor. Tell it plainly and vividly as you would to a non-specialist; it must say what `narrative` says, only in plain English.",
+     "citations": "[ve_lexical_id,...] the narrative rests on (backtrack; directive 7)",
+     "recurrences": "[ref,...] where this reading recurs (directive 9)",
+     "variation_note": "why this reading differs from the item's other readings, where it applies (directive 10)"
+    },
+    "markdown_render": "REQUIRED in every case. The .md shows, per passage: (a) the passage text, (b) the raw narrative, (c) the story. Renderer: scripts/_render_narratives_to_md_20260712.py --family <slug>.",
+    "completeness": "Every reading_id in this base source appears exactly once in the JSON; each record has BOTH narrative and story; each cites >=1 ve_lexical_id.",
+    "destination": "DB via output -> patch -> DB (all study work in the DB). The JSON is the transport; the .md is the readable rendering."
+   }
+  },
+  "family": "life-death-vitality",
+  "book": "Psalms",
+  "book_id": 19,
+  "generated": "2026-07-12",
+  "source_of_truth": "database/bible_research.db — authoritative; regenerable view.",
+  "ib_char_items": [
+   {
+    "char_key": "H5315:life",
+    "meaning": "life",
+    "cluster": "M47(Constitution) | M25(Life)"
+   },
+   {
+    "char_key": "H2421:live",
+    "meaning": "live",
+    "cluster": "Life"
+   }
+  ],
+  "reading_map": {
+   "H5315:life": [
+    {
+     "reading_id": "H5315:life#1",
+     "anchor_ref": "Psa 49:8",
+     "anchor_passage": "Psa 49:5-20",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5315:life#2",
+     "anchor_ref": "Psa 54:3",
+     "anchor_passage": "Psa 54:1-7",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5315:life#3",
+     "anchor_ref": "Psa 54:4",
+     "anchor_passage": "Psa 54:1-7",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5315:life#4",
+     "anchor_ref": "Psa 56:6",
+     "anchor_passage": "Psa 56:1-13",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5315:life#5",
+     "anchor_ref": "Psa 59:3",
+     "anchor_passage": "Psa 59:1-5",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5315:life#6",
+     "anchor_ref": "Psa 86:2",
+     "anchor_passage": "Psa 86:2-7",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5315:life#7",
+     "anchor_ref": "Psa 119:109",
+     "anchor_passage": "Psa 119:104-116",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H5315:life#8",
+     "anchor_ref": "Psa 121:7",
+     "anchor_passage": "Psa 121:7-8",
+     "recurs_at": []
+    }
+   ],
+   "H2421:live": [
+    {
+     "reading_id": "H2421:live#1",
+     "anchor_ref": "Psa 89:48",
+     "anchor_passage": "Psa 89:28-52",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2421:live#2",
+     "anchor_ref": "Psa 118:17",
+     "anchor_passage": "Psa 118:14-21",
+     "recurs_at": []
+    }
+   ]
+  },
+  "scope_counts": {
+   "ib_char_items": 2,
+   "passages": 9,
+   "lexicals": 10,
+   "distinct_readings": 10,
+   "duplicate_lexicals": 0,
+   "items_with_variation": 2,
+   "ve_lexical_rows": 111
+  },
+  "dimension_frame": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "reading_note": "RAW + COMPLETE, nothing pre-judged. value \"none\" = reader found none; present:false = no row recorded. Both are evidence — what is NOT said can matter as much as what is."
+ },
+ "passages": [
+  {
+   "passage_ref": "Psa 49:5-20",
+   "passage_text": "Psa 49:5 Why should I fear in times of trouble , when the iniquity of those who cheat me surrounds me , Psa 49:6 those who trust in their wealth and boast of the abundance of their riches ? Psa 49:7 Truly no man can ransom another , or give to God the price of his life , Psa 49:8 for the ransom of their life is costly and can never suffice , Psa 49:9 that he should live on forever and never see the pit . Psa 49:10 For he sees that even the wise die ; the fool and the stupid alike must perish and leave their wealth to others . Psa 49:11 Their graves are their homes forever , their dwelling places to all generations , though they called lands by their own names . Psa 49:12 Man in his pomp will not remain ; he is like the beasts that perish . Psa 49:13 This is the path of those who have foolish confidence; yet after them people approve of their boasts . Selah Psa 49:14 Like sheep they are appointed for Sheol ; death shall be their shepherd , and the upright shall rule over them in the morning . Their form shall be consumed in Sheol , with no place to dwell . Psa 49:15 But God will ransom my soul from the power of Sheol , for he will receive me. Selah Psa 49:16 Be not afraid when a man becomes rich , when the glory of his house increases . Psa 49:17 For when he dies he will carry nothing away; his glory will not go down after him. Psa 49:18 For though, while he lives , he counts himself blessed — and though you get praise when you do well for yourself — Psa 49:19 his soul will go to the generation of his fathers , who will never again see light . Psa 49:20 Man in his pomp yet without understanding is like the beasts that perish .",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 49:8",
+     "reading_id": "H5315:life#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7651041,
+      7651042,
+      7651043,
+      7651044,
+      7651045,
+      7651046,
+      7651047,
+      7651048,
+      7651050,
+      7651051,
+      7651049
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "soul / life (nefesh - ransom of their life)",
+       "ve_lexical_id": 7651041,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7651042,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "soul (self)",
+       "ve_lexical_id": 7651043,
+       "item_type": "pair",
+       "from_span": "279406",
+       "to_span": "279406",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "any man (his life unransomable)",
+       "ve_lexical_id": 7651044,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279406",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "ve_lexical_id": 7651045,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7651046,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "costly, can never suffice",
+       "ve_lexical_id": 7651047,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279406",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "ve_lexical_id": 7651048,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'for the ransom of their LIFE (nefesh) is costly and can never suffice' — the priceless, unbuyable soul; nefesh (first of three, v8,15,18) the life no wealth can redeem from the pit, beyond all human price",
+       "ve_lexical_id": 7651050,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7651051,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:seat",
+       "ve_lexical_id": 7651049,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 54:1-7",
+   "passage_text": "To the choirmaster : with stringed instruments . A Maskil of David , when the Ziphites went and told Saul , “Is not David hiding among us ?” Psa 54:1 O God , save me by your name , and vindicate me by your might . Psa 54:2 O God , hear my prayer ; give ear to the words of my mouth . Psa 54:3 For strangers have risen against me; ruthless men seek my life ; they do not set God before themselves. Selah Psa 54:4 Behold , God is my helper ; the Lord is the upholder of my life . Psa 54:5 He will return the evil to my enemies ; in your faithfulness put an end to them . Psa 54:6 With a freewill offering I will sacrifice to you; I will give thanks to your name , O Lord , for it is good . Psa 54:7 For he has delivered me from every trouble , and my eye has looked in triumph on my enemies .",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 54:3",
+     "reading_id": "H5315:life#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7653300,
+      7653301,
+      7653302,
+      7653303,
+      7653304,
+      7653305,
+      7653306,
+      7653307,
+      7653309,
+      7653310,
+      7653308
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nefesh - seek my life)",
+       "ve_lexical_id": 7653300,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7653301,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7653302,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7653303,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279986",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "sought (by the enemies)",
+       "ve_lexical_id": 7653304,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "279986",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7653305,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7653306,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the same nefesh God upholds (v4)",
+       "ve_lexical_id": 7653307,
+       "item_type": "pair",
+       "from_span": "279986",
+       "to_span": "279998",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'ruthless men seek my LIFE (nefesh)' — the psalmist's very life, the contested centre; nefesh (life/soul) here what the enemies hunt — the same nefesh that God is said to uphold (v4), the self endangered and then sustained",
+       "ve_lexical_id": 7653309,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7653310,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7653308,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    },
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 54:4",
+     "reading_id": "H5315:life#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7653311,
+      7653312,
+      7653319,
+      7653313,
+      7653314,
+      7653315,
+      7653316,
+      7653317,
+      7653318,
+      7653321,
+      7653322,
+      7653320
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nefesh - upholder of my life)",
+       "ve_lexical_id": 7653311,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7653312,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "God the helper and upholder of this life (v4)",
+       "ve_lexical_id": 7653319,
+       "item_type": "pair",
+       "from_span": "279998",
+       "to_span": "279996",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7653313,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7653314,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279998",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "upheld (by God)",
+       "ve_lexical_id": 7653315,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "279998",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7653316,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7653317,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the nefesh the enemies sought (v3)",
+       "ve_lexical_id": 7653318,
+       "item_type": "pair",
+       "from_span": "279998",
+       "to_span": "279986",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'the Lord is the upholder of my LIFE (nefesh)' — the endangered soul now sustained; nefesh here the life the enemies sought (v3), held up by God the helper (the qualifiers) — the turn from threat to confident security, 'Behold, God is my helper'",
+       "ve_lexical_id": 7653321,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7653322,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7653320,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 56:1-13",
+   "passage_text": "To the choirmaster : according to The Dove on Far-off Terebinths . A Miktam of David , when the Philistines seized him in Gath . Psa 56:1 Be gracious to me, O God , for man tramples on me; all day long an attacker oppresses me ; Psa 56:2 my enemies trample on me all day long, for many attack me proudly . Psa 56:3 When I am afraid , I put my trust in you. Psa 56:4 In God , whose word I praise , in God I trust ; I shall not be afraid . What can flesh do to me ? Psa 56:5 All day long they injure my cause ; all their thoughts are against me for evil . Psa 56:6 They stir up strife , they lurk ; they watch my steps , as they have waited for my life . Psa 56:7 For their crime ^ will they escape ? In wrath cast down the peoples , O God ! Psa 56:8 You have kept count of my tossings ; put my tears in your bottle . Are they not in your book ? Psa 56:9 Then my enemies will turn back in the day when I call . This I know , that God is for me . Psa 56:10 In God , whose word I praise , in the Lord , whose word I praise , Psa 56:11 in God I trust ; I shall not be afraid . What can man do to me ? Psa 56:12 I must perform my vows to you, O God ; I will render thank offerings to you . Psa 56:13 For you have delivered my soul from death , yes , my feet from falling , that I may walk before God in the light of life .",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 56:6",
+     "reading_id": "H5315:life#4",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7654292,
+      7654293,
+      7654294,
+      7654295,
+      7654296,
+      7654297,
+      7654298,
+      7654299,
+      7654301,
+      7654302,
+      7654300
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nefesh - waited for my life)",
+       "ve_lexical_id": 7654292,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7654293,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7654294,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7654295,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280305",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "targeted (by the enemies)",
+       "ve_lexical_id": 7654296,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280305",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7654297,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7654298,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the same nefesh God delivers from death (v13)",
+       "ve_lexical_id": 7654299,
+       "item_type": "pair",
+       "from_span": "280305",
+       "to_span": "280251",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they have waited for my LIFE (nefesh)' — the psalmist's life, the prize the enemies hunt; nefesh here what they lie in wait for — the same soul God delivers from death (v13), endangered then rescued",
+       "ve_lexical_id": 7654301,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7654302,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7654300,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 59:1-5",
+   "passage_text": "To the choirmaster : according to Do Not Destroy . A Miktam of David , when Saul sent men to watch his house in order to kill him . Psa 59:1 Deliver me from my enemies , O my God ; protect me from those who rise up against me ; Psa 59:2 deliver me from those who work evil , and save me from bloodthirsty men . Psa 59:3 For behold , they lie in wait for my life ; fierce men stir up strife against me. For no transgression or sin of mine, O Lord , Psa 59:4 for no fault of mine, they run and make ready . Awake , come to meet me, and see ! Psa 59:5 You , Lord God of hosts , are God of Israel . Rouse yourself to punish all the nations ; spare none of those who treacherously plot evil . Selah",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 59:3",
+     "reading_id": "H5315:life#5",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7655131,
+      7655132,
+      7655133,
+      7655134,
+      7655135,
+      7655136,
+      7655137,
+      7655138,
+      7655140,
+      7655141,
+      7655139
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nefesh - they lie in wait for my life)",
+       "ve_lexical_id": 7655131,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7655132,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7655133,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7655134,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280603",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "targeted (by the ambush)",
+       "ve_lexical_id": 7655135,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280603",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7655136,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7655137,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the life for which God is called to awake and see (v4)",
+       "ve_lexical_id": 7655138,
+       "item_type": "pair",
+       "from_span": "280603",
+       "to_span": "280615",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they lie in wait for my LIFE (nefesh)' — the psalmist's life, the prize of the ambush; nefesh here what the fierce men hunt, for which he calls God to awake, come, and see (v4, the qualifiers)",
+       "ve_lexical_id": 7655140,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7655141,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7655139,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 86:2-7",
+   "passage_text": "Psa 86:1 A Prayer of David. Incline your ear, O Lord, and answer me, for I am poor and needy. Psa 86:2 Preserve my life , for I am godly ; save your servant , who trusts in you— you are my God . Psa 86:3 Be gracious to me, O Lord , for to you do I cry all the day . Psa 86:4 Gladden the soul of your servant , for to you, O Lord , do I lift up my soul . Psa 86:5 For you , O Lord , are good and forgiving , abounding in steadfast love to all who call upon you . Psa 86:6 Give ear , O Lord , to my prayer ; listen to my plea for grace . Psa 86:7 In the day of my trouble I call upon you, for you answer me .",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 86:2",
+     "reading_id": "H5315:life#6",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7667071,
+      7667072,
+      7667073,
+      7667074,
+      7667075,
+      7667076,
+      7667077,
+      7667078,
+      7667080,
+      7667081,
+      7667079
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nephesh)",
+       "ve_lexical_id": 7667071,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "faculty",
+       "ve_lexical_id": 7667072,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7667073,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7667074,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284326",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be preserved",
+       "ve_lexical_id": 7667075,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by God",
+       "ve_lexical_id": 7667076,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284326",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7667077,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with being godly",
+       "ve_lexical_id": 7667078,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284326",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'PRESERVE my life (nephesh), for I am godly' - the self committed to God for keeping.",
+       "ve_lexical_id": 7667080,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7667081,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7667079,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 89:28-52",
+   "passage_text": "Psa 89:28 My steadfast love I will keep for him forever , and my covenant will stand firm for him . Psa 89:29 I will establish his offspring forever and his throne as the days of the heavens . Psa 89:30 If his children forsake my law and do not walk according to my rules , Psa 89:31 if they violate my statutes and do not keep my commandments , Psa 89:32 then I will punish their transgression with the rod and their iniquity with stripes , Psa 89:33 but I will not remove from him my steadfast love or be false to my faithfulness . Psa 89:34 I will not violate my covenant or alter the word that went forth from my lips . Psa 89:35 Once for all I have sworn by my holiness ; I will not lie to David . Psa 89:36 His offspring shall endure forever , his throne as long as the sun before me . Psa 89:37 Like the moon it shall be established forever , a faithful witness in the skies .” Selah Psa 89:38 But now you have cast off and rejected ; you are full of wrath against your anointed . Psa 89:39 You have renounced the covenant with your servant ; you have defiled his crown in the dust . Psa 89:40 You have breached all his walls ; you have laid his strongholds in ruins . Psa 89:41 All who pass by plunder him; he has become the scorn of his neighbors . Psa 89:42 You have exalted the right hand of his foes ; you have made all his enemies rejoice . Psa 89:43 You have also turned back the edge of his sword , and you have not made him stand in battle . Psa 89:44 You have made his splendor to cease and cast his throne to the ground . Psa 89:45 You have cut short the days of his youth ; you have covered him with shame . Selah Psa 89:46 How long, O Lord ? Will you hide yourself forever ? How long will your wrath burn like fire ? Psa 89:47 Remember how short my time is! For what vanity you have created all the children of man ! Psa 89:48 What man can live and never see death ? Who can deliver his soul from the power of Sheol ? Selah Psa 89:49 Lord , where is your steadfast love of old , which by your faithfulness you swore to David ? Psa 89:50 Remember , O Lord , how your servants are mocked , and how I bear in my heart the insults of all the many nations , Psa 89:51 with which your enemies mock , O Lord , with which they mock the footsteps of your anointed . Psa 89:52 Blessed be the Lord forever ! Amen and Amen . Book Four",
+   "lexicals": [
+    {
+     "ib_char": "live",
+     "char_key": "H2421:live",
+     "reference": "Psa 89:48",
+     "reading_id": "H2421:live#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7668257,
+      7668258,
+      7668259,
+      7668260,
+      7668261,
+      7668262,
+      7668263,
+      7668264,
+      7668266,
+      7668267,
+      7668265
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "live (chayah)",
+       "ve_lexical_id": 7668257,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "ve_lexical_id": 7668258,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7668259,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "any man",
+       "ve_lexical_id": 7668260,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284810",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "live",
+       "ve_lexical_id": 7668261,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "yet not escape death",
+       "ve_lexical_id": 7668262,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284810",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7668263,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7668264,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284810",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v48: 'What man can LIVE (chayah) and never see death?' - the reflection on mortality, no one delivers his own soul from the grave.",
+       "ve_lexical_id": 7668266,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7668267,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the soul unable to escape Sheol",
+       "ve_lexical_id": 7668265,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 118:14-21",
+   "passage_text": "Psa 118:14 The Lord is my strength and my song ; he has become my salvation . Psa 118:15 Glad songs of salvation are in the tents of the righteous : “The right hand of the Lord does valiantly , Psa 118:16 the right hand of the Lord exalts , the right hand of the Lord does valiantly !” Psa 118:17 I shall not die , but I shall live , and recount the deeds of the Lord . Psa 118:18 The Lord has disciplined me severely , but he has not given me over to death . Psa 118:19 Open to me the gates of righteousness , that I may enter through them and give thanks to the Lord . Psa 118:20 This is the gate of the Lord ; the righteous shall enter through it . Psa 118:21 I thank you that you have answered me and have become my salvation . Psa 118:22 The stone that the builders rejected has become the cornerstone.",
+   "lexicals": [
+    {
+     "ib_char": "live",
+     "char_key": "H2421:live",
+     "reference": "Psa 118:17",
+     "reading_id": "H2421:live#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7679754,
+      7679755,
+      7679756,
+      7679757,
+      7679758,
+      7679759,
+      7679760,
+      7679761,
+      7679763,
+      7679764,
+      7679762
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "live (chayah)",
+       "ve_lexical_id": 7679754,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "state",
+       "ve_lexical_id": 7679755,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7679756,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7679757,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271076",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "live and not die",
+       "ve_lexical_id": 7679758,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to recount God's deeds",
+       "ve_lexical_id": 7679759,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271076",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7679760,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7679761,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271076",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v17: 'I shall not die, but I shall LIVE (chayah), and recount the deeds of the LORD' - the resolve to live for testimony, life spared for praise.",
+       "ve_lexical_id": 7679763,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7679764,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with recounting his deeds",
+       "ve_lexical_id": 7679762,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 119:104-116",
+   "passage_text": "Psa 119:104 Through your precepts I get understanding ; therefore I hate every false way . Nun Psa 119:105 Your word is a lamp to my feet and a light to my path . Psa 119:106 I have sworn an oath and confirmed it, to keep your righteous rules . Psa 119:107 I am severely afflicted ; give me life , O Lord , according to your word ! Psa 119:108 Accept my freewill offerings of praise , O Lord , and teach me your rules . Psa 119:109 I hold my life in my hand continually , but I do not forget your law . Psa 119:110 The wicked have laid a snare for me, but I do not stray from your precepts . Psa 119:111 Your testimonies are my heritage forever , for they are the joy of my heart . Psa 119:112 I incline my heart to perform your statutes forever , to the end . Samekh Psa 119:113 I hate the double-minded , but I love your law . Psa 119:114 You are my hiding place and my shield ; I hope in your word . Psa 119:115 Depart from me, you evildoers , that I may keep the commandments of my God . Psa 119:116 Uphold me according to your promise , that I may live , and let me not be put to shame in my hope ! Psa 119:117 Hold me up, that I may be safe and have regard for your statutes continually!",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 119:109",
+     "reading_id": "H5315:life#7",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7682778,
+      7682779,
+      7682780,
+      7682781,
+      7682782,
+      7682783,
+      7682784,
+      7682785,
+      7682787,
+      7682788,
+      7682786
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "soul (nephesh)",
+       "ve_lexical_id": 7682778,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "faculty",
+       "ve_lexical_id": 7682779,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7682780,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7682781,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271265",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "long / cling / keep with the soul",
+       "ve_lexical_id": 7682782,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "toward God's word",
+       "ve_lexical_id": 7682783,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271265",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7682784,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the whole SOUL-arc of the psalm",
+       "ve_lexical_id": 7682785,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271265",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v109: 'I hold my SOUL (life) in my hand continually, yet I do not forget your law' - the self held in constant peril, yet the law unforgotten.",
+       "ve_lexical_id": 7682787,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7682788,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7682786,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 121:7-8",
+   "passage_text": "Psa 121:7 The Lord will keep you from all evil ; he will keep your life . Psa 121:8 The Lord will keep your going out and your coming in from this time forth and forevermore .",
+   "lexicals": [
+    {
+     "ib_char": "life",
+     "char_key": "H5315:life",
+     "reference": "Psa 121:7",
+     "reading_id": "H5315:life#8",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7684533,
+      7684534,
+      7684535,
+      7684536,
+      7684537,
+      7684538,
+      7684539,
+      7684540,
+      7684542,
+      7684543,
+      7684541
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "life / soul (nephesh)",
+       "ve_lexical_id": 7684533,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "faculty",
+       "ve_lexical_id": 7684534,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7684535,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the pilgrim",
+       "ve_lexical_id": 7684536,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272374",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be kept",
+       "ve_lexical_id": 7684537,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "by the LORD",
+       "ve_lexical_id": 7684538,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272374",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7684539,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7684540,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272374",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'he will keep your LIFE (nephesh)' - the very self kept by God, the soul preserved from all evil.",
+       "ve_lexical_id": 7684542,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7684543,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with God keeping from all evil",
+       "ve_lexical_id": 7684541,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

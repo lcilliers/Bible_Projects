@@ -1,0 +1,42 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C03",
+    "produced_date": "2026-04-07"
+  },
+  "session_b_findings": [],
+  "session_d_pointers": [
+    {
+      "flag_label": "PH2-042-001",
+      "registry_id": 42,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "G0021 agalliao (to rejoice greatly, 75 occ, 11 verses, 15%). Phase 2 research required.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-097-002",
+      "registry_id": 97,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "G6110 agalliama has 12 occurrences (STEP) but 0 verse records in current export. LXX-only term; relevant to NT joy vocabulary's Septuagintal roots. Phase 2 independent research required before any synthesis-level conclusions drawn from this term's absence.",
+      "session_target": "D",
+      "raised_date": "2026-03-25"
+    },
+    {
+      "flag_label": "PH2-097-003",
+      "registry_id": 97,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "G3166 megalaucheō, 3 occurrences (STEP), 0 verse records in export. Thin data term; boasting/braggery register, peripheral to joy analysis but flagged for completeness.",
+      "session_target": "D",
+      "raised_date": "2026-03-25"
+    },
+    {
+      "flag_label": "PH2-097-004",
+      "registry_id": 97,
+      "flag_code": "DATA_INTEGRITY",
+      "description": "G4862 is the Greek preposition sun (with), occ=278. Its presence in registry 097 is anomalous — likely STEP sub-gloss contamination from compound joy terms (e.g. sunchairō G4796). 99 verse records in export. Claude Code investigation required to determine correct disposition of these verse records.",
+      "session_target": "D",
+      "raised_date": "2026-03-25"
+    }
+  ]
+}

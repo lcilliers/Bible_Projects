@@ -1,0 +1,389 @@
+{
+  "meta": {
+    "generated_at": "2026-04-20T16:45:01Z",
+    "schema_version": "3.13.0",
+    "extractor_version": "1.0",
+    "source": "wa_vocab_set + wa_vocab_member (M32 live, 2026-04-20)",
+    "canonical_note": "DB is source of truth post-M32 for all listed vocabularies.",
+    "filter": "all active sets",
+    "description": "Controlled-vocabulary extract for session-start consumption. Validators query wa_vocab_set/member directly; this snapshot enables AI or researcher to load the same reference."
+  },
+  "sets": {
+    "DIMENSION_CONFIDENCE": {
+      "set_code": "DIMENSION_CONFIDENCE",
+      "name": "Dimension Review — Classification Confidence",
+      "description": "Source/confidence marker for a dimension assignment. KEYWORD_WEAK / KEYWORD_STRONG are automated-classifier outputs pending review. CLAUDE_AI is post-review analyst assignment.",
+      "governing_doc": "wa-dimensionreview-instruction [current]",
+      "applies_to": "wa_dimension_index.dimension_confidence",
+      "members": [
+        {
+          "value": "KEYWORD_WEAK",
+          "label": null,
+          "description": "Automated classifier weak match — starting hypothesis, pending review",
+          "sort_order": 1,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "KEYWORD_STRONG",
+          "label": null,
+          "description": "Automated classifier strong match — starting hypothesis, pending review",
+          "sort_order": 2,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "CLAUDE_AI",
+          "label": null,
+          "description": "Claude AI post-review analyst assignment — reviewed and confirmed",
+          "sort_order": 3,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        }
+      ],
+      "member_count": 3
+    },
+    "DIMENSION_LABEL": {
+      "set_code": "DIMENSION_LABEL",
+      "name": "Dimension Review — 11 Inner-Being Dimensions",
+      "description": "Canonical 11-dimension vocabulary used to classify verse-context groups during Dimension Review. Researcher-ratified 2026-04-20. Extension requires researcher decision per DR-13.",
+      "governing_doc": "wa-dimensionreview-instruction [current] §7.7",
+      "applies_to": "wa_dimension_index.dimension",
+      "members": [
+        {
+          "value": "01 — Emotion — Positive",
+          "label": null,
+          "description": "Inner states of pleasure, joy, delight, or satisfaction",
+          "sort_order": 1,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "02 — Emotion — Negative",
+          "label": null,
+          "description": "Inner states of pain, distress, grief, fear, anger, shame, or anxiety",
+          "sort_order": 2,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "03 — Cognition",
+          "label": null,
+          "description": "Inner acts of knowing, perceiving, remembering, understanding, and discerning",
+          "sort_order": 3,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "04 — Volition",
+          "label": null,
+          "description": "Inner acts of willing, purposing, choosing, desiring, and deciding",
+          "sort_order": 4,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "05 — Moral Character",
+          "label": null,
+          "description": "Stable inner qualities of moral nature — goodness, justice, integrity, purity, faithfulness",
+          "sort_order": 5,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "06 — Relational Disposition",
+          "label": null,
+          "description": "Inner orientation toward another — love, compassion, favour, attachment, contempt, hatred",
+          "sort_order": 6,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "07 — Vitality / Existence",
+          "label": null,
+          "description": "Animating life of the inner person — constitution, continuation, fragility, and end",
+          "sort_order": 7,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "08 — Transformation",
+          "label": null,
+          "description": "Inner change — renewal, healing, purification, formation, or degradation",
+          "sort_order": 8,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "09 — Agency / Power",
+          "label": null,
+          "description": "Exercise of inner capacity — sovereignty, authority, strength, restraint, self-giving",
+          "sort_order": 9,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "10 — Dependence / Creatureliness",
+          "label": null,
+          "description": "Inner posture of reliance — humility, dependence, trust, security",
+          "sort_order": 10,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "11 — Divine-Human Correspondence",
+          "label": null,
+          "description": "Inner-being characteristics that operate across the boundary between God and the human person",
+          "sort_order": 11,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        }
+      ],
+      "member_count": 11
+    },
+    "DOMINANT_SUBJECT": {
+      "set_code": "DOMINANT_SUBJECT",
+      "name": "Dimension Review — Dominant Subject",
+      "description": "Who is the primary agent in a verse-context group's analytical frame. GOD, HUMAN, OTHER_HUMAN, UNSEEN, or NONE when the subject is genuinely dual (e.g. divine-human correspondence).",
+      "governing_doc": "wa-dimensionreview-instruction [current] §7.7 Dimension 11 note; DR-12",
+      "applies_to": "wa_dimension_index.dominant_subject",
+      "members": [
+        {
+          "value": "HUMAN",
+          "label": null,
+          "description": "Human being is the primary inner-being agent in the group",
+          "sort_order": 1,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "GOD",
+          "label": null,
+          "description": "God is the primary inner-being agent in the group",
+          "sort_order": 2,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "OTHER_HUMAN",
+          "label": null,
+          "description": "Another human is the object/target of the inner-being state",
+          "sort_order": 3,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "UNSEEN",
+          "label": null,
+          "description": "Unseen realm or spiritual entity (angels, demons) — rare",
+          "sort_order": 4,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "NONE",
+          "label": null,
+          "description": "Subject is genuinely dual (divine and human both explicit) — typically at Dimension 11",
+          "sort_order": 5,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        }
+      ],
+      "member_count": 5
+    },
+    "MANUAL_OVERRIDE": {
+      "set_code": "MANUAL_OVERRIDE",
+      "name": "Dimension Review — Manual Override Flag",
+      "description": "Boolean flag: 1 = dimension locked by researcher review (DR-8 protected); 0 = open for reassignment. Post M29-family DimReview convention: dim_review_status=Complete anchors the assignment, MO=0 is expected.",
+      "governing_doc": "wa-dimensionreview-instruction [current] + DR-8",
+      "applies_to": "wa_dimension_index.manual_override",
+      "members": [
+        {
+          "value": "0",
+          "label": null,
+          "description": "Dimension is open for reassignment — default post-review state (dim_review_status=Complete anchors)",
+          "sort_order": 1,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "1",
+          "label": null,
+          "description": "Dimension locked by researcher review — DR-8 protected; updates require explicit MO in set clause",
+          "sort_order": 2,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        }
+      ],
+      "member_count": 2
+    },
+    "QA_FLAG": {
+      "set_code": "QA_FLAG",
+      "name": "Dimension Review — Phase B QA Flag",
+      "description": "Per-group quality assessment outcome raised during Phase B. QA-CLEAR (no action), QA-TERMCENTRIC (description rewrite), QA-VAGUE (vague — needs sharpening), QA-BROAD (spans multiple dimensions, needs split), QA-EXTERNALISED (description names external-circumstance not inner-being), QA-REVIEW (flag for Phase C reassignment).",
+      "governing_doc": "wa-dimensionreview-instruction [current] §6.3 + §7.3",
+      "applies_to": "(logged in observations, not a DB column)",
+      "members": [
+        {
+          "value": "QA-CLEAR",
+          "label": null,
+          "description": "No action — description, dimension, and subject are coherent",
+          "sort_order": 1,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "QA-TERMCENTRIC",
+          "label": null,
+          "description": "Description phrased from lexical definition rather than inner-being action — rewrite needed",
+          "sort_order": 2,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "QA-VAGUE",
+          "label": null,
+          "description": "Description too vague to identify the specific inner-being characteristic — sharpen",
+          "sort_order": 3,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "QA-BROAD",
+          "label": null,
+          "description": "Description spans multiple inner-being dimensions — may need group split",
+          "sort_order": 4,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "QA-EXTERNALISED",
+          "label": null,
+          "description": "Description names external circumstance rather than inner-being engagement",
+          "sort_order": 5,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        },
+        {
+          "value": "QA-REVIEW",
+          "label": null,
+          "description": "Dimension or dominant_subject incorrect/uncertain — flag for Phase C reassignment",
+          "sort_order": 6,
+          "deprecated": 0,
+          "deprecation_note": null,
+          "superseded_by_member_id": null,
+          "introduced_at": null,
+          "created_at": "2026-04-20T15:45:24",
+          "last_modified": null
+        }
+      ],
+      "member_count": 6
+    }
+  },
+  "set_count": 5,
+  "total_members": 27
+}

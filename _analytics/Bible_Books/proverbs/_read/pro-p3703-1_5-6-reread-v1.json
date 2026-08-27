@@ -1,0 +1,84 @@
+{
+ "book": "Pro", "book_id": 20, "chapter": 1, "provenance": "reread-proverbs-2026",
+ "note": "Passage 3703 (Pro 1:5-6). 'hear' upgraded seed-qualifier -> characteristic (listening/receptivity, an IB operation). 'saying' (melitsah, mis-tagged contempt) read as understand's target (qualifier). Two distinct 'wise' occurrences kept apart.",
+ "spans": {
+  "264832": {"gloss": "the wise (chakam)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"the wise one — the person of settled competence who still learns"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the wise person","to":264832,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"the wise disposition that hears and grows rather than resting"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"welded to hearing (shama) and increase in learning","to":264833,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"the wise here is the LEARNER-wise (still hearing/increasing), distinct from 264844 the sages-whose-words-carry-wisdom. The book's paradox: the wise are those who keep receiving."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264833": {"gloss": "hear / listen (shama)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"to hear — receptive listening that takes instruction in"},
+    {"n":102,"l":"type","k":"value","v":"action"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the wise","to":264832,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"listening so as to increase in learning"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"paired with the wise (its bearer) and the growth in learning it yields","to":264832,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"read as a characteristic (not the seed's qualifier): shama = the receptive-listening operation, an IB act the study registers (Reg 213 listen). It is the means by which the wise increase."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264836": {"gloss": "the one who understands (bin, Niphal)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"the discerning one — the person of understanding"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the discerning person","to":264836,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"the discerning person obtaining guidance/direction"},
+    {"n":107,"l":"target","k":"pair","v":"guidance","to":264838,"res":"span"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"paired with the wise; parallel figure in the couplet","to":264832,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"nabon (Niphal participle) = the settled discerning person, parallel to the wise; here he obtains guidance (tachbulot). Distinct from 264840 the ACT of understanding a proverb."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264838": {"gloss": "guidance / direction (tachbulot)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"guidance — steering, the skill of direction (from the sailor's ropes)"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the discerning person who obtains it","to":264838,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"the steering-competence the discerning gains"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"the good obtained by the discerning (264836)","to":264836,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"tachbulot pictures navigation — the inner capacity to steer a course through life; a distinct good from wisdom-as-competence and knowledge-as-content."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264840": {"gloss": "understand (bin, Hiphil)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"to understand — to penetrate the sense of wise speech"},
+    {"n":102,"l":"type","k":"value","v":"cognition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the learner","to":264840,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"discerning a proverb, a saying, the words of the wise and their riddles"},
+    {"n":107,"l":"target","k":"pair","v":"a saying (melitsah)","to":264842,"res":"span"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"the act that closes the purpose-chain: the aim of all the foregoing","to":264840,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"the Hiphil ACT of understanding (vs 264836 the discerning PERSON): its objects are the forms of wise speech — proverb, saying, words of the wise, riddles."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264844": {"gloss": "the wise (chakamim)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"the wise/sages — those whose words carry authority"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the sages","to":264844,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"the wise as the source of the words and riddles to be understood"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"paired with their words/riddles as their expression","to":264844,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"distinct occurrence of chakam from 264832: here the wise are the AUTHORITATIVE SOURCE ('the words of the wise'), not the learner who hears. The difference is the finding — the wise both receive and transmit."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]}
+ }
+}

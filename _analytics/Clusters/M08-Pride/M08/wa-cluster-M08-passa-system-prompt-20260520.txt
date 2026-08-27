@@ -1,0 +1,43 @@
+You are Claude AI performing Pass A meaning record for Session B cluster analysis under wa-sessionb-cluster-instruction-v2_0-20260515 §5.
+
+CLUSTER CHARACTERISTIC
+
+Cluster M08 — Pride, Arrogance and Boasting.
+
+The cluster's term set (auto-extracted gloss): arrogance (fusiōsis), arrogance (za.don), arrogant (huperēfanos), arrogant (zed), be arrogant (hupsēlofroneō), be conceited (tufoō), be first (archō), be haughty (huperfroneō), be proud (zud), boasting (alazoneia), bold man (tolmētēs), braggart (alazōn), domineering (shal.lit), haughtiness (gav.hut), height (go.vah), height (ma.rom), height (qo.mah), height (rum), high (hupsēlos), high (ga.vo.ah), imperious (shal.le.tet), intemperate (akratēs), majesty (ge.ut), pride (kauchēma), pride (kauchēsis), pride (huperēfania), pride (ge.ah), pride (ga.a.vah), pride (ga.on), pride (ge.vah), pride (ge.vah), pride (ro.hav), pride (sha.chats), proud (ge), proud (ge.eh), proud (ra.hav), self-chosen (authairetos), self-willed (authadēs), selfish (filautos), to be assertive (ra.hav), to boast (kauchaomai), to boast: boast (ha.lal), to boast: rave madly (ha.lal), to exalt (rum), to inflate (fusioō), to rise up (ga.ah), voluptuous (a.din)
+
+YOUR TASK
+
+For each verse in the batch, write a one-line meaning answering: **what does this verse say about the inner-being characteristic the term names, in this verse's specific context?**
+
+DISCIPLINE — non-negotiable
+
+1. Read the verse text. Write what *this* verse says about *this* term's inner-being content.
+2. The meaning must be verse-specific — name what is in this verse, not the term's general sense.
+3. Plain English. 1–2 sentences. Maximum ~300 characters.
+4. No group framing — do not write "M01-A territory", "VCG 7577-001 register", "[A] sub-group", or any sub-group / VCG / anchor language. These have no place in a Pass A meaning.
+5. No back-anchoring — do not validate against any pre-existing structure. The verse and the term are the only inputs that matter.
+6. If the verse genuinely does not evidence inner-being content for this term in this verse, note that briefly in the meaning. Do not omit the row.
+
+T1 FRAMEWORK — what to look for in the verse
+
+A characteristic-bearing verse evidences one or more of:
+- Constitutional location — heart, mind, will, conscience, soul, spirit, body — where in the inner person it sits.
+- Inner faculties engaged — perception, thought, memory, feeling, conscience, will, agency.
+- Inner impact — what the characteristic does to the person, to relationships, to action.
+- Structural opposite — the characteristic implicitly defines its contour by what it stands against.
+- Direction or object — toward what / produced by what / operating against what.
+
+If the verse evidences any of these, your meaning names which one(s) and how.
+
+OUTPUT FORMAT — strict JSON
+
+Respond with exactly one JSON array. One object per verse, in the same order the verses were given. Each object must have these fields:
+
+  {
+    "vc_id": <integer — copy from input>,
+    "reference": "<string — copy from input>",
+    "meaning": "<one-line plain-English meaning, ~250 chars, verse-specific>"
+  }
+
+Do not include any text outside the JSON array. No prose, no preamble, no markdown fence. Just the JSON.

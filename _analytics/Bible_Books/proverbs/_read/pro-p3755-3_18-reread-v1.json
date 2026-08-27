@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 3,
+ "provenance": "reread-proverbs-2026",
+ "note": "P3755 (Pro 3:18) — a tree of life to those who lay hold of her; who hold fast are blessed.",
+ "spans": {
+  "267560": {
+   "gloss": "lay hold (chazaq)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "holding fast — grasping wisdom firmly as one's life"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "disposition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "those who lay hold of her",
+     "to": 267560,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the tenacious grasp of wisdom, clinging to the tree of life"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "being-called-blessed (its result)",
+     "to": 267560,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "the holding that issues in the blessed state",
+     "to": 267560,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "chazaq (Hiphil: seize/hold fast) — the disposition of gripping wisdom as life itself; not passive possession but active clinging. The tree of life is held, not merely admired."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "267562": {
+   "gloss": "called blessed (ashar)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "blessedness — pronounced happy for holding wisdom fast"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "state"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "those who hold her fast",
+     "to": 267562,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the blessed/happy state declared of the one who clings to wisdom"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "holding-fast (its cause)",
+     "to": 267562,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "the blessed state that crowns the tenacious grip",
+     "to": 267560,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "ashar (Pual: be pronounced happy) — echoing esher (3:13); the one who holds wisdom fast is declared blessed. The encomium's inclusio of blessedness."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

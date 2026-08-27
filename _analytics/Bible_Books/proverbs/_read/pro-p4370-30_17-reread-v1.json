@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 30,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4370 (Pro 30:17) — the eye that mocks a father and scorns a mother will be picked out by ravens.",
+ "spans": {
+  "267132": {
+   "gloss": "mocks a father (laag)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "filial derision — the eye that mocks its father"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the contemptuous child",
+     "to": 267132,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the mocking of a father with the eye — the derision of a parent that, with scorn for a mother's authority, draws a terrible judgement, contempt for the parents who gave one life"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the scorn of the mother it is joined with (267134)",
+     "to": 267132,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the scorning of a mother's authority",
+     "to": 267134,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "laag (mock/deride) — 'the eye that MOCKS a father' (30:17); to deride one's father is a grievous impiety, judged with horror (the corpse left for ravens). Contempt for parents is contempt for the source of one's life (cf 30:11; 20:20)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "267134": {
+   "gloss": "scorns to obey a mother (buz)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "filial contempt — scorning obedience to a mother"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the contemptuous child",
+     "to": 267134,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the scorning to obey a mother — the contempt for maternal authority that, with mockery of a father, marks the rebellious child on whom a fearful judgement falls"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the mockery of the father it is joined with (267132)",
+     "to": 267134,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the eye that mocks a father",
+     "to": 267134,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "buz (despise/scorn) — 'and SCORNS to obey a mother' (30:17); contempt for a mother's authority, twin to mockery of a father, brings terrible judgement. To scorn the parents is to invite ruin."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

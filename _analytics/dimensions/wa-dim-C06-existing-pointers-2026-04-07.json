@@ -1,0 +1,26 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C06",
+    "produced_date": "2026-04-07"
+  },
+  "session_b_findings": [],
+  "session_d_pointers": [
+    {
+      "flag_label": "PH2-007-001",
+      "registry_id": 7,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "G4329 prosdokia has 5 occurrences (STEP) but only 2 verse records in export. The foreboding/apprehension sense (Luk 21:26) is analytically significant but the dataset is too thin for confident conclusions. Phase 2 independent research required before synthesis-level use of this term.",
+      "session_target": "D",
+      "raised_date": "2026-03-25"
+    },
+    {
+      "flag_label": "PH2-007-002",
+      "registry_id": 7,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "G4328 prosdokaō has 20 occurrences but only 15 verses in export; anxiety-register content is present in a minority of these. The anxiety dimension is contextual not lexical. Analysis limited to anxiety-valenced verses (Act 27:33, Act 28:6, Mat 24:50/Luk 12:46 context). Full corpus review in Phase 2 recommended.",
+      "session_target": "D",
+      "raised_date": "2026-03-25"
+    }
+  ]
+}

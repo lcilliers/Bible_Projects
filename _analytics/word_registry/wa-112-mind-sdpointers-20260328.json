@@ -1,0 +1,311 @@
+{
+  "meta": {
+    "json_template_version": "sdpointers_v1.0",
+    "json_filename": "wa-112-mind-sdpointers-20260328.json",
+    "registry_id": 112,
+    "word": "mind",
+    "cluster_assignment": "C01",
+    "produced_date": "20260328",
+    "extraction_instruction_version": "WA-SessionB-Extraction-Instruction-v5.2"
+  },
+  "registry_context": {
+    "sb_classification": "confirmed_characteristic",
+    "dimensions": "Cognitive/Mind, Volitional, Relational/Social, Spiritual/God-ward, Moral/Conscience",
+    "confirmed_count": 52,
+    "plausible_count": 23,
+    "dominant_terms": [
+      {
+        "strongs_id": "H2142",
+        "transliteration": "za.khar",
+        "verse_count": 215,
+        "evidential_status": "confirmed"
+      },
+      {
+        "strongs_id": "H8104G",
+        "transliteration": "sha.mar",
+        "verse_count": 195,
+        "evidential_status": "plausible"
+      },
+      {
+        "strongs_id": "H8104H",
+        "transliteration": "sha.mar",
+        "verse_count": 151,
+        "evidential_status": "plausible"
+      },
+      {
+        "strongs_id": "H8104J",
+        "transliteration": "sha.mar",
+        "verse_count": 75,
+        "evidential_status": "confirmed"
+      },
+      {
+        "strongs_id": "H5162G",
+        "transliteration": "na.cham",
+        "verse_count": 66,
+        "evidential_status": "confirmed"
+      }
+    ]
+  },
+  "pointers": [
+    {
+      "pointer_id": "112-SD001",
+      "pointer_type": "term_co_occurrence",
+      "pointer_subtype": "shared_domain",
+      "significance": "HIGH",
+      "strongs_id": "G3340",
+      "also_in_registries": [
+        {
+          "registry_id": 135,
+          "word": "repentance"
+        }
+      ],
+      "synthesis_questions": [
+        "Is metanoeō (meta+nous — after-mind, change of mind) primarily a mind-registry term that the repentance registry borrows, or is it primarily a repentance term that happens to be etymologically cognitive?",
+        "How does the cognitive reorientation of metanoeō relate structurally to the affective regret of metamellomai — are these two different modes of the same inner event, or genuinely distinct inner operations?",
+        "Does the repentance registry's H5162H na.cham (divine relenting) have a different function than the mind registry's H5162H — and if so, what does the difference reveal about whether na.cham is fundamentally a mind term or a relational term?"
+      ],
+      "research_depth_required": "STANDARD",
+      "prose_note": "G3340 metanoeō and G3341 metanoia are definitionally mind-change terms (meta+nous) but are treated as the primary repentance vocabulary in the NT. H5162H na.cham (relent/change mind) operates across registry 112 (mind-change) and registry 135 (repentance) and also connects to divine relenting. The structural question for Session D is whether cognitive reorientation (the mind-level change) and repentance (the whole-person turn) are the same event described from two perspectives, or whether the mind registry is documenting one component of a larger repentance movement. The narrative notes the distinction between metamellomai (affective regret) and metanoeō (cognitive reorientation) established in the repentance analysis — Session D should examine how this distinction maps onto the repentance registry's own account.",
+      "session_b_source_ref": "Section 10"
+    },
+    {
+      "pointer_id": "112-SD002",
+      "pointer_type": "term_co_occurrence",
+      "pointer_subtype": "shared_domain",
+      "significance": "HIGH",
+      "strongs_id": "H5162G",
+      "also_in_registries": [
+        {
+          "registry_id": 71,
+          "word": "grief"
+        },
+        {
+          "registry_id": 135,
+          "word": "repentance"
+        }
+      ],
+      "synthesis_questions": [
+        "Na.cham operates in three distinct registers across the programme — comfort of the grieving (Reg 71), cognitive mind-change/relenting (Reg 112), and repentance (Reg 135). Does the root unity of these three registers reveal something about the Hebrew anthropology's understanding of how inner-being change occurs?",
+        "Is the comfort of the bereaved (H5162G) a mind-level event, an affective-level event, or both — and does the grief registry's account of na.cham agree with the mind registry's characterisation?"
+      ],
+      "research_depth_required": "STANDARD",
+      "prose_note": "H5162G na.cham (comfort/console) and H5162H na.cham (relent/change mind) are two registers of a single root. The fact that the same root covers consolation of the grieving and change of mind — both human and divine — is one of the most structurally significant facts about the na.cham root. It implies that, in Hebrew anthropology, being comforted and changing one's mind are not categorically distinct events but expressions of the same inner movement: a shift in orientation in response to a changed situation or relationship. Session D should examine whether the na.cham root documents an integrated inner-being dynamic that the programme's separate registries (grief, mind, repentance) are each capturing from a different angle.",
+      "session_b_source_ref": "Section 4, Section 10"
+    },
+    {
+      "pointer_id": "112-SD003",
+      "pointer_type": "term_co_occurrence",
+      "pointer_subtype": "shared_domain",
+      "significance": "MEDIUM",
+      "strongs_id": "H5068",
+      "also_in_registries": [
+        {
+          "registry_id": 43,
+          "word": "desire"
+        },
+        {
+          "registry_id": 173,
+          "word": "will"
+        }
+      ],
+      "synthesis_questions": [
+        "Is na.dav (willing, free-will movement) better understood as a mind term (volitional inclination) or a desire term (motivating energy) — and does the desire registry's account of voluntary inner movement agree with the mind registry's characterisation?",
+        "How does na.dav (the heart's free stirring toward giving, Exo 35) relate to the will vocabulary — is voluntary action in the OT a function of the mind, the heart, the will, or all three?"
+      ],
+      "research_depth_required": "SURFACE",
+      "prose_note": "H5068 na.dav documents the inner movement of voluntary inclination — the heart stirring to give freely in the tabernacle passages (Exo 35), the willing person in later texts. This term sits at the intersection of mind (volitional cognition), desire (motivating energy), and will (voluntary action). The narrative places it in the mind registry as a volitional inner movement, but it could equally belong to the desire or will registries. Session D should examine whether na.dav is a bridging term that reveals the Hebrew anthropology's integration of thinking, desiring, and willing into a single volitional movement of the inner person.",
+      "session_b_source_ref": "Section 4, Section 10"
+    },
+    {
+      "pointer_id": "112-SD004",
+      "pointer_type": "structural_observation",
+      "pointer_subtype": "conceptual_gap",
+      "significance": "HIGH",
+      "strongs_id": "G4893",
+      "also_in_registries": [
+        {
+          "registry_id": 183,
+          "word": "heart"
+        },
+        {
+          "registry_id": 184,
+          "word": "spirit"
+        }
+      ],
+      "synthesis_questions": [
+        "Is conscience (suneidēsis) a distinctively NT/Hellenistic inner-being category with no OT structural equivalent, or does the heart registry (183) document an OT equivalent to the self-witnessing conscience?",
+        "Heb 9:14 — the conscience cleansed by Christ's blood to serve the living God — positions conscience at the intersection of inner life and covenantal relationship. Does the heart registry or spirit registry document a parallel OT structure?",
+        "If conscience is genuinely absent from the Hebrew vocabulary and introduced by Hellenistic thought into NT anthropology, what does this mean for the programme's comparative OT-NT framework?"
+      ],
+      "research_depth_required": "DEEP",
+      "prose_note": "G4893 suneidēsis (29 verses) has no direct Hebrew equivalent in the mind registry — the OT soul speaks, desires, and laments, but does not analyse its own conduct from the outside in the way suneidēsis does. The conscience is the inner moral witness that commends or accuses (Rom 2:15), operates in community (1Cor 8), and can be purified or defiled. This may be the most structurally significant NT-only contribution to the programme's inner-being vocabulary. Session D needs to determine whether the heart registry (183) provides an OT equivalent to this self-witnessing function, and whether conscience is a genuinely new anthropological category introduced by Hellenistic thought into the NT, or a development of existing Hebrew categories. This question bears on the programme's entire OT-NT comparative framework.",
+      "session_b_source_ref": "Section 5, Section 10"
+    },
+    {
+      "pointer_id": "112-SD005",
+      "pointer_type": "scope_boundary",
+      "pointer_subtype": "registry_border",
+      "significance": "HIGH",
+      "strongs_id": "H8104G",
+      "also_in_registries": [
+        {
+          "registry_id": 173,
+          "word": "will"
+        }
+      ],
+      "synthesis_questions": [
+        "H8104G sha.mar/obey (195 verses) — does the primary semantic weight of this sub-gloss belong to the mind registry (attentive orientation) or to a will/obedience registry, and is there a will registry in the programme to receive it?",
+        "The narrative notes cross-registry boundary review is warranted for H8104G. If Session D confirms it belongs primarily to a will/obedience cluster, should it be re-classified as xref in the mind registry?"
+      ],
+      "research_depth_required": "STANDARD",
+      "prose_note": "H8104G sha.mar/obey (195 verses) is the largest single verse pool in the mind registry and its inclusion is flagged as plausible rather than confirmed precisely because its primary semantic register is covenant obedience, not cognitive attentiveness. The narrative retains it on the grounds that obedience in Scripture requires attentive inner orientation, connecting it to the sha.mar/J attentiveness sub-gloss. But 195 verses of obedience vocabulary is analytically weighty — if it belongs primarily to a will or obedience cluster, its presence in the mind registry inflates the verse count and potentially distorts the mind registry's evidential weight distribution. This is a genuine scope boundary question that Session D needs to resolve.",
+      "session_b_source_ref": "Section 5, Section 10"
+    },
+    {
+      "pointer_id": "112-SD006",
+      "pointer_type": "verse_overlap",
+      "pointer_subtype": "shared_verse",
+      "significance": "HIGH",
+      "strongs_id": "G1271",
+      "also_in_registries": [
+        {
+          "registry_id": 183,
+          "word": "heart"
+        }
+      ],
+      "synthesis_questions": [
+        "Heb 8:10 and 10:16 name both dianoia (mind) and kardia (heart) as sites of new covenant law-writing — is the distinction between mind and heart meaningful here, or are they used as a merism for the whole inner person?",
+        "Does the heart registry (183) treat Heb 8:10 as primarily a heart verse, and if so, does the mind registry's treatment of it as a mind verse create a conflict or a complementarity?",
+        "The new covenant promise writes law on both the dianoia and the kardia — does this suggest that transformation of the inner person requires both cognitive (mind) and affective (heart) renewal as distinct but coordinated events?"
+      ],
+      "research_depth_required": "STANDARD",
+      "prose_note": "Heb 8:10 and 10:16 (quoting Jer 31:33) are multi-registry verses: they name both dianoia (mind/understanding) and kardia (heart) as the sites of internalized law under the new covenant. The mind registry treats these as mind verses; the heart registry will treat them as heart verses. Session D needs to determine whether this is a merism (both = the whole inner person), a distinction (mind receives the cognitive content, heart the motivational force), or an integrated transformation that cannot be assigned to either registry alone. This verse-pair may be the most important test case for how the programme handles verses that explicitly name two inner-being registers together.",
+      "session_b_source_ref": "Section 5, Section 10"
+    },
+    {
+      "pointer_id": "112-SD007",
+      "pointer_type": "structural_observation",
+      "pointer_subtype": "testament_shift",
+      "significance": "MEDIUM",
+      "strongs_id": "H2142",
+      "also_in_registries": [],
+      "synthesis_questions": [
+        "Za.khar operates in memory, worship, and ritual registers — does the programme contain any worship or praise registry where za.khar's Levitical invoke/remember function (1Chr 16:4) appears?",
+        "If za.khar's ritual register (az.ka.rah, the Levitical memorial portion) belongs to a worship cluster rather than the mind cluster, does the mind registry's za.khar verse pool need re-scoping?"
+      ],
+      "research_depth_required": "SURFACE",
+      "prose_note": "H2142 za.khar (215 verses) is the largest confirmed term in the mind registry and the dominant term in its OT verse weight. The narrative notes za.khar operates across memory, worship, and ritual — the Levitical invoke/remember function (1Chr 16:4), the memorial offering context (Ps 38/70 titles), and the az.ka.rah (H0234, the memorial portion burned on the altar). If the programme contains a worship, praise, or ritual registry, some of za.khar's verse pool may belong there rather than in the mind registry. This does not threaten the mind registry's core — za.khar's covenant-memory register is unambiguously a mind-registry contribution — but the boundary at the ritual/worship intersection warrants Session D review.",
+      "session_b_source_ref": "Section 10"
+    },
+    {
+      "pointer_id": "112-SD008",
+      "pointer_type": "structural_observation",
+      "pointer_subtype": "testament_shift",
+      "significance": "HIGH",
+      "strongs_id": "G5426",
+      "also_in_registries": [
+        {
+          "registry_id": 184,
+          "word": "spirit"
+        }
+      ],
+      "synthesis_questions": [
+        "1Cor 14:14-15 explicitly distinguishes praying with my spirit (pneuma) from praying with my mind (nous) — does the spirit registry (184) contain this verse, and if so, does it characterise the pneuma's role in prayer differently from the mind registry's characterisation of the nous?",
+        "Is the nous/pneuma distinction in 1Cor 14:14-15 the same distinction as the psuchē/pneuma distinction in G5591 psuchikos — or does the mind registry's nous occupy a different position in the triad than the soul registry's psuchē?"
+      ],
+      "research_depth_required": "DEEP",
+      "prose_note": "1Cor 14:14-15 is the sharpest NT terminological boundary between mind-level and spirit-level inner operation. The nous and the pneuma are distinguished as two modes of inner engagement in prayer — both capable of directing worship, but operating at different levels. The mind registry (112) identifies this as a mind-spirit boundary. The spirit registry (184) will encounter the same verse from the pneuma side. Session D needs to map this distinction against both registries and determine: does the mind sit below the spirit in an ontological hierarchy, or does 1Cor 14 describe functional modes of the same person rather than a hierarchy of inner-being levels? This connects directly to the soul registry's G5591 psuchikos finding (soul without Spirit as the lower register) and may be the programme's most important cross-registry structural question.",
+      "session_b_source_ref": "Section 7, Section 10"
+    },
+    {
+      "pointer_id": "112-SD009",
+      "pointer_type": "structural_observation",
+      "pointer_subtype": "divine_human_parallel",
+      "significance": "MEDIUM",
+      "strongs_id": "H4284",
+      "also_in_registries": [],
+      "synthesis_questions": [
+        "The cha.shav/ma.cha.sha.vah corpus documents God's thoughts and plans using the same root as human scheming and artistic design — does any other registry in the programme document this analogical use of inner-being vocabulary for God, and does a cross-registry pattern emerge?",
+        "God's boulē stands immutably (Heb 6:17), God's ma.cha.sha.vot stand forever (Ps 33:11), God does not change his mind (na.cham negative, 1Sam 15:29) — and yet God relents (na.cham positive, Jon 3:10). How does Session D handle this apparent tension within the mind vocabulary applied to God?"
+      ],
+      "research_depth_required": "STANDARD",
+      "prose_note": "The mind registry contains a significant cluster of verses where mind-vocabulary is applied to God: God remembers (za.khar throughout the covenant narrative), God plans/purposes (boulē, ma.cha.sha.vah, ya.tsar), God renews the nous (Rom 12:2), God writes law on the dianoia (Heb 8:10), God gives the mind of Christ (1Cor 2:16), God does not change his mind (na.cham negative). The soul registry has a parallel finding (God refreshed, God's soul delights). Session D should examine whether this analogical use of inner-being vocabulary for God constitutes a consistent pattern across the programme — and what it implies for the programme's account of the relationship between the human inner being and the divine character. This is the programme's deepest methodological question.",
+      "session_b_source_ref": "Section 10"
+    },
+    {
+      "pointer_id": "112-SD010",
+      "pointer_type": "structural_observation",
+      "pointer_subtype": "shared_domain",
+      "significance": "MEDIUM",
+      "strongs_id": "H3336",
+      "also_in_registries": [
+        {
+          "registry_id": 173,
+          "word": "will"
+        },
+        {
+          "registry_id": 182,
+          "word": "Soul"
+        }
+      ],
+      "synthesis_questions": [
+        "Ye.tser (formed inclination, Gen 6:5 and 8:21) is the OT anthropology's closest equivalent to a foundational moral disposition — is this the same reality the will registry calls 'will', or something prior to and deeper than will?",
+        "Does the double-mindedness pattern (dipsuchos/se.eph in mind registry, sumpsuchos/isopsuchos in soul registry) constitute a cross-registry theme of inner unity vs division that runs across mind (112), soul (182), and will (173)?"
+      ],
+      "research_depth_required": "STANDARD",
+      "prose_note": "H3336 ye.tser (formed inclination) is the OT's deepest statement about the moral substrate of the inner person — not a particular thought or plan but the formed disposition that generates them. Gen 6:5 and 8:21 establish it as bent toward evil from youth, making ye.tser the closest OT equivalent to what later theology calls original sin or concupiscence. The narrative also notes the double-mindedness pattern (dipsuchos in the mind registry, se.eph in the soul registry as its Hebrew counterpart) as a potential cross-registry theme. Session D should examine whether ye.tser, dipsuchos/se.eph, and the will vocabulary form a coherent cluster around the question of the inner person's fundamental orientation — and whether the soul registry's structural hypothesis (soul as created appetite) and the mind registry's ye.tser finding point to the same underlying anthropological reality.",
+      "session_b_source_ref": "Section 4, Section 10"
+    }
+  ],
+  "dimensional_summary": {
+    "relational_environment": true,
+    "spirit_soul_body": true,
+    "inner_operations": true,
+    "being": true
+  },
+  "pointer_summary": {
+    "total_pointers": 10,
+    "by_type": {
+      "term_co_occurrence": 3,
+      "structural_observation": 5,
+      "scope_boundary": 1,
+      "verse_overlap": 1
+    },
+    "by_significance": {
+      "HIGH": 6,
+      "MEDIUM": 4,
+      "LOW": 0
+    },
+    "registries_implicated": [
+      {
+        "registry_id": 135,
+        "word": "repentance"
+      },
+      {
+        "registry_id": 71,
+        "word": "grief"
+      },
+      {
+        "registry_id": 43,
+        "word": "desire"
+      },
+      {
+        "registry_id": 173,
+        "word": "will"
+      },
+      {
+        "registry_id": 183,
+        "word": "heart"
+      },
+      {
+        "registry_id": 184,
+        "word": "spirit"
+      },
+      {
+        "registry_id": 182,
+        "word": "Soul"
+      }
+    ],
+    "open_synthesis_questions": 23
+  }
+}

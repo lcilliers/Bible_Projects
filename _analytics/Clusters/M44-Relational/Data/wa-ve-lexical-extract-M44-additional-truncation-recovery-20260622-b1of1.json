@@ -1,0 +1,2329 @@
+{
+  "meta": {
+    "focus_cluster": "M44",
+    "description": "Relational Disposition",
+    "batch": "1/1",
+    "verses": 32,
+    "occurrences": 73,
+    "what_this_is": "A per-term-in-verse LEXICAL DECOMPOSITION of the inner-being terms in the verses where cluster M44 ('Relational Disposition') occurs. Each record shows what a verse says about the inner being, recorded once per term-occurrence. Mechanically derived (01b v2) over the original-language morphology; the interpretive fields (cause, location, divine_involvement, object_type, valence) are resolved by a focused verse-read API pass.",
+    "structure": "data = array of VERSES. Each verse = {verse:{reference,osis_id,testament,verse_text}, term_occurrences:[ {term:{strong,translit,gloss,language,cluster,focus_cluster}, verse_report:{target_word,morph,stem}, lexical:{...}} ]}.",
+    "layout_fan_out": "VERSE-based fan-out — each verse lists EVERY term in it, not just the focus cluster's (focus_cluster=true marks the terms of interest). A term's `compound` lists its co-terms, which are present as their OWN full records in the same verse — fan out by matching translit/gloss to analyse synergy without leaving the verse.",
+    "conventions": {
+      "absent_field": "a lexical field that is absent = NONE (genuinely silent in the verse; never imputed)",
+      "UNRESOLVED": "the mechanical pass expected a value but could not decide (rare; reads have since resolved these)",
+      "provenance": "most fields = mechanical (01b v2, source v2_engine_iter1); cause/location/divine_involvement/object_type/valence = READ-resolved corpus-wide (verse-read API; valence unparked + read 2026-06-18)",
+      "multi_value": "a field may hold a list when several values apply (e.g. faculty, compound)"
+    },
+    "extract_version": "v1_0",
+    "generated": "2026-06-22",
+    "engine_changes": {
+      "zero_pad_fix": "FOUNDATIONAL: Strong's seed lists were short-form (H430/H408/H853) but the DB measure layer is zero-padded 4-digit (H0430/H0408/H0853) — so every <4-digit Hebrew lemma silently failed to match (Elohim, 'al, 'et, faculty lemmas). Fixed (_canon). This restored divine/negation/faculty/object-type detection; much of the prior 'thin' output was this bug.",
+      "valence": "context rule added: prohibition ('al/me + 2nd/3rd-person volitive) -> forbidden (mechanical); commanded/righteous/neutral are interpretive -> verse-read. UNPARKED 2026-06-18: the corpus valence read is now COMPLETE (verse-read API, 0 active residue) — valence here is READ-resolved, same status as cause/divine/object-type.",
+      "divine_involvement": "role taxonomy: object (divine adjacent to term, or 'et-marked) is mechanical (~92%); agent/possessor/giver/addressee are read-resolved (morphologically overlapping); no divine lemma -> NONE. The old meaningless 'present' value is gone.",
+      "location_dedup": "one location row per DISTINCT constitutional seat-level even when several same-level seat-words co-occur (no 'triple-heart'); spirit/breath (ruach/pneuma) sense-gated, ambiguity read-disambiguated.",
+      "t2_treatment": "T2 = reference/qualifier terms, never analysed standalone. T2-GRAMMATICAL (function words: prepositions, pronouns, particles, the object-marker 'et) are EXCLUDED from generation/this extract/reads. T2-CONTENT (noun/verb/adjective) stay as co-term context only.",
+      "base_rerun": "the whole corpus (38,971 term-in-verse units) was re-derived on the corrected engine; 1,768 T2-grammatical units disposed; narration regenerated. Integrity verified (quick_check ok, reads preserved).",
+      "reads_complete": "the interpretive residue was resolved by a governed verse-read API pass (batched-by-verse, circuit-breaker, cost-cap, self-verified): location, cause, object-type, divine-involvement, AND valence (unparked + read 2026-06-18) all to 0 M-cluster residue. divine role + object-type split + valence are now fully populated by the read.",
+      "signal_list_audit_20260619": "completeness audit of EVERY hand-seeded signal list (divine names, perception, cognition, intensifier, …) against canonical lemmas, gated on corpus presence. Closed the gaps (DIVINE +Eloah/Yah/Elyon/YHWH-var/Christos; PERCEPTION +shama/nabat/azan; COGNITION +bin; INTENSIFIER +gadol) and re-ran the full base. Net new readable residue: divine-involvement only (+432, corpus-wide); object-type/cause/location new residue was entirely T2 (excluded). 0 active readable non-T2 residue remains.",
+      "t2_noise_filter_20260620": "a T2 content-word occurrence is now kept ONLY if its base Strong's serves a recognised inner-being qualifier role (seat · intensifier · faculty · perception/cognition · divine · spirit-being · inherent-valence); other T2 content (e.g. seed, hand, name) is dropped as noise from the fan-out (researcher direction).",
+      "set_aside_honoured_20260620": "occurrences with verse_context.set_aside_reason set, and terms with cluster_code=NULL, are EXCLUDED from the extract — so the JSON honours the DB set-aside state rather than re-presenting out-of-scope/homonym verses."
+    },
+    "why_each_element_is_derived": {
+      "_principle": "Every value is DERIVED from a named original-language measure (lemma · morphology · per-occurrence STEP sense · co-occurring tagged terms) — never from the English string. 'Mechanical' = fixed by rule over the measure layer; 'read' = the verse was read by API where the rule cannot be decisive (clarify/enrich only, never an opt-out). Silence = NONE (never imputed).",
+      "sense": "measure: per-occurrence ESV target_word (wa_verse_records) + the lemma's medium_def (lexicon, shown as lemma_meaning). Mechanical — the sense the term carries HERE, not a uniform gloss.",
+      "type": "measure: part-of-speech (morphology). Rule: verb/participle->action, noun->status, adjective->quality. Mechanical (POS-only).",
+      "mode": "measure: morph stem/voice/form. The term's own grammatical realisation (language · POS · stem). Mechanical bedrock.",
+      "faculty": "measure: the TERM's own lemma meaning, classified to a faculty (R1 term-intrinsic). Why term-intrinsic: the trigger's faculty (e.g. the perception that caused fear) belongs to cause/compound, not to this term. Mechanical. (R2 = co-occurring faculty-lemma assignment is a known not-yet-implemented extension.)",
+      "location": "measure: a constitutional-seat lemma (Strong's seat-map: heart/soul/spirit/mind/flesh) present in the verse, SENSE-GATED for spirit/breath (ruach/pneuma may be wind/disposition, not the seat). De-duplicated per level. Mechanical floor + READ for the spirit/breath ambiguity. Absent = not located.",
+      "origin": "measure: a 'from'-source preposition (min/apo/ek) governing the term -> received-from-outside; else absent. Mechanical (partial — within-person/generational/giver-source rules are not yet implemented).",
+      "how": "measure: the governing finite verb of a NOUN/adjective term (the predicate the state operates BY, e.g. 'seized'). Mechanical. ABSENT for verb-terms — the term IS the action (see mode).",
+      "object / object-type": "measure: the term's governed object (noun/pronoun after the term or its governing verb; 'et marks the accusative). object-type classifies it: God/spiritual-being/person are mechanical (divine/spirit-being lemma, or person morph); thing/abstract/situation/threat are READ-classified (the mechanical 'thing/abstract' lump is split by the verse-read). ⚠ CAVEAT: the `object` TEXT is a MECHANICAL best-guess and is imprecise in ~13% of cases (it can grab a determiner/pronoun like 'every'/'his'/'the', or the addressee). `object_type` is READ-derived and AUTHORITATIVE — when the two disagree, trust `object_type` and treat `object` text as a hint only.",
+      "cause": "measure: a causal marker (ki/hoti/gar) -> the eliciting clause, READ-resolved to the actual cause; OR the object of a perception verb for an affect term (mechanical). Else NONE (most verses state no cause). Why read: the cause is the verse's argument, not a single lemma.",
+      "cause_clause": "mechanical HINT only — the raw clause after the 'because/for' marker; superseded by `cause` once read.",
+      "experiencer": "measure: the term's possessive-suffix person / nominative subject (morphology) -> self | other | other(addressed). Mechanical.",
+      "divine_involvement": "measure: a divine lemma (YHWH/Elohim/…) and its grammatical relation to the term. object (adjacent / 'et-marked) is mechanical; agent/possessor/giver/addressee are READ-resolved (these roles overlap morphologically — the role is the semantic judgement 'is God feared, acting, or giving'). No divine lemma -> NONE.",
+      "intensity": "measure: a quantifier/intensifier lemma modifying the term (kol 'all', me'od 'very', rab 'many'). Mechanical.",
+      "valence": "measure: term-inherent moral lemma + context. forbidden = a dedicated prohibition particle ('al/me) on a 2nd/3rd-person volitive (mechanical, ~80% — the 'fear not' reassurance shares the form). commanded/righteous/neutral are interpretive -> read. Corpus valence read COMPLETE (unparked 2026-06-18) — values here are READ-resolved.",
+      "immediate_response": "measure: the coordinated reaction verb-phrase following the term's clause (the inner being's first response). Mechanical (light). Expectation test: silent -> NONE.",
+      "relational": "measure: a directional preposition adjacent to the term (to/toward/against/above). Mechanical (crude — the {direction->object} pairing is a not-yet-implemented extension).",
+      "compound": "measure: the verse's OTHER active tagged terms (the reference's term inventory), each with its role to the head term (partner = co-T1 · qualifier = T2 · co-seated = shares a constitutional seat). This is the synergy web; fan out to each co-term's own full record by translit/gloss."
+    },
+    "fields": {
+      "sense": "per-occurrence contextual sense (the ESV word used in THIS verse)",
+      "lemma_meaning": "the lemma's dictionary meaning (concise)",
+      "type": "action | status | quality — the grammatical kind (from morphology)",
+      "mode": "the term's grammatical realisation: language · part-of-speech · (verb stem)",
+      "faculty": "the inner-being faculty the TERM ITSELF engages (affect/cognition/perception/memory/volition/moral_evaluation/conscience); term-intrinsic; ABSENT if the term is not itself a faculty",
+      "location": "constitutional seat the state is seated in (spirit/soul/heart/mind/flesh/conscience); READ-disambiguated; absent if none",
+      "origin": "where it comes from (within-person/received-from-outside/carried-generationally)",
+      "how": "the governing predicate — how a noun/state term operates; ABSENT for verb-terms (the term IS the action; see mode)",
+      "object": "what the state is directed at / acts on",
+      "object_type": "the object's kind (threat/person/God/spiritual-being/situation/abstract/thing); READ-classified",
+      "cause": "what AROUSES the state; READ-resolved; absent = the verse states no cause",
+      "cause_clause": "mechanical hint only — the raw clause after a 'because/for' marker (superseded by `cause` once read)",
+      "experiencer": "who bears the state: self | other | other (addressed)",
+      "divine_involvement": "GOD's role toward the term (agent/possessor/giver/object/addressee); READ-resolved",
+      "intensity": "quantifier / intensity (e.g. 'many', 'greatly')",
+      "valence": "moral framing in context (righteous/sinful/commanded/forbidden/neutral); READ-resolved",
+      "immediate_response": "the immediate reaction the state produces (e.g. 'bowed faces')",
+      "compound": "co-occurring terms in THIS verse, each as `translit \"gloss\" — role` (partner/qualifier/co-seated). FAN-OUT: every co-term is present as its OWN full record in this verse's term_occurrences — resolve by matching translit/gloss",
+      "relational": "directional / relational force (to, toward, against …)"
+    },
+    "source": "ve_lexical (v2_engine_iter1 mechanical + verse-read API resolution) + verse_morphology measure layer (schema 3.34.0)"
+  },
+  "data": [
+    {
+      "verse": {
+        "reference": "1Ki 21:20",
+        "osis_id": "1Kgs.21.20",
+        "testament": "OT",
+        "verse_text": "1Ki 21:20 Ahab said to Elijah , “Have you found me, O my enemy ?” He answered , “I have found you, because you have sold yourself to do what is evil in the sight of the Lord ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemy",
+            "morph": "HVqrmsc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemy",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "divine_involvement": "UNRESOLVED"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ki 17:39",
+        "osis_id": "2Kgs.17.39",
+        "testament": "OT",
+        "verse_text": "2Ki 17:39 but you shall fear the Lord your God , and he will deliver you out of the hand of all your enemies .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H3372G",
+            "translit": "ya.re",
+            "gloss": "to fear: revere",
+            "language": "Hebrew",
+            "cluster": "M01",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "fear",
+            "morph": "HVqi2mp",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "fear",
+            "lemma_meaning": "frightening(DANGER)",
+            "type": "action",
+            "faculty": "affect",
+            "object": "Lord",
+            "object_type": "God",
+            "cause_clause": "God he deliver hand your enemies",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "object",
+            "valence": "commanded"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "God he deliver hand your enemies",
+            "divine_involvement": "UNRESOLVED",
+            "intensity": "all (enemies)",
+            "compound": "ya.re \"to fear: revere\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ki 21:14",
+        "osis_id": "2Kgs.21.14",
+        "testament": "OT",
+        "verse_text": "2Ki 21:14 And I will forsake the remnant of my heritage and give them into the hand of their enemies , and they shall become a prey and a spoil to all their enemies ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H5414G",
+            "translit": "na.tan",
+            "gloss": "to give: give",
+            "language": "Hebrew",
+            "cluster": "M12",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "give",
+            "morph": "HVqq1cs",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "give",
+            "lemma_meaning": "give/deliver/send/produce",
+            "type": "action",
+            "object": "hand",
+            "object_type": "thing/abstract",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "o.yev \"enemy\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies, enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies, enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "prey",
+            "object_type": "thing/abstract",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "na.tan \"to give: give\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Ch 14:11",
+        "osis_id": "1Chr.14.11",
+        "testament": "OT",
+        "verse_text": "1Ch 14:11 And he went up to Baal-perazim , and David struck them down there . And David said , “ God has broken through my enemies by my hand , like a bursting flood .” Therefore the name of that place is called Baal-perazim ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H7121H",
+            "translit": "qa.ra",
+            "gloss": "to call: call by",
+            "language": "Hebrew",
+            "cluster": "M37",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "HVqp3cp",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "call to/invite/entreat",
+            "type": "action",
+            "faculty": "volition",
+            "object": "Baal-perazim",
+            "object_type": "thing",
+            "experiencer": "other",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "hand",
+            "object_type": "thing/abstract",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "qa.ra \"to call: call by\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Ch 17:8",
+        "osis_id": "1Chr.17.8",
+        "testament": "OT",
+        "verse_text": "1Ch 17:8 and I have been with you wherever you have gone and have cut off all your enemies from before you. And I will make for you a name , like the name of the great ones of the earth ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "before",
+            "object_type": "thing/abstract",
+            "intensity": "all (all)",
+            "relational": "from"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Ch 17:10",
+        "osis_id": "1Chr.17.10",
+        "testament": "OT",
+        "verse_text": "1Ch 17:10 from the time that I appointed judges over my people Israel . And I will subdue all your enemies . Moreover, I declare to you that the Lord will build you a house ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "divine_involvement": "UNRESOLVED",
+            "intensity": "all (all)",
+            "compound": "ka.na \"be humble\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Ch 21:12",
+        "osis_id": "1Chr.21.12",
+        "testament": "OT",
+        "verse_text": "1Ch 21:12 either three years of famine , or three months of devastation by your foes while the sword of your enemies overtakes you, or else three days of the sword of the Lord , pestilence on the land , with the angel of the Lord destroying throughout all the territory of Israel .’ Now decide what answer I shall return to him who sent me.”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H7843",
+            "translit": "sha.chat",
+            "gloss": "to ruin",
+            "language": "Hebrew",
+            "cluster": "M27",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "destroying",
+            "morph": "HVhrmsa",
+            "stem": "Hiphil"
+          },
+          "lexical": {
+            "sense": "destroying",
+            "lemma_meaning": "to destroy, corrupt, go to ruin, decay",
+            "type": "action",
+            "object": "all",
+            "object_type": "thing",
+            "divine_involvement": "agent",
+            "intensity": "all (all)",
+            "immediate_response": "return"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "three",
+            "object_type": "thing/abstract",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "sha.chat \"to ruin\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Ch 22:9",
+        "osis_id": "1Chr.22.9",
+        "testament": "OT",
+        "verse_text": "1Ch 22:9 Behold , a son shall be born to you who shall be a man of rest . I will give him rest from all his surrounding enemies . For his name shall be Solomon , and I will give peace and quiet to Israel in his days ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H4496H",
+            "translit": "me.nu.chah",
+            "gloss": "resting",
+            "language": "Hebrew",
+            "cluster": "M33",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "rest",
+            "morph": "HNcfsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rest",
+            "lemma_meaning": "A location first mentioned at Jdg.20.43",
+            "type": "status",
+            "how": "be (H1961)",
+            "object": "man",
+            "object_type": "abstract",
+            "cause": "God giving rest from surrounding enemies",
+            "cause_clause": "give peace quiet Israel his days",
+            "experiencer": "other",
+            "intensity": "all (all)",
+            "compound": [
+              "nu.ach \"to rest\" — partner",
+              "sha.lom \"peace\" — partner",
+              "she.qet \"quietness\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H5117",
+            "translit": "nu.ach",
+            "gloss": "to rest",
+            "language": "Hebrew",
+            "cluster": "M33",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "rest",
+            "morph": "HVhq1cs",
+            "stem": "Hiphil"
+          },
+          "lexical": {
+            "sense": "rest",
+            "lemma_meaning": "to rest",
+            "type": "action",
+            "object": "all",
+            "object_type": "person",
+            "cause": "God giving rest from all surrounding enemies",
+            "cause_clause": "give peace quiet Israel his days",
+            "experiencer": "self",
+            "divine_involvement": "giver",
+            "intensity": "all (all)",
+            "compound": [
+              "sha.lom \"peace\" — partner",
+              "she.qet \"quietness\" — partner",
+              "me.nu.chah \"resting\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H8253",
+            "translit": "she.qet",
+            "gloss": "quietness",
+            "language": "Hebrew",
+            "cluster": "M33",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "quiet",
+            "morph": "HNcmsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "quiet",
+            "lemma_meaning": "quiet, tranquillity, quietness",
+            "type": "status",
+            "how": "give (H5414)",
+            "cause": "God granting peace and rest to Israel",
+            "cause_clause": "give peace quiet Israel his days",
+            "experiencer": "other",
+            "compound": [
+              "nu.ach \"to rest\" — partner",
+              "sha.lom \"peace\" — partner",
+              "me.nu.chah \"resting\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H7965G",
+            "translit": "sha.lom",
+            "gloss": "peace",
+            "language": "Hebrew",
+            "cluster": "M33",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "peace",
+            "morph": "HNcmsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "peace",
+            "lemma_meaning": "peace",
+            "type": "status",
+            "how": "give (H5414)",
+            "cause": "God granting rest from surrounding enemies",
+            "cause_clause": "give peace quiet Israel his days",
+            "experiencer": "other",
+            "divine_involvement": "giver",
+            "compound": [
+              "nu.ach \"to rest\" — partner",
+              "she.qet \"quietness\" — partner",
+              "me.nu.chah \"resting\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H5414G",
+            "translit": "na.tan",
+            "gloss": "to give: give",
+            "language": "Hebrew",
+            "cluster": "M12",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "give",
+            "morph": "HVqi1cs",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "give",
+            "lemma_meaning": "give/deliver/send/produce",
+            "type": "action",
+            "object": "peace",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "give peace quiet Israel his days",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "nu.ach \"to rest\" — partner",
+              "sha.lom \"peace\" — partner",
+              "she.qet \"quietness\" — partner",
+              "me.nu.chah \"resting\" — partner",
+              "o.yev \"enemy\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "name",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "give peace quiet Israel his days",
+            "intensity": "all (all)",
+            "compound": [
+              "nu.ach \"to rest\" — partner",
+              "sha.lom \"peace\" — partner",
+              "she.qet \"quietness\" — partner",
+              "me.nu.chah \"resting\" — partner",
+              "na.tan \"to give: give\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ch 6:24",
+        "osis_id": "2Chr.6.24",
+        "testament": "OT",
+        "verse_text": "2Ch 6:24 “ If your people Israel are defeated before the enemy because they have sinned against you, and they turn again and acknowledge your name and pray and plead with you in this house ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H2603A",
+            "translit": "cha.nan",
+            "gloss": "be gracious",
+            "language": "Hebrew",
+            "cluster": "M39",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "plead",
+            "morph": "HVtq3cp",
+            "stem": "Hithpael"
+          },
+          "lexical": {
+            "sense": "plead",
+            "lemma_meaning": "to be gracious, show favour, pity",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition",
+              "perception"
+            ],
+            "object": "you",
+            "object_type": "person",
+            "cause_clause": "sinned turn again acknowledge name pray plead you this",
+            "experiencer": "other",
+            "valence": "neutral",
+            "compound": [
+              "shuv \"to return: repent\" — partner",
+              "ya.dah \"to give thanks\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H3034",
+            "translit": "ya.dah",
+            "gloss": "to give thanks",
+            "language": "Hebrew",
+            "cluster": "M22",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "acknowledge",
+            "morph": "HVhq3cp",
+            "stem": "Hiphil"
+          },
+          "lexical": {
+            "sense": "acknowledge",
+            "lemma_meaning": "to throw, shoot, cast",
+            "type": "action",
+            "object": "name",
+            "object_type": "God",
+            "cause_clause": "sinned turn again acknowledge name pray plead you this",
+            "experiencer": "other",
+            "valence": "righteous",
+            "compound": [
+              "shuv \"to return: repent\" — partner",
+              "cha.nan \"be gracious\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H7725O",
+            "translit": "shuv",
+            "gloss": "to return: repent",
+            "language": "Hebrew",
+            "cluster": "M45",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "turn again",
+            "morph": "HVqq3cp",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "turn again",
+            "lemma_meaning": "return",
+            "type": "action",
+            "faculty": "volition",
+            "object": "name",
+            "object_type": "situation",
+            "cause": "Israel's sin and defeat before enemies",
+            "cause_clause": "sinned turn again acknowledge name pray plead you this",
+            "experiencer": "other",
+            "valence": "righteous",
+            "compound": [
+              "cha.nan \"be gracious\" — partner",
+              "ya.dah \"to give thanks\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemy",
+            "morph": "HVqrmsa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemy",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "sinned turn again acknowledge name pray plead you this",
+            "compound": [
+              "shuv \"to return: repent\" — partner",
+              "cha.nan \"be gracious\" — partner",
+              "ya.dah \"to give thanks\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ch 6:28",
+        "osis_id": "2Chr.6.28",
+        "testament": "OT",
+        "verse_text": "2Ch 6:28 “ If there is famine in the land , if there is pestilence or blight or mildew or locust or caterpillar , if their enemies besiege them in the land at their gates , whatever plague , whatever sickness there is,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "land",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "famine land if pestilence blight mildew locust caterpillar",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "tsur \"to provoke\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ch 6:34",
+        "osis_id": "2Chr.6.34",
+        "testament": "OT",
+        "verse_text": "2Ch 6:34 “ If your people go out to battle against their enemies , by whatever way you shall send them, and they pray to you toward this city that you have chosen and the house that I have built for your name ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0977",
+            "translit": "ba.char",
+            "gloss": "to choose",
+            "language": "Hebrew",
+            "cluster": "M37",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "chosen",
+            "morph": "HVqp2ms",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "chosen",
+            "lemma_meaning": "to choose, elect, decide for",
+            "type": "action",
+            "faculty": "volition",
+            "object": "house",
+            "object_type": "thing",
+            "cause_clause": "people go out battle against enemies whatever way send",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "agent",
+            "valence": "righteous",
+            "immediate_response": "built name"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "way",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "people go out battle against enemies whatever way send",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "ba.char \"to choose\" — partner",
+            "relational": "against"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ch 6:36",
+        "osis_id": "2Chr.6.36",
+        "testament": "OT",
+        "verse_text": "2Ch 6:36 “ If they sin against you— for there is no one who does not sin —and you are angry with them and give them to an enemy , so that they are carried away captive to a land far or near ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0599",
+            "translit": "a.naph",
+            "gloss": "be angry",
+            "language": "Hebrew",
+            "cluster": "M02",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "angry",
+            "morph": "HVqq2ms",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "angry",
+            "lemma_meaning": "to be angry, to be displeased, to breathe hard",
+            "type": "action",
+            "faculty": "affect",
+            "object": "to",
+            "object_type": "person",
+            "cause": "Israel's sin against God",
+            "cause_clause": "sin for no one who not sin angry",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "agent",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "H5414G",
+            "translit": "na.tan",
+            "gloss": "to give: give",
+            "language": "Hebrew",
+            "cluster": "M12",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "give",
+            "morph": "HVqq2ms",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "give",
+            "lemma_meaning": "give/deliver/send/produce",
+            "type": "action",
+            "object": "to",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "sin for no one who not sin angry",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "a.naph \"be angry\" — partner",
+              "o.yev \"enemy\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemy",
+            "morph": "HVqrmsa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemy",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "sin for no one who not sin angry",
+            "compound": [
+              "a.naph \"be angry\" — partner",
+              "na.tan \"to give: give\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ch 20:27",
+        "osis_id": "2Chr.20.27",
+        "testament": "OT",
+        "verse_text": "2Ch 20:27 Then they returned , every man of Judah and Jerusalem , and Jehoshaphat at their head , returning to Jerusalem with joy , for the Lord had made them rejoice over their enemies ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H8055",
+            "translit": "sa.mach",
+            "gloss": "to rejoice",
+            "language": "Hebrew",
+            "cluster": "M04",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "rejoice",
+            "morph": "HVpp3ms",
+            "stem": "Piel"
+          },
+          "lexical": {
+            "sense": "rejoice",
+            "lemma_meaning": "to rejoice, be glad",
+            "type": "action",
+            "faculty": "affect",
+            "object": "their",
+            "object_type": "person",
+            "cause": "the Lord making them rejoice over their enemies",
+            "cause_clause": "Lord rejoice over their enemies",
+            "experiencer": "other",
+            "divine_involvement": "agent",
+            "valence": "righteous",
+            "compound": "sim.chah \"joy\" — partner",
+            "relational": "over"
+          }
+        },
+        {
+          "term": {
+            "strong": "H8057",
+            "translit": "sim.chah",
+            "gloss": "joy",
+            "language": "Hebrew",
+            "cluster": "M04",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "HNcfsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, mirth, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "rejoice (H8055)",
+            "object": "their",
+            "object_type": "person",
+            "cause": "the Lord making them rejoice over their enemies",
+            "cause_clause": "Lord rejoice over their enemies",
+            "experiencer": "other",
+            "valence": "righteous",
+            "compound": "sa.mach \"to rejoice\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "Lord rejoice over their enemies",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "sim.chah \"joy\" — partner",
+              "sa.mach \"to rejoice\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ch 20:29",
+        "osis_id": "2Chr.20.29",
+        "testament": "OT",
+        "verse_text": "2Ch 20:29 And the fear of God came on all the kingdoms of the countries when they heard that the Lord had fought against the enemies of Israel ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H6343",
+            "translit": "pa.chad",
+            "gloss": "dread",
+            "language": "Hebrew",
+            "cluster": "M01",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "fear",
+            "morph": "HNcmsc",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "fear",
+            "lemma_meaning": "terror, dread",
+            "type": "status",
+            "faculty": "affect",
+            "object": "God",
+            "object_type": "God",
+            "cause": "Lord fighting against Israel's enemies",
+            "cause_clause": "Lord fought against enemies Israel",
+            "divine_involvement": "agent",
+            "intensity": "all (all)",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "Israel",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "Lord fought against enemies Israel",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "pa.chad \"dread\" — partner",
+            "relational": "against"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ch 25:8",
+        "osis_id": "2Chr.25.8",
+        "testament": "OT",
+        "verse_text": "2Ch 25:8 But go , act , be strong for the battle . Why should you suppose that God will cast you down before the enemy ? For God has power to help or to cast down .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H3581B",
+            "translit": "ko.ach",
+            "gloss": "strength",
+            "language": "Hebrew",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "power",
+            "morph": "HNcmsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "power",
+            "lemma_meaning": "a small reptile, probably a kind of lizard, which is unclean",
+            "type": "status",
+            "cause_clause": "act strong battle God down before enemy For",
+            "divine_involvement": "possessor"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemy",
+            "morph": "HVqrmsa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemy",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "God",
+            "object_type": "God",
+            "cause": "pending-read",
+            "cause_clause": "act strong battle God down before enemy For",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "ko.ach \"strength\" — partner",
+            "relational": "For"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ch 26:13",
+        "osis_id": "2Chr.26.13",
+        "testament": "OT",
+        "verse_text": "2Ch 26:13 Under their command was an army of 307,500 , who could make war with mighty power , to help the king against the enemy ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemy",
+            "morph": "HVqrmsa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemy",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "relational": "against"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 89:42",
+        "osis_id": "Ps.89.42",
+        "testament": "OT",
+        "verse_text": "Psa 89:42 You have exalted the right hand of his foes ; you have made all his enemies rejoice ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H8055",
+            "translit": "sa.mach",
+            "gloss": "to rejoice",
+            "language": "Hebrew",
+            "cluster": "M04",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "rejoice",
+            "morph": "HVhp2ms",
+            "stem": "Hiphil"
+          },
+          "lexical": {
+            "sense": "rejoice",
+            "lemma_meaning": "to rejoice, be glad",
+            "type": "action",
+            "faculty": "affect",
+            "experiencer": "other (addressed)",
+            "intensity": "all (all)",
+            "compound": "rum \"to exalt\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "intensity": "all (all)",
+            "compound": [
+              "sa.mach \"to rejoice\" — partner",
+              "rum \"to exalt\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 89:51",
+        "osis_id": "Ps.89.51",
+        "testament": "OT",
+        "verse_text": "Psa 89:51 with which your enemies mock , O Lord , with which they mock the footsteps of your anointed ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H2778A",
+            "translit": "cha.raph",
+            "gloss": "to taunt",
+            "language": "Hebrew",
+            "cluster": "M06",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "mock",
+            "morph": "HVpp3cp",
+            "stem": "Piel"
+          },
+          "lexical": {
+            "sense": "mock",
+            "lemma_meaning": "to reproach, taunt, blaspheme, defy, jeopardise, rail, upbraid",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "experiencer": "other",
+            "divine_involvement": "object",
+            "valence": "sinful"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "cha.raph \"to taunt\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 92:9",
+        "osis_id": "Ps.92.9",
+        "testament": "OT",
+        "verse_text": "Psa 92:9 For behold , your enemies , O Lord , for behold , your enemies shall perish ; all evildoers shall be scattered ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0205G",
+            "translit": "a.ven",
+            "gloss": "evil: trouble",
+            "language": "Hebrew",
+            "cluster": "M10b",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "evildoers",
+            "morph": "HNcmsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "evildoers",
+            "lemma_meaning": "trouble, wickedness, sorrow",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "moral_evaluation"
+            ],
+            "cause_clause": "behold enemies Lord for behold enemies perish all",
+            "intensity": "all (all)",
+            "valence": "sinful"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies, enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies, enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "cause": "pending-read",
+            "cause_clause": "behold enemies Lord for behold enemies perish all",
+            "divine_involvement": "object",
+            "compound": "a.ven \"evil: trouble\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 102:8",
+        "osis_id": "Ps.102.8",
+        "testament": "OT",
+        "verse_text": "Psa 102:8 All the day my enemies taunt me; those who deride me use my name for a curse ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H1984I",
+            "translit": "ha.lal",
+            "gloss": "to boast: rave madly",
+            "language": "Hebrew",
+            "cluster": "M16",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "deride",
+            "morph": "HVprmpc",
+            "stem": "Piel"
+          },
+          "lexical": {
+            "sense": "deride",
+            "lemma_meaning": "to shine",
+            "type": "action",
+            "valence": "sinful",
+            "compound": "cha.raph \"to taunt\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H2778A",
+            "translit": "cha.raph",
+            "gloss": "to taunt",
+            "language": "Hebrew",
+            "cluster": "M06",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "taunt",
+            "morph": "HVpp3cp",
+            "stem": "Piel"
+          },
+          "lexical": {
+            "sense": "taunt",
+            "lemma_meaning": "to reproach, taunt, blaspheme, defy, jeopardise, rail, upbraid",
+            "type": "action",
+            "experiencer": "other",
+            "intensity": "all (All)",
+            "valence": "sinful",
+            "compound": "ha.lal \"to boast: rave madly\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "divine_involvement": "UNRESOLVED",
+            "intensity": "all (All)",
+            "compound": [
+              "cha.raph \"to taunt\" — partner",
+              "ha.lal \"to boast: rave madly\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 106:10",
+        "osis_id": "Ps.106.10",
+        "testament": "OT",
+        "verse_text": "Psa 106:10 So he saved them from the hand of the foe and redeemed them from the power of the enemy ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H8130",
+            "translit": "sa.ne",
+            "gloss": "to hate",
+            "language": "Hebrew",
+            "cluster": "M06",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "foe",
+            "morph": "HVqrmsa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "foe",
+            "lemma_meaning": "to hate, be hateful",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition"
+            ],
+            "object": "power",
+            "object_type": "person",
+            "valence": "sinful"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemy",
+            "morph": "HVqrmsa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemy",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "compound": "sa.ne \"to hate\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 106:42",
+        "osis_id": "Ps.106.42",
+        "testament": "OT",
+        "verse_text": "Psa 106:42 Their enemies oppressed them, and they were brought into subjection under their power ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H3665",
+            "translit": "ka.na",
+            "gloss": "be humble",
+            "language": "Hebrew",
+            "cluster": "M09",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "subjection",
+            "morph": "HVNw3mp",
+            "stem": "Niphal"
+          },
+          "lexical": {
+            "sense": "subjection",
+            "lemma_meaning": "to be humble, be humbled, be subdued, be brought down, be low, be unde",
+            "type": "action",
+            "object": "under",
+            "object_type": "situation",
+            "experiencer": "other",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "under",
+            "object_type": "thing/abstract",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "ka.na \"be humble\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 110:1",
+        "osis_id": "Ps.110.1",
+        "testament": "OT",
+        "verse_text": "A Psalm of David . Psa 110:1 The Lord says to my Lord : “ Sit at my right hand , until I make your enemies your footstool .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H4210",
+            "translit": "miz.mor",
+            "gloss": "melody",
+            "language": "Hebrew",
+            "cluster": "M22",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "Psalm",
+            "morph": "HNcmsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Psalm",
+            "lemma_meaning": "melody, psalm",
+            "type": "status",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "footstool",
+            "object_type": "thing/abstract",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "miz.mor \"melody\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 110:2",
+        "osis_id": "Ps.110.2",
+        "testament": "OT",
+        "verse_text": "Psa 110:2 The Lord sends forth from Zion your mighty scepter . Rule in the midst of your enemies !"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H5797",
+            "translit": "oz",
+            "gloss": "strength",
+            "language": "Hebrew",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "mighty",
+            "morph": "HNcmsc",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "mighty",
+            "lemma_meaning": "might, strength",
+            "type": "status",
+            "how": "sends forth (H7971)",
+            "object": "Zion",
+            "object_type": "abstract",
+            "experiencer": "other",
+            "divine_involvement": "giver",
+            "valence": "neutral",
+            "compound": "ra.dah \"to rule\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H7287A",
+            "translit": "ra.dah",
+            "gloss": "to rule",
+            "language": "Hebrew",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "Rule",
+            "morph": "HVqv2ms",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "Rule",
+            "lemma_meaning": "to rule, have dominion, dominate, tread down",
+            "type": "action",
+            "object": "midst",
+            "object_type": "person",
+            "experiencer": "other (addressed)",
+            "valence": "neutral",
+            "compound": "oz \"strength\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "location": "UNRESOLVED",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "oz \"strength\" — partner",
+              "ra.dah \"to rule\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 119:98",
+        "osis_id": "Ps.119.98",
+        "testament": "OT",
+        "verse_text": "Psa 119:98 Your commandment makes me wiser than my enemies , for it is ever with me ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "ever",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "it ever me",
+            "relational": "than"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 127:5",
+        "osis_id": "Ps.127.5",
+        "testament": "OT",
+        "verse_text": "Psa 127:5 Blessed is the man who fills his quiver with them! He shall not be put to shame when he speaks with his enemies in the gate ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0954",
+            "translit": "bosh",
+            "gloss": "be ashamed",
+            "language": "Hebrew",
+            "cluster": "M07",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "put to shame",
+            "morph": "HVqi3mp",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "put to shame",
+            "lemma_meaning": "to put to shame, be ashamed, be disconcerted, be disappointed",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition"
+            ],
+            "cause_clause": "with enemies in gate",
+            "experiencer": "other",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "gate",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "with enemies in gate",
+            "compound": "bosh \"be ashamed\" — partner",
+            "relational": [
+              "with",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 132:18",
+        "osis_id": "Ps.132.18",
+        "testament": "OT",
+        "verse_text": "Psa 132:18 His enemies I will clothe with shame , but on him his crown will shine .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H1322",
+            "translit": "bo.shet",
+            "gloss": "shame",
+            "language": "Hebrew",
+            "cluster": "M07",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "shame",
+            "morph": "HNcfsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "shame",
+            "lemma_meaning": "shame",
+            "type": "status",
+            "faculty": "affect",
+            "how": "shine (H6692)",
+            "experiencer": "other",
+            "valence": "sinful"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "shame",
+            "object_type": "thing/abstract",
+            "compound": "bo.shet \"shame\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 138:7",
+        "osis_id": "Ps.138.7",
+        "testament": "OT",
+        "verse_text": "Psa 138:7 Though I walk in the midst of trouble , you preserve my life ; you stretch out your hand against the wrath of my enemies , and your right hand delivers me."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H6869B",
+            "translit": "tsa.rah",
+            "gloss": "distress",
+            "language": "Hebrew",
+            "cluster": "M03",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "trouble",
+            "morph": "HNcfsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "trouble",
+            "lemma_meaning": "death, destitution",
+            "type": "status",
+            "faculty": "affect",
+            "how": "life (H2421)",
+            "valence": "neutral",
+            "compound": "cha.yah \"to live\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H2421",
+            "translit": "cha.yah",
+            "gloss": "to live",
+            "language": "Hebrew",
+            "cluster": "M25",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "life",
+            "morph": "HVpi2ms",
+            "stem": "Piel"
+          },
+          "lexical": {
+            "sense": "life",
+            "lemma_meaning": "to live, have life, remain alive, sustain life, live prosperously, liv",
+            "type": "action",
+            "object": "hand",
+            "object_type": "person",
+            "experiencer": "other (addressed)",
+            "valence": "neutral",
+            "compound": "tsa.rah \"distress\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "location": "UNRESOLVED",
+            "object": "right hand",
+            "object_type": "thing/abstract",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "tsa.rah \"distress\" — partner",
+              "cha.yah \"to live\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 139:22",
+        "osis_id": "Ps.139.22",
+        "testament": "OT",
+        "verse_text": "Psa 139:22 I hate them with complete hatred ; I count them my enemies ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H8135",
+            "translit": "sin.ah",
+            "gloss": "hating",
+            "language": "Hebrew",
+            "cluster": "M06",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "hatred",
+            "morph": "HNcfsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "hatred",
+            "lemma_meaning": "hating, hatred, hate",
+            "type": "status",
+            "faculty": "affect",
+            "how": "count (H1961)",
+            "valence": "righteous",
+            "compound": "sa.ne \"to hate\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H8130",
+            "translit": "sa.ne",
+            "gloss": "to hate",
+            "language": "Hebrew",
+            "cluster": "M06",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "hate",
+            "morph": "HVqp1cs",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "hate",
+            "lemma_meaning": "to hate, be hateful",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition"
+            ],
+            "object": "complete",
+            "object_type": "person",
+            "experiencer": "self",
+            "valence": "righteous",
+            "compound": "sin.ah \"hating\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H8130",
+            "translit": "sa.ne",
+            "gloss": "to hate",
+            "language": "Hebrew",
+            "cluster": "M06",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "hate",
+            "morph": "HVqp1cs",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "hate",
+            "lemma_meaning": "to hate, be hateful",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition"
+            ],
+            "object": "complete",
+            "object_type": "person",
+            "experiencer": "self",
+            "valence": "righteous",
+            "compound": "sin.ah \"hating\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H8135",
+            "translit": "sin.ah",
+            "gloss": "hating",
+            "language": "Hebrew",
+            "cluster": "M06",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "hatred",
+            "morph": "HNcfsa",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "hatred",
+            "lemma_meaning": "hating, hatred, hate",
+            "type": "status",
+            "faculty": "affect",
+            "how": "count (H1961)",
+            "valence": "righteous",
+            "compound": "sa.ne \"to hate\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "sa.ne \"to hate\" — partner",
+              "sin.ah \"hating\" — partner"
+            ],
+            "relational": "my"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 143:3",
+        "osis_id": "Ps.143.3",
+        "testament": "OT",
+        "verse_text": "Psa 143:3 For the enemy has pursued my soul ; he has crushed my life to the ground ; he has made me sit in darkness like those long dead ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H2416C",
+            "translit": "chay.yah",
+            "gloss": "living thing",
+            "language": "Hebrew",
+            "cluster": "M25",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "life",
+            "morph": "HNcfsc",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "life",
+            "lemma_meaning": "adj",
+            "type": "status",
+            "location": "soul",
+            "how": "crushed (H1792)",
+            "object": "ground",
+            "object_type": "person",
+            "cause_clause": "enemy pursued soul crushed life ground sit darkness",
+            "experiencer": "self",
+            "valence": "neutral",
+            "compound": "da.kha \"to crush\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H1792",
+            "translit": "da.kha",
+            "gloss": "to crush",
+            "language": "Hebrew",
+            "cluster": "M24",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "crushed",
+            "morph": "HVpp3ms",
+            "stem": "Piel"
+          },
+          "lexical": {
+            "sense": "crushed",
+            "lemma_meaning": "to crush, be crushed, be contrite, be broken",
+            "type": "action",
+            "location": "soul",
+            "object": "life",
+            "object_type": "person",
+            "cause": "the enemy's pursuit and attack",
+            "cause_clause": "enemy pursued soul crushed life ground sit darkness",
+            "experiencer": "other",
+            "valence": "sinful",
+            "compound": "chay.yah \"living thing\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "H5315G",
+            "translit": "ne.phesh",
+            "gloss": "soul",
+            "language": "Hebrew",
+            "cluster": "M47",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "soul",
+            "morph": "HNcfsc",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "soul",
+            "lemma_meaning": "soul, self, life, creature, person, appetite, mind, living being, desi",
+            "type": "status",
+            "location": "soul",
+            "faculty": [
+              "affect",
+              "volition"
+            ],
+            "how": "pursued (H7291)",
+            "cause": "pending-read",
+            "cause_clause": "enemy pursued soul crushed life ground sit darkness",
+            "experiencer": "self",
+            "compound": [
+              "chay.yah \"living thing\" — partner",
+              "da.kha \"to crush\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemy",
+            "morph": "HVqrmsa",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemy",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "location": "soul",
+            "object": "soul",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "enemy pursued soul crushed life ground sit darkness",
+            "compound": [
+              "chay.yah \"living thing\" — partner",
+              "da.kha \"to crush\" — partner",
+              "ne.phesh \"soul\" — co-seated"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 143:9",
+        "osis_id": "Ps.143.9",
+        "testament": "OT",
+        "verse_text": "Psa 143:9 Deliver me from my enemies , O Lord ! I have fled to you for refuge ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "divine_involvement": "object",
+            "relational": "from"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Psa 143:12",
+        "osis_id": "Ps.143.12",
+        "testament": "OT",
+        "verse_text": "Psa 143:12 And in your steadfast love you will cut off my enemies , and you will destroy all the adversaries of my soul , for I am your servant ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "H5315G",
+            "translit": "ne.phesh",
+            "gloss": "soul",
+            "language": "Hebrew",
+            "cluster": "M47",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "soul",
+            "morph": "HNcfsc",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "soul",
+            "lemma_meaning": "soul, self, life, creature, person, appetite, mind, living being, desi",
+            "type": "status",
+            "location": "soul",
+            "faculty": [
+              "affect",
+              "volition"
+            ],
+            "how": "destroy (H0006)",
+            "cause": "pending-read",
+            "cause_clause": "I servant",
+            "experiencer": "self",
+            "intensity": "all (all)"
+          }
+        },
+        {
+          "term": {
+            "strong": "H0341",
+            "translit": "o.yev",
+            "gloss": "enemy",
+            "language": "Hebrew",
+            "cluster": "M44",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "enemies",
+            "morph": "HVqrmpc",
+            "stem": "Qal"
+          },
+          "lexical": {
+            "sense": "enemies",
+            "lemma_meaning": "(Qal) enemy",
+            "type": "action",
+            "location": "soul",
+            "object": "all",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "I servant",
+            "intensity": "all (all)",
+            "compound": "ne.phesh \"soul\" — co-seated"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,43 @@
+You are Claude AI performing Pass A meaning record for Session B cluster analysis under wa-sessionb-cluster-instruction-v2_0-20260515 §5.
+
+CLUSTER CHARACTERISTIC
+
+Cluster M03 — Grief, Sorrow and Mourning.
+
+The cluster's term set (auto-extracted gloss): anguish (odunē), anguish (o.du.ne), anguish (sunochē), anguish (tsu.qah), anguish (qe.pha.dah), be anguished (odunaō), be grieved (sullupeō), be in labor (ōdinō), be in labour (cha.val), be weak: grieved (cha.lah), bitter (pikros), bitterly (be.kheh), bitterness (pikria), bitterness (me.mer), bitterness (mam.ror), bitterness (mo.rah), bitterness (mor.rah), bitterness (ma.ror), complaint (si.ach), cord (che.vel), crushing (dak.kah), decay (diafthora), deprivation (apobolē), disaster (pid), dismay (be.ha.lah), dismay (de.a.vah), distress (mu.a.qah), distress (ma.tsoq), distress (me.tsu.qah), distress (tsoq), distress (tsar), distress (tsa.rah), distress: evil (ra.ah), distress: harm (ra.ah), grief (penthos), grief (tu.gah), groan (stenagmos), groan (ne.a.qah), groaning (a.na.qah), groaning (ne.ha.mah), mourning (odurmos), mourning (a.vel), mourning (e.vel), mourning (mis.ped), mourning (mar.ze.ach), mourning (ta.a.niy.yah), pain (che.vel), pain (che.vel), pain (ke.ev), pain (makh.ov), pain (o.tsev), pang (tsir), sighing (a.na.chah), sorrow (de.a.von), sorrow (ya.gon), sorrowful (perilupos), tears (dim.ah), to cut/mourn (koptō), to embitter (pikrainō), to grieve (lupeō), to grieve (lu.pe.o), to groan with (sustenazō), to mourn (pen.the.o), to mourn (pentheō), to mourn (a.val), to mourn (sa.phad), to pain (ka.av), to pain (a.tsav), to press on (thlibō), to press upon (stenochōreō), to sigh (a.nach), to suffer with (sumpaschō), to torture: anguish (basanizō), to torture: torture (basanizō), to trouble (skullō), to weep (klaiō), to weep (ba.khah), to weep (da.ma), toil (e.tsev), toil (its.tsa.von), toil (te.u.nim), torment (basanismos), torment (basanos), torment (ma.a.tse.vah), torturer (basanistēs), travail (ponos), trouble (a.mal), weeping (klauthmos), weeping (be.khi), weeping (be.khit)
+
+YOUR TASK
+
+For each verse in the batch, write a one-line meaning answering: **what does this verse say about the inner-being characteristic the term names, in this verse's specific context?**
+
+DISCIPLINE — non-negotiable
+
+1. Read the verse text. Write what *this* verse says about *this* term's inner-being content.
+2. The meaning must be verse-specific — name what is in this verse, not the term's general sense.
+3. Plain English. 1–2 sentences. Maximum ~300 characters.
+4. No group framing — do not write "M01-A territory", "VCG 7577-001 register", "[A] sub-group", or any sub-group / VCG / anchor language. These have no place in a Pass A meaning.
+5. No back-anchoring — do not validate against any pre-existing structure. The verse and the term are the only inputs that matter.
+6. If the verse genuinely does not evidence inner-being content for this term in this verse, note that briefly in the meaning. Do not omit the row.
+
+T1 FRAMEWORK — what to look for in the verse
+
+A characteristic-bearing verse evidences one or more of:
+- Constitutional location — heart, mind, will, conscience, soul, spirit, body — where in the inner person it sits.
+- Inner faculties engaged — perception, thought, memory, feeling, conscience, will, agency.
+- Inner impact — what the characteristic does to the person, to relationships, to action.
+- Structural opposite — the characteristic implicitly defines its contour by what it stands against.
+- Direction or object — toward what / produced by what / operating against what.
+
+If the verse evidences any of these, your meaning names which one(s) and how.
+
+OUTPUT FORMAT — strict JSON
+
+Respond with exactly one JSON array. One object per verse, in the same order the verses were given. Each object must have these fields:
+
+  {
+    "vc_id": <integer — copy from input>,
+    "reference": "<string — copy from input>",
+    "meaning": "<one-line plain-English meaning, ~250 chars, verse-specific>"
+  }
+
+Do not include any text outside the JSON array. No prose, no preamble, no markdown fence. Just the JSON.

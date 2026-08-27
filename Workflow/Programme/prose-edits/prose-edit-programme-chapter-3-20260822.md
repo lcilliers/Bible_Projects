@@ -1,0 +1,190 @@
+# Prose Edit — Programme — Chapter 3
+
+<!-- Edit only the prose body below each chapter heading. Do not change markers. -->
+<!-- This file is temporary and can be discarded after patch application. -->
+
+<!-- PROSE_SECTION_ID: 16 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_traceability -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_SECTION: Programme -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_CHAPTER_TITLE: Traceability and evidential warrant -->
+<!-- PROSE_SORT_ORDER: 16 -->
+<!-- PROSE_VERSION: 1 -->
+<!-- PROSE_SOURCE_FILE: wa-prose-ch3-obslog-v1_0-20260422.md -->
+
+## Traceability and evidential warrant
+
+The programme records findings and it records hypotheses; the two are not the same. A finding is a claim that can be traced back to a specific verse record, term entry, lexical source, correlation signal, or extract field in the database. A claim that cannot be traced that way is a hypothesis. Hypotheses are labelled as such or discarded. A hypothesis is upgraded to a finding when subsequent evidence supports it on its own terms; when that happens, the hypothesis-form language is replaced with the evidence-grounded statement rather than left in place with the evidence tacked on.
+
+The traceability requirement is the programme's working definition of evidential warrant. It governs every analytical output — verse-context classifications, dimensional placements, per-word answers in the standing catalogue, the per-word written studies, and the cross-registry syntheses that read across them. The standing of a claim in the programme's record is a function of whether the data supports it, and the data that supports it is specifiable: a verse, a term, a lexicon entry, a flag, a cross-reference, an extract field. Where the support is specifiable, the claim is a finding. Where it is not, the claim is a hypothesis.
+
+Between finding and hypothesis sits a third category: the **inferential**. Where a claim is analytically plausible or theologically reasonable but is not directly supported by data in the current extract, it is labelled inferential. Inferential claims are retained in the record because the work benefits from visible reasoning, but they are not presented as confirmed. An inferential label is an accurate description of the evidence state; it is not a softening of the claim. An inferential reading may later be supported by evidence and become a finding, or be left as inferential, or be discarded. What it does not do is quietly become a finding without the supporting evidence.
+
+The verse leads. All analytical work begins with what the verse says, not with a category, a tradition, or a prior interpretation. Dimensions, groupings, and classifications emerge from the verse evidence; the verse is never bent to fit a pre-existing category. This holds at every phase. Verse Context groups are formed from what the verses engage. Dimensions are assigned from what the groups evidence. Session B findings are produced from the verse, term, and lexical data held in the database. A classification that cannot be grounded in at least one verse in a registry's corpus is not a classification the programme uses for that registry.
+
+The relevance filter that admits a verse into a word's analytical corpus operates at term level, not at verse-theme level. A verse is in the corpus because the original-language term is present in it in a use that either directly engages the inner being or is implicated in an inner-being characteristic. A term present in a verse that plays no role in any inner-being dynamic — purely syntactic, purely locational — does not pass. This is the same discipline that admits a word to the registry: lexical presence in an inner-being use, not interpretive fit.
+
+The current versioned extract produced by the operational agent is the authoritative data source for analytical work. Prior session outputs — earlier observation logs, drafts of word studies, analytical briefs produced before the latest extract was taken — are reference material. Where a prior output conflicts with the current extract, the extract is correct and the prior output requires correction. This rule prevents the subtle displacement by which an earlier analytical framing becomes the working source in place of the data it was drawn from.
+
+Database state is verified, not assumed. Before any operation whose outcome depends on DB state — row counts, field values, flag settings, the presence or absence of a patch — the state is checked. Memory of a previous session's state is not current state. "Recent" is not "current." A check that costs little prevents the class of errors where the fix is harder than the original operation would have been. **Every finding is substantiated by data — no guessing, no assumptions, no made-up results.**
+
+---
+
+<!-- PROSE_SECTION_ID: 69 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_two_ai -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_SECTION: Programme -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_CHAPTER_TITLE: The two-AI division of responsibility -->
+<!-- PROSE_SORT_ORDER: 17 -->
+<!-- PROSE_VERSION: 2 -->
+<!-- PROSE_SOURCE_FILE: programme-prose-v2-recommendations-v1-20260427.md -->
+
+## The two-AI division of responsibility
+
+The programme runs on two AI agents with a strict division of responsibility between them. **Claude AI** is the analytical agent. It decides what should be done and why: it reads verses, classifies them into groups, assigns groups to dimensions, answers the standing catalogue of questions for each word, drafts the written word studies, and authors the programme's prose. It holds the analytical judgement. **Claude Code** is the operational agent. It determines how a change should be executed and it executes it: it runs SQL against the database, applies patches, fulfils directives, produces extracts, and performs schema migrations. It holds the database operations.
+
+The division is strict. Claude AI does not execute database operations. It does not run SQL, apply patches directly, or modify database state. Claude Code does not produce analytical findings, interpretations, or documents. It does not decide which verses belong to which group, which dimension a group expresses, or what the written study for a word should say. An instruction that crosses the boundary — a request to Claude Code for an analytical opinion, or an analytical finding written by Claude Code into the database without going through a patch — is a breach of the architecture, not a shortcut.
+
+The separation is deliberate. Analytical judgement is the programme's scarce resource. The architecture protects it from the distraction of mechanical work. A single agent carrying both functions would, turn after turn, divert judgement into execution and execution into judgement; the programme's findings would be shaped by whichever function was dominant in a given session. Holding the two separate means analytical turns stay analytical and operational turns stay operational.
+
+The two agents interact through three structured artefacts: **patches**, **directives**, and **obslogs**. Patches remain the instrument for discrete database changes — Verse Context corrections, REPAIR work, dimension review writes — under the existing patch instruction. Directives remain the instrument for operations outside the patch format — schema migrations, ad-hoc queries, structural operations. Under Architecture v2 (2026-04-27), the **obslog** joins them as the canonical artefact for analytical sessions: Claude AI produces a comprehensive obslog `.md` and Claude Code parses it into the database via the Phase 2 writer pipeline. The writer maps every category of analytical content — observations, Q&A pairs, chapters, SD pointers, anchor-verse analyses, new catalogue questions, review notes, status updates — to its DB target table, with pre-write backup, transactional commit, and post-write validation.
+
+The researcher sits at the gate between the two agents. Patches and directives are reviewed before Claude Code applies them. Obslogs follow the same discipline — Claude AI produces the obslog, the researcher reviews the analytical work, Claude Code parses it into the database. Under v2 this workflow is more integrated: Claude Code's role expanded to include the readiness output generation that prompts AI's analytical work, the analytic status generation that supports revision sessions, and the anomaly detection that surfaces data inconsistencies as open findings for AI to address in the next session. The bidirectional channel — AI's analytical observations and CC's data anomalies both landing as `wa_session_b_findings` rows for resolution — is the mechanism that keeps the analytical record and the database coherent.
+
+---
+
+<!-- PROSE_SECTION_ID: 18 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_session_continuity -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_SECTION: Programme -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_CHAPTER_TITLE: Session continuity and memory discipline -->
+<!-- PROSE_SORT_ORDER: 18 -->
+<!-- PROSE_VERSION: 1 -->
+<!-- PROSE_SOURCE_FILE: wa-prose-ch3-obslog-v1_0-20260422.md -->
+
+## Session continuity and memory discipline
+
+The programme's analytical memory lives in the database. The classifications produced at Verse Context, the dimensions assigned at Dimension Review, the answers to the standing catalogue of questions produced at Session B, the written word studies produced at Session C, the cross-registry syntheses produced at Session D, and the programme-level prose that describes the whole — all of these are held in the database. The database is where the programme's findings, interpretations, and analytical output are kept. It is not a storage layer beneath the research; it is the research's memory.
+
+Claude AI does not live inside the database. Claude AI is an analytical instrument applied to snapshots — slices of the corpus loaded into the current working context. At any moment of thinking, Claude AI sees only what has been loaded: the files in the current session, the extract drawn from the database for the current pass, the instruction documents bearing on the current instruction. The database continues to hold the authoritative record whether Claude AI is looking at it or not. Getting the right snapshot in front of Claude AI for a given question is itself a research act — the shape of the snapshot determines the shape of what Claude AI can say.
+
+Claude AI's available memory arrives in five layers, and they are not equivalent. The **immediate chat context** carries the current conversation — verbatim but bounded; earlier content is pushed out as the window fills. The **userMemories summary** is an automated prose digest of past conversations — a pointer to what has been decided or found, not the decision or finding itself, and subject to drift between updates. **Retrievable past chats** return fragments of earlier sessions through keyword or time-window search, not full transcripts. **Project files on disk** — session logs, instruction documents, extracts, the database accessed through the operational agent — are authoritative by programme convention. **Training** is general knowledge: Hebrew, Greek, biblical studies, methodology. Training is pattern, not record; it does not substitute for reading the database. Where analytical precision matters, the discipline is to read the authoritative source rather than rely on what a summary layer says about it.
+
+"Collective learning" does not cross users or projects. Each conversation Claude AI holds is isolated from every other conversation held with any other user and from any other project in this user's workspace. What can feel like accumulated collective insight is retrieval from this programme's own session trail, pattern-matching from training, or in-context reasoning over what has been loaded. It is not a shared pool of knowledge about the subject built up across users. Stating this plainly keeps the work honest: the programme's findings are the programme's findings, traceable to the evidence this programme has gathered.
+
+The session discipline that reaches across the boundaries between sessions runs on two documents. The **observations log** — the obslog — is the session's working paper. It is opened at session start as a required step, and from that point every finding, decision, gap, patch consequence, and open question is written to it at the moment it is determined. Every substantive chat output also appears in the obslog. Researcher feedback is captured verbatim. The obslog is continuous while the session runs; nothing substantive exists only in chat or only in memory.
+
+The **session log** is the handoff record. It is produced at session close and at any named batch boundary within a session. Where the obslog carries continuous detail, the session log carries the closing state: what was done, what was decided, what remains open, and what the next session needs at startup to resume cleanly. A session that closes without a session log has not closed cleanly.
+
+At **pass close** — the boundary at which a phase of work completes and a fresh analytical slice becomes the working source — items requiring database persistence are written through a patch or a directive, researcher-reviewed, and applied by the operational agent. A fresh extract confirming the write becomes the source of truth for the next pass. This is the mechanism by which session work reaches the database: the obslog captures the work in flight; the patch or directive commits it; the fresh extract verifies the commit and carries the state forward.
+
+Extracts are versioned. At session start, Claude AI confirms the version of the extract it is working from; an extract whose version is not confirmed is not worked on. Between turns, the database state held in the current extract is not assumed to be still current; where an operation depends on state that may have changed, a refresh is requested from the operational agent before the operation proceeds.
+
+Prose written to the database is written to survive storage. The sub-section of prose produced in one session will be read and built on in another, possibly with a different snapshot loaded. To survive that transition, the prose is self-contained — readable without the session that produced it; scoped — clear about what it refers to (registry, cluster, group, dimension, or programme-wide); and grounded — clear about the evidence it rests on. Prose that only makes sense inside its session of origin is fragile under this model. The database carries interpretation as well as evidence, and interpretation held in the database survives session boundaries the way evidence does.
+
+---
+
+<!-- PROSE_SECTION_ID: 1040 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_tools -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_SECTION: Programme -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_CHAPTER_TITLE: Tools and their roles -->
+<!-- PROSE_SORT_ORDER: 19 -->
+<!-- PROSE_VERSION: 2 -->
+<!-- PROSE_SOURCE_FILE: outputs/markdown/prose-edit-type-52-20260814.md -->
+
+## Tools and their roles
+
+The programme runs on a small set of tools, each with a defined role. Over time, and as the programme continued to wrestle with consistency and repeatability the tool set migrated from a range of scripts, tools and instruction sets to the concept of a integrated Inner Being Application. This IBA App is the result a complete rebuild of the database and all its dependencies. The IBA App is described in more detail in subsequent sections.
+
+In principle the initial script and instructions, migrated to the IBA App allows the research to operate on text evidence held in a structured record, interrogated by two AI agents under researcher direction. The tools are the instruments through which this work is performed.
+
+**STEP Bible** is the source of biblical-language data. For each word in the registry, STEP provides the Hebrew and Greek terms that carry the word's sense, the full set of verses in which those terms occur, and the lexicon data for every term. STEP is consumed at Session A, where the per-word dataset is assembled, and again during continuous-discovery extension of the registry — when retrieval surfaces a related original-language term that meets the inner-being definition but was not on the list, the term is added.
+
+**VSCode with Claude Code** is the operational environment. The operational agent runs inside the editor, executing SQL against the database, applying patches, fulfilling directives, producing extracts, and performing schema migrations. The combination is both the execution surface and the audit surface: every database operation takes place in a tool the researcher can observe directly.
+
+**IBA App** is the control system to allow for standard operations to be performed consistently with minimal deviation over time.  The App is used by the researcher and in the VSCode editor to run pre-designed operations.
+
+**Claude AI** is the analytical agent. It reads the verse evidence, classifies verses into groups, assigns groups to dimensions, answers the standing catalogue of questions for each word, drafts the written word studies, and authors the programme's prose. It constructs patches and directives but does not apply them. Its role is analysis, interpretation, and authorship.
+
+**The SQLite database** holds the corpus. Components — terms, verses, classifications, dimensions, groups, registry entries, cross-references — live in it. Prose — programme narrative, per-word studies, cross-registry syntheses — lives in it under the same schema. It is a single analytical memory carrying both the evidence and the interpretation built on the evidence. Every finding the programme records is held here; an extract drawn from it is the working source for each analytical pass.  Two databases are currently in operation: bible_research.db is the first database. With the advent of the IBA App, the iba.db was created. The base data layer (from STEP to verse lexical) is fully migrated from bible_research.db to iba.db.
+
+**Markdown and JSON** are the working file formats. Descriptive content — instruction documents, the observations log, the session log, draft prose, governance documents — is written in markdown. Structured content — patches, directives, extracts, schema documentation, the global rules extract, reference files — is written in JSON. Both formats are plain text, diff-able, and auditable; a reviewer can open any file and read it without proprietary tooling. Word processors and PDFs are produced only when the researcher requests them as a deliverable.
+
+**The instruction corpus** Initially the programme's process control was controlled by a series of instruction sets. Each phase of the work — Session A, Verse Context, Dimension Review, Session B, Session C, Session D — had authoritative instruction documents that sets out what is done, in what order, to what standard. The many iterations of, and differences and omissions accross the instructions lead to the development of the IBA App where all rules are governed by sets of configurations in the App. Programme-wide rules for AI Chat sit in the global rules document loaded at every session start. 
+
+The elaborate design and structuring of a set of instructions included : The registry-management guide governs how the registry is extended and maintained; the patch and directive specifications govern how database changes are authored. The instruction corpus is the mechanism by which process is controlled rather than re-negotiated each session; referring to it is how the programme keeps its discipline stable across months of work. All of this turned out to be failing when applying the rules over time in AI Chat. A lack of consistency, predictability and quality emerged, giving rise to the redevelopment of the entire approach in the IBA App.
+
+**Programme prose held in the database** is the production chain through which the research is articulated and, eventually, published. Prose is produced and captured at each successive phase of the per-word work, and every order of prose is held in the database so that the next phase can draw on it. *At Session A*, the per-word prose is the listing of the extracted STEP data — the terms, the verses, the lexicon entries assembled as the word's source record. *At Session B Readiness*, the prose is a data extract that brings together all the different angles of the word's data after Verse Context and Dimension Review have been applied — groups, dimensions, anchor verses, cross-references, term flags — and this extract becomes the primary input for the analytical pass. *At Session B Analysis*, the prose is the primary result of the standing catalogue of questions: every analytic finding captured, every pointer for cross-registry synthesis recorded, the full record generated from the database. *At Session C*, the reader-facing written study for the word is produced in plain, accessible language for an intelligent non-specialist reader, drawing on the prior orders of prose; the study is updated as Session B's analytical findings are incorporated and again as Session D's cross-registry synthesis informs it. *At Session D*, prose is produced at the level of clusters of related words, examining the inter-relationships of the inner-being characteristics and their impact on the inner being; this prose is built from the accumulated pointer record in the database and from the cross-registry analysis performed against it. Alongside this per-word and per-cluster production chain, the programme-wide prose — the self-description of the programme that this corpus is itself part of — is held in the same database under the same schema, so that every session has a consistent, queryable self-description to draw on.
+
+**The standing catalogue of questions** is the programme's analytical instrument. At Session B, every word is interrogated through the same pre-prepared set of questions that examine the verse evidence and the lexical data from every angle the programme has committed to covering. The catalogue is applied in full, on every word. Analytical rigour comes from this uniformity: the depth of a word's treatment does not depend on which session it was studied in, which mood the analyst was in, or which aspects of the word happened to catch attention. Every word gets the same instrument applied to it, and every answer is persisted in the database as part of that word's record.
+
+The tools combine to support the programme's working arrangement. STEP feeds Session A; Session A outputs are imported through patches into the SQLite database. The analytical agent reads from extracts and authors patches, directives, and prose. The operational agent executes the database operations. Markdown and JSON files carry the artefacts of this exchange between turns; the instruction corpus governs how the work is done; the prose corpus in the database keeps the description of how the work is done accessible to every session, and carries the phase-by-phase prose that the research produces about the words it studies; the standing catalogue keeps the analytical depth consistent across every word. Each tool is bounded; together they are the whole of what the programme uses.
+
+---
+
+<!-- PROSE_SECTION_ID: 20 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_research_decisions -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_SECTION: Programme -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_CHAPTER_TITLE: Researcher decision authority -->
+<!-- PROSE_SORT_ORDER: 20 -->
+<!-- PROSE_VERSION: 1 -->
+<!-- PROSE_SOURCE_FILE: wa-prose-ch3-obslog-v1_0-20260422.md -->
+
+## Researcher decision authority
+
+All intellectual work in this programme originates with and remains the responsibility of the researcher. The research question, the corpus design, every methodological decision, every analytical judgement, and every conclusion are the researcher's. AI did not author, conceptualise, or decide anything. The researcher directed every session, evaluated every output, corrected errors, overrode proposals, and accepted or rejected suggestions on their merits against the primary biblical data. Claude AI functioned as a research assistant — executing, querying, drafting, and proposing — never deciding. This is not a description of the programme's attitude; it is a description of how the programme actually operated, turn by turn, session by session, through every registry and every finding.
+
+The division at each decision point is concrete. Claude AI reads the verse evidence and proposes a classification; the researcher accepts, modifies, or rejects. Claude AI drafts a paragraph of prose; the researcher reviews, corrects, or replaces. Claude AI constructs a patch that would commit findings to the database; the researcher reviews the patch before the operational agent applies it. Claude AI raises an observation with two possible readings; the researcher decides which reading governs. At every one of these decision points, the record of what was proposed, what was decided, and what follow-up was logged is captured in the session's observations log. The log is the auditable record that the decision was the researcher's.
+
+**What Claude AI did, within researcher direction.** Claude AI queried the SQLite research database on the researcher's instruction. All queries were specified by the researcher; all outputs were reviewed and verified. Claude AI produced drafts from structured briefs supplied by the researcher. All drafts were reviewed, corrected, and approved; no draft was accepted without critical evaluation. Claude AI generated structured JSON data files from researcher-supplied source material. The researcher specified all classification decisions and validated every output. Claude AI contributed proposals to the analytical framework. All proposals were evaluated against the corpus data by the researcher, who accepted, rejected, or modified them.
+
+**What Claude AI did not do.** Claude AI did not select the research question. It did not make authorship decisions. It did not interpret Scripture independently. It did not supply citations without verification. It did not produce any output that was accepted without the researcher's critical review. Where a reading of the biblical text was contested, Claude AI surfaced the readings with their evidence and escalated the decision; it did not choose between them. Where a rule's application was uncertain or a scope question was unresolved, Claude AI did not guess — it escalated. The researcher's in-session direction supersedes stale text in the rules file until the file is updated; the researcher's standing authority does not depend on whether a particular rule has been updated to reflect it.
+
+**Integrity of content and primary sources.** The primary source for all lexical claims in the programme is STEP Bible, a peer-maintained scholarly tool for Hebrew and Greek biblical analysis. Every term, every Strong's number, and every verse record was drawn from STEP and verified against it. The researcher personally reviewed all source data and is accountable for every claim. Claude AI was not used to supply citations independently; it organised and structured data the researcher supplied. All changes to the research database are held in a versioned, auditable patch system with a complete decision history. Every patch records what was proposed, who approved it, when it was applied, and what the confirmation output showed. The chain from primary source to database entry to finding is traceable end-to-end, by design.
+
+**Assessment against publisher criteria.** The framework of authorship on which this programme is built corresponds to the criteria articulated by COPE, Elsevier, Wiley, Springer Nature, Taylor & Francis, and SAGE for the legitimate use of AI in scholarship. One human researcher holds full intellectual responsibility for the programme and can defend every claim it makes. AI use is declared specifically and categorised by function, consistent with current disclosure requirements. All primary-source claims are verifiable against STEP Bible and the auditable database; no AI-generated citation was accepted without independent verification. The research question, the corpus design, the analytical framework, and the findings are the researcher's own; AI did not supply substantive interpretive content. No confidential third-party material was processed through AI tools; the programme was conducted on data owned and assembled by the researcher. These are not aspirational commitments — they are the programme's operating record, recoverable from the observations logs, the patch history, and the session outputs that have been produced in the course of the work.
+
+**The analogy that holds.** The use of AI in this programme is analogous to the use of any powerful research tool — a lexical database, a concordance, a statistical package, a research assistant. The tool did not produce the scholarship. The researcher did. That is the standard by which this work asks to be evaluated, and it is the standard the work meets.
+
+The framework of authorship is not a concession to publishing convention and not a disclaimer attached to the research. It is the condition under which the research was conducted. Every discipline described in this chapter — the traceability requirement, the two-AI division, the session-continuity and memory-discipline, the tooling, the scope discipline that follows — is framed by it. The programme's analytical architecture exists to give the researcher the auditable conditions under which decisions can actually be made, verified, and defended. Without that authority structure, the architecture would be assistance in search of a principal. The principal is the researcher, and the architecture serves the research that the researcher does.
+
+---
+
+<!-- PROSE_SECTION_ID: 21 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_scope_integrity -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_SECTION: Programme -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_CHAPTER_TITLE: Scope and help-forward discipline -->
+<!-- PROSE_SORT_ORDER: 21 -->
+<!-- PROSE_VERSION: 1 -->
+<!-- PROSE_SOURCE_FILE: wa-prose-ch3-obslog-v1_0-20260422.md -->
+
+## Scope and help-forward discipline
+
+The programme's analytical architecture works only if Claude AI stays on the work the researcher has set. The disciplines already described — traceability, the two-AI division, session continuity, tool use, researcher authority — all assume an analytical agent that is focused on the task at hand and does not drift. Without that focus, the architecture becomes a stage on which Claude AI generates volume; with it, the architecture produces research.
+
+The operating default is **help forward**. Where the path the researcher has set is clear, Claude AI advances the work. It does not wait for explicit instruction on every step within a task that has already been scoped. It does not pause to request permission for the analytical steps that the task evidently requires. Help-forward is the reason the researcher can direct a session rather than dictate every move within it.
+
+Help-forward is bounded. It means help on the task the researcher has set, not help in the form of proposing adjacent tasks, speculating about related questions, or volunteering a next-phase agenda. A task is advanced; it is not enlarged. Where Claude AI notices something that warrants attention but lies outside the current task — a finding elsewhere that bears on this one, an instruction that appears inconsistent with another, a pattern that a future session might want to examine — the observation is recorded as an open item, and the work continues on what was asked.
+
+Scope is not extended autonomously. Where additional work appears warranted, it is flagged for researcher decision, not undertaken. The flag is explicit: *this is outside current scope; the researcher decides whether it enters scope*. The decision to extend is the researcher's. Claude AI's role is to surface, not to enlarge.
+
+The same discipline applies to looking forward. Claude AI explores within the task, reads, interrogates the data, compares options, and produces reasoning that the researcher can evaluate. What it does not do is propose what the programme should do next, suggest what the next session should prioritise, or construct a forward agenda from what the current work has raised. Forward direction is a programme-level decision, and programme-level decisions are the researcher's. An observation that bears on forward work is surfaced as an observation; it is not framed as a recommendation that the researcher then has to push back against.
+
+The failure mode the discipline prevents is **drift**: the slow transformation of a focused task into something broader, shaped by Claude AI's pattern-matching and accumulated in-context associations rather than by the researcher's direction. Drift looks plausible turn-by-turn — each step seems a reasonable adjacency to the last — and only becomes visible as drift when the session is read end-to-end against what was originally asked. The discipline against drift is turn-by-turn: every turn is bounded by what was asked, what was needed to answer it, and the write-and-audit cadence that closes the turn. A session that stays disciplined turn-by-turn stays disciplined across the session.
+
+**Escalation**, not guessing, is the standing response to uncertainty. Where a rule's application is not clear, where a scope question is ambiguous, or where two readings of an instruction are both defensible, Claude AI does not choose — it surfaces the uncertainty and escalates to the researcher. Guessing at what the researcher would want is not a time-saver; it is drift wearing a different label. The researcher's direction takes the same amount of time to obtain whether Claude AI has guessed first or not, and if Claude AI has guessed first, the work done under the guess may need to be redone.
+
+The positive work this discipline protects is the work of exploration. Claude AI reads widely within the task, considers alternative readings, surfaces options with their evidence, notices patterns, and produces analytical material the researcher can evaluate. This is substantial work and it is the work Claude AI contributes. What it does not do — the deciding, the expanding, the forward-planning — is not a suppression of Claude AI's capabilities. It is the division by which those capabilities become useful to the research rather than a drain on it.
+
+The chapter describes the disciplines under which the programme operates. Scope integrity is the discipline that keeps each session recognisable as the session the researcher opened — not a related session, not a broader session, not the session Claude AI would have chosen to run. It is, with the authorship framework that precedes it, the foundation on which the programme's auditable record can actually be audited: what was asked, what was done, what was decided, and by whom.
+
+---

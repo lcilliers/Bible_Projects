@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 28,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4326 (Pro 28:16) — a ruler lacking understanding is a cruel oppressor; one who hates unjust gain lives long.",
+ "spans": {
+  "266577": {
+   "gloss": "lacking understanding (tebunah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "senseless cruelty — the ruler without understanding, a great oppressor"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the ruler",
+     "to": 266577,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the lack of understanding in a ruler that makes him a cruel oppressor — folly in power turning to tyranny, senselessness that crushes those it governs"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the hatred of unjust gain it is set against (266580)",
+     "to": 266577,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "set against the ruler who hates ill-gotten gain and endures",
+     "to": 266580,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "tebunah (understanding) — 'a ruler who LACKS understanding is a cruel oppressor'; folly in a ruler becomes cruelty. Without understanding, power oppresses; the senseless ruler grinds his people (cf 28:15)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "266580": {
+   "gloss": "hates unjust gain (sane)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "incorruptibility — the ruler who spurns ill-gotten gain and lives long"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the ruler",
+     "to": 266580,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the hating of unjust gain by a ruler who therefore prolongs his days — the incorruptibility that refuses to profit by wrong, the opposite of the cruel oppressor's greed"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the senseless cruelty it is set against (266577)",
+     "to": 266580,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "set against the understanding-less ruler who oppresses",
+     "to": 266580,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "sane (hate) — 'but he who HATES unjust gain will prolong his days'; the ruler who spurns corruption endures. To hate ill-gotten gain is the mark of a ruler who lasts (cf 28:16a; 29:4)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

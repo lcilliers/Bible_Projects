@@ -1,0 +1,661 @@
+{
+ "_meta": {
+  "description": "M10b B3 a.ven SUB-PASS 2 (Job+Pro+1Sa) EVIDENCE. Generative metaphor (plow/sow/reap; conceive/birth) + heart-devises + volitional turn-from/choose. Evidence only.",
+  "cluster": "M10b",
+  "batch": "B3",
+  "lemma": "a.ven",
+  "sub_pass": "SP2 (Job+Pro+1Sa)",
+  "occurrences": 20,
+  "produced": "2026-06-22",
+  "version": "v1_0"
+ },
+ "records": [
+  {
+   "ref": "1Sa 15:23",
+   "verse_text": "1Sa 15:23 For rebellion is as the sin of divination , and presumption is as iniquity and idolatry . Because you have rejected the word of the Lord , he has also rejected you from being king .”",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "rejected (H3988)",
+   "cause_clause": "rebellion sin divination presumption iniquity idolatry Because rejected",
+   "immediate_response": "rejected king",
+   "touch_points": [
+    {
+     "lemma": "chat.tat",
+     "gloss": "sin",
+     "role": "partner",
+     "ring": "CORE"
+    },
+    {
+     "lemma": "me.ri",
+     "gloss": "rebellion",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Job 4:8",
+   "verse_text": "Job 4:8 As I have seen , those who plow iniquity and sow trouble reap the same.",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "seen (H7200)",
+   "touch_points": [
+    {
+     "lemma": "a.mal",
+     "gloss": "trouble",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ra.ah",
+     "gloss": "to see: see",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "cha.rash",
+     "gloss": "to plow/plot",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Job 11:11",
+   "verse_text": "Job 11:11 For he knows worthless men ; when he sees iniquity , will he not consider it?",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "sees (H7200)",
+   "cause_clause": "men sees iniquity not consider",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "ra.ah",
+     "gloss": "to see: see",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "bin",
+     "gloss": "to understand",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ya.da",
+     "gloss": "to know",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Job 11:14",
+   "verse_text": "Job 11:14 If iniquity is in your hand , put it far away , and let not injustice dwell in your tents .",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "far away (H7368)",
+   "touch_points": [
+    {
+     "lemma": "av.lah",
+     "gloss": "injustice",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Job 15:35",
+   "verse_text": "Job 15:35 They conceive trouble and give birth to evil , and their womb prepares deceit .”",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "evil",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "prepares (H3559)",
+   "object": "deceit",
+   "object_type": "abstract",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "a.mal",
+     "gloss": "trouble",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "mir.mah",
+     "gloss": "deceit",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Job 21:19",
+   "verse_text": "Job 21:19 You say, ‘ God stores up their iniquity for their children .’ Let him pay it out to them, that they may know it.",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "stores up (H6845)",
+   "object": "children",
+   "object_type": "abstract",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "el",
+     "gloss": "to[wards]",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "ya.da",
+     "gloss": "to know",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Job 22:15",
+   "verse_text": "Job 22:15 Will you keep to the old way that wicked men have trod ?",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "wicked",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "wicked",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "trod (H1869)",
+   "touch_points": [
+    {
+     "lemma": "sha.mar",
+     "gloss": "to keep: obey",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Job 31:3",
+   "verse_text": "Job 31:3 Is not calamity for the unrighteous , and disaster for the workers of iniquity ?",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "av.val",
+     "gloss": "unjust",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Job 34:8",
+   "verse_text": "Job 34:8 who travels in company with evildoers and walks with wicked men ?",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "evildoers",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "evildoers",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "action",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "object": "wicked",
+   "object_type": "abstract",
+   "touch_points": [
+    {
+     "lemma": "re.sha",
+     "gloss": "wickedness",
+     "role": "partner",
+     "ring": "M10b"
+    }
+   ]
+  },
+  {
+   "ref": "Job 34:22",
+   "verse_text": "Job 34:22 There is no gloom or deep darkness where evildoers may hide themselves.",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "evildoers",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "evildoers",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "action",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "touch_points": []
+  },
+  {
+   "ref": "Job 34:36",
+   "verse_text": "Job 34:36 Would that Job were tried to the end , because he answers like wicked men .",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "wicked",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "wicked",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "tried (H0974)",
+   "object": "end",
+   "object_type": "abstract",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "a.vi",
+     "gloss": "oh that!",
+     "role": "qualifier",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Job 36:10",
+   "verse_text": "Job 36:10 He opens their ears to instruction and commands that they return from iniquity .",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "commands (H0559)",
+   "cause": "God's command to return from it",
+   "cause_clause": "from iniquity",
+   "experiencer": "other",
+   "relational": "from",
+   "touch_points": []
+  },
+  {
+   "ref": "Job 36:21",
+   "verse_text": "Job 36:21 Take care ; do not turn to iniquity , for this you have chosen rather than affliction .",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "turn (H6437)",
+   "cause": "chosen over affliction",
+   "cause_clause": "this chosen than affliction",
+   "relational": "to",
+   "touch_points": [
+    {
+     "lemma": "o.ni",
+     "gloss": "affliction",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "el",
+     "gloss": "to[wards]",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "al",
+     "gloss": "not",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "ba.char",
+     "gloss": "to choose",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "sha.mar",
+     "gloss": "to keep: careful",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Pro 6:12",
+   "verse_text": "Pro 6:12 A worthless person , a wicked man , goes about with crooked speech ,",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "wicked",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "wicked",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "touch_points": []
+  },
+  {
+   "ref": "Pro 6:18",
+   "verse_text": "Pro 6:18 a heart that devises wicked plans , feet that make haste to run to evil ,",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "wicked",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "wicked",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "location": "heart",
+   "touch_points": [
+    {
+     "lemma": "cha.rash",
+     "gloss": "to plow/plot",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "lev",
+     "gloss": "heart",
+     "role": "co-seated",
+     "ring": "external"
+    },
+    {
+     "lemma": "ma.cha.sha.vah",
+     "gloss": "plot",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ra.ah",
+     "gloss": "distress: evil",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Pro 10:29",
+   "verse_text": "Pro 10:29 The way of the Lord is a stronghold to the blameless , but destruction to evildoers .",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "evildoers",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "evildoers",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "action",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "ma.oz",
+     "gloss": "security",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "tom",
+     "gloss": "integrity",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "me.chit.tah",
+     "gloss": "terror",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Pro 17:4",
+   "verse_text": "Pro 17:4 An evildoer listens to wicked lips , and a liar gives ear to a mischievous tongue .",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "wicked",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "wicked",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "hav.vah",
+     "gloss": "desire",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "she.qer",
+     "gloss": "deception",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "a.zan",
+     "gloss": "to listen",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "qa.shav",
+     "gloss": "to listen",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Pro 19:28",
+   "verse_text": "Pro 19:28 A worthless witness mocks at justice , and the mouth of the wicked devours iniquity .",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "iniquity",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "iniquity",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "devours (H1104)",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "mish.pat",
+     "gloss": "justice",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ra.sha",
+     "gloss": "wicked",
+     "role": "partner",
+     "ring": "M10b"
+    }
+   ]
+  },
+  {
+   "ref": "Pro 21:15",
+   "verse_text": "Pro 21:15 When justice is done , it is a joy to the righteous but terror to evildoers .",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "evildoers",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "evildoers",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "action",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "sim.chah",
+     "gloss": "joy",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "mish.pat",
+     "gloss": "justice",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "tsad.diq",
+     "gloss": "righteous",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "me.chit.tah",
+     "gloss": "terror",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Pro 30:20",
+   "verse_text": "Pro 30:20 This is the way of an adulteress : she eats and wipes her mouth and says , “I have done no wrong .”",
+   "strong": "H0205G",
+   "lemma": "a.ven",
+   "target_word": "wrong",
+   "morph": "HNcmsa",
+   "stem": null,
+   "sense": "wrong",
+   "lemma_meaning": "trouble, wickedness, sorrow",
+   "type": "status",
+   "faculty": [
+    "affect",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "how": "says (H0559)",
+   "experiencer": "other",
+   "touch_points": []
+  }
+ ]
+}

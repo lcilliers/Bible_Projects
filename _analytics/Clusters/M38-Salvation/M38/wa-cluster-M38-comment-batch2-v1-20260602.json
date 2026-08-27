@@ -1,0 +1,46 @@
+{
+  "cluster": "M38",
+  "date": "2026-06-02",
+  "approved": true,
+  "method": "COMMENT_EVALUATION batch 2 (researcher-approved 2026-06-02). 144: M38 already covers atonement<-mercy (finding 21139) -> fold for M38 + SD_CLUSTER reciprocal to M05 (mercy's home). 127/146/147/148: division (reg 52) and yielding (reg 180) have no cluster; researcher homes both to M44 (Relational Disposition) -> SD_CLUSTER pointer + fold. Completes the A7 DIMENSION_REVIEW batch.",
+  "new_findings": [],
+  "new_flags": [
+    {
+      "registry_id": 111, "flag_code": "SD_CLUSTER", "flag_label": "M05-RECIP-mercy-atonement-mechanism",
+      "priority": "MEDIUM", "session_target": null, "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M05", "cluster_link_basis": "comment-evaluation reciprocal (mercy reg 111 -> M05)",
+      "description": "From M38 comment-eval (DIM-111-001, wa_session_b_findings id 144). Mercy (reg 111; clustered mainly to M05 Love/Compassion/Kindness) is the divine inner relational disposition; atonement (kipper/kaphar/kapporet; hilasmos/hilastērios — M38 char 125/126) is its structural MECHANISM — how God's mercy is expressed in and through transformative acts that alter the person's standing. M38 already analyses the atonement<-divine-compassion link (finding 21139). When M05 is analysed, resolve into a finding: mercy/compassion's structural mechanism for altering human standing is atonement (M38)."
+    },
+    {
+      "registry_id": 180, "flag_code": "SD_CLUSTER", "flag_label": "M44-HOME-paradidomi-taxonomy",
+      "priority": "MEDIUM", "session_target": null, "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M44", "cluster_link_basis": "homed to M44 (yielding has no cluster; researcher 2026-06-02)",
+      "description": "Homed from M38 A7 (DIM-180-001, id 127; reg 180 yielding, no cluster -> M44 Relational Disposition). paradidōmi (G3860) spans 12 distinct inner-being uses: betrayal, Christ's passion, voluntary self-giving, judicial delivering-over, apostolic transmission, discipleship under persecution, stewardship, continual self-entrustment, self-abandonment to desire, divine delegation, discipline for restoration, obedience to tradition. When M44 is analysed, treat as a structured taxonomy of 'giving over / handing on' as an inner-being (relational-disposition) category."
+    },
+    {
+      "registry_id": 52, "flag_code": "SD_CLUSTER", "flag_label": "M44-HOME-division-vocab-landscape",
+      "priority": "MEDIUM", "session_target": null, "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M44", "cluster_link_basis": "homed to M44 (division has no cluster; researcher 2026-06-02)",
+      "description": "Homed from M38 A7 (DIM-52-001, id 146; reg 52 division, no cluster -> M44). Greek division vocabulary (schizō G4977, schisma G4978, merizō G3307, diamerizō G1266, meris G3310, meros G3313) shows a differentiated inner-being landscape: schisma/schizō = communal fracture over identity evaluation; merizō = internal volitional division; diamerizō = interpersonal fracture from ultimate allegiance; meris/meros = relational belonging and volitional orientation toward Christ. When M44 is analysed, examine these terms in relation to each other and to the Hebrew portion vocabulary (chelek, cheleq, chalaq)."
+    },
+    {
+      "registry_id": 52, "flag_code": "SD_CLUSTER", "flag_label": "M44-HOME-portion-divine-human-correspondence",
+      "priority": "MEDIUM", "session_target": null, "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M44", "cluster_link_basis": "homed to M44 (unclustered; researcher 2026-06-02)",
+      "description": "Homed from M38 A7 (DIM-52-002, id 147; reg 52 division/portion, unclustered -> M44). Five groups in the division registry carry Divine-Human Correspondence; the portion/lot vocabulary (chelek, chalaq, meros, meris) consistently operates in divine-human correspondence mode — God allots, human receives, inner states arise in response. When M44 is analysed, examine whether this correspondence structure is intrinsic to the portion concept or a feature of the particular corpus."
+    },
+    {
+      "registry_id": 52, "flag_code": "SD_CLUSTER", "flag_label": "M44-HOME-mark1-10-schizo-classification",
+      "priority": "LOW", "session_target": null, "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M44", "cluster_link_basis": "homed to M44 + VC-classification flag (researcher 2026-06-02)",
+      "description": "Homed from M38 A7 (DIM-52-003, id 148; reg 52 -> M44). Mark 1:10 (heavens torn open at Jesus's baptism) appears as a related verse in group 5272-001 (schizō) — a cosmic/physical use of schizō with no inner-being subject in the term itself; may reflect an over-broad Verse Context classification. When M44 is analysed, assess whether the heavens-torn image carries inner-being significance through its context (divine approval, identity revelation) or whether it is a VC classification gap to correct."
+    }
+  ],
+  "fold_findings": [
+    { "id": 144, "status": "folded", "cluster_link": "M05,M38", "resolution_note": "M38 side already covered by char-125 finding 21139 (atonement from divine compassion). Generative mercy side routed to M05 via SD_CLUSTER. Folded for M38." },
+    { "id": 127, "status": "folded", "cluster_link": "M44", "resolution_note": "Homed to M44 (yielding/paradidōmi has no cluster). Folded for M38." },
+    { "id": 146, "status": "folded", "cluster_link": "M44", "resolution_note": "Homed to M44 (division has no cluster). Folded for M38." },
+    { "id": 147, "status": "folded", "cluster_link": "M44", "resolution_note": "Homed to M44 (portion/unclustered). Folded for M38." },
+    { "id": 148, "status": "folded", "cluster_link": "M44", "resolution_note": "Homed to M44 + VC-classification flag. Folded for M38." }
+  ]
+}

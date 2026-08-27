@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "registry_no": 67,
+    "word": "goodness",
+    "generated_at": "2026-05-01T09:54:31Z",
+    "schema_expected": "3.17.0",
+    "checks_run": 15
+  },
+  "verdict_summary": {
+    "PASS": 7,
+    "WARN": 4,
+    "FAIL": 4
+  },
+  "overall": "BLOCKED",
+  "checks": [
+    {
+      "id": "C01",
+      "label": "Schema version",
+      "category": "schema",
+      "verdict": "PASS",
+      "detail": "schema_version = 3.17.0"
+    },
+    {
+      "id": "C02",
+      "label": "Engine audit clean",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "last_automation_run = 'AUDITED'"
+    },
+    {
+      "id": "C03",
+      "label": "Phase 1 status",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "phase1_status = 'Complete'"
+    },
+    {
+      "id": "C04",
+      "label": "Verse Context status",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "verse_context_status = 'Complete'"
+    },
+    {
+      "id": "C05",
+      "label": "Dimension Review status",
+      "category": "registry",
+      "verdict": "FAIL",
+      "detail": "dim_review_status = None; expected 'Complete'"
+    },
+    {
+      "id": "C06",
+      "label": "Phase A prose captured",
+      "category": "prose",
+      "verdict": "PASS",
+      "detail": "6/6 sa_s1_d* rows present"
+    },
+    {
+      "id": "C07",
+      "label": "Readiness output present",
+      "category": "filesystem",
+      "verdict": "FAIL",
+      "detail": "missing readiness output for R067. Run `python scripts/_pilot_build_readiness_output_v2_20260426.py --registry 67`."
+    },
+    {
+      "id": "C08",
+      "label": "Term inventory health",
+      "category": "terms",
+      "verdict": "PASS",
+      "detail": "3 OWNER terms, all with ≥1 verse"
+    },
+    {
+      "id": "C09",
+      "label": "All groups have dimensions",
+      "category": "dimensions",
+      "verdict": "FAIL",
+      "detail": "12 groups; 3 without dimension: ['884-007', '884-008', '884-009']"
+    },
+    {
+      "id": "C10",
+      "label": "All groups have anchors",
+      "category": "dimensions",
+      "verdict": "WARN",
+      "detail": "3/12 groups without an anchor: ['884-007', '884-008', '884-009']"
+    },
+    {
+      "id": "C11",
+      "label": "Set-aside ratio",
+      "category": "vc",
+      "verdict": "WARN",
+      "detail": "6 group(s) with set-aside > 90%: ['884-001 (142/22 = 645%)', '884-002 (142/37 = 384%)', '884-003 (142/35 = 406%)', '884-004 (142/33 = 430%)', '884-005 (142/16 = 888%)', '884-006 (142/21 = 676%)']. Possible VC drift; review Stage 2a."
+    },
+    {
+      "id": "C12",
+      "label": "Legacy-VC caveat",
+      "category": "vc",
+      "verdict": "PASS",
+      "detail": "all 3 OWNER terms have vc_status set under v3 contracts"
+    },
+    {
+      "id": "C13",
+      "label": "Dimension confidence",
+      "category": "dimensions",
+      "verdict": "WARN",
+      "detail": "dimension_confidence: (null): 3, KEYWORD_STRONG: 3, KEYWORD_WEAK: 6. No 'confirmed' assignments — Session B can promote during Stage 2."
+    },
+    {
+      "id": "C14",
+      "label": "No open DATA_ANOMALY_* findings",
+      "category": "findings",
+      "verdict": "FAIL",
+      "detail": "3 open DATA_ANOMALY_* findings: ['ANOMALY-067-001 (DATA_ANOMALY_FINDING_UNCITED)', 'ANOMALY-067-002 (DATA_ANOMALY_CITATION_GAP)', 'ANOMALY-067-068 (DATA_ANOMALY_QA_GAP)']. Resolve before handoff."
+    },
+    {
+      "id": "C15",
+      "label": "Researcher fields",
+      "category": "registry",
+      "verdict": "WARN",
+      "detail": "inference_note: absent; word_synopsis: absent. Researcher-authored fields are informational; absence is not blocking."
+    }
+  ]
+}

@@ -1,0 +1,56 @@
+{
+  "cluster": "M38",
+  "date": "2026-06-02",
+  "approved": false,
+  "method": "REVIEW REQUIRED: for each pointer evaluate _text; set action (adopt|set_aside). adopt -> target_finding_id (existing) or new_finding_text; record reason. Underscore fields are read-only evidence. Applier _apply_pointer_adoption_v1 is TO BUILD.",
+  "adoptions": [
+    {
+      "table": "wa_session_research_flags",
+      "id": 147,
+      "action": "",
+      "target_finding_id": null,
+      "new_finding_text": "",
+      "reason": "",
+      "_classifier": "SD_POINTER DIM-73-SD001",
+      "_registry_id": 73,
+      "_cluster_link": "M38",
+      "_text": "The inner-being movement from guilt-incurred (Reg 73) through repentance (Reg 135) to freedom from condemnation (Reg 24) and justification (Reg 98) constitutes the governing arc of C13. Session D should examine whether this four-registry trajectory (guilt → repentance → no-condemnation → justification) maps a complete inner-being soteriology visible in Scripture."
+    },
+    {
+      "table": "wa_session_research_flags",
+      "id": 256,
+      "action": "",
+      "target_finding_id": null,
+      "new_finding_text": "",
+      "reason": "",
+      "_classifier": "SD_POINTER DIM-111-SD012",
+      "_registry_id": 111,
+      "_cluster_link": "M38",
+      "_text": "Rom 3:25: Christ as hilasterios to be received by faith. Faith as mode of accessing mercy seat. Session D to examine faith-mercy-seat connection across Reg 59 and Reg 111."
+    },
+    {
+      "table": "wa_session_research_flags",
+      "id": 581,
+      "action": "",
+      "target_finding_id": null,
+      "new_finding_text": "",
+      "reason": "",
+      "_classifier": "SB_FINDING SB-062-T2-001",
+      "_registry_id": 62,
+      "_cluster_link": "M04,M18,M38",
+      "_text": "[Catalogue v2 gap surfaced 2026-04-30] T0.2.1 (Created Purpose) — status P, notation: Adds structure / Gap identified, Gap identified.\n\nPrompt: What does the verse evidence suggest about the purpose this characteristic serves in the human person as created — what does it equip the person to be, do, or become?\n\nAI response excerpt: The verse evidence establishes several purposes fellowship serves in the human person, though the data does not frame these explicitly in terms of *created design* — the evidential frame is primarily soteriological, moral, and covenantal rather than protological.\n\n**What fellowship equips the person to become:** 2Pe 1:4 presents fellowship with divine nature as the mechanism by which persons *esca"
+    },
+    {
+      "table": "wa_session_research_flags",
+      "id": 631,
+      "action": "",
+      "target_finding_id": null,
+      "new_finding_text": "",
+      "reason": "",
+      "_classifier": "SD_POINTER SP-111-020",
+      "_registry_id": 111,
+      "_cluster_link": "M38",
+      "_text": "[v1.8 obslog SD pointer] Does Luk 18:13 establish that authentic mercy-seeking is constitutively somatic — bodily postures are the outer expression of the necessary inner posture of guilt-awareness?\n\nTarget: R073 (guilt) / R030 (contrition)\nConnecting term: G2433 hilaskomai / Luk 18:13\nEvidence basis: OBS-111-047"
+    }
+  ]
+}

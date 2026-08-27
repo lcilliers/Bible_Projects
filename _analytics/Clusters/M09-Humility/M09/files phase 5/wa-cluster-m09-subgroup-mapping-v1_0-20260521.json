@@ -1,0 +1,334 @@
+{
+  "cluster": "M09",
+  "cluster_label": "Humility, Meekness and Submission",
+  "phase": 5,
+  "date": "2026-05-21",
+  "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+  "design_document": "wa-cluster-m09-subgroup-design-v1_0-20260521.md",
+  "total_subgroups": 8,
+  "distribution_gate_pct": 40,
+  "notes": [
+    "Mapping is by verse_reference (book chapter:verse) per term. CC resolves to flat vc_id mapping for Phase 6 apply.",
+    "Multi-faceted terms: G5011 Mat11:29 primary=M09-A secondary=M09-F. CC records primary subgroup_id on verse_context row; secondary noted in mti_term_subgroup or obslog.",
+    "1Pe5:5 appears in both G5011 and G5012 (same verse_record). Two vc_ids; both route to M09-A.",
+    "Rom6:16 appears in both G5218 and G5219 (same verse_record). Two vc_ids; both route to M09-C.",
+    "1Ti3:4 appears in G5292 (routes M09-D) and G4587 (routes M09-G). Two vc_ids; different sub-groups.",
+    "G1299 diatassō: 11 verses in M09-D are PHASE_8_5_FLAG — no M09 inner-being content; provisionally routed to M09-D; Phase 8.5 to resolve (SET-ASIDE or ROUTE-TO-M23).",
+    "G5013 tapeinoō Luk3:5: routed to M09-A per brief instruction; Phase 5.5 set-aside candidate — CC to note flag on this vc_id."
+  ],
+  "subgroups": [
+    {
+      "subgroup_code": "M09-A",
+      "label": "Humility — willed self-lowering",
+      "characteristic": "HUMILITY",
+      "split_axis": "Voluntary/dispositional (C1a of C1 volume-split)",
+      "expected_vc_ids": 37
+    },
+    {
+      "subgroup_code": "M09-B",
+      "label": "Lowliness — experienced and imposed state",
+      "characteristic": "HUMILITY",
+      "split_axis": "Condition/state/imposed (C1b of C1 volume-split)",
+      "expected_vc_ids": 13
+    },
+    {
+      "subgroup_code": "M09-C",
+      "label": "Submission — inner disposition of will",
+      "characteristic": "SUBMISSION",
+      "split_axis": "Heart/conscience-located inner disposition (C2a of C2 volume-split)",
+      "expected_vc_ids": 17
+    },
+    {
+      "subgroup_code": "M09-D",
+      "label": "Submission — relational pattern of obedience",
+      "characteristic": "SUBMISSION",
+      "split_axis": "Lived expression/relational pattern (C2b of C2 volume-split)",
+      "expected_vc_ids": 30,
+      "phase_8_5_flag_count": 11
+    },
+    {
+      "subgroup_code": "M09-E",
+      "label": "Contrition — crushed and broken spirit",
+      "characteristic": "CONTRITION",
+      "split_axis": null,
+      "expected_vc_ids": 2
+    },
+    {
+      "subgroup_code": "M09-F",
+      "label": "Meekness — calibrated restraint and gentleness",
+      "characteristic": "MEEKNESS_GENTLENESS",
+      "split_axis": null,
+      "expected_vc_ids": 2,
+      "multi_faceted_secondary_count": 1
+    },
+    {
+      "subgroup_code": "M09-G",
+      "label": "Dignity — grounded moral gravity",
+      "characteristic": "DIGNITY",
+      "split_axis": null,
+      "expected_vc_ids": 3
+    },
+    {
+      "subgroup_code": "M09-H",
+      "label": "Willing-heartedness — the freely-moved spirit",
+      "characteristic": "WILLING_HEARTEDNESS",
+      "split_axis": null,
+      "expected_vc_ids": 5
+    }
+  ],
+  "term_mappings": [
+    {
+      "strongs": "G1299",
+      "translit": "diatassō",
+      "mti_id": 2866,
+      "assignments": [
+        { "verse_ref": "Luk 17:10", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "Mat 11:1", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "Luk 3:13", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "Luk 17:9", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "Act 7:44", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "Act 18:2", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "1Cor 7:17", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "1Cor 9:14", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "1Cor 11:34", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "1Cor 16:1", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "Gal 3:19", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" },
+        { "verse_ref": "Tit 1:5", "subgroup": "M09-D", "flag": "PHASE_8_5_FLAG" }
+      ]
+    },
+    {
+      "strongs": "G3356",
+      "translit": "metriopatheō",
+      "mti_id": 3988,
+      "assignments": [
+        { "verse_ref": "Heb 5:2", "subgroup": "M09-F", "flag": null }
+      ]
+    },
+    {
+      "strongs": "G3635",
+      "translit": "okneō",
+      "mti_id": 7359,
+      "assignments": [
+        { "verse_ref": "Act 9:38", "subgroup": "M09-F", "flag": null }
+      ]
+    },
+    {
+      "strongs": "G4587",
+      "translit": "semnotēs",
+      "mti_id": 812,
+      "assignments": [
+        { "verse_ref": "1Ti 2:2", "subgroup": "M09-G", "flag": null },
+        { "verse_ref": "1Ti 3:4", "subgroup": "M09-G", "flag": "SHARED_VERSE_RECORD_with_G5292_hupotagē" },
+        { "verse_ref": "Tit 2:7", "subgroup": "M09-G", "flag": null }
+      ]
+    },
+    {
+      "strongs": "G5011",
+      "translit": "tapeinos",
+      "mti_id": 56,
+      "assignments": [
+        { "verse_ref": "Mat 11:29", "subgroup": "M09-A", "flag": "MULTI_FACETED_secondary=M09-F" },
+        { "verse_ref": "Luk 1:52", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Rom 12:16", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Cor 7:6", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "2Cor 10:1", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Jam 1:9", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Jam 4:6", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "1Pe 5:5", "subgroup": "M09-A", "flag": "SHARED_VERSE_RECORD_with_G5012_tapeinofrosunē" }
+      ]
+    },
+    {
+      "strongs": "G5012",
+      "translit": "tapeinofrosunē",
+      "mti_id": 57,
+      "assignments": [
+        { "verse_ref": "Act 20:19", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Eph 4:2", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Phili 2:3", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Col 2:18", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Col 2:23", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Col 3:12", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "1Pe 5:5", "subgroup": "M09-A", "flag": "SHARED_VERSE_RECORD_with_G5011_tapeinos" }
+      ]
+    },
+    {
+      "strongs": "G5013",
+      "translit": "tapeinoō",
+      "mti_id": 2491,
+      "assignments": [
+        { "verse_ref": "Mat 18:4", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Mat 23:12", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Luk 3:5", "subgroup": "M09-A", "flag": "PHASE_5_5_SET_ASIDE_CANDIDATE" },
+        { "verse_ref": "Luk 14:11", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Luk 18:14", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Cor 11:7", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Cor 12:21", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Phili 2:8", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "Phili 4:12", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Jam 4:10", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "1Pe 5:6", "subgroup": "M09-A", "flag": null }
+      ]
+    },
+    {
+      "strongs": "G5014",
+      "translit": "tapeinōsis",
+      "mti_id": 2492,
+      "assignments": [
+        { "verse_ref": "Luk 1:48", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Act 8:33", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Phili 3:21", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Jam 1:10", "subgroup": "M09-B", "flag": null }
+      ]
+    },
+    {
+      "strongs": "G5218",
+      "translit": "hupakoē",
+      "mti_id": 1020,
+      "cross_register_flag": "M30",
+      "assignments": [
+        { "verse_ref": "Rom 1:5", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Rom 5:19", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Rom 6:16", "subgroup": "M09-C", "flag": "SHARED_VERSE_RECORD_with_G5219_hupakouō" },
+        { "verse_ref": "Rom 15:18", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Rom 16:19", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Rom 16:26", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "2Cor 7:15", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "2Cor 10:5", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "2Cor 10:6", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "Phile 21", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Heb 5:8", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "1Pe 1:2", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "1Pe 1:14", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "1Pe 1:22", "subgroup": "M09-C", "flag": null }
+      ]
+    },
+    {
+      "strongs": "G5219",
+      "translit": "hupakouō",
+      "mti_id": 7516,
+      "cross_register_flag": "M30",
+      "assignments": [
+        { "verse_ref": "Act 6:7", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Rom 6:12", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "Rom 6:16", "subgroup": "M09-C", "flag": "SHARED_VERSE_RECORD_with_G5218_hupakoē" },
+        { "verse_ref": "Rom 6:17", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "Rom 10:16", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Eph 6:1", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Eph 6:5", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "Phili 2:12", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "Col 3:20", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Col 3:22", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "2Th 1:8", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "2Th 3:14", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Heb 5:9", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Heb 11:8", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "1Pe 3:6", "subgroup": "M09-C", "flag": null }
+      ]
+    },
+    {
+      "strongs": "G5292",
+      "translit": "hupotagē",
+      "mti_id": 1147,
+      "assignments": [
+        { "verse_ref": "2Cor 9:13", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Gal 2:5", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "1Ti 2:11", "subgroup": "M09-C", "flag": null },
+        { "verse_ref": "1Ti 3:4", "subgroup": "M09-D", "flag": "SHARED_VERSE_RECORD_with_G4587_semnotēs" }
+      ]
+    },
+    {
+      "strongs": "H1793A",
+      "translit": "dak.ka",
+      "mti_id": 7553,
+      "assignments": [
+        { "verse_ref": "Psa 34:18", "subgroup": "M09-E", "flag": null },
+        { "verse_ref": "Isa 57:15", "subgroup": "M09-E", "flag": null }
+      ]
+    },
+    {
+      "strongs": "H3349",
+      "translit": "yiq.qe.hah",
+      "mti_id": 1021,
+      "cross_register_flag": "M30",
+      "assignments": [
+        { "verse_ref": "Gen 49:10", "subgroup": "M09-D", "flag": null },
+        { "verse_ref": "Pro 30:17", "subgroup": "M09-D", "flag": null }
+      ]
+    },
+    {
+      "strongs": "H3665",
+      "translit": "ka.na",
+      "mti_id": 4475,
+      "assignments": [
+        { "verse_ref": "Lev 26:41", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "1Ki 21:29", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ki 22:19", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 7:14", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 12:6", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 12:7", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 12:12", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 28:19", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "2Ch 30:11", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 32:26", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 33:12", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 33:19", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 33:23", "subgroup": "M09-A", "flag": "NEGATIVE_INSTANCE" },
+        { "verse_ref": "2Ch 34:27", "subgroup": "M09-A", "flag": null },
+        { "verse_ref": "2Ch 36:12", "subgroup": "M09-A", "flag": "NEGATIVE_INSTANCE" },
+        { "verse_ref": "Job 40:12", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Psa 106:42", "subgroup": "M09-B", "flag": null },
+        { "verse_ref": "Psa 107:12", "subgroup": "M09-B", "flag": null }
+      ]
+    },
+    {
+      "strongs": "H5081G",
+      "translit": "na.div",
+      "mti_id": 3079,
+      "cross_register_flag": "M04,M29",
+      "assignments": [
+        { "verse_ref": "Exo 35:5", "subgroup": "M09-H", "flag": null },
+        { "verse_ref": "Exo 35:22", "subgroup": "M09-H", "flag": null },
+        { "verse_ref": "1Ch 28:21", "subgroup": "M09-H", "flag": null },
+        { "verse_ref": "2Ch 29:31", "subgroup": "M09-H", "flag": null },
+        { "verse_ref": "Psa 51:12", "subgroup": "M09-H", "flag": null }
+      ]
+    },
+    {
+      "strongs": "H6800A",
+      "translit": "tsa.na",
+      "mti_id": 2490,
+      "assignments": [
+        { "verse_ref": "Mic 6:8", "subgroup": "M09-A", "flag": null }
+      ]
+    },
+    {
+      "strongs": "H6800B",
+      "translit": "tsa.nu.a",
+      "mti_id": 207,
+      "assignments": [
+        { "verse_ref": "Pro 11:2", "subgroup": "M09-A", "flag": null }
+      ]
+    }
+  ],
+  "phase_8_5_flags": {
+    "term": "G1299 diatassō",
+    "mti_id": 2866,
+    "verses": ["Mat 11:1","Luk 3:13","Luk 17:9","Act 7:44","Act 18:2","1Cor 7:17","1Cor 9:14","1Cor 11:34","1Cor 16:1","Gal 3:19","Tit 1:5"],
+    "count": 11,
+    "rationale": "Pass A meanings show no M09 inner-being content for these 11 verses. Provisionally routed to M09-D for Phase 5/6 structural integrity. Phase 8.5 to resolve: SET-ASIDE or ROUTE-TO-M23 (authority/directive — primary register for this term)."
+  },
+  "phase_5_5_flags": {
+    "term": "G5013 tapeinoō",
+    "mti_id": 2491,
+    "verses": ["Luk 3:5"],
+    "rationale": "Physical-prophetic landscape imagery — no inner-being content for this term. Set-aside candidate per Phase 3 brief. Routed to M09-A for Phase 5/6; Phase 5.5 CC patch to action set-aside."
+  },
+  "characteristic_subgroup_binding": [
+    { "characteristic": "HUMILITY", "subgroups": ["M09-A","M09-B"], "split_type": "VOLUME_SPLIT" },
+    { "characteristic": "SUBMISSION", "subgroups": ["M09-C","M09-D"], "split_type": "VOLUME_SPLIT" },
+    { "characteristic": "CONTRITION", "subgroups": ["M09-E"], "split_type": null },
+    { "characteristic": "MEEKNESS_GENTLENESS", "subgroups": ["M09-F"], "split_type": null },
+    { "characteristic": "DIGNITY", "subgroups": ["M09-G"], "split_type": null },
+    { "characteristic": "WILLING_HEARTEDNESS", "subgroups": ["M09-H"], "split_type": null }
+  ]
+}

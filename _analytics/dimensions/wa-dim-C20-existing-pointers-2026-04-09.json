@@ -1,0 +1,91 @@
+{
+  "extract_meta": {
+    "extract_type": "existing_pointers",
+    "cluster": "C20",
+    "produced_date": "2026-04-09"
+  },
+  "session_b_findings": [
+    {
+      "finding_id": "DIM-187-001",
+      "registry_id": 187,
+      "finding_type": "DIMENSION_REVIEW",
+      "finding": "Group 7013-001 (a.yil, ram) carries a verse-level valuation in which obedience (H8085H sha.ma) and attentive listening (H7181 qashav) are declared greater than sacrifice — greater than the fat of rams (1 Sam 15:22). Neither term is an OWNER in Registry 187; their inner-being weight is present in the verse but unregistered in the programme. Session B for Registry 187 should explore: (1) what the comparative structure of 1 Sam 15:22 reveals about the hierarchy of inner-being orientations toward God — obedience and attentive listening as the higher register; (2) how this valuation relates to the strength/capacity cluster's broader understanding of inner-being agency before God; (3) the relationship between sha.ma and qashav as paired inner-being acts that together constitute the responsive orientation of the person toward God.",
+      "raised_date": "2026-04-08",
+      "session_b_instruction": "WA-DimensionReview-Instruction-v1.6-2026-04-08"
+    }
+  ],
+  "session_d_pointers": [
+    {
+      "flag_label": "DIM-187-SD001",
+      "registry_id": 187,
+      "flag_code": "SD_POINTER",
+      "description": "Programme-level registry validation gap identified during C20 Dimension Review (2026-04-08). Root cause: STEP Bible treats suffix variants of a root (e.g. H8085G vs H8085H for sha.ma) as sub-glosses rather than as independently linked related terms. The Session A extraction pipeline follows STEP's relational architecture and consequently does not surface sub-gloss variants as candidates for independent extraction. H8085H (sha.ma — to hear/obey) was not extracted; H7181 (qashav — to attend/listen) was extracted but STEP shows its related-word set as identical to H8085G, masking the sha.ma/qashav relationship. These are foundational inner-being terms — the hearing/obeying and attending/listening cluster is central to the biblical account of the inner person's orientation toward God. Session D must initiate a backward validation sweep: for every registered term, check whether its STEP sub-gloss variants were independently assessed for extraction eligibility. Priority: terms where the H/G/I suffix pattern produces distinct semantic content. This sweep should be scoped and executed before Session D synthesis conclusions are drawn on the hearing/obeying dimension.",
+      "session_target": "D",
+      "raised_date": "2026-04-08"
+    },
+    {
+      "flag_label": "PH2-197-001",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "yad - hand (general). 742 occ. Verse sample of 375 represents approximately 51% of occurrences. Authority and instrumental uses co-present; analysis cannot assume all occurrences are authority-register.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-002",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "yad - hand: power. 585 occ. Verse sample of 278 represents approximately 48% of occurrences. Core authority idiom but sample is partial.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-003",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "archōn - ruler/prince. 617 occ. Verse sample of 36 represents approximately 6% of occurrences. HIGH_FREQUENCY_ANCHOR: sample is highly partial. Full analysis requires Phase 2 independent research on unsampled occurrences.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-004",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "dunamis - power. 579 occ. HIGH_FREQUENCY_ANCHOR. Verse sample of 107 represents approximately 18% of occurrences. Power-as-authority dimension requires full corpus coverage for synthesis conclusions.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-005",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "archomai - to rule/begin. 55 occ. ZERO verses in export. No verse data available for analysis. Phase 2 research required before synthesis conclusions can be drawn on this term.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-197-006",
+      "registry_id": 197,
+      "flag_code": "VOLUME_LIMITATION",
+      "description": "dunamai - to be able. 444 occ. Verse sample of 120 represents approximately 27% of occurrences. Capacity-authority dimension is present but sample partial.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-199-001",
+      "registry_id": 199,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "H3027G (yad) has 742 occurrences. Export is volume-limited. Verse coverage is partial. Phase 2 must conduct additional independent research on this term before synthesis-level conclusions are drawn.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    },
+    {
+      "flag_label": "PH2-199-002",
+      "registry_id": 199,
+      "flag_code": "PH2_VOLUME_LIMITATION",
+      "description": "H3027H (yad) has 585 occurrences. Export is volume-limited. Verse coverage is partial. Phase 2 must conduct additional independent research on this term before synthesis-level conclusions are drawn.",
+      "session_target": "D",
+      "raised_date": "2026-03-26"
+    }
+  ]
+}

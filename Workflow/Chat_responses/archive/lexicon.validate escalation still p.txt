@@ -1,0 +1,9 @@
+lexicon.validate escalation still paused (RUN-20260811_172851_742) — 6 minor coverage gaps (2 missing LSJ parses, 2 missing Mounce parses, 2 unfetched strong_related). Awaiting a researcher decision: Approve as known state / Reject to action. Low-stakes, non-blocking.
+
+Filter re-triage build — the config-driven T2-grammatical + proper-noun exclusion at raw.discover, approved in principle but not yet built.
+
+receive rebuild — decided as a fresh rebuild (not a rollback-undo of the 2026-08-10 rollback), not yet executed.
+
+Rows 5–7 build spec — parsed-meaning completeness gate, verse-scoped verse_lexical rebuild trigger, downstream provenance/fingerprinting. Deliberately sequenced last; now unblocked since cluster/span/report threads are closed. Next up per the session's own sequencing.
+
+raw-complete redefinition — the new rule (raw-complete requires the underlying strongs' lexicals to be complete) — depends on rows 5–7 existing before it can be wired into raw.write/validation.py, and all 178 existing raw-complete words need re-checking against it (not grandfathered).

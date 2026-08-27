@@ -1,0 +1,337 @@
+{
+  "_meta": {
+    "file": "wa-cluster-M10c-subgroup-mapping-v1_0-20260526.json",
+    "date": "2026-05-26",
+    "cluster": "M10c",
+    "cluster_label": "Defilement and Impurity",
+    "phase": "Phase 5 - Sub-group formation",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519.md §8",
+    "total_relevant_verses": 263,
+    "subgroup_count": 5,
+    "gate_ceiling_verses": 105,
+    "all_gates_passed": true
+  },
+  "subgroups": [
+    {
+      "subgroup_code": "M10c-A",
+      "label": "Bodily-contact defilement-state",
+      "core_description": "The inner-being condition of ritual uncleanness acquired through physical contact with a defiling agent (corpse, discharge, carcass, fluid). Time-bound; transmitted by touch, carrying, or proximity; resolved by washing and waiting. Inner content: awareness of contamination incurred, duty of bodily watchfulness, distress at worship exclusion, conscience responding to violation. Structural opposite: M12 purity.",
+      "estimated_verses": 89,
+      "gate_status": "PASS"
+    },
+    {
+      "subgroup_code": "M10c-B",
+      "label": "Categorical/classificatory unclean-state",
+      "core_description": "The inner-being condition of uncleanness determined by authoritative examination and verdict (priestly diagnosis of skin disease) or by inherent categorical designation (animals, objects). May be permanent, progressive, or resolved by clearance. Inner content: active moral-spiritual discernment required of those who distinguish clean from unclean; enforced communal isolation; public self-declaration of contamination; grief at worship exclusion; conscience formed by purity categories. Structural opposite: M12 purity/discernment.",
+      "estimated_verses": 40,
+      "gate_status": "PASS"
+    },
+    {
+      "subgroup_code": "M10c-C",
+      "label": "Moral-inner defilement-state",
+      "core_description": "Defilement as the inner condition of moral corruption — conscience, will, and heart corrupted by desire, habitual sin, and idolatrous attachment. Locus of defilement is the inner person itself, not external contact. Primary NT register (all Greek terms); Hebrew metaphorical extension. Inner content: defiled conscience (1Cor 8:7); body and spirit defiled (2Cor 7:1); impurity as prior master of the will (Rom 6:19); heart allegiance disorder (Eph 5:5); constitutional human moral uncleanness (Job 14:4). Structural opposite: M12 purity/holiness of the inner person.",
+      "estimated_verses": 30,
+      "gate_status": "PASS"
+    },
+    {
+      "subgroup_code": "M10c-D",
+      "label": "Corporate/covenantal defilement",
+      "core_description": "Defilement extending from persons or community to land, sanctuary, and the divine name through moral defection. Includes covenantal-relational defilement (sexual betrayal, ordeal law, Nazirite violation) and the prophetic corporate register (idolatry defiling sanctuary and land). Inner-being content: corporate will in defection; hearts unfaithful in covenant; memory of defilement as mechanism of repentance (Eze 20:43); community's inner corruption rendering offerings worthless (Hag 2:14). Structural opposite: M12 purity/holiness of sacred space, divine name, covenant relationship.",
+      "estimated_verses": 87,
+      "gate_status": "PASS"
+    },
+    {
+      "subgroup_code": "M10c-E",
+      "label": "Defilement by external spiritual agency",
+      "core_description": "The inner-being condition of defilement produced by an unclean spirit inhabiting, controlling, and corrupting a person from without. The unclean force dominates will, suppresses faculties, and severs communal access. Restoration is treated as wholeness (Luk 6:18). Structurally distinct from bodily-mechanism defilement and from moral self-defilement — agency is external. Structural opposite: M12 purity/wholeness — the restored state after expulsion.",
+      "estimated_verses": 21,
+      "gate_status": "PASS"
+    }
+  ],
+  "term_assignments": [
+    {
+      "strongs": "G0167",
+      "transliteration": "akatharsia",
+      "mti_id": 919,
+      "total_relevant_verses": 10,
+      "assignment_type": "term_level",
+      "primary_subgroup": "M10c-C",
+      "secondary_subgroups": [],
+      "note": "All 10 verses in NT moral-inner defilement register"
+    },
+    {
+      "strongs": "G0169",
+      "transliteration": "akathartos",
+      "mti_id": 5574,
+      "total_relevant_verses": 30,
+      "assignment_type": "per_verse_range",
+      "primary_subgroup": "M10c-E",
+      "secondary_subgroups": ["M10c-B", "M10c-C"],
+      "verse_ranges": [
+        {
+          "subgroup": "M10c-E",
+          "verse_count": 21,
+          "verses": [
+            "Mat 10:1", "Mat 12:43",
+            "Mar 1:23", "Mar 1:26", "Mar 1:27", "Mar 3:11", "Mar 3:30",
+            "Mar 5:2", "Mar 5:8", "Mar 5:13", "Mar 6:7", "Mar 7:25", "Mar 9:25",
+            "Luk 4:33", "Luk 4:36", "Luk 6:18", "Luk 8:29", "Luk 9:42", "Luk 11:24",
+            "Act 5:16", "Act 8:7"
+          ],
+          "register": "unclean spirits — defilement by external spiritual agency"
+        },
+        {
+          "subgroup": "M10c-B",
+          "verse_count": 4,
+          "verses": ["Act 10:14", "Act 10:28", "Act 11:8", "1Cor 7:14"],
+          "register": "ritual/categorical unclean — conscience and category"
+        },
+        {
+          "subgroup": "M10c-C",
+          "verse_count": 5,
+          "verses": ["2Cor 6:17", "Eph 5:5", "Rev 16:13", "Rev 17:4", "Rev 18:2"],
+          "register": "moral-inner defilement-state"
+        }
+      ]
+    },
+    {
+      "strongs": "G3394",
+      "transliteration": "miasmos",
+      "mti_id": 1023,
+      "total_relevant_verses": 1,
+      "assignment_type": "term_level",
+      "primary_subgroup": "M10c-C",
+      "secondary_subgroups": [],
+      "note": "2Pe 2:10 — passion-driven moral defilement of will"
+    },
+    {
+      "strongs": "G3435",
+      "transliteration": "moluno",
+      "mti_id": 5001,
+      "total_relevant_verses": 3,
+      "assignment_type": "term_level",
+      "primary_subgroup": "M10c-C",
+      "secondary_subgroups": [],
+      "note": "1Cor 8:7 (conscience defiled); Rev 3:4 (inner integrity preserved); Rev 14:4 (consecrated purity maintained) — all moral-inner register"
+    },
+    {
+      "strongs": "G3436",
+      "transliteration": "molusmos",
+      "mti_id": 787,
+      "total_relevant_verses": 1,
+      "assignment_type": "term_level",
+      "primary_subgroup": "M10c-C",
+      "secondary_subgroups": [],
+      "note": "2Cor 7:1 — defilement of body and spirit; locus classicus of M10c inner-being claim"
+    },
+    {
+      "strongs": "H2930A",
+      "transliteration": "ta.me",
+      "gloss": "to defile (verb)",
+      "mti_id": 5581,
+      "total_relevant_verses": 128,
+      "assignment_type": "per_verse_range",
+      "primary_subgroup": "M10c-D",
+      "secondary_subgroups": ["M10c-A", "M10c-B"],
+      "verse_ranges": [
+        {
+          "subgroup": "M10c-A",
+          "verse_count": 50,
+          "verses": [
+            "Lev 5:3",
+            "Lev 11:24", "Lev 11:25", "Lev 11:26", "Lev 11:27", "Lev 11:28",
+            "Lev 11:31", "Lev 11:32", "Lev 11:33", "Lev 11:34", "Lev 11:35",
+            "Lev 11:36", "Lev 11:39", "Lev 11:40", "Lev 11:43", "Lev 11:44",
+            "Lev 12:2", "Lev 12:5",
+            "Lev 15:4", "Lev 15:5", "Lev 15:6", "Lev 15:7", "Lev 15:8",
+            "Lev 15:9", "Lev 15:10", "Lev 15:11", "Lev 15:16", "Lev 15:17",
+            "Lev 15:18", "Lev 15:19", "Lev 15:20", "Lev 15:21", "Lev 15:22",
+            "Lev 15:23", "Lev 15:24", "Lev 15:27", "Lev 15:31", "Lev 15:32",
+            "Lev 17:15",
+            "Num 19:7", "Num 19:8", "Num 19:10", "Num 19:11", "Num 19:13",
+            "Num 19:14", "Num 19:16", "Num 19:20", "Num 19:21", "Num 19:22",
+            "Hag 2:13"
+          ],
+          "register": "ritual/bodily contact defilement"
+        },
+        {
+          "subgroup": "M10c-B",
+          "verse_count": 15,
+          "verses": [
+            "Lev 13:3", "Lev 13:8", "Lev 13:11", "Lev 13:14", "Lev 13:15",
+            "Lev 13:20", "Lev 13:22", "Lev 13:25", "Lev 13:27", "Lev 13:30",
+            "Lev 13:44", "Lev 13:46", "Lev 13:59",
+            "Lev 14:36", "Lev 14:46"
+          ],
+          "register": "leprosy/diagnostic — priestly examination and verdict"
+        },
+        {
+          "subgroup": "M10c-D",
+          "verse_count": 63,
+          "verses": [
+            "Gen 34:5", "Gen 34:13", "Gen 34:27",
+            "Lev 18:20", "Lev 18:23", "Lev 18:24",
+            "Num 5:13", "Num 5:14", "Num 5:20", "Num 5:27", "Num 5:28", "Num 5:29",
+            "Num 6:7", "Num 6:9", "Num 6:12",
+            "Num 35:34",
+            "Deu 21:23", "Deu 24:4",
+            "2Ki 23:8", "2Ki 23:10", "2Ki 23:13", "2Ki 23:16",
+            "2Ch 36:14",
+            "Psa 79:1", "Psa 106:39",
+            "Isa 30:22",
+            "Jer 2:7", "Jer 2:23", "Jer 7:30", "Jer 32:34",
+            "Eze 4:14", "Eze 5:11", "Eze 9:7", "Eze 14:11",
+            "Eze 18:6", "Eze 18:11", "Eze 18:15",
+            "Eze 20:7", "Eze 20:18", "Eze 20:26", "Eze 20:30", "Eze 20:31", "Eze 20:43",
+            "Eze 22:3", "Eze 22:4", "Eze 22:11",
+            "Eze 23:7", "Eze 23:13", "Eze 23:17", "Eze 23:30", "Eze 23:38",
+            "Eze 33:26",
+            "Eze 36:17", "Eze 36:18", "Eze 37:23",
+            "Eze 43:7", "Eze 43:8", "Eze 44:25",
+            "Hos 5:3", "Hos 6:10", "Hos 9:4",
+            "Mic 2:10"
+          ],
+          "register": "sexual-relational and corporate/prophetic defilement"
+        }
+      ],
+      "note": "Total verse_ranges: 50+15+63=128. Primary sub-group is M10c-D by verse volume (63V)."
+    },
+    {
+      "strongs": "H2931",
+      "transliteration": "ta.me",
+      "gloss": "unclean (adjective)",
+      "mti_id": 920,
+      "total_relevant_verses": 66,
+      "assignment_type": "per_verse_range",
+      "primary_subgroup": "M10c-A",
+      "secondary_subgroups": ["M10c-B", "M10c-C", "M10c-D"],
+      "verse_ranges": [
+        {
+          "subgroup": "M10c-A",
+          "verse_count": 27,
+          "verses": [
+            "Lev 5:2", "Lev 7:19", "Lev 7:21",
+            "Lev 11:8", "Lev 11:26", "Lev 11:27", "Lev 11:28", "Lev 11:31", "Lev 11:35", "Lev 11:38",
+            "Lev 15:2", "Lev 15:25", "Lev 15:26", "Lev 15:33",
+            "Num 5:2", "Num 9:6", "Num 9:7", "Num 9:10",
+            "Num 19:13", "Num 19:15", "Num 19:17", "Num 19:19", "Num 19:20", "Num 19:22",
+            "Deu 12:15", "Deu 12:22", "Deu 15:22"
+          ],
+          "register": "contact/transmission ritual uncleanness"
+        },
+        {
+          "subgroup": "M10c-B",
+          "verse_count": 21,
+          "verses": [
+            "Lev 10:10", "Lev 11:47", "Lev 20:25",
+            "Lev 13:11", "Lev 13:15", "Lev 13:36", "Lev 13:44", "Lev 13:45", "Lev 13:46",
+            "Lev 13:51", "Lev 13:55",
+            "Lev 14:40", "Lev 14:41", "Lev 14:44", "Lev 14:45", "Lev 14:57",
+            "Lev 22:4",
+            "Deu 26:14", "Ecc 9:2",
+            "Judg 13:4", "2Ch 23:19"
+          ],
+          "register": "diagnostic/categorical unclean — priestly verdict, classification, discernment"
+        },
+        {
+          "subgroup": "M10c-C",
+          "verse_count": 6,
+          "verses": [
+            "Job 14:4", "Isa 6:5", "Isa 35:8", "Isa 52:11", "Isa 64:6", "Hag 2:14"
+          ],
+          "register": "moral-existential uncleanness — constitutional human condition, prophetic self-recognition"
+        },
+        {
+          "subgroup": "M10c-D",
+          "verse_count": 12,
+          "verses": [
+            "Jos 22:19",
+            "Isa 52:1",
+            "Jer 19:13",
+            "Lam 4:15",
+            "Eze 4:13", "Eze 22:5", "Eze 22:10", "Eze 22:26", "Eze 44:23",
+            "Hos 9:3", "Amo 7:17"
+          ],
+          "register": "corporate/covenantal — community uncleanness, sacred space, prophetic judgment"
+        }
+      ],
+      "note": "Total: 27+21+6+12=66. Primary sub-group M10c-A by verse volume (27V)."
+    },
+    {
+      "strongs": "H5079",
+      "transliteration": "nid.dah",
+      "mti_id": 918,
+      "total_relevant_verses": 24,
+      "assignment_type": "per_verse_range",
+      "primary_subgroup": "M10c-A",
+      "secondary_subgroups": ["M10c-D"],
+      "verse_ranges": [
+        {
+          "subgroup": "M10c-A",
+          "verse_count": 16,
+          "verses": [
+            "Lev 12:2", "Lev 12:5",
+            "Lev 15:19", "Lev 15:20", "Lev 15:24", "Lev 15:25", "Lev 15:26", "Lev 15:33",
+            "Num 19:9", "Num 19:13", "Num 19:20", "Num 19:21",
+            "Num 31:23",
+            "2Ch 29:5", "Ezr 9:11",
+            "Num 19:31"
+          ],
+          "register": "menstrual/bodily impurity — physiological, time-bound, transmissible"
+        },
+        {
+          "subgroup": "M10c-D",
+          "verse_count": 8,
+          "verses": [
+            "Lev 18:19", "Lev 20:21",
+            "Lam 1:17",
+            "Eze 7:19", "Eze 7:20", "Eze 18:6", "Eze 22:10", "Eze 36:17"
+          ],
+          "register": "moral-relational/metaphorical — niddah extended to covenant violation and corporate moral state"
+        }
+      ],
+      "note": "Zec 13:1 not in nid.dah corpus per constitution report (24V accounted). Total: 16+8=24."
+    }
+  ],
+  "volume_summary": {
+    "M10c-A": {
+      "ta_me_verb": 50,
+      "ta_me_adj": 27,
+      "nid_dah": 16,
+      "total": 93,
+      "gate_status": "PASS"
+    },
+    "M10c-B": {
+      "ta_me_verb": 15,
+      "ta_me_adj": 21,
+      "akathartos": 4,
+      "total": 40,
+      "gate_status": "PASS"
+    },
+    "M10c-C": {
+      "akatharsia": 10,
+      "miasmos": 1,
+      "moluno": 3,
+      "molusmos": 1,
+      "akathartos": 5,
+      "ta_me_adj": 6,
+      "total": 26,
+      "gate_status": "PASS"
+    },
+    "M10c-D": {
+      "ta_me_verb": 63,
+      "ta_me_adj": 12,
+      "nid_dah": 8,
+      "total": 83,
+      "gate_status": "PASS"
+    },
+    "M10c-E": {
+      "akathartos": 21,
+      "total": 21,
+      "gate_status": "PASS"
+    },
+    "grand_total": 263,
+    "gate_ceiling": 105,
+    "all_gates_passed": true
+  }
+}

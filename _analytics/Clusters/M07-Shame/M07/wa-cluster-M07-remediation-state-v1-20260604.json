@@ -1,0 +1,75 @@
+{
+  "cluster": "M07",
+  "cluster_name": "Shame",
+  "run_ts": "2026-06-04T04:26:50Z",
+  "date": "20260604",
+  "mode": "dry-run",
+  "stage": null,
+  "baseline_verdict": null,
+  "baseline_gate_fails": [
+    "A6",
+    "A7",
+    "B1b",
+    "B3",
+    "B7"
+  ],
+  "plan": [
+    {
+      "key": "CITATIONS",
+      "aspects": [
+        "B6",
+        "B7"
+      ],
+      "kind": "MECH"
+    },
+    {
+      "key": "DISPOSITIONS",
+      "aspects": [
+        "A6",
+        "A7",
+        "A2"
+      ],
+      "kind": "SPEC"
+    },
+    {
+      "key": "B7_EXTENSION",
+      "aspects": [
+        "B7"
+      ],
+      "kind": "SPEC"
+    },
+    {
+      "key": "ADOPTION",
+      "aspects": [
+        "D2"
+      ],
+      "kind": "SPEC"
+    },
+    {
+      "key": "TODO_B1b",
+      "aspects": [
+        "B1b"
+      ],
+      "kind": "TODO"
+    },
+    {
+      "key": "TODO_B3",
+      "aspects": [
+        "B3"
+      ],
+      "kind": "TODO"
+    }
+  ],
+  "handlers": [],
+  "reaudit_verdict": null,
+  "reaudit_gate_fails": null,
+  "residuals": [
+    "- **DISPOSITIONS** (A6,A7,A2): SPEC  · STOP — REQUIRES-INPUT (no spec; run --emit-templates, then review)",
+    "- **B7_EXTENSION** (B7): SPEC  · STOP — REQUIRES-INPUT (no spec; run --emit-templates, then review)",
+    "- **ADOPTION** (D2): SPEC  · applier NOT BUILT · spec=(none) [absent]",
+    "- **TODO_B1b** (B1b): TODO  · STOP — handler not built (surface, do not guess)",
+    "- **TODO_B3** (B3): TODO  · STOP — handler not built (surface, do not guess)"
+  ],
+  "backup_path": null,
+  "next_action": "--emit-templates (scaffold judgement specs) or --apply --stage mechanical."
+}

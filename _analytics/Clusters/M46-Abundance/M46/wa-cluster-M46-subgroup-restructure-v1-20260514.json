@@ -1,0 +1,230 @@
+{
+  "_meta": {
+    "document": "WA-M46-subgroup-restructure-v1-20260514",
+    "cluster": "M46",
+    "date": "2026-05-14",
+    "session_ref": "wa-M46-verse-readings-v1-20260514",
+    "basis": "Verse-by-verse reading of all 191 relevant verses. Sub-groups derived from verse evidence, not prior framing.",
+    "action": "Rename M46-B and M46-C; create M46-D; reassign term-subgroup links.",
+    "dry_run_required": true
+  },
+  "subgroup_operations": [
+    {
+      "op": "RENAME_UPDATE",
+      "subgroup_code": "M46-A",
+      "old_label": "Distortion",
+      "new_label": "Inner closure",
+      "new_description": "The inner-being condition of the person whose abundance has produced progressive closure toward God \u2014 the heart grown fat and unresponsive (sha.men), the trust redirected from God to material security, and the inner self-assessment anchored in material prosperity. This is not rebellion but satiation: the person who is full does not hunger; who feels secure does not seek; who trusts their wealth does not lean on God. The inner faculty of perception dulls; the inner faculty of trust misdirects; and the inner person becomes blind without knowing it.",
+      "note": "Label and description updated. Term assignments to M46-A remain substantially the same \u2014 sha.men verb, sha.a.nan 413-001, plousios distortion-face, rov, da.shen Deu 31:20 face."
+    },
+    {
+      "op": "RENAME_UPDATE",
+      "subgroup_code": "M46-B",
+      "old_label": "Moral-Category",
+      "new_label": "Hardness and insatiability",
+      "new_description": "The inner-being condition of the person whose abundance has produced two related failures of the inner life \u2014 hardness toward others and insatiability within. Hardness: the capacity for pity (cha.mal) erodes; the wealthy person answers roughly, ignores the suffering neighbour, honors the powerful and dishonors the poor, acquires through violence. Insatiability: the eyes are never satisfied with riches; wealth possessed cannot be enjoyed; what was accumulated rots; the person toils endlessly but cannot ask for whom. Both express the same inner contraction \u2014 unable to give to others, unable to receive from what they have.",
+      "note": "Complete reframe of former Moral-Category sub-group. Term assignments change significantly \u2014 see term-subgroup reassignments below."
+    },
+    {
+      "op": "RENAME_UPDATE",
+      "subgroup_code": "M46-C",
+      "old_label": "Ordered-Response",
+      "new_label": "The ordering of character and wealth",
+      "new_description": "The inner-being observation of the wisdom tradition: character determines the quality and trajectory of material life. The soul of the diligent is richly supplied \u2014 inner character produces inner richness that includes but exceeds material wealth. The house of the righteous has genuine treasure; the income of the wicked brings trouble. Wisdom carries riches and righteousness together. The fear of the Lord is Zion's true treasure. And God governs the material domain entirely \u2014 he makes poor and makes rich. The inner person who knows this does not grasp for material goods but receives them as fruit and gift of right inner orientation.",
+      "note": "Complete reframe of former Ordered-Response sub-group. Wisdom-domain term assignments move here."
+    },
+    {
+      "op": "CREATE",
+      "subgroup_code": "M46-D",
+      "label": "The inner life beyond material circumstance",
+      "description": "The inner-being characteristics that emerge when the person is no longer governed by the wealth domain \u2014 three related but distinct postures. First, poverty of spirit: the inner condition of dependence and receptivity before God, the person who has nothing to offer and is therefore constitutively open to divine gift; God has chosen the pt\u014dchos of this world to be rich in faith. Second, the inner act of release: the deliberate choice to give, relinquish, or refuse material wealth in response to a higher valuation \u2014 Moses counting the reproach of Christ as greater wealth than Egypt's treasure; Abram refusing enrichment to preserve his witness; the widow giving all her living; Christ becoming poor so that others might become rich. Third, learned contentment: the inner stability that Paul names as acquired through living in both abundance and scarcity \u2014 an achieved inner independence from material circumstance that neither poverty destroys nor abundance corrupts.",
+      "note": "New sub-group. Receives pt\u014dchos kingdom-face, pt\u014dcheu\u014d, ploutiz\u014d, autark\u0113s, plousi\u014ds (1Ti 6:17), ploute\u014d toward-God face, a.shar refusal face (Gen 14:23; Pro 23:4), sha.a.nan 413-002, a.dan."
+    }
+  ],
+  "term_subgroup_reassignments": {
+    "note": "Each term is assigned a PRIMARY sub-group. Individual verse_context rows may be routed to different sub-groups where the verse evidence warrants it. Primary assignment reflects the dominant inner-being function of the term's verse pool.",
+    "assignments": [
+      {
+        "strong": "H8080",
+        "mti_id": 4697,
+        "translit": "sha.men (verb)",
+        "primary": "M46-A",
+        "rationale": "VCGs 4697-001 (judicial hardening of heart) and 4697-002 (prosperity turning heart from God) are both inner-closure mechanisms."
+      },
+      {
+        "strong": "H7600",
+        "mti_id": 413,
+        "translit": "sha.a.nan",
+        "primary": "M46-A",
+        "rationale": "413-001 (complacent ease \u2192 contempt/blindness) primary; 413-002 (divine secure quietness) routes to M46-D. Term primary home M46-A."
+      },
+      {
+        "strong": "H7230",
+        "mti_id": 1142,
+        "translit": "rov",
+        "primary": "M46-A",
+        "rationale": "Magnitude of iniquity, spiritual failure \u2014 the weight of inner-moral distortion. Routes to M46-A as the sub-group where inner closure is named."
+      },
+      {
+        "strong": "H8082",
+        "mti_id": 4695,
+        "translit": "sha.men (adj)",
+        "primary": "M46-A",
+        "rationale": "Rich/fat as the ambient condition that produces inner closure (Neh 9:25; 9:35; Hab 1:16). Isa 30:23 eschatological face routes to M46-C."
+      },
+      {
+        "strong": "G4145",
+        "mti_id": 7577,
+        "translit": "plousios",
+        "primary": "M46-A",
+        "rationale": "Primary distortion face (Rev 3:17; Luk 18:23; Mat 19:23-24) \u2192 M46-A. Hardness face (Luk 16:19-21; Jam 2:6) \u2192 M46-B. Kingdom-reversal face \u2192 M46-D."
+      },
+      {
+        "strong": "G4149",
+        "mti_id": 7581,
+        "translit": "ploutos",
+        "primary": "M46-B",
+        "rationale": "Deceitfulness of riches choking the word (Mat 13:22; Mar 4:19; Luk 8:14) is the core insatiability pattern \u2192 M46-B. Revaluation face (Heb 11:26; 2Cor 8:2) \u2192 M46-D."
+      },
+      {
+        "strong": "G4147",
+        "mti_id": 7579,
+        "translit": "ploute\u014d",
+        "primary": "M46-A",
+        "rationale": "Self-directed becoming-rich (Rev 3:17; 1Ti 6:9; 1Cor 4:8) \u2192 M46-A. Toward-God face (Luk 12:21+; 1Ti 6:18) \u2192 M46-D."
+      },
+      {
+        "strong": "H6239",
+        "mti_id": 7586,
+        "translit": "o.sher",
+        "primary": "M46-B",
+        "rationale": "Insatiability face dominant (Ecc 4:8; 6:2; 5:13-14; Psa 49:6; 52:7; Pro 11:28) \u2192 M46-B. Wisdom-gift face (Pro 8:18; 22:4; Psa 112:3) \u2192 M46-C."
+      },
+      {
+        "strong": "H6223",
+        "mti_id": 7584,
+        "translit": "a.shir",
+        "primary": "M46-B",
+        "rationale": "Hardness pattern dominant (Pro 18:23; Mic 6:12; Luk 16:19; 2Sa 12:4; Pro 28:11) \u2192 M46-B. Wisdom-observation face \u2192 M46-C."
+      },
+      {
+        "strong": "H1952",
+        "mti_id": 7010,
+        "translit": "hon",
+        "primary": "M46-B",
+        "rationale": "Insatiability (Pro 30:15), imagined security (Pro 18:11), relational distortion (Pro 19:4) \u2192 M46-B. Wisdom-ordering face (Pro 3:9; 8:18; Psa 112:3) \u2192 M46-C."
+      },
+      {
+        "strong": "H4924B",
+        "mti_id": 4696,
+        "translit": "mish.man",
+        "primary": "M46-A",
+        "rationale": "Fatness of human power under divine judgment (Isa 10:16; 17:4) \u2014 inner closure mechanism; robust/stout as the condition struck by judgment. M46-A face."
+      },
+      {
+        "strong": "H1878",
+        "mti_id": 111,
+        "translit": "da.shen",
+        "primary": "M46-C",
+        "rationale": "111-001 (soul of diligent richly supplied; generosity enriches; trust enriches) \u2192 M46-C as character-produces-wealth. Deu 31:20 face \u2192 M46-A. Pro 15:30 \u2192 M46-D (good news enriches)."
+      },
+      {
+        "strong": "H2633",
+        "mti_id": 681,
+        "translit": "cho.sen",
+        "primary": "M46-C",
+        "rationale": "VCG 681-001 (wealth as moral category; character determines whether blessing or snare). Fear of the Lord is Zion's cho.sen (Isa 33:6) \u2192 M46-C."
+      },
+      {
+        "strong": "H6238",
+        "mti_id": 7585,
+        "translit": "a.shar",
+        "primary": "M46-C",
+        "rationale": "Diligence-makes-rich (Pro 10:4) and blessing-makes-rich (Pro 10:22) \u2192 M46-C. Hastening-brings-punishment (Pro 28:20) \u2192 M46-A/B. Refusal face (Gen 14:23; Pro 23:4) \u2192 M46-D."
+      },
+      {
+        "strong": "G4434",
+        "mti_id": 7583,
+        "translit": "pt\u014dchos",
+        "primary": "M46-D",
+        "rationale": "Primary kingdom-ground face (Mat 5:3; Luk 4:18; 6:20; Jam 2:5) \u2192 M46-D. Hardness-of-wealthy face (Jam 2:2-6) \u2192 M46-B."
+      },
+      {
+        "strong": "G4433",
+        "mti_id": 7582,
+        "translit": "pt\u014dcheu\u014d",
+        "primary": "M46-D",
+        "rationale": "Sole verse 2Cor 8:9 \u2014 Christ's voluntary impoverishment for others' enrichment. Core M46-D."
+      },
+      {
+        "strong": "G4148",
+        "mti_id": 7580,
+        "translit": "ploutiz\u014d",
+        "primary": "M46-D",
+        "rationale": "Enriching others as the through-put of apostolic poverty (2Cor 6:10; 9:11). Core M46-D."
+      },
+      {
+        "strong": "G0842",
+        "mti_id": 4898,
+        "translit": "autark\u0113s",
+        "primary": "M46-D",
+        "rationale": "VCG 4898-001 \u2014 learned contentment. Core M46-D capstone term."
+      },
+      {
+        "strong": "G4146",
+        "mti_id": 7578,
+        "translit": "plousi\u014ds",
+        "primary": "M46-D",
+        "rationale": "God who richly provides (1Ti 6:17) \u2014 divine abundance as the ground of the ordered inner life. M46-D."
+      },
+      {
+        "strong": "H2630",
+        "mti_id": 7109,
+        "translit": "cha.san",
+        "primary": "M46-D",
+        "rationale": "VCG 7109-001 (negated \u2014 not-hoarding as the eschatological ordered disposition; wealth released for others) \u2192 M46-D. The refusal of accumulation is the act of release."
+      },
+      {
+        "strong": "H5727",
+        "mti_id": 3836,
+        "translit": "a.dan",
+        "primary": "M46-D",
+        "rationale": "VCG 3836-001 \u2014 delighting in God's goodness (Neh 9:25 ordered face). M46-D."
+      },
+      {
+        "strong": "H7600",
+        "mti_id": 413,
+        "translit": "sha.a.nan (413-002)",
+        "primary": "M46-A",
+        "rationale": "Term primary is M46-A; 413-002 (divine secure quietness) verse_context rows route to M46-D."
+      }
+    ]
+  },
+  "anchor_selections": {
+    "note": "One primary anchor per sub-group. The anchor verse is the clearest single statement of the sub-group's inner-being characteristic.",
+    "M46-A": {
+      "verse": "Rev 3:17",
+      "term": "G4145 plousios",
+      "text": "For you say, I am rich, I have prospered, and I need nothing, not realising that you are wretched, pitiable, poor, blind, and naked.",
+      "rationale": "The definitive statement of inner closure: the Laodicean church's self-assessed wealth conceals actual blindness. 'I need nothing' is the inner-closure condition exactly named."
+    },
+    "M46-B": {
+      "verse": "Luk 16:19-21",
+      "term": "G4145 plousios",
+      "text": "There was a rich man who... feasted sumptuously every day. And at his gate was laid a poor man named Lazarus... who desired to be fed with what fell from the rich man's table.",
+      "rationale": "The paradigm case of hardness \u2014 the wealthy man feasting daily while Lazarus desires scraps at his gate. No engagement. No pity. The inner capacity for cha.mal is simply absent."
+    },
+    "M46-C": {
+      "verse": "Pro 13:4",
+      "term": "H1878 da.shen",
+      "text": "The soul (ne.phesh) of the sluggard craves and gets nothing, while the soul (ne.phesh) of the diligent is richly supplied (da.shen).",
+      "rationale": "The only verse in the cluster where prosperity vocabulary is applied directly to the ne.phesh \u2014 the soul itself is richly supplied by character. The character-produces-inner-richness statement."
+    },
+    "M46-D": {
+      "verse": "2Cor 8:9",
+      "term": "G4433 pt\u014dcheu\u014d",
+      "text": "For you know the grace of our Lord Jesus Christ, that though he was rich, yet for your sake he became poor, so that you by his poverty might become rich.",
+      "rationale": "The paradigmatic act of the domain inverted: divine wealth voluntarily surrendered to produce human enrichment. All three M46-D movements (poverty, release, enrichment-through-impoverishment) are present in one verse."
+    }
+  }
+}

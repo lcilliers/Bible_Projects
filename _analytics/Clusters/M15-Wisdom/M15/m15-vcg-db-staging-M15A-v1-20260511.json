@@ -1,0 +1,2348 @@
+{
+  "metadata": {
+    "cluster_code": "M15",
+    "cluster_subgroup_code": "M15-A",
+    "source_input": "wa-m15a-vcg-v1-20260511.json",
+    "generated_at": "2026-05-11T15:57:33Z",
+    "purpose": "DB-load staging for M15-A VCG cleanup. Three operations for a future directive: (1) create new VCGs in verse_context_group + vcg_term link rows; assign verses via verse_context.group_id. (2) Apply set-aside reason to verses with no inner-being phenomenon. (3) Re-route 5 verses from M15-A to M15-E by updating verse_context.cluster_subgroup_id (per-verse override since the term has verses in both sub-groups).",
+    "totals": {
+      "vcgs_to_create": 10,
+      "verses_to_assign_to_vcgs": 263,
+      "verses_to_set_aside": 39,
+      "verses_to_reroute": 5,
+      "sum_check": 307
+    },
+    "anchor_status": "Not designated in input. The cluster instruction §9 requires at least one anchor per VCG. Anchor designation is a follow-up step before this staging can be turned into a directive."
+  },
+  "vcg_creations": [
+    {
+      "code": "M15-A-VCG01",
+      "label": "Wisdom as God's own attribute",
+      "context_description": "The term names wisdom as belonging to God, to Christ as the embodied wisdom of God, or to Wisdom personified as God's own deliberative inner capacity. Inner-being phenomenon: divine inner attribute. The verses describe wisdom not as something held by humans but as something inhering in God himself — depths of God, attribute of the Lamb, content of doxology, what God possesses in fullness.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        527,
+        528,
+        532,
+        1204,
+        4458,
+        6696
+      ],
+      "verse_count": 19,
+      "verses": [
+        {
+          "vr_id": 7466,
+          "reference": "Luk 11:49",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom of God personified as divine deliberative agent (Luk 11:49)"
+        },
+        {
+          "vr_id": 7472,
+          "reference": "Rom 11:33",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom as a depth of God (Rom 11:33)"
+        },
+        {
+          "vr_id": 7478,
+          "reference": "1Cor 1:24",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Christ the wisdom of God (1Cor 1:24)"
+        },
+        {
+          "vr_id": 7479,
+          "reference": "1Cor 1:30",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Christ became to us wisdom from God (1Cor 1:30)"
+        },
+        {
+          "vr_id": 7484,
+          "reference": "1Cor 2:7",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Secret and hidden wisdom of God decreed before ages (1Cor 2:7)"
+        },
+        {
+          "vr_id": 7491,
+          "reference": "Eph 3:10",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "God's manifold wisdom made known through the church (Eph 3:10)"
+        },
+        {
+          "vr_id": 7494,
+          "reference": "Col 2:3",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "All treasures of wisdom and knowledge hidden in Christ (Col 2:3)"
+        },
+        {
+          "vr_id": 7503,
+          "reference": "Rev 5:12",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom belongs to the Lamb in heavenly doxology (Rev 5:12)"
+        },
+        {
+          "vr_id": 7504,
+          "reference": "Rev 7:12",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom belongs to God in heavenly doxology (Rev 7:12)"
+        },
+        {
+          "vr_id": 208351,
+          "reference": "Rom 16:27",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "To the only wise God be glory (Rom 16:27)"
+        },
+        {
+          "vr_id": 45700,
+          "reference": "Dan 2:21",
+          "strongs": "H0999",
+          "mti_term_id": 1204,
+          "assignment_note": "God's understanding as the faculty by which he gives wisdom (Dan 2:21, biynah)"
+        },
+        {
+          "vr_id": 209169,
+          "reference": "Dan 2:20",
+          "strongs": "H2452",
+          "mti_term_id": 6696,
+          "assignment_note": "Wisdom belongs to God (Dan 2:20, chokhmah)"
+        },
+        {
+          "vr_id": 7320,
+          "reference": "Isa 28:29",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "God excellent in wisdom (Isa 28:29, tushiyyah)"
+        },
+        {
+          "vr_id": 7354,
+          "reference": "Job 9:4",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "God wise in heart and mighty in strength (Job 9:4)"
+        },
+        {
+          "vr_id": 7435,
+          "reference": "Isa 31:2",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "God is wise — divine attribute (Isa 31:2)"
+        },
+        {
+          "vr_id": 7444,
+          "reference": "Jer 10:7",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "None among the wise of nations is like the Lord (Jer 10:7)"
+        },
+        {
+          "vr_id": 7312,
+          "reference": "Job 11:6",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "God holds secrets of wisdom, manifold in understanding (Job 11:6, tushiyyah)"
+        },
+        {
+          "vr_id": 7313,
+          "reference": "Job 12:16",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "With God are strength and sound wisdom (Job 12:16, tushiyyah)"
+        },
+        {
+          "vr_id": 7318,
+          "reference": "Pro 8:14",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "Wisdom personified claims sound wisdom (Pro 8:14)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG02",
+      "label": "Wisdom as inner endowment given by God to a named recipient",
+      "context_description": "The term names wisdom as a divinely-given inner endowment placed into a specific named person — Jesus growing in it, Solomon receiving it in answer to prayer, Daniel receiving it through the Spirit, the sanctuary craftsmen filled with the Spirit of skill, apostolic believers receiving it through Christ. Inner-being phenomenon: received inner capacity. The common feature is that the verse names the gift, the giver, or the recipient — wisdom comes into the person from God.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        525,
+        527,
+        528,
+        530,
+        532,
+        6668,
+        6696
+      ],
+      "verse_count": 40,
+      "verses": [
+        {
+          "vr_id": 7462,
+          "reference": "Luk 2:40",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Child Jesus filled with wisdom (Luk 2:40)"
+        },
+        {
+          "vr_id": 7463,
+          "reference": "Luk 2:52",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Jesus increased in wisdom (Luk 2:52)"
+        },
+        {
+          "vr_id": 7460,
+          "reference": "Mat 13:54",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Jesus's wisdom astonishes hearers (Mat 13:54)"
+        },
+        {
+          "vr_id": 7461,
+          "reference": "Mar 6:2",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom given to Jesus (Mar 6:2)"
+        },
+        {
+          "vr_id": 7467,
+          "reference": "Luk 21:15",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom Jesus will give to followers (Luk 21:15)"
+        },
+        {
+          "vr_id": 7468,
+          "reference": "Act 6:3",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Seven men full of Spirit and wisdom (Act 6:3)"
+        },
+        {
+          "vr_id": 7469,
+          "reference": "Act 6:10",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Stephen's wisdom and Spirit (Act 6:10)"
+        },
+        {
+          "vr_id": 7470,
+          "reference": "Act 7:10",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "God gave Joseph favour and wisdom before Pharaoh (Act 7:10)"
+        },
+        {
+          "vr_id": 7471,
+          "reference": "Act 7:22",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Moses instructed in wisdom of the Egyptians (Act 7:22)"
+        },
+        {
+          "vr_id": 7487,
+          "reference": "1Cor 12:8",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Utterance of wisdom given through the Spirit (1Cor 12:8)"
+        },
+        {
+          "vr_id": 7489,
+          "reference": "Eph 1:8",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom God lavished upon believers (Eph 1:8)"
+        },
+        {
+          "vr_id": 7490,
+          "reference": "Eph 1:17",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Spirit of wisdom and revelation (Eph 1:17)"
+        },
+        {
+          "vr_id": 7492,
+          "reference": "Col 1:9",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Filled with spiritual wisdom — prayer for Colossians (Col 1:9)"
+        },
+        {
+          "vr_id": 7498,
+          "reference": "Jam 1:5",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom asked of God who gives generously (Jam 1:5)"
+        },
+        {
+          "vr_id": 7501,
+          "reference": "Jam 3:17",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom from above with its qualities (Jam 3:17)"
+        },
+        {
+          "vr_id": 7502,
+          "reference": "2Pe 3:15",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom given to Paul (2Pe 3:15)"
+        },
+        {
+          "vr_id": 7454,
+          "reference": "2Ti 3:15",
+          "strongs": "G4679",
+          "mti_term_id": 530,
+          "assignment_note": "Sacred writings make wise for salvation (2Ti 3:15)"
+        },
+        {
+          "vr_id": 7483,
+          "reference": "1Cor 2:6",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom imparted among the mature, not of this age (1Cor 2:6)"
+        },
+        {
+          "vr_id": 7485,
+          "reference": "1Cor 2:13",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Words taught by Spirit, not human wisdom (1Cor 2:13)"
+        },
+        {
+          "vr_id": 7326,
+          "reference": "Exo 28:3",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Skillful ones filled with a spirit of skill (Exo 28:3)"
+        },
+        {
+          "vr_id": 7327,
+          "reference": "Exo 31:6",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Ability given to able men for sanctuary (Exo 31:6)"
+        },
+        {
+          "vr_id": 7329,
+          "reference": "Exo 35:25",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Skillful woman's inner skill expressed in sanctuary work (Exo 35:25)"
+        },
+        {
+          "vr_id": 7330,
+          "reference": "Exo 36:1",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Craftsmen in whom Lord has put skill and intelligence (Exo 36:1)"
+        },
+        {
+          "vr_id": 7331,
+          "reference": "Exo 36:2",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Craftsmen in whose mind the Lord had put skill (Exo 36:2)"
+        },
+        {
+          "vr_id": 7344,
+          "reference": "1Ki 3:12",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "God gives Solomon wise and discerning mind (1Ki 3:12)"
+        },
+        {
+          "vr_id": 7345,
+          "reference": "1Ki 5:7",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "God gives David a wise son (1Ki 5:7)"
+        },
+        {
+          "vr_id": 7348,
+          "reference": "2Ch 2:12",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Solomon a wise son with discretion and understanding (2Ch 2:12)"
+        },
+        {
+          "vr_id": 7142,
+          "reference": "2Ch 2:12",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Solomon's discretion and understanding (2Ch 2:12, sekhel)"
+        },
+        {
+          "vr_id": 7140,
+          "reference": "1Ch 22:12",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "May the Lord grant Solomon discretion and understanding (1Ch 22:12)"
+        },
+        {
+          "vr_id": 209173,
+          "reference": "Dan 5:11",
+          "strongs": "H2452",
+          "mti_term_id": 6696,
+          "assignment_note": "Wisdom like the wisdom of gods found in Daniel (Dan 5:11)"
+        },
+        {
+          "vr_id": 209174,
+          "reference": "Dan 5:14",
+          "strongs": "H2452",
+          "mti_term_id": 6696,
+          "assignment_note": "Light, understanding, excellent wisdom in Daniel (Dan 5:14)"
+        },
+        {
+          "vr_id": 209171,
+          "reference": "Dan 2:23",
+          "strongs": "H2452",
+          "mti_term_id": 6696,
+          "assignment_note": "You have given me wisdom and might (Dan 2:23)"
+        },
+        {
+          "vr_id": 208279,
+          "reference": "Dan 4:18",
+          "strongs": "H2445",
+          "mti_term_id": 6668,
+          "assignment_note": "Daniel able where wise men of Babylon are not — Spirit in you (Dan 4:18)"
+        },
+        {
+          "vr_id": 209172,
+          "reference": "Dan 2:30",
+          "strongs": "H2452",
+          "mti_term_id": 6696,
+          "assignment_note": "Mystery revealed not because of my wisdom but God's gift (Dan 2:30)"
+        },
+        {
+          "vr_id": 209170,
+          "reference": "Dan 2:21",
+          "strongs": "H2452",
+          "mti_term_id": 6696,
+          "assignment_note": "God gives wisdom to the wise (Dan 2:21, chokhmah)"
+        },
+        {
+          "vr_id": 208275,
+          "reference": "Dan 2:21",
+          "strongs": "H2445",
+          "mti_term_id": 6668,
+          "assignment_note": "He gives wisdom to the wise (Dan 2:21, chakkim) — direct gift-language"
+        },
+        {
+          "vr_id": 209175,
+          "reference": "Ezr 7:25",
+          "strongs": "H2452",
+          "mti_term_id": 6696,
+          "assignment_note": "Wisdom of your God in Ezra's hand (Ezr 7:25)"
+        },
+        {
+          "vr_id": 7144,
+          "reference": "Ezr 8:18",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Man of discretion brought by good hand of God (Ezr 8:18)"
+        },
+        {
+          "vr_id": 7324,
+          "reference": "Gen 41:39",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "God showed Joseph all this; none so wise as you (Gen 41:39)"
+        },
+        {
+          "vr_id": 7316,
+          "reference": "Pro 2:7",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "God stores up sound wisdom for the upright (Pro 2:7)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG03",
+      "label": "Wisdom as the settled inner character of the wise person",
+      "context_description": "The term names wisdom as the standing inner quality of a person — not the moment of receiving, but the constituted character. The wise person walks, hears instruction, restrains impulse, governs speech, builds, perceives the right time, is teachable, is recognised by their fruits. Inner-being phenomenon: constituted character. Wisdom as a settled inner disposition that shapes what the person does across the whole of their life.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        525,
+        527,
+        528,
+        532,
+        958,
+        996,
+        1201,
+        3459,
+        4458,
+        6676
+      ],
+      "verse_count": 117,
+      "verses": [
+        {
+          "vr_id": 208350,
+          "reference": "Rom 16:19",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Be wise as to what is good (Rom 16:19)"
+        },
+        {
+          "vr_id": 208343,
+          "reference": "Eph 5:15",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Walk as wise (Eph 5:15 sofos)"
+        },
+        {
+          "vr_id": 208352,
+          "reference": "Eph 5:15",
+          "strongs": "G0781",
+          "mti_term_id": 6676,
+          "assignment_note": "Not as unwise but as wise (Eph 5:15 asofos)"
+        },
+        {
+          "vr_id": 7497,
+          "reference": "Col 4:5",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Walk in wisdom toward outsiders (Col 4:5)"
+        },
+        {
+          "vr_id": 7496,
+          "reference": "Col 3:16",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Teaching in all wisdom (Col 3:16)"
+        },
+        {
+          "vr_id": 7493,
+          "reference": "Col 1:28",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Teaching everyone with all wisdom (Col 1:28)"
+        },
+        {
+          "vr_id": 7499,
+          "reference": "Jam 3:13",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom shown in good conduct and meekness (Jam 3:13 sofia)"
+        },
+        {
+          "vr_id": 208344,
+          "reference": "Jam 3:13",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Wise and understanding among you — shown by works (Jam 3:13 sofos)"
+        },
+        {
+          "vr_id": 103571,
+          "reference": "Mat 7:24",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Wise man hears and acts on Christ's words (Mat 7:24)"
+        },
+        {
+          "vr_id": 103565,
+          "reference": "Mat 10:16",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Be wise as serpents (Mat 10:16)"
+        },
+        {
+          "vr_id": 103566,
+          "reference": "Mat 24:45",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Faithful and wise servant (Mat 24:45)"
+        },
+        {
+          "vr_id": 103567,
+          "reference": "Mat 25:2",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Five wise virgins (Mat 25:2)"
+        },
+        {
+          "vr_id": 103568,
+          "reference": "Mat 25:4",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Wise prepared with oil (Mat 25:4)"
+        },
+        {
+          "vr_id": 103569,
+          "reference": "Mat 25:8",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Wise have prepared (Mat 25:8)"
+        },
+        {
+          "vr_id": 103570,
+          "reference": "Mat 25:9",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Wise answer with clear assessment (Mat 25:9)"
+        },
+        {
+          "vr_id": 103563,
+          "reference": "Luk 12:42",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Faithful and wise manager (Luk 12:42)"
+        },
+        {
+          "vr_id": 208342,
+          "reference": "1Cor 6:5",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "No one wise enough to settle dispute (1Cor 6:5)"
+        },
+        {
+          "vr_id": 208338,
+          "reference": "1Cor 3:10",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Paul as skilled master builder (1Cor 3:10)"
+        },
+        {
+          "vr_id": 103560,
+          "reference": "1Cor 10:15",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Sensible people, judge for yourselves (1Cor 10:15)"
+        },
+        {
+          "vr_id": 45172,
+          "reference": "1Cor 1:19",
+          "strongs": "G4908",
+          "mti_term_id": 1201,
+          "assignment_note": "Sensible people, judge what I say (1Cor 10:15, sunetos)"
+        },
+        {
+          "vr_id": 32162,
+          "reference": "1Cor 13:11",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Reasoned like a child; gave up childish ways (1Cor 13:11)"
+        },
+        {
+          "vr_id": 208347,
+          "reference": "Mat 23:34",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Christ sends prophets, wise men, scribes (Mat 23:34)"
+        },
+        {
+          "vr_id": 7458,
+          "reference": "Mat 11:19",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom justified by her deeds (Mat 11:19)"
+        },
+        {
+          "vr_id": 7464,
+          "reference": "Luk 7:35",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom justified by all her children (Luk 7:35)"
+        },
+        {
+          "vr_id": 7459,
+          "reference": "Mat 12:42",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Solomon's wisdom drew a queen (Mat 12:42)"
+        },
+        {
+          "vr_id": 7465,
+          "reference": "Luk 11:31",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Solomon's wisdom drew a queen (Luk 11:31)"
+        },
+        {
+          "vr_id": 7363,
+          "reference": "Pro 1:5",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise hear and increase in learning (Pro 1:5)"
+        },
+        {
+          "vr_id": 7364,
+          "reference": "Pro 1:6",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Words of the wise and their riddles (Pro 1:6)"
+        },
+        {
+          "vr_id": 7366,
+          "reference": "Pro 3:35",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise inherit honor (Pro 3:35)"
+        },
+        {
+          "vr_id": 7367,
+          "reference": "Pro 9:8",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Reprove wise man, he will love you (Pro 9:8)"
+        },
+        {
+          "vr_id": 7368,
+          "reference": "Pro 9:9",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man grows wiser with instruction (Pro 9:9 chakham)"
+        },
+        {
+          "vr_id": 178360,
+          "reference": "Pro 9:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Wise man grows in knowledge when taught (Pro 9:9 yada)"
+        },
+        {
+          "vr_id": 7369,
+          "reference": "Pro 10:1",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise son makes glad father (Pro 10:1)"
+        },
+        {
+          "vr_id": 7370,
+          "reference": "Pro 10:8",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise of heart receive commandments (Pro 10:8)"
+        },
+        {
+          "vr_id": 7371,
+          "reference": "Pro 10:14",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise lay up knowledge (Pro 10:14)"
+        },
+        {
+          "vr_id": 7372,
+          "reference": "Pro 11:29",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Fool will be servant to wise of heart (Pro 11:29)"
+        },
+        {
+          "vr_id": 7373,
+          "reference": "Pro 11:30",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Whoever captures souls is wise (Pro 11:30)"
+        },
+        {
+          "vr_id": 7374,
+          "reference": "Pro 12:15",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man listens to advice (Pro 12:15)"
+        },
+        {
+          "vr_id": 7375,
+          "reference": "Pro 12:18",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Tongue of the wise brings healing (Pro 12:18)"
+        },
+        {
+          "vr_id": 7376,
+          "reference": "Pro 13:1",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise son hears father's instruction (Pro 13:1)"
+        },
+        {
+          "vr_id": 7377,
+          "reference": "Pro 13:14",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Teaching of the wise is fountain of life (Pro 13:14)"
+        },
+        {
+          "vr_id": 7378,
+          "reference": "Pro 13:20",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Walks with the wise becomes wise (Pro 13:20)"
+        },
+        {
+          "vr_id": 7379,
+          "reference": "Pro 14:1",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wisest woman builds her house (Pro 14:1)"
+        },
+        {
+          "vr_id": 7380,
+          "reference": "Pro 14:3",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Lips of the wise preserve them (Pro 14:3)"
+        },
+        {
+          "vr_id": 7381,
+          "reference": "Pro 14:16",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise is cautious, turns from evil (Pro 14:16)"
+        },
+        {
+          "vr_id": 7382,
+          "reference": "Pro 14:24",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Crown of the wise is their wealth (Pro 14:24)"
+        },
+        {
+          "vr_id": 7385,
+          "reference": "Pro 15:12",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Scoffer will not go to the wise (Pro 15:12)"
+        },
+        {
+          "vr_id": 7386,
+          "reference": "Pro 15:20",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise son makes glad father (Pro 15:20)"
+        },
+        {
+          "vr_id": 7387,
+          "reference": "Pro 15:31",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Listening ear dwells among the wise (Pro 15:31)"
+        },
+        {
+          "vr_id": 7388,
+          "reference": "Pro 16:14",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man appeases king's wrath (Pro 16:14)"
+        },
+        {
+          "vr_id": 7389,
+          "reference": "Pro 16:21",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise of heart called discerning (Pro 16:21)"
+        },
+        {
+          "vr_id": 7390,
+          "reference": "Pro 16:23",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Heart of the wise makes speech judicious (Pro 16:23)"
+        },
+        {
+          "vr_id": 7392,
+          "reference": "Pro 18:15",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Ear of the wise seeks knowledge (Pro 18:15)"
+        },
+        {
+          "vr_id": 7393,
+          "reference": "Pro 20:26",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise king winnows wicked (Pro 20:26)"
+        },
+        {
+          "vr_id": 7394,
+          "reference": "Pro 21:11",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man instructed gains knowledge (Pro 21:11)"
+        },
+        {
+          "vr_id": 7395,
+          "reference": "Pro 21:20",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man's dwelling has treasure (Pro 21:20)"
+        },
+        {
+          "vr_id": 7396,
+          "reference": "Pro 21:22",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man scales city of mighty (Pro 21:22)"
+        },
+        {
+          "vr_id": 7398,
+          "reference": "Pro 23:24",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise son makes father glad (Pro 23:24)"
+        },
+        {
+          "vr_id": 7399,
+          "reference": "Pro 24:5",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man full of strength (Pro 24:5)"
+        },
+        {
+          "vr_id": 7400,
+          "reference": "Pro 24:23",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Sayings of the wise (Pro 24:23)"
+        },
+        {
+          "vr_id": 7401,
+          "reference": "Pro 25:12",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise reprover to listening ear (Pro 25:12)"
+        },
+        {
+          "vr_id": 7406,
+          "reference": "Pro 29:8",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise turn away wrath (Pro 29:8)"
+        },
+        {
+          "vr_id": 7407,
+          "reference": "Pro 29:9",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man with fool produces no quiet (Pro 29:9)"
+        },
+        {
+          "vr_id": 7408,
+          "reference": "Pro 29:11",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man holds back his spirit (Pro 29:11)"
+        },
+        {
+          "vr_id": 7409,
+          "reference": "Pro 30:24",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Small creatures exceedingly wise (Pro 30:24)"
+        },
+        {
+          "vr_id": 7410,
+          "reference": "Ecc 2:14",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise has eyes in head (Ecc 2:14)"
+        },
+        {
+          "vr_id": 7411,
+          "reference": "Ecc 2:16",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise dies just like the fool (Ecc 2:16)"
+        },
+        {
+          "vr_id": 7412,
+          "reference": "Ecc 2:19",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Heir may be wise or fool (Ecc 2:19)"
+        },
+        {
+          "vr_id": 7413,
+          "reference": "Ecc 4:13",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Poor wise youth better than old foolish king (Ecc 4:13)"
+        },
+        {
+          "vr_id": 7414,
+          "reference": "Ecc 6:8",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Advantage of wise over fool (Ecc 6:8)"
+        },
+        {
+          "vr_id": 7415,
+          "reference": "Ecc 7:4",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Heart of the wise in house of mourning (Ecc 7:4)"
+        },
+        {
+          "vr_id": 7416,
+          "reference": "Ecc 7:5",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Better to hear rebuke of the wise (Ecc 7:5)"
+        },
+        {
+          "vr_id": 7417,
+          "reference": "Ecc 7:7",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Oppression drives the wise to madness (Ecc 7:7)"
+        },
+        {
+          "vr_id": 7418,
+          "reference": "Ecc 7:19",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wisdom gives strength to wise man (Ecc 7:19)"
+        },
+        {
+          "vr_id": 7419,
+          "reference": "Ecc 8:1",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wisdom makes face shine (Ecc 8:1)"
+        },
+        {
+          "vr_id": 7420,
+          "reference": "Ecc 8:5",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise heart knows proper time (Ecc 8:5)"
+        },
+        {
+          "vr_id": 7421,
+          "reference": "Ecc 8:17",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man cannot find out God's work (Ecc 8:17)"
+        },
+        {
+          "vr_id": 7422,
+          "reference": "Ecc 9:1",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise and their deeds in God's hand (Ecc 9:1)"
+        },
+        {
+          "vr_id": 7340,
+          "reference": "2Sa 14:2",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise woman of Tekoa (2Sa 14:2)"
+        },
+        {
+          "vr_id": 7341,
+          "reference": "2Sa 14:20",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "David's wisdom like that of angel of God (2Sa 14:20)"
+        },
+        {
+          "vr_id": 7342,
+          "reference": "2Sa 20:16",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise woman of Abel (2Sa 20:16)"
+        },
+        {
+          "vr_id": 7343,
+          "reference": "1Ki 2:9",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Solomon a wise man (1Ki 2:9)"
+        },
+        {
+          "vr_id": 7361,
+          "reference": "Psa 49:10",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "The wise die — wisdom does not exempt (Psa 49:10)"
+        },
+        {
+          "vr_id": 7362,
+          "reference": "Psa 107:43",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Whoever is wise let him attend (Psa 107:43)"
+        },
+        {
+          "vr_id": 7355,
+          "reference": "Job 15:2",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Should a wise man answer with windy knowledge? (Job 15:2)"
+        },
+        {
+          "vr_id": 7356,
+          "reference": "Job 15:18",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "What wise men have told from fathers (Job 15:18)"
+        },
+        {
+          "vr_id": 7357,
+          "reference": "Job 17:10",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Job finds no wise man among them (Job 17:10)"
+        },
+        {
+          "vr_id": 7358,
+          "reference": "Job 34:2",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Hear my words you wise men (Job 34:2 chakham)"
+        },
+        {
+          "vr_id": 29695,
+          "reference": "Job 34:2",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Hear my words you wise men, who know (Job 34:2 yada)"
+        },
+        {
+          "vr_id": 7359,
+          "reference": "Job 34:34",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise man who hears me will say (Job 34:34)"
+        },
+        {
+          "vr_id": 29686,
+          "reference": "Job 26:3",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "How you have counseled him who has no wisdom (Job 26:3 yada)"
+        },
+        {
+          "vr_id": 7314,
+          "reference": "Job 26:3",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "Bildad's claim to declare sound knowledge (Job 26:3, tushiyyah)"
+        },
+        {
+          "vr_id": 29661,
+          "reference": "Job 11:6",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Secrets of wisdom — Zophar to Job (Job 11:6 yada)"
+        },
+        {
+          "vr_id": 7311,
+          "reference": "Job 6:13",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "Job asks if any resource remains (Job 6:13)"
+        },
+        {
+          "vr_id": 7317,
+          "reference": "Pro 3:21",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "Keep sound wisdom and discretion (Pro 3:21)"
+        },
+        {
+          "vr_id": 7319,
+          "reference": "Pro 18:1",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "Isolation breaks out against sound judgment (Pro 18:1)"
+        },
+        {
+          "vr_id": 178267,
+          "reference": "Ecc 2:19",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Who knows if heir will be wise (Ecc 2:19 yada)"
+        },
+        {
+          "vr_id": 178276,
+          "reference": "Ecc 6:8",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Poor man who knows how to conduct himself (Ecc 6:8 yada)"
+        },
+        {
+          "vr_id": 178279,
+          "reference": "Ecc 8:1",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Who knows interpretation of a thing — wise (Ecc 8:1 yada)"
+        },
+        {
+          "vr_id": 178283,
+          "reference": "Ecc 8:5",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Wise heart knows proper time (Ecc 8:5 yada)"
+        },
+        {
+          "vr_id": 7334,
+          "reference": "Deu 1:13",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Choose wise, understanding, experienced (Deu 1:13)"
+        },
+        {
+          "vr_id": 7335,
+          "reference": "Deu 1:15",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise and experienced men as heads (Deu 1:15)"
+        },
+        {
+          "vr_id": 178219,
+          "reference": "Deu 1:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Choose wise, understanding, experienced (Deu 1:13 yada)"
+        },
+        {
+          "vr_id": 178220,
+          "reference": "Deu 1:15",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Wise and experienced men as heads (Deu 1:15 yada)"
+        },
+        {
+          "vr_id": 7351,
+          "reference": "Est 1:13",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise men in king's procedure (Est 1:13 chakham)"
+        },
+        {
+          "vr_id": 178289,
+          "reference": "Est 1:13",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Wise men who knew the times (Est 1:13 yada)"
+        },
+        {
+          "vr_id": 7352,
+          "reference": "Est 6:13",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Haman's wise men give judgment of doom (Est 6:13)"
+        },
+        {
+          "vr_id": 7139,
+          "reference": "1Sa 25:3",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Abigail was discerning (1Sa 25:3)"
+        },
+        {
+          "vr_id": 7141,
+          "reference": "1Ch 26:14",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Zechariah a shrewd counselor (1Ch 26:14)"
+        },
+        {
+          "vr_id": 7143,
+          "reference": "2Ch 30:22",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Levites good in skill of service (2Ch 30:22)"
+        },
+        {
+          "vr_id": 7148,
+          "reference": "Pro 3:4",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Find favor and good success (Pro 3:4)"
+        },
+        {
+          "vr_id": 7149,
+          "reference": "Pro 12:8",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Commended according to good sense (Pro 12:8)"
+        },
+        {
+          "vr_id": 7150,
+          "reference": "Pro 13:15",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Good sense wins favor (Pro 13:15)"
+        },
+        {
+          "vr_id": 7151,
+          "reference": "Pro 16:22",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Good sense fountain of life (Pro 16:22)"
+        },
+        {
+          "vr_id": 7152,
+          "reference": "Pro 19:11",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Good sense slow to anger (Pro 19:11)"
+        },
+        {
+          "vr_id": 7153,
+          "reference": "Pro 23:9",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Fool despises good sense (Pro 23:9)"
+        },
+        {
+          "vr_id": 103564,
+          "reference": "Luk 16:8",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Sons of world more shrewd than sons of light (Luk 16:8)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG04",
+      "label": "The inner mind set on something (orientation of the inner person)",
+      "context_description": "The term names what the inner faculty is directed toward — flesh or Spirit, things of God or things of man, things above or things earthly. Inner-being phenomenon: directional orientation of the mind. The verses describe the object on which the inner person is set, not the constitution of their character. The mind has an inner focus, and the verses name what that focus is.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        996
+      ],
+      "verse_count": 13,
+      "verses": [
+        {
+          "vr_id": 126311,
+          "reference": "Mat 16:23",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Mind on things of God, not man (Mat 16:23)"
+        },
+        {
+          "vr_id": 126310,
+          "reference": "Mar 8:33",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Mind on things of God (Mar 8:33)"
+        },
+        {
+          "vr_id": 32170,
+          "reference": "Rom 8:5",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Minds set on flesh vs Spirit (Rom 8:5)"
+        },
+        {
+          "vr_id": 32168,
+          "reference": "Rom 14:6",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Observance in honor of the Lord (Rom 14:6)"
+        },
+        {
+          "vr_id": 32167,
+          "reference": "Rom 12:3",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Think with sober judgment (Rom 12:3)"
+        },
+        {
+          "vr_id": 32164,
+          "reference": "Col 3:2",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Set minds on things above (Col 3:2)"
+        },
+        {
+          "vr_id": 126312,
+          "reference": "Phili 1:7",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Paul holds Philippians in his heart (Phili 1:7)"
+        },
+        {
+          "vr_id": 126314,
+          "reference": "Phili 2:5",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Have this mind in Christ Jesus (Phili 2:5)"
+        },
+        {
+          "vr_id": 126315,
+          "reference": "Phili 3:15",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Those mature think this way (Phili 3:15)"
+        },
+        {
+          "vr_id": 126316,
+          "reference": "Phili 3:19",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Minds set on earthly things (Phili 3:19)"
+        },
+        {
+          "vr_id": 126317,
+          "reference": "Phili 4:10",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Revived concern for me (Phili 4:10)"
+        },
+        {
+          "vr_id": 126309,
+          "reference": "Act 28:22",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "We desire to hear your views (Act 28:22)"
+        },
+        {
+          "vr_id": 32165,
+          "reference": "Gal 5:10",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Confidence you will take no other view (Gal 5:10)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG05",
+      "label": "Inner concord between persons (same-mindedness in community)",
+      "context_description": "The term names the inner state of unity or harmony between members of a community — being of the same mind, in accord, in agreement. Inner-being phenomenon: shared inner orientation between persons. Distinct from VCG04 in that the phenomenon is concord between people, not the direction of one person's mind. The verses describe inner mutual alignment as a community state.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        996
+      ],
+      "verse_count": 4,
+      "verses": [
+        {
+          "vr_id": 32169,
+          "reference": "Rom 15:5",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "God grant you to live in harmony (Rom 15:5)"
+        },
+        {
+          "vr_id": 32163,
+          "reference": "2Cor 13:11",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Agree with one another (2Cor 13:11)"
+        },
+        {
+          "vr_id": 126313,
+          "reference": "Phili 2:2",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Being of the same mind (Phili 2:2)"
+        },
+        {
+          "vr_id": 126318,
+          "reference": "Phili 4:2",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Agree in the Lord (Phili 4:2)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG06",
+      "label": "Wisdom claimed as one's own (wise in own eyes)",
+      "context_description": "The term names the inner posture of self-attributed wisdom — wisdom held as personal possession, the inner stance of believing oneself wise. Inner-being phenomenon: self-claim to wisdom. Distinct from VCG03 (settled character) because the verses are not about the constitution of wisdom but about the person's own claim or self-estimation. Distinct from VCG07 because the focus is the individual inner posture, not the worldly category.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        528,
+        996,
+        3459,
+        4458
+      ],
+      "verse_count": 19,
+      "verses": [
+        {
+          "vr_id": 7402,
+          "reference": "Pro 26:5",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Answer fool lest he be wise in own eyes (Pro 26:5)"
+        },
+        {
+          "vr_id": 7403,
+          "reference": "Pro 26:12",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise in his own eyes (Pro 26:12)"
+        },
+        {
+          "vr_id": 7404,
+          "reference": "Pro 26:16",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Sluggard wiser in own eyes (Pro 26:16)"
+        },
+        {
+          "vr_id": 7405,
+          "reference": "Pro 28:11",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Rich man wise in own eyes (Pro 28:11)"
+        },
+        {
+          "vr_id": 7365,
+          "reference": "Pro 3:7",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Be not wise in your own eyes (Pro 3:7)"
+        },
+        {
+          "vr_id": 7431,
+          "reference": "Isa 5:21",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Woe to those wise in own eyes (Isa 5:21)"
+        },
+        {
+          "vr_id": 7360,
+          "reference": "Job 37:24",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise in their own conceit (Job 37:24)"
+        },
+        {
+          "vr_id": 103572,
+          "reference": "Rom 11:25",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Wise in your own sight (Rom 11:25)"
+        },
+        {
+          "vr_id": 103573,
+          "reference": "Rom 12:16",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Never be wise in your own sight (Rom 12:16 fronimos)"
+        },
+        {
+          "vr_id": 32166,
+          "reference": "Rom 12:16",
+          "strongs": "G5426",
+          "mti_term_id": 996,
+          "assignment_note": "Never be wise in your own sight (Rom 12:16 froneō)"
+        },
+        {
+          "vr_id": 103562,
+          "reference": "2Cor 11:19",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Being wise yourselves — ironic (2Cor 11:19)"
+        },
+        {
+          "vr_id": 103561,
+          "reference": "1Cor 4:10",
+          "strongs": "G5429",
+          "mti_term_id": 3459,
+          "assignment_note": "Wise in Christ — ironic (1Cor 4:10)"
+        },
+        {
+          "vr_id": 7451,
+          "reference": "Eze 28:3",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wiser than Daniel — Tyre's prince claim (Eze 28:3)"
+        },
+        {
+          "vr_id": 208339,
+          "reference": "1Cor 3:18",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Thinks he is wise — must become fool (1Cor 3:18)"
+        },
+        {
+          "vr_id": 7438,
+          "reference": "Jer 4:22",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "People 'wise' in doing evil (Jer 4:22)"
+        },
+        {
+          "vr_id": 7439,
+          "reference": "Jer 8:8",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "We are wise — false claim exposed (Jer 8:8)"
+        },
+        {
+          "vr_id": 7440,
+          "reference": "Jer 8:9",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise men shall be put to shame (Jer 8:9)"
+        },
+        {
+          "vr_id": 7443,
+          "reference": "Jer 9:23",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Let not wise man boast in his wisdom (Jer 9:23)"
+        },
+        {
+          "vr_id": 7338,
+          "reference": "Deu 32:6",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Foolish and senseless people (Deu 32:6)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG07",
+      "label": "Worldly wisdom under judgment",
+      "context_description": "The term names the inner orientation that constitutes 'wisdom of this age' or 'wisdom of the world' — overturned by the cross or by divine action. Inner-being phenomenon: the orientation of mind that operates apart from God and is exposed as foolishness. The Pauline cross-wisdom reversal is the centre; OT verses where God renders wise men foolish belong here also. Includes wisdom turned to deceit, cunning, or craftiness directed against truth or against the people of God.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        525,
+        527,
+        528,
+        530,
+        532,
+        816,
+        4458,
+        4487
+      ],
+      "verse_count": 34,
+      "verses": [
+        {
+          "vr_id": 7473,
+          "reference": "1Cor 1:17",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom of eloquent speech empties cross (1Cor 1:17)"
+        },
+        {
+          "vr_id": 7474,
+          "reference": "1Cor 1:19",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "God destroys wisdom of the wise (1Cor 1:19 sofia)"
+        },
+        {
+          "vr_id": 19554,
+          "reference": "1Cor 1:19",
+          "strongs": "G4907",
+          "mti_term_id": 816,
+          "assignment_note": "Discernment of discerning God thwarts (1Cor 1:19 sunesis)"
+        },
+        {
+          "vr_id": 208333,
+          "reference": "1Cor 1:19",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Wisdom of the wise destroyed (1Cor 1:19 sofos)"
+        },
+        {
+          "vr_id": 208334,
+          "reference": "1Cor 1:20",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Where is the one who is wise (1Cor 1:20 sofos)"
+        },
+        {
+          "vr_id": 7475,
+          "reference": "1Cor 1:20",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "God made foolish wisdom of world (1Cor 1:20)"
+        },
+        {
+          "vr_id": 7476,
+          "reference": "1Cor 1:21",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "World did not know God through wisdom (1Cor 1:21)"
+        },
+        {
+          "vr_id": 7477,
+          "reference": "1Cor 1:22",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Greeks seek wisdom (1Cor 1:22)"
+        },
+        {
+          "vr_id": 208335,
+          "reference": "1Cor 1:25",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "God's foolishness wiser than men (1Cor 1:25)"
+        },
+        {
+          "vr_id": 208336,
+          "reference": "1Cor 1:26",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Not many wise by worldly standards (1Cor 1:26)"
+        },
+        {
+          "vr_id": 208337,
+          "reference": "1Cor 1:27",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "God chose foolish to shame the wise (1Cor 1:27)"
+        },
+        {
+          "vr_id": 7480,
+          "reference": "1Cor 2:1",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Paul did not come with lofty speech or wisdom (1Cor 2:1)"
+        },
+        {
+          "vr_id": 7481,
+          "reference": "1Cor 2:4",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Not plausible words of wisdom (1Cor 2:4)"
+        },
+        {
+          "vr_id": 7482,
+          "reference": "1Cor 2:5",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Faith not in wisdom of men (1Cor 2:5)"
+        },
+        {
+          "vr_id": 7486,
+          "reference": "1Cor 3:19",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom of this world is folly with God (1Cor 3:19)"
+        },
+        {
+          "vr_id": 208340,
+          "reference": "1Cor 3:19",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Catches wise in craftiness (1Cor 3:19 sofos)"
+        },
+        {
+          "vr_id": 208341,
+          "reference": "1Cor 3:20",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Lord knows thoughts of wise — futile (1Cor 3:20)"
+        },
+        {
+          "vr_id": 7488,
+          "reference": "2Cor 1:12",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Not by earthly wisdom but by grace (2Cor 1:12)"
+        },
+        {
+          "vr_id": 7500,
+          "reference": "Jam 3:15",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Earthly, unspiritual, demonic wisdom (Jam 3:15)"
+        },
+        {
+          "vr_id": 7495,
+          "reference": "Col 2:23",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Appearance of wisdom in self-made religion (Col 2:23)"
+        },
+        {
+          "vr_id": 7455,
+          "reference": "2Pe 1:16",
+          "strongs": "G4679",
+          "mti_term_id": 530,
+          "assignment_note": "Cleverly devised myths (2Pe 1:16)"
+        },
+        {
+          "vr_id": 208346,
+          "reference": "Mat 11:25",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Hidden from the wise (Mat 11:25)"
+        },
+        {
+          "vr_id": 208348,
+          "reference": "Rom 1:14",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Obligation to wise and foolish (Rom 1:14)"
+        },
+        {
+          "vr_id": 208349,
+          "reference": "Rom 1:22",
+          "strongs": "G4680",
+          "mti_term_id": 4458,
+          "assignment_note": "Claiming to be wise, became fools (Rom 1:22)"
+        },
+        {
+          "vr_id": 7432,
+          "reference": "Isa 19:11",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Princes of Zoan claim wise ancestry (Isa 19:11)"
+        },
+        {
+          "vr_id": 7437,
+          "reference": "Isa 44:25",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "God turns wise men back, makes knowledge foolish (Isa 44:25)"
+        },
+        {
+          "vr_id": 7447,
+          "reference": "Jer 50:35",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Sword against Babylon's wise men (Jer 50:35)"
+        },
+        {
+          "vr_id": 7448,
+          "reference": "Jer 51:57",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Babylon's wise made drunk to perpetual sleep (Jer 51:57)"
+        },
+        {
+          "vr_id": 208270,
+          "reference": "Obd 8",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "God destroys wise men of Edom (Obd 8)"
+        },
+        {
+          "vr_id": 7339,
+          "reference": "2Sa 13:3",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Jonadab very crafty (2Sa 13:3)"
+        },
+        {
+          "vr_id": 208269,
+          "reference": "Judg 5:29",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Sisera's mother's wisest princesses rationalise (Judg 5:29)"
+        },
+        {
+          "vr_id": 7157,
+          "reference": "Dan 8:25",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "By cunning he makes deceit prosper (Dan 8:25)"
+        },
+        {
+          "vr_id": 208319,
+          "reference": "Job 5:12",
+          "strongs": "H6175",
+          "mti_term_id": 4487,
+          "assignment_note": "Devices of the crafty God frustrates (Job 5:12 arum)"
+        },
+        {
+          "vr_id": 7310,
+          "reference": "Job 5:12",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "Crafty achieve no sound result (Job 5:12 tushiyyah)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG08",
+      "label": "The inner faculty of grasping / comprehending",
+      "context_description": "The term names the perceptive inner capacity — the act of grasping meaning, understanding what is heard or read, interpreting what is shown. Inner-being phenomenon: inner intelligibility. Distinct from VCG03 because the focus is on the moment or act of comprehending, not the standing character of the person. The verses describe the inner faculty by which sense is made.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        525,
+        528,
+        532,
+        932,
+        958
+      ],
+      "verse_count": 10,
+      "verses": [
+        {
+          "vr_id": 27766,
+          "reference": "Neh 8:8",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": "People understood the reading (Neh 8:8 bin)"
+        },
+        {
+          "vr_id": 7145,
+          "reference": "Neh 8:8",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Gave the sense (Neh 8:8 sekhel)"
+        },
+        {
+          "vr_id": 27735,
+          "reference": "Jer 9:17",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": "Consider — perceive and respond (Jer 9:17)"
+        },
+        {
+          "vr_id": 27707,
+          "reference": "Hos 14:9",
+          "strongs": "H0995",
+          "mti_term_id": 932,
+          "assignment_note": "Whoever is wise let him understand (Hos 14:9 bin)"
+        },
+        {
+          "vr_id": 29587,
+          "reference": "Hos 14:9",
+          "strongs": "H3045",
+          "mti_term_id": 958,
+          "assignment_note": "Whoever is discerning let him know (Hos 14:9 yada)"
+        },
+        {
+          "vr_id": 7453,
+          "reference": "Hos 14:9",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wise understand God's ways (Hos 14:9 chakham)"
+        },
+        {
+          "vr_id": 7505,
+          "reference": "Rev 13:18",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Wisdom: calculate number of beast (Rev 13:18)"
+        },
+        {
+          "vr_id": 7506,
+          "reference": "Rev 17:9",
+          "strongs": "G4678",
+          "mti_term_id": 532,
+          "assignment_note": "Mind with wisdom interprets vision (Rev 17:9)"
+        },
+        {
+          "vr_id": 7146,
+          "reference": "Job 17:4",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "God closed their hearts to understanding (Job 17:4)"
+        },
+        {
+          "vr_id": 7441,
+          "reference": "Jer 9:12",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Who is so wise to understand this (Jer 9:12)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG09",
+      "label": "Covenantal wisdom: wisdom rooted in fear of the Lord",
+      "context_description": "The term names wisdom as the inner state that arises from, or is constituted by, the fear of the Lord, attentiveness to God's ways, or the practice of God's law. Inner-being phenomenon: covenantal inner orientation. Distinct from VCG03 (general wise character) because the verses explicitly name fear of the Lord or covenant practice as the source or substance of the wisdom.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        525,
+        527,
+        528
+      ],
+      "verse_count": 3,
+      "verses": [
+        {
+          "vr_id": 7336,
+          "reference": "Deu 4:6",
+          "strongs": "H2450",
+          "mti_term_id": 528,
+          "assignment_note": "Wisdom and understanding seen by nations through obedience (Deu 4:6)"
+        },
+        {
+          "vr_id": 7147,
+          "reference": "Psa 111:10",
+          "strongs": "H7922",
+          "mti_term_id": 525,
+          "assignment_note": "Fear of the Lord beginning of wisdom (Psa 111:10)"
+        },
+        {
+          "vr_id": 7321,
+          "reference": "Mic 6:9",
+          "strongs": "H8454",
+          "mti_term_id": 527,
+          "assignment_note": "Sound wisdom to fear God's name (Mic 6:9)"
+        }
+      ],
+      "anchor_proposed": null
+    },
+    {
+      "code": "M15-A-VCG10",
+      "label": "Inner forming faculty for sacred design (Spirit-aided design-devising)",
+      "context_description": "The term names the inner act of devising artistic designs for sacred construction — the mental forming of pattern that precedes and directs the physical work. Inner-being phenomenon: inner creative-design capacity for sacred purpose. Restricted to the Exodus verses where 'to devise artistic designs' is named as the activity, in the context of Spirit-given craftsmanship for the tabernacle. Distinct from VCG02 because the focus is on the forming activity rather than the moment of endowment.",
+      "cluster_subgroup_code": "M15-A",
+      "mti_term_ids": [
+        1174
+      ],
+      "verse_count": 4,
+      "verses": [
+        {
+          "vr_id": 54618,
+          "reference": "Exo 31:4",
+          "strongs": "H2803G",
+          "mti_term_id": 1174,
+          "assignment_note": "Devise artistic designs (Exo 31:4)"
+        },
+        {
+          "vr_id": 54619,
+          "reference": "Exo 35:32",
+          "strongs": "H2803G",
+          "mti_term_id": 1174,
+          "assignment_note": "Devise artistic designs (Exo 35:32)"
+        },
+        {
+          "vr_id": 54620,
+          "reference": "Exo 35:35",
+          "strongs": "H2803G",
+          "mti_term_id": 1174,
+          "assignment_note": "Designer's inner capacity (Exo 35:35)"
+        },
+        {
+          "vr_id": 54623,
+          "reference": "Exo 38:23",
+          "strongs": "H2803G",
+          "mti_term_id": 1174,
+          "assignment_note": "Oholiab the engraver and designer (Exo 38:23)"
+        }
+      ],
+      "anchor_proposed": null
+    }
+  ],
+  "setasides": {
+    "reason_code": "no_inner_being_phenomenon",
+    "context_description": "Verses where the M15-A term names a public role (court wise-man class as foil), a craft skill applied externally to material (sanctuary execution-craft where focus is on the worked-into pattern), a class title without inner-being content, or where the text is disputed. The verses remain part of the cluster's verse pool but are not grouped under an M15-A inner-being VCG.",
+    "verse_count": 39,
+    "verses": [
+      {
+        "vr_id": 7322,
+        "reference": "Gen 41:8",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Wise men of Egypt — class title (Gen 41:8)"
+      },
+      {
+        "vr_id": 7325,
+        "reference": "Exo 7:11",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Wise men match sign by secret arts (Exo 7:11)"
+      },
+      {
+        "vr_id": 208271,
+        "reference": "Dan 2:12",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Wise men of Babylon to be destroyed (Dan 2:12)"
+      },
+      {
+        "vr_id": 208272,
+        "reference": "Dan 2:13",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Wise men about to be killed (Dan 2:13)"
+      },
+      {
+        "vr_id": 208273,
+        "reference": "Dan 2:14",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Wise men Daniel intercedes for (Dan 2:14)"
+      },
+      {
+        "vr_id": 208274,
+        "reference": "Dan 2:18",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Daniel and companions at risk with wise men (Dan 2:18)"
+      },
+      {
+        "vr_id": 208276,
+        "reference": "Dan 2:24",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Daniel intercedes for wise men (Dan 2:24)"
+      },
+      {
+        "vr_id": 208277,
+        "reference": "Dan 2:27",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "No wise men can show the mystery (Dan 2:27)"
+      },
+      {
+        "vr_id": 208278,
+        "reference": "Dan 2:48",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Daniel chief over wise men (Dan 2:48)"
+      },
+      {
+        "vr_id": 208280,
+        "reference": "Dan 4:6",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Wise men summoned to interpret (Dan 4:6)"
+      },
+      {
+        "vr_id": 208282,
+        "reference": "Dan 5:7",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Wise men summoned to read writing (Dan 5:7)"
+      },
+      {
+        "vr_id": 208283,
+        "reference": "Dan 5:8",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Wise men could not read writing (Dan 5:8)"
+      },
+      {
+        "vr_id": 208281,
+        "reference": "Dan 5:15",
+        "strongs": "H2445",
+        "mti_term_id": 6668,
+        "assignment_note": "Wise men could not show interpretation (Dan 5:15)"
+      },
+      {
+        "vr_id": 54614,
+        "reference": "Exo 26:1",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Cherubim worked into curtains (Exo 26:1)"
+      },
+      {
+        "vr_id": 54615,
+        "reference": "Exo 26:31",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Cherubim worked into veil (Exo 26:31)"
+      },
+      {
+        "vr_id": 54617,
+        "reference": "Exo 28:6",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Ephod skillfully worked (Exo 28:6)"
+      },
+      {
+        "vr_id": 54616,
+        "reference": "Exo 28:15",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Breastpiece in skilled work (Exo 28:15)"
+      },
+      {
+        "vr_id": 54622,
+        "reference": "Exo 36:8",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Tabernacle cherubim worked (Exo 36:8 chashav)"
+      },
+      {
+        "vr_id": 54621,
+        "reference": "Exo 36:35",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Veil cherubim worked (Exo 36:35)"
+      },
+      {
+        "vr_id": 54624,
+        "reference": "Exo 39:3",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Gold leaf cut into threads (Exo 39:3)"
+      },
+      {
+        "vr_id": 54625,
+        "reference": "Exo 39:8",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Breastpiece in skilled work (Exo 39:8)"
+      },
+      {
+        "vr_id": 7328,
+        "reference": "Exo 35:10",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Every skillful craftsman (Exo 35:10)"
+      },
+      {
+        "vr_id": 7332,
+        "reference": "Exo 36:4",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Craftsmen doing every task (Exo 36:4)"
+      },
+      {
+        "vr_id": 7333,
+        "reference": "Exo 36:8",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Craftsmen made tabernacle (Exo 36:8 chakham)"
+      },
+      {
+        "vr_id": 7346,
+        "reference": "1Ch 22:15",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "David's craftsmen (1Ch 22:15)"
+      },
+      {
+        "vr_id": 7347,
+        "reference": "2Ch 2:7",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Skilled to work in gold (2Ch 2:7)"
+      },
+      {
+        "vr_id": 7349,
+        "reference": "2Ch 2:13",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Huram-abi skilled man (2Ch 2:13)"
+      },
+      {
+        "vr_id": 7350,
+        "reference": "2Ch 2:14",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Craftsmen executing designs (2Ch 2:14 chakham)"
+      },
+      {
+        "vr_id": 54608,
+        "reference": "2Ch 2:14",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Huram-abi any design (2Ch 2:14 chashav)"
+      },
+      {
+        "vr_id": 54609,
+        "reference": "2Ch 26:15",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Skilful men invented machines (2Ch 26:15) — context of war-craft, no inner-being phenomenon"
+      },
+      {
+        "vr_id": 7445,
+        "reference": "Jer 10:9",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Craftsmen make idols (Jer 10:9)"
+      },
+      {
+        "vr_id": 7449,
+        "reference": "Eze 27:8",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Tyre's skilled men were pilots (Eze 27:8)"
+      },
+      {
+        "vr_id": 7450,
+        "reference": "Eze 27:9",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Skilled men of Gebal caulking seams (Eze 27:9)"
+      },
+      {
+        "vr_id": 7436,
+        "reference": "Isa 40:20",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Skillful craftsman for idol (Isa 40:20)"
+      },
+      {
+        "vr_id": 7442,
+        "reference": "Jer 9:17",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Skillful mourning women (Jer 9:17)"
+      },
+      {
+        "vr_id": 7315,
+        "reference": "Job 30:22",
+        "strongs": "H8454",
+        "mti_term_id": 527,
+        "assignment_note": "Tushiyyah translated 'toss' — disputed (Job 30:22)"
+      },
+      {
+        "vr_id": 7337,
+        "reference": "Deu 16:19",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Bribe blinds eyes of the wise — focus on bribe's effect (Deu 16:19)"
+      },
+      {
+        "vr_id": 7446,
+        "reference": "Jer 18:18",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Counsel from the wise as institutional source (Jer 18:18)"
+      },
+      {
+        "vr_id": 7452,
+        "reference": "Hos 13:13",
+        "strongs": "H2450",
+        "mti_term_id": 528,
+        "assignment_note": "Unwise son — wisdom-absence (Hos 13:13)"
+      }
+    ]
+  },
+  "reroutes": {
+    "target_subgroup_code": "M15-E",
+    "context_description": "Verses where the term names purposive inner devising in non-craft contexts — God devising means, Haman devising a plot, deceit-devising, instrument-inventing. The inner-being phenomenon is deliberative planning, which matches the M15-E sub-group rather than M15-A. Recommend re-routing.",
+    "verse_count": 5,
+    "verses": [
+      {
+        "vr_id": 54612,
+        "reference": "Est 8:3",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Haman devised evil plan (Est 8:3)"
+      },
+      {
+        "vr_id": 54613,
+        "reference": "Est 9:25",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Haman's devised plan returned (Est 9:25)"
+      },
+      {
+        "vr_id": 54626,
+        "reference": "Psa 35:20",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Devise words of deceit (Psa 35:20)"
+      },
+      {
+        "vr_id": 54610,
+        "reference": "2Sa 14:14",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "God devises means for banished (2Sa 14:14)"
+      },
+      {
+        "vr_id": 54611,
+        "reference": "Amo 6:5",
+        "strongs": "H2803G",
+        "mti_term_id": 1174,
+        "assignment_note": "Like David invent instruments (Amo 6:5)"
+      }
+    ]
+  }
+}

@@ -1,0 +1,17 @@
+# Zechariah 6 — inner-being oracle reading (Phase-2 meaning synthesis)
+
+- **Source:** Phase-1 lexicals per oracle unit (provenance `zechariah-oracle-segmentation-v1-20260704`). Cited; grounded; *stated* | *inferred*.
+
+---
+
+## ZECH-branch-peace · Zechariah 6:1–15 · [D, multi] — the four chariots as God's Spirit at rest; the priest-king and the counsel of peace
+
+**The reading.** Four chariots go out "**to the four winds of heaven**" patrolling the earth, and those going north "**have set my Spirit at rest in the north country**" (v.8). Then a symbolic crowning: a crown is set on Joshua the high priest, a sign of one to come — "**Behold, the man whose name is the Branch… It is he who shall build the temple of the LORD and shall bear royal honour, and shall sit and rule on his throne. And there shall be a priest on his throne, and the counsel of peace shall be between them both**" (vv.12–13). The finding is **the *Branch* who unites *kingship and priesthood* in one person, "**the counsel of peace between them both**" — and God's *Spirit set at rest* by the accomplishing of his purpose** *(stated)*. The operation is **the inner-being interest lies in the joining of *rule* and *mediation* in one figure — a king who is also a priest, so that authority and intercession, throne and altar, are held together "in peace"; and in the disclosure that God's *Spirit is "at rest"* when his purpose is done — a picture of settled satisfaction** *(inferred: the "**priest on his throne… the counsel of peace between them both**" (v.13) is the inner-being note — the finding is that the ideal governance of God's people unites *kingship* (authority, rule) and *priesthood* (mediation, intercession, atonement) in *one* figure, so that power is never divorced from mercy nor rule from reconciliation — "the counsel of peace" (atsat shalom) reigns *between* the two offices held in one; this answers a deep human need — the ruler who is also the reconciler, whose throne is also an altar; and the smaller note, "**those who go north have set my Spirit AT REST**" (v.8), images God's own interior *satisfaction* when justice is accomplished — the Spirit that was stirred (by wrong) now "at rest" (by its resolution): the finding is that God is not restless caprice but a settledness that comes to *rest* when his righteous purpose is fulfilled)*.
+
+**Characteristics surfaced:** *kingship and priesthood united in peace ("a priest on his throne… the counsel of peace between them both" — rule and mediation held in one, authority never divorced from mercy)* (new — a gem: the ruler who is also the reconciler, throne and altar joined, w/ 6:13, Ps 110:4, Heb 7); *God's Spirit set at rest ("have set my Spirit at rest" — divine satisfaction when the righteous purpose is accomplished)* (new — God's settledness, not restless caprice, w/ 6:8, Isa 30:15 of God); *the Branch who builds and reigns (the promised figure uniting the offices)* (thread — w/ 6:12, 3:8, Isa 11:1, Jer 23:5).
+
+---
+
+## Chapter-level notes
+- **Surfaced:** kingship and priesthood united in peace; God's Spirit set at rest; the Branch who builds and reigns. Chapter 6 joins throne and altar in the one figure of the Branch — "the counsel of peace between them both" — and pictures God's own Spirit coming to rest when his purpose is done.
+- **Threads:** the Branch / priest-king (← 3:8; w/ Ps 110:4, Heb 7); peace (→ 8:19, 9:10); God's settled satisfaction (w/ Zeph 3:17).

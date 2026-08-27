@@ -1,0 +1,1357 @@
+{
+  "_meta": {
+    "model": "claude-sonnet-4-6",
+    "verses": 101,
+    "filled": 101,
+    "batches": 5,
+    "usage_totals": {
+      "input": 17698,
+      "output": 6416,
+      "cache_create": 0,
+      "cache_read": 5805
+    }
+  },
+  "keywords_by_vc_id": {
+    "16840": {
+      "reference": "Exo 21:8",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "faith with",
+      "keywords": [
+        "covenant betrayal",
+        "faith breaking",
+        "commitment violated",
+        "treachery relational",
+        "loyalty abandoned"
+      ]
+    },
+    "16591": {
+      "reference": "Lev 5:15",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "commits",
+      "keywords": [
+        "breach faith",
+        "violation unintentional",
+        "loyalty failing",
+        "guilt incurred",
+        "transgression sacred"
+      ]
+    },
+    "16565": {
+      "reference": "Lev 5:15",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "loyalty failure",
+        "breach faith",
+        "integrity absent",
+        "guilt objective",
+        "violation inadvertent"
+      ]
+    },
+    "16592": {
+      "reference": "Lev 6:2",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "commits",
+      "keywords": [
+        "deception active",
+        "betrayal relational",
+        "breach faith",
+        "loyalty violated",
+        "will deceiving",
+        "dishonesty enacted"
+      ]
+    },
+    "16566": {
+      "reference": "Lev 6:2",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "disloyalty divine",
+        "dishonesty inner",
+        "breach faith",
+        "covenant violated",
+        "relational betrayal",
+        "will deceiving"
+      ]
+    },
+    "16593": {
+      "reference": "Lev 26:40",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "committed",
+      "keywords": [
+        "treachery willful",
+        "confession required",
+        "defection covenant",
+        "loyalty abandoned",
+        "walking contrary",
+        "guilt acknowledged"
+      ]
+    },
+    "16567": {
+      "reference": "Lev 26:40",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "treachery",
+      "keywords": [
+        "covenant betrayal",
+        "loyalty broken",
+        "treachery confessed",
+        "relational trust violated",
+        "defection generational",
+        "guilt surfacing"
+      ]
+    },
+    "16594": {
+      "reference": "Num 5:6",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "breaking",
+      "keywords": [
+        "faith breaking",
+        "guilt realized",
+        "will betraying",
+        "loyalty violated",
+        "conscience awakening",
+        "betrayal divine"
+      ]
+    },
+    "16568": {
+      "reference": "Num 5:6",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "loyalty violation",
+        "covenant character",
+        "will choosing",
+        "faith breaking",
+        "transgression relational",
+        "guilt incurred"
+      ]
+    },
+    "16595": {
+      "reference": "Num 5:12",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "breaks",
+      "keywords": [
+        "straying willful",
+        "loyalty broken",
+        "covenant betrayal",
+        "trust violated",
+        "relational turning",
+        "fidelity abandoned"
+      ]
+    },
+    "16564": {
+      "reference": "Num 5:12",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "loyalty departure",
+        "fidelity broken",
+        "relational breach",
+        "trust violation",
+        "heart turning",
+        "covenant abandoned"
+      ]
+    },
+    "16596": {
+      "reference": "Num 5:27",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "broken",
+      "keywords": [
+        "betrayal embodied",
+        "guilt confirmed",
+        "defilement inner",
+        "covenant violated",
+        "judgment somatic",
+        "loyalty broken"
+      ]
+    },
+    "16587": {
+      "reference": "Num 5:27",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "guilt hidden",
+        "defilement concealed",
+        "loyalty broken",
+        "breach revealed",
+        "conscience suppressed",
+        "judgment surfacing"
+      ]
+    },
+    "16569": {
+      "reference": "Num 31:16",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "treacherously",
+      "keywords": [
+        "treachery incited",
+        "loyalty communal",
+        "defection manipulated",
+        "will corrupted",
+        "external provocation",
+        "betrayal divine"
+      ]
+    },
+    "16589": {
+      "reference": "Deu 32:51",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "broke faith",
+      "keywords": [
+        "faith broken",
+        "holiness denied",
+        "covenant violated",
+        "trust betrayed",
+        "public defection",
+        "relational breach"
+      ]
+    },
+    "16597": {
+      "reference": "Jos 7:1",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "broke",
+      "keywords": [
+        "will transgressing",
+        "sacred ban violated",
+        "corporate guilt",
+        "individual defection",
+        "betrayal communal",
+        "anger divine"
+      ]
+    },
+    "16570": {
+      "reference": "Jos 7:1",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "corporate betrayal",
+        "individual breach",
+        "loyalty communal",
+        "guilt extended",
+        "covenant violated",
+        "defection imputed"
+      ]
+    },
+    "16598": {
+      "reference": "Jos 22:16",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "committed",
+      "keywords": [
+        "religious defection",
+        "loyalty turning",
+        "breach faith",
+        "rebellion enacted",
+        "will departing",
+        "covenant accused"
+      ]
+    },
+    "16571": {
+      "reference": "Jos 22:16",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "breach of faith",
+      "keywords": [
+        "heart loyalty",
+        "breach faith",
+        "defection religious",
+        "covenant questioned",
+        "loyalty tested",
+        "will turning"
+      ]
+    },
+    "16599": {
+      "reference": "Jos 22:20",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "individual breach",
+        "corporate consequence",
+        "guilt extending",
+        "sacred violated",
+        "betrayal wrath",
+        "defection imputed"
+      ]
+    },
+    "16572": {
+      "reference": "Jos 22:20",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "betrayal solitary",
+        "guilt communal",
+        "consequence extending",
+        "loyalty broken",
+        "defection individual",
+        "wrath incurred"
+      ]
+    },
+    "16573": {
+      "reference": "Jos 22:22",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "breach of faith",
+      "keywords": [
+        "conscience invoked",
+        "divine witness",
+        "rebellion interior",
+        "breach faith",
+        "guilt self-named",
+        "awareness divine"
+      ]
+    },
+    "16600": {
+      "reference": "Jos 22:31",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "committed",
+      "keywords": [
+        "innocence confirmed",
+        "loyalty intact",
+        "breach absent",
+        "faithfulness communal",
+        "presence divine",
+        "treachery avoided"
+      ]
+    },
+    "16574": {
+      "reference": "Jos 22:31",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "breach of faith",
+      "keywords": [
+        "faithfulness confirmed",
+        "loyalty communal",
+        "breach absent",
+        "covenant kept",
+        "divine presence",
+        "community preserved"
+      ]
+    },
+    "16826": {
+      "reference": "Judg 9:23",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "dealt treacherously",
+      "keywords": [
+        "treachery divine",
+        "disloyalty orchestrated",
+        "retribution instrumental",
+        "spirit evil",
+        "loyalty corrupted",
+        "betrayal enacted"
+      ]
+    },
+    "16827": {
+      "reference": "1Sa 14:33",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherously",
+      "keywords": [
+        "treachery covenant",
+        "violation sacred",
+        "loyalty breach",
+        "will defecting",
+        "correction immediate"
+      ]
+    },
+    "16601": {
+      "reference": "1Ch 2:7",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "broke",
+      "keywords": [
+        "disloyalty inner",
+        "defection willful",
+        "ban violated",
+        "community harm",
+        "identity marked"
+      ]
+    },
+    "16602": {
+      "reference": "1Ch 5:25",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "allegiance transfer",
+        "heart defecting",
+        "idolatry embrace",
+        "loyalty abandoned",
+        "will prostituting"
+      ]
+    },
+    "16575": {
+      "reference": "1Ch 9:1",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "breach",
+      "keywords": [
+        "disloyalty settled",
+        "covenant breach",
+        "exile consequence",
+        "disposition chronic",
+        "loyalty collapsed"
+      ]
+    },
+    "16603": {
+      "reference": "1Ch 10:13",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "breach",
+      "keywords": [
+        "loyalty divided",
+        "will disobeying",
+        "occult seeking",
+        "defection fatal",
+        "command ignored"
+      ]
+    },
+    "16561": {
+      "reference": "1Ch 10:13",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faith",
+      "keywords": [
+        "unfaithfulness verdict",
+        "defection summarized",
+        "disobedience habitual",
+        "occult consultation",
+        "breach fatal"
+      ]
+    },
+    "16604": {
+      "reference": "2Ch 12:2",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "unfaithful",
+      "keywords": [
+        "loyalty abandoned",
+        "heart departing",
+        "covenant breach",
+        "judgment triggered",
+        "defection corporate"
+      ]
+    },
+    "16590": {
+      "reference": "2Ch 26:16",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "unfaithful",
+      "keywords": [
+        "pride rooted",
+        "heart prideful",
+        "boundary overstepped",
+        "defection pride-driven",
+        "will transgressing"
+      ]
+    },
+    "16605": {
+      "reference": "2Ch 26:18",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "done wrong",
+      "keywords": [
+        "boundary usurped",
+        "sacred order violated",
+        "will transgressing",
+        "honor forfeited",
+        "limits crossed"
+      ]
+    },
+    "16606": {
+      "reference": "2Ch 28:19",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "unfaithful",
+      "keywords": [
+        "defection personal",
+        "loyalty forfeited",
+        "corruption spreading",
+        "heart apostate",
+        "consequence collective"
+      ]
+    },
+    "16584": {
+      "reference": "2Ch 28:19",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "very",
+      "keywords": [
+        "unfaithfulness intensified",
+        "disloyalty extreme",
+        "corruption contagious",
+        "posture defining",
+        "defection deep"
+      ]
+    },
+    "16607": {
+      "reference": "2Ch 28:22",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "faithless",
+      "keywords": [
+        "hardening distress",
+        "defection deepening",
+        "repentance refused",
+        "will hardened",
+        "faithlessness chronic"
+      ]
+    },
+    "16608": {
+      "reference": "2Ch 29:6",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "unfaithful",
+      "keywords": [
+        "rejection embodied",
+        "presence refused",
+        "will turning",
+        "face averted",
+        "loyalty forsaken"
+      ]
+    },
+    "16585": {
+      "reference": "2Ch 29:19",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faithless",
+      "keywords": [
+        "apostasy past",
+        "defection reign-defining",
+        "consequence material",
+        "remediation required",
+        "faithlessness period"
+      ]
+    },
+    "16609": {
+      "reference": "2Ch 30:7",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "faithless to",
+      "keywords": [
+        "warning heeded",
+        "betrayal willful",
+        "desolation consequence",
+        "defection ancestral",
+        "will cautioned"
+      ]
+    },
+    "16563": {
+      "reference": "2Ch 33:19",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faithlessness",
+      "keywords": [
+        "faithlessness named",
+        "idolatry expressive",
+        "humility contrasted",
+        "breach distinct",
+        "repentance transforming"
+      ]
+    },
+    "16610": {
+      "reference": "2Ch 36:14",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "unfaithful",
+      "keywords": [
+        "defection corporate",
+        "abomination following",
+        "sacred corrupted",
+        "unfaithfulness extreme",
+        "loyalty collapsed"
+      ]
+    },
+    "16586": {
+      "reference": "2Ch 36:14",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "exceedingly",
+      "keywords": [
+        "corruption spreading",
+        "sacred defiled",
+        "disposition corrupting",
+        "trust betrayed",
+        "faithlessness intensified"
+      ]
+    },
+    "16582": {
+      "reference": "Ezr 9:2",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faithlessness",
+      "keywords": [
+        "boundary violated",
+        "holy contaminated",
+        "leadership culpable",
+        "loyalty breach",
+        "community defiled"
+      ]
+    },
+    "16562": {
+      "reference": "Ezr 9:4",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faithlessness",
+      "keywords": [
+        "grief vicarious",
+        "conscience trembling",
+        "appalled response",
+        "faithlessness witnessed",
+        "mourning solidarity"
+      ]
+    },
+    "16611": {
+      "reference": "Ezr 10:2",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "broken faith",
+      "keywords": [
+        "confession volitional",
+        "breach acknowledged",
+        "hope remaining",
+        "loyalty renewal",
+        "will confessing"
+      ]
+    },
+    "16583": {
+      "reference": "Ezr 10:6",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faithlessness",
+      "keywords": [
+        "mourning vicarious",
+        "grief fasting",
+        "conscience burdened",
+        "faithlessness witnessed",
+        "solidarity grief"
+      ]
+    },
+    "16612": {
+      "reference": "Ezr 10:10",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "broken faith",
+      "keywords": [
+        "guilt corporate",
+        "will choosing",
+        "breach named",
+        "guilt increasing",
+        "loyalty violated"
+      ]
+    },
+    "16613": {
+      "reference": "Neh 1:8",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "unfaithful",
+      "keywords": [
+        "exile conditioned",
+        "disposition warned",
+        "defection potential",
+        "scattering consequence",
+        "loyalty commanded"
+      ]
+    },
+    "16614": {
+      "reference": "Neh 13:27",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "act treacherously",
+      "keywords": [
+        "betrayal volitional",
+        "covenant violated",
+        "evil deliberate",
+        "loyalty betrayed",
+        "will defecting"
+      ]
+    },
+    "16850": {
+      "reference": "Job 6:15",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "loyalty absent",
+        "reliability failing",
+        "will inconsistent",
+        "trust betrayed",
+        "faithfulness hollow"
+      ]
+    },
+    "16841": {
+      "reference": "Psa 25:3",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "defection wanton",
+        "treachery deliberate",
+        "shame coming",
+        "loyalty refused",
+        "disgrace deserved"
+      ]
+    },
+    "16858": {
+      "reference": "Psa 59:5",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherously",
+      "keywords": [
+        "scheming inward",
+        "will malicious",
+        "plotting evil",
+        "treachery active",
+        "deceit deliberate"
+      ]
+    },
+    "16824": {
+      "reference": "Psa 73:15",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "betrayed",
+      "keywords": [
+        "betrayal potential",
+        "speech faithless",
+        "doubt suppressed",
+        "will restrained",
+        "community loyalty"
+      ]
+    },
+    "16828": {
+      "reference": "Psa 78:57",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "acted treacherously",
+      "keywords": [
+        "defection repeated",
+        "loyalty reversed",
+        "pattern ancestral",
+        "will turning",
+        "faithfulness abandoned"
+      ]
+    },
+    "16842": {
+      "reference": "Psa 119:158",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "faithless",
+      "keywords": [
+        "faithlessness observed",
+        "disgust moral",
+        "commands abandoned",
+        "loyalty broken",
+        "repugnance inner"
+      ]
+    },
+    "16845": {
+      "reference": "Pro 2:22",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "character treacherous",
+        "trajectory destructive",
+        "uprooting deserved",
+        "defection habitual",
+        "identity faithless"
+      ]
+    },
+    "16822": {
+      "reference": "Pro 11:3",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "integrity absent",
+        "character distorted",
+        "self-destruction inner",
+        "crookedness settled",
+        "will corrupted"
+      ]
+    },
+    "16843": {
+      "reference": "Pro 11:6",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "lust captivating",
+        "desire destructive",
+        "will enslaved",
+        "craving ruling",
+        "treachery appetite"
+      ]
+    },
+    "16823": {
+      "reference": "Pro 13:2",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "desire violence",
+        "appetite harmful",
+        "craving oriented",
+        "will hostile",
+        "inner orientation"
+      ]
+    },
+    "16844": {
+      "reference": "Pro 13:15",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "trajectory ruin",
+        "path chosen",
+        "defection habitual",
+        "direction destructive",
+        "character determining"
+      ]
+    },
+    "16846": {
+      "reference": "Pro 21:18",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "traitor",
+      "keywords": [
+        "treachery costly",
+        "retribution borne",
+        "faithlessness punished",
+        "substitution moral",
+        "consequence owned"
+      ]
+    },
+    "16847": {
+      "reference": "Pro 22:12",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "traitor",
+      "keywords": [
+        "speech faithless",
+        "treachery exposed",
+        "scrutiny divine",
+        "words overturned",
+        "hiding impossible"
+      ]
+    },
+    "16848": {
+      "reference": "Pro 23:28",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "traitors",
+      "keywords": [
+        "treachery contagious",
+        "deception predatory",
+        "seduction spreading",
+        "faithlessness multiplied",
+        "corruption transmitted"
+      ]
+    },
+    "16849": {
+      "reference": "Pro 25:19",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous man",
+      "keywords": [
+        "reliability absent",
+        "trust misplaced",
+        "character unreliable",
+        "failure crisis",
+        "dependability false"
+      ]
+    },
+    "16851": {
+      "reference": "Isa 21:2",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "traitor",
+      "keywords": [
+        "betrayal active",
+        "treachery dispositional",
+        "harm producing",
+        "will bent",
+        "defection enacted"
+      ]
+    },
+    "16855": {
+      "reference": "Isa 24:16",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "traitors",
+      "keywords": [
+        "treachery compounded",
+        "betrayal repeated",
+        "character settled",
+        "defection intensified",
+        "anguish prophetic"
+      ]
+    },
+    "16852": {
+      "reference": "Isa 33:1",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "traitor",
+      "keywords": [
+        "treachery identity",
+        "reversal coming",
+        "posture faithless",
+        "defection defining",
+        "retribution mirrored"
+      ]
+    },
+    "16829": {
+      "reference": "Isa 48:8",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "surely deal",
+      "keywords": [
+        "treachery constitutional",
+        "rebellion innate",
+        "will predisposed",
+        "defection foreknown",
+        "character inborn"
+      ]
+    },
+    "16830": {
+      "reference": "Jer 3:8",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "fear absent",
+        "correction refused",
+        "will stubborn",
+        "consequence ignored",
+        "fidelity broken"
+      ]
+    },
+    "16831": {
+      "reference": "Jer 3:11",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "betrayal knowing",
+        "guilt deepened",
+        "cynicism inner",
+        "defection conscious",
+        "culpability heightened"
+      ]
+    },
+    "16821": {
+      "reference": "Jer 3:20",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous",
+      "keywords": [
+        "covenant broken",
+        "loyalty abandoned",
+        "will willful",
+        "relational betrayal",
+        "faithfulness forsaken"
+      ]
+    },
+    "16832": {
+      "reference": "Jer 5:11",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "utterly",
+      "keywords": [
+        "treachery total",
+        "orientation consumed",
+        "defection complete",
+        "faithlessness pervasive",
+        "will surrendered"
+      ]
+    },
+    "16833": {
+      "reference": "Jer 9:2",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "treacherous men",
+      "keywords": [
+        "treachery communal",
+        "disposition settled",
+        "pervasiveness moral",
+        "community corrupted",
+        "prophet repelled"
+      ]
+    },
+    "16856": {
+      "reference": "Jer 12:1",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "are",
+      "keywords": [
+        "anguish inner",
+        "complaint lament",
+        "prosperity unjust",
+        "theodicy wrestled",
+        "moral dissonance"
+      ]
+    },
+    "16825": {
+      "reference": "Jer 12:6",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "dealt treacherously",
+      "keywords": [
+        "duplicity hidden",
+        "betrayal relational",
+        "mask friendly",
+        "hostility concealed",
+        "trust violated",
+        "deception inner"
+      ]
+    },
+    "16857": {
+      "reference": "Lam 1:2",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "dealt treacherously",
+      "keywords": [
+        "betrayal relational",
+        "trust violated",
+        "intimacy destroyed",
+        "desolation inner",
+        "abandonment total",
+        "loyalty reversed"
+      ]
+    },
+    "16615": {
+      "reference": "Eze 14:13",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "acting",
+      "keywords": [
+        "covenant breaking",
+        "loyalty severed",
+        "will turning",
+        "defection deliberate",
+        "faithlessness active"
+      ]
+    },
+    "16576": {
+      "reference": "Eze 14:13",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faithlessly",
+      "keywords": [
+        "covenant betrayal",
+        "disposition settled",
+        "loyalty disregarded",
+        "faithlessness habitual",
+        "bond violated"
+      ]
+    },
+    "16616": {
+      "reference": "Eze 15:8",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "acted",
+      "keywords": [
+        "defection consequential",
+        "faithlessness enacted",
+        "betrayal irreversible",
+        "judgment drawn",
+        "loyalty abandoned"
+      ]
+    },
+    "16577": {
+      "reference": "Eze 15:8",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "faithlessly",
+      "keywords": [
+        "faithlessness settled",
+        "betrayal entrenched",
+        "covenant stance broken",
+        "disposition treacherous",
+        "penalty incurred"
+      ]
+    },
+    "16617": {
+      "reference": "Eze 17:20",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "committed",
+      "keywords": [
+        "covenant breaking",
+        "treachery personal",
+        "betrayal divine",
+        "defection judged",
+        "will defecting"
+      ]
+    },
+    "16578": {
+      "reference": "Eze 17:20",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "treachery",
+      "keywords": [
+        "treachery divine",
+        "betrayal formal",
+        "offense personal",
+        "judgment divine",
+        "covenant crime"
+      ]
+    },
+    "16618": {
+      "reference": "Eze 18:24",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "guilty",
+      "keywords": [
+        "apostasy",
+        "turning away",
+        "loyalty abandoned",
+        "guilt treachery",
+        "righteousness cancelled",
+        "defection willful"
+      ]
+    },
+    "16579": {
+      "reference": "Eze 18:24",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "treachery",
+      "keywords": [
+        "covenant betrayal",
+        "loyalty prior abandoned",
+        "defection willful",
+        "guilt treachery",
+        "past erased"
+      ]
+    },
+    "16619": {
+      "reference": "Eze 20:27",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "dealing",
+      "keywords": [
+        "blasphemy inner",
+        "betrayal contempt",
+        "treachery equated",
+        "dishonor divine",
+        "defection contemptuous"
+      ]
+    },
+    "16580": {
+      "reference": "Eze 20:27",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "treacherously",
+      "keywords": [
+        "betrayal inherited",
+        "blasphemy treachery",
+        "honor violated",
+        "defection patterned",
+        "contempt divine"
+      ]
+    },
+    "16620": {
+      "reference": "Eze 39:23",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "treacherously",
+      "keywords": [
+        "disloyalty severing",
+        "face hidden",
+        "relationship ruptured",
+        "treachery personal",
+        "exile consequence"
+      ]
+    },
+    "16621": {
+      "reference": "Eze 39:26",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "treachery",
+      "keywords": [
+        "shame treachery",
+        "betrayal past",
+        "memory shame",
+        "restoration eclipsing",
+        "defection resolved"
+      ]
+    },
+    "16581": {
+      "reference": "Eze 39:26",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "practiced",
+      "keywords": [
+        "treachery practiced",
+        "shame remembered",
+        "defection habitual",
+        "restoration forgetting",
+        "betrayal overcome"
+      ]
+    },
+    "16622": {
+      "reference": "Dan 9:7",
+      "strongs": "H4603",
+      "transliteration": "ma.al",
+      "span": "committed",
+      "keywords": [
+        "shame exile",
+        "treachery committed",
+        "relational rupture",
+        "betrayal personal",
+        "defection consequential"
+      ]
+    },
+    "16560": {
+      "reference": "Dan 9:7",
+      "strongs": "H4604",
+      "transliteration": "ma.al",
+      "span": "treachery",
+      "keywords": [
+        "betrayal inner",
+        "shame social",
+        "exile deserved",
+        "covenant broken",
+        "defection wilful"
+      ]
+    },
+    "16834": {
+      "reference": "Hos 5:7",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "faithlessly with",
+      "keywords": [
+        "covenant disloyalty",
+        "will defecting",
+        "faithlessness deep",
+        "loyalty broken",
+        "betrayal covenantal"
+      ]
+    },
+    "16820": {
+      "reference": "Hos 6:7",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "faithlessly with",
+      "keywords": [
+        "covenant breaking",
+        "betrayal wilful",
+        "bond personal",
+        "defection mirrored",
+        "will betraying"
+      ]
+    },
+    "16853": {
+      "reference": "Hab 1:13",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "traitors",
+      "keywords": [
+        "justice betrayed",
+        "treachery character",
+        "righteous swallowed",
+        "tolerance troubling",
+        "betrayal observed"
+      ]
+    },
+    "16854": {
+      "reference": "Hab 2:5",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "traitor",
+      "keywords": [
+        "deception inner",
+        "greed insatiable",
+        "arrogance consuming",
+        "betrayal seductive",
+        "appetite unbounded"
+      ]
+    },
+    "16835": {
+      "reference": "Mal 2:10",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "we",
+      "keywords": [
+        "faithlessness relational",
+        "covenant profaned",
+        "betrayal communal",
+        "brotherhood violated",
+        "loyalty shared"
+      ]
+    },
+    "16836": {
+      "reference": "Mal 2:11",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "faithless",
+      "keywords": [
+        "faithlessness corporate",
+        "covenant profaned",
+        "loyalty covenantal",
+        "betrayal spiritual",
+        "defection communal"
+      ]
+    },
+    "16837": {
+      "reference": "Mal 2:14",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "been faithless",
+      "keywords": [
+        "covenant intimacy",
+        "betrayal witnessed",
+        "faithlessness marital",
+        "bond violated",
+        "treachery personal"
+      ]
+    },
+    "16838": {
+      "reference": "Mal 2:15",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "be",
+      "keywords": [
+        "spirit guarded",
+        "vigilance inner",
+        "faithlessness resisted",
+        "disposition treacherous",
+        "will monitored",
+        "betrayal prevented"
+      ]
+    },
+    "16839": {
+      "reference": "Mal 2:16",
+      "strongs": "H0898",
+      "transliteration": "ba.gad",
+      "span": "be faithless",
+      "keywords": [
+        "faithlessness",
+        "will defecting",
+        "spirit vigilance",
+        "covenant breaking",
+        "violence concealed",
+        "self guarding",
+        "defection willful"
+      ]
+    }
+  }
+}

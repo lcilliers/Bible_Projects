@@ -1,0 +1,350 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG090-V1",
+    "registry_id": 90,
+    "word": "innocence",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R090 innocence — 33 group dimension assignments + registry stamp + cluster stamp (C10) + 2 SD pointers. Multiple dimension changes from automated labels. FINAL registry in C10 — cluster stamp included. Manual application required (wa_dimension_index + word_registry + wa_dim_review_cluster_log + wa_session_research_flags)."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7547 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5620-001 H5356B niqqayon (innocence — heart and hands free from guilt) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7540 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5621-001 H5355A naqi (morally innocent person) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7541 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5621-002 H5355A naqi (innocent blood as moral category) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7542 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5621-003 H5355A naqi (freedom from moral obligation/liability) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7543 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5624-001 H5355B naqi (parallel to 5621-001) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7544 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5624-002 H5355B naqi (parallel to 5621-002) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7545 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5624-003 H5355B naqi (parallel to 5621-003) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7538 },
+      "set": { "dimension": "Emotion — Negative", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5627-001 H4374 mekhosseh (pride brought down to Sheol — Isa 14:11) — Emotion-Negative / HUMAN. CHANGED from Vitality/Existence: humiliation and shame at death is Emotion-Negative. QA-REVIEW resolved."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7520 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5629-001 H2005 hen (here I am — self-presentation as availability before God) — Relational Disposition / HUMAN. Was UNCLASSIFIED — assigned."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7521 },
+      "set": { "dimension": "Emotion — Negative", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5629-002 H2005 hen (confessional disclosure of guilt, grief, inadequacy) — Emotion-Negative / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7522 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "GOD", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5629-003 H2005 hen (God's election, delight, care disclosed — Isa 42:1, 49:16) — Relational Disposition / GOD. CHANGED from Divine-Human Correspondence: unilateral divine orientation, not structural mirroring."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7523 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "GOD", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5629-004 H2005 hen (moral verdict — what God sees in the heart) — Moral Character / GOD. Automated label confirmed; dominant_subject set."
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7524 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5629-005 H2005 hen (helplessness and smallness before divine power — Job 9:11, 40:4) — Dependence/Creatureliness / HUMAN. CHANGED from Agency/Power: smallness before God is creaturely dependence, not agency."
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7525 },
+      "set": { "dimension": "Emotion — Positive", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5629-006 H2005 hen (wisdom-awe, love, delight — Job 28:28; Song 1:15) — Emotion-Positive / HUMAN. CHANGED from Emotion-Negative: fear of the Lord and Song love are positive inner states in this group."
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7526 },
+      "set": { "dimension": "Emotion — Negative", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5630-001 H2008 hennah (1Sa 1:16 — great anxiety; Psa 71:17) — Emotion-Negative / HUMAN. CHANGED from Divine-Human Correspondence: anxiety is the dominant inner-being content. QA-REVIEW resolved."
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7534 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5632-001 H2011H hinnom (Valley of Hinnom — child sacrifice as moral abomination) — Moral Character / HUMAN. Automated label confirmed conservatively; inner-being content is moral corruption expressed in extreme wickedness. QA-REVIEW resolved."
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7551 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5637-001 H8549H tamim (blameless and whole before God — Gen 17:1, Psa 15:2) — Moral Character / HUMAN. CHANGED from Divine-Human Correspondence: human moral wholeness before God; no structural mirroring."
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7548 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5638-001 H8535 tam (blameless and morally whole — Job 1:1, Psa 37:37) — Moral Character / HUMAN. CHANGED from Emotion-Negative: stable moral character quality, not a negative emotional state."
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7549 },
+      "set": { "dimension": "Emotion — Positive", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5638-002 H8535 tam (beloved as wholly complete — Song 5:2, 6:9) — Emotion-Positive / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7539 },
+      "set": { "dimension": "Emotion — Negative", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5641-001 H4974 metom (no soundness in flesh because of sin and discipline — Psa 38:3) — Emotion-Negative / HUMAN. CHANGED from Moral Character: acute negative inner state under discipline, not stable moral quality."
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7552 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "GOD", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "5642-001 H8549J tamim (Thummim — instrument of divine moral disclosure) — Moral Character / GOD. Automated label confirmed; dominant_subject GOD as the active discloser."
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7546 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "928-001 H5356A niqqayon (parallel to 5620-001) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-023",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7535 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "929-001 H3682 kesut (covering as vindication of innocence — Gen 20:16) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-024",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7536 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "929-002 H3682 kesut (absence of covering — Sheol naked before God) — Dependence/Creatureliness / HUMAN. CHANGED from Vitality/Existence: creature's radical exposure before divine omniscience."
+    },
+    {
+      "op_id": "OP-025",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7537 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "GOD", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "929-003 H3682 kesut (God hears and is compassionate to the exposed — Exo 22:27) — Relational Disposition / GOD. CHANGED from Divine-Human Correspondence: unilateral divine compassion response."
+    },
+    {
+      "op_id": "OP-026",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7527 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "930-001 H2009 hinneh (here I am — self-presentation as obedience/availability before God) — Relational Disposition / HUMAN. CHANGED from Volition: relational orientation toward God expressed as self-availability."
+    },
+    {
+      "op_id": "OP-027",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7528 },
+      "set": { "dimension": "Emotion — Negative", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "930-002 H2009 hinneh (disclosure of need, grief, slavery — Gen 15:3, Neh 9:36) — Emotion-Negative / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-028",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7529 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "930-003 H2009 hinneh (theophanic vision — Gen 28:12) — Dependence/Creatureliness / HUMAN. CHANGED from Cognition: creaturely encounter with divine presence defines the person, not a cognitive act."
+    },
+    {
+      "op_id": "OP-029",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7530 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "GOD", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "930-004 H2009 hinneh (divine love, promise, care toward his people — Gen 16:11, Hos 2:14) — Relational Disposition / GOD. CHANGED from Cognition: God's relational orientation of care, not a cognitive act."
+    },
+    {
+      "op_id": "OP-030",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7531 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "930-005 H2009 hinneh (guilt taken away, soul puffed up exposed — Isa 6:7, Hab 2:4) — Transformation / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-031",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7532 },
+      "set": { "dimension": "Cognition", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "930-006 H2009 hinneh (wisdom reflection, moral recognition — Psa 133:1, Ecc 2:11) — Cognition / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-032",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7533 },
+      "set": { "dimension": "Emotion — Negative", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "930-007 H2009 hinneh (anguish, dread, despair — Job 3:7, 32:19) — Emotion-Negative / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-033",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7550 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "931-001 H8537 tom (integrity of heart and conduct before God — Gen 20:5, Psa 26:1) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-034",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 90,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-90-SD002",
+        "strongs_reference": "H2005,H2009,H2008",
+        "priority": "HIGH",
+        "session_target": "Session D",
+        "description": "R090 innocence shows the highest dimensional breadth of any C10 registry: Moral Character, Emotion-Negative, Emotion-Positive, Transformation, Dependence/Creatureliness, Relational Disposition, and Cognition. This breadth arises partly from the registry's inclusion of presentational-particle terms (hen H2005, hinneh H2009, hennah H2008) which serve as framing particles for inner-being disclosures across all dimensions. Session D should note: (1) the particle vocabulary is not itself an inner-being characteristic but a presentational frame for inner-being content of any kind; (2) pre-existing SD pointer DIM-90-SD001 noted an emotional/affective dimension gap — that gap is not confirmed here; Emotion-Negative and Emotion-Positive are both present and working. The gap question may be more precisely about the adequacy of those two labels to capture the full range of human affective experience, which remains a valid Session D question.",
+        "session_raised": "wa-dimensionreview-instruction-v3_3-20260418",
+        "raised_date": "2026-05-02",
+        "resolved": 0
+      },
+      "description": "SD pointer DIM-90-SD002 — R090 dimensional breadth and particle-term framing function."
+    },
+    {
+      "op_id": "OP-035",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 90,
+        "flag_code": "SD_CLUSTER",
+        "flag_label": "DIM-C10-SD001",
+        "strongs_reference": null,
+        "priority": "HIGH",
+        "session_target": "Session D",
+        "description": "C10 cluster-wide pattern: across all 9 registries, Moral Character is the dominant dimension by group count, but the cluster consistently shows a secondary Relational Disposition signal — especially in the direction GOD-toward-HUMAN (divine compassion, election, covering) and HUMAN-toward-GOD (self-availability, fear of the Lord, worship in truth). The moral quality of C10 is never purely self-referential; it always implies a relational orientation. This supports a Session D observation that moral character in Scripture is inherently relational — constituted in and expressed through relationship with God, not as a free-standing self-achieved virtue. This is distinct from the moral character concept in Aristotle (aretē) and may be a significant finding for the programme's theological contribution.",
+        "session_raised": "wa-dimensionreview-instruction-v3_3-20260418",
+        "raised_date": "2026-05-02",
+        "resolved": 0
+      },
+      "description": "Cluster-level SD pointer DIM-C10-SD001 — moral character in C10 is inherently relational."
+    },
+    {
+      "op_id": "OP-036",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 90 },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R090 innocence DimReview Complete."
+    },
+    {
+      "op_id": "OP-037",
+      "operation": "insert",
+      "table": "wa_dim_review_cluster_log",
+      "record": {
+        "cluster": "C10",
+        "cluster_label": "moral character / faithfulness family",
+        "completion_date": "2026-05-02",
+        "governing_instruction": "wa-dimensionreview-instruction-v3_3-20260418",
+        "registries_complete": "R060,R077,R090,R092,R125,R139,R148,R164,R168",
+        "registries_excluded": "R014 (researcher decision 2026-04-06 — covered by R092),R067 (Analysis Complete — excluded from DimReview cycle)",
+        "notes": "9 active registries completed in single cluster-mode session 2026-05-02. 102 active groups assigned. RD-C10-001 resolved (proceed as-is for R077, R139, R148). DIR-20260502-001 closed (righteousness vocabulary audit — investigative only)."
+      },
+      "description": "Cluster stamp — C10 DimReview Complete. Gates Session B DataPrep for all C10 registries."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 37,
+    "dimension_index_updates": 33,
+    "registry_stamps": 1,
+    "cluster_stamps": 1,
+    "research_flag_inserts": 2,
+    "dimension_changes": 14,
+    "unclassified_assigned": 1,
+    "vocabulary_conversions": 19
+  }
+}

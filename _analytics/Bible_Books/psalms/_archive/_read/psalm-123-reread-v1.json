@@ -1,0 +1,633 @@
+{
+ "book": "Psa",
+ "book_id": 19,
+ "chapter": 123,
+ "provenance": "reread-psalms-2026",
+ "note": "Ps123 the upward look (4v). Char-arcs: A eyes LIFTED in dependence v1-2 (to you I lift up my eyes; as servants' eyes to their master's hand, our eyes to the LORD till he has mercy); B surfeit of contempt v3-4 (our SOUL has had more than enough of scorn - the arrogant at EASE, the PROUD). God's enthroned/mercy = qualifiers; maidservant-imagery + contempt/scorn reproach-content = standalone.",
+ "spans": {
+  "307798": {
+   "gloss": "lift up the eyes (nasa)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "lift up the eyes (nasa)"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "action"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the psalmist",
+     "to": 307798,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "lift up the eyes"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "to God enthroned",
+     "to": 307798,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "external:god",
+     "to": 307798,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "paired with the servant's upward look for mercy"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'To you I LIFT UP (nasa) my eyes, O you who are enthroned in the heavens!' - the upward look of dependence, eyes raised to the enthroned God for mercy."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "272469": {
+   "gloss": "soul (nephesh)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "soul (nephesh)"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "faculty"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the people",
+     "to": 272469,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "be surfeited"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "with scorn and contempt",
+     "to": 272469,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "internal:ib-state",
+     "to": 272469,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "paired with the scorn of the proud"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'Our SOUL (nephesh) has had more than enough of the scorn of those who are at ease' - the self glutted with humiliation, worn out under reproach."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "272473": {
+   "gloss": "at ease (shaanan)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "at ease (shaanan)"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "status"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the complacent",
+     "to": 272473,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "be at ease"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "scorning the afflicted",
+     "to": 272473,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "internal:ib-state",
+     "to": 272473,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "paired with the proud"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'the scorn of those who are AT EASE (shaanan)' - the complacent, whose comfortable ease breeds contempt for the afflicted."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "272475": {
+   "gloss": "proud (yonah/gaayon)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "proud (yonah/gaayon)"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "status"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "pair",
+     "v": "the proud",
+     "to": 272475,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "despise"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "pair",
+     "v": "the afflicted",
+     "to": 272475,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "pair",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "internal:ib-state",
+     "to": 272475,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "paired with those at ease"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'and of the contempt of the PROUD (proud)' - the arrogant whose contempt the humbled people have borne to the full."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "307800": {
+   "gloss": "enthroned (yashab)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "enthroned (yashab)"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 307798,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v1: 'O you who are ENTHRONED (yashab) in the heavens!' - God enthroned on high, to whom the eyes are lifted. Qualifier."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "272460": {
+   "gloss": "mercy (chanan)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mercy (chanan)"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 307798,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'so our eyes look to the LORD our God, till he has MERCY (chanan) upon us' - God's mercy awaited. Qualifier."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "272462": {
+   "gloss": "mercy (chanan)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mercy (chanan)"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 272469,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'Have MERCY (chanan) upon us, O LORD' - God's mercy petitioned. Qualifier."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "272464": {
+   "gloss": "mercy (chanan)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mercy (chanan)"
+    },
+    {
+     "n": 103,
+     "l": "source",
+     "k": "pair",
+     "v": "God-content qualifier",
+     "to": 272469,
+     "res": "span"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'have MERCY (chanan) upon us' - God's mercy petitioned, doubled. Qualifier."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "qualifier"
+    }
+   ]
+  },
+  "307796": {
+   "gloss": "Ascents (maalah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "Ascents (maalah)"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v0 superscription: 'A Song of ASCENTS (maalah)' - the pilgrim-song heading. Standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "272450": {
+   "gloss": "maidservant (shiphchah)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "maidservant (shiphchah)"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'as the eyes of a MAIDSERVANT (shiphchah) to the hand of her mistress' - the servant-image of dependent looking. Standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "272453": {
+   "gloss": "mistress (gebereth)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "mistress (gebereth)"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v2: 'to the hand of her MISTRESS (gebereth)' - the mistress on whom the maid's eyes depend, image. Standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "272467": {
+   "gloss": "enough (saba)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "enough (saba)"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'for we have had more than ENOUGH (saba) of contempt' - the surfeit of contempt endured (char soul, 272469), image. Standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "272468": {
+   "gloss": "contempt (buz)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "contempt (buz)"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v3: 'more than enough of CONTEMPT (buz)' - the contempt suffered, object. Standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "272471": {
+   "gloss": "enough (saba)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "enough (saba)"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'Our soul has had more than ENOUGH (saba)' - the surfeit of scorn, image. Standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "272472": {
+   "gloss": "scorn (laag)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "scorn (laag)"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'the SCORN (laag) of those who are at ease' - the mockery of the complacent (char at-ease, 272473), object. Standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  },
+  "272474": {
+   "gloss": "contempt (buz)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "contempt (buz)"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "v4: 'and of the CONTEMPT (buz) of the proud' - the contempt of the arrogant (char proud, 272475), object. Standalone."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "standalone"
+    }
+   ]
+  }
+ }
+}

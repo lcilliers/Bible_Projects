@@ -1,0 +1,40 @@
+# Psalm 24 — what it tells us about the inner being (Phase-2 chapter reading)
+
+- **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 24:1–10 (chapter-driven poetic build; roles sanity-checked). Complete chapter (v.2 backfilled). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **An entrance liturgy in two panels:** *who may approach* God (vv.3–6) and *who is approached* (vv.7–10, the King of glory), framed by the LORD's ownership of the whole earth (vv.1–2). The inner-being weight is the middle panel. Its own key — over against Ps 15, the other entrance liturgy — is that it presses past *deeds* to the **soul's aim**: the qualified worshipper is one who "does not **lift up his soul** to what is false," and the qualified are named as **seekers of God's face**.
+- **Lens (re-framed 2026-07-03):** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`). *Part B re-alignment sweep — Lens bullet added for consistency; this reading was already operation-focused (verified header-by-header). Findings unchanged.*
+
+## The reading
+
+**I. The ground: the whole earth is the LORD's (vv.1–2).**
+"The earth is the LORD's and the fullness thereof… for he has **founded** (H3245) it upon the seas and **established** (H3559) it upon the rivers." The panel of approach is set against **total divine ownership** — the One to be approached owns everything and everyone who dwells on the earth *(stated)*. The question of vv.3–6 therefore is not "may a creature come to a local deity" but "who may stand before the **Owner of all**" *(inferred)*.
+
+**II. The question of ascent — who may stand before God (v.3).**
+"**Who** shall ascend the hill of the LORD? And **who** shall stand in his **holy** (H6944, M22) place?" The inner being's **fitness to approach God** is the whole question *(stated)*. Not everyone who lives on the LORD's earth (v.1) may **stand in his holy place** — approach requires something the psalm is about to name.
+
+**III. The answer — outward and inward, and the soul's aim (v.4).**
+"He who has **clean** (H5355, M12) hands and a **pure** (H1249) **heart** (H3824, the seat — M47), who does **not lift up his soul** (H5375 *nasa* + H5315, the seat — M47) to what is **false** (H7723, *shav*), and does not swear **deceitfully** (H4820, M14, *mirmah*)." Four clauses, paired: **outward** ("clean hands" — deeds) and **inward** ("pure heart" — disposition) *(stated)*. But the psalm goes deeper than either: "does not **lift up his soul to what is false**." To *lift up the soul* (*nasa nephesh*) is to **set one's longing / aspiration upon** something — so the qualification is about **where the inner being directs its desire**: not toward *shav* (emptiness, vanity, falsehood) *(inferred: nasa-nephesh is the idiom of longing/aiming the self)*. And "swear deceitfully" (*mirmah*, M14) tests the **integrity of the inner being in speech**. **The heart's purity is located in the soul's aim** — not merely in clean acts but in a self whose longing is not fixed on the empty and false *(inferred)*.
+
+**IV. Righteousness *received* (v.5).**
+"He will **receive** (H5375, *nasa* — lift/carry away) **blessing** (H1293, M22) from the LORD and **righteousness** (H6666, M26) from the God of his salvation." Even the one with clean hands and pure heart does not *generate* his standing — he **receives righteousness from God** *(stated: "righteousness from the God of his salvation")*. The inner being's rightness before God is, at last, a **gift carried to it**, not a self-achievement *(inferred; cf. the conferred glory of Ps 21:5)*.
+
+**V. The face-seeking generation (v.6).**
+"Such is the **generation** of those who **seek** (H1875, M41, *darash*) him, who **seek** (H1245, M41, *baqash*) the **face** of the God of Jacob." Two seek-verbs intensify the point: the qualified inner being is defined not by a *state* but by a **direction** — it is a **seeker**, and what it seeks is not gifts but **the face of God himself** *(stated)*. The generation of the pure-hearted (v.4) *is* the generation of face-seekers (v.6) — purity and seeking are the same posture viewed twice *(inferred)*. (Thread: seeking/beholding the face — Ps 11:7, 16:11, 17:15, 21:6, 22:26.)
+
+**VI. The King of glory — whom the seeker seeks (vv.7–10).**
+"**Lift up** (*nasa*) your heads, O **gates**… that the **King of glory** (H3519, M22, *kabod*) may come in… Who is this King of glory? **The LORD**, strong and mighty… **The LORD of hosts** (H6635, M23), he is the King of glory!" *Glory* (*kabod*) tolls five times. Two things for the inner being. First, this panel **names the object of the seeking of v.6**: the face the pure-hearted seek is the face of **the King of glory now entering** — the movement resolves from *who may come to God* to *who this God is* *(inferred: v.6's "seek his face" and vv.7–10's revealed King answer each other)*. Second, a wordplay worth marking: the same verb *nasa* runs through the psalm — the worshipper must **not lift his soul** to what is false (v.4), and the gates **lift their heads** for the King (v.7). **What the inner being lifts itself toward is the whole question** — the soul that refuses to lift itself to vanity is the one prepared to lift its head to the King of glory *(inferred from the shared verb; offered as a structural observation, not asserted as the psalm's stated claim)*.
+
+## What Psalm 24 says about the inner being
+- **Fitness to stand before God is *inner* (vv.3–4).** The question of approach is answered by "clean hands **and** a pure heart" — deed and disposition together — but the decisive clause is about the **soul's aim**.
+- **Purity is a matter of where the soul lifts its longing (v.4).** "Does not lift up his soul to what is false" — the inner being is qualified or disqualified by the *direction of its desire*, not only by its acts. Longing fixed on vanity disqualifies.
+- **Integrity of the inner being in speech (v.4).** "Does not swear deceitfully" — *mirmah*; the honest heart shows in kept oaths (cf. Ps 15:4).
+- **Righteousness is *received*, not achieved (v.5).** Even the pure-hearted "receive righteousness from the God of his salvation" — standing before God is finally a gift carried to the inner being.
+- **The approaching self is a *seeker of the face* (v.6).** The qualified generation is defined by direction, not state — it seeks God himself, his *face*, not merely his gifts. Purity and seeking are one posture.
+- **What the inner being *lifts itself toward* defines it (vv.4, 7).** The *nasa* wordplay: refuse to lift the soul to falsehood, and you are the one who lifts your head to the King of glory.
+
+## Honest notes
+- **"prohibition=forbidden (neg particle)" over-stamp (residual/D11).** Fired across v.4 ("does **not** lift up… **not** swear") — these negatives **define the character**, they are not prohibitions. Same over-stamp flagged at Psa 22, 23; **rule-adjustment candidate**.
+- **bearer=LORD/David bleed (D11-flagged):** pervasive (vv.1, 3, 5, 8, 10) via the nearest-proper heuristic; the reading takes bearers from the text.
+- **`nasa` (H5375) tagged M19/mixed:** the verb carries three senses across the psalm — *lift up the soul* (v.4, aim/long), *receive/carry* (v.5), *lift the head* (vv.7, 9). The Phase-1 tag (M19) is a per-occurrence approximation; the reading reads each occurrence from context. A **grain-split candidate** (memory `project_term_is_sense_not_lemma`).
+- **DATA QUALITY — v.2 backfilled with fragmentary `verse_text`** ("for founded it upon seas established it upon rivers"); spans intact, verse is external (creation), reading unaffected. Recurring backfill defect (see Psa 21:12, 22:7/12/21).
+- **Characteristics (sanity-checked):** *holy* (H6944, M22, v.3); *clean* (H5355, M12) + *heart* (H3824, M47) + *soul* (H5315, M47) + *deceitfully* (H4820, M14, v.4); *blessing* (H1293, M22) + *righteousness* (H6666, M26, v.5); *seek* ×2 (H1875 *darash* / H1245 *baqash*, M41, v.6); *glory* (H3519, M22, ×5, vv.7–10); *hosts* (H6635, M23, v.10).

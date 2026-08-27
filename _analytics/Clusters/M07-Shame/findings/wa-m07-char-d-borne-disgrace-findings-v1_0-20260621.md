@@ -1,0 +1,265 @@
+# M07 — Findings for Characteristic D: Disgrace as a borne condition / standing (covering); imposed or deserved
+**File:** wa-m07-char-d-borne-disgrace-findings-v1_0-20260621.md · 2026-06-21 · Phase: CATALOGUE-RESOLUTION (grounded in gathered evidence; Silent where evidence absent)
+**Evidence source:** wa-m07-char-d-borne-disgrace-v1_0-20260621.md (136 occurrences). **Catalogue:** WA-tier-catalogue-current-state-v2-20260619.md (126 Q).
+**Evidence snapshot:** lemmas=H0954 bosh×45; H3639 ke.lim.mah×27; H1322 bo.shet×22; H7036 qa.lon×14; G0819 atimia×7; H3637 ka.lam×6; H2659 cha.pher×5; H0955 bu.shah×4; G0152 aischunē×3; H1317 bosh.nah×1; H3640 ke.lim.mut×1; H7022 qi.qa.lon×1 | faculty=affect×136; cognition×45 | type=status×81; action×55 | valence=sinful×56; neutral×53; righteous×1; commanded×1 | experiencer=other×74; other (addressed)×23; self×12 | location=soul×5; inward-parts×2 | divine=none | origin=received-from-outside×1 | testament=OT×126; NT×10 | genres=prophecy×88; psalm×17; wisdom×13; epistle×8; narrative×8; gospel×1; apocalyptic×1
+
+## T0 — Divine Image and Created Design
+- **T0.1.1** — God-relation in the verse
+  - **Not related to God in this characteristic's evidence (no divine_involvement tagged on any occurrence).**
+- **T0.1.2** — Borne by God or only the creature
+  - **Borne only by the creature: experiencer is human throughout (other×74; other (addressed)×23; self×12); God does not appear in this characteristic's evidence as bearer.**
+- **T0.2.1** — Purpose/role stated in the verse
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.2.2** — Created design / fallen condition / both
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.2.3** — Orientation toward future fullness
+  - **Evidenced: reversal/restoration language present (1Cor 15:43, Isa 29:22, Isa 54:4, Job 8:22, Isa 54:4, Eze 34:29 (+2 more)).**
+- **T0.3.1** — Aspect of divine likeness instantiated
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.3.2** — Shared between God and person, or creaturely analogue
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.3.3** — What presence/absence indicates about the divine image in the person
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.4.1** — Typological use (covenantal/eschatological/christological)
+  - **Candidate present: verse evidence includes Christ/Servant-bearing or eschatological-judgment material (Heb 12:2, Isa 24:23, Jer 9:19, Isa 61:7, Jer 23:40). Direction not resolved at gather stage.**
+## T1 — Definition
+- **T1.1.1** — Programme name / essential nature
+  - **Within M07 this characteristic is carried by: bosh (H0954, Hebrew); ke.lim.mah (H3639, Hebrew); bo.shet (H1322, Hebrew); qa.lon (H7036, Hebrew); atimia (G0819, Greek); ka.lam (H3637, Hebrew); cha.pher (H2659, Hebrew); bu.shah (H0955, Hebrew); aischunē (G0152, Greek); bosh.nah (H1317, Hebrew); ke.lim.mut (H3640, Hebrew); qi.qa.lon (H7022, Hebrew). Lemma meanings: disgrace, reproach, shame, confusion, dishonour, insult, ignominy; disgrace, shame; dishonor, disgrace, shame; shame; shame, disgrace; shame, disgrace, dishonour, ignominy; shame, disgrace, ignominy; to be ashamed, be confounded, be abashed, feel abashed; to insult, shame, humiliate, blush, be ashamed, be put to shame, be re; to put to shame, be ashamed, be disconcerted, be disappointed.**
+- **T1.1.2** — Primary Hebrew/Greek terms at definitional level
+  - **Hebrew/Greek split: Hebrew×126; Greek×10. Senses in use: shame×45; ashamed×19; put to shame×16; disgrace×11; dishonor×11; shamed×6; disgraced×4; reproach×4; dishonorable×2; confounded×2.**
+- **T1.1.3** — Directional/relational/constitutional implication of the name
+  - **Relational force tagged: with×6; because×3; him×2; through×2; for×2; your×1; in×1; To×1; to×1; till×1.**
+- **T1.2.1** — Kind of inner-being phenomenon
+  - **From morphology: status×81; action×55 (action=event/verb, status=condition, quality=attribute).**
+- **T1.2.2** — Simple or compound
+  - **Co-constituents present via compound tagging: be ashamed (partner)×21; reproach (partner)×14; shame (partner)×9; be humiliated (partner)×7; to to be dismayed (partner)×6; to seek (partner)×4; distress: harm (partner)×4; glory (partner)×3; enemy (partner)×3; to exalt (partner)×3.**
+- **T1.3.1** — Structural opposite
+  - **Honour/vindication (and, in M07, the innocence pole) stand against shame — but the precise opposite is a cross-characteristic call deferred to interpret phase.**
+- **T1.3.2** — What it excludes/resists at its edge
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.3.3** — Where it ends and another begins
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.4.1** — Mode(s) of operation incl. grammatical form
+  - **Grammatical realisation: type status×81; action×55; stems Qal×38; Hiphil×13; Niphal×3; Hithpael×1; Hophal×1. Operates as status×81; action×55.**
+- **T1.4.2** — Variation of mode by context/direction/level
+  - **Varies: type spread status×81; action×55; experiencer spread other×74; other (addressed)×23; self×12; relational spread with×6; because×3; him×2; through×2; for×2; your×1; in×1; To×1.**
+- **T1.4.3** — Communicative / speech-based mode
+  - **Yes — commanded/addressed forms present: Luk 14:9, Rev 3:18, Isa 23:4, Isa 65:13, Jer 12:13, Jer 22:22 (+18 more).**
+- **T1.5.1** — Immediate inner-being response
+  - **Tagged immediate_response present on: Rom 1:26, Isa 29:22, Jer 51:47, Isa 54:4, Psa 35:26, Psa 69:19 (+5 more) — values: exchanged relations×1; grow pale×1; fall midst×1; remember×1; magnify×1; foes all×1; give sword×1; treachery practiced×1; committed×1; stumbled warrior×1.**
+- **T1.5.2** — Consistent or varied across verses
+  - **Varied — exchanged relations×1; grow pale×1; fall midst×1; remember×1; magnify×1; foes all×1; give sword×1; treachery practiced×1; committed×1; stumbled warrior×1.**
+- **T1.6.1** — Sustained effect over time
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.6.3** — How sustained effect differs from immediate response
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.7.1** — Inner conditions for right operation
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.7.2** — Conditions where blocked/distorted (incl. another spirit)
+  - **Adversarial/spiritual context tagged: Jer 50:2.**
+- **T1.7.3** — State of person in whom present but not taking hold
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T2 — Constitutional Location and Boundaries
+- **T2.1.1** — Constitutional level(s) located
+  - **Located at: soul×5; inward-parts×2 (e.g. Jer 15:9, 2Ch 32:21, Hab 2:10, Zep 3:5, Jer 15:9, Eze 16:27 (+1 more)).**
+- **T2.1.2** — Pattern of engaged/absent levels
+  - **Seat tagged on 7/136; levels: soul×5; inward-parts×2. The large untagged remainder indicates this characteristic is recorded predominantly as relational/situational rather than seated.**
+- **T2.7.1** — Body — direction of any body link
+  - **Body-part seat(s): inward-parts×2.**
+- **T2.9.1** — Origin stated
+  - **Origin tagged: received-from-outside×1 (e.g. Ezr 8:22).**
+- **T2.9.2** — Single or multiple origin
+  - **Single: received-from-outside×1**
+- **T2.10.1** — Constitutional movement / onset from external source
+  - **External onset suggested where experiencer is 'other (addressed)' and God/agent imposes (agent imposition); movement sequence not tagged.**
+## T3 — The Inner Faculties
+- **T3.1.1** — Engages perception?
+  - **Silent — no 'perception' faculty tagged in this characteristic's evidence.**
+- **T3.1.2** — Effect on perception
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.1.3** — Pattern across verses for perception
+  - **Not engaged across this characteristic's 136 occurrences.**
+- **T3.10.1** — Engages conscientiousness?
+  - **Silent — 'conscientiousness' not a tagged faculty; see conscience (T3.9) and moral-evaluation (T3.8).**
+- **T3.10.2** — Effect on conscientiousness
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T3.10.3** — Pattern for conscientiousness
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T3.11.1** — Engages relational capacity?
+  - **Engaged — relational/other-directed: experiencer other×74; other (addressed)×23; self×12, relational force with×6; because×3; him×2; through×2; for×2; your×1, object-type person×28; abstract×16; situation×16; thing×2; God×2; spiritual-being×1.**
+- **T3.11.2** — Effect on relational capacity
+  - **Shame/dishonour operates on standing-before-others — it degrades or threatens the bond/standing (object-type person/God present).**
+- **T3.11.3** — Pattern for relational capacity
+  - **Other-directed on 97/136.**
+- **T3.2.1** — Engages cognition?
+  - **Engaged. 45 occurrence(s) tagged cognition (e.g. 2Ki 2:17, 2Ki 8:11, Eze 32:30, Ezr 8:22, Gen 2:25, Hos 2:5 (+39 more)). Carries a knowing/expectation component (confidence falsified, confounded).**
+- **T3.2.2** — Effect on cognition
+  - **Carries a knowing/expectation component (confidence falsified, confounded).**
+- **T3.2.3** — Pattern across verses for cognition
+  - **45/136 occurrences engage cognition.**
+- **T3.3.1** — Engages memory?
+  - **Silent — no 'memory' faculty tagged in this characteristic's evidence.**
+- **T3.3.2** — Effect on memory
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.3.3** — Pattern across verses for memory
+  - **Not engaged across this characteristic's 136 occurrences.**
+- **T3.4.1** — Engages affect?
+  - **Engaged. 136 occurrence(s) tagged affect (e.g. Heb 12:2, Luk 14:9, Rev 3:18, 1Cor 11:14, 1Cor 15:43, 2Cor 11:21 (+130 more)). Felt emotional state of shame/dishonour.**
+- **T3.4.2** — Effect on affect
+  - **Felt emotional state of shame/dishonour.**
+- **T3.4.3** — Pattern across verses for affect
+  - **136/136 occurrences engage affect.**
+- **T3.5.1** — Engages creativity?
+  - **Silent — no 'creativity' faculty tagged in this characteristic's evidence.**
+- **T3.5.2** — Effect on creativity
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.5.3** — Pattern across verses for creativity
+  - **Not engaged across this characteristic's 136 occurrences.**
+- **T3.6.1** — Engages volition?
+  - **Silent — no 'volition' faculty tagged in this characteristic's evidence.**
+- **T3.6.2** — Effect on volition
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.6.3** — Pattern across verses for volition
+  - **Not engaged across this characteristic's 136 occurrences.**
+- **T3.7.1** — Engages agency?
+  - **Silent — no 'agency' faculty tagged in this characteristic's evidence.**
+- **T3.7.2** — Effect on agency
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.7.3** — Pattern across verses for agency
+  - **Not engaged across this characteristic's 136 occurrences.**
+- **T3.8.1** — Engages moral evaluation?
+  - **Engaged — moral framing tagged (valence): sinful×56; neutral×53; righteous×1; commanded×1.**
+- **T3.8.2** — Effect on moral evaluation
+  - **The state is morally weighted: sinful×56; neutral×53; righteous×1; commanded×1 — i.e. assessed against a standard of right/wrong.**
+- **T3.8.3** — Pattern for moral evaluation
+  - **valence tagged on 111/136: sinful×56; neutral×53; righteous×1; commanded×1.**
+- **T3.9.1** — Engages conscience?
+  - **Silent — no 'conscience' faculty tagged in this characteristic's evidence.**
+- **T3.9.2** — Effect on conscience
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.9.3** — Pattern across verses for conscience
+  - **Not engaged across this characteristic's 136 occurrences.**
+## T4 — Relational Interfaces
+- **T4.1.1** — God → human operation
+  - **Silent — God not tagged as agent toward the person in this characteristic's evidence.**
+- **T4.1.2** — Basis on which God extends it
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.1.3** — What God’s extension shows of his disposition
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.2.1** — Human → God movement
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.2.2** — Inner posture required
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.2.3** — What the human→God direction shows
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.3.1** — Person → person extension (giving)
+  - **Yes (agent pole): one party inflicts shame/dishonour/contempt on another — experiencer 'other'/'other (addressed)' with transitive sense (Heb 12:2, Luk 14:9, Rev 3:18, 1Cor 11:14, 1Cor 15:43, Rom 1:26 (+91 more)).**
+- **T4.3.2** — Inner conditions in the giver
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.3.3** — What the giver must have received/become
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.4.1** — Person ← person uptake (receiving)
+  - **The recipient bears the inflicted shame/disgrace (borne condition) — object-type person present (28 occ).**
+- **T4.4.2** — Conditions accompanying/blocking uptake
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.4.3** — State of one who meets it but does not take it up
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.5.1** — Within bonds vs across distance
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.5.2** — Covenantal only vs crossing boundaries
+  - **Crosses boundaries: applied to nations/enemies as well as the covenant people (Jer 2:36, Jer 46:24, Jer 48:1, Jer 48:20, Jer 48:39, Jer 50:12 (+15 more)).**
+- **T4.5.3** — Relational scope — who in/out
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.6.1** — Operates re other spiritual beings?
+  - **Spiritual-being object-type tagged: Jer 50:2.**
+- **T4.6.2** — Site of adversarial activity?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.6.3** — Mediated through angelic ministry?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T5 — Formative and Developmental Dimension
+- **T5.1.1** — Produces transformation?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.1.2** — Reversible/irreversible?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.2.1** — Sequence of inner states (before/during/after)
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.3.1** — Mechanism of change
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.3.2** — Mechanism differs across contexts?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.4.1** — Relation to suffering/affliction
+  - **Present: shame tied to affliction/judgment contexts (e.g. Eze 32:30, Isa 41:11, Jer 15:9, Jer 22:22, Jer 48:1, Jer 48:20 (+11 more)).**
+- **T5.4.2** — What suffering does to it
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.5.1** — Participation in formation/sanctification
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.6.1** — Eschatological trajectory
+  - **Present: eschatological/'on that day'/final-reversal language (Zec 13:4, Zep 3:11, Isa 61:7, Jer 23:40).**
+## T6 — Structural Relationships with Other Characteristics
+- **T6.1.1** — Co-occurring adjacent characteristics (compound)
+  - **Co-terms in-verse: be ashamed×21; reproach×14; shame×9; be humiliated×7; to to be dismayed×6; to seek×4; distress: harm×4; glory×3; enemy×3; to exalt×3; also×3; to know×3.**
+- **T6.1.2** — What the co-occurrence shows
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.2.1** — Consistent sequence with another?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.2.2** — Causal/developmental/correlational?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.3.1** — Produces another characteristic?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.3.2** — Produced by another?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.3.3** — Constituent relationship?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.4.1** — Vocabulary shared with other characteristics
+  - **Shares lemmas with other M07 characteristics: bo.shet (H1322) → C,E,G; cha.pher (H2659) → A,B,E; ka.lam (H3637) → A,B,C,Cneg,E,RESID; qa.lon (H7036) → Cneg,G; bosh (H0954) → A,B,C,Cneg,E; atimia (G0819) → G; aischunē (G0152) → Cneg,E,H; qi.qa.lon (H7022) → H; ke.lim.mah (H3639) → C,G**
+- **T6.4.2** — Root-level sharing
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.4.3** — What vocabulary sharing shows
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.5.1** — Nearest neighbour and distinction
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.5.2** — Precise boundary at overlap
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.5.3** — Distinction of degree/kind/direction/level
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T7 — Evidential and Methodological Foundation
+- **T7.1.1** — Primary Hebrew/Greek terms and root meanings
+  - **bosh (H0954, Hebrew); ke.lim.mah (H3639, Hebrew); bo.shet (H1322, Hebrew); qa.lon (H7036, Hebrew); atimia (G0819, Greek); ka.lam (H3637, Hebrew); cha.pher (H2659, Hebrew); bu.shah (H0955, Hebrew); aischunē (G0152, Greek); bosh.nah (H1317, Hebrew); ke.lim.mut (H3640, Hebrew); qi.qa.lon (H7022, Hebrew). Meanings: disgrace, reproach, shame, confusion, dishonour, insult, ignominy; disgrace, shame; dishonor, disgrace, shame; shame; shame, disgrace; shame, disgrace, dishonour, ignominy; shame, disgrace, ignominy; to be ashamed, be confounded, be abashed, feel abashed; to insult, shame, humiliate, blush, be ashamed, be put to shame, be re; to put to shame, be ashamed, be disconcerted, be disappointed.**
+- **T7.1.2** — Grammatical range
+  - **type spread status×81; action×55; Hebrew stems Qal×38; Hiphil×13; Niphal×3; Hithpael×1; Hophal×1.**
+- **T7.1.3** — Semantic range
+  - **Senses attested in context: shame×45; ashamed×19; put to shame×16; disgrace×11; dishonor×11; shamed×6; disgraced×4; reproach×4; dishonorable×2; confounded×2; abuse×2; dishonorable use×1.**
+- **T7.1.4** — Terms distinguishing aspects (disposition vs act, etc.)
+  - **Action vs status/quality split present: status×81; action×55 — i.e. event-terms vs condition-terms co-exist.**
+- **T7.1.5** — Term for opposite/absence
+  - **Innocence/cleanness terms (niqqavon, qehavon) name the absence — but they sit in characteristic J; within THIS characteristic: not present (cross-characteristic)**
+- **T7.1.6** — Person-type term
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.1.7** — Supplication/seeking term
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.1.8** — OT↔NT continuity/development
+  - **Testament spread: OT×126; NT×10. Both Testaments attested — continuity testable.**
+- **T7.1.9** — NT-coined term
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.1.10** — Full vocabulary arc / complete semantic range
+  - **12 distinct lemmas across Hebrew×126; Greek×10; senses shame×45; ashamed×19; put to shame×16; disgrace×11; dishonor×11; shamed×6; disgraced×4; reproach×4; dishonorable×2; confounded×2.**
+- **T7.2.1** — Function of the term in its verse
+  - **Operates grammatically as status×81; action×55; governing predicate tagged where noun-state (how-field).**
+- **T7.2.2** — Literary form(s)
+  - **Forms carrying the evidence: prophecy×88; psalm×17; wisdom×13; epistle×8; narrative×8; gospel×1; apocalyptic×1.**
+- **T7.2.3** — Logical structure of key arguments
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.2.4** — Contextual setting
+  - **Inferable from genre/valence: prophecy×88; psalm×17; wisdom×13; epistle×8; moral framing sinful×56; neutral×53; righteous×1; commanded×1. Judicial/covenantal where prophecy+sinful/commanded dominate.**
+- **T7.2.5** — Primary anchor verse
+  - **Candidate anchor: a high-load occurrence of bosh (H0954) — e.g. Heb 12:2. Final anchor selection deferred to interpret phase.**
+- **T7.2.6** — What the anchor shows uniquely
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.3.1** — Most useful human-science framework
+  - **Social psychology — stigma & status degradation (Goffman; Garfinkel; Williams) [source: wa-m07-shame-scienceextract, Sec2].**
+- **T7.3.2** — Where the framework illuminates
+  - **Honour-shame cultural psychology and the shame/guilt distinction (Lewis; Tangney) illuminate this characteristic's evidence; see science extract T7.3.2. [source: science extract]**
+- **T7.3.3** — Where verse evidence and framework diverge
+  - **Science treats shame as chiefly maladaptive; the biblical evidence includes appropriate/commanded shame and shamelessness as a spiritual condition — a divergence in framing. [source: science extract T7.3.3]**
+- **T7.3.4** — Aspect science surfaces for further investigation
+  - **Science surfaces shame's transdiagnostic amplifier role and its somatic postures (gaze-aversion, shrinking) as items the biblical pass could test. [source: science extract T7.3.4]**

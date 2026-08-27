@@ -1,0 +1,159 @@
+{
+  "meta": {
+    "task": "location-read",
+    "field": "location",
+    "cluster": "M01",
+    "items": 21,
+    "instruction": "TASK (only this): each verse contains a 'spirit/breath' word (ruach/pneuma). Decide, for the named `term`, whether that word is the human inner-being SEAT (the spirit as a constitutional seat). If yes -> \"spirit\". If it is the divine Spirit, a disposition, wind, or breath (NOT the seat) -> \"NONE\". OUTPUT JSON only: [{\"vcid\":int,\"value\":\"spirit\"|\"NONE\"}].",
+    "apply_with": "scripts/_apply_field_from_api.py --field location --input <out.json>"
+  },
+  "items": [
+    {
+      "vcid": 4311,
+      "reference": "1Ki 18:12",
+      "verse_text": "1Ki 18:12 And as soon as I have gone from you, the Spirit of the Lord will carry you I know not where . And so, when I come and tell Ahab and he cannot find you, he will kill me, although I your servant have feared the Lord from my youth .",
+      "term": "ya.re",
+      "gloss": "afraid"
+    },
+    {
+      "vcid": 40258,
+      "reference": "Job 30:15",
+      "verse_text": "Job 30:15 Terrors are turned upon me; my honor is pursued as by the wind , and my prosperity has passed away like a cloud .",
+      "term": "bal.la.hah",
+      "gloss": "terror"
+    },
+    {
+      "vcid": 15155,
+      "reference": "Psa 76:12",
+      "verse_text": "Psa 76:12 who cuts off the spirit of princes , who is to be feared by the kings of the earth .",
+      "term": "ya.re",
+      "gloss": "to fear: revere"
+    },
+    {
+      "vcid": 12459,
+      "reference": "Psa 104:29",
+      "verse_text": "Psa 104:29 When you hide your face , they are dismayed ; when you take away their breath , they die and return to their dust .",
+      "term": "ba.hal",
+      "gloss": "to dismay"
+    },
+    {
+      "vcid": 12440,
+      "reference": "Ecc 7:9",
+      "verse_text": "Ecc 7:9 Be not quick in your spirit to become angry , for anger lodges in the heart of fools .",
+      "term": "ba.hal",
+      "gloss": "to dismay"
+    },
+    {
+      "vcid": 14851,
+      "reference": "Isa 11:2",
+      "verse_text": "Isa 11:2 And the Spirit of the Lord shall rest upon him, the Spirit of wisdom and understanding , the Spirit of counsel and might , the Spirit of knowledge and the fear of the Lord .",
+      "term": "yir.ah",
+      "gloss": "fear"
+    },
+    {
+      "vcid": 14851,
+      "reference": "Isa 11:2",
+      "verse_text": "Isa 11:2 And the Spirit of the Lord shall rest upon him, the Spirit of wisdom and understanding , the Spirit of counsel and might , the Spirit of knowledge and the fear of the Lord .",
+      "term": "yir.ah",
+      "gloss": "fear"
+    },
+    {
+      "vcid": 14851,
+      "reference": "Isa 11:2",
+      "verse_text": "Isa 11:2 And the Spirit of the Lord shall rest upon him, the Spirit of wisdom and understanding , the Spirit of counsel and might , the Spirit of knowledge and the fear of the Lord .",
+      "term": "yir.ah",
+      "gloss": "fear"
+    },
+    {
+      "vcid": 14851,
+      "reference": "Isa 11:2",
+      "verse_text": "Isa 11:2 And the Spirit of the Lord shall rest upon him, the Spirit of wisdom and understanding , the Spirit of counsel and might , the Spirit of knowledge and the fear of the Lord .",
+      "term": "yir.ah",
+      "gloss": "fear"
+    },
+    {
+      "vcid": 4968,
+      "reference": "Isa 59:19",
+      "verse_text": "Isa 59:19 So they shall fear the name of the Lord from the west , and his glory from the rising of the sun ; for he will come like a rushing stream , which the wind of the Lord drives .",
+      "term": "ya.re",
+      "gloss": "to fear: revere"
+    },
+    {
+      "vcid": 15318,
+      "reference": "Isa 66:2",
+      "verse_text": "Isa 66:2 All these things my hand has made , and so all these things came to be, declares the Lord . But this is the one to whom I will look : he who is humble and contrite in spirit and trembles at my word .",
+      "term": "cha.red",
+      "gloss": "trembling"
+    },
+    {
+      "vcid": 15132,
+      "reference": "Hag 2:5",
+      "verse_text": "Hag 2:5 according to the covenant that I made with you when you came out of Egypt . My Spirit remains in your midst . Fear not .",
+      "term": "ya.re",
+      "gloss": "to fear: revere"
+    },
+    {
+      "vcid": 14979,
+      "reference": "Mat 1:20",
+      "verse_text": "Mat 1:20 But as he considered these things , behold , an angel of the Lord appeared to him in a dream , saying , “ Joseph , son of David , do not fear to take Mary as your wife , for that which is conceived in her is from the Holy Spirit .",
+      "term": "fobeō",
+      "gloss": "to fear"
+    },
+    {
+      "vcid": 4144,
+      "reference": "Luk 24:37",
+      "verse_text": "Luk 24:37 But they were startled and frightened and thought they saw a spirit .",
+      "term": "ptoeō",
+      "gloss": "to frighten"
+    },
+    {
+      "vcid": 14779,
+      "reference": "Luk 24:37",
+      "verse_text": "Luk 24:37 But they were startled and frightened and thought they saw a spirit .",
+      "term": "emfobos",
+      "gloss": "afraid"
+    },
+    {
+      "vcid": 14806,
+      "reference": "Act 9:31",
+      "verse_text": "Act 9:31 So the church throughout all Judea and Galilee and Samaria had peace and was being built up . And walking in the fear of the Lord and in the comfort of the Holy Spirit , it multiplied .",
+      "term": "fobos",
+      "gloss": "fear"
+    },
+    {
+      "vcid": 14823,
+      "reference": "Rom 8:15",
+      "verse_text": "Rom 8:15 For you did not receive the spirit of slavery to fall back into fear , but you have received the Spirit of adoption as sons, by whom we cry , “ Abba ! Father !”",
+      "term": "fobos",
+      "gloss": "fear"
+    },
+    {
+      "vcid": 14823,
+      "reference": "Rom 8:15",
+      "verse_text": "Rom 8:15 For you did not receive the spirit of slavery to fall back into fear , but you have received the Spirit of adoption as sons, by whom we cry , “ Abba ! Father !”",
+      "term": "fobos",
+      "gloss": "fear"
+    },
+    {
+      "vcid": 14807,
+      "reference": "2Cor 7:1",
+      "verse_text": "2Cor 7:1 Since we have these promises , beloved , let us cleanse ourselves from every defilement of body and spirit , bringing holiness to completion in the fear of God .",
+      "term": "fobos",
+      "gloss": "fear"
+    },
+    {
+      "vcid": 14962,
+      "reference": "2Ti 1:7",
+      "verse_text": "2Ti 1:7 for God gave us a spirit not of fear but of power and love and self-control .",
+      "term": "deilia",
+      "gloss": "timidity"
+    },
+    {
+      "vcid": 14821,
+      "reference": "Rev 11:11",
+      "verse_text": "Rev 11:11 But after the three and a half days a breath of life from God entered them , and they stood up on their feet , and great fear fell on those who saw them .",
+      "term": "fobos",
+      "gloss": "fear"
+    }
+  ]
+}

@@ -1,0 +1,218 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260410-DIMREVIEW-C17-REG068-V1",
+    "cluster": "C17",
+    "registry_scope": 68,
+    "produced_date": "2026-04-10",
+    "produced_by": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "observations_log": "wa-dim-C17-observations-v1.0-2026-04-10.md",
+    "session_b_status": null,
+    "description": "Dimension review patch — C17 Reg 068 (grace): all 11 OWNER-term groups assigned CLAUDE_AI confidence and dominant_subject; 2 dimension corrections (889-003 Cognition→Moral Character; 890-001 Relational Disposition→Dependence/Creatureliness); registry-level stamp set. Cluster stamp NOT set — remaining C17 registries deferred to normal cluster processing."
+  },
+  "records": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7308 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "God's gracious giving freely — charizō as the act of the divine disposition of favour expressed in total gift (the Son, forgiveness, all things). Relational Disposition confirmed: the settled divine orientation of goodwill that gives without condition. Dominant subject: GOD throughout 7-verse corpus.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "5470-001 — grace (charizō): confirmed Relational Disposition | GOD"
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7309 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Human act of forgiving — releasing another from debt, patterned on divine forgiveness received. The inner-relational act of grace extended person-to-person. Relational Disposition confirmed: inner orientation of releasing rather than holding. Dominant subject: HUMAN (the forgiver in Eph 4:32 and throughout 8-verse corpus).",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "5470-002 — grace (charizō): confirmed Relational Disposition | HUMAN"
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7314 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine bestowing of grace — charitoō as the act by which God marks and transforms the recipient through favour (Luk 1:28 perfect passive: kecharitōmenē). Relational Disposition confirmed: divine relational act creating a condition of standing. Dominant subject: GOD as the one who bestows.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "5471-001 — grace (charitoō): confirmed Relational Disposition | GOD"
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7310 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Grace as sovereign, unmerited divine disposition toward humanity — the freely given gift through which God justifies, saves, and sustains (Eph 2:8: not your own doing; 2Cor 12:9: sufficient in weakness). Relational Disposition confirmed: the settled divine orientation of favour that precedes and is not conditioned by merit. Dominant subject: GOD throughout 22-verse corpus.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "888-001 — grace (charis): confirmed Relational Disposition | GOD"
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7311 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Grace as the relational sphere and ongoing condition in which the believer stands and lives (Rom 5:2: access into this grace in which we stand; 1Cor 15:10: by grace I am what I am). Relational Disposition confirmed: the sustained inner-relational condition of the human person shaped by grace. Dominant subject: HUMAN — the believer's ongoing inner condition is the primary characteristic engaged.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "888-002 — grace (charis): confirmed Relational Disposition | HUMAN"
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7312 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Grace as relational favour — the find-favour idiom (heuriskō charin) naming the disposition of goodwill that opens access, creates loyalty, reflects the giver's character (Luk 1:30: found favour with God). Relational Disposition confirmed: inner orientation of goodwill constituting the favour relationship. Dominant subject: GOD (anchor explicitly divine; group spans divine-human and human-human contexts but anchor frames divine favour).",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "888-003 — grace (charis): confirmed Relational Disposition | GOD"
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7313 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Grace as animating power and sphere of apostolic mission — the word of grace, ministry identity, commendation to grace (Acts 20:32). The inner-being characteristic is the human orientation toward and participation in the grace-sphere. Relational Disposition confirmed over Agency/Power: the power in view is grace operating through the relational bond, not the person's own capacity. Dominant subject: HUMAN — the apostolic person's inner orientation sourced in grace.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "888-004 — grace (charis): confirmed Relational Disposition | HUMAN"
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7315 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "GOD",
+        "manual_override": 0,
+        "notes": "Divine relational favour based on prior personal knowledge — chen as God's disposition toward those he knows by name (Exo 33:17: found favour... I know you by name). Also Zec 12:10: Spirit of grace poured out producing mourning and supplication — pneumatological dimension noted. Relational Disposition confirmed. Dominant subject: GOD — both anchors show divine action.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "889-001 — grace (chen): confirmed Relational Disposition | GOD"
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7316 },
+      "set": {
+        "dimension": "Relational Disposition",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "OTHER_HUMAN",
+        "manual_override": 0,
+        "notes": "Interpersonal relational favour — chen as goodwill one person discovers in another, unexpectedly and without merit (Rut 2:10: foreigner finding favour). Relational Disposition confirmed. Dominant subject: OTHER_HUMAN — the bearer of the characteristic is the one granting favour (Boaz toward Ruth); the inner disposition of goodwill belongs to the other person.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "889-002 — grace (chen): confirmed Relational Disposition | OTHER_HUMAN"
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7317 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Favour as inner character quality — chen as gracious disposition expressed in speech, conduct, and standing in community (Pro 31:30: charm deceitful, beauty vain; the fear of the Lord is what endures). DIMENSION CORRECTED from Cognition (KEYWORD_WEAK keyword match on 'wisdom'). Moral Character is correct: chen here names an inner character quality belonging to a person, not a cognitive faculty. Dominant subject: HUMAN.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "889-003 — grace (chen): CORRECTED Cognition → Moral Character | HUMAN"
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7318 },
+      "set": {
+        "dimension": "Dependence / Creatureliness",
+        "dimension_confidence": "CLAUDE_AI",
+        "dominant_subject": "HUMAN",
+        "manual_override": 0,
+        "notes": "Earnest supplication — ta.cha.nun as the inner act of plea arising from deep need and relational vulnerability before God (Dan 9:3: prayer and pleas with fasting, sackcloth, ashes; Zec 12:10: Spirit of grace producing pleas for mercy). DIMENSION CORRECTED from Relational Disposition: the primary inner-being characteristic is not the relational bond itself but the creature's orientation of recognised need and dependence before the greater. Dependence/Creatureliness names this more precisely. Dominant subject: HUMAN — the supplicant throughout.",
+        "last_modified": "2026-04-10T00:00:00Z"
+      },
+      "description": "890-001 — grace (ta.cha.nun): CORRECTED Relational Disposition → Dependence/Creatureliness | HUMAN"
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "insert",
+      "table": "wa_session_b_findings",
+      "record": {
+        "finding_id": "DIM-068-001",
+        "registry_id": 68,
+        "finding_type": "DIMENSION_REVIEW",
+        "finding": "Group 890-001 (ta.cha.nun, supplication) — Dan 9:3 anchor shows earnest supplication enacted somatically: fasting, sackcloth, ashes. The body enacts what the inner person is doing — the whole person brought into alignment with the inner posture of plea. Session B should examine the somatic signature of grace-supplication: whether the body-posture vocabulary of petition (prostration, fasting, weeping, raised hands) encodes inner-being content about the Dependence/Creatureliness orientation, and how this connects to the grace registry's inner-being picture. Zec 12:10 (shared anchor with 889-001) shows that the capacity for earnest supplication is itself grace-given — the Spirit of grace produces the plea. This is the inner-being grammar of grace-response: grace first, supplication as grace-enabled response.",
+        "raised_date": "2026-04-10",
+        "session_b_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "DIM-068-001: somatic signature of supplication and grace-supplication causal chain"
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "flag_label": "DIM-068-SD001",
+        "registry_id": 68,
+        "flag_code": "SD_POINTER",
+        "description": "Zec 12:10 is an anchor verse in both 889-001 (chen — divine relational favour) and 890-001 (ta.cha.nun — supplication). The same verse connects: (1) God pouring out a spirit of grace (chen — Relational Disposition, GOD), and (2) the human response of pleas for mercy (ta.cha.nun — Dependence/Creatureliness, HUMAN). This shared anchor encodes the inner-being grammar of grace-response: divine grace-disposition produces the human supplication-orientation. The causal chain — grace outpoured → mourning → supplication — is a structural insight spanning two inner-being characteristics (relational favour and creaturely dependence) within the same registry. Session D should examine whether this chain appears across other C17 registries and whether it constitutes a programmatic inner-being pattern in the divine-human relational cluster.",
+        "session_target": "D",
+        "raised_date": "2026-04-10"
+      },
+      "description": "DIM-068-SD001: Zec 12:10 shared anchor — grace-disposition producing supplication-response chain"
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 68 },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "WA-DimensionReview-Instruction-v1.9-2026-04-09"
+      },
+      "description": "Registry 068 (grace): Dimension Review complete under v1.9 — registry-level stamp set. Note: cluster stamp for C17 NOT set in this patch; remaining C17 registries deferred to normal cluster processing session."
+    }
+  ]
+}

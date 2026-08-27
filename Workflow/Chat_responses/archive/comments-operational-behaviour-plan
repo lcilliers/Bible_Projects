@@ -1,0 +1,34 @@
+the following is comments on the operational behaviour cfg plan
+2026-08-18
+
+referenced: iba\app\reports\operational-behaviour-rules-cfg-plan-20260818.md
+
+I have worked through your initial planning notes and you touch on many of my points below.  I 
+
+proceed with creating the cfg.settings rows and the separate cfg_* tables for the different behaviours.  Then start to populate the configs, and work the the implications in multiple cycles.  Start with the obvious ones. get them out of the way. Then lets eat into everything else in different focusses.
+
+keep the boundaries between different sets.  This may not be clear. if in doubt define it and let it live in the settings.governance to set the boundaries.  
+
+use this process as an opportunity to consolidate the enormous amount of duplication across multiple documents.
+the scope of this work is not /IBA/* only, the scope of this work is project wide.
+this implies that numerous documents may float around that seems like relevant and may have conflicting operational rules.  All this must be taken into account
+this exercise is likely to bring to light a range of considerations that is not properly defined, decided, conflicting
+behaviour rules captured in claude.md and and claude memory must also be included
+this focus is likely to redefine how operational instruction documents are being used or updated.  There is no reason to have a rule both in a document and in the config. 
+this exercise is likely to relate to, encapsulate, replace other cfg entries that emergered in the past, but belongs within this structure. Therefore, the other configs must be taken into account.
+This excercise is likely to highligh conflicts or gaps in other configs, these gaps must not be silently ignored.
+survey the /workflow/* folder for rules that should belong in this work.  This is not the first time there is attempt to regulate the system.  There are many failed attempts, and we must learn from the past.
+survey the session logs for indicators of missing or miss used rules.
+
+procedural documents in future: procedural documents in future is likely to be one of the following
+a) planning document, including investigatory, explorations etc.
+b) extract from configs to allow for easier digesting the configs
+c) history of changes (maybe this should reside in the engine, not documents)
+d) Guidance or baseline instructions to understand how to read or use system
+
+it is likely that setting the rules may impact previous data and documents.  This must be quantified, not rectified.
+
+ensure that the cfg_* entries are worded as statements and is definitive, not open for interpretation. If it is subject to choices, then define the choices and set the instruction for the choices.
+
+validation of these rules must include mechanisms to flag deviation from the defined rules.  This deviation must be monitored ongoing.
+

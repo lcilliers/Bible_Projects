@@ -1,0 +1,24 @@
+---
+name: project_candidate_characteristic_seed_and_role_model
+description: AUTHORITATIVE cycle instruction (char->candidate->role->lexical); role=characteristic/standalone; master role+char_candidate columns; OT candidate seed.
+metadata: 
+  node_type: memory
+  type: project
+  originSessionId: 368dc455-0d44-4d34-aa79-547c848c49cb
+---
+
+**2026-07-07 pivot.** The per-book corrective pipeline paused (Proverbs ch7 role reassessment held at dry-run, never live) after finding the substrate is unsound: **62% of OT real-strong spans have no lexical at all**, existing roles ~50% wrong. Decision: fix the foundation before re-reading.
+
+**Role model simplified (agreed).** `role = {characteristic, standalone, uncertain}` — **"qualifier" as a role is RETIRED**. A word that elaborates/qualifies/is an object or source is NOT a characteristic and needs no role; it is carried by its **dimension** (D5 target/object+object-type, D2 source, D3 seat/bearer, D6 manner…). Two orthogonal axes: is-the-lemma-a-characteristic (lemma-level) vs does-this-occurrence-fill-a-dimension (per-verse). Do NOT resume ch7 on the old basis. See [[project_dimension_d13_cohabitation]], [[feedback_resist_grouping_preserve_distinctions]].
+
+**Master index got a role column (M64, schema 3.37.0→3.38.0).** `verse_span_index` (the term-verse-span master, 1:1 from `verse_morphology`, keyed by `id`; strong is NOT unique) now carries `role/role_provenance/role_set_at/role_source_ve_id`, backfilled verbatim from the old `ve_nr=115` roles (known-imperfect, for analysis not truth). Script `_apply_add_role_to_master_index_v1_20260707.py`. Backup `pre-role-master-20260707T170834Z`.
+
+**Candidate-characteristic SEED built** (isolates lemmas that COULD be a characteristic, to seed the verse lexical process; over-inclusive + non-exhaustive by design). Layers: lemma inventory (no particles) → registry-word direct match (748) + **curated synonyms** (+414) → **IB-judgement pass** over unmatched OT lemmas (+186). **= 824 OT candidate lemmas** → **25,155 seed spans (10.8%) across 12,672 verses (63.3%)**. REJECTED routes: strongs_list (co-occurrence noise) and the 277 `characteristic` table (phrasal-name noise). Artifacts in `outputs/data/` (`lemma-inventory-master-no-particles-20260707.json` = the seed; `registry-synonyms-curated-20260707.json`; `ib-judgement-*`).
+
+**★ AUTHORITATIVE INSTRUCTION for this whole cycle: `Workflow/Instructions/wa-characteristic-role-lexical-cycle-authoritative-v1-20260708.md`** — supersedes all prior attempts at characteristic determination / candidate / role / lexical generation. Read it before any work on this sub-process.
+
+**2026-07-08 update.** Seed extended round-2 with Psalms-discovered synonyms (salvation/praise/worship/the-afflicted/meditation/compassion/contempt/deceit + ruthlessness/cursing/whoredom/etc.); pruned `enduring`→endurance + `peace-offering`→peace false positives. **Seed 824→961 lemmas; Psalms characteristic-lemma recall 65%→82%.** Then **STAMPED onto the master (M65, schema 3.39.0):** `verse_span_index.char_candidate` (1/0) + `char_candidate_tag` — NON-destructive (leaves M64 `role` intact). **29,572 spans flagged across 13,801 verses; 12,061 of them are in the no-lexical band = the prime lexical worklist.** Script `_apply_stamp_char_candidate_on_master_v1_20260708.py`; backup `pre-charcand-20260708T035718Z`. (Note: the master stamp was NOT done on 2026-07-07 as the researcher intended — done 07-08.)
+
+**2026-07-08 integrity fix.** Discovered **82% of verse-records were unmapped to the master** (`verse_span_id` NULL) — the apparent "24k missing characteristics" was ≈74% already-in-DB-but-unlinked, NOT STEP holes (onboarding would have duplicated). Deterministic link repair: OT verse-records now **91.5% master-linked** (was ~40%); residual flagged `SPAN_UNRESOLVED`(2,088)/`STRONG_NOT_IN_MASTER`(2,527)/`VERSE_NOT_IN_MASTER`(225). Seed step (a) done (14 homographs pruned, master re-stamped 30,251 spans). ve_lexical 99.99% master-linked. The integrity-controls suite still measures LEGACY verse_context invariants (velex_orphan_vc=415k) — stale-field artifacts under the master-linked model, not breaches. Genuine remaining: ~4,908 onboarding holes (review 210 new terms first), passage reconciliation, instruction completion. Status: `verse-analysis/_reports/wa-integrity-fixes-and-remaining-work-20260708.md`. Scripts: `_apply_verse_record_link_repair_all_ot_v1_20260708`, `_apply_vr_link_targetword_and_flag_v1_20260708`.
+
+**NEXT:** scope char_candidate ∩ no-lexical (12,061), then design+pilot the seeded lexical read on one prose chapter (morphology gives D1+8 reliable dims; role needs the read). Full detail: `verse-analysis/_reports/wa-session-log-20260707-candidate-characteristic-seeding-and-master-role.md`. Supersedes the qualifier-role framing in [[project_per_book_corrective_pipeline]].

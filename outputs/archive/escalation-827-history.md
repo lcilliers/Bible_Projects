@@ -1,0 +1,23 @@
+# Escalation deep history
+
+## #827 — escalation CLI crashed: short_description is 98 chars, over…
+type=run_error source=iba.app.lib.escalation related_activity=escalation-cli-crash from_id=
+
+**v1** (2026-08-22T12:22:56Z, Claude) state=raised next_action=review assigned_to=Claude
+> **short description (set this version):** escalation CLI crashed: short_description is 98 chars, over…
+> **comment (set this version):** argv=['raise', '--originator=Claude', '--source=claude', '--type=task', '--assigned-to=Researcher', "--related-activity=escalation-module-rebuild-20260820, prompted by #795's two self-found build gaps", '--resolution-kind=self_correctable', "--comment=Anchored per your direct instruction (verbatim quoted in full below), no design judgement calls made -- this is a faithful capture of what you specified, not a proposal. cfg_behaviour_rule (development/test-plan-per-module-utility) + cfg_setting (governance.module_utility_test_plan, printed at every session start) both added. GOVERNANCE.md #50 written. configmaint.validate clean. Confirmed live: the new setting now prints in Start-Iba.ps1's governance-rules block. No cfg_test_plan table, template, or retrofit of any existing module built -- rollout is explicitly case-by-case per your instruction, starting the next module/utility design.", 'Governance anchored: test plan required per module/utility, run after build, results in resolution']
+Traceback (most recent call last):
+  File "C:\Bible_study_projects\iba\app\lib\escalation.py", line 1128, in main
+    return _dispatch(cfg, db, argv)
+  File "C:\Bible_study_projects\iba\app\lib\escalation.py", line 1187, in _dispatch
+    new_id = raise_new(cfg, db, question, source or "claude", etype=etype or "task",
+                       comment=comment or question, context=context,
+    ...<3 lines>...
+                       resolution_kind=resolution_kind,
+                       originator=_require_flag(originator, "originator"))
+  File "C:\Bible_study_projects\iba\app\lib\escalation.py", line 631, in raise_new
+    raise ValueError(title_error)
+ValueError: short_description is 98 chars, over the 60-char title limit. It must read like a title/subject naming the topic -- move the detail into context (background needed to understand/decide) or comment (what needs to be done, or the error).
+
+> **context (set this version):** {"argv": ["raise", "--originator=Claude", "--source=claude", "--type=task", "--assigned-to=Researcher", "--related-activity=escalation-module-rebuild-20260820, prompted by #795's two self-found build gaps", "--resolution-kind=self_correctable", "--comment=Anchored per your direct instruction (verbatim quoted in full below), no design judgement calls made -- this is a faithful capture of what you specified, not a proposal. cfg_behaviour_rule (development/test-plan-per-module-utility) + cfg_setting (governance.module_utility_test_plan, printed at every session start) both added. GOVERNANCE.md #50 written. configmaint.validate clean. Confirmed live: the new setting now prints in Start-Iba.ps1's governance-rules block. No cfg_test_plan table, template, or retrofit of any existing module built -- rollout is explicitly case-by-case per your instruction, starting the next module/utility design.", "Governance anchored: test plan required per module/utility, run after build, results in resolution"], "traceback": "Traceback (most recent call last):\n  File \"C:\\Bible_study_projects\\iba\\app\\lib\\escalation.py\", line 1128, in main\n    return _dispatch(cfg, db, argv)\n  File \"C:\\Bible_study_projects\\iba\\app\\lib\\escalation.py\", line 1187, in _dispatch\n    new_id = raise_new(cfg, db, question, source or \"claude\", etype=etype or \"task\",\n                       comment=comment or question, context=context,\n    ...<3 lines>...\n                       resolution_kind=resolution_kind,\n                       originator=_require_flag(originator, \"originator\"))\n  File \"C:\\Bible_study_projects\\iba\\app\\lib\\escalation.py\", line 631, in raise_new\n    raise ValueError(title_error)\nValueError: short_description is 98 chars, over the 60-char title limit. It must read like a title/subject naming the topic -- move the detail into context (background needed to understand/decide) or comment (what needs to be done, or the error).\n", "full_message": "escalation CLI crashed: short_description is 98 chars, over the 60-char title limit. It must read like a title/subject naming the topic -- move the detail into context (background needed to understand/decide) or comment (what needs to be done, or the error)."}
+> **related activity (set this version):** escalation-cli-crash

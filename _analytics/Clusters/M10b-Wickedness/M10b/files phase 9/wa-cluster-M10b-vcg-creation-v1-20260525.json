@@ -1,0 +1,830 @@
+{
+  "_meta": {
+    "cluster_code": "M10b",
+    "phase": 7,
+    "date": "2026-05-25",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "total_relevant_verses": 515,
+    "total_vcgs": 36,
+    "vcg_count_by_subgroup": {
+      "M10b-A": 11,
+      "M10b-B": 6,
+      "M10b-C": 5,
+      "M10b-D": 6,
+      "M10b-E": 5,
+      "M10b-F": 3
+    },
+    "discrepancies_flagged_for_cc": [
+      "M10b-A: 188/190V accounted \u2014 2 ra.sha verses unassigned; CC to identify vc_ids from DB and assign to nearest VCG (VCG-04 or VCG-09)",
+      "M10b-D: 98/99V accounted \u2014 1 to.e.vah verse unassigned; CC to identify vc_id from DB and assign to nearest VCG (VCG-04 or VCG-05)"
+    ],
+    "mandatory_polysemy_vcgs_completed": [
+      "M10b-A-VCG-01 (ra.sha forensic-verdict, M10 cross-register)",
+      "M10b-B-VCG-01 (pon\u0113ros cosmic-evil-agent, M27 cross-register)",
+      "M10b-E-VCG-01 (a.ven trouble/distress, M03/M27 cross-register)"
+    ]
+  },
+  "M10b-F": {
+    "subgroup_label": "Blasphemy and defaming evil \u2014 wickedness flowing through the instrument of speech",
+    "verse_count": 17,
+    "vcgs": [
+      {
+        "provisional_code": "M10b-F-VCG-01",
+        "description": "Hardened defiance and contemptuous blasphemy against God. This VCG groups the verses in which blasphemy is the direct expression of a will hardened against God \u2014 a total inner orientation of defiant contempt that intensifies rather than breaks under divine pressure. The apocalyptic Rev 16 cluster names the ultimate form: devastating judgment becomes occasion for further cursing rather than repentance. Rev 13:6 names the sustained, deliberate character of this orientation. Jude 8 and 10 add the inner mechanism \u2014 wilful rejection of authority combined with instinct replacing understanding. Cross-register: M06 (contempt / hostile defiant rejection of authority).",
+        "verses": [
+          14354,
+          14355,
+          14356,
+          14352,
+          14350,
+          14353
+        ],
+        "anchor_vc_id": 14350
+      },
+      {
+        "provisional_code": "M10b-F-VCG-02",
+        "description": "Blasphemy as social defamation \u2014 moral failure causing dishonour to God's name. This VCG groups the verses in which blasphemy names the social consequence of moral failure (conduct causing outsiders to dishonour God's name \u2014 Rom 2:24) or the communicative act of misrepresentation, false attribution, and verbal defamation. The inner-being content is the moral failure of those who profess God while their conduct contradicts him, or the malicious intent of those who weaponise speech to defame. Cross-register: M06 (contempt expressed through speech \u2014 slander register).",
+        "verses": [
+          14357,
+          14358,
+          14359,
+          14351,
+          14360
+        ],
+        "anchor_vc_id": 14357
+      },
+      {
+        "provisional_code": "M10b-F-VCG-03",
+        "description": "Wrongdoing as a charged and contested category \u2014 false accusation and legal-offense register. This VCG groups the verses in which wrongdoing (kakopoios / atopos) is named as a social-legal charge \u2014 either truly applied to genuine harmful acts or falsely applied to the innocent. The inner-being content is the malicious intent driving the false charge (Joh 18:30, 1Pe 2:12, 3:16) and the social consequence of actual wrongdoing attracting punitive authority (1Pe 2:14, 4:15). Cross-register: M10 (evil-as-act / legal-offense / punishable-wrong).",
+        "verses": [
+          14378,
+          65874,
+          14377,
+          14379,
+          14380,
+          14381
+        ],
+        "anchor_vc_id": 14378
+      }
+    ]
+  },
+  "M10b-C": {
+    "subgroup_label": "Abomination \u2014 divine revulsion at corrupt moral character and conduct",
+    "verse_count": 40,
+    "vcgs": [
+      {
+        "provisional_code": "M10b-C-VCG-01",
+        "description": "Ethical and character-orientation abomination \u2014 dishonest commercial practice, unjust social dealings, and the character-orientation of a life whose entire directional trajectory is loathsome to God. The will deliberately deceives in daily transactions (false weights, unjust judgment), the character's habitual way of life provokes divine loathing, the scoffer's contemptuous derision is repugnant, and the unjust person is abominable to the righteous. Abomination operates through the texture of daily moral life, not isolated sacrilege.",
+        "verses": [
+          65936,
+          65954,
+          1677,
+          1688,
+          65956,
+          1690,
+          1691,
+          1692,
+          65957,
+          65959
+        ],
+        "anchor_vc_id": 1677
+      },
+      {
+        "provisional_code": "M10b-C-VCG-02",
+        "description": "Pride, crooked heart, and hidden corruption as abomination. Abomination located most directly in the interior life \u2014 pride and arrogance seated in the heart, the crooked and devious inner way, the wicked person's thoughts as cognitive-level offense, the heart packed with corrupt motive beneath gracious speech, deceptive speech as an inner-being violation, wisdom's inner voice recoiling from evil, the inner disconnect between profession and obedience, and moral filth concealed within outward splendour.",
+        "verses": [
+          1686,
+          65953,
+          65955,
+          1679,
+          1689,
+          1694,
+          21,
+          27,
+          23
+        ],
+        "anchor_vc_id": 1689
+      },
+      {
+        "provisional_code": "M10b-C-VCG-03",
+        "description": "Corrupt worship \u2014 the unclean inner person's religious act as abomination. The religious act (sacrifice, incense, prayer) becomes abomination when the inner person is corrupt. God finds the offering offensive because the inner moral condition of the worshipper contradicts the act. The integrity-gap between the outer religious act and the inner moral condition \u2014 corrupt worship as abomination \u2014 is the controlling mechanism.",
+        "verses": [
+          1678,
+          1693,
+          65958,
+          1695
+        ],
+        "anchor_vc_id": 1695
+      },
+      {
+        "provisional_code": "M10b-C-VCG-04",
+        "description": "The silenced and awakening conscience before abomination. The faculty of conscience in its various states in relation to abomination \u2014 wholly silenced with no shame or blushing (Jer 6:15, 8:12), actively responsive in grief over corporate abomination (Eze 9:4), called to redirect the will away from abominations (Eze 14:6), reawakened through restored memory into self-loathing (Eze 36:31). The Ezekiel 44 cluster extends this to the rebellious inner disposition saturated with abomination and the uncircumcised heart as root defilement. Deu 27:15 names the heart's knowledge of wrong even while the will proceeds. Ezr 9:11 addresses communal moral contamination. Mal 2:11 names covenant-betrayal through misplaced inner allegiance.",
+        "verses": [
+          65937,
+          66005,
+          1680,
+          1696,
+          1698,
+          65984,
+          1681,
+          66001,
+          66002,
+          66003,
+          66004
+        ],
+        "anchor_vc_id": 1680
+      },
+      {
+        "provisional_code": "M10b-C-VCG-05",
+        "description": "Identity and choice constituted by abomination. Abomination as a category defined by divine declaration (Pro 6:16), the expression of an inverted moral appetite (Pro 13:19 \u2014 fools finding it repugnant to turn from evil), the consequence of a particular act of will or choice (Isa 41:24, 44:19), and an identity constituted entirely by generating and propagating moral corruption (Rev 17:5). Rev 21:27 names the fundamental incompatibility of abominable inner dispositions with the divine presence.",
+        "verses": [
+          65952,
+          1687,
+          65960,
+          65961,
+          65878,
+          22
+        ],
+        "anchor_vc_id": 65878
+      }
+    ]
+  },
+  "M10b-E": {
+    "subgroup_label": "Iniquity \u2014 evil as an active inner process of scheming and harm-generation",
+    "verse_count": 79,
+    "vcgs": [
+      {
+        "provisional_code": "M10b-E-VCG-01",
+        "description": "Trouble and distress as the affliction of evil \u2014 mandatory polysemy VCG. Verses where a.ven names the trouble, affliction, or distress that falls on a victim or community \u2014 the harm of evil experienced from the perspective of those who suffer it, rather than the iniquity of the scheming agent. The two ro.a flag-only minorities (Neh 2:2 \u2014 inner sadness; Ecc 7:3 \u2014 sorrow working inwardly) join here. Cross-register: M03 (distress/sorrow suffered \u2014 dominant); M27 (calamity/ruin-as-harm).",
+        "verses": [
+          38188,
+          38239,
+          38248,
+          38194,
+          38251,
+          38449,
+          38424
+        ],
+        "anchor_vc_id": 38188
+      },
+      {
+        "provisional_code": "M10b-E-VCG-02",
+        "description": "Iniquity as deliberate inner generation \u2014 conceived, devised, schemed. Verses where iniquity is most clearly an active generative process of the inner life \u2014 devised on the bed at night, conceived in the heart, schemed by the mind, and enacted at dawn. The planning faculty deliberately producing evil: Mic 2:1, Psa 36:4, Pro 6:18, Job 15:35, Psa 7:14, Isa 10:1 (institutionalised oppression conceived in the mind), Isa 29:20, 32:6, 59:4, 59:7, Jer 4:14, Eze 11:2, 1Sa 15:23 (wilful presumption as idolatry-equivalent), Isa 55:7 (troubling iniquity in thoughts).",
+        "verses": [
+          38185,
+          38208,
+          38245,
+          38235,
+          38224,
+          38191,
+          38198,
+          38181,
+          38200,
+          38192,
+          38203,
+          38205,
+          38193,
+          38217
+        ],
+        "anchor_vc_id": 38235
+      },
+      {
+        "provisional_code": "M10b-E-VCG-03",
+        "description": "Evildoers as a defined inner-character class. Verses where iniquity defines a recognisable class of persons whose habitual character and conduct mark them as evildoers \u2014 incompatible with God's presence, lacking moral knowledge while exploiting others, carrying inner evil while outwardly speaking peace, laying predatory traps, or constituting a city's violent culture. Covers the Psalms evildoers cluster, the Proverbs evildoer descriptions, and the Hosea and Isaiah communal iniquity passages.",
+        "verses": [
+          38237,
+          38243,
+          38229,
+          38232,
+          38238,
+          38240,
+          38241,
+          38242,
+          38244,
+          38246,
+          38247,
+          38250,
+          38249,
+          38226,
+          38228,
+          38231,
+          38223,
+          38218,
+          38219,
+          38220,
+          38221,
+          38199,
+          38196,
+          38195
+        ],
+        "anchor_vc_id": 38232
+      },
+      {
+        "provisional_code": "M10b-E-VCG-04",
+        "description": "Iniquity as stored condition \u2014 harboured, accumulated, concealed, and exposed. Verses where iniquity is treated as a stored, accumulated, or harboured inner condition \u2014 the moral debt, the hidden reservoir, the inner tenant of wrongdoing that accumulates and is eventually exposed or returned. Includes the Job iniquity-as-moral-debt corpus, the Psalms harboured-iniquity verses (Psa 66:18 \u2014 cherished and harboured in the heart), the conscience deadened by habitual sin (Pro 30:20), and iniquity in religious activity (Isa 1:13 a.ven).",
+        "verses": [
+          38186,
+          38206,
+          38207,
+          38209,
+          38210,
+          38211,
+          38214,
+          38212,
+          38213,
+          38215,
+          38216,
+          38225,
+          38234,
+          38233,
+          38236,
+          38182,
+          38227,
+          38230,
+          38222,
+          38201,
+          38202,
+          38204,
+          38197
+        ],
+        "anchor_vc_id": 38182
+      },
+      {
+        "provisional_code": "M10b-E-VCG-05",
+        "description": "Evil deeds as the outward expression of an inwardly-defiled source. The ro.a evil-deeds corpus \u2014 verses where the focus is on the moral quality of deeds as the outward expression of an inner disposition corrupted at its root. Evil of deeds flowing from forsaking God (Deu 28:20), from the uncircumcised heart (Jer 4:4), as measurable moral quality deserving retribution, as the pattern of life the people would have turned from had the prophets spoken truly. Cross-register: M10 (act-register \u2014 ro.a's evil-deeds sub-corpus).",
+        "verses": [
+          38439,
+          38450,
+          38441,
+          38447,
+          38442,
+          38443,
+          38444,
+          38445,
+          38446,
+          38448,
+          38440
+        ],
+        "anchor_vc_id": 38447
+      }
+    ]
+  },
+  "M10b-B": {
+    "subgroup_label": "Evil as the constitutional nature of the inner person",
+    "verse_count": 90,
+    "vcgs": [
+      {
+        "provisional_code": "M10b-B-VCG-01",
+        "description": "Cosmic evil \u2014 the evil one, the evil age \u2014 mandatory polysemy VCG. Verses where evil names a cosmic, supra-personal power \u2014 the evil one as personal spiritual adversary, the domain from which divine deliverance is needed, the agent targeting the heart to snatch away implanted truth, the encompassing evil age and evil days. Inner-being content: vulnerability, protection, and captivity in relation to this cosmic power. Cross-register: M27 (evil as cosmic/supra-personal force \u2014 concentrated in this VCG).",
+        "verses": [
+          14415,
+          14435,
+          14436,
+          14427,
+          14466,
+          14467,
+          14468,
+          14428,
+          14434,
+          14429,
+          14430,
+          14432,
+          14433
+        ],
+        "anchor_vc_id": 14433
+      },
+      {
+        "provisional_code": "M10b-B-VCG-02",
+        "description": "Constitutional evil \u2014 human nature bent toward corruption as baseline condition. Verses where evil names the constitutional baseline condition of human inner nature \u2014 not the individual's specific sinful act but the structural inclination of the human person toward corruption. Humans constitutionally evil yet capable of good impulses (Mat 7:11, Luk 11:13); diseased inner nature inevitably producing corrupted fruit (Mat 7:17-18); evil generations characterised by collective inner disposition of faithless sign-demanding. Mat 6:34 kakia joins as M03 flag-only minority (closest semantic neighbour). Cross-register: M03 (Mat 6:34 kakia \u2014 circumstantial-trouble register, flag-only).",
+        "verses": [
+          14438,
+          14439,
+          14440,
+          14416,
+          14441,
+          14445,
+          14446,
+          14371
+        ],
+        "anchor_vc_id": 14438
+      },
+      {
+        "provisional_code": "M10b-B-VCG-03",
+        "description": "The heart as treasury \u2014 the inner source and generative organ of evil. Verses where the heart is explicitly named as the inner source from which evil is generated and produced outward. Evil thoughts located in the heart (Mat 9:4), being evil as inner condition of the heart (Mat 12:34), the evil person drawing from an inner treasury (Mat 12:35), evil thoughts originating in the heart leading to outward sins (Mat 15:19), the evil person's heart as inner treasury (Luk 6:45), all evil things coming from within (Mar 7:23), evil thoughts as inner source of discriminatory judgment (Jam 2:4), the morally corrupted eye flooding the inner being with darkness (Mat 6:23).",
+        "verses": [
+          14458,
+          14418,
+          14419,
+          14420,
+          14414,
+          14421,
+          14422,
+          14425
+        ],
+        "anchor_vc_id": 14420
+      },
+      {
+        "provisional_code": "M10b-B-VCG-04",
+        "description": "Evil as settled deep character of persons. Verses where evil names the settled, characterological identity of persons \u2014 not a momentary failing but a defining inner orientation. Includes: anything beyond simple honesty originating from inner evil (Mat 5:37), person defined by inner aggression and harm (Mat 5:39), evil persons receiving natural blessings despite inner corruption (Mat 5:45), evil as constituent of heart's corrupt inventory (Mar 7:22 pon\u0113ros), inner moral condition of evil producing love for darkness (Joh 3:19), world's inner evil generating hatred when exposed (Joh 7:7), progressive characterological wickedness (Luk 3:19, 19:22), inner complicity through association (2Jo 11), domineering malice (3Jo 10), evil as settled identity at final judgment (Mat 13:49), wickedness rooted in the will driving violent hostility (1Jo 3:12).",
+        "verses": [
+          14455,
+          14456,
+          14457,
+          14437,
+          14473,
+          65880,
+          14461,
+          14444,
+          14447,
+          14448,
+          14449,
+          14452,
+          14465,
+          14453,
+          14454,
+          14459,
+          14431
+        ],
+        "anchor_vc_id": 14448
+      },
+      {
+        "provisional_code": "M10b-B-VCG-05",
+        "description": "Settled inner malice, entrenched badness, and deep hostile residue \u2014 kakia, pon\u0113ria, adikia saturation. Verses where the Greek terms for settled moral badness (kakia, pon\u0113ria) and unrighteousness-as-character (adikia saturation) name deep-seated hostile inner orientations: the intent of the heart (Act 8:22 kakia), soul completely occupied by corrupt orientations (Rom 1:29 cluster), old corrupting leaven (1Cor 5:8), the deep-seated hostile residue to be put away (Eph 4:31 kakia), the ingrained orientation requiring wilful renunciation (Col 3:8), root hostile orientation underlying other vices (1Pe 2:1), calculated hostile intent (Mat 22:18 pon\u0113ria), inner person overflowing with greed and wickedness (Luk 11:39). Eph 6:12 pon\u0113ria joins as M27 flag-only minority. Cross-register: M27 (Eph 6:12 pon\u0113ria \u2014 flag-only).",
+        "verses": [
+          14361,
+          14336,
+          14337,
+          14362,
+          14411,
+          14338,
+          14363,
+          14412,
+          14364,
+          14365,
+          14413,
+          14366,
+          14367,
+          14368,
+          14369,
+          14370,
+          14408,
+          14409,
+          14407,
+          14410
+        ],
+        "anchor_vc_id": 14365
+      },
+      {
+        "provisional_code": "M10b-B-VCG-06",
+        "description": "Evil conscience, moral accountability, progressive deterioration, and abhorrence of evil. Verses addressing moral accountability, conscience, progressive deterioration, and the imperative of moral abhorrence: unrighteousness as foil to divine righteousness (Rom 3:5), bodily members as instruments of unrighteousness (Rom 6:13), iniquities covered by divine mercy (Heb 8:12), love refusing delight in unrighteousness (1Cor 13:6), evil heart = unbelieving heart (Heb 3:12), evil conscience as defiled inner faculty making approach to God impossible (Heb 10:22), progressive moral deterioration (2Ti 3:13), evil deeds revealing inner orientation at judgment (2Cor 5:10 faulos), evil as what the inner person must abhor (Rom 12:9), inner pride producing self-aggrandising evil speech (Jam 4:16). Legal-register pon\u0113ros (Act 18:14, 25:18, 28:21) and character-specific instances (Mat 18:32, 20:15, 25:26, 12:45, Col 1:21). Cross-register: M10 (adikia act-register; faulos deeds-at-judgment; legal pon\u0113ros).",
+        "verses": [
+          14339,
+          14340,
+          65872,
+          14342,
+          14341,
+          14423,
+          14426,
+          14451,
+          14486,
+          14417,
+          14469,
+          14450,
+          14470,
+          14471,
+          14472,
+          14462,
+          14463,
+          14464,
+          14474,
+          14442,
+          14460,
+          14443,
+          65879,
+          14424
+        ],
+        "anchor_vc_id": 14426
+      }
+    ]
+  },
+  "M10b-D": {
+    "subgroup_label": "Idolatrous abomination \u2014 will conformed to detestable false devotion",
+    "verse_count": 99,
+    "vcgs": [
+      {
+        "provisional_code": "M10b-D-VCG-01",
+        "description": "Levitical boundary-laws \u2014 abomination as category-violation against created order. The Levitical corpus declaring specific sexual practices as abominations \u2014 fundamental category-boundary violations evoking divine revulsion. Both parties bear mutual guilt (Lev 20:13); the community must abstain collectively; prior inhabitants committed these acts and defiled the land itself; the penalty of being cut off names the covenantal consequence. The abomination mechanism: fundamental disordering against the divine standard of created order. Cross-register: M10c (cultic/ritual defilement \u2014 concentrated in this VCG).",
+        "verses": [
+          1676,
+          65922,
+          65923,
+          65924,
+          65925,
+          65926
+        ],
+        "anchor_vc_id": 1676
+      },
+      {
+        "provisional_code": "M10b-D-VCG-02",
+        "description": "Deuteronomic warnings \u2014 the will that must actively resist abominable practices. The Deuteronomic corpus warning against adopting the abominable practices of surrounding nations: divination and occult arts (Deu 18:9, 18:12), child sacrifice (Deu 12:31), idols ensnaring the will (Deu 7:25-26), cross-dressing violating divine distinctions (Deu 22:5), idolatrous whorings profaning sacred space (Deu 23:18), defective offerings (Deu 17:1), practices that are abominable and contagious (Deu 20:18), idolatry provoking divine jealousy through relational betrayal (Deu 32:16), detestable idols witnessed among nations (Deu 29:17 shiq.quts). Repeated practice makes the person personally abominable (Deu 18:12). Cross-register: M10c (cultic defilement); M27 (idol-object \u2014 Deu 7:25-26, 29:17).",
+        "verses": [
+          1682,
+          65927,
+          1683,
+          65928,
+          1684,
+          65930,
+          65931,
+          1685,
+          65932,
+          65933,
+          65934,
+          65935,
+          65897,
+          65938
+        ],
+        "anchor_vc_id": 1685
+      },
+      {
+        "provisional_code": "M10b-D-VCG-03",
+        "description": "Historical reform narratives \u2014 kings institutionalising or purging idolatrous abominations. The historical narratives where kings installed idolatrous abominations or enacted reforms removing them, together with Ezra's covenant-boundary concern. The will of the king corrupted through relational compromise (1Ki 11:7), the community's will conforming entirely to detestable practices (1Ki 14:24), escalating abominations implicating others communally (2Ki 21:11), the reforming king's act of will removing what had been established, abominations treated as removable external objects whose removal enables community devotion (2Ch 34:33). Cross-register: M27 (idol-object \u2014 shiq.quts verses throughout).",
+        "verses": [
+          65898,
+          65899,
+          65939,
+          65940,
+          65941,
+          65942,
+          65900,
+          65943,
+          65901,
+          65902,
+          65944,
+          65945,
+          65946,
+          65947,
+          65948,
+          65949,
+          65950
+        ],
+        "anchor_vc_id": 65942
+      },
+      {
+        "provisional_code": "M10b-D-VCG-04",
+        "description": "Jeremiah and the Prophets \u2014 idolatrous objects installed and the will's stubbornness. The prophetic corpus outside Ezekiel: idols boldly placed in sacred space (Jer 7:30), the dissociated inner life decoupling outward religious presence from inner moral restraint (Jer 7:10), adulteries and lewd whorings as inner moral defilement (Jer 13:27), inner devotion to idols overflowing to defile the land (Jer 16:18), detestable idolatrous objects in sacred space (Jer 32:34), child sacrifice (Jer 32:35), persistent warnings met with inner stubbornness (Jer 44:4, 44:22). Isa 66:3 shiq.quts: soul actively delighting in abominations \u2014 inner affective faculty inverted. Hos 9:10: devoted inner attachment shaping moral identity. Zec 9:7: defilement as inner-to-outer pollution requiring divine extraction. Jer 2:7: people defiling a God-given land through their presence and practices. Cross-register: M27 (idol-object \u2014 shiq.quts verses); M10c (cultic defilement \u2014 land-pollution register).",
+        "verses": [
+          65962,
+          65903,
+          65963,
+          65904,
+          65905,
+          65906,
+          65964,
+          65907,
+          65965,
+          65966,
+          65967,
+          1633,
+          1632,
+          65918
+        ],
+        "anchor_vc_id": 65904
+      },
+      {
+        "provisional_code": "M10b-D-VCG-05",
+        "description": "Ezekiel \u2014 idolatry driving the divine presence away from the sanctuary. Ezekiel's concentrated corpus where accumulated idolatrous abominations drive the divine presence progressively from the sanctuary and ultimately from the city. Inner-being content: pride converting beautiful gifts into idol-objects (Eze 7:20), abominations driving out the divine presence (Eze 8:6), each stage of the vision revealing greater abominations as inner capacity for moral degradation deepens without limit (Eze 8:13-17), inner moral numbness to gravity (Eze 8:17), the heart going after detestable things as the seat of the problem (Eze 11:21 shiq.quts and to.e.vah), lust poured out through idolatrous whorings \u2014 inner desire as the root driving force (Eze 16:36), pride paired with abomination (Eze 16:50). Cross-register: M27 (idol-object \u2014 shiq.quts verses throughout); M10c (cultic/ritual defilement \u2014 pervasive).",
+        "verses": [
+          65968,
+          65908,
+          65969,
+          1697,
+          65970,
+          65971,
+          65972,
+          65973,
+          65974,
+          65909,
+          65975,
+          65976,
+          65977,
+          65978,
+          65979,
+          65980,
+          65910,
+          65981,
+          1631,
+          65982,
+          65983,
+          1699,
+          65985,
+          65986,
+          65987,
+          65988,
+          65989,
+          65990,
+          65991,
+          65992,
+          65993,
+          1700,
+          65994,
+          1634,
+          65911,
+          65912,
+          65995,
+          65996,
+          65997,
+          65998,
+          65999,
+          65913,
+          66000
+        ],
+        "anchor_vc_id": 1631
+      },
+      {
+        "provisional_code": "M10b-D-VCG-06",
+        "description": "Sacrilegious desolation and apocalyptic abomination. The eschatological and apocalyptic verses where abomination names an extreme act of sacrilege constituting peak evil \u2014 an external enactment of radical inner hostility toward the divine that brings desolating judgment. Dan 9:27, 11:31, 12:11 (shiq.quts) name the abomination that makes desolate \u2014 a marker of peak evil rather than individual inner-being content. bdelugma in Mat 24:15 and Mar 13:14 parallels this: the abomination of desolation standing in the holy place is an objective event of sacrilege. Cross-register: M27 (concrete evil-event / desolation \u2014 concentrated in this VCG).",
+        "verses": [
+          65914,
+          65915,
+          65916,
+          65876,
+          65877
+        ],
+        "anchor_vc_id": 65915
+      }
+    ]
+  },
+  "M10b-A": {
+    "subgroup_label": "The wicked person \u2014 settled inner orientation of wickedness",
+    "verse_count": 190,
+    "vcgs": [
+      {
+        "provisional_code": "M10b-A-VCG-01",
+        "description": "Forensic-verdict register \u2014 mandatory polysemy VCG. Verses where ra.sha functions as a legal-status label in forensic/judicial contexts \u2014 the wicked as the legally condemnable party in a legal dispute, whose guilt is objectively adjudicated and punishment proportionately assigned. The inner moral character of wickedness is the basis of the legal verdict, but the primary register is the judicial process. Cross-register: M10 (forensic verdict / legal-condemnation \u2014 concentrated in this VCG).",
+        "verses": [
+          42646,
+          42722,
+          42700,
+          42720,
+          42721
+        ],
+        "anchor_vc_id": 42722
+      },
+      {
+        "provisional_code": "M10b-A-VCG-02",
+        "description": "Practical atheism \u2014 God excluded from the inner mind of the wicked. The wicked person's defining inner characteristic is the active exclusion of God from the mind \u2014 the inner voice of transgression displacing the fear of God (Psa 36:1), pride filling inner vision so God is not sought (Psa 10:4), renouncing God from within the heart (Psa 10:13), forgetting God as a deep inner orientation (Psa 9:17), inner appetites glorified while God is despised (Psa 10:3). Structural consequences: inner restlessness that cannot be stilled (Isa 57:20), peace structurally impossible (Isa 57:21), wickedness defined as non-service \u2014 inner posture of non-devotion (Mal 3:18).",
+        "verses": [
+          42567,
+          42546,
+          42549,
+          42573,
+          42548,
+          42565,
+          42566,
+          42670
+        ],
+        "anchor_vc_id": 42567
+      },
+      {
+        "provisional_code": "M10b-A-VCG-03",
+        "description": "Pride as inner engine and directed hostility of the wicked. Two closely related registers: pride as the inner engine of the wicked person's conduct (arrogance driving oppression, ruthless self-elevation, wickedness fused with pride \u2014 Psa 10:2, 36:11, Job 40:12, Pro 21:4, Isa 13:11, 14:5, Psa 12:8), and the directed hostility of the wicked toward the righteous and vulnerable (covertly aiming weapons at the upright, active violence with deadly intent, deliberate predatory lurking, aggressive predation \u2014 Psa 11:2, 17:9, 17:13, 26:5, 34:21, 37:12, 37:14, Job 16:11, 24:6, Jer 5:26, Hab 1:4, 1:13, 3:13, Eze 7:21, 2Ch 19:2). The wicked person's inner self-elevation generates both contempt for others and the will to harm them.",
+        "verses": [
+          42547,
+          42585,
+          42697,
+          42639,
+          42654,
+          42655,
+          42577,
+          42574,
+          42578,
+          42579,
+          42580,
+          42584,
+          42587,
+          42588,
+          42679,
+          42688,
+          42659,
+          42666,
+          42667,
+          42668,
+          65896,
+          42650
+        ],
+        "anchor_vc_id": 42547
+      },
+      {
+        "provisional_code": "M10b-A-VCG-04",
+        "description": "Moral contrast \u2014 wickedness defined against the inner status of the righteous. Verses where the wicked person is defined primarily through explicit moral contrast with the righteous \u2014 whether distinct inner moral conditions receive distinct treatment (Gen 18:23-25), the wicked as aggressor (Exo 2:13), situational conscience (Exo 9:27), wickedness as social force corrupting bystanders (Exo 23:1), the blessed man refusing alignment with the wicked (Psa 1:1-6), wickedness as object of divine loathing (Psa 11:5), the servant with no inner corruption buried among the wicked (Isa 53:9), the wicked lacking rootedness as chaff (Psa 1:4), the wicked questioning whether inner character determines fate (Job 9:22), wicked men's sins with contagious power (Num 16:26).",
+        "verses": [
+          42643,
+          42644,
+          42698,
+          42699,
+          42645,
+          65894,
+          42647,
+          42648,
+          42649,
+          42568,
+          42558,
+          42559,
+          42560,
+          42570,
+          42575,
+          42658,
+          42593,
+          42674
+        ],
+        "anchor_vc_id": 42643
+      },
+      {
+        "provisional_code": "M10b-A-VCG-05",
+        "description": "Wickedness condemned, exposed, and publicly judged. Verses where the wicked person's inner character draws visible, public divine retribution \u2014 God's judgment erasing the wicked (Psa 9:5), the wicked ensnared by their own schemes (Psa 9:16), divine wrath bursting upon the wicked (Jer 23:19, 25:31, 30:23), wicked acting wickedly and unable to understand (Dan 12:10), swept away in divine judgment (Zep 1:3, Mal 4:3), destined to be destroyed by the righteous judge (Isa 11:4), not reformed even by grace (Isa 26:10), God striking publicly making moral verdict transparent (Job 34:26). The wicked's own hands and deeds determine their fate (Isa 3:11); the corrupt judicial will as publicly condemned wickedness (Isa 5:23).",
+        "verses": [
+          42571,
+          42572,
+          42550,
+          42576,
+          42582,
+          42586,
+          42590,
+          42591,
+          42680,
+          42682,
+          42693,
+          42696,
+          42695,
+          42673,
+          42677,
+          42689,
+          42690,
+          42692,
+          42569,
+          42653,
+          42656,
+          42661,
+          42662,
+          42663,
+          42664,
+          42669,
+          42671,
+          42651,
+          42652,
+          42694
+        ],
+        "anchor_vc_id": 42571
+      },
+      {
+        "provisional_code": "M10b-A-VCG-06",
+        "description": "Wickedness as inner instability and self-destruction. Verses where wickedness is shown to be internally unstable \u2014 a condition carrying within itself the seed of its own dissolution. The wicked person is entrapped by own iniquities (Pro 5:22), inner fear anticipates ruin (Pro 10:24), no lasting foundation (Pro 10:25, 11:8, 12:7, 14:11), inner hope founded on nothing durable (Pro 10:28, 11:7), self-undermining (Pro 11:5), inner light not self-sustaining (Pro 13:9), self-destructive (Pro 14:32), inner corruption transmitting into material instability (Pro 15:6), constant writhing pain throughout life (Job 15:20), catastrophic collapse (Pro 3:25), short years (Pro 10:27), displacement from the land (Pro 10:30), many sorrows as inner consequence (Psa 32:10), irreducible restlessness (Isa 48:22), inner character bringing curse upon household (Pro 3:33).",
+        "verses": [
+          42596,
+          42603,
+          42604,
+          42606,
+          42609,
+          42610,
+          42611,
+          42618,
+          42621,
+          42623,
+          42626,
+          42628,
+          42629,
+          42678,
+          42594,
+          42605,
+          42607,
+          42583,
+          42657,
+          42595,
+          42675
+        ],
+        "anchor_vc_id": 42596
+      },
+      {
+        "provisional_code": "M10b-A-VCG-07",
+        "description": "Wickedness as directional orientation \u2014 a way the will can turn from. The Ezekiel corpus on wickedness as a volitional direction the will can reverse, the strongest biblical witness to wickedness as a condition reversible through repentance. The wicked person is on a wicked way leading to death (Eze 3:18), even when warned may refuse to turn (Eze 3:19, 33:9), the divine desire is not death of the wicked but their turning (Eze 18:23, 33:11), turning evidenced by concrete restitution (Eze 33:15). Pro 4:14-19 (wickedness as a path to choose or avoid), Isa 55:7 (wickedness as directional commitment to forsake). Wickedness functioning as a moral category across Eze 21:3-4.",
+        "verses": [
+          42702,
+          42703,
+          42704,
+          42705,
+          42706,
+          42707,
+          42708,
+          42709,
+          42712,
+          42713,
+          42710,
+          42711,
+          42714,
+          42715,
+          42701,
+          42716,
+          42717,
+          42718,
+          42719,
+          42561,
+          42562,
+          42557
+        ],
+        "anchor_vc_id": 42701
+      },
+      {
+        "provisional_code": "M10b-A-VCG-08",
+        "description": "Wickedness expressed through speech \u2014 concealment, corruption, and social destruction. Verses where the wicked person's inner wickedness expresses itself through the instrument of speech \u2014 concealing violent intent (Pro 10:6, 10:11), inner moral compass inverted and fluent in perversity (Pro 10:32), speech carrying destructive inner power that tears down communal structures (Pro 11:11), the inner thought life oriented toward deception (Pro 12:5), speech as instrument of lethal inner intent (Pro 12:6), wicked messenger corrupting function (Pro 13:17), mouth pouring out evil without reflection (Pro 15:28), speech swallowing up iniquity (Pro 19:28), bold hardened face masking absent self-examination (Pro 21:29), wickedness as inner reality masked by social performance (Psa 28:3), evil imputed to the heart as accusation (1Sa 17:28 ro.a).",
+        "verses": [
+          42599,
+          42601,
+          42608,
+          42613,
+          42552,
+          42617,
+          42624,
+          42553,
+          42637,
+          42556,
+          42581,
+          38438
+        ],
+        "anchor_vc_id": 42617
+      },
+      {
+        "provisional_code": "M10b-A-VCG-09",
+        "description": "Wickedness against divine justice \u2014 the wicked person's soul, appetites, and moral hollowness. The Proverbs-heavy corpus where the wicked person's inner wickedness is characterised through appetites, desires, and moral hollowness: the soul actively desiring evil (Pro 21:10), the heart of the wicked as morally deficient (Pro 10:20), craving frustrated by God (Pro 10:3), morally hollow abundance (Psa 37:16), wicked borrowing without repaying (Psa 37:21), the name of the wicked rotting (Pro 10:7). Also the wicked person's corrupt relation to divine justice: justifying the wicked = abomination (Pro 17:15), corrupt judicial will taking bribes (Pro 17:23), showing partiality distorting justice (Pro 18:5), wicked estranged from God (Pro 15:29), the wicked's sacrifice repugnant (Pro 15:8 ra.sha), entire way of life abominable (Pro 15:9 ra.sha), wicked swept away by own violence (Pro 21:7), God observing and overthrowing (Pro 21:12).",
+        "verses": [
+          42551,
+          42598,
+          42600,
+          42602,
+          42554,
+          42555,
+          42597,
+          42563,
+          42612,
+          42619,
+          42620,
+          42622,
+          42625,
+          42627,
+          42630,
+          42564,
+          42631,
+          42632,
+          42633,
+          42634,
+          42635,
+          42636,
+          42638,
+          42640,
+          42641,
+          42642,
+          42589,
+          42592,
+          42614,
+          42615,
+          42616,
+          42660,
+          42665
+        ],
+        "anchor_vc_id": 42554
+      },
+      {
+        "provisional_code": "M10b-A-VCG-10",
+        "description": "Job's theological debate \u2014 the wicked in the crucible of theodicy. The Job corpus addressing the wicked in the context of the book's core theodicy debate \u2014 whether inner moral character actually determines fate. The wicked are characterised by relentless troubling (Job 3:17), inner schemes (Job 10:3), momentary and unstable inner elation (Job 20:5), the disturbing observation that the wicked apparently thrive (Job 21:7), their counsel representing a morally alien mode of reasoning (Job 21:16), the speaker questioning whether wicked truly suffer (Job 21:17), the interlocutors pointing to ruined tents as evidence of judgment (Job 21:28), their counsel rejected as morally alien (Job 22:18), wickedness as a label applied by divine authority to nobles stripping pretension (Job 34:18).",
+        "verses": [
+          42672,
+          42676,
+          42681,
+          42683,
+          42684,
+          42685,
+          42686,
+          42687,
+          42691
+        ],
+        "anchor_vc_id": 42683
+      },
+      {
+        "provisional_code": "M10b-A-VCG-11",
+        "description": "re.sha and mir.sha.at \u2014 wickedness as abstract condition and the wicked collective. The re.sha corpus (abstract noun: wickedness as condition, state, and coercive force) and the single mir.sha.at verse. re.sha spans: chosen inner alignment with wickedness (Job 34:8), God as the absolute structural opposite of wickedness (Job 34:10), wickedness as damaging only within human moral space (Job 35:8), fasting alongside violent inner will = wickedness (Isa 58:4), wickedness as bonds binding others (Isa 58:6), conscience naming moral failure before God (Jer 14:20), wickedness as the inward soil producing injustice (Hos 10:13), wickedness stored as treasure \u2014 inverted value system (Mic 6:10), wickedness embodied in fraudulent scales (Mic 6:11). mir.sha.at: a woman whose inner wickedness expressed itself in desecrating sacred space (2Ch 24:7).",
+        "verses": [
+          15531,
+          15525,
+          15526,
+          15532,
+          15527,
+          15528,
+          15529,
+          15530,
+          15533,
+          42511
+        ],
+        "anchor_vc_id": 15529
+      }
+    ]
+  }
+}

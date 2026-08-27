@@ -1,0 +1,135 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG077-V1",
+    "registry_id": 77,
+    "word": "honesty",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R077 honesty — 6 group dimension assignments + registry stamp + 1 SD pointer. All automated labels confirmed on dimension; dominant_subject set throughout. Manual application required."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7409 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "KEYWORD_STRONG",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "3246-001 H6662 tsaddiq (constitutive inner moral orientation) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7410 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "3246-002 H6662 tsaddiq (God tests and vindicates the righteous) — Moral Character / GOD. Dominant subject is GOD as moral assessor."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7411 },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "3246-003 H6662 tsaddiq (righteous person rejoices, takes refuge) — Emotion-Positive / HUMAN."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7412 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "KEYWORD_STRONG",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "911-001 H6666 tsedeqah (inner moral character in just conduct) — Moral Character / HUMAN."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7413 },
+      "set": {
+        "dimension": "Moral Character",
+        "dimension_confidence": "KEYWORD_STRONG",
+        "dominant_subject": "GOD",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "911-002 H6666 tsedeqah (righteousness credited/vindicated by God, including imputation) — Moral Character / GOD. GOD as the active creditor."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 7414 },
+      "set": {
+        "dimension": "Emotion — Positive",
+        "dimension_confidence": "KEYWORD_WEAK",
+        "dominant_subject": "HUMAN",
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "911-003 H6666 tsedeqah (joy and exultation at received righteousness) — Emotion-Positive / HUMAN."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 77,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-77-SD002",
+        "strongs_reference": "H6662,H6666",
+        "priority": "MEDIUM",
+        "session_target": "Session D",
+        "description": "R077 (tsaddiq/tsedeqah vocabulary) shows that Hebrew righteousness operates across two distinct inner-being registers in the same verse corpus: (1) Moral Character — the stable quality of the righteous person and the standard God applies; (2) Emotion-Positive — the joyful, responsive orientation of the person who receives righteousness as gift. This internal split is analytically significant for Session D: righteousness is simultaneously a moral constitution and an affective posture. The asymmetry of dominant subjects (GOD as assessor/creditor; HUMAN as bearer and responder) should be noted in any Session D synthesis of the righteousness concept.",
+        "session_raised": "wa-dimensionreview-instruction-v3_3-20260418",
+        "raised_date": "2026-05-02",
+        "resolved": 0
+      },
+      "description": "SD pointer DIM-77-SD002 — righteousness as dual register: moral constitution and affective posture."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 77 },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R077 honesty DimReview Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 8,
+    "dimension_index_updates": 6,
+    "registry_stamps": 1,
+    "research_flag_inserts": 1,
+    "dimension_changes": 0,
+    "vocabulary_conversions": 6
+  }
+}

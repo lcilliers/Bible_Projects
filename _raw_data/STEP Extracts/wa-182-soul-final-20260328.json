@@ -1,0 +1,432 @@
+{
+  "meta": {
+    "json_template_version": "final_v1.0",
+    "json_filename": "wa-182-soul-final-20260328.json",
+    "registry_id": 182,
+    "word": "Soul",
+    "cluster_assignment": "C01",
+    "produced_date": "20260328",
+    "session_b_instruction_version": "Session B v4.0",
+    "extraction_instruction_version": "WA-SessionB-Extraction-Instruction-v5.2"
+  },
+  "registry_summary": {
+    "word_label": "Soul",
+    "dimensions": "Affective/Emotional, Anthropological/Structural, Spiritual/God-ward, Relational/Social, Volitional/Capacity, Moral/Conscience",
+    "cluster_assignment": "C01",
+    "phase1_term_count": 24,
+    "phase1_verse_count": 757,
+    "active_term_count": 23,
+    "confirmed_count": 17,
+    "plausible_count": 5,
+    "uncertain_count": 1,
+    "session_b_status": "Analysis Complete",
+    "sb_classification": "confirmed_characteristic",
+    "carry_forward": true,
+    "dimensional_profile": {
+      "relational_environment": {
+        "weight": "PRIMARY",
+        "note": "Soul is constitutively relational — to God (primary direction across Psalter), to other souls (1Sa 18:1, Act 4:32), to self (dipsuchos, Psa 42:5 self-address). Ring 2 (God-human) and Ring 1 (inner life) both primary."
+      },
+      "spirit_soul_body": {
+        "weight": "PRIMARY",
+        "note": "Soul IS the definitional centre of the spirit-soul-body triad. Spirit-soul boundary (G5591 psuchikos, Heb 4:12) and soul-body boundary (ne.phesh = animated body, Lev 17:11) both established from within this registry."
+      },
+      "inner_operations": {
+        "weight": "PRIMARY",
+        "note": "Desiring, experiencing emotion, self-address, bonding, departing at death, refreshment, fainting under pressure, double-mindedness — the full range of inner operations is documented through soul vocabulary."
+      },
+      "being": {
+        "weight": "SECONDARY",
+        "note": "Soul as identity and moral accountability (Eze 18:4), soul as object of salvation (1Pe 1:9), soul as created appetite with constitutive orientation. Present and significant but secondary to the soul's relational and inner-operations dimensions."
+      }
+    },
+    "evidential_weight": {
+      "confirmed_verse_count": 747,
+      "plausible_verse_count": 5,
+      "uncertain_verse_count": 0,
+      "dominant_terms": [
+        {
+          "strongs_id": "H5315H",
+          "transliteration": "ne.phesh",
+          "verse_count": 180,
+          "evidential_status": "confirmed"
+        },
+        {
+          "strongs_id": "H5315G",
+          "transliteration": "ne.phesh",
+          "verse_count": 179,
+          "evidential_status": "confirmed"
+        },
+        {
+          "strongs_id": "H5315I",
+          "transliteration": "ne.phesh",
+          "verse_count": 126,
+          "evidential_status": "confirmed"
+        },
+        {
+          "strongs_id": "H5315J",
+          "transliteration": "ne.phesh",
+          "verse_count": 83,
+          "evidential_status": "confirmed"
+        },
+        {
+          "strongs_id": "G5590G",
+          "transliteration": "psuchē",
+          "verse_count": 46,
+          "evidential_status": "confirmed"
+        }
+      ]
+    }
+  },
+  "terms": [
+    {
+      "strongs_id": "G0674",
+      "transliteration": "apopsuchō",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse (Luk 21:26) — soul fainting under eschatological dread. Thin but genuine soul-exhaustion vocabulary. Retained."
+    },
+    {
+      "strongs_id": "G0895",
+      "transliteration": "apsuchos",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse (1Co 14:7) — lifeless instruments. Defines soul negatively by its absence. Thin but analytically present. Retained."
+    },
+    {
+      "strongs_id": "G1374",
+      "transliteration": "dipsuchos",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 2,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G1634",
+      "transliteration": "ekpsuchō",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 3,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G2174",
+      "transliteration": "eupsucheō",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse (Phi 2:19) — soul-gladness at good news. Thin; soul-wellbeing vocabulary confirmed. Retained."
+    },
+    {
+      "strongs_id": "G2473",
+      "transliteration": "isopsuchos",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse (Phi 2:20) — like-souled, same inner orientation. Thin but confirms relational soul-vocabulary. Retained."
+    },
+    {
+      "strongs_id": "G3642",
+      "transliteration": "oligopsuchos",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 1,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G4861",
+      "transliteration": "sumpsuchos",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 1,
+      "evidential_status": "plausible",
+      "retention_note": "One verse (Phi 2:2) — same-souled community. Thin; community soul-vocabulary confirmed. Retained."
+    },
+    {
+      "strongs_id": "G5590G",
+      "transliteration": "psuchē",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 46,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5590H",
+      "transliteration": "psuchē",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 33,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5590I",
+      "transliteration": "psuchē",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 6,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5590J",
+      "transliteration": "psuchē",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 8,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "G5590K",
+      "transliteration": "psuchē",
+      "language": "Greek",
+      "mti_status": "extracted_thin",
+      "verse_count": 0,
+      "evidential_status": "uncertain",
+      "retention_note": "Zero verses in export. Cannot contribute to corpus. Retained per programme default."
+    },
+    {
+      "strongs_id": "G5591",
+      "transliteration": "psuchikos",
+      "language": "Greek",
+      "mti_status": "extracted",
+      "verse_count": 5,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5314",
+      "transliteration": "na.phash",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 3,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5315G",
+      "transliteration": "ne.phesh",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 179,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5315H",
+      "transliteration": "ne.phesh",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 180,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5315I",
+      "transliteration": "ne.phesh",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 126,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5315J",
+      "transliteration": "ne.phesh",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 83,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5315K",
+      "transliteration": "ne.phesh",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 12,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5315L",
+      "transliteration": "ne.phesh",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 45,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5315M",
+      "transliteration": "ne.phesh",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 13,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    },
+    {
+      "strongs_id": "H5315N",
+      "transliteration": "ne.phesh",
+      "language": "Hebrew",
+      "mti_status": "extracted",
+      "verse_count": 2,
+      "evidential_status": "confirmed",
+      "retention_note": null
+    }
+  ],
+  "dimensions": {
+    "relational_environment": {
+      "present": true,
+      "note": "All four rings active. Ring 1 dominates — soul as the inner experiential centre. Ring 2 substantially present: God creates soul (Gen 2:7), owns all souls (Eze 18:4), redeems/preserves/requires the soul, refreshes (Exo 31:17), Christ as Shepherd and Overseer of souls (1Pe 2:25). Ring 3 present through soul-to-soul bonding (1Sa 18:1), corporate soul-unity (Act 4:32), sumpsuchos and isopsuchos (Phi 2:2,20). Ring 4 marginal."
+    },
+    "spirit_soul_body": {
+      "present": true,
+      "note": "Soul is the primary term of Circle Two by definition. Spirit-soul boundary established by G5591 psuchikos (soul without Spirit = natural/creaturely mode) and Heb 4:12 (Word divides soul and spirit). Soul-body boundary collapses: ne.phesh IS the animated body, not a component within it. 1Th 5:23 tripartite preservation. 1Co 15:44-46 eschatological trajectory: psuchikon → pneumatikon."
+    },
+    "inner_operations": {
+      "present": true,
+      "note": "Full range documented: desiring and craving (H5315L), experiencing emotion (H5315G — cast down, bitter, joyful), self-address and reflexive observation (Psa 42:5), soul-to-soul bonding (1Sa 18:1), soul departing at death (G1634, Gen 35:18), soul-refreshment (H5314), soul fainting under pressure (G0674), double-mindedness (G1374). The soul's self-address (commanding its own hope) is its most distinctive inner operation."
+    },
+    "being": {
+      "present": true,
+      "note": "Soul as identity — the self that persists, is threatened, can be lost and found (Mat 10:39). Soul as moral accountability — Eze 18:4 soul who sins shall die. Soul as object of salvation (1Pe 1:9). Soul as created appetite — constitutively oriented toward something; the question is always the object of orientation. Dipsuchos documents the soul's division as a character condition, not merely an event."
+    }
+  },
+  "inner_being_standing": {
+    "classification": "confirmed_characteristic",
+    "reasoning": null,
+    "carry_forward": true
+  },
+  "key_findings": [
+    {
+      "finding_id": "182-F001",
+      "finding_type": "etymology",
+      "finding": "Ne.phesh derives from the Hebrew word for throat — the passage through which breath and food move. The soul begins as somatic (throat, breath, hunger) and develops organically to denote the whole animated person, not by metaphorical extension but by the unity of breathing, desiring, and living.",
+      "anchor_verses": [
+        "Psa 69:1",
+        "Psa 105:18",
+        "Gen 2:7"
+      ]
+    },
+    {
+      "finding_id": "182-F002",
+      "finding_type": "theological_note",
+      "finding": "The soul is not an immortal substance lodged within the body — it is the animated body itself. Lev 17:11 identifies the soul with the blood. H5315M (dead soul = corpse) confirms the soul does not vacate a container at death but ceases to animate its flesh. The biblical soul is not Cartesian.",
+      "anchor_verses": [
+        "Lev 17:11",
+        "Gen 35:18",
+        "Num 19:11"
+      ]
+    },
+    {
+      "finding_id": "182-F003",
+      "finding_type": "theological_note",
+      "finding": "The human soul shares its category (ne.phesh cha.yah — living creature) with animals (Gen 1:20,21,24). What distinguishes the human soul is not the noun but the act — the direct divine inbreathing of Gen 2:7. The soul is not uniquely human as a category but is uniquely constituted in the human.",
+      "anchor_verses": [
+        "Gen 1:20",
+        "Gen 1:24",
+        "Gen 2:7"
+      ]
+    },
+    {
+      "finding_id": "182-F004",
+      "finding_type": "term_behaviour",
+      "finding": "The soul is constitutively appetitive — it is always reaching toward something. H5315L establishes this as the soul's fundamental structure. The critical question is always the object of craving: the soul that pants for God (Psa 42:1) and the soul that hungers for food (Deu 12:20) are using the same capacity.",
+      "anchor_verses": [
+        "Psa 42:1",
+        "Deu 12:20",
+        "Ecc 6:7",
+        "Isa 5:14"
+      ]
+    },
+    {
+      "finding_id": "182-F005",
+      "finding_type": "verse_pattern",
+      "finding": "The soul-life paradox of the NT: the soul that clings to itself loses itself; the soul that gives itself away finds itself. Mat 10:39 and its parallels structure the soul as both the thing most desperately sought (self-preservation) and the thing that must be released to be truly found. This is the transformation dynamic at the heart of the NT soul vocabulary.",
+      "anchor_verses": [
+        "Mat 10:39",
+        "Mat 16:25",
+        "Joh 12:25",
+        "Mar 8:35"
+      ]
+    },
+    {
+      "finding_id": "182-F006",
+      "finding_type": "theological_note",
+      "finding": "G5591 psuchikos establishes the soul without the Spirit as a real condition — the natural creaturely mode of human existence. The soul is not evil in this mode, but incomplete. 1Co 15:45 establishes the eschatological trajectory: the psuchikon (Adamic) is raised as the pneumatikon (Christic). The soul is the beginning of the journey, not its end.",
+      "anchor_verses": [
+        "1Co 2:14",
+        "1Co 15:44",
+        "1Co 15:45",
+        "Jude 19"
+      ]
+    },
+    {
+      "finding_id": "182-F007",
+      "finding_type": "verse_pattern",
+      "finding": "God employs soul-vocabulary for his own inner states: Exo 31:17 (God refreshed — na.phash), Isa 42:1 (God's soul delights), Jer 32:41 (God's whole-soul commitment). Soul-language is the available language for divine inner states analogous to human inner states — not asserting God has a creaturely soul but using soul vocabulary analogically for divine pathos.",
+      "anchor_verses": [
+        "Exo 31:17",
+        "Isa 42:1",
+        "Jer 32:41",
+        "Eze 18:4"
+      ]
+    },
+    {
+      "finding_id": "182-F008",
+      "finding_type": "term_behaviour",
+      "finding": "The soul's self-address in Psa 42-43 (the psalmist speaks to his own soul, diagnoses it, gives it a counter-command) is the OT's most psychologically sophisticated move. The person who can observe their own soul from outside and command it is more whole, not less — this reflexive capacity is a distinctive feature of the soul vocabulary.",
+      "anchor_verses": [
+        "Psa 42:5",
+        "Psa 42:11",
+        "Psa 43:5",
+        "Luk 12:19"
+      ]
+    },
+    {
+      "finding_id": "182-F009",
+      "finding_type": "theological_note",
+      "finding": "Heb 4:12 — the Word of God divides soul and spirit as a sword divides joints and marrow. The soul cannot reliably distinguish itself from the spirit by introspection alone. The soul-spirit distinction is real but requires divine speech to make it visible — it is not self-evident to the person.",
+      "anchor_verses": [
+        "Heb 4:12",
+        "1Th 5:23"
+      ]
+    },
+    {
+      "finding_id": "182-F010",
+      "finding_type": "verse_pattern",
+      "finding": "The soul is constitutively relational: to God (Psa 42:1, 62:1, 63:1), to other souls (1Sa 18:1, Act 4:32), to its own orientation (dipsuchos — inner division). Soul-to-soul bonding (sumpsuchos, isopsuchos) documents genuine union of orientation between persons — community is possible when souls share direction.",
+      "anchor_verses": [
+        "1Sa 18:1",
+        "Act 4:32",
+        "Phi 2:2",
+        "Phi 2:20"
+      ]
+    }
+  ],
+  "session_b_revision_candidates": [
+    {
+      "candidate_id": "182-RC001",
+      "observation": "The narrative was produced under Session B v4.0, not v5.1/v5.2. The narrative structure differs (includes scientific analysis section, Section 8, and compliance control page rather than compliance statement). All analytical content is present and complete — this is a version difference in format, not a gap in analysis.",
+      "recommended_action": "No revision required. Note version difference for programme records. All required analytical fields extractable from v4.0 narrative."
+    },
+    {
+      "candidate_id": "182-RC002",
+      "observation": "The narrative's Section 10 Phase 2 flags use different flag labels than those already in the database (PH2-182-001 through -006). Database flags were inserted by an earlier patch with different flag_codes. The analytical content aligns but the labels differ.",
+      "recommended_action": "Review whether existing database PH2 flags accurately reflect the narrative's Phase 2 analysis. No immediate revision required but researcher should confirm flag alignment."
+    }
+  ]
+}

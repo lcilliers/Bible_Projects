@@ -1,0 +1,284 @@
+{
+  "metadata": {
+    "cluster_code": "M15",
+    "cluster_subgroup_code": "M15-G",
+    "source_input": "wa-m15g-vcg-groups-v1-20260511.json",
+    "generated_at": "2026-05-11T18:31:23Z",
+    "purpose": "DB-load staging for M15-G VCG cleanup.",
+    "needs_subgroup_creation": false,
+    "subgroup_to_create": null,
+    "totals": {
+      "vcgs_to_create": 3,
+      "verses_to_assign_to_vcgs": 27,
+      "verses_to_set_aside": 0,
+      "sum_check": 27
+    },
+    "anchor_status": "3/3 VCGs have anchor_proposed."
+  },
+  "vcg_creations": [
+    {
+      "code": "M15-G-VCG01",
+      "label": "Formed thought-content and inner cognitive disposition (noēma, ennoia, epinoia, dianoēma, frēn)",
+      "context_description": "The term names the inner cognitive content — the mind's formed thoughts as they can be blinded, captured, corrupted, or guarded. Satan has designs (noēmata); unbelievers' minds are blinded (noēmata); every thought must be taken captive (noēma); the word of God discerns the intentions and thoughts of the heart (ennoia/enthumēsis); Simon's intent (epinoia) requires repentance. Inner-being phenomenon: formed inner thought-content and cognitive disposition.",
+      "cluster_subgroup_code": "M15-G",
+      "mti_term_ids": [
+        1188,
+        2493,
+        3372,
+        3375,
+        3408
+      ],
+      "verse_count": 11,
+      "verses": [
+        {
+          "vr_id": 101919,
+          "reference": "Luk 11:17",
+          "strongs": "G1270",
+          "mti_term_id": 3408,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 128757,
+          "reference": "Heb 4:12",
+          "strongs": "G1771",
+          "mti_term_id": 3372,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 128756,
+          "reference": "1Pe 4:1",
+          "strongs": "G1771",
+          "mti_term_id": 3372,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 110348,
+          "reference": "Act 8:22",
+          "strongs": "G1963",
+          "mti_term_id": 3375,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 44127,
+          "reference": "2Cor 2:11",
+          "strongs": "G3540",
+          "mti_term_id": 1188,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 44128,
+          "reference": "2Cor 3:14",
+          "strongs": "G3540",
+          "mti_term_id": 1188,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 44129,
+          "reference": "2Cor 4:4",
+          "strongs": "G3540",
+          "mti_term_id": 1188,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 44125,
+          "reference": "2Cor 10:5",
+          "strongs": "G3540",
+          "mti_term_id": 1188,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 44126,
+          "reference": "2Cor 11:3",
+          "strongs": "G3540",
+          "mti_term_id": 1188,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 101360,
+          "reference": "Phili 4:7",
+          "strongs": "G3540",
+          "mti_term_id": 1188,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 128665,
+          "reference": "1Cor 14:20",
+          "strongs": "G5424",
+          "mti_term_id": 2493,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 44129,
+        "reference": "2Cor 4:4",
+        "strongs": "G3540",
+        "translit": "noēma",
+        "anchor_rationale": "'The god of this world has blinded the minds (noēmata) of the unbelievers, to keep them from seeing the light of the gospel.' The phenomenon at its most diagnostic: the noēma as the inner cognitive faculty that can be blinded — rendered unable to perceive the light of the gospel. The verse names the agent (the god of this world), the faculty (noēma), the action upon it (blinding), and its consequence (inability to see the gospel's glory)."
+      }
+    },
+    {
+      "code": "M15-G-VCG02",
+      "label": "Inner formed thoughts — arising, alarming, and discerned (ra.yon, re.a, ash.tut, esh.to.nah)",
+      "context_description": "The term names the formed thoughts that arise in the mind — Nebuchadnezzar's night-thoughts producing his dream, Belshazzar's alarming thoughts at the writing on the wall, Daniel's alarming thoughts held inwardly after the vision, God discerning the psalmist's thoughts from afar, and the precious thoughts of God himself. Inner-being phenomenon: arising formed thought-content.",
+      "cluster_subgroup_code": "M15-G",
+      "mti_term_ids": [
+        1178,
+        3442,
+        3449,
+        3453
+      ],
+      "verse_count": 10,
+      "verses": [
+        {
+          "vr_id": 103389,
+          "reference": "Dan 2:29",
+          "strongs": "H7476",
+          "mti_term_id": 3449,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103390,
+          "reference": "Dan 2:30",
+          "strongs": "H7476",
+          "mti_term_id": 3449,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103391,
+          "reference": "Dan 4:19",
+          "strongs": "H7476",
+          "mti_term_id": 3449,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103393,
+          "reference": "Dan 5:6",
+          "strongs": "H7476",
+          "mti_term_id": 3449,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103392,
+          "reference": "Dan 5:10",
+          "strongs": "H7476",
+          "mti_term_id": 3449,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103394,
+          "reference": "Dan 7:28",
+          "strongs": "H7476",
+          "mti_term_id": 3449,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103402,
+          "reference": "Psa 139:2",
+          "strongs": "H7454",
+          "mti_term_id": 3453,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103401,
+          "reference": "Psa 139:17",
+          "strongs": "H7454",
+          "mti_term_id": 3453,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 43589,
+          "reference": "Job 12:5",
+          "strongs": "H6248",
+          "mti_term_id": 1178,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 103328,
+          "reference": "Psa 146:4",
+          "strongs": "H6250",
+          "mti_term_id": 3442,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 103401,
+        "reference": "Psa 139:17",
+        "strongs": "H7454",
+        "translit": "re.a",
+        "anchor_rationale": "'How precious to me are your thoughts, O God! How vast is the sum of them!' The same word (re.a) used in v.2 for the psalmist's thoughts discerned by God is here applied to God's own thoughts precious to the psalmist. The reflexivity reveals the phenomenon: thought-content as an inner reality that both creature and Creator hold, and that relates them to each other."
+      }
+    },
+    {
+      "code": "M15-G-VCG03",
+      "label": "Knowledge as formed inner learning and cognitive content (mad.da)",
+      "context_description": "The term names knowledge as formed inner content — what Solomon requested from God (wisdom and knowledge), what God placed in the four Danielic youths, what is active even in private thoughts. The phenomenon is knowledge as an inner formed content that can be given by God, held within the person, and exercised in service of governance and wisdom. Inner-being phenomenon: formed inner knowledge-content.",
+      "cluster_subgroup_code": "M15-G",
+      "mti_term_ids": [
+        960
+      ],
+      "verse_count": 6,
+      "verses": [
+        {
+          "vr_id": 178462,
+          "reference": "2Ch 1:10",
+          "strongs": "H4093",
+          "mti_term_id": 960,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178463,
+          "reference": "2Ch 1:11",
+          "strongs": "H4093",
+          "mti_term_id": 960,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178464,
+          "reference": "2Ch 1:12",
+          "strongs": "H4093",
+          "mti_term_id": 960,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 178465,
+          "reference": "Ecc 10:20",
+          "strongs": "H4093",
+          "mti_term_id": 960,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29776,
+          "reference": "Dan 1:4",
+          "strongs": "H4093",
+          "mti_term_id": 960,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 29775,
+          "reference": "Dan 1:17",
+          "strongs": "H4093",
+          "mti_term_id": 960,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 178463,
+        "reference": "2Ch 1:11",
+        "strongs": "H4093",
+        "translit": "mad.da",
+        "anchor_rationale": "'Because this was in your heart, and you have not asked for possessions...but have asked for wisdom and knowledge for yourself that you may govern my people.' God identifies the knowledge-request as something already in Solomon's heart before he asked — an inner orientation that shaped what he sought. The verse shows mad.da as inner content already present as a heart-disposition and then granted as a divine gift."
+      }
+    }
+  ],
+  "setasides": {
+    "reason_code": "no_inner_being_phenomenon",
+    "context_description": null,
+    "verse_count": 0,
+    "verses": []
+  },
+  "reroutes": {
+    "target_subgroup_code": null,
+    "verse_count": 0,
+    "verses": []
+  }
+}

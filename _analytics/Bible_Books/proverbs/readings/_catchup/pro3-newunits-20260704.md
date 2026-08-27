@@ -1,0 +1,8 @@
+
+---
+
+## Catch-up units (2026-07-04) — loose study-term verses bound to units
+
+**PRO-03-G · Prov 3:19–20 · [S] — wisdom as the LORD's creative attribute (arena, thin IB).** "The LORD by **wisdom founded the earth**; by **understanding** he established the heavens; by his **knowledge** the deeps broke open" (vv.19–20). This is the *cosmic scope* of wisdom — a divine attribute in creation, not a human inner-being movement. Finding (thin): the same wisdom the disciple is urged to prize (3:13–18) is shown to be *the LORD's own*, the fabric of creation — so pursuing it is aligning with the grain of reality *(inferred; the IB content is oblique — this is the arena/ground of the wisdom theme, not a finding about the human interior)*. *Surfaced:* wisdom as divine-and-cosmic (arena; grounds the value-of-wisdom thread, low IB).
+
+**PRO-03-H · Prov 3:32–35 · [D, multi] — the two inner postures the LORD draws near or turns from.** "The **devious** person is an **abomination** to the LORD, but the **upright are in his confidence**" (v.32); "toward the **scorners** he is scornful, but to the **humble** he gives **favor**" (v.34). Finding: the LORD responds to *interior postures* — deviousness/scorn meet his turning-away, uprightness/humility meet his confidence and favour *(stated)*. Operation: the inner disposition **positions the self toward or away from God's nearness** — "the upright are in his **confidence** (sod — intimate counsel)"; humility is the posture that *receives* favour, scorn the one that forfeits it *(inferred; the sod-intimacy links to Job 29:4 "the friendship of God"; scorn/humility as the hinge)*. *Surfaced:* the interior posture that gains or forfeits God's intimacy (new — w/ Job 29:4); scorn vs humility as the receptive/closed self.

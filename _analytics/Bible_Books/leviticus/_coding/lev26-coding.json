@@ -1,0 +1,1097 @@
+{
+  "provenance": "leviticus-lexical-v1",
+  "batch": "Leviticus 26 - covenant blessings and curses; confession, repentance, God remembers the covenant (Phase A pure coding)",
+  "occurrences": [
+    {
+      "ref": "26:1",
+      "note": "T2-only (no idols/images)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "26:2",
+      "strong": "H8104",
+      "note": "shamar = keep my sabbaths",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:2",
+      "strong": "H3372",
+      "note": "yare = REVERE my sanctuary",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "revere-sanctuary",
+        "operation": "revere",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:3",
+      "strong": "H8104",
+      "note": "shamar = IF you keep my statutes (the blessing condition)",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "congregation",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:4",
+      "strong": "H5414",
+      "note": "natan = I will GIVE rains in season, the land yields (blessing)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "give-rain-produce",
+        "operation": "God-blesses",
+        "bearer": "congregation",
+        "effect": "provision",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:5",
+      "strong": "H0983",
+      "note": "betach = you shall dwell in your land in SECURITY (blessing)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "security-safety",
+        "effect": "dwell-secure",
+        "bearer": "congregation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:6",
+      "strong": "H2729",
+      "note": "charad = you shall lie down with none to make you AFRAID/tremble (peace)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "no-fear-trembling",
+        "effect": "security-no-fear",
+        "bearer": "congregation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:6",
+      "strong": "H7965",
+      "note": "shalom = I will give PEACE in the land",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "peace",
+        "effect": "peace",
+        "bearer": "congregation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:6",
+      "strong": "H2416",
+      "note": "chayyah = I will remove harmful wild BEASTS (animal referent)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "living-thing",
+        "role": "animal-referent-not-human-IB",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:6",
+      "strong": "H7451",
+      "note": "ra = HARMFUL beasts removed from the land",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "harmful",
+        "role": "threat-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:6",
+      "strong": "H5414",
+      "note": "natan = I will GIVE peace (mechanical/blessing)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "give-peace",
+        "operation": "God-blesses",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:7",
+      "strong": "H0341",
+      "note": "oyev = your ENEMIES shall fall before you (blessing)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "enemy",
+        "effect": "victory-over-enemies",
+        "bearer": "congregation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:8",
+      "strong": "H0341",
+      "note": "oyev = five chase a hundred; your enemies fall (blessing)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "enemy",
+        "effect": "victory-over-enemies",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:9",
+      "strong": "H1285",
+      "note": "berit = I will confirm my COVENANT with you",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "covenant-confirmed",
+        "operation": "confirm-covenant",
+        "bearer": "congregation",
+        "effect": "covenant-favor",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:9",
+      "strong": "H7235",
+      "note": "ravah = I will make you fruitful and MULTIPLY you (blessing)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "multiply-fruitful",
+        "operation": "God-blesses",
+        "effect": "fruitfulness",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:11",
+      "strong": "H5315",
+      "note": "nephesh = my SOUL shall not abhor you (God's inner disposition of favor)",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "God-soul-not-abhor",
+        "bearer": "God",
+        "effect": "divine-favor",
+        "role": "divine-disposition",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:12",
+      "note": "T2-only (I will walk among you, be your God)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "26:13",
+      "strong": "H7665",
+      "note": "shavar = I BROKE the bars of your yoke (freed from Egypt's slavery)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "break-yoke",
+        "operation": "break-bondage",
+        "bearer": "congregation",
+        "effect": "liberation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:13",
+      "strong": "H6968",
+      "note": "qomemiyyut = I made you walk ERECT/upright (dignity of freedom)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "walk-upright-dignity",
+        "effect": "dignity-freedom",
+        "bearer": "congregation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:15",
+      "strong": "H1285",
+      "note": "berit = IF you break my COVENANT (the curse condition)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "covenant-broken",
+        "operation": "break-covenant",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:15",
+      "strong": "H4941",
+      "note": "mishpat = if you spurn my rules",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:15",
+      "strong": "H5315",
+      "note": "nephesh = if your SOUL abhors my rules",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "soul-abhors-rules",
+        "bearer": "person",
+        "effect": "rejection",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:16",
+      "strong": "H1727",
+      "note": "duv = I will bring wasting disease that makes the eyes fail and soul PINE/waste",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "pine-waste-away",
+        "effect": "wasting",
+        "bearer": "person",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:16",
+      "strong": "H0928",
+      "note": "behalah = sudden TERROR/dismay/panic (the curse of dread)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "terror-dismay-panic",
+        "effect": "dread",
+        "bearer": "person",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:16",
+      "strong": "H5315",
+      "note": "nephesh = wasting the SOUL (life pines away)",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "soul-pines",
+        "bearer": "person",
+        "effect": "wasting",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:16",
+      "strong": "H0341",
+      "note": "oyev = your enemies shall eat your harvest",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "enemy-plunders",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:17",
+      "strong": "H8130",
+      "note": "sane = those who HATE you shall rule over you",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "hated-by-enemies",
+        "bearer": "congregation",
+        "effect": "subjugation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:17",
+      "strong": "H7287",
+      "note": "radah = your haters shall RULE over you (curse of subjugation)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "ruled-by-enemies",
+        "operation": "ruled-over",
+        "effect": "subjugation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:17",
+      "strong": "H0341",
+      "note": "oyev = flee though no enemy pursues (curse of dread)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "irrational-dread",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:18",
+      "strong": "H2403",
+      "note": "chattat = punish seven times more for your SINS",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "sin",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:19",
+      "strong": "H1347",
+      "note": "gaon = I will break the PRIDE of your power",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "status",
+        "sense": "pride",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:19",
+      "strong": "H7665",
+      "note": "shavar = BREAK the pride of your power (curse)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "break-pride",
+        "operation": "break-pride",
+        "bearer": "congregation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:19",
+      "strong": "H5797",
+      "note": "oz = the STRENGTH/pride of your power broken",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "strength-power",
+        "role": "human-strength",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:20",
+      "strong": "H3581",
+      "note": "koach = your STRENGTH shall be spent in vain (fruitless toil)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "strength-spent-vain",
+        "role": "human-strength",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:20",
+      "strong": "H5414",
+      "note": "natan = the land will not GIVE its produce (curse)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "no-produce",
+        "effect": "barrenness",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:21",
+      "strong": "H2403",
+      "note": "chattat = if you continue against me, sevenfold for your SINS",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "sin",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:22",
+      "strong": "H8074",
+      "note": "shamem = your roads shall be DESOLATE (curse)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "desolate",
+        "effect": "desolation",
+        "bearer": "land",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:22",
+      "strong": "H2416",
+      "note": "chayyah = wild BEASTS shall bereave you (animal referent)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "living-thing",
+        "role": "animal-referent-not-human-IB",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:24",
+      "strong": "H2403",
+      "note": "chattat = I will strike you sevenfold for your SINS",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "sin",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:25",
+      "strong": "H1285",
+      "note": "berit = a sword avenging the COVENANT",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "covenant-vengeance",
+        "operation": "covenant-sanction",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:25",
+      "strong": "H0341",
+      "note": "oyev = delivered into the enemy's hand",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "defeat",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:25",
+      "strong": "H5414",
+      "note": "natan = I will GIVE you into the enemy's hand (mechanical/curse)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "give-to-enemy",
+        "operation": "God-delivers-to-enemy",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:26",
+      "strong": "H7665",
+      "note": "shavar = I will BREAK your staff of bread (famine)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "break-bread-staff",
+        "operation": "famine",
+        "effect": "famine",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:28",
+      "strong": "H2534",
+      "note": "chemah = I will walk contrary to you in FURY/wrath",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "fury-wrath",
+        "bearer": "God",
+        "effect": "divine-fury",
+        "role": "divine-disposition",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:28",
+      "strong": "H2403",
+      "note": "chattat = discipline sevenfold for your SINS",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "sin",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:30",
+      "strong": "H5315",
+      "note": "nephesh = my SOUL shall abhor you (God's inner revulsion at the idolatry)",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "God-soul-abhors",
+        "bearer": "God",
+        "effect": "divine-revulsion",
+        "role": "divine-disposition",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:31",
+      "strong": "H8074",
+      "note": "shamem = I will make your sanctuaries DESOLATE",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "desolate",
+        "effect": "desolation",
+        "bearer": "sanctuary",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:31",
+      "strong": "H5207",
+      "note": "nichoach = I will not SMELL your pleasing aromas (offerings rejected)",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "pleasing-aroma",
+        "bearer": "offering",
+        "effect": "aroma-rejected",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:32",
+      "strong": "H8074",
+      "note": "shamem = I will make the land DESOLATE; even your enemies will be appalled",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "desolate",
+        "effect": "desolation",
+        "bearer": "land",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:32",
+      "strong": "H0341",
+      "note": "oyev = your enemies who dwell there will be astonished",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "desolation-witnessed",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:33",
+      "strong": "H8077",
+      "note": "shemamah = your land shall be a DEVASTATION, cities a waste",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "devastation",
+        "effect": "devastation",
+        "bearer": "land",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:34",
+      "strong": "H7521",
+      "note": "ratsah = then the land shall ENJOY/pay off its sabbaths while desolate",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "land-enjoys-pays-sabbaths",
+        "operation": "make-amends-sabbaths",
+        "bearer": "land",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:34",
+      "strong": "H8074",
+      "note": "shamem = while it lies DESOLATE it rests",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "desolate",
+        "effect": "desolation-rest",
+        "bearer": "land",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:34",
+      "strong": "H0341",
+      "note": "oyev = while you are in your enemies' land",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "exile",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:35",
+      "strong": "H8074",
+      "note": "shamem = all the days of DESOLATION the land rests (the sabbaths owed)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "desolate",
+        "effect": "desolation-rest",
+        "bearer": "land",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:36",
+      "strong": "H3824",
+      "note": "levav = I will send FAINTNESS into their HEART (a panic of heart in exile - rare heart-verse)",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "faint-heart",
+        "bearer": "person",
+        "effect": "dread-of-heart",
+        "role": "heart-as-locus",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:36",
+      "strong": "H0341",
+      "note": "oyev = fleeing though no enemy pursues (dread in the enemies' lands)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "irrational-dread",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:37",
+      "strong": "H0341",
+      "note": "oyev = no power to stand before enemies",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "no-standing",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:38",
+      "strong": "H0341",
+      "note": "oyev = the enemies' land shall consume you",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "exile-consumed",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:39",
+      "strong": "H5771",
+      "note": "avon = those left waste away in their INIQUITY (and their fathers' iniquity)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "iniquity",
+        "operation": "waste-in-iniquity",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:39",
+      "strong": "H0341",
+      "note": "oyev = in the lands of their enemies",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "exile",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:40",
+      "strong": "H5771",
+      "note": "avon = if they CONFESS their INIQUITY and their fathers' (the turning point)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "iniquity",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "awareness": "realized",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:40",
+      "strong": "H4604",
+      "note": "maal = their BREACH OF FAITH by which they were unfaithful to me",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "unfaithfulness-trespass",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:40",
+      "strong": "H4603",
+      "note": "maal = they acted UNFAITHFULLY / treacherously against me",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "be-unfaithful",
+        "operation": "trespass",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:40",
+      "strong": "H3034",
+      "note": "yadah = they shall CONFESS their iniquity (national repentance - the way back)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "operation",
+        "sense": "confess",
+        "operation": "confess-repent",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "person_role": "active",
+        "awareness": "realized",
+        "effect": "repentance",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:41",
+      "strong": "H3824",
+      "note": "levav = if their uncircumcised HEART is humbled (the heart's repentance - rare heart-verse)",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "uncircumcised-heart",
+        "bearer": "person",
+        "role": "heart-as-locus",
+        "effect": "heart-repentance",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:41",
+      "strong": "H7521",
+      "note": "ratsah = and they make amends / PAY OFF their iniquity",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "operation",
+        "sense": "make-amends",
+        "operation": "pay-off-iniquity",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:41",
+      "strong": "H5771",
+      "note": "avon = they accept the punishment of their INIQUITY",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "iniquity",
+        "operation": "accept-punishment",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:41",
+      "strong": "H3665",
+      "note": "kana = their uncircumcised heart is HUMBLED (humbling as the condition of restoration)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "be-humbled",
+        "operation": "humbled",
+        "bearer": "congregation",
+        "person_role": "passive",
+        "effect": "humility-repentance",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:41",
+      "strong": "H0341",
+      "note": "oyev = in the land of their enemies",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "exile",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:42",
+      "strong": "H1285",
+      "note": "berit = then I will REMEMBER my COVENANT with Jacob, Isaac, Abraham (grace of restoration)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "covenant-remembered",
+        "operation": "remember-covenant",
+        "bearer": "God",
+        "effect": "restoration-grace",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:42",
+      "strong": "H2142",
+      "note": "zakhar = I will REMEMBER the covenant (and the land) - the ground of restoration",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "type": "operation",
+        "sense": "remember-covenant",
+        "operation": "God-remembers",
+        "bearer": "God",
+        "driver": "divine-initiative",
+        "effect": "restoration-grace",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:43",
+      "strong": "H7521",
+      "note": "ratsah = the land ENJOYS/pays off its sabbaths; they make amends for iniquity",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "land-enjoys-pays-sabbaths",
+        "operation": "make-amends-sabbaths",
+        "bearer": "land",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:43",
+      "strong": "H4941",
+      "note": "mishpat = because they spurned my rules",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:43",
+      "strong": "H8074",
+      "note": "shamem = while the land lies DESOLATE without them",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "desolate",
+        "effect": "desolation",
+        "bearer": "land",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:43",
+      "strong": "H5315",
+      "note": "nephesh = their SOUL abhorred my rules",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "soul-abhors-rules",
+        "bearer": "person",
+        "effect": "rejection",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:43",
+      "strong": "H5771",
+      "note": "avon = they must accept the punishment of their INIQUITY",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "iniquity",
+        "operation": "accept-punishment",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:44",
+      "strong": "H1285",
+      "note": "berit = yet I will not utterly reject them or break my COVENANT (grace in exile)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "covenant-not-broken",
+        "operation": "keep-covenant",
+        "bearer": "God",
+        "effect": "preserving-grace",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:44",
+      "strong": "H0341",
+      "note": "oyev = even in the land of their enemies I will not abandon them",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "sense": "enemy",
+        "effect": "exile-but-not-abandoned",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:45",
+      "strong": "H1285",
+      "note": "berit = I will REMEMBER the COVENANT with their forefathers (whom I brought from Egypt)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "sense": "covenant-remembered",
+        "operation": "remember-covenant",
+        "bearer": "God",
+        "effect": "restoration-grace",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:45",
+      "strong": "H2142",
+      "note": "zakhar = I will REMEMBER for their sake the covenant",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "type": "operation",
+        "sense": "remember-covenant",
+        "operation": "God-remembers",
+        "bearer": "God",
+        "driver": "divine-initiative",
+        "effect": "restoration-grace",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:46",
+      "strong": "H4941",
+      "note": "mishpat = these are the statutes, rules, and laws the LORD gave at Sinai (summary)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "summary",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:9",
+      "strong": "H6437",
+      "note": "panah = I will TURN toward you with favor, make you fruitful (God's favorable turning)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "type": "operation",
+        "sense": "God-turns-favorably",
+        "operation": "God-turns-toward",
+        "bearer": "God",
+        "effect": "divine-favor",
+        "role": "divine-disposition",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "26:25",
+      "strong": "H5358",
+      "note": "naqam = a sword that AVENGES the covenant (covenant vengeance)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "curse",
+        "type": "operation",
+        "sense": "covenant-vengeance",
+        "operation": "avenge",
+        "bearer": "God",
+        "effect": "covenant-sanction",
+        "coverage": "ib-coded"
+      }
+    }
+  ]
+}

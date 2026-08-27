@@ -1,0 +1,353 @@
+{
+  "_patch_meta": {
+    "patch_id": "WA-M05-VCREVISE-UTREVIEW-20260507",
+    "patch_type": "VCREVISE",
+    "cluster_code": "M05",
+    "description": "Phase 2 UT verse review for cluster M05 — Love, Compassion and Kindness. 34 confirmed-relevant verses classified (is_relevant=1, group_id null). 8 set-aside verses classified (is_relevant=0, set_aside_reason populated). 1 borderline verse (Neh 13:14 / H2617A / vrID=3940) held — NOT included in this patch. IDs resolved from wa-cluster-M05-comprehensive-v3-20260507.md.",
+    "companion_document": "Sessions/Session_Clusters/M05/WA-M05-UT-verse-review-v1-20260507.md",
+    "obslog_reference": "wa-obslog-M05-love-compassion-kindness-v1-20260507 Phase 2",
+    "terms_covered": [536, 1600, 487, 1623, 6209, 981, 5367, 954, 1579, 556, 873, 7064, 6845],
+    "input_versions": {
+      "536": "wa-cluster-M05-comprehensive-v3-20260507",
+      "1600": "wa-cluster-M05-comprehensive-v3-20260507",
+      "487": "wa-cluster-M05-comprehensive-v3-20260507",
+      "1623": "wa-cluster-M05-comprehensive-v3-20260507",
+      "6209": "wa-cluster-M05-comprehensive-v3-20260507",
+      "981": "wa-cluster-M05-comprehensive-v3-20260507",
+      "5367": "wa-cluster-M05-comprehensive-v3-20260507",
+      "954": "wa-cluster-M05-comprehensive-v3-20260507",
+      "1579": "wa-cluster-M05-comprehensive-v3-20260507",
+      "556": "wa-cluster-M05-comprehensive-v3-20260507",
+      "873": "wa-cluster-M05-comprehensive-v3-20260507",
+      "7064": "wa-cluster-M05-comprehensive-v3-20260507",
+      "6845": "wa-cluster-M05-comprehensive-v3-20260507"
+    },
+    "created": "2026-05-07",
+    "authored_by": "Claude AI — Session B Phase 2",
+    "borderline_held": {
+      "verse_record_id": 3940,
+      "mti_term_id": 536,
+      "reference": "Neh 13:14",
+      "strong": "H2617A",
+      "reason": "Term spans meritorious-deeds sense; covenantal loyalty appeal implicit but not primary register. Held for researcher decision before inclusion."
+    }
+  },
+  "operations": [
+    {
+      "_comment": "=== CONFIRMED RELEVANT — H2617A che.sed (mti=536) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 3942, "mti_term_id": 536},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-004 | Est 2:9 | che.sed as gracious favour; inner disposition of goodwill operative"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 3943, "mti_term_id": 536},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-005 | Est 2:17 | che.sed as loving favour alongside chen; inner disposition of preferential love operative"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — H0157H a.hev (mti=1600) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 67683, "mti_term_id": 1600},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-007 | Est 5:10 | a.hev designating friendship bond"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 67684, "mti_term_id": 1600},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-008 | Est 5:14 | a.hev friendship bond; morally inverted context analytically notable"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 67685, "mti_term_id": 1600},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-009 | Est 6:13 | a.hev friendship bond as context for inner disclosure and counsel"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 67690, "mti_term_id": 1600},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-010 | Pro 14:20 | a.hev wealth-conditioned friendship; verse interrogates nature of friendship-love"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 67687, "mti_term_id": 1600},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-011 | Jer 20:4 | a.hev friendship bond as relational category in judgment context"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 67688, "mti_term_id": 1600},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-012 | Jer 20:6 | a.hev friendship bond exploited for false prophecy; betrayal of bond analytically notable"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — H2550 cha.mal (mti=487) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 59048, "mti_term_id": 487},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-014 | Job 27:22 | cha.mal negative form (without pity) characterises absence of inner disposition; structural opposite analytically significant"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — H7463 re.eh (mti=1623) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 68172, "mti_term_id": 1623},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-018 | 1Ki 4:5 | re.eh designating king's friend; friendship bond as relational basis for formal designation"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — H6116 a.tsa.rah (mti=6209) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 192566, "mti_term_id": 6209},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-019 | Amo 5:21 | a.tsa.rah — divine rejection confirms inner moral state as decisive factor for assembly validity"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — G1653 eleeō (mti=981) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 93008, "mti_term_id": 981},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-020 | Mar 5:19 | eleeō — divine act of mercy as content of testimony; direct evidencing"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — G2844 koinōnos (mti=5367) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 162740, "mti_term_id": 5367},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-021 | Luk 5:10 | koinōnos as partnership bond; relational characteristic of shared participation operative"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 162737, "mti_term_id": 5367},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-022 | 2Cor 8:23 | koinōnos as deep partnership in shared mission; inner-relational characteristic fully present"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — G5384 filos (mti=1579) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66970, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-024 | Luk 7:6 | filos designating friendship bond enabling trusted relational mediation"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66961, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-025 | Luk 14:10 | filos as relational warmth and recognition; inner disposition of favour expressed in social address"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66962, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-026 | Luk 14:12 | filos in reciprocal friendship context; verse interrogates inner orientation of friendship vs transactional obligation"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66963, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-027 | Luk 15:29 | filos naming friendship bond as relational context for communal celebration"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66967, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-028 | Luk 21:16 | filos naming friendship bond whose betrayal is the most significant relational violation"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66968, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-029 | Luk 23:12 | filos naming formation of friendship bond out of prior enmity"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66955, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-030 | Joh 19:12 | filos as political loyalty/friendship bond; inner relational allegiance operative"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66946, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-031 | Act 10:24 | filos designating close friendship bond as relational basis for significant gathering"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66947, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-032 | Act 19:31 | filos naming friendship bond expressed as protective concern and counsel"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66948, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-033 | Act 27:3 | filos naming friendship bond as basis for practical care-giving"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 66945, "mti_term_id": 1579},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-034 | 3Jo 15 | filos naming friendship community; personal greeting by name expresses intimate inner-relational characteristic"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — G5363 filanthrōpia (mti=556) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 4614, "mti_term_id": 556},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-035 | Act 28:2 | filanthrōpia naming inner disposition of benevolent goodwill toward strangers expressed as practical welcome"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — G2842 koinōnia (mti=873) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 24296, "mti_term_id": 873},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-036 | Rom 15:26 | koinōnia as practical financial participation; inner disposition of generous sharing operative"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 24293, "mti_term_id": 873},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-037 | 2Cor 9:13 | koinōnia as generous contribution grounded in inner confession and gospel-shaped generosity"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 24295, "mti_term_id": 873},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-038 | Heb 13:16 | koinōnia as inner disposition and act of sharing; commanded sacrifice pleasing to God"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — G2026 epoikodomeō (mti=7064) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 221393, "mti_term_id": 7064},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-039 | 1Cor 3:10 | epoikodomeō as formation built on foundation of grace"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 221394, "mti_term_id": 7064},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-040 | 1Cor 3:12 | epoikodomeō as act of building on foundation"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 221395, "mti_term_id": 7064},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-041 | 1Cor 3:14 | epoikodomeō as formation work tested eschatologically"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 221398, "mti_term_id": 7064},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-042 | Eph 2:20 | epoikodomeō naming formation of community on apostolic-prophetic foundation"
+    },
+    {
+      "_comment": "=== CONFIRMED RELEVANT — G1433 dōreō (mti=6845) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 215044, "mti_term_id": 6845},
+      "set": {"is_relevant": 1, "group_id": null, "set_aside_reason": null},
+      "_ref": "P2-043 | 2Pe 1:3 | dōreō naming divine granting of all things for inner transformation"
+    },
+    {
+      "_comment": "=== SET ASIDE — H2617A che.sed (mti=536) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 3932, "mti_term_id": 536},
+      "set": {"is_relevant": 0, "group_id": null, "set_aside_reason": "Term used in behavioural/historical record sense (good deeds catalogue of Hezekiah); inner disposition of covenantal kindness not in view"},
+      "_ref": "P2-001 | 2Ch 32:32"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 3933, "mti_term_id": 536},
+      "set": {"is_relevant": 0, "group_id": null, "set_aside_reason": "Term used in behavioural/historical record sense (good deeds catalogue of Josiah); inner disposition of covenantal kindness not in view"},
+      "_ref": "P2-002 | 2Ch 35:26"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 4085, "mti_term_id": 536},
+      "set": {"is_relevant": 0, "group_id": null, "set_aside_reason": "Term used in sense of outward beauty/loveliness (flower of field); inner disposition of covenantal kindness not in view"},
+      "_ref": "P2-006 | Isa 40:6"
+    },
+    {
+      "_comment": "=== SET ASIDE — H2550 cha.mal (mti=487) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 59049, "mti_term_id": 487},
+      "set": {"is_relevant": 0, "group_id": null, "set_aside_reason": "Term used in sense of unsparing pain/suffering without restraint (Job's endurance); inner disposition of sparing/compassion not operative"},
+      "_ref": "P2-013 | Job 6:10"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 59039, "mti_term_id": 487},
+      "set": {"is_relevant": 0, "group_id": null, "set_aside_reason": "Term used as ruthlessly in physical destruction metaphor (potter's vessel); inner disposition of sparing not operative"},
+      "_ref": "P2-015 | Isa 30:14"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 59044, "mti_term_id": 487},
+      "set": {"is_relevant": 0, "group_id": null, "set_aside_reason": "Term in military directive sense (spare no arrows against Babylon); inner disposition of compassion not in view"},
+      "_ref": "P2-016 | Jer 50:14"
+    },
+    {
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 59045, "mti_term_id": 487},
+      "set": {"is_relevant": 0, "group_id": null, "set_aside_reason": "Term in military directive sense (spare not her young men); inner disposition of compassion not in view"},
+      "_ref": "P2-017 | Jer 51:3"
+    },
+    {
+      "_comment": "=== SET ASIDE — G5543 chrēstos (mti=954) ===",
+      "op": "UPSERT",
+      "table": "verse_context",
+      "match": {"verse_record_id": 175814, "mti_term_id": 954},
+      "set": {"is_relevant": 0, "group_id": null, "set_aside_reason": "Term used in sensory/pleasantness sense (old wine is good/pleasant); inner character quality of kindness/goodness not in view"},
+      "_ref": "P2-023 | Luk 5:39"
+    }
+  ],
+  "_validation": {
+    "expected_cr_rows": 34,
+    "expected_sa_rows": 8,
+    "expected_total_operations": 42,
+    "borderline_excluded": "vrID=3940 (Neh 13:14 / H2617A mti=536) — held for researcher decision",
+    "completion_confirmation": "SELECT COUNT(*) FROM verse_context WHERE mti_term_id IN (536,1600,487,1623,6209,981,5367,954,1579,556,873,7064,6845) AND is_relevant=1 AND group_id IS NULL — expected: 34 new rows minimum (prior G-status rows not affected). SELECT COUNT(*) FROM verse_context WHERE mti_term_id IN (536,487,954) AND is_relevant=0 AND set_aside_reason IS NOT NULL — expected: 8 rows. wa_session_b_findings row count for this cluster unchanged."
+  }
+}

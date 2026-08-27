@@ -1,0 +1,826 @@
+{
+  "_mapping_meta": {
+    "cluster_code": "M10",
+    "cluster_name": "Sin, Guilt and Transgression",
+    "phase": 5,
+    "date": "2026-05-23",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "substantive_verse_corpus": 1325,
+    "distribution_gate_threshold": 530,
+    "sub_groups": [
+      "M10-A",
+      "M10-B",
+      "M10-C",
+      "M10-D",
+      "M10-E",
+      "M10-F",
+      "M10-G",
+      "M10-H",
+      "M10-I",
+      "M10-BND"
+    ],
+    "note": "Term-level mapping with per-term split rules where applicable. CC resolves to flat vc_id assignments at Phase 6 apply. Multi-faceted terms carry primary + optional split rules. H2399 chet mti_id=126 / est_verses=33 patched by CC on 2026-05-23."
+  },
+  "term_assignments": [
+    {
+      "mti_id": 3202,
+      "strongs": "G0092",
+      "translit": "adikema",
+      "primary_subgroup": "M10-I",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M26"
+      ],
+      "est_verses": 3
+    },
+    {
+      "mti_id": 3197,
+      "strongs": "G0094",
+      "translit": "adikos",
+      "primary_subgroup": "M10-I",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M26"
+      ],
+      "est_verses": 11
+    },
+    {
+      "mti_id": 1116,
+      "strongs": "G0264",
+      "translit": "hamartano",
+      "primary_subgroup": "M10-A",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 37
+    },
+    {
+      "mti_id": 1120,
+      "strongs": "G0265",
+      "translit": "hamartema",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 4
+    },
+    {
+      "mti_id": 9,
+      "strongs": "G0266",
+      "translit": "hamartia",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 105
+    },
+    {
+      "mti_id": 2441,
+      "strongs": "G0268",
+      "translit": "hamartolos",
+      "primary_subgroup": "M10-C",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 45
+    },
+    {
+      "mti_id": 1090,
+      "strongs": "G0646",
+      "translit": "apostasia",
+      "primary_subgroup": "M10-A",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M31"
+      ],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 1127,
+      "strongs": "G0988",
+      "translit": "blasfemia",
+      "primary_subgroup": "M10-A",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M06"
+      ],
+      "est_verses": 18
+    },
+    {
+      "mti_id": 6248,
+      "strongs": "G0989",
+      "translit": "blasfemos",
+      "primary_subgroup": "M10-A",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M06"
+      ],
+      "est_verses": 4
+    },
+    {
+      "mti_id": 4995,
+      "strongs": "G1185",
+      "translit": "deleazo",
+      "primary_subgroup": "M10-A",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M14"
+      ],
+      "est_verses": 3
+    },
+    {
+      "mti_id": 4899,
+      "strongs": "G1311",
+      "translit": "diaftheiro",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 3
+    },
+    {
+      "mti_id": 6573,
+      "strongs": "G3845",
+      "translit": "parabaino",
+      "primary_subgroup": "M10-F",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 4
+    },
+    {
+      "mti_id": 1189,
+      "strongs": "G3847",
+      "translit": "parabasis",
+      "primary_subgroup": "M10-F",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 7
+    },
+    {
+      "mti_id": 6572,
+      "strongs": "G3848",
+      "translit": "parabates",
+      "primary_subgroup": "M10-F",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 5
+    },
+    {
+      "mti_id": 1192,
+      "strongs": "G3900",
+      "translit": "paraptoma",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": "M10-F",
+      "split_rule": {
+        "secondary_verses": [
+          "Rom 5:15",
+          "Rom 5:16",
+          "Rom 5:17",
+          "Rom 5:18",
+          "Rom 5:20"
+        ],
+        "secondary_subgroup": "M10-F",
+        "rule": "Adam-paradigm trespass-as-foundational-boundary-crossing verses (Rom 5:15-20) route to M10-F; all remaining 9 verses (Rom 4:25; Rom 11:11; Rom 11:12; 2Cor 5:19; Gal 6:1; Eph 1:7; Eph 2:1; Eph 2:5; Col 2:13) route to M10-B"
+      },
+      "cross_register_flags": [],
+      "est_verses": 14
+    },
+    {
+      "mti_id": 5546,
+      "strongs": "G4942",
+      "translit": "sunupokrinomai",
+      "primary_subgroup": "M10-A",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M08"
+      ],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 4900,
+      "strongs": "G5351",
+      "translit": "ftheiro",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 7
+    },
+    {
+      "mti_id": 745,
+      "strongs": "G5356",
+      "translit": "fthora",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M23",
+        "M35"
+      ],
+      "est_verses": 8
+    },
+    {
+      "mti_id": 75,
+      "strongs": "H0205H",
+      "translit": "a.ven",
+      "primary_subgroup": "M10-BND",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 4,
+      "note": "BOUNDARY verdict. Phase 8.5 resolution required."
+    },
+    {
+      "mti_id": 86,
+      "strongs": "H0816",
+      "translit": "a.sham",
+      "primary_subgroup": "M10-D",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 31
+    },
+    {
+      "mti_id": 88,
+      "strongs": "H0818",
+      "translit": "a.shem",
+      "primary_subgroup": "M10-D",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 3
+    },
+    {
+      "mti_id": 89,
+      "strongs": "H0819",
+      "translit": "ash.mah",
+      "primary_subgroup": "M10-D",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 17
+    },
+    {
+      "mti_id": 867,
+      "strongs": "H0898",
+      "translit": "ba.gad",
+      "primary_subgroup": "M10-G",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M13",
+        "M31"
+      ],
+      "est_verses": 39
+    },
+    {
+      "mti_id": 5955,
+      "strongs": "H2017",
+      "translit": "ho.phekh",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 4648,
+      "strongs": "H2254B",
+      "translit": "cha.val",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M03"
+      ],
+      "est_verses": 5,
+      "note": "Includes vr_id=232182 Mic 2:10 (Phase 1 borderline resolved to relevant at Phase 3)"
+    },
+    {
+      "mti_id": 4646,
+      "strongs": "H2256D",
+      "translit": "che.vel",
+      "primary_subgroup": "M10-BND",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 1,
+      "note": "BOUNDARY verdict. Phase 8.5 resolution required."
+    },
+    {
+      "mti_id": 125,
+      "strongs": "H2398",
+      "translit": "cha.ta",
+      "primary_subgroup": "M10-A",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 201
+    },
+    {
+      "mti_id": 126,
+      "strongs": "H2399",
+      "translit": "chet",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 33,
+      "note": "FLAG: mti_id unconfirmed. CC must verify §2 entry and verse count before Phase 6 apply. Verdict STAYS inferred; mapping to M10-B pending confirmation. | CC verified mti_id=126 and est_verses=33 from DB on 2026-05-23."
+    },
+    {
+      "mti_id": 2448,
+      "strongs": "H2400",
+      "translit": "chat.ta",
+      "primary_subgroup": "M10-C",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 19
+    },
+    {
+      "mti_id": 127,
+      "strongs": "H2401",
+      "translit": "cha.ta.ah",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 8
+    },
+    {
+      "mti_id": 1114,
+      "strongs": "H2403A",
+      "translit": "chat.ta.ah",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 2
+    },
+    {
+      "mti_id": 2446,
+      "strongs": "H2403B",
+      "translit": "chat.tat",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 159
+    },
+    {
+      "mti_id": 2447,
+      "strongs": "H2403H",
+      "translit": "chat.tat_sin_offering",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M11"
+      ],
+      "est_verses": 4
+    },
+    {
+      "mti_id": 2449,
+      "strongs": "H2403I",
+      "translit": "chat.tat_punishment",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 2
+    },
+    {
+      "mti_id": 6136,
+      "strongs": "H2475",
+      "translit": "cha.loph",
+      "primary_subgroup": "M10-BND",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 0,
+      "note": "BOUNDARY verdict. 0 relevant verses. Phase 8.5 resolution required."
+    },
+    {
+      "mti_id": 3171,
+      "strongs": "H3725",
+      "translit": "kip.pu.rim",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M11"
+      ],
+      "est_verses": 8
+    },
+    {
+      "mti_id": 5961,
+      "strongs": "H3891",
+      "translit": "la.zut",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 3262,
+      "strongs": "H4297",
+      "translit": "mut.teh",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 862,
+      "strongs": "H4603",
+      "translit": "ma.al_verb",
+      "primary_subgroup": "M10-G",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M13",
+        "M31"
+      ],
+      "est_verses": 34
+    },
+    {
+      "mti_id": 861,
+      "strongs": "H4604",
+      "translit": "ma.al_noun",
+      "primary_subgroup": "M10-G",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M13",
+        "M31"
+      ],
+      "est_verses": 28
+    },
+    {
+      "mti_id": 746,
+      "strongs": "H4889",
+      "translit": "mash.chit",
+      "primary_subgroup": "M10-BND",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 0,
+      "note": "BOUNDARY verdict. 0 relevant verses. Phase 8.5 resolution required."
+    },
+    {
+      "mti_id": 4904,
+      "strongs": "H4892",
+      "translit": "mash.chet",
+      "primary_subgroup": "M10-BND",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 0,
+      "note": "BOUNDARY verdict. 0 relevant verses. Phase 8.5 resolution required."
+    },
+    {
+      "mti_id": 4906,
+      "strongs": "H4893B",
+      "translit": "ma.she.chat",
+      "primary_subgroup": "M10-BND",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 0,
+      "note": "BOUNDARY verdict. 0 relevant verses. Phase 8.5 resolution required."
+    },
+    {
+      "mti_id": 7158,
+      "strongs": "H5040",
+      "translit": "nav.lut",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M07"
+      ],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 6078,
+      "strongs": "H5494",
+      "translit": "sur",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 2
+    },
+    {
+      "mti_id": 5959,
+      "strongs": "H5557",
+      "translit": "sa.laph",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 6
+    },
+    {
+      "mti_id": 1082,
+      "strongs": "H5627",
+      "translit": "sa.rah",
+      "primary_subgroup": "M10-F",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 8
+    },
+    {
+      "mti_id": 924,
+      "strongs": "H5753A",
+      "translit": "a.vah_twist",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M03"
+      ],
+      "est_verses": 6
+    },
+    {
+      "mti_id": 2439,
+      "strongs": "H5753B",
+      "translit": "a.vah_pervert",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 10
+    },
+    {
+      "mti_id": 5618,
+      "strongs": "H5760",
+      "translit": "a.vil",
+      "primary_subgroup": "M10-I",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 923,
+      "strongs": "H5766A",
+      "translit": "a.vel",
+      "primary_subgroup": "M10-I",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M26"
+      ],
+      "est_verses": 20
+    },
+    {
+      "mti_id": 5615,
+      "strongs": "H5766B",
+      "translit": "av.lah",
+      "primary_subgroup": "M10-I",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M26"
+      ],
+      "est_verses": 32
+    },
+    {
+      "mti_id": 5616,
+      "strongs": "H5767",
+      "translit": "av.val",
+      "primary_subgroup": "M10-I",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M26"
+      ],
+      "est_verses": 5
+    },
+    {
+      "mti_id": 182,
+      "strongs": "H5771G",
+      "translit": "a.von_crime",
+      "primary_subgroup": "M10-E",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 162
+    },
+    {
+      "mti_id": 2437,
+      "strongs": "H5771H",
+      "translit": "a.von_guilt",
+      "primary_subgroup": "M10-D",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 27
+    },
+    {
+      "mti_id": 2438,
+      "strongs": "H5771I",
+      "translit": "a.von_punishment",
+      "primary_subgroup": "M10-D",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 18
+    },
+    {
+      "mti_id": 5619,
+      "strongs": "H5932",
+      "translit": "al.vah",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 198,
+      "strongs": "H6330",
+      "translit": "pu.qah",
+      "primary_subgroup": "M10-D",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [
+        "M03"
+      ],
+      "est_verses": 1
+    },
+    {
+      "mti_id": 1083,
+      "strongs": "H6586",
+      "translit": "pa.sha",
+      "primary_subgroup": "M10-F",
+      "secondary_subgroup": "M10-A",
+      "split_rule": {
+        "secondary_subgroup": "M10-A",
+        "secondary_verses": [
+          "1Ki 12:19",
+          "2Ki 1:1",
+          "2Ki 3:5",
+          "2Ki 3:7",
+          "2Ki 8:20",
+          "2Ki 8:22",
+          "2Ch 10:19",
+          "2Ch 21:8",
+          "2Ch 21:10"
+        ],
+        "rule": "Political-revolt register verses (Israel/Moab/Edom rebelling against human authority, not God) route to M10-A secondary. All other pa.sha verses (rebellion-against-God register) route to M10-F primary."
+      },
+      "cross_register_flags": [],
+      "est_verses": 37
+    },
+    {
+      "mti_id": 1089,
+      "strongs": "H6588",
+      "translit": "pe.sha",
+      "primary_subgroup": "M10-F",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 90
+    },
+    {
+      "mti_id": 1123,
+      "strongs": "H7564",
+      "translit": "rish.ah",
+      "primary_subgroup": "M10-B",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 4
+    },
+    {
+      "mti_id": 4710,
+      "strongs": "H8397",
+      "translit": "te.vel",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 2
+    },
+    {
+      "mti_id": 1024,
+      "strongs": "H8419",
+      "translit": "tah.pu.khah",
+      "primary_subgroup": "M10-H",
+      "secondary_subgroup": null,
+      "split_rule": null,
+      "cross_register_flags": [],
+      "est_verses": 10
+    }
+  ],
+  "boundary_subgroup": {
+    "subgroup_code": "M10-BND",
+    "verdict_terms": [
+      {
+        "mti_id": 75,
+        "strongs": "H0205H",
+        "translit": "a.ven",
+        "est_verses": 4
+      },
+      {
+        "mti_id": 4646,
+        "strongs": "H2256D",
+        "translit": "che.vel",
+        "est_verses": 1
+      },
+      {
+        "mti_id": 746,
+        "strongs": "H4889",
+        "translit": "mash.chit",
+        "est_verses": 0
+      },
+      {
+        "mti_id": 4904,
+        "strongs": "H4892",
+        "translit": "mash.chet",
+        "est_verses": 0
+      },
+      {
+        "mti_id": 4906,
+        "strongs": "H4893B",
+        "translit": "ma.she.chat",
+        "est_verses": 0
+      },
+      {
+        "mti_id": 6136,
+        "strongs": "H2475",
+        "translit": "cha.loph",
+        "est_verses": 0
+      }
+    ],
+    "total_boundary_verses": 5,
+    "note": "Phase 8.5 resolution required for all 6 terms. Pro 12:21 (a.ven borderline) has no vc row and is not routed here."
+  },
+  "distribution_check": {
+    "gate_threshold_verses": 530,
+    "gate_pct": 40.0,
+    "subgroup_estimates": {
+      "M10-A": {
+        "est_verses": 275,
+        "est_pct": 20.8
+      },
+      "M10-B": {
+        "est_verses": 309,
+        "est_pct": 23.3
+      },
+      "M10-C": {
+        "est_verses": 64,
+        "est_pct": 4.8
+      },
+      "M10-D": {
+        "est_verses": 97,
+        "est_pct": 7.3
+      },
+      "M10-E": {
+        "est_verses": 162,
+        "est_pct": 12.2
+      },
+      "M10-F": {
+        "est_verses": 130,
+        "est_pct": 9.8
+      },
+      "M10-G": {
+        "est_verses": 101,
+        "est_pct": 7.6
+      },
+      "M10-H": {
+        "est_verses": 63,
+        "est_pct": 4.8
+      },
+      "M10-I": {
+        "est_verses": 72,
+        "est_pct": 5.4
+      },
+      "M10-BND": {
+        "est_verses": 5,
+        "est_pct": 0.4
+      }
+    },
+    "all_below_gate": true,
+    "largest_subgroup": "M10-B",
+    "largest_subgroup_est_verses": 309,
+    "largest_subgroup_est_pct": 23.3,
+    "note": "All sub-groups estimated well below 530V gate. H2399 chet verses unconfirmed; when added will route to M10-B (estimated +33V), keeping M10-B at ~342V (25.8%) — still under gate."
+  }
+}

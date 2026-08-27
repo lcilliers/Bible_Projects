@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 30,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4361 (Pro 30:3-4) — I have not learned wisdom nor known the Holy One; who has ascended to heaven? Two verses.",
+ "spans": {
+  "267236": {
+   "gloss": "unlearned in wisdom (yada)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "confessed ignorance — Agur owning he has not learned wisdom or known the Holy One"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "Agur",
+     "to": 267236,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the confession that Agur has not learned wisdom nor gained knowledge of the Holy One — the deep humility that disclaims mastery of the highest things, refusing to presume on knowledge of God"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the humbled human knowing of 30:4 (267290)",
+     "to": 267236,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the challenge that exposes man's ignorance of God",
+     "to": 267290,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "yada (know) — 'I have not learned wisdom, nor have I KNOWLEDGE of the Holy One' (30:3); Agur disclaims comprehension of God. Such humility, far from irreverence, is reverence — the wise do not claim to have plumbed the Holy One (cf 30:2; Job 42:3)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "267290": {
+   "gloss": "'surely you know!' (yada)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "humbled knowing — the rhetorical challenge exposing man's ignorance of the transcendent God"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "cognition"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "mankind",
+     "to": 267290,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the ironic challenge 'surely you know!' — the string of unanswerable questions (who ascended to heaven, gathered the wind, established the earth, what is his name?) that exposes how little any human truly knows of the transcendent God"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the confessed ignorance of 30:3 (267236)",
+     "to": 267290,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to Agur's disclaiming of wisdom before God",
+     "to": 267290,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "yada (know) — 'what is his name... surely you KNOW!' (30:4); the irony humbles — no man has ascended to heaven or can name the Almighty and his Son. Human knowledge is dwarfed before God's transcendence, and wisdom begins in owning it."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

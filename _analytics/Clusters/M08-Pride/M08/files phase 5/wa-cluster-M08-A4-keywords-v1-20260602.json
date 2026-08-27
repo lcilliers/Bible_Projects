@@ -1,0 +1,924 @@
+{
+  "_meta": {
+    "model": "claude-sonnet-4-6",
+    "verses": 68,
+    "filled": 68,
+    "batches": 3,
+    "usage_totals": {
+      "input": 10484,
+      "output": 4372,
+      "cache_create": 0,
+      "cache_read": 3483
+    }
+  },
+  "keywords_by_vc_id": {
+    "34239": {
+      "reference": "Exo 14:8",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "defiantly",
+      "keywords": [
+        "defiance bold",
+        "self assertion",
+        "posture raised",
+        "boldness enabled",
+        "will elevated"
+      ]
+    },
+    "65731": {
+      "reference": "Num 15:30",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "high",
+      "keywords": [
+        "defiance wilful",
+        "will overriding",
+        "self exaltation",
+        "divine reviling",
+        "deliberate transgression"
+      ]
+    },
+    "12084": {
+      "reference": "1Sa 2:3",
+      "strongs": "H1364",
+      "transliteration": "ga.vo.ah",
+      "span": "very",
+      "keywords": [
+        "arrogance verbal",
+        "pride misjudging",
+        "self overestimation",
+        "mouth outpouring",
+        "standing miscalculated",
+        "awareness divine absent"
+      ]
+    },
+    "54394": {
+      "reference": "1Sa 16:7",
+      "strongs": "H6967",
+      "transliteration": "qo.mah",
+      "span": "stature",
+      "keywords": [
+        "heart seen",
+        "appearance deceiving",
+        "inner person",
+        "worth mislocated",
+        "divine perception",
+        "outward bypassed"
+      ]
+    },
+    "34236": {
+      "reference": "2Sa 22:28",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "haughty",
+      "keywords": [
+        "pride elevated",
+        "self elevation",
+        "divine opposition",
+        "humility receiving",
+        "will countered",
+        "posture inviting downfall"
+      ]
+    },
+    "34160": {
+      "reference": "2Ki 19:22",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "heights",
+      "keywords": [
+        "arrogance mocking",
+        "self elevation defiant",
+        "eyes lifted",
+        "divine offense",
+        "contempt sacred"
+      ]
+    },
+    "65755": {
+      "reference": "2Ki 19:22",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "raised",
+      "keywords": [
+        "will defiant",
+        "voice raised",
+        "spiritual aggression",
+        "self exaltation",
+        "pride attacking"
+      ]
+    },
+    "34161": {
+      "reference": "2Ki 19:23",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "heights",
+      "keywords": [
+        "boasting",
+        "pride conquest",
+        "self elevation",
+        "limits ignored",
+        "hubris expressed",
+        "inner pride metaphor"
+      ]
+    },
+    "34093": {
+      "reference": "Job 22:29",
+      "strongs": "H1466",
+      "transliteration": "ge.vah",
+      "span": "pride",
+      "keywords": [
+        "pride causing downfall",
+        "humiliation deserved",
+        "inner disposition",
+        "lowliness saved",
+        "pride embedded"
+      ]
+    },
+    "34092": {
+      "reference": "Job 33:17",
+      "strongs": "H1466",
+      "transliteration": "ge.vah",
+      "span": "pride",
+      "keywords": [
+        "pride suppressed",
+        "correction divine",
+        "disposition redirected",
+        "pride concealed",
+        "will turned",
+        "conduct reformed"
+      ]
+    },
+    "33983": {
+      "reference": "Job 35:12",
+      "strongs": "H1347",
+      "transliteration": "ga.on",
+      "span": "pride",
+      "keywords": [
+        "pride blocking",
+        "divine silence",
+        "access denied",
+        "heart hardening",
+        "prayer unanswered"
+      ]
+    },
+    "33949": {
+      "reference": "Job 40:11",
+      "strongs": "H1343",
+      "transliteration": "ge.eh",
+      "span": "proud",
+      "keywords": [
+        "self estimation inflated",
+        "pride posturing",
+        "divine humbling",
+        "elevation invited abasement",
+        "inner arrogance"
+      ]
+    },
+    "33951": {
+      "reference": "Job 40:12",
+      "strongs": "H1343",
+      "transliteration": "ge.eh",
+      "span": "proud",
+      "keywords": [
+        "pride elevation",
+        "wickedness aligned",
+        "standing undone",
+        "divine action",
+        "abasement deserved"
+      ]
+    },
+    "12089": {
+      "reference": "Job 41:34",
+      "strongs": "H1364",
+      "transliteration": "ga.vo.ah",
+      "span": "high",
+      "keywords": [
+        "self assertion supreme",
+        "dominance inner",
+        "pride unrivaled",
+        "surveying lofty",
+        "will unchallenged"
+      ]
+    },
+    "34614": {
+      "reference": "Job 41:34",
+      "strongs": "H7830",
+      "transliteration": "sha.chats",
+      "span": "pride",
+      "keywords": [
+        "boldness fierce",
+        "fearlessness haughty",
+        "self assertion",
+        "pride defining",
+        "spirit daunting"
+      ]
+    },
+    "33963": {
+      "reference": "Psa 10:2",
+      "strongs": "H1346",
+      "transliteration": "ga.a.vah",
+      "span": "arrogance",
+      "keywords": [
+        "arrogance driving",
+        "oppression motivated",
+        "pride agency",
+        "will pursuing",
+        "contempt powerful"
+      ]
+    },
+    "34166": {
+      "reference": "Psa 10:5",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "high",
+      "keywords": [
+        "pride blinding",
+        "divine standard unseen",
+        "perception blocked",
+        "arrogance shielding",
+        "judgment unreachable"
+      ]
+    },
+    "34241": {
+      "reference": "Psa 13:2",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "exalted",
+      "keywords": [
+        "sorrow prolonged",
+        "soul anguished",
+        "oppression felt",
+        "enemy elevated",
+        "inner counsel",
+        "grief sustained"
+      ]
+    },
+    "33964": {
+      "reference": "Psa 31:18",
+      "strongs": "H1346",
+      "transliteration": "ga.a.vah",
+      "span": "pride",
+      "keywords": [
+        "pride emboldening",
+        "speech contemptuous",
+        "disposition motivating",
+        "insolence inner",
+        "lying lips"
+      ]
+    },
+    "33965": {
+      "reference": "Psa 31:23",
+      "strongs": "H1346",
+      "transliteration": "ga.a.vah",
+      "span": "pride",
+      "keywords": [
+        "pride wilful",
+        "orientation chosen",
+        "retribution incurred",
+        "faithfulness contrasted",
+        "divine repaying"
+      ]
+    },
+    "33966": {
+      "reference": "Psa 36:11",
+      "strongs": "H1346",
+      "transliteration": "ga.a.vah",
+      "span": "arrogance",
+      "keywords": [
+        "arrogance aggressive",
+        "trampling force",
+        "pride threatening",
+        "vulnerability pressed",
+        "prayer protective"
+      ]
+    },
+    "34221": {
+      "reference": "Psa 40:4",
+      "strongs": "H7295",
+      "transliteration": "ra.hav",
+      "span": "proud",
+      "keywords": [
+        "trust divine",
+        "pride avoided",
+        "self assertion misleading",
+        "allurement resisted",
+        "straying warned"
+      ]
+    },
+    "34163": {
+      "reference": "Psa 56:2",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "proudly",
+      "keywords": [
+        "contempt felt",
+        "superiority inner",
+        "pride attacking",
+        "vulnerability trampled",
+        "elevation hostile"
+      ]
+    },
+    "33984": {
+      "reference": "Psa 59:12",
+      "strongs": "H1347",
+      "transliteration": "ga.on",
+      "span": "pride",
+      "keywords": [
+        "pride self trapping",
+        "arrogance snaring",
+        "self confidence ruining",
+        "mouth betraying",
+        "words ensnaring"
+      ]
+    },
+    "34243": {
+      "reference": "Psa 66:7",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "exalt",
+      "keywords": [
+        "self elevation rebellious",
+        "pride opposing",
+        "divine sovereignty resisted",
+        "will defiant",
+        "watchfulness divine"
+      ]
+    },
+    "34164": {
+      "reference": "Psa 73:8",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "loftily",
+      "keywords": [
+        "arrogance expressed",
+        "malice verbal",
+        "superiority felt",
+        "contempt downward",
+        "pride weaponized"
+      ]
+    },
+    "34244": {
+      "reference": "Psa 75:4",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "lift up",
+      "keywords": [
+        "self-exaltation impulse",
+        "boasting prohibited",
+        "will asserting",
+        "pride named",
+        "arrogance wicked"
+      ]
+    },
+    "34165": {
+      "reference": "Psa 75:5",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "high",
+      "keywords": [
+        "pride embodied",
+        "arrogance postured",
+        "will elevating",
+        "haughtiness verbal",
+        "self elevation prohibited"
+      ]
+    },
+    "34245": {
+      "reference": "Psa 75:5",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "lift up",
+      "keywords": [
+        "self exaltation",
+        "pride outward",
+        "haughtiness physical",
+        "will asserting",
+        "attitude manifesting"
+      ]
+    },
+    "34301": {
+      "reference": "Psa 75:6",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "lifting up",
+      "keywords": [
+        "self exaltation",
+        "pride groundless",
+        "will striving",
+        "elevation unearned",
+        "autonomy illusory"
+      ]
+    },
+    "34230": {
+      "reference": "Psa 75:7",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "lifting up",
+      "keywords": [
+        "sovereignty divine",
+        "pride undercut",
+        "self striving futile",
+        "elevation granted",
+        "humbling sovereign"
+      ]
+    },
+    "34264": {
+      "reference": "Psa 75:10",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "lifted up",
+      "keywords": [
+        "arrogance punished",
+        "self exaltation severed",
+        "pride reversed",
+        "righteous elevation",
+        "humiliation wicked"
+      ]
+    },
+    "33952": {
+      "reference": "Psa 94:2",
+      "strongs": "H1343",
+      "transliteration": "ge.eh",
+      "span": "proud",
+      "keywords": [
+        "arrogance judicial",
+        "pride offensive",
+        "self regard elevated",
+        "retribution deserved",
+        "divine opposition"
+      ]
+    },
+    "33953": {
+      "reference": "Psa 123:4",
+      "strongs": "H1343",
+      "transliteration": "ge.eh",
+      "span": "proud",
+      "keywords": [
+        "contempt proud",
+        "scorn crushing",
+        "soul overwhelmed",
+        "pride relational",
+        "victim suffering"
+      ]
+    },
+    "12086": {
+      "reference": "Psa 138:6",
+      "strongs": "H1364",
+      "transliteration": "ga.vo.ah",
+      "span": "haughty",
+      "keywords": [
+        "pride alienating",
+        "distance divine",
+        "haughtiness relational",
+        "heart closed",
+        "humility drawn"
+      ]
+    },
+    "34300": {
+      "reference": "Psa 138:6",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "high",
+      "keywords": [
+        "haughtiness distance",
+        "pride relational",
+        "humility favored",
+        "divine remoteness",
+        "heart posture"
+      ]
+    },
+    "33954": {
+      "reference": "Psa 140:5",
+      "strongs": "H1343",
+      "transliteration": "ge.eh",
+      "span": "arrogant",
+      "keywords": [
+        "arrogance aggressive",
+        "pride calculating",
+        "hostility hidden",
+        "contempt active",
+        "malice planned"
+      ]
+    },
+    "34246": {
+      "reference": "Psa 140:8",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "exalted",
+      "keywords": [
+        "exaltation feared",
+        "evil desire",
+        "wickedness rewarded",
+        "will plotting",
+        "pride enabled"
+      ]
+    },
+    "33958": {
+      "reference": "Pro 8:13",
+      "strongs": "H1344",
+      "transliteration": "ge.ah",
+      "span": "Pride",
+      "keywords": [
+        "pride hated",
+        "arrogance evil",
+        "divine hatred",
+        "fear displaced",
+        "wisdom opposing"
+      ]
+    },
+    "33985": {
+      "reference": "Pro 8:13",
+      "strongs": "H1347",
+      "transliteration": "ga.on",
+      "span": "arrogance",
+      "keywords": [
+        "arrogance incompatible",
+        "pride disposition",
+        "fear absent",
+        "wisdom hatred",
+        "inner evil"
+      ]
+    },
+    "34248": {
+      "reference": "Pro 14:29",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "exalts",
+      "keywords": [
+        "anger hasty",
+        "folly elevated",
+        "restraint absent",
+        "self control failing",
+        "passion ruling"
+      ]
+    },
+    "33955": {
+      "reference": "Pro 15:25",
+      "strongs": "H1343",
+      "transliteration": "ge.eh",
+      "span": "proud",
+      "keywords": [
+        "pride dismantled",
+        "divine opposition",
+        "arrogance punished",
+        "self building destroyed",
+        "humbling sovereign"
+      ]
+    },
+    "33978": {
+      "reference": "Pro 16:18",
+      "strongs": "H1347",
+      "transliteration": "ga.on",
+      "span": "Pride",
+      "keywords": [
+        "pride self-destructive",
+        "haughtiness spirit",
+        "destruction approaching",
+        "fall preceded",
+        "ruin trajectory"
+      ]
+    },
+    "33956": {
+      "reference": "Pro 16:19",
+      "strongs": "H1343",
+      "transliteration": "ge.eh",
+      "span": "proud",
+      "keywords": [
+        "pride powerful",
+        "lowliness commended",
+        "spirit humble",
+        "arrogance material",
+        "heart posture"
+      ]
+    },
+    "34055": {
+      "reference": "Pro 17:19",
+      "strongs": "H1361",
+      "transliteration": "ga.vah",
+      "span": "high",
+      "keywords": [
+        "self exaltation",
+        "arrogance destructive",
+        "pride seeking ruin",
+        "elevation false",
+        "strife loved"
+      ]
+    },
+    "33960": {
+      "reference": "Pro 29:23",
+      "strongs": "H1346",
+      "transliteration": "ga.a.vah",
+      "span": "pride",
+      "keywords": [
+        "pride self-defeating",
+        "humiliation resulting",
+        "lowliness honored",
+        "reversal inner",
+        "spirit humble"
+      ]
+    },
+    "12087": {
+      "reference": "Ecc 7:8",
+      "strongs": "H1364",
+      "transliteration": "ga.vo.ah",
+      "span": "proud",
+      "keywords": [
+        "pride spirit",
+        "haughtiness inner",
+        "patience contrasted",
+        "spirit disposition",
+        "arrogance worsening"
+      ]
+    },
+    "34233": {
+      "reference": "Isa 14:13",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "high",
+      "keywords": [
+        "will ascending",
+        "heart ambition",
+        "self exaltation divine",
+        "pride volitional",
+        "intention declared"
+      ]
+    },
+    "33943": {
+      "reference": "Isa 16:6",
+      "strongs": "H1341",
+      "transliteration": "ge",
+      "span": "proud",
+      "keywords": [
+        "pride settled",
+        "boasting idle",
+        "arrogance ungrounded",
+        "insolence driven",
+        "self importance"
+      ]
+    },
+    "34141": {
+      "reference": "Isa 26:5",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "height",
+      "keywords": [
+        "elevation dismantled",
+        "pride humbled",
+        "self status crushed",
+        "height reversed",
+        "divine humbling"
+      ]
+    },
+    "34024": {
+      "reference": "Isa 26:10",
+      "strongs": "H1348",
+      "transliteration": "ge.ut",
+      "span": "majesty",
+      "keywords": [
+        "perception closed",
+        "reverence absent",
+        "learning blocked",
+        "corruption habitual",
+        "blindness moral",
+        "majesty unseen"
+      ]
+    },
+    "34140": {
+      "reference": "Isa 37:23",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "heights",
+      "keywords": [
+        "arrogance upward",
+        "self aggrandizing",
+        "defiance voiced",
+        "mockery divine",
+        "pride gestured",
+        "reverence absent"
+      ]
+    },
+    "34304": {
+      "reference": "Isa 37:23",
+      "strongs": "H7311A",
+      "transliteration": "rum",
+      "span": "raised",
+      "keywords": [
+        "self assertion vocal",
+        "arrogance expressed",
+        "defiance directed",
+        "voice raised",
+        "pride outward",
+        "mockery divine"
+      ]
+    },
+    "34162": {
+      "reference": "Isa 37:24",
+      "strongs": "H4791",
+      "transliteration": "ma.rom",
+      "span": "heights",
+      "keywords": [
+        "boasting military",
+        "pride self congratulatory",
+        "self exaltation",
+        "conquest celebrated",
+        "arrogance voiced",
+        "defection hubris"
+      ]
+    },
+    "34053": {
+      "reference": "Jer 13:15",
+      "strongs": "H1361",
+      "transliteration": "ga.vah",
+      "span": "proud",
+      "keywords": [
+        "pride blocking",
+        "hearing obstructed",
+        "haughtiness",
+        "humility absent",
+        "attentiveness refused",
+        "will stiffening"
+      ]
+    },
+    "12090": {
+      "reference": "Eze 21:26",
+      "strongs": "H1364",
+      "transliteration": "ga.vo.ah",
+      "span": "exalted",
+      "keywords": [
+        "status overturned",
+        "exaltation reversed",
+        "pride humbled",
+        "divine restructuring",
+        "hierarchy inverted",
+        "self elevation exposed"
+      ]
+    },
+    "34094": {
+      "reference": "Dan 4:37",
+      "strongs": "H1467",
+      "transliteration": "ge.vah",
+      "span": "pride",
+      "keywords": [
+        "pride habitual",
+        "posture proud",
+        "humbling divine",
+        "walking arrogance",
+        "will subdued",
+        "recognition forced"
+      ]
+    },
+    "33928": {
+      "reference": "Mar 7:22",
+      "strongs": "G5243",
+      "transliteration": "huperēfania",
+      "span": "pride",
+      "keywords": [
+        "heart sourced",
+        "pride constitutional",
+        "corruption interior",
+        "impulse cluster",
+        "inner vice",
+        "self elevation"
+      ]
+    },
+    "65605": {
+      "reference": "Mar 7:22",
+      "strongs": "G5243",
+      "transliteration": "huperēfania",
+      "span": "pride",
+      "keywords": [
+        "pride constitutional",
+        "heart sourced",
+        "corruption interior",
+        "inner vice",
+        "impulse cluster",
+        "self elevation"
+      ]
+    },
+    "60870": {
+      "reference": "Luk 16:15",
+      "strongs": "G5308",
+      "transliteration": "hupsēlos",
+      "span": "exalted",
+      "keywords": [
+        "self justifying",
+        "honor seeking",
+        "esteem distorted",
+        "divine abomination",
+        "heart exposed",
+        "pride relational"
+      ]
+    },
+    "33932": {
+      "reference": "Rom 1:30",
+      "strongs": "G5244",
+      "transliteration": "huperēfanos",
+      "span": "haughty",
+      "keywords": [
+        "haughtiness",
+        "self elevation",
+        "contempt others",
+        "mind disordered",
+        "arrogance clustered",
+        "pride insolent"
+      ]
+    },
+    "60876": {
+      "reference": "Rom 11:20",
+      "strongs": "G5308",
+      "transliteration": "hupsēlos",
+      "span": "become proud",
+      "keywords": [
+        "pride warned",
+        "self elevation",
+        "fear absent",
+        "arrogance emerging",
+        "humility needed",
+        "faith grounding"
+      ]
+    },
+    "60877": {
+      "reference": "Rom 12:16",
+      "strongs": "G5308",
+      "transliteration": "hupsēlos",
+      "span": "haughty",
+      "keywords": [
+        "haughtiness",
+        "self elevation",
+        "solidarity fractured",
+        "harmony opposed",
+        "pride relational",
+        "humility contrasted"
+      ]
+    },
+    "33933": {
+      "reference": "2Ti 3:2",
+      "strongs": "G5244",
+      "transliteration": "huperēfanos",
+      "span": "arrogant",
+      "keywords": [
+        "arrogance dispositional",
+        "self exaltation",
+        "pride clustered",
+        "self love root",
+        "regard absent",
+        "disposition end-times"
+      ]
+    },
+    "1899": {
+      "reference": "2Ti 3:2",
+      "strongs": "G5367",
+      "transliteration": "filautos",
+      "span": "lovers of self",
+      "keywords": [
+        "self love",
+        "orientation inward",
+        "pride rooted",
+        "arrogance sourced",
+        "self exaltation",
+        "regard displaced"
+      ]
+    },
+    "36675": {
+      "reference": "2Ti 3:3",
+      "strongs": "G0193",
+      "transliteration": "akratēs",
+      "span": "self-control",
+      "keywords": [
+        "will unrestrained",
+        "impulse unchecked",
+        "self control absent",
+        "discipline collapsed",
+        "restraint absent",
+        "inner collapse"
+      ]
+    },
+    "33931": {
+      "reference": "Jam 4:6",
+      "strongs": "G5244",
+      "transliteration": "huperēfanos",
+      "span": "proud",
+      "keywords": [
+        "pride opposed",
+        "divine resistance",
+        "grace forfeited",
+        "arrogance relational",
+        "self elevation",
+        "humility contrasted"
+      ]
+    },
+    "33934": {
+      "reference": "1Pe 5:5",
+      "strongs": "G5244",
+      "transliteration": "huperēfanos",
+      "span": "proud",
+      "keywords": [
+        "pride opposed",
+        "divine resistance",
+        "humility clothed",
+        "arrogance relational",
+        "grace forfeited",
+        "disposition submissive"
+      ]
+    }
+  }
+}

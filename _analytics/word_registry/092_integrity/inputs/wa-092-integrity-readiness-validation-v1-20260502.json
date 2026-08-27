@@ -1,0 +1,122 @@
+{
+  "meta": {
+    "registry_no": 92,
+    "word": "integrity",
+    "generated_at": "2026-05-02T15:24:55Z",
+    "schema_expected": "3.17.0",
+    "checks_run": 15
+  },
+  "verdict_summary": {
+    "PASS": 12,
+    "WARN": 3,
+    "FAIL": 0
+  },
+  "overall": "READY",
+  "checks": [
+    {
+      "id": "C01",
+      "label": "Schema version",
+      "category": "schema",
+      "verdict": "PASS",
+      "detail": "schema_version = 3.17.0"
+    },
+    {
+      "id": "C02",
+      "label": "Engine audit clean",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "last_automation_run = 'AUDITED'"
+    },
+    {
+      "id": "C03",
+      "label": "Phase 1 status",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "phase1_status = 'Complete'"
+    },
+    {
+      "id": "C04",
+      "label": "Verse Context status",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "verse_context_status = 'Complete'"
+    },
+    {
+      "id": "C05",
+      "label": "Dimension Review status",
+      "category": "registry",
+      "verdict": "PASS",
+      "detail": "dim_review_status = 'Complete' (version: wa-dimensionreview-instruction-v3_3-20260418)"
+    },
+    {
+      "id": "C06",
+      "label": "Phase A prose captured",
+      "category": "prose",
+      "verdict": "PASS",
+      "detail": "6/6 sa_s1_d* rows present"
+    },
+    {
+      "id": "C07",
+      "label": "Readiness output present",
+      "category": "filesystem",
+      "verdict": "PASS",
+      "detail": "latest .md: wa-092-integrity-readiness-output-v6-20260502.md; latest .json: wa-092-integrity-readiness-output-v6-20260502.json"
+    },
+    {
+      "id": "C08",
+      "label": "Term inventory health",
+      "category": "terms",
+      "verdict": "PASS",
+      "detail": "3 OWNER terms, all with ≥1 verse"
+    },
+    {
+      "id": "C09",
+      "label": "All groups have dimensions",
+      "category": "dimensions",
+      "verdict": "PASS",
+      "detail": "5/5 groups have dimension assignments"
+    },
+    {
+      "id": "C10",
+      "label": "All groups have anchors",
+      "category": "dimensions",
+      "verdict": "PASS",
+      "detail": "5/5 groups have ≥1 anchor"
+    },
+    {
+      "id": "C11",
+      "label": "Set-aside ratio",
+      "category": "vc",
+      "verdict": "WARN",
+      "detail": "2 group(s) with set-aside > 90%: ['934-001 (45/5 = 900%)', '934-002 (45/1 = 4500%)']. Possible VC drift; review Stage 2a."
+    },
+    {
+      "id": "C12",
+      "label": "Legacy-VC caveat",
+      "category": "vc",
+      "verdict": "PASS",
+      "detail": "all 3 OWNER terms have vc_status set under v3 contracts"
+    },
+    {
+      "id": "C13",
+      "label": "Dimension confidence",
+      "category": "dimensions",
+      "verdict": "WARN",
+      "detail": "dimension_confidence: KEYWORD_WEAK: 5. No 'confirmed' assignments — Session B can promote during Stage 2."
+    },
+    {
+      "id": "C14",
+      "label": "No open DATA_ANOMALY_* findings",
+      "category": "findings",
+      "verdict": "PASS",
+      "detail": "no open DATA_ANOMALY_* findings for this registry"
+    },
+    {
+      "id": "C15",
+      "label": "Researcher fields",
+      "category": "registry",
+      "verdict": "WARN",
+      "detail": "inference_note: absent; word_synopsis: absent. Researcher-authored fields are informational; absence is not blocking."
+    }
+  ]
+}

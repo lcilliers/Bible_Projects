@@ -1,0 +1,1431 @@
+{
+  "_meta": {
+    "description": "Lookup table extracts for patch specification reference",
+    "exported_at": "2026-03-26T06:33:46Z",
+    "tables_included": [
+      "wa_quality_flag_types",
+      "phase2_flag_types",
+      "wa_crosslink_type",
+      "books",
+      "book_code_variants",
+      "sources",
+      "themes"
+    ]
+  },
+  "lookups": {
+    "wa_quality_flag_types": [
+      {
+        "id": 1,
+        "flag_group": "DATA_COVERAGE",
+        "flag_code": "NO_VERSES",
+        "description": "No verse records found for this term in the source data"
+      },
+      {
+        "id": 2,
+        "flag_group": "DATA_COVERAGE",
+        "flag_code": "THIN_DATA",
+        "description": "Fewer verse occurrences than expected; analysis may be limited"
+      },
+      {
+        "id": 3,
+        "flag_group": "DATA_COVERAGE",
+        "flag_code": "SMALL_VERSE_SAMPLE",
+        "description": "Only a partial sample of available verses was captured"
+      },
+      {
+        "id": 4,
+        "flag_group": "DATA_COVERAGE",
+        "flag_code": "NO_WORD_ANALYSIS",
+        "description": "No word-level analysis is available for this term"
+      },
+      {
+        "id": 23,
+        "flag_group": "DATA_COVERAGE",
+        "flag_code": "SPAN_RESOLUTION_CONFLICT",
+        "description": "Queried Strong's not found in any verse span after suffix resolution. Verse set is empty. Manual STEP UI verification required."
+      },
+      {
+        "id": 24,
+        "flag_group": "DATA_COVERAGE",
+        "flag_code": "SPAN_FILTER_APPLIED",
+        "description": "One or more verse records were discarded by span filter during fetch or AUDIT back-population. verse_count_filtered in term_fetch_log records the count."
+      },
+      {
+        "id": 36,
+        "flag_group": "DATA_COVERAGE",
+        "flag_code": "HIGH_FREQUENCY_ANCHOR",
+        "description": null
+      },
+      {
+        "id": 47,
+        "flag_group": "DATA_COVERAGE",
+        "flag_code": "PROSE_ONLY_MEANING",
+        "description": "Meaning stored as single prose block — STEP medium_def contains no structured sense numbering for this term. No further subdivision available."
+      }
+    ],
+    "phase2_flag_types": [
+      {
+        "id": 1,
+        "flag_code": "GOD_AS_SUBJECT",
+        "description": "God experiences, enacts, or is the direct subject of this inner state or action in at least one meaning sub-definition or verse"
+      },
+      {
+        "id": 2,
+        "flag_code": "CAUSATIVE_OF_INNER_STATE",
+        "description": "Term has an explicit causative grammatical form: Hiphil or Piel (Hebrew) or stated causative sense (Greek); causes the inner state in another"
+      },
+      {
+        "id": 3,
+        "flag_code": "SOMATIC_INNER_LINK",
+        "description": "Meaning block or verses connect this inner state to a specific bodily organ or physical process as its seat or origin"
+      },
+      {
+        "id": 4,
+        "flag_code": "BODY_INNER_EXPRESSION",
+        "description": "Inner state manifests through visible outward physical behaviour such as trembling, weeping, prostration, or the face falling"
+      },
+      {
+        "id": 5,
+        "flag_code": "NT_FACULTY_NAMING",
+        "description": "Greek term directly names an inner faculty (kardia, pneuma, psuche, nous); faculty-naming warrants attention in Session B"
+      },
+      {
+        "id": 6,
+        "flag_code": "GENERATION_RESOLUTION_PAIR",
+        "description": "Hebrew-Aramaic or Hebrew-Greek pair resolving to the same referent across language or testament boundary"
+      },
+      {
+        "id": 7,
+        "flag_code": "CROSS_PART_ROOT",
+        "description": "Term shares a root family with one or more terms in another part of this split registry; root spans the part boundary"
+      },
+      {
+        "id": 8,
+        "flag_code": "THIN_DATA",
+        "description": "Fewer than 5 verse records or very low occurrence count; dataset too thin for confident Session B analysis"
+      },
+      {
+        "id": 9,
+        "flag_code": "SMALL_VERSE_SAMPLE",
+        "description": "Verse count is less than 20 percent of stated occurrence count for terms with 20 or more occurrences; sample is not representative"
+      },
+      {
+        "id": 10,
+        "flag_code": "DUPLICATE_RESOLVED",
+        "description": "Term appeared as a duplicate entry in the source data; resolved and recorded as a single term record with a quality note"
+      },
+      {
+        "id": 11,
+        "flag_code": "NO_WORD_ANALYSIS",
+        "description": "No STEP word analysis data available for this term; meaning and verse records are absent; extraction deferred"
+      },
+      {
+        "id": 12,
+        "flag_code": "CONSOLIDATION_CANDIDATE",
+        "description": "Term is likely to merge with a closely related entry during Session B; warrants review before final dataset construction"
+      },
+      {
+        "id": 13,
+        "flag_code": "THEOLOGICAL_ANCHOR",
+        "description": "Framework A/B intersection term  Session B analysis deferred"
+      },
+      {
+        "id": 14,
+        "flag_code": "SOMATIC_EXPRESSION",
+        "description": "Term expresses inner state through somatic or body-language patterns"
+      },
+      {
+        "id": 15,
+        "flag_code": "HIGH_FREQUENCY_ANCHOR",
+        "description": "Term occurs 200 or more times; high frequency makes it a primary anchor for its semantic field"
+      },
+      {
+        "id": 16,
+        "flag_code": "SEMANTIC_RANGE_BREADTH",
+        "description": "Term covers 4 or more distinct semantic domains; breadth warrants attention in Session B cross-part synthesis"
+      },
+      {
+        "id": 17,
+        "flag_code": "MULTI_REGISTRY_ANCHOR",
+        "description": "Term appears as a cross-reference in 3 or more registries; functions as a conceptual anchor across multiple word families"
+      },
+      {
+        "id": 18,
+        "flag_code": "DIVINE_HUMAN_PARALLEL",
+        "description": "God and humans appear as subject of this term in structurally parallel contexts within the verse set"
+      },
+      {
+        "id": 19,
+        "flag_code": "ESCHATOLOGICAL_USAGE",
+        "description": "Term is predominant in eschatological or apocalyptic passages; eschatological register warrants attention in Session B"
+      },
+      {
+        "id": 20,
+        "flag_code": "WISDOM_LITERATURE_CONCENTRATION",
+        "description": "Term is predominant in Proverbs, Job, or Ecclesiastes; wisdom literature concentration warrants attention in Session B"
+      },
+      {
+        "id": 21,
+        "flag_code": "METAPHOR_ROOT",
+        "description": "Term meaning is grounded in concrete physical or sensory metaphor rather than direct abstract description"
+      },
+      {
+        "id": 22,
+        "flag_code": "RELATIONAL_DIRECTION",
+        "description": "Term is inherently directed toward another person, group, or God; relational orientation is intrinsic to its meaning"
+      },
+      {
+        "id": 23,
+        "flag_code": "VOLITIONAL_COMPONENT",
+        "description": "Term carries a dimension of will, choice, or intention alongside or within its inner-state meaning"
+      },
+      {
+        "id": 24,
+        "flag_code": "CROSS_TESTAMENT_SHIFT",
+        "description": "Term exhibits a meaningful semantic shift between OT and NT usage; shift warrants attention in Session B"
+      },
+      {
+        "id": 25,
+        "flag_code": "ARAMAIC_FORM",
+        "description": "Term is an Aramaic form of a Hebrew root occurring in Daniel, Ezra, or post-exilic contexts"
+      }
+    ],
+    "wa_crosslink_type": [
+      {
+        "id": 1,
+        "type_code": "SHARED_TERM",
+        "description": "The same Hebrew or Greek term appears in both word studies"
+      },
+      {
+        "id": 2,
+        "type_code": "SEMANTIC_OVERLAP",
+        "description": "The two registries share overlapping meaning space"
+      },
+      {
+        "id": 3,
+        "type_code": "SHARED_ROOT",
+        "description": "The registries share a common etymological root"
+      },
+      {
+        "id": 4,
+        "type_code": "SHARED_VERSE",
+        "description": "The same verse references appear in both word studies"
+      },
+      {
+        "id": 5,
+        "type_code": "THEOLOGICAL",
+        "description": "The registries are connected by a theological concept or theme"
+      },
+      {
+        "id": 6,
+        "type_code": "CO_OCCURRENCE",
+        "description": "Terms from the two registries frequently appear together in passages"
+      },
+      {
+        "id": 7,
+        "type_code": "SEMANTIC_OPPOSITION",
+        "description": "The registries represent antonyms or semantic contrasts"
+      },
+      {
+        "id": 8,
+        "type_code": "SISTER_REGISTRY",
+        "description": "Parallel registries covering closely related vocabulary (e.g. power/authority)"
+      },
+      {
+        "id": 9,
+        "type_code": "OVERLAPPING_DOMAIN",
+        "description": "Registries sharing terms with overlapping semantic domains"
+      },
+      {
+        "id": 10,
+        "type_code": "CAUSATIVE_CHAIN",
+        "description": "Causal relationship between inner states across registries"
+      },
+      {
+        "id": 11,
+        "type_code": "THEMATIC_LINK",
+        "description": "Thematic connection identified during Session B analysis"
+      }
+    ],
+    "books": [
+      {
+        "id": 1,
+        "name": "Genesis",
+        "abbreviation": "Gen",
+        "testament": "OT",
+        "book_order": 1,
+        "full_name": "The First Book of Moses Called Genesis",
+        "short_code": "Gen",
+        "verse_count": 362,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 2,
+        "name": "Exodus",
+        "abbreviation": "Exo",
+        "testament": "OT",
+        "book_order": 2,
+        "full_name": "The Second Book of Moses Called Exodus",
+        "short_code": "Exo",
+        "verse_count": 306,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 3,
+        "name": "Leviticus",
+        "abbreviation": "Lev",
+        "testament": "OT",
+        "book_order": 3,
+        "full_name": "The Third Book of Moses Called Leviticus",
+        "short_code": "Lev",
+        "verse_count": 238,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 4,
+        "name": "Numbers",
+        "abbreviation": "Num",
+        "testament": "OT",
+        "book_order": 4,
+        "full_name": "The Fourth Book of Moses Called Numbers",
+        "short_code": "Num",
+        "verse_count": 188,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 5,
+        "name": "Deuteronomy",
+        "abbreviation": "Deu",
+        "testament": "OT",
+        "book_order": 5,
+        "full_name": "The Fifth Book of Moses Called Deuteronomy",
+        "short_code": "Deu",
+        "verse_count": 321,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 6,
+        "name": "Joshua",
+        "abbreviation": "Jos",
+        "testament": "OT",
+        "book_order": 6,
+        "full_name": "The Book of Joshua",
+        "short_code": "Jos",
+        "verse_count": 115,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 7,
+        "name": "Judges",
+        "abbreviation": "Judg",
+        "testament": "OT",
+        "book_order": 7,
+        "full_name": "The Book of Judges",
+        "short_code": "Judg",
+        "verse_count": 47,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 8,
+        "name": "Ruth",
+        "abbreviation": "Rut",
+        "testament": "OT",
+        "book_order": 8,
+        "full_name": "The Book of Ruth",
+        "short_code": "Rut",
+        "verse_count": 17,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 9,
+        "name": "1 Samuel",
+        "abbreviation": "1Sa",
+        "testament": "OT",
+        "book_order": 9,
+        "full_name": "The First Book of Samuel",
+        "short_code": "1Sa",
+        "verse_count": 198,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 10,
+        "name": "2 Samuel",
+        "abbreviation": "2Sa",
+        "testament": "OT",
+        "book_order": 10,
+        "full_name": "The Second Book of Samuel",
+        "short_code": "2Sa",
+        "verse_count": 161,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 11,
+        "name": "1 Kings",
+        "abbreviation": "1Ki",
+        "testament": "OT",
+        "book_order": 11,
+        "full_name": "The First Book of Kings",
+        "short_code": "1Ki",
+        "verse_count": 160,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 12,
+        "name": "2 Kings",
+        "abbreviation": "2Ki",
+        "testament": "OT",
+        "book_order": 12,
+        "full_name": "The Second Book of Kings",
+        "short_code": "2Ki",
+        "verse_count": 122,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 13,
+        "name": "1 Chronicles",
+        "abbreviation": "1Ch",
+        "testament": "OT",
+        "book_order": 13,
+        "full_name": "The First Book of Chronicles",
+        "short_code": "1Ch",
+        "verse_count": 70,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 14,
+        "name": "2 Chronicles",
+        "abbreviation": "2Ch",
+        "testament": "OT",
+        "book_order": 14,
+        "full_name": "The Second Book of Chronicles",
+        "short_code": "2Ch",
+        "verse_count": 161,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 15,
+        "name": "Ezra",
+        "abbreviation": "Ezr",
+        "testament": "OT",
+        "book_order": 15,
+        "full_name": "The Book of Ezra",
+        "short_code": "Ezr",
+        "verse_count": 50,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 16,
+        "name": "Nehemiah",
+        "abbreviation": "Neh",
+        "testament": "OT",
+        "book_order": 16,
+        "full_name": "The Book of Nehemiah",
+        "short_code": "Neh",
+        "verse_count": 55,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 17,
+        "name": "Esther",
+        "abbreviation": "Est",
+        "testament": "OT",
+        "book_order": 17,
+        "full_name": "The Book of Esther",
+        "short_code": "Est",
+        "verse_count": 33,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 18,
+        "name": "Job",
+        "abbreviation": "Job",
+        "testament": "OT",
+        "book_order": 18,
+        "full_name": "The Book of Job",
+        "short_code": "Job",
+        "verse_count": 331,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 19,
+        "name": "Psalms",
+        "abbreviation": "Psa",
+        "testament": "OT",
+        "book_order": 19,
+        "full_name": "The Book of Psalms",
+        "short_code": "Psa",
+        "verse_count": 934,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 20,
+        "name": "Proverbs",
+        "abbreviation": "Pro",
+        "testament": "OT",
+        "book_order": 20,
+        "full_name": "The Book of Proverbs",
+        "short_code": "Pro",
+        "verse_count": 426,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 21,
+        "name": "Ecclesiastes",
+        "abbreviation": "Ecc",
+        "testament": "OT",
+        "book_order": 21,
+        "full_name": "The Book of Ecclesiastes",
+        "short_code": "Ecc",
+        "verse_count": 117,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 22,
+        "name": "Song of Solomon",
+        "abbreviation": "Son",
+        "testament": "OT",
+        "book_order": 22,
+        "full_name": "The Song of Solomon",
+        "short_code": "Son",
+        "verse_count": 61,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 23,
+        "name": "Isaiah",
+        "abbreviation": "Isa",
+        "testament": "OT",
+        "book_order": 23,
+        "full_name": "The Book of Isaiah",
+        "short_code": "Isa",
+        "verse_count": 443,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 24,
+        "name": "Jeremiah",
+        "abbreviation": "Jer",
+        "testament": "OT",
+        "book_order": 24,
+        "full_name": "The Book of Jeremiah",
+        "short_code": "Jer",
+        "verse_count": 412,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 25,
+        "name": "Lamentations",
+        "abbreviation": "Lam",
+        "testament": "OT",
+        "book_order": 25,
+        "full_name": "The Lamentations of Jeremiah",
+        "short_code": "Lam",
+        "verse_count": 72,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 26,
+        "name": "Ezekiel",
+        "abbreviation": "Eze",
+        "testament": "OT",
+        "book_order": 26,
+        "full_name": "The Book of Ezekiel",
+        "short_code": "Eze",
+        "verse_count": 344,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 27,
+        "name": "Daniel",
+        "abbreviation": "Dan",
+        "testament": "OT",
+        "book_order": 27,
+        "full_name": "The Book of Daniel",
+        "short_code": "Dan",
+        "verse_count": 112,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 28,
+        "name": "Hosea",
+        "abbreviation": "Hos",
+        "testament": "OT",
+        "book_order": 28,
+        "full_name": "The Book of Hosea",
+        "short_code": "Hos",
+        "verse_count": 76,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 29,
+        "name": "Joel",
+        "abbreviation": "Joe",
+        "testament": "OT",
+        "book_order": 29,
+        "full_name": "The Book of Joel",
+        "short_code": "Joe",
+        "verse_count": 21,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 30,
+        "name": "Amos",
+        "abbreviation": "Amo",
+        "testament": "OT",
+        "book_order": 30,
+        "full_name": "The Book of Amos",
+        "short_code": "Amo",
+        "verse_count": 38,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 31,
+        "name": "Obadiah",
+        "abbreviation": "Obd",
+        "testament": "OT",
+        "book_order": 31,
+        "full_name": "The Book of Obadiah",
+        "short_code": "Obd",
+        "verse_count": 0,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 32,
+        "name": "Jonah",
+        "abbreviation": "Jon",
+        "testament": "OT",
+        "book_order": 32,
+        "full_name": "The Book of Jonah",
+        "short_code": "Jon",
+        "verse_count": 19,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 33,
+        "name": "Micah",
+        "abbreviation": "Mic",
+        "testament": "OT",
+        "book_order": 33,
+        "full_name": "The Book of Micah",
+        "short_code": "Mic",
+        "verse_count": 47,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 34,
+        "name": "Nahum",
+        "abbreviation": "Nah",
+        "testament": "OT",
+        "book_order": 34,
+        "full_name": "The Book of Nahum",
+        "short_code": "Nah",
+        "verse_count": 15,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 35,
+        "name": "Habakkuk",
+        "abbreviation": "Hab",
+        "testament": "OT",
+        "book_order": 35,
+        "full_name": "The Book of Habakkuk",
+        "short_code": "Hab",
+        "verse_count": 21,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 36,
+        "name": "Zephaniah",
+        "abbreviation": "Zep",
+        "testament": "OT",
+        "book_order": 36,
+        "full_name": "The Book of Zephaniah",
+        "short_code": "Zep",
+        "verse_count": 22,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 37,
+        "name": "Haggai",
+        "abbreviation": "Hag",
+        "testament": "OT",
+        "book_order": 37,
+        "full_name": "The Book of Haggai",
+        "short_code": "Hag",
+        "verse_count": 10,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 38,
+        "name": "Zechariah",
+        "abbreviation": "Zec",
+        "testament": "OT",
+        "book_order": 38,
+        "full_name": "The Book of Zechariah",
+        "short_code": "Zec",
+        "verse_count": 59,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 39,
+        "name": "Malachi",
+        "abbreviation": "Mal",
+        "testament": "OT",
+        "book_order": 39,
+        "full_name": "The Book of Malachi",
+        "short_code": "Mal",
+        "verse_count": 21,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 40,
+        "name": "Matthew",
+        "abbreviation": "Mat",
+        "testament": "NT",
+        "book_order": 40,
+        "full_name": "The Gospel According to Matthew",
+        "short_code": "Mat",
+        "verse_count": 209,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 41,
+        "name": "Mark",
+        "abbreviation": "Mar",
+        "testament": "NT",
+        "book_order": 41,
+        "full_name": "The Gospel According to Mark",
+        "short_code": "Mar",
+        "verse_count": 121,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 42,
+        "name": "Luke",
+        "abbreviation": "Luk",
+        "testament": "NT",
+        "book_order": 42,
+        "full_name": "The Gospel According to Luke",
+        "short_code": "Luk",
+        "verse_count": 211,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 43,
+        "name": "John",
+        "abbreviation": "Joh",
+        "testament": "NT",
+        "book_order": 43,
+        "full_name": "The Gospel According to John",
+        "short_code": "Joh",
+        "verse_count": 151,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 44,
+        "name": "Acts",
+        "abbreviation": "Act",
+        "testament": "NT",
+        "book_order": 44,
+        "full_name": "The Acts of the Apostles",
+        "short_code": "Act",
+        "verse_count": 254,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 45,
+        "name": "Romans",
+        "abbreviation": "Rom",
+        "testament": "NT",
+        "book_order": 45,
+        "full_name": "The Epistle of Paul to the Romans",
+        "short_code": "Rom",
+        "verse_count": 167,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 46,
+        "name": "1 Corinthians",
+        "abbreviation": "1Co",
+        "testament": "NT",
+        "book_order": 46,
+        "full_name": "The First Epistle of Paul to the Corinthians",
+        "short_code": "1Cor",
+        "verse_count": 154,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 47,
+        "name": "2 Corinthians",
+        "abbreviation": "2Co",
+        "testament": "NT",
+        "book_order": 47,
+        "full_name": "The Second Epistle of Paul to the Corinthians",
+        "short_code": "2Cor",
+        "verse_count": 126,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 48,
+        "name": "Galatians",
+        "abbreviation": "Gal",
+        "testament": "NT",
+        "book_order": 48,
+        "full_name": "The Epistle of Paul to the Galatians",
+        "short_code": "Gal",
+        "verse_count": 49,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 49,
+        "name": "Ephesians",
+        "abbreviation": "Eph",
+        "testament": "NT",
+        "book_order": 49,
+        "full_name": "The Epistle of Paul to the Ephesians",
+        "short_code": "Eph",
+        "verse_count": 69,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 50,
+        "name": "Philippians",
+        "abbreviation": "Php",
+        "testament": "NT",
+        "book_order": 50,
+        "full_name": "The Epistle of Paul to the Philippians",
+        "short_code": "Php",
+        "verse_count": 46,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 51,
+        "name": "Colossians",
+        "abbreviation": "Col",
+        "testament": "NT",
+        "book_order": 51,
+        "full_name": "The Epistle of Paul to the Colossians",
+        "short_code": "Col",
+        "verse_count": 41,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 52,
+        "name": "1 Thessalonians",
+        "abbreviation": "1Th",
+        "testament": "NT",
+        "book_order": 52,
+        "full_name": "The First Epistle of Paul to the Thessalonians",
+        "short_code": "1Th",
+        "verse_count": 42,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 53,
+        "name": "2 Thessalonians",
+        "abbreviation": "2Th",
+        "testament": "NT",
+        "book_order": 53,
+        "full_name": "The Second Epistle of Paul to the Thessalonians",
+        "short_code": "2Th",
+        "verse_count": 19,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 54,
+        "name": "1 Timothy",
+        "abbreviation": "1Ti",
+        "testament": "NT",
+        "book_order": 54,
+        "full_name": "The First Epistle of Paul to Timothy",
+        "short_code": "1Ti",
+        "verse_count": 31,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 55,
+        "name": "2 Timothy",
+        "abbreviation": "2Ti",
+        "testament": "NT",
+        "book_order": 55,
+        "full_name": "The Second Epistle of Paul to Timothy",
+        "short_code": "2Ti",
+        "verse_count": 25,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 56,
+        "name": "Titus",
+        "abbreviation": "Tit",
+        "testament": "NT",
+        "book_order": 56,
+        "full_name": "The Epistle of Paul to Titus",
+        "short_code": "Tit",
+        "verse_count": 17,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 57,
+        "name": "Philemon",
+        "abbreviation": "Phm",
+        "testament": "NT",
+        "book_order": 57,
+        "full_name": "The Epistle of Paul to Philemon",
+        "short_code": "Phm",
+        "verse_count": 0,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 58,
+        "name": "Hebrews",
+        "abbreviation": "Heb",
+        "testament": "NT",
+        "book_order": 58,
+        "full_name": "The Epistle to the Hebrews",
+        "short_code": "Heb",
+        "verse_count": 90,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 59,
+        "name": "James",
+        "abbreviation": "Jam",
+        "testament": "NT",
+        "book_order": 59,
+        "full_name": "The General Epistle of James",
+        "short_code": "Jam",
+        "verse_count": 51,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 60,
+        "name": "1 Peter",
+        "abbreviation": "1Pe",
+        "testament": "NT",
+        "book_order": 60,
+        "full_name": "The First Epistle General of Peter",
+        "short_code": "1Pe",
+        "verse_count": 54,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 61,
+        "name": "2 Peter",
+        "abbreviation": "2Pe",
+        "testament": "NT",
+        "book_order": 61,
+        "full_name": "The Second Epistle General of Peter",
+        "short_code": "2Pe",
+        "verse_count": 26,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 62,
+        "name": "1 John",
+        "abbreviation": "1Jn",
+        "testament": "NT",
+        "book_order": 62,
+        "full_name": "The First Epistle General of John",
+        "short_code": "1Jn",
+        "verse_count": 60,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 63,
+        "name": "2 John",
+        "abbreviation": "2Jn",
+        "testament": "NT",
+        "book_order": 63,
+        "full_name": "The Second Epistle General of John",
+        "short_code": "2Jn",
+        "verse_count": 4,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 64,
+        "name": "3 John",
+        "abbreviation": "3Jn",
+        "testament": "NT",
+        "book_order": 64,
+        "full_name": "The Third Epistle General of John",
+        "short_code": "3Jn",
+        "verse_count": 8,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 65,
+        "name": "Jude",
+        "abbreviation": "Jud",
+        "testament": "NT",
+        "book_order": 65,
+        "full_name": "The General Epistle of Jude",
+        "short_code": "Jud",
+        "verse_count": 1,
+        "last_updated": "2026-03-16T12:44:41"
+      },
+      {
+        "id": 66,
+        "name": "Revelation",
+        "abbreviation": "Rev",
+        "testament": "NT",
+        "book_order": 66,
+        "full_name": "The Revelation of Jesus Christ",
+        "short_code": "Rev",
+        "verse_count": 123,
+        "last_updated": "2026-03-16T12:44:41"
+      }
+    ],
+    "book_code_variants": [
+      {
+        "code": "Gen",
+        "book_id": 1
+      },
+      {
+        "code": "Exo",
+        "book_id": 2
+      },
+      {
+        "code": "Exod",
+        "book_id": 2
+      },
+      {
+        "code": "Lev",
+        "book_id": 3
+      },
+      {
+        "code": "Num",
+        "book_id": 4
+      },
+      {
+        "code": "Deu",
+        "book_id": 5
+      },
+      {
+        "code": "Deut",
+        "book_id": 5
+      },
+      {
+        "code": "Jos",
+        "book_id": 6
+      },
+      {
+        "code": "Josh",
+        "book_id": 6
+      },
+      {
+        "code": "Judg",
+        "book_id": 7
+      },
+      {
+        "code": "Rut",
+        "book_id": 8
+      },
+      {
+        "code": "Ruth",
+        "book_id": 8
+      },
+      {
+        "code": "1Sa",
+        "book_id": 9
+      },
+      {
+        "code": "1Sam",
+        "book_id": 9
+      },
+      {
+        "code": "2Sa",
+        "book_id": 10
+      },
+      {
+        "code": "2Sam",
+        "book_id": 10
+      },
+      {
+        "code": "1Kgs",
+        "book_id": 11
+      },
+      {
+        "code": "1Ki",
+        "book_id": 11
+      },
+      {
+        "code": "2Kgs",
+        "book_id": 12
+      },
+      {
+        "code": "2Ki",
+        "book_id": 12
+      },
+      {
+        "code": "1Ch",
+        "book_id": 13
+      },
+      {
+        "code": "1Chr",
+        "book_id": 13
+      },
+      {
+        "code": "2Ch",
+        "book_id": 14
+      },
+      {
+        "code": "2Chr",
+        "book_id": 14
+      },
+      {
+        "code": "Ezr",
+        "book_id": 15
+      },
+      {
+        "code": "Ezra",
+        "book_id": 15
+      },
+      {
+        "code": "Neh",
+        "book_id": 16
+      },
+      {
+        "code": "Est",
+        "book_id": 17
+      },
+      {
+        "code": "Esth",
+        "book_id": 17
+      },
+      {
+        "code": "Job",
+        "book_id": 18
+      },
+      {
+        "code": "Ps",
+        "book_id": 19
+      },
+      {
+        "code": "Psa",
+        "book_id": 19
+      },
+      {
+        "code": "Pro",
+        "book_id": 20
+      },
+      {
+        "code": "Prov",
+        "book_id": 20
+      },
+      {
+        "code": "Ecc",
+        "book_id": 21
+      },
+      {
+        "code": "Eccl",
+        "book_id": 21
+      },
+      {
+        "code": "Son",
+        "book_id": 22
+      },
+      {
+        "code": "Song",
+        "book_id": 22
+      },
+      {
+        "code": "Isa",
+        "book_id": 23
+      },
+      {
+        "code": "Jer",
+        "book_id": 24
+      },
+      {
+        "code": "Lam",
+        "book_id": 25
+      },
+      {
+        "code": "Eze",
+        "book_id": 26
+      },
+      {
+        "code": "Ezek",
+        "book_id": 26
+      },
+      {
+        "code": "Dan",
+        "book_id": 27
+      },
+      {
+        "code": "Hos",
+        "book_id": 28
+      },
+      {
+        "code": "Joe",
+        "book_id": 29
+      },
+      {
+        "code": "Joel",
+        "book_id": 29
+      },
+      {
+        "code": "Amo",
+        "book_id": 30
+      },
+      {
+        "code": "Amos",
+        "book_id": 30
+      },
+      {
+        "code": "Obad",
+        "book_id": 31
+      },
+      {
+        "code": "Obd",
+        "book_id": 31
+      },
+      {
+        "code": "Jon",
+        "book_id": 32
+      },
+      {
+        "code": "Jonah",
+        "book_id": 32
+      },
+      {
+        "code": "Mic",
+        "book_id": 33
+      },
+      {
+        "code": "Nah",
+        "book_id": 34
+      },
+      {
+        "code": "Hab",
+        "book_id": 35
+      },
+      {
+        "code": "Zep",
+        "book_id": 36
+      },
+      {
+        "code": "Zeph",
+        "book_id": 36
+      },
+      {
+        "code": "Hag",
+        "book_id": 37
+      },
+      {
+        "code": "Zec",
+        "book_id": 38
+      },
+      {
+        "code": "Zech",
+        "book_id": 38
+      },
+      {
+        "code": "Mal",
+        "book_id": 39
+      },
+      {
+        "code": "Mat",
+        "book_id": 40
+      },
+      {
+        "code": "Matt",
+        "book_id": 40
+      },
+      {
+        "code": "Mar",
+        "book_id": 41
+      },
+      {
+        "code": "Mark",
+        "book_id": 41
+      },
+      {
+        "code": "Luk",
+        "book_id": 42
+      },
+      {
+        "code": "Luke",
+        "book_id": 42
+      },
+      {
+        "code": "Joh",
+        "book_id": 43
+      },
+      {
+        "code": "John",
+        "book_id": 43
+      },
+      {
+        "code": "Act",
+        "book_id": 44
+      },
+      {
+        "code": "Acts",
+        "book_id": 44
+      },
+      {
+        "code": "Rom",
+        "book_id": 45
+      },
+      {
+        "code": "1Cor",
+        "book_id": 46
+      },
+      {
+        "code": "2Cor",
+        "book_id": 47
+      },
+      {
+        "code": "Gal",
+        "book_id": 48
+      },
+      {
+        "code": "Eph",
+        "book_id": 49
+      },
+      {
+        "code": "Phil",
+        "book_id": 50
+      },
+      {
+        "code": "Phili",
+        "book_id": 50
+      },
+      {
+        "code": "Php",
+        "book_id": 50
+      },
+      {
+        "code": "Col",
+        "book_id": 51
+      },
+      {
+        "code": "1Th",
+        "book_id": 52
+      },
+      {
+        "code": "1Thess",
+        "book_id": 52
+      },
+      {
+        "code": "2Th",
+        "book_id": 53
+      },
+      {
+        "code": "2Thess",
+        "book_id": 53
+      },
+      {
+        "code": "1Ti",
+        "book_id": 54
+      },
+      {
+        "code": "1Tim",
+        "book_id": 54
+      },
+      {
+        "code": "2Ti",
+        "book_id": 55
+      },
+      {
+        "code": "2Tim",
+        "book_id": 55
+      },
+      {
+        "code": "Tit",
+        "book_id": 56
+      },
+      {
+        "code": "Titus",
+        "book_id": 56
+      },
+      {
+        "code": "Phile",
+        "book_id": 57
+      },
+      {
+        "code": "Phlm",
+        "book_id": 57
+      },
+      {
+        "code": "Phm",
+        "book_id": 57
+      },
+      {
+        "code": "Heb",
+        "book_id": 58
+      },
+      {
+        "code": "Jam",
+        "book_id": 59
+      },
+      {
+        "code": "Jas",
+        "book_id": 59
+      },
+      {
+        "code": "1Pe",
+        "book_id": 60
+      },
+      {
+        "code": "1Pet",
+        "book_id": 60
+      },
+      {
+        "code": "2Pe",
+        "book_id": 61
+      },
+      {
+        "code": "2Pet",
+        "book_id": 61
+      },
+      {
+        "code": "1Jn",
+        "book_id": 62
+      },
+      {
+        "code": "1John",
+        "book_id": 62
+      },
+      {
+        "code": "2Jn",
+        "book_id": 63
+      },
+      {
+        "code": "2Jo",
+        "book_id": 63
+      },
+      {
+        "code": "2John",
+        "book_id": 63
+      },
+      {
+        "code": "3Jn",
+        "book_id": 64
+      },
+      {
+        "code": "3Jo",
+        "book_id": 64
+      },
+      {
+        "code": "3John",
+        "book_id": 64
+      },
+      {
+        "code": "Jud",
+        "book_id": 65
+      },
+      {
+        "code": "Jude",
+        "book_id": 65
+      },
+      {
+        "code": "Rev",
+        "book_id": 66
+      }
+    ],
+    "sources": [],
+    "themes": []
+  }
+}

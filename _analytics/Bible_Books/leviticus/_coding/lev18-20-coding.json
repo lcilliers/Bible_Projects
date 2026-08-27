@@ -1,0 +1,1606 @@
+{
+  "provenance": "leviticus-lexical-v1",
+  "batch": "Leviticus 18-20 - Holiness Code: sexual/moral defilement, be holy, fear God, justice, love neighbour (Phase A pure coding)",
+  "occurrences": [
+    {
+      "ref": "18:4",
+      "strong": "H4941",
+      "note": "mishpat = keep my rules/ordinances and walk in them",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:4",
+      "strong": "H8104",
+      "note": "shamar = KEEP my statutes",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:5",
+      "strong": "H4941",
+      "note": "mishpat = my rules, by which one shall LIVE",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:5",
+      "strong": "H8104",
+      "note": "shamar = keep my statutes and rules; live by them",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:6",
+      "strong": "H7607",
+      "note": "sheer = do not approach any close RELATIVE/kin to uncover nakedness",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "close-kin",
+        "role": "kinship-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:7",
+      "note": "T2-only (father/mother nakedness)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:8",
+      "note": "T2-only",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:9",
+      "note": "T2-only",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:10",
+      "note": "T2-only",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:11",
+      "note": "T2-only",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:12",
+      "strong": "H7607",
+      "note": "sheer = father's sister is close kin",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "close-kin",
+        "role": "kinship-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:13",
+      "strong": "H7607",
+      "note": "sheer = mother's sister is close kin",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "close-kin",
+        "role": "kinship-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:14",
+      "note": "T2-only",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:15",
+      "note": "T2-only",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:16",
+      "note": "T2-only",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:18",
+      "strong": "H2416",
+      "note": "chayyim = do not take a wife's sister as a rival during her LIFE",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "lifetime",
+        "role": "time-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:18",
+      "strong": "H6887",
+      "note": "tsarar = to make her a RIVAL (vexing the wife)",
+      "dims": {
+        "axis": "SELF",
+        "sense": "to-rival-vex",
+        "operation": "rival",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:19",
+      "strong": "H5079",
+      "note": "niddah = do not approach a woman in her menstrual impurity",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "status",
+        "sense": "impurity-niddah",
+        "bearer": "person",
+        "source": "menstruation",
+        "source_domain": "genital-bodily",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:19",
+      "strong": "H2932",
+      "note": "tumah = her uncleanness",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "status",
+        "sense": "uncleanness",
+        "bearer": "person",
+        "source_domain": "genital-bodily",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:20",
+      "strong": "H2930",
+      "note": "adultery DEFILES yourself (moral defilement)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "operation",
+        "sense": "to-defile",
+        "operation": "self-defile-moral",
+        "bearer": "person",
+        "source": "adultery",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:21",
+      "strong": "H5414",
+      "note": "natan = do not GIVE any of your children to Molech (child sacrifice)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-to-molech",
+        "operation": "give-child-idolatry",
+        "bearer": "person",
+        "source": "idolatry-Molech",
+        "source_domain": "cultic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:22",
+      "strong": "H8441",
+      "note": "toevah = lying with a male is an ABOMINATION",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "abomination",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:23",
+      "strong": "H8397",
+      "note": "tevel = bestiality is PERVERSION/confusion",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "perversion",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:23",
+      "strong": "H2930",
+      "note": "do not DEFILE yourself with a beast",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "operation",
+        "sense": "to-defile",
+        "operation": "self-defile-moral",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:24",
+      "strong": "H2930",
+      "note": "the nations DEFILED themselves by all these (moral defilement of peoples)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "operation",
+        "sense": "to-defile",
+        "operation": "defiles-nations",
+        "bearer": "congregation",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "transmissibility": "spreads-to-object",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:25",
+      "strong": "H5771",
+      "note": "avon = the LAND became defiled; I punished its INIQUITY and it vomited them out",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "iniquity",
+        "bearer": "land",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:26",
+      "strong": "H8441",
+      "note": "toevah = do not do any of these abominations",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "abomination",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:26",
+      "strong": "H4941",
+      "note": "mishpat = keep my rules",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:26",
+      "strong": "H8104",
+      "note": "shamar = keep my statutes, do no abomination",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:27",
+      "strong": "H8441",
+      "note": "toevah = the land's men did all these abominations, defiling it",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "abomination",
+        "bearer": "congregation",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:29",
+      "strong": "H8441",
+      "note": "toevah = whoever does these abominations shall be cut off",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "abomination",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:29",
+      "strong": "H5315",
+      "note": "nephesh = the persons who do them cut off from their people",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-person",
+        "bearer": "person",
+        "effect": "cut-off",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:30",
+      "strong": "H8441",
+      "note": "toevah = keep my charge not to practise these abominable customs",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "abomination",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "18:30",
+      "strong": "H8104",
+      "note": "shamar = keep my charge, do not defile yourselves",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "purpose": "belonging",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:2",
+      "strong": "H6918",
+      "note": "qadosh = you shall be HOLY, for I the LORD your God am holy (the Holiness Code thesis)",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy",
+        "bearer": "congregation",
+        "driver": "command",
+        "purpose": "belonging",
+        "temporal": "standing-forward",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:3",
+      "strong": "H8104",
+      "note": "shamar = keep my sabbaths",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:3",
+      "strong": "H3372",
+      "note": "yare = every one shall REVERE/fear his mother and father",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "revere-fear",
+        "operation": "revere",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:5",
+      "strong": "H7522",
+      "note": "ratson = offer a peace offering that you may be ACCEPTED",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "acceptance",
+        "bearer": "person",
+        "effect": "accepted-before-God",
+        "purpose": "access-enable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:7",
+      "strong": "H6292",
+      "note": "piggul = eaten on the third day it is FOUL/tainted",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "detestable",
+        "type": "status",
+        "sense": "foul-rejected",
+        "bearer": "offering",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:7",
+      "strong": "H7521",
+      "note": "ratsah = it shall NOT be ACCEPTED",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "operation",
+        "sense": "be-accepted",
+        "operation": "not-accepted",
+        "bearer": "offering",
+        "effect": "not-accepted",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:8",
+      "strong": "H5315",
+      "note": "nephesh = whoever eats it (the person) bears his iniquity, cut off",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-person",
+        "bearer": "person",
+        "effect": "cut-off",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:8",
+      "strong": "H5771",
+      "note": "avon = he shall bear his INIQUITY (profaned the holy)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "iniquity",
+        "operation": "bear-iniquity",
+        "bearer": "person",
+        "source_domain": "cultic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:10",
+      "strong": "H6041",
+      "note": "ani = leave gleanings for the POOR and the sojourner",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "the-poor",
+        "role": "social-vulnerable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:11",
+      "strong": "H8266",
+      "note": "shaqar = do not DEAL FALSELY / lie to one another",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "deal-falsely",
+        "operation": "deceive",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:12",
+      "strong": "H8267",
+      "note": "sheqer = do not swear FALSELY by my name, profaning it",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "deception-false-swearing",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:13",
+      "note": "T2-only (oppress/rob; wages)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "19:14",
+      "strong": "H3372",
+      "note": "yare = do not curse the deaf/trip the blind, but FEAR your God",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "fear-God",
+        "operation": "fear-God",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:15",
+      "strong": "H5766",
+      "note": "avel = do no INJUSTICE in judgment",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "injustice",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:15",
+      "strong": "H4941",
+      "note": "mishpat = in JUDGMENT do no injustice",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "judgment-justice",
+        "role": "justice-context",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:15",
+      "strong": "H8199",
+      "note": "shaphat = JUDGE your neighbor in righteousness",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "judge",
+        "operation": "judge-righteously",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:15",
+      "strong": "H6664",
+      "note": "tsedeq = judge in RIGHTEOUSNESS",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "righteousness",
+        "role": "moral-virtue",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:15",
+      "strong": "H1921",
+      "note": "hadar = not be PARTIAL to great or poor (impartiality)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "partiality",
+        "operation": "show-partiality-forbidden",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:16",
+      "strong": "H7400",
+      "note": "rakhil = do not go about as a SLANDERER among your people",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "slander",
+        "operation": "slander",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:17",
+      "strong": "H8130",
+      "note": "sane = do not HATE your brother in your heart",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "hate",
+        "operation": "hate-brother",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:17",
+      "strong": "H3824",
+      "note": "levav = do not hate your brother in your HEART (RARE heart-verse; the heart as moral locus)",
+      "dims": {
+        "axis": "SELF",
+        "type": "status",
+        "sense": "heart",
+        "bearer": "person",
+        "role": "seat-of-hate",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:17",
+      "strong": "H2399",
+      "note": "chet = reprove your neighbor, lest you bear SIN because of him",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "sin",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:18",
+      "strong": "H5201",
+      "note": "natar = do not bear a GRUDGE, but love your neighbor as yourself",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "bear-grudge",
+        "operation": "grudge-forbidden",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:19",
+      "strong": "H8104",
+      "note": "shamar = keep my statutes (no mixtures)",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:20",
+      "strong": "H6299",
+      "note": "padah = a betrothed slave woman not yet RANSOMED/redeemed",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "ransom-redeem",
+        "bearer": "person",
+        "role": "redemption-status",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:20",
+      "strong": "H5414",
+      "note": "natan = nor freedom given her (mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-freedom",
+        "role": "legal-status",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:21",
+      "strong": "H0817",
+      "note": "asham = he brings a guilt offering (ram)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "status",
+        "sense": "guilt-offering",
+        "bearer": "person",
+        "source_domain": "moral",
+        "reset": "guilt-offering",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:22",
+      "strong": "H0817",
+      "note": "asham = with the guilt-offering ram",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "status",
+        "sense": "guilt-offering",
+        "bearer": "person",
+        "source_domain": "moral",
+        "reset": "guilt-offering",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:22",
+      "strong": "H2398",
+      "note": "the sin he committed",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "sin",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:22",
+      "strong": "H2403",
+      "note": "chattat = for his sin",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "status",
+        "sense": "sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:22",
+      "strong": "H3722",
+      "note": "kipper = priest makes ATONEMENT",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "operation",
+        "sense": "atone-cover",
+        "operation": "atone",
+        "bearer": "person",
+        "source_domain": "moral",
+        "reset": "atone-cover",
+        "person_role": "passive",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:22",
+      "strong": "H5545",
+      "note": "salach = he shall be FORGIVEN",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "operation",
+        "sense": "forgive",
+        "operation": "forgive",
+        "bearer": "person",
+        "source_domain": "moral",
+        "effect": "forgiven",
+        "person_role": "passive",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:24",
+      "strong": "H1974",
+      "note": "hillul = the 4th-year fruit is holy, an offering of PRAISE to the LORD",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "praise-offering",
+        "role": "worship-praise",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:27",
+      "strong": "H7843",
+      "note": "shachat = do not MAR/round off the edges of your beard (pagan mourning practice)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "mar-beard",
+        "operation": "pagan-practice-forbidden",
+        "bearer": "person",
+        "source_domain": "cultic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:28",
+      "strong": "H5315",
+      "note": "nephesh = no cuttings in your flesh for the DEAD (nephesh=dead person)",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-dead",
+        "bearer": "person",
+        "role": "the-dead",
+        "source_domain": "mortuary",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:29",
+      "strong": "H2181",
+      "note": "zanah = do not make your daughter a PROSTITUTE, lest the land whore",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "prostitute-whore",
+        "operation": "prostitution",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:30",
+      "strong": "H8104",
+      "note": "shamar = keep my sabbaths",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:30",
+      "strong": "H3372",
+      "note": "yare = REVERE my sanctuary",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "revere-sanctuary",
+        "operation": "revere",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:31",
+      "strong": "H1245",
+      "note": "baqash = do not SEEK mediums/necromancers, being defiled by them",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "seek-mediums",
+        "operation": "seek-occult",
+        "bearer": "person",
+        "source": "idolatry-occult",
+        "source_domain": "cultic",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:32",
+      "strong": "H3372",
+      "note": "yare = honor the aged and FEAR your God",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "fear-God",
+        "operation": "fear-God",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:32",
+      "strong": "H1921",
+      "note": "hadar = HONOR the face of an old man",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "honor-aged",
+        "operation": "honor",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:34",
+      "note": "T2-only (love the sojourner as yourself)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "19:35",
+      "strong": "H5766",
+      "note": "avel = do no INJUSTICE in measures",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "injustice",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:35",
+      "strong": "H4941",
+      "note": "mishpat = in judgment/measures",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "judgment-justice",
+        "role": "justice-context",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:36",
+      "strong": "H6664",
+      "note": "tsedeq = just/RIGHTEOUS balances and weights",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "righteousness",
+        "role": "moral-virtue",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:37",
+      "strong": "H4941",
+      "note": "mishpat = keep all my rules",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:37",
+      "strong": "H8104",
+      "note": "shamar = keep all my statutes and rules",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:2",
+      "strong": "H5414",
+      "note": "natan = whoever GIVES his children to Molech shall be stoned",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-to-molech",
+        "operation": "give-child-idolatry",
+        "bearer": "person",
+        "source": "idolatry-Molech",
+        "source_domain": "cultic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:3",
+      "note": "T2-only (I set my face against him, defiles sanctuary)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "20:4",
+      "strong": "H5956",
+      "note": "alam = if the people HIDE their eyes from the Molech-giver (willful ignoring)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "operation",
+        "sense": "hide-eyes-ignore",
+        "operation": "willful-ignore",
+        "bearer": "congregation",
+        "awareness": "willful-blindness",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:4",
+      "strong": "H5414",
+      "note": "natan = the man who gives his children to Molech",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-to-molech",
+        "role": "idolatry-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:5",
+      "strong": "H2181",
+      "note": "zanah = who WHORE after Molech",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "whore-after-gods",
+        "operation": "spiritual-fornication",
+        "bearer": "person",
+        "source": "idolatry-Molech",
+        "source_domain": "cultic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:6",
+      "strong": "H2181",
+      "note": "zanah = whoring after mediums/necromancers",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "whore-after-gods",
+        "operation": "spiritual-fornication",
+        "bearer": "person",
+        "source": "idolatry-occult",
+        "source_domain": "cultic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:6",
+      "strong": "H5315",
+      "note": "nephesh = I will set my face against that person, cut off",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-person",
+        "bearer": "person",
+        "effect": "cut-off",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:7",
+      "strong": "H6942",
+      "note": "qadash = CONSECRATE yourselves and be holy",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "consecrate",
+        "operation": "self-consecrate",
+        "bearer": "person",
+        "driver": "command",
+        "purpose": "belonging",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:7",
+      "strong": "H6918",
+      "note": "qadosh = be HOLY, for I am the LORD your God",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy",
+        "bearer": "person",
+        "driver": "command",
+        "purpose": "belonging",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:8",
+      "strong": "H6942",
+      "note": "qadash = I the LORD SANCTIFY you (God's act)",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "sanctify",
+        "operation": "God-sanctifies",
+        "bearer": "person",
+        "driver": "divine-initiative",
+        "purpose": "belonging",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:8",
+      "strong": "H8104",
+      "note": "shamar = keep my statutes",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:9",
+      "note": "T2-only (cursing father/mother -> death)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "20:10",
+      "note": "T2-only (adultery -> death)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "20:11",
+      "note": "T2-only (incest -> death)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "20:12",
+      "strong": "H8397",
+      "note": "tevel = incest with daughter-in-law is PERVERSION",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "perversion",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:13",
+      "strong": "H8441",
+      "note": "toevah = lying with a male is an ABOMINATION",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "abomination",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:17",
+      "strong": "H5771",
+      "note": "avon = incest with a sister; they shall bear their INIQUITY",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "iniquity",
+        "operation": "bear-iniquity",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:18",
+      "strong": "H1739",
+      "note": "daveh = lying with a woman in her menstrual SICKNESS (both cut off)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "status",
+        "sense": "menstrual-sickness",
+        "bearer": "person",
+        "source": "menstruation",
+        "source_domain": "genital-bodily",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:19",
+      "strong": "H7607",
+      "note": "sheer = uncovering a close RELATIVE (aunt); they bear iniquity",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "close-kin",
+        "role": "kinship-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:19",
+      "strong": "H5771",
+      "note": "avon = they shall bear their INIQUITY",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "iniquity",
+        "operation": "bear-iniquity",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:20",
+      "strong": "H2399",
+      "note": "chet = they shall bear their SIN, die childless",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "sin",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:21",
+      "strong": "H5079",
+      "note": "niddah = taking a brother's wife is IMPURITY (niddah - impurity metaphor for the moral)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "status",
+        "sense": "impurity-niddah",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:22",
+      "strong": "H4941",
+      "note": "mishpat = keep all my statutes and rules, lest the land vomit you",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:22",
+      "strong": "H8104",
+      "note": "shamar = keep all my statutes and rules",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:24",
+      "strong": "H5414",
+      "note": "natan = I will GIVE you their land (a land flowing with milk and honey)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-land",
+        "role": "promise",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:25",
+      "strong": "H8262",
+      "note": "shiqqets = make a distinction; do not make yourselves DETESTABLE by unclean animals",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "detestable",
+        "type": "operation",
+        "sense": "to-detest",
+        "operation": "self-make-detestable",
+        "bearer": "person",
+        "source_domain": "dietary",
+        "driver": "command",
+        "person_role": "active",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:25",
+      "strong": "H2931",
+      "note": "distinguish the UNCLEAN animal",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "unclean",
+        "type": "status",
+        "sense": "unclean",
+        "bearer": "animal",
+        "source_domain": "dietary",
+        "operation": "distinguish-clean-unclean",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:25",
+      "strong": "H2889",
+      "note": "...from the CLEAN (the dietary distinction as holiness practice)",
+      "dims": {
+        "axis": "CLEAN_UNCLEAN",
+        "polarity": "clean",
+        "type": "status",
+        "sense": "pure",
+        "bearer": "animal",
+        "source_domain": "dietary",
+        "operation": "distinguish-clean-unclean",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:25",
+      "strong": "H5315",
+      "note": "nephesh = do not make YOURSELVES detestable",
+      "dims": {
+        "axis": "SELF",
+        "sense": "soul-self",
+        "bearer": "person",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:26",
+      "strong": "H6918",
+      "note": "qadosh = you shall be HOLY to me, for I am holy and have separated you to be mine",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "status",
+        "sense": "holy",
+        "bearer": "congregation",
+        "driver": "command",
+        "purpose": "belonging",
+        "temporal": "standing-forward",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:27",
+      "note": "T2-only (medium/necromancer put to death)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "19:9",
+      "note": "T2-only verse - no inner-being span",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "18:17",
+      "strong": "H2154",
+      "note": "zimmah = taking a woman and her daughter is DEPRAVITY/lewdness",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "lewdness-depravity",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:18",
+      "strong": "H0157",
+      "note": "ahev = you shall LOVE your neighbor as yourself (THE great neighbour-command - was entirely missed)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "love-neighbor",
+        "operation": "love",
+        "bearer": "person",
+        "target": "neighbor",
+        "source_domain": "moral",
+        "driver": "command",
+        "person_role": "active",
+        "effect": "love",
+        "role": "the-great-command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:18",
+      "strong": "H5358",
+      "note": "naqam = you shall not take VENGEANCE (paired with grudge + the love-command)",
+      "dims": {
+        "axis": "SELF",
+        "type": "operation",
+        "sense": "vengeance",
+        "operation": "avenge-forbidden",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:20",
+      "strong": "H2666",
+      "note": "chaphash = a betrothed slave woman not yet set FREE",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "freedom-liberty",
+        "bearer": "person",
+        "role": "freedom-status",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:20",
+      "strong": "H2668",
+      "note": "chuphshah = FREEDOM not yet given her",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "freedom-liberty",
+        "bearer": "person",
+        "role": "freedom-status",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:29",
+      "strong": "H2154",
+      "note": "zimmah = lest the land fall to DEPRAVITY (prostituting the daughter)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "lewdness-depravity",
+        "bearer": "land",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:4",
+      "strong": "H6437",
+      "note": "panah = do not TURN to idols (interior turning to idolatry)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "turn-to-idols",
+        "operation": "turn-to-idolatry",
+        "bearer": "person",
+        "source": "idolatry",
+        "source_domain": "cultic",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "19:31",
+      "strong": "H6437",
+      "note": "panah = do not TURN to mediums/necromancers",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "turn-to-occult",
+        "operation": "turn-to-idolatry",
+        "bearer": "person",
+        "source": "idolatry-occult",
+        "source_domain": "cultic",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:6",
+      "strong": "H6437",
+      "note": "panah = the person who TURNS to mediums/necromancers",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "turn-to-occult",
+        "operation": "turn-to-idolatry",
+        "bearer": "person",
+        "source": "idolatry-occult",
+        "source_domain": "cultic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "20:17",
+      "strong": "H2617",
+      "note": "chesed(homonym) = incest is a DISGRACE/reproach (here chesed=shame, NOT steadfast-love; Leviticus has NO chesed=steadfast-love)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "status",
+        "sense": "disgrace-reproach",
+        "bearer": "person",
+        "source": "sexual-sin",
+        "source_domain": "moral",
+        "role": "chesed-homonym-shame",
+        "coverage": "ib-coded"
+      }
+    }
+  ]
+}

@@ -1,0 +1,840 @@
+{
+ "_meta": {
+  "description": "M10b B4 kakia-family EVIDENCE (kakia11 poneria7 kakopoios5 atopos1 faulos1=25). malice/vice to put-away; inside-wickedness; evildoer+conscience; cosmic forces. Evidence only.",
+  "cluster": "M10b",
+  "batch": "B4",
+  "lemmas": [
+   "kakia",
+   "ponēria",
+   "kakopoios",
+   "atopos",
+   "faulos"
+  ],
+  "occurrences": 25,
+  "produced": "2026-06-22",
+  "version": "v1_0"
+ },
+ "records": [
+  {
+   "ref": "Mat 6:34",
+   "verse_text": "Mat 6:34 “ Therefore do not be anxious about tomorrow , for tomorrow will be anxious for itself . Sufficient for the day is its own trouble .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "trouble",
+   "morph": "N-NSF",
+   "stem": null,
+   "sense": "trouble",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "neutral",
+   "cause_clause": "itself Sufficient day own trouble",
+   "relational": "own",
+   "touch_points": [
+    {
+     "lemma": "merimnaō",
+     "gloss": "to worry",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Mat 22:18",
+   "verse_text": "Mat 22:18 But Jesus , aware of their malice , said , “ Why put me to the test , you hypocrites ?",
+   "strong": "G4189",
+   "lemma": "ponēria",
+   "target_word": "malice",
+   "morph": "N-ASF",
+   "stem": null,
+   "sense": "malice",
+   "lemma_meaning": "evil, wickedness, malice, in the NT always a negative moral quality op",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "how": "said (G2036)",
+   "object": "Why",
+   "experiencer": "other",
+   "relational": "their",
+   "touch_points": [
+    {
+     "lemma": "hupokritēs",
+     "gloss": "hypocrite",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "peirazō",
+     "gloss": "to test/tempt: test",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Mar 7:22",
+   "verse_text": "Mar 7:22 coveting , wickedness , deceit , sensuality , envy , slander , pride , foolishness .",
+   "strong": "G4189",
+   "lemma": "ponēria",
+   "target_word": "wickedness",
+   "morph": "N-NPF",
+   "stem": null,
+   "sense": "wickedness",
+   "lemma_meaning": "evil, wickedness, malice, in the NT always a negative moral quality op",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "huperēfania",
+     "gloss": "pride",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "aselgeia",
+     "gloss": "debauchery",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "pleonexia",
+     "gloss": "greediness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "dolos",
+     "gloss": "deceit",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ponēros",
+     "gloss": "evil/bad",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "afrosunē",
+     "gloss": "foolishness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "blasfēmia",
+     "gloss": "blasphemy",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Luk 11:39",
+   "verse_text": "Luk 11:39 And the Lord said to him , “ Now you Pharisees cleanse the outside of the cup and of the dish , but inside you are full of greed and wickedness .",
+   "strong": "G4189",
+   "lemma": "ponēria",
+   "target_word": "wickedness",
+   "morph": "N-GSF",
+   "stem": null,
+   "sense": "wickedness",
+   "lemma_meaning": "evil, wickedness, malice, in the NT always a negative moral quality op",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "how": "full (G1073)",
+   "object": "greed",
+   "object_type": "abstract",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "harpagē",
+     "gloss": "plunder",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "katharizō",
+     "gloss": "to clean",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Joh 18:30",
+   "verse_text": "Joh 18:30 They answered him , “If this man were not doing evil , we would not have delivered him over to you .”",
+   "strong": "G2555",
+   "lemma": "kakopoios",
+   "target_word": "evil",
+   "morph": "V-PAP-NSM",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "wrongdoing",
+   "type": "action",
+   "valence": "sinful",
+   "object": "delivered",
+   "touch_points": []
+  },
+  {
+   "ref": "Act 3:26",
+   "verse_text": "Act 3:26 God , having raised up his servant , sent him to you first , to bless you by turning every one of you from your wickedness .”",
+   "strong": "G4189",
+   "lemma": "ponēria",
+   "target_word": "wickedness",
+   "morph": "N-GPF",
+   "stem": null,
+   "sense": "wickedness",
+   "lemma_meaning": "evil, wickedness, malice, in the NT always a negative moral quality op",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "origin": "received-from-outside",
+   "relational": "your",
+   "touch_points": [
+    {
+     "lemma": "eulogeō",
+     "gloss": "to praise/bless",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Act 8:22",
+   "verse_text": "Act 8:22 Repent , therefore , of this wickedness of yours , and pray to the Lord that, if possible , the intent of your heart may be forgiven you .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "wickedness",
+   "morph": "N-GSF",
+   "stem": null,
+   "sense": "wickedness",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "location": "heart",
+   "origin": "received-from-outside",
+   "how": "pray (G1189)",
+   "object": "Lord",
+   "object_type": "God",
+   "experiencer": "other (addressed)",
+   "immediate_response": "forgiven",
+   "relational": "yours",
+   "touch_points": [
+    {
+     "lemma": "metanoeo",
+     "gloss": "to repent",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "epinoia",
+     "gloss": "thought",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "afiēmi",
+     "gloss": "to release: forgive",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "deomai",
+     "gloss": "to pray",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Act 25:5",
+   "verse_text": "Act 25:5 “ So ,” said he, “let the men of authority among you go down with me, and if there is anything wrong about the man , let them bring charges against him .”",
+   "strong": "G0824",
+   "lemma": "atopos",
+   "target_word": "wrong",
+   "morph": "A-NSN",
+   "stem": null,
+   "sense": "wrong",
+   "lemma_meaning": "wrong, wicked",
+   "type": "quality",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "relational": "about",
+   "touch_points": []
+  },
+  {
+   "ref": "Rom 1:29",
+   "verse_text": "Rom 1:29 They were filled with all manner of unrighteousness , evil , covetousness , malice . They are full of envy , murder , strife , deceit , maliciousness . They are gossips ,",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "malice",
+   "morph": "N-DSF",
+   "stem": null,
+   "sense": "malice",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "phthonos",
+     "gloss": "envy",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "pleonexia",
+     "gloss": "greediness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "dolos",
+     "gloss": "deceit",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ponēria",
+     "gloss": "evil",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "adikia",
+     "gloss": "unrighteousness",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "eris",
+     "gloss": "quarrel",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 1:29",
+   "verse_text": "Rom 1:29 They were filled with all manner of unrighteousness , evil , covetousness , malice . They are full of envy , murder , strife , deceit , maliciousness . They are gossips ,",
+   "strong": "G4189",
+   "lemma": "ponēria",
+   "target_word": "evil",
+   "morph": "N-DSF",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "evil, wickedness, malice, in the NT always a negative moral quality op",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "phthonos",
+     "gloss": "envy",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "pleonexia",
+     "gloss": "greediness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "dolos",
+     "gloss": "deceit",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "kakia",
+     "gloss": "evil",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "adikia",
+     "gloss": "unrighteousness",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "eris",
+     "gloss": "quarrel",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 5:8",
+   "verse_text": "1Cor 5:8 Let us therefore celebrate the festival , not with the old leaven , the leaven of malice and evil , but with the unleavened bread of sincerity and truth .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "malice",
+   "morph": "N-GSF",
+   "stem": null,
+   "sense": "malice",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "ponēria",
+     "gloss": "evil",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "eilikrineia",
+     "gloss": "sincerity",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "alētheia",
+     "gloss": "truth",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 5:8",
+   "verse_text": "1Cor 5:8 Let us therefore celebrate the festival , not with the old leaven , the leaven of malice and evil , but with the unleavened bread of sincerity and truth .",
+   "strong": "G4189",
+   "lemma": "ponēria",
+   "target_word": "evil",
+   "morph": "N-GSF",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "evil, wickedness, malice, in the NT always a negative moral quality op",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "kakia",
+     "gloss": "evil",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "eilikrineia",
+     "gloss": "sincerity",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "alētheia",
+     "gloss": "truth",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 14:20",
+   "verse_text": "1Cor 14:20 Brothers , do not be children in your thinking . Be infants in evil , but in your thinking be mature .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "evil",
+   "morph": "N-DSF",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "location": "mind",
+   "how": "infants (G3515)",
+   "experiencer": "other (addressed)",
+   "immediate_response": "be",
+   "touch_points": [
+    {
+     "lemma": "frēn",
+     "gloss": "thinking",
+     "role": "co-seated",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "2Cor 5:10",
+   "verse_text": "2Cor 5:10 For we must all appear before the judgment seat of Christ , so that each one may receive what is due for what he has done in the body , whether good or evil .",
+   "strong": "G5337",
+   "lemma": "faulos",
+   "target_word": "evil",
+   "morph": "A-ASN",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "vile, refuse",
+   "type": "quality",
+   "faculty": [
+    "volition",
+    "moral_evaluation"
+   ],
+   "valence": "sinful",
+   "cause_clause": "we must all appear before judgment seat Christ that",
+   "touch_points": [
+    {
+     "lemma": "agathos",
+     "gloss": "good",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Eph 4:31",
+   "verse_text": "Eph 4:31 Let all bitterness and wrath and anger and clamor and slander be put away from you , along with all malice .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "malice",
+   "morph": "N-DSF",
+   "stem": null,
+   "sense": "malice",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "forbidden",
+   "touch_points": [
+    {
+     "lemma": "orgē",
+     "gloss": "wrath",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "pikria",
+     "gloss": "bitterness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "blasfēmia",
+     "gloss": "blasphemy",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Eph 6:12",
+   "verse_text": "Eph 6:12 For we do not wrestle against flesh and blood , but against the rulers , against the authorities , against the cosmic powers over this present darkness , against the spiritual forces of evil in the heavenly places .",
+   "strong": "G4189",
+   "lemma": "ponēria",
+   "target_word": "evil",
+   "morph": "N-GSF",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "evil, wickedness, malice, in the NT always a negative moral quality op",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "location": "flesh",
+   "cause_clause": "we do not wrestle against flesh and blood",
+   "relational": "in",
+   "touch_points": [
+    {
+     "lemma": "archē",
+     "gloss": "beginning",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "exousia",
+     "gloss": "authority",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "pneumatikos",
+     "gloss": "spiritual",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Col 3:8",
+   "verse_text": "Col 3:8 But now you must put them all away : anger , wrath , malice , slander , and obscene talk from your mouth .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "malice",
+   "morph": "N-ASF",
+   "stem": null,
+   "sense": "malice",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "how": "away (G0659)",
+   "object": "anger",
+   "object_type": "abstract",
+   "experiencer": "other (addressed)",
+   "touch_points": [
+    {
+     "lemma": "orgē",
+     "gloss": "wrath",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "blasfēmia",
+     "gloss": "blasphemy",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Tit 3:3",
+   "verse_text": "Tit 3:3 For we ourselves were once foolish , disobedient , led astray , slaves to various passions and pleasures , passing our days in malice and envy , hated by others and hating one another .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "malice",
+   "morph": "N-DSF",
+   "stem": null,
+   "sense": "malice",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "cause_clause": "we ourselves were once foolish disobedient astray slaves",
+   "immediate_response": "hating",
+   "relational": "in",
+   "touch_points": [
+    {
+     "lemma": "epithumia",
+     "gloss": "desire",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "phthonos",
+     "gloss": "envy",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "hēdonē",
+     "gloss": "pleasure",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "douleuō",
+     "gloss": "be a slave",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Jam 1:21",
+   "verse_text": "Jam 1:21 Therefore put away all filthiness and rampant wickedness and receive with meekness the implanted word , which is able to save your souls .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "wickedness",
+   "morph": "N-GSF",
+   "stem": null,
+   "sense": "wickedness",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "location": "soul",
+   "how": "receive (G1209)",
+   "object": "meekness",
+   "object_type": "abstract",
+   "experiencer": "other (addressed)",
+   "touch_points": [
+    {
+     "lemma": "prautēs",
+     "gloss": "gentleness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "psuchē",
+     "gloss": "soul",
+     "role": "co-seated",
+     "ring": "external"
+    },
+    {
+     "lemma": "sōzō",
+     "gloss": "to save",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Pe 2:1",
+   "verse_text": "1Pe 2:1 So put away all malice and all deceit and hypocrisy and envy and all slander .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "malice",
+   "morph": "N-ASF",
+   "stem": null,
+   "sense": "malice",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "phthonos",
+     "gloss": "envy",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "dolos",
+     "gloss": "deceit",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "hupokrisis",
+     "gloss": "hypocrisy",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "katalalia",
+     "gloss": "slander",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Pe 2:12",
+   "verse_text": "1Pe 2:12 Keep your conduct among the Gentiles honorable , so that when they speak against you as evildoers , they may see your good deeds and glorify God on the day of visitation .",
+   "strong": "G2555",
+   "lemma": "kakopoios",
+   "target_word": "evildoers",
+   "morph": "N-GPM",
+   "stem": null,
+   "sense": "evildoers",
+   "lemma_meaning": "wrongdoing",
+   "type": "status",
+   "valence": "sinful",
+   "how": "speak against (G2635)",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "katalaleō",
+     "gloss": "to slander",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Pe 2:14",
+   "verse_text": "1Pe 2:14 or to governors as sent by him to punish those who do evil and to praise those who do good .",
+   "strong": "G2555",
+   "lemma": "kakopoios",
+   "target_word": "evil",
+   "morph": "N-GPM",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "wrongdoing",
+   "type": "status",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "ekdikēsis",
+     "gloss": "vengeance",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "agathopoios",
+     "gloss": "doing good",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Pe 2:16",
+   "verse_text": "1Pe 2:16 Live as people who are free , not using your freedom as a cover-up for evil , but living as servants of God .",
+   "strong": "G2549",
+   "lemma": "kakia",
+   "target_word": "evil",
+   "morph": "N-GSF",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "evil, wickedness, depravity, malice",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": []
+  },
+  {
+   "ref": "1Pe 3:16",
+   "verse_text": "1Pe 3:16 having a good conscience , so that , when you are slandered , those who revile your good behavior in Christ may be put to shame .",
+   "strong": "G2555",
+   "lemma": "kakopoios",
+   "target_word": "slandered",
+   "morph": "N-GPM",
+   "stem": null,
+   "sense": "slandered",
+   "lemma_meaning": "wrongdoing",
+   "type": "action",
+   "valence": "sinful",
+   "location": "conscience",
+   "object": "good",
+   "experiencer": "other (addressed)",
+   "relational": "you",
+   "touch_points": [
+    {
+     "lemma": "suneidesis",
+     "gloss": "conscience",
+     "role": "co-seated",
+     "ring": "CORE"
+    },
+    {
+     "lemma": "kataischunō",
+     "gloss": "to dishonor",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "katalaleō",
+     "gloss": "to slander",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "agathos",
+     "gloss": "good",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Pe 4:15",
+   "verse_text": "1Pe 4:15 But let none of you suffer as a murderer or a thief or an evildoer or as a meddler .",
+   "strong": "G2555",
+   "lemma": "kakopoios",
+   "target_word": "evildoer",
+   "morph": "N-NSM",
+   "stem": null,
+   "sense": "evildoer",
+   "lemma_meaning": "wrongdoing",
+   "type": "status",
+   "valence": "sinful",
+   "cause_clause": "none you suffer as murderer or thief or",
+   "touch_points": []
+  }
+ ]
+}

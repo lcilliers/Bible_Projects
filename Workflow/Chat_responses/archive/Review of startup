@@ -1,0 +1,119 @@
+this is a review of start up routine
+
+
+PS C:\Bible_study_projects> (Set-ExecutionPolicy -Scope Process -ExecutionPolicy RemoteSigned) ; (& c:\Bible_study_projects\.venv\Scripts\Activate.ps1)
+(.venv) PS C:\Bible_study_projects> iba\app\ps\Start-Iba.ps1
+IBA app — startup
+  ✓ config already loaded (use --reload to reseed)
+    config_version: app-0.1.0+6c68c02fb4b8
+  ✓ data tables present (40)
+  ✓ STEP up and tagged (http://localhost:8989, ESV_th)
+    known-answer probe: H0430 -> H0430G gloss 'God', 2088 verses
+
+  orientation (read before making changes):
+    BUILD.md      The IBA app — build record — **Start at [`CHARTER.md`](CHARTER.md) first** — the researcher's own statement of what this app
+    GOVERNANCE.md GOVERNANCE.md — how the app is governed by config (overview + history) — **Start at [`CHARTER.md`](CHARTER.md) first** — the researcher's own statement of what this app
+
+  governance rules (must be complied with this session):
+    governance.User_Guide_scope: "The user guide must reflect the latest state of all the tools and details on the use of the tools, geared towards user interaction for the entire project."
+    governance.build_md_on_code_change: "any code change under iba/app/** must update iba/app/BUILD.md in the same unit of work — BUILD.md is the build record, not a one-time snapshot"
+    governance.config_control: "every configuration entry in any cfg_* table is controlled by the cfg.configmaint rules"
+    governance.confmaint_configs: "all the rules that govern the maintenance operations of the configs are set in cfg_* under the configmaint module"
+    governance.escalation.scope: "all open items, discovery of anomalies, clarifications and other forms of escalation must be recorded in escalation using escalation rules"
+    governance.governance_md_on_rule_change: "any governance/process rule change must be set in cfg_* first (via configmaint.propose), then GOVERNANCE.md updated to reflect it in the same unit of work -- GOVERNANCE.md documents the config, it never holds a rule the config does not, and the config should hold a record of every change or new rule set via the chat."
+    governance.module.config: "each operating module must have a config table (or tables) in the cfg_* series to control all aspects of the module's operation"
+    governance.oneoff_report_archive_dir: "archive"
+    governance.oneoff_report_dir: "iba/app/reports/"
+    governance.oneoff_report_format: "md"
+    governance.oneoff_report_naming_pattern: "{topic}-{YYYYMMDD}.{format}"
+    governance.past_precedent_investigation_signals_missing_config: "If executing an already-registered standard instruction (a cfg_work_package/cfg_step routine) requires FIRST INVESTIGATING HOW IT WAS DONE IN THE PAST -- reading BUILD.md/session-log history, diffing prior/archived output files, or otherwise reverse-engineering a missing step from precedent -- rather than being told directly by a live cfg_step/cfg_setting row what to run and what rules apply, that investigation is itself the signal that a required config/mechanism is MISSING, not a puzzle to solve from precedent. STOP the instruction immediately the moment this is recognised -- do not proceed by reconstructing the missing rule from historical output and presenting it as the standard process. The gap must be closed first: the missing step/setting registered in cfg_* and its code built (governance.build_md_on_code_change/governance.governance_md_on_rule_change both apply), config validated clean, and only then may the original instruction be resubmitted."
+    governance.primary_responsibility: "Claude is responsible for the coding of, and maintenance of the integrity to ensure that all project operations are coded, controlled and maintained in the IBA application. This includes back-filling operations currently outside the application."
+    governance.programme_stages: "The research programme has three main stages: Base_data (STEP through lexical); Analysis (deriving understanding of the inner being); Publishing (essays and output for the results). Previously referred to as Session A (base data), Session B/D (analytics), Session C (publishing) -- methodologies and processes have changed materially over time across all three."
+    governance.project_change_rule: "Any change of operations, methodologies or approach must channel through the IBA App. Any operation defined in the past that is not in the IBA app must be migrated to the app."
+    governance.project_databases: "bible_research.db (aka research_db) lives in database/; iba.db lives in iba/app/db/ -- both paths are project-root-relative"
+    governance.project_lookups_and_naming_convensions: "Project-specific naming in lookups, stages, and terms with specific meaning must be defined in cfg_enum (see cfg_setting naming.*). Terminology must be checked whenever an operation is executed to ensure it is used in accordance with its definition; a missing definition must be escalated."
+    governance.project_operations: "A project operation is any activity to perform research, development, exploration, investigation, or running scripts related to achieving the project objectives."
+    governance.redundancy_archiving: "One-off reports, scripts, or other artifacts no longer in use or relevant must be archived on a daily basis."
+    governance.reports_must_persist: "every quality-check or report-producing step must persist its output to a config-defined report path \u2014 a terminal print + an escalation row is not sufficient; enforced by lib/cfgquality.find_missing_report_paths, checked in configmaint.validate"
+    governance.rules_must_be_config_driven: "no operational or process rule may exist only in GOVERNANCE.md, BUILD.md, USER-GUIDE.md, or memory without a referenced cfg_* row recording it as the evidence that the configuration control is in operation. Any deviation discovered requires escalation. On a new instruction, the first thing to establish is that the rules governing the instruction are fully captured and interpreted correctly in the configs -- if not, it requires escalation."
+    governance.scope_iba_app: "IBA App is the central process control mechanism for all operations in the entire project"
+    governance.scope_iba_db: "The iba_db is the home for all project process control and base data, including all related tables from STEP through Strongs, verses, meaning, and lexicals. It is now primary for all processes and base data; a few analysis tables (debate/passage control) are expected to migrate back to research_db."
+    governance.scope_project: "the config's scope is the entire project, with all of its parts, not a sub-section of the project"
+    governance.scope_research_db: "The research_db (bible_research.db) is the home for prose and findings with all the related enabling tables."
+    governance.scripts_and_routines: "All scripts and routines must belong to a module, utility, library, or be a temporary script. Temporary scripts must be prefixed with temp_."
+    governance.scripts_ps_dir: "iba/app/ps"
+    governance.scripts_python_dir: "iba/app/tools"
+    governance.session_log_triggers_commit: "completing a session log (any SESSION-LOG-*.md) means the full commit-and-push cycle happens in the same unit of work -- stage the real changes, commit with a proper message, push, confirm clean/pushed. See CLAUDE.md section 12."
+    governance.table_columns: "each column in each table in the project must be listed in cfg_column with a proper use text. This applies to all databases and all tables. Updating a column in any routine must validate the use of the column against this config. Deviation from the rules must be escalated."
+    governance.tables: "each table in the project must be listed in cfg_table with a proper use text. This applies to all databases. Tables no longer in use must be set as inactive."
+    governance.utility.config: "each utility must have its own config table in the cfg_* series to control all aspects of the utility"
+    governance.verse_gap_by_design: "Researcher ruling 2026-07-29: a verse missing from iba.db's verse table (no `verse` row for that osisId) is BY DESIGN, not a data-integrity error. Verse-existence is gated on prior term discovery (concordance-driven per-Strong's onboarding, iba/app/handlers/raw.py:verses) -- do not escalate, flag, or attempt to backfill a missing verse as a bug. Full extent measured 2026-07-29: 2,049/31,086 verses (6.59%) missing, concentrated in genealogy/list-heavy books (1Chr 44%, Ezra 40%, Neh 31%, Josh 23%, Num 17%); sample read of the missing verses' actual content judged the risk within tolerance for this study (see iba/app/reports/verse-existence-census-20260729.md). Both report.verse_span_meaning (the base extract) and report.passage_debate note each detectable gap inline (report.verse_gap_note) and skip straight to the next available verse -- the missing verses are not pulled into the study."
+
+READY.
+  first run:  iba\app\ps\New-Word.ps1 -Word <word> -Source "<why>"
+(.venv) PS C:\Bible_study_projects> 
+
+## 2. Startup — once per session
+
+```powershell
+iba\app\ps\Start-Iba.ps1
+```
+
+This prepares the environment and reports `READY`:
+
+```
+IBA app — startup
+  ✓ config loaded (904 rows in 20 cfg_* tables)
+    config_version: app-0.1.0
+  ✓ data tables present (18)
+  ✓ STEP up and tagged (http://localhost:8989, ESV_th)
+    known-answer probe: H0430 -> H0430G gloss 'God', 2088 verses
+
+  orientation (read before making changes):
+    BUILD.md      The IBA app — build record — 2026-07-17, first slice...
+    GOVERNANCE.md How the app is governed by config — the chain, first line to last...
+READY.
+```
+
+It is **idempotent** — safe to run any time. What it does: validates the config, loads it into the
+DB if needed, builds the data tables if missing, pre-flights STEP, and (added 2026-07-22) prints an
+orientation pointer to `BUILD.md`/`GOVERNANCE.md` so a session doesn't start blind.
+
+**The STEP check is a known-answer probe, not a ping.** It does not merely ask "did something
+answer on the port" — it fetches a fixed Strong's (`H0430`) and requires the *expected* answer back:
+the gloss must contain `God` and the verse count must clear a floor. A stale, degraded, or wrongly
+tagged server that still answers the port **fails** the check with a specific reason — so a green
+STEP line means STEP genuinely served the right data, and the probe line shows the evidence. (The
+probe values live in config: `iba/app/config/step.json` → `preflight`.)
+
+**If STEP is not running / not right**, it says so and stops short of ready — for example:
+
+```
+  ⚠ STEP not ready: STEP answered but the known answer is WRONG: H0430 glossed '…',
+    expected to contain 'God'. Stale or wrong module.
+```
+
+Start (or restart) the STEP server and run `Start-Iba.ps1` again. Runs refuse to start without STEP
+— governed by `cfg_setting step.required_for_runs` (`true`, approved 2026-07-26 — see
+`GOVERNANCE.md` §16), not just this sentence; `init.py`'s exit code and every STEP-dependent tool
+read that one row rather than each hardcoding the rule separately.
+
+> **A note on "STEP looks closed but the app says up."** Closing the STEP *window* does not always
+> stop its *server* — a `step.exe` process can keep holding port 8989 and answering. If the app
+> reports up when you thought STEP was down, that stale process is why. Check what is really on the
+> port and, if it is a leftover, stop it before restarting STEP:
+>
+> ```powershell
+> Get-NetTCPConnection -LocalPort 8989 -State Listen | Select-Object OwningProcess
+> Get-Process -Id <that-pid>          # confirm it is step.exe
+> Stop-Process -Id <that-pid>         # only if it is a stale STEP you want gone
+> ```
+
+**Variants:**
+
+```powershell
+iba\app\ps\Start-Iba.ps1 -Reload    # reseed the config from the JSON (after editing a config file)
+iba\app\ps\Start-Iba.ps1 -Reset     # rebuild the data tables — DROPS all data, keeps config
+```
+
+---

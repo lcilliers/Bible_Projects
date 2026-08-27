@@ -1,0 +1,5249 @@
+{
+ "meta": {
+  "WORK_CONTRACT": {
+   "objective": "For each distinct reading (anchor) below, write a narrative answering: what does this passage say about the ib_char item for the inner-being operations. Unit of work = the passage.",
+   "unit_of_work": "passage",
+   "narrative_directives": [
+    "1. Cover everything — leave nothing out. Interpret every dimension present in each lexical, and every absence. A narrative that addresses only some dimensions is incomplete.",
+    "2. Silence is evidence. value 'none' = the reader explicitly found none; present:false = no row recorded. Interpret what the silence says (e.g. no seat -> the operation is not organ-located); never skip a dimension for being empty.",
+    "3. Read in relation to the inner being. Describe what the char DOES within the human inner life — God and others are the arena it acts toward, not the subject. Keep the lens on the inner-being process.",
+    "4. Describe the full process, not a label. Trace the movement: source -> operation -> target -> coupling -> effect. Show the flow, not a static tag.",
+    "5. No valence bias. Read the descent with the same weight as the ascent — pride, malice, the wicked's interior, failure, the dark movement as fully as praise or trust. Do not privilege the edifying.",
+    "6. Do not filter uncomfortable results. Report what the data supports even when uncomfortable or against expectation. Completeness over comfort.",
+    "7. Grounded + backtrackable. Only what the passage and its lexicals support; cite ve_lexical_id / reference for each claim; no imported theology, no invention. If evidence is thin, say so.",
+    "8. Preserve distinctions. Where a passage holds several lexicals, do not collapse them — the difference between them is a finding.",
+    "9. Narrate each distinct reading once. A lexical marked duplicate shares its anchor's outcome (same_as) — do not re-narrate it; reference the anchor. Write the narrative at the anchor and there note the recurrences.",
+    "10. Interrogate difference — variation is a finding. Where the same item has >1 distinct reading (see meta.reading_map), ask WHY they differ and whether the difference carries meaning or impact (a shift in bearer/source/target/coupling/intensity, or ascent->descent). How a characteristic varies across contexts is evidence of how it operates."
+   ],
+   "worklist": [
+    "Psa 12:1-4",
+    "Psa 27:11-14",
+    "Psa 45:1-15",
+    "Psa 50:3-7",
+    "Psa 51:1-19",
+    "Psa 52:1-9",
+    "Psa 78:8-13",
+    "Psa 78:17-22",
+    "Psa 78:29-35",
+    "Psa 78:37-46",
+    "Psa 79:1-2",
+    "Psa 85:1-13",
+    "Psa 86:2-7",
+    "Psa 97:5-12",
+    "Psa 101:1-8",
+    "Psa 106:10-16",
+    "Psa 106:22-32",
+    "Psa 116:1-10",
+    "Psa 116:13-15",
+    "Psa 119:66-82",
+    "Psa 119:151-176",
+    "Psa 132:4-14",
+    "Psa 132:16-18",
+    "Psa 149:1-6"
+   ],
+   "narratives_needed": "one per distinct reading (anchor) = scope_counts.distinct_readings; duplicates (same_as) are cross-referenced, not re-narrated.",
+   "completeness": {
+    "rule": "Complete iff every anchor reading has a narrative, every duplicate is cross-referenced to its anchor, and within each anchor every dimension (incl. none/absent) is interpreted. Nothing here is pre-filtered.",
+    "this_file_contains": "EVERY ve_lexical row (all 101..116 dimensions, incl. value \"none\"; absences shown present:false) for this family's char-spans.",
+    "verify_against_db": "SELECT COUNT(*) FROM ve_lexical x JOIN verse_span_index si ON si.id=x.verse_span_id WHERE COALESCE(x.delete_flagged,0)=0 AND si.ib_char_id IN (SELECT id FROM ib_characteristic WHERE book_scope=19 AND family='faith-faithfulness-truth');  -- must equal scope_counts.ve_lexical_rows"
+   },
+   "backtracking": {
+    "key": "ve_lexical.id — on every present dimension (and collected per lexical in ve_lexical_ids).",
+    "how": "Raw row: SELECT * FROM ve_lexical WHERE id = <ve_lexical_id>.",
+    "derivation": "ib_characteristic(family) -[ib_char_id]-> verse_span_index -[verse_span_id]-> ve_lexical; verse_span_index.verse_id -> verse -> passage. verse_span_index is the join only, not emitted."
+   },
+   "output": {
+    "format": "TWO artefacts per family, both required: (1) a companion JSON keyed to this base source by reading_id; (2) a rendered markdown.",
+    "json_file": "verse-analysis/psalms/_narratives/psalms__faith-faithfulness-truth__narratives.json",
+    "md_file": "verse-analysis/psalms/_narratives/psalms__faith-faithfulness-truth__narratives.md",
+    "granularity": "One record per ANCHOR reading (reading_id). Duplicates (same_as) are NOT re-narrated — reference the anchor.",
+    "record_shape": {
+     "reading_id": "str",
+     "char_key": "str",
+     "ib_char": "str",
+     "anchor_ref": "str",
+     "passage_ref": "str",
+     "narrative": "the RAW/analytical read — grounded prose meeting directives 1-10, citing the dimensions it rests on (may use study terms).",
+     "story": "the SAME content retold as FLOWING PROSE for a GENERAL ENGLISH READER — a story, with NO study language or technical jargon: no dimension numbers/labels, no sense/operation/bearer/coupling/locus, no ve_lexical/ib_char/anchor. Tell it plainly and vividly as you would to a non-specialist; it must say what `narrative` says, only in plain English.",
+     "citations": "[ve_lexical_id,...] the narrative rests on (backtrack; directive 7)",
+     "recurrences": "[ref,...] where this reading recurs (directive 9)",
+     "variation_note": "why this reading differs from the item's other readings, where it applies (directive 10)"
+    },
+    "markdown_render": "REQUIRED in every case. The .md shows, per passage: (a) the passage text, (b) the raw narrative, (c) the story. Renderer: scripts/_render_narratives_to_md_20260712.py --family <slug>.",
+    "completeness": "Every reading_id in this base source appears exactly once in the JSON; each record has BOTH narrative and story; each cites >=1 ve_lexical_id.",
+    "destination": "DB via output -> patch -> DB (all study work in the DB). The JSON is the transport; the .md is the readable rendering."
+   }
+  },
+  "family": "faith-faithfulness-truth",
+  "book": "Psalms",
+  "book_id": 19,
+  "generated": "2026-07-12",
+  "source_of_truth": "database/bible_research.db — authoritative; regenerable view.",
+  "ib_char_items": [
+   {
+    "char_key": "H0539:believ",
+    "meaning": "believe",
+    "cluster": "Truth"
+   },
+   {
+    "char_key": "H2623:saint",
+    "meaning": "saints",
+    "cluster": "Love"
+   },
+   {
+    "char_key": "H0539:faithful",
+    "meaning": "faithful",
+    "cluster": "Truth"
+   },
+   {
+    "char_key": "H2623:godly",
+    "meaning": "godly",
+    "cluster": "Love"
+   },
+   {
+    "char_key": "H6213:execut",
+    "meaning": "execute",
+    "cluster": "T2(Supplementary)"
+   },
+   {
+    "char_key": "H0571:truth",
+    "meaning": "truth",
+    "cluster": "Truth"
+   },
+   {
+    "char_key": "H0539:faith",
+    "meaning": "faith",
+    "cluster": "Truth"
+   },
+   {
+    "char_key": "H2623:faithful",
+    "meaning": "faithful",
+    "cluster": "Love"
+   },
+   {
+    "char_key": "H2623:faithfulon",
+    "meaning": "faithful ones",
+    "cluster": "Love"
+   },
+   {
+    "char_key": "H0898:faithles",
+    "meaning": "faithless",
+    "cluster": "Sin"
+   }
+  ],
+  "reading_map": {
+   "H2623:godly": [
+    {
+     "reading_id": "H2623:godly#1",
+     "anchor_ref": "Psa 12:1",
+     "anchor_passage": "Psa 12:1-4",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2623:godly#2",
+     "anchor_ref": "Psa 52:9",
+     "anchor_passage": "Psa 52:1-9",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2623:godly#3",
+     "anchor_ref": "Psa 86:2",
+     "anchor_passage": "Psa 86:2-7",
+     "recurs_at": []
+    }
+   ],
+   "H0539:believ": [
+    {
+     "reading_id": "H0539:believ#1",
+     "anchor_ref": "Psa 27:13",
+     "anchor_passage": "Psa 27:11-14",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0539:believ#2",
+     "anchor_ref": "Psa 78:22",
+     "anchor_passage": "Psa 78:17-22",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0539:believ#3",
+     "anchor_ref": "Psa 78:32",
+     "anchor_passage": "Psa 78:29-35",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0539:believ#4",
+     "anchor_ref": "Psa 106:12",
+     "anchor_passage": "Psa 106:10-16",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0539:believ#5",
+     "anchor_ref": "Psa 116:10",
+     "anchor_passage": "Psa 116:1-10",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0539:believ#6",
+     "anchor_ref": "Psa 119:66",
+     "anchor_passage": "Psa 119:66-82",
+     "recurs_at": []
+    }
+   ],
+   "H0571:truth": [
+    {
+     "reading_id": "H0571:truth#1",
+     "anchor_ref": "Psa 45:4",
+     "anchor_passage": "Psa 45:1-15",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0571:truth#2",
+     "anchor_ref": "Psa 51:6",
+     "anchor_passage": "Psa 51:1-19",
+     "recurs_at": []
+    }
+   ],
+   "H2623:faithfulon": [
+    {
+     "reading_id": "H2623:faithfulon#1",
+     "anchor_ref": "Psa 50:5",
+     "anchor_passage": "Psa 50:3-7",
+     "recurs_at": []
+    }
+   ],
+   "H0539:faithful": [
+    {
+     "reading_id": "H0539:faithful#1",
+     "anchor_ref": "Psa 78:8",
+     "anchor_passage": "Psa 78:8-13",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0539:faithful#2",
+     "anchor_ref": "Psa 78:37",
+     "anchor_passage": "Psa 78:37-46",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H0539:faithful#3",
+     "anchor_ref": "Psa 101:6",
+     "anchor_passage": "Psa 101:1-8",
+     "recurs_at": []
+    }
+   ],
+   "H2623:faithful": [
+    {
+     "reading_id": "H2623:faithful#1",
+     "anchor_ref": "Psa 79:2",
+     "anchor_passage": "Psa 79:1-2",
+     "recurs_at": []
+    }
+   ],
+   "H2623:saint": [
+    {
+     "reading_id": "H2623:saint#1",
+     "anchor_ref": "Psa 85:8",
+     "anchor_passage": "Psa 85:1-13",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2623:saint#2",
+     "anchor_ref": "Psa 97:10",
+     "anchor_passage": "Psa 97:5-12",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2623:saint#3",
+     "anchor_ref": "Psa 116:15",
+     "anchor_passage": "Psa 116:13-15",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2623:saint#4",
+     "anchor_ref": "Psa 132:9",
+     "anchor_passage": "Psa 132:4-14",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2623:saint#5",
+     "anchor_ref": "Psa 132:16",
+     "anchor_passage": "Psa 132:16-18",
+     "recurs_at": []
+    }
+   ],
+   "H0539:faith": [
+    {
+     "reading_id": "H0539:faith#1",
+     "anchor_ref": "Psa 106:24",
+     "anchor_passage": "Psa 106:22-32",
+     "recurs_at": []
+    }
+   ],
+   "H0898:faithles": [
+    {
+     "reading_id": "H0898:faithles#1",
+     "anchor_ref": "Psa 119:158",
+     "anchor_passage": "Psa 119:151-176",
+     "recurs_at": []
+    }
+   ],
+   "H6213:execut": [
+    {
+     "reading_id": "H6213:execut#1",
+     "anchor_ref": "Psa 149:9",
+     "anchor_passage": "Psa 149:1-6",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H6213:execut#2",
+     "anchor_ref": "Psa 149:7",
+     "anchor_passage": "Psa 149:1-6",
+     "recurs_at": []
+    }
+   ]
+  },
+  "scope_counts": {
+   "ib_char_items": 10,
+   "passages": 24,
+   "lexicals": 25,
+   "distinct_readings": 25,
+   "duplicate_lexicals": 0,
+   "items_with_variation": 6,
+   "ve_lexical_rows": 277
+  },
+  "dimension_frame": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "reading_note": "RAW + COMPLETE, nothing pre-judged. value \"none\" = reader found none; present:false = no row recorded. Both are evidence — what is NOT said can matter as much as what is."
+ },
+ "passages": [
+  {
+   "passage_ref": "Psa 12:1-4",
+   "passage_text": "To the choirmaster : according to The Sheminith . A Psalm of David . Psa 12:1 Save , O Lord , for the godly one is gone ; for the faithful have vanished from among the children of man . Psa 12:2 Everyone utters lies to his neighbor ; with flattering lips and a double heart they speak . Psa 12:3 May the Lord cut off all flattering lips , the tongue that makes great boasts, Psa 12:4 those who say , “ With our tongue we will prevail , our lips are with us; who is master over us ?” Psa 12:5 “Because the poor are plundered, because the needy groan, I will now arise,” says the Lord; “I will place him in the safety for which he longs.”",
+   "lexicals": [
+    {
+     "ib_char": "godly",
+     "char_key": "H2623:godly",
+     "reference": "Psa 12:1",
+     "reading_id": "H2623:godly#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7693022,
+      7693023,
+      7693024,
+      7693025,
+      7693026,
+      7693027,
+      7693028,
+      7693029,
+      7693031,
+      7693032,
+      7693030
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the godly have vanished",
+       "ve_lexical_id": 7693022,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "ve_lexical_id": 7693023,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7693024,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7693025,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272740",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self laments that the godly one is gone and the faithful have disappeared from among men - grief at the failure of faithfulness",
+       "ve_lexical_id": 7693026,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "lament-over-loss",
+       "ve_lexical_id": 7693027,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272740",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7693028,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "godly-vanished",
+       "ve_lexical_id": 7693029,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272740",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'Save, O LORD, for the GODLY one is gone; the FAITHFUL have vanished from among the children of man' - the interior grieves a social collapse: it can no longer find a trustworthy person.",
+       "ve_lexical_id": 7693031,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7693032,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7693030,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 27:11-14",
+   "passage_text": "Psa 27:11 Teach me your way , O Lord , and lead me on a level path because of my enemies . Psa 27:12 Give me not up to the will of my adversaries ; for false witnesses have risen against me, and they breathe out violence . Psa 27:13 I believe that I shall look upon the goodness of the Lord in the land of the living ! Psa 27:14 Wait for the Lord ; be strong , and let your heart take courage ; wait for the Lord !",
+   "lexicals": [
+    {
+     "ib_char": "believe",
+     "char_key": "H0539:believ",
+     "reference": "Psa 27:13",
+     "reading_id": "H0539:believ#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7696388,
+      7696389,
+      7696390,
+      7696391,
+      7696392,
+      7696393,
+      7696394,
+      7696395,
+      7696397,
+      7696398,
+      7696396
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "I believe I shall see his goodness",
+       "ve_lexical_id": 7696388,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "ve_lexical_id": 7696389,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7696390,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7696391,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276222",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the self believes it will look upon the goodness of the LORD in the land of the living - a faith that steadies against despair",
+       "ve_lexical_id": 7696392,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "sustaining-faith",
+       "ve_lexical_id": 7696393,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276222",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7696394,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "believe-to-see",
+       "ve_lexical_id": 7696395,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "276222",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v13: 'I BELIEVE that I shall look upon the GOODNESS of the LORD in the land of the living' - the operation is the faith that keeps the interior from collapse; belief that it will yet see good is what holds it.",
+       "ve_lexical_id": 7696397,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7696398,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7696396,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 45:1-15",
+   "passage_text": "To the choirmaster : according to Lilies . A Maskil of the Sons of Korah ; a love song . Psa 45:1 My heart overflows with a pleasing theme ; I address my verses to the king ; my tongue is like the pen of a ready scribe . Psa 45:2 You are the most handsome of the sons of men ; grace is poured upon your lips ; therefore God has blessed you forever . Psa 45:3 Gird your sword on your thigh , O mighty one , in your splendor and majesty ! Psa 45:4 In your majesty ride out victoriously for the cause of truth and meekness and righteousness ; let your right hand teach you awesome deeds ! Psa 45:5 Your arrows are sharp in the heart of the king’s enemies ; the peoples fall under you. Psa 45:6 Your throne , O God , is forever and ever . The scepter of your kingdom is a scepter of uprightness ; Psa 45:7 you have loved righteousness and hated wickedness . Therefore God , your God , has anointed you with the oil of gladness beyond your companions ; Psa 45:8 your robes are all fragrant with myrrh and aloes and cassia . From ivory palaces stringed instruments make you glad ; Psa 45:9 daughters of kings are among your ladies of honor ; at your right hand stands the queen in gold of Ophir . Psa 45:10 Hear , O daughter , and consider , and incline your ear : forget your people and your father’s house , Psa 45:11 and the king will desire your beauty . Since he is your lord , bow to him . Psa 45:12 The people of Tyre will seek your favor with gifts , the richest of the people . Psa 45:13 All glorious is the princess in her chamber , with robes interwoven with gold . Psa 45:14 In many-colored robes she is led to the king , with her virgin companions following behind her . Psa 45:15 With joy and gladness they are led along as they enter the palace of the king . Psa 45:17 I will cause your name to be remembered in all generations ; therefore nations will praise you forever and ever .",
+   "lexicals": [
+    {
+     "ib_char": "truth",
+     "char_key": "H0571:truth",
+     "reference": "Psa 45:4",
+     "reading_id": "H0571:truth#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7650270,
+      7650271,
+      7650272,
+      7650273,
+      7650274,
+      7650275,
+      7650276,
+      7650277,
+      7650279,
+      7650280,
+      7650278
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "truth (emeth - the cause of truth)",
+       "ve_lexical_id": 7650270,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7650271,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7650272,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king (his cause)",
+       "ve_lexical_id": 7650273,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278961",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "ve_lexical_id": 7650274,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7650275,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7650276,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with meekness and righteousness",
+       "ve_lexical_id": 7650277,
+       "item_type": "pair",
+       "from_span": "278961",
+       "to_span": "278962",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'ride out victoriously for the cause of TRUTH (emeth) and meekness and righteousness' — the moral cause the king champions; emeth here the truth his rule advances, the first of the triad of virtues he rides to establish",
+       "ve_lexical_id": 7650279,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7650280,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7650278,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 50:3-7",
+   "passage_text": "A Psalm of Asaph . Psa 50:1 The Mighty One , God the Lord , speaks and summons the earth from the rising of the sun to its setting . Psa 50:3 Our God comes ; he does not keep silence ; before him is a devouring fire , around him a mighty tempest . Psa 50:4 He calls to the heavens above and to the earth , that he may judge his people : Psa 50:5 “ Gather to me my faithful ones , who made a covenant with me by sacrifice !” Psa 50:6 The heavens declare his righteousness , for God himself is judge ! Selah Psa 50:7 “ Hear , O my people , and I will speak ; O Israel , I will testify against you. I am God , your God .",
+   "lexicals": [
+    {
+     "ib_char": "faithful ones",
+     "char_key": "H2623:faithfulon",
+     "reference": "Psa 50:5",
+     "reading_id": "H2623:faithfulon#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7651485,
+      7651486,
+      7651490,
+      7651487,
+      7651488,
+      7651489,
+      7651491,
+      7651492,
+      7651493,
+      7651495,
+      7651496,
+      7651494
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "godly / faithful ones (chasid)",
+       "ve_lexical_id": 7651485,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7651486,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "summoned by God who comes to judge (v1,3-4)",
+       "ve_lexical_id": 7651490,
+       "item_type": "pair",
+       "from_span": "279604",
+       "to_span": "279485",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7651487,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the faithful / godly ones (chasidim)",
+       "ve_lexical_id": 7651488,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279604",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "ve_lexical_id": 7651489,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7651491,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7651492,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "none",
+       "ve_lexical_id": 7651493,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Gather to me my FAITHFUL ONES (chasidim), who made a covenant with me by sacrifice!' — the covenant-loyal summoned before the Judge; chasid (recurs Ps30,31,37) the godly whom God gathers (his summoning/coming = qualifier), the true worshippers distinguished from the wicked (v16)",
+       "ve_lexical_id": 7651495,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7651496,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "ve_lexical_id": 7651494,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 51:1-19",
+   "passage_text": "To the choirmaster . A Psalm of David , when Nathan the prophet went to him, after he had gone in to Bathsheba . Psa 51:1 Have mercy on me, O God , according to your steadfast love ; according to your abundant mercy blot out my transgressions . Psa 51:2 Wash me thoroughly from my iniquity , and cleanse me from my sin ! Psa 51:3 For I know my transgressions , and my sin is ever before me. Psa 51:4 Against you, you only , have I sinned and done what is evil in your sight , so that you may be justified in your words and blameless in your judgment . Psa 51:5 Behold , I was brought forth in iniquity , and in sin did my mother conceive me. Psa 51:6 Behold , you delight in truth in the inward being , and you teach me wisdom in the secret heart . Psa 51:7 Purge me with hyssop , and I shall be clean ; wash me, and I shall be whiter than snow . Psa 51:8 Let me hear joy and gladness ; let the bones that you have broken rejoice . Psa 51:9 Hide your face from my sins , and blot out all my iniquities . Psa 51:10 Create in me a clean heart , O God , and renew a right spirit within me. Psa 51:11 Cast me not away from your presence , and take not your Holy Spirit from me . Psa 51:12 Restore to me the joy of your salvation , and uphold me with a willing spirit . Psa 51:13 Then I will teach transgressors your ways , and sinners will return to you. Psa 51:14 Deliver me from bloodguiltiness , O God , O God of my salvation , and my tongue will sing aloud of your righteousness . Psa 51:15 O Lord , open my lips , and my mouth will declare your praise . Psa 51:16 For you will not delight in sacrifice , or I would give it; you will not be pleased with a burnt offering . Psa 51:17 The sacrifices of God are a broken spirit ; a broken and contrite heart , O God , you will not despise . Psa 51:18 Do good to Zion in your good pleasure ; build up the walls of Jerusalem ; Psa 51:19 then will you delight in right sacrifices , in burnt offerings and whole burnt offerings; then bulls will be offered on your altar .",
+   "lexicals": [
+    {
+     "ib_char": "truth",
+     "char_key": "H0571:truth",
+     "reference": "Psa 51:6",
+     "reading_id": "H0571:truth#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7652332,
+      7652333,
+      7652340,
+      7652334,
+      7652335,
+      7652336,
+      7652337,
+      7652338,
+      7652339,
+      7652342,
+      7652343,
+      7652341
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "truth / faithfulness (emeth - in the inward being)",
+       "ve_lexical_id": 7652332,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7652333,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "value": "what God delights in / desires (v6)",
+       "ve_lexical_id": 7652340,
+       "item_type": "pair",
+       "from_span": "279758",
+       "to_span": "279757",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "in the inward being",
+       "ve_lexical_id": 7652334,
+       "item_type": "pair",
+       "from_span": "279758",
+       "to_span": "279759",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the penitent",
+       "ve_lexical_id": 7652335,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279758",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "ve_lexical_id": 7652336,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7652337,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7652338,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with wisdom taught in the secret heart",
+       "ve_lexical_id": 7652339,
+       "item_type": "pair",
+       "from_span": "279758",
+       "to_span": "279762",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'Behold, you delight in TRUTH (emeth) in the inward being' — the integrity God desires deep within; emeth here inner truthfulness, not outward conformity — the honesty of the hidden self (tuchoth), what God's delight (the qualifier) seeks, answered by wisdom taught in the secret heart",
+       "ve_lexical_id": 7652342,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7652343,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:heart",
+       "ve_lexical_id": 7652341,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 52:1-9",
+   "passage_text": "To the choirmaster . A Maskil of David , when Doeg , the Edomite , came and told Saul , “ David has come to the house of Ahimelech .” Psa 52:1 Why do you boast of evil , O mighty man ? The steadfast love of God endures all the day . Psa 52:2 Your tongue plots destruction , like a sharp razor , you worker of deceit . Psa 52:3 You love evil more than good , and lying more than speaking what is right . Selah Psa 52:4 You love all words that devour , O deceitful tongue . Psa 52:5 But God will break you down forever ; he will snatch and tear you from your tent ; he will uproot you from the land of the living . Selah Psa 52:6 The righteous shall see and fear , and shall laugh at him, saying, Psa 52:7 “ See the man who would not make God his refuge , but trusted in the abundance of his riches and sought refuge in his own destruction !” Psa 52:8 But I am like a green olive tree in the house of God . I trust in the steadfast love of God forever and ever . Psa 52:9 I will thank you forever , because you have done it. I will wait for your name , for it is good , in the presence of the godly .",
+   "lexicals": [
+    {
+     "ib_char": "godly",
+     "char_key": "H2623:godly",
+     "reference": "Psa 52:9",
+     "reading_id": "H2623:godly#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7652953,
+      7652954,
+      7652955,
+      7652956,
+      7652957,
+      7652958,
+      7652959,
+      7652960,
+      7652962,
+      7652963,
+      7652961
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "godly / faithful (chasid - in the presence of the godly)",
+       "ve_lexical_id": 7652953,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7652954,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7652955,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the godly (the psalmist's company)",
+       "ve_lexical_id": 7652956,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "279875",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "ve_lexical_id": 7652957,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7652958,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7652959,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the community in whose presence he waits and thanks",
+       "ve_lexical_id": 7652960,
+       "item_type": "pair",
+       "from_span": "279875",
+       "to_span": "279870",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'in the presence of the GODLY (chasid)' — the faithful community, the psalmist's true company; chasid (recurs Ps50:5) the covenant-loyal among whom he waits and gives thanks — the opposite fellowship to the tyrant, belonging that steadies hope",
+       "ve_lexical_id": 7652962,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7652963,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "ve_lexical_id": 7652961,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 78:8-13",
+   "passage_text": "Psa 78:8 and that they should not be like their fathers , a stubborn and rebellious generation , a generation whose heart was not steadfast , whose spirit was not faithful to God . Psa 78:9 The Ephraimites , armed with the bow , turned back on the day of battle . Psa 78:10 They did not keep God’s covenant , but refused to walk according to his law . Psa 78:11 They forgot his works and the wonders that he had shown them . Psa 78:12 In the sight of their fathers he performed wonders in the land of Egypt , in the fields of Zoan . Psa 78:13 He divided the sea and let them pass through it, and made the waters stand like a heap .",
+   "lexicals": [
+    {
+     "ib_char": "faithful",
+     "char_key": "H0539:faithful",
+     "reference": "Psa 78:8",
+     "reading_id": "H0539:faithful#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7663977,
+      7663978,
+      7663979,
+      7663980,
+      7663981,
+      7663982,
+      7663983,
+      7663984,
+      7663986,
+      7663987,
+      7663985
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be faithful (aman, negated)",
+       "ve_lexical_id": 7663977,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7663978,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7663979,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "ve_lexical_id": 7663980,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283451",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to be faithful",
+       "ve_lexical_id": 7663981,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "ve_lexical_id": 7663982,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283451",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7663983,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the unsteady heart",
+       "ve_lexical_id": 7663984,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283451",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'whose spirit was not FAITHFUL (aman) to God' - the fidelity of heart that the fathers lacked toward God.",
+       "ve_lexical_id": 7663986,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7663987,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "ve_lexical_id": 7663985,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 78:17-22",
+   "passage_text": "Psa 78:17 Yet they sinned still more against him, rebelling against the Most High in the desert . Psa 78:18 They tested God in their heart by demanding the food they craved . Psa 78:19 They spoke against God , saying , “ Can God spread a table in the wilderness ? Psa 78:20 He struck the rock so that water gushed out and streams overflowed . Can he also give bread or provide meat for his people ?” Psa 78:21 Therefore , when the Lord heard , he was full of wrath ; a fire was kindled against Jacob ; his anger rose against Israel , Psa 78:22 because they did not believe in God and did not trust his saving power .",
+   "lexicals": [
+    {
+     "ib_char": "believe",
+     "char_key": "H0539:believ",
+     "reference": "Psa 78:22",
+     "reading_id": "H0539:believ#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7664087,
+      7664088,
+      7664089,
+      7664090,
+      7664091,
+      7664092,
+      7664093,
+      7664094,
+      7664096,
+      7664097,
+      7664095
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman, negated)",
+       "ve_lexical_id": 7664087,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7664088,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7664089,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "ve_lexical_id": 7664090,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283094",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to believe",
+       "ve_lexical_id": 7664091,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in God",
+       "ve_lexical_id": 7664092,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283094",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7664093,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with not trusting his saving power",
+       "ve_lexical_id": 7664094,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283094",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'because they did not BELIEVE (aman) in God' - the root unbelief beneath the complaint.",
+       "ve_lexical_id": 7664096,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7664097,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "ve_lexical_id": 7664095,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 78:29-35",
+   "passage_text": "Psa 78:29 And they ate and were well filled , for he gave them what they craved . Psa 78:30 But before they had satisfied their craving , while the food was still in their mouths , Psa 78:31 the anger of God rose against them, and he killed the strongest of them and laid low the young men of Israel . Psa 78:32 In spite of all this , they still sinned ; despite his wonders , they did not believe . Psa 78:33 So he made their days vanish like a breath , and their years in terror . Psa 78:34 When he killed them, they sought him; they repented and sought God earnestly. Psa 78:35 They remembered that God was their rock , the Most High God their redeemer . Psa 78:36 But they flattered him with their mouths; they lied to him with their tongues.",
+   "lexicals": [
+    {
+     "ib_char": "believe",
+     "char_key": "H0539:believ",
+     "reference": "Psa 78:32",
+     "reading_id": "H0539:believ#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7664153,
+      7664154,
+      7664155,
+      7664156,
+      7664157,
+      7664158,
+      7664159,
+      7664160,
+      7664162,
+      7664163,
+      7664161
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman, negated)",
+       "ve_lexical_id": 7664153,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7664154,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7664155,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "ve_lexical_id": 7664156,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283150",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to believe",
+       "ve_lexical_id": 7664157,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in his wonders",
+       "ve_lexical_id": 7664158,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283150",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7664159,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the persistent sinning",
+       "ve_lexical_id": 7664160,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283150",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'and did not BELIEVE (aman) in his wonders' - unbelief that even miracles could not cure.",
+       "ve_lexical_id": 7664162,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7664163,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "ve_lexical_id": 7664161,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 78:37-46",
+   "passage_text": "Psa 78:37 Their heart was not steadfast toward him; they were not faithful to his covenant . Psa 78:38 Yet he , being compassionate , atoned for their iniquity and did not destroy them; he restrained his anger often and did not stir up all his wrath . Psa 78:39 He remembered that they were but flesh , a wind that passes and comes not again. Psa 78:40 How often they rebelled against him in the wilderness and grieved him in the desert ! Psa 78:41 They tested God again and again and provoked the Holy One of Israel . Psa 78:42 They did not remember his power or the day when he redeemed them from the foe , Psa 78:43 when he performed his signs in Egypt and his marvels in the fields of Zoan . Psa 78:44 He turned their rivers to blood , so that they could not drink of their streams . Psa 78:45 He sent among them swarms of flies , which devoured them, and frogs , which destroyed them . Psa 78:46 He gave their crops to the destroying locust and the fruit of their labor to the locust .",
+   "lexicals": [
+    {
+     "ib_char": "faithful",
+     "char_key": "H0539:faithful",
+     "reference": "Psa 78:37",
+     "reading_id": "H0539:faithful#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7664252,
+      7664253,
+      7664254,
+      7664255,
+      7664256,
+      7664257,
+      7664258,
+      7664259,
+      7664261,
+      7664262,
+      7664260
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "be faithful (aman, negated)",
+       "ve_lexical_id": 7664252,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7664253,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7664254,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "they",
+       "ve_lexical_id": 7664255,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283172",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to be faithful",
+       "ve_lexical_id": 7664256,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to his covenant",
+       "ve_lexical_id": 7664257,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283172",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7664258,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the unsteady heart",
+       "ve_lexical_id": 7664259,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283172",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'they were not FAITHFUL (aman) to his covenant' - the fidelity their words feigned but their hearts withheld.",
+       "ve_lexical_id": 7664261,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7664262,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "ve_lexical_id": 7664260,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 79:1-2",
+   "passage_text": "A Psalm of Asaph . Psa 79:1 O God , the nations have come into your inheritance ; they have defiled your holy temple ; they have laid Jerusalem in ruins . Psa 79:2 They have given the bodies of your servants to the birds of the heavens for food , the flesh of your faithful to the beasts of the earth .",
+   "lexicals": [
+    {
+     "ib_char": "faithful",
+     "char_key": "H2623:faithful",
+     "reference": "Psa 79:2",
+     "reading_id": "H2623:faithful#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7665109,
+      7665110,
+      7665111,
+      7665112,
+      7665113,
+      7665114,
+      7665115,
+      7665116,
+      7665118,
+      7665119,
+      7665117
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "faithful / godly ones (chasid)",
+       "ve_lexical_id": 7665109,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7665110,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7665111,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the godly ones (chasidim) of the people",
+       "ve_lexical_id": 7665112,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283508",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be the faithful, now slain",
+       "ve_lexical_id": 7665113,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "given to the beasts",
+       "ve_lexical_id": 7665114,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283508",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7665115,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with the shame of the ravaged city",
+       "ve_lexical_id": 7665116,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "283508",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'the flesh of your FAITHFUL (chasid) to the beasts of the earth' - the covenant-faithful, the godly ones, now corpses; their very faithfulness makes the outrage sharper - it is God's devoted who lie unburied.",
+       "ve_lexical_id": 7665118,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7665119,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7665117,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 85:1-13",
+   "passage_text": "To the choirmaster . A Psalm of the Sons of Korah . Psa 85:1 Lord , you were favorable to your land ; you restored the fortunes of Jacob . Psa 85:2 You forgave the iniquity of your people ; you covered all their sin . Selah Psa 85:3 You withdrew all your wrath ; you turned from your hot anger . Psa 85:4 Restore us again , O God of our salvation , and put away your indignation toward us ! Psa 85:5 Will you be angry with us forever ? Will you prolong your anger to all generations ? Psa 85:6 Will you not revive us again , that your people may rejoice in you ? Psa 85:7 Show us your steadfast love , O Lord , and grant us your salvation . Psa 85:8 Let me hear what God the Lord will speak , for he will speak peace to his people , to his saints ; but let them not turn back to folly . Psa 85:9 Surely his salvation is near to those who fear him, that glory may dwell in our land . Psa 85:10 Steadfast love and faithfulness meet ; righteousness and peace kiss each other. Psa 85:11 Faithfulness springs up from the ground , and righteousness looks down from the sky . Psa 85:12 Yes , the Lord will give what is good , and our land will yield its increase . Psa 85:13 Righteousness will go before him and make his footsteps a way .",
+   "lexicals": [
+    {
+     "ib_char": "saints",
+     "char_key": "H2623:saint",
+     "reference": "Psa 85:8",
+     "reading_id": "H2623:saint#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7666816,
+      7666817,
+      7666818,
+      7666819,
+      7666820,
+      7666821,
+      7666822,
+      7666823,
+      7666825,
+      7666826,
+      7666824
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints / godly (chasid)",
+       "ve_lexical_id": 7666816,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7666817,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7666818,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "his saints",
+       "ve_lexical_id": 7666819,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284235",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be God's faithful",
+       "ve_lexical_id": 7666820,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "who hear his peace",
+       "ve_lexical_id": 7666821,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284235",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7666822,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with not turning to folly",
+       "ve_lexical_id": 7666823,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284235",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v8: 'he will speak peace to his people, to his SAINTS (chasid)' - the covenant-faithful to whom God speaks peace, the godly community.",
+       "ve_lexical_id": 7666825,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7666826,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7666824,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 86:2-7",
+   "passage_text": "Psa 86:1 A Prayer of David. Incline your ear, O Lord, and answer me, for I am poor and needy. Psa 86:2 Preserve my life , for I am godly ; save your servant , who trusts in you— you are my God . Psa 86:3 Be gracious to me, O Lord , for to you do I cry all the day . Psa 86:4 Gladden the soul of your servant , for to you, O Lord , do I lift up my soul . Psa 86:5 For you , O Lord , are good and forgiving , abounding in steadfast love to all who call upon you . Psa 86:6 Give ear , O Lord , to my prayer ; listen to my plea for grace . Psa 86:7 In the day of my trouble I call upon you, for you answer me .",
+   "lexicals": [
+    {
+     "ib_char": "godly",
+     "char_key": "H2623:godly",
+     "reference": "Psa 86:2",
+     "reading_id": "H2623:godly#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7667082,
+      7667083,
+      7667084,
+      7667085,
+      7667086,
+      7667087,
+      7667088,
+      7667089,
+      7667091,
+      7667092,
+      7667090
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "godly (chasid)",
+       "ve_lexical_id": 7667082,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7667083,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7667084,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7667085,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284329",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be godly / devoted",
+       "ve_lexical_id": 7667086,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "ve_lexical_id": 7667087,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284329",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7667088,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with trusting God",
+       "ve_lexical_id": 7667089,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "284329",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'preserve my life, for I am GODLY (chasid)' - the covenant-devotion David claims, not merit but belonging to God.",
+       "ve_lexical_id": 7667091,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7667092,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7667090,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 97:5-12",
+   "passage_text": "Psa 97:5 The mountains melt like wax before the Lord , before the Lord of all the earth . Psa 97:6 The heavens proclaim his righteousness , and all the peoples see his glory . Psa 97:7 All worshipers of images are put to shame , who make their boast in worthless idols ; worship him, all you gods ! Psa 97:8 Zion hears and is glad , and the daughters of Judah rejoice , because of your judgments , O Lord . Psa 97:9 For you , O Lord , are most high over all the earth ; you are exalted far above all gods . Psa 97:10 O you who love the Lord , hate evil ! He preserves the lives of his saints ; he delivers them from the hand of the wicked . Psa 97:11 Light is sown for the righteous , and joy for the upright in heart . Psa 97:12 Rejoice in the Lord , O you righteous , and give thanks to his holy name !",
+   "lexicals": [
+    {
+     "ib_char": "saints",
+     "char_key": "H2623:saint",
+     "reference": "Psa 97:10",
+     "reading_id": "H2623:saint#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7671121,
+      7671122,
+      7671123,
+      7671124,
+      7671125,
+      7671126,
+      7671127,
+      7671128,
+      7671130,
+      7671131,
+      7671129
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints (chasid)",
+       "ve_lexical_id": 7671121,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7671122,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7671123,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints (the godly)",
+       "ve_lexical_id": 7671124,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285635",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be godly",
+       "ve_lexical_id": 7671125,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "preserved by God",
+       "ve_lexical_id": 7671126,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285635",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7671127,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7671128,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "285635",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v10: 'He preserves the lives of his SAINTS (chasid)' - the faithful whom God guards, the godly community.",
+       "ve_lexical_id": 7671130,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7671131,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being delivered from the wicked",
+       "ve_lexical_id": 7671129,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 101:1-8",
+   "passage_text": "A Psalm of David . Psa 101:1 I will sing of steadfast love and justice ; to you, O Lord , I will make music . Psa 101:2 I will ponder the way that is blameless . Oh when will you come to me? I will walk with integrity of heart within my house ; Psa 101:3 I will not set before my eyes anything that is worthless . I hate the work of those who fall away ; it shall not cling to me . Psa 101:4 A perverse heart shall be far from me; I will know nothing of evil . Psa 101:5 Whoever slanders his neighbor secretly I will destroy . Whoever has a haughty look and an arrogant heart I will not endure . Psa 101:6 I will look with favor on the faithful in the land , that they may dwell with me; he who walks in the way that is blameless shall minister to me . Psa 101:7 No one who practices deceit shall dwell in my house ; no one who utters lies shall continue before my eyes . Psa 101:8 Morning by morning I will destroy all the wicked in the land , cutting off all the evildoers from the city of the Lord .",
+   "lexicals": [
+    {
+     "ib_char": "faithful",
+     "char_key": "H0539:faithful",
+     "reference": "Psa 101:6",
+     "reading_id": "H0539:faithful#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7672048,
+      7672049,
+      7672050,
+      7672051,
+      7672052,
+      7672053,
+      7672054,
+      7672055,
+      7672057,
+      7672058,
+      7672056
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "faithful (aman)",
+       "ve_lexical_id": 7672048,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7672049,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7672050,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the faithful in the land",
+       "ve_lexical_id": 7672051,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268855",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be faithful",
+       "ve_lexical_id": 7672052,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "ve_lexical_id": 7672053,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268855",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7672054,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7672055,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268855",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'I will look with favour on the FAITHFUL (aman) in the land' - the trustworthy whom the king honours, faithfulness rewarded with nearness.",
+       "ve_lexical_id": 7672057,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7672058,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the blameless who minister",
+       "ve_lexical_id": 7672056,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 106:10-16",
+   "passage_text": "Psa 106:10 So he saved them from the hand of the foe and redeemed them from the power of the enemy . Psa 106:11 And the waters covered their adversaries ; not one of them was left . Psa 106:12 Then they believed his words ; they sang his praise . Psa 106:13 But they soon forgot his works ; they did not wait for his counsel . Psa 106:14 But they had a wanton craving in the wilderness , and put God to the test in the desert ; Psa 106:15 he gave them what they asked , but sent a wasting disease among them . Psa 106:16 When men in the camp were jealous of Moses and Aaron , the holy one of the Lord ,",
+   "lexicals": [
+    {
+     "ib_char": "believe",
+     "char_key": "H0539:believ",
+     "reference": "Psa 106:12",
+     "reading_id": "H0539:believ#4",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7674852,
+      7674853,
+      7674854,
+      7674855,
+      7674856,
+      7674857,
+      7674858,
+      7674859,
+      7674861,
+      7674862,
+      7674860
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman)",
+       "ve_lexical_id": 7674852,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7674853,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7674854,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "ve_lexical_id": 7674855,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269595",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "believe",
+       "ve_lexical_id": 7674856,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's words",
+       "ve_lexical_id": 7674857,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269595",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7674858,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "ve_lexical_id": 7674859,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269595",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'Then they BELIEVED (aman) his words' - the flash of faith after the sea's deliverance, belief that would not last.",
+       "ve_lexical_id": 7674861,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7674862,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with singing his praise",
+       "ve_lexical_id": 7674860,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 106:22-32",
+   "passage_text": "Psa 106:22 wondrous works in the land of Ham , and awesome deeds by the Red Sea . Psa 106:23 Therefore he said he would destroy them— had not Moses , his chosen one , stood in the breach before him, to turn away his wrath from destroying them . Psa 106:24 Then they despised the pleasant land , having no faith in his promise . Psa 106:25 They murmured in their tents , and did not obey the voice of the Lord . Psa 106:26 Therefore he raised his hand and swore to them that he would make them fall in the wilderness , Psa 106:27 and would make their offspring fall among the nations , scattering them among the lands . Psa 106:28 Then they yoked themselves to the Baal of Peor , and ate sacrifices offered to the dead ; Psa 106:29 they provoked the Lord to anger with their deeds , and a plague broke out among them. Psa 106:30 Then Phinehas stood up and intervened , and the plague was stayed . Psa 106:31 And that was counted to him as righteousness from generation to generation forever . Psa 106:32 They angered him at the waters of Meribah , and it went ill with Moses on their account , Psa 106:33 for they made his spirit bitter, and he spoke rashly with his lips.",
+   "lexicals": [
+    {
+     "ib_char": "faith",
+     "char_key": "H0539:faith",
+     "reference": "Psa 106:24",
+     "reading_id": "H0539:faith#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7674995,
+      7674996,
+      7674997,
+      7674998,
+      7674999,
+      7675000,
+      7675001,
+      7675002,
+      7675004,
+      7675005,
+      7675003
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "faith (aman, negated)",
+       "ve_lexical_id": 7674995,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7674996,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7674997,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the fathers",
+       "ve_lexical_id": 7674998,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269670",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "have no faith",
+       "ve_lexical_id": 7674999,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in God's promise",
+       "ve_lexical_id": 7675000,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269670",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7675001,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "ve_lexical_id": 7675002,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269670",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v24: 'having no FAITH (aman) in his promise' - the unbelief that could not trust God to give the land.",
+       "ve_lexical_id": 7675004,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7675005,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with despising the land",
+       "ve_lexical_id": 7675003,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 116:1-10",
+   "passage_text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy . Psa 116:2 Because he inclined his ear to me, therefore I will call on him as long as I live . Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish . Psa 116:4 Then I called on the name of the Lord : “O Lord , I pray , deliver my soul !” Psa 116:5 Gracious is the Lord , and righteous ; our God is merciful . Psa 116:6 The Lord preserves the simple ; when I was brought low , he saved me. Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you . Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ; Psa 116:9 I will walk before the Lord in the land of the living . Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”; Psa 116:11 I said in my alarm, “All mankind are liars.”",
+   "lexicals": [
+    {
+     "ib_char": "believe",
+     "char_key": "H0539:believ",
+     "reference": "Psa 116:10",
+     "reading_id": "H0539:believ#5",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7679330,
+      7679331,
+      7679332,
+      7679333,
+      7679334,
+      7679335,
+      7679336,
+      7679337,
+      7679339,
+      7679340,
+      7679338
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman)",
+       "ve_lexical_id": 7679330,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7679331,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7679332,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7679333,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270927",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "believe",
+       "ve_lexical_id": 7679334,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "even in affliction",
+       "ve_lexical_id": 7679335,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270927",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7679336,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "ve_lexical_id": 7679337,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270927",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v10: 'I BELIEVED (aman), even when I spoke: I am greatly afflicted' - the faith that held even under affliction, belief speaking through pain.",
+       "ve_lexical_id": 7679339,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7679340,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being greatly afflicted",
+       "ve_lexical_id": 7679338,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 116:13-15",
+   "passage_text": "Psa 116:13 I will lift up the cup of salvation and call on the name of the Lord , Psa 116:14 I will pay my vows to the Lord in the presence of all his people . Psa 116:15 Precious in the sight of the Lord is the death of his saints .",
+   "lexicals": [
+    {
+     "ib_char": "saints",
+     "char_key": "H2623:saint",
+     "reference": "Psa 116:15",
+     "reading_id": "H2623:saint#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7679418,
+      7679419,
+      7679420,
+      7679421,
+      7679422,
+      7679423,
+      7679424,
+      7679425,
+      7679427,
+      7679428,
+      7679426
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints (chasid)",
+       "ve_lexical_id": 7679418,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7679419,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7679420,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints",
+       "ve_lexical_id": 7679421,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270948",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be precious to God",
+       "ve_lexical_id": 7679422,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "in their death",
+       "ve_lexical_id": 7679423,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270948",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7679424,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7679425,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270948",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v15: 'Precious in the sight of the LORD is the death of his SAINTS (chasid)' - the godly, whose very death God holds dear.",
+       "ve_lexical_id": 7679427,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7679428,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the preciousness of their death",
+       "ve_lexical_id": 7679426,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 119:66-82",
+   "passage_text": "Psa 119:65 TethYou have dealt well with your servant, O Lord, according to your word. Psa 119:66 Teach me good judgment and knowledge , for I believe in your commandments . Psa 119:67 Before I was afflicted I went astray , but now I keep your word . Psa 119:68 You are good and do good ; teach me your statutes . Psa 119:69 The insolent smear me with lies , but with my whole heart I keep your precepts ; Psa 119:70 their heart is unfeeling like fat , but I delight in your law . Psa 119:71 It is good for me that I was afflicted , that I might learn your statutes . Psa 119:72 The law of your mouth is better to me than thousands of gold and silver pieces. Yodh Psa 119:73 Your hands have made and fashioned me; give me understanding that I may learn your commandments . Psa 119:74 Those who fear you shall see me and rejoice , because I have hoped in your word . Psa 119:75 I know , O Lord , that your rules are righteous , and that in faithfulness you have afflicted me . Psa 119:76 Let your steadfast love comfort me according to your promise to your servant . Psa 119:77 Let your mercy come to me, that I may live ; for your law is my delight . Psa 119:78 Let the insolent be put to shame, because they have wronged me with falsehood ; as for me , I will meditate on your precepts . Psa 119:79 Let those who fear you turn to me, that they may know your testimonies . Psa 119:80 May my heart be blameless in your statutes , that I may not be put to shame ! Kaph Psa 119:81 My soul longs for your salvation ; I hope in your word . Psa 119:82 My eyes long for your promise ; I ask , “ When will you comfort me ?” Psa 119:83 For I have become like a wineskin in the smoke, yet I have not forgotten your statutes.",
+   "lexicals": [
+    {
+     "ib_char": "believe",
+     "char_key": "H0539:believ",
+     "reference": "Psa 119:66",
+     "reading_id": "H0539:believ#6",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7681751,
+      7681752,
+      7681753,
+      7681754,
+      7681755,
+      7681756,
+      7681757,
+      7681758,
+      7681760,
+      7681761,
+      7681759
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "believe (aman)",
+       "ve_lexical_id": 7681751,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7681752,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7681753,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7681754,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271995",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "believe",
+       "ve_lexical_id": 7681755,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "God's word",
+       "ve_lexical_id": 7681756,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271995",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7681757,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "ve_lexical_id": 7681758,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271995",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v66: 'Teach me good judgment and knowledge, for I BELIEVE in your commandments' - faith in the commandments as ground for the plea to be taught.",
+       "ve_lexical_id": 7681760,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7681761,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "ve_lexical_id": 7681759,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 119:151-176",
+   "passage_text": "Psa 119:151 But you are near , O Lord , and all your commandments are true . Psa 119:152 Long have I known from your testimonies that you have founded them forever . Resh Psa 119:153 Look on my affliction and deliver me, for I do not forget your law . Psa 119:154 Plead my cause and redeem me; give me life according to your promise ! Psa 119:155 Salvation is far from the wicked , for they do not seek your statutes . Psa 119:156 Great is your mercy , O Lord ; give me life according to your rules . Psa 119:157 Many are my persecutors and my adversaries , but I do not swerve from your testimonies . Psa 119:158 I look at the faithless with disgust , because they do not keep your commands . Psa 119:159 Consider how I love your precepts ! Give me life , O Lord , according to your steadfast love . Psa 119:160 The sum of your word is truth , and every one of your righteous rules endures forever . Sin and Shin Psa 119:161 Princes persecute me without cause , but my heart stands in awe of your words . Psa 119:162 I rejoice at your word like one who finds great spoil . Psa 119:163 I hate and abhor falsehood , but I love your law . Psa 119:164 Seven times a day I praise you for your righteous rules . Psa 119:165 Great peace have those who love your law ; nothing can make them stumble . Psa 119:166 I hope for your salvation , O Lord , and I do your commandments . Psa 119:167 My soul keeps your testimonies ; I love them exceedingly . Psa 119:168 I keep your precepts and testimonies , for all my ways are before you . Taw Psa 119:169 Let my cry come before you, O Lord ; give me understanding according to your word ! Psa 119:170 Let my plea come before you; deliver me according to your word . Psa 119:171 My lips will pour forth praise , for you teach me your statutes . Psa 119:172 My tongue will sing of your word , for all your commandments are right . Psa 119:173 Let your hand be ready to help me, for I have chosen your precepts . Psa 119:174 I long for your salvation , O Lord , and your law is my delight . Psa 119:175 Let my soul live and praise you, and let your rules help me . Psa 119:176 I have gone astray like a lost sheep ; seek your servant , for I do not forget your commandments .",
+   "lexicals": [
+    {
+     "ib_char": "faithless",
+     "char_key": "H0898:faithles",
+     "reference": "Psa 119:158",
+     "reading_id": "H0898:faithles#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7683879,
+      7683880,
+      7683881,
+      7683882,
+      7683883,
+      7683884,
+      7683885,
+      7683886,
+      7683888,
+      7683889,
+      7683887
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "faithless (bagad)",
+       "ve_lexical_id": 7683879,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7683880,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7683881,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the faithless",
+       "ve_lexical_id": 7683882,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271569",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "deal faithlessly",
+       "ve_lexical_id": 7683883,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the psalmist",
+       "ve_lexical_id": 7683884,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271569",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7683885,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired within its char-arc across the psalm",
+       "ve_lexical_id": 7683886,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "271569",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v158: 'I look at the FAITHLESS with disgust, because they do not keep your commands' - the treacherous who spurn God's commands.",
+       "ve_lexical_id": 7683888,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7683889,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:person",
+       "ve_lexical_id": 7683887,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 132:4-14",
+   "passage_text": "Psa 132:4 I will not give sleep to my eyes or slumber to my eyelids , Psa 132:5 until I find a place for the Lord , a dwelling place for the Mighty One of Jacob .” Psa 132:6 Behold , we heard of it in Ephrathah ; we found it in the fields of Jaar . Psa 132:7 “Let us go to his dwelling place ; let us worship at his footstool !” Psa 132:8 Arise , O Lord , and go to your resting place , you and the ark of your might . Psa 132:9 Let your priests be clothed with righteousness , and let your saints shout for joy . Psa 132:10 For the sake of your servant David , do not turn away the face of your anointed one. Psa 132:11 The Lord swore to David a sure oath from which he will not turn back : “One of the sons of your body I will set on your throne . Psa 132:12 If your sons keep my covenant and my testimonies that I shall teach them, their sons also forever shall sit on your throne .” Psa 132:13 For the Lord has chosen Zion ; he has desired it for his dwelling place : Psa 132:14 “ This is my resting place forever ; here I will dwell , for I have desired it . Psa 132:15 I will abundantly bless her provisions; I will satisfy her poor with bread.",
+   "lexicals": [
+    {
+     "ib_char": "saints",
+     "char_key": "H2623:saint",
+     "reference": "Psa 132:9",
+     "reading_id": "H2623:saint#4",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7686046,
+      7686047,
+      7686048,
+      7686049,
+      7686050,
+      7686051,
+      7686052,
+      7686053,
+      7686055,
+      7686056,
+      7686054
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints (chasid)",
+       "ve_lexical_id": 7686046,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7686047,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7686048,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints",
+       "ve_lexical_id": 7686049,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272990",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "shout for joy",
+       "ve_lexical_id": 7686050,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "ve_lexical_id": 7686051,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272990",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7686052,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7686053,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272990",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'and let your SAINTS (chasid) shout for joy' - the godly, whose response to God's presence is jubilant.",
+       "ve_lexical_id": 7686055,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7686056,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the shout of joy",
+       "ve_lexical_id": 7686054,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 132:16-18",
+   "passage_text": "Psa 132:16 Her priests I will clothe with salvation , and her saints will shout for joy . Psa 132:17 There I will make a horn to sprout for David ; I have prepared a lamp for my anointed . Psa 132:18 His enemies I will clothe with shame , but on him his crown will shine .”",
+   "lexicals": [
+    {
+     "ib_char": "saints",
+     "char_key": "H2623:saint",
+     "reference": "Psa 132:16",
+     "reading_id": "H2623:saint#5",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7686090,
+      7686091,
+      7686092,
+      7686093,
+      7686094,
+      7686095,
+      7686096,
+      7686097,
+      7686099,
+      7686100,
+      7686098
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "saints (chasid)",
+       "ve_lexical_id": 7686090,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7686091,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7686092,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the saints",
+       "ve_lexical_id": 7686093,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272943",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "shout for joy",
+       "ve_lexical_id": 7686094,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "at God's salvation",
+       "ve_lexical_id": 7686095,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272943",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7686096,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7686097,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272943",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v16: 'her SAINTS (chasid) will shout for joy' - the godly of Zion, jubilant at the salvation that clothes them.",
+       "ve_lexical_id": 7686099,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7686100,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the shout of joy",
+       "ve_lexical_id": 7686098,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 149:1-6",
+   "passage_text": "Psa 149:1 Praise the Lord ! Sing to the Lord a new song , his praise in the assembly of the godly ! Psa 149:2 Let Israel be glad in his Maker ; let the children of Zion rejoice in their King ! Psa 149:3 Let them praise his name with dancing , making melody to him with tambourine and lyre ! Psa 149:4 For the Lord takes pleasure in his people ; he adorns the humble with salvation . Psa 149:5 Let the godly exult in glory ; let them sing for joy on their beds . Psa 149:6 Let the high praises of God be in their throats and two-edged swords in their hands , Psa 149:7 to execute vengeance on the nations and punishments on the peoples, Psa 149:8 to bind their kings with chains and their nobles with fetters of iron, Psa 149:9 to execute on them the judgment written ! This is honor for all his godly ones . Praise the Lord !",
+   "lexicals": [
+    {
+     "ib_char": "execute",
+     "char_key": "H6213:execut",
+     "reference": "Psa 149:9",
+     "reading_id": "H6213:execut#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7690564,
+      7690565,
+      7690566,
+      7690567,
+      7690568,
+      7690569,
+      7690570,
+      7690571,
+      7690573,
+      7690574,
+      7690572
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the honour of executing judgment",
+       "ve_lexical_id": 7690564,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "ve_lexical_id": 7690565,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7690566,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the godly",
+       "ve_lexical_id": 7690567,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274496",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "to carry out the written judgment is the honour of all God's saints - dignity in obedience",
+       "ve_lexical_id": 7690568,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "dignified-obedience",
+       "ve_lexical_id": 7690569,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274496",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7690570,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "honour-in-judgment",
+       "ve_lexical_id": 7690571,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "274496",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v9: 'to EXECUTE on them the JUDGMENT written! This is HONOUR for all his godly ones' - the operation is the sense of dignity in performing the decreed judgment; obedience felt as honour.",
+       "ve_lexical_id": 7690573,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7690574,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7690572,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    },
+    {
+     "ib_char": "execute",
+     "char_key": "H6213:execut",
+     "reference": "Psa 149:7",
+     "reading_id": "H6213:execut#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7690553,
+      7690554,
+      7690555,
+      7690556,
+      7690557,
+      7690558,
+      7690559,
+      7690560,
+      7690562,
+      7690563,
+      7690561
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "execute the decreed vengeance",
+       "ve_lexical_id": 7690553,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "ve_lexical_id": 7690554,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7690555,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the godly",
+       "ve_lexical_id": 7690556,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "308216",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the godly are agents to execute vengeance on the nations and punishments on the peoples",
+       "ve_lexical_id": 7690557,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "agency-of-judgment",
+       "ve_lexical_id": 7690558,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "308216",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7690559,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "execute-vengeance",
+       "ve_lexical_id": 7690560,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "308216",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v7: 'to EXECUTE vengeance on the nations and punishments on the peoples' - the interior resolve turns outward as commissioned action, carrying out a judgment not self-devised.",
+       "ve_lexical_id": 7690562,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7690563,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7690561,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

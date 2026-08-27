@@ -1,0 +1,274 @@
+{
+  "_extract_meta": {
+    "document": "WA-M46-term-reallocation-v1-20260514",
+    "cluster_from": "M46",
+    "cluster_from_name": "Abundance, Prosperity and Wealth",
+    "date": "2026-05-14",
+    "session_ref": "wa-obslog-M46-abundance-v1-20260514",
+    "source_report": "wa-cluster-M46-comprehensive-v1-20260514",
+    "purpose": "Researcher-directed extract: terms identified as clearly belonging in other clusters, for CC reallocation. Terms with marginal or split placement (H7230 rov, H1878 da.shen, H3520B ke.vud.dah) are excluded \u2014 researcher decision pending.",
+    "terms_in_extract": 7,
+    "terms_remaining_in_M46_after_reallocation": [
+      "H7230 rov (mti_id=1142) \u2014 pending researcher decision",
+      "H1952 hon (mti_id=7010) \u2014 confirmed correct home",
+      "H1878 da.shen (mti_id=111) \u2014 pending split decision",
+      "H2633 cho.sen (mti_id=681) \u2014 confirmed correct home",
+      "H3520B ke.vud.dah (mti_id=1870) \u2014 pending researcher decision"
+    ],
+    "open_questions_for_researcher": [
+      "OQ-R01: H1433 go.del \u2014 VCGs split across M22 (649-001) and M08 (649-002). Confirm rebind to M22 as primary, or split the term across two clusters?",
+      "OQ-R02: G2770 kerdain\u014d \u2014 M37 Calling or M36 Service as destination? M37 preferred in this extract.",
+      "OQ-R03: H4766 mar.veh \u2014 M33 Peace or M18 Hope as destination? Both are defensible.",
+      "OQ-R04: H4768 mar.bit \u2014 confirm M23 Strength as destination, or consider FLAG given extracted_thin status?"
+    ]
+  },
+  "reallocations": [
+    {
+      "strong": "H1433",
+      "translit": "go.del",
+      "gloss": "greatness",
+      "mti_id": 649,
+      "md_version": 1,
+      "vc_status": "not_done",
+      "term_status": "extracted",
+      "occurrences": 13,
+      "verse_count_in_cluster": 13,
+      "origin_registry": "R187 strength",
+      "origin_legacy_cluster": "C20",
+      "current_cluster": "M46",
+      "existing_vcgs": [
+        {
+          "group_id": 2930,
+          "group_code": "649-001",
+          "description": "Go.del as greatness of God as basis of prayer, worship, and covenant confidence",
+          "verse_status": "G"
+        },
+        {
+          "group_id": 2931,
+          "group_code": "649-002",
+          "description": "Go.del as pride or self-exalting greatness subject to divine judgment",
+          "verse_status": "G"
+        }
+      ],
+      "data_quality_flags": [
+        "flag_id=3: Low occurrence count (13). Statistical patterns unreliable below 20.",
+        "flag_id=4: meaning field is null. STEP returned no word analysis block.",
+        "flag_id=1: term flag on mti_term_id=649"
+      ],
+      "reallocation": {
+        "primary_destination_cluster": "M22",
+        "primary_destination_name": "Praise, Thanksgiving and Glory",
+        "primary_vcg": "649-001",
+        "primary_rationale": "Group 649-001 (greatness of God as basis of prayer, worship, and covenant confidence) is doxological vocabulary \u2014 it names the greatness of God as the ground of worship. M22 Praise/Thanksgiving/Glory is the natural home: it contains glory (ka.vod), praise (te.hil.lah), to praise (ha.lal), to give thanks (ya.dah), to honor (ha.dar). The Deut/Num/Psa verses in 649-001 are all doxological or intercessory in register.",
+        "secondary_destination_cluster": "M08",
+        "secondary_destination_name": "Pride, Arrogance and Boasting",
+        "secondary_vcg": "649-002",
+        "secondary_rationale": "Group 649-002 (pride or self-exalting greatness subject to divine judgment) is pride vocabulary \u2014 Isa 9:9 (arrogance of heart), Isa 10:12 (arrogant heart of the king of Assyria), Eze 31:2/7/18 (Pharaoh's greatness as pride). M08 Pride/Arrogance/Boasting is the correct home: it contains arrogance (za.don), pride (ga.a.vah, ga.on), haughtiness, to exalt (rum).",
+        "note": "This term has VCGs split across two different destination clusters. CC will need to handle both VCG migrations and the mti_terms.cluster_code rebind. Suggest researcher decision on whether to rebind to M22 (majority VCG) or split \u2014 or whether go.del should be duplicated across both clusters. Most likely: rebind to M22 as primary, with 649-002 noted as cross-cluster. Researcher to confirm."
+      }
+    },
+    {
+      "strong": "H1420",
+      "translit": "ge.dul.lah",
+      "gloss": "greatness",
+      "mti_id": 6903,
+      "md_version": 1,
+      "vc_status": "not_done",
+      "term_status": "extracted",
+      "occurrences": 15,
+      "verse_count_in_cluster": 11,
+      "origin_registry": "R187 strength",
+      "origin_legacy_cluster": "C20",
+      "current_cluster": "M46",
+      "existing_vcgs": [
+        {
+          "group_id": 2925,
+          "group_code": "6903-001",
+          "description": "Ge.dul.lah as greatness of God as object of worship and doxological declaration",
+          "verse_status": "G (9 verses) + 2 UT (Est 1:4 confirmed relevant; Est 6:3 confirmed relevant)"
+        }
+      ],
+      "data_quality_flags": [
+        "flag_id=3: Low occurrence count (15). Statistical patterns unreliable below 20.",
+        "flag_id=4: meaning field is null. STEP returned no word analysis block."
+      ],
+      "reallocation": {
+        "primary_destination_cluster": "M22",
+        "primary_destination_name": "Praise, Thanksgiving and Glory",
+        "primary_vcg": "6903-001 (dominant)",
+        "primary_rationale": "The dominant VCG (6903-001) is explicitly doxological: 2Sa 7:21/23, 1Ch 17:19/21, 1Ch 29:11, Psa 71:21, Psa 145:3/6, Est 10:2 \u2014 all name the greatness of God as the object of worship and doxological declaration. M22 is the correct home. The two UT-now-relevant verses (Est 1:4 \u2014 royal pride; Est 6:3 \u2014 honor/distinction as moral category) are secondary instances that do not shift the dominant register.",
+        "note": "Est 1:4 (royal display of greatness) could be argued for M08 Pride, but since the single VCG is overwhelmingly doxological, rebind to M22 is appropriate. Est 1:4 and Est 6:3 will follow the VCG to M22 and can be handled there."
+      }
+    },
+    {
+      "strong": "H8588",
+      "translit": "ta.a.nug",
+      "gloss": "luxury",
+      "mti_id": 792,
+      "md_version": 1,
+      "vc_status": "not_done",
+      "term_status": "extracted",
+      "occurrences": 5,
+      "verse_count_in_cluster": 5,
+      "origin_registry": "R042 delight",
+      "origin_legacy_cluster": "C03",
+      "current_cluster": "M46",
+      "existing_vcgs": [
+        {
+          "group_id": 565,
+          "group_code": "792-001",
+          "description": "Luxury and delight as the inner orientation toward what is deeply pleasing",
+          "verse_status": "G (all 5 verses)"
+        }
+      ],
+      "data_quality_flags": [
+        "flag_id=3: Low occurrence count (5). Statistical patterns unreliable below 20.",
+        "flag_id=4: meaning field is null. STEP returned no word analysis block."
+      ],
+      "reallocation": {
+        "primary_destination_cluster": "M04",
+        "primary_destination_name": "Joy, Gladness and Delight",
+        "primary_vcg": "792-001",
+        "primary_rationale": "Ta.a.nug (luxury/delight) is rooted in the ANOG root family: related to a.nog (to delight, H6026), o.neg (delight, H6027), a.nog (dainty, H6028). M04 Joy/Gladness/Delight already contains dainty (a.nog), delight (o.neg), pleasure (che.phets), pleasantness (no.am) \u2014 the exact semantic neighbourhood. The origin registry is R042 delight (legacy C03 = Joy cluster). The VCG description ('luxury and delight as inner orientation toward what is deeply pleasing') is Joy/Delight vocabulary. M46 Abundance is the wrong home; M04 is the natural and correct one."
+      }
+    },
+    {
+      "strong": "H4768",
+      "translit": "mar.bit",
+      "gloss": "greatness",
+      "mti_id": 2876,
+      "md_version": 1,
+      "vc_status": "not_done",
+      "term_status": "extracted_thin",
+      "occurrences": 5,
+      "verse_count_in_cluster": 5,
+      "origin_registry": "R197 authority",
+      "origin_legacy_cluster": "C20",
+      "current_cluster": "M46",
+      "existing_vcgs": [
+        {
+          "group_id": 3170,
+          "group_code": "2876-001",
+          "description": "Term names greatness, majority, or abundance as a quality of persons or communities \u2014 the inner being engaged through loyalty, amazement, or spiritual state",
+          "verse_status": "G (5 verses: 1Sa 2:33, 1Ch 12:29, 2Ch 9:6, 2Ch 30:18, Lev 25:37)"
+        }
+      ],
+      "data_quality_flags": [
+        "flag_id=3: Low occurrence count (5). Statistical patterns unreliable below 20.",
+        "flag_id=4: meaning field is null. STEP returned no word analysis block."
+      ],
+      "reallocation": {
+        "primary_destination_cluster": "M23",
+        "primary_destination_name": "Strength, Power and Dominion",
+        "primary_vcg": "2876-001",
+        "primary_rationale": "Mar.bit functions as a majority/proportion/greatness quantifier for groups of persons. The REVU root family connects it to ra.vah (to multiply, H7235A), tar.but (increase, H8635), tar.bit (increment, H8636) \u2014 quantitative increase vocabulary. The origin registry R197 authority sits in the legacy C20 strength cluster. M23 Strength/Power/Dominion is the receiving home: it contains growing (ga.del), dominion vocabulary, and collective-strength terms. The inner-being content (loyalty of the Benjaminites, majority who ate Passover wrongly, Solomon's wisdom scale) is secondary to the quantitative-group function. This is the better fit than M46 Abundance.",
+        "note": "extracted_thin status: only 5 occurrences, 5 verse records. Analytical conclusions must be proportionally limited regardless of destination. Researcher may also consider whether this term warrants FLAG status given thinness."
+      }
+    },
+    {
+      "strong": "G0019",
+      "translit": "agath\u014dsun\u0113",
+      "gloss": "goodness",
+      "mti_id": 885,
+      "md_version": 2,
+      "vc_status": "vc_completed",
+      "term_status": "extracted",
+      "occurrences": 17,
+      "verse_count_in_cluster": 4,
+      "origin_registry": "R067 goodness",
+      "origin_legacy_cluster": "C10",
+      "current_cluster": "M46",
+      "existing_vcgs": [
+        {
+          "group_id": 1110,
+          "group_code": "885-001",
+          "description": "Term names goodness as an inner-being disposition and Spirit-produced fruit \u2014 a quality that fills the person and is completed by God, expressed in righteous conduct and resolve",
+          "verse_status": "G (all 4 verses: Rom 15:14, Eph 5:9, Gal 5:22, 2Th 1:11)"
+        }
+      ],
+      "data_quality_flags": [
+        "flag_id=3: Only 4 confirmed verse records. Threshold is 5.",
+        "flag_id=4: meaning field is null. STEP returned no word analysis block.",
+        "flag_id=47: Meaning stored as single prose block. No structured sense numbering.",
+        "NOTE: This term has vc_status=vc_completed and md_version=2 \u2014 it has been fully analysed under R067 goodness with 140+ findings attached. The existing analytical record is extensive and must be preserved in the receiving cluster."
+      ],
+      "reallocation": {
+        "primary_destination_cluster": "M39",
+        "primary_destination_name": "Blessing, Favour and Grace",
+        "primary_vcg": "885-001",
+        "primary_rationale": "Agath\u014dsun\u0113 is a Spirit-produced inner-being virtue (Gal 5:22, Rom 15:14, Eph 5:9, 2Th 1:11) \u2014 goodness as the fruit of the Spirit and the disposition that fills the person. M39 Blessing/Favour/Grace already contains: be good (ya.tav, te.ev), be pleasing (tov), goodwill (eudokia), grace (charis), to bless (ba.rakh), to favour (charito\u014d). Agath\u014dsun\u0113 belongs in this register \u2014 it is a grace/goodness/Spirit-gift term, not an abundance/prosperity term. M46 Abundance is structurally mismatched for this term's inner-being role.",
+        "note": "md_version=2 and vc_completed status: this term carries the full R067 goodness analytical record including 14 direct findings and 126 via-anchor findings. CC must ensure this record migrates intact or remains accessible after rebind. Recommend verifying that cluster_finding rows linked to this term are not disrupted by the cluster_code change."
+      }
+    },
+    {
+      "strong": "G2770",
+      "translit": "kerdain\u014d",
+      "gloss": "to gain",
+      "mti_id": 1331,
+      "md_version": 1,
+      "vc_status": "not_done",
+      "term_status": "extracted",
+      "occurrences": 17,
+      "verse_count_in_cluster": 4,
+      "origin_registry": "R198 might",
+      "origin_legacy_cluster": "C20",
+      "current_cluster": "M46",
+      "existing_vcgs": [
+        {
+          "group_id": 3219,
+          "group_code": "1331-001",
+          "description": "Term names the inner-being goal of winning others \u2014 the motivating purpose behind Paul's self-subordination; love for others expressed as the drive to gain them for salvation",
+          "verse_status": "G (all 4 verses: 1Cor 9:19, 9:20, 9:21, 9:22)"
+        }
+      ],
+      "data_quality_flags": [
+        "flag_id=3: Only 4 confirmed verse records. Threshold is 5.",
+        "flag_id=4: meaning field is null. STEP returned no word analysis block.",
+        "flag_id=47: Meaning stored as single prose block. No structured sense numbering."
+      ],
+      "reallocation": {
+        "primary_destination_cluster": "M37",
+        "primary_destination_name": "Calling, Election and Vocation",
+        "primary_vcg": "1331-001",
+        "primary_rationale": "Kerdain\u014d in 1Cor 9:19-22 names Paul's inner-being drive to win people for salvation \u2014 'that I might win more of them', 'that I might win Jews', 'that I might win those outside the law'. This is missional motivation and vocation: the inner purpose of self-subordination for the sake of others' salvation. M37 Calling/Election/Vocation (to call, to choose, ba.char) is the most appropriate destination. The term names the inner goal of apostolic calling \u2014 gaining people for Christ \u2014 which is a calling/vocation register, not an abundance/prosperity register.",
+        "alternative_destination": "M36 Service, Slavery and Labour \u2014 kerdain\u014d's mechanism (making oneself a servant to all, 1Cor 9:19) overlaps with M36 Service vocabulary. Either M37 or M36 is defensible; M37 is preferred as the motivational-vocation register is primary.",
+        "note": "Researcher to confirm M37 vs M36 if preferred alternative differs."
+      }
+    },
+    {
+      "strong": "H4766",
+      "translit": "mar.veh",
+      "gloss": "abundance",
+      "mti_id": 2879,
+      "md_version": 1,
+      "vc_status": "not_done",
+      "term_status": "extracted_thin",
+      "occurrences": 5,
+      "verse_count_in_cluster": 2,
+      "origin_registry": "R197 authority",
+      "origin_legacy_cluster": "C20",
+      "current_cluster": "M46",
+      "existing_vcgs": [
+        {
+          "group_id": 3169,
+          "group_code": "2879-001",
+          "description": "Term names the increasing scope of God's government and peace \u2014 the inner being engaged through messianic hope",
+          "verse_status": "G (Isa 9:7 only; Isa 33:23 was UT \u2014 set aside in Phase 2)"
+        }
+      ],
+      "data_quality_flags": [
+        "flag_id=3: Only 2 confirmed verse records. Threshold is 5.",
+        "flag_id=4: meaning field is null. STEP returned no word analysis block.",
+        "NOTE: Isa 33:23 (the only other verse) was set aside in Phase 2 UT review. Effectively this term rests on a single verse (Isa 9:7) with existing via-anchor findings from R117 peace analysis (5 findings)."
+      ],
+      "reallocation": {
+        "primary_destination_cluster": "M33",
+        "primary_destination_name": "Peace, Rest and Quietness",
+        "primary_vcg": "2879-001",
+        "primary_rationale": "The sole active verse is Isa 9:7: 'Of the increase of his government and of peace there will be no end.' The VCG description itself names 'the increasing scope of God's government and peace \u2014 inner being engaged through messianic hope.' The 5 via-anchor findings from R117 peace already treat this verse as a peace/eschatological text. The REVU root family (same as H4768 mar.bit) connects mar.veh to ra.vah (to multiply), tar.but/tar.bit (increase). The term names the increase/abundance of peace \u2014 its inner-being content is messianic peace and hope. M33 Peace/Rest/Quietness is the natural home. M18 Hope/Expectation/Waiting is an alternative if the messianic-hope register is primary over the peace register.",
+        "alternative_destination": "M18 Hope, Expectation and Waiting \u2014 the VCG description ('inner being engaged through messianic hope') points toward M18 as equally valid. Researcher to confirm M33 vs M18.",
+        "note": "extracted_thin: only 2 verse records (1 active after Phase 2 set-aside). Analytical weight is very limited regardless of destination. Researcher may consider FLAG status."
+      }
+    }
+  ]
+}

@@ -1,0 +1,701 @@
+{
+  "provenance": "leviticus-lexical-v1",
+  "batch": "Leviticus 25 - sabbatical year, jubilee, redemption, treatment of the poor/enslaved brother (Phase A pure coding). NOTE: gaal/padah 'redeem' spans mostly T2-tagged (redeem axis under-tagged in the record).",
+  "occurrences": [
+    {
+      "ref": "25:2",
+      "strong": "H5414",
+      "note": "natan = when you come into the land I GIVE you, keep a sabbath for the land",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-land",
+        "role": "promise",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:3",
+      "note": "T2-only (six years sow/prune)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:4",
+      "note": "T2-only (7th year a sabbath for the land)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:5",
+      "note": "T2-only (do not reap the aftergrowth)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:7",
+      "strong": "H2416",
+      "note": "chayyah = the sabbath produce feeds your cattle and the wild BEASTS (animal referent)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "living-thing",
+        "role": "animal-referent-not-human-IB",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:9",
+      "strong": "H3725",
+      "note": "kippurim = proclaim the Jubilee on the Day of ATONEMENT (the liberty announced from atonement)",
+      "dims": {
+        "axis": "ATONE_COVER",
+        "type": "status",
+        "sense": "atonement",
+        "bearer": "congregation",
+        "temporal": "recurring",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:10",
+      "strong": "H6942",
+      "note": "qadash = CONSECRATE the 50th year, proclaim liberty (Jubilee)",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "polarity": "holy",
+        "type": "operation",
+        "sense": "consecrate",
+        "operation": "consecrate-year",
+        "bearer": "congregation",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:10",
+      "strong": "H7121",
+      "note": "qara = PROCLAIM liberty (deror) throughout the land to all inhabitants",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "proclaim-liberty",
+        "operation": "proclaim-freedom",
+        "bearer": "congregation",
+        "effect": "liberty-release",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:11",
+      "note": "T2-only (Jubilee: no sowing/reaping)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:16",
+      "strong": "H7230",
+      "note": "rov = the price is by the ABUNDANCE of years (more years, higher price)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "abundance-of-years",
+        "role": "valuation-basis",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:16",
+      "strong": "H7235",
+      "note": "ravah = according to the number/MULTITUDE of years",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "number-of-years",
+        "role": "valuation-basis",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:17",
+      "strong": "H3372",
+      "note": "yare = do not wrong one another, but FEAR your God (fear-of-God restrains exploitation)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "fear-God",
+        "operation": "fear-God",
+        "bearer": "person",
+        "driver": "command",
+        "effect": "restrains-oppression",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:18",
+      "strong": "H4941",
+      "note": "mishpat = keep my rules and do them",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "ordinance-rule",
+        "role": "legal-manner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:18",
+      "strong": "H0983",
+      "note": "betach = so you will dwell in the land in SECURITY/safety (the fruit of obedience)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "security-safety",
+        "effect": "dwell-secure",
+        "role": "obedience-fruit",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:18",
+      "strong": "H8104",
+      "note": "shamar = KEEP my statutes and rules",
+      "dims": {
+        "axis": "HOLY_PROFANE",
+        "type": "operation",
+        "sense": "keep-statutes",
+        "operation": "keep",
+        "bearer": "person",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:19",
+      "strong": "H0983",
+      "note": "betach = the land yields, you eat your fill and dwell in SECURITY",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "security-safety",
+        "effect": "dwell-secure",
+        "role": "obedience-fruit",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:19",
+      "strong": "H5414",
+      "note": "natan = the land will GIVE its fruit (mechanical/promise)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-produce",
+        "role": "promise",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:20",
+      "note": "T2-only (what shall we eat the 7th year?)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:21",
+      "strong": "H1293",
+      "note": "berakhah = I will command my BLESSING on you in the 6th year (a triple harvest)",
+      "dims": {
+        "axis": "BLESS_CURSE",
+        "polarity": "blessing",
+        "type": "operation",
+        "sense": "blessing",
+        "operation": "God-commands-blessing",
+        "bearer": "congregation",
+        "driver": "divine-initiative",
+        "effect": "provision",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:22",
+      "note": "T2-only (eat old store until the new)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:23",
+      "note": "T2-only (land is mine; you are sojourners)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:27",
+      "strong": "H2803",
+      "note": "chashav = COUNT/reckon the years since the sale, refund the balance (redemption price computed)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "reckon-count",
+        "operation": "compute-redemption-price",
+        "bearer": "person",
+        "role": "valuation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:28",
+      "note": "T2-only (held until Jubilee if unredeemed)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:29",
+      "note": "T2-only (city house redeemable one year)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:30",
+      "strong": "H8549",
+      "note": "tamim = if not redeemed within a full/COMPLETE year, the city house is permanent",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "complete-full",
+        "role": "time-referent",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:31",
+      "strong": "H2803",
+      "note": "chashav = village houses are RECKONED as open field (redeemable, released at Jubilee)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "reckon-count",
+        "operation": "reckon-as",
+        "bearer": "object",
+        "role": "legal-classification",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:34",
+      "note": "T2-only (Levite pasture not sold)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:35",
+      "strong": "H2388",
+      "note": "chazaq = if your brother becomes poor, SUPPORT/uphold him as a stranger and sojourner",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "support-uphold",
+        "operation": "support-poor",
+        "bearer": "person",
+        "driver": "command",
+        "role": "mercy-to-poor",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:36",
+      "strong": "H3372",
+      "note": "yare = take no interest from him, but FEAR your God, that your brother may live with you",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "fear-God",
+        "operation": "fear-God",
+        "bearer": "person",
+        "driver": "command",
+        "effect": "restrains-oppression",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:37",
+      "strong": "H4768",
+      "note": "marbit = do not lend at INTEREST/increase",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "interest-increase",
+        "operation": "interest-forbidden",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:37",
+      "strong": "H5414",
+      "note": "natan = do not GIVE food at profit (mechanical)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-at-profit-forbidden",
+        "role": "economic",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:38",
+      "strong": "H5414",
+      "note": "natan = I am the LORD who brought you out to GIVE you the land and be your God",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "give-land",
+        "role": "promise",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:39",
+      "strong": "H5647",
+      "note": "avad = if your brother sells himself, do not make him SERVE as a slave",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "serve-slave",
+        "operation": "serve",
+        "bearer": "person",
+        "role": "enslaved-brother",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:39",
+      "strong": "H5656",
+      "note": "avodah = not as slave-SERVICE (but as a hired worker)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "slave-service",
+        "role": "enslaved-brother",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:40",
+      "strong": "H5647",
+      "note": "avad = he shall SERVE you as a hired worker until the Jubilee",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "serve-hired",
+        "operation": "serve",
+        "bearer": "person",
+        "role": "enslaved-brother",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:41",
+      "note": "T2-only (released at Jubilee to his family)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:42",
+      "note": "T2-only (they are my servants, not sold as slaves)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:43",
+      "strong": "H7287",
+      "note": "radah = do not RULE over him ruthlessly",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "rule-over",
+        "operation": "rule",
+        "bearer": "person",
+        "role": "treatment-of-brother",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:43",
+      "strong": "H3372",
+      "note": "yare = but FEAR your God (the guard against ruthless rule)",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "fear-God",
+        "operation": "fear-God",
+        "bearer": "person",
+        "driver": "command",
+        "effect": "restrains-oppression",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:43",
+      "strong": "H6531",
+      "note": "perekh = do not rule with RUTHLESSNESS/harshness",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "status",
+        "sense": "ruthlessness-harshness",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:46",
+      "strong": "H5647",
+      "note": "avad = foreign slaves may SERVE permanently, but not your brother",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "serve-slave",
+        "operation": "serve",
+        "bearer": "person",
+        "role": "foreign-slave",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:46",
+      "strong": "H7287",
+      "note": "radah = do not RULE over your brother-Israelite ruthlessly",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "rule-over",
+        "operation": "rule",
+        "bearer": "person",
+        "role": "treatment-of-brother",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:46",
+      "strong": "H6531",
+      "note": "perekh = not with RUTHLESSNESS over your brother",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "status",
+        "sense": "ruthlessness-harshness",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:47",
+      "note": "T2-only (Israelite sold to a resident alien)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:49",
+      "strong": "H7607",
+      "note": "sheer = a near KINSMAN (uncle/cousin/close relative) may redeem him",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "close-kin",
+        "role": "kinsman-redeemer",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:50",
+      "strong": "H2803",
+      "note": "chashav = COUNT/reckon the years to Jubilee to set the redemption price",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "reckon-count",
+        "operation": "compute-redemption-price",
+        "bearer": "person",
+        "role": "valuation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:52",
+      "strong": "H2803",
+      "note": "chashav = reckon the few years remaining for the refund",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "reckon-count",
+        "operation": "compute-redemption-price",
+        "bearer": "person",
+        "role": "valuation",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:53",
+      "strong": "H7287",
+      "note": "radah = the buyer shall not RULE over him ruthlessly in your sight",
+      "dims": {
+        "axis": "OTHER",
+        "sense": "rule-over",
+        "operation": "rule",
+        "bearer": "person",
+        "role": "treatment-of-brother",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:53",
+      "strong": "H6531",
+      "note": "perekh = not with RUTHLESSNESS (even under a foreign master)",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "type": "status",
+        "sense": "ruthlessness-harshness",
+        "bearer": "person",
+        "source_domain": "moral",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:55",
+      "note": "T2-only (the people are my servants; I brought them from Egypt)",
+      "dims": {
+        "coverage": "ritual-no-ib-span"
+      }
+    },
+    {
+      "ref": "25:26",
+      "strong": "H1350",
+      "note": "gaal = if a man has no kinsman-REDEEMER, and later can redeem it himself (redeem land)",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-land",
+        "operation": "redeem",
+        "bearer": "person",
+        "role": "kinsman-or-self-redemption",
+        "effect": "restored-to-owner",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:26",
+      "strong": "H1353",
+      "note": "geullah = the means/RIGHT of redemption he finds",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "redemption-right",
+        "bearer": "person",
+        "role": "redemption-means",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:29",
+      "strong": "H1353",
+      "note": "geullah = the RIGHT of redemption of a walled-city house lasts one year",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "redemption-right",
+        "bearer": "object",
+        "role": "redemption-window",
+        "temporal": "seven-day",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:30",
+      "strong": "H1350",
+      "note": "gaal = if not REDEEMED within the year, the city house is permanent (redemption lapses)",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-house",
+        "operation": "not-redeemed-lapses",
+        "bearer": "object",
+        "effect": "redemption-lapsed",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:31",
+      "strong": "H1353",
+      "note": "geullah = village houses MAY be redeemed and are released at Jubilee",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "redemption-right",
+        "bearer": "object",
+        "role": "redeemable",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:49",
+      "strong": "H1350",
+      "note": "gaal = an uncle/cousin/close relative may REDEEM the enslaved Israelite - the KINSMAN-REDEEMER of a PERSON; or he redeems himself",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "operation",
+        "sense": "redeem-person",
+        "operation": "kinsman-redeem-person",
+        "bearer": "person",
+        "role": "kinsman-redeemer",
+        "effect": "restored-to-freedom-family",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:52",
+      "strong": "H1353",
+      "note": "geullah = he pays his REDEMPTION price in proportion to the years to Jubilee",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "redemption-price",
+        "bearer": "person",
+        "role": "redemption-payment",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:10",
+      "strong": "H1865",
+      "note": "deror = proclaim LIBERTY throughout the land (the Jubilee liberty-word, was missed)",
+      "dims": {
+        "axis": "REDEEM",
+        "type": "status",
+        "sense": "liberty-release",
+        "bearer": "congregation",
+        "effect": "liberty",
+        "role": "jubilee-liberty",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:14",
+      "strong": "H3238",
+      "note": "yanah = do not OPPRESS/wrong one another in trade",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "oppress",
+        "operation": "oppress",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    },
+    {
+      "ref": "25:17",
+      "strong": "H3238",
+      "note": "yanah = do not OPPRESS one another, but fear your God",
+      "dims": {
+        "axis": "SIN_GUILT",
+        "polarity": "guilty",
+        "type": "operation",
+        "sense": "oppress",
+        "operation": "oppress",
+        "bearer": "person",
+        "source_domain": "moral",
+        "driver": "command",
+        "coverage": "ib-coded"
+      }
+    }
+  ]
+}

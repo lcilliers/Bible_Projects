@@ -1,0 +1,55 @@
+{
+  "cluster": "M38",
+  "date": "2026-06-02",
+  "approved": true,
+  "source_comment": "DIM-039-001 (wa_session_b_findings id 33)",
+  "method": "COMMENT_EVALUATION outcome (researcher-approved 2026-06-02). asotia (G810, debauchery) is the alpha-privative of the sozo save-root; two NEW standalone M38-A findings record it as salvation's behavioural and vocabulary opposite (21342/21509 untouched). M28 reciprocal queued. Source finding 33 folded.",
+  "new_findings": [
+    {
+      "obs_id": 242,
+      "tier": "T1.3.1 structural opposite",
+      "cluster_code": "M38",
+      "characteristic_id": 122,
+      "cluster_subgroup_id": null,
+      "finding_status": "finding",
+      "version": "v1",
+      "source_file": "Sessions/Session_Clusters/M38/wa-cluster-M38-comment-evaluation-v1-20260602.md",
+      "notes": "Adopted from DIM-039-001 (wa_session_b_findings id 33); session 20260602 comment-evaluation; standalone, additional to 21342.",
+      "finding_text": "**[CHAR-1]** E — Salvation's structural opposite has a distinct behavioural-existential axis, separate from its eschatological opposite (perishing / apollumi). asōtia (G810, 'debauchery, profligacy') and the cognate adverb asōtōs (G811 — Luk 15:13, the prodigal who 'wasted his substance with riotous living') name the dissipated, self-abandoned manner of life that is the lived negation of the saved state. Where apollumi is salvation's terminal opposite (final ruin), asōtia is its lived opposite — the un-rescued life as actually practised. The two together bound what salvation rescues from: the end-state and the way of life. The relationship is lexical/structural, not verse-level: asōtia and the sōt-salvation terms (sōzō, sōtēr, sōtērion) share no verse (0 co-occurrence across 243 salvation-term verses) — the opposition is the shared save-root negated. [Adopted from DIM-039-001; asōtia now clustered to M28, reciprocal finding to be authored there.]"
+    },
+    {
+      "obs_id": 397,
+      "tier": "T7.1.5 vocabulary term for the opposite/absence",
+      "cluster_code": "M38",
+      "characteristic_id": 122,
+      "cluster_subgroup_id": null,
+      "finding_status": "finding",
+      "version": "v1",
+      "source_file": "Sessions/Session_Clusters/M38/wa-cluster-M38-comment-evaluation-v1-20260602.md",
+      "notes": "Adopted from DIM-039-001 (wa_session_b_findings id 33); session 20260602 comment-evaluation; standalone, additional to 21509.",
+      "finding_text": "**[CHAR-1]** E — The salvation vocabulary encodes its own privative. asōtia (G810) is morphologically a- (privative) + the sōzō / sōt- save-root — literally 'un-saved-ness' (Thayer) — the dedicated lexical term for the absence of the saved condition, denoting the debauched / dissipated life. The opposition is lexical, not verse-level: asōtia and the sōt-salvation terms (sōzō, sōtēr, sōtērion) share no verse (0 co-occurrence across 243 salvation-term verses); the relationship is the shared root negated, surfaced because STEP co-located them in registry 39 (debauchery). So salvation's vocabulary names its opposite not only conceptually (perishing) but morphologically — the word for the saved state contains, by negation, the word for the lost one. [Adopted from DIM-039-001; reciprocal queued in M28.]"
+    }
+  ],
+  "new_flags": [
+    {
+      "registry_id": 39,
+      "flag_code": "SD_CLUSTER",
+      "_flag_code_note": "SD_CLUSTER (not SD_POINTER): a cross-cluster reciprocal queued for M28 via cluster_link must surface as a D2 pointer for M28 but must NOT be an A6 gating code, else it would gate the SOURCE cluster (M38) whose registry (39) it shares. Reciprocal/queue pointers always use SD_CLUSTER.",
+      "flag_label": "M28-RECIP-asotia-salvation",
+      "priority": "MEDIUM",
+      "session_target": null,
+      "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M28",
+      "cluster_link_basis": "comment-evaluation reciprocal",
+      "description": "Reciprocal of M38 comment-evaluation (DIM-039-001). asōtia (G810, debauchery — owned reg 39, clustered to M28) is the alpha-privative of the sōzō save-root: 'un-savedness', the lived negation of the saved state (M38 salvation). When M28 (Envy/Greed/Lust) is analysed, author the reciprocal structural/vocabulary-opposite finding linking asōtia to salvation (cf. M38-A new findings under obs 242 / 397, 2026-06-02)."
+    }
+  ],
+  "fold_findings": [
+    {
+      "id": 33,
+      "status": "folded",
+      "cluster_link": "M38,M28",
+      "resolution_note": "Adopted into M38-A (2 new standalone findings under obs 242 / 397, 2026-06-02): asōtia as salvation's behavioural opposite and vocabulary privative. M28 (asōtia's cluster) side carried by new SD_POINTER reciprocal. M04 link was a transliteration artifact — corrected to M38,M28."
+    }
+  ]
+}

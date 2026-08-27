@@ -1,0 +1,21 @@
+{
+  "cluster": "M07",
+  "cluster_name": "Shame",
+  "date": "20260604",
+  "approved": false,
+  "method": "REVIEW REQUIRED: for each pointer evaluate _text; set action (adopt|set_aside). adopt -> target_finding_id (existing) or new_finding_text; record reason. Underscore fields are read-only evidence. Applier _apply_pointer_adoption_v1 is TO BUILD.",
+  "adoptions": [
+    {
+      "table": "wa_session_research_flags",
+      "id": 526,
+      "action": "",
+      "target_finding_id": null,
+      "new_finding_text": "",
+      "reason": "",
+      "_classifier": "SB_FINDING SB-030-T2-002",
+      "_registry_id": 30,
+      "_cluster_link": "M04,M07",
+      "_text": "[Catalogue v2 gap surfaced 2026-04-30] T1.3.3 (Boundary) — status P, notation: Gap identified.\n\nPrompt: What is this characteristic not — where does it end and something else begin?\n\nAI response excerpt: The data provides partial answers to the boundary questions:\n\n**Contrition is not shame**: The registry description distinguishes them explicitly — shame is oriented toward social observers and the fact of being caught; contrition is oriented toward the actual harm done and toward God. The verse evidence uses no shame vocabulary (busah/bosheth) in the contrition groups.\n\n**Contrition is not repent"
+    }
+  ]
+}

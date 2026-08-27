@@ -1,0 +1,3188 @@
+{
+  "meta": {
+    "focus_cluster": "M04",
+    "description": "Joy, Gladness and Delight",
+    "batch": "7/7",
+    "verses": 39,
+    "occurrences": 93,
+    "what_this_is": "A per-term-in-verse LEXICAL DECOMPOSITION of the inner-being terms in the verses where cluster M04 ('Joy, Gladness and Delight') occurs. Each record shows what a verse says about the inner being, recorded once per term-occurrence. Mechanically derived (01b v2) over the original-language morphology; the interpretive fields (cause, location, divine_involvement, object_type, valence) are resolved by a focused verse-read API pass.",
+    "structure": "data = array of VERSES. Each verse = {verse:{reference,osis_id,testament,verse_text}, term_occurrences:[ {term:{strong,translit,gloss,language,cluster,focus_cluster}, verse_report:{target_word,morph,stem}, lexical:{...}} ]}.",
+    "layout_fan_out": "VERSE-based fan-out — each verse lists EVERY term in it, not just the focus cluster's (focus_cluster=true marks the terms of interest). A term's `compound` lists its co-terms, which are present as their OWN full records in the same verse — fan out by matching translit/gloss to analyse synergy without leaving the verse.",
+    "conventions": {
+      "absent_field": "a lexical field that is absent = NONE (genuinely silent in the verse; never imputed)",
+      "UNRESOLVED": "the mechanical pass expected a value but could not decide (rare; reads have since resolved these)",
+      "provenance": "most fields = mechanical (01b v2, source v2_engine_iter1); cause/location/divine_involvement/object_type/valence = READ-resolved corpus-wide (verse-read API; valence unparked + read 2026-06-18)",
+      "multi_value": "a field may hold a list when several values apply (e.g. faculty, compound)"
+    },
+    "engine_changes_20260617": {
+      "zero_pad_fix": "FOUNDATIONAL: Strong's seed lists were short-form (H430/H408/H853) but the DB measure layer is zero-padded 4-digit (H0430/H0408/H0853) — so every <4-digit Hebrew lemma silently failed to match (Elohim, 'al, 'et, faculty lemmas). Fixed (_canon). This restored divine/negation/faculty/object-type detection; much of the prior 'thin' output was this bug.",
+      "valence": "context rule added: prohibition ('al/me + 2nd/3rd-person volitive) -> forbidden (mechanical); commanded/righteous/neutral are interpretive -> verse-read. UNPARKED 2026-06-18: the corpus valence read is now COMPLETE (verse-read API, 0 active residue) — valence here is READ-resolved, same status as cause/divine/object-type.",
+      "divine_involvement": "role taxonomy: object (divine adjacent to term, or 'et-marked) is mechanical (~92%); agent/possessor/giver/addressee are read-resolved (morphologically overlapping); no divine lemma -> NONE. The old meaningless 'present' value is gone.",
+      "location_dedup": "one location row per DISTINCT constitutional seat-level even when several same-level seat-words co-occur (no 'triple-heart'); spirit/breath (ruach/pneuma) sense-gated, ambiguity read-disambiguated.",
+      "t2_treatment": "T2 = reference/qualifier terms, never analysed standalone. T2-GRAMMATICAL (function words: prepositions, pronouns, particles, the object-marker 'et) are EXCLUDED from generation/this extract/reads. T2-CONTENT (noun/verb/adjective) stay as co-term context only.",
+      "base_rerun": "the whole corpus (38,971 term-in-verse units) was re-derived on the corrected engine; 1,768 T2-grammatical units disposed; narration regenerated. Integrity verified (quick_check ok, reads preserved).",
+      "reads_complete": "the interpretive residue was resolved by a governed verse-read API pass (batched-by-verse, circuit-breaker, cost-cap, self-verified): location, cause, object-type, divine-involvement, AND valence (unparked + read 2026-06-18) all to 0 M-cluster residue. divine role + object-type split + valence are now fully populated by the read.",
+      "signal_list_audit_20260619": "completeness audit of EVERY hand-seeded signal list (divine names, perception, cognition, intensifier, …) against canonical lemmas, gated on corpus presence. Closed the gaps (DIVINE +Eloah/Yah/Elyon/YHWH-var/Christos; PERCEPTION +shama/nabat/azan; COGNITION +bin; INTENSIFIER +gadol) and re-ran the full base. Net new readable residue: divine-involvement only (+432, corpus-wide); object-type/cause/location new residue was entirely T2 (excluded). 0 active readable non-T2 residue remains."
+    },
+    "why_each_element_is_derived": {
+      "_principle": "Every value is DERIVED from a named original-language measure (lemma · morphology · per-occurrence STEP sense · co-occurring tagged terms) — never from the English string. 'Mechanical' = fixed by rule over the measure layer; 'read' = the verse was read by API where the rule cannot be decisive (clarify/enrich only, never an opt-out). Silence = NONE (never imputed).",
+      "sense": "measure: per-occurrence ESV target_word (wa_verse_records) + the lemma's medium_def (lexicon, shown as lemma_meaning). Mechanical — the sense the term carries HERE, not a uniform gloss.",
+      "type": "measure: part-of-speech (morphology). Rule: verb/participle->action, noun->status, adjective->quality. Mechanical (POS-only).",
+      "mode": "measure: morph stem/voice/form. The term's own grammatical realisation (language · POS · stem). Mechanical bedrock.",
+      "faculty": "measure: the TERM's own lemma meaning, classified to a faculty (R1 term-intrinsic). Why term-intrinsic: the trigger's faculty (e.g. the perception that caused fear) belongs to cause/compound, not to this term. Mechanical. (R2 = co-occurring faculty-lemma assignment is a known not-yet-implemented extension.)",
+      "location": "measure: a constitutional-seat lemma (Strong's seat-map: heart/soul/spirit/mind/flesh) present in the verse, SENSE-GATED for spirit/breath (ruach/pneuma may be wind/disposition, not the seat). De-duplicated per level. Mechanical floor + READ for the spirit/breath ambiguity. Absent = not located.",
+      "origin": "measure: a 'from'-source preposition (min/apo/ek) governing the term -> received-from-outside; else absent. Mechanical (partial — within-person/generational/giver-source rules are not yet implemented).",
+      "how": "measure: the governing finite verb of a NOUN/adjective term (the predicate the state operates BY, e.g. 'seized'). Mechanical. ABSENT for verb-terms — the term IS the action (see mode).",
+      "object / object-type": "measure: the term's governed object (noun/pronoun after the term or its governing verb; 'et marks the accusative). object-type classifies it: God/spiritual-being/person are mechanical (divine/spirit-being lemma, or person morph); thing/abstract/situation/threat are READ-classified (the mechanical 'thing/abstract' lump is split by the verse-read). ⚠ CAVEAT: the `object` TEXT is a MECHANICAL best-guess and is imprecise in ~13% of cases (it can grab a determiner/pronoun like 'every'/'his'/'the', or the addressee). `object_type` is READ-derived and AUTHORITATIVE — when the two disagree, trust `object_type` and treat `object` text as a hint only.",
+      "cause": "measure: a causal marker (ki/hoti/gar) -> the eliciting clause, READ-resolved to the actual cause; OR the object of a perception verb for an affect term (mechanical). Else NONE (most verses state no cause). Why read: the cause is the verse's argument, not a single lemma.",
+      "cause_clause": "mechanical HINT only — the raw clause after the 'because/for' marker; superseded by `cause` once read.",
+      "experiencer": "measure: the term's possessive-suffix person / nominative subject (morphology) -> self | other | other(addressed). Mechanical.",
+      "divine_involvement": "measure: a divine lemma (YHWH/Elohim/…) and its grammatical relation to the term. object (adjacent / 'et-marked) is mechanical; agent/possessor/giver/addressee are READ-resolved (these roles overlap morphologically — the role is the semantic judgement 'is God feared, acting, or giving'). No divine lemma -> NONE.",
+      "intensity": "measure: a quantifier/intensifier lemma modifying the term (kol 'all', me'od 'very', rab 'many'). Mechanical.",
+      "valence": "measure: term-inherent moral lemma + context. forbidden = a dedicated prohibition particle ('al/me) on a 2nd/3rd-person volitive (mechanical, ~80% — the 'fear not' reassurance shares the form). commanded/righteous/neutral are interpretive -> read. Corpus valence read COMPLETE (unparked 2026-06-18) — values here are READ-resolved.",
+      "immediate_response": "measure: the coordinated reaction verb-phrase following the term's clause (the inner being's first response). Mechanical (light). Expectation test: silent -> NONE.",
+      "relational": "measure: a directional preposition adjacent to the term (to/toward/against/above). Mechanical (crude — the {direction->object} pairing is a not-yet-implemented extension).",
+      "compound": "measure: the verse's OTHER active tagged terms (the reference's term inventory), each with its role to the head term (partner = co-T1 · qualifier = T2 · co-seated = shares a constitutional seat). This is the synergy web; fan out to each co-term's own full record by translit/gloss."
+    },
+    "fields": {
+      "sense": "per-occurrence contextual sense (the ESV word used in THIS verse)",
+      "lemma_meaning": "the lemma's dictionary meaning (concise)",
+      "type": "action | status | quality — the grammatical kind (from morphology)",
+      "mode": "the term's grammatical realisation: language · part-of-speech · (verb stem)",
+      "faculty": "the inner-being faculty the TERM ITSELF engages (affect/cognition/perception/memory/volition/moral_evaluation/conscience); term-intrinsic; ABSENT if the term is not itself a faculty",
+      "location": "constitutional seat the state is seated in (spirit/soul/heart/mind/flesh/conscience); READ-disambiguated; absent if none",
+      "origin": "where it comes from (within-person/received-from-outside/carried-generationally)",
+      "how": "the governing predicate — how a noun/state term operates; ABSENT for verb-terms (the term IS the action; see mode)",
+      "object": "what the state is directed at / acts on",
+      "object_type": "the object's kind (threat/person/God/spiritual-being/situation/abstract/thing); READ-classified",
+      "cause": "what AROUSES the state; READ-resolved; absent = the verse states no cause",
+      "cause_clause": "mechanical hint only — the raw clause after a 'because/for' marker (superseded by `cause` once read)",
+      "experiencer": "who bears the state: self | other | other (addressed)",
+      "divine_involvement": "GOD's role toward the term (agent/possessor/giver/object/addressee); READ-resolved",
+      "intensity": "quantifier / intensity (e.g. 'many', 'greatly')",
+      "valence": "moral framing in context (righteous/sinful/commanded/forbidden/neutral); READ-resolved",
+      "immediate_response": "the immediate reaction the state produces (e.g. 'bowed faces')",
+      "compound": "co-occurring terms in THIS verse, each as `translit \"gloss\" — role` (partner/qualifier/co-seated). FAN-OUT: every co-term is present as its OWN full record in this verse's term_occurrences — resolve by matching translit/gloss",
+      "relational": "directional / relational force (to, toward, against …)"
+    },
+    "source": "ve_lexical (v2_engine_iter1 + *_read_api) + verse_morphology measure layer (schema 3.34.0); regenerated 2026-06-18"
+  },
+  "data": [
+    {
+      "verse": {
+        "reference": "1Th 3:9",
+        "osis_id": "1Thess.3.9",
+        "testament": "NT",
+        "verse_text": "1Th 3:9 For what thanksgiving can we return to God for you , for all the joy that we feel for your sake before our God ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2169",
+            "translit": "eucharistia",
+            "gloss": "thankfulness",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "thanksgiving",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "thanksgiving",
+            "lemma_meaning": "expression of thanks, thanksgiving, gratitude thankfulness",
+            "type": "status",
+            "faculty": "perception",
+            "how": "can we (G1410)",
+            "object": "God",
+            "object_type": "God",
+            "cause": "joy felt before God on the Thessalonians' behalf",
+            "cause_clause": "what thanksgiving can we return God for you for",
+            "experiencer": "self",
+            "divine_involvement": "addressee",
+            "valence": "righteous",
+            "compound": [
+              "chara \"joy\" — partner",
+              "chairo \"to rejoice\" — partner",
+              "antapodidōmi \"to repay\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "feel",
+            "morph": "V-PAI-1P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "feel",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "cause": "the Thessalonians' faith and standing firm in the Lord",
+            "cause_clause": "what thanksgiving can we return God for you for",
+            "experiencer": "self",
+            "valence": "righteous",
+            "compound": [
+              "chara \"joy\" — partner",
+              "eucharistia \"thankfulness\" — partner",
+              "antapodidōmi \"to repay\" — partner"
+            ],
+            "relational": "for"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-DSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "feel (G5463)",
+            "cause": "the Thessalonians' faith and standing firm in the Lord",
+            "cause_clause": "what thanksgiving can we return God for you for",
+            "experiencer": "self",
+            "valence": "righteous",
+            "compound": [
+              "chairo \"to rejoice\" — partner",
+              "eucharistia \"thankfulness\" — partner",
+              "antapodidōmi \"to repay\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G0467",
+            "translit": "antapodidōmi",
+            "gloss": "to repay",
+            "language": "Greek",
+            "cluster": "M26",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "return",
+            "morph": "V-2AAN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "return",
+            "lemma_meaning": "to repay, return",
+            "type": "action",
+            "object": "God",
+            "object_type": "God",
+            "cause": "thanksgiving received from God",
+            "cause_clause": "what thanksgiving can we return God for you for",
+            "divine_involvement": "object",
+            "valence": "neutral",
+            "compound": [
+              "chara \"joy\" — partner",
+              "chairo \"to rejoice\" — partner",
+              "eucharistia \"thankfulness\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Th 5:16",
+        "osis_id": "1Thess.5.16",
+        "testament": "NT",
+        "verse_text": "1Th 5:16 Rejoice always ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "Rejoice",
+            "morph": "V-PAM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Rejoice",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "experiencer": "other (addressed)",
+            "valence": "commanded"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Th 2:12",
+        "osis_id": "2Thess.2.12",
+        "testament": "NT",
+        "verse_text": "2Th 2:12 in order that all may be condemned who did not believe the truth but had pleasure in unrighteousness ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2106",
+            "translit": "eudokeō",
+            "gloss": "to delight",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "pleasure",
+            "morph": "V-AAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "pleasure",
+            "lemma_meaning": "to be well pleased, delight",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition",
+              "volition"
+            ],
+            "object": "unrighteousness",
+            "object_type": "abstract",
+            "valence": "sinful",
+            "compound": [
+              "pisteuō \"to trust (in)\" — partner",
+              "alētheia \"truth\" — partner"
+            ],
+            "relational": "in"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "truth",
+            "object_type": "abstract",
+            "valence": "sinful",
+            "immediate_response": "pleasure unrighteousness",
+            "compound": [
+              "eudokeō \"to delight\" — partner",
+              "alētheia \"truth\" — partner"
+            ],
+            "relational": "not"
+          }
+        },
+        {
+          "term": {
+            "strong": "G0225",
+            "translit": "alētheia",
+            "gloss": "truth",
+            "language": "Greek",
+            "cluster": "M13",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "truth",
+            "morph": "N-DSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "truth",
+            "lemma_meaning": "truth, truthfulness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "condemned (G2919)",
+            "object": "believe",
+            "experiencer": "other",
+            "valence": "righteous",
+            "immediate_response": "pleasure unrighteousness",
+            "compound": [
+              "pisteuō \"to trust (in)\" — partner",
+              "eudokeō \"to delight\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Ti 2:1",
+        "osis_id": "1Tim.2.1",
+        "testament": "NT",
+        "verse_text": "1Ti 2:1 First of all , then , I urge that supplications , prayers , intercessions , and thanksgivings be made for all people ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G3870",
+            "translit": "parakaleō",
+            "gloss": "to plead/comfort",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "urge",
+            "morph": "V-PAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "urge",
+            "lemma_meaning": "to ask, beg, plead",
+            "type": "action",
+            "faculty": "affect",
+            "object": "supplications",
+            "object_type": "person",
+            "experiencer": "self",
+            "valence": "commanded",
+            "compound": [
+              "enteuxis \"intercession\" — partner",
+              "eucharistia \"thankfulness\" — partner",
+              "proseuchē \"prayer\" — partner",
+              "deēsis \"petition\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G2169",
+            "translit": "eucharistia",
+            "gloss": "thankfulness",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "thanksgivings",
+            "morph": "N-APF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "thanksgivings",
+            "lemma_meaning": "expression of thanks, thanksgiving, gratitude thankfulness",
+            "type": "status",
+            "faculty": "perception",
+            "how": "urge (G3870)",
+            "object": "supplications",
+            "object_type": "abstract",
+            "experiencer": "self",
+            "valence": "commanded",
+            "compound": [
+              "enteuxis \"intercession\" — partner",
+              "parakaleō \"to plead/comfort\" — partner",
+              "proseuchē \"prayer\" — partner",
+              "deēsis \"petition\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G1162",
+            "translit": "deēsis",
+            "gloss": "petition",
+            "language": "Greek",
+            "cluster": "M21",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "supplications",
+            "morph": "N-APF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "supplications",
+            "lemma_meaning": "prayer, request, petition",
+            "type": "status",
+            "how": "urge (G3870)",
+            "object": "prayers",
+            "object_type": "God",
+            "experiencer": "self",
+            "valence": "commanded",
+            "compound": [
+              "enteuxis \"intercession\" — partner",
+              "parakaleō \"to plead/comfort\" — partner",
+              "eucharistia \"thankfulness\" — partner",
+              "proseuchē \"prayer\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G1783",
+            "translit": "enteuxis",
+            "gloss": "intercession",
+            "language": "Greek",
+            "cluster": "M21",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "intercessions",
+            "morph": "N-APF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "intercessions",
+            "lemma_meaning": "prayer, intercession",
+            "type": "status",
+            "how": "urge (G3870)",
+            "object": "supplications",
+            "object_type": "God",
+            "experiencer": "self",
+            "valence": "commanded",
+            "compound": [
+              "parakaleō \"to plead/comfort\" — partner",
+              "eucharistia \"thankfulness\" — partner",
+              "proseuchē \"prayer\" — partner",
+              "deēsis \"petition\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G4335",
+            "translit": "proseuchē",
+            "gloss": "prayer",
+            "language": "Greek",
+            "cluster": "M21",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "prayers",
+            "morph": "N-APF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "prayers",
+            "lemma_meaning": "prayer",
+            "type": "status",
+            "how": "urge (G3870)",
+            "object": "supplications",
+            "object_type": "God",
+            "experiencer": "self",
+            "valence": "commanded",
+            "compound": [
+              "enteuxis \"intercession\" — partner",
+              "parakaleō \"to plead/comfort\" — partner",
+              "eucharistia \"thankfulness\" — partner",
+              "deēsis \"petition\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Ti 4:3",
+        "osis_id": "1Tim.4.3",
+        "testament": "NT",
+        "verse_text": "1Ti 4:3 who forbid marriage and require abstinence from foods that God created to be received with thanksgiving by those who believe and know the truth ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4103",
+            "translit": "pistos",
+            "gloss": "faithful",
+            "language": "Greek",
+            "cluster": "M13",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "A-DPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "faithful, trustworthy, reliable, believing",
+            "type": "quality",
+            "faculty": "perception",
+            "valence": "righteous",
+            "immediate_response": "know truth",
+            "compound": [
+              "eucharistia \"thankfulness\" — partner",
+              "alētheia \"truth\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G2169",
+            "translit": "eucharistia",
+            "gloss": "thankfulness",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "thanksgiving",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "thanksgiving",
+            "lemma_meaning": "expression of thanks, thanksgiving, gratitude thankfulness",
+            "type": "status",
+            "faculty": "perception",
+            "how": "created (G2936)",
+            "object": "received",
+            "object_type": "God",
+            "experiencer": "other",
+            "valence": "righteous",
+            "immediate_response": "know truth",
+            "compound": [
+              "pistos \"faithful\" — partner",
+              "alētheia \"truth\" — partner"
+            ],
+            "relational": "with"
+          }
+        },
+        {
+          "term": {
+            "strong": "G0225",
+            "translit": "alētheia",
+            "gloss": "truth",
+            "language": "Greek",
+            "cluster": "M13",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "truth",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "truth",
+            "lemma_meaning": "truth, truthfulness",
+            "type": "status",
+            "faculty": "affect",
+            "valence": "righteous",
+            "compound": [
+              "pistos \"faithful\" — partner",
+              "eucharistia \"thankfulness\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Ti 4:4",
+        "osis_id": "1Tim.4.4",
+        "testament": "NT",
+        "verse_text": "1Ti 4:4 For everything created by God is good , and nothing is to be rejected if it is received with thanksgiving ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2169",
+            "translit": "eucharistia",
+            "gloss": "thankfulness",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "thanksgiving",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "thanksgiving",
+            "lemma_meaning": "expression of thanks, thanksgiving, gratitude thankfulness",
+            "type": "status",
+            "faculty": "perception",
+            "cause": "receiving God's created things",
+            "cause_clause": "everything created God good and nothing rejected received",
+            "valence": "righteous",
+            "relational": "with"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Ti 1:4",
+        "osis_id": "2Tim.1.4",
+        "testament": "NT",
+        "verse_text": "2Ti 1:4 As I remember your tears , I long to see you , that I may be filled with joy ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1971",
+            "translit": "epipotheō",
+            "gloss": "to long for",
+            "language": "Greek",
+            "cluster": "M18",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "long",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "long",
+            "lemma_meaning": "to long for, crave, desire",
+            "type": "action",
+            "faculty": "affect",
+            "valence": "righteous",
+            "immediate_response": "filled joy",
+            "compound": [
+              "chara \"joy\" — partner",
+              "mnaomai \"to remember\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "filled (G4137)",
+            "experiencer": "self",
+            "valence": "righteous",
+            "compound": [
+              "epipotheō \"to long for\" — partner",
+              "mnaomai \"to remember\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G3415",
+            "translit": "mnaomai",
+            "gloss": "to remember",
+            "language": "Greek",
+            "cluster": "M41",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "remember",
+            "morph": "V-RMP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "remember",
+            "lemma_meaning": "be remembered, remember",
+            "type": "action",
+            "faculty": "memory",
+            "object": "tears",
+            "object_type": "person",
+            "valence": "neutral",
+            "compound": [
+              "epipotheō \"to long for\" — partner",
+              "chara \"joy\" — partner"
+            ],
+            "relational": "your"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Phile 7",
+        "osis_id": "Phlm.1.7",
+        "testament": "NT",
+        "verse_text": "Phile 7 For I have derived much joy and comfort from your love , my brother , because the hearts of the saints have been refreshed through you ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "location": "inward-parts",
+            "faculty": "affect",
+            "how": "derived (G2192)",
+            "object": "much",
+            "cause": "Philemon's love refreshing the hearts of the saints",
+            "cause_clause": "derived much joy and comfort from your love",
+            "experiencer": "self",
+            "intensity": "many (much)",
+            "valence": "righteous",
+            "immediate_response": "refreshed",
+            "compound": [
+              "splanchnon \"affection/entrails\" — qualifier",
+              "paraklēsis \"encouragement\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G4698",
+            "translit": "splanchnon",
+            "gloss": "affection/entrails",
+            "language": "Greek",
+            "cluster": "T2",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "hearts",
+            "morph": "N-NPN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "hearts",
+            "lemma_meaning": "inward parts of body: intestines",
+            "type": "status",
+            "location": "inward-parts",
+            "faculty": [
+              "affect",
+              "perception"
+            ],
+            "how": "refreshed (G0373)",
+            "cause": "pending-read",
+            "cause_clause": "derived much joy and comfort from your love",
+            "experiencer": "other",
+            "compound": [
+              "chara \"joy\" — partner",
+              "paraklēsis \"encouragement\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G3874",
+            "translit": "paraklēsis",
+            "gloss": "encouragement",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "comfort",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "comfort",
+            "lemma_meaning": "encouragement, comfort, consolation, appeal",
+            "type": "status",
+            "location": "inward-parts",
+            "faculty": "affect",
+            "how": "derived (G2192)",
+            "object": "much",
+            "cause": "Philemon's love refreshing the hearts of the saints",
+            "cause_clause": "derived much joy and comfort from your love",
+            "experiencer": "self",
+            "intensity": "many (much)",
+            "valence": "righteous",
+            "immediate_response": "refreshed",
+            "compound": [
+              "chara \"joy\" — partner",
+              "splanchnon \"affection/entrails\" — qualifier"
+            ],
+            "relational": "from"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Phile 20",
+        "osis_id": "Phlm.1.20",
+        "testament": "NT",
+        "verse_text": "Phile 20 Yes , brother , I want some benefit from you in the Lord . Refresh my heart in Christ ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G3685",
+            "translit": "oninemi",
+            "gloss": "to have joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "benefit",
+            "morph": "V-2ADO-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "benefit",
+            "lemma_meaning": "to have benefit or joy",
+            "type": "action",
+            "location": "inward-parts",
+            "faculty": "affect",
+            "object": "Lord",
+            "object_type": "God",
+            "experiencer": "self",
+            "valence": "neutral",
+            "compound": "splanchnon \"affection/entrails\" — qualifier",
+            "relational": [
+              "I",
+              "you"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G4698",
+            "translit": "splanchnon",
+            "gloss": "affection/entrails",
+            "language": "Greek",
+            "cluster": "T2",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "heart",
+            "morph": "N-APN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "heart",
+            "lemma_meaning": "inward parts of body: intestines",
+            "type": "status",
+            "location": "inward-parts",
+            "faculty": [
+              "affect",
+              "perception"
+            ],
+            "how": "Refresh (G0373)",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "oninemi \"to have joy\" — partner",
+            "relational": [
+              "my",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Heb 1:9",
+        "osis_id": "Heb.1.9",
+        "testament": "NT",
+        "verse_text": "Heb 1:9 You have loved righteousness and hated wickedness ; therefore God , your God , has anointed you with the oil of gladness beyond your companions .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0020",
+            "translit": "agalliasis",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "gladness",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "gladness",
+            "lemma_meaning": "delight, great joy",
+            "type": "status",
+            "faculty": "affect",
+            "how": "anointed (G5548)",
+            "object": "oil",
+            "object_type": "abstract",
+            "experiencer": "other",
+            "divine_involvement": "giver",
+            "valence": "neutral",
+            "compound": [
+              "agapaō \"to love\" — partner",
+              "dikaiosunē \"righteousness\" — partner",
+              "anomia \"lawlessness\" — partner"
+            ],
+            "relational": "beyond"
+          }
+        },
+        {
+          "term": {
+            "strong": "G1343",
+            "translit": "dikaiosunē",
+            "gloss": "righteousness",
+            "language": "Greek",
+            "cluster": "M26",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "righteousness",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "righteousness",
+            "lemma_meaning": "righteousness, what is right, justice, the act of doing what is in agr",
+            "type": "status",
+            "faculty": [
+              "moral_evaluation",
+              "conscience"
+            ],
+            "how": "loved (G0025)",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "immediate_response": "hated wickedness",
+            "compound": [
+              "agapaō \"to love\" — partner",
+              "agalliasis \"joy\" — partner",
+              "anomia \"lawlessness\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G0025",
+            "translit": "agapaō",
+            "gloss": "to love",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "loved",
+            "morph": "V-AAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "loved",
+            "lemma_meaning": "to love",
+            "type": "action",
+            "faculty": "affect",
+            "object": "righteousness",
+            "object_type": "abstract",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "immediate_response": "hated wickedness",
+            "compound": [
+              "agalliasis \"joy\" — partner",
+              "dikaiosunē \"righteousness\" — partner",
+              "anomia \"lawlessness\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G0458",
+            "translit": "anomia",
+            "gloss": "lawlessness",
+            "language": "Greek",
+            "cluster": "M30",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "wickedness",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "wickedness",
+            "lemma_meaning": "wickedness, lawlessness, lawless deed",
+            "type": "status",
+            "faculty": "moral_evaluation",
+            "how": "hated (G3404)",
+            "experiencer": "other (addressed)",
+            "valence": "sinful",
+            "compound": [
+              "agapaō \"to love\" — partner",
+              "agalliasis \"joy\" — partner",
+              "dikaiosunē \"righteousness\" — partner"
+            ],
+            "relational": "therefore"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Heb 10:6",
+        "osis_id": "Heb.10.6",
+        "testament": "NT",
+        "verse_text": "Heb 10:6 in burnt offerings and sin offerings you have taken no pleasure ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2106",
+            "translit": "eudokeō",
+            "gloss": "to delight",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "pleasure",
+            "morph": "V-AAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "pleasure",
+            "lemma_meaning": "to be well pleased, delight",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition",
+              "volition"
+            ],
+            "experiencer": "other (addressed)",
+            "valence": "neutral",
+            "relational": "no"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Heb 10:8",
+        "osis_id": "Heb.10.8",
+        "testament": "NT",
+        "verse_text": "Heb 10:8 When he said above , “You have neither desired nor taken pleasure in sacrifices and offerings and burnt offerings and sin offerings ” ( these are offered according to the law ),"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2106",
+            "translit": "eudokeō",
+            "gloss": "to delight",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "pleasure",
+            "morph": "V-AAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "pleasure",
+            "lemma_meaning": "to be well pleased, delight",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition",
+              "volition"
+            ],
+            "object": "sacrifices",
+            "object_type": "thing",
+            "experiencer": "other (addressed)",
+            "valence": "neutral",
+            "immediate_response": "offered law",
+            "compound": "thelō \"to will/desire\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2309",
+            "translit": "thelō",
+            "gloss": "to will/desire",
+            "language": "Greek",
+            "cluster": "M29",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "desired",
+            "morph": "V-AAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "desired",
+            "lemma_meaning": "to will, decide, want to",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "volition"
+            ],
+            "object": "pleasure",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "immediate_response": "pleasure sacrifices",
+            "compound": "eudokeō \"to delight\" — partner",
+            "relational": "neither"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Heb 10:34",
+        "osis_id": "Heb.10.34",
+        "testament": "NT",
+        "verse_text": "Heb 10:34 For you had compassion on those in prison , and you joyfully accepted the plundering of your property , since you knew that you yourselves had a better possession and an abiding one ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4834",
+            "translit": "sumpatheō",
+            "gloss": "to sympathize",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "compassion",
+            "morph": "V-AAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "compassion",
+            "lemma_meaning": "to sympathize with, Heb. 4:15",
+            "type": "action",
+            "faculty": "affect",
+            "object": "prison",
+            "object_type": "person",
+            "cause": "those in prison (fellow believers suffering)",
+            "cause_clause": "compassion prison and joyfully accepted plundering your property",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "immediate_response": "accepted plundering",
+            "compound": [
+              "chara \"joy\" — partner",
+              "harpagē \"plunder\" — partner",
+              "kreissōn \"greater\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G0724",
+            "translit": "harpagē",
+            "gloss": "plunder",
+            "language": "Greek",
+            "cluster": "M24",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "plundering",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "plundering",
+            "lemma_meaning": "greediness, confiscation, robbery, plunder",
+            "type": "status",
+            "how": "accepted (G4327)",
+            "cause_clause": "compassion prison and joyfully accepted plundering your property",
+            "experiencer": "other (addressed)",
+            "compound": [
+              "chara \"joy\" — partner",
+              "sumpatheō \"to sympathize\" — partner",
+              "kreissōn \"greater\" — partner"
+            ],
+            "relational": "your"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joyfully",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joyfully",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "accepted (G4327)",
+            "object": "plundering",
+            "object_type": "situation",
+            "cause": "knowing they had a better, abiding possession",
+            "cause_clause": "compassion prison and joyfully accepted plundering your property",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "compound": [
+              "sumpatheō \"to sympathize\" — partner",
+              "harpagē \"plunder\" — partner",
+              "kreissōn \"greater\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G2908",
+            "translit": "kreissōn",
+            "gloss": "greater",
+            "language": "Greek",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "better",
+            "morph": "A-ASF-C",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "better",
+            "lemma_meaning": "better, superior, greater",
+            "type": "quality",
+            "cause": "knowing they had a better, abiding possession",
+            "cause_clause": "compassion prison and joyfully accepted plundering your property",
+            "immediate_response": "abiding one",
+            "compound": [
+              "chara \"joy\" — partner",
+              "sumpatheō \"to sympathize\" — partner",
+              "harpagē \"plunder\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Heb 10:38",
+        "osis_id": "Heb.10.38",
+        "testament": "NT",
+        "verse_text": "Heb 10:38 but my righteous one shall live by faith , and if he shrinks back , my soul has no pleasure in him .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2106",
+            "translit": "eudokeō",
+            "gloss": "to delight",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "pleasure",
+            "morph": "V-PAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "pleasure",
+            "lemma_meaning": "to be well pleased, delight",
+            "type": "action",
+            "location": "soul",
+            "faculty": [
+              "affect",
+              "cognition",
+              "volition"
+            ],
+            "experiencer": "other",
+            "compound": [
+              "psuchē \"soul: myself\" — co-seated",
+              "dikaios \"just\" — partner"
+            ],
+            "relational": [
+              "no",
+              "in"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G1342",
+            "translit": "dikaios",
+            "gloss": "just",
+            "language": "Greek",
+            "cluster": "M26",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "righteous one",
+            "morph": "A-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "righteous one",
+            "lemma_meaning": "right, righteous, upright",
+            "type": "quality",
+            "location": "soul",
+            "origin": "received-from-outside",
+            "faculty": [
+              "moral_evaluation",
+              "conscience"
+            ],
+            "how": "live (G2198)",
+            "object": "faith",
+            "object_type": "person",
+            "experiencer": "other",
+            "valence": "righteous",
+            "immediate_response": "shrinks back soul",
+            "compound": [
+              "psuchē \"soul: myself\" — co-seated",
+              "eudokeō \"to delight\" — partner"
+            ],
+            "relational": "my"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5590I",
+            "translit": "psuchē",
+            "gloss": "soul: myself",
+            "language": "Greek",
+            "cluster": "M47",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "soul",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "soul",
+            "lemma_meaning": "life, soul",
+            "type": "status",
+            "location": "soul",
+            "faculty": "perception",
+            "how": "shrinks back (G5288)",
+            "experiencer": "other",
+            "compound": [
+              "dikaios \"just\" — partner",
+              "eudokeō \"to delight\" — partner"
+            ],
+            "relational": [
+              "my",
+              "no"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Heb 12:2",
+        "osis_id": "Heb.12.2",
+        "testament": "NT",
+        "verse_text": "Heb 12:2 looking to Jesus , the founder and perfecter of our faith , who for the joy that was set before him endured the cross , despising the shame , and is seated at the right hand of the throne of God ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "endured (G5278)",
+            "object": "cross",
+            "object_type": "situation",
+            "experiencer": "other",
+            "valence": "righteous",
+            "compound": [
+              "hupomenō \"to remain/endure\" — partner",
+              "aischunē \"shame\" — partner"
+            ],
+            "relational": "for"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5278",
+            "translit": "hupomenō",
+            "gloss": "to remain/endure",
+            "language": "Greek",
+            "cluster": "M34",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "endured",
+            "morph": "V-AAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "endured",
+            "lemma_meaning": "to stay behind",
+            "type": "action",
+            "object": "cross",
+            "object_type": "thing",
+            "experiencer": "other",
+            "valence": "righteous",
+            "compound": [
+              "aischunē \"shame\" — partner",
+              "chara \"joy\" — partner"
+            ],
+            "relational": "him"
+          }
+        },
+        {
+          "term": {
+            "strong": "G0152",
+            "translit": "aischunē",
+            "gloss": "shame",
+            "language": "Greek",
+            "cluster": "M07",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "shame",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "shame",
+            "lemma_meaning": "shame, disgrace",
+            "type": "status",
+            "faculty": "affect",
+            "how": "seated (G2523)",
+            "experiencer": "other",
+            "compound": [
+              "hupomenō \"to remain/endure\" — partner",
+              "chara \"joy\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Heb 12:11",
+        "osis_id": "Heb.12.11",
+        "testament": "NT",
+        "verse_text": "Heb 12:11 For the moment all discipline seems painful rather than pleasant , but later it yields the peaceful fruit of righteousness to those who have been trained by it ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "pleasant",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "pleasant",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "seems (G1380)",
+            "object": "painful",
+            "object_type": "abstract",
+            "cause": "painful (perceived)",
+            "experiencer": "other",
+            "immediate_response": "yields fruit",
+            "compound": [
+              "dikaiosunē \"righteousness\" — partner",
+              "eirēnikos \"peaceful\" — partner",
+              "gumnazō \"to train\" — partner"
+            ],
+            "relational": "rather"
+          }
+        },
+        {
+          "term": {
+            "strong": "G1343",
+            "translit": "dikaiosunē",
+            "gloss": "righteousness",
+            "language": "Greek",
+            "cluster": "M26",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "righteousness",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "righteousness",
+            "lemma_meaning": "righteousness, what is right, justice, the act of doing what is in agr",
+            "type": "status",
+            "faculty": [
+              "moral_evaluation",
+              "conscience"
+            ],
+            "how": "yields (G0591)",
+            "object": "peaceful",
+            "experiencer": "other",
+            "valence": "righteous",
+            "compound": [
+              "chara \"joy\" — partner",
+              "eirēnikos \"peaceful\" — partner",
+              "gumnazō \"to train\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G1516",
+            "translit": "eirēnikos",
+            "gloss": "peaceful",
+            "language": "Greek",
+            "cluster": "M33",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "peaceful",
+            "morph": "A-ASM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "peaceful",
+            "lemma_meaning": "peace-loving, peaceable, peaceful, with a focus of having freedom from",
+            "type": "quality",
+            "how": "yields (G0591)",
+            "object": "fruit",
+            "object_type": "abstract",
+            "experiencer": "other",
+            "valence": "righteous",
+            "compound": [
+              "chara \"joy\" — partner",
+              "dikaiosunē \"righteousness\" — partner",
+              "gumnazō \"to train\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G1128",
+            "translit": "gumnazō",
+            "gloss": "to train",
+            "language": "Greek",
+            "cluster": "M15",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "trained",
+            "morph": "V-RPP-DPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "trained",
+            "lemma_meaning": "to train, exercise",
+            "type": "action",
+            "valence": "righteous",
+            "compound": [
+              "chara \"joy\" — partner",
+              "dikaiosunē \"righteousness\" — partner",
+              "eirēnikos \"peaceful\" — partner"
+            ],
+            "relational": "by"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Heb 13:17",
+        "osis_id": "Heb.13.17",
+        "testament": "NT",
+        "verse_text": "Heb 13:17 Obey your leaders and submit to them, for they are keeping watch over your souls , as those who will have to give an account . Let them do this with joy and not with groaning , for that would be of no advantage to you ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4727",
+            "translit": "ste.na.zo",
+            "gloss": "to groan",
+            "language": "Greek",
+            "cluster": "M42",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "groaning",
+            "morph": "V-PAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "groaning",
+            "lemma_meaning": "to groan, sigh",
+            "type": "action",
+            "location": "soul",
+            "cause": "leading people who are disobedient",
+            "cause_clause": "they keeping watch over your souls as give account",
+            "valence": "neutral",
+            "compound": [
+              "chara \"joy\" — partner",
+              "peithō \"to persuade\" — partner",
+              "psuchē \"soul\" — co-seated"
+            ],
+            "relational": "not"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "location": "soul",
+            "faculty": "affect",
+            "how": "do (G4160)",
+            "cause": "obedience and submission of those led",
+            "cause_clause": "they keeping watch over your souls as give account",
+            "experiencer": "other",
+            "valence": "commanded",
+            "immediate_response": "groaning",
+            "compound": [
+              "ste.na.zo \"to groan\" — partner",
+              "peithō \"to persuade\" — partner",
+              "psuchē \"soul\" — co-seated"
+            ],
+            "relational": "with"
+          }
+        },
+        {
+          "term": {
+            "strong": "G3982",
+            "translit": "peithō",
+            "gloss": "to persuade",
+            "language": "Greek",
+            "cluster": "M35",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "Obey",
+            "morph": "V-PPM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Obey",
+            "lemma_meaning": "to persuade",
+            "type": "action",
+            "location": "soul",
+            "cause_clause": "they keeping watch over your souls as give account",
+            "experiencer": "other (addressed)",
+            "valence": "commanded",
+            "compound": [
+              "ste.na.zo \"to groan\" — partner",
+              "chara \"joy\" — partner",
+              "psuchē \"soul\" — co-seated"
+            ],
+            "relational": "your"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5590G",
+            "translit": "psuchē",
+            "gloss": "soul",
+            "language": "Greek",
+            "cluster": "M47",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "souls",
+            "morph": "N-GPF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "souls",
+            "lemma_meaning": "life, soul",
+            "type": "status",
+            "location": "soul",
+            "faculty": "perception",
+            "how": "keeping watch (G0069)",
+            "cause_clause": "they keeping watch over your souls as give account",
+            "experiencer": "other",
+            "valence": "neutral",
+            "compound": [
+              "ste.na.zo \"to groan\" — partner",
+              "chara \"joy\" — partner",
+              "peithō \"to persuade\" — partner"
+            ],
+            "relational": "your"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Jam 1:2",
+        "osis_id": "Jas.1.2",
+        "testament": "NT",
+        "verse_text": "Jam 1:2 Count it all joy , my brothers , when you meet trials of various kinds ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "Count (G2233)",
+            "object": "all",
+            "experiencer": "other (addressed)",
+            "valence": "commanded",
+            "immediate_response": "meet trials",
+            "compound": [
+              "hēgeomai \"to govern\" — partner",
+              "peirasmos \"temptation/testing: testing\" — partner"
+            ],
+            "relational": "my"
+          }
+        },
+        {
+          "term": {
+            "strong": "G3986H",
+            "translit": "peirasmos",
+            "gloss": "temptation/testing: testing",
+            "language": "Greek",
+            "cluster": "M35",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "trials",
+            "morph": "N-DPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "trials",
+            "lemma_meaning": "test",
+            "type": "status",
+            "how": "meet (G4045)",
+            "experiencer": "other (addressed)",
+            "valence": "neutral",
+            "compound": [
+              "chara \"joy\" — partner",
+              "hēgeomai \"to govern\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G2233",
+            "translit": "hēgeomai",
+            "gloss": "to govern",
+            "language": "Greek",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "Count",
+            "morph": "V-ADM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Count",
+            "lemma_meaning": "to lead the way",
+            "type": "action",
+            "faculty": "cognition",
+            "object": "all",
+            "experiencer": "other (addressed)",
+            "valence": "commanded",
+            "immediate_response": "meet trials",
+            "compound": [
+              "chara \"joy\" — partner",
+              "peirasmos \"temptation/testing: testing\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Jam 4:9",
+        "osis_id": "Jas.4.9",
+        "testament": "NT",
+        "verse_text": "Jam 4:9 Be wretched and mourn and weep . Let your laughter be turned to mourning and your joy to gloom ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G3996",
+            "translit": "pen.the.o",
+            "gloss": "to mourn",
+            "language": "Greek",
+            "cluster": "M03",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "mourn",
+            "morph": "V-AAM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "mourn",
+            "lemma_meaning": "to mourn, grieve (over)",
+            "type": "action",
+            "faculty": "affect",
+            "object": "weep",
+            "experiencer": "other (addressed)",
+            "valence": "commanded",
+            "immediate_response": "weep laughter",
+            "compound": [
+              "chara \"joy\" — partner",
+              "penthos \"grief\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G3997",
+            "translit": "penthos",
+            "gloss": "grief",
+            "language": "Greek",
+            "cluster": "M03",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "mourning",
+            "morph": "N-ASN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "mourning",
+            "lemma_meaning": "mourning, grief, sadness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "turned (G3344)",
+            "experiencer": "other",
+            "valence": "commanded",
+            "compound": [
+              "pen.the.o \"to mourn\" — partner",
+              "chara \"joy\" — partner"
+            ],
+            "relational": "to"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "turned (G3344)",
+            "object": "mourning",
+            "object_type": "abstract",
+            "experiencer": "other",
+            "valence": "sinful",
+            "compound": [
+              "pen.the.o \"to mourn\" — partner",
+              "penthos \"grief\" — partner"
+            ],
+            "relational": "to"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Jam 5:13",
+        "osis_id": "Jas.5.13",
+        "testament": "NT",
+        "verse_text": "Jam 5:13 Is anyone among you suffering ? Let him pray . Is anyone cheerful ? Let him sing praise ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2114",
+            "translit": "euthumeō",
+            "gloss": "be cheerful",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "cheerful",
+            "morph": "V-PAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "cheerful",
+            "lemma_meaning": "to keep up one’s courage",
+            "type": "action",
+            "faculty": "perception",
+            "experiencer": "other",
+            "valence": "neutral",
+            "compound": "proseuchomai \"to pray\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4336",
+            "translit": "proseuchomai",
+            "gloss": "to pray",
+            "language": "Greek",
+            "cluster": "M21",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "pray",
+            "morph": "V-PNM-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "pray",
+            "lemma_meaning": "to pray, offer prayer, Mt. 5:44",
+            "type": "action",
+            "experiencer": "other",
+            "valence": "commanded",
+            "compound": "euthumeō \"be cheerful\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Pe 1:6",
+        "osis_id": "1Pet.1.6",
+        "testament": "NT",
+        "verse_text": "1Pe 1:6 In this you rejoice , though now for a little while , if necessary , you have been grieved by various trials ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G3076",
+            "translit": "lupeō",
+            "gloss": "to grieve",
+            "language": "Greek",
+            "cluster": "M03",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "grieved",
+            "morph": "V-APP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "grieved",
+            "lemma_meaning": "(act.) to cause sorrow, grief",
+            "type": "action",
+            "faculty": "affect",
+            "object": "trials",
+            "object_type": "person",
+            "valence": "neutral",
+            "compound": [
+              "agalliao \"to rejoice\" — partner",
+              "peirasmos \"temptation/testing: testing\" — partner"
+            ],
+            "relational": "by"
+          }
+        },
+        {
+          "term": {
+            "strong": "G0021",
+            "translit": "agalliao",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "rejoice",
+            "morph": "V-PNI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoice",
+            "lemma_meaning": "to be filled with delight, with great joy",
+            "type": "action",
+            "faculty": "affect",
+            "object": "little while",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "compound": [
+              "lupeō \"to grieve\" — partner",
+              "peirasmos \"temptation/testing: testing\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G3986H",
+            "translit": "peirasmos",
+            "gloss": "temptation/testing: testing",
+            "language": "Greek",
+            "cluster": "M35",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "trials",
+            "morph": "N-DPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "trials",
+            "lemma_meaning": "test",
+            "type": "status",
+            "how": "you have been (G2076)",
+            "object": "grieved",
+            "experiencer": "other",
+            "valence": "neutral",
+            "compound": [
+              "agalliao \"to rejoice\" — partner",
+              "lupeō \"to grieve\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Pe 1:8",
+        "osis_id": "1Pet.1.8",
+        "testament": "NT",
+        "verse_text": "1Pe 1:8 Though you have not seen him , you love him. Though you do not now see him, you believe in him and rejoice with joy that is inexpressible and filled with glory ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "object_type": "person",
+            "valence": "righteous",
+            "compound": [
+              "agapaō \"to love\" — partner",
+              "chara \"joy\" — partner",
+              "agalliao \"to rejoice\" — partner"
+            ],
+            "relational": "in"
+          }
+        },
+        {
+          "term": {
+            "strong": "G0021",
+            "translit": "agalliao",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "rejoice",
+            "morph": "V-PNI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoice",
+            "lemma_meaning": "to be filled with delight, with great joy",
+            "type": "action",
+            "faculty": "affect",
+            "object": "joy",
+            "object_type": "abstract",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "immediate_response": "glory",
+            "compound": [
+              "agapaō \"to love\" — partner",
+              "chara \"joy\" — partner",
+              "pisteuō \"to trust (in)\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-DSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "rejoice (G0021)",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "immediate_response": "glory",
+            "compound": [
+              "agapaō \"to love\" — partner",
+              "agalliao \"to rejoice\" — partner",
+              "pisteuō \"to trust (in)\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G0025",
+            "translit": "agapaō",
+            "gloss": "to love",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "love",
+            "morph": "V-PAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "love",
+            "lemma_meaning": "to love",
+            "type": "action",
+            "faculty": "affect",
+            "experiencer": "other (addressed)",
+            "valence": "righteous",
+            "immediate_response": "believe",
+            "compound": [
+              "chara \"joy\" — partner",
+              "agalliao \"to rejoice\" — partner",
+              "pisteuō \"to trust (in)\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Pe 4:13",
+        "osis_id": "1Pet.4.13",
+        "testament": "NT",
+        "verse_text": "1Pe 4:13 But rejoice insofar as you share Christ’s sufferings , that you may also rejoice and be glad when his glory is revealed ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0021",
+            "translit": "agalliao",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "rejoice",
+            "morph": "V-PNP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoice",
+            "lemma_meaning": "to be filled with delight, with great joy",
+            "type": "action",
+            "faculty": "affect",
+            "object": "Christ’s",
+            "object_type": "situation",
+            "experiencer": "other (addressed)",
+            "valence": "commanded",
+            "immediate_response": "share Christ’s",
+            "compound": "chairo \"to rejoice\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "rejoice",
+            "morph": "V-PAM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoice",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "object": "Christ’s",
+            "object_type": "situation",
+            "experiencer": "other (addressed)",
+            "valence": "commanded",
+            "immediate_response": "share Christ’s",
+            "compound": "agalliao \"to rejoice\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Pe 1:17",
+        "osis_id": "2Pet.1.17",
+        "testament": "NT",
+        "verse_text": "2Pe 1:17 For when he received honor and glory from God the Father , and the voice was borne to him by the Majestic Glory , “ This is my beloved Son , with whom I am well pleased ,”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2106",
+            "translit": "eudokeō",
+            "gloss": "to delight",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "pleased",
+            "morph": "V-AAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "pleased",
+            "lemma_meaning": "to be well pleased, delight",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "cognition",
+              "volition"
+            ],
+            "cause": "the beloved Son receiving honor and glory",
+            "cause_clause": "received honor glory from God Father and voice",
+            "experiencer": "self",
+            "divine_involvement": "agent",
+            "valence": "righteous",
+            "compound": "ferō \"to bear/lead\" — partner",
+            "relational": "I"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5342",
+            "translit": "ferō",
+            "gloss": "to bear/lead",
+            "language": "Greek",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "borne",
+            "morph": "V-APP-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "borne",
+            "lemma_meaning": "to bring, bear, carry",
+            "type": "action",
+            "cause": "the Majestic Glory speaking",
+            "cause_clause": "received honor glory from God Father and voice",
+            "divine_involvement": "agent",
+            "compound": "eudokeō \"to delight\" — partner",
+            "relational": "him"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Jo 1:4",
+        "osis_id": "1John.1.4",
+        "testament": "NT",
+        "verse_text": "1Jo 1:4 And we are writing these things so that our joy may be complete ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "be (G1510)",
+            "experiencer": "other",
+            "valence": "righteous"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Jo 3:22",
+        "osis_id": "1John.3.22",
+        "testament": "NT",
+        "verse_text": "1Jo 3:22 and whatever we ask we receive from him , because we keep his commandments and do what pleases him ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0701",
+            "translit": "arestos",
+            "gloss": "pleasing",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "pleases",
+            "morph": "A-APN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "pleases",
+            "lemma_meaning": "pleasing, desirable, right",
+            "type": "quality",
+            "how": "do (G4160)",
+            "cause": "keeping his commandments",
+            "cause_clause": "keep his commandments and do pleases him",
+            "experiencer": "self",
+            "valence": "righteous",
+            "relational": "him"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Jo 4",
+        "osis_id": "2John.1.4",
+        "testament": "NT",
+        "verse_text": "2Jo 4 I rejoiced greatly to find some of your children walking in the truth , just as we were commanded by the Father ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "rejoiced",
+            "morph": "V-2AOI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoiced",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "cause": "finding children walking in the truth",
+            "cause_clause": "find some your children walking in truth just as",
+            "experiencer": "self",
+            "valence": "righteous",
+            "immediate_response": "find"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "2Jo 12",
+        "osis_id": "2John.1.12",
+        "testament": "NT",
+        "verse_text": "2Jo 12 Though I have much to write to you , I would rather not use paper and ink . Instead I hope to come to you and talk face to face , so that our joy may be complete ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1679",
+            "translit": "elpizo",
+            "gloss": "to hope/expect",
+            "language": "Greek",
+            "cluster": "M18",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "hope",
+            "morph": "V-PAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "hope",
+            "lemma_meaning": "to hope, hope for, put hope in, expect, an attitude of confidently loo",
+            "type": "action",
+            "experiencer": "self",
+            "valence": "neutral",
+            "compound": [
+              "chara \"joy\" — partner",
+              "boulomai \"to plan\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "be (G1510)",
+            "experiencer": "other",
+            "valence": "righteous",
+            "compound": [
+              "elpizo \"to hope/expect\" — partner",
+              "boulomai \"to plan\" — partner"
+            ],
+            "relational": "our"
+          }
+        },
+        {
+          "term": {
+            "strong": "G1014",
+            "translit": "boulomai",
+            "gloss": "to plan",
+            "language": "Greek",
+            "cluster": "M15",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "I would",
+            "morph": "V-AOI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "I would",
+            "lemma_meaning": "to wish, will, desire",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "volition"
+            ],
+            "object": "paper",
+            "object_type": "situation",
+            "experiencer": "self",
+            "intensity": "many (much)",
+            "valence": "neutral",
+            "immediate_response": "hope",
+            "compound": [
+              "elpizo \"to hope/expect\" — partner",
+              "chara \"joy\" — partner"
+            ],
+            "relational": [
+              "you",
+              "not"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "3Jo 3",
+        "osis_id": "3John.1.3",
+        "testament": "NT",
+        "verse_text": "3Jo 3 For I rejoiced greatly when the brothers came and testified to your truth , as indeed you are walking in the truth ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "rejoiced",
+            "morph": "V-2AOI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoiced",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "object": "brothers",
+            "object_type": "situation",
+            "cause": "brothers testifying to the recipient's walking in truth",
+            "cause_clause": "rejoiced greatly brothers came and testified your truth",
+            "experiencer": "self",
+            "valence": "righteous"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "3Jo 4",
+        "osis_id": "3John.1.4",
+        "testament": "NT",
+        "verse_text": "3Jo 4 I have no greater joy than to hear that my children are walking in the truth ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5479",
+            "translit": "chara",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "joy",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "joy",
+            "lemma_meaning": "joy, rejoicing, happiness, gladness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "have (G2192)",
+            "object": "greater",
+            "experiencer": "self",
+            "valence": "righteous"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Jude 24",
+        "osis_id": "Jude.1.24",
+        "testament": "NT",
+        "verse_text": "Jude 24 Now to him who is able to keep you from stumbling and to present you blameless before the presence of his glory with great joy ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0020",
+            "translit": "agalliasis",
+            "gloss": "joy",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "great joy",
+            "morph": "N-DSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "great joy",
+            "lemma_meaning": "delight, great joy",
+            "type": "status",
+            "faculty": "affect",
+            "valence": "righteous",
+            "compound": "aptaistos \"without falling\" — partner",
+            "relational": "with"
+          }
+        },
+        {
+          "term": {
+            "strong": "G0679",
+            "translit": "aptaistos",
+            "gloss": "without falling",
+            "language": "Greek",
+            "cluster": "M34",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "from stumbling",
+            "morph": "A-APM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "from stumbling",
+            "lemma_meaning": "without falling, without stumbling",
+            "type": "quality",
+            "valence": "righteous",
+            "immediate_response": "present",
+            "compound": "agalliasis \"joy\" — partner",
+            "relational": "you"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Rev 4:9",
+        "osis_id": "Rev.4.9",
+        "testament": "NT",
+        "verse_text": "Rev 4:9 And whenever the living creatures give glory and honor and thanks to him who is seated on the throne , who lives forever and ever ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2169",
+            "translit": "eucharistia",
+            "gloss": "thankfulness",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "thanks",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "thanks",
+            "lemma_meaning": "expression of thanks, thanksgiving, gratitude thankfulness",
+            "type": "status",
+            "faculty": "perception",
+            "valence": "righteous"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Rev 7:12",
+        "osis_id": "Rev.7.12",
+        "testament": "NT",
+        "verse_text": "Rev 7:12 saying , “ Amen ! Blessing and glory and wisdom and thanksgiving and honor and power and might be to our God forever and ever ! Amen .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2169",
+            "translit": "eucharistia",
+            "gloss": "thankfulness",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "thanksgiving",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "thanksgiving",
+            "lemma_meaning": "expression of thanks, thanksgiving, gratitude thankfulness",
+            "type": "status",
+            "faculty": "perception",
+            "divine_involvement": "addressee",
+            "valence": "righteous",
+            "compound": [
+              "sofia \"wisdom\" — partner",
+              "ischus \"strength\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G4678",
+            "translit": "sofia",
+            "gloss": "wisdom",
+            "language": "Greek",
+            "cluster": "M15",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "wisdom",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "wisdom",
+            "lemma_meaning": "wisdom (either secular or divine). Christ is called \"the wisdom of God",
+            "type": "status",
+            "faculty": "cognition",
+            "divine_involvement": "addressee",
+            "valence": "neutral",
+            "compound": [
+              "ischus \"strength\" — partner",
+              "eucharistia \"thankfulness\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G2479",
+            "translit": "ischus",
+            "gloss": "strength",
+            "language": "Greek",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "might",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "might",
+            "lemma_meaning": "strength, power",
+            "type": "status",
+            "divine_involvement": "addressee",
+            "valence": "neutral",
+            "compound": [
+              "sofia \"wisdom\" — partner",
+              "eucharistia \"thankfulness\" — partner"
+            ],
+            "relational": "our"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Rev 11:10",
+        "osis_id": "Rev.11.10",
+        "testament": "NT",
+        "verse_text": "Rev 11:10 and those who dwell on the earth will rejoice over them and make merry and exchange presents , because these two prophets had been a torment to those who dwell on the earth ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "rejoice",
+            "morph": "V-PAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoice",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "cause": "death of the two prophets who tormented them",
+            "cause_clause": "these two prophets torment dwell on earth",
+            "experiencer": "other",
+            "valence": "sinful",
+            "immediate_response": "make merry",
+            "compound": [
+              "eufrainō \"to celebrate\" — partner",
+              "dōron \"gift\" — partner",
+              "basanizō \"to torture: torture\" — partner"
+            ],
+            "relational": "over"
+          }
+        },
+        {
+          "term": {
+            "strong": "G1435",
+            "translit": "dōron",
+            "gloss": "gift",
+            "language": "Greek",
+            "cluster": "M39",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "presents",
+            "morph": "N-APN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "presents",
+            "lemma_meaning": "gift, offering",
+            "type": "status",
+            "how": "exchange (G3992)",
+            "cause": "death of the two prophets",
+            "cause_clause": "these two prophets torment dwell on earth",
+            "experiencer": "other",
+            "valence": "sinful",
+            "immediate_response": "torment",
+            "compound": [
+              "chairo \"to rejoice\" — partner",
+              "eufrainō \"to celebrate\" — partner",
+              "basanizō \"to torture: torture\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G2165",
+            "translit": "eufrainō",
+            "gloss": "to celebrate",
+            "language": "Greek",
+            "cluster": "M22",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "make merry",
+            "morph": "V-PPI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "make merry",
+            "lemma_meaning": "(act.) to cause celebration, make glad",
+            "type": "action",
+            "faculty": "affect",
+            "object": "presents",
+            "object_type": "situation",
+            "cause": "death of the two prophets who tormented them",
+            "cause_clause": "these two prophets torment dwell on earth",
+            "experiencer": "other",
+            "valence": "sinful",
+            "immediate_response": "exchange presents",
+            "compound": [
+              "chairo \"to rejoice\" — partner",
+              "dōron \"gift\" — partner",
+              "basanizō \"to torture: torture\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Rev 13:3",
+        "osis_id": "Rev.13.3",
+        "testament": "NT",
+        "verse_text": "Rev 13:3 One of its heads seemed to have a mortal wound , but its mortal wound was healed , and the whole earth marveled as they followed the beast ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2296",
+            "translit": "thaumazō",
+            "gloss": "to marvel",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "marveled",
+            "morph": "V-API-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "marveled",
+            "lemma_meaning": "to wonder, be (utterly) amazed marvel",
+            "type": "action",
+            "faculty": "affect",
+            "object": "beast",
+            "object_type": "spiritual-being",
+            "experiencer": "other",
+            "valence": "sinful",
+            "relational": "followed"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Rev 17:6",
+        "osis_id": "Rev.17.6",
+        "testament": "NT",
+        "verse_text": "Rev 17:6 And I saw the woman , drunk with the blood of the saints , the blood of the martyrs of Jesus . When I saw her , I marveled greatly ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2295",
+            "translit": "thauma",
+            "gloss": "marvel",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "greatly",
+            "morph": "N-ASN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "greatly",
+            "lemma_meaning": "wonder, marvel, astonishment",
+            "type": "quality",
+            "faculty": "affect",
+            "how": "marveled (G2296)",
+            "experiencer": "self",
+            "valence": "neutral",
+            "compound": "thaumazō \"to marvel\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2296",
+            "translit": "thaumazō",
+            "gloss": "to marvel",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "marveled",
+            "morph": "V-AAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "marveled",
+            "lemma_meaning": "to wonder, be (utterly) amazed marvel",
+            "type": "action",
+            "faculty": "affect",
+            "object": "greatly",
+            "experiencer": "self",
+            "valence": "neutral",
+            "compound": "thauma \"marvel\" — partner",
+            "relational": "her"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Rev 17:7",
+        "osis_id": "Rev.17.7",
+        "testament": "NT",
+        "verse_text": "Rev 17:7 But the angel said to me , “ Why do you marvel ? I will tell you the mystery of the woman , and of the beast with seven heads and ten horns that carries her ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2296",
+            "translit": "thaumazō",
+            "gloss": "to marvel",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "marvel",
+            "morph": "V-AAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "marvel",
+            "lemma_meaning": "to wonder, be (utterly) amazed marvel",
+            "type": "action",
+            "faculty": "affect",
+            "experiencer": "other (addressed)",
+            "valence": "neutral",
+            "relational": "I"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Rev 17:8",
+        "osis_id": "Rev.17.8",
+        "testament": "NT",
+        "verse_text": "Rev 17:8 The beast that you saw was , and is not , and is about to rise from the bottomless pit and go to destruction . And the dwellers on earth whose names have not been written in the book of life from the foundation of the world will marvel to see the beast , because it was and is not and is to come ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2296",
+            "translit": "thaumazō",
+            "gloss": "to marvel",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "marvel",
+            "morph": "V-FPI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "marvel",
+            "lemma_meaning": "to wonder, be (utterly) amazed marvel",
+            "type": "action",
+            "faculty": "affect",
+            "object": "beast",
+            "object_type": "spiritual-being",
+            "experiencer": "other",
+            "valence": "neutral"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Rev 19:7",
+        "osis_id": "Rev.19.7",
+        "testament": "NT",
+        "verse_text": "Rev 19:7 Let us rejoice and exult and give him the glory , for the marriage of the Lamb has come , and his Bride has made herself ready ;"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0021",
+            "translit": "agalliao",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "rejoice",
+            "morph": "V-PAS-1P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoice",
+            "lemma_meaning": "to be filled with delight, with great joy",
+            "type": "action",
+            "faculty": "affect",
+            "object": "exult",
+            "object_type": "person",
+            "cause": "the marriage of the Lamb having come",
+            "cause_clause": "marriage Lamb come and his Bride herself ready",
+            "experiencer": "self",
+            "valence": "commanded",
+            "immediate_response": "exult",
+            "compound": "chairo \"to rejoice\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "exult",
+            "morph": "V-PAS-1P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "exult",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "object": "give",
+            "object_type": "person",
+            "cause": "the marriage of the Lamb having come",
+            "cause_clause": "marriage Lamb come and his Bride herself ready",
+            "experiencer": "self",
+            "valence": "commanded",
+            "compound": "agalliao \"to rejoice\" — partner"
+          }
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,1070 @@
+{
+  "meta": {
+    "focus_cluster": "M37",
+    "description": "Calling, Election and Vocation",
+    "batch": "1/1",
+    "verses": 23,
+    "occurrences": 32,
+    "what_this_is": "A per-term-in-verse LEXICAL DECOMPOSITION of the inner-being terms in the verses where cluster M37 ('Calling, Election and Vocation') occurs. Each record shows what a verse says about the inner being, recorded once per term-occurrence. Mechanically derived (01b v2) over the original-language morphology; the interpretive fields (cause, location, divine_involvement, object_type, valence) are resolved by a focused verse-read API pass.",
+    "structure": "data = array of VERSES. Each verse = {verse:{reference,osis_id,testament,verse_text}, term_occurrences:[ {term:{strong,translit,gloss,language,cluster,focus_cluster}, verse_report:{target_word,morph,stem}, lexical:{...}} ]}.",
+    "layout_fan_out": "VERSE-based fan-out — each verse lists EVERY term in it, not just the focus cluster's (focus_cluster=true marks the terms of interest). A term's `compound` lists its co-terms, which are present as their OWN full records in the same verse — fan out by matching translit/gloss to analyse synergy without leaving the verse.",
+    "conventions": {
+      "absent_field": "a lexical field that is absent = NONE (genuinely silent in the verse; never imputed)",
+      "UNRESOLVED": "the mechanical pass expected a value but could not decide (rare; reads have since resolved these)",
+      "provenance": "most fields = mechanical (01b v2, source v2_engine_iter1); cause/location/divine_involvement/object_type/valence = READ-resolved corpus-wide (verse-read API; valence unparked + read 2026-06-18)",
+      "multi_value": "a field may hold a list when several values apply (e.g. faculty, compound)"
+    },
+    "extract_version": "v1_0",
+    "generated": "2026-06-22",
+    "engine_changes": {
+      "zero_pad_fix": "FOUNDATIONAL: Strong's seed lists were short-form (H430/H408/H853) but the DB measure layer is zero-padded 4-digit (H0430/H0408/H0853) — so every <4-digit Hebrew lemma silently failed to match (Elohim, 'al, 'et, faculty lemmas). Fixed (_canon). This restored divine/negation/faculty/object-type detection; much of the prior 'thin' output was this bug.",
+      "valence": "context rule added: prohibition ('al/me + 2nd/3rd-person volitive) -> forbidden (mechanical); commanded/righteous/neutral are interpretive -> verse-read. UNPARKED 2026-06-18: the corpus valence read is now COMPLETE (verse-read API, 0 active residue) — valence here is READ-resolved, same status as cause/divine/object-type.",
+      "divine_involvement": "role taxonomy: object (divine adjacent to term, or 'et-marked) is mechanical (~92%); agent/possessor/giver/addressee are read-resolved (morphologically overlapping); no divine lemma -> NONE. The old meaningless 'present' value is gone.",
+      "location_dedup": "one location row per DISTINCT constitutional seat-level even when several same-level seat-words co-occur (no 'triple-heart'); spirit/breath (ruach/pneuma) sense-gated, ambiguity read-disambiguated.",
+      "t2_treatment": "T2 = reference/qualifier terms, never analysed standalone. T2-GRAMMATICAL (function words: prepositions, pronouns, particles, the object-marker 'et) are EXCLUDED from generation/this extract/reads. T2-CONTENT (noun/verb/adjective) stay as co-term context only.",
+      "base_rerun": "the whole corpus (38,971 term-in-verse units) was re-derived on the corrected engine; 1,768 T2-grammatical units disposed; narration regenerated. Integrity verified (quick_check ok, reads preserved).",
+      "reads_complete": "the interpretive residue was resolved by a governed verse-read API pass (batched-by-verse, circuit-breaker, cost-cap, self-verified): location, cause, object-type, divine-involvement, AND valence (unparked + read 2026-06-18) all to 0 M-cluster residue. divine role + object-type split + valence are now fully populated by the read.",
+      "signal_list_audit_20260619": "completeness audit of EVERY hand-seeded signal list (divine names, perception, cognition, intensifier, …) against canonical lemmas, gated on corpus presence. Closed the gaps (DIVINE +Eloah/Yah/Elyon/YHWH-var/Christos; PERCEPTION +shama/nabat/azan; COGNITION +bin; INTENSIFIER +gadol) and re-ran the full base. Net new readable residue: divine-involvement only (+432, corpus-wide); object-type/cause/location new residue was entirely T2 (excluded). 0 active readable non-T2 residue remains.",
+      "t2_noise_filter_20260620": "a T2 content-word occurrence is now kept ONLY if its base Strong's serves a recognised inner-being qualifier role (seat · intensifier · faculty · perception/cognition · divine · spirit-being · inherent-valence); other T2 content (e.g. seed, hand, name) is dropped as noise from the fan-out (researcher direction).",
+      "set_aside_honoured_20260620": "occurrences with verse_context.set_aside_reason set, and terms with cluster_code=NULL, are EXCLUDED from the extract — so the JSON honours the DB set-aside state rather than re-presenting out-of-scope/homonym verses."
+    },
+    "why_each_element_is_derived": {
+      "_principle": "Every value is DERIVED from a named original-language measure (lemma · morphology · per-occurrence STEP sense · co-occurring tagged terms) — never from the English string. 'Mechanical' = fixed by rule over the measure layer; 'read' = the verse was read by API where the rule cannot be decisive (clarify/enrich only, never an opt-out). Silence = NONE (never imputed).",
+      "sense": "measure: per-occurrence ESV target_word (wa_verse_records) + the lemma's medium_def (lexicon, shown as lemma_meaning). Mechanical — the sense the term carries HERE, not a uniform gloss.",
+      "type": "measure: part-of-speech (morphology). Rule: verb/participle->action, noun->status, adjective->quality. Mechanical (POS-only).",
+      "mode": "measure: morph stem/voice/form. The term's own grammatical realisation (language · POS · stem). Mechanical bedrock.",
+      "faculty": "measure: the TERM's own lemma meaning, classified to a faculty (R1 term-intrinsic). Why term-intrinsic: the trigger's faculty (e.g. the perception that caused fear) belongs to cause/compound, not to this term. Mechanical. (R2 = co-occurring faculty-lemma assignment is a known not-yet-implemented extension.)",
+      "location": "measure: a constitutional-seat lemma (Strong's seat-map: heart/soul/spirit/mind/flesh) present in the verse, SENSE-GATED for spirit/breath (ruach/pneuma may be wind/disposition, not the seat). De-duplicated per level. Mechanical floor + READ for the spirit/breath ambiguity. Absent = not located.",
+      "origin": "measure: a 'from'-source preposition (min/apo/ek) governing the term -> received-from-outside; else absent. Mechanical (partial — within-person/generational/giver-source rules are not yet implemented).",
+      "how": "measure: the governing finite verb of a NOUN/adjective term (the predicate the state operates BY, e.g. 'seized'). Mechanical. ABSENT for verb-terms — the term IS the action (see mode).",
+      "object / object-type": "measure: the term's governed object (noun/pronoun after the term or its governing verb; 'et marks the accusative). object-type classifies it: God/spiritual-being/person are mechanical (divine/spirit-being lemma, or person morph); thing/abstract/situation/threat are READ-classified (the mechanical 'thing/abstract' lump is split by the verse-read). ⚠ CAVEAT: the `object` TEXT is a MECHANICAL best-guess and is imprecise in ~13% of cases (it can grab a determiner/pronoun like 'every'/'his'/'the', or the addressee). `object_type` is READ-derived and AUTHORITATIVE — when the two disagree, trust `object_type` and treat `object` text as a hint only.",
+      "cause": "measure: a causal marker (ki/hoti/gar) -> the eliciting clause, READ-resolved to the actual cause; OR the object of a perception verb for an affect term (mechanical). Else NONE (most verses state no cause). Why read: the cause is the verse's argument, not a single lemma.",
+      "cause_clause": "mechanical HINT only — the raw clause after the 'because/for' marker; superseded by `cause` once read.",
+      "experiencer": "measure: the term's possessive-suffix person / nominative subject (morphology) -> self | other | other(addressed). Mechanical.",
+      "divine_involvement": "measure: a divine lemma (YHWH/Elohim/…) and its grammatical relation to the term. object (adjacent / 'et-marked) is mechanical; agent/possessor/giver/addressee are READ-resolved (these roles overlap morphologically — the role is the semantic judgement 'is God feared, acting, or giving'). No divine lemma -> NONE.",
+      "intensity": "measure: a quantifier/intensifier lemma modifying the term (kol 'all', me'od 'very', rab 'many'). Mechanical.",
+      "valence": "measure: term-inherent moral lemma + context. forbidden = a dedicated prohibition particle ('al/me) on a 2nd/3rd-person volitive (mechanical, ~80% — the 'fear not' reassurance shares the form). commanded/righteous/neutral are interpretive -> read. Corpus valence read COMPLETE (unparked 2026-06-18) — values here are READ-resolved.",
+      "immediate_response": "measure: the coordinated reaction verb-phrase following the term's clause (the inner being's first response). Mechanical (light). Expectation test: silent -> NONE.",
+      "relational": "measure: a directional preposition adjacent to the term (to/toward/against/above). Mechanical (crude — the {direction->object} pairing is a not-yet-implemented extension).",
+      "compound": "measure: the verse's OTHER active tagged terms (the reference's term inventory), each with its role to the head term (partner = co-T1 · qualifier = T2 · co-seated = shares a constitutional seat). This is the synergy web; fan out to each co-term's own full record by translit/gloss."
+    },
+    "fields": {
+      "sense": "per-occurrence contextual sense (the ESV word used in THIS verse)",
+      "lemma_meaning": "the lemma's dictionary meaning (concise)",
+      "type": "action | status | quality — the grammatical kind (from morphology)",
+      "mode": "the term's grammatical realisation: language · part-of-speech · (verb stem)",
+      "faculty": "the inner-being faculty the TERM ITSELF engages (affect/cognition/perception/memory/volition/moral_evaluation/conscience); term-intrinsic; ABSENT if the term is not itself a faculty",
+      "location": "constitutional seat the state is seated in (spirit/soul/heart/mind/flesh/conscience); READ-disambiguated; absent if none",
+      "origin": "where it comes from (within-person/received-from-outside/carried-generationally)",
+      "how": "the governing predicate — how a noun/state term operates; ABSENT for verb-terms (the term IS the action; see mode)",
+      "object": "what the state is directed at / acts on",
+      "object_type": "the object's kind (threat/person/God/spiritual-being/situation/abstract/thing); READ-classified",
+      "cause": "what AROUSES the state; READ-resolved; absent = the verse states no cause",
+      "cause_clause": "mechanical hint only — the raw clause after a 'because/for' marker (superseded by `cause` once read)",
+      "experiencer": "who bears the state: self | other | other (addressed)",
+      "divine_involvement": "GOD's role toward the term (agent/possessor/giver/object/addressee); READ-resolved",
+      "intensity": "quantifier / intensity (e.g. 'many', 'greatly')",
+      "valence": "moral framing in context (righteous/sinful/commanded/forbidden/neutral); READ-resolved",
+      "immediate_response": "the immediate reaction the state produces (e.g. 'bowed faces')",
+      "compound": "co-occurring terms in THIS verse, each as `translit \"gloss\" — role` (partner/qualifier/co-seated). FAN-OUT: every co-term is present as its OWN full record in this verse's term_occurrences — resolve by matching translit/gloss",
+      "relational": "directional / relational force (to, toward, against …)"
+    },
+    "source": "ve_lexical (v2_engine_iter1 mechanical + verse-read API resolution) + verse_morphology measure layer (schema 3.34.0)"
+  },
+  "data": [
+    {
+      "verse": {
+        "reference": "Luk 19:13",
+        "osis_id": "Luke.19.13",
+        "testament": "NT",
+        "verse_text": "Luk 19:13 Calling ten of his servants , he gave them ten minas , and said to them , ‘Engage in business until I come .’"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "Calling",
+            "morph": "V-AAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Calling",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "servants",
+            "object_type": "thing/abstract"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Luk 19:29",
+        "osis_id": "Luke.19.29",
+        "testament": "NT",
+        "verse_text": "Luk 19:29 When he drew near to Bethphage and Bethany , at the mount that is called Olivet , he sent two of the disciples ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-ASN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Olivet",
+            "object_type": "thing/abstract"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Luk 20:44",
+        "osis_id": "Luke.20.44",
+        "testament": "NT",
+        "verse_text": "Luk 20:44 David thus calls him Lord , so how is he his son ?”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "calls",
+            "morph": "V-PAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "calls",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "him",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "is son",
+            "relational": "him"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Luk 21:37",
+        "osis_id": "Luke.21.37",
+        "testament": "NT",
+        "verse_text": "Luk 21:37 And every day he was teaching in the temple , but at night he went out and lodged on the mount called Olivet ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-ASN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Olivet",
+            "object_type": "thing/abstract"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Luk 22:25",
+        "osis_id": "Luke.22.25",
+        "testament": "NT",
+        "verse_text": "Luk 22:25 And he said to them , “The kings of the Gentiles exercise lordship over them , and those in authority over them are called benefactors ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1850",
+            "translit": "exousiazō",
+            "gloss": "to have authority",
+            "language": "Greek",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "authority",
+            "morph": "V-PAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "authority",
+            "lemma_meaning": "to have power over",
+            "type": "action",
+            "object": "benefactors",
+            "object_type": "person",
+            "valence": "neutral",
+            "compound": "kurieuō \"to lord over\" — partner",
+            "relational": "them"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2961",
+            "translit": "kurieuō",
+            "gloss": "to lord over",
+            "language": "Greek",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "exercise lordship",
+            "morph": "V-PAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "exercise lordship",
+            "lemma_meaning": "to lord over, be master of, have authority over, one who rules or exer",
+            "type": "action",
+            "experiencer": "other",
+            "valence": "neutral",
+            "immediate_response": "authority",
+            "compound": "exousiazō \"to have authority\" — partner",
+            "relational": "them"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "benefactors",
+            "object_type": "thing/abstract",
+            "experiencer": "other",
+            "compound": [
+              "exousiazō \"to have authority\" — partner",
+              "kurieuō \"to lord over\" — partner"
+            ],
+            "relational": "them"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Luk 23:33",
+        "osis_id": "Luke.23.33",
+        "testament": "NT",
+        "verse_text": "Luk 23:33 And when they came to the place that is called The Skull , there they crucified him , and the criminals , one on his right and one on his left ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-ASM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Skull",
+            "object_type": "thing/abstract"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 1:42",
+        "osis_id": "John.1.42",
+        "testament": "NT",
+        "verse_text": "Joh 1:42 He brought him to Jesus . Jesus looked at him and said , “ You are Simon the son of John . You shall be called Cephas ” ( which means Peter )."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-FPI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Cephas",
+            "object_type": "thing/abstract",
+            "experiencer": "other (addressed)",
+            "relational": "You"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 2:2",
+        "osis_id": "John.2.2",
+        "testament": "NT",
+        "verse_text": "Joh 2:2 Jesus also was invited to the wedding with his disciples ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "invited",
+            "morph": "V-API-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "invited",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "wedding",
+            "object_type": "thing/abstract",
+            "experiencer": "other",
+            "relational": "to"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 1:12",
+        "osis_id": "Acts.1.12",
+        "testament": "NT",
+        "verse_text": "Act 1:12 Then they returned to Jerusalem from the mount called Olivet , which is near Jerusalem , a Sabbath day’s journey away ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-GSN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "origin": "received-from-outside",
+            "object": "Olivet",
+            "object_type": "thing/abstract"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 1:19",
+        "osis_id": "Acts.1.19",
+        "testament": "NT",
+        "verse_text": "Act 1:19 And it became known to all the inhabitants of Jerusalem , so that the field was called in their own language Akeldama , that is , Field of Blood .)"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-APN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "language",
+            "object_type": "thing/abstract",
+            "compound": "dialektos \"language\" — qualifier",
+            "relational": "their"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 1:23",
+        "osis_id": "Acts.1.23",
+        "testament": "NT",
+        "verse_text": "Act 1:23 And they put forward two , Joseph called Barsabbas , who was also called Justus , and Matthias ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-ASM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Barsabbas",
+            "object_type": "thing/abstract"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 3:11",
+        "osis_id": "Acts.3.11",
+        "testament": "NT",
+        "verse_text": "Act 3:11 While he clung to Peter and John , all the people , utterly astounded , ran together to them in the portico called Solomon’s ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1569",
+            "translit": "ekthambos",
+            "gloss": "astonished",
+            "language": "Greek",
+            "cluster": "M01",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "utterly astounded",
+            "morph": "A-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "utterly astounded",
+            "lemma_meaning": "(utterly) astonished",
+            "type": "quality",
+            "faculty": "affect",
+            "how": "ran together (G4936)",
+            "object": "them",
+            "experiencer": "other",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-DSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Solomon’s",
+            "object_type": "thing/abstract",
+            "compound": "ekthambos \"astonished\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 4:18",
+        "osis_id": "Acts.4.18",
+        "testament": "NT",
+        "verse_text": "Act 4:18 So they called them and charged them not to speak or teach at all in the name of Jesus ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-AAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "them",
+            "relational": "them"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 8:10",
+        "osis_id": "Acts.8.10",
+        "testament": "NT",
+        "verse_text": "Act 8:10 They all paid attention to him , from the least to the greatest , saying , “This man is the power of God that is called Great .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1411",
+            "translit": "dunamis",
+            "gloss": "power",
+            "language": "Greek",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "power",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "power",
+            "lemma_meaning": "power, ability",
+            "type": "status",
+            "how": "is (G1510)",
+            "object": "God",
+            "object_type": "God",
+            "experiencer": "other",
+            "divine_involvement": "object",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "dunamis \"power\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 9:11",
+        "osis_id": "Acts.9.11",
+        "testament": "NT",
+        "verse_text": "Act 9:11 And the Lord said to him , “ Rise and go to the street called Straight , and at the house of Judas look for a man of Tarsus named Saul , for behold , he is praying ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4336",
+            "translit": "proseuchomai",
+            "gloss": "to pray",
+            "language": "Greek",
+            "cluster": "M21",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "praying",
+            "morph": "V-PNI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "praying",
+            "lemma_meaning": "to pray, offer prayer, Mt. 5:44",
+            "type": "action",
+            "cause_clause": "behold praying",
+            "experiencer": "other",
+            "valence": "righteous"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Straight",
+            "cause": "pending-read",
+            "cause_clause": "behold praying",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "look for Tarsus",
+            "compound": "proseuchomai \"to pray\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 13:1",
+        "osis_id": "Acts.13.1",
+        "testament": "NT",
+        "verse_text": "Act 13:1 Now there were in the church at Antioch prophets and teachers , Barnabas , Simeon who was called Niger , Lucius of Cyrene , Manaen a lifelong friend of Herod the tetrarch , and Saul ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1577",
+            "translit": "ekklēsia",
+            "gloss": "assembly",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "church",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "church",
+            "lemma_meaning": "church, congregation, assembly",
+            "type": "status",
+            "valence": "neutral",
+            "immediate_response": "called Niger",
+            "relational": [
+              "in",
+              "at"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Niger",
+            "object_type": "thing/abstract",
+            "compound": "ekklēsia \"assembly\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 14:12",
+        "osis_id": "Acts.14.12",
+        "testament": "NT",
+        "verse_text": "Act 14:12 Barnabas they called Zeus , and Paul , Hermes , because he was the chief speaker ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-IAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Zeus",
+            "object_type": "thing/abstract",
+            "experiencer": "other",
+            "immediate_response": "was speaker"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 15:37",
+        "osis_id": "Acts.15.37",
+        "testament": "NT",
+        "verse_text": "Act 15:37 Now Barnabas wanted to take with them John called Mark ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1011",
+            "translit": "bouleuō",
+            "gloss": "to plan",
+            "language": "Greek",
+            "cluster": "M15",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "wanted",
+            "morph": "V-INI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "wanted",
+            "lemma_meaning": "to make plans, consider, decide, plot plan",
+            "type": "action",
+            "faculty": [
+              "cognition",
+              "volition"
+            ],
+            "object": "John",
+            "object_type": "situation",
+            "experiencer": "other",
+            "valence": "neutral"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-ASM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Mark",
+            "object_type": "thing/abstract",
+            "compound": "bouleuō \"to plan\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 24:2",
+        "osis_id": "Acts.24.2",
+        "testament": "NT",
+        "verse_text": "Act 24:2 And when he had been summoned , Tertullus began to accuse him, saying : “Since through you we enjoy much peace , and since by your foresight , most excellent Felix , reforms are being made for this nation ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1515",
+            "translit": "eirēnē",
+            "gloss": "peace",
+            "language": "Greek",
+            "cluster": "M33",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "peace",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "peace",
+            "lemma_meaning": "peace, harmony, tranquility",
+            "type": "status",
+            "faculty": "affect",
+            "intensity": "many (much)",
+            "valence": "neutral",
+            "immediate_response": "made nation",
+            "compound": "pronoia \"foresight\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4307",
+            "translit": "pronoia",
+            "gloss": "foresight",
+            "language": "Greek",
+            "cluster": "M15",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "foresight",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "foresight",
+            "lemma_meaning": "foresight, provision, care",
+            "type": "status",
+            "experiencer": "other (addressed)",
+            "valence": "neutral",
+            "compound": "eirēnē \"peace\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "summoned",
+            "morph": "V-APP-GSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "summoned",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Tertullus",
+            "object_type": "thing/abstract",
+            "compound": [
+              "eirēnē \"peace\" — partner",
+              "pronoia \"foresight\" — partner"
+            ],
+            "relational": "he"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 27:8",
+        "osis_id": "Acts.27.8",
+        "testament": "NT",
+        "verse_text": "Act 27:8 Coasting along it with difficulty , we came to a place called Fair Havens , near which was the city of Lasea ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-ASM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Fair"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 27:14",
+        "osis_id": "Acts.27.14",
+        "testament": "NT",
+        "verse_text": "Act 27:14 But soon a tempestuous wind , called the northeaster , struck down from the land ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "northeaster",
+            "object_type": "thing/abstract"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 27:16",
+        "osis_id": "Acts.27.16",
+        "testament": "NT",
+        "verse_text": "Act 27:16 Running under the lee of a small island called Cauda , we managed with difficulty to secure the ship’s boat ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPP-ASN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Cauda",
+            "object_type": "thing/abstract"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 28:1",
+        "osis_id": "Acts.28.1",
+        "testament": "NT",
+        "verse_text": "Act 28:1 After we were brought safely through , we then learned that the island was called Malta ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2564G",
+            "translit": "kaleō",
+            "gloss": "to call: call",
+            "language": "Greek",
+            "cluster": "M37",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "called",
+            "morph": "V-PPI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "called",
+            "lemma_meaning": "to call, invite, summon. The authority of the speaker dictates the nat",
+            "type": "action",
+            "object": "Malta",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "island called Malta",
+            "experiencer": "other"
+          }
+        }
+      ]
+    }
+  ]
+}

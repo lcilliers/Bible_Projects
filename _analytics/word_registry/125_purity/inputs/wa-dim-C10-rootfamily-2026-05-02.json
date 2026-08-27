@@ -1,0 +1,3941 @@
+{
+  "extract_meta": {
+    "extract_type": "dimension_review_rootfamily",
+    "cluster": "C10",
+    "produced_date": "2026-05-02",
+    "produced_by": "Claude Code — WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "governing_instruction": "WA-DimensionReview-Instruction-v1.9-2026-04-09",
+    "root_count": 19,
+    "group_count": 112,
+    "cross_registry_root_count": 1
+  },
+  "roots": [
+    {
+      "root_code": "NATAN",
+      "root_language": "Hebrew",
+      "root_gloss": "gift",
+      "in_cluster_registries": [
+        60
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 7,
+      "terms": [
+        {
+          "strongs_number": "H5414G",
+          "transliteration": "na.tan",
+          "gloss": "to give: give",
+          "language": "Hebrew",
+          "reg_no": 60,
+          "reg_word": "faithfulness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "872-001",
+          "context_description": "Term names divine giving as the expression of covenant faithfulness — God's giving of land, promise, and blessing as the embodiment of his inner covenantal commitment",
+          "strongs_number": "H5414G",
+          "transliteration": "na.tan",
+          "gloss": "to give: give",
+          "registry_no": 60,
+          "registry_word": "faithfulness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24047,
+              "book": "Genesis",
+              "chapter": 12,
+              "verse": 7,
+              "reference": "Gen 12:7",
+              "verse_text": "Gen 12:7 Then the Lord appeared to Abram and said , “ To your offspring I will give this land .” So he built there an altar to the Lord , who had appeared to him ."
+            },
+            {
+              "verse_record_id": 24052,
+              "book": "Genesis",
+              "chapter": 15,
+              "verse": 18,
+              "reference": "Gen 15:18",
+              "verse_text": "Gen 15:18 On that day the Lord made a covenant with Abram , saying , “ To your offspring I give this land , from the river of Egypt to the great river , the river Euphrates ,"
+            }
+          ]
+        },
+        {
+          "group_code": "872-002",
+          "context_description": "Term names divine giving as the expression of inner love and compassion — God gives in direct response to inner need, longing, prayer, or suffering",
+          "strongs_number": "H5414G",
+          "transliteration": "na.tan",
+          "gloss": "to give: give",
+          "registry_no": 60,
+          "registry_word": "faithfulness",
+          "cluster_assignment": "C10",
+          "dimension": "04 — Volition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24088,
+              "book": "Genesis",
+              "chapter": 29,
+              "verse": 33,
+              "reference": "Gen 29:33",
+              "verse_text": "Gen 29:33 She conceived again and bore a son , and said , “ Because the Lord has heard that I am hated , he has given me this son also .” And she called his name Simeon ."
+            },
+            {
+              "verse_record_id": 24108,
+              "book": "Hosea",
+              "chapter": 11,
+              "verse": 8,
+              "reference": "Hos 11:8",
+              "verse_text": "Hos 11:8 How can I give you up, O Ephraim ? How can I hand you over, O Israel ? How can I make you like Admah ? How can I treat you like Zeboiim ? My heart recoils within me; my compassion grows warm and tender ."
+            }
+          ]
+        },
+        {
+          "group_code": "872-003",
+          "context_description": "Term names the giving of inner-being capacities — wisdom, spirit, understanding, songs, and strength given directly to the inner life",
+          "strongs_number": "H5414G",
+          "transliteration": "na.tan",
+          "gloss": "to give: give",
+          "registry_no": 60,
+          "registry_word": "faithfulness",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24220,
+              "book": "Nehemiah",
+              "chapter": 9,
+              "verse": 20,
+              "reference": "Neh 9:20",
+              "verse_text": "Neh 9:20 You gave your good Spirit to instruct them and did not withhold your manna from their mouth and gave them water for their thirst ."
+            },
+            {
+              "verse_record_id": 24190,
+              "book": "Job",
+              "chapter": 38,
+              "verse": 36,
+              "reference": "Job 38:36",
+              "verse_text": "Job 38:36 Who has put wisdom in the inward parts or given understanding to the mind ?"
+            }
+          ]
+        },
+        {
+          "group_code": "872-004",
+          "context_description": "Term names divine giving as moral judgement — God gives into the hand of enemies or destruction as the moral expression of his inner response to faithlessness",
+          "strongs_number": "H5414G",
+          "transliteration": "na.tan",
+          "gloss": "to give: give",
+          "registry_no": 60,
+          "registry_word": "faithfulness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24155,
+              "book": "Jeremiah",
+              "chapter": 12,
+              "verse": 7,
+              "reference": "Jer 12:7",
+              "verse_text": "Jer 12:7 “I have forsaken my house ; I have abandoned my heritage ; I have given the beloved of my soul into the hands of her enemies ."
+            },
+            {
+              "verse_record_id": 24110,
+              "book": "Hosea",
+              "chapter": 13,
+              "verse": 11,
+              "reference": "Hos 13:11",
+              "verse_text": "Hos 13:11 I gave you a king in my anger , and I took him away in my wrath ."
+            }
+          ]
+        },
+        {
+          "group_code": "872-005",
+          "context_description": "Term names the inner act of human giving — self-giving, sacrificial giving, votive giving, or giving as the expression of inner orientation toward God or community",
+          "strongs_number": "H5414G",
+          "transliteration": "na.tan",
+          "gloss": "to give: give",
+          "registry_no": 60,
+          "registry_word": "faithfulness",
+          "cluster_assignment": "C10",
+          "dimension": "06 — Relational Disposition",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24175,
+              "book": "Job",
+              "chapter": 1,
+              "verse": 21,
+              "reference": "Job 1:21",
+              "verse_text": "Job 1:21 And he said , “ Naked I came from my mother’s womb , and naked shall I return . The Lord gave , and the Lord has taken away ; blessed be the name of the Lord .”"
+            },
+            {
+              "verse_record_id": 24144,
+              "book": "Isaiah",
+              "chapter": 50,
+              "verse": 6,
+              "reference": "Isa 50:6",
+              "verse_text": "Isa 50:6 I gave my back to those who strike , and my cheeks to those who pull out the beard ; I hid not my face from disgrace and spitting ."
+            }
+          ]
+        },
+        {
+          "group_code": "872-006",
+          "context_description": "Term names the giving or withholding of glory and honour — the inner-being act of ascribing worth to God, or divine withholding of glory from others",
+          "strongs_number": "H5414G",
+          "transliteration": "na.tan",
+          "gloss": "to give: give",
+          "registry_no": 60,
+          "registry_word": "faithfulness",
+          "cluster_assignment": "C10",
+          "dimension": "11 — Divine-Human Correspondence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24132,
+              "book": "Isaiah",
+              "chapter": 42,
+              "verse": 8,
+              "reference": "Isa 42:8",
+              "verse_text": "Isa 42:8 I am the Lord ; that is my name ; my glory I give to no other , nor my praise to carved idols ."
+            },
+            {
+              "verse_record_id": 24156,
+              "book": "Jeremiah",
+              "chapter": 13,
+              "verse": 16,
+              "reference": "Jer 13:16",
+              "verse_text": "Jer 13:16 Give glory to the Lord your God before he brings darkness , before your feet stumble on the twilight mountains , and while you look for light he turns it into gloom and makes it deep darkness ."
+            }
+          ]
+        },
+        {
+          "group_code": "872-007",
+          "context_description": "Term names eschatological or restorative giving — God gives to transform inner conditions: ashes to beauty, mourning to gladness, faint spirit to praise",
+          "strongs_number": "H5414G",
+          "transliteration": "na.tan",
+          "gloss": "to give: give",
+          "registry_no": 60,
+          "registry_word": "faithfulness",
+          "cluster_assignment": "C10",
+          "dimension": "01 — Emotion — Positive",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24147,
+              "book": "Isaiah",
+              "chapter": 61,
+              "verse": 3,
+              "reference": "Isa 61:3",
+              "verse_text": "Isa 61:3 to grant to those who mourn in Zion — to give them a beautiful headdress instead of ashes , the oil of gladness instead of mourning , the garment of praise instead of a faint spirit ; that they may be called oaks of righteousness , the planting of the Lord , that he may be glorified ."
+            },
+            {
+              "verse_record_id": 24111,
+              "book": "Hosea",
+              "chapter": 2,
+              "verse": 15,
+              "reference": "Hos 2:15",
+              "verse_text": "Hos 2:15 And there I will give her her vineyards and make the Valley of Achor a door of hope . And there she shall answer as in the days of her youth , as at the time when she came out of the land of Egypt ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "TOV",
+      "root_language": null,
+      "root_gloss": null,
+      "in_cluster_registries": [
+        67
+      ],
+      "cross_registry": true,
+      "term_count": 3,
+      "group_count": 7,
+      "terms": [
+        {
+          "strongs_number": "H2896A",
+          "transliteration": "tov",
+          "gloss": "pleasant",
+          "language": "Hebrew",
+          "reg_no": 67,
+          "reg_word": "goodness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2895",
+          "transliteration": "tov",
+          "gloss": "be pleasing",
+          "language": "Hebrew",
+          "reg_no": 103,
+          "reg_word": "love",
+          "cluster_assignment": "C17",
+          "in_current_cluster": false
+        },
+        {
+          "strongs_number": "H2898",
+          "transliteration": "tuv",
+          "gloss": "goodness",
+          "language": "Hebrew",
+          "reg_no": 103,
+          "reg_word": "love",
+          "cluster_assignment": "C17",
+          "in_current_cluster": false
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "884-001",
+          "context_description": "Term declares God's inner being as good — the foundational doxological assertion that God's character, name, steadfast love, and Spirit are good, and that his goodness governs his relationship to all he has made",
+          "strongs_number": "H2896A",
+          "transliteration": "tov",
+          "gloss": "pleasant",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "11 — Divine-Human Correspondence",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 164681,
+              "book": "Psalms",
+              "chapter": 34,
+              "verse": 8,
+              "reference": "Psa 34:8",
+              "verse_text": "Psa 34:8 Oh, taste and see that the Lord is good ! Blessed is the man who takes refuge in him !"
+            },
+            {
+              "verse_record_id": 164669,
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": 68,
+              "reference": "Psa 119:68",
+              "verse_text": "Psa 119:68 You are good and do good ; teach me your statutes ."
+            }
+          ]
+        },
+        {
+          "group_code": "884-002",
+          "context_description": "Term names human moral character and conduct as good — the inner quality of the person who walks uprightly, acts honestly, and whose character is recognised and assessed as good before God and others",
+          "strongs_number": "H2896A",
+          "transliteration": "tov",
+          "gloss": "pleasant",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24432,
+              "book": "Micah",
+              "chapter": 6,
+              "verse": 8,
+              "reference": "Mic 6:8",
+              "verse_text": "Mic 6:8 He has told you , O man , what is good ; and what does the Lord require of you but to do justice , and to love kindness , and to walk humbly with your God ?"
+            }
+          ]
+        },
+        {
+          "group_code": "884-003",
+          "context_description": "Term names goodness as inner experiential good — what is genuinely good for the human person: proximity to God, worship, waiting, communal harmony, and the reorientation of the inner life toward what truly satisfies",
+          "strongs_number": "H2896A",
+          "transliteration": "tov",
+          "gloss": "pleasant",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 164691,
+              "book": "Psalms",
+              "chapter": 73,
+              "verse": 28,
+              "reference": "Psa 73:28",
+              "verse_text": "Psa 73:28 But for me it is good to be near God ; I have made the Lord God my refuge , that I may tell of all your works ."
+            }
+          ]
+        },
+        {
+          "group_code": "884-004",
+          "context_description": "Term names comparative wisdom good — the better-than sayings of wisdom literature where inner and relational qualities are ranked as the greater good above material wealth, social status, or external abundance",
+          "strongs_number": "H2896A",
+          "transliteration": "tov",
+          "gloss": "pleasant",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 164620,
+              "book": "Proverbs",
+              "chapter": 15,
+              "verse": 16,
+              "reference": "Pro 15:16",
+              "verse_text": "Pro 15:16 Better is a little with the fear of the Lord than great treasure and trouble with it ."
+            },
+            {
+              "verse_record_id": 164628,
+              "book": "Proverbs",
+              "chapter": 16,
+              "verse": 32,
+              "reference": "Pro 16:32",
+              "verse_text": "Pro 16:32 Whoever is slow to anger is better than the mighty , and he who rules his spirit than he who takes a city ."
+            }
+          ]
+        },
+        {
+          "group_code": "884-005",
+          "context_description": "Term names God's good word and promise — the covenantal faithfulness through which God declares, fulfils, and sustains his promised good toward his people",
+          "strongs_number": "H2896A",
+          "transliteration": "tov",
+          "gloss": "pleasant",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 164607,
+              "book": "Joshua",
+              "chapter": 23,
+              "verse": 14,
+              "reference": "Jos 23:14",
+              "verse_text": "Jos 23:14 “And now I am about to go the way of all the earth , and you know in your hearts and souls , all of you, that not one word has failed of all the good things that the Lord your God promised concerning you. All have come to pass for you; not one of them has failed ."
+            }
+          ]
+        },
+        {
+          "group_code": "884-006",
+          "context_description": "Term names the moral assessment of conduct, ways, or deeds as not good — the prophetic and wisdom verdict that certain inner orientations and behavioural expressions are contrary to the good God requires",
+          "strongs_number": "H2896A",
+          "transliteration": "tov",
+          "gloss": "pleasant",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 164597,
+              "book": "Ezekiel",
+              "chapter": 36,
+              "verse": 31,
+              "reference": "Eze 36:31",
+              "verse_text": "Eze 36:31 Then you will remember your evil ways , and your deeds that were not good , and you will loathe yourselves for your iniquities and your abominations ."
+            }
+          ]
+        },
+        {
+          "group_code": "542-001",
+          "context_description": "Term names the state of inner wellbeing, pleasure, or moral approval — the heart merry or satisfied, God pleased with what is in the heart, the person judging something good",
+          "strongs_number": "H2895",
+          "transliteration": "tov",
+          "gloss": "be pleasing",
+          "registry_no": 103,
+          "registry_word": "love",
+          "cluster_assignment": "C17",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "CLAUDE_AI",
+          "dominant_subject": "NONE",
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 4199,
+              "book": "1 Kings",
+              "chapter": 8,
+              "verse": 18,
+              "reference": "1Ki 8:18",
+              "verse_text": "1Ki 8:18 But the Lord said to David my father , ‘ Whereas it was in your heart to build a house for my name , you did well that it was in your heart ."
+            },
+            {
+              "verse_record_id": 4203,
+              "book": "Psalms",
+              "chapter": 119,
+              "verse": 71,
+              "reference": "Psa 119:71",
+              "verse_text": "Psa 119:71 It is good for me that I was afflicted , that I might learn your statutes ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "AGATHŌSUN",
+      "root_language": "Greek",
+      "root_gloss": "goodness",
+      "in_cluster_registries": [
+        67
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "G0019",
+          "transliteration": "agathōsunē",
+          "gloss": "goodness",
+          "language": "Greek",
+          "reg_no": 67,
+          "reg_word": "goodness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "885-001",
+          "context_description": "Term names goodness as an inner-being disposition and Spirit-produced fruit — a quality that fills the person and is completed by God, expressed in righteous conduct and resolve",
+          "strongs_number": "G0019",
+          "transliteration": "agathōsunē",
+          "gloss": "goodness",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "04 — Volition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24449,
+              "book": "Galatians",
+              "chapter": 5,
+              "verse": 22,
+              "reference": "Gal 5:22",
+              "verse_text": "Gal 5:22 But the fruit of the Spirit is love , joy , peace , patience , kindness , goodness , faithfulness ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "CHRĒSTO",
+      "root_language": "Greek",
+      "root_gloss": "kindness",
+      "in_cluster_registries": [
+        67
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G5544",
+          "transliteration": "chrēstotēs",
+          "gloss": "kindness",
+          "language": "Greek",
+          "reg_no": 67,
+          "reg_word": "goodness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "886-001",
+          "context_description": "Term names kindness as God's inner disposition of generous goodwill toward humanity — the divine attribute that leads to repentance, governs judgment and mercy, and is displayed supremely in Christ",
+          "strongs_number": "G5544",
+          "transliteration": "chrēstotēs",
+          "gloss": "kindness",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "11 — Divine-Human Correspondence",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24750,
+              "book": "Romans",
+              "chapter": 11,
+              "verse": 22,
+              "reference": "Rom 11:22",
+              "verse_text": "Rom 11:22 Note then the kindness and the severity of God : severity toward those who have fallen , but God’s kindness to you , provided you continue in his kindness . Otherwise you too will be cut off ."
+            }
+          ]
+        },
+        {
+          "group_code": "886-002",
+          "context_description": "Term names kindness as a Spirit-produced inner quality of the believer — the disposition to act with goodness toward others, listed as fruit of the Spirit and garment of the renewed person",
+          "strongs_number": "G5544",
+          "transliteration": "chrēstotēs",
+          "gloss": "kindness",
+          "registry_no": 67,
+          "registry_word": "goodness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 24749,
+              "book": "Galatians",
+              "chapter": 5,
+              "verse": 22,
+              "reference": "Gal 5:22",
+              "verse_text": "Gal 5:22 But the fruit of the Spirit is love , joy , peace , patience , kindness , goodness , faithfulness ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "TSADDIQ",
+      "root_language": "Hebrew",
+      "root_gloss": "righteous",
+      "in_cluster_registries": [
+        77
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 6,
+      "terms": [
+        {
+          "strongs_number": "H6662",
+          "transliteration": "tsad.diq",
+          "gloss": "righteous",
+          "language": "Hebrew",
+          "reg_no": 77,
+          "reg_word": "honesty",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H6666",
+          "transliteration": "tse.da.qah",
+          "gloss": "righteousness",
+          "language": "Hebrew",
+          "reg_no": 77,
+          "reg_word": "honesty",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "3246-001",
+          "context_description": "Term names the righteous person's inner moral character — the constitutive orientation of the whole inner being toward what is right before God and others",
+          "strongs_number": "H6662",
+          "transliteration": "tsad.diq",
+          "gloss": "righteous",
+          "registry_no": 77,
+          "registry_word": "honesty",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 169384,
+              "book": "Isaiah",
+              "chapter": 53,
+              "verse": 11,
+              "reference": "Isa 53:11",
+              "verse_text": "Isa 53:11 Out of the anguish of his soul he shall see and be satisfied ; by his knowledge shall the righteous one , my servant , make many to be accounted righteous , and he shall bear their iniquities ."
+            },
+            {
+              "verse_record_id": 169373,
+              "book": "Habakkuk",
+              "chapter": 2,
+              "verse": 4,
+              "reference": "Hab 2:4",
+              "verse_text": "Hab 2:4 “ Behold , his soul is puffed up ; it is not upright within him, but the righteous shall live by his faith ."
+            }
+          ]
+        },
+        {
+          "group_code": "3246-002",
+          "context_description": "Term names righteousness as the standard by which God tests and vindicates — the inner moral condition God sees, approves, rewards, and which may be abandoned",
+          "strongs_number": "H6662",
+          "transliteration": "tsad.diq",
+          "gloss": "righteous",
+          "registry_no": 77,
+          "registry_word": "honesty",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 169505,
+              "book": "Psalms",
+              "chapter": 7,
+              "verse": 9,
+              "reference": "Psa 7:9",
+              "verse_text": "Psa 7:9 Oh, let the evil of the wicked come to an end , and may you establish the righteous — you who test the minds and hearts , O righteous God !"
+            }
+          ]
+        },
+        {
+          "group_code": "3246-003",
+          "context_description": "Term names the inner response of the righteous person toward God — orientation of trust, joy, and praise",
+          "strongs_number": "H6662",
+          "transliteration": "tsad.diq",
+          "gloss": "righteous",
+          "registry_no": 77,
+          "registry_word": "honesty",
+          "cluster_assignment": "C10",
+          "dimension": "01 — Emotion — Positive",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 169501,
+              "book": "Psalms",
+              "chapter": 64,
+              "verse": 10,
+              "reference": "Psa 64:10",
+              "verse_text": "Psa 64:10 Let the righteous one rejoice in the Lord and take refuge in him! Let all the upright in heart exult !"
+            }
+          ]
+        },
+        {
+          "group_code": "911-001",
+          "context_description": "Term names righteousness as the inner moral character of the person — right relationship with God and others expressed in just conduct, faithful dealing, and integrity",
+          "strongs_number": "H6666",
+          "transliteration": "tse.da.qah",
+          "gloss": "righteousness",
+          "registry_no": 77,
+          "registry_word": "honesty",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 169292,
+              "book": "Proverbs",
+              "chapter": 21,
+              "verse": 3,
+              "reference": "Pro 21:3",
+              "verse_text": "Pro 21:3 To do righteousness and justice is more acceptable to the Lord than sacrifice ."
+            }
+          ]
+        },
+        {
+          "group_code": "911-002",
+          "context_description": "Term names righteousness as the status credited to or vindicated in the person by God — moral standing before God, including imputation",
+          "strongs_number": "H6666",
+          "transliteration": "tse.da.qah",
+          "gloss": "righteousness",
+          "registry_no": 77,
+          "registry_word": "honesty",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 25165,
+              "book": "Genesis",
+              "chapter": 15,
+              "verse": 6,
+              "reference": "Gen 15:6",
+              "verse_text": "Gen 15:6 And he believed the Lord , and he counted it to him as righteousness ."
+            }
+          ]
+        },
+        {
+          "group_code": "911-003",
+          "context_description": "Term names righteousness as the divine character quality received, longed for, and responded to — gift, stream of salvation, ground of inner hope and exultation",
+          "strongs_number": "H6666",
+          "transliteration": "tse.da.qah",
+          "gloss": "righteousness",
+          "registry_no": 77,
+          "registry_word": "honesty",
+          "cluster_assignment": "C10",
+          "dimension": "01 — Emotion — Positive",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 25198,
+              "book": "Isaiah",
+              "chapter": 61,
+              "verse": 10,
+              "reference": "Isa 61:10",
+              "verse_text": "Isa 61:10 I will greatly rejoice in the Lord ; my soul shall exult in my God , for he has clothed me with the garments of salvation ; he has covered me with the robe of righteousness , as a bridegroom decks himself like a priest with a beautiful headdress , and as a bride adorns herself with her jewels ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "NAQI",
+      "root_language": "Hebrew",
+      "root_gloss": "bowl",
+      "in_cluster_registries": [
+        90
+      ],
+      "cross_registry": false,
+      "term_count": 5,
+      "group_count": 8,
+      "terms": [
+        {
+          "strongs_number": "H4518",
+          "transliteration": "me.naq.qiy.yah",
+          "gloss": "bowl",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H5355A",
+          "transliteration": "na.qi",
+          "gloss": "innocent",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H5355B",
+          "transliteration": "na.qi",
+          "gloss": "innocent",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H5356A",
+          "transliteration": "niq.qa.von",
+          "gloss": "innocence",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H5356B",
+          "transliteration": "qe.ha.von",
+          "gloss": "bluntness",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "5621-001",
+          "context_description": "Term characterizes the person as morally innocent or free from guilt — the inner moral standing of a person before God and the human community",
+          "strongs_number": "H5355A",
+          "transliteration": "na.qi",
+          "gloss": "innocent",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 171916,
+              "book": "Exodus",
+              "chapter": 23,
+              "verse": 7,
+              "reference": "Exo 23:7",
+              "verse_text": "Exo 23:7 Keep far from a false charge , and do not kill the innocent and righteous , for I will not acquit the wicked ."
+            },
+            {
+              "verse_record_id": 171908,
+              "book": "2 Samuel",
+              "chapter": 3,
+              "verse": 28,
+              "reference": "2Sa 3:28",
+              "verse_text": "2Sa 3:28 Afterward , when David heard of it, he said , “ I and my kingdom are forever guiltless before the Lord for the blood of Abner the son of Ner ."
+            }
+          ]
+        },
+        {
+          "group_code": "5621-002",
+          "context_description": "Term identifies \"innocent blood\" as a moral category — the shedding of which constitutes moral pollution and the protection of which is a moral obligation before God",
+          "strongs_number": "H5355A",
+          "transliteration": "na.qi",
+          "gloss": "innocent",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 171914,
+              "book": "Deuteronomy",
+              "chapter": 27,
+              "verse": 25,
+              "reference": "Deu 27:25",
+              "verse_text": "Deu 27:25 “‘ Cursed be anyone who takes a bribe to shed innocent blood .’ And all the people shall say , ‘ Amen .’"
+            },
+            {
+              "verse_record_id": 171922,
+              "book": "Jeremiah",
+              "chapter": 22,
+              "verse": 17,
+              "reference": "Jer 22:17",
+              "verse_text": "Jer 22:17 But you have eyes and heart only for your dishonest gain , for shedding innocent blood , and for practicing oppression and violence .”"
+            }
+          ]
+        },
+        {
+          "group_code": "5621-003",
+          "context_description": "Term marks freedom from moral obligation or liability — clearance from a sworn commitment, legal claim, or culpability",
+          "strongs_number": "H5355A",
+          "transliteration": "na.qi",
+          "gloss": "innocent",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 171917,
+              "book": "Genesis",
+              "chapter": 24,
+              "verse": 41,
+              "reference": "Gen 24:41",
+              "verse_text": "Gen 24:41 Then you will be free from my oath , when you come to my clan . And if they will not give her to you, you will be free from my oath .’"
+            },
+            {
+              "verse_record_id": 171933,
+              "book": "Joshua",
+              "chapter": 2,
+              "verse": 19,
+              "reference": "Jos 2:19",
+              "verse_text": "Jos 2:19 Then if anyone goes out of the doors of your house into the street , his blood shall be on his own head , and we shall be guiltless . But if a hand is laid on anyone who is with you in the house , his blood shall be on our head ."
+            }
+          ]
+        },
+        {
+          "group_code": "5624-001",
+          "context_description": "Term characterizes the person as morally innocent or free from guilt — the inner moral standing of a person before God and the human community",
+          "strongs_number": "H5355B",
+          "transliteration": "na.qi",
+          "gloss": "innocent",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 171993,
+              "book": "Exodus",
+              "chapter": 23,
+              "verse": 7,
+              "reference": "Exo 23:7",
+              "verse_text": "Exo 23:7 Keep far from a false charge , and do not kill the innocent and righteous , for I will not acquit the wicked ."
+            },
+            {
+              "verse_record_id": 171985,
+              "book": "2 Samuel",
+              "chapter": 3,
+              "verse": 28,
+              "reference": "2Sa 3:28",
+              "verse_text": "2Sa 3:28 Afterward , when David heard of it, he said , “ I and my kingdom are forever guiltless before the Lord for the blood of Abner the son of Ner ."
+            }
+          ]
+        },
+        {
+          "group_code": "5624-002",
+          "context_description": "Term identifies \"innocent blood\" as a moral category — the shedding of which constitutes moral pollution and the protection of which is a moral obligation before God",
+          "strongs_number": "H5355B",
+          "transliteration": "na.qi",
+          "gloss": "innocent",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 171991,
+              "book": "Deuteronomy",
+              "chapter": 27,
+              "verse": 25,
+              "reference": "Deu 27:25",
+              "verse_text": "Deu 27:25 “‘ Cursed be anyone who takes a bribe to shed innocent blood .’ And all the people shall say , ‘ Amen .’"
+            },
+            {
+              "verse_record_id": 171999,
+              "book": "Jeremiah",
+              "chapter": 22,
+              "verse": 17,
+              "reference": "Jer 22:17",
+              "verse_text": "Jer 22:17 But you have eyes and heart only for your dishonest gain , for shedding innocent blood , and for practicing oppression and violence .”"
+            }
+          ]
+        },
+        {
+          "group_code": "5624-003",
+          "context_description": "Term marks freedom from moral obligation or liability — clearance from a sworn commitment, legal claim, or culpability",
+          "strongs_number": "H5355B",
+          "transliteration": "na.qi",
+          "gloss": "innocent",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 171994,
+              "book": "Genesis",
+              "chapter": 24,
+              "verse": 41,
+              "reference": "Gen 24:41",
+              "verse_text": "Gen 24:41 Then you will be free from my oath , when you come to my clan . And if they will not give her to you, you will be free from my oath .’"
+            },
+            {
+              "verse_record_id": 172010,
+              "book": "Joshua",
+              "chapter": 2,
+              "verse": 19,
+              "reference": "Jos 2:19",
+              "verse_text": "Jos 2:19 Then if anyone goes out of the doors of your house into the street , his blood shall be on his own head , and we shall be guiltless . But if a hand is laid on anyone who is with you in the house , his blood shall be on our head ."
+            }
+          ]
+        },
+        {
+          "group_code": "928-001",
+          "context_description": "Term names the inner-being quality of innocence — the condition of the heart and hands being free from moral guilt before God",
+          "strongs_number": "H5356A",
+          "transliteration": "niq.qa.von",
+          "gloss": "innocence",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27438,
+              "book": "Genesis",
+              "chapter": 20,
+              "verse": 5,
+              "reference": "Gen 20:5",
+              "verse_text": "Gen 20:5 Did he not himself say to me, ‘ She is my sister ’? And she herself said , ‘He is my brother .’ In the integrity of my heart and the innocence of my hands I have done this .”"
+            },
+            {
+              "verse_record_id": 171898,
+              "book": "Psalms",
+              "chapter": 73,
+              "verse": 13,
+              "reference": "Psa 73:13",
+              "verse_text": "Psa 73:13 All in vain have I kept my heart clean and washed my hands in innocence ."
+            }
+          ]
+        },
+        {
+          "group_code": "5620-001",
+          "context_description": "Term names the inner-being quality of innocence — the condition of the heart and hands being free from moral guilt before God",
+          "strongs_number": "H5356B",
+          "transliteration": "qe.ha.von",
+          "gloss": "bluntness",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 171899,
+              "book": "Genesis",
+              "chapter": 20,
+              "verse": 5,
+              "reference": "Gen 20:5",
+              "verse_text": "Gen 20:5 Did he not himself say to me, ‘ She is my sister ’? And she herself said , ‘He is my brother .’ In the integrity of my heart and the innocence of my hands I have done this .”"
+            },
+            {
+              "verse_record_id": 171902,
+              "book": "Psalms",
+              "chapter": 73,
+              "verse": 13,
+              "reference": "Psa 73:13",
+              "verse_text": "Psa 73:13 All in vain have I kept my heart clean and washed my hands in innocence ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "KASAH",
+      "root_language": "Hebrew",
+      "root_gloss": "to cover",
+      "in_cluster_registries": [
+        90
+      ],
+      "cross_registry": false,
+      "term_count": 4,
+      "group_count": 4,
+      "terms": [
+        {
+          "strongs_number": "H3681",
+          "transliteration": "ka.suy",
+          "gloss": "covering",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H3682",
+          "transliteration": "ke.sut",
+          "gloss": "covering",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H4372",
+          "transliteration": "mikh.seh",
+          "gloss": "covering",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H4374",
+          "transliteration": "me.khas.seh",
+          "gloss": "covering",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "929-001",
+          "context_description": "Term names a metaphorical covering of moral reproach — the public declaration of innocence and vindication",
+          "strongs_number": "H3682",
+          "transliteration": "ke.sut",
+          "gloss": "covering",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27440,
+              "book": "Genesis",
+              "chapter": 20,
+              "verse": 16,
+              "reference": "Gen 20:16",
+              "verse_text": "Gen 20:16 To Sarah he said , “Behold, I have given your brother a thousand pieces of silver . It is a sign of your innocence in the eyes of all who are with you , and before everyone you are vindicated .”"
+            }
+          ]
+        },
+        {
+          "group_code": "929-002",
+          "context_description": "Term names the absence of covering as the condition of inner vulnerability and exposure — of the poor, and of the realm of death before God",
+          "strongs_number": "H3682",
+          "transliteration": "ke.sut",
+          "gloss": "covering",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "07 — Vitality / Existence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27443,
+              "book": "Job",
+              "chapter": 26,
+              "verse": 6,
+              "reference": "Job 26:6",
+              "verse_text": "Job 26:6 Sheol is naked before God, and Abaddon has no covering ."
+            }
+          ]
+        },
+        {
+          "group_code": "929-003",
+          "context_description": "Term frames covering as divine response to vulnerability and divine expression of grief — God's compassion for the exposed and his inner mourning made visible",
+          "strongs_number": "H3682",
+          "transliteration": "ke.sut",
+          "gloss": "covering",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "11 — Divine-Human Correspondence",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172022,
+              "book": "Exodus",
+              "chapter": 22,
+              "verse": 27,
+              "reference": "Exo 22:27",
+              "verse_text": "Exo 22:27 for that is his only covering , and it is his cloak for his body ; in what else shall he sleep ? And if he cries to me, I will hear , for I am compassionate ."
+            }
+          ]
+        },
+        {
+          "group_code": "5627-001",
+          "context_description": "Term names what covers the person in death and judgment — the inverted image of pride and pomp brought to humiliation before God",
+          "strongs_number": "H4374",
+          "transliteration": "me.khas.seh",
+          "gloss": "covering",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "07 — Vitality / Existence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172185,
+              "book": "Isaiah",
+              "chapter": 14,
+              "verse": 11,
+              "reference": "Isa 14:11",
+              "verse_text": "Isa 14:11 Your pomp is brought down to Sheol , the sound of your harps ; maggots are laid as a bed beneath you, and worms are your covers ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "HEN",
+      "root_language": "Hebrew",
+      "root_gloss": "if",
+      "in_cluster_registries": [
+        90
+      ],
+      "cross_registry": false,
+      "term_count": 7,
+      "group_count": 15,
+      "terms": [
+        {
+          "strongs_number": "H2005",
+          "transliteration": "hen",
+          "gloss": "look!",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2006A",
+          "transliteration": "hen",
+          "gloss": "if",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2006B",
+          "transliteration": "la.hen",
+          "gloss": "therefore",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2008",
+          "transliteration": "hen.nah",
+          "gloss": "here/thus",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2009",
+          "transliteration": "hin.neh",
+          "gloss": "behold",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2011G",
+          "transliteration": "hin.nom",
+          "gloss": "[Topheth of] Hinnom",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2011H",
+          "transliteration": "hin.nom",
+          "gloss": "[Topheth of son of] Hinnom",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "5629-001",
+          "context_description": "Term frames the self-presentation of a person before God or another — offering the self in availability, surrender, or accountability",
+          "strongs_number": "H2005",
+          "transliteration": "hen",
+          "gloss": "look!",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": null,
+          "dimension_confidence": "UNCLASSIFIED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172308,
+              "book": "1 Samuel",
+              "chapter": 12,
+              "verse": 3,
+              "reference": "1Sa 12:3",
+              "verse_text": "1Sa 12:3 Here I am; testify against me before the Lord and before his anointed . Whose ox have I taken ? Or whose donkey have I taken ? Or whom have I defrauded ? Whom have I oppressed ? Or from whose hand have I taken a bribe to blind my eyes with it? Testify against me and I will restore it to you .”"
+            },
+            {
+              "verse_record_id": 172423,
+              "book": "Isaiah",
+              "chapter": 6,
+              "verse": 8,
+              "reference": "Isa 6:8",
+              "verse_text": "Isa 6:8 And I heard the voice of the Lord saying , “ Whom shall I send , and who will go for us?” Then I said , “ Here I am! Send me .”"
+            }
+          ]
+        },
+        {
+          "group_code": "5629-002",
+          "context_description": "Term frames a first-person or communal confessional disclosure of inner condition — guilt, fear, inadequacy, need, or grief — before God",
+          "strongs_number": "H2005",
+          "transliteration": "hen",
+          "gloss": "look!",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "02 — Emotion — Negative",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172368,
+              "book": "Ezra",
+              "chapter": 9,
+              "verse": 15,
+              "reference": "Ezr 9:15",
+              "verse_text": "Ezr 9:15 O Lord , the God of Israel , you are just , for we are left a remnant that has escaped , as it is today . Behold , we are before you in our guilt , for none can stand before you because of this .”"
+            },
+            {
+              "verse_record_id": 172507,
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": 5,
+              "reference": "Psa 51:5",
+              "verse_text": "Psa 51:5 Behold , I was brought forth in iniquity , and in sin did my mother conceive me."
+            }
+          ]
+        },
+        {
+          "group_code": "5629-003",
+          "context_description": "Term frames a divine disclosure of God's inner orientation — election, delight, care, and relational approach toward his people",
+          "strongs_number": "H2005",
+          "transliteration": "hen",
+          "gloss": "look!",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "11 — Divine-Human Correspondence",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172405,
+              "book": "Isaiah",
+              "chapter": 42,
+              "verse": 1,
+              "reference": "Isa 42:1",
+              "verse_text": "Isa 42:1 Behold my servant , whom I uphold , my chosen , in whom my soul delights ; I have put my Spirit upon him; he will bring forth justice to the nations ."
+            },
+            {
+              "verse_record_id": 172408,
+              "book": "Isaiah",
+              "chapter": 49,
+              "verse": 16,
+              "reference": "Isa 49:16",
+              "verse_text": "Isa 49:16 Behold , I have engraved you on the palms of my hands; your walls are continually before me."
+            }
+          ]
+        },
+        {
+          "group_code": "5629-004",
+          "context_description": "Term frames a moral verdict or exposure of the inner being — what God sees, seeks, or judges in the heart, will, and conduct of persons",
+          "strongs_number": "H2005",
+          "transliteration": "hen",
+          "gloss": "look!",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172508,
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": 6,
+              "reference": "Psa 51:6",
+              "verse_text": "Psa 51:6 Behold , you delight in truth in the inward being , and you teach me wisdom in the secret heart ."
+            },
+            {
+              "verse_record_id": 172419,
+              "book": "Isaiah",
+              "chapter": 58,
+              "verse": 3,
+              "reference": "Isa 58:3",
+              "verse_text": "Isa 58:3 ‘ Why have we fasted , and you see it not ? Why have we humbled ourselves , and you take no knowledge of it?’ Behold , in the day of your fast you seek your own pleasure , and oppress all your workers ."
+            }
+          ]
+        },
+        {
+          "group_code": "5629-005",
+          "context_description": "Term frames a personal disclosure of the inner experience of God — searching, hiddenness, helplessness, or submission before divine power",
+          "strongs_number": "H2005",
+          "transliteration": "hen",
+          "gloss": "look!",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "09 — Agency / Power",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172483,
+              "book": "Job",
+              "chapter": 9,
+              "verse": 11,
+              "reference": "Job 9:11",
+              "verse_text": "Job 9:11 Behold, he passes by me, and I see him not; he moves on , but I do not perceive him ."
+            },
+            {
+              "verse_record_id": 172479,
+              "book": "Job",
+              "chapter": 40,
+              "verse": 4,
+              "reference": "Job 40:4",
+              "verse_text": "Job 40:4 “ Behold , I am of small account ; what shall I answer you? I lay my hand on my mouth ."
+            }
+          ]
+        },
+        {
+          "group_code": "5629-006",
+          "context_description": "Term frames a disclosure of inner knowing, wisdom, awe, or affective orientation — including fear of the Lord, understanding, love, grief, and longing",
+          "strongs_number": "H2005",
+          "transliteration": "hen",
+          "gloss": "look!",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "02 — Emotion — Negative",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172465,
+              "book": "Job",
+              "chapter": 28,
+              "verse": 28,
+              "reference": "Job 28:28",
+              "verse_text": "Job 28:28 And he said to man , ‘ Behold , the fear of the Lord , that is wisdom , and to turn away from evil is understanding .’”"
+            },
+            {
+              "verse_record_id": 172511,
+              "book": "Song of Solomon",
+              "chapter": 1,
+              "verse": 15,
+              "reference": "Song 1:15",
+              "verse_text": "Song 1:15 Behold , you are beautiful , my love ; behold , you are beautiful ; your eyes are doves ."
+            }
+          ]
+        },
+        {
+          "group_code": "5630-001",
+          "context_description": "Term marks the temporal extent or ongoing duration of an inner-being state, divine relationship, or orientation — establishing how long the inner condition has persisted or been sustained",
+          "strongs_number": "H2008",
+          "transliteration": "hen.nah",
+          "gloss": "here/thus",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "11 — Divine-Human Correspondence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172524,
+              "book": "1 Samuel",
+              "chapter": 1,
+              "verse": 16,
+              "reference": "1Sa 1:16",
+              "verse_text": "1Sa 1:16 Do not regard your servant as a worthless woman , for all along I have been speaking out of my great anxiety and vexation .”"
+            },
+            {
+              "verse_record_id": 172560,
+              "book": "Psalms",
+              "chapter": 71,
+              "verse": 17,
+              "reference": "Psa 71:17",
+              "verse_text": "Psa 71:17 O God , from my youth you have taught me, and I still proclaim your wondrous deeds ."
+            }
+          ]
+        },
+        {
+          "group_code": "930-001",
+          "context_description": "Term frames the self-presentation of a person before God in obedience, availability, or acknowledgment of inadequacy",
+          "strongs_number": "H2009",
+          "transliteration": "hin.neh",
+          "gloss": "behold",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "04 — Volition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27473,
+              "book": "Genesis",
+              "chapter": 22,
+              "verse": 1,
+              "reference": "Gen 22:1",
+              "verse_text": "Gen 22:1 After these things God tested Abraham and said to him, “ Abraham !” And he said , “ Here I am.”"
+            },
+            {
+              "verse_record_id": 27565,
+              "book": "Jeremiah",
+              "chapter": 1,
+              "verse": 6,
+              "reference": "Jer 1:6",
+              "verse_text": "Jer 1:6 Then I said , “ Ah , Lord God ! Behold , I do not know how to speak , for I am only a youth .”"
+            }
+          ]
+        },
+        {
+          "group_code": "930-002",
+          "context_description": "Term frames a first-person or communal disclosure of inner need, grief, fear, or moral condition before God",
+          "strongs_number": "H2009",
+          "transliteration": "hin.neh",
+          "gloss": "behold",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "02 — Emotion — Negative",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27451,
+              "book": "Genesis",
+              "chapter": 15,
+              "verse": 3,
+              "reference": "Gen 15:3",
+              "verse_text": "Gen 15:3 And Abram said , “ Behold , you have given me no offspring , and a member of my household will be my heir .”"
+            },
+            {
+              "verse_record_id": 27633,
+              "book": "Nehemiah",
+              "chapter": 9,
+              "verse": 36,
+              "reference": "Neh 9:36",
+              "verse_text": "Neh 9:36 Behold , we are slaves this day ; in the land that you gave to our fathers to enjoy its fruit and its good gifts , behold , we are slaves ."
+            }
+          ]
+        },
+        {
+          "group_code": "930-003",
+          "context_description": "Term introduces a theophanic vision or divine encounter — making the divine presence directly present to perception",
+          "strongs_number": "H2009",
+          "transliteration": "hin.neh",
+          "gloss": "behold",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27496,
+              "book": "Genesis",
+              "chapter": 28,
+              "verse": 12,
+              "reference": "Gen 28:12",
+              "verse_text": "Gen 28:12 And he dreamed , and behold , there was a ladder set up on the earth , and the top of it reached to heaven . And behold , the angels of God were ascending and descending on it !"
+            },
+            {
+              "verse_record_id": 27497,
+              "book": "Genesis",
+              "chapter": 28,
+              "verse": 13,
+              "reference": "Gen 28:13",
+              "verse_text": "Gen 28:13 And behold , the Lord stood above it and said , “ I am the Lord , the God of Abraham your father and the God of Isaac . The land on which you lie I will give to you and to your offspring ."
+            }
+          ]
+        },
+        {
+          "group_code": "930-004",
+          "context_description": "Term introduces a divine disclosure of God's orientation of love, promise, care, or attentiveness toward his people",
+          "strongs_number": "H2009",
+          "transliteration": "hin.neh",
+          "gloss": "behold",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27453,
+              "book": "Genesis",
+              "chapter": 16,
+              "verse": 11,
+              "reference": "Gen 16:11",
+              "verse_text": "Gen 16:11 And the angel of the Lord said to her, “ Behold , you are pregnant and shall bear a son . You shall call his name Ishmael , because the Lord has listened to your affliction ."
+            },
+            {
+              "verse_record_id": 27509,
+              "book": "Hosea",
+              "chapter": 2,
+              "verse": 14,
+              "reference": "Hos 2:14",
+              "verse_text": "Hos 2:14 “ Therefore , behold , I will allure her, and bring her into the wilderness , and speak tenderly to her."
+            }
+          ]
+        },
+        {
+          "group_code": "930-005",
+          "context_description": "Term introduces a moral verdict, exposure of inner sin or deception, or inner transformation through divine action",
+          "strongs_number": "H2009",
+          "transliteration": "hin.neh",
+          "gloss": "behold",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27553,
+              "book": "Isaiah",
+              "chapter": 6,
+              "verse": 7,
+              "reference": "Isa 6:7",
+              "verse_text": "Isa 6:7 And he touched my mouth and said : “ Behold , this has touched your lips ; your guilt is taken away , and your sin atoned for .”"
+            },
+            {
+              "verse_record_id": 27507,
+              "book": "Habakkuk",
+              "chapter": 2,
+              "verse": 4,
+              "reference": "Hab 2:4",
+              "verse_text": "Hab 2:4 “ Behold , his soul is puffed up ; it is not upright within him, but the righteous shall live by his faith ."
+            }
+          ]
+        },
+        {
+          "group_code": "930-006",
+          "context_description": "Term introduces inner wisdom reflection, longing, moral restraint, or the recognition of inner truth",
+          "strongs_number": "H2009",
+          "transliteration": "hin.neh",
+          "gloss": "behold",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172250,
+              "book": "Psalms",
+              "chapter": 133,
+              "verse": 1,
+              "reference": "Psa 133:1",
+              "verse_text": "A Song of Ascents . Of David . Psa 133:1 Behold, how good and pleasant it is when brothers dwell in unity !"
+            },
+            {
+              "verse_record_id": 172219,
+              "book": "Ecclesiastes",
+              "chapter": 2,
+              "verse": 11,
+              "reference": "Ecc 2:11",
+              "verse_text": "Ecc 2:11 Then I considered all that my hands had done and the toil I had expended in doing it , and behold , all was vanity and a striving after wind , and there was nothing to be gained under the sun ."
+            }
+          ]
+        },
+        {
+          "group_code": "930-007",
+          "context_description": "Term introduces the inner experience of anguish, dread, despair, hope, or emotional intensity before God or in life",
+          "strongs_number": "H2009",
+          "transliteration": "hin.neh",
+          "gloss": "behold",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "02 — Emotion — Negative",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27575,
+              "book": "Job",
+              "chapter": 3,
+              "verse": 7,
+              "reference": "Job 3:7",
+              "verse_text": "Job 3:7 Behold , let that night be barren ; let no joyful cry enter it ."
+            },
+            {
+              "verse_record_id": 27577,
+              "book": "Job",
+              "chapter": 32,
+              "verse": 19,
+              "reference": "Job 32:19",
+              "verse_text": "Job 32:19 Behold , my belly is like wine that has no vent ; like new wineskins ready to burst ."
+            }
+          ]
+        },
+        {
+          "group_code": "5632-001",
+          "context_description": "Term names the place associated with the moral abomination of child sacrifice — an act explicitly contrary to the divine inner will and a marker of the depths of human spiritual corruption",
+          "strongs_number": "H2011H",
+          "transliteration": "hin.nom",
+          "gloss": "[Topheth of son of] Hinnom",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172573,
+              "book": "2 Chronicles",
+              "chapter": 33,
+              "verse": 6,
+              "reference": "2Ch 33:6",
+              "verse_text": "2Ch 33:6 And he burned his sons as an offering in the Valley of the Son of Hinnom , and used fortune-telling and omens and sorcery , and dealt with mediums and with necromancers . He did much evil in the sight of the Lord , provoking him to anger ."
+            },
+            {
+              "verse_record_id": 172578,
+              "book": "Jeremiah",
+              "chapter": 7,
+              "verse": 31,
+              "reference": "Jer 7:31",
+              "verse_text": "Jer 7:31 And they have built the high places of Topheth , which is in the Valley of the Son of Hinnom , to burn their sons and their daughters in the fire , which I did not command , nor did it come into my mind ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "TAM",
+      "root_language": "Hebrew",
+      "root_gloss": "complete",
+      "in_cluster_registries": [
+        90
+      ],
+      "cross_registry": false,
+      "term_count": 6,
+      "group_count": 6,
+      "terms": [
+        {
+          "strongs_number": "H4974",
+          "transliteration": "me.tom",
+          "gloss": "soundness",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8535",
+          "transliteration": "tam",
+          "gloss": "complete",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8537",
+          "transliteration": "tom",
+          "gloss": "integrity",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8549H",
+          "transliteration": "ta.mim",
+          "gloss": "unblemished: blameless",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8549I",
+          "transliteration": "ta.mim",
+          "gloss": "unblemished: complete",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8549J",
+          "transliteration": "ta.mim",
+          "gloss": "unblemished: Thummim",
+          "language": "Hebrew",
+          "reg_no": 90,
+          "reg_word": "innocence",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "5641-001",
+          "context_description": "Term names the absence of soundness as the condition of the person or people under divine discipline or moral corruption — linking physical and inner brokenness",
+          "strongs_number": "H4974",
+          "transliteration": "me.tom",
+          "gloss": "soundness",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172781,
+              "book": "Psalms",
+              "chapter": 38,
+              "verse": 3,
+              "reference": "Psa 38:3",
+              "verse_text": "Psa 38:3 There is no soundness in my flesh because of your indignation ; there is no health in my bones because of my sin ."
+            }
+          ]
+        },
+        {
+          "group_code": "5638-001",
+          "context_description": "Term characterizes the person as inwardly blameless and morally whole — the quality of inner character that defines one who fears God and turns from evil",
+          "strongs_number": "H8535",
+          "transliteration": "tam",
+          "gloss": "complete",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "02 — Emotion — Negative",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172756,
+              "book": "Job",
+              "chapter": 1,
+              "verse": 1,
+              "reference": "Job 1:1",
+              "verse_text": "Job 1:1 There was a man in the land of Uz whose name was Job , and that man was blameless and upright , one who feared God and turned away from evil ."
+            },
+            {
+              "verse_record_id": 172764,
+              "book": "Psalms",
+              "chapter": 37,
+              "verse": 37,
+              "reference": "Psa 37:37",
+              "verse_text": "Psa 37:37 Mark the blameless and behold the upright , for there is a future for the man of peace ."
+            }
+          ]
+        },
+        {
+          "group_code": "5638-002",
+          "context_description": "Term characterizes the beloved as wholly complete and perfect — the wholeness that evokes delight and singular devotion",
+          "strongs_number": "H8535",
+          "transliteration": "tam",
+          "gloss": "complete",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "01 — Emotion — Positive",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172766,
+              "book": "Song of Solomon",
+              "chapter": 5,
+              "verse": 2,
+              "reference": "Song 5:2",
+              "verse_text": "Song 5:2 I slept , but my heart was awake . A sound ! My beloved is knocking . “ Open to me, my sister , my love , my dove , my perfect one , for my head is wet with dew , my locks with the drops of the night .”"
+            },
+            {
+              "verse_record_id": 172767,
+              "book": "Song of Solomon",
+              "chapter": 6,
+              "verse": 9,
+              "reference": "Song 6:9",
+              "verse_text": "Song 6:9 My dove , my perfect one , is the only one , the only one of her mother , pure to her who bore her. The young women saw her and called her blessed ; the queens and concubines also, and they praised her ."
+            }
+          ]
+        },
+        {
+          "group_code": "931-001",
+          "context_description": "Term names integrity as the inner moral condition of the person — the wholeness and blamelessness of heart and conduct that characterizes the one who walks rightly before God",
+          "strongs_number": "H8537",
+          "transliteration": "tom",
+          "gloss": "integrity",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27657,
+              "book": "Genesis",
+              "chapter": 20,
+              "verse": 5,
+              "reference": "Gen 20:5",
+              "verse_text": "Gen 20:5 Did he not himself say to me, ‘ She is my sister ’? And she herself said , ‘He is my brother .’ In the integrity of my heart and the innocence of my hands I have done this .”"
+            },
+            {
+              "verse_record_id": 172608,
+              "book": "Psalms",
+              "chapter": 26,
+              "verse": 1,
+              "reference": "Psa 26:1",
+              "verse_text": "Of David . Psa 26:1 Vindicate me, O Lord , for I have walked in my integrity , and I have trusted in the Lord without wavering ."
+            }
+          ]
+        },
+        {
+          "group_code": "5637-001",
+          "context_description": "Term characterizes the person as inwardly blameless and whole before God — the quality of heart and conduct that constitutes right standing and walking in God's presence",
+          "strongs_number": "H8549H",
+          "transliteration": "ta.mim",
+          "gloss": "unblemished: blameless",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "11 — Divine-Human Correspondence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172731,
+              "book": "Genesis",
+              "chapter": 17,
+              "verse": 1,
+              "reference": "Gen 17:1",
+              "verse_text": "Gen 17:1 When Abram was ninety-nine years old the Lord appeared to Abram and said to him, “ I am God Almighty ; walk before me, and be blameless ,"
+            },
+            {
+              "verse_record_id": 172746,
+              "book": "Psalms",
+              "chapter": 15,
+              "verse": 2,
+              "reference": "Psa 15:2",
+              "verse_text": "Psa 15:2 He who walks blamelessly and does what is right and speaks truth in his heart ;"
+            }
+          ]
+        },
+        {
+          "group_code": "5642-001",
+          "context_description": "Term names the Thummim as the instrument of divine disclosure of inner moral guilt — the means by which God reveals what is hidden in the person or community",
+          "strongs_number": "H8549J",
+          "transliteration": "ta.mim",
+          "gloss": "unblemished: Thummim",
+          "registry_no": 90,
+          "registry_word": "innocence",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 172783,
+              "book": "1 Samuel",
+              "chapter": 14,
+              "verse": 41,
+              "reference": "1Sa 14:41",
+              "verse_text": "1Sa 14:41 Therefore Saul said , “O Lord God of Israel , why have you not answered your servant this day ? If this guilt is in me or in Jonathan my son , O Lord , God of Israel , give Urim . But if this guilt is in your people Israel , give Thummim .” And Jonathan and Saul were taken , but the people escaped ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "TAMIM",
+      "root_language": "Hebrew",
+      "root_gloss": "integrity",
+      "in_cluster_registries": [
+        92
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 3,
+      "terms": [
+        {
+          "strongs_number": "H8538",
+          "transliteration": "tum.mah",
+          "gloss": "integrity",
+          "language": "Hebrew",
+          "reg_no": 92,
+          "reg_word": "integrity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H8549G",
+          "transliteration": "ta.mim",
+          "gloss": "unblemished",
+          "language": "Hebrew",
+          "reg_no": 92,
+          "reg_word": "integrity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "933-001",
+          "context_description": "Term names integrity as the inner quality that the person holds fast and presents before God — the moral wholeness that defines character and guides conduct under pressure",
+          "strongs_number": "H8538",
+          "transliteration": "tum.mah",
+          "gloss": "integrity",
+          "registry_no": 92,
+          "registry_word": "integrity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 27768,
+              "book": "Job",
+              "chapter": 2,
+              "verse": 3,
+              "reference": "Job 2:3",
+              "verse_text": "Job 2:3 And the Lord said to Satan , “Have you considered my servant Job , that there is none like him on the earth , a blameless and upright man , who fears God and turns away from evil ? He still holds fast his integrity , although you incited me against him to destroy him without reason .”"
+            },
+            {
+              "verse_record_id": 173898,
+              "book": "Proverbs",
+              "chapter": 11,
+              "verse": 3,
+              "reference": "Pro 11:3",
+              "verse_text": "Pro 11:3 The integrity of the upright guides them, but the crookedness of the treacherous destroys them ."
+            }
+          ]
+        },
+        {
+          "group_code": "934-001",
+          "context_description": "Term characterises God's way, works, and knowledge as perfect — the inner perfection of divine character and action as the ground of trust",
+          "strongs_number": "H8549G",
+          "transliteration": "ta.mim",
+          "gloss": "unblemished",
+          "registry_no": 92,
+          "registry_word": "integrity",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 173836,
+              "book": "Deuteronomy",
+              "chapter": 32,
+              "verse": 4,
+              "reference": "Deu 32:4",
+              "verse_text": "Deu 32:4 “The Rock , his work is perfect , for all his ways are justice . A God of faithfulness and without iniquity , just and upright is he ."
+            },
+            {
+              "verse_record_id": 27773,
+              "book": "Job",
+              "chapter": 37,
+              "verse": 16,
+              "reference": "Job 37:16",
+              "verse_text": "Job 37:16 Do you know the balancings of the clouds , the wondrous works of him who is perfect in knowledge ,"
+            }
+          ]
+        },
+        {
+          "group_code": "934-002",
+          "context_description": "Term characterises the Torah as perfect — its completeness as the source of inner renewal of the soul",
+          "strongs_number": "H8549G",
+          "transliteration": "ta.mim",
+          "gloss": "unblemished",
+          "registry_no": 92,
+          "registry_word": "integrity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 173848,
+              "book": "Psalms",
+              "chapter": 19,
+              "verse": 7,
+              "reference": "Psa 19:7",
+              "verse_text": "Psa 19:7 The law of the Lord is perfect , reviving the soul ; the testimony of the Lord is sure , making wise the simple ;"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "AFTHARS",
+      "root_language": "Greek",
+      "root_gloss": "incorruptibility",
+      "in_cluster_registries": [
+        92
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G0861",
+          "transliteration": "aftharsia",
+          "gloss": "incorruptibility",
+          "language": "Greek",
+          "reg_no": 92,
+          "reg_word": "integrity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "935-001",
+          "context_description": "Term names the eschatological transformation of the person — the putting on of incorruptibility and immortality at resurrection",
+          "strongs_number": "G0861",
+          "transliteration": "aftharsia",
+          "gloss": "incorruptibility",
+          "registry_no": 92,
+          "registry_word": "integrity",
+          "cluster_assignment": "C10",
+          "dimension": "07 — Vitality / Existence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28143,
+              "book": "1 Corinthians",
+              "chapter": 15,
+              "verse": 42,
+              "reference": "1Cor 15:42",
+              "verse_text": "1Cor 15:42 So is it with the resurrection of the dead . What is sown is perishable ; what is raised is imperishable ."
+            },
+            {
+              "verse_record_id": 28145,
+              "book": "1 Corinthians",
+              "chapter": 15,
+              "verse": 53,
+              "reference": "1Cor 15:53",
+              "verse_text": "1Cor 15:53 For this perishable body must put on the imperishable , and this mortal body must put on immortality ."
+            }
+          ]
+        },
+        {
+          "group_code": "935-002",
+          "context_description": "Term names incorruptibility as the quality of inner love and the inner orientation of those who seek God's glory",
+          "strongs_number": "G0861",
+          "transliteration": "aftharsia",
+          "gloss": "incorruptibility",
+          "registry_no": 92,
+          "registry_word": "integrity",
+          "cluster_assignment": "C10",
+          "dimension": "06 — Relational Disposition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 28148,
+              "book": "Romans",
+              "chapter": 2,
+              "verse": 7,
+              "reference": "Rom 2:7",
+              "verse_text": "Rom 2:7 to those who by patience in well-doing seek for glory and honor and immortality , he will give eternal life ;"
+            },
+            {
+              "verse_record_id": 28147,
+              "book": "Ephesians",
+              "chapter": 6,
+              "verse": 24,
+              "reference": "Eph 6:24",
+              "verse_text": "Eph 6:24 Grace be with all who love our Lord Jesus Christ with love incorruptible ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "HAGN",
+      "root_language": "Greek",
+      "root_gloss": "pure",
+      "in_cluster_registries": [
+        125
+      ],
+      "cross_registry": false,
+      "term_count": 6,
+      "group_count": 8,
+      "terms": [
+        {
+          "strongs_number": "G0047",
+          "transliteration": "hagneia",
+          "gloss": "purity",
+          "language": "Greek",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0048",
+          "transliteration": "hagnizō",
+          "gloss": "to purify",
+          "language": "Greek",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0049",
+          "transliteration": "hagnismos",
+          "gloss": "purification",
+          "language": "Greek",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0053",
+          "transliteration": "hagnos",
+          "gloss": "pure",
+          "language": "Greek",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0054",
+          "transliteration": "hagnotēs",
+          "gloss": "purity",
+          "language": "Greek",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0055",
+          "transliteration": "hagnōs",
+          "gloss": "purely",
+          "language": "Greek",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1062-001",
+          "context_description": "Term names moral and relational purity as an inner character disposition — the quality of heart and motivation governing conduct and relationships",
+          "strongs_number": "G0047",
+          "transliteration": "hagneia",
+          "gloss": "purity",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 54578,
+              "book": "1 Timothy",
+              "chapter": 4,
+              "verse": 12,
+              "reference": "1Ti 4:12",
+              "verse_text": "1Ti 4:12 Let no one despise you for your youth , but set the believers an example in speech , in conduct , in love , in faith , in purity ."
+            }
+          ]
+        },
+        {
+          "group_code": "6054-001",
+          "context_description": "Term names the act of inner moral and spiritual purification — soul, heart, and self purified through obedience, hope, and turning toward God",
+          "strongs_number": "G0048",
+          "transliteration": "hagnizō",
+          "gloss": "to purify",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187269,
+              "book": "1 John",
+              "chapter": 3,
+              "verse": 3,
+              "reference": "1Jo 3:3",
+              "verse_text": "1Jo 3:3 And everyone who thus hopes in him purifies himself as he is pure ."
+            }
+          ]
+        },
+        {
+          "group_code": "6054-002",
+          "context_description": "Term names ritual purification as an act of preparation expressing inner orientation of readiness and covenantal reverence toward God",
+          "strongs_number": "G0048",
+          "transliteration": "hagnizō",
+          "gloss": "to purify",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187272,
+              "book": "Acts",
+              "chapter": 21,
+              "verse": 26,
+              "reference": "Act 21:26",
+              "verse_text": "Act 21:26 Then Paul took the men , and the next day he purified himself along with them and went into the temple , giving notice when the days of purification would be fulfilled and the offering presented for each one of them ."
+            }
+          ]
+        },
+        {
+          "group_code": "6055-001",
+          "context_description": "Term names the structured purification process as an act of ritual preparation expressing inner readiness and covenantal participation",
+          "strongs_number": "G0049",
+          "transliteration": "hagnismos",
+          "gloss": "purification",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187276,
+              "book": "Acts",
+              "chapter": 21,
+              "verse": 26,
+              "reference": "Act 21:26",
+              "verse_text": "Act 21:26 Then Paul took the men , and the next day he purified himself along with them and went into the temple , giving notice when the days of purification would be fulfilled and the offering presented for each one of them ."
+            }
+          ]
+        },
+        {
+          "group_code": "6053-001",
+          "context_description": "Term describes the morally pure inner character — the quality of heart, mind, and motivation that is free from defilement and moral corruption",
+          "strongs_number": "G0053",
+          "transliteration": "hagnos",
+          "gloss": "pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187266,
+              "book": "James",
+              "chapter": 3,
+              "verse": 17,
+              "reference": "Jam 3:17",
+              "verse_text": "Jam 3:17 But the wisdom from above is first pure , then peaceable , gentle , open to reason , full of mercy and good fruits , impartial and sincere ."
+            }
+          ]
+        },
+        {
+          "group_code": "6053-002",
+          "context_description": "Term describes relational and covenantal purity — inner disposition of fidelity and undivided orientation in relationship to Christ or within human relationships",
+          "strongs_number": "G0053",
+          "transliteration": "hagnos",
+          "gloss": "pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187264,
+              "book": "2 Corinthians",
+              "chapter": 11,
+              "verse": 2,
+              "reference": "2Cor 11:2",
+              "verse_text": "2Cor 11:2 For I feel a divine jealousy for you , since I betrothed you to one husband , to present you as a pure virgin to Christ ."
+            }
+          ]
+        },
+        {
+          "group_code": "1064-001",
+          "context_description": "Term names purity as an inner character quality among the dispositions through which authentic apostolic ministry is expressed",
+          "strongs_number": "G0054",
+          "transliteration": "hagnotēs",
+          "gloss": "purity",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 35155,
+              "book": "2 Corinthians",
+              "chapter": 6,
+              "verse": 6,
+              "reference": "2Cor 6:6",
+              "verse_text": "2Cor 6:6 by purity , knowledge , patience , kindness , the Holy Spirit , genuine love ;"
+            }
+          ]
+        },
+        {
+          "group_code": "6056-001",
+          "context_description": "Term qualifies inner motivation — names pure and sincere motivation as the inner disposition from which authentic action ought to flow, in contrast to selfish ambition",
+          "strongs_number": "G0055",
+          "transliteration": "hagnōs",
+          "gloss": "purely",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "ROOT_INFERRED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187277,
+              "book": "Philippians",
+              "chapter": 1,
+              "verse": 17,
+              "reference": "Phili 1:17",
+              "verse_text": "Phili 1:17 The former proclaim Christ out of selfish ambition , not sincerely but thinking to afflict me in my imprisonment ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "TAHOR",
+      "root_language": "Hebrew",
+      "root_gloss": "pure",
+      "in_cluster_registries": [
+        125
+      ],
+      "cross_registry": false,
+      "term_count": 6,
+      "group_count": 12,
+      "terms": [
+        {
+          "strongs_number": "H2889",
+          "transliteration": "ta.hor",
+          "gloss": "pure",
+          "language": "Hebrew",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2890",
+          "transliteration": "te.hor",
+          "gloss": "pureness",
+          "language": "Hebrew",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2891",
+          "transliteration": "ta.her",
+          "gloss": "be pure",
+          "language": "Hebrew",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2892A",
+          "transliteration": "to.har",
+          "gloss": "purity",
+          "language": "Hebrew",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2892B",
+          "transliteration": "to.har",
+          "gloss": "clearness",
+          "language": "Hebrew",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H2893",
+          "transliteration": "to.ho.rah",
+          "gloss": "purifying",
+          "language": "Hebrew",
+          "reg_no": 125,
+          "reg_word": "purity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1063-001",
+          "context_description": "Term describes the purity of the heart and inner person as moral and spiritual integrity before God — an inner life free from corruption and oriented toward God",
+          "strongs_number": "H2889",
+          "transliteration": "ta.hor",
+          "gloss": "pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187328,
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": 10,
+              "reference": "Psa 51:10",
+              "verse_text": "Psa 51:10 Create in me a clean heart , O God , and renew a right spirit within me."
+            }
+          ]
+        },
+        {
+          "group_code": "1063-002",
+          "context_description": "Term describes purity attributed to God's word and the fear of the Lord — the quality of inner spiritual integrity that characterises divine revelation and right orientation toward God",
+          "strongs_number": "H2889",
+          "transliteration": "ta.hor",
+          "gloss": "pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "02 — Emotion — Negative",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187327,
+              "book": "Psalms",
+              "chapter": 19,
+              "verse": 9,
+              "reference": "Psa 19:9",
+              "verse_text": "Psa 19:9 the fear of the Lord is clean , enduring forever ; the rules of the Lord are true , and righteous altogether ."
+            }
+          ]
+        },
+        {
+          "group_code": "1063-003",
+          "context_description": "Term describes the covenantal and spiritual restoration of the inner person — being made clean before God through divine action, removing inner defilement and renewing covenantal relationship",
+          "strongs_number": "H2889",
+          "transliteration": "ta.hor",
+          "gloss": "pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "11 — Divine-Human Correspondence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187320,
+              "book": "Ezekiel",
+              "chapter": 36,
+              "verse": 25,
+              "reference": "Eze 36:25",
+              "verse_text": "Eze 36:25 I will sprinkle clean water on you, and you shall be clean from all your uncleannesses , and from all your idols I will cleanse you ."
+            }
+          ]
+        },
+        {
+          "group_code": "1063-004",
+          "context_description": "Term describes ritual/levitical cleanness as a covenantal condition governing access to God and sacred space — the state of being clean as prerequisite for worship and community life",
+          "strongs_number": "H2889",
+          "transliteration": "ta.hor",
+          "gloss": "pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "07 — Vitality / Existence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 35127,
+              "book": "Leviticus",
+              "chapter": 10,
+              "verse": 10,
+              "reference": "Lev 10:10",
+              "verse_text": "Lev 10:10 You are to distinguish between the holy and the common , and between the unclean and the clean ,"
+            }
+          ]
+        },
+        {
+          "group_code": "6060-001",
+          "context_description": "Term describes the absolute moral purity of God's character — an inner quality of divine nature that is incompatible with evil or wrongdoing",
+          "strongs_number": "H2890",
+          "transliteration": "te.hor",
+          "gloss": "pureness",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187424,
+              "book": "Habakkuk",
+              "chapter": 1,
+              "verse": 13,
+              "reference": "Hab 1:13",
+              "verse_text": "Hab 1:13 You who are of purer eyes than to see evil and cannot look at wrong , why do you idly look at traitors and remain silent when the wicked swallows up the man more righteous than he ?"
+            }
+          ]
+        },
+        {
+          "group_code": "6057-001",
+          "context_description": "Term describes the purification of the inner person from sin and moral defilement — the heart and soul made pure through divine cleansing, repentance, and spiritual renewal",
+          "strongs_number": "H2891",
+          "transliteration": "ta.her",
+          "gloss": "be pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187407,
+              "book": "Psalms",
+              "chapter": 51,
+              "verse": 2,
+              "reference": "Psa 51:2",
+              "verse_text": "Psa 51:2 Wash me thoroughly from my iniquity , and cleanse me from my sin !"
+            }
+          ]
+        },
+        {
+          "group_code": "6057-002",
+          "context_description": "Term describes ritual cleansing as a covenantal act of transition — the person made ritually clean through prescribed acts, enabling restored participation in sacred community",
+          "strongs_number": "H2891",
+          "transliteration": "ta.her",
+          "gloss": "be pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": null,
+          "dimension_confidence": "UNCLASSIFIED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187337,
+              "book": "2 Kings",
+              "chapter": 5,
+              "verse": 10,
+              "reference": "2Ki 5:10",
+              "verse_text": "2Ki 5:10 And Elisha sent a messenger to him, saying , “ Go and wash in the Jordan seven times , and your flesh shall be restored , and you shall be clean .”"
+            }
+          ]
+        },
+        {
+          "group_code": "6057-003",
+          "context_description": "Term describes God's purifying action upon priests, Levites, and people — cleansing for restored covenantal service and communal life",
+          "strongs_number": "H2891",
+          "transliteration": "ta.her",
+          "gloss": "be pure",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "07 — Vitality / Existence",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187393,
+              "book": "Malachi",
+              "chapter": 3,
+              "verse": 3,
+              "reference": "Mal 3:3",
+              "verse_text": "Mal 3:3 He will sit as a refiner and purifier of silver , and he will purify the sons of Levi and refine them like gold and silver , and they will bring offerings in righteousness to the Lord ."
+            }
+          ]
+        },
+        {
+          "group_code": "6059-001",
+          "context_description": "Term names the ritual period of purification following childbirth — the covenantal state of the post-partum woman and her transition back to full community participation",
+          "strongs_number": "H2892A",
+          "transliteration": "to.har",
+          "gloss": "purity",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187421,
+              "book": "Leviticus",
+              "chapter": 12,
+              "verse": 4,
+              "reference": "Lev 12:4",
+              "verse_text": "Lev 12:4 Then she shall continue for thirty-three days in the blood of her purifying . She shall not touch anything holy , nor come into the sanctuary , until the days of her purifying are completed ."
+            }
+          ]
+        },
+        {
+          "group_code": "6061-001",
+          "context_description": "Term names the ritual purification period as a state of cleansing — the post-partum woman's covenantal condition during and after the prescribed period of purification",
+          "strongs_number": "H2892B",
+          "transliteration": "to.har",
+          "gloss": "clearness",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187426,
+              "book": "Leviticus",
+              "chapter": 12,
+              "verse": 4,
+              "reference": "Lev 12:4",
+              "verse_text": "Lev 12:4 Then she shall continue for thirty-three days in the blood of her purifying . She shall not touch anything holy , nor come into the sanctuary , until the days of her purifying are completed ."
+            }
+          ]
+        },
+        {
+          "group_code": "6058-001",
+          "context_description": "Term names the prescribed purification procedure as the covenantal pathway governing a person's return to community and sacred participation",
+          "strongs_number": "H2893",
+          "transliteration": "to.ho.rah",
+          "gloss": "purifying",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187414,
+              "book": "Leviticus",
+              "chapter": 14,
+              "verse": 2,
+              "reference": "Lev 14:2",
+              "verse_text": "Lev 14:2 “This shall be the law of the leprous person for the day of his cleansing . He shall be brought to the priest ,"
+            }
+          ]
+        },
+        {
+          "group_code": "6058-002",
+          "context_description": "Term names purification as a covenantal service and inner-oriented commitment — the person setting their heart toward God even where external cleanness requirements are imperfectly met",
+          "strongs_number": "H2893",
+          "transliteration": "to.ho.rah",
+          "gloss": "purifying",
+          "registry_no": 125,
+          "registry_word": "purity",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 187410,
+              "book": "2 Chronicles",
+              "chapter": 30,
+              "verse": 19,
+              "reference": "2Ch 30:19",
+              "verse_text": "2Ch 30:19 who sets his heart to seek God , the Lord , the God of his fathers , even though not according to the sanctuary’s rules of cleanness .”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "DIKAIŌ",
+      "root_language": "Greek",
+      "root_gloss": "righteous act",
+      "in_cluster_registries": [
+        139
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "G1345",
+          "transliteration": "dikaiōma",
+          "gloss": "righteous act",
+          "language": "Greek",
+          "reg_no": 139,
+          "reg_word": "righteousness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1099-001",
+          "context_description": "Term names the dikaiōma — whether decree, standard, righteous act, or verdict — as the external reality that discloses, qualifies, or re-orients inner-being standing, moral orientation, and response (conformity, defiance, reception of verdict, or worship of divine righteousness revealed).",
+          "strongs_number": "G1345",
+          "transliteration": "dikaiōma",
+          "gloss": "righteous act",
+          "registry_no": 139,
+          "registry_word": "righteousness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 37427,
+              "book": "Romans",
+              "chapter": 5,
+              "verse": 16,
+              "reference": "Rom 5:16",
+              "verse_text": "Rom 5:16 And the free gift is not like the result of that one man’s sin . For the judgment following one trespass brought condemnation , but the free gift following many trespasses brought justification ."
+            },
+            {
+              "verse_record_id": 37423,
+              "book": "Revelation",
+              "chapter": 15,
+              "verse": 4,
+              "reference": "Rev 15:4",
+              "verse_text": "Rev 15:4 Who will not fear , O Lord , and glorify your name ? For you alone are holy . All nations will come and worship you , for your righteous acts have been revealed .”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "EILIKRINĒS",
+      "root_language": "Greek",
+      "root_gloss": "pure",
+      "in_cluster_registries": [
+        148
+      ],
+      "cross_registry": false,
+      "term_count": 2,
+      "group_count": 2,
+      "terms": [
+        {
+          "strongs_number": "G1505",
+          "transliteration": "eilikrineia",
+          "gloss": "sincerity",
+          "language": "Greek",
+          "reg_no": 148,
+          "reg_word": "sincerity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G1506",
+          "transliteration": "eilikrinēs",
+          "gloss": "pure",
+          "language": "Greek",
+          "reg_no": 148,
+          "reg_word": "sincerity",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1126-001",
+          "context_description": "Term names sincerity as an inner quality of unmixed, genuine motivation — the condition of acting from pure inner integrity before God rather than from calculation or performance",
+          "strongs_number": "G1505",
+          "transliteration": "eilikrineia",
+          "gloss": "sincerity",
+          "registry_no": 148,
+          "registry_word": "sincerity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 40442,
+              "book": "2 Corinthians",
+              "chapter": 1,
+              "verse": 12,
+              "reference": "2Cor 1:12",
+              "verse_text": "2Cor 1:12 For our boast is this , the testimony of our conscience , that we behaved in the world with simplicity and godly sincerity , not by earthly wisdom but by the grace of God , and supremely so toward you ."
+            }
+          ]
+        },
+        {
+          "group_code": "6231-001",
+          "context_description": "Term names inner purity or sincerity — the quality of being unmixed, genuine, and morally uncontaminated in inner disposition",
+          "strongs_number": "G1506",
+          "transliteration": "eilikrinēs",
+          "gloss": "pure",
+          "registry_no": 148,
+          "registry_word": "sincerity",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 194831,
+              "book": "2 Peter",
+              "chapter": 3,
+              "verse": 1,
+              "reference": "2Pe 3:1",
+              "verse_text": "2Pe 3:1 This is now the second letter that I am writing to you , beloved . In both of them I am stirring up your sincere mind by way of reminder ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "ALĒTHĒS",
+      "root_language": "Greek",
+      "root_gloss": "true",
+      "in_cluster_registries": [
+        164
+      ],
+      "cross_registry": false,
+      "term_count": 5,
+      "group_count": 10,
+      "terms": [
+        {
+          "strongs_number": "G0225",
+          "transliteration": "alētheia",
+          "gloss": "truth",
+          "language": "Greek",
+          "reg_no": 164,
+          "reg_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0226",
+          "transliteration": "alētheuō",
+          "gloss": "be truthful",
+          "language": "Greek",
+          "reg_no": 164,
+          "reg_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0227",
+          "transliteration": "alēthēs",
+          "gloss": "true",
+          "language": "Greek",
+          "reg_no": 164,
+          "reg_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0228",
+          "transliteration": "alēthinos",
+          "gloss": "true",
+          "language": "Greek",
+          "reg_no": 164,
+          "reg_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "G0230",
+          "transliteration": "alēthōs",
+          "gloss": "truly",
+          "language": "Greek",
+          "reg_no": 164,
+          "reg_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1197-001",
+          "context_description": "Truth as transforming/shaping force on the inner person — sanctification, purification, self-orientation",
+          "strongs_number": "G0225",
+          "transliteration": "alētheia",
+          "gloss": "truth",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": "08 — Transformation",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204387,
+              "book": "John",
+              "chapter": 17,
+              "verse": 17,
+              "reference": "Joh 17:17",
+              "verse_text": "Joh 17:17 Sanctify them in the truth ; your word is truth ."
+            }
+          ]
+        },
+        {
+          "group_code": "1197-002",
+          "context_description": "Truth as the proper object of the will — accepting, obeying, refusing, or rejecting truth as inner act",
+          "strongs_number": "G0225",
+          "transliteration": "alētheia",
+          "gloss": "truth",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": null,
+          "dimension_confidence": "UNCLASSIFIED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 45002,
+              "book": "Romans",
+              "chapter": 2,
+              "verse": 8,
+              "reference": "Rom 2:8",
+              "verse_text": "Rom 2:8 but for those who are self-seeking and do not obey the truth , but obey unrighteousness , there will be wrath and fury ."
+            }
+          ]
+        },
+        {
+          "group_code": "1197-003",
+          "context_description": "Truth as inner quality of character — integrity, authenticity, living and speaking truthfully",
+          "strongs_number": "G0225",
+          "transliteration": "alētheia",
+          "gloss": "truth",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204347,
+              "book": "1 John",
+              "chapter": 1,
+              "verse": 6,
+              "reference": "1Jo 1:6",
+              "verse_text": "1Jo 1:6 If we say we have fellowship with him while we walk in darkness , we lie and do not practice the truth ."
+            }
+          ]
+        },
+        {
+          "group_code": "1197-004",
+          "context_description": "Truth as the Spirit's identity and work in the inner person — Spirit of truth",
+          "strongs_number": "G0225",
+          "transliteration": "alētheia",
+          "gloss": "truth",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": null,
+          "dimension_confidence": "UNCLASSIFIED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204382,
+              "book": "John",
+              "chapter": 14,
+              "verse": 17,
+              "reference": "Joh 14:17",
+              "verse_text": "Joh 14:17 even the Spirit of truth , whom the world cannot receive , because it neither sees him nor knows him . You know him , for he dwells with you and will be in you ."
+            }
+          ]
+        },
+        {
+          "group_code": "1197-005",
+          "context_description": "Truth as relational/theological identity — who Christ is; worship in spirit and truth",
+          "strongs_number": "G0225",
+          "transliteration": "alētheia",
+          "gloss": "truth",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": "06 — Relational Disposition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204392,
+              "book": "John",
+              "chapter": 4,
+              "verse": 23,
+              "reference": "Joh 4:23",
+              "verse_text": "Joh 4:23 But the hour is coming , and is now here, when the true worshipers will worship the Father in spirit and truth , for the Father is seeking such people to worship him ."
+            }
+          ]
+        },
+        {
+          "group_code": "1197-006",
+          "context_description": "Truth as the gospel received inwardly — knowledge of truth as saving and formational event",
+          "strongs_number": "G0225",
+          "transliteration": "alētheia",
+          "gloss": "truth",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204356,
+              "book": "1 Timothy",
+              "chapter": 2,
+              "verse": 4,
+              "reference": "1Ti 2:4",
+              "verse_text": "1Ti 2:4 who desires all people to be saved and to come to the knowledge of the truth ."
+            }
+          ]
+        },
+        {
+          "group_code": "6590-001",
+          "context_description": "Truthful speech as inner act of integrity — in relationship and spiritual growth",
+          "strongs_number": "G0226",
+          "transliteration": "alētheuō",
+          "gloss": "be truthful",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204479,
+              "book": "Ephesians",
+              "chapter": 4,
+              "verse": 15,
+              "reference": "Eph 4:15",
+              "verse_text": "Eph 4:15 Rather , speaking the truth in love , we are to grow up in every way into him who is the head , into Christ ,"
+            }
+          ]
+        },
+        {
+          "group_code": "6588-001",
+          "context_description": "Truthfulness as inner character quality — integrity, genuineness, the true heart",
+          "strongs_number": "G0227",
+          "transliteration": "alēthēs",
+          "gloss": "true",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204458,
+              "book": "Philippians",
+              "chapter": 4,
+              "verse": 8,
+              "reference": "Phili 4:8",
+              "verse_text": "Phili 4:8 Finally , brothers , whatever is true , whatever is honorable , whatever is just , whatever is pure , whatever is lovely , whatever is commendable , if there is any excellence , if there is anything worthy of praise , think about these things ."
+            }
+          ]
+        },
+        {
+          "group_code": "6587-001",
+          "context_description": "Genuineness as inner-being orientation — true worship, turning to the true God, inner fidelity",
+          "strongs_number": "G0228",
+          "transliteration": "alēthinos",
+          "gloss": "true",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": null,
+          "dimension_confidence": "UNCLASSIFIED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204413,
+              "book": "Hebrews",
+              "chapter": 10,
+              "verse": 22,
+              "reference": "Heb 10:22",
+              "verse_text": "Heb 10:22 let us draw near with a true heart in full assurance of faith , with our hearts sprinkled clean from an evil conscience and our bodies washed with pure water ."
+            }
+          ]
+        },
+        {
+          "group_code": "6589-001",
+          "context_description": "\"Truly\" as qualifier of inner-being recognition, knowing, confession, and reception",
+          "strongs_number": "G0230",
+          "transliteration": "alēthōs",
+          "gloss": "truly",
+          "registry_no": 164,
+          "registry_word": "truthfulness",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 204464,
+              "book": "John",
+              "chapter": 1,
+              "verse": 47,
+              "reference": "Joh 1:47",
+              "verse_text": "Joh 1:47 Jesus saw Nathanael coming toward him and said of him , “ Behold , an Israelite indeed , in whom there is no deceit !”"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "YOSHER",
+      "root_language": "Hebrew",
+      "root_gloss": "plain",
+      "in_cluster_registries": [
+        168
+      ],
+      "cross_registry": false,
+      "term_count": 4,
+      "group_count": 12,
+      "terms": [
+        {
+          "strongs_number": "H3476",
+          "transliteration": "yo.sher",
+          "gloss": "uprightness",
+          "language": "Hebrew",
+          "reg_no": 168,
+          "reg_word": "uprightness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H3477G",
+          "transliteration": "ya.shar",
+          "gloss": "upright:right",
+          "language": "Hebrew",
+          "reg_no": 168,
+          "reg_word": "uprightness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H3483",
+          "transliteration": "ye.sha.rah",
+          "gloss": "uprightness",
+          "language": "Hebrew",
+          "reg_no": 168,
+          "reg_word": "uprightness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H4339",
+          "transliteration": "me.shar",
+          "gloss": "uprightness",
+          "language": "Hebrew",
+          "reg_no": 168,
+          "reg_word": "uprightness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1211-001",
+          "context_description": "Uprightness as an inner quality of the heart — tested by God, contrasted with wickedness, invoked as protection",
+          "strongs_number": "H3476",
+          "transliteration": "yo.sher",
+          "gloss": "uprightness",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232243,
+              "book": "1 Chronicles",
+              "chapter": 29,
+              "verse": 17,
+              "reference": "1Ch 29:17",
+              "verse_text": "1Ch 29:17 I know , my God , that you test the heart and have pleasure in uprightness . In the uprightness of my heart I have freely offered all these things , and now I have seen your people , who are present here, offering freely and joyously to you ."
+            }
+          ]
+        },
+        {
+          "group_code": "1211-002",
+          "context_description": "Uprightness as the path/way — inner orientation expressed in the direction of life",
+          "strongs_number": "H3476",
+          "transliteration": "yo.sher",
+          "gloss": "uprightness",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232248,
+              "book": "Proverbs",
+              "chapter": 14,
+              "verse": 2,
+              "reference": "Pro 14:2",
+              "verse_text": "Pro 14:2 Whoever walks in uprightness fears the Lord , but he who is devious in his ways despises him ."
+            }
+          ]
+        },
+        {
+          "group_code": "1211-003",
+          "context_description": "Uprightness expressed in speech — words as disclosure of inner integrity",
+          "strongs_number": "H3476",
+          "transliteration": "yo.sher",
+          "gloss": "uprightness",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 45951,
+              "book": "Job",
+              "chapter": 33,
+              "verse": 3,
+              "reference": "Job 33:3",
+              "verse_text": "Job 33:3 My words declare the uprightness of my heart , and what my lips know they speak sincerely ."
+            }
+          ]
+        },
+        {
+          "group_code": "1216-001",
+          "context_description": "Regnal moral assessment — \"did right/what was right in the eyes of the Lord\" — moral orientation of the will under divine evaluation",
+          "strongs_number": "H3477G",
+          "transliteration": "ya.shar",
+          "gloss": "upright:right",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232258,
+              "book": "1 Kings",
+              "chapter": 15,
+              "verse": 5,
+              "reference": "1Ki 15:5",
+              "verse_text": "1Ki 15:5 because David did what was right in the eyes of the Lord and did not turn aside from anything that he commanded him all the days of his life , except in the matter of Uriah the Hittite ."
+            }
+          ]
+        },
+        {
+          "group_code": "1216-002",
+          "context_description": "\"Right in his own eyes\" — moral self-determination; inner conscience as its own arbiter",
+          "strongs_number": "H3477G",
+          "transliteration": "ya.shar",
+          "gloss": "upright:right",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "04 — Volition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 45982,
+              "book": "Judges",
+              "chapter": 17,
+              "verse": 6,
+              "reference": "Judg 17:6",
+              "verse_text": "Judg 17:6 In those days there was no king in Israel . Everyone did what was right in his own eyes ."
+            }
+          ]
+        },
+        {
+          "group_code": "1216-003",
+          "context_description": "\"The upright\" / \"upright in heart\" — uprightness as stable inner moral character, especially in Psalms and Proverbs",
+          "strongs_number": "H3477G",
+          "transliteration": "ya.shar",
+          "gloss": "upright:right",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232341,
+              "book": "Psalms",
+              "chapter": 7,
+              "verse": 10,
+              "reference": "Psa 7:10",
+              "verse_text": "Psa 7:10 My shield is with God , who saves the upright in heart ."
+            }
+          ]
+        },
+        {
+          "group_code": "1216-004",
+          "context_description": "Uprightness as divine character — God and his word described as upright/right",
+          "strongs_number": "H3477G",
+          "transliteration": "ya.shar",
+          "gloss": "upright:right",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232289,
+              "book": "Deuteronomy",
+              "chapter": 32,
+              "verse": 4,
+              "reference": "Deu 32:4",
+              "verse_text": "Deu 32:4 “The Rock , his work is perfect , for all his ways are justice . A God of faithfulness and without iniquity , just and upright is he ."
+            }
+          ]
+        },
+        {
+          "group_code": "1216-005",
+          "context_description": "Job as the upright man — blameless and upright as defining inner character under testing",
+          "strongs_number": "H3477G",
+          "transliteration": "ya.shar",
+          "gloss": "upright:right",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "ROOT_INFERRED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 45974,
+              "book": "Job",
+              "chapter": 1,
+              "verse": 1,
+              "reference": "Job 1:1",
+              "verse_text": "Job 1:1 There was a man in the land of Uz whose name was Job , and that man was blameless and upright , one who feared God and turned away from evil ."
+            }
+          ]
+        },
+        {
+          "group_code": "1216-006",
+          "context_description": "\"God made man upright, but they have sought out many schemes\" — original moral constitution and its departure",
+          "strongs_number": "H3477G",
+          "transliteration": "ya.shar",
+          "gloss": "upright:right",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232291,
+              "book": "Ecclesiastes",
+              "chapter": 7,
+              "verse": 29,
+              "reference": "Ecc 7:29",
+              "verse_text": "Ecc 7:29 See , this alone I found , that God made man upright , but they have sought out many schemes ."
+            }
+          ]
+        },
+        {
+          "group_code": "1215-001",
+          "context_description": "Uprightness of heart directed toward God — inner moral orientation of relational fidelity",
+          "strongs_number": "H3483",
+          "transliteration": "ye.sha.rah",
+          "gloss": "uprightness",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 54647,
+              "book": "1 Kings",
+              "chapter": 3,
+              "verse": 6,
+              "reference": "1Ki 3:6",
+              "verse_text": "1Ki 3:6 And Solomon said , “ You have shown great and steadfast love to your servant David my father , because he walked before you in faithfulness , in righteousness , and in uprightness of heart toward you. And you have kept for him this great and steadfast love and have given him a son to sit on his throne this day ."
+            }
+          ]
+        },
+        {
+          "group_code": "1212-001",
+          "context_description": "Uprightness as the standard and quality of right judgment — divine and demanded of human authorities",
+          "strongs_number": "H4339",
+          "transliteration": "me.shar",
+          "gloss": "uprightness",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232395,
+              "book": "Psalms",
+              "chapter": 9,
+              "verse": 8,
+              "reference": "Psa 9:8",
+              "verse_text": "Psa 9:8 and he judges the world with righteousness ; he judges the peoples with uprightness ."
+            }
+          ]
+        },
+        {
+          "group_code": "1212-002",
+          "context_description": "Uprightness as inner character formation — wisdom's goal; the inmost being rejoices at rightness",
+          "strongs_number": "H4339",
+          "transliteration": "me.shar",
+          "gloss": "uprightness",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "03 — Cognition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232389,
+              "book": "Proverbs",
+              "chapter": 23,
+              "verse": 16,
+              "reference": "Pro 23:16",
+              "verse_text": "Pro 23:16 My inmost being will exult when your lips speak what is right ."
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "NOKHACH",
+      "root_language": "Hebrew",
+      "root_gloss": "before",
+      "in_cluster_registries": [
+        168
+      ],
+      "cross_registry": false,
+      "term_count": 3,
+      "group_count": 5,
+      "terms": [
+        {
+          "strongs_number": "H5227",
+          "transliteration": "no.khach",
+          "gloss": "before",
+          "language": "Hebrew",
+          "reg_no": 168,
+          "reg_word": "uprightness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H5228",
+          "transliteration": "na.kho.ach",
+          "gloss": "straightforward",
+          "language": "Hebrew",
+          "reg_no": 168,
+          "reg_word": "uprightness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        },
+        {
+          "strongs_number": "H5229",
+          "transliteration": "ne.kho.chah",
+          "gloss": "upright",
+          "language": "Hebrew",
+          "reg_no": 168,
+          "reg_word": "uprightness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "7492-001",
+          "context_description": "\"Before the face/presence of the Lord\" — relational orientation of prayer, lament, and honest speech toward God",
+          "strongs_number": "H5227",
+          "transliteration": "no.khach",
+          "gloss": "before",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "06 — Relational Disposition",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232426,
+              "book": "Lamentations",
+              "chapter": 2,
+              "verse": 19,
+              "reference": "Lam 2:19",
+              "verse_text": "Lam 2:19 “ Arise , cry out in the night , at the beginning of the night watches ! Pour out your heart like water before the presence of the Lord ! Lift your hands to him for the lives of your children , who faint for hunger at the head of every street .”"
+            }
+          ]
+        },
+        {
+          "group_code": "7492-002",
+          "context_description": "\"Before their faces\" — the stumbling block of iniquity as the primary object of inner attention (Ezekiel)",
+          "strongs_number": "H5227",
+          "transliteration": "no.khach",
+          "gloss": "before",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "06 — Relational Disposition",
+          "dimension_confidence": "ROOT_INFERRED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232413,
+              "book": "Ezekiel",
+              "chapter": 14,
+              "verse": 3,
+              "reference": "Eze 14:3",
+              "verse_text": "Eze 14:3 “ Son of man , these men have taken their idols into their hearts , and set the stumbling block of their iniquity before their faces . Should I indeed let myself be consulted by them ?"
+            }
+          ]
+        },
+        {
+          "group_code": "7492-003",
+          "context_description": "\"Directly forward\" — inner directedness; focused and undistracted attention",
+          "strongs_number": "H5227",
+          "transliteration": "no.khach",
+          "gloss": "before",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "06 — Relational Disposition",
+          "dimension_confidence": "ROOT_INFERRED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232428,
+              "book": "Proverbs",
+              "chapter": 4,
+              "verse": 25,
+              "reference": "Pro 4:25",
+              "verse_text": "Pro 4:25 Let your eyes look directly forward , and your gaze be straight before you ."
+            }
+          ]
+        },
+        {
+          "group_code": "1217-001",
+          "context_description": "Straightforwardness as honest inner character — rightness of speech, claims, and conduct",
+          "strongs_number": "H5228",
+          "transliteration": "na.kho.ach",
+          "gloss": "straightforward",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "06 — Relational Disposition",
+          "dimension_confidence": "ROOT_INFERRED",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 232431,
+              "book": "Proverbs",
+              "chapter": 24,
+              "verse": 26,
+              "reference": "Pro 24:26",
+              "verse_text": "Pro 24:26 Whoever gives an honest answer kisses the lips ."
+            }
+          ]
+        },
+        {
+          "group_code": "1214-001",
+          "context_description": "Uprightness resisted, absent, or refused — the inner being's failure to receive or produce what is right",
+          "strongs_number": "H5229",
+          "transliteration": "ne.kho.chah",
+          "gloss": "upright",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_WEAK",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 45965,
+              "book": "Isaiah",
+              "chapter": 30,
+              "verse": 10,
+              "reference": "Isa 30:10",
+              "verse_text": "Isa 30:10 who say to the seers , “Do not see ,” and to the prophets , “Do not prophesy to us what is right ; speak to us smooth things , prophesy illusions ,"
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "root_code": "EUTHU",
+      "root_language": "Greek",
+      "root_gloss": "righteousness",
+      "in_cluster_registries": [
+        168
+      ],
+      "cross_registry": false,
+      "term_count": 1,
+      "group_count": 1,
+      "terms": [
+        {
+          "strongs_number": "G2118",
+          "transliteration": "euthutēs",
+          "gloss": "righteousness",
+          "language": "Greek",
+          "reg_no": 168,
+          "reg_word": "uprightness",
+          "cluster_assignment": "C10",
+          "in_current_cluster": true
+        }
+      ],
+      "groups": [
+        {
+          "group_code": "1218-001",
+          "context_description": "Uprightness as the defining moral character of Christ's kingship — inner quality expressed in sovereign rule",
+          "strongs_number": "G2118",
+          "transliteration": "euthutēs",
+          "gloss": "righteousness",
+          "registry_no": 168,
+          "registry_word": "uprightness",
+          "cluster_assignment": "C10",
+          "dimension": "05 — Moral Character",
+          "dimension_confidence": "KEYWORD_STRONG",
+          "dominant_subject": null,
+          "manual_override": 0,
+          "anchor_verses": [
+            {
+              "verse_record_id": 46285,
+              "book": "Hebrews",
+              "chapter": 1,
+              "verse": 8,
+              "reference": "Heb 1:8",
+              "verse_text": "Heb 1:8 But of the Son he says, “ Your throne , O God , is forever and ever , the scepter of uprightness is the scepter of your kingdom ."
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

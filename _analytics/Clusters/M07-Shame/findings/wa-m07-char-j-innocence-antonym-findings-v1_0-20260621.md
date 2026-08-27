@@ -1,0 +1,265 @@
+# M07 — Findings for Characteristic J: Innocence / cleanness (antonym pole) [FLAG]
+**File:** wa-m07-char-j-innocence-antonym-findings-v1_0-20260621.md · 2026-06-21 · Phase: CATALOGUE-RESOLUTION (grounded in gathered evidence; Silent where evidence absent)
+**Evidence source:** wa-m07-char-j-innocence-antonym-v1_0-20260621.md (8 occurrences). **Catalogue:** WA-tier-catalogue-current-state-v2-20260619.md (126 Q).
+**Evidence snapshot:** lemmas=H5356A niq.qa.von×4; H5356B qe.ha.von×4 | faculty= | type=status×8 | valence=righteous×4; sinful×1; neutral×1 | experiencer=self×4; other×2 | location=heart×4 | divine=none | origin=none | testament=OT×8 | genres=psalm×4; narrative×2; prophecy×2
+
+## T0 — Divine Image and Created Design
+- **T0.1.1** — God-relation in the verse
+  - **Not related to God in this characteristic's evidence (no divine_involvement tagged on any occurrence).**
+- **T0.1.2** — Borne by God or only the creature
+  - **Borne only by the creature: experiencer is human throughout (self×4; other×2); God does not appear in this characteristic's evidence as bearer.**
+- **T0.2.1** — Purpose/role stated in the verse
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.2.2** — Created design / fallen condition / both
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.2.3** — Orientation toward future fullness
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.3.1** — Aspect of divine likeness instantiated
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.3.2** — Shared between God and person, or creaturely analogue
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.3.3** — What presence/absence indicates about the divine image in the person
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T0.4.1** — Typological use (covenantal/eschatological/christological)
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T1 — Definition
+- **T1.1.1** — Programme name / essential nature
+  - **Within M07 this characteristic is carried by: niq.qa.von (H5356A, Hebrew); qe.ha.von (H5356B, Hebrew). Lemma meanings: innocency.**
+- **T1.1.2** — Primary Hebrew/Greek terms at definitional level
+  - **Hebrew/Greek split: Hebrew×8. Senses in use: innocence×8.**
+- **T1.1.3** — Directional/relational/constitutional implication of the name
+  - **Silent — no relational/directional force tagged.**
+- **T1.2.1** — Kind of inner-being phenomenon
+  - **From morphology: status×8 (action=event/verb, status=condition, quality=attribute).**
+- **T1.2.2** — Simple or compound
+  - **Co-constituents present via compound tagging: heart (co)×4; bluntness (partner)×4; innocence (partner)×4; not (qualifier)×2; integrity (partner)×2; how (qualifier)×2; be able (partner)×2; face: anger (qualifier)×2; to be incensed (partner)×2.**
+- **T1.3.1** — Structural opposite
+  - **Honour/vindication (and, in M07, the innocence pole) stand against shame — but the precise opposite is a cross-characteristic call deferred to interpret phase.**
+- **T1.3.2** — What it excludes/resists at its edge
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.3.3** — Where it ends and another begins
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.4.1** — Mode(s) of operation incl. grammatical form
+  - **Grammatical realisation: type status×8; stems n/a (Greek/none). Operates as status×8.**
+- **T1.4.2** — Variation of mode by context/direction/level
+  - **Varies: type spread status×8; experiencer spread self×4; other×2; relational spread none.**
+- **T1.4.3** — Communicative / speech-based mode
+  - **Silent — no commanded/addressed/spoken mode tagged.**
+- **T1.5.1** — Immediate inner-being response
+  - **Silent — no immediate_response tagged in this characteristic's evidence.**
+- **T1.5.2** — Consistent or varied across verses
+  - **Silent.**
+- **T1.6.1** — Sustained effect over time
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.6.3** — How sustained effect differs from immediate response
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.7.1** — Inner conditions for right operation
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.7.2** — Conditions where blocked/distorted (incl. another spirit)
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T1.7.3** — State of person in whom present but not taking hold
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T2 — Constitutional Location and Boundaries
+- **T2.1.1** — Constitutional level(s) located
+  - **Located at: heart×4 (e.g. Gen 20:5, Psa 73:13, Gen 20:5, Psa 73:13).**
+- **T2.1.2** — Pattern of engaged/absent levels
+  - **Seat tagged on 4/8; levels: heart×4. The large untagged remainder indicates this characteristic is recorded predominantly as relational/situational rather than seated.**
+- **T2.7.1** — Body — direction of any body link
+  - **Silent — no body-part link tagged.**
+- **T2.9.1** — Origin stated
+  - **Silent — origin not stated on any occurrence in this characteristic's evidence.**
+- **T2.9.2** — Single or multiple origin
+  - **Silent.**
+- **T2.10.1** — Constitutional movement / onset from external source
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T3 — The Inner Faculties
+- **T3.1.1** — Engages perception?
+  - **Silent — no 'perception' faculty tagged in this characteristic's evidence.**
+- **T3.1.2** — Effect on perception
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.1.3** — Pattern across verses for perception
+  - **Not engaged across this characteristic's 8 occurrences.**
+- **T3.10.1** — Engages conscientiousness?
+  - **Silent — 'conscientiousness' not a tagged faculty; see conscience (T3.9) and moral-evaluation (T3.8).**
+- **T3.10.2** — Effect on conscientiousness
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T3.10.3** — Pattern for conscientiousness
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T3.11.1** — Engages relational capacity?
+  - **Engaged — relational/other-directed: experiencer self×4; other×2, relational force n/a, object-type abstract×2.**
+- **T3.11.2** — Effect on relational capacity
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T3.11.3** — Pattern for relational capacity
+  - **Other-directed on 2/8.**
+- **T3.2.1** — Engages cognition?
+  - **Silent — no 'cognition' faculty tagged in this characteristic's evidence.**
+- **T3.2.2** — Effect on cognition
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.2.3** — Pattern across verses for cognition
+  - **Not engaged across this characteristic's 8 occurrences.**
+- **T3.3.1** — Engages memory?
+  - **Silent — no 'memory' faculty tagged in this characteristic's evidence.**
+- **T3.3.2** — Effect on memory
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.3.3** — Pattern across verses for memory
+  - **Not engaged across this characteristic's 8 occurrences.**
+- **T3.4.1** — Engages affect?
+  - **Silent — no 'affect' faculty tagged in this characteristic's evidence.**
+- **T3.4.2** — Effect on affect
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.4.3** — Pattern across verses for affect
+  - **Not engaged across this characteristic's 8 occurrences.**
+- **T3.5.1** — Engages creativity?
+  - **Silent — no 'creativity' faculty tagged in this characteristic's evidence.**
+- **T3.5.2** — Effect on creativity
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.5.3** — Pattern across verses for creativity
+  - **Not engaged across this characteristic's 8 occurrences.**
+- **T3.6.1** — Engages volition?
+  - **Silent — no 'volition' faculty tagged in this characteristic's evidence.**
+- **T3.6.2** — Effect on volition
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.6.3** — Pattern across verses for volition
+  - **Not engaged across this characteristic's 8 occurrences.**
+- **T3.7.1** — Engages agency?
+  - **Silent — no 'agency' faculty tagged in this characteristic's evidence.**
+- **T3.7.2** — Effect on agency
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.7.3** — Pattern across verses for agency
+  - **Not engaged across this characteristic's 8 occurrences.**
+- **T3.8.1** — Engages moral evaluation?
+  - **Engaged — moral framing tagged (valence): righteous×4; sinful×1; neutral×1.**
+- **T3.8.2** — Effect on moral evaluation
+  - **The state is morally weighted: righteous×4; sinful×1; neutral×1 — i.e. assessed against a standard of right/wrong.**
+- **T3.8.3** — Pattern for moral evaluation
+  - **valence tagged on 6/8: righteous×4; sinful×1; neutral×1.**
+- **T3.9.1** — Engages conscience?
+  - **Silent — no 'conscience' faculty tagged in this characteristic's evidence.**
+- **T3.9.2** — Effect on conscience
+  - **Silent — faculty not engaged in this characteristic's evidence.**
+- **T3.9.3** — Pattern across verses for conscience
+  - **Not engaged across this characteristic's 8 occurrences.**
+## T4 — Relational Interfaces
+- **T4.1.1** — God → human operation
+  - **Silent — God not tagged as agent toward the person in this characteristic's evidence.**
+- **T4.1.2** — Basis on which God extends it
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.1.3** — What God’s extension shows of his disposition
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.2.1** — Human → God movement
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.2.2** — Inner posture required
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.2.3** — What the human→God direction shows
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.3.1** — Person → person extension (giving)
+  - **Yes (agent pole): one party inflicts shame/dishonour/contempt on another — experiencer 'other'/'other (addressed)' with transitive sense (Hos 8:5, Hos 8:5).**
+- **T4.3.2** — Inner conditions in the giver
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.3.3** — What the giver must have received/become
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.4.1** — Person ← person uptake (receiving)
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.4.2** — Conditions accompanying/blocking uptake
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.4.3** — State of one who meets it but does not take it up
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.5.1** — Within bonds vs across distance
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.5.2** — Covenantal only vs crossing boundaries
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.5.3** — Relational scope — who in/out
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.6.1** — Operates re other spiritual beings?
+  - **Silent — no angelic/adversarial interface tagged.**
+- **T4.6.2** — Site of adversarial activity?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T4.6.3** — Mediated through angelic ministry?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T5 — Formative and Developmental Dimension
+- **T5.1.1** — Produces transformation?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.1.2** — Reversible/irreversible?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.2.1** — Sequence of inner states (before/during/after)
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.3.1** — Mechanism of change
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.3.2** — Mechanism differs across contexts?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.4.1** — Relation to suffering/affliction
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.4.2** — What suffering does to it
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.5.1** — Participation in formation/sanctification
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T5.6.1** — Eschatological trajectory
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T6 — Structural Relationships with Other Characteristics
+- **T6.1.1** — Co-occurring adjacent characteristics (compound)
+  - **Co-terms in-verse: heart×4; bluntness×4; innocence×4; not×2; integrity×2; how×2; be able×2; face: anger×2; to be incensed×2.**
+- **T6.1.2** — What the co-occurrence shows
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.2.1** — Consistent sequence with another?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.2.2** — Causal/developmental/correlational?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.3.1** — Produces another characteristic?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.3.2** — Produced by another?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.3.3** — Constituent relationship?
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.4.1** — Vocabulary shared with other characteristics
+  - **No lemma shared with other M07 characteristics (this characteristic's terms are exclusive to it).**
+- **T6.4.2** — Root-level sharing
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.4.3** — What vocabulary sharing shows
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.5.1** — Nearest neighbour and distinction
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.5.2** — Precise boundary at overlap
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T6.5.3** — Distinction of degree/kind/direction/level
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+## T7 — Evidential and Methodological Foundation
+- **T7.1.1** — Primary Hebrew/Greek terms and root meanings
+  - **niq.qa.von (H5356A, Hebrew); qe.ha.von (H5356B, Hebrew). Meanings: innocency.**
+- **T7.1.2** — Grammatical range
+  - **type spread status×8; Hebrew stems n/a.**
+- **T7.1.3** — Semantic range
+  - **Senses attested in context: innocence×8.**
+- **T7.1.4** — Terms distinguishing aspects (disposition vs act, etc.)
+  - **Silent — single grammatical kind in this characteristic's evidence.**
+- **T7.1.5** — Term for opposite/absence
+  - **Innocence/cleanness terms (niqqavon, qehavon) name the absence — but they sit in characteristic J; within THIS characteristic: present**
+- **T7.1.6** — Person-type term
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.1.7** — Supplication/seeking term
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.1.8** — OT↔NT continuity/development
+  - **Testament spread: OT×8. Single Testament in this characteristic's evidence.**
+- **T7.1.9** — NT-coined term
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.1.10** — Full vocabulary arc / complete semantic range
+  - **2 distinct lemmas across Hebrew×8; senses innocence×8.**
+- **T7.2.1** — Function of the term in its verse
+  - **Operates grammatically as status×8; governing predicate tagged where noun-state (how-field).**
+- **T7.2.2** — Literary form(s)
+  - **Forms carrying the evidence: psalm×4; narrative×2; prophecy×2.**
+- **T7.2.3** — Logical structure of key arguments
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.2.4** — Contextual setting
+  - **Inferable from genre/valence: psalm×4; narrative×2; prophecy×2; moral framing righteous×4; sinful×1; neutral×1. Judicial/covenantal where prophecy+sinful/commanded dominate.**
+- **T7.2.5** — Primary anchor verse
+  - **Candidate anchor: a high-load occurrence of niq.qa.von (H5356A) — e.g. Gen 20:5. Final anchor selection deferred to interpret phase.**
+- **T7.2.6** — What the anchor shows uniquely
+  - **Silent — this characteristic's evidence does not speak to it (deferred to interpret phase).**
+- **T7.3.1** — Most useful human-science framework
+  - **Moral psychology — innocence/purity as the contrast state to shame (niqqavon) [source: wa-m07-shame-scienceextract, Sec3].**
+- **T7.3.2** — Where the framework illuminates
+  - **Honour-shame cultural psychology and the shame/guilt distinction (Lewis; Tangney) illuminate this characteristic's evidence; see science extract T7.3.2. [source: science extract]**
+- **T7.3.3** — Where verse evidence and framework diverge
+  - **Science treats shame as chiefly maladaptive; the biblical evidence includes appropriate/commanded shame and shamelessness as a spiritual condition — a divergence in framing. [source: science extract T7.3.3]**
+- **T7.3.4** — Aspect science surfaces for further investigation
+  - **Science surfaces shame's transdiagnostic amplifier role and its somatic postures (gaze-aversion, shrinking) as items the biblical pass could test. [source: science extract T7.3.4]**

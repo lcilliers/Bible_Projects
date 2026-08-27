@@ -1,0 +1,212 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260502-DIMREVIEW-C10-REG125-V1",
+    "registry_id": 125,
+    "word": "purity",
+    "produced_date": "20260502",
+    "produced_by": "wa-dimensionreview-instruction-v3_3-20260418",
+    "patch_type": "DIMREVIEW",
+    "session_b_status": null,
+    "description": "C10 DimReview R125 purity — 20 group dimension assignments + registry stamp + 1 SD pointer. 10 dimension changes from automated labels; 1 UNCLASSIFIED assigned. Manual application required."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8100 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "1062-001 G0047 hagneia (moral and relational purity as inner character) — Moral Character / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-002",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8108 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "1063-001 H2889 tahor (purity of heart before God) — Moral Character / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-003",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8109 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "1063-002 H2889 tahor (fear of the Lord is clean — Psa 19:9) — Relational Disposition / HUMAN. CHANGED from Emotion-Negative: fear of the Lord as pure inner orientation toward God. QA-REVIEW flag resolved."
+    },
+    {
+      "op_id": "OP-004",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8110 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "1063-003 H2889 tahor (divine sprinkling — you shall be clean, Eze 36:25) — Transformation / HUMAN. CHANGED from Divine-Human Correspondence: unilateral divine act; no structural mirroring of both poles."
+    },
+    {
+      "op_id": "OP-005",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8111 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "1063-004 H2889 tahor (ritual cleanness as prerequisite for worship access) — Dependence/Creatureliness / HUMAN. CHANGED from Vitality/Existence: covenantal access conditions name the creature's constitutive dependence on God's requirements."
+    },
+    {
+      "op_id": "OP-006",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8106 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "1064-001 G0054 hagnotēs (purity as inner character in ministry) — Moral Character / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-007",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8104 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6053-001 G0053 hagnos (morally pure inner character) — Moral Character / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-008",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8105 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6053-002 G0053 hagnos (pure virgin to Christ — covenantal fidelity and orientation) — Relational Disposition / HUMAN. CHANGED from Moral Character: orientation-toward-Christ is the defining characteristic."
+    },
+    {
+      "op_id": "OP-009",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8101 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6054-001 G0048 hagnizō (inner purification through obedience and hope) — Transformation / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-010",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8102 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6054-002 G0048 hagnizō (ritual purification as preparation for sacred participation) — Dependence/Creatureliness / HUMAN. CHANGED from Transformation: ritual access preparation is creaturely dependence, not inner transformation."
+    },
+    {
+      "op_id": "OP-011",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8103 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6055-001 G0049 hagnismos (structured purification process as covenantal pathway) — Dependence/Creatureliness / HUMAN. CHANGED from Transformation: same reasoning as 6054-002."
+    },
+    {
+      "op_id": "OP-012",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8107 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6056-001 G0055 hagnōs (pure motivation as inner disposition) — Moral Character / HUMAN. ROOT_INFERRED → CLAUDE_AI."
+    },
+    {
+      "op_id": "OP-013",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8113 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6057-001 H2891 taher (purification from sin through divine cleansing) — Transformation / HUMAN. Automated label confirmed."
+    },
+    {
+      "op_id": "OP-014",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8114 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "CLAUDE_AI", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6057-002 H2891 taher (ritual cleansing enabling restored community participation — 2Ki 5:10) — Dependence/Creatureliness / HUMAN. Was UNCLASSIFIED — assigned."
+    },
+    {
+      "op_id": "OP-015",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8115 },
+      "set": { "dimension": "Transformation", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "GOD", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6057-003 H2891 taher (God purifies sons of Levi like gold — Mal 3:3) — Transformation / GOD. CHANGED from Vitality/Existence: divine purifying action directed at persons is transformation. GOD as dominant subject."
+    },
+    {
+      "op_id": "OP-016",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8118 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6058-001 H2893 tohorah (prescribed purification procedure — Lev 14:2) — Dependence/Creatureliness / HUMAN. CHANGED from Transformation: covenantal access pathway is creaturely dependence."
+    },
+    {
+      "op_id": "OP-017",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8119 },
+      "set": { "dimension": "Relational Disposition", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6058-002 H2893 tohorah (setting heart to seek God even where cleanness requirements imperfectly met — 2Ch 30:19) — Relational Disposition / HUMAN. CHANGED from Transformation: heart-orientation toward God is the primary inner-being content."
+    },
+    {
+      "op_id": "OP-018",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8116 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6059-001 H2892A tohar (ritual purification period post-partum — Lev 12:4) — Dependence/Creatureliness / HUMAN. CHANGED from Transformation: ritual covenantal condition governing access."
+    },
+    {
+      "op_id": "OP-019",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8112 },
+      "set": { "dimension": "Moral Character", "dimension_confidence": "KEYWORD_WEAK", "dominant_subject": "GOD", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6060-001 H2890 tehor (God's purer eyes than to see evil — Hab 1:13) — Moral Character / GOD. Automated label confirmed; dominant_subject set."
+    },
+    {
+      "op_id": "OP-020",
+      "operation": "update",
+      "table": "wa_dimension_index",
+      "match": { "id": 8117 },
+      "set": { "dimension": "Dependence / Creatureliness", "dimension_confidence": "KEYWORD_STRONG", "dominant_subject": "HUMAN", "dim_review_status": "Complete", "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418" },
+      "description": "6061-001 H2892B tohar (post-partum purification period — Lev 12:4) — Dependence/Creatureliness / HUMAN. CHANGED from Transformation: ritual covenantal condition, same as 6059-001."
+    },
+    {
+      "op_id": "OP-021",
+      "operation": "insert",
+      "table": "wa_session_research_flags",
+      "record": {
+        "registry_id": 125,
+        "flag_code": "SD_POINTER",
+        "flag_label": "DIM-125-SD001",
+        "strongs_reference": "H2889,H2891,H2893,H2892,G0047,G0053,G0054",
+        "priority": "HIGH",
+        "session_target": "Session D",
+        "description": "R125 (purity) reveals a persistent structural distinction within the concept of purity: (1) Moral Character — purity as inner character quality (stable); (2) Transformation — purification as inner change process; (3) Dependence/Creatureliness — ritual cleanness as creaturely dependence on divinely-specified conditions for access; (4) Relational Disposition — covenantal fidelity and heart-orientation toward God. The ritual-purity vocabulary (Hebrew H2891 taher, H2893 tohorah, H2892 tohar) is almost entirely Dependence/Creatureliness or Transformation — it does not primarily name moral character but covenantal standing and access. The moral-character vocabulary (Greek G0047 hagneia, G0054 hagnotēs, G0053 hagnos) belongs to NT Greek. Session D should explore whether purity/cleanness and moral character are being conflated in popular usage, and whether the OT covenantal-access concept and the NT inner-moral concept represent distinct contributions to the super-concept.",
+        "session_raised": "wa-dimensionreview-instruction-v3_3-20260418",
+        "raised_date": "2026-05-02",
+        "resolved": 0
+      },
+      "description": "SD pointer DIM-125-SD001 — OT ritual purity vs NT moral purity: two distinct inner-being dimensions under one concept."
+    },
+    {
+      "op_id": "OP-022",
+      "operation": "update",
+      "table": "word_registry",
+      "match": { "no": 125 },
+      "set": {
+        "dim_review_status": "Complete",
+        "dim_review_version": "wa-dimensionreview-instruction-v3_3-20260418"
+      },
+      "description": "Registry stamp — R125 purity DimReview Complete."
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 22,
+    "dimension_index_updates": 20,
+    "registry_stamps": 1,
+    "research_flag_inserts": 1,
+    "dimension_changes": 10,
+    "unclassified_assigned": 1,
+    "vocabulary_conversions": 10
+  }
+}

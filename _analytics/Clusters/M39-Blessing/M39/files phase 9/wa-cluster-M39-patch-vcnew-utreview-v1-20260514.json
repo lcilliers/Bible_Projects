@@ -1,0 +1,731 @@
+{
+  "_patch_meta": {
+    "patch_type": "VCNEW",
+    "cluster_code": "M39",
+    "session_ref": "wa-obslog-M39-sessionb-v1-20260514",
+    "source_doc": "WA-M39-UT-verse-review-v1-20260514",
+    "instruction_version": "wa-sessionb-cluster-instruction-v1_9-20260514",
+    "created": "2026-05-14",
+    "terms_covered": [
+      1299,
+      632,
+      542,
+      795,
+      889,
+      984,
+      888,
+      5470
+    ],
+    "input_versions": {
+      "1299": 1,
+      "632": 1,
+      "542": 1,
+      "795": 1,
+      "889": 1,
+      "984": 1,
+      "888": 1,
+      "5470": 1
+    },
+    "notes": "52 insert operations covering all UT verses for M39. 28 relevant (is_relevant=1), 24 set aside (is_relevant=0, set_aside_reason populated). group_id=null for all \u2014 Phase 7 will assign. OQ-001 and OQ-002 resolved by researcher 2026-05-14 before patch authoring. Correction: Gen 4:7 (vr=12472), Gen 12:13 (vr=12473), Gen 12:16 (vr=12474) were G-status in \u00a72 and incorrectly included in initial patch draft; removed in v2 correction."
+  },
+  "operations": [
+    {
+      "op_id": "OP-001",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 51016,
+        "mti_term_id": 1299,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ba.rakh used in physical posture sense \u2014 camels kneeling at well; no inner-being blessing content"
+      }
+    },
+    {
+      "op_id": "OP-002",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 226205,
+        "mti_term_id": 1299,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ba.rakh in embodied kneeling/posture sense within worship call; inner-being worship content carried by other terms in verse (wrong-face set-aside)"
+      }
+    },
+    {
+      "op_id": "OP-003",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12482,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in technical/liturgical sense \u2014 dressing/tending the lamps; no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-004",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12496,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav as adverbial intensifier ('very small') \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-005",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12499,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav as adverbial intensifier ('inquire diligently') \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-006",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12500,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav as adverbial intensifier ('inquire diligently') \u2014 same pattern as Deu 13:14, no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-007",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12502,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav as adverbial intensifier ('inquire diligently') \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-008",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12504,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav as adverbial intensifier ('very plainly') \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-009",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59834,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in material prosperity/outcome sense ('prosperity bestowed on Israel') \u2014 external outcome, not inner-being blessing/favour characteristic"
+      }
+    },
+    {
+      "op_id": "OP-010",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59829,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in skill/proficiency sense ('play well' \u2014 music) \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-011",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59830,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-012",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59831,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-013",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59832,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-014",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59833,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-015",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59838,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-016",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59826,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in comparative status/reputation sense ('make more famous/greater') \u2014 external honour, not inner-being characteristic"
+      }
+    },
+    {
+      "op_id": "OP-017",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59837,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in cosmetic/beautification sense ('adorned her head') \u2014 physical description, no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-018",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59835,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav as adverbial intensifier ('broke in pieces/thoroughly') \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-019",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 59836,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-020",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12526,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in skill/proficiency sense ('play skillfully' \u2014 music) \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-021",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12533,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-022",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12536,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in aesthetic/descriptive sense ('stately in stride') \u2014 physical description of animals, no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-023",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12540,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in aesthetic/sensory sense ('make sweet melody') \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-024",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12542,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-025",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12559,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in skill/proficiency sense ('plays well' \u2014 music) \u2014 no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-026",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12560,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-027",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12562,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in material/agricultural improvement sense ('country improved') \u2014 outcome description, no direct inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-028",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 12567,
+        "mti_term_id": 632,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ya.tav in comparative strength/status sense ('better than Thebes') \u2014 geo-political comparison, no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-029",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 4187,
+        "mti_term_id": 542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "tov in comparative preference sense ('it was better for us in Egypt') \u2014 expresses complaint/longing, not cluster's blessing or favour characteristic"
+      }
+    },
+    {
+      "op_id": "OP-030",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 4188,
+        "mti_term_id": 542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-031",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 4189,
+        "mti_term_id": 542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-032",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 4190,
+        "mti_term_id": 542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-033",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 65375,
+        "mti_term_id": 542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "tov in comparative status sense ('any better than Balak') \u2014 geo-political comparison, no inner-being characteristic content"
+      }
+    },
+    {
+      "op_id": "OP-034",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 4197,
+        "mti_term_id": 542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-035",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 4198,
+        "mti_term_id": 542,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-036",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 18824,
+        "mti_term_id": 795,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 0,
+        "is_related": 0,
+        "set_aside_reason": "ra.tsah with land as subject ('land enjoys its Sabbaths') \u2014 personification without human inner-being content; soul-abhorring language in verse carried by different terms (wrong-face set-aside)"
+      }
+    },
+    {
+      "op_id": "OP-037",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 117146,
+        "mti_term_id": 795,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-038",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 167037,
+        "mti_term_id": 889,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-039",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 167044,
+        "mti_term_id": 889,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-040",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 167048,
+        "mti_term_id": 889,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-041",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 167049,
+        "mti_term_id": 889,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-042",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 167022,
+        "mti_term_id": 889,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-043",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 24847,
+        "mti_term_id": 889,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-044",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 92213,
+        "mti_term_id": 984,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-045",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 166982,
+        "mti_term_id": 888,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-046",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 166971,
+        "mti_term_id": 888,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-047",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 166972,
+        "mti_term_id": 888,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-048",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 166973,
+        "mti_term_id": 888,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-049",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 167001,
+        "mti_term_id": 5470,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-050",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 166996,
+        "mti_term_id": 5470,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-051",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 166993,
+        "mti_term_id": 5470,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    },
+    {
+      "op_id": "OP-052",
+      "table": "verse_context",
+      "operation": "insert",
+      "record": {
+        "verse_record_id": 166994,
+        "mti_term_id": 5470,
+        "group_id": null,
+        "is_anchor": 0,
+        "is_relevant": 1,
+        "is_related": 0
+      }
+    }
+  ]
+}

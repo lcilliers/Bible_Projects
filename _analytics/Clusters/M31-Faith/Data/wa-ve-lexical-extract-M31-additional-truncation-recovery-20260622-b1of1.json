@@ -1,0 +1,4618 @@
+{
+  "meta": {
+    "focus_cluster": "M31",
+    "description": "Faith, Belief and Unbelief",
+    "batch": "1/1",
+    "verses": 98,
+    "occurrences": 140,
+    "what_this_is": "A per-term-in-verse LEXICAL DECOMPOSITION of the inner-being terms in the verses where cluster M31 ('Faith, Belief and Unbelief') occurs. Each record shows what a verse says about the inner being, recorded once per term-occurrence. Mechanically derived (01b v2) over the original-language morphology; the interpretive fields (cause, location, divine_involvement, object_type, valence) are resolved by a focused verse-read API pass.",
+    "structure": "data = array of VERSES. Each verse = {verse:{reference,osis_id,testament,verse_text}, term_occurrences:[ {term:{strong,translit,gloss,language,cluster,focus_cluster}, verse_report:{target_word,morph,stem}, lexical:{...}} ]}.",
+    "layout_fan_out": "VERSE-based fan-out — each verse lists EVERY term in it, not just the focus cluster's (focus_cluster=true marks the terms of interest). A term's `compound` lists its co-terms, which are present as their OWN full records in the same verse — fan out by matching translit/gloss to analyse synergy without leaving the verse.",
+    "conventions": {
+      "absent_field": "a lexical field that is absent = NONE (genuinely silent in the verse; never imputed)",
+      "UNRESOLVED": "the mechanical pass expected a value but could not decide (rare; reads have since resolved these)",
+      "provenance": "most fields = mechanical (01b v2, source v2_engine_iter1); cause/location/divine_involvement/object_type/valence = READ-resolved corpus-wide (verse-read API; valence unparked + read 2026-06-18)",
+      "multi_value": "a field may hold a list when several values apply (e.g. faculty, compound)"
+    },
+    "extract_version": "v1_0",
+    "generated": "2026-06-22",
+    "engine_changes": {
+      "zero_pad_fix": "FOUNDATIONAL: Strong's seed lists were short-form (H430/H408/H853) but the DB measure layer is zero-padded 4-digit (H0430/H0408/H0853) — so every <4-digit Hebrew lemma silently failed to match (Elohim, 'al, 'et, faculty lemmas). Fixed (_canon). This restored divine/negation/faculty/object-type detection; much of the prior 'thin' output was this bug.",
+      "valence": "context rule added: prohibition ('al/me + 2nd/3rd-person volitive) -> forbidden (mechanical); commanded/righteous/neutral are interpretive -> verse-read. UNPARKED 2026-06-18: the corpus valence read is now COMPLETE (verse-read API, 0 active residue) — valence here is READ-resolved, same status as cause/divine/object-type.",
+      "divine_involvement": "role taxonomy: object (divine adjacent to term, or 'et-marked) is mechanical (~92%); agent/possessor/giver/addressee are read-resolved (morphologically overlapping); no divine lemma -> NONE. The old meaningless 'present' value is gone.",
+      "location_dedup": "one location row per DISTINCT constitutional seat-level even when several same-level seat-words co-occur (no 'triple-heart'); spirit/breath (ruach/pneuma) sense-gated, ambiguity read-disambiguated.",
+      "t2_treatment": "T2 = reference/qualifier terms, never analysed standalone. T2-GRAMMATICAL (function words: prepositions, pronouns, particles, the object-marker 'et) are EXCLUDED from generation/this extract/reads. T2-CONTENT (noun/verb/adjective) stay as co-term context only.",
+      "base_rerun": "the whole corpus (38,971 term-in-verse units) was re-derived on the corrected engine; 1,768 T2-grammatical units disposed; narration regenerated. Integrity verified (quick_check ok, reads preserved).",
+      "reads_complete": "the interpretive residue was resolved by a governed verse-read API pass (batched-by-verse, circuit-breaker, cost-cap, self-verified): location, cause, object-type, divine-involvement, AND valence (unparked + read 2026-06-18) all to 0 M-cluster residue. divine role + object-type split + valence are now fully populated by the read.",
+      "signal_list_audit_20260619": "completeness audit of EVERY hand-seeded signal list (divine names, perception, cognition, intensifier, …) against canonical lemmas, gated on corpus presence. Closed the gaps (DIVINE +Eloah/Yah/Elyon/YHWH-var/Christos; PERCEPTION +shama/nabat/azan; COGNITION +bin; INTENSIFIER +gadol) and re-ran the full base. Net new readable residue: divine-involvement only (+432, corpus-wide); object-type/cause/location new residue was entirely T2 (excluded). 0 active readable non-T2 residue remains.",
+      "t2_noise_filter_20260620": "a T2 content-word occurrence is now kept ONLY if its base Strong's serves a recognised inner-being qualifier role (seat · intensifier · faculty · perception/cognition · divine · spirit-being · inherent-valence); other T2 content (e.g. seed, hand, name) is dropped as noise from the fan-out (researcher direction).",
+      "set_aside_honoured_20260620": "occurrences with verse_context.set_aside_reason set, and terms with cluster_code=NULL, are EXCLUDED from the extract — so the JSON honours the DB set-aside state rather than re-presenting out-of-scope/homonym verses."
+    },
+    "why_each_element_is_derived": {
+      "_principle": "Every value is DERIVED from a named original-language measure (lemma · morphology · per-occurrence STEP sense · co-occurring tagged terms) — never from the English string. 'Mechanical' = fixed by rule over the measure layer; 'read' = the verse was read by API where the rule cannot be decisive (clarify/enrich only, never an opt-out). Silence = NONE (never imputed).",
+      "sense": "measure: per-occurrence ESV target_word (wa_verse_records) + the lemma's medium_def (lexicon, shown as lemma_meaning). Mechanical — the sense the term carries HERE, not a uniform gloss.",
+      "type": "measure: part-of-speech (morphology). Rule: verb/participle->action, noun->status, adjective->quality. Mechanical (POS-only).",
+      "mode": "measure: morph stem/voice/form. The term's own grammatical realisation (language · POS · stem). Mechanical bedrock.",
+      "faculty": "measure: the TERM's own lemma meaning, classified to a faculty (R1 term-intrinsic). Why term-intrinsic: the trigger's faculty (e.g. the perception that caused fear) belongs to cause/compound, not to this term. Mechanical. (R2 = co-occurring faculty-lemma assignment is a known not-yet-implemented extension.)",
+      "location": "measure: a constitutional-seat lemma (Strong's seat-map: heart/soul/spirit/mind/flesh) present in the verse, SENSE-GATED for spirit/breath (ruach/pneuma may be wind/disposition, not the seat). De-duplicated per level. Mechanical floor + READ for the spirit/breath ambiguity. Absent = not located.",
+      "origin": "measure: a 'from'-source preposition (min/apo/ek) governing the term -> received-from-outside; else absent. Mechanical (partial — within-person/generational/giver-source rules are not yet implemented).",
+      "how": "measure: the governing finite verb of a NOUN/adjective term (the predicate the state operates BY, e.g. 'seized'). Mechanical. ABSENT for verb-terms — the term IS the action (see mode).",
+      "object / object-type": "measure: the term's governed object (noun/pronoun after the term or its governing verb; 'et marks the accusative). object-type classifies it: God/spiritual-being/person are mechanical (divine/spirit-being lemma, or person morph); thing/abstract/situation/threat are READ-classified (the mechanical 'thing/abstract' lump is split by the verse-read). ⚠ CAVEAT: the `object` TEXT is a MECHANICAL best-guess and is imprecise in ~13% of cases (it can grab a determiner/pronoun like 'every'/'his'/'the', or the addressee). `object_type` is READ-derived and AUTHORITATIVE — when the two disagree, trust `object_type` and treat `object` text as a hint only.",
+      "cause": "measure: a causal marker (ki/hoti/gar) -> the eliciting clause, READ-resolved to the actual cause; OR the object of a perception verb for an affect term (mechanical). Else NONE (most verses state no cause). Why read: the cause is the verse's argument, not a single lemma.",
+      "cause_clause": "mechanical HINT only — the raw clause after the 'because/for' marker; superseded by `cause` once read.",
+      "experiencer": "measure: the term's possessive-suffix person / nominative subject (morphology) -> self | other | other(addressed). Mechanical.",
+      "divine_involvement": "measure: a divine lemma (YHWH/Elohim/…) and its grammatical relation to the term. object (adjacent / 'et-marked) is mechanical; agent/possessor/giver/addressee are READ-resolved (these roles overlap morphologically — the role is the semantic judgement 'is God feared, acting, or giving'). No divine lemma -> NONE.",
+      "intensity": "measure: a quantifier/intensifier lemma modifying the term (kol 'all', me'od 'very', rab 'many'). Mechanical.",
+      "valence": "measure: term-inherent moral lemma + context. forbidden = a dedicated prohibition particle ('al/me) on a 2nd/3rd-person volitive (mechanical, ~80% — the 'fear not' reassurance shares the form). commanded/righteous/neutral are interpretive -> read. Corpus valence read COMPLETE (unparked 2026-06-18) — values here are READ-resolved.",
+      "immediate_response": "measure: the coordinated reaction verb-phrase following the term's clause (the inner being's first response). Mechanical (light). Expectation test: silent -> NONE.",
+      "relational": "measure: a directional preposition adjacent to the term (to/toward/against/above). Mechanical (crude — the {direction->object} pairing is a not-yet-implemented extension).",
+      "compound": "measure: the verse's OTHER active tagged terms (the reference's term inventory), each with its role to the head term (partner = co-T1 · qualifier = T2 · co-seated = shares a constitutional seat). This is the synergy web; fan out to each co-term's own full record by translit/gloss."
+    },
+    "fields": {
+      "sense": "per-occurrence contextual sense (the ESV word used in THIS verse)",
+      "lemma_meaning": "the lemma's dictionary meaning (concise)",
+      "type": "action | status | quality — the grammatical kind (from morphology)",
+      "mode": "the term's grammatical realisation: language · part-of-speech · (verb stem)",
+      "faculty": "the inner-being faculty the TERM ITSELF engages (affect/cognition/perception/memory/volition/moral_evaluation/conscience); term-intrinsic; ABSENT if the term is not itself a faculty",
+      "location": "constitutional seat the state is seated in (spirit/soul/heart/mind/flesh/conscience); READ-disambiguated; absent if none",
+      "origin": "where it comes from (within-person/received-from-outside/carried-generationally)",
+      "how": "the governing predicate — how a noun/state term operates; ABSENT for verb-terms (the term IS the action; see mode)",
+      "object": "what the state is directed at / acts on",
+      "object_type": "the object's kind (threat/person/God/spiritual-being/situation/abstract/thing); READ-classified",
+      "cause": "what AROUSES the state; READ-resolved; absent = the verse states no cause",
+      "cause_clause": "mechanical hint only — the raw clause after a 'because/for' marker (superseded by `cause` once read)",
+      "experiencer": "who bears the state: self | other | other (addressed)",
+      "divine_involvement": "GOD's role toward the term (agent/possessor/giver/object/addressee); READ-resolved",
+      "intensity": "quantifier / intensity (e.g. 'many', 'greatly')",
+      "valence": "moral framing in context (righteous/sinful/commanded/forbidden/neutral); READ-resolved",
+      "immediate_response": "the immediate reaction the state produces (e.g. 'bowed faces')",
+      "compound": "co-occurring terms in THIS verse, each as `translit \"gloss\" — role` (partner/qualifier/co-seated). FAN-OUT: every co-term is present as its OWN full record in this verse's term_occurrences — resolve by matching translit/gloss",
+      "relational": "directional / relational force (to, toward, against …)"
+    },
+    "source": "ve_lexical (v2_engine_iter1 mechanical + verse-read API resolution) + verse_morphology measure layer (schema 3.34.0)"
+  },
+  "data": [
+    {
+      "verse": {
+        "reference": "Joh 6:40",
+        "osis_id": "John.6.40",
+        "testament": "NT",
+        "verse_text": "Joh 6:40 For this is the will of my Father , that everyone who looks on the Son and believes in him should have eternal life , and I will raise him up on the last day .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2307",
+            "translit": "thelēma",
+            "gloss": "will/desire",
+            "language": "Greek",
+            "cluster": "M29",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "will",
+            "morph": "N-NSN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "will",
+            "lemma_meaning": "will, decision, desire",
+            "type": "status",
+            "faculty": [
+              "affect",
+              "volition"
+            ],
+            "how": "is (G1510)",
+            "object": "Father",
+            "object_type": "abstract",
+            "cause_clause": "this is will Father that everyone looks Son",
+            "experiencer": "other",
+            "valence": "righteous",
+            "immediate_response": "believes"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "cause": "pending-read",
+            "cause_clause": "this is will Father that everyone looks Son",
+            "compound": "thelēma \"will/desire\" — partner",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 6:47",
+        "osis_id": "John.6.47",
+        "testament": "NT",
+        "verse_text": "Joh 6:47 Truly , truly , I say to you , whoever believes has eternal life ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "eternal",
+            "relational": "you"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 6:64",
+        "osis_id": "John.6.64",
+        "testament": "NT",
+        "verse_text": "Joh 6:64 But there are some of you who do not believe .” ( For Jesus knew from the beginning who those were who did not believe , and who it was who would betray him .)"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0746",
+            "translit": "archē",
+            "gloss": "beginning",
+            "language": "Greek",
+            "cluster": "M17",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "beginning",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "beginning",
+            "lemma_meaning": "beginning, origin, first",
+            "type": "status",
+            "origin": "received-from-outside",
+            "how": "knew (G1492)",
+            "cause_clause": "Jesus knew from beginning who were not believe",
+            "experiencer": "other",
+            "valence": "neutral",
+            "relational": "from"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe, believe",
+            "morph": "V-PAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe, believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Jesus",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "Jesus knew from beginning who were not believe",
+            "experiencer": "other",
+            "immediate_response": "were",
+            "compound": "archē \"beginning\" — partner",
+            "relational": "not"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 6:69",
+        "osis_id": "John.6.69",
+        "testament": "NT",
+        "verse_text": "Joh 6:69 and we have believed , and have come to know , that you are the Holy One of God .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0040G",
+            "translit": "hagios",
+            "gloss": "holy",
+            "language": "Greek",
+            "cluster": "M22",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "Holy",
+            "morph": "A-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Holy",
+            "lemma_meaning": "holy",
+            "type": "quality",
+            "cause_clause": "you are Holy God",
+            "divine_involvement": "object",
+            "valence": "righteous"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-RAI-1P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "you are Holy God",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "are God",
+            "compound": "hagios \"holy\" — partner",
+            "relational": "we"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 7:5",
+        "osis_id": "John.7.5",
+        "testament": "NT",
+        "verse_text": "Joh 7:5 For not even his brothers believed in him ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-IAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "cause": "pending-read",
+            "cause_clause": "not his brothers believed in him",
+            "experiencer": "other",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 7:31",
+        "osis_id": "John.7.31",
+        "testament": "NT",
+        "verse_text": "Joh 7:31 Yet many of the people believed in him . They said , “ When the Christ appears , will he do more signs than this man has done ?”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "origin": "received-from-outside",
+            "object": "him",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED",
+            "intensity": "many (many)",
+            "immediate_response": "said Christ",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 7:38",
+        "osis_id": "John.7.38",
+        "testament": "NT",
+        "verse_text": "Joh 7:38 Whoever believes in me , as the Scripture has said , ‘ Out of his heart will flow rivers of living water .’”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "immediate_response": "said",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 7:39",
+        "osis_id": "John.7.39",
+        "testament": "NT",
+        "verse_text": "Joh 7:39 Now this he said about the Spirit , whom those who believed in him were to receive , for as yet the Spirit had not been given , because Jesus was not yet glorified ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "location": "spirit",
+            "object": "him",
+            "cause": "pending-read",
+            "cause_clause": "Spirit had not been given because Jesus not glorified",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 7:48",
+        "osis_id": "John.7.48",
+        "testament": "NT",
+        "verse_text": "Joh 7:48 Have any of the authorities or the Pharisees believed in him ?"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "experiencer": "other",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 8:24",
+        "osis_id": "John.8.24",
+        "testament": "NT",
+        "verse_text": "Joh 8:24 I told you that you would die in your sins , for unless you believe that I am he you will die in your sins .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0266",
+            "translit": "hamartia",
+            "gloss": "sin",
+            "language": "Greek",
+            "cluster": "M10",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "sins",
+            "morph": "N-DPF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "sins",
+            "lemma_meaning": "sin, wrongdoing",
+            "type": "status",
+            "faculty": "volition",
+            "how": "die (G0599)",
+            "cause": "not believing that Jesus is he",
+            "cause_clause": "die in your sins for unless believe that",
+            "experiencer": "other (addressed)",
+            "valence": "sinful",
+            "immediate_response": "believe",
+            "relational": "your"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "die in your sins for unless believe that",
+            "experiencer": "other (addressed)",
+            "valence": "forbidden",
+            "immediate_response": "am",
+            "compound": "hamartia \"sin\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 8:30",
+        "osis_id": "John.8.30",
+        "testament": "NT",
+        "verse_text": "Joh 8:30 As he was saying these things , many believed in him ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "experiencer": "other",
+            "intensity": "many (many)",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 8:31",
+        "osis_id": "John.8.31",
+        "testament": "NT",
+        "verse_text": "Joh 8:31 So Jesus said to the Jews who had believed him , “ If you abide in my word , you are truly my disciples ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-RAP-APM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "relational": "him"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 8:45",
+        "osis_id": "John.8.45",
+        "testament": "NT",
+        "verse_text": "Joh 8:45 But because I tell the truth , you do not believe me ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0225",
+            "translit": "alētheia",
+            "gloss": "truth",
+            "language": "Greek",
+            "cluster": "M13",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "truth",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "truth",
+            "lemma_meaning": "truth, truthfulness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "tell (G3004)",
+            "cause": "Jesus telling the truth",
+            "cause_clause": "I tell truth not believe me",
+            "experiencer": "self",
+            "valence": "righteous",
+            "relational": "not"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "I tell truth not believe me",
+            "experiencer": "other (addressed)",
+            "compound": "alētheia \"truth\" — partner",
+            "relational": [
+              "not",
+              "me"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 8:46",
+        "osis_id": "John.8.46",
+        "testament": "NT",
+        "verse_text": "Joh 8:46 Which one of you convicts me of sin ? If I tell the truth , why do you not believe me ?"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0266",
+            "translit": "hamartia",
+            "gloss": "sin",
+            "language": "Greek",
+            "cluster": "M10",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "sin",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "sin",
+            "lemma_meaning": "sin, wrongdoing",
+            "type": "status",
+            "faculty": "volition",
+            "how": "convicts (G1651)",
+            "experiencer": "other",
+            "valence": "sinful",
+            "compound": "alētheia \"truth\" — partner",
+            "relational": "of"
+          }
+        },
+        {
+          "term": {
+            "strong": "G0225",
+            "translit": "alētheia",
+            "gloss": "truth",
+            "language": "Greek",
+            "cluster": "M13",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "truth",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "truth",
+            "lemma_meaning": "truth, truthfulness",
+            "type": "status",
+            "faculty": "affect",
+            "how": "tell (G3004)",
+            "experiencer": "self",
+            "valence": "righteous",
+            "compound": "hamartia \"sin\" — partner",
+            "relational": "why"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other (addressed)",
+            "compound": [
+              "hamartia \"sin\" — partner",
+              "alētheia \"truth\" — partner"
+            ],
+            "relational": [
+              "not",
+              "me"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 9:18",
+        "osis_id": "John.9.18",
+        "testament": "NT",
+        "verse_text": "Joh 9:18 The Jews did not believe that he had been blind and had received his sight , until they called the parents of the man who had received his sight"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5185",
+            "translit": "tuflos",
+            "gloss": "blind",
+            "language": "Greek",
+            "cluster": "M24",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "blind",
+            "morph": "A-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "blind",
+            "lemma_meaning": "blind",
+            "type": "quality",
+            "cause_clause": "been blind and received his sight until called parents man",
+            "valence": "neutral",
+            "immediate_response": "received his sight"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "been blind and received his sight until called parents man",
+            "experiencer": "other",
+            "immediate_response": "been",
+            "compound": "tuflos \"blind\" — partner",
+            "relational": "not"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 9:35",
+        "osis_id": "John.9.35",
+        "testament": "NT",
+        "verse_text": "Joh 9:35 Jesus heard that they had cast him out , and having found him he said , “Do you believe in the Son of Man ?”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Son",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "cast him out and found him said you",
+            "experiencer": "other (addressed)",
+            "relational": [
+              "you",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 9:36",
+        "osis_id": "John.9.36",
+        "testament": "NT",
+        "verse_text": "Joh 9:36 He answered , “ And who is he , sir , that I may believe in him ?”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 9:38",
+        "osis_id": "John.9.38",
+        "testament": "NT",
+        "verse_text": "Joh 9:38 He said , “ Lord , I believe ,” and he worshiped him ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4352",
+            "translit": "proskuneō",
+            "gloss": "to worship",
+            "language": "Greek",
+            "cluster": "M22",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "worshiped",
+            "morph": "V-AAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "worshiped",
+            "lemma_meaning": "to worship, pay homage, show reverence",
+            "type": "action",
+            "faculty": "affect",
+            "experiencer": "other",
+            "divine_involvement": "addressee",
+            "valence": "righteous",
+            "relational": "him"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "worshiped",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "worshiped",
+            "compound": "proskuneō \"to worship\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 10:25",
+        "osis_id": "John.10.25",
+        "testament": "NT",
+        "verse_text": "Joh 10:25 Jesus answered them , “I told you , and you do not believe . The works that I do in my Father’s name bear witness about me ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "works",
+            "object_type": "thing/abstract",
+            "experiencer": "other (addressed)",
+            "relational": "not"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 10:26",
+        "osis_id": "John.10.26",
+        "testament": "NT",
+        "verse_text": "Joh 10:26 but you do not believe because you are not among my sheep ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "are not among my sheep",
+            "experiencer": "other (addressed)",
+            "immediate_response": "are",
+            "relational": "not"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 10:37",
+        "osis_id": "John.10.37",
+        "testament": "NT",
+        "verse_text": "Joh 10:37 If I am not doing the works of my Father , then do not believe me ;"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other (addressed)",
+            "valence": "forbidden",
+            "relational": [
+              "not",
+              "me"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 10:38",
+        "osis_id": "John.10.38",
+        "testament": "NT",
+        "verse_text": "Joh 10:38 but if I do them, even though you do not believe me , believe the works , that you may know and understand that the Father is in me and I am in the Father .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe, believe",
+            "morph": "V-PAS-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe, believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "works",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "Father in me I in Father",
+            "experiencer": "other (addressed)",
+            "valence": "forbidden",
+            "relational": [
+              "not",
+              "me"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 10:42",
+        "osis_id": "John.10.42",
+        "testament": "NT",
+        "verse_text": "Joh 10:42 And many believed in him there ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "experiencer": "other",
+            "intensity": "many (many)",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 11:15",
+        "osis_id": "John.11.15",
+        "testament": "NT",
+        "verse_text": "Joh 11:15 and for your sake I am glad that I was not there , so that you may believe . But let us go to him .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "glad",
+            "morph": "V-PAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "glad",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "cause": "Jesus not being present at Lazarus's death, enabling belief",
+            "cause_clause": "was not there that believe But go to",
+            "experiencer": "self",
+            "valence": "righteous",
+            "immediate_response": "was",
+            "relational": "your"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "go",
+            "object_type": "person",
+            "cause": "pending-read",
+            "cause_clause": "was not there that believe But go to",
+            "experiencer": "other (addressed)",
+            "immediate_response": "go",
+            "compound": "chairo \"to rejoice\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 11:25",
+        "osis_id": "John.11.25",
+        "testament": "NT",
+        "verse_text": "Joh 11:25 Jesus said to her , “ I am the resurrection and the life . Whoever believes in me , though he die , yet shall he live ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "immediate_response": "die",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 11:26",
+        "osis_id": "John.11.26",
+        "testament": "NT",
+        "verse_text": "Joh 11:26 and everyone who lives and believes in me shall never die . Do you believe this ?”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes, believe",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes, believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 11:27",
+        "osis_id": "John.11.27",
+        "testament": "NT",
+        "verse_text": "Joh 11:27 She said to him , “ Yes , Lord ; I believe that you are the Christ , the Son of God , who is coming into the world .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-RAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "you are Christ Son God coming into world",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "are Christ",
+            "relational": "I"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 11:40",
+        "osis_id": "John.11.40",
+        "testament": "NT",
+        "verse_text": "Joh 11:40 Jesus said to her , “Did I not tell you that if you believed you would see the glory of God ?”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAS-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "glory",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "if believed see glory God",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "UNRESOLVED"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 11:42",
+        "osis_id": "John.11.42",
+        "testament": "NT",
+        "verse_text": "Joh 11:42 I knew that you always hear me , but I said this on account of the people standing around , that they may believe that you sent me .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "sent",
+            "cause": "pending-read",
+            "cause_clause": "always hear me but said account people standing around",
+            "experiencer": "other",
+            "immediate_response": "sent"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 11:45",
+        "osis_id": "John.11.45",
+        "testament": "NT",
+        "verse_text": "Joh 11:45 Many of the Jews therefore , who had come with Mary and had seen what he did , believed in him ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "experiencer": "other",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 11:48",
+        "osis_id": "John.11.48",
+        "testament": "NT",
+        "verse_text": "Joh 11:48 If we let him go on like this , everyone will believe in him , and the Romans will come and take away both our place and our nation .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-FAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "experiencer": "other",
+            "immediate_response": "come",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 12:11",
+        "osis_id": "John.12.11",
+        "testament": "NT",
+        "verse_text": "Joh 12:11 because on account of him many of the Jews were going away and believing in Jesus ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believing",
+            "morph": "V-IAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believing",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Jesus",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "account him many Jews going away and believing in",
+            "experiencer": "other",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 12:36",
+        "osis_id": "John.12.36",
+        "testament": "NT",
+        "verse_text": "Joh 12:36 While you have the light , believe in the light , that you may become sons of light .” When Jesus had said these things , he departed and hid himself from them ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "light",
+            "object_type": "thing/abstract",
+            "experiencer": "other (addressed)",
+            "immediate_response": "become sons",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 12:37",
+        "osis_id": "John.12.37",
+        "testament": "NT",
+        "verse_text": "Joh 12:37 Though he had done so many signs before them , they still did not believe in him ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-IAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "him",
+            "experiencer": "other",
+            "relational": [
+              "not",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 12:38",
+        "osis_id": "John.12.38",
+        "testament": "NT",
+        "verse_text": "Joh 12:38 so that the word spoken by the prophet Isaiah might be fulfilled : “ Lord , who has believed what he heard from us , and to whom has the arm of the Lord been revealed ?”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "heard",
+            "object_type": "thing/abstract",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "revealed",
+            "compound": "akoē \"hearing\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 12:39",
+        "osis_id": "John.12.39",
+        "testament": "NT",
+        "verse_text": "Joh 12:39 Therefore they could not believe . For again Isaiah said ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Isaiah",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "again Isaiah said",
+            "immediate_response": "said",
+            "relational": "not"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 12:42",
+        "osis_id": "John.12.42",
+        "testament": "NT",
+        "verse_text": "Joh 12:42 Nevertheless , many even of the authorities believed in him , but for fear of the Pharisees they did not confess it, so that they would not be put out of the synagogue ;"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "origin": "received-from-outside",
+            "object": "him",
+            "experiencer": "other",
+            "immediate_response": "confess",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 12:44",
+        "osis_id": "John.12.44",
+        "testament": "NT",
+        "verse_text": "Joh 12:44 And Jesus cried out and said , “Whoever believes in me , believes not in me but in him who sent me ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes, believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes, believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 12:46",
+        "osis_id": "John.12.46",
+        "testament": "NT",
+        "verse_text": "Joh 12:46 I have come into the world as light , so that whoever believes in me may not remain in darkness ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "immediate_response": "remain darkness",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 13:19",
+        "osis_id": "John.13.19",
+        "testament": "NT",
+        "verse_text": "Joh 13:19 I am telling you this now , before it takes place , that when it does take place you may believe that I am he."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "I am",
+            "experiencer": "other (addressed)",
+            "immediate_response": "am"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 14:1",
+        "osis_id": "John.14.1",
+        "testament": "NT",
+        "verse_text": "Joh 14:1 “Let not your hearts be troubled . Believe in God ; believe also in me ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2588",
+            "translit": "kardia",
+            "gloss": "heart",
+            "language": "Greek",
+            "cluster": "M47",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "hearts",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "hearts",
+            "lemma_meaning": "the heart, regarded as the seat of feeling, impulse, affection, desire",
+            "type": "status",
+            "location": "heart",
+            "faculty": [
+              "affect",
+              "cognition",
+              "perception",
+              "conscience"
+            ],
+            "how": "troubled (G5015)",
+            "experiencer": "other",
+            "valence": "commanded",
+            "relational": "your"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "Believe, believe",
+            "morph": "V-PAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Believe, believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "location": "heart",
+            "object": "God",
+            "object_type": "God",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "kardia \"heart\" — co-seated",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 14:10",
+        "osis_id": "John.14.10",
+        "testament": "NT",
+        "verse_text": "Joh 14:10 Do you not believe that I am in the Father and the Father is in me ? The words that I say to you I do not speak on my own authority, but the Father who dwells in me does his works ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "am in Father and Father in me words",
+            "experiencer": "other (addressed)",
+            "immediate_response": "am Father",
+            "relational": "not"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 14:11",
+        "osis_id": "John.14.11",
+        "testament": "NT",
+        "verse_text": "Joh 14:11 Believe me that I am in the Father and the Father is in me , or else believe on account of the works themselves ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "Believe, believe",
+            "morph": "V-PAM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Believe, believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "in Father and Father in me else believe",
+            "experiencer": "other (addressed)",
+            "immediate_response": "believe",
+            "relational": "me"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 14:12",
+        "osis_id": "John.14.12",
+        "testament": "NT",
+        "verse_text": "Joh 14:12 “ Truly , truly , I say to you , whoever believes in me will also do the works that I do ; and greater works than these will he do , because I am going to the Father ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "going to Father",
+            "immediate_response": "do works",
+            "relational": [
+              "you",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 14:29",
+        "osis_id": "John.14.29",
+        "testament": "NT",
+        "verse_text": "Joh 14:29 And now I have told you before it takes place , so that when it does take place you may believe ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other (addressed)"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 16:9",
+        "osis_id": "John.16.9",
+        "testament": "NT",
+        "verse_text": "Joh 16:9 concerning sin , because they do not believe in me ;"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0266",
+            "translit": "hamartia",
+            "gloss": "sin",
+            "language": "Greek",
+            "cluster": "M10",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "sin",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "sin",
+            "lemma_meaning": "sin, wrongdoing",
+            "type": "status",
+            "faculty": "volition",
+            "how": "believe (G4100)",
+            "cause": "not believing in Jesus",
+            "cause_clause": "not believe in me",
+            "experiencer": "other",
+            "valence": "sinful",
+            "relational": "concerning"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "not believe in me",
+            "experiencer": "other",
+            "compound": "hamartia \"sin\" — partner",
+            "relational": [
+              "not",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 16:27",
+        "osis_id": "John.16.27",
+        "testament": "NT",
+        "verse_text": "Joh 16:27 for the Father himself loves you , because you have loved me and have believed that I came from God ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5368",
+            "translit": "fileō",
+            "gloss": "to love",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "loves",
+            "morph": "V-PAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "loves",
+            "lemma_meaning": "to love, to have affection and regard of a very high order, not unlike",
+            "type": "action",
+            "faculty": "affect",
+            "cause": "disciples loving Jesus and believing he came from God",
+            "cause_clause": "Father himself loves you because you loved me",
+            "experiencer": "other",
+            "divine_involvement": "agent",
+            "immediate_response": "loved",
+            "relational": [
+              "himself",
+              "you"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-RAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "Father himself loves you because you loved me",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "came God",
+            "compound": "fileō \"to love\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 16:30",
+        "osis_id": "John.16.30",
+        "testament": "NT",
+        "verse_text": "Joh 16:30 Now we know that you know all things and do not need anyone to question you ; this is why we believe that you came from God .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-1P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "know all things and not need anyone to question",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "came God",
+            "relational": "why"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 16:31",
+        "osis_id": "John.16.31",
+        "testament": "NT",
+        "verse_text": "Joh 16:31 Jesus answered them , “Do you now believe ?"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other (addressed)"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 17:8",
+        "osis_id": "John.17.8",
+        "testament": "NT",
+        "verse_text": "Joh 17:8 For I have given them the words that you gave me , and they have received them and have come to know in truth that I came from you ; and they have believed that you sent me ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "sent",
+            "cause": "pending-read",
+            "cause_clause": "given them words that gave me and they",
+            "experiencer": "other",
+            "immediate_response": "sent"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 17:20",
+        "osis_id": "John.17.20",
+        "testament": "NT",
+        "verse_text": "Joh 17:20 “I do not ask for these only , but also for those who will believe in me through their word ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2065",
+            "translit": "erōtaō",
+            "gloss": "to ask",
+            "language": "Greek",
+            "cluster": "M21",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "ask",
+            "morph": "V-PAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "ask",
+            "lemma_meaning": "to ask",
+            "type": "action",
+            "object": "only",
+            "experiencer": "self",
+            "immediate_response": "believe",
+            "relational": [
+              "not",
+              "for"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAP-GPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "compound": "erōtaō \"to ask\" — partner",
+            "relational": [
+              "for",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 17:21",
+        "osis_id": "John.17.21",
+        "testament": "NT",
+        "verse_text": "Joh 17:21 that they may all be one , just as you , Father , are in me , and I in you , that they also may be in us , so that the world may believe that you have sent me ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAS-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "sent",
+            "cause": "pending-read",
+            "cause_clause": "sent",
+            "experiencer": "other",
+            "immediate_response": "sent"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 19:35",
+        "osis_id": "John.19.35",
+        "testament": "NT",
+        "verse_text": "Joh 19:35 He who saw it has borne witness — his testimony is true , and he knows that he is telling the truth — that you also may believe ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "telling truth that you also believe",
+            "experiencer": "other (addressed)"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 20:8",
+        "osis_id": "John.20.8",
+        "testament": "NT",
+        "verse_text": "Joh 20:8 Then the other disciple , who had reached the tomb first , also went in , and he saw and believed ;"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 20:25",
+        "osis_id": "John.20.25",
+        "testament": "NT",
+        "verse_text": "Joh 20:25 So the other disciples told him , “We have seen the Lord .” But he said to them , “ Unless I see in his hands the mark of the nails , and place my finger into the mark of the nails , and place my hand into his side , I will never believe .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "relational": "never"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 20:29",
+        "osis_id": "John.20.29",
+        "testament": "NT",
+        "verse_text": "Joh 20:29 Jesus said to him , “Have you believed because you have seen me ? Blessed are those who have not seen and yet have believed .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed, believed",
+            "morph": "V-RAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed, believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "seen me Blessed not seen yet believed",
+            "experiencer": "other (addressed)",
+            "immediate_response": "believed",
+            "relational": "him"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Joh 20:31",
+        "osis_id": "John.20.31",
+        "testament": "NT",
+        "verse_text": "Joh 20:31 but these are written so that you may believe that Jesus is the Christ , the Son of God , and that by believing you may have life in his name ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5547",
+            "translit": "christos",
+            "gloss": "Christ",
+            "language": "Greek",
+            "cluster": "T2",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "Christ",
+            "morph": "N-NSM-T",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Christ",
+            "lemma_meaning": "A man from the tribe of Judah living at the time of the New Testament,",
+            "type": "status",
+            "how": "is (G1510)",
+            "object": "Son",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "Jesus is Christ Son God and that believing",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "believing life"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe, believing",
+            "morph": "V-AAS-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe, believing",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Jesus",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "Jesus is Christ Son God and that believing",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "is Christ",
+            "compound": "christos \"Christ\" — qualifier"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 2:44",
+        "osis_id": "Acts.2.44",
+        "testament": "NT",
+        "verse_text": "Act 2:44 And all who believed were together and had all things in common ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-PAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 4:4",
+        "osis_id": "Acts.4.4",
+        "testament": "NT",
+        "verse_text": "Act 4:4 But many of those who had heard the word believed , and the number of the men came to about five thousand ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "number",
+            "object_type": "thing/abstract",
+            "experiencer": "other",
+            "intensity": "many (many)",
+            "immediate_response": "came to"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 4:32",
+        "osis_id": "Acts.4.32",
+        "testament": "NT",
+        "verse_text": "Act 4:32 Now the full number of those who believed were of one heart and soul , and no one said that any of the things that belonged to him was his own , but they had everything in common ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5590G",
+            "translit": "psuchē",
+            "gloss": "soul",
+            "language": "Greek",
+            "cluster": "M47",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "soul",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "soul",
+            "lemma_meaning": "life, soul",
+            "type": "status",
+            "location": [
+              "heart",
+              "soul"
+            ],
+            "faculty": "perception",
+            "how": "were (G1510)",
+            "object": "heart",
+            "object_type": "abstract",
+            "experiencer": "other",
+            "valence": "neutral",
+            "immediate_response": "said",
+            "compound": "kardia \"heart\" — co-seated"
+          }
+        },
+        {
+          "term": {
+            "strong": "G2588",
+            "translit": "kardia",
+            "gloss": "heart",
+            "language": "Greek",
+            "cluster": "M47",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "heart",
+            "morph": "N-NSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "heart",
+            "lemma_meaning": "the heart, regarded as the seat of feeling, impulse, affection, desire",
+            "type": "status",
+            "location": [
+              "heart",
+              "soul"
+            ],
+            "faculty": [
+              "affect",
+              "cognition",
+              "perception",
+              "conscience"
+            ],
+            "how": "were (G1510)",
+            "experiencer": "other",
+            "valence": "righteous",
+            "immediate_response": "said",
+            "compound": "psuchē \"soul\" — co-seated"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAP-GPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "location": [
+              "heart",
+              "soul"
+            ],
+            "object": "heart",
+            "object_type": "thing/abstract",
+            "compound": [
+              "kardia \"heart\" — co-seated",
+              "psuchē \"soul\" — co-seated"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 5:14",
+        "osis_id": "Acts.5.14",
+        "testament": "NT",
+        "verse_text": "Act 5:14 And more than ever believers were added to the Lord , multitudes of both men and women ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believers",
+            "morph": "V-PAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believers",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "divine_involvement": "UNRESOLVED"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 8:12",
+        "osis_id": "Acts.8.12",
+        "testament": "NT",
+        "verse_text": "Act 8:12 But when they believed Philip as he preached good news about the kingdom of God and the name of Jesus Christ , they were baptized , both men and women ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Philip",
+            "object_type": "thing/abstract",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 8:13",
+        "osis_id": "Acts.8.13",
+        "testament": "NT",
+        "verse_text": "Act 8:13 Even Simon himself believed , and after being baptized he continued with Philip . And seeing signs and great miracles performed , he was amazed ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "baptized",
+            "experiencer": "other",
+            "immediate_response": "baptized Philip",
+            "relational": "himself"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 9:26",
+        "osis_id": "Acts.9.26",
+        "testament": "NT",
+        "verse_text": "Act 9:26 And when he had come to Jerusalem , he attempted to join the disciples . And they were all afraid of him , for they did not believe that he was a disciple ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5399",
+            "translit": "fobeō",
+            "gloss": "to fear",
+            "language": "Greek",
+            "cluster": "M01",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "afraid",
+            "morph": "V-INI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "afraid",
+            "lemma_meaning": "to fear, be afraid, alarmed, in some contexts improper and an impedime",
+            "type": "action",
+            "faculty": "affect",
+            "object": "him",
+            "cause": "not believing he was a disciple",
+            "cause_clause": "was disciple",
+            "experiencer": "other",
+            "valence": "neutral",
+            "compound": "peiraō \"to try\" — partner",
+            "relational": "him"
+          }
+        },
+        {
+          "term": {
+            "strong": "G3987",
+            "translit": "peiraō",
+            "gloss": "to try",
+            "language": "Greek",
+            "cluster": "M35",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "attempted",
+            "morph": "V-IAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "attempted",
+            "lemma_meaning": "to try, attempt, essay, endeavor, Acts 26:21*",
+            "type": "action",
+            "object": "disciples",
+            "object_type": "situation",
+            "cause_clause": "was disciple",
+            "experiencer": "other",
+            "valence": "neutral",
+            "compound": "fobeo \"to fear\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "disciple",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "was disciple",
+            "immediate_response": "was disciple",
+            "compound": [
+              "fobeo \"to fear\" — partner",
+              "peiraō \"to try\" — partner"
+            ],
+            "relational": "not"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 9:42",
+        "osis_id": "Acts.9.42",
+        "testament": "NT",
+        "verse_text": "Act 9:42 And it became known throughout all Joppa , and many believed in the Lord ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED",
+            "intensity": "many (many)",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 10:43",
+        "osis_id": "Acts.10.43",
+        "testament": "NT",
+        "verse_text": "Act 10:43 To him all the prophets bear witness that everyone who believes in him receives forgiveness of sins through his name .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0859",
+            "translit": "afesis",
+            "gloss": "forgiveness",
+            "language": "Greek",
+            "cluster": "M11",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "forgiveness",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "forgiveness",
+            "lemma_meaning": "forgiveness, pardon, release, cancellation of a debt",
+            "type": "status",
+            "valence": "righteous",
+            "compound": "hamartia \"sin\" — partner"
+          }
+        },
+        {
+          "term": {
+            "strong": "G0266",
+            "translit": "hamartia",
+            "gloss": "sin",
+            "language": "Greek",
+            "cluster": "M10",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "sins",
+            "morph": "N-GPF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "sins",
+            "lemma_meaning": "sin, wrongdoing",
+            "type": "status",
+            "faculty": "volition",
+            "valence": "sinful",
+            "compound": "afesis \"forgiveness\" — partner",
+            "relational": "through"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-ASM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "compound": [
+              "hamartia \"sin\" — partner",
+              "afesis \"forgiveness\" — partner"
+            ],
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 11:17",
+        "osis_id": "Acts.11.17",
+        "testament": "NT",
+        "verse_text": "Act 11:17 If then God gave the same gift to them as he gave to us when we believed in the Lord Jesus Christ , who was I that I could stand in God’s way?”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1431",
+            "translit": "dōrea",
+            "gloss": "free gift",
+            "language": "Greek",
+            "cluster": "M38",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "gift",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "gift",
+            "lemma_meaning": "a gift, free gift, benefit, Jn. 4:10",
+            "type": "status",
+            "how": "gave (G1325)",
+            "object": "same",
+            "experiencer": "other",
+            "divine_involvement": "giver",
+            "valence": "righteous",
+            "immediate_response": "believed Lord",
+            "compound": "dunatos \"able\" — partner",
+            "relational": "them"
+          }
+        },
+        {
+          "term": {
+            "strong": "G1415",
+            "translit": "dunatos",
+            "gloss": "able",
+            "language": "Greek",
+            "cluster": "M23",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "could",
+            "morph": "A-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "could",
+            "lemma_meaning": "possible (based on power)",
+            "type": "quality",
+            "valence": "neutral",
+            "compound": "dōrea \"free gift\" — partner",
+            "relational": "I"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAP-DPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "dōrea \"free gift\" — partner",
+              "dunatos \"able\" — partner"
+            ],
+            "relational": [
+              "us",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 11:21",
+        "osis_id": "Acts.11.21",
+        "testament": "NT",
+        "verse_text": "Act 11:21 And the hand of the Lord was with them , and a great number who believed turned to the Lord ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "divine_involvement": "UNRESOLVED",
+            "intensity": "many (great)"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 13:12",
+        "osis_id": "Acts.13.12",
+        "testament": "NT",
+        "verse_text": "Act 13:12 Then the proconsul believed , when he saw what had occurred , for he was astonished at the teaching of the Lord ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "occurred",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 13:39",
+        "osis_id": "Acts.13.39",
+        "testament": "NT",
+        "verse_text": "Act 13:39 and by him everyone who believes is freed from everything from which you could not be freed by the law of Moses ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1344",
+            "translit": "dikaioō",
+            "gloss": "to justify",
+            "language": "Greek",
+            "cluster": "M26",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "freed",
+            "morph": "V-PPI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "freed",
+            "lemma_meaning": "to justify, vindicate, declare righteous, to put someone in a proper r",
+            "type": "action",
+            "faculty": "moral_evaluation",
+            "object": "could",
+            "experiencer": "other",
+            "valence": "righteous"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "compound": "dikaioō \"to justify\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 13:41",
+        "osis_id": "Acts.13.41",
+        "testament": "NT",
+        "verse_text": "Act 13:41 “‘ Look , you scoffers , be astounded and perish ; for I am doing a work in your days , a work that you will not believe , even if one tells it to you .’”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "tells",
+            "object_type": "person",
+            "cause": "pending-read",
+            "cause_clause": "I doing work in your days work that",
+            "experiencer": "other (addressed)",
+            "valence": "forbidden",
+            "relational": "not"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 13:48",
+        "osis_id": "Acts.13.48",
+        "testament": "NT",
+        "verse_text": "Act 13:48 And when the Gentiles heard this, they began rejoicing and glorifying the word of the Lord , and as many as were appointed to eternal life believed ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5463",
+            "translit": "chairo",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "rejoicing",
+            "morph": "V-IAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoicing",
+            "lemma_meaning": "to rejoice, be glad, delighted",
+            "type": "action",
+            "faculty": "affect",
+            "object": "word",
+            "object_type": "abstract",
+            "experiencer": "other",
+            "valence": "righteous",
+            "immediate_response": "glorifying word"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "chairo \"to rejoice\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 14:1",
+        "osis_id": "Acts.14.1",
+        "testament": "NT",
+        "verse_text": "Act 14:1 Now at Iconium they entered together into the Jewish synagogue and spoke in such a way that a great number of both Jews and Greeks believed ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 14:23",
+        "osis_id": "Acts.14.23",
+        "testament": "NT",
+        "verse_text": "Act 14:23 And when they had appointed elders for them in every church , with prayer and fasting they committed them to the Lord in whom they had believed ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1577",
+            "translit": "ekklēsia",
+            "gloss": "assembly",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "church",
+            "morph": "N-ASF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "church",
+            "lemma_meaning": "church, congregation, assembly",
+            "type": "status",
+            "how": "committed (G3908)",
+            "object": "them",
+            "experiencer": "other",
+            "valence": "neutral",
+            "compound": "proseuchomai \"to pray\" — partner",
+            "relational": [
+              "every",
+              "with"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G4336",
+            "translit": "proseuchomai",
+            "gloss": "to pray",
+            "language": "Greek",
+            "cluster": "M21",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "prayer",
+            "morph": "V-ADP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "prayer",
+            "lemma_meaning": "to pray, offer prayer, Mt. 5:44",
+            "type": "action",
+            "object": "fasting",
+            "object_type": "God",
+            "divine_involvement": "addressee",
+            "valence": "righteous",
+            "compound": "ekklēsia \"assembly\" — partner",
+            "relational": "with"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-LAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "ekklēsia \"assembly\" — partner",
+              "proseuchomai \"to pray\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 15:5",
+        "osis_id": "Acts.15.5",
+        "testament": "NT",
+        "verse_text": "Act 15:5 But some believers who belonged to the party of the Pharisees rose up and said , “It is necessary to circumcise them and to order them to keep the law of Moses .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believers",
+            "morph": "V-RAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believers",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "origin": "received-from-outside",
+            "object": "party",
+            "object_type": "thing/abstract",
+            "relational": "belonged"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 15:7",
+        "osis_id": "Acts.15.7",
+        "testament": "NT",
+        "verse_text": "Act 15:7 And after there had been much debate , Peter stood up and said to them , “ Brothers , you know that in the early days God made a choice among you , that by my mouth the Gentiles should hear the word of the gospel and believe ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "by my mouth Gentiles hear word gospel and",
+            "divine_involvement": "UNRESOLVED"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 15:11",
+        "osis_id": "Acts.15.11",
+        "testament": "NT",
+        "verse_text": "Act 15:11 But we believe that we will be saved through the grace of the Lord Jesus , just as they will.”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4982",
+            "translit": "sōzō",
+            "gloss": "to save",
+            "language": "Greek",
+            "cluster": "M38",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "saved",
+            "morph": "V-APN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "saved",
+            "lemma_meaning": "to save",
+            "type": "action",
+            "object": "grace",
+            "object_type": "person",
+            "divine_involvement": "agent",
+            "valence": "righteous",
+            "compound": "charis \"grace\" — partner",
+            "relational": "through"
+          }
+        },
+        {
+          "term": {
+            "strong": "G5485",
+            "translit": "charis",
+            "gloss": "grace",
+            "language": "Greek",
+            "cluster": "M39",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "grace",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "grace",
+            "lemma_meaning": "grace, the state of kindness and favor toward someone, often with a fo",
+            "type": "status",
+            "how": "believe (G4100)",
+            "object": "saved",
+            "experiencer": "self",
+            "divine_involvement": "object",
+            "valence": "righteous",
+            "compound": "sōzō \"to save\" — partner",
+            "relational": "through"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-PAI-1P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "saved",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED",
+            "compound": [
+              "sōzō \"to save\" — partner",
+              "charis \"grace\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 16:31",
+        "osis_id": "Acts.16.31",
+        "testament": "NT",
+        "verse_text": "Act 16:31 And they said , “ Believe in the Lord Jesus , and you will be saved , you and your household .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4982",
+            "translit": "sōzō",
+            "gloss": "to save",
+            "language": "Greek",
+            "cluster": "M38",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "saved",
+            "morph": "V-FPI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "saved",
+            "lemma_meaning": "to save",
+            "type": "action",
+            "object": "household",
+            "object_type": "person",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "agent",
+            "valence": "righteous"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "Believe",
+            "morph": "V-AAM-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "Believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "experiencer": "other (addressed)",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "saved",
+            "compound": "sōzō \"to save\" — partner",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 16:34",
+        "osis_id": "Acts.16.34",
+        "testament": "NT",
+        "verse_text": "Act 16:34 Then he brought them up into his house and set food before them. And he rejoiced along with his entire household that he had believed in God ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0021",
+            "translit": "agalliao",
+            "gloss": "to rejoice",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "rejoiced",
+            "morph": "V-ADI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "rejoiced",
+            "lemma_meaning": "to be filled with delight, with great joy",
+            "type": "action",
+            "faculty": "affect",
+            "experiencer": "other",
+            "valence": "righteous",
+            "relational": "his"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-RAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "God",
+            "object_type": "God",
+            "divine_involvement": "object",
+            "compound": "agalliao \"to rejoice\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 17:12",
+        "osis_id": "Acts.17.12",
+        "testament": "NT",
+        "verse_text": "Act 17:12 Many of them therefore believed , with not a few Greek women of high standing as well as men ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 17:34",
+        "osis_id": "Acts.17.34",
+        "testament": "NT",
+        "verse_text": "Act 17:34 But some men joined him and believed , among whom also were Dionysius the Areopagite and a woman named Damaris and others with them ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAI-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "experiencer": "other",
+            "relational": [
+              "him",
+              "among"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 18:8",
+        "osis_id": "Acts.18.8",
+        "testament": "NT",
+        "verse_text": "Act 18:8 Crispus , the ruler of the synagogue , believed in the Lord , together with his entire household . And many of the Corinthians hearing Paul believed and were baptized ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed, believed",
+            "morph": "V-AAI-3S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed, believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Lord",
+            "object_type": "God",
+            "experiencer": "other",
+            "divine_involvement": "object",
+            "immediate_response": "hearing"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 18:27",
+        "osis_id": "Acts.18.27",
+        "testament": "NT",
+        "verse_text": "Act 18:27 And when he wished to cross to Achaia , the brothers encouraged him and wrote to the disciples to welcome him . When he arrived , he greatly helped those who through grace had believed ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G5485",
+            "translit": "charis",
+            "gloss": "grace",
+            "language": "Greek",
+            "cluster": "M39",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "grace",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "grace",
+            "lemma_meaning": "grace, the state of kindness and favor toward someone, often with a fo",
+            "type": "status",
+            "how": "helped those (G4820)",
+            "experiencer": "other",
+            "intensity": "many (greatly)",
+            "valence": "righteous",
+            "compound": "boulomai \"to plan\" — partner",
+            "relational": "through"
+          }
+        },
+        {
+          "term": {
+            "strong": "G1014",
+            "translit": "boulomai",
+            "gloss": "to plan",
+            "language": "Greek",
+            "cluster": "M15",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "wished",
+            "morph": "V-PNP-GSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "wished",
+            "lemma_meaning": "to wish, will, desire",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "volition"
+            ],
+            "object": "Achaia",
+            "object_type": "situation",
+            "valence": "neutral",
+            "compound": "charis \"grace\" — partner",
+            "relational": "he"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-RAP-DPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "compound": [
+              "boulomai \"to plan\" — partner",
+              "charis \"grace\" — partner"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 19:2",
+        "osis_id": "Acts.19.2",
+        "testament": "NT",
+        "verse_text": "Act 19:2 And he said to them , “ Did you receive the Holy Spirit when you believed ?” And they said , “ No , we have not even heard that there is a Holy Spirit .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-AAP-NPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "location": "spirit",
+            "immediate_response": "said"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 19:4",
+        "osis_id": "Acts.19.4",
+        "testament": "NT",
+        "verse_text": "Act 19:4 And Paul said , “ John baptized with the baptism of repentance , telling the people to believe in the one who was to come after him , that is , Jesus .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G3341",
+            "translit": "metanoia",
+            "gloss": "repentance",
+            "language": "Greek",
+            "cluster": "M45",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "repentance",
+            "morph": "N-GSF",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "repentance",
+            "lemma_meaning": "change of mind, repentance, the state of changing any or all of the el",
+            "type": "status",
+            "faculty": "cognition",
+            "how": "baptized (G0907)",
+            "object": "baptism",
+            "object_type": "abstract",
+            "experiencer": "other",
+            "valence": "commanded"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAS-3P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "come",
+            "experiencer": "other",
+            "compound": "metanoia \"repentance\" — partner",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 19:18",
+        "osis_id": "Acts.19.18",
+        "testament": "NT",
+        "verse_text": "Act 19:18 Also many of those who were now believers came , confessing and divulging their practices ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believers",
+            "morph": "V-RAP-GPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believers",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "intensity": "many (many)"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 21:20",
+        "osis_id": "Acts.21.20",
+        "testament": "NT",
+        "verse_text": "Act 21:20 And when they heard it, they glorified God . And they said to him , “You see , brother , how many thousands there are among the Jews of those who have believed . They are all zealous for the law ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2207",
+            "translit": "zēlōtēs",
+            "gloss": "zealot",
+            "language": "Greek",
+            "cluster": "M21",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "zealous",
+            "morph": "N-NPM-T",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "zealous",
+            "lemma_meaning": "primarily a generous rival, an imitator",
+            "type": "status",
+            "faculty": "affect",
+            "how": "are (G5225)",
+            "experiencer": "other"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-RAP-GPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "zealous",
+            "object_type": "thing/abstract",
+            "divine_involvement": "UNRESOLVED",
+            "compound": "zēlōtēs \"zealot\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 21:25",
+        "osis_id": "Acts.21.25",
+        "testament": "NT",
+        "verse_text": "Act 21:25 But as for the Gentiles who have believed , we have sent a letter with our judgment that they should abstain from what has been sacrificed to idols , and from blood , and from what has been strangled , and from sexual immorality .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G1494",
+            "translit": "eidōlothutos",
+            "gloss": "sacrificed to idols",
+            "language": "Greek",
+            "cluster": "M27",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "idols",
+            "morph": "A-ASN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "idols",
+            "lemma_meaning": "(food) sacrificed to idols",
+            "type": "quality",
+            "valence": "forbidden"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-RAP-GPN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "letter",
+            "compound": "eidōlothutos \"sacrificed to idols\" — partner",
+            "relational": "we"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 22:19",
+        "osis_id": "Acts.22.19",
+        "testament": "NT",
+        "verse_text": "Act 22:19 And I said , ‘ Lord , they themselves know that in one synagogue after another I imprisoned and beat those who believed in you ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believed",
+            "morph": "V-PAP-APM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "one synagogue imprisoned beat believed in you",
+            "divine_involvement": "UNRESOLVED",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 24:14",
+        "osis_id": "Acts.24.14",
+        "testament": "NT",
+        "verse_text": "Act 24:14 But this I confess to you , that according to the Way , which they call a sect , I worship the God of our fathers , believing everything laid down by the Law and written in the Prophets ,"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G3000",
+            "translit": "latreuō",
+            "gloss": "to minister",
+            "language": "Greek",
+            "cluster": "M36",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "worship",
+            "morph": "V-PAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "worship",
+            "lemma_meaning": "to serve, minister (in religious duties)",
+            "type": "action",
+            "object": "God",
+            "object_type": "God",
+            "cause_clause": "according Way which call sect worship God fathers",
+            "experiencer": "self",
+            "divine_involvement": "object",
+            "valence": "righteous"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believing",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believing",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Law",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "according Way which call sect worship God fathers",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "written Prophets",
+            "compound": "latreuō \"to minister\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 26:27",
+        "osis_id": "Acts.26.27",
+        "testament": "NT",
+        "verse_text": "Act 26:27 King Agrippa , do you believe the prophets ? I know that you believe .”"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe, believe",
+            "morph": "V-PAI-2S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe, believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "prophets",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "believe",
+            "experiencer": "other (addressed)"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Act 27:25",
+        "osis_id": "Acts.27.25",
+        "testament": "NT",
+        "verse_text": "Act 27:25 So take heart , men , for I have faith in God that it will be exactly as I have been told ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G2114",
+            "translit": "euthumeō",
+            "gloss": "be cheerful",
+            "language": "Greek",
+            "cluster": "M04",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "take heart",
+            "morph": "V-PAM-2P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "take heart",
+            "lemma_meaning": "to keep up one’s courage",
+            "type": "action",
+            "faculty": "perception",
+            "object": "men",
+            "object_type": "situation",
+            "cause": "God's assurance that events will be as told",
+            "cause_clause": "faith in God that it be exactly as told",
+            "experiencer": "other (addressed)",
+            "valence": "commanded",
+            "immediate_response": "faith in God"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "faith in",
+            "morph": "V-PAI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "faith in",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "God",
+            "object_type": "God",
+            "cause": "pending-read",
+            "cause_clause": "faith in God that it be exactly as told",
+            "experiencer": "self",
+            "divine_involvement": "object",
+            "immediate_response": "be",
+            "compound": "euthumeō \"be cheerful\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Jo 4:16",
+        "osis_id": "1John.4.16",
+        "testament": "NT",
+        "verse_text": "1Jo 4:16 So we have come to know and to believe the love that God has for us . God is love , and whoever abides in love abides in God , and God abides in him ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-RAI-1P",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "love",
+            "object_type": "thing/abstract",
+            "experiencer": "self",
+            "divine_involvement": "UNRESOLVED"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Jo 5:1",
+        "osis_id": "1John.5.1",
+        "testament": "NT",
+        "verse_text": "1Jo 5:1 Everyone who believes that Jesus is the Christ has been born of God , and everyone who loves the Father loves whoever has been born of him ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G0025",
+            "translit": "agapaō",
+            "gloss": "to love",
+            "language": "Greek",
+            "cluster": "M05",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "loves",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "loves",
+            "lemma_meaning": "to love",
+            "type": "action",
+            "faculty": "affect",
+            "object": "Father",
+            "cause_clause": "Jesus is Christ born of God and everyone",
+            "valence": "righteous"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Jesus",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "Jesus is Christ born of God and everyone",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "is Christ",
+            "compound": "agapaō \"to love\" — partner"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Jo 5:5",
+        "osis_id": "1John.5.5",
+        "testament": "NT",
+        "verse_text": "1Jo 5:5 Who is it that overcomes the world except the one who believes that Jesus is the Son of God ?"
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Jesus",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "Jesus is Son God",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "is Son"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Jo 5:10",
+        "osis_id": "1John.5.10",
+        "testament": "NT",
+        "verse_text": "1Jo 5:10 Whoever believes in the Son of God has the testimony in himself . Whoever does not believe God has made him a liar , because he has not believed in the testimony that God has borne concerning his Son ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believes, believe, believed",
+            "morph": "V-PAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believes, believe, believed",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "Son",
+            "object_type": "thing/abstract",
+            "cause": "pending-read",
+            "cause_clause": "not believed in testimony that God borne concerning",
+            "divine_involvement": "UNRESOLVED",
+            "relational": "in"
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "1Jo 5:13",
+        "osis_id": "1John.5.13",
+        "testament": "NT",
+        "verse_text": "1Jo 5:13 I write these things to you who believe in the name of the Son of God , that you may know that you have eternal life ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe, ",
+            "morph": "V-PAP-DPM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe, ",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "object": "name",
+            "object_type": "thing/abstract",
+            "divine_involvement": "UNRESOLVED",
+            "immediate_response": "know",
+            "relational": [
+              "you",
+              "in"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "verse": {
+        "reference": "Jude 5",
+        "osis_id": "Jude.1.5",
+        "testament": "NT",
+        "verse_text": "Jude 5 Now I want to remind you , although you once fully knew it , that Jesus , who saved a people out of the land of Egypt , afterward destroyed those who did not believe ."
+      },
+      "term_occurrences": [
+        {
+          "term": {
+            "strong": "G4982",
+            "translit": "sōzō",
+            "gloss": "to save",
+            "language": "Greek",
+            "cluster": "M38",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "saved",
+            "morph": "V-AAP-NSM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "saved",
+            "lemma_meaning": "to save",
+            "type": "action",
+            "origin": "received-from-outside",
+            "object": "people",
+            "object_type": "person",
+            "cause_clause": "Jesus saved people out land Egypt afterward destroyed",
+            "valence": "righteous",
+            "compound": [
+              "boulomai \"to plan\" — partner",
+              "hupomimnēskō \"to remind\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G1014",
+            "translit": "boulomai",
+            "gloss": "to plan",
+            "language": "Greek",
+            "cluster": "M15",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "want",
+            "morph": "V-PNI-1S",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "want",
+            "lemma_meaning": "to wish, will, desire",
+            "type": "action",
+            "faculty": [
+              "affect",
+              "volition"
+            ],
+            "object": "remind",
+            "cause_clause": "Jesus saved people out land Egypt afterward destroyed",
+            "experiencer": "self",
+            "valence": "neutral",
+            "compound": [
+              "hupomimnēskō \"to remind\" — partner",
+              "sōzō \"to save\" — partner"
+            ]
+          }
+        },
+        {
+          "term": {
+            "strong": "G5279",
+            "translit": "hupomimnēskō",
+            "gloss": "to remind",
+            "language": "Greek",
+            "cluster": "M41",
+            "focus_cluster": false
+          },
+          "verse_report": {
+            "target_word": "remind",
+            "morph": "V-AAN",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "remind",
+            "lemma_meaning": "to remind, call to mind",
+            "type": "action",
+            "faculty": "memory",
+            "cause_clause": "Jesus saved people out land Egypt afterward destroyed",
+            "valence": "neutral",
+            "compound": [
+              "boulomai \"to plan\" — partner",
+              "sōzō \"to save\" — partner"
+            ],
+            "relational": "you"
+          }
+        },
+        {
+          "term": {
+            "strong": "G4100",
+            "translit": "pisteuō",
+            "gloss": "to trust (in)",
+            "language": "Greek",
+            "cluster": "M31",
+            "focus_cluster": true
+          },
+          "verse_report": {
+            "target_word": "believe",
+            "morph": "V-AAP-APM",
+            "stem": null
+          },
+          "lexical": {
+            "sense": "believe",
+            "lemma_meaning": "to believe, put one’s faith in, trust, with an implication that action",
+            "type": "action",
+            "cause": "pending-read",
+            "cause_clause": "Jesus saved people out land Egypt afterward destroyed",
+            "compound": [
+              "boulomai \"to plan\" — partner",
+              "hupomimnēskō \"to remind\" — partner",
+              "sōzō \"to save\" — partner"
+            ],
+            "relational": "not"
+          }
+        }
+      ]
+    }
+  ]
+}

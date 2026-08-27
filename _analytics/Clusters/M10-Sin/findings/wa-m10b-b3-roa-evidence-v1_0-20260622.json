@@ -1,0 +1,507 @@
+{
+ "_meta": {
+  "description": "M10b B3 ro.a EVIDENCE (badness/evil): moral evil-of-deeds (turn-from/remove) + affective sadness-of-heart; heart-seated. Evidence only.",
+  "cluster": "M10b",
+  "batch": "B3",
+  "lemma": "ro.a",
+  "occurrences": 14,
+  "produced": "2026-06-22",
+  "version": "v1_0"
+ },
+ "records": [
+  {
+   "ref": "Deu 28:20",
+   "verse_text": "Deu 28:20 “The Lord will send on you curses , confusion , and frustration in all that you undertake to do , until you are destroyed and perish quickly on account of the evil of your deeds , because you have forsaken me .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "how": "forsaken (H5800)",
+   "object": "deeds",
+   "object_type": "abstract",
+   "touch_points": []
+  },
+  {
+   "ref": "1Sa 17:28",
+   "verse_text": "1Sa 17:28 Now Eliab his eldest brother heard when he spoke to the men . And Eliab’s anger was kindled against David , and he said , “ Why have you come down ? And with whom have you left those few sheep in the wilderness ? I know your presumption and the evil of your heart , for you have come down to see the battle .”",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "location": "heart",
+   "how": "know (H3045)",
+   "object": "heart",
+   "object_type": "abstract",
+   "cause_clause": "come down see battle",
+   "experiencer": "other (addressed)",
+   "touch_points": [
+    {
+     "lemma": "za.don",
+     "gloss": "arrogance",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "le.vav",
+     "gloss": "heart",
+     "role": "co-seated",
+     "ring": "external"
+    },
+    {
+     "lemma": "aph",
+     "gloss": "face: anger",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "cha.rah",
+     "gloss": "to be incensed",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "a.ni",
+     "gloss": "I",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "ga.dol",
+     "gloss": "great: old",
+     "role": "qualifier",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Neh 2:2",
+   "verse_text": "Neh 2:2 And the king said to me, “ Why is your face sad , seeing you are not sick ? This is nothing but sadness of the heart .” Then I was very much afraid .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "sadness",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "sadness",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "neutral",
+   "location": "heart",
+   "how": "afraid (H3372)",
+   "object": "heart",
+   "object_type": "situation",
+   "cause_clause": "sadness heart very much afraid",
+   "intensity": "very (very)",
+   "touch_points": [
+    {
+     "lemma": "me.od",
+     "gloss": "much",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "ya.re",
+     "gloss": "to fear: revere",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "lev",
+     "gloss": "heart",
+     "role": "co-seated",
+     "ring": "external"
+    },
+    {
+     "lemma": "ra.vah",
+     "gloss": "to multiply",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ra",
+     "gloss": "bad: harmful",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "mad.du.a",
+     "gloss": "why?",
+     "role": "qualifier",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Psa 28:4",
+   "verse_text": "Psa 28:4 Give to them according to their work and according to the evil of their deeds ; give to them according to the work of their hands ; render them their due reward .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "how": "Give (H5414)",
+   "object": "deeds",
+   "object_type": "abstract",
+   "experiencer": "other",
+   "touch_points": []
+  },
+  {
+   "ref": "Ecc 7:3",
+   "verse_text": "Ecc 7:3 Sorrow is better than laughter , for by sadness of face the heart is made glad .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "sadness",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "sadness",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "neutral",
+   "location": "heart",
+   "how": "made glad (H3190)",
+   "object": "face",
+   "object_type": "person",
+   "cause": "sadness of face",
+   "cause_clause": "sadness face heart made glad",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "ya.tav",
+     "gloss": "be good",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ka.a.s",
+     "gloss": "vexation",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Isa 1:16",
+   "verse_text": "Isa 1:16 Wash yourselves ; make yourselves clean ; remove the evil of your deeds from before my eyes ; cease to do evil ,",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "how": "remove (H5493)",
+   "object": "deeds",
+   "object_type": "situation",
+   "touch_points": [
+    {
+     "lemma": "sur",
+     "gloss": "to turn aside: remove",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Jer 4:4",
+   "verse_text": "Jer 4:4 Circumcise yourselves to the Lord ; remove the foreskin of your hearts , O men of Judah and inhabitants of Jerusalem ; lest my wrath go forth like fire , and burn with none to quench it, because of the evil of your deeds .”",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "location": "heart",
+   "how": "burn (H1197)",
+   "object": "none",
+   "object_type": "abstract",
+   "experiencer": "other (addressed)",
+   "touch_points": [
+    {
+     "lemma": "le.vav",
+     "gloss": "heart",
+     "role": "co-seated",
+     "ring": "external"
+    },
+    {
+     "lemma": "pen-",
+     "gloss": "lest",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "che.mah",
+     "gloss": "rage",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "sur",
+     "gloss": "to turn aside: remove",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Jer 21:12",
+   "verse_text": "Jer 21:12 O house of David ! Thus says the Lord : “‘ Execute justice in the morning , and deliver from the hand of the oppressor him who has been robbed , lest my wrath go forth like fire , and burn with none to quench it, because of your evil deeds .’”",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "how": "burn (H1197)",
+   "object": "none",
+   "object_type": "abstract",
+   "experiencer": "other (addressed)",
+   "touch_points": [
+    {
+     "lemma": "che.mah",
+     "gloss": "rage",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "din",
+     "gloss": "to judge",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "mish.pat",
+     "gloss": "justice",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Jer 23:2",
+   "verse_text": "Jer 23:2 Therefore thus says the Lord , the God of Israel , concerning the shepherds who care for my people : “ You have scattered my flock and have driven them away , and you have not attended to them. Behold , I will attend to you for your evil deeds , declares the Lord .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "how": "attended (H6485)",
+   "object": "deeds",
+   "object_type": "abstract",
+   "experiencer": "other (addressed)",
+   "relational": "to",
+   "touch_points": []
+  },
+  {
+   "ref": "Jer 23:22",
+   "verse_text": "Jer 23:22 But if they had stood in my council , then they would have proclaimed my words to my people , and they would have turned them from their evil way , and from the evil of their deeds .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "experiencer": "other",
+   "relational": "from",
+   "touch_points": [
+    {
+     "lemma": "sod",
+     "gloss": "counsel",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "sha.ma",
+     "gloss": "to hear: proclaim",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Jer 25:5",
+   "verse_text": "Jer 25:5 saying , ‘ Turn now , every one of you, from his evil way and evil deeds , and dwell upon the land that the Lord has given to you and your fathers from of old and forever .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "how": "dwell (H3427)",
+   "object": "deeds",
+   "object_type": "abstract",
+   "touch_points": [
+    {
+     "lemma": "min-",
+     "gloss": "from",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "shuv",
+     "gloss": "to return: repent",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Jer 26:3",
+   "verse_text": "Jer 26:3 It may be they will listen , and every one turn from his evil way , that I may relent of the disaster that I intend to do to them because of their evil deeds .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "object": "deeds",
+   "object_type": "abstract",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "ra.ah",
+     "gloss": "distress: harm",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "na.cham",
+     "gloss": "to be sorry: relent",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "shuv",
+     "gloss": "to return: repent",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "cha.shav",
+     "gloss": "to devise: devise",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Jer 44:22",
+   "verse_text": "Jer 44:22 The Lord could no longer bear your evil deeds and the abominations that you committed . Therefore your land has become a desolation and a waste and a curse , without inhabitant , as it is this day .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "evil",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "object": "deeds",
+   "object_type": "abstract",
+   "touch_points": [
+    {
+     "lemma": "to.e.vah",
+     "gloss": "abomination",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "sham.mah",
+     "gloss": "horror: destroyed",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ya.khol",
+     "gloss": "be able",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Hos 9:15",
+   "verse_text": "Hos 9:15 Every evil of theirs is in Gilgal ; there I began to hate them. Because of the wickedness of their deeds I will drive them out of my house . I will love them no more ; all their princes are rebels .",
+   "strong": "H7455",
+   "lemma": "ro.a",
+   "target_word": "wickedness",
+   "morph": "HNcmsc",
+   "stem": null,
+   "sense": "wickedness",
+   "lemma_meaning": "badness, evil",
+   "type": "status",
+   "valence": "sinful",
+   "how": "hate (H8130)",
+   "object": "deeds",
+   "object_type": "abstract",
+   "cause": "evil deeds of their princes",
+   "cause_clause": "wickedness deeds I drive house love no more",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "a.ha.vah",
+     "gloss": "love",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "sa.ne",
+     "gloss": "to hate",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "lo",
+     "gloss": "not",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "kol",
+     "gloss": "all",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "ra.ah",
+     "gloss": "distress: evil",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  }
+ ]
+}

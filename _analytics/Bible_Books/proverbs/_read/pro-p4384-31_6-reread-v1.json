@@ -1,0 +1,167 @@
+{
+ "book": "Pro",
+ "book_id": 20,
+ "chapter": 31,
+ "provenance": "reread-proverbs-2026",
+ "note": "P4384 (Pro 31:6) — give strong drink to the perishing, wine to those in bitter distress.",
+ "spans": {
+  "267483": {
+   "gloss": "bitter of soul (mar)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "anguish — the bitter distress that wine may ease"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the distressed",
+     "to": 267483,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the bitterness of soul of those in distress, to whom wine may bring relief — the deep anguish of the suffering and perishing, for whom drink is a mercy where for a ruler it is a peril"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the distressed soul it fills (267484)",
+     "to": 267483,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "pair",
+     "v": "welded to the anguished soul it describes",
+     "to": 267484,
+     "res": "span"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "mar (bitter) — 'and wine to those in BITTER distress' (31:6); the anguish of the suffering, for whom wine is a comfort. What corrupts the judge (31:4-5) may mercifully ease the dying and the broken-hearted — drink judged by its use."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  },
+  "267484": {
+   "gloss": "distress of soul (nephesh)",
+   "dims": [
+    {
+     "n": 101,
+     "l": "sense",
+     "k": "value",
+     "v": "suffering — the anguished soul given wine for relief"
+    },
+    {
+     "n": 102,
+     "l": "type",
+     "k": "value",
+     "v": "affect"
+    },
+    {
+     "n": 104,
+     "l": "seat",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 105,
+     "l": "bearer",
+     "k": "flag",
+     "v": "the distressed",
+     "to": 267484,
+     "res": "inferred"
+    },
+    {
+     "n": 106,
+     "l": "operation",
+     "k": "event",
+     "v": "the distress of soul of the perishing and heavy-hearted — the suffering spirit for whom strong drink is offered as a mercy, to help them forget their misery for a while"
+    },
+    {
+     "n": 107,
+     "l": "target",
+     "k": "flag",
+     "v": "the bitterness that marks it (267483)",
+     "to": 267484,
+     "res": "inferred"
+    },
+    {
+     "n": 108,
+     "l": "manner",
+     "k": "flag",
+     "v": "none",
+     "res": "none"
+    },
+    {
+     "n": 112,
+     "l": "coupling",
+     "k": "flag",
+     "v": "welded to the bitter anguish it feels",
+     "to": 267484,
+     "res": "inferred"
+    },
+    {
+     "n": 116,
+     "l": "locus",
+     "k": "value",
+     "v": "internal:ib-state"
+    },
+    {
+     "n": 114,
+     "l": "discovery",
+     "k": "note",
+     "v": "nephesh (soul) — 'to those in bitter DISTRESS' (31:6, 'bitter of soul'); the anguished spirit of the suffering, for whom wine is a comfort. The same drink that endangers the ruler mercifully eases the perishing (cf Job 3:20)."
+    },
+    {
+     "n": 115,
+     "l": "role",
+     "k": "value",
+     "v": "characteristic"
+    }
+   ]
+  }
+ }
+}

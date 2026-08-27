@@ -1,0 +1,28 @@
+# Psalm 77 — what it tells us about the inner being (Phase-2 chapter reading)
+
+- **Source:** the `lexical-model-2026` Phase-1 lexicals for Psa 77:1–20 (chapter-driven poetic build; roles sanity-checked). Complete chapter (vv.19 + others backfilled with the fixed full-text logic). Lexicals only; cited; grounded; inferences tagged *stated* | *inferred*.
+- **Lens:** the finding is the inner-being **operation**, God-relation as arena (`feedback_lens_is_inner_being_process_not_god_relation`).
+- **The inconsolable soul, resolved by the *willed redirection of memory*.** Psalm 77's findings: a **soul that refuses to be comforted** (v.2); the paradox that at the crisis, **remembering and meditating *aggravate*** the anguish (v.3); and the resolution — a **deliberate, willed turn** of the very same faculties from brooding on the present to recalling God's *ancient deeds* (vv.10–12). The meditative faculty's effect **depends on its object**.
+
+## The reading
+
+**I. The soul that refuses comfort (v.2).**
+"In the day of my trouble I **seek** the Lord… my **soul** (H5315, the seat — M47) **refuses to be comforted** (H5162, M05, *nacham*)" (v.2). The gem-finding: the inner being **actively *refuses* consolation** — not that none is offered, but that the soul **turns it away** *(stated)*. The operation: grief can reach a pitch where the inner being **rejects comfort** — an active refusal, not merely an absence of comforters (contrast Ps 69:20's *found none*; here comfort is refused) *(inferred: "refuses to be comforted" is the soul's own act of declining consolation)*.
+
+**II. Remembering *aggravates* — the crisis phase (vv.3, 6–9).**
+"When I **remember** (H2142, M41) God, I **moan**; when I **meditate** (H7878, M15, *siach*), my **spirit** (H7307, the seat) **faints** (H5848)" (v.3). The gem-finding, paradoxical: at the crisis, the God-ward operations — *remembering, meditating* — **do not soothe but worsen** the anguish; "I meditate and my spirit *faints*" *(stated)*. The operation: turned on the *present* distress, memory and meditation **intensify** the pain, feeding the doubting questions: "Will the Lord spurn forever? Has his steadfast love forever ceased? Has God forgotten to be gracious?" (vv.7–9) *(stated)*. The finding: **the meditative faculty, aimed at the unanswered present, breeds despair** — the same brooding that Ps 39 found builds heat, here builds a fainting spirit *(inferred)*.
+
+**III. The willed turn — redirecting memory to God's *ancient deeds* (vv.10–12).**
+"Then I **said**, 'I will **appeal** to this, to the **years of the right hand** of the Most High.' **I will remember** (H2142, M41) the deeds of the LORD… I will **ponder** (H1897, M42, *hagah*) all your work, and **meditate** (H7878, M15, *siach*) on your mighty deeds" (vv.10–12). The gem-finding — the psalm's hinge: a **deliberate, *willed* decision** — "**I will** remember… **I will** ponder" — to redirect the very same faculties *(stated)*. The operation: the same *remember/meditate/ponder* that **aggravated** when aimed at the present (v.3) are now **deliberately aimed at God's *past* deeds** — and *that* redirection resolves the crisis *(inferred: the identical verbs (zakar, siach, hagah) reappear, now with a *past-deeds* object, and the fainting turns to appeal)*. The finding: **the meditative faculty's effect depends on its *object*** — brooding on the unanswered present breeds despair; recalling God's *proven past* steadies the self. The resolution is not new feeling but a **willed change of what memory dwells on** *(inferred)*.
+
+## What Psalm 77 says about the inner being
+- **The soul can *refuse* comfort (v.2).** Grief can reach a pitch where the inner being actively declines consolation — a refusal, not merely an absence of comforters.
+- **Remembering/meditating on the unanswered present *aggravates* (vv.3, 7–9).** Aimed at the crisis, the meditative faculty breeds despair — "I meditate and my spirit faints" — and feeds the doubting questions.
+- **The crisis is resolved by a *willed redirection of memory* (vv.10–12).** A deliberate decision — "I *will* remember… ponder… meditate" — turns the very same faculties from the present to God's *ancient deeds*. The resolution is not new feeling but a willed change of what memory dwells on.
+- **The meditative faculty's effect depends on its *object* (vv.3, 11–12).** The same *remember/meditate/ponder* breeds despair on the present and steadies the self on God's proven past. What the inner being *dwells on* determines whether meditation wounds or heals.
+
+## Honest notes
+- **The same-verbs-different-object structure** (zakar/siach/hagah aggravating in v.3, healing in vv.11–12) is the psalm's spine — a strong worked datum: the meditative faculty is *neutral*; its *object* sets its effect (with Ps 1:2 delight-meditation, 39:3 fire-fanning meditation, here despair vs steadiness). Worth flagging for the study's movements focus.
+- **"refuses to be comforted" (v.2)** — *nacham* (M05) captured as a characteristic (comfort), here *refused*; the active-refusal-of-comfort operation read from the negation. Candidate for a distinct inner datum (grief declining consolation).
+- **Systemic Phase-1 residuals** (prohibition over-stamp at v.2; bearer=Asaph/LORD bleed via superscription; *faints/appeal* gate-2; backfilled vv. now full-text) — per the tracker's *Known Phase-1 residuals*; not re-detailed.
+- **Characteristics (sanity-checked):** *soul* (H5315, M47, vv.1,2); *comforted* (H5162, M05, v.2); *remember* (H2142, M41, vv.3,6,11); *meditate/ponder* (H7878/H1897, M15/M42, vv.3,6,12); *appeal* (H2470, M03, v.10). *spirit* (H7307, seat=spirit) + *faints* captured gate-2 — the aggravation read from these.

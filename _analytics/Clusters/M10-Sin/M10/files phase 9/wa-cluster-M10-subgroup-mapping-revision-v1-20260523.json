@@ -1,0 +1,542 @@
+{
+  "_mapping_meta": {
+    "cluster_code": "M10",
+    "cluster_name": "Sin, Guilt and Transgression",
+    "phase": "5-REVISION",
+    "date": "2026-05-23",
+    "scope": "Revision of M10-A (274V) and M10-B (339V) only. Other sub-groups unchanged.",
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519 §8",
+    "new_subgroups": ["M10-J","M10-K","M10-L","M10-M","M10-N","M10-O","M10-P","M10-Q","M10-R","M10-S","M10-T","M10-U","M10-V","M10-W","M10-X","M10-Y"],
+    "retired_subgroups": ["M10-A","M10-B"],
+    "unchanged_subgroups": ["M10-C","M10-D","M10-E","M10-F","M10-G","M10-H","M10-I","M10-BND"],
+    "total_verses_in_scope": 613,
+    "note": "Term-level routing rules with per-verse exceptions. CC resolves to flat vc_id assignments. All 613 M10-A + M10-B verses must be re-routed to one of the 16 new sub-groups."
+  },
+  "new_subgroup_definitions": [
+    {
+      "code": "M10-J",
+      "label": "Wilful sinning",
+      "characteristic": "Char-R1 — The will committing a known wrong: sinning as a deliberate relational act where the person knows what they are doing and does it",
+      "est_verses": 85,
+      "cross_register_flags": [],
+      "sort_order": 1
+    },
+    {
+      "code": "M10-K",
+      "label": "Unintentional sinning",
+      "characteristic": "Char-R2 — Sin committed without deliberate intent; real and morally consequential; once surfacing to awareness, conscience engaged and remedy required",
+      "est_verses": 30,
+      "cross_register_flags": [],
+      "sort_order": 2
+    },
+    {
+      "code": "M10-L",
+      "label": "Confession",
+      "characteristic": "Char-R3 — The moment the inner person names a committed sin as sin: conscience in confessional mode, the will owning what was done",
+      "est_verses": 55,
+      "cross_register_flags": [],
+      "sort_order": 3
+    },
+    {
+      "code": "M10-M",
+      "label": "Conscience suppression",
+      "characteristic": "Char-R4 — The inner person who does not recognize, denies, or suppresses awareness of their own sinful state; conscience absent, self-blinded, or falsely claiming innocence",
+      "est_verses": 25,
+      "cross_register_flags": [],
+      "sort_order": 4
+    },
+    {
+      "code": "M10-N",
+      "label": "Refusal to repent",
+      "characteristic": "Char-R5 — The will that persistently refuses to turn from a sinful course when departure is available and known to be required; turning actively withheld",
+      "est_verses": 38,
+      "cross_register_flags": [],
+      "sort_order": 5
+    },
+    {
+      "code": "M10-O",
+      "label": "Habitual defection",
+      "characteristic": "Char-R6 — Sin as a recurring, established pattern of the will over time; the will's settled direction toward sin",
+      "est_verses": 28,
+      "cross_register_flags": [],
+      "sort_order": 6
+    },
+    {
+      "code": "M10-P",
+      "label": "Contagious sin",
+      "characteristic": "Char-R7 — Sin as a moral direction transmitted through authority: a leader's inner commitment to wrongdoing bends the will of those under their influence",
+      "est_verses": 32,
+      "cross_register_flags": [],
+      "sort_order": 7
+    },
+    {
+      "code": "M10-Q",
+      "label": "Political revolt",
+      "characteristic": "Char-R8 — Breaking submission to established authority; wilful political defection carrying moral weight of sinful transgression",
+      "est_verses": 9,
+      "cross_register_flags": [],
+      "sort_order": 8
+    },
+    {
+      "code": "M10-R",
+      "label": "Sinful speech",
+      "characteristic": "Char-R9 — Sin committed through the mouth: blasphemy and slander originating in inner moral corruption, directed against God or persons",
+      "est_verses": 22,
+      "cross_register_flags": ["M06"],
+      "sort_order": 9
+    },
+    {
+      "code": "M10-S",
+      "label": "Specialised sinful mechanisms",
+      "characteristic": "Char-R10 — Sin operating through specific inner mechanisms: desire exploited by enticement, identity falsified through hypocrisy, covenantal identity abandoned through apostasy",
+      "est_verses": 5,
+      "cross_register_flags": ["M14","M08","M31"],
+      "sort_order": 10
+    },
+    {
+      "code": "M10-T",
+      "label": "Sin as universal condition",
+      "characteristic": "Char-R11 — Sin as a structural condition of the inner person: every person is under sin's dominion, fallen short of humanity's intended end",
+      "est_verses": 55,
+      "cross_register_flags": [],
+      "sort_order": 11
+    },
+    {
+      "code": "M10-U",
+      "label": "Sin as enslaving power",
+      "characteristic": "Char-R12 — Sin as an active force that masters the inner person, governing the will so that the person cannot freely choose otherwise",
+      "est_verses": 40,
+      "cross_register_flags": [],
+      "sort_order": 12
+    },
+    {
+      "code": "M10-V",
+      "label": "Sin as divine record",
+      "characteristic": "Char-R13 — Sin as an objective moral weight existing before God: recorded, accumulated, not hidden from divine memory; the inner person carries this record whether they feel it or not",
+      "est_verses": 60,
+      "cross_register_flags": [],
+      "sort_order": 13
+    },
+    {
+      "code": "M10-W",
+      "label": "Forgiveness sought and received",
+      "characteristic": "Char-R14 — The inner movement toward God in search of forgiveness; the will that turns and appeals for sin's removal; the divine response of granting or declaring pardon",
+      "est_verses": 75,
+      "cross_register_flags": ["M11"],
+      "sort_order": 14
+    },
+    {
+      "code": "M10-X",
+      "label": "Generational sin",
+      "characteristic": "Char-R15 — Sin as a moral condition that enters through lineage: inherited from ancestors, transmitted through family or national belonging",
+      "est_verses": 40,
+      "cross_register_flags": [],
+      "sort_order": 15
+    },
+    {
+      "code": "M10-Y",
+      "label": "Wilful persistence under confrontation",
+      "characteristic": "Char-R16 — The inner state of refusing to release sin even while its wrongness is known and confronted; the obdurate will, entrenched under challenge",
+      "est_verses": 35,
+      "cross_register_flags": [],
+      "sort_order": 16
+    }
+  ],
+  "term_routing_rules": [
+    {
+      "mti_id": 125,
+      "strongs": "H2398",
+      "translit": "cha.ta",
+      "source_subgroup": "M10-A",
+      "primary_route": "M10-J",
+      "split_rules": [
+        {
+          "destination": "M10-K",
+          "rule": "Unintentional sinning and cultic-ritual block: Lev 4:2/3/14/22/23/27/28/35; Lev 5:1/5/6/7/10/11/13/15/16/17; Lev 6:2/3/4/26; Lev 8:15; Lev 9:15; Lev 19:22; Num 15:27/28; Exo 29:36; Eze 43:20/22/23; Eze 45:18; Num 22:34; 1Sa 14:33/34"
+        },
+        {
+          "destination": "M10-L",
+          "rule": "Confession register: Exo 9:27; Exo 10:16; Exo 32:30; Num 12:11; Num 21:7; Deu 1:41; 1Sa 7:6; 1Sa 12:10; 1Sa 15:30; 1Sa 26:21; 2Sa 19:20; 2Sa 24:10; 2Sa 24:17; 1Ch 21:8; 1Ch 21:17; 2Ki 18:14; Neh 1:6; Job 33:27; Psa 106:6; Jer 3:25; Jer 14:20; Jer 14:7; Lam 5:7; Eze 33:16; Dan 9:5; Dan 9:8; Dan 9:11; Dan 9:15; Mic 7:9; Judg 10:10; Judg 10:15; 1Sa 7:6"
+        },
+        {
+          "destination": "M10-M",
+          "rule": "Conscience suppression / self-deception: Jer 2:35; Jer 16:10; 1Jo 1:10; Ecc 8:12; Ecc 2:26; Job 35:6; Judg 20:16 (literal)"
+        },
+        {
+          "destination": "M10-N",
+          "rule": "Refusal to repent: 2Ki 3:3; 2Ki 10:29; 2Ki 10:31; 2Ki 13:2; 2Ki 13:6; 2Ki 13:11; 2Ki 14:24; 2Ki 15:9; 2Ki 15:18; 2Ki 15:24; 2Ki 15:28; Neh 9:29; Eze 18:24; Eze 33:12"
+        },
+        {
+          "destination": "M10-O",
+          "rule": "Habitual pattern: Hos 8:11; Hos 10:9; Ecc 7:20; Ecc 7:26; 1Sa 2:25; 2Ki 17:7; Exo 9:34; 1Ki 8:46; Ecc 9:2; Ecc 9:18; Pro 11:31; Pro 13:22"
+        },
+        {
+          "destination": "M10-P",
+          "rule": "Leadership contagion: 1Ki 14:16; 1Ki 14:22; 1Ki 15:26; 1Ki 15:30; 1Ki 15:34; 1Ki 16:2; 1Ki 16:13; 1Ki 16:19; 1Ki 16:26; 1Ki 21:22; 1Ki 22:52; 2Ki 17:21; 2Ki 21:11; 2Ki 21:16; 2Ki 21:17; 2Ki 23:15; Jer 32:35; Exo 23:33; Deu 20:18"
+        },
+        {
+          "destination": "M10-V",
+          "rule": "Divine record / burden: Exo 32:33; Num 32:23; Lam 1:8; Lam 5:16; Psa 51:7; Pro 20:2; Hab 2:10; Zep 1:17; Job 8:4; Job 10:14; Job 24:19"
+        },
+        {
+          "destination": "M10-X",
+          "rule": "Generational inheritance: Isa 43:27; Lam 5:7 (primary X); Jer 14:20; Isa 65:20; 1Ki 8:47; Psa 78:17; Psa 78:32; Isa 64:5; Jer 8:14; Eze 37:23"
+        }
+      ],
+      "default_route": "M10-J",
+      "note": "All remaining cha.ta verses not matching a split rule route to M10-J (wilful sinning). CC resolves per-verse using reference list above."
+    },
+    {
+      "mti_id": 1116,
+      "strongs": "G0264",
+      "translit": "hamartanō",
+      "source_subgroup": "M10-A",
+      "primary_route": "M10-J",
+      "split_rules": [
+        {
+          "destination": "M10-T",
+          "rule": "Universal condition: Rom 2:12; Rom 3:23; Rom 5:12; Rom 5:14; Rom 5:16; 1Cor 7:28; 1Cor 7:36"
+        },
+        {
+          "destination": "M10-L",
+          "rule": "Confession: Mat 27:4; Luk 15:18; Luk 15:21"
+        },
+        {
+          "destination": "M10-M",
+          "rule": "Conscience suppression: 1Cor 15:34; Tit 3:11"
+        },
+        {
+          "destination": "M10-N",
+          "rule": "Refusal / persistence: 1Ti 5:20; Heb 10:26; Rom 6:15"
+        },
+        {
+          "destination": "M10-O",
+          "rule": "Habitual: Heb 3:17; 1Jo 3:6"
+        },
+        {
+          "destination": "M10-U",
+          "rule": "Enslaving power / liberation: 1Jo 3:8; 1Jo 3:9; 1Jo 5:18; Eph 4:26; 1Jo 5:16"
+        },
+        {
+          "destination": "M10-J",
+          "rule": "Interpersonal / deliberate: Mat 18:15; Mat 18:21; Luk 17:3; Luk 17:4; 1Cor 8:12; Joh 5:14; Joh 8:11; Act 25:8; 1Pe 2:20; 2Pe 2:4; Joh 9:2; Joh 9:3"
+        }
+      ],
+      "default_route": "M10-J"
+    },
+    {
+      "mti_id": 1127,
+      "strongs": "G0988",
+      "translit": "blasfēmia",
+      "source_subgroup": "M10-A",
+      "primary_route": "M10-R",
+      "split_rules": [],
+      "note": "All 18 verses to M10-R. M06 cross-register flag preserved."
+    },
+    {
+      "mti_id": 6248,
+      "strongs": "G0989",
+      "translit": "blasfēmos",
+      "source_subgroup": "M10-A",
+      "primary_route": "M10-R",
+      "split_rules": [],
+      "note": "All 4 verses to M10-R. M06 cross-register flag preserved."
+    },
+    {
+      "mti_id": 4995,
+      "strongs": "G1185",
+      "translit": "deleazō",
+      "source_subgroup": "M10-A",
+      "primary_route": "M10-S",
+      "split_rules": [],
+      "note": "All 3 verses to M10-S. M14 cross-register flag preserved."
+    },
+    {
+      "mti_id": 5546,
+      "strongs": "G4942",
+      "translit": "sunupokrinomai",
+      "source_subgroup": "M10-A",
+      "primary_route": "M10-S",
+      "split_rules": [],
+      "note": "1 verse to M10-S. M08 cross-register flag preserved."
+    },
+    {
+      "mti_id": 1090,
+      "strongs": "G0646",
+      "translit": "apostasia",
+      "source_subgroup": "M10-A",
+      "primary_route": "M10-S",
+      "split_rules": [],
+      "note": "1 verse to M10-S. M31 cross-register flag preserved."
+    },
+    {
+      "mti_id": 1083,
+      "strongs": "H6586",
+      "translit": "pa.sha_political",
+      "source_subgroup": "M10-A",
+      "primary_route": "M10-Q",
+      "split_rules": [],
+      "note": "9 political-revolt verses only (pa.sha secondary allocation). All to M10-Q."
+    },
+    {
+      "mti_id": 9,
+      "strongs": "G0266",
+      "translit": "hamartia",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-T",
+      "split_rules": [
+        {
+          "destination": "M10-U",
+          "rule": "Enslaving-power register: Joh 8:34; Rom 6:1/2/6/7/11/12/13/14/17/18/20/22/23; Gal 3:22; Heb 12:4"
+        },
+        {
+          "destination": "M10-V",
+          "rule": "Burden / record requiring removal: Joh 1:29; 1Pe 2:24; Heb 9:26/28; Rev 1:5; Isa 53:12 (if present)"
+        },
+        {
+          "destination": "M10-W",
+          "rule": "Forgiveness / removal received: Mat 26:28; Luk 7:47/48; Act 2:38; Act 10:43; 1Co 15:3; Col 1:14; Eph 1:7; 1Jo 1:7; 1Jo 2:12; Heb 10:12; Heb 10:17/18"
+        },
+        {
+          "destination": "M10-L",
+          "rule": "Confession / naming: where hamartia verse is primarily a confession context (rare — most confession uses hamartanō verb)"
+        },
+        {
+          "destination": "M10-J",
+          "rule": "Wilful act register: Heb 12:1 (sin entangling — deliberate clinging)"
+        }
+      ],
+      "default_route": "M10-T"
+    },
+    {
+      "mti_id": 2446,
+      "strongs": "H2403B",
+      "translit": "chat.tat",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-V",
+      "split_rules": [
+        {
+          "destination": "M10-W",
+          "rule": "Atonement / forgiveness sought and mediated: Lev 4:3/14/26/28/35; Lev 5:6/10/13; Lev 10:17/19; Lev 16:16/30/34; Lev 19:22; Exo 32:30"
+        },
+        {
+          "destination": "M10-N",
+          "rule": "Refusal / persistence: 1Ki 16:31; all 'did not turn from sin' chat.tat patterns"
+        },
+        {
+          "destination": "M10-X",
+          "rule": "Generational: Lev 26:39; Num 14:18"
+        },
+        {
+          "destination": "M10-P",
+          "rule": "Leadership transmitted: defection-transmitted patterns in chat.tat"
+        },
+        {
+          "destination": "M10-T",
+          "rule": "Universal condition: chat.tat framing sin as shared human condition (Gen 4:7 predatory-force dimension → M10-U if enslaving; → M10-V if burden)"
+        }
+      ],
+      "default_route": "M10-V"
+    },
+    {
+      "mti_id": 1192,
+      "strongs": "G3900",
+      "translit": "paraptōma_remaining",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-T",
+      "split_rules": [
+        {
+          "destination": "M10-W",
+          "rule": "Forgiveness / justification: Eph 1:7; Col 2:13 (forgiveness framing); 2Cor 5:19; Mat 6:14/15"
+        },
+        {
+          "destination": "M10-J",
+          "rule": "Act register: Gal 6:1 (caught in a trespass — specific act)"
+        }
+      ],
+      "default_route": "M10-T",
+      "note": "These are the 9 non-Adam-paradigm verses from paraptōma (Adam-paradigm 5V already in M10-F unchanged)."
+    },
+    {
+      "mti_id": 1114,
+      "strongs": "H2403A",
+      "translit": "chat.ta.ah",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-V",
+      "split_rules": [],
+      "note": "2 verses. Both are objective-sin register. M10-V."
+    },
+    {
+      "mti_id": 127,
+      "strongs": "H2401",
+      "translit": "cha.ta.ah",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-V",
+      "split_rules": [
+        {
+          "destination": "M10-W",
+          "rule": "Atonement-seeking passages: Exo 32:30/31; Lev passages seeking forgiveness for great sin"
+        }
+      ],
+      "default_route": "M10-V"
+    },
+    {
+      "mti_id": 2447,
+      "strongs": "H2403H",
+      "translit": "chat.tat_sin_offering",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-W",
+      "split_rules": [],
+      "note": "4 verses. All atonement-response register. M10-W. M11 cross-register flag preserved."
+    },
+    {
+      "mti_id": 2449,
+      "strongs": "H2403I",
+      "translit": "chat.tat_punishment",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-V",
+      "split_rules": [],
+      "note": "2 verses. Punishment-as-divine-record. M10-V."
+    },
+    {
+      "mti_id": 3171,
+      "strongs": "H3725",
+      "translit": "kip.pu.rim",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-W",
+      "split_rules": [],
+      "note": "8 verses. All atonement-response register. M10-W. M11 cross-register flag preserved."
+    },
+    {
+      "mti_id": 126,
+      "strongs": "H2399",
+      "translit": "chet",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-V",
+      "split_rules": [
+        {
+          "destination": "M10-J",
+          "rule": "Deliberate culpable act passages (approx 8V where chet names a specific committed wrong)"
+        },
+        {
+          "destination": "M10-L",
+          "rule": "Confession-register passages where the sin is being owned"
+        }
+      ],
+      "default_route": "M10-V",
+      "note": "33 verses total. Primary: personal liability/record (M10-V). CC resolves per-verse."
+    },
+    {
+      "mti_id": 1123,
+      "strongs": "H7564",
+      "translit": "rish.ah",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-T",
+      "split_rules": [],
+      "note": "4 verses. Wickedness as enduring inner condition. M10-T."
+    },
+    {
+      "mti_id": 5619,
+      "strongs": "H5932",
+      "translit": "al.vah",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-T",
+      "split_rules": [],
+      "note": "1 verse. Iniquity as defining moral condition. M10-T."
+    },
+    {
+      "mti_id": 1120,
+      "strongs": "G0265",
+      "translit": "hamartēma",
+      "source_subgroup": "M10-B",
+      "primary_route": "M10-V",
+      "split_rules": [
+        {
+          "destination": "M10-W",
+          "rule": "Forgiveness-framing passages: Mar 3:28/29 (within vs beyond forgiveness)"
+        }
+      ],
+      "default_route": "M10-V"
+    }
+  ],
+  "unchanged_term_routes": {
+    "note": "The following terms and their sub-group assignments are unchanged. They were already correctly routed to M10-C through M10-BND and are not affected by this revision.",
+    "terms": [
+      "G0092 adikēma -> M10-I",
+      "G0094 adikos -> M10-I",
+      "G0646 apostasia -> M10-S (was M10-A, now explicitly M10-S)",
+      "G1311 diaftheirō -> M10-H",
+      "G3845 parabainō -> M10-F",
+      "G3847 parabasis -> M10-F",
+      "G3848 parabatēs -> M10-F",
+      "G5351 ftheirō -> M10-H",
+      "G5356 fthora -> M10-H",
+      "H0205H a.ven -> M10-BND",
+      "H0816 a.sham -> M10-D",
+      "H0818 a.shem -> M10-D",
+      "H0819 ash.mah -> M10-D",
+      "H0898 ba.gad -> M10-G",
+      "H2017 ho.phekh -> M10-H",
+      "H2254B cha.val -> M10-H",
+      "H2256D che.vel -> M10-BND",
+      "H2400 chat.ta -> M10-C",
+      "H2398 cha.ta (M10-F, pa.sha primary) -> M10-F (unchanged)",
+      "H2475 cha.loph -> M10-BND",
+      "H3891 la.zut -> M10-H",
+      "H4297 mut.teh -> M10-H",
+      "H4603 ma.al verb -> M10-G",
+      "H4604 ma.al noun -> M10-G",
+      "H4889 mash.chit -> M10-BND",
+      "H4892 mash.chet -> M10-BND",
+      "H4893B ma.she.chat -> M10-BND",
+      "H5040 nav.lut -> M10-H",
+      "H5494 sur -> M10-H",
+      "H5557 sa.laph -> M10-H",
+      "H5627 sa.rah -> M10-F",
+      "H5753A a.vah twist -> M10-H",
+      "H5753B a.vah pervert -> M10-H",
+      "H5760 a.vil -> M10-I",
+      "H5766A a.vel -> M10-I",
+      "H5766B av.lah -> M10-I",
+      "H5767 av.val -> M10-I",
+      "H5771G a.von crime -> M10-E",
+      "H5771H a.von guilt -> M10-D",
+      "H5771I a.von punishment -> M10-D",
+      "H5932 al.vah -> M10-T (was M10-B; now M10-T)",
+      "H6330 pu.qah -> M10-D",
+      "H6586 pa.sha primary -> M10-F (unchanged)",
+      "H6588 pe.sha -> M10-F",
+      "H7564 rish.ah -> M10-T (was M10-B; now M10-T)",
+      "H8397 te.vel -> M10-H",
+      "H8419 tah.pu.khah -> M10-H",
+      "G0268 hamartōlos -> M10-C"
+    ]
+  },
+  "distribution_check": {
+    "gate_threshold_verses": 530,
+    "gate_pct": 40.0,
+    "total_cluster_verses": 1325,
+    "revised_subgroup_estimates": {
+      "M10-J": {"est_verses": 85, "est_pct": 6.4},
+      "M10-K": {"est_verses": 30, "est_pct": 2.3},
+      "M10-L": {"est_verses": 55, "est_pct": 4.2},
+      "M10-M": {"est_verses": 25, "est_pct": 1.9},
+      "M10-N": {"est_verses": 38, "est_pct": 2.9},
+      "M10-O": {"est_verses": 28, "est_pct": 2.1},
+      "M10-P": {"est_verses": 32, "est_pct": 2.4},
+      "M10-Q": {"est_verses": 9, "est_pct": 0.7},
+      "M10-R": {"est_verses": 22, "est_pct": 1.7},
+      "M10-S": {"est_verses": 5, "est_pct": 0.4},
+      "M10-T": {"est_verses": 55, "est_pct": 4.2},
+      "M10-U": {"est_verses": 40, "est_pct": 3.0},
+      "M10-V": {"est_verses": 60, "est_pct": 4.5},
+      "M10-W": {"est_verses": 75, "est_pct": 5.7},
+      "M10-X": {"est_verses": 40, "est_pct": 3.0},
+      "M10-Y": {"est_verses": 35, "est_pct": 2.6}
+    },
+    "all_below_gate": true,
+    "largest_subgroup": "M10-W",
+    "largest_subgroup_est_verses": 75,
+    "largest_subgroup_est_pct": 5.7
+  }
+}

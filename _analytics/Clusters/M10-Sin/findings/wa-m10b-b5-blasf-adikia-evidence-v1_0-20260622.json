@@ -1,0 +1,631 @@
+{
+ "_meta": {
+  "description": "M10b B5 blasfēmeō + adikia EVIDENCE (19). verbal sin vs God name/slander; unrighteousness vs righteousness/truth, sin-associated, forgivable. Completes M10b. Evidence only.",
+  "cluster": "M10b",
+  "batch": "B5",
+  "lemmas": [
+   "blasfēmeō",
+   "adikia"
+  ],
+  "occurrences": 19,
+  "produced": "2026-06-22",
+  "version": "v1_0"
+ },
+ "records": [
+  {
+   "ref": "Rom 1:18",
+   "verse_text": "Rom 1:18 For the wrath of God is revealed from heaven against all ungodliness and unrighteousness of men , who by their unrighteousness suppress the truth .",
+   "strong": "G0093",
+   "lemma": "adikia",
+   "target_word": "unrighteousness",
+   "morph": "N-ASF",
+   "stem": null,
+   "sense": "unrighteousness",
+   "lemma_meaning": "wickedness, evil, wrongdoing",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "cause": "suppressing the truth",
+   "cause_clause": "wrath God revealed from heaven against all ungodliness",
+   "touch_points": [
+    {
+     "lemma": "orgē",
+     "gloss": "wrath",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "kai",
+     "gloss": "and",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "alētheia",
+     "gloss": "truth",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 1:29",
+   "verse_text": "Rom 1:29 They were filled with all manner of unrighteousness , evil , covetousness , malice . They are full of envy , murder , strife , deceit , maliciousness . They are gossips ,",
+   "strong": "G0093",
+   "lemma": "adikia",
+   "target_word": "unrighteousness",
+   "morph": "N-DSF",
+   "stem": null,
+   "sense": "unrighteousness",
+   "lemma_meaning": "wickedness, evil, wrongdoing",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "phthonos",
+     "gloss": "envy",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "pleonexia",
+     "gloss": "greediness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "dolos",
+     "gloss": "deceit",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ponēria",
+     "gloss": "evil",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "kakia",
+     "gloss": "evil",
+     "role": "partner",
+     "ring": "M10b"
+    },
+    {
+     "lemma": "eris",
+     "gloss": "quarrel",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 2:8",
+   "verse_text": "Rom 2:8 but for those who are self-seeking and do not obey the truth , but obey unrighteousness , there will be wrath and fury .",
+   "strong": "G0093",
+   "lemma": "adikia",
+   "target_word": "unrighteousness",
+   "morph": "N-DSF",
+   "stem": null,
+   "sense": "unrighteousness",
+   "lemma_meaning": "wickedness, evil, wrongdoing",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "eritheia",
+     "gloss": "rivalry",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "de",
+     "gloss": "then",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "kai",
+     "gloss": "and",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "ek",
+     "gloss": "out from",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "peithō",
+     "gloss": "to persuade",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "alētheia",
+     "gloss": "truth",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "apeitheō",
+     "gloss": "to disobey",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "orgē",
+     "gloss": "wrath",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 2:24",
+   "verse_text": "Rom 2:24 For , as it is written , “The name of God is blasphemed among the Gentiles because of you .”",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "blasphemed",
+   "morph": "V-PPI-3S",
+   "stem": null,
+   "sense": "blasphemed",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "object": "Gentiles",
+   "object_type": "God",
+   "cause": "Israel's disobedience",
+   "cause_clause": "as written name God blasphemed among Gentiles of",
+   "experiencer": "other",
+   "relational": "among",
+   "touch_points": []
+  },
+  {
+   "ref": "Rom 3:5",
+   "verse_text": "Rom 3:5 But if our unrighteousness serves to show the righteousness of God , what shall we say ? That God is unrighteous to inflict wrath on us? ( I speak in a human way .)",
+   "strong": "G0093",
+   "lemma": "adikia",
+   "target_word": "unrighteousness",
+   "morph": "N-NSF",
+   "stem": null,
+   "sense": "unrighteousness",
+   "lemma_meaning": "wickedness, evil, wrongdoing",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "how": "show (G4921)",
+   "object": "righteousness",
+   "object_type": "abstract",
+   "experiencer": "other",
+   "relational": "our",
+   "touch_points": [
+    {
+     "lemma": "de",
+     "gloss": "then",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "dikaiosunē",
+     "gloss": "righteousness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "adikos",
+     "gloss": "unjust",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 3:8",
+   "verse_text": "Rom 3:8 And why not do evil that good may come ?— as some people slanderously charge us with saying . Their condemnation is just .",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "slanderously",
+   "morph": "V-PPI-1P",
+   "stem": null,
+   "sense": "slanderously",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "experiencer": "self",
+   "immediate_response": "saying condemnation",
+   "touch_points": [
+    {
+     "lemma": "kai",
+     "gloss": "and",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "agathos",
+     "gloss": "good",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "endikos",
+     "gloss": "just",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 6:13",
+   "verse_text": "Rom 6:13 Do not present your members to sin as instruments for unrighteousness , but present yourselves to God as those who have been brought from death to life , and your members to God as instruments for righteousness .",
+   "strong": "G0093",
+   "lemma": "adikia",
+   "target_word": "unrighteousness",
+   "morph": "N-GSF",
+   "stem": null,
+   "sense": "unrighteousness",
+   "lemma_meaning": "wickedness, evil, wrongdoing",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "how": "present (G3936)",
+   "object": "God",
+   "object_type": "God",
+   "experiencer": "other (addressed)",
+   "immediate_response": "life",
+   "touch_points": [
+    {
+     "lemma": "dikaiosunē",
+     "gloss": "righteousness",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "ek",
+     "gloss": "out from",
+     "role": "qualifier",
+     "ring": "external"
+    },
+    {
+     "lemma": "hamartia",
+     "gloss": "sin",
+     "role": "partner",
+     "ring": "CORE"
+    }
+   ]
+  },
+  {
+   "ref": "Rom 9:14",
+   "verse_text": "Rom 9:14 What shall we say then ? Is there injustice on God’s part? By no means !",
+   "strong": "G0093",
+   "lemma": "adikia",
+   "target_word": "injustice",
+   "morph": "N-NSF",
+   "stem": null,
+   "sense": "injustice",
+   "lemma_meaning": "wickedness, evil, wrongdoing",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "how": "say (G4483)",
+   "experiencer": "self",
+   "relational": [
+    "Is",
+    "on"
+   ],
+   "touch_points": []
+  },
+  {
+   "ref": "Rom 14:16",
+   "verse_text": "Rom 14:16 So do not let what you regard as good be spoken of as evil .",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "evil",
+   "morph": "V-PPM-3S",
+   "stem": null,
+   "sense": "evil",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "forbidden",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "agathos",
+     "gloss": "good",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 4:13",
+   "verse_text": "1Cor 4:13 when slandered , we entreat . We have become , and are still , like the scum of the world , the refuse of all things .",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "slandered",
+   "morph": "V-PPP-NPM",
+   "stem": null,
+   "sense": "slandered",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "touch_points": [
+    {
+     "lemma": "parakaleō",
+     "gloss": "to plead/comfort",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 10:30",
+   "verse_text": "1Cor 10:30 If I partake with thankfulness , why am I denounced because of that for which I give thanks ?",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "denounced",
+   "morph": "V-PPI-1S",
+   "stem": null,
+   "sense": "denounced",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "experiencer": "self",
+   "relational": "because",
+   "touch_points": [
+    {
+     "lemma": "charis",
+     "gloss": "grace",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "eucharisteō",
+     "gloss": "to thank",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "1Cor 13:6",
+   "verse_text": "1Cor 13:6 it does not rejoice at wrongdoing , but rejoices with the truth .",
+   "strong": "G0093",
+   "lemma": "adikia",
+   "target_word": "wrongdoing",
+   "morph": "N-DSF",
+   "stem": null,
+   "sense": "wrongdoing",
+   "lemma_meaning": "wickedness, evil, wrongdoing",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "how": "rejoice (G5463)",
+   "experiencer": "other",
+   "immediate_response": "rejoices truth",
+   "relational": "at",
+   "touch_points": [
+    {
+     "lemma": "chairo",
+     "gloss": "to rejoice",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "sunchairo",
+     "gloss": "to rejoice with",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "alētheia",
+     "gloss": "truth",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Heb 8:12",
+   "verse_text": "Heb 8:12 For I will be merciful toward their iniquities , and I will remember their sins no more .”",
+   "strong": "G0093",
+   "lemma": "adikia",
+   "target_word": "iniquities",
+   "morph": "N-DPF",
+   "stem": null,
+   "sense": "iniquities",
+   "lemma_meaning": "wickedness, evil, wrongdoing",
+   "type": "status",
+   "faculty": "moral_evaluation",
+   "valence": "sinful",
+   "how": "remember (G3415)",
+   "object": "sins",
+   "object_type": "abstract",
+   "cause_clause": "be merciful their iniquities and remember their sins",
+   "experiencer": "self",
+   "relational": "their",
+   "touch_points": [
+    {
+     "lemma": "hileōs",
+     "gloss": "propitious/gracious",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "mnaomai",
+     "gloss": "to remember",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Jude 8",
+   "verse_text": "Jude 8 Yet in like manner these people also , relying on their dreams , defile the flesh , reject authority , and blaspheme the glorious ones.",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "blaspheme",
+   "morph": "V-PAI-3P",
+   "stem": null,
+   "sense": "blaspheme",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "location": "flesh",
+   "object": "glorious",
+   "object_type": "spiritual-being",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "kuriotēs",
+     "gloss": "lordship",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "miainō",
+     "gloss": "to stain",
+     "role": "partner",
+     "ring": "M10c"
+    }
+   ]
+  },
+  {
+   "ref": "Jude 10",
+   "verse_text": "Jude 10 But these people blaspheme all that they do not understand , and they are destroyed by all that they, like unreasoning animals , understand instinctively .",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "blaspheme",
+   "morph": "V-PAI-3P",
+   "stem": null,
+   "sense": "blaspheme",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "object": "all",
+   "experiencer": "other",
+   "touch_points": [
+    {
+     "lemma": "ftheirō",
+     "gloss": "to destroy",
+     "role": "partner",
+     "ring": "R3"
+    }
+   ]
+  },
+  {
+   "ref": "Rev 13:6",
+   "verse_text": "Rev 13:6 It opened its mouth to utter blasphemies against God , blaspheming his name and his dwelling , that is , those who dwell in heaven .",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "blaspheming",
+   "morph": "V-AAN",
+   "stem": null,
+   "sense": "blaspheming",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "object": "name",
+   "object_type": "God",
+   "divine_involvement": "object",
+   "immediate_response": "dwell heaven",
+   "relational": "his",
+   "touch_points": [
+    {
+     "lemma": "blasfēmia",
+     "gloss": "blasphemy",
+     "role": "partner",
+     "ring": "R2"
+    }
+   ]
+  },
+  {
+   "ref": "Rev 16:9",
+   "verse_text": "Rev 16:9 They were scorched by the fierce heat , and they cursed the name of God who had power over these plagues . They did not repent and give him glory .",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "cursed",
+   "morph": "V-AAI-3P",
+   "stem": null,
+   "sense": "cursed",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "object": "name",
+   "object_type": "God",
+   "experiencer": "other",
+   "divine_involvement": "object",
+   "touch_points": [
+    {
+     "lemma": "metanoeo",
+     "gloss": "to repent",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "exousia",
+     "gloss": "authority",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Rev 16:11",
+   "verse_text": "Rev 16:11 and cursed the God of heaven for their pain and sores . They did not repent of their deeds .",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "cursed",
+   "morph": "V-AAI-3P",
+   "stem": null,
+   "sense": "cursed",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "object": "God",
+   "object_type": "God",
+   "experiencer": "other",
+   "divine_involvement": "object",
+   "immediate_response": "repent",
+   "touch_points": [
+    {
+     "lemma": "ponos",
+     "gloss": "travail",
+     "role": "partner",
+     "ring": "external"
+    },
+    {
+     "lemma": "metanoeo",
+     "gloss": "to repent",
+     "role": "partner",
+     "ring": "external"
+    }
+   ]
+  },
+  {
+   "ref": "Rev 16:21",
+   "verse_text": "Rev 16:21 And great hailstones , about one hundred pounds each, fell from heaven on people ; and they cursed God for the plague of the hail , because the plague was so severe .",
+   "strong": "G0987",
+   "lemma": "blasfēmeō",
+   "target_word": "cursed",
+   "morph": "V-AAI-3P",
+   "stem": null,
+   "sense": "cursed",
+   "lemma_meaning": "to blaspheme, insult, slander, curse",
+   "type": "action",
+   "valence": "sinful",
+   "origin": "received-from-outside",
+   "object": "God",
+   "object_type": "God",
+   "cause": "the severe plague of hail falling on people",
+   "cause_clause": "plague was so severe",
+   "experiencer": "other",
+   "divine_involvement": "object",
+   "immediate_response": "was",
+   "touch_points": []
+  }
+ ]
+}

@@ -1,0 +1,31 @@
+{
+  "cluster": "M10c",
+  "date": "2026-06-01",
+  "method": "v3_0 §10.1 inherited-finding reconciliation + v2_9 §18 disposition vocab; each item evaluated on content, not marker-flipped.",
+  "dispositions": [
+    {
+      "table": "wa_session_b_findings",
+      "id": 55,
+      "type": "DIMENSION_REVIEW",
+      "action": "set_aside",
+      "evaluation": "Registry-115 (passion) Phase-C structural observation: it noted reg-115 contributed zero desiderative groups and asked Session B to clarify the passion registry's coverage. The term-anchor re-clustering has since dissolved registry-as-clustering-driver and placed reg-115's defilement terms into M10c (defiling passion / moral defilement). The observation is therefore superseded and no longer a standing M10c analytical finding.",
+      "reason": "Set aside (superseded): registry-level Phase-C dimension note made moot by the term-anchor re-clustering; not M10c analytical content. (Valid ground: out-of-scope/superseded structural note, not a forbidden spiritual-framing reason.)"
+    },
+    {
+      "table": "wa_session_research_flags",
+      "id": 364,
+      "type": "SB_FINDING",
+      "action": "resolve",
+      "evaluation": "G3392 (miaino) at Joh 18:28 names ceremonial ritual-status defilement-avoidance ('not be defiled, but could eat the Passover'). The inner-being content (hypocrisy of ceremonial scrupulousness while plotting unjust execution) is carried by narrative juxtaposition with v.30+, NOT by miaino, which here names the ritual-status mechanism. Per the valid set-aside ground 'the term refers to something other than an inner state (ritual procedure)', the verse-level relevance for the inner-being profile is wrong_face.",
+      "reason": "Resolved: borderline-retain question closed — Joh 18:28 miaino = ceremonial ritual-status (not an inner-being defilement state); inner-being content is narrative, not term-borne. Verse is wrong_face for the inner-being profile; no standing M10c finding required."
+    },
+    {
+      "table": "cluster_finding (A2 advisory-review)",
+      "id": "20385, 20412, 20450, 20568, 20571",
+      "type": "nonsense/gap heuristic on cluster_synthesis rows",
+      "action": "review — no action (false positives)",
+      "evaluation": "All five are legitimate cluster_synthesis essays that analytically discuss the cluster's gaps and silences — which is the synthesis layer's actual job (e.g. 'the cluster's combined silence on divine possession reveals a differentiated picture…', 'the four frameworks surface four gap-areas that the verse evidence has not addressed'). The A2 text-match heuristic over-triggered on the words silence / gap-areas / has not addressed. None is a broken or content-empty row.",
+      "reason": "False positives: substantive cross-characteristic synthesis content, not nonsense. No fix required. (Auditor refinement noted: A2 should exclude finding_status='cluster_synthesis' or tighten the gap-pattern, since discussing analytic gaps is that layer's purpose.)"
+    }
+  ]
+}

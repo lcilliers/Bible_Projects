@@ -1,0 +1,3397 @@
+{
+ "meta": {
+  "WORK_CONTRACT": {
+   "objective": "For each distinct reading (anchor) below, write a narrative answering: what does this passage say about the ib_char item for the inner-being operations. Unit of work = the passage.",
+   "unit_of_work": "passage",
+   "narrative_directives": [
+    "1. Cover everything — leave nothing out. Interpret every dimension present in each lexical, and every absence. A narrative that addresses only some dimensions is incomplete.",
+    "2. Silence is evidence. value 'none' = the reader explicitly found none; present:false = no row recorded. Interpret what the silence says (e.g. no seat -> the operation is not organ-located); never skip a dimension for being empty.",
+    "3. Read in relation to the inner being. Describe what the char DOES within the human inner life — God and others are the arena it acts toward, not the subject. Keep the lens on the inner-being process.",
+    "4. Describe the full process, not a label. Trace the movement: source -> operation -> target -> coupling -> effect. Show the flow, not a static tag.",
+    "5. No valence bias. Read the descent with the same weight as the ascent — pride, malice, the wicked's interior, failure, the dark movement as fully as praise or trust. Do not privilege the edifying.",
+    "6. Do not filter uncomfortable results. Report what the data supports even when uncomfortable or against expectation. Completeness over comfort.",
+    "7. Grounded + backtrackable. Only what the passage and its lexicals support; cite ve_lexical_id / reference for each claim; no imported theology, no invention. If evidence is thin, say so.",
+    "8. Preserve distinctions. Where a passage holds several lexicals, do not collapse them — the difference between them is a finding.",
+    "9. Narrate each distinct reading once. A lexical marked duplicate shares its anchor's outcome (same_as) — do not re-narrate it; reference the anchor. Write the narrative at the anchor and there note the recurrences.",
+    "10. Interrogate difference — variation is a finding. Where the same item has >1 distinct reading (see meta.reading_map), ask WHY they differ and whether the difference carries meaning or impact (a shift in bearer/source/target/coupling/intensity, or ascent->descent). How a characteristic varies across contexts is evidence of how it operates."
+   ],
+   "worklist": [
+    "Psa 37:14-40",
+    "Psa 45:1-15",
+    "Psa 55:1-5",
+    "Psa 72:13-15",
+    "Psa 102:12-16",
+    "Psa 103:8-14",
+    "Psa 109:1-8",
+    "Psa 109:14-22",
+    "Psa 112:1-10",
+    "Psa 116:1-10",
+    "Psa 130:1-8",
+    "Psa 140:1-9",
+    "Psa 141:4-10"
+   ],
+   "narratives_needed": "one per distinct reading (anchor) = scope_counts.distinct_readings; duplicates (same_as) are cross-referenced, not re-narrated.",
+   "completeness": {
+    "rule": "Complete iff every anchor reading has a narrative, every duplicate is cross-referenced to its anchor, and within each anchor every dimension (incl. none/absent) is interpreted. Nothing here is pre-filtered.",
+    "this_file_contains": "EVERY ve_lexical row (all 101..116 dimensions, incl. value \"none\"; absences shown present:false) for this family's char-spans.",
+    "verify_against_db": "SELECT COUNT(*) FROM ve_lexical x JOIN verse_span_index si ON si.id=x.verse_span_id WHERE COALESCE(x.delete_flagged,0)=0 AND si.ib_char_id IN (SELECT id FROM ib_characteristic WHERE book_scope=19 AND family='grace-mercy-compassion');  -- must equal scope_counts.ve_lexical_rows"
+   },
+   "backtracking": {
+    "key": "ve_lexical.id — on every present dimension (and collected per lexical in ve_lexical_ids).",
+    "how": "Raw row: SELECT * FROM ve_lexical WHERE id = <ve_lexical_id>.",
+    "derivation": "ib_characteristic(family) -[ib_char_id]-> verse_span_index -[verse_span_id]-> ve_lexical; verse_span_index.verse_id -> verse -> passage. verse_span_index is the join only, not emitted."
+   },
+   "output": {
+    "format": "TWO artefacts per family, both required: (1) a companion JSON keyed to this base source by reading_id; (2) a rendered markdown.",
+    "json_file": "verse-analysis/psalms/_narratives/psalms__grace-mercy-compassion__narratives.json",
+    "md_file": "verse-analysis/psalms/_narratives/psalms__grace-mercy-compassion__narratives.md",
+    "granularity": "One record per ANCHOR reading (reading_id). Duplicates (same_as) are NOT re-narrated — reference the anchor.",
+    "record_shape": {
+     "reading_id": "str",
+     "char_key": "str",
+     "ib_char": "str",
+     "anchor_ref": "str",
+     "passage_ref": "str",
+     "narrative": "the RAW/analytical read — grounded prose meeting directives 1-10, citing the dimensions it rests on (may use study terms).",
+     "story": "the SAME content retold as FLOWING PROSE for a GENERAL ENGLISH READER — a story, with NO study language or technical jargon: no dimension numbers/labels, no sense/operation/bearer/coupling/locus, no ve_lexical/ib_char/anchor. Tell it plainly and vividly as you would to a non-specialist; it must say what `narrative` says, only in plain English.",
+     "citations": "[ve_lexical_id,...] the narrative rests on (backtrack; directive 7)",
+     "recurrences": "[ref,...] where this reading recurs (directive 9)",
+     "variation_note": "why this reading differs from the item's other readings, where it applies (directive 10)"
+    },
+    "markdown_render": "REQUIRED in every case. The .md shows, per passage: (a) the passage text, (b) the raw narrative, (c) the story. Renderer: scripts/_render_narratives_to_md_20260712.py --family <slug>.",
+    "completeness": "Every reading_id in this base source appears exactly once in the JSON; each record has BOTH narrative and story; each cites >=1 ve_lexical_id.",
+    "destination": "DB via output -> patch -> DB (all study work in the DB). The JSON is the transport; the .md is the readable rendering."
+   }
+  },
+  "family": "grace-mercy-compassion",
+  "book": "Psalms",
+  "book_id": 19,
+  "generated": "2026-07-12",
+  "source_of_truth": "database/bible_research.db — authoritative; regenerable view.",
+  "ib_char_items": [
+   {
+    "char_key": "H2617:kindnes",
+    "meaning": "kindness",
+    "cluster": "Love"
+   },
+   {
+    "char_key": "H8469:pleasformercy",
+    "meaning": "pleas for mercy",
+    "cluster": "Prayer"
+   },
+   {
+    "char_key": "H2603:pity",
+    "meaning": "pity",
+    "cluster": "Blessing"
+   },
+   {
+    "char_key": "H2603:dealsgenerously",
+    "meaning": "deals generously",
+    "cluster": "Blessing"
+   },
+   {
+    "char_key": "H2603:generou",
+    "meaning": "generous",
+    "cluster": "Blessing"
+   },
+   {
+    "char_key": "H2580:grac",
+    "meaning": "grace",
+    "cluster": "Blessing"
+   },
+   {
+    "char_key": "H2587:graciou",
+    "meaning": "gracious",
+    "cluster": "Blessing"
+   },
+   {
+    "char_key": "H7349:merciful",
+    "meaning": "merciful",
+    "cluster": "Love"
+   },
+   {
+    "char_key": "H8467:mercy",
+    "meaning": "mercy",
+    "cluster": "Prayer"
+   },
+   {
+    "char_key": "H2347:pity",
+    "meaning": "pity",
+    "cluster": "Love"
+   },
+   {
+    "char_key": "H7355:showscompassion",
+    "meaning": "shows compassion",
+    "cluster": "Love"
+   }
+  ],
+  "reading_map": {
+   "H2603:generou": [
+    {
+     "reading_id": "H2603:generou#1",
+     "anchor_ref": "Psa 37:21",
+     "anchor_passage": "Psa 37:14-40",
+     "recurs_at": []
+    }
+   ],
+   "H2580:grac": [
+    {
+     "reading_id": "H2580:grac#1",
+     "anchor_ref": "Psa 45:2",
+     "anchor_passage": "Psa 45:1-15",
+     "recurs_at": []
+    }
+   ],
+   "H8467:mercy": [
+    {
+     "reading_id": "H8467:mercy#1",
+     "anchor_ref": "Psa 55:1",
+     "anchor_passage": "Psa 55:1-5",
+     "recurs_at": []
+    }
+   ],
+   "H2347:pity": [
+    {
+     "reading_id": "H2347:pity#1",
+     "anchor_ref": "Psa 72:13",
+     "anchor_passage": "Psa 72:13-15",
+     "recurs_at": []
+    }
+   ],
+   "H2603:pity": [
+    {
+     "reading_id": "H2603:pity#1",
+     "anchor_ref": "Psa 102:14",
+     "anchor_passage": "Psa 102:12-16",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2603:pity#2",
+     "anchor_ref": "Psa 109:12",
+     "anchor_passage": "Psa 109:1-8",
+     "recurs_at": []
+    }
+   ],
+   "H7355:showscompassion": [
+    {
+     "reading_id": "H7355:showscompassion#1",
+     "anchor_ref": "Psa 103:13",
+     "anchor_passage": "Psa 103:8-14",
+     "recurs_at": []
+    }
+   ],
+   "H2617:kindnes": [
+    {
+     "reading_id": "H2617:kindnes#1",
+     "anchor_ref": "Psa 109:12",
+     "anchor_passage": "Psa 109:1-8",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2617:kindnes#2",
+     "anchor_ref": "Psa 109:16",
+     "anchor_passage": "Psa 109:14-22",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H2617:kindnes#3",
+     "anchor_ref": "Psa 141:5",
+     "anchor_passage": "Psa 141:4-10",
+     "recurs_at": []
+    }
+   ],
+   "H2587:graciou": [
+    {
+     "reading_id": "H2587:graciou#1",
+     "anchor_ref": "Psa 112:4",
+     "anchor_passage": "Psa 112:1-10",
+     "recurs_at": []
+    }
+   ],
+   "H7349:merciful": [
+    {
+     "reading_id": "H7349:merciful#1",
+     "anchor_ref": "Psa 112:4",
+     "anchor_passage": "Psa 112:1-10",
+     "recurs_at": []
+    }
+   ],
+   "H2603:dealsgenerously": [
+    {
+     "reading_id": "H2603:dealsgenerously#1",
+     "anchor_ref": "Psa 112:5",
+     "anchor_passage": "Psa 112:1-10",
+     "recurs_at": []
+    }
+   ],
+   "H8469:pleasformercy": [
+    {
+     "reading_id": "H8469:pleasformercy#1",
+     "anchor_ref": "Psa 116:1",
+     "anchor_passage": "Psa 116:1-10",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H8469:pleasformercy#2",
+     "anchor_ref": "Psa 130:2",
+     "anchor_passage": "Psa 130:1-8",
+     "recurs_at": []
+    },
+    {
+     "reading_id": "H8469:pleasformercy#3",
+     "anchor_ref": "Psa 140:6",
+     "anchor_passage": "Psa 140:1-9",
+     "recurs_at": []
+    }
+   ]
+  },
+  "scope_counts": {
+   "ib_char_items": 11,
+   "passages": 13,
+   "lexicals": 16,
+   "distinct_readings": 16,
+   "duplicate_lexicals": 0,
+   "items_with_variation": 3,
+   "ve_lexical_rows": 176
+  },
+  "dimension_frame": {
+   "101": "sense",
+   "102": "type",
+   "103": "source",
+   "104": "seat",
+   "105": "bearer",
+   "106": "operation",
+   "107": "target",
+   "108": "manner",
+   "109": "intensity",
+   "110": "specifier",
+   "111": "effect",
+   "112": "coupling",
+   "113": "prohibition",
+   "114": "discovery",
+   "115": "role",
+   "116": "locus"
+  },
+  "reading_note": "RAW + COMPLETE, nothing pre-judged. value \"none\" = reader found none; present:false = no row recorded. Both are evidence — what is NOT said can matter as much as what is."
+ },
+ "passages": [
+  {
+   "passage_ref": "Psa 37:14-40",
+   "passage_text": "Psa 37:14 The wicked draw the sword and bend their bows to bring down the poor and needy , to slay those whose way is upright ; Psa 37:15 their sword shall enter their own heart , and their bows shall be broken . Psa 37:16 Better is the little that the righteous has than the abundance of many wicked . Psa 37:17 For the arms of the wicked shall be broken , but the Lord upholds the righteous . Psa 37:18 The Lord knows the days of the blameless , and their heritage will remain forever ; Psa 37:19 they are not put to shame in evil times ; in the days of famine they have abundance . Psa 37:20 But the wicked will perish ; the enemies of the Lord are like the glory of the pastures ; they vanish —like smoke they vanish away. Psa 37:21 The wicked borrows but does not pay back, but the righteous is generous and gives ; Psa 37:22 for those blessed by the Lord shall inherit the land , but those cursed by him shall be cut off . Psa 37:23 The steps of a man are established by the Lord , when he delights in his way ; Psa 37:24 though he fall , he shall not be cast headlong, for the Lord upholds his hand . Psa 37:25 I have been young , and now am old , yet I have not seen the righteous forsaken or his children begging for bread . Psa 37:26 He is ever lending generously , and his children become a blessing . Psa 37:27 Turn away from evil and do good ; so shall you dwell forever . Psa 37:28 For the Lord loves justice ; he will not forsake his saints . They are preserved forever , but the children of the wicked shall be cut off. Psa 37:29 The righteous shall inherit the land and dwell upon it forever . Psa 37:30 The mouth of the righteous utters wisdom , and his tongue speaks justice . Psa 37:31 The law of his God is in his heart ; his steps do not slip . Psa 37:32 The wicked watches for the righteous and seeks to put him to death . Psa 37:33 The Lord will not abandon him to his power or let him be condemned when he is brought to trial . Psa 37:34 Wait for the Lord and keep his way , and he will exalt you to inherit the land ; you will look on when the wicked are cut off . Psa 37:35 I have seen a wicked , ruthless man, spreading himself like a green laurel tree. Psa 37:36 But he passed away, and behold , he was no more ; though I sought him, he could not be found . Psa 37:37 Mark the blameless and behold the upright , for there is a future for the man of peace . Psa 37:38 But transgressors shall be altogether destroyed ; the future of the wicked shall be cut off. Psa 37:39 The salvation of the righteous is from the Lord ; he is their stronghold in the time of trouble . Psa 37:40 The Lord helps them and delivers them; he delivers them from the wicked and saves them, because they take refuge in him .",
+   "lexicals": [
+    {
+     "ib_char": "generous",
+     "char_key": "H2603:generou",
+     "reference": "Psa 37:21",
+     "reading_id": "H2603:generou#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7699036,
+      7699037,
+      7699038,
+      7699039,
+      7699040,
+      7699041,
+      7699042,
+      7699043,
+      7699045,
+      7699046,
+      7699044
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "the righteous is generous and gives",
+       "ve_lexical_id": 7699036,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "volition",
+       "ve_lexical_id": 7699037,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7699038,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the righteous",
+       "ve_lexical_id": 7699039,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277679",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the wicked borrows and does not repay, but the righteous is generous and gives - open-handedness as a mark of the righteous interior",
+       "ve_lexical_id": 7699040,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "generosity",
+       "ve_lexical_id": 7699041,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277679",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7699042,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "generous-and-gives",
+       "ve_lexical_id": 7699043,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "277679",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v21: 'the RIGHTEOUS is GENEROUS and gives' - the operation is open-handed giving; the righteous interior is marked by a freedom to give that the grasping wicked lacks.",
+       "ve_lexical_id": 7699045,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7699046,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7699044,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 45:1-15",
+   "passage_text": "To the choirmaster : according to Lilies . A Maskil of the Sons of Korah ; a love song . Psa 45:1 My heart overflows with a pleasing theme ; I address my verses to the king ; my tongue is like the pen of a ready scribe . Psa 45:2 You are the most handsome of the sons of men ; grace is poured upon your lips ; therefore God has blessed you forever . Psa 45:3 Gird your sword on your thigh , O mighty one , in your splendor and majesty ! Psa 45:4 In your majesty ride out victoriously for the cause of truth and meekness and righteousness ; let your right hand teach you awesome deeds ! Psa 45:5 Your arrows are sharp in the heart of the king’s enemies ; the peoples fall under you. Psa 45:6 Your throne , O God , is forever and ever . The scepter of your kingdom is a scepter of uprightness ; Psa 45:7 you have loved righteousness and hated wickedness . Therefore God , your God , has anointed you with the oil of gladness beyond your companions ; Psa 45:8 your robes are all fragrant with myrrh and aloes and cassia . From ivory palaces stringed instruments make you glad ; Psa 45:9 daughters of kings are among your ladies of honor ; at your right hand stands the queen in gold of Ophir . Psa 45:10 Hear , O daughter , and consider , and incline your ear : forget your people and your father’s house , Psa 45:11 and the king will desire your beauty . Since he is your lord , bow to him . Psa 45:12 The people of Tyre will seek your favor with gifts , the richest of the people . Psa 45:13 All glorious is the princess in her chamber , with robes interwoven with gold . Psa 45:14 In many-colored robes she is led to the king , with her virgin companions following behind her . Psa 45:15 With joy and gladness they are led along as they enter the palace of the king . Psa 45:17 I will cause your name to be remembered in all generations ; therefore nations will praise you forever and ever .",
+   "lexicals": [
+    {
+     "ib_char": "grace",
+     "char_key": "H2580:grac",
+     "reference": "Psa 45:2",
+     "reading_id": "H2580:grac#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7650259,
+      7650260,
+      7650261,
+      7650262,
+      7650263,
+      7650264,
+      7650265,
+      7650266,
+      7650268,
+      7650269,
+      7650267
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "grace / charm (chen - on your lips)",
+       "ve_lexical_id": 7650259,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7650260,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7650261,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king",
+       "ve_lexical_id": 7650262,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278942",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "none",
+       "ve_lexical_id": 7650263,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "none",
+       "ve_lexical_id": 7650264,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "poured on his lips",
+       "ve_lexical_id": 7650265,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "278942",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "the graciousness for which God blessed him",
+       "ve_lexical_id": 7650266,
+       "item_type": "pair",
+       "from_span": "278942",
+       "to_span": "278947",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'GRACE (chen) is poured upon your lips' — the king's gracious, winsome speech; chen = favour/charm, the gracious character expressed in his words, for which God has blessed him forever (the blessing = qualifier)",
+       "ve_lexical_id": 7650268,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7650269,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7650267,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 55:1-5",
+   "passage_text": "To the choirmaster : with stringed instruments . A Maskil of David . Psa 55:1 Give ear to my prayer , O God , and hide not yourself from my plea for mercy ! Psa 55:2 Attend to me, and answer me; I am restless in my complaint and I moan , Psa 55:3 because of the noise of the enemy , because of the oppression of the wicked . For they drop trouble upon me, and in anger they bear a grudge against me . Psa 55:4 My heart is in anguish within me; the terrors of death have fallen upon me . Psa 55:5 Fear and trembling come upon me, and horror overwhelms me.",
+   "lexicals": [
+    {
+     "ib_char": "mercy",
+     "char_key": "H8467:mercy",
+     "reference": "Psa 55:1",
+     "reading_id": "H8467:mercy#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7653456,
+      7653457,
+      7653458,
+      7653459,
+      7653460,
+      7653461,
+      7653462,
+      7653463,
+      7653465,
+      7653466,
+      7653464
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "plea for grace / supplication (techinnah)",
+       "ve_lexical_id": 7653456,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "ve_lexical_id": 7653457,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7653458,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7653459,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280032",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "plead for favour",
+       "ve_lexical_id": 7653460,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": "280032",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "ve_lexical_id": 7653461,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "280032",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7653462,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "twinned with the prayer",
+       "ve_lexical_id": 7653463,
+       "item_type": "pair",
+       "from_span": "280032",
+       "to_span": "280027",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'hide not yourself from my SUPPLICATION (techinnah)' — the plea for grace the psalmist casts on God; techinnah (appeal for favour) the humbled cry that expects nothing by right, only mercy — the posture beneath the prayer",
+       "ve_lexical_id": 7653465,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7653466,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "external:god",
+       "ve_lexical_id": 7653464,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 72:13-15",
+   "passage_text": "Psa 72:11 May all kings fall down before him, all nations serve him ! Psa 72:12 For he delivers the needy when he calls, the poor and him who has no helper. Psa 72:13 He has pity on the weak and the needy , and saves the lives of the needy . Psa 72:14 From oppression and violence he redeems their life , and precious is their blood in his sight . Psa 72:15 Long may he live ; may gold of Sheba be given to him! May prayer be made for him continually , and blessings invoked for him all the day !",
+   "lexicals": [
+    {
+     "ib_char": "pity",
+     "char_key": "H2347:pity",
+     "reference": "Psa 72:13",
+     "reading_id": "H2347:pity#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7661413,
+      7661414,
+      7661415,
+      7661416,
+      7661417,
+      7661418,
+      7661419,
+      7661420,
+      7661422,
+      7661423,
+      7661421
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pity / have compassion (chus - he has pity on the weak)",
+       "ve_lexical_id": 7661413,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "status",
+       "ve_lexical_id": 7661414,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7661415,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the king",
+       "ve_lexical_id": 7661416,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "282244",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "have pity / compassion",
+       "ve_lexical_id": 7661417,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the weak and needy",
+       "ve_lexical_id": 7661418,
+       "item_type": "pair",
+       "from_span": "282244",
+       "to_span": "282246",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7661419,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "paired with saving their lives",
+       "ve_lexical_id": 7661420,
+       "item_type": "pair",
+       "from_span": "282244",
+       "to_span": "282248",
+       "direction": null,
+       "resolution": "span",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "'He has PITY (chus) on the weak and the needy' — the tenderness of the just king; chus here the compassion that spares and cares for the weak - the inward mercy behind the king's saving acts, kingship marked by pity, not merely power",
+       "ve_lexical_id": 7661422,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7661423,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7661421,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 102:12-16",
+   "passage_text": "Psa 102:12 But you , O Lord , are enthroned forever ; you are remembered throughout all generations . Psa 102:13 You will arise and have pity on Zion ; it is the time to favor her; the appointed time has come . Psa 102:14 For your servants hold her stones dear and have pity on her dust . Psa 102:15 Nations will fear the name of the Lord , and all the kings of the earth will fear your glory . Psa 102:16 For the Lord builds up Zion ; he appears in his glory ; Psa 102:17 he regards the prayer of the destitute and does not despise their prayer.",
+   "lexicals": [
+    {
+     "ib_char": "pity",
+     "char_key": "H2603:pity",
+     "reference": "Psa 102:14",
+     "reading_id": "H2603:pity#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7672352,
+      7672353,
+      7672354,
+      7672355,
+      7672356,
+      7672357,
+      7672358,
+      7672359,
+      7672361,
+      7672362,
+      7672360
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pity (chanan)",
+       "ve_lexical_id": 7672352,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7672353,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7672354,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the servants (of God)",
+       "ve_lexical_id": 7672355,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268928",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "have pity / affection",
+       "ve_lexical_id": 7672356,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "for Zion's dust",
+       "ve_lexical_id": 7672357,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268928",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7672358,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7672359,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "268928",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v14: 'and have PITY (chanan) on her dust' - the tender regard of the servants for ruined Zion, love for her very dust.",
+       "ve_lexical_id": 7672361,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7672362,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with holding her stones dear",
+       "ve_lexical_id": 7672360,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 103:8-14",
+   "passage_text": "Psa 103:8 The Lord is merciful and gracious , slow to anger and abounding in steadfast love . Psa 103:9 He will not always chide , nor will he keep his anger forever . Psa 103:10 He does not deal with us according to our sins , nor repay us according to our iniquities . Psa 103:11 For as high as the heavens are above the earth , so great is his steadfast love toward those who fear him; Psa 103:12 as far as the east is from the west , so far does he remove our transgressions from us. Psa 103:13 As a father shows compassion to his children , so the Lord shows compassion to those who fear him. Psa 103:14 For he knows our frame ; he remembers that we are dust .",
+   "lexicals": [
+    {
+     "ib_char": "shows compassion",
+     "char_key": "H7355:showscompassion",
+     "reference": "Psa 103:13",
+     "reading_id": "H7355:showscompassion#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7672838,
+      7672839,
+      7672840,
+      7672841,
+      7672842,
+      7672843,
+      7672844,
+      7672845,
+      7672847,
+      7672848,
+      7672846
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "show compassion (racham)",
+       "ve_lexical_id": 7672838,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7672839,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7672840,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "a father",
+       "ve_lexical_id": 7672841,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269084",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "show compassion",
+       "ve_lexical_id": 7672842,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to his children",
+       "ve_lexical_id": 7672843,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269084",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7672844,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7672845,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "269084",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v13: 'As a father SHOWS COMPASSION (racham) to his children' - the tender pity of a human father, the analogy for God's mercy.",
+       "ve_lexical_id": 7672847,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7672848,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with God's compassion on those who fear him",
+       "ve_lexical_id": 7672846,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 109:1-8",
+   "passage_text": "To the choirmaster . A Psalm of David . Psa 109:1 Be not silent , O God of my praise ! Psa 109:2 For wicked and deceitful mouths are opened against me, speaking against me with lying tongues . Psa 109:3 They encircle me with words of hate , and attack me without cause . Psa 109:4 In return for my love they accuse me, but I give myself to prayer . Psa 109:5 So they reward me evil for good , and hatred for my love . Psa 109:6 Appoint a wicked man against him; let an accuser stand at his right hand . Psa 109:7 When he is tried , let him come forth guilty ; let his prayer be counted as sin ! Psa 109:8 May his days be few ; may another take his office ! Psa 109:9 May his children be fatherless and his wife a widow! Psa 109:10 May his children wander about and beg , seeking food far from the ruins they inhabit ! Psa 109:12 Let there be none to extend kindness to him, nor any to pity his fatherless children ! Psa 109:13 May his posterity be cut off; may his name be blotted out in the second generation!",
+   "lexicals": [
+    {
+     "ib_char": "pity",
+     "char_key": "H2603:pity",
+     "reference": "Psa 109:12",
+     "reading_id": "H2603:pity#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7677246,
+      7677247,
+      7677248,
+      7677249,
+      7677250,
+      7677251,
+      7677252,
+      7677253,
+      7677255,
+      7677256,
+      7677254
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pity (chanan)",
+       "ve_lexical_id": 7677246,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7677247,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7677248,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "no one",
+       "ve_lexical_id": 7677249,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270174",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "pity",
+       "ve_lexical_id": 7677250,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "the enemy's fatherless children",
+       "ve_lexical_id": 7677251,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270174",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7677252,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7677253,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270174",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'nor any to PITY (chanan) his fatherless children' - the wish that the pitiless find no pity for his own.",
+       "ve_lexical_id": 7677255,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7677256,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the kindness withheld",
+       "ve_lexical_id": 7677254,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    },
+    {
+     "ib_char": "kindness",
+     "char_key": "H2617:kindnes",
+     "reference": "Psa 109:12",
+     "reading_id": "H2617:kindnes#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7677235,
+      7677236,
+      7677237,
+      7677238,
+      7677239,
+      7677240,
+      7677241,
+      7677242,
+      7677244,
+      7677245,
+      7677243
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "kindness (chesed)",
+       "ve_lexical_id": 7677235,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7677236,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7677237,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "no one",
+       "ve_lexical_id": 7677238,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270172",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "extend kindness",
+       "ve_lexical_id": 7677239,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to the enemy",
+       "ve_lexical_id": 7677240,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270172",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7677241,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7677242,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270172",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v12: 'Let there be none to extend KINDNESS (chesed) to him' - the wish that the merciless man find no mercy.",
+       "ve_lexical_id": 7677244,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7677245,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with none to pity his children",
+       "ve_lexical_id": 7677243,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 109:14-22",
+   "passage_text": "Psa 109:14 May the iniquity of his fathers be remembered before the Lord , and let not the sin of his mother be blotted out ! Psa 109:15 Let them be before the Lord continually , that he may cut off the memory of them from the earth ! Psa 109:16 For he did not remember to show kindness , but pursued the poor and needy and the brokenhearted , to put them to death . Psa 109:17 He loved to curse ; let curses come upon him! He did not delight in blessing ; may it be far from him ! Psa 109:18 He clothed himself with cursing as his coat ; may it soak into his body like water , like oil into his bones ! Psa 109:19 May it be like a garment that he wraps around him , like a belt that he puts on every day ! Psa 109:20 May this be the reward of my accusers from the Lord , of those who speak evil against my life ! Psa 109:21 But you , O God my Lord , deal on my behalf for your name’s sake ; because your steadfast love is good , deliver me ! Psa 109:22 For I am poor and needy , and my heart is stricken within me.",
+   "lexicals": [
+    {
+     "ib_char": "kindness",
+     "char_key": "H2617:kindnes",
+     "reference": "Psa 109:16",
+     "reading_id": "H2617:kindnes#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7677290,
+      7677291,
+      7677292,
+      7677293,
+      7677294,
+      7677295,
+      7677296,
+      7677297,
+      7677299,
+      7677300,
+      7677298
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "kindness (chesed)",
+       "ve_lexical_id": 7677290,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7677291,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7677292,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the enemy",
+       "ve_lexical_id": 7677293,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270197",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "fail to show kindness",
+       "ve_lexical_id": 7677294,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to the afflicted",
+       "ve_lexical_id": 7677295,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270197",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7677296,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7677297,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270197",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v16: 'did not remember to show KINDNESS (chesed)' - the mercy the enemy withheld, the root of his condemnation.",
+       "ve_lexical_id": 7677299,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7677300,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the failure to remember",
+       "ve_lexical_id": 7677298,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 112:1-10",
+   "passage_text": "Psa 112:1 Praise the Lord ! Blessed is the man who fears the Lord , who greatly delights in his commandments ! Psa 112:2 His offspring will be mighty in the land ; the generation of the upright will be blessed . Psa 112:3 Wealth and riches are in his house , and his righteousness endures forever . Psa 112:4 Light dawns in the darkness for the upright ; he is gracious , merciful , and righteous . Psa 112:5 It is well with the man who deals generously and lends ; who conducts his affairs with justice . Psa 112:6 For the righteous will never be moved ; he will be remembered forever . Psa 112:7 He is not afraid of bad news ; his heart is firm , trusting in the Lord . Psa 112:8 His heart is steady ; he will not be afraid , until he looks in triumph on his adversaries . Psa 112:9 He has distributed freely; he has given to the poor ; his righteousness endures forever ; his horn is exalted in honor . Psa 112:10 The wicked man sees it and is angry ; he gnashes his teeth and melts away ; the desire of the wicked will perish !",
+   "lexicals": [
+    {
+     "ib_char": "gracious",
+     "char_key": "H2587:graciou",
+     "reference": "Psa 112:4",
+     "reading_id": "H2587:graciou#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7678386,
+      7678387,
+      7678388,
+      7678389,
+      7678390,
+      7678391,
+      7678392,
+      7678393,
+      7678395,
+      7678396,
+      7678394
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "gracious (chanun)",
+       "ve_lexical_id": 7678386,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7678387,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7678388,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the man",
+       "ve_lexical_id": 7678389,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270679",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be gracious",
+       "ve_lexical_id": 7678390,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to others",
+       "ve_lexical_id": 7678391,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270679",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7678392,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7678393,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270679",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v4: 'he is GRACIOUS (chanun), merciful, and righteous' - the God-fearer mirrors God's own grace toward others.",
+       "ve_lexical_id": 7678395,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7678396,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being merciful and righteous",
+       "ve_lexical_id": 7678394,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    },
+    {
+     "ib_char": "merciful",
+     "char_key": "H7349:merciful",
+     "reference": "Psa 112:4",
+     "reading_id": "H7349:merciful#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7678397,
+      7678398,
+      7678399,
+      7678400,
+      7678401,
+      7678402,
+      7678403,
+      7678404,
+      7678406,
+      7678407,
+      7678405
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "merciful (rachum)",
+       "ve_lexical_id": 7678397,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "disposition",
+       "ve_lexical_id": 7678398,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7678399,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the man",
+       "ve_lexical_id": 7678400,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270680",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "be merciful",
+       "ve_lexical_id": 7678401,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to others",
+       "ve_lexical_id": 7678402,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270680",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7678403,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7678404,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270680",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v4: 'gracious, MERCIFUL (rachum), and righteous' - the compassion of the God-fearer, God's mercy reflected in the man.",
+       "ve_lexical_id": 7678406,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7678407,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with being gracious",
+       "ve_lexical_id": 7678405,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    },
+    {
+     "ib_char": "deals generously",
+     "char_key": "H2603:dealsgenerously",
+     "reference": "Psa 112:5",
+     "reading_id": "H2603:dealsgenerously#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7678419,
+      7678420,
+      7678421,
+      7678422,
+      7678423,
+      7678424,
+      7678425,
+      7678426,
+      7678428,
+      7678429,
+      7678427
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "deal generously (chanan)",
+       "ve_lexical_id": 7678419,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "ve_lexical_id": 7678420,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7678421,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the man",
+       "ve_lexical_id": 7678422,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270684",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "deal generously",
+       "ve_lexical_id": 7678423,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "and lend",
+       "ve_lexical_id": 7678424,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270684",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7678425,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7678426,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270684",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'It is well with the man who DEALS GENEROUSLY (chanan) and lends' - the open-handed generosity of the God-fearer.",
+       "ve_lexical_id": 7678428,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7678429,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with conducting affairs with justice",
+       "ve_lexical_id": 7678427,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 116:1-10",
+   "passage_text": "Psa 116:1 I love the Lord , because he has heard my voice and my pleas for mercy . Psa 116:2 Because he inclined his ear to me, therefore I will call on him as long as I live . Psa 116:3 The snares of death encompassed me; the pangs of Sheol laid hold on me; I suffered distress and anguish . Psa 116:4 Then I called on the name of the Lord : “O Lord , I pray , deliver my soul !” Psa 116:5 Gracious is the Lord , and righteous ; our God is merciful . Psa 116:6 The Lord preserves the simple ; when I was brought low , he saved me. Psa 116:7 Return , O my soul , to your rest ; for the Lord has dealt bountifully with you . Psa 116:8 For you have delivered my soul from death , my eyes from tears , my feet from stumbling ; Psa 116:9 I will walk before the Lord in the land of the living . Psa 116:10 I believed , even when I spoke : “I am greatly afflicted ”; Psa 116:11 I said in my alarm, “All mankind are liars.”",
+   "lexicals": [
+    {
+     "ib_char": "pleas for mercy",
+     "char_key": "H8469:pleasformercy",
+     "reference": "Psa 116:1",
+     "reading_id": "H8469:pleasformercy#1",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7679176,
+      7679177,
+      7679178,
+      7679179,
+      7679180,
+      7679181,
+      7679182,
+      7679183,
+      7679185,
+      7679186,
+      7679184
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pleas for mercy (tachanun)",
+       "ve_lexical_id": 7679176,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "ve_lexical_id": 7679177,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7679178,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7679179,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270926",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "plead for mercy",
+       "ve_lexical_id": 7679180,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "to God",
+       "ve_lexical_id": 7679181,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270926",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7679182,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "ve_lexical_id": 7679183,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "270926",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v1: 'he has heard my voice and my PLEAS FOR MERCY (tachanun)' - the supplications God heard, the cry that drew forth love.",
+       "ve_lexical_id": 7679185,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7679186,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the love and calling",
+       "ve_lexical_id": 7679184,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 130:1-8",
+   "passage_text": "A Song of Ascents . Psa 130:1 Out of the depths I cry to you, O Lord ! Psa 130:2 O Lord , hear my voice ! Let your ears be attentive to the voice of my pleas for mercy ! Psa 130:3 If you, O Lord , should mark iniquities , O Lord , who could stand ? Psa 130:4 But with you there is forgiveness , that you may be feared . Psa 130:5 I wait for the Lord , my soul waits , and in his word I hope ; Psa 130:6 my soul waits for the Lord more than watchmen for the morning , more than watchmen for the morning . Psa 130:7 O Israel , hope in the Lord ! For with the Lord there is steadfast love , and with him is plentiful redemption . Psa 130:8 And he will redeem Israel from all his iniquities .",
+   "lexicals": [
+    {
+     "ib_char": "pleas for mercy",
+     "char_key": "H8469:pleasformercy",
+     "reference": "Psa 130:2",
+     "reading_id": "H8469:pleasformercy#2",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7685702,
+      7685703,
+      7685704,
+      7685705,
+      7685706,
+      7685707,
+      7685708,
+      7685709,
+      7685711,
+      7685712,
+      7685710
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pleas for mercy (tachanun)",
+       "ve_lexical_id": 7685702,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "action",
+       "ve_lexical_id": 7685703,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7685704,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7685705,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272809",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "plead for mercy",
+       "ve_lexical_id": 7685706,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "before God",
+       "ve_lexical_id": 7685707,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272809",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7685708,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "external:god",
+       "ve_lexical_id": 7685709,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "272809",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v2: 'be attentive to the voice of my PLEAS FOR MERCY (tachanun)!' - the supplication, the cry sharpened into a plea for grace.",
+       "ve_lexical_id": 7685711,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7685712,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "paired with the cry",
+       "ve_lexical_id": 7685710,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 140:1-9",
+   "passage_text": "To the choirmaster . A Psalm of David . Psa 140:1 Deliver me, O Lord , from evil men ; preserve me from violent men , Psa 140:2 who plan evil things in their heart and stir up wars continually . Psa 140:3 They make their tongue sharp as a serpent’s , and under their lips is the venom of asps . Selah Psa 140:4 Guard me, O Lord , from the hands of the wicked ; preserve me from violent men , who have planned to trip up my feet . Psa 140:5 The arrogant have hidden a trap for me, and with cords they have spread a net ; beside the way they have set snares for me. Selah Psa 140:6 I say to the Lord , You are my God ; give ear to the voice of my pleas for mercy , O Lord ! Psa 140:7 O Lord , my Lord , the strength of my salvation , you have covered my head in the day of battle . Psa 140:8 Grant not , O Lord , the desires of the wicked ; do not further their evil plot , or they will be exalted ! Selah Psa 140:9 As for the head of those who surround me, let the mischief of their lips overwhelm them !",
+   "lexicals": [
+    {
+     "ib_char": "pleas for mercy",
+     "char_key": "H8469:pleasformercy",
+     "reference": "Psa 140:6",
+     "reading_id": "H8469:pleasformercy#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7688127,
+      7688128,
+      7688129,
+      7688130,
+      7688131,
+      7688132,
+      7688133,
+      7688134,
+      7688136,
+      7688137,
+      7688135
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "pleas for mercy voiced",
+       "ve_lexical_id": 7688127,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "ve_lexical_id": 7688128,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7688129,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7688130,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273653",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "the psalmist lifts a crying voice of supplication, the cry as the counter-move to the schemes",
+       "ve_lexical_id": 7688131,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "crying-out",
+       "ve_lexical_id": 7688132,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273653",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7688133,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "voice-pleas",
+       "ve_lexical_id": 7688134,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273653",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v6: 'give ear to the voice of my PLEAS for mercy' - against the silent scheming, the psalmist's interior goes vocal, appealing upward.",
+       "ve_lexical_id": 7688136,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7688137,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7688135,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  },
+  {
+   "passage_ref": "Psa 141:4-10",
+   "passage_text": "Psa 141:4 Do not let my heart incline to any evil , to busy myself with wicked deeds in company with men who work iniquity , and let me not eat of their delicacies ! Psa 141:5 Let a righteous man strike me—it is a kindness ; let him rebuke me—it is oil for my head ; let my head not refuse it. Yet my prayer is continually against their evil deeds . Psa 141:6 When their judges are thrown over the cliff , then they shall hear my words , for they are pleasant . Psa 141:7 As when one plows and breaks up the earth , so shall our bones be scattered at the mouth of Sheol . Psa 141:8 But my eyes are toward you, O God , my Lord ; in you I seek refuge ; leave me not defenseless ! Psa 141:9 Keep me from the trap that they have laid for me and from the snares of evildoers ! Psa 141:10 Let the wicked fall into their own nets , while I pass by safely .",
+   "lexicals": [
+    {
+     "ib_char": "kindness",
+     "char_key": "H2617:kindnes",
+     "reference": "Psa 141:5",
+     "reading_id": "H2617:kindnes#3",
+     "anchor": true,
+     "ve_lexical_ids": [
+      7688407,
+      7688408,
+      7688409,
+      7688410,
+      7688411,
+      7688412,
+      7688413,
+      7688414,
+      7688416,
+      7688417,
+      7688415
+     ],
+     "dimensions": [
+      {
+       "nr": 101,
+       "label": "sense",
+       "value": "rebuke received as kindness",
+       "ve_lexical_id": 7688407,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 102,
+       "label": "type",
+       "value": "affect",
+       "ve_lexical_id": 7688408,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 103,
+       "label": "source",
+       "present": false
+      },
+      {
+       "nr": 104,
+       "label": "seat",
+       "value": "none",
+       "ve_lexical_id": 7688409,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 105,
+       "label": "bearer",
+       "value": "the psalmist",
+       "ve_lexical_id": 7688410,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 106,
+       "label": "operation",
+       "value": "a righteous man's blow/rebuke is welcomed as kindness, oil for the head - correction embraced",
+       "ve_lexical_id": 7688411,
+       "item_type": "event",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 107,
+       "label": "target",
+       "value": "embrace-correction",
+       "ve_lexical_id": 7688412,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 108,
+       "label": "manner",
+       "value": "none",
+       "ve_lexical_id": 7688413,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": "none",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 109,
+       "label": "intensity",
+       "present": false
+      },
+      {
+       "nr": 110,
+       "label": "specifier",
+       "present": false
+      },
+      {
+       "nr": 111,
+       "label": "effect",
+       "present": false
+      },
+      {
+       "nr": 112,
+       "label": "coupling",
+       "value": "rebuke-is-kindness",
+       "ve_lexical_id": 7688414,
+       "item_type": "flag",
+       "from_span": null,
+       "to_span": "273722",
+       "direction": null,
+       "resolution": "inferred",
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 113,
+       "label": "prohibition",
+       "present": false
+      },
+      {
+       "nr": 114,
+       "label": "discovery",
+       "value": "v5: 'Let a righteous man strike me - it is a KINDNESS; let him rebuke me - it is oil for my head' - the operation is rare: the interior wants to be corrected, receiving reproof as care.",
+       "ve_lexical_id": 7688416,
+       "item_type": "note",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 115,
+       "label": "role",
+       "value": "characteristic",
+       "ve_lexical_id": 7688417,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      },
+      {
+       "nr": 116,
+       "label": "locus",
+       "value": "internal:ib-state",
+       "ve_lexical_id": 7688415,
+       "item_type": "value",
+       "from_span": null,
+       "to_span": null,
+       "direction": null,
+       "resolution": null,
+       "notes": null,
+       "provenance": "reread-psalms-2026"
+      }
+     ]
+    }
+   ]
+  }
+ ]
+}

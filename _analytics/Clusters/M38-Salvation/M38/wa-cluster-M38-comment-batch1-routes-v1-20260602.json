@@ -1,0 +1,62 @@
+{
+  "cluster": "M38",
+  "date": "2026-06-02",
+  "approved": true,
+  "method": "COMMENT_EVALUATION batch 1 — routes (researcher-approved 2026-06-02). Three A7 DIMENSION_REVIEW comments whose content belongs to another cluster: surfaced, assigned to the home cluster via an SD_CLUSTER pointer (non-A6-gating; surfaces as the target's D2 for resolution at its turn), source folded for M38. No M38 finding. (144 handled separately; 127/146/147/148 deferred pending division/yielding home decision.)",
+  "new_findings": [],
+  "new_flags": [
+    {
+      "registry_id": 39,
+      "flag_code": "SD_CLUSTER",
+      "flag_label": "M28-ROUTE-debauchery-spirit-polarity",
+      "priority": "MEDIUM",
+      "session_target": null,
+      "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M28",
+      "cluster_link_basis": "comment-evaluation route (subject asōtia → M28)",
+      "description": "Routed from M38 A7 (DIM-039-002, wa_session_b_findings id 107). asōtia (debauchery; clustered to M28). Eph 5:18 contrasts debauchery (disordered inner filling) with being filled with the Spirit — a fundamental inner-being polarity: disordered inner filling vs divine inner filling. When M28 (Envy/Greed/Lust) is analysed, resolve into an M28 finding mapping the debauchery ↔ Spirit-filling antithesis (and whether it reflects a broader defilement vs Spirit-cleansing pattern)."
+    },
+    {
+      "registry_id": 180,
+      "flag_code": "SD_CLUSTER",
+      "flag_label": "M39-ROUTE-giving-as-diagnostic",
+      "priority": "MEDIUM",
+      "session_target": null,
+      "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M39",
+      "cluster_link_basis": "comment-evaluation route (subject dōron → M39)",
+      "description": "Routed from M38 A7 (DIM-180-002, wa_session_b_findings id 128). dōron/didōmi gift-vocabulary (reg 180 yielding; dōron clustered to M39): giving is the domain where inner character is most directly revealed — generosity, greed, love, indifference, dependence, gratitude all surface through the giving action. When M39 (Blessing/Favour/Grace) is analysed, resolve into a finding treating giving as a primary inner-being diagnostic."
+    },
+    {
+      "registry_id": 187,
+      "flag_code": "SD_CLUSTER",
+      "flag_label": "M30-ROUTE-obedience-gt-sacrifice",
+      "priority": "MEDIUM",
+      "session_target": null,
+      "session_raised": "M38 comment-evaluation 2026-06-02",
+      "cluster_link": "M30",
+      "cluster_link_basis": "comment-evaluation route (content = obedience → M30; terms sha.ma/qashav currently in M41 — flag mis-clustering)",
+      "description": "Routed from M38 A7 (DIM-187-001, wa_session_b_findings id 158). 1Sam 15:22 declares obedience (sha.ma H8085H) and attentive listening (qashav H7181) greater than sacrifice — the obedience/listening valuation as the higher register of inner-being orientation toward God. CONTENT belongs to M30 (Obedience & Disobedience). NOTE: sha.ma/qashav are presently clustered to M41 (Remembrance) — likely a mis-clustering. When M30 is analysed, resolve into a finding on the obedience-over-sacrifice hierarchy and the sha.ma/qashav paired responsive orientation, and reassess the M41 term placement."
+    }
+  ],
+  "fold_findings": [
+    {
+      "id": 107,
+      "status": "folded",
+      "cluster_link": "M28",
+      "resolution_note": "Routed to M28 via SD_CLUSTER (debauchery ↔ Spirit-filling belongs to M28; gated M38 only via reg 39 → sōzō). Folded for M38; full text preserved here for provenance."
+    },
+    {
+      "id": 128,
+      "status": "folded",
+      "cluster_link": "M39",
+      "resolution_note": "Routed to M39 via SD_CLUSTER (giving-as-diagnostic; dōron clustered to M39). Folded for M38."
+    },
+    {
+      "id": 158,
+      "status": "folded",
+      "cluster_link": "M30,M41",
+      "resolution_note": "Routed to M30 via SD_CLUSTER (obedience > sacrifice). sha.ma/qashav term placement in M41 flagged for review. Folded for M38."
+    }
+  ]
+}

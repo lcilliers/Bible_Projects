@@ -1,0 +1,395 @@
+{
+  "metadata": {
+    "cluster_code": "M15",
+    "cluster_subgroup_code": "M15-H",
+    "source_input": "wa-m15h-vcg-groups-v1-20260511.json",
+    "generated_at": "2026-05-11T18:31:23Z",
+    "purpose": "DB-load staging for M15-H VCG cleanup.",
+    "needs_subgroup_creation": true,
+    "subgroup_to_create": {
+      "code": "M15-H",
+      "label": "Logos — the word as inner-being engagement",
+      "description": null,
+      "cluster_code": "M15"
+    },
+    "totals": {
+      "vcgs_to_create": 3,
+      "verses_to_assign_to_vcgs": 42,
+      "verses_to_set_aside": 1,
+      "sum_check": 43
+    },
+    "anchor_status": "3/3 VCGs have anchor_proposed."
+  },
+  "vcg_creations": [
+    {
+      "code": "M15-H-VCG01",
+      "label": "The divine/apostolic word that enters and addresses the inner life",
+      "context_description": "The term names logos as the active divine or apostolic word that engages the inner person — the word of the cross that is folly or power depending on the inner condition of the hearer, the word of truth that produces salvation, the word of Christ dwelling richly within, the word of reconciliation entrusted to proclamation, the word of God whose integrity cannot fail. Inner-being phenomenon: the word as inner-life-addressing disclosure.",
+      "cluster_subgroup_code": "M15-H",
+      "mti_term_ids": [
+        1171
+      ],
+      "verse_count": 19,
+      "verses": [
+        {
+          "vr_id": 42536,
+          "reference": "1Cor 1:18",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42540,
+          "reference": "1Cor 14:36",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42542,
+          "reference": "1Cor 15:2",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42543,
+          "reference": "1Cor 15:54",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42545,
+          "reference": "1Cor 2:13",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42553,
+          "reference": "2Cor 2:17",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42554,
+          "reference": "2Cor 4:2",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42555,
+          "reference": "2Cor 5:19",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42558,
+          "reference": "Col 1:25",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42559,
+          "reference": "Col 1:5",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42561,
+          "reference": "Col 3:16",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42563,
+          "reference": "Col 4:3",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42565,
+          "reference": "Eph 1:13",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42568,
+          "reference": "Eph 6:19",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42570,
+          "reference": "Gal 6:6",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42571,
+          "reference": "Rom 13:9",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42575,
+          "reference": "Rom 9:28",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42576,
+          "reference": "Rom 9:6",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42577,
+          "reference": "Rom 9:9",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 42561,
+        "reference": "Col 3:16",
+        "strongs": "G3056",
+        "translit": "logos",
+        "anchor_rationale": "'Let the word of Christ dwell in you richly.' The logos as inner-dwelling presence is most clearly named here. The word of Christ is not merely heard or read — it takes up residence (oikeitō) within the person richly, shaping wisdom and producing community formation. The command assumes that the word has an inner location in the person, and that its richness of dwelling is something to be desired and cultivated."
+      }
+    },
+    {
+      "code": "M15-H-VCG02",
+      "label": "Human speech as communicative act evaluated by its inner quality",
+      "context_description": "The term names logos as the communicative act of the human person — evaluated by whether it is intelligible (reaching the inner person of the hearer), gracious and seasoned (shaping the encounter), consistent with deeds, or alternatively empty, arrogant, and inconsistent. The word-as-speech is the outward expression of the inner person and is evaluated by what inner reality it carries. Inner-being phenomenon: speech as the outward expression of inner quality.",
+      "cluster_subgroup_code": "M15-H",
+      "mti_term_ids": [
+        1171
+      ],
+      "verse_count": 21,
+      "verses": [
+        {
+          "vr_id": 42535,
+          "reference": "1Cor 1:17",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42537,
+          "reference": "1Cor 1:5",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42538,
+          "reference": "1Cor 12:8",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42539,
+          "reference": "1Cor 14:19",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42541,
+          "reference": "1Cor 14:9",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42544,
+          "reference": "1Cor 2:1",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42546,
+          "reference": "1Cor 2:4",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42547,
+          "reference": "1Cor 4:19",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42548,
+          "reference": "1Cor 4:20",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42549,
+          "reference": "2Cor 1:18",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42550,
+          "reference": "2Cor 10:10",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42551,
+          "reference": "2Cor 10:11",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42552,
+          "reference": "2Cor 11:6",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42556,
+          "reference": "2Cor 6:7",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42557,
+          "reference": "2Cor 8:7",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42560,
+          "reference": "Col 2:23",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42562,
+          "reference": "Col 3:17",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42564,
+          "reference": "Col 4:6",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42566,
+          "reference": "Eph 4:29",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42567,
+          "reference": "Eph 5:6",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42573,
+          "reference": "Rom 15:18",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 42539,
+        "reference": "1Cor 14:19",
+        "strongs": "G3056",
+        "translit": "logos",
+        "anchor_rationale": "'I would rather speak five words with my mind in order to instruct others, than ten thousand words in a tongue.' The phenomenon is explicit: words spoken with the nous (mind) reach the inner person of the hearer and instruct. Quantity is irrelevant; inner engagement of mind-to-mind is the criterion. The inner dimension of speech — the mind behind the word — determines whether it communicates."
+      }
+    },
+    {
+      "code": "M15-H-VCG03",
+      "label": "The word as summarising moral principle",
+      "context_description": "The term names logos as the single moral principle that holds and summarises all the law's content — the whole law is fulfilled in one word: love your neighbour. The logos here is not a speech-act or a divine disclosure but an inner moral principle of such compression and completeness that it contains all specific commandments. Inner-being phenomenon: the word as comprehensive inner moral standard.",
+      "cluster_subgroup_code": "M15-H",
+      "mti_term_ids": [
+        1171
+      ],
+      "verse_count": 2,
+      "verses": [
+        {
+          "vr_id": 42569,
+          "reference": "Gal 5:14",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        },
+        {
+          "vr_id": 42572,
+          "reference": "Rom 14:12",
+          "strongs": "G3056",
+          "mti_term_id": 1171,
+          "assignment_note": null
+        }
+      ],
+      "anchor_proposed": {
+        "vr_id": 42572,
+        "reference": "Rom 14:12",
+        "strongs": "G3056",
+        "translit": "logos",
+        "anchor_rationale": "'Any other commandment is summed up in this word: You shall love your neighbor as yourself.' The most explicit statement of the phenomenon: logos as the single inner moral principle that holds all commandments. The compression is deliberate — the word as moral principle contains all specific moral content within itself, making it the inner standard against which all particular acts are measured."
+      }
+    }
+  ],
+  "setasides": {
+    "reason_code": "no_inner_being_phenomenon",
+    "context_description": "Rom 3:4 — logos quotation of Psalm in rhetorical context; P-status noted in meaning.",
+    "verse_count": 1,
+    "verses": [
+      {
+        "vr_id": 42574,
+        "reference": "Rom 3:4",
+        "strongs": "G3056",
+        "mti_term_id": 1171,
+        "assignment_note": null
+      }
+    ]
+  },
+  "reroutes": {
+    "target_subgroup_code": null,
+    "verse_count": 0,
+    "verses": []
+  }
+}

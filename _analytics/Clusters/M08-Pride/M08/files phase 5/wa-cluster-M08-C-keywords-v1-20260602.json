@@ -1,0 +1,938 @@
+{
+  "_meta": {
+    "model": "claude-sonnet-4-6",
+    "verses": 70,
+    "filled": 70,
+    "batches": 3,
+    "usage_totals": {
+      "input": 10908,
+      "output": 4434,
+      "cache_create": 0,
+      "cache_read": 3483
+    }
+  },
+  "keywords_by_vc_id": {
+    "33353": {
+      "reference": "1Ki 20:11",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boast",
+      "keywords": [
+        "boasting premature",
+        "self-glorification",
+        "presumption",
+        "victory unclaimed",
+        "pride foolish"
+      ]
+    },
+    "33354": {
+      "reference": "Psa 10:3",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boasts",
+      "keywords": [
+        "self-exaltation",
+        "craving boasted",
+        "soul orientation",
+        "God renouncing",
+        "pride self-directed"
+      ]
+    },
+    "33355": {
+      "reference": "Psa 49:6",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boast",
+      "keywords": [
+        "wealth trust",
+        "pride material",
+        "self-security",
+        "boasting riches",
+        "misplaced confidence"
+      ]
+    },
+    "33343": {
+      "reference": "Psa 52:1",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boast",
+      "keywords": [
+        "evil boasted",
+        "will malicious",
+        "pride defiant",
+        "self-exaltation",
+        "God opposing"
+      ]
+    },
+    "34222": {
+      "reference": "Psa 90:10",
+      "strongs": "H7296",
+      "transliteration": "ro.hav",
+      "span": "span",
+      "keywords": [
+        "pride deflated",
+        "strength illusory",
+        "glory fleeting",
+        "boast undone",
+        "mortality confronted"
+      ]
+    },
+    "33356": {
+      "reference": "Psa 97:7",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boast",
+      "keywords": [
+        "idol boasting",
+        "misplaced pride",
+        "shame exposed",
+        "glory misdirected",
+        "worth false"
+      ]
+    },
+    "33357": {
+      "reference": "Pro 20:14",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boasts",
+      "keywords": [
+        "duplicity inner",
+        "self-promotion cunning",
+        "boasting private",
+        "deception willful",
+        "advantage claimed"
+      ]
+    },
+    "33358": {
+      "reference": "Pro 25:14",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boasts",
+      "keywords": [
+        "boasting empty",
+        "self-inflation",
+        "promise unfulfilled",
+        "substance lacking",
+        "pride hollow"
+      ]
+    },
+    "33359": {
+      "reference": "Pro 27:1",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boast",
+      "keywords": [
+        "future presumed",
+        "self-confidence unwarranted",
+        "ignorance unrecognized",
+        "boasting tomorrow",
+        "presumption"
+      ]
+    },
+    "33342": {
+      "reference": "Jer 9:23",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boast",
+      "keywords": [
+        "self-directed boasting",
+        "creaturely pride",
+        "God substituted",
+        "self-sufficiency",
+        "misalignment inner"
+      ]
+    },
+    "33360": {
+      "reference": "Jer 49:4",
+      "strongs": "H1984H",
+      "transliteration": "ha.lal",
+      "span": "boast",
+      "keywords": [
+        "self-deception",
+        "faithless confidence",
+        "security false",
+        "boasting resources",
+        "God forgotten"
+      ]
+    },
+    "33867": {
+      "reference": "Rom 1:30",
+      "strongs": "G0213",
+      "transliteration": "alazōn",
+      "span": "boastful",
+      "keywords": [
+        "self-display",
+        "will corrupted",
+        "self-aggrandizement",
+        "pride dispositional",
+        "defiance God"
+      ]
+    },
+    "33882": {
+      "reference": "Rom 2:17",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "religious pride",
+        "identity self-distinction",
+        "law misused",
+        "boasting privilege",
+        "humility absent"
+      ]
+    },
+    "33883": {
+      "reference": "Rom 2:23",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "self-deception moral",
+        "pride inconsistent",
+        "law violated",
+        "conduct contradicting",
+        "boasting exposed"
+      ]
+    },
+    "33914": {
+      "reference": "Rom 3:27",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "boasting",
+      "keywords": [
+        "boasting excluded",
+        "pride displaced",
+        "faith undercutting",
+        "merit dissolved",
+        "self-achievement void"
+      ]
+    },
+    "33904": {
+      "reference": "Rom 4:2",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boast about",
+      "keywords": [
+        "pride voided",
+        "self-congratulation",
+        "divine presence exposing",
+        "merit claimed",
+        "boasting groundless"
+      ]
+    },
+    "33874": {
+      "reference": "Rom 5:2",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "rejoice",
+      "keywords": [
+        "boasting redirected",
+        "exultation God-directed",
+        "hope grounded",
+        "pride transformed",
+        "gratitude inner"
+      ]
+    },
+    "33875": {
+      "reference": "Rom 5:3",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "rejoice",
+      "keywords": [
+        "suffering embraced",
+        "exultation reframed",
+        "endurance generated",
+        "faith perspective",
+        "boasting transformed"
+      ]
+    },
+    "33876": {
+      "reference": "Rom 5:11",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "rejoice",
+      "keywords": [
+        "exultation divine",
+        "reconciliation received",
+        "pride God-directed",
+        "boasting grace",
+        "self dissolved"
+      ]
+    },
+    "33915": {
+      "reference": "Rom 15:17",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "proud",
+      "keywords": [
+        "grace grounded pride",
+        "boasting localized",
+        "self transcended",
+        "work apostolic",
+        "pride redirected"
+      ]
+    },
+    "33877": {
+      "reference": "1Cor 1:29",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "boasting denied",
+        "self-congratulation blocked",
+        "grace silencing",
+        "pride shut down",
+        "humility enforced"
+      ]
+    },
+    "33878": {
+      "reference": "1Cor 1:31",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boasts",
+      "keywords": [
+        "pride redirected",
+        "boasting Lord-directed",
+        "self displaced",
+        "desire reoriented",
+        "God glorified"
+      ]
+    },
+    "33884": {
+      "reference": "1Cor 3:21",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "human attachment",
+        "pride misplaced",
+        "boasting men",
+        "division inner",
+        "belonging misunderstood"
+      ]
+    },
+    "33871": {
+      "reference": "1Cor 4:7",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "self-origination illusion",
+        "gift unacknowledged",
+        "credit claimed",
+        "will deceived",
+        "pride exposed"
+      ]
+    },
+    "33903": {
+      "reference": "1Cor 5:6",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boasting",
+      "keywords": [
+        "pride corrupting",
+        "self-congratulation blind",
+        "community corrupted",
+        "moral danger ignored",
+        "boasting spreading"
+      ]
+    },
+    "33905": {
+      "reference": "1Cor 9:15",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boasting",
+      "keywords": [
+        "pride integrity",
+        "will guarding",
+        "self-denial chosen",
+        "identity protected",
+        "voluntary renunciation"
+      ]
+    },
+    "33906": {
+      "reference": "1Cor 9:16",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boasting",
+      "keywords": [
+        "compulsion divine",
+        "agency voluntary",
+        "pride conditional",
+        "necessity imposed",
+        "will constrained"
+      ]
+    },
+    "33916": {
+      "reference": "1Cor 15:31",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "pride",
+      "keywords": [
+        "pride relational",
+        "boasting christward",
+        "suffering embraced",
+        "witness inner",
+        "joy sustaining"
+      ]
+    },
+    "33912": {
+      "reference": "2Cor 1:12",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "boast",
+      "keywords": [
+        "conscience testimony",
+        "integrity confirmed",
+        "boasting grounded",
+        "self-assessment confident",
+        "sincerity inner"
+      ]
+    },
+    "33907": {
+      "reference": "2Cor 1:14",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boast",
+      "keywords": [
+        "pride mutual",
+        "boasting eschatological",
+        "belonging shared",
+        "vindication anticipated",
+        "relational confidence"
+      ]
+    },
+    "33872": {
+      "reference": "2Cor 5:12",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "pride inward",
+        "heart grounded",
+        "appearance rejected",
+        "integrity commended",
+        "boasting contrasted"
+      ]
+    },
+    "33902": {
+      "reference": "2Cor 5:12",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boast",
+      "keywords": [
+        "pride superficial",
+        "heart basis",
+        "outward rejected",
+        "character inner",
+        "boasting false"
+      ]
+    },
+    "33917": {
+      "reference": "2Cor 7:4",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "pride",
+      "keywords": [
+        "pride relational",
+        "joy overflowing",
+        "confidence others",
+        "affliction endured",
+        "comfort received"
+      ]
+    },
+    "33898": {
+      "reference": "2Cor 7:14",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boasts",
+      "keywords": [
+        "confidence validated",
+        "boasting truthful",
+        "shame avoided",
+        "reality confirmed",
+        "trust vindicated"
+      ]
+    },
+    "33918": {
+      "reference": "2Cor 7:14",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "boasting",
+      "keywords": [
+        "pride vindicated",
+        "commendation relational",
+        "truth verified",
+        "boasting confirmed",
+        "shame averted"
+      ]
+    },
+    "33919": {
+      "reference": "2Cor 8:24",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "boasting",
+      "keywords": [
+        "pride public",
+        "commendation communal",
+        "confidence demonstrated",
+        "love proven",
+        "boasting visible"
+      ]
+    },
+    "33899": {
+      "reference": "2Cor 9:2",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "confidence others",
+        "zeal stirring",
+        "boasting motivating",
+        "generosity commended",
+        "readiness praised"
+      ]
+    },
+    "33911": {
+      "reference": "2Cor 9:3",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boasting",
+      "keywords": [
+        "pride reputational",
+        "boasting vulnerable",
+        "shame anticipatory",
+        "confidence conditional",
+        "readiness required"
+      ]
+    },
+    "33920": {
+      "reference": "2Cor 9:4",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "confident",
+      "keywords": [
+        "confidence exposed",
+        "shame anticipatory",
+        "humiliation feared",
+        "boasting unfounded",
+        "pride vulnerable"
+      ]
+    },
+    "33887": {
+      "reference": "2Cor 10:8",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "authority divine",
+        "boasting justified",
+        "shame absent",
+        "confidence apostolic",
+        "building upward"
+      ]
+    },
+    "33888": {
+      "reference": "2Cor 10:13",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "boasting bounded",
+        "ambition restrained",
+        "sphere divine",
+        "will constrained",
+        "self-commendation limited"
+      ]
+    },
+    "33889": {
+      "reference": "2Cor 10:15",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "integrity restraining",
+        "credit refused",
+        "boasting honest",
+        "will refusing",
+        "labor genuine"
+      ]
+    },
+    "33890": {
+      "reference": "2Cor 10:16",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boasting",
+      "keywords": [
+        "credit false",
+        "boasting illegitimate",
+        "labor original",
+        "integrity motivated",
+        "ambition directed"
+      ]
+    },
+    "33891": {
+      "reference": "2Cor 10:17",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boasts",
+      "keywords": [
+        "self-glory redirected",
+        "boasting godward",
+        "impulse redirected",
+        "pride displaced",
+        "will submitted"
+      ]
+    },
+    "33921": {
+      "reference": "2Cor 11:10",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "boasting",
+      "keywords": [
+        "conviction inward",
+        "boasting unsuppressed",
+        "truth indwelling",
+        "will resolute",
+        "conscience grounded"
+      ]
+    },
+    "33892": {
+      "reference": "2Cor 11:12",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boasted",
+      "keywords": [
+        "boasting false",
+        "claim self-serving",
+        "parity asserted",
+        "deception exposed",
+        "rivalry unmasked"
+      ]
+    },
+    "33893": {
+      "reference": "2Cor 11:16",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "irony self-aware",
+        "boasting foolish",
+        "indulgence requested",
+        "pride acknowledged",
+        "posture inverted"
+      ]
+    },
+    "33922": {
+      "reference": "2Cor 11:17",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "boastful",
+      "keywords": [
+        "pride foolish",
+        "boasting self-aware",
+        "mind Christ contrary",
+        "confidence self-assertive",
+        "speech labeled"
+      ]
+    },
+    "33894": {
+      "reference": "2Cor 11:18",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "boasting fleshly",
+        "credentials worldly",
+        "self-promotion exposed",
+        "irony adopted",
+        "standard misguided"
+      ]
+    },
+    "33873": {
+      "reference": "2Cor 11:30",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "weakness embraced",
+        "pride inverted",
+        "vulnerability disclosed",
+        "self-disclosure honest",
+        "strength renounced"
+      ]
+    },
+    "33895": {
+      "reference": "2Cor 12:1",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boasting",
+      "keywords": [
+        "boasting reluctant",
+        "self awareness",
+        "will pressing",
+        "gain absent",
+        "disclosure divine"
+      ]
+    },
+    "33896": {
+      "reference": "2Cor 12:5",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "self restraint",
+        "boasting redirected",
+        "weakness embraced",
+        "distinction inner",
+        "pride displaced"
+      ]
+    },
+    "33897": {
+      "reference": "2Cor 12:6",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "self restraint",
+        "truth withheld",
+        "will refraining",
+        "pride managed",
+        "perception guarded",
+        "integrity chosen"
+      ]
+    },
+    "33870": {
+      "reference": "2Cor 12:9",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "boasting redirected",
+        "weakness embraced",
+        "dependence willing",
+        "pride inverted",
+        "glory transferred",
+        "joy gladly"
+      ]
+    },
+    "33908": {
+      "reference": "Gal 6:4",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boast",
+      "keywords": [
+        "self examination",
+        "pride grounded",
+        "comparison refused",
+        "integrity inner",
+        "boasting honest"
+      ]
+    },
+    "33885": {
+      "reference": "Gal 6:13",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "pride exploitative",
+        "self serving",
+        "trophy seeking",
+        "desire corrupt",
+        "boasting fleshly",
+        "instrumentalizing"
+      ]
+    },
+    "33869": {
+      "reference": "Gal 6:14",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "boasting displaced",
+        "self crucified",
+        "world renounced",
+        "pride reoriented",
+        "identity cross",
+        "flesh rejected"
+      ]
+    },
+    "65604": {
+      "reference": "Eph 2:9",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "self exaltation excluded",
+        "boasting impossible",
+        "pride structural",
+        "humility enforced",
+        "dependence total"
+      ]
+    },
+    "33909": {
+      "reference": "Phili 1:26",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "glory",
+      "keywords": [
+        "pride redirected",
+        "glory transferred",
+        "relational joy",
+        "boasting communal",
+        "object displaced"
+      ]
+    },
+    "33910": {
+      "reference": "Phili 2:16",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "proud",
+      "keywords": [
+        "anticipatory pride",
+        "eschatological satisfaction",
+        "faithfulness confirmed",
+        "joy prospective",
+        "labor vindicated"
+      ]
+    },
+    "33879": {
+      "reference": "Phili 3:3",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "glory",
+      "keywords": [
+        "boasting reoriented",
+        "flesh rejected",
+        "spirit directed",
+        "self confidence absent",
+        "worship integrated",
+        "pride displaced"
+      ]
+    },
+    "33913": {
+      "reference": "1Th 2:19",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "boasting",
+      "keywords": [
+        "pride relational",
+        "eschatological joy",
+        "boasting fruitful",
+        "glory anticipatory",
+        "ministry validated"
+      ]
+    },
+    "33881": {
+      "reference": "2Th 1:4",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "pride outward",
+        "boasting communal",
+        "endurance honored",
+        "glory others",
+        "joy vicarious"
+      ]
+    },
+    "33868": {
+      "reference": "2Ti 3:2",
+      "strongs": "G0213",
+      "transliteration": "alazōn",
+      "span": "proud",
+      "keywords": [
+        "self centeredness",
+        "pride arrogant",
+        "boasting pathological",
+        "self love",
+        "character corrupt",
+        "hardening social"
+      ]
+    },
+    "33901": {
+      "reference": "Heb 3:6",
+      "strongs": "G2745",
+      "transliteration": "kauchēma",
+      "span": "boasting",
+      "keywords": [
+        "hope gripped",
+        "confidence persevering",
+        "boasting steadfast",
+        "belonging conditional",
+        "will holding",
+        "pride eschatological"
+      ]
+    },
+    "33880": {
+      "reference": "Jam 1:9",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "pride inverted",
+        "dignity received",
+        "status reversed",
+        "joy legitimate",
+        "boasting reoriented",
+        "identity divine"
+      ]
+    },
+    "33866": {
+      "reference": "Jam 4:16",
+      "strongs": "G0212",
+      "transliteration": "alazoneia",
+      "span": "arrogance",
+      "keywords": [
+        "arrogance",
+        "pride presumptuous",
+        "God excluded",
+        "self assertion",
+        "boasting evil",
+        "sovereignty denied"
+      ]
+    },
+    "33886": {
+      "reference": "Jam 4:16",
+      "strongs": "G2744",
+      "transliteration": "kauchaomai",
+      "span": "boast",
+      "keywords": [
+        "boasting evil",
+        "arrogance active",
+        "self assertion",
+        "future presumed",
+        "will usurping",
+        "God excluded"
+      ]
+    },
+    "33923": {
+      "reference": "Jam 4:16",
+      "strongs": "G2746",
+      "transliteration": "kauchēsis",
+      "span": "boasting",
+      "keywords": [
+        "pride evil",
+        "sovereignty denied",
+        "boasting arrogant",
+        "moral failure",
+        "God excluded",
+        "calculus corrupted"
+      ]
+    },
+    "33865": {
+      "reference": "1Jo 2:16",
+      "strongs": "G0212",
+      "transliteration": "alazoneia",
+      "span": "pride",
+      "keywords": [
+        "self display",
+        "pride worldly",
+        "confidence presumptuous",
+        "orientation corrupt",
+        "desire misplaced",
+        "world sourced"
+      ]
+    }
+  }
+}

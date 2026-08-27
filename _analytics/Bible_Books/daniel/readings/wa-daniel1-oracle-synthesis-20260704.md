@@ -1,0 +1,17 @@
+# Daniel 1 — inner-being scene reading (Phase-2 meaning synthesis)
+
+- **Source:** Phase-1 lexicals per **narrative scene** (`segment_unit`, provenance `daniel-segmentation-v1-20260704`). Daniel 1–6 is prose; read as scenes. Cited; grounded; *stated* | *inferred*.
+
+---
+
+## DAN-purposed-heart · Daniel 1:1–21 · [D, multi] — the resolved heart holding conviction with courtesy
+
+**The reading.** Deported and renamed, the young men are pressed into the king's service and diet. The pivot is a single interior act: "**But Daniel resolved that he would not defile himself with the king's food, or with the wine that he drank**" (v.8). He does not defy — he *asks*, and proposes a **test**: "**Test your servants for ten days; let us be given vegetables and water**" (vv.11–13). God gives him "favour and compassion" (v.9) and the four "learning and skill in all… wisdom" (v.17). The finding is **a *resolved / purposed heart* — a line drawn *inwardly and in advance* — held with *courtesy* rather than confrontation** *(stated)*. The operation is **the interior *deciding beforehand* what it will and will not do ("resolved… he would not defile himself"), so that when the pressure comes the choice is already made — and the resolve is carried not by defiance but by *quiet, respectful firmness* (asking, proposing a test), a settledness that does not need to be loud** *(inferred: v.8's "**resolved**" (sam al-libbo — *set upon his heart*) is the inner-being key — the finding is that the decisive moment of integrity is not the crisis but the *prior settling of the heart*: Daniel had determined the matter "in his heart" before the food was served, so the temptation met an *already-decided* interior; the finding is that convictions held *in advance* are what hold *under* pressure — a heart that waits to decide in the moment usually yields; and the *manner* is instructive — he does not denounce the king or make a scene but "asked… allow me" (v.8) and proposed a verifiable "test" (v.12): the finding is that deep conviction can be carried with *courtesy and wisdom* rather than defiance — firmness of the interior does not require harshness of manner; the young man who will not bend on the essential is gracious about the method, and God honours both the resolve and the wisdom, giving favour and understanding)*.
+
+**Characteristics surfaced:** *the resolved/purposed heart ("Daniel resolved… he would not defile himself" — the line drawn inwardly and in advance)* (thread — a gem: integrity settled before the crisis, so the temptation meets an already-decided heart, w/ 1:8, Ps 17:3, 119:106, Job 31:1); *conviction carried with courtesy, not defiance (asking, proposing a test — firmness of heart without harshness of manner)* (new — a gem: deep resolve held graciously and wisely, w/ 1:8-13, Col 4:6, 1 Pet 3:15); *God honouring the settled heart (favour + wisdom given to the resolved)* (thread — w/ 1:9,17).
+
+---
+
+## Chapter-level notes
+- **Surfaced:** the resolved/purposed heart; conviction carried with courtesy; God honouring the settled heart. Chapter 1 opens Daniel with the book's foundational inner-being note — integrity is a heart *settled in advance*, held with wisdom rather than defiance.
+- **Threads:** the purposed/set heart (→ 10:12, "you set your heart to understand"; w/ Ps 119:106); firmness under pressure (→ 3:18 "but if not"; 6:10); wisdom given by God (→ 2, 5:11-12).

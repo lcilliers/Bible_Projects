@@ -1,0 +1,498 @@
+{
+  "_meta": {
+    "cluster": "M08",
+    "phase": 5,
+    "governing_instruction": "wa-sessionb-cluster-instruction-v2_8-20260519",
+    "date": "2026-05-20",
+    "total_verses": 470,
+    "substantive": 465,
+    "note": "vc_id mapping to be built by CC from this spec. For split terms, verse references identify which vc_ids go to secondary sub-groups; all other vc_ids for the term go to the primary sub-group.",
+    "count_discrepancy": "Constitution report lists 470 verses but mapping yields 466 unique verse assignments. Gap of 4 explained by duplicate verse entries in the report (huperefania Mar 7:22 x2; rum Psa 75:7 x2; rum Dan 11:12 x2; rum Dan 11:36 x2). CC to confirm vc_id count from DB."
+  },
+  "subgroups": {
+    "M08-A": "Arrogant Self-Elevation — the Dispositional Core",
+    "M08-B": "Presumptuous Defiance — Pride as Willful Transgression",
+    "M08-C": "Boasting and Self-Display — Pride's Verbal and Public Form",
+    "M08-D": "Vain Conceit — Inflated Self-Estimate in the Mind",
+    "M08-E": "Pride of Power and Position — Arrogance in Strength, Wealth, and Authority",
+    "M08-F": "Cross-Register Holding — Divine Majesty and God-Directed Exaltation",
+    "M08-G": "Marginal / Narrative Holding — Non-Evidenced Pride Verses",
+    "M08-BOUNDARY": "BOUNDARY — Qualifying / Supportive Register"
+  },
+  "term_assignments": {
+    "1113": {
+      "strongs": "G0193",
+      "translit": "akratēs",
+      "primary": "M08-BOUNDARY",
+      "split": {}
+    },
+    "6": {
+      "strongs": "G0212",
+      "translit": "alazoneia",
+      "primary": "M08-C",
+      "split": {}
+    },
+    "6017": {
+      "strongs": "G0213",
+      "translit": "alazōn",
+      "primary": "M08-C",
+      "split": {}
+    },
+    "2782": {
+      "strongs": "G0757",
+      "translit": "archō",
+      "primary": "M08-G",
+      "split": {
+        "M08-B": [
+          "Mat 16:22",
+          "Mat 24:49",
+          "Mar 8:32",
+          "Mar 10:41",
+          "Mar 10:42",
+          "Luk 3:8",
+          "Luk 11:53",
+          "Luk 12:45"
+        ]
+      },
+      "note": "Primary is M08-G for temporal-narrative markers (~48V). M08-B for the 8 M08-relational verses listed."
+    },
+    "3089": {
+      "strongs": "G0829",
+      "translit": "authadēs",
+      "primary": "M08-B",
+      "split": {}
+    },
+    "26": {
+      "strongs": "G2744",
+      "translit": "kauchaomai",
+      "primary": "M08-C",
+      "split": {},
+      "note": "All 32V to M08-C. Phase 7 VCG design will distinguish self-directed vs God-directed boasting within M08-C."
+    },
+    "27": {
+      "strongs": "G2745",
+      "translit": "kauchēma",
+      "primary": "M08-C",
+      "split": {}
+    },
+    "28": {
+      "strongs": "G2746",
+      "translit": "kauchēsis",
+      "primary": "M08-C",
+      "split": {}
+    },
+    "4449": {
+      "strongs": "G5113",
+      "translit": "tolmētēs",
+      "primary": "M08-B",
+      "split": {}
+    },
+    "58": {
+      "strongs": "G5187",
+      "translit": "tufoō",
+      "primary": "M08-D",
+      "split": {}
+    },
+    "59": {
+      "strongs": "G5243",
+      "translit": "huperēfania",
+      "primary": "M08-A",
+      "split": {},
+      "note": "Mar 7:22 appears twice in constitution report. CC: verify vc_id count — if 2 vc_ids, both to M08-A."
+    },
+    "60": {
+      "strongs": "G5244",
+      "translit": "huperēfanos",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "4473": {
+      "strongs": "G5252",
+      "translit": "huperfroneō",
+      "primary": "M08-D",
+      "split": {}
+    },
+    "4440": {
+      "strongs": "G5308",
+      "translit": "hupsēlos",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "4439": {
+      "strongs": "G5309",
+      "translit": "hupsēlofroneō",
+      "primary": "M08-E",
+      "split": {}
+    },
+    "1587": {
+      "strongs": "G5367",
+      "translit": "filautos",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "64": {
+      "strongs": "G5448",
+      "translit": "fusioō",
+      "primary": "M08-D",
+      "split": {}
+    },
+    "6043": {
+      "strongs": "G5450",
+      "translit": "fusiōsis",
+      "primary": "M08-D",
+      "split": {}
+    },
+    "94": {
+      "strongs": "H1341",
+      "translit": "ge",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "6037": {
+      "strongs": "H1342",
+      "translit": "ga.ah",
+      "primary": "M08-A",
+      "split": {
+        "M08-F": [
+          "Exo 15:1",
+          "Exo 15:21"
+        ]
+      },
+      "note": "Job 10:16 → M08-A; Exo 15:1, 15:21 → M08-F (divine triumphant majesty)"
+    },
+    "95": {
+      "strongs": "H1343",
+      "translit": "ge.eh",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "96": {
+      "strongs": "H1344",
+      "translit": "ge.ah",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "97": {
+      "strongs": "H1346",
+      "translit": "ga.a.vah",
+      "primary": "M08-A",
+      "split": {
+        "M08-F": [
+          "Deu 33:26",
+          "Deu 33:29",
+          "Psa 68:34",
+          "Isa 13:3"
+        ]
+      }
+    },
+    "98": {
+      "strongs": "H1347",
+      "translit": "ga.on",
+      "primary": "M08-A",
+      "split": {
+        "M08-E": [
+          "Lev 26:19",
+          "Eze 7:24",
+          "Eze 16:49",
+          "Eze 24:21",
+          "Eze 30:6",
+          "Eze 30:18",
+          "Eze 32:12",
+          "Eze 33:28"
+        ],
+        "M08-F": [
+          "Exo 15:7",
+          "Job 37:4",
+          "Job 40:10",
+          "Psa 47:4",
+          "Isa 2:10",
+          "Isa 2:19",
+          "Isa 2:21",
+          "Isa 4:2",
+          "Isa 24:14",
+          "Isa 60:15",
+          "Mic 5:4",
+          "Nah 2:2"
+        ]
+      },
+      "note": "Remaining ~20 verses (human pride) → M08-A"
+    },
+    "99": {
+      "strongs": "H1348",
+      "translit": "ge.ut",
+      "primary": "M08-A",
+      "split": {
+        "M08-F": [
+          "Psa 89:9",
+          "Psa 93:1",
+          "Isa 12:5"
+        ]
+      }
+    },
+    "100": {
+      "strongs": "H1361",
+      "translit": "ga.vah",
+      "primary": "M08-A",
+      "split": {
+        "M08-E": [
+          "Eze 28:5"
+        ],
+        "M08-F": [
+          "2Ch 17:6",
+          "Job 36:7",
+          "Psa 103:11",
+          "Psa 113:5",
+          "Isa 5:16",
+          "Isa 52:13",
+          "Isa 55:9",
+          "Eze 17:24",
+          "Eze 21:26"
+        ]
+      }
+    },
+    "101": {
+      "strongs": "H1363",
+      "translit": "go.vah",
+      "primary": "M08-A",
+      "split": {
+        "M08-F": [
+          "Job 11:8",
+          "Job 22:12",
+          "Job 40:10"
+        ]
+      }
+    },
+    "5068": {
+      "strongs": "H1364",
+      "translit": "ga.vo.ah",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "102": {
+      "strongs": "H1365",
+      "translit": "gav.hut",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "6038": {
+      "strongs": "H1466",
+      "translit": "ge.vah",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "103": {
+      "strongs": "H1467",
+      "translit": "ge.vah",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "4334": {
+      "strongs": "H1984H",
+      "translit": "ha.lal (boast)",
+      "primary": "M08-C",
+      "split": {
+        "M08-C": [
+          "1Ki 20:11",
+          "Psa 10:3",
+          "Psa 49:6",
+          "Psa 52:1",
+          "Psa 97:7",
+          "Pro 20:14",
+          "Pro 25:14",
+          "Pro 27:1",
+          "Jer 9:23",
+          "Jer 49:4"
+        ],
+        "M08-F": [
+          "1Ch 16:10",
+          "Psa 34:2",
+          "Psa 44:8",
+          "Psa 63:11",
+          "Psa 64:10",
+          "Psa 105:3",
+          "Psa 106:5",
+          "Isa 41:16",
+          "Isa 45:25",
+          "Jer 4:2",
+          "Jer 9:24"
+        ]
+      },
+      "note": "Primary M08-C for self-boasting verses; M08-F for God-directed glorying verses"
+    },
+    "3039": {
+      "strongs": "H2086",
+      "translit": "zed",
+      "primary": "M08-B",
+      "split": {}
+    },
+    "112": {
+      "strongs": "H2087",
+      "translit": "za.don",
+      "primary": "M08-B",
+      "split": {}
+    },
+    "3043": {
+      "strongs": "H2102",
+      "translit": "zid",
+      "primary": "M08-B",
+      "split": {}
+    },
+    "113": {
+      "strongs": "H2103",
+      "translit": "zud",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "165": {
+      "strongs": "H4791",
+      "translit": "ma.rom",
+      "primary": "M08-F",
+      "split": {
+        "M08-A": [
+          "2Ki 19:22",
+          "2Ki 19:23",
+          "Psa 10:5",
+          "Psa 56:2",
+          "Psa 73:8",
+          "Psa 75:5",
+          "Isa 26:5",
+          "Isa 37:23",
+          "Isa 37:24"
+        ],
+        "M08-E": [
+          "Jer 49:16",
+          "Jer 51:53",
+          "Obd 3",
+          "Hab 2:9"
+        ]
+      },
+      "note": "Primary M08-F for divine-height verses (~22V); M08-A for human-pride verses (9V); M08-E for power-height verses (4V). Remaining ~1 (Isa 38:14 — supplication, no pride) → M08-F"
+    },
+    "3834": {
+      "strongs": "H5719",
+      "translit": "a.din",
+      "primary": "M08-E",
+      "split": {}
+    },
+    "6992": {
+      "strongs": "H6967",
+      "translit": "qo.mah",
+      "primary": "M08-A",
+      "split": {
+        "M08-E": [
+          "Eze 19:11"
+        ]
+      }
+    },
+    "229": {
+      "strongs": "H7292",
+      "translit": "ra.hav (assertive)",
+      "primary": "M08-G",
+      "split": {
+        "M08-B": [
+          "Isa 3:5"
+        ]
+      }
+    },
+    "231": {
+      "strongs": "H7295",
+      "translit": "ra.hav (proud)",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "232": {
+      "strongs": "H7296",
+      "translit": "ro.hav",
+      "primary": "M08-C",
+      "split": {}
+    },
+    "6025": {
+      "strongs": "H7311A",
+      "translit": "rum (to exalt)",
+      "primary": "M08-A",
+      "split": {
+        "M08-F": [
+          "Exo 15:2",
+          "1Sa 2:1",
+          "1Sa 2:7",
+          "1Sa 2:8",
+          "1Sa 2:10",
+          "2Sa 22:47",
+          "2Sa 22:49",
+          "1Ki 14:7",
+          "1Ki 16:2",
+          "1Ch 25:5",
+          "Neh 9:5",
+          "Psa 3:3",
+          "Psa 9:13",
+          "Psa 18:46",
+          "Psa 18:48",
+          "Psa 21:13",
+          "Psa 27:5",
+          "Psa 27:6",
+          "Psa 30:1",
+          "Psa 34:3",
+          "Psa 37:34",
+          "Psa 46:10",
+          "Psa 57:5",
+          "Psa 57:11",
+          "Psa 61:2",
+          "Psa 89:16",
+          "Psa 89:17",
+          "Psa 89:19",
+          "Psa 89:24",
+          "Psa 89:42",
+          "Psa 92:10",
+          "Psa 99:2",
+          "Psa 99:5",
+          "Psa 99:9",
+          "Psa 107:32",
+          "Psa 108:5",
+          "Psa 110:7",
+          "Psa 112:9",
+          "Psa 113:4",
+          "Psa 113:7",
+          "Psa 118:28",
+          "Psa 145:1",
+          "Psa 148:14",
+          "Pro 4:8",
+          "Pro 11:11",
+          "Pro 14:34",
+          "Isa 25:1",
+          "Isa 26:11",
+          "Isa 30:18",
+          "Isa 33:10",
+          "Isa 52:13",
+          "Isa 57:15",
+          "Lam 2:17",
+          "Eze 21:26",
+          "Hos 11:7",
+          "Ezr 9:6"
+        ]
+      },
+      "note": "M08-A: ~35 self-exaltation verses (Exo 14:8, Num 15:30, Deu 8:14, Deu 17:20, Deu 32:27, 2Sa 22:28, 1Ki 11:26-27, 2Ki 19:22, Psa 12:8, 13:2, 18:27, 66:7, 75:4-7, 75:10, 131:1, 138:6, 140:8, Pro 6:17, 14:29, 30:13, Isa 2:12, 10:33, 14:13, 37:23, Dan 11:12, 11:36, Eze 31:10, Hos 13:6 — CC to confirm from DB). M08-F: ~57 divine-exaltation and God-directed-praise verses listed."
+    },
+    "6027": {
+      "strongs": "H7312",
+      "translit": "rum (height)",
+      "primary": "M08-A",
+      "split": {
+        "M08-G": [
+          "Pro 25:3"
+        ]
+      }
+    },
+    "241": {
+      "strongs": "H7830",
+      "translit": "sha.chats",
+      "primary": "M08-A",
+      "split": {}
+    },
+    "2807": {
+      "strongs": "H7986",
+      "translit": "shal.le.tet",
+      "primary": "M08-E",
+      "split": {}
+    }
+  }
+}

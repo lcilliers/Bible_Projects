@@ -1,0 +1,110 @@
+{
+ "book": "Pro", "book_id": 20, "chapter": 1, "provenance": "reread-proverbs-2026",
+ "note": "Passage 3704 (Pro 1:7-8) — the motto. fear-of-the-LORD = the human's reverent awe (God as target, locus internal). despise (buz) = the fool's contempt, target=wisdom (two-axes). Descent (fools despise) read at full weight. 'Hear' upgraded to characteristic.",
+ "spans": {
+  "264846": {"gloss": "the fear of the LORD (yirah)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"the fear of the LORD — reverent awe before God"},
+    {"n":102,"l":"type","k":"value","v":"affect"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the person who fears God","to":264846,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"revering God as the very beginning/first-principle of knowledge"},
+    {"n":107,"l":"target","k":"flag","v":"the LORD (God as the object of the fear)","to":264846,"res":"inferred"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"welded to knowledge as its beginning (reshit) — fear is the door to knowing","to":264849,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"the programmatic claim: knowledge does not begin in intellect but in a DISPOSITION of the inner life toward God (reverence). God is the target/arena; the fear itself is the human interior state. This anchors the whole book."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264849": {"gloss": "knowledge (daat)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"knowledge — the knowing that fear of God opens"},
+    {"n":102,"l":"type","k":"value","v":"cognition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the God-fearer","to":264849,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"knowledge as the fruit whose beginning is the fear of God"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"welded to the fear of the LORD as its root","to":264846,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"daat is here the crown, not the entry — its beginning lies outside itself in reverence; knowledge is thus made dependent on a moral-religious disposition."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264850": {"gloss": "fools (evil)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"fools — the morally-obstinate who reject wisdom"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the fool","to":264850,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"the fool as the one who despises wisdom and instruction"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"welded to despising (buz); the fool is defined by his contempt","to":264851,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"evil (the moral fool) is set as the antithesis of the God-fearer in the SAME verse: reverence begins knowledge, contempt refuses it. The fool is a disposition, not mere ignorance."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264851": {"gloss": "despise (buz)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"to despise — to hold wisdom in contempt"},
+    {"n":102,"l":"type","k":"value","v":"affect"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"fools","to":264850,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"holding wisdom and instruction in contempt, refusing them"},
+    {"n":107,"l":"target","k":"pair","v":"wisdom","to":264852,"res":"span"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"the defining act of the fool (264850)","to":264850,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"buz is the DESCENT-operation — contempt turned on the very goods the book offers. Read at full weight: the fool's inner posture is active despising, not passive lack."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264852": {"gloss": "wisdom (chokmah)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"wisdom — here the object the fool despises"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the wise (whom the fool rejects)","to":264852,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"wisdom as the good held in contempt by the fool"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"paired with instruction (musar) as the despised goods","to":264853,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"chokmah is the target of buz here (two-axes: its own char AND despise's object). The same good that reverence gains, contempt refuses."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264853": {"gloss": "instruction / discipline (musar)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"instruction/discipline — despised alongside wisdom"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the one who should receive it","to":264853,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"the discipline the fool refuses"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"paired with wisdom as the twin good despised","to":264852,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"musar (discipline) recurs, now as an object of contempt — the fool refuses not just knowledge but the corrective shaping. Distinct occurrence from its 1:2-3 uses."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264854": {"gloss": "Hear / listen (shama)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"hear — the son commanded to receptive listening"},
+    {"n":102,"l":"type","k":"value","v":"action"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"my son (the addressed learner)","to":264854,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"heeding the father's instruction (an imperative of the will's attention)"},
+    {"n":107,"l":"target","k":"pair","v":"instruction (father's)","to":264857,"res":"span"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"set against the fool's despising — the son hears where the fool refuses","to":264857,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"the imperative shama is the countermove to the fool's buz in the same passage: obedient listening vs contempt. Read as characteristic (the receptive-attentive operation)."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]},
+  "264857": {"gloss": "instruction (father's, musar)", "dims": [
+    {"n":101,"l":"sense","k":"value","v":"the father's instruction — parental discipline to be heeded"},
+    {"n":102,"l":"type","k":"value","v":"disposition"},
+    {"n":104,"l":"seat","k":"flag","v":"none","res":"none"},
+    {"n":105,"l":"bearer","k":"flag","v":"the son who receives it","to":264857,"res":"inferred"},
+    {"n":106,"l":"operation","k":"event","v":"the father's shaping discipline, the object of the son's hearing"},
+    {"n":107,"l":"target","k":"flag","v":"none","res":"none"},
+    {"n":108,"l":"manner","k":"flag","v":"none","res":"none"},
+    {"n":112,"l":"coupling","k":"flag","v":"paired with the mother's teaching (torah) in the parallel line","to":264857,"res":"inferred"},
+    {"n":116,"l":"locus","k":"value","v":"internal:ib-state"},
+    {"n":114,"l":"discovery","k":"note","v":"musar here is CONCRETE and relational — a father's discipline (not abstract), the thing the son's shama takes in; the target-endpoint of 264854."},
+    {"n":115,"l":"role","k":"value","v":"characteristic"}
+  ]}
+ }
+}
