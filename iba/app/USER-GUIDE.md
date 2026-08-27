@@ -1257,7 +1257,7 @@ standard, not (yet) an automatically-checked one.
 
 ---
 
-## 13d. Prose module (added 2026-08-24, escalation #829; `SetStatus` added 2026-08-27, escalation #918)
+## 13d. Prose module (added 2026-08-24, escalation #829; `SetStatus` added 2026-08-27, escalation #920)
 
 `Prose.ps1` — the DB-canonical prose store (`prose_section`/`prose_section_type`,
 `bible_research.db`), 8 dispatcher steps, `kind='utility'`:
@@ -1280,7 +1280,7 @@ takes one or more comma-separated ids; a section already at the requested status
 no-op, and an unrecognised `-Status` is refused against the live enum before a patch is even
 written. Like `ExportChapter`/`ImportChapter`/`FlagFixPropose`/`FlagFixApply`, it writes no DB row
 itself — it generates a `PROSE` patch (`prose_section`/`set_status`), applied the same way as
-every other prose patch, via `scripts/apply_session_patch.py`. Added to close escalation #918: the
+every other prose patch, via `scripts/apply_session_patch.py`. Added to close escalation #920: the
 chapter-level review status previously tracked in `cfg_prose_chapter` (a `cfg_*`/`iba.db` table)
 was workflow data about content, not a rule, and needed the full `Config-Maintenance.ps1 -Step
 Propose` approval cycle for what is an ordinary content edit — `cfg_prose_chapter` is now removed
