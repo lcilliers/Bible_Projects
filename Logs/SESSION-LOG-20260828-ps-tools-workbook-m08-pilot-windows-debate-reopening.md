@@ -83,6 +83,7 @@ then take up the new "Cluster analysis framework" escalation once the researcher
 
 ## Git state
 
-Commit/push to follow immediately after this file is written, per `governance.session_log_triggers_commit` —
-confirmed hash and push status below once committed (corrected in a follow-up commit if the hash
-below doesn't yet match, same pattern used earlier this session).
+Branch `main`, commit `e81e5826dea5a8719706e1babedbce5e3beced96` ("session 20260828 (cont.): PS
+tools workbook built, M08 cluster-work pilot (#1005) complete, windows-debate reopened, escalation
+#1006 raised for tomorrow"), pushed to `origin/main` — confirmed via `git log -1`/`git status` after
+push: "Your branch is up to date with 'origin/main'." / "nothing to commit, working tree clean."
