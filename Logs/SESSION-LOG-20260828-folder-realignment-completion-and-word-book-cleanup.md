@@ -95,6 +95,13 @@ config-touching step, not skipped):**
 
 ## Git state
 
-To be confirmed after commit — branch, hash, and push status will be shown in chat per
-`governance.session_log_required_content` item 6, then recorded back into this file in a small
-follow-up commit (same pattern as 2026-08-27's close).
+Branch `main`, commit `4548f6a93fd4b9278f491c314dde49431aa577e3` ("session 20260828: folder
+realignment completion + word_registry/Bible_Books cleanup + self-caught config fixes"), pushed to
+`origin/main` — confirmed via `git log -1`/`git status` after push: "Your branch is up to date with
+'origin/main'." / "nothing to commit, working tree clean."
+
+One more thing found and cleared while staging this commit, not caught earlier: 884 additional
+transitional CSV snapshots had accumulated at `outputs/configs/export/` between
+`configmaint.report_path` moving there and `configmaint.csv_export_dir` taking effect — same
+disposable, zero-consumer shape as the 7,011-file archive from 2026-08-27, same ruling applied
+(deleted, not committed as noise).
