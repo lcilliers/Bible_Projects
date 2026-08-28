@@ -245,6 +245,23 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
          "in governance.oneoff_report_dir (oneoff_path() found 2026-08-08 to version without "
          "archiving, BUILD.md §83) — the rest belong in archive/",
          cfgquality.find_report_version_clutter(conn, APP)),
+        # 2026-08-28 (escalation #971/#976, researcher: "configmaint should validate every
+        # location reference in every config").
+        ("Unresolvable location settings", "a *_dir/*_path/*_folder value (cfg_setting or any "
+         "per-module table shaped like it) that does not resolve to a real folder on disk",
+         cfgquality.find_unresolvable_location_settings(conn, APP.parent.parent)),
+        # Both wired into configmaint.validate already (handlers/configmaint.py) but never
+        # mirrored here until now — found 2026-08-28 fixing #977, the same "mirror drifted from
+        # source" class of gap this whole session kept surfacing, this time in the mirror itself.
+        ("Escalation.ps1 ValidateSet drift", "a -Parameter's [ValidateSet(...)] values not "
+         "matching the live cfg_enum group it's supposed to mirror",
+         cfgquality.find_escalation_ps_validateset_drift(conn, APP)),
+        ("FolderPurpose.ps1 ValidateSet drift", "same check, for -Type/-Status against "
+         "folder_purpose_type/folder_purpose_status",
+         cfgquality.find_folderpurpose_ps_validateset_drift(conn, APP)),
+        ("Hand-rolled versioning", "a script building a -v{n} filename by hand instead of via "
+         "filingkit.versioned_path()/reportkit.oneoff_path()",
+         cfgquality.find_hand_rolled_versioning(conn, APP.parent.parent)),
     ]
     # this section is the ACTIONABLE detail behind configmaint.validate's escalation — that
     # escalation question stays short (counts + this report path) precisely because every item

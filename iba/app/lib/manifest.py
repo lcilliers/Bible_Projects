@@ -63,6 +63,9 @@ _CURRENCY_RULES = [
     ("sessions-v2/", "current"), ("workflow/", "current"), ("research/", "current"),
     ("docs/", "current"), ("outputs/", "current"), ("scripts/", "current"),
     ("engine/", "current"), ("database/", "current"), ("data/", "current"), ("iba/", "current"),
+    # 2026-08-28 (escalation #971/#976) — folders this week's reorg created, same reasoning as
+    # classify_category()'s matching addition just above.
+    ("_analytics/", "current"), ("_raw_data/", "current"), ("memory/", "current"),
     ("sessions/session_clusters", "cross-reference"), ("sessions/", "cross-reference"),
     ("logs/", "historical"), ("backups/", "backup"),
 ]
@@ -130,6 +133,18 @@ def compute_currency(rel_path: str) -> str:
 
 def classify_category(rel_path: str) -> str:
     parts = rel_path.replace("\\", "/").lower()
+    if parts.startswith("archive/"):
+        # Stripped-prefix reclassification, not a fresh hand-enumerated rule per archive
+        # subfolder (added 2026-08-28, escalation #971/#976/pathaudit) — the 2026-08-27 reorg
+        # (~7,900 files renamed into archive/ subfolders, researcher's own framing) made the old
+        # 4 hand-picked archive/{scripts,logs,docs,patches} rules stale by construction: any NEW
+        # archive subfolder fell straight through to 'other' with no rule ever written for it.
+        # Reclassifying by what the content WOULD be outside archive/ is the general fix; the 4
+        # original rules still apply first since they're literal prefix matches checked below,
+        # this is only the fallback for everything they don't already catch.
+        inner = classify_category(parts[len("archive/"):])
+        if inner != "other":
+            return inner
     if parts.startswith("iba/"):
         return "iba"
     if parts.startswith("sessions-v2"):
@@ -158,6 +173,9 @@ def classify_category(rel_path: str) -> str:
         return "export"
     if parts.startswith("research/discovery"):
         return "discovery"
+    if parts.startswith("research/"):
+        return "investigation"  # 2026-08-28: research/{templates,notes,projects,reports} etc. —
+        # smaller, less-formal siblings of research/investigations, same category
     if parts.startswith("data/schema"):
         return "schema"
     if parts.startswith("archive/scripts"):
@@ -174,6 +192,18 @@ def classify_category(rel_path: str) -> str:
         return "doc"
     if parts.startswith("logs"):
         return "log"
+    # 2026-08-28 (escalation #971/#976) — folders created/populated by this week's reorg that
+    # simply didn't exist when this function was last written, found live via folder_purpose's
+    # own census: _analytics/ (6,577 files, per-word/per-book/per-cluster analysis OUTPUT, closest
+    # existing category is 'report'), _raw_data/ (1,033 files, raw imported source data, same
+    # concept 'import' already names for data/imports), memory/ (project memory mirror, markdown
+    # facts, closest existing category is 'doc').
+    if parts.startswith("_analytics"):
+        return "report"
+    if parts.startswith("_raw_data"):
+        return "import"
+    if parts.startswith("memory"):
+        return "doc"
     return "other"
 
 
@@ -276,9 +306,26 @@ _SKIP_DIRS_DEFAULT = [".git", "__pycache__", "venv", ".venv", "env", "node_modul
 _EXCLUDE_EXTS_DEFAULT = [".pyc", ".pyo", ".pyd", ".tmp", ".swp", ".lock"]
 
 
+def _folder_purpose_lookup(cfg) -> list[tuple[str, str, str]]:
+    """(folder_path, manifest_category, manifest_currency) for every folder_purpose row that has
+    at least one of the two set, longest-path-first so the caller's prefix match picks the most
+    specific governing row. Escalation #971 Part D: folder_purpose is the primary classification
+    source once a folder is registered; classify_category()/compute_currency() below remain the
+    fallback for anything not yet registered there — non-breaking by construction."""
+    try:
+        rows = cfg.conn.execute(
+            "SELECT folder_path, manifest_category, manifest_currency FROM folder_purpose "
+            "WHERE manifest_category IS NOT NULL OR manifest_currency IS NOT NULL").fetchall()
+    except Exception:
+        return []  # folder_purpose not built yet (pre-#971) — pure fallback, unchanged behaviour
+    return sorted(((r["folder_path"], r["manifest_category"], r["manifest_currency"]) for r in rows),
+                 key=lambda t: -len(t[0]))
+
+
 def _scan(cfg) -> list[dict]:
     skip_dirs = set(cfg.setting("manifest.skip_dirs", _SKIP_DIRS_DEFAULT))
     exclude_exts = set(cfg.setting("manifest.exclude_exts", _EXCLUDE_EXTS_DEFAULT))
+    fp_rules = _folder_purpose_lookup(cfg)
     entries = []
     for dirpath, dirnames, filenames in os.walk(PROJECT_ROOT):
         dirnames[:] = [d for d in dirnames if d not in skip_dirs]
@@ -292,9 +339,16 @@ def _scan(cfg) -> list[dict]:
                 stat = fpath.stat()
             except OSError:
                 continue
-            category = classify_category(rel)
+            fp_category = fp_currency = None
+            rel_lower = rel.lower()
+            for folder_path, fp_cat, fp_cur in fp_rules:
+                prefix = folder_path.lower() + "/"
+                if rel_lower.startswith(prefix):
+                    fp_category, fp_currency = fp_cat, fp_cur
+                    break
+            category = fp_category or classify_category(rel)
             file_type = classify_type(fname, category, rel)
-            currency = compute_currency(rel)
+            currency = fp_currency or compute_currency(rel)
             entries.append({
                 "path": rel, "category": category, "file_type": file_type, "currency": currency,
                 "archived": 1 if currency == "archived" else 0,

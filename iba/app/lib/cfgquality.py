@@ -762,28 +762,29 @@ _VALIDATESET_RE = re.compile(
 _VALIDATESET_ITEM_RE = re.compile(r"'([^']*)'|\"([^\"]*)\"")
 
 
-def find_escalation_ps_validateset_drift(conn: sqlite3.Connection, app_root: pathlib.Path
-                                         ) -> list[str]:
-    """Every `_PS_VALIDATESET_ENUM_MAP` parameter's `[ValidateSet(...)]` values must exactly match
-    the live `cfg_enum` group it's supposed to mirror (after `-Decision`'s lowercase transform).
-    ADVISORY — a real drift is a genuine finding needing a look, not necessarily a hard structural
-    fault (the PS script may simply not have been updated yet)."""
-    ps_path = app_root / "ps" / "Escalation.ps1"
+def _ps_validateset_drift(conn: sqlite3.Connection, ps_path: pathlib.Path, ps_label: str,
+                          enum_map: dict) -> list[str]:
+    """Generic core: every `enum_map` parameter's `[ValidateSet(...)]` values in `ps_path` must
+    exactly match the live `cfg_enum` group it's supposed to mirror. Escalation #977, 2026-08-27
+    (D28/register v9) originated this for `Escalation.ps1` specifically; generalised 2026-08-28
+    (escalation #971/#977) so a second PS script's own hardcoded `ValidateSet` vocabulary — e.g.
+    `FolderPurpose.ps1`'s `-Type`/`-Status` — gets the same standing drift check instead of being
+    a one-off, silently-driftable copy nothing ever re-verifies against its `cfg_enum` source."""
     if not ps_path.exists():
-        return [f"Escalation.ps1 not found at {ps_path} — cannot check ValidateSet drift"]
+        return [f"{ps_label} not found at {ps_path} — cannot check ValidateSet drift"]
     text = ps_path.read_text(encoding="utf-8", errors="ignore")
     found: dict[str, list[str]] = {}
     for m in _VALIDATESET_RE.finditer(text):
         param = m.group("param")
-        if param not in _PS_VALIDATESET_ENUM_MAP:
+        if param not in enum_map:
             continue
         items = [a or b for a, b in _VALIDATESET_ITEM_RE.findall(m.group("items"))]
         found[param] = items
 
     out = []
-    for param, (enum_name, transform) in _PS_VALIDATESET_ENUM_MAP.items():
+    for param, (enum_name, transform) in enum_map.items():
         if param not in found:
-            out.append(f"Escalation.ps1: -{param} has no [ValidateSet(...)] found (expected to "
+            out.append(f"{ps_label}: -{param} has no [ValidateSet(...)] found (expected to "
                       f"mirror cfg_enum {enum_name!r})")
             continue
         ps_values = {transform(v) for v in found[param]}
@@ -792,12 +793,44 @@ def find_escalation_ps_validateset_drift(conn: sqlite3.Connection, app_root: pat
         missing = live_values - ps_values
         extra = ps_values - live_values
         if missing:
-            out.append(f"Escalation.ps1: -{param} ValidateSet is missing {sorted(missing)} "
+            out.append(f"{ps_label}: -{param} ValidateSet is missing {sorted(missing)} "
                       f"(present in live cfg_enum {enum_name!r} but not the PS ValidateSet)")
         if extra:
-            out.append(f"Escalation.ps1: -{param} ValidateSet has {sorted(extra)} which is not in "
+            out.append(f"{ps_label}: -{param} ValidateSet has {sorted(extra)} which is not in "
                       f"live cfg_enum {enum_name!r} — stale or renamed")
     return out
+
+
+def find_escalation_ps_validateset_drift(conn: sqlite3.Connection, app_root: pathlib.Path
+                                         ) -> list[str]:
+    """Every `_PS_VALIDATESET_ENUM_MAP` parameter's `[ValidateSet(...)]` values must exactly match
+    the live `cfg_enum` group it's supposed to mirror (after `-Decision`'s lowercase transform).
+    ADVISORY — a real drift is a genuine finding needing a look, not necessarily a hard structural
+    fault (the PS script may simply not have been updated yet)."""
+    return _ps_validateset_drift(conn, app_root / "ps" / "Escalation.ps1", "Escalation.ps1",
+                                 _PS_VALIDATESET_ENUM_MAP)
+
+
+_FOLDERPURPOSE_PS_VALIDATESET_ENUM_MAP = {
+    "Type": ("folder_purpose_type", lambda v: v),
+    "Status": ("folder_purpose_status", lambda v: v),
+}
+
+
+def find_folderpurpose_ps_validateset_drift(conn: sqlite3.Connection, app_root: pathlib.Path
+                                            ) -> list[str]:
+    """`FolderPurpose.ps1`'s `-Type`/`-Status` `[ValidateSet(...)]` values against the live
+    `cfg_enum` groups they mirror — escalation #977's own resolution: the values ARE registered in
+    `cfg_enum` and `set_purpose()` validates against it live (not a hardcoded Python set), but nothing
+    previously checked whether the OTHER two hardcoded copies of the same vocabulary — this PS
+    script's `ValidateSet`, and `lib/folderpurpose.py:_assess_type()`/`_assess_status()`'s literal
+    `return` values (Method D — necessarily hardcoded, since they're the RULES deciding which
+    enum value applies, not a re-statement of what values exist) — had drifted. This check covers
+    the PS copy; `auto_assess()` now validates its own literal vocabulary against the live enum at
+    the top of every run (raises loudly on drift, not a silent bad write) — found live while
+    resolving #977 that it hadn't been, unlike `set_purpose()`, which always had."""
+    return _ps_validateset_drift(conn, app_root / "ps" / "FolderPurpose.ps1", "FolderPurpose.ps1",
+                                 _FOLDERPURPOSE_PS_VALIDATESET_ENUM_MAP)
 
 
 def find_unclassified_active_steps(conn: sqlite3.Connection) -> list[str]:
@@ -814,3 +847,109 @@ def find_unclassified_active_steps(conn: sqlite3.Connection) -> list[str]:
            f"dispatched (run.py now refuses undispatched steps with no kind)"
            for r in conn.execute(
                "SELECT work_package, step FROM cfg_step WHERE inactive=0 AND kind IS NULL")]
+
+
+def find_unresolvable_location_settings(conn: sqlite3.Connection, project_root: pathlib.Path
+                                       ) -> list[str]:
+    """Every location-shaped config value (`cfg_setting` AND every per-module table shaped like it
+    — `cfg_prose`, `cfg_passage`, ...; see `lib/folderpurpose.location_settings()`, the one shared
+    enumeration both this check and `folderpurpose`'s Method B use) must resolve to a real folder
+    on disk, project-root-relative. ADVISORY, not a hard structural fault — a setting can point
+    ahead of a folder not yet created by design (a report path whose folder gets `mkdir(parents=
+    True)`'d on first write), so this flags for a look rather than failing the whole validate run.
+
+    Added 2026-08-28 (researcher, escalation #971/#976): "configmaint should validate every
+    location reference in every config as part of its validation routine." Direct cause: `cfg_prose.
+    prose.edit_file_dir` pointed at `outputs/markdown/prose-edits`, a folder physically moved away
+    (to `Workflow/Programme/prose-edits`) during the 2026-08-27 folder reorg with the setting never
+    updated to follow — undetected until the researcher noticed a DIFFERENT gap (`folder_purpose`
+    missing a `governed_by_setting`) and asked why. This check makes that class of drift a standing,
+    automatic finding instead of something found by chance."""
+    # Local import: folderpurpose lives in lib/ alongside this module; importing at call time (not
+    # module level) avoids a hard dependency for every cfgquality caller that never needs it.
+    from . import folderpurpose as fp_mod
+
+    out = []
+    for table, key, raw_value in fp_mod.location_settings(conn):
+        norm = fp_mod.normalize_setting_value(raw_value)
+        if norm is None:
+            continue  # not a plausible bare folder path (a sentence, a {template}, a JSON list)
+        if not (project_root / norm).is_dir():
+            out.append(f"{table}.{key} = {raw_value!r} — {norm!r} does not exist as a folder "
+                      f"on disk (project-root-relative)")
+    return out
+
+
+# `filing` behaviour class item 4 (escalation #863/#971/#992): a write that hand-imitates the
+# same-day -v{n} versioning pattern instead of calling filingkit.versioned_path()/reportkit.
+# oneoff_path(). Matches an f-string/format literal building "...-v{...}..." or "...-v" + str(...)
+# by hand — the two ways this codebase's own existing writers were found (2026-08-28 survey) to do
+# it before the shared utility existed.
+_HAND_VERSION_RE = re.compile(r"-v\{[^}]*\}|-v[\"']\s*\+")
+_FILINGKIT_CALL_RE = re.compile(r"\b(?:versioned_path|oneoff_path)\s*\(")
+_FILING_SCAN_EXCLUDE_ANYWHERE = {".git", "archive", "__pycache__", ".venv", "venv",
+                                "node_modules", "site-packages", "migration",
+                                # 2026-08-28: `engine/` is superseded (CLAUDE.md top banner,
+                                # 2026-08-15) and its own `-v{n}` matches turned out to be a
+                                # reference table of NAMING PATTERNS (documentary string data),
+                                # not real file-writing code — genuinely not this check's target.
+                                "engine"}
+
+
+def _strip_comments(text: str) -> str:
+    """Blanks Python COMMENT token spans (only — string literals stay live) so a comment merely
+    MENTIONING '-v{n}' in prose (found live: escalation.py's own comment describing that its
+    caller ALREADY goes through reportkit.write_report()) doesn't false-positive the same way
+    `cfgquality._code_only_text`'s docstring problem does for call-site scans, just inverted."""
+    try:
+        tokens = list(tokenize.generate_tokens(io.StringIO(text).readline))
+    except (tokenize.TokenError, IndentationError, SyntaxError, ValueError):
+        return text
+    line_starts = [0]
+    for line in text.splitlines(keepends=True):
+        line_starts.append(line_starts[-1] + len(line))
+    chars = list(text)
+    for tok in tokens:
+        if tok.type != tokenize.COMMENT:
+            continue
+        start = line_starts[tok.start[0] - 1] + tok.start[1]
+        end = line_starts[tok.end[0] - 1] + tok.end[1]
+        for i in range(start, min(end, len(chars))):
+            if chars[i] != "\n":
+                chars[i] = " "
+    return "".join(chars)
+
+
+def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.Path
+                                ) -> list[str]:
+    """`filing` behaviour class rule 4 (`cfg_behaviour_rule` 'archiving-trigger', plus the
+    naming-shape rule) as a standing check, not just a stated rule nobody re-verifies: every ACTIVE
+    (`cfg_utility.inactive=0`, or unregistered — same scope `pathaudit.py` uses) `.py` file that
+    builds a `-v{n}`-shaped filename by hand should be calling `filingkit.versioned_path()` (or its
+    `reportkit.oneoff_path()` wrapper) instead of reimplementing the same-day-bump/archive-before-
+    write logic itself. ADVISORY — a real hit needs a look (migrate the call site), not necessarily
+    a hard fault; `iba/app/migration/` excluded for the same reason `pathaudit.py` excludes it (a
+    migration's own filename literals are seed data, not a report-writing call site)."""
+    inactive = {r[0] for r in conn.execute("SELECT file_path FROM cfg_utility WHERE inactive=1")}
+    out = []
+    for f in sorted(project_root.rglob("*.py")):
+        rel = f.relative_to(project_root)
+        parts = rel.parts
+        if not parts or _FILING_SCAN_EXCLUDE_ANYWHERE & set(parts):
+            continue
+        if f.stem == "__init__" or f.stem.startswith("temp_"):
+            continue
+        rel_posix = rel.as_posix()
+        if rel_posix in inactive:
+            continue
+        if rel_posix in ("iba/app/lib/filingkit.py", "iba/app/lib/reportkit.py"):
+            continue  # the canonical implementation itself, not a caller reinventing it
+        try:
+            text = f.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        code_text = _strip_comments(text)
+        if _HAND_VERSION_RE.search(code_text) and not _FILINGKIT_CALL_RE.search(text):
+            out.append(f"{rel_posix} builds a -v{{n}} filename by hand — no filingkit."
+                      f"versioned_path()/reportkit.oneoff_path() call site in the same file")
+    return out

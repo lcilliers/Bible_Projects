@@ -48,18 +48,24 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Output locations are unchanged from the original scripts — not flagged by the escalation #648
-# sweep (only EXTRACTOR_VERSION/CHAPTER_NAMES/BOOK_STAGE_MAP/DEFAULT_LIMIT were), so left as-is
-# rather than expanding scope beyond what this escalation asked for.
+# Output locations were originally left unchanged from the pre-rebuild scripts, not flagged by the
+# escalation #648 sweep (only EXTRACTOR_VERSION/CHAPTER_NAMES/BOOK_STAGE_MAP/DEFAULT_LIMIT were).
+# Now config-driven (escalation #971/#976, iba/app/lib/pathaudit.py's scan) via output_dir()/
+# docx_output_dir()/search_output_dir()/patch_output_dir() below — these constants are the
+# Python-level DEFAULT only, used when cfg_prose is inactive/absent, same as CHAPTER_EDIT_OUT_DIR.
 OUT_DIR = Path("Workflow") / "Programme" / "programme_prose"
 DOCX_OUT_DIR = Path("outputs") / "docx"
 SEARCH_OUT_DIR = Path("outputs") / "markdown"
-# CHAPTER_EDIT_OUT_DIR: NOT "unchanged from the original scripts" as the comment above claims for
-# its siblings -- found live 2026-08-22 (researcher correction, escalation #784) to be a real
-# regression from the rebuild: outputs/markdown/prose-edits/ already existed as the established
-# convention (33 files, 2026-08-14, from the pre-rebuild script), but this constant pointed one
-# level up. Fixed to match live convention rather than the incorrect prior comment.
-CHAPTER_EDIT_OUT_DIR = Path("outputs") / "markdown" / "prose-edits"
+# CHAPTER_EDIT_OUT_DIR: corrected again 2026-08-28 (escalation #971/#976) -- the 2026-08-22 fix
+# below (outputs/markdown/prose-edits/) was itself made stale by the 2026-08-27 folder reorg, which
+# physically moved the files to Workflow/Programme/prose-edits/ without this constant (used as
+# _next_edit_version's own default param, not just edit_file_dir()'s fallback) following. Original
+# 2026-08-22 note, for history: "NOT 'unchanged from the original scripts' as the comment above
+# claims for its siblings -- found live... to be a real regression from the rebuild... this
+# constant pointed one level up. Fixed to match live convention rather than the incorrect prior
+# comment." Same lesson, twice now: a hardcoded fallback drifts silently unless something checks it
+# — which is exactly what path-audit (PathAudit.ps1) now does, going forward.
+CHAPTER_EDIT_OUT_DIR = Path("Workflow") / "Programme" / "prose-edits"
 PATCH_OUT_DIR = Path("Sessions") / "Patches"
 
 MARKER_RE = re.compile(r"<!-- PROSE_([A-Z_]+): ?(.*?) -->")
@@ -81,7 +87,10 @@ _DEFAULT_BOOK_STAGE_MAP = {
     "Essays": ["essay"],
 }
 _DEFAULT_SEARCH_LIMIT = 100
-_DEFAULT_EDIT_FILE_DIR = "outputs/markdown/prose-edits"
+# Was "outputs/markdown/prose-edits" -- corrected 2026-08-28 (escalation #971/#976) to match where
+# the files actually live after the 2026-08-27 folder reorg physically moved them without this
+# default (or the live cfg_prose.prose.edit_file_dir setting) being updated to follow.
+_DEFAULT_EDIT_FILE_DIR = "Workflow/Programme/prose-edits"
 
 
 def open_db(cfg) -> sqlite3.Connection:
@@ -164,6 +173,32 @@ def edit_file_dir(cfg) -> Path:
     #829, `governance.rules_must_be_config_driven`). `CHAPTER_EDIT_OUT_DIR` stays defined above as
     the Python-level default only, used when `cfg_prose` is inactive/absent."""
     return Path(cfg.module_setting("cfg_prose", "prose.edit_file_dir", _DEFAULT_EDIT_FILE_DIR))
+
+
+def output_dir(cfg) -> Path:
+    """`prose.output_dir` — replaces the `OUT_DIR` hardcoded constant (escalation #971/#976,
+    `iba/app/lib/pathaudit.py`'s scan; the same class of gap `edit_file_dir` above closed for
+    `CHAPTER_EDIT_OUT_DIR`, extended to prosestore's other 3 output constants at the same time —
+    "unchanged from the original scripts, not flagged by #648" was true in 2026-08-21 but is no
+    longer a reason to leave the other three ungoverned once one sibling constant has already been
+    found to drift silently). `OUT_DIR` stays defined above as the Python-level default only."""
+    return Path(cfg.module_setting("cfg_prose", "prose.output_dir", str(OUT_DIR)))
+
+
+def docx_output_dir(cfg) -> Path:
+    """`prose.docx_output_dir` — replaces `DOCX_OUT_DIR`, same reasoning as `output_dir` above."""
+    return Path(cfg.module_setting("cfg_prose", "prose.docx_output_dir", str(DOCX_OUT_DIR)))
+
+
+def search_output_dir(cfg) -> Path:
+    """`prose.search_output_dir` — replaces `SEARCH_OUT_DIR`, same reasoning as `output_dir`
+    above."""
+    return Path(cfg.module_setting("cfg_prose", "prose.search_output_dir", str(SEARCH_OUT_DIR)))
+
+
+def patch_output_dir(cfg) -> Path:
+    """`prose.patch_output_dir` — replaces `PATCH_OUT_DIR`, same reasoning as `output_dir` above."""
+    return Path(cfg.module_setting("cfg_prose", "prose.patch_output_dir", str(PATCH_OUT_DIR)))
 
 
 # ── extract (was scripts/build_programme_prose_extract.py) ─────────────────
@@ -472,7 +507,7 @@ def run_extract(cfg, include_body=False, book=None, chapter=None, also_markdown=
 
         extract = build_extract(conn, include_body=include_body, book=book, chapter=chapter)
 
-        out_dir = OUT_DIR
+        out_dir = output_dir(cfg)
         out_dir.mkdir(parents=True, exist_ok=True)
         stamp = today_compact()
         out_path = Path(out) if out else out_dir / f"wa-programme-prose-extract-{stamp}.json"
@@ -489,8 +524,9 @@ def run_extract(cfg, include_body=False, book=None, chapter=None, also_markdown=
             result["md"] = str(md_path)
 
         if also_docx:
-            DOCX_OUT_DIR.mkdir(parents=True, exist_ok=True)
-            docx_path = DOCX_OUT_DIR / f"wa-programme-prose-extract-{stamp}.docx"
+            docx_dir = docx_output_dir(cfg)
+            docx_dir.mkdir(parents=True, exist_ok=True)
+            docx_path = docx_dir / f"wa-programme-prose-extract-{stamp}.docx"
             extract_wb = extract if include_body else build_extract(conn, include_body=True)
             wrote = render_docx(cfg, extract_wb, docx_path)
             result["docx"] = str(docx_path) if wrote else None
@@ -568,12 +604,12 @@ def render_search_markdown(query, rows, total_matches, book):
     return "\n".join(lines)
 
 
-def default_search_output_path(query, book):
+def default_search_output_path(cfg, query, book):
     slug = re.sub(r"[^a-z0-9]+", "-", query.lower()).strip("-") or "query"
     if book:
         book_slug = re.sub(r"[^a-z0-9]+", "-", book.lower()).strip("-")
         slug = f"{slug}-{book_slug}"
-    return SEARCH_OUT_DIR / f"prose-search-{slug}-{today_compact()}.md"
+    return search_output_dir(cfg) / f"prose-search-{slug}-{today_compact()}.md"
 
 
 def run_search(cfg, query, book=None, limit=None, raw_fts=False, out=None) -> dict:
@@ -582,7 +618,7 @@ def run_search(cfg, query, book=None, limit=None, raw_fts=False, out=None) -> di
         eff_limit = limit if limit is not None else search_default_limit(cfg)
         rows, total_matches = search_prose(conn, query, book=book, limit=eff_limit, raw_fts=raw_fts)
         report = render_search_markdown(query, rows, total_matches, book)
-        output_path = Path(out) if out else default_search_output_path(query, book)
+        output_path = Path(out) if out else default_search_output_path(cfg, query, book)
         output_path.parent.mkdir(parents=True, exist_ok=True)
         output_path.write_text(report, encoding="utf-8")
         return {"path": str(output_path), "shown": len(rows), "total": total_matches}
@@ -827,7 +863,7 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
             "source_edit_file": str(archived_source).replace("\\", "/"),
         },
     }
-    output = Path(out) if out else PATCH_OUT_DIR / f"wa-prose-chapter-supersede-{stamp}.json"
+    output = Path(out) if out else patch_output_dir(cfg) / f"wa-prose-chapter-supersede-{stamp}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
     # On successful patch generation, archive the edit file -- researcher, 2026-08-22 (escalation
@@ -943,7 +979,7 @@ def run_flag_fix_propose(cfg, flag_code: str | None, find: str | None, replace: 
         "match_count": len(matches), "matches": matches,
     }
     stamp = datetime.now(timezone.utc).strftime("%Y%m%dT%H%M%SZ")
-    output = Path(out) if out else SEARCH_OUT_DIR / f"prose-flag-fix-proposal-{stamp}.json"
+    output = Path(out) if out else search_output_dir(cfg) / f"prose-flag-fix-proposal-{stamp}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(report, indent=2, ensure_ascii=False), encoding="utf-8")
     return {"path": str(output), "match_count": len(matches)}
@@ -1037,7 +1073,7 @@ def run_flag_fix_apply(cfg, proposal_file, section_ids: list[int], flag_code: st
                                 "convention (run_flag is the sole direct-write exception).",
         },
     }
-    output = Path(out) if out else PATCH_OUT_DIR / f"wa-prose-flag-fix-supersede-{stamp}.json"
+    output = Path(out) if out else patch_output_dir(cfg) / f"wa-prose-flag-fix-supersede-{stamp}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
     return {"path": str(output), "sections": len(operations), "skipped": skipped}
@@ -1106,7 +1142,7 @@ def run_set_status(cfg, section_ids: list[int], status: str, author="researcher"
             "status": status, "skipped": skipped,
         },
     }
-    output = Path(out) if out else PATCH_OUT_DIR / f"wa-prose-set-status-{stamp}.json"
+    output = Path(out) if out else patch_output_dir(cfg) / f"wa-prose-set-status-{stamp}.json"
     output.parent.mkdir(parents=True, exist_ok=True)
     output.write_text(json.dumps(patch, indent=2, ensure_ascii=False), encoding="utf-8")
     return {"path": str(output), "sections": len(operations), "skipped": skipped}

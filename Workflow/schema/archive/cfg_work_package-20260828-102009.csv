@@ -1,0 +1,41 @@
+﻿name,ps_script,runs_over,chained,complete_message,next_step_hint,paused_message,inactive
+new-word,iba/app/ps/New-Word.ps1,word,1,raw layer built for '{word}'.,report: python -m iba.app.report --word {word},a researcher escalation was raised; the run is resumable.,0
+set-candidates,iba/app/ps/Set-Candidates.ps1,book,1,candidates set for '{book}'. Next: iba\app\ps\Build-Passages.ps1 -Book {book},,,1
+build-passages,iba/app/ps/Build-Passages.ps1,book,1,passages built for '{book}'.,,,0
+configuration-maintenance,iba/app/ps/Config-Maintenance.ps1,none,0,,,,0
+candidate-quality,iba/app/ps/Candidate-Quality.ps1,none,0,,,,1
+passage-quality,iba/app/ps/Passage-Quality.ps1,none,0,,,,0
+reports,iba/app/ps/Reports.ps1,none,0,,,,0
+candidate-curation,iba/app/ps/Candidate-Curate.ps1,none,0,,,,1
+log-retention,iba/app/ps/Log-Retention.ps1,none,0,,,,0
+table-export,iba/app/ps/Export-Tables.ps1,none,0,,,,0
+seed-candidate-report,iba/app/ps/SeedCandidate-Report.ps1,none,0,,,,1
+strong-meaning-report,iba/app/ps/StrongMeaning-Report.ps1,none,0,,,,0
+span-analysis-report,iba/app/ps/SpanAnalysis-Report.ps1,none,0,,,,0
+schema-overview-report,iba/app/ps/SchemaOverview-Report.ps1,none,0,,,,0
+registry-report,iba/app/ps/Registry-Report.ps1,none,0,,,,0
+lexicon-parse,iba/app/ps/Lexicon-Parse.ps1,none,0,,,,0
+raw-backfill,iba/app/ps/Raw-Backfill.ps1,book,0,,,,0
+verse-analysis-report,iba/app/ps/VerseSpanMeaning-Report.ps1,book,0,,,,1
+passage-debate-report,iba/app/ps/PassageDebate-Report.ps1,book,0,,,,1
+whole-book-read,iba/app/ps/WholeBookRead-Report.ps1,book,0,,,,0
+book-narrative-validate,iba/app/ps/BookNarrative-Validate.ps1,none,0,,,,1
+book-narrative-generate,iba/app/ps/BookNarrative-Generate.ps1,book,0,Narrative written — run BookNarrative-Validate.ps1 on it next.,iba\app\ps\BookNarrative-Validate.ps1 -Path <the narrative file>,Estimated cost/token count printed above — answer the escalation (Approve/Reject/Revise) then re-run this exact command to make the live API call.,1
+passage-debate-sync,iba/app/ps/PassageDebate-Sync.ps1,book,0,,,,1
+chapter-generate,iba/app/ps/Chapter-Generate.ps1,book,1,"chapter data + debate scaffold written -- fill in every <!-- fill in --> placeholder, then run PassageDebate-Sync.ps1 once done. Recommended: ~passage.debate_session_chapter_guideline chapters per Claude Code session, then clear context before continuing.",iba/app/ps/PassageDebate-Sync.ps1 -Book <book> -Chapters <n> -BookLabel <label>   # after manually filling the scaffold,,1
+book-narrative,iba/app/ps/Book-Narrative.ps1,book,1,narrative generated and structurally validated.,none -- narrative + validation both complete,cost/token estimate printed above -- answer the escalation (Approve/Reject/Revise) then re-run this exact command with the same -RunId to make the live API call and continue automatically to validation.,0
+verse-lexical,iba/app/ps/VerseLexical.ps1,book,1,lexical built and rendered for '{book}'.,,,0
+operations-ingest,iba/app/ps/Operations-Ingest.ps1,book,0,,,,0
+word-registry-span-report,iba/app/ps/WordRegistrySpan-Report.ps1,word,0,,,,0
+strong-verse-report,iba/app/ps/StrongVerse-Report.ps1,word,0,,,,0
+cluster-report,iba/app/ps/Cluster-Report.ps1,none,0,,,,0
+cluster-assign,iba/app/ps/Cluster-Assign.ps1,none,0,,,,0
+file-manifest-rebuild,iba/app/ps/Manifest-Rebuild.ps1,none,0,,,,0
+file-manifest-search,iba/app/ps/Manifest-Search.ps1,none,0,,,,0
+word-audit,iba/app/ps/Word-Audit.ps1,word,1,word-audit complete.,next: none — full pipeline run.,word-audit paused — see the message above.,0
+content-index-rebuild,iba/app/ps/ContentIndex-Rebuild.ps1,none,0,,,,0
+content-index-search,iba/app/ps/ContentIndex-Search.ps1,none,0,,,,0
+content-index-size-profile,iba/app/ps/ContentIndex-SizeProfile.ps1,none,0,,,,0
+escalation-reporting,iba/app/ps/Escalation.ps1,none,0,,,,0
+prose,iba/app/ps/Prose.ps1,none,0,,,,0
+folder-purpose,iba/app/ps/FolderPurpose.ps1,none,0,,,,0

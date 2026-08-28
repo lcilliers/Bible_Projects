@@ -2945,3 +2945,132 @@ same round, covering the 3 areas explicitly carried forward rather than silently
 the researcher's own instinct toward a `cfg_folder_purpose`-shaped table + utility for
 project-wide folder-purpose control — deliberately NOT started this session, parked for its own
 future round.
+
+## §61. `folder_purpose` built and running — a reference table, not `cfg_*`, plus the config gap escalation #971's own filing surfaced (2026-08-28, escalation #971, `BUILD.md` §191)
+
+**#971's table, corrected across 5 plan rounds with the researcher before any code was written.**
+Full detail (columns, methods, phased build sequence, the two bugs caught mid-build): `BUILD.md`
+§191 has the build side; this entry is the governance/principle side.
+
+**The category correction that matters going forward:** a table that states *facts about the
+project's own structure* (which folders exist, what they're for) is a reference/data table — the
+same category `books` (`bible_research.db`) already is — **not** a `cfg_*` rule table, even though
+it governs downstream behaviour (the manifest's classification). `governance.rules_must_be_config_
+driven` and `governance.config_control` still apply to it exactly once: its own `cfg_table`/
+`cfg_column` registration. The 793 rows of actual folder data after that are maintained directly
+(`FolderPurpose.ps1`), not through `Config-Maintenance.ps1 -Step Propose` — that gate governs
+changing an *existing* setting's value, not a new module's initial config footprint or a reference
+table's ordinary data churn. This distinction generalises past `folder_purpose` itself: any future
+table that states project-structure fact rather than operational policy should be checked against
+this same test before defaulting to a `cfg_` prefix.
+
+**The escalation-file-destination gap, closed.** Researcher's recollection, mid-build: "we already
+ruled that all escalation files, including associated reports, must go to `outputs/escalation`."
+Checked live against §59: not what was actually configured — §59 repointed exactly two settings
+(`escalation.list_report_path`/`escalation.history_report_dir`), scoped to `Escalation.ps1`'s own
+auto-generated reports, leaving open (§59's own words) whether a linked *deliverable* document
+(a plan, this build's own plan doc included) belonged there too. Put to the researcher directly
+rather than assumed either way; answer, verbatim: *"yes the refiling of escalation files is for
+976."* Confirms the broader reading was the original intent — a `cfg_behaviour_rule` now states it
+(`filing.tool-report-path-vs-deliverable-document`) — **and** that re-filing every document that
+predates the rule (every escalation-tied plan doc currently in `iba/docs/`, the
+`folder-purpose-governance-plan` series among them) is a physical migration, not a retroactive
+violation to silently fix here. Tracked and executed under **escalation #976**, raised this round
+for exactly that purpose, separate from #971's own governance-mechanism scope.
+
+**Not done this round (open, not silently dropped):** `filingkit.versioned_path()` and its
+naming-drift `configmaint.validate` check (v1's original Part A scope, items 3–4); populating
+`manifest_category`/`manifest_currency` across the 793 rows (verified working via a synthetic test,
+reverted rather than guessed in bulk); Phase 5 — working through the 774 `status IS NULL` rows and
+logging migration candidates to #976. Each is real, tracked follow-on work under escalation #971,
+not closed by this entry.
+
+## §62. Phases 2–4 executed: configs fixed, scripts fixed, `manifest_category`/`manifest_currency` fully backfilled — checked both directions (2026-08-28, escalation #971/#976)
+
+**Researcher, directly:** *"you can now proceed to fix all the configs, fix all the scripts and
+rerun the updates to folder_purpose... make sure you check both ways"* — every config with a
+location value represented in `folder_purpose`, and every location in `folder_purpose` that a
+module/utility files to represented by a config.
+
+**Configs fixed:**
+- `cfg_prose.prose.edit_file_dir` → `Workflow/Programme/prose-edits` (the #976 drift found last
+  round) — proposed, and (per D25's authority gate — `decision_required` items can only be closed
+  by the party `ready_for_approval` assigned, Claude cannot self-approve regardless of instruction)
+  approved by the researcher directly, then applied.
+- 4 new `cfg_prose` settings registered (`prose.output_dir`/`docx_output_dir`/`search_output_dir`/
+  `patch_output_dir`) — direct bootstrap (new settings tied to a code build, not a value change on
+  an existing row), `migration/prose_output_dirs_build_v1_20260828.py`.
+
+**Scripts fixed** (the 17 `path-audit` findings, §194):
+- `prosestore.py`'s `OUT_DIR`/`DOCX_OUT_DIR`/`SEARCH_OUT_DIR`/`PATCH_OUT_DIR` (5 findings) — now
+  read via `output_dir(cfg)`/`docx_output_dir(cfg)`/`search_output_dir(cfg)`/`patch_output_dir(cfg)`,
+  same pattern `edit_file_dir(cfg)` already established for the sibling constant. Every call site
+  updated (`run_extract`, `run_search`/`default_search_output_path` — `cfg` threaded through, it
+  didn't have it before —, `run_import_chapter`, `run_flag_fix_propose`, `run_flag_fix_apply`,
+  `run_set_status`).
+- `word_strong_span_report.py` (1 finding) — not fixed, **retired**: the file's own docstring
+  already said "SUPERSEDED 2026-08-09... kept for history only," but it had no `cfg_utility` row at
+  all, so it was neither excluded from the scan nor flagged as dead. Registered `inactive=1` instead
+  of patching a hardcoded path in dead code.
+- `manifest.py`'s `classify_category()`/`_CURRENCY_RULES` (11 findings) — not converted to
+  `cfg_setting` calls (still deliberately code "facts," per the module's own docstring) but the
+  actual root cause found: the rules were stale for this week's reorg. `_analytics/`, `_raw_data/`,
+  `memory/`, `research/` (bare) had no rule at all; every archive/ subfolder the reorg didn't
+  already have a named rule for fell to `other` — fixed with a general strip-prefix-and-reclassify
+  fallback rather than one more hand-enumerated rule per subfolder. **`file_manifest`'s own `other`
+  bucket: 9,064 → 170 (98% reduction)**, confirmed by a fresh `Manifest-Rebuild.ps1` run.
+
+**`folder_purpose` fully backfilled, both directions checked, re-run to reflect all of the above:**
+- **Configs → folders**: `-Action CrossCheck` re-run after every config fix — `governed_by_setting`
+  now covers the 4 new prose settings too (5 folders updated, 4 newly `type='operations'`).
+- **Folders → configs**: `manifest_category`/`manifest_currency` backfilled for **all 793 rows**
+  (not just the 19 already-`cfg_setting`-governed ones) from the now-corrected `classify_category`/
+  `compute_currency` — completes Part D's migration (§191) rather than leaving it half-wired for
+  most of the tree.
+- **A 4th drift found by this very re-run, not before**: `prose.patch_output_dir` (the setting just
+  registered above, matching `PATCH_OUT_DIR`'s old value) points at `Sessions/Patches` — a folder
+  that no longer exists AT ALL (not just renamed; `Sessions/` itself is gone). Left at that value
+  (matches the pre-existing hardcoded behaviour exactly — nothing regresses) and logged as #976's
+  4th candidate rather than guessed at (`archive/patches` survives but may be an unrelated,
+  differently-sourced patch folder, not prose's actual successor location).
+
+**Files:** `iba/app/lib/prosestore.py`, `iba/app/lib/manifest.py` (both modified);
+`iba/app/migration/prose_output_dirs_build_v1_20260828.py` (new); `cfg_prose` (5 rows: 1 updated, 4
+added); `cfg_utility` (`word_strong_span_report`, retired). `BUILD.md` §195 has the full build
+record.
+
+## §63. Escalation #977 resolved — `folder_purpose.type`/`status`'s governing rule made governance-visible, and its third hardcoded copy found and closed (2026-08-28)
+
+**The rule, stated explicitly (was previously only implicit in code):** a `folder_purpose` row's
+`type` and `status` must be one of the live `cfg_enum` values under `folder_purpose_type`/
+`folder_purpose_status`. Every write path enforces this: `folderpurpose.set_purpose()` (Method C)
+validates against `cfg.enum()` directly; `folderpurpose.auto_assess()` (Method D) validates its own
+hardcoded literal vocabulary against the same live enum groups once at the top of every run,
+raising rather than writing silently on drift (this was the actual gap — found fixing it, `auto_
+assess()` wrote via raw SQL with no enum check at all, unlike `set_purpose()`, which always had
+one); `FolderPurpose.ps1`'s own `-Type`/`-Status` `ValidateSet` — a third, necessarily-hardcoded
+copy of the same vocabulary (a PS parameter can't query the DB at parse time) — is checked for
+drift by `configmaint.validate` (`find_folderpurpose_ps_validateset_drift`, same mechanism
+`Escalation.ps1`'s own `ValidateSet` is already checked by), not just assumed to stay in sync.
+
+**The registration question (researcher, escalation #977: "not approved. hard coded with configs
+to set rules in against governance - revise").** Read two ways; resolved in favour of NOT changing
+the registration mechanism, for a stated reason rather than left implicit: the `folder_purpose_type`/
+`folder_purpose_status` enum VALUES were registered via `folder_purpose_build_v1_20260828.py`'s
+idempotent bootstrap migration, the same pattern every other new-module `cfg_enum`/`cfg_setting`/
+`cfg_table` registration in this codebase uses (`bootstrap_file_manifest.py`'s own docstring states
+the reasoning: schema-adjacent registration for a NEW module is a direct bootstrap, not a
+`configmaint.propose` call — that gate governs changing an EXISTING row's value). Re-routing this
+one registration through `Propose` would be inconsistent with that established, still-standing
+precedent rather than a fix — if the researcher wants that precedent itself reconsidered
+project-wide, that is a separate, larger decision than this one escalation. What #977 actually
+caught, and what's fixed here, is the narrower and real problem: the RULE these values encode had
+no governance-visible statement anywhere (this section), and one of the three places the vocabulary
+is duplicated (`auto_assess()`) wasn't actually checked against its source of truth. Both closed.
+
+**Files:** `iba/app/lib/folderpurpose.py` (`auto_assess()` — enum validation added),
+`iba/app/lib/cfgquality.py` (`find_folderpurpose_ps_validateset_drift`, generalised from the
+`Escalation.ps1`-specific check), `iba/app/handlers/configmaint.py` (wired into `validate()`),
+`iba/app/lib/cfgreport.py` (both `Escalation.ps1` and `FolderPurpose.ps1` ValidateSet-drift checks
+now mirrored into `CONFIG-REPORT.md` — the first was a separate, pre-existing "wired into validate
+but never mirrored" gap, found and closed in the same pass rather than left once it was noticed).

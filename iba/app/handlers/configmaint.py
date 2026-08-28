@@ -355,6 +355,23 @@ def validate(ctx: Ctx) -> Outcome:
         "escalation_ps_validateset_drift": (
             cfgquality.find_escalation_ps_validateset_drift(ctx.db.conn, APP_ROOT),
             "Escalation.ps1 ValidateSet drift finding(s)"),
+        # 2026-08-28 (escalation #971/#976, researcher: "configmaint should validate every
+        # location reference in every config") — every *_dir/*_path/*_folder value, cfg_setting
+        # AND every per-module table shaped like it, must resolve to a real folder on disk.
+        "unresolvable_locations": (
+            cfgquality.find_unresolvable_location_settings(ctx.db.conn, PROJECT_ROOT),
+            "location setting(s) pointing at a folder that does not exist"),
+        # 2026-08-28 (escalation #971/#977) — FolderPurpose.ps1's own -Type/-Status ValidateSet
+        # vocabulary, checked the same way Escalation.ps1's already was.
+        "folderpurpose_ps_validateset_drift": (
+            cfgquality.find_folderpurpose_ps_validateset_drift(ctx.db.conn, APP_ROOT),
+            "FolderPurpose.ps1 ValidateSet drift finding(s)"),
+        # 2026-08-28 (escalation #863/#971/#992) — filing.archiving-trigger/naming-shape as a
+        # standing check: a write hand-imitating -v{n} versioning instead of calling
+        # filingkit.versioned_path()/reportkit.oneoff_path().
+        "hand_rolled_versioning": (
+            cfgquality.find_hand_rolled_versioning(ctx.db.conn, PROJECT_ROOT),
+            "script(s) building a -v{n} filename by hand instead of via filingkit"),
     }
     preset = {k: v[0] for k, v in findings.items()}
     if not any(preset.values()):
@@ -363,7 +380,8 @@ def validate(ctx: Ctx) -> Outcome:
                   "settings needing justification, no stale filled_by references, GOVERNANCE.md "
                   "current, every lib module registered, no zero-config-density utilities, no "
                   "book_order/connection/candidate_rule usage gaps, no report-version clutter, no "
-                  "Escalation.ps1 ValidateSet drift")
+                  "Escalation.ps1/FolderPurpose.ps1 ValidateSet drift, no unresolvable location "
+                  "settings, no hand-rolled versioning")
 
     # Full detail persists to CONFIG-REPORT.md's "findings" section (cfgreport.py mirrors the
     # same cfgquality functions) — refreshed here so the report reflects THIS run's findings, not

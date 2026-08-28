@@ -10514,3 +10514,330 @@ filenames already disambiguate (`validation-{word}.md` / `validation-book-{book}
 **Files:** `iba/app/lib/cfgreport.py` (modified), `cfg_setting` (row inserted). No
 `USER-GUIDE.md` change — no user-facing command changed, only where one existing mechanism's
 output lands.
+
+## 191. `folder_purpose` — a reference table (not `cfg_*`) naming every folder's purpose/status, wired into the manifest as its primary classification source (2026-08-28, escalation #971, plan `iba/docs/folder-purpose-governance-plan-v5-20260828.md`)
+
+**What.** Consolidates #929/#736's carried-forward filing gaps into one mechanism, corrected across 5
+plan revisions with the researcher live: `folder_purpose` — one row per folder, all 793 from a fresh
+census, columns `folder_path`/`top_level_root`/`depth`/`parent_path`/`direct_file_count`/
+`recursive_file_count`/`direct_subfolder_count`/`top_ext_direct`/`last_modified_direct`/
+`governed_by_setting`/`manifest_category`/`manifest_currency`/`type`/`status`/`usage_description`/
+`added_at`/`last_reviewed_at`. **A reference/data table like `books`, deliberately NOT `cfg_*`** — the
+researcher's own correction: this states facts about the project's structure (which folders exist,
+what they're for), the same category `books` states about the 66 canonical books, not an operational
+rule needing `configmaint.propose` per row change. Registered once in `cfg_table`/`cfg_column`
+(that registration itself IS a config change, done via the same idempotent-bootstrap-migration
+pattern `bootstrap_file_manifest.py` set — not `configmaint.propose`, which governs changing an
+*existing* setting's value, not a new module's initial config footprint).
+
+**Three methods, exactly as designed with the researcher, all built and run live this round:**
+- **Method A** (`folderpurpose.seed_from_scan`, `FolderPurpose.ps1 -Action Seed`) — full
+  reconciliation against the live tree: inserts new folders, marks `status='deleted'` (soft, never
+  removed) for folders no longer on disk, refreshes every row's disk-derived columns. Run live:
+  793/793 folders seeded (793 new, 0 refreshed, 0 deleted — first run).
+- **Method B** (`folderpurpose.cross_check_settings`, `-Action CrossCheck`) — re-derives
+  `governed_by_setting` from live `cfg_setting` `*_dir`/`*_path` values (config-side truth, distinct
+  from Method A's disk-side truth), pre-fills `type='operations'`/`status='authoritative'` wherever a
+  setting already makes that unambiguous, enforces the researcher's stated invariant ("no folder is
+  used by the system, without a `governed_by_setting`") as a real check. Run live: 19 folders matched
+  cleanly to 26 settings, 0 anomalies. **Two real bugs caught and fixed during this same run**, not
+  left as known issues: (1) the setting-value-to-folder normaliser was accepting non-path values (a
+  JSON list like `manifest.skip_dirs`, prose/policy sentences like
+  `governance.engineering_documentation_folder`'s value) as folder-path candidates — now rejects
+  values containing spaces, over 80 chars, or starting with `[`; (2) folder-path matching compared a
+  lowercased setting-derived path against NOT-lowercased `folder_path` values (NTFS is
+  case-preserving) — `Workflow/Instructions`, `Workflow/schema`, `Logs` silently failed to match
+  until fixed via a lowercase lookup index that still writes back the actual on-disk casing.
+- **Method C** (`folderpurpose.set_purpose`/`list_rows`/`show`, `-Action Set|List|Show`) — the only
+  sanctioned way to hand-set `type`/`status`/`usage_description`; validates against the live
+  `cfg_enum` (`folder_purpose_type`/`folder_purpose_status`), not a hardcoded set — an orphan-config
+  finding (`configmaint.validate`) caught this exact gap mid-build (the enum rows existed but nothing
+  called `cfg.enum()` for them) and was fixed the same round, re-validated clean.
+
+**Manifest integration (Part D — "ensure the folder table processing integrates with the manifest
+routine," researcher, this round).** `lib/manifest.py`'s `_scan()` now looks up each file's folder
+against `folder_purpose.manifest_category`/`manifest_currency` first (longest-prefix match), falling
+back to the existing hardcoded `classify_category()`/`compute_currency()` only when no row has those
+columns set — non-breaking by construction, verified live both ways: (a) with the new lookup wired in
+and no rows populated yet, a fresh `Manifest-Rebuild.ps1` run produces byte-identical classification
+behaviour to before; (b) a synthetic test (`_analytics` folder given `manifest_category='report'`,
+`manifest_currency='current'`, rebuilt, confirmed all 6,577 `_analytics/*` files reclassified
+correctly, then reverted — real population of `manifest_category`/`manifest_currency` across the 793
+rows is Phase 5 (below), not guessed in bulk here). **Also closed while grounding this build, a bare
+compliance gap unrelated to the design itself:** `file_manifest` (18,653 rows at the time) was never
+registered in `cfg_table`/`cfg_column` at all — registered now, ahead of `folder_purpose`'s own
+registration, in the same migration.
+
+**Manifest rebuilt** (`Manifest-Rebuild.ps1`) — the first fresh scan since 2026-08-15 (13 days stale,
+predating this week's entire `_analytics`/`outputs` reorg): 14,225 files now tracked (9,736 active,
+4,489 archived), `_analytics/`'s 6,577 files now present in `file_manifest` for the first time (they
+did not exist when the prior scan ran).
+
+**Phase progress against the plan's own build sequence:** Phase 1 (table) done. Phase 2 (manifest
+wiring + rebuild) done. Phase 3 (config-driven population) done — 19/793 rows have `governed_by_setting`+
+`type`+`status`. Phase 4 (gap review) done for this round — Method B ran clean, 0 anomalies, no new
+`cfg_setting` needed. **Phase 5 (work through the remaining 774 `status IS NULL` rows and record a
+migration plan per folder, logging concrete candidates to escalation #976) is deliberately NOT done
+here** — ongoing, researcher-reviewed use of Method C, not a bulk auto-classification pass (the plan's
+own "not proposed" boundary). Part A's `filing` behaviour class + 5 rules (including the new rule
+resolving the escalation-report-vs-deliverable-document ambiguity Part E surfaced, confirmed by the
+researcher this round: "yes the refiling of escalation files is for 976") are registered, but
+`filingkit.versioned_path()` and its `configmaint.validate` naming-drift check are **not yet built** —
+v1's original scope, still open.
+
+**A real, live data discrepancy surfaced, not fixed (a judgement call, not mechanical):**
+`report.verse_analysis_output_dir`'s value is `"_analytics/Bible_Books"` (title case) but the actual
+on-disk folder is `_analytics/bible_books` (lowercase) — matched fine here because Method B compares
+case-insensitively, but a case-sensitive tool (git on Linux, some content-index code) would not find
+it. Left for the researcher's review, not silently renamed either direction.
+
+**Files:** `iba/app/migration/folder_purpose_build_v1_20260828.py` (new — DDL, all `cfg_table`/
+`cfg_column`/`cfg_enum`/`cfg_utility`/`cfg_work_package`/`cfg_step`/`cfg_behaviour_class`/
+`cfg_behaviour_rule` registration); `iba/app/lib/folderpurpose.py` (new); `iba/app/handlers/
+folderpurpose.py` (new); `iba/app/ps/FolderPurpose.ps1` (new); `iba/app/lib/manifest.py` (modified —
+`_folder_purpose_lookup()` + `_scan()` wiring); `folder_purpose`/`file_manifest` (`cfg_table`/
+`cfg_column`), `cfg_enum` (`folder_purpose_type`×3, `folder_purpose_status`×5), `cfg_behaviour_class`
+(`filing`), `cfg_behaviour_rule` (5 rows), `cfg_work_package`/`cfg_step` (`folder-purpose`, 5 steps).
+`GOVERNANCE.md` §61, `USER-GUIDE.md` (new `FolderPurpose.ps1` section) — same unit of work.
+
+## 192. Method B (`folderpurpose.cross_check_settings`) blind to per-module config tables — fixed, and it immediately surfaced a real config-drift bug (2026-08-28, escalation #971/#976)
+
+**The gap.** Researcher noticed `folder_purpose` had no `governed_by_setting` for `Workflow/Programme/
+prose-edits` despite expecting one. Investigation: Method B only scanned `cfg_setting` — but
+`governance.module.config` already establishes that a module can have its own settings table shaped
+like `cfg_setting` (key/value/use/inactive) instead, e.g. `cfg_prose`, `cfg_passage`, read via
+`cfg.module_setting(table, key, default)` rather than `cfg.setting(key, default)`. Method B never
+queried either. Fixed: `folderpurpose.py:_module_setting_tables()` discovers every `cfg_%` table
+shaped like `cfg_setting` live (not hardcoded to `cfg_prose`/`cfg_passage` by name — a future module
+table is picked up automatically), and `cross_check_settings()` now scans all of them. Also tightened
+`_normalize_setting_value()` to reject `{template}` patterns (`passage.debate_staging_path_pattern`
+isn't a literal folder) alongside the prose-sentence/JSON-list rejection already added in §191.
+
+**What the fix immediately found, unprompted:** `cfg_prose.prose.edit_file_dir` = `"outputs/markdown/
+prose-edits"` — but that folder does not exist on disk. Git history (`8bdc16bc`, 2026-08-27 folder
+reorg) shows its files (33+, same names/dates §183's testing documented living there) were physically
+relocated to `Workflow/Programme/prose-edits` during last week's folder-destination-realignment work
+— the exact folder the researcher was asking about — but the `cfg_prose` setting was never updated to
+follow the move. `prosestore.py`'s `ExportChapter`/`ImportChapter` would write to the now-nonexistent
+old path today. Not fixed here (an existing setting's value — `Config-Maintenance.ps1 -Step Propose`
+territory, and genuinely the researcher's call whether the setting should follow the folder or vice
+versa) — logged as escalation #976's 3rd candidate.
+
+**Files:** `iba/app/lib/folderpurpose.py` (modified — `_module_setting_tables()` added,
+`cross_check_settings()`/`_normalize_setting_value()` updated). No schema/registration change.
+
+## 193. `configmaint.validate` now checks every location reference actually resolves on disk (2026-08-28, escalation #971/#976)
+
+**Researcher, directly:** "configmaint should validate every location reference in every config as
+part of its validation routine. fix the validation, and let's then pick up the error list as the
+prompt to fix all the locations." New check: `cfgquality.find_unresolvable_location_settings(conn,
+project_root)` — for every location-shaped key (`cfg_setting` and every per-module table shaped
+like it, via §192's `folderpurpose.location_settings()`, now the one shared enumeration both this
+check and Method B use so they can't drift apart on what counts as a location reference), confirms
+the value resolves to a real folder on disk, project-root-relative. ADVISORY (a setting can
+legitimately point ahead of a folder created on first write) — flags, doesn't hard-fail. Wired into
+`handlers/configmaint.py:validate()`'s findings dict (`unresolvable_locations`) and `cfgreport.py`'s
+mirrored detail list, same pattern every other advisory check already follows.
+
+**First live run, immediately:** 1 finding — `cfg_prose.prose.edit_file_dir`, the exact drift §192
+found by hand. Confirms the check works and that this is currently the *only* config pointing at a
+genuinely nonexistent folder project-wide (the `_analytics/Bible_Books` casing issue on #976 is a
+*different* class of problem — the folder exists, just under different casing than the setting names
+— this check only catches non-existence, not a casing mismatch, so it correctly did not also flag
+that one).
+
+**Found, not fixed here (separate, pre-existing gap, flagged not silently patched):**
+`find_escalation_ps_validateset_drift` (D28, register v9) is wired into `handlers/configmaint.py`'s
+findings dict but was never added to `cfgreport.py`'s mirrored list — the same "mirror drifted from
+source" class of bug this whole build has been finding elsewhere, now found in the mirroring
+mechanism itself. Not fixed in this round; noted for its own pass.
+
+**Files:** `iba/app/lib/cfgquality.py` (new function), `iba/app/lib/folderpurpose.py`
+(`location_settings()` extracted for shared use), `iba/app/handlers/configmaint.py` (wired into
+`validate()`), `iba/app/lib/cfgreport.py` (wired into the mirrored detail list). No schema change.
+
+## 194. `path-audit` — a real, governed utility scanning every active script for hardcoded location literals (2026-08-28, escalation #971/#976)
+
+**Researcher, directly:** *"we are now in the real meat of sorting out locations that does not go
+through config, so applying to [every] script, and pushing it into a utility (with all the
+governance around it) is relevant now. the only scripts to not include, are scripts that is marked
+as inactive."* Answers the open question from the previous round ("is there any routine validating
+that location settings are never hardcoded in a script?") — no, only a one-off manual sweep
+(escalation #648) and a narrow runtime gate covering 2 of ~105 flagged files existed; this is the
+automated, ongoing successor for the location subset specifically.
+
+**Built to the same governance standard as `folder_purpose`** (§191): `lib/pathaudit.py` (scan
+logic) + `handlers/pathaudit.py` (dispatcher adapter, persisted report) + `ps/PathAudit.ps1`
+(`-Action Scan`) + `migration/pathaudit_build_v1_20260828.py` (`cfg_setting`, `cfg_utility`,
+`cfg_work_package`/`cfg_step`, `cfg_report`/`cfg_report_section`, `cfg_enum config_module`
+registration — all via the same idempotent-bootstrap pattern, not `configmaint.propose`).
+
+**Method** (full detail + honest limits in `pathaudit.py`'s own docstring): tokenizes every `.py`
+file project-wide except one whose `cfg_utility` row is `inactive=1`; a STRING literal counts as a
+location candidate if it passes `folderpurpose.normalize_setting_value`'s plausibility filter (now
+public, used by 3 modules) and its first path segment matches a live `folder_purpose.top_level_root`
+value; skipped if a live `.setting(`/`.module_setting(` accessor appears in the same or 2 preceding
+source lines (a documented default, the established compliant pattern); a bare single-segment
+literal (`"iba"`, `"database"`) is only counted when it's an actual `pathlib.Path(` argument, not
+just a string that happens to equal a folder name (found live: `if name == "iba":` in `cfg.py` —
+nothing to do with a folder).
+
+**Tuned against 3 real false-positive classes, found by actually running it, not guessed in
+advance:** (1) wrapped multi-line `cfg.setting(key,\n    default)` calls — same-line-only check
+missed the default's own line, cut 294→263 findings; (2) bare-segment string equality
+coincidences — required `Path(` adjacency, cut 263→126; (3) **`iba/app/migration/` scripts —
+109 of 126 findings (86%) were migration scripts recording their own one-time seed VALUES, not a
+hardcoded-location violation at all (a migration's whole job is writing a literal path into a
+`cfg_setting`/`cfg_utility` row — the same reasoning `bootstrap_file_manifest.py`'s own docstring
+gives for schema/DDL being a direct bootstrap).** Excluded; final run: **84 active scripts scanned,
+17 findings in 3 files** — `manifest.py`'s own `classify_category()`/`_CURRENCY_RULES` (11, the
+exact hardcoded rules `folder_purpose`, §191, generalises past), `prosestore.py`'s `OUT_DIR` family
+(5, including the already-tracked `_DEFAULT_EDIT_FILE_DIR`/#976 drift), and one genuinely new,
+previously-unregistered finding: `iba/app/tools/word_strong_span_report.py:181` hardcodes
+`iba/app/db/iba.db` directly, no `cfg_utility` row at all. Full list: `outputs/configs/path-audit-
+v4-20260828.md`.
+
+**Self-caught building it, fixed in the same round:** the migration script itself broke
+`configmaint.validate` (`cfg_setting.module='pathaudit'` with no matching `config_module` enum
+value — the exact `_enum()` bootstrap call `bootstrap_file_manifest.py` includes and this one
+missed) — fixed, re-validated clean. `lib/pathaudit.py` also tripped `find_utility_config_density`
+(zero direct `Cfg`-method calls of its own — its caller resolves config, same shape as
+`retention.py`/`seedreport.py`) — marked `config_exempt=1` with that reasoning, matching precedent.
+
+**Files:** `iba/app/lib/pathaudit.py`, `iba/app/handlers/pathaudit.py`, `iba/app/ps/PathAudit.ps1`,
+`iba/app/migration/pathaudit_build_v1_20260828.py` (all new); `cfg_setting`/`cfg_utility`/
+`cfg_work_package`/`cfg_step`/`cfg_report`/`cfg_report_section`/`cfg_enum` rows.
+`GOVERNANCE.md`/`USER-GUIDE.md` — same unit of work.
+
+## 195. Configs fixed, scripts fixed, `folder_purpose` re-run both directions (2026-08-28, escalation #971/#976)
+
+Researcher: *"you can now proceed to fix all the configs, fix all the scripts and rerun the updates
+to folder_purpose... make sure you check both ways."* Full detail and reasoning: `GOVERNANCE.md`
+§62. Summary:
+
+1. `cfg_prose.prose.edit_file_dir` → `Workflow/Programme/prose-edits` — proposed, approved by the
+   researcher directly (Claude cannot self-approve a `decision_required` item regardless of "proceed
+   to fix" — D25's authority gate refused it live, correctly), applied.
+2. 4 new `cfg_prose` settings registered (`prose.output_dir`/`docx_output_dir`/`search_output_dir`/
+   `patch_output_dir`), and `iba/app/lib/prosestore.py`'s `OUT_DIR`/`DOCX_OUT_DIR`/`SEARCH_OUT_DIR`/
+   `PATCH_OUT_DIR` hardcoded constants converted to `output_dir(cfg)` etc. accessors reading them —
+   same pattern `edit_file_dir(cfg)` already used for the sibling constant, now applied to all four.
+3. `iba/app/tools/word_strong_span_report.py` (hardcoded DB path, path-audit finding) — registered
+   `cfg_utility inactive=1` instead of fixed; the file's own docstring already said SUPERSEDED
+   2026-08-09, it just had no `cfg_utility` row at all.
+4. `iba/app/lib/manifest.py`'s `classify_category()`/`_CURRENCY_RULES` — not converted to config
+   (deliberately code "facts"), but their actual staleness fixed: rules added for `_analytics/`,
+   `_raw_data/`, `memory/`, bare `research/`, and a general archive/-prefix-strip-and-reclassify
+   fallback replacing the old 4 hand-picked archive subfolder rules. `file_manifest`'s `other`
+   bucket: **9,064 → 170** (98% reduction), confirmed by a fresh `Manifest-Rebuild.ps1`.
+5. `folder_purpose` re-run both directions: `-Action CrossCheck` (configs → folders, picks up the 4
+   new prose settings) and a full `manifest_category`/`manifest_currency` backfill across all 793
+   rows (folders → configs' classification, completing §191 Part D rather than leaving it
+   half-wired). Surfaced a 4th real drift in the process: `prose.patch_output_dir` points at
+   `Sessions/Patches`, which no longer exists at all — logged on #976, not guessed at.
+
+**Files:** `iba/app/lib/prosestore.py`, `iba/app/lib/manifest.py` (modified);
+`iba/app/migration/prose_output_dirs_build_v1_20260828.py` (new); `cfg_prose` (5 rows); `cfg_utility`
+(1 row retired); `folder_purpose` (793 rows re-seeded/re-crosschecked, all 793 backfilled).
+
+## 196. Method D (`folderpurpose.autoassess`) — `type`/`status` filled for all 793 rows (2026-08-28, escalation #971)
+
+Researcher, directly: *"where the folder_purpose_type can be determined by you, you must fill and
+maintain it. the folder_purpose_status status must be assessed by you and filled, only prompting
+me if you are unsure."* `lib/folderpurpose.py:auto_assess()` — fills `type` from
+`governed_by_setting`/`manifest_category`/`manifest_currency`/path (an archive path anywhere →
+`archive`; a live setting → `operations`; `report`/`doc`/`investigation`/`discovery`/`export`
+category → `results`; `iba`/`workflow`/`session`/`script`/`code`/`log`/`patch`/`directive`/`import`
+category → `operations`); fills `status` from the same facts plus file counts/mtime (a live
+setting or `type='archive'` → `authoritative`; an empty tree → `stale`; touched within 90 days →
+`authoritative`; a pure container (subfolder content only) → `authoritative`; older with direct
+content → `stale`). **Deliberately never guesses** `mixed`/`reallocate` (real content judgement,
+not derivable from metadata) or a `type` for a `manifest_category='other'` folder — those stay
+Method C's job.
+
+**Run live: 766 of 774 still-unset rows assessed automatically; 5 left genuinely uncertain** (repo
+root, `.obsidian`, `data`, `database/scripts`, `scratchpad_tmp` — all `manifest_category='other'`).
+Reviewed by hand (small enough not to need prompting): repo root and `.obsidian` → `operations`/
+`authoritative` (project root; Obsidian's own tool config, both unambiguous); `data` →
+`operations`/`authoritative` (pure container over its two already-classified children,
+`data/imports`/`data/exports`); `database/scripts` → `operations` (empty, presumably meant for
+DB-maintenance scripts, status already `stale` from the empty-tree rule); `scratchpad_tmp` →
+`operations`/`authoritative` (ad hoc scratch files, recently touched). **All 793 rows now have
+both fields filled — 0 remaining.** Registered as a real, re-runnable step (`-Action AutoAssess`,
+`folder_purpose_autoassess_build_v1_20260828.py`) so a future `Seed` bringing in new folders gets
+them assessed the same way, not a one-time script.
+
+**Files:** `iba/app/lib/folderpurpose.py` (modified — `auto_assess()` + helpers),
+`iba/app/handlers/folderpurpose.py` (modified), `iba/app/ps/FolderPurpose.ps1` (modified),
+`iba/app/migration/folder_purpose_autoassess_build_v1_20260828.py` (new); `cfg_step`
+(`folderpurpose.autoassess`); `folder_purpose` (793 rows, `type`/`status` complete).
+
+## 197. #977 resolved + `filingkit.versioned_path()` built — #971 Part A's last piece (2026-08-28, escalation #977/#992)
+
+**#977** (allocated to Claude, not the researcher — resolved directly): full reasoning
+`GOVERNANCE.md` §63. Summary: kept the enum-registration-via-migration-bootstrap pattern (matches
+established codebase-wide precedent); made the governing rule explicit in `GOVERNANCE.md`; fixed
+the real gap found while resolving it — `auto_assess()` wrote `type`/`status` via raw SQL with zero
+`cfg.enum()` validation (unlike `set_purpose()`, which always validated) — now validates its own
+literal vocabulary against the live enum once per run, raising on drift; generalised
+`find_escalation_ps_validateset_drift` into a reusable core and added the `FolderPurpose.ps1`
+equivalent; found and fixed a separate pre-existing gap in the same pass — neither `Escalation.ps1`'s
+nor the new check were ever mirrored into `CONFIG-REPORT.md` despite being wired into
+`configmaint.validate`.
+
+**`filingkit.versioned_path()`** (escalation #863/#971/#992, the last piece of Part A): generalises
+`reportkit.oneoff_path()`'s same-day `-v{n}`/archive-before-write logic for any caller, not just
+`iba/app/reports/`. `oneoff_path()` now delegates to it (one implementation, verified byte-identical
+output via a live smoke test) rather than duplicating the logic. A new `configmaint.validate` check
+(`find_hand_rolled_versioning`) flags a script building a `-v{n}` filename by hand instead of calling
+it — tuned against 2 real false positives on the first run (a comment merely *describing* correct
+usage, and `engine/`'s own naming-pattern reference table matching the regex as documentary string
+data, not real code) before landing on **1 genuine, already-reviewed exception**:
+`prosestore.py`'s `_next_edit_version()`, a deliberately different edit-cycle counter, left as a
+standing advisory rather than force-converted.
+
+**Files:** `iba/app/lib/filingkit.py` (new), `iba/app/lib/reportkit.py` (modified —
+`oneoff_path()` now a thin wrapper), `iba/app/lib/folderpurpose.py` (`auto_assess()` enum
+validation), `iba/app/lib/cfgquality.py` (`_ps_validateset_drift` generalised,
+`find_folderpurpose_ps_validateset_drift`, `find_hand_rolled_versioning`),
+`iba/app/handlers/configmaint.py`/`iba/app/lib/cfgreport.py` (both new checks wired + the
+pre-existing `Escalation.ps1` mirror gap closed), `iba/app/migration/filingkit_build_v1_20260828.py`
+(new, `cfg_utility` registration); `cfg_utility` (`reportkit` marked `config_exempt=1` — its one
+call site moved to `filingkit.py`). `GOVERNANCE.md` §63 has #977's full decision record.
+
+## 198. `_analytics/bible_books` → `_analytics/Bible_Books` — the casing fixed at the folder, not the setting; 2 real bugs in `folder_purpose`'s own maintenance found fixing it (2026-08-28, escalation #976)
+
+**The decision.** Researcher, directly: *"earlier today my instruction was to align the bible book
+folders with the books table, there should be no discrepancies if you did it properly... the
+folder naming must be corrected."* Settles #976's 2nd candidate: the folder was wrong, not the
+setting (`report.verse_analysis_output_dir` already said `_analytics/Bible_Books`, matching
+`cfg_book_order.book`'s own casing). Renamed on disk (two-step rename — Windows/NTFS won't apply a
+case-only rename in one move). `core.ignorecase=true` means git's index already held the correct
+casing throughout; the working tree had silently drifted outside git's own visibility, now back in
+sync — no git diff from this change, correctly.
+
+**Re-running `folder_purpose` after the rename caught 2 real bugs in the mechanism itself, not
+edge cases:**
+1. **`seed_from_scan()` (Method A) never populated `manifest_category`/`manifest_currency` for a
+   NEW row at all** — only the one-time manual backfill script (§191) ever had. Confirmed live:
+   163 new rows from the rename (the folder's own 74 subfolders re-appearing under the corrected
+   name) came back with both columns `NULL`. Fixed at the root — `seed_from_scan()` now computes
+   both from `manifest.classify_category()`/`compute_currency()` for every row, new or refreshed,
+   every run, so this can't silently regress again the way a one-off script's results always can.
+2. **`_assess_type()` (Method D) was assigning `type='operations'` too broadly.** Once Method A's
+   fix let `CrossCheck` actually run against a fully-populated table, the invariant check ("no
+   folder used by the system without a `governed_by_setting`") found **74 real anomalies** —
+   27 `iba/` subfolders and 5 `scripts/` subfolders (source code, never a write destination, so
+   never expected to have a governing setting) plus 36 `workflow`/`session`/`log`/`patch`/
+   `directive`/`import`-category folders that were never proven to be an active system write
+   target at all. Root cause: `_assess_type()` lumped "the system's own source code lives here"
+   and "produced/process-adjacent content" into the same `operations` bucket. Fixed: source-code
+   categories (`iba`/`code`/`script`) stay `operations` but are excluded from the
+   governed-by-setting invariant (mechanically, not by exception-listing folders one at a time);
+   the other 6 categories now default to `results` instead. 36 already-mis-assessed rows corrected
+   in place. Re-ran `CrossCheck`: **74 anomalies → 6**, all reviewed (the same 5 hand-classified
+   `other`-category rows from §196, plus the already-tracked `prose.patch_output_dir`/#989 item).
+
+**Files:** `iba/app/lib/folderpurpose.py` (`seed_from_scan()` computes `manifest_category`/
+`manifest_currency`; `_assess_type()` corrected; invariant query excludes source-code categories);
+`_analytics/Bible_Books` (renamed on disk); `folder_purpose` (163 rows re-seeded, 36 reclassified).

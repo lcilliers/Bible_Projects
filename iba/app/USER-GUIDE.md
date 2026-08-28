@@ -1174,6 +1174,67 @@ for both (`prose_section_fts` already covers it).
 
 ---
 
+## 13a-ii. `folder_purpose` — what every folder is for, and its status (added 2026-08-28)
+
+One row per folder in the project tree (793 at build time, seeded from a full census) — a reference
+table, like `books`, not a `cfg_*` rule table: it states facts about the project's own structure
+(what a folder holds, what it's for), maintained directly, not through `Config-Maintenance.ps1
+-Step Propose`. Escalation #971.
+
+```powershell
+iba\app\ps\FolderPurpose.ps1 -Action Seed
+#   full reconciliation against the live tree: new folders added, folders no longer on disk marked
+#   status='deleted' (soft, never removed), every row's file-count/extension/mtime columns refreshed
+
+iba\app\ps\FolderPurpose.ps1 -Action CrossCheck
+#   re-derives governed_by_setting from live cfg_setting *_dir/*_path values; pre-fills
+#   type='operations'/status='authoritative' wherever a setting already makes that unambiguous;
+#   reports anomalies (a folder in active system use with no governing cfg_setting, or vice versa)
+
+iba\app\ps\FolderPurpose.ps1 -Action AutoAssess
+#   fills type/status for every row still missing either, from Seed/CrossCheck's own gathered
+#   facts (never guesses 'mixed'/'reallocate', or a type for a category-less folder -- those need
+#   -Action Set by hand). Run after Seed/CrossCheck bring in new folders.
+
+iba\app\ps\FolderPurpose.ps1 -Action Set -FolderPath "outputs/escalation" -Type operations `
+    -Status authoritative -UsageDescription "Escalation.ps1's own list/history exports only."
+#   the ONLY sanctioned way to hand-set Type/Status/UsageDescription — Seed/CrossCheck own every
+#   other column and would overwrite a hand edit there on the next run anyway
+
+iba\app\ps\FolderPurpose.ps1 -Action List -Status mixed
+iba\app\ps\FolderPurpose.ps1 -Action Show -FolderPath "docs"
+```
+
+`-Type`: `archive` \| `operations` \| `results`. `-Status`: `authoritative` \| `mixed` \|
+`reallocate` \| `stale` \| `deleted` (set automatically by `Seed` when a folder disappears from
+disk). Run `-Action Seed` after any large-scale reorganisation, before `Manifest-Rebuild.ps1` — the
+manifest's own classification (`file_manifest.category`/`currency`) reads `folder_purpose`'s
+`manifest_category`/`manifest_currency` first, falling back to its own hardcoded rules only for a
+folder not yet registered here.
+
+---
+
+## 13a-iii. Path audit — hardcoded location literals in scripts (added 2026-08-28)
+
+Project-wide scan for a folder/file-path string literal hardcoded in a script instead of read from
+`cfg_setting`/`cfg.module_setting()`. Escalation #971/#976, the automated successor to the one-off
+manual sweep (escalation #648) for the location subset specifically.
+
+```powershell
+iba\app\ps\PathAudit.ps1 -Action Scan
+#   -> outputs/configs/path-audit.md
+```
+
+Every `.py` file project-wide is scanned **except** one whose `cfg_utility` row is `inactive=1` (a
+file with no `cfg_utility` row at all IS included — not being registered is a separate finding of
+its own, `configmaint.validate`'s `unregistered_project_scripts`). `iba/app/migration/` is excluded
+entirely — a migration script's job is writing a literal path *into* a config row as a one-time
+seed, not a violation. ADVISORY — every finding needs a look (a real gap, or a previously-reviewed
+deliberate hardcode like `prosestore.py`'s output-path constants), not an auto-fix. Full method and
+known false-positive classes: `lib/pathaudit.py`'s own docstring.
+
+---
+
 ## 13b. Content-index — search what's actually WRITTEN inside `.md` files (added 2026-08-17)
 
 Round 2 of the manifest + content-search plan (governance-alignment register item #6). A

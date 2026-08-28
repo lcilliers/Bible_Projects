@@ -327,44 +327,12 @@ def oneoff_path(cfg, topic: str, ext: str | None = None) -> pathlib.Path:
     migration/investigation script hardcodes. `cfg` is a lib.cfg.Cfg (or any object with
     .setting(key, default)).
 
-    Same-day version bump on collision, per the Bible-study side's own established convention
-    (docs/file-organisation-rules.md §2.3) rather than inventing a new one for this app — a second
-    call for the same topic on the same day gets `-v2`, a third `-v3`, and so on.
-
-    **Archiving added 2026-08-08 (BUILD.md §83).** `write_report` was fixed 2026-08-05 to archive
-    the previously-live version alongside every version bump ("archiving runs alongside the
-    versioning, as it should") — this function, a SEPARATE report-writing path used by every
-    reconciliation report and several extract tools, was never brought into that fix, so its own
-    live folder accumulated every version forever. Same rule, applied here: before computing the
-    next version, whatever is currently live for this exact topic-day is moved into `archive_dir`
-    first — the live folder holds exactly the newest version per topic-day, the full lineage is in
-    `archive_dir`, nothing is ever silently lost."""
-    out_dir = pathlib.Path(cfg.setting("governance.oneoff_report_dir", "iba/app/reports/"))
-    pattern = cfg.setting("governance.oneoff_report_naming_pattern", "{topic}-{YYYYMMDD}.{format}")
-    fmt = ext or cfg.setting("governance.oneoff_report_format", "md")
-    archive_dir = cfg.setting("governance.oneoff_report_archive_dir", "archive")
-    slug = re.sub(r"[^a-z0-9]+", "-", topic.lower()).strip("-")
-    stamp = datetime.datetime.now().strftime("%Y%m%d")
-    name = pattern.format(topic=slug, YYYYMMDD=stamp, format=fmt)
-    stem, _, extension = name.rpartition(".")
-
-    live_matches = [out_dir / name] if (out_dir / name).exists() else []
-    if out_dir.exists():
-        live_matches += sorted(out_dir.glob(f"{stem}-v*.{extension}"))
-    if not live_matches:
-        return out_dir / name
-
-    adir = out_dir / archive_dir
-    adir.mkdir(parents=True, exist_ok=True)
-    for f in live_matches:
-        f.replace(adir / f.name)
-
-    rx = re.compile(rf"^{re.escape(stem)}-v(\d+)\.{re.escape(extension)}$")
-    candidates = (list(out_dir.glob(f"{stem}-v*.{extension}")) if out_dir.exists() else []) + \
-                list(adir.glob(f"{stem}-v*.{extension}"))
-    versions = [int(m.group(1)) for m in (rx.match(f.name) for f in candidates) if m]
-    n = max(versions, default=1) + 1
-    return out_dir / f"{stem}-v{n}.{extension}"
+    Same-day version bump on collision, archive-before-write — full mechanics now in
+    `lib/filingkit.versioned_path()` (escalation #863/#971/#992, generalised 2026-08-28 for any
+    caller project-wide, not just `iba/app/reports/`); this is a thin wrapper kept for every
+    existing call site, behaviourally identical to before the generalisation."""
+    from . import filingkit
+    return filingkit.versioned_path(cfg, topic, ext=ext)
 
 
 def _write_csv(path: pathlib.Path, cols: list[str], rows: list[list]) -> pathlib.Path:
