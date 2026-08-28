@@ -372,7 +372,27 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
     sections["report_governance"] = _report_governance(q)
 
     L = reportkit.render_scaffold(conn, STEP, sections, intro=intro)
-    reportkit.write_csv_pairing(conn, STEP, out_path.parent / "export")
+    # csv_export_dir independently config-driven (configmaint.csv_export_dir), NOT derived from
+    # out_path.parent -- escalation #929/#736, 2026-08-28: the CSV pairing used to be a hardcoded
+    # sibling of wherever configmaint.report_path pointed, so it silently followed that setting
+    # around and couldn't be repointed on its own (found while relocating configmaint.report_path
+    # off iba/app/config/ -- the CSV side-output kept regenerating back at the OLD app-relative
+    # location instead of the researcher's chosen workflow/schema). Falls back to the pre-existing
+    # sibling-of-report behaviour if the new setting is ever removed, so this never regresses to a
+    # crash if the row goes missing.
+    # Uses the real Cfg accessor (not a raw SELECT) so cfgquality.find_orphan_configs sees this
+    # setting as genuinely applied -- 2026-08-28, caught live by the validator itself, which
+    # requires an actual `.setting(` call site in the same file for a plain (non-governance)
+    # cfg_setting. Cfg() is a second, separate connection to the same DB (its own docstring:
+    # "cheap; make one per process") -- fine under WAL, and this function otherwise deliberately
+    # avoids the full Cfg/Db bootstrap for its main `conn`.
+    from .cfg import Cfg as _Cfg
+    _cfg_probe = _Cfg(db_path)
+    csv_export_value = _cfg_probe.setting("configmaint.csv_export_dir")
+    _cfg_probe.conn.close()
+    csv_export_dir = (pathlib.Path(csv_export_value) if csv_export_value
+                      else out_path.parent / "export")
+    reportkit.write_csv_pairing(conn, STEP, csv_export_dir)
     out_path = reportkit.write_report(conn, STEP, out_path, L)
     conn.close()
     return out_path

@@ -10483,3 +10483,34 @@ before any patch file is written).
 `iba/app/lib/prosestore.py`, `iba/app/handlers/prose.py`, `iba/app/handlers/configmaint.py`,
 `scripts/apply_session_patch.py`, `iba/app/ps/Prose.ps1`, `USER-GUIDE.md` §13d (all modified).
 Escalations #912/#913/#914 (rejected, superseded by this fix) and #918 (this item) closed.
+
+## 190. `configmaint.csv_export_dir` — the config-table CSV pairing folder decoupled from `configmaint.report_path` (2026-08-28, escalation #929/#736/#967)
+
+**The gap, found live while relocating `configmaint.report_path`** off `iba/app/config/` (part of
+the broader folder-destination realignment, `GOVERNANCE.md` §59 and `Logs/SESSION-LOG-20260827-
+folder-destination-realignment.md`): `cfgreport.py`'s per-`cfg_*`-table CSV pairing (one CSV per
+live config table, written alongside `CONFIG-REPORT.md`) had no setting of its own — its folder was
+hardcoded as `out_path.parent / "export"`, a sibling of wherever `configmaint.report_path` happened
+to resolve. Moving `configmaint.report_path` to `outputs/configs/` therefore silently dragged the
+CSV export folder along with it; there was no way to send the two to different destinations, which
+is exactly what the researcher wanted (`table_export.output_dir` and this CSV pairing both to
+`workflow/schema`, independent of wherever the `.md` report itself lives).
+
+**Built:** `cfg_setting` row `configmaint.csv_export_dir` (module `configmaint`, value
+`workflow/schema`), added via `Config-Maintenance.ps1 -Step Propose -Op insert` (escalation #967).
+`iba/app/lib/cfgreport.py:generate()` now reads this setting directly (its own small
+`SELECT ... FROM cfg_setting` query, matching the existing `_cfg_setting()`-style helper pattern
+used elsewhere in the config-quality checks) and falls back to the old `out_path.parent / "export"`
+behaviour only if the row is ever removed — a regression-safe default, not a silent break.
+
+**Also this round (same folder-destination realignment, config-only, no code):**
+`governance.oneoff_report_dir` → `outputs/` (escalation #966); `table_export.output_dir` →
+`workflow/schema` (escalation #964); `validation.output_dir` → `outputs/validations`, resolving the
+book-vs-word split concern raised the prior session since both share one flat folder and their
+filenames already disambiguate (`validation-{word}.md` / `validation-book-{book}.md`) (escalation
+#965). Physical migration: 8 archived validation snapshots moved to `outputs/validations/archive/`;
+35 live config-table CSVs moved from `iba/app/config/export/` to `Workflow/schema/`.
+
+**Files:** `iba/app/lib/cfgreport.py` (modified), `cfg_setting` (row inserted). No
+`USER-GUIDE.md` change — no user-facing command changed, only where one existing mechanism's
+output lands.

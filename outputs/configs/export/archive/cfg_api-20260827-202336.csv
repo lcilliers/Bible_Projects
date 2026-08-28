@@ -1,4 +1,0 @@
-﻿name,route,input,returns,inactive
-call1_meanings,rest/search/masterSearch/version={version}|meanings={word},the English word,definitions[] (the seed strongs) + results[] (verses),0
-call2_getInfo,rest/module/getInfo/{version}//{strong}//,a strong,vocabInfos[0] — the detail and the meaning,0
-call3_strong,rest/search/masterSearch/strong={strong}|version={version},a strong,"results[] — verses, each preview a full interlinear",0

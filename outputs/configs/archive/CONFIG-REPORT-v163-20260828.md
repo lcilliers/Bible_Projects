@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-28T03:57:10Z |
+| generated_at | 2026-08-28T03:15:14Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -45,7 +45,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-1. GOVERNANCE.md was last modified 2026-08-28T03:53:56Z, before the newest applied cfg_change_detail row (2026-08-28T03:56:59Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+1. GOVERNANCE.md was last modified 2026-08-27T15:23:50Z, before the newest applied cfg_change_detail row (2026-08-28T03:15:14Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -532,7 +532,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster | cluster.assign.word_optional_clusters | ['T2', 'T3'] | cluster codes exempt from the needs-a-word_registry-link rule (Q2.4.1 exception 1) -- researcher correction 2026-08-12: a word generates the verse, it does not need to own every strong later found in it; T3 is inherently not word-specific |
 | cluster | cluster.quality_report_path | _analytics/Clusters/cluster-assign.md | report path for cluster.validate, same convention as lexicon.quality_report_path |
 | configmaint | configmaint.auto_report | True | whether an approved configmaint.propose automatically chains to configmaint.report |
-| configmaint | configmaint.csv_export_dir | workflow/schema | folder for the per-cfg_*-table CSV pairing that accompanies CONFIG-REPORT.md (reportkit.write_csv_pairing) -- independently repointable, no longer hardcoded as a sibling of configmaint.report_path |
 | configmaint | configmaint.report_path | outputs/configs/CONFIG-REPORT.md | where configmaint.report writes the snapshot |
 | content_index | content_index.exclude_size_threshold_bytes | 52428800 | a .md file this size or larger (bytes; default 50MB) is excluded from content_index.rebuild/.refresh by default, unless it matches an active cfg_content_index_size_override pattern |
 | content_index | content_index.report_path | outputs/content_index/content-index-rebuild.md | where content_index.rebuild writes its summary report |
@@ -556,7 +555,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.module_utility_test_plan | From now on, case-by-case as development happens (not retrofitted): every module/utility design must include a test plan covering all its meaningful interaction/parameter/option combinations; the test plan is kept current (updated in the same unit of work whenever the functional component changes); it is RUN after the approved design is built, as a required stage of the existing plan/propose/design -> approve -> build -> approve cycle; and its actual results are included in the build's escalation resolution, not just asserted. Full rationale and origin: cfg_behaviour_rule (development/test-plan-per-module-utility). | Read explicitly every session by init.py's governance-rules printout (Start-Iba.ps1) -- the only real enforcement a process rule like this has. Applies project-wide, not IBA-only, same as governance.operational_behaviour_control. |
 | governance | governance.new_utility_registration_timing | Any new script or routine, anywhere in the project, must be registered in cfg_utility (and cfg_step/cfg_write_grant if it writes data) in the same unit of work it is created -- operationalizes governance.scripts_and_routines with a timing rule and a real enforcement check (configmaint.validate: find_unregistered_project_scripts). |  |
 | governance | governance.oneoff_report_archive_dir | archive | archive subfolder (relative to governance.oneoff_report_dir) that oneoff_path() moves a superseded one-off report version into before writing the next one -- same shape as write_report/cfg_report.archive_dir, added 2026-08-08 (BUILD.md sec83) once oneoff_path was found to have versioned without ever archiving. |
-| governance | governance.oneoff_report_dir | outputs/ | folder for one-off/investigatory reports — read by lib/reportkit.oneoff_path() |
+| governance | governance.oneoff_report_dir | iba/app/reports/ | folder for one-off/investigatory reports — read by lib/reportkit.oneoff_path() |
 | governance | governance.oneoff_report_format | md | default file extension for one-off reports |
 | governance | governance.oneoff_report_naming_pattern | {topic}-{YYYYMMDD}.{format} | filename pattern for one-off reports ({topic}/{YYYYMMDD}/{format} substituted) — same-day collisions get -v2/-v3/... appended by oneoff_path() itself, per the Bible-study side's docs/file-organisation-rules.md §2.3 convention |
 | governance | governance.operational_behaviour_control | Project operational behaviour (chat, terminal, sqlite, documentation, llm_output, and any further class identified) is governed by cfg_behaviour_class + cfg_behaviour_rule -- scope is the WHOLE PROJECT, not iba/app/** only (researcher, 2026-08-18). A rule lives in exactly one place: once captured here, its document version is replaced with a pointer, never left standing alongside it. Where a class boundary is unclear, the boundary is defined explicitly as a governance.behaviour_boundary.<topic> setting rather than left implicit. | entry-point anchor for the operational-behaviour cfg layer -- part (a) of escalation #715 |
@@ -586,8 +585,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.tables | each table in the project must be listed in cfg_table with a proper use text. This applies to all databases. Tables no longer in use must be set as inactive. |  |
 | governance | governance.utility.config | each utility must have its own config table in the cfg_* series to control all aspects of the utility |  |
 | governance | governance.verse_gap_by_design | Researcher ruling 2026-07-29: a verse missing from iba.db's verse table (no `verse` row for that osisId) is BY DESIGN, not a data-integrity error. Verse-existence is gated on prior term discovery (concordance-driven per-Strong's onboarding, iba/app/handlers/raw.py:verses) -- do not escalate, flag, or attempt to backfill a missing verse as a bug. Full extent measured 2026-07-29: 2,049/31,086 verses (6.59%) missing, concentrated in genealogy/list-heavy books (1Chr 44%, Ezra 40%, Neh 31%, Josh 23%, Num 17%); sample read of the missing verses' actual content judged the risk within tolerance for this study (see iba/app/reports/verse-existence-census-20260729.md). Both report.verse_span_meaning (the base extract) and report.passage_debate note each detectable gap inline (report.verse_gap_note) and skip straight to the next available verse -- the missing verses are not pulled into the study. | researcher ruling 2026-07-29, after measuring the full-Bible extent of the term-discovery verse gap (see project_iba_verse_existence_gated_on_term_discovery memory + iba/app/reports/verse-existence-census-20260729.md) |
-| governance | registry.folder_naming_convention | _analytics/Registry per-word subfolders (report.strong_verse_output_dir) must be named {word_registry.id zero-padded 3 digits}_{word, lowercase, spaces as hyphens} -- e.g. 020_compassion. id comes from the LIVE iba.db word_registry table, never bible_research.dbs legacy numbering (the two differ; confirmed live 2026-08-28 while reorganising 27 stale/unnumbered folders and 249 loose files under _analytics/word_registry). | the folder-naming rule for per-word registry output, so it stays config-governed rather than a one-off manual cleanup that can silently drift again |
-| governance | report.book_folder_naming_convention | _analytics/Bible_Books subfolders (report.verse_analysis_output_dir and every book-scoped report) must be named EXACTLY as cfg_book_order.book (the OSIS abbreviation verse.osisId itself uses, e.g. Gen, 1Chr, Song) -- never a full book name or a lowercase variant. Confirmed live 2026-08-28: all 66 canonical books present, 35 folders renamed off full-name/lowercase variants to match. | the folder-naming rule for per-book output, keyed to the same book identifier verse references use, so there is no mis-filing risk working with verse references |
 | lexicon | lexicon.bracket_pairs | {'(': ')', '[': ']', '{': '}'} | open->close bracket pairs classify_row/strip_bracketed treat as nestable — a gloss that is wholly one bracketed aside (e.g. '(obsolete)') classifies as 'not applicable'. |
 | lexicon | lexicon.classify_lookup_max_words | 3 | classify_row: a gloss/description with at most this many space-separated words is 'lookup', more is 'description' — same shape as candidate.tag_max_words's word-count threshold. |
 | lexicon | lexicon.linebreak_pattern | [\r\n]+ | the only recognised sense-separator in strong_meaning_tree.sense_text/strong_lexicon.lsj/mounce — commas/semicolons/colons are NOT separators (STEP itself displays them as one sense). |
@@ -669,7 +666,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | step | step.walk_max_iter | 400 | forward-walk safety bound |
 | step | step.walk_start | Gen.1.1 | forward-walk lower bound |
 | table_export | table_export.output_dir | workflow/schema | where table.export writes its CSVs |
-| validation | validation.output_dir | outputs/validations | where validation.word/validation.book write their output |
+| validation | validation.output_dir | iba/app/reports | where validation.word/validation.book write their output |
 | validation | validation.show_candidate | True | book report: include the candidate (L4b) section |
 | validation | validation.show_delta | True | word report: include the pre/post run-delta section |
 | validation | validation.show_expectations | True | word report: include the semantic-expectations section |

@@ -2841,3 +2841,107 @@ larger design item once more individual folders' correct destinations are decide
 migrated); `iba/app/reports/**` (emptied of escalation content); this file. No code change;
 `BUILD.md`/`USER-GUIDE.md` not applicable (no code, no user-facing command changed — the same
 `Escalation.ps1 -Action List/History` commands now resolve to a different path via config alone).
+
+## §60. Folder-destination realignment completed — every remaining `iba/app/reports/`-pointed setting repointed, `_analytics/word_registry` and `_analytics/Bible_Books` reorganised, and a new governing principle: **folder locations live in `cfg_*`, never in a document alone** (2026-08-28, escalations #929/#736/#939–969)
+
+**Closing out the sequence §59 started.** Following the same step-by-step approach (one folder/
+setting group at a time, never a bulk sweep), every remaining module still pointed at
+`iba/app/reports/` was individually reclassified against the researcher's own filing rule
+(2026-08-28): reports specific to a bible book/cluster/registry entry go to
+`_analytics/[type]/[group]` (aggregate, non-instance-specific reports at the *root* of their type
+folder); general discovery/investigatory reports go to `research/discovery` or
+`research/investigations`; raw table-data dumps go to `_raw_data/[sub-folder]/[group]` (in practice
+none ended up needing this bucket — the one raw-data-shaped setting, `table_export.output_dir`,
+was redirected to `workflow/schema` instead, "all table exports go to workflow/schema").
+
+**24 settings repointed in one batch** (escalations #939–962, full list: `behaviour.
+list_report_path`, `configmaint.report_path`, `content_index.report_path`/`_size_profile_report_
+path`, `cluster.quality_report_path`, `lexicon.quality_report_path`, `manifest.report_path`, the 4
+`method.*`/`narrative.*_guidance_path`/`_constraints_path` docs, `narrative.scope_check_report_
+path`/`usage_log_path`, `report.cluster_path`/`registry_path`/`schema_overview_path`/`seed_
+candidate_path`/`span_analysis_path`/`strong_meaning_path`/`output_dir`/`word_registry_span_
+output_dir`/`strong_verse_output_dir`/`verse_analysis_output_dir`, `retention.report_path`) —
+destinations: `outputs/configs/`, `outputs/content_index/`, `_analytics/Clusters/`,
+`_analytics/Registry/`, `_analytics/essay/`, `research/discovery/`, `workflow/schema/`,
+`workflow/instructions/`. 202 physical files migrated in the same pass (report outputs + their
+archives + the 4 hand-authored method docs).
+
+**3 more settled the same day** (escalations #964–966): `table_export.output_dir` →
+`workflow/schema`; `validation.output_dir` → `outputs/validations` (one flat shared folder for both
+`validation.book` and `validation.word` — their filenames already disambiguate, so the earlier-
+flagged book-vs-word split concern turned out not to need a code change); `governance.
+oneoff_report_dir` → `outputs/` (the catch-all default; its specific current callers — content-
+index-search, manifest-search, span-strongtree/span-meaning extracts — are NOT individually
+reclassified by this change, parked as a separate later review per the researcher's own
+instruction). `configmaint.csv_export_dir` (escalation #967, `BUILD.md` §190) decoupled the
+config-table CSV pairing from `configmaint.report_path` with a small code change — see §190 for
+the code side of that one; this entry covers its governance/config side only.
+
+**`_analytics/word_registry` and `_analytics/Bible_Books` reorganised, not just the newer
+cfg-governed report paths** (escalations #929/#968/#969) — the researcher's own instruction, having
+noticed both trees still carried inconsistent legacy naming that predated this session's work
+entirely:
+- **`_analytics/word_registry`**: 27 per-word subfolders were using the OLD `bible_research.db`
+  word-registry numbering (e.g. `023_compassion`) or no number at all (`Fear`, `blessing`,
+  mixed case) — confirmed live that this numbering does NOT match `iba.db`'s own `word_registry.id`
+  (compassion is `023` in the old scheme, `id=20` in `iba.db`, the live/active source). All 27
+  renamed to `iba.db`'s numbering; 249 of 263 loose root-level files (old Session A/B/C word-study
+  output, March–May 2026) matched against the live 180-word registry and filed into their correct
+  `NNN_word` folder. 14 left at the root deliberately — programme/session-wide files naming no
+  single word, or naming a word since retired from the live registry (`diligence`, `vulnerability`)
+  — researcher's own instruction: leave them.
+- **`_analytics/Bible_Books`**: all 66 subfolders confirmed against `cfg_book_order.book` — the
+  same OSIS abbreviation `verse.osisId` itself uses (`Gen`, `1Chr`, `Song`, ...). 35 were full book
+  names or lowercase variants (`genesis`, `1 Chronicles`, `Song of Solomon`) and renamed to the
+  exact canonical form. All 66 canonical books now present and correctly named; the 5 non-book
+  utility folders (`_archive`, `_methodology`, `_reports`, `_synthesis`, `scripts`) untouched.
+
+**New governing principle, stated directly by the researcher this round:** *folder locations and
+naming conventions must live in `cfg_*` configuration, not only in an instruction or guidance
+document* — a document may explain a rule, but the rule itself must be a real, live config row,
+the same discipline `governance.rules_must_be_config_driven` already states for operational rules
+generally, made explicit here for filing specifically. Two new settings close the gap this
+session's own physical reorganisation would otherwise have left open (a rule applied once by hand,
+recorded only in this file, free to silently drift again next time):
+`registry.folder_naming_convention` (the `{id}_{word}` rule above) and `report.book_folder_naming_
+convention` (the `cfg_book_order.book`-exact rule above) — escalations #968/#969.
+
+**Still open, deliberately not resolved here (carried forward, not silently dropped):**
+- The larger mechanism `iba/docs/file-naming-and-location-governance-plan-v1-20260826.md`
+  proposed — a project-wide `filing` `cfg_behaviour_class`, real `cfg_behaviour_rule` rows, a
+  shared utility generalising `oneoff_path()` beyond `iba/app/reports/`, and a `configmaint.
+  validate` check for hand-imitated naming — was **not built this round**. This session's fix was
+  narrower: repoint every setting that already existed, and add two specific naming-convention
+  settings for the two trees actually touched. The general mechanism remains a separate, larger,
+  not-yet-approved build.
+- `governance.oneoff_report_dir`'s specific callers, main-project-side folders generally (`docs/`,
+  `Sessions-v2/`, `Workflow/`, `research/`, `Logs/`, `archive/` — still zero `cfg_*` representation
+  per §863/#736's original finding), the 92 ad hoc files still in `iba/app/reports/` root, and the
+  parked script/database relocation (`governance.scripts_ps_dir`/`_python_dir`, `iba/app/lib`,
+  `database.iba.path`/`database.bible_research.path`) — none of these are this section's scope.
+
+**Files:** `cfg_setting` (26 rows changed/added across #939–969); ~500 physical files migrated or
+renamed across `outputs/configs/`, `outputs/content_index/`, `outputs/validations/`,
+`_analytics/Clusters/`, `_analytics/Registry/`, `_analytics/essay/`, `_analytics/word_registry/`,
+`_analytics/Bible_Books/`, `research/discovery/`, `Workflow/schema/`, `Workflow/instructions/`;
+`iba/app/lib/cfgreport.py` (see `BUILD.md` §190); this file. `USER-GUIDE.md` not touched this round
+— no user-facing command changed, only where existing mechanisms' output lands.
+
+**Self-caught via `configmaint.validate`, run deliberately after §60's own settings landed, not
+skipped:** 3 orphan-config findings, all from rows added this section. `registry.folder_naming_
+convention`/`report.book_folder_naming_convention` were filed under `module='registry'`/
+`module='report'` — wrong; they're policy statements like `governance.programme_stages`, not
+runtime-applied values, and need `module='governance'` to get that class's standing orphan-check
+exemption (`find_orphan_configs`'s own documented rule: a governance-module row's usage is a
+generic `WHERE module='governance'` read in `init.py`, not a literal `.setting(` call site).
+Reclassification proposed and approved same round, escalations #973/#974 — applied, re-validated
+clean (`configmaint.validate` now reports 0 orphan findings). `configmaint.csv_export_dir` was a genuine, not a
+false-positive, finding: `cfgreport.py` read it via a raw `SELECT` instead of the actual `cfg.
+setting()` accessor — fixed directly in code (`Cfg(db_path).setting(...)`, a second cheap
+connection under WAL; `Cfg.__init__` is documented as "cheap; make one per process"), no approval
+needed since this is a code fix, not a config write. Consolidated escalation **#971** raised the
+same round, covering the 3 areas explicitly carried forward rather than silently dropped:
+`docs/`'s own unaddressed 36-flat-file pattern, #736's still-unbuilt general `filing` mechanism, and
+the researcher's own instinct toward a `cfg_folder_purpose`-shaped table + utility for
+project-wide folder-purpose control — deliberately NOT started this session, parked for its own
+future round.

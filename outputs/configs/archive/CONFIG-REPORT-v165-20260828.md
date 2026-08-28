@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-28T03:57:10Z |
+| generated_at | 2026-08-28T03:15:18Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -45,7 +45,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-1. GOVERNANCE.md was last modified 2026-08-28T03:53:56Z, before the newest applied cfg_change_detail row (2026-08-28T03:56:59Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+1. GOVERNANCE.md was last modified 2026-08-27T15:23:50Z, before the newest applied cfg_change_detail row (2026-08-28T03:15:18Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -532,7 +532,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster | cluster.assign.word_optional_clusters | ['T2', 'T3'] | cluster codes exempt from the needs-a-word_registry-link rule (Q2.4.1 exception 1) -- researcher correction 2026-08-12: a word generates the verse, it does not need to own every strong later found in it; T3 is inherently not word-specific |
 | cluster | cluster.quality_report_path | _analytics/Clusters/cluster-assign.md | report path for cluster.validate, same convention as lexicon.quality_report_path |
 | configmaint | configmaint.auto_report | True | whether an approved configmaint.propose automatically chains to configmaint.report |
-| configmaint | configmaint.csv_export_dir | workflow/schema | folder for the per-cfg_*-table CSV pairing that accompanies CONFIG-REPORT.md (reportkit.write_csv_pairing) -- independently repointable, no longer hardcoded as a sibling of configmaint.report_path |
 | configmaint | configmaint.report_path | outputs/configs/CONFIG-REPORT.md | where configmaint.report writes the snapshot |
 | content_index | content_index.exclude_size_threshold_bytes | 52428800 | a .md file this size or larger (bytes; default 50MB) is excluded from content_index.rebuild/.refresh by default, unless it matches an active cfg_content_index_size_override pattern |
 | content_index | content_index.report_path | outputs/content_index/content-index-rebuild.md | where content_index.rebuild writes its summary report |
@@ -586,8 +585,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.tables | each table in the project must be listed in cfg_table with a proper use text. This applies to all databases. Tables no longer in use must be set as inactive. |  |
 | governance | governance.utility.config | each utility must have its own config table in the cfg_* series to control all aspects of the utility |  |
 | governance | governance.verse_gap_by_design | Researcher ruling 2026-07-29: a verse missing from iba.db's verse table (no `verse` row for that osisId) is BY DESIGN, not a data-integrity error. Verse-existence is gated on prior term discovery (concordance-driven per-Strong's onboarding, iba/app/handlers/raw.py:verses) -- do not escalate, flag, or attempt to backfill a missing verse as a bug. Full extent measured 2026-07-29: 2,049/31,086 verses (6.59%) missing, concentrated in genealogy/list-heavy books (1Chr 44%, Ezra 40%, Neh 31%, Josh 23%, Num 17%); sample read of the missing verses' actual content judged the risk within tolerance for this study (see iba/app/reports/verse-existence-census-20260729.md). Both report.verse_span_meaning (the base extract) and report.passage_debate note each detectable gap inline (report.verse_gap_note) and skip straight to the next available verse -- the missing verses are not pulled into the study. | researcher ruling 2026-07-29, after measuring the full-Bible extent of the term-discovery verse gap (see project_iba_verse_existence_gated_on_term_discovery memory + iba/app/reports/verse-existence-census-20260729.md) |
-| governance | registry.folder_naming_convention | _analytics/Registry per-word subfolders (report.strong_verse_output_dir) must be named {word_registry.id zero-padded 3 digits}_{word, lowercase, spaces as hyphens} -- e.g. 020_compassion. id comes from the LIVE iba.db word_registry table, never bible_research.dbs legacy numbering (the two differ; confirmed live 2026-08-28 while reorganising 27 stale/unnumbered folders and 249 loose files under _analytics/word_registry). | the folder-naming rule for per-word registry output, so it stays config-governed rather than a one-off manual cleanup that can silently drift again |
-| governance | report.book_folder_naming_convention | _analytics/Bible_Books subfolders (report.verse_analysis_output_dir and every book-scoped report) must be named EXACTLY as cfg_book_order.book (the OSIS abbreviation verse.osisId itself uses, e.g. Gen, 1Chr, Song) -- never a full book name or a lowercase variant. Confirmed live 2026-08-28: all 66 canonical books present, 35 folders renamed off full-name/lowercase variants to match. | the folder-naming rule for per-book output, keyed to the same book identifier verse references use, so there is no mis-filing risk working with verse references |
 | lexicon | lexicon.bracket_pairs | {'(': ')', '[': ']', '{': '}'} | open->close bracket pairs classify_row/strip_bracketed treat as nestable — a gloss that is wholly one bracketed aside (e.g. '(obsolete)') classifies as 'not applicable'. |
 | lexicon | lexicon.classify_lookup_max_words | 3 | classify_row: a gloss/description with at most this many space-separated words is 'lookup', more is 'description' — same shape as candidate.tag_max_words's word-count threshold. |
 | lexicon | lexicon.linebreak_pattern | [\r\n]+ | the only recognised sense-separator in strong_meaning_tree.sense_text/strong_lexicon.lsj/mounce — commas/semicolons/colons are NOT separators (STEP itself displays them as one sense). |
