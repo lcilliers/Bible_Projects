@@ -10841,3 +10841,44 @@ edge cases:**
 **Files:** `iba/app/lib/folderpurpose.py` (`seed_from_scan()` computes `manifest_category`/
 `manifest_currency`; `_assess_type()` corrected; invariant query excludes source-code categories);
 `_analytics/Bible_Books` (renamed on disk); `folder_purpose` (163 rows re-seeded, 36 reclassified).
+
+## 199. `prose.book_output_dir` — book-aware prose working-file output locations (2026-08-28, escalation #989/#1000)
+
+**The decision.** #989 (2026-08-28) found `prosestore.py`'s single flat `output_dir(cfg)` only
+made sense for one of the 4 live prose books (`Programme`) — `Detail design`/`Findings`/`Essays`
+had no book-aware answer, though `Findings`/`Essays` already had folders in use on disk
+(`_analytics/clusters/M##-Name/{findings,essays}`). First plan draft
+(`iba/docs/prose-book-aware-locations-plan-v1-20260828.md`) proposed cluster-scoped subfolders for
+`Findings`/`Essays`; researcher, directly: *"the sub folders is not aligned, with the prose. park
+this for the moment, it will all change when work on those areas start"* — parked (#989 → on-hold).
+Reopened same session with the actual answer, flat per-book (not per-cluster): *"Programme →
+Workflow/Programme/programme_prose, Detail design → \_raw_data/raw_data_prose, Findings →
+\_analytics/findings_prose, Essays → \_analytics/essay/essay_prose."* One ambiguity resolved before
+build: `_analytics` has both `essay` (already holds 3 finished-output PDFs) and `essay_prose`
+(empty, parallel to `raw_data_prose`/`findings_prose`) — researcher confirmed **`essay_prose`**:
+*"the intent is that all the working files for prose operations for the books will go to the
+designated folders. the files in the folders is not intended to be a replica of prose."* Approved
+via `configmaint.propose` (escalation #1000, decision_required → ready_for_approval → approved).
+
+**Built.** New `cfg_prose` row `prose.book_output_dir` (JSON map, same key/value shape as the
+sibling `prose.book_stage_map`):
+
+```json
+{"Programme":"Workflow/Programme/programme_prose","Detail design":"_raw_data/raw_data_prose",
+ "Findings":"_analytics/findings_prose","Essays":"_analytics/essay_prose"}
+```
+
+New resolver `prosestore.py:output_dir_for(cfg, book_label)` — `book_label is None` falls back to
+the existing flat `output_dir(cfg)` (Programme's own dir, unchanged default behaviour for every
+caller that doesn't pass `book`); a `book_label` not in the map raises rather than guessing,
+matching `run_extract`'s existing "unknown book" refusal. `run_extract` now calls
+`output_dir_for(cfg, book)` instead of `output_dir(cfg)`. Verified live against all 4 books plus
+the no-book and unknown-book cases.
+
+**Scope note, deliberate:** `docx_output_dir`/`search_output_dir`/`patch_output_dir` are NOT
+touched by this round — they stay flat, per the researcher's instruction covering only the primary
+`output_dir` mapping. `prose.patch_output_dir` pointing at a non-existent folder remains a tracked,
+separate finding (§198, escalation #995/#989 cross-ref).
+
+**Files:** `iba/app/lib/prosestore.py` (`_DEFAULT_BOOK_OUTPUT_DIR`, `output_dir_for()`,
+`run_extract()` call-site change); `cfg_prose` (new row `prose.book_output_dir`).

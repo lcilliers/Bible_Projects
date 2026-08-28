@@ -86,6 +86,15 @@ _DEFAULT_BOOK_STAGE_MAP = {
     "Findings": ["synthesis", "verse-analysis", "findings"],
     "Essays": ["essay"],
 }
+# prose.book_output_dir (escalation #989/#1000): per-book WORKING-FILE output dirs -- these
+# folders hold prose operation working files, not a replica of prose content (researcher ruling,
+# #1000). Read by output_dir_for(cfg, book_label) below.
+_DEFAULT_BOOK_OUTPUT_DIR = {
+    "Programme": "Workflow/Programme/programme_prose",
+    "Detail design": "_raw_data/raw_data_prose",
+    "Findings": "_analytics/findings_prose",
+    "Essays": "_analytics/essay_prose",
+}
 _DEFAULT_SEARCH_LIMIT = 100
 # Was "outputs/markdown/prose-edits" -- corrected 2026-08-28 (escalation #971/#976) to match where
 # the files actually live after the 2026-08-27 folder reorg physically moved them without this
@@ -181,8 +190,27 @@ def output_dir(cfg) -> Path:
     `CHAPTER_EDIT_OUT_DIR`, extended to prosestore's other 3 output constants at the same time —
     "unchanged from the original scripts, not flagged by #648" was true in 2026-08-21 but is no
     longer a reason to leave the other three ungoverned once one sibling constant has already been
-    found to drift silently). `OUT_DIR` stays defined above as the Python-level default only."""
+    found to drift silently). `OUT_DIR` stays defined above as the Python-level default only.
+    Stays the Programme-only/no-`--book`-given default — `output_dir_for` below is the book-aware
+    entry point (escalation #989/#1000)."""
     return Path(cfg.module_setting("cfg_prose", "prose.output_dir", str(OUT_DIR)))
+
+
+def output_dir_for(cfg, book_label: str | None) -> Path:
+    """`prose.book_output_dir` — book-aware output directory (escalation #989/#1000). These
+    folders hold prose operation WORKING FILES for that book, not a replica of prose content
+    (researcher ruling, #1000). `book_label is None` (no `--book` given) falls back to the flat
+    `output_dir(cfg)` (Programme's own dir), unchanged existing behaviour. A `book_label` not
+    present in the map raises rather than guessing a location -- matches `run_extract`'s existing
+    "unknown book" refusal for an unrecognised `--book` value."""
+    if book_label is None:
+        return output_dir(cfg)
+    book_map = cfg.module_setting("cfg_prose", "prose.book_output_dir", _DEFAULT_BOOK_OUTPUT_DIR)
+    if book_label not in book_map:
+        raise ValueError(
+            f"no prose.book_output_dir entry for book {book_label!r}; choose from: "
+            f"{', '.join(book_map)}")
+    return Path(book_map[book_label])
 
 
 def docx_output_dir(cfg) -> Path:
@@ -507,7 +535,7 @@ def run_extract(cfg, include_body=False, book=None, chapter=None, also_markdown=
 
         extract = build_extract(conn, include_body=include_body, book=book, chapter=chapter)
 
-        out_dir = output_dir(cfg)
+        out_dir = output_dir_for(cfg, book)
         out_dir.mkdir(parents=True, exist_ok=True)
         stamp = today_compact()
         out_path = Path(out) if out else out_dir / f"wa-programme-prose-extract-{stamp}.json"
