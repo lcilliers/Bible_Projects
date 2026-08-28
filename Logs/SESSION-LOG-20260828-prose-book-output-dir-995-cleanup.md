@@ -89,7 +89,7 @@ restart.
 
 ## Git state
 
-Branch `main`. Commit/push to follow immediately after this file is written, per
-`governance.session_log_triggers_commit` — confirmed hash and push status below once committed
-(this section corrected if the hash below doesn't yet match, same pattern as the prior session's
-own self-reference correction).
+Branch `main`, commit `f007ff6dceb315df1306e4506c1afd292f6fd5d6` ("session 20260828: prose
+book-output-dir built (escalation #989/#1000), #995 self-closed, 3 self-caught CLI-sequencing
+crashes cleared"), pushed to `origin/main` — confirmed via `git log -1`/`git status` after push:
+"Your branch is up to date with 'origin/main'." / "nothing to commit, working tree clean."
