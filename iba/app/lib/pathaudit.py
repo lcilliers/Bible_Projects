@@ -25,9 +25,14 @@ here too).
    value (the actual top-level folders of this project, not a guessed list) — catches both a full
    embedded path (`"outputs/markdown/prose-edits"`) and the `Path("Workflow") / "Programme" / ...`
    construction idiom (a bare `"Workflow"` segment).
-3. A literal on the SAME source line as `.setting(` or `.module_setting(` is treated as a
-   documented DEFAULT for a live config accessor (the established, compliant pattern — e.g.
-   `cfg.setting("governance.oneoff_report_dir", "iba/app/reports/")`) and is NOT flagged.
+3. **No exemption for a literal sitting next to a config accessor call** (removed 2026-08-29,
+   researcher direct ruling after a full-codebase sweep found 41 `.setting(key, "literal")` call
+   sites where the literal had drifted out of sync with the live setting: *"there should be NO
+   hardcoded literals in current code"* — no exception for "it's a documented default"). Every
+   such call site project-wide was converted to `cfg.required_setting(key)` (lib/cfg.py — no
+   default parameter at all, raises if the setting is missing/inactive), so this scanner no longer
+   needs a same-line/adjacent-line carve-out for that shape; if a NEW call site is ever written as
+   `.setting(key, "literal/path")` again, this now correctly flags it rather than exempting it.
 4. No-space docstrings/comments mentioning a bare path can still false-positive; genuinely
    deliberate hardcodes reviewed and accepted before (e.g. `prosestore.OUT_DIR` et al., "unchanged
    from the original scripts — not flagged by escalation #648") will be flagged again here — this
@@ -54,7 +59,6 @@ from . import folderpurpose as fp_mod
 # swamping the 17 real findings elsewhere.
 _EXCLUDE_ANYWHERE = {".git", "archive", "__pycache__", ".venv", "venv", "node_modules",
                     "site-packages", "migration"}
-_CONFIG_ACCESSOR_MARKERS = (".setting(", ".module_setting(")
 
 
 def _roots(conn: sqlite3.Connection) -> set[str]:
@@ -116,14 +120,6 @@ def _scan_file(path: pathlib.Path, roots: set[str]) -> list[dict]:
             before = line_text[:col]
             if not before.rstrip().endswith("Path("):
                 continue
-        # Look back up to 2 lines, not just the literal's own line — a wrapped multi-line call
-        # (`ctx.cfg.setting(\n    "key",\n    "default/path")`) puts `.setting(` on an earlier
-        # line than its own default-value literal; checked live, this is the majority shape of
-        # this exact pattern in this codebase (found scanning iba/app/handlers/*.py, all
-        # 2-line-wrapped `ctx.cfg.setting(key, default)` calls the same-line-only check missed).
-        window = "\n".join(lines[max(0, line_no - 3):line_no])
-        if any(m in window for m in _CONFIG_ACCESSOR_MARKERS):
-            continue  # documented default alongside a live cfg accessor — compliant, not flagged
         findings.append({"line": line_no, "literal": value, "line_text": line_text.strip()})
     return findings
 

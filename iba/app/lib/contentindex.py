@@ -195,8 +195,7 @@ def size_profile(cfg) -> list[dict]:
 
 
 def write_size_profile_report(cfg, rows: list[dict]) -> pathlib.Path:
-    path = pathlib.Path(cfg.setting("content_index.size_profile_report_path",
-                                    "iba/app/reports/content-index-size-profile.md"))
+    path = pathlib.Path(cfg.required_setting("content_index.size_profile_report_path"))
     total_mb = sum(r["size_mb"] for r in rows)
     lines = ["# Content-index .md size profile", "",
             f"> {len(rows)} `.md` file(s) in `file_manifest`, {total_mb:.1f} MB total. Largest "

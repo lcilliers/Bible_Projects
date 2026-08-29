@@ -246,8 +246,7 @@ def _write_quality_report(ctx: Ctx, total: int, avg: float, single: int, dist: l
     """Persist the current distribution — per the researcher's 2026-07-21 ruling that a quality
     check's output must persist to a report file like every other report in the app, not live
     only in a terminal print + an escalation row."""
-    path = pathlib.Path(ctx.cfg.module_setting("cfg_passage", "passage.quality_report_path",
-                                              "iba/app/reports/passage-quality.md"))
+    path = pathlib.Path(ctx.cfg.required_module_setting("cfg_passage", "passage.quality_report_path"))
     intro = [
         f"> Generated {_now()} by `passage.validate`. Read-only findings, not a gate.", "",
         f"- total passages: **{total}**",
@@ -326,8 +325,8 @@ def validate(ctx: Ctx) -> Outcome:
     verse_totals = {r["book"]: r["n"] for r in ctx.db.rows(
         f"SELECT SUBSTR(osisId, 1, INSTR(osisId, '.') - 1) book, COUNT(*) n FROM verse "
         f"WHERE deleted=0{verse_book_filter} GROUP BY book", scope_args)}
-    max_single_pct = float(ctx.cfg.module_setting("cfg_passage", "passage.max_single_verse_pct", 20))
-    max_avg = float(ctx.cfg.module_setting("cfg_passage", "passage.max_avg_verses_per_passage", 30))
+    max_single_pct = float(ctx.cfg.required_module_setting("cfg_passage", "passage.max_single_verse_pct"))
+    max_avg = float(ctx.cfg.required_module_setting("cfg_passage", "passage.max_avg_verses_per_passage"))
     breaches = []
     for row in by_book:
         book_total_verses = verse_totals.get(row["book"], 0)

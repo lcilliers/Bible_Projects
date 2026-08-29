@@ -272,7 +272,7 @@ _WORD_SECTIONS = {                          # section label -> the cfg_setting t
 def generate(word: str) -> pathlib.Path:
     cfg = Cfg()
     db = Db(cfg)
-    output_dir = pathlib.Path(cfg.setting("validation.output_dir", "iba/app/reports"))
+    output_dir = pathlib.Path(cfg.required_setting("validation.output_dir"))
     shown = {sec: bool(cfg.setting(key, True)) for sec, key in _WORD_SECTIONS.items()}
 
     reg = db.rows("SELECT id FROM word_registry WHERE lower(word)=lower(?) AND deleted=0", (word,))
@@ -387,7 +387,7 @@ _BOOK_SECTIONS = {
 def generate_book(book: str) -> tuple:
     cfg = Cfg()
     db = Db(cfg)
-    output_dir = pathlib.Path(cfg.setting("validation.output_dir", "iba/app/reports"))
+    output_dir = pathlib.Path(cfg.required_setting("validation.output_dir"))
     shown = {sec: bool(cfg.setting(key, True)) for sec, key in _BOOK_SECTIONS.items()}
 
     health, _ = _health(cfg, db, book)

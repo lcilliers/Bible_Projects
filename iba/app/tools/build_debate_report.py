@@ -364,8 +364,7 @@ def main() -> int:
             # Book-scoped filing (fixed 2026-08-08) -- same convention every sibling book tool uses:
             # report.verse_analysis_output_dir/<book_label or book>/<topic>.md, versioned +
             # archived-on-regenerate by write_report (not the flat oneoff_path this used to call).
-            output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir",
-                                                   "iba/app/verse-analysis"))
+            output_dir = pathlib.Path(cfg.required_setting("report.verse_analysis_output_dir"))
             folder = args.book_label or args.book
             out_path = output_dir / folder / f"{topic}.md"
             out_path = reportkit.write_report(cfg.conn, "report.debate", out_path, lines)

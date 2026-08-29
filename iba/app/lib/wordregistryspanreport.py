@@ -356,8 +356,7 @@ def write_report(cfg, word: str) -> pathlib.Path | None:
 
     L = reportkit.render_scaffold(conn, STEP, sections, intro=None, word=reg["word"])
 
-    output_dir = pathlib.Path(cfg.setting("report.word_registry_span_output_dir",
-                                          "iba/app/verse-analysis/word_registry"))
+    output_dir = pathlib.Path(cfg.required_setting("report.word_registry_span_output_dir"))
     output_dir.mkdir(parents=True, exist_ok=True)
     out = output_dir / f"{reg['word'].lower().replace(' ', '-')}-strong-span.md"
     out = reportkit.write_report(conn, STEP, out, L)

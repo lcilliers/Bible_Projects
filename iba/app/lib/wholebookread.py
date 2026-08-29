@@ -168,9 +168,8 @@ def write_scaffold(cfg, book: str, book_label: str | None = None) -> pathlib.Pat
     entries = gather_book(conn, book)
     folder = book_label or book
 
-    output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir",
-                                          "iba/app/verse-analysis"))
-    pattern = cfg.setting("report.whole_book_read_naming_pattern", "WA-{book}-whole-book-read.md")
+    output_dir = pathlib.Path(cfg.required_setting("report.verse_analysis_output_dir"))
+    pattern = cfg.required_setting("report.whole_book_read_naming_pattern")
     filename = pattern.format(book=book.lower())
     path = output_dir / folder / filename
 

@@ -15,7 +15,7 @@ from ..lib import retention
 
 def main() -> int:
     cfg = Cfg()
-    path = pathlib.Path(cfg.setting("retention.report_path", "iba/app/reports/log-retention.md"))
+    path = pathlib.Path(cfg.required_setting("retention.report_path"))
     out = retention.write_report(cfg, path)
     cfg.close()
     print(f"log-retention report written: {out}")

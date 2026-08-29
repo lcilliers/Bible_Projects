@@ -48,58 +48,21 @@ import sqlite3
 from datetime import datetime, timezone
 from pathlib import Path
 
-# Output locations were originally left unchanged from the pre-rebuild scripts, not flagged by the
-# escalation #648 sweep (only EXTRACTOR_VERSION/CHAPTER_NAMES/BOOK_STAGE_MAP/DEFAULT_LIMIT were).
-# Now config-driven (escalation #971/#976, iba/app/lib/pathaudit.py's scan) via output_dir()/
-# docx_output_dir()/search_output_dir()/patch_output_dir() below — these constants are the
-# Python-level DEFAULT only, used when cfg_prose is inactive/absent, same as CHAPTER_EDIT_OUT_DIR.
-OUT_DIR = Path("Workflow") / "Programme" / "programme_prose"
-DOCX_OUT_DIR = Path("outputs") / "docx"
-SEARCH_OUT_DIR = Path("outputs") / "markdown"
-# CHAPTER_EDIT_OUT_DIR: corrected again 2026-08-28 (escalation #971/#976) -- the 2026-08-22 fix
-# below (outputs/markdown/prose-edits/) was itself made stale by the 2026-08-27 folder reorg, which
-# physically moved the files to Workflow/Programme/prose-edits/ without this constant (used as
-# _next_edit_version's own default param, not just edit_file_dir()'s fallback) following. Original
-# 2026-08-22 note, for history: "NOT 'unchanged from the original scripts' as the comment above
-# claims for its siblings -- found live... to be a real regression from the rebuild... this
-# constant pointed one level up. Fixed to match live convention rather than the incorrect prior
-# comment." Same lesson, twice now: a hardcoded fallback drifts silently unless something checks it
-# — which is exactly what path-audit (PathAudit.ps1) now does, going forward.
-CHAPTER_EDIT_OUT_DIR = Path("Workflow") / "Programme" / "prose-edits"
-PATCH_OUT_DIR = Path("Sessions") / "Patches"
+# Every output-location constant that used to live here (OUT_DIR/DOCX_OUT_DIR/SEARCH_OUT_DIR/
+# CHAPTER_EDIT_OUT_DIR/PATCH_OUT_DIR/_DEFAULT_CHAPTER_NAMES/_DEFAULT_BOOK_STAGE_MAP/
+# _DEFAULT_BOOK_OUTPUT_DIR/_DEFAULT_SEARCH_LIMIT/_DEFAULT_EDIT_FILE_DIR) was a "Python-level
+# DEFAULT only, used when cfg_prose is inactive/absent" — removed entirely 2026-08-29 (researcher
+# direct ruling, full-codebase sweep: *"there should be NO hardcoded literals in current code"*).
+# This was, on its own history, the clearest case for removing the pattern rather than re-fixing
+# its drifted value again: CHAPTER_EDIT_OUT_DIR had ALREADY silently drifted once (corrected
+# 2026-08-22, drifted again, corrected again 2026-08-28, escalation #971/#976) — the fallback
+# constant, not the config, was what kept going stale, because nothing ever re-verified it against
+# the live row. Every function below now reads its `cfg_prose` row via `cfg.required_module_
+# setting()` (lib/cfg.py, no default parameter at all) — a missing/inactive row now fails loudly
+# instead of silently resurrecting a value that already proved it can go stale unnoticed.
 
 MARKER_RE = re.compile(r"<!-- PROSE_([A-Z_]+): ?(.*?) -->")
 ID_RE = re.compile(r"<!-- PROSE_SECTION_ID: (\d+) -->")
-
-_DEFAULT_CHAPTER_NAMES = {
-    "0": "Preamble",
-    "1": "Programme purpose",
-    "2": "Research methodology",
-    "3": "Research approach",
-    "4": "Data architecture",
-    "5": "Data integrity & governance",
-    "6": "Instruction corpus",
-}
-_DEFAULT_BOOK_STAGE_MAP = {
-    "Programme": ["programme"],
-    "Detail design": ["session_a", "session_b", "session_b_phase9", "session_c", "session_d"],
-    "Findings": ["synthesis", "verse-analysis", "findings"],
-    "Essays": ["essay"],
-}
-# prose.book_output_dir (escalation #989/#1000): per-book WORKING-FILE output dirs -- these
-# folders hold prose operation working files, not a replica of prose content (researcher ruling,
-# #1000). Read by output_dir_for(cfg, book_label) below.
-_DEFAULT_BOOK_OUTPUT_DIR = {
-    "Programme": "Workflow/Programme/programme_prose",
-    "Detail design": "_raw_data/raw_data_prose",
-    "Findings": "_analytics/findings_prose",
-    "Essays": "_analytics/essay_prose",
-}
-_DEFAULT_SEARCH_LIMIT = 100
-# Was "outputs/markdown/prose-edits" -- corrected 2026-08-28 (escalation #971/#976) to match where
-# the files actually live after the 2026-08-27 folder reorg physically moved them without this
-# default (or the live cfg_prose.prose.edit_file_dir setting) being updated to follow.
-_DEFAULT_EDIT_FILE_DIR = "Workflow/Programme/prose-edits"
 
 
 def open_db(cfg) -> sqlite3.Connection:
@@ -117,13 +80,14 @@ def today_compact() -> str:
     return datetime.now(timezone.utc).strftime("%Y%m%d")
 
 
-def _next_edit_version(stem: str, edit_dir: Path = CHAPTER_EDIT_OUT_DIR) -> int:
+def _next_edit_version(stem: str, edit_dir: Path) -> int:
     """Next edit-cycle version number for a chapter-edit export with this book/chapter/section
-    stem. Researcher, 2026-08-22 (escalation #784): 'all files must be version controlled' --
+    stem. `edit_dir` has no default — its sole caller always passes `edit_file_dir(cfg)` explicitly
+    (a hardcoded default here would be the exact same drift-prone shape removed everywhere else
+    2026-08-29). Researcher, 2026-08-22 (escalation #784): 'all files must be version controlled' --
     'currently the name of the file makes it impossible to link the file with the book-chapter-
     session' (read as: without a version number, two edit exports of the same book+chapter can't be
-    told apart, and a same-day re-export silently overwrites -- found live this same session,
-    testing the CHAPTER_EDIT_OUT_DIR path fix). This is an edit-CYCLE version, distinct from
+    told apart, and a same-day re-export silently overwrites). This is an edit-CYCLE version, distinct from
     prose_section.version -- one exported file can bundle several section rows that may each sit at
     a different DB version, so the file's own version is a separate counter. Scans both the active
     folder and its archive (§5 below moves imported files there) so a version is never reused even
@@ -153,7 +117,7 @@ def chapter_names(cfg) -> dict:
     `governance.module.config`), not generic `cfg_setting` — corrects this function's own earlier
     (pre-#829) use of `cfg.setting()`, which duplicated table-driven module config into the
     project-wide settings table."""
-    return cfg.module_setting("cfg_prose", "prose.chapter_names", _DEFAULT_CHAPTER_NAMES)
+    return cfg.required_module_setting("cfg_prose", "prose.chapter_names")
 
 
 def book_stage_map(cfg) -> dict:
@@ -170,30 +134,25 @@ def book_stage_map(cfg) -> dict:
     superseded by the time the code was actually written. Kept as the `--book` choice-list source
     (still useful for CLI validation) — not dropped, since nothing else currently enumerates the 4
     live book names."""
-    return cfg.module_setting("cfg_prose", "prose.book_stage_map", _DEFAULT_BOOK_STAGE_MAP)
+    return cfg.required_module_setting("cfg_prose", "prose.book_stage_map")
 
 
 def search_default_limit(cfg) -> int:
-    return cfg.module_setting("cfg_prose", "prose.search_default_limit", _DEFAULT_SEARCH_LIMIT)
+    return cfg.required_module_setting("cfg_prose", "prose.search_default_limit")
 
 
 def edit_file_dir(cfg) -> Path:
-    """`prose.edit_file_dir` — replaces the `CHAPTER_EDIT_OUT_DIR` hardcoded constant (escalation
-    #829, `governance.rules_must_be_config_driven`). `CHAPTER_EDIT_OUT_DIR` stays defined above as
-    the Python-level default only, used when `cfg_prose` is inactive/absent."""
-    return Path(cfg.module_setting("cfg_prose", "prose.edit_file_dir", _DEFAULT_EDIT_FILE_DIR))
+    """`prose.edit_file_dir` (escalation #829, `governance.rules_must_be_config_driven`) — no
+    hardcoded fallback (removed 2026-08-29; its predecessor constant drifted silently twice)."""
+    return Path(cfg.required_module_setting("cfg_prose", "prose.edit_file_dir"))
 
 
 def output_dir(cfg) -> Path:
-    """`prose.output_dir` — replaces the `OUT_DIR` hardcoded constant (escalation #971/#976,
-    `iba/app/lib/pathaudit.py`'s scan; the same class of gap `edit_file_dir` above closed for
-    `CHAPTER_EDIT_OUT_DIR`, extended to prosestore's other 3 output constants at the same time —
-    "unchanged from the original scripts, not flagged by #648" was true in 2026-08-21 but is no
-    longer a reason to leave the other three ungoverned once one sibling constant has already been
-    found to drift silently). `OUT_DIR` stays defined above as the Python-level default only.
-    Stays the Programme-only/no-`--book`-given default — `output_dir_for` below is the book-aware
-    entry point (escalation #989/#1000)."""
-    return Path(cfg.module_setting("cfg_prose", "prose.output_dir", str(OUT_DIR)))
+    """`prose.output_dir` (escalation #971/#976, `iba/app/lib/pathaudit.py`'s scan) — no hardcoded
+    fallback (removed 2026-08-29, same reasoning as `edit_file_dir` above). Stays the Programme-
+    only/no-`--book`-given default — `output_dir_for` below is the book-aware entry point
+    (escalation #989/#1000)."""
+    return Path(cfg.required_module_setting("cfg_prose", "prose.output_dir"))
 
 
 def output_dir_for(cfg, book_label: str | None) -> Path:
@@ -205,7 +164,7 @@ def output_dir_for(cfg, book_label: str | None) -> Path:
     "unknown book" refusal for an unrecognised `--book` value."""
     if book_label is None:
         return output_dir(cfg)
-    book_map = cfg.module_setting("cfg_prose", "prose.book_output_dir", _DEFAULT_BOOK_OUTPUT_DIR)
+    book_map = cfg.required_module_setting("cfg_prose", "prose.book_output_dir")
     if book_label not in book_map:
         raise ValueError(
             f"no prose.book_output_dir entry for book {book_label!r}; choose from: "
@@ -214,19 +173,18 @@ def output_dir_for(cfg, book_label: str | None) -> Path:
 
 
 def docx_output_dir(cfg) -> Path:
-    """`prose.docx_output_dir` — replaces `DOCX_OUT_DIR`, same reasoning as `output_dir` above."""
-    return Path(cfg.module_setting("cfg_prose", "prose.docx_output_dir", str(DOCX_OUT_DIR)))
+    """`prose.docx_output_dir` — same reasoning as `output_dir` above."""
+    return Path(cfg.required_module_setting("cfg_prose", "prose.docx_output_dir"))
 
 
 def search_output_dir(cfg) -> Path:
-    """`prose.search_output_dir` — replaces `SEARCH_OUT_DIR`, same reasoning as `output_dir`
-    above."""
-    return Path(cfg.module_setting("cfg_prose", "prose.search_output_dir", str(SEARCH_OUT_DIR)))
+    """`prose.search_output_dir` — same reasoning as `output_dir` above."""
+    return Path(cfg.required_module_setting("cfg_prose", "prose.search_output_dir"))
 
 
 def patch_output_dir(cfg) -> Path:
-    """`prose.patch_output_dir` — replaces `PATCH_OUT_DIR`, same reasoning as `output_dir` above."""
-    return Path(cfg.module_setting("cfg_prose", "prose.patch_output_dir", str(PATCH_OUT_DIR)))
+    """`prose.patch_output_dir` — same reasoning as `output_dir` above."""
+    return Path(cfg.required_module_setting("cfg_prose", "prose.patch_output_dir"))
 
 
 # ── extract (was scripts/build_programme_prose_extract.py) ─────────────────

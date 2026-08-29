@@ -329,8 +329,7 @@ def _write_reconciliation_report(ctx: Ctx, step: str, scope_label: str, book: st
     if unchanged:
         lines += ["## Unchanged (confirmed against DB, left untouched)", ""]
         lines += [f"- {k}" for k in unchanged] + [""]
-    output_dir = pathlib.Path(ctx.cfg.setting("report.verse_analysis_output_dir",
-                                              "iba/app/verse-analysis"))
+    output_dir = pathlib.Path(ctx.cfg.required_setting("report.verse_analysis_output_dir"))
     folder = book_label or book
     path = output_dir / folder / f"{step}-reconciliation-{scope_label}.md"
     path = reportkit.write_report(ctx.cfg.conn, f"report.{step}-reconciliation", path, lines)
@@ -676,8 +675,7 @@ def hib_set(ctx: Ctx) -> Outcome:
         kind_lines.append("")
         kind_lines += [f"- {label}" for label in by_kind[kind]]
         kind_lines.append("")
-    kind_output_dir = pathlib.Path(ctx.cfg.setting("report.verse_analysis_output_dir",
-                                                    "iba/app/verse-analysis"))
+    kind_output_dir = pathlib.Path(ctx.cfg.required_setting("report.verse_analysis_output_dir"))
     kind_path = kind_output_dir / (book_label or book) / f"hib.set-by-type-{book}.md"
     kind_path = reportkit.write_report(ctx.cfg.conn, "report.hib.set-by-type", kind_path, kind_lines)
 
@@ -1482,8 +1480,7 @@ def closing_set(ctx: Ctx) -> Outcome:
                      f"corrected, {c['removed']} removed")
     if "open_decisions_note" in payload:
         lines.append("- **open_decisions_note**: updated")
-    closing_output_dir = pathlib.Path(ctx.cfg.setting("report.verse_analysis_output_dir",
-                                                       "iba/app/verse-analysis"))
+    closing_output_dir = pathlib.Path(ctx.cfg.required_setting("report.verse_analysis_output_dir"))
     path = closing_output_dir / (book_label or book) / f"closing.set-reconciliation-{scope_label}.md"
     path = reportkit.write_report(ctx.cfg.conn, "report.closing.set-reconciliation", path, lines)
 

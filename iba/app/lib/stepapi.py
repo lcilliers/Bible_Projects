@@ -40,8 +40,8 @@ class Step:
         self.version = cfg.connection("version")
         self.timeout = int(cfg.connection("timeout_seconds"))
         self.cap = int(cfg.setting("step.cap", 60))
-        self.walk_start = cfg.setting("step.walk_start", "Gen.1.1")
-        self.walk_end = cfg.setting("step.walk_end", "Rev.22.21")
+        self.walk_start = cfg.required_setting("step.walk_start")
+        self.walk_end = cfg.required_setting("step.walk_end")
         self.walk_max = int(cfg.setting("step.walk_max_iter", 400))
         self.particle_re = re.compile(cfg.setting("discovery.particle_pattern", r"^[HG]9\d{3}$"))
         # book order and the span-HTML pattern now come from config, not the code
@@ -69,8 +69,8 @@ class Step:
         # real, deliberately-set values are "God" / 1000, confirmed live during this session's
         # own `Start-Iba.ps1` run against H0430/2088 verses). Kept byte-identical to the DB so a
         # missing row degrades to the SAME check, not a weaker one.
-        probe = self.cfg.setting("step.probe_strong", "H0430")
-        want_gloss = self.cfg.setting("step.expect_gloss_contains", "God")
+        probe = self.cfg.required_setting("step.probe_strong")
+        want_gloss = self.cfg.required_setting("step.expect_gloss_contains")
         min_verses = int(self.cfg.setting("step.expect_min_verses", 1000))
 
         # every network touch here is wrapped — a server that dies on the SECOND call is

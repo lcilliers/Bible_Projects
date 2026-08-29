@@ -39,12 +39,11 @@ def versioned_path(cfg, topic: str, out_dir: str | pathlib.Path | None = None,
     topic, ext)` is now exactly `versioned_path(cfg, topic, ext=ext)`, no behaviour change for any
     existing caller."""
     out_dir = pathlib.Path(out_dir if out_dir is not None else
-                           cfg.setting("governance.oneoff_report_dir", "iba/app/reports/"))
-    pattern = naming_pattern or cfg.setting("governance.oneoff_report_naming_pattern",
-                                            "{topic}-{YYYYMMDD}.{format}")
-    fmt = ext or cfg.setting("governance.oneoff_report_format", "md")
+                           cfg.required_setting("governance.oneoff_report_dir"))
+    pattern = naming_pattern or cfg.required_setting("governance.oneoff_report_naming_pattern")
+    fmt = ext or cfg.required_setting("governance.oneoff_report_format")
     adir_name = archive_dir if archive_dir is not None else \
-        cfg.setting("governance.oneoff_report_archive_dir", "archive")
+        cfg.required_setting("governance.oneoff_report_archive_dir")
     slug = re.sub(r"[^a-z0-9]+", "-", topic.lower()).strip("-")
     stamp = datetime.datetime.now().strftime("%Y%m%d")
     name = pattern.format(topic=slug, YYYYMMDD=stamp, format=fmt)

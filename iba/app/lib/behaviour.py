@@ -71,8 +71,7 @@ def main() -> int:
         for a in argv[1:]:
             if a.startswith("--class="):
                 class_filter = a.split("=", 1)[1]
-        path = pathlib.Path(cfg.setting("behaviour.list_report_path",
-                                        "iba/app/reports/behaviour-rules-list.md"))
+        path = pathlib.Path(cfg.required_setting("behaviour.list_report_path"))
         out, total = write_list_report(cfg, db, path, class_filter)
         print(f"  {total} active behaviour rule(s) -> {out}")
         return 0

@@ -11285,3 +11285,184 @@ their own.
 
 **Files:** `scripts/_apply_finding_verse_term_index_v1_20260829.py` (`--fix-pass1`); `finding_verse_index`
 (434,427 rows deleted, 331,401 rebuilt); `backups/bible_research-pre-verse-index-structural-fix-*.db`.
+
+## 208. `report.obs_catalogue` — structural review of `wa_obs_question_catalogue`, no findings joins (2026-08-29, escalation #1007 second half)
+
+Researcher's own framing (verbatim): *"I do not see a ps tool to prepare a structured report for
+the catalogue — this is without any findings included... the purpose is to evaluate and augment
+the questions and structure around it — all in the one table."* Deliberately scoped to
+`wa_obs_question_catalogue` alone — no join to `finding`/`finding_question_link`/`cluster_finding`
+(that's what the first half of #1007, BUILD.md §200-206, already built and consolidated).
+
+**Content follows directly from the table's own `cfg_column.use` notes** (written during #1007's
+earlier CSV-extract phase, before this report existed) — every structural problem those notes
+already named is now a real report section, not just a description:
+
+- **Overview** — total (424) vs live (`status='active' AND deleted=0`, 181) counts, status/deleted
+  breakdown.
+- **Lifecycle conflicts** — the exact **58 rows** where `status='active'` but `deleted=1` (mostly
+  the R067 gap-additions migrated to SD pointers, and the tier-catalogue v2.1 refit's folded-in
+  sub-questions) — every row named, not summarised, per `feedback_no_hedge_pointers_in_complete_
+  records`. Checked the reverse conflict too (non-active status with `deleted=0`) — genuinely zero,
+  reported as such rather than silently omitted.
+- **Naming schemes** — `section`'s 27 distinct values (the `Section N` vs `Tn` split, plus
+  `*Extensions`/`leviticus`/`redemption` outliers), `tier` (null on 235/424), `question_code`
+  prefix sprawl (9 prefixes), `catalogue_version` (6 variants), `date_added` format split
+  (230 ISO-8601 vs 194 `YYYYMMDD`).
+- **Tier structure** — the **126** live, tiered questions, grouped by tier → component →
+  `prompt_seq`, full question text — the actual set to review question-by-question.
+- **Unclassified** — the **55** live questions with no `tier` — the integration candidates.
+
+**Cross-database report** (new pattern for `reportkit`-based reports): `lib/cataloguereport.py`
+connects to `bible_research.db` itself via `cfg.database_path('bible_research')` (same approach
+`lib/prosestore.py` already uses) while still calling `reportkit.render_scaffold`/`write_report`
+against `cfg.conn` (iba.db) for the config-driven scaffold — `cfg_report`/`cfg_report_section` live
+in iba.db regardless of which database a report's DATA comes from. The CSV pairing is supplied via
+`row_filter` (pre-fetched rows), not a live `SELECT * FROM wa_obs_question_catalogue` against
+`cfg.conn` — that table doesn't exist in iba.db.
+
+**One real coherence bug found and fixed in the same pass:** the first `cfg_report_csv_table`
+insert named the table without `virtual=1`, so `find_bad_report_csv_table_references` correctly
+hard-failed `configmaint.validate` (escalation #1052) — that check only recognises `database='iba'`
+tables as literal, and this one is bible_research's, supplied via `row_filter`. Corrected the row
+and the migration source to `virtual=1` with an explanatory `join_note`; resolved #1052 as
+self-correctable. Re-validated clean of hard errors — the remaining advisory findings (#1053) are
+3 pre-existing (unrelated to this build) plus 1 real one this build introduced: `Catalogue-
+Report.ps1` has no tab yet in `iba/docs/ps tools worksheet.xlsx` (`governance.ps_worksheet_sync_on_
+change`) — **not yet fixed**, deferred because the worksheet was open in Excel at build time
+(`feedback_warn_before_editing_excel_tool_interface` — a write while open crashes with
+`PermissionError`); pending the researcher closing it.
+
+**Files:** `iba/app/lib/cataloguereport.py` (new); `iba/app/ps/Catalogue-Report.ps1` (new);
+`iba/app/handlers/reports.py` (`obs_catalogue_report`); `iba/app/migration/bootstrap_catalogue_
+overview_report_v1_20260829.py` (one-off, applied, `cfg_utility.inactive=1`); config added:
+`cfg_work_package`/`cfg_step` (`catalogue-report`/`report.obs_catalogue`), `cfg_setting`
+(`report.obs_catalogue_path`), `cfg_report` + 5 `cfg_report_section` rows.
+
+**Filing correction, same day, researcher direct instruction:** *"the report location should be
+workflow\catelogue. there should be a config to say that all table exports to csv should go to
+workflow\schema\[db]. iba/app/reports is not an approved or valid destination."* Two things,
+addressed differently:
+
+1. **The report's own location** — moved `report.obs_catalogue_path` from
+   `iba/app/reports/obs-catalogue.md` to `Workflow/Catalogue/obs-catalogue.md` (an already-
+   established directory, CLAUDE.md §2 — home for the other two catalogue documents,
+   `wa-IB-verse-dimensions-catalogue-v2-20260629.md`/`wa-ve-lexical-catalogue-v1-20260702.md`).
+   `cfg_setting` updated; `_PATH_DEFAULT` in the migration source corrected too, so a fresh apply
+   produces the right value.
+2. **The CSV** — the requested "config to say csv table exports go to `Workflow/schema/[db]`"
+   **already existed** (`table_export.output_dir`, BUILD.md §201, `Workflow/schema/{iba,
+   bible_research}`) — `Workflow/schema/bible_research/wa_obs_question_catalogue.csv` was already
+   sitting there from #1007's own earlier `table.export` run (v5). This report's own `cfg_report_
+   csv_table` row (the one just corrected to `virtual=1` under #1052, above) was a genuine
+   duplicate — a second, report-scoped copy of a table already dumped in full at the one governed
+   location. Deleted the row, dropped the `write_csv_pairing` call from `cataloguereport.py`,
+   `cfg_report.output_kind` → `'md'`. The wrongly-placed `iba/app/reports/obs-catalogue*` files and
+   their now-pointless `export/wa_obs_question_catalogue.csv` copy (all created minutes earlier,
+   same session, never referenced anywhere) were deleted rather than archived — same-session own
+   mistake, not prior work. Regenerated clean at `Workflow/Catalogue/obs-catalogue-v1-20260829.md`;
+   `configmaint.validate` re-run, identical to already-open #1053, no new findings.
+
+## 209. `Cfg.required_setting()`/`required_module_setting()` — every hardcoded location-literal fallback in `iba/app/` removed, project-wide (2026-08-29)
+
+**Researcher, directly, after being shown the `report.obs_catalogue_path` staleness above:** *"you
+are here today to do 'again' something that I explicitly instructed you to do, confirmed it was
+done by your affirmation, approved it and updated reports for it, just to find this situation
+today... YES DO THE JOB PROPERLY... THERE SHOULD BE NO HARDCODED LITERALS IN CURRENT CODE."*
+
+**Root cause, found and shown, not just asserted:** `path_audit` (§194, escalation #971/#976,
+built 2026-08-28 — a real, researcher-commissioned tool for exactly this) has its own rule 3:
+*"A literal on the SAME source line as `.setting(` or `.module_setting(` is treated as a documented
+DEFAULT for a live config accessor... and is NOT flagged."* That rule is why 41+ of these never
+surfaced as a path-audit finding — the tool was built, approved, and run, and faithfully reported
+clean under a definition of "compliant" that explicitly exempted `.setting(key, "literal")`. When
+previously asked "are there hardcoded locations," the honest answer was filtered through that
+tool's own approved exemption, not verified against the plain meaning of the question.
+
+**Full-codebase sweep, not just the one file that started this:** every `.setting(key, "literal")`
+and `.module_setting(table, key, "literal")` call site in `iba/app/` — **75 total** (62
+`.setting(`, 13 `.module_setting(`, across 28 files) — converted to a new no-default accessor:
+- `Cfg.required_setting(key)` — same lookup as `.setting()`, no default parameter, raises `KeyError`
+  if the row is missing/inactive.
+- `Cfg.required_module_setting(table, key)` — the same for a per-module table (`cfg_prose`,
+  `cfg_passage`).
+
+Both mirror the no-silent-default discipline `database_path()` already had (`no database.{name}.
+path setting` raises, always has). A missing/renamed/deactivated setting now fails loudly at the
+exact call site, instead of silently resurrecting whatever literal happened to be written into the
+code at some prior point.
+
+**Files touched (all 28):** `handlers/candidate.py`, `cluster.py`, `configmaint.py`, `lexicon.py`,
+`narrative.py`, `operations.py`, `passage.py`, `pathaudit.py`, `raw.py`, `reports.py`; `lib/
+behaviour.py`, `contentindex.py`, `debaterun.py`, `escalation.py`, `filingkit.py`, `lexical.py`,
+`narrativegenerate.py`, `passagedebatereport.py`, `pathaudit.py`, `prosestore.py`, `stepapi.py`,
+`strongversereport.py`, `versespanmeaningreport.py`, `wholebookread.py`, `wordregistryspanreport.py`;
+`report.py`, `tools/build_debate_report.py`, `tools/log_retention.py`; `validation.py`. New method
+pair: `lib/cfg.py`.
+
+**Real bugs found along the way, not just mechanical rename:**
+1. **`lib/prosestore.py`'s output-location constants** (`OUT_DIR`/`DOCX_OUT_DIR`/`SEARCH_OUT_DIR`/
+   `CHAPTER_EDIT_OUT_DIR`/`PATCH_OUT_DIR`/`_DEFAULT_*`) were the clearest case of the exact failure
+   mode the researcher was angry about: `CHAPTER_EDIT_OUT_DIR` had ALREADY drifted silently once,
+   was "fixed" by correcting its stale value (2026-08-22, then again 2026-08-28 per #971/#976) —
+   twice re-fixing the SYMPTOM (the constant's value) while leaving the actual disease (a hardcoded
+   fallback existing at all) in place. All 10 constants deleted outright, not just their call sites
+   converted; `_next_edit_version`'s own hardcoded default parameter (same shape) removed too — its
+   one caller already passes `edit_dir` explicitly, so the default was always dead weight.
+2. **`cfg_prose.prose.edit_file_dir`'s stored value was not valid JSON** (`Workflow/Programme/
+   prose-edits` unquoted) — found only because `required_module_setting` calls `json.loads`
+   unconditionally on any existing row, same as `module_setting` already did; this row was already
+   silently broken before today (it would have raised `JSONDecodeError` the instant `edit_file_dir()`
+   was actually called, default or no default — the literal fallback only ever masked a MISSING row,
+   never a malformed one). Corrected to a properly JSON-quoted string.
+3. **`lib/cfgquality.py`'s `find_orphan_configs` hardcoded the literal string `".setting("` as its
+   only recognised "is this setting actually used" marker** — the rename to `required_setting`/
+   `required_module_setting` made this checker briefly blind to all 75 settings the moment the
+   rename landed (caught live: a validate re-run immediately after the rename showed 9 new
+   "orphan" false positives). Fixed in the same pass — the usage check now also recognises
+   `.required_setting(`.
+4. **`handlers/passage.py`/`lib/debaterun.py`'s 4 `.module_setting(` call sites** were invisible to
+   the original `.setting(`-only regex sweep entirely (different method name) — found only because
+   removing `path_audit`'s rule-3 exemption (next) surfaced `handlers/passage.py:250` as a genuinely
+   new finding on the very next scan. Converted along with everything else.
+
+**`path_audit`'s own rule 3 removed, not just worked around:** the "documented default alongside a
+live accessor is compliant" exemption is gone from `lib/pathaudit.py`'s `_scan_file` — a location
+literal next to `.setting(`/`.module_setting(`/`.required_setting(` is no longer treated as
+automatically fine. Going forward, a NEW call site written as `.setting(key, "literal/path")` will
+be flagged by the next `PathAudit.ps1 -Action Scan`, not silently exempted the way this whole class
+was. `_CONFIG_ACCESSOR_MARKERS` (now-dead) removed.
+
+**Verified, not just asserted clean:**
+- Every file re-parses (`ast.parse`), including recovery from a self-introduced bug: the first
+  mechanical regex replace left one stray extra `)` at every one of the 62 `.setting(` sites (fixed
+  in the same pass) and mangled one multi-line implicit-string-concatenation default
+  (`versespanmeaningreport.py`'s `report.verse_gap_note`, also fixed).
+- All 48 `required_setting` keys and all 13 `required_module_setting` (table, key) pairs confirmed
+  live, `inactive=0`, and valid JSON via direct DB query — not assumed from the conversion alone.
+- Live smoke-tested, not just parsed: `Start-Iba.ps1` (stepapi.py), `Cluster-Report.ps1`,
+  `SchemaOverview-Report.ps1`, `Registry-Report.ps1`, `Escalation.ps1 -Action List`,
+  `Config-Maintenance.ps1 -Step Report`, `Manifest-Rebuild.ps1`, `Passage-Quality.ps1`, and a direct
+  Python smoke test of every converted `prosestore.py`/`debaterun.py` function — all ran clean, all
+  wrote to their correct, live config-driven locations.
+- `Config-Maintenance.ps1 -Step Validate` re-run clean after every stage — 0 orphan configs (was 9
+  mid-fix, before the `cfgquality.py` correction), final state identical to already-open #1054 (2
+  pre-existing findings unrelated to this work, plus 2 new genuine "needs justification" findings
+  from reactivating `candidate.quality_report_path`/`candidate.load_report_path` — see below).
+- `PathAudit.ps1 -Action Scan` re-run under the tightened rule: 85 scripts, 23 findings in 4 files —
+  all 23 are the already-known, already-tracked `manifest.py`/`prosestore.py` category-map findings
+  (BUILD.md §194) plus the one genuinely new `handlers/passage.py` finding this same round found and
+  fixed; **zero** findings from any of the 75 converted call sites or from today's new
+  `cataloguereport.py`.
+
+**One reactivation, disclosed not hidden:** `candidate.quality_report_path`/`candidate.
+load_report_path` (module `candidate`) were `inactive=1` — set `inactive=0` so `required_setting`
+wouldn't crash those (currently dormant, `cfg_step.inactive=1`) code paths if ever exercised
+directly. This surfaced a genuine, correctly-flagged advisory finding (`configmaint.validate`,
+"settings needing justification"): `candidate` already has its own dedicated table
+(`cfg_candidate_rule`) — whether these two belong there instead of shared `cfg_setting` is a real
+open question for the researcher, not decided here.
+
+**Files:** `iba/app/lib/cfg.py` (`required_setting`, `required_module_setting`); `iba/app/lib/
+pathaudit.py` (rule 3 removed); `iba/app/lib/cfgquality.py` (`find_orphan_configs` usage-marker
+fix); the 28 files listed above; `cfg_setting` (2 rows reactivated, 1 corrected to valid JSON).

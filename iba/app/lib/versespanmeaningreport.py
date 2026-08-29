@@ -125,11 +125,7 @@ def merge_verses_and_gaps(verses: list[dict], gaps: dict[int, list[int]]):
 
 def gap_note(cfg, book: str, book_label: str | None, chapter: int, verse: int) -> str:
     ref = f"{book_label or book} {chapter}:{verse}"
-    tpl = cfg.setting(
-        "report.verse_gap_note",
-        "**Verse gap — by design.** `{ref}` has no verse row in iba.db (no onboarded term's "
-        "concordance search ever surfaced it — see governance.verse_gap_by_design). Not an "
-        "error; continuing with the next available verse.")
+    tpl = cfg.required_setting("report.verse_gap_note")
     return tpl.format(ref=ref)
 
 
@@ -381,9 +377,8 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
     L = reportkit.render_scaffold(conn, "report.verse_span_meaning", sections, intro=intro,
                                   book=book, range=label)
 
-    output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir", "iba/app/verse-analysis"))
-    pattern = cfg.setting("report.verse_analysis_output_pattern",
-                         "{book}-{range}-verse-span-meaning.md")
+    output_dir = pathlib.Path(cfg.required_setting("report.verse_analysis_output_dir"))
+    pattern = cfg.required_setting("report.verse_analysis_output_pattern")
     folder = book_label or book
     filename = pattern.format(book=book.lower(), range=range_str)
     path = output_dir / folder / filename

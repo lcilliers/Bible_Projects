@@ -397,8 +397,7 @@ def validate(ctx: Ctx) -> Outcome:
     # same cfgquality functions) — refreshed here so the report reflects THIS run's findings, not
     # a stale prior one, before the escalation references it by path.
     report_path = cfgreport.generate(
-        out_path=pathlib.Path(ctx.cfg.setting("configmaint.report_path",
-                                             "iba/app/config/CONFIG-REPORT.md")))
+        out_path=pathlib.Path(ctx.cfg.required_setting("configmaint.report_path")))
     summary = ", ".join(f"{len(v)} {label}" for v, label in findings.values() if v)
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
@@ -606,6 +605,6 @@ def propose(ctx: Ctx) -> Outcome:
 def report(ctx: Ctx) -> Outcome:
     # configmaint.report_path exists precisely so this step doesn't hard-code the path —
     # found unused during the 2026-07-21 review (see _find_orphan_configs) and fixed here.
-    out_path = pathlib.Path(ctx.cfg.setting("configmaint.report_path", "iba/app/config/CONFIG-REPORT.md"))
+    out_path = pathlib.Path(ctx.cfg.required_setting("configmaint.report_path"))
     path = cfgreport.generate(out_path=out_path)
     return ok(f"config report written: {path}")

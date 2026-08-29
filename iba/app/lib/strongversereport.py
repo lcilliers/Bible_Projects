@@ -194,8 +194,7 @@ def write_report(cfg, word: str, strong: str, word_id: int) -> pathlib.Path:
 
     L = reportkit.render_scaffold(conn, STEP_ID, sections, intro=intro, word=word, strong=strong)
 
-    output_dir = pathlib.Path(cfg.setting("report.strong_verse_output_dir",
-                                          "iba/app/verse-analysis/word_registry"))
+    output_dir = pathlib.Path(cfg.required_setting("report.strong_verse_output_dir"))
     out = output_dir / word.lower().replace(" ", "-") / f"{word.lower().replace(' ', '-')}-{strong}-verse-lexical.md"
     out.parent.mkdir(parents=True, exist_ok=True)
     out = reportkit.write_report(conn, STEP_ID, out, L)

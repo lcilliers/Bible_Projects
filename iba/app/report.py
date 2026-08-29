@@ -69,8 +69,8 @@ def generate(word: str, cfg: Cfg | None = None) -> pathlib.Path | None:
     strong_fields = cfg.setting("report.strong_fields", ["stepGloss", "head", "count", "verses"])
     span_fields = cfg.setting("report.span_fields",
                               ["position", "surface", "strong_variant", "morph_code", "is_particle", "sense"])
-    output_dir = cfg.setting("report.output_dir", "iba/app")
-    output_pattern = cfg.setting("report.output_pattern", "report-{word}.md")
+    output_dir = cfg.required_setting("report.output_dir")
+    output_pattern = cfg.required_setting("report.output_pattern")
 
     w = db.get("word_registry", word=word)
     if not w:

@@ -132,8 +132,7 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
     label = f"{lo}:{verse_lo}-{verse_hi}" if verse_lo is not None else f"{lo}-{hi}"
     folder = book_label or book
 
-    output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir",
-                                          "iba/app/verse-analysis"))
+    output_dir = pathlib.Path(cfg.required_setting("report.verse_analysis_output_dir"))
 
     verses = fetch_verses(conn, book, lo, hi, verse_lo, verse_hi)
     built_verse_ids = {r["verse_id"] for r in conn.execute(
@@ -150,7 +149,7 @@ def write_scaffold(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None
     extract_label = "verse_lexical (DB)"
 
     today = datetime.date.today().isoformat()
-    pattern = cfg.setting("report.passage_debate_naming_pattern", "WA-{book}-{range}-debate.md")
+    pattern = cfg.required_setting("report.passage_debate_naming_pattern")
     filename = pattern.format(book=book.lower(), range=range_str)
     path = output_dir / folder / filename
 

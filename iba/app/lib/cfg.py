@@ -73,6 +73,30 @@ class Cfg:
         _trace(f"setting {key}", val)
         return val
 
+    def required_setting(self, key: str):
+        """Same lookup as `.setting()`, but NO literal default parameter -- raises if the key is
+        missing or inactive, exactly the discipline `database_path()` already applies to database
+        paths (`no database.{name}.path setting`, no silent fallback). Added 2026-08-29, researcher
+        direct instruction after a full-codebase sweep found 41 of 60 `.setting(key, "literal")`
+        call sites for output locations had a hardcoded literal that had drifted out of sync with
+        the live `cfg_setting` row it was meant to default from -- current runtime behaviour was
+        never actually wrong (`.setting()` always reads the live row first), but the literal was
+        genuinely hardcoded, unverified, and unenforced: nothing ever checked it stayed in sync,
+        and it silently would have taken over the moment the row went missing/inactive. Every call
+        site that resolves a report/output path, or any other value that must be a single live
+        config source of truth (not "config, or else this string"), now uses this instead of
+        `.setting(key, "literal/path")` -- a missing/renamed/deactivated setting fails loudly here,
+        not silently at the last hardcoded value it happened to agree with. See BUILD.md sec209."""
+        r = self.conn.execute(
+            "SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
+        if r is None:
+            raise KeyError(f"no active cfg_setting {key!r} -- every output location/value that "
+                          f"must be config-driven needs a live row, not a hardcoded fallback in "
+                          f"the calling code (governance.rules_must_be_config_driven)")
+        val = json.loads(r["value"])
+        _trace(f"required_setting {key}", val)
+        return val
+
     def module_setting(self, table: str, key: str, default=None):
         """Generic reader for a per-module settings table shaped like cfg_setting (key/value/use/
         inactive) but scoped to one module -- e.g. cfg_passage (escalation #798/#799,
@@ -82,6 +106,20 @@ class Cfg:
             f'SELECT value FROM "{table}" WHERE key=? AND inactive=0', (key,)).fetchone()
         val = json.loads(r["value"]) if r else default
         _trace(f"module_setting({table}, {key})", val)
+        return val
+
+    def required_module_setting(self, table: str, key: str):
+        """Same as `.required_setting()`, for a per-module settings table instead of `cfg_setting`
+        -- no literal default parameter, raises if the row is missing/inactive. Companion to
+        `.module_setting()`, added the same round (2026-08-29, no-hardcoded-locations ruling)."""
+        r = self.conn.execute(
+            f'SELECT value FROM "{table}" WHERE key=? AND inactive=0', (key,)).fetchone()
+        if r is None:
+            raise KeyError(f"no active row {key!r} in {table!r} -- every output location/value "
+                          f"that must be config-driven needs a live row, not a hardcoded "
+                          f"fallback in the calling code (governance.rules_must_be_config_driven)")
+        val = json.loads(r["value"])
+        _trace(f"required_module_setting({table}, {key})", val)
         return val
 
     def database_path(self, name: str) -> pathlib.Path:

@@ -210,8 +210,16 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
             # check below, so this loses no real detection. Writing a fake .setting() call
             # somewhere just to silence this check would be worse than the finding it replaces.
             continue
-        used = any((f'"{key}"' in text or f"'{key}'" in text) and ".setting(" in text
-                   for text in per_file.values())
+        # ".setting(" / ".required_setting(" -- escalation (2026-08-29, the no-hardcoded-locations
+        # ruling): every `.setting(key, "literal")` call site project-wide was converted to
+        # `.required_setting(key)` (no silent default -- lib/cfg.py's own new method, same no-
+        # fallback discipline database_path() already had), so a usage check that only recognised
+        # ".setting(" went blind to all 62 of them the moment the rename landed -- found live the
+        # same session, fixed in the same pass rather than left for the next validate run to
+        # surface as a false "orphan" wave.
+        used = any((f'"{key}"' in text or f"'{key}'" in text)
+                  and (".setting(" in text or ".required_setting(" in text)
+                  for text in per_file.values())
         if not used and module == "database" and _DATABASE_PATH_KEY.match(key):
             # Escalation #748, 2026-08-21: Cfg.database_path() (lib/cfg.py) is the real, live
             # consumer -- `self.setting(f"database.{name}.path")`, an f-string-composed key, so

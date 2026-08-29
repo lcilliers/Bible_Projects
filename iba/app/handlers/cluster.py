@@ -34,8 +34,7 @@ def assign(ctx: Ctx) -> Outcome:
 
 # ── validate (read-only; coverage + the two named exception shapes; always persists a report) ──
 def _write_report(ctx: Ctx, counts: dict, no_word: list[dict], sibling: list[dict]) -> pathlib.Path:
-    path = pathlib.Path(ctx.cfg.setting("cluster.quality_report_path",
-                                       "iba/app/reports/cluster-assign.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("cluster.quality_report_path"))
     intro = [
         f"> Generated {_now()} by `cluster.validate`. Read-only findings, not a gate.",
         "",

@@ -205,8 +205,7 @@ def _write_quality_report(ctx: Ctx, sc_null: int, sc_tag: "vq.ValueFinding", see
     validation.py/cfgreport.py), not live only in a terminal print + an escalation row. Now covers
     span_candidate (the stamp), candidate_seed (the seed decision), and lemma_inventory (the
     independent substrate) — the seed's own report the researcher asked for, not just the stamp's."""
-    path = pathlib.Path(ctx.cfg.setting("candidate.quality_report_path",
-                                       "iba/app/reports/candidate-quality.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("candidate.quality_report_path"))
     orphan_sorted = sorted(orphan_rows, key=lambda r: -r["n"])
     intro = [
         f"> Generated {_now()} by `candidate.validate`. Read-only findings, not a gate. Covers the "
@@ -668,8 +667,7 @@ def load(ctx: Ctx) -> Outcome:
 
     exceptions_open = ctx.db.rows(
         "SELECT COUNT(*) n FROM candidate_seed WHERE decision='exception' AND deleted=0")[0]["n"]
-    report_path = pathlib.Path(ctx.cfg.setting("candidate.load_report_path",
-                                               "iba/app/reports/candidate-load.md"))
+    report_path = pathlib.Path(ctx.cfg.required_setting("candidate.load_report_path"))
     sample = ctx.db.rows(
         "SELECT lemma_key, strong_variant, sense_seq, tag, layer FROM candidate_seed "
         "WHERE decision='exception' AND deleted=0 ORDER BY assessed_at DESC LIMIT 20")

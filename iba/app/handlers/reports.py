@@ -22,8 +22,8 @@ from ..lib import contentindex as contentindex_mod
 from ..lib import escalation as esc
 from ..lib import manifest as manifest_mod
 from ..lib import retention as retention_mod
-from ..lib import (clusterreport, registryreport, schemareport, seedreport, spanreport,
-                   strongreport, strongversereport, wordregistryspanreport)
+from ..lib import (cataloguereport, clusterreport, registryreport, schemareport, seedreport,
+                   spanreport, strongreport, strongversereport, wordregistryspanreport)
 from ..lib import (lexical, passagedebatereport, passagetrack, versespanmeaningreport,
                    wholebookread)
 from ..lib.stepapi import StepUnavailable
@@ -92,7 +92,7 @@ def validation_book(ctx: Ctx) -> Outcome:
 def manifest_rebuild(ctx: Ctx) -> Outcome:
     """Full rescan of the whole project tree — filename/path metadata only. See lib/manifest.py."""
     summary = manifest_mod.rebuild(ctx.cfg)
-    path = pathlib.Path(ctx.cfg.setting("manifest.report_path", "iba/app/reports/file-manifest.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("manifest.report_path"))
     out = manifest_mod.write_rebuild_report(ctx.cfg, path, summary)
     return ok(f"wrote {out} ({summary['total']} files: {summary['active']} active, "
              f"{summary['archived']} archived)", path=str(out), total=summary["total"],
@@ -116,8 +116,7 @@ def content_index_rebuild(ctx: Ctx) -> Outcome:
     lib/contentindex.py). Requires manifest.rebuild to have run at least once; content_index's
     coverage never exceeds file_manifest's."""
     summary = contentindex_mod.rebuild(ctx.cfg)
-    path = pathlib.Path(ctx.cfg.setting("content_index.report_path",
-                                        "iba/app/reports/content-index-rebuild.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("content_index.report_path"))
     out = contentindex_mod.write_rebuild_report(ctx.cfg, path, summary)
     return ok(f"wrote {out} ({summary['files_scanned']} files scanned, "
              f"{summary['total_hits']} key occurrence(s) indexed)", path=str(out),
@@ -156,7 +155,7 @@ def content_index_size_profile(ctx: Ctx) -> Outcome:
 
 
 def retention_report(ctx: Ctx) -> Outcome:
-    path = pathlib.Path(ctx.cfg.setting("retention.report_path", "iba/app/reports/log-retention.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("retention.report_path"))
     out = retention_mod.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
 
@@ -198,15 +197,13 @@ def table_export(ctx: Ctx) -> Outcome:
 
 
 def seed_candidate_report(ctx: Ctx) -> Outcome:
-    path = pathlib.Path(ctx.cfg.setting("report.seed_candidate_path",
-                                        "iba/app/reports/seed-candidate.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("report.seed_candidate_path"))
     out = seedreport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
 
 
 def strong_meaning_report(ctx: Ctx) -> Outcome:
-    path = pathlib.Path(ctx.cfg.setting("report.strong_meaning_path",
-                                        "iba/app/reports/strong-meaning.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("report.strong_meaning_path"))
     out = strongreport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
 
@@ -239,8 +236,7 @@ def strong_verse_report(ctx: Ctx) -> Outcome:
 
 
 def span_analysis_report(ctx: Ctx) -> Outcome:
-    path = pathlib.Path(ctx.cfg.setting("report.span_analysis_path",
-                                        "iba/app/reports/span-analysis.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("report.span_analysis_path"))
     out = spanreport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
 
@@ -356,23 +352,29 @@ def whole_book_read_report(ctx: Ctx) -> Outcome:
 
 
 def schema_overview_report(ctx: Ctx) -> Outcome:
-    path = pathlib.Path(ctx.cfg.setting("report.schema_overview_path",
-                                        "iba/app/reports/schema-overview.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("report.schema_overview_path"))
     out = schemareport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
 
 
 def registry_report(ctx: Ctx) -> Outcome:
-    path = pathlib.Path(ctx.cfg.setting("report.registry_path",
-                                        "iba/app/reports/registry.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("report.registry_path"))
     out = registryreport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
 
 
 def cluster_report(ctx: Ctx) -> Outcome:
-    path = pathlib.Path(ctx.cfg.setting("report.cluster_path",
-                                        "iba/app/reports/cluster.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("report.cluster_path"))
     out = clusterreport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
+def obs_catalogue_report(ctx: Ctx) -> Outcome:
+    """Structural review of `wa_obs_question_catalogue` (bible_research.db) on its own — no join
+    to `finding`/`finding_question_link`. See `lib/cataloguereport.py` module docstring for the
+    full design rationale (escalation #1007, second half)."""
+    path = pathlib.Path(ctx.cfg.required_setting("report.obs_catalogue_path"))
+    out = cataloguereport.write_report(ctx.cfg, path)
     return ok(f"wrote {out}", path=str(out))
 
 
@@ -381,8 +383,7 @@ def escalation_list(ctx: Ctx) -> Outcome:
     through run.py like every other report instead of Escalation.ps1 invoking
     `python -m iba.app.lib.escalation list` directly. Content unchanged — esc.write_list_report
     already writes the full open-items report, now including the D15 exception sections."""
-    path = pathlib.Path(ctx.cfg.setting("escalation.list_report_path",
-                                        "iba/app/reports/escalation-list.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("escalation.list_report_path"))
     out, rows = esc.write_list_report(ctx.cfg, ctx.db, path)
     return ok(f"{len(rows)} open escalation(s) -> {out}", path=str(out), open_count=len(rows))
 
@@ -395,7 +396,6 @@ def escalation_history(ctx: Ctx) -> Outcome:
     # id-prefixed stem, 2026-08-26 (escalation #857, researcher direct instruction) -- was
     # escalation-{eid}-history.md (id buried mid-name); versioning is now write_report()'s job
     # (BUILD.md sec60), not this path's -- write_history_report returns the actual written path.
-    path = pathlib.Path(ctx.cfg.setting("escalation.history_report_dir",
-                                        "iba/app/reports")) / f"{eid}-escalation-history.md"
+    path = pathlib.Path(ctx.cfg.required_setting("escalation.history_report_dir")) / f"{eid}-escalation-history.md"
     out = esc.write_history_report(ctx.cfg, ctx.db, int(eid), path)
     return ok(f"wrote {out}", path=str(out))

@@ -140,7 +140,7 @@ def assemble_package(cfg, book: str, book_label: str) -> dict:
         "missing_debates": missing, "constraints_path": str(constraints_path),
         "guidance_path": str(guidance_path), "est_input_tokens": est_input_tokens,
         "max_output_tokens": max_output_tokens, "est_cost_usd": round(est_cost, 4),
-        "model": cfg.setting("narrative.generate_model", "claude-sonnet-5"),
+        "model": cfg.required_setting("narrative.generate_model"),
     }
 
 
@@ -167,8 +167,7 @@ def call_api(package: dict) -> dict:
 
 def log_usage(cfg, run_id: str, book: str, model: str, input_tokens: int, output_tokens: int,
              cost_usd: float, path: str) -> pathlib.Path:
-    log_path = pathlib.Path(cfg.setting("narrative.usage_log_path",
-                                        "iba/app/reports/export/narrative-generate-usage.csv"))
+    log_path = pathlib.Path(cfg.required_setting("narrative.usage_log_path"))
     log_path.parent.mkdir(parents=True, exist_ok=True)
     is_new = not log_path.exists()
     with log_path.open("a", newline="", encoding="utf-8") as f:
@@ -186,9 +185,8 @@ def write_narrative(cfg, book: str, book_label: str, text: str) -> pathlib.Path:
     same folder its source debates live in, archiving any prior version first — reportkit's shared
     convention, not a one-off writer."""
     conn: sqlite3.Connection = cfg.conn
-    output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir",
-                                          "iba/app/verse-analysis"))
-    pattern = cfg.setting("narrative.output_pattern", "WA-{book}-inner-being-narrative.md")
+    output_dir = pathlib.Path(cfg.required_setting("report.verse_analysis_output_dir"))
+    pattern = cfg.required_setting("narrative.output_pattern")
     filename = pattern.format(book=book.lower())
     path = output_dir / book_label / filename
 

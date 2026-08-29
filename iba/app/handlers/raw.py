@@ -48,7 +48,7 @@ def _write(ctx: Ctx, writer: str, table: str, row: dict, upsert=True):
 
 
 def _split_def(ctx: Ctx, medium_def: str) -> tuple[str, str]:
-    marker = ctx.cfg.setting("meaning.head_marker", ": ")
+    marker = ctx.cfg.required_setting("meaning.head_marker")
     # Found 2026-07-21: for a subset of vocabInfos entries (mostly sub-lettered codes, e.g.
     # H0639G/H/I), STEP's mediumDef separates tree lines with literal '<br>' tags instead of a
     # real newline. partition("\n") then finds nothing, so the WHOLE marker-stripped remainder
@@ -96,7 +96,7 @@ def discover(ctx: Ctx) -> Outcome:
         # named this exact word); re-asking "register anyway?" every time is redundant. Config-
         # driven instead -- default 'reject' (researcher, 2026-08-22: "it should not happen",
         # treated as anomalous until decided otherwise for a specific case).
-        action = ctx.cfg.setting("raw.zero_strongs_action", "reject")
+        action = ctx.cfg.required_setting("raw.zero_strongs_action")
         if action == "reject":
             return fail("zero-strongs",
                        f"{ctx.word!r} maps to no strongs (raw.zero_strongs_action=reject)")
@@ -142,7 +142,7 @@ def detail_one(ctx: Ctx, code: str, c: dict, origin: str = "word") -> None:
     independent of any word). STICKY on the already-exists path: a code that started as
     'backfill' and is now being requested as 'word' (a real word legitimately claims it) gets
     upgraded; never the reverse."""
-    greek = ctx.cfg.setting("language.greek_prefix", "G")
+    greek = ctx.cfg.required_setting("language.greek_prefix")
     existing = ctx.db.get("strong", strongNumber=code)
     if existing:
         # NOTE: _write(..., upsert=True) is dedup-only (Db.upsert returns early on an existing

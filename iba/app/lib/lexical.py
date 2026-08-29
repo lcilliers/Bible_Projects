@@ -379,10 +379,8 @@ def write_report(cfg, book: str, lo: int, hi: int, verse_lo: int | None = None,
     L = reportkit.render_scaffold(conn, "report.verse_lexical", sections, intro=intro,
                                   book=book, range=label)
 
-    output_dir = pathlib.Path(cfg.setting("report.verse_analysis_output_dir",
-                                          "iba/app/verse-analysis"))
-    pattern = cfg.setting("report.verse_lexical_output_pattern",
-                         "{book}-{range}-verse-lexical.md")
+    output_dir = pathlib.Path(cfg.required_setting("report.verse_analysis_output_dir"))
+    pattern = cfg.required_setting("report.verse_lexical_output_pattern")
     folder = book_label or book
     filename = pattern.format(book=book.lower(), range=range_str)
     path = output_dir / folder / filename

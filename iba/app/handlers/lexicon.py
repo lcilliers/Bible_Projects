@@ -145,8 +145,7 @@ def _finding_section(f: "vq.ValueFinding") -> list[str]:
 
 def _write_report(ctx: Ctx, no_lsj: int, no_mounce: int, no_related: int,
                   findings: list["vq.ValueFinding"]) -> pathlib.Path:
-    path = pathlib.Path(ctx.cfg.setting("lexicon.quality_report_path",
-                                       "iba/app/reports/lexicon-parse.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("lexicon.quality_report_path"))
     intro = [
         f"> Generated {_now()} by `lexicon.validate`. Read-only findings, not a gate. Covers "
         f"strong_meaning_parsed/strong_lsj_parsed/strong_mounce_parsed/strong_related together.",

@@ -22,8 +22,7 @@ def _tbl(headers, rows):
 def path_audit_scan(ctx: Ctx) -> Outcome:
     result = pathaudit_mod.scan(ctx.cfg)
     findings = result["findings"]
-    path = pathlib.Path(ctx.cfg.setting("pathaudit.report_path",
-                                        "outputs/configs/path-audit.md"))
+    path = pathlib.Path(ctx.cfg.required_setting("pathaudit.report_path"))
     rows = [[f["file"], f["line"], f["literal"], "yes" if f["registered"] else "NO"]
            for f in findings]
     sections = {
