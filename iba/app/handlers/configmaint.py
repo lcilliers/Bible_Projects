@@ -372,6 +372,16 @@ def validate(ctx: Ctx) -> Outcome:
         "hand_rolled_versioning": (
             cfgquality.find_hand_rolled_versioning(ctx.db.conn, PROJECT_ROOT),
             "script(s) building a -v{n} filename by hand instead of via filingkit"),
+        # 2026-08-29 (escalation #1007 follow-on, researcher: "any change to any PS instruction
+        # will find its way into the two excel worksheets") — a script's live param() list against
+        # its own tab (ps tools worksheet.xlsx) or, for Escalation.ps1, against every -Flag header
+        # used anywhere in the researcher's own model sheet (escalation actions worksheet.xlsx).
+        "ps_worksheet_drift": (
+            cfgquality.find_ps_worksheet_drift(ctx.db.conn, APP_ROOT, PROJECT_ROOT),
+            "PS script/worksheet drift finding(s)"),
+        "escalation_worksheet_drift": (
+            cfgquality.find_escalation_worksheet_drift(ctx.db.conn, APP_ROOT, PROJECT_ROOT),
+            "Escalation.ps1/worksheet drift finding(s)"),
     }
     preset = {k: v[0] for k, v in findings.items()}
     if not any(preset.values()):
@@ -381,7 +391,7 @@ def validate(ctx: Ctx) -> Outcome:
                   "current, every lib module registered, no zero-config-density utilities, no "
                   "book_order/connection/candidate_rule usage gaps, no report-version clutter, no "
                   "Escalation.ps1/FolderPurpose.ps1 ValidateSet drift, no unresolvable location "
-                  "settings, no hand-rolled versioning")
+                  "settings, no hand-rolled versioning, no PS script/worksheet drift")
 
     # Full detail persists to CONFIG-REPORT.md's "findings" section (cfgreport.py mirrors the
     # same cfgquality functions) — refreshed here so the report reflects THIS run's findings, not

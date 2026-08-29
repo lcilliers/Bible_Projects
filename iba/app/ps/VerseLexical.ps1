@@ -20,12 +20,25 @@
 .PARAMETER Book       OSIS book code as stored in verse.osisId, e.g. Dan. Mandatory.
 .PARAMETER Chapters   whole-chapter range, e.g. 1-3 or 1. Mutually exclusive with -Range.
 .PARAMETER Range      single-chapter verse range, e.g. 8:1-27. Mutually exclusive with -Chapters.
-.PARAMETER BookLabel  human-facing subfolder name (e.g. "Daniel"). Defaults to -Book if omitted.
+.PARAMETER BookLabel  subfolder-name OVERRIDE, used verbatim -- exists for the rare case the
+                      folder must differ from -Book. Defaults to -Book if omitted, and that
+                      default is almost always what you want: _analytics/Bible_Books subfolders
+                      must be named EXACTLY as cfg_book_order.book (the OSIS code, e.g. Dan, not
+                      a full name like "Daniel") -- passing -BookLabel with anything else creates
+                      a second, wrong, non-compliant folder next to the real one (found live
+                      2026-08-29, escalation #1007 thread). Omit this parameter unless you have a
+                      specific, confirmed reason not to.
+.PARAMETER Step       Run only this one step (lexical.build | report.verse_lexical) instead of
+                      the full chained sequence -- e.g. report.verse_lexical alone, to VIEW
+                      already-built results for a range without re-running the build (which may
+                      make live STEP calls). Omit to run the full sequence, unchanged default.
 .PARAMETER RunId      resume/re-tag a specific run.
 .PARAMETER Trace      Print every config read (IBA_TRACE).
 
 .EXAMPLE
-    .\VerseLexical.ps1 -Book Dan -Range 8:1-27 -BookLabel Daniel
+    .\VerseLexical.ps1 -Book Dan -Range 8:1-27
+.EXAMPLE
+    .\VerseLexical.ps1 -Book Dan -Range 8:1-27 -Step report.verse_lexical
 #>
 
 [CmdletBinding()]
@@ -34,6 +47,7 @@ param(
     [string] $Chapters,
     [string] $Range,
     [string] $BookLabel,
+    [ValidateSet('lexical.build', 'report.verse_lexical')] [string] $Step,
     [string] $RunId,
     [switch] $Trace
 )
@@ -61,6 +75,7 @@ if ([bool]$Chapters -eq [bool]$Range) {
 Test-IbaWorkPackageActive -WorkPackage 'verse-lexical'
 
 $seq   = python -c "import json; from iba.app.lib.cfg import Cfg; c=Cfg(); print(json.dumps([dict(r) for r in c.sequence('verse-lexical')])); c.close()" | ConvertFrom-Json
+if ($Step) { $seq = $seq | Where-Object { $_.step -eq $Step } }
 $runId = if ($RunId) { $RunId } else { "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-VERSE-LEXICAL" }
 
 Write-IbaRunHeader -WorkPackage 'verse-lexical' -RunId $runId -RunsOver "book = '$Book'"

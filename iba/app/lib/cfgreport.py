@@ -262,6 +262,15 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
         ("Hand-rolled versioning", "a script building a -v{n} filename by hand instead of via "
          "filingkit.versioned_path()/reportkit.oneoff_path()",
          cfgquality.find_hand_rolled_versioning(conn, APP.parent.parent)),
+        # 2026-08-29 (escalation #1007 follow-on) — a PS script's live param() list drifted from
+        # its own tab in ps tools worksheet.xlsx, or (Escalation.ps1 specifically) from every
+        # -Flag header used anywhere in the researcher's own escalation actions worksheet.xlsx.
+        ("PS/worksheet drift", "a script's live param() names not matching its tab's flag headers "
+         "in governance.ps_worksheet_path",
+         cfgquality.find_ps_worksheet_drift(conn, APP, APP.parent.parent)),
+        ("Escalation.ps1/worksheet drift", "an Escalation.ps1 parameter not used as a -Flag header "
+         "anywhere in governance.escalation_worksheet_path",
+         cfgquality.find_escalation_worksheet_drift(conn, APP, APP.parent.parent)),
     ]
     # this section is the ACTIONABLE detail behind configmaint.validate's escalation — that
     # escalation question stays short (counts + this report path) precisely because every item

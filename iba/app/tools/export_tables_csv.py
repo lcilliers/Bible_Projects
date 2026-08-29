@@ -16,6 +16,14 @@ pairing wrote into `iba/app/reports/export/`; one export folder, not two.
     python -m iba.app.tools.export_tables_csv                       # -> iba/app/reports/export/*.csv
     python -m iba.app.tools.export_tables_csv --out some/dir
     python -m iba.app.tools.export_tables_csv --table candidate_seed lemma_inventory
+    python -m iba.app.tools.export_tables_csv --database bible_research --table wa_obs_question_catalogue
+
+Cross-database support (added 2026-08-29, escalation #1007): a `db_path` override lets this dump
+either project database, not just iba.db -- e.g. the catalogue tables, which live in
+bible_research.db (`cfg_table.database='bible_research'`), same two-database split
+`lib/prosestore.py` already connects across via `cfg.database_path(name)`. `--table` filtering
+still applies verbatim in either database; the `cfg_%` exclusion is a no-op for bible_research.db
+(it has no cfg_* tables of its own) so it stays correct without a database-conditional.
 """
 
 from __future__ import annotations
@@ -38,8 +46,9 @@ def _tables(conn: sqlite3.Connection) -> list[str]:
         "AND name NOT LIKE 'cfg_%' ORDER BY name")]
 
 
-def export(out_dir: pathlib.Path, only: list[str] | None) -> list[tuple[str, int]]:
-    conn = sqlite3.connect(DB_PATH)
+def export(out_dir: pathlib.Path, only: list[str] | None,
+           db_path: pathlib.Path | str | None = None) -> list[tuple[str, int]]:
+    conn = sqlite3.connect(db_path or DB_PATH)
     conn.row_factory = sqlite3.Row
     out_dir.mkdir(parents=True, exist_ok=True)
     tables = [t for t in (only or _tables(conn)) if not t.startswith("cfg_")]
@@ -64,8 +73,14 @@ def main() -> int:
     ap = argparse.ArgumentParser(description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter)
     ap.add_argument("--out", type=pathlib.Path, default=DEFAULT_OUT)
     ap.add_argument("--table", nargs="*", help="export only these tables (default: every table)")
+    ap.add_argument("--database", help="registered project database name (default: iba) -- "
+                                        "see cfg_enum 'project_database'")
     a = ap.parse_args()
-    results = export(a.out, a.table)
+    db_path = None
+    if a.database and a.database != "iba":
+        from ..lib.cfg import Cfg
+        db_path = Cfg().database_path(a.database)
+    results = export(a.out, a.table, db_path)
     print(f"exported {len(results)} table(s) to {a.out}")
     for t, n in results:
         print(f"  {t:24} {n} row(s)")

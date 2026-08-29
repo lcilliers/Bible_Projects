@@ -10882,3 +10882,406 @@ separate finding (§198, escalation #995/#989 cross-ref).
 
 **Files:** `iba/app/lib/prosestore.py` (`_DEFAULT_BOOK_OUTPUT_DIR`, `output_dir_for()`,
 `run_extract()` call-site change); `cfg_prose` (new row `prose.book_output_dir`).
+
+## 200. `table.export -Database` — cross-database CSV dump, first step of the catalogue tool (2026-08-29, escalation #1007)
+
+**The ask.** #1007: build a PS tool giving full CRUD + multi-angle reporting over "the catalogue" —
+the observation-question framework that drives cluster analysis. Researcher's own scope statement:
+*"the operation functionality around the catalogue must be in IBA_db, fully compliant with
+governance"* even though the catalogue's data tables physically live in `bible_research.db`. First
+instruction (v2): *"first extract the full content of all the associated table into csv so I can
+inspect the table... it must be possible to request modifications for individual components of a
+report"* — CRUD/report design deferred until the researcher has reviewed the CSVs.
+
+**Identifying "the catalogue."** Not a single table — traced via `cfg_column.fk`/name matches
+against `wa_obs_question_catalogue.obs_id`: the catalogue is `wa_obs_question_catalogue` itself
+(424 rows, the question bank) plus its 4 linked tables, all in `bible_research.db` and all already
+described in `cfg_table`/`cfg_column`: `cluster_finding` (catalogue-prompted findings, `obs_id`
+FK), `finding_question_link` (live finding→question links), `wa_finding_catalogue_links` (legacy
+predecessor, Session B findings→questions), `wa_flag_type_question_link` (quality-flag→question
+prompts).
+
+**Built (phase 1 only — CSV inspection, not CRUD/reporting yet).** Rather than a new one-off
+script, extended the already-registered `table-export`/`table.export` step (`Export-Tables.ps1`,
+2026-07-22) with a `-Database` parameter, since it already does exactly this dump for iba.db and
+the only gap was being hardcoded to `DB_PATH`. Resolved via `ctx.cfg.database_path(name)` — the
+same registered `project_database` enum + `database.<name>.path` setting `lib/prosestore.py`
+already uses to reach `bible_research.db` — not a literal path. `-Table`/`-Out` filtering
+unchanged; `cfg_%` exclusion is a no-op on `bible_research.db` (it has none of its own). Verified
+live: `Export-Tables.ps1 -Database bible_research -Table wa_obs_question_catalogue,
+finding_question_link,wa_finding_catalogue_links,wa_flag_type_question_link,cluster_finding` (no
+`-Out` override — defaults to the already-governed `table_export.output_dir`) → 5 CSVs written to
+`Workflow/schema/`, row counts checked against direct `SELECT COUNT(*)` on each table.
+`Config-Maintenance.ps1 -Step Validate` run afterward: still the same 3 pre-existing advisory
+findings (GOVERNANCE.md staleness, `prosestore.py` hand-rolled versioning, `prose.patch_output_dir`,
+all already tracked — §198/#995) — nothing new introduced.
+
+**Filing correction (same session):** first run used `-Out iba/docs/catalogue-1007-csv-extract-
+20260829` — wrong, per `cfg_behaviour_rule` (filing, `tool-report-path-vs-deliverable-document`):
+a tool's own auto-generated output stays where its `*.output_dir` setting points
+(`table_export.output_dir` is already governed to `Workflow/schema`, confirmed live via
+`folder_purpose`), and `iba/docs/` is for authored planning/engineering documents
+(`governance.engineering_documentation_folder`), not raw table dumps. Re-ran without `-Out`;
+misfiled copy deleted.
+
+**Deferred, by researcher's own sequencing:** the CRUD half (per-table add/edit/delete + CSV-driven
+bulk changes) and the multi-angle reporting half (governance report infra, on-demand, component-
+level modification requests) — both wait on the researcher's review of these CSVs before any
+design work starts, per `feedback_design_work_is_never_self_correctable` / the plan-gated pattern
+this project runs on for build work.
+
+**Files:** `iba/app/tools/export_tables_csv.py` (`export()` takes `db_path`; `--database` CLI
+flag); `iba/app/handlers/reports.py` (`table_export` resolves `Database` param); `iba/app/ps/
+Export-Tables.ps1` (`-Database` parameter + docs). No new `cfg_*` rows needed — `-Database` is a
+plain per-run override like `-Out`/`-Table`, not a setting (same boundary the researcher drew
+2026-07-22 for the other two). Output (corrected location, see §201): `Workflow/schema/
+bible_research/*.csv`.
+
+## 201. `table_export.output_dir` split per-database — `Workflow/schema/{iba,bible_research}` (2026-08-29, escalation #1009)
+
+**Found live, same session as §200:** the `-Database` addition let `table.export` dump either
+project database, but `table_export.output_dir` was still one flat path — a `bible_research.db`
+run landed its CSVs in the same folder as `iba.db`'s own, undifferentiated (and, compounding it,
+an earlier `-Out` override had put the very first run somewhere ungoverned entirely, corrected in
+§200). Researcher, on seeing it: *"can you sub folder workflow/schema into the two databases and
+ensure that filing will take place in the right sub folder... this is likely to require config
+changes."*
+
+**Built.** `table_export.output_dir` changed from a bare string to a per-database JSON map — same
+shape `prose.book_output_dir` already established (§199):
+
+```json
+{"iba": "Workflow/schema/iba", "bible_research": "Workflow/schema/bible_research"}
+```
+
+`handlers/reports.py:table_export` now looks up `dir_map[database]`, raising on a database not in
+the map rather than guessing (same "unknown key raises" posture as `prosestore.output_dir_for`'s
+unknown-book case) — an `-Out` override still takes priority when given, unchanged. Applied via
+`Config-Maintenance.ps1 -Step Propose` (escalation #1009, decision_required → ready_for_approval →
+approved by the researcher directly, then applied by re-running Propose with `-RunId`) — the
+sanctioned path for any `cfg_*` write, not a direct edit.
+
+**Migrated.** Re-ran the 5-table `bible_research` export (exercises the new code path rather than
+just moving files) → `Workflow/schema/bible_research/`; the 5 stale root-level copies from §200's
+run deleted. Smoke-tested the `iba` side too (`-Table passage_linkage`, the smallest data table) →
+correctly landed in `Workflow/schema/iba/`, confirming both map entries resolve.
+
+**`folder_purpose` refresh — done by hand, not automatic.** Researcher expected `configmaint.
+validate` itself to pick up the new subfolders; checked live: it doesn't — `find_unresolvable_
+location_settings` only ever READS `folder_purpose`/location settings, it never calls `folderpurpose.
+seed_from_scan()`. `folder_purpose` refresh is a separate work package (`folder-purpose` /
+`FolderPurpose.ps1`, Methods A/B/D), not chained from `configuration-maintenance` at all. Ran all
+three by hand this round: `Seed` (796 folders, 3 new incl. the two new subfolders), `CrossCheck`
+(1 `governed_by_setting` updated — `Workflow/schema`'s own row correctly DROPPED `table_export.
+output_dir` from its list, since the setting's value is no longer a bare string that resolves
+there), `AutoAssess` (3 rows classified `type='results'`/`status='authoritative'`). The two new
+subfolders' own `governed_by_setting` stays `NULL` — `location_settings()`'s normalizer can't
+parse a JSON-map value per-key, so it can't attribute either subfolder to `table_export.output_dir`
+specifically; confirmed this is not a new gap — `prose.book_output_dir`'s own 3 per-book folders
+(`_analytics/essay_prose` etc.) have exactly the same `NULL`, already accepted. **Whether
+`configmaint.validate` SHOULD auto-chain a `folder_purpose` reseed going forward is a separate,
+unbuilt design decision** — flagged to the researcher, not decided here.
+
+**Verified.** `Config-Maintenance.ps1 -Step Validate` re-run after all of this: same 3 pre-existing
+advisory findings as §200 (GOVERNANCE.md staleness, `prosestore.py` versioning, `prose.
+patch_output_dir`) — nothing new introduced by the subfolder split.
+
+**Files:** `iba/app/handlers/reports.py` (`table_export` map lookup); `cfg_setting` (`table_export.
+output_dir` value changed); `folder_purpose` (2 new rows, 1 row's `governed_by_setting` corrected).
+
+## 202. PS-script/Excel-worksheet drift check — `configmaint.validate` enforces the two-worksheet-sync rule (2026-08-29, escalations #1012/#1013/#1014)
+
+**The ask.** Researcher, following the #1007 catalogue-tool work: *"add a new config that will
+enforce making any change to any PS instruction will find its way into the two excel
+worksheets"* — `iba/docs/ps tools worksheet.xlsx` (escalation #1004, one tab per script,
+mechanically built from each script's `param()` block) and `iba/docs/escalation actions
+worksheet.xlsx` (the researcher's own hand-built model, fixed action-shapes for `Escalation.ps1`).
+
+**Built.** Two new `cfgquality.py` checks, same family as the existing `find_escalation_ps_
+validateset_drift`/`find_folderpurpose_ps_validateset_drift` (which catch drift in one
+PARAMETER's allowed VALUES) — generalised here to a script's whole PARAMETER LIST against its
+worksheet:
+- `find_ps_worksheet_drift` — every `iba/app/ps/*.ps1` script's live `param()` names against its
+  own tab's row-4 flag headers (exact match, since that workbook is mechanically generated
+  1:1 per script). Matches each script to its tab via the tab's own embedded path cell (e.g.
+  `iba\app\ps\Behaviour.ps1`, found live at row 6 col A) rather than the tab NAME, since Excel's
+  31-char limit already forces some tab names shorter than their script's.
+- `find_escalation_worksheet_drift` — `Escalation.ps1`'s live parameters, subset-checked against
+  every `-Flag` header used ANYWHERE in the researcher's model sheet (not a per-tab exact match —
+  that sheet's columns are a union across several fixed action-shapes, not one row per parameter).
+
+Backed by 3 new `governance.*` cfg_setting rows (`ps_worksheet_path`, `escalation_worksheet_path`,
+`ps_worksheet_sync_on_change` — the rule statement itself, shown at every `Start-Iba.ps1` session
+start alongside `build_md_on_code_change` etc.), applied via `Config-Maintenance.ps1 -Step Propose`
+(escalations #1012/#1013/#1014, decision_required → ready_for_approval → approved → applied — the
+sanctioned path, not a direct edit). Wired into `configmaint.validate`'s findings dict and mirrored
+in `cfgreport.py` per the established pattern (every check appears in both).
+
+**Two real bugs found live on first run** (28 + 1 findings, not the 1 + 1 genuine ones expected):
+1. `_ps_param_names`'s `\$(\w+)` regex matched PowerShell's OWN `$true`/`$false`/`$null` literals
+   inside attribute defaults (`[Parameter(Mandatory = $true)]` — used by 20+ scripts) as if they
+   were parameter names. Fixed: `_PS_AUTOMATIC_VARS` exclusion set.
+2. Both checks compared parameter names case-SENSITIVELY; PowerShell parameters are
+   case-insensitive by convention and the researcher's own sheet uses `-action` (lowercase) for
+   `Escalation.ps1`'s `-Action` — a guaranteed false positive. Fixed: both checks now compare on
+   `.lower()`, keeping the original casing in the reported message.
+
+**After the fix, findings were real, not noise:**
+- `Export-Tables.ps1` — missing `-Database` on its tab (I'd added that parameter earlier this
+  session, #1007, without updating the worksheet — the exact drift this rule exists to catch,
+  self-inflicted within the day). Fixed directly (I own this generated workbook): added the
+  `-Database` column, header + hint + extended the compiled-command formula, verified the drift
+  clears.
+- `Escalation.ps1` has 5 parameters (`AnsweredBy`, `RunId`, `ShortDescription`, `Source`, `Tried`)
+  never used as a `-Flag` header anywhere in the researcher's hand-built model sheet. Left as a
+  reported finding, not silently edited — that sheet is the researcher's own to curate, per the
+  check's own design (a subset check, not an authority to rewrite it).
+
+**Files:** `iba/app/lib/cfgquality.py` (`_ps_param_names`, `_load_worksheet_setting`, `_index_ps_
+worksheet_tabs`, `find_ps_worksheet_drift`, `find_escalation_worksheet_drift`); `iba/app/handlers/
+configmaint.py` (2 new findings-dict entries); `iba/app/lib/cfgreport.py` (2 mirrored entries);
+`cfg_setting` (3 new `governance.*` rows); `iba/docs/ps tools worksheet.xlsx` (Export-Tables tab
+corrected).
+
+## 203. `cluster_finding` + `wa_finding_catalogue_links` folded into `finding`/`finding_question_link` (2026-08-29)
+
+**The instruction.** Following the finding-tables landscape review (§202's sibling report,
+`outputs/finding-tables-landscape-review-20260829.md`) and its migration plan (`outputs/
+cluster-finding-to-finding-migration-plan-20260829.md`), researcher: *"proceed with the migration
+by combining the findings into one table, links to historic groupings e.g sub groups or vcg etc is
+retained in the table. secondly combine the questions and catalogue index table into one. do not
+try to reconcile at this stage the contents of the questions. the tables migrated is not dropped,
+just marked inactive."*
+
+**Built and run:** `scripts/_apply_finding_catalogue_consolidation_v1_20260829.py` (`--dry-run`/
+`--live`, DB backed up first to `backups/bible_research-pre-finding-catalogue-consolidation-
+20260829T062931Z.db`).
+
+1. **`cluster_finding` (19,997 rows) → `finding`.** 4 new nullable columns added to `finding`
+   (`characteristic_id`, `cluster_subgroup_id`, `vcg_scope`, `notes`) to retain the structural
+   links, per instruction, rather than drop them — `finding_type`/`needs_research` were NOT
+   migrated (confirmed 100% NULL/0 across all 19,997 rows — nothing to lose). Each row's
+   `obs_id` catalogue link became its own new `finding_question_link` row (19,997 of them),
+   confirming the answer to "do these link to the catalogue" — yes, via the same mechanism as
+   everything else in `finding`. Provenance tag `cluster_finding_migration`, traceability via
+   `source_legacy_ref` (`CF:{id}|source_file:...|version:...`).
+2. **`wa_finding_catalogue_links` (6,199 rows) → `finding_question_link`.** 7 new columns added
+   (`status`, `pattern_type`, `mapped_date`, `validated_date`, `validated_by`, `session_b_note`,
+   `source_legacy_ref`). `finding_id` remapped from `wa_session_b_findings.id` to the live
+   `finding.id` via the `SB:` tag the EARLIER `wa_session_b_findings` migration already wrote into
+   `finding.source_legacy_ref` — 5,456 of 6,199 rows resolved this way. **The remaining 743 have a
+   NULL source `finding_id`** (not a matching failure — confirmed live, the value is simply absent
+   in the source) and could not be inserted at all: `finding_question_link.finding_id` is `NOT
+   NULL` by schema, for every other consumer's sake, and writing a fabricated value would be
+   silent corruption, not preservation. Per instruction ("not dropped, just marked inactive") they
+   remain exactly where they already lived — `wa_finding_catalogue_links` stays on disk,
+   inactive-flagged, not deleted, so nothing is actually lost. `session_b_note` on the new column
+   inherits the SAME deprecation as its source (escalation #1020) — inserted `inactive=1` from
+   creation, since it's a verbatim copy of the same duplicated content, not a new fact.
+3. **Two real bugs found and fixed live before the real run:**
+   - The `wa_session_b_findings.id → finding.id` tag lookup originally re-queried `finding` with a
+     `LIKE` scan PER ROW (2,883 queries × ~1M-row scan each) — timed out at 120s. Fixed: one pass
+     building an in-memory tag→id index first, then O(1) dict lookups.
+   - The tag itself was built wrong (`SB:{registry}-{finding_id}`, doubling the registry prefix) —
+     `wa_session_b_findings.finding_id` turned out to ALREADY be the registry-prefixed form
+     (`"112-F001"`, not just `"F001"`), confirmed live by inspecting real rows. Both fixed; dry-run
+     then correctly showed 5,456/6,199 resolving, matching the manual count from the landscape
+     review exactly.
+
+**Verified** (post-`--live`, direct SQL, not just the script's own report): row counts match
+exactly source↔target in both directions; a spot-checked migrated row's `finding_value`/
+`characteristic_id`/`cluster_subgroup_id`/`vcg_scope`/`notes` match its `cluster_finding` source
+byte-for-byte; **zero** `finding_question_link` rows (357,657 total post-migration) have an
+unresolved `finding_id` or `question_id` — a full referential-integrity sweep, not a sample.
+
+**Config registration** (14 `Config-Maintenance.ps1 Propose` calls, batched — escalations
+#1024–#1037, approved by the researcher in chat ("you can approve all") and applied): marks
+`cluster_finding` and `wa_finding_catalogue_links` inactive in `cfg_table` (not dropped); registers
+all 11 new columns in `cfg_column`; registers the migration script itself in `cfg_utility`
+(`inactive=1` — a completed one-off, not a reusable routine). `Config-Maintenance.ps1 -Step
+Validate` re-run clean afterward — back down to the same 4 pre-existing advisory findings (the
+"script missing a cfg_utility row" finding, present transiently while #1037 was still pending, is
+gone now that it's registered).
+
+**Deliberately not done here, per instruction ("do not try to reconcile... at this stage"):** no
+attempt to deduplicate `session_b_note` text, judge which finding/question pairings are
+semantically meaningful, or resolve the 743 unmigrated rows some other way. This migration moved
+rows; it did not clean their content up.
+
+**Files:** `scripts/_apply_finding_catalogue_consolidation_v1_20260829.py` (new); `finding`
+(4 new columns, 19,997 new rows); `finding_question_link` (7 new columns, 25,453 new rows);
+`cfg_table`/`cfg_column`/`cfg_utility` (14 rows, approved and applied); `backups/bible_research-
+pre-finding-catalogue-consolidation-20260829T062931Z.db` (pre-migration snapshot).
+
+## 204. `escalation.open_duplicate()` — two real bugs found and fixed (2026-08-29)
+
+**Found while handling researcher's "#1008, #1017, #1038, #1039 need your attention"**: 7
+near-identical "cfg_* is structurally coherent" notices piled up in one session (#1008, #1011,
+#1015, #1016, #1017, #1038, #1039) despite `open_duplicate()`'s own docstring/call-site comment in
+`configmaint.py` explicitly existing to prevent exactly this. Two bugs, both structural, neither
+a one-off:
+
+1. **Matched against `short_description`, which can never contain the thing being matched.**
+   `_sanitise_dispatcher_title` truncates `short_description` to `_TITLE_MAX_CHARS` (60) — but
+   `configmaint.validate`'s lead-in text ("cfg_* is structurally coherent, but has findings needing
+   your judgement: ") is already ~74 characters, so the truncation always lands BEFORE the
+   variable finding-summary text (`stable_key`) even begins. The `LIKE` match was structurally
+   incapable of succeeding, for any two runs, ever — not a flaky match, a guaranteed-false one.
+2. **Matched only `state='raised'`**, missing the researcher's own documented workaround for this
+   exact noise (#1008: *"I am leaving it here so the system will not duplicate the same error"* —
+   moving it to `state='in-progress'`), which this query could never see.
+
+**Fixed**: match against `context` (holds the un-truncated `json.dumps(preset)`, which does contain
+`stable_key` verbatim via `full_message`) instead of `short_description`; match against the
+module's own shared `_OPEN_STATES` tuple (already used by `write_list_report` for the same "still
+open" definition) instead of a narrower literal invented independently for this one function.
+**Verified live**: re-ran `Config-Maintenance.ps1 -Step Validate` immediately after the fix (same
+finding-set as #1039) — result: `"identical to already-open escalation #1039 ... not re-raised"`,
+where every prior run in the session had created a fresh escalation.
+
+**Escalations closed out**: #1008 and #1038 withdrawn as superseded (their anchor role is now
+correctly served by #1039, the current accurate snapshot — kept open, awaiting the researcher's
+own decision). #1017 answered separately (a real question about dispatcher-tied vs. manual
+transactions, unrelated to this bug beyond sharing the same session) —
+`outputs/escalation/1017-dispatcher-tied-vs-manual-explainer-20260829.md`.
+
+**Files:** `iba/app/lib/escalation.py` (`open_duplicate()`).
+
+## 205. `finding_verse_index` — direct finding↔iba.verse M:N index, replacing a 3-hop legacy chain (2026-08-29)
+
+**The correction.** Researcher, on seeing the planned `finding.verse_context_id → verse_context.
+verse_record_id → wa_verse_records.id` backfill chain: *"is [that] not overly complex. it also is
+linked to redundant tables... the findings table should [route] through an index straight into
+iba.verse... We also should include a second pass where the findings text is read for any verse
+references... it is ok if a finding have many verse references and vice versa. the mti-term-id can
+be retired... map[ping] the findings to the new iba.strongs table, else the text content must be
+used."*
+
+**Built:** `scripts/_apply_finding_verse_term_index_v1_20260829.py`, three passes into a new
+`finding_verse_index` table (`finding_id`, `verse_id` → `iba.verse.id` directly, `reference_text`,
+`source`), plus a term-side column swap.
+
+- **Confirmed first, not assumed:** `verse_context`/`wa_verse_records` are already `inactive=1` in
+  `cfg_table` — the researcher's "should already be retired" was correct, no action needed there;
+  they're used only as a one-time read source.
+- **Book-abbreviation crosswalk built on canonical POSITION, not string-matching either database's
+  own scheme** — `books.book_order - 1 == cfg_book_order.ordinal`, verified live (both are the same
+  66-book Protestant-canon sequence). Necessary because `books.abbreviation` and `iba.verse.
+  reference`'s own book-prefix genuinely disagree on some books (`1Co` vs `1Cor`, confirmed live) —
+  matching by position sidesteps that entirely, building `osisId` directly instead of fighting two
+  incompatible abbreviation conventions.
+- **Pass 1 (structural):** 434,427 rows — every VERSE-level finding's primary verse via the
+  verse_context chain, resolved once, written directly as `iba.verse.id`.
+- **Pass 2:** migrated `finding_verse_link`'s 3,659 rows (`cfg_table.use` already documented the
+  real shape: 3,586 "anchor" rows are text-only, no usable id at all; the 73 "support" rows'
+  numeric `verse_record_id` was checked live and confirmed unreliable — 2% resolve rate, and the
+  handful matching `iba.verse.id` by coincidence turned out to be wrong-verse matches). Resolved via
+  `reference` TEXT instead → 3,682 rows (95% of source rows, multi-reference strings like
+  `"Jdg 19:6; Psa 34:8..."` correctly split into several).
+- **Pass 3 (text-mining `finding_value` itself)** — sample-tested first (1,000 findings, 97.7%
+  resolve rate) before running at full scale, per the plan. **False-positive check, per researcher
+  instruction ("it must be a real reference"):** the crosswalk includes several book codes that
+  double as ordinary English words (`Job`, `Song`, `Mark`, `Act`, `Num`, `John`) — sampled all
+  matches for those six specifically (18,528 total) and manually inspected representative examples
+  across every one; all were genuine citations, none were false positives, in this corpus's
+  disciplined citation-style prose. Not a claim of zero false positives across every one of
+  140,707 rows — a representative check, reported as such, not asserted as certainty. Full scale:
+  **140,707 new rows**, deduplicated.
+- **Dedup, per researcher instruction ("before creating a new row... check that the finding_id-
+  verse_id is not duplicated"):** all three passes now load existing `(finding_id, verse_id)` pairs
+  once (in-memory, not a per-row query — same performance class already fixed once today) and skip
+  any pair already present, including within a single pass's own results (a finding citing the same
+  verse twice in different paragraphs, confirmed live). Verified: **zero duplicate pairs** in the
+  final 578,816-row table.
+- **Term side:** `finding.strong_number` (new column) backfilled via `mti_terms.strongs_number →
+  iba.strong.strongNumber` — 435,169/435,193 (99.99%), confirmed before building, not assumed.
+
+**Result:** 578,816 `finding_verse_index` rows (434,427 structural + 3,682 link-migrated + 140,707
+text-mined); 447,955 of 458,096 findings (97.8%) now have ≥1 verse reference; 23,258 distinct
+verses referenced.
+
+**Not yet done:** dropping `finding.verse_context_id`/`finding.mti_term_id` and marking
+`finding_verse_link` inactive — the last step of the plan, pending final confirmation.
+
+**Files:** `scripts/_apply_finding_verse_term_index_v1_20260829.py` (new); `finding_verse_index`
+(new table, 578,816 rows); `finding` (new `strong_number` column, 435,169 rows populated);
+`backups/bible_research-pre-finding-verse-term-index-*.db` (pre-migration snapshot).
+
+## 206. `VerseLexical.ps1 -Step` — view `report.verse_lexical` standalone; the inactive-tables rule made explicit (2026-08-29)
+
+**#1041 side-effects.** Researcher: *"don't see report.verse_lexical in the ps tool. add it, so I
+can look at the results for a specific verse."* It already existed — `VerseLexical.ps1` chains
+`lexical.build` then `report.verse_lexical` under the tab name `VerseLexical` (matching the script,
+not the step), which is presumably why a search for the literal step name didn't surface it. But
+there was a real gap underneath: no way to view already-built results without re-running
+`lexical.build` (a live-STEP-dependent step) every time. Added `-Step lexical.build|
+report.verse_lexical` — omit for the existing chained behaviour, or run `report.verse_lexical`
+alone to render already-built results with no rebuild. Verified live: `VerseLexical.ps1 -Book Gen
+-Range 1:1-5 -Step report.verse_lexical` → real MD output, sent to the researcher directly. Worksheet
+tab (`iba/docs/ps tools worksheet.xlsx`) updated with the new `-Step` column; `find_ps_worksheet_
+drift` confirmed clean afterward.
+
+**A firm, repeated researcher rule, now captured in config (escalation #1044):** *"the inactive
+tables should never be factored into any report, analysis or other active process. It is only
+retained in the database to aid when errors or issues are encountered... this should already be a
+config."* Checked — it wasn't; `governance.tables` requires marking a retired table inactive, but
+nothing stated what `inactive` actually MEANS in terms of usage. New `cfg_behaviour_rule`
+(class=`sqlite`, `inactive-tables-never-active-inputs`) states it explicitly, with the one standing
+exception this session's own migrations already rely on: a ONE-TIME read of an inactive table as a
+backfill SOURCE for a new live structure is not a violation. Also saved to Claude's own persistent
+memory (`feedback_inactive_tables_never_active_inputs.md`) per the researcher's explicit
+instruction to retain this firmly.
+
+**Direct consequence for #1041:** the open question of whether `bible_research.ve_lexical`
+(already `inactive=1`) "still matters" to the new findings-report is now moot by this rule alone,
+regardless of grain/relevance — simplifying #1041 to its one real remaining question (join into the
+live `iba.verse_lexical` for `resolved_sense`, and what the meaning-display components are).
+
+**Files:** `iba/app/ps/VerseLexical.ps1` (`-Step` parameter); `iba/docs/ps tools worksheet.xlsx`
+(VerseLexical tab); `cfg_behaviour_rule` (new row, pending approval — escalation #1044).
+
+## §207 — §205's Pass 1 (structural) was wrong for every row it wrote — found, root-caused, and fixed same day
+
+**How this was found.** Building a report prototype for #1007 (real data for Gen 1:2, `outputs/
+escalation/1007-report-prototype-gen1-2-20260829.md`) surfaced 6 `l2_meaning` findings all
+structurally linked to Gen 1:2 whose own text was unmistakably about Mark 7:25 (a Greek term,
+`akathartos`/`pneuma`, appearing in a Hebrew-only verse — structurally impossible as a real
+occurrence). Researcher's own question, verbatim: *"can the mismatch of verses be because we mixed
+up old and new tables, or mixing ids... If you take an index in the old system does it point to
+the correct verse for the finding."*
+
+**Traced by hand, not assumed, for the exact example (finding 483437):** `finding.verse_context_id`
+→ `verse_context.verse_record_id` → `wa_verse_records` correctly resolves to `id=9365,
+reference='Mar 7:25'` — matching the finding's own content exactly. **The OLD system's own chain
+was right.** The break is one hop further: that same `wa_verse_records` row's `verse_id` column
+(the cross-database bridge into `iba.verse`, documented and 93% populated, sampled clean by hand
+in §205) is `16910` — which is `Gen.1.2`, a completely unrelated verse.
+
+**Checked at full scale, not just this one row:** of 230,045 `wa_verse_records` rows with a
+populated `verse_id`, only **12,567 (5.5%) even point to the correct book** — the bridge column is
+pre-existing broken data, not something introduced by this session's migrations, and not old/new
+table confusion in the migration code (the researcher's own hypotheses, both checked and both
+ruled out — the code followed the documented chain correctly; the data one hop short of the end
+was already wrong). Re-derived §205's own Pass 1 candidate set against the CORRECTED path
+(`wa_verse_records.reference` TEXT, the same book-crosswalk already proven for Pass 2/3, never
+`.verse_id`): **0 of 434,427 original Pass 1 rows matched** — not a partial defect, wrong for
+every single row it wrote.
+
+**Fixed.** `scripts/_apply_finding_verse_term_index_v1_20260829.py` Pass 1 now resolves via
+`wa_verse_records.reference` text, matching Pass 2/3's already-verified mechanism. New `--fix-pass1`
+mode: purges every `source='structural'` row, rebuilds from the corrected candidate set. Run live
+(DB backed up first, `backups/bible_research-pre-verse-index-structural-fix-*.db`): purged
+434,427, rebuilt 331,401 (435,193 candidates, 2,837 unresolvable via reference text, remainder
+deduped against Pass 2/3). Verified: finding 483437 now correctly links to `Mark.7.25`; zero
+duplicate pairs; a 300-row re-check of the exact failure pattern that found the bug found only 5
+apparent mismatches, and all 5 turned out to be genuine cross-references WITHIN correctly-anchored
+findings ("As in Jos 20:3... here", "quoted from Isaiah 29:14") — not errors.
+
+**Corrected totals** (supersedes §205's numbers): `finding_verse_index` now **475,790** rows
+(331,401 structural + 3,682 link-migrated + 140,707 text-mined, was 578,816); **445,911** of
+458,096 findings (97.3%, was 447,955/97.8%) have ≥1 verse reference — the small drop is real and
+expected: some findings had ONLY the fabricated structural link and no genuine verse reference of
+their own.
+
+**Files:** `scripts/_apply_finding_verse_term_index_v1_20260829.py` (`--fix-pass1`); `finding_verse_index`
+(434,427 rows deleted, 331,401 rebuilt); `backups/bible_research-pre-verse-index-structural-fix-*.db`.

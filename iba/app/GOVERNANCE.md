@@ -3074,3 +3074,19 @@ is duplicated (`auto_assess()`) wasn't actually checked against its source of tr
 `iba/app/lib/cfgreport.py` (both `Escalation.ps1` and `FolderPurpose.ps1` ValidateSet-drift checks
 now mirrored into `CONFIG-REPORT.md` — the first was a separate, pre-existing "wired into validate
 but never mirrored" gap, found and closed in the same pass rather than left once it was noticed).
+
+## §64. `inactive-tables-never-active-inputs` — what `inactive` actually means, stated (2026-08-29, escalation #1044)
+
+**The rule, repeated by the researcher after finding it wasn't already governance-visible:**
+*"the inactive tables should never be factored into any report, analysis or other active process.
+It is only retained in the database to aid when errors or issues are encountered to clarify and
+reach back into the past."* `governance.tables` already required marking a retired table
+`inactive=1`; nothing stated what that flag then obliges downstream — a real gap, not an implicit
+given. New `cfg_behaviour_rule` (class=`sqlite`, `inactive-tables-never-active-inputs`) closes it,
+with the one standing exception this session's own migrations (`BUILD.md` §203/§205) already
+depend on: a ONE-TIME read of an inactive table as a backfill SOURCE for a new live structure is
+not a violation of the rule — only ongoing/repeated use as a live input is. Also saved to Claude's
+own persistent memory per the researcher's explicit instruction to retain it firmly, independent of
+this record.
+
+**Files:** `cfg_behaviour_rule` (new row, class=`sqlite`).

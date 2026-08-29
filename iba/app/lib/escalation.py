@@ -535,9 +535,29 @@ def answered_for_run(db: Db, run_id: str, at_step: str):
 
 
 def open_duplicate(db: Db, at_step: str, stable_key: str):
+    """Two real bugs found and fixed live 2026-08-29 (a `configmaint.validate` re-run pile-up --
+    #1008/#1011/#1015/#1016/#1017/#1038/#1039, seven near-identical "cfg_* is structurally
+    coherent" notices in one session, the exact class this function's own call site comment says
+    it exists to prevent):
+
+    1. Matched against `short_description`, which `_sanitise_dispatcher_title` truncates to
+       `_TITLE_MAX_CHARS` (60) chars -- but `configmaint.validate`'s own lead-in text ("cfg_* is
+       structurally coherent, but has findings needing your judgement: ") is already ~74 chars, so
+       `short_description` NEVER contains any of the variable finding-summary text `stable_key`
+       actually is. The `LIKE` could never match, structurally, regardless of whether the
+       underlying finding-set had genuinely changed or not. Fixed: match against `context`
+       instead, which holds the un-truncated `json.dumps(preset)` (via `escalate()`) -- `preset`
+       includes `full_message`, which DOES contain `stable_key` verbatim.
+    2. Matched only `state='raised'` -- but the researcher's own documented workaround for this
+       exact class of noise (#1008: "I am leaving it here so the system will not duplicate the
+       same error") moves the anchor escalation to `state='in-progress'`, which this query could
+       never see. Fixed: reuse the module's own shared `_OPEN_STATES` (raised/re-assigned/
+       on-hold/in-progress) -- the same "still open, not yet closed" definition `write_list_report`
+       already uses -- rather than the narrower literal this function invented independently."""
+    ph = ",".join("?" * len(_OPEN_STATES))
     rows = db.rows(
-        "SELECT * FROM escalation WHERE at_step=? AND state='raised' AND short_description LIKE ? "
-        "ORDER BY id DESC LIMIT 1", (at_step, f"%{stable_key}%"))
+        f"SELECT * FROM escalation WHERE at_step=? AND state IN ({ph}) AND context LIKE ? "
+        f"ORDER BY id DESC LIMIT 1", (at_step, *_OPEN_STATES, f"%{stable_key}%"))
     return rows[0] if rows else None
 
 

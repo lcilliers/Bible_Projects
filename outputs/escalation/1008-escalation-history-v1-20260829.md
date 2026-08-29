@@ -1,0 +1,14 @@
+# Escalation deep history
+
+## #1008 — cfg_* is structurally coherent, but has findings needing yo…
+type=issue source=configmaint
+
+**v1** (2026-08-29T03:42:59Z, Claude) state=raised next_action=review assigned_to=Researcher
+> **short description (set this version):** cfg_* is structurally coherent, but has findings needing yo…
+> **comment (set this version):** coherence checks passed; these are advisory findings, not errors — approve to acknowledge as known/acceptable, reject to flag for action, or revise with a comment on what to check
+> **context (set this version):** {"orphans": [], "needs_justification": [], "stale_filled_by": [], "stale_docs": ["GOVERNANCE.md was last modified 2026-08-28T10:52:27Z, before the newest applied cfg_change_detail row (2026-08-28T12:46:33Z) \u2014 check whether that change needs an entry (GOVERNANCE.md \u00a78's own rule)"], "unregistered_lib_modules": [], "unregistered_project_scripts": [], "low_config_density_utilities": [], "orphan_book_order": [], "orphan_connection": [], "orphan_candidate_rule": [], "report_version_clutter": [], "escalation_ps_validateset_drift": [], "unresolvable_locations": ["cfg_prose.prose.patch_output_dir = '\"Sessions/Patches\"' \u2014 'sessions/patches' does not exist as a folder on disk (project-root-relative)"], "folderpurpose_ps_validateset_drift": [], "hand_rolled_versioning": ["iba/app/lib/prosestore.py builds a -v{n} filename by hand \u2014 no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file"], "report_path": "outputs\\configs\\CONFIG-REPORT-v189-20260829.md", "full_message": "cfg_* is structurally coherent, but has findings needing your judgement: 1 stale-doc finding(s), 1 location setting(s) pointing at a folder that does not exist, 1 script(s) building a -v{n} filename by hand instead of via filingkit. Full detail (every item, by category) written to outputs\\configs\\CONFIG-REPORT-v189-20260829.md \u2014 see the \"findings\" section."}
+> **tried (set this version):** coherence checks passed; these are advisory findings, not errors — approve to acknowledge as known/acceptable, reject to flag for action, or revise with a comment on what to check
+
+**v2** (2026-08-29T04:03:18Z, Researcher) state=in-progress next_action=review assigned_to=Claude
+> **comment (set this version):**  these config errors will resolve when 784 is completed, and this could take a while. I am leaving it here so the system will not duplicate the same error 
+> **context (set this version):**   

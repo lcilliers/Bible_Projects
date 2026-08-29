@@ -7,6 +7,7 @@ findings, not just the live escalation). Split out 2026-07-21 to avoid a circula
 from __future__ import annotations
 
 import io
+import json
 import pathlib
 import re
 import sqlite3
@@ -831,6 +832,154 @@ def find_folderpurpose_ps_validateset_drift(conn: sqlite3.Connection, app_root: 
     resolving #977 that it hadn't been, unlike `set_purpose()`, which always had."""
     return _ps_validateset_drift(conn, app_root / "ps" / "FolderPurpose.ps1", "FolderPurpose.ps1",
                                  _FOLDERPURPOSE_PS_VALIDATESET_ENUM_MAP)
+
+
+# ── PS-script vs. Excel-worksheet drift (escalation #1007 follow-on, 2026-08-29) ────────────────
+# The researcher keeps two hand/generated Excel workbooks as the CLI interface to iba/app/ps:
+# `iba/docs/ps tools worksheet.xlsx` (one tab per script, row 4 = flag headers, mechanically built
+# from each script's own `param()` block — escalation #1004) and `iba/docs/escalation actions
+# worksheet.xlsx` (the researcher's own hand-built model, one sheet, fixed action-shapes for
+# Escalation.ps1 specifically). Nothing previously re-checked either workbook against the scripts
+# they describe — the same class of drift the ValidateSet checks above catch for a narrower case
+# (one parameter's allowed VALUES), generalised here to a script's whole PARAMETER LIST against its
+# worksheet tab. Two checks, not one, because the two workbooks are structurally different: the
+# generic one is a strict per-script tab match; the hand-built escalation one only supports a
+# subset check (its columns are the union of several fixed action-shapes, not one row per param).
+_PS_WORKSHEET_SKIP_STEMS = {"Escalation"}  # its tab is a pointer to the model sheet, not real headers
+# PowerShell automatic variables that can legally appear INSIDE a param() block without being a
+# parameter — e.g. `[Parameter(Mandatory = $true)]` — found live: Behaviour.ps1 and 20+ others use
+# exactly this attribute, and a bare `\$(\w+)` capture can't tell "a parameter's own $Name" from
+# "a literal referenced inside someone else's attribute" any other way without a real PS parser
+# (disproportionate for this check's purpose, per the same reasoning _ps_validateset_drift's own
+# regex approach already accepted).
+_PS_AUTOMATIC_VARS = {"true", "false", "null"}
+
+
+def _ps_param_names(ps_path: pathlib.Path) -> set[str]:
+    """Every declared parameter name in `ps_path`'s outer `param(...)` block — bracket-depth aware
+    (a naive regex closing on the first `)` would mis-close on a `[ValidateSet('a','b')]`'s own,
+    earlier, closing paren) rather than a fixed-form regex like `_VALIDATESET_RE` above, which only
+    has to find named ValidateSet blocks, not the whole param list."""
+    text = ps_path.read_text(encoding="utf-8", errors="ignore")
+    m = re.search(r"\bparam\s*\(", text, re.I)
+    if not m:
+        return set()
+    i, depth = m.end(), 1
+    while i < len(text) and depth > 0:
+        if text[i] == "(":
+            depth += 1
+        elif text[i] == ")":
+            depth -= 1
+        i += 1
+    body = text[m.end():i - 1]
+    return {mm.group(1) for mm in re.finditer(r"\$(\w+)", body)
+           if mm.group(1).lower() not in _PS_AUTOMATIC_VARS}
+
+
+def _load_worksheet_setting(conn: sqlite3.Connection, key: str, project_root: pathlib.Path
+                            ) -> tuple[pathlib.Path | None, str | None]:
+    """Resolves a `governance.*_worksheet_path` setting to a real file — returns (path, None) or
+    (None, error-string) so callers can surface a config gap as a finding rather than crashing."""
+    row = conn.execute(
+        "SELECT value FROM cfg_setting WHERE key=? AND inactive=0", (key,)).fetchone()
+    if not row:
+        return None, f"{key} is not set — cannot check PS/worksheet drift"
+    wb_path = project_root / json.loads(row[0])
+    if not wb_path.exists():
+        return None, f"{key} points at {wb_path} — file does not exist"
+    return wb_path, None
+
+
+def _index_ps_worksheet_tabs(wb) -> dict[str, "openpyxl.worksheet.worksheet.Worksheet"]:
+    """Maps a script's own embedded path cell (e.g. `iba\\app\\ps\\Behaviour.ps1`, found live in
+    row 6 of its tab, col A — each tab's compiled-command formula references it) back to that
+    worksheet, scanning every tab once. Matching on the embedded path rather than the tab NAME
+    because Excel's 31-char sheet-name limit already forces some tabs to a shortened name (e.g.
+    `create-passages-by-book-view-and-export.ps1` → tab `passages-by-book-view-export`) — the
+    embedded path is never truncated and stays the one reliable anchor."""
+    idx: dict[str, object] = {}
+    for ws in wb.worksheets:
+        for row in ws.iter_rows(min_row=1, max_row=8, max_col=3, values_only=True):
+            for cell in row:
+                if isinstance(cell, str) and cell.strip().lower().endswith(".ps1"):
+                    idx[cell.strip().replace("/", "\\").lower()] = ws
+    return idx
+
+
+def find_ps_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.Path,
+                            project_root: pathlib.Path) -> list[str]:
+    """Every `iba/app/ps/*.ps1` script's live `param()` names against its own tab's row-4 flag
+    headers in `governance.ps_worksheet_path` (`iba/docs/ps tools worksheet.xlsx`) — a parameter
+    added/removed/renamed on the script with no matching tab update is exactly the drift the
+    researcher asked this check to catch (2026-08-29: "any change to any PS instruction will find
+    its way into the two excel worksheets"). ADVISORY — a real finding needing a look, not
+    necessarily wrong (the tab may just not have been updated yet). `Escalation.ps1` is skipped —
+    its tab is a deliberate pointer to the OTHER worksheet, checked separately below."""
+    try:
+        import openpyxl
+    except ImportError:
+        return ["openpyxl not importable — cannot check PS/worksheet drift"]
+    wb_path, error = _load_worksheet_setting(conn, "governance.ps_worksheet_path", project_root)
+    if error:
+        return [error]
+    wb = openpyxl.load_workbook(wb_path, data_only=False)
+    tabs = _index_ps_worksheet_tabs(wb)
+    out = []
+    for ps_file in sorted((app_root / "ps").glob("*.ps1")):
+        if ps_file.stem in _PS_WORKSHEET_SKIP_STEMS:
+            continue
+        key = f"iba\\app\\ps\\{ps_file.name}".lower()
+        ws = tabs.get(key)
+        if ws is None:
+            out.append(f"{ps_file.name}: no tab found in {wb_path.name} (expected an embedded "
+                      f"path cell {key!r} in some tab's first rows)")
+            continue
+        live = _ps_param_names(ps_file)
+        sheet = {c[1:] for row in ws.iter_rows(min_row=4, max_row=4, values_only=True)
+                for c in row if isinstance(c, str) and c.startswith("-")}
+        # PowerShell parameter names are case-insensitive; compare on that basis (found live:
+        # Escalation.ps1's own '-Action' vs. the model sheet's '-action' would false-positive
+        # otherwise — same fix applied to both checks here for consistency).
+        sheet_lower = {s.lower() for s in sheet}
+        live_lower = {p.lower() for p in live}
+        missing = {p for p in live if p.lower() not in sheet_lower}
+        extra = {s for s in sheet if s.lower() not in live_lower}
+        if missing:
+            out.append(f"{ps_file.name}: {wb_path.name} tab {ws.title!r} is missing flag "
+                      f"column(s) {sorted(missing)} — the script has these parameters now")
+        if extra:
+            out.append(f"{ps_file.name}: {wb_path.name} tab {ws.title!r} has flag column(s) "
+                      f"{sorted(extra)} the script no longer has — stale or renamed")
+    return out
+
+
+def find_escalation_worksheet_drift(conn: sqlite3.Connection, app_root: pathlib.Path,
+                                    project_root: pathlib.Path) -> list[str]:
+    """`Escalation.ps1`'s live `param()` names must each appear SOMEWHERE as a `-Flag` header in
+    the researcher's own `governance.escalation_worksheet_path` (`iba/docs/escalation actions
+    worksheet.xlsx`) — a subset check, not a per-tab exact match like `find_ps_worksheet_drift`
+    above, because that workbook's one sheet is hand-built around several fixed action-shapes
+    (Raise/Update/AnswerRun/...) sharing columns, not one row per parameter. Still catches the
+    thing the researcher actually asked for: a new/renamed Escalation.ps1 parameter that the
+    model sheet was never updated to include."""
+    try:
+        import openpyxl
+    except ImportError:
+        return ["openpyxl not importable — cannot check PS/worksheet drift"]
+    wb_path, error = _load_worksheet_setting(conn, "governance.escalation_worksheet_path",
+                                             project_root)
+    if error:
+        return [error]
+    live = _ps_param_names(app_root / "ps" / "Escalation.ps1")
+    wb = openpyxl.load_workbook(wb_path, data_only=False)
+    used = {c[1:] for ws in wb.worksheets for row in ws.iter_rows(values_only=True)
+           for c in row if isinstance(c, str) and c.startswith("-") and " " not in c}
+    used_lower = {u.lower() for u in used}
+    missing = {p for p in live if p.lower() not in used_lower}
+    if missing:
+        return [f"Escalation.ps1 has parameter(s) {sorted(missing)} not used as a -Flag header "
+                f"anywhere in {wb_path.name} — the researcher's model sheet may need updating"]
+    return []
 
 
 def find_unclassified_active_steps(conn: sqlite3.Connection) -> list[str]:

@@ -166,3 +166,11 @@ iba/app/db/snapshots/
 iba/app/export/
 iba/app/config/export/
 iba/app/reports/export/
+
+# table.export / Export-Tables.ps1 per-database data CSVs (escalation #1009, 2026-08-29) — large,
+# regenerable straight from the DB. Same class as the cfg_*.csv pairing above them in this folder,
+# just per-database data tables instead of config -- finding.csv alone is ~98MB, close enough to
+# GitHub's 100MB hard limit to have already blocked a push once before on this project
+# (memory: project_git_remote_silently_blocked_by_large_file, purged 2026-07-13).
+Workflow/schema/bible_research/
+Workflow/schema/iba/

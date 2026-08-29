@@ -167,13 +167,33 @@ def table_export(ctx: Ctx) -> Outcome:
     (found 2026-07-22 — the tool used to dump cfg_* too, a real duplication bug). -Out/-Table stay
     plain PS parameters (a one-off destination/subset override), not config — same boundary the
     researcher drew 2026-07-22: a parameter explained in the script's own inline help isn't a
-    setting just because the script is now dispatcher-registered."""
-    out_dir = pathlib.Path(ctx.params.get("Out") or ctx.cfg.setting("table_export.output_dir",
-                                                                    "iba/app/export"))
+    setting just because the script is now dispatcher-registered. -Database (added 2026-08-29,
+    escalation #1007) is the same kind of plain override, resolved via `ctx.cfg.database_path` —
+    the registered project_database enum, not a literal path — so this can dump bible_research.db
+    tables (e.g. the observation-question catalogue) as readily as iba.db's own.
+
+    `table_export.output_dir` is a per-database map (same JSON-map shape as `prose.
+    book_output_dir`), not a single path — changed same day, once cross-database dumping made a
+    single flat folder mix iba.db and bible_research.db CSVs together (found live: this handler's
+    own first bible_research run landed right next to iba.db's, in `Workflow/schema/`, no
+    separation at all). A database missing from the map is a real config gap, not something to
+    default around — same "unknown book raises" posture `prosestore.output_dir_for` already
+    established for the equivalent gap there."""
     only = ctx.params.get("Table")
     only = only.split(",") if isinstance(only, str) else only
-    results = export_tables_csv.export(out_dir, only)
-    return ok(f"exported {len(results)} table(s) to {out_dir}", path=str(out_dir),
+    database = ctx.params.get("Database") or "iba"
+    db_path = ctx.cfg.database_path(database) if database != "iba" else None
+    out_override = ctx.params.get("Out")
+    if out_override:
+        out_dir = pathlib.Path(out_override)
+    else:
+        dir_map = ctx.cfg.setting("table_export.output_dir", {})
+        if database not in dir_map:
+            raise KeyError(f"table_export.output_dir has no entry for database {database!r} — "
+                          f"registered: {sorted(dir_map)}")
+        out_dir = pathlib.Path(dir_map[database])
+    results = export_tables_csv.export(out_dir, only, db_path)
+    return ok(f"exported {len(results)} table(s) from {database!r} to {out_dir}", path=str(out_dir),
              tables=len(results))
 
 
