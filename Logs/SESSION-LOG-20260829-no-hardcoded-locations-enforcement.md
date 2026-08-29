@@ -142,3 +142,6 @@ no-default method wouldn't crash their dormant code paths).
 
 ## Git state
 
+Branch `main`, commit `8cf3eb8f464548fd804a410495e2d17592b925c2`, pushed to `origin/main`
+(`558abd21..8cf3eb8f`). Confirmed via `git status`: "Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean."
