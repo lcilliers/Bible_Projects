@@ -72,3 +72,35 @@ This document states the *objective*. It does not itself:
 Those are the next pieces of work, each requiring its own plan and the researcher's approval before
 execution — per the same discipline this session has already been running under. This charter is
 the fixed point they all now have to build toward; it is deliberately not, itself, that work.
+
+## 4. Two operating modes — Developer Mode and App Mode
+
+Established at this app's original design discussion; re-stated verbatim by the researcher on
+2026-08-31 after a session spent routing ordinary code fixes through `configmaint.propose`'s
+per-row research-approval gate — and after this section's own first draft got the mechanism wrong
+(a per-table classification Claude would self-apply mid-session, which the researcher rejected
+outright: *"you should not be allowed to swap between developer mode and standard mode on the
+fly"*). Full account: `GOVERNANCE.md` §69, memory `feedback_developer_mode_vs_app_mode_operating_
+model`.
+
+**The mode is a property of the SESSION, chosen by the researcher at login/session-start —
+never mid-session, and never self-selected by Claude.** There is no in-app mechanism that switches
+it; nothing in `iba/`'s code or config decides which mode is active. Claude infers which mode a
+given session is in from the permissions it actually has (a standard session hits the harness's
+own permission classifier on anything requiring elevation — that IS the signal), never by judging
+"this table feels like a Developer Mode table."
+
+**Developer Mode** — a session the researcher explicitly starts with full ("sysadmin") permissions,
+for building/fixing the app itself: any code, any config, any table, without the standard
+`configmaint.propose` per-row approval gate. Every applicable rule (this charter, `GOVERNANCE.md`,
+`cfg_behaviour_rule`) must still be checked and applied — full permissions is not licence to skip
+research. Every development task still gets an escalation item as the durable record.
+
+**App Mode (standard)** — the default session type: standard Claude Code permissions, used both
+for real operation of the app and for testing anything built in a Developer Mode session (a
+Developer Mode session's own work is never tested in that same session — testing happens in a
+fresh, standard-permission session). In App Mode, every `cfg_*` change — no exceptions for any
+table, "mechanism" or otherwise — goes through the full `configmaint.propose` → researcher
+approval → apply cycle, exactly as it always has. Only registered modules/utilities run (the PS
+scripts under `iba/app/ps/`, dispatched through `python -m iba.app.run`) — no ad-hoc scripts, no
+raw DB pokes. This is §1's own "every component... must work through the app" rule.

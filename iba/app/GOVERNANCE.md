@@ -3210,3 +3210,42 @@ corrected build); `cfg_table_purpose` (new table, 64 rows); `cfg_enum` (`table_p
 values); `cfg_column` (3 new rows, self-describing `cfg_table_purpose`); `cfg_write_grant` (1 new
 row — found missing live mid-build, the same class of gap `find_cfg_tables_missing_configmaint_
 grant` exists to catch); `cfg_table` (1 new row, registering `cfg_table_purpose` itself).
+
+## §69. Developer Mode vs App Mode — the two-mode operating split (2026-08-31, memory `feedback_developer_mode_vs_app_mode_operating_model`)
+
+Established at this app's original design discussion; re-stated verbatim by the researcher on
+2026-08-31 after a session spent routing ordinary code fixes through `configmaint.propose`'s
+per-row research-approval gate — a real bug found and fixed in `escalation.py`'s own state-
+transition logic (not a judgement call) produced five sequential patches, each needing its own
+approval round-trip, because nothing had ever told the app that fixing its own mechanism is a
+different kind of change from changing what the study does. Researcher, verbatim: *"why is it that
+you cannot rewrite a piece of code to suit the requirements because since day one you have been
+patching this code and forever creating more problems."* Full statement: `CHARTER.md` §4 (the
+governing text — this section documents it, per `documentation`'s single-authority rule).
+
+**This section's own first draft got the mechanism wrong** — a per-`cfg_*`-table classification
+Claude would self-apply mid-session to decide whether a change needed approval. The researcher
+rejected it outright: *"you should not be allowed to swap between developer mode and standard mode
+on the fly."* Corrected same day, before anything was built on the wrong model.
+
+**The mode is a property of the SESSION, not of which table or file is being touched.** The
+researcher chooses it at login/session-start; nothing in the app's own code or config switches it,
+and Claude never self-selects it. Claude infers which mode is active from the permissions the
+session actually has — a standard session hits the harness's own permission classifier the moment
+anything needs elevation, and that refusal IS the signal, not a judgement call to make.
+
+**Developer Mode** — a session the researcher explicitly starts with full ("sysadmin")
+permissions, for building/fixing the app itself: any code, any config, any table, without the
+standard `configmaint.propose` per-row approval gate. Every applicable rule (`CHARTER.md`, this
+document, `cfg_behaviour_rule`) must still be checked and applied — full permissions is not licence
+to skip research. Every development task still gets an escalation item as the durable record.
+
+**App Mode (standard)** — the default session type. Used both for real operation and for testing
+anything built in a Developer Mode session — testing never happens in the same session that built
+the thing; it happens in a fresh, standard-permission session. Every `cfg_*` change, no exceptions
+for any table, goes through the full `configmaint.propose` → researcher approval → apply cycle,
+exactly as it always has. Only registered modules/utilities run (`iba/app/ps/*.ps1` dispatched
+through `python -m iba.app.run`) — no ad-hoc scripts, no raw DB pokes.
+
+**Record:** `cfg_behaviour_rule` (class=`development`) — proposed via `configmaint.propose` like
+any other config content in a standard session (escalation #1342, corrected content pending).

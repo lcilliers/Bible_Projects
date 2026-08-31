@@ -48,7 +48,7 @@ def fail(condition: str, message="", **counts) -> Outcome:
 
 def escalate(condition: str, question: str, preset: dict, tried: str,
             resolution_kind: str = "decision_required", needs_followup: bool = False,
-            **counts) -> Outcome:
+            title: str | None = None, **counts) -> Outcome:
     """`resolution_kind` (escalation #798/#799): every handler-authored `escalate()` call is, by
     construction, a genuine judgement point the handler's own logic decided it can't resolve --
     that's why it's calling this at all, not the config the handler is checking against. Default
@@ -64,8 +64,15 @@ def escalate(condition: str, question: str, preset: dict, tried: str,
     completed) fires immediately on approval, which is correct for a plain judgement call but wrong
     here -- it marked #1238-1256 'completed' while every one of their writes was still unapplied,
     caught only because they were independently re-verified against the live DB rather than
-    trusted from the escalation's own state."""
+    trusted from the escalation's own state.
+
+    `title` (escalation #1326, 2026-08-31): a real, pre-validated title-shaped short_description
+    (<=60 chars, no clause-stitching) -- when given, `raise_()` uses it directly instead of lossily
+    truncating `question` (which is free to be a real, longer, REPRESENTATIVE description). Omit it
+    only when the caller genuinely has no better title to give (the old sanitise-by-truncation
+    fallback still applies then, unchanged)."""
     o = Outcome(condition, question, counts)
     o.escalation = {"question": question, "preset": preset, "tried": tried, "type": "prompted",
-                    "resolution_kind": resolution_kind, "needs_followup": needs_followup}
+                    "resolution_kind": resolution_kind, "needs_followup": needs_followup,
+                    "title": title}
     return o

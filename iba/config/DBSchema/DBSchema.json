@@ -1,12 +1,12 @@
 {
   "database": "bible_research",
   "database_path": "database/bible_research.db",
-  "database_bytes": 803000320,
+  "database_bytes": 868691968,
   "schema_version": "3.40.0",
-  "exported_date": "2026-08-24",
+  "exported_date": "2026-08-31",
   "captured_by": "iba/scripts/build_dbschema.py",
   "★ what_this_is": "CAPTURED DATA -- the live schema of this database, read from the DB itself. Not a rulebook: it records what the schema IS, never what it should be. Rules governing it: iba/config/utility/DBSchema_maintenance.json (util.dbschema). Every description is derived from the `profile` beside it (dbschema.description-from-data).",
-  "table_count": 111,
+  "table_count": 113,
   "tables": {
     "book_code_variants": {
       "description": "Alias table mapping the many book abbreviation forms encountered in source data onto a single books row, so that '1Chr', '1Ki' and '1Kgs' all resolve to the same book. 112 aliases cover all 66 books, with the busiest books carrying up to three variants each.",
@@ -4428,7 +4428,7 @@
     "engine_run_log": {
       "description": "One row per engine or patch execution (875 rows, March to July), recording mode, timing, outcome and roll-up counts of what was written. It is the parent audit record that word_run_state, engine_stream_checkpoint and term_fetch_log hang off, and it logs patch applications as well as engine runs.",
       "description_source": "profiler",
-      "row_count": 876,
+      "row_count": 890,
       "sql": "CREATE TABLE engine_run_log (\n            id                   INTEGER PRIMARY KEY AUTOINCREMENT,\n            run_id               TEXT    NOT NULL UNIQUE,\n            mode                 TEXT    NOT NULL,\n            target_registry_ids  TEXT,\n            started_at           TEXT    NOT NULL,\n            completed_at         TEXT,\n            outcome              TEXT,\n            words_attempted      INTEGER DEFAULT 0,\n            words_complete       INTEGER DEFAULT 0,\n            words_stopped        INTEGER DEFAULT 0,\n            total_terms_new      INTEGER DEFAULT 0,\n            total_terms_xref     INTEGER DEFAULT 0,\n            total_verses_inserted INTEGER DEFAULT 0,\n            total_verses_filtered INTEGER DEFAULT 0,\n            total_meanings_parsed INTEGER DEFAULT 0,\n            error_detail         TEXT,\n            resume_from          TEXT\n        )",
       "primary_key": [
         "id"
@@ -4444,14 +4444,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 876,
+            "distinct_count": 890,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 888,
+            "max": 902,
             "looks_categorical": false
           }
         },
@@ -4465,11 +4465,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 876,
+            "distinct_count": 890,
             "distinct_bucket": "high-cardinality",
             "min": "PATCH-20260324-004-SESSIONB-V1",
             "max": "wa-tier-catalogue-refit-update-v1-20260619",
@@ -4486,7 +4486,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4502,7 +4502,7 @@
               },
               {
                 "v": "SESSION_PATCH",
-                "n": 312
+                "n": 326
               },
               {
                 "v": "NEW_WORD",
@@ -4535,7 +4535,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4547,7 +4547,7 @@
             "top_values": [
               {
                 "v": "",
-                "n": 202
+                "n": 216
               },
               {
                 "v": "117",
@@ -4578,7 +4578,7 @@
                 "n": 8
               }
             ],
-            "top_values_cover": 0.3082
+            "top_values_cover": 0.3191
           }
         },
         {
@@ -4591,14 +4591,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 872,
+            "distinct_count": 886,
             "distinct_bucket": "high-cardinality",
             "min": "2026-03-18T10:57:05",
-            "max": "2026-08-14T19:00:57Z",
+            "max": "2026-08-27T09:42:16Z",
             "looks_categorical": false
           }
         },
@@ -4612,14 +4612,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 13,
-            "null_rate": 0.0148,
+            "null_rate": 0.0146,
             "null_bucket": "under-50pct",
-            "distinct_count": 858,
+            "distinct_count": 872,
             "distinct_bucket": "high-cardinality",
             "min": "2026-03-18T10:57:40",
-            "max": "2026-08-14T19:00:57Z",
+            "max": "2026-08-27T09:42:16Z",
             "looks_categorical": false
           }
         },
@@ -4633,7 +4633,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 1,
             "null_rate": 0.0011,
             "null_bucket": "under-50pct",
@@ -4645,7 +4645,7 @@
             "top_values": [
               {
                 "v": "COMPLETE",
-                "n": 682
+                "n": 696
               },
               {
                 "v": "STOPPED",
@@ -4678,7 +4678,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4694,7 +4694,7 @@
               },
               {
                 "v": 0,
-                "n": 335
+                "n": 349
               },
               {
                 "v": 167,
@@ -4715,7 +4715,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4727,7 +4727,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 516
+                "n": 530
               },
               {
                 "v": 1,
@@ -4752,7 +4752,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4764,7 +4764,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 705
+                "n": 719
               },
               {
                 "v": 1,
@@ -4793,7 +4793,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4805,7 +4805,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 578
+                "n": 592
               },
               {
                 "v": 1,
@@ -4836,7 +4836,7 @@
                 "n": 7
               }
             ],
-            "top_values_cover": 0.8368
+            "top_values_cover": 0.8393
           }
         },
         {
@@ -4849,7 +4849,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4861,7 +4861,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 866
+                "n": 880
               },
               {
                 "v": 1,
@@ -4890,7 +4890,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4911,7 +4911,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4923,7 +4923,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 860
+                "n": 874
               },
               {
                 "v": 6,
@@ -4954,7 +4954,7 @@
                 "n": 1
               }
             ],
-            "top_values_cover": 0.992,
+            "top_values_cover": 0.9921,
             "uncontrolled_vocabulary": true
           }
         },
@@ -4968,7 +4968,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -4980,7 +4980,7 @@
             "top_values": [
               {
                 "v": 0,
-                "n": 512
+                "n": 526
               },
               {
                 "v": 1,
@@ -5011,7 +5011,7 @@
                 "n": 8
               }
             ],
-            "top_values_cover": 0.7511
+            "top_values_cover": 0.7551
           }
         },
         {
@@ -5024,11 +5024,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
+            "rows_scanned": 890,
             "null_count": 393,
-            "null_rate": 0.4486,
+            "null_rate": 0.4416,
             "null_bucket": "under-50pct",
-            "distinct_count": 408,
+            "distinct_count": 414,
             "distinct_bucket": "high-cardinality",
             "min": "[\"A1: No wa_file_index rows for registry 213. Run --mode=new_word first.\"]",
             "max": "{\"vc_updated\": 77}",
@@ -5045,8 +5045,8 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 876,
-            "null_count": 876,
+            "rows_scanned": 890,
+            "null_count": 890,
             "null_rate": 1.0,
             "null_bucket": "all",
             "distinct_count": 0,
@@ -5416,8 +5416,8 @@
     "finding": {
       "description": "The universal finding store: one row per typed analytical finding, at VERSE, CLUSTER or GLOBAL level, with VERSE dominating (over 430k of 438k rows). The critical fact in the data is that roughly 92% of rows carry delete_flagged=1 — every l2_api and l2_mechanical row and most l2_meaning rows are soft-deleted, leaving only about 35k live findings; the table is therefore mostly a retained legacy substrate rather than an active corpus.",
       "description_source": "profiler",
-      "row_count": 438099,
-      "sql": "CREATE TABLE finding (\n            id INTEGER PRIMARY KEY,\n            level TEXT NOT NULL,                  -- VERSE | TERM | CLUSTER | GLOBAL\n            verse_context_id INTEGER,             -- level=VERSE   -> verse_context.id\n            mti_term_id INTEGER,                  -- level=TERM    -> mti_terms.id\n            cluster_code TEXT,                    -- level=CLUSTER -> cluster.cluster_code\n            finding_value TEXT,\n            finding_status TEXT,                  -- ANSWERED|STATED_SILENT|STATED_UNRESOLVED|OPEN|RESOLVED|CLOSED\n            provenance TEXT,                      -- mechanical|clarification|api|researcher\n            justified_by_finding_id INTEGER,      -- the clarification (higher-level finding) that justifies this\n            supersedes_id INTEGER,                -- correction / resolution lineage\n            source_legacy_ref TEXT,               -- e.g. wa_session_b_findings.finding_id when migrated\n            flagged_for_review INTEGER DEFAULT 0,\n            created_at TEXT, last_updated_date TEXT,\n            delete_flagged INTEGER DEFAULT 0\n        )",
+      "row_count": 458096,
+      "sql": "CREATE TABLE finding (\n            id INTEGER PRIMARY KEY,\n            level TEXT NOT NULL,                  -- VERSE | TERM | CLUSTER | GLOBAL\n            verse_context_id INTEGER,             -- level=VERSE   -> verse_context.id\n            mti_term_id INTEGER,                  -- level=TERM    -> mti_terms.id\n            cluster_code TEXT,                    -- level=CLUSTER -> cluster.cluster_code\n            finding_value TEXT,\n            finding_status TEXT,                  -- ANSWERED|STATED_SILENT|STATED_UNRESOLVED|OPEN|RESOLVED|CLOSED\n            provenance TEXT,                      -- mechanical|clarification|api|researcher\n            justified_by_finding_id INTEGER,      -- the clarification (higher-level finding) that justifies this\n            supersedes_id INTEGER,                -- correction / resolution lineage\n            source_legacy_ref TEXT,               -- e.g. wa_session_b_findings.finding_id when migrated\n            flagged_for_review INTEGER DEFAULT 0,\n            created_at TEXT, last_updated_date TEXT,\n            delete_flagged INTEGER DEFAULT 0\n        , characteristic_id INTEGER, cluster_subgroup_id INTEGER, vcg_scope TEXT, notes TEXT, strong_number TEXT)",
       "primary_key": [
         "id"
       ],
@@ -5432,16 +5432,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 48685,
+            "distinct_count": 45809,
             "distinct_bucket": "high-cardinality",
-            "min": 9,
-            "max": 1048896,
+            "min": 10,
+            "max": 1068890,
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5454,7 +5454,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -5463,19 +5463,19 @@
             "min": "CLUSTER",
             "max": "VERSE",
             "looks_categorical": true,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)",
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
             "top_values": [
               {
                 "v": "VERSE",
-                "n": 48361
+                "n": 43519
               },
               {
                 "v": "CLUSTER",
-                "n": 213
+                "n": 2188
               },
               {
                 "v": "GLOBAL",
-                "n": 111
+                "n": 102
               }
             ],
             "top_values_cover": 1.0,
@@ -5492,16 +5492,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
-            "null_count": 322,
-            "null_rate": 0.0066,
+            "rows_scanned": 45809,
+            "null_count": 2290,
+            "null_rate": 0.05,
             "null_bucket": "under-50pct",
-            "distinct_count": 24267,
+            "distinct_count": 23121,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 67598,
+            "max": 67600,
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5514,16 +5514,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
-            "null_count": 324,
-            "null_rate": 0.0067,
+            "rows_scanned": 45809,
+            "null_count": 2290,
+            "null_rate": 0.05,
             "null_bucket": "under-50pct",
-            "distinct_count": 1867,
+            "distinct_count": 1862,
             "distinct_bucket": "high-cardinality",
             "min": 1,
             "max": 7591,
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5536,51 +5536,51 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
-            "null_count": 16301,
-            "null_rate": 0.3348,
+            "rows_scanned": 45809,
+            "null_count": 14673,
+            "null_rate": 0.3203,
             "null_bucket": "under-50pct",
             "distinct_count": 46,
             "distinct_bucket": "11-200",
             "min": "M01",
             "max": "T2",
             "looks_categorical": true,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)",
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
             "top_values": [
               {
                 "v": "M15",
-                "n": 5115
+                "n": 4748
               },
               {
                 "v": "T2",
-                "n": 3481
+                "n": 3128
               },
               {
                 "v": "M01",
-                "n": 3044
-              },
-              {
-                "v": "M02",
-                "n": 2036
+                "n": 2810
               },
               {
                 "v": "M10",
-                "n": 1394
+                "n": 1895
               },
               {
-                "v": "M47",
-                "n": 1255
+                "v": "M02",
+                "n": 1871
               },
               {
                 "v": "M05",
-                "n": 1090
+                "n": 1137
               },
               {
-                "v": "M23",
-                "n": 1087
+                "v": "M47",
+                "n": 1117
+              },
+              {
+                "v": "M26",
+                "n": 1002
               }
             ],
-            "top_values_cover": 0.5713,
+            "top_values_cover": 0.5687,
             "uncontrolled_vocabulary": true
           }
         },
@@ -5594,16 +5594,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 18138,
+            "distinct_count": 18010,
             "distinct_bucket": "high-cardinality",
             "min": "",
-            "max": "עָשָׂה (a.sah) in the Qal participle here describes the ongoing conduct of those charging interest on their fellow Israe… (+437 chars)",
+            "max": "לֹא (lo) here qualifies the adjective \"good,\" forming the moral verdict \"not good\" over the conduct of the wealthy Israe… (+369 chars)",
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5616,47 +5616,51 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 7,
-            "distinct_bucket": "2-10",
+            "distinct_count": 11,
+            "distinct_bucket": "11-200",
             "min": "ANSWERED",
-            "max": "active",
+            "max": "silent",
             "looks_categorical": true,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)",
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
             "top_values": [
               {
                 "v": "ANSWERED",
-                "n": 32070
+                "n": 28793
               },
               {
                 "v": "STATED_SILENT",
-                "n": 15985
+                "n": 14582
               },
               {
-                "v": "STATED_UNRESOLVED",
-                "n": 306
+                "v": "finding",
+                "n": 1627
               },
               {
                 "v": "OPEN",
-                "n": 290
+                "n": 258
+              },
+              {
+                "v": "cluster_synthesis",
+                "n": 181
+              },
+              {
+                "v": "silent",
+                "n": 179
+              },
+              {
+                "v": "STATED_UNRESOLVED",
+                "n": 144
               },
               {
                 "v": "CLOSED",
                 "n": 30
-              },
-              {
-                "v": "RESOLVED",
-                "n": 2
-              },
-              {
-                "v": "active",
-                "n": 2
               }
             ],
-            "top_values_cover": 1.0,
+            "top_values_cover": 0.9997,
             "uncontrolled_vocabulary": true
           }
         },
@@ -5670,40 +5674,44 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 6,
+            "distinct_count": 7,
             "distinct_bucket": "2-10",
-            "min": "l2_api",
+            "min": "cluster_finding_migration",
             "max": "session_b_migration",
             "looks_categorical": true,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)",
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
             "top_values": [
               {
                 "v": "l2_api",
-                "n": 20681
+                "n": 18612
               },
               {
                 "v": "l2_mechanical",
-                "n": 16192
+                "n": 14572
               },
               {
                 "v": "l2_meaning",
-                "n": 11488
+                "n": 10335
+              },
+              {
+                "v": "cluster_finding_migration",
+                "n": 2000
               },
               {
                 "v": "session_b_migration",
-                "n": 320
+                "n": 288
               },
               {
                 "v": "l2_rollup",
-                "n": 2
+                "n": 1
               },
               {
                 "v": "leviticus-lexical-v1",
-                "n": 2
+                "n": 1
               }
             ],
             "top_values_cover": 1.0,
@@ -5720,8 +5728,8 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
-            "null_count": 48685,
+            "rows_scanned": 45809,
+            "null_count": 45809,
             "null_rate": 1.0,
             "null_bucket": "all",
             "distinct_count": 0,
@@ -5729,7 +5737,7 @@
             "min": null,
             "max": null,
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5742,16 +5750,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
-            "null_count": 47897,
-            "null_rate": 0.9838,
+            "rows_scanned": 45809,
+            "null_count": 45111,
+            "null_rate": 0.9848,
             "null_bucket": "over-50pct",
-            "distinct_count": 788,
+            "distinct_count": 698,
             "distinct_bucket": "high-cardinality",
-            "min": 265334,
-            "max": 459854,
+            "min": 265474,
+            "max": 459670,
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5764,16 +5772,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
-            "null_count": 37842,
-            "null_rate": 0.7773,
+            "rows_scanned": 45809,
+            "null_count": 34057,
+            "null_rate": 0.7435,
             "null_bucket": "over-50pct",
-            "distinct_count": 322,
+            "distinct_count": 2290,
             "distinct_bucket": "high-cardinality",
-            "min": "SB:062-EXPR-001|type:RELATIONAL_EXPRESSION|reg:62|clusters:None|sbstatus:confirmed",
+            "min": "CF:10009|source_file:Sessions/Session_Clusters/M04/WA-M04-phase9-char6-Wonder-findings-v1-20260519.md|version:v1",
             "max": "ve-narration-v2-20260616",
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5786,7 +5794,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -5795,15 +5803,15 @@
             "min": 0,
             "max": 1,
             "looks_categorical": true,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)",
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
             "top_values": [
               {
                 "v": 0,
-                "n": 48632
+                "n": 45760
               },
               {
                 "v": 1,
-                "n": 53
+                "n": 49
               }
             ],
             "top_values_cover": 1.0,
@@ -5820,16 +5828,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 8285,
+            "distinct_count": 8356,
             "distinct_bucket": "high-cardinality",
             "min": "2026-03-27",
-            "max": "2026-07-05T16:30:56Z",
+            "max": "2026-07-05T16:06:15Z",
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5842,16 +5850,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 8255,
+            "distinct_count": 8334,
             "distinct_bucket": "high-cardinality",
-            "min": "2026-06-09 04:36:56",
-            "max": "2026-07-05T16:30:56Z",
+            "min": "2026-05-06T17:09:12Z",
+            "max": "2026-07-05T16:06:15Z",
             "looks_categorical": false,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)"
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         },
         {
@@ -5864,7 +5872,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 48685,
+            "rows_scanned": 45809,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -5873,19 +5881,269 @@
             "min": 0,
             "max": 1,
             "looks_categorical": true,
-            "sample_method": "rowid % 9 = 0 (deterministic stride)",
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
             "top_values": [
               {
                 "v": 1,
-                "n": 44801
+                "n": 40473
               },
               {
                 "v": 0,
-                "n": 3884
+                "n": 5336
               }
             ],
             "top_values_cover": 1.0,
             "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "characteristic_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 45809,
+            "null_count": 44065,
+            "null_rate": 0.9619,
+            "null_bucket": "over-50pct",
+            "distinct_count": 111,
+            "distinct_bucket": "11-200",
+            "min": 1,
+            "max": 116,
+            "looks_categorical": true,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": 87,
+                "n": 38
+              },
+              {
+                "v": 89,
+                "n": 38
+              },
+              {
+                "v": 85,
+                "n": 37
+              },
+              {
+                "v": 111,
+                "n": 26
+              },
+              {
+                "v": 98,
+                "n": 20
+              },
+              {
+                "v": 1,
+                "n": 19
+              },
+              {
+                "v": 2,
+                "n": 19
+              },
+              {
+                "v": 3,
+                "n": 19
+              }
+            ],
+            "top_values_cover": 0.1239
+          }
+        },
+        {
+          "name": "cluster_subgroup_id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 45809,
+            "null_count": 45101,
+            "null_rate": 0.9845,
+            "null_bucket": "over-50pct",
+            "distinct_count": 58,
+            "distinct_bucket": "11-200",
+            "min": 2,
+            "max": 80,
+            "looks_categorical": true,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": 4,
+                "n": 38
+              },
+              {
+                "v": 6,
+                "n": 38
+              },
+              {
+                "v": 2,
+                "n": 37
+              },
+              {
+                "v": 42,
+                "n": 26
+              },
+              {
+                "v": 27,
+                "n": 21
+              },
+              {
+                "v": 26,
+                "n": 20
+              },
+              {
+                "v": 9,
+                "n": 19
+              },
+              {
+                "v": 10,
+                "n": 19
+              }
+            ],
+            "top_values_cover": 0.3079
+          }
+        },
+        {
+          "name": "vcg_scope",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 45809,
+            "null_count": 45764,
+            "null_rate": 0.999,
+            "null_bucket": "over-50pct",
+            "distinct_count": 29,
+            "distinct_bucket": "11-200",
+            "min": "M01-B-VCG-01",
+            "max": "M03-G-VCG-01",
+            "looks_categorical": true,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "M02-B-VCG-01",
+                "n": 4
+              },
+              {
+                "v": "M02-B-VCG-03",
+                "n": 4
+              },
+              {
+                "v": "M02-C-VCG-02",
+                "n": 3
+              },
+              {
+                "v": "M02-A-VCG-03",
+                "n": 2
+              },
+              {
+                "v": "M02-B-VCG-04",
+                "n": 2
+              },
+              {
+                "v": "M02-B-VCG-05",
+                "n": 2
+              },
+              {
+                "v": "M03-A-VCG-01",
+                "n": 2
+              },
+              {
+                "v": "M03-A-VCG-03",
+                "n": 2
+              }
+            ],
+            "top_values_cover": 0.4667
+          }
+        },
+        {
+          "name": "notes",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 45809,
+            "null_count": 44912,
+            "null_rate": 0.9804,
+            "null_bucket": "over-50pct",
+            "distinct_count": 97,
+            "distinct_bucket": "11-200",
+            "min": "Applied via DIR-20260506-003 on 2026-05-06; directive: wa-cluster-M06-dir-003-root-boundary-v1-20260506.md; obslog: wa-o… (+32 chars)",
+            "max": "outcome=S | DROP per catalogue restructure v2 §3 (2026-06-11): fabricated/templated DROP-family finding, not validated",
+            "looks_categorical": true,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "DROP per catalogue restructure v2 §3 (2026-06-11): fabricated/templated DROP-family finding, not validated",
+                "n": 107
+              },
+              {
+                "v": "outcome=E",
+                "n": 104
+              },
+              {
+                "v": "DIR-20260516-006",
+                "n": 74
+              },
+              {
+                "v": "Loaded by structural loader v1 (2026-05-06); full-text population pending",
+                "n": 50
+              },
+              {
+                "v": "DIR-20260512-001 (Phase 9 findings load 2026-05-12); source: WA-M15-consolidated-findings-v1-20260511-part3-T3-T4.md; ob… (+41 chars)",
+                "n": 44
+              },
+              {
+                "v": "DIR-20260512-001 (Phase 9 findings load 2026-05-12); source: (stub); obslog: wa-obslog-M15-phase8-v2-20260511.md",
+                "n": 37
+              },
+              {
+                "v": "DIR-20260516-013",
+                "n": 37
+              },
+              {
+                "v": "DIR-20260512-001 (Phase 9 findings load 2026-05-12); source: WA-M15-consolidated-findings-v1-20260511-part4-T5-T7.md; ob… (+41 chars)",
+                "n": 35
+              }
+            ],
+            "top_values_cover": 0.544
+          }
+        },
+        {
+          "name": "strong_number",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 45809,
+            "null_count": 2293,
+            "null_rate": 0.0501,
+            "null_bucket": "under-50pct",
+            "distinct_count": 1860,
+            "distinct_bucket": "high-cardinality",
+            "min": "G0014",
+            "max": "H8669",
+            "looks_categorical": false,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
           }
         }
       ],
@@ -6226,8 +6484,8 @@
     "finding_question_link": {
       "description": "Joins findings to the observation questions in wa_obs_question_catalogue that they answer — the mechanism by which the question catalogue is scored against the evidence. At 332k rows it is one of the largest tables, but only 31 distinct questions are ever linked, so the link exercises a small fraction of the 424-row catalogue.",
       "description_source": "profiler",
-      "row_count": 332204,
-      "sql": "CREATE TABLE finding_question_link (\n            id INTEGER PRIMARY KEY,\n            finding_id INTEGER NOT NULL,\n            question_id INTEGER NOT NULL,         -- wa_obs_question_catalogue.obs_id\n            coverage TEXT,                        -- full | partial | evidence\n            created_at TEXT,\n            delete_flagged INTEGER DEFAULT 0\n        )",
+      "row_count": 357657,
+      "sql": "CREATE TABLE finding_question_link (\n            id INTEGER PRIMARY KEY,\n            finding_id INTEGER NOT NULL,\n            question_id INTEGER NOT NULL,         -- wa_obs_question_catalogue.obs_id\n            coverage TEXT,                        -- full | partial | evidence\n            created_at TEXT,\n            delete_flagged INTEGER DEFAULT 0\n        , status TEXT, pattern_type TEXT, mapped_date TEXT, validated_date TEXT, validated_by TEXT, session_b_note TEXT, source_legacy_ref TEXT)",
       "primary_key": [
         "id"
       ],
@@ -6242,16 +6500,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 47457,
+            "rows_scanned": 44708,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 47457,
+            "distinct_count": 44708,
             "distinct_bucket": "high-cardinality",
-            "min": 13860,
-            "max": 448826,
+            "min": 5184,
+            "max": 474280,
             "looks_categorical": false,
-            "sample_method": "rowid % 7 = 0 (deterministic stride)"
+            "sample_method": "rowid % 8 = 0 (deterministic stride)"
           }
         },
         {
@@ -6264,16 +6522,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 47457,
+            "rows_scanned": 44708,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 47457,
+            "distinct_count": 44620,
             "distinct_bucket": "high-cardinality",
-            "min": 16743,
-            "max": 1048893,
+            "min": 196,
+            "max": 1068889,
             "looks_categorical": false,
-            "sample_method": "rowid % 7 = 0 (deterministic stride)"
+            "sample_method": "rowid % 8 = 0 (deterministic stride)"
           }
         },
         {
@@ -6286,52 +6544,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 47457,
+            "rows_scanned": 44708,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 31,
-            "distinct_bucket": "11-200",
-            "min": 225,
-            "max": 421,
-            "looks_categorical": true,
-            "sample_method": "rowid % 7 = 0 (deterministic stride)",
-            "top_values": [
-              {
-                "v": 239,
-                "n": 5402
-              },
-              {
-                "v": 395,
-                "n": 5235
-              },
-              {
-                "v": 245,
-                "n": 5228
-              },
-              {
-                "v": 369,
-                "n": 3971
-              },
-              {
-                "v": 276,
-                "n": 3706
-              },
-              {
-                "v": 294,
-                "n": 1381
-              },
-              {
-                "v": 300,
-                "n": 1318
-              },
-              {
-                "v": 291,
-                "n": 1254
-              }
-            ],
-            "top_values_cover": 0.5794,
-            "uncontrolled_vocabulary": true
+            "distinct_count": 226,
+            "distinct_bucket": "high-cardinality",
+            "min": 1,
+            "max": 419,
+            "looks_categorical": false,
+            "sample_method": "rowid % 8 = 0 (deterministic stride)"
           }
         },
         {
@@ -6344,35 +6566,35 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 47457,
-            "null_count": 0,
-            "null_rate": 0.0,
-            "null_bucket": "none",
+            "rows_scanned": 44708,
+            "null_count": 2500,
+            "null_rate": 0.0559,
+            "null_bucket": "under-50pct",
             "distinct_count": 5,
             "distinct_bucket": "2-10",
             "min": "answers",
             "max": "rollup",
             "looks_categorical": true,
-            "sample_method": "rowid % 7 = 0 (deterministic stride)",
+            "sample_method": "rowid % 8 = 0 (deterministic stride)",
             "top_values": [
               {
                 "v": "direct",
-                "n": 26636
+                "n": 23307
               },
               {
                 "v": "full",
-                "n": 20817
-              },
-              {
-                "v": "answers",
-                "n": 2
+                "n": 18829
               },
               {
                 "v": "partial",
-                "n": 1
+                "n": 69
               },
               {
                 "v": "rollup",
+                "n": 2
+              },
+              {
+                "v": "answers",
                 "n": 1
               }
             ],
@@ -6390,16 +6612,16 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 47457,
+            "rows_scanned": 44708,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 8252,
+            "distinct_count": 8254,
             "distinct_bucket": "high-cardinality",
-            "min": "2026-06-09 04:53:47",
-            "max": "2026-07-05T16:06:15Z",
+            "min": "2026-06-09 04:49:38",
+            "max": "2026-08-29T05:29:37Z",
             "looks_categorical": false,
-            "sample_method": "rowid % 7 = 0 (deterministic stride)"
+            "sample_method": "rowid % 8 = 0 (deterministic stride)"
           }
         },
         {
@@ -6412,7 +6634,7 @@
           "description_source": "profiler",
           "profile": {
             "scope": "sampled",
-            "rows_scanned": 47457,
+            "rows_scanned": 44708,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -6421,19 +6643,305 @@
             "min": 0,
             "max": 1,
             "looks_categorical": true,
-            "sample_method": "rowid % 7 = 0 (deterministic stride)",
+            "sample_method": "rowid % 8 = 0 (deterministic stride)",
             "top_values": [
               {
                 "v": 0,
-                "n": 47456
+                "n": 44673
               },
               {
                 "v": 1,
-                "n": 1
+                "n": 35
               }
             ],
             "top_values_cover": 1.0,
             "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "status",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 44708,
+            "null_count": 44026,
+            "null_rate": 0.9847,
+            "null_bucket": "over-50pct",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
+            "min": "active",
+            "max": "validated",
+            "looks_categorical": true,
+            "sample_method": "rowid % 8 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "active",
+                "n": 640
+              },
+              {
+                "v": "validated",
+                "n": 42
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "pattern_type",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 44708,
+            "null_count": 44073,
+            "null_rate": 0.9858,
+            "null_bucket": "over-50pct",
+            "distinct_count": 13,
+            "distinct_bucket": "11-200",
+            "min": "",
+            "max": "synthesis_source (D)",
+            "looks_categorical": true,
+            "sample_method": "rowid % 8 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "synthesis_source (D)",
+                "n": 357
+              },
+              {
+                "v": "New finding",
+                "n": 73
+              },
+              {
+                "v": "Consistent with prior analysis",
+                "n": 40
+              },
+              {
+                "v": "",
+                "n": 38
+              },
+              {
+                "v": "*New finding*",
+                "n": 30
+              },
+              {
+                "v": "*Adds structure*",
+                "n": 27
+              },
+              {
+                "v": "Adds structure",
+                "n": 23
+              },
+              {
+                "v": "Gap identified",
+                "n": 20
+              }
+            ],
+            "top_values_cover": 0.9575,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "mapped_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 44708,
+            "null_count": 44026,
+            "null_rate": 0.9847,
+            "null_bucket": "over-50pct",
+            "distinct_count": 18,
+            "distinct_bucket": "11-200",
+            "min": "2026-04-27",
+            "max": "2026-05-02T17:51:10Z",
+            "looks_categorical": true,
+            "sample_method": "rowid % 8 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "2026-04-30T07:56:14Z",
+                "n": 73
+              },
+              {
+                "v": "2026-05-01T09:19:22Z",
+                "n": 66
+              },
+              {
+                "v": "2026-05-01T09:19:01Z",
+                "n": 61
+              },
+              {
+                "v": "2026-05-01T09:17:19Z",
+                "n": 46
+              },
+              {
+                "v": "2026-05-02T17:51:10Z",
+                "n": 45
+              },
+              {
+                "v": "2026-04-30T17:22:20Z",
+                "n": 44
+              },
+              {
+                "v": "2026-05-01T04:18:47Z",
+                "n": 43
+              },
+              {
+                "v": "2026-05-01T09:16:23Z",
+                "n": 43
+              }
+            ],
+            "top_values_cover": 0.6173,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "validated_date",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 44708,
+            "null_count": 44026,
+            "null_rate": 0.9847,
+            "null_bucket": "over-50pct",
+            "distinct_count": 18,
+            "distinct_bucket": "11-200",
+            "min": "2026-04-27",
+            "max": "2026-05-02T17:51:10Z",
+            "looks_categorical": true,
+            "sample_method": "rowid % 8 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "2026-04-30T07:56:14Z",
+                "n": 73
+              },
+              {
+                "v": "2026-05-01T09:19:22Z",
+                "n": 66
+              },
+              {
+                "v": "2026-05-01T09:19:01Z",
+                "n": 61
+              },
+              {
+                "v": "2026-05-01T09:17:19Z",
+                "n": 46
+              },
+              {
+                "v": "2026-05-02T17:51:10Z",
+                "n": 45
+              },
+              {
+                "v": "2026-04-30T17:22:20Z",
+                "n": 44
+              },
+              {
+                "v": "2026-05-01T04:18:47Z",
+                "n": 43
+              },
+              {
+                "v": "2026-05-01T09:16:23Z",
+                "n": 43
+              }
+            ],
+            "top_values_cover": 0.6173,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "validated_by",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 44708,
+            "null_count": 44068,
+            "null_rate": 0.9857,
+            "null_bucket": "over-50pct",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
+            "min": "claude_ai_2nd_tier_v1",
+            "max": "claude_ai_v1_8",
+            "looks_categorical": true,
+            "sample_method": "rowid % 8 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "claude_ai_v1_8",
+                "n": 549
+              },
+              {
+                "v": "claude_ai_2nd_tier_v1",
+                "n": 91
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "session_b_note",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 44708,
+            "null_count": 44026,
+            "null_rate": 0.9847,
+            "null_bucket": "over-50pct",
+            "distinct_count": 605,
+            "distinct_bucket": "high-cardinality",
+            "min": "",
+            "max": "Yes. The strongest evidence: Luk 7:47 — the woman's entire inner orientation of love is named as the lasting transformat… (+631 chars)",
+            "looks_categorical": false,
+            "sample_method": "rowid % 8 = 0 (deterministic stride)"
+          }
+        },
+        {
+          "name": "source_legacy_ref",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 44708,
+            "null_count": 41526,
+            "null_rate": 0.9288,
+            "null_bucket": "over-50pct",
+            "distinct_count": 3182,
+            "distinct_bucket": "high-cardinality",
+            "min": "CF:1",
+            "max": "WFCL:989",
+            "looks_categorical": false,
+            "sample_method": "rowid % 8 = 0 (deterministic stride)"
           }
         }
       ],
@@ -6606,6 +7114,184 @@
           "origin": "c"
         }
       ]
+    },
+    "finding_verse_index": {
+      "description": null,
+      "description_source": null,
+      "row_count": 475790,
+      "sql": "CREATE TABLE finding_verse_index (\n            id INTEGER PRIMARY KEY,\n            finding_id INTEGER NOT NULL,\n            verse_id INTEGER NOT NULL,       -- iba.verse.id (cross-database, not FK-enforced --\n                                              -- same pattern wa_verse_records.verse_id already uses)\n            reference_text TEXT,\n            source TEXT NOT NULL,            -- structural | finding_verse_link | text_mined\n            created_at TEXT\n        )",
+      "primary_key": [
+        "id"
+      ],
+      "columns": [
+        {
+          "name": "id",
+          "type": "INTEGER",
+          "notnull": false,
+          "default": null,
+          "pk": true,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 47579,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 47579,
+            "distinct_bucket": "high-cardinality",
+            "min": 434430,
+            "max": 910210,
+            "looks_categorical": false,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
+          }
+        },
+        {
+          "name": "finding_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 47579,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 47409,
+            "distinct_bucket": "high-cardinality",
+            "min": 1,
+            "max": 1068891,
+            "looks_categorical": false,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
+          }
+        },
+        {
+          "name": "verse_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 47579,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 13159,
+            "distinct_bucket": "high-cardinality",
+            "min": 1,
+            "max": 29733,
+            "looks_categorical": false,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
+          }
+        },
+        {
+          "name": "reference_text",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 47579,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 13263,
+            "distinct_bucket": "high-cardinality",
+            "min": "1Ch 10:13",
+            "max": "Zep 3:9",
+            "looks_categorical": false,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)"
+          }
+        },
+        {
+          "name": "source",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 47579,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 3,
+            "distinct_bucket": "2-10",
+            "min": "finding_verse_link",
+            "max": "text_mined",
+            "looks_categorical": true,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "structural",
+                "n": 33140
+              },
+              {
+                "v": "text_mined",
+                "n": 14071
+              },
+              {
+                "v": "finding_verse_link",
+                "n": 368
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": false,
+          "default": null,
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "sampled",
+            "rows_scanned": 47579,
+            "null_count": 0,
+            "null_rate": 0.0,
+            "null_bucket": "none",
+            "distinct_count": 3,
+            "distinct_bucket": "2-10",
+            "min": "2026-08-29T06:46:05Z",
+            "max": "2026-08-29T10:31:16Z",
+            "looks_categorical": true,
+            "sample_method": "rowid % 10 = 0 (deterministic stride)",
+            "top_values": [
+              {
+                "v": "2026-08-29T10:31:16Z",
+                "n": 33140
+              },
+              {
+                "v": "2026-08-29T07:59:34Z",
+                "n": 14071
+              },
+              {
+                "v": "2026-08-29T06:46:05Z",
+                "n": 368
+              }
+            ],
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
+          }
+        }
+      ],
+      "foreign_keys": [],
+      "checks": [],
+      "indexes": []
     },
     "finding_verse_link": {
       "description": "Links findings to the verses they rest on, distinguishing the anchor verse from supporting ones. The table is small and lopsided: 3,586 of 3,659 rows are 'anchor' rows that carry only a textual reference and no verse_record_id, while the 73 'SUPPORT' rows are the only ones actually resolved to a verse record.",
@@ -12540,7 +13226,7 @@
             "distinct_count": 948,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
-            "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
+            "max": "`wa_obs_question_catalogue` is a live table in `bible_research.db` — 424 prompts organised by tier and component, each w… (+1695 chars)",
             "looks_categorical": false
           }
         },
@@ -12558,9 +13244,9 @@
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 740,
+            "distinct_count": 760,
             "distinct_bucket": "high-cardinality",
-            "min": 0,
+            "min": 49,
             "max": 74071,
             "looks_categorical": false
           }
@@ -12614,7 +13300,7 @@
             "distinct_count": 949,
             "distinct_bucket": "high-cardinality",
             "min": 92,
-            "max": 1040,
+            "max": 1242,
             "looks_categorical": false
           }
         },
@@ -12640,11 +13326,11 @@
             "top_values": [
               {
                 "v": "claude_code",
-                "n": 719
+                "n": 745
               },
               {
                 "v": "claude_ai",
-                "n": 228
+                "n": 202
               },
               {
                 "v": "researcher",
@@ -12776,10 +13462,10 @@
           "profile": {
             "scope": "exact",
             "rows_scanned": 949,
-            "null_count": 71,
-            "null_rate": 0.0748,
+            "null_count": 38,
+            "null_rate": 0.04,
             "null_bucket": "under-50pct",
-            "distinct_count": 747,
+            "distinct_count": 780,
             "distinct_bucket": "high-cardinality",
             "min": "{\"book\": \"Amo\", \"chapter\": 1, \"verses\": [\"Amo 1:1\", \"Amo 1:2\", \"Amo 1:3\", \"Amo 1:4\", \"Amo 1:5\", \"Amo 1:6\", \"Amo 1:7\", \"A… (+446 chars)",
             "max": "{\"term\": \"H6531\", \"cluster_code\": \"M06\", \"source\": \"lexical-model-2026\", \"verses\": [\"Exo 1:13\", \"Exo 1:14\", \"Lev 25:43\",… (+233 chars)",
@@ -12962,18 +13648,43 @@
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1,
-            "distinct_bucket": "constant",
+            "distinct_count": 7,
+            "distinct_bucket": "2-10",
             "min": "2026-08-24T09:58:29Z",
-            "max": "2026-08-24T09:58:29Z",
+            "max": "2026-08-27T09:42:16Z",
             "looks_categorical": true,
             "top_values": [
               {
                 "v": "2026-08-24T09:58:29Z",
-                "n": 949
+                "n": 896
+              },
+              {
+                "v": "2026-08-26T16:21:36Z",
+                "n": 20
+              },
+              {
+                "v": "2026-08-27T09:08:24Z",
+                "n": 13
+              },
+              {
+                "v": "2026-08-27T09:05:31Z",
+                "n": 11
+              },
+              {
+                "v": "2026-08-27T09:07:00Z",
+                "n": 7
+              },
+              {
+                "v": "2026-08-27T09:17:26Z",
+                "n": 1
+              },
+              {
+                "v": "2026-08-27T09:42:16Z",
+                "n": 1
               }
             ],
-            "top_values_cover": 1.0
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
           }
         }
       ],
@@ -13037,145 +13748,7 @@
           ],
           "origin": "c"
         }
-      ],
-      "retired_columns": {
-        "supersedes_id": {
-          "name": "supersedes_id",
-          "type": "INTEGER",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "The earlier prose_section this row replaces. Present on 90 rows, forming a self-referential revision chain within the table.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 949,
-            "null_rate": 0.9125,
-            "null_bucket": "over-50pct",
-            "distinct_count": 91,
-            "distinct_bucket": "11-200",
-            "min": 1,
-            "max": 988,
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": 1,
-                "n": 1
-              },
-              {
-                "v": 17,
-                "n": 1
-              },
-              {
-                "v": 19,
-                "n": 1
-              },
-              {
-                "v": 29,
-                "n": 1
-              },
-              {
-                "v": 45,
-                "n": 1
-              },
-              {
-                "v": 46,
-                "n": 1
-              },
-              {
-                "v": 48,
-                "n": 1
-              },
-              {
-                "v": 49,
-                "n": 1
-              }
-            ],
-            "top_values_cover": 0.0879
-          },
-          "retired_at": "2026-08-24"
-        },
-        "superseded_by_id": {
-          "name": "superseded_by_id",
-          "type": "INTEGER",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "The inverse pointer to the row that replaced this one, maintained symmetrically with supersedes_id on the same 90 rows.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 949,
-            "null_rate": 0.9125,
-            "null_bucket": "over-50pct",
-            "distinct_count": 91,
-            "distinct_bucket": "11-200",
-            "min": 15,
-            "max": 1040,
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": 15,
-                "n": 1
-              },
-              {
-                "v": 52,
-                "n": 1
-              },
-              {
-                "v": 53,
-                "n": 1
-              },
-              {
-                "v": 54,
-                "n": 1
-              },
-              {
-                "v": 55,
-                "n": 1
-              },
-              {
-                "v": 61,
-                "n": 1
-              },
-              {
-                "v": 62,
-                "n": 1
-              },
-              {
-                "v": 63,
-                "n": 1
-              }
-            ],
-            "top_values_cover": 0.0879
-          },
-          "retired_at": "2026-08-24"
-        },
-        "source_file": {
-          "name": "source_file",
-          "type": "TEXT",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "The markdown file the prose was ingested from, recording the path or filename it came in on. Near-universally populated, showing the store was built by importing files rather than authoring in place.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 1040,
-            "null_count": 20,
-            "null_rate": 0.0192,
-            "null_bucket": "under-50pct",
-            "distinct_count": 871,
-            "distinct_bucket": "high-cardinality",
-            "min": "Sessions/Session_Clusters/M01/Published/wa-cluster-M01-ch1-draft-v1-20260523.md",
-            "max": "wa-prose_ch5-obslog-v1_0-20260423.md",
-            "looks_categorical": false
-          },
-          "retired_at": "2026-08-24"
-        }
-      }
+      ]
     },
     "prose_section_dimension_link": {
       "description": "Declared as a many-to-many link between prose sections and dimensions, with a link_type qualifying the relationship, but it holds 0 rows. It was created, keyed and uniquely indexed, and never used — a plausible casualty of the dimension layer's retirement.",
@@ -13387,7 +13960,7 @@
             "distinct_count": 948,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
-            "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
+            "max": "`wa_obs_question_catalogue` is a live table in `bible_research.db` — 424 prompts organised by tier and component, each w… (+1695 chars)",
             "looks_categorical": false
           }
         },
@@ -13802,7 +14375,7 @@
             "distinct_count": 948,
             "distinct_bucket": "high-cardinality",
             "min": "# Amos 1–2 — inner-being oracle reading (Phase-2 meaning synthesis)\n\n- **Source:** Phase-1 lexicals per oracle unit (pro… (+3895 chars)",
-            "max": "Verse Context is the stage at which the programme turns the verse corpus into classified evidence. For every active Hebr… (+5652 chars)",
+            "max": "`wa_obs_question_catalogue` is a live table in `bible_research.db` — 424 prompts organised by tier and component, each w… (+1695 chars)",
             "looks_categorical": false
           }
         },
@@ -14094,7 +14667,7 @@
     "prose_section_fts_data": {
       "description": "An FTS5-managed shadow table holding the inverted index itself as opaque binary segment blobs. It is SQLite internal machinery — the contents are not human-readable and must never be written or interpreted directly; the index is maintained automatically as prose_section changes.",
       "description_source": "profiler",
-      "row_count": 1086,
+      "row_count": 1097,
       "sql": "CREATE TABLE 'prose_section_fts_data'(id INTEGER PRIMARY KEY, block BLOB)",
       "primary_key": [
         "id"
@@ -14110,14 +14683,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1086,
+            "rows_scanned": 1097,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1086,
+            "distinct_count": 1097,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 3435973836815,
+            "max": 962072674305,
             "looks_categorical": false
           }
         },
@@ -14131,14 +14704,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1086,
+            "rows_scanned": 1097,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1086,
+            "distinct_count": 1097,
             "distinct_bucket": "high-cardinality",
-            "min": "b'\\x00\\x00\\x00\\x00\\x05\\x08\\xa1\\x1c\\x00\\x02\\x03\\x01\\x02\\x05\\x01\\x02\\x00\\x03\\x18\\x01\\x10\\x19\\x01\\x0f\\x14\\x01\\x10\\x00\\x02\\x… (+49 chars)",
-            "max": "b'\\x875\\xfc\\xddX\\xb5\\x06\\x00\\x00\\x00\\x00\\x00'",
+            "min": "b'\\x00\\x00\\x00\\x00\\x05\\x07\\xa2\\x05\\x00\\x05\\x02\\x01\\x01\\x03\\x01\\x01\\x04\\x01\\x01\\x05\\x01\\x01\\x07\\x01\\x01\\x00\\x00\\x00\\x00\\x… (+44 chars)",
+            "max": "b'\\x875\\xfc\\x85v\\xb5\\x06\\x00\\x00\\x00\\x00\\x00'",
             "looks_categorical": false
           }
         }
@@ -14191,9 +14764,9 @@
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 845,
+            "distinct_count": 849,
             "distinct_bucket": "high-cardinality",
-            "min": "b'\\x81 \\x03\\x00\\x00\\x00\\x00\\x00'",
+            "min": "b'7\\x04\\x00\\x00\\x00\\x00\\x00'",
             "max": "b'\\xf8Y\\x08\\x00\\x00\\x00\\x00\\x00'",
             "looks_categorical": false
           }
@@ -14206,7 +14779,7 @@
     "prose_section_fts_idx": {
       "description": "An FTS5-managed shadow table mapping index segments and term prefixes to the pages within prose_section_fts_data where their postings live — the b-tree lookup layer of the index. Internal machinery; the 'term' values are binary prefix keys, not words from the prose.",
       "description_source": "profiler",
-      "row_count": 841,
+      "row_count": 845,
       "sql": "CREATE TABLE 'prose_section_fts_idx'(segid, term, pgno, PRIMARY KEY(segid, term)) WITHOUT ROWID",
       "primary_key": [
         "segid",
@@ -14223,14 +14796,14 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 841,
+            "rows_scanned": 845,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 8,
+            "distinct_count": 7,
             "distinct_bucket": "2-10",
             "min": 1,
-            "max": 25,
+            "max": 7,
             "looks_categorical": true,
             "top_values": [
               {
@@ -14238,32 +14811,28 @@
                 "n": 708
               },
               {
-                "v": 4,
-                "n": 54
+                "v": 6,
+                "n": 132
               },
               {
                 "v": 2,
-                "n": 28
-              },
-              {
-                "v": 20,
-                "n": 16
-              },
-              {
-                "v": 24,
-                "n": 16
-              },
-              {
-                "v": 25,
-                "n": 15
+                "n": 1
               },
               {
                 "v": 3,
-                "n": 2
+                "n": 1
+              },
+              {
+                "v": 4,
+                "n": 1
               },
               {
                 "v": 5,
-                "n": 2
+                "n": 1
+              },
+              {
+                "v": 7,
+                "n": 1
               }
             ],
             "top_values_cover": 1.0
@@ -14279,11 +14848,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 841,
+            "rows_scanned": 845,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 809,
+            "distinct_count": 799,
             "distinct_bucket": "high-cardinality",
             "min": "b''",
             "max": "b'0\\xd7\\x95'",
@@ -14300,11 +14869,11 @@
           "description_source": "profiler",
           "profile": {
             "scope": "exact",
-            "rows_scanned": 841,
+            "rows_scanned": 845,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 732,
+            "distinct_count": 762,
             "distinct_bucket": "high-cardinality",
             "min": 2,
             "max": 1866,
@@ -14330,7 +14899,7 @@
       "description": "The controlled vocabulary of prose section kinds — 108 codes spanning programme documentation, per-session outputs, cluster findings and lexical prose — each with a label, the stage that produces it, and expected length bounds. It is the only real enforcement behind prose_section.section_type_id, and it has grown by accretion: over half the types belong to 'programme' rather than to any analytical stage.",
       "description_source": "profiler",
       "row_count": 108,
-      "sql": "CREATE TABLE prose_section_type (\n            id                   INTEGER PRIMARY KEY,\n            code                 TEXT    NOT NULL UNIQUE,\n            label                TEXT    NOT NULL,\n            source_stage         TEXT    NOT NULL,\n            lifecycle_tag        TEXT,\n            chapter_no           INTEGER,\n            description          TEXT,\n            expected_length_min  INTEGER,\n            expected_length_max  INTEGER,\n            sort_order           INTEGER NOT NULL DEFAULT 0,\n            delete_flagged       INTEGER NOT NULL DEFAULT 0,\n            created_at           TEXT    NOT NULL DEFAULT (datetime('now'))\n        , book_order INTEGER, book_label TEXT, section_order INTEGER, section_label TEXT, version INTEGER, updated_at TEXT)",
+      "sql": "CREATE TABLE \"prose_section_type\" (\n                id                   INTEGER PRIMARY KEY,\n                code                 TEXT    NOT NULL UNIQUE,\n                label                TEXT    NOT NULL,\n                source_stage         TEXT    NOT NULL,\n                lifecycle_tag        TEXT,\n                chapter_no           INTEGER,\n                description          TEXT,\n                expected_length_min  INTEGER,\n                expected_length_max  INTEGER,\n                sort_order           INTEGER NOT NULL DEFAULT 0,\n                delete_flagged       INTEGER NOT NULL DEFAULT 0,\n                created_at           TEXT    NOT NULL DEFAULT (datetime('now')),\n                book_order           INTEGER,\n                book_label           TEXT,\n                section_order        INTEGER,\n                section_label        TEXT,\n                version              INTEGER,\n                updated_at           TEXT,\n                CHECK (source_stage IN ('programme','session_a','session_b','session_b_phase9','session_c','session_d','synthesis','verse-analysis','findings','essay','contributor')),\n                CHECK (lifecycle_tag IS NULL OR lifecycle_tag IN ('source','v1','v2','v3')),\n                CHECK (book_label IS NULL OR book_label IN ('Programme','Detail design','Findings','Essays'))\n            )",
       "primary_key": [
         "id"
       ],
@@ -14556,8 +15125,7 @@
                 "n": 3
               }
             ],
-            "top_values_cover": 0.9444,
-            "uncontrolled_vocabulary": true
+            "top_values_cover": 0.9444
           }
         },
         {
@@ -14593,8 +15161,7 @@
                 "n": 2
               }
             ],
-            "top_values_cover": 1.0,
-            "uncontrolled_vocabulary": true
+            "top_values_cover": 1.0
           }
         },
         {
@@ -15043,8 +15610,7 @@
                 "n": 1
               }
             ],
-            "top_values_cover": 1.0,
-            "uncontrolled_vocabulary": true
+            "top_values_cover": 1.0
           }
         },
         {
@@ -15170,7 +15736,7 @@
             "distinct_count": 108,
             "distinct_bucket": "11-200",
             "min": 1041,
-            "max": 1148,
+            "max": 1150,
             "looks_categorical": true,
             "top_values": [
               {
@@ -15223,23 +15789,32 @@
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1,
-            "distinct_bucket": "constant",
+            "distinct_count": 2,
+            "distinct_bucket": "binary",
             "min": "2026-08-24T09:58:29Z",
-            "max": "2026-08-24T09:58:29Z",
+            "max": "2026-08-24T17:32:28Z",
             "looks_categorical": true,
             "top_values": [
               {
                 "v": "2026-08-24T09:58:29Z",
-                "n": 108
+                "n": 107
+              },
+              {
+                "v": "2026-08-24T17:32:28Z",
+                "n": 1
               }
             ],
-            "top_values_cover": 1.0
+            "top_values_cover": 1.0,
+            "uncontrolled_vocabulary": true
           }
         }
       ],
       "foreign_keys": [],
-      "checks": [],
+      "checks": [
+        "source_stage IN ('programme','session_a','session_b','session_b_phase9','session_c','session_d','synthesis','verse-analysis','findings','essay','contributor')",
+        "lifecycle_tag IS NULL OR lifecycle_tag IN ('source','v1','v2','v3')",
+        "book_label IS NULL OR book_label IN ('Programme','Detail design','Findings','Essays')"
+      ],
       "indexes": [
         {
           "name": "idx_pst_stage_lifecycle",
@@ -15260,10 +15835,100 @@
         }
       ]
     },
+    "prose_section_verse_link": {
+      "description": null,
+      "description_source": null,
+      "row_count": 0,
+      "sql": "CREATE TABLE prose_section_verse_link (\n                    prose_section_id INTEGER NOT NULL REFERENCES prose_section(id),\n                    verse_reference   TEXT NOT NULL,\n                    link_type         TEXT NOT NULL DEFAULT 'discusses',\n                    created_at        TEXT NOT NULL DEFAULT (datetime('now')),\n                    PRIMARY KEY (prose_section_id, verse_reference, link_type)\n                )",
+      "primary_key": [
+        "prose_section_id",
+        "verse_reference",
+        "link_type"
+      ],
+      "columns": [
+        {
+          "name": "prose_section_id",
+          "type": "INTEGER",
+          "notnull": true,
+          "default": null,
+          "pk": true,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "verse_reference",
+          "type": "TEXT",
+          "notnull": true,
+          "default": null,
+          "pk": true,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "link_type",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "'discusses'",
+          "pk": true,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        },
+        {
+          "name": "created_at",
+          "type": "TEXT",
+          "notnull": true,
+          "default": "datetime('now')",
+          "pk": false,
+          "description": null,
+          "description_source": null,
+          "profile": {
+            "scope": "exact",
+            "rows_scanned": 0,
+            "empty_table": true
+          }
+        }
+      ],
+      "foreign_keys": [
+        {
+          "column": "prose_section_id",
+          "references": "prose_section.id",
+          "on_delete": "NO ACTION",
+          "on_update": "NO ACTION"
+        }
+      ],
+      "checks": [],
+      "indexes": [
+        {
+          "name": "sqlite_autoindex_prose_section_verse_link_1",
+          "unique": true,
+          "columns": [
+            "prose_section_id",
+            "verse_reference",
+            "link_type"
+          ],
+          "origin": "pk"
+        }
+      ]
+    },
     "record_change_log": {
       "description": null,
       "description_source": null,
-      "row_count": 1148,
+      "row_count": 1242,
       "sql": "CREATE TABLE record_change_log (\n                id              INTEGER PRIMARY KEY AUTOINCREMENT,\n                target_table    TEXT    NOT NULL,\n                target_id       INTEGER NOT NULL,\n                change_type     TEXT    NOT NULL CHECK (change_type IN ('insert','change','delete')),\n                change_datetime TEXT    NOT NULL,\n                change_source   TEXT,\n                change_reason   TEXT,\n                changed_by      TEXT    NOT NULL,\n                status          TEXT    NOT NULL DEFAULT 'change_applied'\n                                    CHECK (status IN ('change_proposed','change_applied','declined')),\n                payload         BLOB\n            )",
       "primary_key": [
         "id"
@@ -15279,14 +15944,14 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1148,
+            "distinct_count": 1242,
             "distinct_bucket": "high-cardinality",
             "min": 1,
-            "max": 1148,
+            "max": 1242,
             "looks_categorical": false
           }
         },
@@ -15300,7 +15965,7 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -15312,11 +15977,11 @@
             "top_values": [
               {
                 "v": "prose_section",
-                "n": 1040
+                "n": 1132
               },
               {
                 "v": "prose_section_type",
-                "n": 108
+                "n": 110
               }
             ],
             "top_values_cover": 1.0,
@@ -15333,7 +15998,7 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -15354,7 +16019,7 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -15370,7 +16035,7 @@
               },
               {
                 "v": "change",
-                "n": 91
+                "n": 185
               }
             ],
             "top_values_cover": 1.0
@@ -15386,22 +16051,51 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1,
-            "distinct_bucket": "constant",
+            "distinct_count": 15,
+            "distinct_bucket": "11-200",
             "min": "2026-08-24T09:58:29Z",
-            "max": "2026-08-24T09:58:29Z",
+            "max": "2026-08-27T09:42:16Z",
             "looks_categorical": true,
             "top_values": [
               {
                 "v": "2026-08-24T09:58:29Z",
                 "n": 1148
+              },
+              {
+                "v": "2026-08-26T16:21:36Z",
+                "n": 25
+              },
+              {
+                "v": "2026-08-27T05:03:35Z",
+                "n": 13
+              },
+              {
+                "v": "2026-08-27T09:08:24Z",
+                "n": 13
+              },
+              {
+                "v": "2026-08-27T04:57:55Z",
+                "n": 11
+              },
+              {
+                "v": "2026-08-27T09:05:31Z",
+                "n": 11
+              },
+              {
+                "v": "2026-08-27T05:00:59Z",
+                "n": 7
+              },
+              {
+                "v": "2026-08-27T09:07:00Z",
+                "n": 7
               }
             ],
-            "top_values_cover": 1.0
+            "top_values_cover": 0.9944,
+            "uncontrolled_vocabulary": true
           }
         },
         {
@@ -15414,22 +16108,51 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 1,
-            "distinct_bucket": "constant",
-            "min": "migration/prose_change_log_build_v1_20260824.py",
-            "max": "migration/prose_change_log_build_v1_20260824.py",
+            "distinct_count": 15,
+            "distinct_bucket": "11-200",
+            "min": "PATCH-20260827T045741Z-PROSE-CHAPTER-SUPERSEDE",
+            "max": "temp_backfill_word_count_20260826",
             "looks_categorical": true,
             "top_values": [
               {
                 "v": "migration/prose_change_log_build_v1_20260824.py",
                 "n": 1148
+              },
+              {
+                "v": "temp_backfill_word_count_20260826",
+                "n": 25
+              },
+              {
+                "v": "PATCH-20260827T050325Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 13
+              },
+              {
+                "v": "PATCH-20260827T090818Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 13
+              },
+              {
+                "v": "PATCH-20260827T045741Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 11
+              },
+              {
+                "v": "PATCH-20260827T090524Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 11
+              },
+              {
+                "v": "PATCH-20260827T050050Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 7
+              },
+              {
+                "v": "PATCH-20260827T090654Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 7
               }
             ],
-            "top_values_cover": 1.0
+            "top_values_cover": 0.9944,
+            "uncontrolled_vocabulary": true
           }
         },
         {
@@ -15442,13 +16165,13 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
-            "distinct_count": 2,
-            "distinct_bucket": "binary",
-            "min": "migration",
+            "distinct_count": 16,
+            "distinct_bucket": "11-200",
+            "min": "PATCH-20260827T045741Z-PROSE-CHAPTER-SUPERSEDE",
             "max": "migration baseline",
             "looks_categorical": true,
             "top_values": [
@@ -15459,9 +16182,33 @@
               {
                 "v": "migration",
                 "n": 91
+              },
+              {
+                "v": "escalation #832 item 2 -- word_count was never computed for this row",
+                "n": 25
+              },
+              {
+                "v": "PATCH-20260827T050325Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 13
+              },
+              {
+                "v": "PATCH-20260827T090818Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 13
+              },
+              {
+                "v": "PATCH-20260827T045741Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 11
+              },
+              {
+                "v": "PATCH-20260827T090524Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 11
+              },
+              {
+                "v": "PATCH-20260827T050050Z-PROSE-CHAPTER-SUPERSEDE",
+                "n": 7
               }
             ],
-            "top_values_cover": 1.0,
+            "top_values_cover": 0.9887,
             "uncontrolled_vocabulary": true
           }
         },
@@ -15475,7 +16222,7 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -15487,7 +16234,7 @@
             "top_values": [
               {
                 "v": "claude_code",
-                "n": 1148
+                "n": 1242
               }
             ],
             "top_values_cover": 1.0
@@ -15503,7 +16250,7 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 0,
             "null_rate": 0.0,
             "null_bucket": "none",
@@ -15515,7 +16262,7 @@
             "top_values": [
               {
                 "v": "change_applied",
-                "n": 1148
+                "n": 1242
               }
             ],
             "top_values_cover": 1.0
@@ -15531,18 +16278,34 @@
           "description_source": null,
           "profile": {
             "scope": "exact",
-            "rows_scanned": 1148,
+            "rows_scanned": 1242,
             "null_count": 1057,
-            "null_rate": 0.9207,
+            "null_rate": 0.851,
             "null_bucket": "over-50pct",
-            "distinct_count": 91,
+            "distinct_count": 184,
             "distinct_bucket": "11-200",
-            "min": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffeTK\\x8f\\xdc6\\x0c\\xfe+\\xc4\\\\z\\x19\\x0ff\\xbc\\x8b\\xa0\\xd8\\x9e\\xf2\\xe8!=$@\\xb2h\\x81… (+2171 chars)",
+            "min": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff]TM\\x8f\\xdbF\\x0c\\xfd+\\x84/\\xbd\\xd8\\xc6\\xae\\x12\\x14\\x85oM\\x02\\xb4=gO\\xc1\\x02\\x0… (+2226 chars)",
             "max": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff\\xed\\xbdk\\x93\\xdbV\\x96%\\xfaW\\xd0\\xea\\x0fJ9\\x98\\xe9|K\\xca\\x9c\\x18\\x87,\\xd9.\\xb9… (+64527 chars)",
             "looks_categorical": true,
             "top_values": [
               {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff\\x8dW\\xdbn\\x1b7\\x10\\xfd\\x15B}pR\\xe8\\xe28qR8OI[\\xb4\\x05\\x8a\"E\\xfcT\\x08\\x90\\xb9\\… (+4823 chars)",
+                "n": 2
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff]TM\\x8f\\xdbF\\x0c\\xfd+\\x84/\\xbd\\xd8\\xc6\\xae\\x12\\x14\\x85oM\\x02\\xb4=gO\\xc1\\x02\\x0… (+2226 chars)",
+                "n": 1
+              },
+              {
                 "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffeTK\\x8f\\xdc6\\x0c\\xfe+\\xc4\\\\z\\x19\\x0ff\\xbc\\x8b\\xa0\\xd8\\x9e\\xf2\\xe8!=$@\\xb2h\\x81… (+2171 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffeTM\\x8f\\xdb6\\x14\\xfc+\\x84/M\\x01{\\xb1\\xab\\x04A\\xb1\\xb7|\\\\r\\n\\x90\\x06=\\x14\\x0b8O… (+2296 chars)",
+                "n": 1
+              },
+              {
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffeTQo\\xdb6\\x10\\xfe+\\x07\\xbfl\\x05,\\xc3Q\\x8bbp\\x9f2d+Z\\xac\\r\\x90\\xe6eC\\x00\\xe7D\\x… (+2412 chars)",
                 "n": 1
               },
               {
@@ -15550,31 +16313,15 @@
                 "n": 1
               },
               {
-                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffmTMo\\xdbH\\x0c\\xfd+\\x84/m\\x01\\xcb\\xb0\\x95\\xa0(|\\xeb\\xa6\\x97\\x9e\\x16hsZ\\x040\\x98… (+2231 chars)",
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffeU]o\\x1b7\\x10\\xfc+\\x0b\\xbd\\xb4\\x05,\\xd9V\\x8c&U\\x9f\\x9a&-\\xf2\\xd2\\x18\\xb6\\x81\\x… (+3135 chars)",
                 "n": 1
               },
               {
-                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffuY\\xefo\\xdb8\\x12\\xfdW\\x88\\x14\\xb8&\\x81\\x9d\\x8b\\x9d\\x1fM\\xd4O\\xbdv\\xd1\\xdb\\xc5\\… (+8278 chars)",
-                "n": 1
-              },
-              {
-                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff}U[\\x8b\\xdbF\\x14\\xfe+\\x07\\xbf\\xa4\\x01\\xcbx\\xb5K\\x08\\xbbOM\\x08m\\xfa\\xd0\\x16vi ,… (+2389 chars)",
-                "n": 1
-              },
-              {
-                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff}WMo\\x1b7\\x10\\xfd+\\x84/\\xb9H\\x82\\xed\\xb8F\\xe1\\x9e\\xdc[.E\\x0e\\x01\\x02\\x14\\x06\\x… (+4095 chars)",
-                "n": 1
-              },
-              {
-                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff}W\\xdb\\x8e\\xdb6\\x10\\xfd\\x15b_\\x92\\x00\\x96\\xb3\\xd9n\\nt\\xf7\\xa1\\xc8\\xb5\\xedK\\x0b… (+4814 chars)",
-                "n": 1
-              },
-              {
-                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xff\\x85W\\xdbn\\xdc6\\x10\\xfd\\x15\\xc2/\\x05\\x8c\\xdd\\x85\\xed\\xb8\\x01\\xea<\\xa5i\\x81\\x06… (+4913 chars)",
+                "v": "b'\\x1f\\x8b\\x08\\x00\\x00\\x00\\x00\\x00\\x02\\xffe\\x90\\xc1j\\xc30\\x10D\\x7feq\\xaf6\\xd8\\x8e\\t\\x89o\\x85\\xf6\\x0b\\x1c\\xe8\\xa5 6\\xd2\\x… (+641 chars)",
                 "n": 1
               }
             ],
-            "top_values_cover": 0.0879
+            "top_values_cover": 0.0486
           }
         }
       ],
@@ -30317,53 +31064,7 @@
         }
       ],
       "checks": [],
-      "indexes": [],
-      "retired_columns": {
-        "file_id": {
-          "name": "file_id",
-          "type": "INTEGER",
-          "notnull": true,
-          "default": null,
-          "pk": false,
-          "description": "FK to wa_file_index — the word-study file the flag was raised against. Legacy routing; there is no bypass FK to word_registry on this table.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 19866,
-            "null_count": 0,
-            "null_rate": 0.0,
-            "null_bucket": "none",
-            "distinct_count": 301,
-            "distinct_bucket": "high-cardinality",
-            "min": 1,
-            "max": 344,
-            "looks_categorical": false
-          },
-          "retired_at": "2026-08-24"
-        },
-        "term_id": {
-          "name": "term_id",
-          "type": "TEXT",
-          "notnull": false,
-          "default": null,
-          "pk": false,
-          "description": "The flagged term as a string. Its contents are inconsistent: mostly Strong's-like or placeholder forms ('NO STRONG-135-metameleia'), but 315 rows hold bare integers ('107'), so the column mixes at least two identifier schemes.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 19866,
-            "null_count": 0,
-            "null_rate": 0.0,
-            "null_bucket": "none",
-            "distinct_count": 4500,
-            "distinct_bucket": "high-cardinality",
-            "min": "107",
-            "max": "NO STRONG-135-metameleia",
-            "looks_categorical": false
-          },
-          "retired_at": "2026-08-24"
-        }
-      }
+      "indexes": []
     },
     "wa_dim_review_cluster_log": {
       "description": "A completion log for the retired dimension review: one row per C-code cluster finished, six in all (C10, C13, C17, C20, C21, C22), recorded between 2026-04-09 and 2026-05-02. Against the 22 C-codes present in wa_dimension_index it shows the review was closed out for only six clusters before the layer was abandoned.",
@@ -38011,43 +38712,7 @@
           ],
           "origin": "u"
         }
-      ],
-      "retired_columns": {
-        "deprecated": {
-          "name": "deprecated",
-          "type": "INTEGER",
-          "notnull": false,
-          "default": "0",
-          "pk": false,
-          "description": "Whether the code is retired: 0 for 25 codes, 1 for 4. Retired codes are kept rather than deleted so existing flag rows still resolve.",
-          "description_source": "profiler",
-          "profile": {
-            "scope": "exact",
-            "rows_scanned": 29,
-            "null_count": 0,
-            "null_rate": 0.0,
-            "null_bucket": "none",
-            "distinct_count": 2,
-            "distinct_bucket": "binary",
-            "min": 0,
-            "max": 1,
-            "looks_categorical": true,
-            "top_values": [
-              {
-                "v": 0,
-                "n": 25
-              },
-              {
-                "v": 1,
-                "n": 4
-              }
-            ],
-            "top_values_cover": 1.0,
-            "uncontrolled_vocabulary": true
-          },
-          "retired_at": "2026-08-24"
-        }
-      }
+      ]
     },
     "wa_rule_registry": {
       "description": "The programme's global rules held as data: 59 rules with their text, rationale, application notes and supersession chain, all imported from a single JSON document. It is a live governance record only in the historical sense — 25 of the 59 rules are already marked obsolete and nothing has been written since April.",
@@ -47179,12 +47844,12 @@
     }
   },
   "counts": {
-    "tables": 111,
-    "columns": 1194,
-    "pk_columns": 106,
-    "foreign_keys": 74,
-    "checks": 8,
-    "indexes": 167,
+    "tables": 113,
+    "columns": 1216,
+    "pk_columns": 110,
+    "foreign_keys": 75,
+    "checks": 11,
+    "indexes": 168,
     "triggers": 5,
     "views": 2
   }

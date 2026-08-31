@@ -244,7 +244,7 @@ def _status_for(db: Db, set_by_substr: str, fallback: str) -> str:
 # ── the config-driven state-derivation rule engine ───────────────────────────────────────────────
 def _condition_true(condition_key: str, *, next_action: str | None, has_resolution: bool,
                     assignee_changed: bool, has_explicit_state: bool = False,
-                    needs_followup: bool = False) -> bool:
+                    needs_followup: bool = False, cur_next_action: str | None = None) -> bool:
     """The fixed, small vocabulary cfg_escalation_transition.condition_key draws from -- see
     escalation-rebuild-design-v1-20260820.md sec2.4. A new condition needs a code change here
     (a new named boolean); which RULE consumes it, in what priority, with what resulting status,
@@ -265,12 +265,26 @@ def _condition_true(condition_key: str, *, next_action: str | None, has_resoluti
                                                                 # to Claude, not straight to
                                                                 # completed -- checked ahead of the
                                                                 # plain has_resolution rule.
+    if condition_key == "followup_cleared_was_approved":
+        # Researcher, 2026-08-31, found live: clearing needs_claude_followup (Claude reporting the
+        # approved write is actually applied) never reached completed on its own -- the priority
+        # 1/2 'approved' rules above only fire when the CALLER re-supplies -NextAction approved
+        # THIS call, which a bare -NeedsFollowup 0 call never does, so it fell through to the
+        # generic reassignment rule (priority 7) instead, landing on re-assigned for an unrelated
+        # reason. And since decision_required_approval_requires_researcher (this same session)
+        # now blocks Claude from ever re-supplying -NextAction approved itself, there was no path
+        # to completed left at all except the researcher re-running the whole approve handshake a
+        # second time, for a decision already made -- friction with no control value. This
+        # recognises "already approved, resolution on file, follow-up now done" as itself
+        # sufficient: no NEW decision is being made, just the existing one finishing.
+        return not needs_followup and has_resolution and cur_next_action == "approved"
     raise ValueError(f"unknown cfg_escalation_transition.condition_key {condition_key!r}")
 
 
 def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_resolution: bool,
                          assignee_changed: bool, explicit_state: str | None,
-                         cur_state: str, needs_followup: bool = False) -> str:
+                         cur_state: str, needs_followup: bool = False,
+                         cur_next_action: str | None = None) -> str:
     """Reads cfg_escalation_transition for `shape`, in priority order, first match wins -- replaces
     the old hardcoded if/elif chain. `resulting_status_key` of `__explicit__` means the reject
     branch: state comes from the caller's own choice, validated here (withdraw|supersede only).
@@ -294,7 +308,7 @@ def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_res
         if not _condition_true(r["condition_key"], next_action=next_action,
                                has_resolution=has_resolution, assignee_changed=assignee_changed,
                                has_explicit_state=explicit_state is not None,
-                               needs_followup=needs_followup):
+                               needs_followup=needs_followup, cur_next_action=cur_next_action):
             continue
         key = r["resulting_status_key"]
         if key == "__explicit__":
@@ -360,6 +374,53 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
                         "next_action='ready_for_approval'", (self_id,))
                     if not has_rfa:
                         raise ValueError(r["message"])
+        elif kind == "actor_must_be_assignee":
+            # researcher, 2026-08-31: "the code should have a blocker that the party processing
+            # an item (answered_by) must be the assigned_to. that is the only way to control who
+            # is doing the work, and who is supposed to do the work" -- generalises D25 (which
+            # only ever checked the 'approved'/'noted' transition) to every processing action.
+            # Whoever CURRENTLY holds an item (next_action_assigned_to) is the only party allowed
+            # to act on it at all -- including reassigning it onward; a fresh item with no current
+            # assignee (self_id is None, at Raise) is unaffected, and Correction is deliberately
+            # exempt (its whole purpose is fixing a record that's already wrong, which can include
+            # a wrong assignment).
+            if self_id is not None:
+                row = db.rows("SELECT next_action_assigned_to FROM escalation WHERE id=?", (self_id,))
+                cur_assignee = row[0]["next_action_assigned_to"] if row else None
+                if cur_assignee and originator != cur_assignee:
+                    raise ValueError(
+                        f"escalation #{self_id} is currently assigned to {cur_assignee!r} -- only "
+                        f"{cur_assignee} may act on it (got originator={originator!r}). "
+                        f"{cur_assignee} must process it first (even just to reassign it onward).")
+        elif kind == "decision_required_approval_requires_researcher":
+            # researcher, 2026-08-31: "the only way for you to get me to approve anything is to
+            # set the item to ready_for_approval... When I process the approval step, that
+            # implicitly is my approval." Closes the loophole D25 alone leaves open: D25 only
+            # checks that the approver matches whoever 'ready_for_approval' assigned it to -- if
+            # Claude assigns ready_for_approval to ITSELF (a legitimate self-authorisation for
+            # self_correctable-shaped work), D25 passes even though the item is decision_required,
+            # which structurally must never be Claude's call. Independent of assignment history.
+            if self_id is not None:
+                row = db.rows("SELECT resolution_kind FROM escalation WHERE id=?", (self_id,))
+                if (row and row[0]["resolution_kind"] == "decision_required"
+                        and originator != "Researcher"):
+                    raise ValueError(r["message"])
+        elif kind == "ready_for_approval_not_assignable_to_claude":
+            # researcher, 2026-08-31: "you may want to build in another overall control that
+            # ready for approval for tasks and issue can not be assigned to claude, because you do
+            # not have authority to self approve these types." Belt-and-suspenders alongside
+            # decision_required_approval_requires_researcher above -- that one catches Claude
+            # setting approved/noted on a self-assigned item; this one stops the self-assignment
+            # from ever landing at ready_for_approval in the first place, for type in
+            # ('task','issue') regardless of resolution_kind (a self_correctable item never
+            # reaches ready_for_approval at all -- it closes via resolve_self_correctable() -- so
+            # scoping by type rather than resolution_kind changes nothing in practice, and matches
+            # the researcher's own words exactly). Real example this was written against: escalation
+            # #1315, set ready_for_approval but left assigned_to=Claude by Claude's own mistake.
+            if self_id is not None and values.get("next_action_assigned_to") == "Claude":
+                row = db.rows("SELECT type FROM escalation WHERE id=?", (self_id,))
+                if row and row[0]["type"] in ("task", "issue"):
+                    raise ValueError(r["message"])
         else:
             raise ValueError(f"unknown cfg_escalation_requirement.check_kind {kind!r}")
 
@@ -467,7 +528,8 @@ def _sanitise_dispatcher_title(question: str, preset: dict) -> tuple[str, dict]:
 
 def raise_(db: Db, run_id: str, source: str, at_step: str, question: str,
           preset: dict, tried: str, etype: str = "task", assigned_to: str = "Researcher",
-          resolution_kind: str | None = None, needs_followup: bool = False) -> int:
+          resolution_kind: str | None = None, needs_followup: bool = False,
+          title: str | None = None) -> int:
     """Record a pause -- called by run.py at a real dispatcher pause point.
 
     `resolution_kind` (escalation #798/#799): every real call site now supplies one explicitly
@@ -498,9 +560,31 @@ def raise_(db: Db, run_id: str, source: str, at_step: str, question: str,
     -- it validates the ANSWER decision, never the value a freshly-raised item starts at.
     `raise_new()` (the manual shape) already sets its own initial `next_action = "review"` as a
     bare literal, with no enum check at all at creation -- `'review'` here does exactly the same,
-    for the same reason: it means "this needs a decision", not "the decision is X"."""
+    for the same reason: it means "this needs a decision", not "the decision is X".
+
+    `title` (escalation #1326, 2026-08-31): a caller-supplied, already title-shaped
+    short_description -- used directly, `question` then stays free to be the real, longer
+    REPRESENTATIVE description a caller like `configmaint.propose` needs, without either being
+    forced through the lossy word-slicing `_sanitise_dispatcher_title()` otherwise applies. Found
+    live: every `configmaint.propose` escalation's short_description was a mid-word-truncated
+    fragment of its `-Question`, because that single field had to serve as both the representative
+    description AND the title -- `-Question` was never actually validated as (or intended to be) a
+    title. Omitted (the crash-handler call site in `run.py`'s `except Exception` never has a
+    pre-built title to give), the old sanitise-by-truncation behaviour is unchanged -- that
+    fallback stays deliberately lossy-but-safe because it fires from inside exception handling,
+    where raising here would mask the real crash (see `_sanitise_dispatcher_title`'s own
+    docstring). A caller-supplied title is assumed pre-validated (the two live call sites --
+    `configmaint.propose`, `handlers/base.py:escalate()`'s docstring -- both point back to
+    `_title_shape_error` at the source, where a bad title fails loudly as its own clear crash
+    rather than being silently swallowed here); still guarded defensively rather than trusted
+    blindly, since a badly-shaped title reaching this deep should never itself become a second,
+    confusing failure on top of whatever the original escalation was about."""
     now = _now()
-    short_description, preset = _sanitise_dispatcher_title(question, preset)
+    if title and _title_shape_error(title) is None:
+        short_description = title
+        preset = {**preset, "full_message": question}   # the fuller description, always kept
+    else:
+        short_description, preset = _sanitise_dispatcher_title(question, preset)
     checked_type = _check_type(db, etype)
     try:
         checked_kind = _check_resolution_kind(db, resolution_kind) if resolution_kind else "decision_required"
@@ -538,10 +622,26 @@ def pending_for_run(db: Db, run_id: str):
 
 
 def answered_for_run(db: Db, run_id: str, at_step: str):
-    """The latest COMPLETED escalation for a run at a step, or None. `hold`/`noted` deliberately
-    never resolve to `state='completed'`, so they never match here."""
+    """The latest ANSWERED escalation for a run at a step, or None -- a real decision
+    (approve/approved/reject/revise) recorded in `next_action`, regardless of `state`. `hold`/
+    `noted` deliberately never match (their own `next_action` values aren't in this list).
+
+    Fixed 2026-08-31 (escalation #1328, researcher's own live suspicion, confirmed by
+    reproduction): this used to require `state='completed'` -- correct before escalation #1075/
+    #1301 existed, wrong since. A `needs_claude_followup` item's `approved` deliberately resolves
+    to `state='re-assigned'`, NOT `completed` (cfg_escalation_transition priority 1, "routes back
+    to Claude instead of completed") -- meaning the OLD query could never find a
+    `configmaint.propose` approval at all, because `propose()` always sets `needs_followup=True`.
+    Reproduced live: re-running an approved #1309 with the researcher's real 'approved' decision
+    already on file still fell all the way through to demanding a fresh decision, because this
+    query's `state='completed'` filter excluded the very row that held the answer. Every
+    `configmaint.propose` approval before this fix was silently subject to the same gap -- caught
+    only where independently re-verified against the live DB (escalations #1238-1256's own
+    history notes exactly this), never by the escalation's own terminal state, because there
+    never was one to reach."""
     rows = db.rows(
-        "SELECT * FROM escalation WHERE run_id=? AND at_step=? AND state='completed' "
+        "SELECT * FROM escalation WHERE run_id=? AND at_step=? AND "
+        "next_action IN ('approve','approved','reject','revise') "
         "ORDER BY id DESC LIMIT 1", (run_id, at_step))
     return rows[0] if rows else None
 
@@ -725,6 +825,10 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     who = _check_assignee(db, originator)
     checked_action = _check_next_action_manual(db, next_action)
     new_resolution = resolution if resolution is not None else cur["resolution"]
+    # Hoisted above its one prior use site (envelope construction, below) so the
+    # 'ready_for_approval' guard can see what the assignment WOULD become this call, not just
+    # what it currently is.
+    resolved_assignee = _check_assignee(db, next_action_assigned_to, required=False) or cur["next_action_assigned_to"]
 
     # D25 (register v9, corrects a shipped defect): approval is an AUTHORITY check, not an identity
     # check. The party ready_for_approval assigned the item to is who may approve -- Claude assigning
@@ -748,7 +852,9 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
 
     if checked_action == "ready_for_approval":
         _check_requirements(db, "ready_for_approval", originator=who, checked_action=checked_action,
-                            values={"resolution": new_resolution})
+                            values={"resolution": new_resolution,
+                                    "next_action_assigned_to": resolved_assignee},
+                            self_id=escalation_id)
     if checked_action == "approved":
         _check_requirements(db, "approved", originator=who, checked_action=checked_action,
                             values={"resolution": new_resolution}, self_id=escalation_id)
@@ -767,7 +873,8 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
                                else cur["needs_claude_followup"])
     new_state = _evaluate_transition(db, "manual", checked_action, has_resolution=bool(new_resolution),
                                      assignee_changed=assignee_changed, explicit_state=state,
-                                     cur_state=cur["state"], needs_followup=bool(resolved_needs_followup))
+                                     cur_state=cur["state"], needs_followup=bool(resolved_needs_followup),
+                                     cur_next_action=cur["next_action"])
 
     # D26 (register v9): work cannot land on a `raised` item -- comment/context/tried content
     # requires the state to actually move first (e.g. -State in-progress), mechanically enforced
@@ -782,7 +889,7 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
                               "resolution": resolution},
                        envelope={
                            "next_action": checked_action if checked_action is not None else cur["next_action"],
-                           "next_action_assigned_to": _check_assignee(db, next_action_assigned_to, required=False) or cur["next_action_assigned_to"],
+                           "next_action_assigned_to": resolved_assignee,
                            "state": _check_state(db, new_state),
                            "resolution_kind": cur["resolution_kind"],
                            "needs_claude_followup": resolved_needs_followup},
@@ -872,6 +979,8 @@ def resolve_self_correctable(cfg: Cfg, db: Db, escalation_id: int, resolution: s
     if not resolution:
         raise ValueError("resolution is required -- state what was wrong and what changed")
     who = _check_assignee(db, originator)
+    _check_requirements(db, "resolve_self_correctable", originator=who, checked_action=None,
+                        values={}, self_id=escalation_id)
     merged = _snapshot(cfg, db, escalation_id,
                        deltas={"resolution": resolution},
                        envelope={"state": _check_state(db, "completed"), "next_action": None,
@@ -899,6 +1008,8 @@ def escalate_to_decision(cfg: Cfg, db: Db, escalation_id: int, tried: str,
         raise ValueError("tried is required -- describe what was attempted before converting to "
                         "decision_required")
     who = _check_assignee(db, originator)
+    _check_requirements(db, "escalate_to_decision", originator=who, checked_action=None,
+                        values={}, self_id=escalation_id)
     new_state = "in-progress" if cur["state"] == "raised" else cur["state"]
     merged = _snapshot(cfg, db, escalation_id,
                        deltas={"tried": tried},

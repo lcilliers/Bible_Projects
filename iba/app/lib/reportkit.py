@@ -18,6 +18,7 @@ import json
 import pathlib
 import re
 import sqlite3
+import time
 
 
 def _setting(conn: sqlite3.Connection, key: str, default=None):
@@ -110,13 +111,31 @@ def archive_before_write(path: pathlib.Path, archive_dir: str = "archive") -> No
     so a regenerate never silently destroys the prior snapshot (researcher's 2026-07-22 instruction,
     extended 2026-07-23 to CSV exports — escalation #273 found this convention only covered .md
     report writes, not the CSV pairing or the table-export dump, both of which were silently
-    overwriting on every run with no prior version kept)."""
+    overwriting on every run with no prior version kept).
+
+    Retries the move a few times on a transient lock (escalation #1320, 2026-08-31: crashed
+    uncaught -- #1307/#1308 -- the moment `path` happened to be open in another process, e.g.
+    Excel, at exactly the wrong instant; the #1314 fix reduced how often this *particular* CSV
+    write ran, it never made the write itself resilient). A short, bounded retry only helps a
+    genuinely transient hold (an editor's brief save-lock); a file left open for the run's whole
+    duration still surfaces the same PermissionError after the retries, uncaught exactly as
+    before -- run_step()'s existing crash handler (run.py) still records it as a real, visible
+    escalation. Not a silent swallow, just a chance for a moment's contention to clear."""
     if not path.exists():
         return
     adir = path.parent / archive_dir
     adir.mkdir(parents=True, exist_ok=True)
     stamp = datetime.datetime.now().strftime("%Y%m%d-%H%M%S")
-    path.replace(adir / f"{path.stem}-{stamp}{path.suffix}")
+    target = adir / f"{path.stem}-{stamp}{path.suffix}"
+    attempts = 3
+    for i in range(attempts):
+        try:
+            path.replace(target)
+            return
+        except PermissionError:
+            if i == attempts - 1:
+                raise
+            time.sleep(0.3)
 
 
 _VERSIONED_RE_TMPL = r"^{stem}-v(\d+)-\d{{8}}{suffix}$"

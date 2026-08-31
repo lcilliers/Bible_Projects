@@ -246,7 +246,8 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
             try:
                 esc_raise(db, run_id, source, step_id, e["question"], e["preset"], e["tried"],
                          etype=_escalation_type_for(step_id, ctx.word),
-                         assigned_to="Researcher", resolution_kind="self_correctable")
+                         assigned_to="Researcher", resolution_kind="self_correctable",
+                         title=e.get("title"))
             except Exception as record_exc:
                 print(f"[WARN] failed to record self_correctable escalation: {record_exc!r}",
                      file=sys.stderr)
@@ -272,6 +273,7 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
                 question, preset, tried, kind, whom = (
                     e["question"], e["preset"], e["tried"], "decision_required", "Researcher")
                 needs_followup = e.get("needs_followup", False)
+                title = e.get("title")
             else:
                 # Found 2026-07-30 (escalation #383, "it is unclear what the issue is"): `message`
                 # here is often just a bare count (e.g. fail()'s own message arg, "1 coherence
@@ -285,11 +287,12 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
                         "does not resume the run, which is already terminal")
                 kind, whom = "self_correctable", "Claude"
                 needs_followup = False
+                title = None
             source = word_source(ctx.word) if ctx.word else _source_for_step(step_id)
             try:
                 esc_raise(db, run_id, source, step_id, question, preset, tried,
                          etype=_escalation_type_for(step_id, ctx.word), assigned_to=whom,
-                         resolution_kind=kind, needs_followup=needs_followup)
+                         resolution_kind=kind, needs_followup=needs_followup, title=title)
             except Exception as record_exc:
                 print(f"[WARN] failed to record report-stop escalation: {record_exc!r}",
                      file=sys.stderr)

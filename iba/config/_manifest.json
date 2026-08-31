@@ -1,6 +1,6 @@
 {
   "config_name": "Inner Being Analysis Programme — configuration seed",
-  "config_version": "0.1.10",
+  "config_version": "0.1.11",
   "created": "2026-07-15",
   "authority": "researcher le Roux Cilliers; design = plan moonlit-launching-cocke.md (Appendix A/C)",
   "status": "IN-PROGRESS — foundational sections only; not yet loadable into a DB (loader + new DB not built)",
@@ -422,13 +422,13 @@
     "DBSchema/*.json": "CAPTURED DATA. A register is an OBSERVATION of a live schema -- it is written by build_dbschema.py reading the DB, not authored, and it carries no rule envelope. It is declared under sections.tier_a_registers and hashed like any other file (so a hand-edit is still caught), but the kernel never envelope-validates it."
   },
   "last_change": {
-    "version": "0.1.10",
-    "at": "2026-08-24T09:59:36Z",
-    "why": "recaptured bible_research @ 3.40.0 after escalation #836 build",
+    "version": "0.1.11",
+    "at": "2026-08-31T05:46:38Z",
+    "why": "recaptured bible_research @ 3.40.0 (113 tables, escalation #1306)",
     "by": "cfg_apply.py (the sole write path)"
   },
   "file_hashes": {
-    "DBSchema/DBSchema.json": "56e3e5d4990134a3",
+    "DBSchema/DBSchema.json": "22e1b415467dec16",
     "process/base.json": "8bcd16671eee8052",
     "process/characteristics.json": "4decc189efeb2caf",
     "process/lexical.json": "37ede6c9931f6e3f",

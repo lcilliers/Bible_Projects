@@ -10,6 +10,7 @@ from __future__ import annotations
 
 import datetime
 import pathlib
+import sqlite3
 
 from . import reportkit
 
@@ -29,6 +30,16 @@ DATA_TABLES = (
     "strong", "strong_lexicon", "strong_lsj_parsed", "strong_meaning_parsed", "strong_meaning_tree",
     "strong_mounce_parsed", "strong_related", "strong_sense", "strong_verse",
     "validation_result", "verse", "verse_passage", "word_registry", "word_strong",
+    # Added 2026-08-31 (escalation #1306, researcher: "the schema report for IBA is simply wrong
+    # and incomplete") -- 19 live tables sitting in the "live but not in DATA_TABLES" footnote,
+    # same class of gap escalation #396 already fixed once for the strong_*_parsed tables. Every
+    # one checked live (real, populated tables, not test debris) before adding, same discipline
+    # #396 itself named.
+    "cluster", "cluster_strong", "content_index", "content_index_scan", "debate_change_detail",
+    "escalation_history", "escalations_old", "file_manifest", "folder_purpose", "hib",
+    "hib_referent_option", "operation", "operation_party", "passage_emergent_question",
+    "passage_insufficiency", "passage_linkage", "passage_validation_note", "phenomenon",
+    "verse_hib", "verse_lexical",
 )
 
 # Tables the researcher has formally retired at the DATA level (soft-deleted `deleted=1` on
@@ -120,3 +131,62 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
     L = reportkit.render_scaffold(conn, "report.schema_overview", sections, intro=intro)
     path = reportkit.write_report(conn, "report.schema_overview", path, L)
     return path
+
+
+def write_report_bible_research(cfg, path: pathlib.Path) -> pathlib.Path:
+    """The `bible_research.db` counterpart to `write_report()` above -- escalation #1306, 2026-08-31
+    (researcher: "There is no report for Bible_Research_db and no handle in the excel tools for
+    this report"). Deliberately mirrors that function's shape (same helpers, same rendering), not a
+    separate design: introspects the live DB directly via `PRAGMA`, no separately-maintained
+    register to go stale (unlike `iba/config/DBSchema/DBSchema.json`/`build_dbschema.py`, which
+    profiles column VALUES and needs an explicit rebuild -- this stays deliberately lighter,
+    structure-only, always current by construction, same trade-off `schemareport.py`'s own
+    docstring already made for the IBA side).
+
+    No curated `DATA_TABLES` allowlist here: `bible_research.db` has no cfg_*-style config/data
+    split to filter out (every table there is a "data" table), so every real table is shown --
+    ~113 of them, not a hand-picked subset. `conn` for introspection is a second, separate
+    connection to `bible_research.db` (`cfg.database_path('bible_research')`, the same pattern
+    `cataloguereport.py`/`table_export` already use); `cfg.conn` (iba.db) is still what
+    `render_scaffold`/`write_report` read `cfg_report`/`cfg_report_section` from -- config lives in
+    iba.db regardless of which database the report is ABOUT."""
+    research_conn = sqlite3.connect(cfg.database_path("bible_research"))
+    try:
+        tables = sorted(r[0] for r in research_conn.execute(
+            "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'"))
+        counts = {t: _live_count(research_conn, t) for t in tables}
+
+        intro = [
+            f"> Generated {_now()} by `report.schema_overview_bible_research`. Introspects the "
+            f"live DB directly — always current, never hand-maintained. For per-column "
+            f"descriptions and data profiles, see `iba/config/DBSchema/DBSchema.json` "
+            f"(`iba/scripts/build_dbschema.py --db bible_research`).",
+            "",
+            f"- tables: **{len(tables)}**",
+        ]
+
+        sections: dict[str, list[str]] = {}
+        sections["overview"] = _tbl(["table", "rows"], [[t, counts[t]] for t in tables])
+
+        S = []
+        for t in tables:
+            S.append(f"### {t} ({counts[t]} row(s))")
+            S.append("")
+            cols = list(research_conn.execute(f'PRAGMA table_info("{t}")'))
+            fks = {r[3]: f"{r[2]}.{r[4]}" for r in research_conn.execute(
+                f'PRAGMA foreign_key_list("{t}")')}
+            idx = [r[1] for r in research_conn.execute(f'PRAGMA index_list("{t}")')]
+            S += _tbl(["column", "type", "pk", "notnull", "fk"], [
+                [c[1], c[2], "✓" if c[5] else "", "✓" if c[3] else "", fks.get(c[1], "")]
+                for c in cols])
+            if idx:
+                S.append(f"indexes: {', '.join(idx)}")
+            S.append("")
+        sections["tables"] = S
+
+        L = reportkit.render_scaffold(cfg.conn, "report.schema_overview_bible_research", sections,
+                                      intro=intro)
+        path = reportkit.write_report(cfg.conn, "report.schema_overview_bible_research", path, L)
+        return path
+    finally:
+        research_conn.close()

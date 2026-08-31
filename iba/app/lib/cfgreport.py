@@ -184,7 +184,16 @@ def _inactive_configs(q) -> list[str]:
     return [header] + (lines if lines else ["_(none)_"])
 
 
-def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH) -> pathlib.Path:
+def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
+            csv_export: bool | None = None) -> pathlib.Path:
+    """csv_export: True always writes the CSV pairing (an explicit `-Step Report` run); False
+    always skips it; None (the default) defers to `configmaint.csv_export_on_auto_report`
+    (default off) -- escalation #1314, 2026-08-31. Before this, every call here (including the
+    one `validate()` fires on each finding) wrote a fresh timestamped CSV per table via
+    reportkit's own never-overwrite convention -- confirmed live: ~4700 files accumulated under
+    Workflow/schema/archive/ in one session's back-to-back proposals. An explicit report run
+    still gets its CSV pairing; the frequent auto-triggered regeneration no longer does unless
+    the researcher opts in."""
     conn = sqlite3.connect(db_path)
     conn.row_factory = sqlite3.Row
     q = lambda sql, p=(): conn.execute(sql, p).fetchall()
@@ -415,10 +424,17 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH)
     from .cfg import Cfg as _Cfg
     _cfg_probe = _Cfg(db_path)
     csv_export_value = _cfg_probe.setting("configmaint.csv_export_dir")
+    # escalation #1314: caller-explicit csv_export wins; otherwise defer to the setting, off by
+    # default (missing/'0'/'false' all read as off -- same treatment as any other boolean
+    # cfg_setting in this app, e.g. Cfg.flag()'s own convention).
+    if csv_export is None:
+        auto_flag = _cfg_probe.setting("configmaint.csv_export_on_auto_report")
+        csv_export = str(auto_flag).strip().lower() in ("1", "true", "yes") if auto_flag else False
     _cfg_probe.conn.close()
     csv_export_dir = (pathlib.Path(csv_export_value) if csv_export_value
                       else out_path.parent / "export")
-    reportkit.write_csv_pairing(conn, STEP, csv_export_dir)
+    if csv_export:
+        reportkit.write_csv_pairing(conn, STEP, csv_export_dir)
     out_path = reportkit.write_report(conn, STEP, out_path, L)
     conn.close()
     return out_path

@@ -357,6 +357,14 @@ def schema_overview_report(ctx: Ctx) -> Outcome:
     return ok(f"wrote {out}", path=str(out))
 
 
+def schema_overview_bible_research_report(ctx: Ctx) -> Outcome:
+    """The bible_research.db counterpart -- escalation #1306, 2026-08-31. See
+    schemareport.write_report_bible_research's own docstring for the design."""
+    path = pathlib.Path(ctx.cfg.required_setting("report.schema_overview_bible_research_path"))
+    out = schemareport.write_report_bible_research(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
 def registry_report(ctx: Ctx) -> Outcome:
     path = pathlib.Path(ctx.cfg.required_setting("report.registry_path"))
     out = registryreport.write_report(ctx.cfg, path)

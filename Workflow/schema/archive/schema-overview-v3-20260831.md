@@ -1,6 +1,6 @@
 # Schema overview
 
-> Generated 2026-08-31T09:06:50Z by `report.schema_overview`. Introspects the live DB directly — always current, never hand-maintained.
+> Generated 2026-08-31T08:58:00Z by `report.schema_overview`. Introspects the live DB directly — always current, never hand-maintained.
 
 - data tables: **41** known, **41** live
 
@@ -15,10 +15,10 @@
 | table | rows (live) | status |
 | --- | --- | --- |
 | candidate_seed | 1806 |  |
-| escalation | 614 |  |
+| escalation | 612 |  |
 | lemma_inventory | 11781 |  |
 | passage | 42 | **RETIRED** |
-| run | 2338 |  |
+| run | 2334 |  |
 | span | 378149 |  |
 | span_candidate | 83914 |  |
 | strong | 15293 |  |
@@ -40,7 +40,7 @@
 | content_index | 0 |  |
 | content_index_scan | 0 |  |
 | debate_change_detail | 242 |  |
-| escalation_history | 2196 |  |
+| escalation_history | 2185 |  |
 | escalations_old | 723 |  |
 | file_manifest | 16197 |  |
 | folder_purpose | 959 |  |
@@ -79,7 +79,7 @@
 | deleted | INTEGER |  |  |  |
 indexes: idx_candidate_seed_live_unique, idx_candidate_seed_strong_variant, idx_candidate_seed_lemma_key, sqlite_autoindex_candidate_seed_1
 
-### escalation (614 row(s))
+### escalation (612 row(s))
 
 | column | type | pk | notnull | fk |
 | --- | --- | --- | --- | --- |
@@ -146,7 +146,7 @@ indexes: idx_lemma_inventory_live_unique, sqlite_autoindex_lemma_inventory_1
 | feasibility_note | TEXT |  |  |  |
 indexes: idx_passage_live_unique, idx_passage_anchor_verse_id, idx_passage_range_live
 
-### run (2338 row(s))
+### run (2334 row(s))
 
 | column | type | pk | notnull | fk |
 | --- | --- | --- | --- | --- |
@@ -429,7 +429,7 @@ indexes: sqlite_autoindex_content_index_scan_1
 | writer | TEXT |  | ✓ |  |
 indexes: idx_hib_change_detail_run_id
 
-### escalation_history (2196 row(s))
+### escalation_history (2185 row(s))
 
 | column | type | pk | notnull | fk |
 | --- | --- | --- | --- | --- |

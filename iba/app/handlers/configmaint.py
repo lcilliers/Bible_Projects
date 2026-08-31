@@ -473,6 +473,35 @@ def _check_proposal(conn: sqlite3.Connection, table: str, op: str, where: dict, 
             e.append(f"{table}: Set names unknown column(s) {sorted(bad)}")
     if op in ("update", "delete") and not where:
         e.append(f"{op} needs a Where clause identifying the row")
+    # escalation #1328, 2026-08-31: found live, root-caused after actually corrupting a row --
+    # _apply()'s insert branch builds the INSERT entirely from `set_`; `where` is silently IGNORED
+    # for insert (there is nothing to "locate" -- the row doesn't exist yet). Every correctly-shaped
+    # insert in this table's own history puts identifying/key fields in Set (e.g. cfg_change_detail
+    # #335/#336: {"key": "governance...", ...} all in set_json, where_json '{}'). Nothing stopped a
+    # caller using Where the way it's used for update/delete instead -- exactly what happened here:
+    # -Where '{"key":"configmaint.csv_export_on_auto_report"}' -Set '{"value":"0",...}' silently
+    # dropped "key" from the actual INSERT, and cfg_setting.key (TEXT PRIMARY KEY, not
+    # INTEGER -- SQLite does not auto-enforce NOT NULL on a non-integer PK) accepted the row with
+    # key=NULL instead of erroring. Reject at the gate now, loudly and immediately, instead of
+    # silently corrupting the target table.
+    if op == "insert" and where:
+        e.append(f"insert has no Where clause -- identifying/key fields go in Set instead "
+                 f"(Where only locates an EXISTING row, for update/delete); got Where={where!r}")
+    # Defense in depth, same finding: a NOT NULL column with no default, missing from Set entirely
+    # (whether or not it was wrongly put in Where), would otherwise either crash uncaught or --
+    # for a non-integer PRIMARY KEY, which SQLite does not auto-enforce NOT NULL on -- silently
+    # insert as NULL, exactly as just reproduced live.
+    if op == "insert":
+        # required = NOT NULL with no default, OR a non-INTEGER primary key (SQLite auto-assigns
+        # a rowid for an INTEGER PRIMARY KEY if omitted -- that's the one legitimate "optional PK"
+        # case; every other PK type, like cfg_setting.key TEXT PRIMARY KEY, silently accepts NULL
+        # if omitted, exactly as just reproduced).
+        required = {r[1] for r in conn.execute(f'PRAGMA table_info("{table}")')
+                   if (r[3] and r[4] is None) or (r[5] and r[2].upper() != "INTEGER")}
+        missing = required - set(set_)
+        if missing:
+            e.append(f"{table}: insert is missing required column(s) {sorted(missing)} in Set "
+                     f"(NOT NULL/primary-key, no default)")
     if where:
         bad = set(where) - cols
         if bad:
@@ -566,6 +595,7 @@ def propose(ctx: Ctx) -> Outcome:
     where = json.loads((ctx.params.get("Where") or "").strip() or "{}")
     set_ = json.loads((ctx.params.get("Set") or "").strip() or "{}")
     question = ctx.params.get("Question", f"{op} on {table} — approve?")
+    title = ctx.params.get("Title")
 
     if table not in ctx.cfg.may_write("configmaint.propose"):
         raise PermissionError(f"write-grant violation: 'configmaint.propose' may not write {table!r}")
@@ -600,9 +630,28 @@ def propose(ctx: Ctx) -> Outcome:
     if warning:
         question = f"{warning}\n\n{question}"           # part of the REPRESENTATIVE payload shown
 
+    # escalation #1326, 2026-08-31: -Question alone used to be forced to serve as BOTH the
+    # representative description and the escalation's title, silently word-sliced to 60 chars by
+    # raise_()'s lossy fallback -- every real short_description was a truncated fragment (e.g.
+    # "Researcher instruction 2026-08-31: enforce that whoever pro…"). -Title is now required and
+    # validated HERE, at the source, so a bad title fails loudly and immediately (a clean,
+    # well-logged crash escalation, same as any other caught-by-run.py exception) instead of
+    # silently degrading into a mangled record three layers downstream. -Question stays free to be
+    # the real, longer description; it always survives verbatim in context (raise_()'s
+    # preset["full_message"]).
+    if not title:
+        raise ValueError(
+            "propose requires -Title -- a short, title-shaped name for this change (<=60 chars, "
+            "no clause-stitching, e.g. 'Add configmaint.csv_export_on_auto_report setting'). "
+            "-Question is the fuller representative description (what/why/effect), not the title.")
+    title_err = esc._title_shape_error(title)
+    if title_err:
+        raise ValueError(f"-Title {title_err}")
+
     return escalate(
         "needs-approval",
         question=question,
+        title=title,
         preset={"table": table, "op": op, "where": where, "set": set_},
         # escalation #798/#799: this is decision_required, which now resolves via Update() (the
         # manual ready_for_approval -> approved handshake), not AnswerRun -- corrected from the
@@ -627,5 +676,8 @@ def report(ctx: Ctx) -> Outcome:
     # configmaint.report_path exists precisely so this step doesn't hard-code the path —
     # found unused during the 2026-07-21 review (see _find_orphan_configs) and fixed here.
     out_path = pathlib.Path(ctx.cfg.required_setting("configmaint.report_path"))
-    path = cfgreport.generate(out_path=out_path)
+    # escalation #1314: an explicit, deliberate report run always gets its CSV pairing; the
+    # auto-triggered regeneration inside validate() (below) does not, unless the researcher opts
+    # in via configmaint.csv_export_on_auto_report.
+    path = cfgreport.generate(out_path=out_path, csv_export=True)
     return ok(f"config report written: {path}")
