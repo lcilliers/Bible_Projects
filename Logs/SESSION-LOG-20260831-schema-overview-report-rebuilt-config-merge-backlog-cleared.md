@@ -52,3 +52,19 @@ session's work was entirely tooling/process, clearing the way for that.
 
 ## Git state
 
+Branch `main`, commit `b7e4675b2682a579b6979e6392a3e2270f7a5afa`, pushed clean:
+
+```
+$ git push
+To https://github.com/lcilliers/Bible_Projects.git
+   8b87b3e1..b7e4675b  main -> main
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+```
+
+211 files changed (31,434 insertions, 698 deletions) — the bulk is auto-generated report/CSV
+archive artifacts from the app's own versioning during testing, not hand-authored content.
+
