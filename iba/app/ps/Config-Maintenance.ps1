@@ -22,11 +22,15 @@
                       This re-run is the app's own design for who applies it: needs_followup on
                       the escalation means the actual write is meant to happen as "a second
                       Claude-driven re-run with -RunId" (escalation #1301) AFTER the researcher's
-                      own approved. In practice (found live 2026-08-31) the Claude Code harness's
-                      own permission classifier blocks Claude from running this re-run too, on top
-                      of the app's own design -- so today this final command needs the researcher
-                      to run it themselves, or their Claude Code permission settings adjusted to
-                      allow it.
+                      own approved. CORRECTED 2026-08-31 (escalation #1306 v8/#1357): a same-day
+                      session wrongly diagnosed this re-run as blocked by the Claude Code harness's
+                      own permission classifier and deferred it undone. Reproduced clean in the
+                      next session -- the real (and only) gate is the app's own state machine: the
+                      resume only applies once Update() has recorded a genuine `approved` decision
+                      (checked via answered_for_run()), which a re-assignment/"proceed" COMMENT
+                      alone does not do. Once `-NextAction ready_for_approval` then `-NextAction
+                      approved` are actually recorded, Claude CAN and does run this re-run itself --
+                      no elevated permissions, no researcher-run workaround needed.
     -Step Report     regenerate CONFIG-REPORT.md from the live cfg_* tables. Safe any time.
 
 .PARAMETER Step     Validate | Propose | Report
@@ -136,7 +140,13 @@ if ($code -eq 0 -and $Step -eq 'Propose') {
     $auto = python -c "from iba.app.lib.cfg import Cfg; c=Cfg(); print(str(c.setting('configmaint.auto_report', True)).lower()); c.close()"
     if ($auto -eq 'true') {
         Write-Host "`n(auto_report) regenerating CONFIG-REPORT.md..." -ForegroundColor DarkGray
-        python -m iba.app.run configuration-maintenance --step configmaint.report --run-id $resolvedRunId | Out-Null
+        # -Param Auto=1 (escalation #1351-1356): this chained call is NOT a deliberate -Step
+        # Report -- without the flag it hit the same handler as one and always exported the full
+        # CSV pairing, which several Proposes applied back-to-back (e.g. a multi-row registration
+        # batch) could re-write fast enough to collide with their own predecessor's still-in-
+        # flight archive-rename (WinError 32). Auto=1 defers to configmaint.csv_export_on_auto_report
+        # instead (default 0/suppressed), matching how validate()'s own auto-regeneration already behaves.
+        python -m iba.app.run configuration-maintenance --step configmaint.report --run-id $resolvedRunId --param Auto=1 | Out-Null
     }
 }
 

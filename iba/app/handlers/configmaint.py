@@ -679,5 +679,19 @@ def report(ctx: Ctx) -> Outcome:
     # escalation #1314: an explicit, deliberate report run always gets its CSV pairing; the
     # auto-triggered regeneration inside validate() (below) does not, unless the researcher opts
     # in via configmaint.csv_export_on_auto_report.
-    path = cfgreport.generate(out_path=out_path, csv_export=True)
+    #
+    # escalation #1351-1356, 2026-08-31: Config-Maintenance.ps1's OWN auto_report chain (fired
+    # after every successful Propose) calls this exact same step -- a THIRD call site #1314 never
+    # accounted for, neither the "explicit -Step Report" case nor the "auto-triggered inside
+    # validate()" case, but which was silently defaulting to the "explicit" (always-CSV) behaviour
+    # because it hits this same handler. Six Proposes in quick succession (the schema-overview
+    # registration chain) each re-wrote the same CSV pairing back-to-back, and one collided with
+    # its own predecessor's still-in-flight archive-rename of workflow\schema\cfg_table.csv ->
+    # WinError 32 (#1351-1356). -Param Auto=1 (set by Config-Maintenance.ps1's auto_report chain
+    # only) now routes this call through the SAME deferred-to-setting path validate() already
+    # uses (csv_export=None -> configmaint.csv_export_on_auto_report, default 0/suppressed) --
+    # a deliberate `-Step Report` call passes no such param and keeps the always-CSV guarantee.
+    is_auto = str(ctx.params.get("Auto", "")).strip().lower() in ("1", "true", "yes")
+    csv_export = None if is_auto else True
+    path = cfgreport.generate(out_path=out_path, csv_export=csv_export)
     return ok(f"config report written: {path}")

@@ -1,0 +1,18 @@
+﻿entity,status,set_by,ordinal,inactive
+word,proposed,"registry (on new word, before approval)",0,0
+word,approved,registry.create,1,0
+word,raw-complete,raw.write,2,0
+word,signed-off,registry.signoff (not in this slice),3,0
+word,rejected,escalation (researcher declines),4,0
+escalation,raised,initial state at Raise (escalation.raise_/raise_new),0,0
+escalation,in-progress,"either party directly (Update state=in-progress); OR system: next_action=revise; OR dispatcher-tied answer_for_run decision=revise (escalation #795 fix, 2026-08-22)",1,0
+escalation,on-hold,either party directly (Update state=on-hold); OR dispatcher-tied answer_for_run decision=hold,2,0
+escalation,re-assigned,"system: next_action_assigned_to changed, no more specific rule matched (Update); OR: manual next_action=approved+needs_claude_followup flag set -- routes back to Claude instead of completed (escalation #1075)",3,0
+escalation,closed,either party directly (Update state=closed); OR system: next_action=noted (manual) or decision=noted (dispatcher-tied),4,0
+escalation,withdraw,"party's explicit choice at Update: next_action=reject, state=withdraw; OR: dispatcher-tied answer_for_run decision=reject (escalation #795 fix, 2026-08-22)",5,0
+escalation,supersede,"party's explicit choice at Update: next_action=reject, state=supersede",6,0
+escalation,completed,system: manual next_action=approved+resolution present; OR: dispatcher-tied answer_for_run decision=approve,7,0
+prose_section,draft,"apply_session_patch.py: prose_section insert/supersede/bulk_supersede (caller-supplied, the default when omitted)",0,0
+prose_section,in_review,apply_session_patch.py: prose_section insert/supersede (caller-supplied status -- no dedicated transition op exists; 0 rows currently at this status),1,0
+prose_section,approved,apply_session_patch.py: prose_section approve (the one dedicated transition op -- also stamps approved_at/approved_by),2,0
+prose_section,archived,"apply_session_patch.py: prose_section insert (caller-supplied status only -- 11 existing rows were archived at insert time, not via a transition op)",3,0
