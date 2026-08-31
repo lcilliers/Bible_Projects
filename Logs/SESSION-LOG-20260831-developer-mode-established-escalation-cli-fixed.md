@@ -123,3 +123,25 @@ deactivation (reversible), not code deletion. The narrower D25 approval-authorit
    actually got committed at session end.
 
 ## Git state
+
+Committed, confirmed via actual `git status`/`git log` (not asserted). **Push blocked by the
+Claude Code harness's own auto-mode permission classifier** — same class of block hit twice
+earlier this session (a raw DB write, a config-registration script). Not worked around; the
+researcher needs to run `git push` themselves, or grant a permission rule for it.
+
+```
+[main 790d0cfc] session 20260831 (cont.): Developer Mode protocol built, escalation CLI friction
+found+fixed, backlog cleared
+ 16 files changed, 1525 insertions(+), 28 deletions(-)
+
+On branch main
+Your branch is ahead of 'origin/main' by 1 commit.
+  (use "git push" to publish your local commits)
+
+nothing to commit, working tree clean
+
+790d0cfc94b9daaeedd3b71524856d71d608b6f6 2026-08-31 13:34:05 +0100
+```
+
+**Not yet pushed as of session close — next session (or the researcher directly) needs to run
+`git push`.**
