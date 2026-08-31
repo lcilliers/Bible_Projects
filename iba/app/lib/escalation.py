@@ -360,30 +360,56 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
         elif kind == "not_raised_with_content":                # D26
             if field_val == "raised":
                 raise ValueError(r["message"])
-        elif kind == "requires_prior_ready_for_approval_if_decision_required":
+        elif kind == "requires_current_ready_for_approval_if_decision_required":
             # escalation #851, 2026-08-26: the D25 authority check alone is vacuous when no prior
             # ready_for_approval transition exists at all -- exactly how #865 was self-approved, and
             # would still be true of 'noted' even after D25 was extended to cover it. This makes the
             # SEQUENCE itself required for decision_required items, not just an opportunistic
             # comparison against whichever prior transition happens to exist.
+            #
+            # TIGHTENED 2026-08-31, researcher direct correction: the original check (renamed from
+            # requires_PRIOR_ready_for_approval_if_decision_required) only checked that a
+            # ready_for_approval transition existed SOMEWHERE in escalation_history, ever -- not
+            # that it's where the item currently sits. So `ready_for_approval -> revise ->
+            # in-progress -> approved` would have passed: a ready_for_approval happened once, long
+            # ago, satisfying the old check, even though the item had since moved away from it.
+            # Researcher, verbatim: "approval should not be able to be in any other state that
+            # ready for approval" (decision_required only -- explicitly excluded self_correctable,
+            # which never uses this vocabulary anyway). Now checks the item's CURRENT next_action
+            # directly, not history.
             if self_id is not None:
-                row = db.rows("SELECT resolution_kind FROM escalation WHERE id=?", (self_id,))
-                if row and row[0]["resolution_kind"] == "decision_required":
-                    has_rfa = db.rows(
-                        "SELECT 1 FROM escalation_history WHERE escalation_id=? AND "
-                        "next_action='ready_for_approval'", (self_id,))
-                    if not has_rfa:
-                        raise ValueError(r["message"])
+                row = db.rows("SELECT resolution_kind, next_action FROM escalation WHERE id=?",
+                              (self_id,))
+                if (row and row[0]["resolution_kind"] == "decision_required"
+                        and row[0]["next_action"] != "ready_for_approval"):
+                    raise ValueError(r["message"])
         elif kind == "actor_must_be_assignee":
-            # researcher, 2026-08-31: "the code should have a blocker that the party processing
-            # an item (answered_by) must be the assigned_to. that is the only way to control who
-            # is doing the work, and who is supposed to do the work" -- generalises D25 (which
-            # only ever checked the 'approved'/'noted' transition) to every processing action.
-            # Whoever CURRENTLY holds an item (next_action_assigned_to) is the only party allowed
-            # to act on it at all -- including reassigning it onward; a fresh item with no current
-            # assignee (self_id is None, at Raise) is unaffected, and Correction is deliberately
-            # exempt (its whole purpose is fixing a record that's already wrong, which can include
-            # a wrong assignment).
+            # researcher, 2026-08-31 morning: "the code should have a blocker that the party
+            # processing an item (answered_by) must be the assigned_to." Built same day, wired
+            # into update()/resolve_self_correctable()/escalate_to_decision() via
+            # cfg_escalation_requirement rows (action IN those three, check_kind=this).
+            #
+            # WALKED BACK same day, evening, researcher's own words: "the objective of
+            # actor_must_be_assignee is to prevent you to do what you like. but I also see that it
+            # is now preventing you from acting on a chat, and requires me to put all notes through
+            # the difficult to use escalation excel tool. so the two objectives works against each
+            # other... escalation activities are now consuming 80% of time spent on the project...
+            # My conclusion is just drop this requirement." Live evidence that surfaced it:
+            # `iba/docs/escalation-operational-friction-review-v1-20260831.md` Defect 2 -- #1338/
+            # #1339 (Claude blocked from leaving a clarifying comment on an item held by
+            # Researcher) and #1341 (Researcher blocked from giving feedback on an item held by
+            # Claude) -- the guard controlled who may say ANYTHING about an item, not just who
+            # does the substantive work, and hit both parties in ordinary back-and-forth.
+            #
+            # Disabled by deactivating the three cfg_escalation_requirement rows (rowid 17/18/19,
+            # active=0) rather than deleting them or this code branch -- reversible without a
+            # redeploy if ever wanted back in a narrower form. This branch is now practically dead
+            # (no active row references check_kind='actor_must_be_assignee') but left in place so
+            # re-activating is a one-row UPDATE, not a rebuild. The SEPARATE, narrower D25 check --
+            # whoever `ready_for_approval` assigned an item to is the only one who may `approved`/
+            # `noted` it (hardcoded in update(), search "authority check, not identity -- D25") --
+            # is NOT touched by this reversal; that one gates an actual decision, this one gated
+            # everything.
             if self_id is not None:
                 row = db.rows("SELECT next_action_assigned_to FROM escalation WHERE id=?", (self_id,))
                 cur_assignee = row[0]["next_action_assigned_to"] if row else None
@@ -829,6 +855,21 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     # 'ready_for_approval' guard can see what the assignment WOULD become this call, not just
     # what it currently is.
     resolved_assignee = _check_assignee(db, next_action_assigned_to, required=False) or cur["next_action_assigned_to"]
+    # Also hoisted above its later use (was computed just before _evaluate_transition, below) so
+    # the forced-reassignment rule right after this can see it.
+    resolved_needs_followup = (int(needs_followup) if needs_followup is not None
+                               else cur["needs_claude_followup"])
+
+    # researcher, 2026-08-31: "approval... will progress to approved, with Claude as assignee...
+    # when claude completes the work, claude must be able to set the item to completed." An
+    # approval that still needs follow-up work must hand the item BACK to Claude -- not leave it
+    # sitting with whoever approved it (normally the Researcher) because nobody remembered to pass
+    # -AssignedTo Claude explicitly. Forced, not merely defaulted: this overrides even an explicit
+    # -AssignedTo on this specific call, because the flag's whole meaning is "this isn't done,
+    # Claude has to act next" -- there is no legitimate reason to approve-with-followup and assign
+    # it anywhere else.
+    if checked_action == "approved" and resolved_needs_followup:
+        resolved_assignee = "Claude"
 
     # D25 (register v9, corrects a shipped defect): approval is an AUTHORITY check, not an identity
     # check. The party ready_for_approval assigned the item to is who may approve -- Claude assigning
@@ -869,8 +910,8 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
                             values={"tried": tried})
 
     assignee_changed = bool(next_action_assigned_to) and next_action_assigned_to != cur["next_action_assigned_to"]
-    resolved_needs_followup = (int(needs_followup) if needs_followup is not None
-                               else cur["needs_claude_followup"])
+    # resolved_needs_followup now computed earlier, above -- the forced-reassignment rule needs it
+    # before this point.
     new_state = _evaluate_transition(db, "manual", checked_action, has_resolution=bool(new_resolution),
                                      assignee_changed=assignee_changed, explicit_state=state,
                                      cur_state=cur["state"], needs_followup=bool(resolved_needs_followup),
@@ -894,7 +935,12 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
                            "resolution_kind": cur["resolution_kind"],
                            "needs_claude_followup": resolved_needs_followup},
                        originator=who)
-    return f"escalation #{escalation_id} v{merged['version']} -> state={new_state!r}"
+    # researcher, 2026-08-31: the old message showed only state (e.g. "-> state='re-assigned'"),
+    # leaving next_action invisible -- ambiguous, since 're-assigned' alone doesn't say WHAT it was
+    # re-assigned by (approved? a plain reassignment?). Show both.
+    return (f"escalation #{escalation_id} v{merged['version']} -> "
+           f"state={new_state!r}, next_action={merged['next_action']!r}, "
+           f"assigned_to={merged['next_action_assigned_to']!r}")
 
 
 def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str | None = None,
@@ -960,7 +1006,9 @@ def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str |
                                 "resolution_kind": cur["resolution_kind"],
                                 "needs_claude_followup": cur["needs_claude_followup"]},
                        originator=who)
-    return f"escalation #{escalation_id} v{merged['version']} CORRECTED -> state={resolved_state!r}"
+    return (f"escalation #{escalation_id} v{merged['version']} CORRECTED -> "
+           f"state={resolved_state!r}, next_action={resolved_next_action!r}, "
+           f"assigned_to={resolved_assigned_to!r}")
 
 
 # ── resolution_kind transactions (escalation #798/#799) ─────────────────────────────────────────
@@ -1162,6 +1210,24 @@ def main() -> int:
     argv = sys.argv[1:]
     try:
         return _dispatch(cfg, db, argv)
+    except ValueError as exc:
+        # escalation-operational-friction-review-v1-20260831, Defect 1: a ValueError here is a
+        # deliberate validation guard doing its job (_title_shape_error, _check_assignee,
+        # _check_requirements, _require_flag, ... all raise exactly this) -- the CLI correctly
+        # rejecting a malformed call, not a system failure. Filing it as a run_error escalation
+        # (the old behaviour, shared with the branch below) meant every usage slip -- a title 2
+        # chars over the limit, a missing -Resolution -- left a permanent traceback-carrying row
+        # that then needed a hand-written "usage error, not a code defect" resolution: seven of
+        # those, same day, before this fix (#1319, #1313, #1311, #1317, #1318, #1326, #1328).
+        # Clean rejection instead: rollback (unchanged), print the message, exit non-zero, no
+        # escalation write -- exactly like a shell command rejecting a bad flag. Only exceptions
+        # NOT explicitly raised as validation (the branch below) still auto-file, because those
+        # really are unanticipated -- this is how #1307/#1308's real WinError 32 bug and #1330's
+        # real answered_for_run bug got caught today, and that stays unchanged.
+        db.conn.rollback()
+        db.close()
+        print(f"error: {exc}", file=sys.stderr)
+        return 1
     except Exception as exc:
         import traceback
         tb = traceback.format_exc()
