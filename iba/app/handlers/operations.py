@@ -79,7 +79,7 @@ import json
 import pathlib
 
 from .base import Ctx, Outcome, ok, fail
-from ..lib import passagetrack, reportkit
+from ..lib import passagetrack, prosestore, reportkit
 from ..lib.debateaudit import log_change as _log_change
 from ..lib.versespanmeaningreport import parse_chapters, parse_range, fetch_verses
 
@@ -220,7 +220,33 @@ def _required_quality_checks(ctx: Ctx, step: str) -> list[str]:
         "AND enforced_by IS NULL ORDER BY ordinal", (step,))]
 
 
-def _check_quality_attestations(items: dict, required: list[str]) -> None:
+def _prose_concept_text(ctx: Ctx, concept_key: str) -> str | None:
+    """Resolve a cfg_prose_concept row to its actual, live prose text -- found live 2026-08-30
+    (escalation #1235): cfg_prose_concept exists to be exactly this pointer, but nothing in the
+    app ever dereferenced one. Minimal, targeted resolution for the one concept currently needed
+    (`inner_being_definition`) -- a general cfg_prose_concept -> prose_section_type link is a
+    separate, larger design question, noted but not decided in the cfg-table purpose/success
+    review (escalation #1130), not built here."""
+    if concept_key != "inner_being_definition":
+        return None
+    conn = prosestore.open_db(ctx.cfg)
+    try:
+        row = conn.execute(
+            "SELECT ps.body FROM prose_section ps JOIN prose_section_type pst "
+            "ON pst.id=ps.section_type_id WHERE pst.code='prog_purp_defining_inner_being' "
+            "AND ps.delete_flagged=0 ORDER BY ps.version DESC LIMIT 1").fetchone()
+        return row[0] if row else None
+    finally:
+        conn.close()
+
+
+# check_key -> the cfg_prose_concept it depends on, surfaced in the failure message when that
+# check is missing its attestation -- found live 2026-08-30 (escalation #1235): the attestor had
+# no live text to judge against, only the question's own free-standing paraphrase.
+_QUALITY_CHECK_CONCEPT = {"genuinely-inner-being": "inner_being_definition"}
+
+
+def _check_quality_attestations(ctx: Ctx, items: dict, required: list[str]) -> None:
     """items: {key: raw payload item dict} for every NEW or CHANGED entry this call is about to
     write (unchanged/removed entries need no fresh attestation -- nothing new is being asserted
     about them). Each item must carry `quality_checks: {check_key: "<the analyst's own reasoning,
@@ -237,6 +263,15 @@ def _check_quality_attestations(items: dict, required: list[str]) -> None:
         missing = [c for c in required if not (answered.get(c) or "").strip()]
         if missing:
             problems.append(f"{key!r} missing quality_checks attestation for: {missing}")
+            for check_key in missing:
+                concept_key = _QUALITY_CHECK_CONCEPT.get(check_key)
+                if not concept_key:
+                    continue
+                text = _prose_concept_text(ctx, concept_key)
+                if text:
+                    problems.append(
+                        f"  -- {check_key!r} is judged against this definition (chapter 1, "
+                        f"'Defining Inner Being'): {text}")
     if problems:
         raise QualityCheckIncomplete(problems)
 
@@ -504,9 +539,38 @@ def hib_set(ctx: Ctx) -> Outcome:
                     f"{len(e.problems)} item(s) need reconciliation before this can write: "
                     f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
+    # not-already-excluded floor check (cfg_quality_check, found live 2026-08-30, escalation
+    # #1235): a label that already exists book-wide (all_by_label) but had no footprint in THIS
+    # call's own scope reconciles as "new" above -- exactly the shape a previously set-aside
+    # referent takes when a fresh payload gives it a footprint in a different range. Check whether
+    # any of that HIB's own phenomena already carry a live operation.decision='set_aside'; if so,
+    # this is a real candidate for silent reintroduction and needs the researcher's/Claude's own
+    # textual-grounds judgement (the quality check itself), not a script deciding it either way --
+    # so this surfaces as a problem requiring the payload to address it (via reconciliation_note),
+    # not a silent pass-through.
+    reintroduced = []
+    for label in new:
+        row = all_by_label.get(label)
+        if not row:
+            continue
+        set_aside = ctx.db.rows(
+            "SELECT 1 FROM operation o JOIN phenomenon p ON p.id=o.phenomenon_id "
+            "WHERE p.hib_id=? AND o.decision='set_aside' AND o.deleted=0 AND p.deleted=0",
+            (row["id"],))
+        if set_aside and not incoming[label].get("note"):
+            reintroduced.append(label)
+    if reintroduced:
+        return fail("possible-reintroduction",
+                    f"{len(reintroduced)} label(s) already exist book-wide with at least one "
+                    f"operation recorded decision='set_aside', and this payload gives them a "
+                    f"fresh footprint with no reconciliation_note explaining why: "
+                    f"{reintroduced[:5]}{' ...' if len(reintroduced) > 5 else ''} -- if this is a "
+                    f"genuine reintroduction on new textual grounds, say so in the label's own "
+                    f"reconciliation_note; if it's a mistake, remove it from this payload")
+
     try:
         _check_quality_attestations(
-            {l: incoming[l]["raw"] for l in (set(new) | set(changed))},
+            ctx, {l: incoming[l]["raw"] for l in (set(new) | set(changed))},
             _required_quality_checks(ctx, "hib.set"))
     except QualityCheckIncomplete as e:
         return fail("quality-check-incomplete",
@@ -772,7 +836,7 @@ def phenomenon_set(ctx: Ctx) -> Outcome:
 
     try:
         _check_quality_attestations(
-            {k: by_key[k][3] for k in (set(new) | set(changed))},
+            ctx, {k: by_key[k][3] for k in (set(new) | set(changed))},
             _required_quality_checks(ctx, "phenomenon.set"))
     except QualityCheckIncomplete as e:
         return fail("quality-check-incomplete",
@@ -1046,7 +1110,7 @@ def operation_set(ctx: Ctx) -> Outcome:
 
     try:
         _check_quality_attestations(
-            {k: by_key[k][1] for k in (set(new) | set(changed))},
+            ctx, {k: by_key[k][1] for k in (set(new) | set(changed))},
             _required_quality_checks(ctx, "operation.set"))
     except QualityCheckIncomplete as e:
         return fail("quality-check-incomplete",
@@ -1417,7 +1481,7 @@ def closing_set(ctx: Ctx) -> Outcome:
         required = [c for c in all_required if c.startswith(prefix)]
         qc_items = {f"{list_name}:{key}": incoming[key]["raw"] for key in list(new) + list(changed)}
         try:
-            _check_quality_attestations(qc_items, required)
+            _check_quality_attestations(ctx, qc_items, required)
         except QualityCheckIncomplete as e:
             return fail("quality-check-incomplete",
                         f"{len(e.problems)} item(s), nothing written: "

@@ -11466,3 +11466,265 @@ open question for the researcher, not decided here.
 **Files:** `iba/app/lib/cfg.py` (`required_setting`, `required_module_setting`); `iba/app/lib/
 pathaudit.py` (rule 3 removed); `iba/app/lib/cfgquality.py` (`find_orphan_configs` usage-marker
 fix); the 28 files listed above; `cfg_setting` (2 rows reactivated, 1 corrected to valid JSON).
+
+## 210. `run.py main()` — dispatcher refusals now return valid JSON instead of a bare traceback (2026-08-30, escalation #1058)
+
+**Found live:** researcher ran `VerseSpanMeaning-Report.ps1` for a single verse; its work package
+is genuinely retired (`cfg_work_package.inactive=1`, correct — replaced by `VerseLexical.ps1`, see
+§206 — not itself a bug). The actual error the researcher saw was a second, unrelated crash:
+`Write-IbaStepResult: The property 'path' cannot be found on this object.`
+
+**Root cause:** `run_step()`'s dispatch gates (inactive work package, inactive step, unclassified
+step kind) and every `_grant()`/`_may()` write-grant check across the app raise a bare, uncaught
+exception by deliberate convention (documented at each gate, citing BUILD.md sec37) — correct for
+a direct Python caller. But `run_step()` is *only* ever called from `main()` in this file (confirmed
+— no other import/call site anywhere in the app), and `main()` had no exception handling around
+it. `python -m iba.app.run` therefore printed nothing to stdout on any such refusal (a bare
+traceback to stderr, exit 1) — but every one of the 37 `iba/app/ps/*.ps1` scripts that call it
+assumes exactly one JSON line with a `path` key always comes back, and does
+`$res = $json | ConvertFrom-Json; ... $res.path`. With `$res` null, PowerShell StrictMode's
+"property not found" error is what actually surfaced, masking the real one-line message entirely.
+
+**Fix, scoped to the CLI boundary only:** `run_step()` itself is unchanged — the raw exception
+still propagates for any direct Python caller, exactly as documented. `main()` now wraps its one
+`run_step()` call in try/except: any exception is caught and printed as one valid JSON line
+(`path="error"`, `message=<exception text>`), new `PATH_EXIT["error"] = 1`. A second, closely
+related crash surfaced during testing once the first was fixed: `Write-IbaStepResult`'s colour map
+(`_lib/Notify.ps1`) had no entry for exit code 1 either (`$colour` null → `-ForegroundColor $null`
+crash) — added `1 = 'DarkRed'` plus a `?? 'White'` fallback so any future new code degrades
+gracefully instead of crashing.
+
+**Verified live, not just read:**
+1. `python -m iba.app.run verse-analysis-report --step report.verse_span_meaning ...` — now prints
+   `{"step":..., "path":"error", "message":"PermissionError: ..."}` and exits 1 (was: bare
+   traceback, nothing on stdout).
+2. `VerseSpanMeaning-Report.ps1 -Book Dan -Range 1:1` — now prints one clean error line and exits 1
+   (was: the `$res.path` crash the researcher reported).
+3. Regression check: `VerseLexical.ps1 -Book Dan -Range 1:1 -Step report.verse_lexical` (a normal
+   successful dispatch) still completes, exit 0, unaffected.
+
+**Files:** `iba/app/run.py` (`PATH_EXIT`, `main()`); `iba/app/ps/_lib/Notify.ps1`
+(`Write-IbaStepResult` colour map). Not touched: the 37 individual PS scripts, and `run_step()`'s
+internal gates — both intentionally, per the fix's scoping above.
+
+## 211. `find_unregistered_tables_and_columns` — configmaint.validate now checks live schema vs cfg_table/cfg_column, both databases (2026-08-30, escalations #1058/#1059)
+
+**Researcher, directly, after `finding_verse_index` (475,790 rows) turned up unregistered:**
+*"bring config up to date properly whenever you do anything that affects it... I have now worked
+for 6 weeks to get config in place, and cover everything. And every time I touch something, then it
+is not right... do not rely on the configmaint validation, because it is simply not doing its job."*
+
+**Confirmed true, not disputed:** grepped `cfgquality.py` for any check comparing live
+`sqlite_master`/`pragma table_info` against `cfg_table`/`cfg_column` — none existed. Every check in
+that file validates `cfg_*` rows against each other; none against the schema they describe.
+
+**Built:** `find_unregistered_tables_and_columns(conn, project_root)` — for both `iba` and
+`bible_research` (path resolved via `database.<name>.path`, same setting `Cfg.database_path()`
+uses): live table with no `cfg_table` row; active `cfg_table` row whose table is gone; for every
+live+active table, live column with no `cfg_column` row; active `cfg_column` row whose column is
+gone. Wired into `configmaint.py`'s `_validate_live()` as a hard error — dry-run confirmed the drift
+is small (3 tables, 8 columns total across both databases), not a large pre-existing backlog, so
+unlike `find_unregistered_project_scripts` there's no reason to soften this to advisory.
+
+**Dry-run findings (fixed/tracked, not just detected):**
+- `content_index`, `content_index_scan` (iba.db, both 0 rows — the content-index-search tooling
+  escalation #770 already flagged as on-hold) — registration proposed, escalation #1060/#1061.
+- `finding_verse_index` (bible_research.db, 475,790 rows — the table that started this) —
+  registration proposed, escalation #1062.
+- 8 column-level drifts (6 missing, 2 stale-active) across `verse`, `finding`,
+  `wa_data_quality_flags`, `wa_quality_flag_types` — the same `configmaint.validate` run auto-raised
+  escalation #1063 with all 14 findings (3 tables + these 8 columns) as one coherence-error record;
+  not individually proposed yet this same round. The full 34-table config-in-total review this all
+  belongs to is tracked separately, escalation #1065.
+
+**New `cfg_behaviour_rule`** (class=`development`, `config-updated-same-unit-of-work-as-change`,
+escalation #1059, approved and applied same day) states the standing discipline this check
+enforces.
+
+**Files:** `iba/app/lib/cfgquality.py` (new function); `iba/app/handlers/configmaint.py` (wired in);
+`GOVERNANCE.md` §65 (same unit of work).
+
+## 212. `escalation.needs_claude_followup` — approved no longer always means completed (2026-08-30, escalation #1075)
+
+**Researcher's diagnosis, confirmed exactly in code:** #1059-1062 (escalation #1058's own config
+fixes) all reached `state=completed` the moment `next_action=approved` was set — before the real
+config write (a second, separate `Config-Maintenance.ps1 -RunId` re-run) had actually happened.
+Traced to `cfg_escalation_transition`'s one rule for `approved`: condition `has_resolution` (does a
+resolution string exist), nothing checking whether the described work was done. Full design:
+`iba/docs/escalation-followup-flag-design-v1-20260830.md`.
+
+**Built:** new `escalation.needs_claude_followup` / `escalation_history.needs_claude_followup`
+columns (INTEGER, default 0 — migration `add_escalation_needs_followup_column_20260830.py`, cfg_column
+rows for both). New `_condition_true()` branch `needs_followup`. New `cfg_status_flow` row
+(`escalation`/`re-assigned`, matched via the `next_action=approved+needs_claude_followup` substring).
+`cfg_escalation_transition`: existing `manual/approved/has_resolution` rule renumbered priority
+1→2; new priority-1 rule `manual/approved/needs_followup → re-assigned` sits ahead of it. `raise_new()`/
+`update()` both gained a `needs_followup` parameter (`update()`'s defaults `None` = carry the current
+value forward unchanged); every other envelope-building call site (`answer_for_run`, `correction`,
+`resolve_self_correctable`, `escalate_to_decision`) updated to carry the flag forward explicitly,
+matching how `resolution_kind` is already carried. CLI: `--needs-followup=1|0` on `raise`/`update`.
+`Escalation.ps1`: new `-NeedsFollowup ('1'|'0')` parameter, wired into both `-Action Raise` and
+`-Action Update`.
+
+**A real bug and a design flaw, found applying the last 3 rows, both fixed (not routed around):**
+`cfg_status_flow` has `UNIQUE(entity, status)` — the originally-approved `insert` for a second
+`escalation`/`re-assigned` row could never apply (`IntegrityError`, confirmed live). Corrected via
+`Correction` (error-only) on escalation #1079 and re-proposed as an `update` to the existing row's
+`set_by` text instead (escalation #1083). Same failure also surfaced that `raise_()` — the
+lower-level function `run.py` calls directly, separate from `raise_new()` — didn't know about the
+new column either and crashed recording its own crash; fixed the same way (`needs_claude_followup:
+0` added to its `fields` dict).
+
+**All 6 rows applied and verified live** (`cfg_column` x2, `cfg_utility`, `cfg_status_flow`,
+`cfg_escalation_transition` x2).
+
+**Tested live end-to-end, not just asserted** (test escalations #1082/#1084/#1085, each
+resolution states the actual result):
+1. Raise with `--needs-followup=1` → `needs_claude_followup=1` confirmed in both `escalation` and
+   `escalation_history` v1. **Pass.**
+2. Two subsequent `update()` calls that don't touch the flag → still 1. **Pass** (carry-forward).
+3. Regression (config not yet live): approved with flag=1 → still `completed`, pre-change
+   behaviour. **Pass** (code inert until config lands).
+4. **The actual fix, config live:** approved with flag=1 (#1084) → `state='re-assigned'`,
+   `next_action_assigned_to='Claude'` — routes back to Claude, NOT `completed`. **Pass.**
+5. Closure path: clear the flag, `next_action=noted` → `state='closed'`. **Pass.**
+6. Regression (config live): approved with flag=0 (#1085) → still `state='completed'`, normal
+   items entirely unaffected. **Pass.**
+
+**Not yet done:** `iba/docs/escalation actions worksheet.xlsx` needs the new `-NeedsFollowup` flag
+column added (`governance.ps_worksheet_sync_on_change`) — file was open/locked in Excel throughout
+this build, checked directly rather than guessed; flagging rather than touching it, per standing
+instruction. Only remaining open item on escalation #1075.
+
+**Files:** `iba/app/migration/add_escalation_needs_followup_column_20260830.py` (new);
+`iba/app/lib/escalation.py` (`_ENVELOPE_COLS`, `_condition_true`, `_evaluate_transition`, `raise_new`,
+`raise_`, `update`, `answer_for_run`/`correction`/`resolve_self_correctable`/`escalate_to_decision`
+envelopes, CLI `_dispatch`); `iba/app/ps/Escalation.ps1` (`-NeedsFollowup` parameter); `cfg_column`
+(2 new rows); `cfg_utility` (1 new row); `cfg_status_flow` (1 updated row); `cfg_escalation_transition`
+(1 renumbered, 1 new row) — all applied and verified live.
+
+## 213. `configmaint.propose` now sets `needs_claude_followup` — the mechanism #212 built was never actually wired to the one call site it was named for (2026-08-31, escalation #1301)
+
+**What was found, live, the hard way.** #212 (above) fixed `raise_()`'s crash (a hardcoded
+`needs_claude_followup: 0` in its `fields` dict, satisfying the NOT NULL constraint) and built the
+whole state-machine mechanism end to end — but no real call site was ever changed to actually pass
+`needs_followup=True`. `configmaint.propose`'s own `escalate()` call, the literal motivating case
+for the whole mechanism (a propose's approval only records a decision; the write itself needs a
+second, distinct re-run with `-RunId`), still had no way to request it — `handlers/base.py`'s
+`escalate()` helper didn't accept the parameter at all. Consequence, caught live: 19 config
+proposals (#1238-1256, escalation #1130's purpose/success revision batch) were approved by the
+researcher and immediately read `state='completed'` — while every one of their underlying DB writes
+was still outstanding. Caught only because each was independently re-verified against the live DB
+rather than trusted from the escalation's own terminal state (the standing discipline
+`feedback_verify_before_reporting_fixed` calls for) — the state machine itself gave no warning.
+
+**Fix.** `handlers/base.py:escalate()` gained a `needs_followup: bool = False` parameter, threaded
+into `Outcome.escalation["needs_followup"]`. `run.py`'s `report-stop` raise branch reads
+`e.get("needs_followup", False)` (and the fail()-shaped branch explicitly sets `False`) and passes
+it to `raise_()`, which now accepts `needs_followup: bool = False` and writes
+`needs_claude_followup = 1 if needs_followup else 0` instead of the old hardcoded `0`.
+`handlers/configmaint.py`'s `propose()` now calls `escalate(..., needs_followup=True)` — the
+`validate()` step's own `escalate()` call (a plain acknowledge/reject/revise decision with no
+follow-up write) is left at the default `False`, correctly.
+
+**Tested live:** a throwaway no-op proposal (`cfg_meta.config_version` set to its own value) raised
+with `needs_claude_followup=1` confirmed at raise time; simulated researcher approval
+(`ready_for_approval` → `approved`) routed to `state='re-assigned'`, not `completed` — the exact
+behaviour #212 built and #1301 found missing from this call site. Withdrawn after confirming (no
+real change was needed).
+
+**Recovery of the 14 already-mis-completed items:** re-ran all 14 approved-but-unapplied proposals
+from #1238-1256 with their original `-RunId`s (the apply mechanism works regardless of the
+escalation's own terminal state — confirmed live) and independently re-verified every write against
+the live DB afterward. All 14 confirmed applied.
+
+**Files:** `iba/app/handlers/base.py` (`escalate()`), `iba/app/run.py` (report-stop branch),
+`iba/app/lib/escalation.py` (`raise_()`), `iba/app/handlers/configmaint.py` (`propose()`) — all
+applied and verified live, no migration needed (the column already existed from #212).
+
+## 214. `hib.set` gains a set-aside cross-check; `genuinely-inner-being` wired to its live prose definition (2026-08-31, escalation #1235)
+
+Both are the two remaining code-level findings from #1235's `cfg_quality_check` null-row review
+(the config-only findings from the same review — `linkage-genuinely-registered`'s `test_kind`,
+the new `stated-or-inferred-honestly-assigned` row — were applied earlier via `configmaint.propose`,
+#212/#213 above).
+
+**`not-already-excluded` (hib.set).** `hib_set()`'s book-wide identity lookup (`all_by_label`)
+never checked whether an incoming label reconciling as "new" (no footprint in this call's own
+scope, per the 2026-08-08 scope-limiting change) already had a live `operation.decision='set_aside'`
+recorded against it elsewhere in the book — exactly the shape a previously-set-aside referent takes
+when a fresh payload gives it a footprint in a different range. Added a floor check, right after
+`_reconcile()` succeeds: for every label in `new`, if `all_by_label` already has a row for it AND
+that HIB has a live `set_aside` operation AND the incoming item carries no `reconciliation_note`,
+`hib_set()` now fails with `possible-reintroduction`, naming the label(s) and asking for either a
+`reconciliation_note` justifying the reintroduction on new textual grounds, or removal from the
+payload. Deliberately a flag requiring the payload to address it, not a silent skip or an
+unconditional hard block on any reintroduction — genuine reintroduction on new evidence stays
+possible, it just can't happen silently. Query: `operation` joined to `phenomenon` on
+`phenomenon_id`, filtered `decision='set_aside' AND deleted=0` both sides, matched on `hib_id`.
+Smoke-tested against live data (no `set_aside` rows exist yet at this book/passage scale, so the
+new branch is currently a no-op on real data, confirmed by running the query directly) and
+syntax-verified; not yet exercised against a real payload that actually triggers it (none of the
+49 filled passages so far has a `set_aside` decision recorded).
+
+**`genuinely-inner-being` (phenomenon.set).** `cfg_prose_concept.inner_being_definition` — the
+authoritative pointer to Chapter 1's "Defining Inner Being" prose (escalation #714, 2026-08-18) —
+was found live 2026-08-30 to be dereferenced by no code anywhere in the app. Added
+`_prose_concept_text(ctx, concept_key)` (`handlers/operations.py`): a minimal, targeted resolver
+(hardcoded to the one concept currently needed, not a general `cfg_prose_concept` ->
+`prose_section_type` link — that's a separate, larger design question, noted but not decided in
+the cfg-table purpose/success review) that opens `bible_research.db` via the existing
+`prosestore.open_db(ctx.cfg)` connection point, joins `prose_section` to `prose_section_type` on
+`code='prog_purp_defining_inner_being'`, and returns the live body text (confirmed live: 3532
+characters, matches the prose read directly earlier in the same investigation). `_check_quality_
+attestations()` gained a `ctx` parameter (threaded through its 4 call sites: `hib_set`,
+`phenomenon_set`, `operation_set`, `closing_set`) and a `_QUALITY_CHECK_CONCEPT` map
+(`{"genuinely-inner-being": "inner_being_definition"}`) -- when an item is missing this specific
+attestation, the raised `QualityCheckIncomplete`'s problem list now includes the actual definition
+text, not just the check's own free-standing question paraphrase. Tested live: called directly
+with a missing attestation, confirmed the raised exception's problems list carries the real
+Chapter 1 text verbatim.
+
+**Files:** `iba/app/handlers/operations.py` (`hib_set()`, `_prose_concept_text`,
+`_QUALITY_CHECK_CONCEPT`, `_check_quality_attestations` signature + all 4 call sites) — no schema
+change, no migration.
+
+## 215. `cfg_table.category` — rule tables distinguished from audit-log tables sharing the `cfg_` prefix (2026-08-31, escalation #1146)
+
+Approved design implemented. New column `cfg_table.category` (enum `rule`|`data`|`log`, new
+`cfg_enum` group `table_category`), same single-purpose-flag shape as the existing `cfg_table.
+inactive`, chosen over a hardcoded exclusion list specifically to avoid the manual-upkeep fragility
+that shape would carry every time a new log-shaped table appears. Backfilled all 189 `cfg_table`
+rows with an explicit value, none left NULL: 33 `rule` (the 32 genuine cfg_* configuration tables
+`cfg_table_purpose` already covers, plus `cfg_table_purpose` itself), 2 `log`
+(`cfg_change_detail`/`cfg_change_log`), 154 `data` (every real data table, both databases).
+
+Of the 4 scan sites #1146 named, 2 had an actual behavioural bug and were fixed:
+`handlers/configmaint.py:_known_cfg_tables()` (decides what `configmaint.propose` may touch — now
+filters `category='rule'`, so the 2 log tables are no longer write-touchable through the sanctioned
+gate at all) and `lib/cfgquality.py:find_cfg_tables_missing_configmaint_grant()` (now filters
+`category='rule'` too — without this fix, revoking the log tables' grant, below, would have made
+this very check immediately re-flag them as a fresh "missing grant" finding, undoing the point of
+the fix). The other 2 named sites (`_validate_live()`'s `real_cfg_tables` legitimacy scan,
+`find_bad_report_csv_table_references()`) were reviewed and left as-is — both check table
+*existence*, not write-permission scope, and a log table is a legitimate answer to both ("does this
+table exist," "can a report legitimately reference it"); category doesn't change their correctness.
+
+Tested live in isolation (not just syntax-checked): `find_cfg_tables_missing_configmaint_grant()`
+returns no finding for either log table; `_known_cfg_tables()` excludes both from its
+write-touchable set while still including a genuine rule table (`cfg_setting`) — confirmed
+directly, not inferred. Full `configmaint.validate` run was blocked by an unrelated environmental
+issue (a `PermissionError` on `workflow\schema\cfg_table.csv`, a file some other process had open —
+not caused by this change, not yet chased down) — noted, not yet re-run end-to-end.
+
+**Write-grant revocation proposed, not yet applied:** `cfg_write_grant.inactive=1` for
+`writer='configmaint.propose'` on both `cfg_change_detail` and `cfg_change_log`, via
+`configmaint.propose` (run ids `RUN-20260831_060427_200-CONFIGMAINT`,
+`RUN-20260831_060428_295-CONFIGMAINT`) — pending researcher approval, same gate as any other config
+write, no exception for this one.
+
+**Files:** `iba/app/migration/add_cfg_table_category_column_20260831.py` (new);
+`iba/app/handlers/configmaint.py` (`_known_cfg_tables()`); `iba/app/lib/cfgquality.py`
+(`find_cfg_tables_missing_configmaint_grant()`); `cfg_column` (1 new row); `cfg_enum` (3 new rows,
+group `table_category`); `cfg_table` (189 rows backfilled) — schema and code applied and verified
+live; the write-grant revocation itself awaits approval.

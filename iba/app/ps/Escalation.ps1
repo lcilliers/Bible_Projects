@@ -200,7 +200,13 @@ param(
     # escalation #798/#799: required on Raise (cfg_behaviour_rule
     # 'decision-points-are-terminal-not-inline'). DecisionRequired/SelfCorrectable map to the
     # lowercase cfg_enum values the Python side expects.
-    [ValidateSet('DecisionRequired', 'SelfCorrectable')] [string] $ResolutionKind
+    [ValidateSet('DecisionRequired', 'SelfCorrectable')] [string] $ResolutionKind,
+    # escalation #1075, 2026-08-30: set on Raise, or set/cleared on Update, when finishing this
+    # item needs a further Claude action AFTER the researcher approves it (a config apply, a build
+    # step) -- approved then routes back to Claude instead of straight to completed. '1' sets it,
+    # '0' clears it; omitted on Update carries the item's current value forward unchanged, omitted
+    # on Raise defaults to not set.
+    [ValidateSet('1', '0')] [string] $NeedsFollowup
 )
 
 Set-StrictMode -Version Latest
@@ -292,6 +298,7 @@ switch ($Action) {
                   "--originator=$AnsweredBy", "--resolution-kind=$($kindMap[$ResolutionKind])")
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($Context) { $flags += "--context=$Context" }
+        if ($NeedsFollowup) { $flags += "--needs-followup=$NeedsFollowup" }
         python -m iba.app.lib.escalation raise @flags $Question
     }
     'ResolveSelfCorrectable' {
@@ -341,6 +348,7 @@ switch ($Action) {
         if ($Resolution) { $flags += "--resolution=$Resolution" }
         if ($Tried) { $flags += "--tried=$Tried" }
         if ($Context) { $flags += "--context=$Context" }
+        if ($NeedsFollowup) { $flags += "--needs-followup=$NeedsFollowup" }
         if ($Comment) {
             python -m iba.app.lib.escalation update $Id @flags $Comment
         } else {

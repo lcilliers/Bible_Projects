@@ -1,0 +1,3 @@
+﻿table_name,kind,text
+cfg_api,purpose,"Every named STEP REST API call this app is coded to use -- route template, input, and what it returns -- so the app never hardcodes a STEP URL inline."
+cfg_api,success,"Every row is actually called somewhere in the codebase; every STEP call the codebase makes has a row here; each route resolves correctly against the real, live STEP server."

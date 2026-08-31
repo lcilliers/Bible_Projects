@@ -1,0 +1,93 @@
+﻿step,ordinal,section_key,heading,toc_label,include,inactive
+configmaint.report,0,findings,## 0. Findings — needing researcher judgement,0. Findings — needing researcher judgement,1,0
+configmaint.report,3,connection,## 3. Connection (STEP),3. Connection (STEP),1,0
+configmaint.report,4,settings,"## 4. Settings — every rule / threshold, grouped by owning module","4. Settings — every rule / threshold, grouped by owning module",1,0
+configmaint.report,5,apis,## 5. STEP apis,5. STEP apis,1,0
+configmaint.report,6,work_packages,## 6. Work packages & steps (the sequence),6. Work packages & steps (the sequence),1,0
+configmaint.report,7,on_fail,## 7. on_fail — condition -> path (the fork rules),7. on_fail — condition -> path (the fork rules),1,0
+configmaint.report,8,write_grants,## 8. Write grants — who may write what,8. Write grants — who may write what,1,0
+configmaint.report,9,status_flow,## 9. Status flow,9. Status flow,1,0
+configmaint.report,10,schema,## 10. Schema — data tables built from config,10. Schema — data tables built from config,1,0
+configmaint.report,11,enums,## 11. Enums,11. Enums,1,0
+configmaint.report,12,book_order,## 12. Book order,12. Book order,1,0
+configmaint.report,13,change_log,## 13. Change-log — every accepted load (audit),13. Change-log — every accepted load (audit),1,0
+candidate.validate,0,span_tag,## span_candidate.candidate_tag (the stamp),span_candidate.candidate_tag (the stamp),1,1
+candidate.validate,1,seed_tag,"## candidate_seed.tag (the seed decision — a worklist, not a verdict)","candidate_seed.tag (the seed decision — a worklist, not a verdict)",1,1
+candidate.validate,2,gloss,## lemma_inventory.gloss (the independent substrate),lemma_inventory.gloss (the independent substrate),1,1
+candidate.validate,3,orphan_lemmas,## Lemmas with no strong entry yet (by frequency),Lemmas with no strong entry yet (by frequency),1,1
+candidate.load,0,duplicates,## Duplicates skipped (not written),Duplicates skipped (not written),1,1
+candidate.load,1,exceptions,## Exception rows,Exception rows,1,1
+passage.validate,0,dist,## verse_count distribution,verse_count distribution,1,0
+passage.validate,1,by_book,## By book,By book,1,0
+report.word,0,validation,## Validation,Validation,1,0
+report.word,1,strongs,## The strongs and their meaning (L1 → L2),The strongs and their meaning (L1 → L2),1,0
+report.word,2,sample_verses,## Sample verses — the span layer (one row per code),Sample verses — the span layer (one row per code),1,0
+validation.word,0,app_db,## 1. App & DB,1. App & DB,1,0
+validation.word,1,pre_post,## 2. Pre/post,2. Pre/post,1,0
+validation.word,2,integrity,## 3. Integrity,3. Integrity,1,0
+validation.word,3,references,## 4. References,4. References,1,0
+validation.word,4,expectations,## 5. Expectations,5. Expectations,1,0
+validation.word,5,value_quality,## 6. Value quality,6. Value quality,1,0
+validation.book,0,app_db,## 1. App & DB,1. App & DB,1,0
+validation.book,1,candidate,## 3. Candidate (L4b),3. Candidate (L4b),1,0
+validation.book,2,passages,## 4. Passages,4. Passages,1,0
+validation.book,3,value_quality,## 6. Value quality,6. Value quality,1,0
+retention.report,0,summary,## Summary,Summary,1,0
+retention.report,1,stuck_chained,## Stuck chained runs (archival candidates — not relabelled; see lib/retention.py),Stuck chained runs (archival candidates — not relabelled; see lib/retention.py),1,0
+retention.report,2,open_escalations,## Open escalations (oldest first),Open escalations (oldest first),1,0
+retention.report,3,recent_failed,## Recent failed runs (last 50),Recent failed runs (last 50),1,0
+configmaint.report,14,report_governance,## 14. Reports — full governance per report,Reports — full governance per report,1,0
+report.seed_candidate,0,summary,## Summary,Summary,1,1
+report.seed_candidate,1,distribution,## Distribution — tag length and rows per lemma,Distribution — tag length and rows per lemma,1,1
+report.seed_candidate,2,top_lemmas,## Top lemmas by candidate-row count,Top lemmas by candidate-row count,1,1
+report.seed_candidate,3,over_time,## Open vs resolved over time,Open vs resolved over time,1,1
+report.strong_meaning,0,gap_list,## strong rows with no strong_sense yet (by usage count),strong rows with no strong_sense yet (by usage count),1,0
+report.strong_meaning,1,sense_distribution,## Sense-count distribution (strong_meaning_tree),Sense-count distribution (strong_meaning_tree),1,0
+report.strong_meaning,3,lexicon_completeness,## Lexicon completeness (lsj / mounce),Lexicon completeness (lsj / mounce),1,0
+report.span_analysis,0,by_book,## Coverage by book,Coverage by book,1,0
+report.span_analysis,1,morph_distribution,## morph_code distribution,morph_code distribution,1,0
+report.span_analysis,2,particle_split,## Particle vs non-particle spans,Particle vs non-particle spans,1,0
+report.schema_overview,0,overview,## Table inventory,Table inventory,1,0
+report.schema_overview,1,tables,"## Every data table, in full","Every data table, in full",1,0
+report.strong_meaning,2,sense_by_registry,## Sense distribution by registered word (with gloss),Sense distribution by registered word (with gloss),1,0
+report.registry,0,summary,## Summary,Summary,1,0
+report.registry,1,by_strong,## Registry word joined to strong,Registry word joined to strong,1,0
+report.registry,2,sense_report,## Sense report -- registry word by gloss/broad meaning,Sense report by gloss,1,0
+lexicon.validate,0,summary,## Summary,Summary,1,0
+lexicon.validate,1,coverage,## Coverage — strong_lexicon/strong rows with no parsed/related output,Coverage — strong_lexicon/strong rows with no parsed/related output,1,0
+lexicon.validate,2,value_quality,## Value quality — gloss findings,Value quality — gloss findings,1,0
+report.whole_book_read,0,coverage,## Coverage,Coverage,1,0
+report.whole_book_read,1,carried_forward,## Carried forward per passage,Carried forward per passage,1,0
+report.whole_book_read,2,not_found,## Sections not found — verify heading,Sections not found — verify heading,1,0
+report.whole_book_read,3,closing,## Closing synthesis,Closing synthesis,1,0
+report.book_narrative_validate,0,findings,## Findings,Findings,1,0
+configmaint.report,1,inactive_configs,"## 1. Inactive configs — historical record, not a decision","1. Inactive configs — historical record, not a decision",1,0
+configmaint.report,2,utilities,## 2. Utilities registry,2. Utilities registry,1,0
+report.verse_lexical,0,coverage,"## Reading coverage (content-role codes, this range)","Reading coverage (content-role codes, this range)",1,0
+report.verse_lexical,1,verses,## Verses,Verses,1,0
+retention.report,4,stuck_nonchained,## Stuck non-chained runs (unambiguous crash signal -- safe to re-submit; see lib/retention.py),Stuck non-chained runs (unambiguous crash signal -- safe to re-submit; see lib/retention.py),1,0
+report.word_registry_span,0,overview,## Overview,Overview,1,0
+report.word_registry_span,1,strongs,## Linked Strong's — parse meaning & span analysis,Linked Strong's — parse meaning & span analysis,1,0
+report.registry,3,listing,## Registry listing (all words),Registry listing (all words),1,0
+report.strong_verse,0,senses,## Exact-variant senses,Exact-variant senses,1,0
+report.strong_verse,1,verses,## Verses,Verses,1,0
+cluster.validate,0,summary,## Summary,Summary,1,0
+cluster.validate,1,exceptions_no_word,"## Exception -- non-T2 cluster, no word_registry link",Exception - no word,1,0
+cluster.validate,2,exceptions_sibling_conflict,## Exception -- backfill code with an active/clustered sibling,Exception - sibling conflict,1,0
+report.cluster,0,clusters,## Cluster taxonomy,Cluster taxonomy,1,0
+report.cluster,1,by_cluster,## Word-origin strong count per cluster,Word-origin count per cluster,1,0
+report.cluster,2,gap_list,## Word-origin gap list,Word-origin gap list,1,0
+report.cluster,3,cluster_summary,## Cluster summary -- every origin,Cluster summary (all origins),1,0
+manifest.rebuild,0,summary,## Summary,Summary,1,0
+manifest.rebuild,1,by_category,## By category,By category,1,0
+manifest.rebuild,2,by_currency,## By currency,By currency,1,0
+escalation.list,0,open_items,# Open escalations,Open items,1,0
+escalation.list,6,recently_resolved,## Recently resolved (last 15),Recently resolved,1,0
+escalation.history,0,item_history,## #<id> — <short_description>,Item history,1,0
+pathaudit.scan,0,summary,## Summary,Summary,1,0
+pathaudit.scan,1,findings,## Findings,Findings,1,0
+report.obs_catalogue,0,overview,## Overview — lifecycle breakdown,Overview — lifecycle breakdown,1,0
+report.obs_catalogue,1,lifecycle_conflicts,## Lifecycle conflicts (status vs deleted),Lifecycle conflicts (status vs deleted),1,0
+report.obs_catalogue,2,naming_schemes,## Naming schemes and format inconsistencies,Naming schemes and format inconsistencies,1,0
+report.obs_catalogue,3,tier_structure,"## Tier structure — live, tiered questions","Tier structure — live, tiered questions",1,0
+report.obs_catalogue,4,unclassified,## Unclassified — live questions with no tier,Unclassified — live questions with no tier,1,0

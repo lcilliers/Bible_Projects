@@ -26,7 +26,9 @@ from .lib.escalation import word_source, raise_ as esc_raise
 from .handlers.base import Ctx, Outcome
 
 # path -> what the run does + the process exit code
-PATH_EXIT = {"ok": 0, "report-continue": 0, "self-heal": 0, "pause-continue": 2, "report-stop": 3}
+# "error" added 2026-08-30 (escalation #1058) -- see main()'s try/except below.
+PATH_EXIT = {"ok": 0, "report-continue": 0, "self-heal": 0, "pause-continue": 2, "report-stop": 3,
+            "error": 1}
 
 
 def _now() -> str:
@@ -269,6 +271,7 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
                 e = outcome.escalation
                 question, preset, tried, kind, whom = (
                     e["question"], e["preset"], e["tried"], "decision_required", "Researcher")
+                needs_followup = e.get("needs_followup", False)
             else:
                 # Found 2026-07-30 (escalation #383, "it is unclear what the issue is"): `message`
                 # here is often just a bare count (e.g. fail()'s own message arg, "1 coherence
@@ -281,11 +284,12 @@ def run_step(package: str, step_id: str, params: dict, run_id: str) -> dict:
                 tried = ("hard error (report-stop) — recorded for visibility; answering this "
                         "does not resume the run, which is already terminal")
                 kind, whom = "self_correctable", "Claude"
+                needs_followup = False
             source = word_source(ctx.word) if ctx.word else _source_for_step(step_id)
             try:
                 esc_raise(db, run_id, source, step_id, question, preset, tried,
                          etype=_escalation_type_for(step_id, ctx.word), assigned_to=whom,
-                         resolution_kind=kind)
+                         resolution_kind=kind, needs_followup=needs_followup)
             except Exception as record_exc:
                 print(f"[WARN] failed to record report-stop escalation: {record_exc!r}",
                      file=sys.stderr)
@@ -321,7 +325,26 @@ def main() -> int:
     ap.add_argument("--param", action="append", default=[])
     a = ap.parse_args()
     params = dict(p.split("=", 1) for p in a.param)
-    r = run_step(a.package, a.step, params, a.run_id)
+    try:
+        r = run_step(a.package, a.step, params, a.run_id)
+    except Exception as exc:
+        # escalation #1058, 2026-08-30: run_step()'s dispatch gates (inactive work package/step,
+        # unclassified step kind) and every _grant()/_may() write-grant check raise a bare,
+        # uncaught exception by deliberate convention (see those gates' own comments, and
+        # BUILD.md sec37) -- correct for a direct Python caller, but this CLI entrypoint is the
+        # ONLY thing every iba/app/ps/*.ps1 wrapper actually calls (confirmed: run_step is never
+        # imported/called anywhere else in the app), and 37 of those scripts assume
+        # `python -m iba.app.run` always prints exactly one JSON line with a `path` key. Before
+        # this fix, an uncaught exception here printed nothing to stdout (a bare traceback to
+        # stderr, exit 1) and every one of those 37 scripts then crashed a SECOND time reading
+        # `$res.path` off the resulting null object (PowerShell StrictMode), masking the real
+        # message entirely -- found live 2026-08-30 (VerseSpanMeaning-Report.ps1, a retired work
+        # package). Fix is scoped to this one function: run_step() itself, and any direct Python
+        # caller of it, is completely unchanged -- the raw exception still propagates for that
+        # case exactly as documented. Only the CLI boundary now guarantees valid JSON either way.
+        print(json.dumps({"step": a.step, "condition": "error", "path": "error",
+                          "message": f"{type(exc).__name__}: {exc}", "counts": {}}))
+        return PATH_EXIT["error"]
     print(json.dumps(r))
     return PATH_EXIT.get(r["path"], 0)
 

@@ -473,7 +473,7 @@ def find_unknown_write_grant_writers(conn: sqlite3.Connection,
 
 
 def find_cfg_tables_missing_configmaint_grant(conn: sqlite3.Connection) -> list[str]:
-    """Every real `cfg_*` DATA table must have a `cfg_write_grant` row for writer
+    """Every real `cfg_*` RULE table must have a `cfg_write_grant` row for writer
     `configmaint.propose` — that's the one sanctioned path `USER-GUIDE.md` §9 states for changing
     any `cfg_*` row, and `governance.config_control` states it as a blanket rule with no carve-out.
     Found 2026-08-17 the hard way: `cfg_escalation`/`cfg_method_rule`/`cfg_quality_check`/`cfg_index`
@@ -482,9 +482,15 @@ def find_cfg_tables_missing_configmaint_grant(conn: sqlite3.Connection) -> list[
     A hard structural fault, not a judgement call: a `cfg_*` table nobody can write through the
     sanctioned gate is broken plumbing the same class as an unresolved `on_fail`/`write_grant`
     reference, just the opposite direction (a table with zero grants, not a grant naming a dead
-    step)."""
+    step).
+
+    `category='rule'` (escalation #1146, 2026-08-31): scoped to genuine rule tables only, not
+    every cfg_-prefixed name — `cfg_change_detail`/`cfg_change_log` are audit logs, and this check
+    would otherwise immediately re-flag their now-deliberately-revoked configmaint.propose grant as
+    a fresh "missing grant" finding, undoing the fix this same escalation made."""
     cfg_tables = {r[0] for r in conn.execute(
-        "SELECT name FROM sqlite_master WHERE type='table' AND name LIKE 'cfg\\_%' ESCAPE '\\'")}
+        "SELECT name FROM cfg_table WHERE database='iba' AND name LIKE 'cfg\\_%' ESCAPE '\\' "
+        "AND category='rule'")}
     granted = {r[0] for r in conn.execute(
         "SELECT table_name FROM cfg_write_grant WHERE writer='configmaint.propose' "
         "AND database='iba'")}
@@ -492,6 +498,70 @@ def find_cfg_tables_missing_configmaint_grant(conn: sqlite3.Connection) -> list[
     return [f"schema: {t!r} has no cfg_write_grant row for writer 'configmaint.propose' — "
             f"nothing can maintain it through the sanctioned gate (governance.config_control)"
             for t in missing]
+
+
+def find_unregistered_tables_and_columns(conn: sqlite3.Connection,
+                                         project_root: pathlib.Path) -> list[str]:
+    """`governance.tables`/`governance.table_columns`: every table in the project, in EITHER
+    database, must be listed in `cfg_table`/`cfg_column` — "applies to all databases". Nothing
+    ever actually checked this against the two databases' LIVE schema before this (found live
+    2026-08-30, escalation #1058's follow-on: `finding_verse_index`, built and populated with
+    475,790 rows on 2026-08-29, had zero `cfg_table`/`cfg_column` rows — a config-driven registry
+    the researcher has spent six weeks building, silently out of sync with the schema it exists to
+    describe, discovered by accident rather than caught by validation). This is that check, for
+    both `iba` and `bible_research`, run every `configmaint.validate`.
+
+    Four shapes of drift, all hard errors (small scale, confirmed live — single digits per
+    database — not the kind of large pre-existing backlog `find_unregistered_project_scripts`
+    above has to treat as advisory; unlike that check, there is no known backlog here to protect
+    against drowning in, so nothing is lost by failing loudly on all four immediately):
+    1. a live table with no `cfg_table` row at all;
+    2. an ACTIVE (`inactive=0`) `cfg_table` row naming a table that no longer exists live (a drop/
+       rename that was never reflected — should have been marked `inactive=1`, not left active
+       and pointing at nothing);
+    3. for every table that's both live and actively registered — a live column with no
+       `cfg_column` row;
+    4. an ACTIVE `cfg_column` row naming a column that no longer exists on its live table.
+
+    `sqlite_%` tables are skipped (SQLite's own internal bookkeeping, never a project table)."""
+    def _db_path(name: str) -> pathlib.Path:
+        r = conn.execute("SELECT value FROM cfg_setting WHERE key=?",
+                         (f"database.{name}.path",)).fetchone()
+        return project_root / json.loads(r["value"])
+
+    out: list[str] = []
+    for db_key in ("iba", "bible_research"):
+        live_conn = conn if db_key == "iba" else sqlite3.connect(_db_path(db_key))
+        try:
+            live_tables = {r[0] for r in live_conn.execute(
+                "SELECT name FROM sqlite_master WHERE type='table' AND name NOT LIKE 'sqlite_%'")}
+            registered = {r["name"]: r["inactive"] for r in conn.execute(
+                "SELECT name, inactive FROM cfg_table WHERE database=?", (db_key,))}
+            for t in sorted(live_tables - registered.keys()):
+                out.append(f"schema: table {t!r} ({db_key}.db) exists live but has no cfg_table "
+                          f"row (governance.tables)")
+            for t in sorted(n for n, inactive in registered.items()
+                            if inactive == 0 and n not in live_tables):
+                out.append(f"schema: cfg_table {t!r} ({db_key}) is active but the table no longer "
+                          f"exists live — dropped/renamed without updating cfg_table.inactive")
+            for t in sorted(live_tables & registered.keys()):
+                if registered[t] != 0:
+                    continue          # table itself inactive -- its columns aren't checked either
+                live_cols = {r[1] for r in live_conn.execute(f'PRAGMA table_info("{t}")')}
+                reg_cols = {r["name"]: r["inactive"] for r in conn.execute(
+                    "SELECT name, inactive FROM cfg_column WHERE database=? AND table_name=?",
+                    (db_key, t))}
+                for c in sorted(live_cols - reg_cols.keys()):
+                    out.append(f"schema: {t}.{c} ({db_key}.db) exists live but has no cfg_column "
+                              f"row (governance.table_columns)")
+                for c in sorted(cc for cc, inactive in reg_cols.items()
+                                if inactive == 0 and cc not in live_cols):
+                    out.append(f"schema: cfg_column {t}.{c} ({db_key}) is active but the column no "
+                              f"longer exists live on that table")
+        finally:
+            if db_key != "iba":
+                live_conn.close()
+    return out
 
 
 def find_unregistered_project_scripts(conn: sqlite3.Connection,

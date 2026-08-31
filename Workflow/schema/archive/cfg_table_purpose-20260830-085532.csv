@@ -1,0 +1,42 @@
+﻿table_name,kind,text
+cfg_api,purpose,"Every named STEP REST API call this app is coded to use -- route template, input, and what it returns -- so the app never hardcodes a STEP URL inline."
+cfg_api,success,"Every row is actually called somewhere in the codebase; every STEP call the codebase makes has a row here; each route resolves correctly against the real, live STEP server."
+cfg_book_order,purpose,"The canonical 66-book Bible ordering (book code + ordinal), the single source every book-order-dependent report/index reads instead of hardcoding it."
+cfg_book_order,success,"Exactly 66 rows, ordinals form an unbroken 0-65 sequence with no duplicates, and every book code matches a real live verse.osisId prefix in both directions."
+cfg_connection,purpose,"The live STEP servers connection details (base_url, tagged version, timeout) -- so the app never hardcodes where/how it talks to STEP."
+cfg_connection,success,"Every key is actually read (stepapi.py); the values genuinely work against the real, currently-running STEP server."
+cfg_content_index_exclude,purpose,Folder/file patterns to exclude from content-index builds -- so a saturating file (e.g. generated prose) does not swamp search results with noise.
+cfg_content_index_exclude,success,"Every pattern actually corresponds to a real, still-relevant reason to exclude; correctly matches content_index own dormant/active state."
+cfg_content_index_size_override,purpose,"Per-pattern size-limit overrides for content-index builds, for files that legitimately need a different cap than the default."
+cfg_content_index_size_override,success,"Any row present corresponds to a real, still-needed override; 0 rows is correct when content_index itself is dormant."
+cfg_meta,purpose,Small bookkeeping table about the config store itself -- its version label and which database it describes.
+cfg_meta,success,"config_version is genuinely read (Cfg.config_version, the live fingerprint mechanism); every key present is actually consumed somewhere -- found live 2026-08-30: the database key is not, a minor orphan."
+cfg_candidate_rule,purpose,Strong-number accept/reject/synonym rules for the (now retired) candidate-discovery system.
+cfg_candidate_rule,success,"Consistent with its documented retirement -- all rows correctly inactive, matching retract_candidate_system.py; not a live input to anything."
+cfg_index,purpose,Every generic secondary SQLite index this app declares for its data tables -- table+column set the builder must create.
+cfg_index,success,Every registered index actually exists live with matching columns; every table it names is real; found+fixed live 2026-08-30: escalation_history was missing its registered index entirely.
+cfg_on_fail,purpose,"Per step+condition, what path (ok/pause/stop/etc) a run takes on that outcome, and what message to show -- so failure routing is data, not a hardcoded if/elif chain."
+cfg_on_fail,success,Every active row names a real active step; every path value is a real member of the path vocabulary; inactive rows correspond to conditions the code genuinely no longer produces.
+cfg_enum,purpose,"The canonical controlled-vocabulary registry -- every fixed set of allowed values project-wide, one source of truth instead of scattered hardcoded lists."
+cfg_enum,success,"Every group is actually enforced against live data somewhere, and every group defined here is actually consulted -- verified via the existing find_enum_violations check, zero violations across the whole dataset."
+cfg_escalation,purpose,"The rulebook for how the escalation system itself must behave (source classification, duplicate suppression, module-blocking, documentation-followup obligations), each rule honestly stating whether it is mechanically enforced or session practice."
+cfg_escalation,success,Every rule claiming mechanical enforcement is actually enforced by the code it names -- found+fixed live 2026-08-30: module_blocking claimed active/wired but the gate was genuinely commented out since escalation #859.
+cfg_escalation_requirement,purpose,"The field-level enforcement engine behind cfg_escalations policies -- what is required on each escalation action (comment at raise, resolution at approval, etc)."
+cfg_escalation_requirement,success,"Every rules claimed check genuinely fires -- 5 of 10 rows empirically triggered and confirmed working correctly the same session this was reviewed, not just read from code."
+cfg_column,purpose,"THE schema definition for every data table in the app -- column name/type/constraints/FK/expected-enum, read by build_data_tables() to physically create tables and by Db.write() to validate every write."
+cfg_column,success,"Every column here matches the live physical schema exactly, in both directions -- confirmed live 2026-08-30 via find_unregistered_tables_and_columns, now 0 drift after fixing 26 rows."
+cfg_unique,purpose,Composite natural-key definitions for tables whose dedup key is more than one column -- read by table_ddl()/Db.upsert() to know what counts as the same row.
+cfg_unique,success,"Every registered composite key matches a real live unique index; a table with a genuine composite PK must use THIS table, never repeated is_pk=1 flags -- found+fixed live 2026-08-30 (content_index had exactly this mistake)."
+cfg_escalation_transition,purpose,The state-machine rules for how an escalations next_action+conditions resolve to its actual state -- config-driven instead of a hardcoded if/elif chain.
+cfg_escalation_transition,success,"Every priority/condition/resulting-status combination genuinely fires correctly for real transactions -- confirmed live 2026-08-30 (the needs_claude_followup fix, tested end-to-end, 6/6 passing both directions)."
+cfg_status_flow,purpose,"Documents which status values an entity (escalation, prose_section, word) can hold and what sets each one -- a reference table for _status_for()s substring lookup, not itself the primary mechanism."
+cfg_status_flow,success,Every status genuinely reachable that _status_for() actually resolves to is described here -- found+fixed live 2026-08-30 (extended the re-assigned rows set_by text to also cover the new needs_claude_followup case).
+cfg_write_grant,purpose,"Which writer (a step, or a dispatcher-internal identity) may write which table in which database -- the authorization layer _grant()/may_write() checks before any write."
+cfg_write_grant,success,"Every real write in the app goes through a matching grant; a table with no grant at all is unreachable via the sanctioned path -- found serious live gap 2026-08-30 (escalation #1146): cfg_change_detail/cfg_change_log both hold a configmaint.propose grant letting the sanctioned gate hand-edit an audit trail, not yet fixed."
+cfg_table,purpose,"The universal registry of every table in the project, config and data alike -- one row per table with its grain and use, read by build_data_tables() and configmaints own what-may-I-touch scan."
+cfg_table,success,Every real live table (in either database) has a row; every rows use text is accurate -- confirmed 0 drift 2026-08-30 via find_unregistered_tables_and_columns after fixing 3 tables.
+cfg_behaviour_class,purpose,"The top-level categories of project-wide operational behaviour (chat, terminal, sqlite, documentation, llm_output, development, filing) -- each with an authoritative doc and a one-line scope description."
+cfg_behaviour_class,success,"Every class boundary is unambiguous (no rule could plausibly belong to two classes); confirmed clean 2026-08-30 -- 7 classes, each with a real authoritative_doc, no overlap found."
+cfg_behaviour_rule,purpose,"The actual behaviour rules within each class -- concrete, individually statable disciplines (e.g. fix the cause not the instance, git commit-and-push together) that govern how work on this project gets done."
+cfg_behaviour_rule,success,"Every rule is a real, distinct, non-duplicated discipline; confirmed clean 2026-08-30 -- 61 rows across 7 classes, no duplicate rule_keys, all active."
+cfg_method_rule,purpose,"Per-step interpretive/methodological guidance the handler follows (e.g. every human mentioned is a presumptive HIB candidate) -- substantive judgement-call rules, distinct from cfg_quality_checks pass/fail tests."

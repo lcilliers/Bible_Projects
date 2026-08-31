@@ -53,10 +53,16 @@ def _known_cfg_tables(conn: sqlite3.Connection) -> set[str]:
     (database='iba'), not a hardcoded tuple. A newly created cfg_* table becomes visible here as
     soon as ITS OWN migration registers it in cfg_table (governance.tables already requires this
     in the same unit of work) — no second edit to this file required, closing the recurring gap
-    this class of bug kept reproducing."""
+    this class of bug kept reproducing.
+
+    `category='rule'` (escalation #1146, 2026-08-31): a cfg_-prefixed name alone is not enough —
+    `cfg_change_detail`/`cfg_change_log` share the prefix but are audit-log tables, not rule
+    definitions, and must never be a configmaint.propose write target (they found live to have a
+    grant that let the sanctioned gate hand-edit an immutable audit trail). Only `category='rule'`
+    tables are genuine configuration; `category='log'` and `category='data'` are excluded here."""
     return {r[0] for r in conn.execute(
         "SELECT name FROM cfg_table WHERE database='iba' AND name LIKE 'cfg\\_%' ESCAPE '\\' "
-        "AND inactive=0")}
+        "AND inactive=0 AND category='rule'")}
 
 # module -> the dedicated table it already has, if any (rule c's "very good reason" check).
 # Moved to lib/cfgquality.py 2026-07-21 so lib/cfgreport.py can share it without a circular import.
@@ -256,6 +262,13 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     # validations is only touching settings and enum"). Same class as the on_fail.step/report-
     # step-reference checks already here; this specific table's own column was never checked.
     e.extend(cfgquality.find_bad_report_csv_table_references(conn))
+
+    # live-schema vs cfg_table/cfg_column drift — added 2026-08-30 (escalation #1058's follow-on).
+    # Every check above validates that cfg_* rows are internally coherent with EACH OTHER; nothing
+    # checked cfg_table/cfg_column against the two databases' actual, live schema until now. Found
+    # live the day this was built: finding_verse_index (bible_research.db, 475,790 rows, built the
+    # day before) had zero cfg_table/cfg_column rows. See cfgquality.find_unregistered_tables_and_columns.
+    e.extend(cfgquality.find_unregistered_tables_and_columns(conn, PROJECT_ROOT))
 
     return e
 
@@ -598,7 +611,15 @@ def propose(ctx: Ctx) -> Outcome:
               "`Escalation.ps1 -Action Update -Id <id> -NextAction ready_for_approval` then "
               "`-NextAction approved` (or reject/revise), then re-run this exact "
               "Config-Maintenance.ps1 command with -RunId to apply",
-        resolution_kind="decision_required")
+        resolution_kind="decision_required",
+        # found live 2026-08-31 (escalation #1301): a plain decision_required escalation goes
+        # straight to 'completed' on approval (correct for most judgement calls, which really are
+        # finished once decided). A propose is different -- approval only records the decision;
+        # the actual DB write happens on the SEPARATE re-run-with-RunId call below. Without this,
+        # 'approved' reads as 'done' while the write is still outstanding -- exactly what happened
+        # to escalations #1238-1256, caught only because they were independently re-verified
+        # against the live DB rather than trusted from the escalation's own terminal state.
+        needs_followup=True)
 
 
 # ── report: regenerate CONFIG-REPORT.md ─────────────────────────────────────────

@@ -3090,3 +3090,123 @@ own persistent memory per the researcher's explicit instruction to retain it fir
 this record.
 
 **Files:** `cfg_behaviour_rule` (new row, class=`sqlite`).
+
+## §65. `config-updated-same-unit-of-work-as-change` — live-schema drift now mechanically checked, not just declared (2026-08-30, escalations #1058/#1059)
+
+**Found live, the researcher's own words:** *"bring config up to date properly whenever you do
+anything that affects it... I have now worked for 6 weeks to get config in place, and cover
+everything. And every time I touch something, then it is not right."* Concrete trigger:
+`finding_verse_index` (`bible_research.db`, 475,790 rows) was built and populated the day before
+with **zero** `cfg_table`/`cfg_column` rows — not caught by `configmaint.validate`, discovered only
+because the researcher asked why a table listing didn't show it.
+
+**Root cause:** `governance.tables`/`governance.table_columns` already stated the rule ("every
+table... must be listed in `cfg_table`"), but nothing had ever mechanically checked the two live
+databases' actual schema against `cfg_table`/`cfg_column` — every existing `configmaint.validate`
+check validates `cfg_*` rows against EACH OTHER, none against the schema they exist to describe.
+
+**Built, same day:** `cfgquality.find_unregistered_tables_and_columns()`, wired into
+`configmaint.validate` as a hard error (small, confirmed-live scale — not a large pre-existing
+backlog needing advisory treatment the way `find_unregistered_project_scripts` does). Checks, per
+database (`iba`, `bible_research`): a live table with no `cfg_table` row; an active `cfg_table` row
+whose table no longer exists; for every live+active table, a live column with no `cfg_column` row;
+an active `cfg_column` row whose column no longer exists. Dry-run against both live databases found
+exactly 3 unregistered tables (`content_index`, `content_index_scan`, `finding_verse_index`) and 8
+column-level drifts — the 3 tables proposed for registration same day (escalations #1060/#1061/
+#1062); all 14 findings (tables + columns) auto-recorded as one coherence-error escalation by this
+same `validate` run, #1063. The full 34-table config-in-total review this belongs to is tracked
+separately, escalation #1065.
+
+**New `cfg_behaviour_rule`** (class=`development`, `config-updated-same-unit-of-work-as-change`,
+escalation #1059): states the standing discipline this check now actually enforces — any config-
+affecting change updates its own `cfg_*` registration in the same unit of work, not left for later
+discovery. `enforced_by` names the real check above, not an aspiration.
+
+**Files:** `iba/app/lib/cfgquality.py` (`find_unregistered_tables_and_columns`);
+`iba/app/handlers/configmaint.py` (wired into `validate()`); `cfg_behaviour_rule` (new row, pending
+approval, escalation #1059, approved and applied same day); `cfg_table` (3 new rows, escalations
+#1060-#1062, approved and applied same day).
+
+## §66. Escalation state machine gains `needs_claude_followup` — approved isn't always completed (2026-08-30, escalation #1075)
+
+**The gap, found live via §65's own fixes:** #1059-1062 all reached `state=completed` on
+`next_action=approved` before the real config write had run — `cfg_escalation_transition`'s rule
+for `approved` only checks `has_resolution`, nothing checks whether the described work actually
+happened. Researcher: *"I have noticed this shortcoming many times in the past, and it is likely
+the reason why some stuff is not completed... add a flag... when any element of work requires
+completion... this will route it back to you before it is set to completion."*
+
+**New rule, config-governed like every other transition:** a manual item's `next_action=approved`
+now checks `needs_claude_followup` (a new `escalation`/`escalation_history` column, set by Claude
+at Raise or at the `ready_for_approval` Update) AHEAD of the existing `has_resolution` rule —
+flagged, it resolves to `re-assigned` (back to Claude), not `completed`. Unflagged, behaviour is
+unchanged. Closed out afterward via the existing `next_action=noted` vocabulary once Claude
+actually finishes the real follow-up.
+
+Full design: `iba/docs/escalation-followup-flag-design-v1-20260830.md`. Built, all 6 config changes
+applied, and end-to-end tested live (6/6 pass, including both directions of regression) — full
+detail and each test's actual result in `BUILD.md` §212. Escalation #1075 closed. One open item
+remains, not blocking: `escalation actions worksheet.xlsx` still needs the new `-NeedsFollowup`
+column added (file was open/locked in Excel throughout the build).
+
+## §67. `configmaint.validate` runs fully clean, for the first time — §65's own drift check found its own gaps too (2026-08-30, escalations #1063/#1087-1098/#1101/#1117/#1118-1125)
+
+**§65 built the check that finds live-schema-vs-cfg_table/cfg_column drift; working it to zero
+found more of the same class than the 3 tables it started with** — including two mistakes in the
+very act of using it:
+- `content_index`/`content_index_scan`/`finding_verse_index` (§65's own 3 tables) were registered
+  in `cfg_table` but their COLUMNS were never registered in `cfg_column` at all — 15 columns
+  missing, found by re-running the check against its own prior fix.
+- `content_index` registered its 4-column composite primary key as 4 separate `cfg_column.is_pk=1`
+  rows — `cfgcheck.py` enforces at most 1 `is_pk` column per table (composite keys belong in
+  `cfg_unique`, not repeated `is_pk` flags). Fixed: 4 columns' `is_pk` cleared, the same 4
+  registered in `cfg_unique` instead.
+- The original #1063 backlog itself (`verse.text`, `finding.strong_number`, and two Strong's/
+  quality-flag columns renamed at some point without the rename ever reaching `cfg_column`
+  (`wa_data_quality_flags.file_id→strong_id`/`term_id→verse_id`, `wa_quality_flag_types.
+  deprecated→delete_flagged`) — all registered/deactivated accordingly.
+
+**Result:** `configmaint.validate` went **14 → 15 → 1 → 0** hard coherence errors across this
+session — the first time it has ever run clean past the schema-drift gate. It now surfaces only
+the advisory branch: 2 already-parked `needs_justification` items (`candidate.*_report_path` —
+BUILD.md §209) and 1 already-parked `hand_rolled_versioning` item (`prosestore.py`'s edit-cycle
+counter — checked, not a `filingkit.versioned_path()` duplicate, a genuine design question, not
+decided here).
+
+**Files:** `cfg_column` (15 new rows, 3 deactivated, 4 `is_pk` cleared); `cfg_unique` (4 new rows);
+`cfg_prose` (1 corrected path). No code changes this round — config only.
+
+## §68. `cfg_table_purpose` — every genuine cfg_* rule table's expected job and pass/fail test, made persistent (2026-08-30, escalation #1130)
+
+**Researcher, verbatim, mid-way through escalation #1128's table-by-table review:** *"Add two
+additional config entries for each cfg table: a) purpose... why does it exist, what does it do,
+the scope it covers b) success — what must this table have to be successful."* Formalises what
+#1128 already states in prose before investigating each table (a purpose + a falsifiable success
+measure, defined first, then checked against) as real, queryable config content, not left buried
+in escalation comment history.
+
+**First attempt was wrong, corrected same day, same escalation:** columns on `cfg_table` itself —
+rejected by the researcher, verbatim: *"it is a config entry not a column."* `cfg_table` registers
+every table in the project, config and data alike (~200 rows); bolting `purpose`/`success_measure`
+onto its schema would apply to real data tables (`verse`, `finding`, ...) where "success measure"
+doesn't mean the same thing. Rolled back same day (the 2 columns dropped, 15 escalations withdrawn)
+before any value was ever applied.
+
+**Corrected design:** a new dedicated table, `cfg_table_purpose` — one row per (table_name, kind),
+`kind` always exactly `purpose` or `success` (`cfg_enum` `table_purpose_kind`), so every genuine
+rule table gets exactly 2 rows, scoped only to tables that actually define rules. Building this
+also surfaced, live: `cfg_change_detail`/`cfg_change_log` are NOT rule tables — they are audit logs
+that happen to share the `cfg_` naming prefix — demoted, tracked separately as escalation #1146
+(which also found a real integrity gap: both previously held a live `configmaint.propose` write
+grant, meaning the sanctioned config-change gate could hand-edit an "immutable" audit trail).
+Populated for all 32 genuine rule tables (34 minus the 2 demoted) — the 14 #1128 had already
+properly reviewed, plus the 18 remaining, defined up front as the hypothesis to check against
+(the researcher's own point: written for every table, "even those you have passed validation on,"
+so it makes Claude actually think each time rather than glance over a table as already-known).
+
+**Files:** `iba/app/migration/add_cfg_table_purpose_and_success_columns_20260830.py` (rolled back,
+kept for provenance); `iba/app/migration/add_cfg_table_purpose_review_20260830.py` (new, the
+corrected build); `cfg_table_purpose` (new table, 64 rows); `cfg_enum` (`table_purpose_kind`, 2
+values); `cfg_column` (3 new rows, self-describing `cfg_table_purpose`); `cfg_write_grant` (1 new
+row — found missing live mid-build, the same class of gap `find_cfg_tables_missing_configmaint_
+grant` exists to catch); `cfg_table` (1 new row, registering `cfg_table_purpose` itself).

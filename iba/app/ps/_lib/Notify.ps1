@@ -100,7 +100,13 @@ function Write-IbaStepResult {
         [Parameter(Mandatory)] [int] $Code
     )
     _IbaLoadNotifications
-    $colour = @{ 0 = 'Green'; 2 = 'Yellow'; 3 = 'Red' }[$Code]
+    # 1 = 'DarkRed' added 2026-08-30 (escalation #1058) alongside run.py's new PATH_EXIT["error"]
+    # -- a dispatch-level crash (retired work package/step, write-grant violation, etc.) now
+    # returns a clean JSON result instead of a bare traceback, but this map didn't have an entry
+    # for its exit code either, so `-ForegroundColor $null` crashed here instead -- same class of
+    # bug, one layer in. The ?? fallback guards any FUTURE new code the same way, rather than
+    # waiting to find the next one live.
+    $colour = (@{ 0 = 'Green'; 1 = 'DarkRed'; 2 = 'Yellow'; 3 = 'Red' }[$Code]) ?? 'White'
     Write-Host ($script:_ibaNotif.'notification.step_result_line' -f $Step, $Path, $Message) -ForegroundColor $colour
 }
 
