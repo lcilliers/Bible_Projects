@@ -96,3 +96,22 @@ documentation) found live while doing approved work, not invented independently.
 
 ## Git state
 
+Committed and pushed, confirmed (not asserted) via actual `git status`/`git log`:
+
+```
+[main af7ab393] session 20260831: escalation system bugs found+fixed (answered_for_run/_apply
+insert validation/AnswerRun dead code), assignee+researcher-approval guards built, schema-overview
+reports fixed (IBA 20-table gap) and rebuilt for bible_research (pending approval), Developer
+Mode/App Mode operating split established per researcher correction
+ 47 files changed, 6659 insertions(+), 610 deletions(-)
+
+To https://github.com/lcilliers/Bible_Projects.git
+   d89669e3..af7ab393  main -> main
+
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+
+af7ab393d5b32ea7fdcc02006749b953f87b3fd3 2026-08-31 11:07:56 +0100
+```
+
