@@ -1,0 +1,62 @@
+{
+  "_readme": "Two finding rows (heart/resolve = primary, asked = chain-linked), each schema-conformant against database/bible_research.db's live finding table. finding_id fields marked null are populated by the DB on insert; justified_by_finding_id on the second row must be set to the first row's real id after insert 1 completes. See the accompanying session wrap-up doc for the honest requirements assessment -- this file is technically insertable but is NOT a complete representation of everything the session found (see that assessment).",
+
+  "finding": [
+    {
+      "_local_id": "F1_heart_resolve",
+      "level": "VERSE",
+      "verse_context_id": 66250,
+      "mti_term_id": 581,
+      "strong_number": "H3820A",
+      "cluster_code": null,
+      "characteristic_id": null,
+      "cluster_subgroup_id": null,
+      "vcg_scope": null,
+      "finding_value": "In Dan 1:8, leb (H3820A, \"heart\") is read through the combined-span idiom \"set...upon the heart\" (H7760A+H5921A+H3820A, surface \"resolved\") -- the idiom collapse selects the term's volitional sense (\"inclination, resolution, determination of will\", per its own gloss stack) over its emotional, conscience, or physical senses, none of which this verse evidences. The faculty-finding is incomplete without its governed clause: what was resolved was not to defile himself (H1351, at this verse's positions 4 and 14) with the king's food or the wine of his feast (H4428G+H6598, H3196+H4960) -- royal, feast-grade provision, not ordinary fare. The resolve is marked as a refusal, not a pursuit, by the polarity particle H3808 (\"not\"), attached at both occurrences. Relationally, this is not enacted privately: it is carried, via a chain-linked outward act (see the linked finding on H1245 \"asked\"), into a transaction with a named authority figure (H8269+H5631, \"chief of the eunuchs\") over provision belonging to H4428G (\"the king\") -- naming another party at all is itself candidate content under the programme's own 'relates' dimension, independent of vocabulary. The chain (resolve -> ask) is evidenced by shared waw-consecutive morphology (HVqw3ms / HVpw3ms) on both main verbs, marking narrative sequence; H1351 ('defile') by contrast carries a different, non-sequential stem, consistent with its role as the resolve's content rather than an independent chain link. Genre: this verse's book-level tag in the legacy schema is 'prophetic' (Daniel), but the verse itself is narrative, not oracle -- the book-level tag is too coarse for genre-dependent reading rules and should not be relied on as-is. Testament/language: Hebrew (Aramaic court-narrative register), confirmed via strong.language -- the sequencing test used here is Hebrew-specific and does not port to Greek unchanged. Related-term check: heart (H3820A) is genuinely, traceably related (shared lemma_key H3823) to 'to encourage' (H3823A) and, through that same lemma, to 'to bake' (H3823B) -- not a coincidental overlap. defile (H1351) is linked by STEP's own curation (strong_related) to 'redeem' (H1350A/B/H/I) and 'defilement' (H1352); this session's own attempt to downgrade that link via a lemma_key test failed its own control case (H1351 and H1352, undeniably one root, carry different lemma_keys) and was retracted -- the redeem/defile relation stands on STEP's curated link, unresolved as one-root-vs-homonym, not dismissed.",
+      "finding_status": "UNASSIGNED_NOT_IN_CONTROLLED_VOCAB",
+      "provenance": "PROPOSED_dan1-8-worked-example-20260901_NOT_YET_REGISTERED",
+      "justified_by_finding_id": null,
+      "supersedes_id": null,
+      "source_legacy_ref": null,
+      "flagged_for_review": 1,
+      "notes": "Structural/relational content (polarity type, relational-target, chain-link, genre, language, related-term family) is flattened into finding_value as prose because the live schema has no structured field for any of these -- this is the exact gap escalation #1379 exists to address. characteristic_id left null: no existing characteristic row is a clean fit (checked 'Willing-heartedness' M09/id 24+197, 'Doubt and Indecision' M20/id 102, 'Willed remembering' M41/id 231 -- none matches a resolve-against-temptation reading). provenance and finding_status use placeholder values pending a real registered vocabulary entry -- do not insert as-is without resolving those two fields first."
+    },
+    {
+      "_local_id": "F2_asked_enactment",
+      "level": "VERSE",
+      "verse_context_id": 10545,
+      "mti_term_id": 486,
+      "strong_number": "H1245",
+      "cluster_code": null,
+      "characteristic_id": null,
+      "cluster_subgroup_id": null,
+      "vcg_scope": null,
+      "finding_value": "H1245 ('asked' -- gloss includes 'to seek, require, desire, exact, request... to desire, demand') is the outward enactment of the resolve named in the linked finding (set justified_by_finding_id to that finding's real id after insert): the inner volitional act does not stay internal, it produces Daniel seeking permission from the chief of the eunuchs. Chain evidence: shared waw-consecutive morphology (HVpw3ms) with the resolve's main verb (HVqw3ms), marking this as the next event in narrative sequence, not an independent theme. This term's own legacy verse_context row (id 10545) already carried is_related=1, thing_type='ACTION', triage_status='ACCEPT' from a prior pass (meaning_provenance='l2_refit') -- the outward-enactment classification itself was not undiscovered before this session, only the chain-link back to the resolve as its trigger, and the theme/entry-point implication (this verse should not be indexed as 'about' asking), were new synthesis this session produced.",
+      "finding_status": "UNASSIGNED_NOT_IN_CONTROLLED_VOCAB",
+      "provenance": "PROPOSED_dan1-8-worked-example-20260901_NOT_YET_REGISTERED",
+      "justified_by_finding_id": "SET_TO_F1_heart_resolve_REAL_ID_AFTER_INSERT",
+      "supersedes_id": null,
+      "source_legacy_ref": null,
+      "flagged_for_review": 1,
+      "notes": "characteristic_id left null, same reasoning as F1. Not treated as its own independent theme -- see the primary-operation/theme test in the checklist doc."
+    }
+  ],
+
+  "finding_verse_link": [
+    { "_for": "F1_heart_resolve", "finding_id": "SET_TO_F1_REAL_ID", "verse_record_id": 238677, "reference": "Dan 1:8", "role": "anchor" },
+    { "_for": "F2_asked_enactment", "finding_id": "SET_TO_F2_REAL_ID", "verse_record_id": 58890, "reference": "Dan 1:8", "role": "anchor" }
+  ],
+
+  "finding_question_link": [
+    { "_for": "F1_heart_resolve", "finding_id": "SET_TO_F1_REAL_ID", "question_id": 237, "coverage": "direct", "session_b_note": "T1.1.2 - primary Hebrew term at definitional level" },
+    { "_for": "F1_heart_resolve", "finding_id": "SET_TO_F1_REAL_ID", "question_id": 393, "coverage": "direct", "session_b_note": "T7.1.1 - primary term and root meaning" },
+    { "_for": "F1_heart_resolve", "finding_id": "SET_TO_F1_REAL_ID", "question_id": 394, "coverage": "direct", "session_b_note": "T7.1.2 - grammatical range (construct state, combined span) and what it shows about how the characteristic operates" },
+    { "_for": "F1_heart_resolve", "finding_id": "SET_TO_F1_REAL_ID", "question_id": 397, "coverage": "direct", "session_b_note": "T7.1.5 - structural opposite: defile/redeem, same root, contested" },
+    { "_for": "F1_heart_resolve", "finding_id": "SET_TO_F1_REAL_ID", "question_id": 379, "coverage": "partial", "session_b_note": "T6.4.1 - vocabulary sharing (heart/encourage/bake family)" },
+    { "_for": "F1_heart_resolve", "finding_id": "SET_TO_F1_REAL_ID", "question_id": 380, "coverage": "partial", "session_b_note": "T6.4.2 - root-level architecture (shared lemma_key H3823)" },
+    { "_for": "F1_heart_resolve", "finding_id": "SET_TO_F1_REAL_ID", "question_id": 400, "coverage": "partial", "session_b_note": "T7.1.8 - testament/language explicit, Hebrew confirmed via strong.language" },
+    { "_for": "F2_asked_enactment", "finding_id": "SET_TO_F2_REAL_ID", "question_id": 399, "coverage": "direct", "session_b_note": "T7.1.7 - supplication/seeking term, H1245 is exactly this pattern" }
+  ],
+
+  "finding_citation": "NOT INCLUDED -- see requirements assessment. finding_citation.source_table is CHECK-constrained to ('cluster_finding','cluster_observation') only; this session's evidence (specific span_id/verse_lexical.id/strong_related.id rows) has no valid source_table value under the live schema and cannot be cited through this mechanism at all without a schema or governance change."
+}
