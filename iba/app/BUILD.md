@@ -11728,3 +11728,65 @@ write, no exception for this one.
 (`find_cfg_tables_missing_configmaint_grant()`); `cfg_column` (1 new row); `cfg_enum` (3 new rows,
 group `table_category`); `cfg_table` (189 rows backfilled) — schema and code applied and verified
 live; the write-grant revocation itself awaits approval.
+
+## 216. `wa_obs_question_catalogue.source`/`.last_modified` + the `obs_catalogue.update` tool (2026-08-31, escalation #1007)
+
+Researcher instruction (verbatim, this chat turn): add `source` TEXT (default NULL, "describe how
+the answer to the question is sourced") and `last_modified` (datetime, "record when row was last
+updated") to `wa_obs_question_catalogue`, then build the table's update tool — auto-fill
+`catalogue_version`/`last_modified` where possible, allow resetting any column except `obs_id`
+(the key), ignore a column not named in `-Set`. No history/audit table — researcher's own call:
+"I dont think there is any history control on this table and I don't think it is necessary."
+
+**Schema.** First migration script in `iba/app/migration/` to target `bible_research.db` rather
+than `iba.db`'s hardcoded `DB_PATH` — every prior schema migration in this directory bootstraps
+`iba.db`. Resolved `database.bible_research.path` directly via raw SQL against `cfg_setting`
+(a standalone migration script has no live `Cfg` instance to call `cfg.database_path()` on).
+`last_modified` stored as TEXT ISO-8601 UTC (SQLite has no native DATETIME affinity — matches
+every other `*_at`/`date_*` column in the schema). Both columns self-register their own
+`cfg_column` rows (database='bible_research') in the same migration, same bootstrap-registers-
+its-own-schema pattern as `add_cfg_table_purpose_and_success_columns_20260830.py` and every prior
+DDL migration.
+
+**Tool.** `obs_catalogue.update` (work package `catalogue-update`, `iba/app/ps/Catalogue-
+Update.ps1` → `iba.app.handlers.catalogue:update` → `iba.app.lib.cataloguewrite.run_update`).
+Direct `UPDATE`, no propose/approve cycle — `configmaint.propose`'s gate is `cfg_*`-specific
+(`governance.config_control`); this is ordinary content, same class as `prosestore.run_flag`'s
+direct write to `wa_data_quality_flags`. Validates: `obs_id` present and existing, every `-Set`
+key a real column (checked live via `PRAGMA table_info`, not a hardcoded list), `obs_id` itself
+rejected if present in `-Set` (it's the key). Auto-fills `last_modified` (now, UTC) and
+`catalogue_version` (`v2-<today>`, a judgment-call default — the column has 6 different live
+conventions with no single correct answer) only when the caller doesn't name them; naming either
+explicitly overrides the default. Bounded 3-attempt/0.3s retry on a transient `OperationalError: database is locked`, same pattern
+and rationale as `reportkit.archive_before_write` (escalation #1320) — hit live twice in this
+session's own testing (a SQLite viewer holding the file open), confirmed transient both times.
+
+`cfg_work_package`/`cfg_step`/`cfg_write_grant`(`bible_research`)/`cfg_utility` (×3: the lib file,
+the handler file, and the migration itself, `inactive=1`) all bootstrapped directly in the
+migration, not proposed — same established exemption as `fix_missing_write_grants_v1_20260818.py`
+and `bootstrap_catalogue_overview_report_v1_20260829.py` (this escalation's own read-side tool).
+
+**Tested live**, not just syntax-checked: migration applied clean, re-run idempotent (every row
+reports "already present/exists"). Real update via the PS wrapper on `obs_id=224` (T0.1.1),
+populating `source` with its actual answer from the tier-catalogue mapping
+(`tier-catalogue-iba-raw-data-mapping-v2-20260831.md`) — confirmed in the DB, not asserted. Error
+paths confirmed clean (`fail`, not a crash): `obs_id` in `-Set` rejected, an unknown column name
+rejected (lists the live columns), a nonexistent `obs_id` rejected. Confirmed an explicit
+`-Set catalogue_version=...` overrides the auto-fill default rather than being clobbered by it.
+
+**Found in passing, not fixed (out of scope):** a routine `configmaint.validate` run after this
+build surfaced escalation #1373 — `cfg_escalation_requirement` has 3 live `check_kind` values
+(`actor_must_be_assignee`, `decision_required_approval_requires_researcher`,
+`requires_current_ready_for_approval_if_decision_required`) with no matching `cfg_enum` row, almost
+certainly the D25 authority-check mechanism (hit directly this session on escalation #1316). Not a
+simple 3-missing-values fix: the enum already has an unused
+`requires_prior_ready_for_approval_if_decision_required` row, suggesting a `prior`→`current` rename
+that never reached `cfg_enum`. Converted to `decision_required` (was `self_correctable`) and handed
+to the researcher — a real judgment call (rename vs. add-and-retire), unrelated to this build.
+
+**Files:** `iba/app/migration/add_obs_catalogue_source_last_modified_and_update_tool_v1_20260831.py`
+(new); `iba/app/lib/cataloguewrite.py` (new); `iba/app/handlers/catalogue.py` (new);
+`iba/app/ps/Catalogue-Update.ps1` (new); `wa_obs_question_catalogue` (bible_research.db, 2 new
+columns); `cfg_column`/`cfg_work_package`/`cfg_step`/`cfg_write_grant`/`cfg_utility` (bootstrapped);
+`iba/docs/ps tools worksheet.xlsx` (new `Catalogue-Update` tab + `Index` row) — all applied and
+verified live.

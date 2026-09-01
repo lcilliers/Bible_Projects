@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-08-31T18:10:27Z |
+| generated_at | 2026-08-31T18:09:43Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -46,13 +46,13 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-3. GOVERNANCE.md was last modified 2026-08-31T10:03:34Z, before the newest applied cfg_change_detail row (2026-08-31T18:10:27Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+3. GOVERNANCE.md was last modified 2026-08-31T10:03:34Z, before the newest applied cfg_change_detail row (2026-08-31T18:09:43Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
 **Low config-density utilities** (2) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-4. cfg_utility 'schema_overview' — iba\app\tools\build_schema_overview_report.py no longer exists on disk
+4. cfg_utility None — iba\app\tools\build_schema_overview_report.py no longer exists on disk
 5. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
@@ -107,6 +107,7 @@ _(none)_
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
+|  | iba/app/tools/build_schema_overview_report.py | Renders the DBSchema register (iba/config/DBSchema/DBSchema.json, built by iba/scripts/build_dbschema.py) into a human-readable markdown overview report -- one row per table with description/rows/cols/PK/FKs/indexes, plus an undescribed-items flag section. Escalation #1306. | ✓ |  |  |
 | add_obs_catalogue_source_last_modified_and_update_tool_v1_20260831 | iba/app/migration/add_obs_catalogue_source_last_modified_and_update_tool_v1_20260831.py | ONE-OFF migration, escalation #1007 -- adds wa_obs_question_catalogue.source/last_modified (bible_research.db DDL) and registers the catalogue-update work package/step/write-grant/utility rows. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | add_ps_scripts_dispatch_through_run_py_rule | iba/app/migration/add_ps_scripts_dispatch_through_run_py_rule_20260821.py | One-off migration: escalation #8 -- adds cfg_behaviour_rule (development, every-active-ps-script-dispatches-through-run-py). | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
 | add_resolution_kind_column | iba/app/migration/add_resolution_kind_column_v1_20260822.py | One-off migration: escalation #798/#799 Stage 2 (schema half) -- adds the resolution_kind column to escalation/escalation_history, closing a gap left by Stage 1's config-only pass. | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
@@ -184,7 +185,6 @@ _(none)_
 | research_VE_lexical_faculty_map_build_classify_batch1 | research/VE-lexical/faculty-map-build/_classify_batch1.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). Faculty classification for inventory slice 0..343. Decisions grounded in gloss+senses, original-language aware. |  |  |  |
 | retention | iba/app/lib/retention.py | retention.py — log growth / run-health visibility for the append-only audit tables | ✓ | ✓ | receives cfg.conn from its caller; its own setting (retention.snapshot_keep_count) is read by dbsnapshot.py, not here. |
 | retire_from_id_related_activity_v1_20260827 | iba/app/migration/retire_from_id_related_activity_v1_20260827.py | ONE-OFF migration, escalation #909 -- full removal of D14 (from_id) and D15 (related_activity's pairing/graph role): 6 cfg_escalation_requirement rows, 6 cfg_report_section rows, 4 cfg_column rows deleted; from_id/related_activity columns physically dropped from escalation/escalation_history. Researcher decision after two live audits found the mechanism unreliable and unused. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
-| schema_overview | iba/app/tools/build_schema_overview_report.py | Renders the DBSchema register (iba/config/DBSchema/DBSchema.json, built by iba/scripts/build_dbschema.py) into a human-readable markdown overview report -- one row per table with description/rows/cols/PK/FKs/indexes, plus an undescribed-items flag section. Escalation #1306. | ✓ |  |  |
 | schemareport | iba/app/lib/schemareport.py | schemareport.py — the IBA app's own DATA-schema snapshot, one of the four "missing reports" | ✓ | ✓ | receives cfg.conn from its caller; no settings/enums of its own. |
 | scripts_analytics_bible_analytics | scripts/analytics/bible_analytics.py | bible_analytics.py -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | scripts_analytics_db_client | scripts/analytics/db_client.py | db_client.py -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |

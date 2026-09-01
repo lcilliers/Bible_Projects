@@ -608,6 +608,15 @@ def propose(ctx: Ctx) -> Outcome:
         # vocabulary (approve); without this, an approved decision_required proposal silently
         # fell through to "needs-revision" with no actual revision requested.
         if decision in ("approve", "approved"):
+            # escalation #1364, 2026-08-31: found live -- this resume/apply path called _apply()
+            # directly with no validation at all, unlike the fresh-proposal path below (which runs
+            # _check_proposal first). A malformed payload that was never caught at proposal time
+            # (or a proposal built by hand against an already-answered run_id, bypassing the
+            # gate entirely) crashed here as a raw uncaught IntegrityError instead of a routed
+            # fail("invalid-proposal", ...) -- same gate, applied on both paths now.
+            errors = _check_proposal(ctx.db.conn, table, op, where, set_)
+            if errors:
+                return fail("invalid-proposal", f"{len(errors)} problem(s): " + "; ".join(errors))
             before = _apply(ctx, table, op, where, set_)
             ctx.db.conn.execute(
                 'INSERT INTO cfg_change_detail (run_id, table_name, op, where_json, set_json, '

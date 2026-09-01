@@ -129,8 +129,13 @@ def _utilities_table(q) -> list[str]:
     ]
     for r in rows:
         S.append("| " + " | ".join([
-            r["module"],
-            r["file_path"],
+            # escalation #1365, 2026-08-31: found live -- module is cfg_utility's PRIMARY KEY but
+            # SQLite does not auto-enforce NOT NULL on a non-INTEGER PK, so a malformed insert (see
+            # escalation #1364's fix) can still leave it NULL; this table render crashed the whole
+            # report on that one bad row instead of degrading gracefully like every other column
+            # here already does.
+            r["module"] or "",
+            r["file_path"] or "",
             (r["purpose"] or "").replace("|", "\\|"),
             "" if r["inactive"] else "✓",
             "✓" if r["config_exempt"] else "",
