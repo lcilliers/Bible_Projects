@@ -72,8 +72,19 @@ no-opped), and fixed a repeated process gap (proposals left at `review` instead 
 
 ## Git state
 
-Branch `main`, commit `<PENDING — filled in below after commit+push>`, push:
+Branch `main`, commit `b36b3dbf3780af9c510cb807c6307e74ac492416`, pushed clean:
 
 ```
-<PENDING>
+$ git push
+To https://github.com/lcilliers/Bible_Projects.git
+   836d4c9f..b36b3dbf  main -> main
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
 ```
+
+55 files changed (11,852 insertions, 11 deletions) — the bulk is the new catalogue tool code, the
+Catalogue mapping/Scope/inventory deliverables, and auto-generated report/CSV archive artifacts
+from the `configmaint`/`Escalation.ps1` runs this session, not hand-authored content.
