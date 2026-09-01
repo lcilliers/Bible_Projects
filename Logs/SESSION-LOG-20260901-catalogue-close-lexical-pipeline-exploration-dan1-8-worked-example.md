@@ -55,4 +55,20 @@ verse_lexical rework this all points toward.
 
 ## Git state
 
-_Filled in below after commit and push, from actual command output — not asserted._
+Branch `main`, commit `7f39d15c671bd2c28bd0c8b6a8bfae1536dfd555` (this commit necessarily precedes
+the edit that filled in this section — the same wrinkle every prior session log hits), pushed
+clean:
+
+```
+$ git push
+To https://github.com/lcilliers/Bible_Projects.git
+   ff122d74..7f39d15c  main -> main
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+```
+
+13 files changed, 1,777 insertions — all listed above under Files created/changed; nothing
+unexpected staged.
