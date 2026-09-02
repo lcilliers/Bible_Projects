@@ -24,6 +24,23 @@ once, at session start — never self-selected by Claude, never switched on the 
 particular table or file "feels like" a dev change. If this session did not start this way, stop
 and say so instead of running the rest of this command.
 
+**Session-freshness gate (escalation #1380, built 2026-09-02).** This is no longer just this
+paragraph's instruction to follow — a structural hook (`.claude/hooks/gate_developer_mode_entry.py`,
+wired as a `UserPromptExpansion` hook on this command in `.claude/settings.json`) fires from the
+harness itself, BEFORE this command's text is even expanded, and refuses to run this command
+unless: (a) this session began via a genuine `SessionStart` "startup" or "clear" event — not
+"resume", "compact", or "fork" — and (b) no user prompt has occurred since that event, i.e. this
+IS the first thing typed. It fails closed (blocks) on any uncertainty, so a real fresh-session
+invocation that gets refused means the mechanism itself needs checking
+(`.claude/.session-boundary-debug.jsonl` has the raw hook payloads), not that the researcher did
+anything wrong. As a redundant, non-structural fallback ONLY (the hook above is the real
+enforcement, not this paragraph): if you ever find yourself running this command's steps despite
+the hook — e.g. it fired but its matcher/field guesses turned out wrong for this Claude Code
+build — re-check `.claude/.session-boundary-state.json` yourself before proceeding, and refuse
+the same way if `start_source` isn't `startup`/`clear`. The exit-boundary half of #1380
+(preventing App Mode continuing in the same conversation after `/exit-developer-mode`) is not yet
+built — still open on that escalation.
+
 **This command does not bootstrap the IBA app.** It does not run `Start-Iba.ps1` and does not
 follow the full `start-project` procedure — Developer Mode sessions are explicitly exempt from
 that entry point (researcher instruction, 2026-08-31). If IBA operational bootstrap is actually
@@ -66,7 +83,7 @@ query the harness's own permission mode**, so don't fabricate a check result. In
 Read live, not from memory (`feedback_iba_session_start_read_live_docs_not_memory`):
 
 - Query `cfg_behaviour_rule` for `class='development'` (`iba/app/db/iba.db`) and hold every active
-  row in context for the session — currently 10 rows, e.g. `root-fix-not-one-off`,
+  row in context for the session — currently 11 rows, e.g. `root-fix-not-one-off`,
   `simple-steps-not-engineered-designs`, `every-active-ps-script-dispatches-through-run-py`,
   `test-plan-per-module-utility`, `open-items-route-through-escalation`,
   `config-updated-same-unit-of-work-as-change`, `user-guide-updated-same-unit-of-work`. Don't

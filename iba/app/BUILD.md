@@ -11790,3 +11790,217 @@ to the researcher — a real judgment call (rename vs. add-and-retire), unrelate
 columns); `cfg_column`/`cfg_work_package`/`cfg_step`/`cfg_write_grant`/`cfg_utility` (bootstrapped);
 `iba/docs/ps tools worksheet.xlsx` (new `Catalogue-Update` tab + `Index` row) — all applied and
 verified live.
+
+## 217. Prose report heading hierarchy corrected: Book → Chapter → Section, `chapter_names` retired (2026-09-02, escalation #1381)
+
+Researcher instruction, this chat: correct `prosestore.py`'s prose-report heading hierarchy and
+the fields it uses for heading text. Investigation (prompted by a researcher question about
+`prose_section_type.label`/`.section_label` usage) found two live bugs first: (1)
+`search_prose`'s `render_search_markdown` aliased `pst.label AS chapter_title` and displayed it
+as if it were the chapter's own name — it's the *Section*'s name; (2) `render_markdown_view`/
+`render_docx` looked up chapter headings via a fixed `cfg_prose.chapter_names` dict (0–6, built
+for `Programme`'s own 7 literary chapters) and applied it unconditionally to every book's
+`chapter_no` — confirmed live that `Detail design`'s `chapter_no` is a per-session item-ordinal
+(1–10), not a book chapter, so e.g. `chapter_no=1` alone is shared by 4 unrelated items across 4
+different sessions; extracting that book through the old code would have silently mislabeled all
+four `"Chapter 1 — Programme purpose"`.
+
+**Corrected hierarchy** (researcher spec, verbatim): `# {book_label}` (Book) → `## {section_label}`
+(Chapter) → `### {label}` (Section). Neither Book nor Chapter carries a subtext paragraph;
+`description` renders below the Section heading (the old code put it above `label` — backwards).
+
+**Ordering — a real conflict found and resolved, not applied blindly.** The researcher's first
+ordering spec (`chapter_no` orders Chapters, `chapter_no + section_order` orders Sections) was
+checked against live data before building and found inverted: `section_order` is what actually
+varies *between* `section_label` groups (Detail design: Session A=1 … Observation framework=6);
+`chapter_no` varies *within* one group instead (Session A's 6 Sections carry `chapter_no` 1..6)
+and isn't even reliable there (`Findings`/"Verse analysis" has 3 Sections all sharing
+`chapter_no=1`). Implemented as: Book by `book_order`; Chapter by `section_order`; Section by
+`sort_order` (confirmed live to discriminate the Findings case: 1003/1004/1005). `chapter_no` is
+no longer used for ordering by either renderer.
+
+**`cfg_prose.chapter_names` retired** (`inactive=1`, not deleted — the project's standing
+soft-delete/registration convention) per direct researcher instruction ("dropping the
+cfg_prose.chapter_names"). The `chapter_names()` function and both its call sites removed. Before
+retiring it, migrated its 7 values into `prose_section_type.section_label` for the 51 `Programme`
+rows that previously all carried a constant `'Programme'` placeholder (a workaround for the OLD
+code's now-removed suppress-if-matches-book-heading guard) — chapter_no 0→"Preamble" … 6→
+"Instruction corpus", verified 1:1, no information lost. Also corrected `Programme`'s
+`section_order` (was constant `1` on all 51 rows, carrying no information) to equal `chapter_no`,
+so the new section_order-based Chapter ordering actually produces 0→6 deterministically rather
+than by accidental dict-insertion order.
+
+**A third, unrelated bug found and fixed in the same block** (confirmed via `git diff` as
+pre-existing, not introduced by this fix): `render_docx`'s per-section body-writing loop had a
+`continue` sitting one indent level too shallow — outside its own `if body is None:` — so it
+fired unconditionally and the `for para in body.split(...)` loop after it was dead code for every
+row. **The docx export has apparently never actually written a section's body text, for any
+export, ever.** Fixed in the same pass since it was the exact block already being edited.
+
+**Also found, deliberately NOT touched:** `run_export_chapter`/`run_import_chapter` (the
+export→edit→import round-trip cycle) carry the same `pst.label AS chapter_title` naming, but
+there it's an internal file-vs-DB integrity-check marker on both sides consistently, not a
+displayed "chapter name" — and 6 in-flight edit files currently sit in
+`Workflow/Programme/prose-edits/` using this exact marker name. Renaming it would be a real
+compatibility risk for no functional gain (the marker's *value* was never wrong, only its
+*name*) — flagged for a separate, deliberate pass if it's ever worth doing, not bundled in here.
+
+**Tested live** against the real `bible_research.db` (read-only — extract/search/docx all
+produce output without writing), not just syntax-checked: `Programme` extract renders `# Programme
+→ ## Preamble → ### Programme Preamble → ## Programme purpose → ### Mission/Scope/…` correctly;
+`Detail design` renders `## Session A` through `## Observation framework` in the right order with
+each session's Sections correctly ordered underneath; `render_docx` produces the matching
+Title/Heading1/Heading2/Heading3 structure; the search report's "Reference:" line now reads
+`Detail design / Session A / Session A — Questions` instead of the old mislabeled form.
+
+**Files:** `iba/app/lib/prosestore.py` (`render_markdown_view`, `render_docx`, `search_prose`,
+`render_search_markdown` — edited; `chapter_names()` — removed); `cfg_prose` key
+`prose.chapter_names` (`inactive=1`); `prose_section_type` (`bible_research.db`, 51 `Programme`
+rows: `section_label` migrated, `section_order` corrected to match `chapter_no`).
+
+**Follow-up, same day: the export/import chapter-edit cycle fixed too** (researcher instruction,
+direct quote of the earlier "deliberately left alone" finding above: "fix this"). That finding
+undersold the problem on inspection — `PROSE_SECTION` (the exported marker holding
+`section_label`) wasn't just confusingly named, it was **backwards**: `section_label` is what
+#1381 established renders as the Chapter, so a marker literally named `SECTION` for Chapter data
+was the same inversion `PROSE_CHAPTER_TITLE` had in the other direction (holding `label`, the
+Section's own name). Fixed both: `run_export_chapter` now writes `PROSE_CHAPTER` (was
+`PROSE_SECTION`) and `PROSE_SECTION_TITLE` (was `PROSE_CHAPTER_TITLE`) going forward. Backward
+compatibility built in deliberately, not assumed safe: `run_import_chapter`'s required-marker
+check and DB-comparison logic accept EITHER the new or the legacy marker name (`_pick()` tries
+new first, falls back to legacy) — the 6 edit files already sitting in
+`Workflow/Programme/prose-edits/` (in flight, real researcher content, not yet imported) were
+exported under the old names and must still import cleanly.
+
+**Tested live, both directions, without touching any real file:** (1) constructed a synthetic
+edit file byte-for-byte matching a real row's live values but using the OLD marker names
+(simulating one of the 6 in-flight files) — imported successfully, patch generated correctly. (2)
+Ran a genuine fresh export of a real section — confirmed the file now contains `PROSE_CHAPTER:
+Preamble` and `PROSE_SECTION_TITLE: Programme Preamble` (correct assignment, matches #1381's
+model) — then edited its body and imported it back — succeeded. Both tests archived their input
+file into the real `Workflow/Programme/prose-edits/archive/` directory (the function's own real
+side effect) under an unmistakable `TEST-DELETE-ME-` name; both were deleted immediately after,
+confirmed via `git status` showing no changes under `prose-edits/` and the 6 real in-flight files
+present and untouched (`ls` count unchanged, before and after).
+
+**Files (this follow-up):** `iba/app/lib/prosestore.py` (`run_export_chapter`,
+`run_import_chapter` — marker names + backward-compatible parsing).
+
+## 218. `prose_section_type.lifecycle_tag` — CHECK and enum removed, genuinely free-form (2026-09-02, escalation #1382)
+
+Researcher decision, this chat, closing #1382's open question: "the lifecycle_tag enum does not
+add any value, it can be removed. change the column to free form text." Its own earlier examples
+('revision 1', 'revision 2', 'Data-take-on', "or other meaningful stage") were open-ended by
+nature — a closed `CHECK IN (...)` enum and genuinely free text can't both be true, and the
+researcher resolved that tension by dropping the closed side, not widening it.
+
+**Schema.** SQLite has no `ALTER` for a `CHECK` constraint — same table-rebuild pattern as
+escalation #896's original addition of this CHECK, in reverse: renamed `prose_section_type` to
+`_old`, recreated it with the `lifecycle_tag` `CHECK` dropped (the other two — `source_stage`,
+`book_label` — unchanged), copied all 108 rows across, dropped `_old`, recreated
+`idx_pst_stage_lifecycle` (SQLite doesn't carry an index across a table rename/rebuild). First
+attempt hit `index already exists` — the old index was still attached to the renamed `_old`
+table when the new one was created; the transaction rolled back cleanly (verified: table intact,
+108 rows, before retrying with `DROP TABLE _old` moved ahead of `CREATE INDEX`). Verified live
+after commit: inserted a throwaway row with `lifecycle_tag='revision 1'` (previously rejected by
+the CHECK) — accepted; deleted it; row count back to 108.
+
+**Config.** `cfg_enum` group `prose_section_type_lifecycle_tag` (4 rows: source/v1/v2/v3) marked
+`inactive=1` — retired, not deleted, per the project's standing convention. `cfg_column.expectation`
+for this column cleared (was `'enum.prose_section_type_lifecycle_tag'`, now dangling with no live
+enum behind it). `cfg_column.use` updated to drop the CHECK-constraint caveat inserted in
+escalation #1382 (no longer applicable) and state plainly that the field is free-form text.
+
+**Files:** `database/bible_research.db` schema (`prose_section_type` rebuilt, CHECK dropped);
+`iba/app/db/iba.db` (`cfg_enum` 4 rows inactive; `cfg_column.expectation`/`.use` for
+`prose_section_type.lifecycle_tag`).
+
+## 219. `book_label` CHECK widened for "Word Index and Glossary"; a live bug from #218's migration caught and fixed in the same pass (2026-09-02, escalation #1377)
+
+Researcher review of `glossary-draft-entries-v1-20260902.json` resolved several open points from
+that design in one pass: the book name is **"Word Index and Glossary"** (not "Glossary" alone —
+this book will also carry a future word concordance, not built now); `chapter_no=1` ("I do not
+see different chapters"); `lifecycle_tag='Data Takeon'` (the free-text value #218 made possible);
+the Glossary splits into **two** `prose_section_type` rows — `glossary_programme` ("Programme
+glossary", the 33 settled entries) and `glossary_contentious` ("Contentious glossary", the 3
+entries whose own body text already states an explicit unresolved tension: `cohabitation`,
+`role.span_classification`, `owner_term.batch_processing_sense`) — both sharing
+`section_label='Glossary'` (the single Chapter, per #1381's model) with `label` carrying the
+Programme/Contentious distinction as the Section tier underneath it.
+
+**Schema:** `prose_section_type.book_label`'s `CHECK` widened to permit `'Word Index and
+Glossary'` alongside the existing 4 (same class of migration as #1381's finding, now actually
+executed). `cfg_enum` group `prose_section_type_book_label` gained a 5th row (ordinal 4).
+`cfg_prose.book_stage_map`/`.book_output_dir` both gained a `"Word Index and Glossary"` entry
+(`["programme"]` / `"Workflow/Glossary"` — first-cut choices, not confirmed against a design
+discussion, flagged as such).
+
+**A real, live bug from #218's migration found and fixed in the same pass — not by inspection,
+by hitting it.** The first attempt at this migration failed with `error in trigger
+prose_section_ai: no such table: main.prose_section_type_old`. Investigating *why* (rather than
+just retrying) surfaced that escalation #218's own rebuild — `RENAME prose_section_type TO
+_old` → `CREATE` fresh → `DROP _old` — had left `prose_section`'s two FTS-sync triggers
+(`prose_section_ai`/`au`) referencing `"prose_section_type_old"`: SQLite's `ALTER TABLE RENAME`
+auto-rewrites *other* schema objects' SQL that textually reference the renamed table, so the
+rename-away step silently retargeted both triggers at the temporary name, and dropping that
+temporary table left them dangling. **Confirmed live: every `INSERT`/`UPDATE` on `prose_section`
+had been broken since #218 committed**, until caught here. Checked for actual damage before
+fixing anything else: `prose_section` (949) and `prose_section_fts` (949) row counts matched
+exactly, confirming nothing had actually attempted a write in the broken window — no data lost,
+just a live defect sitting undetected. Fixed immediately (dropped and recreated both triggers
+against the then-current table, verified with a real `UPDATE` before doing anything else).
+
+A second attempt at THIS migration, trying the safer-looking `CREATE new` → `DROP old` → `RENAME
+new INTO old-name` order specifically to dodge the same rename-rewrite footgun, hit a *different*
+failure at the same root cause: `ALTER TABLE ... RENAME` re-validates dependent trigger bodies as
+part of the rename itself, and fails if the target name is transiently absent from the schema at
+that instant (true here, since the original table had just been dropped) — a genuine SQLite
+ordering quirk, not something either rename direction alone escapes. **Root fix, not another
+one-off:** drop the two triggers *before* touching `prose_section_type` at all, do the full
+rebuild with no live trigger in existence to get confused, then recreate both triggers fresh
+against the final, stable name. Verified this time with a real insert → update → delete
+round-trip through `prose_section`/`prose_section_type` together, confirming FTS actually stays
+in sync at each step, not merely that the statements execute without error — this is the pattern
+any future `prose_section_type` rebuild should follow.
+
+**Files:** `database/bible_research.db` schema (`prose_section_type` rebuilt again; `book_label`
+CHECK widened; `prose_section_ai`/`au` triggers repaired then recreated); `iba/app/db/iba.db`
+(`cfg_enum` +1 row; `cfg_prose.book_stage_map`/`.book_output_dir` +1 entry each);
+`Workflow/Catalogue/glossary-draft-entries-v1-20260902.json` (two `prose_section_type` rows
+replacing the original one; all 36 `prose_section` rows' `section_type_id` reassigned to the
+correct type).
+
+## 220. Glossary content written live: 2 `prose_section_type` rows + 68 `prose_section` entries (2026-09-02, escalation #1377)
+
+Researcher, closing the design/review cycle: "let's add these all to prose, I am not going to
+spend more time on it." Applied `glossary-draft-entries-v1-20260902.json`'s `proposed_writes`
+directly — the JSON review file this whole build had been staging content into since #1377's
+7.3 instruction is now real, live content, not a draft.
+
+**Written:** `prose_section_type` ids 109 (`glossary_programme`, "Programme glossary") and 110
+(`glossary_contentious`, "Contentious glossary"), both under `book_label='Word Index and
+Glossary'`, `chapter_no=1`, `section_label='Glossary'`, `lifecycle_tag='Data Takeon'` — exactly
+the researcher's own field-by-field decisions from the prior round, not re-litigated here. 68
+`prose_section` rows (66 under Programme glossary, 2 under Contentious glossary), each
+`author='claude_code'`, `version=1`, `status` either `draft` (settled-but-unreviewed) or
+`archived` (the 8 migrated Dimension Review vocabularies plus the superseded C-code cluster
+sense) per the researcher's own status markers from the CSV round.
+
+**Verified live, not just inserted:** row counts (68 written, split 66/2 as intended, zero
+orphaned `section_type_id`); FTS coherence (`prose_section`=1017, `prose_section_fts`=1017,
+exactly +68 from the pre-write 949 — the trigger-corruption incident from #219 is confirmed
+fully behind this build, both triggers fired correctly for all 68 inserts); a full extract
+render of the new book end-to-end (`prosestore.extract_programme_prose` + `render_markdown_view`
+with `book="Word Index and Glossary"`) produces exactly `# Word Index and Glossary` → `##
+Glossary` → `### Programme glossary` / `### Contentious glossary`, each with its member entries'
+`[DEFINITION]`/`[BACKGROUND]` bodies rendering underneath — the heading-hierarchy fix from #1381
+and this content are confirmed working together, not just each verified in isolation.
+
+**Deliberately NOT written:** the 2 entries the researcher pulled out for discussion this same
+round (`cohabitation`, `segmentation_unit`) — raised in chat, not yet answered, still excluded
+from `prose_section` pending that conversation. `cfg_prose_concept`'s 2 existing rows
+(`verse_primacy`, `inner_being_definition`) — migrating them into this Glossary was flagged as
+an open point back in the base design and was never revisited; still open, not assumed.
+
+**Files:** `database/bible_research.db` (`prose_section_type` +2 rows, ids 109-110;
+`prose_section` +68 rows, ids assigned by SQLite).

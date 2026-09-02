@@ -111,13 +111,16 @@ def get_schema_version(conn) -> str:
     return row[0] if row else "unknown"
 
 
-def chapter_names(cfg) -> dict:
-    """`prose.chapter_names` — keys are strings (JSON object keys always are); callers look up by
-    `str(chapter_no)`. Reads the dedicated `cfg_prose` module table (escalation #829,
-    `governance.module.config`), not generic `cfg_setting` — corrects this function's own earlier
-    (pre-#829) use of `cfg.setting()`, which duplicated table-driven module config into the
-    project-wide settings table."""
-    return cfg.required_module_setting("cfg_prose", "prose.chapter_names")
+# `chapter_names()` (read `prose.chapter_names` — a fixed 0-6 dict of Programme's own literary
+# chapter names) RETIRED, escalation #1381 (researcher, 2026-09-02: "dropping the
+# cfg_prose.chapter_names"). It was a Programme-book-specific lookup applied unconditionally to
+# every book's `chapter_no` by both render_markdown_view and render_docx -- confirmed live to
+# silently mislabel other books' content (e.g. Detail design's chapter_no=1, shared by 4
+# unrelated items across 4 sessions, would all render "Chapter 1 -- Programme purpose"). The
+# heading hierarchy no longer needs a name-lookup at all: `section_label` supplies the Chapter's
+# display text directly. Programme's own `section_label` data was migrated from a constant
+# `'Programme'` placeholder to the 7 real chapter names this function used to provide, as part of
+# the same fix, so no information was lost by the retirement.
 
 
 def book_stage_map(cfg) -> dict:
@@ -282,7 +285,29 @@ def build_extract(
 
 
 def render_markdown_view(cfg, extract: dict) -> str:
-    names = chapter_names(cfg)
+    """Heading hierarchy corrected per escalation #1381 (researcher, 2026-09-02):
+    `# {book_label}` (Book) -> `## {section_label}` (Chapter) -> `### {label}` (Section).
+    Neither Book nor Chapter carries a subtext paragraph; `description` renders below the
+    Section heading, not above it (the old code put it above `label` -- backwards per spec).
+
+    Ordering: Book by `book_order` (unchanged). Chapter-within-book and Section-within-chapter
+    are NOT `chapter_no`-based as first specified -- checked against live data before building
+    this (see escalation #1381's own findings) and `chapter_no` does not reliably discriminate
+    either tier: it varies WITHIN one section_label group (Session A's 6 Sections carry
+    chapter_no 1..6) and sometimes not even within that (Findings/"Verse analysis" has 3
+    Sections all sharing chapter_no=1). `section_order` is what actually varies BETWEEN
+    section_label groups (confirmed live), so it orders Chapters; `sort_order` reliably
+    discriminates Sections within one chapter (confirmed live: 1003/1004/1005 on the Findings
+    case above), so it orders Sections. `chapter_no` is no longer used for ordering here --
+    see prose_section_type.chapter_no's own cfg_column.use for its remaining role, if any.
+
+    `chapter_names(cfg)`/`prose.chapter_names` is retired as part of this fix (escalation #1381
+    -- "drop it" per researcher instruction) -- the Chapter's display text is `section_label`
+    directly, no separate name-lookup table. Programme's `section_label` data was migrated from
+    a constant `'Programme'` (a workaround for the OLD suppression guard this function no
+    longer has) to the real per-chapter names `chapter_names` used to provide, so no chapter
+    text is lost by the retirement -- see the migration this escalation's resolution records.
+    """
     lines = []
     meta = extract["meta"]
     pp = extract["programme_prose"]
@@ -307,50 +332,41 @@ def render_markdown_view(cfg, extract: dict) -> str:
 
         book_keys = sorted(by_book.keys(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0, x[1]))
         for book_key in book_keys:
-            lines.append(f"## {book_key[1]}\n")
-            by_section: dict = {}
+            lines.append(f"# {book_key[1]}\n")
+            by_chapter: dict = {}
             for t in by_book[book_key]:
-                section_key = (t.get("section_order"), t.get("section_label") or t.get("source_stage") or "Unassigned section")
-                by_section.setdefault(section_key, []).append(t)
-            section_keys = sorted(by_section.keys(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0, x[1]))
-            for section_key in section_keys:
-                if section_key[1] != book_key[1]:
-                    lines.append(f"### {section_key[1]}\n")
-                by_chapter: dict = {}
-                for t in by_section[section_key]:
-                    by_chapter.setdefault(t.get("chapter_no"), []).append(t)
-                chapter_keys = sorted(by_chapter.keys(), key=lambda c: (c is None, c if c is not None else 0))
-                for ch in chapter_keys:
-                    chapter_name = names.get(str(ch), "Unchaptered") if ch is not None else "Unchaptered"
-                    header = f"Chapter {ch} — {chapter_name}" if ch is not None else chapter_name
-                    lines.append(f"#### {header}\n")
-                    for t in sorted(by_chapter[ch], key=lambda x: (x["sort_order"] is None, x["sort_order"] or 0, x["id"])):
-                        if t.get("description"):
-                            lines.append(f"> {t['description']}\n")
-                        lines.append(f"##### {t['label']}\n")
-                        lines.append(f"_`{t['code']}`  ·  type id {t['id']}  ·  chapter {t['chapter_no']}  ·  sort {t['sort_order']}_\n")
-                        bodies = t.get("bodies_by_id") or {}
-                        for s in t["sections_preview"]:
-                            body = bodies.get(s["id"])
-                            if body is None:
-                                lines.append(f"*(metadata only — body not included in this extract. "
-                                             f"Run `build_programme_prose_extract.py --include-body` to render full text.)*")
-                                lines.append(f"- Section id {s['id']} · status `{s['status']}` · "
-                                             f"v{s['version']} · {s['word_count']} words · author `{s['author']}`\n")
-                            else:
-                                meta_line = (f"*Section id {s['id']} · status `{s['status']}` · "
-                                             f"v{s['version']} · {s['word_count']} words · author `{s['author']}`*")
-                                lines.append(meta_line + "\n")
-                                lines.append(body.rstrip())
-                                lines.append("")
-                        lines.append("")
+                chapter_key = (t.get("section_order"), t.get("section_label") or "")
+                by_chapter.setdefault(chapter_key, []).append(t)
+            chapter_keys = sorted(by_chapter.keys(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0, x[1]))
+            for chapter_key in chapter_keys:
+                lines.append(f"## {chapter_key[1]}\n")
+                for t in sorted(by_chapter[chapter_key], key=lambda x: (x["sort_order"] is None, x["sort_order"] or 0, x["id"])):
+                    lines.append(f"### {t['label']}\n")
+                    if t.get("description"):
+                        lines.append(f"> {t['description']}\n")
+                    lines.append(f"_`{t['code']}`  ·  type id {t['id']}  ·  chapter_no {t['chapter_no']}  ·  sort {t['sort_order']}_\n")
+                    bodies = t.get("bodies_by_id") or {}
+                    for s in t["sections_preview"]:
+                        body = bodies.get(s["id"])
+                        if body is None:
+                            lines.append(f"*(metadata only — body not included in this extract. "
+                                         f"Run `build_programme_prose_extract.py --include-body` to render full text.)*")
+                            lines.append(f"- Section id {s['id']} · status `{s['status']}` · "
+                                         f"v{s['version']} · {s['word_count']} words · author `{s['author']}`\n")
+                        else:
+                            meta_line = (f"*Section id {s['id']} · status `{s['status']}` · "
+                                         f"v{s['version']} · {s['word_count']} words · author `{s['author']}`*")
+                            lines.append(meta_line + "\n")
+                            lines.append(body.rstrip())
+                            lines.append("")
+                    lines.append("")
 
     if stubs:
         lines.append("---\n")
         lines.append("## Section types not yet populated\n")
         lines.append("_Stubs — `prose_section_type` rows with `chapter_no=NULL` or no `prose_section` content. "
                      "`id` is the value to use as `section_type_id` in a PROSE patch insert._\n")
-        lines.append("| id | code | label | chapter | sort | description |")
+        lines.append("| id | code | label | chapter_no | sort | description |")
         lines.append("|---:|---|---|---:|---:|---|")
         for t in sorted(stubs, key=lambda x: (x["chapter_no"] is None, x["chapter_no"] or 0, x["sort_order"] or 0)):
             desc = (t.get("description") or "").replace("|", "\\|").replace("\n", " ")
@@ -365,7 +381,14 @@ def render_markdown_view(cfg, extract: dict) -> str:
 
 
 def render_docx(cfg, extract: dict, out_path: Path) -> bool:
-    """Readable .docx export. Returns False (no-op) if python-docx isn't installed."""
+    """Readable .docx export. Returns False (no-op) if python-docx isn't installed.
+
+    Same Book -> Chapter -> Section hierarchy fix as `render_markdown_view` (escalation #1381)
+    -- read that function's docstring for the full rationale (ordering-field substitution,
+    chapter_names retirement). This function had a WORSE pre-existing bug than the markdown
+    view: it never grouped by book at all -- every export was hardcoded under a single
+    "Programme" heading regardless of which book was actually being extracted. Fixed here in
+    the same pass, not left half-done."""
     try:
         from docx import Document
         from docx.shared import Pt, RGBColor
@@ -373,7 +396,6 @@ def render_docx(cfg, extract: dict, out_path: Path) -> bool:
     except ImportError:
         return False
 
-    names = chapter_names(cfg)
     meta = extract["meta"]
     pp = extract["programme_prose"]
 
@@ -406,51 +428,63 @@ def render_docx(cfg, extract: dict, out_path: Path) -> bool:
     stubs = [t for t in pp["types"] if t["section_count"] == 0]
 
     if populated:
-        doc.add_heading("Programme", level=1)
-        by_chapter: dict = {}
+        by_book: dict = {}
         for t in populated:
-            by_chapter.setdefault(t.get("chapter_no"), []).append(t)
-        chapter_keys = sorted(by_chapter.keys(), key=lambda c: (c is None, c if c is not None else 0))
+            by_book.setdefault((t.get("book_order"), t.get("book_label") or "Unassigned book"), []).append(t)
+        book_keys = sorted(by_book.keys(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0, x[1]))
 
-        for ch in chapter_keys:
-            chapter_name = names.get(str(ch), "Unchaptered") if ch is not None else "Unchaptered"
-            header = f"Chapter {ch} — {chapter_name}" if ch is not None else chapter_name
-            doc.add_heading(header, level=2)
+        for book_key in book_keys:
+            doc.add_heading(book_key[1], level=1)
+            by_chapter: dict = {}
+            for t in by_book[book_key]:
+                chapter_key = (t.get("section_order"), t.get("section_label") or "")
+                by_chapter.setdefault(chapter_key, []).append(t)
+            chapter_keys = sorted(by_chapter.keys(), key=lambda x: (x[0] is None, x[0] if x[0] is not None else 0, x[1]))
 
-            for t in sorted(by_chapter[ch], key=lambda x: (x["sort_order"] or 0)):
-                doc.add_heading(t["label"], level=3)
-                meta_p = doc.add_paragraph()
-                rr = meta_p.add_run(f"code: {t['code']}  ·  type id {t['id']}  ·  sort {t['sort_order']}")
-                rr.italic = True
-                rr.font.size = Pt(9)
-                rr.font.color.rgb = RGBColor(0x77, 0x77, 0x77)
+            for chapter_key in chapter_keys:
+                doc.add_heading(chapter_key[1], level=2)
 
-                if t.get("description"):
-                    desc_p = doc.add_paragraph(style="Intense Quote")
-                    desc_p.add_run(t["description"])
+                for t in sorted(by_chapter[chapter_key], key=lambda x: (x["sort_order"] is None, x["sort_order"] or 0, x["id"])):
+                    doc.add_heading(t["label"], level=3)
 
-                bodies = t.get("bodies_by_id") or {}
-                for s in t["sections_preview"]:
-                    sec_meta = doc.add_paragraph()
-                    rr = sec_meta.add_run(
-                        f"Section id {s['id']}  ·  status {s['status']}  ·  v{s['version']}  ·  "
-                        f"{s['word_count']} words  ·  author {s['author']}"
-                    )
+                    if t.get("description"):
+                        desc_p = doc.add_paragraph(style="Intense Quote")
+                        desc_p.add_run(t["description"])
+
+                    meta_p = doc.add_paragraph()
+                    rr = meta_p.add_run(f"code: {t['code']}  ·  type id {t['id']}  ·  sort {t['sort_order']}")
                     rr.italic = True
                     rr.font.size = Pt(9)
                     rr.font.color.rgb = RGBColor(0x77, 0x77, 0x77)
 
-                    body = bodies.get(s["id"])
-                    if body is None:
-                        p = doc.add_paragraph()
-                        rr = p.add_run("(body not included in this extract — re-run with --include-body)")
+                    bodies = t.get("bodies_by_id") or {}
+                    for s in t["sections_preview"]:
+                        sec_meta = doc.add_paragraph()
+                        rr = sec_meta.add_run(
+                            f"Section id {s['id']}  ·  status {s['status']}  ·  v{s['version']}  ·  "
+                            f"{s['word_count']} words  ·  author {s['author']}"
+                        )
                         rr.italic = True
-                        continue
-                    for para in body.split("\n\n"):
-                        para = para.strip()
-                        if not para:
+                        rr.font.size = Pt(9)
+                        rr.font.color.rgb = RGBColor(0x77, 0x77, 0x77)
+
+                        body = bodies.get(s["id"])
+                        if body is None:
+                            p = doc.add_paragraph()
+                            rr = p.add_run("(body not included in this extract — re-run with --include-body)")
+                            rr.italic = True
                             continue
-                        doc.add_paragraph(para)
+                        # Pre-existing bug fixed here, escalation #1381 (found while touching this
+                        # exact block for the heading-hierarchy fix, not introduced by it -- `git
+                        # diff` confirms these lines were untouched before this fix): `continue`
+                        # previously sat OUTSIDE this `if`, unconditionally, so this loop below was
+                        # unreachable dead code for every row -- the docx export never actually
+                        # wrote a section's body text, regardless of --include-body.
+                        for para in body.split("\n\n"):
+                            para = para.strip()
+                            if not para:
+                                continue
+                            doc.add_paragraph(para)
 
     if stubs:
         doc.add_heading("Section types not yet populated", level=1)
@@ -467,7 +501,7 @@ def render_docx(cfg, extract: dict, out_path: Path) -> bool:
         table.style = "Light Grid Accent 1"
         hdr = table.rows[0].cells
         hdr[0].text, hdr[1].text, hdr[2].text, hdr[3].text, hdr[4].text = (
-            "id", "code", "label", "chapter", "description")
+            "id", "code", "label", "chapter_no", "description")
         for t in sorted(stubs, key=lambda x: (x["chapter_no"] is None, x["chapter_no"] or 0, x["sort_order"] or 0)):
             row = table.add_row().cells
             row[0].text = str(t["id"])
@@ -550,12 +584,12 @@ def search_prose(conn, query, book=None, limit=100, raw_fts=False):
         SELECT
             ps.id, ps.heading, ps.status, ps.version, ps.author,
             pst.source_stage, pst.book_order, pst.book_label, pst.section_order,
-            pst.section_label, pst.chapter_no, pst.label AS chapter_title, pst.sort_order,
+            pst.section_label, pst.chapter_no, pst.label AS section_type_label, pst.sort_order,
             snippet(prose_section_fts, 0, '**', '**', ' ... ', 36) AS context,
             bm25(prose_section_fts) AS relevance
         {where_sql}
         ORDER BY relevance, pst.book_order, pst.section_order,
-                 pst.chapter_no, pst.sort_order, ps.id
+                 pst.sort_order, ps.id
         LIMIT ?
         """,
         params,
@@ -576,10 +610,14 @@ def render_search_markdown(query, rows, total_matches, book):
         return "\n".join(lines) + "\n"
 
     for index, row in enumerate(rows, start=1):
+        # Book -> Chapter -> Section breadcrumb, matching escalation #1381's heading hierarchy
+        # (book_label / section_label / label). Previously this aliased pst.label AS
+        # "chapter_title" and displayed it as if it were the chapter's own name -- it isn't; it's
+        # the Section's name. Renamed to section_type_label in the query above and shown here as
+        # what it actually is.
         location = [row["book_label"] or "Unassigned book",
-                   row["section_label"] or row["source_stage"] or "Unassigned section"]
-        if row["chapter_no"] is not None:
-            location.append(f"Chapter {row['chapter_no']}: {row['chapter_title']}")
+                   row["section_label"] or "Unassigned chapter",
+                   row["section_type_label"] or "Unassigned section"]
         lines.extend([
             f"## {index}. {row['heading']}", "",
             f"**Reference:** {' / '.join(location)}",
@@ -621,7 +659,7 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
             sql = """
             SELECT ps.id, ps.heading, ps.body, ps.version,
                    pst.code, pst.book_order, pst.book_label, pst.section_order,
-                   pst.section_label, pst.chapter_no, pst.label AS chapter_title,
+                   pst.section_label, pst.chapter_no, pst.label AS section_title,
                    pst.description, pst.sort_order
             FROM prose_section ps
             JOIN prose_section_type pst ON pst.id = ps.section_type_id
@@ -637,7 +675,7 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
             sql = """
             SELECT ps.id, ps.heading, ps.body, ps.version,
                    pst.code, pst.book_order, pst.book_label, pst.section_order,
-                   pst.section_label, pst.chapter_no, pst.label AS chapter_title,
+                   pst.section_label, pst.chapter_no, pst.label AS section_title,
                    pst.description, pst.sort_order
             FROM prose_section ps
             JOIN prose_section_type pst ON pst.id = ps.section_type_id
@@ -691,9 +729,18 @@ def run_export_chapter(cfg, type_id=None, book=None, chapter=None, out=None) -> 
                 f"<!-- PROSE_SECTION_ID: {row['id']} -->",
                 f"<!-- PROSE_SECTION_TYPE: {row['code']} -->",
                 f"<!-- PROSE_BOOK: {row['book_label']} -->",
-                f"<!-- PROSE_SECTION: {row['section_label']} -->",
+                # Renamed 2026-09-02 (escalation #1381/#1382 follow-up, researcher instruction):
+                # this marker held `section_label`, which #1381 established renders as the
+                # Chapter heading -- "PROSE_SECTION" for Chapter data was backwards, the same
+                # confusion #1381 fixed in the read-only reports. `_parse_edit_blocks`/
+                # `run_import_chapter` accept the old `PROSE_SECTION` name too so the 6 in-flight
+                # edit files already exported under the old name still import cleanly.
+                f"<!-- PROSE_CHAPTER: {row['section_label']} -->",
                 f"<!-- PROSE_CHAPTER_NO: {row['chapter_no']} -->",
-                f"<!-- PROSE_CHAPTER_TITLE: {row['chapter_title']} -->",
+                # Renamed from PROSE_CHAPTER_TITLE -- this holds `label`, which #1381 established
+                # renders as the SECTION heading, not the chapter's. Same backward-compat note
+                # as PROSE_CHAPTER above.
+                f"<!-- PROSE_SECTION_TITLE: {row['section_title']} -->",
                 f"<!-- PROSE_SORT_ORDER: {row['sort_order']} -->",
                 f"<!-- PROSE_VERSION: {row['version']} -->",
                 "", f"## {row['heading']}", "", row["body"].rstrip(), "", "---", "",
@@ -771,16 +818,38 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
                   f"before escalation #890's delete-detection fix) -- delete-detection skipped "
                   f"for this file.")
         for block in blocks:
-            required = ["SECTION_ID", "SECTION_TYPE", "BOOK", "SECTION", "CHAPTER_NO",
-                       "CHAPTER_TITLE", "SORT_ORDER", "VERSION", "BODY"]
-            missing = [key for key in required if key not in block]
+            # SECTION/CHAPTER_TITLE renamed to CHAPTER/SECTION_TITLE 2026-09-02 (escalation
+            # #1381/#1382 follow-up) -- the old names had Chapter/Section data backwards relative
+            # to #1381's corrected model. Both old and new marker names are accepted here on
+            # import so the 6 edit files already exported under the old names (as of this fix)
+            # still import cleanly; `run_export_chapter` only ever writes the new names going
+            # forward, so this fallback is purely for files already in flight, not a permanent
+            # dual format.
+            required_either = [
+                ("SECTION_ID",), ("SECTION_TYPE",), ("BOOK",),
+                ("CHAPTER", "SECTION"),
+                ("CHAPTER_NO",),
+                ("SECTION_TITLE", "CHAPTER_TITLE"),
+                ("SORT_ORDER",), ("VERSION",), ("BODY",),
+            ]
+            missing = [group[0] for group in required_either if not any(k in block for k in group)]
             if missing:
                 raise ValueError(f"section {block.get('SECTION_ID')} missing markers: {missing}")
+
+            def _pick(*keys):
+                # Closes over `block` from the enclosing `for block in blocks:` loop -- no
+                # late-binding risk, this runs immediately within the same iteration, not stored
+                # for later execution.
+                return next((block[k] for k in keys if k in block), None)
+
+            chapter_marker = _pick("CHAPTER", "SECTION")
+            section_title_marker = _pick("SECTION_TITLE", "CHAPTER_TITLE")
+
             row = conn.execute(
                 """
                 SELECT ps.id, ps.version, ps.heading, ps.body,
                        pst.code, pst.book_label, pst.section_label,
-                       pst.chapter_no, pst.label AS chapter_title, pst.sort_order
+                       pst.chapter_no, pst.label AS section_title, pst.sort_order
                 FROM prose_section ps
                 JOIN prose_section_type pst ON pst.id = ps.section_type_id
                 WHERE ps.id = ? AND COALESCE(ps.delete_flagged, 0) = 0
@@ -789,9 +858,17 @@ def run_import_chapter(cfg, input_path, author="researcher", out=None) -> dict:
             ).fetchone()
             if not row:
                 raise ValueError(f"section {block['SECTION_ID']} is not an active current prose row")
+            if chapter_marker != (row["section_label"] or ""):
+                raise ValueError(
+                    f"section {row['id']} marker CHAPTER changed: "
+                    f"file={chapter_marker!r}, database={row['section_label']!r}")
+            if section_title_marker != (row["section_title"] or ""):
+                raise ValueError(
+                    f"section {row['id']} marker SECTION_TITLE changed: "
+                    f"file={section_title_marker!r}, database={row['section_title']!r}")
             checks = {
-                "SECTION_TYPE": row["code"], "BOOK": row["book_label"], "SECTION": row["section_label"],
-                "CHAPTER_NO": str(row["chapter_no"]), "CHAPTER_TITLE": row["chapter_title"],
+                "SECTION_TYPE": row["code"], "BOOK": row["book_label"],
+                "CHAPTER_NO": str(row["chapter_no"]),
                 "SORT_ORDER": str(row["sort_order"]), "VERSION": str(row["version"]),
             }
             for key, expected in checks.items():

@@ -24,6 +24,43 @@
           }
         ]
       }
+    ],
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/session_boundary_track.py\"",
+            "timeout": 10,
+            "statusMessage": "Recording session boundary..."
+          }
+        ]
+      }
+    ],
+    "UserPromptSubmit": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/track_prompt_submit.py\"",
+            "timeout": 10,
+            "statusMessage": "Tracking prompt sequence..."
+          }
+        ]
+      }
+    ],
+    "UserPromptExpansion": [
+      {
+        "matcher": "developer-mode",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "python \"$CLAUDE_PROJECT_DIR/.claude/hooks/gate_developer_mode_entry.py\"",
+            "timeout": 10,
+            "statusMessage": "Checking Developer Mode session-freshness gate..."
+          }
+        ]
+      }
     ]
   }
 }
