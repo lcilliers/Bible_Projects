@@ -105,5 +105,11 @@ turn).
 ## Git state (this log's own completion trigger)
 
 Staged and committed all outstanding changes in the working tree at session close (per
-`governance.session_log_triggers_commit` / CLAUDE.md §12), not only this session's own files —
-see the actual `git status`/`git log` output appended below once run.
+`governance.session_log_triggers_commit` / CLAUDE.md §12), not only this session's own files.
+
+- Branch: `main`
+- Commit: `9046e1833b73f80e89eae083a654300e002a13fc` ("session 20260902: escalation #1379 --
+  verse-lexical Window 1 enrichment design, consolidated checklist, applied to Ps 25:2 + Hos 2:4")
+- `git status`: `On branch main / Your branch is up to date with 'origin/main'. / nothing to
+  commit, working tree clean`
+- `git push`: succeeded — `276055f4..9046e183 main -> main`
