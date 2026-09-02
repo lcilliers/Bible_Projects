@@ -42,4 +42,7 @@ Index and Glossary" prose book (#1377).
 
 ## Git state
 
-_(filled in below, after staging/commit/push, with actual command output — not asserted)_
+Branch: `main`. Commit: `6d076bb3` (parent `c7f4af55`). 23 files changed, 5378 insertions(+), 102
+deletions(-). Pushed: `c7f4af55..6d076bb3 main -> main`. Confirmed via `git status`:
+`On branch main. Your branch is up to date with 'origin/main'. nothing to commit, working tree
+clean.`
