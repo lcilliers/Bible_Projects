@@ -6,6 +6,7 @@ findings, not just the live escalation). Split out 2026-07-21 to avoid a circula
 
 from __future__ import annotations
 
+import difflib
 import io
 import json
 import pathlib
@@ -1179,4 +1180,230 @@ def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.
         if _HAND_VERSION_RE.search(code_text) and not _FILINGKIT_CALL_RE.search(text):
             out.append(f"{rel_posix} builds a -v{{n}} filename by hand — no filingkit."
                       f"versioned_path()/reportkit.oneoff_path() call site in the same file")
+    return out
+
+
+# ── unenforced behaviour rules — the master finding for escalation #1384 ────────────────────────
+def find_unenforced_behaviour_rules(conn: sqlite3.Connection) -> list[str]:
+    """Every active `cfg_behaviour_rule` row whose `enforcement_status` is not
+    `mechanically_enforced` — the structural answer to '44/64 rules said not yet mechanically
+    checked and nobody ever came back to them' (escalation #1384, 2026-09-03). Reads the
+    `enforcement_status` column (cfg_enum `behaviour_rule_enforcement_status`) directly — a
+    queryable fact set by explicit per-rule audit, not a fragile hedge-phrase text scan (the
+    scan that found this whole problem in the first place is exactly the kind of thing that
+    silently stops matching the moment wording drifts). ADVISORY, always — an unenforced rule
+    is a known state to track, not itself a coherence fault."""
+    rows = conn.execute(
+        "SELECT id, class, rule_key, enforcement_status FROM cfg_behaviour_rule "
+        "WHERE active=1 AND (enforcement_status IS NULL OR enforcement_status != 'mechanically_enforced') "
+        "ORDER BY class, id").fetchall()
+    out = []
+    for r in rows:
+        status = r["enforcement_status"] or "UNCLASSIFIED (missing enforcement_status — audit gap itself)"
+        out.append(f"[{r['class']}] #{r['id']} {r['rule_key']} — {status}")
+    return out
+
+
+# ── mechanically-checkable behaviour rules built 2026-09-03 (escalation #1384) ──────────────────
+def find_unpushed_commits(project_root: pathlib.Path) -> list[str]:
+    """`cfg_behaviour_rule` 26 (git-commit-and-push-together): a commit is never left unpushed.
+    Checked via `git rev-list --count @{u}..HEAD` — 0 means clean. Fails soft (empty list, not an
+    exception) if this isn't a git repo or has no upstream configured, rather than crashing
+    validate over an environment that simply doesn't have one."""
+    import subprocess
+    try:
+        result = subprocess.run(
+            ["git", "rev-list", "--count", "@{u}..HEAD"],
+            cwd=project_root, capture_output=True, text=True, timeout=10)
+        if result.returncode != 0:
+            return []
+        count = int(result.stdout.strip() or "0")
+    except (OSError, ValueError, subprocess.TimeoutExpired):
+        return []
+    if count == 0:
+        return []
+    return [f"{count} local commit(s) ahead of the upstream branch, not pushed"]
+
+
+def find_ps_scripts_bypassing_runpy(app_root: pathlib.Path) -> list[str]:
+    """`cfg_behaviour_rule` 43 (every-active-ps-script-dispatches-through-run-py): every PS script
+    under iba/app/ps/ that performs a real operation calls `python -m iba.app.run`, not a direct
+    `python -m iba.app.handlers`/`.lib`/`.tools` call. Two permanent, named exceptions (the rule's
+    own text): Start-Iba.ps1 (bootstraps what run.py depends on) and Escalation.ps1's manual-front-
+    door actions (Raise/Update/Correction/AnswerRun — List/History already dispatch through
+    run.py). A simple substring scan, same shape as the rule's own known-non-compliance list —
+    intentionally crude (a real bypass reads as `python -m iba.app.handlers.foo:bar` regardless of
+    surrounding PowerShell), not a full PowerShell parse."""
+    ps_dir = app_root / "ps"
+    if not ps_dir.exists():
+        return []
+    exempt = {"Start-Iba.ps1", "Escalation.ps1"}
+    out = []
+    for f in sorted(ps_dir.glob("*.ps1")):
+        if f.name in exempt:
+            continue
+        try:
+            text = f.read_text(encoding="utf-8", errors="ignore")
+        except OSError:
+            continue
+        has_runpy = re.search(r"python\s+-m\s+iba\.app\.run\b", text) is not None
+        has_direct = re.search(r"python\s+-m\s+iba\.app\.(handlers|lib|tools)\b", text) is not None
+        if has_direct and not has_runpy:
+            out.append(f"iba/app/ps/{f.name} calls iba.app.(handlers|lib|tools) directly, no "
+                      f"iba.app.run dispatch found in the same file")
+    return out
+
+
+def find_steps_without_ps_script(conn: sqlite3.Connection) -> list[str]:
+    """`cfg_behaviour_rule` 41 (every-interactive-module-needs-ps-script): every active
+    `cfg_step` belongs to a `cfg_work_package` that has a real `ps_script` set — a step reachable
+    only via raw `python -m iba.app.run` (no PS entry point at all) is a usability/audit gap the
+    same way the rule's own origin case (`cfg_behaviour_class`/`cfg_behaviour_rule` before
+    Behaviour.ps1 existed) was."""
+    rows = conn.execute(
+        "SELECT DISTINCT s.work_package FROM cfg_step s LEFT JOIN cfg_work_package w "
+        "ON s.work_package = w.name WHERE s.inactive=0 AND "
+        "(w.ps_script IS NULL OR w.ps_script = '' OR w.name IS NULL)").fetchall()
+    return [f"work package '{r['work_package']}' has an active step but no cfg_work_package."
+            f"ps_script (or no cfg_work_package row at all)" for r in rows]
+
+
+_ESCALATION_HEADER_RE = re.compile(r"Escalation\s+#(\d+)(?:/#(\d+))?")
+
+
+def find_escalation_file_naming_violations(conn: sqlite3.Connection, project_root: pathlib.Path
+                                           ) -> list[str]:
+    """`cfg_behaviour_rule` 64 (escalation-file-carries-escalation-id-prefix) + 56 (naming-shape,
+    the id/date/version parts): a file in Workflow/Catalogue/ or iba/docs/ whose own first-15-lines
+    header self-declares '> Escalation #N' should be named '{N}-...' — checked directly against
+    each file's own stated escalation, not guessed. Also flags a filename containing a raw space
+    (naming-shape: hyphens, not spaces) and a literal 'Untitled' stem. ADVISORY — a doc without a
+    self-declared escalation header is out of this check's scope entirely, not a violation (not
+    every doc in these folders is escalation-tied)."""
+    out = []
+    for folder in (project_root / "Workflow" / "Catalogue", project_root / "iba" / "docs"):
+        if not folder.exists():
+            continue
+        for f in sorted(folder.rglob("*.md")):
+            rel = f.relative_to(project_root).as_posix()
+            if " " in f.name:
+                out.append(f"{rel} — filename contains a space (naming-shape: hyphens only)")
+            if f.stem.lower().startswith("untitled"):
+                out.append(f"{rel} — literally untitled")
+            try:
+                head = "\n".join(f.read_text(encoding="utf-8", errors="ignore").splitlines()[:15])
+            except OSError:
+                continue
+            matches = _ESCALATION_HEADER_RE.findall(head)
+            if not matches:
+                continue
+            candidate_ids = sorted({g for pair in matches for g in pair if g}, key=int)
+            # ANY escalation number named anywhere in the header block satisfies the check — which
+            # one actually owns the file when several are named (a dual tag like '#1378/#1379', or
+            # a '(adjacent)'-qualified provenance mention alongside the true owner) is a
+            # researcher's/Claude's own documented judgement call, not something a text scan
+            # re-litigates; this only flags a file naming NO escalation anywhere in its own
+            # filename that its own header also names.
+            if any(f.name.startswith(f"{eid}-") for eid in candidate_ids):
+                continue
+            out.append(f"{rel} — header names Escalation #{'/#'.join(candidate_ids)}, filename "
+                      f"doesn't start with any of them")
+    return out
+
+
+def find_hedge_phrases_in_active_config(conn: sqlite3.Connection) -> list[str]:
+    """`cfg_behaviour_rule` 32 (no-hedge-in-complete-records), applied to the config system's own
+    text: an ACTIVE cfg_behaviour_rule/cfg_method_rule/cfg_setting row whose text still carries a
+    bare 'not yet'/'TBD'/'to be decided' with no enforcement_status (behaviour rules) or no
+    explanation of what happens next — the exact pattern escalation #1384 found live 44/64 rows
+    doing. Behaviour rules are excluded here once they carry a real enforcement_status (that
+    column, not this phrase scan, is now the authority for them) — this check is the ongoing
+    guard against the SAME drift recurring in cfg_method_rule/cfg_setting, which have no
+    equivalent structured column."""
+    hedges = ("not yet mechanically checked", "not yet built", "not yet applied", "not yet done",
+             "not yet decided", "not yet determined", "not yet resolved", "not yet implemented",
+             "not yet enforced", "not yet reviewed", "not yet confirmed", "not-yet-decided",
+             "not resolved here", "TBD", "to be decided")
+    out = []
+    rows = conn.execute("SELECT id, rule_key, rule_text, enforced_by FROM cfg_method_rule "
+                        "WHERE active=1").fetchall()
+    for r in rows:
+        blob = f"{r['rule_text'] or ''} {r['enforced_by'] or ''}"
+        if any(h.lower() in blob.lower() for h in hedges):
+            out.append(f"cfg_method_rule #{r['id']} {r['rule_key']} — hedge phrase in rule_text/"
+                      f"enforced_by with no resolution")
+    rows = conn.execute("SELECT key, value, use FROM cfg_setting WHERE inactive=0").fetchall()
+    for r in rows:
+        blob = f"{r['value'] or ''} {r['use'] or ''}"
+        if any(h.lower() in blob.lower() for h in hedges) and "deferred-transaction" not in blob:
+            out.append(f"cfg_setting {r['key']} — hedge phrase in value/use")
+    return out
+
+
+def find_query_file_convention_violations(project_root: pathlib.Path) -> list[str]:
+    """`cfg_behaviour_rule` 14 (query-file-conventions): an ad-hoc SQL scratch file lives under
+    scripts/SQLite/{IBA_DB,Research_DB}/ (the folder convention, decided authoritative 2026-09-03
+    — supersedes the flat scripts/SQLite_-prefix form), named with hyphens not spaces, never left
+    untitled. Detection only — this does NOT rename files itself; auto-fixing IS permitted per
+    researcher instruction 2026-09-03, but folding a filesystem mutation into a read-only validate
+    step would blur what `configmaint.validate` means. A future `-Action FixQueryFileNames`-shaped
+    tool applying this same logic is the right home for the actual rename, not this function."""
+    sql_dir = project_root / "scripts" / "SQLite"
+    out = []
+    if sql_dir.exists():
+        for f in sorted(sql_dir.rglob("*.sqlite3-query")):
+            if " " in f.name:
+                out.append(f"{f.relative_to(project_root).as_posix()} — contains a space, "
+                          f"should use hyphens")
+            if f.stem.lower().startswith("untitled"):
+                out.append(f"{f.relative_to(project_root).as_posix()} — untitled, needs a real "
+                          f"descriptive name")
+    scripts_dir = project_root / "scripts"
+    if scripts_dir.exists():
+        for f in sorted(scripts_dir.glob("SQLite_*.sqlite3-query")):
+            out.append(f"{f.relative_to(project_root).as_posix()} — uses the retired flat "
+                      f"SQLite_-prefix form, should live under scripts/SQLite/"
+                      f"{{IBA_DB,Research_DB}}/")
+    return out
+
+
+def find_restated_authoritative_content(conn: sqlite3.Connection, project_root: pathlib.Path,
+                                        min_ratio: float = 0.8) -> list[str]:
+    """`cfg_behaviour_rule` 3 (single-authority-pointer-not-copy): a governance doc paragraph that
+    near-duplicates an active cfg_setting/cfg_behaviour_rule/cfg_method_rule row's own text is a
+    restatement, not a pointer — the two copies will drift apart the moment one is edited and not
+    the other. Deliberately NOT built on content_index (escalation #1385 paused it — 14M rows/8GB
+    from over-broad per-line indexing was the wrong tool for this): this compares a SMALL, FIXED
+    set of governance docs (GOVERNANCE.md, USER-GUIDE.md, CLAUDE.md — where restated cfg_* content
+    would actually matter) against cfg_* row text directly, in memory, no index table at all.
+    difflib.SequenceMatcher.quick_ratio() as a cheap pre-filter, real .ratio() only on survivors —
+    tested live 2026-09-03: 128 rows x 569 paragraphs in ~24s, 0 false-positive noise at
+    min_ratio=0.8 (an earlier, looser attempt at 0.6 produced ~19,000 unusable hits from a 50-row
+    sample — precision tuning is the real difficulty here, not the lack of content_index)."""
+    docs = {}
+    for rel in ("iba/app/GOVERNANCE.md", "iba/app/USER-GUIDE.md", "CLAUDE.md"):
+        p = project_root / rel
+        if not p.exists():
+            continue
+        text = p.read_text(encoding="utf-8", errors="ignore")
+        docs[rel] = [x.strip() for x in text.split("\n\n") if len(x.strip()) > 150]
+
+    rows: list[tuple[str, str]] = []
+    for table, col, where in (("cfg_setting", "value", "inactive=0"),
+                              ("cfg_behaviour_rule", "rule_text", "active=1"),
+                              ("cfg_method_rule", "rule_text", "active=1")):
+        for r in conn.execute(f"SELECT {col} AS txt FROM {table} WHERE {where}").fetchall():
+            if r["txt"] and len(r["txt"]) > 150:
+                rows.append((table, r["txt"]))
+
+    out = []
+    for table, txt in rows:
+        for docname, paras in docs.items():
+            for p in paras:
+                sm = difflib.SequenceMatcher(None, txt, p)
+                if sm.quick_ratio() < min_ratio:
+                    continue
+                if sm.ratio() >= min_ratio:
+                    out.append(f"{table} row (starts: {txt[:60]!r}) closely matches a paragraph "
+                              f"in {docname} (starts: {p[:60]!r}) — restatement, not a pointer?")
     return out

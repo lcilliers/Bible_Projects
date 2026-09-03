@@ -95,7 +95,7 @@ def main() -> int:
         ("source", "Free-text description of how the answer to this question is sourced -- "
                     "e.g. which table/field, or that it requires interpretive reading/judgment. "
                     "Populated per escalation #1007's tier-catalogue-to-IBA-raw-data mapping "
-                    "(Workflow/Catalogue/tier-catalogue-iba-raw-data-mapping-v2-20260831.md) for "
+                    "(Workflow/Catalogue/1007-tier-catalogue-iba-raw-data-mapping-v2-20260831.md) for "
                     "the 126 live tiered questions; NULL elsewhere until reviewed."),
         ("last_modified", "ISO-8601 UTC timestamp of this row's last update via "
                           "obs_catalogue.update (iba/app/ps/Catalogue-Update.ps1). Auto-set by "

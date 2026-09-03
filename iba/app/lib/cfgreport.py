@@ -285,6 +285,33 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
         ("Escalation.ps1/worksheet drift", "an Escalation.ps1 parameter not used as a -Flag header "
          "anywhere in governance.escalation_worksheet_path",
          cfgquality.find_escalation_worksheet_drift(conn, APP, APP.parent.parent)),
+        # 2026-09-03 (escalation #1384, researcher: "every validation report must include a
+        # detail list of all configs that is not enforced, and the reason") — the master finding.
+        ("Unenforced behaviour rules", "an active cfg_behaviour_rule row whose enforcement_status "
+         "is not mechanically_enforced — see the row's own enforced_by text for the reason "
+         "(mechanically checkable but not yet built, a genuine judgement call, or a class of rule "
+         "with no durable artifact to check)",
+         cfgquality.find_unenforced_behaviour_rules(conn)),
+        ("Unpushed commits", "a local commit not yet pushed to the upstream branch",
+         cfgquality.find_unpushed_commits(APP.parent.parent)),
+        ("PS scripts bypassing run.py", "an active PS script calling iba.app.(handlers|lib|tools) "
+         "directly instead of dispatching through iba.app.run",
+         cfgquality.find_ps_scripts_bypassing_runpy(APP)),
+        ("Steps without a PS entry point", "an active cfg_step whose work package has no "
+         "cfg_work_package.ps_script",
+         cfgquality.find_steps_without_ps_script(conn)),
+        ("Escalation-file naming drift", "a Workflow/Catalogue or iba/docs file whose own header "
+         "names an escalation the filename doesn't carry as its prefix",
+         cfgquality.find_escalation_file_naming_violations(conn, APP.parent.parent)),
+        ("Config hedge phrases", "an active cfg_method_rule/cfg_setting row still carrying an "
+         "unresolved 'not yet .../TBD' with no follow-up",
+         cfgquality.find_hedge_phrases_in_active_config(conn)),
+        ("Restated authoritative content", "a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph "
+         "closely duplicating an active cfg_* row's own text instead of pointing to it",
+         cfgquality.find_restated_authoritative_content(conn, APP.parent.parent)),
+        ("Query file convention", "an ad-hoc SQL scratch file not under scripts/SQLite/"
+         "{IBA_DB,Research_DB}/, or with a space in its name, or untitled",
+         cfgquality.find_query_file_convention_violations(APP.parent.parent)),
     ]
     # this section is the ACTIONABLE detail behind configmaint.validate's escalation — that
     # escalation question stays short (counts + this report path) precisely because every item

@@ -71,6 +71,17 @@ was retired 2026-08-18 in favour of it):
   Claude.
 - The most recent file(s) under `outputs/markdown/` and `outputs/session-logs/` if an open
   escalation or the last commit message points to an in-progress thread worth naming.
+- **Unenforced-config summary (escalation #1384, 2026-09-03 — "not decided"/"not yet"/"flagged"
+  notes on active configs are not control; they must be visible every session, not rediscovered
+  by accident).** Query `cfg_behaviour_rule` for `active=1 AND enforcement_status !=
+  'mechanically_enforced'` (a count by `enforcement_status`, not just a total — the researcher
+  needs to see how many are `judgment_call_pending` specifically, since those are the ones
+  waiting on a decision, distinct from `not_mechanically_checkable`/`deliberately_deferred` which
+  are already-settled determinations) — or, once `configmaint.validate`/`report` has actually run
+  this session for another reason, its own `unenforced_behaviour_rules`/`config_hedge_phrases`
+  findings cover the same ground, don't re-query separately. Don't run `configmaint.validate`
+  solely to produce this count if nothing else calls for it this session — a direct `cfg_
+  behaviour_rule` query is cheaper and sufficient for orientation.
 
 ## 5. Report and stop
 
@@ -80,5 +91,7 @@ Summarise, briefly, in chat (not a new `.md` file — this is a status check, no
 - STEP (was it already up, or did this command start it — and did it come up in time).
 - IBA bootstrap result (READY or what went wrong).
 - Open escalations relevant to this session, and any other loose end found.
+- Unenforced-config count from step 4, by `enforcement_status` — name the `judgment_call_pending`
+  ones specifically (they're waiting on a researcher decision), not just a bare total.
 
 Then stop and ask what to work on this session. Do not start a task on your own initiative.

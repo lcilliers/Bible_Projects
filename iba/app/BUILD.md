@@ -11769,7 +11769,7 @@ and `bootstrap_catalogue_overview_report_v1_20260829.py` (this escalation's own 
 **Tested live**, not just syntax-checked: migration applied clean, re-run idempotent (every row
 reports "already present/exists"). Real update via the PS wrapper on `obs_id=224` (T0.1.1),
 populating `source` with its actual answer from the tier-catalogue mapping
-(`tier-catalogue-iba-raw-data-mapping-v2-20260831.md`) — confirmed in the DB, not asserted. Error
+(`1007-tier-catalogue-iba-raw-data-mapping-v2-20260831.md`) — confirmed in the DB, not asserted. Error
 paths confirmed clean (`fail`, not a crash): `obs_id` in `-Set` rejected, an unknown column name
 rejected (lists the live columns), a nonexistent `obs_id` rejected. Confirmed an explicit
 `-Set catalogue_version=...` overrides the auto-fill default rather than being clobbered by it.
@@ -11917,7 +11917,7 @@ escalation #1382 (no longer applicable) and state plainly that the field is free
 
 ## 219. `book_label` CHECK widened for "Word Index and Glossary"; a live bug from #218's migration caught and fixed in the same pass (2026-09-02, escalation #1377)
 
-Researcher review of `glossary-draft-entries-v1-20260902.json` resolved several open points from
+Researcher review of `1377-glossary-draft-entries-v1-20260902.json` resolved several open points from
 that design in one pass: the book name is **"Word Index and Glossary"** (not "Glossary" alone —
 this book will also carry a future word concordance, not built now); `chapter_no=1` ("I do not
 see different chapters"); `lifecycle_tag='Data Takeon'` (the free-text value #218 made possible);
@@ -11966,14 +11966,14 @@ any future `prose_section_type` rebuild should follow.
 **Files:** `database/bible_research.db` schema (`prose_section_type` rebuilt again; `book_label`
 CHECK widened; `prose_section_ai`/`au` triggers repaired then recreated); `iba/app/db/iba.db`
 (`cfg_enum` +1 row; `cfg_prose.book_stage_map`/`.book_output_dir` +1 entry each);
-`Workflow/Catalogue/glossary-draft-entries-v1-20260902.json` (two `prose_section_type` rows
+`Workflow/Catalogue/1377-glossary-draft-entries-v1-20260902.json` (two `prose_section_type` rows
 replacing the original one; all 36 `prose_section` rows' `section_type_id` reassigned to the
 correct type).
 
 ## 220. Glossary content written live: 2 `prose_section_type` rows + 68 `prose_section` entries (2026-09-02, escalation #1377)
 
 Researcher, closing the design/review cycle: "let's add these all to prose, I am not going to
-spend more time on it." Applied `glossary-draft-entries-v1-20260902.json`'s `proposed_writes`
+spend more time on it." Applied `1377-glossary-draft-entries-v1-20260902.json`'s `proposed_writes`
 directly — the JSON review file this whole build had been staging content into since #1377's
 7.3 instruction is now real, live content, not a draft.
 
@@ -12004,3 +12004,218 @@ an open point back in the base design and was never revisited; still open, not a
 
 **Files:** `database/bible_research.db` (`prose_section_type` +2 rows, ids 109-110;
 `prose_section` +68 rows, ids assigned by SQLite).
+
+## 221. Unenforced-config audit: `cfg_behaviour_rule.enforcement_status` built, 6 real checks wired into `configmaint.validate`/CONFIG-REPORT.md (2026-09-03, escalation #1384)
+
+**Trigger.** Researcher, direct instruction: "you create half baked rules from instructions, do
+not persist to ensure that you get answers, and think the job is done if you make a note...
+Can you check all your config notes for active configs that is silently ignored, or incomplete."
+A sweep found 44 of 64 active `cfg_behaviour_rule` rows (69%) carried `enforced_by = 'not yet
+mechanically checked -- deviation-monitoring mechanism is still a follow-on cycle'`, tracing to
+one root cause: the researcher's own 2026-08-18 instruction ("validation of these rules must
+include mechanisms to flag deviation... monitored ongoing") became escalation #715, which fell
+out of the live escalation table during the 2026-08-20/21 rebuild and sat orphaned in
+`escalations_old` (in-progress, assigned to Claude) ever since — every rule built since had cited
+its dangling "follow-on cycle" as cover. Raised as its own item, escalation #1384.
+
+**Instruction, this cycle:** (a) work through every unenforced config, confirm whether it should
+be enforced, escalate genuine judgement calls; (b) build a permanent "list of unenforced configs
++ reason" into every `configmaint.validate`/CONFIG-REPORT.md run, surfaced in `start-project`.
+
+**Part (a) — every one of the 64 active `cfg_behaviour_rule` rows individually investigated,
+not counted.** Added `enforcement_status` (`cfg_enum` `behaviour_rule_enforcement_status`, 6
+values: `mechanically_enforced` / `partially_enforced` / `buildable_not_built` /
+`judgment_call_pending` / `not_mechanically_checkable` / `deliberately_deferred`) so this is a
+queryable fact, not a fragile hedge-phrase text match (the exact class of check that let this
+drift silently — wording just has to change). Findings:
+
+- **16 already genuinely enforced, mislabelled.** `askuserquestion-banned` — verified: hard
+  `.claude/settings.json` `permissions.deny` block, not just "checked". The 6 `llm_output` rules
+  (`sdk-dependency-decision`/`no-hardcoded-call-params`/`cost-cap-before-call`/
+  `usage-log-required`/`sonnet-default-model`/`never-expose-api-key`) — verified against the
+  ONE live Claude-API call site in the entire app (`iba/app/lib/narrativegenerate.py` +
+  `handlers/narrative.py`): `requests` not the `anthropic` SDK, every model/token/cost-rate
+  param sourced from `cfg_setting`, a real pre-call cost-cap `fail()`, a real `log_usage()` CSV
+  write, `narrative.generate_model='claude-sonnet-5'`, the API key read from env/`.env` and never
+  logged — read the actual code, not assumed. Plus 9 more (`decision-points-are-terminal`,
+  `decision-required-answered-via-update`, the 6 `apply_session_patch.py` choke-point rules,
+  `config-updated-same-unit-of-work-as-change`) already correctly cited real mechanisms.
+- **6 buildable, built this session** (see below).
+- **9 genuine judgement calls, escalated in #1384's own record** rather than defaulted on:
+  `query-file-conventions` (live divergence found — only 3 files follow the documented
+  `SQLite_`-flat-prefix convention, 9 more live under an undocumented `scripts/SQLite/{IBA_DB,
+  Research_DB}/` folder convention instead, plus one literally-untitled file — which is the real
+  rule?); `never-write-via-adhoc-tool`/`writes-must-be-replayable` (would need a real write-audit-
+  trail mechanism, not a quick scan); `single-authority-pointer-not-copy` (a duplicate-content
+  scanner is plausible off the existing `content_index` infrastructure — worth it?);
+  `obsidian-copy-not-authoritative` (buildable if the vault path/mirrored-file mapping is fixed
+  and known — not confirmed); `consolidation-doc-must-be-load-bearing-or-retired` (needs a
+  prerequisite inventory of which docs count, which doesn't exist); `user-guide-updated-same-
+  unit-of-work` (a git-commit-correlation heuristic is buildable but has a known false-positive
+  mode against this project's own incremental-commit policy); `tool-report-path-vs-deliverable-
+  document` (blocked on `procedural_document_taxonomy` itself being unapplied — below);
+  `inactive-tables-never-active-inputs` (checkable in principle, genuinely complex to build
+  without false positives across table/row/column-level "inactive").
+- **31 determined NOT mechanically checkable, and said so plainly** — real-time conversational/
+  tool-use conduct (verify-before-acting, confirm-before-nontrivial-work, factual-discipline-no-
+  guessing, close-the-loop-not-just-report, root-fix-not-one-off, and 26 more) with no durable
+  code/DB artifact a scan could check after the fact. `enforced_by` rewritten from "not yet" to a
+  stated determination: mechanical enforcement doesn't apply to this class, the realistic path is
+  direct researcher review of transcripts — not a promise of automation that was never coming.
+- **6 rows had `enforced_by = NULL`** (never even filled in — worse than hedged, found by this
+  audit specifically because a NULL matches no hedge-phrase, exposing the fragility of that old
+  detection method). All 6 filled: `archiving-trigger` verified `partially_enforced` (real for
+  `reportkit.write_report()`'s own archive-on-write, confirmed live via this session's own
+  escalation-history regenerates; NOT covered for hand-authored docs — still manual); the other 5
+  classified per the categories above.
+- **3 `cfg_setting` rows also flagged** (`prose_canonical_authority`, `procedural_document_
+  taxonomy`, `engineering_documentation_folder`) — each already states plainly what's missing,
+  left as-is (not a hedge, an honest open item), now caught by the new `config_hedge_phrases`
+  check going forward instead of only by manual review.
+
+**Part (b) — 6 new `cfgquality.py` functions, wired into BOTH `configmaint.validate`'s findings
+dict and `cfgreport.generate()`'s findings section (previously drifted independently — fixed
+together this time):**
+
+- `find_unenforced_behaviour_rules` — the master finding: every active row where
+  `enforcement_status != 'mechanically_enforced'`. **48 found** in the first live run (before the
+  6 buildable rules below were actually wired in and reclassified); **44 after** — the accurate,
+  final count, re-verified live.
+- `find_unpushed_commits` — `git rev-list --count @{u}..HEAD`. 0 live.
+- `find_ps_scripts_bypassing_runpy` — confirms `every-active-ps-script-dispatches-through-run-py`.
+  **1 found**: `Behaviour.ps1` — matches the rule's own 2026-08-21 known-non-compliance note,
+  confirmed STILL true 2+ weeks later; not fixed here, now mechanically re-detected every run
+  instead of relying on a stale text note.
+- `find_steps_without_ps_script` — confirms `every-interactive-module-needs-ps-script`. 0 live.
+- `find_escalation_file_naming_violations` — confirms `escalation-file-carries-escalation-id-
+  prefix`, cross-checking every `Workflow/Catalogue`/`iba/docs` file's own `> Escalation #N`
+  header against its filename. **27 found**: 2 are documented exceptions (a file whose true owner
+  differs from its header's literal number, reasoned through and recorded when the file was
+  renamed 2026-09-02/03); the other 25 are the pre-#1007 backlog already flagged 2026-09-02 as
+  needing a scoped go-ahead (same shape as escalation #976's own deferred plan-doc migration) —
+  now an exact, mechanically-produced list instead of an estimate.
+- `find_hedge_phrases_in_active_config` — the ongoing guard against `cfg_method_rule`/
+  `cfg_setting` (no `enforcement_status`-equivalent column) drifting the same way
+  `cfg_behaviour_rule` did. **3 found**, matching this audit's own manual findings exactly.
+
+**Tested live**, not claimed: every function run standalone against the real DB/repo before
+wiring in (counts recorded above); `Config-Maintenance.ps1 -Step Validate` run end-to-end
+(reaches the pre-existing, unrelated #1373 hard-coherence error first — confirms the new checks
+don't crash the dispatch path); `cfgreport.generate()` run directly, output inspected line-by-
+line, all 6 new sections present with matching counts.
+
+**Files:** `iba/app/lib/cfgquality.py` (+6 functions), `iba/app/handlers/configmaint.py`
+(findings dict +6 entries, success message updated), `iba/app/lib/cfgreport.py` (findings list +6
+entries), `iba/app/db/iba.db` schema (`cfg_behaviour_rule` +1 column `enforcement_status`;
+`cfg_enum` group `behaviour_rule_enforcement_status` +6 rows; `cfg_column` +1 row; all 64 active
+`cfg_behaviour_rule` rows' `enforcement_status` populated, 35 rows' `enforced_by` text rewritten
+from a hedge to a real determination).
+
+**Still open, not silently dropped:** the 9 judgement-call items above (escalation #1384, awaiting
+researcher decision); the 25-file naming backlog (needs the same scoped go-ahead #976 already
+established the precedent for); `Behaviour.ps1`'s run.py bypass (known since 2026-08-21, still
+not fixed). `start-project` wiring for this finding list (part (b)'s second half) — DONE, same
+session, corrected here after initially being left off this list: `.claude/commands/
+start-project.md` §4 now queries `enforcement_status` counts by category and §5 names the
+`judgment_call_pending` ones specifically in the session-start report.
+
+## 222. #1384's 9 judgement calls resolved: content_index paused (#1385), Obsidian escalated (#1386), USER-GUIDE.md rewrite escalated (#1387), 2 more checks built, 2 rule-text contradictions fixed (2026-09-03, escalation #1384)
+
+Same session as #221, immediately following — the researcher's own decisions on each of the 9
+open judgement calls #221 raised, worked through one at a time, not left as a second round of
+notes.
+
+**Query-file-conventions (rule 14) — DECIDED and fixed.** `scripts/SQLite/{IBA_DB,Research_DB}/`
+confirmed authoritative over the flat `SQLite_`-prefix form. Rule text rewritten. All 8 live
+violations fixed same pass: 3 flat files (`SQLite_programme_prose_body_export`/
+`SQLite_prose_section_type_list`/`SQLite_prose_section_type_with_body`, all `bible_research.db`-
+targeted per their own `-- database:` header) relocated into `scripts/SQLite/Research_DB/` and
+renamed without the redundant prefix; 4 space-containing filenames hyphenated (`explore
+escalation`→`explore-escalation`, `explore tables`→`explore-tables`, `catalogue and findings`→
+`catalogue-and-findings`, `programme prose`→`programme-prose`); 1 literally-untitled file
+(`Untitled-1.sqlite3-query`, `SELECT * FROM cfg_column` against `iba.db`) renamed
+`explore-cfg-column.sqlite3-query`. New check `find_query_file_convention_violations` built and
+wired in — 0 violations after.
+
+**content_index redesign — escalated, current use paused.** Researcher: "the first prototype
+created a DB table of significant proportions." Confirmed against BUILD.md's own history (#143,
+2026-08-17): a real `content_index.rebuild` wrote 14,118,338 rows, grew `iba.db` from ~675MB to
+8.06GB, and search on common domain-central terms (`gloss:compassion`) returned 23,098 hits —
+technically correct, not genuinely browsable. That finding was reported at the time for a
+researcher decision that was never actually recorded as taken — the same shape of dropped thread
+as #715. Escalation **#1385** raised. `content_index`/`content_index_scan` are currently 0 rows
+(reset since, not investigated when/how) but the `content_index.rebuild` step was still live —
+paused in the same unit of work (`cfg_step.inactive=1`, `cfg_work_package.inactive=1` for
+`content-index-rebuild`, both referencing #1385 in the step's own `does` field). `content_index.
+search`/`.size_profile` left active (read-only, harmless against an empty table).
+
+**single-authority-pointer-not-copy (rule 3) — built WITHOUT content_index, as instructed.**
+Researcher: "if the control can be performed without the content_index then it should be done."
+New `find_restated_authoritative_content`: direct `difflib.SequenceMatcher` comparison of active
+`cfg_setting`/`cfg_behaviour_rule`/`cfg_method_rule` text against `GOVERNANCE.md`/`USER-GUIDE.md`/
+`CLAUDE.md` paragraphs — no index table, no content_index dependency at all. **Tuning found live,
+not assumed**: a first attempt at `quick_ratio() > 0.6` produced ~19,000 candidate hits from a
+50-row sample — unusable noise. Full `ratio()` at `0.8` (with `quick_ratio()` as a cheap
+pre-filter) on the complete set (128 rows × 569 paragraphs, ~24s): 0 findings, clean. Wired into
+`configmaint.validate` + `CONFIG-REPORT.md`; rule 3 now `mechanically_enforced`.
+
+**obsidian-copy-not-authoritative (rule 15) — escalated, deactivated.** Researcher: "obsidian is
+not yet fully deployed, and it seems to crash." Checked: zero `cfg_setting`/`cfg_step` rows exist
+for Obsidian anywhere in `iba.db` — the rule was written ahead of any real integration existing.
+Escalation **#1386** raised (fix the actual deployment). Rule 15 set `active=0`, referencing
+#1386 — reactivate once there's something real to enforce.
+
+**consolidation-doc-must-be-load-bearing-or-retired (rule 35) — explained, no config action.**
+Researcher asked what this config does. Plain-language answer given in chat: a document built
+specifically to gather scattered operational rules into one place is only as good as whatever in
+the actual session-start path (a skill, CLAUDE.md, a memory file) points to it — if nothing does,
+it silently goes stale while still reading as authoritative. The rule says: retire it explicitly
+(banner + pointer to what replaced it, provenance kept) rather than let that happen quietly —
+`docs/project-orientation-core-memory-map.md`'s own 2026-08-18 retirement is the precedent this
+rule generalises from.
+
+**user-guide-updated-same-unit-of-work (rule 42) — corrected framing, DECIDED active.**
+Researcher: this is not primarily a same-commit-timing rule, it is a rule that the guide is kept
+current — full stop, "not something that is postponed for a later date." `USER-GUIDE.md` confirmed
+stale live (`git log`: last touched 2026-08-28, 6 days and 7+ escalations before this one).
+Escalation **#1387** raised for the actual rewrite. Rule 42's `enforced_by` corrected (the earlier
+git-commit-correlation-heuristic idea from #221 is dropped) and stays `active`/enforced now,
+independent of #1387's timeline.
+
+**tool-report-path-vs-deliverable-document (rule 60) — diagnosed and fixed at the root.**
+Researcher: "is this config poorly worded, why is it not followed." Investigated, not defaulted
+on: the rule text was **genuinely self-contradictory** — one sentence said an authored deliverable
+follows `iba/docs/` "instead" [of `outputs/escalation/`]; a later sentence in the same rule said
+the opposite ("an escalation-linked deliverable DOES belong under `outputs/escalation/`"). A real,
+plausible contributing cause of exactly the escalation-file filing drift #1384 exists to fix —
+whoever read this rule naturally followed the clearer first sentence, not the confusingly-worded
+aside asserting the opposite. Rewritten to state ONE rule, grounded in the researcher's own quoted
+words (escalation #971 chat: "yes the refiling of escalation files is for 976"): escalation-tied
+authored deliverables belong under `outputs/escalation/`; `iba/docs/` is for non-escalation-tied
+engineering documentation. Migrating the existing `iba/docs/` backlog is still #976's scoped job,
+not silently done by this text fix. `enforcement_status` → `buildable_not_built` (a check is now
+definable, deliberately not built yet — it would immediately re-surface the same ~25-file backlog
+#976 already deferred pending a go-ahead).
+
+**inactive-tables-never-active-inputs (rule 61) — simplified, and taken as direct behavioural
+feedback.** Researcher: "if a table is marked as inactive in the configs, it should not be
+included in any report or result, unless it is an explicit instruction to explore historical...
+I find that you are continuing to go back over the history and time and time again trying to
+rebuild, reconcile, inactive stuff." Rule text simplified to that plain statement. Recorded
+explicitly as a correction to Claude's own conduct (not a config gap) — repeatedly re-engaging
+with inactive/historical state unprompted is itself the violation this rule exists to prevent.
+
+**Verified live, final:** `CONFIG-REPORT-v369-20260903.md` regenerated — 41 unenforced behaviour
+rules (was 44 after #221, was 48 before any fix), 0 restated-content findings, 0 query-file-
+convention findings.
+
+**Still genuinely open:** items 2/3 of #221's original list (`never-write-via-adhoc-tool`/
+`writes-must-be-replayable`) — the researcher's reply this round didn't address them; still
+`judgment_call_pending`, not decided by omission. Escalations #1385/#1386/#1387 — raised, not yet
+actioned.
+
+**Files:** `iba/app/lib/cfgquality.py` (+2 functions, `difflib` import added),
+`iba/app/handlers/configmaint.py` (findings dict +2, success message updated),
+`iba/app/lib/cfgreport.py` (findings list +2), `scripts/SQLite/**` (8 files renamed/relocated),
+`iba/app/db/iba.db` (`cfg_behaviour_rule` rows 3/14/15/35/42/60/61 updated; `cfg_step`/
+`cfg_work_package` `content-index-rebuild` paused).

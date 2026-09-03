@@ -1,0 +1,5 @@
+-- database: ../../../iba/app/db/iba.db
+
+SELECT * FROM cfg_column
+where table_name like 'prose_section_type';
+

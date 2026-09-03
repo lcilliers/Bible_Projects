@@ -23,16 +23,16 @@ active); everything below is filed for review and for the Developer Mode session
 
 ## Files created or changed
 
-- `iba/docs/verse-lexical-enrichment-scope-v1-20260902.md` (new) — investigation + reconciliation:
+- `iba/docs/1379-verse-lexical-enrichment-scope-v1-20260902.md` (new) — investigation + reconciliation:
   what T1-3/T4/T6-9 actually are vs. what's live in config, the `operations-ingest` correction, 7
   open decisions (A-G), genre marked CRITICAL.
-- `iba/docs/verse-lexical-enrichment-checklist-v1-20260902.md` (new, then twice extended same day)
+- `iba/docs/1379-verse-lexical-enrichment-checklist-v1-20260902.md` (new, then twice extended same day)
   — the consolidated, prototype-status Window 1 checklist: baseline fields, idiom test, purposeful
   classification by part of speech, chain/connections, related-words, polarity, entity-linking,
   data-quality checks, inert confirmation; later extended with the "one integrated read" correction,
   the 20-verse hard cap, and the proposed passage-coverage build (passage_id denormalization,
   passage-scoped build, completion marker, boundary suggester).
-- `Workflow/Catalogue/verse-lexical-enrichment-applied-ps25-2-hos2-4-v1-20260902.md` (new) — the
+- `Workflow/Catalogue/1379-verse-lexical-enrichment-applied-ps25-2-hos2-4-v1-20260902.md` (new) — the
   checklist applied live to Ps 25:2 (poetic) and Hos 2:4 (prophetic), grounded in real `iba.db`
   data throughout; surfaced a new checklist item (logical/causal connective), a live bug in
   existing T1-3 code (`H0853` direct-object-marker misclassified `role=content`), and a genuine

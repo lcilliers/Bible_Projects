@@ -15,7 +15,7 @@ import sqlite3
 
 IBA_DB = "iba/app/db/iba.db"  # relative to project root; run from c:/Bible_study_projects
 
-# Candidate terms drawn from vocabulary-glossary-seed-v2-20260901.md Parts 1-4.
+# Candidate terms drawn from 1377-vocabulary-glossary-seed-v2-20260901.md Parts 1-4.
 # Each entry: (query_term, search_variants) -- variants used for the textual/word-boundary scan;
 # query_term alone is used for the column-name exact/substring scan.
 TERMS = [

@@ -33,7 +33,7 @@ cluster-assign,iba/app/ps/Cluster-Assign.ps1,none,0,,,,0
 file-manifest-rebuild,iba/app/ps/Manifest-Rebuild.ps1,none,0,,,,0
 file-manifest-search,iba/app/ps/Manifest-Search.ps1,none,0,,,,0
 word-audit,iba/app/ps/Word-Audit.ps1,word,1,word-audit complete.,next: none — full pipeline run.,word-audit paused — see the message above.,0
-content-index-rebuild,iba/app/ps/ContentIndex-Rebuild.ps1,none,0,,,,0
+content-index-rebuild,iba/app/ps/ContentIndex-Rebuild.ps1,none,0,,,,1
 content-index-search,iba/app/ps/ContentIndex-Search.ps1,none,0,,,,0
 content-index-size-profile,iba/app/ps/ContentIndex-SizeProfile.ps1,none,0,,,,0
 escalation-reporting,iba/app/ps/Escalation.ps1,none,0,,,,0
@@ -41,3 +41,5 @@ prose,iba/app/ps/Prose.ps1,none,0,,,,0
 folder-purpose,iba/app/ps/FolderPurpose.ps1,none,0,,,,0
 path-audit,iba/app/ps/PathAudit.ps1,none,0,,,,0
 catalogue-report,iba/app/ps/Catalogue-Report.ps1,none,0,,,,0
+schema-overview-report-bible-research,iba/app/ps/SchemaOverview-BibleResearch-Report.ps1,none,0,,,,0
+catalogue-update,iba/app/ps/Catalogue-Update.ps1,none,0,,,,0

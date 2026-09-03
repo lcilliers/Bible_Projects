@@ -395,6 +395,36 @@ def validate(ctx: Ctx) -> Outcome:
         "escalation_worksheet_drift": (
             cfgquality.find_escalation_worksheet_drift(ctx.db.conn, APP_ROOT, PROJECT_ROOT),
             "Escalation.ps1/worksheet drift finding(s)"),
+        # 2026-09-03 (escalation #1384, researcher: "every validation report must include a
+        # detail list of all configs that is not enforced, and the reason") — the master finding
+        # this whole cycle exists for. Reads cfg_behaviour_rule.enforcement_status directly, not a
+        # fragile hedge-phrase text scan (the scan that FOUND this gap is exactly the kind of
+        # check that stops matching the moment wording drifts).
+        "unenforced_behaviour_rules": (
+            cfgquality.find_unenforced_behaviour_rules(ctx.db.conn),
+            "behaviour rule(s) not mechanically enforced"),
+        # 2026-09-03 (escalation #1384) — the mechanical checks built the same session as the
+        # rules they check, so 'buildable_not_built' doesn't silently sit unbuilt again.
+        "unpushed_commits": (
+            cfgquality.find_unpushed_commits(PROJECT_ROOT), "unpushed local commit finding(s)"),
+        "ps_scripts_bypassing_runpy": (
+            cfgquality.find_ps_scripts_bypassing_runpy(APP_ROOT),
+            "PS script(s) bypassing run.py"),
+        "steps_without_ps_script": (
+            cfgquality.find_steps_without_ps_script(ctx.db.conn),
+            "active step(s) with no PS entry point"),
+        "escalation_file_naming": (
+            cfgquality.find_escalation_file_naming_violations(ctx.db.conn, PROJECT_ROOT),
+            "escalation-tied file(s) not carrying their escalation-id prefix"),
+        "config_hedge_phrases": (
+            cfgquality.find_hedge_phrases_in_active_config(ctx.db.conn),
+            "cfg_method_rule/cfg_setting row(s) still carrying an unresolved hedge phrase"),
+        "restated_authoritative_content": (
+            cfgquality.find_restated_authoritative_content(ctx.db.conn, PROJECT_ROOT),
+            "governance-doc paragraph(s) restating cfg_* content instead of pointing to it"),
+        "query_file_convention": (
+            cfgquality.find_query_file_convention_violations(PROJECT_ROOT),
+            "SQL scratch file(s) violating the scripts/SQLite/ folder convention"),
     }
     preset = {k: v[0] for k, v in findings.items()}
     if not any(preset.values()):
@@ -404,7 +434,10 @@ def validate(ctx: Ctx) -> Outcome:
                   "current, every lib module registered, no zero-config-density utilities, no "
                   "book_order/connection/candidate_rule usage gaps, no report-version clutter, no "
                   "Escalation.ps1/FolderPurpose.ps1 ValidateSet drift, no unresolvable location "
-                  "settings, no hand-rolled versioning, no PS script/worksheet drift")
+                  "settings, no hand-rolled versioning, no PS script/worksheet drift, no "
+                  "unenforced behaviour rules, no unpushed commits, no run.py bypass, every step "
+                  "has a PS entry point, no escalation-file naming drift, no config hedge phrases, "
+                  "no restated authoritative content, no query-file convention violations")
 
     # Full detail persists to CONFIG-REPORT.md's "findings" section (cfgreport.py mirrors the
     # same cfgquality functions) — refreshed here so the report reflects THIS run's findings, not

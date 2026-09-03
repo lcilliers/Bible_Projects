@@ -1,0 +1,16 @@
+﻿priority,shape,next_action,condition_key,resulting_status_key,notes,active
+1,dispatcher,hold,always,decision=hold,,1
+2,dispatcher,noted,always,decision=noted,,1
+2,manual,approved,has_resolution,next_action=approved,resolution present (this call or a prior one) -> completed,1
+2,manual,reject,always,__explicit__,"state comes from the caller's own explicit withdraw|supersede choice, not a lookup",1
+3,manual,revise,always,next_action=revise,,1
+4,manual,noted,always,next_action=noted,,1
+5,manual,ready_for_approval,always,no more specific rule,D27 (register v9): ready_for_approval resolves explicitly regardless of whether the assignee happened to change this call.,1
+6,manual,,explicit_state_given,__unchanged__,"escalation #762, 2026-08-21: the caller's own explicit -State must outrank an INFERRED assignee_changed result, not lose to it -- '-AssignedTo X -State on-hold' was silently landing on re-assigned. Sits ahead of assignee_changed for exactly this. Only 'review' or no next_action can still reach this priority (approved/reject/revise/noted/ready_for_approval are all already intercepted by priorities 1-5 above).",1
+7,manual,,assignee_changed,no more specific rule,"was priority 6 pre-fix -- any bare reassignment not otherwise matched, and with no explicit -State given",1
+8,manual,,always,__unchanged__,"was priority 7 pre-fix -- no rule matched, state carries forward (or the caller's explicit -State, redundant with priority 6 above but kept as the final safety net)",1
+3,dispatcher,approve,always,decision=approve,"escalation #795 fix, 2026-08-22: was the shared catch-all with reject/revise (collapsed all three into 'completed'). approve keeps that outcome on its own.",1
+4,dispatcher,reject,always,decision=reject,"escalation #795 fix, 2026-08-22: previously collapsed into 'completed' along with approve/revise. Now resolves to 'withdraw', matching the manual shape's own reject default (cfg_escalation_transition shape='manual' priority 2).",1
+5,dispatcher,revise,always,decision=revise,"escalation #795 fix, 2026-08-22: previously collapsed into 'completed' along with approve/reject. Now resolves to 'in-progress', matching the manual shape's own revise -> in-progress rule exactly (cfg_escalation_transition shape='manual' priority 3).",1
+1,manual,approved,needs_followup,next_action=approved+needs_claude_followup,escalation #1075: an approved item still flagged needs_claude_followup routes back to Claude (re-assigned) instead of completed -- checked ahead of the plain has_resolution rule (now priority 2).,1
+5,manual,,followup_cleared_was_approved,next_action=approved,"escalation found live 2026-08-31: clearing needs_claude_followup never reached completed on its own -- the approved+has_resolution rule only fires when the caller re-supplies -NextAction approved that same call, which a bare -NeedsFollowup 0 never does, and decision_required_approval_requires_researcher now blocks Claude from ever re-supplying it. Recognises already-approved + resolution-on-file + follow-up-now-done as itself sufficient -- no new decision, just the existing one finishing.",1
