@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-03T07:36:10Z |
+| generated_at | 2026-09-03T07:11:44Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -46,13 +46,14 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-4. GOVERNANCE.md was last modified 2026-09-03T07:13:37Z, before the newest applied cfg_change_detail row (2026-09-03T07:35:29Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+4. GOVERNANCE.md was last modified 2026-08-31T10:03:34Z, before the newest applied cfg_change_detail row (2026-09-03T07:07:25Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
-**Low config-density utilities** (1) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-5. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+**Low config-density utilities** (2) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
+5. cfg_utility 'schema_overview' — iba\app\tools\build_schema_overview_report.py no longer exists on disk
+6. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -76,56 +77,56 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-6. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+7. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-7. Config-Maintenance.ps1: ps tools worksheet.xlsx tab 'Config-Maintenance' is missing flag column(s) ['Title'] — the script has these parameters now
+8. Config-Maintenance.ps1: ps tools worksheet.xlsx tab 'Config-Maintenance' is missing flag column(s) ['Title'] — the script has these parameters now
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
 **Unenforced behaviour rules** (41) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
-8. [chat] #17 confirm-before-nontrivial-work — context_delivered
-9. [chat] #18 output-to-file-not-chat-only — context_delivered
-10. [chat] #19 factual-discipline-no-guessing — context_delivered
-11. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
-12. [chat] #21 chat-items-become-escalations — context_delivered
-13. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
-14. [chat] #23 close-the-loop-not-just-report — context_delivered
-15. [chat] #24 show-evidence-dont-smooth-over — context_delivered
-16. [development] #38 root-fix-not-one-off — context_delivered
-17. [development] #39 simple-steps-not-engineered-designs — context_delivered
-18. [development] #40 open-items-route-through-escalation — context_delivered
-19. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
-20. [development] #46 test-plan-per-module-utility — deliberately_deferred
-21. [development] #63 claude-held-item-must-progress-or-bounce-back — partially_enforced
-22. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
-23. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-24. [documentation] #33 single-living-register-update-in-place — context_delivered
-25. [documentation] #34 source-of-truth-is-written-record — context_delivered
-26. [documentation] #35 consolidation-doc-must-be-load-bearing-or-retired — judgment_call_pending
-27. [filing] #56 naming-shape — partially_enforced
-28. [filing] #57 snapshot-vs-living-document — context_delivered
-29. [filing] #58 archiving-trigger — partially_enforced
-30. [filing] #59 claude-code-filing-obligations — context_delivered
-31. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-32. [llm_output] #4 inferential-not-confirmed — context_delivered
-33. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
-34. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
-35. [sqlite] #1 verify-before-acting — context_delivered
-36. [sqlite] #11 readonly-by-default — context_delivered
-37. [sqlite] #12 never-write-via-adhoc-tool — judgment_call_pending
-38. [sqlite] #13 dont-assume-which-database — context_delivered
-39. [sqlite] #30 writes-must-be-replayable — judgment_call_pending
-40. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
-41. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
-42. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
-43. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
-44. [terminal] #2 step-not-done-without-validated-output — context_delivered
-45. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
-46. [terminal] #27 heredoc-powershell-only — context_delivered
-47. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
-48. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
+9. [chat] #17 confirm-before-nontrivial-work — context_delivered
+10. [chat] #18 output-to-file-not-chat-only — context_delivered
+11. [chat] #19 factual-discipline-no-guessing — context_delivered
+12. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
+13. [chat] #21 chat-items-become-escalations — context_delivered
+14. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
+15. [chat] #23 close-the-loop-not-just-report — context_delivered
+16. [chat] #24 show-evidence-dont-smooth-over — context_delivered
+17. [development] #38 root-fix-not-one-off — context_delivered
+18. [development] #39 simple-steps-not-engineered-designs — context_delivered
+19. [development] #40 open-items-route-through-escalation — context_delivered
+20. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
+21. [development] #46 test-plan-per-module-utility — deliberately_deferred
+22. [development] #63 claude-held-item-must-progress-or-bounce-back — partially_enforced
+23. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
+24. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+25. [documentation] #33 single-living-register-update-in-place — context_delivered
+26. [documentation] #34 source-of-truth-is-written-record — context_delivered
+27. [documentation] #35 consolidation-doc-must-be-load-bearing-or-retired — judgment_call_pending
+28. [filing] #56 naming-shape — partially_enforced
+29. [filing] #57 snapshot-vs-living-document — context_delivered
+30. [filing] #58 archiving-trigger — partially_enforced
+31. [filing] #59 claude-code-filing-obligations — context_delivered
+32. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+33. [llm_output] #4 inferential-not-confirmed — context_delivered
+34. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
+35. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
+36. [sqlite] #1 verify-before-acting — context_delivered
+37. [sqlite] #11 readonly-by-default — context_delivered
+38. [sqlite] #12 never-write-via-adhoc-tool — judgment_call_pending
+39. [sqlite] #13 dont-assume-which-database — context_delivered
+40. [sqlite] #30 writes-must-be-replayable — judgment_call_pending
+41. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
+42. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
+43. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
+44. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
+45. [terminal] #2 step-not-done-without-validated-output — context_delivered
+46. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
+47. [terminal] #27 heredoc-powershell-only — context_delivered
+48. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
+49. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
 
 **Undelivered conversational rules** (0) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
 _(none)_
@@ -134,44 +135,44 @@ _(none)_
 _(none)_
 
 **PS scripts bypassing run.py** (1) — an active PS script calling iba.app.(handlers|lib|tools) directly instead of dispatching through iba.app.run:
-49. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+50. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
 
 **Steps without a PS entry point** (0) — an active cfg_step whose work package has no cfg_work_package.ps_script:
 _(none)_
 
 **Escalation-file naming drift** (27) — a Workflow/Catalogue or iba/docs file whose own header names an escalation the filename doesn't carry as its prefix:
-50. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-51. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
-52. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-53. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
-54. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
-55. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
-56. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
-57. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
-58. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
-59. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
-60. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
-61. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-62. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
-63. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-64. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
-65. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-66. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
-67. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
-68. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
-69. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
-70. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
-71. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
-72. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-73. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
-74. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-75. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-76. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
+51. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+52. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
+53. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+54. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
+55. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
+56. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
+57. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
+58. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
+59. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
+60. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
+61. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
+62. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+63. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
+64. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+65. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
+66. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+67. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
+68. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
+69. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
+70. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
+71. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
+72. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
+73. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+74. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
+75. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+76. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+77. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
 
 **Config hedge phrases** (3) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
-77. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
-78. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
-79. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
+78. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
+79. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
+80. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
 
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
@@ -182,7 +183,7 @@ _(none)_
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
 
-**Inactive configs** (399 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 353 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 8 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **38 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.content-index-rebuild/content_index.rebuild, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.content-index-rebuild, cfg_work_package.verse-analysis-report, cfg_write_grant.configmaint.propose -> cfg_change_detail, cfg_write_grant.configmaint.propose -> cfg_change_log, cfg_write_grant.escalation -> word_registry, cfg_write_grant.run -> escalation, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_next_action=approve, cfg_enum.escalation_next_action=approved, cfg_enum.escalation_next_action=hold, cfg_enum.escalation_next_action=noted, cfg_enum.escalation_next_action=ready_for_approval, cfg_enum.escalation_next_action=reject, cfg_enum.escalation_next_action=review, cfg_enum.escalation_next_action=revise, cfg_enum.escalation_requirement_check_kind=requires_prior_ready_for_approval_if_decision_required, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=re-assign, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop, cfg_enum.prose_section_type_lifecycle_tag=source, cfg_enum.prose_section_type_lifecycle_tag=v1, cfg_enum.prose_section_type_lifecycle_tag=v2, cfg_enum.prose_section_type_lifecycle_tag=v3.
+**Inactive configs** (398 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 353 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 8 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **37 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.content-index-rebuild/content_index.rebuild, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.content-index-rebuild, cfg_work_package.verse-analysis-report, cfg_write_grant.configmaint.propose -> cfg_change_detail, cfg_write_grant.configmaint.propose -> cfg_change_log, cfg_write_grant.escalation -> word_registry, cfg_write_grant.run -> escalation, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_next_action=approve, cfg_enum.escalation_next_action=approved, cfg_enum.escalation_next_action=hold, cfg_enum.escalation_next_action=noted, cfg_enum.escalation_next_action=ready_for_approval, cfg_enum.escalation_next_action=reject, cfg_enum.escalation_next_action=review, cfg_enum.escalation_next_action=revise, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=re-assign, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop, cfg_enum.prose_section_type_lifecycle_tag=source, cfg_enum.prose_section_type_lifecycle_tag=v1, cfg_enum.prose_section_type_lifecycle_tag=v2, cfg_enum.prose_section_type_lifecycle_tag=v3.
 - **cfg_setting** (5): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`
 - **cfg_step** (14): `book-narrative-generate/report.book_narrative_generate`, `book-narrative-validate/report.book_narrative_validate`, `candidate-curation/candidate.curate`, `candidate-curation/candidate.load`, `candidate-quality/candidate.validate`, `chapter-generate/report.passage_debate`, `chapter-generate/report.verse_span_meaning`, `content-index-rebuild/content_index.rebuild`, `passage-debate-report/report.passage_debate`, `passage-debate-sync/passage.debate_sync`, `seed-candidate-report/report.seed_candidate`, `set-candidates/candidate.seed`, `set-candidates/candidate.set`, `verse-analysis-report/report.verse_span_meaning`
 - **cfg_work_package** (11): `book-narrative-generate`, `book-narrative-validate`, `candidate-curation`, `candidate-quality`, `chapter-generate`, `content-index-rebuild`, `passage-debate-report`, `passage-debate-sync`, `seed-candidate-report`, `set-candidates`, `verse-analysis-report`
@@ -190,14 +191,14 @@ _(none)_
 - **cfg_report** (3): `candidate.load`, `candidate.validate`, `report.seed_candidate`
 - **cfg_report_section** (10): `candidate.load/duplicates`, `candidate.load/exceptions`, `candidate.validate/gloss`, `candidate.validate/orphan_lemmas`, `candidate.validate/seed_tag`, `candidate.validate/span_tag`, `report.seed_candidate/distribution`, `report.seed_candidate/over_time`, `report.seed_candidate/summary`, `report.seed_candidate/top_lemmas`
 - **cfg_report_csv_table** (5): `candidate.load/candidate_seed`, `candidate.validate/candidate_seed`, `candidate.validate/lemma_inventory`, `candidate.validate/span_candidate`, `report.seed_candidate/candidate_seed`
-- **cfg_enum** (41): `candidate_decision=candidate`, `candidate_decision=exception`, `candidate_decision=rejected`, `candidate_decision=undecided`, `candidate_ib_referent=body_part`, `candidate_ib_referent=characteristic`, `candidate_ib_referent=other_being`, `candidate_source=curated-synonym`, `candidate_source=ib-judgement`, `candidate_source=read-emergent`, `candidate_source=registry-direct`, `candidate_step_status=in_strong`, `candidate_step_status=not_in_step`, `candidate_step_status=step_has_verses_pending`, `candidate_step_status=step_no_verses`, `escalation_answer=approve`, `escalation_answer=reject`, `escalation_answer=revise`, `escalation_next_action=approve`, `escalation_next_action=approved`, `escalation_next_action=hold`, `escalation_next_action=noted`, `escalation_next_action=ready_for_approval`, `escalation_next_action=reject`, `escalation_next_action=review`, `escalation_next_action=revise`, `escalation_requirement_check_kind=requires_prior_ready_for_approval_if_decision_required`, `escalation_state=answered`, `escalation_state=paused`, `escalation_state=re-assign`, `escalation_state=retracted`, `escalation_type=crash`, `escalation_type=interactive`, `escalation_type=prompted`, `escalation_type=report-stop`, `passage_source=passage-build`, `passage_source=single-verse-emergent`, `prose_section_type_lifecycle_tag=source`, `prose_section_type_lifecycle_tag=v1`, `prose_section_type_lifecycle_tag=v2`, `prose_section_type_lifecycle_tag=v3`
+- **cfg_enum** (40): `candidate_decision=candidate`, `candidate_decision=exception`, `candidate_decision=rejected`, `candidate_decision=undecided`, `candidate_ib_referent=body_part`, `candidate_ib_referent=characteristic`, `candidate_ib_referent=other_being`, `candidate_source=curated-synonym`, `candidate_source=ib-judgement`, `candidate_source=read-emergent`, `candidate_source=registry-direct`, `candidate_step_status=in_strong`, `candidate_step_status=not_in_step`, `candidate_step_status=step_has_verses_pending`, `candidate_step_status=step_no_verses`, `escalation_answer=approve`, `escalation_answer=reject`, `escalation_answer=revise`, `escalation_next_action=approve`, `escalation_next_action=approved`, `escalation_next_action=hold`, `escalation_next_action=noted`, `escalation_next_action=ready_for_approval`, `escalation_next_action=reject`, `escalation_next_action=review`, `escalation_next_action=revise`, `escalation_state=answered`, `escalation_state=paused`, `escalation_state=re-assign`, `escalation_state=retracted`, `escalation_type=crash`, `escalation_type=interactive`, `escalation_type=prompted`, `escalation_type=report-stop`, `passage_source=passage-build`, `passage_source=single-verse-emergent`, `prose_section_type_lifecycle_tag=source`, `prose_section_type_lifecycle_tag=v1`, `prose_section_type_lifecycle_tag=v2`, `prose_section_type_lifecycle_tag=v3`
 - **cfg_on_fail** (11): `candidate.curate/change-rejected`, `candidate.curate/invalid-proposal`, `candidate.curate/needs-approval`, `candidate.curate/needs-revision`, `candidate.load/needs-review`, `candidate.seed/no-inventory`, `candidate.set/no-spans`, `candidate.validate/findings-rejected`, `candidate.validate/needs-review`, `candidate.validate/needs-revision`, `passage.build/no-candidates`
 - **cfg_candidate_rule** (by kind): accept=289
 
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**424** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **367** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**424** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **366** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -278,7 +279,7 @@ _(none)_
 | research_VE_lexical_faculty_map_build_classify_batch1 | research/VE-lexical/faculty-map-build/_classify_batch1.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). Faculty classification for inventory slice 0..343. Decisions grounded in gloss+senses, original-language aware. |  |  |  |
 | retention | iba/app/lib/retention.py | retention.py — log growth / run-health visibility for the append-only audit tables | ✓ | ✓ | receives cfg.conn from its caller; its own setting (retention.snapshot_keep_count) is read by dbsnapshot.py, not here. |
 | retire_from_id_related_activity_v1_20260827 | iba/app/migration/retire_from_id_related_activity_v1_20260827.py | ONE-OFF migration, escalation #909 -- full removal of D14 (from_id) and D15 (related_activity's pairing/graph role): 6 cfg_escalation_requirement rows, 6 cfg_report_section rows, 4 cfg_column rows deleted; from_id/related_activity columns physically dropped from escalation/escalation_history. Researcher decision after two live audits found the mechanism unreliable and unused. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
-| schema_overview | iba/app/tools/build_schema_overview_report.py | Renders the DBSchema register (iba/config/DBSchema/DBSchema.json, built by iba/scripts/build_dbschema.py) into a human-readable markdown overview report -- one row per table with description/rows/cols/PK/FKs/indexes, plus an undescribed-items flag section. Escalation #1306. |  |  |  |
+| schema_overview | iba/app/tools/build_schema_overview_report.py | Renders the DBSchema register (iba/config/DBSchema/DBSchema.json, built by iba/scripts/build_dbschema.py) into a human-readable markdown overview report -- one row per table with description/rows/cols/PK/FKs/indexes, plus an undescribed-items flag section. Escalation #1306. | ✓ |  |  |
 | schemareport | iba/app/lib/schemareport.py | schemareport.py — the IBA app's own DATA-schema snapshot, one of the four "missing reports" | ✓ | ✓ | receives cfg.conn from its caller; no settings/enums of its own. |
 | scripts_analytics_bible_analytics | scripts/analytics/bible_analytics.py | bible_analytics.py -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | scripts_analytics_db_client | scripts/analytics/db_client.py | db_client.py -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
@@ -2230,7 +2231,7 @@ dedup key: `table_name, kind`
 | escalation_next_action | approve, reject, revise, noted, hold, review, ready_for_approval, approved |
 | escalation_next_action_dispatcher | approve, reject, revise, hold, noted |
 | escalation_next_action_manual | ready_for_approval, approved, reject, revise, noted, review |
-| escalation_requirement_check_kind | field_required, not_raised_with_content, exists, not_self, requires_prior_ready_for_approval_if_decision_required, actor_must_be_assignee, decision_required_approval_requires_researcher, requires_current_ready_for_approval_if_decision_required |
+| escalation_requirement_check_kind | field_required, not_raised_with_content, exists, not_self, requires_prior_ready_for_approval_if_decision_required |
 | escalation_shape | manual, dispatcher |
 | escalation_state | raised, answered, re-assign, on-hold, paused, closed, retracted, withdraw, completed, in-progress, supersede, re-assigned |
 | escalation_type | prompted, task, interactive, run_error, issue, report-stop, crash, notice, config, note |

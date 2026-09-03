@@ -12219,3 +12219,113 @@ actioned.
 `iba/app/lib/cfgreport.py` (findings list +2), `scripts/SQLite/**` (8 files renamed/relocated),
 `iba/app/db/iba.db` (`cfg_behaviour_rule` rows 3/14/15/35/42/60/61 updated; `cfg_step`/
 `cfg_work_package` `content-index-rebuild` paused).
+
+## 223. `context_delivered` replaces asserted `not_mechanically_checkable` — verified, not trusted (2026-09-03, escalation #1388, standard session)
+
+Researcher correction of #221/#222's own audit, same day. Verbatim: *"if a rule exist for something
+that is not used in code, but is used in chat, or how claude should think or behave, then these
+rules must find there way into claude's session memory so claude can behave correctly... the
+correct compliance status would be what is done to ensure the rule is followed."* Then: *"either
+set the configs to inactive or ensure that the config is properly included in the project at the
+appropriate places. this same escalation must also fix the configmaint validation check. something
+shown as mechanically-checkable is a cop out."*
+
+**The miss:** #221's audit classified all 32 conversational-class rows `not_mechanically_checkable`
+by asking only "can code check compliance after the fact" — never "does this rule's content reach
+Claude at all." Each row's own `source` field was trusted as prose, never verified. Checking all 32
+live found 9 whose source delivered nothing: ids 1/2/4 cited an already-obsolete `wa_rule_registry`
+row; 11/13 cited an orphaned doc (`Workflow/SQLite/sqlite-extension-best-practice-v1-20260815.md`)
+nothing loaded references; 21 cited `cfg_escalation.chat_routing`, a table nothing prints
+automatically; 54/55 cited a bare escalation number/researcher-date with no session-reachable echo.
+
+**Built:** `cfg_enum` value `context_delivered` (ordinal 6, `behaviour_rule_enforcement_status`) —
+the verified-delivery state, distinct from `not_mechanically_checkable`'s remaining meaning
+(genuinely no mechanism could ever apply). `cfgquality.verify_behaviour_rule_delivery()` /
+`find_undelivered_conversational_rules()` — mechanically verifies a rule's claimed `memory <slug>`
+file (exists + indexed in `MEMORY.md`), `governance.<key>` setting (active, printed at
+`Start-Iba.ps1`), or `CLAUDE.md`/`GOVERNANCE.md`/`USER-GUIDE.md` citation (file exists, quoted
+phrase still present) — generalised past a CLAUDE.md-only first draft once rule 55 turned out to
+have no separate design doc, only GOVERNANCE.md content itself, to point at. A bare doc path only
+counts if referenced from one of those three loaded docs; `wa_rule_registry` never verifies. Wired
+into `configmaint.validate`/`CONFIG-REPORT.md` as `undelivered_conversational_rules`, alongside
+(not replacing) the existing `unenforced_behaviour_rules`.
+
+**9 gaps fixed, not hidden:** 6 new memory files (`feedback_verify_db_state_before_acting`,
+`feedback_confirm_output_exists_before_reporting_done`, `feedback_label_inferential_output_not_confirmed`,
+`feedback_default_readonly_db_connections`, `feedback_dont_assume_which_database`,
+`feedback_chat_items_become_escalations_same_turn`), 1 `source` re-pointed to an existing doc
+already referenced from GOVERNANCE.md (id 54), 1 `source` re-pointed to GOVERNANCE.md D2 directly,
+verified via a quoted phrase (id 55) rather than inventing an unnecessary doc.
+
+**Approval, at scale, done properly:** all 33 changes (1 enum insert + 32 row updates, 9 carrying a
+`source` fix) proposed individually through `Config-Maintenance.ps1 -Step Propose`, each with a
+specific Title/Question naming that row's own facts — per direct researcher instruction against a
+generic blanket description. Manifest: `outputs/escalation/1388-behaviour-rule-delivery-fix-batch-v1-20260903.md`.
+**Two real bugs caught mid-build, not reported around:** (1) `escalation.update()` called via its
+Python API without `Db.close()` (which commits) silently rolled back all 33 `ready_for_approval`
+writes — caught by checking the live table directly instead of trusting the printed success
+messages, fixed by adding the commit. (2) A batch `Config-Maintenance.ps1` PowerShell driver's own
+output-logging tail failed (`Tee-Object`/`Out-File` interaction) — the 33 underlying proposals had
+already succeeded regardless, confirmed against the DB, not assumed from the broken log.
+
+**Verified after apply:** `find_undelivered_conversational_rules()` returns 0 findings live;
+regenerated `CONFIG-REPORT.md` shows "Undelivered conversational rules (0)"; live
+`cfg_behaviour_rule` count of `not_mechanically_checkable` is 0, `context_delivered` is 32.
+
+**Files:** `iba/app/lib/cfgquality.py` (+2 functions, `CLAUDE_MEMORY_DIR` constant, 4 new regexes),
+`iba/app/handlers/configmaint.py` (findings dict +1), `iba/app/lib/cfgreport.py` (findings list +1),
+6 new memory files + `MEMORY.md` index, `iba/app/GOVERNANCE.md` (§70, also backfilling #221/#222's
+own missed entry), `iba/app/db/iba.db` (`cfg_enum` +1 row; `cfg_behaviour_rule` 32 rows'
+`enforcement_status` updated, 9 of those also `source`).
+
+## 224. Bare-reassign-to-Researcher loop closed mechanically — `reassign_to_researcher_requires_ready_for_approval` (2026-09-03, escalation #1428)
+
+Researcher, verbatim, same session, immediately after #223: *"why did you pass 1373, 1316, 1366,
+1375 back to me. the expectation is that you do a ready for approval, without a next action flag,
+and assign it to me. what you have done is after I assigned it to you - you just reassigned it back
+to me... It is not the first time we get into this loop and it must stop now with a proper fix in
+the configs for the workflow looping, and not just a correction of the open items."*
+
+**What actually happened:** all 4 items were `resolution_kind=decision_required`, held by Claude
+(`next_action_assigned_to='Claude'`, `next_action='review'`), work genuinely complete on each
+(diagnosis done, real fixes filed and applied elsewhere). Closing them out took two separate
+`update()` calls per item — one carrying the comment, one changing only
+`next_action_assigned_to='Researcher'` — leaving `next_action='review'` untouched throughout. Net
+effect: a bare bounce with no forward progress, exactly what `cfg_behaviour_rule` 63
+(`claude-held-item-must-progress-or-bounce-back`) already named as illegitimate unless the work is
+genuinely incomplete — but rule 63's own two-branch design (progress-via-`ready_for_approval` OR
+bounce-with-a-comment-when-unsure) was `partially_enforced` prose, not a real gate, so nothing
+stopped the wrong branch being chosen again.
+
+**Root cause, diagnosed not guessed:** `update()`'s `_check_requirements(db, "update", ...)` call
+never passed the caller's requested `next_action`/`next_action_assigned_to` into its `values` dict
+at all — there was no hook point for a check to even see "Claude is handing this to the Researcher
+without progressing it," regardless of what rule text said.
+
+**Fix — a new mechanical check_kind, not a rewritten sentence:**
+`reassign_to_researcher_requires_ready_for_approval` (`cfg_enum` `escalation_requirement_check_kind`
++1 value; `cfg_escalation_requirement`, action=`update`, field=`next_action_assigned_to`). Wired in
+two places in `escalation.py`: (1) `update()`'s `"update"`-action `_check_requirements()` call now
+passes `next_action` (raw) and `next_action_assigned_to` (resolved) into `values`; (2) a new branch
+in `_check_requirements()` raises `ValueError` when `resolution_kind='decision_required'`,
+`originator='Claude'`, the item's current assignee is `'Claude'`, the requested assignee is
+`'Researcher'`, and the requested `next_action` is anything other than `'ready_for_approval'` — no
+more "bare bounce," no more judgement call about whether the work was "complete enough."
+
+**Tested before relied on, twice:** once against a throwaway escalation with a temporary,
+not-yet-approved requirement row (bad path blocked, good path allowed, test artifacts deleted after
+— confirms the code logic); once again after the real proposal was approved and applied, against a
+second throwaway escalation exercising the actual live config (same two outcomes, confirms the
+wiring, not just the logic).
+
+**cfg_behaviour_rule 63 rewritten to match, not left describing the old two-branch design:** now
+states the single mechanically-enforced path plainly, cites the check_kind by name, and
+`enforcement_status` corrected `partially_enforced` → `mechanically_enforced`. The 4 original items
+were then actually corrected to the shape now required: `next_action='ready_for_approval'`,
+`next_action_assigned_to='Researcher'`, real per-item resolutions — not just handed back a second
+time in the same wrong shape.
+
+**Files:** `iba/app/lib/escalation.py` (`_check_requirements()` +1 branch, `update()`'s `"update"`
+requirements call extended), `iba/app/GOVERNANCE.md` (§71), `iba/app/db/iba.db` (`cfg_enum` +1 row;
+`cfg_escalation_requirement` +1 row; `cfg_behaviour_rule` id=63 rewritten; escalations
+#1373/#1316/#1366/#1375 corrected to the proper handoff shape).

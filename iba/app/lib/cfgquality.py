@@ -1204,6 +1204,153 @@ def find_unenforced_behaviour_rules(conn: sqlite3.Connection) -> list[str]:
     return out
 
 
+# Where this researcher's Claude Code memory lives — outside the git repo (per-user, per-machine),
+# so it cannot be a cfg_setting resolved by find_unresolvable_location_settings the way an in-repo
+# *_dir/*_path setting is. Path.home() keeps this portable across whichever Windows account this
+# runs under; the "c--Bible-study-projects" segment is this specific project's slug inside the
+# Claude Code SDK's per-project memory layout and is not expected to change.
+CLAUDE_MEMORY_DIR = pathlib.Path.home() / ".claude" / "projects" / "c--Bible-study-projects" / "memory"
+
+# Regexes used by verify_behaviour_rule_delivery() below to pull delivery claims out of a
+# cfg_behaviour_rule.source/enforced_by free-text field. Deliberately simple (this project's
+# "simple-steps-not-engineered-designs" rule, id 39) — a handful of literal patterns, not a
+# general-purpose citation parser.
+# Captures one or more comma-separated identifier-shaped slugs right after the word "memory" --
+# deliberately narrow (word-chars only, comma-joined) rather than a broad char class, so it stops
+# cleanly at the first word of following prose instead of running on into enforced_by's free text
+# (found live testing #1388: an earlier [a-z0-9_,\s]+? class treated a bare space the same as a
+# comma and kept consuming enforced_by's boilerplate until the whole match failed).
+_MEMORY_SOURCE_RE = re.compile(
+    r"memory\s+((?:[a-z][a-z0-9_]*)(?:\s*,\s*[a-z][a-z0-9_]*)*)", re.IGNORECASE)
+_MEMORY_SLUG_RE = re.compile(r"[a-z][a-z0-9_]*")
+_GOVERNANCE_KEY_RE = re.compile(r"governance\.[a-zA-Z0-9_.]+")
+_DOC_PATH_RE = re.compile(r"\b(?:docs|Workflow|iba/docs)/[\w\-./ ]+?\.md")
+
+
+def verify_behaviour_rule_delivery(source_text: str, enforced_by_text: str,
+                                    project_root: pathlib.Path) -> tuple[bool, str]:
+    """Escalation #1388, 2026-09-03 (researcher correction of #1384's own audit): a
+    `not_mechanically_checkable`/`context_delivered` classification is only honest if the rule's
+    claimed delivery path — the thing that actually puts this rule's content in front of Claude
+    every session, since no code path can check a conversational rule's compliance after the fact
+    — is REAL and CURRENT, not merely asserted in a free-text `source` field. #1384 built the
+    enforcement_status column but never checked whether `source` pointed at anything live; 8 of
+    its 31 `not_mechanically_checkable` rows turned out to cite an already-obsolete
+    `wa_rule_registry` row or an orphaned doc nothing loaded references — i.e. genuinely
+    undelivered, not merely uncheckable.
+
+    Checks three concrete, verifiable delivery mechanisms against the combined source+enforced_by
+    text, in order, and returns as soon as one verifies:
+      1. `memory <slug>[, <slug>...]` — the named memory file exists on disk AND the slug is
+         indexed in MEMORY.md (both are loaded into every session's context).
+      2. `governance.<key>` — a `cfg_setting` row with that key, module='governance', inactive=0
+         exists (every such row is printed verbatim at every `Start-Iba.ps1` run — init.py's
+         "governance rules" step, escalation #305).
+      3. `CLAUDE.md`/`GOVERNANCE.md`/`USER-GUIDE.md` — the cited doc exists AND, when the source
+         text also quotes a distinguishing phrase for the cited section, that phrase is actually
+         still present in the doc's current text (catches the section being rewritten/removed
+         later, not just a one-time existence check). CLAUDE.md is auto-loaded every session;
+         GOVERNANCE.md/USER-GUIDE.md are not, but are the authoritative record CLAUDE.md's own
+         top banner directs Claude to consult for this class of question, so a rule whose real
+         content lives there (not merely cited from there) still counts as properly included.
+    A bare doc path (docs/..., Workflow/...) only counts if the file exists on disk AND is itself
+    referenced from one of CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md — a doc nothing loaded points to
+    is exactly the orphan case this rule exists to catch, not a pass.
+    A `wa_rule_registry` citation never verifies — that table was superseded project-wide
+    2026-08-17, so it cannot deliver anything into a live session.
+    Returns (True, "<mechanism that verified>") or (False, "<why nothing verified>")."""
+    text = f"{source_text or ''} {enforced_by_text or ''}"
+    conn_path = project_root / "iba" / "app" / "db" / "iba.db"
+
+    # 1. memory <slug>
+    for m in _MEMORY_SOURCE_RE.finditer(text):
+        slugs = [s for s in _MEMORY_SLUG_RE.findall(m.group(1))]
+        memory_md = CLAUDE_MEMORY_DIR / "MEMORY.md"
+        memory_md_text = memory_md.read_text(encoding="utf-8", errors="ignore") if memory_md.exists() else ""
+        for slug in slugs:
+            slug_file = CLAUDE_MEMORY_DIR / f"{slug}.md"
+            if slug_file.exists() and slug in memory_md_text:
+                return True, f"memory file {slug}.md (present, indexed in MEMORY.md)"
+
+    # 2. governance.<key>
+    gov_keys = _GOVERNANCE_KEY_RE.findall(text)
+    if gov_keys:
+        conn = sqlite3.connect(f"file:{conn_path}?mode=ro", uri=True)
+        conn.row_factory = sqlite3.Row
+        try:
+            for key in gov_keys:
+                row = conn.execute(
+                    "SELECT inactive FROM cfg_setting WHERE key=? AND module='governance'",
+                    (key,)).fetchone()
+                if row and not row["inactive"]:
+                    return True, f"governance setting {key} (active, printed at Start-Iba.ps1)"
+        finally:
+            conn.close()
+
+    # 3. CLAUDE.md / GOVERNANCE.md / USER-GUIDE.md, optionally with a quoted distinguishing phrase.
+    # CLAUDE.md is auto-loaded every session; GOVERNANCE.md/USER-GUIDE.md are not auto-injected the
+    # same way, but they are the authoritative record CLAUDE.md's own top banner directs Claude to
+    # consult for exactly this "how is this governed" class of question -- a rule whose real,
+    # current text lives there (not merely cited from there) is properly included, not undelivered.
+    # Symmetric across all three rather than a CLAUDE.md-only special case (root-fix-not-one-off,
+    # id 38): rule 55's actual content lives only in GOVERNANCE.md D2 with no separate design doc
+    # to point the doc-path branch below at, and treating that as an unfixable gap would be
+    # dodging the real fix, not applying it.
+    for doc_name, doc_rel in (("CLAUDE.md", "CLAUDE.md"),
+                               ("GOVERNANCE.md", "iba/app/GOVERNANCE.md"),
+                               ("USER-GUIDE.md", "iba/app/USER-GUIDE.md")):
+        if doc_name in text:
+            doc_path = project_root / doc_rel
+            if doc_path.exists():
+                doc_text = doc_path.read_text(encoding="utf-8", errors="ignore")
+                quoted = re.findall(r"['‘’]([^'‘’]{4,60})['‘’]", text)
+                if quoted:
+                    if any(q in doc_text for q in quoted):
+                        return True, f"{doc_name} (cited section text confirmed present)"
+                else:
+                    return True, f"{doc_name} (file present; source cites no specific phrase to verify)"
+
+    # doc path — only counts if it's a real file AND referenced from a loaded doc
+    for doc_ref in _DOC_PATH_RE.findall(text):
+        doc_path = project_root / doc_ref
+        if doc_path.exists():
+            for loaded in ("CLAUDE.md", "iba/app/GOVERNANCE.md", "iba/app/USER-GUIDE.md"):
+                loaded_path = project_root / loaded
+                if loaded_path.exists() and doc_ref in loaded_path.read_text(encoding="utf-8", errors="ignore"):
+                    return True, f"{doc_ref} (referenced from {loaded})"
+
+    if "wa_rule_registry" in text and not gov_keys and not _MEMORY_SOURCE_RE.search(text):
+        return False, "cites only an obsolete wa_rule_registry row (superseded 2026-08-17) — delivers nothing"
+    return False, "no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)"
+
+
+def find_undelivered_conversational_rules(conn: sqlite3.Connection,
+                                           project_root: pathlib.Path) -> list[str]:
+    """Escalation #1388, 2026-09-03. Sibling to find_unenforced_behaviour_rules() above, but
+    sharper: that check answers "is this code-checked", which is the wrong question for a rule
+    whose whole enforcement model is conversational (no code path can check Claude's own turn-by-
+    turn conduct after the fact). For every active `cfg_behaviour_rule` row classified
+    `context_delivered` or `not_mechanically_checkable`, this ACTUALLY VERIFIES the delivery
+    mechanism its `source`/`enforced_by` field claims — rather than trusting the claim the way
+    #1384's own audit did, which is exactly how 8 of its 31 rows went unnoticed citing a dead
+    table or an orphaned doc. A row that fails here is not "uncheckable" — it is undelivered:
+    nothing puts it in front of Claude, in any session, ever. ADVISORY (feeds the same
+    unenforced_behaviour_rules-style escalation in configmaint.validate), but a row appearing here
+    is a strictly worse state than merely appearing in find_unenforced_behaviour_rules — that
+    check would show it as an accepted, deliberate classification; this one shows the
+    classification itself is currently false."""
+    rows = conn.execute(
+        "SELECT id, class, rule_key, source, enforced_by FROM cfg_behaviour_rule "
+        "WHERE active=1 AND enforcement_status IN ('context_delivered', 'not_mechanically_checkable') "
+        "ORDER BY class, id").fetchall()
+    out = []
+    for r in rows:
+        delivered, detail = verify_behaviour_rule_delivery(r["source"], r["enforced_by"], project_root)
+        if not delivered:
+            out.append(f"[{r['class']}] #{r['id']} {r['rule_key']} — NOT DELIVERED: {detail}")
+    return out
+
+
 # ── mechanically-checkable behaviour rules built 2026-09-03 (escalation #1384) ──────────────────
 def find_unpushed_commits(project_root: pathlib.Path) -> list[str]:
     """`cfg_behaviour_rule` 26 (git-commit-and-push-together): a commit is never left unpushed.

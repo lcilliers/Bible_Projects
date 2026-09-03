@@ -403,6 +403,14 @@ def validate(ctx: Ctx) -> Outcome:
         "unenforced_behaviour_rules": (
             cfgquality.find_unenforced_behaviour_rules(ctx.db.conn),
             "behaviour rule(s) not mechanically enforced"),
+        # 2026-09-03 (escalation #1388, researcher correction of #1384's own audit): a
+        # not_mechanically_checkable/context_delivered classification asserted its delivery
+        # mechanism in free text and was never actually verified — this check verifies it, every
+        # run, so a memory file getting deleted or a governance.* setting getting deactivated is
+        # caught immediately instead of silently going stale like #1384's own miss did.
+        "undelivered_conversational_rules": (
+            cfgquality.find_undelivered_conversational_rules(ctx.db.conn, PROJECT_ROOT),
+            "behaviour rule(s) claiming conversational delivery that does not actually verify"),
         # 2026-09-03 (escalation #1384) — the mechanical checks built the same session as the
         # rules they check, so 'buildable_not_built' doesn't silently sit unbuilt again.
         "unpushed_commits": (

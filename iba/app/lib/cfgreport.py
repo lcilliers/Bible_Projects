@@ -292,6 +292,14 @@ def generate(db_path: pathlib.Path = DB_PATH, out_path: pathlib.Path = OUT_PATH,
          "(mechanically checkable but not yet built, a genuine judgement call, or a class of rule "
          "with no durable artifact to check)",
          cfgquality.find_unenforced_behaviour_rules(conn)),
+        # 2026-09-03 (escalation #1388, researcher correction of #1384's own audit): the row above
+        # trusts enforcement_status/enforced_by as asserted; this one actually verifies the
+        # delivery mechanism a context_delivered/not_mechanically_checkable row claims.
+        ("Undelivered conversational rules", "an active cfg_behaviour_rule row classified "
+         "context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory "
+         "file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) "
+         "does not actually verify live",
+         cfgquality.find_undelivered_conversational_rules(conn, APP.parent.parent)),
         ("Unpushed commits", "a local commit not yet pushed to the upstream branch",
          cfgquality.find_unpushed_commits(APP.parent.parent)),
         ("PS scripts bypassing run.py", "an active PS script calling iba.app.(handlers|lib|tools) "

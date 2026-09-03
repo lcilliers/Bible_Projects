@@ -3249,3 +3249,111 @@ through `python -m iba.app.run`) — no ad-hoc scripts, no raw DB pokes.
 
 **Record:** `cfg_behaviour_rule` (class=`development`) — proposed via `configmaint.propose` like
 any other config content in a standard session (escalation #1342, corrected content pending).
+
+## §70. `context_delivered` — verified conversational-rule delivery, replacing an asserted `not_mechanically_checkable` (2026-09-03, escalation #1388, correcting #1384)
+
+**Context this section should already carry, and doesn't:** escalation #1384 (2026-09-03, Developer
+Mode) built `cfg_behaviour_rule.enforcement_status` (`cfg_enum behaviour_rule_enforcement_status`)
+and individually classified all 64 active rows — the master fix for 44 rules that had sat citing
+"not yet mechanically checked" with nobody returning to resolve it. That work never got a
+GOVERNANCE.md entry in its own unit of work, contrary to `governance.governance_md_on_rule_change`.
+Recorded here as the missed entry, not silently left absent.
+
+**The gap this section actually fixes:** the researcher, reviewing #1384's own output, verbatim:
+*"if a rule exist for something that is not used in code, but is used in chat, or how claude should
+think or behave, then these rules must find there way into claude's session memory so claude can
+behave correctly. if these rules are actively loaded into claude's session memory... then the rule
+is fully compliant... the correct compliance status would be what is done to ensure the rule is
+followed."* Then: *"either set the configs to inactive or ensure that the config is properly
+included in the project at the appropriate places. this same escalation must also fix the
+configmaint validation check. something shown as mechanically-checkable is a cop out. the config
+must be clear on how it is enforced, and if that enforcement is not functional... it becomes a
+config that is not enforced."*
+
+Escalation #1384's `not_mechanically_checkable` conflated two different claims: "compliance in a
+turn can't be code-checked" (true for every conversational/conduct rule, unaffected by this fix)
+and "nothing delivers this rule's content into Claude's session context" (false for most rows — but
+never actually checked; the `source` field was trusted as prose, not verified). Auditing all 32
+`not_mechanically_checkable` rows against live delivery found 9 whose cited source delivered
+nothing at all: 3 cited an already-obsolete `wa_rule_registry` row (superseded 2026-08-17), 2 cited
+an orphaned doc (`Workflow/SQLite/sqlite-extension-best-practice-v1-20260815.md`) nothing loaded
+references, and 4 cited a bare escalation number/researcher-date or a cross-table reference
+(`cfg_escalation.chat_routing`) that nothing prints or surfaces automatically.
+
+**Fix, in two parts:**
+
+1. **A new enum value, `context_delivered`** (ordinal 6) — the verified-delivery state, distinct
+   from `not_mechanically_checkable`'s remaining meaning (genuinely no delivery mechanism could
+   ever apply). All 32 rows previously `not_mechanically_checkable` are now `context_delivered`.
+2. **A real mechanical check**, `cfgquality.verify_behaviour_rule_delivery()` /
+   `find_undelivered_conversational_rules()` (wired into `configmaint.validate` and
+   `CONFIG-REPORT.md` alongside the existing `find_unenforced_behaviour_rules`) — parses a rule's
+   `source`/`enforced_by` text and verifies, live, whichever of these it claims: a `memory <slug>`
+   file exists on disk AND is indexed in `MEMORY.md`; a `governance.<key>` `cfg_setting` is active
+   (every such row prints at every `Start-Iba.ps1` run, per §41); or `CLAUDE.md`/`GOVERNANCE.md`/
+   `USER-GUIDE.md` exists and, where a phrase is quoted, that phrase is still literally present. A
+   bare doc path only counts if the file exists AND is itself referenced from one of those three
+   loaded docs; a `wa_rule_registry` citation never verifies. A row that fails this is reported as
+   `NOT DELIVERED`, distinctly worse than merely appearing in the broader unenforced list — the
+   classification itself is currently false, not merely a known limitation.
+
+**The 9 gaps were fixed, not hidden:** 6 new memory files (`feedback_verify_db_state_before_acting`,
+`feedback_confirm_output_exists_before_reporting_done`, `feedback_label_inferential_output_not_confirmed`,
+`feedback_default_readonly_db_connections`, `feedback_dont_assume_which_database`,
+`feedback_chat_items_become_escalations_same_turn`), 1 `source` correction re-pointing to an
+existing doc already referenced from GOVERNANCE.md (id 54), and 1 `source` correction citing
+GOVERNANCE.md directly with a verified quoted phrase (id 55, `D2`) rather than inventing a doc that
+doesn't need to exist. `cfgquality`'s CLAUDE.md-only verification step was generalised to also cover
+GOVERNANCE.md/USER-GUIDE.md symmetrically for this last case — a one-off memory file would have
+dodged the real fix (`development.root-fix-not-one-off`).
+
+**Approval mechanics, since this batch was large:** all 33 changes (1 enum insert + 32 row updates,
+9 of which carried both an `enforcement_status` and a `source` change) were proposed individually
+through `Config-Maintenance.ps1 -Step Propose`, each with a specific, non-generic Title/Question
+naming that row's own old source and fix — not one blanket description — per the researcher's
+explicit instruction. Manifest of all 33 (escalation id, run_id, exact table/op/where/set):
+`outputs/escalation/1388-behaviour-rule-delivery-fix-batch-v1-20260903.md`.
+
+**Verified after apply, not asserted:** `find_undelivered_conversational_rules()` returns 0 findings
+live; `CONFIG-REPORT.md` (regenerated) shows "Undelivered conversational rules (0)". A real bug was
+caught mid-build and fixed before being reported done: the first pass through `escalation.update()`
+via its Python API returned success for all 33 `ready_for_approval` calls but never called
+`Db.close()` (which commits) — the writes silently rolled back on process exit. Caught by checking
+the live table directly rather than trusting the printed messages, not assumed.
+
+## §71. `reassign_to_researcher_requires_ready_for_approval` — the bare-reassign-to-Researcher loop, closed mechanically (2026-09-03, escalation #1428)
+
+Researcher, verbatim, immediately after §70's own closing round: *"why did you pass 1373, 1316,
+1366, 1375 back to me. the expectation is that you do a ready for approval, without a next action
+flag, and assign it to me... It is not the first time we get into this loop and it must stop now
+with a proper fix in the configs for the workflow looping, and not just a correction of the open
+items."*
+
+**What happened:** four `decision_required` items, held by Claude, work genuinely complete on each
+— closed out with a comment-only `update()` call followed by a second call changing only
+`next_action_assigned_to='Researcher'`, leaving `next_action='review'` untouched. A bare bounce,
+not progress — exactly what `cfg_behaviour_rule` 63 (`claude-held-item-must-progress-or-bounce-back`)
+already named as illegitimate when work is complete, but that rule was `partially_enforced` prose
+with no structural gate, so the wrong branch kept getting chosen.
+
+**Root cause:** `update()`'s own `"update"`-action requirements check never saw the caller's
+requested `next_action`/`next_action_assigned_to` — there was no hook point for any check to catch
+this, regardless of what the rule text said.
+
+**Fix — a real check, not a rewritten sentence:** new `cfg_enum` value and `cfg_escalation_requirement`
+row, `reassign_to_researcher_requires_ready_for_approval` (action=`update`,
+field=`next_action_assigned_to`). `escalation.py`'s `update()` now feeds `next_action`/
+`next_action_assigned_to` into its requirements check, and a new branch in `_check_requirements()`
+raises `ValueError` whenever a `decision_required` item is being handed from Claude to the
+Researcher without `next_action='ready_for_approval'` in the same call — no bare handoff left,
+including the "I'm unsure, please advise" case (state that as the `resolution` on a
+`ready_for_approval` call instead; `approved`/`reject`/`revise` already cover the researcher's
+possible replies).
+
+**Verified twice, not once:** a throwaway escalation against a temporary, not-yet-approved
+requirement row (bad path blocked, good path allowed, cleaned up after) proved the logic; a second
+throwaway escalation against the real, applied config proved the wiring. `cfg_behaviour_rule` 63
+rewritten to describe the single enforced path and cite the check by name, `enforcement_status`
+corrected `partially_enforced` → `mechanically_enforced`. The 4 original items
+(#1373/#1316/#1366/#1375) were then actually corrected to the required shape, not handed back a
+second time wrong.

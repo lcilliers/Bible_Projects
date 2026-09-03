@@ -447,6 +447,32 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
                 row = db.rows("SELECT type FROM escalation WHERE id=?", (self_id,))
                 if row and row[0]["type"] in ("task", "issue"):
                     raise ValueError(r["message"])
+        elif kind == "reassign_to_researcher_requires_ready_for_approval":
+            # researcher, 2026-09-03: caught Claude bare-reassigning 4 decision_required items
+            # (#1373/#1316/#1366/#1375) back to the researcher -- next_action left at 'review',
+            # only next_action_assigned_to touched -- after already doing complete, real work on
+            # each. Verbatim: "why did you pass [them] back to me. the expectation is that you do
+            # a ready for approval... and assign it to me... It is not the first time we get into
+            # this loop and it must stop now with a proper fix in the configs." cfg_behaviour_rule
+            # 63's own two-branch design (progress-via-ready_for_approval OR bounce-with-a-comment
+            # when genuinely unsure) left exactly this judgement call open, and it kept getting
+            # made wrong. This closes it structurally, no judgement call left: handing a
+            # decision_required item from Claude to the Researcher must set
+            # next_action=ready_for_approval in the SAME call -- there is no third, bare-handoff
+            # option any more, including "I'm stuck, please advise" (state that as the resolution
+            # text on a ready_for_approval call; the researcher's reply -- approved/reject/revise --
+            # already covers "yes"/"no"/"reconsider this way" without a separate bare-review path).
+            if self_id is not None:
+                row = db.rows("SELECT resolution_kind, next_action_assigned_to FROM escalation "
+                              "WHERE id=?", (self_id,))
+                if row:
+                    cur_assignee = row[0]["next_action_assigned_to"]
+                    new_assignee = values.get("next_action_assigned_to")
+                    new_next_action = values.get("next_action")
+                    if (row[0]["resolution_kind"] == "decision_required" and originator == "Claude"
+                            and cur_assignee == "Claude" and new_assignee == "Researcher"
+                            and new_next_action != "ready_for_approval"):
+                        raise ValueError(r["message"])
         else:
             raise ValueError(f"unknown cfg_escalation_requirement.check_kind {kind!r}")
 
@@ -922,7 +948,8 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     # here via cfg_escalation_requirement (action='update', check_kind='not_raised_with_content').
     _check_requirements(db, "update", originator=who, checked_action=checked_action,
                         values={"state": new_state, "comment": comment, "context": context,
-                               "tried": tried},
+                               "tried": tried, "next_action": next_action,
+                               "next_action_assigned_to": resolved_assignee},
                         self_id=escalation_id)
 
     merged = _snapshot(cfg, db, escalation_id,
