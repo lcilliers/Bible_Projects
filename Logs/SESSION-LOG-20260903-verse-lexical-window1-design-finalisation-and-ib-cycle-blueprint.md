@@ -108,5 +108,19 @@ carry genuine per-stem narrowing).
 
 ## Git state
 
-Confirmed live (not asserted) after this log was written — see the commit this session performs
-immediately after, same unit of work per `governance.session_log_triggers_commit`.
+Confirmed live, not asserted:
+
+```
+$ git commit -m "session 20260903 (3): ..."
+[main c8c3205f] ... 19 files changed, 10755 insertions(+), 115 deletions(-)
+$ git push
+   69181e46..c8c3205f  main -> main
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+$ git log -1 --format="%H %ci"
+c8c3205f4ca590e66200652335ac178c2e1180d4 2026-09-03 16:09:56 +0100
+```
+
+Branch `main`, commit `c8c3205f`, pushed, working tree clean.
