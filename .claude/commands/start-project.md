@@ -74,14 +74,21 @@ was retired 2026-08-18 in favour of it):
 - **Unenforced-config summary (escalation #1384, 2026-09-03 — "not decided"/"not yet"/"flagged"
   notes on active configs are not control; they must be visible every session, not rediscovered
   by accident).** Query `cfg_behaviour_rule` for `active=1 AND enforcement_status !=
-  'mechanically_enforced'` (a count by `enforcement_status`, not just a total — the researcher
-  needs to see how many are `judgment_call_pending` specifically, since those are the ones
-  waiting on a decision, distinct from `not_mechanically_checkable`/`deliberately_deferred` which
-  are already-settled determinations) — or, once `configmaint.validate`/`report` has actually run
-  this session for another reason, its own `unenforced_behaviour_rules`/`config_hedge_phrases`
-  findings cover the same ground, don't re-query separately. Don't run `configmaint.validate`
-  solely to produce this count if nothing else calls for it this session — a direct `cfg_
-  behaviour_rule` query is cheaper and sufficient for orientation.
+  'mechanically_enforced'` (a count by `enforcement_status`, not just a total). The live enum
+  (`cfg_enum.behaviour_rule_enforcement_status`) has 7 values: `mechanically_enforced` (excluded
+  from this count), `context_delivered` and `deliberately_deferred` (already-settled
+  determinations — nothing pending), `partially_enforced` and `buildable_not_built` (structurally
+  known, not yet fully built), `judgment_call_pending` (waiting on a researcher decision — call
+  these out by name and rule_key, not just a count), and `not_mechanically_checkable` (legacy
+  value — escalation #1388, 2026-09-03, converted every row that carried it to `context_delivered`
+  with a real verified-delivery check; it should read 0 live, and a nonzero count here is itself
+  worth flagging as new drift, not silently absorbed into the total). Report the breakdown by
+  every status present, not only `judgment_call_pending` vs a lump "settled" bucket — or, once
+  `configmaint.validate`/`report` has actually run this session for another reason, its own
+  `unenforced_behaviour_rules`/`config_hedge_phrases` findings cover the same ground, don't
+  re-query separately. Don't run `configmaint.validate` solely to produce this count if nothing
+  else calls for it this session — a direct `cfg_behaviour_rule` query is cheaper and sufficient
+  for orientation.
 
 ## 5. Report and stop
 
