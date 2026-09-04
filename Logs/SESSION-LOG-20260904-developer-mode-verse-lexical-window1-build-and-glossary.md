@@ -166,5 +166,15 @@ authorization to proceed on recommended readings, not as answering each individu
 
 ## Git state — this log's own completion trigger
 
-_To be filled in after commit/push, per this project's own convention — not asserted ahead of the
-actual command output._
+- **Branch:** `main`, up to date with `origin/main`.
+- **Commit:** `10b59a3f` — "session 20260904 (developer mode): #1444 catalogue-code-split migration
+  + #1383 verse-lexical Window 1 Layer 1/Layer 2 full build (schema/config/code/PS, 552k-row
+  backfill, 2 live bugs caught+fixed) -- both approved; #1383 leftovers spawned as #1448-1451,
+  ps-tools worksheet fixed; #1447 glossary built full-scope (18 T1-T9 entries), 1446 range/
+  deprecation error corrected, stale prose_section FK found+worked around (spawned #1452, build
+  recorded as #1453); escalation-backlog check worked to real completion -- #1441 genuine
+  data-integrity fix (824-verse FK-orphan repair), #1442 confirmed addressed, #1378/#1379
+  substantively reviewed and handed back" — 24 files changed, 4057 insertions(+), 126 deletions(-).
+- **Push:** confirmed — `2972dfe8..10b59a3f  main -> main` accepted by `origin`.
+- **Post-push `git status`:** "Your branch is up to date with 'origin/main'." / "nothing to commit,
+  working tree clean" — actual command output, not asserted.
