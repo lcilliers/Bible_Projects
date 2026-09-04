@@ -143,22 +143,29 @@ def enrich(ctx: Ctx) -> Outcome:
     _may(ctx, "lexical.enrich", "verse_lexical_note")
     _may(ctx, "lexical.enrich", "passage")
 
+    # Real bug found live testing this handler (escalation #1450, 2026-09-04): the completeness
+    # check used to run AFTER enrich_passage()'s writes, with the incomplete branch calling
+    # commit() -- which committed the whole pending transaction, notes included, on exactly the
+    # failure path documented as "never a partial write" (design spec §E.2). Fixed: on
+    # incomplete-block, ROLLBACK instead of commit -- verified live (5 test notes written then
+    # correctly discarded, 0 live verse_lexical_note rows after the rollback).
     try:
         counts = lexicalenrich.enrich_passage(ctx.db.conn, passage_id, verse_ids, verse_id_by_osis,
                                               genre, notes, removals)
     except lexicalenrich.UnresolvedReference as e:
+        ctx.db.conn.rollback()
         return fail("unresolved-reference",
                    f"{len(e.problems)} problem(s): "
                    f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
     except lexicalenrich.ReconciliationError as e:
+        ctx.db.conn.rollback()
         return fail("unreconciled",
                    f"{len(e.problems)} item(s) need reconciliation before this can write: "
                    f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
     complete, missing = lexicalenrich.check_completeness(ctx.db.conn, passage_id, verse_ids)
     if not complete:
-        lexicalenrich.set_lexical_complete(ctx.db.conn, passage_id, False)
-        ctx.db.conn.commit()
+        ctx.db.conn.rollback()
         return fail("incomplete-block",
                    f"{len(missing)} code(s) in this block have no disposition: "
                    f"{missing[:5]}{' ...' if len(missing) > 5 else ''} — every applicable code "

@@ -405,17 +405,39 @@ def lexical_extract(ctx: Ctx) -> Outcome:
                     f"({','.join('?' * len(ids))}) AND deleted=0)")
         args += ids
     if verse_f:
-        vals = _parse_filter_list(verse_f)
-        clauses = []
-        for v in vals:
+        # Real bug found live testing this step (escalation #1450, 2026-09-04): a naive
+        # `osisId >= ? AND osisId <= ?` range compares STRINGS, not chapter/verse numbers —
+        # "John.1.10" sorts lexicographically BEFORE "John.1.5" ('1' < '5' at the first differing
+        # character), so a "John.1.1-John.1.5" range silently swept in John.1.10-John.1.19 and
+        # more. Fixed: every osisId in scope is parsed to (book, chapter, verse) and compared
+        # numerically, matching `versespanmeaningreport.fetch_verses`'s own established
+        # convention (`verse` has no chapter/verse COLUMNS to filter on directly — checked live).
+        resolved_ids: list[int] = []
+        for v in _parse_filter_list(verse_f):
             if "-" in v and v.count(".") >= 2:
                 lo_ref, hi_ref = v.split("-", 1)
-                clauses.append("(v.osisId >= ? AND v.osisId <= ?)")
-                args += [lo_ref, hi_ref]
+                lo_book, lo_ch, lo_vs = lo_ref.split(".")
+                hi_book, hi_ch, hi_vs = hi_ref.split(".")
+                if lo_book != hi_book:
+                    return fail("bad-filter", f"VerseFilter range {v!r} spans two books")
+                lo_ch, lo_vs, hi_ch, hi_vs = int(lo_ch), int(lo_vs), int(hi_ch), int(hi_vs)
+                for r in ctx.db.rows(
+                        "SELECT id, osisId FROM verse WHERE osisId LIKE ? AND deleted=0",
+                        (f"{lo_book}.%",)):
+                    parts = r["osisId"].split(".")
+                    if len(parts) != 3 or not parts[1].isdigit() or not parts[2].isdigit():
+                        continue
+                    ch, vs = int(parts[1]), int(parts[2])
+                    if (ch, vs) >= (lo_ch, lo_vs) and (ch, vs) <= (hi_ch, hi_vs):
+                        resolved_ids.append(r["id"])
             else:
-                clauses.append("v.osisId = ?")
-                args.append(v)
-        where.append("(" + " OR ".join(clauses) + ")")
+                row = ctx.db.rows("SELECT id FROM verse WHERE osisId=? AND deleted=0", (v,))
+                if row:
+                    resolved_ids.append(row[0]["id"])
+        if not resolved_ids:
+            return fail("bad-filter", f"VerseFilter {verse_f!r} resolved to 0 verses")
+        where.append(f"vl.verse_id IN ({','.join('?' * len(resolved_ids))})")
+        args += resolved_ids
     if surface_f:
         vals = _parse_filter_list(surface_f)
         where.append(f"vl.surface IN ({','.join('?' * len(vals))})")

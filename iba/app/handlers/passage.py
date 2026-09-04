@@ -471,22 +471,41 @@ def _legacy_genre_tag(ctx: Ctx, osis: str) -> str | None:
         return None
 
 
+def _parse_chapter_verse(osis: str, book: str) -> tuple[int, int] | None:
+    """`verse` has no chapter/verse COLUMNS (checked live, escalation #1450 — a real bug in an
+    earlier draft of this handler queried them as columns and crashed) — every other reader in
+    this app (`versespanmeaningreport.fetch_verses`) derives them by parsing `osisId` instead;
+    mirrored here rather than querying columns that don't exist."""
+    parts = (osis or "").split(".")
+    if len(parts) != 3 or parts[0] != book or not parts[1].isdigit() or not parts[2].isdigit():
+        return None
+    return int(parts[1]), int(parts[2])
+
+
 def suggest_boundary(ctx: Ctx) -> Outcome:
     book = ctx.params["Book"]
     max_verses = int(ctx.cfg.required_module_setting("cfg_passage", "passage.max_verses"))
 
-    start = ctx.db.rows(
-        "SELECT id, osisId, chapter, verse FROM verse WHERE osisId LIKE ? AND deleted=0 "
-        "AND id NOT IN (SELECT verse_id FROM verse_passage WHERE deleted=0) "
-        "ORDER BY chapter, verse LIMIT 1", (f"{book}.%",))
-    if not start:
+    all_verses = ctx.db.rows(
+        "SELECT id, osisId FROM verse WHERE osisId LIKE ? AND deleted=0", (f"{book}.%",))
+    passaged_ids = {r["verse_id"] for r in ctx.db.rows(
+        "SELECT verse_id FROM verse_passage WHERE deleted=0")}
+    parsed = []
+    for r in all_verses:
+        cv = _parse_chapter_verse(r["osisId"], book)
+        if cv is None:
+            continue
+        parsed.append({"id": r["id"], "osisId": r["osisId"], "chapter": cv[0], "verse": cv[1],
+                       "passaged": r["id"] in passaged_ids})
+    parsed.sort(key=lambda v: (v["chapter"], v["verse"]))
+
+    start = next((v for v in parsed if not v["passaged"]), None)
+    if start is None:
         return fail("book-complete",
                    f"every verse in {book} already belongs to a live passage — nothing to suggest")
-    start = start[0]
 
-    candidates = ctx.db.rows(
-        "SELECT id, osisId, chapter, verse FROM verse WHERE osisId LIKE ? AND deleted=0 "
-        "AND chapter=? AND verse >= ? ORDER BY verse", (f"{book}.%", start["chapter"], start["verse"]))
+    candidates = [v for v in parsed
+                 if v["chapter"] == start["chapter"] and v["verse"] >= start["verse"]]
 
     def density(verse_id: int) -> float:
         rows = ctx.db.rows(

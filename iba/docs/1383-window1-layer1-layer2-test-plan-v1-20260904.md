@@ -106,6 +106,60 @@ open choice for the researcher/tester, not decided here.
 
 ---
 
-**Results — fill in after the fresh-session run:**
+**Results — run 2026-09-04 (escalation #1450, standard/App Mode session, after Developer Mode
+exited).** Test fixture: a temporary `passage` row (John 1:1-5, `source='TEST-FIXTURE-1450-
+DELETE-AFTER-TESTING'`), created directly (no live `hib.set` data exists for John, so
+`passage.build`'s own gate couldn't register one — the exact coupling #1451 already names), used
+for E1-E19/X2/J-series, then fully deleted afterward (passage + verse_passage + all test
+`verse_lexical_note` rows) — confirmed 0 remaining live rows post-cleanup.
 
-_(not yet run)_
+**4 real bugs found live, fixed, and re-verified — none shipped:**
+
+1. **`lexical.enrich` committed a partial write on `incomplete-block`.** The handler ran the
+   completeness check AFTER `enrich_passage()`'s writes, and the incomplete branch called
+   `commit()` — which committed the whole pending transaction, notes included, on exactly the
+   failure path the design spec names "never a partial write" (§E.2). Fixed: `rollback()` instead
+   of `commit()` on every refusal path (`unresolved-reference`/`unreconciled`/`incomplete-block`).
+   Verified: ran the exact same incomplete payload before and after the fix — 5 notes committed
+   before, 0 after.
+2. **`passage.suggest_boundary` queried `verse.chapter`/`verse.verse` as columns — they don't
+   exist** (`verse` only has `id`/`osisId`/`reference`/`preview`/`step_version`/`created_at`/
+   `deleted`/`text`; every other reader in this app derives chapter/verse by parsing `osisId`,
+   e.g. `versespanmeaningreport.fetch_verses`). Crashed outright (`OperationalError`) on every
+   call. Fixed to the same parse-from-osisId convention.
+3. **`report.lexical_extract`'s `-VerseFilter` range used string comparison on `osisId`** —
+   `"John.1.10" < "John.1.5"` lexicographically (the digit `'1'` sorts before `'5'` at the first
+   differing character), so a `John.1.1-John.1.5` range silently swept in `John.1.10`-`John.1.19`
+   and more (635 rows returned instead of the correct 50). Fixed: every osisId is parsed to
+   `(book, chapter, verse)` and compared numerically. `-StrongFilter`'s own range (`BETWEEN`) was
+   checked and is genuinely fine — Strong's codes are zero-padded 4-digit, so lexicographic and
+   numeric ordering agree there.
+4. **`Build-Passages.ps1 -Suggest -Confirm` read `$res.start_ref`/`$res.end_ref` at the JSON
+   response's top level** — handler counts actually land under `$res.counts` (confirmed against
+   the one other PS script in this app that already reads a counts field). Crashed
+   (`PropertyNotFoundException`) the moment `-Confirm` tried to build the `-Range` string. Fixed to
+   `$res.counts.start_ref`/`$res.counts.end_ref`.
+
+**Cases run and their outcome** (✅ = passed as specified; 🐛 = failed, bug found and fixed, then
+re-run and passed; — = not run this pass):
+
+| # | Result | # | Result | # | Result | # | Result |
+|---|---|---|---|---|---|---|---|
+| B1-B5 | — (covered earlier same session via direct live spot-checks, not re-run as this suite) | E11 | — | S3 | — (S2's "book-boundary" stop is the same code path) | J6 | — |
+| E1 | 🐛→✅ (bug 1) | E12 | — | S4 | ✅ (via S1) | J7 | ✅ |
+| E2 | ✅ | E13 | — (payload built, not run) | S5 | ✅ (full PS pipe-through) | J8 | — |
+| E3 | ✅ | E14 | ✅ | S6 | — | J9 | ✅ |
+| E4 | ✅ | E15 | ✅ (hit inadvertently via E1's first draft) | X1 | — | J10 | ✅ |
+| E5 | ✅ | E16 | — (payload built, not run) | X2 | ✅ | P1 | — |
+| E6 | ✅ (correctly cascades into incomplete-block) | E17 | 🐛→✅ (bug 1) | J1 | ✅ | P2 | ✅ |
+| E7 | ✅ | E18 | ✅ | J2 | ✅ | P3 | — |
+| E8 | ✅ | E19 | ✅ | J3 | 🐛→✅ (bug 3) | P4 | ✅ |
+| E9 | ✅ | S1 | 🐛→✅ (bug 2) | J4 | ✅ | P5 | ✅ |
+| E10 | ✅ | S2 | ✅ (after bug 2 fix) | J5 | — | P6 | ✅ (implicit — the unchanged path was exercised throughout) |
+
+**Not run this pass, genuinely remaining:** B1-B5 (re-run as this suite's own cases, though the
+underlying facts were verified earlier this session by other means), E11/E12/E13/E16 (payloads
+built for E13/E16, not executed), S3/S6, X1, J5/J6/J8, P1/P3. None block confidence in the core
+mechanism — every failure MODE class (bad-payload, no-passage, too-many-verses, reconciliation,
+quality-check rejection, completeness, cross-verse resolution, both report types, both PS
+scripts) was exercised at least once.

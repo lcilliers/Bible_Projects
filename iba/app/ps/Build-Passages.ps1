@@ -103,10 +103,15 @@ if ($Suggest) {
     # suggest_boundary never crosses a chapter boundary (its own candidate query is chapter-
     # scoped) -- start_ref/end_ref are always "<chapter>:<verse>" in the SAME chapter, so this
     # is always expressible as a single -Range "<chapter>:<startVerse>-<endVerse>".
-    $startCh, $startVs = $res.start_ref -split ':'
-    $endCh,   $endVs   = $res.end_ref   -split ':'
+    # Real bug found live testing this script (escalation #1450, 2026-09-04): handler counts
+    # (start_ref/end_ref/etc) land under the JSON response's own `counts` object, not at the top
+    # level -- $res.start_ref was always $null, crashing on the -split below. Fixed to
+    # $res.counts.start_ref, matching the one other PS script in this app that already reads a
+    # counts field (ContentIndex-Search.ps1's own `$res.counts.csv_path`).
+    $startCh, $startVs = $res.counts.start_ref -split ':'
+    $endCh,   $endVs   = $res.counts.end_ref   -split ':'
     if ($startCh -ne $endCh) {
-        Write-Host "Suggestion spans chapters ($($res.start_ref)-$($res.end_ref)) -- re-run with an explicit -Chapters/-Range." -ForegroundColor Yellow
+        Write-Host "Suggestion spans chapters ($($res.counts.start_ref)-$($res.counts.end_ref)) -- re-run with an explicit -Chapters/-Range." -ForegroundColor Yellow
         exit 1
     }
     $Range = "${startCh}:${startVs}-${endVs}"
