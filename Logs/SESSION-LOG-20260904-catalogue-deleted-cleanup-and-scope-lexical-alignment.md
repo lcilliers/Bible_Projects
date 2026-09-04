@@ -106,3 +106,13 @@ Developer Mode to build the ramifications (the 5 pending question-code splits, a
 
 ## Git state — this log's own completion trigger
 
+- **Branch:** `main`, up to date with `origin/main`.
+- **Commit:** `21e85fd773c1e19141eb3482b6f577d927351408` — "session 20260904 (cont. 3): #1444 v2/v3
+  completed -- 55-row deleted=1 catalogue cleanup, scope reclassified to Word/term (lexical) for 6
+  Window-1-answered questions + T7.2.1 wording split applied live; PS-tool permission gap diagnosed
+  (researcher applied fix); 5-question-code split spec filed ready for Developer Mode" — 5 files
+  changed.
+- **Push:** confirmed — `a09e7db3..21e85fd7  main -> main` accepted by `origin`.
+- **Post-push `git status`:** "Your branch is up to date with 'origin/main'." / "nothing to commit,
+  working tree clean" — actual command output, not asserted.
+
