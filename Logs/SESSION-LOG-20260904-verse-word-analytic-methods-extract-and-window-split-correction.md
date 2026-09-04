@@ -144,3 +144,13 @@ remain open, both `ready_for_approval`/assigned to Researcher.
 
 ## Git state — this log's own completion trigger
 
+- **Branch:** `main`, up to date with `origin/main`.
+- **Commit:** `56cac957c408e323f9b2322ece04b44025447d13` — "session 20260904 (cont.): #1446
+  verse/word analytic-methods extract built and corrected through 5 rounds (glossary T1-T3
+  ambiguity -> #1447; Window 1/2 boundary corrected twice to the real definitional rule); same
+  correction applied to #1383's own pending design docs; #1446 sections 2a/2b/2c cross-checked
+  against #1383's build spec, 2 genuine gaps filled (recurrence_role_shift, cross_lemma_shared_gloss
+  note_types)" — 16 files changed.
+- **Push:** confirmed — `0fdafd1b..56cac957  main -> main` accepted by `origin`.
+- **Post-push `git status`:** "Your branch is up to date with 'origin/main'." / "nothing to commit,
+  working tree clean" — actual command output, not asserted.
