@@ -28,10 +28,17 @@
                       a second, wrong, non-compliant folder next to the real one (found live
                       2026-08-29, escalation #1007 thread). Omit this parameter unless you have a
                       specific, confirmed reason not to.
-.PARAMETER Step       Run only this one step (lexical.build | report.verse_lexical) instead of
-                      the full chained sequence -- e.g. report.verse_lexical alone, to VIEW
-                      already-built results for a range without re-running the build (which may
-                      make live STEP calls). Omit to run the full sequence, unchanged default.
+.PARAMETER Step       Run only this one step (lexical.build | lexical.enrich | report.
+                      verse_lexical | report.lexical_exceptions | report.lexical_extract)
+                      instead of the full chained sequence -- e.g. report.verse_lexical alone,
+                      to VIEW already-built results for a range without re-running the build
+                      (which may make live STEP calls). Omit to run the full sequence, unchanged
+                      default except it now also runs lexical.enrich + report.lexical_exceptions
+                      (escalation #1383).
+.PARAMETER PayloadPath  Path to the JSON payload file for lexical.enrich (notes/remove/genre) --
+                      REQUIRED when -Step lexical.enrich is given, or when running the full
+                      sequence (which now includes lexical.enrich) -- same convention as
+                      Operations-Ingest.ps1's own -PayloadPath.
 .PARAMETER RunId      resume/re-tag a specific run.
 .PARAMETER Trace      Print every config read (IBA_TRACE).
 
@@ -39,6 +46,8 @@
     .\VerseLexical.ps1 -Book Dan -Range 8:1-27
 .EXAMPLE
     .\VerseLexical.ps1 -Book Dan -Range 8:1-27 -Step report.verse_lexical
+.EXAMPLE
+    .\VerseLexical.ps1 -Book Dan -Range 1:1-8 -Step lexical.enrich -PayloadPath iba\app\staging\lexical\dan-1-1-8.json
 #>
 
 [CmdletBinding()]
@@ -47,7 +56,9 @@ param(
     [string] $Chapters,
     [string] $Range,
     [string] $BookLabel,
-    [ValidateSet('lexical.build', 'report.verse_lexical')] [string] $Step,
+    [ValidateSet('lexical.build', 'lexical.enrich', 'report.verse_lexical',
+                 'report.lexical_exceptions', 'report.lexical_extract')] [string] $Step,
+    [string] $PayloadPath,
     [string] $RunId,
     [switch] $Trace
 )
@@ -78,14 +89,22 @@ $seq   = python -c "import json; from iba.app.lib.cfg import Cfg; c=Cfg(); print
 if ($Step) { $seq = $seq | Where-Object { $_.step -eq $Step } }
 $runId = if ($RunId) { $RunId } else { "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-VERSE-LEXICAL" }
 
+# lexical.enrich without -PayloadPath fails fast (bad-payload) rather than silently skipping
+# itself -- a full run genuinely needs the JSON prepared first (escalation #1383, build spec §F.1).
+if (($seq | Where-Object { $_.step -eq 'lexical.enrich' }) -and -not $PayloadPath) {
+    Write-Host "lexical.enrich is in this run's sequence but -PayloadPath was not given." -ForegroundColor Yellow
+    exit 1
+}
+
 Write-IbaRunHeader -WorkPackage 'verse-lexical' -RunId $runId -RunsOver "book = '$Book'"
 Write-Host "sequence     : $($seq.Count) steps, loaded from the DB config store (cfg_step)"
 Write-Host ""
 
 $paramArgs = @('--param', "Book=$Book")
-if ($Chapters)  { $paramArgs += @('--param', "Chapters=$Chapters") }
-if ($Range)     { $paramArgs += @('--param', "Range=$Range") }
-if ($BookLabel) { $paramArgs += @('--param', "BookLabel=$BookLabel") }
+if ($Chapters)    { $paramArgs += @('--param', "Chapters=$Chapters") }
+if ($Range)       { $paramArgs += @('--param', "Range=$Range") }
+if ($BookLabel)   { $paramArgs += @('--param', "BookLabel=$BookLabel") }
+if ($PayloadPath) { $paramArgs += @('--param', "PayloadPath=$PayloadPath") }
 
 $halt = $false
 $exitCode = 0

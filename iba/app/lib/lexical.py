@@ -57,6 +57,15 @@ def _fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
 # "which," which DO carry real lexical content) is 'content'.
 _H_FORMATIVE_RE = re.compile(r"^H9\d{3}[A-Z]?$")
 
+# H0853-function-word-exception (escalation #1383, build spec §B.13): the Hebrew direct-object
+# marker (stepGloss='[Obj.]') sits OUTSIDE the H9xxx reserved range but is grammatically a pure
+# formative, not an independent lexical item — an explicit, evidence-commented exception SET,
+# not a widened regex range (the design's own stated shape: "starting with H0853," not "H08xx").
+# 10,521 pre-existing live rows corrected to role='function' by
+# migration/build_verse_lexical_window1_layer1_layer2_v1_20260904.py; this is what keeps it
+# correct for every future lexical.build run.
+_H_FUNCTION_EXCEPTIONS = {"H0853"}
+
 # Greek has no equivalent reserved-range convention — verified only against G1722/G0505 this
 # session, not exhaustively. Falls back to morph_code's own leading POS tag (Robinson/Byzantine-
 # style). Unrecognised tags default to 'content' deliberately — misclassifying a real gap as
@@ -66,6 +75,8 @@ _GREEK_FUNCTION_TAGS = ("PREP", "PRT", "CONJ", "ART")
 
 def classify_role(strong_code: str | None, morph_slice: str | None) -> str:
     if strong_code and strong_code.startswith("H"):
+        if _base(strong_code) in _H_FUNCTION_EXCEPTIONS:
+            return "function"
         return "function" if _H_FORMATIVE_RE.match(strong_code) else "content"
     if strong_code and strong_code.startswith("G") and morph_slice:
         tag = morph_slice.split("-", 1)[0]
@@ -154,13 +165,15 @@ def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None,
     fallback/ambiguity decision (reused, not re-derived) then adds stem/voice narrowing."""
     role = classify_role(code, morph_slice)
     row = {"strong": code, "morph_code": morph_slice, "role": role,
-          "status": "unregistered", "resolved_sense": None, "ambiguity_note": None}
+          "status": "unregistered", "resolved_sense": None, "ambiguity_note": None,
+          "language": None}
 
     strong_row = conn.execute(
         "SELECT strongNumber, language, stepGloss FROM strong WHERE strongNumber=?",
         (code,)).fetchone()
     if strong_row is None:
         return row
+    row["language"] = strong_row["language"]
 
     base = _base(code, base_pattern)
     exact_rows = conn.execute(
@@ -215,6 +228,95 @@ def _now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+# ── Layer 1 mechanical fields (escalation #1383, build spec §B.5/§C.1) ────────────────────────
+# position/surface/language/testament/is_negator/narrative_morph/gloss_consistent_in_verse/
+# party_kind — computed unconditionally for every code, no selection (method-and-drift-
+# mitigation doc §1-2, cfg_method_rule `mechanical-columns-run-on-every-code-no-selection`).
+
+def load_code_classes(conn: sqlite3.Connection) -> dict[str, set[str]]:
+    """base strong_code -> set of live cfg_lexical_code_class classes. Loaded once per build call
+    (see build_for_range/build_for_verse_ids) and threaded through, same pattern as `live_cache`
+    — this table is small (~20 rows) but every-code-every-verse re-querying it would still be
+    wasteful at corpus scale. `lexical-code-class-lookup-not-hardcoded`: this IS the queried
+    lookup that rule requires, never a hardcoded dict in this module."""
+    out: dict[str, set[str]] = {}
+    for r in conn.execute(
+            "SELECT strong_code, class FROM cfg_lexical_code_class WHERE active=1"):
+        out.setdefault(r["strong_code"], set()).add(r["class"])
+    return out
+
+
+def _code_classes_for(code: str, code_classes: dict[str, set[str]],
+                      base_pattern: str) -> set[str]:
+    return code_classes.get(_base(code, base_pattern), set())
+
+
+_PARTY_CLASS_TO_KIND = {"party_divine": "divine", "party_human": "human",
+                        "party_angelic": "non_human"}
+
+
+def _testament_for(conn: sqlite3.Connection, book: str) -> str | None:
+    r = conn.execute("SELECT ordinal FROM cfg_book_order WHERE book=?", (book,)).fetchone()
+    if r is None or r["ordinal"] is None:
+        return None
+    return "OT" if r["ordinal"] <= 38 else "NT"
+
+
+def _narrative_morph_for(morph_slice: str | None, language: str | None,
+                         sibling_codes: list[str]) -> str | None:
+    """Hebrew only (narrative-morph-hebrew-only). wayyiqtol: this code's own morph is
+    'HV<stem><TAM>...' with TAM='w' at 0-based index 3. az_imperfect_opening: same shape with
+    TAM='i' (imperfect) AND some OTHER code in the SAME span has a base strong of H0227
+    ("az"/"then") — verified live, Exod.15.1 (H7891 HVqi3ms + H0227A HD, same span).
+    `sibling_codes`: every OTHER code's own `strong` in this same span (bare, not base-stripped —
+    the `H0227%` prefix check below already covers every variant suffix)."""
+    if language != "Hebrew" or not morph_slice or not morph_slice.startswith("HV") or len(morph_slice) < 4:
+        return None
+    tam = morph_slice[3]
+    if tam == "w":
+        return "wayyiqtol"
+    if tam == "i" and any(c.startswith("H0227") for c in sibling_codes):
+        return "az_imperfect_opening"
+    return None
+
+
+def _layer1_fields(row: dict, span: dict, sibling_codes: list[str], language: str | None,
+                   testament: str | None, code_classes: dict[str, set[str]],
+                   base_pattern: str) -> None:
+    """Mutates `row` (a resolve_code() result) in place, adding the 7 per-row Layer-1 fields —
+    everything except gloss_consistent_in_verse, which needs the whole verse's rows (computed
+    separately, see _apply_gloss_consistency below)."""
+    row["position"] = span["position"]
+    row["surface"] = span["surface"]
+    row["language"] = language
+    row["testament"] = testament
+    code = row["strong"]
+    classes = _code_classes_for(code, code_classes, base_pattern) if code else set()
+    row["is_negator"] = 1 if "negator" in classes else None
+    party_class = next((c for c in classes if c in _PARTY_CLASS_TO_KIND), None)
+    row["party_kind"] = _PARTY_CLASS_TO_KIND.get(party_class) if party_class else None
+    row["narrative_morph"] = _narrative_morph_for(row["morph_code"], language, sibling_codes)
+
+
+def _apply_gloss_consistency(verse_rows: list[dict]) -> None:
+    """Mutates every row in `verse_rows` in place — gloss_consistent_in_verse=0 iff this row's
+    own (strong, morph_code) pair has >1 distinct resolved_sense among this verse's own rows,
+    else 1 (never NULL — per §D.1). Needs the WHOLE verse's resolved rows, not just one span's,
+    hence a separate pass after every span in the verse has been resolved."""
+    groups: dict[tuple, set] = {}
+    for r in verse_rows:
+        if r["strong"] is None or r["morph_code"] is None:
+            continue
+        key = (r["strong"], r["morph_code"])
+        groups.setdefault(key, set()).add(r["resolved_sense"])
+    for r in verse_rows:
+        if r["strong"] is None or r["morph_code"] is None:
+            r["gloss_consistent_in_verse"] = 1
+            continue
+        key = (r["strong"], r["morph_code"])
+        r["gloss_consistent_in_verse"] = 1 if len(groups[key]) <= 1 else 0
+
+
 def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: int,
                             resolved: list[dict]) -> dict:
     """Version-aware: for each code_ordinal, soft-deletes any current (deleted=0) row and inserts
@@ -231,18 +333,33 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
             c["superseded"] += 1
         conn.execute(
             "INSERT INTO verse_lexical (span_id, verse_id, code_ordinal, strong, morph_code, "
-            "role, status, resolved_sense, ambiguity_note, created_at, deleted) "
-            "VALUES (?,?,?,?,?,?,?,?,?,?,0)",
+            "role, status, resolved_sense, ambiguity_note, created_at, deleted, position, "
+            "surface, language, testament, is_negator, narrative_morph, "
+            "gloss_consistent_in_verse, party_kind) "
+            "VALUES (?,?,?,?,?,?,?,?,?,?,0,?,?,?,?,?,?,?,?)",
             (span_id, verse_id, ordinal, r["strong"], r["morph_code"], r["role"], r["status"],
-             r["resolved_sense"], r["ambiguity_note"], now))
+             r["resolved_sense"], r["ambiguity_note"], now,
+             r.get("position"), r.get("surface"), r.get("language"), r.get("testament"),
+             r.get("is_negator"), r.get("narrative_morph"),
+             r.get("gloss_consistent_in_verse", 1), r.get("party_kind")))
         c["inserted"] += 1
     return c
 
 
 def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None",
-                    live_cache: dict[str, str], base_pattern: str = _BASE_RE_FALLBACK) -> dict:
+                    live_cache: dict[str, str], base_pattern: str = _BASE_RE_FALLBACK,
+                    code_classes: dict[str, set[str]] | None = None) -> dict:
     c = {"spans": 0, "codes": 0, "inserted": 0, "superseded": 0}
-    for sp in _fetch_spans(conn, verse_id):
+    if code_classes is None:          # safe default for a direct/standalone caller
+        code_classes = load_code_classes(conn)
+
+    verse_row = conn.execute("SELECT osisId FROM verse WHERE id=?", (verse_id,)).fetchone()
+    book = verse_row["osisId"].split(".", 1)[0] if verse_row else None
+    testament = _testament_for(conn, book) if book else None
+
+    spans = _fetch_spans(conn, verse_id)
+    per_span_resolved: list[tuple[dict, list[dict]]] = []
+    for sp in spans:
         codes = (sp["strong_variant"] or "").split()
         morphs = (sp["morph_code"] or "").split()
         if not codes:
@@ -252,6 +369,17 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None"
                         base_pattern)
             for i, code in enumerate(codes)
         ]
+        for i, r in enumerate(resolved):
+            sibling_codes = [c for j, c in enumerate(codes) if j != i]
+            _layer1_fields(r, sp, sibling_codes, r["language"], testament,
+                          code_classes, base_pattern)
+        per_span_resolved.append((sp, resolved))
+
+    # gloss_consistent_in_verse needs the WHOLE verse's rows — one pass after every span resolved.
+    all_rows = [r for _, resolved in per_span_resolved for r in resolved]
+    _apply_gloss_consistency(all_rows)
+
+    for sp, resolved in per_span_resolved:
         counts = write_readings_for_span(conn, sp["id"], verse_id, resolved)
         c["spans"] += 1
         c["codes"] += len(resolved)
@@ -263,9 +391,10 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None"
 def build_for_range(conn: sqlite3.Connection, book: str, lo: int, hi: int,
                     verse_lo: int | None, verse_hi: int | None, step: "Step | None") -> dict:
     live_cache: dict[str, str] = {}
+    code_classes = load_code_classes(conn)
     totals = {"verses": 0, "spans": 0, "codes": 0, "inserted": 0, "superseded": 0}
     for v in fetch_verses(conn, book, lo, hi, verse_lo, verse_hi):
-        counts = build_for_verse(conn, v["id"], step, live_cache)
+        counts = build_for_verse(conn, v["id"], step, live_cache, code_classes=code_classes)
         totals["verses"] += 1
         for k in ("spans", "codes", "inserted", "superseded"):
             totals[k] += counts[k]

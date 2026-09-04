@@ -30,13 +30,21 @@ which one it means:
   row not the gloss; pull the full lexical range before assigning a sense; let morph decide voice/
   person/aspect) — this is what §1 below actually is.
 - **[TC]** — the **tier catalogue** (`Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md`),
-  a characteristic-grain catalogue of observation questions, deprecated 2026-07-02. T1 = Definition,
-  T2 = Constitutional Location and Boundaries, T3 = The Inner Faculties — this is §4 below, a
-  different grain entirely (per-characteristic, not per-verse). **Range discrepancy, not yet
-  resolved:** this extract describes the source catalogue as running T0–T9; the live glossary's own
-  "Tier" entry (`bible_research.db.prose_section` id 1092, under the real glossary — see below)
-  states the canonical range is **T0–T7** ("an earlier T1–T8 document is superseded"). Folded into
-  #1447 for the researcher to settle, not adjudicated here.
+  a characteristic-grain catalogue of observation questions. T0 = Divine Image and Created Design,
+  T1 = Definition, T2 = Constitutional Location and Boundaries, T3 = The Inner Faculties, T4 =
+  Relational Interfaces, T5 = Formative and Developmental Dimension, T6 = Structural Relationships
+  with Other Characteristics, T7 = Evidential and Methodological Foundation — this is §4 below, a
+  different grain entirely (per-characteristic, not per-verse). **Range discrepancy — RESOLVED
+  (escalation #1447, 2026-09-04), corrected here not left standing:** this section previously
+  claimed the source catalogue runs T0–T9 and is "DEPRECATED 2026-07-02" — checked directly against
+  the cited source document itself, both claims were wrong. The document's own section headers run
+  **T0–T7 only** (`### T0` through `### T7`, no T8/T9 exist in it) — the SAME range the live
+  glossary's own "Tier" entry (`bible_research.db.prose_section` id 1092) already states as
+  canonical. The document is also NOT deprecated in the sense implied: its own header states
+  "the authoritative current question list is Appendix A" (updated 2026-06-20 to match the live
+  126-active-question catalogue) — its per-tier obs_ids (224, 225, 227…) are the SAME obs_ids
+  live in `wa_obs_question_catalogue` today, confirmed by direct query. §4 below is retitled to
+  match.
 - **[CC]** — live `cluster_code` rows literally named `T2`/`T3` in the `cluster` table (iba.db only —
   confirmed live bible_research.db's own `cluster` table has a T2 row but no T3 row): T2 =
   "Supplementary" (particles/objects/no-IB-relation strongs, also surfaces as a Scope-focus bucket
@@ -458,24 +466,38 @@ pairs convergence rules must be set individually, the same rule does not apply f
 
 ---
 
-## 4. HISTORICAL — tier catalogue T1–T3 **[TC]** (`bible_research.db`, pre-2026-07-02, DEPRECATED)
+## 4. Tier catalogue T0–T7 **[TC]** (`bible_research.db`, characteristic grain) — retitled, range/status corrected (escalation #1447, 2026-09-04)
 
 **§0 applies here as a boundary marker:** this was never Window 1. Its questions are themselves about
 the inner being (definition, faculties, constitutional location) rather than about a verse's own
 language — Window 2/Stage 2 subject matter (or beyond), included here only for the genealogy, not as
 a method to be read alongside §§1–2.
 
-**Source:** `Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md`. Superseded by §3 above
-(its own deprecation note). Characteristic-level catalogue questions answered from verse evidence,
-not per-code mechanical tests — included because §3's own source document names it directly as what
-it replaced.
+**Source:** `Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md` — checked directly, this
+pass: its own header states "the authoritative current question list is Appendix A," its Appendix A
+is the live 126-active-question set, and its per-tier `obs_id`s (224, 225, 227…) are the SAME ones
+live in `wa_obs_question_catalogue` today. **Not deprecated, not T1–T3 only, not T0–T9** — the prior
+version of this section carried all three errors; corrected here, not left standing (§0's own
+banner above records the range half of the correction).
 
+- **T0 — Divine Image and Created Design:** God-relation, created purpose, image-bearer expression,
+  typological significance.
 - **T1 — Definition:** name/naming, kind, boundary, modes of operation, immediate response,
   sustained effect, conditions of reception.
 - **T2 — Constitutional Location and Boundaries:** spirit-level location, body-direction,
   origin/source, constitutional movement.
 - **T3 — The Inner Faculties:** perception, cognition, memory, affect, creativity, volition,
   agency, moral evaluation, conscience, conscientiousness, relational capacity.
+- **T4 — Relational Interfaces:** divine interface (both directions), human interface (giving/
+  receiving/boundaries), spiritual-beings interface.
+- **T5 — Formative and Developmental Dimension:** nature of transformation, sequence of inner
+  states, mechanism of change, suffering/affliction, formation/sanctification, eschatological
+  trajectory.
+- **T6 — Structural Relationships with Other Characteristics:** co-occurrence, sequential
+  relationships, causal/constitutive relationships, vocabulary/root sharing, distinctions from
+  neighbours.
+- **T7 — Evidential and Methodological Foundation:** lexical/semantic analysis, verse and literary
+  interpretation.
 
 (T0 and T4–T9 exist in the same catalogue but operate at the characteristic/theological-synthesis
 grain, out of scope for this extract — omitted as out of scope, not overlooked. One live discipline

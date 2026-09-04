@@ -46,6 +46,7 @@ import pathlib
 from .base import Ctx, Outcome, ok, fail, escalate
 from ..lib import escalation as esc, reportkit, passagetrack, versespanmeaningreport
 from ..lib.debateaudit import log_change as _log_change
+from ..lib.cfg import DB_PATH
 
 
 def _now() -> str:
@@ -422,3 +423,111 @@ def debate_sync(ctx: Ctx) -> Outcome:
     changed = "" if new_status == prior_status else f" (was {prior_status!r})"
     return ok(f"{path} re-checked — debate_status={new_status!r}{changed}",
              path=str(path), passage_id=passage_id, debate_status=new_status)
+
+
+# ── passage.suggest_boundary ──────────────────────────────────────────────────────────────────
+# Escalation #1383, build spec §C.3/§B.12. Read-only, no table write (cfg_write_grant has no row
+# for this step) — proposes a candidate NEXT passage boundary from cheap mechanical proxy signals
+# only (narrative_morph density, the legacy bible_research.db.verse.genre book-level tag, a
+# chapter-boundary stop) — explicitly NOT the real genre determination
+# (`proxy-signals-not-genre-determination`), which still happens as lexical.enrich's own first
+# move once the passage is confirmed. Human-confirmation gate: this only ever proposes; the
+# researcher confirms/adjusts, `passage.build` (unchanged) still does the actual registration
+# (`human-confirmation-gate`).
+#
+# **First-cut heuristic, not yet tuned against real data** (named plainly, not overclaimed): the
+# "coherence" test below is a simple binary — does this verse's own narrative_morph density sit on
+# the same side of a >0/=0 split as the block's first verse? A real threshold/banding scheme would
+# need tuning against a real corpus sample, which is exactly the kind of thing this build's own
+# standing constraint defers to a fresh, separate testing session, not decided here.
+def _research_db_path(iba_conn) -> str:
+    import json as _json
+    row = iba_conn.execute(
+        "SELECT value FROM cfg_setting WHERE key='database.bible_research.path'").fetchone()
+    if not row:
+        raise RuntimeError("no database.bible_research.path setting -- run Start-Iba.ps1 first")
+    rel = _json.loads(row[0])
+    repo_root = DB_PATH.resolve().parent.parent.parent.parent
+    return str(repo_root / rel)
+
+
+def _legacy_genre_tag(ctx: Ctx, osis: str) -> str | None:
+    """Cross-database read (governance.scope_iba_db: iba.db owns process control, but the legacy
+    coarse genre tag itself still lives in bible_research.db.verse — same cross-db read pattern
+    `cataloguewrite.py`/`prosestore.py` already established). Best-effort: returns None (never
+    raises) if the legacy DB/table/row isn't reachable — a proxy signal going missing narrows the
+    proposal's own signal_summary, it never blocks the suggestion."""
+    import sqlite3 as _sqlite3
+    try:
+        path = _research_db_path(ctx.db.conn)
+        rconn = _sqlite3.connect(path)
+        try:
+            row = rconn.execute(
+                "SELECT genre FROM verse WHERE osisId=?", (osis,)).fetchone()
+            return row[0] if row else None
+        finally:
+            rconn.close()
+    except Exception:
+        return None
+
+
+def suggest_boundary(ctx: Ctx) -> Outcome:
+    book = ctx.params["Book"]
+    max_verses = int(ctx.cfg.required_module_setting("cfg_passage", "passage.max_verses"))
+
+    start = ctx.db.rows(
+        "SELECT id, osisId, chapter, verse FROM verse WHERE osisId LIKE ? AND deleted=0 "
+        "AND id NOT IN (SELECT verse_id FROM verse_passage WHERE deleted=0) "
+        "ORDER BY chapter, verse LIMIT 1", (f"{book}.%",))
+    if not start:
+        return fail("book-complete",
+                   f"every verse in {book} already belongs to a live passage — nothing to suggest")
+    start = start[0]
+
+    candidates = ctx.db.rows(
+        "SELECT id, osisId, chapter, verse FROM verse WHERE osisId LIKE ? AND deleted=0 "
+        "AND chapter=? AND verse >= ? ORDER BY verse", (f"{book}.%", start["chapter"], start["verse"]))
+
+    def density(verse_id: int) -> float:
+        rows = ctx.db.rows(
+            "SELECT COUNT(*) n, SUM(CASE WHEN narrative_morph IS NOT NULL THEN 1 ELSE 0 END) hit "
+            "FROM verse_lexical WHERE verse_id=? AND deleted=0", (verse_id,))
+        n, hit = rows[0]["n"], rows[0]["hit"] or 0
+        return (hit / n) if n else 0.0
+
+    block: list[dict] = []
+    baseline_side = None
+    genre_tags: set[str] = set()
+    for v in candidates:
+        d = density(v["id"])
+        side = d > 0
+        if baseline_side is None:
+            baseline_side = side
+        elif side != baseline_side:
+            break
+        if len(block) >= max_verses:
+            break
+        block.append(v)
+        tag = _legacy_genre_tag(ctx, v["osisId"])
+        if tag:
+            genre_tags.add(tag)
+
+    if not block:
+        return fail("no-stable-boundary",
+                   f"could not find a stable boundary starting at {start['osisId']} — manual "
+                   f"passage.build registration needed")
+
+    end = block[-1]
+    end_ref = f"{end['chapter']}:{end['verse']}"
+    start_ref = f"{start['chapter']}:{start['verse']}"
+    summary = {
+        "narrative_morph_density_side": "present" if baseline_side else "absent",
+        "legacy_genre_tags_seen": sorted(genre_tags),
+        "stopped_at": ("book-boundary" if len(block) == len(candidates) else
+                      ("verse-cap" if len(block) >= max_verses else "signal-break")),
+    }
+    proposal = {"book": book, "start_ref": start_ref, "end_ref": end_ref,
+               "verse_count": len(block), "signal_summary": summary}
+    return ok(f"{book} {start_ref}-{end_ref}: {len(block)} verse(s) proposed — {summary} — "
+             f"confirm with Build-Passages.ps1 -Suggest -Confirm, or adjust -Chapters/-Range and "
+             f"resubmit", **proposal)

@@ -3357,3 +3357,71 @@ rewritten to describe the single enforced path and cite the check by name, `enfo
 corrected `partially_enforced` → `mechanically_enforced`. The 4 original items
 (#1373/#1316/#1366/#1375) were then actually corrected to the required shape, not handed back a
 second time wrong.
+
+## §72. Verse-lexical Window 1 Layer 1/Layer 2 build — `lexical.enrich`, `passage.suggest_boundary`, `verse_lexical_note` (2026-09-04, escalation #1383, Developer Mode)
+
+Researcher, verbatim, Developer Mode session: *"you will now complete the outstanding build work in
+escallation 1383 and 1444."* #1383's own full build specification
+(`iba/docs/1383-verse-lexical-window1-full-build-specification-v1-20260904.md`, sections a-i, 26
+escalation versions of design/propose/test-plan cycles behind it) built as specified, with a small
+number of implementation-shape corrections made against it live (each documented at its exact
+location in the migration's own docstring, not silently applied): `passage.max_verses` lives in
+`cfg_passage`, not the generic `cfg_setting` (matching every sibling `passage.*` setting already
+there, correcting the design doc's own generic table header); `passage.genre`/
+`lexical_complete_at` landed at `cfg_column` ordinals 20/21, not the doc's assumed 24/25 (a
+pre-existing `cfg_column` registration gap for `passage` — 4 live columns with no `cfg_column` row
+at all — found here, flagged, not fixed here); `lexical.enrich` lives in a new
+`lib/lexicalenrich.py` module, not appended to `lib/lexical.py`.
+
+**What was built:** `verse_lexical` +8 columns (`position`/`surface`/`language`/`testament`/
+`is_negator`/`narrative_morph`/`gloss_consistent_in_verse`/`party_kind`), `passage` +2 columns
+(`genre`/`lexical_complete_at`), 2 new tables (`verse_lexical_note`, `cfg_lexical_code_class` —
+the latter `category='rule'`, `configmaint.propose`-gated, per a correction found writing the
+migration: the design doc proposed it as plain `data`), 4 new `cfg_enum` groups (28 values, 2 of
+them — `recurrence_role_shift`/`cross_lemma_shared_gloss` `note_type` values — from `1446` §2c's
+own candidate refinements, folded into #1383 v26 before this build started), 4 new `cfg_step` rows
+(`lexical.enrich`/`passage.suggest_boundary`/`report.lexical_exceptions`/`report.lexical_extract`),
+19 new `cfg_method_rule` rows, 2 new `cfg_write_grant` rows, `cfg_report`/`cfg_report_section` rows
+for the exception report. The H0853 role bug (10,521 rows misclassified `role='content'`, should be
+`'function'` — the Hebrew direct-object marker) was fixed live, and the whole existing corpus
+(552,353 live `verse_lexical` rows, effectively the whole Bible, already built by an earlier
+full-Bible pass) was backfilled with the 8 new columns' real values — not left NULL until each
+book's next `lexical.build` re-run.
+
+**Two real bugs caught live, not shipped:** the `narrative_morph` LIKE patterns in the first draft
+of the backfill SQL had one wildcard too many (checked `morph_code` index 4, not index 3 — silently
+matched nothing against Exod.14.31/15.1's own already-hand-verified wayyiqtol cases); the
+`is_negator`/`party_kind` lookups compared `strong` to the seeded lexicon by exact string, missing
+every code carrying STEP's own optional variant-letter suffix (`H3068G`, `H0430G`, ...) — both
+caught by spot-checking the backfill's own output against the escalation's own prior hand-verified
+findings (Gal.5.16-17, Exod.14.31/15.1/15.2, Dan.1.8), fixed, re-verified, and confirmed by an
+independent live re-run of the extended `lexical.build` code path itself (`build_for_verse_ids`
+against the same 6 verses) producing byte-identical output to the corrected backfill.
+
+**Deliberately not resolved this pass** (build spec §i, restated here, not silently dropped):
+`party_human`/`party_angelic` lexicons unseeded (blocks `T4.3.1`/`T4.4.1`/`T4.6.1`-class
+questions); `verse_lexical_note` stays off `debate_change_detail`'s audit trail (no downstream FK
+dependent yet, matches `verse_lexical`'s own convention); no new `note_type` for the "verb
+triggered-by/impacts" gap. **Found live, not this build's job to fix:** `passage.build`'s own
+`no-hibs` gate still blocks `passage.suggest_boundary`'s own proposals from ever being confirmed on
+a book with no Window-2 `hib.set` data yet — a real Window-1/Window-2 coupling this build's own
+banner correction (§1383 v23) says shouldn't exist, left exactly as found (`passage.build` is
+Window-2 debate-pipeline code, out of this build's scope to redesign).
+
+**Testing — deliberately deferred, per the Developer Mode standing constraint** ("work built this
+session is never tested in this same session"): beyond the live data-correctness spot-checks above
+(which are build verification, not feature testing — they directly affect already-stored
+analytical data), `lexical.enrich`/`passage.suggest_boundary`/the two new report steps have not
+been run end-to-end through `run.py`/the PS scripts in this session. Test plan filed:
+`iba/docs/1383-window1-layer1-layer2-test-plan-v1-20260904.md` — run in a fresh, standard-permission
+session per that standing constraint, results recorded there and in the escalation's own resolution
+once complete.
+
+**Files:** `iba/app/migration/build_verse_lexical_window1_layer1_layer2_v1_20260904.py` (new,
+schema+config+backfill), `iba/app/lib/lexical.py` (H0853 exception, 8 new fields computed for every
+future build), `iba/app/lib/lexicalenrich.py` (new), `iba/app/handlers/lexical.py` (`enrich`),
+`iba/app/handlers/passage.py` (`suggest_boundary`), `iba/app/handlers/reports.py`
+(`lexical_exceptions_report`, `lexical_extract`), `iba/app/ps/VerseLexical.ps1` (`-PayloadPath`,
+`-Step` widened), `iba/app/ps/Build-Passages.ps1` (`-Suggest`/`-Confirm`), `iba/app/USER-GUIDE.md`
+(§12b-ii/§12b-iii), `iba/app/db/iba.db` (schema + config rows above; 552,353 `verse_lexical` rows
+backfilled; 10,521 `role` corrections).

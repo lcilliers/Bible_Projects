@@ -907,6 +907,85 @@ HIB label already does.
 
 ---
 
+## 12b-ii. Verse-lexical enrichment — Layer 2 judgement (`lexical.enrich`, added 2026-09-04, escalation #1383)
+
+**Window 1 only — never determines phenomenon/HIB status.** `lexical.build` (§12b Step 1) is Layer
+1: mechanical, no judgement, one row per code. `lexical.enrich` is Layer 2: still Window 1 (never
+an inner-being/HIB concept — that stays entirely Window 2's `hib`/`phenomenon`/`operation`), but
+judgement-bearing — idiom sense, related-word sorting, pronoun/entity resolution, structural
+patterns, genre. Writes `verse_lexical_note` rows plus `passage.genre`/`lexical_complete_at`, one
+already-registered **passage-block** (≤20 verses, `cfg_passage.passage.max_verses`) at a time — the
+analytical judgement itself is made by the AI/researcher reading pass BEFORE this runs; this step
+mechanises turning that already-decided reading into validated, grant-checked rows, the same
+"payload in, structured rows out" shape `Debate-Run.ps1`'s own steps already use.
+
+```powershell
+# 1. a live passage must already cover the exact range (Build-Passages.ps1 / passage.build,
+#    §12b-iii below for how to find/propose one) -- lexical.build must already have run for it.
+iba\app\ps\VerseLexical.ps1 -Book Dan -Range 1:1-8 -Step lexical.enrich `
+    -PayloadPath iba\app\staging\lexical\dan-1-1-8.json
+
+# 2. the exception report -- what's unresolved/unclassified/checked_empty from that run, a plain
+#    symmetric tally, never a "confirms/validates" highlights reel
+iba\app\ps\VerseLexical.ps1 -Book Dan -Range 1:1-8 -Step report.lexical_exceptions
+
+# 3. the Phase-2 JSON extract -- feeds Stage 2 input assembly, multi-filter (passage/verse/
+#    surface/strong), never an unbounded full-corpus dump
+iba\app\ps\VerseLexical.ps1 -Step report.lexical_extract -VerseFilter "Gal.5.16-Gal.5.17"
+```
+
+Payload shape (`notes`/`remove`, keyed by `verse`+`position`+`code_ordinal` — the `position`/
+`code_ordinal` verse_lexical columns, not a free-text reference): each note carries `note_type`
+(`idiom`/`pronoun_resolution`/`noun_relational`/`noun_severity`/`chain`/`connective`/
+`related_word`/`polarity`/`entity_link`/`inert`/`structural_pattern`/`recurrence_role_shift`/
+`cross_lemma_shared_gloss`), `resolution_status` (`resolved`/`unresolved`/`unclassified`/
+`not_supported_this_language`/`checked_empty`), `finding`/`evidence` text, and — for
+`pronoun_resolution`/`entity_link`/`recurrence_role_shift` — an optional `target_verse`+
+`target_position` (may point at ANY verse in the currently-loaded passage-block, not just the same
+verse); `structural_pattern`/`recurrence_role_shift` instead take `related_codes` (a list of
+`{verse, position}`, ≥2 entries). A `changed` note (same verse_lexical_id+note_type, different
+content) needs a `reconciliation_note`; every pre-existing note for the block must be repeated or
+listed under `remove` with a `reason` — an unaddressed one is a hard stop (`unreconciled`), not a
+silent drop. The block is only marked `lexical_complete_at` once every applicable code has ≥1 live
+note (a finding, or an explicit `checked_empty`/`not_supported_this_language`/`unresolved`) —
+`incomplete-block` otherwise, naming which codes are still missing.
+
+**Mechanical columns, always on `verse_lexical` itself, no payload needed:** `position`/`surface`/
+`language`/`testament`/`is_negator`/`narrative_morph`/`gloss_consistent_in_verse`/`party_kind` are
+all computed by `lexical.build` (Layer 1) for every code, unconditionally — the negator/connective/
+divine-name lexicon they read from is `cfg_lexical_code_class` (grown via `configmaint.propose`,
+same as every other `cfg_*` table; currently seeded: 7 negator codes, 6 connective codes across 3
+classes, 7 divine-name codes — `party_human`/`party_angelic` are not yet seeded, so
+`party_kind='human'`/`'non_human'` never fires until they are).
+
+## 12b-iii. Proposing the next passage boundary (`-Suggest`, `Build-Passages.ps1`, added 2026-09-04, escalation #1383)
+
+`passage.build` (§12b, Step 2's own prerequisite) still requires an explicit `-Chapters`/`-Range` —
+`-Suggest` is an optional first move that proposes one, from cheap mechanical proxy signals only
+(narrative_morph density, the legacy book-level genre tag, a chapter-boundary stop) — **explicitly
+NOT the real genre determination**, which still happens as `lexical.enrich`'s own first move once
+the passage is confirmed:
+
+```powershell
+# propose only -- no table write, pauses (exit 2) for you to confirm or adjust
+iba\app\ps\Build-Passages.ps1 -Book Gal -Suggest
+
+# accept the suggestion verbatim, straight into passage.build (still needs its own payload)
+iba\app\ps\Build-Passages.ps1 -Book Gal -Suggest -Confirm -PayloadPath iba\app\staging\passages\gal-next.json
+
+# or ignore the suggestion and register your own scope, exactly as before
+iba\app\ps\Build-Passages.ps1 -Book Gal -Range 5:16-17 -PayloadPath iba\app\staging\passages\gal-5.json
+```
+
+**Known dependency, not yet resolved (flagged live building this, not silently worked around):**
+`passage.build` itself still refuses (`no-hibs`) any scope with no `verse_hib` data — i.e. `hib.set`
+(Window 2, Debate-Run.ps1 Step 1) must already have run for that scope. `-Suggest` proposes a
+range on Window-1-only signals, but confirming it still hits that same Window-2 gate underneath —
+a real, currently-live coupling between the two windows this build did not attempt to redesign
+(out of scope; `passage.build`'s own gate is Window 2 debate-pipeline code).
+
+---
+
 ## 12c. Inner-being narrative — structural check (`BookNarrative-Validate.ps1`, added 2026-07-30)
 
 Narrative writing itself is unmechanised analytical work (no pipeline produces it) — this is a

@@ -1,0 +1,286 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260904T201922Z-PROSE-GLOSSARY-T-SCHEME",
+    "patch_type": "PROSE",
+    "produced_at": "2026-09-04T20:19:22Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Insert 18 glossary entries (9 [VRT] T1-T9, 8 [TC] T0-T7, 1 disambiguation 'T1') per escalation #1447 v4 full-scope approval."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-INSERT-01-T1_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T1 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Work from the row, not the gloss -- step T1 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] The unit of analysis is the row (surface + strong + morph + full meaning_tree/stepGloss), not the English translation printed above the table. The translation orients the reader; it is not the evidence. Do not extract English clauses and match them against a keyword checklist; do not dilute or compromise reading quality; do not skip, ignore, or bypass rows; read each row in the context of the nearby rows, not in isolation. A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T1 (a different, characteristic-grain scheme -- see 'TT1 (Tier Catalogue)').",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-02-T2_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T2 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Pull the full lexical range before assigning a sense -- step T2 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] Read the word's entire meaning_tree entry for its Strong's code(s), not just the stepGloss or the one sense the English translation happens to use. Record explicitly when a sense the English translation does not use is already a standing member of the word's own lexical range (stated via the lexicon, not inferred from metaphor/imagery), and when the range is genuinely ambiguous across senses that matter for this verse (name the live senses and reason which is operative, rather than silently picking one). A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T2 (a different, characteristic-grain scheme -- see 'TT2 (Tier Catalogue)'). Also distinct from the [CC] cluster_code T2 (a Strong's-code classification -- see the bare 'T2' entry).",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-03-T3_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T3 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Let morph decide voice, person, and aspect -- step T3 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] Read the morph code for every verb before deciding tense or voice -- never the English word order or tense. Perfect vs. imperfect vs. participle carry different aspectual force (a passive participle is a durative/ongoing condition, not a future event) -- check this against the English translation's own tense and correct where they diverge. Person/number decides the actual grammatical subject, never inferred from an English pronoun alone. Voice decides whether the subject acts or is acted upon. A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T3 (a different, characteristic-grain scheme -- see 'TT3 (Tier Catalogue)'). Also distinct from the [CC] cluster_code T3 (a Strong's-code classification -- see the bare 'T3' entry).",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-04-T4_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T4 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Referent cruxes -- step T4 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] When a pronoun or unnamed party is genuinely ambiguous (several readings all grammatically live), do not silently resolve it and do not default to the most obvious English reading: enumerate every grammatically/contextually live reading; give the textual grounds for each; adopt one explicitly, stating why and whether the choice is a directed/researcher call or this pass's own default; keep the rejected alternatives on record, not just the winner. A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T4 (a different, characteristic-grain scheme -- see 'TT4 (Tier Catalogue)').",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-05-T5_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T5 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Genre-conventional elements -- step T5 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] Record the genre-conventional elements of the verse or passage as an observation -- including elements expected by the genre but textually absent. Do not pass over these elements silently. A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T5 (a different, characteristic-grain scheme -- see 'TT5 (Tier Catalogue)').",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-06-T6_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T6 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Stamp human-being words (IB) -- step T6 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] Stamp every word that explicitly points to a human being with IB. Other non-human beings are more likely to be stamped Agent (T7) -- only human-being words are stamped IB. A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T6 (a different, characteristic-grain scheme -- see 'TT6 (Tier Catalogue)').",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-07-T7_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T7 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Stamp causing-action words (Agent) -- step T7 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] Stamp every word (the noun) that is the causing action as Agent. Note that an IB (T6) can itself be an Agent for another IB. A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T7 (a different, characteristic-grain scheme -- see 'TT7 (Tier Catalogue)').",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-08-T8_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T8 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Stamp inner-being-related words (Process) -- step T8 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] Stamp every word that relates to any IB in the verse with Process -- including state/condition/faculty words tied to an IB. A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T8 (a different, characteristic-grain scheme -- see 'TT8 (Tier Catalogue)').",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-09-T9_Verse_Reading_Technique",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T9 (Verse Reading Technique)",
+        "body": "[DEFINITION] [VRT] Stamp action-verb words (Action) -- step T9 of the Verse Reading Technique v4 (a 9-step, T1-T9 per-verse analytical technique).\n\n[BACKGROUND] Stamp every action word (the verb) with Action. A word can carry multiple stamps; stamps (T6-T9) are indicative and preliminary, not conclusive -- they do not determine which IB is affected by which Agent, or how it relates to a Process (that follows later in the study). Source: iba/docs/WA-verse-reading-technique-v4-2026-08-05.md. Distinct from the [TC] tier-catalogue T9 (a different, characteristic-grain scheme -- see 'TT9 (Tier Catalogue)').",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-10-T0_Tier_Catalogue",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T0 (Tier Catalogue)",
+        "body": "[DEFINITION] [TC] Divine Image and Created Design -- tier T0 of the tier catalogue (a T0-T7 characteristic-grain catalogue of observation questions).\n\n[BACKGROUND] God-relation (is the characteristic predicated of God, in what relation), created purpose (what it leads the person to be/do/become), image-bearer expression (what aspect of divine likeness it instantiates), typological significance. Source: Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md (checked live 2026-09-04, escalation #1447: its own header names it the authoritative current question list, its obs_ids match wa_obs_question_catalogue live today -- NOT deprecated, and its own range is T0-T7, not T0-T9, correcting an earlier claim in iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md). Distinct from the [VRT] Verse Reading Technique T0 -- see 'TT0 (Verse Reading Technique)'.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-11-T1_Tier_Catalogue",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T1 (Tier Catalogue)",
+        "body": "[DEFINITION] [TC] Definition -- tier T1 of the tier catalogue (a T0-T7 characteristic-grain catalogue of observation questions).\n\n[BACKGROUND] Name and naming, kind (act/disposition/condition/quality), boundary (structural opposite, what it excludes), modes of operation, immediate response, sustained effect, conditions of reception. Source: Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md (checked live 2026-09-04, escalation #1447: its own header names it the authoritative current question list, its obs_ids match wa_obs_question_catalogue live today -- NOT deprecated, and its own range is T0-T7, not T0-T9, correcting an earlier claim in iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md). Distinct from the [VRT] Verse Reading Technique T1 -- see 'TT1 (Verse Reading Technique)'.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-12-T2_Tier_Catalogue",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T2 (Tier Catalogue)",
+        "body": "[DEFINITION] [TC] Constitutional Location and Boundaries -- tier T2 of the tier catalogue (a T0-T7 characteristic-grain catalogue of observation questions).\n\n[BACKGROUND] Spirit-level location (spirit/soul/heart/mind/body), body-direction where a body link exists, origin/source, constitutional movement across levels. Source: Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md (checked live 2026-09-04, escalation #1447: its own header names it the authoritative current question list, its obs_ids match wa_obs_question_catalogue live today -- NOT deprecated, and its own range is T0-T7, not T0-T9, correcting an earlier claim in iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md). Distinct from the [VRT] Verse Reading Technique T2 -- see 'TT2 (Verse Reading Technique)'. Also distinct from the [CC] cluster_code T2 -- see the bare 'T2' entry.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-13-T3_Tier_Catalogue",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T3 (Tier Catalogue)",
+        "body": "[DEFINITION] [TC] The Inner Faculties -- tier T3 of the tier catalogue (a T0-T7 characteristic-grain catalogue of observation questions).\n\n[BACKGROUND] Perception, cognition, memory, affect, creativity, volition, agency, moral evaluation, conscience, conscientiousness, relational capacity -- does the characteristic engage each faculty, and how. Source: Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md (checked live 2026-09-04, escalation #1447: its own header names it the authoritative current question list, its obs_ids match wa_obs_question_catalogue live today -- NOT deprecated, and its own range is T0-T7, not T0-T9, correcting an earlier claim in iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md). Distinct from the [VRT] Verse Reading Technique T3 -- see 'TT3 (Verse Reading Technique)'. Also distinct from the [CC] cluster_code T3 -- see the bare 'T3' entry.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-14-T4_Tier_Catalogue",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T4 (Tier Catalogue)",
+        "body": "[DEFINITION] [TC] Relational Interfaces -- tier T4 of the tier catalogue (a T0-T7 characteristic-grain catalogue of observation questions).\n\n[BACKGROUND] Divine interface both directions (God-to-human, human-to-God), human interface (giving/receiving/boundaries), spiritual-beings interface (angelic/adversarial). Source: Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md (checked live 2026-09-04, escalation #1447: its own header names it the authoritative current question list, its obs_ids match wa_obs_question_catalogue live today -- NOT deprecated, and its own range is T0-T7, not T0-T9, correcting an earlier claim in iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md). Distinct from the [VRT] Verse Reading Technique T4 -- see 'TT4 (Verse Reading Technique)'.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-15-T5_Tier_Catalogue",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T5 (Tier Catalogue)",
+        "body": "[DEFINITION] [TC] Formative and Developmental Dimension -- tier T5 of the tier catalogue (a T0-T7 characteristic-grain catalogue of observation questions).\n\n[BACKGROUND] Nature of transformation, sequence of inner states, mechanism of change, suffering/affliction, formation/sanctification, eschatological trajectory. Source: Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md (checked live 2026-09-04, escalation #1447: its own header names it the authoritative current question list, its obs_ids match wa_obs_question_catalogue live today -- NOT deprecated, and its own range is T0-T7, not T0-T9, correcting an earlier claim in iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md). Distinct from the [VRT] Verse Reading Technique T5 -- see 'TT5 (Verse Reading Technique)'.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-16-T6_Tier_Catalogue",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T6 (Tier Catalogue)",
+        "body": "[DEFINITION] [TC] Structural Relationships with Other Characteristics -- tier T6 of the tier catalogue (a T0-T7 characteristic-grain catalogue of observation questions).\n\n[BACKGROUND] Co-occurrence, sequential relationships, causal/constitutive relationships, vocabulary/root sharing, distinctions from the nearest neighbouring characteristic. Source: Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md (checked live 2026-09-04, escalation #1447: its own header names it the authoritative current question list, its obs_ids match wa_obs_question_catalogue live today -- NOT deprecated, and its own range is T0-T7, not T0-T9, correcting an earlier claim in iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md). Distinct from the [VRT] Verse Reading Technique T6 -- see 'TT6 (Verse Reading Technique)'.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-17-T7_Tier_Catalogue",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T7 (Tier Catalogue)",
+        "body": "[DEFINITION] [TC] Evidential and Methodological Foundation -- tier T7 of the tier catalogue (a T0-T7 characteristic-grain catalogue of observation questions).\n\n[BACKGROUND] Lexical and semantic analysis (primary terms, grammatical/semantic range, vocabulary arc), verse and literary interpretation (sentence/argument function, genre). Source: Workflow/Tiers/wa-tier-catalogue-restructured-v2-20260611.md (checked live 2026-09-04, escalation #1447: its own header names it the authoritative current question list, its obs_ids match wa_obs_question_catalogue live today -- NOT deprecated, and its own range is T0-T7, not T0-T9, correcting an earlier claim in iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md). Distinct from the [VRT] Verse Reading Technique T7 -- see 'TT7 (Verse Reading Technique)'.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-INSERT-18-T1",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id_lookup": {
+          "code": "glossary_programme"
+        },
+        "heading": "T1",
+        "body": "[DEFINITION] Ambiguous on its own -- T1 has no [CC] cluster_code meaning (checked live: only T2/T3 exist in that scheme). Two real, unrelated meanings exist: see 'T1 (Verse Reading Technique)' (work from the row, not the gloss) and 'T1 (Tier Catalogue)' (Definition, characteristic-grain).\n\n[BACKGROUND] Added per escalation #1447's own finding (v2/v3): a reader hitting bare 'T1' anywhere in the project's docs had no glossary entry to check at all, unlike T2/T3 which already had (cluster_code) entries even before this build. This entry exists to be found by that search, not to declare a third meaning.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\"}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 18,
+    "prose_section_inserted": 18
+  }
+}
