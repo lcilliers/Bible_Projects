@@ -10,6 +10,8 @@ WHERE state not in ('completed','withdraw','closed','supersede');
 SELECT * FROM escalation 
 WHERE id in (920);
 --closed escalations
-SELECT id, related_activity, resolution, short_description, type, state FROM escalation 
-WHERE state in ('completed','withdraw','closed','supersede');
+SELECT id, answered_at, resolution, short_description, type, state FROM escalation 
+WHERE state in ('completed','withdraw','closed','supersede')
+order by answered_at desc;
+
 

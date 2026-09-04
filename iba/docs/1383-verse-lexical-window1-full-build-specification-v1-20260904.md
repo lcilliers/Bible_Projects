@@ -1,5 +1,34 @@
 # Verse-lexical Window 1 (Stage 1) — full build specification (v1)
 
+> **★ CORRECTION (researcher, 2026-09-04, escalation #1383 v23) — the Window 1/Window 2 boundary
+> stated throughout this document is wrong, and has been consistently wrong across this escalation's
+> whole record.** The boundary was drawn as a **mechanical** one — Layer 1 "mechanical" vs. Layer 2
+> "judgement," with anything not cleanly mechanical treated as ambiguous or "adjacent" to Window 1.
+> **The actual boundary is definitional, not mechanical:** `verse_lexical`/`verse_lexical_note` (this
+> whole document's subject) can **never** carry an inner-being concept, by definition — and **nothing
+> in Window 1 ever determines whether something is a phenomenon.** Layer 1 and Layer 2 are **both**
+> Window 1 regardless of how mechanical or judgement-bearing the work is; that split is an internal
+> Window-1 distinction (how the work gets done), never the Window-1/Window-2 line (what the work is
+> about). Three concrete consequences, applied below at their exact locations, not just stated here:
+> 1. **§(h)'s `passage_emergent_question` open item is not a 50/50 choice.** A `lexical.enrich →
+>    passage_emergent_question` write grant would have Window 1 writing into a table whose purpose is
+>    inner-being-adjacent emergent questions — the wrong side of the line. The consistent answer is
+>    the second option already on record: hold structural findings in `verse_lexical_note`
+>    (`note_type='structural_pattern'`) only, surfaced to Window 2's `closing.set` payload author via
+>    the exception report — never a direct Window-1 write into `passage_emergent_question`.
+> 2. **§(i) item 3 (the `phenomenon`/`operation` FK link) is not "deferred Window 1 scope."** It was
+>    never Window 1's decision to make. `phenomenon`/`operation` are themselves inner-being objects;
+>    a link from them into Window 1's tables is Window 2 reaching into Window 1's data, and the
+>    link's design belongs entirely to Window 2's own build cycle — not reconfirmed here as "still
+>    deferred" the way item 3's current text does, corrected below.
+> 3. **The aggregation/rollup layer (design doc/#1383 v12-v13, ~20 catalogue questions) is Window 2
+>    work**, not a Window-1 extension — not itself named as a row in this document's schema, but
+>    referenced in the knock-on/open-items framing closely enough to need the same correction.
+>
+> Full record and the same correction applied to `iba/docs/1446-verse-word-analytic-methods-extract-
+> v2-20260904.md`: escalation #1383 v23, #1446. This banner is the fix for this document; the
+> specific table rows below are also corrected in place, not left to rely on the banner alone.
+
 **Filename:** 1383-verse-lexical-window1-full-build-specification-v1-20260904.md
 **Escalation:** #1383
 **Instruction this document answers, verbatim (researcher, 2026-09-04):** the existing design/
@@ -314,7 +343,42 @@ payload-driven." New: `passagesuggest` (or folded into `lib/passage.py`, updatin
 `cfg_utility` row) / purpose "boundary-suggester: proposes the next candidate passage from cheap
 mechanical proxy signals."
 
----
+### B.18 — new rows completing `1446` §2c's candidate refinements
+
+**Researcher instruction, verbatim, 2026-09-04:** "the design proposal at this point does not take
+1446 2a, 2b, and 2c full into account."
+
+Checked against `1446-verse-word-analytic-methods-extract-v2-20260904.md` §2c item by item. Three
+of its five candidates already had a real home in this document (the `az`+imperfect chain signal —
+§B.5's `narrative_morph` field; the connective 3-way split — §B.9's `lexical_code_class` enum, §D.2's
+quality rule; genre and the connective calibration are both already built into §C.2). **Two had no
+home at all — added here, not previously in any version of this document:**
+
+| new `note_type` value | ordinal | What it tests | Source (1446 §2c) |
+|---|---|---|---|
+| `recurrence_role_shift` | 11 | the same `(strong, morph_code)` pair recurs ≥2 times in one verse, but its grammatical/rhetorical **role** shifts across occurrences (e.g. subject → object → predicate) — a genuine judgement call (does the shift carry rhetorical weight, or is it incidental repetition), not mechanical | `G3056` (John 1:1, "Word": subject → object → predicate); `G2222` (John 1:4, "life": subject → predicate) |
+| `cross_lemma_shared_gloss` | 12 | two **different** `(strong, morph_code)` pairs in the same verse resolve to the same English gloss — the inverse of the existing `gloss_consistent_in_verse` mechanical check (same code, different gloss); this is different code, same gloss, and stays a judgement call (Layer 2) rather than a mechanical column because confirming it's a real distinct-lemma coincidence, not a data error, needs the same related-word cross-check the original finding used | `G1937` (Gal 5:17) vs. `G1939` (Gal 5:16) — both "desire," confirmed live as two genuinely distinct Greek roots |
+
+**`cfg_method_rule` additions, `step='lexical.enrich'`** (alongside B.14's existing rows):
+
+| rule_key | rule_text | source_doc |
+|---|---|---|
+| `recurrence-role-shift-is-judgement-not-mechanical` | "A `recurrence_role_shift` note is written only when the same-code recurrence's role change is judged rhetorically significant (e.g. contributes to the verse's own argument or imagery), not for every mechanical repetition of a code — plain repeated function words (e.g. repeated `H9003` prepositional prefixes) never qualify. `resolution_status` is `resolved` when the shift is judged significant, `checked_empty` when the same code recurs with no meaningful role shift (recorded, not silently skipped)." | 1446 §2c; validation-applied doc, John 1:1/1:4 |
+| `cross-lemma-shared-gloss-requires-related-word-check` | "A `cross_lemma_shared_gloss` note may only be written after the related-word pull for both codes has been checked (confirming they are genuinely distinct lemmas, not a data-entry duplicate) — mirrors the discipline that caught G1937/G1939 in the first place (the calibration doc's exhaustive related-word pull, not a surface gloss comparison alone)." | 1446 §2c; #1383 v9 calibration doc |
+| `related-word-sorting-language-aware` | "Sorting a `related_word` pull into same-concept/genuine-relative/coincidental is judged differently by language: Hebrew families skew toward root-sharing (triliteral roots, including proper-name-heavy families that are mostly coincidental); Greek families skew toward compound-morphology relationships (e.g. `G2316`'s God-hating/God-fighting/God-breathed compounds, genuinely related by composition). The sorting judgement must account for this difference explicitly, not apply one shape's heuristic to the other language's data." | 1446 §2c; validation-applied doc, Deut 6:5 (`H3824`) vs. John 1:1 (`G3056`/`G2316`) |
+| `boundary-ambiguity-recorded-honestly` | "Where a passage/reading-block's own extent is genuinely ambiguous (a couplet's argument arguably continuing into the next verse, etc.), the ambiguity is recorded explicitly as a judgement call on record — never silently resolved either way by picking the more convenient boundary. Matches the practice already demonstrated live (Prov 3:5-6 vs. extending to 3:7, #1383 v8), now stated as a standing rule rather than left as an unrepeated observation." | 1446 §2c; validation-applied doc, Passage 2 summary |
+
+**`cfg_enum` addition** — `note_type` grows from 11 to 13 values (append to §B.9's existing table):
+`recurrence_role_shift` (ordinal 11), `cross_lemma_shared_gloss` (ordinal 12).
+
+**Cross-verse resolution, confirmed not just demonstrated — §C.2 corrected, not left as an informal
+observation.** 1446 §2b flagged that `pronoun_resolution`/`entity_link` are *specified* as
+same-verse-only but were *demonstrated* resolving correctly at passage-block scope (6 confirming
+instances, #1383's own validation run) — "not yet built into schema" per that document. Checked
+against this document's own §C.2 table: `target_verse` + `target_position` already resolves against
+*any* verse's `verse_lexical` row, not restricted to the source row's own verse — the schema already
+supports passage-scope resolution; §C.2's row is corrected below (this section) to say so explicitly
+rather than leave the impression that cross-verse resolution needs new schema work it does not.
 
 ## (c) The logic — input params, unit-of-reading determination, per-field derivation, tables affected
 
@@ -372,7 +436,7 @@ FKs and enforces the rules, it does not itself judge anything):
 | `verse` + `position` (or `strong`+`code_ordinal`) | `verse_lexical_id` | look up the live `verse_lexical` row for this verse's this code; `unknown-code` if no match |
 | `note_type` | `note_type` | validated against `cfg_enum note_type`; `bad-payload` if not a member |
 | `resolution_status` | `resolution_status` | validated against `cfg_enum resolution_status`; `bad-payload` if not a member |
-| `target_verse` + `target_position` (optional) | `target_verse_lexical_id` | resolved the same way as the source code; `unknown-target` if named but unresolvable — **not** silently dropped |
+| `target_verse` + `target_position` (optional) | `target_verse_lexical_id` | resolved the same way as the source code; `unknown-target` if named but unresolvable — **not** silently dropped. **`target_verse` is explicitly not restricted to the source code's own verse (corrected, §B.18)** — any verse within the passage block currently loaded is a valid target, which is exactly the mechanism `pronoun_resolution`/`entity_link` need to resolve at passage scope (demonstrated live, 6 confirming instances across the validation run) rather than only within one verse |
 | `related_codes` (optional, `structural_pattern` only) | `related_verse_lexical_ids` (JSON array) | each entry resolved the same way; any one unresolvable fails the whole note (`unknown-related-code`) |
 | `finding` | `value_text` | free text, as supplied |
 | `evidence` | `evidence_text` | free text, as supplied |
@@ -437,6 +501,8 @@ code it applies to.
 | `related_word` | every row's `target`/`related` code must actually appear in `strong_related` for the source code — a related_word note naming a code STEP itself never related is a quality defect |
 | `idiom` | `resolution_status IN ('resolved','checked_empty')` only — `unresolved`/`unclassified` are not valid states for this note_type (an idiom test is binary: found or checked-and-absent) |
 | `structural_pattern` | `related_verse_lexical_ids` must contain ≥2 entries (a "pattern" naming only one span is a quality defect — merism/chiasm/parallelism are inherently multi-span) |
+| `recurrence_role_shift` (§B.18) | `target_verse_lexical_id` (or `related_verse_lexical_ids`, if >2 occurrences) must point at the same `(strong, morph_code)` pair as the source row — a role-shift note comparing two *different* codes is a contradiction of what this note_type means |
+| `cross_lemma_shared_gloss` (§B.18) | the source and target rows must have **different** `strong` values and the **same** `resolved_sense` — a same-code pair belongs to `gloss_consistent_in_verse` (§2a), not here; enforcing the distinction mechanically prevents the two checks' findings from being confused with each other |
 
 **Objective-alignment** — per the field-mapping document's own tables (§2 there): every `note_type`
 maps to a named catalogue question or an explicit "no current catalogue question, kept for Window 2
@@ -647,7 +713,7 @@ convention invented for this build.
 |---|---|---|
 | `bible_research.db.wa_obs_question_catalogue` | **Corrected/expanded, 2026-09-04 — this row previously understated the scope.** Three distinct sub-items, not one: (1) new `answered_by` column (needs migration, not yet built); (2) 4 question splits + `T7.2.1` wording fix (catalogue-finishing doc §1-3); (3) **write the Stage-1 field-mapping document's own already-worked-out per-question derivation into `review_note`, for every one of the 27 question codes it names (T0.1.1–T7.2.3) — checked live, this pass: 0/27 have any `review_note` content today; every row's `last_modified` is 2026-08-31 (the Scope-focus classification work), none touched since 2026-09-03's field-mapping pass. The mapping exists only in `1383-verse-lexical-stage1-catalogue-field-mapping-v1-20260903.md`, never applied to the table itself.** Item (3) is immediately actionable now — `review_note` already exists, `obs_catalogue.update` is already registered and ungated — independent of whether/when (1)'s `answered_by` column gets built; (1) is a home for a *rollup* one-liner once it exists, (3) is the underlying derivation text itself. Researcher instruction 2026-09-04: this is the concrete step needed before this knock-on can be called complete. | catalogue-finishing doc §1-3 for (1)/(2); this document + researcher instruction 2026-09-04 for (3) — ordinary content, `obs_catalogue.update` per row, one at a time, not a bulk sweep (matching catalogue-finishing doc §6's own discipline) |
 | `bible_research.db.prose_section` id 64 (glossary) | new entries: `Window 1`/`Window 2` (or `Stage 1`/`Stage 2` per the blueprint's renaming), `verse_lexical` (as a term), `note_type` + its 11 values, `testament` (derived-field sense), `passage` (shared unit), `Layer 1`/`Layer 2`, `party_kind`, `grain` vs. `resolved_sense` cross-reference, `structural_pattern`, `passage boundary suggester`, `cfg_lexical_code_class` | catalogue-finishing doc §5; #1377's own governed chapter-edit cycle (`prosestore.py`) |
-| **`passage_emergent_question`** | **new finding, this document** — if #1443's structural findings are meant to land here at Stage 1 time (the recommendation in the capture-design doc §6), this table currently has exactly ONE writer (`closing.set`), which is gated on Window-2 completeness Stage 1 doesn't have. Either a `lexical.enrich → passage_emergent_question` write grant is added (Stage 1 writes directly, `kind='literary_structural'`, `verse_id` set, `passage_id` set), or the disposition changes to "held in `verse_lexical_note` as `note_type='structural_pattern'` only, surfaced to `closing.set`'s own payload author by the exception report, never written to `passage_emergent_question` directly by Stage 1." **Not decided — see (i).** | governance.new_utility_registration_timing (a new writer needs its own `cfg_write_grant` row either way) |
+| **`passage_emergent_question`** | **new finding, this document — corrected 2026-09-04 (see banner), now decided, not open.** #1443's structural findings stay in `verse_lexical_note` (`note_type='structural_pattern'`) only, surfaced to `closing.set`'s own payload author via the exception report. **A `lexical.enrich → passage_emergent_question` write grant is explicitly rejected**, not left open — `passage_emergent_question` is inner-being-adjacent (Window 2's own emergent-question log, single-writer-gated on Window-2 completeness for exactly that reason); a Window-1 process writing to it directly crosses the definitional boundary regardless of how the write grant might otherwise be justified. | governance.new_utility_registration_timing — no new writer needed, so no new `cfg_write_grant` row for this table |
 | `iba/app/GOVERNANCE.md` | new rules from §B.13-B.15 recorded (governance.governance_md_on_rule_change) | same-unit-of-work rule |
 | `iba/app/BUILD.md` | new build-record entry (governance.build_md_on_code_change) | same-unit-of-work rule |
 | `iba/app/USER-GUIDE.md` | new sections for `lexical.enrich`/`passage.suggest_boundary`/the two new reports | user-guide-updated-same-unit-of-work |
@@ -664,14 +730,15 @@ convention invented for this build.
    it (one shared audit discipline across Window 1 and Window 2), or leave it on `verse_lexical`'s
    own simpler soft-delete-only convention with no separate log row? Not addressed in any prior
    document — found writing this one.
-2. **`passage_emergent_question` write path for Stage 1** (§(h)) — direct new write grant for
-   `lexical.enrich`, or hold structural findings in `verse_lexical_note` only and let Window 2's
-   `closing.set` pick them up later? Also not addressed in any prior document — the capture-design
-   doc recommended routing to "an analogous... log" without checking that the real table already
-   exists and is single-writer-gated the way it is.
-3. **The FK link from `phenomenon`/`operation` back to `verse_lexical`/`verse_lexical_note`** —
-   already recorded as deferred (design doc §5.3, capture-design doc §8), reconfirmed here as still
-   deferred, not reopened.
+2. ~~`passage_emergent_question` write path for Stage 1~~ — **RESOLVED, 2026-09-04 (see banner):**
+   held in `verse_lexical_note` only, no direct write grant for `lexical.enrich`. Moved out of the
+   open list; kept struck through here rather than deleted, so the correction has a visible before.
+3. **The FK link from `phenomenon`/`operation` back to `verse_lexical`/`verse_lexical_note` — reframed
+   2026-09-04 (see banner): this is not a Window-1 item to keep "deferring."** It is Window 2's own
+   design decision, full stop — this document has no further standing to reconfirm or reopen it, and
+   should not list it as one of *this* build's open items going forward; named here only so the
+   correction is visible against the prior text ("already recorded as deferred… reconfirmed here as
+   still deferred, not reopened").
 4. **`resolved_sense` fallback rate** — the capture-design doc's §5 finding (every sampled code in
    the 19-verse validation run hit the flat `stepGloss` fallback) was investigated 2026-09-03 (v18)
    and found to be a **display artefact**, not a real gap (99.999% of live rows genuinely narrow).

@@ -1,5 +1,14 @@
 # Verse-lexical Window 1 enrichment — design + propose (v1)
 
+> **★ CORRECTION (researcher, 2026-09-04, escalation #1383 v23).** This document's Window 1/Window 2
+> framing is wrong wherever it treats the boundary as mechanical (Layer 1 "mechanical" vs. Layer 2
+> "judgement"). The actual boundary is definitional: `verse_lexical`/`verse_lexical_note` can never
+> carry an inner-being concept, and nothing in Window 1 ever decides phenomenon status — Layer 1 and
+> Layer 2 are **both** Window 1 regardless of mechanism. Full correction, applied at its exact
+> locations: `1383-verse-lexical-window1-full-build-specification-v1-20260904.md` (banner + §h/§i).
+> Any FK-link-to-`phenomenon` or aggregation/rollup content in this document is Window 2 work, not
+> Window-1-adjacent — read it that way, not as this document's own scope.
+
 **Filename:** 1383-verse-lexical-enrichment-design-propose-v1-20260903.md
 **Escalation lineage:** #1376 (Characteristic model — cross-db inventory and reconciliation) →
 #1377 (Vocabulary/glossary, seeded from #1376's own glossary) → #1378 (Lexical-to-finding

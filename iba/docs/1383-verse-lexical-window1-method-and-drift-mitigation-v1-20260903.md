@@ -1,5 +1,14 @@
 # Verse-lexical Window 1 — repeatable method and drift-mitigation plan
 
+> **★ CORRECTION (researcher, 2026-09-04, escalation #1383 v23).** This document's "three-layer
+> split" (below) is a real, useful internal distinction — but its own "(3) Reporting" item is **not**
+> a third data layer alongside (1) mechanical facts and (2) judgement-bearing calls, and must not be
+> read that way. It is a **report** over (1)'s and (2)'s already-written rows — no new field, no new
+> derivation, nothing decided that (1)/(2) didn't already decide. Calling it "Layer 3" was a category
+> error, corrected in `iba/docs/1446-verse-word-analytic-methods-extract-v2-20260904.md` §2d. The
+> report's one real content point stands unchanged: never framed as "confirms"/"validates"/"closes
+> the gap," a plain tally against (1)'s own complete count.
+
 **Filename:** 1383-verse-lexical-window1-method-and-drift-mitigation-v1-20260903.md
 **Escalation:** #1383
 **Why this document, not another passage.** Direct researcher correction: redoing individual
