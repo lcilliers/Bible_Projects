@@ -180,4 +180,11 @@ to log and clean before starting #737's Window 2 realignment work next session.
 
 ## Git state — this log's own completion trigger
 
-To be filled in after commit + push (this file completes the standing trigger per CLAUDE.md §12).
+- **Branch:** `main`, up to date with `origin/main`.
+- **Commit:** `f416ffee` — "session 20260905: verse_lexical CRUD redesign (#1520 root-cause fix,
+  identity-stable write path) + M-cluster taxonomy rebuild from heuristic family-grouping (47->85
+  clusters, 41 renamed, escalation #1006 follow-up)" — 128 files changed, 108347 insertions(+),
+  3452 deletions(-).
+- **Push:** confirmed — `6bd7047d..f416ffee  main -> main` accepted by `origin`.
+- **Post-push `git status`:** "Your branch is up to date with 'origin/main'." / "nothing to commit,
+  working tree clean" — actual command output, not asserted.
