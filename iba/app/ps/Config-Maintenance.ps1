@@ -31,6 +31,24 @@
                       alone does not do. Once `-NextAction ready_for_approval` then `-NextAction
                       approved` are actually recorded, Claude CAN and does run this re-run itself --
                       no elevated permissions, no researcher-run workaround needed.
+
+                      CLOSING OUT after the re-run applies cleanly (gap found + fixed live,
+                      escalation #1474, 2026-09-05 -- a same-day repeat of this exact confusion):
+                      the escalation record does NOT close itself. `needs_claude_followup` was set
+                      to 1 automatically when `propose()` first raised it, and re-supplying
+                      `-NextAction approved` a second time (even `-AnsweredBy Claude`) just re-fires
+                      the SAME "needs_followup -> route back to Claude" rule and lands on
+                      `re-assigned` again, not `completed` -- an infinite loop of "approved but
+                      still open" if you keep pulling that lever. The actual close-out call is:
+                        Escalation.ps1 -Action Update -Id <id> -NeedsFollowup 0 -AnsweredBy Claude `
+                            -Resolution "<what was applied and how it was verified>"
+                      (no `-NextAction` needed -- `cur_next_action` is already `approved` from the
+                      researcher's own decision; clearing the flag with a resolution present is
+                      itself sufficient, per cfg_escalation_transition condition
+                      `followup_cleared_was_approved`). Do this immediately after a successful
+                      apply, in the same turn -- an escalation left at `re-assigned`/`approved` with
+                      `needs_claude_followup` still 1 is indistinguishable, to every later check,
+                      from one where the write was never actually done.
     -Step Report     regenerate CONFIG-REPORT.md from the live cfg_* tables. Safe any time.
 
 .PARAMETER Step     Validate | Propose | Report

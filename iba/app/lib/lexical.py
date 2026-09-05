@@ -9,9 +9,17 @@ ambiguity check (`_base`, `sibling_variant_codes`, `gloss_supported_by_tree`, `l
 rather than re-deriving them — same underlying facts, this module adds role classification and
 stem/voice selection on top, then persists the result instead of only rendering it.
 
-Runs independent of T4-T9 and `report.passage_debate` — no awareness of either. Version-aware
-writes: rewriting a (span_id, code_ordinal) soft-deletes the superseded row and inserts a fresh
-one, the same convention `verse`/`span`/`strong` already use — never an in-place overwrite.
+Runs independent of T4-T9 and `report.passage_debate` — no awareness of either. Identity-stable
+writes (redesigned 2026-09-05, escalation #1520 — see `write_readings_for_span`'s own docstring
+for the full rationale): a (span_id, code_ordinal) slot keeps the same `verse_lexical.id` for as
+long as it exists, whether its content is confirmed unchanged (no write at all) or genuinely
+corrected (real `UPDATE ... WHERE id=?`) — never soft-delete-and-reinsert for a slot that still
+exists. Matches `handlers/operations.py:phenomenon_set`'s own in-place-UPDATE convention, used
+there for the same reason: a downstream FK (`verse_lexical_note`, like `operation.phenomenon_id`)
+depends on the id staying stable. Only a slot that genuinely disappears (the span shrank) is
+soft-deleted for real — `verse`/`span`/`strong`'s own supersede-on-every-write convention remains
+correct for those tables (nothing external held a durable pointer into their old ids the way
+`verse_lexical_note` does into this one) and is deliberately NOT changed here.
 """
 
 from __future__ import annotations
@@ -234,15 +242,39 @@ def _now() -> str:
 # mitigation doc §1-2, cfg_method_rule `mechanical-columns-run-on-every-code-no-selection`).
 
 def load_code_classes(conn: sqlite3.Connection) -> dict[str, set[str]]:
-    """base strong_code -> set of live cfg_lexical_code_class classes. Loaded once per build call
-    (see build_for_range/build_for_verse_ids) and threaded through, same pattern as `live_cache`
-    — this table is small (~20 rows) but every-code-every-verse re-querying it would still be
+    """base strong_code -> set of live code-classes. Loaded once per build call (see
+    build_for_range/build_for_verse_ids) and threaded through, same pattern as `live_cache` —
+    this lookup is small (~40 rows) but every-code-every-verse re-querying it would still be
     wasteful at corpus scale. `lexical-code-class-lookup-not-hardcoded`: this IS the queried
-    lookup that rule requires, never a hardcoded dict in this module."""
+    lookup that rule requires, never a hardcoded dict in this module.
+
+    Sourced from `cluster_strong`, NOT `cfg_lexical_code_class` (architecture correction,
+    researcher verdict 2026-09-05: "assigning a special status to a strong is to use a cluster
+    for it... this is not cfg territory" — full record BUILD.md #228/#229). `cluster_strong`
+    holds one row per SPECIFIC code (suffix letters included, e.g. `H0430G`/`H0410L`), unlike
+    the old table's one-row-per-BASE-code shape, so each `strong` value is base-stripped via
+    `_base()` before being added — the resulting dict is base-keyed exactly as before, so
+    `_code_classes_for()` below (which base-strips its own lookup key) needs no change.
+
+    `T5`/`T7`/`T8`/`T9`/`T4` here are `cluster.cluster_code` values (Negator/Party-Divine/
+    Party-Human/Party-Angelic/Adversarial) — NOT this module's own unrelated "T1-T9" (the Verse
+    Reading Technique steps named in this file's own docstring) or the observation-catalogue's
+    T0-T7 tier scheme. Three different T-numbering schemes coexist project-wide; see the
+    programme glossary's own T1 disambiguation entry. `T6` (Connective) is deliberately excluded
+    — nothing in this module reads a connective classification (that lives in `verse_lexical_note`
+    instead, a different mechanism entirely, `lexicalenrich.py`)."""
+    _CLUSTER_CODE_TO_CLASS = {
+        "T5": "negator", "T4": "party_adversarial", "T7": "party_divine",
+        "T8": "party_human", "T9": "party_angelic",
+    }
     out: dict[str, set[str]] = {}
+    placeholders = ",".join("?" * len(_CLUSTER_CODE_TO_CLASS))
     for r in conn.execute(
-            "SELECT strong_code, class FROM cfg_lexical_code_class WHERE active=1"):
-        out.setdefault(r["strong_code"], set()).add(r["class"])
+            f"SELECT strong, cluster_code FROM cluster_strong "
+            f"WHERE deleted=0 AND cluster_code IN ({placeholders})",
+            tuple(_CLUSTER_CODE_TO_CLASS)):
+        base = _base(r["strong"])
+        out.setdefault(base, set()).add(_CLUSTER_CODE_TO_CLASS[r["cluster_code"]])
     return out
 
 
@@ -252,7 +284,7 @@ def _code_classes_for(code: str, code_classes: dict[str, set[str]],
 
 
 _PARTY_CLASS_TO_KIND = {"party_divine": "divine", "party_human": "human",
-                        "party_angelic": "non_human"}
+                        "party_angelic": "non_human", "party_adversarial": "non_human"}
 
 
 def _testament_for(conn: sqlite3.Connection, book: str) -> str | None:
@@ -317,39 +349,100 @@ def _apply_gloss_consistency(verse_rows: list[dict]) -> None:
         r["gloss_consistent_in_verse"] = 1 if len(groups[key]) <= 1 else 0
 
 
+_CONTENT_FIELDS = ("strong", "morph_code", "role", "status", "resolved_sense", "ambiguity_note",
+                  "position", "surface", "language", "testament", "is_negator",
+                  "narrative_morph", "gloss_consistent_in_verse", "party_kind")
+
+
 def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: int,
                             resolved: list[dict]) -> dict:
-    """Version-aware: for each code_ordinal, soft-deletes any current (deleted=0) row and inserts
-    a fresh one — always, even when content is unchanged, so created_at reflects the last run that
-    confirmed it (cheap; verse_lexical is not high-write-volume). Returns counts."""
-    c = {"inserted": 0, "superseded": 0}
+    """Identity-stable write, redesigned 2026-09-05 (escalation #1520 root-cause fix,
+    `iba/docs/1520-verse-lexical-crud-safety-review-v1-20260905.md`) — replaces the old
+    "soft-delete + insert a fresh row on every run, even for identical content" convention, which
+    minted a new `verse_lexical.id` on every rebuild and silently orphaned any `verse_lexical_note`
+    row that had come to depend on the old one. Matches this codebase's own already-correct
+    precedent for a table WITH downstream FK dependents (`handlers/operations.py:phenomenon_set`,
+    in-place UPDATE, not supersede) rather than the pattern that's only safe for a leaf table with
+    none (`verse`/`span`/`strong`'s own convention, which `verse_lexical` used to copy blindly).
+
+    Per code_ordinal within this span:
+      - no live row yet             -> INSERT (genuinely new — a fresh id is correct here).
+      - live row, content identical -> untouched. No write at all: same id, same created_at,
+        same `verse_lexical_note` attachments. This is the common case (most rebuilds re-confirm
+        already-correct data) and it is what actually eliminates the orphan risk, not a workaround
+        bolted on beside it.
+      - live row, content differs   -> real `UPDATE ... WHERE id=?`. Same id preserved forever;
+        `updated_at` set to record when the correction was confirmed (replaces the old
+        "created_at reflects the last run" signal without requiring the id to churn to get it).
+      - a code_ordinal that WAS live before this call but has no resolved code now (the span
+        genuinely shrank) -> soft-deleted for real. This is the one case where the row's id
+        legitimately goes away, so any `verse_lexical_note` still pointing at it is now genuinely
+        stale, not a rebuild artefact — counted and returned as `removed_with_live_notes` rather
+        than silently left to dangle; the caller surfaces a nonzero count, never swallows it.
+
+    Returns counts: inserted / updated / unchanged / removed / removed_with_live_notes."""
+    c = {"inserted": 0, "updated": 0, "unchanged": 0, "removed": 0, "removed_with_live_notes": 0}
     now = _now()
+
+    existing_by_ordinal = {row["code_ordinal"]: dict(row) for row in conn.execute(
+        "SELECT * FROM verse_lexical WHERE span_id=? AND deleted=0", (span_id,)).fetchall()}
+    seen_ordinals: set[int] = set()
+
     for ordinal, r in enumerate(resolved):
-        existing = conn.execute(
-            "SELECT id FROM verse_lexical WHERE span_id=? AND code_ordinal=? AND deleted=0",
-            (span_id, ordinal)).fetchone()
-        if existing:
-            conn.execute("UPDATE verse_lexical SET deleted=1 WHERE id=?", (existing["id"],))
-            c["superseded"] += 1
+        seen_ordinals.add(ordinal)
+        new_content = {f: r.get(f, 1 if f == "gloss_consistent_in_verse" else None)
+                       for f in _CONTENT_FIELDS}
+        existing = existing_by_ordinal.get(ordinal)
+
+        if existing is None:
+            conn.execute(
+                "INSERT INTO verse_lexical (span_id, verse_id, code_ordinal, strong, morph_code, "
+                "role, status, resolved_sense, ambiguity_note, created_at, deleted, position, "
+                "surface, language, testament, is_negator, narrative_morph, "
+                "gloss_consistent_in_verse, party_kind) "
+                "VALUES (?,?,?,?,?,?,?,?,?,?,0,?,?,?,?,?,?,?,?)",
+                (span_id, verse_id, ordinal, new_content["strong"], new_content["morph_code"],
+                 new_content["role"], new_content["status"], new_content["resolved_sense"],
+                 new_content["ambiguity_note"], now, new_content["position"],
+                 new_content["surface"], new_content["language"], new_content["testament"],
+                 new_content["is_negator"], new_content["narrative_morph"],
+                 new_content["gloss_consistent_in_verse"], new_content["party_kind"]))
+            c["inserted"] += 1
+            continue
+
+        if {f: existing.get(f) for f in _CONTENT_FIELDS} == new_content:
+            c["unchanged"] += 1
+            continue
+
         conn.execute(
-            "INSERT INTO verse_lexical (span_id, verse_id, code_ordinal, strong, morph_code, "
-            "role, status, resolved_sense, ambiguity_note, created_at, deleted, position, "
-            "surface, language, testament, is_negator, narrative_morph, "
-            "gloss_consistent_in_verse, party_kind) "
-            "VALUES (?,?,?,?,?,?,?,?,?,?,0,?,?,?,?,?,?,?,?)",
-            (span_id, verse_id, ordinal, r["strong"], r["morph_code"], r["role"], r["status"],
-             r["resolved_sense"], r["ambiguity_note"], now,
-             r.get("position"), r.get("surface"), r.get("language"), r.get("testament"),
-             r.get("is_negator"), r.get("narrative_morph"),
-             r.get("gloss_consistent_in_verse", 1), r.get("party_kind")))
-        c["inserted"] += 1
+            "UPDATE verse_lexical SET strong=?, morph_code=?, role=?, status=?, resolved_sense=?, "
+            "ambiguity_note=?, position=?, surface=?, language=?, testament=?, is_negator=?, "
+            "narrative_morph=?, gloss_consistent_in_verse=?, party_kind=?, updated_at=? "
+            "WHERE id=?",
+            (new_content["strong"], new_content["morph_code"], new_content["role"],
+             new_content["status"], new_content["resolved_sense"], new_content["ambiguity_note"],
+             new_content["position"], new_content["surface"], new_content["language"],
+             new_content["testament"], new_content["is_negator"], new_content["narrative_morph"],
+             new_content["gloss_consistent_in_verse"], new_content["party_kind"], now,
+             existing["id"]))
+        c["updated"] += 1
+
+    for ordinal, existing in existing_by_ordinal.items():
+        if ordinal in seen_ordinals:
+            continue
+        conn.execute("UPDATE verse_lexical SET deleted=1 WHERE id=?", (existing["id"],))
+        c["removed"] += 1
+        c["removed_with_live_notes"] += conn.execute(
+            "SELECT COUNT(*) FROM verse_lexical_note WHERE verse_lexical_id=? AND deleted=0",
+            (existing["id"],)).fetchone()[0]
     return c
 
 
 def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None",
                     live_cache: dict[str, str], base_pattern: str = _BASE_RE_FALLBACK,
                     code_classes: dict[str, set[str]] | None = None) -> dict:
-    c = {"spans": 0, "codes": 0, "inserted": 0, "superseded": 0}
+    c = {"spans": 0, "codes": 0, "inserted": 0, "updated": 0, "unchanged": 0, "removed": 0,
+        "removed_with_live_notes": 0}
     if code_classes is None:          # safe default for a direct/standalone caller
         code_classes = load_code_classes(conn)
 
@@ -383,20 +476,24 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None"
         counts = write_readings_for_span(conn, sp["id"], verse_id, resolved)
         c["spans"] += 1
         c["codes"] += len(resolved)
-        c["inserted"] += counts["inserted"]
-        c["superseded"] += counts["superseded"]
+        for k in ("inserted", "updated", "unchanged", "removed", "removed_with_live_notes"):
+            c[k] += counts[k]
     return c
+
+
+_TOTAL_KEYS = ("spans", "codes", "inserted", "updated", "unchanged", "removed",
+              "removed_with_live_notes")
 
 
 def build_for_range(conn: sqlite3.Connection, book: str, lo: int, hi: int,
                     verse_lo: int | None, verse_hi: int | None, step: "Step | None") -> dict:
     live_cache: dict[str, str] = {}
     code_classes = load_code_classes(conn)
-    totals = {"verses": 0, "spans": 0, "codes": 0, "inserted": 0, "superseded": 0}
+    totals = {"verses": 0, **{k: 0 for k in _TOTAL_KEYS}}
     for v in fetch_verses(conn, book, lo, hi, verse_lo, verse_hi):
         counts = build_for_verse(conn, v["id"], step, live_cache, code_classes=code_classes)
         totals["verses"] += 1
-        for k in ("spans", "codes", "inserted", "superseded"):
+        for k in _TOTAL_KEYS:
             totals[k] += counts[k]
     return totals
 
@@ -406,17 +503,18 @@ def build_for_verse_ids(conn: sqlite3.Connection, verse_ids: list[int],
     """Same shape as `build_for_range`, but scoped to an explicit verse_id list rather than a
     book/chapter range — for a per-WORD rebuild (2026-08-10, `raw.lexical`, the `new-word` chain's
     closing step: "checking that the lexicals for the verses are correct with the parse values").
-    `build_for_verse` is already version-aware (soft-deletes a superseded row, never overwrites in
-    place — see its own `write_readings_for_span` call), so re-running this for a verse whose
-    parse values haven't changed since the last build is a safe, cheap no-op; a verse whose
-    `strong_meaning_parsed`/span content HAS changed gets its `verse_lexical` rows corrected in
-    place. Dedups the input (a word's strongs can share a verse many times over)."""
+    `build_for_verse` is identity-stable (`write_readings_for_span`, redesigned 2026-09-05,
+    escalation #1520): re-running this for a verse whose parse values haven't changed is a true
+    no-op (`unchanged`, same ids, nothing written); a verse whose `strong_meaning_parsed`/span
+    content HAS changed gets its `verse_lexical` rows corrected in place (`updated`, same ids) —
+    either way, any `verse_lexical_note` already attached survives untouched. Dedups the input
+    (a word's strongs can share a verse many times over)."""
     live_cache: dict[str, str] = {}
-    totals = {"verses": 0, "spans": 0, "codes": 0, "inserted": 0, "superseded": 0}
+    totals = {"verses": 0, **{k: 0 for k in _TOTAL_KEYS}}
     for vid in dict.fromkeys(verse_ids):     # de-dup, preserve order
         counts = build_for_verse(conn, vid, step, live_cache)
         totals["verses"] += 1
-        for k in ("spans", "codes", "inserted", "superseded"):
+        for k in _TOTAL_KEYS:
             totals[k] += counts[k]
     return totals
 

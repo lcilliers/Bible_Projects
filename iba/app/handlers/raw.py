@@ -291,8 +291,11 @@ def lexical(ctx: Ctx) -> Outcome:
     from ..lib import lexical as lexlib
     totals = lexlib.build_for_verse_ids(ctx.db.conn, verse_ids, step)
     ctx.db.conn.commit()
+    removed_note = (f", {totals['removed_with_live_notes']} with live notes now dangling"
+                    if totals["removed_with_live_notes"] else "")
     return ok(f"{totals['verses']} verse(s), {totals['spans']} span(s), {totals['codes']} "
-             f"code(s) resolved ({totals['inserted']} written, {totals['superseded']} superseded)",
+             f"code(s) resolved ({totals['inserted']} inserted, {totals['updated']} updated, "
+             f"{totals['unchanged']} unchanged, {totals['removed']} removed{removed_note})",
              **totals)
 
 

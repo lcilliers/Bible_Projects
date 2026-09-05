@@ -12401,3 +12401,411 @@ built this session is never tested in this same session"): `lexical.enrich`/
 `iba/app/ps/Build-Passages.ps1`, `iba/app/USER-GUIDE.md` (§12b-ii/§12b-iii), `iba/app/GOVERNANCE.md`
 (§72), `iba/app/db/iba.db` (schema + config rows above; 552,353 `verse_lexical` rows backfilled;
 10,521 `role` corrections).
+
+## 226. `prose_section`'s stale FK rebuilt: `prose_section_type_old` → `prose_section_type` (2026-09-05, escalation #1452)
+
+Found live applying #1447's glossary patch (BUILD.md #220): `prose_section`'s own CREATE TABLE
+carried `section_type_id INTEGER NOT NULL REFERENCES "prose_section_type_old"(id)` — a leftover
+rename artifact from an earlier migration. `prose_section_type_old` does not exist; every other
+live reference (the `prose_section_ai`/`au` FTS-sync triggers included) correctly said
+`prose_section_type`. Harmless while `PRAGMA foreign_keys` is off (SQLite's project-wide default),
+but `scripts/apply_session_patch.py` explicitly turns enforcement on and its `prose_section` insert
+path failed outright against this — worked around once already for #1447's 18-row insert (direct
+INSERT, bypassing the broken FK). Escalation #1452 reclassified the fix from an initial, too-narrow
+`self_correctable` to `decision_required` (a live schema rebuild needs the researcher's own call on
+timing, not Claude's to make unilaterally) — approved 2026-09-05.
+
+**Fix, same rename/recreate/copy/drop pattern as `retire_cfg_prose_chapter_v1_20260827.py`:**
+`bible_research.db` backed up first (`backups/bible_research_backup_20260905T033140Z_PROSE-
+SECTION-FK-REBUILD-1452.db`); `prose_section` renamed aside, recreated with the FK corrected to
+`prose_section_type`, all 1035 rows copied back with `id`s preserved (row count verified identical
+before/after), old table dropped, its 5 indexes and 3 FTS-sync triggers recreated fresh (a RENAME
+carries index/trigger bodies onto the renamed table, so dropping it drops them too — not assumed
+intact, explicitly rebuilt). Verified post-rebuild: `PRAGMA foreign_key_check(prose_section)`
+clean (0 violations); `prose_section_fts` row count still 1035, 0 rows with a mismatched rowid; a
+smoke-test insert+rollback confirmed the `prose_section_ai` trigger still fires and populates FTS
+correctly.
+
+**Files:** `iba/app/migration/rebuild_prose_section_fk_v1_20260905.py` (new, registered in
+`cfg_utility`, `inactive=1` — one-off, not a reusable routine), `database/bible_research.db`
+(schema fix, data unchanged).
+
+## 227. `Config-Maintenance.ps1 -Step Propose` docstring: the missing close-out step documented (2026-09-05, escalation #1474)
+
+Real recurring failure, named directly by the researcher as happening "almost every day": an
+escalation raised by `configmaint.propose` carries `needs_claude_followup=1`, set automatically
+when it's first raised. The existing docstring correctly explained how to get from `raised` to
+`approved` (the two-stage `ready_for_approval` → `approved` handshake) and how to re-run the same
+`-RunId` to apply the change — but said nothing about what closes the escalation record
+afterward. Re-supplying `-NextAction approved` a second time (even `-AnsweredBy Claude`) doesn't
+work — `needs_followup` still being 1 re-fires the same "route back to Claude" rule
+(`cfg_escalation_transition` priority order) and lands back on `re-assigned`, not `completed`,
+every time. Reproduced live on escalation #1474 itself this session: the write-grant it asked for
+was applied and verified correctly, but the escalation sat open at `re-assigned`/`approved` because
+the actual close-out call — `-Action Update -Id <id> -NeedsFollowup 0 -AnsweredBy Claude
+-Resolution "..."` (no `-NextAction` needed; `followup_cleared_was_approved` handles it) — was
+never documented anywhere Claude would read it before acting, only discoverable by reading
+`lib/escalation.py`'s own condition-engine code cold, mid-session, under a live complaint.
+
+**Fix:** `Config-Maintenance.ps1`'s own `-Step Propose` help text now states the close-out call
+explicitly, immediately after the "Claude can run the re-run itself" paragraph it was previously
+missing from. Documentation-only — no code path, parameter, or config row changed; `iba/docs/ps
+tools worksheet.xlsx` not touched (no parameter added/removed/renamed).
+
+**Files:** `iba/app/ps/Config-Maintenance.ps1` (docstring only).
+
+## 228. Architecture correction: Strong's-code classification moves from `cfg_lexical_code_class` to `cluster`/`cluster_strong` (2026-09-05, researcher verdict)
+
+Researcher's own verdict, verbatim: *"assigning a special status to a strong is to use a cluster
+for it... this is not cfg territory, and certainly not something that need to go through
+configmaint."* `cfg_lexical_code_class` (built escalation #1383, 2026-09-04, `category='rule'`)
+duplicated a job `cluster`/`cluster_strong` (iba.db, `category='data'`, `writer='migration'`/
+`'cluster.assign'` grants — never `configmaint.propose`) already does: evidence-backed Strong's-code
+classification, with `confidence`/`rationale`/`review_flag` fields built for exactly this, and a
+live precedent (the 2026-08-13 M10→M10b refinement) for reallocating a code's cluster membership in
+place. Checking live confirmed every one of #1383's negator/connective/party_divine codes already
+sat in `cluster_strong` under `T2` ("Supplementary") — the "rough bucket" the researcher named as
+ready to be split into finer ones.
+
+**Withdrawn:** all 15 pending `cfg_lexical_code_class`/`cfg_enum` proposals for the party lexicons
+(escalations #1477, #1479-1492) — not approved, redirected to the cluster mechanism instead.
+
+**Built this pass — part 1 of 5, the piece explicitly authorised to proceed now:** a new cluster,
+`T4` ("Adversarial"), and reallocation of the 3 evidence-checked adversarial codes (`H7854` satan,
+`G4567` satanas, `G1228G` diabolos) from `T2` to `T4` — same in-place-update pattern as M10→M10b,
+`rationale` appended. `G1228H` ("slanderous", the adjective sense) is untouched at its existing
+`M14`/Deceit assignment — a different sense, unrelated to the party-identity question.
+
+**Tracked as 4 separate escalations, per researcher instruction ("lots of different implications...
+create separate escalations... to keep track"), none started beyond part 1:**
+- **#1499** — naming/granularity scheme for reallocating the existing 20 `cfg_lexical_code_class`
+  rows (negator ×7, connective ×6, party_divine ×7, all currently `T2`) into new cluster codes.
+- **#1500** — re-seed the 11 withdrawn `party_human`/`party_angelic` codes as `cluster_strong`
+  reallocations once #1499 lands (content already evidence-checked, only the write location
+  changes).
+- **#1501** — rewire `lexical.py`'s `load_code_classes()` off `cfg_lexical_code_class` onto
+  `cluster_strong`, and re-backfill/re-verify the affected `verse_lexical` columns corpus-wide
+  (975,451 rows) — the highest-risk part, deliberately gated behind #1499/#1500 settling first.
+  Also flags a live gap found while investigating: `_PARTY_CLASS_TO_KIND` doesn't map
+  `party_adversarial`→`non_human` yet even under the current design.
+- **#1502** — retire `cfg_lexical_code_class` itself plus its `cfg_table`/`cfg_column`/
+  `cfg_write_grant` (escalation #1474)/`cfg_enum` scaffolding, once #1499-1501 are done.
+
+**Files:** `iba/app/migration/add_adversarial_cluster_v1_20260905.py` (new, registered in
+`cfg_utility`, `inactive=1`), `iba/app/db/iba.db` (`cluster`/`cluster_strong` data only — no schema
+change, `cfg_lexical_code_class` itself untouched pending #1499-1502).
+
+## 229. De-cfg-ification parts 2-3: T5-T9 clusters built (negator/connective/party-divine/human/angelic), #1499's granularity test applied (2026-09-05)
+
+Continuing #228 (T4/Adversarial). Escalation #1499 asked what cluster codes the remaining 20
+`cfg_lexical_code_class` rows (negator/connective/party_divine) reallocate to; researcher answered
+with a test, not a fixed scheme, verbatim: *"a) why separate from T2 - what benefit will it have in
+analysis... b) the buckets must not over engineer and have a separate bucket for each minute group.
+take any other bucket like m15... this is the right granularity."* Applied:
+
+- **T5 (Negator, 7 codes)** — one bucket; all 7 share exactly one relation (negation), all support
+  the same live analytical question (`verse_lexical.is_negator`/polarity reading).
+- **T6 (Connective, 6 codes)** — kept as **one** bucket, deliberately NOT split into
+  causal(2)/coordinating(3)/purpose(1) — that granularity is exactly the "minute group" test (b)
+  warns against; the sub-type distinction is recorded in each row's own `rationale`, not a separate
+  top-level code each.
+- **T7 (Party-Divine, 8 rows/7 codes)** — one bucket; directly answers real observation-catalogue
+  party-kind questions (a different T-numbering scheme entirely — see the glossary's own T1
+  disambiguation entry, corrected below).
+
+Escalation #1500 (re-seeding the withdrawn party_human/party_angelic content) approved
+("yes continue, and there may be more that may be identified as the analytics progress") — built as
+**T8 (Party-Human, 8 codes)** and **T9 (Party-Angelic, 5 rows/3 codes incl. sub-entries)**, same
+mechanics.
+
+**Mechanics** (both migrations, matching T4's own pattern): reallocate in place (`UPDATE`) any code
+currently sitting at `T2`; insert fresh (most of party_human/angelic, plus 3 negator/party_divine
+codes) where no live `cluster_strong` row existed at all — gaps in the original 2026-08-11
+mechanical sweep. `G2962H` ("Lord", currently at `M23`/Strength) deliberately left untouched — its
+only live row isn't `T2`, so this cleanup doesn't touch an already-established, unrelated
+assignment. Both `iba.db` backups taken first.
+
+**Glossary kept current** (escalation #1503, researcher: *"do not forget to update glossary for
+the changes in cluster codes"*) — via `scripts/apply_session_patch.py` (patch_type `PROSE`), not
+hand-edited: `T2`/`T3` entries corrected (both wrongly claimed *"T3 is not itself a cluster_code
+value"* — false, checked directly against the live `cluster` table), a new `T4` entry added, and
+the `T1` disambiguation entry updated to note the `[CC]` scheme is no longer fixed at T2/T3. `T5-T9`
+entries not yet added — follow-on, same mechanism.
+
+**Files:** `iba/app/migration/add_negator_connective_partydivine_clusters_v1_20260905.py`,
+`iba/app/migration/add_party_human_angelic_clusters_v1_20260905.py` (both new, registered in
+`cfg_utility`, `inactive=1`), `iba/app/db/iba.db` (`cluster`/`cluster_strong` data only),
+`database/bible_research.db` (4 `prose_section` rows via `archive/patches/prose-glossary-t4-patch-
+20260905.json`).
+
+## 230. `lexical.py` rewired off `cfg_lexical_code_class` onto `cluster_strong` — code only, backfill deliberately not run (2026-09-05, escalation #1501)
+
+Part 4 of the de-cfg-ification (#228/#229). Researcher's own instruction, verbatim: *"do the code
+change, but do not proceed with the backfil before doing substantial testing and exploration - I
+want to first see how all the cluster codes are going to be applied and updating a million records
+for every change may not be the right approach."* Split accordingly: the code change is done and
+tested; the corpus-wide `verse_lexical` re-backfill is **not** run.
+
+**Change:** `load_code_classes()` now queries `cluster_strong` (`WHERE deleted=0 AND cluster_code
+IN ('T4','T5','T7','T8','T9')`) instead of `cfg_lexical_code_class`, base-stripping each `strong`
+value (`cluster_strong` holds one row per specific suffixed code, e.g. `H0430G`; the old table held
+one row per base code) so `_code_classes_for()` needs no change — same base-keyed dict shape as
+before. `_PARTY_CLASS_TO_KIND` gained `"party_adversarial": "non_human"`, closing the gap #1501
+itself first flagged (T4/Adversarial existed in data since #228 but the code never mapped it to a
+`party_kind`). `T6` (Connective) deliberately excluded from the lookup — grepped confirmed nothing
+in `lexical.py`/`lexicalenrich.py` reads a connective classification; that lives in
+`verse_lexical_note` instead, a different mechanism (`lexicalenrich.py`), unaffected by this
+rewire. Added an explicit code comment disambiguating cluster `T4`-`T9` from this same file's own
+"T1-T9" (Verse Reading Technique steps, cited two lines above in the file's own docstring) and the
+observation catalogue's T0-T7 tier scheme — three unrelated T-numbering schemes now provably
+capable of colliding in one file, not just the glossary.
+
+**Tested, no DB writes:** `load_code_classes()` called directly — 27 distinct base codes resolved
+(matches T4/T5/T7/T8/T9's live membership exactly); `_layer1_fields()` run in-memory against one
+code from each class (`H0430G`→divine, `H7854`→non_human, `H0120G`→human, `H4397H`→non_human,
+`H3808`→is_negator=1, `G2962H`→neither, correctly untouched) and then against all 31 live
+`cluster_strong` rows across the 5 target codes — zero exceptions, negator=7/divine=8/human=8/
+non_human=8, matching the built clusters' own row counts exactly.
+
+**Not done, deliberately:** the `verse_lexical` re-backfill (544,572 live rows) — held per the
+researcher's explicit instruction, pending a decision on the backfill *approach* itself (a stored,
+rebuilt-per-change column vs. a join-at-read-time against `cluster_strong` — raised for
+consideration in `outputs/verse-lexical-visibility-20260905.md`, not decided). Until a backfill
+runs, `verse_lexical.party_kind`/`is_negator` reflect the PRE-rewire lexicon content, not T4-T9 —
+new code added this session works correctly, existing rows are simply stale until backfilled.
+
+**Files:** `iba/app/lib/lexical.py` (`load_code_classes`, `_PARTY_CLASS_TO_KIND`).
+
+## 231. Window 1 Layer 2 made genuinely verse-scoped — `passage` dependency removed from `lexical.enrich` (2026-09-05, escalation #1451)
+
+Implements the researcher's own design (`iba/docs/1451-window1-layer2-verse-scoped-redesign-v1-
+20260905.md`) after retracting an earlier, wrong recommendation on this same escalation ("build a
+bypass in the gate") — the actual correction is deeper than a bypass: Window 1 must never depend on
+`passage`/`hib.set` (Window-2 debate-pipeline constructs) at all, because Window 1 categorically
+does not consider or determine inner-being value.
+
+**Schema:** `verse_lexical_note.passage_id` made nullable (rebuild, 0 live rows existed —
+zero-risk). `handlers/lexical.py:enrich()` no longer resolves or requires a `passage` row —
+verses resolve directly via `fetch_verses` (the same helper `lexical.build` already uses), the
+`passagetrack`/`no-passage` gate is gone entirely, and the now-unused `lexical.enrich -> passage`
+write grant is queued for retirement (config proposal, pending approval). `lexicalenrich.py`:
+`check_completeness()` and the "what's currently live" reconciliation query both re-keyed off
+`verse_id` instead of `passage_id`; `set_lexical_complete()` is unused from this point (no passage
+row to hang completeness on — where it should persist long-term is still undesigned, named
+explicitly in the doc, not guessed here); a genre value in the payload is now reported back as
+`genre_dropped` rather than silently lost.
+
+**2 more real bugs found live testing the change, both fixed, neither shipped:**
+1. `resolve_verse_lexical_id()` only checked the pre-fetched `verse_id_by_osis` dict — a note's
+   `target_verse`/`related_codes` naming a verse OUTSIDE the range being enriched (exactly the
+   "targeted read of one adjacent verse" the design calls for) failed `unknown-target`. Fixed: a
+   live `verse` lookup on miss, cached into the same dict.
+2. A second, separate `WHERE passage_id=?` filter inside `enrich_passage()` itself (the "what's
+   currently live" query, distinct from the one already fixed in `check_completeness()`) still
+   matched against `passage_id=NULL` and found nothing — a genuine 'remove' of an existing note
+   was reported as targeting something not live. Fixed the same way, re-keyed off `verse_id`.
+
+**Verified live, no DB rows left behind:** a 2-code verse (`John.11.35`, "Jesus wept" — chosen for
+brevity) enriched with zero passage and zero HIB data for any book; then a same-verse cross-verse
+test — an `entity_link` note on `John.11.35`'s "Jesus" correctly resolved to `John.11.34`'s "Lord"
+(a genuinely different verse, confirmed by direct id lookup) with no shared passage object at all.
+Reconciliation (remove + new in the same call) worked correctly once bug 2 was fixed. All test rows
+deleted afterward — `verse_lexical_note` confirmed back to 0 rows before any real analytical use.
+
+**Not designed here, left open per the design doc:** where per-verse completeness and per-verse
+genre persist long-term.
+
+**Files:** `iba/app/handlers/lexical.py`, `iba/app/lib/lexicalenrich.py`,
+`iba/app/migration/make_verse_lexical_note_passage_id_nullable_v1_20260905.py` (new).
+
+## 232. `report.lexical_exceptions` was the one downstream consumer #231 missed — fixed (2026-09-05, escalation #1451)
+
+Found live producing this report for the first time against real #1451 output (the 10-verse test):
+`report.lexical_exceptions` still called `passagetrack.find_tracked_passage`/refused `no-passage`,
+same gate already removed from `lexical.enrich` in BUILD.md #231 — every one of the 10 test verses
+has no `passage` row by design, so all 10 report calls would have failed. Fixed the same way:
+verses resolve via `fetch_verses`, both its `verse_lexical` and `verse_lexical_note` queries filter
+by `verse_id` instead of joining through `verse_passage`/`passage_id`, and the report's own intro
+line no longer names a passage. `report.lexical_extract` — the other new Layer-2 report — needed
+**no fix**, checked directly: it already filters `verse_lexical_note` by `verse_lexical_id`, never
+`passage_id`, and its `-VerseFilter` already takes a comma-list or range of specific verses with no
+passage involved at all.
+
+**Files:** `iba/app/handlers/reports.py` (`lexical_exceptions_report`).
+
+## 233. `report.lexical_extract` now shows each code's cluster short name(s) — computed at report time, not stored (2026-09-05, escalation #1451)
+
+Researcher instruction: Layer 1 output should show the cluster a code belongs to, by short name
+(e.g. "Party-Divine"), not just its code (`T7`). Real design question first, not skipped: stored
+column on `verse_lexical` (matching `is_negator`/`party_kind`) vs. computed live at report time.
+Researcher's decision: report time only — avoids the exact backfill-cost/staleness problem already
+named in BUILD.md #230 (a stored column goes stale every time `cluster_strong` changes, and today's
+own T4-T9 build proves it changes).
+
+**Implementation:** `report.lexical_extract` joins `cluster_strong`/`cluster` on the row's **exact**
+`strong` code — never base-stripped, the `strong_related` lesson from this same review session
+applied here too, since `cluster_strong` is keyed the same exact-code way. A code belonging to more
+than one cluster at once (confirmed live: `H0034` is both `M24`/Weakness and `T2`/Supplementary) has
+every live membership returned, comma-joined, never silently collapsed to one. A code with no
+`cluster_strong` row at all (44% of this session's own 10-verse sample) gets `null`, not a guess.
+
+**Files:** `iba/app/handlers/reports.py` (`lexical_extract`).
+
+## 234. `VerseLexical.ps1`'s `lexical.enrich` auto-chain redesigned after it orphaned live Layer 2 notes on first real test (2026-09-05, escalation #1451)
+
+Researcher instruction: stitch `VerseLexical.ps1` together so that `-Step lexical.enrich` alone
+automatically runs `lexical.build` first to obtain Layer 1, unless Layer 1 is already current for
+the range — with a new flag to let the researcher choose. First implementation (same session,
+same day) took the flag the wrong way round: `-SkipBuild` opted OUT of an unconditional
+"always auto-build" default. Testing that default live on `Rom.9.14` (a verse that already had 11
+Layer 2 notes from this session's own 10-verse review pass) immediately broke it: `lexical.build`
+re-ran, superseded the 9 existing `verse_lexical` rows with 9 brand-new ones (content byte-
+identical — confirmed live, `content identical: True` — only the ids differed), and every one of
+the 11 `verse_lexical_note` rows was left pointing at the now soft-deleted old ids. The subsequent
+`lexical.enrich` call then failed its own reconciliation check ("11 item(s) need reconciliation")
+because the payload's codes resolved against the new ids, which matched none of the existing notes.
+
+This traces to a real, previously-latent design gap rather than a coding slip: `lexical.build`'s
+version-aware write is *documented and intentional* — it always mints a fresh row on every run,
+even for identical content (the original test plan's own B4 case) — but nothing in the design ever
+addressed what happens to `verse_lexical_note.verse_lexical_id`, a plain FK with no re-point step,
+when that happens underneath it. The gap was latent because nothing before this session's auto-
+chain attempt ever re-ran `lexical.build` on a verse that already had Layer 2 notes attached.
+
+**Fix — new `lib.lexicalenrich.layer1_state(conn, verse_ids)`** returns `{has_layer1, has_notes}`
+for a resolved verse range. `VerseLexical.ps1`'s `-Step lexical.enrich` sequencing now:
+
+- **default** (no flag): runs a precheck (`fetch_verses` + `layer1_state`, same resolution path
+  `handlers/lexical.py:enrich` itself uses) — builds Layer 1 first only if it is genuinely missing;
+  if it's already present, skips the no-op rebuild automatically (nothing to gain from re-minting
+  identical rows, and it can't orphan anything that isn't being touched);
+- **`-SkipBuild`**: no precheck at all, straight to enrich (fails fast if Layer 1 turns out missing)
+  — unchanged from the first implementation, still useful when the researcher already knows;
+- **`-ForceRebuild`** (new): forces the rebuild even though Layer 1 is present; if `has_notes` is
+  true, prints a loud red warning naming the orphan risk and the recovery step (re-run
+  `lexical.enrich` with the same payload afterward to reattach notes to the new ids, or delete the
+  stale notes first if they're genuinely being replaced). `-SkipBuild`/`-ForceRebuild` are mutually
+  exclusive (checked, fails fast).
+
+**Repair applied to the live data:** Rom.9.14's 11 orphaned notes were deleted, Layer 1 was left at
+its (already byte-identical) rebuilt rows, and the same payload was re-run through the corrected
+default path — reattached cleanly, verified live (`target_deleted: False` for all 11).
+
+**Files:** `iba/app/lib/lexicalenrich.py` (new `layer1_state`), `iba/app/ps/VerseLexical.ps1`
+(help text + sequencing logic, new `-ForceRebuild` param).
+
+## 235. `verse_lexical`'s write path redesigned identity-stable — the actual root cause of #234/#1520, not a second patch (2026-09-05, escalation #1520)
+
+#234 fixed one symptom at one call site (`VerseLexical.ps1` no longer auto-rebuilds Layer 1
+needlessly). The researcher's direct response, after being shown that framing: *"you have designed
+lexical findings system that seems to me to be highly inefficient, and have a high risk of errors
+and rework requirements... build a proper CRUD system with proper controls... no use for you to ask
+me to select between A or B [repoint-on-supersede vs. refuse-and-escalate] — that is not what I
+approved."* Correct. Both options on offer were workarounds sitting beside the defect, not fixes of
+it. Full investigation + resolution: [`iba/docs/1520-verse-lexical-crud-safety-review-v1-
+20260905.md`](../docs/1520-verse-lexical-crud-safety-review-v1-20260905.md).
+
+**The actual defect:** `write_readings_for_span` (`lib/lexical.py`, the sole `verse_lexical` write
+path — reached by every build entry point, book/range builds and the per-word `raw.lexical` rebuild
+chain alike) always soft-deleted and reinserted every code on every run, minting a fresh id even
+when content was byte-identical — documented as deliberate, and reasonable in isolation, until
+`verse_lexical_note` started holding a durable FK into those ids and nothing was ever updated to
+account for it. Scale of what that had already cost, found live checking this: **975,460 total
+`verse_lexical` rows, only 544,572 live (44% already soft-deleted)** — from ordinary re-runs, not
+incidents.
+
+**The fix — applying a principle this codebase had already gotten right elsewhere, not inventing
+one:** `handlers/operations.py:phenomenon_set` already does real in-place `UPDATE` for a changed
+`phenomenon` row, specifically because `phenomenon.id` has a downstream FK dependent
+(`operation.phenomenon_id`) — its own docstring names that as the reason. `verse_lexical` is in
+exactly that position via `verse_lexical_note` (`verse_lexical_id`/`target_verse_lexical_id`) and
+had simply never been brought in line. `write_readings_for_span` now, per `(span_id, code_ordinal)`
+slot: no live row → INSERT (fresh id, correctly new); live row, content identical → **nothing
+written**; live row, content differs → real `UPDATE ... WHERE id=?`, **same id**; live row whose
+slot genuinely disappeared (span shrank) → soft-deleted for real, the one legitimate case, now
+counted as `removed_with_live_notes` rather than left to dangle silently. A small additive
+migration (`migration/add_verse_lexical_updated_at_v1_20260905.py`) added a nullable
+`verse_lexical.updated_at`, replacing the old design's stated reason for the churn (`created_at`
+reflecting "the last run that confirmed it") without needing the id to move to get that signal.
+
+This single fix collapses what had looked like three separate defects: unnecessary churn on a
+no-op rebuild (gone — nothing written), orphaning on a genuine content correction (gone — the id
+never moves, from any caller), and reconciliation's `(verse_lexical_id, note_type)` matching
+breaking after a rebuild (moot as a side effect — it only ever broke because the id used to move
+out from under it). `report.lexical_exceptions` gained a standing integrity section reporting
+dangling `verse_lexical_note` references (expected 0, always) rather than leaving that as a query
+someone has to remember to run — its `cfg_report_section` row is pending researcher approval
+(escalation #1522) and the section renders via the existing unregistered-section fallback until
+then.
+
+**Verified live:** `iba.db` backed up first; corpus-wide orphan count confirmed 0 (all three FK
+directions) before touching anything; `Rom.9.14` force-rebuilt with no content change → `0
+inserted, 0 updated, 9 unchanged, 0 removed`, ids and all 9 rows byte-identical; one live row's
+`resolved_sense` deliberately corrupted and rebuilt again → `1 updated`, same id (975452),
+`created_at` untouched, `updated_at` newly stamped, content correctly restored, its attached note
+(id 492) required zero re-run and zero reconciliation; all 10 of this session's review verses then
+force-rebuilt the same way — 9 came back all-unchanged, one (`Prov.31.30`) had a genuine 1-field
+difference, orphan sweep across all 10 came back 0 both before and after. Two downstream messages
+(`handlers/lexical.py:build`, `handlers/raw.py`'s per-word rebuild path) still read the old
+`inserted`/`superseded` keys — found and fixed in the same pass; both would otherwise have thrown
+`KeyError` on next use.
+
+**Files:** `iba/app/lib/lexical.py` (`write_readings_for_span` rewritten, `build_for_verse`/
+`build_for_range`/`build_for_verse_ids` count propagation, module docstring), `iba/app/handlers/
+lexical.py` and `iba/app/handlers/raw.py` (message strings), `iba/app/handlers/reports.py`
+(`lexical_exceptions_report` integrity section), `iba/app/migration/
+add_verse_lexical_updated_at_v1_20260905.py`.
+
+## 236. M-cluster taxonomy rebuilt from the heuristic family-grouping exercise — 47 → 85 clusters, 41 renamed (2026-09-05, escalation #1006 follow-up)
+
+Same-day follow-up to #1006's cluster-subgroup review (BUILD.md #235's neighbour in time, not in
+subject). Reused `_apply_ib_char_family_grouping_v1_20260711.py`'s exact technique (an ordered,
+first-match-wins keyword→family regex ruleset, tuned originally on Psalms/Proverbs) against every
+M01-M47 strong's `stepGloss` — read through iteratively, cluster by cluster, extending existing
+families with real near-miss vocabulary (suffix/spelling gaps: `haughtiness` doesn't match
+`haughty`, `humility` doesn't match `humbl`) before adding new ones. Result: **78 evidence-checked
+families covering 87% of 2,971 strongs** (2,600 assigned, 371 residual), plus **47 items
+individually read and reclassified** to the existing T2/T7/T8 codes (place/person names, body
+parts, divine/idol references, generic human-relational terms — not inner-being content). Full
+method, every number, every family's real member list: `_analytics/clusters/m01-m47-family-
+grouping-iteration-v1-20260905.md` + `m01-m47-strong-family-v1/v2/v3-20260905.csv`.
+
+**The researcher's own framing decided the disposition, not a default:** *"it feels wrong to
+abandon the existing clusters... [I'd] keep the existing cluster numbers, but extend it to the
+full 80 or so... reallocations, reset the naming [are fine, can] fit the representative terms."*
+Comparing each family back to its members' original M-cluster tags showed most families
+concentrate heavily in one parent (many at 90-100%) — the old numbering mostly still fits, it was
+just named too coarsely — while several old clusters had genuinely split: M05 "Love" four ways
+(kindness-gentleness-friendship / grace-mercy-compassion / love-devotion / encouragement-
+edification), M10 "Sin" three ways, M15 "Wisdom" four ways, M41 four ways. Rule applied (confirmed
+with the researcher before building): for a split, the LARGEST family keeps the old number and the
+cluster is renamed to match it; every sibling gets a new code, sequential from M48.
+
+**Result: 41 existing M-codes renamed (kept their number, `short_name`/`description` reset), 37
+new codes inserted (M48-M84).** 7 old codes — M10b, M10c, M17, M27, M29, M31, M32 — left completely
+untouched: none of the 78 families has any of them as a dominant parent, meaning their prior
+membership dissolved elsewhere. Deliberately NOT resolved here — M10b/M10c are the same
+known-anomalous legacy split the M10bc cluster review (`iba/app/reports/m10bc-cluster-review-
+20260813.md`) already flagged as an open question; folding that into this migration would have
+been a design decision riding on a bug-fix-shaped change, not made here on purpose.
+
+**Write mechanics, checked per member, not bulk-applied:** a strong whose existing tag already sits
+at its family's winning code — untouched (already correct). A strong whose tag sits at a code its
+family LOST — that row is now wrong (the code names a different family since the rename), soft-
+deleted, replaced with a fresh row under the family's new code. A strong from a non-dominant
+("minority") cluster — its existing tag is untouched (still a valid, separate fact) and a new row
+is added under its actual family. The 331 residual strongs with no family match got no write at
+all, per instruction ("the remaining for now can be unassigned").
+
+**Verified live, not just argued:** `iba.db` backed up first. Post-migration: 0 orphaned
+`cluster_strong` rows (every live row points at a live cluster), 0 mismatches checking all 331
+untouched residual strongs still carry exactly their original single tag, spot-checked both a
+"corrected" case (a grace-mercy-compassion member's stale M05 row soft-deleted, live M50 row
+present with `rationale='family=grace-mercy-compassion'`) and an "untouched winner" case (an M08
+pride member, single unchanged row) against the actual migration output. Final tally: `1338`
+member rows already correct, `609` corrected (stale tag removed + replaced), `1262` new tags
+inserted, `45` of the 47 T-reclassifications inserted (2 already present).
+
+**Files:** `iba/app/migration/family_reallocation_v1_20260905.py`, `_analytics/clusters/m01-m47-
+family-grouping-iteration-v1-20260905.md`, `_analytics/clusters/m01-m47-strong-family-v1/v2/v3-
+20260905.csv`.

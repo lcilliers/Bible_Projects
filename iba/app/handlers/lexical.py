@@ -1,9 +1,16 @@
 """lexical.py — dispatcher handler for `lexical.build`/`lexical.enrich` (work package
 `verse-lexical`, ordinals 0/2). `build` is a thin adapter over `lib/lexical.py`'s
 `build_for_range`, same shape as `handlers/reports.py:verse_span_meaning_report` (the step this
-replaces). `enrich` is a thin adapter over `lib/lexicalenrich.py` — payload loading + passage
+replaces). `enrich` is a thin adapter over `lib/lexicalenrich.py` — payload loading + verse
 resolution + write-grant checks live here (handler layer), the actual reconciliation/write logic
 lives in `lib/lexicalenrich.py` (escalation #1383, build spec §C.2/§E.2).
+
+**Verse-scoped since escalation #1451 (2026-09-05)** — `enrich` no longer resolves or requires a
+`passage` row (dropped the `passagetrack.find_tracked_passage`/`no-passage` gate entirely).
+`passage`/`passage.build` is Window 2's own debate-pipeline construct, gated by `hib.set`; Window 1
+Layer 2 must never depend on HIB-gated infrastructure — full design record `iba/docs/1451-
+window1-layer2-verse-scoped-redesign-v1-20260905.md`. Verses now resolve directly from
+`-Book`/`-Range`/`-Chapters` via `fetch_verses`, same helper `lexical.build` already uses.
 
 Auto-backfill reused unchanged from `report.verse_span_meaning`'s own pattern (`report.
 auto_backfill_before_render`, `raw.backfill_meaning_for`) — a content-role code with no `strong`
@@ -18,9 +25,9 @@ import pathlib
 
 from .base import Ctx, Outcome, fail, ok
 from . import raw as raw_mod
-from ..lib import lexical, lexicalenrich, passagetrack
+from ..lib import lexical, lexicalenrich
 from ..lib.stepapi import Step, StepUnavailable
-from ..lib.versespanmeaningreport import parse_chapters, parse_range
+from ..lib.versespanmeaningreport import fetch_verses, parse_chapters, parse_range
 
 
 def _may(ctx: Ctx, writer: str, table: str) -> None:
@@ -64,10 +71,13 @@ def build(ctx: Ctx) -> Outcome:
     totals = lexical.build_for_range(ctx.db.conn, book, lo, hi, verse_lo, verse_hi, step)
     ctx.db.conn.commit()
 
+    removed_note = (f", {totals['removed_with_live_notes']} with live notes now dangling — "
+                    f"see report.lexical_exceptions" if totals["removed_with_live_notes"] else "")
     return ok(
         f"{book} {lo}-{hi}: {totals['verses']} verse(s), {totals['spans']} span(s), "
-        f"{totals['codes']} code(s) resolved ({totals['inserted']} written, "
-        f"{totals['superseded']} superseded){backfill_note}",
+        f"{totals['codes']} code(s) resolved ({totals['inserted']} inserted, "
+        f"{totals['updated']} updated, {totals['unchanged']} unchanged, "
+        f"{totals['removed']} removed{removed_note}){backfill_note}",
         **totals)
 
 
@@ -121,18 +131,17 @@ def enrich(ctx: Ctx) -> Outcome:
     if not notes and not removals:
         return fail("empty-payload", "payload has no 'notes' or 'remove' entries")
 
-    passage_row = passagetrack.find_tracked_passage(ctx.db.conn, book, lo, hi, verse_lo, verse_hi)
-    if passage_row is None:
-        return fail("no-passage",
-                   f"no tracked passage for {book} this range — run Build-Passages.ps1 "
-                   f"(passage.build) first")
-    passage_id = passage_row["id"]
-
-    verse_rows = ctx.db.rows(
-        "SELECT v.id, v.osisId FROM verse v JOIN verse_passage vp ON vp.verse_id=v.id "
-        "WHERE vp.passage_id=? AND vp.deleted=0 AND v.deleted=0", (passage_id,))
-    verse_ids = [r["id"] for r in verse_rows]
-    verse_id_by_osis = {r["osisId"]: r["id"] for r in verse_rows}
+    # Verse-scoped (escalation #1451, 2026-09-05 — full record `iba/docs/1451-window1-layer2-
+    # verse-scoped-redesign-v1-20260905.md`): no `passage` row is resolved or required. `passage`/
+    # `passage.build` is Window 2's own debate-pipeline construct, gated by `hib.set` — Window 1
+    # Layer 2 must never depend on it. Verses resolve directly from -Book/-Range/-Chapters, same
+    # helper `lexical.build` and `report.verse_span_meaning` already use.
+    fetched = fetch_verses(ctx.db.conn, book, lo, hi, verse_lo, verse_hi)
+    if not fetched:
+        return fail("no-verses", f"{book} this range has no live verse rows")
+    verse_ids = [v["id"] for v in fetched]
+    verse_id_by_osis = {f"{book}.{v['chapter']}.{v['verse']}": v["id"] for v in fetched}
+    passage_id = None
 
     max_verses = int(ctx.cfg.required_module_setting("cfg_passage", "passage.max_verses"))
     if len(verse_ids) > max_verses:
@@ -141,7 +150,6 @@ def enrich(ctx: Ctx) -> Outcome:
                    f"smaller passage-blocks")
 
     _may(ctx, "lexical.enrich", "verse_lexical_note")
-    _may(ctx, "lexical.enrich", "passage")
 
     # Real bug found live testing this handler (escalation #1450, 2026-09-04): the completeness
     # check used to run AFTER enrich_passage()'s writes, with the incomplete branch calling
@@ -163,7 +171,7 @@ def enrich(ctx: Ctx) -> Outcome:
                    f"{len(e.problems)} item(s) need reconciliation before this can write: "
                    f"{e.problems[:5]}{' ...' if len(e.problems) > 5 else ''}")
 
-    complete, missing = lexicalenrich.check_completeness(ctx.db.conn, passage_id, verse_ids)
+    complete, missing = lexicalenrich.check_completeness(ctx.db.conn, verse_ids)
     if not complete:
         ctx.db.conn.rollback()
         return fail("incomplete-block",
@@ -171,9 +179,14 @@ def enrich(ctx: Ctx) -> Outcome:
                    f"{missing[:5]}{' ...' if len(missing) > 5 else ''} — every applicable code "
                    f"needs a finding or an explicit checked_empty/unresolved")
 
-    lexicalenrich.set_lexical_complete(ctx.db.conn, passage_id, True)
+    # No lexicalenrich.set_lexical_complete() call -- there is no `passage` row to hang
+    # completeness on in the verse-scoped design (escalation #1451). Where per-verse completeness
+    # should persist long-term is still undesigned; the check above still gates the write, it's
+    # just not recorded anywhere yet.
     ctx.db.conn.commit()
 
-    return ok(f"{book} {lo}-{hi} (passage {passage_id}): {counts['unchanged']} unchanged, "
-             f"{counts['new']} new, {counts['changed']} corrected, {counts['removed']} removed "
-             f"note(s); block complete, lexical_complete_at set", **counts)
+    genre_note = " (genre supplied but not persisted -- no per-verse home designed yet)" \
+        if counts.get("genre_dropped") else ""
+    return ok(f"{book} {lo}-{hi}: {counts['unchanged']} unchanged, {counts['new']} new, "
+             f"{counts['changed']} corrected, {counts['removed']} removed note(s); "
+             f"block complete{genre_note}", **counts)

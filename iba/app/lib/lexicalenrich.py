@@ -96,9 +96,22 @@ class UnresolvedReference(Exception):
 
 def resolve_verse_lexical_id(conn, verse_id_by_osis: dict[str, int | None], osis: str,
                              position: int, code_ordinal: int = 0) -> int | None:
+    """`verse_id_by_osis` is pre-populated with the target verse(s) actually being enriched, but a
+    note's own `target_verse`/`related_codes` may legitimately name a DIFFERENT verse — exactly the
+    "targeted read of an adjacent verse" the verse-scoped design calls for (escalation #1451,
+    2026-09-05: reading adjacent verses on demand to resolve one specific need, never a
+    pre-declared multi-verse block). Falls back to a live `verse` lookup, caching the result into
+    the dict, rather than requiring the caller to have pre-fetched every verse a note might ever
+    reference — found live testing this exact case (a cross-verse entity_link failed with
+    `unknown-target` until this fallback was added)."""
     vid = verse_id_by_osis.get(osis)
     if vid is None:
-        return None
+        row = conn.execute(
+            "SELECT id FROM verse WHERE osisId=? AND deleted=0", (osis,)).fetchone()
+        if row is None:
+            return None
+        vid = row["id"]
+        verse_id_by_osis[osis] = vid
     row = conn.execute(
         "SELECT id FROM verse_lexical WHERE verse_id=? AND position=? AND code_ordinal=? "
         "AND deleted=0", (vid, position, code_ordinal)).fetchone()
@@ -161,13 +174,21 @@ def _quality_problems_for_note(conn, item: dict, verse_lexical_id: int, code_cla
 
 # ── the write, one passage-block at a time ──────────────────────────────────────────────────────
 
-def enrich_passage(conn, passage_id: int, verse_ids_in_passage: list[int],
+def enrich_passage(conn, passage_id: int | None, verse_ids_in_passage: list[int],
                    verse_id_by_osis: dict[str, int], genre: str | None,
                    notes_payload: list[dict], removals_payload: list[dict]) -> dict:
     """`notes_payload`/`removals_payload`: already the raw payload's own `notes`/`remove` lists
     (handler has already loaded/parsed the JSON). Returns a dict of counts on success; raises
     `UnresolvedReference`/`ReconciliationError` (handler turns each into a clean `fail()`) —
-    never a partial write."""
+    never a partial write.
+
+    `passage_id`: NULLABLE, verse-scoped redesign (escalation #1451, 2026-09-05 — full record
+    `iba/docs/1451-window1-layer2-verse-scoped-redesign-v1-20260905.md`). Window 1 Layer 2 no
+    longer depends on a pre-registered `passage` row — `passage`/`passage.build` is Window 2's own
+    debate-pipeline construct, gated by `hib.set`, and Window 1 must never depend on HIB-gated
+    infrastructure. Every `verse_lexical_note` row is already addressable by its own `verse_id`
+    (set below from the note's own target verse) — `passage_id` is kept only as a column for a
+    future, still-undesigned Window 2 linkage, always `None` from this call path for now."""
     problems: list[str] = []
     resolved_notes: dict[tuple, dict] = {}   # key -> {content, note (reconciliation), raw}
     for n in notes_payload:
@@ -212,10 +233,18 @@ def enrich_passage(conn, passage_id: int, verse_ids_in_passage: list[int],
     if problems:
         raise UnresolvedReference(problems)
 
+    # Verse-scoped (escalation #1451, 2026-09-05): "currently live" means live for the verse(s)
+    # actually being enriched this call, found by `verse_id` (every note's own column, set from
+    # its target verse) — not `passage_id`, which is None in the new design. Second occurrence of
+    # the same bug already fixed once in `check_completeness()`; missed here on the first pass,
+    # found live testing a cross-verse reconciliation (a real 'remove' was reported as targeting a
+    # non-live note because this query matched nothing against `passage_id=NULL`).
+    ph = ",".join("?" * len(verse_ids_in_passage)) if verse_ids_in_passage else "NULL"
     current_rows = conn.execute(
-        "SELECT n.id, n.verse_lexical_id, n.note_type, n.resolution_status, "
-        "n.target_verse_lexical_id, n.related_verse_lexical_ids, n.value_text, n.evidence_text "
-        "FROM verse_lexical_note n WHERE n.passage_id=? AND n.deleted=0", (passage_id,)).fetchall()
+        f"SELECT n.id, n.verse_lexical_id, n.note_type, n.resolution_status, "
+        f"n.target_verse_lexical_id, n.related_verse_lexical_ids, n.value_text, n.evidence_text "
+        f"FROM verse_lexical_note n WHERE n.verse_id IN ({ph}) AND n.deleted=0",
+        tuple(verse_ids_in_passage)).fetchall()
 
     current: dict[tuple, dict] = {}
     for r in current_rows:
@@ -253,18 +282,28 @@ def enrich_passage(conn, passage_id: int, verse_ids_in_passage: list[int],
              json.dumps(raw["related_ids"]) if raw.get("related_ids") else None,
              raw.get("finding"), raw.get("evidence"), now))
 
-    if genre is not None:
+    if genre is not None and passage_id is not None:
         conn.execute("UPDATE passage SET genre=? WHERE id=?", (genre, passage_id))
+    # else: genre supplied with no passage_id (the verse-scoped, #1451 default) — nowhere to
+    # persist it yet. Not silently dropped without record: caller (handlers/lexical.py:enrich)
+    # surfaces this in its own return message. Where per-verse genre should live long-term is
+    # undesigned, same open item as completeness tracking.
 
+    genre_dropped = genre is not None and passage_id is None
     return {"unchanged": len(unchanged), "changed": len(changed), "new": len(new),
-           "removed": len(removed)}
+           "removed": len(removed), "genre_dropped": genre_dropped}
 
 
-def check_completeness(conn, passage_id: int, verse_ids_in_passage: list[int]) -> tuple[bool, list[str]]:
+def check_completeness(conn, verse_ids_in_passage: list[int]) -> tuple[bool, list[str]]:
     """§D.2's control-total, applied: every non-'inert'-role code (i.e. every live `verse_lexical`
-    row in this passage) must carry ≥1 live `verse_lexical_note` row. Returns (complete, missing)
+    row for these verses) must carry ≥1 live `verse_lexical_note` row. Returns (complete, missing)
     — `missing` is a list of `verse:position` strings, capped by the caller for the message
-    (same `problems[:5]` convention as every other handler)."""
+    (same `problems[:5]` convention as every other handler).
+
+    Verse-scoped (escalation #1451, 2026-09-05): filters `verse_lexical_note` by `verse_id`
+    (a column every note already carries, set from its own target verse), not `passage_id` — no
+    `passage` row exists in the new design. `verse_ids_in_passage` keeps its historical name
+    (call sites pass the target verse's own id, singly or in a small set)."""
     if not verse_ids_in_passage:
         return True, []
     ph = ",".join("?" * len(verse_ids_in_passage))
@@ -273,12 +312,44 @@ def check_completeness(conn, passage_id: int, verse_ids_in_passage: list[int]) -
         f"JOIN verse v ON v.id=vl.verse_id "
         f"WHERE vl.verse_id IN ({ph}) AND vl.deleted=0", tuple(verse_ids_in_passage)).fetchall()
     noted = {r["verse_lexical_id"] for r in conn.execute(
-        f"SELECT DISTINCT verse_lexical_id FROM verse_lexical_note WHERE passage_id=? "
-        f"AND deleted=0", (passage_id,))}
+        f"SELECT DISTINCT verse_lexical_id FROM verse_lexical_note WHERE verse_id IN ({ph}) "
+        f"AND deleted=0", tuple(verse_ids_in_passage))}
     missing = [f"{r['osisId']}:{r['position']}" for r in rows if r["id"] not in noted]
     return (len(missing) == 0), missing
 
 
+def layer1_state(conn, verse_ids: list[int]) -> dict:
+    """Precheck for `VerseLexical.ps1`'s `lexical.enrich` auto-chain (escalation found live,
+    2026-09-05 — see BUILD.md #234): does Layer 1 already have live rows for these verses, and
+    does Layer 2 already have live notes attached to them?
+
+    Exists because `lexical.build`'s version-aware write ALWAYS mints fresh `verse_lexical` ids
+    on every run, even when the new content is byte-identical to what's already there (documented,
+    intentional — the original test plan's B4 case). Nothing in that design accounts for
+    `verse_lexical_note.verse_lexical_id`, a plain FK with no cascade/re-point step: an
+    unconditional rebuild on a verse that already has Layer 2 notes silently orphans every one of
+    them (their FK points at the now soft-deleted old row) — found live on Rom.9.14 when the
+    auto-chain default was first tested against a verse that already had notes. Callers use this
+    to skip the auto-build when Layer 1 is already present (nothing to gain from rebuilding
+    identical content) and to refuse/warn before a forced rebuild that would orphan existing notes.
+    """
+    if not verse_ids:
+        return {"has_layer1": False, "has_notes": False}
+    ph = ",".join("?" * len(verse_ids))
+    has_layer1 = conn.execute(
+        f"SELECT 1 FROM verse_lexical WHERE verse_id IN ({ph}) AND deleted=0 LIMIT 1",
+        tuple(verse_ids)).fetchone() is not None
+    has_notes = conn.execute(
+        f"SELECT 1 FROM verse_lexical_note WHERE verse_id IN ({ph}) AND deleted=0 LIMIT 1",
+        tuple(verse_ids)).fetchone() is not None
+    return {"has_layer1": has_layer1, "has_notes": has_notes}
+
+
 def set_lexical_complete(conn, passage_id: int, complete: bool) -> None:
+    """UNUSED from #1451 onward — no `passage` row exists to hang completeness on in the
+    verse-scoped design; where per-verse completeness should live long-term is still undesigned
+    (`iba/docs/1451-window1-layer2-verse-scoped-redesign-v1-20260905.md`'s own open item).
+    `handlers/lexical.py:enrich()` no longer calls this. Left in place, not deleted, so a future
+    design has the exact prior write shape to reference or repurpose."""
     conn.execute("UPDATE passage SET lexical_complete_at=? WHERE id=?",
                (_now() if complete else None, passage_id))

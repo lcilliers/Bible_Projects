@@ -1,0 +1,61 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260905T063000Z-PROSE-GLOSSARY-T4-CLUSTER-CODE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-09-05T06:30:00Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Escalation #1503: glossary update for the cfg_lexical_code_class -> cluster architecture correction. Adds a T4 (Adversarial) definition and corrects a stale factual claim ('T3 is not itself a cluster_code value') duplicated in the T2/T3/T1 entries."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-1046-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1046,
+      "record": {
+        "body": "[DEFINITION] M-code cluster with code T2 consists of Strong's codes carrying no direct inner-being connotation. These terms may serve as a qualifier to enhance another inner being term. Their analytic value is closely tied to another term, never in isolation.\n\n[BACKGROUND] Also appears as a Scope-focus bucket label and in verse_coverage's n_T2/n_study_nonT2 counts, all the same sense. Distinct from T3, a tier for human operations/movements not tied to one cluster. Correction, 2026-09-05: T3 IS itself a live cluster_code value (checked against the `cluster` table directly) — the prior claim that it wasn't was stale/wrong, not a design fact. T2/T3 are no longer the only special (non-M) cluster codes: T4 (Adversarial) was added 2026-09-05, the first of an incremental series of finer sub-buckets being split out of T2's own rough catch-all as analytics identifies a real, reusable grouping (see 'T4').",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"glossary_key\": \"cluster_code.T2\", \"aliases\": [], \"proposed_citations\": [\"bible_research.cfg_column: mti_terms.cluster_code -- cite this entry for the T2 value's meaning\"]}"
+      }
+    },
+    {
+      "op_id": "PROSE-1069-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1069,
+      "record": {
+        "body": "[DEFINITION] T3 is a tier for Strong's terms describing an inner-being operation, action, or movement (often a verb) that is not tied to one specific cluster, or that applies broadly across many clusters. Unlike T2, T3 terms ARE inner-being-related — they describe an operation, not merely qualify one.\n\n[BACKGROUND] Correction, 2026-09-05: T3 IS itself a live cluster_code value (checked against the `cluster` table directly, same as FLAG/T2) — the prior claim that it wasn't was stale/wrong. Distinct from T2 (supplementary, non-inner-being) — T3 covers the verbs/actions that carry inner-being content but resist being pinned to one cluster.",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"glossary_key\": \"new.t3\", \"aliases\": [], \"proposed_citations\": []}"
+      }
+    },
+    {
+      "op_id": "PROSE-1126-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 1126,
+      "record": {
+        "body": "[DEFINITION] Ambiguous on its own -- T1 has no [CC] cluster_code meaning (checked live 2026-09-05: T2/T3/T4 exist in that scheme, not T1). Two real, unrelated meanings exist: see 'T1 (Verse Reading Technique)' (work from the row, not the gloss) and 'T1 (Tier Catalogue)' (Definition, characteristic-grain).\n\n[BACKGROUND] Added per escalation #1447's own finding (v2/v3): a reader hitting bare 'T1' anywhere in the project's docs had no glossary entry to check at all, unlike T2/T3 which already had (cluster_code) entries even before this build. This entry exists to be found by that search, not to declare a third meaning. The [CC] cluster_code scheme is no longer fixed at T2/T3 -- see 'T4' and the M-Code cluster entry's own background note (2026-09-05 revision) for the incremental finer-bucket series now underway.",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"escalation\": 1447, \"built\": \"2026-09-04T20:19:22Z\", \"updated_2026-09-05\": \"escalation 1503\"}"
+      }
+    },
+    {
+      "op_id": "PROSE-NEW-T4-INSERT",
+      "table": "prose_section",
+      "operation": "insert",
+      "record": {
+        "section_type_id": 109,
+        "heading": "T4",
+        "body": "[DEFINITION] T4 is the first of an incremental series of finer-grained cluster codes now being split out of T2's own rough catch-all, per the researcher's own criterion: a new bucket is justified when it serves real analytical benefit (e.g. supporting a specific tier/catalogue question efficiently) and shares one common relation across its members, at the same grain as an ordinary M-cluster (e.g. M15/Wisdom) -- not a bucket per minute distinction. T4 groups Strong's codes referring to the adversarial spiritual party -- Satan/the Devil -- a referent-identity classification, distinct from the topic-driven M-code axis: a code can carry both an M-cluster assignment and a T4 tag.\n\n[BACKGROUND] Added 2026-09-05, correcting an earlier same-week attempt (escalation #1383) to do this kind of classification in a cfg_* table (cfg_lexical_code_class) instead — researcher's own verdict, verbatim: \"assigning a special status to a strong is to use a cluster for it... this is not cfg territory.\" Currently 3 codes, reallocated from T2 (not newly discovered): H7854 (satan), G4567 (satanas), G1228G (diabolos). G1228H (\"slanderous\", the adjective sense) stays at its existing M14/Deceit assignment, a different sense. Further finer buckets (negator, connective, party-kinds) are expected to follow the same pattern as analytics identifies them -- see escalations #1499-1502.",
+        "status": "draft",
+        "author": "claude_code",
+        "metadata_json": "{\"glossary_key\": \"cluster_code.T4\", \"aliases\": [], \"proposed_citations\": [\"iba.cluster: cluster_code T4 -- cite this entry for the T4 value's meaning\"], \"escalation\": 1503}"
+      }
+    }
+  ]
+}

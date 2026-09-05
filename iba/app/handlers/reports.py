@@ -311,10 +311,18 @@ def lexical_report(ctx: Ctx) -> Outcome:
 
 def lexical_exceptions_report(ctx: Ctx) -> Outcome:
     """Escalation #1383, build spec §G.1 — the per-run self-audit / exception report for the most
-    recent `lexical.enrich` run over this passage. Read-only against `verse_lexical`/
+    recent `lexical.enrich` run over this verse range. Read-only against `verse_lexical`/
     `verse_lexical_note`; never an independent write. Deliberately a plain tally against Layer 1's
     complete enumeration, no "confirms"/"validates"/"closes the gap" framing (method-and-drift-
-    mitigation doc's own corrected Layer-3 discipline, baked into the template's own structure)."""
+    mitigation doc's own corrected Layer-3 discipline, baked into the template's own structure).
+
+    Verse-scoped since escalation #1451 (2026-09-05, full record `iba/docs/1451-window1-layer2-
+    verse-scoped-redesign-v1-20260905.md`) — no `passage` row is resolved or required, same
+    correction already made to `handlers/lexical.py:enrich()`. Found live producing this report
+    for the first time against real #1451 output: every one of the 10 test verses has no `passage`
+    row by design, so the old `passagetrack.find_tracked_passage`/`no-passage` gate would have
+    refused all 10. Verses now resolve directly via `fetch_verses`, and both queries below filter
+    by `verse_id` instead of joining through `verse_passage`/`passage_id`."""
     book = ctx.params["Book"]
     book_label = ctx.params.get("BookLabel")
     if ctx.params.get("Range"):
@@ -325,28 +333,45 @@ def lexical_exceptions_report(ctx: Ctx) -> Outcome:
         lo, hi = versespanmeaningreport.parse_chapters(ctx.params["Chapters"])
         verse_lo = verse_hi = None
 
-    passage_row = passagetrack.find_tracked_passage(ctx.db.conn, book, lo, hi, verse_lo, verse_hi)
-    if passage_row is None:
-        return fail("no-passage", f"no tracked passage for {book} this range")
-    passage_id = passage_row["id"]
+    fetched = versespanmeaningreport.fetch_verses(ctx.db.conn, book, lo, hi, verse_lo, verse_hi)
+    if not fetched:
+        return fail("no-verses", f"{book} this range has no live verse rows")
+    verse_ids = [v["id"] for v in fetched]
+    ph = ",".join("?" * len(verse_ids))
 
     vl_rows = ctx.db.rows(
-        "SELECT vl.id, vl.strong, vl.role, vl.is_negator, vl.narrative_morph, "
-        "vl.gloss_consistent_in_verse, v.osisId FROM verse_lexical vl "
-        "JOIN verse v ON v.id=vl.verse_id JOIN verse_passage vp ON vp.verse_id=v.id "
-        "WHERE vp.passage_id=? AND vp.deleted=0 AND vl.deleted=0", (passage_id,))
+        f"SELECT vl.id, vl.strong, vl.role, vl.is_negator, vl.narrative_morph, "
+        f"vl.gloss_consistent_in_verse, v.osisId FROM verse_lexical vl "
+        f"JOIN verse v ON v.id=vl.verse_id "
+        f"WHERE vl.verse_id IN ({ph}) AND vl.deleted=0", tuple(verse_ids))
     n_negators = sum(1 for r in vl_rows if r["is_negator"])
     n_narrative = sum(1 for r in vl_rows if r["narrative_morph"])
     n_gloss_bad = sum(1 for r in vl_rows if r["gloss_consistent_in_verse"] == 0)
 
     note_rows = ctx.db.rows(
-        "SELECT note_type, resolution_status, value_text FROM verse_lexical_note "
-        "WHERE passage_id=? AND deleted=0", (passage_id,))
+        f"SELECT note_type, resolution_status, value_text FROM verse_lexical_note "
+        f"WHERE verse_id IN ({ph}) AND deleted=0", tuple(verse_ids))
     by_status: dict[str, list] = {}
     for r in note_rows:
         by_status.setdefault(r["resolution_status"], []).append(r)
     connectives = [r for r in note_rows if r["note_type"] == "connective"]
     n_unclassified_conn = sum(1 for r in connectives if (r["value_text"] or "") == "UNCLASSIFIED")
+
+    # Standing integrity check (escalation #1520 root-cause fix, §D of `iba/docs/1520-verse-
+    # lexical-crud-safety-review-v1-20260905.md`): a live note whose verse_lexical_id/
+    # target_verse_lexical_id points at a soft-deleted verse_lexical row is a genuine dangling
+    # reference (the code slot it names truly no longer exists — `write_readings_for_span`'s
+    # identity-stable write only ever deletes a slot for real when it disappears from the span).
+    # Should always be 0; surfaced here rather than only discoverable via a failed enrich call.
+    orphaned_anchor = ctx.db.rows(
+        f"SELECT n.id, n.note_type FROM verse_lexical_note n "
+        f"JOIN verse_lexical vl ON vl.id=n.verse_lexical_id "
+        f"WHERE n.verse_id IN ({ph}) AND n.deleted=0 AND vl.deleted=1", tuple(verse_ids))
+    orphaned_target = ctx.db.rows(
+        f"SELECT n.id, n.note_type FROM verse_lexical_note n "
+        f"JOIN verse_lexical vl ON vl.id=n.target_verse_lexical_id "
+        f"WHERE n.verse_id IN ({ph}) AND n.deleted=0 AND n.target_verse_lexical_id IS NOT NULL "
+        f"AND vl.deleted=1", tuple(verse_ids))
 
     layer1 = [
         f"- codes processed: {len(vl_rows)}",
@@ -364,17 +389,28 @@ def lexical_exceptions_report(ctx: Ctx) -> Outcome:
     if not judgement:
         judgement = ["- (none recorded)"]
 
-    sections = {"layer1_tally": layer1, "layer2_dispositions": layer2, "judgement_calls": judgement}
-    intro = [f"> Generated by `report.lexical_exceptions` for passage {passage_id} "
-            f"({passage_row['ref']}). Read-only against verse_lexical/verse_lexical_note."]
+    n_orphaned = len(orphaned_anchor) + len(orphaned_target)
+    if n_orphaned:
+        integrity = [f"- **{n_orphaned} DANGLING reference(s) — action needed**:",
+                    f"  - {len(orphaned_anchor)} note(s) anchored on a deleted verse_lexical row",
+                    f"  - {len(orphaned_target)} note(s) targeting a deleted verse_lexical row"]
+    else:
+        integrity = ["- 0 dangling references (verse_lexical_id/target_verse_lexical_id all "
+                    "point at live rows)"]
+
+    sections = {"layer1_tally": layer1, "layer2_dispositions": layer2, "judgement_calls": judgement,
+               "integrity": integrity}
+    intro = [f"> Generated by `report.lexical_exceptions` for {book} {ctx.params.get('Range') or ctx.params.get('Chapters')} "
+            f"({len(verse_ids)} verse(s)). Read-only against verse_lexical/verse_lexical_note. "
+            f"No `passage` row involved — verse-scoped (escalation #1451)."]
     L = reportkit.render_scaffold(ctx.db.conn, "report.lexical_exceptions", sections, intro=intro,
                                   book=book, range=(ctx.params.get("Range") or ctx.params.get("Chapters")))
     output_dir = pathlib.Path(ctx.cfg.required_setting("report.verse_analysis_output_dir"))
     range_str = versespanmeaningreport._range_str(lo, hi, verse_lo, verse_hi)
     path = output_dir / (book_label or book) / f"{book.lower()}-{range_str}-lexical-exceptions.md"
     path = reportkit.write_report(ctx.db.conn, "report.lexical_exceptions", path, L)
-    return ok(f"wrote {path}", path=str(path), passage_id=passage_id, codes=len(vl_rows),
-             notes=len(note_rows))
+    return ok(f"wrote {path}", path=str(path), codes=len(vl_rows), notes=len(note_rows),
+             dangling_references=n_orphaned)
 
 
 # ── report.lexical_extract ──────────────────────────────────────────────────────────────────────
@@ -473,10 +509,30 @@ def lexical_extract(ctx: Ctx) -> Outcome:
                 {"note_type": n["note_type"], "resolution_status": n["resolution_status"],
                  "value_text": n["value_text"], "evidence_text": n["evidence_text"]})
 
+    # Cluster short name(s), computed here at report time -- NOT a stored verse_lexical column
+    # (researcher decision, 2026-09-05: avoids the backfill-cost/staleness problem already named
+    # in BUILD.md #230 for is_negator/party_kind -- cluster_strong keeps changing, as today's own
+    # T4-T9 build proves, and a stored column would go stale every time it does). Joined on the
+    # EXACT strong code, never base-stripped (the strong_related lesson, escalation #1451 review
+    # session, 2026-09-05 -- cluster_strong is keyed like strong_related, not like the base-keyed
+    # cfg_lexical_code_class convention). A code can belong to more than one cluster at once
+    # (confirmed live: H0034 is both M24 and T2) -- all live memberships are returned, comma-joined
+    # by short_name, never silently collapsed to one.
+    strong_codes = sorted(set(r["strong"] for r in rows if r["strong"]))
+    clusters_by_strong: dict[str, list[str]] = {}
+    if strong_codes:
+        ph = ",".join("?" * len(strong_codes))
+        for c in ctx.db.rows(
+                f"SELECT cs.strong, cl.short_name FROM cluster_strong cs "
+                f"JOIN cluster cl ON cl.cluster_code=cs.cluster_code "
+                f"WHERE cs.strong IN ({ph}) AND cs.deleted=0", tuple(strong_codes)):
+            clusters_by_strong.setdefault(c["strong"], []).append(c["short_name"])
+
     out_rows = []
     for r in rows:
         d = dict(r)
         d["notes"] = notes_by_id.get(d["verse_lexical_id"], [])
+        d["cluster"] = ", ".join(clusters_by_strong.get(d["strong"], [])) or None
         out_rows.append(d)
 
     payload = {
