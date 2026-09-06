@@ -141,6 +141,9 @@ resolved and should not be assumed answered by anything in this session.
 
 ## Git state
 
-Committed and pushed as part of completing this log (branch `main`). Commit hash and push
-confirmation to follow in a same-day catch-up note if this section isn't filled in by the commit
-itself — per the standing convention for this trigger.
+Committed and pushed, branch `main`: commit `e07edaa2d40dff72df3ec1a5093123bffb891169`
+(2026-09-06 17:46:15 +0100), pushed `4eb5403e..e07edaa2` to `origin/main`. `git status` clean
+afterward. One push warning, not a block: `_analytics/Clusters/M42-Prayer-Petition/m42-layer1-
+full-extract-v1-20260906.jsonl` is 54.41MB, over GitHub's *recommended* 50MB (not the 100MB hard
+limit that has blocked pushes before) — worth trimming or moving to Git LFS at some point, not
+urgent.
