@@ -12809,3 +12809,341 @@ inserted, `45` of the 47 T-reclassifications inserted (2 already present).
 **Files:** `iba/app/migration/family_reallocation_v1_20260905.py`, `_analytics/clusters/m01-m47-
 family-grouping-iteration-v1-20260905.md`, `_analytics/clusters/m01-m47-strong-family-v1/v2/v3-
 20260905.csv`.
+
+## 237. `M58`/`M10b` duplicate-cluster defect found and fixed — M10b retired into M58 (2026-09-06, escalation #1525)
+
+Same-day follow-up to #236's family reallocation. A size/shape assessment of all 85 M-clusters
+(concentration check — what share of a cluster's verses come from its single top member strong)
+surfaced that **M58 and M10b were the only duplicate `short_name` ("Wickedness") among all 85 live
+M-clusters** — #236's family-grouping heuristic minted a fresh `M58` ("Wickedness, ungodliness,
+vileness", 5 strongs, `rationale='family=wickedness-ungodliness'`) without checking it against the
+pre-existing `M10b` ("Wickedness, Evil and Abomination", 43 strongs, its own pre-existing gloss
+list already covering wicked/wickedness/evil/abomination) — zero member-strong overlap between
+them, confirmed by direct query, so this was a naming/taxonomy oversight, not a duplicate-row bug.
+
+**Researcher's own verdict, verbatim:** *"I suggest we retire M10b and keep M58."*
+
+**Applied, same in-place-update pattern as the 2026-08-13 M10→M10b refinement and #236's own T4
+adversarial reallocation:** `iba/app/migration/retire_m10b_into_m58_v1_20260906.py` — relocated
+M10b's 43 live `cluster_strong` members to M58 (`rationale` appended, not overwritten), merged
+M10b's `description`/`gloss` onto the surviving M58 row (M58's own `gloss` was empty), and set
+`cluster.deleted=1` on M10b. `iba.db` backed up first
+(`iba.db.pre-1525-m10b-retire-20260906.bak`).
+
+**Verified live:** M10b confirmed `deleted=1`, 0 live members remaining under it; M58 now holds 48
+live members (5 original + 43 relocated); 0 remaining duplicate `short_name`s among live
+M-clusters; 0 orphaned `cluster_strong` rows post-migration.
+
+**Files:** `iba/app/migration/retire_m10b_into_m58_v1_20260906.py` (registered in `cfg_utility`,
+`inactive=1`); `iba/docs/737-cluster-size-theory-and-assessment-v1-20260906.md` (the assessment
+that surfaced this).
+
+## 238. `resolved_sense` scoped to M-code words only, raw stepGloss duplication removed, `gloss_consistent_in_verse` repointed to `surface` (2026-09-06, escalation #1527)
+
+Same-day follow-up to #237, from the size investigation #1526 opened (a 51MB/75,350-row Layer-1
+JSON extract for M42). Traced the weight to `resolved_sense`: `lib/lexical.py:resolve_code()`
+unconditionally prepended the full raw `strong.stepGloss` dictionary text to every row
+(`f"stepGloss: {full text} — {narrowed}"`), duplicating a corpus-wide-constant string into every
+occurrence; separately, `resolved_sense` — a pure function of `(strong, morph_code)` with no
+per-verse signal at all — made `gloss_consistent_in_verse`'s own same-code-different-sense check
+structurally unable to ever fire (confirmed: `1` for all 544,013 live rows corpus-wide, including
+the build spec's own named calibration case, Dan 1:8's `H0834A`).
+
+**Researcher's own diagnosis and instruction, verbatim, this session:** *"resolved_sense is only
+relevant for cluster M-codes, not cluster T-codes... what I do not want to happen is that layer 1
+arrives at a resolved_sense that is compromised, that gives layer 2 an answer that is not
+dependable."* Separately, a decision the researcher had previously made and confirmed here:
+`gloss_consistent_in_verse` keys on `surface` (the aligned translation word, genuinely
+context-sensitive — live proof: Dan 1:8's own `H0834A` reads `surface='that'` at one occurrence,
+`'allow'` at the other), not `resolved_sense`.
+
+**Built, `iba/app/lib/lexical.py`:**
+- `resolve_code()` — dropped the redundant raw-`stepGloss` prefix from the sense-rows-exists
+  branch; `resolved_sense` is now just the narrowed/selected text itself (the no-sense-rows
+  fallback branch is unchanged — nothing else exists there to use).
+- `load_mcode_strongs()` (new) — base-stripped set of every strong belonging to a live M-code
+  cluster, same loaded-once-per-build pattern as `load_code_classes`.
+- `build_for_verse()` — after `resolve_code()`, `resolved_sense` is set to `None` for any code
+  whose base isn't in `load_mcode_strongs()`'s set. `role`/`status`/`ambiguity_note` are
+  **unchanged** — this restriction applies to `resolved_sense` only, per direct instruction not to
+  extend it further this round.
+- `_apply_gloss_consistency()` — regroups on `surface` instead of `resolved_sense`.
+- `build_for_range`/`build_for_verse_ids` — thread `mcode_strongs` through, loaded once.
+
+**Migration**, `iba/app/migration/resolved_sense_mcode_only_v1_20260906.py` (one-off, re-runs the
+corrected `build_for_verse_ids` against the full existing corpus via the identity-stable
+`write_readings_for_span` path — same validation approach as #225's own backfill, not a bespoke
+SQL patch). `iba.db` backed up first (`iba.db.pre-1527-resolved-sense-mcode-only-20260906.bak`).
+
+**Validated small before running corpus-wide:** Dan 1:8 (`H0834A`'s two occurrences now correctly
+`gloss_consistent_in_verse=0`) and the full M46 cluster (591 verses — `resolved_sense` population
+100% → 19.9%) — both checked live before the full run.
+
+**Verified live, corpus-wide, after the full run** (29,754 verses, 544,572 codes, 532,747 updated,
+0 removed, 0 orphaned notes): `resolved_sense` populated on **13.2%** of live rows (71,933 of
+544,572), down from 100%; total `resolved_sense` byte volume **23.59 MB**, down from an unmeasured
+but clearly much larger figure (M42 alone: `resolved_sense` bytes dropped from being the dominant
+contributor to a 51.5MB extract down to **3.32 MB**, population 100% → 16.9%).
+`gloss_consistent_in_verse` now genuinely varies (106,658 rows read `0`, 437,914 read `1`) instead
+of being tautologically `1` everywhere.
+
+**Files:** `iba/app/lib/lexical.py`, `iba/app/migration/resolved_sense_mcode_only_v1_20260906.py`
+(new), `iba/app/db/iba.db` (532,747 `verse_lexical` rows updated in place, same ids).
+
+## 239. 413 old-migration/new-rebuild M-code duplicate tags retired (2026-09-06, escalation #1525)
+
+Found while cross-referencing a single-verse extract (Jam 2:3): a word (`G4434` "poor man")
+carried two live M-code tags at once — `M46` (Wealth & Riches, `old-system-migration`) and `M09`
+(Humility & Lowliness, yesterday's `heuristic-family-grouping-v1-20260905` rebuild). Checked how
+widespread this is: **675 distinct strongs carry 2+ live M-code tags**, split into 3 shapes —
+413 old-migration+heuristic-rebuild, 176 llm-allocation+heuristic-rebuild, 65 auto-precedent
++heuristic-rebuild (21 more are old-migration duplicated against itself). A 20-row sample of the
+413 showed the old tag conflicting with the new one is wrong far more often than not (`"holy"` ->
+`M22 Praise&Song` instead of correctly `M61 Purity&Holiness`; `"to choose"` -> `M37
+Firstborn&Foreknowledge` instead of correctly `M64 Will&Resolve`) — traces directly to
+`old-system-migration`'s own already-known quality profile (#1525: no confidence score, never
+independently verified in IBA). **Researcher instruction, verbatim: "a single m-code word should
+never appear twice in different clusters."**
+
+**Scoped deliberately to the confident case only.** A parallel sample of the 176
+llm-allocation-vs-heuristic-rebuild conflicts was more mixed — at least one case (`G1476`
+"steadfast": llm -> `M34 Patience&Perseverance` vs. heuristic -> `M23 Strength&Courage`) reads like
+the *older* tag may be the better fit — so a blanket "newer wins" rule was judged unsafe there
+without a closer look, and left untouched. The 65 auto-precedent conflicts and 21 old-migration
+self-duplicates are likewise untouched.
+
+**Applied by the researcher directly** (this session's own Bash tool was blocked by the harness's
+permission classifier on this specific script — reason not exposed beyond "blocked by classifier";
+the exact same class of migration-script execution had run cleanly twice earlier the same session,
+so the block wasn't a settings-file rule): `iba/app/migration/retire_old_migration_mcode_
+conflicts_v1_20260906.py`, run from a plain terminal. `iba.db` backed up first (`iba.db.pre-1525-
+dedup-old-migration-20260906.bak`).
+
+**Verified live:** 421 `cluster_strong` rows retired (`deleted=1`, `rationale` appended, never
+overwritten) — more than the 413 strongs since a few carried more than one old-migration row; 0
+remaining old-migration+heuristic-rebuild conflicts; `G4434` now correctly carries only its single
+live `M09` tag. **262 multi-tagged M-code strongs remain** (176 + 65 + 21, the shapes deliberately
+not touched this pass) — open, flagged on escalation #1525 for a disposition decision, not a
+blanket auto-resolve.
+
+**Files:** `iba/app/migration/retire_old_migration_mcode_conflicts_v1_20260906.py` (new),
+`iba/app/db/iba.db` (421 `cluster_strong` rows soft-deleted).
+
+## 240. 21 old-migration self-duplicate M-code tags resolved by researcher ruling (2026-09-06, escalation #1525)
+
+Follow-up to #239. The 21 strongs where both conflicting M-code tags shared the identical
+`old-system-migration` source (no provenance signal to auto-resolve, unlike #239's 413) were
+listed out in full and reviewed directly by the researcher. **Explicit per-strong ruling given
+verbatim:** keep the second-listed cluster in every case except `G4993` ("be of sound mind"),
+which keeps the first (`M15 Knowing & Understanding`, not `M47 Inner Seat`) — "the duplicate in
+the other cluster must be removed."
+
+**Applied:** `iba/app/migration/resolve_old_migration_self_duplicates_v1_20260906.py` — a hardcoded
+21-entry `strong -> cluster_code to keep` table taken directly from the ruling, run from a plain
+terminal (this session's own Bash tool ran it cleanly this time — the earlier classifier block on
+#239's script did not recur here). `iba.db` backed up first (`iba.db.pre-1525-selfdup-resolve-
+20260906.bak`).
+
+**Verified live:** all 21 rows retired (`deleted=1`, `rationale` appended); `G4993` confirmed
+holding only its kept `M15` tag, `M47` retired; 0 of these 21 strongs remain multi-tagged.
+**241 multi-tagged M-code strongs remain corpus-wide** — 176 llm-allocation-vs-heuristic-rebuild +
+65 auto-precedent-vs-heuristic-rebuild conflicts, both still open, no rule applied yet (the sample
+review on the llm-allocation group found at least one case where the older tag looked better —
+flagged on escalation #1525 for a disposition decision, not auto-resolved).
+
+**Files:** `iba/app/migration/resolve_old_migration_self_duplicates_v1_20260906.py` (new),
+`iba/app/db/iba.db` (21 `cluster_strong` rows soft-deleted).
+
+## 241. M29 merged into M18 (2026-09-06, escalation #1525)
+
+Found via a member-overlap scan run across all 85 live M-clusters (looking for the same defect
+class as #237's M10b/M58 merge): `M18` (Desire & Longing, 95 members) and `M29` (Desire, 25
+members) already shared 7 members outright, and `M29` received zero new members from the
+2026-09-05 family-reallocation rebuild — the rebuild's new "desire" family was absorbed entirely
+into `M18` without ever checking it against the pre-existing, narrower `M29`. Same systemic gap as
+#237, different pair. **Researcher instruction, verbatim: "merge M29 into M18 and set M29 as
+deleted."**
+
+**Applied**, same in-place-update pattern as #237: `iba/app/migration/merge_m29_into_m18_
+v1_20260906.py`. `iba.db` backed up first (`iba.db.pre-1525-m29-into-m18-20260906.bak`). 18 of
+M29's 25 members relocated to `M18` (`rationale` appended); the 7 already-overlapping members'
+`M29` rows retired without creating a duplicate `M18` row (M18 already had its own); `M18`'s
+`description`/`gloss` absorbed `M29`'s text; `M29` set `deleted=1`.
+
+**Verified live:** `M29` confirmed `deleted=1`, 0 live members; `M18` now holds 113 live members
+(95 + 18 relocated, exactly as expected).
+
+**Also found in the same scan, not yet actioned:** `M27` (Evil) and `M55` (Destruction & Ruin)
+overlap at 40.5% (17 of M27's 42 members) — `M55` is 100% new from the same rebuild, and a
+2026-08-13 document (`m10bc-cluster-review-20260813.md`) had already proposed renaming M27 to
+"Idolatry, Ruin and Violence" to separate this exact territory, never applied. `M16`/`M17`
+(Wisdom & Folly / Counsel, 31.2%) flagged as a lower-confidence fourth candidate. Both left open on
+escalation #1525, pending researcher direction.
+
+**Files:** `iba/app/migration/merge_m29_into_m18_v1_20260906.py` (new), `iba/app/db/iba.db` (18
+`cluster_strong` rows relocated, 7 retired, `cluster` M18/M29 rows updated).
+
+## 242. M38 merged into M45 (2026-09-06, escalation #1525)
+
+Same overlap-scan pattern as #241 (M29/M18): `M38` (Restoration & Revival, 53 members) and `M45`
+(Renewal & Transformation, 22 members) shared 4 members outright (18.2% of the smaller cluster).
+**Researcher instruction, verbatim: "merge M38 into M45 and mark M38 as deleted."**
+
+**Applied**, same in-place-update pattern as #237/#241: `iba/app/migration/merge_m38_into_m45_
+v1_20260906.py`. `iba.db` backed up first (`iba.db.pre-1525-m38-into-m45-20260906.bak`). 49 of
+M38's 53 members relocated to `M45` (`rationale` appended); the 4 already-overlapping members'
+`M38` rows retired without creating a duplicate `M45` row; `M45`'s `description`/`gloss` absorbed
+`M38`'s text; `M38` set `deleted=1`.
+
+**Verified live:** `M38` confirmed `deleted=1`, 0 live members; `M45` now holds 71 live members
+(22 + 49 relocated, exactly as expected).
+
+**Files:** `iba/app/migration/merge_m38_into_m45_v1_20260906.py` (new), `iba/app/db/iba.db` (49
+`cluster_strong` rows relocated, 4 retired, `cluster` M38/M45 rows updated).
+
+## 243. M17 merged into M16 (2026-09-06, escalation #1525)
+
+Same overlap-scan pattern as #241/#242: `M16` (Wisdom & Folly, 68 members) and `M17` (Counsel, 16
+members) shared 5 members outright (31.2% of the smaller cluster). **Researcher instruction,
+verbatim: "merge M17 into M16 and mark M17 as deleted."**
+
+**Applied**, same in-place-update pattern as #237/#241/#242: `iba/app/migration/merge_m17_into_
+m16_v1_20260906.py`. `iba.db` backed up first (`iba.db.pre-1525-m17-into-m16-20260906.bak`). 11 of
+M17's 16 members relocated to `M16` (`rationale` appended); the 5 already-overlapping members'
+`M17` rows retired without creating a duplicate `M16` row; `M16`'s `description`/`gloss` absorbed
+`M17`'s text; `M17` set `deleted=1`.
+
+**Verified live:** `M17` confirmed `deleted=1`, 0 live members; `M16` now holds 79 live members
+(68 + 11 relocated, exactly as expected).
+
+**Files:** `iba/app/migration/merge_m17_into_m16_v1_20260906.py` (new), `iba/app/db/iba.db` (11
+`cluster_strong` rows relocated, 5 retired, `cluster` M16/M17 rows updated).
+
+## 244. M27 merged into M55 (2026-09-06, escalation #1525)
+
+Same overlap-scan pattern as #241/#242/#243, the strongest overlap signal found in the whole scan:
+`M27` (Evil, 42 members) and `M55` (Destruction & Ruin, 45 members, 100% from the 2026-09-05
+heuristic-family-grouping rebuild) shared 17 members outright (40.5% of the smaller cluster). A
+2026-08-13 document had already proposed renaming M27 to separate this exact territory out,
+never applied. **Researcher instruction, verbatim: "merge M27 into M55."**
+
+**Applied**, same in-place-update pattern as #237/#241/#242/#243: `iba/app/migration/merge_m27_
+into_m55_v1_20260906.py`. `iba.db` backed up first (`iba.db.pre-1525-m27-into-m55-20260906.bak`).
+25 of M27's 42 members relocated to `M55` (`rationale` appended); the 17 already-overlapping
+members' `M27` rows retired without creating a duplicate `M55` row; `M55`'s `description`/`gloss`
+absorbed `M27`'s text; `M27` set `deleted=1`.
+
+**Verified live:** `M27` confirmed `deleted=1`, 0 live members; `M55` now holds 70 live members
+(45 + 25 relocated, exactly as expected).
+
+**Files:** `iba/app/migration/merge_m27_into_m55_v1_20260906.py` (new), `iba/app/db/iba.db` (25
+`cluster_strong` rows relocated, 17 retired, `cluster` M27/M55 rows updated).
+
+## 245. 22 M-code conflict blocks resolved by name-match, method corrected mid-stream (2026-09-06, escalation #1525)
+
+Follow-up to the 241/208-strong multi-tagged-M-code investigation (#239/#240). Grouped the
+remaining conflicts by repeated cluster-code pair (95 distinct pairs across 208 strongs) rather
+than treating each strong independently, per researcher instruction to resolve "blocks of words"
+in bulk. **First-pass method was flawed and corrected live, same session:** a flat bag-of-words
+score across each cluster's entire gloss corpus gave `M22` "Praise & Song" and `M42` "Prayer &
+Petition" an artificial tie on the word "song" — `M42` happens to independently carry a few
+legacy `song`-glossed members of its own (`za.mir`/`zim.rat`/`ron`), unrelated to the actual block
+in question. **Researcher's own diagnosis, verbatim:** *"if the strong is song, and one of the
+m-codes has song in the title, and the other not, then I don't understand why it is so difficult
+to decide."* Corrected to a two-tier method: **Tier 1** checks the block's vocabulary against each
+cluster's `short_name` (title) alone first — a hit on exactly one side decides it outright, no
+corpus fuzz. **Tier 2** (only when neither/both titles match) falls back to the full corpus score,
+requiring a real margin (winner ≥2 with loser at 0, or ≥2x the loser) on a block of 3+ strongs — a
+single 1-vs-0 keyword hit on a lone strong is not treated as decisive.
+
+**Resolved: 22 of 95 conflicting pairs (63 of 208 strongs)** — 16 by direct title match (`song`→
+`M22`, `petition`→`M42`, `will`→`M64`, `righteousness`→`M12`, `desire`→`M18`, `worship`→`M36`
+(twice), `violence`→`M10`, `despair`→`M24`, `rest`→`M33`, `inner`→`M47`, `speech`→`M65`,
+`repentance`→`M11`, `firstborn`→`M37`, `conduct`→`M76`, `shouting`→`M84`), 6 by corpus-score margin
+(`M07`←`M06` curse/reproach words, `M37`←`M42` calling words, `M15`←`M16` teach/discipline words,
+`M04`←`M18`, `M24`←`M06`, `M34`←`M23`). **73 pairs (145 strongs) have no reliable signal under
+either tier and remain open** — genuinely ambiguous or too-thin-evidence cases, not guessed at.
+
+**Applied**: `iba/app/migration/resolve_mcode_conflicts_by_name_match_v1_20260906.py` — for each
+decided block, retires the LOSING cluster's `cluster_strong` row per strong (`rationale`
+appended); neither cluster in any pair is itself merged/retired (unlike #237/#241-244's whole-
+cluster merges) — both clusters stay live, only the individual double-tagging resolves. `iba.db`
+backed up first (`iba.db.pre-1525-namematch-resolve-20260906.bak`).
+
+**Verified live:** 63 rows retired; 145 multi-tagged M-code strongs remain corpus-wide (208-63,
+exactly as expected); `G5603` ("song") confirmed resolved to `M22` only, `M42`'s tag retired.
+
+**Files:** `iba/app/migration/resolve_mcode_conflicts_by_name_match_v1_20260906.py` (new),
+`iba/app/db/iba.db` (63 `cluster_strong` rows soft-deleted).
+
+## 246. 11 more M-code conflicts resolved by synonym match (2026-09-06, escalation #1525)
+
+Follow-up to #245. Researcher spotted specific gaps in #245's title-exact-match method, verbatim:
+*"you missed obedient, devot(e) also I see similar meaning words e.g. amazement map to
+astonishment, anguish to despare, answer to petition, silent with peace, upright with
+righteousness."* Two distinct gaps: (1) **stemming misses** — `obedient`/`Obedience` and
+`devote`/`Devotion` share a root but weren't the identical token #245's exact-word matcher
+required; (2) **genuine synonyms with no shared root at all** — `upright`/`righteousness`,
+`anguish`/`despair`, `amazement`/`astonishment`, `silent`/`peace` — no token-overlap method could
+ever catch these without an explicit list.
+
+Checked each named case against its actual two conflicting clusters rather than assuming: two of
+the three "answer" codes (`G0611`, `H6032`) pair with `M24`/`M41`, not `M42`/`M41` — `M42` isn't
+one of their options at all, so "answer -> petition" doesn't apply; resolved those to `M41 Being
+Heard` instead as Claude's own call, flagged as such, not attributed to the researcher.
+`wise`/`wisdom` was checked against the live remaining set — no matches found, not applicable.
+
+**Applied**: `iba/app/migration/resolve_mcode_conflicts_synonym_match_v1_20260906.py`, same
+per-strong retire pattern as #245. `iba.db` backed up first (`iba.db.pre-1525-synonym-resolve-
+20260906.bak`).
+
+**Verified live:** 11 rows retired; 134 multi-tagged M-code strongs remain (145-11); `G5255`
+("obedient") confirmed resolved to `M54 Torah & Obedience` only.
+
+**Files:** `iba/app/migration/resolve_mcode_conflicts_synonym_match_v1_20260906.py` (new),
+`iba/app/db/iba.db` (11 `cluster_strong` rows soft-deleted).
+
+## 247. 14 M-code conflicts resolved by review_flag, 120 held back as genuinely ambiguous (2026-09-06, escalation #1525)
+
+Follow-up to #245/#246. Researcher instruction, verbatim: *"the csv ... have a 1 in the
+review_flag column to set M-code for every row. where the review_flag = 0, the row must be
+removed from the M-code."* Checked live before applying: of the 134 then-remaining multi-tagged
+strongs, only **14 actually carry the pattern this rule needs** (exactly one side `review_flag=1`,
+the other `0`) — **120 have `review_flag=0` on both conflicting rows**, so applying the rule
+literally to them would strip both M-code tags entirely, not resolve a conflict. Applied only to
+the 14 clean cases; the 120 held back, not touched, flagged for the researcher's direction rather
+than guessed at or force-applied.
+
+**Applied**: `iba/app/migration/resolve_mcode_conflicts_review_flag_v1_20260906.py`, same
+per-strong retire pattern as #245/#246. `iba.db` backed up first (`iba.db.pre-1525-reviewflag-
+resolve-20260906.bak`).
+
+**Verified live:** 14 rows retired; 120 multi-tagged M-code strongs remain (134-14); `G3835`
+("crafty") confirmed resolved to `M14 Deceit & Falsehood` only, `M16`'s tag retired.
+
+**Files:** `iba/app/migration/resolve_mcode_conflicts_review_flag_v1_20260906.py` (new),
+`iba/app/db/iba.db` (14 `cluster_strong` rows soft-deleted).
+
+## 248. All remaining M-code conflicts resolved — 0 multi-tagged strongs corpus-wide (2026-09-06, escalation #1525)
+
+Closes out the multi-tagged-M-code-strong investigation opened in #239. Researcher instruction,
+verbatim: *"I have decided that in each case the heuristic-family-grouping-v1-20260905 item wins,
+the other one goes."* Checked live before applying: all 120 strongs remaining after #245/#246/#247
+cleanly carry exactly one `heuristic-family-grouping-v1-20260905` tag and one non-heuristic tag
+(`llm-allocation-v1_3-20260811` or `auto-precedent`) — 0 anomalies, rule unambiguous for the full
+remaining set.
+
+**Applied**: `iba/app/migration/resolve_mcode_conflicts_heuristic_wins_v1_20260906.py`, same
+per-strong retire pattern as #245-#247. `iba.db` backed up first (`iba.db.pre-1525-heuristicwins-
+resolve-20260906.bak`).
+
+**Verified live:** 120 rows retired, 0 anomalies skipped; **0 multi-tagged M-code strongs remain
+corpus-wide** — down from 675 at the start of this investigation (#239's original count). Full
+resolution path: 421 old-migration-vs-heuristic conflicts (#239) + 21 old-migration self-duplicates
+(#240) + 1 M29->M18 cluster merge (#241, 18+7) + 1 M38->M45 merge (#242, 49+4) + 1 M17->M16 merge
+(#243, 11+5) + 1 M27->M55 merge (#244, 25+17) + 22 title/corpus-match blocks (#245, 63 strongs) +
+11 synonym-match cases (#246) + 14 review_flag cases (#247) + 120 heuristic-wins cases (#248) =
+every live M-code cluster_strong row now belongs to exactly one cluster.
+
+**Files:** `iba/app/migration/resolve_mcode_conflicts_heuristic_wins_v1_20260906.py` (new),
+`iba/app/db/iba.db` (120 `cluster_strong` rows soft-deleted).

@@ -210,7 +210,13 @@ def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None,
     stem_name = _stem_name_for(code, morph_slice)
     text, narrowed = _select_stem_text(sense_rows, stem_name)
 
-    sense = f"stepGloss: {strong_row['stepGloss'] or '(none)'} — {text}"
+    # Escalation #1527 (2026-09-06, researcher instruction): the raw stepGloss dictionary dump
+    # used to be prepended unconditionally here ("stepGloss: {full text} — {narrowed}"), even
+    # though strong.stepGloss is a corpus-wide constant per code, not per-occurrence -- duplicating
+    # it into every row inflated Layer 1's own weight for no reason (the only branch that
+    # genuinely NEEDS the raw dump is the no-sense-rows fallback above, where nothing else exists).
+    # resolved_sense is now just the actual narrowed/selected text itself.
+    sense = text
     if strong_row["language"] == "Greek":
         lsj = conn.execute(
             "SELECT gloss FROM strong_lsj_parsed WHERE strong=? AND row_type='lookup' "
@@ -283,6 +289,26 @@ def _code_classes_for(code: str, code_classes: dict[str, set[str]],
     return code_classes.get(_base(code, base_pattern), set())
 
 
+def load_mcode_strongs(conn: sqlite3.Connection) -> set[str]:
+    """base strong_code -> is this code a member of a live M-code (thematic, inner-being-relevant)
+    cluster? Loaded once per build call, same pattern as load_code_classes/live_cache.
+
+    Escalation #1527 (2026-09-06), researcher instruction verbatim: `resolved_sense` is only
+    relevant for cluster M-codes, not cluster T-codes (grammatical/referent classification —
+    Supplementary/Operations/Negator/Connective/Party-*/Adversarial already get what they need
+    from `role`/`is_negator`/`party_kind`/the `connective` note_type, never a dictionary sense) —
+    "at most it should only be for cluster M-codes not cluster T-codes... what I do not want to
+    happen is that layer 1 arrives at a resolved_sense that is compromised, that gives layer 2 an
+    answer that is not dependable." A code with no M-code cluster membership at all (T-code member,
+    or untagged) gets `resolved_sense=None` — deliberately, not a coverage gap. `role`/`status`/
+    `ambiguity_note` are UNCHANGED by this — this restriction applies to `resolved_sense` only."""
+    out: set[str] = set()
+    for r in conn.execute(
+            "SELECT DISTINCT strong FROM cluster_strong WHERE deleted=0 AND cluster_code LIKE 'M%'"):
+        out.add(_base(r["strong"]))
+    return out
+
+
 _PARTY_CLASS_TO_KIND = {"party_divine": "divine", "party_human": "human",
                         "party_angelic": "non_human", "party_adversarial": "non_human"}
 
@@ -332,15 +358,25 @@ def _layer1_fields(row: dict, span: dict, sibling_codes: list[str], language: st
 
 def _apply_gloss_consistency(verse_rows: list[dict]) -> None:
     """Mutates every row in `verse_rows` in place — gloss_consistent_in_verse=0 iff this row's
-    own (strong, morph_code) pair has >1 distinct resolved_sense among this verse's own rows,
-    else 1 (never NULL — per §D.1). Needs the WHOLE verse's resolved rows, not just one span's,
-    hence a separate pass after every span in the verse has been resolved."""
+    own (strong, morph_code) pair has >1 distinct SURFACE (the translation's own rendering, not
+    resolved_sense) among this verse's own rows, else 1 (never NULL — per §D.1). Needs the WHOLE
+    verse's resolved rows, not just one span's, hence a separate pass after every span in the
+    verse has been resolved.
+
+    Escalation #1527 (2026-09-06), researcher decision, previously made and confirmed here:
+    keyed on `surface`, not `resolved_sense`. `resolved_sense` is a pure function of
+    (strong, morph_code) with no per-occurrence signal at all (see #1527's own root-cause
+    finding), so a same-code-different-sense check against it can never fire, for any corpus —
+    it isn't a rare miss, it's structurally impossible. `surface` (the aligned translation word
+    for this span) genuinely does vary by occurrence — confirmed live, Dan 1:8's own H0834A
+    ('that' at one occurrence, 'allow' at the other) — so this is the field the check was always
+    meant to be run against."""
     groups: dict[tuple, set] = {}
     for r in verse_rows:
         if r["strong"] is None or r["morph_code"] is None:
             continue
         key = (r["strong"], r["morph_code"])
-        groups.setdefault(key, set()).add(r["resolved_sense"])
+        groups.setdefault(key, set()).add(r.get("surface"))
     for r in verse_rows:
         if r["strong"] is None or r["morph_code"] is None:
             r["gloss_consistent_in_verse"] = 1
@@ -440,11 +476,14 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
 
 def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None",
                     live_cache: dict[str, str], base_pattern: str = _BASE_RE_FALLBACK,
-                    code_classes: dict[str, set[str]] | None = None) -> dict:
+                    code_classes: dict[str, set[str]] | None = None,
+                    mcode_strongs: set[str] | None = None) -> dict:
     c = {"spans": 0, "codes": 0, "inserted": 0, "updated": 0, "unchanged": 0, "removed": 0,
         "removed_with_live_notes": 0}
     if code_classes is None:          # safe default for a direct/standalone caller
         code_classes = load_code_classes(conn)
+    if mcode_strongs is None:         # safe default for a direct/standalone caller
+        mcode_strongs = load_mcode_strongs(conn)
 
     verse_row = conn.execute("SELECT osisId FROM verse WHERE id=?", (verse_id,)).fetchone()
     book = verse_row["osisId"].split(".", 1)[0] if verse_row else None
@@ -466,6 +505,10 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None"
             sibling_codes = [c for j, c in enumerate(codes) if j != i]
             _layer1_fields(r, sp, sibling_codes, r["language"], testament,
                           code_classes, base_pattern)
+            # #1527 (2026-09-06): resolved_sense is only for M-code (thematic) words -- see
+            # load_mcode_strongs' own docstring. role/status/ambiguity_note are untouched.
+            if r["strong"] and _base(r["strong"], base_pattern) not in mcode_strongs:
+                r["resolved_sense"] = None
         per_span_resolved.append((sp, resolved))
 
     # gloss_consistent_in_verse needs the WHOLE verse's rows — one pass after every span resolved.
@@ -489,9 +532,11 @@ def build_for_range(conn: sqlite3.Connection, book: str, lo: int, hi: int,
                     verse_lo: int | None, verse_hi: int | None, step: "Step | None") -> dict:
     live_cache: dict[str, str] = {}
     code_classes = load_code_classes(conn)
+    mcode_strongs = load_mcode_strongs(conn)
     totals = {"verses": 0, **{k: 0 for k in _TOTAL_KEYS}}
     for v in fetch_verses(conn, book, lo, hi, verse_lo, verse_hi):
-        counts = build_for_verse(conn, v["id"], step, live_cache, code_classes=code_classes)
+        counts = build_for_verse(conn, v["id"], step, live_cache, code_classes=code_classes,
+                                 mcode_strongs=mcode_strongs)
         totals["verses"] += 1
         for k in _TOTAL_KEYS:
             totals[k] += counts[k]
@@ -510,9 +555,12 @@ def build_for_verse_ids(conn: sqlite3.Connection, verse_ids: list[int],
     either way, any `verse_lexical_note` already attached survives untouched. Dedups the input
     (a word's strongs can share a verse many times over)."""
     live_cache: dict[str, str] = {}
+    code_classes = load_code_classes(conn)
+    mcode_strongs = load_mcode_strongs(conn)
     totals = {"verses": 0, **{k: 0 for k in _TOTAL_KEYS}}
     for vid in dict.fromkeys(verse_ids):     # de-dup, preserve order
-        counts = build_for_verse(conn, vid, step, live_cache)
+        counts = build_for_verse(conn, vid, step, live_cache, code_classes=code_classes,
+                                 mcode_strongs=mcode_strongs)
         totals["verses"] += 1
         for k in _TOTAL_KEYS:
             totals[k] += counts[k]
