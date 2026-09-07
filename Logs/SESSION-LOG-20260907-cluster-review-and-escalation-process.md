@@ -90,3 +90,5 @@ This is the direct answer to the researcher's closing question ("what else is no
 
 ## Git state
 
+Branch `main`, up to date with `origin/main`. Committed `f1e4c2a212886dd1062882a16fc42199fd69ee98` (2026-09-07 10:42:15 +0100) — 2,770 files changed (git correctly detected the `_analytics/Clusters` archive move as renames, not delete+add). Pushed successfully (`c083c89c..f1e4c2a2 main -> main`). `git status` confirms working tree clean after push.
+
