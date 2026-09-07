@@ -29,12 +29,16 @@
                       2026-08-29, escalation #1007 thread). Omit this parameter unless you have a
                       specific, confirmed reason not to.
 .PARAMETER Step       Run only this one step (lexical.build | lexical.enrich | report.
-                      verse_lexical | report.lexical_exceptions | report.lexical_extract)
-                      instead of the full chained sequence -- e.g. report.verse_lexical alone,
-                      to VIEW already-built results for a range without re-running the build
-                      (which may make live STEP calls). Omit to run the full sequence, unchanged
-                      default except it now also runs lexical.enrich + report.lexical_exceptions
-                      (escalation #1383).
+                      verse_lexical | report.lexical_exceptions | report.lexical_extract |
+                      lexical.notes) instead of the full chained sequence -- e.g. report.
+                      verse_lexical alone, to VIEW already-built results for a range without
+                      re-running the build (which may make live STEP calls). Omit to run the full
+                      sequence, unchanged default except it now also runs lexical.enrich + report.
+                      lexical_exceptions (escalation #1383). lexical.notes (escalation #1549,
+                      pending config approval as of 2026-09-07) is the payload-GENERATOR for
+                      lexical.enrich -- run it BEFORE writing a -PayloadPath by hand, same -Book/
+                      -Range/-Chapters as -Step lexical.build, requires lexical.build to have
+                      already run for the range.
 .PARAMETER PayloadPath  Path to the JSON payload file for lexical.enrich (notes/remove/genre) --
                       REQUIRED when -Step lexical.enrich is given, or when running the full
                       sequence (which now includes lexical.enrich) -- same convention as
@@ -97,6 +101,11 @@
 .EXAMPLE
     .\VerseLexical.ps1 -Book Dan -Range 1:1-8 -Step lexical.enrich -PayloadPath iba\app\staging\lexical\dan-1-1-8.json -ForceRebuild
     # -> rebuilds Layer 1 even though present; warns if Layer 2 notes already exist (they'll be orphaned).
+.EXAMPLE
+    .\VerseLexical.ps1 -Book Rom -Range 9:14 -Step lexical.notes
+    # -> writes the lexical.enrich REQUEST JSON (Layer 1 extract + base text + existing notes +
+    #    note_type/resolution_status catalogue + cfg_method_rule) -- read it, then hand-author the
+    #    -PayloadPath for -Step lexical.enrich from what it shows.
 #>
 
 [CmdletBinding()]
@@ -106,7 +115,7 @@ param(
     [string] $Range,
     [string] $BookLabel,
     [ValidateSet('lexical.build', 'lexical.enrich', 'report.verse_lexical',
-                 'report.lexical_exceptions', 'report.lexical_extract')] [string] $Step,
+                 'report.lexical_exceptions', 'report.lexical_extract', 'lexical.notes')] [string] $Step,
     [string] $PayloadPath,
     [switch] $SkipBuild,
     [switch] $ForceRebuild,

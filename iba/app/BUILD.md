@@ -13147,3 +13147,271 @@ every live M-code cluster_strong row now belongs to exactly one cluster.
 
 **Files:** `iba/app/migration/resolve_mcode_conflicts_heuristic_wins_v1_20260906.py` (new),
 `iba/app/db/iba.db` (120 `cluster_strong` rows soft-deleted).
+
+## 249. `lexical.notes` — payload-generator for `lexical.enrich` built, config pending approval (2026-09-07, escalation #1549)
+
+Researcher instruction (#1549): `lexical.enrich`'s payload has no generator — until now, producing
+one meant hand-reading `iba/docs/lexical-enrich-payload-guide-v1-20260905.md` and separately
+running `report.verse_lexical` to find each code's `position`. New step folds both into one
+read-only JSON request, scoped the same way as `lexical.build`/`lexical.enrich`
+(`-Book`+`-Range`/`-Chapters`).
+
+**What it assembles**, per code in the scope: every live `verse_lexical` (Layer 1) column, not the
+narrower subset `report.lexical_extract` returns (adds `morph_code`/`status`/`ambiguity_note`/
+`is_negator`/`narrative_morph`/`gloss_consistent_in_verse`/`party_kind`); the verse's own base text
+(`verse.text`); any already-live `verse_lexical_note` rows on that code (so a re-run pass sees
+exactly what the reconciliation rule requires it to re-address); cluster short name(s) (same
+report-time lookup as `report.lexical_extract`, escalation #1451/BUILD.md #233); the `note_type`/
+`resolution_status` value lists off `cfg_enum`; and the FULL `cfg_method_rule` catalogue for
+`lexical.build`+`lexical.enrich` (18 live rows — the note_type semantics, the completeness rule,
+the reconciliation rule, everything a reading pass needs, already config-governed since escalations
+1449, 1450, 1451 and 1527 — not a new table).
+
+**Tested read-only against live data** (Rom.9.14, before any config was live — called the query
+logic directly, not through the dispatcher): 9 codes, 11 existing notes, 18 method rules, 15
+note_type + 5 resolution_status values, all correct against the live rows.
+
+**Not yet live** — `cfg_step`/`cfg_setting` registration is config-governed
+(`governance.config_control`), proposed via `Config-Maintenance.ps1 -Step Propose`, both at
+`ready_for_approval` awaiting the researcher: escalation #1551 (cfg_step insert: work_package=
+verse-lexical, ordinal=5, step=lexical.notes, handler=`iba.app.handlers.lexical:notes_request`,
+kind=reports) and #1552 (cfg_setting insert: `report.lexical_notes_output_pattern`, reusing the
+existing `report.lexical_extract_output_dir` for the directory — no new dir setting needed). The
+dispatcher will refuse the step (`no such step`) until #1551 is applied.
+
+**Files:** `iba/app/handlers/lexical.py` (new function `notes_request`), `iba/app/ps/
+VerseLexical.ps1` (`-Step` ValidateSet + help text + example). `iba/docs/ps tools worksheet.xlsx`
+(VerseLexical tab) not yet updated — flagged to the researcher rather than edited live, per the
+standing warn-before-touching-the-open-workbook convention.
+
+## 250. `lexical.run` — the book/passage entry point replaced with a cluster/strong/word/verse-list one (2026-09-07, escalation #1549 continued)
+
+Same-day continuation of #249. Researcher correction, verbatim: *"the current code is then stale,
+the input method you describing is no longer valid... it is fundamentally built on books and
+passages which contradicts the analytic operation for clusters and groups of strongs."* The real
+input is a scattered, cross-book verse list generated as a subset via a cluster or group of
+strongs — confirmed live: cluster M01 alone resolves to 933 verses across 62 books
+(`1Chr.10.4`–`Zeph.3.7`), not remotely a passage. #249's `lexical.notes` proposal (escalations 1551
+and 1552) was **superseded before approval** once this came in — its own `-Book`+range input was
+already stale.
+
+**Selector resolution — new `lib/lexicalscope.py`.** Four selectors, exactly one required:
+`-ClusterCode` (→ `cluster_strong`), `-Word` (→ `word_strong`, the same lookup `report.strong_verse`
+already uses), `-StrongList` (direct), `-VerseList` (a known OSIS list — e.g. a prior session's own
+finding, carried forward). Cluster/word both resolve to a strong-list first; all three strong-based
+paths converge on one verse-list resolver. **Rejected `strong_verse` as that resolver** — it looked
+like the obvious table (already used by `handlers/raw.py:lexical`, the per-word rebuild step) but
+undercounts: verified live, M01's 100 strongs → 892 verses via `strong_verse` vs **933** via
+`span.strong_variant` (the raw per-token STEP parse, populated corpus-wide regardless of onboarding
+status, not just for individually-registered words) — a real 41-verse gap. `span.strong_variant`
+matched as a whole space-separated token (spans can be compound: 118,922 of 378,149 live spans
+carry more than one code), never a substring, never base-stripped. Also added: a guard against the
+known exact-suffix trap (`reference_strong_related_keyed_on_exact_code_not_base`) — a bare code like
+`H0430` matches nothing (`strong`/`span.strong_variant` are always suffixed, `H0430G` etc.); found
+live testing this module, now caught with a concrete suggestion (`did you mean ['H0430G',
+'H0430H', ...]`) instead of a silent zero-verse result.
+
+**One front door, not two — researcher's own architecture, verbatim:** *"you will be able to set a
+flag that can select: do layer 1 and layer 2; do layer 1 without a refresh of layer 2; do layer 2
+without a refresh of layer 1. in all cases input is in the front end of layer 1, and the update
+choice takes place from there. layer 2 always gets its primary data [prompt] from layer 1."* New
+step `lexical.run` (`handlers/lexical.py:run`) resolves the selector to a verse-id list exactly
+once, then `-Mode` (`Layer1AndLayer2`/`Layer1Only`/`Layer2Only`) picks the work — Layer 2 never
+independently resolves scope, it's always handed the ids Layer 1 (or a prior Layer 1 pass, for
+`Layer2Only`) already has. Built on **already-existing, already-tested engine code, unchanged**:
+`lib/lexical.py:build_for_verse_ids` (identity-stable since #1520/#1451 — a rebuild on unchanged
+verses is a safe no-op, never orphans a live `verse_lexical_note`) and
+`lib/lexicalenrich.py:enrich_passage`/`check_completeness` (unchanged from #1383/#1451). `Layer2Only`
+fails fast (`no-layer1`) naming any verse with no `verse_lexical` row yet, rather than silently
+building it.
+
+**Cap, not a two-tier design.** One setting, `lexical.run_max_verses` (proposed: 5000 — comfortably
+above #1526's own measured largest live cluster, 3,662 verses), enforced once against the resolved
+scope before any work starts. Researcher, same turn: *"I am OK for adding a max cap in config to
+prevent the system grinding to a halt"* — stated as a blunt safety ceiling, not a tuned per-layer
+budget; *"we have as yet no method to confirm or prototype how the reading list should look like to
+be effective"* is the explicit reason not to over-design this now. `passage.max_verses` (existing,
+unchanged) still separately caps the Layer 2 write block itself, same as `lexical.enrich` always
+enforced.
+
+**Connected to #1526, not resolved by it.** The researcher's live worry this session — *"working
+with verse blocks is likely to break the whole intent of looking at a characteristic in context...
+segments of the lexical being passed through depending on the question"* — is the same tension
+already tracked in escalation #1526 (Reading strategy vs cluster size), on-hold since 2026-09-06 by
+the researcher's own instruction (*"begin the analytics and see what washes out"*), with real
+evidence already on record there (resolved_sense collapses to 1–8 dominant values across all 7
+extreme-volume strongs tested). This build deliberately does not re-open or pre-empt that question —
+the verse-id list `lexical.run` resolves stays a plain list, swappable by whatever segmentation
+escalation 1526 eventually needs.
+
+**Deliberately deferred, not built:** `lexical.notes` (the read-only payload-request generator from
+BUILD.md #249) is not part of this step. Its role under the new architecture — assembling the analytical
+request at the point Layer 2 is invoked — is still open; researcher, same turn: *"I don't know what
+lexical.notes is doing, but I assume it is a subset of layer 2."* A dedicated PS wrapper for
+`lexical.run` (matching `VerseLexical.ps1`'s shape) is also deferred — the step is reachable today
+via `python -m iba.app.run verse-lexical --step lexical.run --run-id <id> --param
+ClusterCode=M01 --param Mode=Layer1Only`, and `iba/docs/ps tools worksheet.xlsx` is left untouched
+per the standing warn-before-editing-the-open-workbook convention. `lexical.build`/`lexical.enrich`
+(the old `-Book`+range signature) are left in place, not deleted — their fate is the researcher's own
+separate decision.
+
+**Tested read-only, live, before any config went in** (`lib/lexicalscope.py` called directly, not
+through the dispatcher — no cfg_step exists yet): cluster M01 → 100 strongs → 933 verses; word
+"Cursing" → 29 strongs → 1547 verses; explicit strong-list and OSIS verse-ref-list paths both
+correct; the bare-strong-code guard fires with the right suggestion. `lexical.run`'s own write path
+(`build_for_verse_ids`/`enrich_passage`) was **not** run live this session — both are pre-existing,
+already-tested functions being reused unchanged, and a live write test needs the config approved
+first (write-grants don't exist yet).
+
+**Config proposed, all pending researcher approval:** escalation 1554 (`cfg_step` insert,
+`lexical.run`), 1555 and 1556 (`cfg_write_grant` inserts, `verse_lexical`/`verse_lexical_note`),
+1558 (`cfg_setting` insert, `lexical.run_max_verses`), 1559 (`cfg_utility` registration for
+`lib/lexicalscope.py`). Escalations 1551 and 1552 (the superseded `lexical.notes` proposals) closed
+as `reject`/`supersede`, not applied.
+
+**Files:** `iba/app/lib/lexicalscope.py` (new), `iba/app/handlers/lexical.py` (new function `run`).
+
+## 251. `lexical.run` config applied and verified live; audit found a real cluster_strong defect; `lexical.notes` folded into `lexical.run`'s own Layer 2 path (2026-09-07, escalation #1549 continued)
+
+Same-day continuation of #250. Researcher approved the whole batch (escalations 1554/1555/1556/
+1558/1559) while this session was still mid-audit; applied and verified for real through the
+dispatcher (not just read-only): `-StrongList G0010 -Mode Layer1Only` (1 verse, matches); `-ClusterCode
+M67 -Mode Layer1Only` (14 verses — matches escalation #1526's own independently-measured M67 size
+exactly); `-ClusterCode T7 -Mode Layer1Only` correctly refused at the 5000-verse cap (8,077 verses,
+not remotely small) instead of running unbounded.
+
+**Researcher instruction, same session:** *"I just hope the base layer data regarding strongs,
+verses and span is not out of sync... you better need to ensure there are no 'oversights' again."*
+Ran a real audit, not a re-assertion of the earlier finding: span→verse is clean (0 active span rows
+point at a missing/deleted verse; every live verse has ≥1 live span row). Two real things found:
+
+1. **A flaw in this build's own first-pass validation**, self-caught: `resolve_strongs`'s
+   `-StrongList` guard originally validated against the `strong` catalogue table, which itself
+   undercounts — 409 distinct span-attested codes (real occurrences, 1–2 each) have no `strong` row
+   yet (a `lexicon.parse` backlog, not corruption). Fixed same session: validated against actual
+   `span.strong_variant` presence instead (the true ground truth), `strong` used only to build the
+   "did you mean" suggestion. Verified live: `G0010` (attested, no `strong` row) now correctly
+   accepted; bare `H0430` still correctly refused with a suggestion.
+2. **A real data defect, escalated not fixed unilaterally — #1560.** 3 live `cluster_strong` rows
+   (`G1135`/T7, `G2424`/T7 — Jesus, `H0802`/T8, all `source='migration-20260905-decfgification'`)
+   carry a bare code with zero `strong` presence and zero span occurrence, while the correctly
+   suffixed forms both exist and occur (`G2424G`/`G2424I`/`G2424J`, etc.) — these 3 rows are dead
+   weight, silently narrowing T7/T8's real membership. `lexicalscope.strongs_with_no_occurrence` now
+   detects this live (any cluster/word-resolved code with zero span occurrence surfaces as a named
+   `WARNING` in `lexical.run`'s own result, never silently dropped); which suffixed variant(s) each
+   bare code should actually map to is the researcher's own call, not decided here.
+
+**`lexical.notes` folded into `lexical.run`, not left a separate command.** Researcher question this
+session — *"does layer 2 output [to] a DB table? how does that differ from lexical.notes?"* — answered
+directly: Layer 2 (`enrich_passage`) writes real rows to `verse_lexical_note`; `lexical.notes` never
+writes to the DB at all, its output is a JSON *file* — a briefing pack (Layer 1 extract + base text +
+existing notes + the `cfg_method_rule`/`cfg_enum` catalogue) a reading pass needs BEFORE it can decide
+what a Layer 2 payload should say, never the decided findings themselves. Researcher instruction:
+*"yes include lexical.note production, but suppressed by a flag. default - output the result."*
+`handlers/lexical.py:notes_request` (the standalone, never-registered #250 version) is **retired** —
+its logic is now `_notes_payload_dict`/`_write_notes_payload`, generalized off a verse-id list (no
+`book` param — cross-book scope) and called automatically by `run()` whenever `-Mode` includes Layer
+2, before any write is attempted. New `-SuppressNotes` switch opts out. `-PayloadPath` is now
+**optional** for Layer2-involving modes (was required) — omitted, the call produces only the
+briefing (nothing to write yet, not an error); given, it also performs the write.
+
+**Config, pending approval:** escalation 1563 (`cfg_setting` insert, `report.
+lexical_notes_output_pattern`), 1564 (`cfg_step` update, `lexical.run.does` — reflects `-PayloadPath`
+now optional + `-SuppressNotes`). Not yet re-tested live with an actual Layer 2 write (needs a real
+payload) — next natural test once 1563/1564 land.
+
+**Files:** `iba/app/handlers/lexical.py` (`notes_request` removed; new `_notes_payload_dict`/
+`_write_notes_payload`; `run` updated).
+
+## 252. `lexical.notes` config applied, live-tested, and a real `verse.text` gap found+fixed (2026-09-07, escalation #1549 continued)
+
+Same-day continuation of #251 — researcher approved escalations 1563/1564, applied both, then ran
+`lexical.run -StrongList G0010 -Mode Layer2Only` with no `-PayloadPath` for real through the
+dispatcher: correctly produced only the notes briefing (`_analytics/lexical-extracts/lexical-notes-
+<run_id>.json`), no write attempted, no error. Inspected the actual output rather than trusting the
+`ok` status alone — found a real gap: `verse.text` is NULL for 722 of 29,759 live verses (those
+onboarded via `handlers/raw.py:verses`/`call3_strong`, which only ever writes `osisId`/`reference`/
+`preview`, never `text` itself) — the briefing pack was silently showing `"text": null` for any such
+verse, exactly the kind of self-contained-briefing gap the researcher's "no oversights" instruction
+was about. Fixed without touching `preview`'s raw HTML (no parser needed): when `text` is NULL, the
+verse's own already-resolved `codes` each carry their own `surface` word in position order — joined
+as a labeled `text_reconstructed_from_codes` fallback, never presented as the genuine field.
+Verified live on `Matt.1.13` (one of the 722): reconstructs "and Zerubbabel father Abiud and Abiud
+father Eliakim and Eliakim father Azor" — content-word skeleton correct, missing function words like
+"the"/"of" because particle spans never become `verse_lexical` rows in the first place (expected,
+not a bug in this fix).
+
+**Files:** `iba/app/handlers/lexical.py` (`_notes_payload_dict`).
+
+## 253. First real cluster run: `lexical.run` Layer 1 + report + notes briefing for M10c (2026-09-07, escalation #1549 continued)
+
+Researcher instruction: *"build layer 1 and layer 2 with reports for M10c."* First production use of
+the new pipeline on a real cluster, not a small synthetic test. M10c ("Defilement") = 20 strongs →
+**288 verses across 38 books** — a genuinely scattered, cross-book cluster, exactly what this rework
+was built for. 3 of the 20 strongs (`G6410`/`G7121`/`G7170`, `source='llm-allocation-v1_3-20260811'`)
+have zero live span occurrence — different from #1560's bare-code defect: these ARE the exact form
+registered in `strong`, just apparently never actually used in this text version. Surfaced by
+`lexical.run`'s own warning, not escalated separately (informational, no suffix-mismatch judgement
+call needed).
+
+`lexical.run -ClusterCode M10c -Mode Layer1AndLayer2` (no `-PayloadPath`): Layer 1 built for real —
+6,329 codes across 288 verses, 6,303 already-correct (confirms "Layer 1 is largely complete," most
+of M10c had already been built by earlier book-range work), 26 updated. Notes briefing produced
+(3.7MB). `report.lexical_extract -VerseFilter <288 refs>` also run — 6,329 rows, matching exactly.
+
+**Layer 2 (the analytical write) deliberately NOT done this turn.** `verse_lexical_note` needs real
+judgement content (idiom readings, connective classifications, etc.) — code cannot invent findings,
+only write ones a reading pass has already decided (design doc's own framing, unchanged since
+#1383). Fabricating placeholder content to make the write path "complete" would corrupt the DB with
+junk. Flagged to the researcher rather than silently skipped or silently faked; whether Claude
+performs that full reading pass for 288 verses (a large task, not attempted without confirmation) is
+still open.
+
+**Note:** `report.verse_lexical`/`report.lexical_exceptions` (the human-readable MD reports) are
+inherently single-book/range-scoped — cannot cover a 38-book cluster in one call as `report.
+lexical_extract`'s filter-driven JSON can. Not run per-book this turn (38 separate calls) — flagged,
+not silently worked around.
+
+**Files:** none (no code change — first real exercise of #249-#252's build).
+
+## 254. `resolved_sense` removed entirely, corpus-wide — a genuine source-code fix, not a data patch (2026-09-07, escalation #1575)
+
+Same-day continuation of #1575's own root-cause diagnosis. Researcher, direct instruction, verbatim:
+*"there [is] still data in the sense column that does not serve a purpose... can you kindly remove
+it from the column for all the lexicals."* Confirmed first, not assumed: exhaustively checked
+escalation #1527, BUILD.md #238, and the 2026-09-06 session log — #1527's own fix (stepGloss-prefix
+strip + M-code scoping) is genuinely live and unrelated to this; what #1575 found (the unconditional
+LSJ/Mounce lexicon append + the join-every-gloss fallback) was never addressed by it. This is a new
+fix, not a reversion of a missed one.
+
+**The fix is in the Layer 1 source itself, not a one-off data patch** — direct answer to the
+researcher's own follow-up question, "can you ensure the code is updated so it will follow the new
+requirements in future updates": `resolve_code()` in `iba/app/lib/lexical.py` no longer writes
+`resolved_sense` in either branch (the no-sense-rows stepGloss fallback, and the sense-rows-exists
+branch that used to run `_select_stem_text` then unconditionally append `strong_lsj_parsed`/
+`strong_mounce_parsed`). `role`/`status`/`ambiguity_note` are unchanged — `ambiguity_note`'s own
+`sense_rows`/`genuinely_ambiguous` computation is untouched, only the final `resolved_sense`
+assignment is gone. `build_for_verse`'s #1527 M-code gate (null resolved_sense for non-M-code words)
+is now a no-op — nothing left to null — left in place rather than ripped out, a smaller separate
+cleanup. `_select_stem_text`/`_stem_name_for` are now unused (not deleted, flagged as dead code).
+Because this is the same function every entry point (`lexical.build`, `lexical.run`,
+`raw.lexical`'s per-word rebuild) calls, every future build — not just this one-off backfill —
+produces `resolved_sense=NULL` from now on.
+
+**Validated small before running corpus-wide:** `Rev.17.4` (the `G2192` case itself — 5 of 26 codes
+updated, all `resolved_sense` now `NULL`) and `Dan.1.8` (`H0834A`'s two occurrences, `surface`
+still `'that'`/`'allow'`, `ambiguity_note` logic unaffected) — both checked live through the actual
+production write path before the full run. `iba.db` backed up first
+(`iba.db.pre-1575-resolved-sense-removed-20260907.bak`, 735MB).
+
+**Migration** (`iba/app/migration/resolved_sense_removed_v1_20260907.py`, one-off, same
+identity-stable `build_for_verse_ids` path #1527's own migration used, not a bespoke SQL patch):
+29,754 verses, 544,572 codes, 71,949 updated, 0 removed, 0 orphaned notes.
+
+**Verified live, independently, after the run:** 0 of 544,572 live `verse_lexical` rows have a
+non-null `resolved_sense`, corpus-wide — re-checked directly against the DB, not read off the
+migration's own printed summary alone.
+
+**Files:** `iba/app/lib/lexical.py` (`resolve_code`, `build_for_verse`),
+`iba/app/migration/resolved_sense_removed_v1_20260907.py` (new), `iba/app/db/iba.db` (71,949
+`verse_lexical` rows updated in place, same ids).

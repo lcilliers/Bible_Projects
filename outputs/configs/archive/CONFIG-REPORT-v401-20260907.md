@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-07T15:36:38Z |
+| generated_at | 2026-09-07T11:51:01Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -46,7 +46,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-3. GOVERNANCE.md was last modified 2026-09-04T16:27:40Z, before the newest applied cfg_change_detail row (2026-09-07T15:36:37Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+3. GOVERNANCE.md was last modified 2026-09-04T16:27:40Z, before the newest applied cfg_change_detail row (2026-09-07T11:51:01Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (1) — iba/app/lib/*.py with no cfg_utility row:
 4. iba/app/lib/lexicalscope.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
@@ -197,7 +197,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**434** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **374** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**433** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **374** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -264,7 +264,6 @@ _(none)_
 | iba_scripts_probe_step_api | iba/scripts/probe_step_api.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). probe_step_api.py — dump the FULL raw response of each STEP API, unmodified. |  |  |  |
 | lexical | iba/app/lib/lexical.py | lexical.py — the the lexical (`verse_lexical`) engine: T1-T3 of the verse-lexical technique Extended 2026-09-04 (escalation #1383): also computes position/surface/language/testament/is_negator/narrative_morph/gloss_consistent_in_verse/party_kind and applies the H0853 role exception. | ✓ |  |  |
 | lexicalenrich | iba/app/lib/lexicalenrich.py | Stage 1 Layer 2 engine: verse_lexical_note capture + passage.genre/lexical_complete_at, JSON-payload-driven. Escalation #1383. | ✓ |  |  |
-| lexicalenrichgenerate | iba/app/lib/lexicalenrichgenerate.py | The LLM-calling half of lexical.run Layer 2 (escalation #1549 continued) -- batches the verse-list, assembles a lean cost-estimated package per batch, calls the Anthropic Messages API, parses the response, writes via lexicalenrich.enrich_passage, logs real usage. Config-driven from the start (module lexical), unlike its own template narrativegenerate.py which is flagged non-compliant. | ✓ |  |  |
 | lexiconparse | iba/app/lib/lexiconparse.py | lexiconparse.py — the governed parse of the raw lexicon layer (strong_meaning_tree.sense_text, | ✓ |  |  |
 | manifest | iba/app/lib/manifest.py | manifest.py — the project-wide file manifest (rebuild + search). Filename/path metadata only; the baseline lib/contentindex.py (round 2) cross-checks file-content search coverage against. | ✓ |  |  |
 | migration | iba/app/migration/add_escalation_needs_followup_column_20260830.py | ONE-OFF: adds escalation.needs_claude_followup / escalation_history.needs_claude_followup (INTEGER, default 0). Idempotent. escalation #1075. |  |  |  |
@@ -729,15 +728,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.verse_gap_by_design | Researcher ruling 2026-07-29: a verse missing from iba.db's verse table (no `verse` row for that osisId) is BY DESIGN, not a data-integrity error. Verse-existence is gated on prior term discovery (concordance-driven per-Strong's onboarding, iba/app/handlers/raw.py:verses) -- do not escalate, flag, or attempt to backfill a missing verse as a bug. Full extent measured 2026-07-29: 2,049/31,086 verses (6.59%) missing, concentrated in genealogy/list-heavy books (1Chr 44%, Ezra 40%, Neh 31%, Josh 23%, Num 17%); sample read of the missing verses' actual content judged the risk within tolerance for this study (see iba/app/reports/verse-existence-census-20260729.md). Both report.verse_span_meaning (the base extract) and report.passage_debate note each detectable gap inline (report.verse_gap_note) and skip straight to the next available verse -- the missing verses are not pulled into the study. | researcher ruling 2026-07-29, after measuring the full-Bible extent of the term-discovery verse gap (see project_iba_verse_existence_gated_on_term_discovery memory + iba/app/reports/verse-existence-census-20260729.md) |
 | governance | registry.folder_naming_convention | _analytics/Registry per-word subfolders (report.strong_verse_output_dir) must be named {word_registry.id zero-padded 3 digits}_{word, lowercase, spaces as hyphens} -- e.g. 020_compassion. id comes from the LIVE iba.db word_registry table, never bible_research.dbs legacy numbering (the two differ; confirmed live 2026-08-28 while reorganising 27 stale/unnumbered folders and 249 loose files under _analytics/word_registry). | the folder-naming rule for per-word registry output, so it stays config-governed rather than a one-off manual cleanup that can silently drift again |
 | governance | report.book_folder_naming_convention | _analytics/Bible_Books subfolders (report.verse_analysis_output_dir and every book-scoped report) must be named EXACTLY as cfg_book_order.book (the OSIS abbreviation verse.osisId itself uses, e.g. Gen, 1Chr, Song) -- never a full book name or a lowercase variant. Confirmed live 2026-08-28: all 66 canonical books present, 35 folders renamed off full-name/lowercase variants to match. | the folder-naming rule for per-book output, keyed to the same book identifier verse references use, so there is no mis-filing risk working with verse references |
-| lexical | lexical.llm_api_url | https://api.anthropic.com/v1/messages |  |
-| lexical | lexical.llm_api_version | 2023-06-01 |  |
-| lexical | lexical.llm_chars_per_token | 4 |  |
-| lexical | lexical.llm_max_cost_per_batch | 1.0 |  |
-| lexical | lexical.llm_max_output_tokens | 8000 |  |
-| lexical | lexical.llm_model | claude-sonnet-5 |  |
-| lexical | lexical.llm_rate_input_per_million | 3.0 |  |
-| lexical | lexical.llm_rate_output_per_million | 15.0 |  |
-| lexical | lexical.llm_usage_log_path | _analytics/lexical-extracts/lexical-llm-usage.csv |  |
 | lexicon | lexicon.bracket_pairs | {'(': ')', '[': ']', '{': '}'} | open->close bracket pairs classify_row/strip_bracketed treat as nestable — a gloss that is wholly one bracketed aside (e.g. '(obsolete)') classifies as 'not applicable'. |
 | lexicon | lexicon.classify_lookup_max_words | 3 | classify_row: a gloss/description with at most this many space-separated words is 'lookup', more is 'description' — same shape as candidate.tag_max_words's word-count threshold. |
 | lexicon | lexicon.linebreak_pattern | [\r\n]+ | the only recognised sense-separator in strong_meaning_tree.sense_text/strong_lexicon.lsj/mounce — commas/semicolons/colons are NOT separators (STEP itself displays them as one sense). |
@@ -789,7 +779,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | report | report.cluster_top_meanings | 10 | how many stem-grouped meaning groups to show per cluster in report.cluster's new summary section |
 | report | report.lexical_extract_output_dir | _analytics/lexical-extracts | output directory for report.lexical_extract's JSON output (governance.reports_must_persist) |
 | report | report.lexical_extract_output_pattern | lexical-extract-{run_id}.json | filename pattern for report.lexical_extract's JSON output |
-| report | report.lexical_notes_output_pattern | lexical-notes-{run_id}.json |  |
 | report | report.obs_catalogue_path | Workflow/Catalogue/obs-catalogue.md | where report.obs_catalogue persists its output |
 | report | report.output_dir | _analytics/Registry | where report.word writes its output |
 | report | report.output_pattern | report-{word}.md | filename pattern for report.word's output ({word} substituted) |
@@ -1091,7 +1080,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | 2 | lexical.enrich | iba.app.handlers.lexical:enrich | passage | Stage 1 Layer 2 — JSON-payload-driven, one passage-block at a time (≤20 verses). Writes verse_lexical_note rows and passage.genre; sets passage.lexical_complete_at once every applicable code in the block has a disposition. Requires lexical.build to have already run for every verse in the block. |
 | 3 | report.lexical_exceptions | iba.app.handlers.reports:lexical_exceptions_report | passage | Per-run exception report — every unresolved/unclassified/checked_empty/UNCLASSIFIED-connective disposition and every genuine judgement call from the most recent lexical.enrich run for this passage, laid out for researcher review. Read-only against verse_lexical/verse_lexical_note, never an independent write. |
 | 4 | report.lexical_extract | iba.app.handlers.reports:lexical_extract | none | Multi-filter JSON extract over verse_lexical/verse_lexical_note — passage/verse/surface/strong/lemma filters, each accepting a list or range. Read-only, JSON output, feeds Phase 2 (Stage 2) input assembly. |
-| 5 | lexical.run | iba.app.handlers.lexical:run | verse | The real front door for Window 1 (escalation #1549 rework, 2026-09-07 -- researcher: 'it is fundamentally built on books and passages which contradicts the analytic operation for clusters and groups of strongs'). Exactly one selector (-ClusterCode via cluster_strong, -StrongList direct, -Word via word_strong, or -VerseList a known OSIS list) resolves to a strong-list then a verse-list via span.strong_variant (exact-token match, NOT strong_verse -- that table undercounts, verified live). -Mode picks the work: Layer1AndLayer2, Layer1Only, or Layer2Only -- verse-list resolution happens once regardless of mode; Layer 2 always sources its scope from Layer 1's own resolved ids, never re-resolves. Layer 1's write (build_for_verse_ids) is identity-stable -- safe no-op on unchanged verses, never orphans a live Layer 2 note. Whenever -Mode includes Layer 2, the lexical.notes briefing pack is produced by default before any write is attempted (-SuppressNotes opts out). If -PayloadPath is given, that payload is written. If NOT given (and -NoAutoLLM is NOT given), lexical.run now AUTOMATICALLY calls an LLM to produce the payload -- researcher instruction 2026-09-07: 'layer 2 will consume llm and it must be part of the routine, rather than parking it'. Batched by passage.max_verses per live API call, each call cost-estimated and hard-capped by lexical.llm_max_cost_per_batch before it fires, real usage logged to lexical.llm_usage_log_path. -NoAutoLLM opts out to the old notes-briefing-only behaviour. lexical.run_max_verses caps the whole resolved scope before any work starts. |
+| 5 | lexical.run | iba.app.handlers.lexical:run | verse | The real front door for Window 1 (escalation #1549 rework, 2026-09-07 -- researcher: 'it is fundamentally built on books and passages which contradicts the analytic operation for clusters and groups of strongs'). Exactly one selector (-ClusterCode via cluster_strong, -StrongList direct, -Word via word_strong, or -VerseList a known OSIS list) resolves to a strong-list then a verse-list via span.strong_variant (exact-token match, NOT strong_verse -- that table undercounts, verified live). -Mode picks the work: Layer1AndLayer2, Layer1Only, or Layer2Only -- verse-list resolution happens once regardless of mode; Layer 2 always sources its scope from Layer 1's own resolved ids, never re-resolves. Layer 1's write (build_for_verse_ids) is identity-stable -- safe no-op on unchanged verses, never orphans a live Layer 2 note. lexical.run_max_verses caps the resolved scope before any work starts; passage.max_verses (existing) still separately caps the Layer 2 write block, unchanged from lexical.enrich's own convention. |
 
 **whole-book-read** — runs over `book` · script `iba/app/ps/WholeBookRead-Report.ps1`
 | # | step | handler | scope | does |
@@ -2291,7 +2280,7 @@ _one row per (strong_code, class) — a code-classification lexicon entry_ — T
 | candidate_source | registry-direct, curated-synonym, ib-judgement, read-emergent |
 | candidate_step_status | in_strong, step_no_verses, not_in_step, step_has_verses_pending |
 | cfg_change_op | insert, update, delete |
-| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit, lexical |
+| config_module | registry, raw, step, report, candidate, passage, configmaint, validation, governance, retention, notification, table_export, escalation, lexicon, method, narrative, cluster, manifest, backup, content_index, behaviour, database, prose, pathaudit |
 | escalation_answer | approve, reject, revise |
 | escalation_assignee | Claude, Researcher |
 | escalation_next_action | approve, reject, revise, noted, hold, review, ready_for_approval, approved |

@@ -194,8 +194,14 @@ def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None,
     sense_rows = [(r["sense_code"] or "", r["gloss"]) for r in rows if r["gloss"]]
 
     if not sense_rows:
+        # Escalation #1575/#1527-cont. (2026-09-07, researcher instruction, verbatim: "there [is]
+        # still data in the sense column that does not serve a purpose... remove it from the
+        # column for all the lexicals"): this branch used to store the raw stepGloss dictionary
+        # text here ("stepGloss: {full text}") -- itself exactly the "dump of the generic data
+        # from the base table" complaint, `strong.stepGloss` being that base table. resolved_sense
+        # is no longer written by this function at all, in either branch -- role/status/
+        # ambiguity_note are UNCHANGED, matching #1527's own original restriction.
         row["status"] = "resolved"
-        row["resolved_sense"] = f"stepGloss: {strong_row['stepGloss'] or '(none)'}"
         return row
 
     siblings = sibling_variant_codes(conn, base, exclude=code)
@@ -207,32 +213,16 @@ def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None,
             f"base {base} shared with {', '.join(siblings)}, base-fallback text may not be "
             f"specific to {code} — STEP live: {live_step_meaning(step, code, live_cache)}")
 
-    stem_name = _stem_name_for(code, morph_slice)
-    text, narrowed = _select_stem_text(sense_rows, stem_name)
-
-    # Escalation #1527 (2026-09-06, researcher instruction): the raw stepGloss dictionary dump
-    # used to be prepended unconditionally here ("stepGloss: {full text} — {narrowed}"), even
-    # though strong.stepGloss is a corpus-wide constant per code, not per-occurrence -- duplicating
-    # it into every row inflated Layer 1's own weight for no reason (the only branch that
-    # genuinely NEEDS the raw dump is the no-sense-rows fallback above, where nothing else exists).
-    # resolved_sense is now just the actual narrowed/selected text itself.
-    sense = text
-    if strong_row["language"] == "Greek":
-        lsj = conn.execute(
-            "SELECT gloss FROM strong_lsj_parsed WHERE strong=? AND row_type='lookup' "
-            "ORDER BY id", (code,)).fetchall()
-        mounce = conn.execute(
-            "SELECT mounce_parsed FROM strong_mounce_parsed WHERE strong=? ORDER BY id",
-            (code,)).fetchall()
-        lsj_text = "; ".join(r["gloss"] for r in lsj if r["gloss"])
-        mounce_text = "; ".join(r["mounce_parsed"] for r in mounce if r["mounce_parsed"])
-        if lsj_text:
-            sense += f" | lsj: {lsj_text}"
-        if mounce_text:
-            sense += f" | mounce: {mounce_text}"
-
+    # Escalation #1575/#1527-cont. (2026-09-07): this branch used to narrow strong_meaning_parsed's
+    # sense_rows by stem/voice (_select_stem_text) then, for Greek codes, unconditionally append
+    # the ENTIRE strong_lsj_parsed + strong_mounce_parsed dump on top -- found live building #1549's
+    # LLM-payload work: for a common high-polysemy word (G2192 "have", 62 LSJ rows) this produced a
+    # 2,652-char value, one of 277 strongs corpus-wide with the same pattern. That output was never
+    # per-occurrence (a pure function of strong/morph_code, #1527 v2's own diagnosis) and, per the
+    # researcher's direct instruction, serves no purpose in this table -- removed outright, not
+    # trimmed. sense_rows/genuinely_ambiguous above are still computed and still drive
+    # ambiguity_note, which stays live; only the resolved_sense assignment is gone.
     row["status"] = "resolved"
-    row["resolved_sense"] = sense
     return row
 
 
@@ -505,10 +495,11 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None"
             sibling_codes = [c for j, c in enumerate(codes) if j != i]
             _layer1_fields(r, sp, sibling_codes, r["language"], testament,
                           code_classes, base_pattern)
-            # #1527 (2026-09-06): resolved_sense is only for M-code (thematic) words -- see
-            # load_mcode_strongs' own docstring. role/status/ambiguity_note are untouched.
-            if r["strong"] and _base(r["strong"], base_pattern) not in mcode_strongs:
-                r["resolved_sense"] = None
+            # #1527's M-code gate here (2026-09-06: null resolved_sense for non-M-code words) is
+            # RETIRED, superseded 2026-09-07 (#1575/#1527-cont.) -- resolve_code() itself no longer
+            # ever populates resolved_sense, for any word, so this gate has nothing left to do.
+            # mcode_strongs is still threaded through/loaded (harmless, unused here) rather than
+            # ripped out of every call site -- a smaller, separate cleanup if it's ever a problem.
         per_span_resolved.append((sp, resolved))
 
     # gloss_consistent_in_verse needs the WHOLE verse's rows — one pass after every span resolved.
