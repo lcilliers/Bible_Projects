@@ -150,3 +150,9 @@ in BUILD.md's own entries — the `#1554`→`completed` self-correction from an 
 
 ## Git state
 
+- Branch: `main`, up to date with `origin/main`.
+- Commit: `619fa0ee060a7b8ba724e9adee2dc4ef49cf121e`, 2026-09-07T19:31:25+01:00, "session 20260907
+  (evening): lexical.run built and run live (M10c), Layer 1 column validation pauses the
+  lexical-study line" — 43 files changed.
+- Pushed: confirmed (`33492f62..619fa0ee main -> main`).
+- `git status` after push: `nothing to commit, working tree clean`.
