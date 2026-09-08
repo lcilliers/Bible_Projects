@@ -133,6 +133,8 @@ resolve):**
 
 ## Git state
 
-- Branch: `main`.
-- Commit/push: see the `(cont.)` follow-up commit for the confirmed hash and `git status` after
-  push.
+- Branch: `main`, up to date with `origin/main`.
+- Commit: `2379ef2462fbd3125da10a1367b661d5d7c12186`, 2026-09-08T14:58:12+01:00, "session 20260908:
+  escalation #1598 closed -- M/T-code untagged pool 0 (was ~7,810-8,268)" — 44 files changed.
+- Pushed: confirmed (`569f58b7..2379ef24 main -> main`).
+- `git status` after push: `nothing to commit, working tree clean`.
