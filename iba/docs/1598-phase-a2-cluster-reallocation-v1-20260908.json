@@ -1,0 +1,33 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "batch": "Phase A2 -- addendum surfaced while verifying Phase A's run",
+  "researcher_instruction_verbatim": "lets keep going in small cleared batches, so if 1 is ready, then go for it.",
+  "source_of_candidates": "heuristic-family-grouping-v1-20260905's own T2 output, cross-checked against T10/T12's definitions (created this escalation) -- not a new scan, a re-read of a prior pass this session found live.",
+  "new_clusters": [],
+  "inserts": [],
+  "excluded_after_researcher_correction": [
+    {"strong": "G1494", "reason": "Researcher, verbatim: 'sacrificed to idols is actually the action or verb -- it does not belong in an object.' Confirmed against morph_code (A-GPN/A-NSN/A-ASN -- a Greek adjective/participial form describing food AS sacrificed, not the idol itself). Left at its existing M55/T2 tags; not moved anywhere -- no confident home built yet for an action-relation adjective like this."},
+    {"strong": "G1495", "reason": "'idolatry' -- checked after the researcher's correction on G1494/G1496 prompted a re-check of the whole batch, not caught by the researcher directly. Morph (N-NSF/N-GSF/N-DPF) is a genuine noun, but it names the abstract PRACTICE/sin, not the physical idol object -- same category error as G1494 in the other direction. Left at its existing M55/T2 tags."}
+  ],
+  "relocations": [
+    {"strong": "G1496", "from_cluster_code": "T2", "to_cluster_code": "T8", "note": "'idolater' -- Researcher, verbatim: 'idolater is a person, not an idol -- similar to labourer.' Confirmed via morph_code (N-NPM/N-NSM/N-DPM, a person noun) -- corrected from the original T12 proposal to T8, matching the H6001A/'labourer' precedent. escalation #1598 Phase A2"},
+    {"strong": "G1497", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'idol' -- idol-family object term, confirmed via morph_code (N-APN/N-NSN/N-GPN, a genuine object noun), escalation #1598 Phase A2"},
+    {"strong": "H0457", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'idol' -- idol-family object term, escalation #1598 Phase A2"},
+    {"strong": "H5566", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'idol' -- idol-family object term, escalation #1598 Phase A2"},
+    {"strong": "H6091", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'idol' -- idol-family object term, escalation #1598 Phase A2"},
+    {"strong": "H6456", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'idol' -- idol-family object term, escalation #1598 Phase A2"},
+    {"strong": "H6459", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'idol' -- idol-family object term, escalation #1598 Phase A2"},
+
+    {"strong": "H4809G", "from_cluster_code": "T2", "to_cluster_code": "T10", "note": "'Meribah' -- a named place (the wilderness strife-site, Exod.17.7/Num.20.13), escalation #1598 Phase A2"},
+    {"strong": "H4809H", "from_cluster_code": "T2", "to_cluster_code": "T10", "note": "'Meribah' -- same place, variant form, escalation #1598 Phase A2"},
+
+    {"strong": "H2256M", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'cord' -- physical object term, lower confidence than the idol terms, escalation #1598 Phase A2"},
+    {"strong": "H3499B", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'cord' -- physical object term, lower confidence, escalation #1598 Phase A2"},
+    {"strong": "H4340", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'cord' -- physical object term, lower confidence, escalation #1598 Phase A2"},
+    {"strong": "H5688", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'cord' -- physical object term, lower confidence, escalation #1598 Phase A2"},
+    {"strong": "H6616", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'cord' -- physical object term, lower confidence, escalation #1598 Phase A2"},
+    {"strong": "H6957A", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'cord' -- physical object term, lower confidence, escalation #1598 Phase A2"},
+    {"strong": "H8615A", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "'cord' -- physical object term, lower confidence, escalation #1598 Phase A2"}
+  ]
+}

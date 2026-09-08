@@ -1,0 +1,29 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "batch": "Phase C1 correction -- fixes my own error: Phase C1's JSON used 'inserts' (additive) for items that should have been 'relocations' (T2 -> destination), so all 20 items landed dual-tagged T2 + their new home instead of leaving T2. T2 means 'excluded from analysis' -- an item just given a real classification should not still carry it. Adds a new 'removals' capability to apply_1598_cluster_batch.py to fix this (soft-deletes the stale T2 row without touching the already-correct new row).",
+  "new_clusters": [],
+  "inserts": [],
+  "relocations": [],
+  "removals": [
+    {"strong": "H4325G", "cluster_code": "T2", "note": "correctly classified T13 (water); stale T2 tag removed"},
+    {"strong": "H0929", "cluster_code": "T2", "note": "correctly classified T13 (animal); stale T2 tag removed"},
+    {"strong": "H5971A", "cluster_code": "T2", "note": "correctly classified T11 (people); stale T2 tag removed"},
+    {"strong": "H1471A", "cluster_code": "T2", "note": "correctly classified T11 (nation); stale T2 tag removed"},
+    {"strong": "G2453", "cluster_code": "T2", "note": "correctly classified T11 (Jew); stale T2 tag removed"},
+    {"strong": "H2022G", "cluster_code": "T2", "note": "correctly classified T10 (mountain); stale T2 tag removed"},
+    {"strong": "H7704G", "cluster_code": "T2", "note": "correctly classified T10 (land: country); stale T2 tag removed"},
+    {"strong": "H4725", "cluster_code": "T2", "note": "correctly classified T10 (place); stale T2 tag removed"},
+    {"strong": "G2889", "cluster_code": "T2", "note": "correctly classified T10 (world); stale T2 tag removed"},
+    {"strong": "H3627", "cluster_code": "T2", "note": "correctly classified T12 (article/utensil); stale T2 tag removed"},
+    {"strong": "H8081", "cluster_code": "T2", "note": "correctly classified T12 (oil); stale T2 tag removed"},
+    {"strong": "H3027H", "cluster_code": "T2", "note": "correctly classified M72 (hand: power); stale T2 tag removed"},
+    {"strong": "H8269", "cluster_code": "T2", "note": "correctly classified M72 (ruler); stale T2 tag removed"},
+    {"strong": "H0639G", "cluster_code": "T2", "note": "correctly classified M02 (face: anger); stale T2 tag removed"},
+    {"strong": "H5030", "cluster_code": "T2", "note": "correctly classified M43 (prophet); stale T2 tag removed"},
+    {"strong": "H4421", "cluster_code": "T2", "note": "correctly classified M10 (battle); stale T2 tag removed"},
+    {"strong": "H8451", "cluster_code": "T2", "note": "correctly classified M54 (instruction); stale T2 tag removed"},
+    {"strong": "G3551", "cluster_code": "T2", "note": "correctly classified M54 (law); stale T2 tag removed"},
+    {"strong": "H0113", "cluster_code": "T2", "note": "correctly dual-tagged T7+T8 (lord, divine/human referent); stale T2 tag removed"}
+  ]
+}

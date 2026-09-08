@@ -1,0 +1,1187 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "batch": "Phase J -- T8+T11 family-expansion scan (deduped, 227 raw candidates), individually classified. Reused the Phase G TIP-marker method (biographical-marker text = person, People-from/group = collective) uniformly across both buckets rather than trusting which cluster the scan associated a candidate with -- resolved several codes that surfaced in BOTH T8 and T11 raw lists (Judah/Levi Greek variants) correctly per-code via their own TIP text (an apostle named Judas vs the patriarch who founded the tribe of Judah are different Strong's codes with different TIP entries, both happen to gloss similarly in English). 33 candidates had NO TIP/gloss row at all (Matthew 1 genealogy names, mostly) -- resolved via the verse_lexical.surface field (the actual translated word) instead of leaving them unclassified. Two items (village, altar) were redirected to T10/T12 -- real content, wrong type for T8/T11.",
+  "new_clusters": [],
+  "inserts": [
+    {
+      "strong": "H6547J",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of Egypt and Wilderness, first mentioned at Exo.3.10;\""
+    },
+    {
+      "strong": "H6547H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of the Patriarchs, first mentioned at Gen.37.36;\""
+    },
+    {
+      "strong": "G3475",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Levi living at the time of Egypt and Wilderness, first mentioned at Exo.2.10;\""
+    },
+    {
+      "strong": "G0011",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.11.26;\""
+    },
+    {
+      "strong": "G1138",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A king of Judah living at the time of United Monarchy, first mentioned at Rut.4.17;\""
+    },
+    {
+      "strong": "H2850",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.10.15;\""
+    },
+    {
+      "strong": "G2243",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Divided Monarchy, first mentioned at 1Ki.17.1;\""
+    },
+    {
+      "strong": "G2384H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.25.26;\""
+    },
+    {
+      "strong": "G2455H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An apostle living at the time of the New Testament, first mentioned at Mat.10.4;\""
+    },
+    {
+      "strong": "H0120H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time before the Flood, first mentioned at Gen.2.19;\""
+    },
+    {
+      "strong": "G2268",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Divided Monarchy, first mentioned at 2Ki.19.2;\""
+    },
+    {
+      "strong": "G2464",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.17.19;\""
+    },
+    {
+      "strong": "H6547R",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of Divided Monarchy, first mentioned at Jer.37.5;\""
+    },
+    {
+      "strong": "H6547K",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of United Monarchy, first mentioned at 1Ki.3.1;\""
+    },
+    {
+      "strong": "H7206",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Reuben living at the time of the Patriarchs, first mentioned at Gen.29.32;\""
+    },
+    {
+      "strong": "H1145",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Benjamin living at the time of the Patriarchs, first mentioned at Gen.35.18;\""
+    },
+    {
+      "strong": "H1425",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Gad living at the time of the Patriarchs, first mentioned at Gen.30.11;\""
+    },
+    {
+      "strong": "G4672G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A king of Judah living at the time of United Monarchy, first mentioned at 2Sa.5.14;\""
+    },
+    {
+      "strong": "H6547I",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of Egypt and Wilderness, first mentioned at Exo.1.11;\""
+    },
+    {
+      "strong": "H6956",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Levi's son from the tribe of Levi living at the time of Egypt and Wilderness, first mentioned at Gen.46.11;\""
+    },
+    {
+      "strong": "G0076",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time before the Flood, first mentioned at Gen.2.19;\""
+    },
+    {
+      "strong": "G2197H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the New Testament, first mentioned at Luk.1.5;\""
+    },
+    {
+      "strong": "G2501N",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son living at the time of the Patriarchs, first mentioned at Gen.30.24;\""
+    },
+    {
+      "strong": "G2495H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Divided Monarchy, first mentioned at 2Ki.14.25;\""
+    },
+    {
+      "strong": "G2475",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.25.26;\""
+    },
+    {
+      "strong": "G3198",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A priest living at the time of the Patriarchs, first mentioned at Gen.14.18;\""
+    },
+    {
+      "strong": "H3459",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Abraham's son living at the time of the Patriarchs, first mentioned at Gen.16.11;\""
+    },
+    {
+      "strong": "G3575",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Flood survivor living at the time before the Flood, first mentioned at Gen.5.29;\""
+    },
+    {
+      "strong": "H6547G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of the Patriarchs, first mentioned at Gen.12.15;\""
+    },
+    {
+      "strong": "H1649",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Levi living at the time of Egypt and Wilderness, first mentioned at Gen.46.11;\""
+    },
+    {
+      "strong": "G2455N",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Judah living at the time of the Patriarchs, first mentioned at Gen.29.35;\""
+    },
+    {
+      "strong": "G2501I",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the New Testament, first mentioned at Mat.27.57;\""
+    },
+    {
+      "strong": "H6547L",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of Divided Monarchy, first mentioned at 2Ki.18.21;\""
+    },
+    {
+      "strong": "H6547T",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of Divided Monarchy, first mentioned at 2Ki.23.29;\""
+    },
+    {
+      "strong": "H7145",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Aaron's adversary from the tribe of Levi living at the time of Egypt and Wilderness, first mentioned at Exo.6.21;\""
+    },
+    {
+      "strong": "H0091",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Amalakite king living at the time of United Monarchy, first mentioned at 1Sa.15.8;\""
+    },
+    {
+      "strong": "G0002",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A priest from the tribe of Levi living at the time of Egypt and Wilderness, first mentioned at Exo.4.14;\""
+    },
+    {
+      "strong": "G0006",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time before the Flood, first mentioned at Gen.4.2;\""
+    },
+    {
+      "strong": "H2752",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.36.22;\""
+    },
+    {
+      "strong": "H3481H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.25.26;\""
+    },
+    {
+      "strong": "G2421",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"David's father from the tribe of Judah living at the time of United Monarchy, first mentioned at Rut.4.17;\""
+    },
+    {
+      "strong": "G3091",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.11.27;\""
+    },
+    {
+      "strong": "H3879",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Levi living at the time of the Patriarchs, first mentioned at Gen.29.34;\""
+    },
+    {
+      "strong": "H4520",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Joseph's son who founded the tribe of Manasseh living at the time of the Patriarchs, first mentioned at Gen.41.51;\""
+    },
+    {
+      "strong": "H6547Q",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man of the Egyptians living at the time of Divided Monarchy, first mentioned at 2Ki.23.29; also called Pharaoh at 2Ki.23.35 etc.\""
+    },
+    {
+      "strong": "H7397A",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of Divided Monarchy, first mentioned at 2Ki.10.15;\""
+    },
+    {
+      "strong": "G4564",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A woman living at the time of the Patriarchs, first mentioned at Gen.11.29;\""
+    },
+    {
+      "strong": "H0033",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Manasseh living at the time of Egypt and Wilderness, first mentioned at Num.26.30;\""
+    },
+    {
+      "strong": "H0673G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Joseph's son who founded the tribe of Ephraim, living at the time of the Patriarchs, first mentioned at Gen.41.52;\""
+    },
+    {
+      "strong": "G0903",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Egypt and Wilderness, first mentioned at Num.22.5;\""
+    },
+    {
+      "strong": "G0958",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Benjamin living at the time of the Patriarchs, first mentioned at Gen.35.18;\""
+    },
+    {
+      "strong": "H3227B",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Benjamin living at the time of the Patriarchs, first mentioned at Gen.35.18;\""
+    },
+    {
+      "strong": "G2455I",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time of the New Testament, first mentioned at Mat.13.55;\""
+    },
+    {
+      "strong": "G2455M",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the New Testament, first mentioned at Act.15.22;\""
+    },
+    {
+      "strong": "G2408",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Divided Monarchy, first mentioned at 2Ch.35.25;\""
+    },
+    {
+      "strong": "G3017I",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An apostle living at the time of the New Testament, first mentioned at Mat.9.9;\""
+    },
+    {
+      "strong": "G3019",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Levi living at the time of the Patriarchs, first mentioned at Gen.29.34;\""
+    },
+    {
+      "strong": "G2535",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time before the Flood, first mentioned at Gen.4.1;\""
+    },
+    {
+      "strong": "H7074H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of Egypt and Wilderness, first mentioned at Num.32.12;\""
+    },
+    {
+      "strong": "G4545",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet from the tribe of Levi living at the time of United Monarchy, first mentioned at 1Sa.1.20;\""
+    },
+    {
+      "strong": "H8099",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Simeon living at the time of the Patriarchs, first mentioned at Gen.29.33;\""
+    },
+    {
+      "strong": "G2269G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.25.25;\""
+    },
+    {
+      "strong": "H0673H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A woman from the tribe of Judah living at the time of Egypt and Wilderness, first mentioned at 1Ch.2.19;\""
+    },
+    {
+      "strong": "G0028",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A woman living at the time of the Patriarchs, first mentioned at Gen.16.1;\""
+    },
+    {
+      "strong": "G2424I",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A judge from the tribe of Ephraim living at the time of Egypt and Wilderness and Israel before the Monarchy, first mentioned at Ex\""
+    },
+    {
+      "strong": "G2194",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Zebulun living at the time of the Patriarchs, first mentioned at Gen.30.20;\""
+    },
+    {
+      "strong": "H2075",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Zebulun living at the time of the Patriarchs, first mentioned at Gen.30.20;\""
+    },
+    {
+      "strong": "G2197G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A priest living at the time of Divided Monarchy, first mentioned at 2Ch.24.20;\""
+    },
+    {
+      "strong": "G2096",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A woman living at the time before the Flood, first mentioned at Gen.3.20;\""
+    },
+    {
+      "strong": "G1802",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time before the Flood, first mentioned at Gen.5.18;\""
+    },
+    {
+      "strong": "G2502",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A king of Judah living at the time of Divided Monarchy, first mentioned at 1Ki.13.2;\""
+    },
+    {
+      "strong": "G4672H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A location in Jerusalem first mentioned at Act.3.11;\""
+    },
+    {
+      "strong": "G2423",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A king of Judah living at the time of Divided Monarchy, first mentioned at 2Ki.24.6;\""
+    },
+    {
+      "strong": "G2501H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time of the New Testament, first mentioned at Mat.13.55;\""
+    },
+    {
+      "strong": "G3017J",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Levi living at the time of the Patriarchs, first mentioned at Gen.29.34;\""
+    },
+    {
+      "strong": "G3413",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of Exile and Return, first mentioned at Dan.10.13;\""
+    },
+    {
+      "strong": "G4460",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A woman living before Israel's Monarchy, first mentioned at Jos.2.1;\""
+    },
+    {
+      "strong": "G4826K",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An apostle living at the time of the New Testament, first mentioned at Mat.4.18;\""
+    },
+    {
+      "strong": "G0007H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of Divided Monarchy, first mentioned at 1Ch.24.10;\""
+    },
+    {
+      "strong": "G0008",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A High Priest living at the time of United Monarchy, first mentioned at 1Sa.22.20;\""
+    },
+    {
+      "strong": "G3774",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Bathsheba's husband living at the time of United Monarchy, first mentioned at 2Sa.11.3;\""
+    },
+    {
+      "strong": "G2492",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Job.1.1;\""
+    },
+    {
+      "strong": "G2403",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A queen of the Kingdom of Israel, living at the time of Divided Monarchy, first mentioned at 1Ki.16.31;\""
+    },
+    {
+      "strong": "G1666",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Divided Monarchy, first mentioned at 1Ki.19.16;\""
+    },
+    {
+      "strong": "G1800",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time before the Flood, first mentioned at Gen.4.26;\""
+    },
+    {
+      "strong": "G2187",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A location first mentioned at 2Sa.13.23;\""
+    },
+    {
+      "strong": "H0716",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Benjamin living at the time of Egypt and Wilderness, only mentioned at Num.26.40;\""
+    },
+    {
+      "strong": "G0768",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Asher living at the time of the Patriarchs, first mentioned at Gen.30.13;\""
+    },
+    {
+      "strong": "H0805B",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Asher living at the time of the Patriarchs, first mentioned at Gen.30.13;\""
+    },
+    {
+      "strong": "H0843",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Asher living at the time of the Patriarchs, first mentioned at Gen.30.13;\""
+    },
+    {
+      "strong": "G0913",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A Judge living before Israel's Monarchy, first mentioned at Jdg.4.6;\""
+    },
+    {
+      "strong": "H1276",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of United Monarchy, first mentioned at 2Sa.20.1;\""
+    },
+    {
+      "strong": "G1158",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Exile and Return, first mentioned at Ezk.14.14;\""
+    },
+    {
+      "strong": "G0904",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A king in Moab living at the time of Egypt and Wilderness, first mentioned at Num.22.2;\""
+    },
+    {
+      "strong": "H3228G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Benjamin living at the time of the Patriarchs, first mentioned at Gen.35.18;\""
+    },
+    {
+      "strong": "G1007",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of Egypt and Wilderness, first mentioned at Num.22.5;\""
+    },
+    {
+      "strong": "G1066",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A Judge living before Israel's Monarchy, first mentioned at Jdg.6.11;\""
+    },
+    {
+      "strong": "G5617",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Divided Monarchy, first mentioned at Hos.1.1;\""
+    },
+    {
+      "strong": "G2424J",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the New Testament, only mentioned at Col.4.11;\""
+    },
+    {
+      "strong": "H3155",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Judah's son from the tribe of Judah living at the time of Egypt and Wilderness, first mentioned at Gen.38.30;\""
+    },
+    {
+      "strong": "H3172",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of Divided Monarchy, first mentioned at 1Ch.23.8;\""
+    },
+    {
+      "strong": "H2539",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time of Egypt and Wilderness, first mentioned at Gen.46.12;\""
+    },
+    {
+      "strong": "G1697",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the Patriarchs, first mentioned at Gen.33.19;\""
+    },
+    {
+      "strong": "H2697",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time of Egypt and Wilderness, first mentioned at Gen.46.12;\""
+    },
+    {
+      "strong": "H2972",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time of Egypt and Wilderness, first mentioned at Num.32.41;\""
+    },
+    {
+      "strong": "G2455K",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the New Testament, only mentioned at Act.5.37;\""
+    },
+    {
+      "strong": "G2455L",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the New Testament, only mentioned at Act.9.11;\""
+    },
+    {
+      "strong": "G0914",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A High Priest living at the time of Divided Monarchy, first mentioned at 2Ki.11.4;\""
+    },
+    {
+      "strong": "G2501M",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the New Testament, only mentioned at Act.1.23;\""
+    },
+    {
+      "strong": "G2493",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A prophet living at the time of Divided Monarchy, first mentioned at Jol.1.1;\""
+    },
+    {
+      "strong": "H3481G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Abraham's son living at the time of the Patriarchs, first mentioned at Gen.16.11;\""
+    },
+    {
+      "strong": "G2422",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A Judge living before Israel's Monarchy, first mentioned at Jdg.11.1;\""
+    },
+    {
+      "strong": "H3325",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Levi living at the time of Egypt and Wilderness, first mentioned at Exo.6.18;\""
+    },
+    {
+      "strong": "H3397",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living before Israel's Monarchy, first mentioned at 1Sa.27.10;\""
+    },
+    {
+      "strong": "H3614",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Joshua's compatriot living at the time of Egypt and Wilderness and Israel before the Monarchy, first mentioned at Num.13.6;\""
+    },
+    {
+      "strong": "G3020",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Levi living at the time of the Patriarchs, first mentioned at Gen.29.34;\""
+    },
+    {
+      "strong": "H6547N",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An Egyptian Pharaoh living at the time of Divided Monarchy, only mentioned at Jer.25.19;\""
+    },
+    {
+      "strong": "H6547S",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man of the Egyptians living at the time of Divided Monarchy, first mentioned at Jer.37.5\""
+    },
+    {
+      "strong": "H4755",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A woman living before Israel's Monarchy, first mentioned at Rut.1.2;\""
+    },
+    {
+      "strong": "H5280",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Benjamin living at the time of Egypt and Wilderness, first mentioned at Num.26.40;\""
+    },
+    {
+      "strong": "G3497",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A Syrian man with leprosy living at the time of Divided Monarchy, first mentioned at 2Ki.5.1;\""
+    },
+    {
+      "strong": "G3508",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Naphtali living at the time of the Patriarchs, first mentioned at Gen.30.8;\""
+    },
+    {
+      "strong": "G1694",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time of the New Testament, first mentioned at Mat.1.1;\""
+    },
+    {
+      "strong": "H6558",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time of Egypt and Wilderness, first mentioned at Gen.38.29;\""
+    },
+    {
+      "strong": "G2797",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Saul's father from the tribe of Benjamin living at the time of United Monarchy, first mentioned at 1Sa.9.1;\""
+    },
+    {
+      "strong": "G2879",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Aaron's adversary from the tribe of Levi living at the time of Egypt and Wilderness, first mentioned at Exo.6.21;\""
+    },
+    {
+      "strong": "G4479",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A woman living at the time of the Patriarchs, first mentioned at Gen.22.23;\""
+    },
+    {
+      "strong": "G4478",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A woman living at the time of the Patriarchs, first mentioned at Gen.29.6;\""
+    },
+    {
+      "strong": "G4549H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A king of Israel, from the tribe of Benjamin living at the time of United Monarchy, first mentioned at 1Sa.9.2;\""
+    },
+    {
+      "strong": "H8024",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time of Egypt and Wilderness, first mentioned at Gen.38.5;\""
+    },
+    {
+      "strong": "G4826I",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time of the New Testament, first mentioned at Act.13.1;\""
+    },
+    {
+      "strong": "G4546",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A Judge living before Israel's Monarchy, first mentioned at Jdg.13.24;\""
+    },
+    {
+      "strong": "G4589",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man living at the time before the Flood, first mentioned at Gen.4.25;\""
+    },
+    {
+      "strong": "H4125",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A location in Edom first mentioned at Gen.19.37b;\""
+    },
+    {
+      "strong": "G2455G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"An apostle living at the time of the New Testament, first mentioned at Mat.10.3;\""
+    },
+    {
+      "strong": "G2384G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A man from the tribe of Judah living at the time ofExile and return, first mentioned at Mat.1.15;\""
+    },
+    {
+      "strong": "G0128",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A location first mentioned at Gen.2.13;\""
+    },
+    {
+      "strong": "G2451",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Jacob's son who founded the tribe of Judah living at the time of the Patriarchs, first mentioned at Gen.29.35;\""
+    },
+    {
+      "strong": "G0295",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A location only mentioned at Act.17.1;\""
+    },
+    {
+      "strong": "G2404",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A location only mentioned at Col.4.13;\""
+    },
+    {
+      "strong": "G3533",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A location first mentioned at Tit.3.12;\""
+    },
+    {
+      "strong": "G3102",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"(female) disciple, student, follower\""
+    },
+    {
+      "strong": "G4827",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"a fellow disciple\""
+    },
+    {
+      "strong": "G0007G",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Abijah\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G0881",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Ahaz\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G0300",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Amos\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G0760",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Asaph\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G1003",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Boaz\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G2216H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Zerubbabel\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent l\""
+    },
+    {
+      "strong": "G1478",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Hezekiah\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent lis\""
+    },
+    {
+      "strong": "G2074",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Hezron\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G2496",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Joram\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G2498",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Jehoshaphat\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent \""
+    },
+    {
+      "strong": "G2488",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Jotham\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G3128H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Manasseh\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent lis\""
+    },
+    {
+      "strong": "G3476",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Nahshon\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list\""
+    },
+    {
+      "strong": "G5601",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Obed\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G3604",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Uzziah\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G0284",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Amminadab\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent li\""
+    },
+    {
+      "strong": "G5329",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Perez\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G4497",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Rehoboam\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent lis\""
+    },
+    {
+      "strong": "G4528H",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Shealtiel\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent li\""
+    },
+    {
+      "strong": "G1045",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Gad\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G2196",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Zerah\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G4502",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Reuben\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G4503",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Ruth\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G4477",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Rahab\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "G2283",
+      "cluster_code": "T8",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Tamar\" (no TIP/gloss row, identified via verse surface text -- named individual, Matthew 1 genealogy or equivalent list)\""
+    },
+    {
+      "strong": "H7497B",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"People from Repha(?), first mentioned at Gen.14.5;\""
+    },
+    {
+      "strong": "G2269H",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"People descended from a man first mentioned at Gen.25.25;\""
+    },
+    {
+      "strong": "H0805A",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"People from Asshur(?) of the Patriarchs, only mentioned at Gen.25.3;\""
+    },
+    {
+      "strong": "H7017",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"Ancestors of Heber or Hobab , first mentioned at Gen.15.19;\""
+    },
+    {
+      "strong": "H3774H",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"A group, first mentioned at 2Sa.8.18;\""
+    },
+    {
+      "strong": "H3774G",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"People from Chereth(?), first mentioned at 1Sa.30.14;\""
+    },
+    {
+      "strong": "H8461",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"People from Hachmon or Tahchemon(?), first mentioned at 2Sa.23.8;\""
+    },
+    {
+      "strong": "H3057",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Judahite\" (no TIP/gloss row, identified via verse surface text -- demonym/clan-name)\""
+    },
+    {
+      "strong": "H3846",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Libnites\" (no TIP/gloss row, identified via verse surface text -- demonym/clan-name)\""
+    },
+    {
+      "strong": "H4250",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Mahlites\" (no TIP/gloss row, identified via verse surface text -- demonym/clan-name)\""
+    },
+    {
+      "strong": "H4354",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Machirites\" (no TIP/gloss row, identified via verse surface text -- demonym/clan-name)\""
+    },
+    {
+      "strong": "H0761G",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Aramean\" (no TIP/gloss row, identified via verse surface text -- demonym/clan-name)\""
+    },
+    {
+      "strong": "H4077",
+      "cluster_code": "T11",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): T8/T11 family-expansion scan, TIP-marker or surface-text verified -- \"surface=\"Mede\" (no TIP/gloss row, identified via verse surface text -- demonym/clan-name)\""
+    },
+    {
+      "strong": "H0410I",
+      "cluster_code": "T7",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): exact-code completion, base H0410 already T7 -- \"The Deity;\""
+    },
+    {
+      "strong": "G2969",
+      "cluster_code": "T10",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): a large village, market town -- surfaced via T8/T11 scan but is a PLACE, not a party"
+    },
+    {
+      "strong": "G3496",
+      "cluster_code": "T10",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): surface=\"Neapolis\" (no TIP/gloss row, identified via verse surface text -- a place)"
+    },
+    {
+      "strong": "G4565",
+      "cluster_code": "T10",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): surface=\"Sharon\" (no TIP/gloss row, identified via verse surface text -- a place)"
+    },
+    {
+      "strong": "H0741",
+      "cluster_code": "T12",
+      "confidence": "high",
+      "rationale": "Phase J (escalation #1598): hearth, altar hearth, altar -- surfaced via T8/T11 scan but is an OBJECT, not a party"
+    }
+  ],
+  "relocations": [],
+  "deferred_ambiguous_not_included": [
+    {
+      "strong": "G0261",
+      "gloss": "ignorant, without a formal education",
+      "reason": "adjective describing a state, not a party noun itself"
+    },
+    {
+      "strong": "G0935",
+      "gloss": "king (generic)",
+      "reason": "generic role/title, not a specific individual -- matches Phase F1 precedent (generic king/priest go to their M-code characteristic, not T8)"
+    },
+    {
+      "strong": "G1427",
+      "gloss": "twelve",
+      "reason": "number, not a party"
+    },
+    {
+      "strong": "G5443",
+      "gloss": "tribe (generic)",
+      "reason": "generic collective-type noun, not a specific identifiable party -- same caution as generic king/priest"
+    },
+    {
+      "strong": "H3669B",
+      "gloss": "merchant",
+      "reason": "generic occupational role, not a specific individual -- M-code candidate separately, not T8"
+    },
+    {
+      "strong": "H0691",
+      "gloss": "hero, valiant one",
+      "reason": "generic human-quality noun, M-code characteristic candidate (valor/courage), not T8"
+    },
+    {
+      "strong": "(11 generic party nouns)",
+      "gloss": "father/man/woman/brother/son bare senses",
+      "reason": "respecting the existing Phase F1 deferral of these exact generic senses -- not re-decided here"
+    }
+  ],
+  "excluded_coincidental_relations": [
+    "H3225G",
+    "H3225H",
+    "H3754",
+    "H0134",
+    "H0127I",
+    "H5828",
+    "H3759",
+    "H0122A",
+    "H0124",
+    "H3758",
+    "H0122B",
+    "H3989",
+    "H3338",
+    "H3559B",
+    "H0738A",
+    "H0738B",
+    "H0744",
+    "H6157",
+    "H0723",
+    "H0220",
+    "H1460B",
+    "H8077B",
+    "H3066"
+  ]
+}

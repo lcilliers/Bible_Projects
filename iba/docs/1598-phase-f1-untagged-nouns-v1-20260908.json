@@ -1,0 +1,61 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "batch": "Phase F1 -- first scan of the untagged noun pool (4,215 common nouns never classified at all), top 60 by frequency reviewed",
+  "scope_note": "This is a genuinely new pool, distinct from T2's own noun review (Phases C1-C4) -- these strongs have NO cluster row of any kind, not even T2. High-risk dual-referent terms (father/son/God's-name-adjacent words) are deliberately deferred, not forced, matching the H0113 'lord' precedent.",
+  "new_clusters": [],
+  "inserts": [
+    {"strong": "G2424G", "cluster_code": "T7", "confidence": "high", "rationale": "'Jesus' -- direct Party-Divine match, 922 occurrences, a major omission from the untagged pool. escalation #1598 Phase F1"},
+    {"strong": "G2962G", "cluster_code": "T7", "confidence": "high", "rationale": "'lord: God' (kyrios referring to God) -- direct Party-Divine match, 631 occurrences. escalation #1598 Phase F1"},
+
+    {"strong": "H4428G", "cluster_code": "M72", "confidence": "high", "rationale": "'king' -- direct Authority & Dominion match, 2,441 occurrences. escalation #1598 Phase F1"},
+    {"strong": "H4430", "cluster_code": "M72", "confidence": "high", "rationale": "'king' (Aramaic form of H4428G). escalation #1598 Phase F1"},
+
+    {"strong": "H3548", "cluster_code": "M36", "confidence": "medium", "rationale": "'priest' -- direct Worship & Service match (role). escalation #1598 Phase F1"},
+    {"strong": "H5930A", "cluster_code": "M36", "confidence": "medium", "rationale": "'burnt offering' -- a worship practice/act. escalation #1598 Phase F1"},
+    {"strong": "H4503G", "cluster_code": "M36", "confidence": "medium", "rationale": "'grain offering' -- a worship practice/act, same shape as H5930A. escalation #1598 Phase F1"},
+    {"strong": "G3101", "cluster_code": "T8", "confidence": "medium", "rationale": "'disciple' -- a human-role identity noun, same shape as H6001A/labourer. escalation #1598 Phase F1"},
+    {"strong": "H1870G", "cluster_code": "M76", "confidence": "medium", "rationale": "'way: conduct' -- direct Walk & Conduct match. escalation #1598 Phase F1"},
+    {"strong": "H4687", "cluster_code": "M54", "confidence": "medium", "rationale": "'commandment' -- direct Torah & Obedience match. escalation #1598 Phase F1"},
+
+    {"strong": "H2719", "cluster_code": "T12", "confidence": "high", "rationale": "'sword' -- direct Objects match, same as G3162 already there. escalation #1598 Phase F1"},
+    {"strong": "H4196", "cluster_code": "T12", "confidence": "high", "rationale": "'altar' -- direct Objects match, same as G1041 already there. escalation #1598 Phase F1"},
+    {"strong": "H3701G", "cluster_code": "T12", "confidence": "medium", "rationale": "'silver: money' -- material/wealth object. escalation #1598 Phase F1"},
+    {"strong": "H2091", "cluster_code": "T12", "confidence": "medium", "rationale": "'gold' -- precious material, direct Objects match. escalation #1598 Phase F1"},
+    {"strong": "H8179G", "cluster_code": "T12", "confidence": "medium", "rationale": "'gate' -- a real structural/architectural object of note (city/temple gates carry real significance in narrative). escalation #1598 Phase F1"},
+    {"strong": "H0068G", "cluster_code": "T12", "confidence": "low", "rationale": "'stone' -- building/memorial material, lower confidence given breadth of literal use. escalation #1598 Phase F1"},
+    {"strong": "H0727", "cluster_code": "T12", "confidence": "high", "rationale": "'ark' -- the Ark of the Covenant, a highly significant ritual object. escalation #1598 Phase F1"},
+
+    {"strong": "H1004Q", "cluster_code": "T10", "confidence": "medium", "rationale": "'house: temple' -- a specific sacred place, distinct from the generic 'house:home' sense (H1004B, deliberately not included here). escalation #1598 Phase F1"},
+    {"strong": "H0168G", "cluster_code": "T10", "confidence": "low", "rationale": "'tent' -- a dwelling-place term. escalation #1598 Phase F1"},
+    {"strong": "H4057B", "cluster_code": "T10", "confidence": "high", "rationale": "'wilderness' -- direct Places match, same as G2047 already there. escalation #1598 Phase F1"},
+    {"strong": "H4264", "cluster_code": "T10", "confidence": "low", "rationale": "'camp' -- a location term. escalation #1598 Phase F1"},
+
+    {"strong": "H0784", "cluster_code": "T13", "confidence": "high", "rationale": "'fire' -- direct Natural World match. escalation #1598 Phase F1"},
+    {"strong": "H3220G", "cluster_code": "T13", "confidence": "high", "rationale": "'sea' -- direct Natural World match. escalation #1598 Phase F1"},
+    {"strong": "H6629G", "cluster_code": "T13", "confidence": "medium", "rationale": "'flock' -- an animal-collective, Natural World. escalation #1598 Phase F1"},
+    {"strong": "H0127G", "cluster_code": "T13", "confidence": "medium", "rationale": "'land: soil' -- the ground/material sense, distinct from 'land:country' (already T10 via H7704G) -- soil is a natural substance, not a territory. escalation #1598 Phase F1"},
+    {"strong": "H0776H", "cluster_code": "T13", "confidence": "medium", "rationale": "'land: soil' -- same sense as H0127G. escalation #1598 Phase F1"},
+
+    {"strong": "H6430G", "cluster_code": "T11", "confidence": "high", "rationale": "'Philistine' -- direct Corporate/Collective (ethnic identity) match, same shape as G2453/Jew already there. escalation #1598 Phase F1"},
+    {"strong": "H3881", "cluster_code": "T11", "confidence": "low", "rationale": "'Levi' -- more often used tribally (the Levites) than as the individual patriarch; lower confidence given the ambiguity. escalation #1598 Phase F1"},
+
+    {"strong": "H5869H", "cluster_code": "T14", "confidence": "medium", "rationale": "'eye: seeing' -- body-part variant, same family already in T14. escalation #1598 Phase F1"}
+  ],
+  "relocations": [],
+  "deferred_ambiguous_not_included": [
+    {"strong": "H1121A", "gloss": "son: child", "reason": "too generic/broad, no confirmed characteristic or party fit"},
+    {"strong": "G5207", "gloss": "son", "reason": "genuine divine-referent risk (Son = Christ in many NT contexts) -- same shape as H0113 'lord', a Layer 2 per-verse question, not a lexicon-level call"},
+    {"strong": "H0001G", "gloss": "father", "reason": "genuine divine-referent risk (Father = God in many contexts) -- same caution as G5207"},
+    {"strong": "G3962", "gloss": "father", "reason": "same divine-referent risk as H0001G"},
+    {"strong": "H0430J", "gloss": "gods", "reason": "genuinely ambiguous -- pagan/false gods in most contexts but the Hebrew word (elohim) can denote the true God too; needs verse-context, not a lexicon-level call"},
+    {"strong": "H1323G", "gloss": "daughter", "reason": "too generic, no confirmed fit"},
+    {"strong": "H0251G", "gloss": "brother: male-sibling", "reason": "too generic, no confirmed fit"},
+    {"strong": "H0517", "gloss": "mother", "reason": "too generic, no confirmed fit"},
+    {"strong": "H0802G", "gloss": "woman", "reason": "too generic, no confirmed fit"},
+    {"strong": "H0802H", "gloss": "woman: wife", "reason": "too generic, no confirmed fit"},
+    {"strong": "H3899H", "gloss": "food: bread", "reason": "a manufactured object but doesn't meet the same theological-significance bar as idols/altars/the ark; left rather than force-included"},
+    {"strong": "H0899B", "gloss": "garment", "reason": "genuinely significant in some narratives (rent garments = mourning) but too broad/generic on its own to confirm"},
+    {"strong": "H4639G", "gloss": "deed: work", "reason": "generic, matches the earlier 'work' deferrals (G2041/H4399)"}
+  ]
+}

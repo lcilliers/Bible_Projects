@@ -1,0 +1,85 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "researcher_instructions_verbatim": [
+    "H6001A is a type of human -> T* ; G2960 is divine -> T*",
+    "0.3 - agree. scan all the strongs for other candidates. relocate from present T and M codes.",
+    "0.4 agree, create new - scan strongs for candidates. Reallocate.",
+    "0.5 agree - continue to create scan both strongs and current allocations. Reallocate.",
+    "same with 0.6, 0.7 ; add Death and sheol to places , Sin remain in M-codes.",
+    "leave 10 in T3 for the moment.",
+    "I did approve H6001A, G2960 -- why is this excluded (confirms items 8/9 apply as originally given)"
+  ],
+  "new_clusters": [
+    {
+      "cluster_code": "T10",
+      "short_name": "Places",
+      "description": "T10 - Places: a strong referring to a location/realm (heaven, earth, Sheol/Hades, death as a state/realm, wilderness, mountain, desert, valley, abyss, etc.) -- referent-identity classification, orthogonal to the thematic M-code axis; distinguished from T2/Supplementary by being a genuine analytic candidate (movement source/destination), not excluded. A code can carry both an M-cluster assignment and this one. Created 2026-09-08, escalation #1598, researcher-approved."
+    },
+    {
+      "cluster_code": "T11",
+      "short_name": "Corporate-Collective",
+      "description": "T11 - Corporate/Collective: a strong referring to a nation, people, tribe, or city as an acting corporate unit (Israel, Judah, Jerusalem, Egypt, Assyria, Moab, Babylon, Gentiles, generic 'people'/'city'/'tribe') -- distinct from T8/Party-Human's individual-human grain; referent-identity classification, orthogonal to the thematic M-code axis. A code can carry both an M-cluster assignment and this one. Created 2026-09-08, escalation #1598, researcher-approved."
+    },
+    {
+      "cluster_code": "T12",
+      "short_name": "Objects-Artifacts",
+      "description": "T12 - Objects/Artifacts: a strong referring to a man-made object recurring as a characteristic's target (idol, gold, silver, sword, weapon, altar) -- referent-identity classification, orthogonal to the thematic M-code axis; distinct from T10/Places (not a location) and T3/Operations (not a verb). A code can carry both an M-cluster assignment and this one. Created 2026-09-08, escalation #1598, researcher-approved."
+    }
+  ],
+  "inserts": [
+    {"strong": "H8064", "cluster_code": "T10", "confidence": "high", "rationale": "gloss 'heaven' -- evidence-checked live, escalation #1598"},
+    {"strong": "G3772", "cluster_code": "T10", "confidence": "high", "rationale": "gloss 'heaven' -- evidence-checked live, escalation #1598"},
+    {"strong": "H0776G", "cluster_code": "T10", "confidence": "high", "rationale": "gloss 'land: country/planet' -- evidence-checked live, escalation #1598"},
+    {"strong": "H3452H", "cluster_code": "T10", "confidence": "medium", "rationale": "gloss 'wilderness' -- evidence-checked live, escalation #1598"},
+    {"strong": "G2047", "cluster_code": "T10", "confidence": "medium", "rationale": "gloss 'desert' -- evidence-checked live, escalation #1598"},
+    {"strong": "G5327", "cluster_code": "T10", "confidence": "medium", "rationale": "gloss 'valley' -- evidence-checked live, escalation #1598"},
+    {"strong": "G0012", "cluster_code": "T10", "confidence": "medium", "rationale": "gloss 'abyss' -- realm-type, evidence-checked live, escalation #1598"},
+
+    {"strong": "H3478", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Israel' -- evidence-checked live, escalation #1598"},
+    {"strong": "G2474", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Israel' -- evidence-checked live, escalation #1598"},
+    {"strong": "H3063G", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Judah' -- evidence-checked live, escalation #1598"},
+    {"strong": "G2448", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Judah' -- evidence-checked live, escalation #1598"},
+    {"strong": "H3389", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Jerusalem' -- evidence-checked live, escalation #1598"},
+    {"strong": "G2414", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Jerusalem' -- evidence-checked live, escalation #1598"},
+    {"strong": "H4714G", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Egypt' -- evidence-checked live, escalation #1598"},
+    {"strong": "G0124", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Egyptian' -- evidence-checked live, escalation #1598"},
+    {"strong": "H0804G", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Assyria' -- evidence-checked live, escalation #1598"},
+    {"strong": "H4124G", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Moab' -- evidence-checked live, escalation #1598"},
+    {"strong": "G0897", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Babylon' -- evidence-checked live, escalation #1598"},
+    {"strong": "G1484", "cluster_code": "T11", "confidence": "high", "rationale": "gloss 'Gentiles' -- evidence-checked live, escalation #1598"},
+    {"strong": "H5892B", "cluster_code": "T11", "confidence": "medium", "rationale": "gloss 'city' (generic) -- evidence-checked live, escalation #1598"},
+    {"strong": "G4172", "cluster_code": "T11", "confidence": "medium", "rationale": "gloss 'city' (generic) -- evidence-checked live, escalation #1598"},
+    {"strong": "G1429", "cluster_code": "T11", "confidence": "medium", "rationale": "gloss 'twelve tribes' -- evidence-checked live, escalation #1598"},
+
+    {"strong": "G5552", "cluster_code": "T12", "confidence": "medium", "rationale": "gloss 'golden' -- evidence-checked live, escalation #1598"},
+    {"strong": "G0693", "cluster_code": "T12", "confidence": "medium", "rationale": "gloss 'silver' -- evidence-checked live, escalation #1598"},
+    {"strong": "G3162", "cluster_code": "T12", "confidence": "medium", "rationale": "gloss 'sword' -- evidence-checked live, escalation #1598"},
+    {"strong": "G1041", "cluster_code": "T12", "confidence": "medium", "rationale": "gloss 'altar' -- evidence-checked live, escalation #1598"},
+    {"strong": "H1544", "cluster_code": "T12", "confidence": "medium", "rationale": "gloss 'idol' -- object-type, dual-tagged alongside its existing M55/T2 rows, escalation #1598"},
+    {"strong": "G1493", "cluster_code": "T12", "confidence": "low", "rationale": "gloss 'idol's temple' -- object-adjacent, dual-tagged alongside its existing M55/T2 rows, escalation #1598"},
+
+    {"strong": "G1404", "cluster_code": "T4", "confidence": "medium", "rationale": "gloss 'dragon' -- Revelation's own identification with Satan (Rev 12:9), escalation #1598"},
+    {"strong": "G1140", "cluster_code": "T4", "confidence": "high", "rationale": "gloss 'demon' -- evidence-checked live, escalation #1598"},
+
+    {"strong": "H6001A", "cluster_code": "T8", "confidence": "medium", "rationale": "researcher-approved verbatim ('H6001A is a type of human -> T*'). DUAL-TAG, not a relocation: live occurrences are polysemous -- 'workmen's'/'worker's' (Judg.5.26, Prov.16.26, human-role sense, this insert) vs 'misery' (Job.3.20, Job.20.22, abstract-state sense, remains correctly tagged M24 Faintness & Despair -- that M24 row is untouched by this payload). escalation #1598"},
+    {"strong": "G2960", "cluster_code": "T7", "confidence": "medium", "rationale": "researcher-approved verbatim ('G2960 is divine -> T*'), confirmed a second time after the flagged concern was raised. Note, not a blocker: G2960 is a possessive/relational adjective ('the Lord's day/supper', Rev.1.10, 1Cor.11.20), not itself a name of God the way T7's other 9 members are -- this insert extends T7's practical use to divine-relational adjectives, by direct researcher instruction, not a silent drift. escalation #1598"}
+  ],
+  "relocations": [
+    {"strong": "H7585", "from_cluster_code": "T2", "to_cluster_code": "T10", "note": "hell:Sheol -- researcher instruction verbatim ('add Death and sheol to places'), escalation #1598"},
+    {"strong": "H4194", "from_cluster_code": "T2", "to_cluster_code": "T10", "note": "death -- researcher instruction verbatim ('add Death and sheol to places'), escalation #1598"},
+    {"strong": "G2288", "from_cluster_code": "T2", "to_cluster_code": "T10", "note": "death -- researcher instruction verbatim ('add Death and sheol to places'), escalation #1598"},
+    {"strong": "G0086", "from_cluster_code": "T2", "to_cluster_code": "T10", "note": "hell:Hades -- same realm-type as Sheol, escalation #1598"},
+    {"strong": "H7845H", "from_cluster_code": "T2", "to_cluster_code": "T10", "note": "pit:grave -- realm-type, escalation #1598"},
+    {"strong": "H2022H", "from_cluster_code": "T2", "to_cluster_code": "T10", "note": "mountain:hill country -- location-type, escalation #1598"},
+
+    {"strong": "H5971K", "from_cluster_code": "T2", "to_cluster_code": "T11", "note": "people:soldiers -- corporate-people sense, lower confidence (military-specific), escalation #1598"},
+
+    {"strong": "G3696", "from_cluster_code": "T2", "to_cluster_code": "T12", "note": "weapon -- object-type, escalation #1598"},
+
+    {"strong": "G1139", "from_cluster_code": "T2", "to_cluster_code": "T4", "note": "be demonised -- adversarial-action verb form, escalation #1598"},
+
+    {"strong": "H3477H", "from_cluster_code": "M13", "to_cluster_code": "T3", "note": "Book of Jashar (proper-noun object) -- temporary parking pending the Objects group's own full scan, researcher instruction verbatim ('leave 10 in T3 for the moment'), escalation #1598"},
+    {"strong": "H8549J", "from_cluster_code": "M61", "to_cluster_code": "T3", "note": "the priestly Urim/Thummim object -- temporary parking pending the Objects group's own full scan, researcher instruction verbatim ('leave 10 in T3 for the moment'), escalation #1598"}
+  ]
+}

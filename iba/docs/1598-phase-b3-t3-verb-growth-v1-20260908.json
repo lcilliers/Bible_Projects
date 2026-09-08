@@ -1,0 +1,2052 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "batch": "Phase B3 -- final T3 growth batch, remaining ~349 verb candidates after B1/B2",
+  "method_note": "First-pass keyword matching against M-code themes produced a ~20%% false-positive rate (e.g. 'testify' matched on 'test', 'hold fast' matched on 'fast'/fasting, 'get along well' matched on 'long'/desire, 'capture alive' matched on 'alive'/life-death, several 'return'/'in turn' phrases falsely matched 'turn'/repentance) -- every one manually re-checked for actual sense before inclusion, none applied blindly. 60 candidates excluded entirely: empty gloss text (cannot classify without guessing), copula/existential forms, proper-noun/place/person epithets hiding behind verb-majority morph tags, and adverbial 'quickly' forms -- same categories already found in Phase B2.",
+  "new_clusters": [],
+  "inserts": [
+    {
+      "strong": "G1127",
+      "cluster_code": "M74",
+      "confidence": "high",
+      "rationale": "'to keep watch' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5197",
+      "cluster_code": "M43",
+      "confidence": "medium",
+      "rationale": "'to drip/prophesy' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5083I",
+      "cluster_code": "M74",
+      "confidence": "high",
+      "rationale": "'to keep: protect' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1551",
+      "cluster_code": "M68",
+      "confidence": "medium",
+      "rationale": "'to wait for' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5442H",
+      "cluster_code": "M74",
+      "confidence": "medium",
+      "rationale": "'to keep/guard: guard' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1826I",
+      "cluster_code": "M55",
+      "confidence": "medium",
+      "rationale": "'to silence: destroyed' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2901",
+      "cluster_code": "M23",
+      "confidence": "medium",
+      "rationale": "'to strengthen' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1991",
+      "cluster_code": "M23",
+      "confidence": "low",
+      "rationale": "'to strengthen' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4806",
+      "cluster_code": "M25",
+      "confidence": "low",
+      "rationale": "'to make alive with' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1350I",
+      "cluster_code": "M79",
+      "confidence": "low",
+      "rationale": "'to redeem: relative' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6965K",
+      "cluster_code": "M74",
+      "confidence": "low",
+      "rationale": "'to arise: guard' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2407",
+      "cluster_code": "M36",
+      "confidence": "low",
+      "rationale": "'to serve as priest' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4881",
+      "cluster_code": "M25",
+      "confidence": "low",
+      "rationale": "'to die/destroy with' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4888",
+      "cluster_code": "M71",
+      "confidence": "low",
+      "rationale": "'to glory with' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7734",
+      "cluster_code": "M11",
+      "confidence": "low",
+      "rationale": "'to turn back' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7847",
+      "cluster_code": "M11",
+      "confidence": "medium",
+      "rationale": "'to turn aside' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1624",
+      "cluster_code": "M11",
+      "confidence": "low",
+      "rationale": "'to turn/wander away' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5848A",
+      "cluster_code": "M11",
+      "confidence": "low",
+      "rationale": "'to turn aside' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5254H",
+      "cluster_code": "M35",
+      "confidence": "medium",
+      "rationale": "'to test: try' -- direct characteristic-verb match, manually re-verified after keyword-scan false positives were found and corrected. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2647",
+      "cluster_code": "M55",
+      "confidence": "medium",
+      "rationale": "'to destroy/lodge' -- genuinely dual-sense (destroy vs. lodge/unyoke), same shape as H6001A's own dual-tag precedent. Also added to T3 for the generic 'lodge' sense. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2647",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to destroy/lodge' -- dual-sense, generic 'lodge' half of the pair also tagged M55. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1607",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to depart' (32 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1497",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to plunder' (30 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5090A",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lead' (29 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3928",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to pass by' (28 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1060",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to marry' (27 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2641",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to leave behind' (26 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6923",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to meet' (26 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7760L",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to set: appoint' (26 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1310",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to boil' (25 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5307I",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to fall: allot' (25 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0308",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to look up/again' (24 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0837",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to grow' (23 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3547",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to minister' (23 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2300",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to look at' (22 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2859A",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'relative' (22 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7136A",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to meet' (22 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0321",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lead' (21 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H8259",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to look' (21 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5375W",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lift: bearing [armour]' (20 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1869",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lift up' (19 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5312",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lift up' (19 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2010",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to permit' (18 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1911",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to put on/seize' (17 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2605",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to proclaim' (17 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2224",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to rise' (17 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5307H",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to fall: deserting' (17 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0520",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lead away' (16 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4815",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to seize/conceive/help' (16 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1821",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to send out/away' (15 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1086",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to become old' (15 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2921",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to spot' (8 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H8210I",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to pour: build siege mound' (8 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0553",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to expect' (7 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1213",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to make clear' (7 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1670",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to draw/persuade' (7 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4017",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to look around' (7 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4160I",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to do/make: appoint' (7 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4170",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to fight' (7 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4486",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to throw violently' (7 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4822",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to join with' (7 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0916",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to burden' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2045",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to look for/into' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2210",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lose' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4357",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to remain/persist' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4496",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to throw/lay down' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4856",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to agree with' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4876",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to meet' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H0935L",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to come [in]: marry' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3423I",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to possess: poor' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5307M",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to fall: fell [trees]' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5375R",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lift: fight' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5375V",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lift: count' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5414L",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to give: throw' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H8155",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to plunder' (6 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0906J",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to throw: pour' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1265",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to remain' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2013",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to obtain' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3817",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to strike' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3858",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to welcome' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3899",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to pass by/through' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4903",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to work with' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1891",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to become vain' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1949",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to make noise' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2596",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to dedicate' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3717",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to double' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5307L",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to fall: fail' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5375S",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to lift: enthuse' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5425B",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to free' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6775",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to join' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7896I",
+      "cluster_code": "T3",
+      "confidence": "high",
+      "rationale": "'to set: appoint' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0447",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to loosen/leave' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0617",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to roll away' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0805",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to secure' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1826",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to go out/away' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2608",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to break' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2661",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to consider worthy' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2975",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to choose by lot' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3656",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to talk' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3903",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to prepare' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4014",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to take away' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4347",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to join' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4814",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to talk with' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H0502",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to teach/learn' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H0579",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to meet' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2571",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'armed' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3231",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to go right' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5190",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to lift' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5307N",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to fall: presenting' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0029",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to force' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0387",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to cause trouble' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0522",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to take away' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0645",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to draw away' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0722",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to plow' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1229",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to proclaim' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1547",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to marry' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1602",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to sail out/away' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1912",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to burden' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1914",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to look upon/at' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1959",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to care' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2598",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to lay/throw down' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2655",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to burden' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3008",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to minister' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4045",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to fall upon' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4800",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to live together' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4879",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to lead away with' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5453",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to grow' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3318K",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to come out: [sun]rise' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7570",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to boil' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0360",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to depart' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0528",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to meet' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0906I",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to throw: sow' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0971",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to force' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1095",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to grow old' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1340",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to insist' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1599",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to send away/out' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1615",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to finish up' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1677",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to charge' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1723",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to embrace' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1779",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to prepare burial' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1822",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to finish/furnish' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1892",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to awaken/rouse' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1896",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to look upon' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1926",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to welcome' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1977",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to throw on' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1983",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to oversee/care for' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2085",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to teach heresy' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2134",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to become a eunuch' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2558",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to torment' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2622",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to break' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2667",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to fall down' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3911",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to take away' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4035",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to remain' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4046",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to gain' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4282",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to prepare' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4354",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to talk to/with' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4366",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to strike' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4518",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'sabachthani' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4801",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to join' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4883",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to join' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5412",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to burden' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1540J",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to reveal: proclaim' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1633B",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to break bones' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2742B",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'decision' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H4742",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'corner' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5077B",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to put away' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5214",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to break' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6150",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to grow dark' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6751",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to shade' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7060",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to decay' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7921C",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'barrenness' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H8281",
+      "cluster_code": "T3",
+      "confidence": "medium",
+      "rationale": "'to free' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0063",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to live outside' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0170",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to lack opportunity' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0578",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to look ahead' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0634",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to fall from' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0641",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to throw off' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0879",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to fall sleep' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1281",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to gain in trade' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1363",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to double' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1463",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to clothe oneself' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1550",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to expend' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1613",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to disturb greatly' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1641",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to have little' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1669",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to have/cause sores' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1685",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to throw in' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1720",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to breathe into' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1804",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to proclaim' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1828",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to drag out/away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1837",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to ring/sound out' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1918",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to marry' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1964",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to break an oath' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1998",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to run together' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2044",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to utter/proclaim' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2341",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to fight beasts' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2416",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to despoil a temple' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2418",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to minister' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2599",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to burden' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2694",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to drag away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2775",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to strike a head' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2820",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to obtain' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3373",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to grow' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3443",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to leave alone' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3580",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to show hospitality' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3662",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to resemble' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3719",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to rise at dawn' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3895",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to defect' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3901",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to drift away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3944",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to pass by' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G3945",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to resemble' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4062",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to drive insane' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4085",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to press down' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4141",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to strike' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4265",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to foresee/plan' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4321",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to expend' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4330",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to permit' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4345",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to join' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4843",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to embrace' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4885",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to grow together' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4919",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to break' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4932",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to cut short' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4940",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to meet with' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4943",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to join in helping' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5171",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to self-indulge' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5178",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to torture' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5277",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to leave behind' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G6046",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to burden' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G9315",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to join in making an attack' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1102",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to hold in' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1166G",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'Married' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1640",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to sweep away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1656",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'rain' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1699B",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'statement' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1713A",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to look' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2100I",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to flow: waste away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2405",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'colored' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2661",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'mole' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H2959",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to burden' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3014",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to thrust away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3054",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to become a Jew' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3261",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to sweep away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H3886B",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to talk wildly' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H4229B",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to strike' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H4914",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'byword' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5362A",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to strike' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5375T",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to lift: journey' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5420",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to break' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5432",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to drive away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6327B",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'scatterer' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6405",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'deliverance' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6485B",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'reckoning' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6544A",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to lead' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6626",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to break' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6852",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to depart' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H6999B",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'incense' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7213",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to rise' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7685A",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to grow' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7735",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to grow' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7760B",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'fate' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H8338",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to lead' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H8456",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to strike away' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1578",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to turn from' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5432",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to guard' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5414J",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to give: turn' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2664",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to keep from' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1232",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to report' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2137",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to get along well' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4875",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to rest with' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1981",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to rest upon/dwell' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G0479",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to invite in return' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7725M",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to return: reply' (29 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2649",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to testify against' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5437K",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to turn: changed' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2722",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to hold back/fast' (17 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2221",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to capture alive' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1907",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to hold fast/out' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1957",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to testify to' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4828",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to testify with' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H0541",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to turn right' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G5077",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to turn to ashes' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1237",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to receive in turn' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G4901",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to testify with' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1858",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to keep a festival' (1 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H1197H",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to burn: destroy' (4 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G2525",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to appoint/conduct' (21 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5437J",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to turn: repell' (3 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H5437I",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to turn: again' (2 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "H7725L",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to return: refuse' (5 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1263",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to testify solemnly' (15 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    },
+    {
+      "strong": "G1961",
+      "cluster_code": "T3",
+      "confidence": "low",
+      "rationale": "'to remain/keep on' (16 occurrences) -- generic operation, not characteristic-specific. escalation #1598 Phase B3"
+    }
+  ],
+  "relocations": [],
+  "excluded_not_classified": [
+    {
+      "strong": "G5123",
+      "occurrences": 15,
+      "reason": "copula/existential ('that is')"
+    },
+    {
+      "strong": "H4118B",
+      "occurrences": 13,
+      "reason": "adverbial use ('quickly')"
+    },
+    {
+      "strong": "G2076",
+      "occurrences": 10,
+      "reason": "copula/existential ('he is')"
+    },
+    {
+      "strong": "G3603",
+      "occurrences": 8,
+      "reason": "copula/existential ('which is')"
+    },
+    {
+      "strong": "H0935H",
+      "occurrences": 8,
+      "reason": "reads as a proper noun/place/person epithet ('Lebo-[Hamath]')"
+    },
+    {
+      "strong": "G2258",
+      "occurrences": 4,
+      "reason": "copula/existential ('were')"
+    },
+    {
+      "strong": "G1488",
+      "occurrences": 3,
+      "reason": "copula/existential ('you are')"
+    },
+    {
+      "strong": "H0935O",
+      "occurrences": 3,
+      "reason": "reads as a proper noun/place/person epithet ('Lebo')"
+    },
+    {
+      "strong": "H3526G",
+      "occurrences": 3,
+      "reason": "reads as a proper noun/place/person epithet ('Washer's')"
+    },
+    {
+      "strong": "G0131",
+      "occurrences": 2,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G1001",
+      "occurrences": 2,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G1245",
+      "occurrences": 2,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H3009",
+      "occurrences": 2,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G0325",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G0643",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G1215",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G1277",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G1633",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G1688",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G1940",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2022",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2070",
+      "occurrences": 1,
+      "reason": "copula/existential ('we are')"
+    },
+    {
+      "strong": "G2113",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2370",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2477",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2510",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2611",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2656",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2696",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G2701",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G4048",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G4162",
+      "occurrences": 1,
+      "reason": "copula/existential ('he did')"
+    },
+    {
+      "strong": "G4358",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G4364",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G4438",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G4517",
+      "occurrences": 1,
+      "reason": "copula/existential ('farewell')"
+    },
+    {
+      "strong": "G4775",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G4787",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G4855",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G4911",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G5291",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G6003",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "G6072",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H1540G",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H3429",
+      "occurrences": 1,
+      "reason": "reads as a proper noun/place/person epithet ('Josheb-basshebeth')"
+    },
+    {
+      "strong": "H3647",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H4118A",
+      "occurrences": 1,
+      "reason": "adverbial use ('quick')"
+    },
+    {
+      "strong": "H4448B",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H5266",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H5596B",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H5674G",
+      "occurrences": 1,
+      "reason": "reads as a proper noun/place/person epithet ('[Valley of] the Travelers')"
+    },
+    {
+      "strong": "H5800G",
+      "occurrences": 1,
+      "reason": "reads as a proper noun/place/person epithet ('Forsaken')"
+    },
+    {
+      "strong": "H5805",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H5930B",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H6049G",
+      "occurrences": 1,
+      "reason": "reads as a proper noun/place/person epithet ('Diviners' [Oak]')"
+    },
+    {
+      "strong": "H6437H",
+      "occurrences": 1,
+      "reason": "reads as a proper noun/place/person epithet ('Corner [Gate]')"
+    },
+    {
+      "strong": "H6839",
+      "occurrences": 1,
+      "reason": "reads as a proper noun/place/person epithet ('Zophim')"
+    },
+    {
+      "strong": "H6999I",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    },
+    {
+      "strong": "H7200N",
+      "occurrences": 1,
+      "reason": "reads as a proper noun/place/person epithet ('Provider [God]')"
+    },
+    {
+      "strong": "H7949",
+      "occurrences": 1,
+      "reason": "no gloss text recorded"
+    }
+  ]
+}

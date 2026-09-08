@@ -1,0 +1,29 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "batch": "Phase E1 -- final sweep, batch 1 (M01-M10), 11 confirmed misclassifications found and verse-checked",
+  "scope_note": "This begins the researcher-requested final sweep: every one of ~94 cluster groups (M-codes + T-codes) reviewed for member fit, working toward full coverage of every strong. Batch 1 covers M01 (Fear & Awe) through M10 (Violence & Cruelty), 862 members total. Anomalies found by reading every member's gloss against the cluster's own theme, then verse-checked (not gloss-only) before any change -- same discipline as every prior correction this session.",
+  "new_clusters": [],
+  "inserts": [],
+  "relocations": [
+    {"strong": "G0318", "from_cluster_code": "M01", "to_cluster_code": "T2", "note": "'necessary/one must' (Matt.18.7, Rom.13.5) -- confirmed via verse-check, means obligation, not fear. escalation #1598 Phase E1"},
+    {"strong": "G4217", "from_cluster_code": "M05", "to_cluster_code": "T2", "note": "'of what kind?' -- confirmed via verse-check (Matt.8.27 'what sort of man', Mark.13.1 'what wonderful stones') -- an interrogative, homonym trap on 'kind', nothing to do with kindness. escalation #1598 Phase E1"},
+    {"strong": "G1085H", "from_cluster_code": "M05", "to_cluster_code": "T2", "note": "'family: kind' -- confirmed via verse-check (1Cor.12.10/12.28 'various kinds' of gifts) -- means 'type/category', same homonym trap as G4217. escalation #1598 Phase E1"},
+    {"strong": "G1553", "from_cluster_code": "M07", "to_cluster_code": "T2", "note": "'be away' -- confirmed via verse-check (2Cor.5.6/5.8 'away from the body/Lord') -- a spatial-relational term, nothing to do with shame. escalation #1598 Phase E1"},
+    {"strong": "G1019", "from_cluster_code": "M09", "to_cluster_code": "T2", "note": "'to delay' -- confirmed via verse-check (1Tim.3.15, 2Pet.3.9 'slow') -- temporal, nothing to do with humility. escalation #1598 Phase E1"},
+    {"strong": "H0309", "from_cluster_code": "M09", "to_cluster_code": "T2", "note": "'to delay' -- confirmed via verse-check (Dan.9.19, Gen.32.4 'stayed') -- temporal, nothing to do with humility. escalation #1598 Phase E1"},
+    {"strong": "G4929", "from_cluster_code": "M09", "to_cluster_code": "T2", "note": "'to direct' -- confirmed via verse-check (Matt.27.10/26.19 'directed/appointed') -- means 'to appoint', nothing to do with humility. escalation #1598 Phase E1"},
+    {"strong": "G4587", "from_cluster_code": "M09", "to_cluster_code": "T2", "note": "'dignity' -- confirmed via verse-check (1Tim.2.2/3.4 'dignified/dignity') -- genuinely closer to gravitas/respectability than to lowliness; arguably the opposite sense. escalation #1598 Phase E1"},
+    {"strong": "G3605", "from_cluster_code": "M06", "to_cluster_code": "T2", "note": "'to stink' -- confirmed via verse-check (John.11.39, Lazarus' body, literal decay-odor) -- not a 'being detestable' metaphor as first hypothesized; a purely literal physical sense. escalation #1598 Phase E1"}
+  ],
+  "removals": [
+    {"strong": "G1065", "cluster_code": "M08", "note": "'even/who' -- a particle, already correctly tagged T2 separately; the M08 tag was wrong (Heb.3.6-style emphatic particle, nothing to do with pride)"},
+    {"strong": "G4007", "cluster_code": "M08", "note": "'indeed' -- a conditional/emphatic particle (Heb.3.6/3.14 'if indeed'), already correctly tagged T2 separately; the M08 tag was wrong"}
+  ],
+  "flagged_uncertain_not_changed": [
+    {"strong": "H4867", "gloss": "waves", "cluster": "M01", "note": "verse-checked (2Sam.22.5/Ps.88.7 'waves of death encompassed me') -- plausible terror-metaphor, left as-is rather than forced either way"},
+    {"strong": "H0061", "gloss": "Alas/No", "cluster": "M03", "note": "verse-checked -- 'Alas' (2Sam.14.5) is a genuine lament-interjection, plausibly correct; 'No' (1Kgs.1.43) is a plain negation. Mixed sense, left as-is"},
+    {"strong": "H7293", "gloss": "Rahab", "cluster": "M08", "note": "verse-checked (Isa.30.7/Ps.87.4) -- the poetic epithet for Egypt/chaos-monster, plausibly a pride/defiance symbol in context. Left as-is, genuinely ambiguous"},
+    {"strong": "H2256M,H3499B,H4340,H5688,H6616,H6957A,H8615A", "gloss": "cord", "cluster": "M03", "note": "these were deferred from T12 (Objects) earlier as ambiguous; found here already tagged M03 (Grief) -- the Hebrew root for 'cord' also covers 'pang/anguish' (cf. Ps.18.5-6 'cords of death/Sheol'), a genuine, plausible dual-sense. Confirms the earlier deferral was correct; no action needed"}
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "batch": "Phase C1 -- first slice of T2's 1,265-strong noun pool (top ~40 by frequency), a new and larger thread than the verb work. Not exhaustive -- nouns are far more homonym-prone (face=body-part vs. anger; hand=body-part vs. power; lord=divine vs. human), so this batch is deliberately smaller and more carefully verse-checked per item than the verb batches were.",
+  "method_note": "Every characteristic-verb-style keyword match here was checked against a real verse (not gloss text alone) before inclusion, given how much more ambiguous nouns are than verbs. H0113 'lord' is a genuine dual-referent case (Dan.12.8/Gen.18.3 divine, Gen.18.12 human) -- dual-tagged T7+T8 rather than forced into one, matching the researcher's own confirmed 'dual membership is the norm' principle; which one applies in a given verse is Layer 2's job, not this pass's. Common body-part nouns (face/hand/eye/head/foot/entrails, generic senses) are deliberately NOT included -- they correctly stay excluded in T2, the same way pure copulas do for verbs.",
+  "new_clusters": [
+    {
+      "cluster_code": "T13",
+      "short_name": "Natural-World",
+      "description": "T13 - Natural World: a strong referring to a natural phenomenon, element, or creature (water, fire, storm, animal, plant) that can be the endpoint of a characteristic's movement (e.g. fear of a storm, trust in water) -- named by the researcher early in this escalation (section 3c) but not built until now, when real candidates surfaced in the T2 noun-pool scan. Referent-identity classification, orthogonal to the thematic M-code axis; a code can carry both an M-cluster assignment and this one. Created 2026-09-08, escalation #1598, researcher-approved (as part of the original section 3c candidate list)."
+    }
+  ],
+  "inserts": [
+    {"strong": "H4325G", "cluster_code": "T13", "confidence": "high", "rationale": "'water' -- direct Natural World match, the group named in section 3c. escalation #1598 Phase C1"},
+    {"strong": "H0929", "cluster_code": "T13", "confidence": "high", "rationale": "'animal' -- direct Natural World match. escalation #1598 Phase C1"},
+
+    {"strong": "H5971A", "cluster_code": "T11", "confidence": "high", "rationale": "'people' -- direct Corporate/Collective match. escalation #1598 Phase C1"},
+    {"strong": "H1471A", "cluster_code": "T11", "confidence": "high", "rationale": "'nation' -- direct Corporate/Collective match. escalation #1598 Phase C1"},
+    {"strong": "G2453", "cluster_code": "T11", "confidence": "high", "rationale": "'Jew' -- ethnic/national identity, Corporate/Collective. escalation #1598 Phase C1"},
+
+    {"strong": "H2022G", "cluster_code": "T10", "confidence": "high", "rationale": "'mountain: mount' -- Places, same shape as the Meribah/mountain precedent already in T10. escalation #1598 Phase C1"},
+    {"strong": "H7704G", "cluster_code": "T10", "confidence": "high", "rationale": "'land: country' -- Places, same shape as H0776G already in T10. escalation #1598 Phase C1"},
+    {"strong": "H4725", "cluster_code": "T10", "confidence": "medium", "rationale": "'place' -- generic location-type reference, fits Places' grain even though not a specific named location. escalation #1598 Phase C1"},
+    {"strong": "G2889", "cluster_code": "T10", "confidence": "low", "rationale": "'world' -- cosmic/global sense, weaker fit, lower confidence. escalation #1598 Phase C1"},
+
+    {"strong": "H3627", "cluster_code": "T12", "confidence": "medium", "rationale": "'article/utensil' -- generic man-made object. escalation #1598 Phase C1"},
+    {"strong": "H8081", "cluster_code": "T12", "confidence": "low", "rationale": "'oil' -- ritual/anointing object, weaker fit, lower confidence (could also relate to a blessing theme, not confirmed). escalation #1598 Phase C1"},
+
+    {"strong": "H3027H", "cluster_code": "M72", "confidence": "medium", "rationale": "'hand: power' -- verse-checked (Dan.1.2, Dan.8.25 'his power shall be mighty'), confirmed the POWER sense specifically, not the body-part sense -- direct match to M72 (Authority & Dominion). escalation #1598 Phase C1"},
+    {"strong": "H8269", "cluster_code": "M72", "confidence": "medium", "rationale": "'ruler' -- direct match to M72 (Authority & Dominion). escalation #1598 Phase C1"},
+    {"strong": "H0639G", "cluster_code": "M02", "confidence": "high", "rationale": "'face: anger' -- verse-checked (Dan.9.16, Dan.11.20, Gen.27.45, all 'anger'), confirmed consistent anger sense, not the literal face/nostril sense -- direct match to M02 (Anger & Wrath). escalation #1598 Phase C1"},
+    {"strong": "H5030", "cluster_code": "M43", "confidence": "medium", "rationale": "'prophet' -- direct match to M43 (Prophecy & Vision). escalation #1598 Phase C1"},
+    {"strong": "H4421", "cluster_code": "M10", "confidence": "medium", "rationale": "'battle' -- direct match to M10 (Violence & Cruelty). escalation #1598 Phase C1"},
+    {"strong": "H8451", "cluster_code": "M54", "confidence": "medium", "rationale": "'instruction' -- Torah/instruction, direct match to M54 (Torah & Obedience). escalation #1598 Phase C1"},
+    {"strong": "G3551", "cluster_code": "M54", "confidence": "medium", "rationale": "'law' -- direct match to M54 (Torah & Obedience). escalation #1598 Phase C1"},
+
+    {"strong": "H0113", "cluster_code": "T7", "confidence": "low", "rationale": "'lord' -- verse-checked, genuinely dual-referent: Dan.12.8/Gen.18.3 address God ('Lord'), Gen.18.12 addresses a human ('my lord', Sarah to Abraham). Dual-tagged T7+T8, matching the confirmed 'dual membership is the norm' principle -- which sense applies in a given verse is Layer 2's job. escalation #1598 Phase C1"},
+    {"strong": "H0113", "cluster_code": "T8", "confidence": "low", "rationale": "'lord' -- see T7 entry above, same dual-referent reasoning. escalation #1598 Phase C1"}
+  ],
+  "relocations": [],
+  "deferred_ambiguous_not_included": [
+    {"strong": "H1818", "gloss": "blood", "reason": "verse-checked (Gen.4.11, Gen.9.4-5) -- genuinely a bodily-substance term, no clean single characteristic match (touches on M10 Violence, M32 Covenant, M56 Sin/Guilt depending on context) -- needs Layer 2 context, not a Layer 1 lexicon call. Left in T2."},
+    {"strong": "H5769G", "gloss": "forever: enduring", "reason": "abstract/temporal, ambiguous fit (M25 Life/Death eternity theme vs. a covenant/promise theme), not confirmed. Left in T2."},
+    {"strong": "H5159", "gloss": "inheritance", "reason": "ambiguous fit (M79 Salvation/Ransom vs. a covenant/blessing theme), not confirmed. Left in T2."},
+    {"strong": "H7453", "gloss": "neighbor", "reason": "ambiguous fit (M05 Kindness/Friendship vs. a generic social-relation term), not confirmed. Left in T2."},
+    {"strong": "H5288", "gloss": "youth", "reason": "age/life-stage category, no clear characteristic fit. Left in T2."},
+    {"strong": "H6310G", "gloss": "lip", "reason": "body part, metaphorically related to M65 Speech but the literal body-part sense dominates -- not confirmed. Left in T2."},
+    {"strong": "H6963A", "gloss": "voice", "reason": "plausible M65 Speech & Tongue link but broad/generic enough that forcing it risks the same overreach already corrected twice this session. Left in T2 pending a real verse-context check."}
+  ]
+}

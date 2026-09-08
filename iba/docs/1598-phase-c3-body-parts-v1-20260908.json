@@ -1,0 +1,28 @@
+{
+  "escalation": "#1598",
+  "date": "2026-09-08",
+  "batch": "Phase C3 -- new T14 (Body Parts, figurative/theological significance) per researcher instruction: 'we need a t code for body parts, that has a particular significance.'",
+  "scope_note": "Scoped to body-part vocabulary with recognized figurative/theological weight in Hebrew/Greek anthropology (heart, hand, face, eye, ear, mouth/lip, bowels, blood, flesh, arm, bone, neck, loins), not every anatomical term indiscriminately. This first batch covers only the body-part terms already surfaced in this session's scans (hand/eye/head/foot/entrails/face/lip/blood) -- heart, ear, mouth, arm, bone, flesh, neck, and loins have not been scanned yet and are a follow-on batch, not silently skipped. 'Voice' (H6963A) is deliberately excluded -- it is a faculty/sound, not a body part.",
+  "new_clusters": [
+    {
+      "cluster_code": "T14",
+      "short_name": "Body-Parts",
+      "description": "T14 - Body Parts: a strong denoting a body part carrying recognized figurative/theological significance in biblical anthropology (hand=power/action, face=presence/favor/anger, eye=perception/favor, entrails/bowels=compassion, lip/mouth=speech, blood=life/guilt/covenant) -- referent-identity classification, orthogonal to the thematic M-code axis. A code can carry both an M-cluster assignment and this one (e.g. H0639G 'face: anger' is both M02 and T14; H3027H 'hand: power' is both M72 and T14) -- the body-part identity and its figurative characteristic sense are two different facts about the same code. Created 2026-09-08, escalation #1598, researcher-approved."
+    }
+  ],
+  "inserts": [
+    {"strong": "H0639G", "cluster_code": "T14", "confidence": "high", "rationale": "'face: anger' -- already M02 (the figurative/characteristic sense); T14 records its body-part identity as a separate fact. escalation #1598 Phase C3"},
+    {"strong": "H3027H", "cluster_code": "T14", "confidence": "high", "rationale": "'hand: power' -- already M72; T14 records its body-part identity as a separate fact. escalation #1598 Phase C3"}
+  ],
+  "relocations": [
+    {"strong": "H3027G", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'hand' (literal body-part sense) -- direct T14 candidate. escalation #1598 Phase C3"},
+    {"strong": "H5869A", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'eye' -- carries real figurative weight (perception, divine favor -- 'eyes of the LORD'), direct T14 candidate. escalation #1598 Phase C3"},
+    {"strong": "H7218A", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'head' -- figurative weight (authority/leadership), direct T14 candidate. escalation #1598 Phase C3"},
+    {"strong": "H7272", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'foot' -- figurative weight (submission/journey/humility, e.g. falling at someone's feet). escalation #1598 Phase C3"},
+    {"strong": "H7130G", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'entrails: among' -- the bowels/inward-parts term, classic seat-of-compassion vocabulary. escalation #1598 Phase C3"},
+    {"strong": "H6440G", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'face: before' -- face carries presence/favor significance throughout, even in this prepositional use. escalation #1598 Phase C3"},
+    {"strong": "H6440H", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'face' (literal). escalation #1598 Phase C3"},
+    {"strong": "H6310G", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'lip' -- seat-of-speech vocabulary. escalation #1598 Phase C3"},
+    {"strong": "H1818", "from_cluster_code": "T2", "to_cluster_code": "T14", "note": "'blood' -- a bodily substance rather than a body part strictly, but included given its major theological significance (life, guilt, covenant) -- exactly the 'particular significance' the researcher named. escalation #1598 Phase C3"}
+  ]
+}
