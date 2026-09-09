@@ -123,3 +123,9 @@ comment before running the migration live, not left standing.
 
 ## Git state
 
+Branch `main`, commit `f7556151` ("session 20260909: verse_meta table build, genre retirement,
+base-data meaning gap (#1613)"), parent `5b62be6a`. `git push` succeeded:
+`5b62be6a..f7556151  main -> main`. `git status` confirmed clean immediately after push. Working
+tree has this line's own edit pending, filled in immediately after (same pattern as prior
+session logs' own "(cont.)" commits).
+
