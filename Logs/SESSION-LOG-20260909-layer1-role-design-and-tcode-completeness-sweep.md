@@ -95,3 +95,7 @@ only):**
 
 ## Git state
 
+Branch `main`, commit `9706c786` ("session 20260909: Layer 1 role redesign continued..."), parent
+`5718246e`. `git push` succeeded: `5718246e..9706c786  main -> main`. Working tree clean except this
+line's own edit (filled in immediately after, same pattern as prior "(cont.)" session-log commits).
+
