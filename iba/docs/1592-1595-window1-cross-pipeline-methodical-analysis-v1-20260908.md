@@ -545,3 +545,321 @@ underlying reallocation itself must proceed: escalation #1598.
 Nothing in this register has been applied. Per your own instruction this round and the standing rule
 against deciding judgement calls unilaterally, every item above is presented for your disposition,
 not actioned.
+
+---
+
+## 8. Layer 1 redesign, round 1 — researcher instruction, verbatim, 2026-09-08 (this session)
+
+> "section 4 is entirely changed in terms of how t-codes and m-codes will be used in the
+> lexical.build. each word will be assigned its M or T code. To be decided: morph_code is only
+> relevant for M-code words; its preliminary role is set based on the Cluster code
+> (Char|qualifyer|None; status: redefined to show meaning data readiness - if full meaning of
+> strong is available Meaning Ready|Meaning to be pulled| if T2 then Meaning not applicable.
+> Resolved_sense : work with me to identify which field from meaning to pull in; ambiguity_note :
+> this column is now redundant. what I would like to see is this column is renamed to pairing. this
+> is where the morph is used to show the binding of the word to the other words in the verse;
+> surface : cannot be blank and must be the word that is used in the strong for the surface, the
+> actual translated word; is_negator - need attention not sure what you are saying in the analysis;
+> narrative_morph - ensure greek is included - i want to know more about htis; gloss_consistent_in_verse
+> : if the word is multi-ordinal then it is the gloss for the combined strong meaning in the verse;
+> party_kind : is this where the cluster code goes? ; update_at is a required field. I suggest you
+> first work on the refinement of layer 1 and lets get that right."
+
+Nothing below is applied — same standing rule as §7. Per your own steer this round ("first work on
+the refinement of layer 1"), this section is scoped to Layer 1 (`verse_lexical`) only; T-code
+completeness / Window 2 (§4/§5 above) is superseded by the "each word gets an M or T code" framing
+and will be revisited once Layer 1 is settled, not in parallel.
+
+### 8.0 Architecture shift — §4 above is superseded
+
+§4's own framing (T-code groups sized, most content words untagged) was already moving this
+direction before this instruction — escalation #1598 (completed today, 13:47) reallocated the
+M/T-code pools and left "4,155 common nouns + 2,651 proper nouns" in the still-untagged pool, not
+zero. Universal M-or-T assignment is the target state this round names explicitly; §4/§5 are marked
+provenance-only above, not repeated here.
+
+### 8.1 Direct answers — questions you asked me, not decisions for you
+
+**`is_negator` — what CA-5 was actually saying:** the column's own `cfg_column.use` text (the
+governance record of its purpose) claims it's sourced from `cfg_lexical_code_class WHERE
+class='negator'`. Confirmed live, again, this round: **that table is never read.** The real source,
+in the actual running code (`lib/lexical.py:load_code_classes`), is `cluster_strong WHERE
+cluster_code='T5'` (the T5/Negator cluster's own tagged strongs — 7 live). The *behaviour* is fine
+and already matches your "cluster code" model; only the **documentation text is wrong** — it names a
+dead table instead of `cluster_strong`. Same defect, same fix, on `party_kind` (CA-6, below).
+
+**`party_kind` — yes, confirmed, this is exactly where the cluster code goes.** Live code
+(`_PARTY_CLASS_TO_KIND` in `lib/lexical.py`): a code's `party_kind` is set only when that code
+itself is a member of `cluster_strong` T4 (Adversarial), T7 (Party-Divine), T8 (Party-Human), or T9
+(Party-Angelic) — `divine`/`human`/`non_human` respectively (T4 and T9 currently collapse together
+into `non_human`, CA-15 in §7). Its own `cfg_column.use` text has the identical wrong-source-table
+drift as `is_negator` (names `cfg_lexical_code_class`, not `cluster_strong`) — same fix.
+
+**`narrative_morph` — what it currently is, live:** a Hebrew-only flag, set from `morph_code`'s own
+TAM (tense-aspect-mood) slot at a fixed position (`HV<stem><TAM>...`, index 3). Two values today:
+`wayyiqtol` (TAM='w' — the narrative "and-he-did" verb form that carries Hebrew narrative sequence)
+and `az_imperfect_opening` (TAM='i' AND a sibling code in the same span is H0227 "az"/"then" — a
+named, narrow idiom, verified live against Exod.15.1). It is deliberately restricted to Hebrew
+because Greek's TVM tagging scheme doesn't use the same TAM-letter convention at all — there's no
+direct equivalent slot to read the same way. **Extending it to Greek is a real design task, not a
+one-line change:** it needs its own definition of what "narrative morph" means for Greek (Greek's
+own narrative-sequencing signal is more the aorist-vs-imperfect-vs-historical-present distinction in
+context than a single morph-code flag) before any code gets written — I don't have a Greek
+equivalent to propose yet without more direction from you on what Greek narrative signal you want
+this to capture.
+
+### 8.2 Restated per-column, so you can correct anything I've misread before I go further
+
+- **`morph_code`** — **flagged by you as "to be decided," open.** One real conflict worth surfacing
+  before that's decided: `morph_code` is not only a resolved_sense input — it's *already* load-bearing
+  for three other Layer 1 mechanisms that would need M-code words to still carry it, or a replacement:
+  `role` classification (Greek PREP/PRT/CONJ/ART tags come from `morph_code`), `narrative_morph`
+  (Hebrew TAM slot), and stem/voice selection. If `morph_code` becomes M-code-only, each of those
+  three needs its own answer for T-coded words — not assumed here.
+- **`role`** — restated: preliminary value set from the code's own cluster-code membership, not
+  grammatical classification: **`characteristic`** (M-code member), **`qualifier`** (T-code member —
+  which T-codes qualify is itself still open, see CA-18's own two unresolved buckets in §7, now
+  reframed under this model rather than content/function), **`None`** (no cluster code yet — under
+  8.0's "every word gets a code" target, is `None` meant as a permanent third value or a transitional
+  state that should shrink to ~0 as coverage completes? Not decided here.)
+- **`status`** — restated: no longer resolution-outcome, now meaning-data readiness —
+  **`Meaning Ready`** / **`Meaning to be pulled`** / **`Meaning not applicable`** (T2). One thing to
+  confirm before building this: "full meaning of strong is available" — ready against *what* store?
+  Candidates checked live this round, §8.3.
+- **`resolved_sense`** — per your instruction, joint: see §8.3.
+- **`ambiguity_note` → `pairing`** — restated: renamed, redefined from "flag a sibling/base-fallback
+  meaning ambiguity" to "show the morph-based binding of this code to other codes in the same verse."
+  §8.4 below sets out what data is already on hand for this and what isn't decided yet.
+- **`surface`** — restated as an invariant, not a redesign: never blank, and scoped to the single
+  aligned English word for *this* code specifically. This is what escalation #1591 (192 rows) already
+  found broken — 59 live rows are blank outright, and the confirmed defect cases (Deut.7.18 pos.2,
+  1Thess.1.1 pos.17) are exactly the "not the actual word for this code" failure you're naming.
+  Restates the existing gate, doesn't relax it — #1591 stays gated pending the repair-method decision
+  already on record there.
+- **`is_negator` / `party_kind`** — see §8.1, doc-text fix only (CA-5/CA-6 already had this; no
+  behaviour change).
+- **`narrative_morph`** — see §8.1; Greek extension needs your steer on what signal to capture before
+  I can propose a mechanism.
+- **`gloss_consistent_in_verse`** — restated: for a multi-ordinal span (>1 live code sharing one
+  span/surface — 118,906 of 378,094 live spans, 31.4%, confirmed live this round; e.g. Rom (sample)
+  span 534082: `G1722` "in" [PREP] + `G0054` "purity" [N-DSF] both surfaced as one English word
+  "purity"), this column should read as the gloss for the **combined** sense of every code in that
+  span, not evaluated per-code. This already supersedes escalation #1596 (the column was found
+  structurally dead post-#1575) — not a second, separate fix.
+- **`updated_at`** — restated: register it in `cfg_column` now (CA-7 already proposed this) — you've
+  additionally called it *required*. Live check: 113,684/544,572 rows (20.9%) currently have
+  `updated_at IS NOT NULL` (only rows that have gone through a real content correction since the
+  #1520 identity-stable-write redesign get it set — `INSERT` never populates it). "Required" needs one
+  clarification: required as in *every future correction must set it* (already true, mechanically, in
+  `write_readings_for_span`), or required as in *every row must carry a non-NULL value*, which would
+  mean stamping it on INSERT too (a real behaviour change, not just a `cfg_column` registration)?
+
+### 8.3 `resolved_sense` — candidate source fields, checked live, for joint decision
+
+Five live tables carry strong-level meaning text. Sampled against H0430G ("God") and G2192 ("to
+have/be" — the same high-polysemy word #1575's own investigation used):
+
+| Table.column | Grain | H0430G sample | G2192 sample | Shape |
+|---|---|---|---|---|
+| `strong.stepGloss` | 1 row/strong | "God" | "to have/be" | Shortest possible gloss — already denormalized onto `verse_lexical.language`'s sibling column? No — not currently pulled onto this table at all. |
+| `strong_sense.head` | 1 row/strong | "God" | "to have/be" | Identical to `stepGloss` in both samples checked — worth confirming whether it ever diverges before treating it as a distinct source. |
+| `strong_meaning_parsed.gloss` | many rows/strong (stem/sense-structured) | 1 row: "The Deity;" | 8+ short rows: "to hold", "to seize, possess", "to have, possess"... | The table `resolved_sense` used to pull from, stem/voice-narrowed (`_select_stem_text`) — this is the mechanism #1575 turned off for being unreliable at scale, not a table that's gone. |
+| `strong_meaning_tree.sense_text` | many rows/strong | (thin/none for this word) | 1 row, ~2,400 chars, HTML-tagged LSJ prose with embedded `<ref>`/`<b>` markup | The exact "generic dump" #1575 removed — not a candidate as-is. |
+| `strong_lsj_parsed.gloss` | many rows/strong, Greek only | n/a (Hebrew) | rows like "have, hold" / "possess, propertied class, wealthy man..." | Greek-only, still verbose (36,199 rows corpus-wide) — same class of problem as `strong_meaning_tree`. |
+
+Given `resolved_sense` is now scoped to M-code words only (already decided, #1527/#1575) rather than
+every code, the volume problem #1575 was solving (2,652-char values on ~277 strongs, all codes) is
+much smaller if re-scoped to only the M-tagged subset — but which field, and whether stem-narrowing
+comes back for that subset, is the open question. Need your steer on: (a) `stepGloss`/`strong_sense.
+head` (shortest, safest, but a single fixed gloss with no stem sensitivity), or (b)
+`strong_meaning_parsed.gloss` re-narrowed by stem/voice the way the old mechanism did (richer, but
+this is exactly the mechanism that produced the values #1575 rejected — though that rejection was
+about running it on *every* code, not the smaller M-code-only set), or (c) something else.
+
+### 8.4 `pairing` (was `ambiguity_note`) — what's on hand, what isn't decided
+
+The multi-ordinal span data in §8.2 (`gloss_consistent_in_verse`) is the same underlying fact this
+would draw on — codes that already share a span/surface (`G1722`+`G0054` above) are the clearest
+case of "binding." Two things not decided here: (1) does `pairing` cover *only* same-span
+multi-ordinal binding, or also cross-span syntactic binding (e.g. a verb and its object in different
+spans) — the latter would need a real dependency signal that doesn't exist in `morph_code` alone; (2)
+value shape — a flag, a pointer to the paired `verse_lexical.id`(s), or free text describing the
+binding. Not proposed here; needs your direction before it's built.
+
+### 8.5 Open questions this round, consolidated
+
+1. `morph_code` M-code-only scope — how do `role`, `narrative_morph`, and stem/voice selection work
+   for T-coded words if `morph_code` stops being populated for them? (§8.2)
+2. `role`'s `None` value — permanent third state, or transitional until M/T coverage is universal?
+   (§8.2)
+3. `status`'s "full meaning of strong is available" — ready against which table(s)? (§8.2, §8.3)
+4. `resolved_sense` — which field (§8.3: (a)/(b)/(c))?
+5. `updated_at` "required" — every correction (already true), or every row incl. INSERT (new
+   behaviour)? (§8.2)
+6. `narrative_morph` Greek — what signal should it capture? (§8.1)
+7. `pairing` — same-span only, or cross-span too; and what value shape? (§8.4)
+
+---
+
+## 9. Round 2 — researcher answers, verbatim, 2026-09-08 (same session)
+
+> "morph_code stay as is today, role is the M/T - code; resolve sense = strong_meaning_parsed.gloss
+> (100 char only) ; pairing - same span only - not sure of format, would like to see examples."
+
+Closes questions 1 and 7's scope half; narrows 2 and 4; leaves 7's format open pending examples,
+below.
+
+### 9.1 `morph_code` — closed
+
+Stays exactly as it is today — populated for every code, no M-code restriction. Question 1's
+dependency conflict (role/narrative_morph/stem-voice all reading it) doesn't arise; nothing changes
+here.
+
+### 9.2 `role` = the M/T-code — real conflict found, needs your call
+
+Understood: `role`'s value becomes the code's own `cluster_strong.cluster_code` directly (e.g.
+`"M16"`, `"T5"`), not a translated category label — simpler than the Char/Qualifier/None model,
+and question 2 (is `None` permanent) dissolves on its own: `None` is just "no cluster code assigned
+yet," and shrinks as coverage becomes universal (8.0).
+
+**One real conflict, checked live, not assumed:** `role` is a single scalar column, but **96 live
+strongs carry more than one `cluster_code` at once** (`cluster_strong`, deduped by strong, corpus-
+wide check). Not a rare edge case — includes both M+T combinations (`H7665`: `M24,T3`; `H6819`:
+`M31,T2`) and T+T combinations (`H7070J`: `T13,T14`). Three example rows:
+
+| strong | live cluster_codes |
+|---|---|
+| H1544 / G1493 | M55, T2, T12 |
+| H8615A | M03, T12 |
+| H7070J | T13, T14 |
+
+**Needs your decision:** does `role` take a priority pick (e.g. M-code wins over T-code if both
+present — but which T-code wins if two T-codes are both present, as `H7070J` shows that's real too),
+or does it become multi-valued (comma-list, same shape `cluster_code` values already take in the
+`GROUP_CONCAT` above)? Not decided here — this is exactly the kind of conflict that only shows up
+once real data is checked, not before.
+
+### 9.3 `resolved_sense` = `strong_meaning_parsed.gloss`, 100-char cap — algorithm confirmed, one loose end
+
+Plan: same exact-variant / base-fallback lookup `resolve_code()` already runs (unchanged), gloss rows
+joined with `"; "` in existing sort order, then capped to 100 characters. Re-checked against the
+three M-code strongs that had **zero exact-variant rows** in the first sample (§8.3) to confirm the
+base-fallback catches them, not just the easy cases:
+
+| strong | exact rows | base-fallback rows | joined (first 100 chars) |
+|---|---|---|---|
+| H4428G "king" | 0 | 2 | `king; Aramaic equivalent: me.lekh (מֶלֶךְ "king" H4430)` (fits whole, 55 chars) |
+| G1492G "to perceive" | 0 | 4 | `to know, to possess information; recognize, realize, to come to know; to understand, to be able to u` |
+| H1696G "to speak" | 0 | 9 | `to speak, declare, converse, command, promise, warn, threaten, sing; (Qal) to speak; (Niphal) to spe` |
+
+Base-fallback works correctly for all three — no gap there. **One loose end, visible in the table
+above:** a flat 100-char cut lands mid-word twice (`"...to u"`, `"...to spe"`). Confirm: hard cut at
+exactly 100 regardless, or cut at the last complete clause (`;`-boundary) at-or-under 100 chars
+(cleaner, but the resulting length then varies row to row rather than being a fixed 100)?
+
+### 9.4 `pairing` — same-span confirmed; three real format candidates, from real spans
+
+Scope closed: same-span only (question 7's first half). Format still open — you asked to see
+examples, so here are three, applied to the same three real live spans (2, 3, and 4 codes), from
+cheapest/thinnest to richest/most-built:
+
+**Span A — 2Cor.6.6 span 534082, position 0, surface "purity" (Greek, preposition+noun elision):**
+`G1722` [PREP, function] + `G0054` [N-DSF, content]
+
+**Span B — Jer.23.12 span 534253, position 8, surface "for" (Hebrew, conj+prefix-prep+suffix-pronoun,
+all function):** `H3588A` [HTc, content] + `H9003` [HRd, function] + `H9034` [HSp3fs, function]
+
+**Span C — Jer.23.12 span 534248, position 3, surface "slippery paths" (Hebrew, noun+3×
+prefix/suffix formatives):** `H2519` [HNcfpa, content] + `H9028`/`H9005`/`H9038` [function ×3]
+
+| Format | What it stores | Span A → `pairing` values (ordinal 0, 1) | Span B → (0, 1, 2) |
+|---|---|---|---|
+| **1 — sibling ordinals** (cheapest — no new fact, just the existing span grouping made explicit on the row) | comma-list of the other `code_ordinal`s in this span | `"1"` / `"0"` | `"1,2"` / `"0,2"` / `"0,1"` |
+| **2 — sibling code+role list** (self-contained — a reader never needs a second query to see what this code is bound to) | comma-list of sibling `strong (role)` | `"G0054 (content)"` / `"G1722 (function)"` | `"H9003 (function); H9034 (function)"` / `"H3588A (content); H9034 (function)"` / `"H3588A (content); H9003 (function)"` |
+| **3 — interpreted binding** (richest, and closest to your original wording, "morph is used to show the binding" — but a real new build: needs a morph-code attachment lexicon, e.g. `HRd`=prefixed relator, `HSp3fs`=suffixed pronoun, `PREP`=governs its noun, not just a join against data already on hand) | free text naming the grammatical relationship | `"governs G0054 (dative, 'purity')"` / `"object of G1722 (preposition 'in')"` | `"prefixed by H9003 (relator); suffixed by H9034 (3fs pronoun)"` / … |
+
+Format 1 is free (the grouping already exists via `span_id`/`code_ordinal`, this just surfaces it on
+the row) but arguably adds nothing a reader couldn't already get by querying the span. Format 2 is
+still cheap (one extra join, no new interpretation logic) and self-contained. Format 3 is the one
+that actually reads as "binding," but is a real design+build task (a prefix/suffix morph-code
+lexicon doesn't exist yet in this codebase), not a join. Your call on which — or a fourth shape not
+listed here.
+
+### 9.5 Open questions, carried forward
+
+1. `role` multi-cluster-code conflict (§9.2) — priority pick, or multi-valued?
+2. `resolved_sense` truncation boundary (§9.3) — hard 100-char cut, or clause-boundary cut ≤100?
+3. `pairing` format (§9.4) — 1 / 2 / 3 / other?
+4. Still open from §8.5, untouched this round: `status`'s meaning-readiness source table (Q3),
+   `updated_at` "required" scope (Q5), `narrative_morph` Greek signal (Q6).
+
+---
+
+## 10. `role`'s multi-cluster-code conflict, checked — 59 of 96 are BY DESIGN, 37 are a real conflict
+
+Researcher instruction, verbatim, this round: *"can you check the 96 multi codes to see if it is
+errors or intended."* Checked live, all 96, not sampled.
+
+### 10.1 What the check found
+
+Every one of the 96 live `cluster_strong.cluster_code` values was traced against the `cluster`
+table's own description text (the governing record of what each code means and whether it's meant
+to coexist with an M-code):
+
+- **59 of 96 are confirmed BY DESIGN, not an error.** `cluster.description` for T3 (Operations), T7
+  (Party-Divine), T8 (Party-Human), T9 (Party-Angelic), T10 (Places), T11 (Corporate-Collective), T12
+  (Objects-Artifacts), T13 (Natural-World), and T14 (Body-Parts) each say, verbatim, some form of
+  *"referent-identity classification, orthogonal to the thematic M-code axis... a code can carry both
+  an M-cluster assignment and this one"* — all nine created 2026-09-08 under escalation #1598,
+  researcher-approved. `H0639G` ("face: anger," M02+T14) and `H3027H` ("hand: power," M72+T14) are
+  named as the model examples directly in `cluster`'s own T14 description — "the body-part identity
+  and its figurative characteristic sense are two different facts about the same code." This is not
+  a `role` conflict at all — it's two genuinely different axes that happen to live in the same
+  junction table. **Consequence for `role`:** T7-T14 (referent-identity) don't belong inside `role`'s
+  own M/T value at all — they're a separate fact, the same shape `party_kind` already is for T7/T8/T9
+  specifically. T10-T14 are the same kind of fact but don't have their own `verse_lexical` column yet
+  (this is CA-13/CA-15/CA-16 from §7, now confirmed as one consistent pattern rather than three
+  separate open items — a generalized referent-identity column, `party_kind` extended or a sibling
+  column, not `role` itself).
+- **7 are M-code + `FLAG`** — `FLAG` (`"Flagged for Review"`) isn't a competing classification, it's a
+  review marker on the M-code assignment itself. Not a conflict; resolves when the flag is cleared,
+  not by picking between two classifications.
+- **37 are a real, live conflict: a `cluster_strong.cluster_code='T2'` row (Supplementary — the
+  code the T-code system's own definition treats as excluded, no inner-being significance) coexists
+  with a live M-code row for the SAME strong.** No `cluster.description` text says T2 and an M-code
+  are meant to coexist the way T7-T14 explicitly do — T2 is the one code whose whole point is "not
+  analytically relevant," directly contradicting an M-code's "this word IS a characteristic." Full
+  list, checked corpus-wide:
+
+  G1414(M23), G1415(M23), G1493(M55,+T12), G1494(M55), G1495(M55), G1654(M05), G1764(M15),
+  G1832(M31), G1888(M26), G2192(M23), G2712(M55), G2900(M23), G2999(M36), G3873(M15), G3918(M15),
+  G4229(M28), G4840(M15), G4894(M15), G4997(M61), G5379(M51), G5400(M01), G5591(M15), G5600(M28),
+  H0034(M09), H0061(M03), H1544(M55,+T12), H2632(M72), H3027W(M23), H4751(M03), H4941I(M12),
+  H4941J(M12), H6094(M10), H6105A(M23), H6640(M28), H6819(M31), H7218K(M24), H7293(M08)
+
+  **Provenance splits this 37 into two distinct sub-shapes, not one uniform bug:**
+  1. **~14 carry NO rationale on either row** (`source='old-system-migration'` on both, e.g. G1414,
+     G1415, G1654, G2900, G2999, G5400, G5591, H3027W, H4751, H7293) — raw carry-over from the
+     pre-T-code system, migrated wholesale with the two facts never reconciled against each other.
+     Genuinely undeterminable which (if either) is right from the data alone.
+  2. **~23 have the T2 row from the 2026-09-05 `heuristic-family-grouping-v1` bulk sweep**, carrying
+     one of two shapes: (a) identical boilerplate rationale regardless of the word ("no inner-being
+     significance -- place/person name, body part, divine/idol reference, or generic human-relational
+     term") applied to words that already had a real, specific M-code from an earlier pass (e.g.
+     `G0080`/"brother" already M14 with a real relational-meaning rationale, then bulk-tagged T2
+     anyway) — the sweep does not appear to have checked for pre-existing M-code membership before
+     tagging; or (b) the reverse — a real, specific M-code (`family=righteousness-integrity`,
+     `family=purity-holiness-sanctification`, etc.) added by that SAME 2026-09-05 pass on top of an
+     older, untouched T2 exclusion tag, i.e. the sweep reclassified the word into a characteristic
+     family but never retracted the stale exclusion tag it was superseding.
+
+### 10.2 What this means for `role`, and what's left to decide
+
+`role` = the M/T-code (confirmed, round 2) now needs to read only against the **thematic axis** (an
+M-code, or a non-referent T-code — T2/T3/T5/T6), not the referent-identity codes (T7-T14), which get
+their own column instead. Under that narrower reading, **59 of the 96 stop being a `role` problem at
+all.** The 37 T2-vs-M-code strongs are the real open item — not a `role` design question anymore, a
+**data-reconciliation** one: for each of the 37, is the T2 tag stale (drop it, keep the M-code), or
+was the M-code itself the mistake (drop it, keep T2), checked individually, not batch-decided either
+way. Raised as its own escalation (#1605) rather than folded into this design thread, since it's a
+concrete repair task with its own disposition, not a `role`-shape decision.
