@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-09T16:25:50Z |
+| generated_at | 2026-09-09T15:46:49Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -51,7 +51,7 @@ _(none)_
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
-**Low config-density utilities** (8) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
+**Low config-density utilities** (7) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
 4. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 5. cfg_utility 'lexicalenrich' (iba\app\lib\lexicalenrich.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 6. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
@@ -59,7 +59,6 @@ _(none)_
 8. cfg_utility 'apply_1598_cluster_batch' (iba\app\migration\apply_1598_cluster_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 9. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 10. cfg_utility 'create_verse_meta_table_v1_20260909' (iba\app\migration\create_verse_meta_table_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-11. cfg_utility 'drop_verse_meta_genre_column_v1_20260909' (iba\app\migration\drop_verse_meta_genre_column_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -83,100 +82,100 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-12. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+11. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (1) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-13. Config-Maintenance.ps1: ps tools worksheet.xlsx tab 'Config-Maintenance' is missing flag column(s) ['Title'] — the script has these parameters now
+12. Config-Maintenance.ps1: ps tools worksheet.xlsx tab 'Config-Maintenance' is missing flag column(s) ['Title'] — the script has these parameters now
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
 **Unenforced behaviour rules** (39) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
-14. [chat] #17 confirm-before-nontrivial-work — context_delivered
-15. [chat] #18 output-to-file-not-chat-only — context_delivered
-16. [chat] #19 factual-discipline-no-guessing — context_delivered
-17. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
-18. [chat] #21 chat-items-become-escalations — context_delivered
-19. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
-20. [chat] #23 close-the-loop-not-just-report — context_delivered
-21. [chat] #24 show-evidence-dont-smooth-over — context_delivered
-22. [development] #38 root-fix-not-one-off — context_delivered
-23. [development] #39 simple-steps-not-engineered-designs — context_delivered
-24. [development] #40 open-items-route-through-escalation — context_delivered
-25. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
-26. [development] #46 test-plan-per-module-utility — deliberately_deferred
-27. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
-28. [development] #66 cluster-label-must-track-membership — buildable_not_built
-29. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
-30. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-31. [documentation] #33 single-living-register-update-in-place — context_delivered
-32. [documentation] #34 source-of-truth-is-written-record — context_delivered
-33. [filing] #56 naming-shape — partially_enforced
-34. [filing] #57 snapshot-vs-living-document — context_delivered
-35. [filing] #58 archiving-trigger — partially_enforced
-36. [filing] #59 claude-code-filing-obligations — context_delivered
-37. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-38. [llm_output] #4 inferential-not-confirmed — context_delivered
-39. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
-40. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
-41. [sqlite] #1 verify-before-acting — context_delivered
-42. [sqlite] #11 readonly-by-default — context_delivered
-43. [sqlite] #13 dont-assume-which-database — context_delivered
-44. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
-45. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
-46. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
-47. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
-48. [terminal] #2 step-not-done-without-validated-output — context_delivered
-49. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
-50. [terminal] #27 heredoc-powershell-only — context_delivered
-51. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
-52. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
+13. [chat] #17 confirm-before-nontrivial-work — context_delivered
+14. [chat] #18 output-to-file-not-chat-only — context_delivered
+15. [chat] #19 factual-discipline-no-guessing — context_delivered
+16. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
+17. [chat] #21 chat-items-become-escalations — context_delivered
+18. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
+19. [chat] #23 close-the-loop-not-just-report — context_delivered
+20. [chat] #24 show-evidence-dont-smooth-over — context_delivered
+21. [development] #38 root-fix-not-one-off — context_delivered
+22. [development] #39 simple-steps-not-engineered-designs — context_delivered
+23. [development] #40 open-items-route-through-escalation — context_delivered
+24. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
+25. [development] #46 test-plan-per-module-utility — deliberately_deferred
+26. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
+27. [development] #66 cluster-label-must-track-membership — buildable_not_built
+28. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
+29. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+30. [documentation] #33 single-living-register-update-in-place — context_delivered
+31. [documentation] #34 source-of-truth-is-written-record — context_delivered
+32. [filing] #56 naming-shape — partially_enforced
+33. [filing] #57 snapshot-vs-living-document — context_delivered
+34. [filing] #58 archiving-trigger — partially_enforced
+35. [filing] #59 claude-code-filing-obligations — context_delivered
+36. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+37. [llm_output] #4 inferential-not-confirmed — context_delivered
+38. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
+39. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
+40. [sqlite] #1 verify-before-acting — context_delivered
+41. [sqlite] #11 readonly-by-default — context_delivered
+42. [sqlite] #13 dont-assume-which-database — context_delivered
+43. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
+44. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
+45. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
+46. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
+47. [terminal] #2 step-not-done-without-validated-output — context_delivered
+48. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
+49. [terminal] #27 heredoc-powershell-only — context_delivered
+50. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
+51. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
 
 **Undelivered conversational rules** (1) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
-53. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+52. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
 
 **PS scripts bypassing run.py** (1) — an active PS script calling iba.app.(handlers|lib|tools) directly instead of dispatching through iba.app.run:
-54. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+53. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
 
 **Steps without a PS entry point** (0) — an active cfg_step whose work package has no cfg_work_package.ps_script:
 _(none)_
 
 **Escalation-file naming drift** (27) — a Workflow/Catalogue or iba/docs file whose own header names an escalation the filename doesn't carry as its prefix:
-55. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-56. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
-57. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-58. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
-59. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
-60. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
-61. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
-62. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
-63. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
-64. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
-65. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
-66. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-67. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
-68. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-69. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
-70. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-71. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
-72. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
-73. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
-74. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
-75. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
-76. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
-77. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-78. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
-79. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-80. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-81. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
+54. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+55. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
+56. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+57. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
+58. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
+59. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
+60. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
+61. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
+62. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
+63. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
+64. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
+65. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+66. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
+67. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+68. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
+69. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+70. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
+71. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
+72. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
+73. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
+74. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
+75. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
+76. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+77. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
+78. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+79. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+80. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
 
 **Config hedge phrases** (3) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
-82. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
-83. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
-84. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
+81. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
+82. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
+83. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
 
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
@@ -202,7 +201,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**439** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **374** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**438** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **374** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -240,7 +239,6 @@ _(none)_
 | dbsnapshot | iba/app/lib/dbsnapshot.py | dbsnapshot.py — pre-write DB snapshots. THE GAP FOUND 2026-07-22: this app had no rollback | ✓ |  |  |
 | debateaudit | iba/app/lib/debateaudit.py | debateaudit.py — the shared per-row CRUD audit trail for every debate writer (`hib.set`, | ✓ | ✓ | writes to a fixed table name (debate_change_detail) only -- no cfg.setting()/cfg.enum() usage by design, same shape as other pure DB-write utilities already exempt |
 | debaterun | iba/app/lib/debaterun.py | Debate-Run.ps1 readiness checks (mirrors each operations-ingest/build-passages handler own gate) + staging-payload path resolution (passage.debate_staging_path_pattern) | ✓ |  |  |
-| drop_verse_meta_genre_column_v1_20260909 | iba/app/migration/drop_verse_meta_genre_column_v1_20260909.py | ONE-OFF migration -- escalation #1608: drops verse_meta.genre (ALTER TABLE DROP COLUMN) and deletes its cfg_column row, per researcher verdict that genre has no role in this study's verse-focused lexical analysis. Already run live. passage.genre was NOT touched (stays inactive=1, not dropped -- researcher named verse-meta specifically). | ✓ |  |  |
 | engine_audit | engine/audit.py | Audit framework -- WR-01 through WR-20, run after all writes. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_audit_word | engine/audit_word.py | AUDIT_WORD mode (v4) -- Pre-A1 through A11, unified new-word + re-audit pipeline. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_backup | engine/backup.py | DB backup management (SG-01, SG-12, SG-13) -- timestamped pre-run backup, abort if it fails. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
@@ -1493,7 +1491,7 @@ dedup key: `book, start_chapter, start_verse, end_chapter, end_verse`
 | debate_path | TEXT |  |  |  |  | path to this range's report.passage_debate output (scaffold or filled — see debate_status), written by that step on success | report.passage_debate (legacy, passage.rule IS NULL) or report.debate (new-model, passage.rule='input-scope' -- tools/build_debate_report.py) |
 | debate_written_at | TEXT |  |  |  |  | UTC timestamp of the last report.passage_debate write for this range | report.passage_debate (legacy, passage.rule IS NULL) or report.debate (new-model, passage.rule='input-scope' -- tools/build_debate_report.py) |
 | debate_status | TEXT |  |  |  |  | 'scaffold' (auto-generated, still has unreplaced <!-- fill in --> placeholders) or 'filled' (none remain) — a coarse, mechanically-derived completion signal only; NOT a digestion of the debate's analytical content, which is a separate, not-yet-designed question | report.passage_debate (legacy, passage.rule IS NULL: scaffold\|filled) or report.debate (new-model, passage.rule='input-scope': empty\|in-progress\|complete) -- tools/build_debate_report.py |
-| genre | TEXT |  |  |  |  | RETIRED 2026-09-09, researcher verdict, escalation #1608: genre has no role in this study's lexical analysis -- reading beyond the current verse is to resolve a characteristic's 'reach', not to classify literary genre; char-movement isn't under consideration even in Layer 2 yet, and Window 2's own future discovery process (read the char/movement first, expand to surrounding verses only when a movement can't close) doesn't need genre either. Was: manual, set as part of lexical.enrich's own first move for this passage; no controlled vocabulary yet — free text this round. NOT ported from bible_research.db.verse.genre (book-level, confirmed too coarse). | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| genre | TEXT |  |  |  |  | manual, set as part of lexical.enrich's own first move for this passage; no controlled vocabulary yet — free text this round. NOT ported from bible_research.db.verse.genre (book-level, confirmed too coarse). | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | lexical_complete_at | TEXT |  |  |  |  | NULL until every verse in this passage has a verse_lexical row for every code AND (for judgement-bearing codes) a verse_lexical_note disposition — set only by an explicit control check (mirrors phenomena_complete_at) | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 
 ### verse_passage
@@ -2303,6 +2301,7 @@ _one row per verse (1:1 with verse.id)_ — Verse-level base-data companion to `
 | verse_num | INTEGER |  |  |  |  | parsed once from osisId (Book.NN.NN) | 1608-verse-meta-table (escalation #1608, spawned from #1607/D13) |
 | passage_id | INTEGER |  |  |  | passage.id | via the verse_passage junction (verse_id unique, one passage per verse) -- NULL if this verse isn't in a passage yet. Synced by verse_meta_on_passage_change. | 1608-verse-meta-table (escalation #1608, spawned from #1607/D13) |
 | is_passage_anchor | INTEGER |  |  |  |  | via the same verse_passage junction, same trigger as passage_id | 1608-verse-meta-table (escalation #1608, spawned from #1607/D13) |
+| genre | TEXT |  |  |  |  | NOT populated as of #1608 -- deliberately left NULL. bible_research.db's own verse.genre was already rejected as a Layer 2 source ('too coarse', #1451); this column exists so genre has a real verse-level home once a real mechanism is built (CA-11), not to reintroduce the rejected source under a new name. | 1608-verse-meta-table (escalation #1608, spawned from #1607/D13) |
 | lexical_complete_at | TEXT |  |  |  |  | NOT populated as of #1608 -- home for CA-12 (`passage.lexical_complete_at`, orphaned by #1451's verse-scoped redesign). Giving it a verse-level home is #1608's job; the completeness-CHECK logic that would populate it is separate, future work. | 1608-verse-meta-table (escalation #1608, spawned from #1607/D13) |
 | created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC, set once at row creation | 1608-verse-meta-table (escalation #1608, spawned from #1607/D13) |
 | updated_at | TEXT |  |  |  |  | ISO-8601 UTC, set by any of the 3 refresh triggers (deleted/language/passage_id change) -- NULL means never refreshed since creation | 1608-verse-meta-table (escalation #1608, spawned from #1607/D13) |

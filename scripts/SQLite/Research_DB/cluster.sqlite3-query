@@ -1,0 +1,12 @@
+-- database: c:\Bible_study_projects\iba\app\db\iba.db
+
+SELECT * FROM cluster;
+
+select * from cluster cl
+left join cluster_strong cs on cl.cluster_code = cs.cluster_code
+left join strong_verse sv on cs.strong = sv.strong
+left join verse v on sv.verse_id = v.id
+left join verse_lexical vl on v.id = vl.verse_id
+left join verse_lexical_note vln on vl.id = vln.verse_lexical_id
+where cl.cluster_code = 'M10c'
+

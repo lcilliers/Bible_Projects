@@ -442,15 +442,56 @@ these too (treat as legitimate dual-sense candidates, record + flag for Layer 2 
 or do these specifically need a first-pass sanity check (are both tags even real, or is one simply
 migration noise) before they're trusted enough to hand to Layer 2 at all?
 
-### 5.2 T4's collapse into `non_human` alongside T9 (CA-15, restated)
+### 5.2 T4's collapse into `non_human` alongside T9 (CA-15, restated) — CLOSED, 2026-09-09
 
-`party_kind`'s live mapping already deliberately collapses `party_adversarial` (T4) and
-`party_angelic` (T9) to the same `non_human` value (§0). Under the new preliminary-allocation
-framing, is this collapse itself something Layer 2 should be able to "look past" via the same
-reach-back mechanism (i.e. leave `party_kind` coarse, let Layer 2 pull the finer T4-vs-T9 fact
-straight from `cluster_strong` when it matters), or does it need its own finer Layer 1 column
-(`party_class`) as CA-15 originally proposed? Not decided here — flagged so it doesn't quietly ride
-along with the rest of this proposal as if settled.
+**Researcher instruction, verbatim:** *"you are perfectly right, there is a duplication. However, I
+saw party_kind to be a separate signal. there are a number of questions in the catalogue that is
+specifially around divine impact on the char. by retaining party_kind as an additional focussed
+signal, it will immediately escalate the divine questions into focus."*
+
+**Decision: `party_kind` STAYS**, not merged into `role`/retired despite the confirmed overlap with
+`role`'s complete cluster_code enumeration (§1.0) — deliberately kept as a fast, dedicated trigger
+signal for the catalogue's divine-impact-on-characteristic questions, a different job from `role`'s
+general complete-membership readout. This also resolves the T4-vs-T9 collapse question directly: the
+coarse divine/human/non_human grain is fine precisely because `party_kind`'s real purpose is a fast
+divine-detection trigger, not a full referent-identity readout — when the finer T4-vs-T9 distinction
+is actually needed, Layer 2 pulls it from `role` (once built), not from `party_kind`. **Not yet
+done:** `party_kind`'s `cfg_column.use` text (already flagged wrong-source-table in CA-6/§2.2) should
+gain this rationale when that text gets corrected, same unit of work as CA-6, not applied here.
+
+---
+
+## 11. §5 status, 2026-09-09 — all three open decisions closed
+
+- **§5.1 (the ~10 no-rationale strongs) — CLOSED, confirmed live.** All 10 (`G1414, G1415, G1654,
+  G2900, G2999, G5400, G5591, H3027W, H4751, H7293`) now carry exactly one live cluster_code each,
+  individually sanity-checked during #1605's rounds 1-3 (2026-09-09), not blanket-trusted or
+  blanket-flagged. `H7293` ("Rahab") is the one exception with two live codes (M08+T11) — a real
+  per-item call (Rahab-as-Egypt-byname, T11's own worked example), not a rubber-stamp.
+- **§5.0 (coexistence-scope) — CLOSED**, confirmed by the same evidence: of the 37, 36/37 resolved to
+  a single live thematic code; the one exception (`H7293`) is M+T11, the referent-identity axis
+  coexisting by design. Reading: **T2 never survives alongside anything else** (retired in favour of
+  the real code, or left standing alone = genuinely non-analytic); **T7–T14 keeps coexisting with
+  M/other T7–T14, by design**; **M+M** remains permitted per §1.0 when genuinely justified (untested
+  by this batch, no live counterexample found).
+  - **New gap found scanning the live table beyond the 37** (not part of #1605's original scope,
+    which was T2-vs-M specifically): 13 strongs carry a live M+T3 or T2+T3 combination. **Researcher
+    verdict, verbatim, 2026-09-09: "the M+T3 is perpectly normal, accept as is, it will be subject to
+    context validation when the verse comes into focus."** 12 of 13 (G2373, G2647, G2919, G3618,
+    G4994, G5607, H1777, H3513H, H3513I, H3513J, H7665, H8199) need no action — confirmed by-design,
+    same shape as the T7-T14 axis (a word can be both a characteristic and a generic operation).
+  - **`H3477H` (the 13th, T2+T3) — investigated, not yet resolved.** Live gloss is "Jashar" (the Book
+    of Jashar, a proper-noun reference — Josh.10.13, 2Sam.1.18), **not "upright"** — a same-root
+    homonym-suffix collision with the real "upright" words, which the row's own `cluster_strong`
+    rationale had already flagged as a risk ("translit-only precedent (homonym risk)"). The real
+    Hebrew "upright/uprightness" words (`H3477G`, `H3477I`, `H3476`, `H4339`, `H5229`, `H3483`,
+    `H6968`) are all already live-tagged M12 (Justice) — nothing missing there. Disposition for
+    `H3477H` itself (T3-only vs. something else) still pending researcher confirmation.
+- **§5.2 — CLOSED**, see above.
+
+Recorded on escalation #1607 (the six-point Layer 1/2 column review this proposal feeds into) rather
+than #1605 itself, which was approved and closed 2026-09-09T10:53:31Z before this round of
+closures — #1605's own scope (the 37 T2-vs-M strongs) is unaffected, fully resolved as recorded there.
 
 ---
 
