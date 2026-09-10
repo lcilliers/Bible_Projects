@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-10T07:25:09Z |
+| generated_at | 2026-09-10T04:47:24Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -46,7 +46,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-3. GOVERNANCE.md was last modified 2026-09-10T06:08:04Z, before the newest applied cfg_change_detail row (2026-09-10T07:25:09Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+3. GOVERNANCE.md was last modified 2026-09-10T03:37:42Z, before the newest applied cfg_change_detail row (2026-09-10T04:47:23Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -174,11 +174,13 @@ _(none)_
 81. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
 82. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
 
-**Config hedge phrases** (4) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
-83. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
-84. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
-85. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
-86. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
+**Config hedge phrases** (6) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
+83. cfg_method_rule #65 spine-extended-meaning-parse-completeness-fatal — hedge phrase in rule_text/enforced_by with no resolution
+84. cfg_method_rule #66 spine-extended-meaning-accepted-anomaly — hedge phrase in rule_text/enforced_by with no resolution
+85. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
+86. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
+87. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
+88. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
 
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
@@ -204,7 +206,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**444** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **377** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**440** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **374** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -217,7 +219,6 @@ _(none)_
 | anchor_test_plan_governance_rule | iba/app/migration/anchor_test_plan_governance_rule_20260822.py | Anchors the researcher's 2026-08-22 test-plan-per-module/utility instruction in governance (cfg_behaviour_rule + governance.* cfg_setting), escalation #795. | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
 | apply_1598_cluster_batch | iba/app/migration/apply_1598_cluster_batch.py | Reusable, parameter-driven runner for escalation #1598 ongoing small-batch cluster reallocation work -- applies any reviewable JSON payload (new_clusters/inserts/relocations/removals) to cluster_strong/cluster, idempotent, used across Phases A-O this session. | ✓ |  |  |
 | apply_1598_phase_a_reallocation_v1_20260908 | iba/app/migration/apply_1598_phase_a_reallocation_v1_20260908.py | ONE-OFF migration -- escalation #1598 Phase A: creates T10 Places/T11 Corporate-Collective/T7 Party-Divine etc cluster scaffolding and applies the first reallocation batch. Already run live. | ✓ |  |  |
-| backfill_all_strong_meaning_tree_gaps_v1_20260910 | iba/app/migration/backfill_all_strong_meaning_tree_gaps_v1_20260910.py | backfill_all_strong_meaning_tree_gaps_v1_20260910.py -- broadened continuation of fix_strong_meaning_tree_collapse.py (2026-07-26), escalation #1655. Backfills every live strong code's own exact-variant strong_meaning_tree row where STEP has real content (519/522), leaving only genuine STEP-empty codes (3). Run once and verified live. |  |  |  |
 | behaviour | iba/app/lib/behaviour.py | Read-only query/report front end for cfg_behaviour_class/cfg_behaviour_rule (escalations #715/#732/#733) -- writes the live rule set to a report path. Content is written by the bootstrap_behaviour_rules_* migration scripts, never by this module. | ✓ |  |  |
 | bootstrap_behaviour_rules | iba/app/migration/bootstrap_behaviour_rules_v1_20260818.py | One-off migration: creates cfg_behaviour_class/cfg_behaviour_rule and seeds cycle-1 ('the obvious ones') content -- GR-DB-001/GR-PROC-001/GR-REF-001/GR-PROG-009 reworded as definitive statements. Escalation #715. | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3 (creates + populates them), same class as cfgload.py, already exempted from usage-checks for the same reason. |
 | bootstrap_behaviour_rules_cycle2 | iba/app/migration/bootstrap_behaviour_rules_cycle2_v1_20260818.py | One-off migration: escalation #715 cycle 2 -- seeds cfg_behaviour_rule content from the Workflow/Claude_API, Workflow/SQLite, Workflow/Obsidian usage guides (2026-08-15, never previously folded in). Found unregistered during cycle 3's sweep (governance.new_utility_registration_timing gap) and registered retroactively. | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
@@ -243,7 +244,6 @@ _(none)_
 | dbsnapshot | iba/app/lib/dbsnapshot.py | dbsnapshot.py — pre-write DB snapshots. THE GAP FOUND 2026-07-22: this app had no rollback | ✓ |  |  |
 | debateaudit | iba/app/lib/debateaudit.py | debateaudit.py — the shared per-row CRUD audit trail for every debate writer (`hib.set`, | ✓ | ✓ | writes to a fixed table name (debate_change_detail) only -- no cfg.setting()/cfg.enum() usage by design, same shape as other pure DB-write utilities already exempt |
 | debaterun | iba/app/lib/debaterun.py | Debate-Run.ps1 readiness checks (mirrors each operations-ingest/build-passages handler own gate) + staging-payload path resolution (passage.debate_staging_path_pattern) | ✓ |  |  |
-| delete_strongs_not_in_verses_v1_20260910 | iba/app/migration/delete_strongs_not_in_verses_v1_20260910.py | delete_strongs_not_in_verses_v1_20260910.py -- one-off migration, researcher-directed 2026-09-10 ('delete strongs not in verses'). Soft-deletes the 250 strong rows found in escalation #1613's audit with zero live span AND zero strong_verse reference (confirmed not verse-gap-by-design), cascaded across 10 dependent tables. Dry-run tested, then committed and verified live: 250/250/241/1069/242/409/262/284/248/262 rows soft-deleted respectively. |  |  |  |
 | drop_verse_meta_genre_column_v1_20260909 | iba/app/migration/drop_verse_meta_genre_column_v1_20260909.py | ONE-OFF migration -- escalation #1608: drops verse_meta.genre (ALTER TABLE DROP COLUMN) and deletes its cfg_column row, per researcher verdict that genre has no role in this study's verse-focused lexical analysis. Already run live. passage.genre was NOT touched (stays inactive=1, not dropped -- researcher named verse-meta specifically). | ✓ |  |  |
 | engine_audit | engine/audit.py | Audit framework -- WR-01 through WR-20, run after all writes. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | engine_audit_word | engine/audit_word.py | AUDIT_WORD mode (v4) -- Pre-A1 through A11, unified new-word + re-audit pipeline. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
@@ -264,7 +264,6 @@ _(none)_
 | filingkit | iba/app/lib/filingkit.py | filingkit.py -- the project-wide filing utility: naming-shape, same-day -v{n} versioning, archive-before-overwrite, for any writer. Generalises reportkit.oneoff_path(), which now delegates here. Escalation #863/#971/#992. Calls cfg.setting() directly (governance.oneoff_* fallback defaults) -- not config_exempt, a real call site. | ✓ |  |  |
 | fix_dispatcher_answerrun_795 | iba/app/migration/fix_dispatcher_answerrun_795_20260822.py | Escalation #795: split the dispatcher shape's collapsed approve/reject/revise transition into 3 distinct rules, and retargeted cfg_status_flow to match. | ✓ | ✓ | one-off migration script -- writes directly into cfg_* tables via raw sqlite3, same class as cfgload.py |
 | fix_from_id_closed_items | iba/app/migration/fix_from_id_closed_items_20260821.py | One-off data repair: escalation #767 v3 -- corrects from_id on 10 closed/completed escalation rows where the correct spawn parent was discoverable from the item's own recorded text; update() cannot touch closed items, so this calls _snapshot() directly. | ✓ | ✓ | one-off migration script -- calls the real escalation._snapshot() mechanism directly, same class as fix_escalation_short_description_and_columns_20260820.py |
-| fix_no_vocab_shells_v1_20260910 | iba/app/migration/fix_no_vocab_shells_v1_20260910.py | fix_no_vocab_shells_v1_20260910.py -- one-off migration, researcher-directed 2026-09-10 (escalation #1647). Creates strong/strong_sense/strong_meaning_tree shell rows for H3673/H3674 (Dan.3.2-27, Ezra.4.7 -- real words, STEP itself has no vocab data), sense_text/head literally 'no known meaning'. Run once and verified live; Lexicon-Parse.ps1 -Step Parse run separately afterward to generate the matching strong_meaning_parsed row through the normal pipeline. |  |  |  |
 | flag_management_build_v1_20260823 | iba/app/migration/flag_management_build_v1_20260823.py | ONE-OFF migration, escalation #833 (Flag Management) -- repurposes wa_quality_flag_types/wa_data_quality_flags for prose-quality checks, adds cfg_column.inactive, retires phase2_flag_types, marks 2 dead columns inactive, records wa_session_research_flags' retention. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | folderpurpose | iba/app/lib/folderpurpose.py | folderpurpose.py -- folder_purpose table: seed/refresh from a live directory scan (Method A), cross-check against cfg_setting *_dir/*_path values (Method B), and hand-edit type/status/usage_description (Method C). Escalation #971. | ✓ |  |  |
 | handlers_catalogue | iba/app/handlers/catalogue.py | Thin dispatcher adapter over cataloguewrite.py, registers obs_catalogue.update as a work-package step. | ✓ |  |  |
@@ -281,7 +280,6 @@ _(none)_
 | lexicalenrich | iba/app/lib/lexicalenrich.py | Stage 1 Layer 2 engine: verse_lexical_note capture + passage.genre/lexical_complete_at, JSON-payload-driven. Escalation #1383. | ✓ |  |  |
 | lexicalenrichgenerate | iba/app/lib/lexicalenrichgenerate.py | The LLM-calling half of lexical.run Layer 2 (escalation #1549 continued) -- batches the verse-list, assembles a lean cost-estimated package per batch, calls the Anthropic Messages API, parses the response, writes via lexicalenrich.enrich_passage, logs real usage. Config-driven from the start (module lexical), unlike its own template narrativegenerate.py which is flagged non-compliant. | ✓ |  |  |
 | lexicalscope | iba/app/lib/lexicalscope.py | Selector-to-verse-id resolution for lexical.run (escalation #1549 rework) -- cluster/word/strong-list/verse-list all converge to a verse-id list via span.strong_variant (exact-token match), never strong_verse (verified undercounting). | ✓ |  |  |
-| lexicon | iba/app/handlers/lexicon.py | handlers/lexicon.py -- Lexicon-parsed-layer handlers (L2b): parse/related/validate steps for the lexicon-parse work package. rebuild_parsed_tables() is the full parse rebuild (also called directly by raw.backfill_meaning); as of escalation #1655 (2026-09-10) it also adds a standing lemma-derived-with-note fallback for any strong code STEP returns no exact-variant result for, so every live strong code has parse coverage matching strong's own grain. | ✓ |  |  |
 | lexiconparse | iba/app/lib/lexiconparse.py | lexiconparse.py — the governed parse of the raw lexicon layer (strong_meaning_tree.sense_text, | ✓ |  |  |
 | manifest | iba/app/lib/manifest.py | manifest.py — the project-wide file manifest (rebuild + search). Filename/path metadata only; the baseline lib/contentindex.py (round 2) cross-checks file-content search coverage against. | ✓ |  |  |
 | migration | iba/app/migration/add_escalation_needs_followup_column_20260830.py | ONE-OFF: adds escalation.needs_claude_followup / escalation_history.needs_claude_followup (INTEGER, default 0). Idempotent. escalation #1075. |  |  |  |
@@ -1246,7 +1244,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | lexical.run | verse_lexical, verse_lexical_note |
 | lexicon.parse | strong_lsj_parsed, strong_meaning_parsed, strong_mounce_parsed |
 | lexicon.related | strong_related |
-| migration | candidate_seed, cluster, cluster_strong, lemma_inventory, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, word_registry, word_strong |
+| migration | candidate_seed, cluster, cluster_strong, lemma_inventory, span, strong, strong_lexicon, strong_sense, word_registry, word_strong |
 | operation.set | debate_change_detail, operation, operation_party |
 | passage.build | debate_change_detail, passage, verse_passage |
 | phenomenon.set | debate_change_detail, passage, phenomenon |

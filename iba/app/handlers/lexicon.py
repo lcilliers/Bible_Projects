@@ -20,6 +20,7 @@ from __future__ import annotations
 
 import datetime
 import pathlib
+import re
 
 from .base import Ctx, Outcome, ok, fail, escalate
 from ..lib import escalation as esc, lexiconparse, reportkit, valuequality as vq
@@ -35,11 +36,57 @@ def _may(ctx: Ctx, writer: str, table: str):
         raise PermissionError(f"write-grant violation: {writer!r} may not write {table!r}")
 
 
+_BASE_RE = re.compile(r"^([HG]\d+)([A-Z]*)$")
+
+
+def _base(code: str) -> str:
+    m = _BASE_RE.match(code)
+    return m.group(1) if m else code
+
+
+def _derived_variant_rows(conn) -> list[tuple]:
+    """Escalation #1655, researcher ruling verbatim 2026-09-10: "every parse must support the
+    strong table code, if STEP does not return a result for the variant, then A NOTE MUST BE IN
+    parse to the effect, and the lemma level can be used in parse as the derived value."
+
+    For every live `strong` code that still has no exact-variant `strong_meaning_parsed` row
+    after the normal per-variant rebuild (i.e. `strong_meaning_tree` never had a row for this
+    EXACT code — checked live, confirmed against STEP directly for the whole corpus at the time
+    this was built: true STEP-side absence, not an unfetched gap), derive its parse coverage from
+    whatever senses already exist under its own base lemma, copied verbatim with a `note` marking
+    them as derived, not variant-specific. Skipped entirely for a lemma with nothing at all —
+    that's the accepted anomaly (`spine-extended-meaning-accepted-anomaly`), not fixable here."""
+    live_codes = {r[0] for r in conn.execute("SELECT strongNumber FROM strong WHERE deleted=0")}
+    have_variant = {r[0] for r in conn.execute(
+        "SELECT DISTINCT strong_variant FROM strong_meaning_parsed WHERE deleted=0")}
+    gaps = sorted(live_codes - have_variant)
+
+    rows = []
+    for code in gaps:
+        lemma = _base(code)
+        lemma_rows = conn.execute(
+            "SELECT sort, sense_code, gloss, verse_refs, row_type FROM strong_meaning_parsed "
+            "WHERE lemma_key=? AND deleted=0 ORDER BY sort, id", (lemma,)).fetchall()
+        if not lemma_rows:
+            continue
+        note = (f"derived from lemma {lemma} — STEP returned no result for the exact code "
+               f"{code} (escalation #1655)")
+        for sort, sense_code, gloss, verse_refs, row_type in lemma_rows:
+            rows.append((lemma, code, sort, sense_code, gloss, verse_refs, note, row_type))
+    return rows
+
+
 # ── parse (global; no network) — also called directly by handlers/raw.py:backfill_meaning ────
 def rebuild_parsed_tables(ctx: Ctx) -> dict:
     """The full parse rebuild, factored out so raw.backfill_meaning can call it directly after
     pulling new raw meaning, instead of the researcher having to remember a separate manual
-    lexicon.parse re-run every time (found 2026-07-25: exactly this was missed once already)."""
+    lexicon.parse re-run every time (found 2026-07-25: exactly this was missed once already).
+
+    Escalation #1655 (2026-09-10): after the normal per-variant rebuild, adds a standing
+    lemma-derived-with-note fallback pass (`_derived_variant_rows`) so every live `strong` code
+    ends up with SOME `strong_meaning_parsed` coverage — variant-specific where STEP has it,
+    lemma-derived-and-noted where it genuinely doesn't. Matches `strong`'s own grain (the same
+    grain `span` uses) rather than silently leaving STEP-empty variants with zero parse rows."""
     _may(ctx, "lexicon.parse", "strong_meaning_parsed")
     _may(ctx, "lexicon.parse", "strong_lsj_parsed")
     _may(ctx, "lexicon.parse", "strong_mounce_parsed")
@@ -53,6 +100,11 @@ def rebuild_parsed_tables(ctx: Ctx) -> dict:
         'INSERT INTO strong_meaning_parsed ("lemma_key","strong_variant","sort","sense_code",'
         '"gloss","verse_refs","note","row_type","deleted") VALUES (?,?,?,?,?,?,?,?,0)', meaning)
 
+    derived = _derived_variant_rows(ctx.db.conn)
+    ctx.db.conn.executemany(
+        'INSERT INTO strong_meaning_parsed ("lemma_key","strong_variant","sort","sense_code",'
+        '"gloss","verse_refs","note","row_type","deleted") VALUES (?,?,?,?,?,?,?,?,0)', derived)
+
     ctx.db.conn.execute("DELETE FROM strong_lsj_parsed")
     ctx.db.conn.executemany(
         'INSERT INTO strong_lsj_parsed ("strong","sense_label","gloss","note","row_type",'
@@ -64,13 +116,14 @@ def rebuild_parsed_tables(ctx: Ctx) -> dict:
         'VALUES (?,?,?,0)', mounce)
 
     ctx.db.conn.commit()
-    return {"strong_meaning_parsed": len(meaning), "strong_lsj_parsed": len(lsj),
-           "strong_mounce_parsed": len(mounce)}
+    return {"strong_meaning_parsed": len(meaning) + len(derived), "strong_lsj_parsed": len(lsj),
+           "strong_mounce_parsed": len(mounce), "strong_meaning_parsed_derived": len(derived)}
 
 
 def parse(ctx: Ctx) -> Outcome:
     counts = rebuild_parsed_tables(ctx)
-    return ok(f"parsed: {counts['strong_meaning_parsed']} strong_meaning_parsed, "
+    return ok(f"parsed: {counts['strong_meaning_parsed']} strong_meaning_parsed "
+             f"({counts['strong_meaning_parsed_derived']} lemma-derived, escalation #1655), "
              f"{counts['strong_lsj_parsed']} strong_lsj_parsed, "
              f"{counts['strong_mounce_parsed']} strong_mounce_parsed row(s) — built {_now()}",
              **counts)

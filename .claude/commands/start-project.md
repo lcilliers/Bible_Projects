@@ -90,6 +90,19 @@ was retired 2026-08-18 in favour of it):
   else calls for it this session — a direct `cfg_behaviour_rule` query is cheaper and sufficient
   for orientation.
 
+## 4A. Spine integrity check (`governance.base_data_spine`, escalation #1613, 2026-09-10)
+
+Run `iba/app/ps/Spine-Check.ps1`. It checks the base-data spine (verse/span/strong sync, strong-
+extended-meaning-parse completeness — both FATAL per `cfg_method_rule` if broken) and reports a
+discoverability pass (M-code strongs in analyzed verses missing parse, `word_strong` strongs
+missing parse). Read-only, persists its own report every run.
+
+- If it reports 0 FATAL findings: note the discoverability count plainly in step 5, move on.
+- If it reports any FATAL finding: **surface this prominently and first** in the step-5 report,
+  above everything else — per `governance.base_data_spine`, a spine desync is fixed on discovery,
+  not carried forward silently. Do not treat a pending pause/escalation from a prior run as
+  resolved without checking `Escalation.ps1 -Action List` for its actual state.
+
 ## 5. Report and stop
 
 Summarise, briefly, in chat (not a new `.md` file — this is a status check, not a deliverable):
@@ -97,6 +110,7 @@ Summarise, briefly, in chat (not a new `.md` file — this is a status check, no
 - Git state (clean/dirty; anything uncommitted flagged).
 - STEP (was it already up, or did this command start it — and did it come up in time).
 - IBA bootstrap result (READY or what went wrong).
+- **Spine check result (step 4A) — FATAL findings first, if any.**
 - Open escalations relevant to this session, and any other loose end found.
 - Unenforced-config count from step 4, by `enforcement_status` — name the `judgment_call_pending`
   ones specifically (they're waiting on a researcher decision), not just a bare total.
