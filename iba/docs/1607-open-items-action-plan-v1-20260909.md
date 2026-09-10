@@ -13,6 +13,31 @@
 
 ---
 
+## Schema changes queued for the batch apply
+
+**Added 2026-09-10, per "I don't see the schema dropping in this analysis."** None of these are applied yet — collected here as the one place that answers "what actually
+changes in the DB," decisions only, kept current as items close:
+
+| Item | Change | Table | Status |
+|---|---|---|---|
+| D4 | Drop `ambiguity_note` | `verse_lexical` | Decided (confirmed 2026-09-10) — not yet built |
+| D12 | Drop `language` (+ re-point `_narrative_morph_for`'s language check to `verse_meta.language` first — see D12's own note, this must happen in the same unit of work, not after) | `verse_lexical` | Decided (2026-09-10) — not yet built |
+| D1 | Add `role` (JSON array, per D1's own decision below) | `verse_lexical` | Decided in principle — storage format/error-marker mechanics not fully specified yet |
+| D9 | Fix `note_type`/`target_verse_lexical_id`/`related_verse_lexical_ids` **doc text** | `verse_lexical_note` | **Already done** — E1, 2026-09-10, no schema change, text only |
+| D3 | Possibly none (if untruncated stays) or a length-handling change to `resolved_sense` | `verse_lexical` | Awaiting your cut-rule call |
+| D7 | Drop or repurpose `passage_id` | `verse_lexical_note` | Still open — no decision yet |
+| D8 | `evidence_text`: enforce as required, or merge into `value_text` (a real column drop if merged) | `verse_lexical_note` | Still open — no decision yet |
+
+**Already applied, for reference (not part of the pending batch):** `verse_meta.genre` dropped
+outright, 2026-09-09 (D13's own record above) — the precedent this table follows for "confirmed
+retire, not left `inactive=1`."
+
+**Not yet on this list because no decision has named a concrete schema change:** D2 (closed, no
+column), D5 (Greek `narrative_morph` signal — additive, not a drop, once designed), D6 (no change),
+D10 (disposition only, not a schema change), D11 (closed, no change).
+
+---
+
 ## D1 — `role` storage shape
 
 **What needs deciding:** how the complete cluster_code set gets stored on the row (denormalized
@@ -67,11 +92,15 @@ wrongly marked the 45 Greek strongs that have real `strong_lsj_parsed`/`strong_m
 but no `strong_meaning_parsed` row as "meaning incomplete," when real meaning data exists for them
 elsewhere. Same root cause as D3, same fix needed before this can be built correctly.
 
-**Action:**
-> Superseded by #1613 — hold until the base-data normalisation work settles which table(s) a
-> readiness check should actually test against.
+**Researcher decision, 2026-09-10 (this chat):** *"meaning is now carried in resolved-sense so D2
+status is no longer required."* — a separate meaning-readiness status column is unnecessary now
+that `resolved_sense` itself (NULL vs. non-NULL, revived corpus-wide this session, BUILD.md #257)
+IS the readiness signal directly, no derived status needed on top of it.
 
-**Status:** On hold — gated on #1613
+**Action:** None — no column to build. Superseded by the `resolved_sense` revival itself, not by a
+future #1613-informed version of the originally-proposed check.
+
+**Status:** CLOSED, 2026-09-10 — no `status`-readiness column; `resolved_sense` is its own signal.
 
 ---
 
@@ -94,15 +123,20 @@ blind spot. Escalation **#1613** raised to normalise the base-data meaning layer
 this gets built — the truncation-boundary question here is premature until #1613 settles what the
 actual source/coverage should be.
 
-**Researcher decision:**
->
+**Researcher decision, 2026-09-10 (this chat):** *"D3 is reinstated"* — #1613 is now completed
+(base-data meaning normalisation settled: `strong` is master truth, full inventory done) and
+`resolved_sense` itself is revived corpus-wide (BUILD.md #257), so this item's gate is cleared.
 
-**Action:**
-> Superseded by #1613 — hold this item until the base-data normalisation work settles the real
-> source/coverage question; the truncation format is a smaller decision that fits inside whatever
-> #1613 lands on, not a separate track.
+**Not yet decided — the actual cut-rule choice this item is about:** the live code (`resolve_code()`
+as revived today) stores the **full, untruncated** `sense_rows[0][1]` gloss — no 100-character cap
+is currently applied anywhere in the write path. This item's original framing ("the 100-character
+cap is settled; the cut rule isn't") assumed a cap that isn't actually live in the code that just
+shipped. Needs your call: (a) keep it untruncated (what's live now), or (b) apply a cap after all —
+and if (b), hard-cut vs. clause-boundary cut.
 
-**Status:** On hold — gated on #1613
+**Action:** Awaiting the actual decision above before any further build.
+
+**Status:** Open — un-gated, but the cut-rule question itself is still unanswered
 
 ---
 
@@ -175,8 +209,19 @@ directly, not a separate mechanism — worth confirming when D9 is worked.
 > needed on format/scope. Layer 2's `connective` note_type (and `verb_argument`, D9) inherit the real
 > completeness obligation once `role` (D1) is built and enforced.
 
-**Status:** CLOSED — no Layer 1 column; coverage handled via `role`'s completeness mandate (D1),
-carried into Layer 2's own note-type coverage obligation (also relevant to D9).
+**Researcher decision, 2026-09-10 (this chat):** *"D4 confirmed - pairing shifted to layer 2 and
+ambiguity_notes is no longer required."* Confirms the column is retired, not just the design
+question closed.
+
+**⚠ Flagging, not silently acting:** today's `resolved_sense` revival (BUILD.md #257) still SETS
+`ambiguity_note` for a genuinely-ambiguous base-fallback case — that code was untouched by today's
+work (only `resolved_sense` changed) and is still live. Retiring the column is real schema work
+(drop the column + stop writing it in `resolve_code()`) — per your own instruction earlier this
+session ("apply all the changes and update all the lexicals... instead of doing it piecemeal"),
+this is queued for the consolidated #1607 batch apply, not done now. Flagging here so it isn't
+lost: the column is confirmed-to-retire but still physically live and still being written today.
+
+**Status:** CLOSED (design) — retirement itself queued for the #1607 batch apply, not yet built.
 
 ---
 
@@ -187,13 +232,16 @@ actually capture. No mechanism proposed yet — Greek's own narrative-sequencing
 aorist/imperfect/historical-present distinction *in context* than a single morph-code flag, so this
 needs your steer before any design, not just a decision between options.
 
-**Researcher decision / steer:**
->
+**Researcher decision / steer, 2026-09-10 (this chat):** *"keep and fix greek signal."* Confirms
+the column stays and a real Greek signal is wanted — the actual signal definition (which
+aorist/imperfect/historical-present-in-context pattern(s) `narrative_morph` should detect for
+Greek) is not yet specified. Needs a follow-up design pass before this is buildable — not
+actionable from "keep and fix" alone.
 
-**Action:**
->
+**Action:** Design the Greek signal (what pattern, what morph/context evidence) before building —
+separate follow-up, not started.
 
-**Status:** Open — needs direction, not just a choice
+**Status:** Open — column retention confirmed; signal design still needed
 
 ---
 
@@ -207,17 +255,19 @@ could mean:
 - Every row carries a non-NULL value, including on first INSERT — a real behaviour change (currently
   only 20.9% of rows are non-NULL, because INSERT never populates it).
 
-**Researcher decision:**
->
+**Researcher decision, 2026-09-10 (this chat):** *"D6 required for all updates."* Read as picking
+the first option — every *correction* sets it (already true today, no behaviour change) — not the
+second (every row non-NULL from INSERT). **Flagging this reading explicitly rather than silently
+assuming it**, since "required for all updates" could also be misread as "required, full stop" —
+say so if the second option was actually intended.
 
-**Action:**
->
+**Action:** None needed if the reading above is correct — already true in `write_readings_for_span`.
 
-**Status:** Open
+**Status:** Closed, pending confirmation of the reading above
 
 ---
 
-## D7 — `verse_lexical_note.passage_id`
+## D7 — `verse_lexical_note.passage_id` — **Layer 2** (column lives on `verse_lexical_note`, the Layer 2 table)
 
 **What needs deciding:** drop the column, or repurpose it. Live: 0/173 rows carry a non-NULL value —
 every Layer 2 write happens in the verse-scoped mode #1451 made the default, so the column's stated
@@ -239,7 +289,7 @@ pipeline actually does.
 
 ---
 
-## D8 — `verse_lexical_note.evidence_text`
+## D8 — `verse_lexical_note.evidence_text` — **Layer 2** (same table as D7)
 
 **What needs deciding:** the single largest concrete defect in the whole map — 0/173 rows have ANY
 value, ever, across every note_type. Practice has informally folded evidence into `value_text`
@@ -262,7 +312,7 @@ grounding without this)
 
 ---
 
-## D9 — `verb_argument` trigger condition + T7–T14 wiring
+## D9 — `verb_argument` trigger condition + T7–T14 wiring — **Layer 2** (writes a `verse_lexical_note` row; reads `role`/T-membership from Layer 1 as input, but the note itself is Layer 2's)
 
 **What needs deciding:** the one live example (Gen, "gave") works, but nothing in code triggers a
 `verb_argument` note, and nothing connects its resolved target back to the T7–T14 referent-identity
@@ -297,13 +347,15 @@ proper-noun reference, Josh.10.13/2Sam.1.18), not "upright" as first read. Curre
   rest of that batch.
 - Something else, if you see a better fit once the correct gloss is in view.
 
-**Researcher decision:**
->
+**Researcher decision, 2026-09-10 (this chat):** *"D10 refers to Jashar."* Restates the live gloss
+fact already established (Book of Jashar, proper-noun document reference) — **not yet clear
+whether this confirms the T3-only disposition** (matching the rest of the 13-strong batch) or is
+just acknowledging the fact ahead of a separate choice. Flagging rather than assuming T3-only.
 
-**Action:**
->
+**Action:** Confirm: does "refers to Jashar" mean T3-only (Objects — book/document reference), or
+something else?
 
-**Status:** Open
+**Status:** Open — awaiting the actual disposition choice
 
 ---
 
@@ -331,13 +383,16 @@ fact.
   existing convention in this schema — `surface`/`position` are copy-downs of a value that's
   genuinely a property of the span itself, not a roll-up computed from children).
 
-**Researcher decision:**
->
+**Researcher decision, 2026-09-10 (this chat):** *"D11 as reinstated earlier in this session"* —
+refers to *"the gloss_consistent_in_verse flag should be retained"* (this chat, earlier today,
+alongside the `resolved_sense`/ord=0 decision). Read as: **keep it on `verse_lexical` as-is** — the
+second option, not the span-promotion — i.e. "retained" means the column and its current grain,
+not just the column's existence. Applied and confirmed live already (BUILD.md #257): the formula
+itself needed no change and was re-verified correct against the full corpus.
 
-**Action:**
->
+**Action:** None — no promotion to `span`, no further build.
 
-**Status:** Open
+**Status:** CLOSED, 2026-09-10 — stays on `verse_lexical`, current formula confirmed sound
 
 ---
 
@@ -415,10 +470,26 @@ code checks span/verse-level language consistency at all — which is exactly ho
 `narrative_morph` gate) with **zero validation behind it** — not a validator itself, but something
 that arguably should be validated, precisely because at least one real mechanism silently trusts it.
 
-**Action:**
-> 
+**Researcher decision, 2026-09-10 (this chat):** *"D12 language column is dropped, Language is now
+on verse_meta and can be pulled in for layer 2 from there."* — `verse_lexical.language` (the
+per-code denormalization) retires; `verse_meta.language` (D13, already built, verse-level, real
+source) becomes the one true source, read directly by Layer 2 instead.
 
-**Status:** Open
+**⚠ Real code dependency, not just a column drop — flagging, not silently deciding:** `resolve_code()`'s
+`language` field currently ALSO gates `_narrative_morph_for` (`if language != "Hebrew"...`), which
+reads the row's own *stored* `verse_lexical.language` value, not `verse_meta`. Dropping the column
+means `_narrative_morph_for` needs its language check re-sourced from `verse_meta.language` (a join
+on `verse_id`) before the column can actually go — dropping first would silently break Hebrew
+narrative-morph detection entirely, not just remove an unused field. Queued for the #1607 batch
+apply (schema drop + this code fix together, one unit), not done now — matches your "apply all the
+changes... instead of doing it piecemeal" instruction.
+
+**Action:** At batch time — (1) re-point `_narrative_morph_for`'s language source to
+`verse_meta.language` (join on verse_id), (2) drop `verse_lexical.language`, (3) update
+`_layer1_fields`/`write_readings_for_span`/`_CONTENT_FIELDS` accordingly, (4) `cfg_column` row
+removed, not left inactive (matching the `genre` precedent, D13).
+
+**Status:** Decided — drop queued for the #1607 batch apply, not yet built
 
 ---
 
@@ -484,7 +555,10 @@ write time rather than leaving it undetected indefinitely.
 > home, deliberately left NULL — no fresh-vs-reimport call needed yet since nothing populates them
 > this pass. Full build record on #1608's own resolution.
 
-**Status:** Built, ready for your review — #1608
+**Researcher confirmation, 2026-09-10 (this chat):** *"D13 this is the verse_meta already built."*
+Confirmed — matches this doc's own record above.
+
+**Status:** Built, confirmed by researcher 2026-09-10 — #1608
 
 **`genre` RETIRED, 2026-09-09, researcher verdict, verbatim:** *"Our focus on genre is noise. It
 really only is relevant in passage reading, and in this study, the reason for reading wider than
@@ -532,13 +606,19 @@ code already does.
 **Proposed action:** run as one `Config-Maintenance.ps1 -Step Propose` batch, same batch already
 scoped in #1605 §6 — approval-gated regardless, but no design judgement required to approve.
 
-**Researcher decision:**
->
+**Researcher decision, 2026-09-10 (this chat):** *"E1, E2 proceed."*
 
-**Action:**
->
+**Action:** Ran as 6 individual `Config-Maintenance.ps1 -Step Propose` calls (config-text only, no
+`verse_lexical` data touched — doesn't conflict with the "no piecemeal lexical rebuilds" hold).
+CA-7 (`updated_at`) checked live and found **already fixed** in an earlier pass (a real
+`cfg_column` row already exists, text already accurate) — not re-applied, no duplicate. Applied:
+resolved_sense (escalation #1666, rewritten to match today's actual ord=0/all-codes/no-cap
+behaviour, not the stale M-code/100-char text the map originally scoped), `is_negator` (#1667,
+CA-5), `party_kind` (#1669, CA-6), `note_type` doc-string (#1670, +verb_argument/compound_unit),
+`target_verse_lexical_id` (#1671, +agent/trigger use), `related_verse_lexical_ids` (#1672,
++recipient/impact use).
 
-**Status:** Open — ready to run on your go-ahead
+**Status:** DONE, 2026-09-10 — all 6 applied and verified live
 
 ---
 
@@ -553,10 +633,15 @@ completeness work.
 now, or bundled with whichever of D1–D9 lands first (since several of them change what a rebuild
 produces anyway, a rebuild now would need repeating).
 
-**Researcher decision:**
->
+**Researcher decision, 2026-09-10 (this chat):** *"E1, E2 proceed."*
 
-**Action:**
->
+**⚠ Reading this as "the timing question is resolved: bundle it," not "rebuild right now"** — read
+together with your explicit instruction the same turn ("as soon as I completed the 1607 review,
+then we will apply all the changes and update all the lexicals, instead of doing it piecemeal"), a
+second full-corpus rebuild today (on top of the `resolved_sense` one already run) would itself be
+the piecemeal pattern you just asked to stop. Flagging this reading rather than triggering another
+corpus rebuild on "proceed" alone — say so if a rebuild now was actually intended.
 
-**Status:** Open — timing question, not a design one
+**Action:** Hold — bundle with the consolidated #1607 batch rebuild once the review is complete.
+
+**Status:** Timing decided (bundle, don't rebuild now) — pending confirmation of that reading

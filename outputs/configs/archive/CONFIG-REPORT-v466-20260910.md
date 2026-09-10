@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-10T16:36:25Z |
+| generated_at | 2026-09-10T16:33:46Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -46,7 +46,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-3. GOVERNANCE.md was last modified 2026-09-10T06:08:04Z, before the newest applied cfg_change_detail row (2026-09-10T16:36:24Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+3. GOVERNANCE.md was last modified 2026-09-10T06:08:04Z, before the newest applied cfg_change_detail row (2026-09-10T16:33:45Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -2301,10 +2301,10 @@ _one row per (verse_lexical_id, note_type) — the judgement-bearing Layer-2 fin
 | verse_lexical_id | INTEGER |  | ✓ |  | verse_lexical.id | the code-row this note is about | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | verse_id | INTEGER |  | ✓ |  | verse.id | denormalized, matches phenomenon's own precedent | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | passage_id | INTEGER |  | ✓ |  | passage.id | denormalized, matches phenomenon's own precedent | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
-| note_type | TEXT |  | ✓ |  |  | cfg_enum note_type -- idiom / pronoun_resolution / noun_relational / noun_severity / chain / connective / related_word / polarity / entity_link / inert / structural_pattern / recurrence_role_shift / cross_lemma_shared_gloss / verb_argument / compound_unit | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| note_type | TEXT |  | ✓ |  |  | cfg_enum note_type — idiom / pronoun_resolution / noun_relational / noun_severity / chain / connective / related_word / polarity / entity_link / inert / structural_pattern / recurrence_role_shift / cross_lemma_shared_gloss | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | resolution_status | TEXT |  | ✓ |  |  | cfg_enum resolution_status — resolved / unresolved / unclassified / not_supported_this_language / checked_empty | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
-| target_verse_lexical_id | INTEGER |  |  |  | verse_lexical.id | same-verse OR cross-verse (within the loaded passage-block) resolution target (pronoun/noun/entity-link), NULL if unresolved. Also used by verb_argument notes as the agent/trigger of a movement (e.g. note id 346, Gen H5414G 'gave': target=Laban, the giver) -- a third, distinct use beyond the original pronoun/entity-link framing, added escalation #1607/D9, 2026-09-10. | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
-| related_verse_lexical_ids | TEXT |  |  |  |  | JSON array of ids -- structural_pattern/recurrence_role_shift rows only, PLUS verb_argument's recipient/impact use (e.g. note id 346, Gen H5414G 'gave': related=Leah, the recipient) -- a third, distinct use added escalation #1607/D9, 2026-09-10. | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| target_verse_lexical_id | INTEGER |  |  |  | verse_lexical.id | same-verse OR cross-verse (within the loaded passage-block) resolution target (pronoun/noun/entity-link), NULL if unresolved | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| related_verse_lexical_ids | TEXT |  |  |  |  | JSON array of ids — structural_pattern/recurrence_role_shift rows only | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | value_text | TEXT |  |  |  |  | the finding itself, free text — content shape varies too much by note_type for typed columns yet | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | evidence_text | TEXT |  |  |  |  | what in the verse's own data supports it (morph marker, related-word pull, etc.) | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |

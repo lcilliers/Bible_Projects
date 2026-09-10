@@ -13554,3 +13554,45 @@ in `build_for_verse`/the zero-sense_rows branch updated to match, no other logic
 `iba/app/migration/resolved_sense_revived_v1_20260910.py` (new), `iba/app/db/iba.db` (544,538
 `verse_lexical` rows updated in place, same ids; snapshotted first to
 `iba/app/db/snapshots/iba-20260910T160543Z-pre-1596-resolved-sense-revived.db`).
+
+## 258. #1607 review — first decision round applied (E1 config-text batch); D-items recorded, not yet built (2026-09-10)
+
+Researcher worked through `iba/docs/1607-open-items-action-plan-v1-20260909.md` (the #1607
+six-point-column-map open-decisions register) this session and gave a batch of decisions in chat.
+Per the researcher's own explicit instruction, same turn — *"as soon as I completed the 1607
+review, then we will apply all the changes and update all the lexicals, instead of doing it
+piecemeal"* — only **E1** (config-text corrections, no `verse_lexical` data touched) was applied
+now; every other decision is recorded in the action-plan doc but held for one consolidated
+`verse_lexical` rebuild once the whole review is done, not built piecemeal.
+
+**E1 applied — 6 `cfg_column.use` corrections, each its own `Config-Maintenance.ps1 -Step Propose`
+cycle (escalations #1666/#1667/#1669/#1670/#1671/#1672, all completed):** `resolved_sense` (rewritten
+to match what actually shipped this session — ord=0/all-codes/no-cap — not the stale M-code/100-char
+text the original map scoped, since #1596/#1663-cont.'s revival (#257 above) superseded that plan
+before E1 was ever run), `is_negator`/`party_kind` (CA-5/CA-6 — both named dead-code
+`cfg_lexical_code_class` as their source; real source is `cluster_strong`), `note_type` doc-string
+(+`verb_argument`/`compound_unit`, matching the live 15-value `cfg_enum` exactly),
+`target_verse_lexical_id`/`related_verse_lexical_ids` (+ the `verb_argument` agent-trigger/
+recipient-impact use each already has live, per note id 346). **CA-7 (`updated_at`) checked live
+first — already fixed in an earlier pass, not re-applied, no duplicate escalation raised.**
+
+**Decisions recorded in the doc, schema changes queued but NOT built** (new "Schema changes queued
+for the batch apply" section added to the action-plan doc, direct answer to the researcher's own
+"I don't see the schema dropping in this analysis"): D2 closed (no column needed — `resolved_sense`
+IS the readiness signal now); D4 confirmed (`ambiguity_note` retires — still live today, still
+written by `resolve_code()`, not stripped yet); D11 closed (`gloss_consistent_in_verse` stays on
+`verse_lexical`, not promoted to `span` — same "retained" instruction as #257); D12 decided
+(`verse_lexical.language` drops, `verse_meta.language` becomes Layer 2's source — flagged that
+`_narrative_morph_for`'s language gate must be re-pointed to `verse_meta` in the SAME unit of work,
+or dropping the column first silently breaks Hebrew narrative-morph detection); D13 confirmed
+(already built, #1608). D3 (truncation — un-gated from #1613, but the actual cut-rule choice not
+given), D5 (Greek `narrative_morph` signal — "keep and fix," design not yet specified), D6 (reading
+flagged for confirmation, not assumed), D7/D8/D9 (answered: all Layer 2, `verse_lexical_note`'s own
+columns — no decision given on D7/D8 themselves), D10 (flagged — unclear if "refers to Jashar"
+confirms T3-only or is only a restated fact), E2 (read as "bundle the rebuild, don't run one now" —
+flagged for confirmation, not assumed) all remain open, each with the specific gap named rather than
+guessed past.
+
+**Files:** `iba/docs/1607-open-items-action-plan-v1-20260909.md` (edited in place, every item),
+`iba/app/db/iba.db` (6 `cfg_column.use` rows updated — text only, no `verse_lexical` schema or data
+change).

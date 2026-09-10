@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-10T16:36:25Z |
+| generated_at | 2026-09-10T16:31:19Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -46,7 +46,7 @@ _(none)_
 _(none)_
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-3. GOVERNANCE.md was last modified 2026-09-10T06:08:04Z, before the newest applied cfg_change_detail row (2026-09-10T16:36:24Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+3. GOVERNANCE.md was last modified 2026-09-10T06:08:04Z, before the newest applied cfg_change_detail row (2026-09-10T16:31:18Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -1619,10 +1619,10 @@ dedup key: `span_id, code_ordinal`
 | surface | TEXT |  |  |  |  | span.surface, denormalized — the literal text at this span, independent of sense (never confused with resolved_sense) | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | language | TEXT |  | ✓ |  | strong.language | strong.language, denormalized — 'Hebrew'/'Greek'/'Aramaic' | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | testament | TEXT |  | ✓ |  |  | derived: 'OT' if cfg_book_order.ordinal<=38 else 'NT' (Mal=38/Matt=39 boundary) — pure ordinal derivation, no reference table | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
-| is_negator | INTEGER |  |  |  |  | 1 if strong is in cluster_strong WHERE cluster_code='T5' AND deleted=0, else NULL (never 0 -- NULL means 'not in the T5 lexicon'). cfg_lexical_code_class is dead code, never read by load_code_classes() -- corrected, escalation #1607/CA-5, 2026-09-10. | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| is_negator | INTEGER |  |  |  |  | 1 if strong is in cfg_lexical_code_class WHERE class='negator' AND active=1, else NULL (never 0 — NULL means 'not in the lexicon') | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | narrative_morph | TEXT |  |  |  |  | Hebrew wayyiqtol / az+imperfect flag, derived from morph_code pattern — NULL unconditionally for language != 'Hebrew' | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | gloss_consistent_in_verse | INTEGER |  | ✓ |  |  | 1 unless this (strong, morph_code) pair carries >1 distinct resolved_sense value among this verse's own rows — mechanical data-quality check | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
-| party_kind | TEXT |  |  |  |  | 'divine'/'human'/'non_human' -- set ONLY when this code IS ITSELF a name in cluster_strong WHERE cluster_code IN ('T4','T7','T8','T9') AND deleted=0 (T4=adversarial->non_human, T7=divine, T8=human, T9=angelic->non_human); a pronoun's own party_kind is NOT stored here, it derives via its entity_link note's target_verse_lexical_id (two-hop join, Window 2's own future join). cfg_lexical_code_class is dead code, never read by load_code_classes(); the previous text also omitted T4/party_adversarial from its source list -- both corrected, escalation #1607/CA-6, 2026-09-10. | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| party_kind | TEXT |  |  |  |  | 'divine'/'human'/'non_human' — set ONLY when this code IS ITSELF a name (cfg_lexical_code_class class IN party_divine/party_human/party_angelic); a pronoun's own party_kind is NOT stored here, it derives via its entity_link note's target_verse_lexical_id (two-hop join, Window 2's own future join) | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | updated_at | TEXT |  |  |  |  | Timestamp of the row's last real content correction (post-insert), set by write_readings_for_span whenever a live row's content actually changes -- INSERT never populates it (CA-7, escalation #1607/#1605: 20/21 live columns were registered, this one never was, since the #1520 identity-stable-write redesign added it). 113,684/544,572 (20.9%) live rows are currently non-NULL, matching 'only rows corrected since #1520 get it set' exactly. | 1607-layer1-layer2-six-point-column-map-v1-20260909.md (CA-7) |
 
 ### hib
@@ -2301,10 +2301,10 @@ _one row per (verse_lexical_id, note_type) — the judgement-bearing Layer-2 fin
 | verse_lexical_id | INTEGER |  | ✓ |  | verse_lexical.id | the code-row this note is about | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | verse_id | INTEGER |  | ✓ |  | verse.id | denormalized, matches phenomenon's own precedent | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | passage_id | INTEGER |  | ✓ |  | passage.id | denormalized, matches phenomenon's own precedent | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
-| note_type | TEXT |  | ✓ |  |  | cfg_enum note_type -- idiom / pronoun_resolution / noun_relational / noun_severity / chain / connective / related_word / polarity / entity_link / inert / structural_pattern / recurrence_role_shift / cross_lemma_shared_gloss / verb_argument / compound_unit | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| note_type | TEXT |  | ✓ |  |  | cfg_enum note_type — idiom / pronoun_resolution / noun_relational / noun_severity / chain / connective / related_word / polarity / entity_link / inert / structural_pattern / recurrence_role_shift / cross_lemma_shared_gloss | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | resolution_status | TEXT |  | ✓ |  |  | cfg_enum resolution_status — resolved / unresolved / unclassified / not_supported_this_language / checked_empty | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
-| target_verse_lexical_id | INTEGER |  |  |  | verse_lexical.id | same-verse OR cross-verse (within the loaded passage-block) resolution target (pronoun/noun/entity-link), NULL if unresolved. Also used by verb_argument notes as the agent/trigger of a movement (e.g. note id 346, Gen H5414G 'gave': target=Laban, the giver) -- a third, distinct use beyond the original pronoun/entity-link framing, added escalation #1607/D9, 2026-09-10. | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
-| related_verse_lexical_ids | TEXT |  |  |  |  | JSON array of ids -- structural_pattern/recurrence_role_shift rows only, PLUS verb_argument's recipient/impact use (e.g. note id 346, Gen H5414G 'gave': related=Leah, the recipient) -- a third, distinct use added escalation #1607/D9, 2026-09-10. | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| target_verse_lexical_id | INTEGER |  |  |  | verse_lexical.id | same-verse OR cross-verse (within the loaded passage-block) resolution target (pronoun/noun/entity-link), NULL if unresolved | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
+| related_verse_lexical_ids | TEXT |  |  |  |  | JSON array of ids — structural_pattern/recurrence_role_shift rows only | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | value_text | TEXT |  |  |  |  | the finding itself, free text — content shape varies too much by note_type for typed columns yet | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | evidence_text | TEXT |  |  |  |  | what in the verse's own data supports it (morph marker, related-word pull, etc.) | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
 | created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC | 1383-verse-lexical-window1-full-build-specification-v1-20260904.md |
