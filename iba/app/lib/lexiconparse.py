@@ -237,8 +237,31 @@ def parse_meaning_tree_row(lemma_key: str, strong_variant: str, sort: int, sense
     p = _MeaningSegmentParser()
     p.feed(_normalize_refs(remaining, rules))
 
-    rows = []
+    # Escalation #1668-cont., 2026-09-10 (researcher's own live example, G1375): a <b>...</b> span
+    # containing ONLY punctuation (STEP bolding a bare comma ahead of a citation --
+    # "...religious reasons)<b>,</b> <ref=...>Mt. 13:21</ref>") starts a new segment (per
+    # _MeaningSegmentParser's "one segment per <b> span" rule) but has NO real gloss content once
+    # cleaned (_clean(",") strips to ""). Previously this fell through the "if not gloss and note:
+    # gloss, note = note, ''" fallback below and PROMOTED whatever stray text sat between the
+    # surrounding <ref> tags (here, a lone ';') into the gloss itself -- a second, fake sort=0 row
+    # (G1375's own strong_meaning_parsed had TWO live rows at sort=0: the real gloss, and ';').
+    # Fixed here, not by touching the fallback (which is still needed for the FIRST-segment edge
+    # case): a content-empty segment is folded into the PRECEDING real segment's note/refs instead
+    # of becoming its own row -- no information lost (G1375's Mt.13.21/Mk.4.17 refs, previously
+    # stranded on the dropped phantom row, now correctly attach to the real "chase, pursuit;
+    # persecution" row), it just stops masquerading as an independent sense.
+    real_segments = []
     for seg in p.segments:
+        gloss_parts = _dedupe_preserve_order([_clean(g) for g in seg["gloss"] if _clean(g)])
+        if not gloss_parts and real_segments:
+            prev = real_segments[-1]
+            prev["note"] = prev["note"] + seg["note"]
+            prev["refs"] = prev["refs"] + seg["refs"]
+            continue
+        real_segments.append(seg)
+
+    rows = []
+    for seg in real_segments:
         gloss_parts = _dedupe_preserve_order([_clean(g) for g in seg["gloss"] if _clean(g)])
         gloss = ", ".join(gloss_parts)
         note = _clean(" ".join(seg["note"]))

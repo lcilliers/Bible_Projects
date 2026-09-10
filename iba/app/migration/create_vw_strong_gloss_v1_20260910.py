@@ -22,6 +22,16 @@ present, no stem/voice narrowing, no ambiguity handling, no base-lemma fallback.
 logic lives in `lib/lexical.py:resolve_code()` and is explicitly out of scope here -- researcher
 instruction, verbatim: "without going through any of the faulty code, configs and pointers." This
 view is the raw join surface underneath any future resolution layer, not a replacement for one.
+
+**Fixed 2026-09-10 (escalation #1668-cont.), `ord` for the LSJ/Mounce branches:** was `id AS ord`
+-- the row's own raw, globally-unique auto-increment primary key (e.g. 4184987), not a rank within
+that strong's own senses at all. Confirmed a real defect, not a display quirk: querying
+`WHERE strong='G1375'` returned `ord` values like `4184987`/`658136` sitting alongside
+`strong_meaning_parsed`'s genuinely 0-indexed `sort` values, reading as nonsense next to each
+other. Still no selection/resolution logic added (the view's own stated boundary) -- `ord` is now
+`ROW_NUMBER() OVER (PARTITION BY strong ORDER BY id) - 1`, a pure display-ordering convenience
+(0-indexed, matching `strong_meaning_parsed.sort`'s own convention), not a filter: every row from
+every source is still present, none dropped, none re-selected.
 """
 
 from __future__ import annotations
@@ -39,11 +49,12 @@ SELECT strong_variant AS strong, 'strong_meaning_parsed' AS source, sense_code A
 FROM strong_meaning_parsed WHERE deleted=0
 UNION ALL
 SELECT strong AS strong, 'strong_lsj_parsed' AS source, sense_label, gloss,
-       row_type, id AS ord, id AS parse_id
+       row_type, ROW_NUMBER() OVER (PARTITION BY strong ORDER BY id) - 1 AS ord, id AS parse_id
 FROM strong_lsj_parsed WHERE deleted=0
 UNION ALL
 SELECT strong AS strong, 'strong_mounce_parsed' AS source, NULL AS sense_label,
-       mounce_parsed AS gloss, row_type, id AS ord, id AS parse_id
+       mounce_parsed AS gloss, row_type,
+       ROW_NUMBER() OVER (PARTITION BY strong ORDER BY id) - 1 AS ord, id AS parse_id
 FROM strong_mounce_parsed WHERE deleted=0
 """
 

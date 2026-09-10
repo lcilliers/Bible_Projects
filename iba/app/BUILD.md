@@ -13668,3 +13668,59 @@ assumed either way.
 add_lexicon_header_pos_tags_setting_v1_20260910.py` (new), `iba/app/db/iba.db` (`cfg_setting`
 row added; `strong_meaning_parsed`/`strong_lsj_parsed`/`strong_mounce_parsed` fully rebuilt in
 place via the existing clear-and-rebuild convention).
+
+## 260. Second `lexicon.parse` fix (phantom punctuation-only senses) + `vw_strong_gloss.ord` fixed — and a much bigger, still-open over-segmentation finding (2026-09-10, escalation #1668 continued)
+
+Researcher, direct example, verbatim: `select * from vw_strong_gloss vw where vw.strong = 'G1375'`
+— *"the result is just rubbish, there is even two ord = 0 records."* Also flagged `status` as
+noise (`Spine-Check.ps1` now covers what it was a crude proxy for — dropped from the design,
+added to the schema-changes-queued list) and `testament` as another verse-level fact that should
+retire in favour of `verse_meta.testament`, same reasoning as `language` (D12).
+
+**Root-caused precisely (not guessed):** `strong_meaning_tree.sense_text` for `G1375` —
+`"<i>primarily</i> <b>chase, pursuit; persecution</b> (specifically for religious reasons)<b>,</b>
+<ref='Mat.13.21'>Mt. 13:21</ref>; <ref='Mrk.4.17; 10:30'>Mk. 4:17; 10:30</ref>"` — the isolated
+`<b>,</b>` (STEP bolding a bare comma ahead of a citation) starts a second `_MeaningSegmentParser`
+segment per its "one segment per `<b>` span" rule; once cleaned that segment's gloss is empty, and
+the `if not gloss and note: gloss, note = note, ""` fallback PROMOTED the stray `';'` sitting
+between the two `<ref>` tags into the gloss — a second, fake `sort=0` row.
+
+**Fixed** in `parse_meaning_tree_row()`: a segment with no real gloss content (after cleaning) is
+now folded into the PRECEDING real segment's note/refs rather than becoming its own row — no
+information lost (`G1375`'s `Mt.13.21`/`Mk.4.17` refs, previously stranded on the dropped phantom
+row, now correctly attach to the real `"chase, pursuit; persecution"` row). Re-ran `Lexicon-
+Parse.ps1 -Step Parse` (snapshotted first): 52,522 `strong_meaning_parsed` rows. Verified live:
+`G1375` now one clean row.
+
+**`vw_strong_gloss.ord` was a real, separate defect** (not the same bug): for the LSJ/Mounce
+branches, `ord` was `id AS ord` — the row's own raw, globally-unique auto-increment PK (e.g.
+`4184987`), not a rank at all, sitting next to `strong_meaning_parsed`'s genuinely 0-indexed
+`sort` and reading as nonsense. Fixed (`migration/create_vw_strong_gloss_v1_20260910.py`, same
+script re-run with `--replace`): `ord` is now `ROW_NUMBER() OVER (PARTITION BY strong ORDER BY
+id) - 1` for those two sources — display-ordering only, no row dropped or re-selected (the view's
+own stated boundary — researcher instruction: "without going through any of the faulty code,
+configs and pointers" — unchanged). Verified live: `G1375` now shows exactly one row per source at
+`ord=0` (LSJ correctly sequences 0=headword, 1/2/3=real senses).
+
+**A much bigger, NOT-fixed finding, surfaced investigating this — reported honestly, not
+downplayed:** `_MeaningSegmentParser`'s "one segment per `<b>` span" rule works well for a clean
+numbered-outline entry, but for an LSJ-style entry that uses inline bolding as EMPHASIS within
+continuous prose (not as sense boundaries), it shreds ONE real definition into dozens of spurious
+fragments. Quantified corpus-wide: of 45,373 `strong_meaning_tree` rows that survived parsing,
+**115 exploded into 10+ parsed rows each, 410 into 5–9, 2,140 into 2–4** (most of the 2–4 range are
+probably genuine short multi-clause senses; the 5+ range almost certainly isn't). Worst offenders
+are common, high-frequency, high-polysemy words — exactly the ones that matter most for this
+study: `G4160` (ποιέω, "to do/make") explodes into **58** fragments from one entry; `G4151`
+(πνεῦμα-related) into 33; `G2983`/`G3056`/`G2192`/`G2596` into 21–28 each. `resolved_sense` reading
+`sense_rows[0]` from an entry shredded this way is picking an effectively arbitrary fragment of a
+much longer definition, not "the primary sense." **Not attempted here** — reliably distinguishing
+"a `<b>` span STEP means as a real sense boundary" from "a `<b>` span STEP means as inline emphasis
+within one continuous definition" is a genuine design problem, not a quick pattern match; guessing
+a rule risks either still over-fragmenting or wrongly merging genuinely distinct senses. Reported
+to the researcher as the real reason "the parse is still unacceptable," not a smaller residual.
+
+**Files:** `iba/app/lib/lexiconparse.py` (`parse_meaning_tree_row` — segment-merge fix),
+`iba/app/migration/create_vw_strong_gloss_v1_20260910.py` (`ord` fix, re-run with `--replace`),
+`iba/app/db/iba.db` (`strong_meaning_parsed`/`strong_lsj_parsed`/`strong_mounce_parsed` rebuilt in
+place; `vw_strong_gloss` recreated). Snapshot:
+`iba/app/db/snapshots/iba-20260910T173246Z-pre-1668-segment-merge-fix.db`.
