@@ -12,6 +12,7 @@ Each call takes an open Cfg so its reads are traced with the rest.
 
 from __future__ import annotations
 
+import html
 import re
 
 import requests
@@ -165,3 +166,26 @@ class Step:
 
 def strip_html(html: str) -> str:
     return re.sub(r"\s+", " ", re.sub(r"<[^>]+>", " ", html)).strip()
+
+
+def preview_to_text(preview: str | None) -> str:
+    """verse.preview (STEP interlinear HTML) -> verse.text (clean, tag-free plain
+    text). Single source of truth for this derivation — was duplicated ad hoc in the
+    one-off backfill (iba/app/tools/_apply_verse_plaintext_column.py, escalation
+    #1063) and never wired into ingestion itself (handlers/raw.py:verses_one), so
+    every verse row written since that one-time run carried text=NULL despite
+    cfg_column(verse.text).filled_by already claiming 'handlers/raw.py:verses'
+    (escalation #1662, 2026-09-10 — 723 rows found stale this way)."""
+    if not preview:
+        return ""
+    s = preview
+    # drop the leading verse-number span (e.g. <span class='verseNumber'>Rom 1:1</span>)
+    s = re.sub(r"<span[^>]*class='verseNumber'[^>]*>.*?</span>", " ", s, flags=re.I | re.S)
+    # strip all remaining tags
+    s = re.sub(r"<[^>]+>", " ", s)
+    # unescape HTML entities
+    s = html.unescape(s)
+    # collapse whitespace and tidy spaces before punctuation
+    s = re.sub(r"\s+", " ", s).strip()
+    s = re.sub(r"\s+([,.;:!?])", r"\1", s)
+    return s

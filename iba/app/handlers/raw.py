@@ -19,7 +19,7 @@ import datetime
 import re
 
 from .base import Ctx, Outcome, ok, fail
-from ..lib.stepapi import StepUnavailable
+from ..lib.stepapi import StepUnavailable, preview_to_text
 
 # Fallback only — the real value is `cfg_setting raw.strong_base_pattern` (module `raw`), the
 # single home for this fact after it was found duplicated three ways: here, in
@@ -202,6 +202,7 @@ def verses_one(ctx: Ctx, code: str, c: dict) -> None:
             continue
         vid, vnew = _write(ctx, "call3_strong", "verse", {
             "osisId": osis, "reference": r.get("key"), "preview": r.get("preview"),
+            "text": preview_to_text(r.get("preview")),
             "step_version": ctx.step.version, "created_at": _now(), "deleted": 0})
         c["verse_new"] += vnew
         c["strong_verse"] += _write(ctx, "call3_strong", "strong_verse",

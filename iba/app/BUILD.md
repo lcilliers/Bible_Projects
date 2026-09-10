@@ -13415,3 +13415,97 @@ migration's own printed summary alone.
 **Files:** `iba/app/lib/lexical.py` (`resolve_code`, `build_for_verse`),
 `iba/app/migration/resolved_sense_removed_v1_20260907.py` (new), `iba/app/db/iba.db` (71,949
 `verse_lexical` rows updated in place, same ids).
+
+## 255. `verse.text` ingestion gap closed — root fix, not another one-off backfill (2026-09-10, escalation #1662)
+
+Researcher-raised: *"investigate why 723 verses have null text and fix."* Confirmed live: 723 of
+29,760 verse rows (2.4%) had `text IS NULL` while `preview` (the STEP HTML `text` is derived from)
+was genuinely populated for all of them — not a `governance.verse_gap_by_design` case (that's about
+verses missing entirely; these rows existed, just one derived column was stale).
+
+**Root cause, not a fresh accident:** `cfg_column(verse, text).use` already claimed `filled_by:
+handlers/raw.py:verses` (escalation #1063), but `handlers/raw.py:verses_one` never actually set
+`text` on insert — the one-time backfill script (`iba/app/tools/_apply_verse_plaintext_column.py`,
+also from #1063) populated the column once, but nothing kept it in sync afterward. Every verse row
+written by ingestion since that one run carried `text=NULL`. Matches `feedback_root_fix_not_one_off`
+— fixed the write path itself, not just re-run the backfill again.
+
+**Fix:** the HTML→plaintext derivation moved out of the one-off script and into
+`iba/app/lib/stepapi.py:preview_to_text` (new function, byte-identical logic to the old script's
+`to_text` — strip the leading `verseNumber` span, strip remaining tags, unescape entities, tidy
+whitespace/punctuation) — now the single source of truth. `handlers/raw.py:verses_one` calls it at
+insert time (`"text": preview_to_text(r.get("preview"))` alongside the existing `preview` write), so
+`cfg_column.filled_by`'s claim is now actually true. `_apply_verse_plaintext_column.py` was rewritten
+to import the shared function instead of duplicating it, and kept as the re-runnable catch-up tool
+for any future ingestion gap.
+
+**Backfill applied + verified:** ran the (now-shared-logic) script live — `0` of 29,760 rows have
+`text IS NULL` afterward (spot-checked `Matt.25.10` directly against the DB, not just the script's
+own printed summary).
+
+**Registration gap found + escalated separately, not silently skipped:** `_apply_verse_plaintext_column.py`
+itself had never been registered in `cfg_utility` (predates `governance.new_utility_registration_timing`
+or was simply missed) — proposed via `Config-Maintenance.ps1 -Step Propose` (escalation #1664,
+`re-assigned`/`ready_for_approval`/assigned to Researcher — genuinely new, not self-approved, per
+`feedback_iba_config_changes_require_researcher_approval_never_silent`).
+
+**Files:** `iba/app/lib/stepapi.py` (new `preview_to_text`), `iba/app/handlers/raw.py`
+(`verses_one` now writes `text`), `iba/app/tools/_apply_verse_plaintext_column.py` (rewritten to
+import the shared function), `iba/app/db/iba.db` (723 `verse` rows backfilled).
+
+## 256. `verse_meta.status` + `VerseMeta.ps1 -Step SetStatus` built (2026-09-10, escalation #1661)
+
+Researcher instruction, verbatim: *"Add an additional column to verse_meta to set the status of
+the verse. Status values: exclude; anchor; citated; analysed. ... proceed to create column. Also
+create a ps routine whereby researcher can update the status for a range of verses by comma
+delimited refences. Ignore the status anchor, it is already included as a separate column.
+Updated column must be stamped if the status change."*
+
+**Schema:** `verse_meta.status` (TEXT, nullable) + `verse_meta.status_changed_at` (TEXT,
+nullable) added via `migration/add_verse_meta_status_column_v1_20260910.py`, same shape as
+`create_verse_meta_table_v1_20260909.py` (idempotent, `register_config()` inline in the same
+transaction — schema registration for a change just directed, not a new runtime judgement call).
+`anchor` deliberately NOT in this column's domain — it's already `verse_meta.is_passage_anchor`
+(#1608), per the instruction. Domain = `cfg_enum verse_meta_status` (exclude / citated / analysed),
+3 rows added. `status_changed_at` set ONLY when `status` actually changes value (verified live —
+re-setting the same status a second time leaves the timestamp untouched, satisfies "stamped if the
+status change" literally, not on every touch).
+
+**Write path:** `iba/app/lib/versemeta.py` (new) — standalone utility, same shape as
+`lib/escalation.py`, not a `run.py` dispatcher step (a direct researcher-driven maintenance
+action, not a repeatable pipeline stage — same classification `Behaviour.ps1` already has).
+`run_set_status(cfg, references, status)`: validates `status` against `cfg.enum
+('verse_meta_status')` once up front; each reference is matched against `verse.osisId` first,
+then `verse.reference` (so both `'Gen.1.1'` and `'Gen 1:2'` work in the same comma-delimited
+list); a reference that matches no verse (or a verse with no `verse_meta` row) is reported, not
+raised — one bad reference in a batch doesn't abort the rest. CLI: `python -m
+iba.app.lib.versemeta set-status --references "..." --status ...`.
+
+**PS wrapper:** `iba/app/ps/VerseMeta.ps1 -Step SetStatus -References "..." -Status ...`.
+
+**Tested live, then cleaned up** (test writes were not real researcher-directed status-setting,
+reset to NULL after each check so no fake state was left in the DB): osisId match (`Rom.1.1`),
+display-form match (`'Rom 1:2'` → `Rom.1.2`), a genuinely nonexistent verse (`Gen.1.1` — confirmed
+absent from `verse` per `governance.verse_gap_by_design`, not a tool bug) correctly reported
+NOT FOUND rather than erroring, idempotent re-set of the same status left `status_changed_at`
+untouched (0 updated, reported "already set"), and an invalid status string was cleanly rejected
+against the live `cfg_enum`.
+
+**Registered:** both new files added to `cfg_utility` (module `versemeta` / script `VerseMeta.ps1`).
+
+**Open, flagged rather than silently done or silently skipped:** `configmaint.validate` (run
+after this build) confirms one real gap from this work — `VerseMeta.ps1` has no tab in
+`iba/docs/ps tools worksheet.xlsx` yet (`governance.ps_worksheet_sync_on_change` requires this in
+the same unit of work). NOT applied here per `feedback_warn_before_editing_excel_tool_interface`
+(a write to that file while open in Excel crashes it) — flagged to the researcher in chat instead
+of edited unasked. The two "zero Cfg-method call sites" advisory findings for the new
+`cfg_utility` rows (the migration uses raw sqlite3, the PS wrapper only shells to Python — same
+shape as other already-accepted entries) and the "bypasses run.py" advisory finding (same
+classification `Behaviour.ps1` already carries) are pre-existing informational categories, not new
+problems — left as `config_exempt=0` rather than self-marking exempt, since that's itself a config
+judgement call.
+
+**Files:** `iba/app/migration/add_verse_meta_status_column_v1_20260910.py` (new),
+`iba/app/lib/versemeta.py` (new), `iba/app/ps/VerseMeta.ps1` (new), `iba/app/db/iba.db`
+(2 columns + 3 `cfg_enum` rows + `cfg_column`/`cfg_utility` registration; 0 `verse_meta.status`
+values populated — set going forward by the researcher).

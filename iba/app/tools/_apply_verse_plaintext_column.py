@@ -6,32 +6,24 @@ span). That HTML is retained (span data derives from it); this adds a sibling
 
 Safe to re-run: adds the column only if missing and repopulates every row.
 
+Registered 2026-09-10 (escalation #1662): the derivation itself moved to
+lib/stepapi.py:preview_to_text (single source of truth, also now called at
+insert time by handlers/raw.py:verses_one) -- this script re-imports it rather
+than keeping its own copy, and stays useful as the catch-up backfill for any
+row ingestion left behind (e.g. rows written before that wiring existed).
+
 Usage:
     python iba/app/tools/_apply_verse_plaintext_column.py [--db PATH] [--dry-run]
 """
 import argparse
-import html
-import re
 import sqlite3
 import sys
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parents[3]))
+from iba.app.lib.stepapi import preview_to_text as to_text  # noqa: E402
 
 DEFAULT_DB = r"C:\Bible_study_projects\iba\app\db\iba.db"
-
-
-def to_text(preview: str) -> str:
-    if not preview:
-        return ""
-    s = preview
-    # drop the leading verse-number span (e.g. <span class='verseNumber'>Rom 1:1</span>)
-    s = re.sub(r"<span[^>]*class='verseNumber'[^>]*>.*?</span>", " ", s, flags=re.I | re.S)
-    # strip all remaining tags
-    s = re.sub(r"<[^>]+>", " ", s)
-    # unescape HTML entities
-    s = html.unescape(s)
-    # collapse whitespace and tidy spaces before punctuation
-    s = re.sub(r"\s+", " ", s).strip()
-    s = re.sub(r"\s+([,.;:!?])", r"\1", s)
-    return s
 
 
 def column_exists(cur, table: str, col: str) -> bool:
