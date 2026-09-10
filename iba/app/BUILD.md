@@ -13596,3 +13596,75 @@ guessed past.
 **Files:** `iba/docs/1607-open-items-action-plan-v1-20260909.md` (edited in place, every item),
 `iba/app/db/iba.db` (6 `cfg_column.use` rows updated — text only, no `verse_lexical` schema or data
 change).
+
+## 259. `lexicon.parse` fixed — bare STEP header/transliteration lines no longer become fake senses (2026-09-10, escalation #1668)
+
+Researcher instruction, verbatim, cutting off further back-and-forth: *"My first aim is to ensure
+that the code that run the parse ... [can] rerun at any time, that this code is producing sensible
+results — which at this moment it is not. So the fixing of the parse routine is priority nr 1.
+secondly, when we reproduce the lexicals, then I would assume that the resolved-sense will be
+pulled directly from parse, and not recalculated."*
+
+**Root cause, confirmed in code (not the STEP-source glued-duplicate issue reported earlier this
+escalation — a different, our-own-code bug):** STEP's own `mediumDef` places a bare grammatical
+part-of-speech abbreviation ('v', 'n m', 'adj'...) or the code's own transliteration ahead of (or
+between) numbered senses as a section header — e.g. `H0503`: `"v<br>1) to make thousand-fold...
+<br>n m<br>3) chief, chiliarch"`; `H6310`: `": lip/mouth<br>peh<br>1) mouth..."` ('peh' = H6310's
+own `stepTransliteration`, not a translation). `handlers/raw.py:write_tree_rows` splits on every
+line with no concept of "header vs. sense," so these became their own `strong_meaning_tree` rows,
+sitting at `sort=0` for 134 live strong codes and reaching **17,740 of 544,590 live
+`verse_lexical.resolved_sense` values (3.3%)** via today's earlier revival (#257).
+
+**Fix, in `lib/lexiconparse.py` (the actual "parse" — `meaning_tree_rows()`, called by
+`handlers/lexicon.py:rebuild_parsed_tables`/`Lexicon-Parse.ps1 -Step Parse`, pure DB-to-DB, no
+network, fully re-runnable, matching the researcher's own description exactly):** new
+`is_header_only_line()` — a `strong_meaning_tree` row with no `sense_code` of its own, whose
+entire tag-stripped text exact-matches a bare POS abbreviation (new `cfg_setting
+lexicon.header_pos_tags`, 22 values, config-driven per this module's own established rule) or the
+code's own `strong.stepTransliteration`, is dropped before it ever reaches
+`parse_meaning_tree_row()` — never becomes a `strong_meaning_parsed` row at all. `sort` is then
+**renumbered contiguously from 0** per `(lemma_key, strong_variant)` group across the surviving
+rows, so excluding a line that used to sit at `sort=0` doesn't leave a permanent gap (preserves
+#1663's "sort=0 is always the true first sense" invariant).
+
+**Validated before applying:** dry-ran `meaning_tree_rows()` against live data (no write) —
+`H0503`/`H6310G`/`H6310H` (real, live codes) confirmed clean at `sort=0`; `G2741`/`G0004`
+(unrelated cases) confirmed byte-identical, untouched; corpus-wide sweep of the candidate rebuild
+found **0 remaining live-code header artifacts at sort=0**. Only the non-live bare `H6310` lemma
+row (not a registered `strong` code — `resolve_code()` never reaches it, zero live impact) still
+shows 'peh', left as-is rather than chased for a provably inert case.
+
+**Applied:** `iba.db` snapshotted first
+(`iba/app/db/snapshots/iba-20260910T165629Z-pre-1668-lexicon-parse-fix.db`). `cfg_setting
+lexicon.header_pos_tags` seeded via `migration/add_lexicon_header_pos_tags_setting_v1_20260910.py`
+(same one-off, non-approval-gated pattern as `add_lexicon_parse_settings.py`, registered in
+`cfg_utility`). `Lexicon-Parse.ps1 -Step Parse` re-run: 52,523 `strong_meaning_parsed` rows (was
+52,815 — down 292, consistent with removed header lines; 23 lemma-derived rows per #1655's own
+fallback, unaffected), 35,571 `strong_lsj_parsed`, 5,617 `strong_mounce_parsed`.
+
+**Residual, reported honestly, not chased further today:** a third, much smaller, different-shape
+defect — 4 rows corpus-wide at `sort=0` with length ≤1 (`G1375` `';'`, `G3313`/`G4149`/`G4512`
+`'a'`) — traced to STEP's own LSJ-style markup occasionally bolding an isolated article/punctuation
+mid-sentence (`<b>a</b> partner's <b>portion, partnership,...`) as its own `<b>` span, which
+`_MeaningSegmentParser`'s "one segment per `<b>` span" design (correct for the normal case)
+reads as a spurious extra sense. Confirmed live against STEP directly for both. Distinguishing
+this from a genuine one-word gloss (`'if'`, `'we'`, `'sow'`, `'ram'` etc. all legitimately survive
+at short lengths, confirmed real) needs more care than a blanket length cutoff — not attempted
+here, flagged instead of guessed.
+
+**Deliberately NOT done this turn, holding per the researcher's own "no piecemeal" instruction
+(this chat, earlier today):** `verse_lexical.resolved_sense` still reflects the OLD, now-corrected
+`strong_meaning_parsed` — the 17,740-row figure above is what WAS wrong before this fix, not a
+live count after it (the parse table is fixed; the lexicals reading from it are not yet rebuilt).
+`resolve_code()` already satisfies "pulled directly from parse, not recalculated" as designed
+(`sense_rows[0][1]`, a plain ordered read, no derivation) — no code change needed there. Whether to
+run the `verse_lexical` rebuild now (a correctness-only refresh against fixed source data, arguably
+not the same "piecemeal" the researcher meant, which was about *design-decision* churn) or hold it
+for the full #1607 consolidated batch is an open question, put back to the researcher rather than
+assumed either way.
+
+**Files:** `iba/app/lib/lexiconparse.py` (`meaning_tree_rows`, new `is_header_only_line`/
+`_strip_tags`, new `Rules.header_pos_tags` field), `iba/app/migration/
+add_lexicon_header_pos_tags_setting_v1_20260910.py` (new), `iba/app/db/iba.db` (`cfg_setting`
+row added; `strong_meaning_parsed`/`strong_lsj_parsed`/`strong_mounce_parsed` fully rebuilt in
+place via the existing clear-and-rebuild convention).

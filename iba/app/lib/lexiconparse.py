@@ -61,6 +61,14 @@ _DEFAULTS = {
     "lexicon.lsj_top_level_label_pattern": r"^[IVXLCDM]+$",
     "lexicon.lsj_sublabel_pattern": r"^\d+[a-z]*$",
     "lexicon.bracket_pairs": {"(": ")", "[": "]", "{": "}"},
+    # escalation #1668, 2026-09-10: STEP's own BDB/Mounce-derived mediumDef text places a bare
+    # part-of-speech abbreviation ahead of (or between) numbered senses as a section header, e.g.
+    # H0503: "v<br>1) to make thousand-fold...<br>n m<br>3) chief, chiliarch" -- "v"/"n m" label
+    # the numbered group that follows, they are not senses themselves. See is_header_only_line().
+    "lexicon.header_pos_tags": [
+        "v", "vb", "n", "a", "adj", "adv", "prep", "subst", "conj", "interj", "pron", "num",
+        "part", "n m", "n f", "n c", "nm", "nf", "nc", "n pr m", "n pr f", "n pr loc",
+    ],
 }
 
 
@@ -78,6 +86,7 @@ class Rules:
     lsj_sublabel_re: re.Pattern
     open_brackets: str
     close_brackets: str
+    header_pos_tags: frozenset
 
 
 def load_rules(cfg) -> Rules:
@@ -99,6 +108,9 @@ def load_rules(cfg) -> Rules:
             cfg.setting("lexicon.lsj_sublabel_pattern", d["lexicon.lsj_sublabel_pattern"])),
         open_brackets="".join(pairs.keys()),
         close_brackets="".join(pairs.values()),
+        header_pos_tags=frozenset(
+            t.strip().lower() for t in
+            cfg.setting("lexicon.header_pos_tags", d["lexicon.header_pos_tags"])),
     )
 
 
@@ -241,17 +253,69 @@ def parse_meaning_tree_row(lemma_key: str, strong_variant: str, sort: int, sense
     return rows
 
 
+def _strip_tags(s: str) -> str:
+    return re.sub(r"<[^>]+>", "", s or "").strip()
+
+
+def is_header_only_line(sense_code: str, sense_text: str, transliteration: str | None,
+                        rules: Rules) -> bool:
+    """True if this `strong_meaning_tree` row is a bare STEP-source header/label line — a
+    part-of-speech abbreviation (BDB/Mounce convention: 'v', 'n m', 'adj', ...) or the code's own
+    transliteration echoed as if it were a gloss — sitting ahead of (or between) the real numbered
+    senses, not a sense in its own right. Confirmed live, escalation #1668, 2026-09-10: STEP's own
+    `call2_getInfo('H0503').mediumDef` = `'v<br>1) to make thousand-fold...<br>n m<br>3) chief,
+    chiliarch'` ('v'/'n m' are headers for the numbered groups that follow, not senses);
+    `call2_getInfo('H6310').mediumDef` = `': lip/mouth<br>peh<br>1) mouth...'` ('peh' is H6310's
+    own `stepTransliteration`, not a translated gloss). Only fires when the row has NO sense_code
+    of its own — an already-numbered '1)'/'2a)' row is never excluded, even if its text happens to
+    coincide, since a real numbered sense could in principle BE just a short abbreviation."""
+    if sense_code:
+        return False
+    stripped = _strip_tags(sense_text).lower()
+    if not stripped:
+        return False
+    if stripped in rules.header_pos_tags:
+        return True
+    if transliteration and stripped == transliteration.strip().lower():
+        return True
+    return False
+
+
 def meaning_tree_rows(cfg) -> list[tuple]:
     """All of strong_meaning_tree, parsed. -> [(lemma_key, strong_variant, sort, sense_code,
-    gloss, verse_refs, note, row_type), ...]"""
+    gloss, verse_refs, note, row_type), ...]
+
+    Escalation #1668, 2026-09-10: a row whose entire text is a bare STEP-source header/label
+    (see `is_header_only_line()`) is dropped here, before it ever reaches
+    `parse_meaning_tree_row()` — so it never becomes a `strong_meaning_parsed` row at all, rather
+    than being written and relied on for every downstream reader to filter back out (the
+    researcher's own framing: "resolved-sense will be pulled directly from parse, not
+    recalculated" — the exclusion belongs in the parse step itself). `sort` is then RENUMBERED
+    contiguously from 0 per (lemma_key, strong_variant) group across the surviving rows — the
+    excluded header line would otherwise leave a permanent gap at the low end (e.g. H6310 losing
+    its old sort=0 'peh' row would leave 'mouth' sitting at sort=1, breaking the "sort=0 is always
+    the true first sense" invariant escalation #1663 confirmed universally true corpus-wide)."""
     rules = load_rules(cfg)
     cur = cfg.conn.execute(
-        "SELECT lemma_key, strong_variant, sort, sense_code, sense_text FROM strong_meaning_tree "
-        "WHERE deleted=0 ORDER BY lemma_key, sort")
+        "SELECT smt.lemma_key, smt.strong_variant, smt.sort, smt.sense_code, smt.sense_text, "
+        "s.stepTransliteration "
+        "FROM strong_meaning_tree smt LEFT JOIN strong s ON smt.strong_variant = s.strongNumber "
+        "WHERE smt.deleted=0 ORDER BY smt.lemma_key, smt.strong_variant, smt.sort")
+
+    grouped: dict[tuple[str, str], list[tuple[str, str]]] = {}
+    for lemma_key, strong_variant, sort, sense_code, sense_text, translit in cur.fetchall():
+        if is_header_only_line(sense_code, sense_text, translit, rules):
+            continue
+        grouped.setdefault((lemma_key, strong_variant), []).append((sense_code, sense_text))
+
     rows = []
-    for lemma_key, strong_variant, sort, sense_code, sense_text in cur.fetchall():
-        rows.extend(parse_meaning_tree_row(
-            lemma_key, strong_variant, sort, sense_code, sense_text, rules))
+    for (lemma_key, strong_variant), items in grouped.items():
+        next_sort = 0
+        for sense_code, sense_text in items:
+            for parsed in parse_meaning_tree_row(
+                    lemma_key, strong_variant, next_sort, sense_code, sense_text, rules):
+                rows.append(parsed)
+                next_sort += 1
     return rows
 
 
