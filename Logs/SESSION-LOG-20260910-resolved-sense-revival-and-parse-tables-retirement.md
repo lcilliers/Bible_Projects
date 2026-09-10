@@ -112,4 +112,6 @@ created (active); 6 `cfg_column.use` corrections; `cfg_setting lexicon.header_po
 
 ## Git state
 
-<!-- filled in after commit, per governance.session_log_required_content -->
+Branch: `main`. Commit: `d1b03fddba501b52789d8aab5662b856b8f10555` (2026-09-10 19:10:04 +0100).
+Pushed and confirmed: `git status` reports "up to date with 'origin/main', nothing to commit,
+working tree clean" (remote updated `dee1c059..d1b03fdd`).
