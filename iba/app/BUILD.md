@@ -13509,3 +13509,48 @@ judgement call.
 `iba/app/lib/versemeta.py` (new), `iba/app/ps/VerseMeta.ps1` (new), `iba/app/db/iba.db`
 (2 columns + 3 `cfg_enum` rows + `cfg_column`/`cfg_utility` registration; 0 `verse_meta.status`
 values populated — set going forward by the researcher).
+
+## 257. `resolved_sense` revived corpus-wide (ord=0), `gloss_consistent_in_verse` confirmed already sound (2026-09-10, escalations #1596/#1663)
+
+Researcher instruction, verbatim, this chat: *"my intent is that the lexical will carry the
+strong_meaning_parse ord = 0 row as resolved_sense and the surface. the gloss_consistent_in_verse
+flag should be retained. ... the work we did earlier today finally brought me around to settle on
+the ord=0."* Settles both #1596 (what to do about the stale `gloss_consistent_in_verse=0` flags)
+and #1663 (how `strong_meaning_parsed` should reconcile against `strong`) in one decision.
+
+**Code:** `resolve_code()` (`lib/lexical.py`) now sets `row["resolved_sense"] = sense_rows[0][1]`
+— `sense_rows` was already `ORDER BY sort, id` (exact-`strong_variant` match, or the base-lemma
+fallback already used for `ambiguity_note`), so its first element IS the `sort=0` row (`sort` is
+0-indexed corpus-wide, confirmed #1663). No M-code restriction, unlike #1527's original scoping —
+that restriction existed to keep a *compromised* value (the old LSJ/Mounce dump) off Layer 2; this
+is the same single clean gloss for every code, and a base-fallback case is still visibly flagged
+via `ambiguity_note` on the same row. `_apply_gloss_consistency` needed **no code change at all**
+— confirmed live reading its own docstring + history: it has been keyed on `surface`, not
+`resolved_sense`, since escalation #1527 (2026-09-06), a full day *before* #1575 (2026-09-07) even
+removed `resolved_sense` — so it was never actually broken by that removal. The 106,658 stale
+`=0` flags #1596 found were just never recomputed since #1527's fix, not wrong answers; today's
+full rebuild recomputed them anyway (unavoidable side effect of `build_for_verse` — confirms
+rather than contradicts: `106,660` now, ~the same count, the 2-row difference consistent with
+ordinary corpus growth since 2026-09-06).
+
+**Validated small first, live** (documented in the new migration's own docstring): Rev.17.4/G2192
+(the original #1575 case — now carries the single clean ord=0 gloss, not the old 2,652-char LSJ
+dump), G2071 (one of #1663's 250 zero-`strong_meaning_parsed`-row codes — `resolve_code()` called
+directly, `resolved_sense` correctly stays `None`), G0004 (one of #1663's 347 duplicate-sort=0
+codes — deterministic tie-break confirmed, lowest `strong_meaning_parsed.id` wins: `'weightless'`
+over `'not burdensome'`).
+
+**Corpus-wide migration** (`migration/resolved_sense_revived_v1_20260910.py`, same
+`build_for_verse_ids` identity-stable path #1575's own migration used — DB snapshotted first via
+`lib/dbsnapshot.snapshot()`): 29,755 verses, 544,590 codes, 544,538 updated / 52 unchanged / 0
+inserted / 0 removed. **544,590 of 544,590 live rows now have a non-null `resolved_sense`** — 0
+remaining NULLs, but NOT because #1663's 250-gap codes were somehow covered: verified live, none
+of those 250 codes currently have ANY row in `verse_lexical` at all (not yet processed into it by
+any cluster/word build) — when one of them eventually is, `resolved_sense` will correctly come out
+`None` for it (per the G2071 check above), not silently guessed.
+
+**Files:** `iba/app/lib/lexical.py` (`resolve_code` — resolved_sense assignment revived; comments
+in `build_for_verse`/the zero-sense_rows branch updated to match, no other logic changed),
+`iba/app/migration/resolved_sense_revived_v1_20260910.py` (new), `iba/app/db/iba.db` (544,538
+`verse_lexical` rows updated in place, same ids; snapshotted first to
+`iba/app/db/snapshots/iba-20260910T160543Z-pre-1596-resolved-sense-revived.db`).

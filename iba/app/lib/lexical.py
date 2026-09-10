@@ -198,9 +198,11 @@ def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None,
         # still data in the sense column that does not serve a purpose... remove it from the
         # column for all the lexicals"): this branch used to store the raw stepGloss dictionary
         # text here ("stepGloss: {full text}") -- itself exactly the "dump of the generic data
-        # from the base table" complaint, `strong.stepGloss` being that base table. resolved_sense
-        # is no longer written by this function at all, in either branch -- role/status/
-        # ambiguity_note are UNCHANGED, matching #1527's own original restriction.
+        # from the base table" complaint, `strong.stepGloss` being that base table. Still true
+        # after #1596/#1663-cont.'s revival below: no strong_meaning_parsed row (exact OR
+        # base-fallback) means no ord=0 gloss to carry -- resolved_sense stays None, a genuine
+        # data gap (#1663's own "250 strong codes with zero rows" finding), not silently guessed
+        # from stepGloss. role/status/ambiguity_note are unaffected by any of this.
         row["status"] = "resolved"
         return row
 
@@ -220,8 +222,23 @@ def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None,
     # 2,652-char value, one of 277 strongs corpus-wide with the same pattern. That output was never
     # per-occurrence (a pure function of strong/morph_code, #1527 v2's own diagnosis) and, per the
     # researcher's direct instruction, serves no purpose in this table -- removed outright, not
-    # trimmed. sense_rows/genuinely_ambiguous above are still computed and still drive
-    # ambiguity_note, which stays live; only the resolved_sense assignment is gone.
+    # trimmed. resolved_sense went unwritten (always None) from #1575 until #1596/#1663-cont.
+    # below, ~4 days later.
+    #
+    # REVIVED, escalation #1596/#1663-cont. (2026-09-10), researcher instruction verbatim: "my
+    # intent is that the lexical will carry the strong_meaning_parse ord = 0 row as resolved_sense
+    # and the surface" -- settled on ord=0 after #1663's own reconciliation work found
+    # strong_meaning_parsed.sort is 0-indexed (MIN(sort)=0 for every live strong_variant/lemma_key
+    # group, no exceptions) and that ord=1 (the earlier assumption) was silently skipping the true
+    # first sense for most codes. `sense_rows` is already `ORDER BY sort, id` (exact-variant OR
+    # base-fallback, whichever this call resolved above) — its first element IS that ord=0 row, a
+    # stable pick even for the 347 strong_variant codes with two rows tied at sort=0 (lowest `id`
+    # wins). No M-code restriction here (#1527's original "only for M-codes, not T-codes" concern
+    # was about a COMPROMISED value reaching Layer 2 undetected — the old LSJ/Mounce-dump value;
+    # this is the same single clean gloss for every code, and a base-fallback/ambiguous case is
+    # already visibly flagged via `ambiguity_note` set just above, not silently hidden) — applies
+    # to every code, content or function word alike, same as `role`/`status`.
+    row["resolved_sense"] = sense_rows[0][1]
     row["status"] = "resolved"
     return row
 
@@ -495,9 +512,10 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None"
             sibling_codes = [c for j, c in enumerate(codes) if j != i]
             _layer1_fields(r, sp, sibling_codes, r["language"], testament,
                           code_classes, base_pattern)
-            # #1527's M-code gate here (2026-09-06: null resolved_sense for non-M-code words) is
-            # RETIRED, superseded 2026-09-07 (#1575/#1527-cont.) -- resolve_code() itself no longer
-            # ever populates resolved_sense, for any word, so this gate has nothing left to do.
+            # #1527's M-code gate here (2026-09-06: null resolved_sense for non-M-code words) was
+            # RETIRED 2026-09-07 (#1575/#1527-cont., resolved_sense unwritten for any word) and
+            # STAYS retired now that #1596/#1663-cont. (2026-09-10) revives resolved_sense
+            # corpus-wide, no M-code restriction -- see resolve_code()'s own docstring for why.
             # mcode_strongs is still threaded through/loaded (harmless, unused here) rather than
             # ripped out of every call site -- a smaller, separate cleanup if it's ever a problem.
         per_span_resolved.append((sp, resolved))
