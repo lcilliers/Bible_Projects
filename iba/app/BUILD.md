@@ -13724,3 +13724,39 @@ to the researcher as the real reason "the parse is still unacceptable," not a sm
 `iba/app/db/iba.db` (`strong_meaning_parsed`/`strong_lsj_parsed`/`strong_mounce_parsed` rebuilt in
 place; `vw_strong_gloss` recreated). Snapshot:
 `iba/app/db/snapshots/iba-20260910T173246Z-pre-1668-segment-merge-fix.db`.
+
+## 261. `vw_strong_meaning_raw` — a raw, unparsed sibling view to `vw_strong_gloss`, and the method-reconsideration verdict (2026-09-10, escalation #1668 continued)
+
+Researcher, comparing `G3551`'s `vw_strong_gloss` rows (7 disconnected `strong_meaning_parsed`
+fragments, one of them the bare word `"the"`) against its `strong_meaning_tree` source (one
+coherent paragraph) side by side: *"this is fundamentally flawed. prepare a view that pulls the
+raw meaning tables into one listing for a strong — similar to what you have done for the parse."*
+Preceding verdict, verbatim, same thread: *"I can see that you are tweaking the parsing, but it is
+not working and maybe the entire method of distilling something meaningful must be
+reconsidered."* — accepted as correct, not contested. No further parser patch attempted after
+this; the `vw_strong_gloss.ord`/segment-merge fixes earlier this escalation (#260) are real, but
+this closes the escalation's "keep tweaking" phase.
+
+**Built:** `iba/app/migration/create_vw_strong_meaning_raw_v1_20260910.py` →
+`vw_strong_meaning_raw` — same shape and registration pattern as `vw_strong_gloss` (sibling, not a
+replacement), but pulling the RAW source directly: `strong_meaning_tree.sense_text` (verbatim,
+untouched) + `strong_lexicon.lsj`/`.mounce` (verbatim, untouched), keyed by `strong`, tagged by
+literal source table.column. No HTML stripped, no `<b>`-span segmentation, no sense boundaries
+decided, nothing merged or dropped — genuinely one layer upstream of any parsing decision, so a
+source-vs-parse comparison (`vw_strong_meaning_raw` vs. `vw_strong_gloss`) is now one query each
+side instead of hand-reading raw HTML. Verified live: `G3551` shows exactly 3 rows (one per
+source), `strong_meaning_tree`'s own row intact as the single 659-character paragraph. Registered
+in `cfg_utility` (escalation #1674, same `configmaint.propose` cycle as `vw_strong_gloss` — the
+view itself deliberately NOT in `cfg_table`, same reasoning as #1654/#1658).
+
+**Where this leaves the method question:** open, the researcher's own call, not decided or
+sketched unilaterally here. Two now-separated, confirmed-real problems on the table: (1)
+representation fidelity — the current `<b>`-span segmentation model genuinely does not reconstruct
+what a continuous-prose entry says (the `"the"` case); (2) sense selection — even a faithful parse
+of an entry like `G3551`/νόμος (432 occurrences, five-plus genuinely distinct senses each tied to
+different actual verses) has no principled single "resolved" value at the Strong's-code grain,
+independent of which verse is being read. Neither is fixed; both are now visible side by side via
+`vw_strong_meaning_raw`/`vw_strong_gloss` for the researcher's own review.
+
+**Files:** `iba/app/migration/create_vw_strong_meaning_raw_v1_20260910.py` (new), `iba/app/db/iba.db`
+(`vw_strong_meaning_raw` created; `cfg_utility` row added).
