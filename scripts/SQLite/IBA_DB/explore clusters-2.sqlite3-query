@@ -1,0 +1,31 @@
+-- database: ../../../iba/app/db/iba.db
+
+SELECT
+ cluster.cluster_code 
+ ,cluster.short_name
+ ,cluster.description
+ ,strong.strongNumber
+ ,strong.stepGloss
+,span.surface
+,verse.reference
+,verse.text
+
+FROM cluster
+inner join cluster_strong
+on cluster.cluster_code = cluster_strong.cluster_code   
+inner join strong
+on cluster_strong.strong = strong.strongNumber   
+inner join span
+on strong.strongNumber = span.strong_variant
+inner join verse
+on span.verse_id = verse.id   
+inner join verse_meta
+on verse.id = verse_meta.verse_id
+
+
+
+
+
+
+where cluster.cluster_code = 'M10'
+and verse_meta.deleted = 0;

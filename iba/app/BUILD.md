@@ -13760,3 +13760,56 @@ independent of which verse is being read. Neither is fixed; both are now visible
 
 **Files:** `iba/app/migration/create_vw_strong_meaning_raw_v1_20260910.py` (new), `iba/app/db/iba.db`
 (`vw_strong_meaning_raw` created; `cfg_utility` row added).
+
+## 262. The 3 parse tables retired — mechanical meaning-distillation method abandoned, LLM contextual read prototyped live, method revision carried to tomorrow (2026-09-10, escalations #1668/#1607/#1680)
+
+**Deciding evidence, run live this session, per direct researcher request:** for one live occurrence
+(`John.10.34`), passed the verse text + the three raw `vw_strong_meaning_raw` segments for `G3551`
+to an LLM (contextual) read — correctly identified the "OT Scripture" sense (not "Mosaic law"),
+using a citation embedded in the raw dictionary text that the mechanical parse had already
+destroyed. Scaled up per researcher instruction: read all 194 live occurrences (154 distinct
+verses) of `G3551`/νόμος in full context — found **at least six real, distinct sense-clusters**
+(Torah-as-Scripture; the Mosaic legal-covenantal system; the same system viewed as a foreign code
+from outside; a specific legal tie, e.g. marriage; a metaphorical "governing principle" sense the
+dictionary entry doesn't name at all — `Rom.7.21` "I find it to be a law that..."; and "Scripture"
+broadened via quotation-introducing context even when citing a Psalm, not Torah) — genuinely
+resolvable per-occurrence from context, structurally impossible from a mechanical single-row pick
+at the Strong's-code grain, no matter how clean the parse.
+
+**Researcher's verdict, verbatim:** *"now that is meaningful. OK, that means that the 3 parse
+tables are retired/inactive, and the entire approach and method to arrive at meaningful meaning
+will be revised... we will restart the thinking tomorrow."*
+
+**Applied — 3 tables + the step that rebuilds them + the view reading them, all marked
+`inactive`, none dropped (data kept for reference/history, per the same non-destructive
+convention `passage.genre` used):**
+- `cfg_table.inactive=1`: `strong_meaning_parsed` (#1675), `strong_lsj_parsed` (#1676),
+  `strong_mounce_parsed` (#1677).
+- `cfg_step.inactive=1`: `lexicon-parse`/`lexicon.parse` (#1678) — the dispatcher now refuses to
+  run it (`cfg.step_inactive` gate, `run.py:run_step`) rather than silently rebuilding
+  now-retired tables.
+- `cfg_utility.inactive=1`: `create_vw_strong_gloss_v1_20260910.py` (#1679) — its own view unions
+  the 3 retired tables, so its source data is retired too. **`vw_strong_meaning_raw` (#261) stays
+  ACTIVE** — its sources (`strong_meaning_tree`, `strong_lexicon`) are NOT retired, only their
+  parsed derivatives are; it's the one surviving piece of today's work, and likely the actual
+  input surface for whatever the revised method turns out to be.
+
+**Explicitly NOT touched, flagged not silently left ambiguous:** `verse_lexical.resolved_sense`
+itself — its current 544,590 live values were built from the now-retired parse (BUILD.md #257)
+and must be treated as **STALE/PROVISIONAL**, not ground truth, until the revised method lands.
+No schema change made to the column; that's part of tomorrow's design, not today's retirement.
+
+**Escalations closed:** #1668 (root escalation, full arc: POS-tag fix, `vw_strong_gloss.ord` fix,
+G1375 segment-merge fix, over-segmentation finding, `vw_strong_meaning_raw` build, final
+retirement verdict — completed). #1675/#1676/#1677/#1678/#1679 (the 5 retirement config changes —
+all completed). **#1607 put ON HOLD**, not closed — the consolidated column spec's `resolved_sense`
+items (D2/D3) are superseded, but the items untouched by the meaning layer (D1 role, D4
+`ambiguity_note`, D11 `gloss_consistent_in_verse`, D12 `language`→`verse_meta`, D13, E1/E2) still
+stand as decided, resuming once the revised method exists. **New task escalation #1680** raised as
+the explicit carry-forward: revise the meaning-distillation method, with the LLM-contextual-read
+prototype and its open questions (per-occurrence mechanism design, interaction with the standing
+#1607 decisions, what `resolved_sense` even means once meaning moves from code-grain to
+occurrence-grain) recorded on it for tomorrow.
+
+**Files:** `iba/app/db/iba.db` (5 `cfg_table`/`cfg_step`/`cfg_utility` rows set `inactive=1`, no
+data dropped, no code changed).

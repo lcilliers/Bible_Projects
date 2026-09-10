@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-10T18:06:23Z |
+| generated_at | 2026-09-10T18:05:11Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -60,12 +60,12 @@ _(none)_
 17. strong_mounce_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-18. GOVERNANCE.md was last modified 2026-09-10T06:08:04Z, before the newest applied cfg_change_detail row (2026-09-10T18:06:23Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+18. GOVERNANCE.md was last modified 2026-09-10T06:08:04Z, before the newest applied cfg_change_detail row (2026-09-10T18:05:10Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
 
-**Low config-density utilities** (13) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
+**Low config-density utilities** (14) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
 19. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 20. cfg_utility 'lexicalenrich' (iba\app\lib\lexicalenrich.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 21. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
@@ -74,11 +74,12 @@ _(none)_
 24. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 25. cfg_utility 'create_verse_meta_table_v1_20260909' (iba\app\migration\create_verse_meta_table_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 26. cfg_utility 'drop_verse_meta_genre_column_v1_20260909' (iba\app\migration\drop_verse_meta_genre_column_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-27. cfg_utility 'add_verse_meta_status_column_v1_20260910' (iba\app\migration\add_verse_meta_status_column_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-28. cfg_utility 'VerseMeta.ps1' (iba\app\ps\VerseMeta.ps1) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-29. cfg_utility 'apply_verse_plaintext_column' (iba\app\tools\_apply_verse_plaintext_column.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-30. cfg_utility 'add_lexicon_header_pos_tags_setting_v1_20260910' (iba\app\migration\add_lexicon_header_pos_tags_setting_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-31. cfg_utility 'create_vw_strong_meaning_raw_v1_20260910' (iba\app\migration\create_vw_strong_meaning_raw_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+27. cfg_utility 'create_vw_strong_gloss_v1_20260910' (iba\app\migration\create_vw_strong_gloss_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+28. cfg_utility 'add_verse_meta_status_column_v1_20260910' (iba\app\migration\add_verse_meta_status_column_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+29. cfg_utility 'VerseMeta.ps1' (iba\app\ps\VerseMeta.ps1) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+30. cfg_utility 'apply_verse_plaintext_column' (iba\app\tools\_apply_verse_plaintext_column.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+31. cfg_utility 'add_lexicon_header_pos_tags_setting_v1_20260910' (iba\app\migration\add_lexicon_header_pos_tags_setting_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+32. cfg_utility 'create_vw_strong_meaning_raw_v1_20260910' (iba\app\migration\create_vw_strong_meaning_raw_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -102,111 +103,111 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-32. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+33. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (2) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-33. Config-Maintenance.ps1: ps tools worksheet.xlsx tab 'Config-Maintenance' is missing flag column(s) ['Title'] — the script has these parameters now
-34. VerseMeta.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\versemeta.ps1' in some tab's first rows)
+34. Config-Maintenance.ps1: ps tools worksheet.xlsx tab 'Config-Maintenance' is missing flag column(s) ['Title'] — the script has these parameters now
+35. VerseMeta.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\versemeta.ps1' in some tab's first rows)
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
 **Unenforced behaviour rules** (39) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
-35. [chat] #17 confirm-before-nontrivial-work — context_delivered
-36. [chat] #18 output-to-file-not-chat-only — context_delivered
-37. [chat] #19 factual-discipline-no-guessing — context_delivered
-38. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
-39. [chat] #21 chat-items-become-escalations — context_delivered
-40. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
-41. [chat] #23 close-the-loop-not-just-report — context_delivered
-42. [chat] #24 show-evidence-dont-smooth-over — context_delivered
-43. [development] #38 root-fix-not-one-off — context_delivered
-44. [development] #39 simple-steps-not-engineered-designs — context_delivered
-45. [development] #40 open-items-route-through-escalation — context_delivered
-46. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
-47. [development] #46 test-plan-per-module-utility — deliberately_deferred
-48. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
-49. [development] #66 cluster-label-must-track-membership — buildable_not_built
-50. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
-51. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-52. [documentation] #33 single-living-register-update-in-place — context_delivered
-53. [documentation] #34 source-of-truth-is-written-record — context_delivered
-54. [filing] #56 naming-shape — partially_enforced
-55. [filing] #57 snapshot-vs-living-document — context_delivered
-56. [filing] #58 archiving-trigger — partially_enforced
-57. [filing] #59 claude-code-filing-obligations — context_delivered
-58. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-59. [llm_output] #4 inferential-not-confirmed — context_delivered
-60. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
-61. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
-62. [sqlite] #1 verify-before-acting — context_delivered
-63. [sqlite] #11 readonly-by-default — context_delivered
-64. [sqlite] #13 dont-assume-which-database — context_delivered
-65. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
-66. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
-67. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
-68. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
-69. [terminal] #2 step-not-done-without-validated-output — context_delivered
-70. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
-71. [terminal] #27 heredoc-powershell-only — context_delivered
-72. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
-73. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
+36. [chat] #17 confirm-before-nontrivial-work — context_delivered
+37. [chat] #18 output-to-file-not-chat-only — context_delivered
+38. [chat] #19 factual-discipline-no-guessing — context_delivered
+39. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
+40. [chat] #21 chat-items-become-escalations — context_delivered
+41. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
+42. [chat] #23 close-the-loop-not-just-report — context_delivered
+43. [chat] #24 show-evidence-dont-smooth-over — context_delivered
+44. [development] #38 root-fix-not-one-off — context_delivered
+45. [development] #39 simple-steps-not-engineered-designs — context_delivered
+46. [development] #40 open-items-route-through-escalation — context_delivered
+47. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
+48. [development] #46 test-plan-per-module-utility — deliberately_deferred
+49. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
+50. [development] #66 cluster-label-must-track-membership — buildable_not_built
+51. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
+52. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+53. [documentation] #33 single-living-register-update-in-place — context_delivered
+54. [documentation] #34 source-of-truth-is-written-record — context_delivered
+55. [filing] #56 naming-shape — partially_enforced
+56. [filing] #57 snapshot-vs-living-document — context_delivered
+57. [filing] #58 archiving-trigger — partially_enforced
+58. [filing] #59 claude-code-filing-obligations — context_delivered
+59. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+60. [llm_output] #4 inferential-not-confirmed — context_delivered
+61. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
+62. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
+63. [sqlite] #1 verify-before-acting — context_delivered
+64. [sqlite] #11 readonly-by-default — context_delivered
+65. [sqlite] #13 dont-assume-which-database — context_delivered
+66. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
+67. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
+68. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
+69. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
+70. [terminal] #2 step-not-done-without-validated-output — context_delivered
+71. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
+72. [terminal] #27 heredoc-powershell-only — context_delivered
+73. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
+74. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
 
 **Undelivered conversational rules** (2) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
-74. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
-75. [terminal] #27 heredoc-powershell-only — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+75. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+76. [terminal] #27 heredoc-powershell-only — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
 
 **PS scripts bypassing run.py** (2) — an active PS script calling iba.app.(handlers|lib|tools) directly instead of dispatching through iba.app.run:
-76. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
-77. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+77. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+78. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
 
 **Steps without a PS entry point** (0) — an active cfg_step whose work package has no cfg_work_package.ps_script:
 _(none)_
 
 **Escalation-file naming drift** (27) — a Workflow/Catalogue or iba/docs file whose own header names an escalation the filename doesn't carry as its prefix:
-78. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-79. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
-80. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-81. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
-82. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
-83. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
-84. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
-85. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
-86. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
-87. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
-88. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
-89. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-90. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
-91. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-92. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
-93. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-94. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
-95. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
-96. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
-97. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
-98. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
-99. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
-100. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-101. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
-102. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-103. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-104. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
+79. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+80. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
+81. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+82. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
+83. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
+84. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
+85. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
+86. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
+87. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
+88. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
+89. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
+90. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+91. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
+92. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+93. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
+94. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+95. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
+96. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
+97. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
+98. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
+99. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
+100. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
+101. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+102. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
+103. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+104. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+105. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
 
 **Config hedge phrases** (4) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
-105. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
-106. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
-107. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
-108. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
+106. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
+107. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
+108. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
+109. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
 
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
 
 **Query file convention** (2) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
-109. scripts/SQLite/IBA_DB/explore clusters-2.sqlite3-query — contains a space, should use hyphens
-110. scripts/SQLite/IBA_DB/explore verses.sqlite3-query — contains a space, should use hyphens
+110. scripts/SQLite/IBA_DB/explore clusters-2.sqlite3-query — contains a space, should use hyphens
+111. scripts/SQLite/IBA_DB/explore verses.sqlite3-query — contains a space, should use hyphens
 
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
@@ -226,7 +227,7 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**451** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **378** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**451** registered module(s) — **33** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **377** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
@@ -265,7 +266,7 @@ _(none)_
 | clusterreport | iba/app/lib/clusterreport.py | report.cluster -- cluster content/quality report | ✓ |  |  |
 | contentindex | iba/app/lib/contentindex.py | contentindex.py — file-content concordance search over .md files, keyed on Strong's numbers/glosses/words sourced from strong/word_registry. Round 2 of the manifest + content-search plan; file_manifest (round 1) is its coverage baseline. | ✓ |  |  |
 | create_verse_meta_table_v1_20260909 | iba/app/migration/create_verse_meta_table_v1_20260909.py | Creates verse_meta (1:1 companion to verse, base-data grain -- language/testament/chapter/verse_num/passage linkage), one-off populates it from bible_research.db-informed design + iba.db's own osisId/cfg_book_order/verse_lexical/verse_passage, validates the result, and builds the 4 auto-sync triggers (verse/verse_lexical/verse_passage inserts, verse.deleted updates). Idempotent, safe to re-run. Escalation #1608. | ✓ |  |  |
-| create_vw_strong_gloss_v1_20260910 | iba/app/migration/create_vw_strong_gloss_v1_20260910.py | create_vw_strong_gloss_v1_20260910.py -- creates/replaces vw_strong_gloss, a uniform gloss view unioning strong_meaning_parsed/strong_lsj_parsed/strong_mounce_parsed (researcher instruction 2026-09-10). source column carries the literal source table name (researcher instruction, verbatim: 'adjust the view to show the label for the source table is a column'), not a short alias. NOTE: the view itself is deliberately NOT registered in cfg_table -- escalation #1654's incident (crashed Start-Iba.ps1, build_data_tables has no category filter for views) and #1658 (open, not yet decided how views should be registered safely). Re-runnable via --replace. |  |  |  |
+| create_vw_strong_gloss_v1_20260910 | iba/app/migration/create_vw_strong_gloss_v1_20260910.py | create_vw_strong_gloss_v1_20260910.py -- creates/replaces vw_strong_gloss, a uniform gloss view unioning strong_meaning_parsed/strong_lsj_parsed/strong_mounce_parsed (researcher instruction 2026-09-10). source column carries the literal source table name (researcher instruction, verbatim: 'adjust the view to show the label for the source table is a column'), not a short alias. NOTE: the view itself is deliberately NOT registered in cfg_table -- escalation #1654's incident (crashed Start-Iba.ps1, build_data_tables has no category filter for views) and #1658 (open, not yet decided how views should be registered safely). Re-runnable via --replace. | ✓ |  |  |
 | create_vw_strong_meaning_raw_v1_20260910 | iba/app/migration/create_vw_strong_meaning_raw_v1_20260910.py | Creates/replaces vw_strong_meaning_raw -- raw, unparsed union of strong_meaning_tree + strong_lexicon.lsj/.mounce, keyed by strong. Sibling to vw_strong_gloss (parsed) but one layer upstream -- no HTML stripped, no segmentation, nothing decided. Built for direct source-vs-parse comparison, escalation #1668. Re-runnable via --replace. NOTE: the view itself is deliberately NOT registered in cfg_table, same reasoning as vw_strong_gloss (escalation #1654's incident, #1658 open). | ✓ |  |  |
 | db | iba/app/lib/db.py | db.py — the DATA layer. Built FROM the config in the database. | ✓ |  |  |
 | dbsnapshot | iba/app/lib/dbsnapshot.py | dbsnapshot.py — pre-write DB snapshots. THE GAP FOUND 2026-07-22: this app had no rollback | ✓ |  |  |

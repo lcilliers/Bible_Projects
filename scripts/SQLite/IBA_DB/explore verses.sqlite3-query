@@ -1,0 +1,16 @@
+-- database: ../../../iba/app/db/iba.db
+
+SELECT count(*) FROM verse
+where verse.text IS NULL;
+
+select count(*) from verse
+inner join verse_meta
+on verse.id = verse_meta.verse_id
+where verse_meta.deleted = 0
+or verse.deleted = 0;
+
+select count(*) from verse
+inner join verse_meta
+on verse.id = verse_meta.verse_id
+where verse_meta.deleted = 1
+or verse.deleted = 1;
