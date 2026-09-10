@@ -166,5 +166,8 @@ digging further.
 
 ## Git state
 
-Branch `main`, parent commit `374b70bd`. This session's changes not yet committed — committing and
-pushing now, in the same unit of work as this log, per the standing session-log rule.
+Branch `main`, commit `4a7093d2` ("session 20260910: parse-grain fix (#1655), vw_strong_gloss,
+lexicon-join noise doubt (#1660)"), parent `374b70bd`. `git push` succeeded: `374b70bd..4a7093d2
+main -> main`. `git status` confirmed clean immediately after push. Working tree has this line's
+own edit pending, filled in immediately after (same pattern as prior session logs' own "(cont.)"
+commits).
