@@ -1,0 +1,1322 @@
+{
+  "cluster_code": "M10",
+  "family_id": "D_crime_injustice",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G0092",
+    "G0094",
+    "G4467",
+    "H1215",
+    "H2248",
+    "H5758",
+    "H5760",
+    "H5766A",
+    "H5766B",
+    "H5767",
+    "H5771G",
+    "H5771H",
+    "H5771I",
+    "H5932"
+  ],
+  "observations": [
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "adikēma (G0092) renders as 'wrongdoing' (Acts 18:14, 24:20) and 'iniquities' (Rev 18:5) rather than 'crime' -- its own LSJ entry specifies 'properly, intentional wrong, opposed to hamartema [error] and atychema [misfortune]' -- a legal-forensic term for deliberate wrong, distinguished at the lexical level from both innocent mistake and bad luck.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "G0092",
+        "occurrences": [
+          {
+            "verse": "Acts.18.14",
+            "span_surface": "wrongdoing",
+            "span_morph": "N-NSN"
+          },
+          {
+            "verse": "Acts.24.20",
+            "span_surface": "wrongdoing",
+            "span_morph": "N-ASN"
+          },
+          {
+            "verse": "Rev.18.5",
+            "span_surface": "iniquities",
+            "span_morph": "N-APN"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "adikēma at Acts 18:14 and 24:20 both occur in Roman legal proceedings against Paul (before Gallio; before Felix) -- a courtroom term for the specific charge a defendant would need to answer, contrasted in both verses with lesser or non-legal complaints.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "G0092",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "adikos (G0094) as a fixed binary category, 'the just and the unjust,' applied even hypothetically to God himself as a rhetorical near-blasphemy raised only to be refuted ('is God unrighteous to inflict wrath on us?... by no means,' Rom 3:5), and structurally as a vice-list member alongside adulterers/idolaters (Luke 18:11's Pharisee, 1 Cor 6:9).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "G0094",
+        "occurrences": [
+          {
+            "verse": "Matt.5.45",
+            "span_surface": "unjust",
+            "span_morph": "A-APM"
+          },
+          {
+            "verse": "Acts.24.15",
+            "span_surface": "unjust",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Rom.3.5",
+            "span_surface": "unrighteous",
+            "span_morph": "A-NSM"
+          },
+          {
+            "verse": "Luke.18.11",
+            "span_surface": "unjust",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "1Cor.6.9",
+            "span_surface": "unrighteous",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "1Pet.3.18",
+            "span_surface": "unrighteous",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "2Pet.2.9",
+            "span_surface": "unrighteous",
+            "span_morph": "A-APM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "adikos applied procedurally rather than as a personal-moral category: 'God is not unjust so as to overlook your work' (Heb 6:10, God's own faithfulness in reward), 'go to law before the unrighteous' (1 Cor 6:1, a forum/venue), and 'unrighteous wealth' (Luke 16:9-11, describing money itself as morally tainted rather than a person).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "G0094",
+        "occurrences": [
+          {
+            "verse": "Heb.6.10",
+            "span_surface": "unjust",
+            "span_morph": "A-NSM"
+          },
+          {
+            "verse": "1Cor.6.1",
+            "span_surface": "unrighteous",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Luke.16.11",
+            "span_surface": "unrighteous",
+            "span_morph": "A-DSM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Luke 16:10 uses adikos twice in a proverb-form contrast ('faithful in a very little... dishonest in a very little'), rendering it as 'dishonest' rather than 'unjust' -- a small-scale personal-integrity sense distinct from the courtroom/theological uses elsewhere in this strong.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "G0094",
+        "occurrences": [
+          {
+            "verse": "Luke.16.10",
+            "span_surface": "dishonest",
+            "span_morph": "A-NSM"
+          },
+          {
+            "verse": "Luke.16.10",
+            "span_surface": "dishonest",
+            "span_morph": "A-NSM"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "radiourgēma (G4467) in its one occurrence -- 'a matter of wrongdoing or vicious crime' (Acts 18:14) -- occurs in the SAME verse and SAME courtroom scene as G0092 (adikēma, 'wrongdoing'), Gallio pairing the two nouns as a fixed legal doublet naming the category of complaint that would warrant his attention. Its own LSJ sense ('anything done lightly, levity') suggests a root meaning of recklessness rather than premeditation, contrasted with adikēma's 'intentional wrong.'",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "G4467",
+        "occurrences": [
+          {
+            "verse": "Acts.18.14",
+            "span_surface": "crime",
+            "span_morph": "N-NSN"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "betsa (H1215, 'unjust gain') as a specifically economic vice: corrupt religious leadership ('from prophet to priest, everyone deals falsely,' Jer 6:13, 8:10 -- identical wording), oppressive commerce and bloodshed for profit (Ezek 22:27's 'wolves tearing the prey... to get dishonest gain'), and the wisdom-tradition contrast between hating and being greedy for it (Prov 1:19, 15:27, 28:16).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H1215",
+        "occurrences": [
+          {
+            "verse": "Jer.6.13",
+            "span_surface": "gain",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Jer.8.10",
+            "span_surface": "gain",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.22.27",
+            "span_surface": "gain",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.1.19",
+            "span_surface": "unjust gain",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.15.27",
+            "span_surface": "unjust gain",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.28.16",
+            "span_surface": "unjust gain",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "betsa's remaining 11 occurrences render mostly as plain 'gain' or 'profit,' with the 'unjust/dishonest' qualifier dropped from the English surface even where the context makes clear it is meant (Isa 57:17's 'iniquity of his unjust gain' being the one place the surface itself keeps 'unjust'; contrast Gen 37:26's 'what profit is it if we kill our brother,' Mal 3:14's neutral-sounding 'the profit of our keeping his charge,' Job 22:3's philosophical 'is it any pleasure/gain to the Almighty,' and Ps 119:36's 'selfish gain' as the psalmist's own thing to avoid). This strong's own meaning block already defines it as inherently unjust ('gain acquired by violence') -- the English surface frequently doesn't carry that built-in negative charge.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H1215",
+        "occurrences": [
+          {
+            "verse": "Isa.57.17",
+            "span_surface": "gain",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Gen.37.26",
+            "span_surface": "profit",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Mal.3.14",
+            "span_surface": "profit",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Job.22.3",
+            "span_surface": "gain",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.119.36",
+            "span_surface": "selfish gain",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Hab.2.9",
+            "span_surface": "gain",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Mic.4.13",
+            "span_surface": "gain",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.33.31",
+            "span_surface": "gain",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Judg.5.19",
+            "span_surface": "spoils",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.22.17",
+            "span_surface": "gain",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Exod.18.21",
+            "span_surface": "bribe",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H2248 (chavula, Aramaic 'crime') has zero occurrences in the live span/verse data. Meaning block only: 'hurtful act, crime, harm, wicked deed, a wrong.' Earmarked; no further analysis possible without verse context.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H2248",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H5758 (avayah, 'iniquity') has zero occurrences in the live span/verse data. Meaning block only: 'perversity, iniquity.' Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5758",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H5932 (alvah, 'iniquity,' explicitly a spelling variant of H5766B per its own meaning block) has zero occurrences in the live span/verse data. Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5932",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "H2248, H5758, and H5932 are all included in cluster_strong for M10 but have no live span occurrences anywhere in the base data -- three more additions to the same thin/unattested-strong category already flagged repeatedly across this cluster. Flagged for the spine/integrity process as a batch, not resolved here.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "avil (H5760, 'unjust one') in its one occurrence -- 'God gives me up to the ungodly and casts me into the hands of the wicked' (Job 16:11) -- naming Job's oppressors as a class, in parallel with 'the wicked,' not describing Job's own conduct.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5760",
+        "occurrences": [
+          {
+            "verse": "Job.16.11",
+            "span_surface": "ungodly",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avel (H5766A) in Ezekiel's repeated 'the righteous person who turns... and does injustice... shall die' formula -- the same formula already noted in the #1680 pass, now confirmed structurally as a fixed unit repeated near-verbatim five times (Ezek 3:20, 18:24, 18:26, 33:13, 33:15, 33:18) -- injustice here is specifically framed as a moral REVERSAL from a prior righteous state, not a starting condition.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5766A",
+        "occurrences": [
+          {
+            "verse": "Ezek.18.24",
+            "span_surface": "injustice",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.33.13",
+            "span_surface": "injustice",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.33.15",
+            "span_surface": "injustice",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.3.20",
+            "span_surface": "injustice",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.18.26",
+            "span_surface": "injustice",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.33.18",
+            "span_surface": "injustice",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avel in judicial-procedure law specifically -- 'do no injustice in court... not partial to poor or defer to great' (Lev 19:15), 'no wrong in judgment, in measures... weight' (Lev 19:35, commercial fairness), and the psalmist's own self-examination for wrong 'in my hands' (Ps 7:3) -- alongside God's own repeated self-description as the standard: 'a God... without iniquity' (Deut 32:4), 'you shall not judge unjustly' as the accusation leveled at corrupt judges (Ps 82:2).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5766A",
+        "occurrences": [
+          {
+            "verse": "Lev.19.15",
+            "span_surface": "injustice",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Lev.19.35",
+            "span_surface": "wrong",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.7.3",
+            "span_surface": "wrong",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Deut.32.4",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.82.2",
+            "span_surface": "unjustly",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Deut.25.16",
+            "span_surface": "dishonestly",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.29.27",
+            "span_surface": "unjust",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.53.1",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "I_strife"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avlah (H5766B) as violent/exploitative injustice against the vulnerable -- 'your hands deal out violence' (Ps 58:2), 'violent men shall afflict them no more' (2 Sam 7:10, 1 Chr 17:9), and reaping injustice as the direct consequence of sowing it (Prov 22:8, Hos 10:13's 'plowed iniquity... reaped injustice').",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5766B",
+        "occurrences": [
+          {
+            "verse": "Ps.58.2",
+            "span_surface": "wrongs",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "2Sam.7.10",
+            "span_surface": "violent",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.17.9",
+            "span_surface": "violent",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Prov.22.8",
+            "span_surface": "injustice",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Hos.10.13",
+            "span_surface": "injustice",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "F_violence_wound"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avlah applied to speech specifically (its own meaning block's separate 'injustice of speech' sense): speaking falsely/deceitfully (Job 13:7), a deceitful tongue (Zeph 3:13), and God's own truthful speech as the negative standard ('the Lord... does no injustice... speak no lies,' Zeph 3:5, 3:13 paired).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5766B",
+        "occurrences": [
+          {
+            "verse": "Job.13.7",
+            "span_surface": "falsely",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Zeph.3.13",
+            "span_surface": "injustice",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Zeph.3.5",
+            "span_surface": "injustice",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "avlah's remaining occurrences describe injustice as a settled internal quality to be searched out and removed -- 'they search out injustice' (Ps 64:6), 'if you remove injustice far from your tents' (Job 22:23), the wicked's wickedness itself broken like a tree (Job 24:20), and repeated denials of it in God ('no unrighteousness in him,' Ps 92:15) and in the righteous ('who also do no wrong,' Ps 119:3, Job 36:23).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5766B",
+        "occurrences": [
+          {
+            "verse": "Job.15.16",
+            "span_surface": "injustice",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Job.24.20",
+            "span_surface": "wickedness",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Job.36.23",
+            "span_surface": "wrong",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Job.22.23",
+            "span_surface": "injustice",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ps.64.6",
+            "span_surface": "injustice",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Ps.92.15",
+            "span_surface": "unrighteousness",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ps.119.3",
+            "span_surface": "wrong",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "avval (H5767, 'unjust') as a settled person-category: 'the dwellings of the unrighteous' (Job 18:21), 'I broke the fangs of the unrighteous' (Job 29:17), and 'the unjust knows no shame' set directly against God's own justice in the same verse as H5766B's Zeph 3:5 occurrence -- the adjective form naming who someone is, alongside the abstract-noun forms naming what they do.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5767",
+        "occurrences": [
+          {
+            "verse": "Job.18.21",
+            "span_surface": "unrighteous",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Job.29.17",
+            "span_surface": "unrighteous",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Zeph.3.5",
+            "span_surface": "unjust",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avon (H5771, the family's dominant root, split by sense across G/H/I into 106 combined occurrences -- the largest single root-family found in this cluster after pesha/H6588 and milchamah/H4421) at its 'iniquity' sense (H5771G, 79 occurrences): the generational-transmission formula ('visiting the iniquity of the fathers on the children to the third and fourth generation,' Exod 20:5, Deut 5:9, repeated in the forgiveness-formula itself at Num 14:18 and Exod 34:7), the forgiveness formula proper ('forgives all your iniquity,' Ps 103:3; 'pardoning iniquity,' Mic 7:18), and the 'bear his iniquity' idiom shared with family H_guilt's nasa (Lev 5:1, 5:17, 17:16, 20:17, 20:19, Num 18:23).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5771G",
+        "occurrences": [
+          {
+            "verse": "Exod.20.5",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Deut.5.9",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Num.14.18",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Num.14.18",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Exod.34.7",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Exod.34.7",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.103.3",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Mic.7.18",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Mic.7.19",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ps.78.38",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.40.2",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.33.24",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.64.9",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Hos.14.2",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.32.5",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lev.5.1",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lev.5.17",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lev.17.16",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lev.20.17",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lev.20.19",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Num.18.23",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.85.2",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.51.2",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.130.8",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "avon (H5771G) at Isaiah 53:5 -- 'he was crushed for our iniquities' -- the same convergence-verse already documented independently under families H_guilt, F_violence_wound, and G_transgression: this is now the fifth strong across four families citing this one verse.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5771G",
+        "occurrences": [
+          {
+            "verse": "Isa.53.5",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "G_transgression"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avon (H5771G) describing iniquity as a cumulative national/personal load with cosmic-scale consequence -- 'iniquities have risen higher than our heads' (Ezra 9:6), 'the iniquity of the Amorites is not yet complete' (Gen 15:16, a fixed measure not yet reached), 'if you, O LORD, should mark iniquities, who could stand?' (Ps 130:3), and repeated 'the stumbling block of their iniquity' before idols (Ezek 7:19, 14:3, 14:4, 14:7, 44:12).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5771G",
+        "occurrences": [
+          {
+            "verse": "Ezra.9.6",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Gen.15.16",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.130.3",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Ezek.7.19",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.14.3",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.14.4",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.14.7",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.44.12",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.28.18",
+            "span_surface": "iniquities",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.36.31",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ezek.36.33",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Isa.65.7",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Jer.5.25",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avon (H5771G) in self-aware confession/plea alongside its own recognition formula -- 'why have these things come upon me... my iniquity?' echoing family B's 'realizes his guilt' pattern -- David's psalm ('I did not cover my iniquity,' Ps 32:5), Job's repeated demand to know his own fault ('there is no iniquity in me,' Job 33:9; 'your iniquity teaches your mouth,' Job 15:5), and Hosea's naming of specific national iniquity (Ephraim, Hos 7:1, 9:7, 9:9, 13:12).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5771G",
+        "occurrences": [
+          {
+            "verse": "Job.33.9",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Job.15.5",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Job.20.27",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Hos.7.1",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Hos.9.7",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Hos.9.9",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Hos.13.12",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Hos.8.13",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.16.10",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.16.18",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.13.22",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.14.7",
+            "span_surface": "iniquities",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Jer.14.10",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.16.17",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.64.7",
+            "span_surface": "iniquities",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.36.2",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.49.5",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.109.14",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.90.8",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ps.51.9",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Prov.5.22",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Prov.16.6",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.18.30",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.29.16",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Lam.2.14",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lam.4.22",
+            "span_surface": "your iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lam.4.22",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Amos.3.2",
+            "span_surface": "iniquities",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Isa.1.4",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.13.11",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.26.21",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.57.17",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lev.18.25",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Dan.9.13",
+            "span_surface": "iniquities",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Dan.9.24",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Num.5.15",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "1Sam.3.14",
+            "span_surface": "iniquity",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezra.9.13",
+            "span_surface": "iniquities",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.59.4",
+            "span_surface": "fault",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Deut.19.15",
+            "span_surface": "crime",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.18.23",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "B_sin"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Deut 19:15's avon occurrence renders as bare 'crime' and Ps 18:23's as 'guilt' and Ps 59:4's as 'fault' -- three occurrences where the surface abandons 'iniquity' entirely for vocabulary belonging to this family's own G0092 (crime) and family H_guilt's own asham (guilt), underscoring again how loosely the English rendering tracks the underlying Hebrew lexeme across this cluster's overlapping moral-failure vocabulary.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5771G",
+        "occurrences": [
+          {
+            "verse": "Deut.19.15",
+            "span_surface": "crime",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.18.23",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.59.4",
+            "span_surface": "fault",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avon at its 'guilt' sub-sense (H5771H, 15 occurrences, the same root as H5771G with an identical meaning block -- these two catalogue entries are one Hebrew word split by the cataloguer, not two different words): the accumulating-guilt formula ('your guilt is great, because your sins are flagrant,' Jer 30:14/30:15 -- identical wording), and priestly/national confession of guilt (Aaron 'lest they bear guilt and die,' Exod 28:43; Jer 3:13's 'only acknowledge your guilt'; Jer 33:8's double occurrence of guilt-plus-forgiveness in one verse).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5771H",
+        "occurrences": [
+          {
+            "verse": "Neh.4.5",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.2.22",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.30.14",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.30.15",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.27.9",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "1Sam.20.1",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.6.7",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.32.18",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Exod.28.43",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.14.21",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.16.49",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.21.23",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Jer.3.13",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.33.8",
+            "span_surface": "guilt",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.33.8",
+            "span_surface": "guilt",
+            "span_morph": "HNcfpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avon at its 'punishment' sub-sense (H5771I, 12 occurrences, again the same root/meaning block as H5771G/H): personal anguish over deserved consequence ('my punishment is greater than I can bear,' Gen 4:13, Cain's own words), and repeated formal announcement of judgment on named parties -- Sodom (Lam 4:6), a profane prince of Israel (Ezek 21:25, 21:29), the Levites and prophets and inquirers alike (Ezek 4:5 x2, 14:10, 44:10, 44:12), and Edom (Ezek 35:5).",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": "H5771I",
+        "occurrences": [
+          {
+            "verse": "Job.19.29",
+            "span_surface": "punishment",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Lam.4.6",
+            "span_surface": "chastisement",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Gen.4.13",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.21.25",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.21.29",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.69.27",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.4.5",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.4.5",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.14.10",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.35.5",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.44.12",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.44.10",
+            "span_surface": "punishment",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "H5771G/H/I are one Hebrew lexeme (avon) split into three catalogue entries purely by which of its meaning block's own three listed sub-senses ('iniquity'/'guilt of iniquity'/'consequence or punishment for iniquity') a given occurrence was assigned to -- the split is a cataloguing convenience, not three different words. Reading all three together (106 occurrences) shows the SAME three-part structure -- state, guilt-consequence, punishment-consequence -- that recurs identically in H6588 (pesha, family G) and the chattah root (family B), now confirmed a third time as the organizing structure the underlying reference lexicon applies uniformly to this whole semantic domain, not something specific to any one root's actual usage.",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "B_sin"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "This family's avon material converges with family H_guilt at both ends: the 'bear his iniquity' idiom (H5771G) is the same construction as H5375J's (nasa) 'bear his iniquity/guilt' already documented there, and H5771H's own meaning block is verbatim identical to H0819's (ashmah) -- 'guiltiness, guilt, offense, sin, wrong-doing.' Between this family and H_guilt, roughly 106 (avon) + 75 (asham/nasa family) = 181 occurrences across two separately-catalogued families may be substantially describing the same underlying concept from two English-gloss angles ('iniquity' vs. 'guilt').",
+      "traces": {
+        "cluster": "M10",
+        "family": "D_crime_injustice",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "H_guilt"
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G0092",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "G0094",
+      "occurrence_count": 11,
+      "traced_count": 11,
+      "missing_verses": []
+    },
+    {
+      "strong": "G4467",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H1215",
+      "occurrence_count": 17,
+      "traced_count": 17,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2248",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5758",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5760",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5766A",
+      "occurrence_count": 14,
+      "traced_count": 14,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5766B",
+      "occurrence_count": 15,
+      "traced_count": 15,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5767",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5771G",
+      "occurrence_count": 76,
+      "traced_count": 76,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5771H",
+      "occurrence_count": 14,
+      "traced_count": 14,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5771I",
+      "occurrence_count": 11,
+      "traced_count": 11,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5932",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    }
+  ]
+}

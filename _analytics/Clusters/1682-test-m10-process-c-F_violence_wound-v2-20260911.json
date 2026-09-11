@@ -1,0 +1,1186 @@
+{
+  "cluster_code": "M10",
+  "family_id": "F_violence_wound",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G2352",
+    "G3039",
+    "G5135",
+    "H1500",
+    "H1792",
+    "H1794",
+    "H1795",
+    "H1854",
+    "H2115",
+    "H2555",
+    "H3807",
+    "H4272",
+    "H5142",
+    "H6094",
+    "H6481",
+    "H7533",
+    "H7602B",
+    "H7701",
+    "H8428"
+  ],
+  "observations": [
+    {
+      "tag": "instance-meaning",
+      "statement": "thrauō (G2352) in its one occurrence -- Isaiah's Jubilee text quoted by Jesus, 'to set at liberty those who are oppressed' (Luke 4:18) -- a perfect passive participle naming a standing condition (those in the state of having-been-crushed) rather than a single crushing act, matching the strong's own note that this NT use is a figurative extension ('shattered, crushed by cruel oppression') of the literal 'break in pieces' sense.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "G2352",
+        "occurrences": [
+          {
+            "verse": "Luke.4.18",
+            "span_surface": "oppressed",
+            "span_morph": "V-RPP-APM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "likmaō (G3039) identically in both occurrences -- the parable of the rejected stone, 'it will crush him' (Matt 21:44, Luke 20:18) -- future active indicative, a specific, singular, future-certain act of judgment on whoever the stone falls on. LSJ's root sense ('winnow grain, part chaff from grain') is present only metaphorically here -- destructive separation/scattering, not agricultural process.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "G3039",
+        "occurrences": [
+          {
+            "verse": "Matt.21.44",
+            "span_surface": "crush",
+            "span_morph": "V-FAI-3S"
+          },
+          {
+            "verse": "Luke.20.18",
+            "span_surface": "crush",
+            "span_morph": "V-FAI-3S"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "traumatizō (G5135) in both occurrences describing physical assault on messengers/emissaries -- the demon-possessed man overpowering exorcists (Acts 19:16, perfect passive participle, a resulting state) and tenants beating a landowner's servant in the parable (Luke 20:12, aorist active participle, the tenants' own act).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "G5135",
+        "occurrences": [
+          {
+            "verse": "Acts.19.16",
+            "span_surface": "wounded",
+            "span_morph": "V-RPP-APM"
+          },
+          {
+            "verse": "Luke.20.12",
+            "span_surface": "wounded",
+            "span_morph": "V-AAP-NPM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "gezelah (H1500, 'violence' glossed, actually 'plunder/spoil/robbery' per its own meaning block) consistently paired with restoring or not restoring a pledge in Ezekiel's righteous/wicked-conduct formula (Ezek 18:7, 18:12, 33:15) and named directly as 'the spoil of the poor' taken by corrupt leaders (Isa 3:14) -- a property-crime sense, distinct from personal physical violence.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H1500",
+        "occurrences": [
+          {
+            "verse": "Ezek.18.12",
+            "span_surface": "robbery",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Ezek.33.15",
+            "span_surface": "robbery",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezek.18.7",
+            "span_surface": "robbery",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Isa.3.14",
+            "span_surface": "spoil",
+            "span_morph": "HNcfsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "dakha (H1792) shows a clean morph-marked valence split confirming the round-1 hypothesis with hard evidence: its two Niphal-participle occurrences ('contrite,' Isa 57:15, Ps 51:17-adjacent via H1794) name the humbled, God-accepted disposition, while every Piel/Pual occurrence describes destructive crushing -- of Rahab (Ps 89:10, Piel perfect), of God's own people by the wicked (Ps 94:5, Piel imperfect), of an oppressor by God's justice (Ps 72:4, Piel jussive-form), and of the Servant by God's own will (Isa 53:10, Piel infinitive construct). The stem itself, not context alone, marks which side of the crushing this occurrence names.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H1792",
+        "occurrences": [
+          {
+            "verse": "Isa.57.15",
+            "span_surface": "contrite",
+            "span_morph": "HVNrmpa"
+          },
+          {
+            "verse": "Ps.89.10",
+            "span_surface": "crushed",
+            "span_morph": "HVpp2ms"
+          },
+          {
+            "verse": "Ps.94.5",
+            "span_surface": "crush",
+            "span_morph": "HVpi3mp"
+          },
+          {
+            "verse": "Ps.72.4",
+            "span_surface": "crush",
+            "span_morph": "HVpu3ms"
+          },
+          {
+            "verse": "Isa.53.10",
+            "span_surface": "crush",
+            "span_morph": "HVpcc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "dakha's remaining occurrences: Jer 44:10's Piel 'they have not humbled themselves' (a negated redemptive sense, the opposite failure), and three passive/reflexive Job occurrences describing helpless people being crushed by circumstance rather than a named agent's Piel act (Job 5:4's Hophal-toned 'crushed in the gate,' Job 6:9's Pual 'crush me' as Job's own wish for death, Job 22:9/34:25's similar passive framing), plus Lam 3:34's Piel infinitive naming the crushing of 'all the prisoners of the earth' underfoot as a generalized wrong to be observed by God.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H1792",
+        "occurrences": [
+          {
+            "verse": "Jer.44.10",
+            "span_surface": "humbled",
+            "span_morph": "HVPp3cp"
+          },
+          {
+            "verse": "Job.5.4",
+            "span_surface": "crushed",
+            "span_morph": "HVtu3mp"
+          },
+          {
+            "verse": "Job.6.9",
+            "span_surface": "crush",
+            "span_morph": "HVpu3ms"
+          },
+          {
+            "verse": "Job.22.9",
+            "span_surface": "crushed",
+            "span_morph": "HVPi3ms"
+          },
+          {
+            "verse": "Job.34.25",
+            "span_surface": "crushed",
+            "span_morph": "HVtu3mp"
+          },
+          {
+            "verse": "Lam.3.34",
+            "span_surface": "crush",
+            "span_morph": "HVpcc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "dakhah (H1794) shows the identical Niphal/other-stem valence split as its near-twin H1792 on a smaller scale: 'a broken and contrite heart' (Ps 51:17, Niphal) is the sole redemptive occurrence, against Qal 'the helpless are crushed' by the wicked's might (Ps 10:10) and Piel 'you have broken us' as God's own judgment (Ps 44:19, 51:8 -- notably in the same psalm as the Niphal 'contrite' occurrence, three verses apart, using the identical root for both God's judging-breaking and the resulting God-accepted humility).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H1794",
+        "occurrences": [
+          {
+            "verse": "Ps.51.17",
+            "span_surface": "contrite",
+            "span_morph": "HVNrmsa"
+          },
+          {
+            "verse": "Ps.10.10",
+            "span_surface": "crushed",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Ps.44.19",
+            "span_surface": "broken",
+            "span_morph": "HVpp2ms"
+          },
+          {
+            "verse": "Ps.51.8",
+            "span_surface": "broken",
+            "span_morph": "HVpp2ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H1795 (dakkah, 'crushing,' the abstract-noun form of the same H1792/H1794 root) has zero occurrences in the live span/verse data. Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H1795",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "daqaq (H1854) exclusively literal, physical pulverization of objects, never a person or an inner state -- idols and altars beaten to dust/powder (2 Chr 34:4, 34:7, 2 Kgs 23:6), weapons of war beaten into agricultural tools and back again (Isa 2:4, Mic 4:3, Joel 3:10 -- note the reversal direction differs across these three citations of a related image), grain crushed for bread (Isa 28:28, both occurrences in the same verse contrasting Qal and Hiphil), and enemies crushed to dust in a war metaphor (2 Sam 22:43).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H1854",
+        "occurrences": [
+          {
+            "verse": "2Chr.34.4",
+            "span_surface": "made dust",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Chr.34.7",
+            "span_surface": "powder",
+            "span_morph": "HVhcc"
+          },
+          {
+            "verse": "2Kgs.23.6",
+            "span_surface": "beat",
+            "span_morph": "HVhw3ms"
+          },
+          {
+            "verse": "Isa.41.15",
+            "span_surface": "crush",
+            "span_morph": "HVqu2ms"
+          },
+          {
+            "verse": "Mic.4.13",
+            "span_surface": "beat",
+            "span_morph": "HVhq2fs"
+          },
+          {
+            "verse": "Isa.28.28",
+            "span_surface": "crush",
+            "span_morph": "HVHi3ms"
+          },
+          {
+            "verse": "Isa.28.28",
+            "span_surface": "crush",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "2Sam.22.43",
+            "span_surface": "crushed",
+            "span_morph": "HVhi1cs"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "zur (H2115) as literal physical pressing -- pressing dew from a fleece (Judg 6:38), a foot crushing something underfoot (Job 39:15), and wounds not being 'pressed out' (Isa 1:6, the strong's own meaning block noting a specific medical sub-sense 'to close up (of a wound)'). No moral content in any of its three occurrences.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H2115",
+        "occurrences": [
+          {
+            "verse": "Isa.1.6",
+            "span_surface": "pressed out",
+            "span_morph": "HVPp3cp"
+          },
+          {
+            "verse": "Judg.6.38",
+            "span_surface": "squeezed",
+            "span_morph": "HVqw3ms"
+          },
+          {
+            "verse": "Job.39.15",
+            "span_surface": "crush",
+            "span_morph": "HVqi3fs"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "chamas (H2555, 44 occurrences, this family's dominant strong) defines violence as a filled-world condition rather than isolated acts, with the Flood indictment as the paradigm case stated twice in successive verses -- 'the earth was filled with violence' (Gen 6:11, 6:13) -- echoed by 'the land full of bloody crimes... full of violence' (Ezek 7:23) and 'the dark places of the land are full of the habitations of violence' (Ps 74:20).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H2555",
+        "occurrences": [
+          {
+            "verse": "Gen.6.11",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Gen.6.13",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.7.23",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.74.20",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.8.17",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "chamas as structural/social violence enacted through speech and testimony rather than physical force -- false/malicious witnesses (Ps 27:12, 35:11, Exod 23:1, Deut 19:16), a deceitful tongue speaking violence (Mic 6:12), and the wicked's mouth concealing it (Prov 10:6, 10:11) -- violence here operates through legal and verbal channels, not blows.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H2555",
+        "occurrences": [
+          {
+            "verse": "Ps.27.12",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.35.11",
+            "span_surface": "Malicious",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Exod.23.1",
+            "span_surface": "malicious",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Deut.19.16",
+            "span_surface": "malicious",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Mic.6.12",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.10.6",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.10.11",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.55.9",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "chamas describing a settled personal/relational quality worn like an accessory or garment ('violence covers them as a garment,' Ps 73:6; 'covers his garment with violence,' Mal 2:16 of a man who divorces his wife; 'weapons of violence are their swords,' Gen 49:5 of Simeon and Levi), and consistently attributed to a fixed class of person -- 'the one who loves violence' (Ps 11:5), 'a man of violence' (Prov 3:31, 16:29, Ps 140:1/4/11, 2 Sam 22:49, Ps 18:48).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H2555",
+        "occurrences": [
+          {
+            "verse": "Ps.73.6",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Mal.2.16",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Gen.49.5",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.11.5",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.3.31",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.16.29",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.140.1",
+            "span_surface": "violent",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Ps.140.4",
+            "span_surface": "violent",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Ps.140.11",
+            "span_surface": "violent",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "2Sam.22.49",
+            "span_surface": "violence",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Ps.18.48",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.25.19",
+            "span_surface": "violent",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.4.17",
+            "span_surface": "violence",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.13.2",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.26.6",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "chamas at Isaiah 53:9 -- 'he had done no violence' -- the Servant's own negative self-defence, converging with the crushing verb (dakha, H1792) at Isa 53:10 in the same Song. Together with the sufferer's plea to be saved 'from violence' (2 Sam 22:3, Ps 72:14) and the destroyed's cry 'violence!' finding no answer (Job 19:7, Jer 20:8), this strong shows the same self-attesting-innocence and cry-for-deliverance patterns as the Servant passage.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H2555",
+        "occurrences": [
+          {
+            "verse": "Isa.53.9",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "2Sam.22.3",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.72.14",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Job.19.7",
+            "span_surface": "Violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Jer.20.8",
+            "span_surface": "Violence",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "chamas's remaining occurrences name violence done TO a specific party (David's own wrong at the hands of adversaries, 1 Chr 12:17; the seventy sons of Jerubbaal, Judg 9:24; Babylon's violence against Judah, Jer 51:35; Edom against Judah, Joel 3:19), corrupt commercial/civic 'storing up' of it (Amos 3:10, 6:3), leadership's specific charge to 'put away violence and oppression' (Ezek 45:9), and God's own hand devising 'wrongs' as the opposite failure (Ps 58:2).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H2555",
+        "occurrences": [
+          {
+            "verse": "1Chr.12.17",
+            "span_surface": "wrong",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Judg.9.24",
+            "span_surface": "violence",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Jer.51.35",
+            "span_surface": "violence",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Joel.3.19",
+            "span_surface": "violence",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Amos.3.10",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Amos.6.3",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.45.9",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.58.2",
+            "span_surface": "violence",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.59.6",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.60.18",
+            "span_surface": "Violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Gen.16.5",
+            "span_surface": "wrong",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "katat (H3807) applied to weapons-into-tools reversal at the same three citations already noted under H1854 above ('beat their swords into plowshares,' Isa 2:4, Mic 4:3, Joel 3:10) plus general destructive beating of objects, nations, and people -- crushed altars/images (2 Chr 34:7, 2 Kgs 18:4), nations crushed by nations as divine chastisement (2 Chr 15:6), and a plea for God to crush the psalmist's own foes (Ps 89:23).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H3807",
+        "occurrences": [
+          {
+            "verse": "Ps.89.23",
+            "span_surface": "crush",
+            "span_morph": "HVqq1cs"
+          },
+          {
+            "verse": "2Chr.15.6",
+            "span_surface": "crushed",
+            "span_morph": "HVPq3cp"
+          },
+          {
+            "verse": "Job.4.20",
+            "span_surface": "pieces",
+            "span_morph": "HVHi3mp"
+          },
+          {
+            "verse": "2Chr.34.7",
+            "span_surface": "beat",
+            "span_morph": "HVpp3ms"
+          },
+          {
+            "verse": "Lev.22.24",
+            "span_surface": "crushed",
+            "span_morph": "HVqsmsa"
+          },
+          {
+            "verse": "Deut.1.44",
+            "span_surface": "down",
+            "span_morph": "HVhw3mp"
+          },
+          {
+            "verse": "Deut.9.21",
+            "span_surface": "crushed",
+            "span_morph": "HVqw1cs"
+          },
+          {
+            "verse": "2Kgs.18.4",
+            "span_surface": "pieces",
+            "span_morph": "HVpq3ms"
+          },
+          {
+            "verse": "Isa.2.4",
+            "span_surface": "beat",
+            "span_morph": "HVpq3cp"
+          },
+          {
+            "verse": "Isa.24.12",
+            "span_surface": "battered",
+            "span_morph": "HVHi3ms"
+          },
+          {
+            "verse": "Isa.30.14",
+            "span_surface": "smashed",
+            "span_morph": "HVqsmsa"
+          },
+          {
+            "verse": "Joel.3.10",
+            "span_surface": "Beat",
+            "span_morph": "HVqv2mp"
+          },
+          {
+            "verse": "Mic.4.3",
+            "span_surface": "beat",
+            "span_morph": "HVpq3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "I_strife"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "machats (H4272) predominantly a warfare/combat-strike verb naming a decisive, often fatal blow -- crushing the head/skull of a specific named enemy (Judg 5:26's Sisera, Hab 3:13, Num 24:17), 'shatter chiefs' in eschatological judgment (Ps 110:6), and paired directly with God's power over life and death itself: 'I kill and I make alive; I wound and I heal' (Deut 32:39).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H4272",
+        "occurrences": [
+          {
+            "verse": "Deut.33.11",
+            "span_surface": "crush",
+            "span_morph": "HVqv2ms"
+          },
+          {
+            "verse": "Hab.3.13",
+            "span_surface": "crushed",
+            "span_morph": "HVqp2ms"
+          },
+          {
+            "verse": "Deut.32.39",
+            "span_surface": "wound",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Judg.5.26",
+            "span_surface": "shattered",
+            "span_morph": "HVqq3fs"
+          },
+          {
+            "verse": "Ps.110.6",
+            "span_surface": "shatter",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Num.24.17",
+            "span_surface": "crush",
+            "span_morph": "HVqq3ms"
+          },
+          {
+            "verse": "Ps.68.21",
+            "span_surface": "strike",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Ps.68.23",
+            "span_surface": "strike",
+            "span_morph": "HVqj2ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "alternative-meaning",
+      "statement": "Job 5:18's occurrence pairs machats directly with healing in one breath -- 'for he wounds, but he binds up; he shatters, but his hands heal' -- the wounding act stated as the FIRST HALF of a restorative sequence, not an isolated act of harm. This is a distinct reading from every other occurrence's decisive-killing-blow sense: here the wound is explicitly temporary and remedial in intent.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H4272",
+        "occurrences": [
+          {
+            "verse": "Job.5.18",
+            "span_surface": "shatters",
+            "span_morph": "HVqi3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "nezaq (H5142, Aramaic 'to suffer injury') exclusively administrative/economic in all three occurrences -- royal revenue being 'impaired,' a city being 'hurtful to kings' (both from the Aramaic section of Ezra concerning Jerusalem's rebuilding), and a king suffering no financial/administrative 'loss' (Dan 6:2) -- no physical or moral-injury sense at all despite the family's gloss.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H5142",
+        "occurrences": [
+          {
+            "verse": "Ezra.4.13",
+            "span_surface": "impaired",
+            "span_morph": "AVhi2ms"
+          },
+          {
+            "verse": "Ezra.4.15",
+            "span_surface": "hurtful",
+            "span_morph": "AVhrfsc"
+          },
+          {
+            "verse": "Dan.6.2",
+            "span_surface": "loss",
+            "span_morph": "AVqrmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "atstsevet (H6094) in both occurrences naming consequence/pain rather than an act of violence itself -- 'sorrows' multiplying for idolaters (Ps 16:4) and 'trouble'/ruin for a fool's own careless speech (Prov 10:10) -- a result-state noun, not a description of the violent act that causes it.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H6094",
+        "occurrences": [
+          {
+            "verse": "Ps.16.4",
+            "span_surface": "sorrows",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Prov.10.10",
+            "span_surface": "trouble",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "patsa (H6481) in its one occurrence -- a self-inflicted wound arranged as a prophetic sign-act ('strike me, please... struck him and wounded him,' 1 Kgs 20:37) -- a consensual, staged wounding for symbolic purposes, not an act of hostility.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H6481",
+        "occurrences": [
+          {
+            "verse": "1Kgs.20.37",
+            "span_surface": "wounded",
+            "span_morph": "HVqaa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "ratsats (H7533) pairs literal crushing with figurative oppression explicitly within its own meaning block, and the occurrences bear this out: literal head-crushing (Judg 9:53's Abimelech, Ps 74:14's Leviathan) alongside repeated social/economic oppression-language ('crushed and oppressed the people of Israel,' Judg 10:8; 'crushed and abandoned the poor,' Job 20:19; 'Ephraim is oppressed, crushed in judgment,' Hos 5:11; Isa 58:6's 'let the oppressed go free').",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H7533",
+        "occurrences": [
+          {
+            "verse": "Judg.9.53",
+            "span_surface": "crushed",
+            "span_morph": "HVhw3fs"
+          },
+          {
+            "verse": "Ps.74.14",
+            "span_surface": "crushed",
+            "span_morph": "HVpp2ms"
+          },
+          {
+            "verse": "Judg.10.8",
+            "span_surface": "oppressed",
+            "span_morph": "HVpw3mp"
+          },
+          {
+            "verse": "Job.20.19",
+            "span_surface": "crushed",
+            "span_morph": "HVpp3ms"
+          },
+          {
+            "verse": "Hos.5.11",
+            "span_surface": "crushed",
+            "span_morph": "HVqsmsc"
+          },
+          {
+            "verse": "Isa.58.6",
+            "span_surface": "oppressed",
+            "span_morph": "HVqsmpa"
+          },
+          {
+            "verse": "Deut.28.33",
+            "span_surface": "crushed",
+            "span_morph": "HVqsmsa"
+          },
+          {
+            "verse": "1Sam.12.3",
+            "span_surface": "oppressed",
+            "span_morph": "HVqp1cs"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "ratsats applied gently to the vulnerable in Isaiah's Servant-adjacent 'bruised reed' passage -- 'a bruised reed he will not break... he will faithfully bring forth justice' (Isa 42:3-4) -- the strong's destructive sense negated as the specific mark of the Servant's own gentleness toward the weak, and applied non-morally to inanimate objects breaking with age (Eccl 12:6's snapped cord, broken bowl, shattered pitcher).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H7533",
+        "occurrences": [
+          {
+            "verse": "Isa.42.3",
+            "span_surface": "bruised",
+            "span_morph": "HVqsmsa"
+          },
+          {
+            "verse": "Isa.42.4",
+            "span_surface": "discouraged",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Eccl.12.6",
+            "span_surface": "broken",
+            "span_morph": "HVqu3fs"
+          },
+          {
+            "verse": "Eccl.12.6",
+            "span_surface": "broken",
+            "span_morph": "HVNq3ms"
+          },
+          {
+            "verse": "Ezek.29.7",
+            "span_surface": "broke",
+            "span_morph": "HVNi2ms"
+          },
+          {
+            "verse": "Gen.25.22",
+            "span_surface": "struggled together",
+            "span_morph": "HVtw3mp"
+          },
+          {
+            "verse": "2Chr.16.10",
+            "span_surface": "inflicted cruelties",
+            "span_morph": "HVpw3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "sha'aph (H7602B) consistently naming an adversary trampling the sufferer, always Qal, always from the victim's own first-person complaint -- 'he who tramples on me' (Ps 57:3), 'man tramples on me' (Ps 56:1), 'my enemies trample on me' (Ps 56:2), and God's judgment described the same way against Israel itself ('crushed you from all sides,' Ezek 36:3).",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H7602B",
+        "occurrences": [
+          {
+            "verse": "Ezek.36.3",
+            "span_surface": "crushed",
+            "span_morph": "HVqaa"
+          },
+          {
+            "verse": "Ps.57.3",
+            "span_surface": "tramples",
+            "span_morph": "HVqrmsc"
+          },
+          {
+            "verse": "Ps.56.1",
+            "span_surface": "tramples",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Ps.56.2",
+            "span_surface": "trample",
+            "span_morph": "HVqp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "shod (H7701) functioning almost entirely as a synonym-pair partner for destruction/desolation rather than a standalone violence-word -- 'desolation and destruction' (Isa 59:7, Jer 48:3), 'destruction and famine' (Job 5:22), consistently paired with a cognate of family A's destroy-vocabulary in the same clause.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H7701",
+        "occurrences": [
+          {
+            "verse": "Isa.59.7",
+            "span_surface": "desolation",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Jer.48.3",
+            "span_surface": "Desolation",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Job.5.22",
+            "span_surface": "destruction",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Hos.9.6",
+            "span_surface": "destruction",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.16.4",
+            "span_surface": "destruction",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Amos.5.9",
+            "span_surface": "destruction",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.13.6",
+            "span_surface": "destruction",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "A_destroy"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "shod at its own 'social sin' sub-sense (per its meaning block): 'their hearts devise violence' (Prov 24:2), 'the violence of the wicked will sweep them away' (Prov 21:7), and 'the poor are plundered' (Ps 12:5) -- three occurrences carrying genuine moral/social content distinct from the desolation-pairing group above.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H7701",
+        "occurrences": [
+          {
+            "verse": "Prov.24.2",
+            "span_surface": "violence",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.21.7",
+            "span_surface": "violence",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.12.5",
+            "span_surface": "plundered",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "tavah (H8428) in its one occurrence -- 'they tested God again and again and provoked the Holy One of Israel' (Ps 78:41) -- its own meaning block flags this sense as uncertain ('meaning probable'); the rendered sense ('provoked') is closer to defiance/testing than to physical wounding.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H8428",
+        "occurrences": [
+          {
+            "verse": "Ps.78.41",
+            "span_surface": "provoked",
+            "span_morph": "HVhp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "This family's dominant morph-marked finding (H1792/H1794's Niphal-contrite vs. Piel-destructive split) gives a cleaner, more mechanically verifiable version of the round-1 'destructive vs. redemptive crushing, no lexical marker' observation -- there IS a marker (the stem), it was simply not checked in round 1. Combined with H6184's Jer 20:11 positive-divine use (family M_cruelty) and H5375J's bear/transfer split (family H_guilt), this cluster shows a recurring pattern: several roots for violent/negative action carry a real morphological or contextual marker distinguishing destructive and redemptive/protective senses, and round 1 treated these as unmarked ambiguity when several are not.",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "M_cruelty"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "machats at Ps 18:38 -- 'I thrust them through, so that they were not able to rise' -- David's own first-person combat account of striking down enemies underfoot, belonging with the decisive-blow group above (Qal imperfect 1cs, matching the agentive first-person pattern of Deut 32:39's divine 'I wound').",
+      "traces": {
+        "cluster": "M10",
+        "family": "F_violence_wound",
+        "strong": "H4272",
+        "occurrences": [
+          {
+            "verse": "Ps.18.38",
+            "span_surface": "through",
+            "span_morph": "HVqi1cs"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G2352",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "G3039",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "G5135",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "H1500",
+      "occurrence_count": 4,
+      "traced_count": 4,
+      "missing_verses": []
+    },
+    {
+      "strong": "H1792",
+      "occurrence_count": 11,
+      "traced_count": 11,
+      "missing_verses": []
+    },
+    {
+      "strong": "H1794",
+      "occurrence_count": 4,
+      "traced_count": 4,
+      "missing_verses": []
+    },
+    {
+      "strong": "H1795",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H1854",
+      "occurrence_count": 7,
+      "traced_count": 7,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2115",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2555",
+      "occurrence_count": 44,
+      "traced_count": 44,
+      "missing_verses": []
+    },
+    {
+      "strong": "H3807",
+      "occurrence_count": 13,
+      "traced_count": 13,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4272",
+      "occurrence_count": 10,
+      "traced_count": 10,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5142",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "H6094",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "H6481",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H7533",
+      "occurrence_count": 14,
+      "traced_count": 14,
+      "missing_verses": []
+    },
+    {
+      "strong": "H7602B",
+      "occurrence_count": 4,
+      "traced_count": 4,
+      "missing_verses": []
+    },
+    {
+      "strong": "H7701",
+      "occurrence_count": 10,
+      "traced_count": 10,
+      "missing_verses": []
+    },
+    {
+      "strong": "H8428",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    }
+  ]
+}

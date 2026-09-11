@@ -1,0 +1,1112 @@
+{
+  "cluster_code": "M10",
+  "family_id": "G_transgression",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G3845",
+    "G3847",
+    "G3848",
+    "G3900",
+    "G8634",
+    "H5674D",
+    "H6586",
+    "H6588"
+  ],
+  "observations": [
+    {
+      "tag": "verse-grouping",
+      "statement": "parabainō (G3845) as literal boundary-crossing applied to Pharisaic tradition ('break the tradition of the elders,' Matt 15:2-3) and to Judas's abandonment of his apostolic office ('turned aside to go to his own place,' Acts 1:25) -- the literal 'step past a line' root sense is visible in the English surface itself ('break,' 'turned aside') even before any moral reading is applied.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3845",
+        "occurrences": [
+          {
+            "verse": "Matt.15.3",
+            "span_surface": "break",
+            "span_morph": "V-PAI-2P"
+          },
+          {
+            "verse": "Matt.15.2",
+            "span_surface": "break",
+            "span_morph": "V-PAI-3P"
+          },
+          {
+            "verse": "Acts.1.25",
+            "span_surface": "turned aside",
+            "span_morph": "V-2AAI-3S"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "2 John 9's occurrence renders parabainō as 'goes on ahead' (present active participle) rather than 'transgresses' -- describing a false teacher's doctrinal innovation ('does not abide in the teaching of Christ') as an act of moving forward past a boundary, not stepping backward or breaking a rule. This is the literal spatial sense (step beyond) applied to doctrinal overreach specifically, distinct from every other occurrence's rule-breaking sense.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3845",
+        "occurrences": [
+          {
+            "verse": "2John.1.9",
+            "span_surface": "goes on ahead",
+            "span_morph": "V-PAP-NSM"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "parabasis (G3847) stating the law-relative definition almost formally -- 'where there is no law there is no transgression' (Rom 4:15) -- transgression requires a prior boundary to exist before it can be crossed.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3847",
+        "occurrences": [
+          {
+            "verse": "Rom.4.15",
+            "span_surface": "transgression",
+            "span_morph": "N-NSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "parabasis naming Adam's transgression as the paradigm/type-case (Rom 5:14), a general angelic-mediated-law violation (Heb 2:2), transgressions committed under the old covenant needing redemption (Heb 9:15), and the law's own purpose 'added because of transgressions' (Gal 3:19) -- consistently the formal, covenant-theology register rather than a specific individual's act.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3847",
+        "occurrences": [
+          {
+            "verse": "Rom.5.14",
+            "span_surface": "transgression",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.2.2",
+            "span_surface": "transgression",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Heb.9.15",
+            "span_surface": "transgressions",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Gal.3.19",
+            "span_surface": "transgressions",
+            "span_morph": "N-GPF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Rom 2:23's parabasis occurrence renders as 'breaking' (a verb-shaped gerund) rather than 'transgression' -- 'you... dishonor God BY BREAKING the law' -- the noun restructured into an English verbal phrase, the same abstract-noun-to-verb pattern already found repeatedly for apostasia/sarah/planē.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3847",
+        "occurrences": [
+          {
+            "verse": "Rom.2.23",
+            "span_surface": "breaking",
+            "span_morph": "N-GSF"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": "K_error_deception"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "parabatēs (G3848) exclusively a person-identity noun, naming who someone is by their relation to the law: James's argument that partiality-showing makes one 'a transgressor' regardless of other law-keeping (Jas 2:9), and that failing at one point makes 'a transgressor of the law' generally (Jas 2:11) -- the same whole-law-is-one-unit principle already found under G1777 in family H_guilt (same author, same argument, two different M10 families).",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3848",
+        "occurrences": [
+          {
+            "verse": "Jas.2.9",
+            "span_surface": "transgressors",
+            "span_morph": "N-NPM"
+          },
+          {
+            "verse": "Jas.2.11",
+            "span_surface": "transgressor",
+            "span_morph": "N-NSM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Rom 2:25/2:27 render parabatēs as 'break' (a verb) despite the strong being the person-noun 'transgressor' -- 'if you break the law, your circumcision becomes uncircumcision' -- again the noun-to-verb English restructuring, and notably these are the same two verses where G3900 also appears with a similar pattern (see G3900 note below).",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3848",
+        "occurrences": [
+          {
+            "verse": "Rom.2.27",
+            "span_surface": "break",
+            "span_morph": "N-ASM"
+          },
+          {
+            "verse": "Rom.2.25",
+            "span_surface": "break",
+            "span_morph": "N-NSM"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "parabatēs at Gal 2:18 -- Paul's own self-indictment, 'if I rebuild what I tore down, I prove myself to be a transgressor' -- naming an identity assumed through inconsistency (reverting to what was already renounced), not a single specific act.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3848",
+        "occurrences": [
+          {
+            "verse": "Gal.2.18",
+            "span_surface": "transgressor",
+            "span_morph": "N-ASM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "paraptōma (G3900) as Paul's central Adam/Christ contrast term, all in one sustained argument -- 'the trespass' (singular, Adam's own act) set against 'the free gift,' with the one-trespass/many-trespasses distinction carrying the entire Rom 5:15-20 argument about how condemnation and justification each spread from a single source.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3900",
+        "occurrences": [
+          {
+            "verse": "Rom.5.15",
+            "span_surface": "trespass",
+            "span_morph": "N-NSN"
+          },
+          {
+            "verse": "Rom.5.15",
+            "span_surface": "trespass",
+            "span_morph": "N-DSN"
+          },
+          {
+            "verse": "Rom.5.17",
+            "span_surface": "trespass",
+            "span_morph": "N-DSN"
+          },
+          {
+            "verse": "Rom.5.16",
+            "span_surface": "trespasses",
+            "span_morph": "N-GPN"
+          },
+          {
+            "verse": "Rom.5.18",
+            "span_surface": "trespass",
+            "span_morph": "N-GSN"
+          },
+          {
+            "verse": "Rom.5.20",
+            "span_surface": "trespass",
+            "span_morph": "N-NSN"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "paraptōma overwhelmingly in forgiveness-context, functioning almost as the standard direct object of 'forgive' -- the Lord's Prayer teaching repeated three times (Matt 6:14, 6:15 x2, Mark 11:25), Paul's 'not counting their trespasses against them' (2 Cor 5:19), 'the forgiveness of our trespasses' (Eph 1:7), being 'dead in trespasses' before being made alive (Eph 2:1, 2:5, Col 2:13 x2), and Christ 'delivered up for our trespasses' (Rom 4:25) -- this strong is defined at least as much by its remedy as by the act itself.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3900",
+        "occurrences": [
+          {
+            "verse": "Matt.6.14",
+            "span_surface": "trespasses",
+            "span_morph": "N-APN"
+          },
+          {
+            "verse": "Matt.6.15",
+            "span_surface": "trespasses",
+            "span_morph": "N-APN"
+          },
+          {
+            "verse": "Matt.6.15",
+            "span_surface": "trespasses",
+            "span_morph": "N-APN"
+          },
+          {
+            "verse": "Mark.11.25",
+            "span_surface": "trespasses",
+            "span_morph": "N-APN"
+          },
+          {
+            "verse": "2Cor.5.19",
+            "span_surface": "trespasses",
+            "span_morph": "N-APN"
+          },
+          {
+            "verse": "Eph.1.7",
+            "span_surface": "trespasses",
+            "span_morph": "N-GPN"
+          },
+          {
+            "verse": "Eph.2.1",
+            "span_surface": "trespasses",
+            "span_morph": "N-DPN"
+          },
+          {
+            "verse": "Eph.2.5",
+            "span_surface": "trespasses",
+            "span_morph": "N-DPN"
+          },
+          {
+            "verse": "Col.2.13",
+            "span_surface": "trespasses",
+            "span_morph": "N-DPN"
+          },
+          {
+            "verse": "Col.2.13",
+            "span_surface": "trespasses",
+            "span_morph": "N-APN"
+          },
+          {
+            "verse": "Rom.4.25",
+            "span_surface": "trespasses",
+            "span_morph": "N-APN"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "paraptōma at Rom 11:11-12 in a distinct sense -- Israel's 'trespass'/'stumble' as the specific historical event that occasioned 'riches for the world' and 'salvation... to the Gentiles' -- a fall in faith rather than a moral crime, per the strong's own meaning block's separate 'a fall in faith' sense.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3900",
+        "occurrences": [
+          {
+            "verse": "Rom.11.11",
+            "span_surface": "trespass",
+            "span_morph": "N-DSN"
+          },
+          {
+            "verse": "Rom.11.12",
+            "span_surface": "trespass",
+            "span_morph": "N-NSN"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "paraptōma at Gal 6:1 -- pastoral instruction to restore 'in a spirit of gentleness' someone 'caught in any transgression' -- a community-care context distinct from both the Adam/Christ theology and the standard forgiveness-formula uses above.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G3900",
+        "occurrences": [
+          {
+            "verse": "Gal.6.1",
+            "span_surface": "transgression",
+            "span_morph": "N-DSN"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "G8634 (paraptōsis, 'a transgression') has zero occurrences and an empty meaning block. Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G8634",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "G8634 is included in cluster_strong for M10 but has no live span occurrences anywhere in the base data -- same category as G8327/H5005/H6330/H2054 already flagged in other families. Flagged for the spine/integrity process.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "G8634",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avar (H5674D) at its moral/covenant sub-sense (one branch among many literal 'pass over/through/by' senses in its own meaning block) naming transgression of a specific command, law, or covenant -- Israel's covenant (Judg 2:20), the LORD's commandment (1 Sam 15:24, Deut 26:13 negated, Num 14:41), the king's command (Esth 3:3), the whole law (Dan 9:11), statutes and the everlasting covenant together (Isa 24:5), and the covenant again explicitly compared to Adam's own transgression (Hos 6:7).",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H5674D",
+        "occurrences": [
+          {
+            "verse": "Judg.2.20",
+            "span_surface": "transgressed",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "1Sam.15.24",
+            "span_surface": "transgressed",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Esth.3.3",
+            "span_surface": "transgress",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Dan.9.11",
+            "span_surface": "transgressed",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Isa.24.5",
+            "span_surface": "transgressed",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Num.14.41",
+            "span_surface": "transgressing",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Deut.26.13",
+            "span_surface": "transgressed",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Hos.6.7",
+            "span_surface": "transgressed",
+            "span_morph": "HVqw3mp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Three of avar's occurrences render far from 'transgress': 'serve' (Jer 2:20, a negated refusal -- 'I will NOT serve/transgress-past' the yoke), 'break' (2 Chr 24:20, of the commandments), and 'bounds' (Jer 5:28, 'they know no bounds' -- the literal boundary-sense showing through directly in the English). The last case especially shows the root's literal spatial meaning surfacing even in a moral-failure context.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H5674D",
+        "occurrences": [
+          {
+            "verse": "Jer.2.20",
+            "span_surface": "serve",
+            "span_morph": "HVqi1cs"
+          },
+          {
+            "verse": "2Chr.24.20",
+            "span_surface": "break",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Jer.5.28",
+            "span_surface": "bounds",
+            "span_morph": "HVqp3cp"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "avar in two occurrences with no human moral content at all -- the sea not transgressing its assigned limit (Prov 8:29, part of the created order established by wisdom) and the psalmist's resolve that his own mouth 'will not transgress' (Ps 17:3, a boundary of speech he sets for himself, examined and found clean) -- the first cosmic-physical, the second a self-imposed rather than commanded limit.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H5674D",
+        "occurrences": [
+          {
+            "verse": "Prov.8.29",
+            "span_surface": "transgress",
+            "span_morph": "HVqi3mp"
+          },
+          {
+            "verse": "Ps.17.3",
+            "span_surface": "transgress",
+            "span_morph": "HVqi3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pasha (H6586) fusing 'transgress' and 'rebel/revolt' as one verb: religious confession uses transgress-vocabulary (Lam 3:42, Isa 59:13, Jer 2:8, Ezek 18:31) while the identical root, unmarked by any different form, names straightforward political revolt of one nation against another's rule -- Moab against Israel (2 Kgs 1:1, 3:5, 2 Chr 21:10 implied), Edom and Libnah against Judah (2 Kgs 8:22, 2Chr 21:10), Israel against the house of David (1 Kgs 12:19, 2 Chr 10:19).",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6586",
+        "occurrences": [
+          {
+            "verse": "Lam.3.42",
+            "span_surface": "transgressed",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Isa.59.13",
+            "span_surface": "transgressing",
+            "span_morph": "HVqaa"
+          },
+          {
+            "verse": "Jer.2.8",
+            "span_surface": "transgressed",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Ezek.18.31",
+            "span_surface": "committed",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "2Kgs.3.7",
+            "span_surface": "rebelled",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "2Kgs.3.5",
+            "span_surface": "rebelled",
+            "span_morph": "HVqw3ms"
+          },
+          {
+            "verse": "2Kgs.8.22",
+            "span_surface": "revolted",
+            "span_morph": "HVqw3ms"
+          },
+          {
+            "verse": "1Kgs.12.19",
+            "span_surface": "rebellion",
+            "span_morph": "HVqw3mp"
+          },
+          {
+            "verse": "2Chr.10.19",
+            "span_surface": "rebellion",
+            "span_morph": "HVqw3mp"
+          },
+          {
+            "verse": "2Chr.21.10",
+            "span_surface": "revolted",
+            "span_morph": "HVqw3ms"
+          },
+          {
+            "verse": "2Kgs.1.1",
+            "span_surface": "rebelled",
+            "span_morph": "HVqw3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Every political-revolt occurrence above is morphologically waw-consecutive (HVqw*), a historical-narrative tense, while the religious-confession occurrences use perfect (HVqp*) or the infinitive-absolute (HVqaa) -- suggesting the political sense is consistently narrated as past historical fact in king-narratives, while the religious sense is consistently used in first-person confession or address. The same word, but the two registers keep to two different grammatical environments.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6586",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pasha as a Qal participle, once again the participle-as-person-identity pattern already found across na'aph/bagad/pathah in three other families -- 'rebels' (Isa 1:28), 'a rebel' (Isa 48:8, tied to bagad's 'deal treacherously' in the same verse), 'transgressors' (Ps 37:38, Isa 46:8, Ps 51:13).",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6586",
+        "occurrences": [
+          {
+            "verse": "Isa.1.28",
+            "span_surface": "rebels",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Isa.48.8",
+            "span_surface": "rebel",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Ps.37.38",
+            "span_surface": "transgressors",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Isa.46.8",
+            "span_surface": "transgressors",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Ps.51.13",
+            "span_surface": "transgressors",
+            "span_morph": "HVqrmpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "J_unfaithfulness"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Prov 18:19's occurrence is the only Niphal form of this root in the corpus (HVNrmsa) -- 'a brother offended' -- matching its own meaning block's separate Niphal sense 'to be rebelled against.' Every other occurrence is Qal (active); this single passive form marks the one place the text names the person ON THE RECEIVING END of the rebellion/offense rather than the one committing it.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6586",
+        "occurrences": [
+          {
+            "verse": "Prov.18.19",
+            "span_surface": "offended",
+            "span_morph": "HVNrmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Prov 28:21's occurrence renders as generic 'wrong' ('for a piece of bread a man will do wrong') rather than 'transgress/rebel' -- Amos 4:4's occurrence renders as plain 'transgress' in a sarcastic cultic-critique context ('come to Bethel, and transgress'), showing the same root spanning from a throwaway wisdom-proverb sense to a prophetic indictment of formal worship.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6586",
+        "occurrences": [
+          {
+            "verse": "Prov.28.21",
+            "span_surface": "wrong",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Amos.4.4",
+            "span_surface": "transgress",
+            "span_morph": "HVqv2mp"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pesha (H6588, 60 occurrences, the largest single strong found across this whole cluster) in the Amos 'for three transgressions... and for four' indictment formula, applied identically to seven different nations (Amos 1:3 Damascus, 1:6 Gaza, 1:9 Tyre, 1:11 Edom, 1:13 Ammon, 2:1 Moab, 2:4 Judah, 2:6 Israel -- 8 citations, Judah and Israel included alongside foreign nations) -- a fixed prophetic-indictment template, not eight separate readings of the word.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Amos.1.3",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Amos.1.6",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Amos.1.9",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Amos.1.11",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Amos.1.13",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Amos.2.1",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Amos.2.4",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Amos.2.6",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pesha in the recognition-accrual-remedy sequence its own meaning block names explicitly ('as recognised by sinner,' 'as God deals with it,' 'as God forgives'): self-aware confession ('I know my transgressions, my sin is ever before me,' Ps 51:3; Ps 32:1's 'blessed is the one whose transgression is forgiven'; Job 13:23's plea to be shown his own transgression), and the corresponding forgiveness-formula ('pardoning iniquity and passing over transgression,' Mic 7:18; 'blots out your transgressions... your sins like mist,' Isa 44:22, 43:25).",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Ps.51.3",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ps.32.1",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Job.13.23",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Mic.7.18",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.44.22",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Isa.43.25",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "pesha at Isaiah 53:5 -- 'he was pierced for our transgressions; he was crushed for our iniquities' -- the same convergence-verse already documented under family H_guilt (H0817, H5375J) and family D (H5771G): this is now the fourth strong (across three families) independently citing this one verse.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Isa.53.5",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pesha applied at the three registers its own meaning block distinguishes ('against individuals,' 'nation against nation,' 'against God'): Jacob's 'what is my offense?' to Laban (Gen 31:36, individual); the Amos formula above (nation against nation); and the great bulk of prophetic/psalmic occurrences addressing transgression against God directly (Ezek 18/33's repeated 'his transgressions... that he has committed,' Isa 59:12's 'our transgressions are multiplied before you').",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Gen.31.36",
+            "span_surface": "offense",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.18.22",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.18.28",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.33.10",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.33.12",
+            "span_surface": "transgresses",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.59.12",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Isa.59.12",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pesha describing transgression as a load that accumulates, is uncovered/remembered, or is concealed -- 'my transgressions were bound into a yoke... set upon my neck' (Lam 1:14), 'because of the abundance of their transgressions' (Ps 5:10), 'your transgressions are uncovered' (Ezek 21:24), 'whoever conceals his transgressions will not prosper' (Prov 28:13), 'sealed up in a bag' (Job 14:17) -- the same bearing/burden image already documented for family H_guilt's asham and nasa.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Lam.1.14",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ps.5.10",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.21.24",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Prov.28.13",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Job.14.17",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Job.31.33",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Job.35.6",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ps.89.32",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.39.8",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Amos.5.12",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Lam.1.22",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Mic.1.13",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Jer.5.6",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.14.11",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.37.23",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.18.30",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.18.31",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Job.8.4",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.59.3",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pesha in general wisdom-proverb statements about transgression as a moral category, independent of any specific offender: it deep speaks 'to the wicked deep in his heart' (Ps 36:1), increases with the wicked (Prov 29:16, 29:22), thrives on many words (Prov 10:19), is covered/concealed rhetorically (Prov 17:9, 10:12), and one man's flat denial that theft from a parent counts as transgression at all (Prov 28:24).",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Ps.36.1",
+            "span_surface": "Transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.29.16",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.29.22",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.10.19",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.17.9",
+            "span_surface": "offense",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.10.12",
+            "span_surface": "offenses",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.28.24",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.17.19",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.12.13",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Two occurrences depart sharply from 'transgression': Exod 22:9's 'breach of trust' renders as bare 'trust,' and Ps 107:17's occurrence renders as 'sinful ways' rather than 'transgression.' Together with the many 'offense(s)' renderings already noted above, pesha's English surface spans at least five distinct words (transgression, offense, trust, sinful ways, plus 'rebellion' at the shared root's H6586 cousin) for what the meaning block treats as one lexeme.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Exod.22.9",
+            "span_surface": "trust",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.107.17",
+            "span_surface": "sinful ways",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "pesha naming specific named-individual/named-nation cases: Joseph's brothers' plea for forgiveness (Gen 50:17), Micah's specific charge against Jacob/Samaria (Mic 1:5, 3:8), Isaiah's 'children of transgression' (Isa 57:4), and the specific accusation that transgression itself will be turned from at the redemption of Zion (Isa 59:20).",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Gen.50.17",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Mic.1.5",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Mic.3.8",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.57.4",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Isa.59.20",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "This family reinforces a pattern now visible across several families (guilt, unfaithfulness, transgression, crime/injustice all show an 'against man/against God/against nation' split, and a recognition-accrual-remedy sequence). Combined with G3848's Jas 2:9/11 argument mirroring G1777's identical argument in family H_guilt, and G3900's forgiveness-defined identity mirroring H0817's guilt-offering identity, this family's overlap with H_guilt looks less like two related-but-distinct concepts and more like two English-gloss windows onto one shared underlying structure.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "pesha at Job 7:21 -- 'why do you not pardon my transgression and take away my iniquity?' -- belongs with the recognition/forgiveness-plea group (alongside Ps 51:3, Ps 32:1, Mic 7:18): Job asking directly for the same removal-of-transgression his friends' theology assumes only follows confession.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Job.7.21",
+            "span_surface": "transgression",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "pesha at Lam 1:5 -- 'the Lord has afflicted her for the multitude of her transgressions' -- belongs with the accumulating-load group: Jerusalem's transgressions in quantity as the stated cause of the city's affliction and captivity.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Lam.1.5",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "pesha at Ps 51:1 -- 'according to your abundant mercy blot out my transgressions' -- David's own psalm of repentance (after Nathan's confrontation over Bathsheba), the direct request-form of the same 'blot out' forgiveness-formula already documented at Isa 43:25/44:22, and the header verse for the same psalm's own Ps 51:3 already grouped above.",
+      "traces": {
+        "cluster": "M10",
+        "family": "G_transgression",
+        "strong": "H6588",
+        "occurrences": [
+          {
+            "verse": "Ps.51.1",
+            "span_surface": "transgressions",
+            "span_morph": "HNcmpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G3845",
+      "occurrence_count": 4,
+      "traced_count": 4,
+      "missing_verses": []
+    },
+    {
+      "strong": "G3847",
+      "occurrence_count": 6,
+      "traced_count": 6,
+      "missing_verses": []
+    },
+    {
+      "strong": "G3848",
+      "occurrence_count": 5,
+      "traced_count": 5,
+      "missing_verses": []
+    },
+    {
+      "strong": "G3900",
+      "occurrence_count": 17,
+      "traced_count": 17,
+      "missing_verses": []
+    },
+    {
+      "strong": "G8634",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5674D",
+      "occurrence_count": 13,
+      "traced_count": 13,
+      "missing_verses": []
+    },
+    {
+      "strong": "H6586",
+      "occurrence_count": 19,
+      "traced_count": 19,
+      "missing_verses": []
+    },
+    {
+      "strong": "H6588",
+      "occurrence_count": 59,
+      "traced_count": 59,
+      "missing_verses": []
+    }
+  ]
+}

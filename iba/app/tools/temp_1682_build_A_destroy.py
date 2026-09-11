@@ -1,0 +1,542 @@
+import json
+
+with open('_analytics/Clusters/1682-test-m10-process-a-input-v1-20260911.json', encoding='utf-8') as f:
+    data = json.load(f)
+strongs_list = data['strongs'] if 'strongs' in data else data
+by_strong = {s['strong']: s for s in strongs_list}
+
+def occs_for(strong, osis_ids_in_order):
+    """Return list of occurrence dicts (verse, span_surface, span_morph) for given strong,
+    picking occurrences matching osis_ids_in_order, allowing repeats (multiple matches per verse)."""
+    src = by_strong[strong]['occurrences']
+    pool = list(src)
+    result = []
+    used = [False]*len(pool)
+    for osis in osis_ids_in_order:
+        for i, o in enumerate(pool):
+            if not used[i] and o['osisId'] == osis:
+                used[i] = True
+                result.append({"verse": o['osisId'], "span_surface": o['span_surface'], "span_morph": o['span_morph']})
+                break
+    return result
+
+def all_occs(strong):
+    return [{"verse": o['osisId'], "span_surface": o['span_surface'], "span_morph": o['span_morph']} for o in by_strong[strong]['occurrences']]
+
+observations = []
+
+# ---------- G0622 (apollymi) ----------
+STRONG = "G0622"
+
+g1 = ["Matt.2.13","Matt.12.14","Mark.3.6","Mark.11.18","Luke.19.47","Matt.27.20"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "apollymi (G0622) active voice as narrated human conspiracy to kill Jesus: Herod seeking to destroy the infant (Matt 2:13), and repeatedly the Pharisees/chief priests/crowd seeking to destroy him during his ministry and at his trial (Matt 12:14, Mark 3:6, Mark 11:18, Luke 19:47, Matt 27:20). All active-voice finite verbs -- an agent actively plotting to destroy a target -- the same grammatical pattern recurring across all four strands of the passion narrative build-up.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g1),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g2 = ["Mark.1.24","Luke.4.34"]
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "The identical demonic cry 'have you come to destroy us?' (Mark 1:24 / Luke 4:34) puts apollymi's active voice in the mouth of an unclean spirit recognizing Jesus's authority to destroy it -- a fearful acknowledgment of power, not a human plot. Same active-voice grammar as the conspiracy group but a wholly different speaker and register.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g2),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g3 = ["Luke.6.9"]
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "Jesus's own rhetorical antithesis on the Sabbath -- 'I ask you, is it lawful... to save life or to destroy it?' (Luke 6:9) -- uses apollymi's active voice to frame the real content of the Sabbath law as a save/destroy choice, immediately before he heals the man with the withered hand.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g3),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g4 = ["Matt.10.28","Jas.4.12","Jude.1.5","Luke.20.16","Mark.12.9","1Cor.1.19","John.10.10","Mark.9.22"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "apollymi active voice as the exercise of authority to destroy, outside the passion-conspiracy set: God/Christ's unique power to 'destroy both soul and body in hell' (Matt 10:28) and to 'save and to destroy' as sole lawgiver (Jas 4:12); the Lord's judgment on unbelievers (Jude 1:5, aorist); the vineyard owner's coming destruction of the tenants in two synoptic parallels of the same parable (Luke 20:16, Mark 12:9); God's promised destruction of 'the wisdom of the wise' quoting Isa 29:14 (1Cor 1:19); and, inverted onto an evil agent, the thief who 'comes to steal and kill and destroy' (John 10:10) and the unclean spirit trying to destroy the boy it possesses (Mark 9:22). All active voice; the referents range from God to a parable-master to a demonic agent, showing the active form marks the grammatical role of destroyer regardless of whether that destroyer is good or evil.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g4),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g4b = ["Rom.14.15","1Cor.8.11"]
+observations.append({
+  "tag": "difference-inference",
+  "statement": "A matched pair on the same pastoral scenario -- a believer's careless exercise of liberty over food harming a weaker believer's faith -- uses active voice for the agent's exhortation not to act ('do not destroy him for whom Christ died,' Rom 14:15, V-PAM-2S) and passive voice for the victim's resulting state ('the weak person is destroyed,' 1Cor 8:11, V-PPI-3S). Active = the one urged not to cause the harm; passive = the one who suffers it. Morph confirms the voice split tracks agent-vs-patient exactly as in the other active/passive pairs in this family.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g4b),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g5 = ["John.3.16","John.10.28","Rom.2.12","2Pet.3.9","1Cor.1.18","2Cor.2.15","2Cor.4.3","2Thess.2.10","Heb.1.11","Jas.1.11","1Pet.1.7","John.6.27"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "apollymi middle/passive voice as the soteriological binary 'perish' set against believing/being saved: 'should not perish but have eternal life' (John 3:16), 'they will never perish' (John 10:28), the law-less 'will perish' (Rom 2:12), God 'not wishing that any should perish' (2Pet 3:9), the cross as folly 'to those who are perishing' (1Cor 1:18) and the gospel veiled to 'those who are perishing' (2Cor 2:15, 2Cor 4:3), 'those who are perishing' in 2Thess 2:10, even the created heavens that 'will perish' while God remains (Heb 1:11). The same verb is then extended by analogy to lesser, non-final things that 'perish' -- the rich man who 'will fade away' like a flower (Jas 1:11), gold 'that perishes' though tested by fire (1Pet 1:7), and 'food that perishes' contrasted with food that endures to eternal life (John 6:27) -- borrowing the eschatological verb for temporal/material transience.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g5),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g6 = ["Luke.11.51","Luke.13.3","Luke.13.5","Luke.13.33","Acts.5.37","1Cor.10.9","1Cor.10.10","Jude.1.11","2Pet.3.6","Luke.17.27","Luke.17.29","John.11.50","1Cor.15.18","Matt.21.41","Matt.22.7","2Cor.4.9","Matt.26.52"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "apollymi middle/passive voice as narrated historical or parabolic judgment-death, cited as real precedent rather than abstract eschatology: Zechariah 'who perished between the altar and sanctuary' (Luke 11:51), the Galileans and the victims of the tower of Siloam invoked as warning examples (Luke 13:3, 13:5), Jerusalem's prophets who must not 'perish away from Jerusalem' (Luke 13:33), Theudas who 'perished' and his followers scattered (Acts 5:37), the wilderness generation 'destroyed by the Destroyer' and by serpents (1Cor 10:9-10), Korah's rebellion (Jude 1:11), the flood generation (2Pet 3:6, Luke 17:27), Sodom (Luke 17:29), Caiaphas's political calculus that the 'whole nation perish' (John 11:50), the parable-tenants and wedding-refusers destroyed by the master/king (Matt 21:41, Matt 22:7 -- Matt 22:7 uniquely active voice, the king's own act), the maxim 'those who live by the sword will perish by the sword' (Matt 26:52), and the hypothetical 'those who have fallen asleep in Christ have perished' if there is no resurrection (1Cor 15:18). 2Cor 4:9 is the deliberate exception inside this set -- 'struck down, but not destroyed' -- naming the same verb precisely to deny it applies to Paul's sufferings.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g6),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g7 = ["Matt.8.25","Mark.4.38","Luke.8.24"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "The identical disciples'-cry-in-the-storm scene across all three synoptics -- 'Save us, we are perishing' (Matt 8:25), 'we are perishing' (Mark 4:38), 'we are perishing' (Luke 8:24) -- apollymi middle voice for immediate mundane physical danger, not final judgment.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g7),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g8 = ["Matt.9.17","Mark.2.22"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "The new-wine-in-old-wineskins saying in both synoptic parallels -- the skins 'burst,' the wine is spilled, 'and the skins are destroyed' (Matt 9:17, Mark 2:22) -- a wholly mundane, non-personal object destroyed, used as an illustration about incompatibility of old and new.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g8),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g9 = ["Rev.18.14"]
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "Babylon's luxury cargo -- 'all your dainties and your splendor are lost to you' (Rev 18:14) -- apollymi applied to material wealth suddenly rendered inaccessible in judgment, distinct from both the eschatological-perish set and the relational lost-and-found set.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g9),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g10 = ["Luke.15.4","Luke.15.4","Luke.15.6","Luke.15.8","Luke.15.9","Luke.15.17","Luke.15.24","Luke.15.32","Matt.15.24","Matt.10.6","Luke.19.10","Matt.18.14"]
+observations.append({
+  "tag": "surface-gloss-divergence",
+  "statement": "A distinct sense-cluster renders apollymi as 'lost/lose' rather than 'perish/destroy,' and it is always reversible within the narrative: the lost-sheep-lost-coin-lost-son trilogy of Luke 15 (the sheep 'that is lost,' 15:4 x2; 'the lost sheep,' 15:6; the coin 'which I had lost,' 15:8-9; the prodigal's 'I perish with hunger' at his low point, 15:17, is the one exception using the perish-sense mid-parable; 'was lost and is found,' 15:24 and again 15:32); Jesus's own mission statement 'I was sent only to the lost sheep of the house of Israel' (Matt 15:24) and the parallel commissioning of the Twelve (Matt 10:6); Zacchaeus as the concrete fulfilment, 'the Son of Man came to seek and to save the lost' (Luke 19:10); and the conclusion drawn from the lost-sheep parable, 'it is not the will of my Father... that any of these little ones should perish' (Matt 18:14) -- bridging back to the perish-vocabulary but still inside a rescue frame. This is not incidental translation variance: the same verb that means final/fatal 'perish' in the judgment set (observation above) means recoverable 'lost' here, and the difference tracks a real narrative distinction -- whether the story ends in the object being found again.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g10),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g11 = ["Matt.10.39","Matt.10.39","Matt.16.25","Matt.16.25","Mark.8.35","Mark.8.35","Luke.9.24","Luke.9.24","Luke.9.25","John.12.25","Matt.5.29","Matt.5.30"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "The repeated paradox saying 'whoever loses his life for my sake will find it' / 'whoever would save his life will lose it' appears in near-identical form four times (Matt 10:39, Matt 16:25, Mark 8:35, Luke 9:24 -- each using apollymi twice, once for each half of the paradox), restated once more as 'loses or forfeits himself' (Luke 9:25) and again as the seed-dying saying's companion in John 12:25 ('whoever loves his life loses it'). The bodily-member sayings 'it is better that you lose one of your members than that your whole body be thrown into hell' (Matt 5:29, 5:30) apply the same 'lose' vocabulary to a part-for-whole ethical calculus rather than the life-for-life paradox, but share its logic of a voluntary lesser loss averting a greater one.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g11),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g12 = ["John.6.12","John.6.39","John.17.12","John.18.9","2John.1.8","Mark.9.41"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "apollymi as relational custodial care -- nothing/no one under a keeper's charge should be lost: 'gather up the leftover fragments, that nothing may be lost' (John 6:12), the Father's will that the Son 'lose not one' of those given him (John 6:39), fulfilled verbatim in Jesus's prayer report ('I have not lost one of them,' John 18:9) except for Judas, 'the son of destruction' (John 17:12, using the cognate noun apoleia rather than the verb for Judas himself), the itinerant workers' warning not to 'lose what we have worked for' (2John 1:8), and the promise that even a cup of water given to a little one 'will not lose his reward' (Mark 9:41).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g12),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+observations.append({
+  "tag": "difference-inference",
+  "statement": "Across all 87 occurrences of apollymi, the active/middle-passive voice split (morph V-A*/V-F* active vs V-2AM*/V-PM*/V-PP* middle-passive) is not free variation: active voice consistently marks an agent destroying a target (human conspiracy, divine judgment, a demon, a careless believer), while middle/passive voice marks the subject undergoing loss or destruction -- and that middle/passive sense itself splits cleanly into an irreversible 'perish' (violent death, final judgment, mundane consumption/decay) and a reversible relational 'lose/be lost' (found again, restored, rewarded). This is the same kind of morphology-carried valence split already logged for Hebrew roots in families F_violence_wound (H1792/H1794 dakha, Niphal/Piel) and E_corruption_perversion, and K_error_deception (H6601B pathah, Piel-active/Niphal-Pual-passive) -- here realized in Greek voice rather than Hebrew binyan, but the same underlying phenomenon: grammatical voice tracking moral/relational role, not just syntax.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":None,
+    "occurrences": [],
+    "meaning_source": None,
+    "related_family": "F_violence_wound"}
+})
+
+# ---------- G0684 (apoleia) ----------
+STRONG = "G0684"
+g13 = ["Rom.9.22","Phil.3.19","Phil.1.28","Heb.10.39","John.17.12","Rev.17.8","Rev.17.11","2Pet.2.3","2Pet.2.1","2Pet.2.1","2Pet.3.7","2Pet.3.16","1Tim.6.9","Matt.7.13","2Thess.2.3"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "apoleia (G0684), the cognate noun of apollymi, names final eschatological destruction/perdition in every occurrence but two: vessels of wrath 'prepared for destruction' (Rom 9:22), the enemies of the cross whose 'end is destruction' (Phil 3:19), the believers' 'destruction' contrasted with the opponents' salvation (Phil 1:28), the alternative to faith -- 'destruction' vs 'preserving of the soul' (Heb 10:39), Judas as 'the son of destruction' (John 17:12, same phrase used of the eschatological figure in 2Thess 2:3 and of the beast in Rev 17:8/17:11 -- 'the beast that was and is not... it goes to destruction'), false teachers bringing 'destructive heresies' and 'swift destruction' upon themselves (2Pet 2:1 x2, 2Pet 2:3), the coming 'destruction of the ungodly' (2Pet 3:7), the unstable twisting Scripture 'to their own destruction' (2Pet 3:16), riches plunging people 'into ruin and destruction' (1Tim 6:9), and the wide gate/easy way 'that leads to destruction' (Matt 7:13).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g13),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+g14 = ["Matt.26.8","Mark.14.4"]
+observations.append({
+  "tag": "surface-gloss-divergence",
+  "statement": "The one clearly mundane pair -- the disciples' objection to the woman anointing Jesus with costly ointment, 'why this waste?' (Matt 26:8), 'why was the ointment wasted?' (Mark 14:4) -- renders apoleia as 'waste' rather than 'destruction/perdition.' Same word as the eschatological-perdition set above, applied here to a one-off act of lavish, non-fatal expenditure judged wasteful by the disciples but approved by Jesus in the same scene.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g14),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- G0853 ----------
+STRONG = "G0853"
+g15 = ["Matt.6.19","Matt.6.20","Acts.13.41","Jas.4.14"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "aphanizo (G0853) as literal, mundane destruction/vanishing: moth and rust that 'destroy' stored-up earthly treasure (Matt 6:19, 6:20), the scoffers who will 'perish' astounded (Acts 13:41, quoting Hab 1:5), and life itself as a mist that 'appears for a little time and then vanishes' (Jas 4:14).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g15),
+    "meaning_source": "strong_meaning_tree"}
+})
+observations.append({
+  "tag": "surface-gloss-divergence",
+  "statement": "aphanizo's one outlying occurrence renders as 'disfigure' -- the hypocrites who 'disfigure their faces' while fasting so their piety will be seen (Matt 6:16) -- a deliberate self-alteration to be noticed, the opposite direction from the word's other senses (things vanishing/being destroyed without anyone's intent).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, ["Matt.6.16"]),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- G1311 ----------
+STRONG = "G1311"
+g17 = ["Rev.11.18","Rev.11.18","1Tim.6.5"]
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "diaphtheiro (G1311) naming 'the destroyers of the earth' who God will judge (Rev 11:18, both the infinitive 'destroying' and the participle 'destroyers'), and the morally 'depraved' minds of those who treat godliness as a means of gain (1Tim 6:5) -- corruption of persons/character, not physical demolition.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g17),
+    "meaning_source": "strong_meaning_tree"}
+})
+g18 = ["2Cor.4.16","Luke.12.33","Rev.8.9"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "diaphtheiro of gradual bodily decay ('our outer self is wasting away,' 2Cor 4:16), moth-eaten treasure ('no moth destroys,' Luke 12:33), and a third of sea-creatures/ships killed and wrecked at the second trumpet (Rev 8:9) -- ordinary physical decay and destruction, the opposite register from the moral-corruption group above for the same root.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g18),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- G2506 ----------
+STRONG = "G2506"
+g19 = ["2Cor.10.8","2Cor.10.4","2Cor.13.10"]
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "kathairesis (G2506), all three occurrences Paul's own, paired antithetically against 'building up': his authority is 'for building you up and not for destroying you' (2Cor 10:8) and 'for building up and not for tearing down' (2Cor 13:10); the weapons of spiritual warfare 'have divine power to destroy strongholds' (2Cor 10:4) -- the only occurrence naming an actual target destroyed rather than the negative half of a building/destroying antithesis.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g19),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- G3645 ----------
+STRONG = "G3645"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "olothreutes (G3645), 'the Destroyer,' its only occurrence naming the agent of the Passover judgment who did not touch Israel's firstborn because of the blood on the doorposts (Heb 11:28) -- a title for a specific destroying agent, not an act or abstract quality.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- G4485 ----------
+STRONG = "G4485"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "rhegma (G4485), its only occurrence, is the physical 'ruin' of a house built without foundation once the flood-stream breaks against it (Luke 6:49) -- a structural-collapse image closing the wise/foolish-builder parable, purely literal.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- G5351 ----------
+STRONG = "G5351"
+g20 = ["2Cor.11.3","1Cor.15.33","Rev.19.2","1Cor.3.17","1Cor.3.17","2Cor.7.2","Eph.4.22","Jude.1.10"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "phtheiro (G5351) overwhelmingly names moral/relational corruption rather than physical destruction: thoughts 'led astray' from devotion to Christ as Eve was deceived (2Cor 11:3), 'bad company ruins good morals' (1Cor 15:33), the great prostitute who 'corrupted the earth' with her immorality (Rev 19:2), the old self 'corrupt through deceitful desires' (Eph 4:22), and Paul's own denial -- 'we have corrupted no one' (2Cor 7:2). The exception is God's temple: 'if anyone destroys God's temple, God will destroy him' (1Cor 3:17) pairs the same verb for both a human act of desecration and God's own retributive act in a single verse, active voice both times. Jude 1:10 closes the set with a third register -- scoffers 'destroyed by all that they, like unreasoning animals, understand instinctively,' a self-inflicted corruption through base instinct rather than an external corrupting agent.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g20),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H0007 ----------
+STRONG = "H0007"
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "abad-Aramaic (H0007, the Aramaic cognate of Hebrew abad) all three occurrences from Daniel's Aramaic chapters: the false gods who 'shall perish from the earth' (Jer 10:11, itself an Aramaic-language verse embedded in a Hebrew book, aimed at pagan idols), and Daniel's own life placed at risk twice in the same episode -- the king's decree to 'destroy the wise men of Babylon' and Daniel's plea that he and his companions 'might not be destroyed' (Dan 2:24, 2:18).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H0008 ----------
+STRONG = "H0008"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "abdan (H0008, Aramaic noun 'destruction'), both occurrences in Balaam's oracle against Asshur/Eber and Amalek: 'he too shall come to utter destruction' (Num 24:24), Amalek's 'end is utter destruction' (Num 24:20) -- both HVqrmsa (Qal participle), both closing formulas pronouncing a nation's final fate.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H0010, H0012, H0013, H2256D, H2475 : zero-occurrence ----------
+for s, note in [
+  ("H0010", "a perishing"),
+  ("H0012", "destruction"),
+  ("H0013", "destruction"),
+  ("H2256D", "destruction"),
+  ("H2475", "destruction, passing away, vanishing, appointed to destruction"),
+]:
+    observations.append({
+      "tag": "no-human-context",
+      "statement": "%s has zero occurrences in the base data (occurrence_count=0) -- the meaning-tree gloss ('%s') is the only content available; there is no verse context to read, group, or check for surface/gloss divergence or morph distinction. Flagged for the same cluster_strong-membership review already opened for the other zero-occurrence/thin entries noted across M10 (SUNDRY family, family E H3943), since a strong with no textual occurrence cannot itself be verified as belonging to this family by usage." % (s, note),
+      "traces": {"cluster":"M10","family":"A_destroy","strong":s,
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"}
+    })
+
+# ---------- H2254B ----------
+STRONG = "H2254B"
+g21 = ["Mic.2.10","Isa.32.7","Prov.13.13","Song.2.15"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "chabal (H2254B) as literal or figurative ruin/spoiling: uncleanness that 'destroys with a grievous destruction' (Mic 2:10), the scoundrel who schemes 'to ruin the poor with lying words' (Isa 32:7), 'the little foxes that spoil the vineyards' (Song 2:15), and the one who despises the word bringing 'destruction on himself' (Prov 13:13 -- span_surface 'himself', morph HVNi3ms, Niphal, self-directed/reflexive).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g21),
+    "meaning_source": "strong_meaning_tree"}
+})
+g22 = ["Neh.1.7","Neh.1.7","Job.34.31"]
+observations.append({
+  "tag": "surface-gloss-divergence",
+  "statement": "The same root's other three occurrences render as moral/relational failure rather than destruction: Nehemiah's confession 'we have acted very corruptly against you' (Neh 1:7, two spans in the one verse -- 'acted very' + 'corruptly' -- both covering the single Hebrew phrase), and Job's hypothetical 'I will not offend any more' (Job 34:31, rendered 'offend' rather than any destruction-word at all). Chabal's semantic range runs from physical ruin to covenant-breach to personal offense within a single strong.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g22),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H2255 ----------
+STRONG = "H2255"
+g23 = ["Dan.2.44","Dan.7.14","Dan.6.26"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "chabal-Aramaic (H2255), three of four occurrences a fixed formula in Daniel's Aramaic visions asserting the everlasting kingdom's indestructibility -- 'shall never be destroyed' (Dan 2:44), 'shall not be destroyed' (Dan 7:14), 'shall never be destroyed' (Dan 6:26) -- all AVMi3fs (same stem/aspect/person/gender), a negated-destruction formula rather than an account of destruction actually happening.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g23),
+    "meaning_source": "strong_meaning_tree"}
+})
+observations.append({
+  "tag": "surface-gloss-divergence",
+  "statement": "The fourth occurrence breaks from the kingdom-formula entirely: Daniel's own testimony after the lions' den, 'they have not harmed me... I have done no harm' (Dan 6:22, span_surface 'harmed', AVpp3mp) -- the same root applied to personal physical safety rather than a kingdom's permanence, and rendered 'harm' rather than 'destroy.'",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, ["Dan.6.22"]),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H2717B ----------
+STRONG = "H2717B"
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "charab (H2717B), all 17 occurrences describing land, cities, or nations laid waste/made desolate in divine judgment -- 'utterly laid waste' (Isa 60:12), cities/high places 'waste and ruined' (Ezek 6:6), Tyre 'laid waste' (Ezek 26:2, 26:19), Egypt's cities 'laid waste' (Ezek 29:12), mountains and hills laid waste (Isa 42:15), inhabited cities laid waste (Ezek 12:20), nations' widows and cities laid waste by a besieger (Ezek 19:7), Jerusalem itself threatened with becoming 'desolate' like Shiloh (Jer 26:9), a call to be 'utterly desolate' (Jer 2:12), Edom's countries 'desolated... laid waste' (Ezek 30:7), a permanent smoking ruin (Isa 34:10), Israel's high places (Amos 7:9), and the Assyrian kings' conquests described identically in the parallel accounts of the same event (2Kgs 19:17, Isa 37:18 -- 'laid waste the nations and their lands'). No occurrence of this strong applies to an individual person; the object is always a place, always at national/collective scale.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H2763A (charam) ----------
+STRONG = "H2763A"
+occs_2763 = all_occs(STRONG)
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "charam (H2763A), 'to devote to destruction' -- the herem ban -- across all 32 occurrences names the specific, ritually-charged act of consecrating conquered peoples/cities/goods to total destruction as an offering to the Lord, distinct from ordinary war-killing vocabulary elsewhere in this cluster: the conquest narratives of Jericho-adjacent campaigns (Josh 6:18, 6:21, 10:1, 10:37, 10:39, 10:40, 11:11, 11:12), Hormah's naming-origin repeated twice (Num 21:3, Judg 1:17), the Amalekite command and its partial, judged disobedience (1Sam 15:3, 15:8, 15:9, 15:18, 15:20, 2Chr 32:14 looking back on it), the legal/covenantal statements of the ban (Deut 7:2, 13:15, 20:17 x2, 3:6 x2), the Benjaminite civil-war aftermath (Judg 21:11), a vow-based individual case (Lev 27:29), a post-exilic property-forfeiture use stripped of the war context (Ezra 10:8), an idolatry-sacrifice law applying herem to an Israelite (Exod 22:20), and prophetic reuse of the same technical term for Edom (Isa 34:2), Babylon (Jer 25:9, 50:21, 50:26), and Egypt (Isa 11:15).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_2763,
+    "meaning_source": "strong_meaning_tree"}
+})
+observations.append({
+  "tag": "difference-inference",
+  "statement": "Ezra 10:8's use of charam -- 'his property should be forfeited' (span_surface 'forfeited', HVHi3ms, Hiphil) -- is the one occurrence with no killing or physical destruction at all: a post-exilic administrative penalty (confiscation of goods, banning from the assembly) for failing to appear before the returned-exile court, reusing the herem root's legal-consecration sense entirely apart from its dominant war-destruction sense. Cross-reference: this is the same kind of institutional/legal narrowing already logged for other cluster roots that carry both a violent-destruction sense and a non-violent legal/administrative sense.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, ["Ezra.10.8"]),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H4277 ----------
+STRONG = "H4277"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "machats (H4277), its only occurrence in the Song of Deborah -- 'she struck Sisera; she crushed his head' (Judg 5:26) -- a single vivid physical blow, not a category of destruction but one narrated killing act.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H4889 ----------
+STRONG = "H4889"
+observations.append({
+  "tag": "surface-gloss-divergence",
+  "statement": "mashchit (H4889)'s two occurrences diverge sharply from each other despite the shared gloss 'destruction': 'brutish men, skillful to destroy' (Ezek 21:31, span_surface 'destroy', HNcmsa) names destroyer-agents, while the same noun in Jer 5:26 renders as 'trap' (fowlers who 'set a trap; they catch men') -- the abstract-agent/instrument sense extending from literal destroyer to a hunting device that ensnares.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H4892 ----------
+STRONG = "H4892"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "mashchet (H4892), its only occurrence naming the executioners' 'destroying weapon' brought against Jerusalem in Ezekiel's temple-vision judgment scene (Ezek 9:1) -- an instrument of destruction, not the act itself.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H5642B ----------
+STRONG = "H5642B"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "setar-Aramaic (H5642B), its only occurrence historical-narrative rather than judgment-oracle: Nebuchadnezzar 'destroyed this house [the temple] and carried away the people to Babylonia' (Ezra 5:12, AVqp3ms) -- part of the returned exiles' own retelling of why the temple needed rebuilding.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H6789 ----------
+STRONG = "H6789"
+g24 = ["Ps.101.8","Ps.69.4","Ps.73.27","Lam.3.53"]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "tsamath (H6789) in the Psalms/Lamentations register naming both righteous and hostile destruction: the king's vow to 'destroy all the wicked in the land' (Ps 101:8), enemies who 'would destroy me' (Ps 69:4), God putting 'an end to everyone who is unfaithful' (Ps 73:27), and the psalmist's own near-death -- 'they flung me alive into the pit' (Lam 3:53).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g24),
+    "meaning_source": "strong_meaning_tree"}
+})
+g25 = ["Job.6.17","Ps.119.139","Job.23.17"]
+observations.append({
+  "tag": "surface-gloss-divergence",
+  "statement": "tsamath's remaining three occurrences render without any destruction-word at all: streams that 'melt... disappear' (Job 6:17, Niphal HVNp3cp), zeal that 'consumes me' (Ps 119:139), and 'I am not silenced' (Job 23:17, Niphal HVNp1cs) -- the same root's Niphal (passive) forms describing something ceasing/being overcome rather than an agent destroying a target, morphologically parallel to the Niphal-as-undergoing pattern already found across this cluster's other roots.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": occs_for(STRONG, g25),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H6979C ----------
+STRONG = "H6979C"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "qaqod (H6979C), both occurrences naming a violent breaking-down: the Balaam oracle's messianic star that 'shall crush the forehead of Moab and break down all the sons of Sheth' (Num 24:17), and 'a battering down of walls' amid the Lord's day of tumult (Isa 22:5).",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H6986 ----------
+STRONG = "H6986"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "qatab (H6986), its only occurrence a storm-image for the Lord himself: 'like a storm of hail, a destroying tempest' (Isa 28:2) -- destruction as a force of nature representing divine power, not an agent's deliberate act against a target.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H6987 ----------
+STRONG = "H6987"
+observations.append({
+  "tag": "surface-gloss-divergence",
+  "statement": "qeteb (H6987), its only occurrence rendered 'sting' rather than any destruction-word: 'O Death, where are your plagues? O Sheol, where is your sting?' (Hos 13:14) -- Death/Sheol's own destructive power personified and then defied/mocked, in a verse quoted in 1Cor 15:55.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H8045 (shamad) ----------
+STRONG = "H8045"
+occs_8045 = all_occs(STRONG)
+active_8045 = [o for o in occs_8045 if o['span_morph'].startswith('HVh') or o['span_morph'].startswith('AVh')]
+niphal_8045 = [o for o in occs_8045 if o['span_morph'].startswith('HVN')]
+other_8045 = [o for o in occs_8045 if o not in active_8045 and o not in niphal_8045]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "shamad (H8045), the family's second-largest strong (45 occurrences), overwhelmingly narrates God's own active destruction of nations/peoples in covenant-conquest and judgment contexts -- %d of 45 occurrences carry the Hiphil-family active morph (HVh*/AVh*): the conquest peoples (Deut 2:21, 2:22, 2:23, 4:3, Josh 23:15, Amos 2:9 x2), covenant-curse threats (Deut 28:20, 28:48), and royal-dynasty judgments (1Kgs 15:29, 1Kgs 16:12, 2Sam 14:11/14:7, 2Kgs 10:17). Nearly all of these active-voice occurrences have God, a king, or a named human agent as the grammatical subject actively destroying a specified target." % len(active_8045),
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": active_8045,
+    "meaning_source": "strong_meaning_tree"}
+})
+observations.append({
+  "tag": "difference-inference",
+  "statement": "The remaining shamad occurrences carrying Niphal morph (HVN*, %d occurrences) mark the passive/undergoing counterpart to the active set above -- Moab 'shall be destroyed' (Jer 48:42), the plain 'shall be destroyed' (Jer 48:8), transgressors 'altogether destroyed' (Ps 37:38), the house of the wicked 'destroyed' (Prov 14:11), Aven's high places (Hos 10:8), those 'destroyed at En-dor' (Ps 83:10), the Benjaminite women 'destroyed' (Judg 21:16), and the covenant-curse formula's own passive restatements (Deut 28:24, 28:45, 28:51, 28:61, 12:30 -- several curse verses use the Niphal 'you shall be destroyed' as the mirror of the Hiphil 'until he has destroyed you' elsewhere in the very same speech). The same active/passive (Hiphil/Niphal) valence split already documented for other roots in this cluster (H1792/H1794 dakha in family F, H6601B pathah in family K) holds for shamad as well: active = an agent destroys, Niphal = the target undergoes destruction, with no separate lexical item needed to mark the difference." % len(niphal_8045),
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": niphal_8045,
+    "meaning_source": "strong_meaning_tree",
+    "related_family": "F_violence_wound"}
+})
+if other_8045:
+    observations.append({
+      "tag": "instance-meaning",
+      "statement": "shamad's remaining occurrences outside the active/Niphal split: Esther's decree 'to destroy, to kill, and to annihilate all Jews' (Esth 3:13, infinitive) -- the one occurrence where shamad appears in a triple-verb genocidal formula alongside two other kill-verbs, and 'the destroyer' epithet for the coming besieger of Moab (Jer 48:8, participle) that opens that oracle before its own Niphal-passive restatement two clauses later, and the promise-formula 'Destroy' (Deut 33:27, imperative HVhv2ms).",
+      "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+        "occurrences": other_8045,
+        "meaning_source": "strong_meaning_tree"}
+    })
+
+# ---------- H8046 ----------
+STRONG = "H8046"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "shemad-Aramaic (H8046), its only occurrence in Daniel's fourth-beast vision: the beast's dominion 'shall be taken away, to be consumed and destroyed to the end' (Dan 7:26) -- the Aramaic cognate of shamad applied once, to an eschatological empire's final judgment.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H8074G (shamem) ----------
+STRONG = "H8074G"
+occs_8074 = all_occs(STRONG)
+qal_ptc = [o for o in occs_8074 if 'HVqr' in o['span_morph'] or 'AVqr' in o['span_morph']]
+rest_8074 = [o for o in occs_8074 if o not in qal_ptc]
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "shamem (H8074G), 37 occurrences, is the cluster's dedicated 'desolate/desolation' vocabulary for land and sanctuary rather than for people directly. Its Qal active-participle form (%d occurrences) supplies the fixed technical phrase of Daniel's 'abomination that makes desolate' (Dan 9:27 x2 -- 'desolate' and 'desolator' in the same verse, 11:31, 12:11, 8:13), plus the barren woman's 'desolate one' (Isa 54:1), the day of judgment's 'Desolations are decreed' (Dan 9:26), and covenant-curse formulas (Isa 49:8, Jer 12:11, Dan 9:18)." % len(qal_ptc),
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": qal_ptc,
+    "meaning_source": "strong_meaning_tree"}
+})
+observations.append({
+  "tag": "verse-grouping",
+  "statement": "shamem's remaining occurrences (Niphal/Hiphil/Hophal forms across a wide morphological range) describe lands, cities, and sanctuaries actually becoming or being made desolate through judgment -- Egypt (Ezek 30:12, 30:7 x2, 29:12), Ammon rejoicing over Israel's desolation then facing its own (Ezek 25:3), Tyre's cities (Isa 54:3), the highways/covenants of Isa 33:8, Israel's altars (Ezek 6:4, 20:26), Pathros (Ezek 30:14), Zephaniah's ruined battlements (Zeph 3:6), the Sabbath-land motif of Leviticus repeated three times almost verbatim ('the land shall enjoy its Sabbaths... lies desolate,' Lev 26:31, 26:32, 26:34, 26:35), the exile-generation's grief over feasting-turned-ash-heaps (Lam 4:5), Ecclesiastes' 'why should you destroy yourself?' (Eccl 7:16, Hithpael-range morph HVti2ms -- the only reflexive/self-directed occurrence in this strong), the Amalekite/Moabite defeat notice (Num 21:30), the exile's end and restoration reversing it (Zech 7:14, Amos 9:14 rebuilding 'the ruined cities', Isa 61:4 twice on rebuilding 'the ancient ruins'), Edom's parallel fate to Israel's (Ezek 35:12, 35:15), and Amos 7:9's judgment scene paralleling H2717B above.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": rest_8074,
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# ---------- H8399 ----------
+STRONG = "H8399"
+observations.append({
+  "tag": "instance-meaning",
+  "statement": "tachtit (H8399), its only occurrence closing Isaiah's oracle against Assyria: God's anger 'will be directed to their destruction' (Isa 10:25) -- a term marking the terminus/goal of divine wrath rather than describing the act of destroying itself.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong":STRONG,
+    "occurrences": all_occs(STRONG),
+    "meaning_source": "strong_meaning_tree"}
+})
+
+# final cross-family observation for the whole family
+observations.append({
+  "tag": "cross-family",
+  "statement": "A_destroy's dominant register is God/agent-directed judgment against nations, cities, and hostile persons -- structurally closer to family D_crime_injustice's avon/violence vocabulary and family F_violence_wound's oppressor language than to the self-examined guilt of H_guilt. The one clear exception is G0622 (apollymi)'s large 'lose/be lost' relational sub-sense (Luke 15, the life-for-life paradox sayings, John's shepherd material), which has no real counterpart elsewhere in this family and instead resembles the reversible, restorable framing found in H_guilt's Isaiah-53/return-from-exile material -- worth a direct comparison once H_guilt is upgraded to this schema.",
+  "traces": {"cluster":"M10","family":"A_destroy","strong": None,
+    "occurrences": [],
+    "meaning_source": None,
+    "related_family": "H_guilt"}
+})
+
+out = {
+  "cluster_code": "M10",
+  "family_id": "A_destroy",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": ["G0622","G0684","G0853","G1311","G2506","G3645","G4485","G5351",
+    "H0007","H0008","H0010","H0012","H0013","H2254B","H2255","H2256D","H2475","H2717B",
+    "H2763A","H4277","H4889","H4892","H5642B","H6789","H6979C","H6986","H6987","H8045",
+    "H8046","H8074G","H8399"],
+  "observations": observations,
+  "strong_checks": []
+}
+
+with open('_analytics/Clusters/1682-test-m10-process-c-A_destroy-v2-20260911.json', 'w', encoding='utf-8') as f:
+    json.dump(out, f, indent=2, ensure_ascii=False)
+
+print("written, total observations:", len(observations))

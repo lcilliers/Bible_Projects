@@ -1,0 +1,920 @@
+{
+  "cluster_code": "M10",
+  "family_id": "C_adultery",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G3429",
+    "G3430",
+    "G3431",
+    "G4202",
+    "G4203",
+    "G4205",
+    "H5003",
+    "H5004",
+    "H5005"
+  ],
+  "observations": [
+    {
+      "tag": "instance-meaning",
+      "statement": "moichaō (G3429) in the divorce/remarriage teaching: Matt 5:32's passive form describes a man's act (divorcing without cause) causing a third party (his wife) to be made an adulteress by her subsequent remarriage; Matt 19:9 and Mark 10:11 use the identical passive/deponent form for the remarrying party's own new status. Same morphology (passive voice), two different grammatical subjects bearing the consequence — one caused by another's act, two describing their own.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3429",
+        "occurrences": [
+          {
+            "verse": "Matt.5.32",
+            "span_surface": "commits adultery",
+            "span_morph": "V-APN"
+          },
+          {
+            "verse": "Matt.19.9",
+            "span_surface": "commits adultery",
+            "span_morph": "V-PNI-3S"
+          },
+          {
+            "verse": "Mark.10.11",
+            "span_surface": "commits adultery",
+            "span_morph": "V-PNI-3S"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "morph reviewed for G3429: all 3 occurrences are passive/deponent (V-APN, V-PNI-3S x2) — no active-voice occurrence exists in this corpus. This matches LSJ's own note that the verb's live NT usage is passive, 'of a man' and 'of a woman' alike — the voice pattern is consistent across all occurrences, not a distinction to explore further, but stated here per the round-2 rule that a checked absence of variation is itself worth recording.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3429",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "moicheia (G3430, noun) as a vice-list item, listed among evil thoughts/theft/murder from the heart (Mark 7:21, Matt 15:19) — the abstract-state noun naming a category of heart-originating evil rather than a specific incident.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3430",
+        "occurrences": [
+          {
+            "verse": "Mark.7.21",
+            "span_surface": "adultery",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Matt.15.19",
+            "span_surface": "adultery",
+            "span_morph": "N-NPF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "moicheia's third occurrence names the specific narrative incident of the woman caught in the act (John 8:3), morph N-DSF — a dative of circumstance ('caught IN adultery'), the only occurrence naming a concrete event rather than an abstract vice-category.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3430",
+        "occurrences": [
+          {
+            "verse": "John.8.3",
+            "span_surface": "adultery",
+            "span_morph": "N-DSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "moicheuō (G3431) at the pivot of Jesus's Sermon on the Mount teaching on lust, aorist active indicative — 'has ALREADY committed adultery' — a completed act at the moment of looking, not a future consequence.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "Matt.5.28",
+            "span_surface": "adultery",
+            "span_morph": "V-AAI-3S"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "The aorist indicative at Matt 5:28 is meaning-critical, not incidental: Jesus's teaching depends on the tense specifically stating the act as already, completely done at the moment of the inward look — a present or future tense here would teach something weaker (that lust leads toward adultery, not that it already constitutes it). This is exactly the kind of morph-driven distinction round 1 had no rule requiring it to surface.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "Matt.5.28",
+            "span_surface": "adultery",
+            "span_morph": "V-AAI-3S"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "moicheuō in the fixed Decalogue-citation formula, future active indicative ('you shall not commit adultery') used as a prohibitive command rather than a genuine future tense — the LXX/Decalogue's own grammaticalization, cited unchanged across three NT contexts (a direct Sermon-on-the-Mount quotation; the rich young ruler's commandment list; Paul's law-summary in Romans).",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "Matt.5.27",
+            "span_surface": "commit adultery",
+            "span_morph": "V-FAI-2S"
+          },
+          {
+            "verse": "Matt.19.18",
+            "span_surface": "commit adultery",
+            "span_morph": "V-FAI-2S"
+          },
+          {
+            "verse": "Rom.13.9",
+            "span_surface": "commit adultery",
+            "span_morph": "V-FAI-2S"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "moicheuō as an aorist subjunctive negated prohibition ('do not commit adultery') in three separate commandment-list citations (James's 'whole law' argument, and two Synoptic commandment recitations) — a distinct grammatical register from both the future-indicative Decalogue formula above and Matt 5:28's completed-act aorist indicative: this is live moral instruction being given, not a quotation of a fixed legal text nor a statement about a past/completed inner act.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "Jas.2.11",
+            "span_surface": "commit adultery",
+            "span_morph": "V-AAS-2S"
+          },
+          {
+            "verse": "Mark.10.19",
+            "span_surface": "commit adultery",
+            "span_morph": "V-AAS-2S"
+          },
+          {
+            "verse": "Luke.18.20",
+            "span_surface": "commit adultery",
+            "span_morph": "V-AAS-2S"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "James 2:11 itself carries two morphs of moicheuō in the same verse — an aorist subjunctive prohibition ('do not commit adultery,' repeating the command) and a present active indicative ('if you do not commit adultery but do murder') — the same verse shifts from quoting the command to describing the reader's actual, ongoing situation, marked by the tense/mood change alone.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "Jas.2.11",
+            "span_surface": "commit adultery",
+            "span_morph": "V-PAI-2S"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "moicheuō as present active indicative, gnomic/timeless present, twice in one verse describing the general rule for divorce-and-remarriage ('everyone who divorces... commits adultery, and he who marries... commits adultery') — stated as a standing truth, not a specific past or future case.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "Luke.16.18",
+            "span_surface": "adultery",
+            "span_morph": "V-PAI-3S"
+          },
+          {
+            "verse": "Luke.16.18",
+            "span_surface": "adultery",
+            "span_morph": "V-PAI-3S"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "moicheuō in general reference: Rom 2:22's rhetorical double question (present active infinitive then present active indicative, confronting the hypocrisy of teaching against adultery while committing it) and Rev 2:22's substantive participle naming 'those who commit adultery with her' as a class following Jezebel's teaching — both using the verb to characterize ongoing conduct rather than a single event.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "Rom.2.22",
+            "span_surface": "commit adultery",
+            "span_morph": "V-PAN"
+          },
+          {
+            "verse": "Rom.2.22",
+            "span_surface": "commit adultery",
+            "span_morph": "V-PAI-2S"
+          },
+          {
+            "verse": "Rev.2.22",
+            "span_surface": "commit adultery",
+            "span_morph": "V-PAP-APM"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "porneia (G4202) as a generic vice-list item alongside other sins — theft, murder, false witness, impurity, covetousness — the most frequently attested general-purpose term in this family, functioning as a broad category label rather than naming a specific act.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4202",
+        "occurrences": [
+          {
+            "verse": "1Cor.6.13",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Matt.5.32",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Matt.19.9",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Acts.15.20",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Acts.15.29",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Acts.21.25",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Eph.5.3",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Gal.5.19",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "1Thess.4.3",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Mark.7.21",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Matt.15.19",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "1Cor.6.18",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "1Cor.7.2",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Rev.9.21",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "porneia naming a specific, named case requiring church discipline — incest with a father's wife, called out as worse than pagan practice — a concrete disciplinary case, not a generic list entry.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4202",
+        "occurrences": [
+          {
+            "verse": "1Cor.5.1",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-NSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "porneia used relationally/identity-forming: 'we were not born of sexual immorality' (John 8:41, the Pharisees' claim of legitimate parentage) and 'she refuses to repent of her sexual immorality' (Rev 2:21, a named individual, Jezebel) — the noun tied to birth-legitimacy and to one person's persistent unrepentance, not a general category.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4202",
+        "occurrences": [
+          {
+            "verse": "John.8.41",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rev.2.21",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "porneia in Revelation's sustained Babylon-the-prostitute personification — 'the impurities of her sexual immorality,' 'the wine of the passion of her sexual immorality,' the nations and kings drinking it and committing it with her — the largest single concentration of this strong's occurrences (5 of 23), functioning as the organizing figure for the book's judgment sequence rather than individual moral instruction.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4202",
+        "occurrences": [
+          {
+            "verse": "Rev.17.4",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rev.14.8",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rev.18.3",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rev.19.2",
+            "span_surface": "immorality",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Rev.17.2",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-GSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "porneia paired directly with idolatry in the death-list of vices to put to death (Col 3:5, 'covetousness, which is idolatry' — the same equation LSJ notes for the word itself: 'metaphorically, idolatry').",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4202",
+        "occurrences": [
+          {
+            "verse": "Col.3.5",
+            "span_surface": "sexual immorality",
+            "span_morph": "N-ASF"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Rev 19:2 and Col 3:5 both render porneia as bare 'immorality' rather than 'sexual immorality' — the ESV drops the 'sexual' qualifier at exactly the two points where the word is used most abstractly/metaphorically (Babylon's corrupting influence on the earth; a general vice-list entry next to 'impurity, passion, evil desire'), while every occurrence naming a concrete act or a named person keeps 'sexual.' The English surface itself is tracking the literal/metaphorical distinction, even though the underlying Greek word doesn't formally mark it.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4202",
+        "occurrences": [
+          {
+            "verse": "Rev.19.2",
+            "span_surface": "immorality",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Col.3.5",
+            "span_surface": "immorality",
+            "span_morph": "N-ASF"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "morph reviewed for G4202's 23 occurrences: all noun-case variation (genitive of source, dative of circumstance, accusative of object, nominative as subject) driven by ordinary sentence syntax, not by a distinct sense of the word itself — no stem/voice distinction applies since it never appears as a verb in this corpus.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4202",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "porneuō (G4203) as aorist active indicative, narrating a completed corporate past act — the nations/kings of the earth 'have committed sexual immorality' with Babylon — historical indictment, matching family register with G4202's Babylon-personification cluster above.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4203",
+        "occurrences": [
+          {
+            "verse": "Rev.18.3",
+            "span_surface": "immorality",
+            "span_morph": "V-AAI-3P"
+          },
+          {
+            "verse": "Rev.18.9",
+            "span_surface": "immorality",
+            "span_morph": "V-AAP-NPM"
+          },
+          {
+            "verse": "Rev.17.2",
+            "span_surface": "immorality",
+            "span_morph": "V-AAI-3P"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_cluster": "M10"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "porneuō as an aorist active infinitive following a verb of teaching — Balaam taught Balak, and Jezebel taught/seduced the church, 'to practice' sexual immorality — an active-causation sense: one party bringing about another's act, not the actor's own conduct.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4203",
+        "occurrences": [
+          {
+            "verse": "Rev.2.14",
+            "span_surface": "immorality",
+            "span_morph": "V-AAN"
+          },
+          {
+            "verse": "Rev.2.20",
+            "span_surface": "immorality",
+            "span_morph": "V-AAN"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "1 Cor 10:8 carries porneuō twice with two different morphs in one verse: a present active subjunctive ('let us not indulge,' hortatory — the Corinthians' live, present temptation) and an aorist active indicative ('as some of them did,' the wilderness generation's completed past act) — the tense shift alone marks the boundary between the historical warning-example and the present exhortation it supports.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4203",
+        "occurrences": [
+          {
+            "verse": "1Cor.10.8",
+            "span_surface": "sexual immorality",
+            "span_morph": "V-PAS-1P"
+          },
+          {
+            "verse": "1Cor.10.8",
+            "span_surface": "did",
+            "span_morph": "V-AAI-3P"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "porneuō as a substantive present active participle, naming a person by their conduct ('the sexually immoral person sins against his own body') — the act-verb used to construct a personal identity-category, the same pattern found repeatedly for H5003 and H0898 below.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4203",
+        "occurrences": [
+          {
+            "verse": "1Cor.6.18",
+            "span_surface": "immoral person",
+            "span_morph": "V-PAP-NSM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pornos (G4205) exclusively as a person-category noun in vice-lists, always naming who someone is rather than what they did, and consistently paired with idolaters — reconfirms the #1680 finding, now with morph evidence: every one of its 10 occurrences is a plural or singular substantive noun form (N-DPM/N-NSM/N-APM/N-NPM), never a verb — this strong structurally cannot narrate an act; it only labels a class of people.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4205",
+        "occurrences": [
+          {
+            "verse": "Rev.21.8",
+            "span_surface": "immoral",
+            "span_morph": "N-DPM"
+          },
+          {
+            "verse": "Eph.5.5",
+            "span_surface": "sexually immoral",
+            "span_morph": "N-NSM"
+          },
+          {
+            "verse": "1Cor.5.11",
+            "span_surface": "immorality",
+            "span_morph": "N-NSM"
+          },
+          {
+            "verse": "Heb.13.4",
+            "span_surface": "immoral",
+            "span_morph": "N-APM"
+          },
+          {
+            "verse": "1Cor.5.10",
+            "span_surface": "sexually immoral",
+            "span_morph": "N-DPM"
+          },
+          {
+            "verse": "1Cor.6.9",
+            "span_surface": "sexually immoral",
+            "span_morph": "N-NPM"
+          },
+          {
+            "verse": "Rev.22.15",
+            "span_surface": "immoral",
+            "span_morph": "N-NPM"
+          },
+          {
+            "verse": "Heb.12.16",
+            "span_surface": "immoral",
+            "span_morph": "N-NSM"
+          },
+          {
+            "verse": "1Tim.1.10",
+            "span_surface": "sexually immoral",
+            "span_morph": "N-DPM"
+          },
+          {
+            "verse": "1Cor.5.9",
+            "span_surface": "sexually immoral",
+            "span_morph": "N-DPM"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "1Cor.5.11's span_surface for pornos is bare 'immorality' — an abstract-noun-shaped English word standing in for what the strong actually is (a person-noun, 'the sexually immoral person'/'a fornicator'). The English rendering here obscures the person-vs-act distinction that the Greek morph makes clear (N-NSM, a masculine singular substantive, not an abstract noun) — exactly the kind of surface/gloss/morph three-way mismatch the round-2 rules exist to catch.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G4205",
+        "occurrences": [
+          {
+            "verse": "1Cor.5.11",
+            "span_surface": "immorality",
+            "span_morph": "N-NSM"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "na'aph (H5003) as a participle, functioning as a person-identity label ('an adulterer,' 'adulteresses,' 'the adulterer') rather than narrating an act — 7 of 16 occurrences (nearly half), the same identity-vs-act split found independently in this family's Greek pornos/porneuō pair and (see cross-family note) in family J's bagad.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "H5003",
+        "occurrences": [
+          {
+            "verse": "Hos.7.4",
+            "span_surface": "adulterers",
+            "span_morph": "HVprmpa"
+          },
+          {
+            "verse": "Job.24.15",
+            "span_surface": "adulterer",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Hos.3.1",
+            "span_surface": "adulteress",
+            "span_morph": "HVprfsa"
+          },
+          {
+            "verse": "Ezek.23.45",
+            "span_surface": "adulteresses",
+            "span_morph": "HVqrfpa"
+          },
+          {
+            "verse": "Ezek.23.45",
+            "span_surface": "adulteresses",
+            "span_morph": "HVqrfpa"
+          },
+          {
+            "verse": "Jer.23.10",
+            "span_surface": "adulterers",
+            "span_morph": "HVprmpa"
+          },
+          {
+            "verse": "Isa.57.3",
+            "span_surface": "adulterer",
+            "span_morph": "HVprmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "na'aph as a finite or infinitive-absolute verb form, narrating a specific act rather than naming a person: a narrated historical event (Jer 29:23's 'they have committed adultery with their neighbors' wives'), an infinitive-absolute generic sin-listing (Hos 4:2, Jer 23:14, Jer 7:9, adultery catalogued alongside swearing/lying/murder/stealing), and Jeremiah's extended covenant-infidelity metaphor ('committing adultery with stone and tree,' Jer 3:9; 'they have committed adultery, and blood is on their hands,' Ezek 23:37).",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "H5003",
+        "occurrences": [
+          {
+            "verse": "Jer.29.23",
+            "span_surface": "adultery",
+            "span_morph": "HVpw3mp"
+          },
+          {
+            "verse": "Hos.4.2",
+            "span_surface": "adultery",
+            "span_morph": "HVqaa"
+          },
+          {
+            "verse": "Jer.23.14",
+            "span_surface": "adultery",
+            "span_morph": "HVqaa"
+          },
+          {
+            "verse": "Jer.7.9",
+            "span_surface": "adultery",
+            "span_morph": "HVqaa"
+          },
+          {
+            "verse": "Jer.3.9",
+            "span_surface": "adultery",
+            "span_morph": "HVqw3fs"
+          },
+          {
+            "verse": "Ezek.23.37",
+            "span_surface": "adultery",
+            "span_morph": "HVpp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "na'aph's Qal imperfect 2ms Decalogue citation ('you shall not commit adultery,' Exod 20:14, Deut 5:18) is the exact grammatical counterpart of this family's own Greek finding: G3431's future-active-indicative Decalogue citations (Matt 5:27, 19:18, Rom 13:9). Hebrew's imperfect-as-prohibition and Greek's future-as-imperative are each language's own way of grammaticalizing the same fixed commandment — a genuine cross-linguistic morph parallel, not merely a shared English translation choice.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "H5003",
+        "occurrences": [
+          {
+            "verse": "Exod.20.14",
+            "span_surface": "commit adultery",
+            "span_morph": "HVqi2ms"
+          },
+          {
+            "verse": "Deut.5.18",
+            "span_surface": "commit adultery",
+            "span_morph": "HVqi2ms"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "na'aph (Qal perfect, 'dealt treacherously with you') Piel-adjacent to the figurative covenant-infidelity register: Hos 3:1's command to love an adulteress 'even as the Lord loves the children of Israel, though they turn to other gods' — this occurrence is the explicit hinge verse where the family's literal sense (marital infidelity) is stated in the same breath as its figurative application (Israel's idolatry), not merely implied by context elsewhere.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "H5003",
+        "occurrences": [
+          {
+            "verse": "Hos.3.1",
+            "span_surface": "adulteress",
+            "span_morph": "HVprfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "niuph (H5004, noun) naming Jerusalem's 'adulteries and neighings, your lewd whorings' as a catalogued list of the city's own abominations (Jer 13:27), and describing a woman 'worn out by adultery' still being used as a prostitute (Ezek 23:43) — both occurrences concrete and disparaging, no figurative-idolatry sense stated explicitly within either verse itself (unlike na'aph's Hos 3:1).",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "H5004",
+        "occurrences": [
+          {
+            "verse": "Jer.13.27",
+            "span_surface": "adulteries",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ezek.23.43",
+            "span_surface": "adultery",
+            "span_morph": "HNcmpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H5005 (na'aphuph) has zero occurrences in the live span/verse data — no verse evidence exists to read. Meaning block gives only the bare gloss 'adultery.' Earmarked; no further analysis possible without verse context.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "H5005",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "H5005 is included in cluster_strong for M10 but has no live span occurrences anywhere in the base data — same category as H2054 (family H_guilt) and H6330 (SUNDRY): flagged for the spine/integrity process, not resolved here.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "H5005",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "This family and family H_guilt (H0817) share the exact 'sin offering'/'guilt offering' vocabulary-conflation problem already noted there, but from a different angle: G3430's John 8:3 concrete-incident use and family H's Lev 5:7 offering-vocabulary overlap both show the English surface flattening distinctions the underlying source languages keep separate. Worth a joint review of surface-rendering consistency across the whole M10 cluster, not just within one family.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "Matt 5:32 uses two different but closely related verbs for its two clauses: moichaō (G3429, 'makes her commit adultery' -- the caused-third-party sense) and moicheuō (G3431, 'commits adultery' -- the direct-agent sense for the man who marries the divorced woman), both morphologically V-APN (aorist passive infinitive) in the same verse. The verse deliberately varies between near-synonym roots to distinguish who is causing versus who is themselves committing the act.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "Matt.5.32",
+            "span_surface": "commit adultery",
+            "span_morph": "V-APN"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": null
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "John 8:3-4 uses both family members of this pair in adjacent verses for the same narrative incident: moicheia (G3430, the noun, 'caught IN adultery') at v.3, then moicheuō (G3431, the verb, perfect passive participle 'having been caught committing adultery') at v.4 -- the noun names the circumstance, the verb participle re-narrates the same woman's act as her defining state at the moment of accusation.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "G3431",
+        "occurrences": [
+          {
+            "verse": "John.8.4",
+            "span_surface": "adultery",
+            "span_morph": "V-PPP-NSF"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "na'aph as a participle in a legal-sentencing formula -- 'I will judge you as women who commit adultery... are judged' -- belongs with the participle-identity group above (a class of women defined by the act), the specific case being God's judgment of Jerusalem/Samaria under the marriage-metaphor courtroom scene.",
+      "traces": {
+        "cluster": "M10",
+        "family": "C_adultery",
+        "strong": "H5003",
+        "occurrences": [
+          {
+            "verse": "Ezek.16.38",
+            "span_surface": "adultery",
+            "span_morph": "HVqrfpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": null
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G3429",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "G3430",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "G3431",
+      "occurrence_count": 12,
+      "traced_count": 12,
+      "missing_verses": []
+    },
+    {
+      "strong": "G4202",
+      "occurrence_count": 23,
+      "traced_count": 23,
+      "missing_verses": []
+    },
+    {
+      "strong": "G4203",
+      "occurrence_count": 7,
+      "traced_count": 7,
+      "missing_verses": []
+    },
+    {
+      "strong": "G4205",
+      "occurrence_count": 10,
+      "traced_count": 10,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5003",
+      "occurrence_count": 15,
+      "traced_count": 15,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5004",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5005",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    }
+  ]
+}

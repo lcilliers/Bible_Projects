@@ -1,0 +1,105 @@
+{
+  "cluster_code": "M10",
+  "family_id": "L_defilement",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G8327",
+    "H2149",
+    "H5040"
+  ],
+  "observations": [
+    {
+      "tag": "no-human-context",
+      "statement": "G8327 (defilement) has zero occurrences and an empty meaning block. Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "L_defilement",
+        "strong": "G8327",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "G8327 is included in cluster_strong for M10 but has no live span occurrences anywhere in the base data -- same category as H2054/H6330/H5005 already flagged in other families. Flagged for the spine/integrity process.",
+      "traces": {
+        "cluster": "M10",
+        "family": "L_defilement",
+        "strong": "G8327",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H2149 (zullut, vileness) in its one occurrence -- 'vileness is exalted among the children of man' -- pairs with 'the wicked prowl on every side' in the same verse. Morph HNcfsa (abstract noun, feminine). Vileness here is not a private failing but a public, social condition given status ('exalted') in a corrupt environment -- not an individual act at all.",
+      "traces": {
+        "cluster": "M10",
+        "family": "L_defilement",
+        "strong": "H2149",
+        "occurrences": [
+          {
+            "verse": "Ps.12.8",
+            "span_surface": "vileness",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H5040 (navlut, lewdness) has zero occurrences in the live span/verse data. Meaning block only: 'immodesty, shamelessness, lewdness, pudenda (of female).' Earmarked; no further analysis possible without verse context.",
+      "traces": {
+        "cluster": "M10",
+        "family": "L_defilement",
+        "strong": "H5040",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "H5040 is included in cluster_strong for M10 but has no live span occurrences anywhere in the base data. Flagged for the spine/integrity process.",
+      "traces": {
+        "cluster": "M10",
+        "family": "L_defilement",
+        "strong": "H5040",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "This is the thinnest family in the cluster by a wide margin: 1 verse total across 3 strongs, 2 of which have zero live occurrences. Any distillation of this family carries far lower confidence than families with dozens of occurrences -- worth marking explicitly at the family level, not just per-strong, since a downstream consumer comparing families side by side needs to know evidence volume differs by orders of magnitude.",
+      "traces": {
+        "cluster": "M10",
+        "family": "L_defilement",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G8327",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2149",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5040",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    }
+  ]
+}

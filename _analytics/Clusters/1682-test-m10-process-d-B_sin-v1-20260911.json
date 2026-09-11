@@ -1,0 +1,2520 @@
+{
+  "cluster_code": "M10",
+  "family_id": "B_sin",
+  "process": "1682-cluster-reading-process-d",
+  "spec_round": 1,
+  "catalogue_scope": "T0-T5",
+  "questions_answered": 64,
+  "answers": [
+    {
+      "question_code": "T0.1.1",
+      "tier": "T0",
+      "component_code": "T0.1",
+      "component_title": "Divine Nature Reflected",
+      "question_text": "In this verse, is the characteristic predicated of God or otherwise related to God; if so, in what relation (God as the one who bears it, acts, gives it, or is its object)? Record the relation, or record that it is not related to God here.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "god-explicitly-denied-of-Christ",
+          "answer": "Sin is explicitly DENIED of Christ/God -- 'he made him who KNEW NO SIN to be sin' (2Cor 5:21), 'yet without sin' (Heb 4:15), 'which of you convicts me of sin?' (John 8:46) -- a stronger, more textually direct negative than H_guilt's mere absence: sin is not just unpredicated of God, it is actively ruled out by name.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "John.8.46",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "Which one of you convicts me of sin? If I tell the truth, why do you not believe me?"
+              }
+            ],
+            "observation_refs": [
+              "G0266 verse-grouping: Hebrews' sustained argument"
+            ]
+          }
+        },
+        {
+          "slant_label": "god-as-forgiver-forgiveness-formula",
+          "answer": "God/Christ is the one who ACTS on sin -- the fixed 'forgiveness of sins' formula recurring from the Baptist through the apostolic preaching -- God as the one who forgives/removes, never the one who commits.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Mark.1.4",
+                "span_surface": "sins",
+                "span_morph": "N-GPF",
+                "verse_text": "John appeared, baptizing in the wilderness and proclaiming a baptism of repentance for the forgiveness of sins."
+              },
+              {
+                "verse": "Acts.2.38",
+                "span_surface": "sins",
+                "span_morph": "N-GPF",
+                "verse_text": "And Peter said to them, “ Repent and be baptized every one of you in the name of Jesus Christ for the forgiveness of your sins, and you will receive the gift of the Holy Spirit."
+              }
+            ],
+            "observation_refs": [
+              "G0266 verse-grouping: liturgical/missionary forgiveness formula"
+            ]
+          }
+        },
+        {
+          "slant_label": "god-as-wronged-party-implicit",
+          "answer": "Sin against God as the implicit wronged party runs through the whole family's confession formula ('we have sinned' addressed to the LORD, 1Kgs 8:47, Dan 9:5) -- God is the one sinned against, not the sinner.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Dan.9.5",
+                "span_surface": "sinned",
+                "span_morph": "HVqp1cp",
+                "verse_text": "we have sinned and done wrong and acted wickedly and rebelled, turning aside from your commandments and rules."
+              }
+            ],
+            "observation_refs": [
+              "H2398 verse-grouping: Qal national confession formula"
+            ]
+          }
+        },
+        {
+          "slant_label": "not-related-to-God",
+          "answer": "The great majority of occurrences (interpersonal offense, practical ethics, narrative confession, the 'sinner' social category) state no God-relation at all in the verse itself.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.1.2a",
+      "tier": "T0",
+      "component_code": "T0.1",
+      "component_title": "Divine Nature Reflected",
+      "question_text": "Across the characteristic's verses, is the characteristic ever predicated of God himself (not just present in a verse where God is also mentioned)?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "firm-negative-explicitly-stated",
+          "answer": "No -- and unlike H_guilt, this family states the negative explicitly rather than leaving it merely unattested: 2Cor 5:21 and Heb 4:15 both directly assert Christ's sinlessness by name, and John 8:46 poses it as an unanswerable rhetorical challenge. Sin is not merely absent from God's predicate-set; it is affirmatively excluded.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.1.2b",
+      "tier": "T0",
+      "component_code": "T0.1",
+      "component_title": "Divine Nature Reflected",
+      "question_text": "What does the pattern of presence/absence found in T0.1.2a indicate for the characteristic's place in the human person and in the divine image?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "sin-marks-departure-from-image",
+          "answer": "Sin's explicit exclusion from Christ, held up as the standard of what a fully image-bearing human looks like, indicates sin is precisely the human departure from the image, not a variant expression of it -- Christ's sinlessness is presented as what humanity was meant to be.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.2.1",
+      "tier": "T0",
+      "component_code": "T0.2",
+      "component_title": "Created Purpose",
+      "question_text": "Does this verse state any purpose, role, or effect the characteristic serves in the person — what it leads the person to be, do, or become? Record it if stated; otherwise record none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "produces-death",
+          "answer": "Sin's stated effect, repeatedly, is DEATH -- 'sin, when it is full-grown, brings forth death' (Jas 1:15), 'the wages of sin is death' (Rom 6:23), 'sin... producing death in me' (Rom 7:13).",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Jas.1.15",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."
+              },
+              {
+                "verse": "Jas.1.15",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."
+              }
+            ],
+            "observation_refs": [
+              "G0266 verse-grouping: general epistles"
+            ]
+          }
+        },
+        {
+          "slant_label": "produces-slavery",
+          "answer": "Sin produces SLAVERY to itself as a ruling condition -- 'everyone who commits sin is a slave to sin' (John 8:34), 'sold to sin' (Rom 7:14 register).",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "John.8.34",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Jesus answered them, “ Truly, truly, I say to you, everyone who practices sin is a slave to sin."
+              },
+              {
+                "verse": "John.8.34",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Jesus answered them, “ Truly, truly, I say to you, everyone who practices sin is a slave to sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "produces-hardening",
+          "answer": "Sin's 'deceitfulness' HARDENS the heart over time (Heb 3:13) -- an explicit constitutional effect on a named faculty.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.3.13",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "But exhort one another every day, as long as it is called “ today,” that none of you may be hardened by the deceitfulness of sin."
+              }
+            ],
+            "observation_refs": [
+              "G0266 surface-gloss-divergence: Hebrews' sustained argument"
+            ]
+          }
+        },
+        {
+          "slant_label": "no-stated-effect",
+          "answer": "Most narrative/confession/legal occurrences state no further effect -- the act or status is simply named.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.2.2",
+      "tier": "T0",
+      "component_code": "T0.2",
+      "component_title": "Created Purpose",
+      "question_text": "Across the evidence, does the characteristic's role read as belonging to created design, to the fallen condition, to both, or as not determinable?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "fallen-condition-with-cosmic-scope",
+          "answer": "Fallen condition, and stated at cosmic scope rather than only individual scale: 'sin came into the world through one man' (Rom 5:12), 'the whole world lies... in the power of the evil one' (implied by 1John's sinning-of-the-devil material) -- sin is presented as an entered, not created, condition of the world itself.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.5.12",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "Therefore, just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned —"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.2.3",
+      "tier": "T0",
+      "component_code": "T0.2",
+      "component_title": "Created Purpose",
+      "question_text": "Across the evidence, is there any orientation toward a future fullness — something the person moves toward, not only what they currently are? Record it, or record none.",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "negative-future-if-persisted",
+          "answer": "The only future orientation this family states is negative if sin is not addressed -- ongoing/final death (Jas 1:15, Rom 6:23) -- rather than a future fullness sin itself moves toward.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.6.23",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "remedy-future-orientation",
+          "answer": "Where a future fullness IS stated, it belongs to the remedy, not to sin itself: Christ's sacrifice removes sin permanently ('he will remember their sins no more,' Heb 8:12) so that no further offering for sin is needed -- a future-oriented resolution, not an unfolding of sin toward anything.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.8.12",
+                "span_surface": "sins",
+                "span_morph": "N-GPF",
+                "verse_text": "For I will be merciful toward their iniquities, and I will remember their sins no more.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.3.1",
+      "tier": "T0",
+      "component_code": "T0.3",
+      "component_title": "Image-Bearer Expression",
+      "question_text": "From the characteristic's God-relation (T0.1) and its role (T0.2), what aspect of the divine likeness, if any, does it instantiate in the person? Record the aspect, or record none.",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "none-sin-is-the-negation",
+          "answer": "None -- sin instantiates no aspect of divine likeness; per T0.1, it is explicitly what God/Christ is not. Its role (T0.2) is uniformly corrosive (death, slavery, hardening), the structural opposite of a likeness-bearing function.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.3.2",
+      "tier": "T0",
+      "component_code": "T0.3",
+      "component_title": "Image-Bearer Expression",
+      "question_text": "Across the evidence, is the characteristic shared between God and the person, or an exclusively creaturely analogue to something in God?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "exclusively-creaturely-not-even-analogue",
+          "answer": "Exclusively creaturely, and not even an analogue to anything in God (contrast H_guilt's guilt-bearing, which had a partial typological analogue via the Servant/Christ). Sin has no positive counterpart in the divine nature at all -- it is pure departure, not a creaturely echo of a divine quality.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.3.3",
+      "tier": "T0",
+      "component_code": "T0.3",
+      "component_title": "Image-Bearer Expression",
+      "question_text": "Where the characteristic is present or absent in a person, what does that indicate about the condition of the divine image in them — or is no such indication evidenced?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "presence-indicates-slavery-not-mere-damage",
+          "answer": "Where present, sin indicates more than a damaged-but-functioning image (H_guilt's pattern) -- John 8:34's 'slave to sin' language suggests the image's governing capacity (its freedom to choose otherwise) is itself compromised, not just its moral record.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "John.8.34",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Jesus answered them, “ Truly, truly, I say to you, everyone who practices sin is a slave to sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "absence-indicates-christlikeness",
+          "answer": "Absence (Christ's own sinlessness, held up as the standard) indicates the image functioning as intended -- the clearest positive-absence case in this family.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.4.15",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "For we do not have a high priest who is unable to sympathize with our weaknesses, but one who in every respect has been tempted as we are, yet without sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.4.1",
+      "tier": "T0",
+      "component_code": "T0.4",
+      "component_title": "Typological Significance",
+      "question_text": "Does this verse use the characteristic typologically — pointing beyond the immediate to a covenantal, eschatological, or christological reality; if so, which, and in which direction (the divine instance establishing the pattern, or the human pointing toward the divine)? Record the use and direction, or record none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "adam-christ-typology",
+          "answer": "Rom 5:12-21's 'sin entered through one man' is explicitly typological -- Adam as the type, Christ as the antitype who reverses sin's reign; direction: the human (Adam) establishing the pattern, later answered/reversed by the divine instance (Christ).",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.5.12",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "Therefore, just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned —"
+              }
+            ],
+            "observation_refs": [
+              "G0266 verse-grouping: Romans 3-8 cosmic ruling power"
+            ]
+          }
+        },
+        {
+          "slant_label": "hebrews-sacrificial-typology",
+          "answer": "Hebrews' whole sin-offering argument (old sacrifices repeated annually vs. Christ's one sacrifice) is typological -- the old system establishing a pattern later fulfilled.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.10.4",
+                "span_surface": "sins",
+                "span_morph": "N-APF",
+                "verse_text": "For it is impossible for the blood of bulls and goats to take away sins."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-typology-elsewhere",
+          "answer": "Most narrative/legal/confession occurrences show no typological signal.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.1.1",
+      "tier": "T1",
+      "component_code": "T1.1",
+      "component_title": "Name and Naming",
+      "question_text": "What is the characteristic called in the programme, and what does the name signal about its essential nature?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "sin-is-the-primary-act-category",
+          "answer": "Called 'Sin' (B_sin, M10). Unlike H_guilt (a consequence-status downstream of an act), the name here signals the ACT/violation itself -- 'to sin' (hamartano/chata) is the base verb form across both languages, making this family's core sense more primary/originating than H_guilt's, which was always secondary to an act already named elsewhere.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.1.2",
+      "tier": "T1",
+      "component_code": "T1.1",
+      "component_title": "Name and Naming",
+      "question_text": "What do the primary Hebrew and Greek terms show at the definitional level?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "hamartano-missing-the-mark",
+          "answer": "hamartano/hamartia (Greek) roots in 'missing the mark' -- an archery/target metaphor, an act that fails to reach its intended goal rather than a purely legal-liability term.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "chata-multivalent-by-binyan",
+          "answer": "chata (Hebrew) is genuinely multivalent by grammatical stem -- Qal 'sin,' Hiphil 'cause to sin,' Piel 'purify from sin' -- the single root spans committing, causing, AND removing sin through grammar alone.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": [
+              "H2398 difference-inference x2: Hiphil causative, Piel purification"
+            ]
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.1.3",
+      "tier": "T1",
+      "component_code": "T1.1",
+      "component_title": "Name and Naming",
+      "question_text": "What directional, relational, or constitutional implication does the name carry?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "missing-the-mark-implies-failed-aim",
+          "answer": "'Missing the mark' implies a FAILED aim at a real target -- sin presupposes a standard/goal that existed and was not reached, not an arbitrary rule violated.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "chata-become-implies-entered-state",
+          "answer": "chata's Qal 'become/commit' implies entering a state through one's own act, echoing H_guilt's asham but here naming the originating act itself rather than its consequence.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.2.1",
+      "tier": "T1",
+      "component_code": "T1.2",
+      "component_title": "Kind",
+      "question_text": "What kind of inner-being phenomenon is the characteristic — an act, a disposition, a condition/status, a quality, or something else?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "primarily-an-act",
+          "answer": "Primarily an ACT at the verb level (hamartano, chata Qal) -- 'to sin' names a discrete commission, the family's base sense.",
+          "strong": "G0264/H2398",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "also-a-ruling-power-condition",
+          "answer": "But the abstract noun (hamartia) in Romans 5-8 is treated as far more than a condition/status -- it is PERSONIFIED as a quasi-agent: 'sin reigned' (5:21), 'sin... produced... deceived' (7:8-11), 'sin dwells in me' (7:17), 'the law of sin' warring against the mind (7:23). This goes beyond H_guilt's status-language into something closer to an internal ruling force with its own operative agency -- worth flagging directly against the working hypothesis that this family behaves 'just like guilt.'",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.7.17",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "So now it is no longer I who do it, but sin that dwells within me."
+              },
+              {
+                "verse": "Rom.7.23",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "but I see in my members another law waging war against the law of my mind and making me captive to the law of sin that dwells in my members."
+              }
+            ],
+            "observation_refs": [
+              "G0266 verse-grouping: Romans 3-8 personified power"
+            ]
+          }
+        },
+        {
+          "slant_label": "hamartolos-is-a-social-category",
+          "answer": "hamartolos names a STANDING SOCIAL/RELATIONAL CATEGORY (a class of person -- 'tax collectors and sinners') rather than an act or a status in the individual's own inner economy -- a third kind this family carries that H_guilt did not.",
+          "strong": "G0268",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Luke.15.1",
+                "span_surface": "sinners",
+                "span_morph": "A-NPM",
+                "verse_text": "Now the tax collectors and sinners were all drawing near to hear him."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.2.2",
+      "tier": "T1",
+      "component_code": "T1.2",
+      "component_title": "Kind",
+      "question_text": "Is the characteristic simple in structure, or does it combine constituent elements; if compound, which?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "compound-desire-to-death-sequence",
+          "answer": "James 1:15 states an explicit compound sequence within a single verse: desire conceives, sin is born, sin (once grown) brings forth death -- sin is structurally the middle term of a three-stage process (desire -> sin -> death), not a standalone simple unit.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Jas.1.15",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."
+              },
+              {
+                "verse": "Jas.1.15",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.3.1",
+      "tier": "T1",
+      "component_code": "T1.3",
+      "component_title": "Boundary",
+      "question_text": "What stands against the characteristic as its structural opposite — the inner-being reality that excludes it?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "righteousness-and-obedience",
+          "answer": "Righteousness/obedience is the explicit structural opposite throughout Romans 5-6 ('the many will be made righteous,' 5:19 register; slaves either 'to sin, leading to death, or of obedience, leading to righteousness,' 6:16).",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.6.16",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "Do you not know that if you present yourselves to anyone as obedient slaves, you are slaves of the one whom you obey, either of sin, which leads to death, or of obedience, which leads to righteousness?"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "not-sinning-as-a-settled-state",
+          "answer": "1 John frames the opposite as a settled incapacity to sin in the one born of God (3:9) -- a stronger opposite than H_guilt's 'refuge' pairing, framed as a change of nature rather than an avoided event.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.9",
+                "span_surface": "sinning",
+                "span_morph": "V-PAN",
+                "verse_text": "No one born of God makes a practice of sinning, for God’s seed abides in him, and he cannot keep on sinning, because he has been born of God."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.3.2",
+      "tier": "T1",
+      "component_code": "T1.3",
+      "component_title": "Boundary",
+      "question_text": "What does the characteristic exclude or resist at its edge?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "marrying-is-not-sin",
+          "answer": "Paul explicitly polices the edge of the category: marrying is 'not sinning' even though he prefers celibacy (1Cor 7:28, 7:36) -- a deliberate boundary-drawing that excludes an act some might have assumed was sinful.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1Cor.7.28",
+                "span_surface": "sinned",
+                "span_morph": "V-2AAI-2S",
+                "verse_text": "But if you do marry, you have not sinned, and if a betrothed woman marries, she has not sinned. Yet those who marry will have worldly troubles, and I would spare you that."
+              }
+            ],
+            "observation_refs": [
+              "G0264 verse-grouping: practical ethics"
+            ]
+          }
+        },
+        {
+          "slant_label": "anger-itself-is-not-sin",
+          "answer": "'Be angry and do not sin' (Eph 4:26) treats the emotion itself as outside the category, only its uncontrolled outworking falling inside it.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Eph.4.26",
+                "span_surface": "sin",
+                "span_morph": "V-PAM-2P",
+                "verse_text": "Be angry and do not sin; do not let the sun go down on your anger,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.3.3",
+      "tier": "T1",
+      "component_code": "T1.3",
+      "component_title": "Boundary",
+      "question_text": "Where does the characteristic end and another thing begin — what is it not?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "sin-vs-sin-offering",
+          "answer": "The same word (hamartia, chattaah) crosses from the abstract condition into the concrete sacrificial ANIMAL that addresses it (Heb 10:6/10:8 'sin offerings'; H2403H's 32 occurrences exclusively this cultic sense) -- the boundary between the wrongdoing and its remedy-object is not kept lexically distinct.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.10.6",
+                "span_surface": "sin offerings",
+                "span_morph": "N-GSF",
+                "verse_text": "in burnt offerings and sin offerings you have taken no pleasure."
+              },
+              {
+                "verse": "Heb.10.8",
+                "span_surface": "sin offerings",
+                "span_morph": "N-GSF",
+                "verse_text": "When he said above, “You have neither desired nor taken pleasure in sacrifices and offerings and burnt offerings and sin offerings ” ( these are offered according to the law ),"
+              }
+            ],
+            "observation_refs": [
+              "G0266 surface-gloss-divergence: sin/sin-offering split",
+              "cross-family: same phenomenon as H2403B/H2403H"
+            ]
+          }
+        },
+        {
+          "slant_label": "sin-vs-guilt",
+          "answer": "John 9:41 renders hamartia as 'guilt' rather than 'sin' -- the boundary between THIS family and family H_guilt is not maintained in the English surface even within a single strong.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "John.9.41",
+                "span_surface": "guilt",
+                "span_morph": "N-ASF",
+                "verse_text": "Jesus said to them, “ If you were blind, you would have no guilt; but now that you say, ‘We see,’ your guilt remains."
+              },
+              {
+                "verse": "John.9.41",
+                "span_surface": "guilt",
+                "span_morph": "N-ASF",
+                "verse_text": "Jesus said to them, “ If you were blind, you would have no guilt; but now that you say, ‘We see,’ your guilt remains."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "hamartia's sin/sin-offering split mirrors H2403B/H2403H's split within this same family, and John 9:41's 'guilt' gloss crosses directly into family H_guilt's territory -- both already logged, restated here against the specific boundary question.",
+          "related_family": "H_guilt",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T1.4.1a",
+      "tier": "T1",
+      "component_code": "T1.4",
+      "component_title": "Modes of Operation",
+      "question_text": "What is the grammatical/stem form of the characteristic's primary term in this verse?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "hebrew-stems",
+          "answer": "Qal (H2398 majority -- 'sin' personally); Hiphil (H2398, 23 occ -- causative 'cause to sin,' dominated by the Jeroboam refrain); Piel (H2398, 9 occ -- 'purify from sin'); Hithpael (H2398, 7 occ -- reflexive self-purification).",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "greek-forms",
+          "answer": "Aorist/present indicative and participle forms throughout for hamartano (verb); noun forms (N-*SF) for hamartia; adjective/substantive forms (A-*) for hamartolos.",
+          "strong": "G0264/G0266/G0268",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.4.1b",
+      "tier": "T1",
+      "component_code": "T1.4",
+      "component_title": "Modes of Operation",
+      "question_text": "In what distinct mode(s) does the characteristic operate within the inner person in this verse — the manner of its functioning?",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "committed-act-mode",
+          "answer": "As a discrete committed act -- the confession formula ('I have sinned') names a completed, punctual event.",
+          "strong": "H2398/G0264",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "ruling-power-mode",
+          "answer": "As an indwelling ruling power that acts on the person -- 'sin dwells in me,' 'sin, seizing an opportunity through the commandment, deceived me' (Rom 7:11, 7:17) -- sin here functions almost as a second agent operating within the same person.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.7.11",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "For sin, seizing an opportunity through the commandment, deceived me and through it killed me."
+              },
+              {
+                "verse": "Rom.7.17",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "So now it is no longer I who do it, but sin that dwells within me."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "social-category-mode",
+          "answer": "As a standing social label attached to a person by others or self ('tax collectors and sinners') -- an externally/relationally applied mode, not an inner operation at all.",
+          "strong": "G0268",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Luke.15.1",
+                "span_surface": "sinners",
+                "span_morph": "A-NPM",
+                "verse_text": "Now the tax collectors and sinners were all drawing near to hear him."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.4.2",
+      "tier": "T1",
+      "component_code": "T1.4",
+      "component_title": "Modes of Operation",
+      "question_text": "Does the mode of operation vary by context, direction, or constitutional level; if so, how?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "varies-sharply-by-strong-and-book",
+          "answer": "Yes, sharply: the same family ranges from a punctual confessed act (Old Testament narrative formula) to a personified ruling power (Romans) to a social category (Synoptic Gospels) to a purification target (Levitical Piel/Hithpael) -- more registers than H_guilt showed, and tracking BOTH strong and literary context/book, not one axis alone.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.4.3",
+      "tier": "T1",
+      "component_code": "T1.4",
+      "component_title": "Modes of Operation",
+      "question_text": "Does the characteristic operate through a communicative or speech-based mode (commanded, addressed, spoken); if so, how? Record it, or record none.",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "confessional-speech",
+          "answer": "Extensively communicative: the recurring first-person confession formula ('I/we have sinned') IS spoken/prayed speech across dozens of occurrences (Dan 9, Neh 1, 2Chr 6, David, Saul, Pharaoh) -- far more pervasively speech-based than H_guilt's occasional quoted denial.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Dan.9.5",
+                "span_surface": "sinned",
+                "span_morph": "HVqp1cp",
+                "verse_text": "we have sinned and done wrong and acted wickedly and rebelled, turning aside from your commandments and rules."
+              },
+              {
+                "verse": "2Sam.12.13",
+                "span_surface": "sinned",
+                "span_morph": "HVqp1cs",
+                "verse_text": "David said to Nathan, “I have sinned against the Lord.” And Nathan said to David, “The Lord also has put away your sin; you shall not die."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "commanded-cessation",
+          "answer": "Also directly commanded: 'sin no more' (John 5:14, 8:11), 'stop sinning' (1Cor 15:34) -- imperative speech addressed directly to the person.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "John.8.11",
+                "span_surface": "sin",
+                "span_morph": "V-PAM-2S",
+                "verse_text": "She said, “ No one, Lord.” And Jesus said, “ Neither do I condemn you; go, and from now on sin no more.” ]]"
+              },
+              {
+                "verse": "1Cor.15.34",
+                "span_surface": "sinning",
+                "span_morph": "V-PAM-2P",
+                "verse_text": "Wake up from your drunken stupor, as is right, and do not go on sinning. For some have no knowledge of God. I say this to your shame."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.5.1",
+      "tier": "T1",
+      "component_code": "T1.5",
+      "component_title": "Immediate Response",
+      "question_text": "What first or most immediate inner-being response does this verse show following the characteristic? Record it, or record none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "immediate-confession",
+          "answer": "Immediate spoken confession/acknowledgment ('I have sinned') -- the dominant, near-mechanical response across the Qal-formula occurrences.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Sam.12.13",
+                "span_surface": "sinned",
+                "span_morph": "HVqp1cs",
+                "verse_text": "David said to Nathan, “I have sinned against the Lord.” And Nathan said to David, “The Lord also has put away your sin; you shall not die."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "immediate-suicide-Judas",
+          "answer": "Judas's confession is followed immediately by despair and suicide (Matt 27:4-5 context) -- the family's most extreme immediate-response case.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Matt.27.4",
+                "span_surface": "sinned",
+                "span_morph": "V-2AAI-1S",
+                "verse_text": "saying, “I have sinned by betraying innocent blood.” They said, “ What is that to us? See to it yourself.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "immediate-forgiveness-pronounced",
+          "answer": "In the Synoptic healing scenes, the immediate response recorded is not the sinner's own reaction at all but Christ's PRONOUNCEMENT of forgiveness -- the narrative moves straight to the remedy.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Mark.2.5",
+                "span_surface": "sins",
+                "span_morph": "N-NPF",
+                "verse_text": "And when Jesus saw their faith, he said to the paralytic, “ Son, your sins are forgiven.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.5.2",
+      "tier": "T1",
+      "component_code": "T1.5",
+      "component_title": "Immediate Response",
+      "question_text": "Across the verses, is that immediate response consistent or varied?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "varied-but-confession-dominant",
+          "answer": "Varied, but far more dominated by ONE response (spoken confession) than H_guilt was -- the sheer repetition of the 'I have sinned' formula across so many independent narratives suggests this is closer to a fixed cultural/liturgical script than guilt's genuinely scattered response set.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.6.1",
+      "tier": "T1",
+      "component_code": "T1.6",
+      "component_title": "Sustained Effect",
+      "question_text": "What does the characteristic produce in the inner being over time in this verse — what states, qualities, capacities, or orientations does it establish? Record it, or record none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "slavery-as-sustained-state",
+          "answer": "Slavery to sin as an ongoing, self-perpetuating state (John 8:34, Rom 6:16-20) -- once entered, it is described as governing further action, not just a past mark.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.6.20",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "For when you were slaves of sin, you were free in regard to righteousness."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "hardening-over-time",
+          "answer": "Hardening of the heart through sin's repeated 'deceitfulness' (Heb 3:13) -- an explicit accumulation-over-time claim, paralleling H0819's cumulative-guilt finding but naming a specific faculty (the heart) that H_guilt never did.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.3.13",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "But exhort one another every day, as long as it is called “ today,” that none of you may be hardened by the deceitfulness of sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-sustained-effect-stated",
+          "answer": "Most confession/narrative occurrences state no sustained effect beyond the single act.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.6.3",
+      "tier": "T1",
+      "component_code": "T1.6",
+      "component_title": "Sustained Effect",
+      "question_text": "How does the sustained effect differ from the immediate response (T1.5)?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "act-to-governing-condition",
+          "answer": "Immediate response is a single spoken/enacted event (confession, a command to stop); sustained effect is a GOVERNING CONDITION (slavery, hardening) that outlasts and can outweigh any single act -- sin's sustained effect looks less like accumulated status (H_guilt's compound-interest image) and more like an entrenched RULE taking over the person's operation.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.7.1",
+      "tier": "T1",
+      "component_code": "T1.7",
+      "component_title": "Conditions of Reception",
+      "question_text": "Under what inner conditions does the characteristic take hold or operate rightly?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "desire-is-the-entry-point",
+          "answer": "Desire is named as the specific entry point through which sin takes hold -- 'each person is tempted when he is lured and enticed by his own desire; then desire... gives birth to sin' (Jas 1:15) -- a precise inner mechanism H_guilt never stated for its own onset.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Jas.1.15",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "law-provides-the-opportunity",
+          "answer": "The commandment itself, not sin's own initiative, provides the 'opportunity' Paul says sin exploits (Rom 7:8, 7:11) -- a paradoxical condition where the very prohibition becomes sin's occasion.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.7.8",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "But sin, seizing an opportunity through the commandment, produced in me all kinds of covetousness. For apart from the law, sin lies dead."
+              },
+              {
+                "verse": "Rom.7.11",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "For sin, seizing an opportunity through the commandment, deceived me and through it killed me."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.7.2",
+      "tier": "T1",
+      "component_code": "T1.7",
+      "component_title": "Conditions of Reception",
+      "question_text": "Under what inner conditions is the characteristic blocked, distorted, resisted, or not taken up — including, where the evidence shows it, distortion or interference by another spirit (adversarial or angelic)?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "adversarial-interference-explicit",
+          "answer": "Unlike H_guilt's clean negative, this family DOES show adversarial involvement directly: 'the devil has been sinning from the beginning... whoever keeps on sinning is of the devil' (1John 3:8) -- ongoing sin is explicitly tied to demonic origin/affiliation, and 'the angels who sinned' (2Pet 2:4) shows the category applied to spiritual beings themselves, not just humans.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.8",
+                "span_surface": "sinning",
+                "span_morph": "V-PAI-3S",
+                "verse_text": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+              },
+              {
+                "verse": "2Pet.2.4",
+                "span_surface": "sinned",
+                "span_morph": "V-AAP-GPM",
+                "verse_text": "For if God did not spare angels when they sinned, but cast them into hell and committed them to chains of gloomy darkness to be kept until the judgment;"
+              }
+            ],
+            "observation_refs": [
+              "G0264 verse-grouping: 1 John's paradoxical cluster",
+              "G0264 verse-grouping: suffering/judgment backdrop"
+            ]
+          }
+        },
+        {
+          "slant_label": "regenerate-incapacity-blocks-it",
+          "answer": "In the same letter, being 'born of God' is stated to BLOCK ongoing sinning as a settled practice (1John 3:9, 5:18) -- a stated inner condition (new birth) that resists it, structurally opposite to the devil's affiliation-condition above.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.9",
+                "span_surface": "sinning",
+                "span_morph": "V-PAN",
+                "verse_text": "No one born of God makes a practice of sinning, for God’s seed abides in him, and he cannot keep on sinning, because he has been born of God."
+              },
+              {
+                "verse": "1John.5.18",
+                "span_surface": "sinning",
+                "span_morph": "V-PAI-3S",
+                "verse_text": "We know that everyone who has been born of God does not keep on sinning, but he who was born of God protects him, and the evil one does not touch him."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "1 John's tying of persistent sin to the devil directly answers H_guilt's T4.6 confirmed-negative finding -- worth a direct side-by-side once other families' T4.6 answers exist, to see whether adversarial involvement clusters around act-vocabulary (sin) rather than status-vocabulary (guilt).",
+          "related_family": "H_guilt",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T1.7.3",
+      "tier": "T1",
+      "component_code": "T1.7",
+      "component_title": "Conditions of Reception",
+      "question_text": "What is the inner-being state of the person in whom the characteristic is present but does not take hold?",
+      "catalogue_scope": "The HIB",
+      "slants": [
+        {
+          "slant_label": "regenerate-resistance-state",
+          "answer": "1 John's regenerate person: sin is present as a possibility (2:1's pastoral provision assumes it can still happen) but does not take hold as settled practice -- the inner state is one of God's 'seed' abiding in them (3:9's stated ground).",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.9",
+                "span_surface": "sinning",
+                "span_morph": "V-PAN",
+                "verse_text": "No one born of God makes a practice of sinning, for God’s seed abides in him, and he cannot keep on sinning, because he has been born of God."
+              },
+              {
+                "verse": "1John.2.1",
+                "span_surface": "sin",
+                "span_morph": "V-2AAS-2P",
+                "verse_text": "My little children, I am writing these things to you so that you may not sin. But if anyone does sin, we have an advocate with the Father, Jesus Christ the righteous."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.1.1",
+      "tier": "T2",
+      "component_code": "T2.1",
+      "component_title": "Spirit-Level Location",
+      "question_text": "At which constitutional level(s) does this verse locate the characteristic — from {spirit, soul, heart, mind, other soul-subset, a named body part} — and how is each engaged? Record every level evidenced, or none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "mind-explicitly-engaged",
+          "answer": "MIND is explicitly named and engaged: 'the law of sin' wars against 'the law of my mind' (Rom 7:23) -- a direct constitutional-level claim H_guilt's family never made anywhere in its 75 occurrences.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.7.23",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "but I see in my members another law waging war against the law of my mind and making me captive to the law of sin that dwells in my members."
+              }
+            ],
+            "observation_refs": [
+              "G0266 verse-grouping: Romans 3-8 personified power"
+            ]
+          }
+        },
+        {
+          "slant_label": "heart-engaged-via-hardening",
+          "answer": "HEART is engaged via sin's 'deceitfulness' hardening it over time (Heb 3:13).",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.3.13",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "But exhort one another every day, as long as it is called “ today,” that none of you may be hardened by the deceitfulness of sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "body-engaged-as-members",
+          "answer": "The BODY is engaged as the site where sin's law operates ('the members of my body,' Rom 7:23 register; 'sin that dwells in me... in my flesh,' 7:17-18) -- a functional, not merely emblematic, body-link, unlike H_guilt's one purely emblematic case (Aaron's forehead).",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.7.17",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "So now it is no longer I who do it, but sin that dwells within me."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-level-named-elsewhere",
+          "answer": "Most narrative/legal/confession occurrences name no constitutional level -- guilt-like in this respect.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.1.2",
+      "tier": "T2",
+      "component_code": "T2.1",
+      "component_title": "Spirit-Level Location",
+      "question_text": "Across the verses, what does the pattern of engaged and absent levels indicate — the characteristic's depth and seat, the levels it never engages, and (for any body link) whether the link is emphatic, functional, expressive, indicative, or mediating?",
+      "catalogue_scope": "The HIB",
+      "slants": [
+        {
+          "slant_label": "sin-is-faculty-seated-where-guilt-was-not",
+          "answer": "Sin (at least in Paul's psychological register) IS faculty-seated -- mind and body are both named as the sites of its operation -- a direct contrast to H_guilt's near-total absence of such language. This is the clearest evidence yet that sin and guilt, despite superficial similarity, occupy structurally different positions relative to the inner being: guilt is a relational/legal status with no seat; sin (at least as Paul develops it) is an operative condition WITH a seat.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.7.23",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "but I see in my members another law waging war against the law of my mind and making me captive to the law of sin that dwells in my members."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "body-link-is-functional",
+          "answer": "The body-link here is FUNCTIONAL, not merely emphatic (contrast H_guilt's Exod 28:38) -- sin is described as actually operating THROUGH the members/flesh, not just displayed on a body part.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.7.17",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "So now it is no longer I who do it, but sin that dwells within me."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "This is the single clearest point of divergence from H_guilt found so far in the T0-T5 pass -- worth flagging prominently for the researcher's status-vs-characteristic hypothesis: sin engages mind/body directly where guilt engaged neither.",
+          "related_family": "H_guilt",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T2.10.1",
+      "tier": "T2",
+      "component_code": "T2.10",
+      "component_title": "Constitutional Movement",
+      "question_text": "Does the characteristic move across constitutional levels (spirit→soul→body), or onto the person from an external source — including another spirit (angelic or adversarial) — or in another direction; and if so in what sequence or pattern? If no movement, record none.",
+      "catalogue_scope": "The HIB",
+      "slants": [
+        {
+          "slant_label": "desire-to-act-to-body-sequence",
+          "answer": "James 1:15 states a movement sequence: desire (an inner state) conceives -> sin is born (an act) -> death (a bodily/final consequence) -- movement from inner disposition outward to act to consequence.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Jas.1.15",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "world-to-person-entry",
+          "answer": "Rom 5:12's 'sin entered the world through one man' names a movement ONTO humanity from a single origin point, then spreading -- an external-entry-then-universal-diffusion pattern distinct from H_guilt's individual-origin norm.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.5.12",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "Therefore, just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned —"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "devil-affiliation-as-external-source",
+          "answer": "1John 3:8's 'of the devil' framing names an external, adversarial source for ongoing sinning -- a movement-onto-the-person pattern H_guilt confirmed as absent for itself.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.8",
+                "span_surface": "sinning",
+                "span_morph": "V-PAI-3S",
+                "verse_text": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.7.1",
+      "tier": "T2",
+      "component_code": "T2.7",
+      "component_title": "Body — Direction",
+      "question_text": "Where a body link exists (from the T2.1.1 audit), in which direction does it run — soul/spirit expressing through the body, the body feeding back to the soul, or both — and what follows from that direction? If no body link, record none.",
+      "catalogue_scope": "The HIB",
+      "slants": [
+        {
+          "slant_label": "both-directions-shown",
+          "answer": "Both directions appear: sin operating 'in my members' suggests an inward rule expressing through bodily action (Rom 7 register), while the whole 'body of death' language (7:24 context) suggests the body also feeding back as the site FROM WHICH deliverance is sought -- a two-way relationship, unlike H_guilt's one-directional-only body link.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.7.17",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "So now it is no longer I who do it, but sin that dwells within me."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.9.1",
+      "tier": "T2",
+      "component_code": "T2.9",
+      "component_title": "Origin and Source",
+      "question_text": "Where does this verse say the characteristic originates — generated within the person, received from another person, bestowed by God, carried generationally, introduced by another spirit (angelic or adversarial), or not stated?",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "generated-within-dominant",
+          "answer": "Generated within, by one's own act -- the dominant pattern across the confession-formula occurrences.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "generational-entry-point",
+          "answer": "Carried generationally/at a species level from a single origin -- 'sin entered the world through one man, and death through sin' (Rom 5:12) -- a stated generational-diffusion claim that H_guilt's family explicitly DENIED for itself (Ezek 18:19-20). Sin and guilt take opposite positions on generational transmission within the same overall cluster.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.5.12",
+                "span_surface": "sin",
+                "span_morph": "N-NSF",
+                "verse_text": "Therefore, just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned —"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "adversarial-origin-for-persistence",
+          "answer": "Introduced/sustained by an adversarial spirit for its ongoing form -- 1John 3:8's devil-affiliation for the one who 'keeps on sinning.'",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.8",
+                "span_surface": "sinning",
+                "span_morph": "V-PAI-3S",
+                "verse_text": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "Sin's Romans 5:12 generational-diffusion claim directly contradicts H_guilt's Ezekiel 18:19-20 generational-denial -- the same cluster holds both positions depending on which family/strong is read, worth a dedicated cross-family reconciliation round.",
+          "related_family": "H_guilt",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T2.9.2",
+      "tier": "T2",
+      "component_code": "T2.9",
+      "component_title": "Origin and Source",
+      "question_text": "Across the verses, is the origin single or multiple, and does it change with context?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "multiple-and-more-varied-than-guilt",
+          "answer": "Multiple, and more varied than H_guilt's three clean types: self-generated (the norm), single-origin-then-universal-diffusion (Rom 5:12, a claim about the whole species, not just individuals), and adversarial-affiliation (1John 3:8) for the sustained/settled form specifically. Origin appears to correlate with WHICH aspect of sin is being discussed (the act vs. the condition vs. the practice), not just which strong.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.1.1",
+      "tier": "T4",
+      "component_code": "T4.1",
+      "component_title": "Divine Interface — God to Human",
+      "question_text": "In this verse, does the characteristic operate from God toward the human person, and if so how? Record none if it does not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "god-removes-sin",
+          "answer": "God/Christ operates toward the person by REMOVING sin -- 'the Lamb of God, who takes away the sin of the world' (John 1:29), the whole forgiveness-of-sins formula.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "John.1.29",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "The next day he saw Jesus coming toward him, and said, “ Behold, the Lamb of God, who takes away the sin of the world!"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "god-convicts-of-sin",
+          "answer": "The Spirit operates toward the person by CONVICTING of sin (John 16:8) -- a distinct mode (exposure) from the remedy-mode above.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "John.16.8",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "And when he comes, he will convict the world concerning sin and righteousness and judgment:"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-operation-in-most",
+          "answer": "Most occurrences show no God-to-human operation.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.1.2",
+      "tier": "T4",
+      "component_code": "T4.1",
+      "component_title": "Divine Interface — God to Human",
+      "question_text": "On what basis does God extend the characteristic — conditional, unconditional, covenantal, or responsive — as the evidence shows?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "unconditional-once-for-all",
+          "answer": "Christ's removal of sin is presented as UNCONDITIONAL and final in Hebrews' argument -- 'once for all,' no further offering needed (Heb 10:12, 8:12's 'remember no more') -- a stronger basis than H_guilt's conditional/recognition-gated remedy.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.10.12",
+                "span_surface": "sins",
+                "span_morph": "N-GPF",
+                "verse_text": "But when Christ had offered for all time a single sacrifice for sins, he sat down at the right hand of God,"
+              },
+              {
+                "verse": "Heb.8.12",
+                "span_surface": "sins",
+                "span_morph": "N-GPF",
+                "verse_text": "For I will be merciful toward their iniquities, and I will remember their sins no more.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.1.3",
+      "tier": "T4",
+      "component_code": "T4.1",
+      "component_title": "Divine Interface — God to Human",
+      "question_text": "What does God's extension of the characteristic show about his disposition toward the human person?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "disposition-toward-decisive-removal",
+          "answer": "God's disposition is toward decisively REMOVING sin's power and record, not merely managing it case by case -- the sustained Hebrews argument frames this as qualitatively different from (and superior to) the old system's repeated, incomplete remedy.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.10.4",
+                "span_surface": "sins",
+                "span_morph": "N-APF",
+                "verse_text": "For it is impossible for the blood of bulls and goats to take away sins."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.2.1",
+      "tier": "T4",
+      "component_code": "T4.2",
+      "component_title": "Divine Interface — Human to God",
+      "question_text": "In this verse, does the characteristic operate in the person's movement toward God — seeking, supplication, worship, covenant — and if so how? Record none if it does not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "confession-as-movement-toward-God",
+          "answer": "The recurring confession formula ('I have sinned... against you') IS a human-to-God movement -- far more pervasively documented in this family than in H_guilt.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Sam.12.13",
+                "span_surface": "sinned",
+                "span_morph": "HVqp1cs",
+                "verse_text": "David said to Nathan, “I have sinned against the Lord.” And Nathan said to David, “The Lord also has put away your sin; you shall not die."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "prayer-for-forgiveness",
+          "answer": "The Lord's Prayer's own petition ('forgive us our sins,' Luke 11:4) and confession/prayer 'covering' sins (Jas 5:15-16) name this movement explicitly as ongoing communal/personal practice.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Luke.11.4",
+                "span_surface": "sins",
+                "span_morph": "N-APF",
+                "verse_text": "and forgive us our sins, for we ourselves forgive everyone who is indebted to us. And lead us not into temptation.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.2.2",
+      "tier": "T4",
+      "component_code": "T4.2",
+      "component_title": "Divine Interface — Human to God",
+      "question_text": "What inner posture does this movement require, as the evidence shows?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "acknowledgment-and-turning",
+          "answer": "Acknowledgment/confession is the required posture, paired in Acts's preaching formula with REPENTANCE ('repentance for the forgiveness of sins,' Luke 24:47) -- a more developed posture-requirement than H_guilt's mere 'recognition.'",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Luke.24.47",
+                "span_surface": "sins",
+                "span_morph": "N-GPF",
+                "verse_text": "and that repentance for the forgiveness of sins should be proclaimed in his name to all nations, beginning from Jerusalem."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.2.3",
+      "tier": "T4",
+      "component_code": "T4.2",
+      "component_title": "Divine Interface — Human to God",
+      "question_text": "What does the human-to-God direction of the characteristic show about the person's relationship with God?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "relationship-mediated-by-confession-and-grace",
+          "answer": "The relationship is mediated by confession met with grace/forgiveness rather than by ritual procedure alone (contrast H_guilt's more procedurally-bound pattern) -- 1 John explicitly frames this as an ongoing, expected feature of the relationship ('if we confess... he will forgive,' 1:9 register), not an exceptional legal event.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.2.1",
+                "span_surface": "sin",
+                "span_morph": "V-2AAS-2P",
+                "verse_text": "My little children, I am writing these things to you so that you may not sin. But if anyone does sin, we have an advocate with the Father, Jesus Christ the righteous."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.3.1",
+      "tier": "T4",
+      "component_code": "T4.3",
+      "component_title": "Human Interface — Giving",
+      "question_text": "In this verse, is the characteristic extended by one person toward another, and if so how does it operate in that extension? Record none if it is not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "interpersonal-offense",
+          "answer": "Sin operates directly person-to-person as an OFFENSE given: 'if your brother sins against you' (Matt 18:15, Luke 17:3-4) -- a genuine positive-extension case (one person wrongs another) that H_guilt's family lacked entirely.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Matt.18.15",
+                "span_surface": "sins",
+                "span_morph": "V-AAS-3S",
+                "verse_text": "“ If your brother sins against you, go and tell him his fault, between you and him alone. If he listens to you, you have gained your brother."
+              },
+              {
+                "verse": "Luke.17.3",
+                "span_surface": "sins",
+                "span_morph": "V-2AAS-3S",
+                "verse_text": "Pay attention to yourselves! If your brother sins, rebuke him, and if he repents, forgive him,"
+              }
+            ],
+            "observation_refs": [
+              "G0264 verse-grouping: interpersonal offense"
+            ]
+          }
+        },
+        {
+          "slant_label": "misleading-others-into-sin",
+          "answer": "False teachers 'leading astray' weak women 'burdened with sins' (2Tim 3:6) is a genuine causing-another-to-sin case, structurally parallel to H_guilt's negligence cases but here an active, not merely negligent, extension.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Tim.3.6",
+                "span_surface": "sins",
+                "span_morph": "N-DPF",
+                "verse_text": "For among them are those who creep into households and capture weak women, burdened with sins and led astray by various passions,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.3.2",
+      "tier": "T4",
+      "component_code": "T4.3",
+      "component_title": "Human Interface — Giving",
+      "question_text": "What inner conditions or orientations in the giver accompany genuine extension of the characteristic?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "hostility-or-manipulation",
+          "answer": "Where sin is actively given to another, the giver's orientation is hostile (offense against a brother) or manipulative/self-serving (false teachers exploiting the vulnerable, 2Tim 3:6) -- always a negative orientation, never a virtuous one, matching H_guilt's pattern that no positive 'giving' case exists in either family.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Tim.3.6",
+                "span_surface": "sins",
+                "span_morph": "N-DPF",
+                "verse_text": "For among them are those who creep into households and capture weak women, burdened with sins and led astray by various passions,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.3.3",
+      "tier": "T4",
+      "component_code": "T4.3",
+      "component_title": "Human Interface — Giving",
+      "question_text": "What does the evidence show a person must have received or become before they extend the characteristic?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "already-sinning-or-deceiving",
+          "answer": "The false teachers of 2Tim 3 are themselves already characterized as deceivers; the sinning brother of Matt 18 needs no prior state at all, just committing the offense -- unlike H_guilt, no prior 'authority position' is required here; sin can simply be committed against anyone at any time.",
+          "strong": "G0264/G0266",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.4.1",
+      "tier": "T4",
+      "component_code": "T4.4",
+      "component_title": "Human Interface — Receiving",
+      "question_text": "In this verse, is the characteristic taken up by a person from another, and if so how does it operate in that uptake? Record none if it is not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "led-astray",
+          "answer": "The weak women 'led astray' (2Tim 3:6) and the general pattern of 'bad company' corrupting (a cross-family echo of A_destroy's phtheiro material) show sin being taken up FROM another's influence.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Tim.3.6",
+                "span_surface": "sins",
+                "span_morph": "N-DPF",
+                "verse_text": "For among them are those who creep into households and capture weak women, burdened with sins and led astray by various passions,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "2Tim 3:6's 'led astray' pattern echoes A_destroy's G5351 (phtheiro, 'bad company ruins good morals') material -- worth a direct comparison.",
+          "related_family": "A_destroy",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T4.4.2",
+      "tier": "T4",
+      "component_code": "T4.4",
+      "component_title": "Human Interface — Receiving",
+      "question_text": "What inner conditions accompany or block uptake of the characteristic from another person?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "weakness-enables-uptake",
+          "answer": "2Tim 3:6 explicitly names the receiving condition: being 'weak,' 'burdened with sins,' and 'led astray by various passions' -- a compound vulnerability profile, more explicit than anything in H_guilt's receiving cases.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Tim.3.6",
+                "span_surface": "sins",
+                "span_morph": "N-DPF",
+                "verse_text": "For among them are those who creep into households and capture weak women, burdened with sins and led astray by various passions,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.4.3",
+      "tier": "T4",
+      "component_code": "T4.4",
+      "component_title": "Human Interface — Receiving",
+      "question_text": "What is the inner-being state of the person who meets the characteristic from another but does not take it up?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "evidentiary-gap-again",
+          "answer": "As with H_guilt, no occurrence directly shows a person refusing an attempted inducement to sin and describes their resulting inner state -- an evidentiary gap shared by both families so far.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.5.1",
+      "tier": "T4",
+      "component_code": "T4.5",
+      "component_title": "Human Interface — Boundaries",
+      "question_text": "Does the evidence show the characteristic operating differently within existing relational bonds versus across relational distance or difference; if so, how?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "within-community-discipline",
+          "answer": "Within the believing community, sin triggers a defined discipline/restoration process (Matt 18, 1Tim 5:20's public rebuke, Jas 5:19-20's bringing back a wanderer).",
+          "strong": "G0264/G0268",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Matt.18.15",
+                "span_surface": "sins",
+                "span_morph": "V-AAS-3S",
+                "verse_text": "“ If your brother sins against you, go and tell him his fault, between you and him alone. If he listens to you, you have gained your brother."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "across-social-distance-labeling",
+          "answer": "Across social distance, it operates as a LABEL applied to an entire outsider class ('tax collectors and sinners') that the label-user typically avoids -- a distancing function H_guilt did not show at all (guilt's cross-boundary case, Edom/Judah, was national-political, not a social-purity label).",
+          "strong": "G0268",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Luke.15.1",
+                "span_surface": "sinners",
+                "span_morph": "A-NPM",
+                "verse_text": "Now the tax collectors and sinners were all drawing near to hear him."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.5.2",
+      "tier": "T4",
+      "component_code": "T4.5",
+      "component_title": "Human Interface — Boundaries",
+      "question_text": "Does the characteristic operate within covenantal contexts only, or does it cross covenantal boundaries, as the evidence shows?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "crosses-boundaries-universally",
+          "answer": "Crosses boundaries universally and explicitly -- 'all have sinned' (Rom 3:23), 'the whole world' under sin's power (Rom 3:9 register) -- stated at a more absolute, unqualified universal scope than H_guilt's cross-national but still bounded cases.",
+          "strong": "G0264/G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.3.23",
+                "span_surface": "sinned",
+                "span_morph": "V-2AAI-3P",
+                "verse_text": "for all have sinned and fall short of the glory of God,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.5.3",
+      "tier": "T4",
+      "component_code": "T4.5",
+      "component_title": "Human Interface — Boundaries",
+      "question_text": "What does the evidence show about the relational scope of the characteristic — who is included and who is not?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "all-included-Christ-excluded",
+          "answer": "Included: universally, 'all have sinned' -- Jew and Gentile alike (Rom 3:9, 3:23), even the devil and fallen angels (1John 3:8, 2Pet 2:4). Excluded: Christ alone, explicitly and by name (2Cor 5:21, Heb 4:15) -- the widest inclusion-scope and the narrowest, most explicit exclusion found in either family so far.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.3.23",
+                "span_surface": null,
+                "span_morph": null,
+                "verse_text": "for all have sinned and fall short of the glory of God,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.1",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "In this verse, does the characteristic operate in relation to other spiritual beings — angelic or adversarial — and if so how? Record none if it does not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "devil-sins-and-fallen-angels-sinned",
+          "answer": "Yes, directly and repeatedly, unlike H_guilt's clean negative: 'the devil has been sinning from the beginning' (1John 3:8) and 'the angels who sinned' and were cast into hell (2Pet 2:4) -- the characteristic is predicated of adversarial/angelic beings themselves, not merely connected to them.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.8",
+                "span_surface": "sinning",
+                "span_morph": "V-PAI-3S",
+                "verse_text": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+              },
+              {
+                "verse": "2Pet.2.4",
+                "span_surface": "sinned",
+                "span_morph": "V-AAP-GPM",
+                "verse_text": "For if God did not spare angels when they sinned, but cast them into hell and committed them to chains of gloomy darkness to be kept until the judgment;"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.2a",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "Does an adversarial-being code ever appear as an acting party in a verse carrying this characteristic?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "yes",
+          "answer": "Yes -- the devil is explicitly the acting subject of hamartano at 1John 3:8 ('the devil has been sinning from the beginning'), and the affiliation clause ('whoever keeps on sinning is of the devil') ties ongoing human sinning to that same adversarial party.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.8",
+                "span_surface": "sinning",
+                "span_morph": "V-PAI-3S",
+                "verse_text": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.2b",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "What does that pattern show about the characteristic being a site of adversarial activity?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "sin-is-a-confirmed-site-of-adversarial-activity",
+          "answer": "Sin (unlike guilt) is a CONFIRMED site of adversarial activity in this cluster's own textual evidence -- the devil is not merely tempting toward sin from outside, he is himself said to sin, and the practice of sinning is used as a marker of spiritual paternity ('of the devil' vs. 'of God,' the same contrast 3:9-10 draws). This directly answers H_guilt's negative and gives the researcher's status-hypothesis its sharpest complication: sin has a genuine adversarial/spiritual-warfare dimension that guilt (a downstream legal status) apparently does not.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1John.3.8",
+                "span_surface": "sinning",
+                "span_morph": "V-PAI-3S",
+                "verse_text": "Whoever makes a practice of sinning is of the devil, for the devil has been sinning from the beginning. The reason the Son of God appeared was to destroy the works of the devil."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "Direct, confirmed contrast with H_guilt's T4.6.2b negative -- the clearest cross-family finding of this whole round; worth prioritizing in any cross-family synthesis.",
+          "related_family": "H_guilt",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T4.6.3a",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "Does an angelic-being code ever appear as an acting party in a verse carrying this characteristic?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "yes-fallen-angels",
+          "answer": "Yes -- 'the angels who sinned' (2Pet 2:4) are the acting subject, though these are angels in their fallen/judged state, not angels in good standing acting rightly.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Pet.2.4",
+                "span_surface": "sinned",
+                "span_morph": "V-AAP-GPM",
+                "verse_text": "For if God did not spare angels when they sinned, but cast them into hell and committed them to chains of gloomy darkness to be kept until the judgment;"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.3b",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "What does that pattern show about the characteristic being communicated, strengthened, or mediated through angelic ministry?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "not-mediation-but-shared-liability",
+          "answer": "This is not angelic MEDIATION of sin to humans -- it shows sin as a category that also applies to (fallen) angels themselves, i.e. a shared moral-legal category across orders of created being, not a channel through which angels transmit sin to humans.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Pet.2.4",
+                "span_surface": "sinned",
+                "span_morph": "V-AAP-GPM",
+                "verse_text": "For if God did not spare angels when they sinned, but cast them into hell and committed them to chains of gloomy darkness to be kept until the judgment;"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.1.1",
+      "tier": "T5",
+      "component_code": "T5.1",
+      "component_title": "Nature of Transformation",
+      "question_text": "In this verse, does the characteristic produce transformation in the person, and if so does it change the person's condition, their orientation to their condition, or both? Record none if no transformation is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "condition-change-slavery",
+          "answer": "Produces a CONDITION change -- 'a slave to sin' (John 8:34) describes an actual change of governing status, not merely a changed orientation.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "John.8.34",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Jesus answered them, “ Truly, truly, I say to you, everyone who practices sin is a slave to sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "orientation-change-confession",
+          "answer": "The confession-formula occurrences produce an ORIENTATION change -- turning to acknowledge and seek remedy -- without necessarily narrating the underlying condition's removal in that verse.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Sam.12.13",
+                "span_surface": "sinned",
+                "span_morph": "HVqp1cs",
+                "verse_text": "David said to Nathan, “I have sinned against the Lord.” And Nathan said to David, “The Lord also has put away your sin; you shall not die."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.1.2",
+      "tier": "T5",
+      "component_code": "T5.1",
+      "component_title": "Nature of Transformation",
+      "question_text": "Is the transformation reversible or irreversible in the evidence?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "reversible-via-Christ",
+          "answer": "Reversible, and more emphatically/permanently so than H_guilt's remedy: Hebrews argues Christ's sacrifice removes sin decisively ('no longer any offering for sin,' 10:18) rather than merely making it addressable case by case.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.10.18",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "Where there is forgiveness of these, there is no longer any offering for sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "irreversible-in-Judas-case",
+          "answer": "Irreversible in Judas's narrated case -- confession followed by no recorded remedy, ending in death.",
+          "strong": "G0264",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Matt.27.4",
+                "span_surface": "sinned",
+                "span_morph": "V-2AAI-1S",
+                "verse_text": "saying, “I have sinned by betraying innocent blood.” They said, “ What is that to us? See to it yourself.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.2.1",
+      "tier": "T5",
+      "component_code": "T5.2",
+      "component_title": "Sequence of Inner States",
+      "question_text": "Does this verse describe a sequence of inner states the characteristic moves the person through — a before, during, and after — and what are those states? Record none if no sequence is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "desire-sin-death-sequence",
+          "answer": "James 1:15's full sequence: desire (before) -> conception/birth of sin (during) -> death when full-grown (after) -- the family's most explicit, self-contained sequence statement.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Jas.1.15",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."
+              },
+              {
+                "verse": "Jas.1.15",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.3.1",
+      "tier": "T5",
+      "component_code": "T5.3",
+      "component_title": "Mechanism of Change",
+      "question_text": "In this verse, by what mechanism does the characteristic produce change — discipline, encounter, gradual formation, sudden transformation, or other? Record none if no mechanism is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "gradual-deceit-mechanism",
+          "answer": "GRADUAL formation via deceit -- sin's 'deceitfulness' hardening the heart over repeated exposure (Heb 3:13) -- a mechanism category (gradual, deception-driven) that H_guilt's family did not name at all.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.3.13",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "But exhort one another every day, as long as it is called “ today,” that none of you may be hardened by the deceitfulness of sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "sudden-encounter-mechanism",
+          "answer": "SUDDEN transformation via direct encounter with Christ -- the healing/forgiveness pronouncements (Mark 2:5 etc.) change the person's status in a single declarative moment.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Mark.2.5",
+                "span_surface": "sins",
+                "span_morph": "N-NPF",
+                "verse_text": "And when Jesus saw their faith, he said to the paralytic, “ Son, your sins are forgiven.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "ritual-mechanism",
+          "answer": "Ritual/legal mechanism -- the Piel purification occurrences (H2398) change status through a priestly act, matching H_guilt's dominant mechanism.",
+          "strong": "H2398",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Exod.29.36",
+                "span_surface": "purify",
+                "span_morph": "HVpq2ms",
+                "verse_text": "and every day you shall offer a bull as a sin offering for atonement. Also you shall purify the altar, when you make atonement for it, and shall anoint it to consecrate it."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.3.2",
+      "tier": "T5",
+      "component_code": "T5.3",
+      "component_title": "Mechanism of Change",
+      "question_text": "Does the mechanism differ across contexts in the evidence; if so, how?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "more-mechanisms-than-guilt",
+          "answer": "Yes, and this family shows MORE distinct mechanisms than H_guilt did: ritual/legal, sudden-declarative (a Christ-encounter), and gradual-deceptive (Hebrews) are three genuinely different change-mechanisms, where H_guilt had ritual/legal, substitutionary, and disciplinary/punitive. The two families' mechanism-sets barely overlap (only 'ritual/legal' is shared), suggesting sin and guilt are not just different in seat (T2) but in how they are actually changed.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.4.1",
+      "tier": "T5",
+      "component_code": "T5.4",
+      "component_title": "Suffering and Affliction",
+      "question_text": "In this verse, does the characteristic operate in relation to suffering or affliction — as a response to it, a product of it, or a context for it? Record none if no such relation is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "suffering-for-sin-vs-for-good",
+          "answer": "1Pet 2:20 explicitly contrasts suffering 'for doing good' against suffering 'for doing wrong [sinning]' -- sin is the explanation FOR deserved suffering, in deliberate contrast to Christ's undeserved suffering (2:22-24 context).",
+          "strong": "G0264/G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1Pet.2.20",
+                "span_surface": "sin",
+                "span_morph": "V-PAP-NPM",
+                "verse_text": "For what credit is it if, when you sin and are beaten for it, you endure? But if when you do good and suffer for it you endure, this is a gracious thing in the sight of God."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.4.2",
+      "tier": "T5",
+      "component_code": "T5.4",
+      "component_title": "Suffering and Affliction",
+      "question_text": "What does the evidence show suffering doing to the characteristic in the person — and record no such effect if none is shown.",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "no-direct-effect-shown",
+          "answer": "No occurrence shows suffering itself discharging or reducing sin the way H_guilt's punishment-bearing vocabulary did (Ezek 4's days-for-years) -- suffering here is more often the CONSEQUENCE or CONTRAST-POINT of sin than its resolution mechanism.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.5.1",
+      "tier": "T5",
+      "component_code": "T5.5",
+      "component_title": "Formation and Sanctification",
+      "question_text": "In this verse, does the characteristic participate in the longer arc of character formation and sanctification — shaping the person over time — and what does the evidence show of its role in that arc? Record none if no such participation is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "negative-formation-hardening",
+          "answer": "As with H_guilt, only a NEGATIVE formation arc is shown -- sin's deceitfulness hardening the heart over time (Heb 3:13) is the inverse of sanctification, not a positive contribution to it.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.3.13",
+                "span_surface": "sin",
+                "span_morph": "N-GSF",
+                "verse_text": "But exhort one another every day, as long as it is called “ today,” that none of you may be hardened by the deceitfulness of sin."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "resistance-as-implied-positive-arc",
+          "answer": "Heb 12:1-4's athletic metaphor ('the sin which clings so closely,' 'struggle against sin,' resisting 'to the point of shedding blood') implies sin's role in a POSITIVE arc only as the thing actively resisted/thrown off during sanctification -- sin itself still doesn't form virtue, but the resistance to it is framed as part of the race.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.12.1",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "Therefore, since we are surrounded by so great a cloud of witnesses, let us also lay aside every weight, and sin which clings so closely, and let us run with endurance the race that is set before us,"
+              },
+              {
+                "verse": "Heb.12.4",
+                "span_surface": "sin",
+                "span_morph": "N-ASF",
+                "verse_text": "In your struggle against sin you have not yet resisted to the point of shedding your blood."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.6.1",
+      "tier": "T5",
+      "component_code": "T5.6",
+      "component_title": "Eschatological Trajectory",
+      "question_text": "In this verse, is the characteristic oriented toward an eschatological fullness — a future state toward which its present operation points — and what does its present experience anticipate of that fullness? Record none if no such orientation is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "final-removal-anticipated",
+          "answer": "Hebrews' whole argument anticipates a final state where sin's remembrance and effect are permanently gone ('remember their sins no more,' 8:12) -- an eschatological trajectory toward sin's total absence, more explicitly developed than H_guilt's single Servant-Song reference.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.8.12",
+                "span_surface": "sins",
+                "span_morph": "N-GPF",
+                "verse_text": "For I will be merciful toward their iniquities, and I will remember their sins no more.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "judgment-trajectory-for-the-unrepentant",
+          "answer": "For the impenitent, the trajectory runs the other way -- persecutors 'always' filling up their sins toward a wrath that 'has come upon them at last' (1Thess 2:16) -- an eschatological trajectory of accumulating judgment, the negative mirror of the removal-trajectory above.",
+          "strong": "G0266",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1Thess.2.16",
+                "span_surface": "sins",
+                "span_morph": "N-APF",
+                "verse_text": "by hindering us from speaking to the Gentiles that they might be saved —so as always to fill up the measure of their sins. But wrath has come upon them at last!"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    }
+  ]
+}

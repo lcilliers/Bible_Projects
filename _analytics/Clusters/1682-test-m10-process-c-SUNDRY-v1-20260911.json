@@ -1,0 +1,98 @@
+{
+  "cluster_code": "M10",
+  "family_id": "SUNDRY",
+  "process": "1682-cluster-reading-process-c",
+  "strongs_in_family": ["G21497", "H5512B", "G0073", "H2342J", "H2342K", "H7806", "H3725", "H6330", "H4560"],
+  "observations": [
+    {
+      "tag": "no-human-context",
+      "statement": "G21497 ('Sin/Shin') has zero occurrences and an empty meaning block — it is the Greek transliteration entry for the Hebrew letter name, not a word with independent scriptural usage. Earmarked; no further analysis possible or warranted.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "G21497", "verse": null, "meaning_source": null}
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H5512B ('Sin') is a place name — the wilderness of Sin between Elim and Sinai, an Exodus itinerary stop. Its own meaning block states this directly: 'a location... Sin = thorn or clay, the tract of wilderness between Elim and Sinai.'",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H5512B", "verse": "Exod.16.1; Exod.17.1; Num.33.11; Num.33.12", "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H5512B's four occurrences are all travel-itinerary notices ('the congregation... camped in the wilderness of Sin') with no moral or inner-being content of any kind. Earmarked as a homograph collision with the English word 'sin' — no further analysis of it as a family-H10 concept is warranted.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H5512B", "verse": null, "meaning_source": null}
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "G0073 (agon) has real, coherent, human-relevant meaning: a struggle or contest, most often used in the NT as an athletic/perseverance metaphor for faithful endurance — 'fight the good fight of the faith' (1Tim 6:12), 'I have fought the good fight, I have finished the race' (2Tim 4:7), 'run with endurance the race that is set before us' (Heb 12:1). None of its 6 occurrences describe a moral failure or an inner disposition toward wrongdoing.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "G0073", "verse": "1Thess.2.2; 1Tim.6.12; Phil.1.30; Col.2.1; 2Tim.4.7; Heb.12.1", "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "data-error",
+      "statement": "G0073's attested meaning (faithful perseverance, an athletic-contest metaphor) does not touch M10's apparent theme (sin/moral-failure vocabulary) in any of its 6 occurrences. This is not a 'no human context' case — the word has clear, positive, analysable meaning — it is a cluster_strong membership question: on the verse evidence, this strong does not belong to M10 at all. Flagged for the cluster-assignment process, not resolved here.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "G0073", "verse": null, "meaning_source": null}
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H2342J and H2342K (both chul, split by sense) have real, coherent meaning covering dancing, whirling, waiting anxiously, and writhing in childbirth. Their combined 10 occurrences are literal in every case: a whirling storm-tempest (Jer 23:19, 30:23), a spindle/dance reference in a curse formula (2Sam 3:29), the voice of the Lord making a deer give birth (Ps 29:9), a sword raging against cities (Hos 11:6), and anxious waiting (Ps 37:7, Gen 8:10, Judg 3:25, Mic 1:12). None describe moral perversion.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H2342J", "verse": "Jer.23.19; Jer.30.23; 2Sam.3.29; Ps.29.9; Hos.11.6", "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H2342K's occurrences (the same root's 'wait/anticipate' sense) are likewise all literal waiting, none moral: Ps 37:7's counsel to wait patiently, Gen 8:10's dove sent out and waited for, Judg 3:25's servants waiting outside a chamber, Mic 1:12's anxious waiting for good news.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H2342K", "verse": "Ps.37.7; Gen.8.10; Judg.3.25; Mic.1.12", "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "data-error",
+      "statement": "H2342J/H2342K were pulled into a 'twist/perversion' gloss-family purely because one of chul's many senses translates as 'twist' — a homonym match on the English gloss word, not a match on meaning. Neither sub-sense's actual verse usage touches moral perversion. Flagged as a cluster_strong membership question.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H2342J", "verse": null, "meaning_source": null}
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H7806 (shazar, 'to twist') has real, coherent meaning: a technical textile-craft term. All 19 occurrences are the tabernacle-construction formula 'fine twined linen,' repeated near-verbatim through Exodus 26-39 (curtains, the ephod, the breastpiece, the veil, the screen). No occurrence has moral content.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H7806", "verse": "Exod.26.1; Exod.26.31; Exod.26.36; Exod.27.9; Exod.27.18; Exod.28.6; Exod.28.8; Exod.28.15; Exod.36.8; Exod.36.35; Exod.36.37; Exod.38.9; Exod.38.16; Exod.38.18; Exod.39.2; Exod.39.5; Exod.39.8; Exod.39.24; Exod.39.29", "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "data-error",
+      "statement": "H7806 is purely technical craft vocabulary (linen-weaving), pulled into a moral-perversion family on the same gloss-word homonym basis as H2342J/K. Flagged as a cluster_strong membership question — the largest single misassigned strong found in this cluster by occurrence count (19).",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H7806", "verse": null, "meaning_source": null}
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H3725 (atonement) has real, central theological meaning — its one occurrence names the Day of Atonement itself ('a Day of Atonement, to make atonement for you before the Lord your God').",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H3725", "verse": "Lev.23.28", "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Unlike the other SUNDRY strongs, H3725 is not off-topic — it is the *remedy* for this cluster's theme rather than an instance of it, and it sits conceptually beside family H_guilt's own guilt-offering vocabulary (H0817, H0819) and the atonement language already appearing inside that family's Lev 14:21 occurrence. This is a fit question, not a homonym or membership error: does 'atonement' belong in a sin/moral-failure cluster at all, or does it belong with the guilt-offering system specifically?",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H3725", "verse": "Lev.23.28", "meaning_source": null, "related_family": "H_guilt"}
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H6330 (staggering) has zero occurrences in the live span/verse data — no verse evidence exists to read. Meaning block only: 'tottering, staggering, stumbling; of qualm of conscience (fig.).' Earmarked; no further analysis possible without verse context.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H6330", "verse": null, "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "H6330's own meaning block carries a figurative sense — 'qualm of conscience' — that would fit the guilt/inner-disposition theme well, unlike the other strongs in this SUNDRY bucket. Its complete absence of verse evidence (0 occurrences) is what earns it a SUNDRY placement here, not a lack of thematic fit — this is a data-completeness gap, not a homonym or a membership error, and should be distinguished from G0073/chul/shazar's genuine off-topic status.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H6330", "verse": null, "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "data-error",
+      "statement": "H6330 is included in cluster_strong for M10 but has no live span occurrences anywhere in the base data. Flagged for the spine/integrity process (same category as H2054 in family H_guilt), not resolved here.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H6330", "verse": null, "meaning_source": null}
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H4560's one occurrence ('a thousand from each tribe... provided/mustered for war,' Num 31:5) is a military-levy term — its own meaning block gives 'to set apart, deliver up, offer,' with no sense resembling 'commit [a sin]' at all. The stepGloss 'to commit' appears to be a mismatch against the strong's actual attested meaning and usage.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H4560", "verse": "Num.31.5", "meaning_source": "strong_meaning_tree"}
+    },
+    {
+      "tag": "data-error",
+      "statement": "H4560's stepGloss ('to commit') does not match its meaning-tree definition ('to set apart, deliver up, offer') or its one occurrence's actual sense (military mustering). Either the stepGloss is wrong, or it reflects a different, unattested sub-sense not represented in the live verse data. Flagged for gloss/data review, separate from cluster-membership questions.",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": "H4560", "verse": null, "meaning_source": null}
+    },
+    {
+      "tag": "cross-family",
+      "statement": "This SUNDRY bucket separates into three genuinely different reasons for non-placement, worth keeping distinct rather than treating 'sundry' as one undifferentiated leftover bin: (1) true homonym/name collisions with no inner-being content (G21497, H5512B); (2) real, coherent, human-relevant meaning that is simply off-topic for this cluster — a cluster_strong membership question (G0073, H2342J, H2342K, H7806); (3) genuine candidates for the cluster's theme that lack the verse evidence to confirm it (H6330), or a specific data/gloss mismatch worth checking (H4560); and (4) a conceptually adjacent but distinct role — the cluster's remedy rather than its subject (H3725, close to family H_guilt).",
+      "traces": {"cluster": "M10", "family": "SUNDRY", "strong": null, "verse": null, "meaning_source": null}
+    }
+  ]
+}

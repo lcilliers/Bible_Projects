@@ -1,0 +1,934 @@
+{
+  "cluster_code": "M10",
+  "family_id": "I_strife",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G3859",
+    "H4066",
+    "H4079",
+    "H4090",
+    "H4421",
+    "H4683",
+    "H4695",
+    "H7379",
+    "H8409"
+  ],
+  "observations": [
+    {
+      "tag": "instance-meaning",
+      "statement": "paradiatribē (G3859) in its one occurrence -- 'constant friction among people who are depraved in mind' (1 Tim 6:5) -- explicitly caused by false teaching and a corrupted view of godliness-as-profit, per the surrounding verses; a social-disputation register, related to but distinct from its LSJ root sense (a philosophical school's ordinary 'discourse/disputation').",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "G3859",
+        "occurrences": [
+          {
+            "verse": "1Tim.6.5",
+            "span_surface": "constant friction",
+            "span_morph": "N-NPF"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "madon (H4066) consistently in Proverbs' wisdom-sayings naming the causes of ordinary domestic/social strife -- a hot temper, wrath, greed, dishonesty, and specifically a whisperer/gossip as the mechanism ('a dishonest man spreads strife,' 'where there is no whisperer, quarreling ceases').",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4066",
+        "occurrences": [
+          {
+            "verse": "Prov.15.18",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.29.22",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.28.25",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.16.28",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.17.14",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.22.10",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.26.20",
+            "span_surface": "quarreling",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "midyan (H4079) overwhelmingly in the fixed Proverbs formula about a 'quarrelsome wife' (5 of 9 occurrences: Prov 19:13, 21:9, 21:19, 25:24, 27:15, near-identical wording repeated), plus discord more generally (Prov 6:14's 'perverted heart... sowing discord,' Prov 18:18's lot settling quarrels, Prov 23:29's list of woes).",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4079",
+        "occurrences": [
+          {
+            "verse": "Prov.19.13",
+            "span_surface": "quarreling",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Prov.21.19",
+            "span_surface": "quarrelsome",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.21.9",
+            "span_surface": "quarrelsome",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.25.24",
+            "span_surface": "quarrelsome",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.27.15",
+            "span_surface": "quarrelsome",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.6.14",
+            "span_surface": "discord",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.18.18",
+            "span_surface": "quarrels",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.23.29",
+            "span_surface": "strife",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.26.21",
+            "span_surface": "quarrelsome",
+            "span_morph": "HNcmpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "medan (H4090) in its two occurrences -- a false witness sowing discord among brothers (Prov 6:19) and hatred stirring up strife, contrasted with love covering offenses (Prov 10:12) -- both morally attributing strife to speech/disposition rather than circumstance.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4090",
+        "occurrences": [
+          {
+            "verse": "Prov.6.19",
+            "span_surface": "discord",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Prov.10.12",
+            "span_surface": "strife",
+            "span_morph": "HNcmpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "milchamah (H4421, 86 of the 91 occurrences reported for this strong's full cluster tally -- the largest strong found in this cluster by occurrence count) is overwhelmingly literal, historical-narrative armed warfare between nations and armies -- troop musters, named battles, 'man of war' as a military role-designation, and battle-array/formation vocabulary. Morph is uniform ordinary noun-case variation (HNcfsa/HNcfsc/HNcfpa/HNcfpc) throughout; no stem/voice question applies since it is always a noun.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4421",
+        "occurrences": [
+          {
+            "verse": "Exod.1.10",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Sam.17.8",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.10.9",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Song.3.8",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.7.4",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Chr.13.3",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Sam.17.8",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Sam.21.15",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Sam.1.27",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Exod.17.16",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Exod.32.17",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.21.14",
+            "span_surface": "Wars",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Deut.1.41",
+            "span_surface": "war",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "1Sam.16.18",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Sam.17.33",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Sam.18.17",
+            "span_surface": "battles",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "1Chr.28.3",
+            "span_surface": "war",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "2Chr.35.21",
+            "span_surface": "war",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Job.39.25",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Jer.42.14",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Joel.3.9",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Josh.14.15",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Jer.4.19",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Chr.32.8",
+            "span_surface": "battles",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Prov.20.18",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezek.27.27",
+            "span_surface": "war",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "2Kgs.24.16",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.5.18",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Chr.26.13",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezek.27.10",
+            "span_surface": "war",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "1Kgs.2.5",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Kgs.2.5",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezek.32.27",
+            "span_surface": "war",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "1Chr.12.33",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.12.33",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.12.38",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Josh.17.1",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Sam.13.22",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Sam.21.20",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.20.4",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.20.5",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.20.6",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Kgs.22.1",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.5.10",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Mic.2.8",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Gen.14.2",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Sam.8.12",
+            "span_surface": "war",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "2Chr.27.7",
+            "span_surface": "wars",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Judg.20.17",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Judg.18.11",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Judg.18.16",
+            "span_surface": "war",
+            "span_morph": "HNcfsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "milchamah in formal battle-array/formation vocabulary specifically (a distinguishable sub-group of the literal-warfare occurrences): drawing up 'battle line,' 'battle array,' 'lines of battle,' and the momentary tactical scene of two armies facing off, rather than the general condition of being at war.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4421",
+        "occurrences": [
+          {
+            "verse": "1Sam.17.2",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.19.17",
+            "span_surface": "array",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Judg.20.20",
+            "span_surface": "battle line",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Judg.20.22",
+            "span_surface": "battle line",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Sam.10.8",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Chr.19.9",
+            "span_surface": "battle array",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Chr.14.10",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "milchamah applied to God as a warrior, or invoked as a divine attribute/act -- 'the LORD is a man of war' (Exod 15:3), 'the LORD... mighty in battle' (Ps 24:8), 'the LORD will have war with Amalek' (Exod 17:16), the LORD 'makes wars cease to the end of the earth' (Ps 46:9), and the eschatological reversal 'nation shall not lift up sword against nation, neither shall they learn war anymore' stated identically at Isa 2:4 and Mic 4:3.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4421",
+        "occurrences": [
+          {
+            "verse": "Exod.15.3",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ps.24.8",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ps.46.9",
+            "span_surface": "wars",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Isa.2.4",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Mic.4.3",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Isa.42.13",
+            "span_surface": "war",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Isa.42.25",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Jer.51.20",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "milchamah's remaining occurrences: prophetic judgment scenes naming battle/war as the vehicle of destruction (Dan 9:26, Jer 50:22, Jer 49:2, Amos 1:14, Joel 2:5, Isa 13:4, Isa 21:15, Isa 22:2, Isa 28:6, Zech 9:10, Zech 10:4, Hos 10:9, Hos 10:14, Ezek's shipwreck-of-Tyre lament), Ecclesiastes' 'a time for war, and a time for peace' (Eccl 3:8) as one item in its catalogue of opposites, and 2 Chr 32:6's 'combat commanders.'",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4421",
+        "occurrences": [
+          {
+            "verse": "Eccl.3.8",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Dan.9.26",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Chr.32.6",
+            "span_surface": "combat",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Zech.9.10",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Isa.22.2",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Jer.50.22",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Jer.49.2",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Isa.28.6",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Zech.10.4",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ps.140.2",
+            "span_surface": "wars",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Isa.13.4",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Hos.10.9",
+            "span_surface": "war",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Hos.10.14",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Judg.3.1",
+            "span_surface": "wars",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Job.41.8",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Isa.21.15",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Amos.1.14",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Joel.2.5",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Prov.21.31",
+            "span_surface": "battle",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Sam.11.25",
+            "span_surface": "attack",
+            "span_morph": "HNcfsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "matstsah (H4683) in both its occurrences directly links strife to a moral cause: 'whoever loves transgression loves strife' (Prov 17:19, explicitly pairing this family with family G's pesha/transgression vocabulary) and 'by insolence comes nothing but strife' (Prov 13:10).",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4683",
+        "occurrences": [
+          {
+            "verse": "Prov.17.19",
+            "span_surface": "strife",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Prov.13.10",
+            "span_surface": "strife",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "G_transgression"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "matstsut (H4695) in its one occurrence -- 'those who contend with you... those who war against you shall be as nothing at all' (Isa 41:12) -- a promise of the disappearance of adversaries, not a description of strife itself.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H4695",
+        "occurrences": [
+          {
+            "verse": "Isa.41.12",
+            "span_surface": "contend",
+            "span_morph": "HNcfsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "riv (H7379) as ordinary interpersonal strife or quarrel -- herdsmen (Gen 13:7), a hot temper/pressed anger (Prov 15:18, 30:33), a quarrelsome man kindling strife (Prov 26:21), and strife within a household or over a feast (Jer 15:10, Prov 17:1, 20:3).",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H7379",
+        "occurrences": [
+          {
+            "verse": "Prov.15.18",
+            "span_surface": "contention",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.30.33",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Gen.13.7",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.26.21",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Jer.15.10",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.17.1",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.20.3",
+            "span_surface": "strife",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ps.31.20",
+            "span_surface": "strife",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ps.18.43",
+            "span_surface": "strife",
+            "span_morph": "HNcmpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "riv as formal legal/judicial vocabulary -- 'a lawsuit' (Exod 23:2), 'a dispute... in court' judged by priests and judges (Deut 21:5, 25:1, Ezek 44:24), a personal legal grievance ('argue your case with your neighbor,' Prov 25:9), and Israel's own wilderness dispute with God named as the place-name Meribah ('quarreling,' Exod 17:7). This is a distinct register from the interpersonal-strife occurrences above -- formal process, not raw conflict.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H7379",
+        "occurrences": [
+          {
+            "verse": "Exod.23.2",
+            "span_surface": "lawsuit",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Deut.21.5",
+            "span_surface": "dispute",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Deut.25.1",
+            "span_surface": "dispute",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.44.24",
+            "span_surface": "dispute",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Judg.12.2",
+            "span_surface": "dispute",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Prov.25.9",
+            "span_surface": "case",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Exod.17.7",
+            "span_surface": "quarreling",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "riv as God's own covenant lawsuit against Israel or the nations -- 'the LORD has an indictment against the nations' (Jer 25:31), 'the LORD has an indictment against his people' (Mic 6:2), the sufferer's plea that God himself 'plead my cause' or 'take up my cause' (Lam 3:58, Mic 7:9, Prov 22:23), and Isaiah's courtroom challenge 'set forth your case' (Isa 41:21) -- riv functions here as formal forensic vocabulary applied to the divine-human relationship, structurally closer to family D's judicial-fairness vocabulary than to this family's own Proverbs-strife material.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H7379",
+        "occurrences": [
+          {
+            "verse": "Jer.25.31",
+            "span_surface": "indictment",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Mic.6.2",
+            "span_surface": "indictment",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Lam.3.58",
+            "span_surface": "cause",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Mic.7.9",
+            "span_surface": "cause",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Prov.22.23",
+            "span_surface": "cause",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Isa.41.21",
+            "span_surface": "case",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "D_crime_injustice"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "2 Chr 19:10 carries both H7379 ('case,' the judicial-process word) and H0816 (family H_guilt's asham, 'incur guilt,' twice) in the same verse -- judges are instructed on handling a CASE specifically so that they and the people do not INCUR GUILT. The two families' core vocabulary meet directly in the same sentence describing correct judicial procedure as the safeguard against guilt.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H7379",
+        "occurrences": [
+          {
+            "verse": "2Chr.19.10",
+            "span_surface": "case",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H8409 (tigrah, 'strife') has zero occurrences in the live span/verse data. Meaning block only: 'contention, strife, conflict, hostility.' Earmarked; no further analysis possible without verse context.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H8409",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "H8409 is included in cluster_strong for M10 but has no live span occurrences anywhere in the base data -- same category as several other thin strongs already flagged across this cluster. Flagged for the spine/integrity process.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": "H8409",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "This family (minus G0073, correctly moved to SUNDRY in round 2's family assignment) still spans three genuinely different registers under one gloss-family label: domestic/social discord (madon/midyan/medan/matstsah, entirely Proverbs), literal armed warfare (milchamah, the dominant strong by volume and almost entirely non-moral narrative), and formal legal process including God's own covenant lawsuit (riv). Grouping by English gloss ('strife'/'contention'/'battle') still does not track one concept even after removing the clearest outlier -- milchamah's inclusion in a 'strife' family is itself worth a second look: 86 of its occurrences are indistinguishable from ordinary military-historical narrative found throughout the OT, with no special moral-failure content beyond what any war narrative carries.",
+      "traces": {
+        "cluster": "M10",
+        "family": "I_strife",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G3859",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4066",
+      "occurrence_count": 7,
+      "traced_count": 7,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4079",
+      "occurrence_count": 9,
+      "traced_count": 9,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4090",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4421",
+      "occurrence_count": 84,
+      "traced_count": 84,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4683",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4695",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H7379",
+      "occurrence_count": 23,
+      "traced_count": 23,
+      "missing_verses": []
+    },
+    {
+      "strong": "H8409",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    }
+  ]
+}

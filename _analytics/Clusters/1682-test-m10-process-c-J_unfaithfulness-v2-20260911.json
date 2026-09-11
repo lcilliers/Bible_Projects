@@ -1,0 +1,834 @@
+{
+  "cluster_code": "M10",
+  "family_id": "J_unfaithfulness",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G0646",
+    "G0763",
+    "G0764",
+    "H0898",
+    "H4603",
+    "H4604",
+    "H5494",
+    "H5627"
+  ],
+  "observations": [
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "apostasia (G0646) at Acts 21:21 renders as the English verb 'forsake' ('teach... to forsake Moses'), but its own morph is N-ASF -- a noun, not a verb. The Greek literally reads something like 'apostasy from Moses'; the English surface restructures the noun-phrase into a verb clause. This is exactly the surface/morph mismatch the round-2 rule exists to catch -- the word's grammatical shape (an abstract-noun accusation of departure) is different from what the English sentence structure suggests (a direct verbal instruction to abandon).",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "G0646",
+        "occurrences": [
+          {
+            "verse": "Acts.21.21",
+            "span_surface": "forsake",
+            "span_morph": "N-ASF"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "apostasia's second occurrence renders as expected -- 'rebellion' as the grammatical subject (N-NSF nominative) of 2 Thess 2:3's eschatological 'the rebellion comes first' -- the noun form and English surface align here, unlike Acts 21:21.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "G0646",
+        "occurrences": [
+          {
+            "verse": "2Thess.2.3",
+            "span_surface": "rebellion",
+            "span_morph": "N-NSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "asebeia (G0763) as a noun in ordinary case variation across most occurrences -- Rom 1:18's opening indictment ('ungodliness and unrighteousness'), the pastoral-epistle warnings (2 Tim 2:16's 'more and more ungodliness,' Titus 2:12's renunciation), and Rom 11:26's eschatological promise ('banish ungodliness from Jacob').",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "G0763",
+        "occurrences": [
+          {
+            "verse": "Rom.1.18",
+            "span_surface": "ungodliness",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "2Tim.2.16",
+            "span_surface": "ungodliness",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Titus.2.12",
+            "span_surface": "ungodliness",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Rom.11.26",
+            "span_surface": "ungodliness",
+            "span_morph": "N-APF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Jude 15 stacks three cognate forms of this root in one verse: asebeia (G0763) appears TWICE (genitive, 'deeds of ungodliness' and 'in such an ungodly way') and asebeō (G0764, the verb) once ('deeds... that they have committed'), plus Jude 18's separate asebeia occurrence just three verses later ('their own ungodly passions'). This is deliberate rhetorical intensification through repetition of one root across noun and verb forms within a single sentence, not incidental repetition -- a genuine cross-strong-within-family finding that only shows up when both G0763 and G0764's occurrences are read together against the same verse.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "G0763",
+        "occurrences": [
+          {
+            "verse": "Jude.1.15",
+            "span_surface": "ungodliness",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Jude.1.15",
+            "span_surface": "ungodly",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Jude.1.18",
+            "span_surface": "ungodly",
+            "span_morph": "N-GPF"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "asebeō (G0764) at 2 Pet 2:6 -- Sodom and Gomorrah made 'an example of what is going to happen to the ungodly' -- the paradigm-case citation for this whole family's condemnation vocabulary.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "G0764",
+        "occurrences": [
+          {
+            "verse": "2Pet.2.6",
+            "span_surface": "ungodly",
+            "span_morph": "A-DPM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "G0764 (stepGloss 'be ungodly,' a verb per its own meaning block) has its 2Pet 2:6 occurrence tagged with morph A-DPM -- an ADJECTIVE form, not a verb form. Its only other occurrence (Jude 1:15, V-AAI-3P) does carry a verb morph as expected. This inconsistency -- the same strong tagged as an adjective in one place and a verb in the other, for a strong whose catalogue definition is exclusively verbal -- is flagged as a data-tagging question, not resolved here: either the 2Pet 2:6 span is mistagged, or this strong genuinely has an adjectival sub-use the meaning block doesn't document.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "G0764",
+        "occurrences": [
+          {
+            "verse": "2Pet.2.6",
+            "span_surface": "ungodly",
+            "span_morph": "A-DPM"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "asebeō's second occurrence is the verb form referenced in the Jude 15 cognate-pileup above -- 'deeds... that they have committed' -- the act named by the verb, framed by the surrounding noun occurrences of the same root.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "G0764",
+        "occurrences": [
+          {
+            "verse": "Jude.1.15",
+            "span_surface": "ungodly",
+            "span_morph": "V-AAI-3P"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "bagad (H0898) as a participle, functioning as a person-identity label -- 'the treacherous,' 'a traitor,' 'traitors' -- 13 of its 35 occurrences, overwhelmingly concentrated in Proverbs' wisdom-sayings contrasting 'the treacherous' as a fixed class against 'the upright'/'the righteous.'",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H0898",
+        "occurrences": [
+          {
+            "verse": "Prov.11.6",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Hab.1.13",
+            "span_surface": "traitors",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Prov.25.19",
+            "span_surface": "treacherous man",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Prov.13.2",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Hab.2.5",
+            "span_surface": "traitor",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Prov.2.22",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Prov.21.18",
+            "span_surface": "traitor",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Prov.22.12",
+            "span_surface": "traitor",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Prov.11.3",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Prov.13.15",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Prov.23.28",
+            "span_surface": "traitors",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Isa.21.2",
+            "span_surface": "betrays",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Jer.9.2",
+            "span_surface": "treacherous men",
+            "span_morph": "HVqrmpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "bagad as a finite verb form, narrating a specific act of treachery rather than labelling a class: individuals dealing treacherously with a specific party (Jer 12:6's brothers, 1 Sam 14:33's people, Judg 9:23's Shechem against Abimelech, Ps 78:57's fathers) and Israel/Judah dealing treacherously with God directly (Hos 6:7, Jer 3:20 x2, Jer 5:11 x2, Isa 48:8 x2, Jer 12:1).",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H0898",
+        "occurrences": [
+          {
+            "verse": "Mal.2.11",
+            "span_surface": "faithless",
+            "span_morph": "HVqp3fs"
+          },
+          {
+            "verse": "Jer.3.8",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrfsa"
+          },
+          {
+            "verse": "Jer.12.1",
+            "span_surface": "are",
+            "span_morph": "HVqrmpc"
+          },
+          {
+            "verse": "Jer.12.6",
+            "span_surface": "dealt treacherously",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "1Sam.14.33",
+            "span_surface": "treacherously",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "Jer.3.11",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrfsa"
+          },
+          {
+            "verse": "Isa.48.8",
+            "span_surface": "surely deal",
+            "span_morph": "HVqaa"
+          },
+          {
+            "verse": "Isa.48.8",
+            "span_surface": "treacherously",
+            "span_morph": "HVqi2ms"
+          },
+          {
+            "verse": "Judg.9.23",
+            "span_surface": "dealt treacherously",
+            "span_morph": "HVqw3mp"
+          },
+          {
+            "verse": "Ps.78.57",
+            "span_surface": "acted treacherously",
+            "span_morph": "HVqw3mp"
+          },
+          {
+            "verse": "Hos.6.7",
+            "span_surface": "faithlessly with",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Ps.119.158",
+            "span_surface": "faithless",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Jer.3.20",
+            "span_surface": "treacherous",
+            "span_morph": "HVqp3fs"
+          },
+          {
+            "verse": "Jer.3.20",
+            "span_surface": "treacherous",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "Jer.5.11",
+            "span_surface": "utterly",
+            "span_morph": "HVqaa"
+          },
+          {
+            "verse": "Jer.5.11",
+            "span_surface": "treacherous",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Hos.5.7",
+            "span_surface": "faithlessly with",
+            "span_morph": "HVqp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Isaiah 33:1 builds a deliberate wordplay from three different stem/aspect forms of bagad in one verse: 'you traitor' (participle-identity, HVqrmsa), 'whom none has betrayed' (perfect, HVqp3cp), and 'when you have finished betraying, they will betray you' (imperfect, HVqi3mp) -- the morphological variation itself enacts the verse's ironic-reversal content (the betrayer will himself be betrayed), not merely varying for style.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H0898",
+        "occurrences": [
+          {
+            "verse": "Isa.33.1",
+            "span_surface": "traitor",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Isa.33.1",
+            "span_surface": "betrayed",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Isa.33.1",
+            "span_surface": "betray",
+            "span_morph": "HVqi3mp"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "bagad in Isaiah 24:16's doubled construction, treacherous-noun-plus-cognate ('the traitors have betrayed, with betrayal the traitors have betrayed') -- Hebrew's infinitive-absolute-style intensification, both instances a perfect/participle pairing emphasizing the completeness of the betrayal within the prophet's own lament ('I waste away... woe is me').",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H0898",
+        "occurrences": [
+          {
+            "verse": "Isa.24.16",
+            "span_surface": "traitors",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "Isa.24.16",
+            "span_surface": "betrayed",
+            "span_morph": "HVqp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "bagad's participle-as-identity vs. finite-verb-as-act split (13 vs. 17 of its 35 occurrences here) matches, almost exactly in proportion, the split already found in family C_adultery's na'aph (7 of 16 participle-identity). Two independently-read roots in two separately-catalogued families show the same structural pattern -- a person named by what they habitually are (the participle) versus a specific narrated instance of the same root (the finite verb) -- suggesting this may be a general feature of how Hebrew moral-vocabulary roots work across this cluster, not a coincidence local to either family.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H0898",
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "C_adultery"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "ma'al (H4603, verb) explicitly against God/the sacred, its own meaning block's 'against God' and 'against devoted thing' sub-senses: Achan's sacrilege against devoted objects (Josh 7:1, the strong's own paradigm case), national apostasy/idolatry (2 Chr 26:16, 2 Chr 12:2, Dan 9:7), and a wife's suspected infidelity handled through a legal-ordeal ritual (Num 5:27).",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4603",
+        "occurrences": [
+          {
+            "verse": "Josh.7.1",
+            "span_surface": "broke",
+            "span_morph": "HVqw3mp"
+          },
+          {
+            "verse": "Num.5.27",
+            "span_surface": "broken",
+            "span_morph": "HVqw3fs"
+          },
+          {
+            "verse": "2Chr.26.16",
+            "span_surface": "unfaithful",
+            "span_morph": "HVqw3ms"
+          },
+          {
+            "verse": "2Chr.12.2",
+            "span_surface": "unfaithful",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Dan.9.7",
+            "span_surface": "committed",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Ezek.39.26",
+            "span_surface": "treachery",
+            "span_morph": "HVqp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "ma'al (H4603) in the 'breach of faith' formula tied directly to the sacrificial guilt-offering system -- Ezra's post-exilic confession of mixed marriages (Ezra 10:2), Deuteronomy's covenant-renewal warning (Deut 32:51), corporate national unfaithfulness explained as the cause of judgment (Ezek 15:8, Neh 1:8), and the priestly-law 'breach of faith' offense against a neighbor (Lev 6:2).",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4603",
+        "occurrences": [
+          {
+            "verse": "Neh.1.8",
+            "span_surface": "unfaithful",
+            "span_morph": "HVqi2mp"
+          },
+          {
+            "verse": "Ezra.10.2",
+            "span_surface": "broken faith",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Ezek.15.8",
+            "span_surface": "acted",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Deut.32.51",
+            "span_surface": "broke faith",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "1Chr.2.7",
+            "span_surface": "broke",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "1Chr.5.25",
+            "span_surface": "faith",
+            "span_morph": "HVqw3mp"
+          },
+          {
+            "verse": "Lev.6.2",
+            "span_surface": "commits",
+            "span_morph": "HVqq3fs"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Ezek 18:24's H4603 occurrence renders 'guilty,' not 'unfaithful' or 'treacherous' -- H4603 is this family's own treachery-word, not the family H_guilt word (H0816 asham), yet the English surface here borrows guilt-vocabulary anyway. Combined with the next entry, H4603's own English surface across its 16 occurrences ranges across 'guilty,' 'sin,' 'broke/broken faith,' 'unfaithful,' 'treachery,' 'faithlessly,' 'acted,' and 'committed' -- eight distinct English renderings of one Hebrew verb, several of which belong lexically to other M10 families (guilt, sin) rather than this one.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4603",
+        "occurrences": [
+          {
+            "verse": "Ezek.18.24",
+            "span_surface": "guilty",
+            "span_morph": "HVqp3ms"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": "H_guilt"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Prov 16:10's H4603 occurrence renders bare 'sin' -- 'his mouth does not sin in judgment' -- the widest divergence yet from H4603's own gloss 'be unfaithful,' borrowing the generic sin-vocabulary of family B rather than this family's own treachery/covenant-breach register.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4603",
+        "occurrences": [
+          {
+            "verse": "Prov.16.10",
+            "span_surface": "sin",
+            "span_morph": "HVqi3ms"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": "B_sin"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "ma'al (H4604, the noun) in the same 'broke faith' idiom as its verb counterpart H4603, occurring at several of the same verses (Josh 7:1, Num 5:6/5:27, Lev 6:2, 2Chr 28:19) -- confirming the noun and verb are used together, not as separately-attested alternatives, and that H4604's own meaning block's 'against man'/'against God' split matches H4603's 'against man'/'against God'/'against devoted thing'/'against husband' split almost exactly.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4604",
+        "occurrences": [
+          {
+            "verse": "Josh.7.1",
+            "span_surface": "faith",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Num.5.27",
+            "span_surface": "faith",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Num.5.6",
+            "span_surface": "faith",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Lev.6.2",
+            "span_surface": "faith",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "ma'al (H4604) describing corporate/national faithlessness as the explicit cause of judgment -- a land sinning 'by acting faithlessly' bringing famine (Ezek 14:13), 'because they have acted faithlessly' bringing desolation (Ezek 15:8), the exiles' faithlessness confessed at length (Ezra 9:4, 10:6), Peor's treachery caused by Balaam's advice (Num 31:16), and the guilt-offering compensation required for an unintentional 'breach of faith' (Lev 5:15).",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4604",
+        "occurrences": [
+          {
+            "verse": "Ezek.14.13",
+            "span_surface": "faithlessly",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezek.15.8",
+            "span_surface": "faithlessly",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Lev.5.15",
+            "span_surface": "faith",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Num.31.16",
+            "span_surface": "treacherously",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Ezra.9.4",
+            "span_surface": "faithlessness",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezra.10.6",
+            "span_surface": "faithlessness",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "ma'al (H4604) naming Ezekiel's own coming judgment on a king for the treachery 'he has committed against me' (Ezek 17:20) and describing the treachery Israel will 'forget' once restored (Ezek 39:26) -- the same noun spanning both the announcement of judgment and its eventual, gracious forgetting.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4604",
+        "occurrences": [
+          {
+            "verse": "Ezek.17.20",
+            "span_surface": "treachery",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Ezek.39.26",
+            "span_surface": "practiced",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Job 21:34's H4604 occurrence ('nothing left of your answers but falsehood') has no covenant-breach or divine-relationship content at all -- Job accusing his friends' arguments of being empty/false, a purely interpersonal-speech sense with no theological register. This is the weakest thematic fit among H4604's 14 occurrences and worth distinguishing from the family's otherwise consistent covenant/faithlessness pattern rather than silently folding it into the majority reading.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4604",
+        "occurrences": [
+          {
+            "verse": "Job.21.34",
+            "span_surface": "falsehood",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "2 Chr 28:19's H4604 occurrence carries morph HVqp3ms -- a VERB form -- while every one of H4604's other 13 occurrences carries a noun morph (HNcms*). H4604 is catalogued as the noun (its sibling H4603 is the verb); this one occurrence's grammatical tag looks like it may actually belong to H4603 rather than H4604. Flagged for data review, not resolved here.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4604",
+        "occurrences": [
+          {
+            "verse": "2Chr.28.19",
+            "span_surface": "very",
+            "span_morph": "HVqp3ms"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "sur (H5494, 'degenerate') in its one occurrence -- 'those who turn away from you shall be written in the earth, for they have forsaken the Lord, the fountain of living water' -- an adjectival/participial description (HAampc) of departure from God framed with a striking negative-memorial image (being written in dust/earth, i.e. erased, rather than in a book of life).",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H5494",
+        "occurrences": [
+          {
+            "verse": "Jer.17.13",
+            "span_surface": "turn away",
+            "span_morph": "HAampc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "sarah (H5627, 'revolt') consistently as a noun naming spoken or taught rebellion against the Lord -- a false prophet who 'taught rebellion' (Deut 13:5), prophets who 'uttered'/'spoken' rebellion (Jer 28:16, 29:32) -- the verbal-instigation register distinct from bagad/ma'al's relational-betrayal register: this root names the act of articulating or teaching defection, not merely committing it.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H5627",
+        "occurrences": [
+          {
+            "verse": "Deut.13.5",
+            "span_surface": "rebellion",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Jer.28.16",
+            "span_surface": "rebellion",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Jer.29.32",
+            "span_surface": "rebellion",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "sarah's remaining two occurrences are more general: Isaiah's rhetorical 'why will you continue to rebel?' addressed to a sick, unresponsive nation (Isa 1:5), and 'people have deeply revolted' as the state Israel is called to turn back from (Isa 31:6) -- both noun-form (HNcfsa) despite English rendering them as verbs ('rebel,' 'revolted'), the same surface/morph pattern already flagged for G0646 above.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H5627",
+        "occurrences": [
+          {
+            "verse": "Isa.1.5",
+            "span_surface": "rebel",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Isa.31.6",
+            "span_surface": "revolted",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": null
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "All 5 of sarah's occurrences carry noun morph (HNcfsa) yet 2 of them (Isa 1:5 'rebel,' Isa 31:6 'revolted') render as English verbs -- the same noun-rendered-as-verb pattern already found for apostasia (G0646, Acts 21:21). Two languages, two separately-catalogued strongs, the same translation-restructuring move: an abstract Hebrew/Greek noun becomes an English finite verb. Worth checking whether this is a systematic ESV rendering habit for this whole semantic domain (apostasy/rebellion nouns) rather than two isolated cases.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H5627",
+        "occurrences": [
+          {
+            "verse": "Isa.1.5",
+            "span_surface": "rebel",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Isa.31.6",
+            "span_surface": "revolted",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": null
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "This family's marriage-infidelity-for-covenant-breach structure (H0898's 'treacherous sister Judah'/'faithless Israel,' Jer 3:8/3:11) is the same figure driving family C_adultery's Hosea/Jeremiah/Ezekiel-23 material -- both families independently land on the identical metaphor from two lexical angles (treachery-vocabulary here, adultery-vocabulary there). Already noted in the #1680 pass; reconfirmed here with the added morph evidence that both roots show the same participle-identity/finite-act split.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H0898",
+        "occurrences": [
+          {
+            "verse": "Jer.3.8",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrfsa"
+          },
+          {
+            "verse": "Jer.3.11",
+            "span_surface": "treacherous",
+            "span_morph": "HVqrfsa"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": "C_adultery"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H4603's own occurrence at 2 Chr 28:19 ('had been very unfaithful to the Lord') is an infinitive-absolute (HVqaa) intensifying construction -- 'acted very treacherously' -- describing Ahaz's reign as the specific cause the Lord humbled Judah. This is the verse where BOTH H4603 (verb, this occurrence) and H4604 (noun, flagged separately as a likely mistagged occurrence) appear together -- worth reading as one unit: the verb states the king's act, and whatever the H4604-tagged span was meant to capture sits directly beside it.",
+      "traces": {
+        "cluster": "M10",
+        "family": "J_unfaithfulness",
+        "strong": "H4603",
+        "occurrences": [
+          {
+            "verse": "2Chr.28.19",
+            "span_surface": "unfaithful",
+            "span_morph": "HVqaa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": null
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G0646",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "G0763",
+      "occurrence_count": 6,
+      "traced_count": 6,
+      "missing_verses": []
+    },
+    {
+      "strong": "G0764",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "H0898",
+      "occurrence_count": 29,
+      "traced_count": 29,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4603",
+      "occurrence_count": 16,
+      "traced_count": 16,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4604",
+      "occurrence_count": 14,
+      "traced_count": 14,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5494",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5627",
+      "occurrence_count": 5,
+      "traced_count": 5,
+      "missing_verses": []
+    }
+  ]
+}

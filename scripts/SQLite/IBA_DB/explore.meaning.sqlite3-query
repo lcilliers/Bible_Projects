@@ -1,0 +1,26 @@
+-- database: ../../../iba/app/db/iba.db
+
+SELECT count(*) FROM vw_strong_gloss vw
+right join strong s
+on vw.strong= s.strongNumber
+where source = 'strong_meaning_parsed'
+and vw.ord = 0
+and s.deleted = 0;
+
+select count(*) from strong;
+
+select vw.strong, length(gloss) , gloss
+from vw_strong_gloss  vw
+where vw.source = 'strong_meaning_parsed'
+and vw.ord = 0
+order by length(gloss);
+
+select *
+from vw_strong_gloss  vw
+where vw.strong = 'G3551';
+
+select * from strong_meaning_tree mt
+where mt.strong_variant= 'G3551';
+
+select * from vw_strong_meaning_raw vw
+where vw.strong = 'G3551';

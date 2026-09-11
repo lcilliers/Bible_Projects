@@ -1,0 +1,76 @@
+{
+  "cluster_code": "M10",
+  "family_id": "N_hypocrisy",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G4942"
+  ],
+  "observations": [
+    {
+      "tag": "instance-meaning",
+      "statement": "synypokrinomai (G4942, 'to join hypocrisy') in its one occurrence -- Peter's withdrawal at Antioch causing 'the rest of the Jews' to 'act hypocritically along with him,' drawing in Barnabas too. Morph V-API-3P (aorist passive/middle indicative, 3rd plural) -- a group subject, not an individual.",
+      "traces": {
+        "cluster": "M10",
+        "family": "N_hypocrisy",
+        "strong": "G4942",
+        "occurrences": [
+          {
+            "verse": "Gal.2.13",
+            "span_surface": "acted hypocritically",
+            "span_morph": "V-API-3P"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "The word's own compound structure (syn- 'together with' + hypokrinomai 'play a hypocrite') makes hypocrisy here inherently relational rather than a private inconsistency: LSJ's own gloss is 'accommodate oneself by pretending... helping [another] maintain his pretence.' The single occurrence is exactly this -- one person's (Peter's) hypocrisy spreading by imitation to a group, then to a specific named third party (Barnabas). This is a social-contagion structure, not an individual moral failure examined in isolation.",
+      "traces": {
+        "cluster": "M10",
+        "family": "N_hypocrisy",
+        "strong": "G4942",
+        "occurrences": [
+          {
+            "verse": "Gal.2.13",
+            "span_surface": "acted hypocritically",
+            "span_morph": "V-API-3P"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "This social-contagion structure matches the pre-existing (legacy, pre-2026-06-25-reset) M10 characteristic 'Contagious sin' (characteristic.id=31, 'sin as a moral direction set by a leader... transmitted to those under their authority') and the independently-found Jeroboam causative-sin formula in family B_sin (H2398, 'made Israel to sin'). Three separate pieces of evidence -- one legacy characteristic, one lexical family, and this one -- converge on the same pattern: sin/hypocrisy propagating through a leader-follower relationship rather than occurring in one person alone.",
+      "traces": {
+        "cluster": "M10",
+        "family": "N_hypocrisy",
+        "strong": "G4942",
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "B_sin"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "This family has exactly one strong and one occurrence -- the thinnest possible evidence base for a distinct family. Worth the same explicit low-confidence flag as L_defilement: a single data point cannot be triangulated against itself for alternative readings the way multi-occurrence strongs can.",
+      "traces": {
+        "cluster": "M10",
+        "family": "N_hypocrisy",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G4942",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    }
+  ]
+}

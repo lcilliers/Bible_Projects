@@ -1,0 +1,497 @@
+{
+  "cluster_code": "M10",
+  "family_id": "K_error_deception",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G0051",
+    "G1185",
+    "G4106",
+    "H4879",
+    "H6601B",
+    "H7691",
+    "H8417",
+    "H8442"
+  ],
+  "observations": [
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "agnoēma's (G0051) only occurrence renders as plain 'sins,' not 'error' -- 'the unintentional sins of the people' (Heb 9:7). The word's whole distinguishing content, per its own meaning block and LSJ ('fault of ignorance... opposed to hamartemata'), is that it names sin done specifically THROUGH IGNORANCE, distinguished from deliberate sin -- but the English surface flattens this to the generic sin-word, recovering the ignorance sense only via the adjective 'unintentional' bolted on separately, not from this strong's own rendering.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "G0051",
+        "occurrences": [
+          {
+            "verse": "Heb.9.7",
+            "span_surface": "sins",
+            "span_morph": "N-GPN"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "deleazō (G1185, 'to entice') consistently describes an internal-appetite mechanism, not external force -- 'enticed by his own desire' (Jas 1:14, present passive participle), 'entice by sensual passions of the flesh' (2 Pet 2:18, present active), 'entice unsteady souls' (2 Pet 2:14, present active participle). Its own root image (LSJ: 'entice or catch by a bait') is preserved literally -- enticement works by appeal to appetite, not by force.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "G1185",
+        "occurrences": [
+          {
+            "verse": "Jas.1.14",
+            "span_surface": "enticed",
+            "span_morph": "V-PPP-NSM"
+          },
+          {
+            "verse": "2Pet.2.18",
+            "span_surface": "entice",
+            "span_morph": "V-PAI-3P"
+          },
+          {
+            "verse": "2Pet.2.14",
+            "span_surface": "entice",
+            "span_morph": "V-PAP-NPM"
+          }
+        ],
+        "meaning_source": "strong_lexicon.lsj"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "planē (G4106) as generic moral/spiritual error -- an appeal not from error (1 Thess 2:3), the penalty for error (Rom 1:27), the error of lawless people (2 Pet 3:17), the spirit of error opposed to the Spirit of truth (1 John 4:6), and Balaam's error (Jude 11).",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "G4106",
+        "occurrences": [
+          {
+            "verse": "1Thess.2.3",
+            "span_surface": "error",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.1.27",
+            "span_surface": "error",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "2Pet.3.17",
+            "span_surface": "error",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "1John.4.6",
+            "span_surface": "error",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Jude.1.11",
+            "span_surface": "error",
+            "span_morph": "N-DSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Three of planē's 9 occurrences render as 'fraud' (Matt 27:64), 'delusion' (2 Thess 2:11), and 'deceitful' (Eph 4:14) rather than 'error.' The Eph 4:14 case restructures a genitive noun ('craftiness in [the] planē of deceitful schemes') into an English adjective -- the fourth instance in this cluster of an abstract source-language noun becoming an English adjective or verb (after apostasia/G0646, sarah/H5627 in family J), suggesting this is a general ESV translation habit for abstract deception/departure nouns, not isolated to one strong.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "G4106",
+        "occurrences": [
+          {
+            "verse": "Matt.27.64",
+            "span_surface": "fraud",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "2Thess.2.11",
+            "span_surface": "delusion",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Eph.4.14",
+            "span_surface": "deceitful",
+            "span_morph": "N-GSF"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": "J_unfaithfulness"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "planē at 2 Pet 2:18 -- 'those who live in error' -- appears in the same verse as G1185 (deleazō, 'entice'), directly pairing this family's two Greek deception-words in one sentence: enticement (the mechanism) operating on people already living in error (the state).",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "G4106",
+        "occurrences": [
+          {
+            "verse": "2Pet.2.18",
+            "span_surface": "error",
+            "span_morph": "N-DSF"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "meshugah (H4879) in its one occurrence -- Job's claim 'my error remains with myself' -- explicitly self-contained and private, offered as part of a defence that his fault (if real) harms no one else.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H4879",
+        "occurrences": [
+          {
+            "verse": "Job.19.4",
+            "span_surface": "error",
+            "span_morph": "HNcfsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pathah (H6601B) as a Qal participle, functioning as a person-identity label -- 'the simple' (Job 5:2), 'silly [Ephraim]' (Hos 7:11) -- the same participle-as-identity pattern independently found in family C's na'aph and family J's bagad, now confirmed a third time in a different root entirely. Naivety/simplicity, not deception itself, is what the participle form names -- the person's own disposition, prior to and distinct from being acted upon.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "Job.5.2",
+            "span_surface": "simple",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Hos.7.11",
+            "span_surface": "silly",
+            "span_morph": "HVqrfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "C_adultery"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Ezek 14:9 carries pathah twice with contrasting voice in one verse: Pual ('the prophet IS deceived,' passive -- his own state) and Piel perfect 1cs ('I, the Lord, HAVE deceived that prophet,' active -- God's own causative act). The morphology alone marks who is acting and who is acted upon within a single sentence describing the same event from two sides.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "Ezek.14.9",
+            "span_surface": "deceived",
+            "span_morph": "HVPi3ms"
+          },
+          {
+            "verse": "Ezek.14.9",
+            "span_surface": "deceived",
+            "span_morph": "HVpp1cs"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Jer 20:7 repeats the identical active/passive structure found at Ezek 14:9, independently: 'you [the Lord] have deceived me' (Piel perfect 2ms, God as active agent) and 'I was deceived' (Niphal waw-consecutive 1cs, Jeremiah's own passive experience of the same event), in the same verse. Two separate prophetic complaints use the same Piel-active/Niphal-passive pairing to describe a divine-human deception encounter from both sides -- this is a recurring structural device for this root, not a one-off.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "Jer.20.7",
+            "span_surface": "deceived",
+            "span_morph": "HVpp2ms"
+          },
+          {
+            "verse": "Jer.20.7",
+            "span_surface": "deceived",
+            "span_morph": "HVNw1cs"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pathah as Piel (active causative) describing the volunteer/commissioned enticement of Ahab in the heavenly-court scene, told twice (1 Kgs 22:20-22 and its parallel 2 Chr 18:19-21) -- God asking who will entice Ahab, a spirit volunteering, and being authorized to succeed as 'a lying spirit.' Every verb in this scene is Piel active, regardless of person (1cs 'I will entice him,' 2ms 'you are to entice him,' 3ms 'who will entice').",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "1Kgs.22.20",
+            "span_surface": "entice",
+            "span_morph": "HVpi3ms"
+          },
+          {
+            "verse": "1Kgs.22.21",
+            "span_surface": "entice",
+            "span_morph": "HVpi1cs"
+          },
+          {
+            "verse": "1Kgs.22.22",
+            "span_surface": "entice",
+            "span_morph": "HVpi2ms"
+          },
+          {
+            "verse": "2Chr.18.19",
+            "span_surface": "entice",
+            "span_morph": "HVpi3ms"
+          },
+          {
+            "verse": "2Chr.18.20",
+            "span_surface": "entice",
+            "span_morph": "HVpi1cs"
+          },
+          {
+            "verse": "2Chr.18.21",
+            "span_surface": "entice",
+            "span_morph": "HVpi2ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "alternative-meaning",
+      "statement": "Hos 2:14's 'I will allure her, and bring her into the wilderness, and speak tenderly to her' uses the identical Piel-active morphology (participle construct, HVprmpc) as the sinister enticements elsewhere in this strong (Judg 14:15's plot against Samson, Prov 1:10's warning against sinners, Prov 16:29's 'a man of violence entices his neighbor'). The grammar does not distinguish valence at all -- the same causative construction names both God's own redemptive wooing of Israel and a person's malicious seduction of another. Content and context supply the moral direction; the morphology is neutral.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "Hos.2.14",
+            "span_surface": "allure",
+            "span_morph": "HVprmpc"
+          },
+          {
+            "verse": "Judg.14.15",
+            "span_surface": "Entice",
+            "span_morph": "HVpv2fs"
+          },
+          {
+            "verse": "Prov.1.10",
+            "span_surface": "entice",
+            "span_morph": "HVpi3mp"
+          },
+          {
+            "verse": "Prov.16.29",
+            "span_surface": "entices",
+            "span_morph": "HVpi3ms"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "pathah describing a heart being enticed toward wrongdoing as the person's own internal susceptibility, not an external agent's act named in the same clause -- Job's self-examination ('if my heart has been enticed toward a woman,' 'my heart has been secretly enticed'), and the warning to guard against one's own heart being deceived into idolatry (Deut 11:16).",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "Job.31.9",
+            "span_surface": "enticed",
+            "span_morph": "HVNp3ms"
+          },
+          {
+            "verse": "Job.31.27",
+            "span_surface": "enticed",
+            "span_morph": "HVqw3ms"
+          },
+          {
+            "verse": "Deut.11.16",
+            "span_surface": "deceived",
+            "span_morph": "HVqi3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "Job 31:27's occurrence is tagged Qal (HVqw3ms) despite rendering as a passive-sounding English clause ('has been secretly enticed') -- Job 31:9's parallel clause with the same sense is tagged Niphal (HVNp3ms), the expected passive stem. The same author, same chapter, same construction type ('if my heart has been X-ed') carries two different stem tags four verses apart. Flagged as a possible morph-tagging inconsistency worth checking, not resolved here.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "Job.31.27",
+            "span_surface": "enticed",
+            "span_morph": "HVqw3ms"
+          }
+        ],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "pathah's two remaining occurrences: a specific individual's fearful hope of being deceived into a fatal trap by his enemies (Jer 20:10, Pual), and flattery/lying rather than enticement proper (Ps 78:36, Piel waw-consecutive, 'they flattered him with their mouths') -- the latter surfaces closer to family G/J's deceit-vocabulary than to seduction-by-appetite.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "Jer.20.10",
+            "span_surface": "deceived",
+            "span_morph": "HVPi3ms"
+          },
+          {
+            "verse": "Ps.78.36",
+            "span_surface": "flattered",
+            "span_morph": "HVpw3mp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "Proverbs' wisdom-counsel use of pathah as ordinary social persuasion, morally neutral in itself: 'with patience a ruler may be persuaded' (Prov 25:15, Pual).",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H6601B",
+        "occurrences": [
+          {
+            "verse": "Prov.25.15",
+            "span_surface": "persuaded",
+            "span_morph": "HVPi3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "shegiah (H7691) in its one occurrence -- 'who can discern his errors? Declare me innocent from hidden faults' (Ps 19:12) -- error defined by its own invisibility to the person who commits it, framed as a plea for divine clearance rather than a confession of a known fault.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H7691",
+        "occurrences": [
+          {
+            "verse": "Ps.19.12",
+            "span_surface": "errors",
+            "span_morph": "HNcfpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "toholah (H8417) in its one occurrence -- 'even in his servants he puts no trust, and his angels he charges with error' (Job 4:18) -- error extended to a cosmic scale, applied to angelic beings relative to God's own standard, not a human failing at all.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H8417",
+        "occurrences": [
+          {
+            "verse": "Job.4.18",
+            "span_surface": "error",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "toah (H8442) in its one occurrence -- 'to utter error concerning the Lord' (Isa 32:6) -- explicitly deliberate, not innocent: paired in the same verse with folly, iniquity, and practising ungodliness, describing the fool's speech against the Lord specifically.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": "H8442",
+        "occurrences": [
+          {
+            "verse": "Isa.32.6",
+            "span_surface": "error",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "This family splits cleanly into an innocent/hidden pole (G0051's ignorance-sin, H4879's self-contained private error, H7691's invisible-to-self error, H8417's cosmic angelic error) and a deliberate/agentive pole (G4106's organized false teaching, H8442's deliberate anti-God speech, and most of H6601B's enticement occurrences) -- with H6601B's own Piel/Niphal/Pual voice system doing the work of marking, within one root, which side of that split any given occurrence falls on.",
+      "traces": {
+        "cluster": "M10",
+        "family": "K_error_deception",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G0051",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "G1185",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "G4106",
+      "occurrence_count": 9,
+      "traced_count": 9,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4879",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H6601B",
+      "occurrence_count": 20,
+      "traced_count": 20,
+      "missing_verses": []
+    },
+    {
+      "strong": "H7691",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H8417",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H8442",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    }
+  ]
+}

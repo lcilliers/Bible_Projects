@@ -1,0 +1,2293 @@
+{
+  "cluster_code": "M10",
+  "family_id": "G_transgression",
+  "process": "1682-cluster-reading-process-d",
+  "spec_round": 1,
+  "catalogue_scope": "T0-T5",
+  "questions_answered": 64,
+  "answers": [
+    {
+      "question_code": "T0.1.1",
+      "tier": "T0",
+      "component_code": "T0.1",
+      "component_title": "Divine Nature Reflected",
+      "question_text": "In this verse, is the characteristic predicated of God or otherwise related to God; if so, in what relation (God as the one who bears it, acts, gives it, or is its object)? Record the relation, or record that it is not related to God here.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "god-as-lawgiver-not-object",
+          "answer": "God is related indirectly, as the LAWGIVER whose law defines the boundary being crossed -- 'where there is no law there is no transgression' (Rom 4:15) makes transgression parasitic on God's law existing, without naming God as its direct object in that verse.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.4.15",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For the law brings wrath, but where there is no law there is no transgression."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "god-as-forgiver",
+          "answer": "God/Christ acts as the one who FORGIVES/removes transgression -- the Lord's Prayer formula, 'blots out your transgressions' (Isa 44:22, 43:25), 'pardoning iniquity and passing over transgression' (Mic 7:18).",
+          "strong": "G3900/H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Mic.7.18",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "Who is a God like you, pardoning iniquity and passing over transgression for the remnant of his inheritance? He does not retain his anger forever, because he delights in steadfast love."
+              },
+              {
+                "verse": "Isa.44.22",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "I have blotted out your transgressions like a cloud and your sins like mist; return to me, for I have redeemed you."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "god-as-wronged-object",
+          "answer": "God is the direct wronged object in the majority of prophetic occurrences -- 'against God' is one of the three registers this family's own meaning block names explicitly for pesha.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Isa.59.12",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "For our transgressions are multiplied before you, and our sins testify against us; for our transgressions are with us, and we know our iniquities:"
+              }
+            ],
+            "observation_refs": [
+              "H6588 verse-grouping: three registers (individual/nation/God)"
+            ]
+          }
+        },
+        {
+          "slant_label": "angels-as-law-mediators",
+          "answer": "Angels appear as MEDIATORS of the law itself, not as transgressors or as God's object -- 'the message declared by angels proved to be reliable, and every transgression... received a just retribution' (Heb 2:2) -- a distinct third relation: angelic beings stand behind the law's authority that transgression violates.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "not-related-to-God",
+          "answer": "Most narrative/political-revolt/proverbial occurrences state no God-relation at all.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.1.2a",
+      "tier": "T0",
+      "component_code": "T0.1",
+      "component_title": "Divine Nature Reflected",
+      "question_text": "Across the characteristic's verses, is the characteristic ever predicated of God himself (not just present in a verse where God is also mentioned)?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "firm-negative",
+          "answer": "No -- as with H_guilt and B_sin, transgression is never predicated of God himself anywhere in this family's 118 occurrences. God is lawgiver, wronged party, or forgiver -- never transgressor.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.1.2b",
+      "tier": "T0",
+      "component_code": "T0.1",
+      "component_title": "Divine Nature Reflected",
+      "question_text": "What does the pattern of presence/absence found in T0.1.2a indicate for the characteristic's place in the human person and in the divine image?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "transgression-presupposes-a-standard-outside-the-transgressor",
+          "answer": "Transgression's defining logic (Rom 4:15's 'no law, no transgression') indicates it is structurally RELATIONAL to a standard that exists independently of and prior to the person -- unlike guilt (a status one falls into) or sin (a failed aim), transgression's very possibility depends on an external boundary already set by God. This makes it, if anything, the MOST clearly derivative of the three families examined so far: it cannot even be defined without first defining God's law.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.2.1",
+      "tier": "T0",
+      "component_code": "T0.2",
+      "component_title": "Created Purpose",
+      "question_text": "Does this verse state any purpose, role, or effect the characteristic serves in the person — what it leads the person to be, do, or become? Record it if stated; otherwise record none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "produces-retribution",
+          "answer": "Transgression's stated effect is a 'just retribution' following automatically (Heb 2:2) -- a consequence-mechanism, not an inner formative effect.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "produces-affliction",
+          "answer": "At national scale, accumulated transgression is named as the direct CAUSE of affliction and captivity -- 'the Lord has afflicted her for the multitude of her transgressions' (Lam 1:5).",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Lam.1.5",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "Her foes have become the head; her enemies prosper, because the Lord has afflicted her for the multitude of her transgressions; her children have gone away, captives before the foe."
+              }
+            ],
+            "observation_refs": [
+              "H6588 instance-meaning: Lam 1:5 accumulating-load"
+            ]
+          }
+        },
+        {
+          "slant_label": "no-stated-effect",
+          "answer": "Most occurrences (the Amos formula, proverbial statements, narrative confessions) state the transgression without a further stated inner effect.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.2.2",
+      "tier": "T0",
+      "component_code": "T0.2",
+      "component_title": "Created Purpose",
+      "question_text": "Across the evidence, does the characteristic's role read as belonging to created design, to the fallen condition, to both, or as not determinable?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "fallen-condition-with-cosmic-order-contrast",
+          "answer": "Fallen condition throughout the human occurrences, but this family uniquely also shows the CREATED-ORDER contrast case directly: the sea 'transgressing' its assigned limit is explicitly NOT what happens, because wisdom fixed that limit at creation (Prov 8:29) -- the cosmos keeps its boundary perfectly where humans do not, making the human failure to keep boundaries a departure FROM a working creational pattern that still holds elsewhere in creation.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Prov.8.29",
+                "span_surface": "transgress",
+                "span_morph": "HVqi3mp",
+                "verse_text": "when he assigned to the sea its limit, so that the waters might not transgress his command, when he marked out the foundations of the earth,"
+              }
+            ],
+            "observation_refs": [
+              "H5674D instance-meaning: no human moral content, cosmic-physical case"
+            ]
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.2.3",
+      "tier": "T0",
+      "component_code": "T0.2",
+      "component_title": "Created Purpose",
+      "question_text": "Across the evidence, is there any orientation toward a future fullness — something the person moves toward, not only what they currently are? Record it, or record none.",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "zion-turning-from-transgression",
+          "answer": "Isa 59:20 names a future turning-point: transgression will be turned FROM at Zion's redemption -- an explicit forward-looking resolution distinct from H_guilt's single Servant-Song reference and closer to B_sin's Hebrews trajectory.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Isa.59.20",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "“And a Redeemer will come to Zion, to those in Jacob who turn from transgression,” declares the Lord."
+              }
+            ],
+            "observation_refs": [
+              "H6588 instance-meaning: named-individual/nation cases"
+            ]
+          }
+        },
+        {
+          "slant_label": "no-orientation-elsewhere",
+          "answer": "Most occurrences show no future-fullness orientation.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.3.1",
+      "tier": "T0",
+      "component_code": "T0.3",
+      "component_title": "Image-Bearer Expression",
+      "question_text": "From the characteristic's God-relation (T0.1) and its role (T0.2), what aspect of the divine likeness, if any, does it instantiate in the person? Record the aspect, or record none.",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "none-the-cosmos-keeps-the-pattern-instead",
+          "answer": "None in the person -- but the sea's non-transgression of its limit (Prov 8:29) shows the PATTERN of boundary-keeping itself belongs to wisdom's created design; humans fail to instantiate a pattern the rest of creation keeps without difficulty.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Prov.8.29",
+                "span_surface": "transgress",
+                "span_morph": "HVqi3mp",
+                "verse_text": "when he assigned to the sea its limit, so that the waters might not transgress his command, when he marked out the foundations of the earth,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.3.2",
+      "tier": "T0",
+      "component_code": "T0.3",
+      "component_title": "Image-Bearer Expression",
+      "question_text": "Across the evidence, is the characteristic shared between God and the person, or an exclusively creaturely analogue to something in God?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "exclusively-creaturely",
+          "answer": "Exclusively creaturely -- no positive divine analogue exists for transgression anywhere in this family.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.3.3",
+      "tier": "T0",
+      "component_code": "T0.3",
+      "component_title": "Image-Bearer Expression",
+      "question_text": "Where the characteristic is present or absent in a person, what does that indicate about the condition of the divine image in them — or is no such indication evidenced?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "presence-indicates-boundary-blindness",
+          "answer": "Where present, it indicates a person who does not (or will not) recognize the LORD's boundary as binding -- Ps 17:3's self-examined 'I will not transgress' (with the mouth) is this family's clearest positive-absence case, framed as a deliberate, examined self-restraint rather than a status simply avoided.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.17.3",
+                "span_surface": "transgress",
+                "span_morph": "HVqi3ms",
+                "verse_text": "You have tried my heart, you have visited me by night, you have tested me, and you will find nothing; I have purposed that my mouth will not transgress."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T0.4.1",
+      "tier": "T0",
+      "component_code": "T0.4",
+      "component_title": "Typological Significance",
+      "question_text": "Does this verse use the characteristic typologically — pointing beyond the immediate to a covenantal, eschatological, or christological reality; if so, which, and in which direction (the divine instance establishing the pattern, or the human pointing toward the divine)? Record the use and direction, or record none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "adam-typology",
+          "answer": "Rom 5:14/Hos 6:7's Adam-paradigm is explicitly typological -- Adam's transgression as the type, later reversed by Christ; Hosea uses the same comparison ('like Adam, they transgressed the covenant').",
+          "strong": "G3847/H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.5.14",
+                "span_surface": "transgression",
+                "span_morph": "N-GSF",
+                "verse_text": "Yet death reigned from Adam to Moses, even over those whose sinning was not like the transgression of Adam, who was a type of the one who was to come."
+              },
+              {
+                "verse": "Hos.6.7",
+                "span_surface": "transgressed",
+                "span_morph": "HVqp3cp",
+                "verse_text": "But like Adam they transgressed the covenant; there they dealt faithlessly with me."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "isaiah-53-christological",
+          "answer": "Isa 53:5's 'pierced for our transgressions' is explicitly christological, the fourth strong across three families to independently cite this one verse.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Isa.53.5",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed."
+              }
+            ],
+            "observation_refs": [
+              "H6588 instance-meaning: Isaiah 53 convergence"
+            ]
+          }
+        },
+        {
+          "slant_label": "no-typology-elsewhere",
+          "answer": "Most occurrences show no typological signal.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "Isaiah 53:5 is now cited independently by four strongs across three families (H_guilt's H0817/H5375J, family D's H5771G, and here H6588) -- the single most heavily cross-referenced verse found in M10 so far.",
+          "related_family": "H_guilt",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T1.1.1",
+      "tier": "T1",
+      "component_code": "T1.1",
+      "component_title": "Name and Naming",
+      "question_text": "What is the characteristic called in the programme, and what does the name signal about its essential nature?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "transgression-is-boundary-crossing",
+          "answer": "Called 'Transgression' (G_transgression, M10). The name signals a spatial/legal metaphor -- STEPPING PAST or CROSSING a fixed line -- more literally boundary-oriented than either guilt (a status) or sin (missing a target); several occurrences show the literal spatial sense surfacing directly in translation ('bounds,' Jer 5:28; 'turned aside,' Acts 1:25).",
+          "strong": "G3845/H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Jer.5.28",
+                "span_surface": "bounds",
+                "span_morph": "HVqp3cp",
+                "verse_text": "they have grown fat and sleek. They know no bounds in deeds of evil; they judge not with justice the cause of the fatherless, to make it prosper, and they do not defend the rights of the needy."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.1.2",
+      "tier": "T1",
+      "component_code": "T1.1",
+      "component_title": "Name and Naming",
+      "question_text": "What do the primary Hebrew and Greek terms show at the definitional level?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "parabaino-step-past",
+          "answer": "parabaino/parabasis (Greek) roots literally in 'step beside/past' -- the family's noun form (parabasis) even states its own definitional dependency on law: 'where there is no law there is no transgression' (Rom 4:15).",
+          "strong": "G3845/G3847",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "avar-pass-over",
+          "answer": "avar (Hebrew, H5674D) is a general 'pass over/through/by' verb with the moral sense as one branch among many -- unlike chata (sin) or asham (guilt), which are dedicated moral roots, avar's moral use borrows a general motion-verb.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "pasha-fuses-transgress-and-revolt",
+          "answer": "pasha (H6586/H6588) fuses 'transgress' and 'rebel/revolt' as a single lexeme -- the same root names religious sin and political insurrection, distinguished only by grammatical tense-environment, not by a different word.",
+          "strong": "H6586",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": [
+              "H6586 difference-inference: political vs religious tense split"
+            ]
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.1.3",
+      "tier": "T1",
+      "component_code": "T1.1",
+      "component_title": "Name and Naming",
+      "question_text": "What directional, relational, or constitutional implication does the name carry?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "crossing-implies-a-fixed-external-line",
+          "answer": "'Crossing/passing beyond' implies a FIXED, EXTERNALLY-SET line that exists prior to and independent of the person -- the person moves, the boundary does not. This is the sharpest directional implication of the three families read so far: guilt is entered, sin is missed, transgression is crossed.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "revolt-implies-rejected-authority",
+          "answer": "pasha's 'rebel' sense implies REJECTED AUTHORITY -- not just crossing a line but repudiating the ruler who set it, whether a king (political revolt) or God (religious rebellion).",
+          "strong": "H6586",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.2.1",
+      "tier": "T1",
+      "component_code": "T1.2",
+      "component_title": "Kind",
+      "question_text": "What kind of inner-being phenomenon is the characteristic — an act, a disposition, a condition/status, a quality, or something else?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "dominantly-a-counted-status",
+          "answer": "Predominantly a COUNTED STATUS/QUANTITY -- pesha (H6588, the family's largest and most frequent strong by far) is overwhelmingly a noun tallied in Amos's 'three... and four' formula, described as accumulating ('abundance,' 'multitude'), sealed in a bag, borne as a load. This is much closer to H_guilt's status-profile than to B_sin's agentive-power profile.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Amos.1.3",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "Thus says the Lord: “For three transgressions of Damascus, and for four, I will not revoke the punishment, because they have threshed Gilead with threshing sledges of iron."
+              },
+              {
+                "verse": "Lam.1.5",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "Her foes have become the head; her enemies prosper, because the Lord has afflicted her for the multitude of her transgressions; her children have gone away, captives before the foe."
+              }
+            ],
+            "observation_refs": [
+              "H6588 verse-grouping: Amos formula",
+              "H6588 verse-grouping: accumulating load"
+            ]
+          }
+        },
+        {
+          "slant_label": "also-an-identity-noun",
+          "answer": "parabates/pasha's participle forms also make it a PERSON-IDENTITY category ('a transgressor,' 'rebels') -- the same participle-as-identity pattern already found in na'aph/bagad/pathah.",
+          "strong": "G3848/H6586",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Isa.1.28",
+                "span_surface": "rebels",
+                "span_morph": "HVqrmpa",
+                "verse_text": "But rebels and sinners shall be broken together, and those who forsake the Lord shall be consumed."
+              }
+            ],
+            "observation_refs": [
+              "H6586 verse-grouping: participle-as-identity pattern"
+            ]
+          }
+        },
+        {
+          "slant_label": "one-partial-agentive-exception",
+          "answer": "One occurrence gives transgression a quasi-agentive voice, echoing (faintly) B_sin's Romans-7 personification: 'Transgression speaks to the wicked deep in his heart' (Ps 36:1) -- transgression here SPEAKS, though as an external voice addressing the heart, not (like sin) an indwelling ruling power.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.36.1",
+                "span_surface": "Transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "To the choirmaster. Of David, the servant of the Lord. Transgression speaks to the wicked deep in his heart; there is no fear of God before his eyes."
+              }
+            ],
+            "observation_refs": [
+              "H6588 verse-grouping: general wisdom-proverb statements"
+            ]
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "Ps 36:1's 'transgression speaks... deep in his heart' is worth comparing directly against B_sin's Rom 7 personification -- both give the characteristic a speaking/acting voice, but with different registers (external address vs. indwelling power); a genuine three-way comparison point for guilt/sin/transgression's differing degrees of personification.",
+          "related_family": "B_sin",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T1.2.2",
+      "tier": "T1",
+      "component_code": "T1.2",
+      "component_title": "Kind",
+      "question_text": "Is the characteristic simple in structure, or does it combine constituent elements; if compound, which?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "recognition-accrual-remedy-compound",
+          "answer": "This family's own meaning block names a three-part compound structure explicitly: transgression 'as recognised by sinner... as God deals with it... as God forgives' -- a built-in recognition-accrual-remedy sequence, the most explicitly staged compound structure found in any M10 family so far.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.51.3",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "For I know my transgressions, and my sin is ever before me."
+              },
+              {
+                "verse": "Mic.7.18",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "Who is a God like you, pardoning iniquity and passing over transgression for the remnant of his inheritance? He does not retain his anger forever, because he delights in steadfast love."
+              }
+            ],
+            "observation_refs": [
+              "H6588 verse-grouping: recognition-accrual-remedy sequence"
+            ]
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.3.1",
+      "tier": "T1",
+      "component_code": "T1.3",
+      "component_title": "Boundary",
+      "question_text": "What stands against the characteristic as its structural opposite — the inner-being reality that excludes it?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "self-examined-restraint",
+          "answer": "Deliberate, self-examined restraint -- 'I have kept my ways and have not transgressed' (Ps 17:3 register), the psalmist actively guarding his own mouth as the boundary-opposite.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.17.3",
+                "span_surface": "transgress",
+                "span_morph": "HVqi3ms",
+                "verse_text": "You have tried my heart, you have visited me by night, you have tested me, and you will find nothing; I have purposed that my mouth will not transgress."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "kept-limit-by-design",
+          "answer": "The sea's kept limit (Prov 8:29) is this family's non-human structural opposite -- an ordained boundary actually held, not merely avoided by choice.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Prov.8.29",
+                "span_surface": "transgress",
+                "span_morph": "HVqi3mp",
+                "verse_text": "when he assigned to the sea its limit, so that the waters might not transgress his command, when he marked out the foundations of the earth,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.3.2",
+      "tier": "T1",
+      "component_code": "T1.3",
+      "component_title": "Boundary",
+      "question_text": "What does the characteristic exclude or resist at its edge?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "denial-that-an-act-counts",
+          "answer": "Prov 28:24's flat denial ('whoever robs his father or mother and says, \"That is no transgression\"') shows the category's edge being actively DISPUTED by the offender himself -- a boundary-policing move from inside, not outside.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Prov.28.24",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "Whoever robs his father or his mother and says, “That is no transgression,” is a companion to a man who destroys."
+              }
+            ],
+            "observation_refs": [
+              "H6588 verse-grouping: general wisdom-proverb statements"
+            ]
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.3.3",
+      "tier": "T1",
+      "component_code": "T1.3",
+      "component_title": "Boundary",
+      "question_text": "Where does the characteristic end and another thing begin — what is it not?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "transgression-vs-fall-in-faith",
+          "answer": "paraptoma's own meaning block carries a second sense -- 'a fall in faith' -- attested directly at Rom 11:11-12's description of Israel's 'trespass/stumble,' distinct from a moral crime: the same word spans a specific committed wrong and a corporate faith-stumble.",
+          "strong": "G3900",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.11.11",
+                "span_surface": "trespass",
+                "span_morph": "N-DSN",
+                "verse_text": "So I ask, did they stumble in order that they might fall? By no means! Rather, through their trespass salvation has come to the Gentiles, so as to make Israel jealous."
+              },
+              {
+                "verse": "Rom.11.12",
+                "span_surface": "trespass",
+                "span_morph": "N-NSN",
+                "verse_text": "Now if their trespass means riches for the world, and if their failure means riches for the Gentiles, how much more will their full inclusion mean!"
+              }
+            ],
+            "observation_refs": [
+              "G3900 instance-meaning: Rom 11:11-12 fall-in-faith sense"
+            ]
+          }
+        },
+        {
+          "slant_label": "transgression-vs-revolt",
+          "answer": "H6586/pasha's identical form spans religious transgression and political revolt, distinguished only by grammatical tense-environment (waw-consecutive narrative-past for revolt, perfect/infinitive for confession) -- the boundary between a theological category and a purely secular-political one is carried by grammar, not vocabulary.",
+          "strong": "H6586",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.4.1a",
+      "tier": "T1",
+      "component_code": "T1.4",
+      "component_title": "Modes of Operation",
+      "question_text": "What is the grammatical/stem form of the characteristic's primary term in this verse?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "greek-forms",
+          "answer": "Verb forms (V-PAI/V-2AAI etc.) for parabaino; noun forms (N-*SF/N-*SN) for parabasis/paraptoma; person-noun (N-*SM) for parabates.",
+          "strong": "G3845/G3847/G3848/G3900",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "hebrew-forms",
+          "answer": "Qal (H5674D throughout its moral sense; H6586's dominant stem); one Niphal passive (H6586 Prov 18:19, 'a brother offended' -- the sole receiving-end form); construct nouns (HNcmsc/HNcmpc, H6588's dominant morph, marking WHOSE transgression it is grammatically in almost every occurrence).",
+          "strong": "H5674D/H6586/H6588",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.4.1b",
+      "tier": "T1",
+      "component_code": "T1.4",
+      "component_title": "Modes of Operation",
+      "question_text": "In what distinct mode(s) does the characteristic operate within the inner person in this verse — the manner of its functioning?",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "counted-tallied-mode",
+          "answer": "As a TALLIED quantity -- the Amos formula's 'three... and four,' 'abundance,' 'multitude' -- transgression operates by ACCUMULATING as a countable record.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Amos.1.3",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "Thus says the Lord: “For three transgressions of Damascus, and for four, I will not revoke the punishment, because they have threshed Gilead with threshing sledges of iron."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "borne-load-mode",
+          "answer": "As a BORNE LOAD -- 'bound into a yoke... set upon my neck' (Lam 1:14), 'sealed up in a bag' (Job 14:17) -- weight-imagery closely paralleling H_guilt's nasa material.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Lam.1.14",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "“My transgressions were bound into a yoke; by his hand they were fastened together; they were set upon my neck; he caused my strength to fail; the Lord gave me into the hands of those whom I cannot withstand."
+              },
+              {
+                "verse": "Job.14.17",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsc",
+                "verse_text": "my transgression would be sealed up in a bag, and you would cover over my iniquity."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "spoken-address-mode",
+          "answer": "As a SPOKEN address to the heart (Ps 36:1) -- the one quasi-agentive exception noted above.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.36.1",
+                "span_surface": "Transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "To the choirmaster. Of David, the servant of the Lord. Transgression speaks to the wicked deep in his heart; there is no fear of God before his eyes."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "crossed-boundary-mode",
+          "answer": "As a literal CROSSING -- the root's spatial sense surfacing directly ('turned aside,' 'bounds,' 'goes on ahead').",
+          "strong": "G3845/H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Acts.1.25",
+                "span_surface": "turned aside",
+                "span_morph": "V-2AAI-3S",
+                "verse_text": "to take the place in this ministry and apostleship from which Judas turned aside to go to his own place.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.4.2",
+      "tier": "T1",
+      "component_code": "T1.4",
+      "component_title": "Modes of Operation",
+      "question_text": "Does the mode of operation vary by context, direction, or constitutional level; if so, how?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "varies-by-strong-and-register",
+          "answer": "Yes -- tallied/counted, borne/carried, spoken/addressed, and literally-crossed are four distinct modes tracking which strong and literary register is in view (prophetic indictment, wisdom-proverb, narrative, legal-covenant), similar in kind to H_guilt's per-strong variation but with more distinct modes attested.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.4.3",
+      "tier": "T1",
+      "component_code": "T1.4",
+      "component_title": "Modes of Operation",
+      "question_text": "Does the characteristic operate through a communicative or speech-based mode (commanded, addressed, spoken); if so, how? Record it, or record none.",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "confessional-speech",
+          "answer": "Confessional speech throughout the recognition-group ('I know my transgressions,' Ps 51:3; Job's plea, Job 13:23/7:21).",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.51.3",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "For I know my transgressions, and my sin is ever before me."
+              },
+              {
+                "verse": "Job.7.21",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsc",
+                "verse_text": "Why do you not pardon my transgression and take away my iniquity? For now I shall lie in the earth; you will seek me, but I shall not be.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "transgression-itself-speaks",
+          "answer": "Uniquely in this family, the characteristic itself is the SPEAKER, not just the topic of speech: 'Transgression speaks to the wicked deep in his heart' (Ps 36:1).",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.36.1",
+                "span_surface": "Transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "To the choirmaster. Of David, the servant of the Lord. Transgression speaks to the wicked deep in his heart; there is no fear of God before his eyes."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.5.1",
+      "tier": "T1",
+      "component_code": "T1.5",
+      "component_title": "Immediate Response",
+      "question_text": "What first or most immediate inner-being response does this verse show following the characteristic? Record it, or record none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "immediate-plea-for-removal",
+          "answer": "Immediate plea for removal -- 'blot out my transgressions' (Ps 51:1), 'why do you not pardon my transgression' (Job 7:21).",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.51.1",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "To the choirmaster. A Psalm of David, when Nathan the prophet went to him, after he had gone in to Bathsheba. Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions."
+              },
+              {
+                "verse": "Job.7.21",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsc",
+                "verse_text": "Why do you not pardon my transgression and take away my iniquity? For now I shall lie in the earth; you will seek me, but I shall not be.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "immediate-retribution",
+          "answer": "Immediate/automatic retribution follows, with no described inner reaction from the offender at all (Heb 2:2's 'received a just retribution').",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "immediate-denial",
+          "answer": "Immediate denial that the act even qualifies (Prov 28:24).",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Prov.28.24",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "Whoever robs his father or his mother and says, “That is no transgression,” is a companion to a man who destroys."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.5.2",
+      "tier": "T1",
+      "component_code": "T1.5",
+      "component_title": "Immediate Response",
+      "question_text": "Across the verses, is that immediate response consistent or varied?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "varied-plea-dominant",
+          "answer": "Varied, but plea/confession is the single most frequent response by volume -- more concentrated than H_guilt's scattered set, though not as singularly dominant as B_sin's near-mechanical confession formula.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.6.1",
+      "tier": "T1",
+      "component_code": "T1.6",
+      "component_title": "Sustained Effect",
+      "question_text": "What does the characteristic produce in the inner being over time in this verse — what states, qualities, capacities, or orientations does it establish? Record it, or record none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "accumulating-multitude",
+          "answer": "An accumulating, nameable quantity over time -- 'abundance of their transgressions' (Ps 5:10), 'multitude of her transgressions' (Lam 1:5) -- the same compound-interest image already found for H0819's guilt.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.5.10",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "Make them bear their guilt, O God; let them fall by their own counsels; because of the abundance of their transgressions cast them out, for they have rebelled against you."
+              },
+              {
+                "verse": "Lam.1.5",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "Her foes have become the head; her enemies prosper, because the Lord has afflicted her for the multitude of her transgressions; her children have gone away, captives before the foe."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-sustained-effect-elsewhere",
+          "answer": "Most occurrences state no sustained effect beyond the single named act.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.6.3",
+      "tier": "T1",
+      "component_code": "T1.6",
+      "component_title": "Sustained Effect",
+      "question_text": "How does the sustained effect differ from the immediate response (T1.5)?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "single-act-to-cumulative-record",
+          "answer": "Immediate response is a single spoken plea or an automatic retributive consequence; sustained effect is a CUMULATIVE RECORD (a growing tally, a growing load) that persists independently of any one act -- structurally identical to H_guilt's compound-interest pattern, reinforcing that guilt and transgression share this particular behaviour even where sin (agentive, indwelling) does not.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.7.1",
+      "tier": "T1",
+      "component_code": "T1.7",
+      "component_title": "Conditions of Reception",
+      "question_text": "Under what inner conditions does the characteristic take hold or operate rightly?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "existence-of-law-is-the-precondition",
+          "answer": "The law's very existence is the stated precondition for transgression to be possible at all (Rom 4:15) -- an unusually explicit, almost definitional, condition-of-possibility statement not paralleled this directly in either H_guilt or B_sin.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Rom.4.15",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For the law brings wrath, but where there is no law there is no transgression."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T1.7.2",
+      "tier": "T1",
+      "component_code": "T1.7",
+      "component_title": "Conditions of Reception",
+      "question_text": "Under what inner conditions is the characteristic blocked, distorted, resisted, or not taken up — including, where the evidence shows it, distortion or interference by another spirit (adversarial or angelic)?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "angelic-mediation-of-the-standard-not-distortion",
+          "answer": "Angels appear here in a THIRD role distinct from either H_guilt's clean negative or B_sin's adversarial-affiliation positive: angels MEDIATE the very law whose transgression carries penalty (Heb 2:2) -- a positive, non-distorting angelic involvement in the standard itself, not interference with a person's compliance.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-adversarial-transgressor-found",
+          "answer": "Unlike B_sin (where the devil himself is said to sin), no occurrence in this family names an adversarial being as a transgressor or as distorting a person's keeping of the boundary.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "Three-way pattern now visible across H_guilt/B_sin/G_transgression on spiritual-beings involvement: guilt = clean negative both angelic and adversarial; sin = positive both (devil sins, angels sinned); transgression = positive angelic (mediating the law) but negative adversarial (no transgressor-devil case). Worth a dedicated cross-family synthesis once more families are read.",
+          "related_family": "H_guilt",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T1.7.3",
+      "tier": "T1",
+      "component_code": "T1.7",
+      "component_title": "Conditions of Reception",
+      "question_text": "What is the inner-being state of the person in whom the characteristic is present but does not take hold?",
+      "catalogue_scope": "The HIB",
+      "slants": [
+        {
+          "slant_label": "self-denial-of-category",
+          "answer": "Prov 28:24's offender: the characteristic is present (by the proverb's own moral judgment) but does not take hold in the person's self-understanding -- their inner state is one of active category-denial, structurally similar to B_sin's/H_guilt's self-justifying deniers (Jer 50:7).",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Prov.28.24",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "Whoever robs his father or his mother and says, “That is no transgression,” is a companion to a man who destroys."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.1.1",
+      "tier": "T2",
+      "component_code": "T2.1",
+      "component_title": "Spirit-Level Location",
+      "question_text": "At which constitutional level(s) does this verse locate the characteristic — from {spirit, soul, heart, mind, other soul-subset, a named body part} — and how is each engaged? Record every level evidenced, or none.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "heart-engaged-once",
+          "answer": "HEART is explicitly engaged, uniquely in this family among the ones read so far in this specific way: 'Transgression speaks to the wicked deep in his heart' (Ps 36:1) -- the heart as the site addressed by the characteristic, paired with 'no fear of God before his eyes' in the same verse (a second, visual/perceptual faculty in the same breath).",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.36.1",
+                "span_surface": "Transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "To the choirmaster. Of David, the servant of the Lord. Transgression speaks to the wicked deep in his heart; there is no fear of God before his eyes."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "mouth-as-self-guarded-boundary",
+          "answer": "MOUTH is named as a self-guarded boundary -- Ps 17:3's resolve that his mouth 'will not transgress,' a specific bodily/faculty location for the self-imposed limit.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.17.3",
+                "span_surface": "transgress",
+                "span_morph": "HVqi3ms",
+                "verse_text": "You have tried my heart, you have visited me by night, you have tested me, and you will find nothing; I have purposed that my mouth will not transgress."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-level-named-elsewhere",
+          "answer": "The overwhelming majority of occurrences (the Amos formula, the load-imagery, the political-revolt uses, the confession formulas) name no constitutional level at all.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.1.2",
+      "tier": "T2",
+      "component_code": "T2.1",
+      "component_title": "Spirit-Level Location",
+      "question_text": "Across the verses, what does the pattern of engaged and absent levels indicate — the characteristic's depth and seat, the levels it never engages, and (for any body link) whether the link is emphatic, functional, expressive, indicative, or mediating?",
+      "catalogue_scope": "The HIB",
+      "slants": [
+        {
+          "slant_label": "intermediate-between-guilt-and-sin",
+          "answer": "This family sits BETWEEN H_guilt (no constitutional engagement at all) and B_sin (mind and body directly engaged as an operating site, Rom 7): transgression touches the heart and mouth in isolated, occasional verses (Ps 36:1, Ps 17:3) rather than as a sustained operating description -- present but thin, not absent and not systemic.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "A three-family T2 gradient is now visible: guilt (none) < transgression (thin, occasional) < sin (systemic, Romans 7). Worth testing whether this gradient holds or breaks once more families are read -- it would be a significant structural finding for the status-vs-characteristic hypothesis if it holds.",
+          "related_family": "H_guilt",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T2.10.1",
+      "tier": "T2",
+      "component_code": "T2.10",
+      "component_title": "Constitutional Movement",
+      "question_text": "Does the characteristic move across constitutional levels (spirit→soul→body), or onto the person from an external source — including another spirit (angelic or adversarial) — or in another direction; and if so in what sequence or pattern? If no movement, record none.",
+      "catalogue_scope": "The HIB",
+      "slants": [
+        {
+          "slant_label": "speaks-inward-to-heart",
+          "answer": "Ps 36:1 shows a movement pattern: transgression (as if external) SPEAKS inward, reaching the heart -- an outside-to-inside movement distinct from H_guilt's off-the-guilty-party substitutionary movement and from sin's already-indwelling-power framing.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.36.1",
+                "span_surface": "Transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "To the choirmaster. Of David, the servant of the Lord. Transgression speaks to the wicked deep in his heart; there is no fear of God before his eyes."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-movement-elsewhere",
+          "answer": "Most occurrences show no stated movement across levels.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.7.1",
+      "tier": "T2",
+      "component_code": "T2.7",
+      "component_title": "Body — Direction",
+      "question_text": "Where a body link exists (from the T2.1.1 audit), in which direction does it run — soul/spirit expressing through the body, the body feeding back to the soul, or both — and what follows from that direction? If no body link, record none.",
+      "catalogue_scope": "The HIB",
+      "slants": [
+        {
+          "slant_label": "mouth-as-outward-guard",
+          "answer": "The mouth-link (Ps 17:3) runs OUTWARD -- an inner resolve (self-examination) expressing as guarded speech -- the inner state governs the bodily boundary, not the reverse.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.17.3",
+                "span_surface": "transgress",
+                "span_morph": "HVqi3ms",
+                "verse_text": "You have tried my heart, you have visited me by night, you have tested me, and you will find nothing; I have purposed that my mouth will not transgress."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.9.1",
+      "tier": "T2",
+      "component_code": "T2.9",
+      "component_title": "Origin and Source",
+      "question_text": "Where does this verse say the characteristic originates — generated within the person, received from another person, bestowed by God, carried generationally, introduced by another spirit (angelic or adversarial), or not stated?",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "generated-within",
+          "answer": "Generated within, by one's own act -- the dominant pattern (confession formulas, the Amos indictments, political revolts each attributed to the revolting party's own decision).",
+          "strong": "H6586/H6588",
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "adam-generational-paradigm",
+          "answer": "A generational PARADIGM (not an automatic transmission mechanism like B_sin's Rom 5:12, but a repeated pattern/type) -- Adam's transgression cited as the model later generations are compared to and re-enact (Hos 6:7, Rom 5:14) rather than a claim that Adam's specific transgression is inherited wholesale.",
+          "strong": "H5674D/G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Hos.6.7",
+                "span_surface": "transgressed",
+                "span_morph": "HVqp3cp",
+                "verse_text": "But like Adam they transgressed the covenant; there they dealt faithlessly with me."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "law-mediated-by-angels",
+          "answer": "The STANDARD whose crossing constitutes transgression originates in a message mediated by angels (Heb 2:2) -- the boundary's own origin, not the transgressive act's origin, is angelically mediated.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T2.9.2",
+      "tier": "T2",
+      "component_code": "T2.9",
+      "component_title": "Origin and Source",
+      "question_text": "Across the verses, is the origin single or multiple, and does it change with context?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "multiple-types-paradigm-not-transmission",
+          "answer": "Multiple, but notably this family's 'generational' origin-type is a PARADIGM/TYPOLOGY (later generations re-enacting Adam's pattern) rather than B_sin's stronger claim of an actual transmission mechanism (Rom 5:12's 'entered the world') -- a real, specific difference in how the same Adam-material is used across the two families.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.1.1",
+      "tier": "T4",
+      "component_code": "T4.1",
+      "component_title": "Divine Interface — God to Human",
+      "question_text": "In this verse, does the characteristic operate from God toward the human person, and if so how? Record none if it does not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "god-forgives-blots-out",
+          "answer": "God acts toward the person by forgiving/blotting out transgression (Isa 44:22, 43:25, Mic 7:18) -- the dominant God-to-human operation in this family, matching H_guilt's remedy-pattern.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Isa.44.22",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "I have blotted out your transgressions like a cloud and your sins like mist; return to me, for I have redeemed you."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-operation-in-most",
+          "answer": "Most occurrences show no God-to-human operation.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.1.2",
+      "tier": "T4",
+      "component_code": "T4.1",
+      "component_title": "Divine Interface — God to Human",
+      "question_text": "On what basis does God extend the characteristic — conditional, unconditional, covenantal, or responsive — as the evidence shows?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "mercy-based-not-merit-based",
+          "answer": "Explicitly on the basis of MERCY, stated directly: 'according to your abundant mercy blot out my transgressions' (Ps 51:1) -- the petitioner names the basis himself as God's character, not any procedure completed.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.51.1",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "To the choirmaster. A Psalm of David, when Nathan the prophet went to him, after he had gone in to Bathsheba. Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.1.3",
+      "tier": "T4",
+      "component_code": "T4.1",
+      "component_title": "Divine Interface — God to Human",
+      "question_text": "What does God's extension of the characteristic show about his disposition toward the human person?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "disposition-toward-mercy-over-tally",
+          "answer": "Mic 7:18's rhetorical question ('who is a God like you, pardoning iniquity and passing over transgression?') frames mercy as God's own distinguishing characteristic against a backdrop where the default expectation would be tallying/retribution (Heb 2:2's 'just retribution') -- disposition toward mercy is presented as remarkable precisely because strict accounting is the norm this family otherwise assumes.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Mic.7.18",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "Who is a God like you, pardoning iniquity and passing over transgression for the remnant of his inheritance? He does not retain his anger forever, because he delights in steadfast love."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.2.1",
+      "tier": "T4",
+      "component_code": "T4.2",
+      "component_title": "Divine Interface — Human to God",
+      "question_text": "In this verse, does the characteristic operate in the person's movement toward God — seeking, supplication, worship, covenant — and if so how? Record none if it does not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "plea-as-movement-toward-God",
+          "answer": "The recognition-group's pleas ('blot out,' 'pardon my transgression') are direct petitionary movement toward God.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.51.1",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "To the choirmaster. A Psalm of David, when Nathan the prophet went to him, after he had gone in to Bathsheba. Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions."
+              },
+              {
+                "verse": "Job.7.21",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsc",
+                "verse_text": "Why do you not pardon my transgression and take away my iniquity? For now I shall lie in the earth; you will seek me, but I shall not be.”"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.2.2",
+      "tier": "T4",
+      "component_code": "T4.2",
+      "component_title": "Divine Interface — Human to God",
+      "question_text": "What inner posture does this movement require, as the evidence shows?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "acknowledgment-plus-appeal-to-mercy",
+          "answer": "Acknowledgment of the specific transgression PLUS an explicit appeal to God's character (mercy) rather than to a completed legal procedure -- a more personal, less procedural posture than H_guilt's cultic-recognition formula.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.51.1",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "To the choirmaster. A Psalm of David, when Nathan the prophet went to him, after he had gone in to Bathsheba. Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.2.3",
+      "tier": "T4",
+      "component_code": "T4.2",
+      "component_title": "Divine Interface — Human to God",
+      "question_text": "What does the human-to-God direction of the characteristic show about the person's relationship with God?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "relationship-personal-not-only-procedural",
+          "answer": "The relationship is personal and appeal-based (mercy invoked directly) at least as much as procedural -- closer to B_sin's confession-and-grace pattern than to H_guilt's more ritual-bound one.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.3.1",
+      "tier": "T4",
+      "component_code": "T4.3",
+      "component_title": "Human Interface — Giving",
+      "question_text": "In this verse, is the characteristic extended by one person toward another, and if so how does it operate in that extension? Record none if it is not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "individual-offense-against-another",
+          "answer": "Jacob's demand of Laban 'what is my transgression?' (Gen 31:36) treats transgression as a specific wrong one person could have committed against another -- the individual-against-individual register this family's own meaning block names.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Gen.31.36",
+                "span_surface": "offense",
+                "span_morph": "HNcmsc",
+                "verse_text": "Then Jacob became angry and berated Laban. Jacob said to Laban, “ What is my offense? What is my sin, that you have hotly pursued me?"
+              }
+            ],
+            "observation_refs": [
+              "H6588 verse-grouping: three registers"
+            ]
+          }
+        },
+        {
+          "slant_label": "political-revolt-as-collective-extension",
+          "answer": "At national scale, one people's revolt against another's rule (Moab, Edom, Israel against the house of David) is a collective, political form of the same person-to-person-scaled extension.",
+          "strong": "H6586",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Kgs.1.1",
+                "span_surface": "rebelled",
+                "span_morph": "HVqw3ms",
+                "verse_text": "After the death of Ahab, Moab rebelled against Israel."
+              },
+              {
+                "verse": "1Kgs.12.19",
+                "span_surface": "rebellion",
+                "span_morph": "HVqw3mp",
+                "verse_text": "So Israel has been in rebellion against the house of David to this day."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.3.2",
+      "tier": "T4",
+      "component_code": "T4.3",
+      "component_title": "Human Interface — Giving",
+      "question_text": "What inner conditions or orientations in the giver accompany genuine extension of the characteristic?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "no-positive-case-again",
+          "answer": "As with H_guilt and B_sin, no occurrence shows a virtuous inner condition accompanying an extension of transgression toward another -- every case (offense, revolt) is adversarial by definition.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.3.3",
+      "tier": "T4",
+      "component_code": "T4.3",
+      "component_title": "Human Interface — Giving",
+      "question_text": "What does the evidence show a person must have received or become before they extend the characteristic?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "prior-rejection-of-authority",
+          "answer": "For the revolt-cases specifically, the giver must first have decided to reject an established authority's rule -- a specific prior orientation (rejection of legitimate rule) this family names more explicitly than H_guilt or B_sin did for their own person-to-person cases.",
+          "strong": "H6586",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Kgs.8.22",
+                "span_surface": "revolted",
+                "span_morph": "HVqw3ms",
+                "verse_text": "So Edom revolted from the rule of Judah to this day. Then Libnah revolted at the same time."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.4.1",
+      "tier": "T4",
+      "component_code": "T4.4",
+      "component_title": "Human Interface — Receiving",
+      "question_text": "In this verse, is the characteristic taken up by a person from another, and if so how does it operate in that uptake? Record none if it is not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "no-clear-receiving-case",
+          "answer": "No occurrence clearly shows one person's transgression being 'taken up' from another the way H_guilt's Num 30:15 or B_sin's 2Tim 3:6 did -- this family's person-to-person cases (offense, revolt) are given/committed, not passed on or absorbed by another.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.4.2",
+      "tier": "T4",
+      "component_code": "T4.4",
+      "component_title": "Human Interface — Receiving",
+      "question_text": "What inner conditions accompany or block uptake of the characteristic from another person?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "not-evidenced",
+          "answer": "Not evidenced in this family -- consistent with T4.4.1's finding of no clear receiving-case at all.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.4.3",
+      "tier": "T4",
+      "component_code": "T4.4",
+      "component_title": "Human Interface — Receiving",
+      "question_text": "What is the inner-being state of the person who meets the characteristic from another but does not take it up?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "prov-18-19-passive-recipient",
+          "answer": "Prov 18:19's Niphal 'a brother offended' is the closest case -- naming the person on the RECEIVING end of another's offense, though the verse describes the relational damage that follows, not an inner state of refusing uptake.",
+          "strong": "H6586",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Prov.18.19",
+                "span_surface": "offended",
+                "span_morph": "HVNrmsa",
+                "verse_text": "A brother offended is more unyielding than a strong city, and quarreling is like the bars of a castle."
+              }
+            ],
+            "observation_refs": [
+              "H6586 difference-inference: the one Niphal form"
+            ]
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.5.1",
+      "tier": "T4",
+      "component_code": "T4.5",
+      "component_title": "Human Interface — Boundaries",
+      "question_text": "Does the evidence show the characteristic operating differently within existing relational bonds versus across relational distance or difference; if so, how?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "within-bond-covenant-breach",
+          "answer": "Within a bond, it operates as covenant-breach with a named party (Israel's covenant, Judg 2:20; the everlasting covenant, Isa 24:5) -- a violation of an existing relationship's terms.",
+          "strong": "H5674D",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Judg.2.20",
+                "span_surface": "transgressed",
+                "span_morph": "HVqp3cp",
+                "verse_text": "So the anger of the Lord was kindled against Israel, and he said, “ Because this people have transgressed my covenant that I commanded their fathers and have not obeyed my voice,"
+              },
+              {
+                "verse": "Isa.24.5",
+                "span_surface": "transgressed",
+                "span_morph": "HVqp3cp",
+                "verse_text": "The earth lies defiled under its inhabitants; for they have transgressed the laws, violated the statutes, broken the everlasting covenant."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "across-distance-political-revolt",
+          "answer": "Across political/national distance, it operates as outright REVOLT against an imposed rule with no prior personal bond assumed (Moab, Edom against Judah/Israel) -- a rejection of external authority rather than a breach of a covenant one had entered voluntarily.",
+          "strong": "H6586",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "2Kgs.3.7",
+                "span_surface": "rebelled",
+                "span_morph": "HVqp3ms",
+                "verse_text": "And he went and sent word to Jehoshaphat king of Judah: “The king of Moab has rebelled against me. Will you go with me to battle against Moab?” And he said, “I will go. I am as you are, my people as your people, my horses as your horses.”"
+              },
+              {
+                "verse": "2Kgs.8.22",
+                "span_surface": "revolted",
+                "span_morph": "HVqw3ms",
+                "verse_text": "So Edom revolted from the rule of Judah to this day. Then Libnah revolted at the same time."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.5.2",
+      "tier": "T4",
+      "component_code": "T4.5",
+      "component_title": "Human Interface — Boundaries",
+      "question_text": "Does the characteristic operate within covenantal contexts only, or does it cross covenantal boundaries, as the evidence shows?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "both-covenantal-and-purely-political",
+          "answer": "Both: it operates within covenant (Israel's covenant with God) AND in purely political, non-covenantal contexts (one kingdom revolting against another's secular rule) -- this family shows the widest range of the three read so far, spanning theological covenant-breach to secular political insurrection under the very same lexeme.",
+          "strong": "H5674D/H6586",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "1Kgs.12.19",
+                "span_surface": "rebellion",
+                "span_morph": "HVqw3mp",
+                "verse_text": "So Israel has been in rebellion against the house of David to this day."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.5.3",
+      "tier": "T4",
+      "component_code": "T4.5",
+      "component_title": "Human Interface — Boundaries",
+      "question_text": "What does the evidence show about the relational scope of the characteristic — who is included and who is not?",
+      "catalogue_scope": "Characteristic relational",
+      "slants": [
+        {
+          "slant_label": "individuals-nations-and-the-cosmos-itself",
+          "answer": "Included: individuals (Jacob/Laban), nations against nations (the Amos formula's seven-plus-two peoples), Israel against God (the majority prophetic register), and even the cosmos as a limiting case that could in principle transgress but does not (the sea, Prov 8:29). Excluded: God himself (T0.1.2a).",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.1",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "In this verse, does the characteristic operate in relation to other spiritual beings — angelic or adversarial — and if so how? Record none if it does not.",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "angels-mediate-the-law",
+          "answer": "Yes, positively for angels: 'the message declared by angels' (Heb 2:2) stands behind the law whose transgression is then punished -- angels are the channel through which the very standard transgression violates was given.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-adversarial-case",
+          "answer": "No occurrence names an adversarial being as a transgressor or as inducing transgression.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.2a",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "Does an adversarial-being code ever appear as an acting party in a verse carrying this characteristic?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "no",
+          "answer": "No -- none found across this family's 118 occurrences.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.2b",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "What does that pattern show about the characteristic being a site of adversarial activity?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "not-a-site-of-adversarial-activity",
+          "answer": "Transgression, like guilt and unlike sin, shows no confirmed adversarial-activity pattern in this cluster's own textual evidence -- a genuine point of alignment with H_guilt against B_sin's positive finding.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.3a",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "Does an angelic-being code ever appear as an acting party in a verse carrying this characteristic?",
+      "catalogue_scope": "Word/term (lexical)",
+      "slants": [
+        {
+          "slant_label": "yes-mediating-role",
+          "answer": "Yes -- angels are the acting party who declared the law (Heb 2:2), though in a mediating/instrumental role, not as transgressors themselves.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T4.6.3b",
+      "tier": "T4",
+      "component_code": "T4.6",
+      "component_title": "Spiritual Beings Interface",
+      "question_text": "What does that pattern show about the characteristic being communicated, strengthened, or mediated through angelic ministry?",
+      "catalogue_scope": "Other non-human beings",
+      "slants": [
+        {
+          "slant_label": "angelic-mediation-of-the-standard-itself",
+          "answer": "This is the clearest positive angelic-mediation finding across the three families read so far: the STANDARD whose transgression carries penalty was itself given through angelic ministry -- angels are constitutive of the boundary's authority, a distinct and more foundational role than any 'strengthening' or 'communicating' of the characteristic to a person.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": [
+        {
+          "statement": "This is the only confirmed positive angelic-involvement case (as opposed to adversarial) found across H_guilt (negative), B_sin (adversarial positive, angelic positive only via fallen angels), and G_transgression (angelic positive, in a mediating/authority-granting role distinct from B_sin's fallen-angel case) -- a genuinely distinct third pattern worth holding separately in any synthesis.",
+          "related_family": "B_sin",
+          "related_cluster": null
+        }
+      ]
+    },
+    {
+      "question_code": "T5.1.1",
+      "tier": "T5",
+      "component_code": "T5.1",
+      "component_title": "Nature of Transformation",
+      "question_text": "In this verse, does the characteristic produce transformation in the person, and if so does it change the person's condition, their orientation to their condition, or both? Record none if no transformation is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "condition-change-via-retribution",
+          "answer": "Produces a condition change via automatic retribution (Heb 2:2) -- the person's condition changes (penalty incurred) independent of any change in their orientation.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "orientation-change-via-confession",
+          "answer": "The recognition-group occurrences (Ps 51, Job 7:21) produce an orientation change -- turning to plead for removal -- without the verse itself narrating the underlying record's actual erasure.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.51.1",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "To the choirmaster. A Psalm of David, when Nathan the prophet went to him, after he had gone in to Bathsheba. Have mercy on me, O God, according to your steadfast love; according to your abundant mercy blot out my transgressions."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.1.2",
+      "tier": "T5",
+      "component_code": "T5.1",
+      "component_title": "Nature of Transformation",
+      "question_text": "Is the transformation reversible or irreversible in the evidence?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "reversible-via-mercy",
+          "answer": "Reversible via God's mercy -- 'blots out,' 'passes over' -- stated as a genuine erasure, not a mere covering-over.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Isa.44.22",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "I have blotted out your transgressions like a cloud and your sins like mist; return to me, for I have redeemed you."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "irreversible-in-retribution-case",
+          "answer": "Irreversible where automatic retribution is described (Heb 2:2) -- no remedy is named in that verse itself.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.2.1",
+      "tier": "T5",
+      "component_code": "T5.2",
+      "component_title": "Sequence of Inner States",
+      "question_text": "Does this verse describe a sequence of inner states the characteristic moves the person through — a before, during, and after — and what are those states? Record none if no sequence is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "recognition-accrual-remedy-again",
+          "answer": "The same three-stage sequence already named at T1.2.2 -- committed-and-accruing (before/during) -> recognized/confessed (turning point) -> forgiven/blotted out (after) -- this family's clearest and most explicitly self-named sequence of any read so far.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Ps.51.3",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "For I know my transgressions, and my sin is ever before me."
+              },
+              {
+                "verse": "Mic.7.18",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "Who is a God like you, pardoning iniquity and passing over transgression for the remnant of his inheritance? He does not retain his anger forever, because he delights in steadfast love."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.3.1",
+      "tier": "T5",
+      "component_code": "T5.3",
+      "component_title": "Mechanism of Change",
+      "question_text": "In this verse, by what mechanism does the characteristic produce change — discipline, encounter, gradual formation, sudden transformation, or other? Record none if no mechanism is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "mercy-based-declarative-mechanism",
+          "answer": "A declarative act of divine mercy (blotting out, passing over) is the mechanism -- sudden and unilateral, resembling B_sin's declarative-forgiveness mechanism more than H_guilt's ritual-procedural one.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Mic.7.18",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "Who is a God like you, pardoning iniquity and passing over transgression for the remnant of his inheritance? He does not retain his anger forever, because he delights in steadfast love."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "automatic-retribution-mechanism",
+          "answer": "Automatic retribution (Heb 2:2) is a distinct, disciplinary mechanism with no described process at all -- consequence simply follows.",
+          "strong": "G3847",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Heb.2.2",
+                "span_surface": "transgression",
+                "span_morph": "N-NSF",
+                "verse_text": "For since the message declared by angels proved to be reliable, and every transgression or disobedience received a just retribution,"
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.3.2",
+      "tier": "T5",
+      "component_code": "T5.3",
+      "component_title": "Mechanism of Change",
+      "question_text": "Does the mechanism differ across contexts in the evidence; if so, how?",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "two-mechanisms-mercy-vs-automatic",
+          "answer": "Yes -- mercy-based declarative removal and automatic retribution are the two poles, with the choice between them turning on whether the party is described as pleading/recognized or simply named as an offender under the law's operation.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.4.1",
+      "tier": "T5",
+      "component_code": "T5.4",
+      "component_title": "Suffering and Affliction",
+      "question_text": "In this verse, does the characteristic operate in relation to suffering or affliction — as a response to it, a product of it, or a context for it? Record none if no such relation is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "transgression-as-cause-of-affliction",
+          "answer": "Transgression is named as the direct CAUSE of national affliction -- 'the Lord has afflicted her for the multitude of her transgressions' (Lam 1:5).",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Lam.1.5",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "Her foes have become the head; her enemies prosper, because the Lord has afflicted her for the multitude of her transgressions; her children have gone away, captives before the foe."
+              }
+            ],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.4.2",
+      "tier": "T5",
+      "component_code": "T5.4",
+      "component_title": "Suffering and Affliction",
+      "question_text": "What does the evidence show suffering doing to the characteristic in the person — and record no such effect if none is shown.",
+      "catalogue_scope": "Characteristic (HIB behaviour)",
+      "slants": [
+        {
+          "slant_label": "no-effect-shown-suffering-is-consequence-not-remedy",
+          "answer": "No occurrence shows suffering reducing or discharging transgression the way H_guilt's punishment-bearing did -- here suffering is transgression's CONSEQUENCE, not its resolution mechanism (resolution belongs to mercy/forgiveness instead, per T5.3.1).",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.5.1",
+      "tier": "T5",
+      "component_code": "T5.5",
+      "component_title": "Formation and Sanctification",
+      "question_text": "In this verse, does the characteristic participate in the longer arc of character formation and sanctification — shaping the person over time — and what does the evidence show of its role in that arc? Record none if no such participation is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "negative-formation-only-again",
+          "answer": "As with H_guilt and B_sin, only a negative-formation arc is shown -- transgression accumulates (T1.6.1) rather than forms virtue; no occurrence gives it a positive sanctifying role.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    },
+    {
+      "question_code": "T5.6.1",
+      "tier": "T5",
+      "component_code": "T5.6",
+      "component_title": "Eschatological Trajectory",
+      "question_text": "In this verse, is the characteristic oriented toward an eschatological fullness — a future state toward which its present operation points — and what does its present experience anticipate of that fullness? Record none if no such orientation is shown.",
+      "catalogue_scope": "Verse-context",
+      "slants": [
+        {
+          "slant_label": "zion-redemption-trajectory",
+          "answer": "Isa 59:20's turning-from-transgression at Zion's redemption is an explicit eschatological trajectory, and Isa 53:5's christological convergence-verse reinforces it.",
+          "strong": "H6588",
+          "basis": {
+            "occurrences": [
+              {
+                "verse": "Isa.59.20",
+                "span_surface": "transgression",
+                "span_morph": "HNcmsa",
+                "verse_text": "“And a Redeemer will come to Zion, to those in Jacob who turn from transgression,” declares the Lord."
+              },
+              {
+                "verse": "Isa.53.5",
+                "span_surface": "transgressions",
+                "span_morph": "HNcmpc",
+                "verse_text": "But he was pierced for our transgressions; he was crushed for our iniquities; upon him was the chastisement that brought us peace, and with his wounds we are healed."
+              }
+            ],
+            "observation_refs": []
+          }
+        },
+        {
+          "slant_label": "no-orientation-elsewhere",
+          "answer": "Most occurrences show no eschatological orientation.",
+          "strong": null,
+          "basis": {
+            "occurrences": [],
+            "observation_refs": []
+          }
+        }
+      ],
+      "needs_adjacent_verse_context": [],
+      "cross_family_or_cluster_flags": []
+    }
+  ]
+}

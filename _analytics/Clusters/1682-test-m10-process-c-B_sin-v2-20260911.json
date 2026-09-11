@@ -1,0 +1,3291 @@
+{
+  "cluster_code": "M10",
+  "family_id": "B_sin",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G0264",
+    "G0265",
+    "G0266",
+    "G0268",
+    "G7292",
+    "H2398",
+    "H2399",
+    "H2400",
+    "H2401",
+    "H2403A",
+    "H2403B",
+    "H2403H",
+    "H2403I",
+    "H2408"
+  ],
+  "observations": [
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartano (G0264) as a completed past act of a named individual or generation, confessed or diagnosed after the fact: 'all have sinned' (Rom 3:23, Rom 5:12), those 'who sinned before the law' and after (Rom 2:12 x2, Rom 5:14), the disciples' question whether the blind man's own sin or his parents' caused his blindness -- and Jesus's flat denial of both (John 9:2-3), Judas's confession 'I have sinned' (Matt 27:4), the prodigal's rehearsed confession 'I have sinned against heaven and before you' (Luke 15:18, 15:21), and Paul's own legal denial before Festus, 'I have committed no offense' (Acts 25:8, same verb rendered 'offense').",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0264",
+        "occurrences": [
+          {
+            "verse": "Rom.2.12",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-3P"
+          },
+          {
+            "verse": "Rom.2.12",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-3P"
+          },
+          {
+            "verse": "Rom.3.23",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-3P"
+          },
+          {
+            "verse": "Rom.5.12",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-3P"
+          },
+          {
+            "verse": "Rom.5.14",
+            "span_surface": "sinning",
+            "span_morph": "V-AAP-APM"
+          },
+          {
+            "verse": "John.9.2",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-3S"
+          },
+          {
+            "verse": "John.9.3",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-3S"
+          },
+          {
+            "verse": "Matt.27.4",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-1S"
+          },
+          {
+            "verse": "Luke.15.18",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-1S"
+          },
+          {
+            "verse": "Luke.15.21",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-1S"
+          },
+          {
+            "verse": "Acts.25.8",
+            "span_surface": "offense",
+            "span_morph": "V-2AAI-1S"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartano naming an ongoing interpersonal offense to be addressed within the community: 'if your brother sins against you' (Matt 18:15, 18:21 -- Peter's 'how often will my brother sin against me' introducing the seventy-times-seven answer), the parallel church-discipline saying (Luke 17:3-4, 'if he sins against you seven times in a day'), and the public rebuke owed to elders 'who persist in sin' (1Tim 5:20).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0264",
+        "occurrences": [
+          {
+            "verse": "Matt.18.15",
+            "span_surface": "sins",
+            "span_morph": "V-AAS-3S"
+          },
+          {
+            "verse": "Matt.18.21",
+            "span_surface": "sin",
+            "span_morph": "V-FAI-3S"
+          },
+          {
+            "verse": "Luke.17.3",
+            "span_surface": "sins",
+            "span_morph": "V-2AAS-3S"
+          },
+          {
+            "verse": "Luke.17.4",
+            "span_surface": "sins",
+            "span_morph": "V-AAS-3S"
+          },
+          {
+            "verse": "1Tim.5.20",
+            "span_surface": "sin",
+            "span_morph": "V-PAP-APM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "1 John's dense, deliberately paradoxical cluster of hamartano occurrences: the flat denial 'if we say we have not sinned... his word is not in us' (1:10) sits against 'no one born of God... cannot keep on sinning' (3:6 x2, 3:9, 5:18) and 'the one who keeps on sinning is of the devil' (3:8) -- yet the letter's own stated purpose is pastoral provision for when 'anyone does sin, we have an advocate' (2:1 x2), and it distinguishes a brother 'committing a sin not leading to death' from one who is (5:16 x2, present participle both times, 'sin' used as the noun-object of the verb's participle). The letter holds both an ideal (the regenerate do not sin as a settled practice) and a pastoral provision (any individual sin has an advocate) in the same short unit without resolving the tension explicitly.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0264",
+        "occurrences": [
+          {
+            "verse": "1John.1.10",
+            "span_surface": "sinned",
+            "span_morph": "V-RAI-1P"
+          },
+          {
+            "verse": "1John.2.1",
+            "span_surface": "sin",
+            "span_morph": "V-2AAS-2P"
+          },
+          {
+            "verse": "1John.2.1",
+            "span_surface": "sin",
+            "span_morph": "V-2AAS-3S"
+          },
+          {
+            "verse": "1John.3.6",
+            "span_surface": "sinning",
+            "span_morph": "V-PAI-3S"
+          },
+          {
+            "verse": "1John.3.6",
+            "span_surface": "sinning",
+            "span_morph": "V-PAP-NSM"
+          },
+          {
+            "verse": "1John.3.8",
+            "span_surface": "sinning",
+            "span_morph": "V-PAI-3S"
+          },
+          {
+            "verse": "1John.3.9",
+            "span_surface": "sinning",
+            "span_morph": "V-PAN"
+          },
+          {
+            "verse": "1John.5.16",
+            "span_surface": "sin",
+            "span_morph": "V-PAP-ASM"
+          },
+          {
+            "verse": "1John.5.16",
+            "span_surface": "commit sins",
+            "span_morph": "V-PAP-DPM"
+          },
+          {
+            "verse": "1John.5.18",
+            "span_surface": "sinning",
+            "span_morph": "V-PAI-3S"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartano in Paul's practical ethics, mostly hypothetical/conditional and explicitly NOT sin in context: marrying is 'not sinning' even though Paul prefers celibacy (1Cor 7:28 x2, 7:36), sinning against a weaker believer's conscience by causing them to stumble over food (1Cor 8:12 x2), sexual immorality named as sin 'against his own body' (1Cor 6:18), the imperative 'stop sinning' aimed at those denying the resurrection (1Cor 15:34), and the carefully qualified permission 'be angry and do not sin' (Eph 4:26) -- the one occurrence treating an emotion itself as morally neutral while its uncontrolled outworking is not.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0264",
+        "occurrences": [
+          {
+            "verse": "1Cor.7.28",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-2S"
+          },
+          {
+            "verse": "1Cor.7.28",
+            "span_surface": "sinned",
+            "span_morph": "V-2AAI-3S"
+          },
+          {
+            "verse": "1Cor.7.36",
+            "span_surface": "sin",
+            "span_morph": "V-PAI-3S"
+          },
+          {
+            "verse": "1Cor.8.12",
+            "span_surface": "sinning",
+            "span_morph": "V-PAP-NPM"
+          },
+          {
+            "verse": "1Cor.8.12",
+            "span_surface": "sin",
+            "span_morph": "V-PAI-2P"
+          },
+          {
+            "verse": "1Cor.6.18",
+            "span_surface": "sins",
+            "span_morph": "V-PAI-3S"
+          },
+          {
+            "verse": "1Cor.15.34",
+            "span_surface": "sinning",
+            "span_morph": "V-PAM-2P"
+          },
+          {
+            "verse": "Eph.4.26",
+            "span_surface": "sin",
+            "span_morph": "V-PAM-2P"
+          },
+          {
+            "verse": "Rom.6.15",
+            "span_surface": "sin",
+            "span_morph": "V-AAS-1P"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartano as the backdrop against which suffering, judgment, or warning is measured: suffering 'for doing good' vs suffering 'for doing wrong [sinning]' (1Pet 2:20), the angels 'who sinned' cast down (2Pet 2:4), the wilderness generation 'who sinned' and so were barred from rest (Heb 3:17), the warning against 'deliberately/willfully sinning' after receiving the knowledge of the truth (Heb 10:26), the self-condemned false teacher who 'is sinning' (Titus 3:11), and Jesus's twin healing/forgiveness imperatives 'sin no more' to the paralyzed man (John 5:14) and the woman caught in adultery (John 8:11) -- the only two occurrences where the command is given directly to the person forgiven, not spoken about a third party.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0264",
+        "occurrences": [
+          {
+            "verse": "1Pet.2.20",
+            "span_surface": "sin",
+            "span_morph": "V-PAP-NPM"
+          },
+          {
+            "verse": "2Pet.2.4",
+            "span_surface": "sinned",
+            "span_morph": "V-AAP-GPM"
+          },
+          {
+            "verse": "Heb.3.17",
+            "span_surface": "sinned",
+            "span_morph": "V-AAP-DPM"
+          },
+          {
+            "verse": "Heb.10.26",
+            "span_surface": "sinning",
+            "span_morph": "V-PAP-GPM"
+          },
+          {
+            "verse": "Titus.3.11",
+            "span_surface": "sinful",
+            "span_morph": "V-PAI-3S"
+          },
+          {
+            "verse": "John.5.14",
+            "span_surface": "Sin",
+            "span_morph": "V-PAM-2S"
+          },
+          {
+            "verse": "John.8.11",
+            "span_surface": "sin",
+            "span_morph": "V-PAM-2S"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "hamartema (G0265), the concrete-act noun distinct from hamartia's abstract/condition sense, in all 4 occurrences names a specific committed act rather than a state: 'all sins will be forgiven' in the blasphemy-against-the-Spirit saying, contrasted with 'an eternal sin' one clause later (Mark 3:28, 3:29 -- note the same discourse uses hamartema for the forgivable category and hamartia for the unforgivable one), God's 'passing over former sins' (Rom 3:25), and the one sin category Paul singles out as uniquely self-directed, 'sin a person commits is outside the body, but the sexually immoral person sins against his own body' (1Cor 6:18, same verse using both hamartema the noun and hamartano the verb).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0265",
+        "occurrences": [
+          {
+            "verse": "Mark.3.28",
+            "span_surface": "sins",
+            "span_morph": "N-NPN"
+          },
+          {
+            "verse": "Mark.3.29",
+            "span_surface": "sin",
+            "span_morph": "N-GSN"
+          },
+          {
+            "verse": "Rom.3.25",
+            "span_surface": "sins",
+            "span_morph": "N-GPN"
+          },
+          {
+            "verse": "1Cor.6.18",
+            "span_surface": "sin",
+            "span_morph": "N-NSN"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartia (G0266) in the Synoptic healing-and-forgiveness narratives: the paralytic healed at Capernaum reported identically in all three synoptics -- 'your sins are forgiven,' 'who can forgive sins,' 'the Son of Man has authority... to forgive sins' (Matt 9:2/5/6, Mark 2:5/7/9/10, Luke 5:20/21/23/24) -- and the sinful woman who anoints Jesus, 'her sins... are forgiven... for she loved much,' the onlookers' astonished 'who is this who even forgives sins?' (Luke 7:47-49). Both scenes pair a physical/social-outcast marker (paralysis, a 'sinner' woman's reputation) with the authority to forgive sins as the real point of the miracle/scene.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0266",
+        "occurrences": [
+          {
+            "verse": "Matt.9.2",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Matt.9.5",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Matt.9.6",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Mark.2.5",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Mark.2.7",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Mark.2.9",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Mark.2.10",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Luke.5.20",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Luke.5.21",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Luke.5.23",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Luke.5.24",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Luke.7.47",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Luke.7.48",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Luke.7.49",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartia in the fixed liturgical/missionary formula 'forgiveness/remission of sins,' spanning the whole Synoptic-to-Acts narrative arc: the Baptist's baptism of repentance (Mark 1:4-5, Luke 3:3, Matt 3:6), the Lord's Prayer's own petition ('forgive us our sins,' Luke 11:4), the cup-word at the Last Supper ('poured out... for the forgiveness of sins,' Matt 26:28), Jesus's naming before birth ('he will save his people from their sins,' Matt 1:21), the risen Christ's commission ('repentance for the forgiveness of sins... to all nations,' Luke 24:47), and its repeated fulfilment across Peter's and Paul's preaching in Acts (2:38, 3:19, 5:31, 10:43, 13:38, 22:16, 26:18) -- the same phrase recurring as the summary content of the apostolic message itself.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0266",
+        "occurrences": [
+          {
+            "verse": "Matt.26.28",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Mark.1.4",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Mark.1.5",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Luke.1.77",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Luke.3.3",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Luke.11.4",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Luke.24.47",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Acts.2.38",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Acts.3.19",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Acts.5.31",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Acts.10.43",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Acts.13.38",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Acts.22.16",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Acts.26.18",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Matt.1.21",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Matt.3.6",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "John's Gospel treats hamartia with its own distinct theological vocabulary, mostly singular ('sin' as a condition, not 'sins' as a tally): the Lamb who 'takes away the sin of the world' (1:29), Jesus's warning that his hearers 'will die in your sin/sins' unless they believe (8:21, 8:24 x2), slavery to sin as the definition of the one who commits it (8:34 x2), Jesus's own claimed sinlessness as the ground of his authority ('which of you convicts me of sin?', 8:46), the blind man's accusers' taunt 'you were born in sin' answered by his own healing (9:34), Pilate's guilt described as lesser than the one who handed Jesus over (19:11), the Spirit's coming work to 'convict the world... concerning sin' (16:8), and the risen Christ's commissioning of the disciples to pronounce forgiveness (20:23). John 9:41 is the outlier gloss in this whole 171-occurrence strong: 'if you were blind, you would have no guilt, but now you say we see, so your guilt remains' -- rendered 'guilt' rather than 'sin' both times in the one verse, the Pharisees' self-incriminating claim to sight.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0266",
+        "occurrences": [
+          {
+            "verse": "John.1.29",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "John.8.21",
+            "span_surface": "sin",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "John.8.24",
+            "span_surface": "sins",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "John.8.24",
+            "span_surface": "sins",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "John.8.34",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "John.8.34",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "John.8.46",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "John.9.34",
+            "span_surface": "sin",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "John.9.41",
+            "span_surface": "guilt",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "John.9.41",
+            "span_surface": "guilt",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "John.15.22",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "John.15.22",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "John.15.24",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "John.16.8",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "John.19.11",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "John.20.23",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "Romans 3-8 is by far hamartia's densest concentration (46 of this strong's 171 occurrences, almost entirely singular 'sin'), and it is here that the word shifts from naming an act to naming a cosmic ruling power: 'sin' entering the world through one man and reigning in death (5:12-21), believers 'dead to sin' yet not to be its 'slaves' (6:1-23, eleven occurrences alone), the law's role in exposing rather than causing sin ('I would not have known sin... but sin, seizing an opportunity through the commandment,' 7:7-25, personified as an agent that 'produced', 'deceived', 'dwells in me'), the 'law of sin' warring against the mind (7:23, 8:2), Christ condemning 'sin in the flesh' by being made 'sin offering' / 'in the likeness of sinful flesh' (8:3, three spans in one verse: 'sinful', 'sin', 'sin'), and the closing principle that 'whatever does not proceed from faith is sin' (14:23). This is the family's clearest case of a term functioning as a personified power/dominion rather than a discrete act -- structurally distinct from every other occurrence of this strong outside Romans.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0266",
+        "occurrences": [
+          {
+            "verse": "Rom.3.9",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Rom.3.20",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.4.7",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Rom.4.8",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Rom.5.12",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.5.12",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.5.13",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.5.13",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.5.20",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.5.21",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.6.1",
+            "span_surface": "sin",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Rom.6.2",
+            "span_surface": "sin",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Rom.6.6",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.6.6",
+            "span_surface": "sin",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Rom.6.7",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.6.10",
+            "span_surface": "sin",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Rom.6.11",
+            "span_surface": "sin",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Rom.6.12",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.6.13",
+            "span_surface": "sin",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "Rom.6.14",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.6.16",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.6.17",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.6.18",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.6.20",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.6.22",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.6.23",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.7.5",
+            "span_surface": "sinful",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Rom.7.7",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.7",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Rom.7.8",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.8",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.9",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.11",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.13",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.13",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.13",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.14",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Rom.7.17",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.20",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Rom.7.23",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.7.25",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.8.2",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.8.3",
+            "span_surface": "sinful",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.8.3",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Rom.8.3",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Rom.8.10",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Rom.14.23",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "The remaining General/Pauline-epistle and Revelation occurrences (33) mostly treat sin as the thing Christ's death addresses or the thing believers are warned against practically: 'Christ died for our sins' as core gospel content (1Cor 15:3, 15:17), death's sting identified with sin and the law (1Cor 15:56), Christ 'made sin' / believers made righteousness (2Cor 5:21), Paul's rhetorical self-accusation of a 'sin' in preaching free of charge (2Cor 11:7), 'gave himself for our sins' (Gal 1:4), the sharpened rhetorical question 'is Christ then a servant of sin?' (Gal 2:17), Scripture imprisoning 'everything under sin' (Gal 3:22), being 'dead in... sins' before salvation (Eph 2:1), redemption as 'forgiveness of sins' (Col 1:14), the 'weak women, burdened with sins' led astray by false teachers (2Tim 3:6), sin defined by James as partiality (2:9) and by omission ('whoever knows the right thing... and fails to do it,' 4:17) and desire's own birth-process ('desire... gives birth to sin... sin, when full-grown, brings forth death,' 1:15), confession and prayer covering sins (5:15-16, 20), Christ's own sinlessness as the model for suffering unjustly (1Pet 2:22, 2:24 x2, 3:18, 4:1), love covering 'a multitude of sins' (1Pet 4:8), forgetting one's cleansing from 'former sins' (2Pet 1:9), the seducer 'trained in greed' (2Pet 2:14), warnings against premature ordination ('do not be hasty... nor take part in the sins of others,' 1Tim 5:22, 5:24), the doxology 'freed us from our sins by his blood' (Rev 1:5), and Babylon's sins 'piled up to heaven' from which God's people are called to separate (Rev 18:4-5).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0266",
+        "occurrences": [
+          {
+            "verse": "1Cor.15.3",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "1Cor.15.17",
+            "span_surface": "sins",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "1Cor.15.56",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "1Cor.15.56",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "2Cor.5.21",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "2Cor.5.21",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "2Cor.11.7",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Gal.1.4",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Gal.2.17",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Gal.3.22",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Eph.2.1",
+            "span_surface": "sins",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "Col.1.14",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "2Tim.3.6",
+            "span_surface": "sins",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "Jas.1.15",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Jas.1.15",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Jas.2.9",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Jas.4.17",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Jas.5.15",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Jas.5.16",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Jas.5.20",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "1Pet.2.22",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "1Pet.2.24",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "1Pet.2.24",
+            "span_surface": "sin",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "1Pet.3.18",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "1Pet.4.1",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "1Pet.4.8",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "2Pet.1.9",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "2Pet.2.14",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "1Tim.5.22",
+            "span_surface": "sins",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "1Tim.5.24",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "Rev.1.5",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Rev.18.4",
+            "span_surface": "sins",
+            "span_morph": "N-DPF"
+          },
+          {
+            "verse": "Rev.18.5",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "The unforgivable-sin saying (Matt 12:31, 'every sin and blasphemy will be forgiven... except blasphemy against the Spirit') and 1 John's own dense hamartia cluster (18 occurrences, running alongside 1 John's separate hamartano-verb cluster already grouped under G0264): sin as darkness the blood of Jesus cleanses (1:7), the denial of having sin as self-deception (1:8), confession as the condition of cleansing (1:9 x2), Christ as 'propitiation for our sins' (2:2), sins forgiven 'for his name's sake' (2:12), sin defined as 'lawlessness' (3:4 x2), Christ's appearing 'to take away sins' and his own sinlessness (3:5 x2), the devil's sinning 'from the beginning' (3:8), the regenerate's incapacity to keep sinning (3:9), Christ sent 'to be the propitiation for our sins' (4:10), and the closing distinction between sin 'that leads to death' and sin that does not (5:16-17, three occurrences in two verses) -- 1 John's the single densest concentration of hamartia outside Romans, and like Romans, treats sin as a condition with moral-theological stakes (death vs. life) rather than a simple tally of acts. 1Thess 2:16, unrelated to the Johannine material, names persecution of the gospel-preachers as filling up a people's 'sins' 'always' -- a rare occurrence describing corporate national guilt accumulating toward judgment.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0266",
+        "occurrences": [
+          {
+            "verse": "Matt.12.31",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "1Thess.2.16",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "1John.1.7",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "1John.1.8",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "1John.1.9",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "1John.1.9",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "1John.2.2",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "1John.2.12",
+            "span_surface": "sins",
+            "span_morph": "N-NPF"
+          },
+          {
+            "verse": "1John.3.4",
+            "span_surface": "sinning",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "1John.3.4",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "1John.3.5",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "1John.3.5",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "1John.3.8",
+            "span_surface": "sinning",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "1John.3.9",
+            "span_surface": "sinning",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "1John.4.10",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "1John.5.16",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "1John.5.17",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "1John.5.17",
+            "span_surface": "sin",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Acts.7.60",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Rom.11.27",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "Hebrews' 25 occurrences form the family's clearest sustained argument that the old sacrificial system could not permanently deal with sin and Christ's single sacrifice does: 'making purification for sins' (1:3), the high priest who makes 'propitiation for the sins of the people' (2:17), sin's 'deceitfulness' hardening the heart (3:13), Christ tempted 'yet without sin' (4:15), priests offering sacrifices 'for sins' (5:1, 5:3, 7:27) that must be repeated 'year after year' precisely because they 'can never... take away sins' (10:1-4, 10:11), contrasted with Christ's one sacrifice 'for sins' that God will 'remember no more' (8:12, 10:17-18), the old sacrifices' inability to 'cleanse the conscience' (9:26, 9:28 x2 -- 'to bear the sins of many' / 'apart from sin'), Moses choosing 'the reproach of Christ' over 'the fleeting pleasures of sin' (11:25), the 'sin which clings so closely' in the athletic race-metaphor (12:1), resisting 'to the point of shedding blood' in the struggle 'against sin' (12:4), and the sacrificial animals' bodies burned outside the camp 'for sin' (13:11). Two occurrences (10:6, 10:8) render hamartia as 'sin offerings' rather than 'sin' or 'sins' -- the plural sacrificial-animal sense surfacing directly from a word whose dominant sense throughout the rest of Hebrews is the abstract condition, exactly the same surface/gloss split already logged for the Hebrew chattaah root (H2403B/H2403H) elsewhere in this family.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0266",
+        "occurrences": [
+          {
+            "verse": "Heb.1.3",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.2.17",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Heb.3.13",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.4.15",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.5.1",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.5.3",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.7.27",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.8.12",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.9.26",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.9.28",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Heb.9.28",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.10.2",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.10.3",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.10.4",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Heb.10.6",
+            "span_surface": "sin offerings",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.10.8",
+            "span_surface": "sin offerings",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.10.11",
+            "span_surface": "sins",
+            "span_morph": "N-APF"
+          },
+          {
+            "verse": "Heb.10.12",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.10.17",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.10.18",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.10.26",
+            "span_surface": "sins",
+            "span_morph": "N-GPF"
+          },
+          {
+            "verse": "Heb.11.25",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Heb.12.1",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Heb.12.4",
+            "span_surface": "sin",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "Heb.13.11",
+            "span_surface": "sin",
+            "span_morph": "N-GSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "hamartia's two-way gloss split ('sin/sins' vs. 'sin offering(s)', Heb 9:28/10:6/10:8) is the identical phenomenon already logged for the Hebrew noun chattaah (H2403B, glossed 'sin' throughout its 72 occurrences here) and its dedicated cultic form H2403H (glossed exclusively 'sin offering' across all 32 occurrences) -- one Hebrew root splitting across two strong entries by sense, while the single Greek noun hamartia carries both senses itself without a second lexical entry. The same underlying ambiguity (the sin-condition and the sacrificial animal that addresses it sharing one name) surfaces differently depending on whether the source language happens to have split the root into separate lexical items.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": null
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartolos (G0268) in the Gospels overwhelmingly names the social category 'tax collectors and sinners' that Jesus deliberately associates with, and the controversy it provokes: the shared meal scenes (Matt 9:10-11/13, Mark 2:15-17, Luke 5:30/32, 7:34, 15:1-2), Jesus's programmatic self-description 'I came not to call the righteous, but sinners,' the joy-in-heaven-over-one-repentant-sinner sayings (Luke 15:7, 15:10), the sinful woman who anoints Jesus (Luke 7:37, 7:39), Zacchaeus called 'a sinner' by the crowd (Luke 19:7), the tax collector's prayer 'God, be merciful to me, a sinner' (Luke 18:13), and the healed blind man's own contested status as sinner-or-not in John's extended controversy scene (John 9:16, 9:24-25, 9:31 -- 'God does not listen to sinners').",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0268",
+        "occurrences": [
+          {
+            "verse": "Matt.9.10",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Matt.9.11",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Matt.9.13",
+            "span_surface": "sinners",
+            "span_morph": "A-APM"
+          },
+          {
+            "verse": "Mark.2.15",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Mark.2.16",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Mark.2.16",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Mark.2.17",
+            "span_surface": "sinners",
+            "span_morph": "A-APM"
+          },
+          {
+            "verse": "Luke.5.30",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Luke.5.32",
+            "span_surface": "sinners",
+            "span_morph": "A-APM"
+          },
+          {
+            "verse": "Luke.7.34",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Luke.15.1",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Luke.15.2",
+            "span_surface": "sinners",
+            "span_morph": "A-APM"
+          },
+          {
+            "verse": "Luke.15.7",
+            "span_surface": "sinner",
+            "span_morph": "A-DSM"
+          },
+          {
+            "verse": "Luke.15.10",
+            "span_surface": "sinner",
+            "span_morph": "A-DSM"
+          },
+          {
+            "verse": "Luke.7.37",
+            "span_surface": "sinner",
+            "span_morph": "A-NSF"
+          },
+          {
+            "verse": "Luke.7.39",
+            "span_surface": "sinner",
+            "span_morph": "A-NSF"
+          },
+          {
+            "verse": "Luke.19.7",
+            "span_surface": "sinner",
+            "span_morph": "A-DSM"
+          },
+          {
+            "verse": "Luke.18.13",
+            "span_surface": "sinner",
+            "span_morph": "A-DSM"
+          },
+          {
+            "verse": "John.9.16",
+            "span_surface": "sinner",
+            "span_morph": "A-NSM"
+          },
+          {
+            "verse": "John.9.24",
+            "span_surface": "sinner",
+            "span_morph": "A-NSM"
+          },
+          {
+            "verse": "John.9.25",
+            "span_surface": "sinner",
+            "span_morph": "A-NSM"
+          },
+          {
+            "verse": "John.9.31",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Luke.5.8",
+            "span_surface": "sinful",
+            "span_morph": "A-NSM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartolos as a comparative ethical baseline ('even sinners do the same,' 'even sinners love those who love them,' Luke 6:32-34 x3) or as the hostile power Jesus is handed to ('betrayed into the hands of sinners,' Matt 26:45, Mark 14:41, Luke 24:7) or mocked for associating with ('a friend of... sinners,' Matt 11:19) or invoked as a rhetorical foil ('worse sinners than all the other Galileans,' Luke 13:2) or describing the corrupted age itself ('this adulterous and sinful generation,' Mark 8:38).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0268",
+        "occurrences": [
+          {
+            "verse": "Matt.11.19",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Matt.26.45",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Mark.14.41",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Luke.6.32",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Luke.6.33",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Luke.6.34",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Luke.6.34",
+            "span_surface": "sinners",
+            "span_morph": "A-DPM"
+          },
+          {
+            "verse": "Luke.13.2",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Luke.24.7",
+            "span_surface": "sinful",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Mark.8.38",
+            "span_surface": "sinful",
+            "span_morph": "A-DSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "hamartolos in the epistles as a theological self-designation or category: 'while we were still sinners, Christ died for us' (Rom 5:8), 'the many were made sinners' through Adam's disobedience (Rom 5:19), Paul's own rhetorical self-condemnation 'why am I still being condemned as a sinner?' (Rom 3:7), 'through the commandment [sin] might become sinful beyond measure' (Rom 7:13), Jewish believers distinguishing themselves rhetorically from 'Gentile sinners' while denying the distinction matters for justification (Gal 2:15, 2:17), the law given 'for... sinners' among other categories (1Tim 1:9), Christ's mission 'to save sinners, of whom I am the foremost' (1Tim 1:15), the high priest 'separated from sinners' (Heb 7:26), enduring hostility 'from sinners' (Heb 12:3), the call to 'cleanse your hands, you sinners' (Jas 4:8), rescuing 'a sinner from his wandering' (Jas 5:20), the rhetorical question 'what will become of the ungodly and the sinner?' (1Pet 4:18), and 'ungodly sinners' who spoke against the Lord (Jude 1:15).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G0268",
+        "occurrences": [
+          {
+            "verse": "Rom.3.7",
+            "span_surface": "sinner",
+            "span_morph": "A-NSM"
+          },
+          {
+            "verse": "Rom.5.8",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Rom.5.19",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Rom.7.13",
+            "span_surface": "sinful",
+            "span_morph": "A-NSF"
+          },
+          {
+            "verse": "Gal.2.15",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "Gal.2.17",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          },
+          {
+            "verse": "1Tim.1.9",
+            "span_surface": "sinners",
+            "span_morph": "A-DPM"
+          },
+          {
+            "verse": "1Tim.1.15",
+            "span_surface": "sinners",
+            "span_morph": "A-APM"
+          },
+          {
+            "verse": "Heb.7.26",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Heb.12.3",
+            "span_surface": "sinners",
+            "span_morph": "A-GPM"
+          },
+          {
+            "verse": "Jas.4.8",
+            "span_surface": "sinners",
+            "span_morph": "A-VPM"
+          },
+          {
+            "verse": "Jas.5.20",
+            "span_surface": "sinner",
+            "span_morph": "A-ASM"
+          },
+          {
+            "verse": "1Pet.4.18",
+            "span_surface": "sinner",
+            "span_morph": "A-NSM"
+          },
+          {
+            "verse": "Jude.1.15",
+            "span_surface": "sinners",
+            "span_morph": "A-NPM"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "G7292 has zero occurrences in the base data (occurrence_count=0) and no meaning-tree entry at all -- there is no verse context and no gloss content to read, group, or check. Flagged for the same cluster_strong-membership review already opened for other zero-occurrence entries across M10 (family A H0010/H0012/H0013/H2256D/H2475, SUNDRY, family E H3943).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "G7292",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H2408 has zero occurrences in the base data (occurrence_count=0) -- the meaning-tree entry identifies it only as the Aramaic form of chet (H2399), giving no independent content of its own. Same flag as G7292 above.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2408",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "chata (H2398), 155 occurrences, splits cleanly by binyan into three distinct grammatical roles. The Qal stem (115 occurrences, the large majority) marks the subject as the one who personally sins/commits the offense -- the recurring national confession formula across Kings/Chronicles/Ezra-Nehemiah/Daniel prayers ('we have sinned,' 1Kgs 8:47, Neh 1:6, Dan 9:5/9:8/9:11/9:15, 2Chr 6:22/6:24/6:26/6:36/6:37/6:39), personal confessions (David, 2Sam 12:13/24:10, 1Chr 21:8/21:17; Saul, 1Sam 15:24/15:30/26:21; Pharaoh, Exod 10:16; Balaam, Num 22:34; Achan's exposure, Josh 7:11/7:20), prophetic accusation of Israel/Judah's sin across the historical span (Jer, Ezek, Hos, Mic, Zeph, Lam), and the wisdom/legal statements of the general principle (Prov 8:36's 'fails,' Eccl 7:20/8:12/9:18, the perjury/false-witness law of Deut 19:15, Lev 4-6's individual-offering laws).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2398",
+        "occurrences": [
+          {
+            "verse": "Prov.8.36",
+            "span_surface": "fails",
+            "span_morph": "HVqrmsc"
+          },
+          {
+            "verse": "Ezek.37.23",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Ezek.16.51",
+            "span_surface": "committed",
+            "span_morph": "HVqp3fs"
+          },
+          {
+            "verse": "Ezek.18.24",
+            "span_surface": "committed",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Jer.2.35",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "1Kgs.15.30",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "1Kgs.16.13",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Isa.1.4",
+            "span_surface": "sinful",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Num.16.22",
+            "span_surface": "sin",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Isa.64.5",
+            "span_surface": "sinned",
+            "span_morph": "HVqw1cp"
+          },
+          {
+            "verse": "Jer.50.7",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Jer.44.23",
+            "span_surface": "sinned",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "Lev.4.3",
+            "span_surface": "sins",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Ezek.3.21",
+            "span_surface": "sin",
+            "span_morph": "HVqcc"
+          },
+          {
+            "verse": "Ezek.3.21",
+            "span_surface": "sin",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Ezek.33.12",
+            "span_surface": "sins",
+            "span_morph": "HVqcc"
+          },
+          {
+            "verse": "Ezek.33.16",
+            "span_surface": "committed",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "1Sam.15.24",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Neh.6.13",
+            "span_surface": "sin",
+            "span_morph": "HVqq1cs"
+          },
+          {
+            "verse": "2Kgs.17.7",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Eccl.8.12",
+            "span_surface": "a sinner",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Jer.8.14",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Num.21.7",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "1Sam.19.4",
+            "span_surface": "sin",
+            "span_morph": "HVqj3ms"
+          },
+          {
+            "verse": "1Sam.19.4",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Jer.40.3",
+            "span_surface": "sinned",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "1Sam.15.30",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Lam.1.8",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3fs"
+          },
+          {
+            "verse": "1Sam.26.21",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Eccl.9.18",
+            "span_surface": "sinner",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Hos.4.7",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "1Sam.12.10",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "2Sam.19.20",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "2Sam.24.10",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "1Kgs.18.9",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "1Chr.21.8",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Neh.1.6",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Jer.37.18",
+            "span_surface": "done",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Dan.9.11",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Ezek.28.16",
+            "span_surface": "sinned",
+            "span_morph": "HVqw2ms"
+          },
+          {
+            "verse": "2Chr.6.26",
+            "span_surface": "sinned",
+            "span_morph": "HVqi3mp"
+          },
+          {
+            "verse": "Ezek.14.13",
+            "span_surface": "sins",
+            "span_morph": "HVqi3fs"
+          },
+          {
+            "verse": "Exod.10.16",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Exod.32.30",
+            "span_surface": "sinned",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "Exod.32.31",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Exod.32.33",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Num.12.11",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Num.14.40",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Num.22.34",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Josh.7.20",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Judg.10.10",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Judg.10.15",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "1Sam.7.6",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "1Sam.14.33",
+            "span_surface": "sinning",
+            "span_morph": "HVqrmpa"
+          },
+          {
+            "verse": "1Sam.14.34",
+            "span_surface": "sin",
+            "span_morph": "HVqi2mp"
+          },
+          {
+            "verse": "2Sam.12.13",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "1Kgs.8.47",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "2Kgs.18.14",
+            "span_surface": "done wrong",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "1Chr.21.17",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "2Chr.6.37",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Job.1.5",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Job.33.27",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "Jer.16.10",
+            "span_surface": "committed",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Neh.13.26",
+            "span_surface": "sin",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Job.7.20",
+            "span_surface": "sin",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "2Chr.6.24",
+            "span_surface": "sinned",
+            "span_morph": "HVqi3mp"
+          },
+          {
+            "verse": "Dan.9.15",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Jer.50.14",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3fs"
+          },
+          {
+            "verse": "Lev.4.22",
+            "span_surface": "sins",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Lev.4.27",
+            "span_surface": "sins",
+            "span_morph": "HVqi3fs"
+          },
+          {
+            "verse": "Lev.6.4",
+            "span_surface": "sinned",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "1Sam.2.25",
+            "span_surface": "sins",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "1Sam.2.25",
+            "span_surface": "sins",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "1Sam.19.5",
+            "span_surface": "sin",
+            "span_morph": "HVqi2ms"
+          },
+          {
+            "verse": "Ps.106.6",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Dan.9.5",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Prov.11.31",
+            "span_surface": "sinner",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Num.6.11",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Lev.5.15",
+            "span_surface": "sins",
+            "span_morph": "HVqq3fs"
+          },
+          {
+            "verse": "Lev.5.16",
+            "span_surface": "done amiss",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Mic.7.9",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cs"
+          },
+          {
+            "verse": "2Chr.6.39",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Deut.19.15",
+            "span_surface": "committed",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Hab.2.10",
+            "span_surface": "forfeited",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Josh.7.11",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Prov.13.22",
+            "span_surface": "sinner’s",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "Prov.19.2",
+            "span_surface": "way",
+            "span_morph": "HVqrmsa"
+          },
+          {
+            "verse": "1Kgs.14.16",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "2Chr.6.36",
+            "span_surface": "sin",
+            "span_morph": "HVqi3mp"
+          },
+          {
+            "verse": "2Chr.6.36",
+            "span_surface": "sin",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Job.1.22",
+            "span_surface": "sin",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Isa.42.24",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Lev.4.14",
+            "span_surface": "committed",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Lev.4.28",
+            "span_surface": "committed",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Num.32.23",
+            "span_surface": "sinned",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "Job.5.24",
+            "span_surface": "miss",
+            "span_morph": "HVqi2ms"
+          },
+          {
+            "verse": "Jer.14.20",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Deut.9.16",
+            "span_surface": "sinned",
+            "span_morph": "HVqp2mp"
+          },
+          {
+            "verse": "Zeph.1.17",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Ps.78.32",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Hos.10.9",
+            "span_surface": "sinned",
+            "span_morph": "HVqp2ms"
+          },
+          {
+            "verse": "1Kgs.16.19",
+            "span_surface": "committed",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Lev.6.2",
+            "span_surface": "sins",
+            "span_morph": "HVqi3fs"
+          },
+          {
+            "verse": "Jer.3.25",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Jer.33.8",
+            "span_surface": "sin",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Jer.33.8",
+            "span_surface": "sin",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Eccl.7.20",
+            "span_surface": "sins",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Num.15.27",
+            "span_surface": "sins",
+            "span_morph": "HVqi3fs"
+          },
+          {
+            "verse": "2Chr.6.22",
+            "span_surface": "sins",
+            "span_morph": "HVqi3ms"
+          },
+          {
+            "verse": "Job.24.19",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3cp"
+          },
+          {
+            "verse": "Job.35.6",
+            "span_surface": "sinned",
+            "span_morph": "HVqp2ms"
+          },
+          {
+            "verse": "Ps.119.11",
+            "span_surface": "sin",
+            "span_morph": "HVqi1cs"
+          },
+          {
+            "verse": "Isa.43.27",
+            "span_surface": "sinned",
+            "span_morph": "HVqp3ms"
+          },
+          {
+            "verse": "Lam.5.16",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Dan.9.8",
+            "span_surface": "sinned",
+            "span_morph": "HVqp1cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "chata's Hiphil stem (23 occurrences) marks a causative sense wholly distinct from the Qal set -- someone MAKES another sin, rather than sinning personally -- and is dominated by one fixed refrain: the Kings narrator's repeated formula for the northern kings' idolatry, '[the sin of Jeroboam] which he made Israel to sin' (1Kgs 15:26/15:30/15:34/16.2/16.13/16.19/16.26/21.22/22.52, 2Kgs 3.3/10.29/10.31/13.2/13.6/13.11/14.24/15.9/15.18/15.24/15.28/17.21, Exod 23:33's parallel warning about Canaanite gods) -- a single narrative-theological claim (institutionalized idolatry as an act done TO a nation by its king) repeated as a refrain across the entire divided-kingdom narrative, plus the offender-naming participle 'the offender' (Isa 29:21, Hiphil participle). This causative/personal-agent split by binyan is the same kind of morphology-carried valence distinction already documented for other roots across this cluster (dakha in F, pathah in K, shamad in family A).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2398",
+        "occurrences": [
+          {
+            "verse": "1Kgs.15.30",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "1Kgs.16.2",
+            "span_surface": "sin",
+            "span_morph": "HVhw2ms"
+          },
+          {
+            "verse": "1Kgs.16.13",
+            "span_surface": "sin",
+            "span_morph": "HVhp3cp"
+          },
+          {
+            "verse": "1Kgs.16.26",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "1Kgs.21.22",
+            "span_surface": "sin",
+            "span_morph": "HVhw2ms"
+          },
+          {
+            "verse": "Isa.29.21",
+            "span_surface": "offender",
+            "span_morph": "HVhrmpc"
+          },
+          {
+            "verse": "Judg.20.16",
+            "span_surface": "miss",
+            "span_morph": "HVhi3ms"
+          },
+          {
+            "verse": "Exod.23.33",
+            "span_surface": "sin",
+            "span_morph": "HVhi3mp"
+          },
+          {
+            "verse": "2Kgs.13.6",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "1Kgs.15.26",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "1Kgs.15.34",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "1Kgs.22.52",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.13.2",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.13.11",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.14.24",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.15.9",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.15.18",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.15.24",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.15.28",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.3.3",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.10.29",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.10.31",
+            "span_surface": "sin",
+            "span_morph": "HVhp3ms"
+          },
+          {
+            "verse": "2Kgs.17.21",
+            "span_surface": "made them commit",
+            "span_morph": "HVhq3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "A_destroy"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "chata's Piel stem (9 occurrences) marks a third, entirely separate sense from either Qal or Hiphil: ritual purification FROM sin (the cleansing of consecrated objects and persons), not committing or causing sin -- 'purify' the altar/priests at consecration (Exod 29:36), the sin offering used to 'cleanse' at Ezekiel's altar-dedication (Ezek 43:20, 45:18), the red-heifer purification water (Num 19:19), the leper's cleansing rite (Lev 14:52), and David's plea 'Purge me with hyssop... and I shall be clean' (Ps 51:7, the same verb rendered 'Purge'). The three-way binyan split -- Qal 'sin,' Hiphil 'cause to sin,' Piel 'purify from sin' -- covers the same root's entire semantic range through grammar alone, with no separate lexical root needed for the opposite-direction sense (removing sin) from the base sense (committing it).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2398",
+        "occurrences": [
+          {
+            "verse": "Exod.29.36",
+            "span_surface": "purify",
+            "span_morph": "HVpq2ms"
+          },
+          {
+            "verse": "2Chr.29.24",
+            "span_surface": "sin offering",
+            "span_morph": "HVpw3mp"
+          },
+          {
+            "verse": "Ezek.45.18",
+            "span_surface": "purify",
+            "span_morph": "HVpq2ms"
+          },
+          {
+            "verse": "Ezek.43.20",
+            "span_surface": "purify",
+            "span_morph": "HVpq2ms"
+          },
+          {
+            "verse": "Num.19.19",
+            "span_surface": "cleanse",
+            "span_morph": "HVpq3ms"
+          },
+          {
+            "verse": "Lev.14.52",
+            "span_surface": "cleanse",
+            "span_morph": "HVpq3ms"
+          },
+          {
+            "verse": "Ps.51.7",
+            "span_surface": "Purge",
+            "span_morph": "HVpi2ms"
+          },
+          {
+            "verse": "Ezek.43.22",
+            "span_surface": "purified",
+            "span_morph": "HVpq3cp"
+          },
+          {
+            "verse": "Ezek.43.22",
+            "span_surface": "purified",
+            "span_morph": "HVpp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "chata's remaining Hithpael/other-stem occurrences (7) mark reflexive purification -- persons purifying THEMSELVES rather than being purified by a priest's action: the Nazirite/Levite/plunder-purification rites (Num 8:21, 31:19-20, 31:23), the red-heifer-ash purification of anyone who touched a corpse (Num 19:12 x2), and Job's obscure self-description in the Leviathan poem, rendered 'beside' rather than any sin-word at all (Job 41:25) -- the outlying gloss for this strong, structurally the same kind of surface/gloss divergence already logged repeatedly elsewhere in M10.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2398",
+        "occurrences": [
+          {
+            "verse": "Job.41.25",
+            "span_surface": "beside",
+            "span_morph": "HVti3mp"
+          },
+          {
+            "verse": "Num.31.23",
+            "span_surface": "purified",
+            "span_morph": "HVti3ms"
+          },
+          {
+            "verse": "Num.8.21",
+            "span_surface": "sin",
+            "span_morph": "HVtw3mp"
+          },
+          {
+            "verse": "Num.19.12",
+            "span_surface": "cleanse",
+            "span_morph": "HVti3ms"
+          },
+          {
+            "verse": "Num.19.12",
+            "span_surface": "cleanse",
+            "span_morph": "HVti3ms"
+          },
+          {
+            "verse": "Num.31.19",
+            "span_surface": "purify",
+            "span_morph": "HVti2mp"
+          },
+          {
+            "verse": "Num.31.20",
+            "span_surface": "purify",
+            "span_morph": "HVti2mp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "chata's one nominal-morph occurrence, Exod 5:16's 'fault' (HNcfsc, Pharaoh's taskmasters blaming the Israelite foremen), uses the root as a noun rather than any verb stem -- the sole occurrence outside the Qal/Hiphil/Piel/Hithpael verb-stem split otherwise governing this strong.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2398",
+        "occurrences": [
+          {
+            "verse": "Exod.5.16",
+            "span_surface": "fault",
+            "span_morph": "HNcfsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "chet (H2399) in legal/priestly formulas about bearing the consequence of sin: cursing God (Lev 24:15), forbidden-degree incest (Lev 20:20), priestly encroachment (Num 18:22) -- all using the idiom 'bear his/their sin' (span_surface 'sin', construct forms) -- plus two occurrences rendered without any sin-word: a capital 'crime' punishable by death (Deut 21:22) and a woman's lack of 'offense' in a rape case (Deut 22:26), both still construct forms of the same noun.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2399",
+        "occurrences": [
+          {
+            "verse": "Lev.24.15",
+            "span_surface": "sin",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Lev.20.20",
+            "span_surface": "sin",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Num.18.22",
+            "span_surface": "sin",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "Deut.21.22",
+            "span_surface": "crime",
+            "span_morph": "HNcmsc"
+          },
+          {
+            "verse": "Deut.22.26",
+            "span_surface": "offense",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "chet's remaining occurrences: David's plea 'hide your face from my sins' (Ps 51:9) and the confidence 'he does not deal with us according to our sins' (Ps 103:10), the complaint about 'the punishment of his sins' (Lam 3:39, meaning-tree sense 1c 'punishment for sin' surfacing directly), Ephraim's self-justifying denial of 'iniquity or sin' (Hos 12:8), the Kings-formula cross-reference to 'the sins of Jeroboam' (2Kgs 10:29, same refrain already grouped under H2398's Hiphil), and two occurrences with no sin-word gloss at all -- 'offenses' rendered as the object that 'calmness will lay... to rest' (Eccl 10:4) and Jerusalem's 'grievously' (Lam 1:8, adverbial use of the noun intensifying the verb 'sinned').",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2399",
+        "occurrences": [
+          {
+            "verse": "Ps.103.10",
+            "span_surface": "sins",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Ps.51.9",
+            "span_surface": "sins",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Lam.3.39",
+            "span_surface": "sins",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Hos.12.8",
+            "span_surface": "sin",
+            "span_morph": "HNcmsa"
+          },
+          {
+            "verse": "2Kgs.10.29",
+            "span_surface": "sins",
+            "span_morph": "HNcmpc"
+          },
+          {
+            "verse": "Eccl.10.4",
+            "span_surface": "offenses",
+            "span_morph": "HNcmpa"
+          },
+          {
+            "verse": "Lam.1.8",
+            "span_surface": "grievously",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "chatta (H2400) names 'sinners' as a fixed social/moral category, almost entirely in Psalms/Proverbs/prophetic warning: the very first verse of the Psalter defining the righteous by NOT walking in 'the counsel of the wicked... the way of sinners' (Ps 1:1), 'do not sweep my soul away with sinners' (Ps 26:9), the prayer that sinners 'be consumed from the earth' (Ps 104:35), God instructing 'sinners in the way' (Ps 25:8 -- the one occurrence where sinners are objects of divine teaching rather than judgment), 'disaster pursues sinners' (Prov 13:21), 'the sinners in Zion are afraid' before judgment (Isa 33:14), 'all the sinners of my people shall die by the sword' (Amos 9:10), and the rebellious wilderness generation as 'a brood of sinful men' (Num 32:14).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2400",
+        "occurrences": [
+          {
+            "verse": "Ps.1.1",
+            "span_surface": "sinners",
+            "span_morph": "HAampa"
+          },
+          {
+            "verse": "Ps.25.8",
+            "span_surface": "sinners",
+            "span_morph": "HAampa"
+          },
+          {
+            "verse": "Ps.26.9",
+            "span_surface": "sinners",
+            "span_morph": "HAampa"
+          },
+          {
+            "verse": "Ps.104.35",
+            "span_surface": "sinners",
+            "span_morph": "HAampa"
+          },
+          {
+            "verse": "Prov.13.21",
+            "span_surface": "sinners",
+            "span_morph": "HAampa"
+          },
+          {
+            "verse": "Isa.33.14",
+            "span_surface": "sinners",
+            "span_morph": "HAampa"
+          },
+          {
+            "verse": "Amos.9.10",
+            "span_surface": "sinners",
+            "span_morph": "HAampc"
+          },
+          {
+            "verse": "Num.32.14",
+            "span_surface": "sinful",
+            "span_morph": "HAampa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "chatta's one outlier renders without any sin-word: Bathsheba's warning to David that she and Solomon 'will be counted offenders' if Adonijah takes the throne (1Kgs 1:21, span_surface 'counted offenders') -- a political/legal liability sense rather than a moral-religious category, though the same lexical item as the Psalms/prophetic 'sinners' above.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2400",
+        "occurrences": [
+          {
+            "verse": "1Kgs.1.21",
+            "span_surface": "counted offenders",
+            "span_morph": "HAampa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "chataah (H2401), both occurrences naming sin as something requiring atonement or covering rather than an act in progress: Moses's report to the people after the golden calf, 'you have sinned a great sin... perhaps I can make atonement for your sin' (Exod 32:30), and David's beatitude 'blessed is the one... whose sin is covered' (Ps 32:1) -- both framing sin from the far side, as something already committed and now needing resolution.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2401",
+        "occurrences": [
+          {
+            "verse": "Exod.32.30",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ps.32.1",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "H2403A, its only occurrence in Isaiah's woe-oracle against those 'who draw sin as with cart ropes' (Isa 5:18) -- sin pictured as a heavy load willingly and laboriously dragged along, paired in the same verse with 'iniquity... with cords of falsehood.'",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2403A",
+        "occurrences": [
+          {
+            "verse": "Isa.5.18",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "chattaah (H2403B), 72 occurrences, has three clear centers of gravity. First, the same Kings-narrator refrain already logged for H2398's Hiphil and H2399's cross-reference: 'the sins of Jeroboam... which he sinned and which he made Israel to sin' repeated verbatim across the northern kings' regnal formulas (1Kgs 14:16, 15:3, 15:30, 16:13, 16:19, 2Kgs 10:31, 13:2, 13:6, 13:11, 14:24, 15:9, 15:18, 15:24, 15:28, 17:22) -- a single fixed theological verdict on the dynasty, restated at every king's death notice.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2403B",
+        "occurrences": [
+          {
+            "verse": "1Kgs.15.30",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "1Kgs.16.13",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "1Kgs.14.16",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "1Kgs.15.3",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.13.6",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "1Kgs.16.19",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.13.2",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.13.11",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.14.24",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.15.9",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.15.18",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.15.24",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.15.28",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.10.31",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "2Kgs.17.22",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "Second, individual first-person confession/exposure: Jacob's denial 'what is my sin, that you have hotly pursued me?' (Gen 31:36), sin 'crouching at the door' addressed to Cain (Gen 4:7), David's confessions after Nabal (1Sam 20:1) and after Bathsheba/Uriah (2Sam 12:13), Moses's plea after the golden calf (Exod 32:30, 32:32 -- 'if you will forgive their sin... but if not, blot me out'), Pharaoh's admission 'I have sinned... forgive my sin only this once' (Exod 10:17), David's own penitential psalms (Ps 32:5 x2 'I acknowledged my sin to you,' Ps 38:3, Ps 51:2, Ps 59:12, Ps 85:2), the golden-calf-adjacent tribal apportionment dispute framed as potential sin (Num 32:23 x2, 'be sure your sin will find you out'), Moses's own confession-prayer (Deut 9:18), and Solomon's temple-dedication liturgy (2Chr 6:26).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2403B",
+        "occurrences": [
+          {
+            "verse": "1Sam.15.23",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Ps.38.3",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Gen.31.36",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Deut.9.18",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Ps.51.2",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "2Chr.6.26",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Exod.32.30",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "1Sam.20.1",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "2Sam.12.13",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Ps.32.5",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Ps.32.5",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Gen.4.7",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ps.59.12",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Num.32.23",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Ps.85.2",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Exod.10.17",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Exod.32.32",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "Third, prophetic/wisdom indictment of a nation or of humanity generally: Isaiah's woes against Judah's foreign alliances and rebellion (30:1, 58:1), 'your sins have made a separation between you and your God' (implied register, cf. Isa 27:9's atonement-oracle), the exile as punishment fully paid ('her sins... double,' Isa 40:2), Ezekiel's individual-responsibility discourse (18:14, 18:21, 21:24, 33:14, 33:16), Hosea's covenant-lawsuit oracles (4:8, 8:13, 9:9, 10:8, 13:12), Amos's indictment (5:12), Micah's own confession-on-behalf ('for the transgression of Jacob is this... and for the sins of the house of Israel,' 1:13, 3:8, 6:13), Jeremiah's temple-sermon and exile oracles (14:10, 16:10, 17:1, 30:14-15), Lamentations' funeral dirge for the fallen city (4:13), Daniel's Yom-Kippur-style national confession (9:20), and the wisdom sayings on sin's inevitability and cost (Prov 5:22, 13:6 'wicked' -- surface-divergent, 14:34, 20:9, 21:4, 24:9) plus the false-witness law (Deut 19:15, 'wrong' -- surface-divergent) and the priestly ordination/leprosy purification texts (Num 5:6) and Job's protest of innocence (14:16) and the wicked-prosper complaint (Job 14:16 -- cross-check).",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2403B",
+        "occurrences": [
+          {
+            "verse": "Prov.24.9",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezek.16.51",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ps.25.18",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ezek.18.21",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ezek.33.16",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Hos.4.8",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Isa.30.1",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.5.6",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Isa.40.2",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Dan.9.20",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Prov.21.4",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "1Sam.12.19",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Jer.30.14",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Isa.27.9",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Jer.30.15",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Prov.20.9",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Jer.14.10",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Jer.16.10",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Ezek.21.24",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ezek.33.14",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Hos.10.8",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Isa.58.1",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ps.25.7",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Prov.5.22",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Mic.3.8",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Hos.9.9",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Deut.19.15",
+            "span_surface": "wrong",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Hos.8.13",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Job.14.16",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Amos.5.12",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Ezek.18.14",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Hos.13.12",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Mic.1.13",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Chr.33.19",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Lam.4.13",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Prov.13.6",
+            "span_surface": "wicked",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Prov.14.34",
+            "span_surface": "sin",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Jer.17.1",
+            "span_surface": "sin",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Mic.6.13",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          },
+          {
+            "verse": "Isa.44.22",
+            "span_surface": "sins",
+            "span_morph": "HNcfpc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "chattah (H2403H) is the cluster's most semantically narrow strong: all 32 occurrences render 'sin offering(s)' with no exception, entirely within the Levitical/priestly sacrificial-law corpus -- the ordination and daily/festival sacrifice regulations of Exodus (29:14, 29:36, 30:10), Leviticus's individual and corporate sin-offering laws (4:21, 4:24, 5:9, 5:12, 10:19, 14:22, 14:31, 15:15, 15:30), the Nazirite and Levite-consecration offerings and the festival-calendar offerings of Numbers (6:14, 8:12, 19:9, 28:22, 29:5/11/16/19/22/25/28/31/34/38 -- nine occurrences alone in Numbers 29's festival calendar), the post-exilic restoration sacrifices (2Chr 29:21, Ezra 8:35, 2Kgs 12:16), and Ezekiel's future-temple sacrificial instructions (43:25, 44:27, 45:22). Unlike H2403B (same root, glossed 'sin' throughout) or hamartia in Hebrews (which carries both senses in the one Greek word), this strong entry exists specifically to carry only the cultic-object sense -- a lexical split of the same underlying root by function, not usage-driven the way most surface-gloss divergences elsewhere in this cluster are.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2403H",
+        "occurrences": [
+          {
+            "verse": "Exod.29.36",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Lev.10.19",
+            "span_surface": "offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Chr.29.21",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Exod.30.10",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Lev.15.30",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.19.9",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Lev.14.22",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "2Kgs.12.16",
+            "span_surface": "sin offerings",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Lev.14.31",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Lev.15.15",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.8.12",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.28.22",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.5",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezek.44.27",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Lev.5.9",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Lev.5.12",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.6.14",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Lev.4.24",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezra.8.35",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Exod.29.14",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Lev.4.21",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Num.29.11",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.16",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.19",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.22",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.25",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.28",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.31",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.34",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Num.29.38",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezek.43.25",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          },
+          {
+            "verse": "Ezek.45.22",
+            "span_surface": "sin offering",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "H2403I, glossed 'sin: punishment' in the meaning tree, renders as 'punishment' in two occurrences (the chastisement of Jerusalem exceeding Sodom's, Lam 4:6; the punishment decreed for nations that skip the Feast of Booths, Zech 14:19) and as 'purification' in the third (the Levites' consecration rite, Num 8:7) -- the same strong spanning punishment-for-sin and ritual-purification-from-sin as its only two attested senses, with no occurrence actually glossed 'sin' itself despite that being the strong's own headword gloss.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": "H2403I",
+        "occurrences": [
+          {
+            "verse": "Lam.4.6",
+            "span_surface": "punishment",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Zech.14.19",
+            "span_surface": "punishment",
+            "span_morph": "HNcfsc"
+          },
+          {
+            "verse": "Num.8.7",
+            "span_surface": "purification",
+            "span_morph": "HNcfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "B_sin is the cluster's largest family (550 raw occurrences, 14 strongs) and its dominant register -- confession, atonement, forgiveness, sacrificial remedy -- is structurally closer to H_guilt's self-recognition pattern than to A_destroy's or F_violence_wound's externally-directed judgment vocabulary. The recurring Kings-narrator formula ('the sins of Jeroboam... which he made Israel to sin,' spanning H2398's Hiphil, H2399, and H2403B alike) is this family's own clearest case of a fixed theological refrain repeated verbatim across a historical narrative, comparable to family A_destroy's Deuteronomy 28 covenant-curse refrain and family G_transgression's H6588/pesha material -- worth comparing directly once the findings-table structure can hold cross-family refrain patterns as a queryable category.",
+      "traces": {
+        "cluster": "M10",
+        "family": "B_sin",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "H_guilt"
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G0264",
+      "occurrence_count": 36,
+      "traced_count": 36,
+      "missing_verses": []
+    },
+    {
+      "strong": "G0265",
+      "occurrence_count": 4,
+      "traced_count": 4,
+      "missing_verses": []
+    },
+    {
+      "strong": "G0266",
+      "occurrence_count": 149,
+      "traced_count": 149,
+      "missing_verses": []
+    },
+    {
+      "strong": "G0268",
+      "occurrence_count": 45,
+      "traced_count": 45,
+      "missing_verses": []
+    },
+    {
+      "strong": "G7292",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2398",
+      "occurrence_count": 146,
+      "traced_count": 146,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2399",
+      "occurrence_count": 12,
+      "traced_count": 12,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2400",
+      "occurrence_count": 9,
+      "traced_count": 9,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2401",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2403A",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2403B",
+      "occurrence_count": 71,
+      "traced_count": 71,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2403H",
+      "occurrence_count": 32,
+      "traced_count": 32,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2403I",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2408",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    }
+  ]
+}

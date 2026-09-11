@@ -1,0 +1,860 @@
+{
+  "cluster_code": "M10",
+  "family_id": "E_corruption_perversion",
+  "process": "1682-cluster-reading-process-c",
+  "spec_round": 2,
+  "strongs_in_family": [
+    "G1294",
+    "G5356",
+    "G6882",
+    "G7946",
+    "H0444",
+    "H2017",
+    "H3891",
+    "H3943",
+    "H4297",
+    "H4893B",
+    "H5557",
+    "H5753A",
+    "H5753B",
+    "H5791",
+    "H6127",
+    "H6140",
+    "H6617",
+    "H7844",
+    "H8308",
+    "H8397",
+    "H8419"
+  ],
+  "observations": [
+    {
+      "tag": "difference-inference",
+      "statement": "diastrephō (G1294) shows a settled-state-vs-active-verb split by morph: perfect passive participles ('twisted,' 'crooked and twisted') name a fixed condition of a whole generation or a body of teaching (Matt 17:17, Luke 9:41, Phil 2:15, Acts 20:30's 'twisted things'), while present active participles and an aorist infinitive name the ongoing or attempted act of corrupting someone else (Luke 23:2's 'misleading,' Acts 13:10's 'making crooked the straight paths,' Acts 13:8's 'seeking to turn the proconsul away').",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "G1294",
+        "occurrences": [
+          {
+            "verse": "Matt.17.17",
+            "span_surface": "twisted",
+            "span_morph": "V-RPP-VSF"
+          },
+          {
+            "verse": "Luke.9.41",
+            "span_surface": "twisted",
+            "span_morph": "V-RPP-VSF"
+          },
+          {
+            "verse": "Phil.2.15",
+            "span_surface": "twisted",
+            "span_morph": "V-RPP-GSF"
+          },
+          {
+            "verse": "Acts.20.30",
+            "span_surface": "twisted things",
+            "span_morph": "V-RPP-APN"
+          },
+          {
+            "verse": "Luke.23.2",
+            "span_surface": "misleading",
+            "span_morph": "V-PAP-ASM"
+          },
+          {
+            "verse": "Acts.13.10",
+            "span_surface": "making crooked",
+            "span_morph": "V-PAP-NSM"
+          },
+          {
+            "verse": "Acts.13.8",
+            "span_surface": "away",
+            "span_morph": "V-AAN"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "phthora (G5356) spans two genuinely different registers with no lexical marker distinguishing them: ordinary biological perishability applied to the resurrection body ('what is sown is perishable,' 1 Cor 15:42, 15:50; 'things that all perish as they are used,' Col 2:22; creation's own 'bondage to corruption,' Rom 8:21 -- none of these are moral), and explicit moral depravity ('the corruption that is in the world because of sinful desire,' 2 Pet 1:4; 'slaves of corruption,' 2 Pet 2:19; reaping corruption from sowing to the flesh, Gal 6:8). The word covers mortality-in-general and moral-rot-specifically as one lexeme.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "G5356",
+        "occurrences": [
+          {
+            "verse": "Rom.8.21",
+            "span_surface": "corruption",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "1Cor.15.42",
+            "span_surface": "perishable",
+            "span_morph": "N-DSF"
+          },
+          {
+            "verse": "1Cor.15.50",
+            "span_surface": "perishable",
+            "span_morph": "N-NSF"
+          },
+          {
+            "verse": "Col.2.22",
+            "span_surface": "perish",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "2Pet.1.4",
+            "span_surface": "corruption",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "2Pet.2.19",
+            "span_surface": "corruption",
+            "span_morph": "N-GSF"
+          },
+          {
+            "verse": "Gal.6.8",
+            "span_surface": "corruption",
+            "span_morph": "N-ASF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "phthora at 2 Pet 2:12 uses the same root twice in one verse -- false teachers 'will also be destroyed in their destruction' -- a deliberate wordplay (their own corrupting influence becomes the instrument of their own ruin) rather than redundancy.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "G5356",
+        "occurrences": [
+          {
+            "verse": "2Pet.2.12",
+            "span_surface": "destroyed",
+            "span_morph": "N-ASF"
+          },
+          {
+            "verse": "2Pet.2.12",
+            "span_surface": "destruction",
+            "span_morph": "N-DSF"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "A_destroy"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "G6882 (diastrophē, 'perverseness') and G7946 (kataphthora, 'corruption') both have zero occurrences and empty meaning blocks. Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "G6882",
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "G6882 and G7946 are included in cluster_strong for M10 but have no live span occurrences anywhere in the base data. Flagged for the spine/integrity process as a batch with H3891, H4893B, H8397 below.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "alach (H0444) exclusively Niphal in all three occurrences -- 'become corrupt' (Ps 14:3, Ps 53:3, identical wording) and 'one who is abominable and corrupt' (Job 15:16) -- matching its own meaning block's exclusive definition '(Niphal) to be corrupt morally': this root's moral-corruption sense is grammatically only ever something a person BECOMES or IS, never an act performed on another.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H0444",
+        "occurrences": [
+          {
+            "verse": "Job.15.16",
+            "span_surface": "corrupt",
+            "span_morph": "HVNrmsa"
+          },
+          {
+            "verse": "Ps.14.3",
+            "span_surface": "become",
+            "span_morph": "HVNp3cp"
+          },
+          {
+            "verse": "Ps.53.3",
+            "span_surface": "become corrupt",
+            "span_morph": "HVNp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "hophekh (H2017) in its one occurrence -- 'you turn things upside down!' addressed to those who invert the potter/clay relationship (Isa 29:16) -- a rhetorical accusation of inverting a fixed created order, not a general moral-perversity statement.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H2017",
+        "occurrences": [
+          {
+            "verse": "Isa.29.16",
+            "span_surface": "upside down",
+            "span_morph": "HNcmsc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H3891 (lazut, 'perversity, deviation, crookedness') has zero occurrences in the live span/verse data. Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H3891",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "laphat (H3943) in all three occurrences is literal physical grasping or turning with no moral content: caravans literally 'turn aside' and get lost (Job 6:18), Ruth 'turned over' in sleep (Ruth 3:8), Samson 'grasped' the temple pillars (Judg 16:29).",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H3943",
+        "occurrences": [
+          {
+            "verse": "Job.6.18",
+            "span_surface": "turn aside",
+            "span_morph": "HVNi3mp"
+          },
+          {
+            "verse": "Ruth.3.8",
+            "span_surface": "turned over",
+            "span_morph": "HVNw3ms"
+          },
+          {
+            "verse": "Judg.16.29",
+            "span_surface": "grasped",
+            "span_morph": "HVqw3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "data-error",
+      "statement": "laphat (H3943)'s three occurrences are all literal physical grasping/turning with zero moral content -- the same gloss-homonym pattern already found and moved to SUNDRY for chul (H2342J/K) and shazar (H7806): this strong was pulled into the 'twist/perversion' family purely on an English gloss match ('to twist'), not on attested moral usage. Flagged as a cluster_strong membership question, not resolved here -- on the verse evidence, this strong belongs with SUNDRY's off-topic-but-real-meaning group, not this family.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H3943",
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "SUNDRY"
+      }
+    },
+    {
+      "tag": "surface-gloss-divergence",
+      "statement": "mutteh (H4297)'s one occurrence renders as 'injustice,' not 'perversion' -- 'the city full of injustice' (Ezek 9:9) -- grouped there with family D's injustice vocabulary in the English surface even though this is a separately-catalogued strong.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H4297",
+        "occurrences": [
+          {
+            "verse": "Ezek.9.9",
+            "span_surface": "injustice",
+            "span_morph": "HNcmsa"
+          }
+        ],
+        "meaning_source": null,
+        "related_family": "D_crime_injustice"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H4893B (mashechat, 'corruption (ritual)') has zero occurrences in the live span/verse data. Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H4893B",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "salaph (H5557) as active, agentive perversion/overthrow -- explicitly of bribery in its own meaning block, and the verses bear it out directly: 'a bribe... subverts the cause of those who are in the right' (Exod 23:8), 'you shall not pervert justice... a bribe subverts the cause of the righteous' (Deut 16:19), plus God's own overturning of the wicked/mighty as a distinct sense of the same root (Prov 21:12, Job 12:19, Prov 22:12's 'overthrows the words of the traitor,' Prov 13:6/19:3's sin/folly bringing a person to ruin).",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H5557",
+        "occurrences": [
+          {
+            "verse": "Exod.23.8",
+            "span_surface": "subverts",
+            "span_morph": "HVpu3ms"
+          },
+          {
+            "verse": "Deut.16.19",
+            "span_surface": "subverts",
+            "span_morph": "HVpu3ms"
+          },
+          {
+            "verse": "Prov.21.12",
+            "span_surface": "throws",
+            "span_morph": "HVprmsa"
+          },
+          {
+            "verse": "Job.12.19",
+            "span_surface": "overthrows",
+            "span_morph": "HVpi3ms"
+          },
+          {
+            "verse": "Prov.22.12",
+            "span_surface": "overthrows",
+            "span_morph": "HVpw3ms"
+          },
+          {
+            "verse": "Prov.13.6",
+            "span_surface": "overthrows",
+            "span_morph": "HVpi3fs"
+          },
+          {
+            "verse": "Prov.19.3",
+            "span_surface": "ruin",
+            "span_morph": "HVpi3fs"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "D_crime_injustice"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "avah (H5753A) splits by stem into a physical-anguish sense (Niphal 'bowed down'/'twisted mind,' Isa 21:3, Ps 38:6, Prov 12:8 -- describing physical or mental bending under distress or folly, not moral wrongdoing) and a moral-confession sense (Hiphil 'perverted their way,' Job 33:27, Jer 3:21 -- explicit self-indictment of having done wrong).",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H5753A",
+        "occurrences": [
+          {
+            "verse": "Isa.21.3",
+            "span_surface": "bowed down",
+            "span_morph": "HVNp1cs"
+          },
+          {
+            "verse": "Ps.38.6",
+            "span_surface": "bowed",
+            "span_morph": "HVNp1cs"
+          },
+          {
+            "verse": "Prov.12.8",
+            "span_surface": "twisted",
+            "span_morph": "HVNrmsc"
+          },
+          {
+            "verse": "Job.33.27",
+            "span_surface": "perverted",
+            "span_morph": "HVhp1cs"
+          },
+          {
+            "verse": "Jer.3.21",
+            "span_surface": "perverted",
+            "span_morph": "HVhp3cp"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avah (H5753B, same root as H5753A, split by the cataloguer's sense-assignment not by the text) overwhelmingly in the fixed confession formula 'we have sinned and acted perversely and wickedly' (1 Kgs 8:47, 2 Chr 6:37 identical wording; Ps 106:6's 'committed iniquity... done wickedness'; Dan 9:5's expanded version), all Hiphil -- a liturgical/confessional set phrase, not independent descriptions.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H5753B",
+        "occurrences": [
+          {
+            "verse": "1Kgs.8.47",
+            "span_surface": "acted perversely",
+            "span_morph": "HVhp1cp"
+          },
+          {
+            "verse": "2Chr.6.37",
+            "span_surface": "acted perversely",
+            "span_morph": "HVhp1cp"
+          },
+          {
+            "verse": "Ps.106.6",
+            "span_surface": "committed iniquity",
+            "span_morph": "HVhp1cp"
+          },
+          {
+            "verse": "Dan.9.5",
+            "span_surface": "wrong",
+            "span_morph": "HVqp1cp"
+          },
+          {
+            "verse": "Jer.9.5",
+            "span_surface": "committing iniquity",
+            "span_morph": "HVhaa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "avah (H5753B) as a Niphal person-descriptor -- Saul's insult 'son of a perverse, rebellious woman' (1 Sam 20:30) -- naming Jonathan's mother by a fixed derogatory character trait, and 2 Sam 19:19's Hiphil 'did wrong' as a specific act a servant seeks pardon for.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H5753B",
+        "occurrences": [
+          {
+            "verse": "1Sam.20.30",
+            "span_surface": "perverse",
+            "span_morph": "HVNrfsc"
+          },
+          {
+            "verse": "2Sam.19.19",
+            "span_surface": "wrong",
+            "span_morph": "HVhp3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "avat (H5791) as active Piel perversion of justice specifically, framed as a rhetorical question denying it of God -- 'will the Almighty pervert justice?' (Job 8:3, occurring twice in the same verse for 'justice' and 'the right'), 'the Almighty will not pervert justice' (Job 34:12), and God's own positive practice named the same way in reverse ('he brings the way of the wicked to ruin,' Ps 146:9) -- plus the explicit denial 'to subvert a man in his lawsuit, the LORD does not approve' (Lam 3:36).",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H5791",
+        "occurrences": [
+          {
+            "verse": "Job.8.3",
+            "span_surface": "pervert",
+            "span_morph": "HVpi3ms"
+          },
+          {
+            "verse": "Job.8.3",
+            "span_surface": "pervert",
+            "span_morph": "HVpi3ms"
+          },
+          {
+            "verse": "Job.34.12",
+            "span_surface": "pervert",
+            "span_morph": "HVpi3ms"
+          },
+          {
+            "verse": "Ps.146.9",
+            "span_surface": "ruin",
+            "span_morph": "HVpi3ms"
+          },
+          {
+            "verse": "Lam.3.36",
+            "span_surface": "subvert",
+            "span_morph": "HVpcc"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "avat at Job 19:6 -- 'God has put me in the wrong' -- Job's own accusation that God himself has perverted Job's case, the sharpest use of this root in the whole family: the sufferer accusing the deity of the very injustice the strong elsewhere insists God would never commit (contrast Job 34:12/8:3 above, from other speakers in the same book).",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H5791",
+        "occurrences": [
+          {
+            "verse": "Job.19.6",
+            "span_surface": "wrong",
+            "span_morph": "HVpp3ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "avat's remaining occurrences are non-moral or generically figurative: Ps 119:78's 'they have wronged me with falsehood' (Piel, an interpersonal complaint), Eccl 12:3's Pual 'the strong men are bent' (literal aging bodies, no moral content) and Eccl 1:15's Pual participle 'what is crooked cannot be made straight' (a philosophical generalization about the world's fixed limits, the closest thing in this family to a direct proverb-form statement of the crooked/straight figure).",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H5791",
+        "occurrences": [
+          {
+            "verse": "Ps.119.78",
+            "span_surface": "wronged",
+            "span_morph": "HVpp3cp"
+          },
+          {
+            "verse": "Eccl.12.3",
+            "span_surface": "bent",
+            "span_morph": "HVtq3cp"
+          },
+          {
+            "verse": "Eccl.1.15",
+            "span_surface": "crooked",
+            "span_morph": "HVPsmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "aqal (H6127) in its one occurrence -- 'justice goes forth perverted' (Hab 1:4, Pual, passive) -- explicitly paired in the same verse with law being 'paralyzed' and 'the wicked surround the righteous,' naming a systemic breakdown of the justice system rather than one person's act.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H6127",
+        "occurrences": [
+          {
+            "verse": "Hab.1.4",
+            "span_surface": "perverted",
+            "span_morph": "HVPsmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "D_crime_injustice"
+      }
+    },
+    {
+      "tag": "difference-inference",
+      "statement": "aqash (H6140) splits cleanly by stem into three roles: Piel active-corrupting ('make crooked all that is straight,' Mic 3:9, of corrupt rulers), Qal-participle self-descriptive identity ('he who makes his ways crooked,' Prov 10:9, an active but self-directed sense), and Niphal passive state ('he who is crooked in his ways,' Prov 28:18, a settled condition rather than an act).",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H6140",
+        "occurrences": [
+          {
+            "verse": "Mic.3.9",
+            "span_surface": "make crooked",
+            "span_morph": "HVpi3mp"
+          },
+          {
+            "verse": "Prov.10.9",
+            "span_surface": "crooked",
+            "span_morph": "HVprmsa"
+          },
+          {
+            "verse": "Prov.28.18",
+            "span_surface": "crooked",
+            "span_morph": "HVNrmsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "patal (H6617) shows a genuinely literal 'twist' core (Niphal 'wrestled,' Gen 30:8's Rachel-and-Leah rivalry naming) alongside a person-identity sense ('the wily,' Job 5:13's Niphal participle for scheming people) and a distinct reciprocal-justice idiom in Hithpael, applied to God himself: 'with the crooked you make yourself seem tortuous' (2 Sam 22:27, Ps 18:26 identical wording) -- God matching a person's own moral posture back to them, not perverting justice himself.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H6617",
+        "occurrences": [
+          {
+            "verse": "Gen.30.8",
+            "span_surface": "wrestled",
+            "span_morph": "HVNp1cs"
+          },
+          {
+            "verse": "Job.5.13",
+            "span_surface": "wily",
+            "span_morph": "HVNrmpa"
+          },
+          {
+            "verse": "2Sam.22.27",
+            "span_surface": "seem tortuous",
+            "span_morph": "HVti2ms"
+          },
+          {
+            "verse": "Ps.18.26",
+            "span_surface": "tortuous",
+            "span_morph": "HVti2ms"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "shechat (H7844, Aramaic) at Dan 2:9 describes the Chaldean wise men's own 'lying and corrupt words' -- deceptive speech under threat of death -- while its two occurrences at Dan 6:4 describe the deliberate SEARCH for fault in Daniel that finds none ('no ground for complaint or any fault... no error or fault was found in him') -- the same word naming both corrupt speech by the guilty and the explicit absence of fault in the innocent, within the same book.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H7844",
+        "occurrences": [
+          {
+            "verse": "Dan.2.9",
+            "span_surface": "corrupt",
+            "span_morph": "AVQrfsa"
+          },
+          {
+            "verse": "Dan.6.4",
+            "span_surface": "fault",
+            "span_morph": "AVQrfsa"
+          },
+          {
+            "verse": "Dan.6.4",
+            "span_surface": "fault",
+            "span_morph": "AVQrfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "sarakh (H8308) in its one occurrence -- Jeremiah's image of Israel as 'a restless young camel running here and there' (Jer 2:23) -- a literal-animal-behavior metaphor for aimless, undisciplined movement, applied to describe unfaithfulness without using any direct moral-perversion vocabulary in the immediate clause itself.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H8308",
+        "occurrences": [
+          {
+            "verse": "Jer.2.23",
+            "span_surface": "running",
+            "span_morph": "HVprfsa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "no-human-context",
+      "statement": "H8397 (tevel, 'confusion/perversion in sexual sin') has zero occurrences in the live span/verse data. Earmarked; no further analysis possible.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H8397",
+        "occurrences": [],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "verse-grouping",
+      "statement": "tahpukhah (H8419) applied specifically to SPEECH in 6 of its 9 occurrences -- 'perverted speech' (Prov 8:13, 2:12), 'a perverse tongue'/'the mouth of the wicked, what is perverse' (Prov 10:31, 10:32), 'perverted heart devises evil' (Prov 6:14), and dishonest scheming signaled by body language ('winks his eyes... purses his lips,' Prov 16:28, 16:30) -- this root's dominant register is corrupted communication specifically, not action in general.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H8419",
+        "occurrences": [
+          {
+            "verse": "Prov.8.13",
+            "span_surface": "perverted",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Prov.2.12",
+            "span_surface": "perverted",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Prov.10.31",
+            "span_surface": "perverse",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Prov.10.32",
+            "span_surface": "perverse",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Prov.6.14",
+            "span_surface": "perverted",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Prov.16.28",
+            "span_surface": "dishonest",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Prov.16.30",
+            "span_surface": "dishonest things",
+            "span_morph": "HNcfpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree",
+        "related_family": "I_strife"
+      }
+    },
+    {
+      "tag": "instance-meaning",
+      "statement": "tahpukhah's remaining occurrences apply it to a whole collective identity rather than speech -- 'a perverse generation, children in whom is no faithfulness' (Deut 32:20) and general 'strange things' the eyes will see under drunkenness (Prov 23:33) -- both distinct from the speech-focused majority above.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": "H8419",
+        "occurrences": [
+          {
+            "verse": "Deut.32.20",
+            "span_surface": "perverse",
+            "span_morph": "HNcfpa"
+          },
+          {
+            "verse": "Prov.23.33",
+            "span_surface": "perverse things",
+            "span_morph": "HNcfpa"
+          }
+        ],
+        "meaning_source": "strong_meaning_tree"
+      }
+    },
+    {
+      "tag": "cross-family",
+      "statement": "This family's genuine literal crooked/bent-body metaphor for moral perversion (already the #1680 finding) is now confirmed with morph evidence to be systematically stem-marked in Hebrew: Niphal/Pual passive-bent forms tend toward physical or settled-state senses, Piel/Hiphil active forms toward the act of perverting/corrupting another or oneself. Combined with family F's identical Niphal-contrite/Piel-destructive split for dakha, this is now a second root-family showing the same stem-marked valence pattern -- worth checking whether this is a general feature of Hebrew Piel/Niphal alternation this whole cluster's method should routinely check for, not a coincidence local to two roots.",
+      "traces": {
+        "cluster": "M10",
+        "family": "E_corruption_perversion",
+        "strong": null,
+        "occurrences": [],
+        "meaning_source": null,
+        "related_family": "F_violence_wound"
+      }
+    }
+  ],
+  "strong_checks": [
+    {
+      "strong": "G1294",
+      "occurrence_count": 7,
+      "traced_count": 7,
+      "missing_verses": []
+    },
+    {
+      "strong": "G5356",
+      "occurrence_count": 8,
+      "traced_count": 8,
+      "missing_verses": []
+    },
+    {
+      "strong": "G6882",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "G7946",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H0444",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "H2017",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H3891",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H3943",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4297",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H4893B",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5557",
+      "occurrence_count": 7,
+      "traced_count": 7,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5753A",
+      "occurrence_count": 5,
+      "traced_count": 5,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5753B",
+      "occurrence_count": 7,
+      "traced_count": 7,
+      "missing_verses": []
+    },
+    {
+      "strong": "H5791",
+      "occurrence_count": 8,
+      "traced_count": 8,
+      "missing_verses": []
+    },
+    {
+      "strong": "H6127",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H6140",
+      "occurrence_count": 3,
+      "traced_count": 3,
+      "missing_verses": []
+    },
+    {
+      "strong": "H6617",
+      "occurrence_count": 4,
+      "traced_count": 4,
+      "missing_verses": []
+    },
+    {
+      "strong": "H7844",
+      "occurrence_count": 2,
+      "traced_count": 2,
+      "missing_verses": []
+    },
+    {
+      "strong": "H8308",
+      "occurrence_count": 1,
+      "traced_count": 1,
+      "missing_verses": []
+    },
+    {
+      "strong": "H8397",
+      "occurrence_count": 0,
+      "traced_count": 0,
+      "missing_verses": []
+    },
+    {
+      "strong": "H8419",
+      "occurrence_count": 9,
+      "traced_count": 9,
+      "missing_verses": []
+    }
+  ]
+}
