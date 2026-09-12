@@ -24,3 +24,11 @@ where mt.strong_variant= 'G3551';
 
 select * from vw_strong_meaning_raw vw
 where vw.strong = 'G3551';
+
+
+select cs.strong,s.stepGloss from cluster_strong cs
+inner join strong s
+on cs.strong = s.strongNumber   
+where cs.cluster_code = 'M10'
+group by cs.strong;
+

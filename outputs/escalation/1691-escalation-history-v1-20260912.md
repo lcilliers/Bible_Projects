@@ -1,0 +1,15 @@
+# Escalation deep history
+
+## #1691 — Design: cluster-reading observation table
+type=task source=researcher
+
+**v1** (2026-09-12T04:19:10Z, Claude) state=raised next_action=review assigned_to=Researcher
+> **short description (set this version):** Design: cluster-reading observation table
+> **comment (set this version):** Split out of #1682 (iba/docs/1682-cluster-reading-data-model-v1-20260911.md §2) for focused design. Open questions specific to observation: (1) is one table with many stage-specific nullable columns (question_code/slant_label/status/supersedes_observation_id/stable_key/revisit_note) the right long-term shape, or does it get unwieldy as more stages/kinds are added later? (2) (c)/(d) rows are meant to be EDITED in place when broadened by new evidence, but (e) rows are meant to be APPEND-ONLY (never UPDATEd, only superseded) -- two different write disciplines on one table is a real risk (an accidental UPDATE to a synthesis row silently breaks the non-destructive-revision guarantee); does this need a trigger/constraint enforcing it, not just convention? (3) should an edit to observation.statement itself be tracked (an editable narrative with no history could silently lose earlier phrasing that a later reader might have wanted to see)? (4) is the kind/tag taxonomy a closed, governed enum (cfg_enum-shaped) or freely extensible per family read?
+> **context (set this version):** Parent: escalation #1682. Data model doc: iba/docs/1682-cluster-reading-data-model-v1-20260911.md.
+
+**v2** (2026-09-12T06:16:24Z, Claude) state=in-progress next_action=review assigned_to=Researcher
+> **comment (set this version):** Naming corrected per your response: cluster_reading_observation -> IB_obs (pending confirmation this is a complete name, not a prefix needing a further suffix); kind -> tag; span_surface/span_morph -> surface/morph_code (matching the source columns exactly, no prefix needed since there's no naming conflict in this table). New design requirement added, not just a naming pick: does this study need a permanent numbering scheme -- one id per generated JSON run, one id per observation within it -- specified in the generation SCRIPT itself, named distinctly from any reference outside the JSON? Your own framing: is synthesis_id vs stable_key just a prototyping artifact, or a real identity architecture question. Grounded explanations for stage/slant_label/statement/status/revisit_note/seq (with real examples) now in iba/docs/1682-cluster-reading-data-model-v1-20260911.md §4, per your request for more information before judging those names.
+
+**v3** (2026-09-12T07:50:00Z, Claude) state=in-progress next_action=review assigned_to=Researcher
+> **comment (set this version):** Two more columns renamed per your decision: slant_label -> window (matches the project's existing Window 1/Window 2 vocabulary directly); statement -> obs_text. stage/status/revisit_note/seq confirmed as-is. Full grounded explanations updated in iba/docs/1682-cluster-reading-data-model-v1-20260911.md §4.

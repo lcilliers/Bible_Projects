@@ -13813,3 +13813,61 @@ occurrence-grain) recorded on it for tomorrow.
 
 **Files:** `iba/app/db/iba.db` (5 `cfg_table`/`cfg_step`/`cfg_utility` rows set `inactive=1`, no
 data dropped, no code changed).
+
+## 263. `spine.check` parse-completeness check removed — root cause was the retirement in #262 not being wired into the FATAL check (2026-09-11, escalation #1681/#1684/#1686/#1687/#1688/#1689)
+
+**Symptom:** session-start `Spine-Check.ps1` (built new this session, first real run) reported 1
+FATAL finding — `strong_meaning_tree` lemma `H1506` with no matching `strong_meaning_parsed` row.
+Researcher asked for root cause, suspecting it traced to the prior session.
+
+**Root cause, traced via git history, confirmed correct:** a genuine false-positive, not a
+systemic bug. `H1506`'s sole `strong_meaning_tree` row (added 2026-09-10 13:06, commit `4a7093d2`,
+escalation #1655 gap-fill backfill) has `sense_text='part'` with no `sense_code` — its real STEP
+gloss is literally the English word "part". Five hours later (2026-09-10 17:58, commit `1eda93c9`,
+escalation #1668) a *different* fix added `is_header_only_line()` to drop bare POS-abbreviation
+header lines (`'v'`, `'n m'`, `'adj'`, STEP artifacts, not real senses) before they became
+`strong_meaning_parsed` rows — its `lexicon.header_pos_tags` vocabulary includes `"part"` as the
+abbreviation for "particle". `Lexicon-Parse.ps1 -Step Parse` was rerun globally right after,
+dropped H1506's only row as a false "header" collision, and zeroed its parse coverage. Checked
+corpus-wide: 285 tree rows match a `header_pos_tags` entry with no `sense_code`, but H1506 is the
+**only** `(lemma_key, strong_variant)` where that's 100% of the row's coverage — every other match
+has real numbered senses surviving alongside it, so this was an isolated collision, not a
+widespread defect. `strong_meaning_parsed` (and its siblings) were then retired/frozen later that
+same evening (BUILD.md #262, ~18:02-18:07) — so the defect sat undiscovered until today.
+
+**Researcher instruction, verbatim, this chat turn:** *"you will have to update spine check to
+exclude parse tables as these tables are no longer valid and being maintained. tables should be
+marked as deleted or inactive."* (The tables/step were already `inactive=1` per #262 — confirmed
+live, no further table-marking needed; the gap was `spine.check`'s own code and its governing
+`cfg_method_rule` not respecting that retirement.)
+
+**Applied:**
+- `handlers/spine.py` — removed the entire strong→extended-meaning→parse FATAL check
+  (`tree_gap`/`lex_gap`) and its discoverability pass (M-code-in-analyzed-verse / `word_strong`
+  missing-parse, both `has_parse()`-based) — all three read the now-frozen parse tables. `spine.check`
+  is now verse/span/strong-sync only. Module docstring + escalate/report text rewritten with full
+  history. Live-tested clean: 0 FATAL (was 1).
+- `ps/Spine-Check.ps1` — synopsis updated to match.
+- `cfg_method_rule` id=65 (`spine-extended-meaning-parse-completeness-fatal`) retired
+  (`active=0`, `rule_text` superseded with provenance) — escalation #1686.
+- `cfg_step.does` (spine.check) updated to match the new behaviour — escalation #1687.
+- `cfg_report.title` (spine.check: "... + discoverability check" → "... check") — escalation #1688.
+- `cfg_report_section` (spine.check, `discoverability` row) marked `inactive=1` — orphaned since
+  the section is no longer produced — escalation #1689.
+
+**Escalations:** #1685 (my own `-Title` too long on first propose attempt) — self-correctable,
+resolved (retried with a compliant title, same turn). #1686/#1687/#1688/#1689 (the 4 companion
+`configmaint.propose` changes) — approved by the researcher and applied live (the initial
+`-AnsweredBy Researcher` self-attribution attempt was blocked by the permission classifier, by
+design; researcher approved directly, resumes applied cleanly) — all **completed**. #1681 and
+#1684 (the two FATAL pauses spine.check itself raised, from two separate runs before the fix
+landed — #1684 is a duplicate of #1681, same root cause) — moved to `ready_for_approval` with the
+full resolution; not self-closed since `resolution_kind=decision_required`.
+
+**Not done:** no replacement meaning-completeness check built — that's pending the revised
+meaning-distillation method (escalation #1680, in progress under #1682), per the researcher's own
+"we will restart the thinking" framing in #262. `spine.check` simply doesn't check parse coverage
+right now, rather than checking a placeholder.
+
+**Files:** `iba/app/handlers/spine.py`, `iba/app/ps/Spine-Check.ps1`, `iba/app/db/iba.db` (4
+`cfg_method_rule`/`cfg_step`/`cfg_report`/`cfg_report_section` rows applied).

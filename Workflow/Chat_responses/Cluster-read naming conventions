@@ -1,0 +1,8 @@
+referenced:  1682 
+Cluster Reading — data model proposal (escalation #1682, follow-on)
+
+§7 Naming inventory
+
+'cluster_reading' is too long as prefix for the tables.  cluster is only part of the collection, not the collection. reading is only part of the operation, not the only operation.  The entire operation is about inner being observations and the end result is the a collection of all the findings. IB_obs as a prefix for the tables would be preferred.
+
+'trace' - is this the right word?  it is not a pure index - because this would imply it is a FK connector, which is only partly true. it is like the footprint of each observation and its entire existance is to be a node, a point of connection in the spiderweb of related strings.  each node map to other nodes directly or indirectly through the string attachments.  each 

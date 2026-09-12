@@ -1,3 +1,7 @@
 -- database: ../../../iba/app/db/iba.db
 
 SELECT * FROM strong_sense;
+
+select * from strong s
+where s.strongNumber = 'H1506'
+;

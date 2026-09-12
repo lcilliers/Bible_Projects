@@ -27,5 +27,8 @@ on verse.id = verse_meta.verse_id
 
 
 
-where cluster.cluster_code = 'M10'
-and verse_meta.deleted = 0;
+where 
+cluster.cluster_code = 'M10'
+
+and verse_meta.deleted = 0
+order by strong.stepGloss, verse.reference;

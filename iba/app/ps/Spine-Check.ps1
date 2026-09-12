@@ -1,10 +1,13 @@
 <#
 .SYNOPSIS
-    The base-data spine check — verse/span/strong sync + strong-extended-meaning-parse
-    completeness (both FATAL per governance.base_data_spine, escalation #1613, researcher ruling
-    2026-09-10), plus a discoverability pass over M-code strongs in analyzed verses and
-    word_strong strongs missing parse. Standalone, single-step work package, like
+    The base-data spine check — verse/span/strong sync (FATAL per governance.base_data_spine,
+    escalation #1613, researcher ruling 2026-09-10). Standalone, single-step work package, like
     Lexicon-Parse.ps1/Candidate-Quality.ps1.
+
+    The strong-extended-meaning-parse completeness check + its discoverability pass were REMOVED
+    2026-09-11 (escalation #1681/#1684/#1686) — they checked coverage against
+    strong_meaning_parsed/strong_lsj_parsed/strong_mounce_parsed, which were retired/frozen on
+    2026-09-10 and are no longer maintained. See handlers/spine.py module docstring.
 
 .DESCRIPTION
     Read-only. Always persists a report (spine.quality_report_path). If there are FATAL findings,
