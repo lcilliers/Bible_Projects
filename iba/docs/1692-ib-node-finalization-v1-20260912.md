@@ -5,6 +5,16 @@
 `ib_node` row **never exists at LLM-generation time**; it is created entirely by the table-update
 procedure, from the node segments an observation carries in its JSON.
 
+**DB location, 2026-09-13 (DB fork, #737/#1682/#1690/#1691): `ib_node` lives in `iba.db`.** Already
+consistent with this doc's own design — every reference here (`observation_id`/
+`traced_observation_id` → `ib_observation`, `verse_reference` resolved fresh against
+`iba.db.verse.reference`) was already same-database or `iba.db`-targeted; no columns changed by the
+fork. **No step of this pipeline may read or write `bible_research.db`.**
+
+**Note re: #1697** (`iba.cluster.status` lifecycle, same sign-off pack) — `ib_node` has no direct
+gating role in that mechanism: rows here are derived entirely from `ib_observation` at write time,
+not independently staged per cluster. Noted for completeness only, nothing in this document changes.
+
 ## 1. Columns — final list as decided so far
 
 ```sql

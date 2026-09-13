@@ -4,9 +4,53 @@
 #1692's separate "table-update procedure" sections converge — per the researcher's own framing,
 **the table update is one operation, separate from any LLM session**, that reads a family's
 finished JSON (process b's family/subgroup output, or process c/d/e's observation output) and
-writes `cluster_subgroup`/`mti_term_subgroup`/`ib_observation`/`ib_node` rows. This document is the
-operational spec for that one procedure; #1690/#1691/#1692 stay the table-shape specs it writes
-into.
+writes `cluster_subgroup`/`cluster_subgroup_strong`/`ib_observation`/`ib_node` rows. This document
+is the operational spec for that one procedure; #1690/#1691/#1692 stay the table-shape specs it
+writes into.
+
+**DB location, 2026-09-13 (DB fork, #737/#1682): this procedure operates entirely within `iba.db`.
+It must never read or write `bible_research.db` at any step.** All four tables it writes
+(`cluster_subgroup`, `cluster_subgroup_strong`, `ib_observation`, `ib_node`) and everything it
+resolves fresh against (`iba.strong`, `iba.cluster`, `iba.verse`) live there — see #1690/#1691/#1692
+for each table's own DB-location note. One open exception, not yet resolved: `ib_observation.
+question_code`'s source catalogue, `wa_obs_question_catalogue`, is still `bible_research.db`-only
+(#1691 §7a) — this procedure does not currently need to write there, only #1691's process (a)/(b)
+input-assembly step reads it, and that read is exactly the open question #1691 §7a raises, not
+resolved here either.
+
+## 0. Run structure (researcher's decision, 2026-09-13)
+
+Each cluster-process run is three components, always run together as one unit, not staged
+separately or on a deferred trigger:
+
+(a) prepare and assemble the input JSON;
+(b) run the sub-process — one of reading / answer / synergy (process c/d/e);
+(c) run this DB-update procedure.
+
+Step (c) fires immediately after (b) produces its JSON — it does not wait for a separate,
+later-triggered batch run. This tightens §1 below: this procedure's input is always the JSON just
+produced by the immediately-preceding sub-process run in the same unit of work, not an accumulated
+batch of files picked up separately.
+
+**★ NEW, 2026-09-13 — see #1697 + #1690 §3a** (two-level status/gating, same sign-off pack).
+**Corrected this round: two levels, not one.** `cluster.status` is a rollup, not an independent gate
+for subgroup-scoped stages — reading/answer/process (b) check and advance
+`cluster_subgroup.status` (#1690 §3a); `cluster.status` itself only moves as a *consequence*.
+Concretely, before step (b) runs:
+- **Process (b)** (subgroup allocation) — genuinely cluster-grain: confirm `cluster.status=
+  'ready_for_subgroup_allocation'` directly (including refusing if reset to `strongs_reassigned`
+  since (a)'s input JSON was assembled).
+- **Reading/answer** — subgroup-grain: confirm the target `cluster_subgroup.status` matches
+  (`ready_for_reading`/`ready_for_answer`), not `cluster.status`.
+- **Synthesis** — cluster-grain again (cross-family, no subgroup scope): confirm `cluster.status=
+  'ready_for_synthesis'` directly.
+
+**As part of step (c)**, once this procedure's own writes succeed: advance the subgroup's own status
+(reading/answer) or the cluster's (process b/synthesis) per the matched precondition above, **then
+recompute the cluster-level rollup** — check whether every subgroup in that cluster (excluding
+`FLAG`) has now reached the level needed for `cluster.status` to advance too, and apply that
+advance (or regression, if a sibling subgroup had fallen back to `re_read_needed`) in the same
+write. Not designed further here — full rule at #1697 §3, subgroup enum at #1690 §3a.
 
 ## 1. What it takes as input
 
@@ -18,15 +62,28 @@ into.
 
 | Table | Responsibility |
 |---|---|
-| `cluster_subgroup` | assigns `id`; resolves strongs to `mti_terms.id`; writes the `FLAG` signpost as a same-cluster subgroup (reading not yet confirmed, #1690 §3 item 3) |
-| `mti_term_subgroup` | enforces `UNIQUE(mti_term_id)` — one strong, one family |
+| `cluster_subgroup` | assigns `id`; resolves strongs against `iba.strong` (was `mti_terms.id`, changed 2026-09-13 DB fork — #1690 §2.2); writes the `FLAG` signpost as a same-cluster subgroup (confirmed, #1690 §3 item 3) |
+| `cluster_subgroup_strong` | (was `mti_term_subgroup`, renamed 2026-09-13 — #1690) enforces `UNIQUE(strong)` — one strong, one family; also carries the required `placement_note` reason for any `FLAG` placement, and excludes `FLAG` members from the next reading-stage input (#1690 §3 item 3) |
 | `ib_observation` | assigns the permanent `id` (distinct from the LLM's own `source_json_serial`, which is kept alongside it); decides, per incoming observation, whether it's genuinely new, broadens an existing row's `obs_text`, or just adds another citation to an existing row — **this decision logic is the one piece of this whole design that is still completely undesigned, see §3** |
 | `ib_node` | assigns `id`; denormalizes `cluster_code`/`cluster_subgroup_code`/`strong` onto each row; **resolves `verse_reference` fresh against `iba.db.verse.reference`**, never trusting the LLM's JSON string directly |
 
 ## 3. The one piece with no design yet: same / broaden / new
 
-This is the actual judgment call the whole two-pass architecture depends on, and nothing here
-answers it yet:
+**Outer structure partially resolved (researcher, 2026-09-13):** the procedure must first search
+for a similar existing observation. If one is found, it adds a new `ib_node` row against that
+existing observation (not a new `ib_observation` row). If none is found, it creates a new
+`ib_observation` row together with its own new `ib_node` row. What remains undesigned is the
+similarity test underneath that structure.
+
+**Open reconciliation, not decided here:** §2's table above lists three possible outcomes for
+`ib_observation` (genuinely new / broadens an existing row's `obs_text` / adds another citation to
+an existing row); the researcher's structural answer above names only two (new observation+node,
+or node-only against an existing observation). Left for the researcher to confirm whether
+"broadens `obs_text`" is a sub-case of the node-only path (e.g. the procedure also merges wording
+when it attaches a new node) or a third outcome not yet captured structurally — not assumed either
+way here.
+
+This is still the actual judgment call the whole two-pass architecture depends on:
 
 1. **How is "this citation supports an existing observation" actually decided?** Exact text match
    is clearly insufficient (two independently-written claims about the same phenomenon will use

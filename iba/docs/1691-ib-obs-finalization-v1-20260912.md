@@ -6,6 +6,12 @@
 researcher decisions plus two new deliverables: the input/output JSON specs per stage, and a
 data-driven start on the `tag`/`window` exploration.
 
+**DB location, 2026-09-13 (DB fork, #737/#1682/#1690): `ib_observation` lives in `iba.db`, not
+`bible_research.db`.** Every FK on this table (`cluster_subgroup_id` → #1690's `cluster_subgroup`,
+now also `iba.db`) needs a same-database target to be real — SQLite doesn't enforce cross-database
+foreign keys. **No step of this pipeline (process a/b/c/d/e, or the table-update procedure #1693)
+may read or write `bible_research.db`.**
+
 ## 1. Columns — final list
 
 ```sql
@@ -19,10 +25,15 @@ CREATE TABLE ib_observation (
     stage                       TEXT NOT NULL,   -- 'reading' | 'answer' | 'synthesis'
     tag                         TEXT NOT NULL,   -- stage-specific enum, cfg_enum-governed -- see §5
     strong                      TEXT NULL,       -- the strong this claim is grounded in
-    question_code                TEXT NULL REFERENCES wa_obs_question_catalogue(question_code),
-                                                     -- 'answer' stage only
-    window                        TEXT NULL,     -- was slant_label -- see §6, scope beyond
-                                                     'answer' stage still being explored
+    question_code                TEXT NULL,     -- 'answer' stage only -- NOT an enforced FK, see
+                                                     new item below: wa_obs_question_catalogue is
+                                                     bible_research.db-only, a second cross-database
+                                                     gap the DB fork surfaces, not yet resolved
+    window                        TEXT NULL,     -- pipeline-window enum, ALL stages (redefined
+                                                     2026-09-13): 1=lexical analysis,
+                                                     2=verse-context reading ('reading' stage),
+                                                     3=answer stage, 4=multi-cluster synergising,
+                                                     more to follow -- see §6
     obs_text                      TEXT NOT NULL, -- was statement; self-standing, no join required
     meaning_source                 TEXT NULL,    -- 'reading' stage only
     status                          TEXT NULL,   -- provisional|corroborated|superseded;
@@ -53,6 +64,29 @@ single family/subgroup on its own, not the whole cluster. Each stage's input is 
 stage's output JSON (reading → answer → synthesis), so a rerun of a later stage always needs the
 current state of the earlier one, not a stale copy.
 
+**Confirmed, 2026-09-13:** all three stages — `reading`, `answer`, `synthesis` — each produce their
+own JSON output, and each stage's output is captured into `ib_observation` (via the table-update
+procedure, #1693 §0's run structure) — not just reading and answer. `synthesis` is not a
+downstream/different mechanism; it writes into this same table under `stage='synthesis'`, exactly
+as the column definition in §1 already states.
+
+**★ NEW, 2026-09-13 — see #1697** (`iba.cluster.status` lifecycle enum, same sign-off pack): each of
+these three stages now also has a hard precondition and postcondition on `cluster.status` — reading
+requires `ready_for_reading` and advances the cluster to `ready_for_observations` on success; answer
+requires `ready_for_observations` and advances to `ready_for_synthesis`; synthesis requires
+`ready_for_synthesis` and advances to `completed`. None of these stages may run against a cluster
+sitting at the wrong status, or one reset to `strongs_reassigned` by an intervening `cluster_strong`
+change. Full rule at #1697, not restated here.
+
+**RESOLVED, 2026-09-13 — corrects the paragraph above.** Reading/answer's *real* precondition and
+postcondition is `cluster_subgroup.status` (#1690 §3a), checked/advanced per-subgroup, since these
+stages run per-subgroup (this doc's own §2). `cluster.status`'s `ready_for_reading`/
+`ready_for_observations`/`ready_for_synthesis` values are a **rollup** over every subgroup's status,
+not an independent gate — the cluster only shows `ready_for_observations` once every one of its
+subgroups is individually `ready_for_answer` or beyond (`FLAG` excluded). Synthesis is the exception:
+it's cross-family, not subgroup-scoped, so its precondition genuinely is `cluster.status=
+'ready_for_synthesis'` directly. Full rule at #1697 §3.
+
 ## 3. JSON specs — input and output per stage, including reruns
 
 Researcher's instruction: *"structure and preparation of json must be consistent, every time.
@@ -78,8 +112,9 @@ alongside the process-(a) occurrence/meaning data.
 Reading's output (process (c)'s existing shape: `observations[]` with `tag`/`obs_text`/`traces`,
 now carrying `source_json_serial` per observation) is the input to answer. Answer's own input adds
 two things reading's output doesn't carry: the catalogue questions themselves
-(`wa_obs_question_catalogue`, unchanged), and — same rerun principle as (a) — the family's
-**existing `ib_observation` rows at `stage='answer'`**, when this is a rerun.
+(`wa_obs_question_catalogue` — **`bible_research.db`-only, see new item below, this read is not yet
+resolved under the DB fork**), and — same rerun principle as (a) — the family's **existing
+`ib_observation` rows at `stage='answer'`**, when this is a rerun.
 
 ### (c) The synergy stage — input — NOT YET DEFINED
 
@@ -133,6 +168,14 @@ way it classifies readings. Also present: `needs_adjacent_verse_context` flags (
 kind of thing that could become its own `tag` if answer-stage rows get folded flatter (matching
 how `data-error`/flags already work at reading stage).
 
+**RESOLVED, 2026-09-13 — confirmed direction for the answer-stage taxonomy.** Researcher's own
+words: *"this is exactly what it should be — the question answer raises a flag that need follow
+up."* The `needs_adjacent_verse_context`/`cross_family_or_cluster_flags` shape above is confirmed
+as the right axis for `answer`-stage `tag`: a tag value expressing "this answer raises something
+that needs follow-up," folded flat into `tag` rather than kept as separate arrays — matching how
+`data-error` already works at reading stage. The exact value name(s) are not chosen here (still
+needs more answer-stage data, per §5's opening framing), only the direction is confirmed.
+
 **Synthesis stage — only 5 rows exist, too few to generalize from**, all currently tagged
 `'synthesis'` uniformly. Their real distinguishing feature so far is `status`
 (`provisional`×3, `corroborated`×2) and `grounded_in` size (1 to 15 items) — not an obvious `tag`
@@ -141,14 +184,21 @@ axis, but worth the researcher's own eye once more synthesis rounds accumulate.
 **Not concluded here** — this is the starting material for the researcher's own further analysis,
 per their instruction, not a proposed final taxonomy.
 
-## 6. `window` — scope question, not yet explored
+## 6. `window` — RESOLVED (2026-09-13): a project-wide pipeline-stage enum, not answer-scoped
 
-Currently `window` only exists at answer stage (was `slant_label`). Researcher wants to explore
-whether it applies to reading and synthesis too. No prototype data currently populates a
-window-like field outside answer stage — reading's `alternative-meaning` tag (8 occurrences) is the
-closest existing analog to "more than one way of reading the same evidence," but it's expressed as
-a `tag` value today, not a separate `window` field. Not explored further here; flagged as the next
-piece of data analysis, same status as `tag`.
+Researcher's decision: `window` is **not** an interpretive-slant field scoped to `answer` — it
+identifies which processing window of the overall multi-window pipeline produced the observation,
+`cfg_enum`-governed, and open to grow:
+
+| window | meaning |
+|---|---|
+| 1 | Lexical analysis |
+| 2 | Verse-context reading for IB activity (`ib_observation.stage='reading'`) |
+| 3 | Answering catalogue questions (`stage='answer'`) |
+| 4 | Multi-cluster synergising |
+
+"other windows to follow" — the researcher's own words; the enum is expected to grow past 4.
+Applies to every stage's rows, not just `answer` — closes §9 item 3 below.
 
 ## 7. `stable_key` — redefined
 
@@ -158,6 +208,26 @@ this apply to every stage's rows (since every stage now produces a file that cou
 tracing back to), or only `synthesis` rows as originally scoped? Given `source_json_serial` already
 exists as the per-row local number, `stable_key` as "which file" seems like it would be useful
 project-wide, not synthesis-only — flagged for confirmation, not assumed.
+
+## 7a. New gap, found this round — `wa_obs_question_catalogue` is `bible_research.db`-only — RESOLVED, migration tracked at #1696
+
+Checked live while applying the DB fork (2026-09-13): `question_code` (§1) was going to be an
+enforced FK to `wa_obs_question_catalogue(question_code)`. That table exists **only in
+`bible_research.db`** (434 rows) — not `iba.db` at all. Under the fork, this is the same
+cross-database problem all over again, on a second table this design already depends on (the
+answer-stage input, §3(b)).
+
+**Researcher's decision, 2026-09-13:** migrate the table into `iba.db` (option 1 of the 3 originally
+laid out here) — matching the same logic already applied to `strong`/`cluster` in #1690. Tracked as
+its own escalation, **#1696**, and explicitly folded into the same sign-off pack as #1690/#1691/
+#1692/#1693: **none of the five may be built until all five are signed off together.** The
+migration itself still needs to decide how the catalogue's own messy lifecycle state travels (only
+239/424 rows `active`, 243 `deleted`, the two markers disagreeing in count) — not resolved here,
+that's #1696's own scope.
+
+Column definition in §1 keeps the FK syntax removed until #1696 actually executes and the table
+exists in `iba.db` — restore `REFERENCES wa_obs_question_catalogue(question_code)` at that point,
+not before.
 
 ## 8. Filing and naming conventions (project-wide, not `ib_observation`-specific)
 
@@ -169,27 +239,39 @@ Researcher's instructions, recorded here since they arose from this review:
 Neither built here — recorded as a requirement for whenever the file-producing scripts are
 finalized/registered.
 
-## 9. Still not settled
+## 9. Resolved this round (researcher's answers, 2026-09-13) / still open
 
-1. Does append-only for `synthesis` need mechanical enforcement (a DB trigger refusing `UPDATE`
-   where `stage='synthesis'`), or is it enforced purely by the table-update procedure's own code
-   with no DB-level backstop? **Expanding per the researcher's request for more detail:** the risk
-   is specifically that some OTHER future script — a fix-up, a bulk correction, anything that isn't
-   the table-update procedure itself — could `UPDATE` an `ib_observation` row directly and silently
-   violate the non-destructive-revision guarantee with no error. A trigger makes that impossible at
-   the database layer regardless of which code path attempts it; relying on the table-update
-   procedure's own discipline only protects against that ONE procedure, not every future writer.
-   Not decided which the researcher wants — the tradeoff is a marginal amount of DB complexity
-   (one trigger) against closing that gap for good.
-2. `tag`: closed via `cfg_enum` — confirmed this round (§5) — but the actual taxonomy values for
-   `answer`/`synthesis` stages are not yet chosen, pending more data as more families/rounds run.
-3. `window`'s scope beyond `answer` stage — open, §6.
-4. `stable_key`'s scope (every stage, or `synthesis` only) — open, §7.
-5. The synergy-stage (e) input JSON — explicitly not yet defined by the researcher themselves, §3(c).
-6. §4's truncated rule — waiting on the researcher to finish it.
+1. **RESOLVED — no DB trigger.** Researcher's decision: only the designated table-update procedure
+   (#1693) ever interacts with `ib_observation`. Other routines — including any future synergising
+   intervention — produce JSON output only; the update procedure alone controls DB writes. The
+   single-writer principle is the enforcement mechanism for append-only `synthesis`, not a trigger.
+2. **RESOLVED — accepted.** `tag` stays extensible: new values can be added to the `cfg_enum` set
+   as real data analysis surfaces them; §5's prototype-derived values are a starting point, not a
+   closed list.
+3. **RESOLVED — applies to every stage.** See the redefined §6: `window` is a project-wide
+   pipeline-stage enum (1=lexical, 2=reading, 3=answer, 4=synergising, more to follow), not scoped
+   to `answer`.
+4. **RESOLVED — all stages.** `stable_key` (the generating JSON file's name) applies to every
+   stage's rows, not `synthesis`-only. Related architecture point raised alongside this: the
+   table-update procedure fires immediately after each stage's JSON is produced, as part of one
+   run (assemble input → run the stage's sub-process → run the DB update), not on a separate
+   deferred trigger — recorded in full at #1693.
+5. **STILL OPEN, confirmed.** The synergy-stage (e) input JSON: researcher confirms it genuinely
+   can't be defined yet — needs more process-(c)/(d) prototype results first. A dedicated
+   escalation for the synergy-stage design has been raised to track this once the prerequisite
+   build/test work is done — see escalation #1695 ("Design: cluster-reading synergy stage") — not
+   a blocker to finalizing this document, see §10.
+6. **RESOLVED, moved to #1693.** The truncated "search for a similar observation before creating
+   new" rule: the table-update procedure must first search for a similar existing observation, then
+   choose between (a) adding a new `ib_node` row against that existing observation, or (b) creating
+   a new `ib_observation` row together with its own new `ib_node` row. This is the same/broaden/new
+   decision #1693 §3 already flagged as undesigned — recorded there in full, not duplicated here.
 
-## 10. What "finalized" would mean
+## 10. What "finalized" means — resolved
 
-Once §9 items 1–4 are resolved and the synergy-stage input (§3c) is defined: the `CREATE TABLE` in
-§1, registered in `cfg_table`/`cfg_column`; the JSON specs in §3 become the actual contract the
-generation scripts and the table-update procedure (#1693) are built against.
+Researcher's own definition (2026-09-13): finalized = **the researcher's sign-off on escalations
+#1690, #1691, #1692, and #1693** as a set — not a mechanical "every open item resolved" gate. Item 5 above (the
+synergy-stage input) can remain open past sign-off; it is tracked separately and is not a blocker
+to finalizing these four documents. Once signed off: the `CREATE TABLE` in §1 is registered in
+`cfg_table`/`cfg_column`, and the JSON specs in §3 become the actual contract the generation
+scripts and the table-update procedure (#1693) are built against.

@@ -5,8 +5,39 @@ the researcher's naming-conventions response (`Workflow/Chat_responses/Cluster-r
 conventions`), which corrected §7 point-by-point and, in doing so, surfaced one substantial finding
 (the `cluster_subgroup` collision, §2.1) that isn't a naming question at all.
 
-**Split into 4 component design escalations**, this document stays the shared reference:
-**#1690** family/grouping (now sharpened by §2.1 below) · **#1691** observation · **#1692** trace/
+**★ DB FORK, 2026-09-13 — ALL new tables target `iba.db`, not `bible_research.db`.** SQLite does not
+enforce foreign keys across attached databases, only within one file — every new table here needs
+real FK integrity against the live base-data spine (`iba.strong`, `iba.cluster`, `iba.verse`), so
+every new table lives in `iba.db`. This reverses this document's earlier research_db-only framing
+(§2.2, §7) — see escalation #737 (deliberately left open, not realigned, per the researcher's
+own sequencing decision this chat turn) and #1690's own record of the finding. **Concretely: no
+processing in this pipeline (process a/b/c/d/e or the table-update procedure, #1693) may read or
+write `bible_research.db` at all** — every input (occurrences, meaning, existing `ib_observation`
+rows for a re-run) and every write target is `iba.db`-only. §2.1a's legacy-table rename plan below
+is corrected accordingly (§2.1a note).
+
+**★ SIGN-OFF PACK, 2026-09-13 (researcher's own instruction):** #1690, #1691, #1692, #1693,
+**#1696** (migrate `wa_obs_question_catalogue` into `iba.db`, spun out of #1691 §7a), and **#1697**
+(`iba.cluster.status` lifecycle enum + gating rule, spun out of #1690 §7) form one pack. **None of
+the six may be built until all six are signed off together** — no partial builds, even though each
+is tracked as a separate escalation for focused review.
+
+**Pack readiness tracker** (update on every sign-off, this is the single place to check overall
+status without opening all six):
+
+| Escalation | Ready for build? |
+|---|---|
+| #1690 (`cluster_subgroup`/`cluster_subgroup_strong`) | ✅ **READY** — approved 2026-09-13 |
+| #1691 (`ib_observation`) | ⬜ not yet |
+| #1692 (`ib_node`) | ⬜ not yet |
+| #1693 (table-update procedure) | ⬜ not yet |
+| #1696 (`wa_obs_question_catalogue` migration) | ⬜ not yet |
+| #1697 (`iba.cluster.status` lifecycle) | ⬜ not yet |
+
+**1 of 6 ready. Build does not commence until all 6 rows show READY.**
+
+**Split into 4 component design escalations** (now 5, with #1696), this document stays the shared
+reference: **#1690** family/grouping (now sharpened by §2.1 below) · **#1691** observation · **#1692** trace/
 node (carries a real defect, see its own table definition) · **#1693** the load/reconcile pass.
 
 ## 1. Names resolved this round (adopted, not re-litigated below)
@@ -65,22 +96,28 @@ troublesome (blast radius: 9 tables, ~14,500 rows including `finding`/`cluster_f
 the new `cluster_subgroup`/`mti_term_subgroup` (and siblings) hold every cluster's grouping, same
 as the tables they replace.
 
-### 2.1a Rename plan
+### 2.1a Rename plan — SUPERSEDED by the DB fork, decoupled from this build
 
-**Prefix chosen: `zz_legacy_`** — sorts every renamed table to the bottom of any alphabetical
-listing and states its status unambiguously (the researcher asked for a prefix satisfying both
-properties without specifying the exact text).
+**This whole rename plan was collision-avoidance**: it exists solely because the fresh
+`cluster_subgroup`/`mti_term_subgroup` were going to be created in the SAME database
+(`bible_research.db`) as the 6 legacy tables occupying those names. Per the 2026-09-13 DB fork
+(banner above), the fresh tables now live in **`iba.db`** — a different database from the legacy 6,
+which stay in `bible_research.db` untouched. **There is no longer a naming collision to avoid**,
+so renaming the legacy tables is no longer a precondition for building the new ones.
 
-**Renaming with confidence — these 6 tables exist *solely* to hold this old characteristic/
-subgroup model, nothing else lives in them:** `characteristic` → `zz_legacy_characteristic`,
-`characteristic_subgroup` → `zz_legacy_characteristic_subgroup`, `cluster_subgroup` →
-`zz_legacy_cluster_subgroup`, `mti_term_subgroup` → `zz_legacy_mti_term_subgroup`,
-`cluster_observation` → `zz_legacy_cluster_observation`, `cluster_finding` →
-`zz_legacy_cluster_finding`. Fresh, empty `characteristic`/`characteristic_subgroup`/
-`cluster_subgroup`/`mti_term_subgroup` tables get created for the new family model (`cluster_
-observation`/`cluster_finding` are not part of the new model — no fresh replacement needed for
-those two, per the design work already done in #1691/#1692/#1693; they'd simply cease to exist
-under their live names once renamed, unless told otherwise).
+What #1683 actually decided (rename over hard-delete) was a data-disposition question about the OLD
+rows, not a technical requirement for this build — that disposition question is now fully decoupled
+from #1690/#1691/#1692/#1693 and can proceed on its own timeline. **Flagged for the researcher, not
+decided here:** do you still want the legacy 6 tables renamed to `zz_legacy_*` for clarity/
+disposition reasons on their own merits, or does removing the technical necessity change your
+answer? Recorded as a comment on #1683 this round, not resolved there either.
+
+**Prefix chosen, if still wanted: `zz_legacy_`** — sorts every renamed table to the bottom of any
+alphabetical listing and states its status unambiguously (the researcher asked for a prefix
+satisfying both properties without specifying the exact text). The 6 candidate tables, unchanged:
+`characteristic`, `characteristic_subgroup`, `cluster_subgroup`, `mti_term_subgroup`,
+`cluster_observation`, `cluster_finding` — all in `bible_research.db`, all untouched by this new
+build either way.
 
 **Not renaming `finding`, `verse_context`, `prose_section` — flagging this rather than guessing:**
 these three are NOT dedicated to the old characteristic model — they're general-purpose, live
@@ -96,11 +133,12 @@ the M10-flavoured rows out into the legacy tables instead).**
 
 ### 2.2 The upgrade this reuse gives, once resolved
 
-`mti_term_subgroup` links to `mti_terms.id` (a real, research_db-native, one-row-per-Strong's
-FK) rather than a loose text-matched Strong's code — better than this document's original
-proposal. Worth confirming at build time that every M10 strong already has an `mti_terms` row to
-link to (very likely, given `mti_terms.cluster_code` already carries M-code assignment), not
-assumed here.
+**Revised per the 2026-09-13 DB fork:** `cluster_subgroup_strong` (was `mti_term_subgroup`, #1690's
+rename) links to `strong.strongNumber` in `iba.db` — a real, same-database, FK — rather than the
+originally-proposed `mti_terms.id` (`bible_research.db`-only, and, checked this round, itself a
+messier table than `iba.strong`: only 2,730 of 7,861 `mti_terms` rows are genuinely one-per-Strong's
+live rows). This is both the fix for the cross-database FK problem and an upgrade over the original
+plan on its own data-quality merits.
 
 ## 3. `ib_observation` and `ib_node` — the two tables that ARE new
 
@@ -174,19 +212,23 @@ to reconcile against.
 
 ## 6. Still open
 
-1. **§1's `ib_observation`/`ib_node` concatenation question** — confirm or correct.
-2. **§2.1a — confirm the rename scope**: the 6 dedicated tables, or does `finding`/`verse_context`/
-   `prose_section` need something too (and if so, what, since renaming those whole tables isn't
-   viable)?
+1. ~~§1's `ib_observation`/`ib_node` concatenation question~~ — **RESOLVED**, confirmed 2026-09-12.
+2. **§2.1a — now decoupled, not a blocker here**: whether the legacy 6 tables get renamed to
+   `zz_legacy_*` is a #1683 disposition question on its own timeline, no longer a precondition for
+   this build (DB fork, banner above). `finding`/`verse_context`/`prose_section` were never in
+   scope for renaming either way (§2.1a's own reasoning, unaffected by the fork).
 3. Everything already open on #1690/#1691/#1692/#1693 individually.
 4. **A permanent numbering scheme, specified in the generation script, not invented at load time**
    (unchanged from last round — filed onto #1691/#1693, not resolved here).
 
 ## 7. What building this actually involves, once the above is settled
 
-A migration script that (a) renames the 6 confirmed legacy tables to `zz_legacy_*` and creates
-fresh `characteristic`/`characteristic_subgroup`/`cluster_subgroup`/`mti_term_subgroup` tables,
-corpus-wide scope; (b) creates `ib_observation`/`ib_node` in `bible_research.db`, registered in
-`cfg_table`/`cfg_column` per `governance.tables`; (c) a load/reconcile pass (#1693) that resolves
-verse references against `iba.db` rather than trusting LLM-authored strings, and implements the
-still-undesigned same/broaden/new matching logic.
+**Revised per the 2026-09-13 DB fork** — a migration script that (a) creates fresh `characteristic`/
+`characteristic_subgroup`/`cluster_subgroup`/`cluster_subgroup_strong` tables **in `iba.db`**,
+corpus-wide scope, with `cluster_subgroup_strong.strong REFERENCES strong(strongNumber)` (not
+`mti_terms.id`) — no legacy-table rename is a precondition, see §2.1a; (b) creates
+`ib_observation`/`ib_node` **in `iba.db`**, registered in `cfg_table`/`cfg_column` per
+`governance.tables`; (c) a load/reconcile pass (#1693) that resolves verse references against
+`iba.db` (same database now, not a cross-database resolve) rather than trusting LLM-authored
+strings, and implements the still-undesigned same/broaden/new matching logic. **No step in this
+pipeline reads or writes `bible_research.db`.**
