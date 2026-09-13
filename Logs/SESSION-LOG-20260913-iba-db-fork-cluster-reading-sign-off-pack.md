@@ -67,5 +67,9 @@ FATAL, 30 open escalations. No uncommitted session logs found at start.
 
 ## 6. Git state
 
-Full diff staged and committed this unit of work — see commit below for the actual hash and push
-confirmation.
+- Branch: `main`
+- Commit: `8e5c8052654f4c60256c14bc74d6333ff40d7db8` — "session 20260913: iba.db DB fork applied to
+  cluster-reading pack (#1682/#1690-1697), #1690 approved"
+- Push: `a2c89ab8..8e5c8052 main -> main` — confirmed via `git push` output.
+- `git status` after push: `On branch main / Your branch is up to date with 'origin/main'. / nothing
+  to commit, working tree clean.`
