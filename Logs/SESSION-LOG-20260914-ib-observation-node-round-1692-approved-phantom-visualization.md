@@ -72,5 +72,8 @@ sign-off pack (#1690 approved, #1691/1692/1693/1696/1697 open).
 ## 6. Git state
 
 - Branch: `main`
-- Commit: *(to be filled in after commit — see below)*
-- Push: *(to be confirmed after push)*
+- Commit: `ee369508d97a516aecbedf621f2718e6f69aa35a` — "session 20260914: ib_node/ib_observation
+  finalized (#1691-1693), #1692 approved, phantom visualization (#1698/#1699)"
+- Push: `aa8ec451..ee369508 main -> main` — confirmed via `git push` output.
+- `git status` after push: `On branch main / Your branch is up to date with 'origin/main'. /
+  nothing to commit, working tree clean.`
