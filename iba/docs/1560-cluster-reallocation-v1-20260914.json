@@ -1,0 +1,14 @@
+{
+  "removals": [
+    {"strong": "G1135", "cluster_code": "T8", "note": "escalation #1560 -- dead bare code: no strong-table row, 0 span occurrences. Real occurrences are G1135G/G1135H."},
+    {"strong": "G2424", "cluster_code": "T7", "note": "escalation #1560 -- dead bare code: no strong-table row, 0 span occurrences. Real occurrences are G2424G/G2424I/G2424J."},
+    {"strong": "H0802", "cluster_code": "T8", "note": "escalation #1560 -- dead bare code: no strong-table row, 0 span occurrences. Real occurrences are H0802G/H0802H/H0802I."}
+  ],
+  "relocations": [
+    {"strong": "G1135G", "from_cluster_code": "T2", "to_cluster_code": "T8", "note": "escalation #1560 resolution -- 'woman', Party-Human; was misfiled T2/excluded alongside its dead bare-code sibling."},
+    {"strong": "G1135H", "from_cluster_code": "T2", "to_cluster_code": "T8", "note": "escalation #1560 resolution -- 'woman: wife', Party-Human."},
+    {"strong": "H0802G", "from_cluster_code": "T2", "to_cluster_code": "T8", "note": "escalation #1560 resolution -- 'woman', Party-Human."},
+    {"strong": "H0802H", "from_cluster_code": "T2", "to_cluster_code": "T8", "note": "escalation #1560 resolution -- 'woman: wife', Party-Human."},
+    {"strong": "H0802I", "from_cluster_code": "T2", "to_cluster_code": "T8", "note": "escalation #1560 resolution -- 'woman: another', Party-Human."}
+  ]
+}
