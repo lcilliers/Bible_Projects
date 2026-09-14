@@ -18,11 +18,32 @@ may read or write `bible_research.db`.**
 CREATE TABLE ib_observation (
     id                          INTEGER PRIMARY KEY,   -- assigned by the TABLE UPDATE PROCEDURE
                                                             only, never by the LLM session — see §4
-    cluster_code                TEXT NOT NULL,
+    cluster_code                TEXT NULL,       -- RESOLVED 2026-09-14 (#1698): researcher agrees
+                                                     NOT NULL doesn't fit -- a cross-cluster
+                                                     `synthesis` observation has no single owning
+                                                     cluster. NULL for stage='synthesis'; the actual
+                                                     cluster(s) it references are recorded via
+                                                     `ib_node` rows instead, one per cluster (#1692
+                                                     §4 item 2's own rule), not on this column.
+                                                     Required (NOT NULL in effect) for every other
+                                                     stage, where an observation genuinely has one
+                                                     owning cluster.
     cluster_subgroup_id         INTEGER NULL REFERENCES cluster_subgroup(id),  -- was family_id;
-                                    points at the FRESH cluster_subgroup from #1690 -- NULL only
-                                    for stage='synthesis'
-    stage                       TEXT NOT NULL,   -- 'reading' | 'answer' | 'synthesis'
+                                    points at the FRESH cluster_subgroup from #1690 -- NULL for
+                                    stage='synthesis'/process (b)'s own cluster-level observations
+                                    (see §9 item 8) -- both above single-subgroup scope
+    stage                       TEXT NOT NULL,   -- CORRECTED 2026-09-14 (was wrong last round --
+                                                     see §9 item 8): 'reading' | 'answer' |
+                                                     'synthesis' are processes (c)/(d)/(e); the
+                                                     researcher's own names for these (subgroup/
+                                                     reading/observation/synergy = b/c/d/e) are NOT
+                                                     yet a confirmed rename -- 'synthesis' stays the
+                                                     DB value for now, naming not yet stable (§9
+                                                     item 9). **RESOLVED, 2026-09-14: gains a new
+                                                     member for process (b)'s own observations**
+                                                     (proposed name `subgroup`, matching the
+                                                     process -- confirm/override), cfg_enum-
+                                                     governed, open to growth like `tag`/`window`
     tag                         TEXT NOT NULL,   -- stage-specific enum, cfg_enum-governed -- see §5
     strong                      TEXT NULL,       -- the strong this claim is grounded in
     question_code                TEXT NULL,     -- 'answer' stage only -- NOT an enforced FK, see
@@ -256,16 +277,78 @@ finalized/registered.
    table-update procedure fires immediately after each stage's JSON is produced, as part of one
    run (assemble input → run the stage's sub-process → run the DB update), not on a separate
    deferred trigger — recorded in full at #1693.
-5. **STILL OPEN, confirmed.** The synergy-stage (e) input JSON: researcher confirms it genuinely
-   can't be defined yet — needs more process-(c)/(d) prototype results first. A dedicated
-   escalation for the synergy-stage design has been raised to track this once the prerequisite
-   build/test work is done — see escalation #1695 ("Design: cluster-reading synergy stage") — not
-   a blocker to finalizing this document, see §10.
+5. **STILL OPEN, confirmed; CORRECTED 2026-09-14 — "synergy" is process (e), i.e. THIS `synthesis`
+   value, not a further stage after it.** Researcher confirms (this chat turn) the letter mapping
+   is b=subgroup/c=reading/d=answer/e=synergy — matching #1693 §0's own "reading/answer/synergy
+   (process c/d/e)". A prior version of this item wrongly treated "synergy" as a future 4th `stage`
+   value beyond `synthesis`; corrected — `ib_observation` already IS synergy's home table, as
+   `stage='synthesis'`, no schema change needed for that. What's still genuinely open is unchanged:
+   process (e)'s own input JSON can't be defined yet (#1695 needs more (c)/(d) prototype results
+   first) — not a blocker to finalizing this document, see §10. Separately open: whether the schema
+   should rename `stage` values to match the researcher's own vocabulary (`answer`→`observation`,
+   `synthesis`→`synergy`) — a naming question, not decided here, see §9 item 8.
 6. **RESOLVED, moved to #1693.** The truncated "search for a similar observation before creating
    new" rule: the table-update procedure must first search for a similar existing observation, then
    choose between (a) adding a new `ib_node` row against that existing observation, or (b) creating
    a new `ib_observation` row together with its own new `ib_node` row. This is the same/broaden/new
    decision #1693 §3 already flagged as undesigned — recorded there in full, not duplicated here.
+7. **RESOLVED, 2026-09-14 — v12/v13 reconciliation confirmed approved.** Researcher confirms the
+   §2 subgroup/cluster rollup resolution (v13: reading/answer gate on `cluster_subgroup.status`
+   per-subgroup; `cluster.status` is a rollup over those, not an independent gate; synthesis is
+   the exception, gating on `cluster.status='ready_for_synthesis'` directly) is on target — no
+   further change to §2.
+8. **NEW, 2026-09-14 — CONFIRMED with live evidence: process (b) already produces real
+   observations `ib_observation` has no stage to hold.** Checked live per the researcher's request,
+   against an actual M10 process-(b) prototype run:
+   `_analytics/Clusters/1682-test-m10-process-b-families-v1-20260911.json` (the clean family/
+   membership output, #1690's own table) is paired with
+   `_analytics/Clusters/m10-gloss-family-grouping-20260911.md` (the same run's working narrative).
+   The narrative's own "## Observations for #1680" section carries four genuine analytic claims
+   made *while* building the families — not membership data:
+   - *"The M10 cluster is dominated by three big families... together 74 of 165 codes (45%). If
+     M10's characteristic label presumes a narrower 'sin/transgression' core, these three families
+     are a large adjacent mass worth checking against the cluster's actual definition."* —
+     cluster-wide, not tied to any one strong or subgroup.
+   - *"Two rows (R) look like straightforward homograph noise unrelated to the cluster theme"*
+     (G21497, H5512B) — strong-scoped.
+   - *"One row (Q, H4560 'to commit') is too bare to classify... flagged rather than guessed into a
+     family"* — strong-scoped.
+   - *"One row (O, H3725 'atonement') reads as the remedy for the cluster's theme rather than an
+     instance of it"* — strong-scoped.
+
+   The three strong-scoped ones *could* fit today's `cluster_subgroup_strong.placement_note`
+   (#1690 §1/§2 item g) — except the actual v1 JSON that got produced carries no `placement_note`
+   at all (matching #1690 §2 item 1's already-known `label`-not-produced gap; the same generation-
+   script gap extends to `placement_note`, not previously flagged — noted at #1690 directly). The
+   cluster-wide one has **no home anywhere in the current design** — it isn't about one strong, one
+   subgroup, or one verse; it's a claim about the cluster's own definitional scope. This is exactly
+   the missing "process (b) produces observations too" gap #9 item 5 above corrects the terminology
+   for. **RESOLVED, 2026-09-14: `stage` gains a genuine new value** (proposed `subgroup`, matching
+   the process itself — see §1). `cluster_subgroup_id` is NULL for the cluster-wide case, same
+   nullability as `synthesis`.
+9. **`synthesis` (process e) confirmed CROSS-CLUSTER, not just cross-subgroup — tracked at #1698,
+   item (i) now RESOLVED, item (ii) still open.** This corrected v13's own description (§2 above:
+   "cross-family, not subgroup-scoped") — it understated the scope. Two consequences were raised:
+   **(i) RESOLVED, 2026-09-14 — `cluster_code`.** Researcher agrees `NOT NULL`/singular doesn't fit;
+   column changed to `NULL` for `stage='synthesis'` (§1) — the actual clusters a synthesis
+   observation touches are recorded via `ib_node` rows, one per cluster, not on this column.
+   **(ii) STILL OPEN.** #1697's `cluster.status='ready_for_synthesis'` precondition (#1693 §0) is
+   a single-cluster check; whether/how it generalizes to "every involved cluster is ready" for a
+   genuinely cross-cluster synthesis run is not decided. **Naming, resolved as a working
+   convention:** researcher confirms `synthesis` can stick as the term used in these documents —
+   *"I keep on forgetting the word when it is out of sight when I write about it... bear with me
+   if I refer to it differently"* — so a stray `synergy`/other word in chat refers to this same
+   stage, not a re-opening of the naming question.
+10. **NEW, 2026-09-14 — `placement_note` promotion rule, resolved as a principle, mechanism
+    undesigned.** Researcher's own words: *"a placement_note that describes an observation about
+    an item must find its way to ib_observations. That is why the responsibility of making the
+    observation (LLM) and recording the observation in the right form and in the right place
+    (load routine) is separated."* Directly answers §9 item 8's gap: process (b)'s
+    `placement_note` values that carry a real observation (not just a bookkeeping placement
+    reason) are not left in `cluster_subgroup_strong` — the table-update procedure promotes them
+    into `ib_observation`/`ib_node` at load time, under the new `subgroup` stage (item 8). This is
+    a #1693 (load routine) responsibility, not a schema change here — recorded there, cross-ref
+    added, not duplicated.
 
 ## 10. What "finalized" means — resolved
 

@@ -18,6 +18,14 @@ question_code`'s source catalogue, `wa_obs_question_catalogue`, is still `bible_
 input-assembly step reads it, and that read is exactly the open question #1691 §7a raises, not
 resolved here either.
 
+**Guiding principle, researcher's own words, 2026-09-14** (from #1692, `ib_node`'s own banner):
+*"everything can relate to anything, but the relation must be evidence based, supported by
+observations, and must be meaningful. This places a major responsibility on #1693 to record
+correctly, maintain appropriately, verify and validate on every turn, and self check as a matter
+of primary accountability."* This is this procedure's own charter, not a suggestion — the §3
+same/broaden/new logic and the new coverage check below both exist because of it, not as
+add-ons.
+
 ## 0. Run structure (researcher's decision, 2026-09-13)
 
 Each cluster-process run is three components, always run together as one unit, not staged
@@ -43,7 +51,11 @@ Concretely, before step (b) runs:
 - **Reading/answer** — subgroup-grain: confirm the target `cluster_subgroup.status` matches
   (`ready_for_reading`/`ready_for_answer`), not `cluster.status`.
 - **Synthesis** — cluster-grain again (cross-family, no subgroup scope): confirm `cluster.status=
-  'ready_for_synthesis'` directly.
+  'ready_for_synthesis'` directly. **★ OPEN GAP, 2026-09-14, not resolved here:** researcher confirms
+  synthesis/synergy (process e) is actually cross-CLUSTER, not just cross-subgroup within one
+  cluster (#1691 §9 item 9) — a single `cluster.status` check is a single-cluster precondition, and
+  doesn't obviously generalize to "every cluster this synthesis run involves is ready." Raised as
+  its own escalation, not designed here.
 
 **As part of step (c)**, once this procedure's own writes succeed: advance the subgroup's own status
 (reading/answer) or the cluster's (process b/synthesis) per the matched precondition above, **then
@@ -65,7 +77,8 @@ write. Not designed further here — full rule at #1697 §3, subgroup enum at #1
 | `cluster_subgroup` | assigns `id`; resolves strongs against `iba.strong` (was `mti_terms.id`, changed 2026-09-13 DB fork — #1690 §2.2); writes the `FLAG` signpost as a same-cluster subgroup (confirmed, #1690 §3 item 3) |
 | `cluster_subgroup_strong` | (was `mti_term_subgroup`, renamed 2026-09-13 — #1690) enforces `UNIQUE(strong)` — one strong, one family; also carries the required `placement_note` reason for any `FLAG` placement, and excludes `FLAG` members from the next reading-stage input (#1690 §3 item 3) |
 | `ib_observation` | assigns the permanent `id` (distinct from the LLM's own `source_json_serial`, which is kept alongside it); decides, per incoming observation, whether it's genuinely new, broadens an existing row's `obs_text`, or just adds another citation to an existing row — **this decision logic is the one piece of this whole design that is still completely undesigned, see §3** |
-| `ib_node` | assigns `id`; denormalizes `cluster_code`/`cluster_subgroup_code`/`strong` onto each row; **resolves `verse_reference` fresh against `iba.db.verse.reference`**, never trusting the LLM's JSON string directly |
+| `ib_node` | assigns `id`; denormalizes `cluster_code`/`cluster_subgroup_code`/`strong` onto each row, one row per referenced item when a citation names several of the same type (#1692 §4 item 2); **resolves `verse_reference` fresh against `iba.db.verse.reference`**, never trusting the LLM's JSON string directly; **NEW, 2026-09-14 (#1692 §3 item 5):** after load, validates every strong and every verse in the target subgroup's membership has at least one `ib_node` row across that session — an independent re-check of the LLM's own generation-time self-check (#1692 §2), not a trust-and-move-on |
+| `ib_observation`/`ib_node`, from process (b) | **NEW, 2026-09-14, researcher's own words:** *"a placement_note that describes an observation about an item must find its way to ib_observations. That is why the responsibility of making the observation (LLM) and recording the observation in the right form and in the right place (load routine) is separated."* When loading process (b)'s output, a `cluster_subgroup_strong.placement_note` (or a cluster-wide note in that same JSON) that carries a genuine observation — not just a bookkeeping placement reason — is promoted into its own `ib_observation`/`ib_node` row(s), under the new `stage='subgroup'` value (#1691 §1/§9 item 8/10). **Mechanism undesigned:** how the procedure tells "this placement_note is just a reason" from "this placement_note is also an observation" apart is not decided here — a real, separate piece of the same/broaden/new problem in §3 below. |
 
 ## 3. The one piece with no design yet: same / broaden / new
 

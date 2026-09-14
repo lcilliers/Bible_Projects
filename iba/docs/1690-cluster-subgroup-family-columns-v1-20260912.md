@@ -111,6 +111,13 @@ Previously resolved, kept for reference:
 1. **A real `label` per family — not currently produced.** Process (b)'s JSON today leaves
    `family_label` always empty; `cluster_subgroup.label` is `NOT NULL`. This is a change the
    generation script needs, not a naming pick — see (d) above for what a correct one must contain.
+   **Confirmed live 2026-09-14, same gap extends to `placement_note`:** the M10 prototype run
+   (`_analytics/Clusters/1682-test-m10-process-b-families-v1-20260911.json`) carries no
+   `placement_note` values either, even though its companion working narrative
+   (`_analytics/Clusters/m10-gloss-family-grouping-20260911.md`) has real per-strong observations
+   that belong there (e.g. the homograph-noise/atonement-outlier notes) plus one cluster-wide
+   observation that doesn't fit `placement_note` at all — full detail and the open question at
+   #1691 §9 item 8, not restated here since it doesn't change this table's approved schema.
 2. Every strong placed in exactly one family (already process (b)'s own rule, now given a
    structural backstop by `cluster_subgroup_strong`'s tightened `UNIQUE(strong)`, §4 item 2).
 3. A strong that doesn't fit any real family is signposted to `"FLAG"` (§3 item 3, now confirmed;
