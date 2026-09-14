@@ -72,5 +72,5 @@ starting point.
 ## 5. Git state
 
 - Branch: `main`
-- Commit: *(pending — filled in below after commit/push)*
-- Push: *(pending)*
+- Commit: `d34c8fdc` — "session 20260914 (cont.): verse-lexical pipeline shape confirmed (#1607/#1682/#1691), #1560 fixed and closed, #1703 raised and corrected, #1704 analytic-event inventory Phase 1 (a/b/c) complete" (11 files changed)
+- Push: confirmed — `f181b2c6..d34c8fdc main -> main`
