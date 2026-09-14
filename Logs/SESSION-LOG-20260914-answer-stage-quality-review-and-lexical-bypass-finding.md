@@ -65,5 +65,5 @@ get answered and that data feeds subgroup-reading data preparation.
 ## 5. Git state
 
 - Branch: `main`
-- Commit: *(to be filled in after commit)*
-- Push: *(to be confirmed after push)*
+- Commit: `7907a9e5` — "session 20260914 (cont.): catalogue answer-quality review (#1700), T-code coverage eval (#1702), architecture critique parked (#1701), migration plan finalized (#1696), lexical-bypass finding recorded on #1607" (63 files changed)
+- Push: confirmed — `f1909c12..7907a9e5 main -> main`; `git status` clean after push.
