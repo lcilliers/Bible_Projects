@@ -41,3 +41,18 @@ type=task source=researcher
 **v10** (2026-09-14T03:55:01Z, Claude) state=in-progress next_action=review assigned_to=Researcher
 > **comment (set this version):** Two additions this chat turn: (1) placement_note promotion responsibility added -- a real observation in cluster_subgroup_strong.placement_note must be promoted to ib_observation/ib_node under the new stage='subgroup' value; the same/broaden/new-adjacent question of telling a bookkeeping placement_note from an observational one is left undesigned, folded into this doc's existing sec3 gap. (2) Flagged, not designed: synthesis's cluster.status precondition (sec0) is single-cluster, but synthesis is now confirmed cross-cluster (#1691 sec9 item9) -- raised as its own escalation #1698.
 > **context (set this version):** Doc updated in place: iba/docs/1693-table-update-procedure-finalization-v1-20260912.md (table in section2, section0).
+
+researcher comments
+
+we need to get a nice name for this routine : load/reconcile pass is clumsy. what do you suggest.
+
+this routine records the analytic work into a coherent and consistent set of knowledge elements as observations.
+
+it is separate from the generation of knowledge (analytics stages) to force a division of duties and improve overall quality control.
+
+(1) how is 'same observation' actually decided -- text similarity, semantic/LLM comparison, a human-reviewed queue, some combination? : I don't want to over complicate this test. if in doubt, create it as separate. differences matter, don't fuzz them away.  superficial differences create noise - if its possible, then align the differences into a single observation ( CC has the right to edit an existing item for alignment).  It is not a direct text match only, it does include judgement, mainly use heuristics and simple meaning. it is ok to ask researcher for a judgement, but only if CC considers a judgement call as material (don't as me just because you are trained to always ask at least 3 items for clarification - if you know the answer, dont ask.)
+
+(4) how does re-running the SAME family's JSON avoid creating duplicate trace rows -- ties directly into #1692's uniqueness-constraint question:   there is a risk of duplication in such cases - and would rather have a duplicate, that none at all.  however, if the wording of the observation, and the ib_node references are all the same, then it is an obvious duplicate.
+
+a observation that expands on an existing observation is regarded as a new observation.  I can't remember of the related observation column was created in ib_node, but this is how that related observation is used in ib_node.
+

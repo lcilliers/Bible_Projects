@@ -70,24 +70,62 @@ non-compliant, #648, independent of this migration).
   them, and register the one-off migration script in `cfg_utility` then set it `inactive=1` once
   applied (not left active as a reusable routine).
 
-## 4. What this migration still needs to decide — not resolved here
+## 4. Decided — researcher's rules, 2026-09-14
 
-1. **How the catalogue's own messy lifecycle state travels.** Live state: 434 rows, only 239
-   `active`, 243 `deleted`, and `status`/`deleted` disagree in count (`cfg_table`'s own note). Copy
-   as-is and let `iba.db` inherit the mess, or clean up in the same move? Not decided.
-   `finding_question_link`'s own migration (§3) chose to leave what couldn't cleanly migrate in
-   place rather than force it — a candidate pattern, not yet adopted here.
-2. **Copy vs. move.** Does the `bible_research.db` copy get dropped once `iba.db` is authoritative,
-   or kept read-only for provenance (matching how #1690's legacy `cluster_subgroup` question was
-   handled — decoupled, not forced)? Not decided.
-3. **Retargeting order** for §2's live routines — one atomic cutover, or a dual-write/read window?
-   Given nothing else currently depends on `obs_catalogue.update`/`report.obs_catalogue` running
-   mid-migration, a single atomic cutover looks lower-risk, but not decided here.
+1. **RESOLVED — inclusion filter.** *"do not migrate any soft deleted items. only active open items
+   must be migrated. ignore status"* — the filter is `deleted=0` alone; `status` plays no role in
+   deciding what migrates. **Live-checked, and this matters a lot more than the original estimate
+   suggested:** the doc's original snapshot (2026-09-13) read 239 `status='active'`/243 `deleted`
+   from `cfg_table`'s own note; the actual live crosstab, re-checked 2026-09-14, is starker —
+   **216 rows carry `status='active'`, but 118 of those are ALSO `deleted=1`.** Only **98 rows**
+   are genuinely live under the researcher's rule (`deleted=0`, `status` ignored). This is exactly
+   why "ignore status" was the right call — `status='active'` alone would have pulled in 118
+   soft-deleted rows.
+2. **RESOLVED — copy vs. move.** *"set bible_research_db all catalogue related tables all as
+   inactive. iba.db is authoritative going forward and nothing should access the research_db
+   tables."* Not a physical drop — `cfg_table.inactive=1` on the source side, `iba.db` sole
+   authoritative target. **Checked live which tables this actually touches, not assumed:**
+   `wa_obs_question_catalogue` itself (currently `inactive=0` — needs flipping) is the only table
+   this instruction cleanly covers among genuinely catalogue-scoped tables; its siblings
+   `wa_finding_catalogue_links` and `wa_flag_type_question_link` are already `inactive=1` (prior
+   migrations, §3) — nothing to do there. **`wa_quality_flag_types` is NOT catalogue-related**
+   (checked its `cfg_table.use` text: repurposed 2026-08-23, escalation #833, as the unrelated
+   prose-quality-check flag vocabulary) — excluded, not part of this instruction.
+   **RESOLVED, 2026-09-14 — `finding_question_link` is OUT of scope for this migration.**
+   Researcher's own words: *"finding[_]question_link is replaced by ib_node. no need to migrate
+   it."* Confirms it as the old finding-based mechanism `ib_node` supersedes — not migrated, not
+   marked inactive, not touched by #1696 at all. Its own retirement (once `ib_node` is built and
+   populated for real) is a separate, later disposition question, not decided or actioned here.
+3. **RESOLVED — retargeting order.** *"the active catalogue items will be inserted into the iba
+   table. there should not be any related items to transfer."* Confirmed: no live production data
+   references these rows today (only the registered routines in §2, and the FK #1691 §7a is
+   waiting on this), so there's no dual-write/read window to design — a straight bulk insert of the
+   98 rows plus the §2 routine retargeting, in one atomic unit of work.
+4. **NEW, scope boundary — RESOLVED.** *"the work done in #1690 was prototype work, we will redo it
+   for real. ignore the jsons with pointers to the catalogue, they will not be transferred into the
+   iba database."* This migration moves ONLY the catalogue table itself (question definitions) —
+   no prototype JSON output (the `_analytics/Clusters/1682-test-m10-*`/`1692-ib-node-*` files,
+   including the phantom mockup, #1699) is migrated, referenced, or treated as real data by this
+   escalation. Those get redone against the real pipeline once it's built.
+5. **Deliverable, per your instruction — done.** Full-field CSV of the 98 candidate rows (every
+   column, `deleted=0` filter applied, live-queried 2026-09-14) for your review before anything
+   executes: [`1696-catalogue-migration-candidate-rows-v1-20260914.csv`](1696-catalogue-migration-candidate-rows-v1-20260914.csv).
 
 ## 5. What "finalized" would mean
 
-Once §4 is decided and the sign-off pack (#1690/#1691/#1692/#1693/#1696) is approved as a set: a
-migration script creates `wa_obs_question_catalogue` in `iba.db` (schema per the live
-`bible_research.db` DDL, plus whatever §4 item 1 decides), copies the data, retargets every live
-routine in §2's table (code + `cfg_step`/`cfg_write_grant` rows) in the same unit of work, and
-restores the real FK on `ib_observation.question_code` (#1691 §7a) that started this whole thread.
+**Narrowed further, 2026-09-14 — every §4 item now resolved.** Once you've reviewed the CSV (§4
+item 5) and the sign-off pack (#1690/#1691/#1692/#1693/#1696) is approved as a set: a migration
+script creates `wa_obs_question_catalogue` in `iba.db` (schema
+per the live `bible_research.db` DDL), bulk-inserts the 98 `deleted=0` rows, retargets every live
+routine in §2's table (code + `cfg_step`/`cfg_write_grant` rows), sets `wa_obs_question_catalogue.
+inactive=1` in `bible_research.db`'s `cfg_table`, and restores the real FK on `ib_observation.
+question_code` (#1691 §7a) that started this whole thread — all in one unit of work, per item 3.
+
+researcher notes
+
+§4.1 do not migrate any soft deleted items. only active open items must be migrated.  ignore status
+§4.2 set bible_research_db all catelogue related tables all as inactive. iba.db is authorative going forward and nothing should access the research_db tables.  
+§4.2 the work done in #1690 was prototype work, we will redo it for real. ignore the jsons with pointers to the catelogue, they will not be transferred into the iba database.
+§4.3 the active catelogue items will be inserted into the iba table.  there should not be any related items to transfer.
+
+Before the migration allow me to have a thorough review of a complete list of all the catalogue items that will be migrated. push all the fields that will be migrated to a csv.
