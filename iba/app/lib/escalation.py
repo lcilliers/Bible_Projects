@@ -120,7 +120,9 @@ from __future__ import annotations
 import datetime
 import json
 import pathlib
+import sqlite3
 import sys
+import time
 
 from . import reportkit
 from .cfg import Cfg
@@ -698,6 +700,42 @@ def answered_for_run(db: Db, run_id: str, at_step: str):
     return rows[0] if rows else None
 
 
+def answered_baseline_for_step(db: Db, at_step: str, current_counts: dict):
+    """The most recent APPROVED escalation for `at_step`, ACROSS every run (not just this one),
+    if its recorded `context` preset counts already cover `current_counts` component-wise --
+    or None if no such row exists, parsing fails, or the current counts exceed what was approved.
+
+    Built 2026-09-15, escalation #1707 (researcher, verbatim, on that item's own comment: "this
+    report is as expected. Can be signed off. This situation should no longer create an exception
+    everytime it runs"). `answered_for_run()` above only recognises an answer given to THIS SAME
+    run_id -- a plain read-only DB-wide check like `cluster.validate`/`spine.check` gets a fresh
+    run_id every invocation, so a researcher's 'approved' on one run's findings could never be
+    recognised by any LATER run, however unchanged the underlying backlog -- exactly the repeated-
+    escalation-on-a-known-situation defect this closes. Deliberately narrow and fail-safe: only
+    `next_action IN ('approve','approved')` counts as durable acknowledgment (a `reject`/`revise`
+    means the researcher wants it acted on, never silently re-absorbed); every key in
+    `current_counts` must be present in the stored preset AND <= its stored value, or this returns
+    None (escalate again) rather than guess. A genuine INCREASE in any count still escalates fresh,
+    exactly as before -- this only suppresses re-raising the SAME already-acknowledged situation,
+    never masks growth."""
+    import json
+    rows = db.rows(
+        "SELECT * FROM escalation WHERE at_step=? AND "
+        "next_action IN ('approve','approved') ORDER BY id DESC LIMIT 1", (at_step,))
+    if not rows:
+        return None
+    row = rows[0]
+    try:
+        preset = json.loads(row["context"] or "{}")
+    except (ValueError, TypeError):
+        return None
+    for key, value in current_counts.items():
+        baseline = preset.get(key)
+        if not isinstance(baseline, (int, float)) or value > baseline:
+            return None
+    return row
+
+
 def open_duplicate(db: Db, at_step: str, stable_key: str):
     """Two real bugs found and fixed live 2026-08-29 (a `configmaint.validate` re-run pile-up --
     #1008/#1011/#1015/#1016/#1017/#1038/#1039, seven near-identical "cfg_* is structurally
@@ -1231,12 +1269,35 @@ def _extract_flag(args: list[str], name: str) -> tuple[list[str], str | None]:
     return remaining, value
 
 
+# escalation #1708, 2026-09-15: the per-connection 30s busy_timeout (cfg.py:Cfg.__init__, WAL +
+# PRAGMA busy_timeout=30000) already retries a lock internally -- but a sustained heavy DB-wide
+# sweep in a SEPARATE process (e.g. cluster.validate's own 15,455-strong scan, run concurrently
+# this session) held a write lock long enough that even 30s wasn't always enough, and this CLI's
+# own crash handler (below) recorded it as a run_error rather than a real defect. Genuinely
+# transient, not a logic bug -- a short CLI-level retry on the SPECIFIC "database is locked"
+# error is proportionate defense-in-depth for exactly the interactive-researcher-typed-command
+# case that crashed here, without masking any other failure (only this one error string retries;
+# everything else still falls straight through to the existing crash-recording path unchanged).
+_LOCK_RETRY_DELAYS = (1.0, 2.0, 4.0)  # seconds; 3 retries, ~7s total on top of the 30s per-attempt timeout
+
+
 def main() -> int:
     cfg = Cfg()
     db = Db(cfg)
     argv = sys.argv[1:]
     try:
-        return _dispatch(cfg, db, argv)
+        for attempt, delay in enumerate((0.0,) + _LOCK_RETRY_DELAYS):
+            if delay:
+                time.sleep(delay)
+                db.conn.rollback()  # clear whatever partial state the failed attempt left
+            try:
+                return _dispatch(cfg, db, argv)
+            except sqlite3.OperationalError as exc:
+                if "database is locked" not in str(exc) or attempt == len(_LOCK_RETRY_DELAYS):
+                    raise
+                print(f"[retry] database is locked -- retrying ({attempt + 1}/"
+                     f"{len(_LOCK_RETRY_DELAYS)})...", file=sys.stderr)
+        raise AssertionError("unreachable")  # loop always returns or re-raises above
     except ValueError as exc:
         # escalation-operational-friction-review-v1-20260831, Defect 1: a ValueError here is a
         # deliberate validation guard doing its job (_title_shape_error, _check_assignee,

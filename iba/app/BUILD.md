@@ -13871,3 +13871,167 @@ right now, rather than checking a placeholder.
 
 **Files:** `iba/app/handlers/spine.py`, `iba/app/ps/Spine-Check.ps1`, `iba/app/db/iba.db` (4
 `cfg_method_rule`/`cfg_step`/`cfg_report`/`cfg_report_section` rows applied).
+
+---
+
+## 264. `strong` → `cluster_strong` sync guaranteed at creation, not just checked later — Leg 3's 111-strong backlog cleared (2026-09-15, escalation #1606)
+
+**Researcher instruction, verbatim:** *"reconcile() must check and gaurantee that strong-cluster is
+in sync. so change the routines to ensure it as the response to 1606 and then assign the strongs to
+the right cluster."*
+
+**Root cause traced earlier this session** (escalation #1606 v12): both live strong-creation paths
+already ran `strongreconcile.reconcile()` automatically (`strong.reconcile`, the new-word chain's
+last step; `raw.backfill_meaning`'s inline call for book-discovered codes) — an allocation ATTEMPT
+always fired. But `reconcile()`'s own classifier only auto-assigns via a narrow HIGH-confidence
+exact-gloss-precedent match; a miss left the code `status='unclassified'` with **no escalation at
+all**, by that module's own deliberate original design ("Deliberately NEVER escalates itself"). The
+intended catch, `cluster.validate`, was explicitly "Read-only findings, not a gate" and only
+escalated on two narrower exception shapes (no-word-link, sibling-conflict) — never on a plain
+unclassified count, and only ever invoked manually. 111 live strongs (mostly Greek
+prepositions/conjunctions/particles, some Hebrew H9xxx formatives) had accumulated with no cluster
+assignment, invisible the whole time.
+
+**Applied — the guarantee mechanism (code + config, same unit of work):**
+- `handlers/raw.py:reconcile()` (step `strong.reconcile`) and `handlers/raw.py:backfill_meaning()`
+  now return `fail("unclassified", ...)` — carrying the actual unclassified code list in the
+  Outcome's counts — instead of always `ok()`, whenever any code comes back unclassified.
+  `strongreconcile.reconcile()` itself is unchanged and still never escalates (it's reused inside
+  `cluster.assign`'s own DB-wide sweep loop too) — this is the STEP-level caller's job, matching the
+  handler contract (`handlers/base.py`: a handler names the condition, `cfg_on_fail` decides the
+  path).
+- Two new `cfg_on_fail` rows registered: `strong.reconcile`/`unclassified` and
+  `raw.backfill_meaning`/`unclassified`, both `pause-continue`/`terminal` — same shape as
+  `raw.detail`'s existing `no-vocab` condition (a real researcher-facing decision point, not a
+  silent continue).
+- `handlers/cluster.py:validate()` widened: a nonzero unclassified count is now a real finding on
+  the same footing as the two named exception shapes, not a separate lesser category — it escalates
+  the run, and the persisted report (`cluster.quality_report_path`) now lists the unclassified
+  strongs by name, not just a bare count.
+- `cfg_step.does` refreshed for all three steps to describe the new behaviour
+  (`governance.rules_must_be_config_driven` — code and its config description change together).
+
+**Applied — the backlog (111 strongs, `iba/app/migration/assign_leg3_orphan_strongs_v1_20260915.py`,
+one-off, registered in `cfg_utility` then set `inactive=1` once run):** classified by hand, same
+method already established in this escalation's own history (morph_code pattern first, then each
+code checked individually against the live T5/T6 definitions before falling back to T2, not blanket
+morph-matched) — reused the exact `cluster_strong` INSERT shape `apply_1598_cluster_batch.py`
+established rather than a fresh mechanism (`cluster_strong` is `category='data'`/`writer='migration'`
+territory, not `configmaint.propose`). Result: **5 → T5** (plain declarative negatives, e.g. "not
+yet"/"not any more"), **40 → T6** (clause-linking connectives — every `CONJ`-tagged code, plus
+rhetorical/interrogative negatives matching this escalation's own `G0687` "no?" round-2 precedent,
+plus comparative/temporal particles), **66 → T2** (every H9xxx Hebrew grammatical formative — the
+already-named pattern; plain spatial/directional Greek prepositions with no clause-linking force;
+three incidental place names; four liturgical exclamations). Three genuine data anomalies flagged
+for the researcher, not silently resolved: `G1306` ("to shine through", tagged `PREP` — reads like a
+verb), `G4315` ("Friday", tagged `PREP` — reads like a day name, a T15/Calendar candidate if the tag
+is wrong), `G3637` (zero live `verse_lexical` occurrences, no morph evidence to classify by).
+
+**Self-caught correction, same run:** `G3304` ("rather") was written into the script's T6 rationale
+list but a transcription slip left it out of the actual `_T6` dict on the first live run, so it fell
+through to the generic T2 default. Caught before reporting this as done — fixed live (soft-deleted
+the wrong T2 row, inserted the correct T6 row) and the script's own payload corrected in place.
+
+**Verified, not just asserted:**
+- Synthetic unit test (3 cases: one-unclassified-among-two, none-unclassified, zero-codes) against
+  the exact conditional logic added — all 3 pass.
+- Live re-check: direct query confirms 0 live strongs with zero `cluster_strong` allocation (was
+  111).
+- Live end-to-end run of the actual dispatched `cluster.validate` step
+  (`RUN-20260915_071413-CLUSTERVALIDATE-VERIFY`) confirms the same from inside the real mechanism:
+  *"0 `strong` row(s) have NO cluster assignment at all"* — and correctly still escalates on the
+  pre-existing, unrelated no-word (4460) and sibling-conflict (2789) exception backlog, proving the
+  fix didn't suppress genuine findings while closing the one it targeted. That run auto-raised
+  escalation **#1707** for that pre-existing backlog — a legitimate, expected consequence of the
+  widened check now actually running end-to-end, not a new defect; left open for the researcher,
+  well outside today's Leg-3 scope.
+
+**Not done:** #1707's own backlog (4460 no-word / 2789 sibling-conflict exceptions) is unaddressed —
+a much larger, separate body of work, not part of this escalation's ask.
+
+**Files:** `iba/app/handlers/raw.py`, `iba/app/handlers/cluster.py`,
+`iba/app/migration/assign_leg3_orphan_strongs_v1_20260915.py` (new, one-off, now `inactive=1`),
+`iba/app/db/iba.db` (2 `cfg_on_fail` rows, 3 `cfg_step.does` refreshes, 111 `cluster_strong` rows,
+1 `cfg_utility` registration).
+
+---
+
+## 265. `cluster.validate` (and any future step) can recognise a cross-run approval, not just a same-run one — the #1707 backlog no longer re-escalates every run (2026-09-15, escalation #1707)
+
+**Symptom:** BUILD.md #264's own verification run (a real, live `cluster.validate` dispatch) auto-
+raised escalation #1707 for the app's pre-existing, already-known no-word (4460) / sibling-conflict
+(2789) exception backlog — correct behaviour (the widened check from #264 was doing its job), but
+the researcher's own comment on #1707 named the next real gap: *"this report is as expected. Can be
+signed off. This situation should no longer create an exception everytime it runs."*
+
+**Root cause:** the existing "was this already answered" check
+(`lib/escalation.py:answered_for_run()`) is scoped to `(run_id, at_step)` — it can only recognise an
+answer given to the exact SAME run. A read-only DB-wide check like `cluster.validate`/`spine.check`
+gets a brand-new `run_id` every invocation, so a researcher's `approved` on one run's findings could
+never be recognised by any LATER run, however unchanged the underlying, already-acknowledged
+backlog — every re-run would escalate fresh, forever, regardless of approval history.
+
+**Applied:**
+- `lib/escalation.py:answered_baseline_for_step()` (new) — finds the most recent `approved`
+  escalation for a given step, ACROSS every run, and checks whether its recorded `context` preset
+  counts already cover the CURRENT counts component-wise. Deliberately narrow and fail-safe: only
+  `approve`/`approved` counts as durable acknowledgment (never `reject`/`revise`); any current count
+  missing from the stored preset, or exceeding its stored value, returns `None` (escalate again),
+  never a silent guess. A genuine increase in any count still escalates fresh — this only suppresses
+  re-raising the exact same, already-signed-off situation.
+- `handlers/cluster.py:validate()` — checks this baseline BEFORE building the `escalate()` call; if
+  covered, returns `ok()` with an explicit "acknowledged automatically, not re-raised" message
+  naming which prior escalation set the baseline, instead of raising a new one.
+- `cfg_step.does` (cluster.validate) refreshed again to describe this second same-day behaviour
+  change.
+- Escalation **#1707** itself closed (`completed`/`approved`) per the researcher's direct sign-off —
+  its approval IS the baseline this mechanism now checks future runs against.
+
+**Verified:** live re-run of the real `cluster.validate` step immediately after #1707's approval
+(`RUN-...-CLUSTERVALIDATE-VERIFY2`) — counts unchanged (0/4460/2789), confirming the run
+acknowledges automatically against the just-approved baseline instead of raising a duplicate
+escalation.
+
+**Not done:** the underlying 4460/2789 backlog itself is still unaddressed — explicitly acknowledged
+as known/tracked per the researcher's sign-off, not actioned; this entry is about the ESCALATION
+MECHANISM no longer nagging about it every run, not about fixing the data. The same `answered_for_run`-
+only limitation likely affects `spine.check` too (same pattern, not checked or touched this round —
+flagged, not fixed, out of scope for what #1707 asked).
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/handlers/cluster.py`, `iba/app/db/iba.db` (1
+`cfg_step.does` refresh, escalation #1707 closed).
+
+---
+
+## 266. Escalation CLI retries a transient "database is locked" before crashing (2026-09-15, escalation #1708)
+
+**Symptom:** the researcher's own direct `escalation update 1696 ...` CLI call — real content, not
+a usage slip — crashed with `sqlite3.OperationalError: database is locked` and auto-filed itself as
+a `run_error` (#1708, `self_correctable`). No data was permanently lost: the researcher re-typed the
+same update directly and it landed clean (#1696 v5 carries the recovered content) — but the crash
+itself was a real, avoidable failure mode, not user error.
+
+**Root cause:** the DB connection already has a 30s WAL `busy_timeout` (`lib/cfg.py:Cfg.__init__`,
+built earlier) — normally more than enough. This session ran an unusually heavy concurrent load
+(BUILD.md #264/#265's own live `cluster.validate` verification runs, a 15,455-strong DB-wide sweep,
+in the background) at the same moment the researcher's own foreground CLI call tried to write —
+sustained contention the 30s timeout apparently wasn't always enough to absorb.
+
+**Applied:** `lib/escalation.py:main()` now retries specifically on
+`sqlite3.OperationalError` whose message contains `"database is locked"` — up to 3 retries, 1s/2s/4s
+backoff, rolling back the failed attempt's partial state before each retry — before falling through
+to the existing (unchanged) crash-recording path. Deliberately narrow: only that one error string
+retries; every other exception (including a lock that never clears) propagates exactly as before,
+so nothing is masked.
+
+**Verified:** 3 synthetic cases against the real `main()` (mocked `_dispatch`) — fails twice then
+succeeds (retries, returns success); a different `OperationalError` (propagates immediately, no
+retry); a lock that never clears (exhausts all 3 retries, then propagates — does not loop forever).
+Plus a live regression check: the CLI's normal read path (`escalation list`) still works unchanged.
+
+**Not done:** the same `answered_for_run`-only / no-retry pattern likely affects other CLI entry
+points in this codebase with their own `main()`-style crash handlers — not swept or checked this
+round, scoped to the one CLI that actually crashed.
+
+**Files:** `iba/app/lib/escalation.py`, escalation #1708 (closed, `self_correctable`, no researcher
+decision needed — the fix itself was the resolution).

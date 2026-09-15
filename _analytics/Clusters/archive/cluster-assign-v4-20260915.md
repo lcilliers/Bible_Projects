@@ -1,6 +1,6 @@
 # Cluster-assignment quality report
 
-> Generated 2026-09-15T07:39:05Z by `cluster.validate`. Read-only findings, not a gate.
+> Generated 2026-09-15T07:17:40Z by `cluster.validate`. Read-only findings, not a gate.
 
 - `strong` rows with no cluster assignment at all: **0**
 - `backfill`-origin, non-T2 assignment, not yet promoted (should be `word`): **0**

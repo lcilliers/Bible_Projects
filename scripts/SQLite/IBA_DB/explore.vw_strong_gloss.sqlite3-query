@@ -1,0 +1,27 @@
+-- database: c:\Bible_study_projects\iba\app\db\iba.db
+
+SELECT count(*) FROM vw_strong_gloss
+where length(gloss) > 100;
+
+select * from vw_strong_gloss;
+
+select s.strongNumber
+,s.stepGloss
+, vw.source
+, vw.gloss
+, vw.ord
+, v.reference
+, sp.surface
+, sp.morph_code
+, sp.position
+from strong s
+left join vw_strong_gloss vw
+on s.strongNumber = vw.strong
+left join span sp
+on s.strongNumber = sp.strong_variant
+left join verse v
+on v.Id = sp.verse_id
+where s.strongNumber = 'G3004G'
+order by sp.morph_code;
+
+select * from span;

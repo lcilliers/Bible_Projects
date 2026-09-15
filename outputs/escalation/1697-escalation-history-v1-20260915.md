@@ -1,0 +1,13 @@
+# Escalation deep history
+
+## #1697 — Add status column + lifecycle enum to iba.cluster
+type=task source=researcher
+
+**v1** (2026-09-13T16:01:36Z, Claude) state=raised next_action=review assigned_to=Researcher
+> **short description (set this version):** Add status column + lifecycle enum to iba.cluster
+> **comment (set this version):** Researcher instruction, verbatim this chat turn: iba.cluster has no status column (confirmed live, #1690 section 7 item 3). Add one, enum-governed (cfg_enum), values in the researcher's own order: strong assignment in progress; T-cluster assignment completed; ready for subgroup allocation; ready for reading; ready for observations; ready for synthesis; completed; strongs re-assigned. Governing rule, verbatim in substance: whenever a strong is re-assigned to/from a cluster while that cluster's status is NOT ready-for-subgroup-allocation, the status must reset to strongs-re-assigned. In all other cases, the correct status is a PRECONDITION for the relevant routine to run, and on successful completion of that routine's DB update, the cluster status is advanced to the next stage. This is part of the same sign-off pack as #1690/#1691/#1692/#1693/#1696 -- it gates the routines those documents specify. A note has been added to each of those design documents to take this into account; not resolved/built here.
+> **context (set this version):** Directly resolves the open reassignment-impact-flag question left in #1690 section 7 (a new routine to assess impact was flagged as needed there -- this status column + rule is that mechanism). Parent: #1682.
+
+**v2** (2026-09-13T16:18:51Z, Claude) state=in-progress next_action=review assigned_to=Researcher
+> **comment (set this version):** Reconciliation resolved per your instruction this chat turn: cluster.status is a ROLLUP over cluster_subgroup.status (#1690 3a), not an independent gate for subgroup-scoped stages. Rule now 4 parts in section 3: (1) reassignment reset, unchanged, genuinely cluster-level; (2) ready_for_subgroup_allocation->ready_for_reading is a direct cluster-grain transition (process b runs once); (3) ready_for_reading->ready_for_observations->ready_for_synthesis->completed is a rollup -- the cluster only advances once EVERY subgroup (FLAG excluded) has reached the matching level; (4) the rollup recomputes on every subgroup status change, so a subgroup falling back to re_read_needed regresses the cluster too, not just held stale. Section 4 (cross-document impact) updated to match.
+> **context (set this version):** Doc updated in place: iba/docs/1697-cluster-status-lifecycle-v1-20260913.md (section 3, section 4).

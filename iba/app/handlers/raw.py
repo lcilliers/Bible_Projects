@@ -368,11 +368,28 @@ def validate(ctx: Ctx) -> Outcome:
 def reconcile(ctx: Ctx) -> Outcome:
     from ..lib import strongreconcile
     tallies: dict[str, int] = {}
+    unclassified: list[str] = []
     for code in _strongs_for_word(ctx):
         r = strongreconcile.reconcile(ctx, code)
         tallies[r["status"]] = tallies.get(r["status"], 0) + 1
+        if r["status"] == "unclassified":
+            unclassified.append(code)
     parts = ", ".join(f"{k}: {v}" for k, v in sorted(tallies.items()))
-    return ok(f"{len(_strongs_for_word(ctx))} strong(s) cluster-reconciled — {parts}", **tallies)
+    msg = f"{len(_strongs_for_word(ctx))} strong(s) cluster-reconciled — {parts}"
+    # escalation #1606, researcher instruction 2026-09-15, verbatim: "reconcile() must check and
+    # guarantee that strong-cluster is in sync... it should not be possible to add/modify a strong
+    # without updating the cluster membership." strongreconcile.reconcile() itself stays pure and
+    # never escalates (used inside DB-wide sweeps too, cluster.py:assign) — this is the STEP-level
+    # caller's job, matching the handler contract (name the condition, cfg_on_fail decides the
+    # path). Previously this always returned ok() regardless of how many codes came back
+    # unclassified — the exact gap #1606 traced live: an automatic classification ATTEMPT ran on
+    # every strong, but a failed attempt was never surfaced, only caught later (if at all) by a
+    # manually-invoked cluster.validate sweep.
+    if unclassified:
+        return fail("unclassified", msg + f" — {len(unclassified)} strong(s) got no cluster "
+                    f"assignment at all (no HIGH-confidence precedent match): "
+                    f"{', '.join(unclassified)}", **tallies, unclassified_codes=unclassified)
+    return ok(msg, **tallies)
 
 
 # ── backfill (book/range; meaning ONLY, no verses) ────────────────────────────────────────────
@@ -481,12 +498,20 @@ def backfill_meaning(ctx: Ctx) -> Outcome:
                  f"strong row — nothing to backfill", checked=result["distinct_codes"], missing=0)
 
     tallies = ", ".join(f"{k}: {v}" for k, v in sorted(result["reconcile_tallies"].items()))
-    return ok(f"{book} {range_spec or '(whole book)'}: {result['distinct_codes']} distinct strong(s) "
-             f"referenced, {result['missing_before']} were unregistered — pulled meaning (not "
-             f"verses) for {result['strong']} ({result['no_vocab']} returned no vocab from STEP); "
-             f"parsed layer rebuilt ({result['strong_meaning_parsed']} meaning / "
-             f"{result['strong_lsj_parsed']} lsj / {result['strong_mounce_parsed']} mounce rows); "
-             f"relatedNos fetched for the {result['missing_before']} newly-registered strong(s) "
-             f"({result['strong_related']} related row(s), {result['errors']} fetch error(s)); "
-             f"cluster-reconciled ({tallies or 'nothing to reconcile'}).",
-             **result)
+    msg = (f"{book} {range_spec or '(whole book)'}: {result['distinct_codes']} distinct strong(s) "
+          f"referenced, {result['missing_before']} were unregistered — pulled meaning (not "
+          f"verses) for {result['strong']} ({result['no_vocab']} returned no vocab from STEP); "
+          f"parsed layer rebuilt ({result['strong_meaning_parsed']} meaning / "
+          f"{result['strong_lsj_parsed']} lsj / {result['strong_mounce_parsed']} mounce rows); "
+          f"relatedNos fetched for the {result['missing_before']} newly-registered strong(s) "
+          f"({result['strong_related']} related row(s), {result['errors']} fetch error(s)); "
+          f"cluster-reconciled ({tallies or 'nothing to reconcile'}).")
+    # escalation #1606 — same guarantee as strong.reconcile above: a backfill-discovered code has
+    # no per-word chain to catch this any other way (backfill_meaning_for's own comment), so this
+    # is the only point it will ever pass through.
+    unclassified_n = result["reconcile_tallies"].get("unclassified", 0)
+    if unclassified_n:
+        return fail("unclassified", msg + f" — {unclassified_n} strong(s) got no cluster "
+                    f"assignment at all, needs classification before this book's data is trusted "
+                    f"complete.", **result)
+    return ok(msg, **result)

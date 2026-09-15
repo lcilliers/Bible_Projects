@@ -33,7 +33,8 @@ def assign(ctx: Ctx) -> Outcome:
 
 
 # ── validate (read-only; coverage + the two named exception shapes; always persists a report) ──
-def _write_report(ctx: Ctx, counts: dict, no_word: list[dict], sibling: list[dict]) -> pathlib.Path:
+def _write_report(ctx: Ctx, counts: dict, unclassified: list[dict], no_word: list[dict],
+                  sibling: list[dict]) -> pathlib.Path:
     path = pathlib.Path(ctx.cfg.required_setting("cluster.quality_report_path"))
     intro = [
         f"> Generated {_now()} by `cluster.validate`. Read-only findings, not a gate.",
@@ -52,6 +53,9 @@ def _write_report(ctx: Ctx, counts: dict, no_word: list[dict], sibling: list[dic
             f"exception — no word: {len(no_word)}",
             f"exception — sibling conflict: {len(sibling)}",
         ],
+        "unclassified": (
+            [f"`{r['strongNumber']}` — {r['stepGloss']!r}" for r in unclassified]
+            or ["(none)"]),
         "exceptions_no_word": (
             [f"`{r['strong']}` — {r['stepGloss']!r}, cluster {r['cluster_code']}" for r in no_word]
             or ["(none)"]),
@@ -68,7 +72,7 @@ def validate(ctx: Ctx) -> Outcome:
     total = ctx.db.rows("SELECT COUNT(*) n FROM strong WHERE deleted=0")[0]["n"]
 
     unclassified = ctx.db.rows(
-        "SELECT s.strongNumber FROM strong s WHERE s.deleted=0 AND NOT EXISTS "
+        "SELECT s.strongNumber, s.stepGloss FROM strong s WHERE s.deleted=0 AND NOT EXISTS "
         "(SELECT 1 FROM cluster_strong cs WHERE cs.strong = s.strongNumber AND cs.deleted=0)")
 
     # Both queries mirror reconcile()'s own needs_word test exactly (word-optional set — T2/T3 by
@@ -99,13 +103,34 @@ def validate(ctx: Ctx) -> Outcome:
                                  "cluster_code": cc or "(none)"})
 
     counts = {"total": total, "unclassified": len(unclassified), "not_promoted": len(not_promoted)}
-    report_path = _write_report(ctx, counts, no_word, sibling_rows)
+    report_path = _write_report(ctx, counts, unclassified, no_word, sibling_rows)
 
-    total_findings = len(no_word) + len(sibling_rows)
+    # escalation #1606, researcher instruction 2026-09-15: a plain unclassified count used to be
+    # reported but never escalated on its own -- exactly why the 111-strong backlog went unnoticed
+    # until a manual sweep found it. Now counts as a finding, same footing as the two named
+    # exception shapes, not a separate lesser category.
+    total_findings = len(unclassified) + len(no_word) + len(sibling_rows)
     if not total_findings:
-        return ok(f"{total} strong(s) checked — {counts['unclassified']} unclassified, "
+        return ok(f"{total} strong(s) checked — 0 unclassified, "
                  f"{counts['not_promoted']} not-yet-promoted, 0 exceptions — "
                  f"report written to {report_path}", **counts)
+
+    # escalation #1707, researcher instruction 2026-09-15, verbatim: "this report is as expected.
+    # Can be signed off. This situation should no longer create an exception everytime it runs."
+    # A fresh run_id every invocation meant a prior run's 'approved' could never be recognised by a
+    # later run (answered_for_run below is scoped to THIS run only) -- checked here FIRST, across
+    # every past run for this step: if the current findings don't exceed what was already approved,
+    # acknowledge silently rather than re-raising the same known backlog. A genuine increase in any
+    # count still escalates fresh, same as before.
+    current = {"unclassified": len(unclassified), "no_word": len(no_word),
+              "sibling_conflict": len(sibling_rows)}
+    baseline = esc.answered_baseline_for_step(ctx.db, ctx.step_id, current)
+    if baseline is not None:
+        return ok(f"{total} strong(s) checked — {len(unclassified)} unclassified, "
+                 f"{len(no_word)} no-word / {len(sibling_rows)} sibling-conflict finding(s), none "
+                 f"exceeding the baseline already approved on escalation #{baseline['id']} — "
+                 f"acknowledged automatically, not re-raised; report written to {report_path}",
+                 **counts, no_word=len(no_word), sibling_conflict=len(sibling_rows))
 
     answered = esc.answered_for_run(ctx.db, ctx.run_id, ctx.step_id)
     if answered:
@@ -115,9 +140,10 @@ def validate(ctx: Ctx) -> Outcome:
         # (approve/reject/revise/hold/noted) -- only 'approve'/'approved' differ in spelling
         # between the two, everything else already matches.
         if decision in ("approve", "approved"):
-            return ok(f"acknowledged: {len(no_word)} no-word / {len(sibling_rows)} sibling-conflict "
-                     f"exception(s) — researcher confirmed known/acceptable; full detail in "
-                     f"{report_path}", **counts, no_word=len(no_word), sibling_conflict=len(sibling_rows))
+            return ok(f"acknowledged: {len(unclassified)} unclassified / {len(no_word)} no-word / "
+                     f"{len(sibling_rows)} sibling-conflict finding(s) — researcher confirmed "
+                     f"known/acceptable; full detail in {report_path}", **counts,
+                     no_word=len(no_word), sibling_conflict=len(sibling_rows))
         from .base import fail
         if decision == "reject":
             return fail("findings-rejected",
@@ -127,13 +153,14 @@ def validate(ctx: Ctx) -> Outcome:
 
     return escalate(
         "needs-review",
-        question=(f"Cluster-assignment exceptions: {len(no_word)} strong(s) carry a non-T2 cluster "
+        question=(f"Cluster-assignment findings: {len(unclassified)} `strong` row(s) have NO "
+                 f"cluster assignment at all; {len(no_word)} strong(s) carry a non-T2 cluster "
                  f"with no word_registry link at all; {len(sibling_rows)} `backfill` strong(s) have "
-                 f"an already-active or already-clustered sibling. Neither is auto-resolved — "
+                 f"an already-active or already-clustered sibling. None is auto-resolved — "
                  f"approve to acknowledge as current/known state, reject to flag for action, or "
                  f"revise with a comment. Full detail: {report_path}."),
-        preset={"no_word": len(no_word), "sibling_conflict": len(sibling_rows),
-               "report_path": str(report_path)},
+        preset={"unclassified": len(unclassified), "no_word": len(no_word),
+               "sibling_conflict": len(sibling_rows), "report_path": str(report_path)},
         tried="reconcile()'s own exception checks, run DB-wide across every backfill-origin strong "
               "with a cluster assignment",
         resolution_kind="decision_required")
