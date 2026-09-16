@@ -95,3 +95,8 @@ expected system restart.
 
 ## 5. Git state
 
+Branch `main`, up to date with `origin/main`. Committed `5e8d28a12e9258993c3e716b338ba659114474bd`
+("session 20260916: Layer 1 design closed, #1706 escalation register + Layer 2 review, #1704
+Phases 2-5..."), 38 files changed. Pushed to `origin/main` (`9a744b45..5e8d28a1`). `git status`
+confirms working tree clean.
+
