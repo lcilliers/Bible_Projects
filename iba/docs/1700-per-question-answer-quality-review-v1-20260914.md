@@ -138,6 +138,39 @@ Where T6 *does* answer directly, the quality matches every other section: `T6.1.
 (CHAR-11 as "bedrock condition" for the whole cluster) and `T6.5.3`'s degree/kind/direction/level
 distinctions are genuinely precise conceptual work.
 
-## Sections not yet reviewed
+## T7 — Evidential and Methodological Foundation (19 exercised, 2 unexercised)
 
-T7, and the non-tier sections (Extensions, Section 1–5, leviticus, redemption).
+**All 19 substantiated. No genericity found across 95 sampled answers.** Same overall quality as
+T0/T1/T2/T4/T5 — specific, verse-anchored, differentiated per characteristic. T7.1's lexical
+questions (root meanings, grammatical/semantic range, OT-NT continuity) produce genuinely precise
+philological work (e.g. T7.1.8's LXX-mediated agapē/chesed continuity argument, T7.1.6's
+person-type-term reasoning). T7.2.5/2.6 (primary anchor verse) and T7.3.1-3.4 (human-science
+framework) sections show real synthesis, not templated answers — e.g. T7.3.3's consistent,
+specific divergence-reasoning between a named framework and the verse evidence (dignity studies vs.
+formed-godliness, Bandura vs. objective-transgression), not a generic "the framework differs"
+non-answer.
+
+Same recurring non-defect categories as elsewhere, no new failure mode found:
+- `[Sub-group not separately addressed in source]` placeholder — appears in T7.1.10, T7.2.3,
+  T7.2.4, T7.2.6, T7.3.3 (×2), T7.3.4 — roughly the T0/T1/T2/T4/T5 baseline rate, not T6's elevated
+  one.
+- One `[BOUNDARY — structural characterisation note only...]` exemption (T7.3.4) — same rule-
+  governed category first seen at T1.3.3.
+
+`T7.2.2a`/`T7.2.2b`: unexercised (0 findings) — part of the confirmed 2026-09-04 split-initiative
+pattern (§ above), same as every other split code found in T0/T1/T4.
+
+## Review complete — all 98 live catalogue questions accounted for
+
+**Confirmed live, 2026-09-16:** `wa_obs_question_catalogue` has exactly 98 `deleted=0` rows,
+100% inside tiers T0/T1/T2/T4/T5/T6/T7 (10+19+6+20+9+13+21=98) — **there is no live "non-tier"
+material** (Extensions/Section 1-5/leviticus/redemption, named in this doc's own "not yet reviewed"
+line as of 2026-09-14, do not exist as live rows to review). **Every live catalogue question has now
+been sampled and judged.** Summary across all 7 tiers, 98 questions, ~440 sampled answers: **zero
+genericity found anywhere.** Every non-"substantiated" case falls into one of five already-named,
+non-defect categories: `[Sub-group not separately addressed]` placeholder (source-data gap, higher
+rate in T6 specifically), `[BOUNDARY]` exemption (rule-governed), off-target-but-substantive (one
+T1.2.1 instance), process-note-as-answer (one T6.4.3 instance), or confirmed unexercised (the 10
+2026-09-04 split codes, project-wide, zero findings on the historical `finding`/
+`finding_question_link` corpus because no analytical run has touched this catalogue since the
+split was made — not a live-quality defect on any of them).
