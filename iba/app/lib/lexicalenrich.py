@@ -154,21 +154,24 @@ def _quality_problems_for_note(conn, item: dict, verse_lexical_id: int, code_cla
                 problems.append("recurrence_role_shift note's target/related row is a DIFFERENT "
                                 "(strong, morph_code) pair than the source row")
     if note_type == "cross_lemma_shared_gloss":
+        # resolved_sense DROPPED from verse_lexical 2026-09-16 (#1706 Phase B) -- the "does the
+        # target share the source's resolved_sense" half of this check has no data left to compare
+        # (its replacement lives at the new Layer 2 verse_meaning stage, not this table). Retained:
+        # the same-strong-code check, which needs no resolved_sense at all. This whole note_type/
+        # verse_lexical_note mechanism is superseded architecture (#1597, ib_observation) -- not
+        # rebuilt here, just kept from crashing on a column that no longer exists.
         target = item.get("target_id")
         if target:
             cmp_row = conn.execute(
-                "SELECT strong, resolved_sense FROM verse_lexical WHERE id=?", (target,)).fetchone()
+                "SELECT strong FROM verse_lexical WHERE id=?", (target,)).fetchone()
             if cmp_row and src:
                 src_full = conn.execute(
-                    "SELECT strong, resolved_sense FROM verse_lexical WHERE id=?",
+                    "SELECT strong FROM verse_lexical WHERE id=?",
                     (verse_lexical_id,)).fetchone()
                 if cmp_row["strong"] == src_full["strong"]:
                     problems.append("cross_lemma_shared_gloss note's target shares the SAME "
                                     "strong code as the source — that belongs to "
                                     "gloss_consistent_in_verse, not this note_type")
-                if cmp_row["resolved_sense"] != src_full["resolved_sense"]:
-                    problems.append("cross_lemma_shared_gloss note's target does NOT share the "
-                                    "source's resolved_sense")
     return problems
 
 

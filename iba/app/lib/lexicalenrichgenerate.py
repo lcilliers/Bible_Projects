@@ -173,7 +173,21 @@ def assemble_batch_package(ctx, verse_ids: list[int]) -> dict:
 
 def call_api(ctx, package: dict) -> dict:
     """One live Messages API call. Returns {"text", "input_tokens", "output_tokens"}. URL/version
-    are cfg_setting, not module constants (see module docstring)."""
+    are cfg_setting, not module constants (see module docstring).
+
+    `thinking` explicitly disabled -- found live 2026-09-17 building `lexical.meaning`
+    (`versereadinggenerate.py`, which calls this same function): the API defaults to extended
+    thinking even when the `thinking` parameter is omitted entirely, and with
+    `max_output_tokens=8000` the ENTIRE budget was consumed by thinking (`stop_reason=max_tokens`,
+    `output_tokens_details.thinking_tokens=8000`), leaving zero tokens for the actual answer --
+    real money spent for a genuinely empty response, `parse_response` correctly rejecting it but
+    only after the spend already happened. `package["max_output_tokens"]` (`lexical.
+    llm_max_output_tokens`) was sized for the answer alone, same assumption this whole cost-
+    estimation model has always made -- disabling thinking here keeps that assumption true, not
+    silently redefining what the setting means. `narrativegenerate.py`'s own `call_api`-shaped
+    function makes the identical request shape and is very likely exposed to the same bug -- not
+    fixed here (outside this build's scope), flagged live in the same escalation (#1706) this fix
+    belongs to."""
     import requests
     key = _api_key()
     url = ctx.cfg.required_setting("lexical.llm_api_url")
@@ -182,6 +196,7 @@ def call_api(ctx, package: dict) -> dict:
         url,
         headers={"x-api-key": key, "anthropic-version": version, "content-type": "application/json"},
         json={"model": package["model"], "max_tokens": package["max_output_tokens"],
+             "thinking": {"type": "disabled"},
              "system": package["instructions"],
              "messages": [{"role": "user", "content": package["content"]}]},
         timeout=600)
@@ -190,6 +205,11 @@ def call_api(ctx, package: dict) -> dict:
     data = resp.json()
     text = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
     usage = data.get("usage", {})
+    if not text and data.get("stop_reason") == "max_tokens":
+        raise ApiCallFailed(
+            f"response hit max_tokens ({package['max_output_tokens']}) with no text content "
+            f"produced (usage={usage}) -- the answer itself needs more room than "
+            f"lexical.llm_max_output_tokens currently allows, raise it via configmaint.propose")
     return {"text": text, "input_tokens": usage.get("input_tokens", 0),
            "output_tokens": usage.get("output_tokens", 0)}
 

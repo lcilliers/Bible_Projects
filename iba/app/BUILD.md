@@ -14035,3 +14035,406 @@ round, scoped to the one CLI that actually crashed.
 
 **Files:** `iba/app/lib/escalation.py`, escalation #1708 (closed, `self_correctable`, no researcher
 decision needed — the fix itself was the resolution).
+
+---
+
+## 267. Full lexical-stack rebuild, Phases A/B/D/E + catalogue migration — Layer 1 redesigned and
+rebuilt corpus-wide, the cluster-reading pack's 5 tables created, `wa_obs_question_catalogue`
+migrated into `iba.db` (2026-09-16, escalation #1706, build session)
+
+**Instruction, verbatim:** *"you can now systemaitcally and in stages start the build of 1706.
+Don't stop to ask questions, all the areas of concern will be dealt with as fixes to the build,
+just list your issues... this include the entire build from lexical layer 1 write through to the
+end of ib_observations, including all the code, methods, configs, migration of catelogue, schema,
+jsons packs between each stage, and updating the governance rules documentation and glossary."*
+
+**What this entry covers is Phases A/B/D/E of #1706's own build list, plus the catalogue migration
+(#1696) — not the whole 34-item list.** Phase C (the Layer 2 `verse_meaning` stage's actual
+execution code) and Phase F (running any stage for a real cluster) are explicitly NOT done — see
+"Not done" below. This is an honest scope line, not the full 4-week build in one session.
+
+### Phase A — lexical readiness check (#1606)
+
+Built `lexical.readiness` (`iba/app/handlers/lexical.py`) — the 3-leg base-data readiness check
+(verse-has-span, span-strong-resolves, strong-has-cluster-allocation), mirroring `spine.check`'s own
+shape. Registered `cfg_setting`/`cfg_report`/`cfg_report_section`/`cfg_step`/`cfg_method_rule`
+(`iba/app/migration/register_lexical_readiness_check_v1_20260916.py`) and a PS wrapper
+(`iba/app/ps/Lexical-Readiness.ps1`). **Verified live, both before and after Phase B's rebuild: 0
+FATAL findings across all 3 legs** — confirms #1606's own 111-strong Leg-3 gap (closed 2026-09-15,
+BUILD.md #264) is still clean and nothing regressed.
+
+### Phase B — Layer 1 (`verse_lexical`) redesigned and rebuilt corpus-wide
+
+**Redesign** (`iba/app/lib/lexical.py`, full rewrite of the resolution path):
+- `role` — was a `'content'/'function'` morph-tag classifier (the exact mechanism escalation #1590
+  diagnosed as buggy — a Greek article tag misclassified). **Deleted, not patched**
+  (`classify_role`/`_H_FORMATIVE_RE`/`_GREEK_FUNCTION_TAGS` all removed). Replaced with
+  `load_role_codes`/`_role_for`: a bare JSON array of every live `cluster_strong.cluster_code` for
+  the strong (T-codes and M-codes both), e.g. `["T5","M12"]`.
+- `resolved_sense`/`ambiguity_note` — dropped from Layer 1 entirely (columns removed). Their
+  replacement is the new Layer 2 `verse_meaning` stage (#1711), not a Layer 1 field — `resolve_code`
+  no longer touches `strong_meaning_parsed` or STEP live lookups at all.
+- `language` — dropped from `verse_lexical` (still read transiently from `strong.language` to gate
+  `_narrative_morph_for`'s Hebrew check, never stored). The verse-grain equivalent,
+  `verse_meta.language`, is auto-computed by trigger — see below.
+- New pre-run readiness validator (`unready_codes_in_scope`, `NotReady` exception) — #1606 D1: any
+  code in a build's scope with zero `cluster_strong` allocation (an empty `role` array) blocks the
+  run before any write, per the researcher's own ruling.
+- Dead code removed while doing this rewrite (found, not introduced): `_select_stem_text`/
+  `_stem_name_for`/`_HEBREW_STEM_MAP`/`_GREEK_VOICE_MAP` (stem/voice narrowing, already unreferenced
+  before tonight — the resolve_code path that would have called them was removed back in
+  escalation #1575, 2026-09-07); `load_mcode_strongs` (its sole caller, the M-code gate on
+  `resolved_sense`, was already dead per its own docstring, and `resolved_sense`'s full removal
+  removes its last reason to exist).
+- 4 call sites fixed for the new signatures (`step`/`live_cache` params dropped — Layer 1 no longer
+  calls STEP at all): `handlers/lexical.py` (`build`, `run`), `handlers/raw.py` (`lexical`),
+  `lib/strongreconcile.py` (`_promote`).
+- 3 downstream readers fixed for the dropped columns: `handlers/reports.py` (`report.lexical_extract`
+  SELECT), `handlers/lexical.py` (`_notes_payload_dict`'s briefing-pack SELECT), `lib/lexicalenrich.py`
+  (`cross_lemma_shared_gloss`'s now-impossible resolved_sense comparison, narrowed to what it can
+  still check).
+
+**Migration** (`iba/app/migration/rebuild_verse_lexical_layer1_v1_20260916.py`): dropped the 3
+columns; deleted their `cfg_column` rows; rewrote `role`'s `cfg_column.use` text for the new
+meaning; **found and fixed a stale `cfg_column.use` text in the same pass** —
+`gloss_consistent_in_verse` still said "resolved_sense" though the actual check has been keyed on
+`surface` since escalation #1527 (2026-09-06), never corrected in `cfg_column`; rewrote
+`verse_meta_on_lexical_change` (the trigger that rolls Layer 1 rows up into `verse_meta.language`)
+to source language via `strong.language` joined through `verse_lexical.strong`, since the column it
+used to read directly is now gone; soft-deleted all 544,590 live rows (the researcher's own
+"dumped" instruction, confirmed soft-delete not hard-delete, `1607-open-items-action-plan-v1-
+20260909.md` D1); marked `lexical.enrich` (cfg_step) inactive — its `verse_lexical_note` mechanism
+is superseded by the new `ib_observation` architecture (#1597), code kept (not deleted) since
+`lexicalenrichgenerate.py`'s real, working Anthropic-API-calling infrastructure is a strong
+candidate to adapt for the new `verse_meaning` stage, not thrown away.
+
+**Rebuild run** (`iba/app/migration/run_verse_lexical_layer1_rebuild_v1_20260916.py`, book-batched,
+commits per book): **544,667 rows rebuilt across 29,760 verses in 93 seconds, 0 errors** — every
+row a fresh insert (matching the soft-delete precondition), 0 unchanged/updated (expected, since
+nothing survived the delete).
+
+**Verified, live, post-rebuild:** 0 `NULL`/`'[]'` role values across all 544,667 rows; 5,000-row
+JSON-validity sample, 0 malformed; `verse_meta.language` recomputed correctly by the fixed trigger
+— 21,902 Hebrew + 7,858 Greek = 29,760, matches total live verse count exactly, 0 `NULL`;
+`lexical.readiness` re-run clean, 0 FATAL.
+
+### Phase D/E — the cluster-reading pack's 5 tables, `iba.db`
+
+**Confirmed live before this migration: none of `cluster.status`, `cluster_subgroup`,
+`cluster_subgroup_strong`, `ib_observation`, `ib_node` existed** — 0% built despite the pack
+(#1690/#1691/#1692/#1693/#1697) being `completed`/design-complete since 2026-09-13/15.
+
+`iba/app/migration/create_cluster_reading_pipeline_tables_v1_20260916.py`:
+- `cluster.status`/`status_changed_at` added; all 95 live `cluster` rows backfilled to ordinal 2
+  (`t_cluster_assignment_completed`), per the researcher's own confirmed rule (#1706 §4 item 5) —
+  every cluster already has `cluster_strong` members, so every one is past ordinal 1.
+- `cluster_subgroup` created **with `anchor_verse_reference`** (the post-approval addition, #1526,
+  same session) — not a stale build against the pre-#1526 design.
+- `cluster_subgroup_strong`, `ib_observation`, `ib_node` created per their own finalization docs'
+  DDL (`1690-...`/`1691-...`/`1692-...`), including `ib_node`'s CHECK constraint (translated from
+  the doc's own prose form to real SQLite `CHECK (... IS NOT NULL OR ...)` syntax).
+- 4 new `cfg_enum` groups registered: `cluster.status` (8 values), `cluster_subgroup.status` (6
+  values), `ib_observation.stage` (5 values, **including `verse_meaning`** — #1711's resolved stage
+  name, folded straight into the build rather than the old placeholder `meaning`/`lexical`
+  candidates), `ib_observation.window` (4 values).
+- Every table/column registered in `cfg_table`/`cfg_column` (51 column rows total).
+
+**Verified, live:** all 4 tables exist; `cluster.status` shows 95/95 at
+`t_cluster_assignment_completed`; `ib_node`'s constraint layer correctly rejects a row with no
+grounding element (tested with a synthetic bad insert, rolled back).
+
+### Catalogue migration (#1696, #1706 Phase D item 19)
+
+`iba/app/migration/migrate_obs_question_catalogue_to_iba_v1_20260916.py` — `wa_obs_question_catalogue`
+created in `iba.db`, populated from the 98 live `bible_research.db` rows per the researcher's own
+Phase 5 content review (`1704-catalogue-content-decisions-v1-20260916.md`): 8 codes dropped
+(`T0.4.1`, `T5.4.1`, `T5.4.2`, `T5.5.1`, `T5.6.1`, `T7.2.2a`, `T7.2.2b`, `T7.2.4`), 1 text revision
+(`T7.1.3`, expanded to prompt idiom/analogy/implied meaning), 2 new rows added verbatim from
+`1701-faculty-engagement-catalogue-addition-v1-20260916.md` (`T2.11.1`/`T2.11.2`, "Faculty
+Engagement"). **92 rows landed, matching the expected count exactly.** `bible_research.db`'s copy
+marked `inactive=1` in `cfg_table` (kept, not deleted). `ib_observation.question_code`/
+`ib_node.question_code`'s real FK restoration is explicitly NOT done here — SQLite FKs are
+declare-at-CREATE-time only; adding one needs a table rebuild, left for when those columns' actual
+write paths are built (Phase F).
+
+### Not done — honest scope line, not silently dropped
+
+- **Phase C's actual execution code** — the `verse_meaning` stage NAME/config is registered
+  (`ib_observation.stage` enum), but the LLM-calling mechanism itself (adapting
+  `lexicalenrichgenerate.py`'s real, working Anthropic-API infrastructure to the new per-cluster,
+  T1.1/T7.1-answering shape) is not built.
+- **The recording pass (#1693)** — the same/broaden/new write logic that loads an LLM session's
+  JSON into `cluster_subgroup`/`ib_observation`/`ib_node` is designed (3 finalization docs) but not
+  coded.
+- **Phase F — no cluster has been run through any stage.** The M10 prototype JSONs from 2026-09-11
+  are NOT loadable as-is (predate `anchor_verse_reference`, the role-driven-walk requirement,
+  #1704's decisions) — a fresh run is needed, not a replay of the prototype.
+- **Pack sign-off** — all 6 pack components are design-complete and (per this session's earlier
+  approvals) workflow-closed, but this build itself is not a substitute for the researcher's own
+  go-ahead nod across the set, if that's still wanted separately.
+- Full status/issues write-up for morning review: `outputs/1706-build-session-status-v1-20260916.md`.
+
+**Files:** `iba/app/lib/lexical.py`, `iba/app/handlers/lexical.py`, `iba/app/handlers/raw.py`,
+`iba/app/handlers/reports.py`, `iba/app/lib/lexicalenrich.py`, `iba/app/lib/strongreconcile.py`,
+`iba/app/ps/Lexical-Readiness.ps1`, 4 new migration scripts under `iba/app/migration/`, `iba/app/db/
+iba.db` (544,667-row Layer 1 rebuild, 4 new tables, 92-row catalogue). Escalation #1706 (still open
+— tracking record for the whole build, not closed by this entry).
+
+## 268. `wa_obs_question_catalogue` re-derived from the study's own goal, not audited against its own wiring — full re-numbering, 9 new questions, 2 new columns (2026-09-17, escalation #1712)
+
+Root cause, researcher's own words: *"I think for the first time you are realising that your
+previous affirmations that the catalogue is complete... [was] far from accurate and thorough...
+because we did not properly think through what it is supposed to do."* `#1704`'s "exhaustive"/"zero
+genericity" claims (BUILD.md #267's own catalogue-migration entry included) checked the catalogue's
+internal wiring, never its adequacy against the programme's own goal. This entry is the correction:
+the full chain from `iba/docs/1712-catalogue-first-principles-validation-method-v1-20260917.md` —
+goal (programme prose Ch.1's definition) → 12 dimensions (independently derived twice, my own
+reading and a blind second agent given only the raw prose text, converged) → checked against live
+data (role-cluster tags, `M47`, the reading stage's own tags, and the per-cluster science-extract
+files at `Workflow/Sciences/science_files/`, confirmed live) → this migration.
+
+**Real finding surfaced doing this**: "T-codes" had meant two entirely different, uncoordinated
+numbering schemes throughout this whole project — the catalogue's own `T0`–`T7` tiers, and
+`cluster.cluster_code`'s `T2`–`T15` role-classification clusters (`T4`=Adversarial, `T7`=
+Party-Divine, `T8`=Party-Human, `T9`=Party-Angelic, checked live) — sharing a prefix by accident.
+Every escalation referencing "T4", this session's own included, meant whichever scheme was in mind
+at the time. The re-numbering below replaces both with one clean scheme.
+
+**Migration:** `iba/app/migration/realign_catalogue_to_dimensions_v1_20260917.py` (idempotent,
+guarded by `catalogue_version`). Applied live, 2026-09-17:
+- **2 new columns**: `dimension` (which of the 12 goal-derived dimensions, or `M0`
+  lexical/textual-evidence, or `X0` cross-characteristic synthesis, or a `+`-joined list for a
+  deliberately consolidated question) and `data_mechanism` (what data actually answers it, checked
+  live — a role-cluster tag, a specific table/cluster, an existing tag, a science-extract file, or
+  direct LLM reading with no special tag needed). Both registered in `cfg_column`.
+- **88 of the 92 live questions renumbered** under the new `D1`–`D12`/`M0`/`X0`/`F0` scheme, each
+  given a real, checked `dimension` + `data_mechanism` — not a bulk relabel: `T4`'s old content
+  split correctly across `D5` (human→God, the person's own orientation), `D7` (God→human and
+  interpersonal giving/receiving — real external causation), and `D4` (relational scope/boundary).
+  `T6` (13 questions) recognised as cross-characteristic synthesis (`X0`), not a per-characteristic
+  dimension. `T7.1`/`T7.2`/`T1.1`/`T1.2`/`T1.3` (23 questions) recognised as lexical/textual
+  evidence (`M0`) that feeds the 12 dimensions rather than being one. `T2.11` (Faculty Engagement)
+  kept as its own deliberate `F0` consolidation spanning `D1+D2+D3+D4`, per `#1704`/`#1701`'s own
+  design — not split apart.
+- **9 new questions authored** for dimensions checked live to have zero dedicated coverage: `D1`
+  Cognitive, `D2` Affective, `D9` Physiological/Generational, `D12` Social/Behavioural (`D9`/`D12`
+  now have a real data mechanism — the per-cluster science-extract files, 45 of 85 clusters
+  covered, confirmed live), `D11`'s scientific half, and `D7.7` — an operation-anchored (role-`T3`)
+  permeability question: role-`T3` is the single densest role signal in the corpus (85.8% of
+  M-coded verses, checked live) and had no catalogue question anchored to it at all before this.
+- **4 questions retired** (`T7.3.1`–`4`, the old generic "which human-science framework" catch-all)
+  — superseded by the new dedicated `D9`/`D11`/`D12` questions, which name the actual mechanism
+  (the science-extract file) instead of asking the LLM to guess a framework.
+- **`source_word`/`source_registry_no` dropped** (confirmed relics: `source_word` was the literal
+  string `"Programme"` on all 92 rows, `source_registry_no` NULL on all 92) — `cfg_column` updated
+  to `inactive=1` for both, not deleted.
+- **Result, verified live**: 97 live questions (92 − 4 retired + 9 new), **0 without a dimension**.
+
+**Not done in this entry** — the `answer`/`verse_meaning` stage-naming question raised earlier the
+same session (`scope`'s repurposing for pipeline-stage applicability, and whether `subgroup` joins
+the `verse-reading`/`char-reading`/`char-answers`/`char-synergy` naming scheme) is still open,
+unrelated to this dimension/mechanism work and not resolved by it. The science-extract file still
+needs actually wiring into the answering pipeline as a live data input for `D9`/`D11`/`D12` — this
+entry re-grounds the catalogue content and confirms the file mechanism exists and is real; loading
+it at run time is Phase C/F's own build work, not done here.
+
+**Files:** `iba/app/migration/realign_catalogue_to_dimensions_v1_20260917.py`, `iba/app/db/iba.db`
+(`wa_obs_question_catalogue` + `cfg_column`), `iba/docs/1712-catalogue-first-principles-validation-
+method-v1-20260917.md`. Escalation #1712.
+
+## 269. `Workflow/Sciences/science_files/` reconciled and completed — all 80 live M-clusters now have a cluster science review (2026-09-17, escalation #1706)
+
+The 45 pre-existing science-extract files (2026-05-13) were produced against an older cluster
+scheme — checked live before generating anything, per researcher instruction ("do a cross check
+between the newly formulated clusters, the existing extracts and missing extracts"): many M-codes
+now name a **completely different concept** than they did in May (e.g. old `M10` = Guilt, live
+`M10` = Violence & Cruelty). Full reconciliation record:
+`iba/docs/1706-science-extract-reconciliation-v1-20260917.md`.
+
+- **5 clean renames** (content unchanged, re-filed under the correct current code): `M10`-guilt →
+  `M56`, `M12`-purity → `M61`, `M18`-hope → `M68`, `M27`-evil → `M58`, `M38`-salvation → `M79`.
+- **15 confirmed clean as-is**, no action.
+- **6 revised in place** (same number, live cluster's scope narrowed since — trimmed to match,
+  version bumped to `v1_1`): `M06`, `M22`, `M23`, `M31`, `M39`, `M46`.
+- **54 fresh extracts** produced for every other live cluster, dispatched to 4 background agents
+  (15 clusters each) running in parallel, each grounding its "Glosses covered" content in a live
+  `cluster`/`cluster_strong`/`strong` query — not the old files, not assumption. All new/revised
+  files close with the current `D9.1.1`/`D9.2.1`/`D11.2.1`/`D12.1.1` catalogue codes (#1712's
+  realignment), not the retired `T7.3`.
+- **Verified live, all 80**: every live `M`-code cluster (including `M10c`) now has exactly one
+  matching science-extract file. `science_files/` holds 101 files total (99 cluster reviews + 2
+  session logs).
+
+**Real data-quality findings surfaced doing this, not silently absorbed** — filed as escalation
+**#1713**: `M59`/`M60`'s actual tagged vocabulary doesn't match their own cluster names at all (zero
+reconciliation terms in `M59`, zero confession terms in `M60`); `M67` has only 2 live strongs
+against a 4-part name; `M18` carries several strongs tagged on an apparent English-substring
+collision ("long shield," "long-haired," "long-lived" — matched on "long," not "longing"); the
+Will/Desire (`M64`/`M18`) and Integrity (`M12`/`M13`) cluster boundaries overlap in the live data;
+`cluster.gloss` (the summary column) is stale relative to live `cluster_strong` membership in
+several clusters. None of this was fixed here — cluster/term-assignment territory, outside this
+session's own scope (catalogue-question design).
+
+**Not done**: actually wiring a cluster's science-extract file into the pipeline as a live
+`D9`/`D11`/`D12` answering input — that's Phase C/F build work (`#1706`), this entry produces and
+verifies the content exists, not the loading mechanism.
+
+**Files:** 54 new + 6 revised + 5 renamed files under `Workflow/Sciences/science_files/`;
+`iba/docs/1706-science-extract-reconciliation-v1-20260917.md`. Escalations #1706, #1713.
+
+## 270. Stage/tag preparatory decisions closed on challenge + cluster keyword-collision fixes (2026-09-17, escalations #1706/#1714)
+
+Researcher challenged an over-cautious open-items list ("what prevents you from completing all the
+preparatory work?"). 3 of 6 items had enough grounding on record to just resolve, not real
+blockers — resolved directly: `ib_observation.stage` renamed (`subgroup` → `char-subgroup`,
+completing `verse-reading`/`char-subgroup`/`char-reading`/`char-answers`/`char-synergy`), the
+`char-answers` baseline tag `answered-no-flag` registered, `needs_adjacent_verse_context` confirmed
+to apply at `verse-reading` (the checklist's own cross-cutting rule already said so), and the
+currently-unwired role-tags (`T2`/`T6`/`T10`–`T15`) confirmed included in the first real run per the
+prose's own "over-inclusion recoverable, silent omission not" principle. Migration:
+`iba/app/migration/stage_rename_and_baseline_tag_v1_20260917.py`.
+
+**Correction, same turn:** escalation "#729" (cited earlier this session as the cross-cluster
+co-occurrence script's own tracking item) does not exist — checked live, `#729` in
+`escalations_old` is an unrelated `configmaint.validate` report. The citation was wrong; no such
+escalation for `_assess_cross_cluster_cooccurrence.py` was ever found. That script itself targets
+`bible_research.db`'s old `mti_terms.cluster_code`, not the live `iba.db` cluster scheme — its
+reactivation needs fresh scoping against the current architecture, not resurrecting the old script
+as-is, whenever that work is picked up.
+
+**Cluster anomaly audit (#1714)** run in full against all 80 live clusters — 2 keyword-collision
+bugs found and fixed (9 strongs soft-deleted): `M18`'s "long" (desire) vs. "long" (length)
+confusion (4 strongs), and a second, newly-found collision in `M62`, "sound" (sincere) vs. "sound"
+(audible noise) (5 strongs). `M32` cleared as a false positive. 4 genuine judgement calls escalated,
+not guessed at (`M59`/`M60`/`M67`'s vocabulary gaps, `M47`'s stale gloss field, `M12`/`M13`'s
+conceptual overlap). Full record: `iba/docs/1714-cluster-anomaly-audit-v1-20260917.md`. Migration:
+`iba/app/migration/fix_cluster_keyword_collisions_v1_20260917.py`.
+
+**Files:** 2 migrations (above); `iba/docs/1706-readiness-status-v1-20260917.md`,
+`iba/docs/1706-role-data-presentation-design-v1-20260917.md`, `ib-observation-governing-rules-
+checklist-v1-20260916.md`, `iba/docs/1714-cluster-anomaly-audit-v1-20260917.md` all updated/created.
+Escalations #1706, #1714.
+
+## 271. `#1714`'s 4 "escalated" items resolved directly, not asked (2026-09-17)
+
+Researcher, verbatim: *"you surfaced obvious errors, and only if you really need my judgement, then
+ask, else fix."* None of the 4 items #270/#1714 had escalated actually needed a judgement call —
+each had a real, checkable answer:
+
+- **`M59`/`M60`'s missing vocabulary** wasn't absent from the corpus, it was mistagged. 5
+  reconciliation strongs (*katallassō* family) moved from `M05` to `M59`; 2 confession strongs
+  (only ever role-tagged, never M-cluster-tagged) added to `M60`.
+- **`M67`** — 7 more real idleness/diligence strongs, sitting untagged at the M-cluster level (only
+  in role-cluster `T2`'s catch-all), added. 2 strongs → 9.
+- **`M47`'s stale `cluster.gloss`** — not a 1-code problem, the field only listed 8 of 38 actual
+  live members. Regenerated from live membership.
+- **`M12`/`M13`** — checked, not deferred: 0 duplicate tags exist, the overlap is two legitimately
+  adjacent clusters' own distinct vocabulary. Nothing to fix.
+
+**A real bug in my own first-draft fix, caught before it ran**: a naive "regenerate every
+stale-looking `gloss`" pass would have silently replaced `M01`'s good, correct
+`english-gloss (transliteration)` field with a worse `transliteration (code)` format. Caught by
+comparing the code *set* against live membership rather than exact string match — only `M47` was
+actually stale. Also fixed `M05`'s `gloss` field, made stale by the `M59` move itself (a direct
+consequence of this same fix, checked and closed rather than left for later).
+
+Migration: `iba/app/migration/fix_cluster_anomalies_v2_20260917.py`. Full record:
+`iba/docs/1714-cluster-anomaly-audit-v1-20260917.md` (updated in place). Escalation #1714.
+
+## 272. `lexical.meaning` — Phase C's execution mechanism built and validated live, first real `ib_observation`/`ib_node` rows ever written (2026-09-17, escalation #1706)
+
+The last genuinely un-built piece of Phase C: `verse-reading`'s LLM-calling mechanism. Built,
+tested live, real content produced and recorded — not just designed.
+
+**Built:**
+- `cfg_step`/`cfg_method_rule` for `lexical.meaning` (`iba/app/migration/register_lexical_meaning_
+  step_v1_20260917.py`), plus `cfg_write_grant` for `ib_observation`/`ib_node`.
+- `iba/app/lib/versereadinggenerate.py` — payload assembly: the role-annotated word list per verse
+  (every live role tag, deliberately including the currently-unwired ones), the 3 meaning sources
+  read as complementary evidence, live catalogue question text for `M0.1`/`M0.5`/`D7.7` pulled at
+  call time (not a second copy that could drift). Reuses `lexicalenrichgenerate.call_api`/
+  `log_usage`, not a duplicate.
+- `iba/app/lib/recordingpass.py` — the single writer for `ib_observation`/`ib_node`, implementing
+  `#1693`'s same/broaden/new logic as its own explicitly-simple first version (exact-match no-op,
+  `difflib`-based similarity threshold for align-vs-new), with verse references resolved fresh
+  against live `verse_lexical` at write time, never trusting the model's own verse string.
+- `iba/app/handlers/lexical.py:meaning` — `-Preview` (default on, cost-estimate only, no spend) vs.
+  live execution, cost-capped per batch before any call.
+
+**A real bug found and fixed live, first test run**: the Messages API defaults to extended
+thinking even when the `thinking` parameter is omitted — with `lexical.llm_max_output_tokens=8000`,
+the entire budget went to thinking (`stop_reason=max_tokens`, 8000 thinking tokens, 0 text) and the
+call cost $0.2118 for a genuinely empty response. Fixed in `lexicalenrichgenerate.call_api` (shared
+by both this module and the old one): `"thinking": {"type": "disabled"}` added to every request,
+plus a defensive check that raises a clear error instead of silently returning empty text on a
+`max_tokens` stop. **`narrativegenerate.py` makes the identical request shape and is very likely
+exposed to the same bug — not fixed here, flagged for its own escalation.** `lexical.llm_max_output_
+tokens` raised 8000 → 20000 (a 20-verse batch's full observation set needs more room than the old
+note-shaped payload did).
+
+**Validated live, real spend, honestly logged** (`_analytics/lexical-extracts/lexical-llm-usage.
+csv`): two failed calls before the thinking fix ($0.2118 each, real money for zero output — the
+cost of finding the bug, not hidden). Then a clean 4-verse test against `M67`: 14 real observations
+produced (genuine lexical reasoning, correct role-T3/party analysis, real classical-Greek
+citations), recorded via the recording pass with **0 unresolved occurrences** — **the first
+`ib_observation`/`ib_node` rows this architecture has ever held**. `M67` is partial (4 of 35
+verses) — a real, usable checkpoint, not cleared, pending the researcher's call on finishing it or
+starting a fresh full run.
+
+**Not done**: `char-reading`/`char-answers`/`char-synergy`'s own execution code (this build covers
+`verse-reading` only, per `#1706`'s own original scope); wiring the science-extract files into
+`D9`/`D11`/`D12` as a live input (those questions aren't in `lexical.meaning`'s current scope,
+which answers `M0.1`/`M0.5`/`D7.7` only); a corpus-wide run of any kind.
+
+**Files:** `iba/app/migration/register_lexical_meaning_step_v1_20260917.py`,
+`iba/app/lib/versereadinggenerate.py`, `iba/app/lib/recordingpass.py`,
+`iba/app/handlers/lexical.py` (new `meaning` function), `iba/app/lib/lexicalenrichgenerate.py`
+(the `thinking`/`max_tokens` fix). Escalation #1706.
+
+## 273. `#1697`'s `cluster.status` lifecycle — designed, "nothing built yet" (its own closing words), found and partly closed live starting Stage 2 (2026-09-17, escalation #1706)
+
+Researcher instruction, this chat turn: *"proceed, make sure that you do not take shortcuts, and
+silently ignore redflags and warnings as you proceed."* Moving to Stage 2 (`char-subgroup`) surfaced
+exactly that kind of red flag, checked fully rather than routed around.
+
+**Found**: all 80 live clusters sit at `cluster.status` ordinal 2
+(`t_cluster_assignment_completed`) — the one-time backfill state every cluster started at when the
+column was created (`create_cluster_reading_pipeline_tables_v1_20260916.py`). `#1690`'s own hard
+precondition (§3 item 5) is that process (b)/subgroup formation may not run at all unless a cluster
+is at ordinal 3 (`ready_for_subgroup_allocation`) — **checked live: nothing anywhere in the
+codebase ever advances a cluster past ordinal 2.** `#1697`'s own closing resolution (2026-09-16)
+already said so directly: *"Design-complete... Nothing built yet."* Separately, checked
+`sqlite_master` for triggers: none exist for `cluster_strong` changes either — the
+`strongs_reassigned` auto-detection the researcher explicitly required (#1697 v5: *"strongs_
+reassigned must trigger a warning to the chat"*) was never implemented at all. Confirmed this
+wasn't retroactively violated by today's own `#1714` cluster fixes (`M59`/`M60`/`M67`/`M05` were
+all still at ordinal 2 when those changes happened — nothing downstream existed yet to invalidate)
+but the mechanism itself was simply never built for anyone to trigger.
+
+**Built**: `iba/app/lib/clusterstatus.py` —
+- `advance_if_verse_reading_complete`: the missing ordinal-2→3 transition. `#1711` itself names
+  `verse-reading` *"the pre-subgroup Layer 2 stage"* — the sequencing was already stated, just not
+  coded. A cluster advances once every one of its live member strongs has ≥1 `verse-reading`-stage
+  `ib_observation` row. Wired into `handlers/lexical.py:meaning` — checked and applied at the end
+  of every live (non-preview) run against a cluster's full verse list.
+- `flag_if_reassigned`: sets `status='strongs_reassigned'` and raises a real `decision_required`
+  escalation (manual control, no auto-resubmission, per #1697 v5) whenever `cluster_strong` changes
+  for a cluster already past ordinal 2. **Built and callable, NOT YET wired into every routine that
+  writes `cluster_strong`** (`cluster.assign`, ad-hoc migrations like `#1714`'s own) — a real,
+  stated gap, not silently left implicit.
+
+**Consequence, checked live**: `M67` (this session's own verse-reading test cluster) is only 1 of
+9 member strongs covered (`G4710`, from the 4-verse test) — 8 more strongs' verses need a
+verse-reading pass before `M67` itself can reach `ready_for_subgroup_allocation`. **No cluster in
+the corpus can start Stage 2 yet** — not a Stage-2-specific blocker, a corpus-wide lifecycle gap
+that was there before today's build touched anything, just never surfaced until something actually
+tried to use it.
+
+**Not done**: wiring `flag_if_reassigned` into every existing `cluster_strong` writer (`cluster.
+assign`/`cluster.validate`, ad-hoc migration scripts); Stage 2's own execution code (subgroup
+formation itself) — genuinely blocked on a cluster actually reaching `ready_for_subgroup_
+allocation` first, which needs more verse-reading run, a real spend decision for the researcher,
+not assumed.
+
+**Files:** `iba/app/lib/clusterstatus.py`, `iba/app/handlers/lexical.py` (wired in),
+`cfg_method_rule` (2 new rows). Escalation #1706.

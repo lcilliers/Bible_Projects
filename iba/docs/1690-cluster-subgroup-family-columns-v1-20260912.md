@@ -34,6 +34,9 @@ CREATE TABLE cluster_subgroup (
                                              "unlikely but not impossible" cross-cluster reuse
     label               TEXT NOT NULL,   -- REQUIRED -- see §2 item 1, a real gap in process (b)
     core_description    TEXT,
+    anchor_verse_reference TEXT,         -- ADDED 2026-09-16 (#1526) -- see new §2A below.
+                                             Resolved fresh against iba.db.verse.reference, same
+                                             convention as ib_node.verse_reference (#1692 §1)
     sort_order          INTEGER DEFAULT 0,
     status              TEXT,            -- subgroup-level lifecycle, cfg_enum-governed -- see §3a
                                              (distinct from #1697's cluster-level status; this is a
@@ -76,6 +79,38 @@ CREATE TABLE cluster_subgroup_strong (
 | `status` | subgroup's own lifecycle, `cfg_enum`-governed — proposed values + gating rule at §3a. Distinct from `iba.cluster.status` (#1697) — that's a different table, a coarser grain, and its own separate enum; this row previously conflated the two, corrected 2026-09-13 |
 | `strong` | the Strong's code, resolved to `strong.strongNumber` in `iba.db` (was `mti_term_id`/`mti_terms.id`) — real, same-database FK, an upgrade over both the original free-text proposal and the `mti_terms`-based one |
 | `placement_note` | free text — **required** for `FLAG` placements (the signpost's rationale, §3 item 3); **optional but available for any ordinary placement**, to capture whatever observation the LLM made while assigning that strong (§2 item g) |
+| `anchor_verse_reference` | **ADDED 2026-09-16, #1526.** One representative verse per subgroup, decided as part of process (b)'s own output — not a separate later pass. See §2A. |
+
+## 2A. Anchor verse — added post-approval, 2026-09-16 (#1526)
+
+**Researcher, verbatim, this chat turn:** *"the anchor verse for each supgroup need to be decided
+and updated. the update must be part of the db update of the subgroup result."* This generalizes
+and settles #1526's original question (originally scoped narrower — a per-*strong* anchor keyed on
+`resolved_sense`, for the small set of extreme-volume strongs found in #1546): the anchor verse is
+now a **standard part of every subgroup's own record**, not a separate algorithm for a special-case
+subset. #1526's original resolved_sense-based mechanism is superseded by this — `resolved_sense`
+itself has since been dropped from Layer 1 entirely (#1706 Phase B item 10), so it was no longer a
+live signal to key on regardless.
+
+**What this settles:**
+- **Grain:** one anchor verse per `cluster_subgroup` row, not per strong and not per dominant-sense
+  cluster within a strong.
+- **When it's decided:** by process (b) itself, as part of the same LLM session that forms the
+  subgroup (§2 below) — not a downstream computation over `resolved_sense`/lexical similarity as
+  #1526 first proposed.
+- **When it's written:** in the same DB write as the rest of the subgroup's row (the recording
+  pass, #1693) — not a separate later update pass. `cluster_subgroup.anchor_verse_reference` is
+  populated at subgroup-creation time (or subgroup-broadening time, per #1693 §3's same/broaden/new
+  logic), never left null-then-backfilled.
+
+**RESOLVED, 2026-09-16 — selection criterion.** Researcher, verbatim: *"the verse that best describe
+the subgroup characteristic is selected by llm to serve as anchor."* Process (b)'s own LLM session
+selects the anchor: the verse (from the subgroup's own membership) that best describes/represents
+the subgroup's shared characteristic — a judgment call made in the same pass that forms the
+subgroup, not a separate metric (word count, verse length, occurrence-frequency, etc.). Becomes a
+new governing-rule item for process (b) (§2 below), alongside (g); exact prompt wording is a build
+detail for when process (b)'s actual prompt/procedure is built (#1706 Phase F item 25), not decided
+further here.
 
 ## 2. The LLM session (process b) — what it must produce
 
@@ -105,6 +140,11 @@ g. **`placement_note` is not `FLAG`-only.** Any observation arising from a subgr
    just a `FLAG` placement's reason — is captured in `placement_note`. Revises §1's column
    description (below): required content for `FLAG` placements, optional but available for any
    ordinary placement too.
+h. **Anchor verse — ADDED 2026-09-16, #1526/§2A.** For each subgroup, select the one verse (from
+   its own membership) that best describes/represents the subgroup's shared characteristic —
+   researcher's own words. A judgment call made in the same pass that forms the subgroup, not a
+   separate metric. Written to `cluster_subgroup.anchor_verse_reference` in the same DB update as
+   the rest of the subgroup row (#1693).
 
 Previously resolved, kept for reference:
 

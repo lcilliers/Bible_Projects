@@ -43,6 +43,18 @@ elsewhere and not added here.
    exactly this accumulated set of flags/pointers from reading and answer, not a fresh data pull.
    **Not yet fully final** ("probably," researcher's own word) — the exact mechanics of a
    synergising run consuming these flags are still #1695's own design work, not decided here.
+5a-i. **RESOLVED, 2026-09-17 — `needs_adjacent_verse_context` applies at `verse-reading`
+   too, not only `char-reading`.** 5a's own wording already says so ("not a process-(d)-only rule
+   — governs every flag-shaped observation this pipeline raises"); this was left listed as an open
+   item in the Phase C build-scoping doc despite the rule already answering it. Applying the
+   already-stated principle directly, not a new decision.
+5b. **★ `needs_adjacent_verse_context` must state its own reason in `obs_text`.** Researcher,
+   verbatim, 2026-09-17: *"this flag should have clear instructions to ensure the observation text
+   captures the reason for the flag - what is outstanding that need a cross check. This applies
+   through all the observation stages."* A bare flag with no explanation is not sufficient at any
+   stage that can raise it — `obs_text` must say explicitly what's outstanding and what the
+   follow-up cross-check needs to establish, so whichever later pass resolves it (5a) has enough to
+   act on without re-deriving the reason from scratch.
 6. **"Genuinely couldn't resolve" is recorded explicitly, never guessed.** Carried forward from
    the old `verse_lexical_note.resolution_status`/`unresolved-not-guessed` principle — **RESOLVED,
    2026-09-16: this is a design principle for every `ib_observation`-writing stage, not a column to

@@ -22,13 +22,12 @@ on span.verse_id = verse.id
 inner join verse_meta
 on verse.id = verse_meta.verse_id
 
-
-
-
-
-
 where 
 cluster.cluster_code = 'M10'
 
 and verse_meta.deleted = 0
 order by strong.stepGloss, verse.reference;
+
+select * from cluster
+where cluster_code like 'M%';
+

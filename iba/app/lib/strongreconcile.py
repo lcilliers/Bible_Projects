@@ -110,7 +110,12 @@ def _promote(ctx, code: str) -> None:
         "SELECT DISTINCT verse_id FROM strong_verse WHERE strong=? AND deleted=0", (code,))]
     if verse_ids:
         _may(ctx, "lexical.build", "verse_lexical")
-        lexlib.build_for_verse_ids(ctx.db.conn, verse_ids, ctx.step)
+        # step arg REMOVED 2026-09-16 (#1706 Phase B) -- Layer 1 no longer calls STEP at all.
+        # NotReady propagates uncaught here deliberately: this call runs immediately after this
+        # same code was just cluster-classified (the promote cascade above), so it should never
+        # legitimately fire; if it somehow does, that's a real bug worth a loud traceback, not a
+        # silently swallowed one in a function documented as "pure -- never escalates."
+        lexlib.build_for_verse_ids(ctx.db.conn, verse_ids)
     ctx.db.conn.commit()
 
 

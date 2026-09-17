@@ -38,12 +38,14 @@ setting, not a new one. `build`/`enrich` still use it; `run` calls `build_for_ve
 
 from __future__ import annotations
 
+import datetime
 import json
 import pathlib
 
 from .base import Ctx, Outcome, fail, ok
 from . import raw as raw_mod
-from ..lib import lexical, lexicalenrich, lexicalenrichgenerate, lexicalscope
+from ..lib import lexical, lexicalenrich, lexicalenrichgenerate, lexicalscope, reportkit
+from ..lib import clusterstatus, recordingpass, versereadinggenerate
 from ..lib.stepapi import Step, StepUnavailable
 from ..lib.versespanmeaningreport import fetch_verses, parse_chapters, parse_range
 
@@ -86,7 +88,10 @@ def build(ctx: Ctx) -> Outcome:
             if required:
                 return fail("unreachable", str(e))
 
-    totals = lexical.build_for_range(ctx.db.conn, book, lo, hi, verse_lo, verse_hi, step)
+    try:
+        totals = lexical.build_for_range(ctx.db.conn, book, lo, hi, verse_lo, verse_hi)
+    except lexical.NotReady as e:
+        return fail("lexical-not-ready", str(e), unready_codes=e.codes)
     ctx.db.conn.commit()
 
     removed_note = (f", {totals['removed_with_live_notes']} with live notes now dangling — "
@@ -97,6 +102,96 @@ def build(ctx: Ctx) -> Outcome:
         f"{totals['updated']} updated, {totals['unchanged']} unchanged, "
         f"{totals['removed']} removed{removed_note}){backfill_note}",
         **totals)
+
+
+# ── lexical.readiness — the 3-leg base-data readiness check (#1606, Phase A item 1) ─────────────
+# Registered 2026-09-16 (escalation #1706 Phase A/#1711 build). Researcher's own framing, #1606:
+# "lexical readiness is a precursor for the lexical reading stage, which is a precursor for the
+# sub group." Read-only, always persists a report (governance.reports_must_persist), escalates
+# only on a FATAL finding -- same shape as spine.check, deliberately not merged into it (spine
+# covers the whole-project verse/span/strong spine; this is lexical-build-specific: it also checks
+# the cluster-allocation precondition Layer 1's new `role` column depends on, which spine.check has
+# no reason to know about).
+#
+# Leg 1 -- every live verse has >=1 live span (a verse present but never segmented can't build).
+# Leg 2 -- every live span's strong_variant code resolves to a live `strong` row (same desync
+#          spine.check already reports; duplicated here deliberately -- #1606's own framing is one
+#          cohesive 3-leg check, not "2 legs plus a pointer to a different report").
+# Leg 3 -- every live `strong` row that actually OCCURS in a live span (not every row in the table
+#          -- an unused placeholder strong is a different question, not this check's concern) has
+#          >=1 live `cluster_strong` allocation. This is the one Layer 1's redesigned `role` column
+#          (a JSON array of cluster_strong.cluster_code, #1706 Phase B item 3) depends on directly:
+#          a strong with zero allocation would resolve to an empty array, which the new pre-run
+#          validator (see `_check_role_readiness` in lib/lexical.py) treats as a hard failure.
+
+def readiness(ctx: Ctx) -> Outcome:
+    conn = ctx.db.conn
+
+    leg1_count = conn.execute(
+        "SELECT COUNT(*) FROM verse v WHERE v.deleted=0 AND NOT EXISTS ("
+        "SELECT 1 FROM span s WHERE s.verse_id=v.id AND s.deleted=0)").fetchone()[0]
+    leg1_sample = [r[0] for r in conn.execute(
+        "SELECT v.osisId FROM verse v WHERE v.deleted=0 AND NOT EXISTS ("
+        "SELECT 1 FROM span s WHERE s.verse_id=v.id AND s.deleted=0) LIMIT 15").fetchall()]
+
+    span_codes: set[str] = set()
+    for r in conn.execute(
+            "SELECT strong_variant FROM span WHERE deleted=0 AND strong_variant IS NOT NULL "
+            "AND strong_variant != ''"):
+        span_codes.update(r[0].split())
+    live_strong = {r[0] for r in conn.execute("SELECT strongNumber FROM strong WHERE deleted=0")}
+    leg2_missing = sorted(span_codes - live_strong)
+
+    allocated = {r[0] for r in conn.execute(
+        "SELECT DISTINCT strong FROM cluster_strong WHERE deleted=0")}
+    # base-strip via lib.lexical._base isn't needed here -- cluster_strong.strong carries the exact
+    # suffixed code (same convention as span_codes above), matching reference_strong_related_keyed_
+    # on_exact_code_not_base's own lesson: compare exact codes, never base-strip before the lookup.
+    occurring_live_strong = span_codes & live_strong
+    leg3_missing = sorted(occurring_live_strong - allocated)
+
+    findings = dict(leg1_count=leg1_count, leg1_sample=leg1_sample,
+                     leg2_count=len(leg2_missing), leg2_sample=leg2_missing[:15],
+                     leg3_count=len(leg3_missing), leg3_sample=leg3_missing[:15])
+    report_path = _write_readiness_report(ctx, findings)
+    fatal_count = findings["leg1_count"] + findings["leg2_count"] + findings["leg3_count"]
+
+    if not fatal_count:
+        return ok(f"lexical readiness sound: 0 FATAL findings across all 3 legs — report written "
+                  f"to {report_path}", **findings)
+
+    return fail("lexical-not-ready",
+               f"{fatal_count} FATAL finding(s) — Leg1 (verse with no span): "
+               f"{findings['leg1_count']}, Leg2 (span code with no strong row): "
+               f"{findings['leg2_count']}, Leg3 (occurring strong with no cluster_strong "
+               f"allocation): {findings['leg3_count']}. Full detail: {report_path}",
+               **findings)
+
+
+def _write_readiness_report(ctx: Ctx, findings: dict) -> pathlib.Path:
+    now = datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
+    path = pathlib.Path(ctx.cfg.required_setting("lexical.readiness_report_path"))
+    total = findings["leg1_count"] + findings["leg2_count"] + findings["leg3_count"]
+    intro = [
+        f"> Generated {now} by `lexical.readiness` (#1606, registered as a persisted check "
+        f"2026-09-16, escalation #1706 Phase A). Precondition check for the Layer 1 rebuild -- "
+        f"**{total} FATAL finding(s)** across all 3 legs.",
+    ]
+    sections = {
+        "summary": [
+            f"Leg 1 (verse with 0 live spans): **{findings['leg1_count']}**",
+            f"Leg 2 (span strong_variant code with no live `strong` row): **{findings['leg2_count']}**",
+            f"Leg 3 (occurring `strong` with no live `cluster_strong` allocation): "
+            f"**{findings['leg3_count']}**",
+        ],
+        "detail": [
+            f"**Leg 1 sample:** {findings['leg1_sample']}",
+            f"**Leg 2 sample:** {findings['leg2_sample']}",
+            f"**Leg 3 sample:** {findings['leg3_sample']}",
+        ],
+    }
+    L = reportkit.render_scaffold(ctx.db.conn, "lexical.readiness", sections, intro=intro)
+    return reportkit.write_report(ctx.db.conn, "lexical.readiness", path, L)
 
 
 # ── lexical.enrich ──────────────────────────────────────────────────────────────────────────────
@@ -226,11 +321,16 @@ def _notes_payload_dict(ctx: Ctx, verse_ids: list[int]) -> dict:
     design: every live `verse_lexical` column per code, the verse's own base text, any already-live
     `verse_lexical_note` rows (so a re-run sees what the reconciliation rule will require it to
     re-address), cluster tags, and the full `cfg_method_rule`/`cfg_enum` catalogue."""
+    # resolved_sense/ambiguity_note/language DROPPED from verse_lexical 2026-09-16 (#1706 Phase B)
+    # -- this whole `lexical.enrich`/verse_lexical_note-based Layer 2 path is superseded by the new
+    # ib_observation architecture (#1691/#1597 resolution-by-architecture) and retired in cfg_step
+    # the same unit of work; this SQL fix keeps it from crashing on the dropped columns in the
+    # meantime, it does not resurrect the path as a going concern -- see module docstring banner.
     ph = ",".join("?" * len(verse_ids))
     code_rows = ctx.db.rows(
         f"SELECT vl.id AS verse_lexical_id, v.osisId AS verse, vl.position, vl.code_ordinal, "
-        f"vl.strong, vl.role, vl.status, vl.morph_code, vl.resolved_sense, vl.ambiguity_note, "
-        f"vl.surface, vl.language, vl.testament, vl.is_negator, vl.narrative_morph, "
+        f"vl.strong, vl.role, vl.status, vl.morph_code, "
+        f"vl.surface, vl.testament, vl.is_negator, vl.narrative_morph, "
         f"vl.gloss_consistent_in_verse, vl.party_kind "
         f"FROM verse_lexical vl JOIN verse v ON v.id=vl.verse_id "
         f"WHERE vl.verse_id IN ({ph}) AND vl.deleted=0 "
@@ -405,15 +505,13 @@ def run(ctx: Ctx) -> Outcome:
 
     if mode in ("Layer1AndLayer2", "Layer1Only"):
         _may(ctx, "lexical.run", "verse_lexical")
-        required = ctx.cfg.setting("step.required_for_runs", True)
-        step: Step | None = None
+        # STEP-availability gate REMOVED here 2026-09-16 (#1706 Phase B) -- Layer 1 no longer
+        # calls STEP at all (resolve_code's old live_step_meaning ambiguity fallback is gone with
+        # ambiguity_note/resolved_sense); this mode's own write path has no STEP dependency left.
         try:
-            Step(ctx.cfg).up()
-            step = Step(ctx.cfg)
-        except StepUnavailable as e:
-            if required:
-                return fail("unreachable", str(e))
-        build_totals = lexical.build_for_verse_ids(conn, verse_ids, step)
+            build_totals = lexical.build_for_verse_ids(conn, verse_ids)
+        except lexical.NotReady as e:
+            return fail("lexical-not-ready", str(e), unready_codes=e.codes)
         conn.commit()
     else:   # Layer2Only -- Layer 1 must already exist, never rebuilt here
         ph = ",".join("?" * len(verse_ids))
@@ -595,3 +693,125 @@ def run(ctx: Ctx) -> Outcome:
     return ok("; ".join(parts), verse_count=len(verse_ids), zero_occurrence_strongs=zero_occurrence,
              notes_path=str(notes_path) if notes_path else None, llm_calls=llm_summary,
              **(build_totals or {}), **({f"note_{k}": v for k, v in (enrich_counts or {}).items()}))
+
+
+# ── lexical.meaning — the `verse-reading` stage execution (#1706 Phase C, 2026-09-17) ────────────
+#
+# Per-cluster, pre-subgroup Layer 2 against the LIVE ib_observation/ib_node architecture -- NOT
+# lexical.enrich's retired verse_lexical_note shape. `-Preview` (default true) assembles every batch
+# and reports the cost estimate WITHOUT calling the API or writing anything -- this is a brand-new,
+# never-yet-run mechanism; the existing project convention ("the configured cost cap IS the
+# approval, no separate pause" -- lexical.run's own Layer 2 path) governs ONGOING runs once this has
+# been validated live at least once, not the very first invocation of untested code. `-Preview:$false`
+# runs for real: live API call per batch, `lib/recordingpass.py` writes every result in the same
+# unit of work (checklist rule 0.3), never a deferred batch pickup.
+
+def meaning(ctx: Ctx) -> Outcome:
+    _may(ctx, "lexical.meaning", "ib_observation")
+    _may(ctx, "lexical.meaning", "ib_node")
+
+    cluster_code = ctx.params.get("ClusterCode")
+    if not cluster_code:
+        return fail("bad-selector", "-ClusterCode is required")
+    # ctx.params values are always strings (CLI --param Key=Value) -- "false"/"0"/"" must NOT be
+    # truthy, unlike a bare Python string. Missing key defaults to preview-on (see module banner:
+    # never a live call by default for a just-built, never-yet-run mechanism).
+    preview_raw = ctx.params.get("Preview", "true")
+    preview = str(preview_raw).strip().lower() not in ("false", "0", "no")
+
+    conn = ctx.db.conn
+    try:
+        strongs = lexicalscope.resolve_strongs(conn, cluster_code=cluster_code)
+    except ValueError as e:
+        return fail("bad-selector", str(e))
+    verse_ids = lexicalscope.resolve_verse_ids_for_strongs(conn, strongs)
+    if not verse_ids:
+        return fail("no-verses", f"{cluster_code} resolved to 0 verses")
+
+    max_verses = int(ctx.cfg.required_module_setting("cfg_passage", "passage.max_verses"))
+    max_cost_per_batch = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
+    chunks = [verse_ids[i:i + max_verses] for i in range(0, len(verse_ids), max_verses)]
+
+    batch_summaries = []
+    llm_summary = []
+    record_summary = {"by_action": {}, "unresolved_occurrence_count": 0}
+
+    for idx, chunk in enumerate(chunks):
+        chunk_label = f"{idx + 1}/{len(chunks)}"
+        package = versereadinggenerate.assemble_batch_package(ctx, cluster_code, chunk)
+        batch_summaries.append({
+            "chunk": chunk_label, "verses": package["verse_count"],
+            "cluster_member_strongs": package["cluster_member_strong_count"],
+            "est_input_tokens": package["est_input_tokens"],
+            "est_cost_usd": package["est_cost_usd"]})
+        if package["est_cost_usd"] > max_cost_per_batch:
+            return fail("cost-cap-exceeded",
+                       f"chunk {chunk_label} ({package['verse_count']} verses) estimated cost "
+                       f"${package['est_cost_usd']:.2f} exceeds lexical.llm_max_cost_per_batch "
+                       f"(${max_cost_per_batch:.2f}) -- raise the cap via configmaint.propose or "
+                       f"narrow the selector")
+        if preview:
+            continue
+
+        try:
+            result = versereadinggenerate.call_api(ctx, package)
+        except versereadinggenerate.ApiKeyMissing as e:
+            return fail("api-key-missing", str(e))
+        except versereadinggenerate.ApiCallFailed as e:
+            return fail("api-error", f"chunk {chunk_label}: {e}")
+        rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+        rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+        real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                    result["output_tokens"] / 1_000_000 * rate_out)
+        versereadinggenerate.log_usage(
+            ctx.cfg, ctx.run_id, chunk_label, package["model"], result["input_tokens"],
+            result["output_tokens"], real_cost)
+        llm_summary.append({"chunk": chunk_label, "verses": package["verse_count"],
+                            "input_tokens": result["input_tokens"],
+                            "output_tokens": result["output_tokens"],
+                            "cost_usd": round(real_cost, 4)})
+
+        try:
+            parsed = versereadinggenerate.parse_response(result["text"])
+        except versereadinggenerate.BadModelResponse as e:
+            conn.rollback()
+            return fail("bad-model-response", f"chunk {chunk_label}: {e}")
+
+        chunk_record = recordingpass.record_batch(
+            conn, cluster_code, "verse-reading", parsed, source_json_serial=idx + 1)
+        conn.commit()
+        for action, n in chunk_record["by_action"].items():
+            record_summary["by_action"][action] = record_summary["by_action"].get(action, 0) + n
+        record_summary["unresolved_occurrence_count"] += chunk_record["unresolved_occurrence_count"]
+
+    if preview:
+        total_cost = sum(b["est_cost_usd"] for b in batch_summaries)
+        return ok(f"PREVIEW {cluster_code}: {len(chunks)} batch(es), {len(verse_ids)} verse(s), "
+                 f"{len(strongs)} strong(s), estimated ${total_cost:.4f} total -- no API call made, "
+                 f"nothing written. Re-run with -Preview:$false to execute for real.",
+                 preview=True, batches=batch_summaries, cluster_code=cluster_code,
+                 verse_count=len(verse_ids), strong_count=len(strongs))
+
+    # Every live (non-preview) call resolves the CLUSTER's full verse-id list (no partial/manual
+    # selector exists on this step) -- so reaching here means the whole cluster was just attempted,
+    # making this the right, and only, point to check verse-reading completeness and advance
+    # cluster.status. Found live 2026-09-17 building this: the ordinal-2 -> ordinal-3
+    # (ready_for_subgroup_allocation) transition #1697 designed was never actually built anywhere
+    # -- every one of the 80 live clusters was still sitting at the one-time backfill state. See
+    # lib/clusterstatus.py's own module docstring for the full finding.
+    status_result = clusterstatus.advance_if_verse_reading_complete(conn, cluster_code)
+    conn.commit()
+
+    total_cost = sum(c["cost_usd"] for c in llm_summary)
+    unresolved_n = record_summary["unresolved_occurrence_count"]
+    unresolved_note = f", {unresolved_n} unresolved occurrence(s)" if unresolved_n else ""
+    status_note = (f"; cluster.status -> ready_for_subgroup_allocation" if status_result["advanced"]
+                  else f"; {len(status_result['missing_strongs'])} of "
+                       f"{status_result['member_strong_count']} strong(s) still need verse-reading "
+                       f"before subgroup allocation can start" if not status_result["complete"]
+                  else "")
+    return ok(f"{cluster_code}: {len(chunks)} batch(es), ${total_cost:.4f} spent, "
+             f"observations {record_summary['by_action']}{unresolved_note}{status_note}",
+             preview=False, batches=batch_summaries, llm_calls=llm_summary,
+             record_summary=record_summary, cluster_code=cluster_code,
+             status_result=status_result)

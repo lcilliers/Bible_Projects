@@ -491,9 +491,12 @@ def lexical_extract(ctx: Ctx) -> Outcome:
                 args.append(s)
         where.append("(" + " OR ".join(clauses) + ")")
 
+    # resolved_sense/language DROPPED from verse_lexical 2026-09-16 (#1706 Phase B) -- role is now
+    # a JSON array of cluster codes, not the old content/function tag; resolved_sense's replacement
+    # lives at the new Layer 2 `verse_meaning` stage (ib_observation), not this table.
     rows = ctx.db.rows(
         f"SELECT vl.id AS verse_lexical_id, v.osisId AS verse, vl.strong, vl.role, vl.position, "
-        f"vl.surface, vl.language, vl.testament, vl.resolved_sense, vl.party_kind "
+        f"vl.surface, vl.testament, vl.party_kind "
         f"FROM verse_lexical vl JOIN verse v ON v.id=vl.verse_id WHERE {' AND '.join(where)} "
         f"ORDER BY v.osisId, vl.position, vl.code_ordinal", tuple(args))
 

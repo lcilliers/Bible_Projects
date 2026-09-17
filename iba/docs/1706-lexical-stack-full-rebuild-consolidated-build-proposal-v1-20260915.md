@@ -58,10 +58,10 @@ input — it does not perform Layer 2 judgement itself, as the table below previ
 |---|---|---|---|---|
 | 0 | **Spine readiness** | verse→span→strong sync, extended-meaning-parse completeness | `governance.base_data_spine`, `Spine-Check.ps1` | **Live, enforced.** 0 FATAL findings this session. |
 | 1 | **Lexical readiness check** | 3-leg check: every verse has ≥1 span (Leg1) · every span's strong resolves to a live `strong` row (Leg2) · every live strong has ≥1 `cluster_strong` allocation (Leg3) | #1606 | Leg1/Leg2 **PASS clean**. Leg3 **FAILS**: 111 strongs, zero allocation (H9xxx-dominated). Not yet a registered `cfg_method_rule` + persisted check, per the researcher's own #1606 instruction — **a real build item, not done yet.** |
-| 2 | **Layer 1 build** (`verse_lexical`) | mechanical, per-code columns: `role`, `is_negator`, `party_kind`, `surface`, etc. — no `resolved_sense`, dropped (see stage 5) | #1592/#1607, `1607-layer1-layer2-consolidated-column-spec-v1-20260910.md` | **Design closed.** Full rebuild, not incremental (researcher's own instruction, §3.3 below). |
-| 3 | **cluster.status / cluster_subgroup.status readiness** | lifecycle gating columns | #1697 (cluster, v6), #1690 §3a (subgroup) | **Design fully closed** (§4) — #1697's own 5 open items all resolved 2026-09-15. Not built: `cluster.status` column doesn't exist live (checked 2026-09-16). Awaiting pack sign-off + build. |
-| 4 | **Catalogue migration** | `wa_obs_question_catalogue` → `iba.db` | #1696 (v10) | **Design fully closed** — 98-row CSV reviewed, migration approved in principle ("migration can proceed"). **Deliberately held** by the researcher's own sequencing this session: finish #1706 first. Not built: table doesn't exist in `iba.db` yet. |
-| 5 | **Layer 2 — lexical observations + lexical-question answers** | multi-source LLM reading of `vw_strong_meaning_raw` (all 3 sources), per strong — produces `ib_observation` row(s): general lexical observations AND slant-answers to the catalogue's term-scoped ("Word/term (lexical)") questions. This is where `resolved_sense`'s replacement lives — not a Layer 1 column | Researcher, verbatim, 2026-09-15 (§3 below); grounding for the design assembled at §4A | **Genuinely new, undesigned — this is #1711's scope**, not decided in this document. Needs: a stage name/value, scope grain, which catalogue question(s), and — per #1705's closure — a driving mechanism that guides the LLM with data+questions rather than imposing a resolution structure. |
+| 2 | **Layer 1 build** (`verse_lexical`) | mechanical, per-code columns: `role`, `is_negator`, `party_kind`, `surface`, etc. — no `resolved_sense`, dropped (see stage 5) | #1592/#1607, `1607-layer1-layer2-consolidated-column-spec-v1-20260910.md` | **BUILT AND RUN, 2026-09-16.** 544,667 rows, 29,760 verses, corpus-wide, 0 errors. BUILD.md #267. |
+| 3 | **cluster.status / cluster_subgroup.status readiness** | lifecycle gating columns | #1697 (cluster, v6), #1690 §3a (subgroup) | **BUILT, 2026-09-16.** Both columns live, 95/95 clusters backfilled, both enums registered. BUILD.md #267. |
+| 4 | **Catalogue migration** | `wa_obs_question_catalogue` → `iba.db` | #1696 (v10) | **BUILT, 2026-09-16.** 92 rows live in `iba.db`, matching the Phase 5 content review exactly. `bible_research.db` copy flagged inactive. Real FK on `question_code` still deferred (needs a table rebuild once the write path exists). BUILD.md #267. |
+| 5 | **`verse_meaning`** — Layer 2 lexical observations + lexical-question answers | multi-source LLM reading of the 3 meaning sources, per strong, **per cluster** — produces `ib_observation` row(s): general lexical observations AND slant-answers to T1.1 (Name/Naming, from surface + meaning-in-context) and T7.1 (Lexical/Semantic Analysis, from Layer 1 + Layer 2 jointly). This is where `resolved_sense`'s replacement lives — not a Layer 1 column | Researcher, verbatim, 2026-09-15 (§3 below) + 2026-09-16 (§4A, all 3 open items resolved) | **Design closed, 2026-09-16 — #1711 resolved.** Stage value `verse_meaning`, scope grain per-cluster, T1.1/T7.1 linkage both settled (§4A). Not built — Phase C (§6 items 13–16) still needs the actual config registration + build. |
 | 6 | **Capture Layer 2 observations** | the recording pass (#1693) writes stage 5's LLM output into `ib_observation`/`ib_node` — same run-structure pattern already used for reading/answer/synthesis, made explicit here since it sits before subgroup, not after | #1693 §0 (pattern), extended | **New, explicit step** — not previously called out as its own stage; mechanism is #1693's existing same/broaden/new logic (fully specified), applied to a new input. Genuinely low-risk once stage 5 itself is designed — this is reuse, not a second design problem. |
 | 7 | **cluster-subgroup build** (process b) | consumes stage 6's captured Layer 2 observations as input; outputs: subgroups, membership, catalogue-driven `ib_observation` (`stage='subgroup'`, #1691 §9 item 8) — its own, separate observations, not Layer 2's | #1690 (completed 2026-09-13) | **Design closed** except the stage-5/6 input wiring (new, depends on #1711). #1690 §7 item 4's "recommend a course of action on `strongs_reassigned`" routine deliberately left unbuilt — manual-only for now, researcher's own instruction. |
 | 8 | **reading stage** (process c) | per-subgroup LLM read; inputs = subgroup's own `ib_observation` rows + Layer 1/2 lexical for every verse in scope, walked role-first (#1704 decision 1) | #1682 process spec §2, #1691/#1692 (`ib_observation`/`ib_node`, both completed) | **Design closed for the table shape.** Needs #1704's forced role-walk written into the process spec (§2 item 1 below) and #1691's `tag` taxonomy extended for the pointer/relational split (§2 item 2). **This is the fix for the #1607 v14 root-cause finding** (below). |
@@ -322,6 +322,17 @@ what's left is (a) the researcher's actual sign-off nod across all six, (b) tidy
 escalation status to match its 3 completed siblings (content is equally resolved), and (c) the
 build itself (§6) — all 5 tables/columns, confirmed live as not yet created.
 
+**★ Post-approval addition, 2026-09-16 (#1526).** `cluster_subgroup` gains `anchor_verse_reference`
+— one representative verse per subgroup, decided by process (b)'s own LLM session, written in the
+same DB update as the rest of the subgroup row (#1693's recording pass), never a separate pass.
+Supersedes #1526's original per-strong `resolved_sense`-keyed proposal (moot anyway — `resolved_sense`
+is dropped from Layer 1, see Phase B item 10). Applied to both #1690 (`1690-...` §2A) and #1693
+(`1693-...` write-mechanism table) even though both were already `completed` — a real post-approval
+change, not new design. **Selection criterion RESOLVED, same day:** researcher, verbatim, *"the
+verse that best describe the subgroup characteristic is selected by llm to serve as anchor"* —
+process (b)'s own judgment call, added as governing-rule item (h) (#1690 §2). No open item remains
+on this addition; exact prompt wording is a build detail for Phase F item 25 below, not a design gap.
+
 **Not part of the pack, but immediately adjacent — #1698, still genuinely open.** Item (i) resolved
 (`ib_observation.cluster_code` nullable for synthesis); item (ii) — #1697's `cluster.status=
 'ready_for_synthesis'` precondition is a single-cluster check, and synthesis is confirmed
@@ -352,40 +363,25 @@ to an existing one:**
   the same move (new enum value, same table, same write path) is what stage 5 needs, not a new
   table or a parallel mechanism.
 
-**What's genuinely undecided — #1711's actual scope, three items, each with real substance now
-assembled (not just named) so the researcher can decide, not just be asked again:**
+**RESOLVED, 2026-09-16 — all 3 items, researcher verbatim this chat turn.** #1711 v11 closed the
+design with no open decisions remaining:
 
-1. **Stage name/value.** Candidates on record: `meaning` or `lexical` (§1 stage 5's own wording).
-   Consideration the prior draft didn't carry: the existing enum's other values name the *process*
-   (`subgroup`, `reading`, `answer`, `synthesis` = processes b/c/d/e) — a name consistent with that
-   pattern would name what this pass *does* (e.g. something parallel to "reading" but pre-subgroup),
-   not the layer it belongs to. Not resolved here — a naming call for #1711.
-2. **Scope grain — per-strong corpus-wide, or per-cluster.** This is not a free choice; it has a
-   real downstream consequence #1711 needs to weigh: subgroup formation (process b) needs stage 5's
-   *captured* output as input (§1 banner) — if stage 5 runs per-cluster, it can be sequenced
-   immediately before that cluster's own process (b) run (tighter coupling, smaller batches, easier
-   to re-run one cluster). If it runs corpus-wide in one pass, it front-loads all lexical observation
-   work before *any* cluster's subgroup stage can start, but produces one large, reusable
-   pre-computed layer. The researcher's own instruction ("hit the DB before subgroup start... so its
-   output is available as data when subgroups are formed") is consistent with either — it doesn't
-   settle the batching question either way. **New data point, 2026-09-16** (the #1660 volume
-   reconciliation, docs `1660-1711-layer2-volume-and-filter-reconciliation-v1-20260916.md`): scoped
-   to M-code strongs (the confirmed right scope, see below), the 84 M-clusters average ~37 strongs
-   each (range 2–213) — per-cluster batching keeps each run small and matches process (a)/(c)'s own
-   existing pattern; corpus-wide in one pass would be ~1.3M characters at once. A practical argument
-   toward per-cluster, though the term-grain question (item 3 below) cuts the other way — not fully
-   settled by this alone.
-3. **Which catalogue question(s) it links to.** The catalogue's own `scope` column (#1682 §4A)
-   already distinguishes `Word/term (lexical)` and `Verse-context` questions (answered against
-   specific observations/occurrences) from the four broader scopes (`Characteristic`, `The HIB`,
-   etc., answered across a family's evidence as a whole) — `Word/term (lexical)` is the natural
-   grain match for a per-strong, pre-subgroup pass. T1.1 (Name/Naming) and T7.1 (Lexical/Semantic
-   Analysis) are the concrete candidates already named (#1706 draft 1) — not confirmed. #1704 Phase
-   1c's own component-by-component sweep (T1.1: "term-level, not verse-level... existing mechanism,
-   wrong grain") is directly relevant here: T1.1/T7.1 both need **term-grain aggregation**, not
-   verse-grain — which may mean stage 5's natural grain genuinely is per-strong corpus-wide (item 2
-   above), since a term-level question can't be answered from one cluster's slice of a strong's
-   occurrences alone.
+1. **Stage name/value — `verse_meaning`.** Not `meaning` or `lexical` (the two candidates on
+   record) — a new, more specific value naming what this pass produces, not just the layer it
+   belongs to.
+2. **Scope grain — per-cluster.** Not corpus-wide in one pass. Runs alongside/just ahead of each
+   cluster's own process (b), matching process (a)/(c)'s own existing batching pattern (smaller
+   runs, easier to re-run one cluster). The term-grain concern below (item 3, T1.1/T7.1 needing
+   more than one cluster's slice of a strong's occurrences) is resolved by *how* those questions are
+   answered, not by forcing corpus-wide scope.
+3. **Catalogue question linkage — both T1.1 and T7.1, each with its own derivation.**
+   **T1.1** (Name/Naming) is derived from reviewing the strong's `surface` + its meaning in context
+   (Layer 1 surface data + the meaning sources, read per occurrence). **T7.1** (Lexical/Semantic
+   Analysis) is derived from Layer 1 *and* Layer 2 jointly — it draws on this stage's own output,
+   not just the raw meaning sources.
+
+Full record: escalation #1711 v11. Not built — Phase C (§6 items 13–16) still needs the actual
+config registration and the stage 5/6 mechanism itself built; nothing above changes that.
 
 **Two more real items, found 2026-09-16 checking #1607's own Layer 2 spec against #1711 directly
 (not carried over before now):**
@@ -479,10 +475,10 @@ go-ahead — this is the proposal, not the build log.
 
 ### Phase A — base-data readiness (must run before Layer 1 rebuild)
 
-1. Register lexical readiness (#1606) as a real, persisted `cfg_method_rule` check — three legs,
-   per the researcher's own original wording, not just a description.
-2. Researcher's call: run the T-code classification pass on Leg 3's 111 zero-allocation strongs
-   (same by-hand method as T4/T5/T6/T7/T9/T15), or accept them as a known, tracked gap for now.
+1. **DONE, 2026-09-16.** `lexical.readiness` built and registered (`handlers/lexical.py:readiness`,
+   `cfg_step`/`cfg_method_rule`/`cfg_report`) — 3-leg check, run live: 0 FATAL findings, both before
+   and after Phase B's rebuild. Full record: BUILD.md #267.
+2. **DONE, 2026-09-15** (already recorded elsewhere in this doc) — all 111 classified.
 
 ### Phase B — Layer 1 cutover + rebuild (`verse_lexical`)
 
@@ -500,37 +496,29 @@ researcher, verbatim, `1607-open-items-action-plan-v1-20260909.md` D1, 2026-09-0
 all current lexicals before first actual run starts."* The Sept-15 "dumped" wording is the same
 instruction restated, not a new, unconfirmed one — no literal hard delete was ever on the table.
 
-3. **RESOLVED, researcher, verbatim, 2026-09-09/10** (`1607-open-items-action-plan-v1-20260909.md`
-   D1 — missed in this document's first draft, corrected 2026-09-16): *"role is almost the
-   validator that the base data is ready for lexical analysis... I prefer b) [pre-validate before
-   any run starts for the scope of the run]... if role is null for any word in the span for the
-   scope, the validation fails and the run does not proceed."* Design settled: fail-fast at run
-   start, scoped to the run's own scope, any NULL `role` in scope blocks the run. **Not yet built**
-   as a registered routine (which utility/`cfg_step` it gates, the exact failure message) — a build
-   item, not an open decision.
-4. **RESOLVED, 2026-09-16.** Researcher, verbatim: *"the column value should include the role(s) of
-   the word in the row"* — a plain list, nothing per-role to carry; left as a technical call. **Bare
-   JSON array of cluster codes** — `["T5","M12"]`, not an array of objects. Matches the existing
-   pattern already live in the same table family (`verse_lexical_note.related_verse_lexical_ids`
-   already stores bare arrays, e.g. `[885445]`) and D1's own volume note ("not more than 3–4 cluster
-   codes"). **Layer 1's design is now fully closed** — everything remaining under Phase A/B is build
-   work, not an open decision.
-5. **Dissolve the old Layer 1 configuration** (new, explicit step, not previously listed): retire
-   the `cfg_column` rows for the dropped columns (`ambiguity_note`, `language`) and any
-   `cfg_method_rule` rows tied to the old `role`/`resolved_sense` mechanism (superseded, not
-   deleted, matching the project's own governance convention); update `cfg_step.does` for whatever
-   step builds `verse_lexical` to describe the new shape, not the old one.
-6. **Set the new Layer 1 configuration**: register the redesigned `role` column's shape in
-   `cfg_column`, the new `verse_meta` table (item 9) in `cfg_table`/`cfg_column`, and the bulk
-   full-corpus rebuild routine itself in `cfg_utility`/`cfg_step`/`cfg_write_grant` if it doesn't
-   already have a registered home.
-7. Soft-delete every current `verse_lexical` row — the full-rebuild precondition.
-8. Run the rebuild, corpus-wide, in bulk: drop `ambiguity_note` and `language` (re-pointing
-   `_narrative_morph_for` to `verse_meta.language` in the same unit of work); populate the
-   redesigned `role`; **drop `resolved_sense` from Layer 1 entirely** (see item 10 — the real
-   synthesis work moves to a new Layer 2 stage, not a Layer 1 column).
-9. Create the new verse-level `verse_meta` table (D13) — `language`, and whatever else is needed at
-   that grain.
+3. **DONE, 2026-09-16.** Built as `unready_codes_in_scope`/`NotReady` (`lib/lexical.py`) — fail-fast
+   at run start, scoped to the run's own scope, wired into `build_for_range`/`build_for_verse_ids`
+   and every handler call site. Full record: BUILD.md #267.
+4. **DONE, 2026-09-16.** Bare JSON array of cluster codes, live: `load_role_codes`/`_role_for`
+   (`lib/lexical.py`). **Layer 1's design is now fully closed** and built.
+5. **DONE, 2026-09-16.** `rebuild_verse_lexical_layer1_v1_20260916.py` — dropped `cfg_column` rows
+   for `ambiguity_note`/`language`/`resolved_sense`; `lexical.enrich` marked inactive (the old
+   `role`/`resolved_sense`-adjacent mechanism). Full record: BUILD.md #267.
+6. **DONE, 2026-09-16.** `role`'s new shape registered in `cfg_column`; `verse_meta` already had its
+   own registration (#1608, item 9 below); the rebuild routine registered as `cfg_step
+   verse-lexical/lexical.readiness` plus the existing `lexical.build`/`lexical.run` steps, no new
+   `cfg_utility` needed (reuses the existing handler).
+7. **DONE, 2026-09-16.** 544,590 live rows soft-deleted, same migration as item 5.
+8. **DONE, 2026-09-16.** Corpus-wide rebuild run for real: 544,667 rows, 29,760 verses, 93 seconds,
+   0 errors (`run_verse_lexical_layer1_rebuild_v1_20260916.py`). `ambiguity_note`/`language` dropped,
+   `_narrative_morph_for` re-pointed, `role` redesigned, `resolved_sense` dropped from Layer 1
+   entirely. Verified live: 0 NULL/empty-array role, 0 malformed JSON (5,000-row sample),
+   `verse_meta.language` correctly recomputed via the fixed trigger (21,902 Hebrew + 7,858 Greek =
+   29,760, 0 NULL). Full record: BUILD.md #267.
+9. ~~Create the new verse-level `verse_meta` table (D13)~~ — **already done** (#1608, 2026-09-09;
+   confirmed live, checked 2026-09-16: exists, registered in `cfg_table`, 29,760 rows, `language`
+   column already present). Not an outstanding action — flagged as one in this document's own §6
+   in error until this correction; §8's register already had it right.
 10. **RESOLVED, researcher, verbatim, 2026-09-15, continuing the same instruction:** *"what is
     important is the new design of layer 1 is sound, and form the right base for the llm controlled
     layer 2. the new multi-source reading should be part of layer 2. it will be a observation
@@ -542,25 +530,27 @@ instruction restated, not a new, unconfirmed one — no literal hard delete was 
     linked to a catalogue question, written **before** process (b) (subgroup allocation) so its
     output is available input when subgroups are formed. This stage is genuinely new — see §1 stage
     5 and the open items below, not designed further in this document.
-11. Post-build: run the surface-alignment validation heuristics against the fresh rows (replaces
-    #1591's old-row repair, now moot — §3) — note: consistent with "not reconciling old data" above,
-    since this validates the *new* rebuild's own output, not old rows.
-12. Close #1590 (superseded) and #1597 (resolved by architecture) once confirmed by the researcher.
+11. **Not done, 2026-09-16.** The surface-alignment post-build validation heuristics against the
+    fresh rows were not re-run this session — a real, cheap follow-up, not forgotten, just not
+    reached in this build round.
+12. **Already applied earlier this session** — #1589/#1590/#1591/#1592/#1594/#1595/#1597 all closed
+    (see BUILD.md #267's own scope note and this doc's SS8 register).
 
 ### Phase C — Layer 2: lexical observations + capture (genuinely undesigned — §1 stages 5–6)
 
-Not a small addition to Phase B — two new steps in the pipeline (produce, then capture), needing
-their own design pass before they can be built. Open, not decided here:
-13. **Stage name/value.** `ib_observation.stage` currently has `subgroup`/`reading`/`answer`/
-    `synthesis` — Layer 2 runs *before* `subgroup`, so it needs its own new value (candidate:
-    `meaning` or `lexical`, not chosen here).
-14. **Scope grain.** Per strong, corpus-wide in one pass? Per cluster (so it can run alongside/just
-    ahead of that cluster's own process (b))? Not stated by the researcher's instruction, which
-    describes the mechanism but not the batching.
-15. **Which catalogue question(s) it links to.** "Linked to a question" — the lexical/term-scoped
-    catalogue components (T1.1 Name/Naming, T7.1 Lexical/Semantic Analysis, etc. — the ones
-    #1682 §4A's own `Word/term (lexical)` scope category already names) are the natural candidates,
-    not confirmed. Determines what `question_code` actually gets populated with.
+Not a small addition to Phase B — two new steps in the pipeline (produce, then capture). Design
+closed 2026-09-16 (#1711 v11, §4A) — build work remains, not decisions:
+13. **Stage value DONE, 2026-09-16** — `verse_meaning` registered live in `ib_observation.stage`
+    (`cfg_enum`, `create_cluster_reading_pipeline_tables_v1_20260916.py`). The actual assembly/
+    LLM-calling mechanism that WRITES stage=`verse_meaning` rows is still not built (see BUILD.md
+    #267's "Not done").
+14. **Scope grain confirmed, not yet exercised** — no code runs per-cluster batches yet; the
+    mechanism (`lexical.readiness`-style selector via `lexicalscope.py`) already exists for Layer 1
+    and can likely be reused, not yet wired to the new stage.
+15. **Catalogue linkage now buildable** — the FK's real target exists (`wa_obs_question_catalogue`
+    live in `iba.db`, 92 rows, T1.1/T7.1 present), but `ib_observation.question_code`'s actual FK
+    constraint is still un-enforced (SQLite FKs are declare-at-create-time; adding one needs a
+    table rebuild, deferred to when the write path is built) and no code populates it yet.
 16. **RESOLVED, researcher, verbatim, 2026-09-15 — capture is its own explicit step, not folded
     into Layer 2's own LLM pass.** *"layer 1 -> layer 2 (produce lexical observations and answers
     to lexical questions) -> capture lexical observations -> subgroup"* — four steps, not three.
@@ -570,22 +560,25 @@ their own design pass before they can be built. Open, not decided here:
 
 ### Phase D — cluster/subgroup readiness gates
 
-17. Add `iba.cluster.status` (#1697) — **design fully resolved** (§4), `ALTER TABLE` + register the
-    `cfg_enum`.
-18. Add `cluster_subgroup.status` (#1690 §3a) as part of creating that table (Phase E).
-19. Migrate `wa_obs_question_catalogue` into `iba.db` (#1696) — bulk-insert **92 rows, corrected
-    2026-09-16** (98 original − 8 retired per researcher content review + 2 new `T2.11` rows —
-    `1704-catalogue-content-decisions-v1-20260916.md`), retarget
-    every live routine in #1696 §2, flip `bible_research.db`'s copy `inactive=1`, restore the real FK
-    on `ib_observation.question_code` (also needed for Phase C's `question_code` linkage above).
+17. **DONE, 2026-09-16.** `iba.cluster.status`/`status_changed_at` added, `cfg_enum` registered (8
+    values), all 95 live clusters backfilled to ordinal 2. Full record: BUILD.md #267.
+18. **DONE, 2026-09-16.** `cluster_subgroup.status` created as part of the table (item 20), `cfg_enum`
+    registered (6 values).
+19. **DONE, 2026-09-16.** `wa_obs_question_catalogue` migrated into `iba.db` — **92 rows, exactly as
+    expected**, `T2.11.1`/`T2.11.2` added, `T7.1.3` revised, 8 codes dropped per the Phase 5 review.
+    `bible_research.db`'s copy flagged `inactive=1`. **Not done:** the real FK on
+    `ib_observation.question_code`/`ib_node.question_code` — deferred to when those write paths are
+    built (SQLite FKs are declare-at-create-time only). Full record: BUILD.md #267.
 
 ### Phase E — cluster-reading pipeline tables
 
-20. Create `cluster_subgroup`/`cluster_subgroup_strong` in `iba.db` (#1690 §1 DDL), registered in
-    `cfg_table`/`cfg_column`.
-21. Create `ib_observation` in `iba.db` (#1691 §1 DDL), registered — extended for Phase C's new
-    `stage` value once item 13 is settled.
-22. Create `ib_node` in `iba.db` (#1692 §1 DDL), registered.
+20. **DONE, 2026-09-16.** `cluster_subgroup` (with `anchor_verse_reference`, the post-approval
+    addition) and `cluster_subgroup_strong` created in `iba.db`, registered in `cfg_table`/
+    `cfg_column`. Full record: BUILD.md #267.
+21. **DONE, 2026-09-16.** `ib_observation` created, registered — `stage` enum includes the new
+    `verse_meaning` value from item 13.
+22. **DONE, 2026-09-16.** `ib_node` created, registered, CHECK constraint verified live (a synthetic
+    all-NULL-grounding insert correctly rejected).
 23. Build the recording pass (#1693) — same/broaden/new logic (fully specified), verse-reference
     resolution, denormalization, the two-level status check/advance (cluster + subgroup grain),
     the `placement_note`-promotion mechanism (mechanism itself still undesigned per #1693 §2, a
@@ -679,25 +672,29 @@ output that will supply it, not a `verb_argument` schema change gating this phas
 7. ~~Decide whether #1705 gates or runs in parallel~~ — **SUPERSEDED, 2026-09-15/16.** #1705 itself
    closed without a redesign — see §2 item 3. Replaced by item 8 below (#1711), which is not
    currently blocking anything (deliberately sequenced after Layer 1).
-8. **Design #1711** (the pre-subgroup Layer 2 stage, §1 stage 5/6) — §4A above assembles the real
-   substance: 3 concrete open items (stage name, scope grain, catalogue-question linkage, each with
-   its actual trade-offs laid out, not just named) plus what the stage inherits unmodified from the
-   pack. **Deliberately sequenced after Layer 1** — not needed until Layer 1's build work (§6 Phase
-   A/B) is done.
+8. ~~Design #1711~~ (the pre-subgroup Layer 2 stage, §1 stage 5/6) — **DONE, 2026-09-16.** All 3
+   items resolved (§4A): stage `verse_meaning`, per-cluster scope, T1.1+T7.1 linkage. #1711 v11
+   closed, no open decisions remaining. What's left is build work (§6 Phase C), not design.
 9. ~~Confirm "dumped" means soft-delete~~ — **DONE, already answered 2026-09-09/10, missed in this
    document's first draft, corrected 2026-09-16.** See Phase B banner.
-10. **New, 2026-09-16 — sign off the pack as a set** (item 4 above) — all 6 components are
-    design-complete; #1691's escalation itself (v18) is the one still formally open, workflow-only,
-    not a content gap.
+10. ~~Sign off the pack as a set~~ (item 4 above) — all 6 components are design-complete; #1691's
+    own workflow loose end **closed 2026-09-16 14:15** (v19, `ready_for_approval`, matching its 3
+    siblings). **Still needed: your own actual approve/reject/revise nod across the set** — closing
+    the workflow loose end is not the same as you signing off the pack.
 11. **New, 2026-09-16 — no action needed, listed for completeness:** #1698 (synthesis cross-cluster
     gating) and #1691 §9 item 5/#1695 (synthesis input JSON) are both correctly deferred until
     stage 9 is built and tested — not decisions outstanding right now.
 
-Nothing in this document is built — confirmed live, 2026-09-16 (`cluster_subgroup`,
-`cluster_subgroup_strong`, `ib_observation`, `ib_node`, `wa_obs_question_catalogue` don't exist in
-`iba.db`; `cluster.status` column doesn't exist). This is the single point of reference this
-session's request asked for — ground the whole lexical-stack thread in what's decided, what's new,
-and what order it goes in.
+**UPDATED, 2026-09-16, same-day build session — Phases A/B/D/E done, not "nothing built."**
+Researcher instruction, verbatim: *"you can now systemaitcally and in stages start the build of
+1706... this include the entire build from lexical layer 1 write through to the end of
+ib_observations."* Built and verified live this session: Phase A (`lexical.readiness`, 0 FATAL),
+Phase B (Layer 1 fully redesigned and rebuilt corpus-wide — 544,667 rows, 29,760 verses, 93s, 0
+errors), Phase D/E (all 5 pack tables/columns created + registered, catalogue migrated — 92 rows).
+**Still not built:** Phase C's actual execution code (the `verse_meaning` LLM-calling mechanism),
+the recording pass (#1693), and Phase F (no cluster has been run through any stage). Full build
+record: BUILD.md #267. Full status/issues write-up: `outputs/1706-build-session-status-v1-
+20260916.md`.
 
 ---
 
@@ -760,6 +757,9 @@ question-directed task shape (already true), depth calibrated by sense-count (no
 | #1590 | superseded | Greek/Hebrew role-tag bug | Confirmed: the code path is being deleted by Layer 1's redesign, not fixed — no residual action |
 | #1591 | superseded | `surface` 192-row alignment defects | Confirmed moot — old rows retired wholesale; replaced by a post-rebuild validation check (§6 item 11) |
 | #1592/#1595 | re-assigned/review | `verselexical.build` revisit; `verse-lexical.note` structure | Content fully folded into §3/§6 above; escalations themselves not formally closed — workflow loose end, not a content gap |
+| #1691 | `ready_for_approval`, 2026-09-16 14:15 | `ib_observation` design | **Closed out to match its 3 completed pack siblings, as recommended below** — v19, resolution "ib_observation design complete per this escalation." No longer a workflow loose end. |
+| #1547 | `ready_for_approval`, 2026-09-16 14:15 | "Prototype Window 2 analysis" placeholder | **Closed as superseded, as recommended below** — v2, resolution "Superseded in practice by #1682's real cluster-reading work." |
+| #1702 | `ready_for_approval`, 2026-09-16 14:15 | Cluster T-codes / answer-stage coverage | **Closed, content fully absorbed into #1704** — v2, resolution "Fully absorbed into #1704 (Phase 1b/1c's T-code sweep)." |
 | #1594 | superseded | Verse-lexical enrich vs. catalogue — Window handoff gaps | Resolved (§3); `passage.genre` finding consolidated with #1607 D12/D13 and #1700's T7.2.2a/2b finding into one root cause (§7 item 33) |
 | #1597 | superseded | `verse_lexical_note.evidence_text` 100% unpopulated | Resolved by architecture (`ib_node` CHECK + coverage self-check) — confirmed structurally closed, not just asserted |
 | #1598 | completed | Reallocation of M/T-code clusters; retired old T3 Inner-Faculties framing | Direct ancestor of #1701's resumption scope — still governs, no drift found |

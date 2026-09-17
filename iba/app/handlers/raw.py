@@ -280,17 +280,14 @@ def lexical(ctx: Ctx) -> Outcome:
     if not verse_ids:
         return ok("0 verse(s) to build — word has no strong_verse rows yet")
 
-    required = ctx.cfg.setting("step.required_for_runs", True)
-    step = ctx.step
-    try:
-        step.up()
-    except StepUnavailable as e:
-        if required:
-            return fail("unreachable", str(e))
-        step = None
-
+    # STEP-availability gate REMOVED here 2026-09-16 (#1706 Phase B) -- Layer 1 no longer calls
+    # STEP at all (resolve_code's old live_step_meaning ambiguity fallback is gone with
+    # ambiguity_note/resolved_sense); this step's own write path has no STEP dependency left.
     from ..lib import lexical as lexlib
-    totals = lexlib.build_for_verse_ids(ctx.db.conn, verse_ids, step)
+    try:
+        totals = lexlib.build_for_verse_ids(ctx.db.conn, verse_ids)
+    except lexlib.NotReady as e:
+        return fail("lexical-not-ready", str(e), unready_codes=e.codes)
     ctx.db.conn.commit()
     removed_note = (f", {totals['removed_with_live_notes']} with live notes now dangling"
                     if totals["removed_with_live_notes"] else "")

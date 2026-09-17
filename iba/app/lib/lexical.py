@@ -25,16 +25,15 @@ correct for those tables (nothing external held a durable pointer into their old
 from __future__ import annotations
 
 import datetime
+import json
 import pathlib
-import re
 import sqlite3
 
 from . import reportkit
 from .versespanmeaningreport import (
     _BASE_RE_FALLBACK, _base, _range_str, detect_verse_gaps, fetch_verses, gap_note,
-    gloss_supported_by_tree, live_step_meaning, merge_verses_and_gaps, sibling_variant_codes,
+    merge_verses_and_gaps,
 )
-from .stepapi import Step
 
 
 def _fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
@@ -45,200 +44,79 @@ def _fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
         "FROM span WHERE verse_id=? AND deleted=0 ORDER BY position", (verse_id,),
     ).fetchall()]
 
-# ── role classification ──────────────────────────────────────────────────────────────────────
-# Hebrew: STEP reserves H9000-H9999 for grammatical formatives (article, prefixed prep/conj,
-# pronominal suffixes, directional-he) — verified against every function-word code encountered
-# this session (H9002/H9003/H9005/H9009/H9011/H9020/H9028/H9030/H9033/H9038/H9040).
-#
-# CORRECTED 2026-08-05, later same day: an earlier version of this module claimed codes in that
-# range carry no stepGloss/no strong_meaning_parsed rows "by design" and skipped resolving them
-# entirely (resolved_sense left NULL). That was never actually checked and was wrong — every
-# H9xxx code DOES carry a real, short stepGloss (H9002='and', H9003='in/on/with', H9009='[the]',
-# H9020='my', etc.) and a real strong_meaning_parsed row ("Prefix beth: in, among, with"). The old
-# report.verse_span_meaning showed these; this module was silently dropping them, a real
-# regression caught by the researcher. Fixed: role no longer gates resolution at all — every code,
-# content or function, goes through the same resolve_code() pipeline. `role` is purely
-# classification metadata now (is this an independent lexical item or a bound grammatical
-# formative), independent of whether resolution itself succeeds (`status`).
-#
-# Every non-H9xxx Hebrew code (including standalone function words like H0413 "to" or H0834A
-# "which," which DO carry real lexical content) is 'content'.
-_H_FORMATIVE_RE = re.compile(r"^H9\d{3}[A-Z]?$")
-
-# H0853-function-word-exception (escalation #1383, build spec §B.13): the Hebrew direct-object
-# marker (stepGloss='[Obj.]') sits OUTSIDE the H9xxx reserved range but is grammatically a pure
-# formative, not an independent lexical item — an explicit, evidence-commented exception SET,
-# not a widened regex range (the design's own stated shape: "starting with H0853," not "H08xx").
-# 10,521 pre-existing live rows corrected to role='function' by
-# migration/build_verse_lexical_window1_layer1_layer2_v1_20260904.py; this is what keeps it
-# correct for every future lexical.build run.
-_H_FUNCTION_EXCEPTIONS = {"H0853"}
-
-# Greek has no equivalent reserved-range convention — verified only against G1722/G0505 this
-# session, not exhaustively. Falls back to morph_code's own leading POS tag (Robinson/Byzantine-
-# style). Unrecognised tags default to 'content' deliberately — misclassifying a real gap as
-# "function, no content expected by design" is worse than the reverse.
-_GREEK_FUNCTION_TAGS = ("PREP", "PRT", "CONJ", "ART")
+# ── role — REDESIGNED 2026-09-16 (escalation #1706 Phase B item 3, #1607 D1/D4) ─────────────────
+# Full rebuild, not a patch: the OLD role (a 'content'/'function' morph-tag classifier, below in
+# git history) is DELETED, not fixed — it's the exact mechanism escalation #1590 diagnosed as
+# buggy (the Greek article tag 'T' misclassified content instead of function), and per #1592/#1607
+# it's being replaced wholesale, not repaired. `role` is now a bare JSON array of every live
+# `cluster_strong.cluster_code` for this strong (T-codes AND M-codes both, not just the T4/T5/T7/
+# T8/T9 subset `load_code_classes` below restricts to) — e.g. `["T5","M12"]`, not an array of
+# objects (researcher, verbatim, 2026-09-16: "the column value should include the role(s) of the
+# word in the row" — a plain list, D1's own volume note: "not more than 3-4 cluster codes").
+# `role` is ALSO now the base-data readiness signal itself (#1606 D1, researcher verbatim,
+# 2026-09-09/10): "role is almost the validator that the base data is ready for lexical
+# analysis... if role is null for any word in the span for the scope, the validation fails and the
+# run does not proceed" — an empty array (no cluster_strong allocation at all) is that failure
+# state; see `unready_codes_in_scope` below, called by every build entry point BEFORE any write.
 
 
-def classify_role(strong_code: str | None, morph_slice: str | None) -> str:
-    if strong_code and strong_code.startswith("H"):
-        if _base(strong_code) in _H_FUNCTION_EXCEPTIONS:
-            return "function"
-        return "function" if _H_FORMATIVE_RE.match(strong_code) else "content"
-    if strong_code and strong_code.startswith("G") and morph_slice:
-        tag = morph_slice.split("-", 1)[0]
-        if tag in _GREEK_FUNCTION_TAGS:
-            return "function"
-    return "content"
+def load_role_codes(conn: sqlite3.Connection) -> dict[str, list[str]]:
+    """base strong_code -> sorted list of every live `cluster_strong.cluster_code` (T-codes and
+    M-codes both) — the full set, unlike `load_code_classes` below (which stays, unchanged, for
+    is_negator/party_kind's own narrower T4/T5/T7/T8/T9 need). Loaded once per build call, same
+    pattern as load_code_classes/live_cache. A strong with no live cluster_strong row of any kind
+    maps to [] — the empty-array readiness-failure state `unready_codes_in_scope` checks for."""
+    out: dict[str, list[str]] = {}
+    for r in conn.execute("SELECT strong, cluster_code FROM cluster_strong WHERE deleted=0"):
+        out.setdefault(_base(r["strong"]), []).append(r["cluster_code"])
+    return {base: sorted(set(codes)) for base, codes in out.items()}
 
 
-# ── stem/voice selection ─────────────────────────────────────────────────────────────────────
-# Hebrew binyan letter (morph_code[2] for HV... codes) -> stem name, EMPIRICALLY VERIFIED against
-# real strong_meaning_parsed text in this DB 2026-08-05 (no morph-code legend exists anywhere in
-# this repo — checked). See bootstrap_verse_lexical.py's module docstring for the verification
-# detail per letter. 'v' (Hishtaphel, H7812 "bow/worship," 13 occurrences) deliberately omitted —
-# the source text lumps it under "(Hithpael)" with no independently labeled segment; left
-# unmapped so it falls back to full-text presentation rather than a guessed extraction.
-_HEBREW_STEM_MAP = {
-    "q": "qal", "N": "niphal", "p": "piel", "P": "pual",
-    "h": "hiphil", "H": "hophal", "t": "hithpael",
-    "c": "tiphel", "u": "hothpael",
-}
-
-# Greek voice letter (2nd char of the TVM block, e.g. "PAP" -> A) -> voice name. Standard
-# Robinson/Byzantine tagging convention — NOT independently re-verified against this DB's own
-# strong_meaning_parsed text the way Hebrew was (today's Greek examples were non-verbs). Same
-# safe-fallback applies if the label isn't found in the text.
-_GREEK_VOICE_MAP = {"A": "active", "M": "middle", "P": "passive"}
-
-_STEM_MARKER_RE = re.compile(r"^\(([A-Za-z]+)\)\s*(.*)$")
-# strong_meaning_parsed.sense_code's own outline shape: '1)'/'2)' = root-level sense (a lemma can
-# have more than one — e.g. H1288 has both a '1)' bless/kneel root AND a separate, non-stemmed '2)'
-# TWOT-sourced sense); '1a)'/'1b)'... = a stem marker nested under root '1'; '1a1)'/'1a2)'... = a
-# sub-sense nested under that stem. Restricting the stem search to LETTER-level codes (never
-# digit-only root codes) is what rules out misreading a root-level citation marker like '(TWOT)'
-# at '2)' as if it were a stem — TWOT-style citations only ever sit at root level in this data.
-_LETTER_CODE_RE = re.compile(r"^(\d+)([a-z])\)$")
+def _role_for(code: str | None, role_codes: dict[str, list[str]],
+             base_pattern: str) -> str:
+    codes = role_codes.get(_base(code, base_pattern), []) if code else []
+    return json.dumps(codes)
 
 
-def _stem_name_for(strong_code: str, morph_slice: str | None) -> str | None:
-    if not morph_slice:
-        return None
-    if strong_code.startswith("H") and morph_slice.startswith("HV") and len(morph_slice) >= 3:
-        return _HEBREW_STEM_MAP.get(morph_slice[2])
-    if strong_code.startswith("G") and morph_slice.startswith("V-"):
-        parts = morph_slice.split("-")
-        if len(parts) >= 2 and len(parts[1]) >= 2:
-            return _GREEK_VOICE_MAP.get(parts[1][1])
-    return None
-
-
-def _select_stem_text(rows: list[tuple[str, str]], stem_name: str | None) -> tuple[str, bool]:
-    """rows: ordered (sense_code, gloss) pairs from strong_meaning_parsed. Narrows to the matched
-    stem's own branch — its marker row plus every 'root+letter+...' sub-sense row under it — PLUS
-    the shared root-level summary row (found by matching sense_code, not by position: the digit-
-    only code with the same leading digit as the matched branch). Dropping that root summary was
-    the exact regression the researcher caught 2026-08-05 — STEP nests every stem's senses under
-    one umbrella root sense (e.g. H7200's root '1)' "to see, look at, inspect, perceive, consider"
-    is what Qal/Niphal/etc. below it all specialise), so a stem-narrowed reading without it loses
-    real meaning, not just tidies punctuation. Falls back to every row's text, in original order,
-    when stem_name is unknown or no letter-level row names it — a safe fallback (full range shown,
-    not a guessed pick), not a hedge."""
-    if stem_name:
-        for code, gloss in rows:
-            letter_m = _LETTER_CODE_RE.match(code)
-            marker_m = _STEM_MARKER_RE.match((gloss or "").strip())
-            if letter_m and marker_m and marker_m.group(1).lower() == stem_name:
-                root, letter = letter_m.group(1), letter_m.group(2)
-                prefix = f"{root}{letter}"
-                texts = [g for c, g in rows if c == f"{root})"]  # the shared root summary, if any
-                for c, g in rows:
-                    if c.startswith(prefix):
-                        m = _STEM_MARKER_RE.match((g or "").strip())
-                        piece = m.group(2).strip() if m else (g or "").strip()
-                        if piece:
-                            texts.append(piece)
-                return "; ".join(texts), True
-    return "; ".join(g for _, g in rows if g), False
+def unready_codes_in_scope(conn: sqlite3.Connection, verse_ids: list[int]) -> list[str]:
+    """The pre-run readiness validator (#1606 D1) — every DISTINCT strong code occurring in a live
+    span across `verse_ids` that would resolve to an EMPTY role array (no live cluster_strong
+    allocation at all). Non-empty return means the scope is not ready; the caller fails fast,
+    before any resolve/write happens — same base-stripped lookup `_role_for` itself uses, so a
+    code this reports as unready is exactly one whose `role` would otherwise be written as `[]`."""
+    if not verse_ids:
+        return []
+    ph = ",".join("?" * len(verse_ids))
+    codes: set[str] = set()
+    for r in conn.execute(
+            f"SELECT strong_variant FROM span WHERE verse_id IN ({ph}) AND deleted=0 "
+            f"AND strong_variant IS NOT NULL AND strong_variant != ''", tuple(verse_ids)):
+        codes.update(r["strong_variant"].split())
+    role_codes = load_role_codes(conn)
+    return sorted(c for c in codes if not role_codes.get(_base(c), []))
 
 
 # ── resolution, per code ─────────────────────────────────────────────────────────────────────
+# SIMPLIFIED 2026-09-16 (#1706 Phase B) -- resolved_sense/ambiguity_note are both dropped from
+# Layer 1 entirely (researcher, verbatim, 2026-09-15: the multi-source meaning reading "should be
+# part of layer 2... an observation linked to a question," not a Layer 1 column at all -- see the
+# new `verse_meaning` stage, #1711). This function no longer touches `strong_meaning_parsed` or
+# STEP live lookups at all -- it just confirms the strong is registered. `role` moved to
+# `_layer1_fields` below (it's a code_classes-style lookup, same shape as is_negator/party_kind,
+# not something that belongs in the per-strong_meaning_parsed resolution path).
 
-def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None,
-                 step: "Step | None", live_cache: dict[str, str],
-                 base_pattern: str = _BASE_RE_FALLBACK) -> dict:
-    """One code's full verse_lexical row content (minus span_id/verse_id/code_ordinal, which the
-    caller fills in). Mirrors versespanmeaningreport.meaning_for_code's exact-variant/base-
-    fallback/ambiguity decision (reused, not re-derived) then adds stem/voice narrowing."""
-    role = classify_role(code, morph_slice)
-    row = {"strong": code, "morph_code": morph_slice, "role": role,
-          "status": "unregistered", "resolved_sense": None, "ambiguity_note": None,
-          "language": None}
-
+def resolve_code(conn: sqlite3.Connection, code: str, morph_slice: str | None) -> dict:
+    """One code's full verse_lexical row content (minus span_id/verse_id/code_ordinal, and minus
+    the Layer-1-mechanical fields `_layer1_fields` adds afterward). `_language` is transient —
+    carried only so `_layer1_fields`/`_narrative_morph_for` can gate on Hebrew-vs-Greek; never
+    written to the DB (verse_lexical.language is dropped, #1706 Phase B item 8; the verse-grain
+    equivalent is `verse_meta.language`, auto-computed by trigger, not by this module)."""
+    row = {"strong": code, "morph_code": morph_slice, "status": "unregistered", "_language": None}
     strong_row = conn.execute(
-        "SELECT strongNumber, language, stepGloss FROM strong WHERE strongNumber=?",
-        (code,)).fetchone()
+        "SELECT strongNumber, language FROM strong WHERE strongNumber=?", (code,)).fetchone()
     if strong_row is None:
         return row
-    row["language"] = strong_row["language"]
-
-    base = _base(code, base_pattern)
-    exact_rows = conn.execute(
-        "SELECT sense_code, gloss FROM strong_meaning_parsed WHERE strong_variant=? "
-        "ORDER BY sort, id", (code,)).fetchall()
-    exact_variant = bool(exact_rows)
-    rows = exact_rows if exact_variant else conn.execute(
-        "SELECT sense_code, gloss FROM strong_meaning_parsed WHERE lemma_key=? AND "
-        "strong_variant=? ORDER BY sort, id", (base, base)).fetchall()
-    sense_rows = [(r["sense_code"] or "", r["gloss"]) for r in rows if r["gloss"]]
-
-    if not sense_rows:
-        # Escalation #1575/#1527-cont. (2026-09-07, researcher instruction, verbatim: "there [is]
-        # still data in the sense column that does not serve a purpose... remove it from the
-        # column for all the lexicals"): this branch used to store the raw stepGloss dictionary
-        # text here ("stepGloss: {full text}") -- itself exactly the "dump of the generic data
-        # from the base table" complaint, `strong.stepGloss` being that base table. Still true
-        # after #1596/#1663-cont.'s revival below: no strong_meaning_parsed row (exact OR
-        # base-fallback) means no ord=0 gloss to carry -- resolved_sense stays None, a genuine
-        # data gap (#1663's own "250 strong codes with zero rows" finding), not silently guessed
-        # from stepGloss. role/status/ambiguity_note are unaffected by any of this.
-        row["status"] = "resolved"
-        return row
-
-    siblings = sibling_variant_codes(conn, base, exclude=code)
-    joined = "; ".join(g for _, g in sense_rows)
-    genuinely_ambiguous = (bool(siblings) and not exact_variant and
-                          not gloss_supported_by_tree(strong_row["stepGloss"], joined))
-    if genuinely_ambiguous:
-        row["ambiguity_note"] = (
-            f"base {base} shared with {', '.join(siblings)}, base-fallback text may not be "
-            f"specific to {code} — STEP live: {live_step_meaning(step, code, live_cache)}")
-
-    # Escalation #1575/#1527-cont. (2026-09-07): this branch used to narrow strong_meaning_parsed's
-    # sense_rows by stem/voice (_select_stem_text) then, for Greek codes, unconditionally append
-    # the ENTIRE strong_lsj_parsed + strong_mounce_parsed dump on top -- found live building #1549's
-    # LLM-payload work: for a common high-polysemy word (G2192 "have", 62 LSJ rows) this produced a
-    # 2,652-char value, one of 277 strongs corpus-wide with the same pattern. That output was never
-    # per-occurrence (a pure function of strong/morph_code, #1527 v2's own diagnosis) and, per the
-    # researcher's direct instruction, serves no purpose in this table -- removed outright, not
-    # trimmed. resolved_sense went unwritten (always None) from #1575 until #1596/#1663-cont.
-    # below, ~4 days later.
-    #
-    # REVIVED, escalation #1596/#1663-cont. (2026-09-10), researcher instruction verbatim: "my
-    # intent is that the lexical will carry the strong_meaning_parse ord = 0 row as resolved_sense
-    # and the surface" -- settled on ord=0 after #1663's own reconciliation work found
-    # strong_meaning_parsed.sort is 0-indexed (MIN(sort)=0 for every live strong_variant/lemma_key
-    # group, no exceptions) and that ord=1 (the earlier assumption) was silently skipping the true
-    # first sense for most codes. `sense_rows` is already `ORDER BY sort, id` (exact-variant OR
-    # base-fallback, whichever this call resolved above) — its first element IS that ord=0 row, a
-    # stable pick even for the 347 strong_variant codes with two rows tied at sort=0 (lowest `id`
-    # wins). No M-code restriction here (#1527's original "only for M-codes, not T-codes" concern
-    # was about a COMPROMISED value reaching Layer 2 undetected — the old LSJ/Mounce-dump value;
-    # this is the same single clean gloss for every code, and a base-fallback/ambiguous case is
-    # already visibly flagged via `ambiguity_note` set just above, not silently hidden) — applies
-    # to every code, content or function word alike, same as `role`/`status`.
-    row["resolved_sense"] = sense_rows[0][1]
+    row["_language"] = strong_row["language"]
     row["status"] = "resolved"
     return row
 
@@ -296,24 +174,13 @@ def _code_classes_for(code: str, code_classes: dict[str, set[str]],
     return code_classes.get(_base(code, base_pattern), set())
 
 
-def load_mcode_strongs(conn: sqlite3.Connection) -> set[str]:
-    """base strong_code -> is this code a member of a live M-code (thematic, inner-being-relevant)
-    cluster? Loaded once per build call, same pattern as load_code_classes/live_cache.
-
-    Escalation #1527 (2026-09-06), researcher instruction verbatim: `resolved_sense` is only
-    relevant for cluster M-codes, not cluster T-codes (grammatical/referent classification —
-    Supplementary/Operations/Negator/Connective/Party-*/Adversarial already get what they need
-    from `role`/`is_negator`/`party_kind`/the `connective` note_type, never a dictionary sense) —
-    "at most it should only be for cluster M-codes not cluster T-codes... what I do not want to
-    happen is that layer 1 arrives at a resolved_sense that is compromised, that gives layer 2 an
-    answer that is not dependable." A code with no M-code cluster membership at all (T-code member,
-    or untagged) gets `resolved_sense=None` — deliberately, not a coverage gap. `role`/`status`/
-    `ambiguity_note` are UNCHANGED by this — this restriction applies to `resolved_sense` only."""
-    out: set[str] = set()
-    for r in conn.execute(
-            "SELECT DISTINCT strong FROM cluster_strong WHERE deleted=0 AND cluster_code LIKE 'M%'"):
-        out.add(_base(r["strong"]))
-    return out
+# `load_mcode_strongs` — DELETED 2026-09-16 (#1706 Phase B). Its sole purpose (gating
+# `resolved_sense` to M-code strongs only, escalation #1527) went dead the moment #1575/#1527-cont.
+# stopped writing resolved_sense from Layer 1 at all (2026-09-07); it had already been reduced to
+# "loaded, threaded through, unused" by that point (see `build_for_verse`'s own prior comment) and
+# resolved_sense's full removal from Layer 1 (this rebuild) removes its last reason to exist.
+# `role` now needs the FULL cluster_strong set regardless of M/T-code (see `load_role_codes`
+# above) — a different, wider lookup, not a revival of this one.
 
 
 _PARTY_CLASS_TO_KIND = {"party_divine": "divine", "party_human": "human",
@@ -347,15 +214,17 @@ def _narrative_morph_for(morph_slice: str | None, language: str | None,
 
 def _layer1_fields(row: dict, span: dict, sibling_codes: list[str], language: str | None,
                    testament: str | None, code_classes: dict[str, set[str]],
-                   base_pattern: str) -> None:
-    """Mutates `row` (a resolve_code() result) in place, adding the 7 per-row Layer-1 fields —
+                   role_codes: dict[str, list[str]], base_pattern: str) -> None:
+    """Mutates `row` (a resolve_code() result) in place, adding the Layer-1 mechanical fields —
     everything except gloss_consistent_in_verse, which needs the whole verse's rows (computed
-    separately, see _apply_gloss_consistency below)."""
+    separately, see _apply_gloss_consistency below). `language` is NOT stored (2026-09-16, #1706
+    Phase B item 8 — dropped from verse_lexical, lives at verse_meta grain instead); still threaded
+    through as a parameter because `_narrative_morph_for` needs the per-code Hebrew/Greek gate."""
     row["position"] = span["position"]
     row["surface"] = span["surface"]
-    row["language"] = language
     row["testament"] = testament
     code = row["strong"]
+    row["role"] = _role_for(code, role_codes, base_pattern)
     classes = _code_classes_for(code, code_classes, base_pattern) if code else set()
     row["is_negator"] = 1 if "negator" in classes else None
     party_class = next((c for c in classes if c in _PARTY_CLASS_TO_KIND), None)
@@ -392,8 +261,11 @@ def _apply_gloss_consistency(verse_rows: list[dict]) -> None:
         r["gloss_consistent_in_verse"] = 1 if len(groups[key]) <= 1 else 0
 
 
-_CONTENT_FIELDS = ("strong", "morph_code", "role", "status", "resolved_sense", "ambiguity_note",
-                  "position", "surface", "language", "testament", "is_negator",
+# resolved_sense/ambiguity_note/language DROPPED 2026-09-16 (#1706 Phase B items 3-4/8) — see
+# module banner. `role`'s CONTENT changed (cluster-code JSON array, not content/function) but it
+# stays a plain identity-write column like every other field here — no special-casing needed.
+_CONTENT_FIELDS = ("strong", "morph_code", "role", "status",
+                  "position", "surface", "testament", "is_negator",
                   "narrative_morph", "gloss_consistent_in_verse", "party_kind")
 
 
@@ -440,14 +312,13 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
         if existing is None:
             conn.execute(
                 "INSERT INTO verse_lexical (span_id, verse_id, code_ordinal, strong, morph_code, "
-                "role, status, resolved_sense, ambiguity_note, created_at, deleted, position, "
-                "surface, language, testament, is_negator, narrative_morph, "
+                "role, status, created_at, deleted, position, "
+                "surface, testament, is_negator, narrative_morph, "
                 "gloss_consistent_in_verse, party_kind) "
-                "VALUES (?,?,?,?,?,?,?,?,?,?,0,?,?,?,?,?,?,?,?)",
+                "VALUES (?,?,?,?,?,?,?,?,0,?,?,?,?,?,?,?)",
                 (span_id, verse_id, ordinal, new_content["strong"], new_content["morph_code"],
-                 new_content["role"], new_content["status"], new_content["resolved_sense"],
-                 new_content["ambiguity_note"], now, new_content["position"],
-                 new_content["surface"], new_content["language"], new_content["testament"],
+                 new_content["role"], new_content["status"], now, new_content["position"],
+                 new_content["surface"], new_content["testament"],
                  new_content["is_negator"], new_content["narrative_morph"],
                  new_content["gloss_consistent_in_verse"], new_content["party_kind"]))
             c["inserted"] += 1
@@ -458,13 +329,13 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
             continue
 
         conn.execute(
-            "UPDATE verse_lexical SET strong=?, morph_code=?, role=?, status=?, resolved_sense=?, "
-            "ambiguity_note=?, position=?, surface=?, language=?, testament=?, is_negator=?, "
+            "UPDATE verse_lexical SET strong=?, morph_code=?, role=?, status=?, "
+            "position=?, surface=?, testament=?, is_negator=?, "
             "narrative_morph=?, gloss_consistent_in_verse=?, party_kind=?, updated_at=? "
             "WHERE id=?",
             (new_content["strong"], new_content["morph_code"], new_content["role"],
-             new_content["status"], new_content["resolved_sense"], new_content["ambiguity_note"],
-             new_content["position"], new_content["surface"], new_content["language"],
+             new_content["status"],
+             new_content["position"], new_content["surface"],
              new_content["testament"], new_content["is_negator"], new_content["narrative_morph"],
              new_content["gloss_consistent_in_verse"], new_content["party_kind"], now,
              existing["id"]))
@@ -481,16 +352,20 @@ def write_readings_for_span(conn: sqlite3.Connection, span_id: int, verse_id: in
     return c
 
 
-def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None",
-                    live_cache: dict[str, str], base_pattern: str = _BASE_RE_FALLBACK,
+def build_for_verse(conn: sqlite3.Connection, verse_id: int,
+                    base_pattern: str = _BASE_RE_FALLBACK,
                     code_classes: dict[str, set[str]] | None = None,
-                    mcode_strongs: set[str] | None = None) -> dict:
+                    role_codes: dict[str, list[str]] | None = None) -> dict:
+    """Internal to this module — only ever called from `build_for_range`/`build_for_verse_ids`
+    below (checked live 2026-09-16, no external caller), which is why the readiness pre-check
+    (`unready_codes_in_scope`) lives at THEIR entry points, not here: this function has no
+    standalone `verse_ids` scope of its own to check against."""
     c = {"spans": 0, "codes": 0, "inserted": 0, "updated": 0, "unchanged": 0, "removed": 0,
         "removed_with_live_notes": 0}
     if code_classes is None:          # safe default for a direct/standalone caller
         code_classes = load_code_classes(conn)
-    if mcode_strongs is None:         # safe default for a direct/standalone caller
-        mcode_strongs = load_mcode_strongs(conn)
+    if role_codes is None:            # safe default for a direct/standalone caller
+        role_codes = load_role_codes(conn)
 
     verse_row = conn.execute("SELECT osisId FROM verse WHERE id=?", (verse_id,)).fetchone()
     book = verse_row["osisId"].split(".", 1)[0] if verse_row else None
@@ -504,20 +379,13 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int, step: "Step | None"
         if not codes:
             continue
         resolved = [
-            resolve_code(conn, code, morphs[i] if i < len(morphs) else None, step, live_cache,
-                        base_pattern)
+            resolve_code(conn, code, morphs[i] if i < len(morphs) else None)
             for i, code in enumerate(codes)
         ]
         for i, r in enumerate(resolved):
             sibling_codes = [c for j, c in enumerate(codes) if j != i]
-            _layer1_fields(r, sp, sibling_codes, r["language"], testament,
-                          code_classes, base_pattern)
-            # #1527's M-code gate here (2026-09-06: null resolved_sense for non-M-code words) was
-            # RETIRED 2026-09-07 (#1575/#1527-cont., resolved_sense unwritten for any word) and
-            # STAYS retired now that #1596/#1663-cont. (2026-09-10) revives resolved_sense
-            # corpus-wide, no M-code restriction -- see resolve_code()'s own docstring for why.
-            # mcode_strongs is still threaded through/loaded (harmless, unused here) rather than
-            # ripped out of every call site -- a smaller, separate cleanup if it's ever a problem.
+            _layer1_fields(r, sp, sibling_codes, r["_language"], testament,
+                          code_classes, role_codes, base_pattern)
         per_span_resolved.append((sp, resolved))
 
     # gloss_consistent_in_verse needs the WHOLE verse's rows — one pass after every span resolved.
@@ -537,39 +405,52 @@ _TOTAL_KEYS = ("spans", "codes", "inserted", "updated", "unchanged", "removed",
               "removed_with_live_notes")
 
 
+class NotReady(Exception):
+    """Raised by `build_for_range`/`build_for_verse_ids` when `unready_codes_in_scope` finds any
+    code in the requested scope with zero cluster_strong allocation (#1606 D1) — the run does not
+    proceed, per the researcher's own ruling, 2026-09-09/10. `.codes` carries the exact list."""
+    def __init__(self, codes: list[str]):
+        self.codes = codes
+        super().__init__(f"{len(codes)} code(s) in scope have no cluster_strong allocation "
+                         f"(role would be []): {codes[:15]}{' ...' if len(codes) > 15 else ''}")
+
+
 def build_for_range(conn: sqlite3.Connection, book: str, lo: int, hi: int,
-                    verse_lo: int | None, verse_hi: int | None, step: "Step | None") -> dict:
-    live_cache: dict[str, str] = {}
+                    verse_lo: int | None, verse_hi: int | None) -> dict:
+    verses = fetch_verses(conn, book, lo, hi, verse_lo, verse_hi)
+    unready = unready_codes_in_scope(conn, [v["id"] for v in verses])
+    if unready:
+        raise NotReady(unready)
     code_classes = load_code_classes(conn)
-    mcode_strongs = load_mcode_strongs(conn)
+    role_codes = load_role_codes(conn)
     totals = {"verses": 0, **{k: 0 for k in _TOTAL_KEYS}}
-    for v in fetch_verses(conn, book, lo, hi, verse_lo, verse_hi):
-        counts = build_for_verse(conn, v["id"], step, live_cache, code_classes=code_classes,
-                                 mcode_strongs=mcode_strongs)
+    for v in verses:
+        counts = build_for_verse(conn, v["id"], code_classes=code_classes, role_codes=role_codes)
         totals["verses"] += 1
         for k in _TOTAL_KEYS:
             totals[k] += counts[k]
     return totals
 
 
-def build_for_verse_ids(conn: sqlite3.Connection, verse_ids: list[int],
-                        step: "Step | None") -> dict:
+def build_for_verse_ids(conn: sqlite3.Connection, verse_ids: list[int]) -> dict:
     """Same shape as `build_for_range`, but scoped to an explicit verse_id list rather than a
     book/chapter range — for a per-WORD rebuild (2026-08-10, `raw.lexical`, the `new-word` chain's
     closing step: "checking that the lexicals for the verses are correct with the parse values").
     `build_for_verse` is identity-stable (`write_readings_for_span`, redesigned 2026-09-05,
     escalation #1520): re-running this for a verse whose parse values haven't changed is a true
-    no-op (`unchanged`, same ids, nothing written); a verse whose `strong_meaning_parsed`/span
-    content HAS changed gets its `verse_lexical` rows corrected in place (`updated`, same ids) —
-    either way, any `verse_lexical_note` already attached survives untouched. Dedups the input
-    (a word's strongs can share a verse many times over)."""
-    live_cache: dict[str, str] = {}
+    no-op (`unchanged`, same ids, nothing written); a verse whose span content HAS changed gets its
+    `verse_lexical` rows corrected in place (`updated`, same ids) — either way, any
+    `verse_lexical_note` already attached survives untouched. Dedups the input (a word's strongs
+    can share a verse many times over)."""
+    verse_ids = list(dict.fromkeys(verse_ids))     # de-dup, preserve order
+    unready = unready_codes_in_scope(conn, verse_ids)
+    if unready:
+        raise NotReady(unready)
     code_classes = load_code_classes(conn)
-    mcode_strongs = load_mcode_strongs(conn)
+    role_codes = load_role_codes(conn)
     totals = {"verses": 0, **{k: 0 for k in _TOTAL_KEYS}}
-    for vid in dict.fromkeys(verse_ids):     # de-dup, preserve order
-        counts = build_for_verse(conn, vid, step, live_cache, code_classes=code_classes,
-                                 mcode_strongs=mcode_strongs)
+    for vid in verse_ids:
+        counts = build_for_verse(conn, vid, code_classes=code_classes, role_codes=role_codes)
         totals["verses"] += 1
         for k in _TOTAL_KEYS:
             totals[k] += counts[k]
@@ -581,10 +462,7 @@ def build_for_verse_ids(conn: sqlite3.Connection, verse_ids: list[int],
 def _render_component(r: sqlite3.Row) -> str:
     if r["status"] == "unregistered":
         return f"{r['strong']} [{r['role']}]: (not yet registered)"
-    text = f"{r['strong']} [{r['role']}]: {r['resolved_sense']}"
-    if r["ambiguity_note"]:
-        text += f" [AMBIGUOUS — {r['ambiguity_note']}]"
-    return text
+    return f"{r['strong']} [{r['role']}]"
 
 
 def _tbl(headers: list[str], rows: list[list]) -> list[str]:

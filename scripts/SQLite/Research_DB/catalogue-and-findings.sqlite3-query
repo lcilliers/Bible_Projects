@@ -1,28 +1,15 @@
--- database: ../../../database/bible_research.db
+-- database: ../../../iba/app/db/iba.db
 
-SELECT * FROM finding 
-where delete_flagged = 0;
+SELECT * FROM ib_observation
+;
 
-select count(*) from finding
- where delete_flagged = 1;
+select * from ib_node;
 
-select fvi.reference_text
-,f.id,f.finding_value
-,f.delete_flagged
-, wq.question_code
-, wq.question_text from finding f
-inner join finding_verse_index fvi on f.id = fvi.finding_id
-inner join finding_question_link fql on f.id = fql.finding_id
-inner join wa_obs_question_catalogue wq on fql.question_id = wq.obs_id
-where wq.obs_id = 393;
+Select * from ib_observation
+inner join ib_node n on ib_observation.node_id = n.id;
 
-select count(*) from finding f
-inner join finding_verse_index fvi on f.id = fvi.finding_id
-inner join finding_question_link fql on f.id = fql.finding_id
-inner join wa_obs_question_catalogue wq on fql.question_id = wq.obs_id
-where wq.obs_id = 393;
-
-select * from finding_verse_index
+select question_code, question_text from wa_obs_question_catalogue
+where question_code like 'T%';
 
 
 

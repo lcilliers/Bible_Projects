@@ -1,0 +1,5 @@
+run_id,chunk,model,input_tokens,output_tokens,cost_usd,called_at
+RUN-TEST-MEANING-LIVE-1,1/2,claude-sonnet-5,30607,8000,0.2118,2026-09-17T08:44:45Z
+RUN-TEST-MEANING-LIVE-2,1/2,claude-sonnet-5,30607,8000,0.2118,2026-09-17T08:50:54Z
+RUN-DEBUG-3,1/1,claude-sonnet-5,14059,2966,0.0867,2026-09-17T08:53:10Z
+RUN-DEBUG-4,"1/1 (ESTIMATED, same chunk as DEBUG-3, exact usage not captured)",claude-sonnet-5,14059,2966,0.0867,2026-09-17T08:53:10Z
