@@ -168,5 +168,41 @@ actual code before answering.
 
 ## Git state — confirmed, not asserted
 
-_To be filled in immediately after the commit+push below completes, per the established
-"(cont.)" pattern — not asserted before it actually happens._
+63 files staged and committed (`database/bible_research.db` and `backups/` excluded per standing
+rule, already covered by `.gitignore`), pushed to `origin/main`:
+
+```
+$ git commit -m "session 20260917 (part 2): ..."
+[main 979fe5de] session 20260917 (part 2): progressive-relational verse-reading redesign, Stage
+1/2 pipeline built and reset/redone on M67, three write-time validation gaps root-fixed
+(question_code/tag/obs_text), tag vocabulary extended to real filterable categories,
+Escalation.ps1 -ShortDescription bug fixed, session log
+ 63 files changed, 26371 insertions(+), 105 deletions(-)
+
+$ git push origin main
+To https://github.com/lcilliers/Bible_Projects.git
+   f40ccafd..979fe5de  main -> main
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+
+$ git log -3 --format="%H %ci %s"
+979fe5de40a9ff4d68bd2e3a7ce0f4bcfc38a206 2026-09-17 18:36:39 +0100 session 20260917 (part 2):
+progressive-relational verse-reading redesign, Stage 1/2 pipeline built and reset/redone on M67,
+three write-time validation gaps root-fixed (question_code/tag/obs_text), tag vocabulary extended
+to real filterable categories, Escalation.ps1 -ShortDescription bug fixed, session log
+f40ccafd7634e3251aec1bbc99d620d082c9eded 2026-09-17 10:19:33 +0100 session 20260917 (cont.): fill
+in this session log's git-state section with the actual commit/push confirmation
+e205ed6a881bc934de10e1d9e6f172e01b689c03 2026-09-17 10:18:09 +0100 session 20260917: catalogue
+realignment to 12 goal-derived dimensions, corpus-wide cluster anomaly audit+fix (#1714),
+science-extract reconciliation for all 80 clusters, lexical.meaning (verse-reading) execution
+built and validated live, cluster.status lifecycle gap found and partially closed, session log
+```
+
+**Note on scope:** this commit includes `iba/app/staging/` (cluster-taxonomy diagnostic exports
+generated mid-session while investigating tag/data-quality questions) and the researcher's own
+manual DB pulls (`outputs/csv/observation.csv`, `verse-reading-observations.csv`) — staged per the
+standing rule to commit the full outstanding working tree at close, not filtered to "written by
+Claude this session only."
