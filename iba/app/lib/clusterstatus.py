@@ -6,7 +6,7 @@ backfill every cluster started at) with no code anywhere that ever advances one 
 DB trigger or application hook implements `strongs_reassigned` detection at all -- despite the
 researcher's own explicit instruction (#1697 v5) that it "must trigger a warning to the chat."
 
-**Two real gaps this module closes:**
+**Three real gaps this module closes:**
 
 1. **The ordinal-2 -> ordinal-3 (`ready_for_subgroup_allocation`) transition.** `#1711` names
    `verse_meaning`/`verse-reading` "the pre-subgroup Layer 2 stage" -- the name itself states the
@@ -23,6 +23,15 @@ researcher's own explicit instruction (#1697 v5) that it "must trigger a warning
    resubmission) **only when the cluster has already progressed past ordinal 2** (`cfg_column.use`
    on `cluster.status`: "ordinals 1-2... no gating code needed for these" -- nothing downstream
    exists yet to invalidate while a cluster is still there, so nothing needs flagging that early).
+
+3. **The ordinal-3 -> ordinal-4 (`ready_for_reading`) transition, added building Stage 2.**
+   `require_ready_for_subgroup_allocation`/`advance_after_subgroup_allocation` -- `#1690` §3 item 5's
+   hard precondition + unconditional single-step advance on `cluster.subgroup` (process b)
+   completing. Distinct in kind from item 1 above: this transition doesn't wait on a completeness
+   check across member strongs (allocation either just fully succeeded or didn't run at all), and
+   later transitions past `ready_for_reading` are gated on `cluster_subgroup.status` rollup instead
+   (`#1690` §3a) -- not this module's concern, that rollup lives with subgroup-grain code once
+   reading/answer are built.
 """
 
 from __future__ import annotations
@@ -81,6 +90,41 @@ def advance_if_verse_reading_complete(conn, cluster_code: str) -> dict:
                 "WHERE cluster_code=?", (_now(), cluster_code))
     return {**completeness, "status_before": current, "status_after": "ready_for_subgroup_allocation",
            "advanced": True, "reason": "verse-reading complete for every member strong"}
+
+
+def require_ready_for_subgroup_allocation(conn, cluster_code: str) -> None:
+    """Hard precondition for `cluster.subgroup` (process b) -- #1690 §3 item 5: 'process (b) must
+    not run at all unless cluster.status=ready_for_subgroup_allocation.' Raises ValueError (the
+    handler turns this into a clean fail(), not a crash) rather than silently proceeding against a
+    cluster that hasn't finished verse-reading, or has been reset to strongs_reassigned."""
+    row = conn.execute("SELECT status FROM cluster WHERE cluster_code=?", (cluster_code,)).fetchone()
+    if row is None:
+        raise ValueError(f"cluster {cluster_code!r} not found")
+    if row[0] != "ready_for_subgroup_allocation":
+        raise ValueError(
+            f"{cluster_code} is at status {row[0]!r}, not 'ready_for_subgroup_allocation' -- "
+            f"process (b) refuses to run (#1690 §3 item 5)")
+
+
+def advance_after_subgroup_allocation(conn, cluster_code: str) -> dict:
+    """#1690 §3 item 5 / #1693 §0: on successful completion of process (b)'s recording-pass write,
+    cluster.status advances unconditionally from ready_for_subgroup_allocation to ready_for_reading
+    -- this is a single-step transition (allocation just finished, cluster-wide), not gated on any
+    subgroup reaching a later state itself (that rollup gating applies to LATER transitions, past
+    ready_for_reading -- #1690 §3a's own RESOLVED note)."""
+    row = conn.execute("SELECT status FROM cluster WHERE cluster_code=?", (cluster_code,)).fetchone()
+    if row is None:
+        raise ValueError(f"cluster {cluster_code!r} not found")
+    current = row[0]
+    if current != "ready_for_subgroup_allocation":
+        return {"cluster_code": cluster_code, "status_before": current, "status_after": current,
+               "advanced": False,
+               "reason": f"cluster is at {current!r}, not ready_for_subgroup_allocation -- no "
+                        f"transition applies (should be unreachable if the precondition check ran)"}
+    conn.execute("UPDATE cluster SET status='ready_for_reading', status_changed_at=? "
+                "WHERE cluster_code=?", (_now(), cluster_code))
+    return {"cluster_code": cluster_code, "status_before": current, "status_after": "ready_for_reading",
+           "advanced": True, "reason": "subgroup allocation complete"}
 
 
 def flag_if_reassigned(cfg, db, conn, cluster_code: str, reason: str) -> dict | None:

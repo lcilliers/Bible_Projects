@@ -232,13 +232,16 @@ def write_report(cfg, path: pathlib.Path) -> pathlib.Path:
         w = re.sub(r"^to\s+", "", (gloss or "").strip().lower())
         return [x for x in re.findall(r"[a-z]+", w) if len(x) >= bf_kw_minlen and x not in _BF_STOP]
 
+    # Built from live cluster_strong membership (strong.stepGloss), not cluster.gloss -- that
+    # column is dropped (2026-09-17, researcher: "gloss is a strong level entity", #1720). This is
+    # strictly better than the old static worked-example snapshot: it reflects CURRENT membership,
+    # not a one-time migration, and needs no gloss-list text parsing since stepGloss is already a
+    # plain string.
     word_to_clusters: dict[str, set[str]] = {}
-    for r in q("SELECT cluster_code, gloss FROM cluster WHERE deleted=0"):
-        for entry in (r["gloss"] or "").split(", "):
-            m = re.match(r"^(.*?)\s*\([^)]*\)\s*$", entry.strip())
-            phrase = m.group(1) if m else entry.strip()
-            for w in _kw_tokens(phrase):
-                word_to_clusters.setdefault(w, set()).add(r["cluster_code"])
+    for r in q("SELECT cs.cluster_code AS cluster_code, s.stepGloss AS gloss FROM cluster_strong cs "
+              "JOIN strong s ON s.strongNumber = cs.strong AND s.deleted = 0 WHERE cs.deleted = 0"):
+        for w in _kw_tokens(r["gloss"]):
+            word_to_clusters.setdefault(w, set()).add(r["cluster_code"])
 
     crossmatch, unmatched = [], []
     for r in candidates:

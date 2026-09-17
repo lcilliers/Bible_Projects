@@ -11,8 +11,9 @@ from __future__ import annotations
 import datetime
 import pathlib
 
-from .base import Ctx, Outcome, ok, escalate
-from ..lib import escalation as esc, reportkit, strongreconcile
+from .base import Ctx, Outcome, fail, ok, escalate
+from ..lib import clusterstatus, escalation as esc, lexicalscope, recordingpass, reportkit
+from ..lib import strongreconcile, subgroupgenerate
 
 
 def _now() -> str:
@@ -164,3 +165,110 @@ def validate(ctx: Ctx) -> Outcome:
         tried="reconcile()'s own exception checks, run DB-wide across every backfill-origin strong "
               "with a cluster assignment",
         resolution_kind="decision_required")
+
+
+def _may(ctx: Ctx, writer: str, table: str) -> None:
+    if table not in ctx.cfg.may_write(writer):
+        raise PermissionError(f"write-grant violation: {writer!r} may not write {table!r}")
+
+
+# ── subgroup (process b, the `char-subgroup` stage, #1690/#1693) ────────────────────────────────
+#
+# Whole-cluster, ONE LLM call, never batched (#1690 §2(a) requires the full member-strong set read
+# before any assignment). `-Preview` (default true) assembles the payload and reports the cost
+# estimate WITHOUT calling the API or writing anything -- same never-a-live-call-by-default
+# discipline `lexical.meaning` established for a just-built, never-yet-run mechanism.
+# `-Preview:$false` runs for real: one live API call, `lib/recordingpass.py:record_subgroups`
+# writes the result in the same unit of work, then `cluster.status` advances to `ready_for_reading`.
+
+def subgroup(ctx: Ctx) -> Outcome:
+    _may(ctx, "cluster.subgroup", "cluster_subgroup")
+    _may(ctx, "cluster.subgroup", "cluster_subgroup_strong")
+    _may(ctx, "cluster.subgroup", "ib_observation")
+    _may(ctx, "cluster.subgroup", "ib_node")
+
+    cluster_code = ctx.params.get("ClusterCode")
+    if not cluster_code:
+        return fail("bad-selector", "-ClusterCode is required")
+    preview_raw = ctx.params.get("Preview", "true")
+    preview = str(preview_raw).strip().lower() not in ("false", "0", "no")
+
+    conn = ctx.db.conn
+    try:
+        clusterstatus.require_ready_for_subgroup_allocation(conn, cluster_code)
+    except ValueError as e:
+        return fail("not-ready", str(e))
+
+    try:
+        member_strongs = lexicalscope.resolve_strongs(conn, cluster_code=cluster_code)
+    except ValueError as e:
+        return fail("bad-selector", str(e))
+    if not member_strongs:
+        return fail("no-strongs", f"{cluster_code} resolved to 0 member strongs")
+
+    package = subgroupgenerate.assemble_cluster_package(ctx, cluster_code, member_strongs)
+    max_cost = float(ctx.cfg.setting("cluster.subgroup_llm_max_cost", 2.00))
+    if package["est_cost_usd"] > max_cost:
+        return fail("cost-cap-exceeded",
+                   f"{cluster_code} ({package['strong_count']} strongs) estimated cost "
+                   f"${package['est_cost_usd']:.2f} exceeds cluster.subgroup_llm_max_cost "
+                   f"(${max_cost:.2f}) -- raise the cap via configmaint.propose")
+
+    if preview:
+        return ok(f"PREVIEW {cluster_code}: {package['strong_count']} strong(s), estimated "
+                 f"${package['est_cost_usd']:.4f} -- no API call made, nothing written. Re-run "
+                 f"with -Preview:$false to execute for real.",
+                 preview=True, cluster_code=cluster_code, strong_count=package["strong_count"],
+                 est_cost_usd=package["est_cost_usd"])
+
+    try:
+        result = subgroupgenerate.call_api(ctx, package)
+    except subgroupgenerate.ApiKeyMissing as e:
+        return fail("api-key-missing", str(e))
+    except subgroupgenerate.ApiCallFailed as e:
+        return fail("api-error", str(e))
+    rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+    rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+    real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                result["output_tokens"] / 1_000_000 * rate_out)
+    subgroupgenerate.log_usage(ctx.cfg, ctx.run_id, "1/1", package["model"],
+                               result["input_tokens"], result["output_tokens"], real_cost)
+
+    try:
+        parsed = subgroupgenerate.parse_response(result["text"])
+    except subgroupgenerate.BadModelResponse as e:
+        return fail("bad-model-response", str(e))
+
+    try:
+        written = recordingpass.record_subgroups(conn, cluster_code, member_strongs, parsed)
+    except recordingpass.SubgroupWriteError as e:
+        conn.rollback()
+        return fail("bad-subgroup-output", str(e))
+
+    # Observations captured via the SAME mechanism Stage 1 (`lexical.meaning`) already uses --
+    # researcher correction, this session: placement_note is a comment on a placement, never the
+    # observation itself; any substantive claim the LLM makes goes through record_batch exactly
+    # like verse-reading's own observations do, stage='char-subgroup', not a bespoke promotion path.
+    obs_summary = recordingpass.record_batch(
+        conn, cluster_code, "char-subgroup", parsed, source_json_serial=1)
+    conn.commit()
+
+    status_result = clusterstatus.advance_after_subgroup_allocation(conn, cluster_code)
+    conn.commit()
+
+    anchor_note = (f", {len(written['unresolved_anchor_verses'])} unresolved anchor verse(s)"
+                  if written["unresolved_anchor_verses"] else "")
+    obs_note = (f", observations {obs_summary['by_action']}" if obs_summary["by_action"] else
+               ", 0 observations")
+    # The reasons themselves, not just the count -- run.outcome only ever persists this message
+    # STRING, never the `counts` dict, so anything left out here is unrecoverable afterward.
+    unresolved_obs_note = (
+        f", {obs_summary['unresolved_occurrence_count']} unresolved observation occurrence(s): "
+        f"{'; '.join(obs_summary['unresolved_detail'][:5])}"
+        f"{' ...' if obs_summary['unresolved_occurrence_count'] > 5 else ''}"
+        if obs_summary["unresolved_occurrence_count"] else "")
+    return ok(f"{cluster_code}: {written['subgroups']} subgroup(s), {written['members']} member(s) "
+             f"({written['flag_members']} FLAG), ${real_cost:.4f} spent{anchor_note}"
+             f"{obs_note}{unresolved_obs_note}; cluster.status -> {status_result['status_after']}",
+             preview=False, cluster_code=cluster_code, written=written,
+             observations=obs_summary, status_result=status_result)

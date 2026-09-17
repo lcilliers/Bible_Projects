@@ -96,6 +96,33 @@ def unready_codes_in_scope(conn: sqlite3.Connection, verse_ids: list[int]) -> li
     return sorted(c for c in codes if not role_codes.get(_base(c), []))
 
 
+def stale_role_strongs_for_cluster(conn: sqlite3.Connection, cluster_code: str,
+                                   member_strongs: list[str]) -> list[str]:
+    """The pre-`verse-reading` freshness check (`#1719`, found and required live 2026-09-17 running
+    `M67`/`M60`, researcher instruction same day: *"before starting verse-reading, a validation
+    check must be performed to ensure that the lexical for the cluster in focus is up to date"*).
+
+    `verse_lexical.role` is a point-in-time snapshot of `cluster_strong` taken at the last
+    `lexical.build` run for that verse -- nothing re-syncs it automatically when `cluster_strong`
+    changes afterward (a curation fix, a reassignment) for a cluster still short of
+    `ready_for_subgroup_allocation`. A member strong whose OWN live `verse_lexical` rows never
+    carry `cluster_code` in `role`, despite `cluster_strong` currently listing it as a member, is
+    exactly the failure mode found live: Layer 1 silently never presents that strong to the LLM at
+    all, so a "complete" verse-reading pass can be complete against a stale, undercounted
+    membership list without anyone noticing. A strong with ZERO live `verse_lexical` rows at all is
+    a different, already-handled case (`unready_codes_in_scope`/`lexicalscope.
+    strongs_with_no_occurrence`) -- not reported here, since there is nothing to be stale."""
+    stale: list[str] = []
+    for strong in member_strongs:
+        rows = conn.execute(
+            "SELECT role FROM verse_lexical WHERE strong=? AND deleted=0", (strong,)).fetchall()
+        if not rows:
+            continue
+        if not any(cluster_code in (json.loads(r["role"]) if r["role"] else []) for r in rows):
+            stale.append(strong)
+    return stale
+
+
 # ── resolution, per code ─────────────────────────────────────────────────────────────────────
 # SIMPLIFIED 2026-09-16 (#1706 Phase B) -- resolved_sense/ambiguity_note are both dropped from
 # Layer 1 entirely (researcher, verbatim, 2026-09-15: the multi-source meaning reading "should be

@@ -280,6 +280,21 @@ switch ($Action) {
             Write-Host "Raise needs -Question and -Comment (minimum: what this item is about)." -ForegroundColor Yellow
             exit 1
         }
+        # escalation #1719 v4, researcher: caught this same mistake recurring "numerous times" --
+        # -ShortDescription is a real parameter on this script but Raise never reads it (only
+        # -Action Correction does; Raise's own title comes from -Question, which must itself be a
+        # short, single-line, <=60-char, no-"--" title -- see cfg_behaviour_rule title-shape spec).
+        # A caller who passes -ShortDescription on a Raise, reasonably assuming it sets the title,
+        # previously had it silently dropped with no signal anything was wrong. Fail loud instead
+        # of documenting the footgun and leaving it live -- a comment nobody re-reads doesn't stop
+        # the same mistake happening again, a hard stop does.
+        if ($ShortDescription) {
+            Write-Host ("-ShortDescription has no effect on -Action Raise (only -Action Correction " +
+                "reads it) -- Raise's title comes from -Question itself, which must be short, " +
+                "single-line, <=60 chars, and contain no '--'. Put your title in -Question instead, " +
+                "and move the detail you meant for -ShortDescription into -Comment/-Context.") -ForegroundColor Yellow
+            exit 1
+        }
         if (-not $AnsweredBy) {
             Write-Host "Raise needs -AnsweredBy Claude|Researcher -- no default (escalation rebuild 2026-08-20: a silent 'Researcher' default previously misattributed >=39 history rows in one session)." -ForegroundColor Yellow
             exit 1

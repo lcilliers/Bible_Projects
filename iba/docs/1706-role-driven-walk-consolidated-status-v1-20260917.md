@@ -84,9 +84,22 @@ answered either time.**
 
 ## 5. What's genuinely outstanding — needs your call
 
-1. **Does "structurally forced, not advisory" (§2 item 1) still stand as originally stated**, or has
-   #1705's closure shifted your thinking on how rigid *any* part of the walk should be before real
-   `verse_meaning` results exist to judge by?
+**Item 1 RESOLVED later the same session this doc was written, 2026-09-17 — found live 2026-09-17
+in a LATER session, checking `Logs/SESSION-LOG-20260917.md` after the researcher asked whether
+this work made it into the escalations. It hadn't — recorded properly now, against `#1706` (v32),
+since `#1704`/`#1705` were both already closed before this decision was made.** Researcher's own
+words, per the session log: *"no further mechanical role work necessary... the question is
+expanded to explore the impact of the roles."* Effect: no structural/mechanical enforcement of the
+5-step walk is being built; the resolution approach is expanding the catalogue questions
+themselves to explore role-impact, matching the same question-driven-not-imposed-structure
+direction #1705 v6 had already leaned toward for `verb_argument` specifically, now generalized to
+the whole walk. **Open, genuinely unclear from the record:** was this "expand the questions"
+already carried out via the same session's 12-dimension catalogue realignment (`#1712`), or is it
+a distinct, still-pending action? Not found either way checking `#1712`'s own method doc — needs
+the researcher's confirmation, not a guess.
+
+1. ~~Does "structurally forced, not advisory" (§2 item 1) still stand as originally stated~~ —
+   **RESOLVED, see above: no, superseded by the question-driven-expansion approach.**
 2. **Does the role-driven walk apply to `verse_meaning` at all?** It was designed for `reading`
    (process c, post-subgroup, family-scoped). `verse_meaning` runs earlier, per-cluster, pre-
    subgroup — the same open question #1706/#1711 left hanging, now sharpened by §3's tension: even

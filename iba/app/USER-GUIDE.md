@@ -986,6 +986,80 @@ a real, currently-live coupling between the two windows this build did not attem
 
 ---
 
+## 12b-iv. Cluster-reading pipeline — Stage 1 `verse-reading` (`lexical.meaning`, `VerseReading.ps1`, added 2026-09-17, escalation #1706)
+
+**A different pipeline from §12b above — cluster-scoped (M-code), not book-scoped.** §12b's
+Window 1/2 debate pipeline reads a book/chapter at a time; this one reads a whole cluster
+(`M67`, `M60`, …) at a time, against the `role`-array-bearing Layer 1 (`verse_lexical`, rebuilt
+2026-09-16 — every code carries the full set of `cluster_strong.cluster_code` values it belongs
+to, M-codes and role-T-codes together) and writes into the live `ib_observation`/`ib_node`
+architecture, not `verse_lexical_note`. This is Stage 1 of 5 in the `#1706` cluster-reading
+pipeline (`verse-reading` → `char-subgroup` → `char-reading` → `char-answers` → `char-synergy` —
+`iba/docs/1706-full-pipeline-build-checklist-v1-20260917.md` tracks which stages actually have
+execution code; only this one does, as of 2026-09-17).
+
+```powershell
+# preview only -- cost estimate per batch, no API call, nothing written. Always preview first.
+iba\app\ps\VerseReading.ps1 -ClusterCode M67
+
+# real run -- resolves and processes the WHOLE cluster's verse list in one call, no partial
+# selector by design. Recorded live via recordingpass.py; advances cluster.status to
+# ready_for_subgroup_allocation the moment every member strong has >=1 verse-reading observation.
+iba\app\ps\VerseReading.ps1 -ClusterCode M67 -Live
+```
+
+Answers `M0.1.1`-`M0.1.3` (Name/Naming), `M0.5.1`-`M0.5.10` (Lexical/Semantic Analysis), and
+`D7.7.1` (operation-anchored permeability) per cluster-member strong, reading all 3 meaning
+sources (`strong_meaning_tree`/`strong_lexicon.lsj`/`strong_lexicon.mounce`) as complementary.
+`iba.db` only, per the DB fork (`#737`/`#1682`) — never touches `bible_research.db`.
+
+**Resolved, `#1719` (2026-09-17):** Layer 1's `role` array is a point-in-time snapshot of
+`cluster_strong` at the last `lexical.build` run — if a cluster's `cluster_strong` membership
+changed afterward (a curation fix, a reassignment) while the cluster was still at `cluster.status`
+ordinal 2, `role` could silently go stale (found live running `M67`, `BUILD.md` #274). A hard-stop
+gate (`lib/lexical.py:stale_role_strongs_for_cluster`) now runs automatically before every
+`lexical.meaning` call, wired into the handler itself — a stale cluster refuses to run and names
+which strongs are affected, rather than silently proceeding. Nothing further to check by hand.
+
+## 12b-v. Cluster-reading pipeline — Stage 2 `char-subgroup` (`cluster.subgroup`, `ClusterSubgroup.ps1`, added 2026-09-17, escalation #1706)
+
+**Stage 2 of the same 5-stage pipeline as §12b-iv above** (`verse-reading` → `char-subgroup` →
+`char-reading` → `char-answers` → `char-synergy`) — groups a cluster's member strongs into
+meaning-based subgroups. Requires Stage 1 already complete for the cluster (`cluster.status=
+ready_for_subgroup_allocation`) — the handler refuses otherwise, naming the cluster's actual
+status.
+
+```powershell
+# preview only -- cost estimate, no API call, nothing written. Always preview first.
+iba\app\ps\ClusterSubgroup.ps1 -ClusterCode M67
+
+# real run -- ONE LLM call over the whole cluster (never batched -- the design requires the full
+# member-strong set read before any subgroup assignment). Recorded via recordingpass.py; advances
+# cluster.status to ready_for_reading on success.
+iba\app\ps\ClusterSubgroup.ps1 -ClusterCode M67 -Live
+```
+
+Input per strong: dictionary gloss/transliteration, a sample of its distinct surface forms, and —
+the real grounding — its already-captured Stage 1 `verse-reading` observations (read these as
+primary evidence of contextual meaning, not the dictionary gloss alone). Output: subgroups (max 10,
+excluding the `FLAG` signpost bucket), each with a `label` true to its shared meaning (never a word
+list), a one-sentence `core_description`, and an `anchor_verse_reference` — the one member verse
+that best represents the subgroup, resolved fresh against `iba.db.verse.osisId`. A singleton
+subgroup is a valid outcome, not a mis-grouping. Any strong that doesn't fit anywhere goes to
+`FLAG`, with the reason required in its `placement_note`.
+
+**Refuses to re-run** against a cluster that already has live subgroups — re-grouping an already-
+allocated cluster is not designed yet; re-derive by hand (with the researcher's sign-off) if a
+genuine re-group is ever needed, don't expect this script to do it silently.
+
+**Known gap, deliberate, not an oversight:** a `placement_note` that describes a genuine
+observation (not just a bookkeeping reason) is supposed to eventually get its own `ib_observation`
+row (`#1693` §2) — that promotion mechanism is not built yet (still undesigned: telling "just a
+reason" from "also an observation" apart). `placement_note` itself IS captured and stored for every
+member right now; only its promotion into a separate observation record is missing.
+
+---
+
 ## 12c. Inner-being narrative — structural check (`BookNarrative-Validate.ps1`, added 2026-07-30)
 
 Narrative writing itself is unmechanised analytical work (no pipeline produces it) — this is a

@@ -728,13 +728,32 @@ def meaning(ctx: Ctx) -> Outcome:
     if not verse_ids:
         return fail("no-verses", f"{cluster_code} resolved to 0 verses")
 
-    max_verses = int(ctx.cfg.required_module_setting("cfg_passage", "passage.max_verses"))
+    # Pre-verse-reading freshness gate (#1719, researcher instruction 2026-09-17): refuse to run
+    # against a cluster whose Layer 1 role data is stale relative to CURRENT cluster_strong
+    # membership -- found live on M67/M60, where 9 member strongs were silently invisible to the
+    # LLM because cluster_strong changed after Layer 1's last build for their verses. Hard stop,
+    # same pattern as every other readiness check in this module -- never a silent partial run.
+    stale = lexical.stale_role_strongs_for_cluster(conn, cluster_code, strongs)
+    if stale:
+        return fail("layer1-stale",
+                   f"{len(stale)} of {len(strongs)} member strong(s) have live verse_lexical rows "
+                   f"that never carry {cluster_code!r} in role, despite cluster_strong currently "
+                   f"listing them as members -- Layer 1 is stale for this cluster (#1719). Re-run "
+                   f"lexical.build for the verses containing these strongs before verse-reading: "
+                   f"{stale}")
+
+    # #1723 front-loading multiplies expected output roughly by strong-density-per-batch, not just
+    # verse count -- the shared passage.max_verses (20) was sized for the OLD narrower per-cluster-
+    # only design and already truncated a real batch (55 front-loaded strongs from 20 verses) even
+    # at 20000 max_output_tokens. A dedicated, smaller override for this step only -- other steps
+    # sharing passage.max_verses (lexical.enrich) are unaffected.
+    max_verses = int(ctx.cfg.setting("lexical.meaning_max_verses_per_batch", 10))
     max_cost_per_batch = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
     chunks = [verse_ids[i:i + max_verses] for i in range(0, len(verse_ids), max_verses)]
 
     batch_summaries = []
     llm_summary = []
-    record_summary = {"by_action": {}, "unresolved_occurrence_count": 0}
+    record_summary = {"by_action": {}, "unresolved_occurrence_count": 0, "unresolved_detail": []}
 
     for idx, chunk in enumerate(chunks):
         chunk_label = f"{idx + 1}/{len(chunks)}"
@@ -783,6 +802,7 @@ def meaning(ctx: Ctx) -> Outcome:
         for action, n in chunk_record["by_action"].items():
             record_summary["by_action"][action] = record_summary["by_action"].get(action, 0) + n
         record_summary["unresolved_occurrence_count"] += chunk_record["unresolved_occurrence_count"]
+        record_summary["unresolved_detail"] += chunk_record["unresolved_detail"]
 
     if preview:
         total_cost = sum(b["est_cost_usd"] for b in batch_summaries)
@@ -804,7 +824,14 @@ def meaning(ctx: Ctx) -> Outcome:
 
     total_cost = sum(c["cost_usd"] for c in llm_summary)
     unresolved_n = record_summary["unresolved_occurrence_count"]
-    unresolved_note = f", {unresolved_n} unresolved occurrence(s)" if unresolved_n else ""
+    # The reasons themselves, not just the count -- run.outcome only ever persists the message
+    # STRING (checked live: the `counts` dict this Outcome also carries is never written to the
+    # `run` table), so anything not folded into the message is lost the moment this process exits.
+    # Found live 2026-09-17 needing to re-call a live API a second time, at real cost, just to see
+    # why Stage 2's own observations had failed -- the exact gap BUILD.md #274 first flagged here.
+    unresolved_note = (f", {unresolved_n} unresolved occurrence(s): "
+                       f"{'; '.join(record_summary['unresolved_detail'][:5])}"
+                       f"{' ...' if unresolved_n > 5 else ''}") if unresolved_n else ""
     status_note = (f"; cluster.status -> ready_for_subgroup_allocation" if status_result["advanced"]
                   else f"; {len(status_result['missing_strongs'])} of "
                        f"{status_result['member_strong_count']} strong(s) still need verse-reading "
