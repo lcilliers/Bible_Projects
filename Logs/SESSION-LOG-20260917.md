@@ -127,4 +127,27 @@ improperly-declared mode.
 
 ## Git state — confirmed, not asserted
 
-Captured below, after staging and commit, per `governance.session_log_triggers_commit`.
+164 files staged and committed (`database/bible_research.db` and `backups/` excluded per standing
+rule), pushed to `origin/main`:
+
+```
+$ git push origin main
+To https://github.com/lcilliers/Bible_Projects.git
+   d296e165..e205ed6a  main -> main
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+
+$ git log -3 --format="%H %ci %s"
+e205ed6a881bc934de10e1d9e6f172e01b689c03 2026-09-17 10:18:09 +0100 session 20260917: catalogue realignment to 12 goal-derived dimensions, corpus-wide cluster anomaly audit+fix (#1714), science-extract reconciliation for all 80 clusters, lexical.meaning (verse-reading) execution built and validated live, cluster.status lifecycle gap found and partially closed, session log
+d296e165e276966b6702c4bd5f9f3054da66818c 2026-09-16 15:18:45 +0100 session 20260916 (cont.): fill in this session log's git-state section with the actual commit/push confirmation
+5e8d28a12e9258993c3e716b338ba659114474bd 2026-09-16 15:17:58 +0100 session 20260916: Layer 1 design closed, #1706 escalation register + Layer 2 review, #1704 Phases 2-5 (event crosswalk + design deep-dives), catalogue content decisions (T2.11 added, 8 questions retired/dropped, T2.1/M47 correction), #1694/#1705 closed, #1691/#1702/#1547 packaged for closure
+```
+
+**Note on scope:** this commit includes some files modified/dated 20260916 (e.g. `handlers/raw.py`,
+`handlers/reports.py`, `lib/lexical.py`, `lib/lexicalenrich.py`, `lib/strongreconcile.py`, several
+migration scripts) that were left uncommitted from the prior session's own work rather than
+authored fresh today — staged per the standing rule (CLAUDE.md §12) to commit the full outstanding
+working tree at close, not filtered down to "written today only."
