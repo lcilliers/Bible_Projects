@@ -217,3 +217,8 @@ raised formally as escalation #1753 (8 categories, cross-cutting, not fixed this
 Branch `main`, commit `b938e559a7bf2c62998beed4a7a88fa53742ad76`, pushed to `origin/main`
 (`f7ad67d5..b938e559`). `git status` confirmed clean working tree, up to date with remote.
 
+Two further commits closed out this session: `48312490` (git-state fill-in, this section's own
+prior revision) and `9a7de1f3` (the §4 escalation backlog close-out). Final commit:
+`17c0f518aaee15143ab63bd57382ffe642b2e8bb`, pushed to `origin/main` (`9a7de1f3..17c0f518`).
+`git status` confirmed clean working tree, up to date with remote.
+
