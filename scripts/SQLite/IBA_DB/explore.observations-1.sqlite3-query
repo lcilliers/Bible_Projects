@@ -8,7 +8,17 @@ select * from cluster_subgroup;
 
 select * from cluster;
 
-select * from verse_lexical;
+select * from verse_lexical vl
+inner join strong_verse sv on vl.strong = sv.strong
+ and vl.verse_id = sv.verse_id
+ inner join cluster_strong cs 
+ on sv.strong = cs.strong
+ and cs.deleted = 0
+ and vl.strong = cs.strong
+where cs.cluster_code = 'M49';
+
+select * from wa_obs_question_catalogue
+;
 
 select * from verse;
 
@@ -16,36 +26,35 @@ select * from verse;
 select * from strong;
 
 select 
-c.cluster_code,
-c.description,
-c.short_name,
 s.stepGloss,
 vl.surface,
-s.strongNumber,
 vl.role,
-cs.label,
-cs.core_description,
-node.*,
+node.cluster_code,
+c.short_name,
+node.cluster_subgroup_code,
+node.question_code,
+node.strong,
 v.text,
 obs.id,
 obs.meaning_source,
 obs.obs_text,
-cat.question_code,
 cat.question_text
 from ib_observation obs
 inner join ib_node node on obs.id = node.observation_id
 left join wa_obs_question_catalogue cat 
 on node.question_code = cat.question_code
+and cat.deleted = 0
 left join strong s
 on node.strong = s.strongNumber
+and s.deleted = 0
 left join cluster c
-on node.cluster_code = c.cluster_code
-left join cluster_subgroup cs
-on node.cluster_subgroup_code= cs.label
+on node.cluster_code = c.cluster_code 
 left join verse v
 on node.verse_reference = v.osisId
 left join verse_lexical vl
-on v.id= vl.verse_id;
+on v.id= vl.verse_id
+  and vl.strong = node.strong
+  and vl.deleted = 0;
 
 
 select 

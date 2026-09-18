@@ -15224,3 +15224,243 @@ observations correctly remain `window=NULL` (most have no `question_code` at all
 **Files:** `iba/app/migration/design_and_backfill_char_windows_v1_20260918.py` (new, run live).
 No code changes — `recordingpass.py`'s own `_window_for` derivation logic was already correct
 (entry #289), only the catalogue's own content was missing. Escalation #1706 (parent).
+
+## 291. `ib_node` seq collision on cross-batch aligned-append — found and fixed live on `M49`'s first Stage 1 run (2026-09-18, escalation #1755)
+
+`M49`'s live `VerseReading.ps1` run (the pipeline's first cluster since `M67`) crashed on its 7th
+of 20 batches: `IntegrityError: UNIQUE constraint failed: ib_node.observation_id, ib_node.seq`.
+
+**Root cause:** `record_one_observation`'s `aligned-superficial-edit` path — a later batch's
+`obs_text` scores above the similarity threshold against an EARLIER batch's already-recorded
+observation, so the new occurrence's `ib_node` row is appended to that SAME `observation_id`
+rather than creating a new one (`#1693`'s own same/broaden/new design, rule 2) — restarted `seq`
+at `0`/`1` for every call instead of continuing from that `observation_id`'s own current max `seq`.
+Across two different batches aligning to the same observation, the second batch's append collided
+with `seq` values the first batch had already committed. `new-expands-existing`/`new-observation`
+were never affected — both insert a fresh `observation_id` with no prior nodes, so starting at 0
+is correct there; only the append-to-existing path was broken.
+
+**DB state checked before touching anything:** clean. `conn.commit()` only runs after
+`record_batch` returns, so the failing 7th batch's partial writes were never committed and rolled
+back on process exit; the 171 `ib_observation`/207 `ib_node` rows from the first 6 successful
+batches are intact and correct.
+
+**Fix:** `record_one_observation` now queries `SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE
+observation_id=?` fresh, for the `aligned-superficial-edit` action only, and continues `seq` from
+there. Verified against a synthetic in-memory reproduction of the exact cross-call collision (3
+sequential `record_one_observation` calls aligning to the same observation across separate
+commits) — confirmed no collision after the fix.
+
+**Files:** `iba/app/lib/recordingpass.py` (`record_one_observation`). Escalation #1755
+(self-correctable, closed same turn).
+
+## 292. `run_batch` — resume/skip, crash safeguard, and a live progress monitor for every long-running batch step (2026-09-18, escalation #1756, researcher-approved design)
+
+Prompted directly by `M49`'s own Stage 1 run this session: a crash (`#1755` above) then a
+deliberate researcher stop (a `verse_lexical` staleness false-alarm, resolved) each forced a full
+restart from batch 1 — `lexical.meaning` has no resume/checkpoint mechanism across separate
+invocations, so every `-Live` call reprocesses a selector's FULL batch list regardless of what a
+prior run already paid for and committed. Real cost of the two partial M49 runs: $1.86 (4
+batches) + $1.66 (5 batches), much of it overlapping coverage. Researcher, verbatim: *"create a
+new escalation to build to resume/skip and crash safeguarding... a run control table that write[s]
+... on the start and end of each process - almost like a process batch control table... used in
+your resume skip also."* Design proposed and approved same session (`#1756` v2/v3): *"This batch
+control mechanism must be in force for all long running routines."*
+
+**New table `run_batch`** (migration `create_run_batch_table_v1_20260918.py`): one row per
+batch/chunk attempt — `run_id`, `work_package`, `step`, `selector_key`, `batch_ordinal`,
+`batch_content_key`, `status` (`running`/`committed`/`failed`, new `cfg_enum`), `started_at`,
+`ended_at`, `error_message`, `cost_usd`. `UNIQUE(step, selector_key, batch_content_key)` —
+deliberately NOT `run_id`-scoped, so a brand-new run can see and skip a batch a PRIOR run already
+committed. `batch_content_key` (`batchcontrol.content_key`) is a stable hash of the batch's own
+actual item list (verse ids, or member strongs), not its ordinal position, so resume stays correct
+even if the selector's underlying item list shifts between runs (e.g. a `cluster_strong`
+reassignment).
+
+**New module `iba/app/lib/batchcontrol.py`** — the sole writer: `already_committed()` (resume/skip
+check, before spending anything), `start_batch()` (writes `status='running'`, commits immediately,
+before the risky work — this IS the crash safeguard: a `running` row with no later
+`committed`/`failed` update is unambiguous proof of a dead run), `commit_batch()`/`fail_batch()`.
+
+**Wired into all 4 live LLM-calling steps**, each in the same shape: check `already_committed`
+before spending, `start_batch` before the API call, the whole API-call-through-record-and-commit
+window wrapped in `try/except Exception` that calls `fail_batch` before re-raising, `commit_batch`
+on success. `lexical.meaning` (verse-reading, genuinely multi-batch — the proven pain point) skips
+per-chunk and reports skip counts in both preview and live messages. `cluster.subgroup`/
+`cluster.reading`/`cluster.answer` (single-call-per-run today) get the same wrapping for crash
+visibility/monitor consistency, plus a real skip guard — `cluster.subgroup` in particular could
+previously pay for a doomed API call before `recordingpass.record_subgroups`' own
+already-subgrouped check caught it after the fact; now it's caught before spending.
+
+**New monitor `BatchProgress.ps1`** (`report.batch_progress`, work package `batch-progress-report`,
+new `iba/app/lib/batchprogressreport.py`) — read-only, `-FilterRunId`/`-Step`/`-SelectorKey` all
+optional/AND-combined; no filters = every currently-running batch DB-wide, the live-right-now view,
+plus recent failures/commits. Lets the researcher see progress mid-run without waiting for
+completion or reading a background process's raw stdout.
+
+**Governance applied in the same unit of work:** `cfg_table`/`cfg_column` for `run_batch`,
+`cfg_enum` for its `status`, `cfg_utility` for both new modules, `cfg_write_grant` for all 4
+writer steps, `cfg_work_package`/`cfg_step`/`cfg_setting`/`cfg_report`/`cfg_report_section` for the
+monitor.
+
+**Test plan run live** (synthetic `step`/`selector_key`, cleaned up after): (a) skip-on-already-
+committed — a `running` (not yet committed) batch correctly does NOT count as already-committed;
+after `commit_batch`, `already_committed` returns true, including checked from a second, different
+`run_id` (the actual cross-run mechanism) — PASS. (b) crash safeguard — `fail_batch` writes
+`status='failed'` with the error message and is correctly NOT treated as already-committed (a
+failed batch must retry on the next run, unlike a committed one); a genuinely dangling `running`
+row with no terminal update was planted and confirmed distinguishable — PASS. (c) monitor accuracy
+— planted 1 running/1 committed/1 failed synthetic row, direct SQL count matched exactly, and a
+full `BatchProgress.ps1` invocation end-to-end (PS → handler → `batchprogressreport.generate` →
+`reportkit.render_scaffold`/`write_report`) correctly surfaced the live running row in its
+rendered output — PASS.
+
+**Deliberately deferred, not silently dropped:** `lexical.enrich` (currently `inactive=1` in
+`cfg_step`) and `book-narrative-generate`'s own chapter loop are other candidate "long running
+routines" the researcher's "all" may extend to — not wired this pass (scope was the 4 steps
+`cluster-reading`'s own pipeline actually exercises, the ones causing real pain this session);
+flagged here rather than assumed complete.
+
+**Known outstanding, flagged not silently skipped:** `governance.ps_worksheet_sync_on_change`
+requires `BatchProgress.ps1`'s parameters reflected in `iba/docs/ps tools worksheet.xlsx` in the
+same unit of work — deferred because the file's own Excel lock (`~$ps tools worksheet.xlsx`) shows
+it is currently open, and the standing rule (`feedback_warn_before_editing_excel_tool_interface`)
+is to warn before writing to it, never write while it may be open. Needs a follow-up pass once the
+researcher confirms the file is closed.
+
+**Files:** `iba/app/migration/create_run_batch_table_v1_20260918.py` (new, run live),
+`iba/app/lib/batchcontrol.py` (new), `iba/app/lib/batchprogressreport.py` (new),
+`iba/app/ps/BatchProgress.ps1` (new), `iba/app/handlers/lexical.py` (`meaning`),
+`iba/app/handlers/cluster.py` (`subgroup`/`reading`/`answer`), `iba/app/handlers/reports.py`
+(`batch_progress_report`). Escalation #1756 (researcher-approved design, closed same turn).
+
+## 293. `ps tools worksheet.xlsx` drift closed — 6 missing tabs, 1 stale flag column (2026-09-18, escalation #1757)
+
+Found live running `configmaint`'s own `find_ps_worksheet_drift` check while adding
+`BatchProgress.ps1`'s tab for `#1756` — 7 pre-existing findings, none caused by this session's own
+work: `CharAnswer.ps1`, `CharReading.ps1`, `ClusterSubgroup.ps1`, `Lexical-Readiness.ps1`,
+`VerseMeta.ps1`, `VerseReading.ps1` had no tab at all in `iba/docs/ps tools worksheet.xlsx`
+(`governance.ps_worksheet_sync_on_change` violation, predates this session — these scripts were
+built without their worksheet counterpart); `Config-Maintenance.ps1`'s tab was missing the
+`-Title` flag column the script already carries as a live parameter (silently dropped from a
+prior edit, or never added when `-Title` was introduced).
+
+Mechanical gap-fill, self-correctable (no design judgement): backed up the workbook first
+(`iba/docs/archive/ps tools worksheet-backup-pre-1756-20260918.xlsx`), then for each of the 6
+scripts built a new tab from the existing house pattern (title/purpose row, flag-header row 4
+matching the script's live `param()` list, path cell + compiled-command formula in `A6`/`B6`,
+value-flags quoted/switch-flags bare per the existing convention) and an `Index` row; for
+`Config-Maintenance`, inserted a new `-Title` column between `-Set` and `-Question` (shifting
+`-Question`/`-RunId`/`-Trace` right by one, their own row-5 hints moved with them) and rewrote the
+compiled-command formula to include it. Caught and fixed my own bug during verification: the first
+generation pass left the compiled-command formula missing its `" "` separator between the script
+path and the first flag (`=A6&IF(...` instead of `=A6&" "&IF(...`) on all 6 new tabs — found by
+re-reading the generated formula against the existing tabs' own pattern before calling it done,
+fixed before this closed. `configmaint.find_ps_worksheet_drift` re-run after every change:
+**0 findings, fully clean.**
+
+**Files:** `iba/docs/ps tools worksheet.xlsx` (6 new tabs + 6 Index rows + `Config-Maintenance`
+column insert), `iba/docs/archive/ps tools worksheet-backup-pre-1756-20260918.xlsx` (new, pre-edit
+backup). Escalation #1757 (self-correctable, closed same turn).
+
+## 294. `run_batch`'s own UNIQUE constraint blocked a legitimate retry — found live within minutes of shipping, fixed (2026-09-18, escalations #1758/#1760)
+
+`M49`'s Stage 3 (`cluster.reading`) hit a transient DNS resolution failure on subgroup
+`C_thankful_disposition` (`api.anthropic.com` failed to resolve — a real network blip, request
+never reached the API, nothing billed). `#1756`'s own crash safeguard correctly recorded it:
+`run_batch` row `status='failed'`, real error message, `ended_at` set. Retrying the exact same
+call then crashed a SECOND way: `IntegrityError: UNIQUE constraint failed: run_batch.step,
+run_batch.selector_key, run_batch.batch_content_key`.
+
+**Root cause:** `#1756`'s own schema put `UNIQUE(step, selector_key, batch_content_key)` on
+`run_batch`, intended as a belt-and-braces guarantee alongside `batchcontrol.already_committed()`'s
+own application-level check. But the UNIQUE constraint doesn't know about `status` — it blocks a
+SECOND insert at that key regardless of whether the first attempt committed or failed, which is
+exactly wrong: a failed attempt's whole point is that a LATER attempt at the same content should
+be allowed to try again. The resume/skip guarantee was never meant to live in the schema at all —
+`already_committed()`'s `WHERE status='committed'` check, consulted BEFORE `start_batch()` runs, is
+what actually prevents re-paying for committed work; the UNIQUE constraint was redundant at best
+and, as found here, actively broke the retry path the crash safeguard exists to enable.
+
+**Fix:** `fix_run_batch_unique_constraint_v1_20260918.py` — recreated `run_batch` without the
+UNIQUE constraint (SQLite has no `ALTER TABLE DROP CONSTRAINT`), replaced with a plain non-unique
+`idx_run_batch_lookup` index on the same 3 columns for query performance only. All 4 existing rows
+preserved (verified: row count before/after matched). `cfg_column.use` on `batch_content_key`
+corrected to stop claiming a schema-level uniqueness guarantee that no longer exists.
+`batchcontrol.py`'s own module docstring updated with the same correction.
+
+**Verified two ways:** (1) the 4 real M49 rows survived the recreate with their content intact;
+(2) reproduced the EXACT bug scenario synthetically (`start_batch` → `fail_batch` → `start_batch`
+again at the same `content_key`) — raised `IntegrityError` before the fix (by inspection of the
+pre-fix schema), succeeds cleanly after, and `already_committed()` correctly reports true once the
+retry itself commits.
+
+**M49 resumed** immediately after — subgroup C's `cluster.reading` retried live and this time ran
+to completion.
+
+**Files:** `iba/app/migration/fix_run_batch_unique_constraint_v1_20260918.py` (new, run live),
+`iba/app/lib/batchcontrol.py` (docstring correction). Escalations #1758 (dispatcher-tied, auto-
+raised on the crash, closed self-correctable) and #1760 (manual, self-correctable, raised for the
+schema-bug write-up, closed same turn).
+
+## 295. `cluster.reading` now splits an over-cap member strong by SURFACE instead of refusing the whole subgroup (2026-09-18, escalation #1761, researcher-approved design)
+
+M49 subgroup D (`H3034`, "yadah/praise-confess") hit `cluster.reading`'s occurrence-cap refusal:
+114 corpus-wide occurrences against a hardcoded 60-per-strong ceiling. Researcher's own rule,
+given live across two clarifying exchanges: *"if we have a strong that have more than 100
+occurrences of the same SURFACE and no multi cluster occurance, then it can be capped. if the
+strong has different SURFACEs for the verses then each SURFACE instance can be batched
+separately... effectively if > 100 in total, then break in two based on SURFACE."*
+
+**Checked H3034 directly before building anything:** 23 distinct surface forms across the 114
+occurrences (no single surface reaches 100 — `give thanks` tops out at 31), and 0 of 114
+occurrences are multi-cluster (every one carries exactly one M-code in `role`). Confirms the
+simple-cap case doesn't apply here — this needs the surface-split path.
+
+**Built `_partition_occurrences_by_surface`** (`charreadinggenerate.py`): groups a strong's
+occurrences by `surface`, then greedily first-fits whole surface-groups (largest first) into
+partitions each ≤ the existing 60-occurrence cap — never splitting one surface's own occurrences
+across two partitions, per the researcher's own rule. Deliberately NOT one partition per distinct
+surface string (most subgroups have several 1-2-occurrence surfaces; forcing each into its own
+call would be wasteful and isn't what was asked for). Simulated against H3034's real data before
+writing any handler code: produces exactly 2 partitions (60 + 54), matching "break in two" exactly.
+
+**`assemble_subgroup_package` → `assemble_subgroup_packages`** (plural): now returns a LIST of
+reading-call payloads. The normal case (no strong over cap) still returns exactly 1, unchanged
+behaviour. When one strong IS over cap, every OTHER member strong's full profile rides along
+unpartitioned in EVERY resulting package (cross-strong comparison, this stage's whole analytical
+point, stays intact) while only the over-cap strong's own occurrence list is partial per package —
+the prompt says so explicitly (`partial_note`: which surface forms this pass covers, how many
+passes total, and an explicit instruction not to assume complete coverage of that one strong).
+Raises `MultipleOverCapStrongs` (a clean `fail()`, not a crash) if more than one member strong is
+over cap simultaneously — a genuinely different, not-yet-designed case, not guessed at.
+
+**`cluster.reading` handler rewritten to loop over packages**, mirroring `lexical.meaning`'s own
+multi-batch shape exactly (and reusing the SAME `batchcontrol` mechanism from `#1756`/`#1758`/
+`#1760`: `already_committed` per package before spending, `start_batch`/`commit_batch`/`fail_batch`
+around each package's own API-call-through-record window). `cluster_subgroup.status` advances to
+`ready_for_answer` only once, after every package in the loop completes — not per package.
+
+**Verified against real M49 data before spending anything:** dry-called `assemble_subgroup_packages`
+directly against subgroup D — 2 packages, batch keys correctly scoped to their own surface sets,
+partial-note present in both prompts, occurrence counts (60 + 54) and per-package cost estimates
+($0.79 + $0.79) both sane. Then confirmed the full handler wiring live via `-Preview` (no API call):
+`PREVIEW M49/D_yadah_praise_confess: 2 batch(es) (split into 2 passes -- occurrence cap), estimated
+$1.5750 total` — matches the dry-run exactly.
+
+**Files:** `iba/app/lib/charreadinggenerate.py` (`_partition_occurrences_by_surface`,
+`MultipleOverCapStrongs`, `assemble_subgroup_packages` replacing `assemble_subgroup_package`,
+`_instructions` gains `partial_note`), `iba/app/handlers/cluster.py` (`reading`, rewritten for the
+multi-package loop). Escalation #1761 (researcher-approved design across a multi-turn
+clarification, closed same turn).
+
+## 296. `BatchProgress.ps1` — failure/committed lines now carry an absolute timestamp, not just elapsed duration (2026-09-18)
+
+Researcher, reading the report live during M49's run: *"can you include a timestamp on the run
+lines, and errors."* `running_now` already showed `started`; `recent_failures`/`recent_committed`
+only showed elapsed duration (`0m37s`), no absolute time. Added `ended_at` (labelled
+`failed at`/`committed at`) alongside the existing `started` to both sections. Trivial fix, no
+separate escalation raised for it (direct, already-fixed feedback on code built this same session,
+not a new discovered anomaly).
+
+**Files:** `iba/app/lib/batchprogressreport.py`.

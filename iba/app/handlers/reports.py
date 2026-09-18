@@ -22,6 +22,7 @@ from ..lib import contentindex as contentindex_mod
 from ..lib import escalation as esc
 from ..lib import manifest as manifest_mod
 from ..lib import retention as retention_mod
+from ..lib import batchprogressreport
 from ..lib import (cataloguereport, clusterreport, registryreport, schemareport, seedreport,
                    spanreport, strongreport, strongversereport, wordregistryspanreport)
 from ..lib import (lexical, passagedebatereport, passagetrack, reportkit, versespanmeaningreport,
@@ -238,6 +239,20 @@ def strong_verse_report(ctx: Ctx) -> Outcome:
 def span_analysis_report(ctx: Ctx) -> Outcome:
     path = pathlib.Path(ctx.cfg.required_setting("report.span_analysis_path"))
     out = spanreport.write_report(ctx.cfg, path)
+    return ok(f"wrote {out}", path=str(out))
+
+
+def batch_progress_report(ctx: Ctx) -> Outcome:
+    """Live progress monitor over `run_batch` (escalation #1756) -- read-only, no write-grant
+    needed. All three params optional/combine with AND; no filters = every currently-running batch
+    DB-wide (the live-right-now view)."""
+    filter_run_id = ctx.params.get("FilterRunId") or None
+    step = ctx.params.get("Step") or None
+    selector_key = ctx.params.get("SelectorKey") or None
+    lines = batchprogressreport.generate(
+        ctx.db.conn, run_id=filter_run_id, step=step, selector_key=selector_key)
+    path = pathlib.Path(ctx.cfg.required_setting("report.batch_progress_path"))
+    out = reportkit.write_report(ctx.db.conn, "report.batch_progress", path, lines)
     return ok(f"wrote {out}", path=str(out))
 
 

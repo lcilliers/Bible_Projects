@@ -12,7 +12,7 @@ import datetime
 import pathlib
 
 from .base import Ctx, Outcome, fail, ok, escalate
-from ..lib import charanswergenerate, charreadinggenerate, clusterstatus, escalation as esc
+from ..lib import batchcontrol, charanswergenerate, charreadinggenerate, clusterstatus, escalation as esc
 from ..lib import lexicalscope, recordingpass, reportkit, strongreconcile, subgroupgenerate
 
 
@@ -186,6 +186,7 @@ def subgroup(ctx: Ctx) -> Outcome:
     _may(ctx, "cluster.subgroup", "cluster_subgroup_strong")
     _may(ctx, "cluster.subgroup", "ib_observation")
     _may(ctx, "cluster.subgroup", "ib_node")
+    _may(ctx, "cluster.subgroup", "run_batch")
 
     cluster_code = ctx.params.get("ClusterCode")
     if not cluster_code:
@@ -206,6 +207,13 @@ def subgroup(ctx: Ctx) -> Outcome:
     if not member_strongs:
         return fail("no-strongs", f"{cluster_code} resolved to 0 member strongs")
 
+    content_key = batchcontrol.content_key(member_strongs)
+    if batchcontrol.already_committed(conn, "cluster.subgroup", cluster_code, content_key):
+        return fail("already-committed",
+                   f"{cluster_code}: this exact member-strong set was already committed by a "
+                   f"prior run (#1756 resume/skip) -- cluster.status should already be past "
+                   f"ready_for_subgroup_allocation; re-check cluster status rather than re-running")
+
     package = subgroupgenerate.assemble_cluster_package(ctx, cluster_code, member_strongs)
     max_cost = float(ctx.cfg.setting("cluster.subgroup_llm_max_cost", 2.00))
     if package["est_cost_usd"] > max_cost:
@@ -221,41 +229,53 @@ def subgroup(ctx: Ctx) -> Outcome:
                  preview=True, cluster_code=cluster_code, strong_count=package["strong_count"],
                  est_cost_usd=package["est_cost_usd"])
 
+    batch_id = batchcontrol.start_batch(
+        conn, ctx.run_id, "cluster-reading", "cluster.subgroup", cluster_code, 1, content_key)
     try:
-        result = subgroupgenerate.call_api(ctx, package)
-    except subgroupgenerate.ApiKeyMissing as e:
-        return fail("api-key-missing", str(e))
-    except subgroupgenerate.ApiCallFailed as e:
-        return fail("api-error", str(e))
-    rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
-    rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
-    real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
-                result["output_tokens"] / 1_000_000 * rate_out)
-    subgroupgenerate.log_usage(ctx.cfg, ctx.run_id, "1/1", package["model"],
-                               result["input_tokens"], result["output_tokens"], real_cost)
+        try:
+            result = subgroupgenerate.call_api(ctx, package)
+        except subgroupgenerate.ApiKeyMissing as e:
+            batchcontrol.fail_batch(conn, batch_id, str(e))
+            return fail("api-key-missing", str(e))
+        except subgroupgenerate.ApiCallFailed as e:
+            batchcontrol.fail_batch(conn, batch_id, str(e))
+            return fail("api-error", str(e))
+        rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+        rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+        real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                    result["output_tokens"] / 1_000_000 * rate_out)
+        subgroupgenerate.log_usage(ctx.cfg, ctx.run_id, "1/1", package["model"],
+                                   result["input_tokens"], result["output_tokens"], real_cost)
 
-    try:
-        parsed = subgroupgenerate.parse_response(result["text"])
-    except subgroupgenerate.BadModelResponse as e:
-        return fail("bad-model-response", str(e))
+        try:
+            parsed = subgroupgenerate.parse_response(result["text"])
+        except subgroupgenerate.BadModelResponse as e:
+            batchcontrol.fail_batch(conn, batch_id, f"bad-model-response: {e}")
+            return fail("bad-model-response", str(e))
 
-    try:
-        written = recordingpass.record_subgroups(conn, cluster_code, member_strongs, parsed)
-    except recordingpass.SubgroupWriteError as e:
-        conn.rollback()
-        return fail("bad-subgroup-output", str(e))
+        try:
+            written = recordingpass.record_subgroups(conn, cluster_code, member_strongs, parsed)
+        except recordingpass.SubgroupWriteError as e:
+            conn.rollback()
+            batchcontrol.fail_batch(conn, batch_id, f"bad-subgroup-output: {e}")
+            return fail("bad-subgroup-output", str(e))
 
-    # Observations captured via the SAME mechanism Stage 1 (`lexical.meaning`) already uses --
-    # researcher correction, this session: placement_note is a comment on a placement, never the
-    # observation itself; any substantive claim the LLM makes goes through record_batch exactly
-    # like verse-reading's own observations do, stage='char-subgroup', not a bespoke promotion path.
-    obs_summary = recordingpass.record_batch(
-        conn, cluster_code, "char-subgroup", parsed, source_json_serial=1)
-    conn.commit()
+        # Observations captured via the SAME mechanism Stage 1 (`lexical.meaning`) already uses --
+        # researcher correction, this session: placement_note is a comment on a placement, never the
+        # observation itself; any substantive claim the LLM makes goes through record_batch exactly
+        # like verse-reading's own observations do, stage='char-subgroup', not a bespoke promotion path.
+        obs_summary = recordingpass.record_batch(
+            conn, cluster_code, "char-subgroup", parsed, source_json_serial=1)
+        conn.commit()
 
-    status_result = clusterstatus.advance_after_subgroup_allocation(conn, cluster_code)
-    subgroup_status_result = clusterstatus.advance_subgroups_after_allocation(conn, cluster_code)
-    conn.commit()
+        status_result = clusterstatus.advance_after_subgroup_allocation(conn, cluster_code)
+        subgroup_status_result = clusterstatus.advance_subgroups_after_allocation(conn, cluster_code)
+        conn.commit()
+    except Exception as e:
+        # Crash safeguard (#1756) -- see lexical.meaning's own identical pattern.
+        batchcontrol.fail_batch(conn, batch_id, f"{type(e).__name__}: {e}")
+        raise
+    batchcontrol.commit_batch(conn, batch_id, cost_usd=round(real_cost, 4))
 
     anchor_note = (f", {len(written['unresolved_anchor_verses'])} unresolved anchor verse(s)"
                   if written["unresolved_anchor_verses"] else "")
@@ -279,17 +299,22 @@ def subgroup(ctx: Ctx) -> Outcome:
 
 # ── reading (process c, the `char-reading` stage, #1682/#1706 Phase F stage 3) ──────────────────
 #
-# Per-SUBGROUP, ONE LLM call, never the whole cluster (#1682 §2 rule 1) -- given one subgroup's
-# member strongs, their full corpus-wide occurrence lists, all meaning sources, and Stage 1/2's own
-# already-captured observations as grounding. `-Preview` (default true) assembles the payload and
-# reports the cost estimate WITHOUT calling the API or writing anything, same discipline as every
-# other stage. `-Preview:$false` runs for real: one live API call, `recordingpass.record_batch`
-# writes stage='char-reading' observations, per-strong completeness is computed by CODE (not
-# trusted from the model), then `cluster_subgroup.status` advances to `ready_for_answer`.
+# Per-SUBGROUP, normally ONE LLM call, never the whole cluster (#1682 §2 rule 1) -- given one
+# subgroup's member strongs, their full corpus-wide occurrence lists, all meaning sources, and
+# Stage 1/2's own already-captured observations as grounding. Escalation #1761 (researcher's own
+# rule, 2026-09-18): a member strong whose own occurrence count exceeds the cap is split by
+# SURFACE into multiple calls instead of refusing the whole subgroup (`assemble_subgroup_packages`
+# returns >1 package in that case) -- normally still exactly 1. `-Preview` (default true) assembles
+# every package and reports the total cost estimate WITHOUT calling the API or writing anything,
+# same discipline as every other stage. `-Preview:$false` runs for real: one live API call PER
+# package, `recordingpass.record_batch` writes stage='char-reading' observations for each,
+# per-strong completeness is computed by CODE (not trusted from the model) after ALL packages are
+# done, then `cluster_subgroup.status` advances to `ready_for_answer` once, not per package.
 
 def reading(ctx: Ctx) -> Outcome:
     _may(ctx, "cluster.reading", "ib_observation")
     _may(ctx, "cluster.reading", "ib_node")
+    _may(ctx, "cluster.reading", "run_batch")
 
     cluster_code = ctx.params.get("ClusterCode")
     subgroup_code = ctx.params.get("SubgroupCode")
@@ -312,52 +337,87 @@ def reading(ctx: Ctx) -> Outcome:
     if not member_strongs:
         return fail("no-strongs", f"{cluster_code}/{subgroup_code} resolved to 0 member strongs")
 
-    package = charreadinggenerate.assemble_subgroup_package(
-        ctx, cluster_code, subgroup_row, member_strongs)
-    if package["over_cap_strongs"]:
-        return fail("occurrence-cap-exceeded",
-                   f"{cluster_code}/{subgroup_code}: {package['over_cap_strongs']} strong(s) "
-                   f"exceed the per-strong occurrence cap -- raise the cap or split the subgroup "
-                   f"via configmaint.propose, never silently sample")
+    selector_key = f"{cluster_code}|{subgroup_code}"
+    try:
+        packages = charreadinggenerate.assemble_subgroup_packages(
+            ctx, cluster_code, subgroup_row, member_strongs)
+    except charreadinggenerate.MultipleOverCapStrongs as e:
+        return fail("multiple-over-cap-strongs", str(e))
+
     max_cost = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
-    if package["est_cost_usd"] > max_cost:
-        return fail("cost-cap-exceeded",
-                   f"{cluster_code}/{subgroup_code} ({package['strong_count']} strongs, "
-                   f"{package['occurrence_count']} occurrences) estimated cost "
-                   f"${package['est_cost_usd']:.2f} exceeds lexical.llm_max_cost_per_batch "
-                   f"(${max_cost:.2f}) -- raise the cap via configmaint.propose")
+    for package in packages:
+        if package["est_cost_usd"] > max_cost:
+            return fail("cost-cap-exceeded",
+                       f"{cluster_code}/{subgroup_code} batch {package['batch_label']} "
+                       f"({package['strong_count']} strongs, {package['occurrence_count']} "
+                       f"occurrences) estimated cost ${package['est_cost_usd']:.2f} exceeds "
+                       f"lexical.llm_max_cost_per_batch (${max_cost:.2f}) -- raise the cap via "
+                       f"configmaint.propose")
 
     if preview:
-        return ok(f"PREVIEW {cluster_code}/{subgroup_code}: {package['strong_count']} strong(s), "
-                 f"{package['occurrence_count']} occurrence(s), estimated "
-                 f"${package['est_cost_usd']:.4f} -- no API call made, nothing written. Re-run "
-                 f"with -Preview:$false to execute for real.",
+        total_cost = sum(p["est_cost_usd"] for p in packages)
+        split_note = (f" (split into {len(packages)} passes -- occurrence cap)"
+                     if len(packages) > 1 else "")
+        return ok(f"PREVIEW {cluster_code}/{subgroup_code}: {len(packages)} batch(es){split_note}, "
+                 f"estimated ${total_cost:.4f} total -- no API call made, nothing written. "
+                 f"Re-run with -Preview:$false to execute for real.",
                  preview=True, cluster_code=cluster_code, subgroup_code=subgroup_code,
-                 strong_count=package["strong_count"], occurrence_count=package["occurrence_count"],
-                 est_cost_usd=package["est_cost_usd"])
+                 batches=[{"batch_label": p["batch_label"], "strong_count": p["strong_count"],
+                          "occurrence_count": p["occurrence_count"],
+                          "est_cost_usd": p["est_cost_usd"]} for p in packages],
+                 est_cost_usd=round(total_cost, 4))
 
-    try:
-        result = charreadinggenerate.call_api(ctx, package)
-    except charreadinggenerate.ApiKeyMissing as e:
-        return fail("api-key-missing", str(e))
-    except charreadinggenerate.ApiCallFailed as e:
-        return fail("api-error", str(e))
     rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
     rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
-    real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
-                result["output_tokens"] / 1_000_000 * rate_out)
-    charreadinggenerate.log_usage(ctx.cfg, ctx.run_id, "1/1", package["model"],
-                                  result["input_tokens"], result["output_tokens"], real_cost)
+    total_cost = 0.0
+    skipped_batches = 0
+    obs_totals: dict[str, int] = {}
+    unresolved_count = 0
+    unresolved_detail: list[str] = []
 
-    try:
-        parsed = charreadinggenerate.parse_response(result["text"])
-    except charreadinggenerate.BadModelResponse as e:
-        return fail("bad-model-response", str(e))
+    for idx, package in enumerate(packages, start=1):
+        content_key = batchcontrol.content_key([selector_key, package["batch_key"]])
+        if batchcontrol.already_committed(conn, "cluster.reading", selector_key, content_key):
+            skipped_batches += 1
+            continue
 
-    obs_summary = recordingpass.record_batch(
-        conn, cluster_code, "char-reading", parsed, source_json_serial=1,
-        subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code)
-    conn.commit()
+        batch_id = batchcontrol.start_batch(
+            conn, ctx.run_id, "cluster-reading", "cluster.reading", selector_key, idx, content_key)
+        try:
+            try:
+                result = charreadinggenerate.call_api(ctx, package)
+            except charreadinggenerate.ApiKeyMissing as e:
+                batchcontrol.fail_batch(conn, batch_id, str(e))
+                return fail("api-key-missing", str(e))
+            except charreadinggenerate.ApiCallFailed as e:
+                batchcontrol.fail_batch(conn, batch_id, str(e))
+                return fail("api-error", f"batch {package['batch_label']}: {e}")
+            real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                        result["output_tokens"] / 1_000_000 * rate_out)
+            charreadinggenerate.log_usage(ctx.cfg, ctx.run_id, package["batch_label"],
+                                          package["model"], result["input_tokens"],
+                                          result["output_tokens"], real_cost)
+
+            try:
+                parsed = charreadinggenerate.parse_response(result["text"])
+            except charreadinggenerate.BadModelResponse as e:
+                batchcontrol.fail_batch(conn, batch_id, f"bad-model-response: {e}")
+                return fail("bad-model-response", f"batch {package['batch_label']}: {e}")
+
+            obs_summary = recordingpass.record_batch(
+                conn, cluster_code, "char-reading", parsed, source_json_serial=idx,
+                subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code)
+            conn.commit()
+        except Exception as e:
+            # Crash safeguard (#1756) -- see lexical.meaning's own identical pattern.
+            batchcontrol.fail_batch(conn, batch_id, f"{type(e).__name__}: {e}")
+            raise
+        batchcontrol.commit_batch(conn, batch_id, cost_usd=round(real_cost, 4))
+        total_cost += real_cost
+        for action, n in obs_summary["by_action"].items():
+            obs_totals[action] = obs_totals.get(action, 0) + n
+        unresolved_count += obs_summary["unresolved_occurrence_count"]
+        unresolved_detail += obs_summary["unresolved_detail"]
 
     strong_checks = charreadinggenerate.compute_strong_checks(conn, member_strongs)
     incomplete = [c for c in strong_checks if c["missing_verses"]]
@@ -365,22 +425,25 @@ def reading(ctx: Ctx) -> Outcome:
     status_result = clusterstatus.advance_subgroup_after_reading(conn, subgroup_row["id"])
     conn.commit()
 
-    obs_note = (f", observations {obs_summary['by_action']}" if obs_summary["by_action"] else
-               ", 0 observations")
+    split_note = f", {len(packages)} batch(es)" if len(packages) > 1 else ""
+    skipped_note = f", {skipped_batches} skipped (already committed)" if skipped_batches else ""
+    obs_note = f", observations {obs_totals}" if obs_totals else ", 0 observations"
     unresolved_obs_note = (
-        f", {obs_summary['unresolved_occurrence_count']} unresolved observation occurrence(s): "
-        f"{'; '.join(obs_summary['unresolved_detail'][:5])}"
-        f"{' ...' if obs_summary['unresolved_occurrence_count'] > 5 else ''}"
-        if obs_summary["unresolved_occurrence_count"] else "")
+        f", {unresolved_count} unresolved observation occurrence(s): "
+        f"{'; '.join(unresolved_detail[:5])}{' ...' if unresolved_count > 5 else ''}"
+        if unresolved_count else "")
     completeness_note = (
         f", {len(incomplete)} strong(s) with untraced occurrences: "
         f"{[(c['strong'], c['missing_verses'][:3]) for c in incomplete]}"
         if incomplete else ", full per-strong traceability confirmed")
-    return ok(f"{cluster_code}/{subgroup_code}: ${real_cost:.4f} spent{obs_note}"
-             f"{unresolved_obs_note}{completeness_note}; cluster_subgroup.status -> "
-             f"{status_result['status_after']}",
+    return ok(f"{cluster_code}/{subgroup_code}{split_note}{skipped_note}: ${total_cost:.4f} "
+             f"spent{obs_note}{unresolved_obs_note}{completeness_note}; "
+             f"cluster_subgroup.status -> {status_result['status_after']}",
              preview=False, cluster_code=cluster_code, subgroup_code=subgroup_code,
-             observations=obs_summary, strong_checks=strong_checks, status_result=status_result)
+             observations={"by_action": obs_totals, "unresolved_occurrence_count": unresolved_count,
+                          "unresolved_detail": unresolved_detail},
+             strong_checks=strong_checks, status_result=status_result,
+             skipped_batches=skipped_batches)
 
 
 # ── answer (process d, the `char-answers` stage, #1682 §4A / #1706 Phase F stage 4) ─────────────
@@ -396,6 +459,7 @@ def reading(ctx: Ctx) -> Outcome:
 def answer(ctx: Ctx) -> Outcome:
     _may(ctx, "cluster.answer", "ib_observation")
     _may(ctx, "cluster.answer", "ib_node")
+    _may(ctx, "cluster.answer", "run_batch")
 
     cluster_code = ctx.params.get("ClusterCode")
     subgroup_code = ctx.params.get("SubgroupCode")
@@ -418,6 +482,15 @@ def answer(ctx: Ctx) -> Outcome:
     if not member_strongs:
         return fail("no-strongs", f"{cluster_code}/{subgroup_code} resolved to 0 member strongs")
 
+    selector_key = f"{cluster_code}|{subgroup_code}"
+    content_key = batchcontrol.content_key(member_strongs)
+    if batchcontrol.already_committed(conn, "cluster.answer", selector_key, content_key):
+        return fail("already-committed",
+                   f"{cluster_code}/{subgroup_code}: this exact member-strong set was already "
+                   f"committed by a prior run (#1756 resume/skip) -- cluster_subgroup.status "
+                   f"should already be past ready_for_answer; re-check status rather than "
+                   f"re-running")
+
     package = charanswergenerate.assemble_subgroup_package(
         ctx, cluster_code, subgroup_row, member_strongs)
     max_cost = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
@@ -437,37 +510,48 @@ def answer(ctx: Ctx) -> Outcome:
                  strong_count=package["strong_count"], question_count=package["question_count"],
                  est_cost_usd=package["est_cost_usd"])
 
+    batch_id = batchcontrol.start_batch(
+        conn, ctx.run_id, "cluster-reading", "cluster.answer", selector_key, 1, content_key)
     try:
-        result = charanswergenerate.call_api(ctx, package)
-    except charanswergenerate.ApiKeyMissing as e:
-        return fail("api-key-missing", str(e))
-    except charanswergenerate.ApiCallFailed as e:
-        return fail("api-error", str(e))
-    rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
-    rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
-    real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
-                result["output_tokens"] / 1_000_000 * rate_out)
-    charanswergenerate.log_usage(ctx.cfg, ctx.run_id, "1/1", package["model"],
-                                 result["input_tokens"], result["output_tokens"], real_cost)
+        try:
+            result = charanswergenerate.call_api(ctx, package)
+        except charanswergenerate.ApiKeyMissing as e:
+            batchcontrol.fail_batch(conn, batch_id, str(e))
+            return fail("api-key-missing", str(e))
+        except charanswergenerate.ApiCallFailed as e:
+            batchcontrol.fail_batch(conn, batch_id, str(e))
+            return fail("api-error", str(e))
+        rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+        rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+        real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                    result["output_tokens"] / 1_000_000 * rate_out)
+        charanswergenerate.log_usage(ctx.cfg, ctx.run_id, "1/1", package["model"],
+                                     result["input_tokens"], result["output_tokens"], real_cost)
 
-    try:
-        parsed = charanswergenerate.parse_response(result["text"])
-    except charanswergenerate.BadModelResponse as e:
-        return fail("bad-model-response", str(e))
+        try:
+            parsed = charanswergenerate.parse_response(result["text"])
+        except charanswergenerate.BadModelResponse as e:
+            batchcontrol.fail_batch(conn, batch_id, f"bad-model-response: {e}")
+            return fail("bad-model-response", str(e))
 
-    obs_summary = recordingpass.record_batch(
-        conn, cluster_code, "char-answers", parsed, source_json_serial=1,
-        subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code)
-    conn.commit()
+        obs_summary = recordingpass.record_batch(
+            conn, cluster_code, "char-answers", parsed, source_json_serial=1,
+            subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code)
+        conn.commit()
 
-    question_codes = [q["question_code"] for q in charanswergenerate.battery_questions(conn)]
-    question_checks = charanswergenerate.compute_question_checks(
-        conn, cluster_code, member_strongs, question_codes)
-    unanswered = [c["question_code"] for c in question_checks if not c["answered"]]
+        question_codes = [q["question_code"] for q in charanswergenerate.battery_questions(conn)]
+        question_checks = charanswergenerate.compute_question_checks(
+            conn, cluster_code, member_strongs, question_codes)
+        unanswered = [c["question_code"] for c in question_checks if not c["answered"]]
 
-    status_result = clusterstatus.advance_subgroup_after_answer(conn, subgroup_row["id"])
-    cluster_rollup = clusterstatus.recompute_cluster_status_rollup(conn, cluster_code)
-    conn.commit()
+        status_result = clusterstatus.advance_subgroup_after_answer(conn, subgroup_row["id"])
+        cluster_rollup = clusterstatus.recompute_cluster_status_rollup(conn, cluster_code)
+        conn.commit()
+    except Exception as e:
+        # Crash safeguard (#1756) -- see lexical.meaning's own identical pattern.
+        batchcontrol.fail_batch(conn, batch_id, f"{type(e).__name__}: {e}")
+        raise
+    batchcontrol.commit_batch(conn, batch_id, cost_usd=round(real_cost, 4))
 
     obs_note = (f", observations {obs_summary['by_action']}" if obs_summary["by_action"] else
                ", 0 observations")

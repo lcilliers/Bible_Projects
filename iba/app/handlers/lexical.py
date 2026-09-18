@@ -45,7 +45,7 @@ import pathlib
 from .base import Ctx, Outcome, fail, ok
 from . import raw as raw_mod
 from ..lib import lexical, lexicalenrich, lexicalenrichgenerate, lexicalscope, reportkit
-from ..lib import clusterstatus, recordingpass, versereadinggenerate
+from ..lib import batchcontrol, clusterstatus, recordingpass, versereadinggenerate
 from ..lib.stepapi import Step, StepUnavailable
 from ..lib.versespanmeaningreport import fetch_verses, parse_chapters, parse_range
 
@@ -709,6 +709,7 @@ def run(ctx: Ctx) -> Outcome:
 def meaning(ctx: Ctx) -> Outcome:
     _may(ctx, "lexical.meaning", "ib_observation")
     _may(ctx, "lexical.meaning", "ib_node")
+    _may(ctx, "lexical.meaning", "run_batch")
 
     cluster_code = ctx.params.get("ClusterCode")
     if not cluster_code:
@@ -754,15 +755,20 @@ def meaning(ctx: Ctx) -> Outcome:
     batch_summaries = []
     llm_summary = []
     record_summary = {"by_action": {}, "unresolved_occurrence_count": 0, "unresolved_detail": []}
+    skipped_batches = 0
 
     for idx, chunk in enumerate(chunks):
         chunk_label = f"{idx + 1}/{len(chunks)}"
         package = versereadinggenerate.assemble_batch_package(ctx, cluster_code, chunk)
+        content_key = batchcontrol.content_key([str(v) for v in chunk])
+        already_done = batchcontrol.already_committed(
+            conn, "lexical.meaning", cluster_code, content_key)
         batch_summaries.append({
             "chunk": chunk_label, "verses": package["verse_count"],
             "cluster_member_strongs": package["cluster_member_strong_count"],
             "est_input_tokens": package["est_input_tokens"],
-            "est_cost_usd": package["est_cost_usd"]})
+            "est_cost_usd": package["est_cost_usd"],
+            "already_committed": already_done})
         if package["est_cost_usd"] > max_cost_per_batch:
             return fail("cost-cap-exceeded",
                        f"chunk {chunk_label} ({package['verse_count']} verses) estimated cost "
@@ -772,43 +778,71 @@ def meaning(ctx: Ctx) -> Outcome:
         if preview:
             continue
 
-        try:
-            result = versereadinggenerate.call_api(ctx, package)
-        except versereadinggenerate.ApiKeyMissing as e:
-            return fail("api-key-missing", str(e))
-        except versereadinggenerate.ApiCallFailed as e:
-            return fail("api-error", f"chunk {chunk_label}: {e}")
-        rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
-        rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
-        real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
-                    result["output_tokens"] / 1_000_000 * rate_out)
-        versereadinggenerate.log_usage(
-            ctx.cfg, ctx.run_id, chunk_label, package["model"], result["input_tokens"],
-            result["output_tokens"], real_cost)
-        llm_summary.append({"chunk": chunk_label, "verses": package["verse_count"],
-                            "input_tokens": result["input_tokens"],
-                            "output_tokens": result["output_tokens"],
-                            "cost_usd": round(real_cost, 4)})
+        # Resume/skip (escalation #1756): this exact batch (by content, not position) was already
+        # committed by a PRIOR run -- never re-pay for it. Checked fresh per batch, not cached, so
+        # a batch another concurrent/prior process just finished is picked up too.
+        if already_done:
+            skipped_batches += 1
+            continue
 
+        batch_id = batchcontrol.start_batch(
+            conn, ctx.run_id, "verse-lexical", "lexical.meaning", cluster_code, idx + 1,
+            content_key)
         try:
-            parsed = versereadinggenerate.parse_response(result["text"])
-        except versereadinggenerate.BadModelResponse as e:
-            conn.rollback()
-            return fail("bad-model-response", f"chunk {chunk_label}: {e}")
+            try:
+                result = versereadinggenerate.call_api(ctx, package)
+            except versereadinggenerate.ApiKeyMissing as e:
+                batchcontrol.fail_batch(conn, batch_id, str(e))
+                return fail("api-key-missing", str(e))
+            except versereadinggenerate.ApiCallFailed as e:
+                batchcontrol.fail_batch(conn, batch_id, str(e))
+                return fail("api-error", f"chunk {chunk_label}: {e}")
+            rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+            rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+            real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                        result["output_tokens"] / 1_000_000 * rate_out)
+            versereadinggenerate.log_usage(
+                ctx.cfg, ctx.run_id, chunk_label, package["model"], result["input_tokens"],
+                result["output_tokens"], real_cost)
+            llm_summary.append({"chunk": chunk_label, "verses": package["verse_count"],
+                                "input_tokens": result["input_tokens"],
+                                "output_tokens": result["output_tokens"],
+                                "cost_usd": round(real_cost, 4)})
 
-        chunk_record = recordingpass.record_batch(
-            conn, cluster_code, "verse-reading", parsed, source_json_serial=idx + 1)
-        conn.commit()
+            try:
+                parsed = versereadinggenerate.parse_response(result["text"])
+            except versereadinggenerate.BadModelResponse as e:
+                conn.rollback()
+                batchcontrol.fail_batch(conn, batch_id, f"bad-model-response: {e}")
+                return fail("bad-model-response", f"chunk {chunk_label}: {e}")
+
+            chunk_record = recordingpass.record_batch(
+                conn, cluster_code, "verse-reading", parsed, source_json_serial=idx + 1)
+            conn.commit()
+        except Exception as e:
+            # Crash safeguard (#1756): ANY uncaught exception in the risky window (API call
+            # through record_batch's own commit) is recorded here before re-raising, so the
+            # run_batch row never sits at 'running' forever for a genuinely handled failure --
+            # only a real process death (kill, crash, power loss) leaves it there, which is
+            # exactly the signal a resume needs to distinguish "dead run" from "not started yet".
+            batchcontrol.fail_batch(conn, batch_id, f"{type(e).__name__}: {e}")
+            raise
+        batchcontrol.commit_batch(conn, batch_id, cost_usd=round(real_cost, 4))
         for action, n in chunk_record["by_action"].items():
             record_summary["by_action"][action] = record_summary["by_action"].get(action, 0) + n
         record_summary["unresolved_occurrence_count"] += chunk_record["unresolved_occurrence_count"]
         record_summary["unresolved_detail"] += chunk_record["unresolved_detail"]
 
     if preview:
-        total_cost = sum(b["est_cost_usd"] for b in batch_summaries)
+        already_n = sum(1 for b in batch_summaries if b["already_committed"])
+        # #1756: only the batches NOT already committed would actually cost anything on a live run.
+        total_cost = sum(b["est_cost_usd"] for b in batch_summaries if not b["already_committed"])
+        already_note = (f", {already_n} of {len(chunks)} already committed by a prior run "
+                        f"(will be skipped)" if already_n else "")
         return ok(f"PREVIEW {cluster_code}: {len(chunks)} batch(es), {len(verse_ids)} verse(s), "
-                 f"{len(strongs)} strong(s), estimated ${total_cost:.4f} total -- no API call made, "
-                 f"nothing written. Re-run with -Preview:$false to execute for real.",
+                 f"{len(strongs)} strong(s), estimated ${total_cost:.4f} total for the remaining "
+                 f"work{already_note} -- no API call made, nothing written. Re-run with "
+                 f"-Preview:$false to execute for real.",
                  preview=True, batches=batch_summaries, cluster_code=cluster_code,
                  verse_count=len(verse_ids), strong_count=len(strongs))
 
@@ -837,8 +871,9 @@ def meaning(ctx: Ctx) -> Outcome:
                        f"{status_result['member_strong_count']} strong(s) still need verse-reading "
                        f"before subgroup allocation can start" if not status_result["complete"]
                   else "")
-    return ok(f"{cluster_code}: {len(chunks)} batch(es), ${total_cost:.4f} spent, "
+    skipped_note = f", {skipped_batches} batch(es) skipped (already committed)" if skipped_batches else ""
+    return ok(f"{cluster_code}: {len(chunks)} batch(es){skipped_note}, ${total_cost:.4f} spent, "
              f"observations {record_summary['by_action']}{unresolved_note}{status_note}",
              preview=False, batches=batch_summaries, llm_calls=llm_summary,
              record_summary=record_summary, cluster_code=cluster_code,
-             status_result=status_result)
+             status_result=status_result, skipped_batches=skipped_batches)

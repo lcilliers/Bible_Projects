@@ -338,7 +338,20 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
         traced = None
 
     existing_refs = _existing_node_refs(conn, observation_id) if action == "aligned-superficial-edit" else set()
-    seq = 0
+    # seq must continue from this observation_id's own current max, not restart at 0 -- UNIQUE
+    # (observation_id, seq) fails otherwise the moment a LATER batch/call appends a new occurrence
+    # to an observation an EARLIER batch/call already wrote nodes against (the "aligned-superficial-
+    # edit" path, the only one that reuses an existing observation_id rather than inserting a fresh
+    # one). Found live 2026-09-18: M49's Stage 1 run hit this on its first real multi-batch verse-
+    # reading pass. Queried fresh each call (not cached) so it sees writes from this same
+    # transaction too, same "resolve fresh, never trust a stale count" discipline this module
+    # already applies to strong/verse resolution.
+    if action == "aligned-superficial-edit":
+        seq = conn.execute(
+            "SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE observation_id=?",
+            (observation_id,)).fetchone()[0]
+    else:
+        seq = 0
     written_nodes = []
     for occ_strong, o in resolved_occurrences:
         ref = (occ_strong, o["verse_reference"])

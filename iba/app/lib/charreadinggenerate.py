@@ -44,11 +44,47 @@ from .versereadinggenerate import _meaning_sources  # reuse, don't duplicate
 
 _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
 
-_MAX_OCCURRENCES_PER_STRONG = 60  # checklist §2 rule 3 says "no sampling" -- this is a cost-cap
-# refusal threshold, not a silent sample: assemble_subgroup_package refuses (cost-cap-exceeded
-# path) rather than truncating a strong's real occurrence list past this, so a genuinely large
-# subgroup member surfaces as a real decision (raise the cap, or split the subgroup), never a
-# silent gap in the very traceability rule 10 exists to catch.
+_MAX_OCCURRENCES_PER_STRONG = 60  # checklist §2 rule 3 says "no sampling" -- never a silent
+# truncation. A strong past this cap is SPLIT into multiple reading calls by
+# _partition_occurrences_by_surface (escalation #1761, researcher's own rule, 2026-09-18: "if we
+# have a strong that have more than 100 occurrences of the same SURFACE and no multi cluster
+# occurance, then it can be capped. if the strong has different SURFACEs for the verses then each
+# SURFACE instance can be batched separately" -- H3034 checked live, 114 occurrences across 23
+# distinct surfaces, no single surface >60, so it needs splitting, not a raised cap), never a
+# refusal and never a drop.
+
+
+class MultipleOverCapStrongs(Exception):
+    """More than one member strong of the same subgroup exceeds the cap simultaneously -- not yet
+    designed (the split-by-surface mechanism assumes exactly one strong needs partitioning, with
+    every other member strong's full profile riding along unpartitioned in every resulting batch).
+    Raised rather than guessing a packing order across two independently-oversized strongs."""
+
+
+def _partition_occurrences_by_surface(occurrences: list[dict], cap: int) -> list[list[dict]]:
+    """Groups occurrences by their own `surface` value, then greedily first-fits whole surface-
+    groups into partitions each <= cap occurrences -- NEVER splits one surface's own occurrences
+    across two partitions (the researcher's own rule: 'each SURFACE instance can be batched
+    separately'). Groups are considered largest-first so the partition count stays close to
+    minimal, rather than literally one partition per distinct surface string (most subgroups have
+    several surfaces with only 1-2 occurrences each -- forcing those into their own call each would
+    be wasteful and was never what the rule asked for). A single surface whose own count exceeds
+    the cap gets an oversized partition of its own (still not sampled -- surfaced as an unusually
+    large single-surface group rather than silently capped)."""
+    groups: dict[str, list[dict]] = {}
+    for occ in occurrences:
+        groups.setdefault(occ["surface"], []).append(occ)
+    ordered = sorted(groups.values(), key=len, reverse=True)
+
+    partitions: list[list[dict]] = []
+    for group in ordered:
+        for p in partitions:
+            if len(p) + len(group) <= cap:
+                p.extend(group)
+                break
+        else:
+            partitions.append(list(group))
+    return partitions
 
 
 def parse_response(text: str) -> dict:
@@ -113,15 +149,27 @@ def _strong_reading_profile(conn, strong: str) -> dict:
     }
 
 
-def assemble_subgroup_package(ctx, cluster_code: str, subgroup_row: dict,
-                              member_strongs: list[str]) -> dict:
-    """One subgroup's payload -- never calls the network itself, returns the package plus a
-    pre-call cost estimate (same two-step separation every other stage already uses)."""
+def assemble_subgroup_packages(ctx, cluster_code: str, subgroup_row: dict,
+                               member_strongs: list[str]) -> list[dict]:
+    """One or more reading-call payloads for this subgroup -- never calls the network itself,
+    returns each package plus its own pre-call cost estimate. Normally a single-element list (the
+    whole subgroup, one call, unchanged from the original design). If exactly one member strong's
+    occurrence count exceeds `_MAX_OCCURRENCES_PER_STRONG`, that strong's occurrences are split by
+    surface (`_partition_occurrences_by_surface`) into multiple packages -- every OTHER member
+    strong's FULL profile rides along unpartitioned in every one of them, so cross-strong
+    comparison (this stage's whole point) stays intact; only the over-cap strong's own occurrence
+    list is partial per package, and the prompt says so explicitly (`partial_note`). Raises
+    `MultipleOverCapStrongs` if more than one member strong is over cap at once (not yet designed)."""
     conn = ctx.db.conn
 
     strong_profiles = {s: _strong_reading_profile(conn, s) for s in sorted(member_strongs)}
-    over_cap = {s: len(p["occurrences"]) for s, p in strong_profiles.items()
-               if len(p["occurrences"]) > _MAX_OCCURRENCES_PER_STRONG}
+    over_cap = [s for s, p in strong_profiles.items()
+               if len(p["occurrences"]) > _MAX_OCCURRENCES_PER_STRONG]
+    if len(over_cap) > 1:
+        raise MultipleOverCapStrongs(
+            f"{cluster_code}/{subgroup_row['subgroup_code']}: {len(over_cap)} member strongs "
+            f"exceed the cap simultaneously ({over_cap}) -- splitting is only designed for exactly "
+            f"one over-cap strong per subgroup")
 
     rules = conn.execute(
         "SELECT rule_key, rule_text FROM cfg_method_rule WHERE step='cluster.reading' "
@@ -132,30 +180,57 @@ def assemble_subgroup_package(ctx, cluster_code: str, subgroup_row: dict,
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
         "ORDER BY ordinal")]
 
-    instructions = _instructions(cluster_code, subgroup_row, rules_text, sorted(member_strongs),
-                                 tag_values)
-    content = json.dumps({
-        "cluster_code": cluster_code, "subgroup_code": subgroup_row["subgroup_code"],
-        "label": subgroup_row["label"], "core_description": subgroup_row["core_description"],
-        "anchor_verse_reference": subgroup_row["anchor_verse_reference"],
-        "strongs": strong_profiles,
-    }, ensure_ascii=False)
-
     chars_per_token = float(ctx.cfg.setting("lexical.llm_chars_per_token", 4))
-    est_input_tokens = int((len(instructions) + len(content)) / chars_per_token)
     max_output_tokens = int(ctx.cfg.setting("lexical.llm_max_output_tokens", 40000))
     rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
     rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
-    est_cost = (est_input_tokens / 1_000_000 * rate_in) + (max_output_tokens / 1_000_000 * rate_out)
+    model = ctx.cfg.required_setting("lexical.llm_model")
 
-    return {
-        "instructions": instructions, "content": content, "cluster_code": cluster_code,
-        "subgroup_code": subgroup_row["subgroup_code"], "strong_count": len(member_strongs),
-        "occurrence_count": sum(len(p["occurrences"]) for p in strong_profiles.values()),
-        "over_cap_strongs": over_cap, "est_input_tokens": est_input_tokens,
-        "max_output_tokens": max_output_tokens, "est_cost_usd": round(est_cost, 4),
-        "model": ctx.cfg.required_setting("lexical.llm_model"),
-    }
+    def _build(batch_profiles: dict, batch_label: str, batch_key: str, partial_note: str | None
+              ) -> dict:
+        instructions = _instructions(cluster_code, subgroup_row, rules_text, sorted(member_strongs),
+                                     tag_values, partial_note)
+        content = json.dumps({
+            "cluster_code": cluster_code, "subgroup_code": subgroup_row["subgroup_code"],
+            "label": subgroup_row["label"], "core_description": subgroup_row["core_description"],
+            "anchor_verse_reference": subgroup_row["anchor_verse_reference"],
+            "strongs": batch_profiles,
+        }, ensure_ascii=False)
+        est_input_tokens = int((len(instructions) + len(content)) / chars_per_token)
+        est_cost = (est_input_tokens / 1_000_000 * rate_in) + (max_output_tokens / 1_000_000 * rate_out)
+        return {
+            "instructions": instructions, "content": content, "cluster_code": cluster_code,
+            "subgroup_code": subgroup_row["subgroup_code"], "strong_count": len(member_strongs),
+            "occurrence_count": sum(len(p["occurrences"]) for p in batch_profiles.values()),
+            "batch_label": batch_label, "batch_key": batch_key,
+            "est_input_tokens": est_input_tokens, "max_output_tokens": max_output_tokens,
+            "est_cost_usd": round(est_cost, 4), "model": model,
+        }
+
+    if not over_cap:
+        return [_build(strong_profiles, "1/1", "full", None)]
+
+    over_strong = over_cap[0]
+    full_occurrences = strong_profiles[over_strong]["occurrences"]
+    partitions = _partition_occurrences_by_surface(full_occurrences, _MAX_OCCURRENCES_PER_STRONG)
+
+    packages = []
+    for idx, partition in enumerate(partitions, start=1):
+        surfaces_in_partition = sorted({occ["surface"] for occ in partition})
+        partial_note = (
+            f"{over_strong} has {len(full_occurrences)} total occurrences, too many for one call "
+            f"-- split by surface form into {len(partitions)} reading passes (never splitting one "
+            f"surface's own occurrences across passes). This is pass {idx}/{len(partitions)}, "
+            f"covering only the surface form(s) {surfaces_in_partition} ({len(partition)} of "
+            f"{over_strong}'s {len(full_occurrences)} total occurrences). Other passes cover its "
+            f"remaining surface forms separately -- do not assume you are seeing this strong's "
+            f"complete occurrence list; every OTHER member strong in this package IS complete.")
+        batch_profiles = dict(strong_profiles)
+        batch_profiles[over_strong] = {**strong_profiles[over_strong], "occurrences": partition}
+        packages.append(_build(
+            batch_profiles, f"{idx}/{len(partitions)}",
+            f"{over_strong}:{'|'.join(surfaces_in_partition)}", partial_note))
+    return packages
 
 
 def compute_strong_checks(conn, member_strongs: list[str],
@@ -181,7 +256,10 @@ def compute_strong_checks(conn, member_strongs: list[str],
 
 
 def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
-                  member_strongs: list[str], tag_values: list[str]) -> str:
+                  member_strongs: list[str], tag_values: list[str],
+                  partial_note: str | None = None) -> str:
+    partial_block = f"\n\nIMPORTANT -- PARTIAL OCCURRENCE COVERAGE THIS PASS: {partial_note}\n" \
+                    if partial_note else ""
     return (
         f"You are producing char-reading observations (process c) for subgroup "
         f"{subgroup_row['subgroup_code']!r} of cluster {cluster_code} -- \"{subgroup_row['label']}\""
@@ -192,7 +270,7 @@ def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
         f"the others), its own Stage 1 (verse-reading) observations already captured (real "
         f"grounding -- do not re-derive or duplicate these, build on them), its Stage 2 "
         f"(char-subgroup) placement observations, and any of its own prior char-reading "
-        f"observations (if this is a re-read).\n\n"
+        f"observations (if this is a re-read).{partial_block}\n\n"
         f"Method rules governing this task:\n{rules_text}\n\n"
         f"YOUR ACTUAL JOB, distinct from Stage 1's per-verse reading: synergise the similar and "
         f"different contextual meaning of THIS SUBGROUP'S OWN member strongs against EACH OTHER "
