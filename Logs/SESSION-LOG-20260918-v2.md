@@ -9,8 +9,8 @@ programme-prose chapters 3–6 with the project's current state.
 
 ## 1. IBA app cleanup scan
 
-Ran `Config-Maintenance.ps1 -Step Validate`: found **18 hard coherence errors** (escalation
-#1727), all traced to the cluster-reading pipeline build — `cluster_subgroup`/`ib_observation` are
+Ran `Config-Maintenance.ps1 -Step Validate`: found **18 hard coherence errors** (escalation #1727),
+all traced to the cluster-reading pipeline build — `cluster_subgroup`/`ib_observation` are
 genuinely different tables under the same name in `iba.db` vs. `bible_research.db` (the established
 `governance.project_databases` pattern), but only the `bible_research.db` copies had `cfg_table`
 rows; 8 `cfg_column.fk` values used a parenthetical syntax the validator can't parse instead of the
@@ -41,8 +41,9 @@ outside `iba/app/lib`, 5 config hedge-phrase rows, 1 hand-rolled versioning site
 Stages 1–4 of the cluster-reading pipeline, added the same day each was built, and correctly notes
 Stage 5 as "not yet built." `GOVERNANCE.md` had one real gap: it stopped at §75 (2026-09-10) and
 never recorded the very next day's retirement of the three parse tables (`strong_meaning_parsed`/
-`strong_lsj_parsed`/`strong_mounce_parsed`) and `lexicon.parse` itself (escalations #1668/#1675/
-#1680/#1681/#1684/#1686) — §73–75 still read as if the parse-completeness rule were live. Added
+`strong_lsj_parsed`/`strong_mounce_parsed`) and `lexicon.parse` itself (escalations
+#1668/#1675/#1680/#1681/#1684/#1686) — §73–75 still read as if the parse-completeness rule were
+live. Added
 **§76** (the retirement, and how it led to the cluster-reading pipeline) and **§77** (this session's
 own cleanup sweep, §1 above), and struck through §73's now-superseded rule bullet in place, per the
 document's own established correction convention.
@@ -153,4 +154,7 @@ prose sections (drafted, not yet reviewed) read as intended; the pre-existing ba
   (workbook-open-in-Excel crash risk on a blind write).
 
 ## Git state
+
+Branch `main`, commit `b938e559a7bf2c62998beed4a7a88fa53742ad76`, pushed to `origin/main`
+(`f7ad67d5..b938e559`). `git status` confirmed clean working tree, up to date with remote.
 
