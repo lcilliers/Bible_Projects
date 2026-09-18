@@ -1,5 +1,12 @@
 # Session Log — 2026-09-18 (v2)
 
+**Status: CLOSED.** All three tasks in scope are complete, all resulting `cfg_*` writes are applied
+and their escalations closed, all git commits pushed. Nothing from this documentation phase remains
+open except two items that are correctly the researcher's own, not blockers: escalation #1753 (the
+pre-existing config backlog, cross-cutting judgement call) and the 12 prose sections sitting at
+`status='draft'` pending read-through. The next unit of work (the next cluster through the
+cluster-reading pipeline) starts fresh from here.
+
 **Scope:** Following the completion of the cluster-reading pipeline's build phase (Stages 1–4,
 logged in `SESSION-LOG-20260918.md`), the researcher asked for three things, explicitly authorized
 to proceed without stopping for sub-section approval: (1) a comprehensive scan of the IBA app
