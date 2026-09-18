@@ -98,13 +98,28 @@ already carried out via the same session's 12-dimension catalogue realignment (`
 a distinct, still-pending action? Not found either way checking `#1712`'s own method doc — needs
 the researcher's confirmation, not a guess.
 
+> **§5 header note, added 2026-09-18 — the core question this section names is CLOSED, not
+> outstanding.** Confirmed live: the "expand the questions" resolution (item 1 below) was actually
+> carried out, not left as an intention — `#1723`'s `M0.6.5` ("What role does this characteristic
+> play in relation to the OTHER M-code characteristics present in this verse?") is exactly this
+> instruction, built, registered, and already exercised in `verse-reading`'s live `M67` run (304
+> observations) and in `char-subgroup`'s own tag output the same way. Item 2 is also resolved by
+> subsequent action, not just argument: `lexical.meaning`/`cluster.subgroup` were both built and run
+> live on `M67` with NO structural/mechanical role-walk enforcement, per `#1706` v32's own recorded
+> consequence — this is the "results out of the new pipeline" the researcher's hold-judgement
+> instruction was waiting for, and it worked without the forced structure. **Nothing about the
+> role-driven-walk topic blocks any pipeline stage's build any longer** — items 3–6 below are
+> genuine but narrow, non-blocking refinements for whichever later stage actually needs them (the
+> relational tag, `directional-party-frame`, T3-operation surfacing, `#729`), not gates on Stage 3
+> or any other stage starting. See `BUILD.md` #285 and escalation `#1706` v34 for the closure
+> record — stop citing `#1704`/`#1705` as an open gate; both have been `completed`/`closed` since
+> 2026-09-15/16 and the enforcement question itself closed 2026-09-17.
+
 1. ~~Does "structurally forced, not advisory" (§2 item 1) still stand as originally stated~~ —
    **RESOLVED, see above: no, superseded by the question-driven-expansion approach.**
-2. **Does the role-driven walk apply to `verse_meaning` at all?** It was designed for `reading`
-   (process c, post-subgroup, family-scoped). `verse_meaning` runs earlier, per-cluster, pre-
-   subgroup — the same open question #1706/#1711 left hanging, now sharpened by §3's tension: even
-   if the walk applies in principle, how much of it should be mechanically forced on a *first* run
-   of a genuinely new pipeline, per your own "hold judgement until we have results" instinct?
+2. ~~Does the role-driven walk apply to `verse_meaning` at all?~~ — **RESOLVED by subsequent
+   action, 2026-09-18: no forced walk was built for `verse_meaning`/`char-subgroup`, both ran live
+   on `M67` successfully without it (see header note above).**
 3. **The relational/pointer split needs its "relational" tag counterpart** — today's tag session
    only produced the pointer half (`cross-cluster-significance`). Should I draft one, and does it
    belong in `ib_observation.tag` alongside it?

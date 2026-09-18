@@ -201,38 +201,50 @@ def _validate_obs_text(conn, obs_text: str) -> None:
 
 def _insert_observation(conn, cluster_code: str, stage: str, tag: str, strong: str | None,
                         question_code: str | None, obs_text: str, meaning_source: str | None,
-                        source_json_serial: int | None,
+                        source_json_serial: int | None, subgroup_id: int | None = None,
                         supersedes_observation_id: int | None = None) -> int:
     window = _window_for(conn, question_code)
     cur = conn.execute(
         "INSERT INTO ib_observation (cluster_code, stage, tag, strong, question_code, obs_text, "
         "meaning_source, status, supersedes_observation_id, source_json_serial, window, "
-        "created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
+        "cluster_subgroup_id, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
         (cluster_code, stage, tag, strong, question_code, obs_text, meaning_source, "resolved",
-         supersedes_observation_id, source_json_serial, window, _now()))
+         supersedes_observation_id, source_json_serial, window, subgroup_id, _now()))
     return cur.lastrowid
 
 
 def _insert_node(conn, observation_id: int, cluster_code: str, strong: str | None,
                  verse_reference: str | None, surface: str | None, morph_code: str | None,
                  question_code: str | None, source_stage: str, seq: int,
-                 traced_observation_id: int | None = None) -> int:
+                 traced_observation_id: int | None = None,
+                 subgroup_code: str | None = None) -> int:
     cur = conn.execute(
         "INSERT INTO ib_node (observation_id, cluster_code, strong, verse_reference, surface, "
-        "morph_code, question_code, traced_observation_id, source_stage, seq, created_at) "
-        "VALUES (?,?,?,?,?,?,?,?,?,?,?)",
+        "morph_code, question_code, traced_observation_id, source_stage, seq, "
+        "cluster_subgroup_code, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?)",
         (observation_id, cluster_code, strong, verse_reference, surface, morph_code, question_code,
-         traced_observation_id, source_stage, seq, _now()))
+         traced_observation_id, source_stage, seq, subgroup_code, _now()))
     return cur.lastrowid
 
 
 def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
-                           source_json_serial: int | None) -> dict:
+                           source_json_serial: int | None, subgroup_id: int | None = None,
+                           subgroup_code: str | None = None) -> dict:
     """One model-produced observation -> same/broaden/new decision -> DB write(s). Returns a
     small report dict for the caller's own summary, never raises on an unresolved occurrence for
     the WHOLE observation -- only the individual bad occurrence is skipped and reported, per
     checklist rule 0.7 ("a gap is a load-time finding, not silently accepted") -- surfaced, not
-    fatal to the rest of the batch."""
+    fatal to the rest of the batch.
+
+    `subgroup_id`/`subgroup_code` are the CALLER's own known subgroup (Stage 3/4 are scoped to
+    exactly one subgroup by construction -- no lookup or inference needed, the caller already
+    knows it). Found live 2026-09-18 (researcher's own review of the data): `ib_observation.
+    cluster_subgroup_id`/`ib_node.cluster_subgroup_code` are real, already-registered columns
+    (`cfg_column`) this module had never populated at all, for any of the 4 live stages. Per their
+    own `cfg_column.use` text, both stay NULL for stage=verse-reading (pre-subgroup) and
+    stage=char-subgroup (process (b)'s own cluster-level observations, "above single-subgroup
+    scope") -- correct by construction here since neither of those call sites passes a value;
+    Stage 3/4 (char-reading/char-answers) now pass their own subgroup explicitly."""
     strong = obs.get("strong")
     question_code = obs.get("question_code")
     tag = obs["tag"]
@@ -259,21 +271,39 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     # regardless of which cluster's pass originally front-loaded it.
     effective_cluster_code = _effective_cluster_code(conn, cluster_code, strong, question_code)
 
-    resolved_occurrences = []
+    claimed_occurrences = obs.get("occurrences", [])
+    resolved_occurrences = []  # list of (occurrence_strong, resolved_dict) -- NOT always `strong`
     unresolved = []
-    for occ in obs.get("occurrences", []):
+    for occ in claimed_occurrences:
+        occ_strong = occ.get("strong", strong)
         try:
-            resolved_occurrences.append(resolve_occurrence(
-                conn, occ.get("strong", strong), occ["verse"], occ.get("surface"),
-                occ.get("morph_code")))
+            resolved_occurrences.append((occ_strong, resolve_occurrence(
+                conn, occ_strong, occ["verse"], occ.get("surface"), occ.get("morph_code"))))
         except UnresolvedOccurrence as e:
             unresolved.append(str(e))
-    if not resolved_occurrences:
+    # Found live 2026-09-18, Stage 4's first real run: a genuine whole-subgroup NEGATIVE finding
+    # ("no evidence of X across this subgroup's material") legitimately cites no occurrence at all
+    # -- its own evidence is the accumulated Stage 1/2/3 material it was given as input, already
+    # grounded elsewhere, not a specific verse. Treating that the same as "the model cited verses
+    # that don't resolve" (a REAL data-quality problem, still skipped below) silently discarded 10
+    # substantive answers on the very first char-answers run. Distinguish by cause: the model
+    # provided zero occurrences (write it, 0 ib_node rows) vs. it provided some and NONE resolved
+    # (skip and report, unchanged). Harmless for Stages 1-3, which have never sent an empty
+    # `occurrences` list in practice (every claim they make is tied to a specific given verse).
+    if not resolved_occurrences and claimed_occurrences:
         return {"action": "skipped-no-resolvable-occurrences", "unresolved": unresolved}
 
     candidates = _existing_candidates(conn, effective_cluster_code, stage, strong, question_code)
 
-    new_refs = {(strong, o["verse_reference"]) for o in resolved_occurrences}
+    # Found live 2026-09-18 building Stage 4 (checklist §3 rule 3, subgroup-wide slants with
+    # `strong: null` on the observation but a real strong per occurrence): using the OUTER
+    # `strong` here (as before) would collapse every occurrence's ref to (None, verse), and
+    # `_insert_node` below would then write ib_node.strong=NULL for every occurrence regardless of
+    # which member strong it actually belongs to -- silently losing exactly the per-occurrence
+    # strong attribution the whole point of a subgroup-wide observation depends on. Harmless for
+    # Stages 1-3 (their occurrences never set their own "strong", so occ_strong == strong always,
+    # identical behaviour to before).
+    new_refs = {(occ_strong, o["verse_reference"]) for occ_strong, o in resolved_occurrences}
     for cand in candidates:
         if cand["obs_text"] == obs_text:
             existing_refs = _existing_node_refs(conn, cand["id"])
@@ -297,27 +327,28 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     elif best is not None:
         observation_id = _insert_observation(
             conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
-            meaning_source, source_json_serial)
+            meaning_source, source_json_serial, subgroup_id)
         action = "new-expands-existing"
         traced = best["id"]
     else:
         observation_id = _insert_observation(
             conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
-            meaning_source, source_json_serial)
+            meaning_source, source_json_serial, subgroup_id)
         action = "new-observation"
         traced = None
 
     existing_refs = _existing_node_refs(conn, observation_id) if action == "aligned-superficial-edit" else set()
     seq = 0
     written_nodes = []
-    for o in resolved_occurrences:
-        ref = (strong, o["verse_reference"])
+    for occ_strong, o in resolved_occurrences:
+        ref = (occ_strong, o["verse_reference"])
         if ref in existing_refs:
             continue
         seq += 1
         node_id = _insert_node(
-            conn, observation_id, effective_cluster_code, strong, o["verse_reference"], o["surface"],
-            o["morph_code"], question_code, stage, seq, traced_observation_id=traced)
+            conn, observation_id, effective_cluster_code, occ_strong, o["verse_reference"],
+            o["surface"], o["morph_code"], question_code, stage, seq, traced_observation_id=traced,
+            subgroup_code=subgroup_code)
         written_nodes.append(node_id)
 
     return {"action": action, "observation_id": observation_id, "node_ids": written_nodes,
@@ -326,7 +357,8 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
 
 
 def record_batch(conn, cluster_code: str, stage: str, model_output: dict,
-                 source_json_serial: int | None = None) -> dict:
+                 source_json_serial: int | None = None, subgroup_id: int | None = None,
+                 subgroup_code: str | None = None) -> dict:
     """Every observation in one model reply, in the same unit of work (checklist rule 0.3: assemble
     -> run -> record fires immediately after, never a deferred batch pickup). Caller commits.
 
@@ -335,8 +367,13 @@ def record_batch(conn, cluster_code: str, stage: str, model_output: dict,
     diagnostic ability redoing Stage 2's M67 run: a whole observation's citation failure was
     reported only as a bare number, with no way afterward to tell whether it was a real defect or
     an ordinary LLM verse-citation slip, short of a fresh, non-reproducible, real-money re-call).
-    Every caller should log/persist this, not just the count."""
-    results = [record_one_observation(conn, cluster_code, stage, obs, source_json_serial)
+    Every caller should log/persist this, not just the count.
+
+    `subgroup_id`/`subgroup_code`: pass the caller's own known subgroup for a per-subgroup stage
+    (Stage 3/4) -- see `record_one_observation`'s own docstring. Omitted (None) for stages not
+    scoped to one subgroup (verse-reading, char-subgroup), which is the correct value for them."""
+    results = [record_one_observation(conn, cluster_code, stage, obs, source_json_serial,
+                                      subgroup_id, subgroup_code)
               for obs in model_output.get("observations", [])]
     by_action: dict[str, int] = {}
     for r in results:

@@ -1060,6 +1060,74 @@ member right now; only its promotion into a separate observation record is missi
 
 ---
 
+## 12b-vi. Cluster-reading pipeline — Stage 3 `char-reading` (`cluster.reading`, `CharReading.ps1`, added 2026-09-18, escalation #1706)
+
+**Stage 3 of the same 5-stage pipeline as §12b-iv above** — given ONE subgroup's member strongs,
+reads every occurrence corpus-wide (no sampling) plus all meaning sources, and synergises the
+similar/different contextual meaning of that subgroup's OWN member strongs against each other.
+Requires the target subgroup already at `cluster_subgroup.status=ready_for_reading` (Stage 2
+complete for its cluster) — the handler refuses otherwise, naming the actual status.
+
+```powershell
+# preview only -- cost estimate, no API call, nothing written. Always preview first.
+iba\app\ps\CharReading.ps1 -ClusterCode M67 -SubgroupCode M67_A_dispositional_idleness
+
+# real run -- ONE LLM call per subgroup (never batched, never the whole cluster). Recorded via
+# recordingpass.py (stage='char-reading'); advances cluster_subgroup.status to ready_for_answer.
+iba\app\ps\CharReading.ps1 -ClusterCode M67 -SubgroupCode M67_A_dispositional_idleness -Live
+```
+
+**What this stage does NOT do:** Stage 1 (`verse-reading`) already answers the per-occurrence
+surface/gloss-divergence question (`M0.5.11`) for every verse — this stage does not re-ask it. Its
+own distinct value is the CROSS-STRONG comparison within one subgroup (tags `tightly-related`/
+`no-direct-connection`), verse-grouping within a single strong's own occurrence set, and any
+morph-driven distinction across a strong's occurrences (a genuine "no distinction found" result is
+recorded too, not silence).
+
+**Per-strong completeness is computed by code, not trusted from the model** — after the write, the
+handler diffs each member strong's real occurrence list against what actually got traced, and
+reports any gap in the run's own outcome message (informational, not blocking).
+
+**Known limitation, deliberate:** does not answer catalogue questions (`question_code` stays null
+for essentially every observation here) — that is Stage 4's (`char-answers`) job, below.
+
+---
+
+## 12b-vii. Cluster-reading pipeline — Stage 4 `char-answers` (`cluster.answer`, `CharAnswer.ps1`, added 2026-09-18, escalation #1706)
+
+**Stage 4 of the same 5-stage pipeline as §12b-iv above** — given one subgroup's member strongs and
+every prior stage's own accumulated observations, answers the catalogue's characteristic-grain
+question battery (52 live questions). Requires the target subgroup already at
+`cluster_subgroup.status=ready_for_answer` (Stage 3 complete for it) — the handler refuses
+otherwise, naming the actual status.
+
+```powershell
+# preview only -- cost estimate, no API call, nothing written. Always preview first.
+iba\app\ps\CharAnswer.ps1 -ClusterCode M67 -SubgroupCode M67_A_dispositional_idleness
+
+# real run -- ONE LLM call per subgroup. Recorded via recordingpass.py (stage='char-answers');
+# advances cluster_subgroup.status to answer_complete.
+iba\app\ps\CharAnswer.ps1 -ClusterCode M67 -SubgroupCode M67_A_dispositional_idleness -Live
+```
+
+**Battery scope, queried live from the catalogue every run, never hardcoded**: every active leaf
+question scoped `Characteristic (HIB behaviour)`/`Characteristic relational`/`The HIB`/`Other
+non-human beings`, excluding `D7.7.1` (already Stage 1's own territory despite the shared scope
+label) and any question whose text depends on the cluster's science-extract file (that wiring is
+not yet decided — a real, still-open follow-on, not part of this stage).
+
+**Multiple slants, not one distilled answer**: where the subgroup's own strongs genuinely point to
+different answers to the same question, each gets its own observation under the same
+`question_code` — a slant grounded in one strong sets `strong` to that code; a slant grounded in
+the subgroup as a whole leaves `strong` null on the observation but requires every citation in
+`occurrences` to carry its own `strong`.
+
+**Cross-family/cluster relevance is explicitly out of scope this build** (`cross_family_or_
+cluster_flags`) — its own tag value isn't chosen yet; that's the synergy stage's (Stage 5, not yet
+built) job.
+
+---
+
 ## 12c. Inner-being narrative — structural check (`BookNarrative-Validate.ps1`, added 2026-07-30)
 
 Narrative writing itself is unmechanised analytical work (no pipeline produces it) — this is a

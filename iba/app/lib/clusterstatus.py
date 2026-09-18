@@ -127,6 +127,149 @@ def advance_after_subgroup_allocation(conn, cluster_code: str) -> dict:
            "advanced": True, "reason": "subgroup allocation complete"}
 
 
+def advance_subgroups_after_allocation(conn, cluster_code: str) -> dict:
+    """The subgroup-grain analogue of `advance_after_subgroup_allocation`, missing since Stage 2
+    shipped 2026-09-17 -- found live building Stage 3 (2026-09-18): `#1690` §3a's own table states
+    the rule plainly ("same shape as §3 item 5's cluster-level rule, one grain down") but nothing
+    ever called it, so every subgroup Stage 2 has ever written (M67's 4, confirmed live) sat at
+    `allocated` indefinitely with no path to `ready_for_reading` at all. Unconditional, single-step,
+    every non-FLAG subgroup for this cluster currently at `allocated` -- mirrors the cluster-level
+    transition exactly (allocation either just fully succeeded or didn't run), no completeness check
+    needed. Idempotent: a subgroup already past `allocated` is left untouched."""
+    now = _now()
+    cur = conn.execute(
+        "UPDATE cluster_subgroup SET status='ready_for_reading', last_updated_date=? "
+        "WHERE cluster_code=? AND status='allocated' AND delete_flagged=0", (now, cluster_code))
+    return {"cluster_code": cluster_code, "advanced_count": cur.rowcount}
+
+
+def require_subgroup_ready_for_reading(conn, cluster_code: str, subgroup_code: str) -> dict:
+    """Hard precondition for `cluster.reading` (process c) -- #1690 §3a / checklist §2 rule 18:
+    the target `cluster_subgroup.status` must be `ready_for_reading`. Returns the subgroup row
+    (needed by the caller for label/core_description/anchor) rather than making the caller re-query
+    it, same shape as `require_ready_for_subgroup_allocation`'s own error discipline."""
+    row = conn.execute(
+        "SELECT id, status, label, core_description, anchor_verse_reference FROM cluster_subgroup "
+        "WHERE cluster_code=? AND subgroup_code=? AND delete_flagged=0",
+        (cluster_code, subgroup_code)).fetchone()
+    if row is None:
+        raise ValueError(f"no live subgroup {subgroup_code!r} found for cluster {cluster_code!r}")
+    if row["status"] != "ready_for_reading":
+        raise ValueError(
+            f"{cluster_code}/{subgroup_code} is at status {row['status']!r}, not "
+            f"'ready_for_reading' -- process (c) refuses to run (#1690 §3a)")
+    return dict(row)
+
+
+def advance_subgroup_after_reading(conn, subgroup_id: int) -> dict:
+    """#1690 §3a: on successful completion of process (c)'s recording-pass write, this subgroup's
+    status advances unconditionally from `ready_for_reading` to `ready_for_answer` -- one-shot,
+    same shape as the cluster-level ready_for_subgroup_allocation -> ready_for_reading transition;
+    no completeness check needed (reading either just fully succeeded for this subgroup or didn't
+    run)."""
+    row = conn.execute(
+        "SELECT cluster_code, subgroup_code, status FROM cluster_subgroup WHERE id=?",
+        (subgroup_id,)).fetchone()
+    if row is None:
+        raise ValueError(f"cluster_subgroup id {subgroup_id!r} not found")
+    current = row["status"]
+    if current != "ready_for_reading":
+        return {"subgroup_id": subgroup_id, "status_before": current, "status_after": current,
+               "advanced": False,
+               "reason": f"subgroup is at {current!r}, not ready_for_reading -- no transition "
+                        f"applies (should be unreachable if the precondition check ran)"}
+    conn.execute("UPDATE cluster_subgroup SET status='ready_for_answer', last_updated_date=? "
+                "WHERE id=?", (_now(), subgroup_id))
+    return {"subgroup_id": subgroup_id, "cluster_code": row["cluster_code"],
+           "subgroup_code": row["subgroup_code"], "status_before": current,
+           "status_after": "ready_for_answer", "advanced": True,
+           "reason": "reading complete for this subgroup"}
+
+
+def require_subgroup_ready_for_answer(conn, cluster_code: str, subgroup_code: str) -> dict:
+    """Hard precondition for `cluster.answer` (process d) -- #1690 §3a / checklist §3 rule 6: the
+    target `cluster_subgroup.status` must be `ready_for_answer`. Same shape as
+    `require_subgroup_ready_for_reading`."""
+    row = conn.execute(
+        "SELECT id, status, label, core_description, anchor_verse_reference FROM cluster_subgroup "
+        "WHERE cluster_code=? AND subgroup_code=? AND delete_flagged=0",
+        (cluster_code, subgroup_code)).fetchone()
+    if row is None:
+        raise ValueError(f"no live subgroup {subgroup_code!r} found for cluster {cluster_code!r}")
+    if row["status"] != "ready_for_answer":
+        raise ValueError(
+            f"{cluster_code}/{subgroup_code} is at status {row['status']!r}, not "
+            f"'ready_for_answer' -- process (d) refuses to run (#1690 §3a)")
+    return dict(row)
+
+
+def advance_subgroup_after_answer(conn, subgroup_id: int) -> dict:
+    """#1690 §3a: on successful completion of process (d)'s recording-pass write, this subgroup's
+    status advances unconditionally from `ready_for_answer` to `answer_complete` -- one-shot, same
+    shape as the reading-stage transition; no completeness check needed."""
+    row = conn.execute(
+        "SELECT cluster_code, subgroup_code, status FROM cluster_subgroup WHERE id=?",
+        (subgroup_id,)).fetchone()
+    if row is None:
+        raise ValueError(f"cluster_subgroup id {subgroup_id!r} not found")
+    current = row["status"]
+    if current != "ready_for_answer":
+        return {"subgroup_id": subgroup_id, "status_before": current, "status_after": current,
+               "advanced": False,
+               "reason": f"subgroup is at {current!r}, not ready_for_answer -- no transition "
+                        f"applies (should be unreachable if the precondition check ran)"}
+    conn.execute("UPDATE cluster_subgroup SET status='answer_complete', last_updated_date=? "
+                "WHERE id=?", (_now(), subgroup_id))
+    return {"subgroup_id": subgroup_id, "cluster_code": row["cluster_code"],
+           "subgroup_code": row["subgroup_code"], "status_before": current,
+           "status_after": "answer_complete", "advanced": True,
+           "reason": "answer complete for this subgroup"}
+
+
+_SUBGROUP_STATUS_ORDINAL = {
+    "allocated": 1, "ready_for_reading": 2, "ready_for_answer": 3, "answer_complete": 4,
+    "completed": 5, "re_read_needed": 6,
+}
+
+
+def recompute_cluster_status_rollup(conn, cluster_code: str) -> dict:
+    """The `ready_for_reading` -> `ready_for_observations` cluster-level rollup, missing since
+    Stage 4 shipped (found live 2026-09-18, researcher's own review of the data: `M67` stayed at
+    `ready_for_reading` despite all 4 subgroups reaching `answer_complete`). `#1690` §3a / `cfg_
+    column` (iba.cluster.status) both state the rule: cluster.status can only progress past
+    ready_for_reading once EVERY live subgroup (excluding the never-progressing FLAG bucket) has
+    itself reached the matching level. Deliberately scoped to ONLY this one transition -- the
+    further ready_for_observations -> ready_for_synthesis step depends on Stage 5 (char-synergy),
+    which is not built and not even fully designed yet (#1695/#1698 still open); building that
+    transition now would be guessing at an undesigned stage's own precondition, not a root-fix of
+    an already-specified rule."""
+    row = conn.execute("SELECT status FROM cluster WHERE cluster_code=?", (cluster_code,)).fetchone()
+    if row is None:
+        raise ValueError(f"cluster {cluster_code!r} not found")
+    current = row[0]
+    if current != "ready_for_reading":
+        return {"cluster_code": cluster_code, "status_before": current, "status_after": current,
+               "advanced": False,
+               "reason": f"cluster is at {current!r}, not ready_for_reading -- no transition "
+                        f"applies (either not there yet, or already past it)"}
+    subgroup_statuses = [r[0] for r in conn.execute(
+        "SELECT status FROM cluster_subgroup WHERE cluster_code=? AND delete_flagged=0 "
+        "AND status IS NOT NULL", (cluster_code,))]  # NULL status = FLAG, permanently excluded
+    if not subgroup_statuses:
+        return {"cluster_code": cluster_code, "status_before": current, "status_after": current,
+               "advanced": False, "reason": "cluster has no live, non-FLAG subgroups yet"}
+    if any(_SUBGROUP_STATUS_ORDINAL.get(s, 0) < _SUBGROUP_STATUS_ORDINAL["answer_complete"]
+          for s in subgroup_statuses):
+        return {"cluster_code": cluster_code, "status_before": current, "status_after": current,
+               "advanced": False,
+               "reason": "not every live subgroup has reached answer_complete yet"}
+    conn.execute("UPDATE cluster SET status='ready_for_observations', status_changed_at=? "
+                "WHERE cluster_code=?", (_now(), cluster_code))
+    return {"cluster_code": cluster_code, "status_before": current,
+           "status_after": "ready_for_observations", "advanced": True,
+           "reason": "every live subgroup has reached answer_complete"}
+
+
 def flag_if_reassigned(cfg, db, conn, cluster_code: str, reason: str) -> dict | None:
     """Call this whenever `cluster_strong` membership changes for `cluster_code`. Per #1697 v5
     (researcher, verbatim: "strongs_reassigned must trigger a warning to the chat. I do not see

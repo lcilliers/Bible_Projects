@@ -146,13 +146,25 @@ def assemble_package(cfg, book: str, book_label: str) -> dict:
 
 def call_api(package: dict) -> dict:
     """One live Messages API call. Returns {"text": str, "input_tokens": int, "output_tokens": int,
-    "cost_usd": float}. Raises ApiCallFailed on a non-2xx response."""
+    "cost_usd": float}. Raises ApiCallFailed on a non-2xx response.
+
+    `thinking` explicitly disabled -- escalation #1717 (2026-09-18), the same fix already applied
+    to `lexicalenrichgenerate.call_api` (found 2026-09-17 building `lexical.meaning`): the Messages
+    API defaults to extended thinking even when `thinking` is omitted, and with `max_output_tokens`
+    sized for the answer alone (the assumption this module's own cost-estimation has always made),
+    the entire budget can be consumed by thinking, leaving 0 tokens for the actual answer -- real
+    money spent for a genuinely empty response. This module's own request shape was structurally
+    identical to the one that actually hit the bug; checked `narrative.usage_log_path` before
+    claiming anything -- the log file doesn't exist at all, confirming `book_narrative_generate`
+    has never actually been run live yet, so there is no past silent-empty-response incident to
+    find either way. Fixed proactively before its first real run, not after a failure."""
     key = _api_key()
     resp = requests.post(
         API_URL,
         headers={"x-api-key": key, "anthropic-version": API_VERSION,
                 "content-type": "application/json"},
         json={"model": package["model"], "max_tokens": package["max_output_tokens"],
+             "thinking": {"type": "disabled"},
              "system": package["instructions"],
              "messages": [{"role": "user", "content": package["content"]}]},
         timeout=600)
@@ -162,6 +174,11 @@ def call_api(package: dict) -> dict:
     text = "".join(b.get("text", "") for b in data.get("content", []) if b.get("type") == "text")
     usage = data.get("usage", {})
     it, ot = usage.get("input_tokens", 0), usage.get("output_tokens", 0)
+    if not text and data.get("stop_reason") == "max_tokens":
+        raise ApiCallFailed(
+            f"response hit max_tokens ({package['max_output_tokens']}) with no text content "
+            f"produced (usage={usage}) -- the answer itself needs more room than this setting "
+            f"currently allows, raise it via configmaint.propose")
     return {"text": text, "input_tokens": it, "output_tokens": ot}
 
 

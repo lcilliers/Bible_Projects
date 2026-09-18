@@ -8,7 +8,9 @@ SELECT id, version, type,state,next_action,next_action_assigned_to, short_descri
 WHERE state not in ('completed','withdraw','closed','supersede');
 --a specific escalation
 SELECT * FROM escalation 
-WHERE id in (1533);
+WHERE id in (1714);
+
+
 --closed escalations
 SELECT id, answered_at, resolution, short_description, type, state FROM escalation 
 WHERE state in ('completed','withdraw','closed','supersede')

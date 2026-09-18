@@ -1,0 +1,95 @@
+-- database: ../../../iba/app/db/iba.db
+
+SELECT * FROM ib_observation;
+
+select * from ib_node;
+
+select * from cluster_subgroup;
+
+select * from cluster;
+
+select * from verse_lexical;
+
+select * from verse;
+
+
+select * from strong;
+
+select 
+c.cluster_code,
+c.description,
+c.short_name,
+s.stepGloss,
+vl.surface,
+s.strongNumber,
+vl.role,
+cs.label,
+cs.core_description,
+node.*,
+v.text,
+obs.id,
+obs.meaning_source,
+obs.obs_text,
+cat.question_code,
+cat.question_text
+from ib_observation obs
+inner join ib_node node on obs.id = node.observation_id
+left join wa_obs_question_catalogue cat 
+on node.question_code = cat.question_code
+left join strong s
+on node.strong = s.strongNumber
+left join cluster c
+on node.cluster_code = c.cluster_code
+left join cluster_subgroup cs
+on node.cluster_subgroup_code= cs.label
+left join verse v
+on node.verse_reference = v.osisId
+left join verse_lexical vl
+on v.id= vl.verse_id;
+
+
+select 
+obs.id,
+obs.meaning_source,
+obs.obs_text,
+obs.tag,
+obs.window,
+obs.stage,
+node.*,
+cat.question_code,
+cat.question_text
+from ib_observation obs
+inner join ib_node node on obs.id = node.observation_id
+left join wa_obs_question_catalogue cat 
+on node.question_code = cat.question_code
+;
+
+select 
+obs.id,
+obs.meaning_source,
+obs.obs_text,
+obs.tag,
+obs.window,
+obs.stage,
+s.strongNumber,
+s.stepGloss,
+vl.surface,
+vl.role,
+v.text,
+node.*,
+cat.question_code,
+cat.question_text
+from ib_observation obs
+inner join ib_node node on obs.id = node.observation_id
+left join wa_obs_question_catalogue cat 
+on node.question_code = cat.question_code
+left join strong s
+on node.strong = s.strongNumber
+left join verse v
+on node.verse_reference = v.osisId
+left join verse_lexical vl
+on v.id= vl.verse_id
+  and vl.strong = node.strong
+  and vl.deleted = 0
+;
+;

@@ -14943,3 +14943,284 @@ real M0.5.4 coverage is unaffected — it still has the substantive answer at `i
 verse-reading count is now 304 (was 305).
 
 **Files:** `iba/app/lib/recordingpass.py`. Escalation #1723.
+
+## 285. Stage 2 (`char-subgroup`) re-run live on `M67` post-reset — the open item carried into this session (2026-09-18, escalation #1706, Developer Mode)
+
+Session-log `SESSION-LOG-20260917-v2.md` closed with Stage 2 execution code built
+(`subgroupgenerate.py`, `handlers/cluster.py:subgroup`, `ClusterSubgroup.ps1`) but **not yet run**
+against `M67` post-reset — the progressive-relational redesign (#1723) had wiped `M67`'s prior
+`stage='char-subgroup'` data along with `stage='verse-reading'` when it reset and redid Stage 1.
+Confirmed live at this session's start before assuming anything: `cluster.status='M67'` was
+`ready_for_subgroup_allocation`, 0 live `cluster_subgroup` rows — matching the session log's own
+"not yet run" note exactly, not stale.
+
+Note for the record: `iba/docs/1706-full-pipeline-build-checklist-v1-20260917.md`'s own Stage 2
+section claims this run already happened ("6 subgroups, 9/9 strongs... `ready_for_reading`") —
+that content predates the `#1723` reset later the same day and was never corrected afterward. Not
+fixed in this entry (a content correction to that doc, not a code change) — flagged here so the
+discrepancy isn't silently carried forward.
+
+**Run, live, real spend**: `ClusterSubgroup.ps1 -ClusterCode M67` previewed first (9 strongs,
+~$0.2214, no call), then `-Live` (real run, $0.2183). Result: **4 subgroups**, 9/9 strongs placed,
+0 FLAG, `cluster.status` → `ready_for_reading`. Subgroups are genuinely meaning-differentiated, not
+a mechanical split: `M67_A_dispositional_idleness` (state of being idle/unemployed),
+`M67_B_dereliction_of_duty` (relational/duty-based neglect, distinct from bare idleness),
+`M67_C_earnest_diligence` (the positive counterpart), `M67_D_administrative_thoroughness` (the
+lone Aramaic/Ezra-decree term, correctly kept separate rather than forced into one of the other
+three). 7 real `char-subgroup` observations recorded with genuine tag diversity
+(`cluster-pole-negative`/`-positive`, `difference-inference` ×3, `nt-coinage`,
+`qualifier-for-term`) — not the old degenerate all-`answered-no-flag` pattern this session's own
+`#1723` work fixed for Stage 1.
+
+**Not done, correctly left open**: Stages 3–5 (`char-reading`/`char-answers`/`char-synergy`) remain
+zero execution code. Stage 3's own build is gated on a real pending researcher judgement call (the
+role-driven-walk enforcement rigidity, `#1704`/`#1705`) — not started here, per
+`decision-points-are-terminal-not-inline`.
+
+**Files:** none changed (execution only, code already existed). **DB:** `cluster_subgroup`/
+`cluster_subgroup_strong` (4 rows / 9 rows, `M67`), `ib_observation` (+7, `stage='char-subgroup'`),
+`cluster.status` (`M67` → `ready_for_reading`). Escalation #1706 (parent), session-log carry-forward
+item 3.
+
+## 286. Role-driven-walk "gate" retired from every doc still citing `#1704`/`#1705` as pending — it was resolved 2026-09-17, three separate documents kept restating it as open (2026-09-18, escalation #1706 v34)
+
+Researcher, verbatim, after this session's own report cited the gate again to justify not starting
+Stage 3: *"when are you going to update the gate on #1704, 1705 it has been completed and ruled a
+while ago, and this gate is continuing to come up, it is no longer relevant."* Checked live before
+touching anything: `#1704` (`completed`, 2026-09-16) and `#1705` (`closed`, 2026-09-15) were never
+the open item — the actual enforcement question (forced structural role-walk vs. question-driven
+guidance) was resolved 2026-09-17 and correctly recorded against `#1706` v32, precisely because
+`#1704`/`#1705` were already closed when the researcher's ruling landed. The recurring problem was
+purely a documentation one: three files kept citing the closed question as if it were still open,
+and each new session (including this one, in its own prior chat turn) read one of them and repeated
+the stale framing instead of checking the actual resolution.
+
+**Closed for good, not just re-asserted**: confirmed live that `#1723`'s catalogue question `M0.6.5`
+("What role does this characteristic play in relation to the OTHER M-code characteristics present
+in this verse?") IS the "expand the questions to explore the impact of the roles" instruction,
+already built, registered, and exercised in both live `M67` runs (`verse-reading` 304 observations,
+`char-subgroup` 7 observations) — this also closes the one narrow question
+`1706-role-driven-walk-consolidated-status-v1-20260917.md` itself had left open (whether "expand the
+questions" was carried out via `#1712` or separately — it was `#1723`, not `#1712`).
+
+**Files corrected in place, not re-versioned** (per standing review-mode convention):
+`1706-role-driven-walk-consolidated-status-v1-20260917.md` (§5 header note added, items 1–2 marked
+resolved), `1706-full-pipeline-build-checklist-v1-20260917.md` (Stage 3 section + honest-summary
+line both corrected — no longer cite `#1704`/`#1705` as a gate). Escalation `#1706` updated (v34)
+with the closure, explicitly asking any future reader not to re-cite this.
+
+## 287. Stage 3 (`char-reading`) built and validated live end-to-end on `M67` — the pipeline's 3rd of 5 stages (2026-09-18, escalation #1706, Developer Mode)
+
+Design: `#1682` §2 (process spec) + `ib-observation-governing-rules-checklist-v1-20260916.md` §2
+(18 rules, "design substantially closed" — confirmed genuinely unblocked this session, entry #286).
+**Real, previously-missing gap fixed on the way**: `#1690` §3a's own subgroup-status table names
+`allocated`→`ready_for_reading` as an unconditional transition ("same shape as §3 item 5's
+cluster-level rule, one grain down") — nothing had ever built it. Confirmed live: all 4 of `M67`'s
+Stage-2 subgroups sat at `allocated` since 2026-09-17 with no path forward. Root-fixed in Stage 2's
+own handler (`clusterstatus.advance_subgroups_after_allocation`, called from
+`handlers/cluster.py:subgroup()` in the same unit of work as the existing cluster-level advance),
+not patched as a one-off on `M67` alone; `M67`'s own 4 subgroups backfilled to `ready_for_reading`
+so this session's build was actually testable.
+
+**Scope, deliberately not a re-implementation of the full heavy 2026-09-11 spec**: Stage 1
+(`verse-reading`) already answers `M0.1`/`M0.5` (including the `M0.5.11` per-occurrence surface/
+gloss-divergence question) for every occurrence — Stage 3 does not re-ask those. Its own distinct
+value: given one subgroup's member strongs, their FULL corpus-wide occurrence lists (no sampling,
+checklist rule 3), and Stage 1/2's own observations as grounding, synergise the similar/different
+meaning of the subgroup's own strongs against EACH OTHER — the comparison Stage 1's single-verse
+view structurally cannot make. Uses the already-registered `tightly-related`/`no-direct-connection`
+tags for exactly this.
+
+**Per-strong completeness (checklist rule 10) is code-computed, not LLM-self-reported** — a
+deliberate improvement on the original 2026-09-11 spec, which had the LLM produce its own
+`strong_checks` block. `charreadinggenerate.compute_strong_checks` diffs each member strong's real
+occurrence list against what `ib_node` actually traced after the write, consistent with the
+established never-trust-the-model discipline (`question_code`/`tag`/`obs_text` validation, same
+family of fix).
+
+**One real, transient failure found and correctly NOT over-fixed**: the very first live call
+(escalation #1726, auto-raised, `self_correctable`) failed with a mid-content JSON syntax error.
+Checked before assuming anything: only 2,478 of a 40,000-token ceiling were used (rules out
+truncation — the same root cause as `#1715`/`#1725` did not apply here). An identical retry
+succeeded clean. Closed as a confirmed one-off LLM formatting slip, no code change — building a
+JSON-repair mechanism on a single unreproduced glitch would itself have been the
+`simple-steps-not-engineered-designs` violation.
+
+**Run, live, real spend, all 4 of `M67`'s subgroups** (`CharReading.ps1`, preview-then-live each
+time): `M67_A_dispositional_idleness` $0.0971, `M67_B_dereliction_of_duty` $0.0618,
+`M67_C_earnest_diligence` $0.1367, `M67_D_administrative_thoroughness` $0.0562 — $0.3518 total.
+**26 observations** (`difference-inference` 12, `tightly-related` 9, `no-direct-connection` 5),
+full per-strong traceability confirmed on every subgroup (0 missing-verse gaps), all 4 subgroups →
+`cluster_subgroup.status='ready_for_answer'`. Quality-checked, not just run: correctly identified
+`G0691`/`G0692` as transparent cognates (`tightly-related`) while `H8220` (different language
+family, no shared root) was correctly kept `no-direct-connection`; a genuine "morph-actively-read,
+no distinction found" result was recorded for `G0692` (checklist rule 9's own required negative
+case), not silence.
+
+**Files:** `iba/app/lib/charreadinggenerate.py` (new), `iba/app/lib/clusterstatus.py`
+(`advance_subgroups_after_allocation`, `require_subgroup_ready_for_reading`,
+`advance_subgroup_after_reading`), `iba/app/handlers/cluster.py` (`subgroup()` now also advances
+subgroup status; new `reading()` handler), `iba/app/ps/CharReading.ps1` (new),
+`iba/app/migration/register_cluster_reading_step_v1_20260918.py` (new work-package step, 2 write
+grants, 12 method rules — rule 14's forced-walk explicitly NOT encoded, recorded as retired).
+Escalation #1706 (parent), #1726 (self-correctable, closed).
+
+**Not done, correctly left open**: Stage 4 (`char-answers`) and Stage 5 (`char-synergy`) remain
+zero execution code — Stage 4's design is substantially closed (`#1682` §4A), Stage 5's is not
+(`#1695`/`#1698` still open).
+
+## 288. Stage 4 (`char-answers`) built and validated live end-to-end on `M67` — the pipeline's 4th of 5 stages (2026-09-18, escalation #1706, Developer Mode)
+
+Design: `#1682` §4A (process spec) + `ib-observation-governing-rules-checklist-v1-20260916.md` §3
+(7 rules). **Battery scope deliberately narrowed to 52 live questions** (queried live, never
+hardcoded): the catalogue's 4 "answered across the family's evidence as a whole" scope values,
+minus `D7.7.1` (already Stage 1's own territory despite carrying the same scope label — a real,
+noted discrepancy, not silently resolved either way) and the 4 questions whose text explicitly
+depends on the cluster's science-extract file (`D9.1.1`/`D9.2.1`/`D11.2.1`/`D12.1.1` — wiring "not
+decided or built" per the checklist's own Stage 4 status, `BUILD.md` #287). Rule 5
+(`cross_family_or_cluster_flags`) deliberately NOT built this round — its own tag value is still
+unchosen; inventing one here would bake a design decision into a code build rather than apply one
+already made.
+
+**Real gap fixed on the way, in `recordingpass.py` itself (used by all 4 live stages)**: a
+whole-subgroup NEGATIVE finding ("no evidence of X across this subgroup's material") legitimately
+cites no verse occurrence at all — its own evidence is the accumulated Stage 1/2/3 material already
+given as input, not a specific citation. The existing single-writer code treated "the model gave 0
+occurrences" identically to "the model gave occurrences that failed to resolve" (a real
+data-quality problem) — both silently discarded the WHOLE observation. Confirmed live, first-ever
+`char-answers` run: 10 of 52 questions were answered by the model but silently dropped this way
+(`M67_A`, only 44/52 landed). Root-fixed by distinguishing the two causes (`record_one_observation`,
+`recordingpass.py`) — harmless for Stages 1–3, which have never sent an empty `occurrences` list in
+practice. `M67_A` re-run clean after the fix: all 52/52 landed (98 real observations, several with
+a self-corrected representative citation the model hadn't offered the first time).
+
+**Second real gap fixed in the same module, same session**: `record_one_observation` computed its
+same/broaden/new dedup refs and wrote every `ib_node.strong` from the OUTER `strong` variable, never
+the per-occurrence one — invisible for Stages 1–3 (every occurrence in their observations always
+belonged to the same strong as the observation itself) but load-bearing for Stage 4's own new
+`strong: null`-with-per-occurrence-strong shape (a subgroup-wide slant citing several different
+member strongs' occurrences). Would have silently written `ib_node.strong=NULL` for every citation
+regardless of which real strong it belonged to. Fixed before the first live call, not discovered
+the hard way.
+
+**Multiple-slants mechanism confirmed working via the EXISTING recording-pass mechanism, no new
+code needed**: `D2.1.1` (M67_A) correctly produced 4 distinct per-strong slants under the same
+question_code (recordingpass's own same/broaden/new similarity logic naturally expresses "multiple
+slants" as separate observation rows sharing a question_code — exactly what `#1682` §4A's spec
+asked for, without a bespoke "slants" JSON structure).
+
+**Run, live, real spend, all 4 of `M67`'s subgroups** (`CharAnswer.ps1`, preview-then-live each
+time, `M67_A` run twice — once before the fix, once clean after): `M67_A` $0.3095 (partial, 44/52,
+superseded) + $0.3362 (clean, 52/52) + `M67_B` $0.2691 + `M67_C` $0.3304 + `M67_D` $0.2347 —
+$1.48 total. **259 real observations, all 52/52 battery questions answered on every subgroup**
+(completeness computed by code via `ib_node` strong-citation, not LLM-self-reported, same
+discipline as Stage 3).
+
+**Files:** `iba/app/lib/charanswergenerate.py` (new), `iba/app/lib/recordingpass.py` (2 real fixes:
+occurrence-less negative findings no longer discarded; per-occurrence `strong` now correctly
+carried through to `ib_node`), `iba/app/lib/clusterstatus.py`
+(`require_subgroup_ready_for_answer`, `advance_subgroup_after_answer`),
+`iba/app/lib/charreadinggenerate.py` (`compute_strong_checks` parameterized by `source_stage`,
+reused rather than duplicated), `iba/app/handlers/cluster.py` (new `answer()` handler),
+`iba/app/ps/CharAnswer.ps1` (new), `iba/app/migration/register_cluster_answer_step_v1_20260918.py`
+(new step, 2 write grants, 7 method rules),
+`iba/app/migration/register_needs_adjacent_verse_context_tag_v1_20260918.py` (a THIRD real gap,
+found before Stage 4's build even started: this tag was named by every stage's own prompt/method
+rules since Stage 1 but never actually registered in `cfg_enum` — 0 live rows, 0 evidence it had
+ever bitten a real run, fixed before it could). Escalation #1706 (parent).
+
+**Not done, correctly left open**: Stage 5 (`char-synergy`) remains zero execution code and is not
+yet fully designed (`#1695`/`#1698` still open) — the only stage of the 5 in that position now.
+
+## 289. Three real column/status gaps found by the researcher's own direct data review, root-fixed (2026-09-18, escalation #1706)
+
+Researcher, reviewing `char-answers` output directly: *"I read some of the observations from
+char-answers and they are really good. I did notice a few columns that need your attention:
+subgroup in node, window in observations, subgroup in observations, status in cluster."* Checked
+each live before touching anything, per `cfg_column`'s own registered `use` text — two were real
+write-path bugs, one is a genuinely stale rollup, one is a content gap, not a code fix.
+
+**1/2. `ib_observation.cluster_subgroup_id` / `ib_node.cluster_subgroup_code` — real,
+already-registered `cfg_column` entries `recordingpass.py` had NEVER populated, for ANY of the 4
+live stages.** Root-fixed: `record_one_observation`/`record_batch` now take optional `subgroup_id`/
+`subgroup_code` params, threaded through to both INSERTs. Stage 3/4's own handlers pass their own
+already-known subgroup explicitly (no lookup or inference needed — they're scoped to exactly one
+subgroup per run by construction). Stage 1 (`verse-reading`, pre-subgroup) and Stage 2
+(`char-subgroup`, "process (b)'s own cluster-level observations") correctly stay NULL, matching
+both columns' own `cfg_column.use` text exactly — not a guess, the text already said so.
+**Backfilled** the 285 `ib_observation`/594 `ib_node` rows written before this fix
+(`backfill_subgroup_columns_char_reading_answers_v1_20260918.py`, all 285/594 resolved cleanly via
+each row's own `strong` → `cluster_subgroup_strong`, including Stage 4's null-`strong`
+subgroup-wide rows via their own `ib_node` children).
+
+**3. `cluster.status` — genuinely stale, not a bug in this session's own new code, a missing
+transition.** `M67` sat at `ready_for_reading` despite all 4 subgroups reaching `answer_complete` —
+the `ready_for_reading`→`ready_for_observations` cluster-level rollup (`#1690` §3a / `cluster`'s
+own `cfg_column`) was correctly deferred during Stage 3/4's build ("once reading/answer are built"
+— they now are). Built `clusterstatus.recompute_cluster_status_rollup` (deliberately scoped to only
+this one transition — the next one depends on Stage 5, not built and not even fully designed),
+wired into Stage 4's own handler, run once for `M67` to clear the backlog: `ready_for_reading` →
+`ready_for_observations`.
+
+**4. `window` — checked, NOT a code bug, flagged not fixed.** `ib_observation.window`'s own
+`cfg_column.use` text confirms it's correctly deriving from `wa_obs_question_catalogue.window` at
+write time exactly as designed. The real gap is upstream: the catalogue itself only has `window`
+populated for ~4 of its ~150 active questions (the ones Stage 1 answers) — every Stage 2/3/4
+observation is NULL because its own question was never assigned a `meaning`/`action-impact`/
+`relational` category. Assigning that to 50+ questions is a real categorization judgement per
+question, not a mechanical fix — flagged for the researcher's own call, not silently invented.
+
+**Files:** `iba/app/lib/recordingpass.py` (the 2 real fixes), `iba/app/lib/clusterstatus.py`
+(`recompute_cluster_status_rollup`), `iba/app/handlers/cluster.py` (both call sites updated),
+`iba/app/migration/backfill_subgroup_columns_char_reading_answers_v1_20260918.py` (new, run live).
+Escalation #1706 (parent).
+
+## 290. The `window` design closed — researcher clarified its purpose, 8 new windows designed for the char-level catalogue dimensions, applied and backfilled (2026-09-18, escalation #1706)
+
+Researcher, correcting entry #289's own "not this build's call" deferral: *"the object of the
+window on observations is to show from which angle we are observing the data to make the
+observation... the 4 windows already in place came out the lexical read phase, and we have not yet
+designed the windows for the char observations... derive the windows for the questions from the
+component_title, but name them such to align the objective of the window column."* This IS
+Claude's call once the purpose is stated plainly — the earlier deferral was correct given the
+ambiguity at the time (a bare categorisation with no stated objective), not correct once the
+researcher named what the column is actually FOR.
+
+**Read all 99 active catalogue questions in full** (component_title + question_text, not skimmed)
+and grouped by actual analytical angle, not mechanically 1:1 per component (the existing `meaning`
+window already spans 2 different components — M0.1/M0.5 — because both share one lexical-identity
+angle; the same principle extends the 3 existing windows and adds 8 new ones):
+
+- `meaning` (existing, extended) — M0.1/M0.2/M0.3/M0.4/M0.5 — the term's own lexical/definitional
+  identity.
+- `literary` (new) — `M0.6.1`-`M0.6.4` only — the verse's own literary/rhetorical structure,
+  kept deliberately separate from `M0.6.5` (`relational`, already assigned at Stage 1 build time) —
+  same component_title, genuinely different angle, not collapsed just because the title matches.
+- `relational` (existing, extended) — every question whose real angle is "how does this
+  characteristic relate to another PARTY" (another characteristic, a human, God, another person
+  giving/receiving, a spirit being) — `D4.1`, `D5.1`-`D5.3`, `D7.1`-`D7.4`, `D7.6`, `X0.1`-`X0.5`,
+  `M0.6.5`.
+- `action-impact` (existing, extended) — `D7.7` + `D10.1`-`D10.6` — "what does the characteristic
+  DO/produce," narrow (operation-word-plus-party) and broad (purpose/response/effect/
+  transformation/mechanism-of-change) grain of the same angle.
+- `cognitive` (new) — `D1.1` — perception/belief.
+- `affective` (new) — `D2.1` — felt quality.
+- `operational` (new) — `D3.1`/`D3.2` — mechanical how/conditions of operation.
+- `constitutional` (new) — `D6.1`-`D6.3` — where in spirit/soul/body.
+- `origin` (new) — `D7.5` + `D11.1`/`D11.2` — genesis/created-vs-fallen nature (a different angle
+  from `relational` — asks about where it comes FROM, not an ongoing relation).
+- `scientific` (new) — `D9.1`/`D9.2`/`D12.1` — the "per the cluster's science extract" angle.
+- `faculty` (new) — `F0.1` — which human faculties engage.
+
+**Applied, live, all 3 steps in one migration**
+(`design_and_backfill_char_windows_v1_20260918.py`): (1) `wa_obs_question_catalogue.window` set
+for 83 of the 99 active questions (the other 16 already had one, from the lexical-read phase) —
+**0 active catalogue rows now have a NULL window**; (2) 8 new `cfg_enum` values registered for
+`ib_observation.window`; (3) backfilled all 259 existing `ib_observation` rows with a
+`question_code` — 259/259 resolved cleanly, 0 unresolved. `char-reading`/`char-subgroup`
+observations correctly remain `window=NULL` (most have no `question_code` at all — nothing for
+`window` to derive from, per its own `cfg_column.use` text; not a gap).
+
+**Files:** `iba/app/migration/design_and_backfill_char_windows_v1_20260918.py` (new, run live).
+No code changes — `recordingpass.py`'s own `_window_for` derivation logic was already correct
+(entry #289), only the catalogue's own content was missing. Escalation #1706 (parent).

@@ -12,8 +12,8 @@ import datetime
 import pathlib
 
 from .base import Ctx, Outcome, fail, ok, escalate
-from ..lib import clusterstatus, escalation as esc, lexicalscope, recordingpass, reportkit
-from ..lib import strongreconcile, subgroupgenerate
+from ..lib import charanswergenerate, charreadinggenerate, clusterstatus, escalation as esc
+from ..lib import lexicalscope, recordingpass, reportkit, strongreconcile, subgroupgenerate
 
 
 def _now() -> str:
@@ -254,6 +254,7 @@ def subgroup(ctx: Ctx) -> Outcome:
     conn.commit()
 
     status_result = clusterstatus.advance_after_subgroup_allocation(conn, cluster_code)
+    subgroup_status_result = clusterstatus.advance_subgroups_after_allocation(conn, cluster_code)
     conn.commit()
 
     anchor_note = (f", {len(written['unresolved_anchor_verses'])} unresolved anchor verse(s)"
@@ -269,6 +270,221 @@ def subgroup(ctx: Ctx) -> Outcome:
         if obs_summary["unresolved_occurrence_count"] else "")
     return ok(f"{cluster_code}: {written['subgroups']} subgroup(s), {written['members']} member(s) "
              f"({written['flag_members']} FLAG), ${real_cost:.4f} spent{anchor_note}"
-             f"{obs_note}{unresolved_obs_note}; cluster.status -> {status_result['status_after']}",
+             f"{obs_note}{unresolved_obs_note}; cluster.status -> {status_result['status_after']}, "
+             f"{subgroup_status_result['advanced_count']} subgroup(s) -> ready_for_reading",
              preview=False, cluster_code=cluster_code, written=written,
-             observations=obs_summary, status_result=status_result)
+             observations=obs_summary, status_result=status_result,
+             subgroup_status_result=subgroup_status_result)
+
+
+# ── reading (process c, the `char-reading` stage, #1682/#1706 Phase F stage 3) ──────────────────
+#
+# Per-SUBGROUP, ONE LLM call, never the whole cluster (#1682 §2 rule 1) -- given one subgroup's
+# member strongs, their full corpus-wide occurrence lists, all meaning sources, and Stage 1/2's own
+# already-captured observations as grounding. `-Preview` (default true) assembles the payload and
+# reports the cost estimate WITHOUT calling the API or writing anything, same discipline as every
+# other stage. `-Preview:$false` runs for real: one live API call, `recordingpass.record_batch`
+# writes stage='char-reading' observations, per-strong completeness is computed by CODE (not
+# trusted from the model), then `cluster_subgroup.status` advances to `ready_for_answer`.
+
+def reading(ctx: Ctx) -> Outcome:
+    _may(ctx, "cluster.reading", "ib_observation")
+    _may(ctx, "cluster.reading", "ib_node")
+
+    cluster_code = ctx.params.get("ClusterCode")
+    subgroup_code = ctx.params.get("SubgroupCode")
+    if not cluster_code or not subgroup_code:
+        return fail("bad-selector", "-ClusterCode and -SubgroupCode are both required")
+    preview_raw = ctx.params.get("Preview", "true")
+    preview = str(preview_raw).strip().lower() not in ("false", "0", "no")
+
+    conn = ctx.db.conn
+    try:
+        subgroup_row = clusterstatus.require_subgroup_ready_for_reading(
+            conn, cluster_code, subgroup_code)
+    except ValueError as e:
+        return fail("not-ready", str(e))
+    subgroup_row["subgroup_code"] = subgroup_code
+
+    member_strongs = [r["strong"] for r in conn.execute(
+        "SELECT strong FROM cluster_subgroup_strong WHERE cluster_subgroup_id=? "
+        "AND delete_flagged=0", (subgroup_row["id"],))]
+    if not member_strongs:
+        return fail("no-strongs", f"{cluster_code}/{subgroup_code} resolved to 0 member strongs")
+
+    package = charreadinggenerate.assemble_subgroup_package(
+        ctx, cluster_code, subgroup_row, member_strongs)
+    if package["over_cap_strongs"]:
+        return fail("occurrence-cap-exceeded",
+                   f"{cluster_code}/{subgroup_code}: {package['over_cap_strongs']} strong(s) "
+                   f"exceed the per-strong occurrence cap -- raise the cap or split the subgroup "
+                   f"via configmaint.propose, never silently sample")
+    max_cost = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
+    if package["est_cost_usd"] > max_cost:
+        return fail("cost-cap-exceeded",
+                   f"{cluster_code}/{subgroup_code} ({package['strong_count']} strongs, "
+                   f"{package['occurrence_count']} occurrences) estimated cost "
+                   f"${package['est_cost_usd']:.2f} exceeds lexical.llm_max_cost_per_batch "
+                   f"(${max_cost:.2f}) -- raise the cap via configmaint.propose")
+
+    if preview:
+        return ok(f"PREVIEW {cluster_code}/{subgroup_code}: {package['strong_count']} strong(s), "
+                 f"{package['occurrence_count']} occurrence(s), estimated "
+                 f"${package['est_cost_usd']:.4f} -- no API call made, nothing written. Re-run "
+                 f"with -Preview:$false to execute for real.",
+                 preview=True, cluster_code=cluster_code, subgroup_code=subgroup_code,
+                 strong_count=package["strong_count"], occurrence_count=package["occurrence_count"],
+                 est_cost_usd=package["est_cost_usd"])
+
+    try:
+        result = charreadinggenerate.call_api(ctx, package)
+    except charreadinggenerate.ApiKeyMissing as e:
+        return fail("api-key-missing", str(e))
+    except charreadinggenerate.ApiCallFailed as e:
+        return fail("api-error", str(e))
+    rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+    rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+    real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                result["output_tokens"] / 1_000_000 * rate_out)
+    charreadinggenerate.log_usage(ctx.cfg, ctx.run_id, "1/1", package["model"],
+                                  result["input_tokens"], result["output_tokens"], real_cost)
+
+    try:
+        parsed = charreadinggenerate.parse_response(result["text"])
+    except charreadinggenerate.BadModelResponse as e:
+        return fail("bad-model-response", str(e))
+
+    obs_summary = recordingpass.record_batch(
+        conn, cluster_code, "char-reading", parsed, source_json_serial=1,
+        subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code)
+    conn.commit()
+
+    strong_checks = charreadinggenerate.compute_strong_checks(conn, member_strongs)
+    incomplete = [c for c in strong_checks if c["missing_verses"]]
+
+    status_result = clusterstatus.advance_subgroup_after_reading(conn, subgroup_row["id"])
+    conn.commit()
+
+    obs_note = (f", observations {obs_summary['by_action']}" if obs_summary["by_action"] else
+               ", 0 observations")
+    unresolved_obs_note = (
+        f", {obs_summary['unresolved_occurrence_count']} unresolved observation occurrence(s): "
+        f"{'; '.join(obs_summary['unresolved_detail'][:5])}"
+        f"{' ...' if obs_summary['unresolved_occurrence_count'] > 5 else ''}"
+        if obs_summary["unresolved_occurrence_count"] else "")
+    completeness_note = (
+        f", {len(incomplete)} strong(s) with untraced occurrences: "
+        f"{[(c['strong'], c['missing_verses'][:3]) for c in incomplete]}"
+        if incomplete else ", full per-strong traceability confirmed")
+    return ok(f"{cluster_code}/{subgroup_code}: ${real_cost:.4f} spent{obs_note}"
+             f"{unresolved_obs_note}{completeness_note}; cluster_subgroup.status -> "
+             f"{status_result['status_after']}",
+             preview=False, cluster_code=cluster_code, subgroup_code=subgroup_code,
+             observations=obs_summary, strong_checks=strong_checks, status_result=status_result)
+
+
+# ── answer (process d, the `char-answers` stage, #1682 §4A / #1706 Phase F stage 4) ─────────────
+#
+# Per-SUBGROUP, ONE LLM call, never the whole cluster (checklist §3 rule 1) -- answers the
+# catalogue's characteristic-grain question battery against the subgroup's accumulated evidence
+# (Stage 1/2/3 observations + full occurrence data). `-Preview` (default true) assembles the
+# payload and reports the cost estimate WITHOUT calling the API or writing anything, same
+# discipline as every other stage. `-Preview:$false` runs for real: one live API call,
+# `recordingpass.record_batch` writes stage='char-answers' observations, per-question completeness
+# is computed by CODE, then `cluster_subgroup.status` advances to `answer_complete`.
+
+def answer(ctx: Ctx) -> Outcome:
+    _may(ctx, "cluster.answer", "ib_observation")
+    _may(ctx, "cluster.answer", "ib_node")
+
+    cluster_code = ctx.params.get("ClusterCode")
+    subgroup_code = ctx.params.get("SubgroupCode")
+    if not cluster_code or not subgroup_code:
+        return fail("bad-selector", "-ClusterCode and -SubgroupCode are both required")
+    preview_raw = ctx.params.get("Preview", "true")
+    preview = str(preview_raw).strip().lower() not in ("false", "0", "no")
+
+    conn = ctx.db.conn
+    try:
+        subgroup_row = clusterstatus.require_subgroup_ready_for_answer(
+            conn, cluster_code, subgroup_code)
+    except ValueError as e:
+        return fail("not-ready", str(e))
+    subgroup_row["subgroup_code"] = subgroup_code
+
+    member_strongs = [r["strong"] for r in conn.execute(
+        "SELECT strong FROM cluster_subgroup_strong WHERE cluster_subgroup_id=? "
+        "AND delete_flagged=0", (subgroup_row["id"],))]
+    if not member_strongs:
+        return fail("no-strongs", f"{cluster_code}/{subgroup_code} resolved to 0 member strongs")
+
+    package = charanswergenerate.assemble_subgroup_package(
+        ctx, cluster_code, subgroup_row, member_strongs)
+    max_cost = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
+    if package["est_cost_usd"] > max_cost:
+        return fail("cost-cap-exceeded",
+                   f"{cluster_code}/{subgroup_code} ({package['strong_count']} strongs, "
+                   f"{package['question_count']} questions) estimated cost "
+                   f"${package['est_cost_usd']:.2f} exceeds lexical.llm_max_cost_per_batch "
+                   f"(${max_cost:.2f}) -- raise the cap via configmaint.propose")
+
+    if preview:
+        return ok(f"PREVIEW {cluster_code}/{subgroup_code}: {package['strong_count']} strong(s), "
+                 f"{package['question_count']} question(s), estimated "
+                 f"${package['est_cost_usd']:.4f} -- no API call made, nothing written. Re-run "
+                 f"with -Preview:$false to execute for real.",
+                 preview=True, cluster_code=cluster_code, subgroup_code=subgroup_code,
+                 strong_count=package["strong_count"], question_count=package["question_count"],
+                 est_cost_usd=package["est_cost_usd"])
+
+    try:
+        result = charanswergenerate.call_api(ctx, package)
+    except charanswergenerate.ApiKeyMissing as e:
+        return fail("api-key-missing", str(e))
+    except charanswergenerate.ApiCallFailed as e:
+        return fail("api-error", str(e))
+    rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+    rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+    real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                result["output_tokens"] / 1_000_000 * rate_out)
+    charanswergenerate.log_usage(ctx.cfg, ctx.run_id, "1/1", package["model"],
+                                 result["input_tokens"], result["output_tokens"], real_cost)
+
+    try:
+        parsed = charanswergenerate.parse_response(result["text"])
+    except charanswergenerate.BadModelResponse as e:
+        return fail("bad-model-response", str(e))
+
+    obs_summary = recordingpass.record_batch(
+        conn, cluster_code, "char-answers", parsed, source_json_serial=1,
+        subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code)
+    conn.commit()
+
+    question_codes = [q["question_code"] for q in charanswergenerate.battery_questions(conn)]
+    question_checks = charanswergenerate.compute_question_checks(
+        conn, cluster_code, member_strongs, question_codes)
+    unanswered = [c["question_code"] for c in question_checks if not c["answered"]]
+
+    status_result = clusterstatus.advance_subgroup_after_answer(conn, subgroup_row["id"])
+    cluster_rollup = clusterstatus.recompute_cluster_status_rollup(conn, cluster_code)
+    conn.commit()
+
+    obs_note = (f", observations {obs_summary['by_action']}" if obs_summary["by_action"] else
+               ", 0 observations")
+    unresolved_obs_note = (
+        f", {obs_summary['unresolved_occurrence_count']} unresolved observation occurrence(s): "
+        f"{'; '.join(obs_summary['unresolved_detail'][:5])}"
+        f"{' ...' if obs_summary['unresolved_occurrence_count'] > 5 else ''}"
+        if obs_summary["unresolved_occurrence_count"] else "")
+    rollup_note = (f", cluster.status -> {cluster_rollup['status_after']}"
+                  if cluster_rollup["advanced"] else "")
+    completeness_note = (
+        f", {len(unanswered)} of {len(question_codes)} battery question(s) unanswered: "
+        f"{unanswered[:10]}{' ...' if len(unanswered) > 10 else ''}"
+        if unanswered else f", all {len(question_codes)} battery question(s) answered")
+    return ok(f"{cluster_code}/{subgroup_code}: ${real_cost:.4f} spent{obs_note}"
+             f"{unresolved_obs_note}{completeness_note}; cluster_subgroup.status -> "
+             f"{status_result['status_after']}{rollup_note}",
+             preview=False, cluster_code=cluster_code, subgroup_code=subgroup_code,
+             observations=obs_summary, question_checks=question_checks,
+             status_result=status_result, cluster_rollup=cluster_rollup)
