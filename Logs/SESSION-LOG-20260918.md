@@ -157,4 +157,34 @@ content, not asserted as beyond question — the researcher can rename/regroup a
 
 ## Git state — confirmed, not asserted
 
-*(filled in after commit — see follow-up log entry)*
+26 files staged and committed (`database/bible_research.db` and `backups/` excluded per standing
+rule — neither present this session), pushed to `origin/main`:
+
+```
+$ git add -A
+$ git commit -m "session 20260918: ..."
+[main fc6d597d] session 20260918: cluster-reading pipeline Stages 3-4 built and validated on M67
+(char-reading/char-answers), six infra gaps root-fixed (subgroup-status transition, two
+recordingpass.py write-path bugs, unregistered tag, subgroup columns never populated, stale
+cluster.status rollup), 11-window analytical-angle taxonomy designed and applied catalogue-wide,
+escalation series reconciled and prepared for approval (Stage 5 synergy left open), session log
+ 26 files changed, 4538 insertions(+), 64 deletions(-)
+
+$ git push origin main
+To https://github.com/lcilliers/Bible_Projects.git
+   e9734e51..fc6d597d  main -> main
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+
+$ git log -1 --format="%H %ci %s"
+fc6d597d4fe09ff3de5e0a726fe51dd1593f2e86 2026-09-18 05:57:01 +0100 session 20260918: ...
+```
+
+**Note on scope:** this commit includes the researcher's own manual DB export
+(`outputs/csv/verse-reading-observations v2 20260918.csv`) and SQLite scratch-query files
+(`scripts/SQLite/IBA_DB/*.sqlite3-query`) — staged per the standing rule to commit the full
+outstanding working tree at close, not filtered to "written by Claude this session only." Both
+read before staging, confirmed benign (plain data export, plain SQL scratch queries).
