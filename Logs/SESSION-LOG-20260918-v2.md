@@ -112,6 +112,23 @@ documented `needs_followup` flow). Attempted the apply re-run for each:
   approved, blocked on the apply step, what's needed) and reassigned to the researcher, per the
   escalation protocol's second path for an item that can't be progressed directly.
 
+## 5. All 15 blocked fixes applied (researcher unblocked, later same session)
+
+The researcher re-approved all 15 and handed them back to Claude (each escalation's history shows
+a fresh `v5, "noted", assigned_to=Claude` after my §4 reassignment) — the permission block had been
+lifted. Re-ran the apply for each: the first (#1731) succeeded immediately, confirming the block
+was gone; the remaining 14 were run as a background batch (`Config-Maintenance.ps1 -Step Propose
+-RunId <id>` per escalation, closed with `-NeedsFollowup 0` immediately after each successful
+apply) — slow (report regeneration on every step) but ran to completion, exit code 0. A second
+`configmaint.validate` run afterward confirmed the fix: **0 hard coherence errors** — the run now
+passes straight through to the advisory-findings stage, surfacing only the pre-existing backlog
+already documented in `GOVERNANCE.md` §77 (raised automatically as escalation #1753, correctly
+assigned to the Researcher — a genuine judgement call across several unrelated categories, not
+something for Claude to decide unilaterally).
+
+All 16 `cfg_*` proposals from this session are now `state='completed'`, `needs_claude_followup=0`.
+Nothing from this session remains assigned to Claude.
+
 ## Escalations touched
 
 - **#1727** — resolved directly (`self_correctable`; parent tracking item, its children carry the
@@ -121,11 +138,13 @@ documented `needs_followup` flow). Attempted the apply re-run for each:
   name, titles over 60 chars, a raw un-JSON-encoded value, and a PowerShell array-splatting bug in
   my own driver script, confirmed broken via a minimal repro and worked around with explicit named
   parameters).
-- **#1752** — resolved directly: raised, approved by the researcher mid-session, applied live,
-  closed.
-- **#1731–#1738, #1740, #1744–#1749** (15 items) — raised, approved by the researcher mid-session,
-  apply attempted and consistently blocked by the harness's own permission classifier, commented
-  and reassigned to the researcher with the exact blocker and what's needed to unblock it.
+- **#1752, #1731–#1738, #1740, #1744–#1749** (16 items) — raised, approved by the researcher
+  mid-session, applied live, closed. 15 of the 16 needed a second round after the harness's
+  permission classifier blocked the first apply attempt (§4); the researcher re-approved and the
+  block lifted (§5).
+- **#1753** — auto-raised by the post-fix `configmaint.validate` run's advisory-findings pass;
+  correctly assigned to the Researcher already (a genuine cross-category judgement call, not
+  actioned further this session).
 
 ## Files created or changed
 
@@ -136,9 +155,12 @@ documented `needs_followup` flow). Attempted the apply re-run for each:
   53, 54, 59, 60, 61, 71, 72, 74, 76.
 - `iba/app/db/iba.db` (not git-tracked) — 6 `cfg_utility` rows added (`charanswergenerate`,
   `charreadinggenerate`, `clusterstatus`, `recordingpass`, `subgroupgenerate`,
-  `versereadinggenerate`); `governance.prose_canonical_authority` (`cfg_setting`) applied live; the
-  other 15 `cfg_*` proposals approved by the researcher but blocked at the apply step by the
-  harness's permission classifier — commented and reassigned back (§4).
+  `versereadinggenerate`); all 16 `cfg_*` proposals from escalation #1727's batch applied live and
+  closed (§5) — 8 `cfg_column.fk` syntax fixes, 2 `cfg_table` registrations (`cluster_subgroup`/
+  `ib_observation`), 1 `cfg_column` registration (`wa_obs_question_catalogue.window`), 4
+  `cfg_write_grant` deactivations (`lexical.run`, 3× `lexicon.parse`), 1 `cfg_setting` correction
+  (`governance.prose_canonical_authority`). `configmaint.validate` re-run confirmed: 0 hard
+  coherence errors (was 18).
 - `Workflow/Programme/programme_prose/wa-programme-prose-extract-20260918.{json,md}` — regenerated
   extract.
 - `Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-{3,4,6}-*-20260918.md` —
@@ -167,19 +189,17 @@ explicit authorization for this specific task, not escalated individually, but t
 content is left at `status='draft'` for the researcher's own review rather than self-approved to
 `approved`.
 
-**Left for the researcher, not decided here:** the 15 `cfg_*` proposals now blocked purely on the
-apply step (§4) — approved already, just need either the researcher's own hand on the keyboard or
-a permission grant; whether the 12 prose sections (drafted, not yet reviewed) read as intended; the
-pre-existing backlog named in `GOVERNANCE.md` §77 but not fixed.
+**Left for the researcher, not decided here:** whether the 12 prose sections (drafted, not yet
+reviewed) read as intended; the pre-existing backlog named in `GOVERNANCE.md` §77 and now also
+raised formally as escalation #1753 (8 categories, cross-cutting, not fixed this session).
 
 ## Open items for the next session
 
-- **15 escalations approved but blocked at apply** (#1731–#1738, #1740, #1744–#1749) — the decision
-  is already made; what's needed is one of: (a) the researcher runs the exact
-  `Config-Maintenance.ps1 -Step Propose -RunId <run id>` command recorded on each escalation
-  directly, or (b) a Bash/PowerShell permission rule is added that allows Claude to do it. Either
-  way, once applied, close each with `Escalation.ps1 -Action Update -Id <id> -NeedsFollowup 0
-  -AnsweredBy Claude -Resolution "..."` (no `-NextAction` needed).
+- **Escalation #1753** — the post-fix advisory-findings review (8 categories: orphan configs,
+  stale `filled_by`, unregistered scripts, zero-config-density utilities, hand-rolled versioning,
+  PS worksheet drift, unenforced behaviour rules, escalation-file naming, hedge phrases, SQL
+  scratch-file naming) — genuinely the researcher's call on which of these are worth fixing versus
+  accepted as known state.
 - 12 prose sections across chapters 3/4/6 at `status='draft'` — reviewable via the regenerated
   extract or by re-running `Prose.ps1 -Step ExportChapter` per chapter; `Prose.ps1 -Step SetStatus`
   is the mechanism to mark them reviewed once read.

@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-18T08:24:24Z |
+| generated_at | 2026-09-18T08:15:36Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -80,7 +80,7 @@ _(none)_
 37. verse_lexical_note.deleted filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-38. GOVERNANCE.md was last modified 2026-09-18T05:24:38Z, before the newest applied cfg_change_detail row (2026-09-18T08:23:02Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+38. GOVERNANCE.md was last modified 2026-09-18T05:24:38Z, before the newest applied cfg_change_detail row (2026-09-18T08:15:36Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (0) — iba/app/lib/*.py with no cfg_utility row:
 _(none)_
@@ -239,11 +239,11 @@ _(none)_
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
 
-**Inactive configs** (419 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 359 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 9 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **51 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.content-index-rebuild/content_index.rebuild, cfg_step.lexicon-parse/lexicon.parse, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_step.verse-lexical/lexical.enrich, cfg_step.verse-lexical/lexical.run, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.content-index-rebuild, cfg_work_package.verse-analysis-report, cfg_write_grant.configmaint.propose -> cfg_change_detail, cfg_write_grant.configmaint.propose -> cfg_change_log, cfg_write_grant.configmaint.propose -> cfg_lexical_code_class, cfg_write_grant.escalation -> word_registry, cfg_write_grant.lexical.enrich -> verse_lexical_note, cfg_write_grant.lexical.run -> verse_lexical, cfg_write_grant.lexical.run -> verse_lexical_note, cfg_write_grant.lexicon.parse -> strong_lsj_parsed, cfg_write_grant.lexicon.parse -> strong_meaning_parsed, cfg_write_grant.lexicon.parse -> strong_mounce_parsed, cfg_write_grant.run -> escalation, cfg_report_section.spine.check/discoverability, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_next_action=approve, cfg_enum.escalation_next_action=approved, cfg_enum.escalation_next_action=hold, cfg_enum.escalation_next_action=noted, cfg_enum.escalation_next_action=ready_for_approval, cfg_enum.escalation_next_action=reject, cfg_enum.escalation_next_action=review, cfg_enum.escalation_next_action=revise, cfg_enum.escalation_requirement_check_kind=requires_prior_ready_for_approval_if_decision_required, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=re-assign, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop, cfg_enum.ib_observation.tag=cross-cluster-significance, cfg_enum.ib_observation.tag=instance-meaning, cfg_enum.prose_section_type_lifecycle_tag=source, cfg_enum.prose_section_type_lifecycle_tag=v1, cfg_enum.prose_section_type_lifecycle_tag=v2, cfg_enum.prose_section_type_lifecycle_tag=v3.
+**Inactive configs** (415 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 359 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 9 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **47 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.content-index-rebuild/content_index.rebuild, cfg_step.lexicon-parse/lexicon.parse, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_step.verse-lexical/lexical.enrich, cfg_step.verse-lexical/lexical.run, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.content-index-rebuild, cfg_work_package.verse-analysis-report, cfg_write_grant.configmaint.propose -> cfg_change_detail, cfg_write_grant.configmaint.propose -> cfg_change_log, cfg_write_grant.configmaint.propose -> cfg_lexical_code_class, cfg_write_grant.escalation -> word_registry, cfg_write_grant.lexical.enrich -> verse_lexical_note, cfg_write_grant.lexical.run -> verse_lexical_note, cfg_write_grant.run -> escalation, cfg_report_section.spine.check/discoverability, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_next_action=approve, cfg_enum.escalation_next_action=approved, cfg_enum.escalation_next_action=hold, cfg_enum.escalation_next_action=noted, cfg_enum.escalation_next_action=ready_for_approval, cfg_enum.escalation_next_action=reject, cfg_enum.escalation_next_action=review, cfg_enum.escalation_next_action=revise, cfg_enum.escalation_requirement_check_kind=requires_prior_ready_for_approval_if_decision_required, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=re-assign, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop, cfg_enum.ib_observation.tag=cross-cluster-significance, cfg_enum.ib_observation.tag=instance-meaning, cfg_enum.prose_section_type_lifecycle_tag=source, cfg_enum.prose_section_type_lifecycle_tag=v1, cfg_enum.prose_section_type_lifecycle_tag=v2, cfg_enum.prose_section_type_lifecycle_tag=v3.
 - **cfg_setting** (8): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.load_report_path`, `candidate.quality_report_path`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`, `validation.show_candidate`
 - **cfg_step** (17): `book-narrative-generate/report.book_narrative_generate`, `book-narrative-validate/report.book_narrative_validate`, `candidate-curation/candidate.curate`, `candidate-curation/candidate.load`, `candidate-quality/candidate.validate`, `chapter-generate/report.passage_debate`, `chapter-generate/report.verse_span_meaning`, `content-index-rebuild/content_index.rebuild`, `lexicon-parse/lexicon.parse`, `passage-debate-report/report.passage_debate`, `passage-debate-sync/passage.debate_sync`, `seed-candidate-report/report.seed_candidate`, `set-candidates/candidate.seed`, `set-candidates/candidate.set`, `verse-analysis-report/report.verse_span_meaning`, `verse-lexical/lexical.enrich`, `verse-lexical/lexical.run`
 - **cfg_work_package** (11): `book-narrative-generate`, `book-narrative-validate`, `candidate-curation`, `candidate-quality`, `chapter-generate`, `content-index-rebuild`, `passage-debate-report`, `passage-debate-sync`, `seed-candidate-report`, `set-candidates`, `verse-analysis-report`
-- **cfg_write_grant** (19): `candidate.curate -> candidate_seed`, `candidate.load -> candidate_seed`, `candidate.seed -> candidate_seed`, `candidate.seed -> lemma_inventory`, `candidate.set -> span_candidate`, `configmaint.propose -> cfg_change_detail`, `configmaint.propose -> cfg_change_log`, `configmaint.propose -> cfg_lexical_code_class`, `escalation -> word_registry`, `lexical.enrich -> passage`, `lexical.enrich -> verse_lexical_note`, `lexical.run -> verse_lexical`, `lexical.run -> verse_lexical_note`, `lexicon.parse -> strong_lsj_parsed`, `lexicon.parse -> strong_meaning_parsed`, `lexicon.parse -> strong_mounce_parsed`, `migration -> candidate_seed`, `report.debate -> passage`, `run -> escalation`
+- **cfg_write_grant** (15): `candidate.curate -> candidate_seed`, `candidate.load -> candidate_seed`, `candidate.seed -> candidate_seed`, `candidate.seed -> lemma_inventory`, `candidate.set -> span_candidate`, `configmaint.propose -> cfg_change_detail`, `configmaint.propose -> cfg_change_log`, `configmaint.propose -> cfg_lexical_code_class`, `escalation -> word_registry`, `lexical.enrich -> passage`, `lexical.enrich -> verse_lexical_note`, `lexical.run -> verse_lexical_note`, `migration -> candidate_seed`, `report.debate -> passage`, `run -> escalation`
 - **cfg_report** (3): `candidate.load`, `candidate.validate`, `report.seed_candidate`
 - **cfg_report_section** (12): `candidate.load/duplicates`, `candidate.load/exceptions`, `candidate.validate/gloss`, `candidate.validate/orphan_lemmas`, `candidate.validate/seed_tag`, `candidate.validate/span_tag`, `report.seed_candidate/distribution`, `report.seed_candidate/over_time`, `report.seed_candidate/summary`, `report.seed_candidate/top_lemmas`, `spine.check/discoverability`, `validation.book/candidate`
 - **cfg_report_csv_table** (6): `candidate.load/candidate_seed`, `candidate.validate/candidate_seed`, `candidate.validate/lemma_inventory`, `candidate.validate/span_candidate`, `report.seed_candidate/candidate_seed`, `validation.book/candidate_seed`
@@ -2424,7 +2424,7 @@ _one row per grounding element an ib_observation cites (strong/verse/subgroup/cl
 | column | type | pk | notnull | unique | fk | use | source/filled_by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | INTEGER | ✓ | ✓ |  |  | surrogate PK, assigned by the recording pass |  |
-| observation_id | INTEGER |  | ✓ |  | ib_observation.id | which observation this grounding element belongs to |  |
+| observation_id | INTEGER |  | ✓ |  | ib_observation(id) | which observation this grounding element belongs to |  |
 | cluster_code | TEXT |  | ✓ |  |  | a VALUE, not necessarily a copy of the parent observation's own cluster -- THE cluster this row references. One row per cluster when an observation touches multiple clusters. |  |
 | cluster_subgroup_code | TEXT |  |  |  |  | was family_key -- THE subgroup this row references (usually the observation's own, but can differ) |  |
 | strong | TEXT |  |  |  |  | denormalized copy |  |
@@ -2432,7 +2432,7 @@ _one row per grounding element an ib_observation cites (strong/verse/subgroup/cl
 | surface | TEXT |  |  |  |  | was span_surface -- matches span.surface |  |
 | morph_code | TEXT |  |  |  |  | was span_morph -- matches span.morph_code |  |
 | question_code | TEXT |  |  |  |  | catalogue-question grounding -- not yet an enforced FK, restore once #1696 lands the catalogue into iba.db |  |
-| traced_observation_id | INTEGER |  |  |  | ib_observation.id | set when grounded in ANOTHER observation instead of a verse |  |
+| traced_observation_id | INTEGER |  |  |  | ib_observation(id) | set when grounded in ANOTHER observation instead of a verse |  |
 | source_stage | TEXT |  | ✓ |  |  | reading \| answer \| synthesis |  |
 | seq | INTEGER |  | ✓ |  |  | a plain per-observation ordinal -- ties together every ib_node row sharing one observation_id, in reading order when meaningful. UNIQUE(observation_id, seq) is the real natural key. |  |
 | created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
@@ -2443,7 +2443,6 @@ _one row per catalogue question, the analytic-event question bank for the cluste
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | data_mechanism | TEXT |  |  |  |  | What data actually answers this question, checked live against the DB, not asserted: a role-cluster tag (cluster.cluster_code T2-T15), a specific table/cluster (e.g. M47), an existing reading-stage tag (e.g. surface-gloss-divergence), a per-cluster science-extract file (Workflow/Sciences/science_files/), or direct LLM reading of base verse/lexical text with no special tag needed. |  |
 | dimension | TEXT |  |  |  |  | One of the 12 goal-derived dimensions (D1-D12, escalation #1712) this question serves, or M0 (lexical/textual evidence, feeds the 12 but is not itself one), X0 (cross-characteristic synthesis, synergy-stage), or a plus-joined list (e.g. D1+D2+D3+D4) for a deliberately consolidated question. Derived from the programme prose definition (Ch.1), independently cross-checked via a blind second derivation, 2026-09-17. |  |
-| window |  |  |  |  |  | 11-window analytical-angle taxonomy tag for this catalogue question (e.g. relational, action-impact, origin, meaning, operational, constitutional, literary, faculty, cognitive, affective) -- applied catalogue-wide 2026-09-18. |  |
 | obs_id | INTEGER | ✓ | ✓ |  |  | surrogate PK, fresh sequence (not copied from source) |  |
 | question_code | TEXT |  | ✓ |  |  | e.g. T1.1.1 -- unique, the catalogue's own stable key |  |
 | section | TEXT |  | ✓ |  |  | the T-tier section heading |  |
@@ -2463,47 +2462,6 @@ _one row per catalogue question, the analytic-event question bank for the cluste
 | prompt_seq | INTEGER |  |  |  |  | ordering within a component |  |
 | source | TEXT |  |  |  |  | descriptive provenance, not an invented code |  |
 | last_modified | TEXT |  |  |  |  | ISO-8601 UTC |  |
-
-### cluster_subgroup
-__ — Cluster-reading subgroup: a curated group of Strong-numbered codes within one cluster (M-code), the unit of per-subgroup reading/answering in the cluster-reading pipeline (Stage 3, cluster.subgroup step). Built 2026-09 for the synergy-build pipeline; a differently-shaped legacy table of the same name predates it in bible_research.db (M-code cluster model) -- same name, different table, different database.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| id | INTEGER | ✓ | ✓ |  |  | surrogate PK, assigned by the recording pass (#1693) |  |
-| cluster_code | TEXT |  | ✓ |  | cluster.cluster_code | required, singular -- a family is structurally one-cluster-only by construction |  |
-| subgroup_code | TEXT |  | ✓ |  |  | the family's stable code, unique per (cluster_code, subgroup_code) -- expected to repeat as 'FLAG' across clusters, never otherwise |  |
-| label | TEXT |  | ✓ |  |  | short human title |  |
-| core_description | TEXT |  |  |  |  | one sentence on the family's shared commonality |  |
-| anchor_verse_reference | TEXT |  |  |  |  | ADDED 2026-09-16 (#1526). One representative verse per subgroup, selected by process (b)'s own LLM session as the verse that best describes the subgroup's shared characteristic (researcher, verbatim). Resolved fresh against iba.db.verse.reference, same convention as ib_node.verse_reference; written in the SAME DB update as the rest of the subgroup row (#1693's recording pass), never a separate pass or left null-then-backfilled. |  |
-| sort_order | INTEGER |  |  |  |  | display order |  |
-| status | TEXT |  |  |  |  | subgroup-level lifecycle, cfg_enum-governed (cluster_subgroup.status, #1690 SS3a). Distinct from cluster.status (#1697) -- coarser grain, separate enum. NULL for the FLAG subgroup (never enters this lifecycle). |  |
-| version | TEXT |  |  |  |  | reused as-is from the legacy table convention |  |
-| source | TEXT |  |  |  |  | descriptive provenance text, not an invented code |  |
-| notes | TEXT |  |  |  |  | free text |  |
-| delete_flagged | INTEGER |  |  |  |  | soft-delete |  |
-| created_at | TEXT |  |  |  |  | ISO-8601 UTC |  |
-| last_updated_date | TEXT |  |  |  |  | ISO-8601 UTC |  |
-
-### ib_observation
-__ — Cluster-reading pipeline observation: one typed finding produced while reading/answering a cluster_subgroup (stage, tag, question_code, obs_text, meaning_source), the unit ib_node traces back to. Built 2026-09 for the synergy-build pipeline; a differently-shaped legacy table of the same name predates it in bible_research.db -- same name, different table, different database.
-| column | type | pk | notnull | unique | fk | use | source/filled_by |
-| --- | --- | --- | --- | --- | --- | --- | --- |
-| id | INTEGER | ✓ | ✓ |  |  | surrogate PK, assigned by the recording pass, never the LLM session |  |
-| cluster_code | TEXT |  |  |  | cluster.cluster_code | NULL only for stage=synthesis (cross-cluster; the actual cluster(s) referenced are recorded via ib_node rows instead, one per cluster) -- required for every other stage |  |
-| cluster_subgroup_id | INTEGER |  |  |  | cluster_subgroup.id | NULL for stage=synthesis and process (b)'s own cluster-level observations (both above single-subgroup scope) |  |
-| stage | TEXT |  | ✓ |  |  | cfg_enum-governed (ib_observation.stage): verse-reading (pre-subgroup Layer 2, #1711) \| char-subgroup (subgroup/family formation, process b) \| char-reading (process c) \| char-answers (process d) \| char-synergy (process e, cross-cluster). Renamed 2026-09-17, escalation #1706, completing the naming scheme -- every value now names an activity at a grain (verse vs. characteristic), subgroup formation included. |  |
-| tag | TEXT |  | ✓ |  |  | enum, cfg_enum-governed (ib_observation.tag) -- shared across all stages, not partitioned per stage; most tags apply wherever the relevant condition arises (e.g. data-error, cross-cluster-significance, could-not-resolve are not reading-exclusive). Corrected 2026-09-17, escalation #1706: previously read 'stage-specific enum', which the researcher identified as the wrong model -- ib_observation is one unified record set populated across stages, not fragmented enum groups per stage. |  |
-| strong | TEXT |  |  |  |  | the strong this claim is grounded in |  |
-| question_code | TEXT |  |  |  |  | answer/verse_meaning stages -- not yet an enforced FK; restore once the catalogue migration (#1696) lands wa_obs_question_catalogue into iba.db |  |
-| window | TEXT |  |  |  |  | The analytical angle this row looks through -- meaning / action-impact / relational (cfg_enum ib_observation.window). Populated FROM wa_obs_question_catalogue.window at write time (recordingpass.py), never invented ad hoc. Redefined #1723, 2026-09-17 -- was a 4-value pipeline-stage enum (#1691) that duplicated `stage`. |  |
-| obs_text | TEXT |  | ✓ |  |  | self-standing claim text, no join required |  |
-| meaning_source | TEXT |  |  |  |  | which of the 3 meaning tables/columns (strong_meaning_tree, strong_lexicon.lsj, strong_lexicon.mounce) an observation drew its data from -- any meaning-reading stage (verse_meaning and reading both read all 3 as complementary evidence), not reading-only. Corrected 2026-09-17, escalation #1706: previously read 'reading stage only', the same stage-scoping mistake corrected for `tag`. |  |
-| status | TEXT |  |  |  |  | provisional\|corroborated\|superseded -- synthesis stage only |  |
-| supersedes_observation_id | INTEGER |  |  |  | ib_observation.id | synthesis stage only, self-referencing, the append-only supersedes chain |  |
-| stable_key | TEXT |  |  |  |  | the generating JSON file's own name |  |
-| revisit_note | TEXT |  |  |  |  | synthesis stage only |  |
-| source_json_serial | INTEGER |  |  |  |  | the LLM session's own local numbering within its JSON, distinct from id |  |
-| created_at | TEXT |  | ✓ |  |  | ISO-8601 UTC |  |
-| updated_at | TEXT |  |  |  |  | set whenever obs_text is broadened in place |  |
 
 <a id="11-enums"></a>
 ## 11. Enums
