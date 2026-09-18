@@ -1,0 +1,177 @@
+# Prose Edit — Programme — Chapter 3
+
+<!-- Edit only the prose body below each chapter heading. Do not change markers. -->
+<!-- This file becomes permanent provenance once imported (its archived path is -->
+<!-- recorded as record_change_log.change_source, escalation #836) -- do not delete -->
+<!-- by hand; the import step archives it automatically on success. -->
+<!-- PROSE_EXPORT_SECTION_IDS: 16,69,18,1040,20,21 -->
+
+<!-- PROSE_SECTION_ID: 16 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_traceability -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_CHAPTER: Research approach -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_SECTION_TITLE: Traceability and evidential warrant -->
+<!-- PROSE_SORT_ORDER: 16 -->
+<!-- PROSE_VERSION: 106 -->
+
+## Traceability and evidential warrant
+
+The programme records findings and it records hypotheses; the two are not the same. A finding is a claim that can be traced back to a specific verse record, term entry, lexical source, correlation signal, or extract field in the database. A claim that cannot be traced that way is a hypothesis. Hypotheses are labelled as such or discarded. A hypothesis is upgraded to a finding when subsequent evidence supports it on its own terms; when that happens, the hypothesis-form language is replaced with the evidence-grounded statement rather than left in place with the evidence tacked on.
+
+The traceability requirement is the programme's working definition of evidential warrant. It governs every analytical output — verse-context classifications, dimensional placements, per-word answers in the standing catalogue, the per-word written studies, and the cross-registry syntheses that read across them. The standing of a claim in the programme's record is a function of whether the data supports it, and the data that supports it is specifiable: a verse, a term, a lexicon entry, a flag, a cross-reference, an extract field. Where the support is specifiable, the claim is a finding. Where it is not, the claim is a hypothesis.
+
+Between finding and hypothesis sits a third category: the **inferential**. Where a claim is analytically plausible or theologically reasonable but is not directly supported by data in the current extract, it is labelled inferential. Inferential claims are retained in the record because the work benefits from visible reasoning, but they are not presented as confirmed. An inferential label is an accurate description of the evidence state; it is not a softening of the claim. An inferential reading may later be supported by evidence and become a finding, or be left as inferential, or be discarded. What it does not do is quietly become a finding without the supporting evidence.
+
+The verse leads. All analytical work begins with what the verse says, not with a category, a tradition, or a prior interpretation. Dimensions, groupings, and classifications emerge from the verse evidence; the verse is never bent to fit a pre-existing category. This holds at every phase. Verse Context groups are formed from what the verses engage. Dimensions are assigned from what the groups evidence. Session B findings are produced from the verse, term, and lexical data held in the database. A classification that cannot be grounded in at least one verse in a registry's corpus is not a classification the programme uses for that registry.
+
+The relevance filter that admits a verse into a word's analytical corpus operates at term level, not at verse-theme level. A verse is in the corpus because the original-language term is present in it in a use that either directly engages the inner being or is implicated in an inner-being characteristic. A term present in a verse that plays no role in any inner-being dynamic — purely syntactic, purely locational — does not pass. This is the same discipline that admits a word to the registry: lexical presence in an inner-being use, not interpretive fit.
+
+The current state of the database, queried live, is the authoritative data source for analytical work. Prior session outputs — earlier drafts, analytical briefs, prior extracts taken before the latest live query — are reference material. Where a prior output conflicts with what the database holds now, the database is correct and the prior output requires correction. This rule prevents the subtle displacement by which an earlier analytical framing becomes the working source in place of the data it was drawn from.
+
+Database state is verified, not assumed. Before any operation whose outcome depends on DB state — row counts, field values, flag settings, the presence or absence of a patch — the state is checked. Memory of a previous session's state is not current state. "Recent" is not "current." A check that costs little prevents the class of errors where the fix is harder than the original operation would have been. **Every finding is substantiated by data — no guessing, no assumptions, no made-up results.**
+
+---
+
+<!-- PROSE_SECTION_ID: 69 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_two_ai -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_CHAPTER: Research approach -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_SECTION_TITLE: The two-AI division of responsibility -->
+<!-- PROSE_SORT_ORDER: 17 -->
+<!-- PROSE_VERSION: 1242 -->
+
+## The two-AI division of responsibility
+
+The programme no longer runs on two separate AI agents handing work to each other through a batch artefact. Claude Code is the one working agent — it investigates, proposes, builds, and operates the database directly, in the same live conversation the researcher directs it in. Where a task genuinely needs substantial generated prose beyond what direct authorship in that conversation covers — the book-by-book inner-being narrative, most prominently — Claude Code calls the Anthropic Messages API directly (`report.book_narrative_generate`, model `claude-sonnet-5`) rather than handing off to a separate persona. That call is itself governed: a pre-call cost estimate against `narrative.generate_max_cost` refuses outright rather than pausing for approval when a book would exceed it, every real call's tokens and cost are logged to an on-disk usage ledger, and the returned narrative is structurally validated (`report.book_narrative_validate`) before it is treated as complete.
+
+The researcher's role has not diminished with the two-agent split gone — it has moved from reviewing a batch artefact after the fact to deciding things as they arise, in the conversation itself. Two mechanisms carry this: the `escalation` table (Chapter 5) is where any genuine judgement call, discovered anomaly, or open question is raised the moment it surfaces, tracked through `raised` → (Claude prepares, investigates, or builds a proposal) → `ready_for_approval` → the researcher's own `approved`/`reject`/`revise` decision; and `Config-Maintenance.ps1 -Step Propose` (Chapter 5) is the equivalent gate specifically for `cfg_*` rule changes — coherence-checked automatically, then paused for the same explicit decision. Design or build work is never closed by Claude Code alone; only a genuinely mechanical correction against an already-approved design is (`resolution_kind = self_correctable`), and that distinction is itself a standing rule, not a judgement Claude Code is trusted to apply silently — a violation of it, and the fix, are both part of this programme's own recorded history (escalations #920/#921).
+
+Patches and directives remain the two channels by which a change actually reaches `bible_research.db` (Chapter 6): Claude Code drafts and applies them, the researcher reviews before a live apply where review is warranted, and every application is a distinct, auditable, reversible step from the work that produced it. Nothing in the current model routes analytical content through a separate authored artefact the way the retired obslog pipeline did — the conversation, the escalation record, and the patch itself are the record now.
+
+---
+
+<!-- PROSE_SECTION_ID: 18 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_session_continuity -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_CHAPTER: Research approach -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_SECTION_TITLE: Session continuity and memory discipline -->
+<!-- PROSE_SORT_ORDER: 18 -->
+<!-- PROSE_VERSION: 107 -->
+
+## Session continuity and memory discipline
+
+The programme's analytical memory lives in the database, across both `iba.db` and `bible_research.db` (Chapter 4). The base-data and process-control state, the cluster-reading pipeline's observations, the findings, the cross-registry pointers, and the programme-level prose that describes the whole — all of these are held in the database. The database is where the programme's findings, interpretations, and analytical output are kept. It is not a storage layer beneath the research; it is the research's memory.
+
+Claude Code does not live inside the database. It is an analytical and operational instrument applied to snapshots — slices of the corpus loaded into the current working context, and live queries run directly against both databases within the same conversation. At any moment of thinking, Claude Code sees only what has been loaded or queried: the files in the current session, the live query results pulled for the current question, the config and governance documents bearing on the current instruction. The database continues to hold the authoritative record whether Claude Code is looking at it or not. Framing the right question against the right table for a given task is itself a research act — the shape of the query determines the shape of what Claude Code can say.
+
+Claude Code's available memory arrives in several layers, and they are not equivalent. The **immediate chat context** carries the current conversation — verbatim but bounded; earlier content is summarised as the window fills. A **persistent memory system** (`memory/`, mirrored to NAS and to git per Chapter 5's backup discipline) carries facts, feedback, and project state deliberately written across sessions — a pointer to what has been decided or found, kept current by being updated or removed when it goes stale, not assumed correct by default. **Live database queries**, run directly in the session, are authoritative over any memory of prior state — memory of a previous session's state is not current state, and a check that costs little prevents the class of error where the fix is harder than the original operation would have been. **Training** is general knowledge: Hebrew, Greek, biblical studies, methodology, software engineering. Training is pattern, not record; it does not substitute for reading the database. Where analytical precision matters, the discipline is to read the authoritative source rather than rely on what a summary layer says about it.
+
+"Collective learning" does not cross users or projects. Each conversation Claude Code holds is isolated from every other conversation held with any other user and from any other project in this user's workspace. What can feel like accumulated collective insight is retrieval from this programme's own recorded history, pattern-matching from training, or in-context reasoning over what has been loaded. It is not a shared pool of knowledge about the subject built up across users. Stating this plainly keeps the work honest: the programme's findings are the programme's findings, traceable to the evidence this programme has gathered.
+
+The session discipline that reaches across the boundaries between sessions runs on three mechanisms, not a working-paper/handoff-document pair. **`Logs/SESSION-LOG-*.md`** is the closing record, required at session end: a one-line scope summary; every escalation touched, by id, with its outcome; every file or deliverable created or changed, with its path; which decisions were the researcher's own versus a `self_correctable` fix Claude closed directly; open items carried into the next session; and confirmation of the git state the log's own completion triggers (`governance.session_log_dir`, `governance.session_log_required_content`, `governance.session_log_triggers_commit` — Chapter 5). **The `escalation` table** is the continuous record while a session runs: every genuine judgement call, discovered anomaly, or open question is raised the moment it surfaces, not batched for the session log to summarise after the fact (Chapter 5). **`BUILD.md`** is the running build history for everything under `iba/app/**`, updated in the same unit of work as the code change it describes (`governance.build_md_on_code_change`). Between them, nothing substantive exists only in chat or only in a session that has since closed.
+
+At **pass close** — the boundary at which a phase of work completes — items requiring database persistence are written through the mechanism the target database uses: a `cfg_*` change through `Config-Maintenance.ps1 -Step Propose`, a `bible_research.db` content change through a patch or directive, both described in full in Chapters 4 and 5. A live re-query confirming the write is the source of truth for the next step, not a remembered extract.
+
+Database state is queried fresh, not assumed. Between turns, state held earlier in the conversation is not assumed to be still current; where an operation depends on state that may have changed, a fresh query is run before the operation proceeds.
+
+Prose written to the database is written to survive storage. The sub-section of prose produced in one session will be read and built on in another, possibly with a different snapshot loaded. To survive that transition, the prose is self-contained — readable without the session that produced it; scoped — clear about what it refers to (registry, cluster, cluster_subgroup, or programme-wide); and grounded — clear about the evidence it rests on. Prose that only makes sense inside its session of origin is fragile under this model. The database carries interpretation as well as evidence, and interpretation held in the database survives session boundaries the way evidence does.
+
+---
+
+<!-- PROSE_SECTION_ID: 1040 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_tools -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_CHAPTER: Research approach -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_SECTION_TITLE: Tools and their roles -->
+<!-- PROSE_SORT_ORDER: 19 -->
+<!-- PROSE_VERSION: 1040 -->
+
+## Tools and their roles
+
+The programme runs on a small set of tools, each with a defined role. Over time, and as the programme continued to wrestle with consistency and repeatability the tool set migrated from a range of scripts, tools and instruction sets to the concept of a integrated Inner Being Application. This IBA App is the result a complete rebuild of the database and all its dependencies. The IBA App is described in more detail in subsequent sections.
+
+In principle the initial script and instructions, migrated to the IBA App allows the research to operate on text evidence held in a structured record, interrogated by two AI agents under researcher direction. The tools are the instruments through which this work is performed.
+
+**STEP Bible** is the source of biblical-language data. For each word in the registry, STEP provides the Hebrew and Greek terms that carry the word's sense, the full set of verses in which those terms occur, and the lexicon data for every term. STEP is consumed at Session A, where the per-word dataset is assembled, and again during continuous-discovery extension of the registry — when retrieval surfaces a related original-language term that meets the inner-being definition but was not on the list, the term is added.
+
+**VSCode with Claude Code** is the operational environment and the single working agent (§"The two-AI division of responsibility" above). It runs inside the editor, in the same conversation the researcher directs: it reads the verse evidence, runs the cluster-reading pipeline's stages, executes SQL against both databases, authors and applies patches and directives, proposes and — once approved — applies `cfg_*` changes, and authors the programme's prose. The combination is both the execution surface and the audit surface: every database operation takes place in a tool the researcher can observe directly, and every consequential write is either escalation-gated or logged to an audit table (`cfg_change_detail`, `debate_change_detail`, `record_change_log`) as Chapters 4 and 5 describe.
+
+**IBA App** is the control system that lets standard operations be performed consistently, with minimal deviation over time, instead of re-negotiated by hand each session. It is what Claude Code runs inside the VSCode editor to perform pre-designed, config-governed operations — the `cfg_*` store described in Chapter 4, the `configmaint`/`escalation` mechanisms described in Chapter 5.
+
+**The SQLite database** holds the corpus. Components — terms, verses, classifications, dimensions, groups, registry entries, cross-references — live in it. Prose — programme narrative, per-word studies, cross-registry syntheses — lives in it under the same schema. It is a single analytical memory carrying both the evidence and the interpretation built on the evidence. Every finding the programme records is held here; an extract drawn from it is the working source for each analytical pass.  Two databases are currently in operation: bible_research.db is the first database. With the advent of the IBA App, the iba.db was created. The base data layer (from STEP to verse lexical) is fully migrated from bible_research.db to iba.db.
+
+**Markdown and JSON** are the working file formats. Descriptive content — instruction documents, the observations log, the session log, draft prose, governance documents — is written in markdown. Structured content — patches, directives, extracts, schema documentation, the global rules extract, reference files — is written in JSON. Both formats are plain text, diff-able, and auditable; a reviewer can open any file and read it without proprietary tooling. Word processors and PDFs are produced only when the researcher requests them as a deliverable.
+
+**The instruction corpus, then and now.** Initially the programme's process control ran on a series of instruction documents, one per phase of the work — Session A, Verse Context, Dimension Review, Session B, Session C, Session D — each setting out what is done, in what order, to what standard. The many iterations of, and differences and omissions across, those instructions is what led to the IBA App: process control moved from prose documents interpreted afresh each session to `cfg_*` rows a live check can read and enforce (Chapters 4 and 5). Chapter 6 catalogues, phase by phase, which of the old instruction documents still describe something live today and which describe a stage with no current process running under it — that catalogue, not this section, is the current authority on the instruction corpus's live state.
+
+**Programme prose held in the database** is the mechanism through which the research is articulated and, eventually, published — this section, and this whole chapter, is written through it (Chapter 4's own sub-section on the prose store). Historically, prose was produced and captured at each successive phase of a per-word pipeline: the extracted STEP data at Session A, a readiness extract at Session B Readiness, the standing catalogue's answers at Session B Analysis, a reader-facing study at Session C, and cross-cluster synthesis at Session D. As Chapter 6 records, most of those per-word stages have no live process running today — the programme's live analytical work now runs through the book-by-book debate pipeline and the cluster-reading pipeline described in Chapter 4, not through the old per-word chain. What has not changed is the storage principle: every order of prose the programme produces, whichever mechanism produced it, is held in the same database under the same schema, so that every session has a consistent, queryable self-description and evidentiary record to draw on.
+
+**The standing catalogue of questions** is the programme's analytical instrument, and it is live today in a different shape than the one that first built it. `wa_obs_question_catalogue` (Chapter 4) is the pre-prepared set of questions the cluster-reading pipeline's Stage 4 (`char-answers`) queries live, scoped by dimension, against a subgroup's own grounding from Stages 1–3 — not the per-word Session B application this section originally described, but the same underlying discipline: the same instrument applied uniformly, so that the depth of treatment does not depend on which session did the work or which aspects happened to catch attention.
+
+The tools combine to support the programme's current working arrangement. STEP feeds the base-data layer in `iba.db`; the base-data layer feeds the book-by-book debate pipeline and the cluster-reading pipeline, both described in Chapter 4. Claude Code reads live from both databases, runs the pipeline's stages, and authors patches, directives, `cfg_*` proposals, and prose — all from within the one working agent described earlier in this chapter. Markdown and JSON files carry config extracts, reports, and editable prose drafts between the database and the conversation; the `cfg_*` store governs how the work is done; the prose corpus in the database keeps the description of how the work is done accessible to every session; the standing catalogue keeps analytical depth consistent across every subgroup it is applied to. Each tool is bounded; together they are the whole of what the programme uses.
+
+---
+
+<!-- PROSE_SECTION_ID: 20 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_research_decisions -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_CHAPTER: Research approach -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_SECTION_TITLE: Researcher decision authority -->
+<!-- PROSE_SORT_ORDER: 20 -->
+<!-- PROSE_VERSION: 108 -->
+
+## Researcher decision authority
+
+All intellectual work in this programme originates with and remains the responsibility of the researcher. The research question, the corpus design, every methodological decision, every analytical judgement, and every conclusion are the researcher's. AI did not author, conceptualise, or decide anything. The researcher directed every session, evaluated every output, corrected errors, overrode proposals, and accepted or rejected suggestions on their merits against the primary biblical data. Claude — first as a two-agent split (Claude AI analytical, Claude Code operational), now as the single working agent described earlier in this chapter — functioned as a research assistant throughout: executing, querying, drafting, and proposing, never deciding. This is not a description of the programme's attitude; it is a description of how the programme actually operated, turn by turn, session by session, through every registry and every finding, under both operating models.
+
+The division at each decision point is concrete. Claude Code reads the verse evidence and proposes a classification; the researcher accepts, modifies, or rejects. Claude Code drafts a paragraph of prose; the researcher reviews, corrects, or replaces. Claude Code constructs a patch or a `cfg_*` proposal that would commit a change to a database; the researcher's decision, recorded on the escalation it was raised against, is what allows the apply step to run. Claude Code raises an observation with two possible readings; the researcher decides which reading governs. At every one of these decision points, the record of what was proposed, what was decided, and what follow-up was logged is captured on the escalation itself (Chapter 5) or in the session log (this chapter, above). The record is the auditable evidence that the decision was the researcher's.
+
+**What Claude did, within researcher direction.** Claude queried the research databases on the researcher's instruction. All queries were specified by the researcher, or run within a scope the researcher had already set; all outputs were reviewed and verified. Claude produced drafts from structured briefs supplied by the researcher. All drafts were reviewed, corrected, and approved; no draft was accepted without critical evaluation. Claude generated structured JSON data files and `cfg_*` proposals from researcher-supplied source material and instruction. The researcher specified all classification decisions and validated every output. Claude contributed proposals to the analytical framework. All proposals were evaluated against the corpus data by the researcher, who accepted, rejected, or modified them.
+
+**What Claude did not do.** Claude did not select the research question. It did not make authorship decisions. It did not interpret Scripture independently. It did not supply citations without verification. It did not produce any output that was accepted without the researcher's critical review. Where a reading of the biblical text was contested, Claude surfaced the readings with their evidence and escalated the decision; it did not choose between them. Where a rule's application was uncertain or a scope question was unresolved, Claude did not guess — it escalated. The researcher's in-session direction supersedes stale text in a document until the document is updated; the researcher's standing authority does not depend on whether a particular document has been updated to reflect it.
+
+**Integrity of content and primary sources.** The primary source for all lexical claims in the programme is STEP Bible, a peer-maintained scholarly tool for Hebrew and Greek biblical analysis. Every term, every Strong's number, and every verse record was drawn from STEP and verified against it. The researcher personally reviewed all source data and is accountable for every claim. Claude was not used to supply citations independently; it organised and structured data the researcher supplied. All changes to the databases are held in versioned, auditable mechanisms with a complete decision history — the patch system for `bible_research.db`, `cfg_change_detail` for `iba.db` (Chapter 5). Every change records what was proposed, who approved it, when it was applied, and what the confirmation output showed. The chain from primary source to database entry to finding is traceable end-to-end, by design.
+
+**Assessment against publisher criteria.** The framework of authorship on which this programme is built corresponds to the criteria articulated by COPE, Elsevier, Wiley, Springer Nature, Taylor & Francis, and SAGE for the legitimate use of AI in scholarship. One human researcher holds full intellectual responsibility for the programme and can defend every claim it makes. AI use is declared specifically and categorised by function, consistent with current disclosure requirements. All primary-source claims are verifiable against STEP Bible and the auditable database; no AI-generated citation was accepted without independent verification. The research question, the corpus design, the analytical framework, and the findings are the researcher's own; AI did not supply substantive interpretive content. No confidential third-party material was processed through AI tools; the programme was conducted on data owned and assembled by the researcher. These are not aspirational commitments — they are the programme's operating record, recoverable from the observations logs, the patch history, and the session outputs that have been produced in the course of the work.
+
+**The analogy that holds.** The use of AI in this programme is analogous to the use of any powerful research tool — a lexical database, a concordance, a statistical package, a research assistant. The tool did not produce the scholarship. The researcher did. That is the standard by which this work asks to be evaluated, and it is the standard the work meets.
+
+The framework of authorship is not a concession to publishing convention and not a disclaimer attached to the research. It is the condition under which the research was conducted. Every discipline described in this chapter — the traceability requirement, the two-AI division, the session-continuity and memory-discipline, the tooling, the scope discipline that follows — is framed by it. The programme's analytical architecture exists to give the researcher the auditable conditions under which decisions can actually be made, verified, and defended. Without that authority structure, the architecture would be assistance in search of a principal. The principal is the researcher, and the architecture serves the research that the researcher does.
+
+---
+
+<!-- PROSE_SECTION_ID: 21 -->
+<!-- PROSE_SECTION_TYPE: prog_disc_scope_integrity -->
+<!-- PROSE_BOOK: Programme -->
+<!-- PROSE_CHAPTER: Research approach -->
+<!-- PROSE_CHAPTER_NO: 3 -->
+<!-- PROSE_SECTION_TITLE: Scope and help-forward discipline -->
+<!-- PROSE_SORT_ORDER: 21 -->
+<!-- PROSE_VERSION: 109 -->
+
+## Scope and help-forward discipline
+
+The programme's analytical architecture works only if Claude Code stays on the work the researcher has set. The disciplines already described — traceability, single-agent operation, session continuity, tool use, researcher authority — all assume a working agent that is focused on the task at hand and does not drift. Without that focus, the architecture becomes a stage on which Claude Code generates volume; with it, the architecture produces research.
+
+The operating default is **help forward**. Where the path the researcher has set is clear, Claude Code advances the work. It does not wait for explicit instruction on every step within a task that has already been scoped. It does not pause to request permission for the steps that the task evidently requires. Help-forward is the reason the researcher can direct a session rather than dictate every move within it.
+
+Help-forward is bounded. It means help on the task the researcher has set, not help in the form of proposing adjacent tasks, speculating about related questions, or volunteering a next-phase agenda. A task is advanced; it is not enlarged. Where Claude Code notices something that warrants attention but lies outside the current task — a finding elsewhere that bears on this one, a document that appears inconsistent with another, a pattern that a future session might want to examine — the observation is recorded as an open item (an escalation, where it is a genuine judgement call), and the work continues on what was asked.
+
+Scope is not extended autonomously. Where additional work appears warranted, it is flagged for researcher decision, not undertaken. The flag is explicit: *this is outside current scope; the researcher decides whether it enters scope*. The decision to extend is the researcher's. Claude Code's role is to surface, not to enlarge.
+
+The same discipline applies to looking forward. Claude Code explores within the task, reads, interrogates the data, compares options, and produces reasoning that the researcher can evaluate. What it does not do is propose what the programme should do next, suggest what the next session should prioritise, or construct a forward agenda from what the current work has raised. Forward direction is a programme-level decision, and programme-level decisions are the researcher's. An observation that bears on forward work is surfaced as an observation; it is not framed as a recommendation that the researcher then has to push back against.
+
+The failure mode the discipline prevents is **drift**: the slow transformation of a focused task into something broader, shaped by Claude Code's pattern-matching and accumulated in-context associations rather than by the researcher's direction. Drift looks plausible turn-by-turn — each step seems a reasonable adjacency to the last — and only becomes visible as drift when the session is read end-to-end against what was originally asked. The discipline against drift is turn-by-turn: every turn is bounded by what was asked, what was needed to answer it, and the write-and-audit cadence that closes the turn. A session that stays disciplined turn-by-turn stays disciplined across the session.
+
+**Escalation**, not guessing, is the standing response to uncertainty. Where a rule's application is not clear, where a scope question is ambiguous, or where two readings of an instruction are both defensible, Claude Code does not choose — it raises an escalation and surfaces the uncertainty to the researcher (Chapter 5). Guessing at what the researcher would want is not a time-saver; it is drift wearing a different label. The researcher's direction takes the same amount of time to obtain whether Claude Code has guessed first or not, and if Claude Code has guessed first, the work done under the guess may need to be redone.
+
+The positive work this discipline protects is the work of exploration. Claude Code reads widely within the task, considers alternative readings, surfaces options with their evidence, notices patterns, and produces analytical material the researcher can evaluate. This is substantial work and it is the work Claude Code contributes. What it does not do — the deciding, the expanding, the forward-planning — is not a suppression of Claude Code's capabilities. It is the division by which those capabilities become useful to the research rather than a drain on it.
+
+The chapter describes the disciplines under which the programme operates. Scope integrity is the discipline that keeps each session recognisable as the session the researcher opened — not a related session, not a broader session, not the session Claude Code would have chosen to run. It is, with the authorship framework that precedes it, the foundation on which the programme's auditable record can actually be audited: what was asked, what was done, what was decided, and by whom.
+
+---

@@ -1,0 +1,56 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260918T053306Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-09-18T05:33:06Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 3 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-28-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 28,
+      "record": {
+        "body": "The programme's analytical grouping mechanism is the M-code cluster model, keyed throughout on the M-code as the stable identifier. `cluster` names the top-level thematic groupings of the study — Anger, Wisdom, Peace, and so on. `cluster_strong`'s allocation passes (described in the sub-section on ownership) are the mechanism by which a Strong's code enters a cluster — and the 2026-08-13 correction recorded there (rejecting bulk keyword-crossmatch allocation in favour of allocation grounded in verse-context analysis) remains the standing rule for how any further allocation work must proceed.\n\nSince 2026-08-13, `cluster_subgroup` has been rebuilt as the working table for the programme's live analytical pipeline, distinct from an earlier, sparser version of the same table that recorded a now-superseded sub-group design (17 of the clusters then had sub-groups, 19 of those rows delete-flagged — that earlier state is history, not the table's current shape). Live today: `cluster_subgroup` (`subgroup_code`, `label`, `core_description`, `anchor_verse_reference`, `status`, `version`) is a curated group of a cluster's Strong's codes, formed as the unit the cluster-reading pipeline reads and answers against; `cluster.status` tracks a whole cluster's progress through the pipeline (`ready_for_subgroup_allocation` → `ready_for_reading` → `ready_for_synthesis` → `completed`, per `cfg_enum`); `cluster_subgroup.status` tracks the same progression at subgroup grain (`allocated` → `ready_for_reading` → `ready_for_answer` → `answer_complete` → `completed`).\n\n**The cluster-reading pipeline** is a five-stage, config-registered sequence built out over this session (escalation #1706), each stage its own `cfg_step` with its own `PS1` entry point, writing into two new `iba.db` tables: `ib_observation` (one typed finding — `stage`, `tag`, `strong`, `question_code`, `window`, `obs_text`) and `ib_node` (the per-occurrence trace an observation is grounded in). **Stage 1, `verse-reading`** (`lexical.meaning`, `VerseReading.ps1`) reads a cluster member's own occurrences verse by verse. **Stage 2, `char-subgroup`** (`cluster.subgroup`, `ClusterSubgroup.ps1`) groups a cluster's member Strong's codes into subgroups, grounded in Stage 1's own observations. **Stage 3, `char-reading`** (`cluster.reading`, `CharReading.ps1`) reads a subgroup as a whole once its members are grouped. **Stage 4, `char-answers`** (`cluster.answer`, `CharAnswer.ps1`) queries the standing question catalogue (below) against a subgroup's own grounding from Stages 1–3, one LLM call per subgroup, multiple observations per question where the subgroup's strongs genuinely point to different answers. **Stage 5, `char-synergy`** — cross-cluster relevance, the successor to the SD-pointer bridge described later in this chapter — is deliberately not yet built: the researcher's own instruction is that it waits until a meaningful number of clusters have been read through Stage 4, since cross-cluster synergy has nothing to relate until there is more than one cluster's worth of reading to relate it to. Stages 1–4 were built and validated live on cluster M67 through this session (`iba/app/USER-GUIDE.md` §12b-iv–vii; `BUILD.md` §267 onward).\n\nA cluster's characteristics (the pre-2026-08-13 `characteristic` table — 277 rows across 35 of the 49 clusters, largely superseded in practice by the subgroup/observation model above but not deleted) and the Strong's codes assigned to its subgroups are the current form the programme's analytical grouping takes.",
+        "heading": "Dimensions — the analytical grouping mechanism",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1216}"
+      }
+    },
+    {
+      "op_id": "PROSE-70-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 70,
+      "record": {
+        "body": "`wa_obs_question_catalogue` exists as two distinct tables, one per database, the same same-name/different-table pattern as `cluster_subgroup`/`ib_observation` above — a reader must check which one a given piece of work actually queries, not assume the name alone identifies the table.\n\n`bible_research.db`'s copy is the legacy per-word catalogue: 434 rows organised by tier and component, but its own bookkeeping is not fully self-consistent — 216 are marked `status='active'` while a different count carry `deleted=1`, the residue of a v2 restructure that retired a large block of questions as redundant. It has no `dimension`/`window` columns and is not what the live cluster-reading pipeline queries.\n\n`iba.db`'s copy is the live catalogue the cluster-reading pipeline's Stage 4 (`char-answers`, previous sub-section) actually queries: 103 rows, all `active`, re-derived and re-numbered against the study's own stated goal rather than audited only against its prior wiring (escalation #1712, closed 2026-09-18 — 0 rows without a `dimension`, stale cross-references fixed, `pattern_type` dropped from this copy in favour of the `dimension`/`window` pair). `dimension` carries the 12-dimension realignment; `window` carries the 11-window analytical-angle taxonomy (`relational`, `action-impact`, `origin`, `meaning`, `operational`, `constitutional`, `literary`, `faculty`, `cognitive`, `affective`, `scientific`) applied catalogue-wide this session. Every active leaf question scoped to characteristic-level analysis is queried live by Stage 4, per subgroup — not hardcoded into any one prompt.\n\n`finding` is the programme's universal finding store — one row per typed analytical finding at VERSE, CLUSTER, or GLOBAL level, 438,000 rows in total, with VERSE dominating at over 430,000 of them. The fact that matters most about this table today is not its size but its state: roughly 92% of its rows carry `delete_flagged = 1`, leaving on the order of 35,000 live findings. A query against it should filter on `delete_flagged` deliberately, and a claim that findings \"drive\" current analysis should be checked against that 35,000-row live subset, not the 438,000-row total.\n\n`wa_session_research_flags` is an actively populated table (715 rows), and its distribution shows where the live cross-registry and structural-observation work actually sits today: `SD_POINTER` (357 rows) is the largest single flag code, followed by `SB_FINDING` (203) and `VERSE_EVIDENCE_BREADTH_NOTE` (52); the remainder are smaller, specific markers accumulated across the programme's various analytical passes. This table is the bridge to the next sub-section: the SD pointer is the mechanism by which a single-registry observation is carried forward toward cross-registry synthesis.",
+        "heading": "The question catalogue and findings",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1217}"
+      }
+    },
+    {
+      "op_id": "PROSE-30-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 30,
+      "record": {
+        "body": "The SD pointer mechanism described in the previous sub-section — a `wa_session_research_flags` row with `flag_code = 'SD_POINTER'` — is the programme's original bridge from a single registry's analytical observation to a cross-registry question worth investigating. 357 such pointers exist. `session_d_runs` and `session_d_observations` both hold zero rows: the pointer record accumulated; the investigation it was meant to feed was never declared, and per Chapter 6's own account of Session D, that investigation is not expected to run in its originally-designed form.\n\nThe cluster-reading pipeline's **Stage 5, `char-synergy`** (previous sub-section) is the mechanism now designated to do this bridging work, in the pipeline's own current shape: cross-cluster relevance for an observation grounded within one cluster's subgroup. It is deliberately not yet built — the researcher's own instruction is that it waits until enough clusters have been read through Stage 4 to give it something to relate across. Until Stage 5 is built, the SD pointer record, the cluster/characteristic model's own cross-word grouping, and the cluster-reading pipeline's Stages 1–4 exist side by side, each doing a version of cross-item synthesis at a different grain; none has been formally reconciled with the others, and that reconciliation is Stage 5's own eventual job, not attempted here.",
+        "heading": "The synthesis bridge — from per-word records to cross-registry work",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1218}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 3,
+    "prose_section_supersedes": 3,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-4-v3-20260918.md"
+  }
+}

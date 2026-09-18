@@ -1,0 +1,47 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260918-PROSE-TYPE-DESCRIPTION-REFRESH",
+    "patch_type": "PROSE",
+    "produced_at": "2026-09-18T06:40:00Z",
+    "researcher_approval": "PENDING",
+    "description": "Refresh 11 prose_section_type.description summaries that had gone stale relative to their prose_section bodies (rewritten this session for the retired two-AI model and the cluster-reading pipeline build)."
+  },
+  "operations": [
+    {"op_id": "PSTYPE-51-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 51},
+     "set": {"description": "Session continuity now that Claude Code is the single working agent: the database as authoritative analytical memory across both iba.db and bible_research.db; Claude Code's memory layers (chat context, persistent memory system, live queries, training) and their limits; the session log, the escalation table, and BUILD.md as the three continuity mechanisms (not an obslog/session-log pair); pass-close as the mechanism by which session work reaches whichever database it targets; prose written to survive storage across sessions."}},
+    {"op_id": "PSTYPE-53-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 53},
+     "set": {"description": "The foundation of the programme's authorship framework -- all intellectual work originates with and remains the responsibility of the researcher; Claude (first two-agent, now the single Claude Code agent) as research assistant, never deciding; what Claude did and did not do; integrity of primary sources via STEP Bible and the auditable patch/cfg_change_detail systems; alignment with publisher criteria for legitimate AI use in scholarship."}},
+    {"op_id": "PSTYPE-54-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 54},
+     "set": {"description": "The in-session operating discipline that keeps Claude Code focused on the task the researcher has set -- help-forward default bounded by researcher scope; no autonomous extension of scope; observations surfaced as escalations where they are genuine judgement calls, not enlarged into recommendations; escalation to researcher on uncertainty; the positive work of exploration preserved within the discipline."}},
+    {"op_id": "PSTYPE-59-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 59},
+     "set": {"description": "Dimensions as the analytical grouping mechanism, current state: the M-code cluster model (cluster, cluster_strong allocation, the 2026-08-13 verse-context-grounded-allocation rule) plus the five-stage cluster-reading pipeline built out this session (verse-reading, char-subgroup, char-reading, char-answers, char-synergy) writing into ib_observation/ib_node -- Stages 1-4 built and validated on cluster M67, Stage 5 deliberately deferred until enough clusters are read."}},
+    {"op_id": "PSTYPE-60-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 60},
+     "set": {"description": "The question catalogue and findings, current state: two same-named, different tables per database -- bible_research.db's legacy 434-row per-word catalogue (no dimension/window columns, not live-queried) and iba.db's live 103-row catalogue (dimension + 11-window taxonomy, re-derived escalation #1712) that the cluster-reading pipeline's Stage 4 char-answers actually queries; the finding table's live-vs-delete_flagged split; wa_session_research_flags and the SD_POINTER bridge."}},
+    {"op_id": "PSTYPE-61-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 61},
+     "set": {"description": "The synthesis bridge from per-word records to cross-registry work, current state: the original SD_POINTER mechanism (wa_session_research_flags, 357 pointers, feeding session_d_* tables that never populated) now superseded in intent by the cluster-reading pipeline's Stage 5 char-synergy -- designated but deliberately unbuilt until enough clusters have completed Stage 4; the three mechanisms (SD pointers, the cluster/characteristic model, Stages 1-4) coexist unreconciled until Stage 5 lands."}},
+    {"op_id": "PSTYPE-71-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 71},
+     "set": {"description": "Verse Context, current state: two live, unreconciled, differently-scoped mechanisms read the verse corpus -- the book-by-book debate pipeline (hib/phenomenon/operation/passage.debate_status, 49 of 18,558 passages across six books) and the cluster-reading pipeline's Stage 1 verse-reading (lexical.meaning, one pilot cluster M67) -- both cfg_step/cfg_setting-governed, neither with a standalone instruction document."}},
+    {"op_id": "PSTYPE-72-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 72},
+     "set": {"description": "Dimension Review, current state: cluster_strong allocates a Strong's code to a cluster (verse-context-grounded, per the 2026-08-13 correction); the five-stage cluster-reading pipeline then reads, subgroups, and answers the standing catalogue against a cluster's own members. No dedicated method-instruction document; the pipeline's cfg_step rows, USER-GUIDE.md Sec.12b, and GOVERNANCE.md's dated history are the live authority."}},
+    {"op_id": "PSTYPE-74-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 74},
+     "set": {"description": "Session B Analysis Output, current state: the original per-word stage has no live process. Its functional equivalent today, at cluster-subgroup grain, is the cluster-reading pipeline's Stage 4 char-answers -- the standing question catalogue queried live per subgroup, one typed ib_observation row per answer. Programme-content capture generally remains Prose.ps1 (prose), debate_change_detail (debate pipeline), and the escalation table (judgement calls)."}},
+    {"op_id": "PSTYPE-76-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 76},
+     "set": {"description": "Session D, current state: cross-registry synthesis in its originally-designed form never executed (session_d_runs/session_d_observations both zero rows) and is not expected to be revived in that shape. The cluster-reading pipeline's Stage 5 char-synergy is now the designated successor mechanism, at cluster-subgroup grain -- deliberately deferred until enough clusters have completed Stage 4."}},
+    {"op_id": "PSTYPE-52-DESC", "table": "prose_section_type", "operation": "update",
+     "match": {"id": 52},
+     "set": {"description": "The programme's small set of instruments, current state: STEP Bible; VSCode with Claude Code as the single working agent (not a separate Claude AI analytical persona); the IBA App as the config-governed control system; the two databases; markdown/JSON working formats; the cfg_* store in place of the old per-phase instruction corpus; the DB-canonical prose store, now describing live mechanisms (debate pipeline, cluster-reading pipeline) rather than the old per-word Session A-D production chain; the standing catalogue of questions as queried live by Stage 4."}}
+  ],
+  "_patch_summary": {
+    "operations_count": 11
+  }
+}

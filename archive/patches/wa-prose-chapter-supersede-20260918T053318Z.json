@@ -1,0 +1,69 @@
+{
+  "_patch_meta": {
+    "patch_id": "PATCH-20260918T053318Z-PROSE-CHAPTER-SUPERSEDE",
+    "patch_type": "PROSE",
+    "produced_at": "2026-09-18T05:33:18Z",
+    "session_b_status": null,
+    "researcher_approval": "PENDING",
+    "description": "Supersede 4 prose section(s) from an edited chapter Markdown file."
+  },
+  "operations": [
+    {
+      "op_id": "PROSE-55-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 55,
+      "record": {
+        "body": "Two live mechanisms now read the verse corpus, at different scopes, neither reconciled with the other. The book-by-book debate pipeline described in Chapter 4 — `hib`, `phenomenon`, `operation`, and `passage`'s own `debate_status` field — works at the level of a Human Inner Being within a book and a passage; its current reach is 49 of 18,558 passages, across six books. The cluster-reading pipeline's **Stage 1, `verse-reading`** (`lexical.meaning`, Chapter 4) works at the level of a cluster member's own occurrences, cluster by cluster; its current reach is one pilot cluster (M67). Both are governed by `cfg_step`/`cfg_setting` rows rather than by a standalone instruction document.",
+        "heading": "Verse Context",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1235}"
+      }
+    },
+    {
+      "op_id": "PROSE-47-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 47,
+      "record": {
+        "body": "The live analytical grouping mechanism is the cluster model described in Chapter 4: `cluster_strong` allocates a Strong's code directly to a cluster (governed by the researcher's 2026-08-13 correction that allocation must be grounded in verse-context analysis, not bulk keyword-crossmatch), and the five-stage cluster-reading pipeline built out this session then reads, subgroups, and answers the standing catalogue against a cluster's own members. There is still no single dedicated method-instruction document with the depth a Dimension Review instruction once had — the pipeline's own `cfg_step`/`cfg_setting` rows, `iba/app/USER-GUIDE.md` §12b, and `GOVERNANCE.md`'s dated build history (§76–77 and onward) are the live authority on how this work is done, in place of a standalone instruction document.",
+        "heading": "Dimension Review",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1236}"
+      }
+    },
+    {
+      "op_id": "PROSE-68-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 68,
+      "record": {
+        "body": "No registry is currently progressing through a per-word analytical output stage of the kind this section's heading originally named — that per-word mechanism has no live process today. What now plays the functional equivalent, at cluster-subgroup grain rather than per-word, is the cluster-reading pipeline's **Stage 4, `char-answers`** (Chapter 4): the standing question catalogue queried live against a subgroup's own grounding, one typed `ib_observation` row per answer, persisted directly rather than assembled into a separate output document. The live capture mechanisms for programme content generally remain as Chapter 4's closing sub-section describes: the `Prose.ps1` round trip for prose, `debate_change_detail` for the book-by-book debate writers, and the `escalation` table for judgement calls.",
+        "heading": "Session B — Analysis Output",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1238}"
+      }
+    },
+    {
+      "op_id": "PROSE-51-SUPERSEDE",
+      "table": "prose_section",
+      "operation": "supersede",
+      "supersedes_id": 51,
+      "record": {
+        "body": "Cross-registry synthesis, in the shape this section originally named, has never executed as its own run: the relevant run/observation tables hold zero rows, exactly as Chapter 4's synthesis-bridge sub-section records, and the SD pointer accumulation that would have fed it is not expected to be revived in that form. The question is no longer fully open, though it is not yet answered either: the cluster-reading pipeline's **Stage 5, `char-synergy`** (Chapter 4) is the mechanism now designated to do this bridging work, at cluster-subgroup grain. It is deliberately unbuilt until enough clusters have completed Stage 4 to give it something to relate across — named as an open, deferred item rather than an unresolved one.",
+        "heading": "Session D",
+        "author": "claude_code",
+        "status": "draft",
+        "metadata_json": "{\"roundtrip_import\": \"iba.app.lib.prosestore.run_import_chapter\", \"source_version\": 1240}"
+      }
+    }
+  ],
+  "_patch_summary": {
+    "total_operations": 4,
+    "prose_section_supersedes": 4,
+    "source_edit_file": "Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-6-v3-20260918.md"
+  }
+}

@@ -3450,7 +3450,8 @@ below):**
   remediation is a separate follow-on, not done in this config-capture pass.
 - `cfg_method_rule` **`spine-extended-meaning-parse-completeness-fatal`** (step `lexicon.parse`) —
   a strong with extended meaning pulled but no corresponding parse row is a FATAL ERROR, fixed on
-  discovery.
+  discovery. **SUPERSEDED 2026-09-11 — see §76.** The three parse tables and `lexicon.parse` itself
+  were retired the day after this rule was captured; this bullet is provenance, not live instruction.
 - `cfg_method_rule` **`spine-extended-meaning-accepted-anomaly`** (step `raw.detail`) — a strong
   with no extended meaning pulled at all is an ACCEPTED, non-fatal anomaly when explained by
   classification: T2 (grammatical/functional, not content-bearing), T3-T15 (characteristic-role
@@ -3569,3 +3570,90 @@ fallback. `spine.check` re-confirmed clean: 0 FATAL, 0 discoverability findings.
 **Files:** `iba/app/handlers/lexicon.py` (`rebuild_parsed_tables`, `_derived_variant_rows`, `_base`
 — module itself found unregistered in `cfg_utility` while fixing this, corrected same turn);
 `iba/app/migration/backfill_all_strong_meaning_tree_gaps_v1_20260910.py` (new, one-off backfill).
+
+## §76. Parse tables retired, `spine.check`'s parse-completeness rule removed, the meaning-distillation method restarted from scratch — the line that became the cluster-reading pipeline (2026-09-10/11, escalations #1668/#1675/#1680/#1681/#1684/#1686)
+
+§75 closed with parse coverage complete and corpus-wide. The very next working session found that
+completeness was the wrong target. Researcher verdict, verbatim, from a G3551/`nomos` case study
+(154 live verses read in full context surfaced at least 6 real, distinct sense-clusters, including
+a metaphorical "governing principle" use the dictionary entry doesn't even name, none recoverable
+from a mechanical single-row pick at the Strong's-code grain): *"now that is meaningful. OK, that
+means that the 3 parse tables are retired/inactive, and the entire approach and method to arrive at
+meaningful meaning will be revised... we will restart the thinking tomorrow."*
+
+**Retired, applied live (escalation #1675 + companions):** `strong_meaning_parsed`,
+`strong_lsj_parsed`, `strong_mounce_parsed`, and the `lexicon.parse` step itself — all `inactive=1`
+in `cfg_table`/`cfg_step`. Frozen, not maintained; the "0 FATAL / 0 discoverability" close-out §75
+reported no longer means anything for these tables specifically.
+
+**`spine.check` corrected to match (escalations #1681/#1684, found live via a real FATAL — H1506's
+sole `strong_meaning_tree` row had been dropped by a header-abbreviation collision during the
+2026-09-10 `lexicon.parse` rerun, traced and fixed).** Researcher instruction, verbatim: *"spine.check
+must exclude the parse tables, they are no longer valid/maintained."* `handlers/spine.py`'s entire
+strong→extended-meaning→parse FATAL + discoverability check was removed, not just disabled —
+`cfg_method_rule` id 65 (`spine-extended-meaning-parse-completeness-fatal`, the bullet under §73
+above) formally superseded (escalation #1686), `cfg_step`/`cfg_report`/`cfg_report_section` updated
+in the same unit of work. `spine.check` as it stands today (§4A of `start-project`) checks
+verse/span/strong sync only — see its own module docstring for the full history. This is why the
+session-start `Spine-Check.ps1` report no longer mentions parse coverage at all.
+
+**The meaning-distillation method itself did not land in one pass.** An exploratory
+export-and-synthesize attempt (escalation #1680 — STEP meaning in digestible form, grouped by
+family within a cluster, related to verse context) validated the underlying three-part idea
+("it is not bad... this method does three things," researcher's own words) but was closed as an
+exploratory pass, not a repeatable method: it drifted round to round (silent data-filtering in one
+family, uneven rigor across others, an unprompted informal cross-family narrative, inconsistent
+error-flagging, no fixed write-up template, a non-reproducible grouping step, raw HTML dumped
+verbatim instead of an actual digest). Superseded by a follow-on design escalation for the real
+structure/process — that follow-on is escalation #1706, whose Phases A–E became the `ib_observation`/
+`ib_node` cluster-reading pipeline (ownership of `cluster_subgroup`/`ib_observation`/`ib_node` in
+`iba.db`, distinct from the same-named legacy `bible_research.db` tables — see §77) built out
+Stage by Stage through this session (2026-09-17/18) and now complete through Stage 4 (`char-answers`),
+with Stage 5 (cross-cluster synergy) deliberately deferred until enough clusters have been read.
+Full stage-by-stage build record: `BUILD.md` §267 onward.
+
+## §77. Post-build coherence sweep: `cluster_subgroup`/`ib_observation` registered for `iba.db`, retired-step write grants deactivated, `window` column registered (2026-09-18, escalation #1727)
+
+Session-start `configmaint.validate` run at the researcher's request (a "did the build clean up
+after itself" scan following §76's pipeline reaching Stage 4) found **18 hard coherence errors**,
+all traced to the pipeline build itself, none a design defect:
+
+- `cluster_subgroup` and `ib_observation` are genuinely **different tables under the same name** in
+  `iba.db` vs. `bible_research.db` — the established pattern `governance.project_databases` already
+  names for `cluster`/`passage`/`verse`/`word_registry`. Only the `bible_research.db` copies (the
+  legacy M-code cluster model) had `cfg_table` rows; the `iba.db` copies built for this pipeline
+  never got their own registration.
+- 8 `cfg_column.fk` values on the new tables (`cluster_subgroup`/`cluster_subgroup_strong`/
+  `ib_observation`/`ib_node`) used a parenthetical `table(col)` syntax the validator's FK check
+  doesn't parse — the other 133 rows in `cfg_column` all use the established dotted `table.col`
+  form.
+- `wa_obs_question_catalogue.window` (the 11-window taxonomy column, §76/`BUILD.md` #290) was never
+  registered in `cfg_column`.
+- `cfg_write_grant` rows for `lexical.run`/`lexicon.parse` (both retired steps — `lexicon.parse` by
+  §76 above) were never deactivated to match their steps, so the validator flagged their writer
+  identity as unknown.
+
+All 15 corrections raised via `configmaint.propose` (escalation #1727's children, escalations
+#1731–#1738, #1740, #1744–#1749) — coherence-checked, moved to `ready_for_approval`, awaiting the researcher's
+batch decision before they apply; none of these are silent writes. The same sweep also re-ran
+`migration/bootstrap_cfg_utility.py` (idempotent, self-discovering, not `configmaint.propose`-gated)
+and registered 6 new `iba/app/lib/*.py` modules from the pipeline build
+(`charanswergenerate`/`charreadinggenerate`/`clusterstatus`/`recordingpass`/`subgroupgenerate`/
+`versereadinggenerate`) that `governance.new_utility_registration_timing` required in the same unit
+of work as their creation but had been missed.
+
+**Separately noted, not fixed in this pass** (pre-existing backlog, not caused by this build — full
+detail in `configmaint.validate`'s advisory findings, run read-only via direct `cfgquality` calls
+since the hard-error gate blocks the advisory pass until #1727's children apply): 6 `cfg_enum`
+groups for the new pipeline (`ib_observation.stage`/`.status`/`.window`/`.meaning_source`,
+`cluster.status`, `cluster_subgroup.status`) registered but not actually consulted by any
+`cfg.enum()` call site at runtime — worth a follow-up once Stage 5 design settles, not fixed blind
+here since it would mean touching the pipeline's own validation code, not just registration data;
+6-7 new PS scripts (`CharAnswer.ps1`/`CharReading.ps1`/`ClusterSubgroup.ps1`/`Lexical-Readiness.ps1`/
+`VerseMeta.ps1`/`VerseReading.ps1`) missing their `ps tools worksheet.xlsx` tab, and
+`Config-Maintenance.ps1`'s tab missing the `-Title` column added by escalation #1326 — left for the
+researcher given `feedback_warn_before_editing_excel_tool_interface` (a write while the workbook is
+open in Excel crashes); the much older backlog (27 escalation-file-naming mismatches, 13
+zero-config-density utilities, 9 unregistered project scripts outside `iba/app/lib`, 5 config
+hedge-phrase rows, 1 hand-rolled versioning site in `prosestore.py`) predates this build entirely
+and is unrelated to it.
