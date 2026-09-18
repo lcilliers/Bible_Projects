@@ -1,0 +1,16 @@
+# Escalation deep history
+
+## #1752 — Drop stale snapshot from prose_canonical_authority
+type=issue source=configmaint
+
+**v1** (2026-09-18T05:34:34Z, Claude) state=raised next_action=review assigned_to=Researcher
+> **short description (set this version):** Drop stale snapshot from prose_canonical_authority
+> **comment (set this version):** coherence-checked against the live cfg_* schema — awaiting researcher decision via `Escalation.ps1 -Action Update -Id <id> -NextAction ready_for_approval` then `-NextAction approved` (or reject/revise), then re-run this exact Config-Maintenance.ps1 command with -RunId to apply
+> **context (set this version):** {"table": "cfg_setting", "op": "update", "where": {"key": "governance.prose_canonical_authority"}, "set": {"value": "\"The programme prose (Workflow/Programme/programme_prose/) is the canonical authority on what the project is about -- researcher, 2026-08-18. cfg_prose_concept points a key project concept (e.g. verse primacy, the inner-being definition) at the prose section that defines it, rather than restating the definition as a separate rule. Chapter-level review status is NOT tracked in cfg_* (cfg_prose_chapter was removed 2026-08-27, escalation #918 -- it was workflow DATA about content state, not a rule, and required the full config-approval cycle for what is an ordinary content edit) -- it lives where content state belongs: prose_section.status (cfg_enum prose_section_status), set per section via Prose.ps1 -Step SetStatus, rolled up per chapter via prose_section_type.chapter_no. A methodology/approach change that touches a concept named in cfg_prose_concept should flag whether the prose needs updating (part (f) -- the flagging MECHANISM is not yet built, this states the principle only).\""}, "full_message": "This setting hardcoded a chapter review snapshot (Chapters 0-3 final, 4-6 realigned 2026-08-27) directly in its own text, contradicting the very next sentence, which states chapter-level review status must NOT live in cfg_* (escalation #918) and instead lives in prose_section.status. Found live 2026-09-18 while updating chapters 3/4/6 per researcher instruction (chapter 3 no longer all-final: sections 18/20/21/1040 revised to remove the retired two-AI framing; chapters 4/6 revised for the cluster-reading pipeline built this session). Fix: drop the hardcoded snapshot sentence rather than replace it with a new one, since the setting itself says this status belongs in prose_section.status, not here."}
+> **tried (set this version):** coherence-checked against the live cfg_* schema — awaiting researcher decision via `Escalation.ps1 -Action Update -Id <id> -NextAction ready_for_approval` then `-NextAction approved` (or reject/revise), then re-run this exact Config-Maintenance.ps1 command with -RunId to apply
+
+**v2** (2026-09-18T05:34:44Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **resolution (set this version):** Coherence-checked against the live cfg_* schema. Found and fixed while realigning programme-prose chapters 3/4/6 (this session, researcher instruction). Ready for your approve/reject/revise.
+
+**v3** (2026-09-18T05:41:00Z, Researcher) state=re-assigned next_action=approved assigned_to=Claude
+> **comment (set this version):**  noted

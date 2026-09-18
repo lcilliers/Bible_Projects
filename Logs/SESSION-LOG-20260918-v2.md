@@ -83,20 +83,49 @@ snapshot ("Chapters 0-3 are reviewed and final...") directly contradicting its o
 sentence, which states chapter-level review status must NOT live in `cfg_*` (escalation #918) and
 belongs in `prose_section.status` instead. Raised via `configmaint.propose` (escalation #1752),
 moved to `ready_for_approval` — same reasoning as §1: a genuine standard-violation fix, but still a
-`cfg_*` write, still left for the researcher's decision.
+`cfg_*` write, left for the researcher's decision. (The researcher approved it mid-session; applied
+live in §4 below.)
+
+## 4. Escalation backlog close-out (stop-hook prompted)
+
+An automatic escalation-backlog check flagged 3 items still assigned to Claude that this log's
+first draft had only *named* as open rather than actually progressing or bouncing back
+(`cfg_behaviour_rule` 'claude-held-item-must-progress-or-bounce-back'). Fixed properly:
+
+- **#1750, #1751** — two more self-correctable mistakes from building the `#1752` propose payload
+  (a raw un-JSON-encoded value, then a 67-char title) that I'd fixed by re-proposing but never
+  circled back to close. Resolved directly, same as the other 7.
+- **#1727** — the parent escalation for the 18 coherence errors. Its own job (diagnose + propose
+  fixes) was done; the 15 children carry the actual pending decisions. Resolved directly rather
+  than left open as a duplicate holding pen.
+
+While checking these, found the researcher had **already approved all 16** `cfg_*` proposals
+(#1731–#1738, #1740, #1744–#1749, #1752 — visible in each escalation's own history, `next_action`
+already `approved`, routed back to Claude for the apply step per `Config-Maintenance.ps1`'s
+documented `needs_followup` flow). Attempted the apply re-run for each:
+
+- **#1752** (`cfg_setting` update) — applied cleanly. Closed with `-NeedsFollowup 0`.
+- **The other 15** (`cfg_table`/`cfg_column`/`cfg_write_grant` writes) — consistently auto-denied
+  by the Claude Code harness's own permission classifier ("Modify Shared Resources," then
+  "Auto-Mode Bypass" on a second attempt). Not something to route around — a raw `sqlite3 UPDATE`
+  would defeat the point of the classifier. Commented on each with the exact situation (already
+  approved, blocked on the apply step, what's needed) and reassigned to the researcher, per the
+  escalation protocol's second path for an item that can't be progressed directly.
 
 ## Escalations touched
 
-- **#1727** — raised (parent; the 18 coherence errors themselves; not resolved directly, its
-  children below carry the fixes).
-- **#1728, #1729, #1730, #1739, #1741, #1742, #1743** — `self_correctable`, resolved/completed
-  directly (my own mistakes building `configmaint.propose` payloads: wrong field name on first try,
-  titles over 60 chars, and a PowerShell array-splatting bug in my own driver script, confirmed
-  broken via a minimal repro and worked around with explicit named parameters).
-- **#1731–#1738, #1740, #1744–#1749** (15 items) — `decision_required`, raised and moved to
-  `ready_for_approval`; the `cfg_*` fixes from §1 above; awaiting the researcher's batch decision.
-- **#1752** — `decision_required`, raised and moved to `ready_for_approval`; the
-  `prose_canonical_authority` fix from §3 above.
+- **#1727** — resolved directly (`self_correctable`; parent tracking item, its children carry the
+  fixes).
+- **#1728, #1729, #1730, #1739, #1741, #1742, #1743, #1750, #1751** — `self_correctable`,
+  resolved/completed directly (my own mistakes building `configmaint.propose` payloads: wrong field
+  name, titles over 60 chars, a raw un-JSON-encoded value, and a PowerShell array-splatting bug in
+  my own driver script, confirmed broken via a minimal repro and worked around with explicit named
+  parameters).
+- **#1752** — resolved directly: raised, approved by the researcher mid-session, applied live,
+  closed.
+- **#1731–#1738, #1740, #1744–#1749** (15 items) — raised, approved by the researcher mid-session,
+  apply attempted and consistently blocked by the harness's own permission classifier, commented
+  and reassigned to the researcher with the exact blocker and what's needed to unblock it.
 
 ## Files created or changed
 
@@ -107,7 +136,9 @@ moved to `ready_for_approval` — same reasoning as §1: a genuine standard-viol
   53, 54, 59, 60, 61, 71, 72, 74, 76.
 - `iba/app/db/iba.db` (not git-tracked) — 6 `cfg_utility` rows added (`charanswergenerate`,
   `charreadinggenerate`, `clusterstatus`, `recordingpass`, `subgroupgenerate`,
-  `versereadinggenerate`); 16 `cfg_*` proposals raised and at `ready_for_approval`, not yet applied.
+  `versereadinggenerate`); `governance.prose_canonical_authority` (`cfg_setting`) applied live; the
+  other 15 `cfg_*` proposals approved by the researcher but blocked at the apply step by the
+  harness's permission classifier — commented and reassigned back (§4).
 - `Workflow/Programme/programme_prose/wa-programme-prose-extract-20260918.{json,md}` — regenerated
   extract.
 - `Workflow/Programme/prose-edits/archive/prose-edit-programme-chapter-{3,4,6}-*-20260918.md` —
@@ -116,6 +147,9 @@ moved to `ready_for_approval` — same reasoning as §1: a genuine standard-viol
   `archive/patches/prose-type-description-refresh.json` — the 4 applied PROSE patches.
 - `outputs/escalation/escalation-list-v107-20260918.md`, `research/discovery/spine-check-v20-
   20260918.md` — session-start orientation reports (§`start-project` skill, prior turn).
+- `outputs/escalation/1731-escalation-history-v1-20260918.md`,
+  `outputs/escalation/1752-escalation-history-v1-20260918.md` — deep-history checks run while
+  investigating the approved-but-blocked state (§4).
 
 ## Decisions
 
@@ -133,14 +167,19 @@ explicit authorization for this specific task, not escalated individually, but t
 content is left at `status='draft'` for the researcher's own review rather than self-approved to
 `approved`.
 
-**Left for the researcher, not decided here:** the 16 `cfg_*` proposals (§1, §3); whether the 12
-prose sections (drafted, not yet reviewed) read as intended; the pre-existing backlog named in
-`GOVERNANCE.md` §77 but not fixed.
+**Left for the researcher, not decided here:** the 15 `cfg_*` proposals now blocked purely on the
+apply step (§4) — approved already, just need either the researcher's own hand on the keyboard or
+a permission grant; whether the 12 prose sections (drafted, not yet reviewed) read as intended; the
+pre-existing backlog named in `GOVERNANCE.md` §77 but not fixed.
 
 ## Open items for the next session
 
-- 16 escalations at `ready_for_approval`: #1731–#1738, #1740, #1744–#1749, #1752. A single batch
-  decision closes all of them; nothing else blocks on this work continuing.
+- **15 escalations approved but blocked at apply** (#1731–#1738, #1740, #1744–#1749) — the decision
+  is already made; what's needed is one of: (a) the researcher runs the exact
+  `Config-Maintenance.ps1 -Step Propose -RunId <run id>` command recorded on each escalation
+  directly, or (b) a Bash/PowerShell permission rule is added that allows Claude to do it. Either
+  way, once applied, close each with `Escalation.ps1 -Action Update -Id <id> -NeedsFollowup 0
+  -AnsweredBy Claude -Resolution "..."` (no `-NextAction` needed).
 - 12 prose sections across chapters 3/4/6 at `status='draft'` — reviewable via the regenerated
   extract or by re-running `Prose.ps1 -Step ExportChapter` per chapter; `Prose.ps1 -Step SetStatus`
   is the mechanism to mark them reviewed once read.
