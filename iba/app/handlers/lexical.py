@@ -817,7 +817,8 @@ def meaning(ctx: Ctx) -> Outcome:
                 return fail("bad-model-response", f"chunk {chunk_label}: {e}")
 
             chunk_record = recordingpass.record_batch(
-                conn, cluster_code, "verse-reading", parsed, source_json_serial=idx + 1)
+                conn, cluster_code, "verse-reading", parsed, source_json_serial=idx + 1,
+                similarity_threshold=float(ctx.cfg.setting("cluster.recording_similarity_threshold", 0.85)))
             conn.commit()
         except Exception as e:
             # Crash safeguard (#1756): ANY uncaught exception in the risky window (API call

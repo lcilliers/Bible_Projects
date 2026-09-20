@@ -213,6 +213,28 @@ def _code_classes_for(code: str, code_classes: dict[str, set[str]],
 _PARTY_CLASS_TO_KIND = {"party_divine": "divine", "party_human": "human",
                         "party_angelic": "non_human", "party_adversarial": "non_human"}
 
+_party_kind_parity_checked = False
+
+
+def _assert_party_kind_parity(conn: sqlite3.Connection) -> None:
+    """Live cfg_enum cross-check for _PARTY_CLASS_TO_KIND's own value set, added 2026-09-20
+    (escalation #1796): party_kind was a registered cfg_enum group nothing ever looked up by name
+    at runtime -- this hardcoded dict is the sole source of every party_kind ever written, with
+    nothing confirming its 3 output values (divine/human/non_human) stay inside the registered
+    enum. Cached after the first call (module-level flag, not re-queried per verse) -- build_for_verse
+    runs once per verse in bulk builds, and this only needs to catch a genuine future edit drifting
+    the two apart, not run thousands of times per call."""
+    global _party_kind_parity_checked
+    if _party_kind_parity_checked:
+        return
+    live = {r[0] for r in conn.execute(
+        "SELECT value FROM cfg_enum WHERE name='party_kind' AND inactive=0")}
+    local = set(_PARTY_CLASS_TO_KIND.values())
+    if not local <= live:
+        raise ValueError(f"_PARTY_CLASS_TO_KIND's own values ({sorted(local)}) include some not "
+                         f"in live cfg_enum party_kind ({sorted(live)})")
+    _party_kind_parity_checked = True
+
 
 def _testament_for(conn: sqlite3.Connection, book: str) -> str | None:
     r = conn.execute("SELECT ordinal FROM cfg_book_order WHERE book=?", (book,)).fetchone()
@@ -387,6 +409,7 @@ def build_for_verse(conn: sqlite3.Connection, verse_id: int,
     below (checked live 2026-09-16, no external caller), which is why the readiness pre-check
     (`unready_codes_in_scope`) lives at THEIR entry points, not here: this function has no
     standalone `verse_ids` scope of its own to check against."""
+    _assert_party_kind_parity(conn)
     c = {"spans": 0, "codes": 0, "inserted": 0, "updated": 0, "unchanged": 0, "removed": 0,
         "removed_with_live_notes": 0}
     if code_classes is None:          # safe default for a direct/standalone caller

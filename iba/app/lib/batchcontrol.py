@@ -39,6 +39,19 @@ def _now() -> str:
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
 
 
+def _assert_valid_status(conn, status: str) -> None:
+    """Live cfg_enum lookup, not trust in the literal -- found live 2026-09-20 (escalation #1796):
+    run_batch.status was a registered cfg_enum group nothing ever actually looked up by name at
+    runtime. The 3 call sites below (start/commit/fail) each pass their own fixed literal, so this
+    can only ever fire if a future edit introduces a typo or a 4th status without updating both the
+    enum and these call sites -- exactly the drift this check exists to catch immediately, not
+    months later."""
+    valid = {r[0] for r in conn.execute(
+        "SELECT value FROM cfg_enum WHERE name='run_batch.status' AND inactive=0")}
+    if status not in valid:
+        raise ValueError(f"run_batch.status {status!r} not in live cfg_enum {sorted(valid)}")
+
+
 def content_key(items: list[str]) -> str:
     """Stable hash of a batch's own item list (e.g. verse ids as strings, or member strongs).
     Order-independent (sorted before hashing) -- the same set of items always hashes the same,
@@ -68,6 +81,7 @@ def start_batch(conn, run_id: str, work_package: str, step: str, selector_key: s
     caller's own transaction, so this row is visible to a concurrent monitor query and survives a
     crash in the API call or the write that follows, which is the whole point of writing it
     BEFORE the risky work starts, not after."""
+    _assert_valid_status(conn, "running")
     cur = conn.execute(
         "INSERT INTO run_batch (run_id, work_package, step, selector_key, batch_ordinal, "
         "batch_content_key, status, started_at) VALUES (?,?,?,?,?,?,?,?)",
@@ -78,6 +92,7 @@ def start_batch(conn, run_id: str, work_package: str, step: str, selector_key: s
 
 
 def commit_batch(conn, batch_id: int, cost_usd: float | None = None) -> None:
+    _assert_valid_status(conn, "committed")
     conn.execute(
         "UPDATE run_batch SET status='committed', ended_at=?, cost_usd=? WHERE id=?",
         (_now(), cost_usd, batch_id))
@@ -85,6 +100,7 @@ def commit_batch(conn, batch_id: int, cost_usd: float | None = None) -> None:
 
 
 def fail_batch(conn, batch_id: int, error_message: str) -> None:
+    _assert_valid_status(conn, "failed")
     conn.execute(
         "UPDATE run_batch SET status='failed', ended_at=?, error_message=? WHERE id=?",
         (_now(), error_message, batch_id))

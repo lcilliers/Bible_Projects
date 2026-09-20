@@ -48,6 +48,31 @@ _STATUS_ORDINAL = {
 }
 
 
+class EnumDrift(Exception):
+    """`_STATUS_ORDINAL`/`_SUBGROUP_STATUS_ORDINAL` (below) duplicate `cfg_enum` groups
+    `cluster.status`/`cluster_subgroup.status` on purpose -- the enum has no ordering, and this
+    module's whole job IS the ordering. Escalation #1753 B2 found the two groups registered in
+    `cfg_enum` with zero runtime lookup anywhere -- an orphan-config finding, but checking live
+    data first showed no actual drift (both dicts' keysets already match their enum exactly).
+    Rather than replace a working, carefully-designed ordinal lookup with a config round-trip
+    that would add nothing (order still has to live here), this asserts the two stay in sync --
+    the enum is now genuinely read at runtime, and any future edit to one side without the other
+    fails loudly here instead of drifting silently."""
+
+
+def _assert_enum_parity(conn) -> None:
+    for group, ordinal_dict in (("cluster.status", _STATUS_ORDINAL),
+                                ("cluster_subgroup.status", _SUBGROUP_STATUS_ORDINAL)):
+        live = {r[0] for r in conn.execute(
+            "SELECT value FROM cfg_enum WHERE name=? AND inactive=0", (group,))}
+        local = set(ordinal_dict)
+        if live != local:
+            raise EnumDrift(
+                f"cfg_enum {group!r} ({sorted(live)}) no longer matches clusterstatus.py's own "
+                f"ordinal dict ({sorted(local)}) -- diff: only in cfg_enum={sorted(live - local)}, "
+                f"only in code={sorted(local - live)}")
+
+
 def _now() -> str:
     import datetime
     return datetime.datetime.now(datetime.timezone.utc).strftime("%Y-%m-%dT%H:%M:%SZ")
@@ -74,6 +99,7 @@ def advance_if_verse_reading_complete(conn, cluster_code: str) -> dict:
     3 (`ready_for_subgroup_allocation`). Never moves a cluster backward, never touches one already
     past ordinal 2 (idempotent w.r.t. later stages) -- this function's only job is the one
     transition `#1690`/`#1711`'s own sequencing implies."""
+    _assert_enum_parity(conn)
     completeness = verse_reading_completeness(conn, cluster_code)
     row = conn.execute("SELECT status FROM cluster WHERE cluster_code=?", (cluster_code,)).fetchone()
     if row is None:
@@ -243,6 +269,7 @@ def recompute_cluster_status_rollup(conn, cluster_code: str) -> dict:
     which is not built and not even fully designed yet (#1695/#1698 still open); building that
     transition now would be guessing at an undesigned stage's own precondition, not a root-fix of
     an already-specified rule."""
+    _assert_enum_parity(conn)
     row = conn.execute("SELECT status FROM cluster WHERE cluster_code=?", (cluster_code,)).fetchone()
     if row is None:
         raise ValueError(f"cluster {cluster_code!r} not found")

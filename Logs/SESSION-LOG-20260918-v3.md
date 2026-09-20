@@ -270,3 +270,6 @@ limit constraint, or content-vocabulary decisions) deliberately not made unilate
 
 ## Git state
 
+Branch `main`, commit `3cb8f70002caee5021eaab83a4ee6c914bd266fa`, pushed to `origin/main`
+(`7baeb271..3cb8f700`). `git status` confirmed clean working tree, up to date with remote.
+

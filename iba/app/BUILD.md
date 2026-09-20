@@ -15464,3 +15464,312 @@ separate escalation raised for it (direct, already-fixed feedback on code built 
 not a new discovered anomaly).
 
 **Files:** `iba/app/lib/batchprogressreport.py`.
+
+## 297. `recordingpass.py`'s hardcoded similarity threshold promoted to `cfg_setting` (2026-09-18, escalation #1753 B3, researcher-approved)
+
+`configmaint.validate`'s coherence sweep (escalation #1753) flagged `recordingpass.py` as a
+"low config-density utility" — zero `cfg.setting()`/`cfg.enum()` call sites. Reading the actual
+code found the real gap behind that flag: `SIMILARITY_THRESHOLD = 0.85` was a bare module constant,
+with its own comment already admitting it was "not a tuned constant... a starting point" (#1693's
+own deferred-decision language). Researcher approved promoting it, same treatment as other
+hardcoded-constant fixes this session.
+
+Threaded a `similarity_threshold` parameter through `record_batch`/`record_one_observation`
+(default = the same module constant, so a caller that omits it — e.g. a one-off migration —
+behaves exactly as before). All 4 live call sites (`iba/app/handlers/cluster.py`'s `subgroup`/
+`reading`/`answer`, `iba/app/handlers/lexical.py`'s `meaning`) now pass
+`ctx.cfg.setting("cluster.recording_similarity_threshold", 0.85)` — same value, now config-driven
+and independently tunable per the researcher's own future judgement rather than buried in code.
+
+**Files:** `iba/app/lib/recordingpass.py`, `iba/app/handlers/cluster.py`,
+`iba/app/handlers/lexical.py`. Config: `cfg_setting.cluster.recording_similarity_threshold`
+(escalation #1777, pending approval as of this entry — see BUILD.md's own convention of recording
+the code the moment it's written, not waiting on the config side of a paired change).
+
+## 298. `cfg_column.inactive` cascade for two already-retired writers, plus a real enum-parity guard in `clusterstatus.py` (2026-09-18, escalation #1753 B1/B2, researcher-directed)
+
+Same coherence sweep (#1753) flagged 29 "stale `filled_by`" columns pointing at two already-inactive
+steps (`lexicon.parse`, `lexical.enrich`) and 8 "orphan" `cfg_enum` groups nothing looks up by name.
+Investigated both before touching anything:
+
+**B1 — `cfg_table.inactive` was already set for `strong_meaning_parsed`/`strong_lsj_parsed`/
+`strong_mounce_parsed`/`verse_lexical_note`** (when `lexicon.parse`'s grants were retired earlier
+today, #1747-1749) **but the cascade to their own `cfg_column` rows was missed** — every column
+still read `inactive=0`. Researcher confirmed directly (escalation #1753 v4): "you missed this
+one." `passage.lexical_complete_at` had the same gap (its sibling `passage.genre`, same writer,
+was already correctly deactivated). Researcher separately confirmed `lexical.enrich`'s whole
+output is superseded by the current build, not merely gated by #737 as this session first assumed
+— deactivate now, don't wait. Filed as 4 separate `configmaint.propose` proposals (escalations
+#1773-1776, cfg_column.inactive=1 per table) rather than one — each needs its own before/after
+audit trail. **Pending researcher approval as of this entry** (one proposal — `passage.
+lexical_complete_at` — was also blocked outright by the harness's own auto-mode permission
+classifier before it could even raise; flagged back to the researcher rather than retried).
+
+**B2 — read the actual code behind all 8 orphan enums instead of guessing:**
+- `cluster.status`/`cluster_subgroup.status`: `clusterstatus.py` already carries its own
+  `_STATUS_ORDINAL`/`_SUBGROUP_STATUS_ORDINAL` dicts (the enum has no ordering — this module's
+  whole job IS the ordering, so a full replace-with-cfg.enum() would lose the one thing the dict
+  provides that the enum doesn't). Checked both dicts' keysets against the live enum: zero drift.
+  Added `_assert_enum_parity()` — a real `cfg_enum` lookup by name, called at the two live
+  status-write entry points (`advance_if_verse_reading_complete`,
+  `recompute_cluster_status_rollup`) — so a future edit to either side without the other now fails
+  loudly instead of drifting silently. Verified live against the real DB (parity holds).
+- `ib_observation.stage`/`.window`: checked live data against both enums directly — zero drift in
+  either (window is already sourced correctly from `wa_obs_question_catalogue`, itself enum-clean).
+  No code change; these were a documentation gap, not a behavioural one.
+- `ib_observation.status`: found the real story is worse than "not validated" — every one of
+  7,046 live rows is the same hardcoded literal `'resolved'` (`recordingpass.py`'s own insert).
+  The other 3 enum values (`needs-corroboration`/`open`/`silent`) were designed but the lifecycle
+  that would ever set them was never built. Not fixed here — deciding what triggers each state is
+  new feature design, not a coherence fix, and not something to improvise unilaterally.
+- `ib_observation.meaning_source`: already its own open escalation (#1771, in-progress) with a
+  real unresolved design question the researcher raised directly (a lost original purpose: "ensure
+  the LLM reads all the meaning sources, not just default to one"). Not duplicated here.
+- `lexical_code_class`/`party_kind`: found these are orphan **by an earlier explicit researcher
+  decision**, not an incomplete build — `lexical.py:load_code_classes`'s own docstring cites it
+  directly: *"Sourced from `cluster_strong`, NOT `cfg_lexical_code_class` (architecture correction,
+  researcher verdict 2026-09-05: 'assigning a special status to a strong is to use a cluster for
+  it... this is not cfg territory' — full record BUILD.md #228/#229)."* `party_kind`'s own 3 output
+  values (`_PARTY_CLASS_TO_KIND`) already match the enum's vocabulary exactly, just not via a
+  `cfg.enum()` call. Reported back rather than silently forced into a shape the researcher already
+  ruled out once.
+
+**Files:** `iba/app/lib/clusterstatus.py` (`EnumDrift`, `_assert_enum_parity`, 2 call sites).
+Config: 4 pending `cfg_column` proposals (#1773-1776, awaiting approval). Escalation #1753
+(researcher-directed across v4, in progress — B4/B5/B6 not started this turn).
+
+## 300. `purge.audit` — app-wide soft-delete purge audit, registered and built (2026-09-19, escalation #1766, researcher-approved build)
+
+Researcher approved building the audit half of #1766 ("Approve to build. Do not run a purge as
+yet."). Registered as a real work package, not an ad-hoc script — mirrors `spine.check`/
+`lexical.readiness`'s own shape exactly: `cfg_setting` (report path + the >10 threshold, both
+config-driven, not hardcoded — same fix pattern as #1753 B3/#1761), `cfg_report`/
+`cfg_report_section` (naming_scheme='stable', so it versions AND keeps a refreshed plain-named
+file), `cfg_work_package`/`cfg_step` (`purge-audit`/`purge.audit`), `cfg_utility`
+(`iba/app/handlers/purge.py`) — via `migration/register_purge_audit_step_v1_20260919.py`
+(idempotent, dry-run tested first).
+
+`handlers/purge.py:audit` — for every table with a registered soft-delete column across BOTH
+databases (`cfg_column`, not a hardcoded table list), counts soft-deleted rows; any table over the
+threshold gets checked against `cfg_column.fk` for a live row elsewhere still pointing at one of
+its soft-deleted PKs, flagged UNSAFE if so. Cross-database via `ctx.cfg.database_path("bible_research")`
+(the same config-driven connection helper `prosestore.py` already uses), not a literal path.
+Read-only — no delete capability exists in this build at all; that stays a separate, not-yet-
+designed follow-up (dependency-aware purge order / retention window, #1766 v3/v5, still open).
+
+**Test plan run** (`cfg_behaviour_rule` test-plan-per-module-utility), results here not just
+asserted: (1) fresh run — `34 table(s) safe to purge, 8 UNSAFE`, matches the escalation #1766 v3
+manual audit exactly, same 8 tables/counts. (2) same-day re-run — correctly archived v1, wrote v2,
+refreshed the stable plain-named file to match v2 byte-for-byte (`diff` confirmed). (3) `-Trace` —
+confirmed `purge.unsafe_check_min_soft_deleted`/`database.bible_research.path` both read from
+config live, no hardcoded fallback silently used. (4) migration re-run — fully idempotent, every
+row reported "already present — skipped". (5) `configmaint.validate` — 0 new coherence errors from
+this build; the 1 error present (`report.batch_progress_path` missing a module attribution) predates
+this work and is unrelated (confirmed: `module` was already `NULL` before this session touched
+anything tonight) — flagged to the researcher separately, not fixed here (out of scope for #1766).
+
+**Files:** `iba/app/migration/register_purge_audit_step_v1_20260919.py` (new),
+`iba/app/handlers/purge.py` (new), `iba/app/ps/Purge-SoftDeletes.ps1` (new). Escalation #1766.
+
+## 299. `char-answers` prompt gains real tag definitions instead of a 3-tag hardcoded block (2026-09-18, escalation #1770, researcher-directed)
+
+84% of char-answers observations were tagged `answered-no-flag` — flagged live (#1770), root-caused
+last turn: `charanswergenerate.py`'s own tag guidance hardcoded explanations for only 3 of the 19
+active `ib_observation.tag` values, leaving 16 (including `cluster-pole-positive`/`-negative` —
+exactly the differentiator that would break the 84% bucket apart) offered to the model with zero
+definition. Researcher, this turn: *"proceed to implement tags properly... ensure that 'no tag' is
+really very limited."*
+
+Found a better fix than hand-writing more prose: `versereadinggenerate.py` already carries a
+`TAG_GUIDANCE` dict (built for Stage 1's own #1723 tag-vocabulary work) with real definitions for
+8 tags, `cluster-pole-positive`/`-negative` included — copied verbatim from there, not
+reinvented. `charanswergenerate.py` now imports `TAG_GUIDANCE` and renders a definition line for
+every tag actually offered that has one, instead of maintaining its own separate, incomplete
+list — the two stages' tag guidance can't drift apart from here on, and any tag added to
+`TAG_GUIDANCE` for Stage 1 automatically reaches char-answers too. Also added an explicit line
+telling the model `answered-no-flag` is a last resort, not a default (escalation #1770 cited by
+number, so a future reader can trace why that sentence exists). Kept the 3 existing char-answers-
+specific behavioural instructions (`needs_adjacent_verse_context`/`could-not-resolve`/
+`answered-no-flag`) as-is — those are stage behaviour, not generic tag definitions, so they don't
+belong in the shared dict.
+
+Verified live: called `_instructions` directly with a realistic tag list — the rendered prompt
+text now carries both cluster-pole definitions correctly.
+
+**Files:** `iba/app/lib/charanswergenerate.py`. Escalation #1770 (in progress — the OTHER 11
+never-used tags, some possibly Stage-3-only, are a smaller follow-on not resolved here).
+
+## 301. `ib_observation.status` lifecycle wired to its intended default and definitions (2026-09-20, escalation #1782, researcher-directed)
+
+Root cause (found live building #1778's proposal, escalated separately as #1782): `status` was a
+designed-but-never-built lifecycle — `recordingpass.py:213` (`_insert_observation`) hardcoded
+`status='resolved'` on every insert; all 7,046 live rows carried that one value; no code path
+anywhere read/filtered on `status` at all (checked every `FROM ib_observation`/`JOIN ib_observation`
+site — `versereadinggenerate.py`, `subgroupgenerate.py`, `charreadinggenerate.py`,
+`charanswergenerate.py` — none gate on it).
+
+Researcher gave the real 5-value lifecycle this chat turn (`cfg_enum` had 4 — `needs-corroboration`/
+`open`/`silent`/`resolved` — missing `withdrawn`): `needs-corroboration` (detail incomplete or needs
+revision), `open` (the default — not yet confirmed), `silent` (captured but excluded from subsequent
+analysis), `withdrawn` (incorrect or not useful), `resolved` (set only once cleared for inclusion in
+analysis). Applied via `configmaint.propose` (both decision_required, approved on the researcher's
+own verbatim chat instruction as the basis, per the app's own two-stage Update vocabulary):
+
+- `cfg_enum` insert: `ib_observation.status` gains `withdrawn` (ordinal 4).
+- `cfg_column` update: `database='iba'`/`ib_observation`/`status`'s `use` text was actively WRONG
+  (said `provisional|corroborated|superseded -- synthesis stage only`, describing neither the live
+  enum nor this lifecycle) — replaced with the researcher's 5-value definition.
+- `recordingpass.py:213` — write-time default changed from `"resolved"` to `"open"`, matching
+  "open — the default setting."
+
+**Deliberately NOT done here — flagged back to the researcher, not decided silently:** no read path
+was changed to gate on `status='resolved'` for inclusion in analysis. Every one of the 4 downstream
+consumers (`subgroupgenerate.py`/`charreadinggenerate.py`/`charanswergenerate.py`/
+`versereadinggenerate.py`'s own re-reads) currently reads ALL observations regardless of status —
+harmless coincidentally, until now, because every existing row was `resolved`. Nothing in this build
+promotes an observation from `open` to `resolved` (that's the observation-enhancer utility, #1778,
+proposed but not yet approved to build) — adding the gate today, with no promotion mechanism live,
+would make every NEWLY-written observation (now defaulting to `open`) silently invisible to
+subgroup/reading/answer stages, on active clusters (`M49`/`M83`), the moment this ships. Left
+un-gated on purpose pending that decision; see escalation #1782's resolution.
+
+Also discovered, NOT fixed, separately escalated (#1783): a second, unrelated table also named
+`ib_observation` lives in `bible_research.db` (81 rows, a completely different pre-IBA-era schema) —
+a naming collision, not a live duplicate of this data.
+
+**Files:** `iba/app/lib/recordingpass.py`. Escalations #1782 (this fix), #1783 (table-name collision,
+unresolved), #1778 (observation-enhancer utility, coupled — will also write this field).
+
+## 302. `observation_enhancer` utility built — the mechanism from #1778's approved proposal, not the rules themselves (2026-09-20, escalation #1778, researcher-approved: "proceed with the build as planned")
+
+Built exactly items 1–4 of the revised proposal (`iba/docs/1778-correction-rule-utility-proposal-v1-
+20260919.md`) — the mechanism only, per the researcher's own framing: they don't want Claude
+inventing rules, they want a utility that applies a rule they supply, with rules added
+progressively as gaps are found.
+
+**Schema** (`migration/create_observation_enhancer_tables_v1_20260920.py`, idempotent, dry-run
+tested first): `cfg_observation_enhancer_rule` (rule storage — `rule_key`/`description`/
+`selector_sql`/`update_json`/`status`/`confirmed_at`/`created_at`/`ordinal`/`active`; `status` is
+`cfg_enum`-governed draft→confirmed→active→retired) and `ib_observation_enhancer_log` (one row per
+`(observation, field)` actually changed — `rule_id`/`rule_key`/`observation_id`/`field_changed`/
+`before_value`/`after_value`/`applied_at`/`run_id`). Both `cfg_table`/`cfg_column` registered
+(categories `rule`/`log`, already-live enum values on this app). `cfg_utility`
+(`iba/app/handlers/observationenhancer.py`), `cfg_write_grant` (`observation_enhancer.apply` →
+`ib_observation`/`ib_observation_enhancer_log`/`cfg_observation_enhancer_rule`, the last for its
+own draft→active self-promotion), `cfg_work_package`/`cfg_step` (`observation-enhancer` /
+`observation_enhancer.preview` + `observation_enhancer.apply`) — same registration shape as #1766's
+`purge.audit` and #1706/#1682's cluster-reading steps, not an ad hoc script.
+
+**Rule storage is deliberately NOT a bespoke add/confirm mechanism** — a rule row is just another
+`cfg_*` row, added/edited via the standing `configmaint.propose` cycle like every other config
+change. This directly answers #1778's own governance question from the prior round (v4): storing
+rules in a hand-authored file would have bypassed `configmaint`'s coherence checking entirely,
+exactly the deviation already caught and corrected. The researcher's own "selector scope" answer
+(a real SQL `SELECT`, safety is per-rule confirmation, not a restricted grammar) is implemented as
+`status`: a rule stays `draft` until the researcher has run a real `-Action Preview` and looked at
+its actual matches, THEN confirms it via an ordinary `configmaint.propose` update
+(`status='confirmed'`) — only then does `-Action Apply` permit it to run.
+
+**`handlers/observationenhancer.py`** — `preview(ctx)` (read-only: runs `selector_sql`, returns
+match count + a 10-row sample + the `update_json` that would apply, any rule status) and
+`apply(ctx)` (refuses any rule not `confirmed`/`active`; re-validates `selector_sql` AND
+`update_json` live on every call, not just at authoring time — single `SELECT` only, no `;`, no
+INSERT/UPDATE/DELETE/DROP/ATTACH/PRAGMA/ALTER keyword, must reference `ib_observation`, must return
+an `id` column; `update_json` may only name real `ib_observation` columns, never the primary key;
+applies the `UPDATE` per matched row, logs every field change, promotes a first-time `confirmed`
+rule to `active`). **`ps/Observation-Enhancer.ps1`** — `-Action Preview|Apply -RuleKey <key>`, same
+run-header/result/pause shape as every other work-package script.
+
+**Test plan run** (`cfg_behaviour_rule` test-plan-per-module-utility), against an isolated SCRATCH
+COPY of `iba.db` (via `sqlite3.Connection.backup()`, not a plain file copy — the live DB is WAL-mode
+and a naive `cp` of just the main file was verified live to miss un-checkpointed WAL contents,
+caught when the first test run against a naive copy failed with "no such table" for a table that
+had, in fact, already been committed live) — never touched production data:
+1. A draft rule's `-Action Apply` is refused (`rule-not-confirmed`).
+2. `-Action Preview` on that same draft rule works regardless of status, returns the correct match
+   count (2 real rows picked from the copy) and the `update_json` verbatim.
+3. Confirming the rule then applying: both rows' `status` actually changed, `applied` count correct.
+4. The rule itself promoted `confirmed`→`active`.
+5. `ib_observation_enhancer_log` rows exactly match — right `observation_id`, `field_changed`,
+   `before_value` (the row's real prior value), `after_value`, `run_id`.
+6. Every guard rail individually: `;`-containing selector, an `UPDATE` keyword hidden mid-clause,
+   a selector not touching `ib_observation`, a non-`SELECT` statement, an `update_json` targeting
+   the primary key, and a selector missing an `id` column — all correctly refused with the specific
+   condition named, none silently accepted.
+7. End-to-end through the REAL dispatcher against the LIVE db (not the scratch copy): `-Action
+   Preview -RuleKey nonexistent-test-rule` — confirmed the full real path (cfg_step lookup, handler
+   resolution, `cfg_on_fail` default-to-report-stop routing, PS JSON parsing, exit code 3) works
+   correctly. This deliberately created escalation #1788 (the framework's own default self_correctable
+   escalation for an unrouted `fail()`) — resolved immediately as a confirmed-working guard rail,
+   not a real defect.
+8. `configmaint.validate` run immediately after the build — caught one real hard coherence error
+   the first pass missed: `cfg_observation_enhancer_rule` had no `cfg_write_grant` row for writer
+   `configmaint.propose`, the table's actual authoring path (rule rows are added/edited/confirmed
+   the ordinary way, not via a bespoke command). Fixed in the same unit of work (migration re-run,
+   idempotent); re-validated clean — back to "structurally coherent," only the pre-existing/expected
+   advisory backlog plus the one new, already-flagged ps-worksheet-drift finding (item below).
+
+**Deliberately NOT done this round:**
+- **The first real rule** (#1769's placeholder row, id 4655) — the proposal doc itself said this
+  waits on the researcher confirming the intended fix (correct the text vs. flag it via `status`),
+  "not assumed here." Still not assumed; the mechanism is ready for it whenever that's decided.
+- **`ps tools worksheet.xlsx` sync** (`governance.ps_worksheet_sync_on_change`) — normally required
+  in the same unit of work as any new PS script, but Excel was confirmed live open
+  (`Get-Process EXCEL`) while this was built; writing to that file while open in Excel is a known
+  crash risk (see `feedback_warn_before_editing_excel_tool_interface`). Deferred, flagged back to
+  the researcher rather than risking the write — outstanding, not forgotten.
+
+**Files:** `iba/app/migration/create_observation_enhancer_tables_v1_20260920.py` (new),
+`iba/app/handlers/observationenhancer.py` (new), `iba/app/ps/Observation-Enhancer.ps1` (new).
+Escalation #1778.
+
+## 303. `ps tools worksheet.xlsx` synced for `Observation-Enhancer.ps1` — the #302 "Excel is open" read was wrong (2026-09-20, escalation #1778)
+
+`#302` deferred the worksheet sync on `Get-Process EXCEL` returning a live process, per
+`feedback_warn_before_editing_excel_tool_interface`. Researcher, this chat turn: *"in fact the
+excel PC Tools is not open and you can proceed."* Re-checked properly this time — a running
+`EXCEL.EXE` process only means *some* workbook is open in Excel, not this one; the actual signal
+is an Excel-created lock file (`~$ps tools worksheet.xlsx`) next to the real file, and none was
+present. Should have checked for the lock file the first time instead of treating any live Excel
+process as blocking every workbook — corrected here, not just this once.
+
+Added the `Observation-Enhancer` tab (row 1/2 title+description, row 4 flag headers `-Action`/
+`-RuleKey`/`-RunId`/`-Trace`, row 5 short per-flag help, row 6 fill-in-and-compile template —
+same shape as `New-Word`'s tab, copied cell-by-cell for font/fill so it matches this workbook's
+own convention exactly, not a generic style) and appended `Observation-Enhancer.ps1` to the
+`Index` tab (row 65). `configmaint.validate`'s `ps_worksheet_drift` finding for this script is
+now gone.
+
+**Not verified:** the compiled-command formula in `B6` could not be recalculated —
+`scripts/recalc.py` (LibreOffice-backed) failed in this environment (`module 'socket' has no
+attribute 'AF_UNIX'`, a sandboxing limitation, not a formula problem). The formula itself is the
+exact same `IF(...)`-concatenation shape already live and working in this same workbook (`New-
+Word`'s own `B6`), with only the cell references changed for this tab's own columns — low risk,
+but genuinely unverified by a real recalculation, unlike everything else in this session's build.
+Worth a manual look next time the workbook is open in real Excel.
+
+**Files:** `iba/docs/ps tools worksheet.xlsx`. Escalation #1778.
+
+## 304. The 9-item orphan-cfg_enum backlog — 8 fixed with real runtime validation, 1 deliberately left, 1 checker false-positive corrected (2026-09-20, escalation #1796, researcher-directed: "errors need to be fixed, not silently ignored")
+
+Researcher rejected the "approve to acknowledge as known backlog" recommendation from #1796 outright — orphans must actually be resolved, not carried forward as accepted debt. Went through all 9 individually rather than applying one blanket treatment (some are dead, most are live-and-real, one turned out not to be an orphan at all):
+
+**Retired (confirmed dead, not fixed with code):** `lexical_code_class` — `lib/lexical.py:169` already states data is sourced from `cluster_strong`, not `cfg_lexical_code_class`, per an architecture correction, and escalation #1499's own resolution describes migrating its 19-20 codes into the T5/T6/T7 cluster system. `cfg_table.inactive=1` + all 7 `cfg_enum` values `inactive=1`.
+
+**False positive in the checker itself, not a real gap:** `cluster.status`/`cluster_subgroup.status` — `clusterstatus.py`'s `_assert_enum_parity()` already looks these up live, every call, exactly as `escalation #1753 B1/B2` built it — but through a parameterized loop variable, not a literal quoted name next to `.enum(`/`name=`. `cfgquality.py`'s `find_orphan_configs` regex can only see a literal. Fixed the checker (a narrowly-named, explicitly-justified exemption, same shape as the existing `database.{name}.path` exemption in the same function), not the already-correct code.
+
+**Real gaps, fixed with live validation, all checked against live data for drift BEFORE enabling (a hard validator that doesn't match reality would break the pipeline, not fix it):**
+- `run_batch.status` — `batchcontrol.py`'s `start_batch`/`commit_batch`/`fail_batch` now assert their literal against a live `cfg_enum` lookup.
+- `ib_observation.stage` — `recordingpass.py`'s `record_one_observation` now validates the caller-supplied stage live (ValueError, not a soft skip — this one's caller-controlled, not model output).
+- `ib_observation.status` — `recordingpass.py`'s two write sites (`_insert_observation`, the aligned-superficial-edit path) now assert their `"draft"` literal against the live enum.
+- `ib_observation.window` — `_window_for()` now cross-checks `wa_obs_question_catalogue.window` against the live enum (checked first: exact match, 0 drift).
+- `party_kind` — `lexical.py`'s `_PARTY_CLASS_TO_KIND` dict's own value set is now asserted against the live enum once per process (module-level cache, not per-verse — `build_for_verse` runs per verse in bulk builds).
+- `cfg_observation_enhancer_rule.status` (tonight's own new orphan, #302) — already fixed same-session, see #302.
+
+**Deliberately NOT fixed, and NOT papered over:** `ib_observation.meaning_source`. Checked live before writing anything: 37+ distinct free-form strings already exist against this 3-value enum (`"strong_meaning_tree; lsj; mounce"`, `"role list"`, `"cluster_codes"`, etc.) — almost none a clean canonical value. A write-time validator here would skip-and-discard nearly every future observation that sets the field, a real regression dressed up as a fix. This is exactly escalation #1771's own open question (redesigning the field's shape) — a validator was drafted, then DELETED again after noticing it would fool the very orphan-checker this work exists to satisfy (the checker only greps for the lookup text, not whether it's ever called — a dormant, never-invoked function with the right string inside it would have silently hidden a real gap). Left as a genuine, visible orphan; #1771 needs to actually resolve first.
+
+Also closed the observation_enhancer's own related gap while here: `handlers/observationenhancer.py`'s `_validate_update_fields` only checked column NAMES, not values — a rule could have set `status` to a typo/retired value with nothing catching it. Now checks any column with a registered `ib_observation.<column>` enum group against its live values.
+
+**Verified:** `cfgquality.find_orphan_configs()` called directly (not through the full `configmaint.validate` dispatcher, to avoid raising yet another near-duplicate escalation while iterating) — 9 orphans down to the 1 deliberately-left one. Also re-ran the full observation_enhancer test suite (still all passing) plus live smoke tests of `record_one_observation`/`batchcontrol`/`build_for_verse` against a scratch DB copy, including a deliberate bad-stage call confirming the new assertion actually fires.
+
+**Files:** `iba/app/lib/batchcontrol.py`, `iba/app/lib/recordingpass.py`, `iba/app/lib/lexical.py`, `iba/app/lib/cfgquality.py`, `iba/app/handlers/observationenhancer.py`. Escalations #1796 (this work), #1798/#1799 (lexical_code_class retirement), #1771 (meaning_source, still open).

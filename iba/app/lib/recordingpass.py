@@ -31,8 +31,10 @@ import json
 import re
 
 
-SIMILARITY_THRESHOLD = 0.85  # exact value not specified by #1693 -- a starting point, per its own
-                              # "refined from real behaviour" instruction, not a tuned constant.
+SIMILARITY_THRESHOLD = 0.85  # fallback default only (escalation #1753 B3) -- live callers pass
+                              # cfg_setting cluster.recording_similarity_threshold instead; this
+                              # constant is what a caller gets if it omits similarity_threshold
+                              # entirely (e.g. a one-off migration).
 
 
 class UnresolvedOccurrence(Exception):
@@ -124,13 +126,26 @@ def _effective_cluster_code(conn, pass_cluster_code: str, strong: str | None,
 
 def _window_for(conn, question_code: str | None) -> str | None:
     """window is DERIVED from the catalogue question, never invented ad hoc (#1723 -- the old
-    #1691 definition duplicated `stage`; the new one is the question's own registered angle)."""
+    #1691 definition duplicated `stage`; the new one is the question's own registered angle).
+    Cross-checked against the live cfg_enum, added 2026-09-20 (escalation #1796):
+    ib_observation.window is a registered cfg_enum group, but the actual value always came from
+    wa_obs_question_catalogue.window with nothing ever checking the two stay in sync -- a typo or
+    stale row in the catalogue could silently write a window value the enum doesn't even list."""
     if not question_code:
         return None
     row = conn.execute(
         "SELECT window FROM wa_obs_question_catalogue WHERE question_code=? AND deleted=0",
         (question_code,)).fetchone()
-    return row["window"] if row else None
+    window = row["window"] if row else None
+    if window is not None:
+        valid = {r[0] for r in conn.execute(
+            "SELECT value FROM cfg_enum WHERE name='ib_observation.window' AND inactive=0")}
+        if window not in valid:
+            raise ValueError(
+                f"wa_obs_question_catalogue.window {window!r} for question_code {question_code!r} "
+                f"not in live cfg_enum ib_observation.window {sorted(valid)} -- catalogue has "
+                f"drifted from the registered enum")
+    return window
 
 
 class InvalidQuestionCode(Exception):
@@ -177,6 +192,30 @@ def _validate_tag(conn, tag: str) -> None:
             f"refusing to write an observation under it")
 
 
+# NOT adding an ib_observation.meaning_source validator here (checked live 2026-09-20, escalation
+# #1796, before writing one): 37+ distinct free-form strings are already live against this 3-value
+# enum (e.g. "strong_meaning_tree; lsj; mounce", "role list", "cluster_codes") -- enforcing the
+# clean 3 values at write time would skip-and-discard nearly every future observation that sets
+# this field. Deliberately left as a genuine, still-open orphan rather than papering over it with a
+# dormant function that would fool the orphan-checker's text scan without actually protecting
+# anything (a real risk: the checker only greps for the lookup TEXT, not whether it's ever called).
+# This is exactly escalation #1771's own open question (redesigning the field's shape) -- surfaced
+# there with this concrete measurement, not decided here.
+
+
+def _validate_stage(conn, stage: str) -> None:
+    """stage is caller-supplied (a Python literal naming the calling pipeline stage), never model-
+    output -- a mismatch here is a programming bug, not a data-quality finding, so this asserts
+    (ValueError) rather than the soft skip-and-report convention used for the model-supplied fields
+    above. Added live 2026-09-20 (escalation #1796): ib_observation.stage was a registered cfg_enum
+    group nothing ever looked up by name at runtime. Queried fresh each call, same as
+    _validate_tag/_validate_question_code above -- not cached, for the same reason they aren't."""
+    valid = {r[0] for r in conn.execute(
+        "SELECT value FROM cfg_enum WHERE name='ib_observation.stage' AND inactive=0")}
+    if stage not in valid:
+        raise ValueError(f"stage {stage!r} not in live cfg_enum ib_observation.stage {sorted(valid)}")
+
+
 _DEGENERATE_OBS_TEXT = re.compile(r"^\s*(none|n/?a|null|nothing|-)\s*\.?\s*$", re.I)
 
 
@@ -199,16 +238,28 @@ def _validate_obs_text(conn, obs_text: str) -> None:
             f"write a content-less observation")
 
 
+def _assert_valid_ib_status(conn, status: str) -> None:
+    """status is a fixed internal literal at both call sites below ('draft'), never model-output --
+    same rationale as _validate_stage: an assertion catching a future typo/drift, not a data-quality
+    soft-skip. Added 2026-09-20 (escalation #1796): ib_observation.status was a registered cfg_enum
+    group nothing ever looked up by name at runtime."""
+    valid = {r[0] for r in conn.execute(
+        "SELECT value FROM cfg_enum WHERE name='ib_observation.status' AND inactive=0")}
+    if status not in valid:
+        raise ValueError(f"status {status!r} not in live cfg_enum ib_observation.status {sorted(valid)}")
+
+
 def _insert_observation(conn, cluster_code: str, stage: str, tag: str, strong: str | None,
                         question_code: str | None, obs_text: str, meaning_source: str | None,
                         source_json_serial: int | None, subgroup_id: int | None = None,
                         supersedes_observation_id: int | None = None) -> int:
     window = _window_for(conn, question_code)
+    _assert_valid_ib_status(conn, "draft")
     cur = conn.execute(
         "INSERT INTO ib_observation (cluster_code, stage, tag, strong, question_code, obs_text, "
         "meaning_source, status, supersedes_observation_id, source_json_serial, window, "
         "cluster_subgroup_id, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
-        (cluster_code, stage, tag, strong, question_code, obs_text, meaning_source, "resolved",
+        (cluster_code, stage, tag, strong, question_code, obs_text, meaning_source, "draft",
          supersedes_observation_id, source_json_serial, window, subgroup_id, _now()))
     return cur.lastrowid
 
@@ -229,7 +280,8 @@ def _insert_node(conn, observation_id: int, cluster_code: str, strong: str | Non
 
 def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
                            source_json_serial: int | None, subgroup_id: int | None = None,
-                           subgroup_code: str | None = None) -> dict:
+                           subgroup_code: str | None = None,
+                           similarity_threshold: float = SIMILARITY_THRESHOLD) -> dict:
     """One model-produced observation -> same/broaden/new decision -> DB write(s). Returns a
     small report dict for the caller's own summary, never raises on an unresolved occurrence for
     the WHOLE observation -- only the individual bad occurrence is skipped and reported, per
@@ -251,6 +303,8 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     obs_text = obs["obs_text"]
     meaning_source = obs.get("meaning_source")
 
+    _validate_stage(conn, stage)
+
     try:
         _validate_question_code(conn, question_code)
     except InvalidQuestionCode as e:
@@ -265,6 +319,10 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
         _validate_obs_text(conn, obs_text)
     except InvalidObservationText as e:
         return {"action": "skipped-invalid-obs-text", "unresolved": [str(e)]}
+
+    # meaning_source is deliberately NOT validated here -- see this file's own note near
+    # ib_observation.meaning_source above for why (massive live drift from the 3-value enum,
+    # escalation #1796/#1771).
 
     # #1723: a word-level (M0.1/M0.5) observation is filed under the STRONG's own actual M-code,
     # not the pass's cluster_code -- lets a later cluster's own pass find it as already covered
@@ -318,9 +376,14 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
         if score > best_score:
             best, best_score = cand, score
 
-    if best is not None and best_score >= SIMILARITY_THRESHOLD:
-        conn.execute("UPDATE ib_observation SET obs_text=?, updated_at=? WHERE id=?",
-                    (obs_text, _now(), best["id"]))
+    if best is not None and best_score >= similarity_threshold:
+        # Researcher instruction, 2026-09-20 (escalation #1782): editing an existing observation's
+        # text invalidates whatever review state it had (e.g. resolved) -- reset to 'draft' so it
+        # is re-reviewed, same as a brand-new observation, rather than silently keeping a stale
+        # status against changed content.
+        _assert_valid_ib_status(conn, "draft")
+        conn.execute("UPDATE ib_observation SET obs_text=?, status=?, updated_at=? WHERE id=?",
+                    (obs_text, "draft", _now(), best["id"]))
         observation_id = best["id"]
         action = "aligned-superficial-edit"
         traced = None
@@ -371,7 +434,8 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
 
 def record_batch(conn, cluster_code: str, stage: str, model_output: dict,
                  source_json_serial: int | None = None, subgroup_id: int | None = None,
-                 subgroup_code: str | None = None) -> dict:
+                 subgroup_code: str | None = None,
+                 similarity_threshold: float = SIMILARITY_THRESHOLD) -> dict:
     """Every observation in one model reply, in the same unit of work (checklist rule 0.3: assemble
     -> run -> record fires immediately after, never a deferred batch pickup). Caller commits.
 
@@ -386,7 +450,7 @@ def record_batch(conn, cluster_code: str, stage: str, model_output: dict,
     (Stage 3/4) -- see `record_one_observation`'s own docstring. Omitted (None) for stages not
     scoped to one subgroup (verse-reading, char-subgroup), which is the correct value for them."""
     results = [record_one_observation(conn, cluster_code, stage, obs, source_json_serial,
-                                      subgroup_id, subgroup_code)
+                                      subgroup_id, subgroup_code, similarity_threshold)
               for obs in model_output.get("observations", [])]
     by_action: dict[str, int] = {}
     for r in results:

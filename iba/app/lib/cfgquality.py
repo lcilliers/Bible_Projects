@@ -242,9 +242,27 @@ def find_orphan_configs(conn: sqlite3.Connection, app_root: pathlib.Path) -> lis
             orphans.append(f"cfg_setting {key!r} (key not found together with a "
                            f"cfg.setting(...) call in any one file)")
 
+    # Escalation #1796, 2026-09-20: clusterstatus.py's _assert_enum_parity() genuinely looks up
+    # BOTH of these groups live, every call -- "SELECT value FROM cfg_enum WHERE name=?", (group,)
+    # inside a `for group, ordinal_dict in (("cluster.status", ...), ("cluster_subgroup.status",
+    # ...))` loop. The regex below only recognises a LITERAL quoted name immediately after
+    # `.enum(`/`name=`, so a name reached through a loop variable is invisible to it even though
+    # the runtime coverage is real -- confirmed live by reading clusterstatus.py itself, not
+    # assumed. Same shape of false positive as the database.{name}.path exemption above (an
+    # indirect lookup a static regex can't see); narrowly named, not a blanket loosening -- a
+    # genuinely new orphan under either of these two exact names would still need this same
+    # confirmed cross-check to stay exempt.
+    _PARITY_CHECKED_ENUMS = {"cluster.status", "cluster_subgroup.status"}
+    clusterstatus_py = per_file.get(app_root / "lib" / "clusterstatus.py", "")
+    parity_confirmed = (
+        "_assert_enum_parity" in clusterstatus_py
+        and "cfg_enum WHERE name=?" in clusterstatus_py)
+
     for r in conn.execute("SELECT DISTINCT name FROM cfg_enum WHERE inactive=0"):
         name = r[0]
         if name in enum_names:
+            continue
+        if name in _PARITY_CHECKED_ENUMS and parity_confirmed:
             continue
         looked_up = re.search(
             r'(\.enum\(\s*|name\s*=\s*)["\']' + re.escape(name) + r'["\']', corpus)

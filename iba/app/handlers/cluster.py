@@ -265,7 +265,8 @@ def subgroup(ctx: Ctx) -> Outcome:
         # observation itself; any substantive claim the LLM makes goes through record_batch exactly
         # like verse-reading's own observations do, stage='char-subgroup', not a bespoke promotion path.
         obs_summary = recordingpass.record_batch(
-            conn, cluster_code, "char-subgroup", parsed, source_json_serial=1)
+            conn, cluster_code, "char-subgroup", parsed, source_json_serial=1,
+            similarity_threshold=float(ctx.cfg.setting("cluster.recording_similarity_threshold", 0.85)))
         conn.commit()
 
         status_result = clusterstatus.advance_after_subgroup_allocation(conn, cluster_code)
@@ -406,7 +407,8 @@ def reading(ctx: Ctx) -> Outcome:
 
             obs_summary = recordingpass.record_batch(
                 conn, cluster_code, "char-reading", parsed, source_json_serial=idx,
-                subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code)
+                subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code,
+                similarity_threshold=float(ctx.cfg.setting("cluster.recording_similarity_threshold", 0.85)))
             conn.commit()
         except Exception as e:
             # Crash safeguard (#1756) -- see lexical.meaning's own identical pattern.
@@ -536,7 +538,8 @@ def answer(ctx: Ctx) -> Outcome:
 
         obs_summary = recordingpass.record_batch(
             conn, cluster_code, "char-answers", parsed, source_json_serial=1,
-            subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code)
+            subgroup_id=subgroup_row["id"], subgroup_code=subgroup_code,
+            similarity_threshold=float(ctx.cfg.setting("cluster.recording_similarity_threshold", 0.85)))
         conn.commit()
 
         question_codes = [q["question_code"] for q in charanswergenerate.battery_questions(conn)]

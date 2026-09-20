@@ -43,7 +43,7 @@ import re
 from .narrativegenerate import ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-exported
 from .lexicalenrichgenerate import call_api, log_usage  # reuse, don't duplicate
 from .lexicalenrichgenerate import CostCapExceeded, BadModelResponse  # noqa: F401 -- re-exported
-from .versereadinggenerate import _meaning_sources  # reuse, don't duplicate
+from .versereadinggenerate import _meaning_sources, TAG_GUIDANCE  # reuse, don't duplicate
 from .charreadinggenerate import _full_occurrences  # reuse, don't duplicate
 
 
@@ -205,8 +205,12 @@ def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
         f"adjacent verse would help -- state explicitly in obs_text what's outstanding and what "
         f"the follow-up cross-check needs to establish (never a bare flag). Use "
         f"`could-not-resolve` where a genuine can't-resolve case arises, stating what signal "
-        f"suggests it should be resolvable with further analysis. Use `answered-no-flag` for a "
-        f"plain, substantive answer with nothing else to categorise.\n\n"
+        f"suggests it should be resolvable with further analysis. `answered-no-flag` is for a "
+        f"plain, substantive answer with nothing else to categorise -- escalation #1770: it is "
+        f"NOT expected to dominate; check every OTHER tag below first and only fall back to "
+        f"`answered-no-flag` once none of them genuinely apply.\n"
+        + ("".join(f"  - {t}: {TAG_GUIDANCE[t]}\n" for t in tag_values if t in TAG_GUIDANCE))
+        + "\n"
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- `question_code` MUST be one of the exact leaf codes listed above -- never a bare "
         f"component code, never a code not in this list.\n"

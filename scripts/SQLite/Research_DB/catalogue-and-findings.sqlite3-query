@@ -8,8 +8,11 @@ select * from ib_node;
 Select * from ib_observation
 inner join ib_node n on ib_observation.node_id = n.id;
 
-select question_code, question_text from wa_obs_question_catalogue
-where question_code like 'T%';
+select question_code, question_text,* from wa_obs_question_catalogue
+where question_code like 'M%';
+
+select question_code, question_text,* from wa_obs_question_catalogue
+;
 
 
 

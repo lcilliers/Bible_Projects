@@ -31,3 +31,13 @@ order by strong.stepGloss, verse.reference;
 select * from cluster
 where cluster_code like 'M%';
 
+Select C.cluster_code
+,C.short_name
+,COUNT(CS.strong) as strong_count
+ from cluster C
+ INNER JOIN cluster_strong CS
+ ON C.cluster_code = CS.cluster_code
+WHERE C.deleted = 0
+GROUP BY C.cluster_code, C.short_name
+ORDER BY strong_count DESC
+;
