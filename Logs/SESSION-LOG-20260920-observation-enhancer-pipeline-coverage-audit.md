@@ -216,3 +216,7 @@ genuinely open design questions, not decided here.
 
 ## 6. Git state
 
+Branch `main`, commit `6ad08982b5dd9e4385508274c07a779735eb8a6c` (2026-09-20 17:34:19 +0100).
+Pushed: `3cb8f700..6ad08982  main -> main`. `git status` after push: "Your branch is up to date
+with 'origin/main'." / "nothing to commit, working tree clean" — confirmed, not asserted.
+
