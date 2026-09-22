@@ -145,4 +145,7 @@ Researcher instruction, verbatim: *"all the work you did today and yesterday mus
 
 ## 15. Git state
 
-To be confirmed after this log's own commit-and-push (`governance.session_log_triggers_commit`) — see the commit that follows this log in the repository history for the actual hash/push confirmation.
+- Branch: `main`
+- Commit: `93f3bd2802036f473530a155f6c144753ec93beb` (2026-09-22T08:44:54+01:00) — "session 20260922: Stage 1 reconciliation built, cluster-agnostic correction, batch controller, full governance audit"
+- Pushed: `38b410fa..93f3bd28 main -> main` — confirmed via `git push`
+- `git status` after push: `On branch main. Your branch is up to date with 'origin/main'. nothing to commit, working tree clean.`
