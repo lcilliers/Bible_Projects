@@ -76,7 +76,7 @@ def resolve_occurrence(conn, strong: str, claimed_verse: str, claimed_surface: s
            "morph_code": r["morph_code"]}
 
 
-_PER_OCCURRENCE_CODES = ("M0.6.5", "M0.6.6", "D7.7.1")
+_VERSE_LEVEL_OCCURRENCE_CODES = ("M0.6.5", "M0.6.6", "D7.7.1")
 
 
 def _is_per_occurrence_question(question_code: str | None) -> bool:
@@ -88,7 +88,37 @@ def _is_per_occurrence_question(question_code: str | None) -> bool:
     oppositely (one names the word-level set, this one names its complement)."""
     if not question_code:
         return False
-    return question_code.startswith("M0.7") or question_code in _PER_OCCURRENCE_CODES
+    return question_code.startswith("M0.7") or question_code in _VERSE_LEVEL_OCCURRENCE_CODES
+
+
+def _is_strong_specific_occurrence_question(question_code: str | None) -> bool:
+    """M0.7.1-16 and M0.8.1 -- explicitly about "[this word]" (versereadinggenerate.py's own
+    prompt text), a genuinely word-specific finding even though it's per-verse not per-strong-ever.
+    M0.8.1 (#1836, 2026-09-22, T2/T3 elevation-candidate) joins this family for the same reason:
+    it is a fact about ONE specific non-M-code word's own candidacy, never a shared verse-level
+    fact multiple words could co-report (unlike M0.6.5/M0.6.6/D7.7.1). Identity for these stays
+    exact (verse, strong) occurrence -- count-based same/broaden/new (#1824 v10/v11 Fix 1/2),
+    unchanged by the #1824 v22 cross-strong fix below."""
+    return bool(question_code) and (question_code.startswith("M0.7") or question_code == "M0.8.1")
+
+
+def _is_verse_level_occurrence_question(question_code: str | None) -> bool:
+    """M0.6.5/M0.6.6/D7.7.1 -- researcher instruction 2026-09-22 (escalation #1832), verbatim:
+    "near duplicates are not allowed. this applies across clusters and strongs." ... "duplication
+    across questions should not be eliminated, however, near duplication within a question is an
+    issue." Investigated live: these three ARE genuinely verse-level facts asked redundantly once
+    per M-code strong present (D7.7.1's operation word, M0.6.6's whole-network composition are the
+    SAME fact regardless which strong "asks"; M0.6.5's own progressive-per-word design still
+    produces heavy content overlap even though each strong's own vantage clause differs) --
+    confirmed live: 20/23/18 separate observations across just a 5-verse test, one per (verse,
+    strong), none ever sharing a citation, because `_existing_candidates` hard-filtered by
+    strong+cluster_code for every per-occurrence question including these three. Candidate pool
+    for these three is now verse-scoped only (any strong, any cluster) -- identity is no longer
+    "guaranteed same fact by exact occurrence match" (M0.7's own reasoning), so matching uses the
+    same keyword/similarity mechanism word-level questions already use, not count-based 0/1/>1;
+    a genuinely distinct per-word contribution (e.g. M0.6.5's own vantage) scores low and is kept
+    as its own new-expands-existing row, never forced to merge."""
+    return question_code in _VERSE_LEVEL_OCCURRENCE_CODES
 
 
 def _existing_candidates(conn, cluster_code: str, stage: str, strong: str | None,
@@ -99,13 +129,33 @@ def _existing_candidates(conn, cluster_code: str, stage: str, strong: str | None
     ONLY, no verse filter, for every question type -- correct for word-level questions (a fact
     about the strong, not any one verse) but wrong for per-occurrence ones, where it let a fresh
     answer get compared against a candidate from a COMPLETELY DIFFERENT VERSE (confirmed: 22 of 61
-    matches in a live test traced cross-verse). For per-occurrence questions, first narrow to
+    matches in a live test traced cross-verse). For M0.7 (strong-specific), first narrow to
     candidates that already have an `ib_node` citation for one of THIS observation's own
     (strong, verse_reference) occurrence pairs -- a direct lookup answering "does a row for this
-    occurrence exist," not a heuristic guess left to keyword/similarity scoring downstream."""
+    occurrence exist," not a heuristic guess left to keyword/similarity scoring downstream.
+
+    #1832, 2026-09-22 -- for M0.6.5/M0.6.6/D7.7.1 (verse-level occurrence questions), `strong` and
+    `cluster_code` are BOTH dropped from the filter: the researcher's own instruction ("near
+    duplicates are not allowed... applies across clusters and strongs... duplication across
+    questions should not be eliminated, however, near duplication within a question is an issue")
+    scopes the candidate pool to stage+question_code+VERSE only, any strong, any cluster's pass.
+    #1832 v2 correction: identity within this pool is NOT decided by keyword/similarity scoring
+    (tried first, failed live -- `meaning_keywords` is freely LLM-generated, not a stable identity
+    key across separate calls) -- these three are architecturally single-fact-per-verse questions,
+    so `record_one_observation` treats "2+ candidates in this pool" as guaranteed same-fact legacy
+    duplication, same count-based logic M0.7 already uses."""
     # `o.` prefix throughout -- both ib_observation and ib_node carry a cluster_code column, so an
     # unqualified reference is ambiguous the moment the JOIN branch below is used (found live:
     # "OperationalError: ambiguous column name: cluster_code" on the first real test of this).
+    if _is_verse_level_occurrence_question(question_code) and occurrence_refs:
+        verse_refs = sorted({verse_ref for _, verse_ref in occurrence_refs})
+        ph = ",".join("?" * len(verse_refs))
+        rows = conn.execute(
+            f"SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id = o.id "
+            f"WHERE o.stage=? AND o.question_code=? AND n.verse_reference IN ({ph})",
+            [stage, question_code] + verse_refs).fetchall()
+        return [dict(r) for r in rows]
+
     where = ["o.cluster_code=?", "o.stage=?"]
     params: list = [cluster_code, stage]
     if strong is None:
@@ -119,7 +169,7 @@ def _existing_candidates(conn, cluster_code: str, stage: str, strong: str | None
         where.append("o.question_code=?")
         params.append(question_code)
 
-    if _is_per_occurrence_question(question_code) and occurrence_refs:
+    if _is_strong_specific_occurrence_question(question_code) and occurrence_refs:
         pair_clauses = " OR ".join(["(n.strong=? AND n.verse_reference=?)"] * len(occurrence_refs))
         pair_params: list = []
         for occ_strong, verse_ref in occurrence_refs:
@@ -180,11 +230,16 @@ def _effective_cluster_code(conn, pass_cluster_code: str, strong: str | None,
     about whichever cluster's pass happened to produce it -- resolved fresh from the strong's own
     live cluster_strong M-code membership (never trusted from the caller), same "resolve fresh,
     don't trust the caller's own classification" discipline verse/strong resolution already use
-    elsewhere in this module. Relational (M0.6.5) and D7.7.1 observations stay keyed to the PASS's
-    own cluster_code -- they are inherently that cluster's own vantage point on the verse, not a
-    strong-level fact, and different clusters' M0.6.5 rows about the same verse must coexist, not
-    collapse into one. Falls back to the pass's own cluster_code if the strong carries no live
-    M-code (shouldn't happen for a word-level question, but never silently produces a NULL)."""
+    elsewhere in this module. Relational (M0.6.5), M0.6.6, and D7.7.1 observations stay keyed to
+    the PASS's own cluster_code -- only which cluster nominally "owns" the row's `cluster_code`
+    column, not whether the row itself can merge. #1832, 2026-09-22 CORRECTS this docstring's own
+    prior claim that "different clusters' M0.6.5 rows about the same verse must coexist, not
+    collapse into one" -- that was the OLD design; the researcher's own instruction now is the
+    opposite ("near duplicates are not allowed... applies across clusters and strongs"), so
+    `_existing_candidates`'s verse-level branch DOES merge these across clusters when the content
+    genuinely matches (keyword/similarity scoring decides, not cluster identity). Falls back to
+    the pass's own cluster_code if the strong carries no live M-code (shouldn't happen for a
+    word-level question, but never silently produces a NULL)."""
     if not strong or not question_code or not question_code.startswith(_WORD_LEVEL_QUESTION_PREFIXES):
         return pass_cluster_code
     row = conn.execute(
@@ -469,10 +524,25 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     traced = None
 
     if _is_per_occurrence_question(question_code):
-        # #1824 v10/v11, Fix 2: identity for a per-occurrence question comes from Fix 1's own
-        # verse+strong scoping, not keyword/similarity matching -- candidates here are ALREADY
-        # every existing row for this exact occurrence, so there is nothing left to disambiguate
-        # by text. A real three-way, not the word-level two-way below.
+        # #1824 v10/v11 Fix 2 (M0.7, exact verse+strong identity) and #1832 v2, 2026-09-22
+        # correction (M0.6.5/M0.6.6/D7.7.1, verse+question identity, no strong): identity for
+        # EVERY per-occurrence question is now structural, not a keyword/similarity judgement
+        # call. `_existing_candidates` already scopes the pool correctly per question type (exact
+        # occurrence for M0.7; verse-only, any strong/cluster for the other three) -- given that
+        # pool, "2+ existing rows" can ONLY mean legacy duplication of the identical fact, by
+        # construction (M0.7: same word, same verse, same question, nothing else it could be;
+        # M0.6.5/M0.6.6/D7.7.1: these are architecturally single-fact-per-verse questions -- one
+        # operation word, one whole-network composition, one progressive relational synthesis --
+        # so multiple strongs asking the same question about the same verse are describing the
+        # SAME fact, not independently-different ones). #1832's first attempt used keyword/
+        # similarity scoring here instead and failed live testing: `meaning_keywords` is freely
+        # LLM-generated text, not a stable identity key -- two independent calls describing the
+        # identical fact produced disjoint keyword sets (confirmed: 2Cor.8.7/D7.7.1, zero overlap
+        # between "corinthians-initiate/excel-operation/object-of-increase" and "Corinthians-
+        # excel/self-directed-growth" for the SAME underlying finding), so a rerun added a new
+        # unmerged duplicate instead of clearing anything -- 0 rows withdrawn on a 5-verse live
+        # test. Escalation #1834. Count-based matching sidesteps the unstable-keyword problem
+        # entirely: no text judgement needed when the pool itself already guarantees "same fact."
         if not candidates:
             observation_id = _insert_observation(
                 conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,

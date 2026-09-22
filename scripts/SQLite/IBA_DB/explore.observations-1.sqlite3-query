@@ -1,8 +1,11 @@
 -- database: ../../../iba/app/db/iba.db
 
-SELECT * FROM ib_observation;
+SELECT * FROM ib_observation
+;
 
-select * from ib_node;
+
+select * from ib_node
+where created_at > '2026-09-21';
 
 select * from ib_node node
 where node.strong is null;
@@ -97,22 +100,44 @@ left join verse_lexical vl
 on v.id= vl.verse_id
   and vl.strong = node.strong
   and vl.deleted = 0
-  where csb.subgroup_code = 'M67_A_dispositional_idleness'
-  and v.reference = '1Ti 5:13'
- and s.strongNumber = 'G4021'
+  where
+--  csb.subgroup_code = 'B_thankfulness_state'
+--  and 
+  verse_id = 3766
+ -- and v.reference = '1Ti 5:13'
+ --and s.strongNumber = 'G4021'
  ;
 
 
 select * from span span
 inner join verse v on span.verse_id = v.id
-where v.reference = '1Ti 5:13'
-and strong_variant = 'G4021';
-
-select * from verse where id = 8195;
-
-select * from verse_lexical where verse_id = 8195
-and strong = 'G4021'
+where v.osisId = 'Mark.6.25'
+--and strong_variant = 'G4021'
 ;
+
+
+select * from verse where id = 7478;
+
+select * from verse_lexical 
+where verse_id = 3766
+--and strong = 'H7725O'
+AND deleted = 0
+;
+
+select span.* from span span
+inner join verse v on span.verse_id = v.id
+where
+span.verse_id = 7478
+--and 
+--strong_variant = 'H7725O';  
+;
+
+select * from cluster_strong
+where strong = 'H7725O'
+and deleted = 0;
+
+select * from strong
+where strongNumber = 'H7725O';
 
 --missing verse_lexical entries for span
 select * from span span
@@ -126,9 +151,10 @@ and vl.position = span.position
 left join cluster_strong cs
 on vl.strong = cs.strong
 and cs.deleted = 0
---and vl.deleted = 0
-where  v.reference = '1Ti 5:13'
-and vl.strong = 'G4021'
+and vl.deleted = 0
+WHERE vl.id IS NULL
+--where  v.reference = '1Ti 5:13'
+--and vl.strong = 'G4021'
 ;
 
 

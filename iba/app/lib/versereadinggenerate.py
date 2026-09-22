@@ -76,6 +76,8 @@ import re
 from .narrativegenerate import _api_key, ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-exported
 from .lexicalenrichgenerate import call_api, log_usage  # reuse, don't duplicate
 from .lexicalenrichgenerate import CostCapExceeded, BadModelResponse  # noqa: F401 -- re-exported
+from . import stage1coverage
+from .taggingguidance import TAG_GUIDANCE, tags_for_stage, guidance_block  # noqa: F401 -- TAG_GUIDANCE re-exported, other stages import it from here for backward compat
 
 
 _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
@@ -196,7 +198,7 @@ def _verse_cluster_agnostic_coverage(conn, verse_refs: list[str]) -> dict[str, d
         f"SELECT n.verse_reference, n.strong, o.question_code "
         f"FROM ib_node n JOIN ib_observation o ON o.id = n.observation_id "
         f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
-        f"AND (o.question_code IN ('M0.6.5', 'M0.6.6', 'D7.7.1') "
+        f"AND (o.question_code IN ('M0.6.5', 'M0.6.6', 'D7.7.1', 'M0.8.1') "
         f"OR o.question_code LIKE 'M0.7%') "
         f"AND n.verse_reference IN ({ph})", verse_refs).fetchall()
     out: dict[str, dict[str, set[str]]] = {}
@@ -223,11 +225,24 @@ def _prior_context_for_question(conn, verse_refs: list[str], question_code: str
     return by_verse
 
 
-def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict:
+def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int],
+                           force: bool = False) -> dict:
     """One chunk (already capped to <= passage.max_verses by the caller). Never calls the network
     itself -- returns the package plus a pre-call cost estimate, same two-step separation
     `lexicalenrichgenerate.assemble_batch_package`/`call_api` already established (cost preview
-    before spend, never silent)."""
+    before spend, never silent).
+
+    `force` (2026-09-22, found live testing #1832's cross-strong dedup fix): a `-Force`
+    reconciliation rerun bypasses `batchcontrol.already_committed`'s content-hash skip at the
+    caller level, but the `expected_items` checklist (BUILD #321) still filtered against
+    `already_covered` regardless -- for a verse whose per-occurrence questions are ALL already
+    live-covered (the normal target of a deliberate `-Force` rerun), that produced an EMPTY
+    checklist, and the "answer exactly this list" prompt instruction correctly made the model
+    write ZERO observations while the call still cost real money (confirmed live: $0.29 spent,
+    0 rows written). `force=True` skips the `already_covered` filter entirely (checklist =
+    the FULL expected set, not just the gap) and omits each verse's own `already_covered` field
+    from the payload too, so the model isn't given contradictory "skip this" signals alongside
+    "answer exactly this list"."""
     conn = ctx.db.conn
     ph = ",".join("?" * len(verse_ids))
 
@@ -242,6 +257,10 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
     roles_by_verse: dict[int, list[dict]] = {}
     cluster_member_strongs: set[str] = set()
     all_m_code_strongs: set[str] = set()
+    # #1836, 2026-09-22: T2/T3-tagged words that carry NO M-code role at all -- the M0.8.1
+    # elevation-candidate population. A word carrying BOTH a T-code and an M-code is already its
+    # own characteristic, nothing to flag; only the T-code-only case is a genuine candidate.
+    elevation_candidates_by_verse: dict[int, set[str]] = {}
     for r in lex_rows:
         roles_by_verse.setdefault(r["verse_id"], []).append(_role_word(r, cluster_code))
         roles = json.loads(r["role"]) if r["role"] else []
@@ -249,16 +268,22 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
             continue
         if cluster_code in roles:
             cluster_member_strongs.add(r["strong"])
-        if any(c.startswith("M") for c in roles):
+        has_m_code = any(c.startswith("M") for c in roles)
+        if has_m_code:
             all_m_code_strongs.add(r["strong"])
+        elif any(c in ("T2", "T3") for c in roles):
+            elevation_candidates_by_verse.setdefault(r["verse_id"], set()).add(r["strong"])
 
     verses_out = []
     for vid in verse_ids:
         v = verse_by_id.get(vid)
         if v is None:
             continue
-        verses_out.append({
-            "verse": v["osisId"], "text": v["text"], "roles_in_verse": roles_by_verse.get(vid, [])})
+        verse_entry = {
+            "verse": v["osisId"], "text": v["text"], "roles_in_verse": roles_by_verse.get(vid, [])}
+        if vid in elevation_candidates_by_verse:
+            verse_entry["elevation_candidate_words"] = sorted(elevation_candidates_by_verse[vid])
+        verses_out.append(verse_entry)
 
     # #1723 front-loading, corrected #1820 (2026-09-21 -- confirmed live, not just theorised:
     # H3034/M0.1.1 sampled 8 answers across different verses, every one restating the same root
@@ -289,23 +314,45 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
     # -- see _verse_cluster_agnostic_coverage's own docstring) folded straight into each verse's
     # own dict below so the LLM sees exactly what's already answered for THAT verse without a
     # second lookup.
-    already_covered = _verse_cluster_agnostic_coverage(conn, [v["verse"] for v in verses_out])
+    already_covered = {} if force else _verse_cluster_agnostic_coverage(
+        conn, [v["verse"] for v in verses_out])
     for v in verses_out:
         covered = already_covered.get(v["verse"], {})
         if covered:
             v["already_covered"] = {s: sorted(qs) for s, qs in covered.items()}
 
+    # Researcher instruction (prior session, re-confirmed 2026-09-22): "the expected answer for
+    # each question and strong had to be pre-drafted as part of the stage 1 code" -- BUILD #315
+    # diagnosed a real instruction-compliance gap (non-home M-strongs averaged 7.3/16 M0.7
+    # sub-answers vs home strongs' 100%) and named the fix ("a per-strong checklist rather than a
+    # prose instruction") but never built it. `stage1coverage.expected_nodes()` already computes
+    # the exact (verse, strong, question_code) set this batch SHOULD attempt, using the identical
+    # population/gating rules this module's own prose instructions describe -- reused here
+    # directly (never a second hardcoded copy that could drift from the validator). Filtered
+    # against this same `already_covered` map so the checklist only lists what THIS call must
+    # still answer, matching the skip semantics the prose instructions already describe.
+    expected_all = stage1coverage.expected_nodes(conn, cluster_code, verse_ids)
+    checklist_items = []
+    for r in expected_all:
+        covered_qs = already_covered.get(r["verse_reference"], {}).get(r["strong"], set())
+        if r["question_code"] in covered_qs:
+            continue
+        checklist_items.append({
+            "verse": r["verse_reference"], "strong": r["strong"],
+            "question_code": r["question_code"]})
+
     questions = conn.execute(
         "SELECT question_code, question_text FROM wa_obs_question_catalogue "
         "WHERE deleted=0 AND (question_code LIKE 'M0.1%' OR question_code LIKE 'M0.5%' "
-        "OR question_code LIKE 'M0.7%' OR question_code IN ('D7.7.1', 'M0.6.5', 'M0.6.6')) "
+        "OR question_code LIKE 'M0.7%' "
+        "OR question_code IN ('D7.7.1', 'M0.6.5', 'M0.6.6', 'M0.8.1')) "
         "ORDER BY question_code").fetchall()
     question_texts = [{"question_code": q["question_code"], "question_text": q["question_text"]}
                       for q in questions]
 
-    tag_values = [r["value"] for r in conn.execute(
+    tag_values = tags_for_stage("verse-reading", [r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
-        "ORDER BY ordinal")]
+        "ORDER BY ordinal")])
 
     rules = conn.execute(
         "SELECT rule_key, rule_text FROM cfg_method_rule WHERE step='lexical.meaning' "
@@ -315,11 +362,12 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
     instructions = _instructions(cluster_code, question_texts, tag_values, rules_text,
                                  [v["verse"] for v in verses_out], sorted(cluster_member_strongs),
                                  sorted(home_needs_battery), sorted(other_needs_battery),
-                                 sorted(all_m_code_strongs))
+                                 sorted(all_m_code_strongs), len(checklist_items))
     content = json.dumps({"cluster_code": cluster_code, "verses": verses_out,
                           "meaning_sources_by_strong": meaning_by_strong,
                           "prior_relational_context_by_verse": prior_relational,
-                          "prior_network_context_by_verse": prior_network},
+                          "prior_network_context_by_verse": prior_network,
+                          "expected_items": checklist_items},
                          ensure_ascii=False)
 
     chars_per_token = float(ctx.cfg.setting("lexical.llm_chars_per_token", 4))
@@ -336,52 +384,19 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
         "word_battery_strong_count": len(word_battery_strongs),
         "front_loaded_strong_count": len(other_needs_battery),
         "home_already_settled_count": len(cluster_member_strongs) - len(home_needs_battery),
+        "expected_item_count": len(checklist_items),
         "est_input_tokens": est_input_tokens, "max_output_tokens": max_output_tokens,
         "est_cost_usd": round(est_cost, 4),
         "model": ctx.cfg.required_setting("lexical.llm_model"),
     }
 
 
-# #1723 v10-v15: tag is not a peculiarity flag -- it's a categorisation value that must support
-# later filtering/search across the corpus ("it is not possible to search and read the text to
-# identify trends ... tag serve[s] this", researcher, verbatim). answered-no-flag/none were
-# non-discriminating defaults masking real, recurring, filterable findings -- close-reading the
-# actual obs_text surfaced what those findings really were. Definitions given to the LLM for the
-# tags that replace that catch-all; every other registered tag is still valid but not re-explained
-# here (either already self-descriptive or pre-existing, e.g. could-not-resolve/data-error).
-TAG_GUIDANCE = {
-    "qualifier-for-term": "the word functions as a MODIFIER (manner, intensifier, or other "
-        "state/measure/intensity enhancer) of another word's action or quality, rather than "
-        "naming a disposition/operation/quality in its own right -- e.g. an adverb qualifying "
-        "HOW an operation is performed, or an adjective qualifying another M-code noun (\"godly\" "
-        "qualifying \"grief\"). Applies across question types, not just M0.6.5.",
-    "no-impact": "the occurrence's surface form/stepGloss carries no distinguishing nuance beyond "
-        "the term's base sense -- a real 'no divergence' finding for M0.5.11, not an absence of "
-        "an answer.",
-    "not-related-to-meaningful-word": "the sub-question's target item (a contrast, a related "
-        "word-form, a co-occurring item the question asks you to identify) genuinely does not "
-        "exist or apply for this term/verse -- a real negative finding, not a shrug.",
-    "sole-mcode-in-verse": "no other M-code characteristic co-occurs in this verse at all "
-        "(M0.6.5) -- distinct from `no-direct-connection`, which means other M-codes ARE present "
-        "but unrelated to this one.",
-    "cluster-pole-negative": "this term occupies the negative/negligent pole of a dual-natured "
-        "cluster (e.g. idleness within a sloth-vs-diligence cluster).",
-    "cluster-pole-positive": "this term occupies the positive/virtuous pole of a dual-natured "
-        "cluster (e.g. diligence/zeal within a sloth-vs-diligence cluster).",
-    "attested-pre-nt": "the term is attested in classical/pre-NT Greek or Hebrew usage, not "
-        "coined in the NT period.",
-    "nt-coinage": "the term (or this specific sense of it) has no attestation before the NT -- a "
-        "NT-period coinage or semantic innovation.",
-}
-
-
 def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str],
                   rules_text: str, verse_refs: list[str], home_strongs: list[str],
                   home_needs_battery: list[str], other_needs_battery: list[str],
-                  all_m_code_strongs: list[str]) -> str:
+                  all_m_code_strongs: list[str], expected_item_count: int) -> str:
     q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
-    tag_guidance_text = "\n".join(
-        f"  - {t}: {TAG_GUIDANCE[t]}" for t in tag_values if t in TAG_GUIDANCE)
+    tag_guidance_text = guidance_block(tag_values)
     word_battery_strongs = sorted(set(home_needs_battery) | set(other_needs_battery))
     already_settled = sorted(set(home_strongs) - set(home_needs_battery))
     front_load_note = (
@@ -416,6 +431,18 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"{all_m_code_strongs} (every M-code strong in this batch, not just this cluster's own "
         f"member strongs).{front_load_note}{settled_note} Read all present meaning "
         f"sources as complementary evidence, never picking one and ignoring the others.\n\n"
+        f"`expected_items` IS THE AUTHORITATIVE CHECKLIST -- read it before writing anything. It "
+        f"lists, pre-computed from live data, EXACTLY the {expected_item_count} (verse, strong, "
+        f"question_code) triples this batch must answer -- every population/gating rule described "
+        f"below (word-level-battery-only-for-strongs-needing-it, cluster-agnostic-relational-"
+        f"questions, the D7.7.1 T3 gate, the already_covered skip) has ALREADY been applied to "
+        f"build this list. Do not re-derive the population yourself from the prose rules -- they "
+        f"explain WHY each entry is there, `expected_items` is the authoritative WHAT. Your "
+        f"`observations` array MUST contain exactly one entry per `expected_items` triple: same "
+        f"count, same (strong, question_code) pairs for the correct verse -- no fewer (a triple "
+        f"you skip is a real gap, even one you judge inapplicable: answer it with the question's "
+        f"own 'record none'/could-not-resolve convention instead of omitting it) and no more (never "
+        f"add a (verse, strong, question_code) combination not listed in `expected_items`).\n\n"
         f"Method rules governing this task:\n{rules_text}\n\n"
         f"THREE KINDS OF QUESTION, answered differently:\n"
         f"- M0.1/M0.5 (word-level battery, including the new M0.5.11 alternative-meaning question): "
@@ -457,20 +484,18 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"-- `already_covered` is what tells you that, not your own judgement. A later, separate "
         f"process (not you) reconciles any residual repeated findings across occurrences -- your "
         f"job is an accurate, concise reading of THIS verse only, not deciding whether it "
-        f"duplicates another.\n\n"
+        f"duplicates another.\n"
+        f"- M0.8.1 (T2/T3 elevation candidacy, `#1836`, rare): answer ONLY for a verse's own "
+        f"`elevation_candidate_words` list, if present (a word tagged T2 or T3 in `roles_in_verse` "
+        f"but with NO M-code role at all -- do not answer this for any M-code word). Ask: does "
+        f"this word's role HERE suggest it names its own distinct inner-being characteristic, not "
+        f"just a supporting role (manner, operation-word, qualifier)? This should be rare -- most "
+        f"T2/T3 words are genuinely supporting roles; record none unless the case is real. If yes, "
+        f"tag `elevation-candidate` and state the reason in `obs_text`; this only surfaces the "
+        f"candidate for a later human review, it never changes any cluster/role assignment itself.\n\n"
         f"Answer these catalogue questions:\n{q_text}\n\n"
         f"Valid `tag` values: {tag_values}\n"
-        f"`tag` is a categorisation value, not just a peculiarity flag -- it must let someone "
-        f"later FILTER and find trends across the whole corpus without re-reading every "
-        f"obs_text. Prefer one of these specific tags whenever the finding actually matches it "
-        f"(check every observation against this list before reaching for a generic one):\n"
-        f"{tag_guidance_text}\n"
-        f"Use `answered-no-flag` ONLY for a genuinely plain, substantive answer that matches "
-        f"none of the above and has nothing else worth categorising (e.g. a straightforward "
-        f"root-meaning or primary-term identification). NEVER use the literal string `none` -- "
-        f"it is not a registered tag and will be rejected; if there is truly nothing to report "
-        f"for a sub-question, still pick the specific tag above that names WHY (most often "
-        f"`not-related-to-meaningful-word` or `no-impact`), never a bare negation.\n\n"
+        f"{tag_guidance_text}\n\n"
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- You are given exactly {len(verse_refs)} verse(s), listed at the end of this message. "
         f"Every `verse` value you write MUST be one of exactly those.\n"
@@ -482,7 +507,10 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"for all four, regardless of home-cluster membership (#1824 v14) -- minus whatever that "
         f"verse's own `already_covered` already lists, for all four question types (#1824 v18). "
         f"D7.7.1 only applies when an operation-tagged (role-T3) word is actually "
-        f"present in the verse -- no additional party-tag requirement.\n"
+        f"present in the verse -- no additional party-tag requirement. For M0.8.1, `strong` must "
+        f"be one of that verse's own `elevation_candidate_words` ONLY (never an M-code strong) -- "
+        f"if a verse has no `elevation_candidate_words` field, do not answer M0.8.1 for it at "
+        f"all.\n"
         f"- `question_code` MUST be the exact, specific leaf code (e.g. \"M0.1.2\", \"M0.5.7\") — "
         f"NEVER a bare component code (\"M0.1\", \"M0.5\" are not valid, will be rejected, and "
         f"waste your own output). One observation per specific sub-question — do not combine "
@@ -498,7 +526,9 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"fruitful\"], not full phrases) -- used downstream to recognise when two occurrences "
         f"genuinely show the same finding (escalation #1824), separate from your own obs_text "
         f"wording. Leave `meaning_keywords` null for every other question type (M0.1/M0.5/M0.6.5/"
-        f"M0.6.6/D7.7.1) -- they use a different mechanism already.\n"
+        f"M0.6.6/D7.7.1) -- #1832 (2026-09-22): their identity is now resolved structurally "
+        f"(same verse + same question_code = same fact, by construction), never by keyword or "
+        f"prose-similarity matching, so a keyword signal for these three would serve no purpose.\n"
         f"- Do not add fields beyond the shape below, no prose before or after the JSON.\n\n"
         f"Verses in this batch: {verse_refs}\n\n"
         "Respond with ONLY a JSON object, no other text, shaped exactly:\n"

@@ -1,11 +1,11 @@
 # Batch progress monitor
 
-> Generated 2026-09-22T18:01:19Z by `report.batch_progress`. step='lexical.meaning'
+> Generated 2026-09-22T17:58:21Z by `report.batch_progress`.
 
 - currently running: **0**
-- committed (this view): **136**
-- failed (this view): **8**
-- total spend (this view): **$39.9518**
+- committed (this view): **157**
+- failed (this view): **11**
+- total spend (this view): **$47.6496**
 
 ## Contents
 
@@ -17,7 +17,7 @@
 <a id="summary"></a>
 ## Summary
 
-0 running, 136 committed, 8 failed (view limited to the most recent 500 rows unless filtered)
+0 running, 157 committed, 11 failed (view limited to the most recent 500 rows unless filtered)
 
 <a id="currently-running"></a>
 ## Currently running
@@ -35,6 +35,9 @@
 `lexical.meaning` / `M67` batch 4 -- run `RUN-20260921_184205_441-VERSE-READING`, failed at 2026-09-21T17:55:10Z (started 2026-09-21T17:50:50Z, after 4m20s): bad-model-response: model reply is not valid JSON: Invalid control character at: line 235 column 610 (char 80464) -- first 300 chars: '```json\n{"observations": [\n{"strong": "G0684", "question_code": "M0.1.1", "tag": "answered-no-flag", "obs_text": "apoleia names destruction/ruin/perdition as its essential nature - a state of being utterly lost or wasted, here applied to the false teachers\' coming ruin.", "meaning_source": "strong_m'
 `lexical.meaning` / `M67` batch 1 -- run `RUN-20260921_183539_495-VERSE-READING`, failed at 2026-09-21T17:40:36Z (started 2026-09-21T17:35:41Z, after 4m55s): bad-model-response: model reply is not valid JSON: Unterminated string starting at: line 266 column 164 (char 89449) -- first 300 chars: '{"observations": [\n{"strong": "G1922", "question_code": "M0.1.1", "tag": "answered-no-flag", "obs_text": "ἐπίγνωσις (\'knowledge\') names deepened, applied recognition -- knowledge that has come to bear on a person\'s Christian life, not bare information.", "meaning_source": "strong_meaning_tree; stron'
 `lexical.meaning` / `M67` batch 1 -- run `RUN-20260921_182837_181-VERSE-READING`, failed at 2026-09-21T17:33:38Z (started 2026-09-21T17:28:38Z, after 5m00s): bad-model-response: model reply is not valid JSON: Expecting value: line 1 column 1 (char 0) -- first 300 chars: '```json\n{"observations": [\n{"strong": "G1922", "question_code": "M0.1.1", "tag": "answered-no-flag", "obs_text": "ἐπίγνωσις names full/deeper knowledge -- knowledge that has come to recognition, signalling a knowing that is thorough, applied, and personally realised rather than bare acquaintance.", '
+`cluster.answer` / `M83|B_intensified_seeking` batch 1 -- run `RUN-20260918_133947_340-CLUSTER-ANSWER`, failed at 2026-09-18T12:49:02Z (started 2026-09-18T12:39:48Z, after 9m14s): Manually invalidated for a deliberate re-read (zero-grounding data-quality gap found live, escalation pending) -- the prior committed batch is NOT wrong/lost, this just lets already_committed() allow a genuine re-read instead of treating it as already-done
+`cluster.reading` / `M49|D_yadah_praise_confess` batch 1 -- run `RUN-20260918_113859_216-CLUSTER-READING`, failed at 2026-09-18T10:39:37Z (started 2026-09-18T10:39:00Z, after 0m37s): bad-model-response: model reply is not valid JSON: Extra data: line 1 column 5413 (char 5412) -- first 300 chars: '{"observations": [{"strong": "H3034", "question_code": null, "tag": "verse-grouping", "tag_note": null, "obs_text": "Within this pass\'s surface set, the great majority of occurrences (e.g. Ps.106.1, Ps.111.1, Ps.44.8, Ps.86.12, Ps.28.7, 1Chr.16.35/16.8/16.41/16.34, Ps.105.1, Ps.54.6, Ps.75.1 (x2), P'
+`cluster.reading` / `M49|C_thankful_disposition` batch 1 -- run `RUN-20260918_110541_573-CLUSTER-READING`, failed at 2026-09-18T10:05:53Z (started 2026-09-18T10:05:42Z, after 0m11s): ConnectionError: HTTPSConnectionPool(host='api.anthropic.com', port=443): Max retries exceeded with url: /v1/messages (Caused by NameResolutionError("HTTPSConnection(host='api.anthropic.com', port=443): Failed to resolve 'api.anthropic.com' ([Errno 11001] getaddrinfo failed)"))
 
 <a id="recent-committed-batches"></a>
 ## Recent committed batches

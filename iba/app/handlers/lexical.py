@@ -854,7 +854,7 @@ def meaning(ctx: Ctx) -> Outcome:
 
     for idx, chunk in enumerate(chunks):
         chunk_label = f"{idx + 1}/{len(chunks)}"
-        package = versereadinggenerate.assemble_batch_package(ctx, cluster_code, chunk)
+        package = versereadinggenerate.assemble_batch_package(ctx, cluster_code, chunk, force=force)
         content_key = batchcontrol.content_key([str(v) for v in chunk])
         already_done = batchcontrol.already_committed(
             conn, "lexical.meaning", cluster_code, content_key)

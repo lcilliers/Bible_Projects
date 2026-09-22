@@ -40,6 +40,7 @@ from .narrativegenerate import ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-
 from .lexicalenrichgenerate import call_api, log_usage  # reuse, don't duplicate
 from .lexicalenrichgenerate import CostCapExceeded, BadModelResponse  # noqa: F401 -- re-exported
 from .versereadinggenerate import _meaning_sources  # reuse, don't duplicate
+from .taggingguidance import tags_for_stage, guidance_block  # reuse, don't duplicate
 
 
 _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
@@ -178,9 +179,9 @@ def assemble_subgroup_packages(ctx, cluster_code: str, subgroup_row: dict,
         "AND active=1 ORDER BY ordinal, rule_key").fetchall()
     rules_text = "\n".join(f"- {r['rule_key']}: {r['rule_text']}" for r in rules)
 
-    tag_values = [r["value"] for r in conn.execute(
+    tag_values = tags_for_stage("char-reading", [r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
-        "ORDER BY ordinal")]
+        "ORDER BY ordinal")])
 
     chars_per_token = float(ctx.cfg.setting("lexical.llm_chars_per_token", 4))
     max_output_tokens = int(ctx.cfg.setting("lexical.llm_max_output_tokens", 40000))
@@ -284,16 +285,9 @@ def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
         f"group that shares one distinct sense).\n\n"
         f"Valid `tag` values: {tag_values}\n"
         f"Prefer `tightly-related`/`no-direct-connection` for a cross-strong-within-subgroup "
-        f"comparison (this subgroup's own core task); `verse-grouping` where several of a strong's "
-        f"OWN occurrences share one genuinely alike reading; `difference-inference` for a specific "
-        f"inference or distinction (morph-driven ones included -- check whether stem/voice "
-        f"variation across a strong's occurrences is meaning-relevant); `surface-gloss-divergence` "
-        f"only for a NEW divergence pattern not already covered by this strong's own Stage 1 "
-        f"observations; `no-human-context` for a homonym/name with no meaningful context (earmark "
-        f"and stop, no forced analysis); `data-error` for a data-quality issue noticed while "
-        f"reading (own section, never chased down here); `could-not-resolve`/"
-        f"`needs_adjacent_verse_context` per their existing definitions (state the reason in "
-        f"obs_text, never a bare flag).\n\n"
+        f"comparison (this subgroup's own core task); `surface-gloss-divergence` only for a NEW "
+        f"divergence pattern not already covered by this strong's own Stage 1 observations.\n"
+        f"{guidance_block(tag_values)}\n\n"
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- Every `strong` value you write must be one of {member_strongs}.\n"
         f"- Every `verse` value in `occurrences` must be one you were actually given for that "

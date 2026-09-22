@@ -40,7 +40,8 @@ def _wired_question_codes(conn: sqlite3.Connection) -> tuple[list[str], list[str
     rows = conn.execute(
         "SELECT question_code FROM wa_obs_question_catalogue "
         "WHERE deleted=0 AND (question_code LIKE 'M0.1%' OR question_code LIKE 'M0.5%' "
-        "OR question_code LIKE 'M0.7%' OR question_code IN ('D7.7.1', 'M0.6.5', 'M0.6.6')) "
+        "OR question_code LIKE 'M0.7%' "
+        "OR question_code IN ('D7.7.1', 'M0.6.5', 'M0.6.6', 'M0.8.1')) "
         "ORDER BY question_code").fetchall()
     codes = [r["question_code"] for r in rows]
     word_level = [c for c in codes if c.startswith(_WORD_LEVEL_PREFIXES)]
@@ -165,6 +166,19 @@ def expected_nodes(conn: sqlite3.Connection, cluster_code: str, verse_ids: list[
                     "morph_code": w["morph_code"], "is_home_strong": cluster_code in w["roles"],
                     "question_code": "D7.7.1",
                     "reason": "operation-permeability, T3 operation word present"})
+
+        # #1836, 2026-09-22: M0.8.1 (T2/T3 elevation-candidate) -- population is the OPPOSITE of
+        # every other per-occurrence question above: words that carry a T2/T3 role but NO M-code
+        # role at all. A word carrying both is already its own characteristic, nothing to flag.
+        elevation_words = [w for w in words if w["strong"]
+                          and not any(c.startswith("M") for c in w["roles"])
+                          and any(c in ("T2", "T3") for c in w["roles"])]
+        for w in elevation_words:
+            rows_out.append({
+                "verse_reference": osis, "strong": w["strong"], "surface": w["surface"],
+                "morph_code": w["morph_code"], "is_home_strong": False,
+                "question_code": "M0.8.1",
+                "reason": "T2/T3 elevation-candidate check, always expected for non-M-code role words"})
 
     return rows_out
 

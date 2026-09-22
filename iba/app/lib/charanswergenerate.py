@@ -43,7 +43,8 @@ import re
 from .narrativegenerate import ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-exported
 from .lexicalenrichgenerate import call_api, log_usage  # reuse, don't duplicate
 from .lexicalenrichgenerate import CostCapExceeded, BadModelResponse  # noqa: F401 -- re-exported
-from .versereadinggenerate import _meaning_sources, TAG_GUIDANCE  # reuse, don't duplicate
+from .versereadinggenerate import _meaning_sources  # reuse, don't duplicate
+from .taggingguidance import tags_for_stage, guidance_block  # reuse, don't duplicate
 from .charreadinggenerate import _full_occurrences  # reuse, don't duplicate
 
 
@@ -122,9 +123,9 @@ def assemble_subgroup_package(ctx, cluster_code: str, subgroup_row: dict,
         "AND active=1 ORDER BY ordinal, rule_key").fetchall()
     rules_text = "\n".join(f"- {r['rule_key']}: {r['rule_text']}" for r in rules)
 
-    tag_values = [r["value"] for r in conn.execute(
+    tag_values = tags_for_stage("char-answers", [r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
-        "ORDER BY ordinal")]
+        "ORDER BY ordinal")])
 
     instructions = _instructions(cluster_code, subgroup_row, rules_text, sorted(member_strongs),
                                  questions, tag_values)
@@ -203,16 +204,7 @@ def _instructions(cluster_code: str, subgroup_row: dict, rules_text: str,
         f"Answer these catalogue questions (one or more observations per question_code, per the "
         f"multiple-slants rule above):\n{q_text}\n\n"
         f"Valid `tag` values: {tag_values}\n"
-        f"Use `needs_adjacent_verse_context` where a verse's own content is insufficient and an "
-        f"adjacent verse would help -- state explicitly in obs_text what's outstanding and what "
-        f"the follow-up cross-check needs to establish (never a bare flag). Use "
-        f"`could-not-resolve` where a genuine can't-resolve case arises, stating what signal "
-        f"suggests it should be resolvable with further analysis. `answered-no-flag` is for a "
-        f"plain, substantive answer with nothing else to categorise -- escalation #1770: it is "
-        f"NOT expected to dominate; check every OTHER tag below first and only fall back to "
-        f"`answered-no-flag` once none of them genuinely apply.\n"
-        + ("".join(f"  - {t}: {TAG_GUIDANCE[t]}\n" for t in tag_values if t in TAG_GUIDANCE))
-        + "\n"
+        f"{guidance_block(tag_values)}\n\n"
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- `question_code` MUST be one of the exact leaf codes listed above -- never a bare "
         f"component code, never a code not in this list.\n"

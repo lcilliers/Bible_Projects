@@ -43,6 +43,7 @@ from .narrativegenerate import ApiKeyMissing, ApiCallFailed  # noqa: F401 -- re-
 from .lexicalenrichgenerate import call_api, log_usage  # reuse, don't duplicate
 from .lexicalenrichgenerate import CostCapExceeded, BadModelResponse  # noqa: F401 -- re-exported
 from .versereadinggenerate import _meaning_sources  # reuse, don't duplicate
+from .taggingguidance import tags_for_stage, guidance_block  # reuse, don't duplicate
 
 
 _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
@@ -106,9 +107,9 @@ def assemble_cluster_package(ctx, cluster_code: str, member_strongs: list[str]) 
         "AND active=1 ORDER BY ordinal, rule_key").fetchall()
     rules_text = "\n".join(f"- {r['rule_key']}: {r['rule_text']}" for r in rules)
 
-    tag_values = [r["value"] for r in conn.execute(
+    tag_values = tags_for_stage("char-subgroup", [r["value"] for r in conn.execute(
         "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
-        "ORDER BY ordinal")]
+        "ORDER BY ordinal")])
 
     instructions = _instructions(cluster_code, rules_text, sorted(member_strongs), tag_values)
     content = json.dumps({"cluster_code": cluster_code, "strongs": strong_profiles},
@@ -163,6 +164,7 @@ def _instructions(cluster_code: str, rules_text: str, member_strongs: list[str],
         f"- FLAG needs no label/core_description/anchor_verse_reference -- it is a signpost, not a "
         f"real subgroup.\n"
         f"- Valid `tag` values for observations: {tag_values}\n"
+        f"{guidance_block(tag_values)}\n"
         f"- Each observation's `strong` must be one of this cluster's own member strongs.\n"
         f"- Do not add fields beyond the shape below, no prose before or after the JSON.\n\n"
         "Respond with ONLY a JSON object, no other text, shaped exactly:\n"
