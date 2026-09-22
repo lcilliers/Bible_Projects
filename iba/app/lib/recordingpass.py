@@ -79,18 +79,6 @@ def resolve_occurrence(conn, strong: str, claimed_verse: str, claimed_surface: s
 _VERSE_LEVEL_OCCURRENCE_CODES = ("M0.6.5", "M0.6.6", "D7.7.1")
 
 
-def _is_per_occurrence_question(question_code: str | None) -> bool:
-    """#1824 v10 (design doc `iba/docs/1824-stage1-reconciliation-design-v1-20260922.md`, Fix 1):
-    M0.7.* and the relational questions are explicitly per-verse -- 'a strong can genuinely behave
-    differently verse to verse' (BUILD #310) -- as opposed to M0.1/M0.5's word-level, verse-
-    invariant facts. Same distinction `_effective_cluster_code`'s own `_WORD_LEVEL_QUESTION_
-    PREFIXES` makes for a different purpose; not reused directly since the two functions read
-    oppositely (one names the word-level set, this one names its complement)."""
-    if not question_code:
-        return False
-    return question_code.startswith("M0.7") or question_code in _VERSE_LEVEL_OCCURRENCE_CODES
-
-
 def _is_strong_specific_occurrence_question(question_code: str | None) -> bool:
     """M0.7.1-16 and M0.8.1 -- explicitly about "[this word]" (versereadinggenerate.py's own
     prompt text), a genuinely word-specific finding even though it's per-verse not per-strong-ever.
@@ -100,6 +88,27 @@ def _is_strong_specific_occurrence_question(question_code: str | None) -> bool:
     exact (verse, strong) occurrence -- count-based same/broaden/new (#1824 v10/v11 Fix 1/2),
     unchanged by the #1824 v22 cross-strong fix below."""
     return bool(question_code) and (question_code.startswith("M0.7") or question_code == "M0.8.1")
+
+
+def _is_per_occurrence_question(question_code: str | None) -> bool:
+    """#1824 v10 (design doc `iba/docs/1824-stage1-reconciliation-design-v1-20260922.md`, Fix 1):
+    M0.7.*/M0.8.1 and the relational questions are explicitly per-verse -- 'a strong can genuinely
+    behave differently verse to verse' (BUILD #310) -- as opposed to M0.1/M0.5's word-level, verse-
+    invariant facts. #1840, 2026-09-22: this used to restate `question_code.startswith("M0.7")`
+    itself rather than calling `_is_strong_specific_occurrence_question` -- when M0.8.1 joined that
+    family (#1836), only THIS function's own copy of the condition was updated to include it, not
+    the one below, so M0.8.1 silently fell through to the word-level keyword/similarity branch
+    instead of the exact-occurrence count-based one. Confirmed live: Ezra.7.17/H9010/M0.8.1 has 3
+    `ib_observation` rows all citing the SAME single node (surface='bulls'), chained via
+    `traced_observation_id` -- the tell-tale sign of the word-level "new-expands-existing" path,
+    not genuine distinct occurrences. Delegating to the single strong-specific predicate below
+    (rather than keeping two hand-written copies of the same set) is the actual fix "prevent it
+    going forward" asks for -- the two conditions can no longer drift apart because there is only
+    one of them."""
+    if not question_code:
+        return False
+    return (_is_strong_specific_occurrence_question(question_code) or
+           question_code in _VERSE_LEVEL_OCCURRENCE_CODES)
 
 
 def _is_verse_level_occurrence_question(question_code: str | None) -> bool:

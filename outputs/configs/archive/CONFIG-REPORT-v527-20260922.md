@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-22T19:55:20Z |
+| generated_at | 2026-09-22T19:54:29Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -32,11 +32,12 @@
 
 _Computed fresh on every regenerate — the full detail behind `configmaint.validate`'s escalation, which references this section by path rather than repeating it. Not errors — advisory. See GOVERNANCE.md §5B._ Items are numbered (running count across every category below) so any one item can be referenced by number, e.g. "item 7" — the numbering is a snapshot of THIS regenerate, not a stable ID across runs. Historical/already-decided records (inactive configs) are §1, not here — everything below is something that actually needs your judgement.
 
-**Orphan configs** (4) — a `cfg_setting`/`cfg_enum` not referenced by any code:
-1. cfg_enum group 'ib_observation.meaning_source' (not looked up by name at runtime — no cfg.enum('ib_observation.meaning_source') or cfg_enum WHERE name='ib_observation.meaning_source' call site)
-2. cfg_enum group 'wa_obs_question_catalogue.scope' (not looked up by name at runtime — no cfg.enum('wa_obs_question_catalogue.scope') or cfg_enum WHERE name='wa_obs_question_catalogue.scope' call site)
-3. cfg_enum group 'wa_obs_question_catalogue.status' (not looked up by name at runtime — no cfg.enum('wa_obs_question_catalogue.status') or cfg_enum WHERE name='wa_obs_question_catalogue.status' call site)
-4. cfg_enum group 'wa_obs_question_catalogue.tier' (not looked up by name at runtime — no cfg.enum('wa_obs_question_catalogue.tier') or cfg_enum WHERE name='wa_obs_question_catalogue.tier' call site)
+**Orphan configs** (5) — a `cfg_setting`/`cfg_enum` not referenced by any code:
+1. cfg_setting 'lexical.meaning_max_strongs_per_batch' (key not found together with a cfg.setting(...) call in any one file)
+2. cfg_enum group 'ib_observation.meaning_source' (not looked up by name at runtime — no cfg.enum('ib_observation.meaning_source') or cfg_enum WHERE name='ib_observation.meaning_source' call site)
+3. cfg_enum group 'wa_obs_question_catalogue.scope' (not looked up by name at runtime — no cfg.enum('wa_obs_question_catalogue.scope') or cfg_enum WHERE name='wa_obs_question_catalogue.scope' call site)
+4. cfg_enum group 'wa_obs_question_catalogue.status' (not looked up by name at runtime — no cfg.enum('wa_obs_question_catalogue.status') or cfg_enum WHERE name='wa_obs_question_catalogue.status' call site)
+5. cfg_enum group 'wa_obs_question_catalogue.tier' (not looked up by name at runtime — no cfg.enum('wa_obs_question_catalogue.tier') or cfg_enum WHERE name='wa_obs_question_catalogue.tier' call site)
 
 **Settings needing justification** (0) — module already has its own dedicated table:
 _(none)_
@@ -45,62 +46,62 @@ _(none)_
 _(none)_
 
 **Stale filled_by** (29) — cfg_column.filled_by names a now-inactive step:
-5. strong_meaning_parsed.lemma_key filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-6. strong_meaning_parsed.sort filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-7. strong_meaning_parsed.sense_code filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-8. strong_meaning_parsed.gloss filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-9. strong_meaning_parsed.verse_refs filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-10. strong_meaning_parsed.note filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-11. strong_meaning_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-12. strong_lsj_parsed.strong filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-13. strong_lsj_parsed.sense_label filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-14. strong_lsj_parsed.gloss filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-15. strong_lsj_parsed.note filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-16. strong_lsj_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-17. strong_mounce_parsed.strong filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-18. strong_mounce_parsed.mounce_parsed filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-19. strong_mounce_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-20. passage.genre filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-21. passage.lexical_complete_at filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-22. verse_lexical_note.id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-23. verse_lexical_note.verse_lexical_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-24. verse_lexical_note.verse_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-25. verse_lexical_note.passage_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-26. verse_lexical_note.note_type filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-27. verse_lexical_note.resolution_status filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-28. verse_lexical_note.target_verse_lexical_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-29. verse_lexical_note.related_verse_lexical_ids filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-30. verse_lexical_note.value_text filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-31. verse_lexical_note.evidence_text filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-32. verse_lexical_note.created_at filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-33. verse_lexical_note.deleted filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+6. strong_meaning_parsed.lemma_key filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+7. strong_meaning_parsed.sort filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+8. strong_meaning_parsed.sense_code filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+9. strong_meaning_parsed.gloss filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+10. strong_meaning_parsed.verse_refs filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+11. strong_meaning_parsed.note filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+12. strong_meaning_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+13. strong_lsj_parsed.strong filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+14. strong_lsj_parsed.sense_label filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+15. strong_lsj_parsed.gloss filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+16. strong_lsj_parsed.note filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+17. strong_lsj_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+18. strong_mounce_parsed.strong filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+19. strong_mounce_parsed.mounce_parsed filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+20. strong_mounce_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
+21. passage.genre filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+22. passage.lexical_complete_at filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+23. verse_lexical_note.id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+24. verse_lexical_note.verse_lexical_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+25. verse_lexical_note.verse_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+26. verse_lexical_note.passage_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+27. verse_lexical_note.note_type filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+28. verse_lexical_note.resolution_status filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+29. verse_lexical_note.target_verse_lexical_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+30. verse_lexical_note.related_verse_lexical_ids filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+31. verse_lexical_note.value_text filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+32. verse_lexical_note.evidence_text filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+33. verse_lexical_note.created_at filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+34. verse_lexical_note.deleted filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-34. GOVERNANCE.md was last modified 2026-09-22T07:28:18Z, before the newest applied cfg_change_detail row (2026-09-22T19:55:20Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+35. GOVERNANCE.md was last modified 2026-09-22T07:28:18Z, before the newest applied cfg_change_detail row (2026-09-22T19:54:28Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (2) — iba/app/lib/*.py with no cfg_utility row:
-35. iba/app/lib/stage1coverage.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
-36. iba/app/lib/taggingguidance.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
+36. iba/app/lib/stage1coverage.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
+37. iba/app/lib/taggingguidance.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
 
 **Low config-density utilities** (18) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-37. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-38. cfg_utility 'lexicalenrich' (iba\app\lib\lexicalenrich.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-39. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-40. cfg_utility 'apply_1598_phase_a_reallocation_v1_20260908' (iba\app\migration\apply_1598_phase_a_reallocation_v1_20260908.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-41. cfg_utility 'apply_1598_cluster_batch' (iba\app\migration\apply_1598_cluster_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-42. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-43. cfg_utility 'create_verse_meta_table_v1_20260909' (iba\app\migration\create_verse_meta_table_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-44. cfg_utility 'drop_verse_meta_genre_column_v1_20260909' (iba\app\migration\drop_verse_meta_genre_column_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-45. cfg_utility 'add_verse_meta_status_column_v1_20260910' (iba\app\migration\add_verse_meta_status_column_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-46. cfg_utility 'VerseMeta.ps1' (iba\app\ps\VerseMeta.ps1) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-47. cfg_utility 'apply_verse_plaintext_column' (iba\app\tools\_apply_verse_plaintext_column.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-48. cfg_utility 'add_lexicon_header_pos_tags_setting_v1_20260910' (iba\app\migration\add_lexicon_header_pos_tags_setting_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-49. cfg_utility 'create_vw_strong_meaning_raw_v1_20260910' (iba\app\migration\create_vw_strong_meaning_raw_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-50. cfg_utility 'clusterstatus' (iba\app\lib\clusterstatus.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-51. cfg_utility 'recordingpass' (iba\app\lib\recordingpass.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-52. cfg_utility 'batchcontrol' (iba\app\lib\batchcontrol.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-53. cfg_utility 'batchprogressreport' (iba\app\lib\batchprogressreport.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-54. cfg_utility 'observationenhancer' (iba\app\handlers\observationenhancer.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+38. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+39. cfg_utility 'lexicalenrich' (iba\app\lib\lexicalenrich.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+40. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+41. cfg_utility 'apply_1598_phase_a_reallocation_v1_20260908' (iba\app\migration\apply_1598_phase_a_reallocation_v1_20260908.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+42. cfg_utility 'apply_1598_cluster_batch' (iba\app\migration\apply_1598_cluster_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+43. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+44. cfg_utility 'create_verse_meta_table_v1_20260909' (iba\app\migration\create_verse_meta_table_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+45. cfg_utility 'drop_verse_meta_genre_column_v1_20260909' (iba\app\migration\drop_verse_meta_genre_column_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+46. cfg_utility 'add_verse_meta_status_column_v1_20260910' (iba\app\migration\add_verse_meta_status_column_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+47. cfg_utility 'VerseMeta.ps1' (iba\app\ps\VerseMeta.ps1) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+48. cfg_utility 'apply_verse_plaintext_column' (iba\app\tools\_apply_verse_plaintext_column.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+49. cfg_utility 'add_lexicon_header_pos_tags_setting_v1_20260910' (iba\app\migration\add_lexicon_header_pos_tags_setting_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+50. cfg_utility 'create_vw_strong_meaning_raw_v1_20260910' (iba\app\migration\create_vw_strong_meaning_raw_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+51. cfg_utility 'clusterstatus' (iba\app\lib\clusterstatus.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+52. cfg_utility 'recordingpass' (iba\app\lib\recordingpass.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+53. cfg_utility 'batchcontrol' (iba\app\lib\batchcontrol.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+54. cfg_utility 'batchprogressreport' (iba\app\lib\batchprogressreport.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+55. cfg_utility 'observationenhancer' (iba\app\handlers\observationenhancer.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -124,120 +125,120 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-55. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+56. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (2) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-56. Run-Stage1Batch.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\run-stage1batch.ps1' in some tab's first rows)
-57. VerseReading.ps1: ps tools worksheet.xlsx tab 'VerseReading' is missing flag column(s) ['Force', 'VerseList'] — the script has these parameters now
+57. Run-Stage1Batch.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\run-stage1batch.ps1' in some tab's first rows)
+58. VerseReading.ps1: ps tools worksheet.xlsx tab 'VerseReading' is missing flag column(s) ['Force', 'VerseList'] — the script has these parameters now
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
 **Unenforced behaviour rules** (41) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
-58. [chat] #17 confirm-before-nontrivial-work — context_delivered
-59. [chat] #18 output-to-file-not-chat-only — context_delivered
-60. [chat] #19 factual-discipline-no-guessing — context_delivered
-61. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
-62. [chat] #21 chat-items-become-escalations — context_delivered
-63. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
-64. [chat] #23 close-the-loop-not-just-report — context_delivered
-65. [chat] #24 show-evidence-dont-smooth-over — context_delivered
-66. [development] #38 root-fix-not-one-off — context_delivered
-67. [development] #39 simple-steps-not-engineered-designs — context_delivered
-68. [development] #40 open-items-route-through-escalation — context_delivered
-69. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
-70. [development] #46 test-plan-per-module-utility — deliberately_deferred
-71. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
-72. [development] #66 cluster-label-must-track-membership — buildable_not_built
-73. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
-74. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-75. [documentation] #33 single-living-register-update-in-place — context_delivered
-76. [documentation] #34 source-of-truth-is-written-record — context_delivered
-77. [filing] #56 naming-shape — partially_enforced
-78. [filing] #57 snapshot-vs-living-document — context_delivered
-79. [filing] #58 archiving-trigger — partially_enforced
-80. [filing] #59 claude-code-filing-obligations — context_delivered
-81. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-82. [llm_output] #4 inferential-not-confirmed — context_delivered
-83. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
-84. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
-85. [sqlite] #1 verify-before-acting — context_delivered
-86. [sqlite] #11 readonly-by-default — context_delivered
-87. [sqlite] #13 dont-assume-which-database — context_delivered
-88. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
-89. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
-90. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
-91. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
-92. [sqlite] #67 bible-research-db-excluded-from-iba-results — UNCLASSIFIED (missing enforcement_status — audit gap itself)
-93. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
-94. [terminal] #2 step-not-done-without-validated-output — context_delivered
-95. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
-96. [terminal] #27 heredoc-powershell-only — context_delivered
-97. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
-98. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
+59. [chat] #17 confirm-before-nontrivial-work — context_delivered
+60. [chat] #18 output-to-file-not-chat-only — context_delivered
+61. [chat] #19 factual-discipline-no-guessing — context_delivered
+62. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
+63. [chat] #21 chat-items-become-escalations — context_delivered
+64. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
+65. [chat] #23 close-the-loop-not-just-report — context_delivered
+66. [chat] #24 show-evidence-dont-smooth-over — context_delivered
+67. [development] #38 root-fix-not-one-off — context_delivered
+68. [development] #39 simple-steps-not-engineered-designs — context_delivered
+69. [development] #40 open-items-route-through-escalation — context_delivered
+70. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
+71. [development] #46 test-plan-per-module-utility — deliberately_deferred
+72. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
+73. [development] #66 cluster-label-must-track-membership — buildable_not_built
+74. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
+75. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+76. [documentation] #33 single-living-register-update-in-place — context_delivered
+77. [documentation] #34 source-of-truth-is-written-record — context_delivered
+78. [filing] #56 naming-shape — partially_enforced
+79. [filing] #57 snapshot-vs-living-document — context_delivered
+80. [filing] #58 archiving-trigger — partially_enforced
+81. [filing] #59 claude-code-filing-obligations — context_delivered
+82. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+83. [llm_output] #4 inferential-not-confirmed — context_delivered
+84. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
+85. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
+86. [sqlite] #1 verify-before-acting — context_delivered
+87. [sqlite] #11 readonly-by-default — context_delivered
+88. [sqlite] #13 dont-assume-which-database — context_delivered
+89. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
+90. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
+91. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
+92. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
+93. [sqlite] #67 bible-research-db-excluded-from-iba-results — UNCLASSIFIED (missing enforcement_status — audit gap itself)
+94. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
+95. [terminal] #2 step-not-done-without-validated-output — context_delivered
+96. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
+97. [terminal] #27 heredoc-powershell-only — context_delivered
+98. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
+99. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
 
 **Undelivered conversational rules** (2) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
-99. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
-100. [terminal] #27 heredoc-powershell-only — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+100. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+101. [terminal] #27 heredoc-powershell-only — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
 
 **PS scripts bypassing run.py** (2) — an active PS script calling iba.app.(handlers|lib|tools) directly instead of dispatching through iba.app.run:
-101. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
-102. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+102. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+103. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
 
 **Steps without a PS entry point** (0) — an active cfg_step whose work package has no cfg_work_package.ps_script:
 _(none)_
 
 **Escalation-file naming drift** (27) — a Workflow/Catalogue or iba/docs file whose own header names an escalation the filename doesn't carry as its prefix:
-103. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-104. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
-105. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-106. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
-107. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
-108. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
-109. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
-110. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
-111. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
-112. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
-113. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
-114. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-115. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
-116. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-117. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
-118. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-119. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
-120. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
-121. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
-122. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
-123. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
-124. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
-125. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-126. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
-127. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-128. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-129. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
+104. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+105. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
+106. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+107. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
+108. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
+109. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
+110. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
+111. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
+112. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
+113. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
+114. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
+115. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+116. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
+117. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+118. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
+119. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+120. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
+121. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
+122. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
+123. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
+124. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
+125. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
+126. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+127. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
+128. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+129. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+130. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
 
 **Config hedge phrases** (5) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
-130. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
-131. cfg_method_rule #106 battery-scope-excludes-verse-reading-and-science-extract — hedge phrase in rule_text/enforced_by with no resolution
-132. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
-133. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
-134. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
+131. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
+132. cfg_method_rule #106 battery-scope-excludes-verse-reading-and-science-extract — hedge phrase in rule_text/enforced_by with no resolution
+133. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
+134. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
+135. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
 
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
 
 **Query file convention** (2) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
-135. scripts/SQLite/IBA_DB/explore clusters-2.sqlite3-query — contains a space, should use hyphens
-136. scripts/SQLite/IBA_DB/explore verses.sqlite3-query — contains a space, should use hyphens
+136. scripts/SQLite/IBA_DB/explore clusters-2.sqlite3-query — contains a space, should use hyphens
+137. scripts/SQLite/IBA_DB/explore verses.sqlite3-query — contains a space, should use hyphens
 
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
 
-**Inactive configs** (427 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 359 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 9 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **59 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_setting.lexical.meaning_max_strongs_per_batch, cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.content-index-rebuild/content_index.rebuild, cfg_step.lexicon-parse/lexicon.parse, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_step.verse-lexical/lexical.enrich, cfg_step.verse-lexical/lexical.run, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.content-index-rebuild, cfg_work_package.verse-analysis-report, cfg_write_grant.configmaint.propose -> cfg_change_detail, cfg_write_grant.configmaint.propose -> cfg_change_log, cfg_write_grant.configmaint.propose -> cfg_lexical_code_class, cfg_write_grant.escalation -> word_registry, cfg_write_grant.lexical.enrich -> verse_lexical_note, cfg_write_grant.lexical.run -> verse_lexical, cfg_write_grant.lexical.run -> verse_lexical_note, cfg_write_grant.lexicon.parse -> strong_lsj_parsed, cfg_write_grant.lexicon.parse -> strong_meaning_parsed, cfg_write_grant.lexicon.parse -> strong_mounce_parsed, cfg_write_grant.run -> escalation, cfg_report_section.spine.check/discoverability, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_next_action=approve, cfg_enum.escalation_next_action=approved, cfg_enum.escalation_next_action=hold, cfg_enum.escalation_next_action=noted, cfg_enum.escalation_next_action=ready_for_approval, cfg_enum.escalation_next_action=reject, cfg_enum.escalation_next_action=review, cfg_enum.escalation_next_action=revise, cfg_enum.escalation_requirement_check_kind=requires_prior_ready_for_approval_if_decision_required, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=re-assign, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop, cfg_enum.ib_observation.tag=cross-cluster-significance, cfg_enum.ib_observation.tag=instance-meaning, cfg_enum.lexical_code_class=connective_causal, cfg_enum.lexical_code_class=connective_coordinating, cfg_enum.lexical_code_class=connective_purpose, cfg_enum.lexical_code_class=negator, cfg_enum.lexical_code_class=party_angelic, cfg_enum.lexical_code_class=party_divine, cfg_enum.lexical_code_class=party_human, cfg_enum.prose_section_type_lifecycle_tag=source, cfg_enum.prose_section_type_lifecycle_tag=v1, cfg_enum.prose_section_type_lifecycle_tag=v2, cfg_enum.prose_section_type_lifecycle_tag=v3.
-- **cfg_setting** (9): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.load_report_path`, `candidate.quality_report_path`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`, `lexical.meaning_max_strongs_per_batch`, `validation.show_candidate`
+**Inactive configs** (426 row(s) across 10 table(s)) — deactivated, not deleted; excluded from validation above. 359 from the candidate-system retraction, 2026-07-23 (GOVERNANCE.md §15D; migration/retract_candidate_system.py); 9 from the passage-system retirement, 2026-07-26 (reports/archive/passage-system-retirement-record-20260726.md); **58 UNATTRIBUTED** (not part of a known retirement — needs a look): cfg_step.book-narrative-generate/report.book_narrative_generate, cfg_step.book-narrative-validate/report.book_narrative_validate, cfg_step.chapter-generate/report.verse_span_meaning, cfg_step.content-index-rebuild/content_index.rebuild, cfg_step.lexicon-parse/lexicon.parse, cfg_step.verse-analysis-report/report.verse_span_meaning, cfg_step.verse-lexical/lexical.enrich, cfg_step.verse-lexical/lexical.run, cfg_work_package.book-narrative-generate, cfg_work_package.book-narrative-validate, cfg_work_package.chapter-generate, cfg_work_package.content-index-rebuild, cfg_work_package.verse-analysis-report, cfg_write_grant.configmaint.propose -> cfg_change_detail, cfg_write_grant.configmaint.propose -> cfg_change_log, cfg_write_grant.configmaint.propose -> cfg_lexical_code_class, cfg_write_grant.escalation -> word_registry, cfg_write_grant.lexical.enrich -> verse_lexical_note, cfg_write_grant.lexical.run -> verse_lexical, cfg_write_grant.lexical.run -> verse_lexical_note, cfg_write_grant.lexicon.parse -> strong_lsj_parsed, cfg_write_grant.lexicon.parse -> strong_meaning_parsed, cfg_write_grant.lexicon.parse -> strong_mounce_parsed, cfg_write_grant.run -> escalation, cfg_report_section.spine.check/discoverability, cfg_enum.escalation_answer=approve, cfg_enum.escalation_answer=reject, cfg_enum.escalation_answer=revise, cfg_enum.escalation_next_action=approve, cfg_enum.escalation_next_action=approved, cfg_enum.escalation_next_action=hold, cfg_enum.escalation_next_action=noted, cfg_enum.escalation_next_action=ready_for_approval, cfg_enum.escalation_next_action=reject, cfg_enum.escalation_next_action=review, cfg_enum.escalation_next_action=revise, cfg_enum.escalation_requirement_check_kind=requires_prior_ready_for_approval_if_decision_required, cfg_enum.escalation_state=answered, cfg_enum.escalation_state=paused, cfg_enum.escalation_state=re-assign, cfg_enum.escalation_state=retracted, cfg_enum.escalation_type=crash, cfg_enum.escalation_type=interactive, cfg_enum.escalation_type=prompted, cfg_enum.escalation_type=report-stop, cfg_enum.ib_observation.tag=cross-cluster-significance, cfg_enum.ib_observation.tag=instance-meaning, cfg_enum.lexical_code_class=connective_causal, cfg_enum.lexical_code_class=connective_coordinating, cfg_enum.lexical_code_class=connective_purpose, cfg_enum.lexical_code_class=negator, cfg_enum.lexical_code_class=party_angelic, cfg_enum.lexical_code_class=party_divine, cfg_enum.lexical_code_class=party_human, cfg_enum.prose_section_type_lifecycle_tag=source, cfg_enum.prose_section_type_lifecycle_tag=v1, cfg_enum.prose_section_type_lifecycle_tag=v2, cfg_enum.prose_section_type_lifecycle_tag=v3.
+- **cfg_setting** (8): `candidate.concept_delimiter_pattern`, `candidate.lemma_base_pattern`, `candidate.load_report_path`, `candidate.quality_report_path`, `candidate.tag_clean_pattern`, `candidate.tag_max_words`, `candidate.transliteration_pattern`, `validation.show_candidate`
 - **cfg_step** (17): `book-narrative-generate/report.book_narrative_generate`, `book-narrative-validate/report.book_narrative_validate`, `candidate-curation/candidate.curate`, `candidate-curation/candidate.load`, `candidate-quality/candidate.validate`, `chapter-generate/report.passage_debate`, `chapter-generate/report.verse_span_meaning`, `content-index-rebuild/content_index.rebuild`, `lexicon-parse/lexicon.parse`, `passage-debate-report/report.passage_debate`, `passage-debate-sync/passage.debate_sync`, `seed-candidate-report/report.seed_candidate`, `set-candidates/candidate.seed`, `set-candidates/candidate.set`, `verse-analysis-report/report.verse_span_meaning`, `verse-lexical/lexical.enrich`, `verse-lexical/lexical.run`
 - **cfg_work_package** (11): `book-narrative-generate`, `book-narrative-validate`, `candidate-curation`, `candidate-quality`, `chapter-generate`, `content-index-rebuild`, `passage-debate-report`, `passage-debate-sync`, `seed-candidate-report`, `set-candidates`, `verse-analysis-report`
 - **cfg_write_grant** (19): `candidate.curate -> candidate_seed`, `candidate.load -> candidate_seed`, `candidate.seed -> candidate_seed`, `candidate.seed -> lemma_inventory`, `candidate.set -> span_candidate`, `configmaint.propose -> cfg_change_detail`, `configmaint.propose -> cfg_change_log`, `configmaint.propose -> cfg_lexical_code_class`, `escalation -> word_registry`, `lexical.enrich -> passage`, `lexical.enrich -> verse_lexical_note`, `lexical.run -> verse_lexical`, `lexical.run -> verse_lexical_note`, `lexicon.parse -> strong_lsj_parsed`, `lexicon.parse -> strong_meaning_parsed`, `lexicon.parse -> strong_mounce_parsed`, `migration -> candidate_seed`, `report.debate -> passage`, `run -> escalation`
@@ -834,7 +835,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | lexical | lexical.llm_rate_input_per_million | 3.0 |  |
 | lexical | lexical.llm_rate_output_per_million | 15.0 |  |
 | lexical | lexical.llm_usage_log_path | _analytics/lexical-extracts/lexical-llm-usage.csv |  |
-| lexical | lexical.meaning_max_strongs_per_batch | 8 | SUPERSEDED 2026-09-22 (escalation #1842), researcher instruction verbatim: batching based on strongs is inappropriate, the units of operation is verses not strongs. Replaced by lexical.meaning_max_verses_per_batch (reactivated). No live code reads this key anymore -- _chunk_verses_fixed_size() replaced _chunk_verses_by_strong_density() as meaning() own chunker (iba/app/handlers/lexical.py). Marked inactive, not removed -- auditable history, same pattern this key own use-text already documents for its own predecessor. |
+| lexical | lexical.meaning_max_strongs_per_batch | 8 | Cap on cumulative distinct M-code strongs per lexical.meaning batch -- the real cost driver for M0.7's front-loaded per-strong question volume (escalation #1825/#1826/#1827, 2026-09-21). Replaced the old verse-count cap (lexical.meaning_max_verses_per_batch, now inactive) after a fixed verse count was confirmed live to never reliably bound output when strong-density varies 3.5x between chunks. Read by _chunk_verses_by_strong_density() (iba/app/handlers/lexical.py) -- found live 2026-09-22 (escalation #1824 governance audit) that this setting was never actually registered despite being load-bearing since #311; the code was silently running on this same fallback value the whole time. |
 | lexical | lexical.meaning_max_verses_per_batch | 1 | Cap on verses per lexical.meaning batch -- REACTIVATED 2026-09-22 (escalation #1842), researcher instruction verbatim: "batching based on strongs is inappropriate, the units of operation is verses not strongs." Reverts the 2026-09-21 supersession by lexical.meaning_max_strongs_per_batch (now inactive): that switch was made because a fixed verse count was found unsafe when strong-density varies (M67 5-verse chunks ranged 6-21 strongs) -- but the strong-density approach own failure that triggered this reversal (M49, 2026-09-22) was a 3-verse chunk (union of 8 strongs), not an unusually dense one, so it was not actually delivering the safety its adoption assumed. Value set to 1 (not the old 5): live per-verse M-tagged strong density across M49 own 193-verse scope ranges 1-10 (median 3) -- a single-verse batch bounds each call to one verse own inherent content, isolating any remaining density outlier to one retryable batch instead of an unpredictable multi-verse one. Read by _chunk_verses_fixed_size() (iba/app/handlers/lexical.py). |
 | lexicon | lexicon.bracket_pairs | {'(': ')', '[': ']', '{': '}'} | open->close bracket pairs classify_row/strip_bracketed treat as nestable — a gloss that is wholly one bracketed aside (e.g. '(obsolete)') classifies as 'not applicable'. |
 | lexicon | lexicon.classify_lookup_max_words | 3 | classify_row: a gloss/description with at most this many space-separated words is 'lookup', more is 'description' — same shape as candidate.tag_max_words's word-count threshold. |

@@ -708,15 +708,41 @@ def run(ctx: Ctx) -> Outcome:
 # runs for real: live API call per batch, `lib/recordingpass.py` writes every result in the same
 # unit of work (checklist rule 0.3), never a deferred batch pickup.
 
+def _chunk_verses_fixed_size(verse_ids: list[int], max_verses: int) -> list[list[int]]:
+    """#1842, 2026-09-22, researcher instruction verbatim: "batching based on strongs is
+    inappropriate, the units of operation is verses not strongs." Supersedes
+    `_chunk_verses_by_strong_density` below (kept, unused, for provenance -- not deleted, since its
+    own docstring records real prior findings that still matter for context). Plain fixed-size
+    grouping of verse_ids in the caller's own order -- never reordered, never split mid-verse.
+
+    The strong-density approach this replaces was adopted 2026-09-21 specifically because a FIXED
+    verse count was found unsafe back then (M67's 5-verse chunks ranged 6-21 distinct M-code
+    strongs). Checked live before reverting (2026-09-22, M49's 193-verse scope): per-verse M-tagged
+    strong density ranges 1-10 (median 3), and the chunk that actually failed under strong-density
+    chunking was only 3 verses (union of 8 strongs) -- i.e. batching by strongs did not actually
+    prevent the failure it was adopted to prevent; it just chose a different, less predictable
+    grouping of verses than a fixed verse count would. Reverting to fixed-size does not
+    mathematically guarantee no single verse can ever be too dense (max seen: 10 strongs on its
+    own, worse than the union that just failed) -- rather, it bounds the failure to ONE verse at a
+    time, which is far cheaper to detect and retry than losing an arbitrarily-sized multi-verse
+    batch to the same failure, and matches the researcher's own stated model of what the unit of
+    work is."""
+    if not verse_ids:
+        return []
+    return [verse_ids[i:i + max_verses] for i in range(0, len(verse_ids), max_verses)]
+
+
 def _chunk_verses_by_strong_density(conn, verse_ids: list[int], max_strongs: int
                                     ) -> list[list[int]]:
-    """#1825/#1826/#1827: groups verse_ids (already in caller's own order -- never reordered) into
-    chunks whose CUMULATIVE distinct M-code strong count stays <= max_strongs -- front-loading
-    means output volume tracks strong count, not verse count, so this is the real cost driver to
-    cap, not a proxy. Greedy, single pass: a verse whose own M-code strong set is entirely already
-    in the running chunk total costs nothing extra; a verse that would push the chunk over the cap
-    starts a new chunk instead. A single verse whose OWN strong count alone exceeds max_strongs
-    still gets its own one-verse chunk (never split mid-verse, never silently dropped) -- flagged
+    """SUPERSEDED 2026-09-22 by `_chunk_verses_fixed_size` above (escalation #1842) -- kept for
+    provenance only, no longer called from `meaning()`. #1825/#1826/#1827: groups verse_ids
+    (already in caller's own order -- never reordered) into chunks whose CUMULATIVE distinct
+    M-code strong count stays <= max_strongs -- front-loading means output volume tracks strong
+    count, not verse count, so this is the real cost driver to cap, not a proxy. Greedy, single
+    pass: a verse whose own M-code strong set is entirely already in the running chunk total costs
+    nothing extra; a verse that would push the chunk over the cap starts a new chunk instead. A
+    single verse whose OWN strong count alone exceeds max_strongs still gets its own one-verse
+    chunk (never split mid-verse, never silently dropped) -- flagged
     via a printed note since that one chunk will still risk truncation, but the alternative
     (splitting one verse's own front-loaded battery across two calls) is not designed."""
     if not verse_ids:
@@ -835,17 +861,17 @@ def meaning(ctx: Ctx) -> Outcome:
                  preview=preview, cluster_code=cluster_code,
                  fully_covered_verse_count=len(fully_covered_ids))
 
-    # #1723 front-loading multiplies expected output roughly by strong-density-per-batch, not just
-    # verse count. FIXED verse-count chunking (the original #1723 fix, then #1825/#1826/#1827's
-    # own halving) was the wrong lever -- checked live, 2026-09-21: M67's own 5-verse chunks range
-    # from 6 to 21 distinct M-code strongs (a 3.5x spread), and which chunk actually truncated
-    # varied run to run (not reliably the highest-density one), confirming a fixed verse cap can
-    # never bound this reliably -- some batches are strong-dense, some aren't, and no single verse
-    # count is safe for both without being wasteful for the sparse ones. Chunk by STRONG DENSITY
-    # directly instead (`_chunk_verses_by_strong_density`) -- the actual cost driver, not a proxy.
-    max_strongs = int(ctx.cfg.setting("lexical.meaning_max_strongs_per_batch", 8))
+    # #1842, 2026-09-22, researcher instruction verbatim: "batching based on strongs is
+    # inappropriate, the units of operation is verses not strongs." Reverts the #1723/#1825-1827
+    # strong-density chunking (kept above as `_chunk_verses_by_strong_density`, unused, for
+    # provenance) back to fixed verse-count chunking -- see `_chunk_verses_fixed_size`'s own
+    # docstring for why the 2026-09-21 objection to a fixed count no longer holds as the deciding
+    # factor: the strong-density approach's own M49 failure (confirmed 2026-09-22) was a 3-verse
+    # chunk, not an unusually strong-dense one, so it was not actually delivering the safety its
+    # own adoption assumed.
+    max_verses = int(ctx.cfg.setting("lexical.meaning_max_verses_per_batch", 1))
     max_cost_per_batch = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
-    chunks = _chunk_verses_by_strong_density(conn, verse_ids, max_strongs)
+    chunks = _chunk_verses_fixed_size(verse_ids, max_verses)
 
     batch_summaries = []
     llm_summary = []
