@@ -97,3 +97,22 @@ without resolving.
   next session should ask directly rather than assume where the researcher landed.
 
 ## Git state (this log's own completion trigger)
+
+Committed and pushed in the same unit of work as this log, per `governance.session_log_triggers_commit`.
+
+```
+$ git commit -m "session 20260922 (cont.): verse-count chunking fix, M0.8.1 dedup root cause fixed, cost/architecture review opened"
+[main e8067f69] session 20260922 (cont.): verse-count chunking fix, M0.8.1 dedup root cause fixed, cost/architecture review opened
+ 30 files changed, 10615 insertions(+), 181 deletions(-)
+
+$ git push
+To https://github.com/lcilliers/Bible_Projects.git
+   1c5873b8..e8067f69  main -> main
+
+$ git status
+On branch main
+Your branch is up to date with 'origin/main'.
+nothing to commit, working tree clean
+```
+
+Branch: `main`. Commit: `e8067f69`. Pushed to `origin/main` (`1c5873b8..e8067f69`). Working tree clean.
