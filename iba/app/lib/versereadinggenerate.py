@@ -172,6 +172,39 @@ def _prior_network_context(conn, verse_refs: list[str]) -> dict[str, list[dict]]
     return _prior_context_for_question(conn, verse_refs, "M0.6.6")
 
 
+def _verse_cluster_agnostic_coverage(conn, verse_refs: list[str]) -> dict[str, dict[str, set[str]]]:
+    """#1824 v14, researcher correction 2026-09-22, verbatim: "verse reading is supposed to be
+    agnostic to cluster definition. every M-code word has the same status in the verse and need
+    to be treated the same." M0.6.5/M0.6.6/D7.7.1 were wrongly restricted to "this cluster's own
+    home strong(s)" -- the same home-strong scoping this module already dropped for M0.1/M0.5
+    (front-loaded, #1723). Corrected to match: every M-code strong in the verse, not just the
+    pass's own -- and M0.7 (already cluster-agnostic by population, #1806) folded into the SAME
+    front-loading check here too (#1824 v18): a later cluster's pass touching an already-fully-
+    read verse must not re-derive M0.7 for it either.
+
+    Front-loading companion to that broadening (mirrors `_strongs_needing_battery`'s own
+    established pattern, #1723/#1820) -- but scoped PER VERSE, not globally-once: unlike M0.1/M0.5
+    (a word-invariant fact), a word's own per-verse questions can genuinely differ verse to verse
+    (#1723's own established principle), so "already answered" here means "already answered FOR
+    THIS VERSE", never "answered anywhere, ever". Returns {verse_osis: {strong: {question_code
+    already live for that verse+strong, any cluster's pass}}} across all four cluster-agnostic
+    per-verse question types (M0.6.5, M0.6.6, D7.7.1, M0.7.1-16)."""
+    if not verse_refs:
+        return {}
+    ph = ",".join("?" * len(verse_refs))
+    rows = conn.execute(
+        f"SELECT n.verse_reference, n.strong, o.question_code "
+        f"FROM ib_node n JOIN ib_observation o ON o.id = n.observation_id "
+        f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
+        f"AND (o.question_code IN ('M0.6.5', 'M0.6.6', 'D7.7.1') "
+        f"OR o.question_code LIKE 'M0.7%') "
+        f"AND n.verse_reference IN ({ph})", verse_refs).fetchall()
+    out: dict[str, dict[str, set[str]]] = {}
+    for r in rows:
+        out.setdefault(r["verse_reference"], {}).setdefault(r["strong"], set()).add(r["question_code"])
+    return out
+
+
 def _prior_context_for_question(conn, verse_refs: list[str], question_code: str
                                 ) -> dict[str, list[dict]]:
     if not verse_refs:
@@ -240,11 +273,27 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
     home_needs_battery = _strongs_needing_battery(conn, cluster_member_strongs)
     other_needs_battery = _strongs_needing_battery(conn, all_m_code_strongs - cluster_member_strongs)
     word_battery_strongs = home_needs_battery | other_needs_battery
-    meaning_by_strong = {s: _meaning_sources(conn, s)
-                         for s in sorted(cluster_member_strongs | other_needs_battery)}
+    # Broadened to every M-code strong (was cluster_member_strongs | other_needs_battery) --
+    # M0.6.5/M0.6.6/D7.7.1 now reason about EVERY M-code word in the verse (see below), not just
+    # this cluster's own home strong(s), so every one of them needs meaning context available,
+    # regardless of word-level battery status.
+    meaning_by_strong = {s: _meaning_sources(conn, s) for s in sorted(all_m_code_strongs)}
 
     prior_relational = _prior_relational_context(conn, [v["verse"] for v in verses_out])
     prior_network = _prior_network_context(conn, [v["verse"] for v in verses_out])
+    # #1824 v14/v18 researcher correction, 2026-09-22: M0.6.5/M0.6.6/D7.7.1/M0.7 must all be
+    # cluster-agnostic -- "every M-code word has the same status in the verse and need to be
+    # treated the same" -- and a later cluster's pass over an already-fully-read verse must not
+    # re-derive any of them ("if the second read of the verse finds additional observations then
+    # something went wrong in the first reading"). Front-load skip data (per verse, not globally
+    # -- see _verse_cluster_agnostic_coverage's own docstring) folded straight into each verse's
+    # own dict below so the LLM sees exactly what's already answered for THAT verse without a
+    # second lookup.
+    already_covered = _verse_cluster_agnostic_coverage(conn, [v["verse"] for v in verses_out])
+    for v in verses_out:
+        covered = already_covered.get(v["verse"], {})
+        if covered:
+            v["already_covered"] = {s: sorted(qs) for s, qs in covered.items()}
 
     questions = conn.execute(
         "SELECT question_code, question_text FROM wa_obs_question_catalogue "
@@ -265,7 +314,8 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
 
     instructions = _instructions(cluster_code, question_texts, tag_values, rules_text,
                                  [v["verse"] for v in verses_out], sorted(cluster_member_strongs),
-                                 sorted(home_needs_battery), sorted(other_needs_battery))
+                                 sorted(home_needs_battery), sorted(other_needs_battery),
+                                 sorted(all_m_code_strongs))
     content = json.dumps({"cluster_code": cluster_code, "verses": verses_out,
                           "meaning_sources_by_strong": meaning_by_strong,
                           "prior_relational_context_by_verse": prior_relational,
@@ -327,7 +377,8 @@ TAG_GUIDANCE = {
 
 def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str],
                   rules_text: str, verse_refs: list[str], home_strongs: list[str],
-                  home_needs_battery: list[str], other_needs_battery: list[str]) -> str:
+                  home_needs_battery: list[str], other_needs_battery: list[str],
+                  all_m_code_strongs: list[str]) -> str:
     q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
     tag_guidance_text = "\n".join(
         f"  - {t}: {TAG_GUIDANCE[t]}" for t in tag_values if t in TAG_GUIDANCE)
@@ -351,12 +402,19 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"subgroup Layer 2 pass (`lexical.meaning`). You are given, per verse: the verse's own base "
         f"text, `roles_in_verse` -- every role-bearing word in that verse, each carrying "
         f"`cluster_codes` (the full set of M-code and role-T-code tags) and `is_home_cluster` (true "
-        f"if this word belongs to cluster {cluster_code}) -- `prior_relational_context_by_verse` "
-        f"-- any M0.6.5 relational findings ALREADY recorded for these verses by an earlier "
-        f"cluster's own pass -- and `prior_network_context_by_verse` -- any M0.6.6 whole-network "
-        f"findings already recorded for these verses (a SEPARATE stream from M0.6.5's own chain). "
-        f"You are also given `meaning_sources_by_strong` for {home_strongs} (this "
-        f"cluster's own member strongs).{front_load_note}{settled_note} Read all present meaning "
+        f"if this word belongs to cluster {cluster_code} -- informational only, per #1824 v14: "
+        f"M0.6.5/M0.6.6/D7.7.1 are answered for every M-code word regardless, same as M0.1/M0.5/"
+        f"M0.7) -- `prior_relational_context_by_verse` -- any M0.6.5 relational findings ALREADY "
+        f"recorded for these verses by an earlier pass, any cluster -- `prior_network_context_by_"
+        f"verse` -- any M0.6.6 whole-network findings already recorded for these verses (a "
+        f"SEPARATE stream from M0.6.5's own chain) -- and, per verse where applicable, "
+        f"`already_covered` -- {{strong: [question_codes]}} already live for THAT verse "
+        f"(any pass) -- do not re-answer M0.6.5/M0.6.6/D7.7.1/M0.7.1-16 for a strong+question pair "
+        f"already listed there for that verse: a later cluster's pass over a verse another pass "
+        f"already fully read must not re-derive it (#1824 v18) -- if you find yourself about to "
+        f"answer something already listed there, skip it. You are also given `meaning_sources_by_strong` for "
+        f"{all_m_code_strongs} (every M-code strong in this batch, not just this cluster's own "
+        f"member strongs).{front_load_note}{settled_note} Read all present meaning "
         f"sources as complementary evidence, never picking one and ignoring the others.\n\n"
         f"Method rules governing this task:\n{rules_text}\n\n"
         f"THREE KINDS OF QUESTION, answered differently:\n"
@@ -366,27 +424,40 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"of this cluster's own home strongs already have a complete battery from an earlier pass "
         f"and are listed there for relational context only, not for you to re-answer M0.1/M0.5.\n"
         f"- M0.6.5 (relational), M0.6.6 (whole-network), and D7.7.1 (operation-permeability): "
-        f"answer ONLY for this cluster's own home strong(s) ({home_strongs}). For M0.6.5: if "
-        f"`prior_relational_context_by_verse` already has an entry for this verse, your answer MUST "
-        f"build on it -- state what THIS characteristic's own vantage point adds, never repeat what "
-        f"a prior cluster's pass already said; with no prior entry, you are the first pass over "
-        f"this verse, start the relational chain. For M0.6.6: the same progressive rule applies "
-        f"against `prior_network_context_by_verse` instead -- if an earlier pass already sketched "
-        f"the verse's whole M-code network, extend or correct it with what THIS characteristic's "
-        f"own membership in that network adds, never restate it unchanged; only answer M0.6.6 at "
-        f"all when at least one OTHER M-code characteristic is present in the verse (record none "
-        f"otherwise, per the question's own text).\n"
+        f"answer for EVERY M-code strong present in `roles_in_verse` for each verse (#1824 v14, "
+        f"corrected 2026-09-22 -- these are cluster-agnostic, same population as M0.1/M0.5/M0.7, "
+        f"NOT restricted to this cluster's own home strong(s)), EXCEPT any (strong, question_code) "
+        f"pair already listed in that verse's own `already_covered` -- skip those, "
+        f"another pass already answered them for this exact verse. For M0.6.5: if "
+        f"`prior_relational_context_by_verse` already has an entry for this verse (from any "
+        f"strong), your answer for a NEW strong MUST build on it where relevant -- add THIS word's "
+        f"own vantage point, never repeat what's already there; with no prior entry, start the "
+        f"relational chain. For M0.6.6: the same progressive rule applies against "
+        f"`prior_network_context_by_verse` instead -- extend or correct an existing sketch of the "
+        f"verse's whole M-code network with what THIS word's own membership in it adds, never "
+        f"restate it unchanged; record none for a word that is the verse's only M-code element "
+        f"(per the question's own text -- still answer it, the finding is just \"none\", never "
+        f"skip the question entirely). D7.7.1: record none if no operation-tagged (role-T3) word "
+        f"is present in the verse at all -- the question's only actual gate; do not additionally "
+        f"require a specifically party-coded (T4/T7/T8/T9) word, the live tagging for that is "
+        f"sparse and would wrongly exclude real cases (e.g. a plain T2-tagged \"God\" or "
+        f"\"others\" is still a real party for this question's purposes).\n"
         f"- M0.7.1-16 (verse substantiation, `#1806`, 2026-09-21): answer for EVERY M-code strong "
         f"present in `roles_in_verse` for each verse -- the SAME population as the M0.1/M0.5 "
-        f"battery, not just this cluster's own home strongs. These questions are deliberately "
+        f"battery, not just this cluster's own home strongs -- EXCEPT any (strong, question_code) "
+        f"pair already listed in that verse's own `already_covered` (#1824 v18: another cluster's "
+        f"pass already answered it for this exact verse, skip it). These questions are deliberately "
         f"written about \"[this word]\", never about \"the characteristic\" -- you are not told, "
         f"and must not assume, which cluster's pass is asking; answer purely from what the word "
         f"and its relationships in the verse actually show. Unlike M0.1/M0.5, these are NOT "
-        f"settled-once-ever -- the same word can genuinely behave differently verse to verse (the "
-        f"same principle M0.5.11 already applies), so answer fresh for every occurrence in this "
-        f"batch even if this strong already has M0.7 answers from other verses. A later, separate "
-        f"process (not you) reconciles repeated findings across occurrences -- your job is an "
-        f"accurate, concise reading of THIS verse only, not deciding whether it duplicates another.\n\n"
+        f"settled-once-ever ACROSS DIFFERENT VERSES -- the same word can genuinely behave "
+        f"differently verse to verse (the same principle M0.5.11 already applies), so a strong "
+        f"already having M0.7 answers from OTHER verses is never itself a reason to skip THIS "
+        f"verse. But THIS verse+strong+question, once genuinely answered (by any pass), is settled "
+        f"-- `already_covered` is what tells you that, not your own judgement. A later, separate "
+        f"process (not you) reconciles any residual repeated findings across occurrences -- your "
+        f"job is an accurate, concise reading of THIS verse only, not deciding whether it "
+        f"duplicates another.\n\n"
         f"Answer these catalogue questions:\n{q_text}\n\n"
         f"Valid `tag` values: {tag_values}\n"
         f"`tag` is a categorisation value, not just a peculiarity flag -- it must let someone "
@@ -405,12 +476,13 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"Every `verse` value you write MUST be one of exactly those.\n"
         f"- Every `strong` value you write for M0.1/M0.5 must be one of {word_battery_strongs} "
         f"(NOT merely a key of `meaning_sources_by_strong` -- that set is broader, includes "
-        f"already-settled home strongs given for relational context only); for M0.6.5/M0.6.6/"
-        f"D7.7.1 it must be one of this cluster's own home strongs {home_strongs}; for M0.7.1-16 "
-        f"it must be any M-code strong actually present in that verse's own `roles_in_verse` "
-        f"(any `cluster_codes` entry starting with \"M\") -- the same population M0.1/M0.5 use, "
-        f"regardless of home-cluster membership. D7.7.1 only applies when an operation-tagged "
-        f"(role-T3) word is actually present in the verse alongside a party-tagged word.\n"
+        f"already-settled strongs given for relational context only); for M0.6.5/M0.6.6/D7.7.1/"
+        f"M0.7.1-16 it must be any M-code strong actually present in that verse's own "
+        f"`roles_in_verse` (any `cluster_codes` entry starting with \"M\") -- the SAME population "
+        f"for all four, regardless of home-cluster membership (#1824 v14) -- minus whatever that "
+        f"verse's own `already_covered` already lists, for all four question types (#1824 v18). "
+        f"D7.7.1 only applies when an operation-tagged (role-T3) word is actually "
+        f"present in the verse -- no additional party-tag requirement.\n"
         f"- `question_code` MUST be the exact, specific leaf code (e.g. \"M0.1.2\", \"M0.5.7\") — "
         f"NEVER a bare component code (\"M0.1\", \"M0.5\" are not valid, will be rejected, and "
         f"waste your own output). One observation per specific sub-question — do not combine "

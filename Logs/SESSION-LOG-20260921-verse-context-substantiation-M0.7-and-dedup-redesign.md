@@ -168,3 +168,8 @@ Recorded as BUILD.md #312.
 
 ## 10. Git state
 
+- Branch: `main`
+- Commit: `38b410faa5cf47ab74316ddd946ff07f3e3bc44e` (2026-09-22T04:07:58+01:00) — "session 20260921: verse-context substantiation (M0.7) built, dedup redesigned onto structured keys"
+- Pushed: `398ea944..38b410fa main -> main` — confirmed via `git push`
+- `git status` after push: `On branch main. Your branch is up to date with 'origin/main'. nothing to commit, working tree clean.`
+

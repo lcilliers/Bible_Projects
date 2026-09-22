@@ -38,14 +38,16 @@ setting, not a new one. `build`/`enrich` still use it; `run` calls `build_for_ve
 
 from __future__ import annotations
 
+import csv
 import datetime
 import json
 import pathlib
+import sys
 
 from .base import Ctx, Outcome, fail, ok
 from . import raw as raw_mod
 from ..lib import lexical, lexicalenrich, lexicalenrichgenerate, lexicalscope, reportkit
-from ..lib import batchcontrol, clusterstatus, recordingpass, versereadinggenerate
+from ..lib import batchcontrol, clusterstatus, recordingpass, stage1coverage, versereadinggenerate
 from ..lib.stepapi import Step, StepUnavailable
 from ..lib.versespanmeaningreport import fetch_verses, parse_chapters, parse_range
 
@@ -749,7 +751,7 @@ def _chunk_verses_by_strong_density(conn, verse_ids: list[int], max_strongs: int
     if oversized:
         print(f"NOTE: {len(oversized)} single-verse chunk(s) individually exceed "
              f"max_strongs={max_strongs} on their own -- not split further, still a truncation "
-             f"risk: verse_ids {[c[0] for c in oversized]}")
+             f"risk: verse_ids {[c[0] for c in oversized]}", file=sys.stderr)
     return chunks
 
 
@@ -766,13 +768,36 @@ def meaning(ctx: Ctx) -> Outcome:
     # never a live call by default for a just-built, never-yet-run mechanism).
     preview_raw = ctx.params.get("Preview", "true")
     preview = str(preview_raw).strip().lower() not in ("false", "0", "no")
+    # -Force (#1824 v10/v11, Fix 3): a deliberate reconciliation rerun needs to bypass
+    # batchcontrol.already_committed's permanent skip -- without it, "rerun Stage 1 to reconcile"
+    # can never actually re-examine anything already committed. Never the default (missing/"false"/
+    # "0" all mean off, same truthy convention as -Preview above); this is the ONLY lever that
+    # triggers any correction to existing ib_observation rows, per the design doc's own governing
+    # principle (no offline scripts ever touch old data -- only a real rerun's fresh output does).
+    force_raw = ctx.params.get("Force", "false")
+    force = str(force_raw).strip().lower() in ("true", "1", "yes")
 
     conn = ctx.db.conn
     try:
         strongs = lexicalscope.resolve_strongs(conn, cluster_code=cluster_code)
     except ValueError as e:
         return fail("bad-selector", str(e))
-    verse_ids = lexicalscope.resolve_verse_ids_for_strongs(conn, strongs)
+    # -VerseList (2026-09-22): restricts the run to an explicit, small verse subset instead of the
+    # cluster's full remaining-work resolution -- needed for a cheap, disposable live test (e.g.
+    # validating a rerun's behaviour against a handful of verses that already carry pre-existing
+    # observations), same helper the legacy lexical.run step already uses for its own -VerseList.
+    # -ClusterCode is still required alongside it: member-strong context, prompt framing, and the
+    # M0.6.5/M0.6.6 relational vantage are all this cluster's own, not derivable from the verses
+    # alone -- VerseList narrows WHICH of that cluster's verses to run, not which cluster's pass.
+    verse_list_raw = ctx.params.get("VerseList")
+    if verse_list_raw:
+        refs = [x.strip() for x in verse_list_raw.split(",") if x.strip()]
+        try:
+            verse_ids = lexicalscope.resolve_verse_ids_for_refs(conn, refs)
+        except ValueError as e:
+            return fail("bad-selector", str(e))
+    else:
+        verse_ids = lexicalscope.resolve_verse_ids_for_strongs(conn, strongs)
     if not verse_ids:
         return fail("no-verses", f"{cluster_code} resolved to 0 verses")
 
@@ -789,6 +814,26 @@ def meaning(ctx: Ctx) -> Outcome:
                    f"listing them as members -- Layer 1 is stale for this cluster (#1719). Re-run "
                    f"lexical.build for the verses containing these strongs before verse-reading: "
                    f"{stale}")
+
+    # Whole-verse exclusion (#1824 v18, researcher instruction 2026-09-22, verbatim: "when M32
+    # cluster is processed then all the analysis for verses already analysed previously is not
+    # recreated... if the second read of the verse finds additional observations then something
+    # went wrong in the first reading"). Since BUILD #316, the FIRST cluster's pass to touch a
+    # verse already does complete Stage 1 analysis of every M-code word in it -- a LATER cluster
+    # whose own strong happens to occur in that same verse should not re-derive it at all.
+    # -Force intentionally bypasses this (a deliberate reconciliation rerun, Fix 3, exists
+    # precisely to re-examine already-covered material) -- never applied together.
+    fully_covered_ids: set = set()
+    if not force:
+        fully_covered_ids = stage1coverage.fully_covered_verse_ids(conn, cluster_code, verse_ids)
+        if fully_covered_ids:
+            verse_ids = [v for v in verse_ids if v not in fully_covered_ids]
+    if not verse_ids:
+        return ok(f"{cluster_code}: all {len(fully_covered_ids)} requested verse(s) are already "
+                 f"fully covered (every expected question answered by an earlier pass) -- "
+                 f"nothing to do. Use -Force to re-examine them anyway.",
+                 preview=preview, cluster_code=cluster_code,
+                 fully_covered_verse_count=len(fully_covered_ids))
 
     # #1723 front-loading multiplies expected output roughly by strong-density-per-batch, not just
     # verse count. FIXED verse-count chunking (the original #1723 fix, then #1825/#1826/#1827's
@@ -830,8 +875,9 @@ def meaning(ctx: Ctx) -> Outcome:
 
         # Resume/skip (escalation #1756): this exact batch (by content, not position) was already
         # committed by a PRIOR run -- never re-pay for it. Checked fresh per batch, not cached, so
-        # a batch another concurrent/prior process just finished is picked up too.
-        if already_done:
+        # a batch another concurrent/prior process just finished is picked up too. -Force (#1824
+        # Fix 3) deliberately overrides this for an explicit reconciliation pass.
+        if already_done and not force:
             skipped_batches += 1
             continue
 
@@ -886,16 +932,24 @@ def meaning(ctx: Ctx) -> Outcome:
 
     if preview:
         already_n = sum(1 for b in batch_summaries if b["already_committed"])
-        # #1756: only the batches NOT already committed would actually cost anything on a live run.
-        total_cost = sum(b["est_cost_usd"] for b in batch_summaries if not b["already_committed"])
-        already_note = (f", {already_n} of {len(chunks)} already committed by a prior run "
-                        f"(will be skipped)" if already_n else "")
+        # #1756: only the batches NOT already committed would actually cost anything on a live
+        # run -- UNLESS -Force (#1824 Fix 3) is set, in which case every batch will actually be
+        # re-called, so the estimate must include the already-committed ones too, not just the
+        # remaining-work subset.
+        total_cost = sum(b["est_cost_usd"] for b in batch_summaries
+                         if force or not b["already_committed"])
+        already_note = ("" if not already_n else
+                        f", {already_n} of {len(chunks)} already committed by a prior run "
+                        f"({'will be RE-RUN, -Force is set' if force else 'will be skipped'})")
+        fully_covered_note = (f", {len(fully_covered_ids)} verse(s) excluded entirely (already "
+                             f"fully covered by an earlier pass)" if fully_covered_ids else "")
         return ok(f"PREVIEW {cluster_code}: {len(chunks)} batch(es), {len(verse_ids)} verse(s), "
-                 f"{len(strongs)} strong(s), estimated ${total_cost:.4f} total for the remaining "
-                 f"work{already_note} -- no API call made, nothing written. Re-run with "
-                 f"-Preview:$false to execute for real.",
+                 f"{len(strongs)} strong(s), estimated ${total_cost:.4f} total for the "
+                 f"{'forced re-run' if force else 'remaining work'}{already_note}"
+                 f"{fully_covered_note} -- no API call "
+                 f"made, nothing written. Re-run with -Preview:$false to execute for real.",
                  preview=True, batches=batch_summaries, cluster_code=cluster_code,
-                 verse_count=len(verse_ids), strong_count=len(strongs))
+                 verse_count=len(verse_ids), strong_count=len(strongs), force=force)
 
     # Every live (non-preview) call resolves the CLUSTER's full verse-id list (no partial/manual
     # selector exists on this step) -- so reaching here means the whole cluster was just attempted,
@@ -906,6 +960,38 @@ def meaning(ctx: Ctx) -> Outcome:
     # lib/clusterstatus.py's own module docstring for the full finding.
     status_result = clusterstatus.advance_if_verse_reading_complete(conn, cluster_code)
     conn.commit()
+
+    # LLM validation check (#1824 v14, researcher instruction 2026-09-22, verbatim: "stage 1 need
+    # to pre-calculate the expected result for each scope, and measure the result received from
+    # llm as the llm validation check"). Runs against the FULL requested verse_ids scope (not just
+    # the batches that got a fresh call this time -- -Force-skipped-vs-not doesn't change what
+    # SHOULD exist), read-only, no LLM call of its own. Full per-row detail persisted to a report
+    # (governance.reports_must_persist); the summary counts are folded into this call's own
+    # message text so they survive into `run.outcome` (the counts dict itself is not persisted --
+    # same gap BUILD.md #274 already flagged for `unresolved_note` above).
+    coverage = stage1coverage.validate_coverage(conn, cluster_code, verse_ids)
+    # Config-defined path (escalation #1824 governance audit, 2026-09-22) -- was a hardcoded
+    # f-string, which governance.reports_must_persist's own "config-defined report path"
+    # requirement doesn't actually allow; report.stage1_coverage_validation_pattern registered to
+    # match the established report.batch_progress_path/report.lexical_notes_output_pattern
+    # precedent.
+    coverage_pattern = ctx.cfg.required_setting("report.stage1_coverage_validation_pattern")
+    coverage_report_path = pathlib.Path(
+        coverage_pattern.format(cluster_code=cluster_code, run_id=ctx.run_id))
+    coverage_report_path.parent.mkdir(parents=True, exist_ok=True)
+    with coverage_report_path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["category", "verse_reference", "strong", "question_code", "live_node_count"])
+        for v, s, q in coverage["missing_sample"]:
+            w.writerow(["MISSING", v, s, q, 0])
+        for v, s, q in coverage["unexpected_sample"]:
+            w.writerow(["UNEXPECTED", v, s, q, ""])
+        for (v, s, q), n in coverage["over_count_sample"]:
+            w.writerow(["OVER_COUNT", v, s, q, n])
+    coverage_note = (f"; validation: {coverage['ok_count']} ok, {coverage['missing_count']} "
+                     f"missing, {coverage['unexpected_count']} unexpected, "
+                     f"{coverage['over_count_count']} over-count (of {coverage['expected_count']} "
+                     f"expected) -- {coverage_report_path}")
 
     total_cost = sum(c["cost_usd"] for c in llm_summary)
     unresolved_n = record_summary["unresolved_occurrence_count"]
@@ -923,8 +1009,13 @@ def meaning(ctx: Ctx) -> Outcome:
                        f"before subgroup allocation can start" if not status_result["complete"]
                   else "")
     skipped_note = f", {skipped_batches} batch(es) skipped (already committed)" if skipped_batches else ""
-    return ok(f"{cluster_code}: {len(chunks)} batch(es){skipped_note}, ${total_cost:.4f} spent, "
-             f"observations {record_summary['by_action']}{unresolved_note}{status_note}",
+    fully_covered_note = (f", {len(fully_covered_ids)} verse(s) excluded entirely (already fully "
+                         f"covered by an earlier pass)" if fully_covered_ids else "")
+    return ok(f"{cluster_code}: {len(chunks)} batch(es){skipped_note}{fully_covered_note}, "
+             f"${total_cost:.4f} spent, "
+             f"observations {record_summary['by_action']}{unresolved_note}{status_note}"
+             f"{coverage_note}",
              preview=False, batches=batch_summaries, llm_calls=llm_summary,
              record_summary=record_summary, cluster_code=cluster_code,
-             status_result=status_result, skipped_batches=skipped_batches)
+             status_result=status_result, skipped_batches=skipped_batches, coverage=coverage,
+             fully_covered_verse_count=len(fully_covered_ids))

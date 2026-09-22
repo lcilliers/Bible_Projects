@@ -14,14 +14,26 @@
     never-yet-run-at-scale mechanism. Every live batch's result is written by `lib/recordingpass.py`
     in the same unit of work it's returned in -- no deferred/batched pickup.
 
-    A live (non-preview) call always resolves and processes the WHOLE cluster's verse list -- there
-    is no partial/manual verse selector on this step, by design (the handler's own comment: this is
-    what lets it check verse-reading completeness and advance `cluster.status` to
-    `ready_for_subgroup_allocation` the moment the full cluster is done).
+    A live (non-preview) call with no -VerseList resolves and processes the WHOLE cluster's verse
+    list. -VerseList (2026-09-22) narrows a run to an explicit, small OSIS-reference subset of that
+    same cluster -- for a cheap, disposable live test rather than a full-cluster run; -ClusterCode
+    is still required alongside it since member-strong context and prompt framing are the cluster's
+    own. cluster.status completeness is still checked after every live call regardless (it's a
+    fresh read of the WHOLE cluster's live coverage, not dependent on what this call touched), so a
+    -VerseList run cannot falsely advance a cluster that isn't actually complete.
 
 .PARAMETER ClusterCode  The M-code or T-code to read, e.g. M67. Mandatory.
+.PARAMETER VerseList    Optional comma-separated OSIS references (e.g. "2Cor.8.8,Rom.12.8") to
+                      restrict this run to, instead of the cluster's full remaining-work list.
 .PARAMETER Live         Actually call the API and write results. Omit for a preview (cost estimate
                       per batch, no API call, nothing written) -- always preview first.
+.PARAMETER Force        (#1824 v10/v11, Fix 3) Bypass the permanent already-committed skip for an
+                      explicit, deliberate reconciliation rerun -- every batch in scope gets a
+                      genuine fresh LLM call even if identical content was committed before.
+                      Never implied by -Live alone; always opt-in. This is the only lever that
+                      triggers any correction to existing ib_observation rows -- the update
+                      routine (recordingpass.py) only ever reconciles old data as a byproduct of
+                      a real rerun's fresh output, never via an offline script.
 .PARAMETER RunId        resume/re-tag a specific run.
 .PARAMETER Trace        Print every config read (IBA_TRACE).
 
@@ -32,12 +44,21 @@
     .\VerseReading.ps1 -ClusterCode M67 -Live
     # -> real run: LLM call per batch, recorded via recordingpass.py, cluster.status advanced if
     #    every member strong now has verse-reading coverage.
+.EXAMPLE
+    .\VerseReading.ps1 -ClusterCode M67 -VerseList "2Cor.8.8,Rom.12.8" -Live
+    # -> real run restricted to just those 2 verses.
+.EXAMPLE
+    .\VerseReading.ps1 -ClusterCode M67 -VerseList "2Cor.8.8,Rom.12.8" -Live -Force
+    # -> real, forced rerun of those 2 verses even though they were already committed before --
+    #    a genuine reconciliation pass.
 #>
 
 [CmdletBinding()]
 param(
     [Parameter(Mandatory = $true)] [string] $ClusterCode,
+    [string] $VerseList,
     [switch] $Live,
+    [switch] $Force,
     [string] $RunId,
     [switch] $Trace
 )
@@ -62,10 +83,13 @@ Test-IbaWorkPackageActive -WorkPackage 'verse-lexical'
 $stepId = 'lexical.meaning'
 $runId  = if ($RunId) { $RunId } else { "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-VERSE-READING" }
 
-Write-IbaRunHeader -WorkPackage 'verse-lexical' -Step $stepId -RunId $runId -RunsOver "cluster_code = '$ClusterCode'"
+$runsOver = if ($VerseList) { "cluster_code = '$ClusterCode', verses = '$VerseList'" } else { "cluster_code = '$ClusterCode'" }
+Write-IbaRunHeader -WorkPackage 'verse-lexical' -Step $stepId -RunId $runId -RunsOver $runsOver
 
 $paramArgs = @('--param', "ClusterCode=$ClusterCode")
 $paramArgs += @('--param', "Preview=$(if ($Live) { 'false' } else { 'true' })")
+if ($VerseList) { $paramArgs += @('--param', "VerseList=$VerseList") }
+if ($Force) { $paramArgs += @('--param', "Force=true") }
 
 $json = python -m iba.app.run verse-lexical --step $stepId --run-id $runId @paramArgs
 $code = $LASTEXITCODE

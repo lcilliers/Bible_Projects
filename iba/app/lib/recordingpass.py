@@ -76,23 +76,92 @@ def resolve_occurrence(conn, strong: str, claimed_verse: str, claimed_surface: s
            "morph_code": r["morph_code"]}
 
 
+_PER_OCCURRENCE_CODES = ("M0.6.5", "M0.6.6", "D7.7.1")
+
+
+def _is_per_occurrence_question(question_code: str | None) -> bool:
+    """#1824 v10 (design doc `iba/docs/1824-stage1-reconciliation-design-v1-20260922.md`, Fix 1):
+    M0.7.* and the relational questions are explicitly per-verse -- 'a strong can genuinely behave
+    differently verse to verse' (BUILD #310) -- as opposed to M0.1/M0.5's word-level, verse-
+    invariant facts. Same distinction `_effective_cluster_code`'s own `_WORD_LEVEL_QUESTION_
+    PREFIXES` makes for a different purpose; not reused directly since the two functions read
+    oppositely (one names the word-level set, this one names its complement)."""
+    if not question_code:
+        return False
+    return question_code.startswith("M0.7") or question_code in _PER_OCCURRENCE_CODES
+
+
 def _existing_candidates(conn, cluster_code: str, stage: str, strong: str | None,
-                         question_code: str | None) -> list[dict]:
-    where = ["cluster_code=?", "stage=?"]
+                         question_code: str | None,
+                         occurrence_refs: set[tuple] | None = None) -> list[dict]:
+    """#1824 v10, Fix 1 -- researcher's own question: "how do you know what row to expect."
+    Checked live and confirmed a real gap: this pool used to be cluster+stage+strong+question_code
+    ONLY, no verse filter, for every question type -- correct for word-level questions (a fact
+    about the strong, not any one verse) but wrong for per-occurrence ones, where it let a fresh
+    answer get compared against a candidate from a COMPLETELY DIFFERENT VERSE (confirmed: 22 of 61
+    matches in a live test traced cross-verse). For per-occurrence questions, first narrow to
+    candidates that already have an `ib_node` citation for one of THIS observation's own
+    (strong, verse_reference) occurrence pairs -- a direct lookup answering "does a row for this
+    occurrence exist," not a heuristic guess left to keyword/similarity scoring downstream."""
+    # `o.` prefix throughout -- both ib_observation and ib_node carry a cluster_code column, so an
+    # unqualified reference is ambiguous the moment the JOIN branch below is used (found live:
+    # "OperationalError: ambiguous column name: cluster_code" on the first real test of this).
+    where = ["o.cluster_code=?", "o.stage=?"]
     params: list = [cluster_code, stage]
     if strong is None:
-        where.append("strong IS NULL")
+        where.append("o.strong IS NULL")
     else:
-        where.append("strong=?")
+        where.append("o.strong=?")
         params.append(strong)
     if question_code is None:
-        where.append("question_code IS NULL")
+        where.append("o.question_code IS NULL")
     else:
-        where.append("question_code=?")
+        where.append("o.question_code=?")
         params.append(question_code)
-    rows = conn.execute(
-        f"SELECT * FROM ib_observation WHERE {' AND '.join(where)}", params).fetchall()
+
+    if _is_per_occurrence_question(question_code) and occurrence_refs:
+        pair_clauses = " OR ".join(["(n.strong=? AND n.verse_reference=?)"] * len(occurrence_refs))
+        pair_params: list = []
+        for occ_strong, verse_ref in occurrence_refs:
+            pair_params += [occ_strong, verse_ref]
+        rows = conn.execute(
+            f"SELECT DISTINCT o.* FROM ib_observation o JOIN ib_node n ON n.observation_id = o.id "
+            f"WHERE {' AND '.join(where)} AND ({pair_clauses})",
+            params + pair_params).fetchall()
+    else:
+        rows = conn.execute(
+            f"SELECT * FROM ib_observation o WHERE {' AND '.join(where)}", params).fetchall()
     return [dict(r) for r in rows]
+
+
+def _consolidate_duplicates(conn, canonical_id: int, duplicate_ids: list[int]) -> None:
+    """#1824 v10/v11, Fix 2 rule 3 -- called ONLY when a real fresh answer for an exact occurrence
+    (per Fix 1's own correct scoping) finds MORE than one pre-existing candidate: legacy
+    duplication from before Fix 1 existed. Soft-withdraws the duplicates (never a physical delete,
+    matching the project's existing soft-delete convention) and re-points their `ib_node`
+    citations onto the canonical so no occurrence record is lost.
+
+    Deliberately does NOT use `ib_observation.supersedes_observation_id` -- checked its own
+    `cfg_column.use` before touching it (per `governance.table_columns`) and it reads "synthesis
+    stage only, ... the append-only supersedes chain": a different stage's own column, not this
+    one's to repurpose. Same principle BUILD #312 already applied this session (a genuinely new
+    column for `meaning_keywords` rather than overloading `stable_key`'s unrelated documented
+    purpose) -- `status='withdrawn'` alone (a value this column's own use-text already lists:
+    "observation is incorrect or not useful") is sufficient for Stage 1's own needs; which
+    observation now holds an occurrence's citations is reconstructable from `ib_node` directly,
+    without a forward pointer this table's own governance doesn't authorise here."""
+    _assert_valid_ib_status(conn, "withdrawn")
+    for dup_id in duplicate_ids:
+        conn.execute("UPDATE ib_observation SET status='withdrawn', updated_at=? WHERE id=?",
+                    (_now(), dup_id))
+        seq = conn.execute("SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE observation_id=?",
+                           (canonical_id,)).fetchone()[0]
+        dup_nodes = conn.execute("SELECT id FROM ib_node WHERE observation_id=? ORDER BY seq",
+                                 (dup_id,)).fetchall()
+        for n in dup_nodes:
+            seq += 1
+            conn.execute("UPDATE ib_node SET observation_id=?, seq=? WHERE id=?",
+                        (canonical_id, seq, n["id"]))
 
 
 def _existing_node_refs(conn, observation_id: int) -> set[tuple]:
@@ -373,8 +442,6 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     if not resolved_occurrences and claimed_occurrences:
         return {"action": "skipped-no-resolvable-occurrences", "unresolved": unresolved}
 
-    candidates = _existing_candidates(conn, effective_cluster_code, stage, strong, question_code)
-
     # Found live 2026-09-18 building Stage 4 (checklist §3 rule 3, subgroup-wide slants with
     # `strong: null` on the observation but a real strong per occurrence): using the OUTER
     # `strong` here (as before) would collapse every occurrence's ref to (None, verse), and
@@ -384,6 +451,13 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     # Stages 1-3 (their occurrences never set their own "strong", so occ_strong == strong always,
     # identical behaviour to before).
     new_refs = {(occ_strong, o["verse_reference"]) for occ_strong, o in resolved_occurrences}
+
+    # #1824 v10, Fix 1: per-occurrence questions get their candidate pool narrowed to this exact
+    # occurrence BEFORE any matching runs (computed from new_refs, just moved up so it's available
+    # here) -- word-level questions are unaffected (occurrence_refs is simply unused for them).
+    candidates = _existing_candidates(conn, effective_cluster_code, stage, strong, question_code,
+                                      occurrence_refs=new_refs)
+
     for cand in candidates:
         if cand["obs_text"] == obs_text:
             existing_refs = _existing_node_refs(conn, cand["id"])
@@ -391,49 +465,90 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
                 return {"action": "no-op-exact-duplicate", "observation_id": cand["id"],
                        "unresolved": unresolved}
 
-    # #1824: structured-key match takes priority over prose similarity when the model supplies
-    # meaning_keywords (currently the M0.7 family only -- everything else has no keywords, so
-    # this loop is a no-op for them and behaviour is unchanged). A match forces the align path
-    # regardless of how differently-worded the two obs_text values are -- that's the whole point.
     new_keywords = set(obs.get("meaning_keywords") or [])
-    new_forms = {(o["surface"], o["morph_code"]) for _, o in resolved_occurrences}
-    best = None
-    best_score = 0.0
-    for cand in candidates:
-        if new_keywords and _keyword_match_candidate(conn, cand, new_keywords, new_forms):
-            best, best_score = cand, 1.0
-            break
-        score = _similarity(cand["obs_text"], obs_text)
-        if score > best_score:
-            best, best_score = cand, score
+    traced = None
 
-    if best is not None and best_score >= similarity_threshold:
-        # Researcher instruction, 2026-09-20 (escalation #1782): editing an existing observation's
-        # text invalidates whatever review state it had (e.g. resolved) -- reset to 'draft' so it
-        # is re-reviewed, same as a brand-new observation, rather than silently keeping a stale
-        # status against changed content.
-        _assert_valid_ib_status(conn, "draft")
-        conn.execute("UPDATE ib_observation SET obs_text=?, status=?, updated_at=? WHERE id=?",
-                    (obs_text, "draft", _now(), best["id"]))
-        observation_id = best["id"]
-        action = "aligned-superficial-edit"
-        traced = None
-    elif best is not None:
-        observation_id = _insert_observation(
-            conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
-            meaning_source, source_json_serial, subgroup_id,
-            meaning_keywords=sorted(new_keywords) if new_keywords else None)
-        action = "new-expands-existing"
-        traced = best["id"]
+    if _is_per_occurrence_question(question_code):
+        # #1824 v10/v11, Fix 2: identity for a per-occurrence question comes from Fix 1's own
+        # verse+strong scoping, not keyword/similarity matching -- candidates here are ALREADY
+        # every existing row for this exact occurrence, so there is nothing left to disambiguate
+        # by text. A real three-way, not the word-level two-way below.
+        if not candidates:
+            observation_id = _insert_observation(
+                conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
+                meaning_source, source_json_serial, subgroup_id,
+                meaning_keywords=sorted(new_keywords) if new_keywords else None)
+            action = "new-observation"
+        elif len(candidates) == 1:
+            best = candidates[0]
+            _assert_valid_ib_status(conn, "draft")
+            conn.execute("UPDATE ib_observation SET obs_text=?, status=?, updated_at=? WHERE id=?",
+                        (obs_text, "draft", _now(), best["id"]))
+            observation_id = best["id"]
+            action = "aligned-superficial-edit"
+        else:
+            # Legacy duplication (multiple existing rows for the SAME occurrence+question, from
+            # before Fix 1 existed) -- only discovered and only cleaned up because a real fresh
+            # answer just arrived for this exact occurrence (design doc §3, governing principle:
+            # no offline consolidation, ever). Canonical = most existing citations (richest),
+            # earliest created_at as the deterministic tie-break.
+            ranked = sorted(
+                candidates,
+                key=lambda c: (-len(_existing_node_refs(conn, c["id"])), c["created_at"]))
+            canonical = ranked[0]
+            duplicate_ids = [c["id"] for c in ranked[1:]]
+            _assert_valid_ib_status(conn, "draft")
+            conn.execute("UPDATE ib_observation SET obs_text=?, status=?, updated_at=? WHERE id=?",
+                        (obs_text, "draft", _now(), canonical["id"]))
+            _consolidate_duplicates(conn, canonical["id"], duplicate_ids)
+            observation_id = canonical["id"]
+            action = "aligned-superficial-edit-consolidated"
+        # No similarity score applies here -- identity came from Fix 1's exact-occurrence
+        # scoping, not a keyword/similarity comparison. `best`/`best_score` stay None so the
+        # return below reports similarity_score=None for every per-occurrence action, honestly.
+        best = None
+        best_score = None
     else:
-        observation_id = _insert_observation(
-            conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
-            meaning_source, source_json_serial, subgroup_id,
-            meaning_keywords=sorted(new_keywords) if new_keywords else None)
-        action = "new-observation"
-        traced = None
+        # Word-level (M0.1/M0.5): unchanged from before -- cluster-wide candidate pool (Fix 1
+        # doesn't apply, `occurrence_refs` above was a no-op for these), keyword/similarity
+        # matching decides update-vs-new exactly as it did prior to #1824 v10.
+        new_forms = {(o["surface"], o["morph_code"]) for _, o in resolved_occurrences}
+        best = None
+        best_score = 0.0
+        for cand in candidates:
+            if new_keywords and _keyword_match_candidate(conn, cand, new_keywords, new_forms):
+                best, best_score = cand, 1.0
+                break
+            score = _similarity(cand["obs_text"], obs_text)
+            if score > best_score:
+                best, best_score = cand, score
 
-    existing_refs = _existing_node_refs(conn, observation_id) if action == "aligned-superficial-edit" else set()
+        if best is not None and best_score >= similarity_threshold:
+            # Researcher instruction, 2026-09-20 (escalation #1782): editing an existing
+            # observation's text invalidates whatever review state it had (e.g. resolved) --
+            # reset to 'draft' so it is re-reviewed, same as a brand-new observation, rather than
+            # silently keeping a stale status against changed content.
+            _assert_valid_ib_status(conn, "draft")
+            conn.execute("UPDATE ib_observation SET obs_text=?, status=?, updated_at=? WHERE id=?",
+                        (obs_text, "draft", _now(), best["id"]))
+            observation_id = best["id"]
+            action = "aligned-superficial-edit"
+        elif best is not None:
+            observation_id = _insert_observation(
+                conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
+                meaning_source, source_json_serial, subgroup_id,
+                meaning_keywords=sorted(new_keywords) if new_keywords else None)
+            action = "new-expands-existing"
+            traced = best["id"]
+        else:
+            observation_id = _insert_observation(
+                conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
+                meaning_source, source_json_serial, subgroup_id,
+                meaning_keywords=sorted(new_keywords) if new_keywords else None)
+            action = "new-observation"
+
+    _REUSES_OBSERVATION_ID = ("aligned-superficial-edit", "aligned-superficial-edit-consolidated")
+    existing_refs = _existing_node_refs(conn, observation_id) if action in _REUSES_OBSERVATION_ID else set()
     # seq must continue from this observation_id's own current max, not restart at 0 -- UNIQUE
     # (observation_id, seq) fails otherwise the moment a LATER batch/call appends a new occurrence
     # to an observation an EARLIER batch/call already wrote nodes against (the "aligned-superficial-
@@ -441,8 +556,11 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     # one). Found live 2026-09-18: M49's Stage 1 run hit this on its first real multi-batch verse-
     # reading pass. Queried fresh each call (not cached) so it sees writes from this same
     # transaction too, same "resolve fresh, never trust a stale count" discipline this module
-    # already applies to strong/verse resolution.
-    if action == "aligned-superficial-edit":
+    # already applies to strong/verse resolution. The "-consolidated" variant (#1824 v10/v11)
+    # reuses observation_id the same way -- `_consolidate_duplicates` already re-pointed the
+    # duplicates' own nodes onto it before this line runs, so MAX(seq) here already accounts for
+    # them.
+    if action in _REUSES_OBSERVATION_ID:
         seq = conn.execute(
             "SELECT COALESCE(MAX(seq), 0) FROM ib_node WHERE observation_id=?",
             (observation_id,)).fetchone()[0]

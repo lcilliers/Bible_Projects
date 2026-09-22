@@ -3744,3 +3744,29 @@ from the block on reading the research db. the prose tables is foundational and 
 as part of the governance."* `cfg_behaviour_rule` amended to add an explicit exemption for
 `prose_section`/`prose_section_type`/`cfg_prose_concept`'s referenced content — every other table in
 `bible_research.db` remains excluded from IBA-line results exactly as before.
+
+## §80. Stage 1 corrections only via a real rerun, never an offline script — `cfg_behaviour_rule` (2026-09-22, escalation #1824)
+
+Researcher correction on escalation #1824 v11, verbatim: *"none of the correction are done as fixes.
+they are all done as the result of the update routine that runs on the json output that you got from
+LLM... you should not reach back into the base data — the expectation is that LLM has answered every
+question."* Rejected an earlier design draft that proposed a standalone script to backfill/consolidate
+existing `ib_observation` rows outside a live LLM call.
+
+`cfg_behaviour_rule` (class `sqlite`, key `stage1-corrections-only-via-real-rerun`, `enforcement_status
+= buildable_not_built` — no automated check yet catches a future violation): *"Every correction to
+ib_observation (update, withdraw, consolidate) happens ONLY as a byproduct of record_one_observation()
+processing a real, fresh LLM answer for the exact occurrence in question — never a standalone script
+that edits or derives content for existing rows without a genuine new answer behind it."* This is why
+Stage 1 reconciliation is inherently incremental (a verse's stale/duplicate data only gets cleaned up
+when that verse is genuinely reprocessed, `lexical.meaning -Force`) — there is deliberately no
+batch-cleanup lever and none should be built.
+
+**Found and fixed by a self-audit, 2026-09-22** (escalation #1824, researcher instruction: *"audit
+[2026-09-21/22's work] and confirm... it is fully governance compliance"*): this principle had been
+followed rigorously since v11 but existed only in a design doc's prose and `BUILD.md` narrative text —
+never a registered rule, a real gap against `governance.rules_must_be_config_driven`. Same audit also
+found and fixed 2 unregistered/orphaned `cfg_setting` keys, 1 stale `cfg_method_rule`, and 1 hardcoded
+report path (`iba/app/migration/fix_stage1_governance_gaps_v1_20260922.py`; full detail `BUILD.md`
+#319) — none of those four rose to a GOVERNANCE.md-level process rule, so only this one is recorded
+here.
