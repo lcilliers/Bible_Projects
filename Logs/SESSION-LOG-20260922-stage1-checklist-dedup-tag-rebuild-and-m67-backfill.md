@@ -119,5 +119,6 @@ Researcher instruction, verbatim: *"submit M67 cluster in batches to complete th
 ## 11. Git state
 
 - Branch: `main`
-- Commit: *(confirmed after this log's own commit — see the follow-up confirmation entry)*
-- Push: *(confirmed after this log's own commit)*
+- Commit: `6ec4edda8de0d3e855749013f7735f618ef03289` (2026-09-22T19:05:51+01:00) — "session 20260922 (cont.): Stage 1 checklist compliance fix, cross-strong dedup rebuilt twice, tag system restart, T2/T3 elevation flag, full M67 backfill"
+- Pushed: `db1549e6..6ec4edda main -> main` — confirmed via `git push`
+- `git status` after push: `On branch main. Your branch is up to date with 'origin/main'. nothing to commit, working tree clean.`
