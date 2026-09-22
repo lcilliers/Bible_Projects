@@ -58,23 +58,44 @@ def _fetch_spans(conn: sqlite3.Connection, verse_id: int) -> list[dict]:
 # analysis... if role is null for any word in the span for the scope, the validation fails and the
 # run does not proceed" — an empty array (no cluster_strong allocation at all) is that failure
 # state; see `unready_codes_in_scope` below, called by every build entry point BEFORE any write.
+#
+# CORRECTED 2026-09-20 (escalation #1806) — `load_role_codes`/`_role_for`/`unready_codes_in_scope`
+# used to key on `_base(strong)` (the suffix-letter-stripped code), unioning cluster_strong across
+# every sub-lettered sibling sharing a base number. Found live: verse_id 7478 span 637365 (strong
+# H7725O, cluster_strong live-allocated to M11 only) carried role `["M11","M81","T3"]` — M81 and T3
+# belong to siblings H7725N and H7725G/H/I/J/K/L/M respectively, never to H7725O itself.
+# `cluster_strong` treats each suffixed code as an independently-assigned entry (confirmed: those
+# siblings carry different, separately-made cluster judgements) — unioning them back together in
+# `role` tagged verses for clusters unrelated to the word actually occurring there. Researcher
+# ruling, verbatim, this chat: the span's `strong_variant` is "the strong that need to be carried in
+# the strong table, need to be associated with a cluster, and need to be the role" — a direct
+# lookup, not a computed aggregation. Matches the project's own established rule elsewhere
+# (`reference_strong_related_keyed_on_exact_code_not_base`: exact code, never base). All three
+# functions below now key on the EXACT strong code. `handlers/lexical.py:readiness()` Leg 3 was
+# already exact-match (never needed this fix); this brings `role` in line with it. Affected
+# 69,563 of 544,667 live `verse_lexical` rows at time of fix — rebuilt via `build_for_verse_ids`
+# over every affected verse_id (see BUILD.md for the rebuild record), not left for the next
+# incidental `lexical.build` call to silently correct.
 
 
 def load_role_codes(conn: sqlite3.Connection) -> dict[str, list[str]]:
-    """base strong_code -> sorted list of every live `cluster_strong.cluster_code` (T-codes and
+    """EXACT strong_code -> sorted list of every live `cluster_strong.cluster_code` (T-codes and
     M-codes both) — the full set, unlike `load_code_classes` below (which stays, unchanged, for
-    is_negator/party_kind's own narrower T4/T5/T7/T8/T9 need). Loaded once per build call, same
-    pattern as load_code_classes/live_cache. A strong with no live cluster_strong row of any kind
-    maps to [] — the empty-array readiness-failure state `unready_codes_in_scope` checks for."""
+    is_negator/party_kind's own narrower T4/T5/T7/T8/T9 need — a deliberately different, base-keyed
+    lookup for a different field, see its own docstring). Loaded once per build call, same pattern
+    as load_code_classes/live_cache. A strong with no live cluster_strong row of any kind maps to
+    [] — the empty-array readiness-failure state `unready_codes_in_scope` checks for.
+
+    Keyed on the EXACT code, never `_base()` — see the module banner above (escalation #1806,
+    2026-09-20): base-keying pulled in unrelated siblings' cluster allocations."""
     out: dict[str, list[str]] = {}
     for r in conn.execute("SELECT strong, cluster_code FROM cluster_strong WHERE deleted=0"):
-        out.setdefault(_base(r["strong"]), []).append(r["cluster_code"])
-    return {base: sorted(set(codes)) for base, codes in out.items()}
+        out.setdefault(r["strong"], []).append(r["cluster_code"])
+    return {strong: sorted(set(codes)) for strong, codes in out.items()}
 
 
-def _role_for(code: str | None, role_codes: dict[str, list[str]],
-             base_pattern: str) -> str:
-    codes = role_codes.get(_base(code, base_pattern), []) if code else []
+def _role_for(code: str | None, role_codes: dict[str, list[str]]) -> str:
+    codes = role_codes.get(code, []) if code else []
     return json.dumps(codes)
 
 
@@ -82,8 +103,9 @@ def unready_codes_in_scope(conn: sqlite3.Connection, verse_ids: list[int]) -> li
     """The pre-run readiness validator (#1606 D1) — every DISTINCT strong code occurring in a live
     span across `verse_ids` that would resolve to an EMPTY role array (no live cluster_strong
     allocation at all). Non-empty return means the scope is not ready; the caller fails fast,
-    before any resolve/write happens — same base-stripped lookup `_role_for` itself uses, so a
-    code this reports as unready is exactly one whose `role` would otherwise be written as `[]`."""
+    before any resolve/write happens — same EXACT-code lookup `_role_for` itself uses (escalation
+    #1806, 2026-09-20 — no longer base-stripped), so a code this reports as unready is exactly one
+    whose `role` would otherwise be written as `[]`."""
     if not verse_ids:
         return []
     ph = ",".join("?" * len(verse_ids))
@@ -93,7 +115,7 @@ def unready_codes_in_scope(conn: sqlite3.Connection, verse_ids: list[int]) -> li
             f"AND strong_variant IS NOT NULL AND strong_variant != ''", tuple(verse_ids)):
         codes.update(r["strong_variant"].split())
     role_codes = load_role_codes(conn)
-    return sorted(c for c in codes if not role_codes.get(_base(c), []))
+    return sorted(c for c in codes if not role_codes.get(c, []))
 
 
 def stale_role_strongs_for_cluster(conn: sqlite3.Connection, cluster_code: str,
@@ -160,7 +182,7 @@ def _now() -> str:
 # mitigation doc §1-2, cfg_method_rule `mechanical-columns-run-on-every-code-no-selection`).
 
 def load_code_classes(conn: sqlite3.Connection) -> dict[str, set[str]]:
-    """base strong_code -> set of live code-classes. Loaded once per build call (see
+    """EXACT strong_code -> set of live code-classes. Loaded once per build call (see
     build_for_range/build_for_verse_ids) and threaded through, same pattern as `live_cache` —
     this lookup is small (~40 rows) but every-code-every-verse re-querying it would still be
     wasteful at corpus scale. `lexical-code-class-lookup-not-hardcoded`: this IS the queried
@@ -168,11 +190,23 @@ def load_code_classes(conn: sqlite3.Connection) -> dict[str, set[str]]:
 
     Sourced from `cluster_strong`, NOT `cfg_lexical_code_class` (architecture correction,
     researcher verdict 2026-09-05: "assigning a special status to a strong is to use a cluster
-    for it... this is not cfg territory" — full record BUILD.md #228/#229). `cluster_strong`
-    holds one row per SPECIFIC code (suffix letters included, e.g. `H0430G`/`H0410L`), unlike
-    the old table's one-row-per-BASE-code shape, so each `strong` value is base-stripped via
-    `_base()` before being added — the resulting dict is base-keyed exactly as before, so
-    `_code_classes_for()` below (which base-strips its own lookup key) needs no change.
+    for it... this is not cfg territory" — full record BUILD.md #228/#229).
+
+    CORRECTED 2026-09-21 (escalation #1810, same defect class as `role` — BUILD.md #305/#1806):
+    this used to base-strip `cluster_strong.strong` via `_base()` before keying the dict, on the
+    reasoning "the old table was one-row-per-BASE-code, so base-keying needs no change to
+    `_code_classes_for()`" — inertia from a data-source migration, not a considered decision that
+    party/negator classification should be shared across sub-lettered siblings. Found live, same
+    session as the `role` fix: 9,100 live `verse_lexical` rows had a `party_kind`/`is_negator`
+    borrowed from an unrelated sibling's cluster_strong allocation (e.g. H4428G showed
+    `party_kind='divine'` with zero live T7/divine-party allocation of its own — the tag belonged
+    to a different H4428 suffix code entirely). Same root cause, same fix: keyed on the EXACT
+    strong code now, never `_base()`. Unlike `role`, this one was never read by any live LLM
+    generator (`versereadinggenerate.py`/`subgroupgenerate.py`/`charreadinggenerate.py`/
+    `charanswergenerate.py` — checked, none reference `is_negator`/`party_kind`); its only live
+    consumers were `report.lexical_exceptions` (a read-only diagnostic count) and the inactive
+    `lexical.run`/`lexical.enrich` notes payload — so no downstream `ib_observation` re-examination
+    question here, unlike `role`'s.
 
     `T5`/`T7`/`T8`/`T9`/`T4` here are `cluster.cluster_code` values (Negator/Party-Divine/
     Party-Human/Party-Angelic/Adversarial) — NOT this module's own unrelated "T1-T9" (the Verse
@@ -191,14 +225,12 @@ def load_code_classes(conn: sqlite3.Connection) -> dict[str, set[str]]:
             f"SELECT strong, cluster_code FROM cluster_strong "
             f"WHERE deleted=0 AND cluster_code IN ({placeholders})",
             tuple(_CLUSTER_CODE_TO_CLASS)):
-        base = _base(r["strong"])
-        out.setdefault(base, set()).add(_CLUSTER_CODE_TO_CLASS[r["cluster_code"]])
+        out.setdefault(r["strong"], set()).add(_CLUSTER_CODE_TO_CLASS[r["cluster_code"]])
     return out
 
 
-def _code_classes_for(code: str, code_classes: dict[str, set[str]],
-                      base_pattern: str) -> set[str]:
-    return code_classes.get(_base(code, base_pattern), set())
+def _code_classes_for(code: str, code_classes: dict[str, set[str]]) -> set[str]:
+    return code_classes.get(code, set())
 
 
 # `load_mcode_strongs` — DELETED 2026-09-16 (#1706 Phase B). Its sole purpose (gating
@@ -273,11 +305,24 @@ def _layer1_fields(row: dict, span: dict, sibling_codes: list[str], language: st
     row["surface"] = span["surface"]
     row["testament"] = testament
     code = row["strong"]
-    row["role"] = _role_for(code, role_codes, base_pattern)
-    classes = _code_classes_for(code, code_classes, base_pattern) if code else set()
+    row["role"] = _role_for(code, role_codes)
+    classes = _code_classes_for(code, code_classes) if code else set()
     row["is_negator"] = 1 if "negator" in classes else None
-    party_class = next((c for c in classes if c in _PARTY_CLASS_TO_KIND), None)
-    row["party_kind"] = _PARTY_CLASS_TO_KIND.get(party_class) if party_class else None
+    # Deterministic by RESULTING KIND, not by picking an arbitrary class out of an unordered set
+    # (fixed 2026-09-21, escalation #1810 re-verification -- found live on H4317Q/Michael, which
+    # deliberately carries BOTH party_human and party_angelic live at once per the researcher's own
+    # 2026-09-09 instruction: "both stay live so Layer 2 checks which referent applies per
+    # occurrence." The old `next((c for c in classes if c in _PARTY_CLASS_TO_KIND), None)` drew
+    # from Python's unordered set iteration -- reproducible only by accident of a single process's
+    # hash seed, not by anything in the data, contradicting this module's own "mechanically
+    # resolved, never interpreted" principle. Two classes mapping to the SAME kind (e.g.
+    # party_angelic + party_adversarial, both "non_human") are not a real conflict and still
+    # resolve; two classes mapping to DIFFERENT kinds (human vs non_human, Michael's actual case)
+    # is a genuine, then-unresolved conflict -- written as None, matching the researcher's own
+    # stated design that Layer 2 (not Layer 1) is what disambiguates a specific occurrence, not
+    # silently asserted as whichever kind happened to iterate first.
+    party_kinds = {_PARTY_CLASS_TO_KIND[c] for c in classes if c in _PARTY_CLASS_TO_KIND}
+    row["party_kind"] = next(iter(party_kinds)) if len(party_kinds) == 1 else None
     row["narrative_morph"] = _narrative_morph_for(row["morph_code"], language, sibling_codes)
 
 

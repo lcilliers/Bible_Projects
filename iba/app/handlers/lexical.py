@@ -706,6 +706,53 @@ def run(ctx: Ctx) -> Outcome:
 # runs for real: live API call per batch, `lib/recordingpass.py` writes every result in the same
 # unit of work (checklist rule 0.3), never a deferred batch pickup.
 
+def _chunk_verses_by_strong_density(conn, verse_ids: list[int], max_strongs: int
+                                    ) -> list[list[int]]:
+    """#1825/#1826/#1827: groups verse_ids (already in caller's own order -- never reordered) into
+    chunks whose CUMULATIVE distinct M-code strong count stays <= max_strongs -- front-loading
+    means output volume tracks strong count, not verse count, so this is the real cost driver to
+    cap, not a proxy. Greedy, single pass: a verse whose own M-code strong set is entirely already
+    in the running chunk total costs nothing extra; a verse that would push the chunk over the cap
+    starts a new chunk instead. A single verse whose OWN strong count alone exceeds max_strongs
+    still gets its own one-verse chunk (never split mid-verse, never silently dropped) -- flagged
+    via a printed note since that one chunk will still risk truncation, but the alternative
+    (splitting one verse's own front-loaded battery across two calls) is not designed."""
+    if not verse_ids:
+        return []
+    ph = ",".join("?" * len(verse_ids))
+    rows = conn.execute(
+        f"SELECT verse_id, strong, role FROM verse_lexical "
+        f"WHERE verse_id IN ({ph}) AND deleted=0", verse_ids).fetchall()
+    strongs_by_verse: dict[int, set[str]] = {}
+    for r in rows:
+        if not r["strong"]:
+            continue
+        roles = json.loads(r["role"]) if r["role"] else []
+        if any(c.startswith("M") for c in roles):
+            strongs_by_verse.setdefault(r["verse_id"], set()).add(r["strong"])
+
+    chunks: list[list[int]] = []
+    current: list[int] = []
+    current_strongs: set[str] = set()
+    for vid in verse_ids:
+        v_strongs = strongs_by_verse.get(vid, set())
+        projected = current_strongs | v_strongs
+        if current and len(projected) > max_strongs:
+            chunks.append(current)
+            current, current_strongs = [vid], set(v_strongs)
+        else:
+            current.append(vid)
+            current_strongs = projected
+    if current:
+        chunks.append(current)
+    oversized = [c for c in chunks if len(c) == 1 and len(strongs_by_verse.get(c[0], set())) > max_strongs]
+    if oversized:
+        print(f"NOTE: {len(oversized)} single-verse chunk(s) individually exceed "
+             f"max_strongs={max_strongs} on their own -- not split further, still a truncation "
+             f"risk: verse_ids {[c[0] for c in oversized]}")
+    return chunks
+
+
 def meaning(ctx: Ctx) -> Outcome:
     _may(ctx, "lexical.meaning", "ib_observation")
     _may(ctx, "lexical.meaning", "ib_node")
@@ -744,13 +791,16 @@ def meaning(ctx: Ctx) -> Outcome:
                    f"{stale}")
 
     # #1723 front-loading multiplies expected output roughly by strong-density-per-batch, not just
-    # verse count -- the shared passage.max_verses (20) was sized for the OLD narrower per-cluster-
-    # only design and already truncated a real batch (55 front-loaded strongs from 20 verses) even
-    # at 20000 max_output_tokens. A dedicated, smaller override for this step only -- other steps
-    # sharing passage.max_verses (lexical.enrich) are unaffected.
-    max_verses = int(ctx.cfg.setting("lexical.meaning_max_verses_per_batch", 10))
+    # verse count. FIXED verse-count chunking (the original #1723 fix, then #1825/#1826/#1827's
+    # own halving) was the wrong lever -- checked live, 2026-09-21: M67's own 5-verse chunks range
+    # from 6 to 21 distinct M-code strongs (a 3.5x spread), and which chunk actually truncated
+    # varied run to run (not reliably the highest-density one), confirming a fixed verse cap can
+    # never bound this reliably -- some batches are strong-dense, some aren't, and no single verse
+    # count is safe for both without being wasteful for the sparse ones. Chunk by STRONG DENSITY
+    # directly instead (`_chunk_verses_by_strong_density`) -- the actual cost driver, not a proxy.
+    max_strongs = int(ctx.cfg.setting("lexical.meaning_max_strongs_per_batch", 8))
     max_cost_per_batch = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
-    chunks = [verse_ids[i:i + max_verses] for i in range(0, len(verse_ids), max_verses)]
+    chunks = _chunk_verses_by_strong_density(conn, verse_ids, max_strongs)
 
     batch_summaries = []
     llm_summary = []

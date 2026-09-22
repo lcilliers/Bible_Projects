@@ -3657,3 +3657,90 @@ open in Excel crashes); the much older backlog (27 escalation-file-naming mismat
 zero-config-density utilities, 9 unregistered project scripts outside `iba/app/lib`, 5 config
 hedge-phrase rows, 1 hand-rolled versioning site in `prosestore.py`) predates this build entirely
 and is unrelated to it.
+
+## §78. `governance.base_data_spine` extended to strong→cluster; `verse_lexical.role`/`is_negator`/`party_kind` all found base-family-contaminated and fixed corpus-wide (2026-09-21, escalations #1806/#1807/#1810/#1812)
+
+Researcher ruling, verbatim, this chat: *"is this gate in keeping with the principle: every verse
+must have a span, every strong in every span must be allocated to a cluster. it seems that if the
+check is becomes a gate because strong-cluster is incomplete, that it hardly could be a gate - it
+is a spine failure that MUST BE FIX."* §73's `governance.base_data_spine` stopped at
+`verse-span-strong-must-sync` — `handlers/lexical.py`'s `readiness()` Leg 3 (occurring strong with
+no live `cluster_strong` allocation) had been deliberately kept OUT of `spine.check` (2026-09-16,
+escalation #1706 Phase A), reasoned as "lexical-build-specific... spine.check has no reason to know
+about" cluster allocation. That reasoning is overturned: `role`'s own empty-array failure state is
+downstream proof the chain doesn't stop at `strong`. Extended via `Config-Maintenance.ps1 -Step
+Propose` (escalation #1812) to **`verse-span-strong-cluster-must-sync`**. Escalation #1807 (9
+strongs, e.g. G2279/G4537/H6446, zero live `cluster_strong` allocation — none fit any inner-being
+cluster on inspection) is the live instance this reclassifies from a soft `decision_required` queue
+item to a spine-severity FATAL; still open, still the researcher's call whether those 9 get a
+cluster or a formal out-of-scope marker. **Not yet done, a real follow-on question:** whether Leg 3
+should also be coded into `handlers/spine.py` itself so `Spine-Check.ps1` (run every session start)
+surfaces it directly, rather than it staying in the separate `lexical.readiness` report.
+
+**Same investigation surfaced two confirmed, corpus-wide data-correctness bugs in
+`iba/app/lib/lexical.py`, both fixed and rebuilt, not left as findings:**
+
+1. **`verse_lexical.role`** (`load_role_codes`/`_role_for`) keyed its `cluster_strong` lookup on
+   `_base(strong)` — the suffix-stripped code — unioning live cluster allocations across every
+   sub-lettered sibling sharing a base number, not the exact occurring strong. Found live on
+   verse 1Kgs 8:35 (H7725O: live allocation M11 only; stored role `["M11","M81","T3"]`, the extra
+   two borrowed from unrelated siblings H7725N/H7725G-M). Confirmed to explain 100% of 1,694
+   mismatches found in a 3-cluster scoped report, and 69,563 of 544,667 live rows (12.8%)
+   project-wide. Fixed to exact-code keying. Propagation traced (not assumed): `role` is read
+   directly by `versereadinggenerate.py`/`subgroupgenerate.py`/`charanswergenerate.py` — 1,013
+   `verse-reading` observations (`M0.6.5`/`D7.7.1`, the only question codes whose own instructions
+   read other words' role tags) were built from contaminated role, and 380 downstream
+   char-subgroup/char-reading/char-answers observations for the 17 affected strongs inherited that
+   text verbatim (full detail: `outputs/observations-based-on-incorrect-role-20260920.md`).
+2. **`is_negator`/`party_kind`** (`load_code_classes`/`_code_classes_for`) had the identical
+   `_base()` defect, found only because the researcher's own criticism of this session's pattern
+   ("hole on hole... you just create an excuse to say out of scope") prompted actually testing an
+   assumption ("different field, deliberately base-keyed") instead of repeating it. 9,100 live rows
+   affected. Fixed the same way. A second, independent defect found in the same field while
+   re-verifying: 4 strongs (`H0113`, `H4317M`, `H4317Q`, `G3413`) carry two live, genuinely
+   conflicting party classifications at once (documented, deliberate — e.g. Michael's H4317* codes
+   are meant to stay dual-tagged human/angelic per escalation #1606, "Layer 2 checks which referent
+   applies per occurrence"); the old code picked one via unordered Python set iteration —
+   reproducible only by accident of a process's hash seed, not by the data. Fixed to resolve
+   deterministically to `None` on a genuine kind conflict. Unlike `role`, neither field is read by
+   any live LLM generator (checked directly) — no `ib_observation` re-examination question here.
+
+**Corpus-wide rebuild, three full passes** (`lexical.build`, the active step — `lexical.run`, which
+code comments called "the real front door," is `cfg_step.inactive=1`, retired; confirmed before
+using it), each verified against live recomputation before moving on, not assumed clean: pass 1 role
+fix (77 book/chapter calls, 29,260 verses, 69,378 corrections), pass 2 role collateral recovery (38
+precise verse-range calls after finding whole-chapter exclusion over-excluded ~460 innocent verses,
+460 corrections), pass 3 `is_negator`/`party_kind` fix + determinism fix (full re-run of passes 1-2,
+9,335 + 96 + 9 corrections). Final state: 0 mismatches anywhere in the live corpus for `role` or
+`is_negator`/`party_kind`, outside the 28 verses still gated on escalation #1807's open decision.
+Analysis-redo scope (whether any of the 7,046 observations ever produced need regenerating given
+what they were actually built from) remains the researcher's open call, tracked on #1810 — not
+executed, since it is LLM-cost-bearing and none of this session's fixes are.
+
+## §79. `bible_research.db` excluded from all IBA-line results — `cfg_behaviour_rule` (2026-09-20/21, escalation #1809)
+
+Researcher instruction, verbatim, emphatic (ALL-CAPS): *"bible_research_db SHOULD NEVER BE INCLUDED
+IN ANY RESULT - THIS IS A GOVERNANCE RULE."* Raised after Claude floated `bible_research.db`'s
+`ve_lexical` table as a possible explanation for a `verse_lexical` discrepancy the researcher had
+found — the same class of cross-database confusion as escalation #1783 (two same-named tables,
+different schemas, in two different DBs). `cfg_behaviour_rule` (class `sqlite`, key
+`bible-research-db-excluded-from-iba-results`): *"bible_research.db (research_db) is never included
+in any IBA-line result — report, escalation finding, cross-check, or answer to the researcher. All
+current base-data/lexical/cluster investigation and reporting is scoped to iba.db only. If a
+question or discrepancy seems to require bible_research.db data, stop and flag it rather than
+querying or citing that database."* Scoped deliberately to IBA-line work, not an absolute
+all-context ban — `bible_research.db` remains the live home for prose+findings per
+`governance.scope_research_db` (both databases still active); researcher confirmed this scoping on
+approval ("noted - proceed").
+
+**Amended 2026-09-21 (escalation #1816) — prose tables exempted.** Found live, mid-session: this
+rule as originally worded conflicted with the already-live `governance.prose_canonical_authority`
+("the programme prose is the canonical authority on what the project is about") — the prose lives
+in `bible_research.db`, so the exclusion as written made the canonical-authority rule unreachable.
+Not caught when #1809 was proposed (a real gap — see `feedback_check_new_rules_against_existing_
+governance_first`, new proposals must be checked against the live governance corpus before
+submitting, not discovered reactively). Researcher ruling, verbatim: *"accessing prose is excluded
+from the block on reading the research db. the prose tables is foundational and must be maintained
+as part of the governance."* `cfg_behaviour_rule` amended to add an explicit exemption for
+`prose_section`/`prose_section_type`/`cfg_prose_concept`'s referenced content — every other table in
+`bible_research.db` remains excluded from IBA-line results exactly as before.

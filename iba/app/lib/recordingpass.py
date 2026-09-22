@@ -252,16 +252,38 @@ def _assert_valid_ib_status(conn, status: str) -> None:
 def _insert_observation(conn, cluster_code: str, stage: str, tag: str, strong: str | None,
                         question_code: str | None, obs_text: str, meaning_source: str | None,
                         source_json_serial: int | None, subgroup_id: int | None = None,
-                        supersedes_observation_id: int | None = None) -> int:
+                        supersedes_observation_id: int | None = None,
+                        meaning_keywords: list[str] | None = None) -> int:
     window = _window_for(conn, question_code)
     _assert_valid_ib_status(conn, "draft")
+    keywords_json = json.dumps(meaning_keywords, ensure_ascii=False) if meaning_keywords else None
     cur = conn.execute(
         "INSERT INTO ib_observation (cluster_code, stage, tag, strong, question_code, obs_text, "
         "meaning_source, status, supersedes_observation_id, source_json_serial, window, "
-        "cluster_subgroup_id, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?)",
+        "cluster_subgroup_id, meaning_keywords, created_at) VALUES (?,?,?,?,?,?,?,?,?,?,?,?,?,?)",
         (cluster_code, stage, tag, strong, question_code, obs_text, meaning_source, "draft",
-         supersedes_observation_id, source_json_serial, window, subgroup_id, _now()))
+         supersedes_observation_id, source_json_serial, window, subgroup_id, keywords_json, _now()))
     return cur.lastrowid
+
+
+def _keyword_match_candidate(conn, candidate: dict, new_keywords: set[str],
+                             new_forms: set[tuple]) -> bool:
+    """#1824, researcher instruction verbatim: "similarity is not matching sentences. Similarly
+    to matching keys... match a) surface b) meaning extraction keywords c) morph." Structured-key
+    match, used instead of prose similarity when the model supplies `meaning_keywords` -- BOTH
+    conditions must hold, not either alone: matching grammatical form alone (a homonym reused with
+    a different sense) isn't enough, and matching keywords alone (two unrelated occurrences that
+    happen to share a concept word) isn't enough either."""
+    cand_keywords_raw = candidate["meaning_keywords"] if "meaning_keywords" in candidate.keys() else None
+    if not cand_keywords_raw or not new_keywords:
+        return False
+    cand_keywords = set(json.loads(cand_keywords_raw))
+    if not (cand_keywords & new_keywords):
+        return False
+    cand_forms = {(r["surface"], r["morph_code"]) for r in conn.execute(
+        "SELECT DISTINCT surface, morph_code FROM ib_node WHERE observation_id=?",
+        (candidate["id"],))}
+    return bool(cand_forms & new_forms)
 
 
 def _insert_node(conn, observation_id: int, cluster_code: str, strong: str | None,
@@ -369,9 +391,18 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
                 return {"action": "no-op-exact-duplicate", "observation_id": cand["id"],
                        "unresolved": unresolved}
 
+    # #1824: structured-key match takes priority over prose similarity when the model supplies
+    # meaning_keywords (currently the M0.7 family only -- everything else has no keywords, so
+    # this loop is a no-op for them and behaviour is unchanged). A match forces the align path
+    # regardless of how differently-worded the two obs_text values are -- that's the whole point.
+    new_keywords = set(obs.get("meaning_keywords") or [])
+    new_forms = {(o["surface"], o["morph_code"]) for _, o in resolved_occurrences}
     best = None
     best_score = 0.0
     for cand in candidates:
+        if new_keywords and _keyword_match_candidate(conn, cand, new_keywords, new_forms):
+            best, best_score = cand, 1.0
+            break
         score = _similarity(cand["obs_text"], obs_text)
         if score > best_score:
             best, best_score = cand, score
@@ -390,13 +421,15 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
     elif best is not None:
         observation_id = _insert_observation(
             conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
-            meaning_source, source_json_serial, subgroup_id)
+            meaning_source, source_json_serial, subgroup_id,
+            meaning_keywords=sorted(new_keywords) if new_keywords else None)
         action = "new-expands-existing"
         traced = best["id"]
     else:
         observation_id = _insert_observation(
             conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
-            meaning_source, source_json_serial, subgroup_id)
+            meaning_source, source_json_serial, subgroup_id,
+            meaning_keywords=sorted(new_keywords) if new_keywords else None)
         action = "new-observation"
         traced = None
 

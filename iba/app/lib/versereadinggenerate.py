@@ -34,6 +34,16 @@ the focus change."* Full design capture:
    what role godly grief played FOR earnestness instead — same verse, different vantage point).
    Order-independent by construction: whichever cluster's pass runs first just finds no prior
    context and starts the chain; nothing requires a specific sequence.
+3. **Whole-network, progressive `M0.6.6`** (added `#1819`, 2026-09-21, researcher instruction:
+   "rich/comprehensive understanding of the context of the verse in relation to all the M-code
+   strongs in the verse"). Same per-pass, progressive-build mechanism as `M0.6.5`, but a genuinely
+   different question and its OWN separate prior-context stream (`prior_network_context_by_verse`,
+   never merged with `M0.6.5`'s own chain): `M0.6.5` is one characteristic's own vantage on the
+   others; `M0.6.6` synthesises the WHOLE M-code network the verse depicts in one place, something
+   no single `M0.6.5` pass (by design, single-vantage) ever produces on its own. `M0.6.5` was also
+   enriched the same session with explicit relation-type vocabulary (cause/enable/intensify/block/
+   respond-to/tension, same-party-vs-different-party) so its own answers are systematic rather than
+   an unguided narrative.
 
 **The role-annotated word list — the actual design output of `#1706`'s role-data-presentation
 doc, built here for real.** For every verse in a batch, every live `verse_lexical` row (not just
@@ -44,13 +54,13 @@ principle `cfg_method_rule` `role-list-includes-unwired-tags` states: over-inclu
 recoverable, silent omission is not. This is what lets the LLM answer `D7.7` (does an
 operation-tagged word relate to a party-tagged word in this verse) without a second query round-trip.
 
-**Catalogue linkage** (`cfg_method_rule` `answers-M0.1-M0.5-D7.7`, now also `M0.6.5`): the system
-prompt embeds the live question text for `M0.1.1`-`M0.1.3` (Name and Naming), `M0.5.1`-`M0.5.11`
-(Lexical and Semantic Analysis, now including the `#1723` alternative-meaning question), `D7.7.1`
-(operation-anchored permeability), and `M0.6.5` (the new relational question) pulled from
-`wa_obs_question_catalogue` at call time — not a second copy of the wording that could drift from
-the live catalogue, same discipline `lexicalenrichgenerate.py`'s own docstring already established
-for `cfg_method_rule`.
+**Catalogue linkage** (`cfg_method_rule` `answers-M0.1-M0.5-D7.7`, now also `M0.6.5`/`M0.6.6`): the
+system prompt embeds the live question text for `M0.1.1`-`M0.1.3` (Name and Naming), `M0.5.1`-
+`M0.5.11` (Lexical and Semantic Analysis, now including the `#1723` alternative-meaning question),
+`D7.7.1` (operation-anchored permeability), `M0.6.5` (relational, single-vantage), and `M0.6.6`
+(whole-network synthesis, `#1819`) pulled from `wa_obs_question_catalogue` at call time — not a
+second copy of the wording that could drift from the live catalogue, same discipline
+`lexicalenrichgenerate.py`'s own docstring already established for `cfg_method_rule`.
 
 **Output shape is `ib_observation`/`ib_node`, not `lexicalenrich.enrich_passage`'s old note shape.**
 The model returns a flat list of observations; the recording pass (`iba/app/lib/recordingpass.py`,
@@ -81,7 +91,11 @@ def parse_response(text: str) -> dict:
     if m:
         candidate = m.group(1)
     try:
-        parsed = json.loads(candidate)
+        # strict=False: found live 2026-09-21, escalation #1826 -- the LLM's own obs_text
+        # legitimately contains raw control characters (an unescaped newline inside a long
+        # answer) that json.loads' strict mode rejects outright; Python's own documented
+        # leniency for exactly this case, not custom sanitization.
+        parsed = json.loads(candidate, strict=False)
     except json.JSONDecodeError as e:
         raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")
     if "observations" not in parsed:
@@ -146,14 +160,29 @@ def _prior_relational_context(conn, verse_refs: list[str]) -> dict[str, list[dic
     an earlier one's relational finding instead of re-deriving or duplicating it. Order-independent:
     whichever pass runs first simply finds nothing here and starts the chain. Matches on
     `ib_node.verse_reference` (osisId text) -- that table has no `verse_id` column."""
+    return _prior_context_for_question(conn, verse_refs, "M0.6.5")
+
+
+def _prior_network_context(conn, verse_refs: list[str]) -> dict[str, list[dict]]:
+    """#1819 whole-network relational reading: existing M0.6.6 observations already recorded for
+    verses in this batch -- same progressive mechanism as `_prior_relational_context`, but its own
+    separate stream, not merged with M0.6.5's own chain. M0.6.5 is one characteristic's vantage on
+    the others; M0.6.6 is a synthesis of the whole verse's M-code network -- conflating the two
+    prior-context feeds would blur what "build on this" means for each."""
+    return _prior_context_for_question(conn, verse_refs, "M0.6.6")
+
+
+def _prior_context_for_question(conn, verse_refs: list[str], question_code: str
+                                ) -> dict[str, list[dict]]:
     if not verse_refs:
         return {}
     ph = ",".join("?" * len(verse_refs))
     rows = conn.execute(
         f"SELECT DISTINCT o.cluster_code, o.strong, o.obs_text, n.verse_reference "
         f"FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id "
-        f"WHERE o.stage='verse-reading' AND o.question_code='M0.6.5' "
-        f"AND n.verse_reference IN ({ph}) ORDER BY o.created_at", tuple(verse_refs)).fetchall()
+        f"WHERE o.stage='verse-reading' AND o.question_code=? "
+        f"AND n.verse_reference IN ({ph}) ORDER BY o.created_at",
+        (question_code, *verse_refs)).fetchall()
     by_verse: dict[str, list[dict]] = {}
     for r in rows:
         by_verse.setdefault(r["verse_reference"], []).append(
@@ -198,18 +227,30 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
         verses_out.append({
             "verse": v["osisId"], "text": v["text"], "roles_in_verse": roles_by_verse.get(vid, [])})
 
-    # #1723 front-loading: cluster's own member strongs always get the battery (needed for M0.6.5/
-    # D7.7.1 regardless); other M-code strongs in the same verses only if not already covered.
-    needs_battery = _strongs_needing_battery(conn, all_m_code_strongs - cluster_member_strongs)
-    battery_strongs = cluster_member_strongs | needs_battery
-    meaning_by_strong = {s: _meaning_sources(conn, s) for s in sorted(battery_strongs)}
+    # #1723 front-loading, corrected #1820 (2026-09-21 -- confirmed live, not just theorised:
+    # H3034/M0.1.1 sampled 8 answers across different verses, every one restating the same root
+    # meaning/essential-nature claim in slightly different words -- a real word-level fact re-
+    # derived at full LLM cost on every verse-batch that happened to touch it, near-zero marginal
+    # value past the first answer). M0.1/M0.5 only needs answering ONCE per strong, ever -- the
+    # same skip-check `_strongs_needing_battery` already applies to front-loaded non-members now
+    # also applies to this cluster's OWN home strongs. `meaning_sources_by_strong` stays populated
+    # for EVERY home strong regardless of battery status -- M0.6.5/M0.6.6/D7.7.1 are answered for
+    # home strongs unconditionally and need that meaning context for their own reasoning even when
+    # the word-level battery itself is being skipped this pass.
+    home_needs_battery = _strongs_needing_battery(conn, cluster_member_strongs)
+    other_needs_battery = _strongs_needing_battery(conn, all_m_code_strongs - cluster_member_strongs)
+    word_battery_strongs = home_needs_battery | other_needs_battery
+    meaning_by_strong = {s: _meaning_sources(conn, s)
+                         for s in sorted(cluster_member_strongs | other_needs_battery)}
 
     prior_relational = _prior_relational_context(conn, [v["verse"] for v in verses_out])
+    prior_network = _prior_network_context(conn, [v["verse"] for v in verses_out])
 
     questions = conn.execute(
         "SELECT question_code, question_text FROM wa_obs_question_catalogue "
         "WHERE deleted=0 AND (question_code LIKE 'M0.1%' OR question_code LIKE 'M0.5%' "
-        "OR question_code IN ('D7.7.1', 'M0.6.5')) ORDER BY question_code").fetchall()
+        "OR question_code LIKE 'M0.7%' OR question_code IN ('D7.7.1', 'M0.6.5', 'M0.6.6')) "
+        "ORDER BY question_code").fetchall()
     question_texts = [{"question_code": q["question_code"], "question_text": q["question_text"]}
                       for q in questions]
 
@@ -224,10 +265,11 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
 
     instructions = _instructions(cluster_code, question_texts, tag_values, rules_text,
                                  [v["verse"] for v in verses_out], sorted(cluster_member_strongs),
-                                 sorted(needs_battery))
+                                 sorted(home_needs_battery), sorted(other_needs_battery))
     content = json.dumps({"cluster_code": cluster_code, "verses": verses_out,
                           "meaning_sources_by_strong": meaning_by_strong,
-                          "prior_relational_context_by_verse": prior_relational},
+                          "prior_relational_context_by_verse": prior_relational,
+                          "prior_network_context_by_verse": prior_network},
                          ensure_ascii=False)
 
     chars_per_token = float(ctx.cfg.setting("lexical.llm_chars_per_token", 4))
@@ -241,7 +283,9 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int]) -> dict
         "instructions": instructions, "content": content, "verse_ids": verse_ids,
         "cluster_code": cluster_code, "verse_count": len(verses_out),
         "cluster_member_strong_count": len(cluster_member_strongs),
-        "front_loaded_strong_count": len(needs_battery),
+        "word_battery_strong_count": len(word_battery_strongs),
+        "front_loaded_strong_count": len(other_needs_battery),
+        "home_already_settled_count": len(cluster_member_strongs) - len(home_needs_battery),
         "est_input_tokens": est_input_tokens, "max_output_tokens": max_output_tokens,
         "est_cost_usd": round(est_cost, 4),
         "model": ctx.cfg.required_setting("lexical.llm_model"),
@@ -283,37 +327,66 @@ TAG_GUIDANCE = {
 
 def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str],
                   rules_text: str, verse_refs: list[str], home_strongs: list[str],
-                  front_loaded_strongs: list[str]) -> str:
+                  home_needs_battery: list[str], other_needs_battery: list[str]) -> str:
     q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
     tag_guidance_text = "\n".join(
         f"  - {t}: {TAG_GUIDANCE[t]}" for t in tag_values if t in TAG_GUIDANCE)
+    word_battery_strongs = sorted(set(home_needs_battery) | set(other_needs_battery))
+    already_settled = sorted(set(home_strongs) - set(home_needs_battery))
     front_load_note = (
-        f" Of these, {front_loaded_strongs} are NOT this cluster's own member strongs -- they are "
-        f"other M-code words present in the same verses that have no word-level battery answered "
-        f"yet anywhere; answer M0.1/M0.5 for them too (front-loading, so a LATER cluster's own pass "
-        f"over these same verses doesn't have to re-derive them)."
-        if front_loaded_strongs else "")
+        f" Of {word_battery_strongs}, {other_needs_battery} are NOT this cluster's own member "
+        f"strongs -- they are other M-code words present in the same verses that have no word-"
+        f"level battery answered yet anywhere; answer M0.1/M0.5 for them too (front-loading, so a "
+        f"LATER cluster's own pass over these same verses doesn't have to re-derive them)."
+        if other_needs_battery else "")
+    settled_note = (
+        f" {already_settled} already have a complete M0.1/M0.5 battery from an earlier pass "
+        f"(#1820: re-answering these produces near-zero new information at full LLM cost -- "
+        f"confirmed live, repeat answers just restate the same root-meaning/essential-nature claim "
+        f"in different words) -- do NOT answer M0.1/M0.5 for them again; their `meaning_sources` "
+        f"are given only so you can reason about them for M0.6.5/M0.6.6/D7.7.1."
+        if already_settled else "")
     return (
         f"You are producing verse-reading observations for cluster {cluster_code}, the pre-"
         f"subgroup Layer 2 pass (`lexical.meaning`). You are given, per verse: the verse's own base "
         f"text, `roles_in_verse` -- every role-bearing word in that verse, each carrying "
         f"`cluster_codes` (the full set of M-code and role-T-code tags) and `is_home_cluster` (true "
-        f"if this word belongs to cluster {cluster_code}) -- and `prior_relational_context_by_verse` "
-        f"-- any M0.6.5 relational findings ALREADY recorded for these verses by an earlier cluster's "
-        f"own pass. You are also given `meaning_sources_by_strong` for {home_strongs} (this "
-        f"cluster's own member strongs).{front_load_note} Read all present meaning sources as "
-        f"complementary evidence, never picking one and ignoring the others.\n\n"
+        f"if this word belongs to cluster {cluster_code}) -- `prior_relational_context_by_verse` "
+        f"-- any M0.6.5 relational findings ALREADY recorded for these verses by an earlier "
+        f"cluster's own pass -- and `prior_network_context_by_verse` -- any M0.6.6 whole-network "
+        f"findings already recorded for these verses (a SEPARATE stream from M0.6.5's own chain). "
+        f"You are also given `meaning_sources_by_strong` for {home_strongs} (this "
+        f"cluster's own member strongs).{front_load_note}{settled_note} Read all present meaning "
+        f"sources as complementary evidence, never picking one and ignoring the others.\n\n"
         f"Method rules governing this task:\n{rules_text}\n\n"
-        f"TWO KINDS OF QUESTION, answered differently:\n"
+        f"THREE KINDS OF QUESTION, answered differently:\n"
         f"- M0.1/M0.5 (word-level battery, including the new M0.5.11 alternative-meaning question): "
-        f"answer for EVERY strong listed in `meaning_sources_by_strong` -- not just this cluster's "
-        f"own member strongs.\n"
-        f"- M0.6.5 (relational) and D7.7.1 (operation-permeability): answer ONLY for this cluster's "
-        f"own home strong(s) ({home_strongs}). For M0.6.5 specifically: if "
+        f"answer ONLY for {word_battery_strongs} -- strongs with NO word-level battery answered "
+        f"anywhere yet. This is NOT the same set as `meaning_sources_by_strong`'s own keys: some "
+        f"of this cluster's own home strongs already have a complete battery from an earlier pass "
+        f"and are listed there for relational context only, not for you to re-answer M0.1/M0.5.\n"
+        f"- M0.6.5 (relational), M0.6.6 (whole-network), and D7.7.1 (operation-permeability): "
+        f"answer ONLY for this cluster's own home strong(s) ({home_strongs}). For M0.6.5: if "
         f"`prior_relational_context_by_verse` already has an entry for this verse, your answer MUST "
         f"build on it -- state what THIS characteristic's own vantage point adds, never repeat what "
-        f"a prior cluster's pass already said. If there is no prior context, you are the first pass "
-        f"over this verse; start the relational chain.\n\n"
+        f"a prior cluster's pass already said; with no prior entry, you are the first pass over "
+        f"this verse, start the relational chain. For M0.6.6: the same progressive rule applies "
+        f"against `prior_network_context_by_verse` instead -- if an earlier pass already sketched "
+        f"the verse's whole M-code network, extend or correct it with what THIS characteristic's "
+        f"own membership in that network adds, never restate it unchanged; only answer M0.6.6 at "
+        f"all when at least one OTHER M-code characteristic is present in the verse (record none "
+        f"otherwise, per the question's own text).\n"
+        f"- M0.7.1-16 (verse substantiation, `#1806`, 2026-09-21): answer for EVERY M-code strong "
+        f"present in `roles_in_verse` for each verse -- the SAME population as the M0.1/M0.5 "
+        f"battery, not just this cluster's own home strongs. These questions are deliberately "
+        f"written about \"[this word]\", never about \"the characteristic\" -- you are not told, "
+        f"and must not assume, which cluster's pass is asking; answer purely from what the word "
+        f"and its relationships in the verse actually show. Unlike M0.1/M0.5, these are NOT "
+        f"settled-once-ever -- the same word can genuinely behave differently verse to verse (the "
+        f"same principle M0.5.11 already applies), so answer fresh for every occurrence in this "
+        f"batch even if this strong already has M0.7 answers from other verses. A later, separate "
+        f"process (not you) reconciles repeated findings across occurrences -- your job is an "
+        f"accurate, concise reading of THIS verse only, not deciding whether it duplicates another.\n\n"
         f"Answer these catalogue questions:\n{q_text}\n\n"
         f"Valid `tag` values: {tag_values}\n"
         f"`tag` is a categorisation value, not just a peculiarity flag -- it must let someone "
@@ -330,10 +403,14 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- You are given exactly {len(verse_refs)} verse(s), listed at the end of this message. "
         f"Every `verse` value you write MUST be one of exactly those.\n"
-        f"- Every `strong` value you write for M0.1/M0.5 must be one of the keys of "
-        f"`meaning_sources_by_strong`; for M0.6.5/D7.7.1 it must be one of this cluster's own home "
-        f"strongs {home_strongs}. D7.7.1 only applies when an operation-tagged (role-T3) word is "
-        f"actually present in the verse alongside a party-tagged word.\n"
+        f"- Every `strong` value you write for M0.1/M0.5 must be one of {word_battery_strongs} "
+        f"(NOT merely a key of `meaning_sources_by_strong` -- that set is broader, includes "
+        f"already-settled home strongs given for relational context only); for M0.6.5/M0.6.6/"
+        f"D7.7.1 it must be one of this cluster's own home strongs {home_strongs}; for M0.7.1-16 "
+        f"it must be any M-code strong actually present in that verse's own `roles_in_verse` "
+        f"(any `cluster_codes` entry starting with \"M\") -- the same population M0.1/M0.5 use, "
+        f"regardless of home-cluster membership. D7.7.1 only applies when an operation-tagged "
+        f"(role-T3) word is actually present in the verse alongside a party-tagged word.\n"
         f"- `question_code` MUST be the exact, specific leaf code (e.g. \"M0.1.2\", \"M0.5.7\") — "
         f"NEVER a bare component code (\"M0.1\", \"M0.5\" are not valid, will be rejected, and "
         f"waste your own output). One observation per specific sub-question — do not combine "
@@ -344,10 +421,16 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"verse's own content is insufficient and an adjacent verse would help, use tag "
         f"`needs_adjacent_verse_context` and state explicitly in `obs_text` what's outstanding and "
         f"what the follow-up cross-check needs to establish (never a bare flag with no reason).\n"
+        f"- For M0.7.1-16 ONLY, also fill `meaning_keywords`: 2-5 short key terms/concepts "
+        f"capturing the core of your answer (e.g. [\"conditional-change\", \"unfruitful-to-"
+        f"fruitful\"], not full phrases) -- used downstream to recognise when two occurrences "
+        f"genuinely show the same finding (escalation #1824), separate from your own obs_text "
+        f"wording. Leave `meaning_keywords` null for every other question type (M0.1/M0.5/M0.6.5/"
+        f"M0.6.6/D7.7.1) -- they use a different mechanism already.\n"
         f"- Do not add fields beyond the shape below, no prose before or after the JSON.\n\n"
         f"Verses in this batch: {verse_refs}\n\n"
         "Respond with ONLY a JSON object, no other text, shaped exactly:\n"
         '{"observations": [{"strong": "...", "question_code": "..." or null, "tag": "...", '
-        '"obs_text": "...", "meaning_source": "...", "occurrences": [{"verse": "...", '
-        '"surface": "...", "morph_code": "..."}]}]}'
+        '"obs_text": "...", "meaning_source": "...", "meaning_keywords": ["...", "..."] or null, '
+        '"occurrences": [{"verse": "...", "surface": "...", "morph_code": "..."}]}]}'
     )

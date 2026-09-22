@@ -59,7 +59,9 @@ def parse_response(text: str) -> dict:
     if m:
         candidate = m.group(1)
     try:
-        parsed = json.loads(candidate)
+        # strict=False: escalation #1826 -- tolerate raw control characters inside obs_text
+        # (Python's own documented leniency), not a custom sanitizer.
+        parsed = json.loads(candidate, strict=False)
     except json.JSONDecodeError as e:
         raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")
     if "subgroups" not in parsed:
