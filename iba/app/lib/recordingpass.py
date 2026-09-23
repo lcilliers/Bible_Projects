@@ -86,8 +86,19 @@ def _is_strong_specific_occurrence_question(question_code: str | None) -> bool:
     it is a fact about ONE specific non-M-code word's own candidacy, never a shared verse-level
     fact multiple words could co-report (unlike M0.6.5/M0.6.6/D7.7.1). Identity for these stays
     exact (verse, strong) occurrence -- count-based same/broaden/new (#1824 v10/v11 Fix 1/2),
-    unchanged by the #1824 v22 cross-strong fix below."""
-    return bool(question_code) and (question_code.startswith("M0.7") or question_code == "M0.8.1")
+    unchanged by the #1824 v22 cross-strong fix below.
+
+    M0.5.11 joins this family, 2026-09-23: caught live while extending the word-level (M0.1/M0.5)
+    branch to structural matching -- its own text is "In this verse, where this occurrence's
+    meaning diverges from the term's usual sense elsewhere..." -- exactly this family's shape
+    (per-verse, word-specific, genuinely varies occurrence to occurrence), not a once-ever-per-
+    strong fact. It only ever matched `_WORD_LEVEL_QUESTION_PREFIXES`' bare "M0.5" prefix, which
+    was never meant to catch it. Confirmed live before fixing: H1245 (baqash) alone had 148 live
+    M0.5.11 rows, each about a genuinely different verse -- forcing the word-level branch's "2+
+    candidates = same fact" rule over this pool would have wrongly consolidated 147 distinct
+    findings into one. Caught in verification, never run live."""
+    return bool(question_code) and (
+        question_code.startswith("M0.7") or question_code in ("M0.8.1", "M0.5.11"))
 
 
 def _is_per_occurrence_question(question_code: str | None) -> bool:
@@ -165,8 +176,18 @@ def _existing_candidates(conn, cluster_code: str, stage: str, strong: str | None
             [stage, question_code] + verse_refs).fetchall()
         return [dict(r) for r in rows]
 
-    where = ["o.cluster_code=?", "o.stage=?"]
-    params: list = [cluster_code, stage]
+    where = ["o.stage=?"]
+    params: list = [stage]
+    # cluster_code=None (word-level M0.1/M0.5, 2026-09-23 ruling) needs "IS NULL", not "=?" --
+    # SQL NULL never equals NULL via "=?", so passing None as a bound param here would silently
+    # match ZERO existing rows on every call, breaking word-level identity entirely (every answer
+    # would look "new," never recognised as already-covered). Same IS-NULL pattern already used
+    # below for strong/question_code, applied here for the same reason.
+    if cluster_code is None:
+        where.append("o.cluster_code IS NULL")
+    else:
+        where.append("o.cluster_code=?")
+        params.append(cluster_code)
     if strong is None:
         where.append("o.strong IS NULL")
     else:
@@ -233,28 +254,34 @@ def _existing_node_refs(conn, observation_id: int) -> set[tuple]:
 _WORD_LEVEL_QUESTION_PREFIXES = ("M0.1", "M0.5")
 
 
+def _is_word_level_question(question_code: str | None) -> bool:
+    """M0.1.x/M0.5.x -- a fact about the STRONG alone. Researcher ruling, 2026-09-23 (escalation
+    #1849 follow-on, verbatim: "cluster has no role to play, the keys for further analysis is
+    strong and verse"): these questions no longer carry any cluster/characteristic framing (see
+    the 2026-09-23 catalogue reword) and no longer resolve or need a cluster_code at all -- one
+    canonical `ib_observation` per (strong, question_code), full stop, `cluster_code IS NULL`.
+
+    EXCLUDES M0.5.11 despite the "M0.5" prefix match -- it is a strong-specific OCCURRENCE
+    question (see `_is_strong_specific_occurrence_question`'s own docstring), not a once-ever
+    word-level fact; routed there instead, checked explicitly here so the two predicates can never
+    silently overlap."""
+    return (bool(question_code) and question_code.startswith(_WORD_LEVEL_QUESTION_PREFIXES)
+           and not _is_strong_specific_occurrence_question(question_code))
+
+
 def _effective_cluster_code(conn, pass_cluster_code: str, strong: str | None,
-                            question_code: str | None) -> str:
-    """#1723 front-loading: a word-level (M0.1/M0.5) observation is a fact about the STRONG, not
-    about whichever cluster's pass happened to produce it -- resolved fresh from the strong's own
-    live cluster_strong M-code membership (never trusted from the caller), same "resolve fresh,
-    don't trust the caller's own classification" discipline verse/strong resolution already use
-    elsewhere in this module. Relational (M0.6.5), M0.6.6, and D7.7.1 observations stay keyed to
-    the PASS's own cluster_code -- only which cluster nominally "owns" the row's `cluster_code`
-    column, not whether the row itself can merge. #1832, 2026-09-22 CORRECTS this docstring's own
-    prior claim that "different clusters' M0.6.5 rows about the same verse must coexist, not
-    collapse into one" -- that was the OLD design; the researcher's own instruction now is the
-    opposite ("near duplicates are not allowed... applies across clusters and strongs"), so
-    `_existing_candidates`'s verse-level branch DOES merge these across clusters when the content
-    genuinely matches (keyword/similarity scoring decides, not cluster identity). Falls back to
-    the pass's own cluster_code if the strong carries no live M-code (shouldn't happen for a
-    word-level question, but never silently produces a NULL)."""
-    if not strong or not question_code or not question_code.startswith(_WORD_LEVEL_QUESTION_PREFIXES):
-        return pass_cluster_code
-    row = conn.execute(
-        "SELECT cluster_code FROM cluster_strong WHERE strong=? AND deleted=0 "
-        "AND cluster_code LIKE 'M%' ORDER BY cluster_code LIMIT 1", (strong,)).fetchone()
-    return row["cluster_code"] if row else pass_cluster_code
+                            question_code: str | None) -> str | None:
+    """Word-level (M0.1/M0.5) observations carry NO cluster_code at all as of 2026-09-23 (see
+    `_is_word_level_question`) -- these are strong-only facts, and resolving any cluster for them
+    (even the strong's own "true" M-code, as this function used to do pre-2026-09-23 per #1815)
+    re-introduces exactly the dependency the researcher's ruling removed. Every other question
+    type (relational M0.6.5/M0.6.6/D7.7.1, per-occurrence M0.7/M0.8.1) stays keyed to the PASS's
+    own cluster_code, unchanged -- only which cluster nominally "owns" the row's `cluster_code`
+    column, not whether the row itself can merge (`_existing_candidates`'s verse-level branch
+    already merges across clusters on content, not cluster identity, per #1832)."""
+    if _is_word_level_question(question_code):
+        return None
+    return pass_cluster_code
 
 
 def _window_for(conn, question_code: str | None) -> str | None:
@@ -552,6 +579,13 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
         # unmerged duplicate instead of clearing anything -- 0 rows withdrawn on a 5-verse live
         # test. Escalation #1834. Count-based matching sidesteps the unstable-keyword problem
         # entirely: no text judgement needed when the pool itself already guarantees "same fact."
+        #
+        # NOTE: word-level (M0.1/M0.5) questions do NOT belong in this branch, even briefly (an
+        # earlier pass this same session put them here, caught and reverted before shipping) --
+        # their candidate pool (exact strong+question_code, any VERSE) does NOT guarantee "2+ rows
+        # = same fact" the way the exact-occurrence pools above do: two independently span-grounded
+        # answers for the same term CAN legitimately differ by occurrence (researcher, 2026-09-23).
+        # See the `_is_word_level_question` branch below for their own exact-text-match logic.
         if not candidates:
             observation_id = _insert_observation(
                 conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
@@ -587,10 +621,38 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
         # return below reports similarity_score=None for every per-occurrence action, honestly.
         best = None
         best_score = None
+    elif _is_word_level_question(question_code):
+        # 2026-09-23, researcher correction (escalation #1849 follow-on, verbatim): "Every word
+        # observation answer must be at span (word in verse context) level. Saying that you can
+        # resolve the observation question without looking at the verse/span/morph means it is a
+        # generic answer." Generation for these questions now happens per occurrence (the
+        # front-loading skip that used to prevent this is retired -- see versereadinggenerate.py),
+        # so two candidates in this pool are NOT guaranteed to be the same fact the way the
+        # exact-occurrence families above are: a genuinely different occurrence of the same term
+        # may show a genuinely different aspect. Identity here is EXACT TEXT MATCH ONLY, never
+        # assumed sameness by count -- deliberately the stricter, more conservative choice given
+        # this exact codebase's own lesson (escalation #1834) that fuzzy/keyword matching on
+        # freely-generated text is unreliable: an exact match is genuine independently-grounded
+        # convergence (share it, add this occurrence's node); anything else is kept as its own
+        # distinct observation, never force-merged on the assumption it "must really be the same."
+        exact = next((c for c in candidates if c["obs_text"] == obs_text), None)
+        if exact is not None:
+            observation_id = exact["id"]
+            action = "aligned-exact-match"
+        else:
+            observation_id = _insert_observation(
+                conn, effective_cluster_code, stage, tag, strong, question_code, obs_text,
+                meaning_source, source_json_serial, subgroup_id,
+                meaning_keywords=sorted(new_keywords) if new_keywords else None)
+            action = "new-observation"
+        best = None
+        best_score = None
     else:
-        # Word-level (M0.1/M0.5): unchanged from before -- cluster-wide candidate pool (Fix 1
-        # doesn't apply, `occurrence_refs` above was a no-op for these), keyword/similarity
-        # matching decides update-vs-new exactly as it did prior to #1824 v10.
+        # Every other question type (char-reading/char-answers free-form synthesis, science
+        # questions, anything with no dedicated identity rule above): unchanged from before --
+        # cluster-wide candidate pool, keyword/similarity matching decides update-vs-new exactly
+        # as it did prior to #1824 v10. NOT used by word-level (M0.1/M0.5) any more -- see the
+        # dedicated branch above.
         new_forms = {(o["surface"], o["morph_code"]) for _, o in resolved_occurrences}
         best = None
         best_score = 0.0

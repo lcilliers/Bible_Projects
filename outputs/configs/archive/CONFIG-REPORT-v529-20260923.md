@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-23T08:41:10Z |
+| generated_at | 2026-09-23T08:29:47Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -76,7 +76,7 @@ _(none)_
 33. verse_lexical_note.deleted filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-34. GOVERNANCE.md was last modified 2026-09-22T07:28:18Z, before the newest applied cfg_change_detail row (2026-09-23T08:41:09Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+34. GOVERNANCE.md was last modified 2026-09-22T07:28:18Z, before the newest applied cfg_change_detail row (2026-09-23T08:29:47Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (2) — iba/app/lib/*.py with no cfg_utility row:
 35. iba/app/lib/stage1coverage.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it

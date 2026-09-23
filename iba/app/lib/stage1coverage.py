@@ -80,21 +80,14 @@ def expected_nodes(conn: sqlite3.Connection, cluster_code: str, verse_ids: list[
             if w["strong"] and any(c.startswith("M") for c in w["roles"]):
                 all_m_strongs.add(w["strong"])
 
-    battery_covered: set[str] = set()
-    if all_m_strongs:
-        ph2 = ",".join("?" * len(all_m_strongs))
-        battery_covered = {r[0] for r in conn.execute(
-            f"SELECT DISTINCT strong FROM ib_observation WHERE stage='verse-reading' "
-            f"AND strong IN ({ph2}) AND (question_code LIKE 'M0.1%' OR question_code LIKE 'M0.5%')",
-            tuple(all_m_strongs))}
-
-    primary_verse_for_strong: dict[str, int] = {}
-    for vid in verse_ids:
-        for w in by_verse.get(vid, []):
-            s = w["strong"]
-            if (s and s in all_m_strongs and s not in battery_covered
-                    and s not in primary_verse_for_strong):
-                primary_verse_for_strong[s] = vid
+    # `battery_covered`/`primary_verse_for_strong` ("once ever per strong, only its primary verse")
+    # REMOVED 2026-09-23 -- researcher correction, verbatim: "Every word observation answer must be
+    # at span (word in verse context) level. Saying that you can resolve the observation question
+    # without looking at the verse/span/morph means it is a generic answer." Word-level (M0.1/M0.5)
+    # questions are now expected for EVERY M-code strong in EVERY verse it occurs in, exactly the
+    # same population as M0.6.5/M0.6.6/D7.7.1/M0.7 below -- generation must consult this specific
+    # occurrence every time; consolidating independently-grounded answers that turn out to match is
+    # `recordingpass.py`'s job at write time, not a reason to skip asking here.
 
     rows_out: list[dict] = []
     for vid in verse_ids:
@@ -114,15 +107,12 @@ def expected_nodes(conn: sqlite3.Connection, cluster_code: str, verse_ids: list[
                     "reason": "per-occurrence, always expected"})
 
         for w in m_strongs_here:
-            s = w["strong"]
-            if s in battery_covered or primary_verse_for_strong.get(s) != vid:
-                continue
             for qc in word_level_codes:
                 rows_out.append({
-                    "verse_reference": osis, "strong": s, "surface": w["surface"],
+                    "verse_reference": osis, "strong": w["strong"], "surface": w["surface"],
                     "morph_code": w["morph_code"],
                     "is_home_strong": cluster_code in w["roles"], "question_code": qc,
-                    "reason": "word-level battery, primary verse for this strong"})
+                    "reason": "span-grounded, always expected (2026-09-23)"})
 
         # #1824 v14 researcher correction, 2026-09-22, verbatim: "verse reading is supposed to be
         # agnostic to cluster definition. every M-code word has the same status in the verse and

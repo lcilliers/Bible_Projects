@@ -16150,3 +16150,243 @@ Researcher instruction, verbatim: *"submit M67 cluster in batches to complete th
 **Found verifying, not fixed — escalation #1840**: the `M0.7`/`M0.8.1` exact-occurrence identity model keys on `(verse, strong)` only, no position component. When the same Strong's code recurs at different word positions in one verse (common for function morphemes -- articles, prepositions, pronominal suffixes; rare for M-code content words, which is why this went unnoticed until `M0.8.1`'s function-word-heavy population surfaced it), the model correctly answers each position separately but the matching can't tell that apart from "the same occurrence answered twice" — unmerged duplicates result. Confirmed concretely: `Ezra.7.17`'s `H9010` (definite article) occurs at position 6 (`bulls`) and position 14 (`altar`), two genuinely separate correct findings, stored as unmerged duplicates instead of either staying cleanly distinct or consolidating. 109 of 2560 keys affected — noise on top of complete coverage, not a gap. Root cause traced, exact code-path mechanism not fully pinned down; the real fix is a design decision (position-aware identity vs. consolidate-to-one-shared-observation, matching `M0.1`/`M0.5`'s own pattern) deliberately not made unilaterally, given this session's own `#1832`/`#1834` lesson about getting dedup identity wrong on a first guess.
 
 **Files:** none this entry (verification + a retry only; the dedup fix itself is escalation #1840, not yet built). Escalations #1838, #1840.
+
+## 325. Stage 1 catalogue terminology fix, 34-question objective review, and M0.8.1 simplified from a ruling to a flag (2026-09-23, researcher-directed, in-chat)
+
+Researcher review, this chat, of whether Stage 1's live 34 `stage='verse-reading'` questions actually
+serve the stage's own objective (articulate the context of M-code words in every verse, cluster-
+agnostic per escalations #1810 v3/#1824 v14 — "no verse is aware of the cluster allocation... it is
+about what does the verse say - not what does the verse say about the cluster").
+
+**(a) Terminology fix.** Found live: D7.7.1/M0.6.5/M0.6.6 still asked about "this characteristic" /
+"the OTHER M-code characteristics" / an Operation word classified "for this cluster" — cluster-aware
+wording left over despite #1810/#1824 settling that verse-reading isn't cluster-aware. Fixed:
+`iba/app/migration/fix_characteristic_terminology_stage1_v1_20260923.py` — "characteristic"/"this
+cluster" replaced with "M-code word"/"role-T3" in all three, no change to what's being evaluated
+(still the M-code word occurring in the verse).
+
+**(b) Full 34-question objective review**, read individually rather than grouped by code-prefix:
+20/34 genuinely fit (D7.7.1/M0.6.5/M0.6.6, all of M0.7.1–16, M0.5.11). 13/34 do not — M0.1.1-3 and
+M0.5.1/4-10 never anchor to "in this verse," asking instead about the cluster's name/vocabulary as a
+general, verse-independent fact (M0.5.10 explicitly requires "the full vocabulary arc," which cannot
+be answered from one verse or one strong by definition). M0.5.2/M0.5.3 are word-level but still ask
+about the term's range in general, not this verse's use of it — borderline. 1/34 (M0.8.1) is a
+different kind of question entirely (see below). Full detail:
+`outputs/stage1-question-objective-review-20260923.md`. The 13/14 non-conforming questions are NOT
+touched by this entry — that's a scope decision (move to char-reading vs. redefine) left for the
+researcher, not resolved here.
+
+**(c) M0.8.1 simplified from a ruling to a flag.** Researcher's own worked example: G4020 (2Th.3.11,
+1Ti.5.13) is tagged T2 so no cluster ever looks at it, yet its behaviour in those verses is plainly
+significant — "All M0.8.1 is asking for is that an observation is created to flag [it] as a term
+that need further attention," not a formal ruling on elevating it to its own M-code. Checked before
+changing anything: the population/coverage/payload mechanism (`stage1coverage.py`'s
+`expected_nodes`, `versereadinggenerate.py`'s `elevation_candidates_by_verse`, `recordingpass.py`'s
+per-verse dedup family, the `elevation-candidate` tag) exactly mirrors the existing pattern already
+used for M0.6.5/M0.6.6/D7.7.1 — proportionate, not extra machinery, not touched. The actual defect
+was the wording: live, only 11/483 (2.3%) M0.8.1 observations carried the intended
+`elevation-candidate` tag; 363/483 (75%) carried `not-related-to-meaningful-word`, a tag with nothing
+to do with this question's subject — the old "warranting elevation... not just a supporting role
+(manner, operation-word, qualifier)" ruling-language was confusing the model, not correctly finding
+real candidates to be rare. Fixed: catalogue text
+(`iba/app/migration/simplify_M0_8_1_elevation_flag_v1_20260923.py`) and the matching LLM-facing
+prompt paragraph (`versereadinggenerate.py`) both reworded to a plain flag ask. Not resolved here,
+researcher's own call: whether the 483 existing M0.8.1 observations (350 draft + 133 withdrawn)
+should be re-derived under the simplified wording.
+
+**Files:** `iba/app/lib/versereadinggenerate.py`,
+`iba/app/migration/fix_characteristic_terminology_stage1_v1_20260923.py` (new),
+`iba/app/migration/simplify_M0_8_1_elevation_flag_v1_20260923.py` (new),
+`outputs/stage1-question-objective-review-20260923.md` (new). Escalations: raised this session, see
+escalation table (governance.escalation.scope — this in-chat work was not being recorded until the
+researcher flagged the gap).
+
+## 326. M0.1.x/M0.5.x reworded strong-keyed, cluster dropped entirely; word-level identity matching switched from keyword/similarity to structural (2026-09-23, researcher-directed, in-chat, escalation #1849 follow-on)
+
+Researcher ruling, this chat, on escalation #1849's finding that 13 of Stage 1's 34 questions ask
+about the cluster's vocabulary as a whole, not this verse's content: *"the answers of these
+questions seems to add value to the words used in the verse... they only need to have 1 observation
+for each question for each variant of answer, and a node for every verse where it applies...
+cluster has no role to play, the keys for further analysis is strong and verse."*
+
+**(a) Catalogue reworded** — `iba/app/migration/reword_word_level_questions_strong_keyed_v1_20260923.py`.
+M0.1.1-3/M0.5.1/2/4/5/6/7/8/9 reworded from cluster/"characteristic"/"primary Hebrew and Greek
+terms" framing to a single-term fact ("this term"). M0.5.5/6/7/8 (opposite/person-type/supplication/
+OT-NT-continuity terms) now draw their candidate pool from `strong_related` (confirmed live,
+strong-keyed, not cluster-keyed) instead of cluster/vocabulary membership. M0.5.8 specifically
+reworded per the researcher's own correction, verbatim: *"just saying it is NT or OT add no value -
+what does make a difference is if the interpretation of the word in context is affected, and how by
+the Testament context"* — no longer asks for a bare OT/NT label, asks whether/how Testament context
+changes the term's interpretation. M0.5.10 ("the characteristic's complete semantic range") retired
+— no referent left once cluster has no role; M0.5.3 already covers term-level semantic range.
+
+**(b) Identity matching fixed to match the new design.** Checked the actual code before changing
+it: word-level (M0.1/M0.5) matching still used keyword/similarity scoring (`meaning_keywords`
+overlap + text-similarity threshold) — the exact mechanism escalation #1834 already proved
+unreliable for M0.6.5/M0.6.6/D7.7.1 earlier this same session, never carried back to M0.1/M0.5.
+Live evidence it was needed here too: prior to this fix, M01's own member strongs alone had already
+produced 10 independent, unreconciled M0.5.1 answers. Fixed: word-level questions now route
+through the same structural 0/1/2+ matching already proven for the other four question families
+(`recordingpass.py`) — reusing existing code, not new logic. `_effective_cluster_code` now returns
+`None` for word-level questions (no cluster resolution at all, matching the ruling); `_existing_candidates`
+fixed to handle `cluster_code IS NULL` correctly (was previously using `cluster_code=?` even for a
+`None` param, which in SQL never matches — would have silently found zero candidates on every call
+and broken identity matching entirely had this not been caught before any live use).
+
+**Caught in verification, never run live:** `_WORD_LEVEL_QUESTION_PREFIXES`'s bare `"M0.5"` prefix
+match also swept in **M0.5.11**, which is NOT a word-level fact — its own text ("In this verse,
+where this occurrence's meaning diverges from the term's usual sense elsewhere...") is a
+per-occurrence question, genuinely varying verse to verse, same shape as M0.7. Confirmed live before
+shipping: H1245 (baqash) alone had 148 live M0.5.11 rows, each about a different verse — the
+word-level branch's "2+ candidates = same fact" rule would have force-consolidated 147 distinct,
+correct findings into one had this gone live unchecked. Fixed: M0.5.11 added to
+`_is_strong_specific_occurrence_question` (the exact-occurrence family), explicitly excluded from
+`_is_word_level_question`.
+
+**Data correction, mechanical only, no rows merged:** normalized `ib_observation.cluster_code` to
+NULL on the 5,207 live word-level (M0.1/M0.5, excluding M0.5.11) observations, so the new matching
+logic can actually find them on next contact (the existing "no offline consolidation, only
+triggered by a fresh answer" policy this table already follows — `_consolidate_duplicates`'s own
+documented principle — depends on old rows being findable). The 730 M0.5.11 rows, wrongly nulled in
+the same pass before the classification bug above was caught, were restored from their own
+`ib_node.cluster_code` (every M0.5.11 observation confirmed to have exactly one distinct node
+cluster_code before restoring — no ambiguity). Verified after: 0 word-level rows non-NULL, 0 M0.5.11
+rows NULL.
+
+**Quantified, not yet acted on (matches this table's own "no offline consolidation" policy — will
+resolve naturally on next contact per strong, not swept now):** 235 (strong, question_code) combos
+among the true word-level questions carry 2+ live duplicate rows (3,011 excess rows total) from
+before this fix — these will consolidate the next time each strong's word-level battery is
+re-answered, not before.
+
+**Not built this entry, flagged with real numbers for the researcher's decision:** mechanical
+`ib_node` fan-out to EVERY verse where a word-level strong occurs (point (b) of the ruling above,
+"a node for every verse where it applies") — currently `ib_node` rows for M0.1/M0.5 only cover
+whatever verse(s) the triggering batch itself reported as `occurrences`, not the strong's full
+occurrence list. Checked live occurrence-count distribution for M-code strongs before proposing
+this: average 23 occurrences per strong, maximum 2,441 (H4428G) — a real volume number, not
+necessarily a problem (it's exactly what "this fact is true everywhere the word occurs" should
+produce) but large enough to want confirmed before building, not assumed.
+
+**Files:** `iba/app/lib/recordingpass.py`,
+`iba/app/migration/reword_word_level_questions_strong_keyed_v1_20260923.py` (new). Escalation:
+follow-on to #1849, recorded same unit of work.
+
+## 327. Span-grounding enforced on all levels — governance, config, catalogue, and every related code method (2026-09-23, researcher-directed, in-chat, same-day correction of #326)
+
+Researcher, this chat, reviewing #326 within the hour of it shipping: *"Every word observation
+answer must be at span (word in verse context) level. Saying that you can resolve the observation
+question without looking at the verse/span/morph means it is a generic answer."* Then, on being
+shown the implication (the whole #326 rework was itself still generic — answerable from
+`strong`/`strong_meaning_tree`/`strong_lexicon`/`strong_related` alone, no verse needed):
+*"this is now your opportunity to rectify it. On all levels. governance, configs, column
+descriptions, questions, and all the methods in the code that is related... it will deliver what
+the intention have been since the first time in about May that I spotted you are using the wrong
+values for word analysis."*
+
+**Governance — proposed, awaiting approval.** `cfg_method_rule` (step=`lexical.meaning`,
+rule_key=`span-grounded-not-generic`): every word-observation answer must require consulting the
+occurrence's own verse/span/morph; sharing across occurrences is a post-hoc consolidation on exact
+match, never assumed up front. Escalation #1853, moved straight to `ready_for_approval` (already
+decided in chat, per `feedback_own_propose_calls_ready_for_approval`).
+
+**Config — proposed, awaiting approval.** `cfg_column.use` for `ib_observation.cluster_code` still
+said "NULL only for stage=synthesis" — factually wrong since #326 also sets it NULL for word-level.
+Escalation #1855, `ready_for_approval`.
+
+**Catalogue — done, verified live.** The #326 "this term" wording (still generic) replaced again,
+same day: every one of the 11 now opens "In this verse..." like every other properly-built question
+in the catalogue (M0.7.x, M0.6.5, M0.6.6, D7.7.1, M0.5.11, M0.8.1 — checked, these were the tell:
+the 11 were the ONLY live questions that didn't). `iba/app/migration/enforce_span_grounding_word_level_v1_20260923.py`.
+
+**Code — done, verified structurally against live data, not yet run live:**
+- `stage1coverage.py`: `expected_nodes()`'s "word-level battery, primary verse only" population
+  (the `battery_covered`/`primary_verse_for_strong` restriction) removed — word-level questions now
+  expected for every M-code strong in every verse, same population as M0.6.5/M0.6.6/D7.7.1.
+- `versereadinggenerate.py`: `_strongs_needing_battery` (the #1723/#1820 "answered once ever,
+  never re-derived" front-loading skip) retired — left in place, unused, docstring marks it so.
+  `_verse_cluster_agnostic_coverage` extended to cover M0.1%/M0.5% in its per-verse (not global)
+  "already answered for THIS verse" check, matching the other four question families exactly.
+  Prompt text (`_instructions`) reworded to state the span-grounding requirement explicitly and
+  drop the now-false "already has a complete battery, don't re-answer" framing.
+- `recordingpass.py`: word-level dedup split out of the exact-occurrence "2+ candidates = guaranteed
+  same fact" branch it was wrongly placed in earlier this same session (#326) — two independently
+  span-grounded answers for the same term CAN legitimately differ, so that assumption doesn't hold.
+  New dedicated branch: EXACT TEXT MATCH ONLY decides sharing, never count, never
+  keyword/similarity (this exact codebase's own #1834 lesson). Deliberately the more conservative
+  choice — under-merges rather than risks a repeat of #1834's failure mode.
+
+**A concrete, load-bearing check, not just a design argument:** queried live before calling this
+done — H1245 (baqash)/M0.1.1 has 39 live rows; all 39 are textually distinct. Under the OLD model
+that was invisible (all 39 were being treated, incorrectly, as if a single shared fact repeated by
+matching failure). Under the new exact-text-match rule none of the 39 get force-merged — which is
+correct, since without inspecting them there is no basis to assume they're the same finding.
+
+**Historical note, corrected on the record, not just quietly reversed:** BUILD #310/#1820 (2026-09-
+21) read H3034/M0.1.1's 8 near-identical answers across different verses as *waste* ("near-zero new
+information at full LLM cost") and built the front-loading skip specifically to stop it happening
+again. The researcher's correction here reframes that same observation as the opposite: independent
+convergence across genuinely-checked occurrences is a *feature*, not a defect — what should never
+happen is skipping the check itself. The skip mechanism #310/#1820 built is retired for exactly the
+reason it was built.
+
+**Not decided, flagged with real numbers — escalation #1856:** the 5,207 live word-level
+observations across every cluster that has already run Stage 1 were generated under the retired
+generic model. Whether they need forced re-derivation, can be left to supersede naturally, or need
+a spot-check first is a real cost/scope call for the researcher, not decided or actioned here.
+
+**Files:** `iba/app/lib/stage1coverage.py`, `iba/app/lib/versereadinggenerate.py`,
+`iba/app/lib/recordingpass.py`,
+`iba/app/migration/enforce_span_grounding_word_level_v1_20260923.py` (new). Escalations: #1853
+(governance), #1855 (config), #1856 (existing-data decision) — all recorded same unit of work as
+the code, per the researcher's own instruction earlier this session that in-chat work must not go
+unrecorded.
+
+**Addendum, same session:** researcher, verbatim: *"actively engage with the surface - this is a
+good pointer that if the surface is different for the same term, then the translators must have
+figured out the verse context is different and that is what llm must tease out."* `surface`/
+`morph_code` were already in the payload (`roles_in_verse`) but nothing told the model to actively
+use them as a signal. Two additions: (1) the general word-level instruction paragraph now states
+the principle directly — a marked/atypical surface form is evidence of a translator's contextual
+judgement, not bookkeeping to ignore; (2) M0.5.11's own question text
+(`iba/app/migration/m0_5_11_surface_cue_v1_20260923.py`) now names surface-form variation
+explicitly as the diagnostic cue for its own divergence check. Files: `versereadinggenerate.py`.
+
+**Second addendum, same session:** researcher, verbatim: *"instead of asking what is the morph,
+the question must be what does the morph tell me, same apply to other questions also."* Re-audited
+all 34 live Stage 1 questions against this test (not just today's earlier changes) — a "what IS
+&lt;value already in a DB column&gt;" ask is mechanically answerable with zero interpretation;
+"what does it show" forces genuine synthesis. Most questions already passed (either phrased that
+way already, or ask about something that isn't a stored field at all — a relation, a role, a
+network — where "what is" isn't the antipattern). Two real violations found, both fixed
+(`iba/app/migration/reframe_what_is_to_what_does_show_v1_20260923.py`): **M0.5.2** literally asked
+"what IS this occurrence's own grammatical form (per its morph_code)" — the researcher's own
+example, almost verbatim; trimmed to ask only what the form shows, morph_code's possible values
+kept as parenthetical grounding, not the deliverable. **M0.5.3** — a genuine miss, not a deliberate
+exclusion: skipped by both earlier reworks today, it still had no "in this verse" anchor at all and
+asked "What IS the semantic range of this term" (a term-wide aggregate, the exact generic-answer
+pattern this whole session has been correcting) — reframed to ask where THIS occurrence sits within
+the term's known range. Mechanically both already routed correctly through the word-level
+exact-text-match path built earlier this session (`_is_word_level_question`'s `M0.5` prefix match
+already covered them; only the catalogue text was stale) — no code change needed, text-only fix.
+
+**Correction to escalation #1856's own count, same thread:** the "5,207" figure given there
+wrongly included M0.5.11's 730 rows (a different, correctly-behaved per-occurrence question, not
+word-level). True word-level observation count is **4,477**, now also stale against the M0.5.2/
+M0.5.3 wording fix (270 of the 4,477 are M0.5.3). Escalation #1856 updated with the corrected
+number rather than left wrong on the record.
+
+**Third addendum, same session — escalation #1856 closed on the researcher's own already-given
+decision.** Researcher (v3, verbatim): *"my expectation is that a rerun will automatically reset
+all the items that is wrong. As long as the code doesn't automatically skip some stuff that should
+be revisited."* Verified: as coded, it WOULD skip them —
+`fully_covered_verse_ids`/`_verse_cluster_agnostic_coverage` treat a verse/item as covered purely
+on "does a live, non-withdrawn node exist," with no staleness concept. Fixed:
+`iba/app/migration/withdraw_stale_word_level_observations_v1_20260923.py` withdraws all 4,477 stale
+pre-fix word-level observations (M0.5.11 untouched — a correctly-behaved per-occurrence question,
+not word-level). No code change, no new mechanism — the status correction lets the already-approved
+design do what it was approved to do. Verified live, concretely, not just in theory: `Neh.12.27`
+(cluster M83, a verse with a withdrawn H1245/M0.1.1 stale row) now correctly returns empty from
+`fully_covered_verse_ids` — it will be picked up by the next normal (non-Force) rerun instead of
+silently skipped. Files: `iba/app/migration/withdraw_stale_word_level_observations_v1_20260923.py`
+(new).

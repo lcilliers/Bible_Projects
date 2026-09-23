@@ -140,12 +140,13 @@ def _role_word(row, home_cluster: str) -> dict:
 
 
 def _strongs_needing_battery(conn, m_code_strongs: set[str]) -> set[str]:
-    """#1723 front-loading: of the given M-code strongs, which do NOT yet have any live
-    stage='verse-reading' M0.1/M0.5-battery observation at all (any cluster's pass, any prior
-    run) -- these are the ones THIS pass must answer the word-level battery for. "Any observation
-    exists" is the covered signal, matching verse_reading_completeness's own established
-    any-row-means-covered convention -- not full-battery completeness, which would risk re-asking
-    forever over a question the model legitimately had nothing to say for."""
+    """RETIRED 2026-09-23 -- no longer called. Was #1723's front-loading skip ("any observation
+    exists anywhere = covered, never ask again"), which is exactly the generic-answer pattern the
+    researcher's 2026-09-23 correction rules out (an answer that can be resolved without looking at
+    THIS verse/span/morph). Left in place, unused, rather than deleted -- the "any observation
+    exists" query shape may still be useful reference for a genuinely different question family
+    later; nothing in this module calls it any more (see the caller's own note where it used to be
+    invoked)."""
     if not m_code_strongs:
         return set()
     ph = ",".join("?" * len(m_code_strongs))
@@ -184,13 +185,16 @@ def _verse_cluster_agnostic_coverage(conn, verse_refs: list[str]) -> dict[str, d
     front-loading check here too (#1824 v18): a later cluster's pass touching an already-fully-
     read verse must not re-derive M0.7 for it either.
 
-    Front-loading companion to that broadening (mirrors `_strongs_needing_battery`'s own
-    established pattern, #1723/#1820) -- but scoped PER VERSE, not globally-once: unlike M0.1/M0.5
-    (a word-invariant fact), a word's own per-verse questions can genuinely differ verse to verse
-    (#1723's own established principle), so "already answered" here means "already answered FOR
-    THIS VERSE", never "answered anywhere, ever". Returns {verse_osis: {strong: {question_code
-    already live for that verse+strong, any cluster's pass}}} across all four cluster-agnostic
-    per-verse question types (M0.6.5, M0.6.6, D7.7.1, M0.7.1-16)."""
+    2026-09-23 correction, researcher verbatim: "Every word observation answer must be at span
+    (word in verse context) level. Saying that you can resolve the observation question without
+    looking at the verse/span/morph means it is a generic answer." M0.1/M0.5 joined this SAME
+    per-verse (never globally-once) front-loading check on that date -- `_strongs_needing_battery`
+    and its "word-invariant fact, answered once ever" premise are RETIRED for these codes (this
+    docstring's own prior claim that M0.1/M0.5 are word-invariant was the defect being corrected,
+    not a reason to keep treating them differently from the other four). "Already answered" now
+    means "already answered FOR THIS VERSE" for all five question families uniformly -- M0.6.5,
+    M0.6.6, D7.7.1, M0.7.1-16, and M0.1.x/M0.5.x. Returns {verse_osis: {strong: {question_code
+    already live for that verse+strong, any cluster's pass}}}."""
     if not verse_refs:
         return {}
     ph = ",".join("?" * len(verse_refs))
@@ -199,7 +203,8 @@ def _verse_cluster_agnostic_coverage(conn, verse_refs: list[str]) -> dict[str, d
         f"FROM ib_node n JOIN ib_observation o ON o.id = n.observation_id "
         f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
         f"AND (o.question_code IN ('M0.6.5', 'M0.6.6', 'D7.7.1', 'M0.8.1') "
-        f"OR o.question_code LIKE 'M0.7%') "
+        f"OR o.question_code LIKE 'M0.7%' "
+        f"OR o.question_code LIKE 'M0.1%' OR o.question_code LIKE 'M0.5%') "
         f"AND n.verse_reference IN ({ph})", verse_refs).fetchall()
     out: dict[str, dict[str, set[str]]] = {}
     for r in rows:
@@ -285,18 +290,23 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int],
             verse_entry["elevation_candidate_words"] = sorted(elevation_candidates_by_verse[vid])
         verses_out.append(verse_entry)
 
-    # #1723 front-loading, corrected #1820 (2026-09-21 -- confirmed live, not just theorised:
-    # H3034/M0.1.1 sampled 8 answers across different verses, every one restating the same root
-    # meaning/essential-nature claim in slightly different words -- a real word-level fact re-
-    # derived at full LLM cost on every verse-batch that happened to touch it, near-zero marginal
-    # value past the first answer). M0.1/M0.5 only needs answering ONCE per strong, ever -- the
-    # same skip-check `_strongs_needing_battery` already applies to front-loaded non-members now
-    # also applies to this cluster's OWN home strongs. `meaning_sources_by_strong` stays populated
-    # for EVERY home strong regardless of battery status -- M0.6.5/M0.6.6/D7.7.1 are answered for
-    # home strongs unconditionally and need that meaning context for their own reasoning even when
-    # the word-level battery itself is being skipped this pass.
-    home_needs_battery = _strongs_needing_battery(conn, cluster_member_strongs)
-    other_needs_battery = _strongs_needing_battery(conn, all_m_code_strongs - cluster_member_strongs)
+    # #1723/#1820's "once ever per strong" front-loading (2026-09-17/21) is RETIRED for M0.1/M0.5,
+    # 2026-09-23 -- researcher correction, verbatim: "Every word observation answer must be at span
+    # (word in verse context) level. Saying that you can resolve the observation question without
+    # looking at the verse/span/morph means it is a generic answer." #1820's own finding (8 answers
+    # for H3034/M0.1.1 across different verses, all restating the same claim) was read backwards at
+    # the time -- that's independently-grounded convergence, exactly what SHOULD happen when the
+    # same root fact holds across occurrences, and `recordingpass.py`'s dedup consolidates it into
+    # one shared observation at write time. What must not happen is skipping the generation itself
+    # because a strong already has an answer from a DIFFERENT occurrence -- that was never
+    # confirming convergence, it was assuming it. `home_needs_battery`/`other_needs_battery` below
+    # now mean "every M-code strong in scope, full stop" (every verse's own occurrence is asked);
+    # the per-verse gate that actually decides whether THIS verse's copy is still needed lives in
+    # `already_covered`/`checklist_items` (`_verse_cluster_agnostic_coverage`, updated same date).
+    # `meaning_sources_by_strong` stays populated for EVERY M-code strong, unconditionally -- same
+    # as before, just no longer gated on a battery-skip that no longer exists.
+    home_needs_battery = set(cluster_member_strongs)
+    other_needs_battery = all_m_code_strongs - cluster_member_strongs
     word_battery_strongs = home_needs_battery | other_needs_battery
     # Broadened to every M-code strong (was cluster_member_strongs | other_needs_battery) --
     # M0.6.5/M0.6.6/D7.7.1 now reason about EVERY M-code word in the verse (see below), not just
@@ -398,20 +408,14 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
     q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
     tag_guidance_text = guidance_block(tag_values)
     word_battery_strongs = sorted(set(home_needs_battery) | set(other_needs_battery))
-    already_settled = sorted(set(home_strongs) - set(home_needs_battery))
-    front_load_note = (
-        f" Of {word_battery_strongs}, {other_needs_battery} are NOT this cluster's own member "
-        f"strongs -- they are other M-code words present in the same verses that have no word-"
-        f"level battery answered yet anywhere; answer M0.1/M0.5 for them too (front-loading, so a "
-        f"LATER cluster's own pass over these same verses doesn't have to re-derive them)."
-        if other_needs_battery else "")
-    settled_note = (
-        f" {already_settled} already have a complete M0.1/M0.5 battery from an earlier pass "
-        f"(#1820: re-answering these produces near-zero new information at full LLM cost -- "
-        f"confirmed live, repeat answers just restate the same root-meaning/essential-nature claim "
-        f"in different words) -- do NOT answer M0.1/M0.5 for them again; their `meaning_sources` "
-        f"are given only so you can reason about them for M0.6.5/M0.6.6/D7.7.1."
-        if already_settled else "")
+    # 2026-09-23: "front-loading"/"already settled, don't re-answer" RETIRED -- researcher
+    # correction, verbatim: "Every word observation answer must be at span (word in verse context)
+    # level. Saying that you can resolve the observation question without looking at the
+    # verse/span/morph means it is a generic answer." M0.1/M0.5 now use the SAME uniform population
+    # and the SAME per-verse `already_covered` gate as M0.6.5/M0.6.6/D7.7.1/M0.7 -- no separate
+    # notes needed, the shared instruction text below already covers it.
+    front_load_note = ""
+    settled_note = ""
     return (
         f"You are producing verse-reading observations for cluster {cluster_code}, the pre-"
         f"subgroup Layer 2 pass (`lexical.meaning`). You are given, per verse: the verse's own base "
@@ -444,12 +448,26 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"own 'record none'/could-not-resolve convention instead of omitting it) and no more (never "
         f"add a (verse, strong, question_code) combination not listed in `expected_items`).\n\n"
         f"Method rules governing this task:\n{rules_text}\n\n"
-        f"THREE KINDS OF QUESTION, answered differently:\n"
-        f"- M0.1/M0.5 (word-level battery, including the new M0.5.11 alternative-meaning question): "
-        f"answer ONLY for {word_battery_strongs} -- strongs with NO word-level battery answered "
-        f"anywhere yet. This is NOT the same set as `meaning_sources_by_strong`'s own keys: some "
-        f"of this cluster's own home strongs already have a complete battery from an earlier pass "
-        f"and are listed there for relational context only, not for you to re-answer M0.1/M0.5.\n"
+        f"TWO KINDS OF QUESTION, answered the same way:\n"
+        f"- M0.1/M0.5 (word-level battery): answer for EVERY M-code strong present in "
+        f"`roles_in_verse` for each verse -- {word_battery_strongs} this batch -- the SAME "
+        f"population as M0.6.5/M0.6.6/D7.7.1/M0.7 below, EXCEPT any (strong, question_code) pair "
+        f"already listed in that verse's own `already_covered` (skip those, another pass already "
+        f"answered them for this exact verse). SPAN-GROUNDED, NOT GENERIC (researcher, "
+        f"2026-09-23): your answer must be resolvable ONLY by looking at THIS occurrence's own "
+        f"surface/morph_code within THIS verse -- if you could answer it identically without ever "
+        f"reading the verse (a bare dictionary fact about the lemma), you have answered the wrong "
+        f"question. Two genuinely different occurrences of the same strong may legitimately produce "
+        f"the same or different answers; that is decided by what each occurrence actually shows, "
+        f"never assumed either way in advance. ACTIVELY ENGAGE WITH THE SURFACE FORM (researcher, "
+        f"2026-09-23): `surface` and `morph_code` are given for THIS occurrence, not as bookkeeping "
+        f"-- if this word's actual rendering/inflection here is not the term's most typical or "
+        f"expected form, that is a real signal, not noise: a translator chose that specific "
+        f"rendering because the verse's own context called for it. Treat a marked or unusual "
+        f"surface form as a direct prompt to look harder at what THIS context is doing differently, "
+        f"the same way M0.5.11 already asks you to notice when an occurrence's sense diverges from "
+        f"the term's usual one -- the surface form is often the visible trace of exactly that "
+        f"divergence, not a separate fact to ignore while answering the meaning question.\n"
         f"- M0.6.5 (relational), M0.6.6 (whole-network), and D7.7.1 (operation-permeability): "
         f"answer for EVERY M-code strong present in `roles_in_verse` for each verse (#1824 v14, "
         f"corrected 2026-09-22 -- these are cluster-agnostic, same population as M0.1/M0.5/M0.7, "
@@ -485,27 +503,26 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"process (not you) reconciles any residual repeated findings across occurrences -- your "
         f"job is an accurate, concise reading of THIS verse only, not deciding whether it "
         f"duplicates another.\n"
-        f"- M0.8.1 (T2/T3 elevation candidacy, `#1836`, rare): answer ONLY for a verse's own "
-        f"`elevation_candidate_words` list, if present (a word tagged T2 or T3 in `roles_in_verse` "
-        f"but with NO M-code role at all -- do not answer this for any M-code word). Ask: does "
-        f"this word's role HERE suggest it names its own distinct inner-being characteristic, not "
-        f"just a supporting role (manner, operation-word, qualifier)? This should be rare -- most "
-        f"T2/T3 words are genuinely supporting roles; record none unless the case is real. If yes, "
-        f"tag `elevation-candidate` and state the reason in `obs_text`; this only surfaces the "
-        f"candidate for a later human review, it never changes any cluster/role assignment itself.\n\n"
+        f"- M0.8.1 (T2/T3 attention flag, `#1836`/2026-09-23 simplification, rare): answer ONLY "
+        f"for a verse's own `elevation_candidate_words` list, if present (a word tagged T2 or T3 "
+        f"in `roles_in_verse` but with NO M-code role at all -- do not answer this for any M-code "
+        f"word). This is a plain flag, not a ruling: is this word's behavior HERE significant "
+        f"enough on its own terms to deserve a closer look, independent of its current supporting "
+        f"role? Most T2/T3 words are genuinely just supporting roles; record none unless the case "
+        f"is real. If yes, tag `elevation-candidate` and state briefly why in `obs_text` -- this "
+        f"only surfaces the word for a later human look, it never changes any cluster/role "
+        f"assignment itself.\n\n"
         f"Answer these catalogue questions:\n{q_text}\n\n"
         f"Valid `tag` values: {tag_values}\n"
         f"{tag_guidance_text}\n\n"
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- You are given exactly {len(verse_refs)} verse(s), listed at the end of this message. "
         f"Every `verse` value you write MUST be one of exactly those.\n"
-        f"- Every `strong` value you write for M0.1/M0.5 must be one of {word_battery_strongs} "
-        f"(NOT merely a key of `meaning_sources_by_strong` -- that set is broader, includes "
-        f"already-settled strongs given for relational context only); for M0.6.5/M0.6.6/D7.7.1/"
-        f"M0.7.1-16 it must be any M-code strong actually present in that verse's own "
-        f"`roles_in_verse` (any `cluster_codes` entry starting with \"M\") -- the SAME population "
-        f"for all four, regardless of home-cluster membership (#1824 v14) -- minus whatever that "
-        f"verse's own `already_covered` already lists, for all four question types (#1824 v18). "
+        f"- Every `strong` value you write for M0.1/M0.5/M0.6.5/M0.6.6/D7.7.1/M0.7.1-16 must "
+        f"be any M-code strong actually present in that verse's own `roles_in_verse` (any "
+        f"`cluster_codes` entry starting with \"M\") -- the SAME population for all of these, "
+        f"regardless of home-cluster membership (#1824 v14, extended to M0.1/M0.5 2026-09-23) -- "
+        f"minus whatever that verse's own `already_covered` already lists. "
         f"D7.7.1 only applies when an operation-tagged (role-T3) word is actually "
         f"present in the verse -- no additional party-tag requirement. For M0.8.1, `strong` must "
         f"be one of that verse's own `elevation_candidate_words` ONLY (never an M-code strong) -- "
