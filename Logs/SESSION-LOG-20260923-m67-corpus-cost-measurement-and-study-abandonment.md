@@ -117,4 +117,6 @@ fixed in the split's code.
 
 ## Git state (this log's own completion trigger)
 
-To be confirmed after commit and push (see below).
+Confirmed live: branch `main`, commit `5f1c85bab1b154bed7a69cac13b10af2587cb296` (2026-09-23
+12:32:40 +0100), `git push` succeeded (`01b50ccf..5f1c85ba main -> main`), `git status --short`
+clean immediately after push.
