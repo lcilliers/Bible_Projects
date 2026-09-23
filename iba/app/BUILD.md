@@ -16390,3 +16390,83 @@ design do what it was approved to do. Verified live, concretely, not just in the
 `fully_covered_verse_ids` — it will be picked up by the next normal (non-Force) rerun instead of
 silently skipped. Files: `iba/app/migration/withdraw_stale_word_level_observations_v1_20260923.py`
 (new).
+
+## 328. Word-level/relational Stage 1 split — `lexical.relational` built, readiness-gated, live-tested; real `ib_node.cluster_code` NOT NULL bug found and fixed (2026-09-23, researcher-directed, escalation #1860)
+
+Escalation #1860, approved v3 (researcher, verbatim): *"proceed with split... The object is that
+the word observations is run corpus wide for all verses, and that the observations quality is
+correct for the relational phase. worse result would be that relational quality is compromised and
+the base data must in any case be included for relational phase to be successful."* Full design:
+`iba/docs/1860-word-relational-split-build-plan-v1-20260923.md`.
+
+**Split.** `lexical.meaning` (ordinal 6) narrowed to word-level only (`M0.1`/`M0.5` incl.
+`M0.5.11`). New `lexical.relational` (ordinal 7, `iba.app.handlers.lexical:relational`) covers
+`M0.6.5`/`M0.6.6`/`D7.7.1`/`M0.7.1-16`/`M0.8.1`. Both write `ib_observation`/`ib_node` with
+`stage='verse-reading'` unchanged — this is a `cfg_step`/handler split, not a new analytical stage.
+
+**Readiness gate** (`stage1coverage.missing_word_level_coverage`): `lexical.relational` hard-refuses
+(same shape as `lexical.build`'s stale-role check / `lexical.readiness`'s FATAL stop, not a silent
+skip) to run against any verse whose M-code words don't all have a committed word-level observation
+yet — verified live against M67 (56 real gaps under today's own span-grounded population rules,
+correctly blocked) and against a verse with word-level coverage just written (correctly passed).
+
+**Grounding, corrected from Claude's own v1 draft by the researcher's approval caveat.**
+`lexical.relational` sends the COMMITTED word-level `ib_observation` findings
+(`versereadinggenerate._word_level_findings`, keyed by exact verse+strong) as its primary
+grounding, ALONGSIDE the raw lexicon (`meaning_sources_by_strong`) — not instead of it, per "the
+base data must in any case be included."
+
+**Code:** `stage1coverage.py` (`family` param on `expected_nodes`/`validate_coverage`/
+`fully_covered_verse_ids`; new `missing_word_level_coverage`) · `versereadinggenerate.py`
+(`assemble_batch_package` split into `assemble_word_level_batch_package`/
+`assemble_relational_batch_package`, sharing `_scan_verses`/`_build_verses_out`/
+`_apply_already_covered`/`_build_checklist`/`_cost_estimate`; new `_word_level_findings`; prompt
+builder split into `_word_level_instructions`/`_relational_instructions`) · `handlers/lexical.py`
+(`meaning()` narrowed; new `relational()` mirrors its batch/cost/resume structure, adds the
+readiness gate, and **moves** the `cluster.status` `t_cluster_assignment_completed ->
+ready_for_subgroup_allocation` transition check here — the true final stage of verse-reading now).
+
+**Config** (`iba/app/migration/split_lexical_meaning_word_relational_v1_20260923.py`, applied as one
+authorized migration per this project's own multi-row-config-build precedent, not ~20 individual
+`Config-Maintenance.ps1 Propose` cycles for one already-approved architectural change): `cfg_step`
+insert + retext; 3 `cfg_write_grant` rows; 9 cross-cutting `cfg_method_rule` rows duplicated onto
+`lexical.relational`; `answers-M0.1-M0.5-D7.7` retexted word-level-only; new
+`answers-relational-family`/`grounds-on-committed-word-level-observations`/
+`relational-readiness-gate` rules; `cluster-status-2to3-transition-verse-reading-complete` moved
+(deactivated on `lexical.meaning`, active on `lexical.relational`); `cfg_setting
+lexical.relational_max_verses_per_batch=1`. `configmaint.validate` clean afterward (no new findings
+attributable to this change). `stage1coverage.py` also registered in `cfg_utility`
+(config_exempt=1, same shape as `pathaudit.py`) — a pre-existing registration gap the validator
+surfaced while this file was being extended, fixed in the same pass rather than left open.
+
+**Real bug found and fixed by this build's own live testing, unrelated to the split itself:**
+`recordingpass._insert_node` was passing `effective_cluster_code` (correctly `None` for
+word-level observations' OWNERSHIP, per today's earlier #1852/#1853 cluster-agnostic rework) into
+`ib_node.cluster_code`, which is NOT NULL and means something different (which cluster's PASS
+cited this occurrence — always a real value). This crashed every word-level write with
+`IntegrityError: NOT NULL constraint failed: ib_node.cluster_code` the moment a real LLM answer
+arrived — never caught before because M67's only prior word-level backfill ran BEFORE the
+#1852/#1853 change existed. Fixed: `_insert_node` now receives the pass's own `cluster_code`, not
+`effective_cluster_code`. One orphaned `ib_observation` row from the crashed test call (committed
+as a side effect of `batchcontrol.fail_batch`'s own commit; confirmed zero references from any
+other table) was deleted before retesting.
+
+**Live-tested end to end** (2Cor.8.8, M67, `-Force` on both to guarantee a real call): word-level
+$0.2232, 52 new observations, coverage 0 missing/0 unexpected/2 over-count (pre-existing
+duplication, informational). Relational $0.3055, 81 aligned-superficial-edit (matched/updated
+M67's own pre-split legacy data), coverage 0 missing/0 unexpected/24 over-count (same pre-existing
+legacy duplication class the validator already surfaces, not a regression). `cluster.status` check
+ran clean at the moved call site (M67 already past ordinal 2, correctly a no-op).
+
+**Not done here:** corpus-wide `lexical.meaning` execution (the researcher's stated objective — run
+word observations for all verses) is a separate, larger cost decision, same pattern as every prior
+full-cluster/full-corpus backfill this session (M67, M49) — reported back for a go-ahead, not run
+unattended as part of this build. `iba/docs/ps tools worksheet.xlsx` sync for the new
+`RelationalReading.ps1` entry point (governance.ps_worksheet_sync_on_change) flagged, not applied —
+warned before writing to that file per standing guidance on its Excel-open crash risk.
+
+Files: `iba/app/lib/stage1coverage.py`, `iba/app/lib/versereadinggenerate.py`,
+`iba/app/handlers/lexical.py`, `iba/app/lib/recordingpass.py` (bug fix) (all changed);
+`iba/app/migration/split_lexical_meaning_word_relational_v1_20260923.py`,
+`iba/app/ps/RelationalReading.ps1`,
+`iba/docs/1860-word-relational-split-build-plan-v1-20260923.md` (all new).

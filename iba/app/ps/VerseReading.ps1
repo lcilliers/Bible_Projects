@@ -1,10 +1,15 @@
 <#
 .SYNOPSIS
-    The `verse-reading` stage (`lexical.meaning`, escalation #1706 Phase C pipeline stage 1) --
-    per-cluster, pre-subgroup Layer 2 lexical-observation + lexical-question-answering pass.
-    Standalone single-step entry point onto the `verse-lexical` work package's `lexical.meaning`
-    step (ordinal 6) -- this step didn't have a PS entry point until now, found live building this
-    (`cfg_behaviour_rule` `every-interactive-module-needs-ps-script`).
+    The `verse-reading` stage's WORD-LEVEL half (`lexical.meaning`, escalation #1706 Phase C
+    pipeline stage 1; narrowed to word-level-only by the #1860 split, 2026-09-23) -- per-cluster,
+    pre-subgroup Layer 2 pass answering M0.1 (Name and Naming) + M0.5 (Lexical and Semantic
+    Analysis) only. Standalone single-step entry point onto the `verse-lexical` work package's
+    `lexical.meaning` step (ordinal 6) -- this step didn't have a PS entry point until now, found
+    live building this (`cfg_behaviour_rule` `every-interactive-module-needs-ps-script`).
+
+    Run `RelationalReading.ps1` (`lexical.relational`) next for the same cluster once this has
+    covered its verses -- the relational family (M0.6.5/M0.6.6/D7.7.1/M0.7/M0.8.1) moved there,
+    with a readiness gate requiring this step's own output first.
 
 .DESCRIPTION
     Resolves the cluster's full member-strong list, then every verse those strongs occur in, then

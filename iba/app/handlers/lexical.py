@@ -851,7 +851,8 @@ def meaning(ctx: Ctx) -> Outcome:
     # precisely to re-examine already-covered material) -- never applied together.
     fully_covered_ids: set = set()
     if not force:
-        fully_covered_ids = stage1coverage.fully_covered_verse_ids(conn, cluster_code, verse_ids)
+        fully_covered_ids = stage1coverage.fully_covered_verse_ids(
+            conn, cluster_code, verse_ids, family="word_level")
         if fully_covered_ids:
             verse_ids = [v for v in verse_ids if v not in fully_covered_ids]
     if not verse_ids:
@@ -880,7 +881,8 @@ def meaning(ctx: Ctx) -> Outcome:
 
     for idx, chunk in enumerate(chunks):
         chunk_label = f"{idx + 1}/{len(chunks)}"
-        package = versereadinggenerate.assemble_batch_package(ctx, cluster_code, chunk, force=force)
+        package = versereadinggenerate.assemble_word_level_batch_package(
+            ctx, cluster_code, chunk, force=force)
         content_key = batchcontrol.content_key([str(v) for v in chunk])
         already_done = batchcontrol.already_committed(
             conn, "lexical.meaning", cluster_code, content_key)
@@ -977,25 +979,22 @@ def meaning(ctx: Ctx) -> Outcome:
                  preview=True, batches=batch_summaries, cluster_code=cluster_code,
                  verse_count=len(verse_ids), strong_count=len(strongs), force=force)
 
-    # Every live (non-preview) call resolves the CLUSTER's full verse-id list (no partial/manual
-    # selector exists on this step) -- so reaching here means the whole cluster was just attempted,
-    # making this the right, and only, point to check verse-reading completeness and advance
-    # cluster.status. Found live 2026-09-17 building this: the ordinal-2 -> ordinal-3
-    # (ready_for_subgroup_allocation) transition #1697 designed was never actually built anywhere
-    # -- every one of the 80 live clusters was still sitting at the one-time backfill state. See
-    # lib/clusterstatus.py's own module docstring for the full finding.
-    status_result = clusterstatus.advance_if_verse_reading_complete(conn, cluster_code)
-    conn.commit()
+    # cluster.status advancement MOVED to `relational()` (escalation #1860, 2026-09-23 split) --
+    # `lexical.relational` is now the true final stage of verse-reading (word-level -> relational),
+    # so that's the only correct point to check completeness and advance ordinal 2 -> 3. A
+    # `lexical.meaning` (word-level-only) run no longer touches cluster.status at all.
 
     # LLM validation check (#1824 v14, researcher instruction 2026-09-22, verbatim: "stage 1 need
     # to pre-calculate the expected result for each scope, and measure the result received from
     # llm as the llm validation check"). Runs against the FULL requested verse_ids scope (not just
     # the batches that got a fresh call this time -- -Force-skipped-vs-not doesn't change what
-    # SHOULD exist), read-only, no LLM call of its own. Full per-row detail persisted to a report
-    # (governance.reports_must_persist); the summary counts are folded into this call's own
-    # message text so they survive into `run.outcome` (the counts dict itself is not persisted --
-    # same gap BUILD.md #274 already flagged for `unresolved_note` above).
-    coverage = stage1coverage.validate_coverage(conn, cluster_code, verse_ids)
+    # SHOULD exist), read-only, no LLM call of its own. Scoped to family="word_level" (#1860) --
+    # this step never writes the relational codes, so they must not be reported MISSING here.
+    # Full per-row detail persisted to a report (governance.reports_must_persist); the summary
+    # counts are folded into this call's own message text so they survive into `run.outcome` (the
+    # counts dict itself is not persisted -- same gap BUILD.md #274 already flagged for
+    # `unresolved_note` above).
+    coverage = stage1coverage.validate_coverage(conn, cluster_code, verse_ids, family="word_level")
     # Config-defined path (escalation #1824 governance audit, 2026-09-22) -- was a hardcoded
     # f-string, which governance.reports_must_persist's own "config-defined report path"
     # requirement doesn't actually allow; report.stage1_coverage_validation_pattern registered to
@@ -1026,6 +1025,223 @@ def meaning(ctx: Ctx) -> Outcome:
     # `run` table), so anything not folded into the message is lost the moment this process exits.
     # Found live 2026-09-17 needing to re-call a live API a second time, at real cost, just to see
     # why Stage 2's own observations had failed -- the exact gap BUILD.md #274 first flagged here.
+    unresolved_note = (f", {unresolved_n} unresolved occurrence(s): "
+                       f"{'; '.join(record_summary['unresolved_detail'][:5])}"
+                       f"{' ...' if unresolved_n > 5 else ''}") if unresolved_n else ""
+    skipped_note = f", {skipped_batches} batch(es) skipped (already committed)" if skipped_batches else ""
+    fully_covered_note = (f", {len(fully_covered_ids)} verse(s) excluded entirely (already fully "
+                         f"covered by an earlier pass)" if fully_covered_ids else "")
+    return ok(f"{cluster_code}: {len(chunks)} batch(es){skipped_note}{fully_covered_note}, "
+             f"${total_cost:.4f} spent, "
+             f"observations {record_summary['by_action']}{unresolved_note}"
+             f"{coverage_note}; word-level only -- run lexical.relational next for this cluster",
+             preview=False, batches=batch_summaries, llm_calls=llm_summary,
+             record_summary=record_summary, cluster_code=cluster_code,
+             skipped_batches=skipped_batches, coverage=coverage,
+             fully_covered_verse_count=len(fully_covered_ids))
+
+
+def relational(ctx: Ctx) -> Outcome:
+    """`lexical.relational` (escalation #1860, 2026-09-23 word-level/relational split) -- the
+    relational half of the former single `lexical.meaning`: M0.6.5/M0.6.6/D7.7.1/M0.7.1-16/M0.8.1.
+    Mirrors `meaning()`'s batch/cost/resume/coverage-validation structure closely (same cost-preview
+    discipline, same resume-by-content-hash, same whole-verse-exclusion optimisation), with two
+    differences: (1) a hard readiness gate refuses to run against any verse whose M-code words
+    don't all have committed word-level (`lexical.meaning`) observations yet -- relational grounds
+    on those findings, it must not run ahead of them; (2) the `cluster.status`
+    `t_cluster_assignment_completed -> ready_for_subgroup_allocation` transition check, which lived
+    in `meaning()` before the split, moves here -- this is the true final stage of verse-reading
+    now."""
+    _may(ctx, "lexical.relational", "ib_observation")
+    _may(ctx, "lexical.relational", "ib_node")
+    _may(ctx, "lexical.relational", "run_batch")
+
+    cluster_code = ctx.params.get("ClusterCode")
+    if not cluster_code:
+        return fail("bad-selector", "-ClusterCode is required")
+    preview_raw = ctx.params.get("Preview", "true")
+    preview = str(preview_raw).strip().lower() not in ("false", "0", "no")
+    force_raw = ctx.params.get("Force", "false")
+    force = str(force_raw).strip().lower() in ("true", "1", "yes")
+
+    conn = ctx.db.conn
+    try:
+        strongs = lexicalscope.resolve_strongs(conn, cluster_code=cluster_code)
+    except ValueError as e:
+        return fail("bad-selector", str(e))
+    verse_list_raw = ctx.params.get("VerseList")
+    if verse_list_raw:
+        refs = [x.strip() for x in verse_list_raw.split(",") if x.strip()]
+        try:
+            verse_ids = lexicalscope.resolve_verse_ids_for_refs(conn, refs)
+        except ValueError as e:
+            return fail("bad-selector", str(e))
+    else:
+        verse_ids = lexicalscope.resolve_verse_ids_for_strongs(conn, strongs)
+    if not verse_ids:
+        return fail("no-verses", f"{cluster_code} resolved to 0 verses")
+
+    stale = lexical.stale_role_strongs_for_cluster(conn, cluster_code, strongs)
+    if stale:
+        return fail("layer1-stale",
+                   f"{len(stale)} of {len(strongs)} member strong(s) have live verse_lexical rows "
+                   f"that never carry {cluster_code!r} in role, despite cluster_strong currently "
+                   f"listing them as members -- Layer 1 is stale for this cluster (#1719). Re-run "
+                   f"lexical.build for the verses containing these strongs before verse-reading: "
+                   f"{stale}")
+
+    # Readiness gate (#1860, 2026-09-23): hard stop, same shape as the Layer1-stale check above and
+    # `lexical.readiness`'s own FATAL stop -- relational grounds on committed word-level findings
+    # (versereadinggenerate._word_level_findings), so it refuses to run at all against a verse
+    # whose M-code words don't already have them, rather than silently proceeding with thinner
+    # grounding for that verse.
+    if not force:
+        gaps = stage1coverage.missing_word_level_coverage(conn, cluster_code, verse_ids)
+        if gaps:
+            sample = gaps[:15]
+            return fail("word-level-incomplete",
+                       f"{len(gaps)} (verse, strong) word-level gap(s) in the requested scope -- "
+                       f"lexical.relational refuses to run until every M-code word has a committed "
+                       f"lexical.meaning observation. Run lexical.meaning for {cluster_code} (or "
+                       f"the relevant verses) first. Sample: "
+                       f"{[(g['verse_reference'], g['strong']) for g in sample]}"
+                       f"{' ...' if len(gaps) > 15 else ''}")
+
+    fully_covered_ids: set = set()
+    if not force:
+        fully_covered_ids = stage1coverage.fully_covered_verse_ids(
+            conn, cluster_code, verse_ids, family="relational")
+        if fully_covered_ids:
+            verse_ids = [v for v in verse_ids if v not in fully_covered_ids]
+    if not verse_ids:
+        return ok(f"{cluster_code}: all {len(fully_covered_ids)} requested verse(s) are already "
+                 f"fully covered (every expected question answered by an earlier pass) -- "
+                 f"nothing to do. Use -Force to re-examine them anyway.",
+                 preview=preview, cluster_code=cluster_code,
+                 fully_covered_verse_count=len(fully_covered_ids))
+
+    max_verses = int(ctx.cfg.setting("lexical.relational_max_verses_per_batch", 1))
+    max_cost_per_batch = float(ctx.cfg.setting("lexical.llm_max_cost_per_batch", 1.00))
+    chunks = _chunk_verses_fixed_size(verse_ids, max_verses)
+
+    batch_summaries = []
+    llm_summary = []
+    record_summary = {"by_action": {}, "unresolved_occurrence_count": 0, "unresolved_detail": []}
+    skipped_batches = 0
+
+    for idx, chunk in enumerate(chunks):
+        chunk_label = f"{idx + 1}/{len(chunks)}"
+        package = versereadinggenerate.assemble_relational_batch_package(
+            ctx, cluster_code, chunk, force=force)
+        content_key = batchcontrol.content_key([str(v) for v in chunk])
+        already_done = batchcontrol.already_committed(
+            conn, "lexical.relational", cluster_code, content_key)
+        batch_summaries.append({
+            "chunk": chunk_label, "verses": package["verse_count"],
+            "cluster_member_strongs": package["cluster_member_strong_count"],
+            "est_input_tokens": package["est_input_tokens"],
+            "est_cost_usd": package["est_cost_usd"],
+            "already_committed": already_done})
+        if package["est_cost_usd"] > max_cost_per_batch:
+            return fail("cost-cap-exceeded",
+                       f"chunk {chunk_label} ({package['verse_count']} verses) estimated cost "
+                       f"${package['est_cost_usd']:.2f} exceeds lexical.llm_max_cost_per_batch "
+                       f"(${max_cost_per_batch:.2f}) -- raise the cap via configmaint.propose or "
+                       f"narrow the selector")
+        if preview:
+            continue
+
+        if already_done and not force:
+            skipped_batches += 1
+            continue
+
+        batch_id = batchcontrol.start_batch(
+            conn, ctx.run_id, "verse-lexical", "lexical.relational", cluster_code, idx + 1,
+            content_key)
+        try:
+            try:
+                result = versereadinggenerate.call_api(ctx, package)
+            except versereadinggenerate.ApiKeyMissing as e:
+                batchcontrol.fail_batch(conn, batch_id, str(e))
+                return fail("api-key-missing", str(e))
+            except versereadinggenerate.ApiCallFailed as e:
+                batchcontrol.fail_batch(conn, batch_id, str(e))
+                return fail("api-error", f"chunk {chunk_label}: {e}")
+            rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+            rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+            real_cost = (result["input_tokens"] / 1_000_000 * rate_in +
+                        result["output_tokens"] / 1_000_000 * rate_out)
+            versereadinggenerate.log_usage(
+                ctx.cfg, ctx.run_id, chunk_label, package["model"], result["input_tokens"],
+                result["output_tokens"], real_cost)
+            llm_summary.append({"chunk": chunk_label, "verses": package["verse_count"],
+                                "input_tokens": result["input_tokens"],
+                                "output_tokens": result["output_tokens"],
+                                "cost_usd": round(real_cost, 4)})
+
+            try:
+                parsed = versereadinggenerate.parse_response(result["text"])
+            except versereadinggenerate.BadModelResponse as e:
+                conn.rollback()
+                batchcontrol.fail_batch(conn, batch_id, f"bad-model-response: {e}")
+                return fail("bad-model-response", f"chunk {chunk_label}: {e}")
+
+            chunk_record = recordingpass.record_batch(
+                conn, cluster_code, "verse-reading", parsed, source_json_serial=idx + 1,
+                similarity_threshold=float(ctx.cfg.setting("cluster.recording_similarity_threshold", 0.85)))
+            conn.commit()
+        except Exception as e:
+            batchcontrol.fail_batch(conn, batch_id, f"{type(e).__name__}: {e}")
+            raise
+        batchcontrol.commit_batch(conn, batch_id, cost_usd=round(real_cost, 4))
+        for action, n in chunk_record["by_action"].items():
+            record_summary["by_action"][action] = record_summary["by_action"].get(action, 0) + n
+        record_summary["unresolved_occurrence_count"] += chunk_record["unresolved_occurrence_count"]
+        record_summary["unresolved_detail"] += chunk_record["unresolved_detail"]
+
+    if preview:
+        already_n = sum(1 for b in batch_summaries if b["already_committed"])
+        total_cost = sum(b["est_cost_usd"] for b in batch_summaries
+                         if force or not b["already_committed"])
+        already_note = ("" if not already_n else
+                        f", {already_n} of {len(chunks)} already committed by a prior run "
+                        f"({'will be RE-RUN, -Force is set' if force else 'will be skipped'})")
+        fully_covered_note = (f", {len(fully_covered_ids)} verse(s) excluded entirely (already "
+                             f"fully covered by an earlier pass)" if fully_covered_ids else "")
+        return ok(f"PREVIEW {cluster_code}: {len(chunks)} batch(es), {len(verse_ids)} verse(s), "
+                 f"{len(strongs)} strong(s), estimated ${total_cost:.4f} total for the "
+                 f"{'forced re-run' if force else 'remaining work'}{already_note}"
+                 f"{fully_covered_note} -- no API call "
+                 f"made, nothing written. Re-run with -Preview:$false to execute for real.",
+                 preview=True, batches=batch_summaries, cluster_code=cluster_code,
+                 verse_count=len(verse_ids), strong_count=len(strongs), force=force)
+
+    # The true final stage of verse-reading (#1860) -- checked and advanced at the end of every
+    # live (non-preview) lexical.relational run against the cluster's full resolved verse list.
+    status_result = clusterstatus.advance_if_verse_reading_complete(conn, cluster_code)
+    conn.commit()
+
+    coverage = stage1coverage.validate_coverage(conn, cluster_code, verse_ids, family="relational")
+    coverage_pattern = ctx.cfg.required_setting("report.stage1_coverage_validation_pattern")
+    coverage_report_path = pathlib.Path(
+        coverage_pattern.format(cluster_code=cluster_code, run_id=ctx.run_id))
+    coverage_report_path.parent.mkdir(parents=True, exist_ok=True)
+    with coverage_report_path.open("w", newline="", encoding="utf-8") as f:
+        w = csv.writer(f)
+        w.writerow(["category", "verse_reference", "strong", "question_code", "live_node_count"])
+        for v, s, q in coverage["missing_sample"]:
+            w.writerow(["MISSING", v, s, q, 0])
+        for v, s, q in coverage["unexpected_sample"]:
+            w.writerow(["UNEXPECTED", v, s, q, ""])
+        for (v, s, q), n in coverage["over_count_sample"]:
+            w.writerow(["OVER_COUNT", v, s, q, n])
+    coverage_note = (f"; validation: {coverage['ok_count']} ok, {coverage['missing_count']} "
+                     f"missing, {coverage['unexpected_count']} unexpected, "
+                     f"{coverage['over_count_count']} over-count (of {coverage['expected_count']} "
+                     f"expected) -- {coverage_report_path}")
+
+    total_cost = sum(c["cost_usd"] for c in llm_summary)
+    unresolved_n = record_summary["unresolved_occurrence_count"]
     unresolved_note = (f", {unresolved_n} unresolved occurrence(s): "
                        f"{'; '.join(record_summary['unresolved_detail'][:5])}"
                        f"{' ...' if unresolved_n > 5 else ''}") if unresolved_n else ""

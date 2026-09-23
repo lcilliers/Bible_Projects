@@ -81,6 +81,7 @@ from .taggingguidance import TAG_GUIDANCE, tags_for_stage, guidance_block  # noq
 
 
 _JSON_FENCE_RE = re.compile(r"```(?:json)?\s*(\{.*\})\s*```", re.DOTALL)
+_JSON_BARE_RE = re.compile(r"(\{.*\})", re.DOTALL)
 _WORD_LEVEL_QUESTION_PREFIXES = ("M0.1", "M0.5")
 
 
@@ -99,7 +100,21 @@ def parse_response(text: str) -> dict:
         # leniency for exactly this case, not custom sanitization.
         parsed = json.loads(candidate, strict=False)
     except json.JSONDecodeError as e:
-        raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")
+        # Fallback (escalation #1866, 2026-09-23): the model sometimes prefixes a short prose
+        # explanation before a bare (unfenced) JSON object, despite the "ONLY a JSON object, no
+        # other text" instruction -- confirmed live: the JSON itself was well-formed (G0703's two
+        # genuinely-different-morph occurrences, correctly handled as separate entries), only the
+        # preamble broke a direct parse. Extract the first '{' through the LAST '}' in the raw
+        # text and retry once before giving up -- same "absorb known LLM formatting variance in
+        # the parser" precedent as the strict=False fix above (#1826), not silent guessing: if
+        # this second attempt also fails, the ORIGINAL error is what's raised, not swallowed.
+        bare = _JSON_BARE_RE.search(text.strip())
+        if bare is None:
+            raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")
+        try:
+            parsed = json.loads(bare.group(1), strict=False)
+        except json.JSONDecodeError:
+            raise BadModelResponse(f"model reply is not valid JSON: {e} -- first 300 chars: {text[:300]!r}")
     if "observations" not in parsed:
         raise BadModelResponse(f"model reply has no 'observations' key: {list(parsed.keys())}")
     return parsed
@@ -137,6 +152,33 @@ def _role_word(row, home_cluster: str) -> dict:
         "cluster_codes": roles,
         "is_home_cluster": home_cluster in roles,
     }
+
+
+def _word_level_findings(conn, verse_refs: list[str]) -> dict[str, dict[str, list[dict]]]:
+    """`lexical.relational`'s primary grounding (escalation #1860, 2026-09-23): committed
+    (non-withdrawn) M0.1/M0.5 `ib_observation` rows for THIS exact verse+strong, span-grounded
+    word-level findings already on record -- what the split's whole design point is (relational
+    reasons FROM established word-level facts, not alongside them being derived in the same
+    breath). Returns {verse_osis: {strong: [{question_code, obs_text}]}}. Does NOT replace
+    `meaning_sources_by_strong` (the raw lexicon) -- the researcher's own approval of the split
+    (#1860 v3) explicitly requires both: "the base data must in any case be included for
+    relational phase to be successful." Matches on `ib_node.verse_reference` (osisId text), same
+    as `_prior_context_for_question`."""
+    if not verse_refs:
+        return {}
+    ph = ",".join("?" * len(verse_refs))
+    rows = conn.execute(
+        f"SELECT n.verse_reference, n.strong, o.question_code, o.obs_text "
+        f"FROM ib_observation o JOIN ib_node n ON n.observation_id=o.id "
+        f"WHERE o.stage='verse-reading' AND o.status != 'withdrawn' "
+        f"AND (o.question_code LIKE 'M0.1%' OR o.question_code LIKE 'M0.5%') "
+        f"AND n.verse_reference IN ({ph}) ORDER BY n.strong, o.question_code",
+        verse_refs).fetchall()
+    out: dict[str, dict[str, list[dict]]] = {}
+    for r in rows:
+        out.setdefault(r["verse_reference"], {}).setdefault(r["strong"], []).append(
+            {"question_code": r["question_code"], "obs_text": r["obs_text"]})
+    return out
 
 
 def _strongs_needing_battery(conn, m_code_strongs: set[str]) -> set[str]:
@@ -230,27 +272,12 @@ def _prior_context_for_question(conn, verse_refs: list[str], question_code: str
     return by_verse
 
 
-def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int],
-                           force: bool = False) -> dict:
-    """One chunk (already capped to <= passage.max_verses by the caller). Never calls the network
-    itself -- returns the package plus a pre-call cost estimate, same two-step separation
-    `lexicalenrichgenerate.assemble_batch_package`/`call_api` already established (cost preview
-    before spend, never silent).
-
-    `force` (2026-09-22, found live testing #1832's cross-strong dedup fix): a `-Force`
-    reconciliation rerun bypasses `batchcontrol.already_committed`'s content-hash skip at the
-    caller level, but the `expected_items` checklist (BUILD #321) still filtered against
-    `already_covered` regardless -- for a verse whose per-occurrence questions are ALL already
-    live-covered (the normal target of a deliberate `-Force` rerun), that produced an EMPTY
-    checklist, and the "answer exactly this list" prompt instruction correctly made the model
-    write ZERO observations while the call still cost real money (confirmed live: $0.29 spent,
-    0 rows written). `force=True` skips the `already_covered` filter entirely (checklist =
-    the FULL expected set, not just the gap) and omits each verse's own `already_covered` field
-    from the payload too, so the model isn't given contradictory "skip this" signals alongside
-    "answer exactly this list"."""
-    conn = ctx.db.conn
+def _scan_verses(conn, cluster_code: str, verse_ids: list[int]) -> dict:
+    """Shared verse/role scan (escalation #1860, 2026-09-23 word-level/relational split) --
+    formerly the first half of the single `assemble_batch_package`, now reused unchanged by both
+    `assemble_word_level_batch_package` and `assemble_relational_batch_package` so the two never
+    drift from each other on what a "verse" or a "role-bearing word" means."""
     ph = ",".join("?" * len(verse_ids))
-
     verse_rows = conn.execute(
         f"SELECT id, osisId, text FROM verse WHERE id IN ({ph}) AND deleted=0", verse_ids).fetchall()
     verse_by_id = {r["id"]: r for r in verse_rows}
@@ -279,6 +306,17 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int],
         elif any(c in ("T2", "T3") for c in roles):
             elevation_candidates_by_verse.setdefault(r["verse_id"], set()).add(r["strong"])
 
+    return {
+        "verse_by_id": verse_by_id, "roles_by_verse": roles_by_verse,
+        "cluster_member_strongs": cluster_member_strongs,
+        "all_m_code_strongs": all_m_code_strongs,
+        "elevation_candidates_by_verse": elevation_candidates_by_verse,
+    }
+
+
+def _build_verses_out(verse_ids: list[int], scan: dict, include_elevation: bool) -> list[dict]:
+    verse_by_id, roles_by_verse = scan["verse_by_id"], scan["roles_by_verse"]
+    elevation_candidates_by_verse = scan["elevation_candidates_by_verse"]
     verses_out = []
     for vid in verse_ids:
         v = verse_by_id.get(vid)
@@ -286,62 +324,37 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int],
             continue
         verse_entry = {
             "verse": v["osisId"], "text": v["text"], "roles_in_verse": roles_by_verse.get(vid, [])}
-        if vid in elevation_candidates_by_verse:
+        if include_elevation and vid in elevation_candidates_by_verse:
             verse_entry["elevation_candidate_words"] = sorted(elevation_candidates_by_verse[vid])
         verses_out.append(verse_entry)
+    return verses_out
 
-    # #1723/#1820's "once ever per strong" front-loading (2026-09-17/21) is RETIRED for M0.1/M0.5,
-    # 2026-09-23 -- researcher correction, verbatim: "Every word observation answer must be at span
-    # (word in verse context) level. Saying that you can resolve the observation question without
-    # looking at the verse/span/morph means it is a generic answer." #1820's own finding (8 answers
-    # for H3034/M0.1.1 across different verses, all restating the same claim) was read backwards at
-    # the time -- that's independently-grounded convergence, exactly what SHOULD happen when the
-    # same root fact holds across occurrences, and `recordingpass.py`'s dedup consolidates it into
-    # one shared observation at write time. What must not happen is skipping the generation itself
-    # because a strong already has an answer from a DIFFERENT occurrence -- that was never
-    # confirming convergence, it was assuming it. `home_needs_battery`/`other_needs_battery` below
-    # now mean "every M-code strong in scope, full stop" (every verse's own occurrence is asked);
-    # the per-verse gate that actually decides whether THIS verse's copy is still needed lives in
-    # `already_covered`/`checklist_items` (`_verse_cluster_agnostic_coverage`, updated same date).
-    # `meaning_sources_by_strong` stays populated for EVERY M-code strong, unconditionally -- same
-    # as before, just no longer gated on a battery-skip that no longer exists.
-    home_needs_battery = set(cluster_member_strongs)
-    other_needs_battery = all_m_code_strongs - cluster_member_strongs
-    word_battery_strongs = home_needs_battery | other_needs_battery
-    # Broadened to every M-code strong (was cluster_member_strongs | other_needs_battery) --
-    # M0.6.5/M0.6.6/D7.7.1 now reason about EVERY M-code word in the verse (see below), not just
-    # this cluster's own home strong(s), so every one of them needs meaning context available,
-    # regardless of word-level battery status.
-    meaning_by_strong = {s: _meaning_sources(conn, s) for s in sorted(all_m_code_strongs)}
 
-    prior_relational = _prior_relational_context(conn, [v["verse"] for v in verses_out])
-    prior_network = _prior_network_context(conn, [v["verse"] for v in verses_out])
-    # #1824 v14/v18 researcher correction, 2026-09-22: M0.6.5/M0.6.6/D7.7.1/M0.7 must all be
-    # cluster-agnostic -- "every M-code word has the same status in the verse and need to be
-    # treated the same" -- and a later cluster's pass over an already-fully-read verse must not
-    # re-derive any of them ("if the second read of the verse finds additional observations then
-    # something went wrong in the first reading"). Front-load skip data (per verse, not globally
-    # -- see _verse_cluster_agnostic_coverage's own docstring) folded straight into each verse's
-    # own dict below so the LLM sees exactly what's already answered for THAT verse without a
-    # second lookup.
+def _apply_already_covered(conn, verses_out: list[dict], force: bool) -> dict:
+    """#1824 v14/v18 researcher correction, 2026-09-22: M0.6.5/M0.6.6/D7.7.1/M0.7 (and, since
+    2026-09-23, M0.1/M0.5) must all be cluster-agnostic and a later pass over an already-fully-
+    read verse must not re-derive any of them. Front-load skip data (per verse, not globally --
+    see `_verse_cluster_agnostic_coverage`'s own docstring) folded straight into each verse's own
+    dict so the LLM sees exactly what's already answered for THAT verse without a second lookup.
+    Shared by both word-level and relational assembly (escalation #1860)."""
     already_covered = {} if force else _verse_cluster_agnostic_coverage(
         conn, [v["verse"] for v in verses_out])
     for v in verses_out:
         covered = already_covered.get(v["verse"], {})
         if covered:
             v["already_covered"] = {s: sorted(qs) for s, qs in covered.items()}
+    return already_covered
 
-    # Researcher instruction (prior session, re-confirmed 2026-09-22): "the expected answer for
-    # each question and strong had to be pre-drafted as part of the stage 1 code" -- BUILD #315
-    # diagnosed a real instruction-compliance gap (non-home M-strongs averaged 7.3/16 M0.7
-    # sub-answers vs home strongs' 100%) and named the fix ("a per-strong checklist rather than a
-    # prose instruction") but never built it. `stage1coverage.expected_nodes()` already computes
-    # the exact (verse, strong, question_code) set this batch SHOULD attempt, using the identical
-    # population/gating rules this module's own prose instructions describe -- reused here
-    # directly (never a second hardcoded copy that could drift from the validator). Filtered
-    # against this same `already_covered` map so the checklist only lists what THIS call must
-    # still answer, matching the skip semantics the prose instructions already describe.
-    expected_all = stage1coverage.expected_nodes(conn, cluster_code, verse_ids)
+
+def _build_checklist(conn, cluster_code: str, verse_ids: list[int], already_covered: dict,
+                     family: str) -> list[dict]:
+    """Researcher instruction (prior session, re-confirmed 2026-09-22): "the expected answer for
+    each question and strong had to be pre-drafted as part of the stage 1 code."
+    `stage1coverage.expected_nodes()` computes the exact (verse, strong, question_code) set this
+    batch SHOULD attempt for the given `family` -- reused here directly (never a second hardcoded
+    copy). Filtered against `already_covered` so the checklist only lists what THIS call must
+    still answer."""
+    expected_all = stage1coverage.expected_nodes(conn, cluster_code, verse_ids, family)
     checklist_items = []
     for r in expected_all:
         covered_qs = already_covered.get(r["verse_reference"], {}).get(r["strong"], set())
@@ -350,12 +363,44 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int],
         checklist_items.append({
             "verse": r["verse_reference"], "strong": r["strong"],
             "question_code": r["question_code"]})
+    return checklist_items
+
+
+def _cost_estimate(ctx, instructions: str, content: str) -> dict:
+    chars_per_token = float(ctx.cfg.setting("lexical.llm_chars_per_token", 4))
+    est_input_tokens = int((len(instructions) + len(content)) / chars_per_token)
+    max_output_tokens = int(ctx.cfg.setting("lexical.llm_max_output_tokens", 8000))
+    rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
+    rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
+    est_cost = (est_input_tokens / 1_000_000 * rate_in) + (max_output_tokens / 1_000_000 * rate_out)
+    return {"est_input_tokens": est_input_tokens, "max_output_tokens": max_output_tokens,
+           "est_cost_usd": round(est_cost, 4)}
+
+
+def assemble_word_level_batch_package(ctx, cluster_code: str, verse_ids: list[int],
+                                      force: bool = False) -> dict:
+    """`lexical.meaning`'s own half of the former single `assemble_batch_package` (escalation
+    #1860, 2026-09-23 word-level/relational split): M0.1 (Name and Naming) + M0.5 (Lexical and
+    Semantic Analysis) only. One chunk (already capped to <= `lexical.meaning_max_verses_per_batch`
+    by the caller). Never calls the network itself -- returns the package plus a pre-call cost
+    estimate (cost preview before spend, never silent).
+
+    `force` (2026-09-22, found live testing #1832's cross-strong dedup fix): a `-Force`
+    reconciliation rerun bypasses `batchcontrol.already_committed`'s content-hash skip at the
+    caller level; `force=True` here skips the `already_covered` filter entirely (checklist = the
+    FULL expected set) and omits each verse's own `already_covered` field from the payload too."""
+    conn = ctx.db.conn
+    scan = _scan_verses(conn, cluster_code, verse_ids)
+    verses_out = _build_verses_out(verse_ids, scan, include_elevation=False)
+    all_m_code_strongs = scan["all_m_code_strongs"]
+
+    meaning_by_strong = {s: _meaning_sources(conn, s) for s in sorted(all_m_code_strongs)}
+    already_covered = _apply_already_covered(conn, verses_out, force)
+    checklist_items = _build_checklist(conn, cluster_code, verse_ids, already_covered, "word_level")
 
     questions = conn.execute(
         "SELECT question_code, question_text FROM wa_obs_question_catalogue "
-        "WHERE deleted=0 AND (question_code LIKE 'M0.1%' OR question_code LIKE 'M0.5%' "
-        "OR question_code LIKE 'M0.7%' "
-        "OR question_code IN ('D7.7.1', 'M0.6.5', 'M0.6.6', 'M0.8.1')) "
+        "WHERE deleted=0 AND (question_code LIKE 'M0.1%' OR question_code LIKE 'M0.5%') "
         "ORDER BY question_code").fetchall()
     question_texts = [{"question_code": q["question_code"], "question_text": q["question_text"]}
                       for q in questions]
@@ -369,111 +414,213 @@ def assemble_batch_package(ctx, cluster_code: str, verse_ids: list[int],
         "AND active=1 ORDER BY ordinal").fetchall()
     rules_text = "\n".join(f"- {r['rule_key']}: {r['rule_text']}" for r in rules)
 
-    instructions = _instructions(cluster_code, question_texts, tag_values, rules_text,
-                                 [v["verse"] for v in verses_out], sorted(cluster_member_strongs),
-                                 sorted(home_needs_battery), sorted(other_needs_battery),
-                                 sorted(all_m_code_strongs), len(checklist_items))
+    instructions = _word_level_instructions(
+        cluster_code, question_texts, tag_values, rules_text,
+        [v["verse"] for v in verses_out], sorted(all_m_code_strongs), len(checklist_items))
     content = json.dumps({"cluster_code": cluster_code, "verses": verses_out,
                           "meaning_sources_by_strong": meaning_by_strong,
-                          "prior_relational_context_by_verse": prior_relational,
-                          "prior_network_context_by_verse": prior_network,
                           "expected_items": checklist_items},
                          ensure_ascii=False)
-
-    chars_per_token = float(ctx.cfg.setting("lexical.llm_chars_per_token", 4))
-    est_input_tokens = int((len(instructions) + len(content)) / chars_per_token)
-    max_output_tokens = int(ctx.cfg.setting("lexical.llm_max_output_tokens", 8000))
-    rate_in = float(ctx.cfg.setting("lexical.llm_rate_input_per_million", 3.00))
-    rate_out = float(ctx.cfg.setting("lexical.llm_rate_output_per_million", 15.00))
-    est_cost = (est_input_tokens / 1_000_000 * rate_in) + (max_output_tokens / 1_000_000 * rate_out)
+    cost = _cost_estimate(ctx, instructions, content)
 
     return {
         "instructions": instructions, "content": content, "verse_ids": verse_ids,
         "cluster_code": cluster_code, "verse_count": len(verses_out),
-        "cluster_member_strong_count": len(cluster_member_strongs),
-        "word_battery_strong_count": len(word_battery_strongs),
-        "front_loaded_strong_count": len(other_needs_battery),
-        "home_already_settled_count": len(cluster_member_strongs) - len(home_needs_battery),
+        "cluster_member_strong_count": len(scan["cluster_member_strongs"]),
+        "word_battery_strong_count": len(all_m_code_strongs),
         "expected_item_count": len(checklist_items),
-        "est_input_tokens": est_input_tokens, "max_output_tokens": max_output_tokens,
-        "est_cost_usd": round(est_cost, 4),
-        "model": ctx.cfg.required_setting("lexical.llm_model"),
+        "model": ctx.cfg.required_setting("lexical.llm_model"), **cost,
     }
 
 
-def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str],
-                  rules_text: str, verse_refs: list[str], home_strongs: list[str],
-                  home_needs_battery: list[str], other_needs_battery: list[str],
-                  all_m_code_strongs: list[str], expected_item_count: int) -> str:
-    q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
-    tag_guidance_text = guidance_block(tag_values)
-    word_battery_strongs = sorted(set(home_needs_battery) | set(other_needs_battery))
-    # 2026-09-23: "front-loading"/"already settled, don't re-answer" RETIRED -- researcher
-    # correction, verbatim: "Every word observation answer must be at span (word in verse context)
-    # level. Saying that you can resolve the observation question without looking at the
-    # verse/span/morph means it is a generic answer." M0.1/M0.5 now use the SAME uniform population
-    # and the SAME per-verse `already_covered` gate as M0.6.5/M0.6.6/D7.7.1/M0.7 -- no separate
-    # notes needed, the shared instruction text below already covers it.
-    front_load_note = ""
-    settled_note = ""
+def assemble_relational_batch_package(ctx, cluster_code: str, verse_ids: list[int],
+                                      force: bool = False) -> dict:
+    """`lexical.relational`'s own half of the former single `assemble_batch_package` (escalation
+    #1860, 2026-09-23 split): M0.6.5 (relational, single-vantage), M0.6.6 (whole-network
+    synthesis), D7.7.1 (operation-anchored permeability), M0.7.1-16 (verse substantiation), M0.8.1
+    (T2/T3 elevation flag). The caller (`handlers/lexical.py:relational`) MUST have already passed
+    `stage1coverage.missing_word_level_coverage` for this verse scope -- this function assumes
+    word-level coverage exists, it does not re-check it.
+
+    Grounding (researcher's own correction to Claude's original #1860 v1 draft, approval v3
+    verbatim: "the base data must in any case be included for relational phase to be successful"):
+    `word_level_findings_by_verse` (committed M0.1/M0.5 `ib_observation` rows for this exact
+    verse+strong -- `_word_level_findings`, the PRIMARY grounding) is sent ALONGSIDE
+    `meaning_sources_by_strong` (the raw lexicon, unchanged) -- never one instead of the other."""
+    conn = ctx.db.conn
+    scan = _scan_verses(conn, cluster_code, verse_ids)
+    verses_out = _build_verses_out(verse_ids, scan, include_elevation=True)
+    all_m_code_strongs = scan["all_m_code_strongs"]
+    verse_refs = [v["verse"] for v in verses_out]
+
+    meaning_by_strong = {s: _meaning_sources(conn, s) for s in sorted(all_m_code_strongs)}
+    word_level_findings = _word_level_findings(conn, verse_refs)
+    prior_relational = _prior_relational_context(conn, verse_refs)
+    prior_network = _prior_network_context(conn, verse_refs)
+    already_covered = _apply_already_covered(conn, verses_out, force)
+    checklist_items = _build_checklist(conn, cluster_code, verse_ids, already_covered, "relational")
+
+    questions = conn.execute(
+        "SELECT question_code, question_text FROM wa_obs_question_catalogue "
+        "WHERE deleted=0 AND (question_code LIKE 'M0.7%' "
+        "OR question_code IN ('D7.7.1', 'M0.6.5', 'M0.6.6', 'M0.8.1')) "
+        "ORDER BY question_code").fetchall()
+    question_texts = [{"question_code": q["question_code"], "question_text": q["question_text"]}
+                      for q in questions]
+
+    tag_values = tags_for_stage("verse-reading", [r["value"] for r in conn.execute(
+        "SELECT value FROM cfg_enum WHERE name='ib_observation.tag' AND inactive=0 "
+        "ORDER BY ordinal")])
+
+    rules = conn.execute(
+        "SELECT rule_key, rule_text FROM cfg_method_rule WHERE step='lexical.relational' "
+        "AND active=1 ORDER BY ordinal").fetchall()
+    rules_text = "\n".join(f"- {r['rule_key']}: {r['rule_text']}" for r in rules)
+
+    instructions = _relational_instructions(
+        cluster_code, question_texts, tag_values, rules_text,
+        verse_refs, sorted(all_m_code_strongs), len(checklist_items))
+    content = json.dumps({"cluster_code": cluster_code, "verses": verses_out,
+                          "meaning_sources_by_strong": meaning_by_strong,
+                          "word_level_findings_by_verse": word_level_findings,
+                          "prior_relational_context_by_verse": prior_relational,
+                          "prior_network_context_by_verse": prior_network,
+                          "expected_items": checklist_items},
+                         ensure_ascii=False)
+    cost = _cost_estimate(ctx, instructions, content)
+
+    return {
+        "instructions": instructions, "content": content, "verse_ids": verse_ids,
+        "cluster_code": cluster_code, "verse_count": len(verses_out),
+        "cluster_member_strong_count": len(scan["cluster_member_strongs"]),
+        "expected_item_count": len(checklist_items),
+        "model": ctx.cfg.required_setting("lexical.llm_model"), **cost,
+    }
+
+
+_RESPONSE_SHAPE = (
+    "Respond with ONLY a JSON object, no other text, shaped exactly:\n"
+    '{"observations": [{"strong": "...", "question_code": "..." or null, "tag": "...", '
+    '"obs_text": "...", "meaning_source": "...", "meaning_keywords": ["...", "..."] or null, '
+    '"occurrences": [{"verse": "...", "surface": "...", "morph_code": "..."}]}]}'
+)
+
+
+def _checklist_boilerplate(expected_item_count: int) -> str:
     return (
-        f"You are producing verse-reading observations for cluster {cluster_code}, the pre-"
-        f"subgroup Layer 2 pass (`lexical.meaning`). You are given, per verse: the verse's own base "
-        f"text, `roles_in_verse` -- every role-bearing word in that verse, each carrying "
-        f"`cluster_codes` (the full set of M-code and role-T-code tags) and `is_home_cluster` (true "
-        f"if this word belongs to cluster {cluster_code} -- informational only, per #1824 v14: "
-        f"M0.6.5/M0.6.6/D7.7.1 are answered for every M-code word regardless, same as M0.1/M0.5/"
-        f"M0.7) -- `prior_relational_context_by_verse` -- any M0.6.5 relational findings ALREADY "
-        f"recorded for these verses by an earlier pass, any cluster -- `prior_network_context_by_"
-        f"verse` -- any M0.6.6 whole-network findings already recorded for these verses (a "
-        f"SEPARATE stream from M0.6.5's own chain) -- and, per verse where applicable, "
-        f"`already_covered` -- {{strong: [question_codes]}} already live for THAT verse "
-        f"(any pass) -- do not re-answer M0.6.5/M0.6.6/D7.7.1/M0.7.1-16 for a strong+question pair "
-        f"already listed there for that verse: a later cluster's pass over a verse another pass "
-        f"already fully read must not re-derive it (#1824 v18) -- if you find yourself about to "
-        f"answer something already listed there, skip it. You are also given `meaning_sources_by_strong` for "
-        f"{all_m_code_strongs} (every M-code strong in this batch, not just this cluster's own "
-        f"member strongs).{front_load_note}{settled_note} Read all present meaning "
-        f"sources as complementary evidence, never picking one and ignoring the others.\n\n"
         f"`expected_items` IS THE AUTHORITATIVE CHECKLIST -- read it before writing anything. It "
         f"lists, pre-computed from live data, EXACTLY the {expected_item_count} (verse, strong, "
         f"question_code) triples this batch must answer -- every population/gating rule described "
-        f"below (word-level-battery-only-for-strongs-needing-it, cluster-agnostic-relational-"
-        f"questions, the D7.7.1 T3 gate, the already_covered skip) has ALREADY been applied to "
-        f"build this list. Do not re-derive the population yourself from the prose rules -- they "
-        f"explain WHY each entry is there, `expected_items` is the authoritative WHAT. Your "
-        f"`observations` array MUST contain exactly one entry per `expected_items` triple: same "
-        f"count, same (strong, question_code) pairs for the correct verse -- no fewer (a triple "
-        f"you skip is a real gap, even one you judge inapplicable: answer it with the question's "
-        f"own 'record none'/could-not-resolve convention instead of omitting it) and no more (never "
-        f"add a (verse, strong, question_code) combination not listed in `expected_items`).\n\n"
+        f"below has ALREADY been applied to build this list. Do not re-derive the population "
+        f"yourself from the prose rules -- they explain WHY each entry is there, `expected_items` "
+        f"is the authoritative WHAT. Your `observations` array MUST contain exactly one entry per "
+        f"`expected_items` triple: same count, same (strong, question_code) pairs for the correct "
+        f"verse -- no fewer (a triple you skip is a real gap, even one you judge inapplicable: "
+        f"answer it with the question's own 'record none'/could-not-resolve convention instead of "
+        f"omitting it) and no more (never add a (verse, strong, question_code) combination not "
+        f"listed in `expected_items`).\n\n")
+
+
+def _word_level_instructions(cluster_code: str, questions: list[dict], tag_values: list[str],
+                             rules_text: str, verse_refs: list[str],
+                             all_m_code_strongs: list[str], expected_item_count: int) -> str:
+    """`lexical.meaning`'s own prompt (escalation #1860, 2026-09-23 split) -- M0.1 (Name and
+    Naming) + M0.5 (Lexical and Semantic Analysis) only."""
+    q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
+    tag_guidance_text = guidance_block(tag_values)
+    return (
+        f"You are producing word-level verse-reading observations for cluster {cluster_code}, "
+        f"the pre-subgroup Layer 2 word-level pass (`lexical.meaning` -- the relational half of "
+        f"this stage is a SEPARATE step, `lexical.relational`, run only after this one has fully "
+        f"covered a verse). You are given, per verse: the verse's own base text, `roles_in_verse` "
+        f"-- every role-bearing word in that verse, each carrying `cluster_codes` (the full set of "
+        f"M-code and role-T-code tags) -- and, per verse where applicable, `already_covered` -- "
+        f"{{strong: [question_codes]}} already live for THAT verse (any pass) -- do not re-answer "
+        f"a strong+question pair already listed there. You are also given "
+        f"`meaning_sources_by_strong` for {all_m_code_strongs} (every M-code strong in this batch, "
+        f"not just this cluster's own member strongs). Read all present meaning sources as "
+        f"complementary evidence, never picking one and ignoring the others.\n\n"
+        + _checklist_boilerplate(expected_item_count) +
         f"Method rules governing this task:\n{rules_text}\n\n"
-        f"TWO KINDS OF QUESTION, answered the same way:\n"
-        f"- M0.1/M0.5 (word-level battery): answer for EVERY M-code strong present in "
-        f"`roles_in_verse` for each verse -- {word_battery_strongs} this batch -- the SAME "
-        f"population as M0.6.5/M0.6.6/D7.7.1/M0.7 below, EXCEPT any (strong, question_code) pair "
-        f"already listed in that verse's own `already_covered` (skip those, another pass already "
-        f"answered them for this exact verse). SPAN-GROUNDED, NOT GENERIC (researcher, "
-        f"2026-09-23): your answer must be resolvable ONLY by looking at THIS occurrence's own "
-        f"surface/morph_code within THIS verse -- if you could answer it identically without ever "
-        f"reading the verse (a bare dictionary fact about the lemma), you have answered the wrong "
-        f"question. Two genuinely different occurrences of the same strong may legitimately produce "
-        f"the same or different answers; that is decided by what each occurrence actually shows, "
-        f"never assumed either way in advance. ACTIVELY ENGAGE WITH THE SURFACE FORM (researcher, "
-        f"2026-09-23): `surface` and `morph_code` are given for THIS occurrence, not as bookkeeping "
-        f"-- if this word's actual rendering/inflection here is not the term's most typical or "
-        f"expected form, that is a real signal, not noise: a translator chose that specific "
-        f"rendering because the verse's own context called for it. Treat a marked or unusual "
-        f"surface form as a direct prompt to look harder at what THIS context is doing differently, "
-        f"the same way M0.5.11 already asks you to notice when an occurrence's sense diverges from "
-        f"the term's usual one -- the surface form is often the visible trace of exactly that "
-        f"divergence, not a separate fact to ignore while answering the meaning question.\n"
+        f"M0.1/M0.5 (word-level battery): answer for EVERY M-code strong present in "
+        f"`roles_in_verse` for each verse, EXCEPT any (strong, question_code) pair already listed "
+        f"in that verse's own `already_covered` (skip those, another pass already answered them "
+        f"for this exact verse). SPAN-GROUNDED, NOT GENERIC (researcher, 2026-09-23): your answer "
+        f"must be resolvable ONLY by looking at THIS occurrence's own surface/morph_code within "
+        f"THIS verse -- if you could answer it identically without ever reading the verse (a bare "
+        f"dictionary fact about the lemma), you have answered the wrong question. Two genuinely "
+        f"different occurrences of the same strong may legitimately produce the same or different "
+        f"answers; that is decided by what each occurrence actually shows, never assumed either "
+        f"way in advance. ACTIVELY ENGAGE WITH THE SURFACE FORM (researcher, 2026-09-23): "
+        f"`surface` and `morph_code` are given for THIS occurrence, not as bookkeeping -- if this "
+        f"word's actual rendering/inflection here is not the term's most typical or expected form, "
+        f"that is a real signal, not noise: a translator chose that specific rendering because the "
+        f"verse's own context called for it. Treat a marked or unusual surface form as a direct "
+        f"prompt to look harder at what THIS context is doing differently, the same way M0.5.11 "
+        f"already asks you to notice when an occurrence's sense diverges from the term's usual "
+        f"one -- the surface form is often the visible trace of exactly that divergence, not a "
+        f"separate fact to ignore while answering the meaning question.\n\n"
+        f"Answer these catalogue questions:\n{q_text}\n\n"
+        f"Valid `tag` values: {tag_values}\n"
+        f"{tag_guidance_text}\n\n"
+        f"STRICT BOUNDARIES — do not exceed this task:\n"
+        f"- You are given exactly {len(verse_refs)} verse(s), listed at the end of this message. "
+        f"Every `verse` value you write MUST be one of exactly those.\n"
+        f"- Every `strong` value you write must be any M-code strong actually present in that "
+        f"verse's own `roles_in_verse` (any `cluster_codes` entry starting with \"M\") -- minus "
+        f"whatever that verse's own `already_covered` already lists.\n"
+        f"- `question_code` MUST be the exact, specific leaf code (e.g. \"M0.1.2\", \"M0.5.7\") — "
+        f"NEVER a bare component code (\"M0.1\", \"M0.5\" are not valid, will be rejected, and "
+        f"waste your own output). One observation per specific sub-question.\n"
+        f"- If a genuine 'couldn't resolve' case arises, use tag `could-not-resolve` and state in "
+        f"`obs_text` what signal suggests it should be resolvable with further analysis. If the "
+        f"verse's own content is insufficient and an adjacent verse would help, use tag "
+        f"`needs_adjacent_verse_context` and state explicitly in `obs_text` what's outstanding and "
+        f"what the follow-up cross-check needs to establish (never a bare flag with no reason).\n"
+        f"- Leave `meaning_keywords` null -- M0.1/M0.5 identity is resolved structurally (same "
+        f"verse + same question_code = same fact, by construction), never by keyword matching.\n"
+        f"- Do not add fields beyond the shape below, no prose before or after the JSON.\n\n"
+        f"Verses in this batch: {verse_refs}\n\n" + _RESPONSE_SHAPE
+    )
+
+
+def _relational_instructions(cluster_code: str, questions: list[dict], tag_values: list[str],
+                             rules_text: str, verse_refs: list[str],
+                             all_m_code_strongs: list[str], expected_item_count: int) -> str:
+    """`lexical.relational`'s own prompt (escalation #1860, 2026-09-23 split) -- M0.6.5
+    (relational), M0.6.6 (whole-network), D7.7.1 (operation-permeability), M0.7.1-16 (verse
+    substantiation), M0.8.1 (T2/T3 elevation flag). Every verse in scope has ALREADY passed the
+    readiness gate (`stage1coverage.missing_word_level_coverage`) -- word-level M0.1/M0.5 findings
+    for every M-code word here are committed and given as `word_level_findings_by_verse`."""
+    q_text = "\n".join(f"- {q['question_code']}: {q['question_text']}" for q in questions)
+    tag_guidance_text = guidance_block(tag_values)
+    return (
+        f"You are producing relational verse-reading observations for cluster {cluster_code}, "
+        f"the pre-subgroup Layer 2 relational pass (`lexical.relational` -- the word-level half of "
+        f"this stage, `lexical.meaning`, has ALREADY run for every verse in this batch; its "
+        f"committed findings are your primary grounding). You are given, per verse: the verse's "
+        f"own base text, `roles_in_verse` -- every role-bearing word in that verse, each carrying "
+        f"`cluster_codes` (the full set of M-code and role-T-code tags) and `is_home_cluster` "
+        f"(true if this word belongs to cluster {cluster_code} -- informational only: every "
+        f"question here is answered for every M-code word in the verse regardless) -- "
+        f"`word_level_findings_by_verse` -- the COMMITTED M0.1/M0.5 findings for each M-code "
+        f"strong in this verse (from `lexical.meaning`) -- your PRIMARY grounding for what each "
+        f"word actually means here, read before reasoning about its relations -- "
+        f"`meaning_sources_by_strong` -- the raw lexicon (strong_meaning_tree/lsj/mounce) for the "
+        f"same strongs, complementary evidence alongside the committed findings, never a "
+        f"substitute for them -- `prior_relational_context_by_verse` -- any M0.6.5 relational "
+        f"findings ALREADY recorded for these verses by an earlier pass, any cluster -- "
+        f"`prior_network_context_by_verse` -- any M0.6.6 whole-network findings already recorded "
+        f"(a SEPARATE stream from M0.6.5's own chain) -- and, per verse where applicable, "
+        f"`already_covered` -- {{strong: [question_codes]}} already live for THAT verse (any "
+        f"pass) -- do not re-answer a strong+question pair already listed there: a later cluster's "
+        f"pass over a verse another pass already fully read must not re-derive it.\n\n"
+        + _checklist_boilerplate(expected_item_count) +
+        f"Method rules governing this task:\n{rules_text}\n\n"
         f"- M0.6.5 (relational), M0.6.6 (whole-network), and D7.7.1 (operation-permeability): "
-        f"answer for EVERY M-code strong present in `roles_in_verse` for each verse (#1824 v14, "
-        f"corrected 2026-09-22 -- these are cluster-agnostic, same population as M0.1/M0.5/M0.7, "
-        f"NOT restricted to this cluster's own home strong(s)), EXCEPT any (strong, question_code) "
-        f"pair already listed in that verse's own `already_covered` -- skip those, "
-        f"another pass already answered them for this exact verse. For M0.6.5: if "
+        f"answer for EVERY M-code strong present in `roles_in_verse` for each verse (cluster-"
+        f"agnostic, NOT restricted to this cluster's own home strong(s)), EXCEPT any (strong, "
+        f"question_code) pair already listed in that verse's own `already_covered`. For M0.6.5: if "
         f"`prior_relational_context_by_verse` already has an entry for this verse (from any "
         f"strong), your answer for a NEW strong MUST build on it where relevant -- add THIS word's "
         f"own vantage point, never repeat what's already there; with no prior entry, start the "
@@ -481,28 +628,22 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"`prior_network_context_by_verse` instead -- extend or correct an existing sketch of the "
         f"verse's whole M-code network with what THIS word's own membership in it adds, never "
         f"restate it unchanged; record none for a word that is the verse's only M-code element "
-        f"(per the question's own text -- still answer it, the finding is just \"none\", never "
-        f"skip the question entirely). D7.7.1: record none if no operation-tagged (role-T3) word "
-        f"is present in the verse at all -- the question's only actual gate; do not additionally "
-        f"require a specifically party-coded (T4/T7/T8/T9) word, the live tagging for that is "
-        f"sparse and would wrongly exclude real cases (e.g. a plain T2-tagged \"God\" or "
-        f"\"others\" is still a real party for this question's purposes).\n"
+        f"(still answer it, the finding is just \"none\", never skip the question entirely). "
+        f"D7.7.1: record none if no operation-tagged (role-T3) word is present in the verse at all "
+        f"-- the question's only actual gate; do not additionally require a specifically "
+        f"party-coded (T4/T7/T8/T9) word, the live tagging for that is sparse and would wrongly "
+        f"exclude real cases (e.g. a plain T2-tagged \"God\" or \"others\" is still a real party "
+        f"for this question's purposes).\n"
         f"- M0.7.1-16 (verse substantiation, `#1806`, 2026-09-21): answer for EVERY M-code strong "
-        f"present in `roles_in_verse` for each verse -- the SAME population as the M0.1/M0.5 "
-        f"battery, not just this cluster's own home strongs -- EXCEPT any (strong, question_code) "
-        f"pair already listed in that verse's own `already_covered` (#1824 v18: another cluster's "
-        f"pass already answered it for this exact verse, skip it). These questions are deliberately "
-        f"written about \"[this word]\", never about \"the characteristic\" -- you are not told, "
-        f"and must not assume, which cluster's pass is asking; answer purely from what the word "
-        f"and its relationships in the verse actually show. Unlike M0.1/M0.5, these are NOT "
-        f"settled-once-ever ACROSS DIFFERENT VERSES -- the same word can genuinely behave "
-        f"differently verse to verse (the same principle M0.5.11 already applies), so a strong "
-        f"already having M0.7 answers from OTHER verses is never itself a reason to skip THIS "
-        f"verse. But THIS verse+strong+question, once genuinely answered (by any pass), is settled "
-        f"-- `already_covered` is what tells you that, not your own judgement. A later, separate "
-        f"process (not you) reconciles any residual repeated findings across occurrences -- your "
-        f"job is an accurate, concise reading of THIS verse only, not deciding whether it "
-        f"duplicates another.\n"
+        f"present in `roles_in_verse` for each verse -- the SAME population as M0.6.5/M0.6.6/"
+        f"D7.7.1 above -- EXCEPT any (strong, question_code) pair already listed in that verse's "
+        f"own `already_covered`. These questions are deliberately written about \"[this word]\", "
+        f"never about \"the characteristic\" -- you are not told, and must not assume, which "
+        f"cluster's pass is asking; answer purely from what the word and its relationships in the "
+        f"verse actually show. The same word can genuinely behave differently verse to verse, so a "
+        f"strong already having M0.7 answers from OTHER verses is never itself a reason to skip "
+        f"THIS verse. But THIS verse+strong+question, once genuinely answered (by any pass), is "
+        f"settled -- `already_covered` is what tells you that, not your own judgement.\n"
         f"- M0.8.1 (T2/T3 attention flag, `#1836`/2026-09-23 simplification, rare): answer ONLY "
         f"for a verse's own `elevation_candidate_words` list, if present (a word tagged T2 or T3 "
         f"in `roles_in_verse` but with NO M-code role at all -- do not answer this for any M-code "
@@ -518,21 +659,15 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"STRICT BOUNDARIES — do not exceed this task:\n"
         f"- You are given exactly {len(verse_refs)} verse(s), listed at the end of this message. "
         f"Every `verse` value you write MUST be one of exactly those.\n"
-        f"- Every `strong` value you write for M0.1/M0.5/M0.6.5/M0.6.6/D7.7.1/M0.7.1-16 must "
-        f"be any M-code strong actually present in that verse's own `roles_in_verse` (any "
-        f"`cluster_codes` entry starting with \"M\") -- the SAME population for all of these, "
-        f"regardless of home-cluster membership (#1824 v14, extended to M0.1/M0.5 2026-09-23) -- "
-        f"minus whatever that verse's own `already_covered` already lists. "
-        f"D7.7.1 only applies when an operation-tagged (role-T3) word is actually "
-        f"present in the verse -- no additional party-tag requirement. For M0.8.1, `strong` must "
-        f"be one of that verse's own `elevation_candidate_words` ONLY (never an M-code strong) -- "
-        f"if a verse has no `elevation_candidate_words` field, do not answer M0.8.1 for it at "
-        f"all.\n"
-        f"- `question_code` MUST be the exact, specific leaf code (e.g. \"M0.1.2\", \"M0.5.7\") — "
-        f"NEVER a bare component code (\"M0.1\", \"M0.5\" are not valid, will be rejected, and "
-        f"waste your own output). One observation per specific sub-question — do not combine "
-        f"several sub-questions' answers into a single note under one code, even for a front-"
-        f"loaded strong you are covering quickly.\n"
+        f"- Every `strong` value you write for M0.6.5/M0.6.6/D7.7.1/M0.7.1-16 must be any M-code "
+        f"strong actually present in that verse's own `roles_in_verse` -- minus whatever that "
+        f"verse's own `already_covered` already lists. D7.7.1 only applies when an operation-"
+        f"tagged (role-T3) word is actually present in the verse -- no additional party-tag "
+        f"requirement. For M0.8.1, `strong` must be one of that verse's own "
+        f"`elevation_candidate_words` ONLY (never an M-code strong) -- if a verse has no "
+        f"`elevation_candidate_words` field, do not answer M0.8.1 for it at all.\n"
+        f"- `question_code` MUST be the exact, specific leaf code (e.g. \"M0.6.5\", \"M0.7.3\") — "
+        f"NEVER a bare component code. One observation per specific sub-question.\n"
         f"- If a genuine 'couldn't resolve' case arises, use tag `could-not-resolve` and state in "
         f"`obs_text` what signal suggests it should be resolvable with further analysis. If the "
         f"verse's own content is insufficient and an adjacent verse would help, use tag "
@@ -542,14 +677,9 @@ def _instructions(cluster_code: str, questions: list[dict], tag_values: list[str
         f"capturing the core of your answer (e.g. [\"conditional-change\", \"unfruitful-to-"
         f"fruitful\"], not full phrases) -- used downstream to recognise when two occurrences "
         f"genuinely show the same finding (escalation #1824), separate from your own obs_text "
-        f"wording. Leave `meaning_keywords` null for every other question type (M0.1/M0.5/M0.6.5/"
-        f"M0.6.6/D7.7.1) -- #1832 (2026-09-22): their identity is now resolved structurally "
-        f"(same verse + same question_code = same fact, by construction), never by keyword or "
-        f"prose-similarity matching, so a keyword signal for these three would serve no purpose.\n"
+        f"wording. Leave `meaning_keywords` null for every other question type (M0.6.5/M0.6.6/"
+        f"D7.7.1/M0.8.1) -- their identity is resolved structurally (same verse + same "
+        f"question_code = same fact, by construction), never by keyword matching.\n"
         f"- Do not add fields beyond the shape below, no prose before or after the JSON.\n\n"
-        f"Verses in this batch: {verse_refs}\n\n"
-        "Respond with ONLY a JSON object, no other text, shaped exactly:\n"
-        '{"observations": [{"strong": "...", "question_code": "..." or null, "tag": "...", '
-        '"obs_text": "...", "meaning_source": "...", "meaning_keywords": ["...", "..."] or null, '
-        '"occurrences": [{"verse": "...", "surface": "...", "morph_code": "..."}]}]}'
+        f"Verses in this batch: {verse_refs}\n\n" + _RESPONSE_SHAPE
     )

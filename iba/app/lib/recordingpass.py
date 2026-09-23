@@ -713,8 +713,17 @@ def record_one_observation(conn, cluster_code: str, stage: str, obs: dict,
         if ref in existing_refs:
             continue
         seq += 1
+        # `cluster_code` (the PASS's own), not `effective_cluster_code` -- found live 2026-09-23
+        # (escalation #1860 split's own first real live-LLM test, the first end-to-end exercise of
+        # the #1852/#1853 word-level-cluster-agnostic rework against real model output):
+        # `effective_cluster_code` is None for word-level questions (correct for ib_observation's
+        # OWNERSHIP semantics -- these are strong-only shared facts), but ib_node.cluster_code is
+        # NOT NULL and means something different -- which cluster's PASS actually cited/produced
+        # this occurrence, a real value regardless of whether the observation itself is shared.
+        # Using effective_cluster_code here crashed every word-level write with "NOT NULL
+        # constraint failed: ib_node.cluster_code" the moment a real M0.1/M0.5 answer arrived.
         node_id = _insert_node(
-            conn, observation_id, effective_cluster_code, occ_strong, o["verse_reference"],
+            conn, observation_id, cluster_code, occ_strong, o["verse_reference"],
             o["surface"], o["morph_code"], question_code, stage, seq, traced_observation_id=traced,
             subgroup_code=subgroup_code)
         written_nodes.append(node_id)
