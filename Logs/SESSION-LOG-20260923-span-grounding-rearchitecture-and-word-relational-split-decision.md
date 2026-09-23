@@ -82,4 +82,6 @@ back.
 
 ## Git state (this log's own completion trigger)
 
-Confirmed live, not asserted — see the commit immediately following this log for the actual hash/branch/push confirmation.
+Confirmed live: branch `main`, commit `0a8e85861ef338e606ab7caea460b1cc61dcdc3f` (2026-09-23
+10:38:21 +0100), `git push` succeeded (`d55cc7af..0a8e8586 main -> main`), `git status --short`
+clean immediately after push.
