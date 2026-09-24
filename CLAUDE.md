@@ -33,6 +33,17 @@
 > (`docs/governance-alignment-register.md`, now retired-for-provenance — see its own banner);
 > live tracking of this item is escalation #687 (completed). Full record: `iba/app/BUILD.md`.
 >
+> **★ bible_research.db IS PROSE-ONLY — §3's "prose and findings" framing SUPERSEDED (2026-09-24).**
+> Every §3 table-group description below that calls `bible_research.db` "the home for prose and
+> findings" is now stale. Researcher ruling (verbatim): *"findings is the terminology in the old
+> system that is replaced by observations... all the finding related tables in research DB should
+> be inactive and... all the records in those table are no longer relevant and can be purged."*
+> Findings/observations now live entirely in `iba.db`'s `ib_observation`/`ib_node` pipeline;
+> `bible_research.db` retains only the prose store as live content. Full record, including which
+> tables were corrected and which were deliberately excluded from the sweep:
+> `iba/app/GOVERNANCE.md` §81. This is exactly the kind of scope decision this banner section
+> exists to surface — don't let it go undocumented again.
+>
 > Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions — see §10). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
 >
 > **Orientation (2026-06-14; entry point corrected 2026-08-18):** §3 (schema) and §10 (programme state) refreshed to live **v3.31.0** + the finding-centric model. `docs/project-orientation-core-memory-map.md` — the former session-start fan-out map named here — was **retired 2026-08-18** (escalation #715 cycle 3: it had drifted pre-reset and pre-IBA with no live reader). **Start each session via the `start-project` skill** (`iba/app/GOVERNANCE.md` + `iba/app/BUILD.md` for IBA, the `escalation` table for open items project-wide); the current-state reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01–04) and the reusable-scripts catalogue remain valid background reading, just no longer fanned out from that retired map. This compact file can still lag the written record; when in doubt, the reconstruction is authoritative.

@@ -23,9 +23,14 @@
     **Two shapes, two vocabularies, one mechanism** (deliberately not unified — they answer
     different questions):
       - DISPATCHER-TIED (a real run.py pause — configmaint.propose/validate, a quality-check
-        finding, a crash, a report-stop): vocabulary UNCHANGED — approve/reject/revise/hold/noted.
-        Answered with -Action AnswerRun, same as always. These are development/design controls
-        (changes to the app's own behaviour) and correctly keep a real, gated approval.
+        finding, a crash, a report-stop): approve/reject/revise/hold/noted, via -Action AnswerRun
+        — but ONLY when resolution_kind='self_correctable' (checked live: escalation #820/#822,
+        cfg_behaviour_rule 'decision-required-answered-via-update-not-answerrun'). A
+        decision_required dispatcher-tied item is answered via -Action Update instead, exactly
+        like a manual one (see the decision-vs-defect axis section below) — AnswerRun's flat
+        vocabulary is refused outright for decision_required, dispatcher-tied or not. These are
+        development/design controls (changes to the app's own behaviour) and correctly keep a
+        real, gated approval.
       - MANUAL (the researcher/Claude backlog-of-work-and-issues workflow): vocabulary
         ready_for_approval/approved/reject/revise/noted/review — a two-stage approval handshake
         (ready_for_approval -> approved -> system-validated completed). Raised/updated with

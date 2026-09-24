@@ -3745,6 +3745,19 @@ as part of the governance."* `cfg_behaviour_rule` amended to add an explicit exe
 `prose_section`/`prose_section_type`/`cfg_prose_concept`'s referenced content — every other table in
 `bible_research.db` remains excluded from IBA-line results exactly as before.
 
+**Amended 2026-09-24 (escalation #1868/#1870) — registered DB-hygiene/maintenance utilities
+exempted.** Found live: the researcher asked to clean `bible_research.db`'s soft-deleted rows via
+the `purge-audit`/`purge-execute` utility (escalation #1766, built 2026-09-19 — one day *before*
+this exclusion rule existed 2026-09-20 — and never reconciled against it afterward, the same class
+of gap the prose exemption above was created to close). Claude ran `purge.audit` and presented its
+`bible_research.db` findings in chat, which the rule's own text said to stop and flag instead of
+doing — raised as #1868 with three options; researcher chose "option (a)": treat registered
+DB-hygiene/maintenance utilities as exempt, same shape as the prose exemption. `cfg_behaviour_rule`
+amended (escalation #1870, `RUN-20260924_044914_278-CONFIGMAINT`) to add an explicit exemption for
+registered maintenance utilities (`purge.audit`/`purge.execute` named as the example) doing
+administrative housekeeping — soft-delete counts, dependency checks, row removal — as distinct from
+analytical/investigative use, which remains excluded exactly as before.
+
 ## §80. Stage 1 corrections only via a real rerun, never an offline script — `cfg_behaviour_rule` (2026-09-22, escalation #1824)
 
 Researcher correction on escalation #1824 v11, verbatim: *"none of the correction are done as fixes.
@@ -3770,3 +3783,59 @@ found and fixed 2 unregistered/orphaned `cfg_setting` keys, 1 stale `cfg_method_
 report path (`iba/app/migration/fix_stage1_governance_gaps_v1_20260922.py`; full detail `BUILD.md`
 #319) — none of those four rose to a GOVERNANCE.md-level process rule, so only this one is recorded
 here.
+
+## §81. `bible_research.db` is prose-only — `governance.scope_research_db` corrected, "finding" terminology retired in favour of "observation" (2026-09-24, researcher ruling, escalations #1868/#1872/#1873)
+
+**Researcher ruling, this chat, verbatim:** *"findings is the terminology in the old system that is
+replaced by observations... all the finding related tables in research DB should be inactive and...
+all the records in those table are no longer relevant and can be purged."* This corrects
+`governance.scope_research_db`, which had read *"the home for prose and findings with all the
+related enabling tables"* since the 2026-08-15 DB-split decision (§`project_current_architecture_
+and_status_20260815` memory) — **that framing is now superseded**: `bible_research.db` is
+prose-only; every finding/observation now lives in `iba.db`'s `ib_observation`/`ib_node` pipeline.
+
+**How this was found, and why it matters as a process failure, not just a content correction.**
+The researcher asked (this session) to purge `bible_research.db`'s soft-deleted rows. That surfaced
+`finding`/`finding_verse_index` still carrying `cfg_table.inactive=0` (live), contradicted the
+purge's own safety logic, and took **three escalations** (#1868, #1872, #1873) and a multi-hop
+document trail (escalation #1706 → #1690–1693 → `iba/docs/1682-cluster-reading-data-model-v1-
+20260911.md`'s DB-fork banner → **escalation #737**, "supersede — option A... The new
+ib_observation/ib_node pipeline already does what Window 2's research_db migration was reaching
+for") to even locate the evidence — and even that trail only covered the *old* Window 2/
+`cluster_finding` line, not `finding`/`finding_verse_index` specifically. The researcher's own
+assessment, verbatim: *"your search revealed how brittle the documentation in this project is...
+a simple but incredible important decision... is just incredible difficult to find in the
+documentation."* Recorded here precisely so this scope decision is never again something a future
+session has to reconstruct from an escalation-chat archaeology dig.
+
+**Applied** (`iba/app/migration/mark_bible_research_findings_inactive_v1_20260924.py`): 32 of 34
+still-active `bible_research.db` tables flipped to `cfg_table.inactive=1` — the full finding/
+analysis/legacy-cluster surface (`finding`, `finding_citation`, `finding_question_link`,
+`finding_revision`, `finding_verse_index`, `finding_verse_link`, `cluster`, `cluster_observation`,
+`characteristic_subgroup`, `cluster_subgroup`, `vcg_term`, `passage`, `segment_unit`,
+`segment_unit_verse`, `session_d_*` ×4, `reread_worklist`, `verse_analysis_progress`,
+`wa_data_quality_flags`, `wa_quality_flag_types`, `wa_finding_entity_links`, `wa_label_pattern`,
+`wa_vocab_set`, `wa_vocab_member`, `engine_run_log`, `engine_stream_checkpoint`, `books`,
+`book_code_variants`, `sources`, `prose_section_finding_link`) plus `wa_session_research_flags`
+(see below). `governance.scope_research_db` (`cfg_setting`) updated in the same migration.
+
+**Deliberately excluded, not silently swept — flagged to the researcher, escalation #1873
+follow-on:**
+- **`schema_version`** — DB-infrastructure bookkeeping (migration history), not analytical
+  content; "inactive"/"purgeable" is a category mismatch for it.
+- **`record_change_log`** — prose's own change-log mechanism (`cfg_behaviour_rule`
+  'record-change-log-choke-point' covers `prose_section`/`prose_section_type`), not a finding
+  table.
+- **`ib_characteristic`** — naming suggests a newer/parallel mechanism; status not independently
+  confirmed, so left for the researcher's own call rather than assumed either way.
+- **`wa_session_research_flags`** — included in the inactive flip above DESPITE escalation #833's
+  prior explicit ruling ("wa_session_research_flags are analysis phase, and at this point stay as
+  is, and should be alive and incorporated in IBA") — that deferral was conditioned on "the
+  analytics-phase restart" (#833's own wording), which this ruling resolves (analytics restarted
+  in `iba.db`, not `bible_research.db`). Included as a judgement call, not a silent override —
+  flagged in the same migration's docstring and here.
+
+**Not yet done:** the actual data purge (live + soft-deleted rows) of these now-inactive tables —
+scoped separately, tracked on #1868/#1872's continuation. `CLAUDE.md` §3's own "prose and findings"
+table-group framing is now stale too (pre-dates this ruling); flagged, not rewritten here — see
+`CLAUDE.md` top-of-file banner for the pointer into this section.

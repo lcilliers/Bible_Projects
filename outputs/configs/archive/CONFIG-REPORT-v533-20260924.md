@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-24T05:20:19Z |
+| generated_at | 2026-09-24T04:07:43Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -126,7 +126,7 @@ _(none)_
 53. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (4) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-54. Purge-SoftDeletes.ps1: ps tools worksheet.xlsx tab 'Purge-SoftDeletes' is missing flag column(s) ['Action', 'Database', 'Live'] — the script has these parameters now
+54. Purge-SoftDeletes.ps1: ps tools worksheet.xlsx tab 'Purge-SoftDeletes' is missing flag column(s) ['Action', 'Live'] — the script has these parameters now
 55. RelationalReading.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\relationalreading.ps1' in some tab's first rows)
 56. Run-Stage1Batch.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\run-stage1batch.ps1' in some tab's first rows)
 57. VerseReading.ps1: ps tools worksheet.xlsx tab 'VerseReading' is missing flag column(s) ['Force', 'VerseList'] — the script has these parameters now
@@ -371,7 +371,7 @@ _(none)_
 | prose_first_layer_build_v1_20260824 | iba/app/migration/prose_first_layer_build_v1_20260824.py | ONE-OFF migration, escalation #829 (Prose management IBA first-layer) -- builds cfg_prose, fills/corrects cfg_column use text, cfg_enum (5 groups), cfg_status_flow, cfg_behaviour_rule (3 rows), cfg_write_grant (3 rows), the prose work package + 5 cfg_step rows, reactivates the 4 original scripts. D10 (book_stage_map vs. book_label) deliberately deferred, not built here. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | prose_orphan_enum_fix_v1_20260826 | iba/app/migration/prose_orphan_enum_fix_v1_20260826.py | ONE-OFF migration, escalations #896/#900/#901/#902 -- closes the 7 orphan cfg_enum findings per the researcher's own rule: fix the validator for the 4 already-CHECK-enforced groups (cfg_column.expectation wired); fix the code for the 3 genuinely unenforced prose_section_type groups (real CHECK constraints added, then the same expectation wiring). inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | prosestore | iba/app/lib/prosestore.py | The DB-canonical prose store: extract, search, chapter export/import. Escalation #784, 2026-08-21 -- incorporates operations previously standalone in scripts/build_programme_prose_extract.py, scripts/search_prose.py, scripts/export_prose_chapter_edit.py, scripts/import_prose_chapter_edit.py into the app. | ✓ |  |  |
-| purge | iba/app/handlers/purge.py | purge.py -- app-wide soft-delete purge audit + execute + database retirement (escalation #1766/#1868/#1872/#1873): per-table soft-deleted counts + live-dependency safety check (audit, read-only); allow-listed soft-deleted-row removal (execute, preview-then-live); and full-table clearing of every cfg_table.inactive=1 table for a database, with dangling-FK cleanup on retained tables (retire_database, preview-then-live). All three always persist a report. | ✓ |  |  |
+| purge | iba/app/handlers/purge.py | purge.py -- app-wide soft-delete purge audit + execute (escalation #1766/#1868): per-table soft-deleted counts + live-dependency safety check across both databases (audit, read-only), plus allow-listed row removal against tables both currently safe and granted (execute, preview-then-live). Both always persist a report. | ✓ |  |  |
 | query_db | query_db.py | prose_section_type joined to active current prose_section rows -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | rebuild_prose_section_fk_v1_20260905 | iba/app/migration/rebuild_prose_section_fk_v1_20260905.py | ONE-OFF migration, escalation #1452 (approved 2026-09-05) -- rebuilds bible_research.db's prose_section table, correcting its stale FK (was REFERENCES prose_section_type_old, a nonexistent leftover-rename table; now correctly REFERENCES prose_section_type). Rename/recreate/copy/drop pattern matching retire_cfg_prose_chapter_v1_20260827.py; all 1035 rows preserved with ids intact, 5 indexes + 3 FTS-sync triggers recreated, FTS rowid linkage verified 0 mismatches, PRAGMA foreign_key_check clean post-rebuild. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | recordingpass | iba/app/lib/recordingpass.py | recordingpass.py — the single writer for `ib_observation`/`ib_node` (escalation #1693's design, | ✓ |  |  |
@@ -823,7 +823,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.scope_iba_app | IBA App is the central process control mechanism for all operations in the entire project |  |
 | governance | governance.scope_iba_db | The iba_db is the home for all project process control and base data, including all related tables from STEP through Strongs, verses, meaning, and lexicals. It is now primary for all processes and base data; a few analysis tables (debate/passage control) are expected to migrate back to research_db. |  |
 | governance | governance.scope_project | the config's scope is the entire project, with all of its parts, not a sub-section of the project |  |
-| governance | governance.scope_research_db | bible_research.db (research_db) is now prose-only -- the canonical, foundational authority on the programme's own governing concepts (governance.prose_canonical_authority). Findings/observations are fully owned by iba.db's ib_observation/ib_node pipeline; the old finding/analysis/legacy-cluster tables in bible_research.db are superseded, not a live parallel store. Superseded 2026-09-24 (researcher ruling, this chat, verbatim: "findings is the terminology in the old system that is replaced by observations... all the finding related tables in research DB should be inactive and... all the records in those table are no longer relevant and can be purged"), evidenced live by escalation #737 (2026-09-13/18 supersede decision). Prior text (superseded): the home for prose and findings with all the related enabling tables. |  |
+| governance | governance.scope_research_db | The research_db (bible_research.db) is the home for prose and findings with all the related enabling tables. |  |
 | governance | governance.scripts_and_routines | All scripts and routines must belong to a module, utility, library, or be a temporary script. Temporary scripts must be prefixed with temp_. |  |
 | governance | governance.scripts_ps_dir | iba/app/ps |  |
 | governance | governance.scripts_python_dir | iba/app/tools |  |
@@ -942,7 +942,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | validation | lexical.readiness_report_path | research/discovery/lexical-readiness.md | where lexical.readiness persists its findings -- #1606/#1706 Phase A |
 | validation | purge.audit_report_path | research/discovery/purge-audit.md | where purge.audit persists its findings -- escalation #1766 |
 | validation | purge.execute_report_path | research/discovery/purge-execute.md | where purge.execute persists its findings -- escalation #1766/#1868 |
-| validation | purge.retire_database_report_path | research/discovery/purge-retire-database.md | where purge.retire_database persists its findings -- escalation #1868/#1872/#1873 |
 | validation | purge.unsafe_check_min_soft_deleted | 10 | a table with more than this many soft-deleted rows gets a live-dependency check before being listed as safe to purge -- escalation #1766 v2, researcher's own threshold ('for each table with > 10 softdelete records check the dependencies'). Was a hardcoded constant in the escalation's own ad-hoc audit; made config-driven here per the same pattern already fixed twice this session (#1753 B3, #1761). |
 | validation | spine.quality_report_path | research/discovery/spine-check.md | where spine.check persists its findings |
 | validation | validation.output_dir | outputs/validations | where validation.word/validation.book write their output |
@@ -1162,7 +1161,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- | --- |
 | 0 | purge.audit | iba.app.handlers.purge:audit | none | Read-only, app-wide: for every table with a registered soft-delete column (cfg_column.name IN deleted/delete_flagged, both databases), counts soft-deleted rows; for any table over purge.unsafe_check_min_soft_deleted, checks cfg_column.fk for a live row elsewhere still referencing one of its soft-deleted PKs and flags the table UNSAFE if so. Persists a report every run (governance.reports_must_persist). Does not remove any row -- audit only. |
 | 1 | purge.execute | iba.app.handlers.purge:execute | none | Recomputes the safe/unsafe split fresh (never trusts a cached audit), intersects with cfg_write_grant (writer='purge.execute') so only explicitly allow-listed tables are ever touched. -Preview (default true) counts only, nothing written. -Live actually deletes every soft-deleted row in each granted-and-currently-safe table, one transaction per database, and verifies each table reads back 0 soft-deleted rows afterward. A table that is UNSAFE or ungranted is always skipped and reported, never silently included. |
-| 2 | purge.retire_database | iba.app.handlers.purge:retire_database | none | Physically clears every row from every table cfg_table marks inactive=1 for the given -Database (default bible_research) -- scope read live from cfg_table every run, never a hardcoded list. Before clearing, nulls known FK columns on RETAINED active tables that point into the cleared set, so no kept row is left dangling. -Preview (default true) counts only, nothing written. -Live actually deletes, one transaction, verifying each table reads back 0 rows afterward. |
 
 **raw-backfill** — runs over `book` · script `iba/app/ps/Raw-Backfill.ps1`
 | # | step | handler | scope | does |
@@ -2868,16 +2866,6 @@ work package `purge-audit` → `iba/app/ps/Purge-SoftDeletes.ps1` (chained=0)
 | 0 | summary | ## Summary | Summary | ✓ |
 | 1 | purged | ## Purged | Purged | ✓ |
 | 2 | skipped | ## Skipped | Skipped | ✓ |
-
-### `purge.retire_database`
-**Database retirement — inactive tables cleared (#1868/#1872/#1873)** — output `md` · naming `stable` · archived to `archive/` · ToC on
-work package `purge-audit` → `iba/app/ps/Purge-SoftDeletes.ps1` (chained=0)
-
-| # | section | heading | toc label | in ToC |
-| --- | --- | --- | --- | --- |
-| 0 | summary | ## Summary | Summary | ✓ |
-| 1 | fk-cleanup | ## Dangling FK cleanup on retained tables | Dangling FK cleanup on retained tables | ✓ |
-| 2 | purged | ## Cleared | Cleared | ✓ |
 
 ### `report.batch_progress`
 **Batch progress monitor** — output `md` · naming `stable` · archived to `archive/` · ToC on

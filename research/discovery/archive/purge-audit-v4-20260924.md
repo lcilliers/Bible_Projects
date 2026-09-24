@@ -11,13 +11,47 @@
 <a id="summary"></a>
 ## Summary
 
-0 table(s) safe to purge, 8 table(s) UNSAFE (live dependency risk).
+34 table(s) safe to purge, 8 table(s) UNSAFE (live dependency risk).
 
 <a id="safe-to-purge"></a>
 ## Safe to purge
 
 | database | table | soft_deleted | pk | dependency-checked |
 |---|---|---|---|---|
+| iba | verse_passage | 24,913 | id | yes |
+| iba | passage | 18,516 | id | yes |
+| iba | span | 13,268 | id | yes |
+| iba | cluster_strong | 1,904 | id | yes |
+| iba | strong_related | 409 | id | yes |
+| iba | candidate_seed | 281 | id | yes |
+| iba | strong_meaning_tree | 262 | id | yes |
+| iba | word_strong | 262 | id | yes |
+| iba | strong | 250 | strongNumber | yes |
+| iba | strong_sense | 250 | strong | yes |
+| iba | verse_hib | 250 | id | yes |
+| iba | strong_lexicon | 241 | strong | yes |
+| iba | operation_party | 114 | id | yes |
+| iba | operation | 56 | id | yes |
+| iba | phenomenon | 56 | id | yes |
+| iba | hib | 42 | id | yes |
+| iba | cluster | 5 | cluster_code | no (at/under threshold) |
+| iba | hib_referent_option | 5 | id | no (at/under threshold) |
+| iba | wa_obs_question_catalogue | 5 | obs_id | no (at/under threshold) |
+| iba | passage_emergent_question | 1 | id | no (at/under threshold) |
+| bible_research | ve_lexical | 174,223 | id | yes |
+| bible_research | ve_lexical_legacy | 83,243 | id | yes |
+| bible_research | vcg_term | 3,093 | id | yes |
+| bible_research | cluster_finding | 1,633 | id | yes |
+| bible_research | wa_finding_catalogue_links | 414 | id | yes |
+| bible_research | finding_question_link | 342 | id | yes |
+| bible_research | mti_term_subgroup | 173 | id | yes |
+| bible_research | segment_unit | 89 | id | yes |
+| bible_research | wa_dimension_index | 29 | id | yes |
+| bible_research | wa_term_root_family | 24 | id | yes |
+| bible_research | cluster_subgroup | 19 | id | yes |
+| bible_research | finding_verse_link | 10 | id | no (at/under threshold) |
+| bible_research | ve_lexical_faculty_backup | 2 | id | no (at/under threshold) |
+| bible_research | wa_term_phase2_flags | 1 | id | no (at/under threshold) |
 
 <a id="unsafe-live-dependency-risk"></a>
 ## Unsafe -- live dependency risk

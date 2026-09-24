@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-09-24T05:20:19Z |
+| generated_at | 2026-09-24T03:55:20Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -75,31 +75,31 @@ _(none)_
 32. verse_lexical_note.created_at filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
 33. verse_lexical_note.deleted filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
 
-**Stale governance docs** (0) — GOVERNANCE.md older than the newest applied config change:
-_(none)_
+**Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
+34. GOVERNANCE.md was last modified 2026-09-22T07:28:18Z, before the newest applied cfg_change_detail row (2026-09-24T03:55:20Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (1) — iba/app/lib/*.py with no cfg_utility row:
-34. iba/app/lib/taggingguidance.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
+35. iba/app/lib/taggingguidance.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
 
 **Low config-density utilities** (18) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-35. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-36. cfg_utility 'lexicalenrich' (iba\app\lib\lexicalenrich.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-37. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-38. cfg_utility 'apply_1598_phase_a_reallocation_v1_20260908' (iba\app\migration\apply_1598_phase_a_reallocation_v1_20260908.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-39. cfg_utility 'apply_1598_cluster_batch' (iba\app\migration\apply_1598_cluster_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-40. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-41. cfg_utility 'create_verse_meta_table_v1_20260909' (iba\app\migration\create_verse_meta_table_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-42. cfg_utility 'drop_verse_meta_genre_column_v1_20260909' (iba\app\migration\drop_verse_meta_genre_column_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-43. cfg_utility 'add_verse_meta_status_column_v1_20260910' (iba\app\migration\add_verse_meta_status_column_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-44. cfg_utility 'VerseMeta.ps1' (iba\app\ps\VerseMeta.ps1) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-45. cfg_utility 'apply_verse_plaintext_column' (iba\app\tools\_apply_verse_plaintext_column.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-46. cfg_utility 'add_lexicon_header_pos_tags_setting_v1_20260910' (iba\app\migration\add_lexicon_header_pos_tags_setting_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-47. cfg_utility 'create_vw_strong_meaning_raw_v1_20260910' (iba\app\migration\create_vw_strong_meaning_raw_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-48. cfg_utility 'clusterstatus' (iba\app\lib\clusterstatus.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-49. cfg_utility 'recordingpass' (iba\app\lib\recordingpass.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-50. cfg_utility 'batchcontrol' (iba\app\lib\batchcontrol.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-51. cfg_utility 'batchprogressreport' (iba\app\lib\batchprogressreport.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-52. cfg_utility 'observationenhancer' (iba\app\handlers\observationenhancer.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+36. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+37. cfg_utility 'lexicalenrich' (iba\app\lib\lexicalenrich.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+38. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+39. cfg_utility 'apply_1598_phase_a_reallocation_v1_20260908' (iba\app\migration\apply_1598_phase_a_reallocation_v1_20260908.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+40. cfg_utility 'apply_1598_cluster_batch' (iba\app\migration\apply_1598_cluster_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+41. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+42. cfg_utility 'create_verse_meta_table_v1_20260909' (iba\app\migration\create_verse_meta_table_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+43. cfg_utility 'drop_verse_meta_genre_column_v1_20260909' (iba\app\migration\drop_verse_meta_genre_column_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+44. cfg_utility 'add_verse_meta_status_column_v1_20260910' (iba\app\migration\add_verse_meta_status_column_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+45. cfg_utility 'VerseMeta.ps1' (iba\app\ps\VerseMeta.ps1) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+46. cfg_utility 'apply_verse_plaintext_column' (iba\app\tools\_apply_verse_plaintext_column.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+47. cfg_utility 'add_lexicon_header_pos_tags_setting_v1_20260910' (iba\app\migration\add_lexicon_header_pos_tags_setting_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+48. cfg_utility 'create_vw_strong_meaning_raw_v1_20260910' (iba\app\migration\create_vw_strong_meaning_raw_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+49. cfg_utility 'clusterstatus' (iba\app\lib\clusterstatus.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+50. cfg_utility 'recordingpass' (iba\app\lib\recordingpass.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+51. cfg_utility 'batchcontrol' (iba\app\lib\batchcontrol.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+52. cfg_utility 'batchprogressreport' (iba\app\lib\batchprogressreport.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+53. cfg_utility 'observationenhancer' (iba\app\handlers\observationenhancer.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -123,10 +123,9 @@ _(none)_
 _(none)_
 
 **Hand-rolled versioning** (1) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-53. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+54. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
-**PS/worksheet drift** (4) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-54. Purge-SoftDeletes.ps1: ps tools worksheet.xlsx tab 'Purge-SoftDeletes' is missing flag column(s) ['Action', 'Database', 'Live'] — the script has these parameters now
+**PS/worksheet drift** (3) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
 55. RelationalReading.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\relationalreading.ps1' in some tab's first rows)
 56. Run-Stage1Batch.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\run-stage1batch.ps1' in some tab's first rows)
 57. VerseReading.ps1: ps tools worksheet.xlsx tab 'VerseReading' is missing flag column(s) ['Force', 'VerseList'] — the script has these parameters now
@@ -371,7 +370,7 @@ _(none)_
 | prose_first_layer_build_v1_20260824 | iba/app/migration/prose_first_layer_build_v1_20260824.py | ONE-OFF migration, escalation #829 (Prose management IBA first-layer) -- builds cfg_prose, fills/corrects cfg_column use text, cfg_enum (5 groups), cfg_status_flow, cfg_behaviour_rule (3 rows), cfg_write_grant (3 rows), the prose work package + 5 cfg_step rows, reactivates the 4 original scripts. D10 (book_stage_map vs. book_label) deliberately deferred, not built here. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | prose_orphan_enum_fix_v1_20260826 | iba/app/migration/prose_orphan_enum_fix_v1_20260826.py | ONE-OFF migration, escalations #896/#900/#901/#902 -- closes the 7 orphan cfg_enum findings per the researcher's own rule: fix the validator for the 4 already-CHECK-enforced groups (cfg_column.expectation wired); fix the code for the 3 genuinely unenforced prose_section_type groups (real CHECK constraints added, then the same expectation wiring). inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | prosestore | iba/app/lib/prosestore.py | The DB-canonical prose store: extract, search, chapter export/import. Escalation #784, 2026-08-21 -- incorporates operations previously standalone in scripts/build_programme_prose_extract.py, scripts/search_prose.py, scripts/export_prose_chapter_edit.py, scripts/import_prose_chapter_edit.py into the app. | ✓ |  |  |
-| purge | iba/app/handlers/purge.py | purge.py -- app-wide soft-delete purge audit + execute + database retirement (escalation #1766/#1868/#1872/#1873): per-table soft-deleted counts + live-dependency safety check (audit, read-only); allow-listed soft-deleted-row removal (execute, preview-then-live); and full-table clearing of every cfg_table.inactive=1 table for a database, with dangling-FK cleanup on retained tables (retire_database, preview-then-live). All three always persist a report. | ✓ |  |  |
+| purge | iba/app/handlers/purge.py | purge.py -- app-wide soft-delete purge audit (escalation #1766): per-table soft-deleted counts + live-dependency safety check across both databases. Read-only, always persists a report. | ✓ |  |  |
 | query_db | query_db.py | prose_section_type joined to active current prose_section rows -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | rebuild_prose_section_fk_v1_20260905 | iba/app/migration/rebuild_prose_section_fk_v1_20260905.py | ONE-OFF migration, escalation #1452 (approved 2026-09-05) -- rebuilds bible_research.db's prose_section table, correcting its stale FK (was REFERENCES prose_section_type_old, a nonexistent leftover-rename table; now correctly REFERENCES prose_section_type). Rename/recreate/copy/drop pattern matching retire_cfg_prose_chapter_v1_20260827.py; all 1035 rows preserved with ids intact, 5 indexes + 3 FTS-sync triggers recreated, FTS rowid linkage verified 0 mismatches, PRAGMA foreign_key_check clean post-rebuild. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | recordingpass | iba/app/lib/recordingpass.py | recordingpass.py — the single writer for `ib_observation`/`ib_node` (escalation #1693's design, | ✓ |  |  |
@@ -823,7 +822,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | governance | governance.scope_iba_app | IBA App is the central process control mechanism for all operations in the entire project |  |
 | governance | governance.scope_iba_db | The iba_db is the home for all project process control and base data, including all related tables from STEP through Strongs, verses, meaning, and lexicals. It is now primary for all processes and base data; a few analysis tables (debate/passage control) are expected to migrate back to research_db. |  |
 | governance | governance.scope_project | the config's scope is the entire project, with all of its parts, not a sub-section of the project |  |
-| governance | governance.scope_research_db | bible_research.db (research_db) is now prose-only -- the canonical, foundational authority on the programme's own governing concepts (governance.prose_canonical_authority). Findings/observations are fully owned by iba.db's ib_observation/ib_node pipeline; the old finding/analysis/legacy-cluster tables in bible_research.db are superseded, not a live parallel store. Superseded 2026-09-24 (researcher ruling, this chat, verbatim: "findings is the terminology in the old system that is replaced by observations... all the finding related tables in research DB should be inactive and... all the records in those table are no longer relevant and can be purged"), evidenced live by escalation #737 (2026-09-13/18 supersede decision). Prior text (superseded): the home for prose and findings with all the related enabling tables. |  |
+| governance | governance.scope_research_db | The research_db (bible_research.db) is the home for prose and findings with all the related enabling tables. |  |
 | governance | governance.scripts_and_routines | All scripts and routines must belong to a module, utility, library, or be a temporary script. Temporary scripts must be prefixed with temp_. |  |
 | governance | governance.scripts_ps_dir | iba/app/ps |  |
 | governance | governance.scripts_python_dir | iba/app/tools |  |
@@ -941,8 +940,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | table_export | table_export.output_dir | {'iba': 'Workflow/schema/iba', 'bible_research': 'Workflow/schema/bible_research'} | where table.export writes its CSVs |
 | validation | lexical.readiness_report_path | research/discovery/lexical-readiness.md | where lexical.readiness persists its findings -- #1606/#1706 Phase A |
 | validation | purge.audit_report_path | research/discovery/purge-audit.md | where purge.audit persists its findings -- escalation #1766 |
-| validation | purge.execute_report_path | research/discovery/purge-execute.md | where purge.execute persists its findings -- escalation #1766/#1868 |
-| validation | purge.retire_database_report_path | research/discovery/purge-retire-database.md | where purge.retire_database persists its findings -- escalation #1868/#1872/#1873 |
 | validation | purge.unsafe_check_min_soft_deleted | 10 | a table with more than this many soft-deleted rows gets a live-dependency check before being listed as safe to purge -- escalation #1766 v2, researcher's own threshold ('for each table with > 10 softdelete records check the dependencies'). Was a hardcoded constant in the escalation's own ad-hoc audit; made config-driven here per the same pattern already fixed twice this session (#1753 B3, #1761). |
 | validation | spine.quality_report_path | research/discovery/spine-check.md | where spine.check persists its findings |
 | validation | validation.output_dir | outputs/validations | where validation.word/validation.book write their output |
@@ -1161,8 +1158,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
 | 0 | purge.audit | iba.app.handlers.purge:audit | none | Read-only, app-wide: for every table with a registered soft-delete column (cfg_column.name IN deleted/delete_flagged, both databases), counts soft-deleted rows; for any table over purge.unsafe_check_min_soft_deleted, checks cfg_column.fk for a live row elsewhere still referencing one of its soft-deleted PKs and flags the table UNSAFE if so. Persists a report every run (governance.reports_must_persist). Does not remove any row -- audit only. |
-| 1 | purge.execute | iba.app.handlers.purge:execute | none | Recomputes the safe/unsafe split fresh (never trusts a cached audit), intersects with cfg_write_grant (writer='purge.execute') so only explicitly allow-listed tables are ever touched. -Preview (default true) counts only, nothing written. -Live actually deletes every soft-deleted row in each granted-and-currently-safe table, one transaction per database, and verifies each table reads back 0 soft-deleted rows afterward. A table that is UNSAFE or ungranted is always skipped and reported, never silently included. |
-| 2 | purge.retire_database | iba.app.handlers.purge:retire_database | none | Physically clears every row from every table cfg_table marks inactive=1 for the given -Database (default bible_research) -- scope read live from cfg_table every run, never a hardcoded list. Before clearing, nulls known FK columns on RETAINED active tables that point into the cleared set, so no kept row is left dangling. -Preview (default true) counts only, nothing written. -Live actually deletes, one transaction, verifying each table reads back 0 rows afterward. |
 
 **raw-backfill** — runs over `book` · script `iba/app/ps/Raw-Backfill.ps1`
 | # | step | handler | scope | does |
@@ -1386,7 +1381,6 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | operation.set | debate_change_detail, operation, operation_party |
 | passage.build | debate_change_detail, passage, verse_passage |
 | phenomenon.set | debate_change_detail, passage, phenomenon |
-| purge.execute | candidate_seed, cluster, cluster_strong, hib, hib_referent_option, operation, operation_party, passage, passage_emergent_question, phenomenon, span, strong, strong_lexicon, strong_meaning_tree, strong_related, strong_sense, verse_hib, verse_passage, wa_obs_question_catalogue, word_strong |
 | raw.validate | validation_result |
 | raw.write | word_registry |
 | registry.create | word_registry |
@@ -2858,26 +2852,6 @@ work package `purge-audit` → `iba/app/ps/Purge-SoftDeletes.ps1` (chained=0)
 | 0 | summary | ## Summary | Summary | ✓ |
 | 1 | safe | ## Safe to purge | Safe to purge | ✓ |
 | 2 | unsafe | ## Unsafe -- live dependency risk | Unsafe -- live dependency risk | ✓ |
-
-### `purge.execute`
-**Soft-delete purge execute (app-wide, #1766/#1868)** — output `md` · naming `stable` · archived to `archive/` · ToC on
-work package `purge-audit` → `iba/app/ps/Purge-SoftDeletes.ps1` (chained=0)
-
-| # | section | heading | toc label | in ToC |
-| --- | --- | --- | --- | --- |
-| 0 | summary | ## Summary | Summary | ✓ |
-| 1 | purged | ## Purged | Purged | ✓ |
-| 2 | skipped | ## Skipped | Skipped | ✓ |
-
-### `purge.retire_database`
-**Database retirement — inactive tables cleared (#1868/#1872/#1873)** — output `md` · naming `stable` · archived to `archive/` · ToC on
-work package `purge-audit` → `iba/app/ps/Purge-SoftDeletes.ps1` (chained=0)
-
-| # | section | heading | toc label | in ToC |
-| --- | --- | --- | --- | --- |
-| 0 | summary | ## Summary | Summary | ✓ |
-| 1 | fk-cleanup | ## Dangling FK cleanup on retained tables | Dangling FK cleanup on retained tables | ✓ |
-| 2 | purged | ## Cleared | Cleared | ✓ |
 
 ### `report.batch_progress`
 **Batch progress monitor** — output `md` · naming `stable` · archived to `archive/` · ToC on

@@ -16470,3 +16470,120 @@ Files: `iba/app/lib/stage1coverage.py`, `iba/app/lib/versereadinggenerate.py`,
 `iba/app/migration/split_lexical_meaning_word_relational_v1_20260923.py`,
 `iba/app/ps/RelationalReading.ps1`,
 `iba/docs/1860-word-relational-split-build-plan-v1-20260923.md` (all new).
+
+## 329. `purge.execute` built — the soft-delete removal half of #1766, live-run against both databases (2026-09-24, researcher-directed, escalation #1868/#1870)
+
+Researcher, this chat: *"my aim today is to clean out bible_research_db of all soft deleted
+rows... proceed with the safe to purge."* Building this surfaced a real governance conflict: the
+existing `purge.audit` (built 2026-09-19, #1766) reports on `bible_research.db`, but
+`cfg_behaviour_rule` 'bible-research-db-excluded-from-iba-results' (#1809, 2026-09-20) says
+`bible_research.db` is never included in any IBA-line result except the prose tables — never
+reconciled against the pre-existing audit utility, same class of gap the 2026-09-21 prose exemption
+(#1816) closed for a different case. Raised as #1868 with three options; researcher chose "option
+(a)": exempt registered DB-hygiene/maintenance utilities, same shape as the prose exemption.
+Amendment proposed and, after the harness's own self-approval classifier correctly refused to let
+Claude record the researcher's approval on their behalf, approved by the researcher directly
+(escalation #1870, verbatim `proceed`) and applied live (`RUN-20260924_044914_278-CONFIGMAINT`).
+GOVERNANCE.md §79 updated in the same unit of work. `#1868`'s own title-length crash on the first
+`configmaint.propose` attempt (66 chars, over the 60-char limit) was a separate self-correctable
+item (#1869), fixed by shortening the title and closed same-turn.
+
+**Build** (`iba/app/handlers/purge.py:execute`, `iba/app/migration/
+register_purge_execute_step_v1_20260924.py`, `iba/app/ps/Purge-SoftDeletes.ps1` extended with
+`-Action Audit|Execute` and `-Live`): recomputes the safe/unsafe split fresh every run (never
+trusts a cached audit — data may have changed), and only ever touches a table that is BOTH
+currently safe AND explicitly present in `cfg_write_grant` (writer=`purge.execute`) — an
+intentional allow-list seeded from the 2026-09-24 audit's 34 safe tables (20 `iba`, 14
+`bible_research`), not "whatever the live audit happens to call safe today". `-Preview` (default
+true) counts only; `-Live` deletes, one transaction per database, and re-counts each table
+afterward to verify 0 soft-deleted rows remain before reporting success. An UNSAFE or ungranted
+table is always skipped and named in the report, never silently included.
+
+**Test plan run** (`cfg_behaviour_rule` test-plan-per-module-utility): (1) migration `--dry-run` —
+clean insert list, rolled back. (2) migration applied — 1 `cfg_setting`, 1 `cfg_report` + 3
+`cfg_report_section`, 1 `cfg_step`, 34 `cfg_write_grant` rows, `cfg_utility` purpose text updated.
+(3) migration re-run — fully idempotent, every row "already present — skipped". (4) `-Action
+Execute` preview — `34 table(s), 324,385 row(s) would purge -- nothing written`, matching the
+fresh audit's own safe/unsafe split exactly (34 safe / 8 unsafe, same 8 tables/counts as
+`purge-audit-v4-20260924.md`). (5) `-Action Execute -Live` — `purged 324,385 row(s) across 34
+table(s), 8 skipped`; every one of the 34 tables' report row read `verified 0 remaining: yes`. (6)
+Re-ran `-Action Audit` immediately after — `0 table(s) safe to purge, 8 UNSAFE`, same 8
+tables/counts as before the purge, confirming the unsafe tables were correctly left untouched. (7)
+`configmaint.validate` — 1 new advisory finding directly attributable to this build (`ps tools
+worksheet.xlsx` tab `Purge-SoftDeletes` missing the new `Action`/`Live` flag columns,
+governance.ps_worksheet_sync_on_change); the other 3 PS/worksheet-drift findings in the same run
+(`RelationalReading.ps1`, `Run-Stage1Batch.ps1`, `VerseReading.ps1`) predate this work.
+
+**Not done here:** the worksheet sync for `Purge-SoftDeletes.ps1`'s new flags — flagged, not
+applied, since the researcher had just opened both tool-interface worksheets in Excel this same
+session (`/open-excel-tools`) and writing to an open workbook risks a crash
+(`feedback_warn_before_editing_excel_tool_interface`); to be applied once confirmed closed.
+Escalation #1868 itself is still at `ready_for_approval` — the same self-approval classifier that
+blocked the rule-amendment approval also blocks Claude from moving a `decision_required` item to
+its own closed state, so it needs the researcher's own `-Action Update -NextAction noted` (or
+equivalent) to close, even though the substantive decision and build are both already done.
+
+Files: `iba/app/handlers/purge.py` (changed — `execute`/`_write_execute_report`/`_granted_tables`
+added), `iba/app/ps/Purge-SoftDeletes.ps1` (changed), `iba/app/GOVERNANCE.md` §79 (changed);
+`iba/app/migration/register_purge_execute_step_v1_20260924.py` (new).
+
+## 330. `bible_research.db` retired to prose-only — `finding` terminology retired in favour of `observation`, 4,928,750 rows cleared from 100 tables (2026-09-24, researcher ruling, escalations #1868/#1872/#1873)
+
+Researcher ruling, this chat, verbatim: *"findings is the terminology in the old system that is
+replaced by observations... all the finding related tables in research DB should be inactive and...
+all the records in those table are no longer relevant and can be purged."* Full background: today's
+purge-safe-tables work (#329) surfaced `finding`/`finding_verse_index` still `cfg_table.inactive=0`
+while 21 related tables were correctly `inactive=1`; three escalations and a multi-hop document
+trail (escalation #1706 → #1690-1693 → `1682-cluster-reading-data-model` DB-fork banner →
+escalation #737, "supersede — option A... the new ib_observation/ib_node pipeline already does
+what Window 2's research_db migration was reaching for") only partially explained the discrepancy
+— the researcher's own direct ruling settled the rest. Full record: `GOVERNANCE.md` §81,
+`CLAUDE.md` top-of-file banner.
+
+**Two-stage build, both preview-then-live, both verified independently after:**
+
+1. **Config correction** (`iba/app/migration/mark_bible_research_findings_inactive_v1_20260924.py`):
+   32 previously-active `bible_research.db` tables flipped to `cfg_table.inactive=1`;
+   `governance.scope_research_db` (`cfg_setting`) corrected from "home for prose and findings" to
+   prose-only. Deliberately excluded (flagged, not swept): `schema_version` (infra, not content),
+   `record_change_log` (prose's own mechanism), `ib_characteristic` (status unconfirmed).
+   `wa_session_research_flags` included despite escalation #833's prior "stays as is... incorporated
+   in IBA" ruling — judged that #833's own deferral condition ("the analytics-phase restart") is now
+   met.
+
+2. **Data retirement** (`iba/app/handlers/purge.py:retire_database`, new step
+   `purge.retire_database`, `iba/app/migration/register_purge_retire_database_step_v1_20260924.py`,
+   `Purge-SoftDeletes.ps1 -Action Retire`): physically clears EVERY row (not just soft-deleted) from
+   every table `cfg_table` marks `inactive=1` for a given database — scope read **live** from
+   `cfg_table` every run, never a hardcoded list, so it always tracks the config rather than a
+   snapshot. Before clearing, nulls FK columns on RETAINED active tables that point into the cleared
+   set (found live: `prose_section.registry_id` → `word_registry`, plus 3
+   `wa_prose_section_citations` citation columns) so no kept row is left silently dangling.
+
+   **Full scope, computed and confirmed before executing** (not assumed): 100 `bible_research.db`
+   tables (of 113 total; 13 prose/infra tables retained), 4,928,750 rows total. Preview run matched
+   this exactly; live run cleared all 4,928,750 rows across all 100 tables and de-dangled all 4 FK
+   columns (141 `prose_section.registry_id`, 310+4+38 `wa_prose_section_citations` columns) — zero
+   "unverified" warnings from the handler's own post-delete recount. Independently re-verified after
+   (separate query, not just trusting the handler's own report): all 100 tables read back 0 rows,
+   all 4 FK columns read back 0 non-null, `prose_section`'s own row count unchanged at 1,036 (content
+   untouched, only the dangling pointers cleared). DB file itself stays ~881MB on disk (SQLite
+   doesn't auto-shrink after `DELETE`; a `VACUUM` would reclaim it physically, not run here — not
+   asked for, and it needs exclusive access on a file this size).
+
+**Researcher's own words on the underlying data:** *"the base data are all covered in IBA and
+findings generated by the multiple failed attempts over 9 months is just rubbish, unworkable, not
+trustworthy, and incomplete."* Researcher is keeping an independent DB backup from before today,
+their own precaution, not built here.
+
+**Process note, recorded because the researcher named it directly:** *"your search revealed how
+brittle the documentation in this project is... a simple but incredible important decision... is
+just incredible difficult to find in the documentation."* This is why §81/the CLAUDE.md banner
+exist as prominent, dated, discoverable records rather than leaving this only in escalation history
+— see `feedback_document_scope_decisions_prominently_not_just_in_escalations` (memory).
+
+Files: `iba/app/handlers/purge.py` (changed — `retire_database`/`_write_retire_report`/
+`_DANGLING_FK_CLEANUP` added), `iba/app/ps/Purge-SoftDeletes.ps1` (changed — `-Action Retire`),
+`iba/app/GOVERNANCE.md` §81 (new), `CLAUDE.md` top-of-file banner (new); `iba/app/migration/
+mark_bible_research_findings_inactive_v1_20260924.py` (new), `iba/app/migration/
+register_purge_retire_database_step_v1_20260924.py` (new).
