@@ -16587,3 +16587,84 @@ Files: `iba/app/handlers/purge.py` (changed — `retire_database`/`_write_retire
 `iba/app/GOVERNANCE.md` §81 (new), `CLAUDE.md` top-of-file banner (new); `iba/app/migration/
 mark_bible_research_findings_inactive_v1_20260924.py` (new), `iba/app/migration/
 register_purge_retire_database_step_v1_20260924.py` (new).
+
+## 331. `session.close` built — mechanical detection of escalation-update/governance-doc/BUILD.md gaps at session end, `/session-close` slash command (2026-09-24, researcher-directed, escalation #1875)
+
+Researcher, verbatim: *"create a slash command to action a session close. ... a) check that every
+escalation touched in the session was properly updated with the chat content for the escalation ...
+b) validate that all the chats have updated governance, and the configs, and where previous
+governance, claude.md or configs is in conflict with the chat that it is properly document and
+retired documentation is adequately marked. validate that any build or update activity is recorded
+in build.md with a proper build tracking id."* Follow-up, same chat, settling final scope: *"ensure
+that session JSONL is re-read at session close, and that every relevant update is made in the
+relevant escalation (this include a) researcher update verbatim b) design debates c) design
+decisions d) record of any items skipped, postponed, or ignored; and that the documentation:
+governance; claude.md, configs, user guide is properly updated - then no additional tracker is
+required."* Full design/approval trail: escalation #1875 (raised → design questions posed →
+answered → approved, routed back to Claude to build). Full record: `GOVERNANCE.md` §82.
+
+**Design split** (approved before build, per `feedback_design_work_is_never_self_correctable`): a
+new step `session.close` does MECHANICAL DETECTION ONLY — never writes a remediation, never blocks
+(`gaps-found` → `report-continue`, non-blocking, per the researcher's explicit "must not generate
+additional cycles through approval"). A separate slash command, `.claude/commands/session-close.md`,
+has Claude perform the actual remediation, reading the detection report plus the real session
+transcript — only Claude can compose a faithful escalation update or supersession note.
+
+**Build:**
+- `iba/app/handlers/session_close.py:check()` (new) — re-reads the session's OWN JSONL transcript
+  (Claude Code already records one automatically per session under the user profile,
+  `~/.claude/projects/.../<sessionId>.jsonl`; confirmed live before building anything, no new
+  recording mechanism needed — the transcript IS the tracker the researcher asked about). Regexes
+  it for `Escalation.ps1`'s own CLI confirmation text (`raised — #N. Update with` /
+  `escalation #N vV ->`) to find every escalation id genuinely touched this session, cross-checked
+  against `escalation_history`'s live version for that id (a gap = touched in transcript, behind in
+  the DB). Diffs `git` since the session-start commit (resolved from
+  `.claude/.session-boundary-state.json`'s timestamp, written by the existing
+  `session_boundary_track.py` hook) to find `iba/app/**` files changed with no matching
+  `iba/app/BUILD.md` change, and reports which of `GOVERNANCE.md`/`CLAUDE.md`/`USER-GUIDE.md`
+  changed (whether that's ENOUGH is Claude's own judgement, not mechanically checkable). Always
+  persists a report (`session_close.report_path`).
+- `iba/app/ps/Session-Close.ps1` (new) — thin wrapper, mirrors `Spine-Check.ps1`'s shape exactly
+  (readiness guard, `python -m iba.app.run session-close`, `Write-IbaStepResult`).
+- `iba/app/migration/register_session_close_step_v1_20260924.py` (new) — registers `cfg_work_package`
+  `session-close`, `cfg_step` `session.close` (kind=`operations`), `cfg_setting
+  session_close.report_path`, `cfg_report`/`cfg_report_section` ×4 (summary/escalation_gaps/
+  governance_gaps/build_gaps), `cfg_on_fail session.close/gaps-found → report-continue`,
+  `cfg_utility` row. No new `cfg_write_grant` — detection-only, no direct table writes beyond what
+  the `run` writer already covers.
+- `.claude/commands/session-close.md` (new) — the remediation procedure Claude follows after the
+  detection script runs: fix (a) via `Escalation.ps1 -Action Update`/`Correction` capturing
+  researcher-verbatim/design-debates/design-decisions/skipped-items exactly as instructed; fix (b)
+  by hand-checking decisions against governance/config/doc text and marking superseded text
+  properly; fix (c) by adding the missing `BUILD.md` entry. Explicit exception carried into the
+  procedure: a genuinely NEW unresolved doc/config conflict found during remediation is raised as
+  its own fresh `decision_required` escalation, never silently auto-resolved.
+
+**Test plan run** (`governance.module_utility_test_plan`):
+1. Migration `--dry-run` against live `iba.db` — clean 10-row insert plan, rolled back.
+2. Applied live — committed.
+3. Re-ran the same migration — fully idempotent, every row "already present — skipped".
+4. Live-tested `Session-Close.ps1` against this very session (dogfooding, not a synthetic case):
+   first run correctly found 0 escalation-update gaps (every #1875 update this session was already
+   properly in `escalation_history`) and 3 real BUILD.md gaps — the three new files this very build
+   had just created, correctly flagged before this entry existed to cover them. Also surfaced one
+   false positive, `#799`, matched from `escalation.py`'s own docstring prose ("every item raised
+   since #799") encountered during this session's own research reads, not a real CLI action.
+5. Root-caused and fixed: tightened `_RAISED_RE` from a loose `raised...#N` match to require the
+   literal `. Update with` suffix `Escalation.ps1` actually prints on a real raise — re-ran,
+   confirmed the false positive gone (`#799` no longer listed) and the real finding (`#1875`, v4)
+   unchanged.
+6. This `BUILD.md` entry + `GOVERNANCE.md` §82 are themselves the fix for the BUILD.md gap the tool
+   found on its own build — re-running `Session-Close.ps1` after this commit is expected to show 0
+   BUILD.md gaps, closing the loop live (verify before treating escalation #1875 as complete).
+
+**Not done here:** the `iba/docs/ps tools worksheet.xlsx` tab for `Session-Close.ps1`
+(`governance.ps_worksheet_sync_on_change`) — the workbook's own lock file
+(`iba/docs/~$ps tools worksheet.xlsx`) shows it was open at build time; left for the researcher
+rather than risking a write-while-open crash (`feedback_warn_before_editing_excel_tool_interface`),
+same precedent as the open drift findings left in BUILD.md §329.
+
+Files: `iba/app/handlers/session_close.py` (new), `iba/app/ps/Session-Close.ps1` (new),
+`iba/app/migration/register_session_close_step_v1_20260924.py` (new),
+`.claude/commands/session-close.md` (new), `iba/app/GOVERNANCE.md` §82 (new), `iba/app/BUILD.md`
+§331 (new), `iba/app/USER-GUIDE.md` (changed).

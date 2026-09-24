@@ -731,6 +731,34 @@ the everyday flow.
 
 ---
 
+## 11b. Session-close checks (`Session-Close.ps1`, `/session-close`, added 2026-09-24, escalation #1875)
+
+Run at the end of a session, before handing off — not tied to any build step, like §11's checks.
+Read-only detection of three things the researcher asked to be checked every time a session ends:
+
+```powershell
+iba\app\ps\Session-Close.ps1
+#   -> iba/app/reports/session-close.md — escalation-update coverage, governance/doc drift signal,
+#      BUILD.md coverage
+```
+
+It re-reads the CURRENT session's own transcript — Claude Code already records one automatically
+per session (`~/.claude/projects/.../<sessionId>.jsonl`), so no separate tracker is needed — and
+checks: (a) every escalation the transcript shows was touched via `Escalation.ps1` has a matching
+`escalation_history` row at that version; (b) reports which of `GOVERNANCE.md`/`CLAUDE.md`/
+`USER-GUIDE.md` changed in the session's `git` diff window (whether that's enough is a judgement
+call, not mechanically decided here); (c) any `iba/app/**` file changed this session with no
+matching `iba/app/BUILD.md` entry.
+
+**Never blocks** — always exits clean, even with gaps found (`gaps-found` → `report-continue`), so
+it never creates an approval cycle. It only detects; it doesn't fix anything itself. Use the
+`/session-close` slash command (`.claude/commands/session-close.md`) to run this AND have Claude
+actually remediate whatever it finds — read the report, then follow the command's own remediation
+steps (escalation updates capturing researcher-verbatim/design-debates/decisions/skipped-items,
+governance/doc edits, BUILD.md entries). Full design record: `GOVERNANCE.md` §82.
+
+---
+
 ## 12. Reports and raw CSV export
 
 ```powershell

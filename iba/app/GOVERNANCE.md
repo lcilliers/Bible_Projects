@@ -3839,3 +3839,80 @@ follow-on:**
 scoped separately, tracked on #1868/#1872's continuation. `CLAUDE.md` §3's own "prose and findings"
 table-group framing is now stale too (pre-dates this ruling); flagged, not rewritten here — see
 `CLAUDE.md` top-of-file banner for the pointer into this section.
+
+## §82. `session.close` built — mechanical detection of escalation-update/governance-doc/BUILD.md gaps at session end, `/session-close` slash command (2026-09-24, researcher-directed, escalation #1875)
+
+Researcher, verbatim: *"create a slash command to action a session close. ... a) check that every
+escalation touched in the session was properly updated with the chat content for the escalation ...
+b) validate that all the chats have updated governance, and the configs, and where previous
+governance, claude.md or configs is in conflict with the chat that it is properly document and
+retired documentation is adequately marked. validate that any build or update activity is recorded
+in build.md with a proper build tracking id."* Follow-up, same chat, settling scope: *"ensure that
+session JSONL is re-read at session close, and that every relevant update is made in the relevant
+escalation (this include a) researcher update verbatim b) design debates c) design decisions d)
+record of any items skipped, postponed, or ignored; and that the documentation: governance;
+claude.md, configs, user guide is properly updated - then no additional tracker is required."*
+
+**Design split, approved on escalation #1875 before build (per `feedback_design_work_is_never_
+self_correctable` — this was a genuine design task, not a self-correctable slip):** a new step,
+`session.close`, does MECHANICAL DETECTION only — parses the current session's own JSONL transcript
+(Claude Code already records one automatically per session, `~/.claude/projects/.../<sessionId>.jsonl`
+— confirmed live before building anything, no new recording mechanism needed), diffs git state
+since session start, cross-references `escalation_history` and `BUILD.md`, and always persists a
+report. It never writes a remediation itself and never blocks (`gaps-found` → `report-continue`,
+non-blocking) — per the researcher's explicit instruction that remediation must not create an
+additional approval cycle. A separate slash command, `.claude/commands/session-close.md`, then has
+Claude perform the actual REMEDIATION reading the report plus the real transcript content — only
+Claude can compose a faithful escalation update or supersession note; the script can only say what
+looks missing.
+
+**Build:** `iba/app/handlers/session_close.py:check()` (new) — regexes the session transcript for
+`Escalation.ps1`'s own CLI confirmation lines (`raised — #N. Update with` / `escalation #N vV ->`,
+the exact text the tool already prints) to find every escalation id genuinely touched this session,
+cross-checked against `escalation_history`'s live version for that id; diffs `git` since the
+session-start commit (resolved from `.claude/.session-boundary-state.json`'s timestamp) to find
+`iba/app/**` files changed with no matching `iba/app/BUILD.md` change, and to report which of
+`GOVERNANCE.md`/`CLAUDE.md`/`USER-GUIDE.md` changed (the judgement of whether that's ENOUGH stays
+with Claude, reading the transcript — not mechanically checkable, no chat-to-decision mapping
+exists to check against). `iba/app/ps/Session-Close.ps1` (new, mirrors `Spine-Check.ps1`'s thin-
+wrapper shape exactly). Registered via `iba/app/migration/register_session_close_step_v1_20260924.py`
+(new work package `session-close`, step `session.close`, `cfg_setting session_close.report_path`,
+`cfg_report`/`cfg_report_section` ×4, `cfg_on_fail session.close/gaps-found → report-continue`,
+`cfg_utility` row) — no new `cfg_write_grant` needed (detection-only, no direct table writes beyond
+what the `run` writer already covers). `.claude/commands/session-close.md` (new) — the remediation
+procedure, including the explicit exception that a genuinely new unresolved doc/config conflict
+found during remediation is raised as its own fresh `decision_required` escalation, never silently
+auto-resolved.
+
+**Test plan run:** (1) migration `--dry-run` — clean insert plan, rolled back. (2) applied live —
+committed. (3) re-ran the same migration — fully idempotent, every row "already present — skipped".
+(4) live-tested `Session-Close.ps1` against this very session, twice: first run correctly found 0
+escalation-update gaps (every #1875 update this session was properly in `escalation_history`) and 3
+real BUILD.md gaps (the three new files this build itself had just created, correctly flagged before
+this entry existed) — also surfaced one false positive, `#799`, matched from `escalation.py`'s own
+docstring prose ("every item raised since #799") rather than a real CLI action; tightened
+`_RAISED_RE` to require the literal `. Update with` suffix `Escalation.ps1` actually prints, re-ran,
+confirmed the false positive gone and the real findings unchanged. (5) this GOVERNANCE.md section +
+the BUILD.md entry below are themselves the fix for the BUILD.md gap the tool found — re-running
+`Session-Close.ps1` after this commit is expected to show 0 BUILD.md gaps, closing the loop live.
+
+**Follow-up, same session, worksheet + commit-rule widening (researcher confirmed the workbook
+closed):** `iba/docs/ps tools worksheet.xlsx` updated — a new `Session-Close` tab (duplicated from
+`Spine-Check`'s tab, same two params `-RunId`/`-Trace`, same compiled-command formula) plus a new
+`Index` row (66), both matching the workbook's existing per-tool convention exactly rather than
+inventing a new shape (`governance.ps_worksheet_sync_on_change`). Also, researcher direct
+instruction this session, verbatim: *"ensure that the session-close will activate the commit rules
+also"* — `governance.session_log_triggers_commit` (`cfg_setting`) widened via
+`Config-Maintenance.ps1 -Step Propose` (escalation #1876) to cover a completed `/session-close`
+cycle, not only a completed `SESSION-LOG-*.md`; `CLAUDE.md` §12 and
+`.claude/commands/session-close.md` (new step 7: commit-and-push, same shape as the session-log
+trigger) updated in the same unit of work. `USER-GUIDE.md` update for the new `/session-close`
+command is a separate edit in this same unit of work (see its own change note there). The
+governance/config-drift check (part (b)) is deliberately NOT auto-verified
+beyond reporting which files changed — whether a given session's changes were ENOUGH stays a Claude
+judgement call each time, by design (§ above), not a gap in this build.
+
+Files: `iba/app/handlers/session_close.py` (new), `iba/app/ps/Session-Close.ps1` (new),
+`iba/app/migration/register_session_close_step_v1_20260924.py` (new),
+`.claude/commands/session-close.md` (new), `iba/app/GOVERNANCE.md` §82 (new), `iba/app/BUILD.md`
+§331 (new), `iba/app/USER-GUIDE.md` (changed).

@@ -362,13 +362,19 @@ Programme-state SQL queries (Session B progress, VC progress, OWNER terms needin
 - Excluded: `database/bible_research.db`, `backups/`.
 - Committed: `Sessions/Patches/*.json`.
 - Commit message: `session YYYYMMDD: brief description`. Branch: `main`. Remote: `github.com/lcilliers/Bible_Projects`.
-- **Standing pre-authorization (2026-07-23, scope widened 2026-08-10):** completing a session log
-  (any `SESSION-LOG-*.md`, including `iba/app/SESSION-LOG-*.md`) means the full commit-and-push
-  cycle happens in the same unit of work — write a proper commit message, commit, push, confirm
-  `git status` clean/pushed. This is the one standing exception to "never commit unless explicitly
-  asked" (§ system instructions) — narrowly scoped to this one trigger, not a general license to
-  commit proactively elsewhere. Mirrors `governance.build_md_on_code_change` in `iba/app/` (same
-  shape of rule, same day).
+- **Standing pre-authorization (2026-07-23, scope widened 2026-08-10, widened again 2026-09-24):**
+  completing a session log (any `SESSION-LOG-*.md`, including `iba/app/SESSION-LOG-*.md`) **OR**
+  completing a `/session-close` cycle (`.claude/commands/session-close.md`, escalation #1875/#1876)
+  means the full commit-and-push cycle happens in the same unit of work — write a proper commit
+  message, commit, push, confirm `git status` clean/pushed. This is the standing exception to
+  "never commit unless explicitly asked" (§ system instructions) — narrowly scoped to these two
+  triggers, not a general license to commit proactively elsewhere. Mirrors
+  `governance.build_md_on_code_change` in `iba/app/` (same shape of rule, same day it was first
+  set). Config-driven: `governance.session_log_triggers_commit` (`cfg_setting`, module
+  `governance`) is the live source of truth this text documents, per
+  `governance.governance_md_on_rule_change` — applied via `Config-Maintenance.ps1 -Step Propose`,
+  escalation #1876, researcher direct instruction this chat: *"ensure that the session-close will
+  activate the commit rules also."*
   **Default scope, corrected 2026-08-10:** stage every outstanding change in the working tree at
   close, not only the changes made during the current session — a prior narrower reading (session-
   own changes only, everything else left for a separate pass) required a follow-up "(cont.)"
