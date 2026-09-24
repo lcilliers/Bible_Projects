@@ -92,4 +92,6 @@ what the researcher asked for going into this log.
 
 ## Git state (this log's own completion trigger)
 
-To be confirmed immediately after commit+push, below.
+Confirmed live: branch `main`, commit `fb19e9039fd3cd462fd3a9f6bcd72070a7d9ee9f` (2026-09-24
+06:30:31 +0100), `git push` succeeded (`7dba83ef..fb19e903 main -> main`), `git status --short`
+clean immediately after push.
