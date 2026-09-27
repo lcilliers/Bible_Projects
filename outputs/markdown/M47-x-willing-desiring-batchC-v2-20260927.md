@@ -65,6 +65,7 @@ Five decisions are needed. For each one: the cluster(s) it affects, the Strong's
 - **R1–R3 and R5** are **cluster-membership** questions for `cluster_strong`.
 - **R4** is a **spirit-classification** question for `M47-spirit-classification-v1-20260927.csv`.
 - Nothing has been changed in the DB or the CSV.
+- The process question (whether to record misfiles beyond the write-ups) is **Batch A R7** and applies here too.
 
 ### R1 — H2638 "lacking" in M18 Desire & Longing
 | | |
@@ -148,6 +149,7 @@ Use this when the file accompanies a cluster's analysis. It lists the sections t
 | **M66** Madness & Recklessness | §10 | — |
 | **M47** Inner Seat | all; §11 cross-cutting | R4 (spirit class) |
 | Candidate receiving clusters | M16 Wisdom & Folly (R1); M12 Righteousness & Integrity / M33 Rest & Peace (R2); M09 Humility & Lowliness / M24 Faintness & Despair (R3); M03 Grief & Lament (R5) | — |
+| All batches | — | **Batch A R7** process ruling |
 
 ---
 
