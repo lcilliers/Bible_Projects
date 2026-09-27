@@ -16668,3 +16668,28 @@ Files: `iba/app/handlers/session_close.py` (new), `iba/app/ps/Session-Close.ps1`
 `iba/app/migration/register_session_close_step_v1_20260924.py` (new),
 `.claude/commands/session-close.md` (new), `iba/app/GOVERNANCE.md` §82 (new), `iba/app/BUILD.md`
 §331 (new), `iba/app/USER-GUIDE.md` (changed).
+
+
+## 332. `Prose.ps1 -Step ExportChapter` — `-Book` now requires `-Chapter` (change made 2026-09-25; recorded 2026-09-27 at session close, no escalation ref found)
+
+**Provenance.** The one-line change was found uncommitted in the working tree at the start of the
+2026-09-27 session (file last written 2026-09-25 10:18 local). No session in this repo's history or
+escalation list records it, so there is no researcher quote or escalation id to cite. It is recorded
+here because `session.close` (§331) flagged it as a BUILD.md gap. The author/session is unknown,
+and the rationale is inferred from the guard's own message only.
+
+**Build.** Added a parameter guard in `iba/app/ps/Prose.ps1` alongside the existing `ExportChapter`
+checks: `ExportChapter` called with `-Book` but without `-TypeId` and without `-Chapter` now stops
+with "ExportChapter with -Book also needs -Chapter (a book can span multiple chapters)." and exit 1,
+before any handler or DB call. Before this change, `-Book` alone passed the earlier guard, which only
+required `-TypeId` or `-Book`.
+
+**Test plan run.** `Prose.ps1 -Step ExportChapter -Book Programme` (no `-Chapter`) → printed the new
+message, exit code 1, no DB access (the guard runs before dispatch). The existing path
+`ExportChapter -Book Programme -Chapter 1` is unchanged by construction (the guard only fires when
+`-Chapter` is absent). It was not re-run here.
+
+**Not done here:** the `iba/docs/ps tools worksheet.xlsx` tab for `Prose.ps1`
+(`governance.ps_worksheet_sync_on_change`) was not checked or updated. Left for the researcher.
+
+Files: `iba/app/ps/Prose.ps1` (changed), `iba/app/BUILD.md` §332 (new).

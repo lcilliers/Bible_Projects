@@ -142,6 +142,7 @@ if ($Out) { $paramArgs += @('--param', "Out=$Out") }
 if ($Step -eq 'Search' -and -not $Query) { Write-Host "Search needs -Query." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'ImportChapter' -and -not $InputFile) { Write-Host "ImportChapter needs -InputFile." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'ExportChapter' -and -not $TypeId -and -not $Book) { Write-Host "ExportChapter needs -TypeId or -Book (+ -Chapter)." -ForegroundColor Yellow; exit 1 }
+if ($Step -eq 'ExportChapter' -and $Book -and -not $TypeId -and -not $PSBoundParameters.ContainsKey('Chapter')) { Write-Host "ExportChapter with -Book also needs -Chapter (a book can span multiple chapters)." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'Flag' -and (-not $FlagCode -or -not $Description)) { Write-Host "Flag needs -FlagCode and -Description." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'FlagFixPropose' -and (-not $FlagCode -or -not $PSBoundParameters.ContainsKey('Find') -or -not $PSBoundParameters.ContainsKey('Replace'))) { Write-Host "FlagFixPropose needs -FlagCode, -Find and -Replace." -ForegroundColor Yellow; exit 1 }
 if ($Step -eq 'FlagFixApply' -and (-not $ProposalFile -or -not $SectionIds)) { Write-Host "FlagFixApply needs -ProposalFile and -SectionIds." -ForegroundColor Yellow; exit 1 }

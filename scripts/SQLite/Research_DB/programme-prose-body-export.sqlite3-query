@@ -9,7 +9,7 @@ ps.source_file
 FROM prose_section_type pst
 INNER JOIN prose_section ps
 ON pst.id = ps.section_type_id
-WHERE pst.source_stage = 'programme' and pst.delete_flagged = 0
+WHERE pst.source_stage = 'Findings' and pst.delete_flagged = 0
 ORDER BY pst.sort_order;
 
 SELECT
