@@ -16693,3 +16693,74 @@ message, exit code 1, no DB access (the guard runs before dispatch). The existin
 (`governance.ps_worksheet_sync_on_change`) was not checked or updated. Left for the researcher.
 
 Files: `iba/app/ps/Prose.ps1` (changed), `iba/app/BUILD.md` §332 (new).
+## 333. M47 re-allocation register applied — 72 items / 88 strongs re-coded in `cluster_strong`, `verse_lexical.role` refreshed (2026-09-28, researcher-approved, escalation #1880)
+
+Researcher, verbatim: *"1 - yes draft the list; 2 - if you have access, then apply it, as long as
+you follow governance and the configs 3 - yes, anything identified in the M47 work and the batches
+that flags a re-allocation should be included."* Then, on #1880 v2: *"proceed to prepare this
+excalation for ready for approval"*. Approved on #1880 v4: *"approve to finalise"*. No items were
+excepted. Full trail: escalation #1880. The register (`research/investigations/M47-reallocation-
+register-v2-20260928.md`) closes M47 Batch A R7 (option b: one consolidated register, one approval
+point).
+
+**Scope.** Every re-allocation flag in the M47 cross-cluster work:
+- 39 formal §R items from Batches A–E
+- 22 Strong's-level misfiles from the §0 lists of Batches A–H
+- 6 inner-being terms hidden in T-codes: "die" and "death" gain M25 as a second code; kidneys, bowels, belly and womb move T2 → T14; *splanchna* goes to T14 + M50
+- 9 verse-level / by-design items, recorded with no change
+
+Of the 72 items, 50 change membership. The five v1 "decision" items were resolved to proposals
+before approval:
+- T-03 "say" and T-04 *qereb*: no re-code (they are handled as seat-coverage tie classes)
+- C-R4: a file-only change (spirit CSV)
+- C-R5: no change — STEP itself tags 1Sa 30:6 as H4784
+- E-R6: no change; deferred to a cluster-structure review
+
+**Build:**
+- `iba/app/migration/apply_m47_reallocation_1880_v1_20260928.py` (new):
+  - reads `iba/docs/m47-cluster-reallocation-spec-v3-20260928.json` and applies only items with `"approved": true`
+  - ops: `add` / `move` / `remove` / `set_alt` / `set_review_flag`
+  - soft-delete-and-insert throughout (`reclassify_g0627_to_t3_v1_20260917.py` convention), never an edit in place
+  - source `researcher-ruling-1880-20260928`; each rationale cites the register item, the ruling and #1880
+  - confidence `high` for items rated clear or by-design, `medium` for weak or proposed
+  - idempotent; `--dry-run`, plus a dry-run-only `--assume-approved` preview
+  - prints the `lexical.build` chapter scope for the touched strongs
+- Governance basis: `cluster` / `cluster_strong` are `category='data'` tables with `writer='migration'` grants (as `apply_1598_cluster_batch.py`).
+- Spec versions: v1 (draft), v2 (ready for approval), v3 (approved). v1 and v2 are archived in `iba/docs/archive/`.
+
+**Run:**
+- DB backup `iba/app/db/iba.db.pre-1880-m47-reallocation-20260928.bak` (SQLite online backup; 15,527 live `cluster_strong` rows)
+- Preview dry run over all items as if approved: 0 skips
+- Real dry run on spec v3: identical to the preview
+- Live run: 88 strongs touched, 111 rows written under #1880. Live rows went 15,527 → 15,528 (+5 adds, −4 removes; the rest are soft-delete / reinsert pairs).
+- A re-run touches 0 (idempotent).
+
+**Role refresh** (#1719 stale-role gate): `VerseLexical.ps1 -Step lexical.build` was run per book over the affected chapter range, 1,119 affected chapters in 66 books. **Test plan run:**
+- All 66 books returned `ok`: 29,667 verses rebuilt; 7,445 codes updated, 535,919 unchanged, 0 inserted, 0 removed (no dangling live notes).
+- Post-check, every `verse_lexical` row of the 88 touched strongs carries exactly its live `cluster_strong` codes: 0 mismatches.
+- `lexical.stale_role_strongs_for_cluster` on all 33 clusters the touched strongs now belong to: none stale.
+
+**Other outputs:**
+- `outputs/markdown/M47-spirit-classification-v2-20260928.csv`: C-R4, Psa 106:33 H7307G H1 → U (v1 archived).
+- M47 input CSVs regenerated from `verse_lexical`. The method was validated first: run against the pre-apply backup, it reproduces the 2026-09-27 researcher-supplied surface and pairs files row for row (3,175 / 8,605). Regenerated from the live DB:
+- `cluster-M47-surface-forms-v2-20260928.csv`: identical, 3,175 rows. No M47 member changed.
+- `cluster-M47-other-m-code-pairs-with-distance-v2-20260928.csv`: 8,605 → 8,393 rows.
+  - Most of the change is the same word pair under its corrected code.
+  - 367 pairs dropped out entirely. All are words the batches had already flagged as misfiles.
+  - **155 genuinely new pair rows in 115 verses**: the death side of Life & Death (H4191 102, H4194 28, G2288 17, G0599 7) plus 1 G4698 → `cluster-M47-delta-new-pairs-after-1880-v1-20260928.csv`.
+- The 2026-09-27 originals are archived to `research/investigations/archive/`.
+
+**Not done here:**
+- M67 Sloth & Diligence (`ready_for_observations`) gained H7423B and H5647I. Its verse reading resumes only after its own readiness check.
+- Seven live `ib_observation` rows sit under a cluster their strong has left (B-R3, D-R2, E-R2, S-02, S-14 ×2, S-17). They were kept as recorded, per the register.
+- E-R6 (the faith family across M13 / M31 / M19) is deferred to a cluster-structure review; no escalation has been raised for it yet.
+- The M47 Batches A–H delta revisit follows, as analytical work outside this build. The 155 new death-side pairs are Batch G's (Life & Death) under-represented half.
+- `research/investigations/cluster-M47-other-m-code-cooccurrence-20260927.csv` (verse-level co-occurrence; input to the 2026-09-27 assessment only) is now stale and was not regenerated.
+
+Files:
+- `iba/app/migration/apply_m47_reallocation_1880_v1_20260928.py` (new)
+- `iba/docs/m47-cluster-reallocation-spec-v3-20260928.json` (new; v1 and v2 archived)
+- `research/investigations/M47-reallocation-register-v2-20260928.md` (v1 archived)
+- `outputs/markdown/M47-spirit-classification-v2-20260928.csv`
+- regenerated M47 CSVs and the delta file in `research/investigations/` (originals archived)
+- `iba/app/BUILD.md` §333 (new)
