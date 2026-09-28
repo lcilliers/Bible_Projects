@@ -239,19 +239,11 @@ The **home for ALL verse-fanout method output** (the method that superseded the 
 - **Method/governance docs are NOT under `verse-analysis/` at all** — they stay in `Workflow/methodology/` and `Workflow/Catalogue/`. See `verse-analysis/README.md`.
 - The old `Sessions/` and `Sessions-v2/` trees remain read-only cross-reference.
 
-### 3.0 `Sessions-v2/` — per-cluster working tree (cluster-rework phase, from 2026-06-05)
+### 3.0 Per-cluster output → `_analytics/Clusters/{code} - {short name}/` (rule lives in config)
 
-The **authoritative home for ALL new cluster output.** From 2026-06-05 the programme reworks every
-cluster M01-upward — each made the best it can be (redone where needed) — and every artefact for a cluster
-is saved under its own folder here.
-
-| What | Where | Naming |
-|------|-------|--------|
-| All new per-cluster output (audits, analysis, briefs, extracts, logs, prose, patches) | `Sessions-v2/{CODE}-{Name}/` (e.g. `Sessions-v2/M01-Fear/`) | `wa-cluster-{CODE}-{kind}-v{n}-{YYYYMMDD}.{ext}` (lowercase prefix, CAPS code) |
-
-- **Folders:** one per cluster, `{CODE}-{Name}` (CAPS code + DB short-name), 48 in total (46 M-clusters incl. the M10b/M10c splits, plus `FLAG-Flag` and `T2-Supplementary`). See `Sessions-v2/README.md`.
-- **The old `Sessions/` tree (incl. `Sessions/Session_Clusters/{CODE}/`, `Session_A…D/`) stays intact and is READ-ONLY cross-reference** — do **not** write new cluster output there.
-- The **database remains the single authoritative record of findings** regardless of folder.
+> **Updated 2026-09-28 (escalation #1884).** The rule is now held in config, not here: **`cfg_setting` `report.cluster_folder_naming_convention`** (iba.db). Read it there. This section is only a pointer, per `governance.operational_behaviour_control` ("once captured here, its document version is replaced with a pointer").
+> In short: there is one subfolder for every `cluster` row (M-, T- and FLAG codes), e.g. `_analytics/Clusters/M02 - anger-wrath/`, and prior versions go in its `archive/`. File names stay `wa-cluster-{CODE}-{kind}-v{n}-{YYYYMMDD}.{ext}`.
+> **Superseded:** the former `Sessions-v2/{CODE}-{Name}/` tree (2026-06-05), which no longer exists. The old `Sessions/` tree stays read-only cross-reference.
 
 ### 3.1 `data/exports/`
 

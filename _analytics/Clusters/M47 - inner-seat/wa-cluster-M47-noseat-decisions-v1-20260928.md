@@ -1,7 +1,7 @@
 # M47 — decisions before the no-seat work starts (v1)
 
-**Date:** 2026-09-28 · **Author:** Claude Code · **Status:** awaiting researcher mark-up. Nothing has been run, moved or written to the DB.
-**Picks up from:** `outputs/markdown/M47-handoff-batches-C-to-H-v10-20260928.md` (NEXT STEP) and `research/investigations/M47-seat-coverage-and-unseated-verses-v1-20260928.md` (§5 method, §6 decisions).
+**Date:** 2026-09-28 · **Author:** Claude Code · **Status:** A is settled by the researcher's instruction of 2026-09-28 (see the rulings under A2–A4). B, C and D await researcher mark-up. Nothing has been run or written to the DB.
+**Picks up from:** `M47-handoff-batches-C-to-H-v12-20260928.md` (NEXT STEP; v10 archived) and `M47-seat-coverage-and-unseated-verses-v1-20260928.md` (both in this folder) (§5 method, §6 decisions).
 **Researcher's key question (verbatim):** "are there inner being related operations that takes place without a explicit, or implicit through cross - correlation, context that is related to the inner being."
 
 **How to answer:** under each item, write your ruling after **Ruling:**. My recommendation is given first each time.
@@ -20,24 +20,24 @@
 
 **A1. Update the rules document.** Rewrite §3.0 of `docs/file-organisation-rules.md` to point at `_analytics/Clusters/{CODE}-{Name}/`, and bump its version.
 **Recommend:** yes.
-**Ruling:**
+**Ruling:** *(open. The instruction below settles where files go. The rules document is not yet corrected, and neither is any `cfg_setting` that would record the rule. See the note to the researcher in chat.)*
 
 **A2. Folder name form.** The options are to keep `M47 - heart-soul-mind-spirit`, or to rename it `M47-Inner-Seat`, which is `{CODE}-{DB short name}` as the README states.
 **Recommend:** rename to `M47-Inner-Seat`, and create other cluster folders the same way as they are needed (e.g. `M02-Anger-Wrath`, `M20-Doubt-Discouragement`).
-**Ruling:**
+**Ruling:** Researcher, 2026-09-28 (verbatim): *"ensure that filing goes to the correct _analytics\clusters folder with a sub folder for each cluster. create the cluster of does not exist. Move the M47 files all to the folders."* Applied: the existing folder `M47 - heart-soul-mind-spirit` was first kept as it was, then renamed `M47 - inner-seat` with a folder created for every cluster (#1882 v2). Other clusters get `{CODE}-{DB short name}` folders when they are first needed. *(You can still ask for the M47 folder to be renamed to `M47-Inner-Seat`.)*
 
 **A3. Move the existing M47 files into the folder.** Use `git mv`, so history is kept.
 - 14 files from `outputs/markdown/`: the handoff v10, stocktake, depiction, co-occurrence assessment, spirit distinction + CSV, status overview, batches A–H.
 - 9 files from `research/investigations/`: the seat-coverage plan, T-code question, re-allocation register, surface forms, pairs, delta, and the stale co-occurrence CSV.
 - **Recommend:** move them, but **keep their current file names** and do not rename them to `wa-cluster-M47-…`. Every handoff and batch file cross-references the others by name, so renaming 23 files means rewriting those references, which costs a lot for little gain. New files from now on use `wa-cluster-M47-{kind}-v{n}-{date}`. Also update the paths in handoff v10 §1 and §3.
 - The alternative is a full rename plus a reference rewrite.
-**Ruling:**
+**Ruling:** Done 2026-09-28 per the instruction under A2. 26 current files moved here and 27 prior versions into `archive/`, using `git mv` with names unchanged. Handoff v10 → v11 with paths corrected.
 
 **A4. Where the no-seat pilot readings go.** They are per-cluster readings asked from the M47 angle.
 **Recommend:**
 - the tie-profile (all clusters, one table) → the M47 folder
 - each pilot reading → **that cluster's own folder** (e.g. `M02-…/wa-cluster-M02-noseat-reading-v1-{date}.md`), with a one-line pointer in the M47 folder
-**Ruling:**
+**Ruling:** Follows from the instruction under A2: each cluster has its own subfolder, created when it is first needed. The tie-profile goes here; each pilot reading goes in its own cluster folder, with a pointer here.
 
 **A5. The stray M10 files at the `_analytics/Clusters/` root.** This item is out of scope for today. **Recommend:** leave them, and log them as a separate filing item.
 **Ruling:**
