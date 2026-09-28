@@ -3916,3 +3916,43 @@ Files: `iba/app/handlers/session_close.py` (new), `iba/app/ps/Session-Close.ps1`
 `iba/app/migration/register_session_close_step_v1_20260924.py` (new),
 `.claude/commands/session-close.md` (new), `iba/app/GOVERNANCE.md` §82 (new), `iba/app/BUILD.md`
 §331 (new), `iba/app/USER-GUIDE.md` (changed).
+
+## §83. Per-cluster output folders under `_analytics/Clusters` — `cfg_setting report.cluster_folder_naming_convention` (2026-09-28, researcher-directed, escalations #1882/#1884)
+
+Researcher, verbatim: *"ensure that filing goes to the correct _analytics\clusters folder with a sub
+folder for each cluster. create the cluster of does not exist. Move the M47 files all to the
+folders."* Then: *"the docs/file-organisation-rules are out of date. all filing rules are, or should
+be in the configs per the governance."* On #1882 v2: *"proceed to create a sub folder for each
+cluster in the clusters folder."*
+
+**Rule (config is authoritative; this section documents it):** `cfg_setting
+report.cluster_folder_naming_convention` (module `governance`). `_analytics/Clusters` holds **one
+subfolder for every `cluster` row** (`deleted=0`; M-, T- and FLAG codes alike), created whenever a
+cluster row is added. **All** output for a cluster goes in its folder: analysis, readings, handoffs,
+input/extract CSVs, and decisions. Prior versions go in its `archive/`. The folder name is
+`{cluster_code} - {short_name lowercased, & and other punctuation dropped, spaces as single
+hyphens}`, e.g. `M02 - anger-wrath`, `M47 - inner-seat`, `M81 - memory-act`. Cross-cluster files
+(`report.cluster_path`, `cluster.quality_report_path`) stay at the root. The rule mirrors
+`report.book_folder_naming_convention` (§ on `_analytics/Bible_Books`). It was checked against
+`governance.oneoff_report_dir` (`outputs/`) and does not conflict, because cluster analysis is not
+one-off output.
+
+**Why it was needed:** no `cfg_*` row recorded a per-cluster folder. `docs/file-organisation-rules.md`
+§3.0 still pointed to the retired `Sessions-v2/` tree, so the M47 work drifted into
+`outputs/markdown/` and `research/investigations/`.
+
+**Applied:** #1882 (the first proposal, "create on first use") was **superseded** by #1884 (a
+folder for every cluster). The value changed, and a resumed `configmaint.propose` applies whatever
+`-Set` it is given at resume, so the revised value was raised fresh rather than applied under the
+old run id. #1884 was approved by the researcher and applied with the exact stored `-Set`, and was
+verified by direct query. The filesystem already conformed: 92 folders created, M02/M20 kept, and
+`M47 - heart-soul-mind-spirit` renamed `M47 - inner-seat` via `git mv`. All M47 files, 26 current
+plus 27 prior versions, were moved there by `git mv` with names unchanged.
+
+**Superseded text marked:** `docs/file-organisation-rules.md` §3.0 is now a pointer to this row;
+the CLAUDE.md §2 and §10 `Sessions-v2/` lines and the `_analytics/Clusters/Cluster_README.md`
+header are marked superseded.
+
+**Not done here:** the loose pre-rule files at the `_analytics/Clusters` root (M10 process files,
+m-code conflict CSVs, etc.) were not moved into their cluster folders. That was out of scope this
+session, per decisions file A5. Empty cluster folders are not tracked by git until they hold a file.

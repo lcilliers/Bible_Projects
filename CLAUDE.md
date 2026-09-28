@@ -91,7 +91,7 @@ Bible_study_projects/             ← working dir (C:\Bible_study_projects — m
 ├── database/
 │   ├── bible_research.db         ← SQLite (~766 MB, NOT in Git)
 │   └── archive/file_manifest.json ← RETIRED 2026-08-18 (escalation #730), frozen 2026-08-15 snapshot — live manifest is IBA's `file_manifest` DB table, see §9 item 5
-├── Sessions-v2/                  ← **per-cluster working tree (cluster-rework phase from 2026-06-05) — HOME for ALL new cluster output**
+├── Sessions-v2/                  ← ~~per-cluster working tree~~ **SUPERSEDED 2026-09-28: folder no longer exists; cluster output → `_analytics/Clusters/{code} - {short name}/` per `cfg_setting report.cluster_folder_naming_convention` (GOVERNANCE.md §83, #1884)**
 │   └── {CODE}-{Name}/            ← one folder per cluster (M01-Fear … M46-Abundance, FLAG, T2); see README + file-organisation-rules §3.0
 ├── Sessions/                     ← Session-staged inputs and outputs (now READ-ONLY cross-reference)
 │   ├── Patches/                  ← JSON patches (per-session-stage); applied → archive/patches/
@@ -306,7 +306,7 @@ Documents in `Workflow/Instructions/`. **All operational cross-references use th
 - **Live model:** L1/L2 **"verse-read = meaning"** → `finding` (340k VERSE-level). L3–L8 synthesis/distillation **parked** until more clusters accumulate. The **v3_2 cluster-rollup instruction is DRAFT** (open item B3); the catalogue refit (two-layer VE/SYNTH) is approved but **not yet applied to the DB**.
 - **215 registries** — session_b_status: 160 Verse Context Reset · 12 Analysis Complete · 43 NULL; verse_context_status: 172 Complete · 1 In Progress · 42 NULL.
 - **49 clusters** (M01–M47 + FLAG + T2): 30 Not started · 13 Analysis Completed · 3 Analysis Completed (Terms Added) · 2 Structurally Ready · 1 Ready for re-analysis. M01 (Fear) + M15 (Wisdom) verse-read 100%. **128 characteristics.**
-- **Cluster-rework phase active from 2026-06-05** — new output → `Sessions-v2/{CODE}-{Name}/`; old `Sessions/` read-only cross-reference.
+- ~~**Cluster-rework phase active from 2026-06-05** — new output → `Sessions-v2/{CODE}-{Name}/`~~ — **superseded 2026-09-28:** cluster output → `_analytics/Clusters/{code} - {short name}/` (`cfg_setting report.cluster_folder_naming_convention`, GOVERNANCE.md §83); old `Sessions/` read-only cross-reference.
 - **DB loss 2026-06-03** recovered to a 2026-05-28 copy (~6 weeks lost); project off Google Drive, NAS + git backups (§13).
 - Registry/cluster duality: `word_registry.cluster_assignment` = **C-codes** (C01–C22, dimension-review layer, retired but data retained); the live analytical layer is the **M-code `cluster` table**. Both coexist — C-codes are scaffolding, not dead.
 - Open: **OT-DBR-009** (mti_terms dedup) unresolved; `wa-programme-open-items.md` (127 items) currency uncertain post-pivot; science extracts not yet in DB; ~12 docs silently superseded (reconstruction 04 §4).

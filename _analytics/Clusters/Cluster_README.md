@@ -1,3 +1,5 @@
+> **SUPERSEDED 2026-09-28 (escalation #1884, GOVERNANCE.md §83).** This README describes the retired `Sessions-v2/` tree. The live rule is `cfg_setting report.cluster_folder_naming_convention` in iba.db: one subfolder per `cluster` row here in `_analytics/Clusters`, named `{code} - {short name}` (e.g. `M02 - anger-wrath`). Read the config, not the text below; it is kept for provenance only.
+
 # Sessions-v2 — per-cluster working tree (the v2 home)
 
 > **Created 2026-06-05.** The fresh, authoritative home for **all new cluster work**, one folder per
