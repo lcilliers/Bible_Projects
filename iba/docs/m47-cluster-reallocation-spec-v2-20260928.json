@@ -1,0 +1,3133 @@
+{
+ "spec": "m47-cluster-reallocation",
+ "version": "v2",
+ "escalation": 1880,
+ "date": "2026-09-28",
+ "status": "READY FOR APPROVAL (escalation #1880). Nothing applies until an item has \"approved\": true, set only after the Researcher approves #1880.",
+ "researcher_instruction": "\"yes draft the list; if you have access, then apply it, as long as you follow governance and the configs; yes, anything identified in the M47 work and the batches that flags a re-allocation should be included.\" (2026-09-28)",
+ "register": "research/investigations/M47-reallocation-register-v2-20260928.md",
+ "op_semantics": {
+  "add": "insert a live cluster_strong row (strong, cluster_code); existing rows untouched",
+  "move": "soft-delete the live (strong, from) row and insert (strong, to); never edit in place",
+  "remove": "soft-delete the live (strong, cluster_code) row; other rows untouched",
+  "set_alt": "record alternative cluster(s) on the live (strong, cluster_code) row via soft-delete-and-reinsert with alt_clusters",
+  "set_review_flag": "set review_flag=1 on the live (strong, cluster_code) row via soft-delete-and-reinsert",
+  "none": "no cluster_strong change; recorded for completeness"
+ },
+ "apply_procedure": [
+  "escalation opened and linked",
+  "migration script: --dry-run, then live; idempotent; rationale quotes the researcher ruling + escalation id",
+  "lexical.build for every verse containing a touched strong (verse_lexical.role refresh; #1719 stale-role gate)",
+  "BUILD.md entry",
+  "regenerate M47 surface + pairs CSVs and diff",
+  "session-close check"
+ ],
+ "items": [
+  {
+   "id": "T-01",
+   "source": "today: T/M question §1; Batch G §0.2",
+   "label": "H4191, G0599 'to die'",
+   "issue": "Death side of Life & Death is invisible to every M reading. M25 description names 'death, dying'.",
+   "recommendation": "Keep T3 (operation) row; add M25 as a second code (dual-code precedent H0639G M02+T14).",
+   "strength": "clear",
+   "live_now": {
+    "G0599": [
+     {
+      "code": "T3",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ],
+    "H4191": [
+     {
+      "code": "T3",
+      "source": "llm-reassignment-v1_1-20260811",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "G0599": 99,
+    "H4191": 699
+   },
+   "ops": [
+    {
+     "op": "add",
+     "strong": "H4191",
+     "cluster_code": "M25"
+    },
+    {
+     "op": "add",
+     "strong": "G0599",
+     "cluster_code": "M25"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "T-02",
+   "source": "today §1; Batch G §0.2",
+   "label": "H4194, G2288 'death'",
+   "issue": "In T10 by researcher-approved decision (#1598: death as a realm). M25 names 'death'.",
+   "recommendation": "Keep T10 (realm) row; add M25.",
+   "strength": "clear",
+   "live_now": {
+    "G2288": [
+     {
+      "code": "T10",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H4194": [
+     {
+      "code": "T10",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G2288": 106,
+    "H4194": 151
+   },
+   "ops": [
+    {
+     "op": "add",
+     "strong": "H4194",
+     "cluster_code": "M25"
+    },
+    {
+     "op": "add",
+     "strong": "G2288",
+     "cluster_code": "M25"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "T-03",
+   "source": "today §1; Batch B R2; depiction §2.1c",
+   "label": "H0559 'to say' (4,340 verses)",
+   "issue": "Inner-being only in 'said in his heart'. Coding all 4,340 verses to an M-cluster would flood it.",
+   "recommendation": "PROPOSED: no re-code. Include T3 'say' (H0559) in the M47 angle as a tie class in the seat-coverage work, so the 'said in his heart' series is covered without flooding an M-cluster.",
+   "strength": "proposed",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "T-04",
+   "source": "today §1; seat-coverage §2",
+   "label": "H7130G qereb 'entrails: among'",
+   "issue": "Mostly the preposition 'in the midst of'; the 'inward parts' sense is a minority.",
+   "recommendation": "PROPOSED: no re-code. Treat qereb as a body-seat tie class in the seat-coverage work (ruling 4 unchanged).",
+   "strength": "proposed",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "T-05",
+   "source": "today §1; seat-coverage §2; ruling 4",
+   "label": "H3629 kidney, H4578 bowels/belly, H0990G/H/J belly, H7358 womb",
+   "issue": "Body parts filed in the T2 catch-all; T14's own description names 'entrails/bowels = compassion'.",
+   "recommendation": "T2 -> T14 only. Ruling 4 (not separate M47 study words) is unchanged. Adding any of them to M47 is a separate researcher decision.",
+   "strength": "clear",
+   "live_now": {
+    "H0990G": [
+     {
+      "code": "T2",
+      "source": "manual-backfill-triage-20260813",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H0990H": [
+     {
+      "code": "T2",
+      "source": "manual-backfill-triage-20260813",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H0990J": [
+     {
+      "code": "T2",
+      "source": "manual-backfill-triage-20260813",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H3629": [
+     {
+      "code": "T2",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H4578": [
+     {
+      "code": "T2",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H7358": [
+     {
+      "code": "T2",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H0990G": 16,
+    "H0990H": 45,
+    "H0990J": 9,
+    "H3629": 26,
+    "H4578": 30,
+    "H7358": 25
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H3629",
+     "from": "T2",
+     "to": "T14"
+    },
+    {
+     "op": "move",
+     "strong": "H4578",
+     "from": "T2",
+     "to": "T14"
+    },
+    {
+     "op": "move",
+     "strong": "H0990G",
+     "from": "T2",
+     "to": "T14"
+    },
+    {
+     "op": "move",
+     "strong": "H0990H",
+     "from": "T2",
+     "to": "T14"
+    },
+    {
+     "op": "move",
+     "strong": "H0990J",
+     "from": "T2",
+     "to": "T14"
+    },
+    {
+     "op": "move",
+     "strong": "H7358",
+     "from": "T2",
+     "to": "T14"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "T-06",
+   "source": "today §1",
+   "label": "G4698 splanchna 'affection / entrails'",
+   "issue": "NT use is mostly 'affection, compassion' (Phi 1:8; Col 3:12).",
+   "recommendation": "T2 -> T14 (body part) plus M50 Grace & Mercy (compassion). Alternative M51 Love (affection).",
+   "strength": "weak",
+   "live_now": {
+    "G4698": [
+     {
+      "code": "T2",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G4698": 11
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G4698",
+     "from": "T2",
+     "to": "T14"
+    },
+    {
+     "op": "add",
+     "strong": "G4698",
+     "cluster_code": "M50"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "A-R1",
+   "source": "Batch A R1",
+   "label": "H3513H 'to honor: heavy'",
+   "issue": "'heavy' = hardened heart (Pharaoh); M03 by family heuristic. M75 names 'hardening'.",
+   "recommendation": "M03 -> M75; T3 row kept.",
+   "strength": "clear",
+   "live_now": {
+    "H3513H": [
+     {
+      "code": "T3",
+      "source": "llm-reassignment-v1_1-20260811",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": "[]"
+     },
+     {
+      "code": "M03",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H3513H": 32
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H3513H",
+     "from": "M03",
+     "to": "M75"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "A-R2",
+   "source": "Batch A R2",
+   "label": "H2256M, H5688, H3499B 'cord'",
+   "issue": "Cord sense of the cord/pang homograph; T12 row already records no inner-being significance.",
+   "recommendation": "Remove M03; keep T12.",
+   "strength": "clear",
+   "live_now": {
+    "H2256M": [
+     {
+      "code": "M03",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     },
+     {
+      "code": "T12",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H3499B": [
+     {
+      "code": "M03",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     },
+     {
+      "code": "T12",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H5688": [
+     {
+      "code": "M03",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     },
+     {
+      "code": "T12",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H2256M": 46,
+    "H3499B": 6,
+    "H5688": 23
+   },
+   "ops": [
+    {
+     "op": "remove",
+     "strong": "H2256M",
+     "cluster_code": "M03"
+    },
+    {
+     "op": "remove",
+     "strong": "H5688",
+     "cluster_code": "M03"
+    },
+    {
+     "op": "remove",
+     "strong": "H3499B",
+     "cluster_code": "M03"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "A-R3",
+   "source": "Batch A R3",
+   "label": "H7451C 'distress: harm'",
+   "issue": "Mostly evil done/suffered; some verses are inner distress.",
+   "recommendation": "Keep M24, alternatives M55 / M58.",
+   "strength": "weak",
+   "live_now": {
+    "H7451C": [
+     {
+      "code": "M24",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H7451C": 152
+   },
+   "ops": [
+    {
+     "op": "set_alt",
+     "strong": "H7451C",
+     "cluster_code": "M24",
+     "alt_clusters": [
+      "M55",
+      "M58"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "A-R4",
+   "source": "Batch A R4",
+   "label": "H7186 'severe / hard / stubborn'",
+   "issue": "Heart sense is stubbornness (M30).",
+   "recommendation": "M24 -> M30.",
+   "strength": "clear",
+   "live_now": {
+    "H7186": [
+     {
+      "code": "M24",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H7186": 36
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H7186",
+     "from": "M24",
+     "to": "M30"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "A-R5",
+   "source": "Batch A R5",
+   "label": "H0926 'to dismay; hasten'",
+   "issue": "Two senses; haste = restraint of heart/spirit.",
+   "recommendation": "Keep M24, alternative M69.",
+   "strength": "weak",
+   "live_now": {
+    "H0926": [
+     {
+      "code": "M24",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H0926": 39
+   },
+   "ops": [
+    {
+     "op": "set_alt",
+     "strong": "H0926",
+     "cluster_code": "M24",
+     "alt_clusters": [
+      "M69"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "A-R6",
+   "source": "Batch A R6",
+   "label": "H5641, H3582, H2244, H2934, G2928 'to hide'",
+   "issue": "Hiding is not doubt; the M20 link is God hiding his face.",
+   "recommendation": "Keep M20; set review_flag.",
+   "strength": "weak",
+   "live_now": {
+    "G2928": [
+     {
+      "code": "M20",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2244": [
+     {
+      "code": "M20",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2934": [
+     {
+      "code": "M20",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H3582": [
+     {
+      "code": "M20",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ],
+    "H5641": [
+     {
+      "code": "M20",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G2928": 17,
+    "H2244": 33,
+    "H2934": 28,
+    "H3582": 30,
+    "H5641": 80
+   },
+   "ops": [
+    {
+     "op": "set_review_flag",
+     "strong": "H5641",
+     "cluster_code": "M20"
+    },
+    {
+     "op": "set_review_flag",
+     "strong": "H3582",
+     "cluster_code": "M20"
+    },
+    {
+     "op": "set_review_flag",
+     "strong": "H2244",
+     "cluster_code": "M20"
+    },
+    {
+     "op": "set_review_flag",
+     "strong": "H2934",
+     "cluster_code": "M20"
+    },
+    {
+     "op": "set_review_flag",
+     "strong": "G2928",
+     "cluster_code": "M20"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "B-R1",
+   "source": "Batch B R1",
+   "label": "H1696G, H1696I, H0981 'to speak'",
+   "issue": "Ordinary speech filed under Prayer (keyword, low confidence, already review-flagged).",
+   "recommendation": "M42 -> M65; H1696G keeps M42 as alternative for 'entreat'.",
+   "strength": "clear",
+   "live_now": {
+    "H0981": [
+     {
+      "code": "M42",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "low",
+      "review_flag": 1,
+      "alt": "[]"
+     }
+    ],
+    "H1696G": [
+     {
+      "code": "M42",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "low",
+      "review_flag": 1,
+      "alt": "[]"
+     }
+    ],
+    "H1696I": [
+     {
+      "code": "M42",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "low",
+      "review_flag": 1,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "H0981": 3,
+    "H1696G": 971,
+    "H1696I": 78
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H1696G",
+     "from": "M42",
+     "to": "M65"
+    },
+    {
+     "op": "move",
+     "strong": "H1696I",
+     "from": "M42",
+     "to": "M65"
+    },
+    {
+     "op": "move",
+     "strong": "H0981",
+     "from": "M42",
+     "to": "M65"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H1696G",
+     "cluster_code": "M65",
+     "alt_clusters": [
+      "M42"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "B-R3",
+   "source": "Batch B R3",
+   "label": "G0746 archē 'beginning / rule'",
+   "issue": "Came into M16 via the M17 merge; senses are time and rule.",
+   "recommendation": "M16 -> M72.",
+   "strength": "clear",
+   "live_now": {
+    "G0746": [
+     {
+      "code": "M16",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G0746": 55
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G0746",
+     "from": "M16",
+     "to": "M72"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "B-R4",
+   "source": "Batch B R4",
+   "label": "H1697I 'word: thing'",
+   "issue": "Non-speech sense of dāvār.",
+   "recommendation": "M65 -> T2.",
+   "strength": "clear",
+   "live_now": {
+    "H1697I": [
+     {
+      "code": "M65",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H1697I": 272
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H1697I",
+     "from": "M65",
+     "to": "T2"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "C-R1",
+   "source": "Batch C R1",
+   "label": "H2638 'lacking'",
+   "issue": "A lack, not a desire; 'lacking heart' = folly.",
+   "recommendation": "M18 -> M16.",
+   "strength": "clear",
+   "live_now": {
+    "H2638": [
+     {
+      "code": "M18",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H2638": 18
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H2638",
+     "from": "M18",
+     "to": "M16"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "C-R2",
+   "source": "Batch C R2",
+   "label": "H8003 'complete / whole'",
+   "issue": "Whole (integral) heart, not endurance.",
+   "recommendation": "M34 -> M12.",
+   "strength": "clear",
+   "live_now": {
+    "H8003": [
+     {
+      "code": "M34",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "H8003": 27
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H8003",
+     "from": "M34",
+     "to": "M12"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "C-R3",
+   "source": "Batch C R3",
+   "label": "H1793A 'contrite'",
+   "issue": "Crushed spirit; M09's description names 'contrition'.",
+   "recommendation": "M11 -> M09 (description match), M11 as alternative.",
+   "strength": "clear",
+   "live_now": {
+    "H1793A": [
+     {
+      "code": "M11",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H1793A": 2
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H1793A",
+     "from": "M11",
+     "to": "M09"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H1793A",
+     "cluster_code": "M09",
+     "alt_clusters": [
+      "M11"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "C-R4",
+   "source": "Batch C R4",
+   "label": "Psa 106:33 whose spirit",
+   "issue": "Spirit class, not cluster membership. Lives in the M47 spirit CSV, not a DB table.",
+   "recommendation": "PROPOSED (file, not DB): mark Psa 106:33 H7307G as [U] in the spirit classification CSV (v1 -> v2), noting both readings (Moses' spirit / God's Spirit).",
+   "strength": "proposed",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "C-R5",
+   "source": "Batch C R5",
+   "label": "1Sa 30:6 tagged H4784 'rebel'",
+   "issue": "Verse-level tagging (mārâ / mārar), not membership.",
+   "recommendation": "PROPOSED: no change. Checked 2026-09-28: STEP itself tags 1Sa 30:6 'bitter' as H4784, and verse_lexical follows the source faithfully. Recorded as a lexical note (mārâ / mārar), not corrected.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R1",
+   "source": "Batch D R1",
+   "label": "H6965B 'arise'",
+   "issue": "Movement verb inflating M08.",
+   "recommendation": "M08 -> T3.",
+   "strength": "clear",
+   "live_now": {
+    "H6965B": [
+     {
+      "code": "M08",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "H6965B": 370
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H6965B",
+     "from": "M08",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R2",
+   "source": "Batch D R2",
+   "label": "G0080 'brother'",
+   "issue": "Duplicate of the correct T8 row with a wrong sense.",
+   "recommendation": "Remove M14; keep T8.",
+   "strength": "clear",
+   "live_now": {
+    "G0080": [
+     {
+      "code": "M14",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": "[]"
+     },
+     {
+      "code": "T8",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G0080": 315
+   },
+   "ops": [
+    {
+     "op": "remove",
+     "strong": "G0080",
+     "cluster_code": "M14"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R3",
+   "source": "Batch D R3",
+   "label": "clean / unclean family",
+   "issue": "Split across M12, M56, M61, M10c.",
+   "recommendation": "Clean/pure words M12 -> M61; H2932 uncleanness M56 -> M10c.",
+   "strength": "clear",
+   "live_now": {
+    "G2511": [
+     {
+      "code": "M12",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "G2513": [
+     {
+      "code": "M12",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "G2514": [
+     {
+      "code": "M12",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H1249": [
+     {
+      "code": "M12",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2134": [
+     {
+      "code": "M12",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ],
+    "H2135": [
+     {
+      "code": "M12",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2889": [
+     {
+      "code": "M12",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2891": [
+     {
+      "code": "M12",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2932": [
+     {
+      "code": "M56",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G2511": 28,
+    "G2513": 23,
+    "G2514": 1,
+    "H1249": 7,
+    "H2134": 11,
+    "H2135": 8,
+    "H2889": 87,
+    "H2891": 79,
+    "H2932": 31
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H2889",
+     "from": "M12",
+     "to": "M61"
+    },
+    {
+     "op": "move",
+     "strong": "H2891",
+     "from": "M12",
+     "to": "M61"
+    },
+    {
+     "op": "move",
+     "strong": "H2135",
+     "from": "M12",
+     "to": "M61"
+    },
+    {
+     "op": "move",
+     "strong": "H1249",
+     "from": "M12",
+     "to": "M61"
+    },
+    {
+     "op": "move",
+     "strong": "H2134",
+     "from": "M12",
+     "to": "M61"
+    },
+    {
+     "op": "move",
+     "strong": "G2513",
+     "from": "M12",
+     "to": "M61"
+    },
+    {
+     "op": "move",
+     "strong": "G2511",
+     "from": "M12",
+     "to": "M61"
+    },
+    {
+     "op": "move",
+     "strong": "G2514",
+     "from": "M12",
+     "to": "M61"
+    },
+    {
+     "op": "move",
+     "strong": "H2932",
+     "from": "M56",
+     "to": "M10c"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R4",
+   "source": "Batch D R4",
+   "label": "H5081G 'willing / generous'",
+   "issue": "Readiness to give, not lowliness.",
+   "recommendation": "M09 -> M64.",
+   "strength": "clear",
+   "live_now": {
+    "H5081G": [
+     {
+      "code": "M09",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H5081G": 5
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H5081G",
+     "from": "M09",
+     "to": "M64"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R5",
+   "source": "Batch D R5",
+   "label": "H4102, G5549, G1299, G0757, G2117",
+   "issue": "Function verbs/adverbs (delay, direct, begin, immediately).",
+   "recommendation": "Four to T3; G2117 keeps M62 with T6 alternative.",
+   "strength": "clear",
+   "live_now": {
+    "G0757": [
+     {
+      "code": "M08",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "G1299": [
+     {
+      "code": "M09",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "G2117": [
+     {
+      "code": "M62",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "G5549": [
+     {
+      "code": "M09",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H4102": [
+     {
+      "code": "M09",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "G0757": 86,
+    "G1299": 16,
+    "G2117": 18,
+    "G5549": 5,
+    "H4102": 9
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H4102",
+     "from": "M09",
+     "to": "T3"
+    },
+    {
+     "op": "move",
+     "strong": "G5549",
+     "from": "M09",
+     "to": "T3"
+    },
+    {
+     "op": "move",
+     "strong": "G1299",
+     "from": "M09",
+     "to": "T3"
+    },
+    {
+     "op": "move",
+     "strong": "G0757",
+     "from": "M08",
+     "to": "T3"
+    },
+    {
+     "op": "set_alt",
+     "strong": "G2117",
+     "cluster_code": "M62",
+     "alt_clusters": [
+      "T6"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R6",
+   "source": "Batch D R6",
+   "label": "H0034, H1800, H7326, H6035, G4434 poverty",
+   "issue": "M09's own description names 'being needy/poor' — by design.",
+   "recommendation": "Keep M09 (description match); alternative M46 on the three mainly-material words.",
+   "strength": "by-design",
+   "live_now": {
+    "H0034": [
+     {
+      "code": "M09",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H1800": [
+     {
+      "code": "M09",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H7326": [
+     {
+      "code": "M09",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H0034": 58,
+    "H1800": 46,
+    "H7326": 24
+   },
+   "ops": [
+    {
+     "op": "set_alt",
+     "strong": "H0034",
+     "cluster_code": "M09",
+     "alt_clusters": [
+      "M46"
+     ]
+    },
+    {
+     "op": "set_alt",
+     "strong": "H1800",
+     "cluster_code": "M09",
+     "alt_clusters": [
+      "M46"
+     ]
+    },
+    {
+     "op": "set_alt",
+     "strong": "H7326",
+     "cluster_code": "M09",
+     "alt_clusters": [
+      "M46"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R7",
+   "source": "Batch D R7",
+   "label": "H7451A 'bad', H7489A 'be evil'",
+   "issue": "raʿ covers every register of 'bad'.",
+   "recommendation": "Keep M58, alternatives M03 / M28.",
+   "strength": "weak",
+   "live_now": {
+    "H7451A": [
+     {
+      "code": "M58",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H7489A": [
+     {
+      "code": "M58",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H7451A": 64,
+    "H7489A": 94
+   },
+   "ops": [
+    {
+     "op": "set_alt",
+     "strong": "H7451A",
+     "cluster_code": "M58",
+     "alt_clusters": [
+      "M03",
+      "M28"
+     ]
+    },
+    {
+     "op": "set_alt",
+     "strong": "H7489A",
+     "cluster_code": "M58",
+     "alt_clusters": [
+      "M03",
+      "M28"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R8",
+   "source": "Batch D R8",
+   "label": "H4974, H5352, H8235, H1305 in M61",
+   "issue": "Heuristic misfits.",
+   "recommendation": "As listed; H1305 flagged.",
+   "strength": "clear",
+   "live_now": {
+    "H1305": [
+     {
+      "code": "M61",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H4974": [
+     {
+      "code": "M61",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H5352": [
+     {
+      "code": "M61",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H8235": [
+     {
+      "code": "M61",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H1305": 16,
+    "H4974": 4,
+    "H5352": 33,
+    "H8235": 1
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H4974",
+     "from": "M61",
+     "to": "M73"
+    },
+    {
+     "op": "move",
+     "strong": "H5352",
+     "from": "M61",
+     "to": "M26"
+    },
+    {
+     "op": "move",
+     "strong": "H8235",
+     "from": "M61",
+     "to": "T13"
+    },
+    {
+     "op": "set_review_flag",
+     "strong": "H1305",
+     "cluster_code": "M61"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R9",
+   "source": "Batch D R9",
+   "label": "H1892, H7423B, H3908 (+H3584, H3868, H5956) in M14",
+   "issue": "Partial fits to 'deceit'.",
+   "recommendation": "H7423B -> M67; H3908 -> T12; the rest stay (verse-level notes).",
+   "strength": "clear",
+   "live_now": {
+    "H3908": [
+     {
+      "code": "M14",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H7423B": [
+     {
+      "code": "M14",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H3908": 5,
+    "H7423B": 5
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H7423B",
+     "from": "M14",
+     "to": "M67"
+    },
+    {
+     "op": "move",
+     "strong": "H3908",
+     "from": "M14",
+     "to": "T12"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "D-R10",
+   "source": "Batch D R10",
+   "label": "H2778A, H1984H (+H3887, height words) in M08",
+   "issue": "Reproach is disgrace; hālal splits praise/boast.",
+   "recommendation": "H2778A -> M53; H1984H alternative M22.",
+   "strength": "clear",
+   "live_now": {
+    "H1984H": [
+     {
+      "code": "M08",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2778A": [
+     {
+      "code": "M08",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H1984H": 21,
+    "H2778A": 38
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H2778A",
+     "from": "M08",
+     "to": "M53"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H1984H",
+     "cluster_code": "M08",
+     "alt_clusters": [
+      "M22"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R1",
+   "source": "Batch E R1",
+   "label": "H5002 'utterance' (declares the Lord)",
+   "issue": "Oracle formula, not prayer (keyword, low, review-flagged).",
+   "recommendation": "M42 -> M43.",
+   "strength": "clear",
+   "live_now": {
+    "H5002": [
+     {
+      "code": "M42",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "low",
+      "review_flag": 1,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "H5002": 358
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H5002",
+     "from": "M42",
+     "to": "M43"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R2",
+   "source": "Batch E R2",
+   "label": "H5650 'servant'",
+   "issue": "Social role; only 'servant of the Lord' is worship.",
+   "recommendation": "M36 -> T8, M36 as alternative.",
+   "strength": "clear",
+   "live_now": {
+    "H5650": [
+     {
+      "code": "M36",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": "[\"M44\"]"
+     }
+    ]
+   },
+   "verses": {
+    "H5650": 715
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H5650",
+     "from": "M36",
+     "to": "T8"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H5650",
+     "cluster_code": "T8",
+     "alt_clusters": [
+      "M36"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R3",
+   "source": "Batch E R3",
+   "label": "G2323 heal, H6633 wage war, H5647I labour in M36",
+   "issue": "Healing, war, farm work.",
+   "recommendation": "As listed (H6633 to T3 rather than M10).",
+   "strength": "clear",
+   "live_now": {
+    "G2323": [
+     {
+      "code": "M36",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ],
+    "H5647I": [
+     {
+      "code": "M36",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H6633": [
+     {
+      "code": "M36",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": "[\"T2\"]"
+     }
+    ]
+   },
+   "verses": {
+    "G2323": 42,
+    "H5647I": 30,
+    "H6633": 12
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G2323",
+     "from": "M36",
+     "to": "M45"
+    },
+    {
+     "op": "move",
+     "strong": "H6633",
+     "from": "M36",
+     "to": "T3"
+    },
+    {
+     "op": "move",
+     "strong": "H5647I",
+     "from": "M36",
+     "to": "M67"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R4",
+   "source": "Batch E R4",
+   "label": "salvation family M45 / M79",
+   "issue": "Verb 'save' in Renewal, noun 'salvation' in Salvation.",
+   "recommendation": "Move the noun H8668G; save-verbs keep M45 with M79 alternative (respects the M38 merge).",
+   "strength": "weak",
+   "live_now": {
+    "G1295": [
+     {
+      "code": "M45",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ],
+    "G4982": [
+     {
+      "code": "M45",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2502A": [
+     {
+      "code": "M45",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H3467": [
+     {
+      "code": "M45",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ],
+    "H5337": [
+     {
+      "code": "M45",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "low",
+      "review_flag": 1,
+      "alt": "[]"
+     }
+    ],
+    "H8668G": [
+     {
+      "code": "M45",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G1295": 8,
+    "G4982": 100,
+    "H2502A": 23,
+    "H3467": 199,
+    "H5337": 194,
+    "H8668G": 21
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H8668G",
+     "from": "M45",
+     "to": "M79"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H3467",
+     "cluster_code": "M45",
+     "alt_clusters": [
+      "M79"
+     ]
+    },
+    {
+     "op": "set_alt",
+     "strong": "H5337",
+     "cluster_code": "M45",
+     "alt_clusters": [
+      "M79"
+     ]
+    },
+    {
+     "op": "set_alt",
+     "strong": "H2502A",
+     "cluster_code": "M45",
+     "alt_clusters": [
+      "M79"
+     ]
+    },
+    {
+     "op": "set_alt",
+     "strong": "G4982",
+     "cluster_code": "M45",
+     "alt_clusters": [
+      "M79"
+     ]
+    },
+    {
+     "op": "set_alt",
+     "strong": "G1295",
+     "cluster_code": "M45",
+     "alt_clusters": [
+      "M79"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R5",
+   "source": "Batch E R5",
+   "label": "H1285, H3772H, G1242, G1303 covenant",
+   "issue": "M32 'Covenant' holds only circumcision words.",
+   "recommendation": "M44 -> M32 — unless the 2026-08-13 decision meant M32 as circumcision only.",
+   "strength": "weak",
+   "live_now": {
+    "G1242": [
+     {
+      "code": "M44",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "G1303": [
+     {
+      "code": "M44",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H1285": [
+     {
+      "code": "M44",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H3772H": [
+     {
+      "code": "M44",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G1242": 30,
+    "G1303": 6,
+    "H1285": 264,
+    "H3772H": 87
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H1285",
+     "from": "M44",
+     "to": "M32"
+    },
+    {
+     "op": "move",
+     "strong": "H3772H",
+     "from": "M44",
+     "to": "M32"
+    },
+    {
+     "op": "move",
+     "strong": "G1242",
+     "from": "M44",
+     "to": "M32"
+    },
+    {
+     "op": "move",
+     "strong": "G1303",
+     "from": "M44",
+     "to": "M32"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R6",
+   "source": "Batch E R6",
+   "label": "faith family M13 / M31 / M19",
+   "issue": "A cluster-structure question.",
+   "recommendation": "PROPOSED: no change in this escalation. Record for a separate cluster-structure review (merge M31 into M13; G4100 believe).",
+   "strength": "proposed",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R7",
+   "source": "Batch E R7",
+   "label": "H0269, G0079 sister; H7378, G1264 contend in M44",
+   "issue": "Kin nouns are parties; contend is legal dispute.",
+   "recommendation": "As listed.",
+   "strength": "clear",
+   "live_now": {
+    "G0079": [
+     {
+      "code": "M44",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "G1264": [
+     {
+      "code": "M44",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": "[\"T2\"]"
+     }
+    ],
+    "H0269": [
+     {
+      "code": "M44",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H7378": [
+     {
+      "code": "M44",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G0079": 24,
+    "G1264": 1,
+    "H0269": 94,
+    "H7378": 59
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H0269",
+     "from": "M44",
+     "to": "T8"
+    },
+    {
+     "op": "move",
+     "strong": "G0079",
+     "from": "M44",
+     "to": "T8"
+    },
+    {
+     "op": "move",
+     "strong": "H7378",
+     "from": "M44",
+     "to": "M26"
+    },
+    {
+     "op": "move",
+     "strong": "G1264",
+     "from": "M44",
+     "to": "M26"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R8",
+   "source": "Batch E R8",
+   "label": "H7311A rûm, H1431 gādal in M22",
+   "issue": "'Lift up the heart' is the pride idiom.",
+   "recommendation": "Keep M22, alternative M08.",
+   "strength": "weak",
+   "live_now": {
+    "H1431": [
+     {
+      "code": "M22",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H7311A": [
+     {
+      "code": "M22",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H1431": 114,
+    "H7311A": 184
+   },
+   "ops": [
+    {
+     "op": "set_alt",
+     "strong": "H7311A",
+     "cluster_code": "M22",
+     "alt_clusters": [
+      "M08"
+     ]
+    },
+    {
+     "op": "set_alt",
+     "strong": "H1431",
+     "cluster_code": "M22",
+     "alt_clusters": [
+      "M08"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R9",
+   "source": "Batch E R9",
+   "label": "G0040H 'saints'",
+   "issue": "Same lemma as G0040G 'holy' (M61).",
+   "recommendation": "M13 -> M61.",
+   "strength": "clear",
+   "live_now": {
+    "G0040H": [
+     {
+      "code": "M13",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G0040H": 52
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G0040H",
+     "from": "M13",
+     "to": "M61"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R10",
+   "source": "Batch E R10",
+   "label": "H5375O lift [soul], H8667 pledge",
+   "issue": "Trust/desire split; pledge is financial.",
+   "recommendation": "H5375O alternative M18; H8667 -> M46.",
+   "strength": "clear",
+   "live_now": {
+    "H5375O": [
+     {
+      "code": "M19",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H8667": [
+     {
+      "code": "M19",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "H5375O": 9,
+    "H8667": 1
+   },
+   "ops": [
+    {
+     "op": "set_alt",
+     "strong": "H5375O",
+     "cluster_code": "M19",
+     "alt_clusters": [
+      "M18"
+     ]
+    },
+    {
+     "op": "move",
+     "strong": "H8667",
+     "from": "M19",
+     "to": "M46"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "E-R11",
+   "source": "Batch E R11",
+   "label": "G3140, H5749B 'testify'",
+   "issue": "Test and testify joined on the English word.",
+   "recommendation": "M35 -> M82 (receiving cluster weak; M65 possible).",
+   "strength": "weak",
+   "live_now": {
+    "G3140": [
+     {
+      "code": "M35",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H5749B": [
+     {
+      "code": "M35",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G3140": 74,
+    "H5749B": 36
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G3140",
+     "from": "M35",
+     "to": "M82"
+    },
+    {
+     "op": "move",
+     "strong": "H5749B",
+     "from": "M35",
+     "to": "M82"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-01",
+   "source": "Batch F §0.2",
+   "label": "H2763A, H2764A ḥērem 'devote to destruction'",
+   "issue": "Filed under Love & Devotion on the English 'devote'.",
+   "recommendation": "M51 -> M55.",
+   "strength": "clear",
+   "live_now": {
+    "H2763A": [
+     {
+      "code": "M51",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2764A": [
+     {
+      "code": "M51",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H2763A": 47,
+    "H2764A": 22
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H2763A",
+     "from": "M51",
+     "to": "M55"
+    },
+    {
+     "op": "move",
+     "strong": "H2764A",
+     "from": "M51",
+     "to": "M55"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-02",
+   "source": "Batch F §0.2",
+   "label": "H3384B teach, H2324 / G1166 / G1731 show",
+   "issue": "Teaching/showing filed under Kindness.",
+   "recommendation": "Teach -> M16 (names 'teaching'); show -> T3.",
+   "strength": "weak",
+   "live_now": {
+    "G1166": [
+     {
+      "code": "M05",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "G1731": [
+     {
+      "code": "M05",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H2324": [
+     {
+      "code": "M05",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H3384B": [
+     {
+      "code": "M05",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G1166": 29,
+    "G1731": 11,
+    "H2324": 13,
+    "H3384B": 47
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H3384B",
+     "from": "M05",
+     "to": "M16"
+    },
+    {
+     "op": "move",
+     "strong": "H2324",
+     "from": "M05",
+     "to": "T3"
+    },
+    {
+     "op": "move",
+     "strong": "G1166",
+     "from": "M05",
+     "to": "T3"
+    },
+    {
+     "op": "move",
+     "strong": "G1731",
+     "from": "M05",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-03",
+   "source": "Batch F §0.2",
+   "label": "G0268 'sinful / sinner'",
+   "issue": "Filed under Violence & Cruelty.",
+   "recommendation": "M10 -> M56.",
+   "strength": "clear",
+   "live_now": {
+    "G0268": [
+     {
+      "code": "M10",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G0268": 45
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G0268",
+     "from": "M10",
+     "to": "M56"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-04",
+   "source": "Batch F §0.2",
+   "label": "H8263 'detestable thing' (Lev 11)",
+   "issue": "Ritual abomination filed under Malice.",
+   "recommendation": "M06 -> M10c.",
+   "strength": "weak",
+   "live_now": {
+    "H8263": [
+     {
+      "code": "M06",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H8263": 11
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H8263",
+     "from": "M06",
+     "to": "M10c"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-05",
+   "source": "Batch C §0.8",
+   "label": "H6569 'dung'",
+   "issue": "Filed under Rebellion via the gloss 'refuse'. H1561 'dung' is in T2.",
+   "recommendation": "M30 -> T2 (H1561 precedent).",
+   "strength": "clear",
+   "live_now": {
+    "H6569": [
+     {
+      "code": "M30",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H6569": 6
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H6569",
+     "from": "M30",
+     "to": "T2"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-06",
+   "source": "Batch C §0.8",
+   "label": "H0014 'be willing'",
+   "issue": "Willingness filed under Rebellion because it occurs as 'would not'.",
+   "recommendation": "M30 -> M64, M30 as alternative (refusal).",
+   "strength": "weak",
+   "live_now": {
+    "H0014": [
+     {
+      "code": "M30",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H0014": 52
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H0014",
+     "from": "M30",
+     "to": "M64"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H0014",
+     "cluster_code": "M64",
+     "alt_clusters": [
+      "M30"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-07",
+   "source": "Batch C §0.8",
+   "label": "H6424 pālas 'weigh / level'",
+   "issue": "Filed under Envy & Greed.",
+   "recommendation": "M28 -> T3.",
+   "strength": "clear",
+   "live_now": {
+    "H6424": [
+     {
+      "code": "M28",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "high",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "H6424": 6
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H6424",
+     "from": "M28",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-08",
+   "source": "Batch D §0.7",
+   "label": "H7806 'twist' (twined linen)",
+   "issue": "Filed under Corruption & Perversion.",
+   "recommendation": "M57 -> T12.",
+   "strength": "clear",
+   "live_now": {
+    "H7806": [
+     {
+      "code": "M57",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H7806": 19
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H7806",
+     "from": "M57",
+     "to": "T12"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-09",
+   "source": "Batch E §0.3",
+   "label": "H7121H 'call by name'",
+   "issue": "Naming, filed under Prayer.",
+   "recommendation": "M42 -> T3.",
+   "strength": "clear",
+   "live_now": {
+    "H7121H": [
+     {
+      "code": "M42",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H7121H": 208
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H7121H",
+     "from": "M42",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-10",
+   "source": "Batch E §0.3",
+   "label": "G5455 phōneō 'call / crow'",
+   "issue": "Generic calling out.",
+   "recommendation": "M42 -> M84 Outcry. G2564G 'call' left in M42 (mixed).",
+   "strength": "weak",
+   "live_now": {
+    "G5455": [
+     {
+      "code": "M42",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G5455": 38
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G5455",
+     "from": "M42",
+     "to": "M84"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-11",
+   "source": "Batch E §0.3",
+   "label": "H2487 'change (of garments)'",
+   "issue": "Filed under Renewal on the gloss 'change'.",
+   "recommendation": "M45 -> T12.",
+   "strength": "clear",
+   "live_now": {
+    "H2487": [
+     {
+      "code": "M45",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H2487": 11
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H2487",
+     "from": "M45",
+     "to": "T12"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-12",
+   "source": "Batch E §0.3",
+   "label": "G2021 'attempt / undertake'",
+   "issue": "Filed under Being Tested.",
+   "recommendation": "M35 -> T3.",
+   "strength": "clear",
+   "live_now": {
+    "G2021": [
+     {
+      "code": "M35",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G2021": 3
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G2021",
+     "from": "M35",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-13",
+   "source": "Batch E §0.3",
+   "label": "H3548 'priest'",
+   "issue": "Party term (Lev 13 procedure); parallels E-R2.",
+   "recommendation": "M36 -> T8, M36 alternative.",
+   "strength": "weak",
+   "live_now": {
+    "H3548": [
+     {
+      "code": "M36",
+      "source": "claude-scan-20260908",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H3548": 628
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H3548",
+     "from": "M36",
+     "to": "T8"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H3548",
+     "cluster_code": "T8",
+     "alt_clusters": [
+      "M36"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-14",
+   "source": "Batch G §0.3",
+   "label": "H7235A 'multiply'",
+   "issue": "Generic verb in Strength & Courage.",
+   "recommendation": "M23 -> T3.",
+   "strength": "clear",
+   "live_now": {
+    "H7235A": [
+     {
+      "code": "M23",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H7235A": 211
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H7235A",
+     "from": "M23",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-15",
+   "source": "Batch G §0.3",
+   "label": "H3201 'be able / can'",
+   "issue": "Generic verb; 'prevail' sense is strength.",
+   "recommendation": "M23 -> T3, M23 alternative.",
+   "strength": "weak",
+   "live_now": {
+    "H3201": [
+     {
+      "code": "M23",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H3201": 183
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H3201",
+     "from": "M23",
+     "to": "T3"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H3201",
+     "cluster_code": "T3",
+     "alt_clusters": [
+      "M23"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-16",
+   "source": "Batch G §0.3",
+   "label": "H7122G 'meet / toward'",
+   "issue": "Encounter, filed under Firstborn & Foreknowledge.",
+   "recommendation": "M37 -> T3.",
+   "strength": "clear",
+   "live_now": {
+    "H7122G": [
+     {
+      "code": "M37",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H7122G": 83
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H7122G",
+     "from": "M37",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-17",
+   "source": "Batch G §0.3",
+   "label": "G5342 'bring / lead'",
+   "issue": "Generic verb in Lifting & Bearing.",
+   "recommendation": "M70 -> T3.",
+   "strength": "clear",
+   "live_now": {
+    "G5342": [
+     {
+      "code": "M70",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G5342": 60
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "G5342",
+     "from": "M70",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-18",
+   "source": "Batch H §0.2",
+   "label": "H5329 nāṣaḥ 'choirmaster / oversee'",
+   "issue": "Psalm superscription filed under Walk & Conduct via 'conduct'.",
+   "recommendation": "M76 -> T3, M22 alternative (music).",
+   "strength": "weak",
+   "live_now": {
+    "H5329": [
+     {
+      "code": "M76",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H5329": 65
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H5329",
+     "from": "M76",
+     "to": "T3"
+    },
+    {
+     "op": "set_alt",
+     "strong": "H5329",
+     "cluster_code": "T3",
+     "alt_clusters": [
+      "M22"
+     ]
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-19",
+   "source": "Batch H §0.2",
+   "label": "H4487 mānâ 'count / appoint'",
+   "issue": "Filed under Judgment.",
+   "recommendation": "M26 -> T3.",
+   "strength": "clear",
+   "live_now": {
+    "H4487": [
+     {
+      "code": "M26",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H4487": 27
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H4487",
+     "from": "M26",
+     "to": "T3"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-20",
+   "source": "Batch H §0.2",
+   "label": "H4931 mišmeret 'charge / safekeeping'",
+   "issue": "Guarding, filed under Judgment.",
+   "recommendation": "M26 -> M74.",
+   "strength": "clear",
+   "live_now": {
+    "H4931": [
+     {
+      "code": "M26",
+      "source": "llm-allocation-v1_3-20260811",
+      "confidence": "medium",
+      "review_flag": 0,
+      "alt": "[]"
+     }
+    ]
+   },
+   "verses": {
+    "H4931": 69
+   },
+   "ops": [
+    {
+     "op": "move",
+     "strong": "H4931",
+     "from": "M26",
+     "to": "M74"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-21",
+   "source": "Batch H §0.2",
+   "label": "H7230 rōv 'abundance / multitude'",
+   "issue": "Mostly quantity (multitude of iniquity, idols).",
+   "recommendation": "Keep M46; set review_flag.",
+   "strength": "weak",
+   "live_now": {
+    "H7230": [
+     {
+      "code": "M46",
+      "source": "old-system-migration",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "H7230": 144
+   },
+   "ops": [
+    {
+     "op": "set_review_flag",
+     "strong": "H7230",
+     "cluster_code": "M46"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "S-22",
+   "source": "Batch C §0.8",
+   "label": "H5493H 'turn aside: depart', G5290 'return'",
+   "issue": "Mostly literal travel.",
+   "recommendation": "Keep M11 (names 'returning'); set review_flag.",
+   "strength": "weak",
+   "live_now": {
+    "G5290": [
+     {
+      "code": "M11",
+      "source": "auto-precedent",
+      "confidence": null,
+      "review_flag": 0,
+      "alt": null
+     }
+    ],
+    "H5493H": [
+     {
+      "code": "M11",
+      "source": "heuristic-family-grouping-v1-20260905",
+      "confidence": "heuristic",
+      "review_flag": 0,
+      "alt": null
+     }
+    ]
+   },
+   "verses": {
+    "G5290": 34,
+    "H5493H": 66
+   },
+   "ops": [
+    {
+     "op": "set_review_flag",
+     "strong": "H5493H",
+     "cluster_code": "M11"
+    },
+    {
+     "op": "set_review_flag",
+     "strong": "G5290",
+     "cluster_code": "M11"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-01",
+   "source": "Batch A §0.2",
+   "label": "H6381 'wonder' (hard / special)",
+   "issue": "Sense varies by verse.",
+   "recommendation": "No change.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-02",
+   "source": "Batch A §0.2",
+   "label": "H5708, G4509 'filth'",
+   "issue": "M53 names 'filth'.",
+   "recommendation": "No change.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-03",
+   "source": "Batch B §0.3",
+   "label": "H4609A 'thought' (Psa 131 'Ascents'), H8454 (Job 30:22 'toss')",
+   "issue": "Verse-level tag / text difficulty.",
+   "recommendation": "No change.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-04",
+   "source": "Batch C §0.8",
+   "label": "H5800A leave (oath formula), H3176G wait (Jer 4:19), H2803 devise",
+   "issue": "Verse-level sense; M30 names 'forsaking'.",
+   "recommendation": "No change; Jer 4:19 Kethiv/Qere is a tagging note.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-05",
+   "source": "Batch D §0.7",
+   "label": "G0950 confirm, H7451H bad (ugly cows)",
+   "issue": "Verse-level sense.",
+   "recommendation": "No change.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-06",
+   "source": "Batch E §0.3",
+   "label": "H3680 cover, H4171 change, H5737A help (M45); H5254H test; H5203 leave, G0630G release (M59); G2564G, H7121G call (M42); G2129 flattery",
+   "issue": "Verse-level senses; several match the cluster description.",
+   "recommendation": "No change.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-07",
+   "source": "Batch F §0.2-3",
+   "label": "H5117 rest (put / leave); H2790B be quiet",
+   "issue": "M33 names 'quiet, stillness'.",
+   "recommendation": "No change.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-08",
+   "source": "Batch G §0.3",
+   "label": "H2416 alive (raw / wild beasts); M71 H4768, G5092, H2122; H3027H hand",
+   "issue": "Verse-level senses.",
+   "recommendation": "No change.",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  },
+  {
+   "id": "V-09",
+   "source": "Batch H §0.2; Batch D §0.7",
+   "label": "H5110 nûd (pity), M46 quantity uses; M47's own H7307I 'side', H5315 'perfume box', H5315N 'neck'",
+   "issue": "Ruling 1 keeps all M47 senses.",
+   "recommendation": "No change (ruling 1).",
+   "strength": "by-design",
+   "live_now": {},
+   "verses": {},
+   "ops": [
+    {
+     "op": "none"
+    }
+   ],
+   "approved": false,
+   "researcher_note": ""
+  }
+ ]
+}
