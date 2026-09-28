@@ -481,7 +481,10 @@ Verses: Gen 31:35; 39:19; 40:2; 41:10; 44:18; Judg 9:30; 1Sa 20:7; 29:4; 2Sa 11:
     - Num 27:16 "the God of the spirits of all flesh". **Genuine, a human spirit, as known to God. New here.** At the point where Meribah costs Moses the land, he appeals to God as **the one who knows every human spirit** and can choose the next leader.
     - Num 27:11 "kinsman" (*she'er*, flesh). **Kinship-sense. Spurious.**
   - **Cross-reference:** M20 v3 §13 (grumbling) shares the setting, the wilderness complaint. Meribah is **grumbling turned into contention with God.** This is a pointer only.
-- **(v2) A split correction for the researcher's ruling: Psa 95:8.** "Do not harden your **hearts**, as at Meribah, as on the day at Massah in the wilderness, when your fathers put me to the test" (Psa 95:8–9). It is a seated verse.
+- **(v2) Psa 95:8, researcher's ruling (2026-09-28, verbatim):** "Ps 95:8 refers to God, and David's plea to not harden Gods heart - the significance is that the same concept is also found in human. would be interesting to know if Gid hardening His heart plays out otherwise also."
+  - **Outcome:** Psa 95:8 **stays on the divine side**, and the recommendation below is **withdrawn**. The ledger is unchanged.
+  - The follow-up question ("God hardening His heart" elsewhere) is logged as its own escalation. The DB data on the verse is recorded in chat for the researcher: the verb *qashah* is hiphil 2nd person masculine plural, and "hearts" carries a 2nd person plural suffix. God speaks in the first person from 95:8b to 95:11.
+- ~~**(v2) A split correction for the researcher's ruling: Psa 95:8.**~~ *(withdrawn; kept as a record)* "Do not harden your **hearts**, as at Meribah, as on the day at Massah in the wilderness, when your fathers put me to the test" (Psa 95:8–9). It is a seated verse.
   - The approved side split put it on the **divine** side, by default, because it was not listed as human.
   - Read now, **its M02 word, Meribah, names the human quarrel, and the verse is an exhortation to human hearts.** On this phenomenon's own rule (§12 above: the people's quarrel is human), it belongs here.
   - **Recommended:** move Psa 95:8 to the human side, as MB.
@@ -1232,11 +1235,13 @@ All these sequences are **inside single passages**.
   - **§13:** Jonah widens "anger at what God has done" from God's **striking** to God's **mercy**. **God's question to Jonah echoes his question to Cain.**
   - **§15:** the prophet as vessel (pilot §2.3) now has **three texts** (Jer 6:11; 15:17; Eze 3:14). **In prophets, God's anger borne by a human comes out as suffering, not action.** This is a clear line to unit 2.
   - **§38 point 1:** v1's "Job 36:13 is the only verse where the angry person's own heart holds the anger" is **replaced** by the genre finding: wisdom locates anger in the seat, and narrative does not.
-- **Batch A v3 §2.1** (human anger in the inner seat) stands. v2 adds the **spirit/heart division of labour** across the wider set (§38 point 2): spirit for the rising and ruling, heart for the keeping. **For the researcher to decide whether A §2.1 takes this as a revisit note.**
+- **Batch A v3 §2.1** (human anger in the inner seat) stands. v2 adds the **spirit/heart division of labour** across the wider set (§38 point 2): spirit for the rising and ruling, heart for the keeping.
+  - **Researcher (2026-09-28, verbatim):** "yes it may impact Batch A - but not in the way you portrayed it."
+  - **The way it should bear on Batch A is not yet known. A clarification has been asked; the portrayal above stands only as the record of what was proposed.** No Batch A revisit note is written until the clarification comes.
 - **Batch A v3 §2.5** (anger and grief together, Mar 3:5) stands. v2 adds (§32) that in Mar 3:5 **the anger and the grief have the same object**, the hardened heart, unlike Jonathan's (1Sa 20:34), and that the healing is followed at once by the plot to kill (3:6).
 - **Pilot §1.5 ("one word, opposite value")** gains §35: provoking toward love (Heb 10:24) and indignation as the fruit of godly grief (2Cor 7:11).
 - **Pilot §1.1 (*thumos* never seated)** stands. v2 adds that **Act 7:54 has "hearts" in the Greek, dropped by the ESV into "enraged"** [lexical, not in DB]. Here the seat is present in the text but carried by a word the translation merged. **For the researcher: whether the DB tagging (M47 on the "enraged" token) needs a note.**
-- **A split correction is proposed: Psa 95:8** (divine → human, MB §12). See §12 (v2). **Awaiting ruling. The ledger is not changed.**
+- ~~**A split correction is proposed: Psa 95:8** (divine → human, MB §12).~~ **Ruled: stays divine** (see §12, v2). The ledger is not changed.
 - **Batch G v3 §16 pointers:** Jon 4 is now read (§13). Jon 4:3, 8 belong with G §16.2 ("asking to die"), which already has them. **v2 adds that Jonah's death-wish is the end-point of his anger at God's mercy.** Job 3 and 14:13 remain M20 or unit 2.
 - **Candidate synthesis themes.** These are candidates only, and nothing is proposed:
   - "the seat named by the questioner" (§1, §8, §38 point 3)
@@ -1247,10 +1252,10 @@ All these sequences are **inside single passages**.
 
 ## §X. What is next
 
-1. **Researcher review of v2 (unit 1 complete).** Two rulings are asked for:
-   - **Psa 95:8** side correction (§12)
-   - whether the refinements proposed for **A v3 §2.1, §2.4** go in as revisit notes
+1. **Researcher review of v2 (unit 1 complete).**
+   - **Psa 95:8:** ruled, stays divine (§12).
+   - **Batch A:** "may impact Batch A - but not in the way you portrayed it". Clarification pending.
 2. **Then unit 2: divine anger as borne by the human.**
-   - It covers 303 divine + B3 (11) + B6 (4) + B7 (77) = **395 verses**, less Psa 95:8 if it is moved.
+   - It covers 303 divine + B3 (11) + B6 (4) + B7 (77) = **395 verses**, including Psa 95:8.
    - Unit 2 already has pointers from this reading: §13 (God's anger at Uzzah, Num 11:10), §15 (the prophet as vessel), §31 (the parable master's anger placed in the hearer's heart), §34 (the cup that comes round).
    - **Proposal:** split it the same way (Genesis–Job first). **This is a proposal only; unit 2 is not started.**
