@@ -1,5 +1,12 @@
 # CLAUDE.md — Claude Code Project Reference
 
+> **★ AUTHORITATIVE SOURCE (researcher decision, 2026-09-28).** `C:\Bible_study_projects` is the **only** authoritative source for the project. **Ignore all other copies by default:**
+> - `G:\My Drive\Bible_study_projects` — an old copy, to be archived in full
+> - `G:\My Drive\Claude_Research` — a working folder for other platforms. Anything there that duplicates this project or Zotero is to be archived.
+> - study documents in `%USERPROFILE%\Zotero\storage`, `Documents`, `Desktop`, and elsewhere on `G:\My Drive`
+>
+> Use a file from those places **only** when the researcher names it explicitly. Even then, say that it is outside the authoritative source, and bring it into this project (with the researcher's approval) before relying on it. The inventory and planned moves are in `research/investigations/file-location-inventory-*` (in progress).
+
 > **★ THE `AskUserQuestion` TOOL IS BANNED IN THIS PROJECT — NEVER USE IT (reinforced 2026-07-22).**
 > Blocked at config level (`.claude/settings.json` → `permissions.deny`), stated in
 > `docs/interaction-preferences.md`, and in memory — after two prior "hard stop" warnings
