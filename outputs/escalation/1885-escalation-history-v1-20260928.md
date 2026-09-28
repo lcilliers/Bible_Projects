@@ -1,0 +1,25 @@
+# Escalation deep history
+
+## #1885 — M20/M02 v2: phenomenon-level re-read (emergent, not pre-set)
+type=task source=claude
+
+**v1** (2026-09-28T11:37:22Z, Claude) state=raised next_action=review assigned_to=Claude
+> **short description (set this version):** M20/M02 v2: phenomenon-level re-read (emergent, not pre-set)
+> **comment (set this version):** Follows #1883 (approved). Researcher, chat 2026-09-28 (verbatim): "proceed as suggested in 6.2 ; 6.1 what is important is that the operations emerge from the cluster, rather than imputing and 'proving' pre-set movements. This is not a tick box exercise - it is about how each phenomena works. Note that a cluster have many phenomena, so the analysis is not at cluster level. it must be at phenomena level. It need to focus on what is the phenomena, what does it do, how does it co-exist, where does it come from and what does it do. I am not sure if this is too ambitious an objective. The biggest mistake will be to start brushing over the detail, making general statements, and loosing focus." Plan: M20 first (275 verses), phenomena let emerge from the verses, one section per phenomenon, every verse accounted for; M02 only after researcher review of M20. Open from #1883: 6.3 seat-sense check not answered.
+
+**v2** (2026-09-28T11:45:50Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **context (set this version):** _analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-phenomena-v2-20260928.md; _analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-phenomena-ledger-v1-20260928.csv
+> **resolution (set this version):** M20 v2 done (commit fe3fc878): 16 phenomena emerged from all 275 verses (26 with no inner phenomenon, reasons given); every verse ledgered in a CSV; each phenomenon answers what it is / what it does / where it comes from / how it co-exists / what it leads to, verse-anchored. For your review before M02. Proposed for M02 (681 verses): two units with a review between -- (1) human anger phenomena, (2) divine anger as borne by the human -- rather than one pass, which is where brushing-over would start. Approve, or revise.
+
+**v3** (2026-09-28T11:57:33Z, Researcher) state=in-progress next_action=ready_for_approval assigned_to=Claude
+> **comment (set this version):** Researcher, chat 2026-09-28 (verbatim): "I will approve 1885 on completion of M20 not before it. in terms of 6.3 - continue to map the seat-sense as part of the cluster analysis, with reference to the work already done in M47 - so don't redo it." So: M20 v2 is not yet complete; the ready_for_approval of v2 is withdrawn and the item returns to Claude. 6.3 ruled: the seat-sense mapping is part of each cluster's phenomenon analysis, citing the M47 batch readings (A-H, pilot) rather than re-deriving them. Next (new chat): complete M20 -- add per phenomenon the seat-sense mapping with references into the M47 batch files -- then hand back for approval; M02 only after. Entry point: _analytics/Clusters/M47 - inner-seat/M47-handoff-batches-C-to-H-v13-20260928.md.
+
+**v4** (2026-09-28T14:18:07Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **comment (set this version):** Checked in this session: attempted to close the one open gap myself (section 21 -- 18 context verses flagged 'not yet read' because the DB reader was unavailable when v3 was written). Pulled their text from iba.db and was mid-analysis when the researcher stopped me: 'claude AI already completed this' elsewhere. Verified on disk: wa-cluster-M20-phenomena-v3-20260928.md is still untracked, unchanged (91130 bytes, last modified 2026-09-28 15:17), and this escalation is still at v3 -- the completed section-21 work is not yet reflected in either place. Not redoing it to avoid a second, divergent version. Asked the researcher how the completed content should get into this file (paste it in, pull from a branch on the other surface, or another path) -- their answer determines the next step, not mine, so handing this back rather than guessing.
+
+**v5** (2026-09-28T14:19:03Z, Claude) state=re-assigned next_action=ready_for_approval assigned_to=Researcher
+> **comment (set this version):** M20 complete per the researcher direction (approve 1885 on completion of M20; map seat-sense as part of the cluster analysis, citing M47, not redoing it). v3 adds a Seat block to every phenomenon (whose seat; genuine vs spurious; seat arriving in the next verse or passage), citing Batch A v3 s6/s7/R6, Batches B-H and the v1 pilot for all 30 seated verses. s20 seat-sense map: 21 genuine, 3 life-sense only, 6 spurious. s21: 22 context verses read (text supplied by researcher) and placed. No ledger change. Commit 906b25f7. M02 does not start until this is approved.
+> **context (set this version):** _analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-phenomena-v3-20260928.md (v2 archived to archive/)
+
+**v6** (2026-09-28T14:22:05Z, Researcher) state=completed next_action=approved assigned_to=Claude
+> **comment (set this version):**  completed M20 and M02 

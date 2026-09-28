@@ -73,3 +73,37 @@
 
 - Commits this session: `6c4fbf32` (filing, config rule, pilot) and `fe3fc878` (M20 v2), both pushed.
 - This log is committed with the session-close changes in the next commit. Its hash and push are shown in the chat close-out; see `git log`.
+
+---
+
+## Continuation — M20 v3 completion, #1885 closed, M02 split to #1886 (session `79aea7d6`)
+
+**Escalations.**
+- **#1885:**
+  - v5: M20 complete, set to ready_for_approval for the Researcher
+  - v6: approved by the researcher, "completed M20 and M02"
+  - v7: correction note. Only M20 was done, and M02 was split out to #1886. v4 was written by a parallel Claude session.
+- **#1886:** raised for M02 Anger & Wrath, then v2 (in-progress, handoff linked).
+
+**Files.**
+- `_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-phenomena-v3-20260928.md` (new). v2 was moved to that folder's `archive/`. Commit `906b25f7`.
+- `_analytics/Clusters/M47 - inner-seat/M47-handoff-batches-C-to-H-v14-20260928.md` (new). v13 was moved to `archive/`. Commit `11cbe65c`.
+
+**Decisions (researcher, verbatim).**
+- "try the shell again and finish the §21 reads" → the researcher supplied the 22 context verses as CSV, and all were read into v3.
+- "2 — raise a new escalation for M02" → #1886.
+- "start M02 in a fresh chat — write the handoff" → handoff v14.
+
+**Work done.**
+- Every M20 phenomenon now carries a Seat block: whose seat it is, whether the sense is genuine, life-sense or spurious, and any seat arriving in the next verse or passage. Each one cites Batch A v3 §6/§7/R6, Batches B–H and the v1 pilot, and does not re-read them.
+- §20 is a map of all 30 seated verses: 21 genuine, 3 life-sense only, 6 spurious.
+- §21 is closed: 22 context verses read.
+- No ledger change.
+
+**Problems.**
+- In auto mode, the server-side safety check returned "no verdict" on every shell command, and the turn ended after 10 in a row. File tools were unaffected. The researcher ran `/auto-mode-setup`, which removed `Bash(python -c ' *)` from the user allow list, and then left auto mode. The shell worked after that.
+
+**Open, carried forward.**
+- **#1886, M02 unit 1 (human anger phenomena), in a fresh chat from handoff v14.**
+- #1881 is still open.
+- The loose files at the `_analytics/Clusters` root have still not been moved.
