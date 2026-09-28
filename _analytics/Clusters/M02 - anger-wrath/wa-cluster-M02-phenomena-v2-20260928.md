@@ -3,7 +3,7 @@
 **Date:** 2026-09-28 · **Author:** Claude Code · **Status:** for researcher review. Escalation #1888 (part 2), which continues #1887 (part 1, approved) and #1886. Nothing has been written to the DB.
 **Supersedes:** v1 (`archive/wa-cluster-M02-phenomena-v1-20260928.md`, part 1 only, approved 2026-09-28).
 **What v2 adds:**
-- **Part 2: Psalms–Revelation, 152 verses.** Unit 1 is now complete, with **245 verses**.
+- **Part 2: Psalms–Revelation, 152 verses.** Unit 1 is now complete, with **246 verses**: 245, plus Psa 95:8 moved from the divine side by ruling (§12).
 - Twelve part-1 phenomena gain part-2 verses, and each is revisited in place, marked **(v2)**.
 - 17 new phenomena (§19–§35).
 - The seat map and context table are extended.
@@ -11,11 +11,11 @@
 The part-1 readings are otherwise unchanged. Unit 2 (divine anger as borne by the human) waits for this review.
 **Researcher rulings (2026-09-28, verbatim):** "approved as recommended, do Gen-Job first"; "approved, proceed with part 2 Psa-Rev".
 **Pattern followed:** `../M20 - doubt-discouragement/wa-cluster-M20-phenomena-v3-20260928.md`, including its §0.1 Seat block.
-**Ledger:** `wa-cluster-M02-phenomena-ledger-v2-20260928.csv` (this folder) has all 681 M02 verses. All 245 unit-1 verses carry a phenomenon code. The 436 others carry their side (divine, B3, B6, B7, none, other) for unit 2, or no reading.
+**Ledger:** `wa-cluster-M02-phenomena-ledger-v2-20260928.csv` (this folder) has all 681 M02 verses. All 246 unit-1 verses carry a phenomenon code. The 435 others carry their side (divine, B3, B6, B7, none, other) for unit 2, or no reading.
 
 ## 0. How this was done
 
-- **All 245 verses were read in canonical order.**
+- **All 245 verses of the approved split were read in canonical order**, and Psa 95:8 was then added by ruling.
   - Part 1 (93 verses) was read with ±3 verses of context (540 verses). Where the movement went on past that window, further context was read: Gen 33:4; 34:13, 25; Exo 32:20; Lev 10:20; Num 25:6–7; 1Sa 11:13; 15:35; 20:4; 2Sa 13:23, 28–29, 39; 1Ki 21:13–16; 2Ch 28:15; Est 1:10–12; 5:13; Job 5:6–7; 6:8–9, 11; 32:17–20.
   - **Part 2 (152 verses) was read with ±2** (679 verses), because many part-2 verses are single proverbs or list items. Narratives were followed further: Psa 95:7–10; Isa 7:9; Jer 15:20; Dan 3:28; Jon 3:10; Luk 15:31–32; Act 5:38–40; 7:57–58; 12:23.
 - **Every verse quoted below, context included, was read in this session.**
@@ -40,7 +40,7 @@ The part-1 readings are otherwise unchanged. Unit 2 (divine anger as borne by th
 | 9 | Anger turned on oneself | SS | 2 | 1 |
 | 10 | Anger cursed, its company refused | CC | 2 + 1 = 3 | 1 |
 | 11 | The leader's anger at those he leads | LD | 7 | 0 |
-| 12 | Quarrelling with God: Meribah | MB | 5 | 0 |
+| 12 | Quarrelling with God: Meribah | MB | 5 + 1 = 6 | 1 |
 | 13 | Anger at what God has done | AG | 4 + 6 = 10 | 1 |
 | 14 | Who may pronounce anger | JV | 4 + 1 = 5 | 0 |
 | 15 | Anger that comes with God's Spirit or zeal, and anger measured against God's | SP | 4 + 4 = 8 | 3 |
@@ -64,7 +64,7 @@ The part-1 readings are otherwise unchanged. Unit 2 (divine anger as borne by th
 | 33 | Neither cold nor hot | HC | 2 | 0 |
 | 34 | Anger and passion as a drink given to others | PI | 3 | 0 |
 | 35 | Provoking and indignation turned to good | PG | 3 | 0 |
-| | **Total** | | **93 + 152 = 245** | **30** |
+| | **Total** | | **93 + 153 = 246** | **31** |
 
 ---
 
@@ -463,7 +463,7 @@ Verses: Gen 31:35; 39:19; 40:2; 41:10; 44:18; Judg 9:30; 1Sa 20:7; 29:4; 2Sa 11:
 - **What it leads to.** Destruction of the object (Exo 32:20), purge and execution (Num 31:17), a lesser victory (2Ki 13:19), or **approval once the explanation is heard** (Lev 10:20).
 - **Seat.** None in the seven verses or their ±3 context. **The leader's anger is carried by the act and the question.** Pilot §3 items 1 and 3 read this as act and speech.
 
-## 12. Quarrelling with God: Meribah (MB) — Exo 17:7; Num 20:13, 20:24; 27:14; Deu 32:51
+## 12. Quarrelling with God: Meribah (MB) — Exo 17:7; Num 20:13, 20:24; 27:14; Deu 32:51 · (v2) Psa 95:8
 
 - **What it is.** A **quarrel of the people with God**, stored in a place name. In the later verses it is also **the leaders' failure at the same place**.
 - **What it does.**
@@ -481,15 +481,16 @@ Verses: Gen 31:35; 39:19; 40:2; 41:10; 44:18; Judg 9:30; 1Sa 20:7; 29:4; 2Sa 11:
     - Num 27:16 "the God of the spirits of all flesh". **Genuine, a human spirit, as known to God. New here.** At the point where Meribah costs Moses the land, he appeals to God as **the one who knows every human spirit** and can choose the next leader.
     - Num 27:11 "kinsman" (*she'er*, flesh). **Kinship-sense. Spurious.**
   - **Cross-reference:** M20 v3 §13 (grumbling) shares the setting, the wilderness complaint. Meribah is **grumbling turned into contention with God.** This is a pointer only.
-- **(v2) Psa 95:8, researcher's ruling (2026-09-28, verbatim):** "Ps 95:8 refers to God, and David's plea to not harden Gods heart - the significance is that the same concept is also found in human. would be interesting to know if Gid hardening His heart plays out otherwise also."
-  - **Outcome:** Psa 95:8 **stays on the divine side**, and the recommendation below is **withdrawn**. The ledger is unchanged.
-  - The follow-up question ("God hardening His heart" elsewhere) is logged as its own escalation. The DB data on the verse is recorded in chat for the researcher: the verb *qashah* is hiphil 2nd person masculine plural, and "hearts" carries a 2nd person plural suffix. God speaks in the first person from 95:8b to 95:11.
-- ~~**(v2) A split correction for the researcher's ruling: Psa 95:8.**~~ *(withdrawn; kept as a record)* "Do not harden your **hearts**, as at Meribah, as on the day at Massah in the wilderness, when your fathers put me to the test" (Psa 95:8–9). It is a seated verse.
-  - The approved side split put it on the **divine** side, by default, because it was not listed as human.
-  - Read now, **its M02 word, Meribah, names the human quarrel, and the verse is an exhortation to human hearts.** On this phenomenon's own rule (§12 above: the people's quarrel is human), it belongs here.
-  - **Recommended:** move Psa 95:8 to the human side, as MB.
-  - **Not moved in the ledger without a ruling**, because the split is approved. It stays `divine` there, with this note.
-  - **Seat if moved:** "hearts". **Genuine. The hearers' own**, as the place where Meribah could be repeated. 95:10 gives God's verdict on that generation: "a people who go astray in their heart" (H v1 §4.2). **Meribah's inner seat is the hardened heart, and it is named only in the psalm's retelling, never in the narrative.**
+- **(v2) Psa 95:8, moved to the human side as MB (final ruling).**
+  - **Ruling history (verbatim, 2026-09-28):**
+    - First: "Ps 95:8 refers to God, and David's plea to not harden Gods heart …", which kept it divine.
+    - Then, after the DB data was shown (*qashah* hiphil 2mp; "hearts" with a 2mp suffix; God speaking in the first person 95:8b–11): "I need to retract my reading, God is really referring the human hardening their heart towards God … you can close this batch by reverting to your initial position of setting the hardening to be human."
+  - **Outcome:** Psa 95:8 is **human, MB §12**, applied in ledger v2 (side `human`, phenomenon `MB`). The approved side split (`wa-cluster-M02-side-split-v1-20260928.csv`) is kept as the record of the split as first approved.
+  - **The researcher's retracted premise becomes a question:** does Scripture anywhere speak of **God hardening his own heart**? "if I am mistaken, then that is a material finding in its own right." Logged as a special investigation (escalation #1889).
+- **(v2) Psa 95:8, the reading.** "Do not harden your **hearts**, as at Meribah, as on the day at Massah in the wilderness, when your fathers put me to the test" (Psa 95:8–9). It is a seated verse.
+  - **Its M02 word, Meribah, names the human quarrel, and the verse is an exhortation to human hearts.** On this phenomenon's own rule (§12 above: the people's quarrel is human), it belongs here.
+  - **What it adds to §12:** the narrative never names Meribah's inner seat. **The psalm names it as a hardened heart, and makes Meribah a warning to every later "today"** ("Today, if you hear his voice", 95:7).
+  - **Seat:** "hearts". **Genuine. The hearers' own**, as the place where Meribah could be repeated. 95:10 gives God's verdict on that generation: "a people who go astray in their heart" (H v1 §4.2). **Meribah's inner seat is the hardened heart, and it is named only in the psalm's retelling, never in the narrative.**
 
 ## 13. Anger at what God has done (AG) — Num 11:10; 1Sa 15:11; 2Sa 6:8; 1Ch 13:11 · (v2) Pro 19:3; Isa 8:21; Jon 4:1, 4:2, 4:4, 4:9
 
@@ -1075,7 +1076,7 @@ All these sequences are **inside single passages**.
 
   **In two of these (Jonah, the elder brother) the text ends before the angry one answers.**
 
-## 38. Seat-sense map — the 30 seated verses (was §21, 10 verses in v1)
+## 38. Seat-sense map — the 31 seated verses (was §21, 10 verses in v1)
 
 | Verse | Seat word (Strong's as tagged) | Phenomenon | Whose seat | Seat-sense check | Already read in |
 |---|---|---|---|---|---|
@@ -1090,6 +1091,7 @@ All these sequences are **inside single passages**.
 | Job 32:2 | "himself" *nephesh* (H5315I) | GH §6 | **the other party's** (Job), the self he justified | genuine as reflexive self | H v1 §6.2 |
 | Job 36:13 | "heart" *lev* (H3820A) | AL §3 | the bearer's own, **where anger is kept** | genuine | A v3 §2.1; G v3 §16.5 |
 | **(v2)** Psa 31:9 | "soul" *nephesh* (H5315G) | VX §8 | the bearer's own, **wasted with the eye and body** | genuine | E v2 §10.1 |
+| **(v2)** Psa 95:8 | "hearts" *levav* (H3824) | MB §12 | the hearers' own, **what must not be hardened** | genuine | **new** (95:10: H v1 §4.2) |
 | **(v2)** Pro 6:14 | "heart" *lev* (H3820A) | SK §21 | the sower's own, **where discord is devised** | genuine | D v2 §2.2 |
 | **(v2)** Pro 14:29 | "temper" *ruach* (H7307J) | SL §22 | the bearer's own, **short of spirit** | genuine | A v3 §2.1 [T]; B v3 §1.6; pilot §2.2 |
 | **(v2)** Pro 16:32 | "spirit" *ruach* (H7307G) | SL §22 | the bearer's own, **as what is ruled** | genuine | A v3 §2.1 [H]; H v1 §1.5; C v3 §1.6 |
@@ -1112,14 +1114,14 @@ All these sequences are **inside single passages**.
 
 | Seat-sense | Verses | Count |
 |---|---|---|
-| **Genuine: the bearer's own** | 2Ki 6:11; Est 5:9; Job 18:4; Job 36:13; **(v2)** Psa 31:9; Pro 6:14; 14:29; 16:32; 19:3; Ecc 2:23; 7:3; 7:9; 11:10; Isa 7:4; Eze 3:14 (own spirit); Eze 32:9; Act 7:54; 17:16 | 18 |
+| **Genuine: the bearer's own** | 2Ki 6:11; Est 5:9; Job 18:4; Job 36:13; **(v2)** Psa 31:9; Psa 95:8; Pro 6:14; 14:29; 16:32; 19:3; Ecc 2:23; 7:3; 7:9; 11:10; Isa 7:4; Eze 3:14 (own spirit); Eze 32:9; Act 7:54; 17:16 | 19 |
 | **Genuine: another human's** | Gen 49:6; 1Sa 17:28; Job 32:2; **(v2)** Mar 3:5 | 4 |
 | **Divine Spirit, received by the human** | Judg 14:19; 1Sa 11:6 (and Eze 3:14's "Spirit") | 2 |
 | **Life-sense only** | Est 7:7; **(v2)** Pro 20:2 | 2 |
 | **Spurious or bodily only** | **(v2)** Pro 25:23; Act 4:25; Act 16:18; 2Cor 7:5 | 4 |
-| **Total** | | **30** |
+| **Total** | | **31** |
 
-**What the map shows (v2, all 245 verses).**
+**What the map shows (v2, all 246 verses).**
 1. **Genre decides where the angry person's own seat appears.**
    - In **narrative** the angry person's own seat is rare: 2Ki 6:11, Est 5:9 (before the anger), Act 7:54 (hidden by the translation), Act 17:16, and the prophet's Eze 3:14.
    - In **wisdom and teaching** it is frequent: Job 36:13; Pro 6:14; 14:29; 16:32; 19:3; Ecc 7:9; and Qoheleth's vexed heart (Ecc 2:23; 7:3; 11:10).
@@ -1209,7 +1211,7 @@ All these sequences are **inside single passages**.
 - Part 1 (8): Exo 11:10; Num 27:16; 1Sa 1:8; 20:4; Neh 4:6; Est 7:5; Job 19:27; 32:18.
 - Part 2 (11): Pro 6:16; 21:23; 22:25; Ecc 2:22; 2:24; Eze 3:12; 1Cor 3:1; 2Cor 7:3; 7:13; 12:18; Rev 3:13. Eze 3:12 and Rev 3:13 are the divine Spirit.
 - "New" was checked by searching every M47 batch file and the pilot for the reference.
-- **In-verse seats new to M47** (§38): Eze 32:9; Act 4:25; 7:54; 16:18; 2Cor 7:5.
+- **In-verse seats new to M47** (§38): Psa 95:8; Eze 32:9; Act 4:25; 7:54; 16:18; 2Cor 7:5.
 
 ---
 
@@ -1241,7 +1243,7 @@ All these sequences are **inside single passages**.
 - **Batch A v3 §2.5** (anger and grief together, Mar 3:5) stands. v2 adds (§32) that in Mar 3:5 **the anger and the grief have the same object**, the hardened heart, unlike Jonathan's (1Sa 20:34), and that the healing is followed at once by the plot to kill (3:6).
 - **Pilot §1.5 ("one word, opposite value")** gains §35: provoking toward love (Heb 10:24) and indignation as the fruit of godly grief (2Cor 7:11).
 - **Pilot §1.1 (*thumos* never seated)** stands. v2 adds that **Act 7:54 has "hearts" in the Greek, dropped by the ESV into "enraged"** [lexical, not in DB]. Here the seat is present in the text but carried by a word the translation merged. **For the researcher: whether the DB tagging (M47 on the "enraged" token) needs a note.**
-- ~~**A split correction is proposed: Psa 95:8** (divine → human, MB §12).~~ **Ruled: stays divine** (see §12, v2). The ledger is not changed.
+- **Psa 95:8 moved divine → human (MB §12)** by final ruling, and applied in ledger v2. Follow-up: #1889, a special investigation to rule out God hardening his own heart.
 - **Batch G v3 §16 pointers:** Jon 4 is now read (§13). Jon 4:3, 8 belong with G §16.2 ("asking to die"), which already has them. **v2 adds that Jonah's death-wish is the end-point of his anger at God's mercy.** Job 3 and 14:13 remain M20 or unit 2.
 - **Candidate synthesis themes.** These are candidates only, and nothing is proposed:
   - "the seat named by the questioner" (§1, §8, §38 point 3)
@@ -1253,9 +1255,9 @@ All these sequences are **inside single passages**.
 ## §X. What is next
 
 1. **Researcher review of v2 (unit 1 complete).**
-   - **Psa 95:8:** ruled, stays divine (§12).
+   - **Psa 95:8:** ruled human, MB (§12). Follow-up investigation #1889.
    - **Batch A:** "may impact Batch A - but not in the way you portrayed it". Clarification pending.
 2. **Then unit 2: divine anger as borne by the human.**
-   - It covers 303 divine + B3 (11) + B6 (4) + B7 (77) = **395 verses**, including Psa 95:8.
+   - It covers 303 divine + B3 (11) + B6 (4) + B7 (77) = 395, less Psa 95:8 (moved to unit 1) = **394 verses**.
    - Unit 2 already has pointers from this reading: §13 (God's anger at Uzzah, Num 11:10), §15 (the prophet as vessel), §31 (the parable master's anger placed in the hearer's heart), §34 (the cup that comes round).
    - **Proposal:** split it the same way (Genesis–Job first). **This is a proposal only; unit 2 is not started.**
