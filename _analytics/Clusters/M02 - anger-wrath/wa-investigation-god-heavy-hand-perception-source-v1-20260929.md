@@ -66,6 +66,15 @@ The set here was bounded by hardening and heaviness words. **The fuller answer i
 
 **Proposal:** take every verse where *yad* / *cheir* ("hand") or *zeroa* ("arm") belongs to God. Read each for the same three things, keeping the human-perception and God-declaration verses apart. **This is a proposal only**, and it is the researcher's call whether and when to run it. #1891 and M02 unit 2 are queued.
 
+### 4.1 Signpost (researcher ruling 2026-09-29)
+
+- **First pass approved** (#1892).
+- **The fuller pass is not run now.** It is **signposted** for when **the inner human being acting through the hands** is investigated.
+- **Researcher, verbatim:** "signpost this investigation for being pursued when the inner human being actions through his hands is further investigated. this may give rise a special cluster scan to find out in which cluster this will surface."
+- **Held as escalation #1893** (on hold). When the trigger comes, it covers:
+  - the §4 pass
+  - a **special cluster scan** to find which clusters carry the hand/act vocabulary
+
 ## 5. Bearing on earlier work
 
 - **#1890 findings §4.1** said "hardness belongs to God's hand". This first pass refines it: **hardness is felt, and named, by those under the hand. God calls his own hand strong.**
