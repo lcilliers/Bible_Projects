@@ -1,6 +1,6 @@
 # Session close — escalation update / governance drift / BUILD.md coverage check (#1875)
 
-> Generated 2026-09-29T14:06:58Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
+> Generated 2026-09-29T14:05:25Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
 
 - session_id: `753f0db2-493b-4943-af3d-21f366c74f6b`
 - session started: 2026-09-29T12:52:24Z
