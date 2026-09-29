@@ -11,7 +11,7 @@
 The part-1 readings are otherwise unchanged. Unit 2 (divine anger as borne by the human) waits for this review.
 **Researcher rulings (2026-09-28, verbatim):** "approved as recommended, do Gen-Job first"; "approved, proceed with part 2 Psa-Rev".
 **Pattern followed:** `../M20 - doubt-discouragement/wa-cluster-M20-phenomena-v3-20260928.md`, including its §0.1 Seat block.
-**Ledger:** `wa-cluster-M02-phenomena-ledger-v2-20260928.csv` (now in `archive/`; superseded 2026-09-29 by ledger v3, which adds the unit-2 part-A codes and leaves every unit-1 row unchanged) has all 681 M02 verses. All 246 unit-1 verses carry a phenomenon code. The 435 others carry their side (divine, B3, B6, B7, none, other) for unit 2, or no reading.
+**Ledger:** `wa-cluster-M02-phenomena-ledger-v2-20260928.csv` (now in `archive/`; superseded 2026-09-29 by ledger v3 and then v4, which add the unit-2 part-A and part-B codes and leave every unit-1 row unchanged) has all 681 M02 verses. All 246 unit-1 verses carry a phenomenon code. The 435 others carry their side (divine, B3, B6, B7, none, other) for unit 2, or no reading.
 
 ## 0. How this was done
 
