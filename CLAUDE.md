@@ -51,6 +51,25 @@
 > `iba/app/GOVERNANCE.md` §81. This is exactly the kind of scope decision this banner section
 > exists to surface — don't let it go undocumented again.
 >
+> **★ FAN-OUT REPLACES CLUSTER-BY-CLUSTER ANALYSIS (researcher decision, 2026-09-30).** After the M47
+> inner-seat work and the M02/M20 prototypes, future analysis is **fan-out / progressive-stream**,
+> not cluster by cluster. Researcher, verbatim: *"Clusters were originally designed to allow for
+> creating batches of similar words to be analysed. however the study of M02 and M20 shows that
+> progressive stream analysis will provide better result without doing a large portion of
+> unnecessary cluster based findings."* Do not start another cluster reading. **Method (researcher,
+> 2026-09-30, #1900):** the inner being is a *web of interrelated activity*. A stream is a strand
+> of that web, with no start and no finish. Each strand is taken in turn and explored. The fan-out
+> follows as the picture of the web develops. A strand may be diverted, and a "distraction" may
+> deserve a deeper look. All strands eventually merge into one whole. **M47 is the starting point**
+> (already begun). Open items are **parked focus areas**. Cluster codes stay as **anchor points,
+> not goals**. None of the prior work is irrelevant. Answers #1899.
+> **Capture is focused (researcher, 2026-09-30):** nodes and observations are written per topic or
+> strand, as that strand is explored. There is **no** generic, whole-scope task and **no** backfill
+> of earlier work. The `ib_node` principle (verse · surface · strong · subgroup = association ·
+> question = stream) remains the central linkage.
+> **Prose is the researcher's:** it is built up by the researcher as each area of focus develops.
+> Claude never writes prose without a specific instruction.
+>
 > Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions — see §10). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
 >
 > **Orientation (2026-06-14; entry point corrected 2026-08-18):** §3 (schema) and §10 (programme state) refreshed to live **v3.31.0** + the finding-centric model. `docs/project-orientation-core-memory-map.md` — the former session-start fan-out map named here — was **retired 2026-08-18** (escalation #715 cycle 3: it had drifted pre-reset and pre-IBA with no live reader). **Start each session via the `start-project` skill** (`iba/app/GOVERNANCE.md` + `iba/app/BUILD.md` for IBA, the `escalation` table for open items project-wide); the current-state reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01–04) and the reusable-scripts catalogue remain valid background reading, just no longer fanned out from that retired map. This compact file can still lag the written record; when in doubt, the reconstruction is authoritative.

@@ -3956,3 +3956,43 @@ header are marked superseded.
 **Not done here:** the loose pre-rule files at the `_analytics/Clusters` root (M10 process files,
 m-code conflict CSVs, etc.) were not moved into their cluster folders. That was out of scope this
 session, per decisions file A5. Empty cluster folders are not tracked by git until they hold a file.
+
+## §84. Fan-out (strand) analysis replaces cluster-by-cluster analysis; focused capture; prose is the researcher's (2026-09-30, researcher ruling, escalations #1899/#1900)
+
+Researcher, verbatim: *"The focus shifts to 'fan out' analysis rather than analysis by cluster.
+Clusters were originally designed to allow for creating batches of similar words to be analysed.
+however the study of M02 and M20 shows that progressive stream analysis will provide better result
+without doing a large portion of unnecessary cluster based findings."*
+
+**Method (#1900, approved):**
+- The inner being is *"a web of interrelated activity"*. A stream is a strand of that web, with no
+  start and no finish.
+- Each strand is taken in turn and explored. The fan-out *"will take naturally as the picture of
+  the web develops"*.
+- A strand may be diverted, and a distraction may warrant a deeper look. All strands ultimately
+  merge into a whole.
+- M47 is the starting point.
+- Open items are *"merely parked focus areas"*. #1891 was put on hold as one.
+- Cluster references stay, *"a useful anchor point. It is no longer a goal."*
+- None of the prior work is irrelevant.
+
+**Capture has three levels:**
+- **(a) Technical notes** of discovery and exploration.
+- **(b) Observations + nodes** (`ib_observation`/`ib_node`). The node is the central linkage:
+  verse · surface · strong · `cluster_subgroup_code` (association, "related to") · `question_code`
+  (the stream, "what the observation is answering").
+- **(c) Prose for the general reader.**
+
+**How capture works:**
+- *"capture in future will be focussed, around a specific topic or strand ... no more generic - do
+  these tasks for the whole scope."* No backfill of prior work into nodes. Earlier work is brought
+  in only where a strand touches it.
+- Prose: *"I will build up the prose as and area of focus develop. it is not something you will
+  create without my specific intervention."*
+
+**Superseded:** full cluster-by-cluster reading, paused under #1899 and now ended. §83 (per-cluster
+folders) stays valid for cluster-anchored material. Where strand work is filed is not yet decided
+(escalation #1901). The same rulings are recorded in the CLAUDE.md top banner.
+
+**Not done here:** no `cfg_*` row. This is a study-method ruling, not an app behaviour. No strand
+work has been started.
