@@ -70,6 +70,33 @@
 > **Prose is the researcher's:** it is built up by the researcher as each area of focus develops.
 > Claude never writes prose without a specific instruction.
 >
+> **★ THE ESSAY IS REGENERATED AS THE INNER-BEING NARRATIVE (researcher decision, 2026-09-30,
+> #1912/#1913).** The Framework B essay (`_analytics/essay/spirit_soul_body/`, a two- vs three-part
+> argument) is **reset** by the new research. It is regenerated as chapter files in
+> `_analytics/essay/spirit_soul_body/inner-being-narrative/`. Start at `00-index-and-status-*`.
+> The provisional working title is *Inner Being in Operation* (#1916).
+>
+> Researcher, verbatim:
+> - *"to original must adjust to the new, not visa versa"*
+> - *"new theme is the inner being in operation described through the voice of the bible"*
+> - *"each unfounded claim must be checked and restated"*
+> - the narrative is written in the first person, *"personal, direct, easy to read"*, *"without
+>   reference to the project terminology"*
+> - *"Each next stream of work will add further updates to the narrative."*
+>
+> M47 was the first reset. Each later strand:
+> - updates the chapter files it touches (version bump, with the prior version archived)
+> - updates `wa-essay-spirit-soul-body-claim-register-*` in the same pass
+>
+> Rules for the chapter text:
+> - Unchecked original material stays in marked **Held** sections.
+> - Quote wording is checked against the ESV text in iba.db `verse`.
+> - Science chapters come later.
+> - The Holy Spirit study is separate.
+>
+> These narrative drafts are written **on the researcher's specific instruction**. They are files,
+> not the DB prose store (the prose rule above is unchanged).
+>
 > Compact reference loaded into every conversation. Authoritative detail lives in `Workflow/Instructions/` (the `[current]` versions — see §10). Last refresh: 2026-04-27 (folder restructure: paths updated for the new top-level layout; pre-restructure refresh was 2026-04-26).
 >
 > **Orientation (2026-06-14; entry point corrected 2026-08-18):** §3 (schema) and §10 (programme state) refreshed to live **v3.31.0** + the finding-centric model. `docs/project-orientation-core-memory-map.md` — the former session-start fan-out map named here — was **retired 2026-08-18** (escalation #715 cycle 3: it had drifted pre-reset and pre-IBA with no live reader). **Start each session via the `start-project` skill** (`iba/app/GOVERNANCE.md` + `iba/app/BUILD.md` for IBA, the `escalation` table for open items project-wide); the current-state reconstruction in [`outputs/markdown/project-reconstruction/`](outputs/markdown/project-reconstruction/) (01–04) and the reusable-scripts catalogue remain valid background reading, just no longer fanned out from that retired map. This compact file can still lag the written record; when in doubt, the reconstruction is authoritative.
