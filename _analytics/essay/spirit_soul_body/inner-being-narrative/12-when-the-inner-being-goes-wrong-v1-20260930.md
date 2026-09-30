@@ -43,7 +43,7 @@ A heart can set itself, or be set, against hearing.
 
 - "Do not harden your hearts as in the rebellion" (Hebrews 3:8).
 - "He … stiffened his neck and hardened his heart against turning to the Lord" (2 Chronicles 36:13).
-- "They walked in their own counsels and the stubbornness of their evil hearts" (Jeremiah 7:24).
+- They "did not obey or incline their ear, but walked in their own counsels and the stubbornness of their evil hearts" (Jeremiah 7:24).
 - Hardness blinds the understanding: people are "darkened in their understanding … due to their hardness of heart" (Ephesians 4:18).
 - It stores up judgment: "because of your hard and impenitent heart you are storing up wrath for yourself" (Romans 2:5).
 
@@ -61,7 +61,7 @@ Spirit-beings are real in Scripture. Unclean spirits torment people and are driv
 
 ## Inner and outer impurity
 
-Scripture separates two kinds of uncleanness. The body can be unclean by touch, by a corpse or by disease, and there are rites for that. But inner purity is another thing. "Who shall ascend the hill of the Lord? … He who has clean hands and a pure heart, who does not lift up his soul to what is false" (Psalm 24:3–4). Jesus: nothing going into a person "can defile him, since it enters not his heart but his stomach" (Mark 7:18–19). What defiles is what comes out of the heart. Hebrews contrasts the purification of the flesh by ritual with the blood of Christ, which will "purify our conscience from dead works" (Hebrews 9:13–14).
+Scripture separates two kinds of uncleanness. The body can be unclean by touch, by a corpse or by disease, and there are rites for that. But inner purity is another thing. "Who shall ascend the hill of the Lord? … He who has clean hands and a pure heart, who does not lift up his soul to what is false" (Psalm 24:3–4). Jesus: "whatever goes into a person from outside cannot defile him, since it enters not his heart but his stomach" (Mark 7:18–19). What defiles is what comes out of the heart. Hebrews contrasts the purification of the flesh by ritual with the blood of Christ, which will "purify our conscience from dead works" (Hebrews 9:13–14).
 
 ## Wind: the image of emptiness
 

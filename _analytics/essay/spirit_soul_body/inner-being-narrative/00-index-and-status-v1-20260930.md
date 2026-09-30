@@ -13,7 +13,7 @@
 - **Source:** the programme's own governing question, `prose_section` 128 (`prog_purp_observations_framework`): *"What are the inner workings of the human being as described in Scripture — characterising and grouping the inner characteristics, mapping their interrelationships, describing the spirit-soul-body boundary, and documenting the relational interfaces with God, other humans, and other spiritual beings?"*
 - **Definition of the inner being:** section 5, `prog_purp_defining_inner_being`.
 - **Audience:** section 7 — *"teachers, practitioners, thoughtful readers"*.
-- **Working title:** none set; for the researcher to choose. The original title "Spirit, Soul, and Body" no longer fits the theme.
+- **Working title (provisional):** *Inner Being in Operation*. Researcher, 2026-09-30: "Perhaps the title should be 'Inner being in operation'" (#1916).
 
 ## Chapters (reading order)
 
@@ -56,41 +56,40 @@
 - New themes get new chapter files. This index records which strand fed which version.
 - When the work is ready to become one book, the files are combined in reading order.
 
-## Missing source files — for the researcher to find
+## Source files — status (updated 2026-09-30)
 
-The researcher said: "if there are individual files missing then I must dig for it."
+The researcher asked to be told of missing files ("if there are individual files missing then I must dig for it"). The researcher then found and filed some of them (#1914). Each filed file is converted to `.md` beside its `.docx`.
 
-**The narrative itself is complete in this folder:**
-- `REORGANIZED_COMPLETE` holds the Introduction, Ch 1–7 and the Conclusion.
-- `Part4` holds Ch 8–9.
-- `Part5` holds Ch 10.
-- There is no `Part2` file (Ch 4–6), but that text is inside `REORGANIZED_COMPLETE`.
+| Document | Fed | Status |
+|---|---|---|
+| `HS_Spirit_Soul_Body_Deep_Analysis` | Ch 8 (fruit of the Spirit) | **found**, filed and converted |
+| `Unregenerate_Soul_Analysis` | Ch 9 (vice catalogue) | **found**, filed and converted |
+| `Evil_Devil_Sin_Causal_Analysis` | Ch 9 (three sources, named spirits, foothold) | **found**, filed and converted |
+| `From_Death_to_Life_Transformation` | Ch 10 | **found**, filed and converted |
+| `SoulishActivity_Brain_DNA_Discovery` | science (brain plasticity, epigenetics). A different DNA study from the one listed | **found** (related); for the science chapters later |
+| `soul_dna_divine_design_complete.docx` | Ch 7 (science) | not found under that name |
+| `00_Introduction_and_Overview.docx` | Introduction | **not found** (researcher) |
+| `soul_versus.md` and the two spirit verse-extract files | raw extracts for Ch 1–6 | **not found**. Many individual verse extracts exist (researcher) |
+| `COMPLETE_RESEARCH_MASTER_INDEX_FINAL.md`, `CHANGES_SUMMARY.md` | index / editorial log | not found |
 
-**Missing: the research documents behind several chapters.** Framework B v2 §3 lists them as sources. None was found anywhere under `C:\Bible_study_projects` (searched 2026-09-30):
+The four Ch 8–10 documents are the evidence base for the **Held** sections of Chapters 12 and 13. They are available now, but they have **not** been checked yet. Following the fan-out rule, they are taken up when a strand reaches those topics, not as a whole-scope task.
 
-| Missing document | Fed |
-|---|---|
-| `00_Introduction_and_Overview.docx` | Introduction |
-| `soul_dna_divine_design_complete.docx` | Ch 7 (science — needed later) |
-| `HS_Spirit_Soul_Body_Deep_Analysis.docx` | Ch 8 (fruit of the Spirit) |
-| `Unregenerate_Soul_Analysis.docx` | Ch 9 (vice catalogue) |
-| `Evil_Devil_Sin_Causal_Analysis.docx` | Ch 9 (three sources, named spirits, foothold) |
-| `From_Death_to_Life_Transformation.docx` | Ch 10 |
-| `soul_versus.md`, `versus_for_spirit_and_related_words_-_old_testament.md`, `versus_of_spirit_and_related_words_-_new_testament_-_revised.md` | raw verse extracts behind Ch 1–6 |
-| `COMPLETE_RESEARCH_MASTER_INDEX_FINAL.md`, `CHANGES_SUMMARY.md` | index / editorial log |
+## Verse check (done 2026-09-30, #1915)
 
-The four Ch 8–10 documents matter most. They are the evidence for everything currently **held** in Chapters 12 and 13.
+All 630 quotations in chapters 01–14 (outside the Held sections) were checked mechanically against the ESV text in `iba.db` `verse` (29,760 verses).
 
-## Verse checks still open
+**Corrected in place** (in-review edits, no version bump):
+- Psa 143:4 and Psa 42:6 (ch 2)
+- Isa 47:8; Isa 29:13, now cited as Mat 15:8, which quotes it; the Hag 1:5 gloss is set in italics (ch 3)
+- Judg 15:19 (ch 5, ch 9)
+- 1Sa 10:6 (ch 5, ch 13)
+- Rom 7:25 (ch 6, ch 11)
+- 2Co 1:12 (ch 7)
+- three glosses set in italics rather than quotation marks (ch 10)
+- Jer 7:24; Mar 7:18 (ch 12)
 
-**A mechanical check (2026-09-30)** compared every verse reference in chapters 01–14 with the M47 files. Every reference is present there, except six that come from the surrounding context of passages the M47 files do read:
-- Gen 35:17; Jon 4:10; Num 21:8 (ch 9)
-- Mar 7:18; Psa 24:3 (ch 12)
-- Gen 4:5 (ch 14)
+Pro 17:27 had already been corrected.
 
-**Wording.** For these quotations, the words quoted in the chapter are fuller than, or different from, what the M47 files quote. The wording was supplied from the ESV as I know it, and should be confirmed against the text:
-- Psa 139:14 (ch 1)
-- Psa 13:2, full line (ch 2)
-- Pro 17:27 (ch 10; corrected to "he who has a cool spirit is a man of understanding")
-- Deu 8:14; Pro 16:5; Pro 26:23 (ch 12)
-- Acts 10:17; Luk 24:38 (ch 14)
+**The nine wordings flagged earlier are all confirmed**, apart from Pro 17:27, which is corrected.
+
+**The remaining 42 flags are checker noise:** glosses and terms in quotation marks, the section headings of Chapter 8, and references attributed to the wrong verse. One exception: **Psa 116:9 is absent from `iba.db`** (the known verse gap, #1891). Its wording was read from the STEP server during the Batch G reading.

@@ -19,7 +19,7 @@ And God feels in heart and soul too. "The Lord regretted that he had made man on
 
 ## Knowing and hearing
 
-Knowing belongs chiefly to the heart, as Chapter 3 showed. To pay attention is to set the heart. To understand is to have "a hearing heart". To remember is to keep a thing in the heart. The spirit knows the self from within: "who knows a person's thoughts except the spirit of that person, which is in him?" (1 Corinthians 2:11). The soul receives what is known as something good to taste: "knowledge will be pleasant to your soul" (Proverbs 2:10).
+Knowing belongs chiefly to the heart, as Chapter 3 showed. To pay attention is to set the heart. To understand is to have a *hearing heart*. To remember is to keep a thing in the heart. The spirit knows the self from within: "who knows a person's thoughts except the spirit of that person, which is in him?" (1 Corinthians 2:11). The soul receives what is known as something good to taste: "knowledge will be pleasant to your soul" (Proverbs 2:10).
 
 **Hearing is the main way in.** The ear receives, and the heart keeps it or refuses it. "All my words that I shall speak to you receive in your heart, and hear with your ears" (Ezekiel 3:10). "Making your ear attentive to wisdom and inclining your heart to understanding" (Proverbs 2:2). When the heart is hard, hearing stops: "Pharaoh's heart was hardened, and he would not listen" (Exodus 7:13). "They made their hearts diamond-hard lest they should hear the law" (Zechariah 7:12). A crushed spirit can block hearing as well. Israel "did not listen to Moses, because of their broken spirit and harsh slavery" (Exodus 6:9).
 
@@ -29,7 +29,7 @@ Sometimes hearing is not enough, and the inner being needs to *see*. Jacob's hea
 
 ## Wanting
 
-The soul is the wanting self (Chapter 4). In Hebrew, "your soul desires" is simply how you say "you want". The heart has desires too: "Delight yourself in the Lord, and he will give you the desires of your heart" (Psalm 37:4). And in the New Testament the flesh becomes the great subject of wrong desire (Chapter 6).
+The soul is the wanting self (Chapter 4). In Hebrew, *your soul desires* is simply how you say *you want*. The heart has desires too: "Delight yourself in the Lord, and he will give you the desires of your heart" (Psalm 37:4). And in the New Testament the flesh becomes the great subject of wrong desire (Chapter 6).
 
 Desire can be aimed at nothing. The Preacher tried everything his heart wanted, and it was "vanity and a striving after wind" (Ecclesiastes 2:11). "Better is the sight of the eyes than the wandering of the appetite [soul]: this also is vanity and a striving after wind" (Ecclesiastes 6:9). A soul that wants and a wind that cannot be caught: the image is exact.
 
@@ -54,7 +54,7 @@ When Scripture judges a person, it looks first at the heart. The heart is uprigh
 Relating to God engages the whole inner being, and Scripture says so by formula: "with all your heart and with all your soul". That formula governs loving God (Deuteronomy 6:5), serving him (Deuteronomy 10:12), seeking him (Deuteronomy 4:29), returning to him (Deuteronomy 30:10) and keeping covenant (2 Kings 23:3).
 
 - **Prayer lives in the heart.** It can be complete there without a voice (1 Samuel 1:13). "Pour out your heart like water before the presence of the Lord" (Lamentations 2:19). "With my whole heart I cry; answer me, O Lord!" (Psalm 119:145).
-- **God speaks to the heart.** To comfort someone, in Hebrew, is to "speak to their heart". Joseph "comforted them and spoke kindly to them" (Genesis 50:21), literally to their hearts. God says of his people, "I will allure her, and bring her into the wilderness, and speak tenderly to her" (Hosea 2:14), again to her heart. "Speak tenderly to Jerusalem" (Isaiah 40:2).
+- **God speaks to the heart.** To comfort someone, in Hebrew, is to *speak to their heart*. Joseph "comforted them and spoke kindly to them" (Genesis 50:21), literally to their hearts. God says of his people, "I will allure her, and bring her into the wilderness, and speak tenderly to her" (Hosea 2:14), again to her heart. "Speak tenderly to Jerusalem" (Isaiah 40:2).
 - **God tests the heart.** "The Lord tests hearts" (Proverbs 17:3). And he forgives according to what he knows there: "render to each whose heart you know, according to all his ways, for you, you only, know the hearts of all the children of mankind" (1 Kings 8:39).
 - **The soul is the self in address.** It is told to bless, to hope and to rest (Chapter 4).
 - **The human spirit worships.** "God is spirit, and those who worship him must worship in spirit and truth" (John 4:24). "My spirit rejoices in God my Savior" (Luke 1:47). Paul serves God "with my spirit" (Romans 1:9). At death the spirit is what is committed into God's hands.

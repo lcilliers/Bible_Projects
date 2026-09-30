@@ -6,7 +6,7 @@ Two smaller words complete the picture. Neither is used often, but each names so
 
 The word *syneidēsis* appears only in the New Testament. It names the inner person as a **witness**: the part of me that sees what I have done and says something about it.
 
-- It **testifies**: "their conscience also bears witness, and their conflicting thoughts accuse or even excuse them" (Romans 2:15). "My conscience bears me witness in the Holy Spirit" (Romans 9:1). "This is our boast, the testimony of our conscience" (2 Corinthians 1:12).
+- It **testifies**: "their conscience also bears witness, and their conflicting thoughts accuse or even excuse them" (Romans 2:15). "My conscience bears me witness in the Holy Spirit" (Romans 9:1). "Our boast is this, the testimony of our conscience" (2 Corinthians 1:12).
 - It is **good or clear**: "I have lived my life before God in all good conscience up to this day" (Acts 23:1). "I always take pains to have a clear conscience toward both God and man" (Acts 24:16). "Love that issues from a pure heart and a good conscience and a sincere faith" (1 Timothy 1:5).
 - It is **weak, defiled, wounded, seared**: "their conscience, being weak, is defiled" (1 Corinthians 8:7). To wound a weak conscience is to "sin against Christ" (8:12). Some have consciences "seared" (1 Timothy 4:2). "Both their minds and their consciences are defiled" (Titus 1:15).
 - It is **cleansed**: "how much more will the blood of Christ, who through the eternal Spirit offered himself without blemish to God, purify our conscience from dead works to serve the living God" (Hebrews 9:14). Gifts and sacrifices "cannot perfect the conscience of the worshiper" (Hebrews 9:9). Baptism is "an appeal to God for a good conscience" (1 Peter 3:21).

@@ -36,7 +36,7 @@ So I no longer read 1 Thessalonians 5:23 as a diagram of three components ranked
 
 ## One inside another
 
-The words are also placed inside one another. God's Spirit is given "in our hearts" (2 Corinthians 1:22; Galatians 4:6). "My spirit within me" (Psalm 143:4). "My soul within me" (Psalm 42:5–6). "I will remove the heart of stone from your flesh" (Ezekiel 36:26). The heart, more than any other word, is where things are placed: God's law, his words, wisdom, fear of him, eternity, and also idols, deceit and folly. I come back to this in the next chapter.
+The words are also placed inside one another. God's Spirit is given "in our hearts" (2 Corinthians 1:22; Galatians 4:6). "My spirit faints within me" (Psalm 143:4). "My soul is cast down within me" (Psalm 42:6). "I will remove the heart of stone from your flesh" (Ezekiel 36:26). The heart, more than any other word, is where things are placed: God's law, his words, wisdom, fear of him, eternity, and also idols, deceit and folly. I come back to this in the next chapter.
 
 ## Causes running in every direction
 

@@ -89,7 +89,7 @@ Scripture takes the words it uses for ruling, serving, guarding and judging in s
 
 - **Ruling:** "he who rules his spirit [is better] than he who takes a city" (Proverbs 16:32). "Let the peace of Christ rule in your hearts" (Colossians 3:15).
 - **Guarding:** "Keep your heart with all vigilance" (Proverbs 4:23). "Keep your soul diligently, lest you forget" (Deuteronomy 4:9). "Guard yourselves in your spirit" (Malachi 2:15).
-- **Serving:** "with my mind I serve the law of God, but with my flesh I serve the law of sin" (Romans 7:25).
+- **Serving:** "I myself serve the law of God with my mind, but with my flesh I serve the law of sin" (Romans 7:25).
 - **Judging:** "whenever our heart condemns us, God is greater than our heart" (1 John 3:20).
 
 The inner being is a small kingdom. It can be ruled well or badly, guarded or left without walls: "A man without self-control is like a city broken into and left without walls" (Proverbs 25:28). Above its own rulers there is always a higher one.

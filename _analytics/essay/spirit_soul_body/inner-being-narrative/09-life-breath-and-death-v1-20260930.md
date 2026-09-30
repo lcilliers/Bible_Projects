@@ -27,7 +27,7 @@ In this, humans and animals share one lot: "They all have the same breath, and m
 
 Scripture shows life coming back through each of the inner words.
 
-- **The spirit returns.** Samson, dying of thirst after his victory, drank the water God gave, "and his spirit returned, and he revived" (Judges 15:19). Jairus's daughter: "her spirit returned, and she got up at once" (Luke 8:55). Jesus then tells them to give her something to eat.
+- **The spirit returns.** Samson, dying of thirst after his victory, drank the water God gave, and "his spirit returned, and he revived" (Judges 15:19). Jairus's daughter: "her spirit returned, and she got up at once" (Luke 8:55). Jesus then tells them to give her something to eat.
 - **The life returns.** Elijah prays over the widow's son, and "the life of the child came into him again, and he revived" (1 Kings 17:22).
 - **The breath enters.** In Ezekiel's valley, bones come together, then sinews, flesh and skin, "but there was no breath in them" (Ezekiel 37:8). When the prophet calls to the breath, "the breath came into them, and they lived and stood on their feet" (37:10). In Revelation, "a breath of life from God entered them, and they stood up on their feet" (Revelation 11:11).
 
