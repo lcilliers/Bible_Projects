@@ -29,7 +29,7 @@ validation.word,3,references,## 4. References,4. References,1,0
 validation.word,4,expectations,## 5. Expectations,5. Expectations,1,0
 validation.word,5,value_quality,## 6. Value quality,6. Value quality,1,0
 validation.book,0,app_db,## 1. App & DB,1. App & DB,1,0
-validation.book,1,candidate,## 3. Candidate (L4b),3. Candidate (L4b),0,1
+validation.book,1,candidate,## 3. Candidate (L4b),3. Candidate (L4b),1,0
 validation.book,2,passages,## 4. Passages,4. Passages,1,0
 validation.book,3,value_quality,## 6. Value quality,6. Value quality,1,0
 retention.report,0,summary,## Summary,Summary,1,0
@@ -93,29 +93,3 @@ report.obs_catalogue,3,tier_structure,"## Tier structure — live, tiered questi
 report.obs_catalogue,4,unclassified,## Unclassified — live questions with no tier,Unclassified — live questions with no tier,1,0
 report.schema_overview_bible_research,0,overview,## Table inventory,Table inventory,1,0
 report.schema_overview_bible_research,1,tables,"## Every table, in full","Every table, in full",1,0
-report.lexical_exceptions,0,layer1_tally,"## Layer 1 tally (mechanical, complete enumeration)",Layer 1 tally (mechanical),1,0
-report.lexical_exceptions,1,layer2_dispositions,"## Layer 2 dispositions (judgement, complete against Layer 1's total)",Layer 2 dispositions,1,0
-report.lexical_exceptions,2,judgement_calls,"## Judgement calls made this run, each labelled",Judgement calls,1,0
-report.lexical_exceptions,3,integrity,## Integrity check (dangling verse_lexical_note references),Integrity check,1,0
-spine.check,0,summary,## Summary,Summary,1,0
-spine.check,1,integrity,## Integrity (FATAL),Integrity (FATAL),1,0
-spine.check,2,discoverability,## Discoverability,Discoverability,1,1
-lexical.readiness,0,summary,## Summary,Summary,1,0
-lexical.readiness,1,detail,## Detail,Detail,1,0
-report.batch_progress,0,summary,## Summary,Summary,1,0
-report.batch_progress,1,running_now,## Currently running,Running now,1,0
-report.batch_progress,2,recent_failures,## Recent failures,Recent failures,1,0
-report.batch_progress,3,recent_committed,## Recent committed batches,Recent committed,1,0
-purge.audit,0,summary,## Summary,Summary,1,0
-purge.audit,1,safe,## Safe to purge,Safe to purge,1,0
-purge.audit,2,unsafe,## Unsafe -- live dependency risk,Unsafe -- live dependency risk,1,0
-purge.execute,0,summary,## Summary,Summary,1,0
-purge.execute,1,purged,## Purged,Purged,1,0
-purge.execute,2,skipped,## Skipped,Skipped,1,0
-purge.retire_database,0,summary,## Summary,Summary,1,0
-purge.retire_database,1,fk-cleanup,## Dangling FK cleanup on retained tables,Dangling FK cleanup on retained tables,1,0
-purge.retire_database,2,purged,## Cleared,Cleared,1,0
-session.close,0,summary,## Summary,Summary,1,0
-session.close,1,escalation_gaps,## Escalation update coverage,Escalation update coverage,1,0
-session.close,2,governance_gaps,## Governance / config / doc drift,Governance / config / doc drift,1,0
-session.close,3,build_gaps,## BUILD.md coverage,BUILD.md coverage,1,0

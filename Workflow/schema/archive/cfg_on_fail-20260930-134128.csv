@@ -66,9 +66,3 @@ cluster.validate,findings-rejected,report-stop,,researcher flagged cluster-assig
 cluster.validate,needs-revision,report-stop,,researcher asked for more specific investigation (see comment),terminal,0
 word.confirm,needs-confirmation,pause-continue,,word display shown; confirm to proceed,terminal,0
 word.gap_display,needs-approval,pause-continue,,gap report shown; approve to apply (only when run --interactive),terminal,0
-spine.check,spine-fatal-rejected,report-stop,,researcher flagged FATAL spine findings as needing action,terminal,0
-spine.check,spine-fatal-found,pause-continue,,spine has FATAL findings needing researcher judgement,terminal,0
-spine.check,needs-revision,report-stop,,researcher asked for more specific investigation (see comment),terminal,0
-strong.reconcile,unclassified,pause-continue,,"a strong got no cluster assignment at all (no HIGH-confidence precedent match) -- a researcher/Claude classification decision, not silently continuing (escalation #1606).",terminal,0
-raw.backfill_meaning,unclassified,pause-continue,,"a backfilled strong got no cluster assignment at all -- same class of gap as strong.reconcile, must not silently continue (escalation #1606).",terminal,0
-session.close,gaps-found,report-continue,,"session-close detected one or more gaps — see report for detail; remediation is Claude's own follow-up via .claude/commands/session-close.md, not a blocking approval cycle",terminal,0

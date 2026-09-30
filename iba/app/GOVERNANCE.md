@@ -3991,8 +3991,39 @@ without doing a large portion of unnecessary cluster based findings."*
   create without my specific intervention."*
 
 **Superseded:** full cluster-by-cluster reading, paused under #1899 and now ended. §83 (per-cluster
-folders) stays valid for cluster-anchored material. Where strand work is filed is not yet decided
-(escalation #1901). The same rulings are recorded in the CLAUDE.md top banner.
+folders) stays valid for cluster-anchored material. ~~Where strand work is filed is not yet decided
+(escalation #1901).~~ **Decided 2026-09-30 (#1901, applied via #1902):** strand exploration files go
+in the subfolder of the cluster the strand explores; where several clusters are involved, the
+dominant cluster's — *"this filing is not an exact science."* Recorded in `cfg_setting
+report.cluster_folder_naming_convention` (see §85). The same rulings are recorded in the CLAUDE.md
+top banner.
 
 **Not done here:** no `cfg_*` row. This is a study-method ruling, not an app behaviour. No strand
 work has been started.
+
+## §85. `_analytics` reorganised — registry, per-word and lexical-extract folders moved; strand filing settled (2026-09-30, researcher-approved, escalations #1902, #1904–#1910)
+
+**Trigger.** The researcher reorganised `_analytics` by hand and confirmed it was intended (as quoted
+in the proposals: *"the reorg is intended, update the config and commit"*). The proposals were
+raised in another session. The researcher approved all eight on 2026-09-30, and this session
+applied them. Each was applied with the exact values stored in its proposal and checked live.
+
+**Folder moves (config follows the files, per §60: folder locations live in `cfg_*`):**
+- `_analytics/Registry` → `_analytics/registry` (lowercase): `report.output_dir` (#1906),
+  `report.registry_path` = `_analytics/registry/registry.md` (#1907),
+  `report.word_registry_span_output_dir` (#1908).
+- `_analytics/word_registry` → `_analytics/registry/word_registry`: `report.strong_verse_output_dir`
+  (#1909); `registry.folder_naming_convention` text updated to the new location, with the naming
+  rule unchanged and the move recorded (#1910).
+- `_analytics/lexical-extracts` → `_analytics/lexicon/lexical-extracts`:
+  `report.lexical_extract_output_dir` (#1904), `lexical.llm_usage_log_path` (#1905).
+
+**Strand filing (#1901 → #1902):** `report.cluster_folder_naming_convention` now ends with the
+researcher's ruling. Fan-out/strand files are filed in the cluster the strand explores, or in the
+dominant cluster where several are involved. §84 is updated to match.
+
+**Provenance, not changed:** the folder names in §60 (2026-08-28) are left as they were then.
+They record where things were at that date.
+
+**Files:** `cfg_setting` (8 rows); `outputs/configs/CONFIG-REPORT-v537-20260930.md`; this file. No
+`iba/app/**` code changed.

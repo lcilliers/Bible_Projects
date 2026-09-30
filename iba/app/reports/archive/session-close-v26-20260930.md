@@ -1,10 +1,11 @@
 # Session close — escalation update / governance drift / BUILD.md coverage check (#1875)
 
-> Generated 2026-09-30T12:48:08Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
+> Generated 2026-09-30T12:42:15Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
 
-- session_id: `af3a1588-67c8-458d-840f-052d775c4c20` (identified by: CLAUDE_CODE_SESSION_ID)
-- session started: 2026-09-30T11:18:17Z
-- transcript found: True
+- session_id: `None` (identified by: CLAUDE_CODE_SESSION_ID=00000000-0000-0000-0000-000000000000 but no transcript at C:\Users\lerouxc\.claude\projects\C--Bible-study-projects\00000000-0000-0000-0000-000000000000.jsonl)
+- session started: None
+- transcript found: False
+- **problem:** cannot identify the session this close is running in: CLAUDE_CODE_SESSION_ID=00000000-0000-0000-0000-000000000000 but no transcript at C:\Users\lerouxc\.claude\projects\C--Bible-study-projects\00000000-0000-0000-0000-000000000000.jsonl
 - escalation-update gaps: **0**
 - BUILD.md gaps: **0**
 
@@ -23,22 +24,12 @@
 <a id="escalation-update-coverage"></a>
 ## Escalation update coverage
 
-Escalations touched this session (id, highest version seen in transcript vs. live `escalation_history`):
-- #1894: transcript v9
-- #1901: transcript v4
-- #1902: transcript v4
-- #1904: transcript v4
-- #1905: transcript v4
-- #1906: transcript v4
-- #1907: transcript v4
-- #1908: transcript v4
-- #1909: transcript v4
-- #1910: transcript v4
+No escalation touched this session (per transcript scan).
 
 <a id="governance-config-doc-drift"></a>
 ## Governance / config / doc drift
 
-Files changed this session under governance/doc scope: iba/app/GOVERNANCE.md.
+Files changed this session under governance/doc scope: (none).
 
 Whether chat content that SHOULD have updated governance/config actually did, and whether any now-superseded text is properly marked superseded/retired, is a judgement call for Claude to make reading the actual session transcript — not mechanically checked here (no chat-content-to-decision mapping exists to check against). If the session's own SESSION-LOG 'decisions made' section names a decision with no matching change among the files above, that is the signal to look at.
 
