@@ -750,6 +750,15 @@ checks: (a) every escalation the transcript shows was touched via `Escalation.ps
 call, not mechanically decided here); (c) any `iba/app/**` file changed this session with no
 matching `iba/app/BUILD.md` entry.
 
+**Which session it checks** (corrected 2026-09-30, escalation #1894): the session it is running
+in. It is identified by `CLAUDE_CODE_SESSION_ID`, or failing that by the transcript that contains
+the running `Session-Close.ps1` call. The report's `session_id` line names the method used. The
+diff window starts at that session's own record in `.claude/session-boundary/<session_id>.json`.
+It no longer uses the shared `.session-boundary-state.json`, which any other session starting or
+resuming in the folder overwrites. If the session cannot be identified, the report says so and
+skips the checks. Sessions started before 2026-09-30's change have no per-session record, so the
+git-based checks are skipped for them, and the report says so.
+
 **Never blocks** — always exits clean, even with gaps found (`gaps-found` → `report-continue`), so
 it never creates an approval cycle. It only detects; it doesn't fix anything itself. Use the
 `/session-close` slash command (`.claude/commands/session-close.md`) to run this AND have Claude

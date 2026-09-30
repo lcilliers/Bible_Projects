@@ -16764,3 +16764,62 @@ Files:
 - `outputs/markdown/M47-spirit-classification-v2-20260928.csv`
 - regenerated M47 CSVs and the delta file in `research/investigations/` (originals archived)
 - `iba/app/BUILD.md` §333 (new)
+
+## 334. `session.close` and the Developer Mode gate identify their own session — per-session boundary record (2026-09-30, researcher-approved option A, escalation #1894)
+
+**Why:** `session.close` and `gate_developer_mode_entry.py` both read the one shared file
+`.claude/.session-boundary-state.json`. The `SessionStart` hook overwrites it whenever any session
+starts or resumes in this folder, so closes v18–v20 scanned another session (753f0db2) and missed
+the working sessions' escalation writes. The gate had the same flaw: it wrongly refused a fresh
+session whenever another session resumed after it. Evidence and options:
+`outputs/session-close-effectiveness-review-20260930.md` (§2, §5). Researcher, chat 2026-09-30
+(verbatim): *"go with option A. No need to work backward, I just want to improve the working of
+the close going forward."* No re-check of closes v18–v20 was done, and nothing from options B/C.
+
+**Build:**
+- `.claude/hooks/session_boundary_track.py`: also writes `.claude/session-boundary/<session_id>.json`.
+  It holds the same fields as the shared file plus `first_seen_at`, the earliest boundary event for
+  that session_id, kept across resumes. The shared file is unchanged.
+- `.claude/hooks/track_prompt_submit.py`: also sets `first_prompt_id` on the per-session record.
+- `.claude/hooks/gate_developer_mode_entry.py`: reads the per-session record for the requesting
+  `session_id`. It still fails closed on a missing record, a resumed/compacted/forked session, or a
+  prior prompt.
+- `iba/app/handlers/session_close.py`: new `_identify_session()`. It never reads the shared file.
+  1. It first uses `CLAUDE_CODE_SESSION_ID`, which Claude Code sets for the commands it runs
+     (checked live this session). The review doc's proposed method is kept as the fallback.
+  2. The fallback is the most recently written transcript in this project's folder whose last
+     200 KB contain the `Session-Close.ps1` call.
+  3. If neither finds a session, the report says so and the checks are skipped. There is no
+     fallback to another session.
+
+  The git diff window starts at the per-session record's `first_seen_at`. The report now shows how
+  the session was identified. It also shows any problem (the `error` finding was previously
+  collected but never printed).
+- `.gitignore`: `.claude/session-boundary/`.
+- No `cfg_*` change: no new setting, step, table or enum.
+
+**Known limit:** a session that started before this change has no per-session record. Its close
+still identifies the session and scans its transcript, but reports "no per-session boundary
+record" and skips the git diff window (BUILD.md/doc checks). This session (8a6db269) is one of them.
+
+**Test plan** (review doc §5; run in a fresh App Mode session, not the building session):
+1. Start two sessions in the folder, the second after the first. Run `Session-Close.ps1` in the
+   first. The report must show the first session's id (`identified by: CLAUDE_CODE_SESSION_ID`)
+   and its escalation writes.
+2. Negative case: with `CLAUDE_CODE_SESSION_ID` pointing at a non-existent id, the report must
+   state the problem and skip the checks. It must not fall back to another session.
+3. Fallback path: with `CLAUDE_CODE_SESSION_ID` unset, the session must be identified via the
+   transcript containing the `Session-Close.ps1` call.
+4. Dev-mode gate: `/developer-mode` as the first prompt of a fresh session is let in even if
+   another session resumed after it. A resumed session is still refused.
+
+Only a syntax compile check was run in the building session.
+
+Files:
+- `.claude/hooks/session_boundary_track.py`
+- `.claude/hooks/track_prompt_submit.py`
+- `.claude/hooks/gate_developer_mode_entry.py`
+- `iba/app/handlers/session_close.py`
+- `.gitignore`
+- `iba/app/USER-GUIDE.md` §11b
+- `iba/app/GOVERNANCE.md` §82 (note)

@@ -67,6 +67,13 @@ def main() -> None:
     except Exception:
         pass
 
+    # Read THIS session's own record (escalation #1894, 2026-09-30), not the shared
+    # .session-boundary-state.json: the shared file is overwritten by whichever session in this
+    # folder started or resumed last, which made this gate wrongly refuse a genuinely fresh
+    # session whenever another session resumed after it.
+    session_id = payload.get("session_id")
+    if session_id:
+        state_path = os.path.join(claude_dir, "session-boundary", f"{session_id}.json")
     try:
         with open(state_path, "r", encoding="utf-8") as fh:
             state = json.load(fh)
@@ -80,7 +87,6 @@ def main() -> None:
         )
         return
 
-    session_id = payload.get("session_id")
     if state.get("session_id") != session_id:
         _block(
             "Developer Mode entry refused: the recorded session-boundary state belongs to a "

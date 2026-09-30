@@ -64,6 +64,20 @@ def main() -> None:
         except Exception:
             pass
 
+    # Per-session record (escalation #1894): same update, on this session's own file, which
+    # gate_developer_mode_entry.py reads. Not affected by other sessions starting later.
+    if session_id and prompt_id:
+        per_session_path = os.path.join(claude_dir, "session-boundary", f"{session_id}.json")
+        try:
+            with open(per_session_path, "r", encoding="utf-8") as fh:
+                per_state = json.load(fh)
+            if per_state.get("first_prompt_id") is None:
+                per_state["first_prompt_id"] = prompt_id
+                with open(per_session_path, "w", encoding="utf-8") as fh:
+                    json.dump(per_state, fh, indent=2)
+        except Exception:
+            pass
+
     print(json.dumps({}))
 
 

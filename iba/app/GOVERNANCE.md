@@ -3870,7 +3870,7 @@ looks missing.
 `Escalation.ps1`'s own CLI confirmation lines (`raised — #N. Update with` / `escalation #N vV ->`,
 the exact text the tool already prints) to find every escalation id genuinely touched this session,
 cross-checked against `escalation_history`'s live version for that id; diffs `git` since the
-session-start commit (resolved from `.claude/.session-boundary-state.json`'s timestamp) to find
+session-start commit (resolved from `.claude/.session-boundary-state.json`'s timestamp — *superseded 2026-09-30, #1894: now the per-session record `.claude/session-boundary/<session_id>.json`, session identified via `CLAUDE_CODE_SESSION_ID`; BUILD.md §334*) to find
 `iba/app/**` files changed with no matching `iba/app/BUILD.md` change, and to report which of
 `GOVERNANCE.md`/`CLAUDE.md`/`USER-GUIDE.md` changed (the judgement of whether that's ENOUGH stays
 with Claude, reading the transcript — not mechanically checkable, no chat-to-decision mapping

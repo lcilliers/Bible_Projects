@@ -83,7 +83,9 @@ query the harness's own permission mode**, so don't fabricate a check result. In
 Read live, not from memory (`feedback_iba_session_start_read_live_docs_not_memory`):
 
 - Query `cfg_behaviour_rule` for `class='development'` (`iba/app/db/iba.db`) and hold every active
-  row in context for the session — currently 11 rows, e.g. `root-fix-not-one-off`,
+  row in context for the session. Report the live count; don't rely on a number written here, since
+  rules are added over time (a hardcoded "11" had gone stale at 13 by 2026-09-30). Examples:
+  `root-fix-not-one-off`,
   `simple-steps-not-engineered-designs`, `every-active-ps-script-dispatches-through-run-py`,
   `test-plan-per-module-utility`, `open-items-route-through-escalation`,
   `config-updated-same-unit-of-work-as-change`, `user-guide-updated-same-unit-of-work`. Don't

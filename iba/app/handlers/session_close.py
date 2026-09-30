@@ -58,20 +58,59 @@ def _repo_root() -> pathlib.Path:
     return pathlib.Path(__file__).resolve().parent.parent.parent.parent
 
 
-def _session_state() -> dict | None:
-    state_path = _repo_root() / ".claude" / ".session-boundary-state.json"
-    if not state_path.exists():
-        return None
+_CALL_MARKER = "Session-Close.ps1"
+_TAIL_BYTES = 200_000
+
+
+def _transcripts_dir() -> pathlib.Path:
+    """This project's transcript folder: Claude Code names it after the project path with every
+    non-alphanumeric character replaced by '-' (C:\\Bible_study_projects -> C--Bible-study-projects)."""
+    mangled = re.sub(r"[^A-Za-z0-9]", "-", str(_repo_root()))
+    return pathlib.Path(os.path.expanduser("~")) / ".claude" / "projects" / mangled
+
+
+def _tail_contains(path: pathlib.Path, marker: str) -> bool:
     try:
-        return json.loads(state_path.read_text(encoding="utf-8"))
+        with path.open("rb") as fh:
+            fh.seek(0, os.SEEK_END)
+            fh.seek(max(0, fh.tell() - _TAIL_BYTES))
+            return marker.encode("utf-8") in fh.read()
+    except Exception:
+        return False
+
+
+def _identify_session() -> tuple[str | None, pathlib.Path | None, str]:
+    """(session_id, transcript_path, method) for the session this close is RUNNING IN (escalation
+    #1894 option A, 2026-09-30). Never reads the shared .session-boundary-state.json: that file
+    is overwritten by whichever session in this folder started or resumed last, which made closes
+    v18-v20 scan another session. Order:
+      1. CLAUDE_CODE_SESSION_ID, which Claude Code sets for the commands it runs;
+      2. else the most recently written transcript whose recent content contains the running
+         Session-Close.ps1 call.
+    No match -> (None, None, reason). There is no fallback to any other session."""
+    tdir = _transcripts_dir()
+    env_id = os.environ.get("CLAUDE_CODE_SESSION_ID")
+    if env_id:
+        path = tdir / f"{env_id}.jsonl"
+        if path.exists():
+            return env_id, path, "CLAUDE_CODE_SESSION_ID"
+        return None, None, (f"CLAUDE_CODE_SESSION_ID={env_id} but no transcript at {path}")
+    if not tdir.is_dir():
+        return None, None, f"transcript folder not found: {tdir}"
+    for path in sorted(tdir.glob("*.jsonl"), key=lambda p: p.stat().st_mtime, reverse=True):
+        if _tail_contains(path, _CALL_MARKER):
+            return path.stem, path, f"most recent transcript containing the {_CALL_MARKER} call"
+    return None, None, (f"no CLAUDE_CODE_SESSION_ID and no transcript in {tdir} contains the "
+                        f"running {_CALL_MARKER} call")
+
+
+def _session_record(session_id: str) -> dict | None:
+    """This session's own boundary record, written by .claude/hooks/session_boundary_track.py."""
+    path = _repo_root() / ".claude" / "session-boundary" / f"{session_id}.json"
+    try:
+        return json.loads(path.read_text(encoding="utf-8"))
     except Exception:
         return None
-
-
-def _transcript_path(session_id: str) -> pathlib.Path | None:
-    home = pathlib.Path(os.path.expanduser("~"))
-    matches = list(home.glob(f".claude/projects/*/{session_id}.jsonl"))
-    return matches[0] if matches else None
 
 
 def _scan_transcript(path: pathlib.Path) -> dict[int, int | None]:
@@ -121,9 +160,11 @@ def _write_report(ctx: Ctx, findings: dict) -> pathlib.Path:
         f"remediation is performed separately by Claude via `.claude/commands/session-close.md`, "
         f"reading this report plus the session's own transcript.",
         "",
-        f"- session_id: `{findings.get('session_id')}`",
+        f"- session_id: `{findings.get('session_id')}` (identified by: "
+        f"{findings.get('session_id_method')})",
         f"- session started: {findings.get('session_start')}",
         f"- transcript found: {findings.get('transcript_found')}",
+        *([f"- **problem:** {findings['error']}"] if findings.get("error") else []),
         f"- escalation-update gaps: **{len(findings.get('escalation_gaps', []))}**",
         f"- BUILD.md gaps: **{len(findings.get('build_gaps', []))}**",
     ]
@@ -181,10 +222,12 @@ def _write_report(ctx: Ctx, findings: dict) -> pathlib.Path:
 
 def check(ctx: Ctx) -> Outcome:
     db = ctx.db
-    state = _session_state()
+    session_id, tpath, method = _identify_session()
+    record = _session_record(session_id) if session_id else None
     findings: dict = {
-        "session_id": state.get("session_id") if state else None,
-        "session_start": state.get("at") if state else None,
+        "session_id": session_id,
+        "session_id_method": method,
+        "session_start": (record.get("first_seen_at") or record.get("at")) if record else None,
         "transcript_found": False,
         "escalation_touched": [],
         "escalation_gaps": [],
@@ -192,15 +235,16 @@ def check(ctx: Ctx) -> Outcome:
         "governance_files_changed": [],
     }
 
-    if not state or not state.get("session_id"):
-        findings["error"] = ("no .claude/.session-boundary-state.json / session_id — cannot "
-                             "locate this session's transcript")
+    if not session_id:
+        findings["error"] = f"cannot identify the session this close is running in: {method}"
         report_path = _write_report(ctx, findings)
         return fail("gaps-found", f"session id unavailable — checks skipped, report {report_path}",
                    escalation_gap_count=0, build_gap_count=0)
 
-    session_id = state["session_id"]
-    tpath = _transcript_path(session_id)
+    if not record:
+        findings["error"] = (f"no per-session boundary record .claude/session-boundary/"
+                             f"{session_id}.json (session started before #1894's hook change, "
+                             f"or the SessionStart hook did not fire) — git diff window skipped")
     if tpath:
         findings["transcript_found"] = True
         touched = _scan_transcript(tpath)
@@ -213,10 +257,7 @@ def check(ctx: Ctx) -> Outcome:
             if ver is not None and live_version < ver:
                 findings["escalation_gaps"].append(
                     {"id": eid, "transcript_version": ver, "live_version": live_version})
-    else:
-        findings["error"] = f"transcript file not found for session_id={session_id}"
-
-    session_start = state.get("at")
+    session_start = findings["session_start"]
     base_commit = _commit_before(session_start) if session_start else None
     changed = _git_changed_files(base_commit) if base_commit else []
     findings["changed_files"] = changed
