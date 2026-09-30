@@ -74,7 +74,7 @@
 > #1912/#1913).** The Framework B essay (`_analytics/essay/spirit_soul_body/`, a two- vs three-part
 > argument) is **reset** by the new research. It is regenerated as chapter files in
 > `_analytics/essay/spirit_soul_body/inner-being-narrative/`. Start at `00-index-and-status-*`.
-> The provisional working title is *Inner Being in Operation* (#1916).
+> Its title is *Inner Being in Operation* (confirmed 2026-09-30, #1916).
 >
 > Researcher, verbatim:
 > - *"to original must adjust to the new, not visa versa"*
@@ -195,7 +195,7 @@ For exact file lookup use `iba\app\ps\Manifest-Search.ps1 -Query "..."` (`script
 | Prose store | `prose_section_type`, `prose_section`, `prose_section_fts` (FTS5), link tables | DB-canonical prose (publication parked) |
 | Quality / research flags | `wa_quality_flag_types`, `wa_data_quality_flags`, `wa_session_research_flags` | Engine-derived evidence flags + researcher pointers (PH2_*, SD_POINTER) |
 | Reference-as-DB registries | `wa_addendum_registry`, `wa_vocab_set`/`_member`, `wa_patch_type_registry`, `wa_file_name_pattern`, `wa_label_pattern` | Governance reference (M32–34). ⚠ stale (last written April), not yet reviewed |
-| ~~`wa_rule_registry`~~ | — | **Superseded 2026-08-17** (researcher decision, escalation #696) — all 59 rows (34 previously active) marked `obsolete=1`, `superseded_by='iba.db cfg_* configuration system'`. No longer operational; rules now live in `cfg_*` (`iba/app/GOVERNANCE.md`, `iba\app\ps\Config-Maintenance.ps1 -Step Propose`), not this table. Full review: [`outputs/markdown/wa-rule-registry-full-review-v1-20260817.md`](outputs/markdown/wa-rule-registry-full-review-v1-20260817.md). |
+| ~~`wa_rule_registry`~~ | — | **Superseded 2026-08-17** (researcher decision, escalation #696) — all 59 rows (34 previously active) marked `obsolete=1`, `superseded_by='iba.db cfg_* configuration system'`. No longer operational; rules now live in `cfg_*` (`iba/app/GOVERNANCE.md`, `iba\app\ps\Config-Maintenance.ps1 -Step Propose`), not this table. Full review: [`archive/outputs/markdown/wa-rule-registry-full-review-v1-20260817.md`](archive/outputs/markdown/wa-rule-registry-full-review-v1-20260817.md). |
 | Engine control | `engine_run_log`, `engine_stream_checkpoint`, `word_run_state`, `term_fetch_log` | Audit trail |
 | Reference (static) | `books`, `book_code_variants`, `themes`, `sources` | 66 books + aliases; `themes`/`sources` empty |
 | Metadata | `schema_version` | Migration history (→ 3.31.0) |
@@ -441,7 +441,7 @@ Programme-state SQL queries (Session B progress, VC progress, OWNER terms needin
 
 ## 13. Environment
 
-- Windows 11; working directory `C:\Bible_study_projects` (moved off Google Drive 2026-06-03 after a Drive sync event corrupted the DB + `.git`; see `outputs/markdown/wa-db-loss-incident-20260603.md`). Off-Drive backups to NAS `\\LSUK-SYNRACK\HomeMedia\bible_study_projects\`: (a) **DB** → `db_backups\` (daily 18:00 task `BibleResearch DB Backup to NAS`; `scripts/backup_db_to_nas.py`); (b) **full folder + memory mirror** → `mirror\` + `claude-backup\` (daily 18:30 task `BibleResearch Full Mirror to NAS`; `scripts/mirror_to_nas.ps1`, robocopy /MIR). Project memory is also committed to git under `memory/` (mirror of the `.claude` memory). Old `G:\My Drive\Bible_study_projects` retained as a fallback only.
+- Windows 11; working directory `C:\Bible_study_projects` (moved off Google Drive 2026-06-03 after a Drive sync event corrupted the DB + `.git`; see `archive/outputs/markdown/wa-db-loss-incident-20260603.md`). Off-Drive backups to NAS `\\LSUK-SYNRACK\HomeMedia\bible_study_projects\`: (a) **DB** → `db_backups\` (daily 18:00 task `BibleResearch DB Backup to NAS`; `scripts/backup_db_to_nas.py`); (b) **full folder + memory mirror** → `mirror\` + `claude-backup\` (daily 18:30 task `BibleResearch Full Mirror to NAS`; `scripts/mirror_to_nas.ps1`, robocopy /MIR). Project memory is also committed to git under `memory/` (mirror of the `.claude` memory). Old `G:\My Drive\Bible_study_projects` retained as a fallback only.
 - Python 3.14.0 · PowerShell 7+ (`$env:PYTHONUTF8="1"`).
 - STEP Bible local server at `http://localhost:8989`.
 - Secrets in `.env` (ZOTERO_API_KEY, ZOTERO_USER_ID, STEP_BASE_URL).

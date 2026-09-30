@@ -13,7 +13,7 @@
 - **Source:** the programme's own governing question, `prose_section` 128 (`prog_purp_observations_framework`): *"What are the inner workings of the human being as described in Scripture — characterising and grouping the inner characteristics, mapping their interrelationships, describing the spirit-soul-body boundary, and documenting the relational interfaces with God, other humans, and other spiritual beings?"*
 - **Definition of the inner being:** section 5, `prog_purp_defining_inner_being`.
 - **Audience:** section 7 — *"teachers, practitioners, thoughtful readers"*.
-- **Working title (provisional):** *Inner Being in Operation*. Researcher, 2026-09-30: "Perhaps the title should be 'Inner being in operation'" (#1916).
+- **Title:** ***Inner Being in Operation***. Confirmed by the researcher on 2026-09-30: "approve 1916, title is Inner Being in Operation" (#1916).
 
 ## Chapters (reading order)
 

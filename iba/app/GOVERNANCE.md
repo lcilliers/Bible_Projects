@@ -3691,7 +3691,7 @@ surfaces it directly, rather than it staying in the separate `lexical.readiness`
    `verse-reading` observations (`M0.6.5`/`D7.7.1`, the only question codes whose own instructions
    read other words' role tags) were built from contaminated role, and 380 downstream
    char-subgroup/char-reading/char-answers observations for the 17 affected strongs inherited that
-   text verbatim (full detail: `outputs/observations-based-on-incorrect-role-20260920.md`).
+   text verbatim (full detail: `archive/outputs/observations-based-on-incorrect-role-20260920.md`).
 2. **`is_negator`/`party_kind`** (`load_code_classes`/`_code_classes_for`) had the identical
    `_base()` defect, found only because the researcher's own criticism of this session's pattern
    ("hole on hole... you just create an excuse to say out of scope") prompted actually testing an

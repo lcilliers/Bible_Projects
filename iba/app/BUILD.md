@@ -6731,7 +6731,7 @@ metadata for every file in the project) had lived only as a standalone main-repo
 un-config-governed, and separate from everything else this app tracks. This is round A of a
 two-round plan (round B, a file-**content** search built on top of this manifest as its coverage
 baseline, is scoped but not yet built —
-`outputs/markdown/manifest-and-content-search-into-iba-plan-v1-20260815.md`).
+`archive/outputs/markdown/manifest-and-content-search-into-iba-plan-v1-20260815.md`).
 
 **What moved, and what stayed.** The classification logic (category/type/currency, and the date/
 registry/version/cluster/word extraction regexes) is project-naming FACT — how files across this
@@ -6790,7 +6790,7 @@ manifest-search-*-20260815.md`.
 **Trigger.** Researcher's "iba table review" + `export.cfg_settings shortcomings.csv`
 (`Workflow/Chat_responses/`), confirmed and refined in a follow-up chat response
 (`Workflow/Chat_responses/response-tablereviewresponse v1`) — full digest at
-`outputs/markdown/iba-table-review-response-v1-20260816.md`. Diagnosis: escalation's original
+`archive/outputs/markdown/iba-table-review-response-v1-20260816.md`. Diagnosis: escalation's original
 three-way approve/reject/revise shape couldn't carry what was being asked of it (no severity/owner
 routing, no place to record what was actually done, `governance` settings had drifted into
 incident notes rather than standing rules), and `configmaint.propose`-style gating was becoming a
@@ -6867,7 +6867,7 @@ the 5 FK orphans, and the filing/consolidation decision (assigned Researcher).
 registry.py`, `iba/app/handlers/{candidate,cluster,configmaint,lexicon,narrative,passage,
 reports}.py` (mechanical `answer`→`next_action` read-site rename), `iba/app/lib/retention.py`,
 `iba/app/tools/purge_word.py`, `iba/app/migration/legacy_import.py`. Full digest:
-`outputs/markdown/iba-table-review-response-v1-20260816.md`.
+`archive/outputs/markdown/iba-table-review-response-v1-20260816.md`.
 
 ## 114. `Workflow/Chat_responses/Additional configs` processed — backup/recovery rules registered as config, document-reference-grouping rule added, 6 new escalations raised (2026-08-16, same day, later still)
 
@@ -6916,7 +6916,7 @@ not a defect).
 
 **Files:** no code changes this pass — `cfg_setting`/`cfg_escalation`/`escalation` data only (ad hoc
 scripts, not a registered migration, matching the direct-write convention §113 established for
-already-settled content). Full digest: `outputs/markdown/iba-table-review-response-v1-20260816.md`
+already-settled content). Full digest: `archive/outputs/markdown/iba-table-review-response-v1-20260816.md`
 §7 addendum; session log `iba/logs/SESSION-LOG-20260816-escalation-system-reset-and-backlog-clearance.md`.
 
 ## 115. `cfg_escalation.document_reference_grouping` actually wired — researcher caught it was written and not applied, same session (2026-08-16, same day, later still)
@@ -7573,7 +7573,7 @@ serialises one `configmaint.propose` at a time).
 **Files:** `iba/app/lib/cfg.py`, `iba/app/lib/cfgload.py`, `iba/app/handlers/configmaint.py`,
 `iba/app/lib/cfgquality.py`, `iba/app/lib/cfgreport.py`, `iba/app/tools/build_debate_report.py`
 (all `database='iba'`-scoped); `iba/app/migration/add_cfg_write_grant_database_column.py` (new);
-171 files renamed into `Logs/`; `outputs/markdown/log-consolidation-survey-v1-20260817.md` (new).
+171 files renamed into `Logs/`; `archive/outputs/markdown/log-consolidation-survey-v1-20260817.md` (new).
 DB snapshot: `iba-20260817T061604Z-pre-cfg-write-grant-database-column-esca.db`.
 
 ## 130. `Reassign`/`Resume` no longer force a full re-raise-and-reapprove for decided work (#692) (2026-08-17, later still)
@@ -11046,7 +11046,7 @@ corrected).
 ## 203. `cluster_finding` + `wa_finding_catalogue_links` folded into `finding`/`finding_question_link` (2026-08-29)
 
 **The instruction.** Following the finding-tables landscape review (§202's sibling report,
-`outputs/finding-tables-landscape-review-20260829.md`) and its migration plan (`outputs/
+`archive/outputs/finding-tables-landscape-review-20260829.md`) and its migration plan (`outputs/
 cluster-finding-to-finding-migration-plan-20260829.md`), researcher: *"proceed with the migration
 by combining the findings into one table, links to historic groupings e.g sub groups or vcg etc is
 retained in the table. secondly combine the questions and catalogue index table into one. do not
@@ -12570,7 +12570,7 @@ non_human=8, matching the built clusters' own row counts exactly.
 **Not done, deliberately:** the `verse_lexical` re-backfill (544,572 live rows) — held per the
 researcher's explicit instruction, pending a decision on the backfill *approach* itself (a stored,
 rebuilt-per-change column vs. a join-at-read-time against `cluster_strong` — raised for
-consideration in `outputs/verse-lexical-visibility-20260905.md`, not decided). Until a backfill
+consideration in `archive/outputs/verse-lexical-visibility-20260905.md`, not decided). Until a backfill
 runs, `verse_lexical.party_kind`/`is_negator` reflect the PRE-rewire lexicon content, not T4-T9 —
 new code added this session works correctly, existing rows are simply stale until backfilled.
 
@@ -14172,7 +14172,7 @@ write paths are built (Phase F).
 - **Pack sign-off** — all 6 pack components are design-complete and (per this session's earlier
   approvals) workflow-closed, but this build itself is not a substitute for the researcher's own
   go-ahead nod across the set, if that's still wanted separately.
-- Full status/issues write-up for morning review: `outputs/1706-build-session-status-v1-20260916.md`.
+- Full status/issues write-up for morning review: `archive/outputs/1706-build-session-status-v1-20260916.md`.
 
 **Files:** `iba/app/lib/lexical.py`, `iba/app/handlers/lexical.py`, `iba/app/handlers/raw.py`,
 `iba/app/handlers/reports.py`, `iba/app/lib/lexicalenrich.py`, `iba/app/lib/strongreconcile.py`,
@@ -15778,7 +15778,7 @@ Also closed the observation_enhancer's own related gap while here: `handlers/obs
 
 Found live investigating a researcher-reported `verse_lexical` correctness concern (verse_id 7478, strong H7725O): `role` (`load_role_codes`/`_role_for`/`unready_codes_in_scope`, `iba/app/lib/lexical.py`) keyed its `cluster_strong` lookup on `_base(strong)` — the suffix-letter-stripped code — and unioned live `cluster_strong.cluster_code` across every sub-lettered sibling sharing that base number, not the exact occurring strong's own allocation. H7725O's live `cluster_strong` allocation is M11 only; its `role` carried `["M11","M81","T3"]` — M81 belongs to sibling H7725N, T3 to six other siblings (H7725G/H/I/J/K/L/M), neither ever assigned to H7725O itself. `cluster_strong` treats every suffixed code as an independently-assigned entry (confirmed: siblings here carry different, separately-made cluster judgements), so unioning them back together tagged verses for clusters unrelated to the word actually occurring there.
 
-Verified this wasn't a one-off: recomputing "base-family union" against every one of 1,694 role/cluster_strong mismatches found in a prior scoped report (`outputs/cluster-strong-span-verselexical-crosscheck-20260920-v2.md`, 3 clusters) matched the stored value exactly, 100%, zero exceptions. Project-wide: **69,563 of 544,667 live `verse_lexical` rows (12.8%)** affected at time of fix.
+Verified this wasn't a one-off: recomputing "base-family union" against every one of 1,694 role/cluster_strong mismatches found in a prior scoped report (`archive/outputs/cluster-strong-span-verselexical-crosscheck-20260920-v2.md`, 3 clusters) matched the stored value exactly, 100%, zero exceptions. Project-wide: **69,563 of 544,667 live `verse_lexical` rows (12.8%)** affected at time of fix.
 
 Researcher ruling, verbatim, this chat: the span's `strong_variant` is "the strong that need to be carried in the strong table, need to be associated with a cluster, and need to be the role" — a direct lookup, not a computed aggregation. Matches the project's own established rule elsewhere (`reference_strong_related_keyed_on_exact_code_not_base`). `handlers/lexical.py:readiness()` Leg 3 was already exact-match — this brings `role` in line with it, closing an inconsistency that had existed within the same codebase since the 2026-09-16 `role` redesign (#1706 Phase B item 3).
 
@@ -15809,7 +15809,7 @@ Full column sweep of this table (103 rows, escalation #1814/#1818) found 4 thing
 
 ## 307. 15 catalogue questions citing a dead gate question by code, fixed; all 3 audit CSVs regenerated fresh (2026-09-21, escalation #1823, researcher-directed)
 
-Researcher instruction, verbatim: *"bring the CSV up to date. and ensure that the catalogue questions text does not include stale terminology that is no longer relevant."* Answering an earlier question about `STRUCTURALLY-UNREACHABLE` surfaced (Finding 15, `outputs/cluster-reading-pipeline-full-trace-20260920-v2.md`) that 8 `D7`-family questions, all answered at Stage 4, cite a per-verse "gate" question by code (`(per D7.1.1)` etc.) that is itself never asked by any stage — some of these citations were authored by the #1814 wording revision itself, applying its own "cite by code" convention without checking the cited code was reachable.
+Researcher instruction, verbatim: *"bring the CSV up to date. and ensure that the catalogue questions text does not include stale terminology that is no longer relevant."* Answering an earlier question about `STRUCTURALLY-UNREACHABLE` surfaced (Finding 15, `archive/outputs/cluster-reading-pipeline-full-trace-20260920-v2.md`) that 8 `D7`-family questions, all answered at Stage 4, cite a per-verse "gate" question by code (`(per D7.1.1)` etc.) that is itself never asked by any stage — some of these citations were authored by the #1814 wording revision itself, applying its own "cite by code" convention without checking the cited code was reachable.
 
 Checking every `(per CODE)` citation in the live catalogue (not just the D7 family first spotted) found the same pattern in `D10`/`D3`/`D5`/`D6` too — **15 questions total**: `D10.2.2`, `D10.4.2`, `D10.6.2`, `D3.1.2`, `D5.2.2`, `D5.2.3`, `D6.2.1`, `D7.1.2`, `D7.1.3`, `D7.2.2`, `D7.2.3`, `D7.3.3`, `D7.4.2b`, `D7.4.3b`, `D7.5.2`. Fixed: the dead `(per CODE)` citation dropped from each, the cited gate's own filter condition inlined in plain language instead — same subject+grain convention #1814 established, just self-contained. Not touched (a design/wiring decision, tracked on #1823, not a text-cleanup one): whether the 15 dead gate questions themselves should have their `scope` corrected so they become reachable, or should be retired.
 
@@ -15919,7 +15919,7 @@ Closes the design doc `iba/docs/1824-stage1-reconciliation-design-v1-20260922.md
 
 ## 315. Stage 1 gets its own LLM validation check — deterministic expected-vs-actual coverage, built into the pipeline (2026-09-22, escalation #1824 v14, researcher-directed)
 
-Researcher instruction, verbatim: *"stage 1 need to pre-calculate the expected result for each scope, and measure the result received from llm as the llm validation check. build this now into the code."* Operationalizes the ad hoc CSV comparison done earlier the same session (`outputs/stage1-expected-nodes-20260922.csv` / `stage1-existing-nodes-20260922.csv`) into a real, reusable library.
+Researcher instruction, verbatim: *"stage 1 need to pre-calculate the expected result for each scope, and measure the result received from llm as the llm validation check. build this now into the code."* Operationalizes the ad hoc CSV comparison done earlier the same session (`archive/outputs/stage1-expected-nodes-20260922.csv` / `stage1-existing-nodes-20260922.csv`) into a real, reusable library.
 
 **New module** `iba/app/lib/stage1coverage.py`: `expected_nodes(conn, cluster_code, verse_ids)` computes the deterministic `(verse, strong, question_code)` set Stage 1 should attempt, from live `verse_lexical` role data + `ib_observation` battery-coverage state — no LLM call. `validate_coverage(...)` diffs that against the live `ib_node`/`ib_observation` state (`stage='verse-reading'`, non-withdrawn) for the same scope: MISSING / UNEXPECTED / OVER_COUNT / OK. Verified byte-for-byte against the hand-built CSVs before being trusted (1949/1652/1026/729/149 matched exactly).
 
@@ -16172,7 +16172,7 @@ general, verse-independent fact (M0.5.10 explicitly requires "the full vocabular
 be answered from one verse or one strong by definition). M0.5.2/M0.5.3 are word-level but still ask
 about the term's range in general, not this verse's use of it — borderline. 1/34 (M0.8.1) is a
 different kind of question entirely (see below). Full detail:
-`outputs/stage1-question-objective-review-20260923.md`. The 13/14 non-conforming questions are NOT
+`archive/outputs/stage1-question-objective-review-20260923.md`. The 13/14 non-conforming questions are NOT
 touched by this entry — that's a scope decision (move to char-reading vs. redefine) left for the
 researcher, not resolved here.
 
@@ -16197,7 +16197,7 @@ should be re-derived under the simplified wording.
 **Files:** `iba/app/lib/versereadinggenerate.py`,
 `iba/app/migration/fix_characteristic_terminology_stage1_v1_20260923.py` (new),
 `iba/app/migration/simplify_M0_8_1_elevation_flag_v1_20260923.py` (new),
-`outputs/stage1-question-objective-review-20260923.md` (new). Escalations: raised this session, see
+`archive/outputs/stage1-question-objective-review-20260923.md` (new). Escalations: raised this session, see
 escalation table (governance.escalation.scope — this in-chat work was not being recorded until the
 researcher flagged the gap).
 
@@ -16772,7 +16772,7 @@ Files:
 starts or resumes in this folder, so closes v18–v20 scanned another session (753f0db2) and missed
 the working sessions' escalation writes. The gate had the same flaw: it wrongly refused a fresh
 session whenever another session resumed after it. Evidence and options:
-`outputs/session-close-effectiveness-review-20260930.md` (§2, §5). Researcher, chat 2026-09-30
+`archive/outputs/session-close-effectiveness-review-20260930.md` (§2, §5). Researcher, chat 2026-09-30
 (verbatim): *"go with option A. No need to work backward, I just want to improve the working of
 the close going forward."* No re-check of closes v18–v20 was done, and nothing from options B/C.
 
