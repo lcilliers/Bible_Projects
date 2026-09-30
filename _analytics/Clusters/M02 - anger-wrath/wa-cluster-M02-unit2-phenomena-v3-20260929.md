@@ -1,6 +1,6 @@
 # M02 Anger & Wrath — unit 2: God's anger as borne by the human — parts A, B and C, Genesis–Revelation (v3): unit 2 complete
 
-**Date:** 2026-09-29 · **Author:** Claude Code · **Status:** for researcher review. Escalation #1898 (part C). It continues #1897 (part B, approved), #1896 (part A, approved) and #1895 (split and output ruled). Nothing has been written to the DB.
+**Date:** 2026-09-29 · **Author:** Claude Code · **Status:** **approved 2026-09-30** (#1898 completed; researcher, verbatim: "approve #1898, proceed to prepare approval script"). The points held for a ruling remain **unruled** and M02 is left as it stands (see §X). Escalation #1898 (part C). It continues #1897 (part B, approved), #1896 (part A, approved) and #1895 (split and output ruled). Nothing has been written to the DB.
 **Supersedes:** v2 (`archive/wa-cluster-M02-unit2-phenomena-v2-20260929.md`, parts A and B, approved 2026-09-29). v1 (part A) is also in `archive/`.
 **Researcher rulings (2026-09-29, verbatim):** "proceed with unit 2 of M02"; "3 parts, phenomena v3 — start part A; write a separate unit 2 document, we can later consolidate"; "approved, proceed with part B"; "approved, proceed with part C".
 **What this is:** unit 2 complete: parts A, B and C, 394 verses. It is a separate document from unit 1 (`wa-cluster-M02-phenomena-v2-20260928.md`). As ruled in #1895, it will be consolidated with unit 1 into phenomena v3.
@@ -1800,7 +1800,19 @@
   - "vengeance left to God and the enemy fed" (§62 against §24)
   - "those delivered from the wrath, and how they live" (§60, §63, §64)
 
-## §X. What is next
+## §X. Status quo (recorded 2026-09-30)
+
+**Researcher, chat 2026-09-30 (verbatim):** "no need to raise escalation for resolution of outstanding rulings in M02 - record in the MO2 md documents state the status quo, then we can move on."
+
+- **Unit 2 is approved** (#1898 completed 2026-09-30). All 394 verses are coded in ledger v5.
+- **The points listed below as "for ruling" were never ruled on.** No escalation holds them; this list is their only record. None is to be read as decided. Each proposed revisit note, pilot row, pointer and seat reading stays a **proposal**. The unit-1 sections, the pilot and G v3 §16.2 were **not edited**.
+- **The consolidation into phenomena v3 (item 2, ruled in #1895) has not been done.** It was overtaken by the 2026-09-30 move to fan-out / strand analysis (#1900). M02 now stands as anchor material, as is.
+- **#1891 (item 3)** is on hold as a parked focus area under #1900.
+- **Batch A:** the researcher's clarification (unit 1 §X) is still outstanding. No Batch A revisit note is written.
+
+The list below is kept as it stood when part C was submitted for review.
+
+### What was next (as submitted 2026-09-29)
 
 1. **Researcher review of part C** (escalation #1898). **Unit 2 is now complete: 394 verses, every one coded in ledger v5.**
    - **For ruling, carried from parts A and B:**

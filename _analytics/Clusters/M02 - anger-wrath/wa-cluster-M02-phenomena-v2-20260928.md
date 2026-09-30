@@ -1,6 +1,6 @@
 # M02 Anger & Wrath — human anger's phenomena, unit 1 complete: Genesis–Revelation (v2)
 
-**Date:** 2026-09-28 · **Author:** Claude Code · **Status:** for researcher review. Escalation #1888 (part 2), which continues #1887 (part 1, approved) and #1886. Nothing has been written to the DB.
+**Date:** 2026-09-28 · **Author:** Claude Code · **Status:** **approved** (#1888 completed 2026-09-28). The open points are recorded as unruled and M02 is left as it stands (see §X, status quo 2026-09-30). Escalation #1888 (part 2), which continues #1887 (part 1, approved) and #1886. Nothing has been written to the DB.
 **Supersedes:** v1 (`archive/wa-cluster-M02-phenomena-v1-20260928.md`, part 1 only, approved 2026-09-28).
 **What v2 adds:**
 - **Part 2: Psalms–Revelation, 152 verses.** Unit 1 is now complete, with **246 verses**: 245, plus Psa 95:8 moved from the divine side by ruling (§12).
@@ -1252,7 +1252,21 @@ All these sequences are **inside single passages**.
   - "**question or reframing as the answer to anger**" (§37)
   - "**genre places the seat**" (§38 point 1)
 
-## §X. What is next
+## §X. Status quo (recorded 2026-09-30)
+
+**Researcher, chat 2026-09-30 (verbatim):** "no need to raise escalation for resolution of outstanding rulings in M02 - record in the MO2 md documents state the status quo, then we can move on."
+
+- **Unit 1 is approved** (#1888). **Unit 2 is also complete and approved** (#1898, 2026-09-30), in the separate document `wa-cluster-M02-unit2-phenomena-v3-20260929.md`.
+- **Still unruled, with no escalation holding them:**
+  - **Batch A:** the researcher said "may impact Batch A - but not in the way you portrayed it". The clarification never came, so no Batch A revisit note is written.
+  - **Batch A v3 §2.4 refinement** (Judg 14:19, 1Sa 11:13): whether it becomes a revisit note.
+  - **Act 7:54:** whether the DB tagging (M47 on the "enraged" token) needs a note.
+  - **Revisit notes proposed from unit 2** for §12, §13, §25 and §34 (listed in the unit-2 document's §X). **This document has not been edited for them.**
+- **The consolidation of units 1 and 2 into phenomena v3 (#1895) has not been done.** It was overtaken by the move to fan-out / strand analysis (#1900). M02 stands as anchor material, as is.
+
+The list below is kept as it stood when v2 was submitted for review.
+
+### What was next (as submitted 2026-09-28)
 
 1. **Researcher review of v2 (unit 1 complete).**
    - **Psa 95:8:** ruled human, MB (§12). Follow-up investigation #1889.
