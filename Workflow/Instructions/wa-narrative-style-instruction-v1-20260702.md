@@ -1,5 +1,8 @@
 # Narrative-style instruction — the inner-being story voice (v1, 2026-07-02)
 
+> **Consolidated 2026-10-01 (#1921/#1924):** for IBA narrative writing, this guide is incorporated into `Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md` (cfg_setting `narrative.inner_being_style_guide_path`). Where the two differ, the consolidated guide governs (its §10). In particular, §7 Storage (saving to the prose tables) is superseded: narrative drafts are files.
+
+
 > The **consistent style** for the synthesis narrative (the "story") of an inner-being operation, carried across **all** terms/verses. The story is built **after** the cross-verse synthesis (see the verse-analysis method pipeline), narrated in this voice, **grounded with citations**, and saved to the prose tables. Set by the researcher (voice exemplar in §2).
 
 ## 1. What the narrative is

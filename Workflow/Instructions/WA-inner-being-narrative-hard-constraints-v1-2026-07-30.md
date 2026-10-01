@@ -1,5 +1,8 @@
 # Hard constraints: writing a plain-language inner-being narrative from a book's passage debates
 
+> **Consolidated 2026-10-01 (#1921/#1924):** for IBA narrative writing, this guide is incorporated into `Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md` (cfg_setting `narrative.inner_being_style_guide_path`). Where the two differ, the consolidated guide governs (its §10). It is still read by the book-narrative generator (`method.narrative_hard_constraints_path`).
+
+
 **Filename:** WA-inner-being-narrative-hard-constraints-v1-2026-07-30.md
 **Date timestamp:** 2026-07-30
 **Status:** Generalizes `WA-instruction-daniel-inner-being-narrative-v1-2026-07-28.md` (Daniel-only,

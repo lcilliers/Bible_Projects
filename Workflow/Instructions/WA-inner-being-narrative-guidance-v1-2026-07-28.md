@@ -1,5 +1,8 @@
 # Instructions: writing an inner-being narrative from a book's passage debates
 
+> **Consolidated 2026-10-01 (#1921/#1924):** for IBA narrative writing, this guide is incorporated into `Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md` (cfg_setting `narrative.inner_being_style_guide_path`). Where the two differ, the consolidated guide governs (its §10). Its three-channel Scope self-check is replaced for IBA narrative by guide §7a (external parties dealt with per phenomenon). It is still read by the book-narrative generator (`method.inner_being_narrative_guidance_path`).
+
+
 **Filename:** WA-inner-being-narrative-guidance-v1-2026-07-28.md
 **Date timestamp:** 2026-07-28
 **Why this document exists.** Two narratives were written from Daniel's sixteen passage debates on

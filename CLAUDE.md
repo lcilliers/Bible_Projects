@@ -110,7 +110,7 @@
 > character, why is it different. This should not be lost … It must be built upon, not be set aside."*
 > - Every strand records each word's or concept's faces, the circumstances that differ, and why.
 > - A word's meaning is never taken from its cluster tag, because a tag shows one face only.
-> - Proposal (awaiting approval): `_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-*`.
+> - ~~Proposal (awaiting approval)~~ **Approved and built 2026-10-01 (#1919):** `_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-*`. Ledger v2 §I; Ch 11 §4 "What changes the character" is the cross-cutting account.
 >
 > **Narrative structure (researcher, 2026-10-01, #1920: "approve 1920 as recommended, remembering after 10.2"):**
 > - A strand is **woven by activity, never given a file or chapter of its own**. The anger strand is the first worked example.
@@ -119,6 +119,7 @@
 > - Ch 11 §4, "What changes the character", is the cross-cutting account that every strand adds to.
 >
 > **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** "you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself." No joining of verses into patterns, mechanisms or divisions that no verse states, in findings, ledgers or narrative. Quote, and stop.
+> **Writing standard (config, 2026-10-01):** `cfg_setting narrative.inner_being_style_guide_path` → `Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md`, plus `cfg_behaviour_rule` 69 `let-scripture-speak-no-imputed-synthesis`. The guide holds the researcher's #1924 rulings: prose supported by bullets; titles name the subject only; any external party in the verses (God, the Spirit, other spirits, angels, people, the physical world) is dealt with per phenomenon and never watered down.
 >
 > These narrative drafts are written **on the researcher's specific instruction**. They are files,
 > not the DB prose store (the prose rule above is unchanged).
