@@ -112,6 +112,12 @@
 > - A word's meaning is never taken from its cluster tag, because a tag shows one face only.
 > - Proposal (awaiting approval): `_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-*`.
 >
+> **Narrative structure (researcher, 2026-10-01, #1920: "approve 1920 as recommended, remembering after 10.2"):**
+> - A strand is **woven by activity, never given a file or chapter of its own**. The anger strand is the first worked example.
+> - **10.3 Remembering and forgetting** was inserted, so the old 10.3–10.9 are now **10.4–10.10**.
+> - The new **Ch 13 "Under God's anger"** sits between "goes wrong" and "made new". The old Ch 13 is now **14**, and the old 14 is now **15**.
+> - Ch 11 §4, "What changes the character", is the cross-cutting account that every strand adds to.
+>
 > These narrative drafts are written **on the researcher's specific instruction**. They are files,
 > not the DB prose store (the prose rule above is unchanged).
 >

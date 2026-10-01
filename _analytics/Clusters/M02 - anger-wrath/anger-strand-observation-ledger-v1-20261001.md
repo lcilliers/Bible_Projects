@@ -1,6 +1,6 @@
 # Anger and wrath — strand observation ledger and weave plan (v1)
 
-**Date:** 2026-10-01 · **Author:** Claude Code · **Status:** **for the researcher.** The ledger is complete. **No chapter text has been written for this strand.** The structural questions in §N need a decision first, and the weave in §O follows them.
+**Date:** 2026-10-01 · **Author:** Claude Code · **Status:** **woven 2026-10-01** (researcher: "proceed with the anger weave as approved"). The structure was ruled in §P. See §Q, "Woven — where". **Numbering note:** the "touches" columns below use the numbering *before* the weave. After it, 10.3 is Remembering, the old 10.3–10.9 are 10.4–10.10, the new Ch 13 is "Under God's anger", and the old 13 and 14 are 14 and 15.
 **Researcher direction (verbatim, 2026-10-01):** *"introduce … M02 - anger-wrath findings through the eyes of the narrative, and the build guidance in 1919 to bring that the inner being through M02 also into operation. Remember - the cluster reference is purely a method of organisation and scope - the verses must do the talking and the focus remains the inner being."*
 **Method:**
 - weaving method `_analytics/essay/spirit_soul_body/wa-essay-narrative-weave-method-and-ch10-structure-v1-20260930.md` (approved #1918)
@@ -351,3 +351,59 @@ Two passes, as the method requires: new → narrative, then narrative → new. V
 3. **NS-M3:** promote Remembering now? If so, insert it after 10.2 with renumbering (i), or append it as 10.10 (ii)?
 4. **Then: proceed with the weave (§O).**
 5. **AN-H1:** the clarification on the spirit/heart point is still outstanding from 2026-09-28. It is held in the meantime. Would you like to give it now?
+
+## Q. Woven — where (2026-10-01)
+
+Checked mechanically: each observation's key verse is present in the chapter files listed. File names are those after renumbering, in `_analytics/essay/spirit_soul_body/inner-being-narrative/`.
+
+| Observations | Woven into |
+|---|---|
+| AN-01, 02, 04, 05, 07, 11, 13–21, 38, 43, 44 | **10.1 v3 (rewritten)**; also 10.0, 10.2, 10.8, Ch 6, 7, 11 |
+| AN-06, 13, 35, 52, 101 (the path from a feeling; what comes back) | 10.0 v4 |
+| AN-01, 10, 37, 61 | 10.2 v3 |
+| AN-14, 34, 64, 90 + the NS-M3 list (remembering and forgetting) | **10.3 v1 (new)** |
+| AN-03, 06, 13, 98, 101, 104 | 10.4 v3 |
+| AN-16, 28, 29, 42, 75 | 10.5 v3 |
+| AN-31, 81 | 10.6 v3 |
+| AN-76, 77 | 10.7 v3 |
+| AN-07, 09, 89 | 10.8 v3 |
+| AN-08, 18, 21, 40, 41, 47, 56 | 10.9 v4 |
+| AN-22–27, 30, 33, 39, 45, 46, 78, 85 | 10.10 v4 (AN-12 is in 10.0, 10.9 and Ch 15) |
+| AN-36 | Ch 5 v2 (no spirit/heart division claim; AN-H1 held) |
+| AN-11, 19 | Ch 6 v2 |
+| AN-15 | Ch 7 v3 |
+| AN-70, 82; §L.1 *ʾaph* | Ch 9 v3 |
+| AN-04, 14, 20, 27, 53, 57, 59, 65, 79, 80, 92–95, 103; §L faces; §L.3 factors | Ch 11 v4 (§2, §4, §6, §8) |
+| AN-15, 31, 32, 38, 73, 91 | Ch 12 v4 |
+| AN-08, 46, 51, 53–55, 57–80, 82–89, 92–95, 97, 99, 100 | **Ch 13 v1 (new), "Under God's anger"** |
+| AN-44, 47, 76, 85, 86, 100 | Ch 14 v4 (Made new) |
+| AN-48–50, NS-M4 | Ch 15 v2 |
+
+**Coverage:** every observation AN-01 to AN-104 has its key verse in at least one file. The three that were missing on the first pass (AN-25, 40, 41) were added to 10.10 and 10.9.
+
+**§L faces woven:**
+- *ʾaph*: Ch 9, 11 §4, 15
+- *chemah* (venom; drink): 10.5, 10.0
+- *charah* (fret): 10.1
+- *ka'as*: 10.1, 11 §4
+- *ʿebrah*, *sāʿar*, *za'am*: 11 §4
+- *orgē*: 10.1, 12, 13, 14
+- *thumos* (drink): 10.0
+- *paroxunō*: 10.1, 11 §4, 14
+- *aganakteō*: 10.1
+- Meribah: 12
+- *qinah* (lament): via mourning, 11 §4 and 13
+
+**Quotes:** every quotation in the changed and new files was checked against iba.db `verse`. Five were corrected in the chapter text:
+- Lam 3:31–32
+- 1Ki 14:16
+- Gen 4:7
+- Psa 78:30
+- Pro 24:24
+
+Four were corrected earlier in this ledger: Psa 55:4; Jer 10:24; Jer 3:10; Gen 27:45.
+
+The remaining flags are checker noise in text checked under #1915.
+
+**Held, still:** AN-H1 to AN-H5 (§M).
+
