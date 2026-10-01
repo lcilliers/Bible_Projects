@@ -29,24 +29,24 @@
 | 8 | `08-where-the-words-part-v1-20260930.md` | Ch 2 (the five distinctions), **restated** | dep §3.4; B §8; register 2-x | draft |
 | 9 | `09-life-breath-and-death-v2-20261001.md` (v2: thought strand) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
 | 10 | **Part 10 — The inner being at work** (split at step 3, 2026-09-30; see Structure log) | new | cross-cutting §s of batches A–F | draft |
-| 10.0 | `10-00-the-inner-being-at-work-v2-20261001.md` (v2: thought strand) | — | opening; the path from a thought to a deed; how the activities connect | draft |
+| 10.0 | `10-00-the-inner-being-at-work-v3-20261001.md` (v3: change of character) | — | opening; the path from a thought to a deed; how the activities connect | draft |
 | 10.1 | `10-01-feeling-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
 | 10.2 | `10-02-knowing-and-hearing-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
-| 10.3 | `10-03-thinking-v1-20261001.md` | — | origin-of-thought strand | draft |
-| 10.4 | `10-04-speaking-v1-20261001.md` | — | origin-of-thought strand | draft |
+| 10.3 | `10-03-thinking-v2-20261001.md` (v2: change of character) | — | origin-of-thought strand | draft |
+| 10.4 | `10-04-speaking-v2-20261001.md` (v2: change of character) | — | origin-of-thought strand | draft |
 | 10.5 | `10-05-wanting-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
 | 10.6 | `10-06-choosing-and-setting-direction-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
 | 10.7 | `10-07-right-and-wrong-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
-| 10.8 | `10-08-relating-to-god-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
-| 10.9 | `10-09-relating-to-others-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
-| 11 | `11-patterns-of-the-inner-life-v2-20261001.md` (v2: thought strand) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
-| 12 | `12-when-the-inner-being-goes-wrong-v2-20261001.md` (v2: thought strand) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
-| 13 | `13-made-new-v2-20261001.md` (v2: thought strand) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
+| 10.8 | `10-08-relating-to-god-v3-20261001.md` (v3: change of character) | — | as Ch 10 v1 | draft |
+| 10.9 | `10-09-relating-to-others-v3-20261001.md` (v3: change of character) | — | as Ch 10 v1 | draft |
+| 11 | `11-patterns-of-the-inner-life-v3-20261001.md` (v3: change of character; §4 now the cross-cutting account) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
+| 12 | `12-when-the-inner-being-goes-wrong-v3-20261001.md` (v3: change of character) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
+| 13 | `13-made-new-v3-20261001.md` (v3: change of character) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
 | 14 | `14-beyond-the-named-words-v1-20260930.md` | new | seat coverage; operation modes | draft |
 | — | *(science)* | Ch 7 (epigenetics) and the health material in Ch 8–9 | — | **deferred** (researcher: "Science chapters will be done later") |
 
 **Companion working files** (in the parent folder):
-- `../wa-essay-spirit-soul-body-claim-register-v2-20261001.md` — every original claim, with its verdict and restatement.
+- `../wa-essay-spirit-soul-body-claim-register-v3-20261001.md` — every original claim, with its verdict and restatement.
 - `../wa-essay-spirit-soul-body-digest-v1-20260930.md` — the first digest.
 
 ## Rules applied to the chapter text
@@ -62,7 +62,7 @@
 
 **Weave, don't fit (researcher, verbatim, 2026-09-30, #1918):** *"There is a great danger of loosing important observations and impacts 'because it does not fit the current narrative.' Adding additional items is not a process of where does the new item support the current narrative - this is the wrong way around - it must be wove the new item into the narrative - knowing there is more to come."* So "does not fit" is never a reason to leave out an observation. When a new item does not fit, it is the narrative's structure that changes. The method is set out in `../wa-essay-narrative-weave-method-and-ch10-structure-v1-20260930.md` (proposal, awaiting approval).
 
-**Change of character (researcher, verbatim, 2026-10-01, #1919):** *"One of the key discoveries in the study is how the meaning or application of the same concept / word changes in different circumstances … It must be built upon, not be set aside."* Every strand records when and how each word or concept changes character, and why. That is woven in, never dropped because another face of the same word is already in the text. Proposal: `../../../cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-v1-20261001.md` (awaiting approval).
+**Change of character (researcher, verbatim, 2026-10-01, #1919):** *"One of the key discoveries in the study is how the meaning or application of the same concept / word changes in different circumstances … It must be built upon, not be set aside."* Every strand records when and how each word or concept changes character, and why. That is woven in, never dropped because another face of the same word is already in the text. Proposal: `../../../cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-v1-20261001.md` (**approved** 2026-10-01: "approve 1 2 3 4"). Built for the thought strand on 2026-10-01: ledger v2 §I. **Ch 11 §4 is the cross-cutting account and stays open.** Each operation file carries its own "when this changes character" passage.
 
 - A later strand (e.g. fear, anger, doubt, the hands, thought) is **woven** through the chapters it touches, and it may reshape them.
 - Each update is a **version bump** of that chapter file (`-v2-{date}`); the prior version goes to `archive/`.
@@ -83,9 +83,12 @@ Each change to the book's shape, with the strand that caused it (weaving method,
 
 | 2026-10-01 | origin of thought | **Woven (step 4).** New: 10.3 Thinking, 10.4 Speaking. Rewritten: 10.0 (the path from a thought to a deed; where I am answerable; how the activities connect). Reshaped: Ch 3 (heart as the *place* of thinking; inner-speech verdicts by kind), 10.2 (hearing both ways), Ch 12 (Gen 6:5 with 8:21; pride as false likeness). Widened: Ch 1 (roadmap), 7, 9, 11, 13; 10.1, 10.5–10.9 (each now ends with **Connections**). 15 chapter files → v2 (v1s in `archive/`); claim register → v2. Ledger: 40 of 40 observations woven; quotes ESV-checked against iba.db. | Researcher: "proceed with step 4, I think we heading in the right direction." Method: weave, don't fit. |
 
+| 2026-10-01 | origin of thought — change of character (#1919) | **No new files; Ch 11 §4 grows into an account.** §4 "One word, opposite values" gains the sub-section "What changes the character", the cross-cutting account that later strands add to. 10.3 gains "When thinking changes character", "Thoughts that turn on the thinker" (flow 3) and "What is devised comes back" (flow 5). 10.0 gains "The path runs back". Versions: 10.0, 10.8, 10.9, 11, 12, 13 → v3; 10.3, 10.4 → v2 (prior versions in `archive/`). Claim register → v3. Ledger → v2 (§I, §J; OT-41 to OT-53). | Researcher: "approve 1 2 3 4, proceed with the build". Key discovery: a word's character changes with its circumstances (#1919). |
+
 **Which strand fed which version:**
 - origin of thought → Ch 1, 3, 7, 9, 10.0–10.2, 10.5–10.9, 11, 12, 13: **v2 (2026-10-01)**
 - origin of thought → 10.3, 10.4: **v1 (2026-10-01)**
+- change of character in the thought strand (#1919) → 10.0, 10.8, 10.9, 11, 12, 13: **v3**; 10.3, 10.4: **v2 (2026-10-01)**
 
 ## Source files — status (updated 2026-09-30)
 
