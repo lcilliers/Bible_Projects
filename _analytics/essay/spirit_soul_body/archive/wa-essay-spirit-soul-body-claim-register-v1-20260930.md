@@ -38,10 +38,10 @@
 | # | Original claim | Verdict | Evidence and restatement | New ch |
 |---|---|---|---|---|
 | 1-1 | Soul and spirit in synonymous parallel (Isa 26:9; Job 7:11; Luk 1:46–47) | **Widened** | Stands. Heart // spirit (Psa 51:10, 17; 34:18; 143:4; Exo 35:21) and heart // soul (Pro 2:10; Psa 13:2) are just as common. Translators move one Hebrew word between heart, soul, spirit and mind (dep §3.1) | 02 |
-| 1-2 | Hannah uses both words for one experience (1Sa 1:10–15) | **Widened** | Stands, and the scene uses **four**: bitter of **soul** (1:10), "speaking **in her heart**" (1:13), "why is your **heart** sad?" (1:8), "troubled in **spirit** … pouring out my **soul**" (1:15) (E §1.1; F §7) | 02, 10 |
+| 1-2 | Hannah uses both words for one experience (1Sa 1:10–15) | **Widened** | Stands, and the scene uses **four**: bitter of **soul** (1:10), "speaking **in her heart**" (1:13), "why is your **heart** sad?" (1:8), "troubled in **spirit** … pouring out my **soul**" (1:15) (E §1.1; F §7) | 02, 10.8 |
 | 1-3 | Both soul and spirit are used reflexively for "self"; Rom 1:9 and 1Co 5:3 show spirit = "me" | **Restated** | **Soul as "myself" is common** (about 126 Hebrew verses; e.g. Lev 16:29 "afflict yourselves"). **Spirit is not shown as a reflexive.** 1Co 5:3 and Col 2:5 say the spirit can be present **where the body is absent**, which is a different claim. Rom 1:9 is service located in the spirit (dep §2.2a, §3.4; H §3.1) | 02, 04, 05 |
-| 1-4 | The emotional vocabulary of soul and spirit is "virtually identical" | **Restated** | They overlap, but **each word has its own profile**. Soul: bitterness, longing, weariness. Spirit: troubled, crushed, faint, and temper. Heart: the widest range of all (A §9.1) | 10 |
-| 1-5 | Soul and spirit both worship | **Widened** | Stands. The **heart** is the most prominent: it prays without voice (1Sa 1:13), cries (Lam 2:18), thanks "with my whole heart" (E §1.1, §13.1) | 10 |
+| 1-4 | The emotional vocabulary of soul and spirit is "virtually identical" | **Restated** | They overlap, but **each word has its own profile**. Soul: bitterness, longing, weariness. Spirit: troubled, crushed, faint, and temper. Heart: the widest range of all (A §9.1) | 10.1 |
+| 1-5 | Soul and spirit both worship | **Widened** | Stands. The **heart** is the most prominent: it prays without voice (1Sa 1:13), cries (Lam 2:18), thanks "with my whole heart" (E §1.1, §13.1) | 10.8 |
 | 1-6 | The overlap is real but not total | **Stands** | Now read as one inner person spoken of from several angles (dep §1) | 02 |
 
 ## Chapter 2 — The five distinctions
@@ -122,7 +122,7 @@
 
 | # | Original claim | Verdict | Evidence and restatement | New ch |
 |---|---|---|---|---|
-| 8-1 | Every fruit quality originates in the human spirit, flows into the soul, then into the body; Rom 5:5 is the proof | **Restated** | Rom 5:5 says love is poured **into our hearts**. The verses read show inner ↔ body effects **in both directions** (glad heart → face; bread → heart; sight → spirit). The one-way spirit → soul → body flow is not shown (dep §3.6; A §9.3) | 10, 13 |
+| 8-1 | Every fruit quality originates in the human spirit, flows into the soul, then into the body; Rom 5:5 is the proof | **Restated** | Rom 5:5 says love is poured **into our hearts**. The verses read show inner ↔ body effects **in both directions** (glad heart → face; bread → heart; sight → spirit). The one-way spirit → soul → body flow is not shown (dep §3.6; A §9.3) | 10.1, 13 |
 | 8-2 | What the Spirit does not produce (memory, imagination, grief, natural fear, sexuality) | **Held** | Fruit lists not yet read | 13 held |
 | 8-3 | Health effects of each quality | **Held** | Science, later | — |
 | 8-4 | The spirit was "dead through sin" (Eph 2:1–5) | **Held** | Not in the reading. Note for the check: the verse reads "**you** were dead", not "your spirit" | 13 held |

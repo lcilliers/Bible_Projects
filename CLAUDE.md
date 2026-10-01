@@ -94,6 +94,16 @@
 > - Science chapters come later.
 > - The Holy Spirit study is separate.
 >
+> **Weave, don't fit (researcher decision, 2026-09-30, #1918).** Researcher, verbatim: *"Adding
+> additional items is not a process of where does the new item support the current narrative - this
+> is the wrong way around - it must be wove the new item into the narrative - knowing there is more
+> to come."* Rules that follow:
+> - Every observation from a strand gets a recorded placement. "Does not fit" is never one; it means
+>   the narrative's structure must change.
+> - Each strand also re-reads the sections it touches, and they adjust to it.
+> - Ch 10 (*The inner being at work*) is designed in advance to grow.
+> - Method: `wa-essay-narrative-weave-method-and-ch10-structure-*` in `_analytics/essay/spirit_soul_body/`.
+>
 > These narrative drafts are written **on the researcher's specific instruction**. They are files,
 > not the DB prose store (the prose rule above is unchanged).
 >

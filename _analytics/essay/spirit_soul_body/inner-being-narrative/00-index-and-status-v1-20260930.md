@@ -19,24 +19,34 @@
 
 | # | File | Replaces or absorbs (original) | Built from (M47) | State |
 |---|---|---|---|---|
-| 1 | `01-the-question-v1-20260930.md` | Introduction | framework overview; depiction §1 | draft |
+| 1 | `01-the-question-v2-20261001.md` (v2: thought strand) | Introduction | framework overview; depiction §1 | draft |
 | 2 | `02-one-inner-person-v1-20260930.md` | Ch 1 (overlap); Ch 4 (compound passages, 1Th 5:23) | dep §3.1–3.3, §3.6–3.8; F §2 | draft |
-| 3 | `03-the-heart-v1-20260930.md` | Ch 4 (heart, mind) — **much expanded** | dep §2.1; B §1, §9; H §5.3 | draft |
+| 3 | `03-the-heart-v2-20261001.md` (v2: thought strand) | Ch 4 (heart, mind) — **much expanded** | dep §2.1; B §1, §9; H §5.3 | draft |
 | 4 | `04-the-soul-v1-20260930.md` | Ch 6 (soul categories); soul parts of Ch 2 | dep §2.2; C §1; F §3; G §4–5 | draft |
 | 5 | `05-the-spirit-v1-20260930.md` | Ch 5 (spirit categories); spirit parts of Ch 2 | dep §2.3; spirit distinction; D §3.4, §9.2 | draft |
 | 6 | `06-flesh-v1-20260930.md` | new (original gap 1–2) | dep §2.4, §3.5; G §7 | draft |
-| 7 | `07-conscience-and-bosom-v1-20260930.md` | new (original gap 4) | dep §2.5–2.6, §2.1m; H §6.2 | draft |
+| 7 | `07-conscience-and-bosom-v2-20261001.md` (v2: thought strand) | new (original gap 4) | dep §2.5–2.6, §2.1m; H §6.2 | draft |
 | 8 | `08-where-the-words-part-v1-20260930.md` | Ch 2 (the five distinctions), **restated** | dep §3.4; B §8; register 2-x | draft |
-| 9 | `09-life-breath-and-death-v1-20260930.md` | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
-| 10 | `10-the-inner-being-at-work-v1-20260930.md` | new | cross-cutting §s of batches A–F | draft |
-| 11 | `11-patterns-of-the-inner-life-v1-20260930.md` | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
-| 12 | `12-when-the-inner-being-goes-wrong-v1-20260930.md` | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
-| 13 | `13-made-new-v1-20260930.md` | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
+| 9 | `09-life-breath-and-death-v2-20261001.md` (v2: thought strand) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
+| 10 | **Part 10 — The inner being at work** (split at step 3, 2026-09-30; see Structure log) | new | cross-cutting §s of batches A–F | draft |
+| 10.0 | `10-00-the-inner-being-at-work-v2-20261001.md` (v2: thought strand) | — | opening; the path from a thought to a deed; how the activities connect | draft |
+| 10.1 | `10-01-feeling-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
+| 10.2 | `10-02-knowing-and-hearing-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
+| 10.3 | `10-03-thinking-v1-20261001.md` | — | origin-of-thought strand | draft |
+| 10.4 | `10-04-speaking-v1-20261001.md` | — | origin-of-thought strand | draft |
+| 10.5 | `10-05-wanting-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
+| 10.6 | `10-06-choosing-and-setting-direction-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
+| 10.7 | `10-07-right-and-wrong-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
+| 10.8 | `10-08-relating-to-god-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
+| 10.9 | `10-09-relating-to-others-v2-20261001.md` (v2: thought strand) | — | as Ch 10 v1 | draft |
+| 11 | `11-patterns-of-the-inner-life-v2-20261001.md` (v2: thought strand) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
+| 12 | `12-when-the-inner-being-goes-wrong-v2-20261001.md` (v2: thought strand) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
+| 13 | `13-made-new-v2-20261001.md` (v2: thought strand) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
 | 14 | `14-beyond-the-named-words-v1-20260930.md` | new | seat coverage; operation modes | draft |
 | — | *(science)* | Ch 7 (epigenetics) and the health material in Ch 8–9 | — | **deferred** (researcher: "Science chapters will be done later") |
 
 **Companion working files** (in the parent folder):
-- `../wa-essay-spirit-soul-body-claim-register-v1-20260930.md` — every original claim, with its verdict and restatement.
+- `../wa-essay-spirit-soul-body-claim-register-v2-20261001.md` — every original claim, with its verdict and restatement.
 - `../wa-essay-spirit-soul-body-digest-v1-20260930.md` — the first digest.
 
 ## Rules applied to the chapter text
@@ -50,11 +60,30 @@
 
 ## How later work updates this
 
-- A later strand (e.g. fear, anger, doubt, the hands) updates the chapters it touches.
+**Weave, don't fit (researcher, verbatim, 2026-09-30, #1918):** *"There is a great danger of loosing important observations and impacts 'because it does not fit the current narrative.' Adding additional items is not a process of where does the new item support the current narrative - this is the wrong way around - it must be wove the new item into the narrative - knowing there is more to come."* So "does not fit" is never a reason to leave out an observation. When a new item does not fit, it is the narrative's structure that changes. The method is set out in `../wa-essay-narrative-weave-method-and-ch10-structure-v1-20260930.md` (proposal, awaiting approval).
+
+- A later strand (e.g. fear, anger, doubt, the hands, thought) is **woven** through the chapters it touches, and it may reshape them.
 - Each update is a **version bump** of that chapter file (`-v2-{date}`); the prior version goes to `archive/`.
 - The **claim register** is updated in the same pass.
 - New themes get new chapter files. This index records which strand fed which version.
 - When the work is ready to become one book, the files are combined in reading order.
+
+## Structure log
+
+Each change to the book's shape, with the strand that caused it (weaving method, #1918).
+
+| Date | Strand | Change | Reason |
+|---|---|---|---|
+| 2026-09-30 | origin of thought | **Ch 10 → Part 10.** One file per operation (10.0 opening/map + 10.1–10.9). Text moved **unchanged** (verified identical apart from headings). Prior file → `archive/10-the-inner-being-at-work-v1-20260930.md`. Claim-register rows 1-2, 1-4, 1-5 and 8-1 re-pointed to 10.1 / 10.8. | Every strand describes an operation, so Ch 10 would otherwise become a dumping ground. Researcher: "Chap 10 is likely to grow significantly … give careful thought on how it would like in advance." |
+| 2026-09-30 | origin of thought | **10.3 Thinking** reserved (option B). **10.4 Speaking** reserved (NS-1, approved: "approve NS-1 speaking"). It is placed straight after Thinking because thought passes into speech on the path in 10.0. Later operations renumbered from the design proposal: Wanting 10.5 … Relating to others 10.9. | Ledger: about ten observations concern the inner being coming out through tongue, lips and mouth, with no home until now. |
+| 2026-09-30 | origin of thought | **Remembering** not given a file. Watched (NS-2: "watch NS-2"). | Too thin so far; it currently sits within 10.2 and Ch 3. |
+| 2026-09-30 | origin of thought | The **thought-to-deed path** goes in **10.0** (researcher: "path in 10.0"). | The path runs through several operations, so it belongs to the map of how they connect. |
+
+| 2026-10-01 | origin of thought | **Woven (step 4).** New: 10.3 Thinking, 10.4 Speaking. Rewritten: 10.0 (the path from a thought to a deed; where I am answerable; how the activities connect). Reshaped: Ch 3 (heart as the *place* of thinking; inner-speech verdicts by kind), 10.2 (hearing both ways), Ch 12 (Gen 6:5 with 8:21; pride as false likeness). Widened: Ch 1 (roadmap), 7, 9, 11, 13; 10.1, 10.5–10.9 (each now ends with **Connections**). 15 chapter files → v2 (v1s in `archive/`); claim register → v2. Ledger: 40 of 40 observations woven; quotes ESV-checked against iba.db. | Researcher: "proceed with step 4, I think we heading in the right direction." Method: weave, don't fit. |
+
+**Which strand fed which version:**
+- origin of thought → Ch 1, 3, 7, 9, 10.0–10.2, 10.5–10.9, 11, 12, 13: **v2 (2026-10-01)**
+- origin of thought → 10.3, 10.4: **v1 (2026-10-01)**
 
 ## Source files — status (updated 2026-09-30)
 
