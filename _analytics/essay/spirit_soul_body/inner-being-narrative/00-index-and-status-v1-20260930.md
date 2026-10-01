@@ -21,34 +21,34 @@
 |---|---|---|---|---|
 | 1 | `01-the-question-v3-20261001.md` (v3: anger strand — roadmap) | Introduction | framework overview; depiction §1 | draft |
 | 2 | `02-one-inner-person-v1-20260930.md` | Ch 1 (overlap); Ch 4 (compound passages, 1Th 5:23) | dep §3.1–3.3, §3.6–3.8; F §2 | draft |
-| 3 | `03-the-heart-v3-20261001.md` (v3: renumbered references) | Ch 4 (heart, mind) — **much expanded** | dep §2.1; B §1, §9; H §5.3 | draft |
+| 3 | `03-the-heart-v4-20261001.md` (v4: fear strand) | Ch 4 (heart, mind) — **much expanded** | dep §2.1; B §1, §9; H §5.3 | draft |
 | 4 | `04-the-soul-v1-20260930.md` | Ch 6 (soul categories); soul parts of Ch 2 | dep §2.2; C §1; F §3; G §4–5 | draft |
 | 5 | `05-the-spirit-v2-20261001.md` (anger strand) | Ch 5 (spirit categories); spirit parts of Ch 2 | dep §2.3; spirit distinction; D §3.4, §9.2 | draft |
-| 6 | `06-flesh-v2-20261001.md` (anger strand) | new (original gap 1–2) | dep §2.4, §3.5; G §7 | draft |
+| 6 | `06-flesh-v3-20261001.md` (anger, fear strands) | new (original gap 1–2) | dep §2.4, §3.5; G §7 | draft |
 | 7 | `07-conscience-and-bosom-v3-20261001.md` (anger strand) | new (original gap 4) | dep §2.5–2.6, §2.1m; H §6.2 | draft |
 | 8 | `08-where-the-words-part-v1-20260930.md` | Ch 2 (the five distinctions), **restated** | dep §3.4; B §8; register 2-x | draft |
-| 9 | `09-life-breath-and-death-v3-20261001.md` (anger strand) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
+| 9 | `09-life-breath-and-death-v4-20261001.md` (anger, fear strands) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
 | 10 | **Part 10 — The inner being at work** (split at step 3, 2026-09-30; renumbered 2026-10-01; see Structure log) | new | cross-cutting §s of batches A–F | draft |
 | 10.0 | `10-00-the-inner-being-at-work-v4-20261001.md` (anger strand) | — | opening; the paths from a thought and from a feeling to a deed; how the activities connect | draft |
-| 10.1 | `10-01-feeling-v3-20261001.md` (v3: anger strand — **rewritten**) | — | as Ch 10 v1; anger strand | draft |
-| 10.2 | `10-02-knowing-and-hearing-v3-20261001.md` (anger strand) | — | as Ch 10 v1 | draft |
+| 10.1 | `10-01-feeling-v4-20261001.md` (v3: anger strand — **rewritten**; v4: fear strand) | — | as Ch 10 v1; anger strand | draft |
+| 10.2 | `10-02-knowing-and-hearing-v4-20261001.md` (anger, fear strands) | — | as Ch 10 v1 | draft |
 | 10.3 | `10-03-remembering-and-forgetting-v1-20261001.md` (**new**, NS-M3) | — | thought + anger strands | draft |
 | 10.4 | `10-04-thinking-v3-20261001.md` (anger strand) (was 10.3) | — | origin-of-thought strand | draft |
-| 10.5 | `10-05-speaking-v3-20261001.md` (anger strand) (was 10.4) | — | origin-of-thought strand | draft |
+| 10.5 | `10-05-speaking-v4-20261001.md` (anger, fear strands) (was 10.4) | — | origin-of-thought strand | draft |
 | 10.6 | `10-06-wanting-v3-20261001.md` (anger strand) (was 10.5) | — | as Ch 10 v1 | draft |
-| 10.7 | `10-07-choosing-and-setting-direction-v3-20261001.md` (anger strand) (was 10.6) | — | as Ch 10 v1 | draft |
-| 10.8 | `10-08-right-and-wrong-v3-20261001.md` (anger strand) (was 10.7) | — | as Ch 10 v1 | draft |
-| 10.9 | `10-09-relating-to-god-v4-20261001.md` (anger strand) (was 10.8) | — | as Ch 10 v1 | draft |
-| 10.10 | `10-10-relating-to-others-v4-20261001.md` (anger strand) (was 10.9) | — | as Ch 10 v1 | draft |
-| 11 | `11-patterns-of-the-inner-life-v4-20261001.md` (anger strand) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
-| 12 | `12-when-the-inner-being-goes-wrong-v4-20261001.md` (anger strand) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
-| 13 | `13-under-gods-anger-v1-20261001.md` (**new**, NS-M2) | new | anger strand (M02 unit 2; #1890; #1892) | draft |
-| 14 | `14-made-new-v4-20261001.md` (anger strand) (was 13) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
-| 15 | `15-beyond-the-named-words-v2-20261001.md` (anger strand) (was 14) | new | seat coverage; operation modes | draft |
+| 10.7 | `10-07-choosing-and-setting-direction-v4-20261001.md` (anger, fear strands) (was 10.6) | — | as Ch 10 v1 | draft |
+| 10.8 | `10-08-right-and-wrong-v4-20261001.md` (anger, fear strands) (was 10.7) | — | as Ch 10 v1 | draft |
+| 10.9 | `10-09-relating-to-god-v5-20261001.md` (anger, fear strands) (was 10.8) | — | as Ch 10 v1 | draft |
+| 10.10 | `10-10-relating-to-others-v5-20261001.md` (anger, fear strands) (was 10.9) | — | as Ch 10 v1 | draft |
+| 11 | `11-patterns-of-the-inner-life-v5-20261001.md` (anger, fear strands) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
+| 12 | `12-when-the-inner-being-goes-wrong-v5-20261001.md` (anger, fear strands) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
+| 13 | `13-under-gods-anger-v2-20261001.md` (**new**, NS-M2; v2: fear strand) | new | anger strand (M02 unit 2; #1890; #1892) | draft |
+| 14 | `14-made-new-v5-20261001.md` (anger, fear strands) (was 13) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
+| 15 | `15-beyond-the-named-words-v3-20261001.md` (anger, fear strands) (was 14) | new | seat coverage; operation modes | draft |
 | — | *(science)* | Ch 7 (epigenetics) and the health material in Ch 8–9 | — | **deferred** (researcher: "Science chapters will be done later") |
 
 **Companion working files** (in the parent folder):
-- `../wa-essay-spirit-soul-body-claim-register-v4-20261001.md` — every original claim, with its verdict and restatement.
+- `../wa-essay-spirit-soul-body-claim-register-v5-20261001.md` — every original claim, with its verdict and restatement.
 - `../wa-essay-spirit-soul-body-digest-v1-20260930.md` — the first digest.
 
 ## Rules applied to the chapter text
@@ -93,10 +93,13 @@ Each change to the book's shape, with the strand that caused it (weaving method,
 | 2026-10-01 | anger (M02; #1920) | **Three structure changes (researcher: "approve 1920 as recommended, remembering after 10.2").** (1) **Human anger is woven by activity, not given a file** (NS-M1a). 10.1 Feeling is rewritten to follow how a feeling rises, settles in the body, stays or passes, and turns, with anger as the most fully traced case. (2) **New 10.3 Remembering and forgetting** (NS-M3; was NS-2 "watch"). Former 10.3–10.9 are renumbered to 10.4–10.10, files renamed, and every cross-reference renumbered (53 references). (3) **New Ch 13 "Under God's anger"** (NS-M2a) between "goes wrong" and "made new". Former Ch 13 → 14 and Ch 14 → 15. Woven: 10.0 (the path can start with a feeling), 10.2, 10.4–10.10, Ch 1 (roadmap), 5, 6, 7, 9 (*ʾaph*: the nostrils of life and of anger), 11 (§2, §4 faces + factors, §6, §8), 12 (anger that goes wrong; false peace; Meribah), 14, 15 (strands woven, not given chapters: its last paragraph restated). Prior versions in `archive/`. Claim register → v4. | Anger has almost no presence in the narrative before this. Its human side runs through every activity; God's anger as borne by the human is a whole situation of the inner life, and the largest body of verses in the strand. |
 
 | 2026-10-01 | (researcher ruling, #1924) | **Chapter titles reduced to their subject.** Ch 3 "The heart", Ch 4 "The soul", Ch 5 "The spirit", Ch 6 "Flesh", Ch 7 "Conscience and the bosom". Ch 2 "One inner person, many words" stays (researcher: *"the title is appropriate"*). **Watch:** a separate chapter on the role other entities play across the phenomena (God, the Spirit, other spirits, angels, other people, the physical world), which "will again vary considerably between the identities towards the inner being". It grows from what the strands record and is not started as a whole-scope task. | Researcher: the subtitles were "AI assumptions and wrong"; "I can see a separate chapter evolving over time to capture the role other entities play across the phenomena". |
+| 2026-10-01 | fear (M01), unit 1 (#1927, #1928) | **No structure change.** Fear is woven by activity, as anger was. New sections: 10.5 "Fear and the mouth"; 10.9 "Fear before God, and the fear of God" and "'Fear not'"; 10.10 "Fear between people"; Ch 12 "Fear that goes wrong". Ch 11 §4 gains three faces (fear; the one who is feared; "do not fear") and three factors (what it is turned toward; whether the heart is in it; who speaks it, and to what end). Woven also into 10.1, 10.2, 10.7, 10.8, Ch 3, 6, 9, 13, 14, 15. Prior versions in `archive/`. Claim register → v5. | Researcher: "the ledger is approved to continue". Unit 1 = the *yārēʾ* family ("to fear, revere"), 424 hits read by surface. Units 2–4 to follow. |
+
 **Which strand fed which version:**
 - origin of thought → Ch 1, 3, 7, 9, 10.0–10.2, 10.5–10.9, 11, 12, 13: **v2 (2026-10-01)**
 - origin of thought → 10.3, 10.4: **v1 (2026-10-01)**
 - change of character in the thought strand (#1919) → 10.0, 10.8, 10.9, 11, 12, 13: **v3**; 10.3, 10.4: **v2 (2026-10-01)**
+- **fear strand, unit 1 (#1927, #1928)** → 03 v4; 06 v3; 09 v4; 10.1, 10.2, 10.5, 10.7, 10.8 v4; 10.9, 10.10, 11, 12, 14 v5; 13 v2; 15 v3 (2026-10-01). No structure change
 - **anger strand (#1920)** → 10.0 v4; 10.1, 10.2, 10.4–10.8 v3 (renumbered); 10.9, 10.10 v4; 01, 03, 07, 09 v3; 05, 06, 15 v2; 11, 12, 14 v4; **new:** 10.3 v1, 13 v1 (2026-10-01)
 
 ## Source files — status (updated 2026-09-30)
