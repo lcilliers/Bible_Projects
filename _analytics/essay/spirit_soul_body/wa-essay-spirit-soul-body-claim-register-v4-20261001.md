@@ -241,7 +241,7 @@ Ledger: `_analytics/Clusters/M02 - anger-wrath/anger-strand-observation-ledger-v
 - **10.10:** "most often"; "so that the rise … no longer counts"; "the father gives the brother back"
 - **10.9:** "the very thing that is the opposite of anger"; "its character changes with the one who uses it"; "the same words delight … and fill"
 
-**Earlier passes audited (#1921, 2026-10-01):** 88 more in-place edits across Ch 1–15, each listed before and after in `wa-essay-narrative-imputed-readings-audit-v1-20261001.md`. They include two further divisions of labour that are withdrawn: 10.7 "if the soul wants, the heart sets direction … the spirit supplies energy", and Ch 5 "much more about energy and disposition than about deciding". Four chapter subtitles carry a synthesis and are raised to the researcher, not changed.
+**Earlier passes audited (#1921, 2026-10-01):** 88 more in-place edits across Ch 1–15, each listed before and after in `wa-essay-narrative-imputed-readings-audit-v1-20261001.md`. They include two further divisions of labour that are withdrawn: 10.7 "if the soul wants, the heart sets direction … the spirit supplies energy", and Ch 5 "much more about energy and disposition than about deciding". The researcher then ruled (#1924) that the four chapter subtitles are *"AI assumptions and wrong"*, and they are removed: Ch 4 "the living, needing self", Ch 5 "breath, wind and the moving force", Ch 6 "the visible, mortal, related self", Ch 7 "the self that judges, the place that holds". By the same rule Ch 3 "the centre" is removed too. Ch 2's title is flagged.
 
 ---
 

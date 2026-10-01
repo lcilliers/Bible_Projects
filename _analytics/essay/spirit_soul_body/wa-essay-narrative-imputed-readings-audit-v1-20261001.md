@@ -140,7 +140,7 @@
 
 ## For the researcher: chapter subtitles that carry a synthesis
 
-These subtitles state a unifying claim that, after this audit, no sentence in the chapter supports. **Not changed.** Titles are yours to set:
+**Ruled 2026-10-01 (#1924): "all four of these are AI assumptions and wrong". All four are removed, and Ch 3 "the centre" by the same rule.** As first listed:
 - Ch 4 "The soul: **the living, needing self**". The claim behind it ("it is one idea") is removed.
 - Ch 5 "The spirit: breath, wind and **the moving force**".
 - Ch 6 "Flesh: **the visible, mortal, related self**".

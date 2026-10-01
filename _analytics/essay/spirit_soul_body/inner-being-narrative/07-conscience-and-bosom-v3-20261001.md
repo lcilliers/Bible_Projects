@@ -1,4 +1,4 @@
-# 7. Conscience and the bosom: the self that judges, the place that holds
+# 7. Conscience and the bosom
 
 Two smaller words complete the picture. Neither is used often, but each names something the others do not.
 
