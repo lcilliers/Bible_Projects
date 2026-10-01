@@ -339,6 +339,13 @@ Two passes, as the method requires: new → narrative, then narrative → new. V
 
 ## P. Decisions needed
 
+> **Ruled 2026-10-01 (researcher, verbatim):** *"approve 1920 as recommended, remembering after 10.2 - i need to digest what you have written"*.
+> - NS-M1 (a): weave by operation, with 10.1 rewritten
+> - NS-M2 (a): a new chapter, "Under God's anger", between 12 and 13
+> - NS-M3: Remembering inserted after 10.2, with 10.3–10.9 → 10.4–10.10
+>
+> **The weave (§O) has not started.** It waits until the researcher has digested this ledger. AN-H1 stays held.
+
 1. **NS-M1:** human anger woven by operation, with 10.1 rewritten (a); or (b) or (c).
 2. **NS-M2:** a new chapter "Under God's anger" between 12 and 13, with 13 → 14 and 14 → 15 (a); or (b) or (c). Is the title acceptable?
 3. **NS-M3:** promote Remembering now? If so, insert it after 10.2 with renumbering (i), or append it as 10.10 (ii)?
