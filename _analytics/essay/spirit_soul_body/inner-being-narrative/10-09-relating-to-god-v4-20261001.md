@@ -13,7 +13,7 @@ Relating to God engages the whole inner being, and Scripture says so by formula:
 - **God reckons, and faith reckons.** God counted Abraham's faith "to him as righteousness" (Genesis 15:6). "Blessed is the man against whom the Lord will not count his sin" (Romans 4:8). Abraham, for his part, "considered that God was able even to raise him from the dead" (Hebrews 11:19).
 - **His plans against are open to turning.** "It may be they will listen, and every one turn from his evil way, that I may relent of the disaster that I intend to do to them because of their evil deeds" (Jeremiah 26:3).
 - **Thinking done in his presence sees differently.** "When I thought how to understand this, it seemed to me a wearisome task, until I went into the sanctuary of God; then I discerned their end" (Psalm 73:16–17).
-- **God cannot be likened.** "To whom then will you liken God, or what likeness compare with him?" (Isaiah 40:18). To think of him as "one like yourself" (Psalm 50:21) is already to have lost him.
+- **God cannot be likened.** "To whom then will you liken God, or what likeness compare with him?" (Isaiah 40:18). And God rebukes those who thought him "one like yourself" (Psalm 50:21).
 - **The heart meditates on him.** "On his law he meditates day and night" (Psalm 1:2). "I remember you upon my bed, and meditate on you in the watches of the night" (Psalm 63:6).
 - **And he thinks of me.** "What is man that you regard him, or the son of man that you think of him?" (Psalm 144:3). "I am poor and needy, but the Lord takes thought for me" (Psalm 40:17). And his thoughts are precious to the one he knows: "How precious to me are your thoughts, O God! How vast is the sum of them!" (Psalm 139:17).
 

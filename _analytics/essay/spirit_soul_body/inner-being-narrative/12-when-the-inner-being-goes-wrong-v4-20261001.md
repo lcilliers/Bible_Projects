@@ -1,6 +1,6 @@
 # 12. When the inner being goes wrong
 
-Scripture does not look away from what goes wrong inside a person. When it does, it points first and most often to the heart.
+Scripture does not look away from what goes wrong inside a person. When it does, it often names the heart.
 
 ## The heart as the source
 
@@ -29,11 +29,11 @@ The heart does not only do wrong. It hides the wrong from the person whose heart
 
 "Behold, all souls are mine … the soul who sins shall die" (Ezekiel 18:4). In the law, "if anyone [a soul] sins" is the ordinary way to begin a case (Leviticus 5:1). The soul here is the person who is accountable. The one who did the wrong carries the guilt, and it is their life that is at stake. The soul can also be harmed by its own wrongdoing: "he who fails to find me injures himself" (Proverbs 8:36).
 
-So the heart is where wrong begins and is judged, and the soul is the one who answers for it. The Bible speaks of both, and I do not want to set one against the other.
+The Bible speaks of both the heart and the soul here, and I do not want to set one against the other.
 
 ## Pride and the lifted-up heart and spirit
 
-Pride is the wrong most often located in the inner words.
+Pride is placed in the heart and in the spirit.
 
 - The heart is "lifted up" (Deuteronomy 8:14). "Everyone who is arrogant in heart is an abomination to the Lord" (Proverbs 16:5).
 - "Pride goes before destruction, and a haughty spirit before a fall" (Proverbs 16:18).
@@ -54,7 +54,7 @@ A heart can set itself, or be set, against hearing.
 - It stores up judgment: "because of your hard and impenitent heart you are storing up wrath for yourself" (Romans 2:5).
 - It shows in reasoning that goes round in circles. Just after the feeding of the crowds, the disciples worry about bread, and Jesus asks: "Why are you discussing the fact that you have no bread? Do you not yet perceive or understand? Are your hearts hardened?" (Mark 8:17).
 
-As Chapter 11 showed, God is also said to harden. When I read the passages closely, the hardening gives firmness to a heart that is already leaning away from him.
+As Chapter 11 showed, God is also said to harden. In the Exodus story Pharaoh's heart had already "changed toward the people" (Exodus 14:5) before the Lord hardened it (14:8).
 
 ## Anger that goes wrong
 
@@ -76,9 +76,9 @@ The quarrel at Meribah is told in the wilderness story without naming any inner 
 
 ## Idols taken inside
 
-Idolatry is not only a matter of statues. God says to Ezekiel of Israel's elders, "these men have taken their idols into their hearts" (Ezekiel 14:3). Their hearts "went after their idols" (Ezekiel 20:16). And Hosea: "a spirit of whoredom has led them astray" (Hosea 4:12). "The spirit of whoredom is within them, and they know not the Lord" (Hosea 5:4). False worship is carried in the heart and moves in the spirit before it is ever acted out.
+Idolatry is not only a matter of statues. God says to Ezekiel of Israel's elders, "these men have taken their idols into their hearts" (Ezekiel 14:3). Their hearts "went after their idols" (Ezekiel 20:16). And Hosea: "a spirit of whoredom has led them astray" (Hosea 4:12). "The spirit of whoredom is within them, and they know not the Lord" (Hosea 5:4).
 
-It also starts in the power to imagine and design. Paul says, "we ought not to think that the divine being is like gold or silver or stone, an image formed by the art and imagination of man" (Acts 17:29). Habakkuk sees the maker turned upside down: "its maker trusts in his own creation when he makes speechless idols!" (Habakkuk 2:18). The word for "creation" there is the word for the heart's inclination (Chapter 10.4). The skill that God gave for his house (Exodus 35:35) is turned to making something to trust in place of him.
+It also starts in the power to imagine and design. Paul says, "we ought not to think that the divine being is like gold or silver or stone, an image formed by the art and imagination of man" (Acts 17:29). Habakkuk sees the maker turned upside down: "its maker trusts in his own creation when he makes speechless idols!" (Habakkuk 2:18). The word for "creation" there is the word for the heart's inclination (Chapter 10.4).
 
 ## Dispositions that come upon a person, and spirits that act
 
@@ -92,7 +92,7 @@ Scripture separates two kinds of uncleanness. The body can be unclean by touch, 
 
 ## Wind: the image of emptiness
 
-When Scripture wants a picture of what wrongdoing amounts to, it often reaches for the wind.
+Several times Scripture pictures wrongdoing as wind.
 
 - "The wicked … are like chaff that the wind drives away" (Psalm 1:4).
 - "Our iniquities, like the wind, take us away" (Isaiah 64:6).

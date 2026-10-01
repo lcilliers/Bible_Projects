@@ -30,7 +30,7 @@ When Scripture wants to speak of the whole person, it does not define parts. It 
 - "My flesh and my heart may fail" (Psalm 73:26).
 - "Holy in body and spirit" (1 Corinthians 7:34).
 
-The list is not fixed. Deuteronomy says heart, soul and might. Matthew says heart, soul and mind (22:37). Mark adds strength (12:30). Luke puts mind last (10:27). When a scribe repeats the command back to Jesus, he says "with all the heart and with all the understanding and with all the strength". He leaves out the soul altogether, and Jesus says he answered wisely (Mark 12:33–34). What stays the same every time is the word **all**. These lists work like a person saying "heart and soul" or "body and mind" today: they name the whole person from two, three or four sides at once. They are not an inventory.
+The list is not fixed. Deuteronomy says heart, soul and might. Matthew says heart, soul and mind (22:37). Mark adds strength (12:30). Luke puts mind last (10:27). When a scribe repeats the command back to Jesus, he says "with all the heart and with all the understanding and with all the strength". He leaves out the soul altogether, and Jesus says he answered wisely (Mark 12:33–34). What stays the same every time is the word **all**.
 
 So I no longer read 1 Thessalonians 5:23 as a diagram of three components ranked from top to bottom. It is a prayer that the whole person be kept, named from three sides.
 
@@ -46,7 +46,7 @@ The inner words also affect each other and the body, and the influence runs ever
 - The inner state reaches the body: "A joyful heart is good medicine, but a crushed spirit dries up the bones" (Proverbs 17:22). "A tranquil heart gives life to the flesh" (Proverbs 14:30).
 - The body and the senses reach inward: "The light of the eyes rejoices the heart" (Proverbs 15:30). Bread "strengthen[s] man's heart" (Psalm 104:15). When the exhausted Egyptian had eaten, "his spirit revived" (1 Samuel 30:12).
 
-No part is simply upstream of the others. Scripture shows the whole person as one connected life. Whatever touches one side of it touches the rest.
+The influence runs in more than one direction.
 
 ## Shared between people
 
@@ -54,4 +54,4 @@ Finally, the inner person is not sealed inside one skin. "The soul of Jonathan w
 
 ## What I take from this
 
-Scripture speaks of **one inner person, seen from several angles**. Each word brings its own angle, and the rest of this narrative follows those angles one by one. But the words were never meant to be pulled apart and laid out separately. In most of Scripture, they are not. The places where the Bible does draw a line between them are few, and they are important. I have kept those for Chapter 8.
+Scripture speaks of **one inner person, seen from several angles**. Each word brings its own angle, and the rest of this narrative follows those angles one by one. In the verses, they are seldom pulled apart. The places where the Bible does draw a line between them are few, and they are important. I have kept those for Chapter 8.

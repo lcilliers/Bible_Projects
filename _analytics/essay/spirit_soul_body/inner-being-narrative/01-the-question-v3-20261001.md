@@ -33,4 +33,4 @@ I have tried to let the verses speak first. Where I give my own reading of a pas
 - **Chapter 14** turns to how it is made new.
 - **Chapter 15** looks past the named words, to the large part of inner life that Scripture describes without naming heart, soul or spirit at all.
 
-"I praise you, for I am fearfully and wonderfully made" (Psalm 139:14). I no longer read that as a claim about how many parts I have. I read it as wonder at how I work.
+"I praise you, for I am fearfully and wonderfully made" (Psalm 139:14). I no longer read that as a claim about how many parts I have. I read it as praise for how I am made.

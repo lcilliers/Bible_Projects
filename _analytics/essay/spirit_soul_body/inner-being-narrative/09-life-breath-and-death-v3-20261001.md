@@ -10,7 +10,7 @@ The man does not *receive* a soul. He *becomes* a living soul, a *nephesh ḥayy
 
 The word for "nostrils" in that verse, *ʾaph*, is also the ordinary Hebrew word for anger, and for the face. To be patient is to be "long of nostrils", the same phrase God uses of himself: "slow to anger" (Exodus 34:6). The same word is used for the face bowed to the ground in worship (2 Chronicles 7:3) and for the face lifted in pride: "In the pride of his face the wicked does not seek him" (Psalm 10:4). Isaiah draws the lesson from the breath: "Stop regarding man in whose nostrils is breath, for of what account is he?" (Isaiah 2:22).
 
-It is tempting to turn this verse into a formula: body plus breath equals soul. I have stopped doing that. The verse tells a story of God's closeness in making a man. It is not an equation of parts. And Scripture speaks of God making every side of the person: "the Lord … who made our souls" (Jeremiah 38:16); God "formed the spirit of man within him" (Zechariah 12:1); "The Spirit of God has made me, and the breath of the Almighty gives me life" (Job 33:4).
+It is tempting to turn this verse into a formula: body plus breath equals soul. I have stopped doing that. It is not an equation of parts. And Scripture speaks of God making every side of the person: "the Lord … who made our souls" (Jeremiah 38:16); God "formed the spirit of man within him" (Zechariah 12:1); "The Spirit of God has made me, and the breath of the Almighty gives me life" (Job 33:4).
 
 Before birth, Scripture speaks with deliberate reserve: "As you do not know the way the spirit comes to the bones in the womb of a woman with child, so you do not know the work of God who makes everything" (Ecclesiastes 11:5). Whether "spirit" there means breath or spirit, the verse's point is that we do not know. God's Spirit can be at work before birth: John "will be filled with the Holy Spirit, even from his mother's womb" (Luke 1:15). When Mary greets Elizabeth, "the baby leaped in her womb. And Elizabeth was filled with the Holy Spirit" (Luke 1:41). I leave it there. Scripture does not say more, and I do not want to reason past it.
 
@@ -19,7 +19,7 @@ Before birth, Scripture speaks with deliberate reserve: "As you do not know the 
 Life is held in the breath, and the breath is God's to give and to take back.
 
 - "In his hand is the life of every living thing and the breath of all mankind" (Job 12:10).
-- "If he should set his heart to it and gather to himself his spirit and his breath, all flesh would perish together, and man would return to dust" (Job 34:14–15). Every life hangs on one decision of God's heart.
+- "If he should set his heart to it and gather to himself his spirit and his breath, all flesh would perish together, and man would return to dust" (Job 34:14–15).
 - "When you take away their breath, they die and return to their dust. When you send forth your Spirit, they are created" (Psalm 104:29–30).
 - "No man has power to retain the spirit, or power over the day of death" (Ecclesiastes 8:8).
 - "When his breath departs, he returns to the earth; on that very day his plans perish" (Psalm 146:4). Thinking goes when the breath goes. "Man is like a breath; his days are like a passing shadow" (Psalm 144:4), and the Lord "knows the thoughts of man, that they are but a breath" (Psalm 94:11).
@@ -51,19 +51,19 @@ Scripture is honest that people sometimes want to die, and the wish belongs almo
 
 What answers these wishes is seldom death. Elijah is given food, twice: "Arise and eat". He goes "in the strength of that food forty days and forty nights" (1 Kings 19:5–8). Jonah's wish came with his anger at God's mercy: "angry enough to die" (Jonah 4:9). He is given a question about God's pity for Nineveh (Jonah 4:10–11). Israel, wishing they had died beside the meat pots of Egypt, is given bread from heaven (Exodus 16:3–4). When Israel loathed the manna and spoke against God, the answer was something to look at: "everyone who is bitten, when he sees it, shall live" (Numbers 21:8). Only twice is the wish granted. Samson is given one last act of strength (Judges 16:30). And Saul's death is carried out by an Amalekite, whom David then condemns (2 Samuel 1:14–16).
 
-I find this very tender. A soul that has had enough is more often fed than taken.
+In these passages, the one who has had enough is more often fed than taken.
 
 ## The inner person dying
 
 At death, Scripture gives each inner word its own verb.
 
 - **The soul departs.** "As her soul was departing (for she was dying), she called his name Ben-oni" (Genesis 35:18).
-- **The heart stops attending.** When the wife of Phinehas heard that the ark was taken and her husband dead, the women told her, "Do not be afraid, for you have borne a son". "But she did not answer or pay attention" (1 Samuel 4:20). Literally, she did not *set her heart*. Rachel is told almost the same words, "Do not fear, for you have another son" (Genesis 35:17). Neither dying woman can take the comfort in.
+- **The heart stops attending.** When the wife of Phinehas heard that the ark was taken and her husband dead, the women told her, "Do not be afraid, for you have borne a son". "But she did not answer or pay attention" (1 Samuel 4:20). Literally, she did not *set her heart*. Rachel is told almost the same words, "Do not fear, for you have another son" (Genesis 35:17).
 - **The spirit is committed and returns.** "Into your hand I commit my spirit" (Psalm 31:5). Jesus "yielded up his spirit" (Matthew 27:50). "Father, into your hands I commit my spirit!" (Luke 23:46). Stephen: "Lord Jesus, receive my spirit" (Acts 7:59). "The dust returns to the earth as it was, and the spirit returns to God who gave it" (Ecclesiastes 12:7).
 - **The body without spirit is dead.** "The body apart from the spirit is dead" (James 2:26).
 - **Even the corpse is *nephesh*.** "Whoever touches the dead body of any person" (Numbers 19:11). The word names the individual to the very end.
 
-And one thing I did not expect: **the heart can die before the body does**. When Nabal sobered up and heard how close he had come to disaster, "his heart died within him, and he became as a stone. And about ten days later the Lord struck Nabal, and he died" (1 Samuel 25:37–38). The inner death came first and announced the outer one. The psalmist knows a similar death in life: "I have been forgotten like one who is dead; I have become like a broken vessel" (Psalm 31:12). Literally, forgotten *from the heart*.
+And one thing I did not expect: **the heart can die before the body does**. When Nabal sobered up and heard how close he had come to disaster, "his heart died within him, and he became as a stone. And about ten days later the Lord struck Nabal, and he died" (1 Samuel 25:37–38). The heart died first; the man died ten days later. The psalmist knows a similar death in life: "I have been forgotten like one who is dead; I have become like a broken vessel" (Psalm 31:12). Literally, forgotten *from the heart*.
 
 ## Delivered from death
 
@@ -79,4 +79,4 @@ These verses do not say that the soul goes to Sheol while the spirit goes to God
 
 ## After death
 
-Scripture does speak of people alive before God after death, and it uses both words. John sees "under the altar the souls of those who had been slain for the word of God", crying out for justice (Revelation 6:9–10). Hebrews speaks of "the spirits of the righteous made perfect" (Hebrews 12:23). Peter speaks of "the spirits in prison" (1 Peter 3:19). And Jesus: "do not fear those who kill the body but cannot kill the soul" (Matthew 10:28). Whether soul or spirit is used, the witness is the same: the person survives the death of the body, conscious and known to God.
+Scripture does speak of people alive before God after death, and it uses both words. John sees "under the altar the souls of those who had been slain for the word of God", crying out for justice (Revelation 6:9–10). Hebrews speaks of "the spirits of the righteous made perfect" (Hebrews 12:23). Peter speaks of "the spirits in prison" (1 Peter 3:19). And Jesus: "do not fear those who kill the body but cannot kill the soul" (Matthew 10:28). Whether soul or spirit is used, these verses speak of people alive before God after death.

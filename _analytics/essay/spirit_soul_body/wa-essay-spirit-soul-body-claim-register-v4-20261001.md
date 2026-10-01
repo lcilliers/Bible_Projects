@@ -241,7 +241,7 @@ Ledger: `_analytics/Clusters/M02 - anger-wrath/anger-strand-observation-ledger-v
 - **10.10:** "most often"; "so that the rise … no longer counts"; "the father gives the brother back"
 - **10.9:** "the very thing that is the opposite of anger"; "its character changes with the one who uses it"; "the same words delight … and fill"
 
-**Not yet audited:** narrator readings from earlier passes (#1912–#1918), e.g. 10.5 "by the time it reaches the tongue, the thought is already an act", 10.4 "I read this as saying that the bent of my thinking is itself something formed", Ch 4 "the soul is kept by being turned away from itself". They are listed for a review pass, not changed here.
+**Earlier passes audited (#1921, 2026-10-01):** 88 more in-place edits across Ch 1–15, each listed before and after in `wa-essay-narrative-imputed-readings-audit-v1-20261001.md`. They include two further divisions of labour that are withdrawn: 10.7 "if the soul wants, the heart sets direction … the spirit supplies energy", and Ch 5 "much more about energy and disposition than about deciding". Four chapter subtitles carry a synthesis and are raised to the researcher, not changed.
 
 ---
 

@@ -2,7 +2,7 @@
 
 Everything so far has followed the verses that name the heart, the soul, the spirit, flesh, the conscience or the bosom. Then I asked a simple question. When Scripture speaks of fear, anger, joy, grief, desire or doubt, how often does it name one of these words at all?
 
-The answer is: not often. Only about one verse in ten that speaks of an inner state names the heart, the soul or the spirit in the same verse. Most of the fear in Scripture is stated simply: "Saul was afraid." Most of the anger is simply anger. The inner words, it turns out, are the *marked* way of speaking. Scripture reaches for them when it wants to locate a state, deepen it, turn it inward, or show that it is hidden. Most of the time, the inner life is shown in other ways.
+The answer is: not often. Only about one verse in ten that speaks of an inner state names the heart, the soul or the spirit in the same verse. Most of the fear in Scripture is stated simply: "Saul was afraid." Most of the anger is simply anger. Most of the time, the inner life is shown in other ways.
 
 ## Other ways Scripture shows the inner life
 

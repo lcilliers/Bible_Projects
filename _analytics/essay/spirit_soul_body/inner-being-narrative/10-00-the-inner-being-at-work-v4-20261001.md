@@ -60,7 +60,7 @@ The commands meet this path from the second step onward.
 - "Take every thought captive to obey Christ" (2 Corinthians 10:5).
 - "Wash your heart from evil" (Jeremiah 4:14).
 
-I have found no command about what first arises. But what arises is not neutral. "Every intention of the thoughts of his heart was only evil continually" (Genesis 6:5). "Out of the heart of man, come evil thoughts" (Mark 7:21). I read it this way: what arises shows me the state of my heart, and what I let lodge, plan, say and do is where I am answerable.
+I have found no command about what first arises. But what arises is not neutral. "Every intention of the thoughts of his heart was only evil continually" (Genesis 6:5). "Out of the heart of man, come evil thoughts" (Mark 7:21). The commands address what lodges, what is planned, what is said and what is done.
 
 Scripture does more than command. It also answers the sentence the heart speaks. "If you say in your heart, 'These nations are greater than I. How can I dispossess them?' you shall not be afraid of them but you shall remember what the Lord your God did to Pharaoh and to all Egypt" (Deuteronomy 7:17–18). The answer to a fearful inner sentence is a remembered act of God.
 

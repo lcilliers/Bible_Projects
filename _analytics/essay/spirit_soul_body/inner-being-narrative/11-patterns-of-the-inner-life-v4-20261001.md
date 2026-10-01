@@ -1,6 +1,6 @@
 # 11. Patterns of the inner life
 
-When I read the inner words across all of Scripture, and read each passage with what comes before and after it, certain patterns kept coming back. None of them is a doctrine stated in a single verse. They are the shapes the inner life takes when Scripture tells its stories and sings its songs. I set them out here because I think they say more about how the inner being actually works than any list of parts.
+When I read the inner words across all of Scripture, and read each passage with what comes before and after it, certain patterns kept coming back. None of them is a doctrine stated in a single verse. I set them out side by side, as the passages give them.
 
 ## 1. The inner being is acted upon as much as it acts
 
@@ -13,15 +13,15 @@ I expected the heart, soul and spirit to be mainly the doers in the verses. Very
 - **Things are poured in.** "Satan filled your heart" (Acts 5:3). "God's love has been poured into our hearts" (Romans 5:5).
 - **Even the leaning is formed.** The word for the heart's "intention" (Genesis 6:5) is the word for what a potter forms (Isaiah 29:16) and for our "frame" (Psalm 103:14). God fills craftsmen "with skill" to devise (Exodus 35:35). He promises, "I will put my laws into their minds, and write them on their hearts" (Hebrews 8:10). And other powers act on thinking too: "the god of this world has blinded the minds of the unbelievers" (2 Corinthians 4:4).
 
-The most powerful heart in Scripture, the king's, is the one most often shown being acted on. Kings' hearts are "unsearchable" to their subjects (Proverbs 25:3), yet in God's hand they are like water.
+Kings' hearts are "unsearchable" to their subjects (Proverbs 25:3), yet in God's hand they are like water.
 
-Enticement shows the same thing. The same verb is used for being drawn by several very different enticers. Job asks whether "my heart has been enticed toward a woman" (Job 31:9). False teachers "entice unsteady souls" (2 Peter 2:14). In the heavenly council a spirit offers, "I will entice him", and becomes "a lying spirit in the mouth of all his prophets" (1 Kings 22:21–22). And God says of unfaithful Israel, "Therefore, behold, I will allure her, and bring her into the wilderness, and speak tenderly to her" (Hosea 2:14), literally *to her heart*. Then he makes "the Valley of Achor a door of hope" (2:15). An open heart can be drawn. Who draws it decides where it ends up.
+Enticement shows the same thing. The same verb is used for being drawn by several very different enticers. Job asks whether "my heart has been enticed toward a woman" (Job 31:9). False teachers "entice unsteady souls" (2 Peter 2:14). In the heavenly council a spirit offers, "I will entice him", and becomes "a lying spirit in the mouth of all his prophets" (1 Kings 22:21–22). And God says of unfaithful Israel, "Therefore, behold, I will allure her, and bring her into the wilderness, and speak tenderly to her" (Hosea 2:14), literally *to her heart*. Then he makes "the Valley of Achor a door of hope" (2:15).
 
-When I look at hardening closely, I do not find a heart forced against itself. On the night Israel left, "the mind [heart] of Pharaoh and his servants was changed toward the people, and they said, 'What is this we have done, that we have let Israel go from serving us?'" (Exodus 14:5). Then the Lord hardened his heart, "and he pursued" (14:8). The hardening gives firmness to a heart already leaning that way. And I have found no text in which God hardens his own heart.
+On the night Israel left, "the mind [heart] of Pharaoh and his servants was changed toward the people, and they said, 'What is this we have done, that we have let Israel go from serving us?'" (Exodus 14:5). Then the Lord hardened his heart, "and he pursued" (14:8). The heart had already changed (14:5) before the Lord hardened it (14:8). And I have found no text in which God hardens his own heart.
 
 ## 2. Thresholds: the merry heart and the sad heart
 
-One pattern surprised me more than any other. In story after story, **a heart made merry with food and wine comes just before a decisive event**, and what happens next is almost never the merrymaker's choice.
+In a number of stories, **a heart made merry with food and wine comes just before a decisive event**.
 
 - Amnon: "Mark when Amnon's heart is merry with wine … then kill him" (2 Samuel 13:28).
 - King Ahasuerus: "when the heart of the king was merry with wine, he commanded … to bring Queen Vashti", and when she refused, "his anger burned within him" (Esther 1:10–12).
@@ -33,17 +33,17 @@ One pattern surprised me more than any other. In story after story, **a heart ma
 
 The same threshold is reached by other roads. Uzziah's heart was lifted by strength, not wine: "when he was strong, he grew proud". When the priests withstood him, "Uzziah was angry" (2 Chronicles 26:16, 19).
 
-A merry heart lowers its guard, and whatever comes in at that moment decides the outcome: murder, anger, catastrophe, outrage, redemption, a dead heart, a gallows. The rich fool is the same pattern in miniature: "Soul … relax, eat, drink, be merry". The next line: "Fool! This night your soul is required of you" (Luke 12:19–20).
+What follows in these stories is murder, anger, catastrophe, outrage, redemption, a dead heart and a gallows. The rich fool says the same words to his soul: "Soul … relax, eat, drink, be merry". The next line: "Fool! This night your soul is required of you" (Luke 12:19–20).
 
 There is a counter-pattern: **the sad heart at the feast**. Hannah would not eat. Her husband asked, "why is your heart sad?" After the meal she rose and prayed, and she went away with her face "no longer sad" (1 Samuel 1:8–18). Nehemiah stood before the king "when wine was before him", and the king asked, "Why is your face sad …? This is nothing but sadness of the heart". Nehemiah prayed, then asked, and was given what he asked (Nehemiah 2:1–5). The sad heart at a feast is also a threshold. But what enters there is prayer, and what follows is a gift.
 
 Some refuse the threshold. "Daniel resolved [set on his heart] that he would not defile himself with the king's food, or with the wine that he drank" (Daniel 1:8). Uriah would not go home and feast while the ark and the army camped in the field: "As you live, and as your soul lives, I will not do this thing" (2 Samuel 11:11).
 
-When the heart is glad *because of God*, no disaster follows. Solomon's people "went to their homes joyful and glad of heart for all the goodness that the Lord had shown" (1 Kings 8:66). And eating can carry the soul the other way across the threshold: the angel's bread carried Elijah from wanting to die to walking forty days to Horeb (1 Kings 19:5–8).
+Solomon's people "went to their homes joyful and glad of heart for all the goodness that the Lord had shown" (1 Kings 8:66). And eating can carry the soul the other way across the threshold: the angel's bread carried Elijah from wanting to die to walking forty days to Horeb (1 Kings 19:5–8).
 
 ## 3. The parts give way in sequence
 
-When a person breaks, Scripture often shows the inner being giving way part by part, in order.
+Some passages show the inner being giving way part by part, in order.
 
 Samson (Judges 16):
 - Delilah: "How can you say, 'I love you,' when your heart is not with me?" (16:15)
@@ -107,13 +107,13 @@ A word, or an activity, does not carry its value inside itself. The same act cha
 - **What comes back.** What is devised returns on the deviser (Esther 9:25; Micah 2:1–3), and the diligent plan returns as abundance (Proverbs 21:5).
 - **The story around it.** A single verse rarely settles which face a word wears. Jeremiah 18:8–18 does, and so does Genesis 50:20.
 
-I find this freeing. Scripture does not hand me a list of good feelings and bad feelings, or good thoughts and bad thoughts. It asks me which way my heart is set, what I keep company with, and whether I bring what is in me before God. Each new part of the inner life I read adds to this list, and I expect it to grow.
+I find this freeing. Scripture does not hand me a list of good feelings and bad feelings, or good thoughts and bad thoughts. Each new part of the inner life I read adds to this list, and I expect it to grow.
 
 ## 5. Voices to the soul
 
 A person can speak to their own soul, in at least five settings (Chapter 4): lament ("Why are you cast down, O my soul?"), praise ("Bless the Lord, O my soul"), rest ("Return, O my soul, to your rest"), battle ("March on, my soul, with might!"), and self-indulgence ("Soul … relax, eat, drink, be merry"). Others speak to the soul too, and not always well: "How can you say to my soul, 'Flee like a bird to your mountain'?" (Psalm 11:1). And the psalmist asks God himself to speak to it: "Say to my soul, 'I am your salvation!'" (Psalm 35:3).
 
-What I take from this is that my soul is not beyond my reach. I can argue with it, calm it and call it to hope. But it is also open to other voices. The question is which voice it is listening to.
+What I take from this is that my soul is not beyond my reach. I can argue with it, calm it and call it to hope. And others speak to it too.
 
 ## 6. Inner states pass between people
 
@@ -137,7 +137,7 @@ Scripture takes the words it uses for ruling, serving, guarding and judging in s
 - **Serving:** "I myself serve the law of God with my mind, but with my flesh I serve the law of sin" (Romans 7:25).
 - **Judging:** "whenever our heart condemns us, God is greater than our heart" (1 John 3:20).
 
-The inner being is a small kingdom. It can be ruled well or badly, guarded or left without walls: "A man without self-control is like a city broken into and left without walls" (Proverbs 25:28). Above its own rulers there is always a higher one.
+The words for ruling and guarding are used of the inner being: "A man without self-control is like a city broken into and left without walls" (Proverbs 25:28).
 
 ## 8. God has a heart and a soul
 
@@ -156,6 +156,4 @@ Leviticus 26 shows God's soul and the people's soul in a movement back and forth
 
 God also thinks and plans. "The counsel of the Lord stands forever, the plans of his heart to all generations" (Psalm 33:11). "My thoughts are not your thoughts, neither are your ways my ways" (Isaiah 55:8). Where human plans and his cross, his stand: "As for you, you meant evil against me, but God meant it for good" (Genesis 50:20). Even a cold calculation can be taken up into his purpose. Caiaphas reckoned "that it is better for you that one man should die for the people" (John 11:50). John adds: "He did not say this of his own accord, but being high priest that year he prophesied that Jesus would die for the nation" (11:51).
 
-And God speaks in his heart. After the flood, "the Lord said in his heart, 'I will never again curse the ground because of man, for the intention of man's heart is evil from his youth'" (Genesis 8:21). Before the flood, the same evil intention had grieved him "to his heart" (6:5–6). Now he names it again, and it is the reason he gives for holding back. I read this as one of the most striking movements in God's own inner life: he sees the same heart, and answers it with patience.
-
-This is where every pattern in this chapter leads me. The inner being I have been describing was made by one who has an inner life of his own. And his heart holds to his people when theirs does not hold to him.
+And God speaks in his heart. After the flood, "the Lord said in his heart, 'I will never again curse the ground because of man, for the intention of man's heart is evil from his youth'" (Genesis 8:21). Before the flood, the same evil intention had grieved him "to his heart" (6:5–6). Now he names it again, and it is the reason he gives for holding back.
