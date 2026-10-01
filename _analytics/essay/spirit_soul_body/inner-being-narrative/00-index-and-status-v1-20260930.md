@@ -62,6 +62,8 @@
 
 **Weave, don't fit (researcher, verbatim, 2026-09-30, #1918):** *"There is a great danger of loosing important observations and impacts 'because it does not fit the current narrative.' Adding additional items is not a process of where does the new item support the current narrative - this is the wrong way around - it must be wove the new item into the narrative - knowing there is more to come."* So "does not fit" is never a reason to leave out an observation. When a new item does not fit, it is the narrative's structure that changes. The method is set out in `../wa-essay-narrative-weave-method-and-ch10-structure-v1-20260930.md` (proposal, awaiting approval).
 
+**Change of character (researcher, verbatim, 2026-10-01, #1919):** *"One of the key discoveries in the study is how the meaning or application of the same concept / word changes in different circumstances … It must be built upon, not be set aside."* Every strand records when and how each word or concept changes character, and why. That is woven in, never dropped because another face of the same word is already in the text. Proposal: `../../../cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-v1-20261001.md` (awaiting approval).
+
 - A later strand (e.g. fear, anger, doubt, the hands, thought) is **woven** through the chapters it touches, and it may reshape them.
 - Each update is a **version bump** of that chapter file (`-v2-{date}`); the prior version goes to `archive/`.
 - The **claim register** is updated in the same pass.

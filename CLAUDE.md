@@ -104,6 +104,14 @@
 > - Ch 10 (*The inner being at work*) is designed in advance to grow.
 > - Method: `wa-essay-narrative-weave-method-and-ch10-structure-*` in `_analytics/essay/spirit_soul_body/`.
 >
+> **Change of character is a key discovery (researcher, 2026-10-01, #1919).** Researcher, verbatim:
+> *"One of the key discoveries in the study is how the meaning or application of the same concept /
+> word changes in different circumstances … explore in more depth on when and how it changes
+> character, why is it different. This should not be lost … It must be built upon, not be set aside."*
+> - Every strand records each word's or concept's faces, the circumstances that differ, and why.
+> - A word's meaning is never taken from its cluster tag, because a tag shows one face only.
+> - Proposal (awaiting approval): `_analytics/cross-cluster-web/origin-of-thought/origin-of-thought-change-of-character-*`.
+>
 > These narrative drafts are written **on the researcher's specific instruction**. They are files,
 > not the DB prose store (the prose rule above is unchanged).
 >
