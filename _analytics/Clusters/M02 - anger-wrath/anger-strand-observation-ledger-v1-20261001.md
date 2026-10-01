@@ -210,7 +210,7 @@ So the **cluster tag hides the most telling face of the central word.**
 | **Smoke in God's nostrils** | Isa 65:5 | Said of those who say "I am too holy for you" | Self-holiness is what God's nostrils cannot bear (S) |
 | **Noses that do not smell** | Psa 115:6 | Idols | (S) |
 
-**What changes it (R):** the organ is the same. What fills it changes: God's breath, God's saving blast, heat, patience, worship, pride. And what it is met with changes: a ring or a hook. I read *aph* as the word that shows most plainly that anger is not a separate faculty. It is what happens in the place of breath, the place of life, when that place is heated. It can be lengthened (patience), lowered (worship), raised (pride) or led (the hook).
+~~**What changes it (R):** the organ is the same. What fills it changes: God's breath, God's saving blast, heat, patience, worship, pride. And what it is met with changes: a ring or a hook. I read *aph* as the word that shows most plainly that anger is not a separate faculty. It is what happens in the place of breath, the place of life, when that place is heated. It can be lengthened (patience), lowered (worship), raised (pride) or led (the hook).~~ **Withdrawn 2026-10-01** (researcher: "don't drive synergy and phantom observations into the findings"). The faces in the table stand as stated by the verses.
 
 ### L.2 The other words
 
@@ -257,7 +257,7 @@ So the **cluster tag hides the most telling face of the central word.**
 
 | id | what | why |
 |---|---|---|
-| AN-H1 | **The spirit/heart division of labour**: spirit for the rising and ruling of anger, heart for its keeping (U1 §38 point 2) | **Researcher (2026-09-28, verbatim): "yes it may impact Batch A - but not in the way you portrayed it."** The clarification never came (U1 §X). Not woven until it does. The verses themselves (Pro 16:32; Ecc 7:9; Job 36:13) are woven, **without** the division as a claim |
+| AN-H1 | ~~**The spirit/heart division of labour**~~ **WITHDRAWN 2026-10-01.** Researcher, verbatim: *"you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself."* The verses stay woven as verses; the division is not a finding.: spirit for the rising and ruling of anger, heart for its keeping (U1 §38 point 2) | **Researcher (2026-09-28, verbatim): "yes it may impact Batch A - but not in the way you portrayed it."** The clarification never came (U1 §X). Not woven until it does. The verses themselves (Pro 16:32; Ecc 7:9; Job 36:13) are woven, **without** the division as a claim |
 | AN-H2 | The unruled points of U1 §X and U2 §X: the Batch A §2.4 refinement (Judg 14:19; 1Sa 11:13); Act 7:54 "hearts" folded into "enraged" (tagging); the pilot's third and fourth rows ("the heart that turns"; "the heart that does not take it in"); revisit notes to U1 §12, §13, §25, §34; Rom 13:5 as a conscience seat; the context seat Eze 21:15 | Status quo, by ruling (2026-09-30). **The verses are woven as verses.** The proposed classifications are not used as findings |
 | AN-H3 | The fuller "hand of the Lord" pass | Signposted for the hands strand (#1893) |
 | AN-H4 | B5 verses still open (2Ki 3:27) | Bearer not given (U1 §18). Recorded, not interpreted |

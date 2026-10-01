@@ -1,6 +1,6 @@
 # 10.3 Remembering and forgetting
 
-I did not set out to write about memory. It kept turning up: first beside thinking, then beside feeling, and above all beside anger. The more I read, the more it seemed that what a person remembers, and what they let go of, governs much of what happens inside them. So it has its own place here.
+I did not set out to write about memory. It kept turning up: first beside thinking, then beside feeling, and above all beside anger. So it has its own place here.
 
 The heart is where things are kept (Chapter 3). "I have stored up your word in my heart, that I might not sin against you" (Psalm 119:11). Mary "treasured up all these things, pondering them in her heart" (Luke 2:19). This section is about what keeping and losing *do*.
 
@@ -34,7 +34,7 @@ Remembering also rescues. The psalmist fears that God's anger has shut him out: 
 
 ## Remembering in shame
 
-There is a remembering that comes after mercy and hurts. "That you may remember and be confounded, and never open your mouth again because of your shame, when I atone for you" (Ezekiel 16:63). "There you shall remember your ways … and you shall loathe yourselves" (Ezekiel 20:43). I read this as a remembering that does not lead back into sin, because it comes after God has atoned. It closes the mouth that once boasted.
+There is a remembering that comes after mercy and hurts. "That you may remember and be confounded, and never open your mouth again because of your shame, when I atone for you" (Ezekiel 16:63). "There you shall remember your ways … and you shall loathe yourselves" (Ezekiel 20:43).
 
 ## God remembers
 
@@ -49,8 +49,6 @@ God remembers too, and his remembering changes things.
 ## When remembering changes character
 
 Remembering is not good or bad in itself. It bows the soul down, and it gives hope (Lamentations 3:20–21). It keeps a grievance alive, or it cures the claim to be righteous (Deuteronomy 9:4–7). God's remembering is pity for the frame, or judgment on Babylon. Forgetting is how anger ends between brothers (Genesis 27:45), and how a people loses God (Deuteronomy 32:18).
-
-What decides seems to be **what** is remembered, **toward whom**, and **what it leads to**. Remembering God's deeds turns the heart toward him. Remembering one's own provocation humbles. Remembering a wrong keeps the anger going. Chapter 11 (§4) sets this beside the other activities.
 
 I expect this section to grow. Memory is part of many strands I have not yet read.
 

@@ -243,7 +243,7 @@ Use this when the file accompanies a cluster's analysis. "Sense-level" means tha
   - "The godless in heart cherish anger" (Job 36:13)
   - "the mind [heart] of the king of Syria was greatly troubled [*sāʿar*, storm]" (2Ki 6:11)
 - **Spirit and bosom in sequence:** "Be not quick in your spirit to become angry, for anger lodges in the heart [bosom] of fools" (Ecc 7:9) [H/T].
-  - [Claude reading] Anger *rises* in the spirit and *lodges* in the bosom: two stages, two seats.
+  - ~~[Claude reading] Anger *rises* in the spirit and *lodges* in the bosom: two stages, two seats.~~ **Withdrawn 2026-10-01** (answers #1888 point 2). Researcher, verbatim: *"you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself."* The verse names spirit and bosom side by side; it does not set out stages or a division between seats.
 - **Spirit as temper:**
   - "slow to anger" // "rules his spirit" (Pro 16:32) [H]; "hasty temper" (Pro 14:29) [T]
   - "their anger [rûaḥ] against him subsided" (Judg 8:3) [T]

@@ -31,7 +31,7 @@ One pattern surprised me more than any other. In story after story, **a heart ma
 - Nabal: "Nabal's heart was merry within him, for he was very drunk". The next morning, "his heart died within him" (1 Samuel 25:36–37).
 - Haman leaves Esther's banquet "joyful and glad of heart", sees Mordecai, and builds a gallows (Esther 5:9–14). Between the glad heart and the gallows comes anger: "he was filled with wrath against Mordecai" (5:9), and "all this is worth nothing to me, so long as I see Mordecai the Jew sitting at the king's gate" (5:13).
 
-The same threshold is reached by other roads. Uzziah's heart was lifted by strength, not wine: "when he was strong, he grew proud". When the priests withstood him, "Uzziah was angry" (2 Chronicles 26:16, 19). A lifted heart, checked, turns to anger.
+The same threshold is reached by other roads. Uzziah's heart was lifted by strength, not wine: "when he was strong, he grew proud". When the priests withstood him, "Uzziah was angry" (2 Chronicles 26:16, 19).
 
 A merry heart lowers its guard, and whatever comes in at that moment decides the outcome: murder, anger, catastrophe, outrage, redemption, a dead heart, a gallows. The rich fool is the same pattern in miniature: "Soul … relax, eat, drink, be merry". The next line: "Fool! This night your soul is required of you" (Luke 12:19–20).
 
@@ -84,13 +84,13 @@ Again and again I found a single word for an inner state that is good in one pla
 - **Denouncing.** "How can I curse whom God has not cursed?" (Numbers 23:8). But "Whoever says to the wicked, 'You are in the right,' will be cursed by peoples, abhorred by nations" (Proverbs 24:24). The word is empty when it goes against God's verdict, and it lands when it follows justice.
 - **A creed.** "Slow to anger" is used in worship, in pleading, in confession, in Jonah's complaint, in praise, in wonder, in announcing judgment, and as the ground for returning (Chapter 10.9).
 - **Mourning.** Aaron is forbidden to mourn "lest … wrath come" (Leviticus 10:6). When the wrath has come, mourning is commanded (Jeremiah 4:8).
-- **God's hand.** The "mighty hand" brought Israel out (Deuteronomy 6:21) and later fought "against you … in anger" (Jeremiah 21:5). The hand is the same. Where the person stands has changed.
+- **God's hand.** The "mighty hand" brought Israel out (Deuteronomy 6:21) and later fought "against you … in anger" (Jeremiah 21:5).
 - **Remembering.** It bows the soul down and it gives hope, in two consecutive verses (Lamentations 3:20–21; Chapter 10.3).
 - **The bed.** It is the same place, but what happens there goes either way. "He plots trouble while on his bed" (Psalm 36:4). "I remember you upon my bed, and meditate on you in the watches of the night" (Psalm 63:6).
 
 ### What changes the character
 
-I have come to think this is one of the most important things Scripture shows about the inner life. A word, or an activity, does not carry its value inside itself. The same act changes character with its circumstances. When I set the cases side by side, the verses themselves point to what makes the difference. I give these as what I have found so far, not as a fixed list.
+A word, or an activity, does not carry its value inside itself. The same act changes character with its circumstances. When I set the cases side by side, the verses themselves point to what makes the difference. I give these as what I have found so far, not as a fixed list.
 
 - **Which way it faces.** For someone or against them. "Discretion will watch over you" (Proverbs 2:11). "All their thoughts are against me for evil" (Psalm 56:5). But "against" alone does not decide it. God's plan against a nation is open to its turning: "if that nation … turns from its evil, I will relent" (Jeremiah 18:8). What decides is what the act is *for*.
 - **The company it keeps.** Discretion keeps company with knowledge and prudence (Proverbs 1:4; 8:12), the evil device with arrogance and pride (Psalm 10:2, 4) and a quick temper (Proverbs 14:17). Plans are established by counsel (Proverbs 20:18) and by being committed to the Lord (16:3). Whispering together makes a plot (Psalm 41:7).
@@ -101,11 +101,10 @@ I have come to think this is one of the most important things Scripture shows ab
 - **How long it lasts.** For anger, time is part of what it is. It is to end before sunset (Ephesians 4:26). It turns away as a brother forgets (Genesis 27:45). God's is "but for a moment" (Psalm 30:5). Edom "kept his wrath forever" (Amos 1:11).
 - **Whether it is seen truly.** Anger kindled by a lie still acts (Genesis 39:19). The heavy hand of God, felt from fear, is misread (Matthew 25:24–25).
 - **The answer it meets.** "A soft answer turns away wrath, but a harsh word stirs up anger" (Proverbs 15:1). A question, or a new way of seeing, does more than a rebuke (Genesis 4:6; 45:8; Luke 15:32).
-- **Where the person stands.** The same hand is deliverance or terror (Deuteronomy 6:21; Jeremiah 21:5).
 - **Haste or a pause.** "Everyone who is hasty comes only to poverty" (Proverbs 21:5). "Be not quick in your spirit to become angry" (Ecclesiastes 7:9). "The heart of the righteous ponders how to answer" (15:28).
-- **Where it happens.** The place shows what is in the heart more than it decides it. The bed holds plotting and prayer (Psalm 36:4; 63:6). But one place does change what thinking can see: "until I went into the sanctuary of God; then I discerned their end" (Psalm 73:17).
+- **Where it happens.** The bed holds plotting and prayer (Psalm 36:4; 63:6). But one place does change what thinking can see: "until I went into the sanctuary of God; then I discerned their end" (Psalm 73:17).
 - **Whether it is brought before God.** Many cares, met by his consolations (Psalm 94:19). Thoughts offered to be searched (Psalm 139:23). Thoughts taken "captive to obey Christ" (2 Corinthians 10:5).
-- **What comes back.** What is devised returns on the deviser (Esther 9:25; Micah 2:1–3), and the diligent plan returns as abundance (Proverbs 21:5). What comes back shows what the act was.
+- **What comes back.** What is devised returns on the deviser (Esther 9:25; Micah 2:1–3), and the diligent plan returns as abundance (Proverbs 21:5).
 - **The story around it.** A single verse rarely settles which face a word wears. Jeremiah 18:8–18 does, and so does Genesis 50:20.
 
 I find this freeing. Scripture does not hand me a list of good feelings and bad feelings, or good thoughts and bad thoughts. It asks me which way my heart is set, what I keep company with, and whether I bring what is in me before God. Each new part of the inner life I read adds to this list, and I expect it to grow.

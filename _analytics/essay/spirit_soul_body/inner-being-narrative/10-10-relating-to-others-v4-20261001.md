@@ -31,10 +31,10 @@ Much of what Scripture says about anger is about anger between people.
 - **One person's sin can bring trouble on many.** David, under the plague, asks to bear it alone: "these sheep, what have they done? Please let your hand be against me and against my father's house" (2 Samuel 24:17).
 - **Vengeance is left to God.** "Never avenge yourselves, but leave it to the wrath of God … if your enemy is hungry, feed him" (Romans 12:19–20).
 
-The answer Scripture most often gives to human anger is not a rebuke but a question, or a new way of seeing.
+Several times Scripture answers human anger not with a rebuke but with a question, or a new way of seeing.
 - Joseph to his brothers: "it was not you who sent me here, but God" (Genesis 45:8).
-- The father to his angry elder son: "this your brother was dead, and is alive" (Luke 15:32). The son had said "this son of yours" (15:30). The father gives the brother back to him.
-- Jesus to the disciples, indignant at two of their number: "whoever would be great among you must be your servant" (Matthew 20:26). He does not rebuke their anger. He changes what greatness is, so that the rise they resented no longer counts.
+- The father to his angry elder son: "this your brother was dead, and is alive" (Luke 15:32). The son had said "this son of yours" (15:30).
+- Jesus to the disciples, indignant at two of their number: "whoever would be great among you must be your servant" (Matthew 20:26).
 
 Twice the text ends before the angry one answers: Jonah, and the elder brother.
 

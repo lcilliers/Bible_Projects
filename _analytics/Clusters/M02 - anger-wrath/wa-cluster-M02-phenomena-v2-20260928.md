@@ -1126,7 +1126,7 @@ All these sequences are **inside single passages**.
    - In **narrative** the angry person's own seat is rare: 2Ki 6:11, Est 5:9 (before the anger), Act 7:54 (hidden by the translation), Act 17:16, and the prophet's Eze 3:14.
    - In **wisdom and teaching** it is frequent: Job 36:13; Pro 6:14; 14:29; 16:32; 19:3; Ecc 7:9; and Qoheleth's vexed heart (Ecc 2:23; 7:3; 11:10).
    - **Narrative shows anger by its act. Wisdom locates it in the heart or spirit, so that it can be governed or judged.** This refines v1's point 1: Job 36:13 is not a lone exception, but the head of the wisdom pattern.
-2. **Where anger is governed, the seat is the *ruach*.** "Rules his spirit" (Pro 16:32), "short of spirit" (14:29), "quick in your spirit" (Ecc 7:9), and in context "a cool spirit" (Pro 17:27) and "patient in spirit" (Ecc 7:8). **Where anger is kept or devised, the seat is the *lev*:** "cherish" (Job 36:13), "lodges" (Ecc 7:9, bosom), "devises … discord" (Pro 6:14), "rages against the Lord" (Pro 19:3). **Spirit for the rising and ruling, heart for the keeping.** A v3 §2.1 read Ecc 7:9 as "two stages, two seats". The wider set extends that.
+2. **Where anger is governed, the seat is the *ruach*.** "Rules his spirit" (Pro 16:32), "short of spirit" (14:29), "quick in your spirit" (Ecc 7:9), and in context "a cool spirit" (Pro 17:27) and "patient in spirit" (Ecc 7:8). **Where anger is kept or devised, the seat is the *lev*:** "cherish" (Job 36:13), "lodges" (Ecc 7:9, bosom), "devises … discord" (Pro 6:14), "rages against the Lord" (Pro 19:3). ~~**Spirit for the rising and ruling, heart for the keeping.** A v3 §2.1 read Ecc 7:9 as "two stages, two seats". The wider set extends that.~~ **Withdrawn 2026-10-01 by researcher ruling** (imputed meaning, not supported by the verses; see §X). The verse list above stands as a list.
 3. **In the narratives, the seat is still most often named by someone else** (v1 point 2 stands), and part 2 adds **Jesus's anger, where the seat named is the opponents' hardened heart** (Mar 3:5). **The one who is angry in the right way has no seat named; the one who provokes it does.**
 4. **The seat of the contrast figure** (v1 point 3) gains:
    - "His heart is steady" (Psa 112:8) against the wicked's melting anger
@@ -1258,7 +1258,7 @@ All these sequences are **inside single passages**.
 
 - **Unit 1 is approved** (#1888). **Unit 2 is also complete and approved** (#1898, 2026-09-30), in the separate document `wa-cluster-M02-unit2-phenomena-v3-20260929.md`.
 - **Still unruled, with no escalation holding them:**
-  - **Batch A:** the researcher said "may impact Batch A - but not in the way you portrayed it". The clarification never came, so no Batch A revisit note is written.
+  - **Batch A:** ~~the clarification never came~~ **Answered 2026-10-01:** *"you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself."* The §38 point 2 "division of labour" and Batch A §2.1's "two stages, two seats" are **withdrawn** (Batch A revisit note written).
   - **Batch A v3 §2.4 refinement** (Judg 14:19, 1Sa 11:13): whether it becomes a revisit note.
   - **Act 7:54:** whether the DB tagging (M47 on the "enraged" token) needs a note.
   - **Revisit notes proposed from unit 2** for §12, §13, §25 and §34 (listed in the unit-2 document's §X). **This document has not been edited for them.**

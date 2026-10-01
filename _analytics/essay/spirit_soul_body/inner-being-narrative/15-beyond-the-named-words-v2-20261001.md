@@ -15,9 +15,7 @@ The answer is: not often. Only about one verse in ten that speaks of an inner st
 - **Something from outside reaches in.** "You hid your face; I was dismayed" (Psalm 30:7). "Fathers, do not provoke your children, lest they become discouraged" (Colossians 3:21).
 - **The inner state is changed from outside.** "A soft answer turns away wrath" (Proverbs 15:1). "Do not let the sun go down on your anger" (Ephesians 4:26). Anxiety is handed over in prayer, and then "the peace of God … will guard your hearts and your minds" (Philippians 4:6–7).
 
-Anger shows all of these ways together. In the stories it is mostly shown by what it does: jailing, striking, breaking the tablets. In the wisdom books it is placed in the heart or the spirit, where it can be ruled or judged ("anger lodges in the heart of fools", Ecclesiastes 7:9). I read this as two ways of seeing the same thing: the story shows anger acting, and wisdom shows where it can be governed.
-
-And often the inner word is named not for the angry person but for someone else. When Jesus is angry, the heart named is his opponents': "grieved at their hardness of heart" (Mark 3:5). While their enemies rage, the builders "had a mind to work" (Nehemiah 4:6). Beside the council's fury, Stephen is "full of the Holy Spirit" (Acts 7:55).
+Sometimes the inner word in the verse belongs not to the angry person but to someone else. When Jesus is angry, the heart named is his opponents': "grieved at their hardness of heart" (Mark 3:5). While their enemies rage, the builders "had a mind to work" (Nehemiah 4:6). Beside the council's fury, Stephen is "full of the Holy Spirit" (Acts 7:55).
 
 This opens a much wider field than the one I have been walking in. The inner being is a web of activity: one inner movement leads to another inside a person, crosses outward into face, act and word, and is reached and changed from outside by other people, by circumstance and by God. The heart, soul and spirit are important places in that web, but they are not the whole of it.
 

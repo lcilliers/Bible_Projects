@@ -221,6 +221,28 @@ Ledger: `_analytics/Clusters/M02 - anger-wrath/anger-strand-observation-ledger-v
 
 **Pass 2, no change:** Ch 3 (references renumbered only). Ch 2, 4 and 8 were **scanned** (not re-read in full) for anger, vexation and memory passages. Their Hannah passages (Ch 2 §"one inner person"; Ch 4 "where bitterness lives") stand; her vexation (1Sa 1:6, 16) is carried in 10.1. Ch 8's "the spirit is … provoked" stands.
 
+## Correction — imputed readings removed (2026-10-01)
+
+**Researcher, verbatim:** *"you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself."*
+
+**Withdrawn:** the spirit/heart "division of labour" for anger (anger ledger AN-H1; M02 U1 §38 point 2; Batch A §2.1 "two stages, two seats").
+
+**Removed in place from the chapters (34 edits, all from the #1919/#1920 weaves).** Narrator readings that joined verses into a pattern or claim no verse states, or that used an uncounted superlative:
+- **Ch 9:** *ʾaph* "anger is not a separate part … what happens in the place of breath"
+- **10.0:** "closer to a circle than a line"; Nehemiah's "just charge, not a weapon"
+- **10.4:** "one gift with three directions"; "the clearest single picture …", restated as what Jer 18:11–12 says; "what comes back shows what the thought was"; "inside becomes a quarrel once shared"; "not proved true by arriving in the dark"
+- **11 §2/§4:** "lifted heart, checked, turns to anger"; "one of the most important things"; "the place reveals more than decides"; "what comes back shows what the act was"; "the hand is the same; where the person stands has changed" (and that factor)
+- **10.3:** "memory governs much of what happens inside"; "a remembering that does not lead back into sin"; "what decides seems to be …"
+- **10.1:** "the feeling Scripture traces most fully"; "one family shows both courses"
+- **13:** "not hardness … the end of a long refusal"; "every inner activity is in play"; "the hand does not change", restated as "the same words for the hand are used in both directions"
+- **15:** the genre reading, "two ways of seeing the same thing"
+- **10.5:** "the voice of one who protects his own"
+- **Ch 7:** "kept on purpose"; "cherished anger shuts out the cry"
+- **10.10:** "most often"; "so that the rise … no longer counts"; "the father gives the brother back"
+- **10.9:** "the very thing that is the opposite of anger"; "its character changes with the one who uses it"; "the same words delight … and fill"
+
+**Not yet audited:** narrator readings from earlier passes (#1912–#1918), e.g. 10.5 "by the time it reaches the tongue, the thought is already an act", 10.4 "I read this as saying that the bent of my thinking is itself something formed", Ch 4 "the soul is kept by being turned away from itself". They are listed for a review pass, not changed here.
+
 ---
 
 ## Tally

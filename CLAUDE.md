@@ -118,6 +118,8 @@
 > - The new **Ch 13 "Under God's anger"** sits between "goes wrong" and "made new". The old Ch 13 is now **14**, and the old 14 is now **15**.
 > - Ch 11 §4, "What changes the character", is the cross-cutting account that every strand adds to.
 >
+> **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** "you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself." No joining of verses into patterns, mechanisms or divisions that no verse states, in findings, ledgers or narrative. Quote, and stop.
+>
 > These narrative drafts are written **on the researcher's specific instruction**. They are files,
 > not the DB prose store (the prose rule above is unchanged).
 >

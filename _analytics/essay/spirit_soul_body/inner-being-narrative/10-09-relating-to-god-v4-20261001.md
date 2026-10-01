@@ -21,7 +21,7 @@ Relating to God engages the whole inner being, and Scripture says so by formula:
 
 People are angry *at* God, and Scripture records it without hiding it.
 - **At his striking.** "David was angry because the Lord had broken out against Uzzah" (2 Samuel 6:8). Then "David was afraid of the Lord that day" (6:9).
-- **At his mercy.** When God spared Nineveh, "it displeased Jonah exceedingly, and he was angry" (Jonah 4:1). Jonah quotes God's own name against him: "I knew that you are a gracious God and merciful, slow to anger and abounding in steadfast love" (4:2). His anger is at the very thing that is the opposite of anger.
+- **At his mercy.** When God spared Nineveh, "it displeased Jonah exceedingly, and he was angry" (Jonah 4:1). Jonah quotes God's own name against him: "I knew that you are a gracious God and merciful, slow to anger and abounding in steadfast love" (4:2).
 - **At one's own ruin, misdirected.** "When a man's folly brings his way to ruin, his heart rages against the Lord" (Proverbs 19:3).
 
 God answers with a question. "Do you do well to be angry?" (Jonah 4:4), as he had asked Cain, "Why are you angry?" (Genesis 4:6). The book of Jonah ends on God's question, and Jonah's answer is not given.
@@ -34,9 +34,9 @@ Human anger can also stand in some relation to God's own. Scripture shows four.
 - **Going beyond him.** To Israel's army: "because the Lord … was angry with Judah, he gave them into your hand, but you have killed them in a rage that has reached up to heaven" (2 Chronicles 28:9). The rage became their own guilt, and the captives were clothed, fed and carried home (28:15).
 - **Taken up and used.** "Surely the wrath of man shall praise you" (Psalm 76:10).
 
-And there are those who carry God's anger inside them as his messengers. In them it does not come out as violence. It comes out as suffering. "I am full of the wrath of the Lord; I am weary of holding it in" (Jeremiah 6:11). "Your words were found, and I ate them, and your words became to me a joy and the delight of my heart … I sat alone, because your hand was upon me, for you had filled me with indignation" (Jeremiah 15:16–17). Ezekiel "went in bitterness in the heat of my spirit", and then sat "overwhelmed among them seven days" (Ezekiel 3:14–15). The same words delight the prophet's heart and fill him with indignation.
+And there are those who carry God's anger inside them as his messengers. In them it does not come out as violence. It comes out as suffering. "I am full of the wrath of the Lord; I am weary of holding it in" (Jeremiah 6:11). "Your words were found, and I ate them, and your words became to me a joy and the delight of my heart … I sat alone, because your hand was upon me, for you had filled me with indignation" (Jeremiah 15:16–17). Ezekiel "went in bitterness in the heat of my spirit", and then sat "overwhelmed among them seven days" (Ezekiel 3:14–15).
 
-The same creed is used many ways. God names himself "slow to anger" (Exodus 34:6). Moses bows down and worships (34:8), then pleads it back (Numbers 14:18). The Levites recite it in confession (Nehemiah 9:17). Jonah complains with it (Jonah 4:2). The psalmist praises with it (Psalm 145:8). Micah wonders at it: "Who is a God like you …? He does not retain his anger forever, because he delights in steadfast love" (Micah 7:18). Nahum uses it to announce judgment (Nahum 1:3). Joel makes it the ground of returning (Joel 2:13). One name, and its character changes with the one who uses it.
+The same creed is used many ways. God names himself "slow to anger" (Exodus 34:6). Moses bows down and worships (34:8), then pleads it back (Numbers 14:18). The Levites recite it in confession (Nehemiah 9:17). Jonah complains with it (Jonah 4:2). The psalmist praises with it (Psalm 145:8). Micah wonders at it: "Who is a God like you …? He does not retain his anger forever, because he delights in steadfast love" (Micah 7:18). Nahum uses it to announce judgment (Nahum 1:3). Joel makes it the ground of returning (Joel 2:13). One name, used in many ways.
 
 How a person lives under God's own anger (pleading, bearing, lamenting, turning) is the subject of Chapter 13.
 

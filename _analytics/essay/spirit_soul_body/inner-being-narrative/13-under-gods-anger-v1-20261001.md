@@ -118,9 +118,9 @@ People under God's anger often speak of his hand as heavy. "Day and night your h
 
 First, the texts often correct the feeling from inside. The psalmist's heavy hand came while he kept silent about his sin, and it lifted when he confessed: "I acknowledged my sin to you … and you forgave" (Psalm 32:5). The poet who felt the heavy chains is the one who says God "does not afflict from his heart" (Lamentations 3:33). The servant who said "I knew you to be a hard man" also says "so I was afraid" (Matthew 25:24–25), and the master does not accept it.
 
-Second, the hand itself does not change. What changes is where a person stands before it. The "mighty hand" brought Israel out of Egypt (Deuteronomy 6:21). Later God says to Israel, "I myself will fight against you with outstretched hand and strong arm, in anger and in fury" (Jeremiah 21:5).
+Second, the same words for the hand are used in both directions. The "mighty hand" brought Israel out of Egypt (Deuteronomy 6:21). Later God says to Israel, "I myself will fight against you with outstretched hand and strong arm, in anger and in fury" (Jeremiah 21:5).
 
-I have found no text in which God's own heart is hardened. The one place where his inner self turns away from a people is this: "Though Moses and Samuel stood before me, yet my heart would not turn toward this people" (Jeremiah 15:1). Even there, it is not hardness. It is the end of a long refusal on their side.
+I have found no text in which God's own heart is hardened. The one place where his inner self turns away from a people is this: "Though Moses and Samuel stood before me, yet my heart would not turn toward this people" (Jeremiah 15:1).
 
 ## Delivered from the wrath to come
 
@@ -136,7 +136,7 @@ At the very end, those who have come through sing. They "sing the song of Moses 
 
 ## What I take from this
 
-I had thought of God's anger as something that happens *to* people. Reading the verses for the human side, I find that it is also something people live *in relation to*: provoking, pleading, reading, bearing, turning, hiding, waiting and, at the last, singing. Every inner activity in Chapter 10 is in play here. People feel, remember, think, speak, choose and relate, all before an angry God whose heart, Scripture insists, does not afflict willingly.
+I had thought of God's anger as something that happens *to* people. Reading the verses for the human side, I find that it is also something people live *in relation to*: provoking, pleading, reading, bearing, turning, hiding, waiting and, at the last, singing.
 
 Two books end on an unanswered question. Lamentations ends with "unless you have utterly rejected us" (5:22). Jonah ends with God asking, "should not I pity Nineveh?" (Jonah 4:11). I leave them open, as Scripture does.
 

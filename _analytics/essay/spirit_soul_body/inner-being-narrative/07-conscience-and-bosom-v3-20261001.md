@@ -37,4 +37,4 @@ It is also where a person holds what they feel, above all what they would be bet
 
 And in grief it is where life drains away: children faint in the streets "as their life is poured out on their mothers' bosom" (Lamentations 2:12).
 
-I find it telling that the same place holds both loved ones and grievances. What a person carries close is either someone they cherish or something that poisons them. Anger "lodges" there, as a guest that has been let in and allowed to stay. Job adds that it can be kept on purpose: "The godless in heart cherish anger; they do not cry for help when he binds them" (Job 36:13). Cherished anger shuts out the cry for help. How long anger stays, and what ends it, is followed in Chapters 10.1 and 10.3.
+I find it telling that the same place holds both loved ones and grievances. What a person carries close is either someone they cherish or something that poisons them. Anger "lodges" there, as a guest that has been let in and allowed to stay. Job adds: "The godless in heart cherish anger; they do not cry for help when he binds them" (Job 36:13). How long anger stays, and what ends it, is followed in Chapters 10.1 and 10.3.

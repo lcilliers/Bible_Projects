@@ -40,7 +40,7 @@ The path above begins with a thought. Scripture also traces one that begins with
 
 Esau's path is the same. He "hated Jacob because of the blessing", then "said to himself … 'then I will kill my brother Jacob'" (Genesis 27:41), and the plan kept the anger warm: he "comforts himself about you by planning to kill you" (27:42).
 
-This path can be broken, and Scripture shows where. God speaks to Cain at the second step: "Why are you angry …? … sin is crouching at the door. Its desire is for you, and you must rule over it" (Genesis 4:6–7). Nehemiah, very angry, stops at the third: "I took counsel with myself, and I brought charges against the nobles" (Nehemiah 5:7). His anger reached his hand as a just charge, not a weapon. And for Esau, time and forgetting broke it: "Esau ran to meet him and embraced him" (Genesis 33:4).
+This path can be broken, and Scripture shows where. God speaks to Cain at the second step: "Why are you angry …? … sin is crouching at the door. Its desire is for you, and you must rule over it" (Genesis 4:6–7). Nehemiah, very angry, stops at the third: "I took counsel with myself, and I brought charges against the nobles" (Nehemiah 5:7). And for Esau, time and forgetting broke it: "Esau ran to meet him and embraced him" (Genesis 33:4).
 
 ## The path runs back
 
@@ -50,8 +50,6 @@ The path does not end at the deed. What was devised comes back to the one who de
 - "Woe to those who devise wickedness and work evil on their beds!" (Micah 2:1). And two verses later, "behold, against this family I am devising disaster" (2:3). The deviser meets the same verb coming back, with God as its subject.
 - Anger poured out comes back. "Woe to him who makes his neighbors drink — you pour out your wrath and make them drunk … The cup in the Lord's right hand will come around to you" (Habakkuk 2:15–16). Provoking God harms the provoker: "Is it not themselves, to their own shame?" (Jeremiah 7:19).
 - It comes back for good too: "The plans of the diligent lead surely to abundance" (Proverbs 21:5). "Commit your work to the Lord, and your plans will be established" (Proverbs 16:3).
-
-So the path is closer to a circle than a line. What goes out from the heart returns to the one it came from.
 
 ## Where I am answerable
 

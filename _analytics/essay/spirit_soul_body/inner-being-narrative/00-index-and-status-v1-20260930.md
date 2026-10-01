@@ -58,6 +58,7 @@
 - **First person, direct, plain.** No account of how the study unfolded.
 - **Quotations are ESV**, taken from verses read in the M47 files. A handful of well-known verses not quoted in those files are marked in the checks below.
 - **Claude's readings** are written as the narrator's reading ("I read this as…"). No invented certainty.
+- **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** *"you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself."* A reading may restate what a verse or passage says. It may **not** join verses into a pattern, mechanism, division of labour or "what this shows" that no verse states. It may not use "most", "clearest" or "most often" unless it has been counted. When in doubt, quote and stop. Applied to the #1919/#1920 weaves on 2026-10-01: 34 in-place removals, listed in claim register v4.
 - **Held material** sits at the foot of Chapters 12 and 13 under a clearly marked working note. It is not part of the narrative until it is checked.
 
 ## How later work updates this
