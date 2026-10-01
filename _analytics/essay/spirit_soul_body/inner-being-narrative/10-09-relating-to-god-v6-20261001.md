@@ -1,0 +1,134 @@
+# 10.9 Relating to God
+
+Relating to God engages the whole inner being, and Scripture says so by formula: "with all your heart and with all your soul". That formula governs loving God (Deuteronomy 6:5), serving him (Deuteronomy 10:12), seeking him (Deuteronomy 4:29), returning to him (Deuteronomy 30:10) and keeping covenant (2 Kings 23:3). Jesus adds the mind to it: "You shall love the Lord your God with all your heart and with all your soul and with all your mind" (Matthew 22:37). The thinking self is named as part of what is given to God in love.
+
+- **Prayer lives in the heart.** It can be complete there without a voice (1 Samuel 1:13). "Pour out your heart like water before the presence of the Lord" (Lamentations 2:19). "With my whole heart I cry; answer me, O Lord!" (Psalm 119:145).
+- **God speaks to the heart.** To comfort someone, in Hebrew, is to *speak to their heart*. Joseph "comforted them and spoke kindly to them" (Genesis 50:21), literally to their hearts. God says of his people, "I will allure her, and bring her into the wilderness, and speak tenderly to her" (Hosea 2:14), again to her heart. "Speak tenderly to Jerusalem" (Isaiah 40:2).
+- **God tests the heart.** "The Lord tests hearts" (Proverbs 17:3). And he forgives according to what he knows there: "render to each whose heart you know, according to all his ways, for you, you only, know the hearts of all the children of mankind" (1 Kings 8:39).
+- **The soul is the self in address.** It is told to bless, to hope and to rest (Chapter 4).
+- **The human spirit worships.** "God is spirit, and those who worship him must worship in spirit and truth" (John 4:24). "My spirit rejoices in God my Savior" (Luke 1:47). Paul serves God "with my spirit" (Romans 1:9). At death the spirit is what is committed into God's hands.
+- **God's Spirit prays within.** "God has sent the Spirit of his Son into our hearts, crying, 'Abba! Father!'" (Galatians 4:6). The Spirit "intercedes for us with groanings too deep for words. And he who searches hearts knows what is the mind of the Spirit" (Romans 8:26–27). The cry to God rises from inside the heart, and it is God's own Spirit crying.
+- **God knows the leaning before the deed.** "I know what they are inclined to do even today" (Deuteronomy 31:21). "The Lord searches all hearts and understands every plan and thought" (1 Chronicles 28:9).
+- **God reveals in the night.** "There is a God in heaven who reveals mysteries … Your dream and the visions of your head as you lay in bed are these" (Daniel 2:28).
+- **God reckons, and faith reckons.** God counted Abraham's faith "to him as righteousness" (Genesis 15:6). "Blessed is the man against whom the Lord will not count his sin" (Romans 4:8). Abraham, for his part, "considered that God was able even to raise him from the dead" (Hebrews 11:19).
+- **His plans against are open to turning.** "It may be they will listen, and every one turn from his evil way, that I may relent of the disaster that I intend to do to them because of their evil deeds" (Jeremiah 26:3).
+- **Thinking done in his presence sees differently.** "When I thought how to understand this, it seemed to me a wearisome task, until I went into the sanctuary of God; then I discerned their end" (Psalm 73:16–17).
+- **God cannot be likened.** "To whom then will you liken God, or what likeness compare with him?" (Isaiah 40:18). And God rebukes those who thought him "one like yourself" (Psalm 50:21).
+- **The heart meditates on him.** "On his law he meditates day and night" (Psalm 1:2). "I remember you upon my bed, and meditate on you in the watches of the night" (Psalm 63:6).
+- **And he thinks of me.** "What is man that you regard him, or the son of man that you think of him?" (Psalm 144:3). "I am poor and needy, but the Lord takes thought for me" (Psalm 40:17). And his thoughts are precious to the one he knows: "How precious to me are your thoughts, O God! How vast is the sum of them!" (Psalm 139:17).
+
+## Anger toward God, and before God
+
+People are angry *at* God, and Scripture records it without hiding it.
+- **At his striking.** "David was angry because the Lord had broken out against Uzzah" (2 Samuel 6:8). Then "David was afraid of the Lord that day" (6:9).
+- **At his mercy.** When God spared Nineveh, "it displeased Jonah exceedingly, and he was angry" (Jonah 4:1). Jonah quotes God's own name against him: "I knew that you are a gracious God and merciful, slow to anger and abounding in steadfast love" (4:2).
+- **At one's own ruin, misdirected.** "When a man's folly brings his way to ruin, his heart rages against the Lord" (Proverbs 19:3).
+
+God answers with a question. "Do you do well to be angry?" (Jonah 4:4), as he had asked Cain, "Why are you angry?" (Genesis 4:6). The book of Jonah ends on God's question, and Jonah's answer is not given.
+
+Anger can also be brought to God instead of acted out. "Be still before the Lord and wait patiently for him; fret not yourself over the one who prospers in his way" (Psalm 37:7). "Be angry, and do not sin; ponder in your own hearts on your beds, and be silent" (Psalm 4:4). Paul, angry at the idols of Athens, "reasoned in the synagogue" (Acts 17:16–17).
+
+Human anger can also stand in some relation to God's own. Scripture shows four.
+- **Given with his Spirit.** "The Spirit of God rushed upon Saul when he heard these words, and his anger was greatly kindled" (1 Samuel 11:6). It ended that same day in mercy: "Not a man shall be put to death this day, for today the Lord has worked salvation in Israel" (11:13).
+- **Sharing his jealousy.** Phinehas "has turned back my wrath from the people of Israel, in that he was jealous with my jealousy among them" (Numbers 25:11).
+- **Going beyond him.** To Israel's army: "because the Lord … was angry with Judah, he gave them into your hand, but you have killed them in a rage that has reached up to heaven" (2 Chronicles 28:9). The rage became their own guilt, and the captives were clothed, fed and carried home (28:15).
+- **Taken up and used.** "Surely the wrath of man shall praise you" (Psalm 76:10).
+
+And there are those who carry God's anger inside them as his messengers. In them it does not come out as violence. It comes out as suffering. "I am full of the wrath of the Lord; I am weary of holding it in" (Jeremiah 6:11). "Your words were found, and I ate them, and your words became to me a joy and the delight of my heart … I sat alone, because your hand was upon me, for you had filled me with indignation" (Jeremiah 15:16–17). Ezekiel "went in bitterness in the heat of my spirit", and then sat "overwhelmed among them seven days" (Ezekiel 3:14–15).
+
+The same creed is used many ways. God names himself "slow to anger" (Exodus 34:6). Moses bows down and worships (34:8), then pleads it back (Numbers 14:18). The Levites recite it in confession (Nehemiah 9:17). Jonah complains with it (Jonah 4:2). The psalmist praises with it (Psalm 145:8). Micah wonders at it: "Who is a God like you …? He does not retain his anger forever, because he delights in steadfast love" (Micah 7:18). Nahum uses it to announce judgment (Nahum 1:3). Joel makes it the ground of returning (Joel 2:13). One name, used in many ways.
+
+How a person lives under God's own anger (pleading, bearing, lamenting, turning) is the subject of Chapter 13.
+
+## Fear before God, and the fear of God
+
+The same word names being afraid of God and fearing him as a way of life. Scripture uses it both ways.
+
+People are afraid in his presence.
+- "Moses hid his face, for he was afraid to look at God" (Exodus 3:6).
+- At the mountain: "you were afraid because of the fire, and you did not go up into the mountain" (Deuteronomy 5:5).
+- Jacob woke from his dream, "and he was afraid and said, 'How awesome is this place! This is none other than the house of God'" (Genesis 28:17).
+- At Sinai, "all the people in the camp trembled" (Exodus 19:16).
+- Job: "I am terrified at his presence; when I consider, I am in dread of him" (Job 23:15).
+- At the thunder: "At this also my heart trembles … Keep listening to the thunder of his voice" (Job 37:1–2).
+- Daniel, after the vision: "a hand touched me and set me trembling on my hands and knees", and "I stood up trembling" (Daniel 10:10–11).
+- The brothers, finding their money returned: "they turned trembling to one another, saying, 'What is this that God has done to us?'" (Genesis 42:28).
+- "The sinners in Zion are afraid; trembling has seized the godless: 'Who among us can dwell with the consuming fire?'" (Isaiah 33:14).
+- Job: "For I was in terror of calamity from God, and I could not have faced his majesty" (Job 31:23).
+
+The fear of God is also required, learned, and given.
+- **Required.** "What does the Lord your God require of you, but to fear the Lord your God, to walk in all his ways, to love him, to serve the Lord your God with all your heart and with all your soul" (Deuteronomy 10:12). "Fear God and keep his commandments" (Ecclesiastes 12:13).
+- **Learned, by hearing and reading.** The law is read aloud "that they may hear and learn to fear the Lord your God" (Deuteronomy 31:12). The king is to read it "all the days of his life, that he may learn to fear the Lord his God" (17:19).
+- **Taught without the heart.** "This people draw near with their mouth and honor me with their lips, while their hearts are far from me, and their fear of me is a commandment taught by men" (Isaiah 29:13).
+- **Longed for by God.** "Oh that they had such a heart as this always, to fear me and to keep all my commandments" (Deuteronomy 5:29).
+- **Given by God.** "I will give them one heart and one way, that they may fear me forever" (Jeremiah 32:39). "I will put the fear of me in their hearts, that they may not turn from me" (32:40).
+- **Prayed for.** "Unite my heart to fear your name" (Psalm 86:11).
+- **Trembled at his word.** "But this is the one to whom I will look: he who is humble and contrite in spirit and trembles at my word" (Isaiah 66:2). Those who tremble at it are cast out by their brothers: "you who tremble at his word: 'Your brothers who hate you and cast you out for my name's sake …'" (66:5). In Ezra's day, "all who trembled at the words of the God of Israel, because of the faithlessness of the returned exiles, gathered around me" (Ezra 9:4).
+- **Kept always.** "Blessed is the one who fears the Lord always, but whoever hardens his heart will fall into calamity" (Proverbs 28:14).
+
+It follows what God does.
+- "God has done it, so that people fear before him" (Ecclesiastes 3:14).
+- "Many will see and fear, and put their trust in the Lord" (Psalm 40:3).
+- At the Jordan: "that all the peoples of the earth may know that the hand of the Lord is mighty, that you may fear the Lord your God forever" (Joshua 4:24).
+- "But with you there is forgiveness, that you may be feared" (Psalm 130:4).
+- "Your work, O Lord, do I fear. In the midst of the years revive it" (Habakkuk 3:2).
+
+It is joined with joy and delight. "Serve the Lord with fear, and rejoice with trembling" (Psalm 2:11). Nehemiah prays for "your servants who delight to fear your name" (Nehemiah 1:11). Of the one on whom the Spirit rests: "his delight shall be in the fear of the Lord" (Isaiah 11:3). People tremble at good: "They shall fear and tremble because of all the good and all the prosperity I provide for it" (Jeremiah 33:9), in a passage that begins, "I will forgive all the guilt of their sin" (33:8).
+
+People come to him trembling.
+- "When he roars, his children shall come trembling from the west; they shall come trembling like birds from Egypt … and I will return them to their homes" (Hosea 11:10–11).
+- "They shall come in fear to the Lord and to his goodness in the latter days" (Hosea 3:5).
+- Of the nations: "they shall turn in dread to the Lord our God" (Micah 7:17).
+
+Trembling before him is called for.
+- "Worship the Lord in the splendor of holiness; tremble before him, all the earth!" (Psalm 96:9).
+- "The Lord reigns; let the peoples tremble!" (Psalm 99:1).
+- "Tremble, O earth, at the presence of the Lord" (Psalm 114:7).
+- "Let all the inhabitants of the land tremble, for the day of the Lord is coming; it is near" (Joel 2:1).
+- To the women at ease: "Tremble, you women who are at ease, shudder, you complacent ones; strip, and make yourselves bare, and tie sackcloth around your waist" (Isaiah 32:11).
+- A king decrees it: "people are to tremble and fear before the God of Daniel, for he is the living God" (Daniel 6:26).
+- God asks it as a reproach: "Do you not fear me? declares the Lord. Do you not tremble before me?" (Jeremiah 5:22).
+
+It is joined with confidence and with life. "In the fear of the Lord one has strong confidence, and his children will have a refuge. The fear of the Lord is a fountain of life" (Proverbs 14:26–27). "Is not your fear of God your confidence?" (Job 4:6). It is joined with knowing (10.2) and with turning from evil (10.8).
+
+It is tested, and questioned.
+- "Now I know that you fear God, seeing you have not withheld your son, your only son, from me" (Genesis 22:12).
+- The accuser asks, "Does Job fear God for no reason?" (Job 1:9).
+
+It can be divided. Of the people settled in Samaria: "So they feared the Lord but also served their own gods" (2 Kings 17:33). The next verse says of them, "They do not fear the Lord" (17:34). The command was single: "You shall not fear other gods, but you shall fear the Lord your God" (17:38–39).
+
+The verses also say what God does toward those who fear him.
+- "As a father shows compassion to his children, so the Lord shows compassion to those who fear him" (Psalm 103:13).
+- "The friendship of the Lord is for those who fear him" (Psalm 25:14).
+- "The angel of the Lord encamps around those who fear him, and delivers them" (Psalm 34:7).
+- "The Lord takes pleasure in those who fear him, in those who hope in his steadfast love" (Psalm 147:11).
+- "Then those who feared the Lord spoke with one another. The Lord paid attention and heard them, and a book of remembrance was written before him" (Malachi 3:16).
+
+The word is also turned round, onto God himself: he is the one to be feared. He is "the great, the mighty, and the awesome God, who is not partial and takes no bribe" (Deuteronomy 10:17). In prayer he is "the great and awesome God, who keeps covenant and steadfast love with those who love him" (Nehemiah 1:5; Daniel 9:4). His deeds are awesome (Psalm 66:3), and his name: "Holy and awesome is his name!" (Psalm 111:9). The same word is used of the human frame: "I praise you, for I am fearfully and wonderfully made" (Psalm 139:14). God is called by the word. Jacob speaks of "the God of Abraham and the Fear of Isaac" (Genesis 31:42), and "Jacob swore by the Fear of his father Isaac" (31:53). He is "a God greatly to be feared in the council of the holy ones" (Psalm 89:7).
+
+## "Fear not"
+
+God speaks to fear directly, and he gives his reason.
+- "Fear not, Abram, I am your shield; your reward shall be very great" (Genesis 15:1).
+- "Fear not, for I am with you and will bless you" (Genesis 26:24).
+- "Fear not, for I am with you; be not dismayed, for I am your God; I will strengthen you, I will help you, I will uphold you with my righteous right hand" (Isaiah 41:10).
+- "Fear not, for I have redeemed you; I have called you by name, you are mine" (Isaiah 43:1).
+- To Hagar: "Fear not, for God has heard the voice of the boy where he is" (Genesis 21:17).
+- "You shall not be in dread of them, for the Lord your God is in your midst, a great and awesome God" (Deuteronomy 7:21).
+- "Fear not, nor be afraid; have I not told you from of old and declared it? … Is there a God besides me?" (Isaiah 44:8).
+- Before a battle: "Do not fear him, for I have given him into your hand" (Numbers 21:34).
+- At Sinai, through Moses: "Do not fear, for God has come to test you, that the fear of him may be before you, that you may not sin" (Exodus 20:20).
+
+And a person says it to himself, before God.
+- "The Lord is my light and my salvation; whom shall I fear?" (Psalm 27:1).
+- "Even though I walk through the valley of the shadow of death, I will fear no evil, for you are with me" (Psalm 23:4).
+- "The Lord is on my side; I will not fear. What can man do to me?" (Psalm 118:6).
+- "In God I trust; I shall not be afraid. What can flesh do to me?" (Psalm 56:4).
+- "Behold, God is my salvation; I will trust, and will not be afraid" (Isaiah 12:2).
+
+Terror is spoken to as well. "You will not fear the terror of the night, nor the arrow that flies by day" (Psalm 91:5). "Do not be afraid of sudden terror" (Proverbs 3:25). "If you lie down, you will not be afraid; when you lie down, your sleep will be sweet" (Proverbs 3:24).
+
+Fear of man is set against him. "Who are you that you are afraid of man who dies, of the son of man who is made like grass, and have forgotten the Lord, your Maker" (Isaiah 51:12–13). The verse goes on: "you fear continually all the day because of the wrath of the oppressor … And where is the wrath of the oppressor?" (51:13). Isaiah is told, "do not fear what they fear, nor be in dread. But the Lord of hosts, him you shall honor as holy. Let him be your fear, and let him be your dread" (Isaiah 8:12–13). And David prays, "preserve my life from dread of the enemy" (Psalm 64:1).
+
+**Connections:** with every other activity. Each one is done before God, and heard, seen or reckoned by him. Fear of God is joined with feeling (10.1), knowing (10.2), and turning from evil (10.8). Fear of God is also the ground for how others are treated (10.10).
+

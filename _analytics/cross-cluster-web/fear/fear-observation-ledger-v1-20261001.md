@@ -112,7 +112,7 @@
 | FE-21 | It is **commanded**: "what does the Lord your God require of you, but to fear the Lord your God, to walk in all his ways, to love him, to serve the Lord". "Fear God and keep his commandments" | Deu 10:12, 20; 6:13; Jos 24:14; 1Sa 12:14, 24; Ecc 12:13; Pro 3:7 | S | 10.9 | W |
 | FE-22 | It is **learned**, by hearing and reading: "hear and learn to fear the Lord your God"; the king reads the law "that he may learn to fear the Lord his God" | Deu 4:10; 14:23; 17:19; 31:12–13; Psa 34:11; 2Ki 17:28 | S | 10.2, 10.9 | W |
 | FE-23 | It can be **taught without the heart**: "their hearts are far from me, and their fear of me is a commandment taught by men" | Isa 29:13 | S | 10.9, 12, 3 | W |
-| FE-24 | It is **given by God, in the heart**: "I will give them one heart and one way, that they may fear me forever"; "I will put the fear of me in their hearts, that they may not turn from me"; "Oh that they had such a heart as this always, to fear me"; prayed for: "unite my heart to fear your name"; on the shoot of Jesse rests "the Spirit … of the fear of the Lord. And his delight shall be in the fear of the Lord" | Jer 32:39–40; Deu 5:29; Psa 86:11; Isa 11:2–3 | S | 3, 14, 10.9 | W (14 Made new: given fear) |
+| FE-24 | It is **given by God, in the heart**: "I will give them one heart and one way, that they may fear me forever"; "I will put the fear of me in their hearts, that they may not turn from me"; "Oh that they had such a heart as this always, to fear me"; prayed for: "unite my heart to fear your name"; on the shoot of Jesse rests "the Spirit of knowledge and the fear of the Lord. And his delight shall be in the fear of the Lord" | Jer 32:39–40; Deu 5:29; Psa 86:11; Isa 11:2–3 | S | 3, 14, 10.9 | W (14 Made new: given fear) |
 | FE-25 | Its absence is laid at God's hardening in one prayer: "why do you make us wander from your ways and harden our heart, so that we fear you not?" | Isa 63:17 | S | 12, 10.9 | W |
 | FE-26 | It **follows God's acts**: "God has done it, so that people fear before him"; "Many will see and fear, and put their trust in the Lord"; the hand of the Lord at the Jordan, "that you may fear the Lord your God forever"; "with you there is forgiveness, that you may be feared" | Ecc 3:14; Psa 40:3; 64:9; 52:6; Jos 4:24; Psa 130:4; 119:38; 1Ki 8:40, 43 | S | 10.9, 14 | W (Psa 130:4: forgiveness as ground → 14) |
 | FE-27 | It **follows hearing of judgment on wrong**: "all Israel shall hear and fear and never again do any such wickedness" | Deu 13:11; 17:13; 19:20; 21:21 | S | 10.8, 10.10 | W |
@@ -172,7 +172,7 @@
 | | – "Why then were you not afraid to speak against my servant Moses?" | Num 12:8 | | | |
 | | – the wicked shoot "suddenly and without fear" | Psa 64:4 | | | |
 | | – also | Hos 10:3; Jer 3:8; 44:10; Psa 55:19 | | | |
-| FE-44 | Not fearing, as freedom: Job, "Then I would speak without fear of him"; "you will be secure and will not fear"; "you shall not fear destruction when it comes"; "She is not afraid of snow for her household" | Job 9:35; 11:15; 5:21–22; Pro 31:21; Pro 3:25 | S | 10.1, 10.5 | W |
+| FE-44 | Not fearing, as freedom: Job, "Then I would speak without fear of him"; "you will be secure and will not fear"; "shall not fear destruction when it comes"; "She is not afraid of snow for her household" | Job 9:35; 11:15; 5:21–22; Pro 31:21; Pro 3:25 | S | 10.1, 10.5 | W |
 | FE-45 | Rendered as a **manner of acting**: | | S | 10.7, 10.8 | W |
 | | – "One who is wise is cautious and turns away from evil, but a fool is reckless" | Pro 14:16 | | | |
 | | – "he who shuns an oath" | Ecc 9:2 | | | |
@@ -250,3 +250,5 @@ Prior versions are in `archive/`. The claim register is now v5, and the index ha
 - **2Sa 14:15.** The woman of Tekoa's "the people have made me afraid" is part of a staged story (2Sa 14:2–3). It stays in face A as data only.
 
 **Let-Scripture-speak cuts** made while weaving are listed in claim register v5.
+
+**Quote corrections (2026-10-01, unit 2 quote check):** two ledger-only wording slips were corrected against the ESV in iba.db: FE-24 Isa 11:2 ("of the fear" → "the Spirit of knowledge and the fear"); FE-44 Job 5:21 ("you shall not fear" → "shall not fear"). Neither quote is in the chapters.
