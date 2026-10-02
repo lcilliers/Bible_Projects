@@ -20,7 +20,7 @@
 | # | File | Replaces or absorbs (original) | Built from (M47) | State |
 |---|---|---|---|---|
 | 1 | `01-the-question-v4-20261002.md` (v3: anger strand — roadmap; v4: roadmap for the new order, #1936) | Introduction | framework overview; depiction §1 | draft |
-| 2 | `02-life-breath-and-death-v6-20261002.md` (v6: **rewritten as the scene-setting chapter**, life-death unit 1, #1937; **was Ch 9**; moved to Ch 2, #1936; anger, fear strands) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
+| 2 | `02-life-breath-and-death-v7-20261002.md` (v7: **"The body raised" expanded**, Q4 body and resurrection, #1938; v6: **rewritten as the scene-setting chapter**, life-death unit 1, #1937; **was Ch 9**; moved to Ch 2, #1936; anger, fear strands) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
 | 3 | `03-one-inner-person-v2-20261002.md` (was Ch 2, renumbered 2026-10-02, #1936) | Ch 1 (overlap); Ch 4 (compound passages, 1Th 5:23) | dep §3.1–3.3, §3.6–3.8; F §2 | draft |
 | 4 | `04-the-heart-v8-20261002.md` (v8: life-death unit 1; was Ch 3, renumbered 2026-10-02, #1936; v4, v5: fear strand; v6: M20 pointer to 10.11) | Ch 4 (heart, mind) — **much expanded** | dep §2.1; B §1, §9; H §5.3 | draft |
 | 5 | `05-the-soul-v2-20261002.md` (was Ch 4, renumbered 2026-10-02, #1936) | Ch 6 (soul categories); soul parts of Ch 2 | dep §2.2; C §1; F §3; G §4–5 | draft |
@@ -30,12 +30,12 @@
 | 9 | `09-where-the-words-part-v2-20261002.md` (was Ch 8, renumbered 2026-10-02, #1936) | Ch 2 (the five distinctions), **restated** | dep §3.4; B §8; register 2-x | draft |
 | 10 | **Part 10 — The inner being at work** (split at step 3, 2026-09-30; renumbered 2026-10-01; see Structure log) | new | cross-cutting §s of batches A–F | draft |
 | 10.0 | `10-00-the-inner-being-at-work-v5-20261002.md` (anger strand; v5: 10.11 added to the map) | — | opening; the paths from a thought and from a feeling to a deed; how the activities connect | draft |
-| 10.1 | `10-01-feeling-v8-20261002.md` (v8: chapter pointers, #1936; v3: anger strand — **rewritten**; v4, v5: fear strand; v6: fear account integrated for review, #1930; v7: M20 — Anxiety, Losing heart, #1931) | — | as Ch 10 v1; anger strand | draft |
+| 10.1 | `10-01-feeling-v9-20261002.md` (v9: Q4 pointer, the groan that waits, #1938; v8: chapter pointers, #1936; v3: anger strand — **rewritten**; v4, v5: fear strand; v6: fear account integrated for review, #1930; v7: M20 — Anxiety, Losing heart, #1931) | — | as Ch 10 v1; anger strand | draft |
 | 10.2 | `10-02-knowing-and-hearing-v8-20261002.md` (v8: life-death unit 1; v7: chapter pointer, #1936; anger, fear strands; v6: M20 — Perplexity, Understanding that is hidden, Doubt) | — | as Ch 10 v1 | draft |
 | 10.3 | `10-03-remembering-and-forgetting-v3-20261002.md` (v3: life-death unit 1; v2: chapter pointer, #1936; **new**, NS-M3) | — | thought + anger strands | draft |
 | 10.4 | `10-04-thinking-v4-20261002.md` (v4: chapter pointer, #1936; anger strand) (was 10.3) | — | origin-of-thought strand | draft |
 | 10.5 | `10-05-speaking-v10-20261002.md` (v10: life-death unit 1; v9: chapter pointer, #1936; anger, fear strands; v7: M20 — Grumbling, Whispering; v8: pointer to 10.11) (was 10.4) | — | origin-of-thought strand | draft |
-| 10.6 | `10-06-wanting-v4-20261002.md` (v4: chapter pointers, #1936; anger strand) (was 10.5) | — | as Ch 10 v1 | draft |
+| 10.6 | `10-06-wanting-v5-20261002.md` (v5: Q4 pointer, longing, #1938; v4: chapter pointers, #1936; anger strand) (was 10.5) | — | as Ch 10 v1 | draft |
 | 10.7 | `10-07-choosing-and-setting-direction-v7-20261002.md` (v7: life-death unit 1; anger, fear strands) (was 10.6) | — | as Ch 10 v1 | draft |
 | 10.8 | `10-08-right-and-wrong-v5-20261002.md` (v5: chapter pointers, #1936; anger, fear strands) (was 10.7) | — | as Ch 10 v1 | draft |
 | 10.9 | `10-09-relating-to-god-v11-20261002.md` (v11: life-death unit 1; v10: chapter pointer, #1936; anger, fear strands; v8: M20 — When God hides his face; v9: pointers to 10.11) (was 10.8) | — | as Ch 10 v1 | draft |
@@ -43,13 +43,13 @@
 | 10.11 | `10-11-hiding-and-disclosing-v1-20261002.md` (**new**, NS-D1, M20) | — | M20 concealment phenomena | draft |
 | 11 | `11-patterns-of-the-inner-life-v10-20261002.md` (v10: life-death unit 1, §4 "What it is set against"; v9: chapter pointers, #1936; anger, fear strands; v8: M20 faces and factors) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
 | 12 | `12-when-the-inner-being-goes-wrong-v9-20261002.md` (v9: chapter pointers, #1936; anger, fear strands; v8: M20 hidden trap) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
-| 13 | `13-under-gods-anger-v5-20261002.md` (v5: life-death unit 1; **new**, NS-M2; v2, v3: fear strand) | new | anger strand (M02 unit 2; #1890; #1892) | draft |
-| 14 | `14-made-new-v9-20261002.md` (v9: life-death unit 1; anger, fear strands; v8: M20) (was 13) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
+| 13 | `13-under-gods-anger-v6-20261002.md` (v6: Q4 pointer, resurrection of judgment, #1938; v5: life-death unit 1; **new**, NS-M2; v2, v3: fear strand) | new | anger strand (M02 unit 2; #1890; #1892) | draft |
+| 14 | `14-made-new-v10-20261002.md` (v10: Q4 pointers, #1938; v9: life-death unit 1; anger, fear strands; v8: M20) (was 13) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
 | 15 | `15-beyond-the-named-words-v7-20261002.md` (v7: chapter pointer, #1936; anger, fear strands; v6: M20; "seat" removed) (was 14) | new | seat coverage; operation modes | draft |
 | — | *(science)* | Ch 7 (epigenetics) and the health material in Ch 8–9 | — | **deferred** (researcher: "Science chapters will be done later") |
 
 **Companion working files** (in the parent folder):
-- `../wa-essay-spirit-soul-body-claim-register-v8-20261002.md` — every original claim, with its verdict and restatement.
+- `../wa-essay-spirit-soul-body-claim-register-v9-20261002.md` — every original claim, with its verdict and restatement.
 - `../wa-essay-spirit-soul-body-digest-v1-20260930.md` — the first digest.
 
 ## Rules applied to the chapter text
