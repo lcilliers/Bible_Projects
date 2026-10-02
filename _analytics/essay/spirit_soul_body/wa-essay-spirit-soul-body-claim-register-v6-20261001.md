@@ -324,6 +324,36 @@ The narrative's own statements this unit changed:
 
 **Status:** reworked. Trial source: `wa-essay-trial-fear-account-v1-20261001.md`. Quotes ESV-checked: 133 in 10.1 v6, 0 failures. Two uncounted words in the trial ("rarely", "more often") were cut while integrating.
 
+## Strand updates — doubt and discouragement (M20) (2026-10-02, #1931)
+
+**Researcher, verbatim:** *"proceed with M20 - similar to the previous session. read the m20 folder for the previous analysis"*. Source: the M20 reading already approved (#1885), not re-read. Digest and placements: `../../Clusters/M20 - doubt-discouragement/wa-cluster-M20-narrative-digest-v1-20261002.md`.
+
+| Where | Before | After | Kind |
+|---|---|---|---|
+| 10.1 (v7) | "anxiety" named only in the heart's range; Psa 94:19 in "Feeling and thinking" | New section **"Anxiety"**: what it is (Pro 12:25; Mat 6:25; Luk 12:23); the words (*merimnaō* is anxiety about food and also care for the churches and for one another; *dāʾag* is dread of a coming harm and also sorrow for sin, Psa 38:18); what it does (adds nothing, runs ahead, weighs the heart, chokes the word, divides, what it fears follows); care that is good (2Cor 11:28–29; Phili 2:20–21; 1Sa 10:2; 1Cor 7:32–35); meeting it (handed to God, Phili 4:6–7; a word; looking; the Spirit, Mat 10:19–20; searched, Psa 139:23; Jer 17:7–8) | New |
+| 10.1 (v7) | — | New section **"Losing heart"**: in all five uses, another party does it (Col 3:21; Eze 13:22; Psa 10:10; 109:16; Dan 11:30, with 11:28) | New |
+| 10.1 (v7) | Change-of-character list without anxiety | Bullet added: anxiety rebuked or praised by its object; *dāʾag* is also sorrow for sin | Widened |
+| 10.2 (v6) | — | New sections **"Perplexity"** (what it is; its occasions; it asks, looks, stays inside, hands on; it sits with fear and gladness, Mar 6:20; in love, Gal 4:19–20; bounded, 2Cor 4:8; ends when someone comes in 5 of 11 verses), **"Understanding that is hidden"** (for a time; as judgement; by God in thanks; from myself; Deu 29:29), **"Doubt"** (read as different from perplexity, marked "I read"; Peter; worship and doubt together; *dipsuchos*, "two-souled"; the heart named as the place to be made clean, Jam 4:8) | New |
+| 10.5 (v7) | — | New sections **"Grumbling"** (*lûn*, *rāgan*; re-aimed at God, Exo 16:7–8; its occasions; the past retold as a plan to kill; its companions; answered by provision, judgement, a sign, a promise; Caleb's different spirit) and **"Whispering"** (the same *rāgan*; separates; feeds a quarrel; is wanted; the glazed lips over an evil heart; the fool's own soul snared, Pro 18:7) | New |
+| 10.9 (v8) | Psa 10:11 only (Ch 3, Ch 12) | New section **"When God hides his face"**: *sātar* in three directions (Psa 27:5, 9; 51:9); reasons given or not; what it does (dismay, the spirit fails, the soul cast away, sorrow, the body bowed, no comforter, fear of people, complaint); how different hearts meet it (seeking, penitent, taking it as permission, not noticing, waiting); Psa 30:6–8; its end (Psa 22:24, 26; Isa 54:8; Eze 39:29) | New |
+
+**Researcher, verbatim (2026-10-02):** *"ns-d1: select A; I reviewed the edited files, looks good."* NS-D1 option A was made, and then the second pass:
+
+| Where | Before | After | Kind |
+|---|---|---|---|
+| 10.11 (v1, new) | Hiding scattered (Gen 3:10 in 10.1; Isa 26:20 and Rev 6:16 in 13; Job 14:13 in 10.3) | One account, **"Hiding and disclosing"**: the words (*ḥāvāʾ* hiding oneself; *ṭāman* putting into or under; *kāḥad* keeping back, also "cut off"; *sātar*, the widest); hiding from God (a perception of God first; Job 13:20–21; nothing hidden from him, which is comfort, wonder or judgement); hiding from people (the weaker side; counsel to hide; fear named; prudence; refused or impossible); hiding another (Rahab's confession; parents "not afraid"; God hides those who ask; Col 3:3; false shelter); hiding what I hold (Achan; failure and fear; conscience; enjoyment; shamelessness; God's works not hidden; treasure in joy, talent in fear); the hidden trap; longing to be hidden; what changes it | New |
+| 10.0 (v5) | Map of 10.1–10.10 | 10.11 added; "Fear drives hiding"; "What is hidden is drawn out by speech" | Widened |
+| 10.10 (v8) | — | "Care, discouragement and hiding between people" | New |
+| Ch 11 §4 (v8) | No care, hiding or murmuring entries | Faces: care (*merimnaō*, *dāʾag*), hiding (*sātar* both ways; treasure and talent), murmuring (*rāgan*). Factors: whether it divides the person; who acts on whom | Widened |
+| Ch 12 (v8) | Evil hidden behind the mouth | The heart hides a purpose to catch another (Psa 64:5–6; 140:2, 5) | Widened |
+| Ch 3 (v6) | God sees the hidden heart | People try to hide the heart's counsel (Isa 29:15–16) | Widened |
+| Ch 14 (v8) | — | Eze 39:29 (the hidden face ends with the Spirit poured out); Isa 29:24; Col 3:3 | Widened |
+| Ch 15 (v6) | "named with no seat at all"; strand paragraph to fear | "named with no inner word at all" (project word removed); M20 added to the strand paragraph | Restated |
+
+**Checks:** new and changed text: 0 quote failures. The remaining flags in 03, 11, 12, 14 and 15 are on older lines (carried-forward book noise, Held labels). Let-Scripture-speak cuts made in the 10.11 draft before review: "Most hiding in Scripture", "the most dangerous hiding", "the one who hides himself is usually afraid", "the reason changes everything", "does not stay quiet inside", "shame".
+
+**Checks:** 454 quotes checked in the four chapters, with one flag. That flag is Psa 106:24–25 across two verses, which the checker does not join; it was checked by hand. Let-Scripture-speak cuts made while writing are listed in the digest §1. No original claim's verdict changes in this pass.
+
 ## Correction — imputed readings removed (2026-10-01)
 
 **Researcher, verbatim:** *"you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself."*

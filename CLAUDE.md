@@ -117,6 +117,7 @@
 > - **10.3 Remembering and forgetting** was inserted, so the old 10.3–10.9 are now **10.4–10.10**.
 > - The new **Ch 13 "Under God's anger"** sits between "goes wrong" and "made new". The old Ch 13 is now **14**, and the old 14 is now **15**.
 > - Ch 11 §4, "What changes the character", is the cross-cutting account that every strand adds to.
+> - **10.11 "Hiding and disclosing"** was added after 10.10, with no renumbering (NS-D1, researcher 2026-10-02: *"ns-d1: select A"*, #1931). It holds M20's concealment phenomena as one account, because they face both God and others. M20 is fully woven; the record is in `_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-narrative-digest-v1-20261002.md`.
 >
 > **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** "you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself." No joining of verses into patterns, mechanisms or divisions that no verse states, in findings, ledgers or narrative. Quote, and stop.
 > **Weaving carries meaning, not lists (researcher, 2026-10-01, #1930).** Researcher, verbatim: *"We lost meaning and interpretation, it is starting to just become a list of quotes"*; *"weaving means applying into other sections appropriate parts - it does not say you must ignore all the work that was done and listed in the ledger. you are not writing with intelligence and interpretation, you just doing a machanical mix and match excercise"*.
