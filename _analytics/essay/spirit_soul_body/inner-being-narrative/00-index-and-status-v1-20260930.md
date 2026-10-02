@@ -30,21 +30,21 @@
 | 9 | `09-life-breath-and-death-v4-20261001.md` (anger, fear strands) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
 | 10 | **Part 10 — The inner being at work** (split at step 3, 2026-09-30; renumbered 2026-10-01; see Structure log) | new | cross-cutting §s of batches A–F | draft |
 | 10.0 | `10-00-the-inner-being-at-work-v4-20261001.md` (anger strand) | — | opening; the paths from a thought and from a feeling to a deed; how the activities connect | draft |
-| 10.1 | `10-01-feeling-v5-20261001.md` (v3: anger strand — **rewritten**; v4, v5: fear strand) | — | as Ch 10 v1; anger strand | draft |
+| 10.1 | `10-01-feeling-v6-20261001.md` (v3: anger strand — **rewritten**; v4, v5: fear strand; v6: fear account integrated for review, #1930) | — | as Ch 10 v1; anger strand | draft |
 | 10.2 | `10-02-knowing-and-hearing-v5-20261001.md` (anger, fear strands) | — | as Ch 10 v1 | draft |
 | 10.3 | `10-03-remembering-and-forgetting-v1-20261001.md` (**new**, NS-M3) | — | thought + anger strands | draft |
 | 10.4 | `10-04-thinking-v3-20261001.md` (anger strand) (was 10.3) | — | origin-of-thought strand | draft |
-| 10.5 | `10-05-speaking-v5-20261001.md` (anger, fear strands) (was 10.4) | — | origin-of-thought strand | draft |
+| 10.5 | `10-05-speaking-v6-20261001.md` (anger, fear strands) (was 10.4) | — | origin-of-thought strand | draft |
 | 10.6 | `10-06-wanting-v3-20261001.md` (anger strand) (was 10.5) | — | as Ch 10 v1 | draft |
-| 10.7 | `10-07-choosing-and-setting-direction-v5-20261001.md` (anger, fear strands) (was 10.6) | — | as Ch 10 v1 | draft |
+| 10.7 | `10-07-choosing-and-setting-direction-v6-20261001.md` (anger, fear strands) (was 10.6) | — | as Ch 10 v1 | draft |
 | 10.8 | `10-08-right-and-wrong-v4-20261001.md` (anger, fear strands) (was 10.7) | — | as Ch 10 v1 | draft |
-| 10.9 | `10-09-relating-to-god-v6-20261001.md` (anger, fear strands) (was 10.8) | — | as Ch 10 v1 | draft |
-| 10.10 | `10-10-relating-to-others-v6-20261001.md` (anger, fear strands) (was 10.9) | — | as Ch 10 v1 | draft |
-| 11 | `11-patterns-of-the-inner-life-v6-20261001.md` (anger, fear strands) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
-| 12 | `12-when-the-inner-being-goes-wrong-v6-20261001.md` (anger, fear strands) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
-| 13 | `13-under-gods-anger-v3-20261001.md` (**new**, NS-M2; v2, v3: fear strand) | new | anger strand (M02 unit 2; #1890; #1892) | draft |
-| 14 | `14-made-new-v6-20261001.md` (anger, fear strands) (was 13) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
-| 15 | `15-beyond-the-named-words-v4-20261001.md` (anger, fear strands) (was 14) | new | seat coverage; operation modes | draft |
+| 10.9 | `10-09-relating-to-god-v7-20261001.md` (anger, fear strands) (was 10.8) | — | as Ch 10 v1 | draft |
+| 10.10 | `10-10-relating-to-others-v7-20261001.md` (anger, fear strands) (was 10.9) | — | as Ch 10 v1 | draft |
+| 11 | `11-patterns-of-the-inner-life-v7-20261001.md` (anger, fear strands) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
+| 12 | `12-when-the-inner-being-goes-wrong-v7-20261001.md` (anger, fear strands) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
+| 13 | `13-under-gods-anger-v4-20261001.md` (**new**, NS-M2; v2, v3: fear strand) | new | anger strand (M02 unit 2; #1890; #1892) | draft |
+| 14 | `14-made-new-v7-20261001.md` (anger, fear strands) (was 13) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
+| 15 | `15-beyond-the-named-words-v5-20261001.md` (anger, fear strands) (was 14) | new | seat coverage; operation modes | draft |
 | — | *(science)* | Ch 7 (epigenetics) and the health material in Ch 8–9 | — | **deferred** (researcher: "Science chapters will be done later") |
 
 **Companion working files** (in the parent folder):
@@ -95,6 +95,8 @@ Each change to the book's shape, with the strand that caused it (weaving method,
 | 2026-10-01 | (researcher ruling, #1924) | **Chapter titles reduced to their subject.** Ch 3 "The heart", Ch 4 "The soul", Ch 5 "The spirit", Ch 6 "Flesh", Ch 7 "Conscience and the bosom". Ch 2 "One inner person, many words" stays (researcher: *"the title is appropriate"*). **Watch:** a separate chapter on the role other entities play across the phenomena (God, the Spirit, other spirits, angels, other people, the physical world), which "will again vary considerably between the identities towards the inner being". It grows from what the strands record and is not started as a whole-scope task. | Researcher: the subtitles were "AI assumptions and wrong"; "I can see a separate chapter evolving over time to capture the role other entities play across the phenomena". |
 | 2026-10-01 | fear (M01), unit 1 (#1927, #1928) | **No structure change.** Fear is woven by activity, as anger was. New sections: 10.5 "Fear and the mouth"; 10.9 "Fear before God, and the fear of God" and "'Fear not'"; 10.10 "Fear between people"; Ch 12 "Fear that goes wrong". Ch 11 §4 gains three faces (fear; the one who is feared; "do not fear") and three factors (what it is turned toward; whether the heart is in it; who speaks it, and to what end). Woven also into 10.1, 10.2, 10.7, 10.8, Ch 3, 6, 9, 13, 14, 15. Prior versions in `archive/`. Claim register → v5. | Researcher: "the ledger is approved to continue". Unit 1 = the *yārēʾ* family ("to fear, revere"), 424 hits read by surface. Units 2–4 to follow. |
 | 2026-10-01 | fear (M01), unit 2 (#1929) | **No structure change.** New sections: 13 "Dread and trembling"; 14 "No one to make them afraid". Ch 11 §1 gains "Dread is laid on, given, and comes upon"; §4 gains three faces (dread; trembling, *rāgaz*; "none shall make you afraid") and one factor (who hears it). Woven also into 10.1, 10.2, 10.5, 10.7, 10.9, 10.10, Ch 3, 5, 6, 12, 15. Prior versions in `archive/`. Claim register → v6. | Researcher: "proceed with the weaving". Unit 2 = *paḥad* ("dread") and the trembling and shuddering words, 227 hits read by surface. |
+| 2026-10-01 | fear (M01), review (#1930) | **10.1 gains a section "Fear"** (what fear is; the words *yārēʾ*, *paḥad*, *ḥārad*, *rāgaz*; what fear does; the fear of God; what changes it; meeting fear). The fear passages scattered through 10.1's stages are folded into it; anger keeps the stage-by-stage course. **For the researcher's review in context.** The other chapters are not yet reworked. | Researcher: "We lost meaning and interpretation, it is starting to just become a list of quotes"; "you are not writing with intelligence and interpretation"; "integrate it into the narrative so I can review it in context." |
+| 2026-10-01 | fear (M01), rework (#1930) | **Fear rewritten for meaning across the book.** 10.1's "Fear" section approved as the model (researcher: "proceed, I read in there is an improvement"). The fear passages in 10.5, 10.7, 10.9, 10.10, 12, 13, 14, 15 and Ch 11 §4 are rewritten in the same way: prose that says what the verses show, chosen verses, no repetition of 10.1, pointers back to it. 10.9's fear sections went from about 2,000 words of lists to about 1,100. Versions: 10.5, 10.7 v6; 10.9, 10.10, 11, 12, 14 v7; 13 v4; 15 v5. **Correction:** Job 31:34 is part of Job's oath of innocence, not his experience; 10.5 now says so. Anger not yet reworked. | Researcher: "you are not writing with intelligence and interpretation, you just doing a machanical mix and match excercise". |
 
 **Which strand fed which version:**
 - origin of thought → Ch 1, 3, 7, 9, 10.0–10.2, 10.5–10.9, 11, 12, 13: **v2 (2026-10-01)**

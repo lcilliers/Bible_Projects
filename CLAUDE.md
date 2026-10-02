@@ -119,6 +119,13 @@
 > - Ch 11 §4, "What changes the character", is the cross-cutting account that every strand adds to.
 >
 > **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** "you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself." No joining of verses into patterns, mechanisms or divisions that no verse states, in findings, ledgers or narrative. Quote, and stop.
+> **Weaving carries meaning, not lists (researcher, 2026-10-01, #1930).** Researcher, verbatim: *"We lost meaning and interpretation, it is starting to just become a list of quotes"*; *"weaving means applying into other sections appropriate parts - it does not say you must ignore all the work that was done and listed in the ledger. you are not writing with intelligence and interpretation, you just doing a machanical mix and match excercise"*.
+> - "Let Scripture speak" forbids joining verses into patterns no verse states. It does **not** forbid saying what a verse means in its own setting. That interpretation is required.
+> - A phenomenon gets one coherent account that answers: what does Scripture say it is? What are its forms, from the words themselves? Why do they differ? (Model: 10.1 "Fear".)
+> - Other sections carry only the parts that belong to their activity, rewritten as prose with chosen verses and pointing back to the account. Full verse lists stay in the ledger.
+> - A verse that says nothing about the inner being or the word stays in the data, not the narrative.
+> - Readings beyond what a verse states are marked "I read".
+> - Style guide v3 is still to be written to fix this in config (deferred, #1930).
 > **Writing standard (config, 2026-10-01):** `cfg_setting narrative.inner_being_style_guide_path` → `Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md`, plus `cfg_behaviour_rule` 69 `let-scripture-speak-no-imputed-synthesis`. The guide holds the researcher's #1924 rulings: prose supported by bullets; titles name the subject only; any external party in the verses (God, the Spirit, other spirits, angels, people, the physical world) is dealt with per phenomenon and never watered down.
 >
 > These narrative drafts are written **on the researcher's specific instruction**. They are files,

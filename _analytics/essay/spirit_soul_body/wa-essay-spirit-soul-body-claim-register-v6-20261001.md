@@ -298,6 +298,32 @@ The narrative's own statements this unit changed:
 - **Reverse audit.** Every observation FE-47 to FE-84 has at least one of its verses in the chapters. FE-85 (Lam 4:6) is held, as approved. Verses not quoted stay accounted for in the ledger's face column.
 - **External parties (§7a).** A spirit (Job 4:15–16), Wisdom (Pro 1:26–27, 33), Samuel brought up (1Sa 28:15), Sheol (Isa 14:9), the heavens, waters, earth and the dead, creatures, and the heavy rain (Ezr 10:9) are each named in their own terms beside the phenomenon.
 
+## Fear account integrated for review (2026-10-01, #1930)
+
+**Researcher, verbatim:** *"i think it is starting to unravel. We lost meaning and interpretation, it is starting to just become a list of quotes"*; *"many quoted verses say nothing about what it means for the inner being. it also says nothing about the word. a simple question of : what does the bible say fear is? what is its different forms? why is it different?"*; *"weaving means applying into other sections appropriate parts - it does not say you must ignore all the work that was done and listed in the ledger. you are not writing with intelligence and interpretation, you just doing a machanical mix and match excercise and it has lost its meaning and coherance."*; *"integrate it into the narrative so I can review it in context."*
+
+| Where | Before | After | Kind |
+|---|---|---|---|
+| 10.1 Feeling (v6) | Fear followed through each stage as lists of verses (v4, v5) | A section **"Fear"**: what fear is (whole person; it comes upon; a cause outside, often a reason inside); the four Hebrew words and their renderings, read as one inner stirring whose character the situation decides (marked "I read"); what fear does; the fear of God (Exo 20:18–21 read as one fear taken away and another set in its place, marked "I read"); what changes it; meeting fear; 1Jo 4:18 quoted ahead of the Greek unit. The stage sections now follow anger; the change-of-character bullet for fear points to the section | Restated |
+
+**Researcher (2026-10-01, verbatim):** *"proceed, I read in there is an improvement."* The same rewrite was then made in every chapter carrying fear:
+
+| Where | Before | After | Kind |
+|---|---|---|---|
+| 10.5 (v6) | "Fear and the mouth" as lists | Prose: fear shuts the mouth when the truth would hurt (fear *for* the hearer, 2Sa 12:18), or makes it lie when the truth looks dangerous to the speaker (Gen 26:7); words used to frighten; the words of comfort used to deceive. **Correction:** Job 31:33–34 is now given as Job's oath of innocence (a silence he swears he did not keep), not as his own experience | Restated |
+| 10.7 (v6) | Lists of fear stopping and setting choices; commands with "do not fear" | Prose: fear stops a choice given by another; Exo 9:20–21 (the fear of God's word made the difference in what people did); the commands with "fear not" send a person forward | Restated |
+| 10.9 (v7) | About 2,000 words of fear lists | About 1,100 words in four parts: afraid in his presence (the reason each time: they cannot stand before him; Jacob's fear as recognition; the brothers' fear after naming their guilt, Gen 42:21, 28); fearing God as a way of life (with love, Deu 10:12; learned; in the heart or missing; given; tested); what it rests on (forgiveness, goodness, his acts, Psa 130:4; Hos 3:5; Jer 33:8–9); how God meets those who fear him. "Fear not": God gives himself as the reason; the person says it back (Isa 41:10 / Psa 23:4) | Restated |
+| 10.10 (v7) | Lists | Prose: the fear of God and the weak (Lev 19:14; 25:43, read as God seeing what the victim cannot, marked "I read"); reverence for people for God's work in them (Jos 4:14; 1Ki 3:28); speaking to another's fear; fear that arrives with a person; making others afraid; trembling for another | Restated |
+| Ch 11 §4 (v7) | Six fear entries | Four: fear; "do not fear"; trembling and dread (one stirring, marked "I read"); "none shall make you afraid" | Restated |
+| Ch 12 (v7) | Bullet list | Prose: fear given to the wrong one; fear planted for sin; the fear of God going wrong in the heart; terror "where there is no terror" (Psa 53:5, marked "I read") | Restated |
+| Ch 13 (v4) | "Dread and trembling" as a list | Prose: the chain with no way out (Isa 24:17–18); dread given into the heart; understanding as terror; Ezekiel's sign; fear for oneself at another's fall; Wisdom's storm; the earth and heavens | Restated |
+| Ch 14 (v7) | List of promises | Prose: what comes with "no one will make them afraid"; what they fear has changed | Restated |
+| Ch 15 (v5) | Five bullets | Four, each with what the verses show | Restated |
+
+**Checks:** every added quote matches the ESV in iba.db. The only flags remaining are older ones (checker noise or labels). Let-Scripture-speak cuts made in this rework: "most careful", "Haman wanted to be feared", "the whole of creation", "end with", "as they are", and "because of what they already knew". Interpretation beyond what a verse states is marked "I read".
+
+**Status:** reworked. Trial source: `wa-essay-trial-fear-account-v1-20261001.md`. Quotes ESV-checked: 133 in 10.1 v6, 0 failures. Two uncounted words in the trial ("rarely", "more often") were cut while integrating.
+
 ## Correction — imputed readings removed (2026-10-01)
 
 **Researcher, verbatim:** *"you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself."*

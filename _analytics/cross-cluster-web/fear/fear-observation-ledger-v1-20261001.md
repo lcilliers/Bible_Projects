@@ -252,3 +252,6 @@ Prior versions are in `archive/`. The claim register is now v5, and the index ha
 **Let-Scripture-speak cuts** made while weaving are listed in claim register v5.
 
 **Quote corrections (2026-10-01, unit 2 quote check):** two ledger-only wording slips were corrected against the ESV in iba.db: FE-24 Isa 11:2 ("of the fear" → "the Spirit of knowledge and the fear"); FE-44 Job 5:21 ("you shall not fear" → "shall not fear"). Neither quote is in the chapters.
+
+**Reworked (2026-10-01, #1930).** After the researcher's ruling that the woven text had become *"a list of quotes"* without *"meaning and interpretation"*, the fear passages in 10.1, 10.5, 10.7, 10.9, 10.10, 11 §4, 12, 13, 14 and 15 were rewritten as prose that says what the verses show, using chosen verses. The "Woven — where" table above maps to the text before that rewrite. Some verses listed there are no longer quoted in the chapters. They stay accounted for here and in the data file. The current placements are in claim register v6, section "Fear account integrated for review".
+
