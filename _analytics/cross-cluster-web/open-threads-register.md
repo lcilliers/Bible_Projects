@@ -1,0 +1,23 @@
+# Open threads register (living document)
+
+**Set up:** 2026-10-02 (researcher: *"I approve of the open threads register"*, #1935). Design: `open-threads-register-proposal-v1-20261002.md`.
+
+**How it is used**
+- This is one living document. It is updated in place. Resolved rows are struck through, not deleted.
+- **Before each unit's pull:** compare the unit's Strong's numbers and clusters with **comes back when**. List the matching threads at the top of the unit ledger ("threads this unit may bear on").
+- **At ledger approval:** any new held item or researcher question is added here, and noted in the ledger's §F.
+- **It is not a task list.** A thread moves only when a strand reaches it (focused capture, #1900). Threads stay out of the narrative until resolved and woven. Decisions stay in escalations.
+
+**Status values:** open · touched (with the ledger ids that added evidence) · resolved (with the ruling)
+
+| id | thread | raised | comes back when | status |
+| --- | --- | --- | --- | --- |
+| OT-01 | **Life by the statutes, and statutes without life.** "by which, if a person does them, he shall live" (Eze 20:11); "statutes that were not good and rules by which they could not have life" (Eze 20:25); "if a law had been given that could give life, then righteousness would indeed be by the law" (Gal 3:21). Held, unreconciled | LD-30, life-death unit 1 (2026-10-02) | Torah & Obedience (M54); Righteousness (M12, a candidate strand); Galatians 3 | open |
+| OT-02 | **Q1 What is death?** (researcher) | candidate v2 §7 (2026-10-02) | life-death unit 2 (H4191, H4194, G0599, G2288); Sheol (H7585, G0086); sleep (G2837, H3462) | touched: LD-12, LD-21, LD-26, LD-37 |
+| OT-03 | **Q2 What happens to the spirit and soul at death?** (researcher) | candidate v2 §7 | focused pull: soul and spirit with the death words | touched: LD-07, LD-25 |
+| OT-04 | **Q3 Is anything said about the heart after death?** (researcher). Unit 1: no verse | candidate v2 §7 | focused pull: heart (H3820, H3824, G2588) with die, death or Sheol | touched: LD-05 (no answer) |
+| OT-05 | **Q4 The body and the resurrection; the "glorified" body** (researcher) | candidate v2 §7 | focused pull: body (G4983), resurrection (G0386, G1453), transform (G3339), incorruptible (G0861), perishable / mortal (G5349, G2349), glory (G1391); 1Cor 15; 2Cor 5; Phili 3:21 | touched: LD-19, LD-20, LD-23, LD-24 |
+| OT-06 | **God's hand:** the fuller pass and a scan of special clusters | #1893 (2026-09-29) | the inner being acting through the hands; body as carrier | open |
+| OT-07 | **Held items in the earlier ledgers.** These are to be carried over one by one: fear FE-85 (Lam 4:6), anger ledger §M | — | when the fear strand resumes (units 3–4, #1933) | open |
+| OT-08 | **Life and death as the meta layer over the inner being.** Researcher, verbatim 2026-10-02: *"it almost seems life and death is the umbrella over inner being: life is why we live and what makes living - death is the end, and the new beginning. we must not miss the meta layer of these concepts, although it has multiple layers that contribute to it."* The prompt: M25 co-occurs with almost every other cluster (candidate v2 §3; data file §3: 80+ clusters). This is the researcher's framing, to be tested against what the verses state. Placement: **Ch 9 moved to Ch 2** (researcher, 2026-10-02, #1936: *"Move Ch 9 to Ch 2"*). Ch 2 rewritten in the approved shape (#1937, 2026-10-02); linkage map `life-death/life-death-linkage-map.md`. **Researcher, verbatim 2026-10-02:** *"dont use the term umbrella in the narrative, it is only a picture for me … maybe there are terminology that flows from the verses. the context of Ch 2 is that it sets the scene for discovering the working of the inner being within the context of what life is about and what death means - life is the expression of the inner being - setting the purpose, framework, fabric for the inner being."* Proposal: `life-death/life-death-ch2-scene-and-linkage-proposal-v1-20261002.md` (#1937) | researcher (2026-10-02), after candidate v2 §3 | **every** life-death unit; and every later strand: record where its words are set against life or death | open |
+| OT-09 | **A pass for "gold nuggets" left on the table.** Researcher, verbatim 2026-10-02: *"we will do another pass at some stage to confirm that we are not leaving gold nuggets on the table - your ledgers are really helpful for that."* The ledgers ("Woven — where", the D and H rows) and the linkage maps are the basis for it | researcher (2026-10-02, #1934) | at a point the researcher chooses; candidates are the end of the life-death strand, or before the M12 / M64 strands | open |

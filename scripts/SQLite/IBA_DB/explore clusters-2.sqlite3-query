@@ -47,7 +47,7 @@ ORDER BY v.id;   -- canonical order, if verse.id follows Bible order
 
 WITH targets(base) AS (
   select strong as base from cluster_strong
-  where cluster_strong.cluster_code = 'M47'
+  where cluster_strong.cluster_code = 'M01'
 ),
 thought_verses AS (
   SELECT DISTINCT vl.verse_id
@@ -65,7 +65,7 @@ WHERE vl.deleted = 0
 GROUP BY c.cluster_code, c.short_name, vl.strong, s.stepGloss;
 
 select * from cluster
-where cluster_code like 'M%';
+where cluster_code = 'M01';
 
 Select C.cluster_code
 ,C.short_name
@@ -130,10 +130,10 @@ ORDER BY shared_verses DESC;
 -- other_m_hits is scoped to verse_ids already known to contain M47 (not the
 -- whole verse_lexical table) to keep this fast: ~1s vs ~9.5s unscoped, same
 -- 2,832 rows either way.
-WITH m47_hits AS (
+WITH m01_hits AS (
   SELECT vl.id AS vl_id, vl.verse_id, vl.strong AS m47_strong, vl.surface AS m47_surface
   FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M47'
+  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M01'
   JOIN cluster mc ON mc.cluster_code = cs.cluster_code AND mc.deleted = 0
   WHERE vl.deleted = 0
 ),
@@ -144,7 +144,7 @@ other_m_hits AS (
   JOIN cluster c ON c.cluster_code = cs.cluster_code AND c.deleted = 0
   WHERE vl.deleted = 0
     AND cs.cluster_code LIKE 'M%' AND cs.cluster_code <> 'M47'
-    AND vl.verse_id IN (SELECT verse_id FROM m47_hits)
+    AND vl.verse_id IN (SELECT verse_id FROM m01_hits)
 )
 SELECT
   v.reference,
@@ -176,11 +176,11 @@ ORDER BY v.reference;
 -- spirit-classification (which "kind" of spirit) are Claude Chat's own next
 -- analytical pass, not baked in here -- this only adds what only the DB can
 -- give: the distance.
-WITH m47_hits AS (
-  SELECT vl.id AS vl_id, vl.verse_id, vl.position AS m47_position,
-         vl.strong AS m47_strong, vl.surface AS m47_surface
+WITH CL_hits AS (
+  SELECT vl.id AS vl_id, vl.verse_id, vl.position AS cl_position,
+         vl.strong AS cl_strong, vl.surface AS cl_surface
   FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M47'
+  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M01'
   JOIN cluster mc ON mc.cluster_code = cs.cluster_code AND mc.deleted = 0
   WHERE vl.deleted = 0
 ),
@@ -192,18 +192,18 @@ other_m_hits AS (
   JOIN cluster_strong cs ON cs.strong = vl.strong
   JOIN cluster c ON c.cluster_code = cs.cluster_code AND c.deleted = 0
   WHERE vl.deleted = 0
-    AND cs.cluster_code LIKE 'M%' AND cs.cluster_code <> 'M47'
-    AND vl.verse_id IN (SELECT verse_id FROM m47_hits)
+    AND cs.cluster_code = 'M01' 
+    AND vl.verse_id IN (SELECT verse_id FROM CL_hits)
 )
 SELECT
-  v.reference,
-  m.m47_strong, ms.stepGloss AS m47_gloss, m.m47_surface, m.m47_position,
+  v.reference, 
+  m.cl_strong, ms.stepGloss AS cl_gloss, m.cl_surface, m.cl_position,
   o.other_strong, os.stepGloss AS other_gloss, o.other_surface,
   o.other_cluster_code, o.other_cluster_name, o.other_position,
-  ABS(m.m47_position - o.other_position) AS distance
-FROM m47_hits m
+  ABS(m.cl_position - o.other_position) AS distance
+FROM CL_hits m
 JOIN verse v ON v.id = m.verse_id
 JOIN other_m_hits o ON o.verse_id = m.verse_id
-LEFT JOIN strong ms ON ms.strongNumber = m.m47_strong
+LEFT JOIN strong ms ON ms.strongNumber = m.cl_strong
 LEFT JOIN strong os ON os.strongNumber = o.other_strong
-ORDER BY v.reference, m.m47_position, o.other_position;
+ORDER BY v.reference, m.cl_position, o.other_position;

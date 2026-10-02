@@ -1,5 +1,7 @@
 # Fear strand — handoff for the next chat
 
+> **Queue (researcher, 2026-10-02, #1932/#1933):** the fear strand is paused while M25 (life and death) is explored. *"mark unit 3 and 4 of fear to be completed before proceding with a new cluster after M25."* **Units 3 and 4 below are therefore next once M25 is done, before any new cluster.** After them, the candidates are M12 (Righteousness & Integrity) and M64 (Will & Resolve).
+
 **Date:** 2026-10-01 · **State:** units 1 (#1928) and 2 (#1929) woven · **Next:** unit 3 (terror, horror, desolation)
 
 ## Working rhythm

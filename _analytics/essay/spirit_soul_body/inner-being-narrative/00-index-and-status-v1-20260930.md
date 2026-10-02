@@ -19,37 +19,37 @@
 
 | # | File | Replaces or absorbs (original) | Built from (M47) | State |
 |---|---|---|---|---|
-| 1 | `01-the-question-v3-20261001.md` (v3: anger strand — roadmap) | Introduction | framework overview; depiction §1 | draft |
-| 2 | `02-one-inner-person-v1-20260930.md` | Ch 1 (overlap); Ch 4 (compound passages, 1Th 5:23) | dep §3.1–3.3, §3.6–3.8; F §2 | draft |
-| 3 | `03-the-heart-v6-20261002.md` (v4, v5: fear strand; v6: M20 pointer to 10.11) | Ch 4 (heart, mind) — **much expanded** | dep §2.1; B §1, §9; H §5.3 | draft |
-| 4 | `04-the-soul-v1-20260930.md` | Ch 6 (soul categories); soul parts of Ch 2 | dep §2.2; C §1; F §3; G §4–5 | draft |
-| 5 | `05-the-spirit-v3-20261001.md` (anger, fear strands) | Ch 5 (spirit categories); spirit parts of Ch 2 | dep §2.3; spirit distinction; D §3.4, §9.2 | draft |
-| 6 | `06-flesh-v4-20261001.md` (anger, fear strands) | new (original gap 1–2) | dep §2.4, §3.5; G §7 | draft |
-| 7 | `07-conscience-and-bosom-v3-20261001.md` (anger strand) | new (original gap 4) | dep §2.5–2.6, §2.1m; H §6.2 | draft |
-| 8 | `08-where-the-words-part-v1-20260930.md` | Ch 2 (the five distinctions), **restated** | dep §3.4; B §8; register 2-x | draft |
-| 9 | `09-life-breath-and-death-v4-20261001.md` (anger, fear strands) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
+| 1 | `01-the-question-v4-20261002.md` (v3: anger strand — roadmap; v4: roadmap for the new order, #1936) | Introduction | framework overview; depiction §1 | draft |
+| 2 | `02-life-breath-and-death-v6-20261002.md` (v6: **rewritten as the scene-setting chapter**, life-death unit 1, #1937; **was Ch 9**; moved to Ch 2, #1936; anger, fear strands) | Ch 3 (ontology), **restated** | dep §3.9; G §1–2, §16 | draft |
+| 3 | `03-one-inner-person-v2-20261002.md` (was Ch 2, renumbered 2026-10-02, #1936) | Ch 1 (overlap); Ch 4 (compound passages, 1Th 5:23) | dep §3.1–3.3, §3.6–3.8; F §2 | draft |
+| 4 | `04-the-heart-v8-20261002.md` (v8: life-death unit 1; was Ch 3, renumbered 2026-10-02, #1936; v4, v5: fear strand; v6: M20 pointer to 10.11) | Ch 4 (heart, mind) — **much expanded** | dep §2.1; B §1, §9; H §5.3 | draft |
+| 5 | `05-the-soul-v2-20261002.md` (was Ch 4, renumbered 2026-10-02, #1936) | Ch 6 (soul categories); soul parts of Ch 2 | dep §2.2; C §1; F §3; G §4–5 | draft |
+| 6 | `06-the-spirit-v5-20261002.md` (v5: life-death unit 1; was Ch 5, renumbered 2026-10-02, #1936; anger, fear strands) | Ch 5 (spirit categories); spirit parts of Ch 2 | dep §2.3; spirit distinction; D §3.4, §9.2 | draft |
+| 7 | `07-flesh-v5-20261002.md` (was Ch 6, renumbered 2026-10-02, #1936; anger, fear strands) | new (original gap 1–2) | dep §2.4, §3.5; G §7 | draft |
+| 8 | `08-conscience-and-bosom-v4-20261002.md` (was Ch 7, renumbered 2026-10-02, #1936; anger strand) | new (original gap 4) | dep §2.5–2.6, §2.1m; H §6.2 | draft |
+| 9 | `09-where-the-words-part-v2-20261002.md` (was Ch 8, renumbered 2026-10-02, #1936) | Ch 2 (the five distinctions), **restated** | dep §3.4; B §8; register 2-x | draft |
 | 10 | **Part 10 — The inner being at work** (split at step 3, 2026-09-30; renumbered 2026-10-01; see Structure log) | new | cross-cutting §s of batches A–F | draft |
 | 10.0 | `10-00-the-inner-being-at-work-v5-20261002.md` (anger strand; v5: 10.11 added to the map) | — | opening; the paths from a thought and from a feeling to a deed; how the activities connect | draft |
-| 10.1 | `10-01-feeling-v7-20261002.md` (v3: anger strand — **rewritten**; v4, v5: fear strand; v6: fear account integrated for review, #1930; v7: M20 — Anxiety, Losing heart, #1931) | — | as Ch 10 v1; anger strand | draft |
-| 10.2 | `10-02-knowing-and-hearing-v6-20261002.md` (anger, fear strands; v6: M20 — Perplexity, Understanding that is hidden, Doubt) | — | as Ch 10 v1 | draft |
-| 10.3 | `10-03-remembering-and-forgetting-v1-20261001.md` (**new**, NS-M3) | — | thought + anger strands | draft |
-| 10.4 | `10-04-thinking-v3-20261001.md` (anger strand) (was 10.3) | — | origin-of-thought strand | draft |
-| 10.5 | `10-05-speaking-v8-20261002.md` (anger, fear strands; v7: M20 — Grumbling, Whispering; v8: pointer to 10.11) (was 10.4) | — | origin-of-thought strand | draft |
-| 10.6 | `10-06-wanting-v3-20261001.md` (anger strand) (was 10.5) | — | as Ch 10 v1 | draft |
-| 10.7 | `10-07-choosing-and-setting-direction-v6-20261001.md` (anger, fear strands) (was 10.6) | — | as Ch 10 v1 | draft |
-| 10.8 | `10-08-right-and-wrong-v4-20261001.md` (anger, fear strands) (was 10.7) | — | as Ch 10 v1 | draft |
-| 10.9 | `10-09-relating-to-god-v9-20261002.md` (anger, fear strands; v8: M20 — When God hides his face; v9: pointers to 10.11) (was 10.8) | — | as Ch 10 v1 | draft |
-| 10.10 | `10-10-relating-to-others-v8-20261002.md` (anger, fear strands; v8: M20 — care, discouragement and hiding between people) (was 10.9) | — | as Ch 10 v1 | draft |
+| 10.1 | `10-01-feeling-v8-20261002.md` (v8: chapter pointers, #1936; v3: anger strand — **rewritten**; v4, v5: fear strand; v6: fear account integrated for review, #1930; v7: M20 — Anxiety, Losing heart, #1931) | — | as Ch 10 v1; anger strand | draft |
+| 10.2 | `10-02-knowing-and-hearing-v8-20261002.md` (v8: life-death unit 1; v7: chapter pointer, #1936; anger, fear strands; v6: M20 — Perplexity, Understanding that is hidden, Doubt) | — | as Ch 10 v1 | draft |
+| 10.3 | `10-03-remembering-and-forgetting-v3-20261002.md` (v3: life-death unit 1; v2: chapter pointer, #1936; **new**, NS-M3) | — | thought + anger strands | draft |
+| 10.4 | `10-04-thinking-v4-20261002.md` (v4: chapter pointer, #1936; anger strand) (was 10.3) | — | origin-of-thought strand | draft |
+| 10.5 | `10-05-speaking-v10-20261002.md` (v10: life-death unit 1; v9: chapter pointer, #1936; anger, fear strands; v7: M20 — Grumbling, Whispering; v8: pointer to 10.11) (was 10.4) | — | origin-of-thought strand | draft |
+| 10.6 | `10-06-wanting-v4-20261002.md` (v4: chapter pointers, #1936; anger strand) (was 10.5) | — | as Ch 10 v1 | draft |
+| 10.7 | `10-07-choosing-and-setting-direction-v7-20261002.md` (v7: life-death unit 1; anger, fear strands) (was 10.6) | — | as Ch 10 v1 | draft |
+| 10.8 | `10-08-right-and-wrong-v5-20261002.md` (v5: chapter pointers, #1936; anger, fear strands) (was 10.7) | — | as Ch 10 v1 | draft |
+| 10.9 | `10-09-relating-to-god-v11-20261002.md` (v11: life-death unit 1; v10: chapter pointer, #1936; anger, fear strands; v8: M20 — When God hides his face; v9: pointers to 10.11) (was 10.8) | — | as Ch 10 v1 | draft |
+| 10.10 | `10-10-relating-to-others-v9-20261002.md` (v9: life-death unit 1; anger, fear strands; v8: M20 — care, discouragement and hiding between people) (was 10.9) | — | as Ch 10 v1 | draft |
 | 10.11 | `10-11-hiding-and-disclosing-v1-20261002.md` (**new**, NS-D1, M20) | — | M20 concealment phenomena | draft |
-| 11 | `11-patterns-of-the-inner-life-v8-20261002.md` (anger, fear strands; v8: M20 faces and factors) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
-| 12 | `12-when-the-inner-being-goes-wrong-v8-20261002.md` (anger, fear strands; v8: M20 hidden trap) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
-| 13 | `13-under-gods-anger-v4-20261001.md` (**new**, NS-M2; v2, v3: fear strand) | new | anger strand (M02 unit 2; #1890; #1892) | draft |
-| 14 | `14-made-new-v8-20261002.md` (anger, fear strands; v8: M20) (was 13) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
-| 15 | `15-beyond-the-named-words-v6-20261002.md` (anger, fear strands; v6: M20; "seat" removed) (was 14) | new | seat coverage; operation modes | draft |
+| 11 | `11-patterns-of-the-inner-life-v10-20261002.md` (v10: life-death unit 1, §4 "What it is set against"; v9: chapter pointers, #1936; anger, fear strands; v8: M20 faces and factors) | new | framework overview §5 (T1–T12); F §5–7; G §3; H §1, §5, §7 | draft |
+| 12 | `12-when-the-inner-being-goes-wrong-v9-20261002.md` (v9: chapter pointers, #1936; anger, fear strands; v8: M20 hidden trap) | Ch 9, **partly**; the rest held | D §11; G §10; spirit distinction | draft + held |
+| 13 | `13-under-gods-anger-v5-20261002.md` (v5: life-death unit 1; **new**, NS-M2; v2, v3: fear strand) | new | anger strand (M02 unit 2; #1890; #1892) | draft |
+| 14 | `14-made-new-v9-20261002.md` (v9: life-death unit 1; anger, fear strands; v8: M20) (was 13) | Ch 10 (and the renewal part of Ch 8), **partly**; the rest held | E §11.2; C §8.3 | draft + held |
+| 15 | `15-beyond-the-named-words-v7-20261002.md` (v7: chapter pointer, #1936; anger, fear strands; v6: M20; "seat" removed) (was 14) | new | seat coverage; operation modes | draft |
 | — | *(science)* | Ch 7 (epigenetics) and the health material in Ch 8–9 | — | **deferred** (researcher: "Science chapters will be done later") |
 
 **Companion working files** (in the parent folder):
-- `../wa-essay-spirit-soul-body-claim-register-v6-20261001.md` — every original claim, with its verdict and restatement.
+- `../wa-essay-spirit-soul-body-claim-register-v8-20261002.md` — every original claim, with its verdict and restatement.
 - `../wa-essay-spirit-soul-body-digest-v1-20260930.md` — the first digest.
 
 ## Rules applied to the chapter text
@@ -62,7 +62,7 @@
 - **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** *"you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself."* A reading may restate what a verse or passage says. It may **not** join verses into a pattern, mechanism, division of labour or "what this shows" that no verse states. It may not use "most", "clearest" or "most often" unless it has been counted. When in doubt, quote and stop. Applied on 2026-10-01: 34 removals in the #1919/#1920 weaves (claim register v4), then 88 edits in the earlier passes (`../wa-essay-narrative-imputed-readings-audit-v1-20261001.md`, #1921). **Authoritative guide:** `Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md`.
 - **Format (researcher, verbatim, 2026-10-01, #1924):** *"prose supported by bullets to handle different applications of the prose intro"*. Titles name the subject only, with no characterising subtitle. In the researcher's words, the four removed subtitles were *"AI assumptions and wrong"*.
 - **External parties (#1924):** if any external party comes into play in the verses, it is dealt with in relation to the specific phenomenon, each in its own terms, and not watered down. External parties include God, the Spirit, other spirits, angels, other people, and the physical world. Guide §7a.
-- **Held material** sits at the foot of Chapters 12 and 13 under a clearly marked working note. It is not part of the narrative until it is checked.
+- **Held material** sits at the foot of Chapters 12 and 14 under a clearly marked working note. It is not part of the narrative until it is checked.
 
 ## How later work updates this
 
@@ -100,8 +100,11 @@ Each change to the book's shape, with the strand that caused it (weaving method,
 | 2026-10-01 | fear (M01), rework (#1930) | **Fear rewritten for meaning across the book.** 10.1's "Fear" section approved as the model (researcher: "proceed, I read in there is an improvement"). The fear passages in 10.5, 10.7, 10.9, 10.10, 12, 13, 14, 15 and Ch 11 §4 are rewritten in the same way: prose that says what the verses show, chosen verses, no repetition of 10.1, pointers back to it. 10.9's fear sections went from about 2,000 words of lists to about 1,100. Versions: 10.5, 10.7 v6; 10.9, 10.10, 11, 12, 14 v7; 13 v4; 15 v5. **Correction:** Job 31:34 is part of Job's oath of innocence, not his experience; 10.5 now says so. Anger not yet reworked. | Researcher: "you are not writing with intelligence and interpretation, you just doing a machanical mix and match excercise". |
 | 2026-10-02 | doubt and discouragement (M20; #1931) | **Accounts written for meaning, from the M20 reading already done (not re-read).** 10.1 gains "Anxiety" (the words *merimnaō*, *meteōrizō*, *dāʾag*/*deʾāgāh*, *śarʿappîm*; what it does; care that is good; meeting anxiety) and "Losing heart". 10.2 gains "Perplexity", "Understanding that is hidden" and "Doubt". 10.5 gains "Grumbling" and "Whispering". 10.9 gains "When God hides his face". Versions: 10.1 v7; 10.2 v6; 10.5 v7; 10.9 v8 (2026-10-02). **Proposed, not done: NS-D1**, a new 10.11 "Hiding and disclosing" for the hiding and concealing verses (about 180 of 275), which have no activity home. A draft account is in the digest file. The second pass (Ch 11 §4, 10.10, 12, 3, 14, 15, 10.0) waits for review. Digest and placements: `../../../Clusters/M20 - doubt-discouragement/wa-cluster-M20-narrative-digest-v1-20261002.md`. | Researcher: "proceed with M20 - similar to the previous session" (#1931). Same order as #1930: the main accounts first, for review in context. |
 | 2026-10-02 | doubt and discouragement (M20), NS-D1 + second pass (#1931) | **New 10.11 "Hiding and disclosing"** (NS-D1 option A; researcher: "ns-d1: select A; I reviewed the edited files, looks good."). The draft from the digest §4 is placed unchanged, with Connections added. No renumbering. Second pass: 10.0 v5 (10.11 in the map; two new connections); 10.5 v8 and 10.9 v9 (pointers); 10.10 v8 (new section "Care, discouragement and hiding between people"); Ch 11 v8 (§4 faces: care, hiding, murmuring; factors: whether it divides the person, who acts on whom); Ch 12 v8 (the hidden trap planned in the heart); Ch 3 v6 (Isa 29:15–16); Ch 14 v8 (Eze 39:29; Isa 29:24; Col 3:3); Ch 15 v6 (strand paragraph; the project word "seat" removed from a bullet). | Hiding and concealing (about 180 of M20's 275 verses) belong to the whole person and face both God and others, so no existing activity could hold them as one account. |
+| 2026-10-02 | life and death (M25; #1936) | **Ch 9 "Life, breath and death" moved to Ch 2** (researcher, verbatim: *"Move Ch 9 to Ch 2"*). Old Ch 2–8 become **Ch 3–9**; 10.x–15 unchanged. Chapter text is unchanged apart from the chapter headings, the Ch 1 roadmap and the "Chapter N" cross-references (one back-pointer in Ch 5 reworded: "I return to … in Chapter 9" → "I looked at … in Chapter 2"). Files bumped: 01 v4; 02–09 (new numbers); 10.1 v8, 10.2 v7, 10.3 v2, 10.4 v4, 10.5 v9, 10.6 v4, 10.8 v5, 10.9 v10, 11 v9, 12 v9, 15 v7. Claim register v7 ("New ch" remapped; three #1920-era pointers corrected: 10.3→10.4, 10.8→10.9, 13→14). Priors → `archive/`. **Not yet done:** Ch 2's opening was written for the end of the book ("This is where Scripture's inner words come closest to being separated…") and assumes the word chapters have gone before. It awaits the researcher's direction, together with the umbrella framing (OT-08). | Researcher (OT-08, `../../../cross-cluster-web/open-threads-register.md`): *"life and death is the umbrella over inner being: life is why we live and what makes living - death is the end, and the new beginning."* |
+| 2026-10-02 | life and death (M25), unit 1 (#1934, #1937) | **Ch 2 rewritten as the scene-setting chapter** (researcher: *"the context of Ch 2 is that it sets the scene for discovering the working of the inner being within the context of what life is about and what death means"*; shape approved: *"I go along with your ch2 scene setting and the weaving suggestions"*). New opening; new sections "Where life flows from", "Life set before a person", "Life asked for", "What death is", "Made alive", "The body raised", "What follows"; existing sections kept and widened. Language drawn from the verses ("the breath of life", "the springs of life", "life and death set before you", "from death to life"); "umbrella" is **not** used (researcher). Woven also into Ch 4, 6; 10.2, 10.3, 10.5, 10.7, 10.9, 10.10; Ch 11 §4 ("What it is set against"); Ch 13; Ch 14. **Linkage map** set up: `_analytics/cross-cluster-web/life-death/life-death-linkage-map.md`. Claim register v8. | Weave by activity (#1920), with Ch 2 carrying the frame (OT-08) |
 
 **Which strand fed which version:**
+- **life and death (M25), unit 1 (#1934, #1937)** → 02 v6; 04 v8; 06 v5; 10.2 v8; 10.3 v3; 10.5 v10; 10.7 v7; 10.9 v11; 10.10 v9; 11 v10; 13 v5; 14 v9 (2026-10-02). Structure: Ch 9 → Ch 2 (#1936) and Ch 2 rewritten
 - **doubt and discouragement (M20, #1931)** → 10.1 v7; 10.2 v6; 10.5 v7→v8; 10.9 v8→v9; 10.0 v5; 10.10 v8; 11, 12, 14 v8; 03 v6; 15 v6; **new:** 10.11 v1 (2026-10-02). Structure change: NS-D1 (10.11)
 - origin of thought → Ch 1, 3, 7, 9, 10.0–10.2, 10.5–10.9, 11, 12, 13: **v2 (2026-10-01)**
 - origin of thought → 10.3, 10.4: **v1 (2026-10-01)**

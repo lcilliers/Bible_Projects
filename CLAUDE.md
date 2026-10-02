@@ -117,6 +117,17 @@
 > - **10.3 Remembering and forgetting** was inserted, so the old 10.3–10.9 are now **10.4–10.10**.
 > - The new **Ch 13 "Under God's anger"** sits between "goes wrong" and "made new". The old Ch 13 is now **14**, and the old 14 is now **15**.
 > - Ch 11 §4, "What changes the character", is the cross-cutting account that every strand adds to.
+> - **Ch 9 "Life, breath and death" became Ch 2** (researcher, 2026-10-02, #1936: *"Move Ch 9 to Ch 2"*). Old Ch 2–8 became **3–9**. 10.x–15 are unchanged.
+>   - Ch 2 now **sets the scene** (#1937): *"the context of Ch 2 is that it sets the scene for discovering the working of the inner being within the context of what life is about and what death means"*.
+>   - It uses the verses' own phrases, never "umbrella" (the researcher's picture only).
+>   - Links run through `_analytics/cross-cluster-web/life-death/life-death-linkage-map.md`.
+> - **Open threads register (#1935):** `_analytics/cross-cluster-web/open-threads-register.md`. It holds held items, researcher questions and signposts, each with a "comes back when" trigger.
+>   - Check it before every unit pull.
+>   - Add to it at every ledger approval.
+> - **Strand queue (#1933):**
+>   1. life and death (M25), in progress
+>   2. then fear units 3–4, before any new cluster
+>   3. then M12 and M64 as candidates
 > - **10.11 "Hiding and disclosing"** was added after 10.10, with no renumbering (NS-D1, researcher 2026-10-02: *"ns-d1: select A"*, #1931). It holds M20's concealment phenomena as one account, because they face both God and others. M20 is fully woven; the record is in `_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-narrative-digest-v1-20261002.md`.
 >
 > **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** "you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself." No joining of verses into patterns, mechanisms or divisions that no verse states, in findings, ledgers or narrative. Quote, and stop.
