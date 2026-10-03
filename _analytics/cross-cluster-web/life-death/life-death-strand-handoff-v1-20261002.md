@@ -1,6 +1,6 @@
 # Life and death strand: handoff for the next chat
 
-**Date:** 2026-10-02 · **State:** unit 1 woven (#1934). Ch 9 moved to Ch 2 (#1936) and Ch 2 rewritten as the scene-setting chapter (#1937). · **Next:** unit 2, dying and death.
+**Date:** 2026-10-02 · **Update (later 2026-10-02):** unit 2 pulled, read and ledgered (`life-death-observation-ledger-unit2-v1-20261002.md`, LD-43 to LD-91); **approved and woven 2026-10-03 (#1939)**. **Next: unit 3, living before God** (H2416A / H2416E / G2198 / G2222 / H0748). Unit 3 continues from **LD-92**; unit 2 used faces D01–D28. Current versions: Ch 2 v8 · 10.1 v10 · 10.3 v4 · 10.4 v5 · 10.5 v11 · 10.6 v6 · 10.7 v8 · 10.9 v12 · 10.10 v10 · 10.11 v2 · 11 v11 · 12 v10 · 13 v7 · 14 v11 · claim register v10. New reusable pull script: `strand-unit-pull-v1-20261002.py OUT.csv <strongs…>` (then `--faces`). · **State before that:** unit 1 woven (#1934). Ch 9 moved to Ch 2 (#1936) and Ch 2 rewritten as the scene-setting chapter (#1937). · **Next:** unit 2, dying and death.
 
 ## Working rhythm
 
