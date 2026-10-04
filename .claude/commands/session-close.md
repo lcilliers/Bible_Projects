@@ -82,7 +82,7 @@ why); anything you fixed should no longer show as changed-without-BUILD.md-entry
 
 ## 6a. Copy the narrative to learning4comfort
 
-Run `ibapp\ps\Copy-NarrativeToLearning4Comfort.ps1` via the PowerShell tool (escalation #1941,
+Run `iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1` via the PowerShell tool (escalation #1941,
 researcher: *"session-close trigger the copy"*). It copies the current inner-being narrative files
 (`cfg_setting narrative.copy_source_dir`, top-level `.md` only, never `archive/`) to the
 learning4comfort inbox (`narrative.learning4comfort_inbox_dir`). Earlier versions of the same

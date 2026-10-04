@@ -4033,7 +4033,7 @@ They record where things were at that date.
 **Ruling (researcher, verbatim, #1941):** *"A) this project (bible_study_projects) does not publish directly to github b) on completion of a section of work or on request, the current ...inner-being-narrative files are copied to C:\learning4comfort\publication-inbox\... c) session-close trigger the copy in b)"*. Folder: `the_inner_being` (researcher, 2026-10-04).
 
 - **Live rule:** `cfg_setting governance.no_direct_github_publish`. No GitHub Actions workflow and no push to a site repository from this project.
-- **The route:** `ibapp\ps\Copy-NarrativeToLearning4Comfort.ps1` (`narrativecopy.py`). Source `narrative.copy_source_dir`; target `narrative.learning4comfort_inbox_dir`.
+- **The route:** `iba\app\ps\Copy-NarrativeToLearning4Comfort.ps1` (`narrativecopy.py`). Source `narrative.copy_source_dir`; target `narrative.learning4comfort_inbox_dir`.
 - **When:** on completion of a section of work, on request, and at every `/session-close` (step 6a).
 - **Ownership:** the learning4comfort repo owns preparation, review, approval and publishing from its inbox. This project only places files there.
 - **Superseded:** the direct-to-GitHub workflow and `publishing/learning4comfort/` (never committed) are retired to `archive/publishing-retired-20261004/`. The earlier note "publishing handled with another provider" (memory, 2026-10-02) is history only.
