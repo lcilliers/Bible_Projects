@@ -1,6 +1,6 @@
 # Life and death: Q2 and Q3 focused pulls — soul, spirit and heart at death (v1)
 
-**Date:** 2026-10-04 · **Author:** Claude Code · **Strand:** life and death, M25 · **Threads:** OT-03 / Q2 (researcher): *"What happens to the spirit and soul at death?"* · OT-04 / Q3 (researcher): *"Is anything said about the heart after death?"* · **Trigger:** researcher, 2026-10-04: *"do the Q2 and Q3 focused pulls first"* · **Status:** **for researcher approval** (nothing woven yet) · Format follows the Q4 ledger. Written with meaning in setting and implication (#1943).
+**Date:** 2026-10-04 · **Author:** Claude Code · **Strand:** life and death, M25 · **Threads:** OT-03 / Q2 (researcher): *"What happens to the spirit and soul at death?"* · OT-04 / Q3 (researcher): *"Is anything said about the heart after death?"* · **Trigger:** researcher, 2026-10-04: *"do the Q2 and Q3 focused pulls first"* · **Status:** **set ready for approval (#1950); woven on the researcher's instruction** (chat, 2026-10-04: *"prepare 1950 for approval and then adding it to the narrative"*), with all four §F decisions as recommended. Supplement §H read first (decision 4). See "Woven — where" at the end · Format follows the Q4 ledger. Written with meaning in setting and implication (#1943).
 
 **Data** (iba.db, read-only)
 - **Pull script (new, reusable):** `strand-cooccurrence-pull-v1-20261004.py`. One row per hit of a target word, in a verse that also holds a partner word. Strong's are matched by prefix (H5315 covers H5315G–N).
@@ -116,3 +116,34 @@
 ## G. Quote check
 
 Every quoted fragment in §B–§F was checked against the whole ESV text in iba.db `verse`, split at "…" and at sentence ends: **87 fragments; 0 verse-text failures.** The flags were section titles, quoted claim wording, the proposed narrative sentence (decision 2), and one gloss inserted inside a quote. The gloss has now been moved outside the quote (Hab 2:5).
+
+---
+
+## H. Supplement: after death, without the soul or spirit words (decision 4)
+
+| ID | what the verses state | meaning in setting, and what it implies | verses | basis | disposition |
+|---|---|---|---|---|---|
+| Q2-10 | "Jesus, remember me when you come into your kingdom." "Truly, I say to you, today you will be with me in paradise." | **Meaning:** a dying man asks to be remembered and is promised Jesus' company, "today". **Implies:** the promise is of being *with* him, on the day of death. It names no inner word. | Luk 23:42–43 | S | **W** (Ch 2 "After death", with God) |
+| Q2-11 | "For to me to live is Christ, and to die is gain … I am hard pressed between the two. My desire is to depart and be with Christ, for that is far better. But to remain in the flesh is more necessary on your account." | **Meaning:** Paul names death as departing to be with Christ, "far better". He holds it against staying, which is better for others. **Implies:** the weighing is itself an inner act ("hard pressed", "my desire"). Death is weighed as gain because of who it leads to. | Phili 1:21–24 (1:20–21 already in Ch 2 "Dying to the Lord") | S | **W** (Ch 2 "After death"; "Dying to the Lord") |
+| Q2-12 | "We know that while we are at home in the body we are away from the Lord, for we walk by faith, not by sight. Yes, we are of good courage, and we would rather be away from the body and at home with the Lord. So whether we are at home or away, we make it our aim to please him." | **Meaning:** being away from the body is set beside being at home with the Lord. **Implies:** a few verses earlier, in the same chapter, Paul says "not that we would be unclothed, but that we would be further clothed" (2Cor 5:4, in Ch 2 "Waited for"). Both are stated. I leave them side by side. | 2Cor 5:6–9 | S | **W** (Ch 2 "After death", with a pointer to "Waited for") |
+
+Quote check (same method as §G): all fragments match iba.db `verse`.
+
+---
+
+## Woven — where (2026-10-04, #1950)
+
+Researcher, verbatim: *"prepare 1950 for approval and then adding it to the narrative"*. #1950 is set ready for approval. The weave follows §F as recommended.
+
+| ID | Woven in |
+| --- | --- |
+| Q2-01, Q2-02, Q2-04, Q2-05, Q2-09 (Num 19:11) | Ch 2, **"Soul, spirit and heart at death"** (reworked from "The inner person dying"), the soul |
+| Q2-06 | same section, the spirit (Ecc 3:21 moved here from "Delivered from death") |
+| Q2-03 | Ch 2 "Delivered from death", restated by count; Psa 16:10 moved out of its list |
+| Q2-04 (49:15, 49:19), Q2-07, Q2-10, Q2-11, Q2-12 | Ch 2 "After death", in its two groups, side by side |
+| Q3-01 | Ch 2 "Soul, spirit and heart at death", the heart (Ecc 9:3; "I have found no verse …") |
+| Q3-02, Q3-03 | Ch 4 (Pro 10:21; Eze 18:31; Rom 10:9) |
+| Q2-08, Q3-04 | no change (already woven) |
+| Isa 5:14 (Q2-09) | **not carried**. Hab 2:5, the same picture, is already in 10.6. One witness is enough there |
+
+**Claim register:** v13 (3-9 restatement wording corrected in place; strand section added). **Index**, **linkage map**, **register** updated: OT-03 touched; **OT-04 resolved**.

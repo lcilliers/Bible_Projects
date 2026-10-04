@@ -88,6 +88,8 @@
 | No breath to be woken (the idol) | LD-145 | Ch 2 "Living before God" | Ch 11 §4 | carried (unit 4) |
 | Wrath not stirred, a people not destroyed | LD-146 | Ch 2 "Breath lent" | Ch 13; Ch 11 §4 | carried (unit 4) |
 | The sword roused against the shepherd | LD-148 | Ch 2 "Made alive" | — | carried (unit 4) |
+| Soul, spirit and heart at death: the soul departs, dies, is poured out, goes to the fathers or is ransomed and received; the spirit committed and returning; the heart named only while living | Q2-01–Q2-09, Q3-01 | Ch 2 "Soul, spirit and heart at death" | Ch 4 (Pro 10:21; Eze 18:31; Rom 10:9) | carried (Q2/Q3) |
+| After death with God, without soul or spirit words | Q2-10–Q2-12 | Ch 2 "After death" (side by side) | — | carried (Q2/Q3) |
 | Sheol roused to greet the dead king (a taunt) | LD-144 | Ch 12 (pride) | — | **held** for the state of the dead (OT-03) |
 | God's waking as judgment; the end awakened | LD-154 | — | — | **held** for Ch 13 (rework) |
 | H5782 / H6974 inner-being faces (God stirring; spirits stirred against people; the inner being stirred) | unit 4 ledger §E, LD-149, LD-155 | — | — | handed to #1942 (separate strands) |

@@ -18,7 +18,7 @@
 - **#1944–#1947** Ch 10 revisit: missing meaning; emerging findings and impacts; chains of operation; fitting verses into a fixed list
 - **#1948** Ch 2 revisit of units 2–3 for meaning
 
-**Still owed in M25:** the focused pulls for Q2 (soul and spirit with death, OT-03; LD-144 is held there) and Q3 (heart with death or Sheol, OT-04). Held for Ch 13 at the rework: LD-154. Then fear units 3–4 (#1933).
+**Q2 and Q3 done (#1950, 2026-10-04):** ledger `life-death-q2-q3-soul-spirit-heart-ledger-v1-20261004.md`. Woven: Ch 2 v11 "Soul, spirit and heart at death" (reworked from "The inner person dying"); "Delivered from death" restated by count; "After death" widened; Ch 4 v10. OT-04 resolved (no verse on the heart after death). Claim register v13. #1950 waits for the researcher's approval in the tool. **M25's units and Q1–Q4 are now all read.** Held for Ch 13 at the rework: LD-154. After the rework: fear units 3–4 (#1933).
 
 **Unfinished edges:**
 - Joh 7:38's "heart" is *koilia* (G2836). Do not cite it as a heart verse.
