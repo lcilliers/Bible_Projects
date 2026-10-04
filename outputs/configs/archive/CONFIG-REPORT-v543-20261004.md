@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-04T13:30:45Z |
+| generated_at | 2026-10-04T13:29:57Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -77,7 +77,7 @@ _(none)_
 34. verse_lexical_note.deleted filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
 
 **Stale governance docs** (1) — GOVERNANCE.md older than the newest applied config change:
-35. GOVERNANCE.md was last modified 2026-10-04T13:23:27Z, before the newest applied cfg_change_detail row (2026-10-04T13:30:44Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
+35. GOVERNANCE.md was last modified 2026-10-04T13:23:27Z, before the newest applied cfg_change_detail row (2026-10-04T13:29:56Z) — check whether that change needs an entry (GOVERNANCE.md §8's own rule)
 
 **Unregistered lib modules** (1) — iba/app/lib/*.py with no cfg_utility row:
 36. iba/app/lib/taggingguidance.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
@@ -256,11 +256,10 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**487** registered module(s) — **35** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **400** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**486** registered module(s) — **34** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **400** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
-| Copy-NarrativeToLearning4Comfort.ps1 | iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1 | PS wrapper for narrativecopy.py (-DryRun). Run on completion of a section of work, on request, and in /session-close (escalation #1941). | ✓ | ✓ | thin wrapper; config is read by narrativecopy.py |
 | VerseMeta.ps1 | iba/app/ps/VerseMeta.ps1 | PS wrapper for lib/versemeta.py -- VerseMeta.ps1 -Step SetStatus -References "Gen.1.1,Rom 1:2" -Status analysed. Sets verse_meta.status for a comma-delimited list of verse references (osisId or display form, either accepted per reference). Escalation #1661. | ✓ |  |  |
 | add_adversarial_cluster_v1_20260905 | iba/app/migration/add_adversarial_cluster_v1_20260905.py | ONE-OFF migration -- architecture correction, researcher verdict 2026-09-05: Strong's-code classification (negator/connective/party) belongs in cluster/cluster_strong, not cfg_lexical_code_class/configmaint. Creates cluster T4 'Adversarial' and reallocates H7854/G4567/G1228G from T2 to T4 (first of several tracked de-cfg-ification escalations). inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | add_concise_verse_specific_rule_v1_20260921 | iba/app/migration/add_concise_verse_specific_rule_v1_20260921.py | ONE-OFF migration -- escalation #1824: registers a new cfg_method_rule requiring concise, verse-specific obs_text for lexical.meaning/cluster.reading/cluster.answer, fixing the root cause of the same/broaden/new dedup never firing. Run once, then set inactive=1. |  |  |  |
