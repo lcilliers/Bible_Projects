@@ -1,6 +1,6 @@
 # Life and death: strand observation ledger, unit 4 (v1)
 
-**Date:** 2026-10-04 · **Author:** Claude Code · **Strand:** life and death, M25 (approved #1932) · **Unit:** 4, roused and stirred (H5782) · **Status:** **for researcher approval** (steps 1–4 of the working rhythm done; nothing woven yet) · Follows `life-death-unit4-h5782-reading-v1-20261004.md` (the first reading) and the format of the unit 3 ledger.
+**Date:** 2026-10-04 · **Author:** Claude Code · **Strand:** life and death, M25 (approved #1932) · **Unit:** 4, roused and stirred (H5782) · **Status:** **approved as recommended, #1949** (researcher, chat 2026-10-04: *"approved, proceed with H6974 and the weave"*). Supplement §H (H6974, LD-150 to LD-155) read first under decision 4. Woven: see "Woven — where" at the end · Follows `life-death-unit4-h5782-reading-v1-20261004.md` (the first reading) and the format of the unit 3 ledger.
 
 **Sequencing (researcher, verbatim, 2026-10-04):** *"I personally think we must first complete unit 3 and 4 of M25 as you have already done the preparatory work. and then go back to 1940-1948 to do the rework; else we will stop M25 verse analysis in the middle."*
 
@@ -144,3 +144,47 @@ The life-and-death verses in W06 (LD-147) and W07 (LD-146) are woven in this uni
 ## G. Quote check
 
 The standard tool (`../fear/fear-quote-check-v1-20261001.py`) checks a quote only against references in the same table cell. This ledger puts the references in a separate column, so it could not resolve them (13 checked, 2 false flags). Instead, every quoted fragment in §B–§F was checked against the whole ESV text in iba.db `verse` (29,760 verses), split at "…" and at sentence ends: **84 fragments; 0 verse-text failures.** The 8 flags were 7 section titles in quotation marks, plus one fragment joined across Isa 14:10–11 by the check's own splitting; both halves match.
+
+---
+
+## H. Supplement: H6974 "to awake" (decision 4, approved #1949; read 2026-10-04)
+
+**Data:** `life-death-unit4-supplement-h6974-pull-v1-20261004.csv` (H6974, **22 hits in 21 verses**, from iba.db; tagged **T3**, not M25). Faces from `life-death-unit4-supplement-face-assign-v1-20261004.py`; every hit has one. Five verses carry both words and were already read (Job 14:12; Hab 2:19; Psa 35:23; 44:23; 73:20). New faces: **W18** The dead waking (3) · **W19** The child not awakened (1) · **W20** A perpetual sleep (2) · **W21** Waking kept by God (2) · **W22** The end awakened (1) · **W23** Waking in the inner being (5, to #1942) · W17 data (2: 1Sa 26:12, a deep sleep from the Lord; Jer 31:26). W06 gains Psa 59:5. **Context read:** 2Ki 4:32–35; Psa 3:1–6; 73:17–20; 139:17–18; Jer 51:38–40; Dan 12:1–3; Isa 26:14.
+
+| id | what the verses state | meaning in setting, and what it implies | verses | basis | disposition |
+|---|---|---|---|---|---|
+| LD-150 | **The dead waking.** "But at that time your people shall be delivered, everyone whose name shall be found written in the book. And many of those who sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt." "They are dead, they will not live; they are shades, they will not arise" set against "Your dead shall live; their bodies shall rise. You who dwell in the dust, awake and sing for joy!" "As for me, I shall behold your face in righteousness; when I awake, I shall be satisfied with your likeness." | **Meaning:** the hope against death is named with the same picture as death itself: those who sleep in the dust shall awake. **Implies:** the waking is not the same for all. Daniel divides it into life and contempt. Isaiah sets two kinds of dead side by side, those who "will not arise" and those told to "awake and sing for joy". For the psalmist, waking means seeing God's face and being satisfied: the inner being's desire is met. Job 14:12 ("he will not awake … till the heavens are no more") stands beside these, unreconciled. | Dan 12:1–2; Isa 26:14, 19; Psa 17:15 (all three already in Ch 2) | S | **W** (Ch 2 "Sleep and waking", pointing to where they stand) |
+| LD-151 | **The child not awakened.** "Gehazi went on ahead and laid the staff on the face of the child, but there was no sound or sign of life. Therefore he returned to meet him and told him, 'The child has not awakened.'" Elisha "shut the door behind the two of them and prayed to the Lord … the flesh of the child became warm … The child sneezed seven times, and the child opened his eyes." | **Meaning:** a death is spoken of, in the household, as not waking. **Implies:** the return of life is told as a waking: warmth, breath (a sneeze), open eyes. Prayer comes first (4:33). | 2Ki 4:31–35 | S | **W** (Ch 2 "Sleep and waking") |
+| LD-152 | **A perpetual sleep.** "While they are inflamed I will prepare them a feast and make them drunk, that they may become merry, then sleep a perpetual sleep and not wake, declares the Lord. I will bring them down like lambs to the slaughter"; "they shall sleep a perpetual sleep and not wake, declares the King, whose name is the Lord of hosts." | **Meaning:** a death laid on Babylon in judgment is named as a sleep with no waking. **Implies:** the merriment itself leads into it ("that they may become merry, then sleep"). | Jer 51:39–40, 57 | S | **W** (Ch 2 "Sleep and waking"); Ch 13 at the rework |
+| LD-153 | **Waking kept by God.** "many are saying of my soul, 'There is no salvation for him in God.' … I lay down and slept; I woke again, for the Lord sustained me. I will not be afraid of many thousands of people who have set themselves against me all around." "How precious to me are your thoughts, O God! … I awake, and I am still with you." | **Meaning:** an ordinary waking is credited to God's sustaining, in a night when the psalmist's life is threatened. **Implies:** it releases fear ("I will not be afraid", the next verse). Psalm 139 makes waking a waking to God's presence. | Psa 3:1–6; Psa 139:17–18 | S | **W** (Ch 2 "Sleep and waking"); 10.1 at the rework |
+| LD-154 | **God's waking as judgment; the end awakened.** "until I went into the sanctuary of God; then I discerned their end … How they are destroyed in a moment … Like a dream when one awakes, O Lord, when you rouse yourself, you despise them as phantoms"; "Rouse yourself to punish all the nations"; "An end has come; the end has come; it has awakened against you." | **Meaning:** God's rousing brings the end of the wicked, and "the end" itself is said to wake. | Psa 73:17–20 (73:17 already in Ch 11); Psa 59:5; Eze 7:6 | S | **H** for Ch 13 (at the rework, #1944–#1948 era), not forced in now |
+| LD-155 | **Waking in the inner being.** "When shall I awake? I must have another drink"; "a hungry man dreams … and awakes with his hunger not satisfied"; "Awake, you drunkards, and weep"; "when you awake, they will talk with you" | Craving, an unmet hunger, grief, and teaching that speaks on waking | Pro 23:35; Isa 29:8; Joe 1:5; Pro 6:22 | S | **→1942** |
+
+Unit 5, if any, continues from **LD-156**; faces from **W24**.
+
+---
+
+## Woven — where (2026-10-04, #1949)
+
+The researcher approved this, verbatim: *"approved, proceed with H6974 and the weave"*. That approved §F as recommended: (1) a new Ch 2 section, "Sleep and waking"; (2) Isa 14:9–11 held for OT-03 and woven only in Ch 12; (3) Psa 121:4 beside Psa 44:23; (4) H6974 read first (§H).
+
+| LD | Woven in |
+| --- | --- |
+| LD-143 | Ch 2, new "Sleep and waking" (Job 14:7, 12–15) |
+| LD-144 | Ch 12 "Pride …" (Isa 14:4, 10–11). The state of the dead: **held** in OT-03 |
+| LD-145 | Ch 2 "Living before God" (Hab 2:18–20); Ch 11 §4 |
+| LD-146 | Ch 2 "Breath lent" (Psa 78:38 joined to 78:39); Ch 13 "Why it is held back" (the elided "and did not stir up all his wrath" restored); Ch 11 §4 |
+| LD-147 | Ch 2 "Sleep and waking" (Psa 7:5–6; 35:17, 23; 44:22–23; 59:3–4; 80:2, 18; Psa 121:4 side by side; Rom 8:36–37); 10.9, new "Calling on God to wake" |
+| LD-148 | Ch 2 "Made alive" (Zec 13:7; Mat 26:31) |
+| LD-149, LD-155 | to #1942 |
+| LD-150 | Ch 2 "Sleep and waking" (Dan 12:2; Isa 26:14, 19; Psa 17:15, briefly, pointing to "The body raised" and "Life, and judgment", where they already stand) |
+| LD-151 | Ch 2 "Sleep and waking" (2Ki 4:31–35) |
+| LD-152 | Ch 2 "Sleep and waking" (Jer 51:39) |
+| LD-153 | Ch 2 "Sleep and waking" (Psa 3:2, 5–6; 139:18) |
+| LD-154 | **held** for Ch 13, at the rework |
+| §C | Ch 11 §4, new "Who rouses, and toward what" |
+| §E | to #1942 (49 H5782 hits; plus H6974 W23, 5 hits) |
+
+**Moved, not duplicated:** the "death as sleep" paragraph (Mat 9:24; Joh 11:13; 1Th 4:14) moved from "What death is" into "Sleep and waking".
+
+**New quotes:** checked against iba.db `verse` (`--prose`). Ch 2 v10: 459 checked; besides the 14 older flags, 3 new ones: two section titles in quotation marks, and "he will not awake" (Job 14:12, named in the paragraph above). 10.9 v14: 1 new flag, a section title. 11, 12, 13: no new flags. **Claim register:** v12.

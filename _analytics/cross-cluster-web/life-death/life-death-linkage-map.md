@@ -84,7 +84,13 @@
 | "As the Lord lives" and "long" change character | unit 3 ledger §C, §B.19 | Ch 11 §4 ("Who swears it, and what for"; "What it is joined to") | Ch 2 | carried (unit 3) |
 | Life by doing, and the counter-statements | LD-106 | — | — | **held** (OT-01) |
 | Fed by the word (Mat 4:4); healed or raised; life taken by people; lifespan notices, creatures, non-life senses | LD-107, LD-133 (part), LD-136, LD-137 | — | — | data / pointer |
-| Not roused from the sleep of death; Sheol roused; no breath to wake (H5782) | unit 4 reading (`life-death-unit4-h5782-reading-v1-20261004.md`) W01–W03 | — | — | **not yet read into a ledger** (unit 4) |
+| Sleep and waking: death as a sleep not roused; perpetual sleep; the child not awakened; waking kept by God; the call to God to wake when life is sought; the dead waking | LD-143, LD-147, LD-150–LD-153 | Ch 2 "Sleep and waking" | 10.9 "Calling on God to wake" | carried (unit 4) |
+| No breath to be woken (the idol) | LD-145 | Ch 2 "Living before God" | Ch 11 §4 | carried (unit 4) |
+| Wrath not stirred, a people not destroyed | LD-146 | Ch 2 "Breath lent" | Ch 13; Ch 11 §4 | carried (unit 4) |
+| The sword roused against the shepherd | LD-148 | Ch 2 "Made alive" | — | carried (unit 4) |
+| Sheol roused to greet the dead king (a taunt) | LD-144 | Ch 12 (pride) | — | **held** for the state of the dead (OT-03) |
+| God's waking as judgment; the end awakened | LD-154 | — | — | **held** for Ch 13 (rework) |
+| H5782 / H6974 inner-being faces (God stirring; spirits stirred against people; the inner being stirred) | unit 4 ledger §E, LD-149, LD-155 | — | — | handed to #1942 (separate strands) |
 | Notices, sentences, killings, judgement narratives, sanctuary statutes, uncleanness, animals; idiom; child discipline | LD-50, LD-85, LD-91 | — | — | data |
 | Statutes by which one lives / could not live | LD-30 | — | — | **held** (OT-01) |
 | Survival, war, law, sickness, "long live the king", genealogies | LD-36, LD-42 | — | — | data |
@@ -106,8 +112,8 @@
 | M11 Turning & Repentance | 44 (14) | Ch 2; Ch 14 | carried (unit 1 part) |
 | M13 Faith | 43 (18) | Ch 2 (Hab 2:4) | partly |
 | M54 Torah & Obedience | 40 (19) | Ch 2 (Lev 18:5; Deu 8:3) | partly; OT-01 |
-| M02 Anger & Wrath | 36 (17) | Ch 13 (Job 4:9); 10.1 and 10.10 (Pro 19:11); Ch 13 (Isa 48:9; Psa 30:5; Psa 78:50) | **H0748 read** (unit 3, LD-134); H5782 "stir up his wrath" (Psa 78:38) in unit 4 |
-| M51 Love & Devotion | 34 (14) | 10.6 (Song 8:6); 10.10 (1Jo 3:14) | partly; unit 4 (rouse) read 2026-10-04, ledger to come (Song 2:7; Pro 10:12) |
+| M02 Anger & Wrath | 36 (17) | Ch 13 (Job 4:9); 10.1 and 10.10 (Pro 19:11); Ch 13 (Isa 48:9; Psa 30:5; Psa 78:50) | **H0748 read** (unit 3, LD-134); H5782 Psa 78:38 woven (unit 4, LD-146) |
+| M51 Love & Devotion | 34 (14) | 10.6 (Song 8:6); 10.10 (1Jo 3:14) | partly; the H5782 love verses (Song 2:7; 3:5; 8:4) are handed to #1942 |
 | M64 Will & Resolve | 21 (5) | Ch 2 / 10.7 (Deu 30:19) | partly; **M64 strand candidate (#1933)** |
 | M20 Doubt (hiding) | 23 (7) | Ch 2 (Col 3:3) | partly |
 | all others | see `life-death-strand-overview-data-v1-20261002.md` §3 | — | not yet read |

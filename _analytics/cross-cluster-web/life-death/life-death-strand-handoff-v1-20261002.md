@@ -1,21 +1,28 @@
 # Life and death strand: handoff for the next chat
 
-**Date:** 2026-10-02 · **Update (2026-10-04):** **unit 3 approved and woven (#1940)**; unit 4 (H5782) pulled and read; next is the unit 4 ledger from **LD-143**. · **Update (2026-10-03):** **unit 3 pulled, read and ledgered** (`life-death-observation-ledger-unit3-v1-20261003.md`, LD-92 to LD-138, faces L01–L32, 690 hits / 629 verses); **awaiting researcher approval (#1940)**, with four decisions in its §F. Next after approval: weave → records → session-close. Unit 4 continues from **LD-139**. · **Update (later 2026-10-02):** unit 2 pulled, read and ledgered (`life-death-observation-ledger-unit2-v1-20261002.md`, LD-43 to LD-91); **approved and woven 2026-10-03 (#1939)**. **Next: unit 3, living before God** (H2416A / H2416E / G2198 / G2222 / H0748). Unit 3 continues from **LD-92**; unit 2 used faces D01–D28. Current versions: Ch 2 v8 · 10.1 v10 · 10.3 v4 · 10.4 v5 · 10.5 v11 · 10.6 v6 · 10.7 v8 · 10.9 v12 · 10.10 v10 · 10.11 v2 · 11 v11 · 12 v10 · 13 v7 · 14 v11 · claim register v10. New reusable pull script: `strand-unit-pull-v1-20261002.py OUT.csv <strongs…>` (then `--faces`). · **State before that:** unit 1 woven (#1934). Ch 9 moved to Ch 2 (#1936) and Ch 2 rewritten as the scene-setting chapter (#1937). · **Next:** unit 2, dying and death.
+**Date:** 2026-10-02 · **Update (2026-10-04, later):** **unit 4 approved and woven (#1949)**; next is the rework #1940–#1948. · **Update (2026-10-04):** **unit 3 approved and woven (#1940)**; unit 4 (H5782) pulled and read; next is the unit 4 ledger from **LD-143**. · **Update (2026-10-03):** **unit 3 pulled, read and ledgered** (`life-death-observation-ledger-unit3-v1-20261003.md`, LD-92 to LD-138, faces L01–L32, 690 hits / 629 verses); **awaiting researcher approval (#1940)**, with four decisions in its §F. Next after approval: weave → records → session-close. Unit 4 continues from **LD-139**. · **Update (later 2026-10-02):** unit 2 pulled, read and ledgered (`life-death-observation-ledger-unit2-v1-20261002.md`, LD-43 to LD-91); **approved and woven 2026-10-03 (#1939)**. **Next: unit 3, living before God** (H2416A / H2416E / G2198 / G2222 / H0748). Unit 3 continues from **LD-92**; unit 2 used faces D01–D28. Current versions: Ch 2 v8 · 10.1 v10 · 10.3 v4 · 10.4 v5 · 10.5 v11 · 10.6 v6 · 10.7 v8 · 10.9 v12 · 10.10 v10 · 10.11 v2 · 11 v11 · 12 v10 · 13 v7 · 14 v11 · claim register v10. New reusable pull script: `strand-unit-pull-v1-20261002.py OUT.csv <strongs…>` (then `--faces`). · **State before that:** unit 1 woven (#1934). Ch 9 moved to Ch 2 (#1936) and Ch 2 rewritten as the scene-setting chapter (#1937). · **Next:** unit 2, dying and death.
 
-## ★ Next chat starts here (written 2026-10-04, end of session)
+## ★ Next chat starts here (written 2026-10-04, after unit 4)
 
-**Where it stopped:** unit 3 (living before God) is **approved and woven**. The researcher wrote in chat, *"approve 1940 as recommended"*. #1940 is set **ready_for_approval** for the researcher to close in the escalation tool. The LD-138 supplement was read as §B.19 (LD-139 to LD-142). The weave is recorded in the ledger's "Woven — where". Current versions: Ch 2 v9 · 04 v9 · 06 v6 · 10.1 v11 · 10.2 v9 · 10.3 v5 · 10.4 v6 · 10.5 v12 · 10.6 v7 · 10.7 v9 · 10.9 v13 · 10.10 v11 · 11 v12 · 12 v11 · 13 v8 · 14 v12 · claim register v11.
+**Where it stopped:** M25 units 3 and 4 are **approved and woven**.
+- Unit 3 (#1940) is woven and waits for the researcher's approval in the escalation tool.
+- Unit 4 (#1949) is approved and woven: the new Ch 2 section "Sleep and waking", and the H6974 supplement §H (LD-150 to LD-155).
+- Current versions: Ch 2 v10 · 10.9 v14 · 11 v13 · 12 v12 · 13 v9 · claim register v12. The other versions are as after unit 3.
 
-**Unit 4 (H5782, roused and stirred) has started.** Steps 1–3 are done in `life-death-unit4-h5782-reading-v1-20261004.md`: register check, pull (`life-death-unit4-roused-stirred-pull-v1-20261004.csv`, 78 hits / 64 verses) and read by surface (faces W01–W16, every hit faced).
-- **The earlier question, whether H5782 belongs, is withdrawn.** It was raised from surface counts without reading the verses (reading §A). The reading answers it: it belongs. It has a small direct life-and-death face (Job 14:12; Isa 14:9; Hab 2:19) and a larger inner-being face (God stirs up the spirit, 8 verses; the heart awake; love stirred; hatred stirring strife; the ear awakened).
+**Sequencing (researcher, verbatim, 2026-10-04):** *"I personally think we must first complete unit 3 and 4 of M25 as you have already done the preparatory work. and then go back to 1940-1948 to do the rework; else we will stop M25 verse analysis in the middle."*
 
-**First action next chat:** step 4, the unit 4 ledger. Observations continue from **LD-143**, and faces become L37 onward or keep W (state which). Write a faces CSV and script as in units 2–3, merge with `--faces`, then write §B observations, §C change of character, §D Q1–Q4, and a §F proposed weave. Put to the researcher in §F: whether to add **H6974** (*qûṣ*, "awake"; tagged T3, not M25: Dan 12:2; Isa 26:19; Psa 17:15; Job 14:12a) as a strand diversion (reading §D, #1900).
+**Next: the rework, #1940–#1948.** Ask the researcher where to start. The items:
+- **#1941** publishing alignment (waits on the researcher)
+- **#1942** H5782 as several strands. Inputs: unit 4 ledger §E, LD-149, LD-155
+- **#1943** weaving method from now on (applied first in the unit 4 ledger)
+- **#1944–#1947** Ch 10 revisit: missing meaning; emerging findings and impacts; chains of operation; fitting verses into a fixed list
+- **#1948** Ch 2 revisit of units 2–3 for meaning
 
-**Then:** the focused pulls for Q2 (soul and spirit with death, OT-03) and Q3 (heart with death or Sheol, OT-04). Then fear units 3–4 (#1933).
+**Still owed in M25:** the focused pulls for Q2 (soul and spirit with death, OT-03; LD-144 is held there) and Q3 (heart with death or Sheol, OT-04). Held for Ch 13 at the rework: LD-154. Then fear units 3–4 (#1933).
 
-**Unfinished edges to keep in view:**
-- Joh 7:38's "heart" is *koilia* (G2836). Do not cite it as a heart verse anywhere.
-- **Not committed, deliberately:** `.github/workflows/publish-learning4comfort-content.yml` and `publishing/learning4comfort/SOURCE-SETUP.md` (a Learning4Comfort publishing sync, made outside this session). They are left for the researcher to decide.
+**Unfinished edges:**
+- Joh 7:38's "heart" is *koilia* (G2836). Do not cite it as a heart verse.
+- **Not committed, deliberately:** `.github/` and `publishing/` (#1941).
 
 ### Previous stop (2026-10-03)
 
