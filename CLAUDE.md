@@ -125,8 +125,8 @@
 >   - Check it before every unit pull.
 >   - Add to it at every ledger approval.
 > - **Strand queue (#1933):**
->   1. life and death (M25), in progress
->   2. then fear units 3–4, before any new cluster
+>   1. life and death (M25): units 1–4 and Q2–Q4 ledgers done and woven. **Narrative placement held, not reworked** (researcher, 2026-10-04: *"M25 is a particularly difficult section and I am not sure it is the right time to try and massage it … these will only become really understood once other sections of the study is further developed"*). See open threads OT-08, and #1943 and #1948 (on hold).
+>   2. fear units 3–4, before any new cluster. **Unit 3 ledger approved, weave held** (#1957, OT-10: *"we want to first do more work on and around it before writing into the narrative"*). **Unit 4 (Greek) next, ledger only**, then a cross-ledger analysis of units 1–4 before any weave.
 >   3. then M12 and M64 as candidates
 > - **10.11 "Hiding and disclosing"** was added after 10.10, with no renumbering (NS-D1, researcher 2026-10-02: *"ns-d1: select A"*, #1931). It holds M20's concealment phenomena as one account, because they face both God and others. M20 is fully woven; the record is in `_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-narrative-digest-v1-20261002.md`.
 >

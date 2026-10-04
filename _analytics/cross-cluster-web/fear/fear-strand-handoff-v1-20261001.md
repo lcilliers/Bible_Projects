@@ -2,7 +2,13 @@
 
 > **Queue (researcher, 2026-10-02, #1932/#1933):** the fear strand is paused while M25 (life and death) is explored. *"mark unit 3 and 4 of fear to be completed before proceding with a new cluster after M25."* **Units 3 and 4 below are therefore next once M25 is done, before any new cluster.** After them, the candidates are M12 (Righteousness & Integrity) and M64 (Will & Resolve).
 
-**Date:** 2026-10-01 · **State:** units 1 (#1928) and 2 (#1929) woven · **Next:** unit 3 (terror, horror, desolation)
+**Date:** 2026-10-01 (state updated 2026-10-04) · **State:** units 1 (#1928) and 2 (#1929) woven; **unit 3 ledger approved, weave held** (#1957, OT-10) · **Next:** unit 4 (Greek), **ledger only**, weave held. Then a cross-ledger analysis of units 1–4, with its aim set by the researcher.
+
+> **2026-10-04.** Researcher, verbatim (#1957): *"approve 1957, hold the weave;  the ledger is good.  we want to first do  more work on and around it before writing into the narrative.  Should we compile the unit 4 ledger also to allow for cross ledger analysis?"* Claude recommended yes. Unit 3 covered every remaining Hebrew/Aramaic M01 entry (44 Strong's, 189 hits), so **unit 4 is the 22 Greek M01 Strong's** (about 183 hits: G5399, G5401, G1719, G5156, G1568, G1790, G1169, G5398, G5141, G1630, G4422, G2124, G2125, G1167, G1168, G4423, G5400, G6015, G4426, G2412, G5425, G2317).
+> - **Ledger format:** copy unit 3's (`fear-observation-ledger-unit3-v1-20261004.md`): an added column, "meaning in setting, and what it implies"; speakers named.
+> - **Quote check:** run it on a copy with the meaning column joined to the observation, because the checker reads columns by position (unit 3 §F).
+> - **Pull:** `../life-death/strand-unit-pull-v1-20261002.py`.
+> - **Life-and-death crossings:** held under OT-08.
 
 ## Working rhythm
 
