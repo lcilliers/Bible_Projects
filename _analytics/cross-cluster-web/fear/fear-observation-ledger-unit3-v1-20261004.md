@@ -19,6 +19,8 @@ The groups overlap at the edges (H4288 is both terror and ruin), so the hit colu
 
 **189 hits in 181 verses.**
 
+**Coverage gap (found 2026-10-04, overview pass):** H4172A (*môrāʾ*, fear, terror) was taken as read because unit 2 had read one of its 11 hits (Isa 8:13). The other 10 were never faced. They are now read in `fear-observation-ledger-unit3-addendum-H4172A-v1-20261004.md`.
+
 **Data:**
 - `fear-unit3-terror-horror-pull-v1-20261004.csv`: built from iba.db (read-only) with `../life-death/strand-unit-pull-v1-20261002.py`. One row per hit, with the full ESV text and a **face**. **Every hit has a face**, and no verse text is missing.
 - Faces: `fear-unit3-faces-v1-20261004.csv`.
@@ -168,3 +170,9 @@ Every quote in §B and §C was run through `fear-quote-check-v1-20261001.py` (un
 
    The alternative is to approve the ledger and **hold the weave** until you have looked at how placement is done. Please say which.
 4. **RS items for 11 §4:** FE-90, FE-95, FE-96, FE-99, FE-102, FE-104 (§C).
+
+---
+
+## Woven — where (2026-10-04, #1961)
+
+The weave was released in one form only: the full account of fear in the new sub-chapter **10.12 "Fear"** (`_analytics/essay/spirit_soul_body/inner-being-narrative/10-12-fear-v1-20261004.md`). It was built from all four ledgers, this one included (FE-86 to FE-120), and from the cross-ledger overview. **No other chapter was changed.** The dispositions above that point to other chapters (10.1, 10.5, 10.9, 10.10, 11 §4, 12, 13, 15) are **not** carried out. They wait on the 10.1 frame question (OT-12). The death-side items stay held (OT-08).

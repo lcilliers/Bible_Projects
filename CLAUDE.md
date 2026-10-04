@@ -126,8 +126,20 @@
 >   - Add to it at every ledger approval.
 > - **Strand queue (#1933):**
 >   1. life and death (M25): units 1–4 and Q2–Q4 ledgers done and woven. **Narrative placement held, not reworked** (researcher, 2026-10-04: *"M25 is a particularly difficult section and I am not sure it is the right time to try and massage it … these will only become really understood once other sections of the study is further developed"*). See open threads OT-08, and #1943 and #1948 (on hold).
->   2. fear units 3–4, before any new cluster. **Unit 3 ledger approved, weave held** (#1957, OT-10: *"we want to first do more work on and around it before writing into the narrative"*). **Unit 4 (Greek) next, ledger only**, then a cross-ledger analysis of units 1–4 before any weave.
+>   2. ~~fear units 3–4, before any new cluster. **Unit 3 ledger approved, weave held** (#1957, OT-10: *"we want to first do more work on and around it before writing into the narrative"*). **Unit 4 (Greek) next, ledger only**, then a cross-ledger analysis of units 1–4 before any weave.~~ **Done 2026-10-04:**
+>      - unit 3 (#1957), unit 4 (#1958) and the H4172A addendum (#1960)
+>      - the cross-ledger overview (#1959, #1960)
+>      - the 10.1 comparison **not** done (OT-12)
+>      - **10.12 "Fear"** written and approved (#1961, #1962)
+>
+>      Next (researcher): *"gathering similar studies of other key characteristics."*
 >   3. then M12 and M64 as candidates
+> - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
+>   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
+>   - Built from the unit ledgers, a cross-ledger overview (`_analytics/cross-cluster-web/fear/fear-cross-ledger-overview-*`) and the co-existence review (its §F).
+>   - **Fear units 1–4 are complete**, with a unit 3 addendum for H4172A. That clears strand queue item 2 below.
+>   - The other chapters are **not** reworked in this first step. 10.1's "Fear" section overlaps 10.12, and the 10.1 "Feeling" frame is open (OT-12: no biblical word names "feeling" as a category; `_analytics/essay/spirit_soul_body/wa-essay-narrative-feeling-frame-question-v1-20261004.md`).
+>   - Style guide v2 §7 still states #1920 unchanged. It needs updating in v3 (deferred, #1930).
 > - **10.11 "Hiding and disclosing"** was added after 10.10, with no renumbering (NS-D1, researcher 2026-10-02: *"ns-d1: select A"*, #1931). It holds M20's concealment phenomena as one account, because they face both God and others. M20 is fully woven; the record is in `_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-narrative-digest-v1-20261002.md`.
 >
 > **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** "you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself." No joining of verses into patterns, mechanisms or divisions that no verse states, in findings, ledgers or narrative. Quote, and stop.
