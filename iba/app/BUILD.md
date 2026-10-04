@@ -16850,7 +16850,7 @@ Files:
 4. An earlier version (`02-…-v10`) was planted and the current `v11` deleted, with an unrelated file added. The v10 was removed, v11 copied, the unrelated file left alone, and 27 verified.
 
 **Not done here:**
-- The live run against the real inbox waits for #1952–#1956 to be approved and applied.
+- ~~The live run waits for #1952–#1956.~~ **Done 2026-10-04:** #1952–#1956 were approved by the researcher and applied (`Config-Maintenance.ps1 -Step Propose -RunId`). The first live run copied 27 files into `C:/learning4comfort/publication-inbox/the_inner_being`, and all 27 were hash-verified.
 - learning4comfort's own `SOURCE-SETUP.md` (in that repo) still describes the old route. The researcher is updating it.
 
 **Files:** `iba/app/lib/narrativecopy.py`, `iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1`, `.claude/commands/session-close.md`, `archive/publishing-retired-20261004/`, `CLAUDE.md` §12, `iba/app/GOVERNANCE.md` §86.
