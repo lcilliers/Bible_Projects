@@ -1,6 +1,6 @@
 # Life and death: strand observation ledger, unit 3 (v1)
 
-**Date:** 2026-10-03 · **Author:** Claude Code · **Strand:** life and death, M25 (approved #1932) · **Unit:** 3, living before God · **Status:** **for researcher approval, #1940** (steps 1–4 of the working rhythm done; nothing woven yet) · Follows `life-death-strand-candidate-v2-20261002.md` §5 unit 3 and §7 (questions Q1–Q4), and the format of `life-death-observation-ledger-unit2-v1-20261002.md`.
+**Date:** 2026-10-03 · **Author:** Claude Code · **Strand:** life and death, M25 (approved #1932) · **Unit:** 3, living before God · **Status:** **approved as recommended, #1940** (researcher, chat 2026-10-04: *"approve 1940 as recommended"*). Supplement §B.19 (LD-139 to LD-142) read 2026-10-04 under decision 4. Woven: see "Woven — where" at the end · Follows `life-death-strand-candidate-v2-20261002.md` §5 unit 3 and §7 (questions Q1–Q4), and the format of `life-death-observation-ledger-unit2-v1-20261002.md`.
 
 **Threads this unit may bear on** (`../open-threads-register.md`, checked before the pull):
 - **OT-01** (life by the statutes, and statutes without life): the "do this and live" verses fall in this unit (H2416E, G2198, G2222). **Main contact.**
@@ -220,7 +220,23 @@
 
 | id | observation | verses | basis | touches | disposition |
 |---|---|---|---|---|---|
-| LD-138 | **H2416C in its "life" sense** (not in the unit's Strong's list; H2416C is mostly "beast"). "so that his life loathes bread, and his appetite the choicest food"; "His soul draws near the pit, and his life to those who bring death"; "he keeps back his soul from the pit, his life from perishing by the sword"; "He has redeemed my soul from going down into the pit, and my life shall look upon the light"; "You were wearied with the length of your way, but you did not say, 'It is hopeless'; you found new life for your strength, and so you were not faint". Also H2416D: "do not forget the life of your poor forever" | Job 33:20, 22, 18, 28; Isa 57:10; Psa 74:19 (and Psa 143:3, already LD-58; Psa 78:50; Job 36:14) | S | 2 "Delivered from death", 10.1, 5 (soul) | **decision** (§F, decision 4) |
+| LD-138 | **H2416C in its "life" sense** (not in the unit's Strong's list; H2416C is mostly "beast"). "so that his life loathes bread, and his appetite the choicest food"; "His soul draws near the pit, and his life to those who bring death"; "he keeps back his soul from the pit, his life from perishing by the sword"; "He has redeemed my soul from going down into the pit, and my life shall look upon the light"; "You were wearied with the length of your way, but you did not say, 'It is hopeless'; you found new life for your strength, and so you were not faint". Also H2416D: "do not forget the life of your poor forever" | Job 33:20, 22, 18, 28; Isa 57:10; Psa 74:19 (and Psa 143:3, already LD-58; Psa 78:50; Job 36:14) | S | 2 "Delivered from death", 10.1, 5 (soul) | **read in §B.19** (decision 4, approved) |
+
+
+### B.19 Supplement: H2416C / H2416D in the "life" sense (decision 4, approved #1940; read 2026-10-04)
+
+**Data:** `life-death-unit3-supplement-h2416c-pull-v1-20261004.csv` (H2416C and H2416D, **109 hits in 100 verses**, from iba.db). Faces from `life-death-unit3-supplement-face-assign-v1-20261004.py`; every hit has one. Faces: **L33** Life brought back from the pit (4) · **L34** Life given over (2) · **L35** New life found for strength (1) · **L36** The life of the poor, not to be forgotten (1) · L14 (3: Psa 143:3, already LD-58; Eze 7:13 ×2, already LD-112) · **data**: L06 beasts and living creatures (79), L07 (19: the living creatures of Ezekiel's vision, Eze 1, 3, 10, which "were cherubim", Eze 10:20; the lions' "appetite", Job 38:39; H2416D as a place or company, 2Sa 23:11, 13; Psa 68:10 "flock").
+
+| id | observation | verses | basis | touches | disposition |
+|---|---|---|---|---|---|
+| LD-139 | **Life brought back from the pit (Elihu).** God speaks "in a dream, in a vision of the night … then he opens the ears of men and terrifies them with warnings, that he may turn man aside from his deed and conceal pride from a man; he keeps back his soul from the pit, his life from perishing by the sword". A man "is also rebuked with pain on his bed … so that his life loathes bread, and his appetite the choicest food … His soul draws near the pit, and his life to those who bring death". If there is "an angel, a mediator … and he is merciful to him, and says, 'Deliver him from going down into the pit; I have found a ransom'", then "man prays to God, and he accepts him; he sees his face with a shout of joy". He sings, "I sinned and perverted what was right, and it was not repaid to me. He has redeemed my soul from going down into the pit, and my life shall look upon the light". "Behold, God does all these things, twice, three times, with a man, to bring back his soul from the pit, that he may be lighted with the light of life" | Job 33:14–30 (H2416C at 33:18, 20, 22, 28; 33:24, 28 already in Ch 2) | S. Soul and life stand in parallel in each line | **2 "Delivered from death"**, 10.2 (ears opened, warnings), 10.1 (joy), 12 (confession), 5 (soul) | W |
+| LD-140 | **Life given over.** "He let loose on them his burning anger … He made a path for his anger; he did not spare them from death, but gave their lives over to the plague"; "The godless in heart cherish anger; they do not cry for help when he binds them. They die in youth, and their life ends among the cult prostitutes" | Psa 78:49–50; Job 36:13–14 | S | 13, 10.1 (anger cherished), 4 (Job 36:13) | W |
+| LD-141 | **New life found for strength, in the wrong pursuit.** "You journeyed to the king with oil and multiplied your perfumes; you sent your envoys far off, and sent down even to Sheol. You were wearied with the length of your way, but you did not say, 'It is hopeless'; you found new life for your strength, and so you were not faint. Whom did you dread and fear, so that you lied, and did not remember me, did not lay it to heart?" | Isa 57:9–11 | S | 10.3 (did not remember), 10.6, 10.1 | W |
+| LD-142 | **The life of the poor, held before God.** "Do not deliver the soul of your dove to the wild beasts; do not forget the life of your poor forever" | Psa 74:19 (H2416D) | S | 2 "Life asked for", 10.9 | W |
+
+**§C addition (change of character).** The word for "life" in Job 33:20 is the one that loathes: "his life loathes bread". In LD-111 a person loathes his life. In Job 33:20 the life itself loathes, as an appetite does, in the same line ("and his appetite the choicest food"). Two verses later the same word is what draws near death ("his life to those who bring death", 33:22), and at the end it is what "shall look upon the light" (33:28).
+
+Unit 4 continues from **LD-143**; faces from **L37**.
 
 ---
 
@@ -306,3 +322,59 @@
 ## G. Quote check
 
 Run: `../fear/fear-quote-check-v1-20261001.py life-death-observation-ledger-unit3-v1-20261003.md`. Result 2026-10-03: **284 quotes checked in table rows; 0 failures.** (A first run flagged two of my own labels, which were written in quotation marks: "Do this and live" and *to be long*. They were reworded. Neither is a verse quote.)
+
+---
+
+## Woven — where (2026-10-04, #1940)
+
+The researcher approved this, verbatim: *"approve 1940 as recommended"*. That approved the weave in §F as proposed, with all four decisions as recommended: NS "Living before God"; NS "Life weighed"; LD-101 and LD-102 side by side; the LD-138 supplement read first (§B.19).
+
+| LD | Woven in |
+| --- | --- |
+| LD-92 | Ch 2 "Living before God"; 10.10 "Loyalty and honour" (2Sa 15:21; 2Ki 2:2) |
+| LD-93 | Ch 2 "Living before God" (1Ki 1:29; 17:1; Job 27:2); 10.9 "The living God" (1Ki 17:1) |
+| LD-94 | Ch 2 "Living before God" (2Sa 12:5; 1Sa 14:45; 2Ki 5:20); 10.6 (2Ki 5:20); 10.5 "The oath" (1Sa 14:39, 45); Ch 11 §4 |
+| LD-95 | Ch 2 "Living before God" (Jer 5:2; 4:2); 10.5 "The oath" |
+| LD-96 | Ch 2 "Living before God" (Eze 33:11; 20:3; Rom 14:11); Ch 13 (Eze 20:3; 35:11) |
+| LD-97, LD-98, LD-100 | Ch 2 "Living before God"; 10.9 "The living God"; 10.6 (Psa 42:2); 10.1 (Heb 10:31); Ch 4 (Heb 3:12) |
+| LD-99 | 10.9 (pointer only; 2Cor 6:16 and 3:3 already in Ch 7 and 14) |
+| LD-101 | Ch 2 "Life set before a person"; 10.5 (1Pe 3:10); 10.10 (Exo 20:12); Ch 11 §4 |
+| LD-102 | Ch 2 "Life set before a person" (side by side with LD-101, unreconciled); 10.4 (Ecc 8:12); Ch 11 §4 (Ecc 7:15) |
+| LD-103 | Ch 2 "Living before God"; 10.2 (Deu 4:10); 10.3 (Deu 16:3) |
+| LD-104 | Ch 2 "Living before God" (Gen 47:9); 10.3 (2Sa 18:18) |
+| LD-105 | Ch 2 "Life set before a person" (Deu 30:6) |
+| LD-108 | 10.5 (Pro 10:11). The rest of the Proverbs list stays in the data; Pro 14:27 and 19:23 are already in Ch 2 |
+| LD-109 | Ch 2 "Where life flows from" (Pro 13:12; 15:4); 10.6 (Pro 13:12) |
+| LD-110 | 10.4 "Thinking and life" (Pro 5:6); 10.2 (Pro 15:31) |
+| LD-111, LD-112, LD-114–LD-116 | Ch 2 "Life weighed"; 10.1 (Job 10:1; Deu 28:66; Ecc 5:20); 10.3 (Ecc 5:20; Luk 16:25); 10.6 (Luk 12:15); Ch 12 (Ecc 9:3; Psa 143:2); Ch 13 (Deu 28:66) |
+| LD-113 | Ch 2 "Breath lent" (Job 7:7; Jam 4:14–15); 10.7 |
+| LD-117 | 10.9 "The living God" (Job 10:12; Psa 63:3; 42:8); Ch 6 (Job 10:12; Isa 38:16) |
+| LD-118 | Ch 2 "Living before God" (Psa 146:2; 27:4); 10.9 (Psa 146:2; Isa 38:19) |
+| LD-119 | Ch 2 "Living before God" (Psa 27:13; 142:5; Isa 38:11; 1Sa 25:29). **Correction:** this ledger marked Psa 27:13 "(in Ch 2)". A text search found it in no chapter before this weave |
+| LD-120 | Ch 13 (Num 16:30) |
+| LD-121 | Ch 2 "Where life flows from" (Jer 2:13; Joh 4:14); 10.6 (Rev 22:17). Joh 7:38 not used |
+| LD-122 | Ch 2 "Made alive" (Joh 6:47; 1Jo 5:13; Mar 10:30); Ch 14 (1Jo 5:12) |
+| LD-123 | Ch 2 "Where life flows from" (Joh 5:26; 14:19) |
+| LD-124 | 10.4 "Thinking and life" (Joh 5:39–40); 10.7 (Joh 6:27) |
+| LD-125 | Ch 2 "Made alive" (Gal 2:19–20; Rom 12:1; 1Pe 2:24) |
+| LD-126 | Ch 2 "After death" ("with God" list: Luk 20:38; 1Th 5:10) |
+| LD-127, LD-129 | Ch 14 (Rom 8:2, 10; Gal 5:25; Act 11:18) |
+| LD-128 | Ch 2 › *Death in the living* (Rev 3:1; 1Ti 5:6; Eph 4:18); Ch 4 and Ch 12 (Eph 4:18) |
+| LD-130 | 10.7 (Mat 7:14) |
+| LD-131 | Ch 2 "Life breathed in" (Gen 2:9; 3:24; Rev 2:7) |
+| LD-132 | Ch 2 "Life, and judgment" (Rev 20:12, 15; 2Ti 4:1) |
+| LD-134 | 10.1 "How long it stays" (Pro 19:11); 10.10; Ch 11 §4. Isa 48:9 and Psa 30:5 were already in Ch 13 |
+| LD-135 | 10.1 (1Ki 3:26); 10.10 (2Sa 1:23) |
+| LD-139 | Ch 2 "Delivered from death" (Job 33:20, 22, 24, 26–30); 10.1 (Job 33:26); 10.2 (Job 33:16–17); Ch 12 (Job 33:27); Ch 11 §4 (Job 33:20) |
+| LD-140 | Ch 13 (Psa 78:50). Job 36:13 was already in 10.1 |
+| LD-141 | 10.3 "Forgetting God" (Isa 57:10–11) |
+| LD-142 | Ch 2 "Life asked for" (Psa 74:19); 10.9 |
+| §C | Ch 11 §4: "Who swears it, and what for"; "What it is joined to" |
+| LD-106 | **held** (OT-01) |
+| LD-107, LD-133, LD-136, LD-137 | data or pointer. LD-133 is not carried: its verses (Heb 4:12; 1Pe 1:3) are already in the chapters, and the rest name things "living", not the inner being |
+
+**Not carried:**
+- **LD-99** (the living God among his people) adds no new chapter text. Its verses are in Ch 7 and 14 already.
+- **Ch 5 (soul):** §F named no Ch 5 change. The soul verses (Job 27:2; Psa 42:2; Job 33:22, 28) are carried in Ch 2 and 10.9.
+
+**New quotes:** checked against iba.db `verse` (`--prose`). Ch 2 v9: 428 checked, and the 14 flags are the same as v8's. Other chapters: every new verse quote passes. The only new flags are section titles in quotation marks, plus the label "fear not". **Claim register:** v11. **Index:** chapter rows, structure log and version list updated. **Linkage map:** unit 3 rows added; M02 row (H0748) now read. **Register:** OT-01 (LD-106 held), OT-02 to OT-05 and OT-08 touched.

@@ -62,6 +62,29 @@
 | Esau's birthright | LD-90 | 10.6; 10.7 | — | carried |
 | The dead seen from this side, beside the dead with God | LD-46, LD-47 | Ch 2 "After death" (side by side, unreconciled) | — | carried (OT-03 still open) |
 | "Die" / "death" changes character: what brings it about, and who acts | unit 2 ledger §C | Ch 11 §4 | Ch 2 | carried |
+| Living before God: the oath by the Lord's life, God's own oath | LD-92–LD-96 | Ch 2 "Living before God" | 10.5 "The oath"; 10.10 "Loyalty and honour"; Ch 11 §4; Ch 13 (Eze 20:3; 35:11) | carried (unit 3) |
+| The living God, and the inner being turned toward him or away | LD-97–LD-100 | Ch 2 "Living before God"; 10.9 "The living God" | Ch 4 (Heb 3:12); 10.1 (Heb 10:31); 10.6 (Psa 42:2) | carried (unit 3) |
+| Long days, and the wicked who prolongs his life | LD-101, LD-102 | Ch 2 "Life set before a person" (side by side, unreconciled) | 10.4 (Ecc 8:12); 10.5 (1Pe 3:10); 10.10 (Exo 20:12); Ch 11 §4 | carried (unit 3) |
+| The days of a life: fearing, remembering, learning, praising; a life summed; the land of the living | LD-103, LD-104, LD-118, LD-119 | Ch 2 "Living before God" | 10.2; 10.3; 10.9 | carried (unit 3) |
+| God's work on the heart in the chapter of the choice | LD-105 | Ch 2 "Life set before a person" (Deu 30:6) | — | carried (unit 3) |
+| Life from wisdom; life from within reaching the body; living water; life in the Son | LD-108, LD-109, LD-121, LD-123 | Ch 2 "Where life flows from" | 10.5 (Pro 10:11); 10.6 (Pro 13:12; Rev 22:17) | carried (unit 3) |
+| Life missed by not attending; life looked for in the wrong place | LD-110, LD-124 | 10.4 "Thinking and life" | 10.2 (Pro 15:31); 10.7 (Joh 6:27) | carried (unit 3) |
+| Life weighed: loathed, worn down, the living weighed, enjoyed, what life does not consist in | LD-111, LD-112, LD-114–LD-116 | Ch 2 "Life weighed" | 10.1; 10.3; 10.6; Ch 12 (Ecc 9:3; Psa 143:2); Ch 13 (Deu 28:66) | carried (unit 3) |
+| Life named as brief | LD-113 | Ch 2 "Breath lent" | 10.7 (Jam 4:14–15) | carried (unit 3) |
+| One's own life spoken of to God; praise as long as I live; the life of the poor | LD-117, LD-118, LD-142 | 10.9 "The living God" | Ch 2 "Life asked for" (Psa 74:19); Ch 6 (Job 10:12; Isa 38:16) | carried (unit 3) |
+| Gone down alive; lives given over in anger | LD-120, LD-140 | Ch 13 | — | carried (unit 3) |
+| Eternal life had now and to come; living to God; life and the Spirit; repentance to life | LD-122, LD-125, LD-127, LD-129 | Ch 2 "Made alive"; Ch 14 | — | carried (unit 3) |
+| "All live to him" | LD-126 | Ch 2 "After death" ("with God" list) | — | carried (OT-03 still open) |
+| Alive in name, dead in fact | LD-128 | Ch 2 › *Death in the living* | Ch 4; Ch 12 (Eph 4:18) | carried (unit 3) |
+| Entering life; the tree of life; the books | LD-130–LD-132 | Ch 2 "Life breathed in" (tree), "Life, and judgment" (books) | 10.7 (Mat 7:14) | carried (unit 3) |
+| Anger made long (H0748) | LD-134 | 10.1 "How long it stays" (Pro 19:11) | 10.10; Ch 11 §4; Ch 13 (Isa 48:9; Psa 30:5, already there) | carried (unit 3) |
+| Inner words in narrative "alive" verses | LD-135 | 10.1 (1Ki 3:26) | 10.10 (2Sa 1:23) | carried (unit 3) |
+| Life brought back from the pit (Elihu) | LD-139 | Ch 2 "Delivered from death" (Job 33 read whole) | 10.1 (Job 33:26); 10.2 (Job 33:16–17); Ch 12 (Job 33:27) | carried (unit 3) |
+| New life found for strength, in the wrong pursuit | LD-141 | 10.3 "Forgetting God" (Isa 57:10–11) | — | carried (unit 3) |
+| "As the Lord lives" and "long" change character | unit 3 ledger §C, §B.19 | Ch 11 §4 ("Who swears it, and what for"; "What it is joined to") | Ch 2 | carried (unit 3) |
+| Life by doing, and the counter-statements | LD-106 | — | — | **held** (OT-01) |
+| Fed by the word (Mat 4:4); healed or raised; life taken by people; lifespan notices, creatures, non-life senses | LD-107, LD-133 (part), LD-136, LD-137 | — | — | data / pointer |
+| Not roused from the sleep of death; Sheol roused; no breath to wake (H5782) | unit 4 reading (`life-death-unit4-h5782-reading-v1-20261004.md`) W01–W03 | — | — | **not yet read into a ledger** (unit 4) |
 | Notices, sentences, killings, judgement narratives, sanctuary statutes, uncleanness, animals; idiom; child discipline | LD-50, LD-85, LD-91 | — | — | data |
 | Statutes by which one lives / could not live | LD-30 | — | — | **held** (OT-01) |
 | Survival, war, law, sickness, "long live the king", genealogies | LD-36, LD-42 | — | — | data |
@@ -83,8 +106,8 @@
 | M11 Turning & Repentance | 44 (14) | Ch 2; Ch 14 | carried (unit 1 part) |
 | M13 Faith | 43 (18) | Ch 2 (Hab 2:4) | partly |
 | M54 Torah & Obedience | 40 (19) | Ch 2 (Lev 18:5; Deu 8:3) | partly; OT-01 |
-| M02 Anger & Wrath | 36 (17) | Ch 13 (Job 4:9) | partly (H0748 "slow / defer anger" not yet read) |
-| M51 Love & Devotion | 34 (14) | 10.6 (Song 8:6); 10.10 (1Jo 3:14) | partly; unit 4 (rouse) still to come |
+| M02 Anger & Wrath | 36 (17) | Ch 13 (Job 4:9); 10.1 and 10.10 (Pro 19:11); Ch 13 (Isa 48:9; Psa 30:5; Psa 78:50) | **H0748 read** (unit 3, LD-134); H5782 "stir up his wrath" (Psa 78:38) in unit 4 |
+| M51 Love & Devotion | 34 (14) | 10.6 (Song 8:6); 10.10 (1Jo 3:14) | partly; unit 4 (rouse) read 2026-10-04, ledger to come (Song 2:7; Pro 10:12) |
 | M64 Will & Resolve | 21 (5) | Ch 2 / 10.7 (Deu 30:19) | partly; **M64 strand candidate (#1933)** |
 | M20 Doubt (hiding) | 23 (7) | Ch 2 (Col 3:3) | partly |
 | all others | see `life-death-strand-overview-data-v1-20261002.md` §3 | — | not yet read |
