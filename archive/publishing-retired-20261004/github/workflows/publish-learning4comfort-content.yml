@@ -1,0 +1,67 @@
+name: Publish Learning4Comfort content
+
+on:
+  push:
+    branches:
+      - main
+    paths:
+      - publishing/learning4comfort/site/**
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: learning4comfort-content-publish
+  cancel-in-progress: false
+
+jobs:
+  sync-content:
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    steps:
+      - name: Check out Bible_Projects
+        uses: actions/checkout@v4
+
+      - name: Configure target repository access
+        env:
+          DEPLOY_KEY: ${{ secrets.LEARNING4COMFORT_DEPLOY_KEY }}
+        run: |
+          if [ -z "$DEPLOY_KEY" ]; then
+            echo "::error::Add the LEARNING4COMFORT_DEPLOY_KEY repository secret after configuring the target repository deploy key."
+            exit 1
+          fi
+          install -m 700 -d "$HOME/.ssh"
+          printf '%s\n' "$DEPLOY_KEY" > "$HOME/.ssh/id_ed25519"
+          chmod 600 "$HOME/.ssh/id_ed25519"
+          ssh-keyscan -H github.com >> "$HOME/.ssh/known_hosts"
+
+      - name: Sync selected pages to the standalone site repository
+        run: |
+          if [ ! -d publishing/learning4comfort/site ] || \
+            ! find publishing/learning4comfort/site -type f ! -name '.gitkeep' -print -quit | grep -q .; then
+            echo "No site content to sync."
+            exit 0
+          fi
+
+          GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes' \
+            git clone --branch main --single-branch \
+            git@github.com:lcilliers/learning4comfort.git target-site
+
+          mkdir -p target-site/content
+          rsync --archive --delete --exclude='.gitkeep' \
+            publishing/learning4comfort/site/ target-site/content/
+
+          cd target-site
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add -- content
+
+          if git diff --cached --quiet; then
+            echo "The target content is already up to date."
+            exit 0
+          fi
+
+          git commit -m "Sync approved Learning4Comfort pages"
+          GIT_SSH_COMMAND='ssh -i ~/.ssh/id_ed25519 -o IdentitiesOnly=yes' \
+            git push origin main

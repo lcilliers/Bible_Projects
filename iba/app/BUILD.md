@@ -16823,3 +16823,35 @@ Files:
 - `.gitignore`
 - `iba/app/USER-GUIDE.md` §11b
 - `iba/app/GOVERNANCE.md` §82 (note)
+
+## 335. `Copy-NarrativeToLearning4Comfort.ps1` — narrative copied to the learning4comfort inbox; no direct GitHub publishing (2026-10-04, researcher-approved, escalations #1941, #1952–#1956)
+
+**Why:** researcher instruction, escalation #1941 (verbatim): *"review to points of integration/linkage with learning4comfort. A) this project (bible_study_projects) does not publish directly to github b) on completion of a section of work or on request, the current C:\Bible_study_projects\_analytics\essay\spirit_soul_body\inner-being-narrative files are copied to C:\learning4comfort\publication-inbox\inner_being_narrative c) session-close trigger the copy in b)"*. Approval with folder change (chat, 2026-10-04): *"1941 approved, proceed with the build; folder in learning4comfort : use the_inner_being"*.
+
+**Build:**
+- `iba/app/lib/narrativecopy.py` (new): copies the top-level `.md` files of `narrative.copy_source_dir` (never `archive/`) to `narrative.learning4comfort_inbox_dir`, creating the target if missing.
+  - In the target, an `.md` file with the same base name (without `-vN-YYYYMMDD`) but a different name is an earlier version: it is removed, then replaced. Every other file is left untouched.
+  - Identical files are left as "unchanged". After copying, every current file is hash-checked against the source.
+  - No git command and no DB write. `--dry-run`; `--source`/`--target` override the config, for testing only.
+- `iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1` (new): wrapper, `-DryRun`.
+- `.claude/commands/session-close.md`: new step 6a runs it at every close.
+- **Retired:** the never-committed `.github/workflows/publish-learning4comfort-content.yml` and `publishing/learning4comfort/SOURCE-SETUP.md` were moved to `archive/publishing-retired-20261004/` (the workflow renamed out of `.github/`, so it can never run). A README there records why.
+- **Config** (proposed via `Config-Maintenance.ps1 -Step Propose`, ready for approval):
+  - #1952 `cfg_setting narrative.copy_source_dir`
+  - #1953 `narrative.learning4comfort_inbox_dir` = `C:/learning4comfort/publication-inbox/the_inner_being`
+  - #1954 `governance.no_direct_github_publish`
+  - #1955, #1956 `cfg_utility` rows for both files
+  - #1951 (the first attempt, module `publishing` not in `enum.config_module`) was resolved as self-correctable; nothing was written.
+
+**Test plan run** (with `--source`/`--target` into a scratch folder, before the config was applied):
+1. A dry run with the target missing listed all 27 files and wrote nothing (the folder was still absent).
+2. A real copy wrote 27 files, all hash-verified.
+3. A rerun copied 0 and left 27 unchanged.
+4. An earlier version (`02-…-v10`) was planted and the current `v11` deleted, with an unrelated file added. The v10 was removed, v11 copied, the unrelated file left alone, and 27 verified.
+
+**Not done here:**
+- The live run against the real inbox waits for #1952–#1956 to be approved and applied.
+- learning4comfort's own `SOURCE-SETUP.md` (in that repo) still describes the old route. The researcher is updating it.
+
+**Files:** `iba/app/lib/narrativecopy.py`, `iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1`, `.claude/commands/session-close.md`, `archive/publishing-retired-20261004/`, `CLAUDE.md` §12, `iba/app/GOVERNANCE.md` §86.
+

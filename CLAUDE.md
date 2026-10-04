@@ -460,6 +460,7 @@ Programme-state SQL queries (Session B progress, VC progress, OWNER terms needin
 
 - Excluded: `database/bible_research.db`, `backups/`.
 - Committed: `Sessions/Patches/*.json`.
+- **No direct GitHub publishing (2026-10-04, #1941; GOVERNANCE.md §86).** This project never publishes a site to GitHub. The inner-being narrative reaches learning4comfort only through `ibapp\ps\Copy-NarrativeToLearning4Comfort.ps1`, which copies the current files to `C:\learning4comfort\publication-inbox	he_inner_being`. Run it when a section of work is complete, on request, and at every `/session-close` (step 6a). `cfg_setting governance.no_direct_github_publish`.
 - Commit message: `session YYYYMMDD: brief description`. Branch: `main`. Remote: `github.com/lcilliers/Bible_Projects`.
 - **Standing pre-authorization (2026-07-23, scope widened 2026-08-10, widened again 2026-09-24):**
   completing a session log (any `SESSION-LOG-*.md`, including `iba/app/SESSION-LOG-*.md`) **OR**

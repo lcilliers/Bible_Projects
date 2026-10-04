@@ -80,6 +80,17 @@ Re-run `Session-Close.ps1`. Confirm 0 escalation-update gaps and 0 BUILD.md gaps
 governance/doc item is acceptable only if you've explicitly judged it doesn't need a change (say
 why); anything you fixed should no longer show as changed-without-BUILD.md-entry.
 
+## 6a. Copy the narrative to learning4comfort
+
+Run `ibapp\ps\Copy-NarrativeToLearning4Comfort.ps1` via the PowerShell tool (escalation #1941,
+researcher: *"session-close trigger the copy"*). It copies the current inner-being narrative files
+(`cfg_setting narrative.copy_source_dir`, top-level `.md` only, never `archive/`) to the
+learning4comfort inbox (`narrative.learning4comfort_inbox_dir`). Earlier versions of the same
+files there are replaced, and every other file is left untouched. It runs no git command, in
+either repository. This project never publishes to GitHub itself
+(`governance.no_direct_github_publish`). Quote the script's summary lines in the step 8 report.
+Run it every close, even when no chapter changed: it then reports every file as "unchanged".
+
 ## 7. Commit and push
 
 Completing a `/session-close` cycle is a standing pre-authorization to commit
