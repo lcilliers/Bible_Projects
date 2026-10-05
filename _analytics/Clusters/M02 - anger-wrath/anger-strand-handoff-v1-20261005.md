@@ -1,6 +1,6 @@
 # Anger strand (fear process): handoff for the next chat
 
-**Date:** 2026-10-05 · **State:** process approved (#1963, rulings in proposal §7); **unit 1 ledger drafted, for review** (#1966): `anger-observation-ledger-unit1-v1-20261005.md` (AG-01 to AG-59, faces A–Z, 239 hits, quote check 0 failures). Weave held until the cross-ledger overview.
+**Date:** 2026-10-05 · **State:** process approved (#1963, rulings in proposal §7); **unit 1 ledger approved** (#1966, 2026-10-05): `anger-observation-ledger-unit1-v1-20261005.md` (AG-01 to AG-59, faces A–Z, 239 hits, quote check 0 failures). Weave held until the cross-ledger overview. **Next: unit 2** (researcher: *"clear before proceeding with unit 2"*). Before or beside it: #1965, moving `fear/` and `life-death/` into their cluster folders (rule applied, #1964).
 
 ## Read first
 

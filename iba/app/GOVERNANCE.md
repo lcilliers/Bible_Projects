@@ -4021,6 +4021,8 @@ applied them. Each was applied with the exact values stored in its proposal and 
 **Strand filing (#1901 → #1902):** `report.cluster_folder_naming_convention` now ends with the
 researcher's ruling. Fan-out/strand files are filed in the cluster the strand explores, or in the
 dominant cluster where several are involved. §84 is updated to match.
+**Superseded in part 2026-10-05 (§87, #1963/#1964):** the dominant-cluster clause no longer applies
+to multi-cluster work; only true multi-cluster work goes to `_analytics/cross-cluster-web/`.
 
 **Provenance, not changed:** the folder names in §60 (2026-08-28) are left as they were then.
 They record where things were at that date.
@@ -4039,3 +4041,12 @@ They record where things were at that date.
 - **Superseded:** the direct-to-GitHub workflow and `publishing/learning4comfort/` (never committed) are retired to `archive/publishing-retired-20261004/`. The earlier note "publishing handled with another provider" (memory, 2026-10-02) is history only.
 - Build record: BUILD.md §335.
 
+## §87. Single-cluster verse analysis in the cluster subfolder; only true multi-cluster work in `cross-cluster-web/` (2026-10-05, researcher ruling, escalations #1963, #1964, #1965)
+
+**Ruling (researcher, verbatim, #1963 decision 6.4):** *"cluster work should be in the cluster sub folder - fear was incorrectly placed in cross-cluster-web. the rule should be that all single cluster verse analysis should be in the cluster subs, and only true multi-cluster work in cross-cluster-web."*
+
+- **Live rule:** `cfg_setting report.cluster_folder_naming_convention`, updated via `Config-Maintenance.ps1 -Step Propose` (#1964, applied 2026-10-05). Single-cluster verse analysis (strand unit ledgers, cross-ledger overviews, proposals that read one cluster's vocabulary) is filed in `_analytics/Clusters/{code} - {name}/`. Only a strand whose subject spans clusters (for example origin-of-thought) and the cross-cluster analyses go in `_analytics/cross-cluster-web/`.
+- **Supersedes** the #1901 dominant-cluster clause (§85 "Strand filing") for multi-cluster work.
+- **Applied first** to the anger strand: all its files are in `_analytics/Clusters/M02 - anger-wrath/`.
+- **Not yet done:** `_analytics/cross-cluster-web/fear/` (M01) and `_analytics/cross-cluster-web/life-death/` (M25) are misplaced under this rule. Their move, with every path reference updated, is #1965. Until then the paths in CLAUDE.md and the open threads register still point to `cross-cluster-web/`.
+- No `iba/app/**` code changed.

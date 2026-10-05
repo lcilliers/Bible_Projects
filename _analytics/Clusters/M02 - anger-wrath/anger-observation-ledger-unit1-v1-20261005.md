@@ -1,6 +1,6 @@
 # Anger: strand observation ledger, unit 1 (v1)
 
-**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 1, *ʾaph* · **Status:** draft for review. **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for fear units 3–4).
+**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 1, *ʾaph* · **Status:** **approved 2026-10-05 (#1966)**; researcher, verbatim: *"approve 1964 and 1966, session-close and then clear before proceeding with unit 2"*. **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for fear units 3–4).
 **Process:** `anger-key-characteristic-process-proposal-v1-20261005.md` (§3, §3A, rulings §7). New features of the format compared with fear:
 - every row carries **setting, meaning and implication** (#1944)
 - a **chain** column, filled only where the verse states the link (#1946)

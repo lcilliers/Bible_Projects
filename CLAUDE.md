@@ -133,10 +133,16 @@
 >      - **10.12 "Fear"** written and approved (#1961, #1962)
 >
 >      Next (researcher): *"gathering similar studies of other key characteristics."*
+>   2a. **anger (M02), the second key characteristic, taken through the fear process (researcher, 2026-10-05, #1963).** Plan: `_analytics/Clusters/M02 - anger-wrath/anger-key-characteristic-process-proposal-v1-20261005.md` (§3A builds in #1944–#1947; rulings §7). Five word-family unit ledgers → coverage check → cross-ledger overview → **10.13 "Anger"**. Rulings:
+>      - other parties' roles in anger are as important as God's (6.2)
+>      - Ch 13 "Under God's anger" is to be **consolidated into 10.13** after 10.13 is written in full (6.3, OT-13)
+>      - #1944–#1947 are anchors for the reading method; Ch 10 will be retuned, **not yet** (6.5, OT-14)
+>
+>      **Unit 1 (*ʾaph*) approved** (#1966). Next: unit 2. Handoff: `anger-strand-handoff-v1-20261005.md` (same folder).
 >   3. then M12 and M64 as candidates
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
->   - Built from the unit ledgers, a cross-ledger overview (`_analytics/cross-cluster-web/fear/fear-cross-ledger-overview-*`) and the co-existence review (its §F).
+>   - Built from the unit ledgers, a cross-ledger overview (`_analytics/cross-cluster-web/fear/fear-cross-ledger-overview-*`; folder to move to `_analytics/Clusters/M01 - fear-awe/` under #1965, GOVERNANCE.md §87) and the co-existence review (its §F).
 >   - **Fear units 1–4 are complete**, with a unit 3 addendum for H4172A. That clears strand queue item 2 below.
 >   - The other chapters are **not** reworked in this first step. 10.1's "Fear" section overlaps 10.12, and the 10.1 "Feeling" frame is open (OT-12: no biblical word names "feeling" as a category; `_analytics/essay/spirit_soul_body/wa-essay-narrative-feeling-frame-question-v1-20261004.md`).
 >   - Style guide v2 §7 still states #1920 unchanged. It needs updating in v3 (deferred, #1930).
