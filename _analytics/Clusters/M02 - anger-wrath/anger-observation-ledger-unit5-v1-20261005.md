@@ -1,6 +1,6 @@
 # Anger: strand observation ledger, unit 5 (v1)
 
-**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 5, the Greek · **Status:** **for approval (#1973).** **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for units 1–4).
+**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 5, the Greek · **Status:** **approved 2026-10-05 (#1973)**; researcher, verbatim: *"1973 approved."* **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for units 1–4).
 **Process:** `anger-key-characteristic-process-proposal-v1-20261005.md` (§3, §3A, rulings §7). Format as units 1–4: every row carries setting, meaning and implication (#1944); a chain column, filled only where the verse states the link (#1946); a parties column (ruling 6.2); a closing "What emerged, and what it changes" (#1945); the concept named from the verses first, "also appears" a pointer only (#1947). No re-tagging (#1970, cfg_behaviour_rule 70): a word that reads as belonging with another cluster is recorded in §F as a cross-cluster association.
 
 **Scope of unit 5:** the handoff's unit plan, unchanged. The live M02 vocabulary has **25 Greek Strong's**, 110 hits in 94 verses (checked against iba.db `cluster_strong`, M02, not deleted, 2026-10-05). With units 1–4 (40 Hebrew and Aramaic Strong's) this completes the 65.
