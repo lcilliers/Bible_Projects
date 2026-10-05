@@ -1,6 +1,6 @@
 # Anger: strand observation ledger, unit 3 (v1)
 
-**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 3, *ḥārāh*, *ḥārôn*, *ḥŏrî* and *kāʿas* · **Status:** **for approval (#1968).** **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for units 1 and 2).
+**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 3, *ḥārāh*, *ḥārôn*, *ḥŏrî* and *kāʿas* · **Status:** **approved 2026-10-05 (#1968)**; researcher, verbatim: *"approved 1968"*. **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for units 1 and 2).
 **Process:** `anger-key-characteristic-process-proposal-v1-20261005.md` (§3, §3A, rulings §7). Format as units 1 and 2: every row carries setting, meaning and implication (#1944); a chain column, filled only where the verse states the link (#1946); a parties column (ruling 6.2); a closing "What emerged, and what it changes" (#1945); the concept named from the verses first, "also appears" a pointer only (#1947).
 
 **Scope of unit 3:** the handoff's unit plan, unchanged.
@@ -256,7 +256,7 @@ Both go to the overview appendix.
   - "Your right hand, O Lord, glorious in power, your right hand, O Lord, shatters the enemy" (Exo 15:6, beside AG-108)
   - "he stretched out his hand against them" (Isa 5:25, unit 1 AG-30)
 
-  Proposed register entry: touched by anger unit 3.
+  Register entry added: touched by anger unit 3 (#1968).
 - **OT-07** (held items): nothing new from the 2026-10-01 §M falls in this unit.
 - **OT-08** (life and death): death sides held in AG-116 (Psa 88:15–16), AG-143 (Psa 31:10; Ecc 5:16–17), AG-144 (Ecc 7:2), AG-145 (Job 5:2). Jonah's "angry enough to die" (Jon 4:9, AG-138) is already in Ch 2 (D); not reworked. Cain's killing of Abel (Gen 4:8) is recorded as the stated sequence, not read as a statement about death.
 - **OT-12** (10.1 frame): touched. 10.1 holds 18 unit-3 verses, most of them *kaʿas* (vexation, grief) and *ḥārāh* (fret). See §D for #1947.
