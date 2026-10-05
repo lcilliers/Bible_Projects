@@ -1,6 +1,6 @@
 # Anger: strand observation ledger, unit 2 (v1)
 
-**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 2, *ḥēmāh* and the heat words · **Status:** **draft for approval (#1967).** **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for unit 1).
+**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 2, *ḥēmāh* and the heat words · **Status:** **approved 2026-10-05 (#1967)**; researcher, verbatim: *"approved 1967 and noted OT-15"*. **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for unit 1).
 **Process:** `anger-key-characteristic-process-proposal-v1-20261005.md` (§3, §3A, rulings §7). Format as unit 1 (`anger-observation-ledger-unit1-v1-20261005.md`): every row carries setting, meaning and implication (#1944); a chain column, filled only where the verse states the link (#1946); a parties column (ruling 6.2); a closing "What emerged, and what it changes" (#1945); the concept named from the verses first, "also appears" a pointer only (#1947).
 
 **Scope of unit 2:** the handoff's unit plan, unchanged.
@@ -245,7 +245,7 @@ Both go to the overview appendix.
 - **OT-12** (10.1 frame): touched; 10.1 holds eight unit-2 verses.
 - **OT-13** (Ch 13 into 10.13): Ch 13 holds 11 unit-2 verses; AG-70 is proposed RS for the cross-check.
 - **OT-14** (Ch 10 retune): §D's two #1947 notes.
-- **Proposed new thread OT-15: the heat family outside the M02 tag.** *ḥāmam* (H2552, "to warm", 21 hits, tagged T3) holds inner-being verses that this unit did not read (focused capture):
+- **New thread OT-15 (added to the register, #1967): the heat family outside the M02 tag.** *ḥāmam* (H2552, "to warm", 21 hits, tagged T3) holds inner-being verses that this unit did not read (focused capture):
   - "My heart became hot within me. As I mused, the fire burned; then I spoke with my tongue" (Psa 39:3)
   - "the avenger of blood in hot anger" (Deu 19:6)
   - "you who burn with lust among the oaks" (Isa 57:5)
@@ -267,7 +267,7 @@ Both go to the overview appendix.
 | F.7 | **Fear and wrath meet in this unit:** Moses afraid of the wrath (Deu 9:19); alarm, then fury (Dan 11:44); fearing the oppressor's wrath, having forgotten the Maker (Isa 51:13); "who can stand?" (Nah 1:6) (AG-86, 95, 97, 72). | Input for overview part F (anger with the other characteristics), from the fear side of 10.12. | 10.12; overview F |
 | F.8 | **Restraint has three stated reasons in this unit: his name before the nations (three times in Eze 20), compassion, their humbling;** and of the vineyard he keeps he says "I have no wrath" (Isa 27:4, AG-78 to AG-80). | Extends AN-82; Isa 27:4 is new to the narrative (**NS** in 10.13). | 10.13; Ch 13 |
 | F.9 | **Wrath within the act of gathering and ruling** (Eze 20:33–34; Jer 32:37, AG-81). | Not in the chapters. With AN-95 (the hand's position), a candidate for 11 §4. | 11 §4; 10.13 |
-| F.10 | **The heat family runs outside the tag**, into the heart (Psa 39:3), lust (Isa 57:5) and blood-vengeance (Deu 19:6). | Proposed open thread OT-15 (§E). | register |
+| F.10 | **The heat family runs outside the tag**, into the heart (Psa 39:3), lust (Isa 57:5) and blood-vengeance (Deu 19:6). | Open thread OT-15 (§E; added, #1967). | register |
 
 ## G. Chains the verses state (#1946)
 

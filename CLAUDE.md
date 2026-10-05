@@ -138,7 +138,7 @@
 >      - Ch 13 "Under God's anger" is to be **consolidated into 10.13** after 10.13 is written in full (6.3, OT-13)
 >      - #1944–#1947 are anchors for the reading method; Ch 10 will be retuned, **not yet** (6.5, OT-14)
 >
->      **Unit 1 (*ʾaph*) approved** (#1966). Next: unit 2. Handoff: `anger-strand-handoff-v1-20261005.md` (same folder).
+>      **Unit 1 (*ʾaph*) approved** (#1966). **Unit 2 (*ḥēmāh* and the heat words) approved** (#1967; OT-15 added). Next: unit 3. Handoff: `anger-strand-handoff-v1-20261005.md` (same folder).
 >   3. then M12 and M64 as candidates
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
