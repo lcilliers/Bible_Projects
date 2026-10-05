@@ -1023,18 +1023,20 @@ Verses: Gen 31:35; 39:19; 40:2; 41:10; 44:18; Judg 9:30; 1Sa 20:7; 29:4; 2Sa 11:
 
 ## 37. How the phenomena co-exist: what the verses themselves put together (was §20)
 
+> **Corrected in place 2026-10-05** (researcher ruling on overview v2 part M, #1974, verbatim: *"part M: correct in place with dated note"*). Wording put in ESV quotation marks is aligned to the ESV text in iba.db: Gen 27:41 (ESV *said to himself*; the Hebrew *lēḇ* kept as a gloss), Gen 27:45 *turns away*, 1Sa 1:10 *deeply distressed* (Hebrew *nep̄eš*, bitter of soul), 1Sa 18:8, 2Ch 26:16 *he grew proud* (Hebrew *lēḇ*, heart lifted up), Neh 5:7 *I took counsel with myself* (Hebrew *lēḇ*), Est 1:18 (*contempt and wrath*, not fear). The readings are otherwise unchanged.
+
 All these sequences are **inside single passages**.
 
 | Passage | Sequence the text gives |
 |---|---|
 | Gen 4:4–8 | regard withheld → anger → face fallen → **God reads the face and asks** → sin at the door, "rule over it" → killing |
-| Gen 27:41–45 | the blessing lost → hatred → **murder planned "in his heart"**, comforting himself → flight → waiting for the anger to "turn away" and "forget" |
+| Gen 27:41–45 | the blessing lost → hatred → **murder planned in his heart** (ESV "said to himself"; Hebrew *in his heart*), comforting himself → flight → waiting until the anger "turns away" and he "forgets" |
 | Gen 30:1–3 | seeing barrenness → envy → an impossible demand → **anger naming God as the only one who could meet it** → a workaround |
 | Gen 44:18–45:8 | Judah's plea against anger → Joseph weeps → "dismayed" → **"do not be … angry with yourselves"** → reframing: "not you … but God" |
 | Num 22:27–30 | the donkey stops → anger → striking → the donkey speaks → **"you have made a fool of me"** (the anger's reason) → admission ("No") |
-| 1Sa 1:6–18 | provoked year by year → weeping, not eating → heart named by husband → bitter of soul → **heart-prayer, lips only** → misread as drunk → self-explanation ("vexation") → blessing → eats, face no longer sad |
+| 1Sa 1:6–18 | provoked year by year → weeping, not eating → heart named by husband → "deeply distressed" (Hebrew *bitter of soul*) → **heart-prayer, lips only** → misread as drunk → self-explanation ("vexation") → blessing → eats, face no longer sad |
 | 1Sa 11:5–13 | hearing → **Spirit** → anger → act → dread spreads → victory → **mercy: "not a man shall be put to death"** |
-| 1Sa 18:7–11 | a song heard → anger → reckoning ("what more but the kingdom?") → watching ("eyed") → **harmful spirit** → spear |
+| 1Sa 18:7–11 | a song heard → anger → reckoning ("what more can he have but the kingdom?") → watching ("eyed") → **harmful spirit** → spear |
 | 1Sa 20:30–34 | anger at the son → insult → the spear at the son → **the son knows** → the son's anger + grief → fasting |
 | 2Sa 6:7–10 = 1Ch 13:10–13 | God strikes Uzzah → **David angry at God** → David afraid of God → avoidance (the ark set aside) |
 | 2Sa 12:1–7 | a parable heard → anger → verdict ("deserves to die") → **"You are the man!"** |
@@ -1042,9 +1044,9 @@ All these sequences are **inside single passages**.
 | 1Ki 20:42–21:7 | verdict on his life → sullen → refused → sullen, bed, face turned, no food → **another names the spirit** → the heart offered a crime as comfort |
 | 2Ki 5:11–14 | expectation ("I thought") → anger → rage, going away → **servants' persuasion** → obedience → flesh restored |
 | 2Ch 16:9–12 | diagnosis of a failed heart → rage at the seer → cruelty → disease → not seeking the Lord |
-| 2Ch 26:16–21 | strength → **heart lifted** → trespass → withstood → anger → leprosy in the act |
-| Neh 5:5–9 | an outcry heard → anger → **"I took counsel with my heart"** → charges → public assembly |
-| Est 1:10–2:1 | **merry heart** → refusal → rage "within him" → counsel (fear for every household) → decree → anger abates → **memory returns** |
+| 2Ch 26:16–21 | strength → **"he grew proud"** (Hebrew *his heart was lifted up*) → trespass → withstood → anger → leprosy in the act |
+| Neh 5:5–9 | an outcry heard → anger → **"I took counsel with myself"** (Hebrew *my heart took counsel*) → charges → public assembly |
+| Est 1:10–2:1 | **merry heart** → refusal → rage "within him" (Est 1:12) → counsel ("contempt and wrath in plenty", Est 1:18) → decree → anger abates → **memory returns** |
 | Est 5:9–13 | glad of heart → seeing Mordecai → wrath → restraint → boasting of riches → **"Yet all this is worth nothing to me, so long as I see Mordecai"** (5:13) |
 | Job 32:1–20 | the friends fall silent → anger ×3 → **waiting from deference and fear** → "the spirit in man" → **belly like wine with no vent** → "I must speak, that I may find relief" |
 | **(v2)** Psa 37:1–9 | seeing the wicked prosper → **heating oneself** (fret) + envy → "trust … commit … **be still … wait**" → "refrain from anger" → the wicked fade, the waiting inherit |

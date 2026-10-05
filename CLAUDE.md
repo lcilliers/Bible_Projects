@@ -116,6 +116,7 @@
 > - A strand is **woven by activity, never given a file or chapter of its own**. The anger strand is the first worked example.
 > - **10.3 Remembering and forgetting** was inserted, so the old 10.3–10.9 are now **10.4–10.10**.
 > - The new **Ch 13 "Under God's anger"** sits between "goes wrong" and "made new". The old Ch 13 is now **14**, and the old 14 is now **15**.
+>   - **Superseded 2026-10-05 (#1977):** Ch 13 is folded into **10.13 "Anger"** (section *Living under God's anger*). Ch 13 v10 is a pointer only; the numbers of Ch 14 and 15 are unchanged.
 > - Ch 11 §4, "What changes the character", is the cross-cutting account that every strand adds to.
 > - **Ch 9 "Life, breath and death" became Ch 2** (researcher, 2026-10-02, #1936: *"Move Ch 9 to Ch 2"*). Old Ch 2–8 became **3–9**. 10.x–15 are unchanged.
 >   - Ch 2 now **sets the scene** (#1937): *"the context of Ch 2 is that it sets the scene for discovering the working of the inner being within the context of what life is about and what death means"*.
@@ -135,10 +136,19 @@
 >      Next (researcher): *"gathering similar studies of other key characteristics."*
 >   2a. **anger (M02), the second key characteristic, taken through the fear process (researcher, 2026-10-05, #1963).** Plan: `_analytics/Clusters/M02 - anger-wrath/anger-key-characteristic-process-proposal-v1-20261005.md` (§3A builds in #1944–#1947; rulings §7). Five word-family unit ledgers → coverage check → cross-ledger overview → **10.13 "Anger"**. Rulings:
 >      - other parties' roles in anger are as important as God's (6.2)
->      - Ch 13 "Under God's anger" is to be **consolidated into 10.13** after 10.13 is written in full (6.3, OT-13)
+>      - Ch 13 "Under God's anger" is to be **consolidated into 10.13** after 10.13 is written in full (6.3, OT-13) — **done 2026-10-05 (#1977)**
 >      - #1944–#1947 are anchors for the reading method; Ch 10 will be retuned, **not yet** (6.5, OT-14)
 >
->      **Unit 1 (*ʾaph*) approved** (#1966). **Unit 2 (*ḥēmāh* and the heat words) approved** (#1967; OT-15 added). **Unit 3 (*ḥārāh*, *ḥārôn*, *kāʿas*) approved** (#1968). **Unit 4 (the rest of the Hebrew and Aramaic) approved** (#1969). **Unit 5 (the Greek) approved** (#1973): all 65 Strong's and 919 hits faced. Next: step 2 (reconciliation), then step 3 (cross-ledger overview). **No re-tagging** (#1970: *"cluster allocation is a loose association for the purposes of analysis"*; cfg_behaviour_rule 70, GOVERNANCE.md §88). Handoff: `anger-strand-handoff-v1-20261005.md` (same folder).
+>      **Unit 1 (*ʾaph*) approved** (#1966). **Unit 2 (*ḥēmāh* and the heat words) approved** (#1967; OT-15 added). **Unit 3 (*ḥārāh*, *ḥārôn*, *kāʿas*) approved** (#1968). **Unit 4 (the rest of the Hebrew and Aramaic) approved** (#1969). **Unit 5 (the Greek) approved** (#1973): all 65 Strong's and 919 hits faced. **Recovery and steps 2–4 done (2026-10-05):**
+>      - The previous session ran ahead of the process. Researcher: *"AI started to follow its own imagination instead of the governance and instructions"*.
+>      - Recovery file: `wa-cluster-M02-recovery-consolidation-v1-20261005.md`. The roll-up is tested by ID; the M-code pairings are OT-16 to OT-90.
+>      - **Overview v2 approved** (#1974).
+>      - **Part M** (U1/U2 wording) corrected in place with dated notes.
+>      - **10.13 "Anger" v2** written and approved (#1976), with Ch 13 folded in (#1977).
+>      - **M47 step** done (Ch 4–8; OT-18 resolved).
+>      - #1975 closed: no re-tagging; OT-15 stays open.
+>      - Handoff: `anger-strand-handoff-v1-20261005.md` (same folder).
+>      - **No re-tagging** (#1970: *"cluster allocation is a loose association for the purposes of analysis"*; cfg_behaviour_rule 70, GOVERNANCE.md §88).
 >   3. then M12 and M64 as candidates
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).

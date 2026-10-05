@@ -38,7 +38,7 @@
 - §D used `anger-chapter-match-v1-20261005.py` unchanged.
 - **Data notes:**
   - Act 7:54 and Act 5:33: *diapriō* is *to be cut through*; the ESV renders it "enraged" both times. AN-H5 already notes the Act 7:54 tagging. I record the ESV wording as it stands.
-  - Rev 14:8 and Rev 18:3: *thymos* is rendered "passion" (*the wine of the passion of her sexual immorality*). No anger in either verse; read with the wine of God's wrath in AG-241.
+  - Rev 14:8 and Rev 18:3: *thymos* is rendered "passion" (*the wine of the passion of her sexual immorality*). No anger in either verse; read with the wine of God's wrath in AG-216 (corrected in place 2026-10-05 from *AG-241*, #1974 part M ruling).
   - Rev 3:15–16: *zestos*, "hot", three hits. No anger in the verses (AG-240).
   - 2Cor 9:2: the *erethizō* tag sits on "stirred up"; the subject is "your zeal". *zēlos* (G2205) is not an M02 word; AN §L.2 keeps it on watch.
   - Act 4:25 quotes Psalm 2:1 ("Why did the Gentiles rage"). The Hebrew word in Psa 2:1 is not in the M02 vocabulary; the Greek is read here as it stands in Acts.

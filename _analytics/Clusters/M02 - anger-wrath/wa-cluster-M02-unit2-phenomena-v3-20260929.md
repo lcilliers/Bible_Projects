@@ -1476,6 +1476,8 @@
 
 ## 65. How the phenomena co-exist: what the verses themselves put together (was §49 in v2, §27 in v1)
 
+> **Corrected in place 2026-10-05** (researcher ruling on overview v2 part M, #1974, verbatim: *"part M: correct in place with dated note"*). Wording put in ESV quotation marks is aligned to the ESV text in iba.db: 2Ki 22:19 *your heart was penitent* (was *tender heart*), Psa 106:31, Isa 51:18, Isa 57:16, Eze 22:30. *heart strikes* (2Sa 24:10) and *He knows* (Jos 22:22) were checked and stand. The readings are otherwise unchanged.
+
 | Passage | Sequence the text gives | Phenomena |
 |---|---|---|
 | Exo 32:10–14; Deu 9:7–22 | provocation → anger → "let me alone" → intercession from fear, with fasting → relented → the memory made into a warning against self-righteousness | WP · IN · SA |
@@ -1485,16 +1487,16 @@
 | Jos 7; 22:10–34 | one man takes → anger on all → defeat → offender removed → anger turns → the memory drives a later confrontation → answer "He knows" | OS · TW |
 | Judg 2:10–23; 10:6–16 | a generation not knowing → provocation → given over → distress → cry / confession → pity → deliverer → relapse, worse | PV · CY |
 | 2Sa 24:1–17 (+ 1Ch 27:24) | anger → incitement → objection overruled → act → heart strikes → "fall into the hand of the Lord" → "let your hand be against me" | IC · OS |
-| 2Ki 22–23; 2Ch 34 | book read → clothes torn → "great is the wrath" → tender heart heard → reform → **wrath still not turned** → death | RH · RF · NR |
+| 2Ki 22–23; 2Ch 34 | book read → clothes torn → "great is the wrath" → "your heart was penitent", heard → reform → **wrath still not turned** → death | RH · RF · NR |
 | 2Ch 28:9–15 | human rage "up to heaven" → prophet names God's wrath → chiefs fear added guilt → captives clothed, fed, carried home | U1 SP · RF |
 | 2Ch 32:24–26 | healed → no return for the benefit → proud heart → wrath → humbled for the pride of his heart → deferred | RH |
 | Job 4–42 | the rule "God's anger consumes the guilty" → the sufferer feels the anger with no cause → contests the rule → sees God → repents → **anger on the explainers** → the sufferer prays for them | EX · JB · IN |
 | **(v2)** Psa 78 | "Can God spread a table?" → craving → anger → still sinned → heart not steadfast → **anger restrained: "they were but flesh"** → rebellion → provocation → Shiloh forsaken | WP · RS · PV · DL |
-| **(v2)** Psa 106:19–45 | forgot God → Moses in the breach → despised the land → Peor → Phinehas, "counted as righteousness" → Meribah, Moses' loss → child sacrifice → given to nations → "he heard their cry … relented" | IN · TW · MS · CY |
+| **(v2)** Psa 106:19–45 | forgot God → Moses in the breach → despised the land → Peor → Phinehas, "counted to him as righteousness" → Meribah, Moses' loss → child sacrifice → given to nations → "he heard their cry … relented" | IN · TW · MS · CY |
 | **(v2)** Psa 90 | transience → "brought to an end by your anger" → secret sins in the light → "Who considers …?" → "teach us to number our days … a heart of wisdom" → "Return … how long?" | MT |
 | **(v2)** Isa 9:8–10:7 | pride in rebuilding → struck → "did not turn" → leaders mislead → self-devouring → "his hand is stretched out still" (×5) → Assyria as rod, **with a heart of its own** | ST · UA |
-| **(v2)** Isa 51:17–23 | cup drunk to the dregs → no one to guide → sons fainted, "full of the wrath" → **cup taken, given to the tormentors** | CP |
-| **(v2)** Isa 57:14–18 | God dwells with the contrite spirit → "I will not always be angry, for the spirit would grow faint" → struck, hid face → backsliding "in the way of his own heart" → "I will heal him" | RS |
+| **(v2)** Isa 51:17–23 | cup drunk to the dregs → "There is none to guide her" → sons fainted, "full of the wrath" → **cup taken, given to the tormentors** | CP |
+| **(v2)** Isa 57:14–18 | God dwells with the contrite spirit → "nor will I always be angry; for the spirit would grow faint before me" → struck, hid face → backsliding "in the way of his own heart" → "I will heal him" | RS |
 | **(v2)** Isa 63:1–64:12 | no one to help → God's arm alone → "I will recount the steadfast love" → "you were angry, and we sinned" → no one who calls → "we are the clay … please look" | NI · CL |
 | **(v2)** Jer 7:16–29 | intercession forbidden → whole families provoke → "Is it I whom they provoke? … themselves" → wrath poured → "did not accept discipline" → "cut off your hair … lament" | PV · MN |
 | **(v2)** Jer 18:18–23 | plots against the prophet → "remember how I stood before you … to turn away your wrath" → pit dug for his life → **"deal with them in the time of your anger"** | VS · IM |
@@ -1503,7 +1505,7 @@
 | **(v3)** Eze 9:1–10 | abominations → mark on those who sigh and groan → slaughter begins at the sanctuary → the prophet alone, face down: "Will you destroy all the remnant?" → "my eye will not spare" | IN |
 | **(v3)** Eze 16 | not satisfied → whoring to provoke → lovers gathered against her → wrath and jealousy → "I will be calm and will no more be angry" → remember and be confounded, "when I atone for you" | AD |
 | **(v3)** Eze 20 | rebellion in Egypt, wilderness, land → "I said I would pour out my wrath … But I acted for the sake of my name" (×3) → "Let us be like the nations" refused → gathered "with wrath poured out" → remember, loathe yourselves, "know that I am the Lord" | RS · PV · KG · KN |
-| **(v3)** Eze 22:17–31 | dross → melted in the furnace → every rank has failed → "I sought for a man … to stand in the breach … but I found none" → indignation poured out | FU · NI |
+| **(v3)** Eze 22:17–31 | dross → melted in the furnace → every rank has failed → "I sought for a man … and stand in the breach … but I found none" → indignation poured out | FU · NI |
 | **(v3)** Joe 2:11–14; Jon 3:5–10 | the day, "who can endure it?" → return with the heart, fasting, sackcloth → the creed (Joel) or the preached word (Nineveh) → "Who knows?" → (Jonah) God relented | WK · SA |
 | **(v3)** Mic 7:7–20 | "I will look to the Lord" → the enemy gloats → "I will bear the indignation … because I have sinned" → vindication → "Who is a God like you …? He does not retain his anger forever" | BE · SA |
 | **(v3)** Rom 1:16–2:10 | gospel, righteousness by faith → wrath revealed against suppression of the truth → without excuse → judging others → presuming on kindness → hard heart storing up wrath → to each by works | WR |
