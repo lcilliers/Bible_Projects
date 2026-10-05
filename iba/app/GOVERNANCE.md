@@ -4050,3 +4050,11 @@ They record where things were at that date.
 - **Applied first** to the anger strand: all its files are in `_analytics/Clusters/M02 - anger-wrath/`.
 - **Not yet done:** `_analytics/cross-cluster-web/fear/` (M01) and `_analytics/cross-cluster-web/life-death/` (M25) are misplaced under this rule. Their move, with every path reference updated, is #1965. Until then the paths in CLAUDE.md and the open threads register still point to `cross-cluster-web/`.
 - No `iba/app/**` code changed.
+
+## §88. Cluster tags are a loose association: no re-tagging (2026-10-05, researcher ruling, escalations #1970, #1972)
+
+**Ruling (researcher, verbatim, #1970):** *"I do not want to get into a re-tagging process of clusters, cluster allocation is a loose association for the purposes of analysis.  analysing a word and finding its association with another cluster should be dealt with as part of cross cluster analysis - not retagging."*
+
+- **Live rule:** `cfg_behaviour_rule` id 70 `cluster-tags-loose-no-retagging` (#1972, applied 2026-10-05 via `Config-Maintenance.ps1 -Step Propose`). A strand or unit that finds a word associated with another cluster records it in its ledger (§F) as a cross-cluster association, for cross-cluster analysis. It never proposes, raises or applies a re-tag, and never builds option tables for one.
+- **Occasion:** anger unit 4 found *qînāh* (H7015, tagged M02) to be lament throughout. It stays tagged M02; its link to grief (M03) is recorded in `_analytics/Clusters/M02 - anger-wrath/anger-observation-ledger-unit4-v1-20261005.md` (AG-196, F.11).
+- `cluster_strong` is unchanged. No `iba/app/**` code changed.

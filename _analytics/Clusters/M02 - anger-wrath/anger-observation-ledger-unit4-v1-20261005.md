@@ -1,6 +1,6 @@
 # Anger: strand observation ledger, unit 4 (v1)
 
-**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 4, the rest of the Hebrew and Aramaic · **Status:** **for approval (#1969).** **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for units 1–3).
+**Date:** 2026-10-05 · **Author:** Claude Code · **Strand:** anger, taken through the fear process (#1963, approved 2026-10-05) · **Unit:** 4, the rest of the Hebrew and Aramaic · **Status:** **approved 2026-10-05 (#1969)**; researcher, verbatim: *"approved 1969"*. **Ledger only, no weave** (the weave is held until the cross-ledger overview, as for units 1–3).
 **Process:** `anger-key-characteristic-process-proposal-v1-20261005.md` (§3, §3A, rulings §7). Format as units 1–3: every row carries setting, meaning and implication (#1944); a chain column, filled only where the verse states the link (#1946); a parties column (ruling 6.2); a closing "What emerged, and what it changes" (#1945); the concept named from the verses first, "also appears" a pointer only (#1947).
 
 **Scope of unit 4:** the handoff's unit plan, unchanged. The live M02 vocabulary has 40 Hebrew and Aramaic Strong's; units 1–3 hold 12, so this unit holds the other **28** (checked against iba.db `cluster_strong`, M02, not deleted, 2026-10-05).
