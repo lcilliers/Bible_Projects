@@ -14,7 +14,7 @@
   - `life-death-web-pull-v1-20261002.csv`: 52,527 rows over 2,027 verses
   - `life-death-strand-overview-data-v1-20261002.md`: every table in full; this document summarises it
 - **Scale:** **2,513 M25 hits in 2,027 verses**, under 34 Strong's numbers. In 372 verses, two or more M25 words occur together. This is about 2.4× the size of fear (1,032 hits in 916 verses).
-- **Folder:** `_analytics/cross-cluster-web/life-death/`, confirmed by the researcher (#1932).
+- **Folder:** `_analytics/cross-cluster-web/life-death/`, confirmed by the researcher (#1932). *(Moved 2026-10-06 to `_analytics/Clusters/M25 - life-death/` under #1965, per the #1963 decision 6.4 filing rule.)*
 
 ## 2. M25 vocabulary (main entries)
 
@@ -210,7 +210,7 @@ The suggestion follows the fear rhythm: one unit per chat, then commit and close
 Researcher, verbatim: *"lets start with 1 and see what comes out of it; 2 - agree, this is where the working should go; 3 - mark unit 3 and 4 of fear to be completed before proceding with a new cluster after M25. also set M12 and M64 as candidates for the next clusters to explore."*
 
 1. **Unit 1 starts** (life given, revived, prayed for). Later units are decided after it ("see what comes out of it").
-2. **Folder confirmed:** `_analytics/cross-cluster-web/life-death/`.
+2. **Folder confirmed:** `_analytics/cross-cluster-web/life-death/`. *(Moved 2026-10-06 to `_analytics/Clusters/M25 - life-death/` under #1965, per the #1963 decision 6.4 filing rule.)*
 3. **Queue after M25 (#1933):**
    - first, fear units 3 and 4, before any new cluster
    - then **M12** Righteousness & Integrity and **M64** Will & Resolve, as candidates

@@ -16,7 +16,7 @@
 38 of the 118 *ḥēmāh* verses also hold *ʾaph*. Unit 1 read those verses for *ʾaph*; here the *ḥēmāh* hit gets its own face, and the unit 1 row is cited (AG-nn), not restated.
 
 **Data:**
-- `anger-unit2-hemah-pull-v1-20261005.csv`: built from iba.db (read-only) with `../../cross-cluster-web/life-death/strand-unit-pull-v1-20261002.py H2534 H2525 H2528 H2152`, then joined to the M02 phenomena ledger v5. One row per hit, with the full ESV text, the earlier **side** and **phenomenon** codes (U1/U2), and a **face**. **Every hit has a face**; no verse text is missing; every verse matched ledger v5 (sides: divine 68, human 31, both-sides 27, none 6).
+- `anger-unit2-hemah-pull-v1-20261005.csv`: built from iba.db (read-only) with `../../Clusters/M25 - life-death/strand-unit-pull-v1-20261002.py H2534 H2525 H2528 H2152`, then joined to the M02 phenomena ledger v5. One row per hit, with the full ESV text, the earlier **side** and **phenomenon** codes (U1/U2), and a **face**. **Every hit has a face**; no verse text is missing; every verse matched ledger v5 (sides: divine 68, human 31, both-sides 27, none 6).
 - Faces and parties: `anger-unit2-faces-v1-20261005.csv` (written by `anger-unit2-face-assign-v1-20261005.py`).
 
 **How it was read:**
@@ -312,7 +312,7 @@ Only links stated in the verse or its immediate setting. Collected for overview 
 
 ## H. Quote check
 
-Every quote in §B, §C, §E and §F was run through `../../cross-cluster-web/fear/fear-quote-check-v1-20261001.py` (unchanged), as for unit 1 (§H there): on a copy with the observation, meaning and chain columns joined, and the verses column as the reference cell.
+Every quote in §B, §C, §E and §F was run through `../M01 - fear-awe/fear-quote-check-v1-20261001.py` (unchanged), as for unit 1 (§H there): on a copy with the observation, meaning and chain columns joined, and the verses column as the reference cell.
 §C and §F were checked as tables, with their verse cells as the reference cell, and §E's bullets with `--prose`.
 - **Result (2026-10-05):**
   - §B, §C and §F: 227 quotes checked, **0 failures**

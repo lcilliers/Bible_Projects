@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-02 · **Author:** Claude Code · **Strand:** life and death, M25 (approved #1932) · **Unit:** 2, dying and death · **Status:** **approved and woven** (#1939, researcher 2026-10-03: *"proceed to weave in"*); see "Woven — where" at the end. · Follows `life-death-strand-candidate-v2-20261002.md` §5 unit 2 and §7 (questions Q1–Q4), and the format of `life-death-observation-ledger-unit1-v1-20261002.md`.
 
-**Threads this unit may bear on** (`../open-threads-register.md`, checked before the pull):
+**Threads this unit may bear on** (`../../cross-cluster-web/open-threads-register.md`, checked before the pull):
 - **OT-02** (Q1, What is death?): this unit is its main source
 - **OT-03** (Q2, spirit and soul at death) and **OT-04** (Q3, the heart after death): touched
 - **OT-05** (Q4, the body): the "corruption" verses only
@@ -309,7 +309,7 @@ Chapter numbers are the current ones (the file number is the chapter number: Ch 
 
 ## G. Quote check
 
-Run: `../fear/fear-quote-check-v1-20261001.py life-death-observation-ledger-unit2-v1-20261002.md`. Result 2026-10-02: **213 quotes checked in table rows. One flag, and it is not a failure.** Jude 12 is cited without a chapter ("Jude 12"), so the checker cannot read the reference. The quote "fruitless trees in late autumn, twice dead, uprooted" was checked by hand against iba.db `verse` 'Jude 12', and it matches.
+Run: `../../Clusters/M01 - fear-awe/fear-quote-check-v1-20261001.py life-death-observation-ledger-unit2-v1-20261002.md`. Result 2026-10-02: **213 quotes checked in table rows. One flag, and it is not a failure.** Jude 12 is cited without a chapter ("Jude 12"), so the checker cannot read the reference. The quote "fruitless trees in late autumn, twice dead, uprooted" was checked by hand against iba.db `verse` 'Jude 12', and it matches.
 
 ---
 

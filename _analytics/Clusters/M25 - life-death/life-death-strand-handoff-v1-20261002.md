@@ -44,7 +44,7 @@ Then a new chat starts the next unit.
 
 ## Read first, in this order
 
-1. `../open-threads-register.md`: match unit 2's Strong's numbers against "comes back when". OT-02 (Q1 What is death?) and OT-08 (the frame) apply. Q2 and Q3 may be touched.
+1. `../../cross-cluster-web/open-threads-register.md`: match unit 2's Strong's numbers against "comes back when". OT-02 (Q1 What is death?) and OT-08 (the frame) apply. Q2 and Q3 may be touched.
 2. `life-death-strand-candidate-v2-20261002.md`: §5 for the units, §7 for the researcher's questions.
 3. `life-death-observation-ledger-unit1-v1-20261002.md`: the format to copy, faces A–X, LD-01 to LD-42, and "Woven — where". Unit 2 continues from **LD-43**. Faces may be reused or new.
 4. `life-death-linkage-map.md`: add unit 2 rows; part B shows which cluster links are still "not yet read".
@@ -55,7 +55,7 @@ Then a new chat starts the next unit.
 
 - **Overview:** `strand-overview-v1-20261002.py <code> <slug>` (reusable for any cluster). Its outputs for M25 are in this folder.
 - **Unit pull pattern:** `life-death-unit1-life-revived-breath-pull-v1-20261002.csv`. One row per hit, with the full ESV text and a face. Build it from iba.db, not from the web pull.
-- **Quote check:** `../fear/fear-quote-check-v1-20261001.py <file> [--prose]`.
+- **Quote check:** `../../Clusters/M01 - fear-awe/fear-quote-check-v1-20261001.py <file> [--prose]`.
 - **Language (researcher):** never "umbrella". Use the verses' own phrases (Ch 2 proposal §2).
 
 ## Unit 2 scope

@@ -47,7 +47,7 @@ ORDER BY v.id;   -- canonical order, if verse.id follows Bible order
 
 WITH targets(base) AS (
   select strong as base from cluster_strong
-  where cluster_strong.cluster_code = 'M01'
+  where cluster_strong.cluster_code = 'm64'
 ),
 thought_verses AS (
   SELECT DISTINCT vl.verse_id
@@ -65,7 +65,10 @@ WHERE vl.deleted = 0
 GROUP BY c.cluster_code, c.short_name, vl.strong, s.stepGloss;
 
 select * from cluster
-where cluster_code = 'M01';
+where cluster_code = 'M12';
+
+select * from cluster;
+
 
 Select C.cluster_code
 ,C.short_name
@@ -133,7 +136,7 @@ ORDER BY shared_verses DESC;
 WITH m01_hits AS (
   SELECT vl.id AS vl_id, vl.verse_id, vl.strong AS m47_strong, vl.surface AS m47_surface
   FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M01'
+  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M64'
   JOIN cluster mc ON mc.cluster_code = cs.cluster_code AND mc.deleted = 0
   WHERE vl.deleted = 0
 ),
@@ -143,7 +146,7 @@ other_m_hits AS (
   JOIN cluster_strong cs ON cs.strong = vl.strong
   JOIN cluster c ON c.cluster_code = cs.cluster_code AND c.deleted = 0
   WHERE vl.deleted = 0
-    AND cs.cluster_code LIKE 'M%' AND cs.cluster_code <> 'M47'
+    AND cs.cluster_code LIKE 'M%' AND cs.cluster_code <> 'M64'
     AND vl.verse_id IN (SELECT verse_id FROM m01_hits)
 )
 SELECT
@@ -180,7 +183,15 @@ WITH CL_hits AS (
   SELECT vl.id AS vl_id, vl.verse_id, vl.position AS cl_position,
          vl.strong AS cl_strong, vl.surface AS cl_surface
   FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M01'
+  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M64'
+  JOIN cluster mc ON mc.cluster_code = cs.cluster_code AND mc.deleted = 0
+  WHERE vl.deleted = 0
+),
+WITH CL_hits AS (
+  SELECT vl.id AS vl_id, vl.verse_id, vl.position AS cl_position,
+         vl.strong AS cl_strong, vl.surface AS cl_surface
+  FROM verse_lexical vl
+  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.cluster_code = 'M64' AND cs.deleted = 0
   JOIN cluster mc ON mc.cluster_code = cs.cluster_code AND mc.deleted = 0
   WHERE vl.deleted = 0
 ),
@@ -189,14 +200,15 @@ other_m_hits AS (
          vl.surface AS other_surface, cs.cluster_code AS other_cluster_code,
          c.short_name AS other_cluster_name
   FROM verse_lexical vl
-  JOIN cluster_strong cs ON cs.strong = vl.strong
+  JOIN cluster_strong cs ON cs.strong = vl.strong AND cs.deleted = 0
   JOIN cluster c ON c.cluster_code = cs.cluster_code AND c.deleted = 0
   WHERE vl.deleted = 0
-    AND cs.cluster_code = 'M01' 
+    AND cs.cluster_code LIKE 'M%'
+    AND cs.cluster_code <> 'M64'
     AND vl.verse_id IN (SELECT verse_id FROM CL_hits)
 )
 SELECT
-  v.reference, 
+  v.reference,
   m.cl_strong, ms.stepGloss AS cl_gloss, m.cl_surface, m.cl_position,
   o.other_strong, os.stepGloss AS other_gloss, o.other_surface,
   o.other_cluster_code, o.other_cluster_name, o.other_position,

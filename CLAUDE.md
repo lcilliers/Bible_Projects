@@ -121,7 +121,7 @@
 > - **Ch 9 "Life, breath and death" became Ch 2** (researcher, 2026-10-02, #1936: *"Move Ch 9 to Ch 2"*). Old Ch 2–8 became **3–9**. 10.x–15 are unchanged.
 >   - Ch 2 now **sets the scene** (#1937): *"the context of Ch 2 is that it sets the scene for discovering the working of the inner being within the context of what life is about and what death means"*.
 >   - It uses the verses' own phrases, never "umbrella" (the researcher's picture only).
->   - Links run through `_analytics/cross-cluster-web/life-death/life-death-linkage-map.md`.
+>   - Links run through `_analytics/Clusters/M25 - life-death/life-death-linkage-map.md`.
 > - **Open threads register (#1935):** `_analytics/cross-cluster-web/open-threads-register.md`. It holds held items, researcher questions and signposts, each with a "comes back when" trigger.
 >   - Check it before every unit pull.
 >   - Add to it at every ledger approval.
@@ -149,13 +149,19 @@
 >      - #1975 closed: no re-tagging; OT-15 stays open.
 >      - Handoff: `anger-strand-handoff-v1-20261005.md` (same folder).
 >      - **No re-tagging** (#1970: *"cluster allocation is a loose association for the purposes of analysis"*; cfg_behaviour_rule 70, GOVERNANCE.md §88).
->   3. then M12 and M64 as candidates
+>   3. ~~then M12 and M64 as candidates~~ **#1933 closed 2026-10-06. M64 Will & Resolve is the next strand, on its own escalation, #1978.** M12 is not started.
+>      - **Focused, not broad brush** (researcher, verbatim, 2026-10-06): *"The approach to the analysis will differ from previous iterations.  It will be much more focussed that broad brush as the results for broad brush were not as expected."*
+>      - Work so far, all in `_analytics/Clusters/M64 - will-resolve/`:
+>        - the M64 × M47 shared verses (56), cross-referenced to the narrative and the open threads register
+>        - **29 uncited verses marked for deeper analysis and reading** (`m64-m47-marked-verses-v1-20261006.md`; researcher: *"the 29 verses will be fed back into analysis"*)
+>        - a pinpointed pull of H6942H *dedicate*, held for M61 as **OT-91**
+>      - #1979 (decision): the M47 reset recorded no verse-by-verse placement, so other M47 sections may also have dropped verses.
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
->   - Built from the unit ledgers, a cross-ledger overview (`_analytics/cross-cluster-web/fear/fear-cross-ledger-overview-*`; folder to move to `_analytics/Clusters/M01 - fear-awe/` under #1965, GOVERNANCE.md §87) and the co-existence review (its §F).
+>   - Built from the unit ledgers, a cross-ledger overview (`_analytics/Clusters/M01 - fear-awe/fear-cross-ledger-overview-*`; moved from `cross-cluster-web/fear/` 2026-10-06 under #1965, GOVERNANCE.md §87) and the co-existence review (its §F).
 >   - **Fear units 1–4 are complete**, with a unit 3 addendum for H4172A. That clears strand queue item 2 below.
 >   - The other chapters are **not** reworked in this first step. 10.1's "Fear" section overlaps 10.12, and the 10.1 "Feeling" frame is open (OT-12: no biblical word names "feeling" as a category; `_analytics/essay/spirit_soul_body/wa-essay-narrative-feeling-frame-question-v1-20261004.md`).
->   - Style guide v2 §7 still states #1920 unchanged. It needs updating in v3 (deferred, #1930).
+>   - Style guide v2 §7 still states #1920 unchanged. It needs updating in v3 (deferred; #1930 closed 2026-10-06, so v3 takes its own escalation when it is taken up).
 > - **10.11 "Hiding and disclosing"** was added after 10.10, with no renumbering (NS-D1, researcher 2026-10-02: *"ns-d1: select A"*, #1931). It holds M20's concealment phenomena as one account, because they face both God and others. M20 is fully woven; the record is in `_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-narrative-digest-v1-20261002.md`.
 >
 > **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** "you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself." No joining of verses into patterns, mechanisms or divisions that no verse states, in findings, ledgers or narrative. Quote, and stop.
@@ -165,7 +171,7 @@
 > - Other sections carry only the parts that belong to their activity, rewritten as prose with chosen verses and pointing back to the account. Full verse lists stay in the ledger.
 > - A verse that says nothing about the inner being or the word stays in the data, not the narrative.
 > - Readings beyond what a verse states are marked "I read".
-> - Style guide v3 is still to be written to fix this in config (deferred, #1930).
+> - Style guide v3 is still to be written to fix this in config (deferred; #1930 closed 2026-10-06, so v3 takes its own escalation when it is taken up).
 > **Writing standard (config, 2026-10-01):** `cfg_setting narrative.inner_being_style_guide_path` → `Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md`, plus `cfg_behaviour_rule` 69 `let-scripture-speak-no-imputed-synthesis`. The guide holds the researcher's #1924 rulings: prose supported by bullets; titles name the subject only; any external party in the verses (God, the Spirit, other spirits, angels, people, the physical world) is dealt with per phenomenon and never watered down.
 >
 > These narrative drafts are written **on the researcher's specific instruction**. They are files,

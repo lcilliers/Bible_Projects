@@ -232,4 +232,4 @@ Researcher, verbatim: *"1 - accept your correct as <> 2- yes 3 - _analytics/cros
 
 1. The extract filter is **`<> 'M01'`** (fear with the rest of the web).
 2. **Fear is approved as the next strand.**
-3. Strand files are filed in **`_analytics/cross-cluster-web/fear/`**.
+3. Strand files are filed in **`_analytics/cross-cluster-web/fear/`**. *(Moved 2026-10-06 to `_analytics/Clusters/M01 - fear-awe/` under #1965, per the #1963 decision 6.4 filing rule.)*

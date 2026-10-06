@@ -15,7 +15,7 @@
 **183 hits in 162 verses.**
 
 **Data:**
-- `fear-unit4-greek-pull-v1-20261004.csv`: built from iba.db (read-only) with `../life-death/strand-unit-pull-v1-20261002.py`. One row per hit, with the full ESV text and a **face**. **Every hit has a face**, and no verse text is missing.
+- `fear-unit4-greek-pull-v1-20261004.csv`: built from iba.db (read-only) with `../../Clusters/M25 - life-death/strand-unit-pull-v1-20261002.py`. One row per hit, with the full ESV text and a **face**. **Every hit has a face**, and no verse text is missing.
 - Faces: `fear-unit4-faces-v1-20261004.csv`.
 
 **How it was read:** as unit 3.

@@ -1,6 +1,6 @@
 # Chapter 2: its role in setting the scene, and how its links run into the other chapters (proposal)
 
-**Date:** 2026-10-02 · **Status:** proposal, for the researcher's decision · **Thread:** OT-08 (`../open-threads-register.md`) · **Follows:** #1936 (Ch 9 moved to Ch 2)
+**Date:** 2026-10-02 · **Status:** proposal, for the researcher's decision · **Thread:** OT-08 (`../../cross-cluster-web/open-threads-register.md`) · **Follows:** #1936 (Ch 9 moved to Ch 2)
 
 ## 1. Researcher direction (verbatim, 2026-10-02)
 

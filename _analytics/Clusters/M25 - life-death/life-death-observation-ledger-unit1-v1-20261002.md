@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-02 · **Author:** Claude Code · **Strand:** life and death, M25 (approved #1932) · **Unit:** 1, life given, revived, prayed for · **Chapter numbers:** the new order (#1936: Ch 9 → Ch 2; old 2–8 → 3–9). **Status:** **approved and woven** (#1934, #1937, 2026-10-02); see "Woven — where" at the end. · Follows `life-death-strand-candidate-v2-20261002.md` §5 unit 1 and §7 (questions Q1–Q4).
 
-**Threads this unit may bear on** (`../open-threads-register.md`; the register was set up after this unit was read, so this is filled in retrospectively): OT-02 to OT-05 (the researcher's Q1–Q4), OT-08 (life and death as the meta layer).
+**Threads this unit may bear on** (`../../cross-cluster-web/open-threads-register.md`; the register was set up after this unit was read, so this is filled in retrospectively): OT-02 to OT-05 (the researcher's Q1–Q4), OT-08 (life and death as the meta layer).
 
 **Scope of unit 1**
 

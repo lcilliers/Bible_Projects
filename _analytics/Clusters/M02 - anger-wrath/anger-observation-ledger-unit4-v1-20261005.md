@@ -32,7 +32,7 @@
 38 of the 202 verses also hold a word from units 1–3. Where a verse was read there, the unit 1–3 row is cited (AG-nn), not restated.
 
 **Data:**
-- `anger-unit4-rest-hebrew-pull-v1-20261005.csv`: built from iba.db (read-only) with `../../cross-cluster-web/life-death/strand-unit-pull-v1-20261002.py` and the 28 Strong's above, then joined to the M02 phenomena ledger v5. One row per hit, with the full ESV text, the earlier **side** and **phenomenon** codes (U1/U2), and a **face**. **Every hit has a face**; no verse text is missing; every verse matched ledger v5 (sides: divine 78, human 62, none 31, both-sides 31).
+- `anger-unit4-rest-hebrew-pull-v1-20261005.csv`: built from iba.db (read-only) with `../../Clusters/M25 - life-death/strand-unit-pull-v1-20261002.py` and the 28 Strong's above, then joined to the M02 phenomena ledger v5. One row per hit, with the full ESV text, the earlier **side** and **phenomenon** codes (U1/U2), and a **face**. **Every hit has a face**; no verse text is missing; every verse matched ledger v5 (sides: divine 78, human 62, none 31, both-sides 31).
 - Faces and parties: `anger-unit4-faces-v1-20261005.csv` (written by `anger-unit4-face-assign-v1-20261005.py`). Faces are set by verse. One verse needed two faces: Jer 7:29 (the lament raised, 4AC; the generation of his wrath, 4A), set by position.
 - §D used a new read-only script, `anger-chapter-match-v1-20261005.py`. It carries the book forward to bare references, as the quote checker's `--prose` mode does, so a bare "(7:19)" is now counted (the unit 3 note on undercounting no longer applies).
 - **Data notes:**
@@ -359,7 +359,7 @@ Only links stated in the verse or its immediate setting. Collected for overview 
 
 ## H. Quote check
 
-Every quote in §B, §C, §E and §F was run through `../../cross-cluster-web/fear/fear-quote-check-v1-20261001.py` (unchanged), as for units 1–3: on a copy with the observation, meaning and chain columns joined, and the verses column as the reference cell. §C and §F were checked as tables, with their verse cells as the reference cell, §A's rows as tables with the row as its own reference cell, and §E's bullets with `--prose`.
+Every quote in §B, §C, §E and §F was run through `../M01 - fear-awe/fear-quote-check-v1-20261001.py` (unchanged), as for units 1–3: on a copy with the observation, meaning and chain columns joined, and the verses column as the reference cell. §C and §F were checked as tables, with their verse cells as the reference cell, §A's rows as tables with the row as its own reference cell, and §E's bullets with `--prose`.
 - **Result (2026-10-05):**
   - §B: 237 quotes checked, **0 failures**
   - §C and §F: 8 quotes, **0 failures**

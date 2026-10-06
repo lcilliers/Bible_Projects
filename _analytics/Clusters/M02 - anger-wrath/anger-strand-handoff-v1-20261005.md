@@ -43,10 +43,10 @@ This is five units, not the four estimated in the proposal: *ʾaph* alone filled
 
 ## Method (do not re-derive)
 
-- **Pull:** `python _analytics/cross-cluster-web/life-death/strand-unit-pull-v1-20261002.py OUT.csv <strongs…>`, then join `wa-cluster-M02-phenomena-ledger-v5-20260929.csv` by reference (side, phenomenon, m02_words), as unit 1 did. (The pull script moves with #1965; update this path then.)
+- **Pull:** `python _analytics/Clusters/M25 - life-death/strand-unit-pull-v1-20261002.py OUT.csv <strongs…>`, then join `wa-cluster-M02-phenomena-ledger-v5-20260929.csv` by reference (side, phenomenon, m02_words), as unit 1 did. (Moved under #1965, 2026-10-06.)
 - **Faces:** a face-assign script per unit (pattern `anger-unit2-face-assign-v1-20261005.py`), with the parties columns (ruling 6.2). Every hit gets a face. Face labels carry the unit number (unit 2: 2A–2W; unit 3: 3A…); AG ids continue from AG-199; unit 5 faces 5A…. Where one verse needs two faces, set them by (reference, position), as unit 3 did for 2Ki 23:26.
 - **Read by surface first**; prior work cited, not restated (U1 §n, U2 §n, AN-nn).
-- **Quote check:** `_analytics/cross-cluster-web/fear/fear-quote-check-v1-20261001.py` on a copy with observation + meaning + chain joined and the verses column as the reference cell (see unit 1 §H).
+- **Quote check:** `_analytics/Clusters/M01 - fear-awe/fear-quote-check-v1-20261001.py` on a copy with observation + meaning + chain joined and the verses column as the reference cell (see unit 1 §H).
 - **"Already in the chapters":** match references against the chapter files with full book names (use `os.path.basename`; the first unit-1 run collapsed the file keys on Windows paths).
 - **Escalation tip (unit 3):** `-Action Raise` ignores `-NextAction`/`-Resolution`; after raising, run `-Action Update -NextAction ready_for_approval -AssignedTo Researcher -Resolution …` so the approval can be recorded.
 - **Chapter match (unit 4):** `anger-chapter-match-v1-20261005.py PULL.csv` lists the verses already cited in the chapters (book carried forward to bare references).

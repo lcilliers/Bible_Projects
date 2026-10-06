@@ -2,7 +2,7 @@
 
 **Date:** 2026-10-03 · **Author:** Claude Code · **Strand:** life and death, M25 (approved #1932) · **Unit:** 3, living before God · **Status:** **approved as recommended, #1940** (researcher, chat 2026-10-04: *"approve 1940 as recommended"*). Supplement §B.19 (LD-139 to LD-142) read 2026-10-04 under decision 4. Woven: see "Woven — where" at the end · Follows `life-death-strand-candidate-v2-20261002.md` §5 unit 3 and §7 (questions Q1–Q4), and the format of `life-death-observation-ledger-unit2-v1-20261002.md`.
 
-**Threads this unit may bear on** (`../open-threads-register.md`, checked before the pull):
+**Threads this unit may bear on** (`../../cross-cluster-web/open-threads-register.md`, checked before the pull):
 - **OT-01** (life by the statutes, and statutes without life): the "do this and live" verses fall in this unit (H2416E, G2198, G2222). **Main contact.**
 - **OT-02** (Q1, What is death?): what life is set against; "alive" and yet dead
 - **OT-03** (Q2, spirit and soul at death): "all live to him"; "the life of my spirit"; souls that "came to life"
@@ -321,7 +321,7 @@ Unit 4 continues from **LD-143**; faces from **L37**.
 
 ## G. Quote check
 
-Run: `../fear/fear-quote-check-v1-20261001.py life-death-observation-ledger-unit3-v1-20261003.md`. Result 2026-10-03: **284 quotes checked in table rows; 0 failures.** (A first run flagged two of my own labels, which were written in quotation marks: "Do this and live" and *to be long*. They were reworded. Neither is a verse quote.)
+Run: `../../Clusters/M01 - fear-awe/fear-quote-check-v1-20261001.py life-death-observation-ledger-unit3-v1-20261003.md`. Result 2026-10-03: **284 quotes checked in table rows; 0 failures.** (A first run flagged two of my own labels, which were written in quotation marks: "Do this and live" and *to be long*. They were reworded. Neither is a verse quote.)
 
 ---
 

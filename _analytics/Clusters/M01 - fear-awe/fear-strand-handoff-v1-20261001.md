@@ -7,7 +7,7 @@
 > **2026-10-04.** Researcher, verbatim (#1957): *"approve 1957, hold the weave;  the ledger is good.  we want to first do  more work on and around it before writing into the narrative.  Should we compile the unit 4 ledger also to allow for cross ledger analysis?"* Claude recommended yes. Unit 3 covered every remaining Hebrew/Aramaic M01 entry (44 Strong's, 189 hits), so **unit 4 is the 22 Greek M01 Strong's** (about 183 hits: G5399, G5401, G1719, G5156, G1568, G1790, G1169, G5398, G5141, G1630, G4422, G2124, G2125, G1167, G1168, G4423, G5400, G6015, G4426, G2412, G5425, G2317).
 > - **Ledger format:** copy unit 3's (`fear-observation-ledger-unit3-v1-20261004.md`): an added column, "meaning in setting, and what it implies"; speakers named.
 > - **Quote check:** run it on a copy with the meaning column joined to the observation, because the checker reads columns by position (unit 3 §F).
-> - **Pull:** `../life-death/strand-unit-pull-v1-20261002.py`.
+> - **Pull:** `../../Clusters/M25 - life-death/strand-unit-pull-v1-20261002.py`.
 > - **Life-and-death crossings:** held under OT-08.
 
 ## Working rhythm

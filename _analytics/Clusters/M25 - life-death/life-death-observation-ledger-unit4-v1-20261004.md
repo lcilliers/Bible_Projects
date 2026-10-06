@@ -10,7 +10,7 @@
 
 **H5782's inner-being faces are not woven in this unit.** Researcher, verbatim: *"there is a large part of this word that has significant inner being meaning, but is not part of life or death. this need to be isolated, and be documented separately"* (#1942, on hold until this unit is complete). §E lists them and hands them to #1942. This unit observes and weaves only the faces that bear on life and death.
 
-**Threads this unit may bear on** (`../open-threads-register.md`, checked before the pull):
+**Threads this unit may bear on** (`../../cross-cluster-web/open-threads-register.md`, checked before the pull):
 - **OT-02** (Q1, What is death?): Job 14:12, death as a sleep not roused
 - **OT-03** (Q2, spirit and soul at death): Isa 14:9–10, the shades roused (a taunt)
 - **OT-04** (Q3, the heart after death): checked. Song 5:2 is a sleeping heart, not a dead one. No verse
@@ -143,7 +143,7 @@ The life-and-death verses in W06 (LD-147) and W07 (LD-146) are woven in this uni
 
 ## G. Quote check
 
-The standard tool (`../fear/fear-quote-check-v1-20261001.py`) checks a quote only against references in the same table cell. This ledger puts the references in a separate column, so it could not resolve them (13 checked, 2 false flags). Instead, every quoted fragment in §B–§F was checked against the whole ESV text in iba.db `verse` (29,760 verses), split at "…" and at sentence ends: **84 fragments; 0 verse-text failures.** The 8 flags were 7 section titles in quotation marks, plus one fragment joined across Isa 14:10–11 by the check's own splitting; both halves match.
+The standard tool (`../../Clusters/M01 - fear-awe/fear-quote-check-v1-20261001.py`) checks a quote only against references in the same table cell. This ledger puts the references in a separate column, so it could not resolve them (13 checked, 2 false flags). Instead, every quoted fragment in §B–§F was checked against the whole ESV text in iba.db `verse` (29,760 verses), split at "…" and at sentence ends: **84 fragments; 0 verse-text failures.** The 8 flags were 7 section titles in quotation marks, plus one fragment joined across Isa 14:10–11 by the check's own splitting; both halves match.
 
 ---
 

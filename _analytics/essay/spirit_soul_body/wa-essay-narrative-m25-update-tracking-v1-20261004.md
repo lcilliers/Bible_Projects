@@ -11,8 +11,8 @@ Five places. None of them, on its own, shows the changed text.
 |---|---|---|---|
 | 1 | `inner-being-narrative/00-index-and-status-v1-20260930.md`, **Structure log** (rows dated 2026-10-02 to 10-04, "life and death (M25)") | What each unit did to the structure: new sections, moves, renames | The text itself |
 | 2 | The same index, **version map** (the "life and death (M25) … →" lines) | Which chapter files each unit bumped, and to which version | What changed inside them |
-| 3 | Each unit ledger's **"Woven — where"** table (`_analytics/cross-cluster-web/life-death/`: unit 1 §238, unit 2 §316, unit 3 §328, unit 4 §167, Q2/Q3 §134) | Each observation (LD-nn) → chapter and section | It lists placements; it does not show the surrounding text |
-| 4 | `_analytics/cross-cluster-web/life-death/life-death-linkage-map.md` | Each life-death link → where its account is carried, and where it is only pointed to | Units 3–4 and Q2/Q3 coverage not checked here |
+| 3 | Each unit ledger's **"Woven — where"** table (`_analytics/Clusters/M25 - life-death/`: unit 1 §238, unit 2 §316, unit 3 §328, unit 4 §167, Q2/Q3 §134) | Each observation (LD-nn) → chapter and section | It lists placements; it does not show the surrounding text |
+| 4 | `_analytics/Clusters/M25 - life-death/life-death-linkage-map.md` | Each life-death link → where its account is carried, and where it is only pointed to | Units 3–4 and Q2/Q3 coverage not checked here |
 | 5 | `wa-essay-spirit-soul-body-claim-register-v13-20261004.md` | Each changed claim, with its verdict | New text that is not a claim |
 
 **The comparison you need is a side-by-side of each chapter before M25 and now.** Every earlier version is kept in `inner-being-narrative/archive/`, so this is always possible (§3).

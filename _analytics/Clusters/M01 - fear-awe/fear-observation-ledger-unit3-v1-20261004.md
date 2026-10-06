@@ -22,7 +22,7 @@ The groups overlap at the edges (H4288 is both terror and ruin), so the hit colu
 **Coverage gap (found 2026-10-04, overview pass):** H4172A (*môrāʾ*, fear, terror) was taken as read because unit 2 had read one of its 11 hits (Isa 8:13). The other 10 were never faced. They are now read in `fear-observation-ledger-unit3-addendum-H4172A-v1-20261004.md`.
 
 **Data:**
-- `fear-unit3-terror-horror-pull-v1-20261004.csv`: built from iba.db (read-only) with `../life-death/strand-unit-pull-v1-20261002.py`. One row per hit, with the full ESV text and a **face**. **Every hit has a face**, and no verse text is missing.
+- `fear-unit3-terror-horror-pull-v1-20261004.csv`: built from iba.db (read-only) with `../../Clusters/M25 - life-death/strand-unit-pull-v1-20261002.py`. One row per hit, with the full ESV text and a **face**. **Every hit has a face**, and no verse text is missing.
 - Faces: `fear-unit3-faces-v1-20261004.csv`.
 
 **How it was read:**

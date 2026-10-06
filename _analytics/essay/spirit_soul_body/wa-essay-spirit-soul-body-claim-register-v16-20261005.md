@@ -228,7 +228,7 @@ Ledger: `_analytics/Clusters/M02 - anger-wrath/anger-strand-observation-ledger-v
 
 ## Strand updates — fear (M01), unit 1 (2026-10-01, #1927, #1928)
 
-**Ledger:** `_analytics/cross-cluster-web/fear/fear-observation-ledger-v1-20261001.md`
+**Ledger:** `_analytics/Clusters/M01 - fear-awe/fear-observation-ledger-v1-20261001.md`
 - Unit 1 covers the *yārēʾ* family, "to fear, revere": 424 hits in 408 verses, read by surface.
 - The ledger was approved by the researcher: *"the ledger is approved to continue"*.
 
@@ -269,7 +269,7 @@ The narrative's own statements this unit changed:
 
 ## Strand updates — fear (M01), unit 2 (2026-10-01, #1929)
 
-**Ledger:** `_analytics/cross-cluster-web/fear/fear-observation-ledger-unit2-v1-20261001.md`
+**Ledger:** `_analytics/Clusters/M01 - fear-awe/fear-observation-ledger-unit2-v1-20261001.md`
 - Unit 2 covers *paḥad*, "dread", and the Hebrew trembling and shuddering words: 227 hits in 196 verses, read by surface.
 - The ledger was approved by the researcher: *"proceed with the weaving"*.
 
@@ -361,11 +361,11 @@ The narrative's own statements this unit changed:
 
 ## Strand updates — life and death (M25), unit 1 and the Ch 2 rewrite (2026-10-02, #1934, #1937)
 
-**Ledger:** `_analytics/cross-cluster-web/life-death/life-death-observation-ledger-unit1-v1-20261002.md`
+**Ledger:** `_analytics/Clusters/M25 - life-death/life-death-observation-ledger-unit1-v1-20261002.md`
 - Unit 1 covers life given, revived and prayed for, and the breath words: 356 hits in 326 verses, read by surface.
 - The researcher approved it: *"proceed with writing ch2 and weaving it in."*
 
-**Linkage map:** `_analytics/cross-cluster-web/life-death/life-death-linkage-map.md`.
+**Linkage map:** `_analytics/Clusters/M25 - life-death/life-death-linkage-map.md`.
 
 **Structure change:** Ch 9 was moved to Ch 2 (#1936). Ch 2 was then rewritten in the approved four-movement shape (#1937), with eight new sections. Every existing section was kept.
 
@@ -390,7 +390,7 @@ The narrative's own statements this unit changed:
 
 ## Strand updates — life and death (M25), Q4: the body and the resurrection (2026-10-02, #1938)
 
-**Ledger:** `_analytics/cross-cluster-web/life-death/life-death-q4-body-resurrection-ledger-v1-20261002.md` (Q4-01 to Q4-17). It is the focused pull for open thread OT-05.
+**Ledger:** `_analytics/Clusters/M25 - life-death/life-death-q4-body-resurrection-ledger-v1-20261002.md` (Q4-01 to Q4-17). It is the focused pull for open thread OT-05.
 - **Trigger:** the researcher noted that Ch 2 was missing the resurrected body, and supplied an outside summary to check.
 - **Approval:** the researcher approved the ledger and the weave (#1938).
 - **Not taken in:** the church-history material in that summary (Origen, Augustine). It is not the voice of the Bible.
@@ -415,7 +415,7 @@ The narrative's own statements this change made:
 
 ## Strand updates — life and death (M25), unit 2: dying and death (2026-10-03, #1939)
 
-**Ledger:** `_analytics/cross-cluster-web/life-death/life-death-observation-ledger-unit2-v1-20261002.md` (LD-43 to LD-91). It covers 1,237 hits in 1,045 verses (H4191, H4194, G0599, G2288, G3499, G1312, G4881, G2253), with 28 faces.
+**Ledger:** `_analytics/Clusters/M25 - life-death/life-death-observation-ledger-unit2-v1-20261002.md` (LD-43 to LD-91). It covers 1,237 hits in 1,045 verses (H4191, H4194, G0599, G2288, G3499, G1312, G4881, G2253), with 28 faces.
 - **Approval:** the researcher, verbatim: *"proceed to weave in"* (#1939). This approved the weave as proposed, including setting LD-46 and LD-47 side by side.
 
 **Original claims touched:**
@@ -449,7 +449,7 @@ The narrative's own statements this change made:
 
 ## Strand updates — life and death (M25), unit 3: living before God (2026-10-04, #1940)
 
-**Ledger:** `_analytics/cross-cluster-web/life-death/life-death-observation-ledger-unit3-v1-20261003.md` (LD-92 to LD-142). It covers 690 hits in 629 verses (H2416A, H2416E, G2198, G2222, H0748), with faces L01–L32. The supplement §B.19 adds H2416C / H2416D (109 hits, LD-139 to LD-142, faces L33–L36).
+**Ledger:** `_analytics/Clusters/M25 - life-death/life-death-observation-ledger-unit3-v1-20261003.md` (LD-92 to LD-142). It covers 690 hits in 629 verses (H2416A, H2416E, G2198, G2222, H0748), with faces L01–L32. The supplement §B.19 adds H2416C / H2416D (109 hits, LD-139 to LD-142, faces L33–L36).
 - **Approval:** the researcher, verbatim: *"approve 1940 as recommended"* (chat, 2026-10-04). The four decisions: (1) a new Ch 2 section "Living before God"; (2) a new Ch 2 section "Life weighed", before "Facing death"; (3) LD-101 and LD-102 side by side, unreconciled; (4) the H2416C supplement read first. LD-106 is held in OT-01.
 
 **Original claims touched:**
@@ -485,7 +485,7 @@ The narrative's own statements this change made:
 
 ## Strand updates — life and death (M25), unit 4: roused and stirred (2026-10-04, #1949)
 
-**Ledger:** `_analytics/cross-cluster-web/life-death/life-death-observation-ledger-unit4-v1-20261004.md` (LD-143 to LD-155). H5782: 78 hits / 64 verses, faces W01–W17; supplement §H, H6974 (tagged T3): 22 hits / 21 verses. The inner-being faces of H5782 (49 hits) are handed to #1942, not woven. Written with meaning in setting and implication (#1943).
+**Ledger:** `_analytics/Clusters/M25 - life-death/life-death-observation-ledger-unit4-v1-20261004.md` (LD-143 to LD-155). H5782: 78 hits / 64 verses, faces W01–W17; supplement §H, H6974 (tagged T3): 22 hits / 21 verses. The inner-being faces of H5782 (49 hits) are handed to #1942, not woven. Written with meaning in setting and implication (#1943).
 - **Approval:** the researcher, verbatim: *"approved, proceed with H6974 and the weave"* (#1949), with all four §F decisions as recommended.
 
 **Original claims touched:**
@@ -508,7 +508,7 @@ The narrative's own statements this change made:
 
 ## Strand updates — life and death (M25), Q2 and Q3: soul, spirit and heart at death (2026-10-04, #1950)
 
-**Ledger:** `_analytics/cross-cluster-web/life-death/life-death-q2-q3-soul-spirit-heart-ledger-v1-20261004.md` (Q2-01 to Q2-12, Q3-01 to Q3-04). Co-occurrence pulls: Q2, soul, spirit and breath with death words, 123 hits / 111 verses; Q3, heart with death words, 23 hits / 21 verses. Supplement §H: Luk 23:42–43; Phili 1:21–24; 2Cor 5:6–9.
+**Ledger:** `_analytics/Clusters/M25 - life-death/life-death-q2-q3-soul-spirit-heart-ledger-v1-20261004.md` (Q2-01 to Q2-12, Q3-01 to Q3-04). Co-occurrence pulls: Q2, soul, spirit and breath with death words, 123 hits / 111 verses; Q3, heart with death words, 23 hits / 21 verses. Supplement §H: Luk 23:42–43; Phili 1:21–24; 2Cor 5:6–9.
 - **Instruction:** the researcher, verbatim: *"prepare 1950 for approval and then adding it to the narrative"* (#1950 set ready for approval; woven with all four §F decisions as recommended).
 
 **Original claims touched:**
@@ -531,7 +531,7 @@ The narrative's own statements this change made:
 
 ## Strand updates — fear (M01), unit 4: the Greek words (2026-10-04, #1958)
 
-**Ledger:** `_analytics/cross-cluster-web/fear/fear-observation-ledger-unit4-v1-20261004.md` (FE-121 to FE-162).
+**Ledger:** `_analytics/Clusters/M01 - fear-awe/fear-observation-ledger-unit4-v1-20261004.md` (FE-121 to FE-162).
 - Unit 4 covers the 22 Greek M01 Strong's: 183 hits in 162 verses. With unit 3 (Hebrew and Aramaic, #1957) and the unit 3 addendum (H4172A, 10 hits that had fallen between units 2 and 3; corrected 2026-10-04), every M01 word has now been read.
 - Approved by the researcher: *"approve 1958, hold the weave."* No chapter text is written from it.
 
@@ -543,7 +543,7 @@ The narrative's own statements this change made:
 
 ## Strand updates — fear (M01): new 10.12 "Fear" (2026-10-04, #1961)
 
-**Sources:** fear units 1–4, the unit 3 addendum (H4172A), and `_analytics/cross-cluster-web/fear/fear-cross-ledger-overview-v1-20261004.md` (§A–§F).
+**Sources:** fear units 1–4, the unit 3 addendum (H4172A), and `_analytics/Clusters/M01 - fear-awe/fear-cross-ledger-overview-v1-20261004.md` (§A–§F).
 **Researcher, verbatim:** *"I think you must encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter."*
 
 **Original claims changed:** none. 9-4 stays restated (10.12 quotes 2Ti 1:7–8 with its setting). 8-2 stays **Held**.

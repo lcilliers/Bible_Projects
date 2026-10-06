@@ -11,7 +11,7 @@
 **Scope of unit 1:** *ʾaph* in its anger sense (H0639G, "anger, wrath", 225 hits) and its verb *ʾānap̄* (H0599, "to be angry", 14 hits): **239 hits in 230 verses.** The unit split was fixed from the live vocabulary listing (proposal §3, step 1: "exact split fixed after the vocabulary listing"). *ʾaph* is the largest M02 entry, so it is a unit on its own; *ḥēmāh* moves to unit 2. The other senses of the same Hebrew word (H0639H "nostrils", "face", "nose"; 48 verses outside the M02 tag) were read on 2026-10-01 and stand in `anger-strand-observation-ledger-v1-20261001.md` §L.1. They are cited, not re-read.
 
 **Data:**
-- `anger-unit1-aph-pull-v1-20261005.csv`: built from iba.db (read-only) with `../../cross-cluster-web/life-death/strand-unit-pull-v1-20261002.py`, then joined to the M02 phenomena ledger v5. One row per hit, with the full ESV text, the earlier **side** and **phenomenon** codes (U1/U2), and a **face**. **Every hit has a face**; no verse text is missing; every verse matched ledger v5.
+- `anger-unit1-aph-pull-v1-20261005.csv`: built from iba.db (read-only) with `../../Clusters/M25 - life-death/strand-unit-pull-v1-20261002.py`, then joined to the M02 phenomena ledger v5. One row per hit, with the full ESV text, the earlier **side** and **phenomenon** codes (U1/U2), and a **face**. **Every hit has a face**; no verse text is missing; every verse matched ledger v5.
 - Faces and parties: `anger-unit1-faces-v1-20261005.csv` (written by `anger-unit1-face-assign-v1-20261005.py`).
 
 **How it was read:**
@@ -263,5 +263,5 @@ Only links stated in the verse or its immediate setting. Collected for overview 
 
 ## H. Quote check
 
-Every quote in §B was run through `../../cross-cluster-web/fear/fear-quote-check-v1-20261001.py` (unchanged), on a copy with the observation, meaning and chain columns joined, and the verses column as the reference cell (the checker reads columns by position, as in fear unit 3).
+Every quote in §B was run through `../M01 - fear-awe/fear-quote-check-v1-20261001.py` (unchanged), on a copy with the observation, meaning and chain columns joined, and the verses column as the reference cell (the checker reads columns by position, as in fear unit 3).
 - **Result (2026-10-05):** 251 quotes checked in §B, **0 failures**; §C checked separately (4 quotes, 0 failures). One reference has no verse text in iba.db: Job 40:13 (cited only as part of the setting Job 40:8–14, not quoted).

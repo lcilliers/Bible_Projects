@@ -18,7 +18,7 @@
 94 of the 203 verses also hold *ʾaph*: they are the "anger of the Lord was kindled" verses, where *ḥārāh* is the verb and *ʾaph* the noun. Unit 1 read them for *ʾaph*; here the *ḥārāh* hit gets its own face and the unit 1 row is cited (AG-nn), not restated. 6 verses also hold *ḥēmāh* (unit 2).
 
 **Data:**
-- `anger-unit3-harah-kaas-pull-v1-20261005.csv`: built from iba.db (read-only) with `../../cross-cluster-web/life-death/strand-unit-pull-v1-20261002.py H2734 H2740 H2750 H3707 H3708A H3708B`, then joined to the M02 phenomena ledger v5. One row per hit, with the full ESV text, the earlier **side** and **phenomenon** codes (U1/U2), and a **face**. **Every hit has a face**; no verse text is missing; every verse matched ledger v5 (sides: divine 114, human 75, both-sides 26, none 2).
+- `anger-unit3-harah-kaas-pull-v1-20261005.csv`: built from iba.db (read-only) with `../../Clusters/M25 - life-death/strand-unit-pull-v1-20261002.py H2734 H2740 H2750 H3707 H3708A H3708B`, then joined to the M02 phenomena ledger v5. One row per hit, with the full ESV text, the earlier **side** and **phenomenon** codes (U1/U2), and a **face**. **Every hit has a face**; no verse text is missing; every verse matched ledger v5 (sides: divine 114, human 75, both-sides 26, none 2).
 - Faces and parties: `anger-unit3-faces-v1-20261005.csv` (written by `anger-unit3-face-assign-v1-20261005.py`). Faces are set by verse. One verse needed two faces: 2Ki 23:26 (the burning not turned, 3D; Manasseh's provocations, 3J), set by position.
 - **Data notes:**
   - 1Sa 20:7 has two *ḥārāh* rows at one position. In iba.db, one span holds two codes (an infinitive and a finite verb, `HVqaa` + `HVqi3ms`). The ESV gives both as one word, "angry". This is the Hebrew doubled verb, not a duplicate.
@@ -321,7 +321,7 @@ Only links stated in the verse or its immediate setting. Collected for overview 
 
 ## H. Quote check
 
-Every quote in §B, §C, §E and §F was run through `../../cross-cluster-web/fear/fear-quote-check-v1-20261001.py` (unchanged), as for units 1 and 2: on a copy with the observation, meaning and chain columns joined, and the verses column as the reference cell. §C and §F were checked as tables, with their verse cells as the reference cell, and §E's bullets with `--prose`. §A's four quotes were checked by hand against iba.db.
+Every quote in §B, §C, §E and §F was run through `../M01 - fear-awe/fear-quote-check-v1-20261001.py` (unchanged), as for units 1 and 2: on a copy with the observation, meaning and chain columns joined, and the verses column as the reference cell. §C and §F were checked as tables, with their verse cells as the reference cell, and §E's bullets with `--prose`. §A's four quotes were checked by hand against iba.db.
 - **Result (2026-10-05):**
   - §B: 208 quotes checked, **0 failures**
   - §C and §F: 6 quotes, **0 failures**

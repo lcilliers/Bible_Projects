@@ -1,6 +1,6 @@
 # Life and death: linkage map (living document)
 
-**Set up:** 2026-10-02 (#1937, layer 3 of `life-death-ch2-scene-and-linkage-proposal-v1-20261002.md`) · **Thread:** OT-08 (`../open-threads-register.md`)
+**Set up:** 2026-10-02 (#1937, layer 3 of `life-death-ch2-scene-and-linkage-proposal-v1-20261002.md`) · **Thread:** OT-08 (`../../cross-cluster-web/open-threads-register.md`)
 
 **Purpose.** This map is the bridge between the evidence (the overview data and the unit ledgers) and the narrative. It records where each life and death link now lives, so that rich detail is not lost when Ch 2 points elsewhere.
 

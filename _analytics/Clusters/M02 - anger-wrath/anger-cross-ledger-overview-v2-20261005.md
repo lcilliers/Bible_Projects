@@ -744,7 +744,7 @@ The 1 Oct strand ledger was woven into the chapters on 2026-10-01. Of its rows, 
 
 ## K. Quote check
 
-`../../cross-cluster-web/fear/fear-quote-check-v1-20261001.py` (unchanged), run on this file in `--prose` mode (each line a unit; the book carried forward to bare references).
+`../M01 - fear-awe/fear-quote-check-v1-20261001.py` (unchanged), run on this file in `--prose` mode (each line a unit; the book carried forward to bare references).
 - **v2 result (2026-10-05):** 474 quotes checked; **15 flags, all in F.1**, which copies U1 §37 and U2 §65 word for word. Of the 15, 8 are range artefacts and were checked by hand: they hold. 7 are the readings' literal or abbreviated wording, listed in part M for the researcher's ruling. **The new v2 text (part C factors 21–24, D.3, D.4, F.2–F.4, H.24–H.27, L, M) has 0 failures.** Two flags in the first v2 run were mine and are corrected: a label of mine set in quotation marks (factor 22), and a quote whose verse was missing (2Ch 36:16).
 - **v1 result (2026-10-05):** 309 quotes checked, **0 failures**, no missing verse text.
   - The first run had 12 flags, and the second 4 more; all were corrected against iba.db `verse` before this result:

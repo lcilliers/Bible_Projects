@@ -8,7 +8,7 @@ import csv, glob, importlib.util, os, sys
 from collections import defaultdict
 
 ROOT = os.path.dirname(os.path.abspath(__file__))
-QC = os.path.join(ROOT, '..', '..', 'cross-cluster-web', 'fear', 'fear-quote-check-v1-20261001.py')
+QC = os.path.join(ROOT, '..', 'M01 - fear-awe', 'fear-quote-check-v1-20261001.py')
 spec = importlib.util.spec_from_file_location('qc', QC); qc = importlib.util.module_from_spec(spec); spec.loader.exec_module(qc)
 CH = os.path.join(ROOT, '..', '..', 'essay', 'spirit_soul_body', 'inner-being-narrative', '*.md')
 
