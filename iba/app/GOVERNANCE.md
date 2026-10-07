@@ -4059,3 +4059,40 @@ They record where things were at that date.
 - **Live rule:** `cfg_behaviour_rule` id 70 `cluster-tags-loose-no-retagging` (#1972, applied 2026-10-05 via `Config-Maintenance.ps1 -Step Propose`). A strand or unit that finds a word associated with another cluster records it in its ledger (§F) as a cross-cluster association, for cross-cluster analysis. It never proposes, raises or applies a re-tag, and never builds option tables for one.
 - **Occasion:** anger unit 4 found *qînāh* (H7015, tagged M02) to be lament throughout. It stays tagged M02; its link to grief (M03) is recorded in `_analytics/Clusters/M02 - anger-wrath/anger-observation-ledger-unit4-v1-20261005.md` (AG-196, F.11).
 - `cluster_strong` is unchanged. No `iba/app/**` code changed.
+
+## §89. Reuse extracted base data; read verse-to-M-code set-based from `verse_lexical` (2026-10-07, researcher ruling, escalations #1978, #1980)
+
+**Ruling (researcher, verbatim, #1978):** *"from what I can see you are not using the base data correctly and are re-doing analysis that has already been done wasting tokens.  the M-code to verse data is already captured in verse-lexical, and you do not have to run through all the clusters. ensure that you update governance because you make this error time and time again."*
+
+- **Live rule:** `cfg_behaviour_rule` id 71 `reuse-extracted-base-data-set-based-mcode` (#1980, applied 2026-10-07 via `Config-Maintenance.ps1 -Step Propose`).
+  - A strand's existing pulls are used first: their columns are aggregated, not re-queried.
+  - Verse-to-M-code is `verse_lexical.strong` joined to `cluster_strong`, read in ONE set-based query over the verse set. Never a per-verse loop, and never a pass over every cluster.
+  - Results already produced are reused, not re-derived.
+  - A query that does not return within seconds means the approach is wrong: stop and re-plan.
+- **Occasion:** the M64 "choose" M-code extraction for 222 verses was written as a per-verse loop. It ran past the 2-minute timeout and was stopped by the researcher. The same data was already in the pull's `other_m_words` column. The redo aggregates that column in 0.1s (`_analytics/Clusters/M64 - will-resolve/m64-choose-mcode-cooccurrence-v1-20261007.py`).
+- Companion to rule 20 `cost-awareness-flag-cheaper-path`. Memory `feedback_reuse_extracted_base_data`. No `iba/app/**` code changed.
+
+## §90. Verses are routed: human inner being, other beings (Ch 13), data only (2026-10-07, researcher ruling, escalation #1982)
+
+**Ruling (researcher, verbatim, chat 2026-10-07):** *"The study and narration primary focus in the human inner being. The actions of God are only analysed in so far as defining / impacting the HIB.  However, God's actions in its own right helps to define these actions is so far as God has created HIB in his image. The verses therefore , when looking at the underlying characteristics, need to be interpreted and routed in different directions and should be described in the narrative from different angles.  It seems that the verses that capture different aspects of Gods character must be collated in a separate chapter.  These verse analysis will have a different focus on analysis - to understand the character of God, and how his character trancended to HIB through creation.  verses about God interacting with HIB is fully in scope of the HIB and would follow the analytic pattern and scope of analysis of the the HIB related activity."*
+
+- **Decisions (researcher, verbatim, chat 2026-10-07, #1982):**
+  - **D1:** *"Other beings (angles, spirits, non-HIB (e.g. nature) all may have characteristics, described by the same terms.   these verses do need to be isolated and have there place in separate chapters.   You are also highlighting that some verses include the terms that have no inner being nor other beings bearing.  These verses should not form part of the narrative, but still need to be properly assessed in analysis."*
+  - **D2:** *"chapter 13 is redundant at the moment. This is the right place for the other beings chapter.  The title is 'Other beings' and it have sub chapters for Divine, Angels, Other Spirits, Nature. Chapter 13 has an introductory paragraph on why this chapter is included in the study with a brief overview of the findings (to be augmented through the study) of the nature and impact of these other beings.  and the individual sub chapters progressively capture the characteristics of these beings as portrayed by the verses."*
+  - **D3:** *"Do not perform a dedicated one pass for correction. I will instruct you individually and separately to reset existing analysis as we go along."*
+  - **D4:** *"create a escalation for this thought, we are not focussed on this stage on doing a deep dive in image."* Raised as #1984, on hold.
+  - **D5:** *"I will direct the routing of the choosing verses at the right time. we are still busy with pre-analysis."*
+- **Routing, per verse, recorded in the ledger:**
+  - **(A) Other beings in their own right** (God, angels, other spirits, nature) go to **Ch 13 "Other beings"**: 13.1 Divine, 13.2 Angels, 13.3 Other spirits, 13.4 Nature. For God, this includes how his character passed to the HIB through creation (held open, #1984).
+  - **(B) Another being with the HIB** is fully in HIB scope.
+  - **(C) No inner-being and no other-being bearing:** assessed in the analysis and recorded, but not in the narrative.
+  - A verse may take A and B.
+- **Built 2026-10-07:**
+  - `inner-being-narrative/13-00-other-beings-v1-20261007.md`: why the chapter is included, and a pointer overview of what has been found so far
+  - 13-01 to 13-04, empty
+  - the old Ch 13 pointer moved to `archive/` (its "Chapter 13 means 10.13" note kept in 13.0)
+  - index row and structure log updated
+- **Live rule:** `cfg_behaviour_rule` id 72 `route-verses-hib-other-beings-data-only` (#1985, applied 2026-10-07 via `Config-Maintenance.ps1 -Step Propose`; researcher: *"this is to anchor the principle."* #1983 withdrawn for a wrong reference).
+- **Occasion:** the M64 "choosing" reading (`_analytics/Clusters/M64 - will-resolve/m64-choose-reading-v2-20261007.md`), where 157 of 232 verses have God, the Lord or Jesus choosing.
+- Style guide v3 is to carry the routing (v3 is already pending for #1920 and #1930). No `iba/app/**` code changed.
+

@@ -116,7 +116,8 @@
 > - A strand is **woven by activity, never given a file or chapter of its own**. The anger strand is the first worked example.
 > - **10.3 Remembering and forgetting** was inserted, so the old 10.3–10.9 are now **10.4–10.10**.
 > - The new **Ch 13 "Under God's anger"** sits between "goes wrong" and "made new". The old Ch 13 is now **14**, and the old 14 is now **15**.
->   - **Superseded 2026-10-05 (#1977):** Ch 13 is folded into **10.13 "Anger"** (section *Living under God's anger*). Ch 13 v10 is a pointer only; the numbers of Ch 14 and 15 are unchanged.
+>   - **Superseded 2026-10-05 (#1977):** Ch 13 is folded into **10.13 "Anger"** (section *Living under God's anger*). The numbers of Ch 14 and 15 are unchanged.
+>   - **Superseded again 2026-10-07 (#1982):** Ch 13 is now **"Other beings"** (13.0 to 13.4); see below.
 > - Ch 11 §4, "What changes the character", is the cross-cutting account that every strand adds to.
 > - **Ch 9 "Life, breath and death" became Ch 2** (researcher, 2026-10-02, #1936: *"Move Ch 9 to Ch 2"*). Old Ch 2–8 became **3–9**. 10.x–15 are unchanged.
 >   - Ch 2 now **sets the scene** (#1937): *"the context of Ch 2 is that it sets the scene for discovering the working of the inner being within the context of what life is about and what death means"*.
@@ -155,6 +156,11 @@
 >        - the M64 × M47 shared verses (56), cross-referenced to the narrative and the open threads register
 >        - **29 uncited verses marked for deeper analysis and reading** (`m64-m47-marked-verses-v1-20261006.md`; researcher: *"the 29 verses will be fed back into analysis"*)
 >        - a pinpointed pull of H6942H *dedicate*, held for M61 as **OT-91**
+>        - **2026-10-07, the "choose" set.** This covers H0977, H0972, H7148, G0138, G0140, G4401, G0830, and on the researcher's instruction also G1586, G1588 and G1589. Files: `m64-choose-reading-v3-20261007.md` and `.csv`.
+>          - All 232 verses are read and placed in 17 groups, with the faces of choosing (#1919).
+>          - The M-codes in the 222 uncited verses are extracted (`m64-choose-mcode-cooccurrence-v1-20261007.csv`).
+>          - Every verse is routed under rule 72: 166 to Ch 13, 52 inner-being only (B), 14 data only (C), and 14 flagged for the researcher.
+>          - Nothing is woven (OT-92). The researcher continues with this output next session.
 >      - #1979 (decision): the M47 reset recorded no verse-by-verse placement, so other M47 sections may also have dropped verses.
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
@@ -163,6 +169,18 @@
 >   - The other chapters are **not** reworked in this first step. 10.1's "Fear" section overlaps 10.12, and the 10.1 "Feeling" frame is open (OT-12: no biblical word names "feeling" as a category; `_analytics/essay/spirit_soul_body/wa-essay-narrative-feeling-frame-question-v1-20261004.md`).
 >   - Style guide v2 §7 still states #1920 unchanged. It needs updating in v3 (deferred; #1930 closed 2026-10-06, so v3 takes its own escalation when it is taken up).
 > - **10.11 "Hiding and disclosing"** was added after 10.10, with no renumbering (NS-D1, researcher 2026-10-02: *"ns-d1: select A"*, #1931). It holds M20's concealment phenomena as one account, because they face both God and others. M20 is fully woven; the record is in `_analytics/Clusters/M20 - doubt-discouragement/wa-cluster-M20-narrative-digest-v1-20261002.md`.
+>
+> **Verses are routed; other beings get Ch 13 (researcher, 2026-10-07, #1982; GOVERNANCE.md §90).** It arose from the M64 "choosing" reading. Researcher, verbatim: *"The study and narration primary focus in the human inner being. The actions of God are only analysed in so far as defining / impacting the HIB."* Each verse is routed in the ledger:
+> - **(A) Other beings in their own right:** God, angels, other spirits, nature. These go to **Ch 13 "Other beings"**, with **13.1 Divine, 13.2 Angels, 13.3 Other spirits, 13.4 Nature** (D2). For God, this includes how his character passed to the HIB through creation; the image question is parked (#1984).
+> - **(B) Another being with the HIB:** fully in HIB scope.
+> - **(C) No inner-being or other-being bearing:** assessed in the analysis, but not in the narrative (D1).
+> - A verse may take A and B.
+>
+> Further rules:
+> - **No correction pass.** Existing analysis is reset only on the researcher's individual instruction (D3).
+> - **The choosing verses are routed when the researcher directs** (D5: *"we are still busy with pre-analysis"*).
+> - Ch 13 "Under God's anger" (a pointer to 10.13 since #1977) is replaced. The note that "Chapter 13" for God's anger means 10.13 is kept in 13.0.
+> - Rule: `cfg_behaviour_rule` id 72 `route-verses-hib-other-beings-data-only` (#1985, applied).
 >
 > **Let Scripture speak for itself (researcher, verbatim, 2026-10-01):** "you are bordering on imputing meaning that is not supported by the verses. don't drive synergy and phantom observations into the findings. Rather allow scripture to speak for itself." No joining of verses into patterns, mechanisms or divisions that no verse states, in findings, ledgers or narrative. Quote, and stop.
 > **Weaving carries meaning, not lists (researcher, 2026-10-01, #1930).** Researcher, verbatim: *"We lost meaning and interpretation, it is starting to just become a list of quotes"*; *"weaving means applying into other sections appropriate parts - it does not say you must ignore all the work that was done and listed in the ledger. you are not writing with intelligence and interpretation, you just doing a machanical mix and match excercise"*.
