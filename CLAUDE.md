@@ -161,6 +161,16 @@
 >          - The M-codes in the 222 uncited verses are extracted (`m64-choose-mcode-cooccurrence-v1-20261007.csv`).
 >          - Every verse is routed under rule 72: 166 to Ch 13, 52 inner-being only (B), 14 data only (C), and 14 flagged for the researcher.
 >          - Nothing is woven (OT-92). The researcher continues with this output next session.
+>        - **2026-10-07 (later), the HIB/qualifier split and §2a read verse by verse.** The words co-occurring in the choose verses are split into HIB, DIV and QUAL (`m64-choose-mcode-hib-qualifier-v1-20261007.md`).
+>          - A first pass on §2a used a fixed frame per verse (what led to the choice, the choice, the outcome). The researcher **rejected** it: *"it may be mechanically right, but the outcome is fragmented"*; *"the method of interpretation is too far from the truth"*.
+>          - Researcher's rulings on that pass:
+>            - F1: the Job speakers are **choices evaluated by another party**, so they get their own section.
+>            - F2: Pro 8:10 is not HIB, because "choice" describes the gold.
+>            - F3: Isa 7:15–16 is the paired act, refuse the evil and choose the good, with its consequences. *"refusing is an implicit choice"*.
+>            - F4: Isa 1:29 is figurative speech in an oracle.
+>          - **Method from here (researcher, verbatim):** *"maybe my error is in giving you a framework or prompts for the reading, maybe I must leave you alone to do your thing, and then work with the outcome."* Each verse is read in its whole passage, with no framework. The account grows from the readings; nothing is overlaid on them. Memory: `feedback_read_verse_for_inner_act_not_event_template`.
+>          - Done: a test of 3 verses (*"all three redone verses make sense and is valuable"*), then batches 1–4 (18 verses), then **the account of choosing**, `m64-choosing-account-v1-20261007.md`, for review.
+>          - The account covers §2a only. It is not woven. Its open items are listed in its "Still open" section.
 >      - #1979 (decision): the M47 reset recorded no verse-by-verse placement, so other M47 sections may also have dropped verses.
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
