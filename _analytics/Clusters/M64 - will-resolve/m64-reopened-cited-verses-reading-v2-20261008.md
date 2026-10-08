@@ -52,11 +52,17 @@ The passages read:
 
 ### Needs attention (Q1 ❗)
 
+> **Resolved 2026-10-08 under #1990** (researcher: *"continue with the 1987 citations that need attention"*). 2Sa 14:14 is restated in Ch 2 v12, 10.4 v8 and 13.1 v9 (the same issue was found there). Psa 32:2 is restated in Ch 6 v9. The Job 7:15 working note is reworded in 10.7 v17. The verdict on Job 7:15 is corrected: the note came from choose batch 4, which set Job's own voice beside the friends' weighing, so its wording was loose, not misplaced. Claim register v31.
+
 - **2Sa 14:14**: Ch 2 and 10.4. The words are Joab's, put in a woman's mouth for a pretended plea (14:2–3). 10.4 also adds "those who have put themselves outside", which the verse does not say.
 - **Psa 32:2**: Ch 6. "The righteous man" is in the psalm the forgiven man who confessed (vv1, 5).
 - **Job 7:15**: the 10.7 working note puts it under *Choices weighed by another*. No one weighs it; it is Job's own would-be choice.
 
+> **Q2 "Include" verses resolved 2026-10-08 under #1992:** 6 already carried, 12 woven ([`m64-include-verses-placement-proposal-v1-20261008.md`](m64-include-verses-placement-proposal-v1-20261008.md)).
+
 ### Check (Q1 ⚠)
+
+> **Resolved 2026-10-08 under #1991** (researcher: *"continue with the seven check items"*). The fixes are in Ch 2 v13, 10.1 v13, Ch 11 v19, Ch 14 v13, 10.12 v3 and Ch 6 v10. Claim register v32. For Gen 6:5, the word link in Ch 11 §1 (potter, frame) is removed rather than marked "I read".
 
 - **Jer 8:3**: Ch 2's "wished for and withheld". The verse has "preferred" (chosen); "withheld" is Rev 9:6.
 - **Luk 10:42**: 10.1 and Ch 11 head it "divides", a word from 1 Cor 7:34, not Luke.
