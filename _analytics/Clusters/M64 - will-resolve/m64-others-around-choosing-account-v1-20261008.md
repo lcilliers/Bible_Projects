@@ -13,7 +13,7 @@
 
 **Companions:** [the account of choosing](m64-choosing-account-v1-20261007.md) (§2a, the chooser's side) and [the account of being chosen](m64-being-chosen-account-v1-20261008.md) (§2b, the chosen person's side).
 
-**Researcher's rulings still open:** where Moses in the breach goes, and where the Levite of Deu 18:6 goes. The account places Moses with *Being chosen* (recommendation in batch 2) and the Levite here. Both are marked in the weave for the researcher to confirm.
+**Researcher's rulings:** Moses in the breach goes with *Being chosen*, and the Levite of Deu 18:6 goes here. Confirmed 2026-10-08, verbatim: *"confirm Moses and Levite placements as recommended"*.
 
 ---
 
@@ -127,10 +127,8 @@ The self-humbling they offered was not wrong in itself. The passage says it stoo
 
 ## Still open
 
-- **Moses in the breach (Psa 106:23)** is placed with *Being chosen* in 10.7 (recommended in batch 2). For the researcher to confirm.
-- **The Levite (Deu 18:6)** is placed here, under desire. He is of the chosen tribe, so *Being chosen* would also fit. For the researcher to confirm.
-- **God's replies** (Num 17:5, 10; Isa 45:4–5; 49:7; Jer 33:25–26) and **God acting on others** (Rom 11:8; 1Pe 2:8) are for 13.1. 13.1 is not updated in this step.
-- **Ch 11 §4** is not updated in this step. The four faces above are candidates.
+- ~~Moses in the breach (Psa 106:23) and the Levite (Deu 18:6): placements for the researcher to confirm.~~ Confirmed 2026-10-08 (*"confirm Moses and Levite placements as recommended"*): Moses in *Being chosen*, the Levite here.
+- ~~God's replies and God acting on others, for 13.1; the four faces, for Ch 11 §4.~~ Done 2026-10-08 on instruction: 13.1 v4 and Ch 11 v16.
 - **The held phrase** (Deu 23:16 beside Deu 12:5, 14) stays held. The forms of words differ (*"out of all your tribes"*, *"in one of your tribes"*, *"within one of your towns"*).
 - **OT-62:** 1Sa 20:30 and Psa 106:23 are read. Five OT-62 verses outside the choose set are not.
 - **Notes for other sections, not placed:** Judg 20:34, for knowing and fear (not knowing, then seeing, then dismay); Pro 10:20, for speaking.

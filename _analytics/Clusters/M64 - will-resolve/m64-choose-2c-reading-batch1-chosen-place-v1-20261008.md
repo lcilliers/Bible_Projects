@@ -208,4 +208,4 @@ This is the side of the people around a place God chose. The verses do not say w
 
 **Kept open:**
 - **The held phrasing in 10.7.** The working note in 10.7 holds the shared phrasing of Deuteronomy 23:16 (*"in the place that he shall choose within one of your towns, wherever it suits him"*) and Deuteronomy 12:5, 14. Batch 1 read Deuteronomy 12 in full. The forms of words differ: 12:5 has *"out of all your tribes"*, 12:14 *"in one of your tribes"*, and 23:16 *"within one of your towns"*. In 23:16 the chooser is the escaped slave. The reading does not settle whether the shared phrase is more than a form of words. It stays held.
-- **The Levite in Deu 18:6.** Whether this belongs with "Being chosen" in 10.7 (the Levite is of the chosen tribe), or with the others around the choosing (he desires the chosen place), is for the account.
+- ~~The Levite in Deu 18:6: "Being chosen" or the others around the choosing, for the account.~~ **Ruled 2026-10-08:** *"confirm Moses and Levite placements as recommended"*. Placed in 10.7 *Others around a choice*, *Desire, near and far*.

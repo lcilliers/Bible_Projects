@@ -292,5 +292,5 @@ God answers with the fixed order of creation: *"If I have not established my cov
 **Corrections to the HIB/qualifier file:** Isa 66:3, the soul is the chooser's own (§2a, "paired"), not "other".
 
 **Kept open:**
-- **Moses in the breach (Psa 106:23).** I recommend "Being chosen" in 10.7. It is not "Choosing together". For the researcher to rule.
+- ~~Moses in the breach (Psa 106:23): recommended for "Being chosen" in 10.7, for the researcher to rule.~~ **Ruled 2026-10-08:** *"confirm Moses and Levite placements as recommended"*. Woven in 10.7 *Being chosen*, *Standing for others*.
 - **OT-62.** Two of its seven verses are read here (1Sa 20:30, Psa 106:23). The other five are outside the choose set. OT-62 stays open for them.

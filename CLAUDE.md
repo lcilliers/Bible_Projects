@@ -182,10 +182,12 @@
 >        - **2026-10-08, §2c (others around the choosing).** 31 verses were read in three batches, including Michal (2Sa 6:16) and Moses in the breach (Psa 106:23): `m64-choose-2c-reading-batch1-chosen-place-*`, `-batch2-others-ot-*`, `-batch3-others-nt-*`.
 >          - The account is `m64-others-around-choosing-account-v1-20261008.md`.
 >          - It is woven as the **10.7 v12** section *Others around a choice*. Moses goes into *Being chosen* as *Standing for others*.
->          - **For the researcher to confirm:** where Moses goes, and where the Levite of Deu 18:6 goes.
+>          - **Placements confirmed** (researcher, verbatim: *"confirm Moses and Levite placements as recommended"*): Moses in *Being chosen*, the Levite of Deu 18:6 in *Others around a choice*. 10.7 is now v13.
 >          - **Ch 11 §4 (v16) and 13.1 (v4) were updated from §2c** on instruction. Ch 11 §4 gained the faces desire, despising and knowing a choice, and fear beside a choice. 13.1 gained God's answers to those set against his choosing.
 >          - The 166 verses routed to 13.1 are still held. They are not placed, because they were grouped, not read in their passages.
->          - Claim register v23. All on #1978.
+>          - Claim register v24. All on #1978.
+>        - **2026-10-08, verses with no other M-code parked.** 41 of the 232 choose verses carry no other M-code (40 uncited, plus Act 10:41, which keeps its Ch 2 citation): `m64-choose-no-other-mcode-v1-20261008.md`. Researcher, verbatim: *"these verses can all be parked, the have no significant additional bearing on the study"*. OT-93; they drop out of the OT-92 routing.
+>        - **#1978 complete for the time being** (researcher, 2026-10-08), at ready_for_approval (v34). Carried forward: the 29 marked M64 × M47 verses, the 166 Ch 13 verses (OT-92), H6942H (OT-91), #1979.
 >      - #1979 (decision): the M47 reset recorded no verse-by-verse placement, so other M47 sections may also have dropped verses.
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
