@@ -601,9 +601,9 @@ Paul writes:
 
 ### Romans 8:27: "knows what is the mind of the Spirit"
 
-> **Q1 citation: ✅ Accurate.** 10.9 *God's Spirit prays within* quotes vv26–27 accurately.
+> **Q1 citation: ✅ Accurate.** 10.9 *God's Spirit prays within* quotes vv26–27 accurately. The citation is written as a range, "(Romans 8:26–27)", so a search for "8:27" does not find it. The quoted words "And he who searches hearts knows what is the mind of the Spirit" are v27.
 >
-> **Q2 M64: No further M64 analysis.** The M64 word is the Spirit's mind. The Holy Spirit study is separate. For the human inner being, "we do not know what to pray for" (v26) is carried.
+> **Q2 M64: No further M64 analysis.** The M64 word is the Spirit's mind. The Holy Spirit study is separate. For the human inner being, ~~"we do not know what to pray for" (v26) is carried~~ *(corrected 2026-10-08: it is not carried. 10.9, Ch 6 and Ch 7 quote other parts of v26; none quotes "we do not know what to pray for as we ought". It is a point for 10.9, not for M64.)*
 >
 > **Q3 other M-codes:** M42 intercedes, M15 knows, M61 saints: the Spirit's and God's acts; Holy Spirit study. None.
 
@@ -613,7 +613,7 @@ Paul writes:
 
 **Narrative:** 10.9 (*Relating to God*, opening) quotes vv26–27 for intercession.
 
-**Reading:** the M64 word here belongs to the Holy Spirit, and the Holy Spirit study is separate (CLAUDE.md). For the human inner being: "we do not know what to pray for". This is carried.
+**Reading:** the M64 word here belongs to the Holy Spirit, and the Holy Spirit study is separate (CLAUDE.md). For the human inner being: "we do not know what to pray for". ~~This is carried.~~ *(corrected 2026-10-08: not carried; see the verdict above.)*
 
 ---
 
@@ -645,7 +645,7 @@ Paul writes:
 | Isa 10:7 | Assyria's own heart (10.13) *(v2)* | yes | the arrogant heart's boast and its punishment (vv12–15) *(v2)* |
 | Zec 7:10 | the command (Ch 10); 7:12 in Ch 4, 10.2, 10.13 *(v2)* | yes | that devising evil is among the commands refused *(v2)* |
 | Rom 8:6, 8:7 | the set mind (Ch 2, 7, 12) | yes | "indeed, it cannot" |
-| Rom 8:27 | intercession | n/a (the Spirit's mind) | none for the human inner being; Holy Spirit study is separate |
+| Rom 8:27 | intercession, cited as "Romans 8:26–27" (10.9) | n/a (the Spirit's mind) | "we do not know what to pray for" (v26), for 10.9 *(corrected)*; the Spirit's mind: Holy Spirit study |
 
 **Count:**
 - **10 verses are carried for their M64 word, in their own setting**, with nothing further found: Gen 6:5, Gen 8:21, 2Sa 19:19, Psa 31:13, Psa 140:2, Rom 8:27, and in substance Act 10:41, Rom 8:6, Rom 8:7 and Pro 16:9.
