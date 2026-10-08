@@ -170,7 +170,18 @@
 >            - F4: Isa 1:29 is figurative speech in an oracle.
 >          - **Method from here (researcher, verbatim):** *"maybe my error is in giving you a framework or prompts for the reading, maybe I must leave you alone to do your thing, and then work with the outcome."* Each verse is read in its whole passage, with no framework. The account grows from the readings; nothing is overlaid on them. Memory: `feedback_read_verse_for_inner_act_not_event_template`.
 >          - Done: a test of 3 verses (*"all three redone verses make sense and is valuable"*), then batches 1–4 (18 verses), then **the account of choosing**, `m64-choosing-account-v1-20261007.md`, for review.
->          - The account covers §2a only. It is not woven. Its open items are listed in its "Still open" section.
+>          - ~~The account covers §2a only. It is not woven.~~ **Woven 2026-10-08:** the researcher ordered *"first build the 2a into the narrative 10.7.  you will need to reframe 10.7 to ensure 2a is part of a larger context of choosing and setting direction and not a disconnected list of paragraphs"*. The results:
+>            - **10.7 v10** was reframed as one account, built around Joshua 24 (choose, incline the heart, held).
+>            - §2a's five faces went into **Ch 11 §4** (v14).
+>            - Wanting beside choosing went into **10.6** (v8).
+>            - **13.1** got its first content (v2).
+>        - **2026-10-08, §2b (those who are chosen).** Read in two batches (OT 7, NT 8): `m64-choose-2b-reading-batch1-chosen-ot-*`, `-batch2-chosen-nt-*`.
+>          - The account is `m64-being-chosen-account-v1-20261008.md`.
+>          - It is woven as the **10.7 v11** section *Being chosen*. It also feeds the Ch 11 §4 faces "Choosing a person" and "Holiness" (v15) and 13.1 v3.
+>          - Correction: in Eph 1:4 the love is God's ("In love he predestined", v5).
+>          - **Next: §2c (others around the choosing).** Michal (2Sa 6:16) and Moses in the breach (Psa 106:23) are waiting there.
+>          - The 166 verses routed to 13.1 are still held. They are not placed, because they were grouped, not read in their passages.
+>          - Claim register v21. All on #1978.
 >      - #1979 (decision): the M47 reset recorded no verse-by-verse placement, so other M47 sections may also have dropped verses.
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
