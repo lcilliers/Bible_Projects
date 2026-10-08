@@ -1,9 +1,9 @@
 # M64 × M47: 29 verses marked for deeper analysis and reading
 
-**Date:** 2026-10-06 · **Escalation:** #1978 · **Status:** marked for deeper analysis and reading (researcher, 2026-10-06). No reading has been done yet.
+**Date:** 2026-10-06 · **Escalation:** #1978 · **Status:** marked for deeper analysis and reading (researcher, 2026-10-06). **Completed 2026-10-08 under #1989:** see [`m64-m47-marked-verses-completion-v1-20261008.md`](m64-m47-marked-verses-completion-v1-20261008.md).
 
 **The verses.** These are the 29 uncited M64 × M47 shared verses that have no "same word pair, cited elsewhere" lead ([`m64-m47-uncited-verses-v1-20261006.md`](m64-m47-uncited-verses-v1-20261006.md)).
-- Data: [`m64-m47-marked-verses-v1-20261006.csv`](m64-m47-marked-verses-v1-20261006.csv), with a `status` column.
+- Data: [`m64-m47-marked-verses-v2-20261008.csv`](m64-m47-marked-verses-v2-20261008.csv), with a `status` column and, since v2 (2026-10-08, #1989), the final status of each verse. v1 is in `archive/`.
 - Script: [`m64-m47-marked-verses-m47-trace-v1-20261006.py`](m64-m47-marked-verses-m47-trace-v1-20261006.py), read-only.
 
 ## 1. Was the M47 folder searched?
