@@ -233,7 +233,8 @@
 >      - **Item F, group D (jealousy, zeal) done and woven (2026-10-09).**
 >        - 51 verses after filtering: 37 added, 5 confirmed, 5 carried, 4 route C ("Simon the Zealot").
 >        - Zeal is read as the same words as jealousy. Woven: 10.6 v14 (zeal faces; new *Jealousy against a person* and *A husband's jealousy with no witness*), 13.1 v14 (*Jealousy*: his name, roused by prayer, zeal that does the work, put on as a cloak), 10.3 v6, Ch 11 v24, Ch 12 v17. Claim register v38.
->        - Handoff v4. **Next: groups E, F, G, then B and C.**
+>        - Handoff v4.
+>      - **Item F, group E (thirst, hunger) done and woven (2026-10-09).** 30 verses: 24 added, 3 confirmed, 1 carried, 2 route C. Woven: 10.6 v15 (*Thirst answered*: rivers out of the heart, "I thirst", thirst met and forgotten, thirst as judgment with its inner ground, want borne for others), 10.10 v17 (another's thirst met, refused or used), 10.2 v12 (a famine of hearing). Claim register v39. Handoff v5. **Next: groups F, G, then B and C.**
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
 >   - Built from the unit ledgers, a cross-ledger overview (`_analytics/Clusters/M01 - fear-awe/fear-cross-ledger-overview-*`; moved from `cross-cluster-web/fear/` 2026-10-06 under #1965, GOVERNANCE.md §87) and the co-existence review (its §F).
