@@ -59,7 +59,7 @@ Notes carried forward:
 - Pro 21:26, "All day long he craves and craves", the verse after 21:25
 - the kings who "did as he pleased": Dan 8:4 (routed C in the M25 pass) and Dan 11:3, 16. Dan 11:36 is woven in 10.7
 
-**Researcher question (structural):** 10.6 now has section headings. Should desire get a full key-characteristic account as its own Ch 10 sub-chapter, as 10.12 Fear and 10.13 Anger did (#1961)? It is not decided.
+**Structure, decided (researcher, verbatim, 2026-10-09):** *"10.6 is fine for M18."* There is no separate sub-chapter. The M18 words are read into 10.6 and its sections.
 
 ### H. M72 (Authority & Dominion)
 It shares 182 verses with M18 (45 of them in the 348). M72 has no analysis. This is recorded so it is not lost.
@@ -70,4 +70,4 @@ The cross-reference parser does not carry a book across a bare citation such as 
 ### J. Housekeeping
 - The M25 weave and the held items are committed (cd5a1325). The M02 pass is committed after it.
 - The push and the narrative copy to learning4comfort happen at `/session-close`.
-- #1942 is ready for the researcher's approval.
+- #1942 approved (researcher, 2026-10-09: *"approved 1942"*) and completed.
