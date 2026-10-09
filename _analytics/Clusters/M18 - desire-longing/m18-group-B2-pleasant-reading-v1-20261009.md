@@ -1,5 +1,7 @@
 # M18 group B, set 2 (the pleasant/pleased verbs): read for the inner being's workings
 
+> **Corrected 2026-10-09:** this reading took delight as the way in. Verses whose delight word only measures another act were re-read by their main operation and moved (researcher: *"re-read and correct your work"*). The record is `m18-group-B-correction-reread-v1-20261009.md`, and the registers carry the corrected places.
+
 **Date:** 2026-10-09 · **Escalation:** #1993 (handoff v7 item F, group B) · **Register:** `m18-group-B2-register-v1-20261009.csv` (reasons in `m18-group-B2-decisions-v1-20261009.py`) · **Passages:** `m18-group-B-verb-pleasant-passages-v1-20261009.md` · **Weave:** `m18-group-B2-narrative-weave-v1-20261009.py` · **Records:** `m18-group-B2-records-update-v1-20261009.py`
 
 **Scope:** 21 verses. This is the second session of the split (researcher: *"proceed with set 2"*). It covers the bucket-1 verb verses whose word is H5276 *nāʿēm* (be pleasant, 7) or G2106 *eudokeō* (to be well pleased, 14).

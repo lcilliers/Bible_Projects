@@ -29,3 +29,10 @@ D = {
  'Heb 10:6': ('a', '13.1 Delight (Not the offering itself)', 'Psalm 40 read as Christ\'s words: "a body have you prepared for me" (10:5), "Behold, I have come to do your will" (10:7), "by that will we have been sanctified through the offering of the body of Jesus Christ once for all" (10:10).'),
  'Heb 10:8': ('carried', '13.1 (Heb 10:6)', 'The same quotation repeated; read with 10:6.'),
 }
+
+# Correction 2026-10-09 (see m18-group-B1-decisions-v1-20261009.py, MOVED): the act each verse is about decides its home.
+MOVED = {'Gen 49:15': '10.7 (What draws it)', 'Pro 9:17': '10.7 (What draws it)', 'Psa 141:6': '10.7 (Setting the heart)',
+         'Pro 24:25': '10.8', '1Th 3:1': '10.10 (Friends, company and care)'}
+for _r, _p in MOVED.items():
+    _d, _old, _w = D[_r]
+    D[_r] = (_d, _p + '; 10.1 Delight table row', _w)

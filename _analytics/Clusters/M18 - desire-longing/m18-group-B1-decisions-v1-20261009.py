@@ -79,3 +79,21 @@ for _r, (_d, _p, _w) in list(D.items()):
     _new = '13.1 Delight' if _r in GOD else '10.1 Delight'
     if _r in ('Num 14:8', 'Psa 41:11', 'Psa 22:8', '2Sa 15:26'): _new = '13.1 Delight (in people\'s mouths); 10.1 Delight (pointer)'
     D[_r] = (_d, _new, _w)
+
+# Correction 2026-10-09 (researcher, teaching on 2Pe 2:13, then "re-read and correct your work"): where the delight word
+# only measures or qualifies another act, the verse is placed with that act (m18-group-B-correction-weave-v1-20261009.py).
+# 10.1 Delight keeps a table row for each ("When delight is only the measure").
+MOVED = {'Isa 58:2': '10.7 (An inner act weighed by what God chooses)', 'Jer 6:10': '10.2 (hearing)',
+         'Job 21:14': '10.9 (Told to depart)', 'Psa 109:17': '10.5 (From the heart to the mouth)',
+         '2Sa 24:3': '10.7 (Choices weighed by another)', 'Est 6:7': 'Ch 12 (Pride)', 'Est 6:9': 'Ch 12 (Est 6:7)',
+         'Est 6:11': 'Ch 12 (Est 6:7)', '1Sa 18:22': '10.10 (Plotting against another)', 'Job 9:3': '10.9 (Anger toward God, and before God)',
+         'Job 13:3': '10.9 (Anger toward God, and before God)', 'Job 33:32': '10.10 (Friends, company and care)',
+         'Deu 25:7': '10.10 (Loyalty and honour)', 'Deu 25:8': '10.10 (Deu 25:7)', '2Sa 20:11': '10.10 (Loyalty and honour)',
+         'Ecc 8:3': '10.10 (Reverence for people)', 'Job 22:26': '10.9 (Returned to)', 'Job 27:10': '10.9 (Waiting, and pleading)',
+         'Isa 66:11': '10.9 (Comforted as by a mother)', 'Isa 66:12': '10.9 (Isa 66:11)', 'Isa 11:8': '13.4 (Harm ended)',
+         'Num 14:8': '10.9 ("Fear not"); 13.1 Delight', 'Psa 41:11': '10.10 (Friends, company and care); 13.1 Delight',
+         'Psa 22:8': '10.5 (Speech before words); 13.1 Delight', '2Sa 15:26': '10.7 (Choosing before God); 13.1 Delight',
+         'Isa 55:11': '13.1 Purposing'}
+for _r, _p in MOVED.items():
+    _d, _old, _w = D[_r]
+    D[_r] = (_d, _p + '; 10.1 Delight table row' if not _p.startswith('13.') else _p, _w)

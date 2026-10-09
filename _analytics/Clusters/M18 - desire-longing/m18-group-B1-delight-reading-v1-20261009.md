@@ -1,5 +1,7 @@
 # M18 group B, set 1 (the delight verbs): read for the inner being's workings
 
+> **Corrected 2026-10-09:** this reading took delight as the way in. Verses whose delight word only measures another act were re-read by their main operation and moved (researcher: *"re-read and correct your work"*). The record is `m18-group-B-correction-reread-v1-20261009.md`, and the registers carry the corrected places.
+
 **Date:** 2026-10-09 · **Escalation:** #1993 (handoff v7 item F, group B) · **Register:** `m18-group-B1-register-v1-20261009.csv` (reasons in `m18-group-B1-decisions-v1-20261009.py`) · **Passages:** `m18-group-B-verb-delight-passages-v1-20261009.md` · **Split:** `m18-group-B-verb-split-v1-20261009.md`
 
 **Scope:** 56 verses. Researcher, verbatim: *"split the 77 between delight related words and pleasant related words. and read them in two separate sessions."* This is the first session: the bucket-1 verb verses whose word is H2654A *ḥāpēṣ* (to delight in, 45), H6026 *ʿānag* (to delight, 6), H8173B *šāʿaʿ* (to delight, 4) or G4913 *synēdomai* (to delight, 1). The 21 pleasant/pleased verses (H5276 *nāʿēm*, G2106 *eudokeō*) are the second session.
