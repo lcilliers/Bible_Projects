@@ -219,7 +219,12 @@
 >          - 10.9 v16 with new *Waiting, and pleading*
 >          - 10.10 v15 with new *Friends, company and care*
 >          - also Ch 2 v15, 4 v14, 6 v12, 10.2 v10, 10.5 v14, 10.7 v20, 10.8 v6, 10.12 v5, 11 v21, 12 v15 and 13.2 v3
->        - Claim register v35. **Next: M02** (51 verses, with OT-19).
+>        - Claim register v35.
+>      - **M02 done and woven (2026-10-09).** 51 verses (`m18-m02-validation-register-v1-20261009.md`; reading `m18-m02-inner-being-reading-v1-20261009.md`): 23 missed, 9 new perspective, 1 error.
+>        - The error: 10.1's "jealousy makes it hard" was stated as if the verses said it. It is now marked "I read".
+>        - 13.1 *Jealousy* widened, plus 10.6 v12, 10.7 v21, 10.10 v16, 10.5 v15, 10.1 v15 and Ch 11 v22.
+>        - **OT-19 closed.** Claim register v36.
+>        - **The read-backs of M47, M25 and M02 are complete.** Handoff: `m18-strand-handoff-v2-20261009.md`. **Next: the M18 words themselves** (item F, gloss groups A–G, decided verses filtered out).
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
 >   - Built from the unit ledgers, a cross-ledger overview (`_analytics/Clusters/M01 - fear-awe/fear-cross-ledger-overview-*`; moved from `cross-cluster-web/fear/` 2026-10-06 under #1965, GOVERNANCE.md §87) and the co-existence review (its §F).
