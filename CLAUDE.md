@@ -225,6 +225,11 @@
 >        - 13.1 *Jealousy* widened, plus 10.6 v12, 10.7 v21, 10.10 v16, 10.5 v15, 10.1 v15 and Ch 11 v22.
 >        - **OT-19 closed.** Claim register v36.
 >        - **The read-backs of M47, M25 and M02 are complete.** Handoff: `m18-strand-handoff-v2-20261009.md`. **Next: the M18 words themselves** (item F, gloss groups A–G, decided verses filtered out). 10.6 stays the home for M18; there is no separate sub-chapter (researcher, verbatim: *"10.6 is fine for M18"*). #1942 approved.
+>      - **Item F, group A (desire, craving, longing) done and woven (2026-10-09).**
+>        - 151 verses after filtering: 103 missed, 7 new perspective.
+>        - Woven: 10.6 v13 (new section *Coveting*), 13.1 v13 (*What he desires*), 13.4 v3, 10.7 v22 (aims), Ch 11 v23, Ch 12 v16, Ch 2 v16, 10.2 v11. Claim register v37.
+>        - Reusable tools: `m18-group-pull-worksheet-v1-20261009.py {G}` and `m18-group-register-build-v1-20261009.py {G}`. Finished groups are filtered out automatically.
+>        - Handoff v3. **Next: groups D, E, F, G, then B and C.**
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
 >   - Built from the unit ledgers, a cross-ledger overview (`_analytics/Clusters/M01 - fear-awe/fear-cross-ledger-overview-*`; moved from `cross-cluster-web/fear/` 2026-10-06 under #1965, GOVERNANCE.md §87) and the co-existence review (its §F).
