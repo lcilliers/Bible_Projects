@@ -127,7 +127,7 @@
 >   - Check it before every unit pull.
 >   - Add to it at every ledger approval.
 > - **Strand queue (#1933):**
->   1. life and death (M25): units 1–4 and Q2–Q4 ledgers done and woven. **Narrative placement held, not reworked** (researcher, 2026-10-04: *"M25 is a particularly difficult section and I am not sure it is the right time to try and massage it … these will only become really understood once other sections of the study is further developed"*). See open threads OT-08, and #1943 and #1948 (on hold).
+>   1. life and death (M25): units 1–4 and Q2–Q4 ledgers done and woven. ~~Narrative placement held, not reworked (2026-10-04, OT-08)~~ **OT-08 closed 2026-10-09** (researcher, verbatim: *"OT-08 is no longer relavant. remove the block and stop reporting on phantom things."*). There is no block on Ch 2. Later strands add to it as to any chapter. #1943 and #1948 are still on hold.
 >   2. ~~fear units 3–4, before any new cluster. **Unit 3 ledger approved, weave held** (#1957, OT-10: *"we want to first do more work on and around it before writing into the narrative"*). **Unit 4 (Greek) next, ledger only**, then a cross-ledger analysis of units 1–4 before any weave.~~ **Done 2026-10-04:**
 >      - unit 3 (#1957), unit 4 (#1958) and the H4172A addendum (#1960)
 >      - the cross-ledger overview (#1959, #1960)
@@ -200,14 +200,26 @@
 >        - **2026-10-08, the 18 #1987 "include" verses (#1992).** 6 were already carried. Isa 42:1 is in 13.1 through Mat 12:18; by ruling it has no 10.7 placement. 12 were woven as proposed (*"approve all as proposed"*), in 10.7 v18, Ch 2 v14, 10.10 v14, 10.12 v4, 10.13 v5 and Ch 12 v13, including the Joab fix to 2Sa 14 in 10.7 *Planning*. Claim register v33. #1987 is now fully worked; only its Q3 pointers to other M-codes remain, held for those clusters.
 >      - ~~#1979 (decision): the M47 reset recorded no verse-by-verse placement, so other M47 sections may also have dropped verses.~~ **#1979 closed 2026-10-08.** Researcher, verbatim: *"I will tackle them as we move through the clusters."* For each strand as it is taken up, check its M47 verses for dropped placements, by word and not by citation, as was done for M64 (#1989). The record is on OT-09.
 >   4. **M18 Desire & Longing is the next strand, on #1993 (researcher, 2026-10-08: *"next is to focus on cluster M18"*).** Overview: `_analytics/Clusters/M18 - desire-longing/m18-cluster-overview-v1-20261008.md` (88 Strong's, 1,510 hits, 1,370 verses).
->      - **Filter before reading (2026-10-08).** The delight and pleasure words (640 hits) were split by pairing (`m18-delight-pleasure-pairing-filter-v1-20261008.md`). *ṭôb* is mostly a qualifier (348 of 408 hits). The bucket decisions are the researcher's (OT-96).
+>      - **Filter before reading (2026-10-08).** The delight and pleasure words (640 hits) were split by pairing (`m18-delight-pleasure-pairing-filter-v1-20261008.md`). *ṭôb* is mostly a qualifier (348 of 408 hits). ~~The bucket decisions are the researcher's (OT-96).~~ The buckets are a working aid that the readings absorb, not a decision item (researcher, 2026-10-09).
 >      - **Read back the clusters already narrated, first (researcher, 2026-10-09).** This covers the M18 verses shared with M47, M25 and M02 (348). "M92" in the instruction was confirmed as M02. Researcher, verbatim: *"a) why would the verse not be narrated in the first place, is it because something was missed - fix it; b) does the new reading add new perspective to the narration, maybe from a different angle - validate this new perspective and add it c) is there a fundamental error that need to be re-alligned. It is very important to work with the analysis already generated in the cluster work to avoid re-doing investigatory work alraedy done."*
 >      - **M47 done (2026-10-09).** All 208 verses got one decision each (`m18-m47-validation-register-v1-20261009.md`):
 >        - 94 missed and added
 >        - 9 new perspectives added
 >        - 4 errors realigned: Ch 5's "exhaustion" frame restated, and Pro 21:1 in Ch 4
 >
->        13.1 gained the section *Delight*, 13.2 its first content, and 10.6 became v10. Held: jealousy (OT-95) and generic *ṭôb* (OT-96). Claim register v34. **Next: M25, then M02.**
+>        13.1 gained the section *Delight*, 13.2 its first content, and 10.6 became v10. ~~Held: jealousy (OT-95) and generic *ṭôb* (OT-96).~~ Claim register v34.
+>      - **M25 done and woven (2026-10-09).** 89 verses, one decision each (`m18-m25-validation-register-v1-20261009.md`): 26 missed, 12 new perspective, 0 errors.
+>        - **Narration standard (researcher, verbatim):** *"the narration must be done from the perspective of the inner being workings - merely restating the verse is not a proper narration, thinking about the item and asking probing questions in important : compare, why different, what lies behind it; does the relationships make a difference; and other probing; it is especially important to not just restate figurative speach but explore it."* So the placements are a probing reading (`m18-m25-inner-being-reading-v1-20261009.md`), not a list.
+>        - **No holding** (researcher, verbatim): *"OT-95 just read these verses while you are busy with it, don't hold things unnecessarily. OT-15 why are you holding this? … complete all these accumulating outstanding items"*. The delight-filter buckets are a working aid, not a decision item.
+>        - OT-08, OT-15, OT-95 and OT-96 are closed. **#1942 (H5782) is completed**: it had sat "on hold until unit 4" after unit 4 finished.
+>        - All held items were read (`m18-held-items-reading-v1-20261009.md`) and woven with the M25 read-back into 16 files:
+>          - **10.6 v11** given section headings, with new *Jealousy and envy*
+>          - **13.1 v11** with new *Jealousy* and *Stirring*
+>          - **13.4 v2**, its first content
+>          - 10.9 v16 with new *Waiting, and pleading*
+>          - 10.10 v15 with new *Friends, company and care*
+>          - also Ch 2 v15, 4 v14, 6 v12, 10.2 v10, 10.5 v14, 10.7 v20, 10.8 v6, 10.12 v5, 11 v21, 12 v15 and 13.2 v3
+>        - Claim register v35. **Next: M02** (51 verses, with OT-19).
 > - **A key characteristic gets a full account as its own Ch 10 sub-chapter (researcher, 2026-10-04, #1961). This modifies #1920 for key characteristics.** Researcher, verbatim: *"encapsulate the full finding of fear, as it emerged from the ledgers, the cross ledger review and the co-existence review into a separate Ch10 sub chapter. Be careful not to be distracted by elements that are not inner being relevant, but don't cut out external factors impact on or related to the operation and the inner being.  This is the first step. then we will proceed with gathering similar studies of other key characteristics."*
 >   - First case: **10.12 "Fear"** (after 10.11, with no renumbering).
 >   - Built from the unit ledgers, a cross-ledger overview (`_analytics/Clusters/M01 - fear-awe/fear-cross-ledger-overview-*`; moved from `cross-cluster-web/fear/` 2026-10-06 under #1965, GOVERNANCE.md §87) and the co-existence review (its §F).
