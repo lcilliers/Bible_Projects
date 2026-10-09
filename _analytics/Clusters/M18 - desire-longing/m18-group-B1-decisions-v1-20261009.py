@@ -67,3 +67,15 @@ D = {
  'Isa 11:8': ('a', '13.4 Nature', '"The nursing child shall play over the hole of the cobra": the delight word as a child\'s play where there is no more harm (11:9). Nature at peace, and a child unafraid.'),
  'Jer 6:2': ('route C', '', '"The lovely and delicately bred I will destroy": the word describes Zion as pampered. No inner act. Kept as data.'),
 }
+
+# Researcher ruling at the weave (verbatim): "delight associated with God goes to 13.1, separate section; HIB delight goes
+# into 10.1". The places proposed above are replaced by where each verse was woven
+# (m18-group-B1-narrative-weave-v1-20261009.py): God's delight -> 13.1 Delight; a person's delight -> 10.1 Delight.
+GOD = {'Isa 1:11', 'Psa 40:6', 'Psa 51:16', 'Psa 51:19', 'Hos 6:6', 'Jer 9:24', 'Psa 147:10', 'Psa 51:6', 'Isa 62:4',
+       '2Sa 22:20', 'Psa 18:19', 'Psa 37:23', '1Ki 10:9', '2Ch 9:8', 'Isa 42:21', 'Psa 115:3', 'Isa 55:11',
+       'Num 14:8', 'Psa 41:11', 'Psa 22:8', '2Sa 15:26'}
+for _r, (_d, _p, _w) in list(D.items()):
+    if _d in ('confirmed', 'route C'): continue
+    _new = '13.1 Delight' if _r in GOD else '10.1 Delight'
+    if _r in ('Num 14:8', 'Psa 41:11', 'Psa 22:8', '2Sa 15:26'): _new = '13.1 Delight (in people\'s mouths); 10.1 Delight (pointer)'
+    D[_r] = (_d, _new, _w)

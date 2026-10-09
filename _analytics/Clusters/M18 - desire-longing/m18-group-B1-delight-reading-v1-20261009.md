@@ -6,6 +6,8 @@
 
 **Decisions:** a 46 · carried 6 · confirmed 3 · route C 1 · held 0.
 
+**Woven 2026-10-09 (researcher ruling, verbatim):** *"delight associated with God goes to 13.1, separate section; HIB delight goes into 10.1"*. So the homes proposed below were replaced: God's delight, including §4 and §5, went into 13.1 *Delight* (v16). A person's delight, §§6–10, went into a new 10.1 *Delight* (v16), and the 10.6 *Delight* section was moved there whole (10.6 v18 keeps a pointer). The register records the woven places. Weave: `m18-group-B1-narrative-weave-v1-20261009.py`. Records: `m18-group-B1-records-update-v1-20261009.py` (claim register v42).
+
 **Method:** as for groups A, D, E, F and G. Each verse is read in its passage. **I read** marks a reading beyond the text. **Not woven.** The weave waits for your review.
 
 **Homes:** 13.1 *Delight* takes God's delight (20 verses). 10.6 *Delight*, *Aimed at God* and *A person* take a person's delight. 10.9 takes trust and contending, and 10.10 another person's power over a life. 10.11 and 13.4 take one verse each.
