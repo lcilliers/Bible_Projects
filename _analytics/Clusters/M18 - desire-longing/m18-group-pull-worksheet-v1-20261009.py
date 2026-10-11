@@ -3,7 +3,7 @@ reading worksheet (data only). Reusable for every group: python m18-group-pull-w
 
 For each remaining verse: the group's M18 word(s) in it, any other M18 words, the other M-codes in the verse
 (from m18-cluster-mcode-cooccurrence-v1-20261008.csv), the narrative places (citation parser of
-verse-narrative-ot-crossref-v2, M64 folder) plus a text search of the current chapters (catches bare citations the
+verse-narrative-ot-crossref-v3, M64 folder) plus a text search of the current chapters (catches bare citations the
 parser misses, handoff item I), and the passage (2 verses either side, ESV, iba.db, read-only).
 Outputs: m18-group-{G}-pull-v1-20261009.csv and m18-group-{G}-worksheet-v1-20261009.md. Groups by Strong's.
 """
@@ -24,7 +24,7 @@ WANT = set(GROUPS[G].split())
 HERE = os.path.dirname(os.path.abspath(__file__))
 CL = os.path.normpath(os.path.join(HERE, '..'))
 DB = os.path.abspath(os.path.join(HERE, '..', '..', '..', 'iba', 'app', 'db', 'iba.db'))
-spec = importlib.util.spec_from_file_location('xr', os.path.join(CL, 'M64 - will-resolve', 'verse-narrative-ot-crossref-v2-20261006.py'))
+spec = importlib.util.spec_from_file_location('xr', os.path.join(CL, 'M64 - will-resolve', 'verse-narrative-ot-crossref-v3-20261009.py'))
 xr = importlib.util.module_from_spec(spec); spec.loader.exec_module(xr)
 c = sqlite3.connect(f'file:{DB}?mode=ro', uri=True)
 

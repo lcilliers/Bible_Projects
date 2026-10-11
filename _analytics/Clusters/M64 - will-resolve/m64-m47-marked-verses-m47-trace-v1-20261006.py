@@ -19,7 +19,7 @@ OUT_CSV = os.path.join(HERE, 'm64-m47-marked-verses-v1-20261006.csv')
 OUT_MD = os.path.join(HERE, 'm64-m47-marked-verses-v1-20261006.md')
 MARK = 'marked for deeper analysis and reading (researcher, 2026-10-06, #1978)'
 
-spec = importlib.util.spec_from_file_location('xref', os.path.join(HERE, 'verse-narrative-ot-crossref-v2-20261006.py'))
+spec = importlib.util.spec_from_file_location('xref', os.path.join(HERE, 'verse-narrative-ot-crossref-v3-20261009.py'))
 xref = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(xref)
 

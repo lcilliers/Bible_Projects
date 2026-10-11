@@ -2,7 +2,7 @@
 
 Input: m18-shared-m47-m25-m02-crossref-v1-20261009.csv (pull + narrative/open-threads crossref).
 Scans the current (non-archive) .md and .csv files in each partner cluster folder with the citation
-parser of verse-narrative-ot-crossref-v2 (M64 folder), and adds per partner:
+parser of verse-narrative-ot-crossref-v3 (M64 folder), and adds per partner:
   {code}_analysis_n, {code}_analysis_files  (file names, with the section heading for .md files,
                                              and the face/group column value for .csv rows when present)
 Read-only; no DB query.
@@ -11,7 +11,7 @@ import csv, glob, importlib.util, os, re
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 CL = os.path.normpath(os.path.join(HERE, '..'))
-spec = importlib.util.spec_from_file_location('xr', os.path.join(CL, 'M64 - will-resolve', 'verse-narrative-ot-crossref-v2-20261006.py'))
+spec = importlib.util.spec_from_file_location('xr', os.path.join(CL, 'M64 - will-resolve', 'verse-narrative-ot-crossref-v3-20261009.py'))
 xr = importlib.util.module_from_spec(spec); spec.loader.exec_module(xr)
 
 FOLDERS = {'M47': 'M47 - inner-seat', 'M25': 'M25 - life-death', 'M02': 'M02 - anger-wrath'}

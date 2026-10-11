@@ -11,7 +11,7 @@ DB = os.path.normpath(os.path.join(HERE, '..', '..', '..', 'iba', 'app', 'db', '
 STRONG = sys.argv[1] if len(sys.argv) > 1 else 'H6942H'
 OUT = os.path.join(HERE, f'm64-{STRONG}-verses-v1-20261006.csv')
 
-spec = importlib.util.spec_from_file_location('xref', os.path.join(HERE, 'verse-narrative-ot-crossref-v2-20261006.py'))
+spec = importlib.util.spec_from_file_location('xref', os.path.join(HERE, 'verse-narrative-ot-crossref-v3-20261009.py'))
 xref = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(xref)
 

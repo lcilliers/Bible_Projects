@@ -23,7 +23,7 @@ if '--ver' in ARGS:
 STRONGS = ARGS or ['H0977', 'G0830', 'H7148', 'G0140', 'G4401', 'H0972', 'G0138', 'G1586', 'G1588', 'G1589']
 OUT = os.path.join(HERE, f'm64-{TAG}-verses-v{VER}-{datetime.date.today():%Y%m%d}.csv')
 
-spec = importlib.util.spec_from_file_location('xref', os.path.join(HERE, 'verse-narrative-ot-crossref-v2-20261006.py'))
+spec = importlib.util.spec_from_file_location('xref', os.path.join(HERE, 'verse-narrative-ot-crossref-v3-20261009.py'))
 xref = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(xref)
 

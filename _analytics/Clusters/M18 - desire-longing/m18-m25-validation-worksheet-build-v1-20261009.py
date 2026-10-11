@@ -13,7 +13,7 @@ M25 = os.path.join(CL, 'M25 - life-death')
 DB = os.path.abspath(os.path.join(HERE, '..', '..', '..', 'iba', 'app', 'db', 'iba.db'))
 SRC = os.path.join(HERE, 'm18-shared-m47-m25-m02-crossref-v2-20261009.csv')
 OUT = os.path.join(HERE, 'm18-m25-validation-worksheet-v1-20261009.md')
-spec = importlib.util.spec_from_file_location('xr', os.path.join(CL, 'M64 - will-resolve', 'verse-narrative-ot-crossref-v2-20261006.py'))
+spec = importlib.util.spec_from_file_location('xr', os.path.join(CL, 'M64 - will-resolve', 'verse-narrative-ot-crossref-v3-20261009.py'))
 xr = importlib.util.module_from_spec(spec); spec.loader.exec_module(xr)
 c = sqlite3.connect(f'file:{DB}?mode=ro', uri=True)
 

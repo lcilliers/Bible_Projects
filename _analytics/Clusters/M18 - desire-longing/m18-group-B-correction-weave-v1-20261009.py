@@ -13,7 +13,7 @@ import glob, importlib.util, os, re, shutil, sqlite3, sys, unicodedata
 HERE = os.path.dirname(os.path.abspath(__file__))
 NARR = os.path.abspath(os.path.join(HERE, '..', '..', 'essay', 'spirit_soul_body', 'inner-being-narrative'))
 DB = os.path.abspath(os.path.join(HERE, '..', '..', '..', 'iba', 'app', 'db', 'iba.db'))
-spec = importlib.util.spec_from_file_location('xr', os.path.join(HERE, '..', 'M64 - will-resolve', 'verse-narrative-ot-crossref-v2-20261006.py'))
+spec = importlib.util.spec_from_file_location('xr', os.path.join(HERE, '..', 'M64 - will-resolve', 'verse-narrative-ot-crossref-v3-20261009.py'))
 xr = importlib.util.module_from_spec(spec); spec.loader.exec_module(xr)
 DATE = '20261009'
 

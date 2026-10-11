@@ -16,7 +16,7 @@ IN = os.path.join(HERE, 'm64-m47-shared-verses-v2-20261006.csv')
 OUT_CSV = os.path.join(HERE, 'm64-m47-uncited-verses-v1-20261006.csv')
 OUT_MD = os.path.join(HERE, 'm64-m47-uncited-verses-v1-20261006.md')
 
-spec = importlib.util.spec_from_file_location('xref', os.path.join(HERE, 'verse-narrative-ot-crossref-v2-20261006.py'))
+spec = importlib.util.spec_from_file_location('xref', os.path.join(HERE, 'verse-narrative-ot-crossref-v3-20261009.py'))
 xref = importlib.util.module_from_spec(spec)
 spec.loader.exec_module(xref)
 
