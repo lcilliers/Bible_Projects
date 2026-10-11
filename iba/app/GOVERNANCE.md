@@ -4096,3 +4096,29 @@ They record where things were at that date.
 - **Occasion:** the M64 "choosing" reading (`_analytics/Clusters/M64 - will-resolve/m64-choose-reading-v2-20261007.md`), where 157 of 232 verses have God, the Lord or Jesus choosing.
 - Style guide v3 is to carry the routing (v3 is already pending for #1920 and #1930). No `iba/app/**` code changed.
 
+
+## §91. Read a verse, and a collection, by the role of each M-coded word (2026-10-11, researcher ruling, escalations #1993, #1995, #1996)
+
+**Ruling (researcher, verbatim):**
+- On 2Pe 2:13 (chat 2026-10-09, #1993): *"The main IB operation of this verse is to suffer - what is being suffered is wrongdoing, which is strenghtened by the deceptions in which they are reveling. So making something of this verse with pleasure as an entry point will lead to distorted views."*
+- What the rule is for (chat 2026-10-11): *"to carefully structure the reading of a verse to not get confused between a support M-code and the M-code characteristic that it describes. this would expected your awareness of the role of the M-Codes and structure the reading around it."*
+- *"you need to integrate the terminology with the existing terminology in the study, we are not defining new concepts."*
+- *"prepare a proper guide for your self from the above findings - this is exactly how each verse and collection of verses should be considered."*
+
+- **Live rule:** `cfg_behaviour_rule` id 73 `read-verse-by-role-of-each-mcode-word` (#1996, applied 2026-10-11 via `Config-Maintenance.ps1 -Step Propose`).
+  - #1995 was withdrawn: its v1 text was framed on the "entry word" and coined its own terms.
+  - #1997 was a stray coherence-check stop on the first apply attempt (the stored Set was not passed). It was closed.
+- **Guide:** [`Workflow/Instructions/wa-verse-reading-by-role-guide-v1-20261011.md`](../../Workflow/Instructions/wa-verse-reading-by-role-guide-v1-20261011.md). It defines no new concepts. It sets the study's existing terms in reading order:
+  - the glossary *role* (characteristic / qualifier-process-element / standalone, decided per occurrence)
+  - verse-analysis method §13–14
+  - the role-driven five-step sequence (#1704, researcher decisions 1–4)
+  - progressive relational reading across strands (#1706)
+  - rules 69–72 and change of character (#1919)
+- **In short:**
+  1. An M-code tag does not make a word the verse's characteristic.
+  2. Find the main IB operation, and give every M-coded word its role.
+  3. Only then read the strand's word, in the role it has there.
+  4. A qualifier is carried in place. It is recorded as an interrelationship and a face, and the verse's home follows the characteristic.
+  5. Collections are grouped by main operation, not by entry word.
+- **No narrative-wide audit** (researcher, 2026-10-09): placements are corrected in each strand's read-back.
+- Memory `feedback_entry_word_is_not_the_main_operation`. No `iba/app/**` code changed.
