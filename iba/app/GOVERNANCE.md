@@ -4121,4 +4121,5 @@ They record where things were at that date.
   4. A qualifier is carried in place. It is recorded as an interrelationship and a face, and the verse's home follows the characteristic.
   5. Collections are grouped by main operation, not by entry word.
 - **No narrative-wide audit** (researcher, 2026-10-09): placements are corrected in each strand's read-back.
+- **Triage order for a strand pull (researcher, 2026-10-11, verbatim):** *"you will not blanketly read every verse, but will optimise the reading by first assessing the status of the M18 M-code, if it is supportive, for another cluster's reading then the reading is marked forward for when that cluster is read, else if the M-code is central to the verse, then read in in deapth and in context."* Verses whose qualified act carries no M-code (so no cluster reading will reach them) are read by their act and placed (researcher: *"read the 15 now as recommended"*). Forward marks go to the open threads register (OT-97). Applied to M18 groups B and C (#1993).
 - Memory `feedback_entry_word_is_not_the_main_operation`. No `iba/app/**` code changed.
