@@ -4123,3 +4123,14 @@ They record where things were at that date.
 - **No narrative-wide audit** (researcher, 2026-10-09): placements are corrected in each strand's read-back.
 - **Triage order for a strand pull (researcher, 2026-10-11, verbatim):** *"you will not blanketly read every verse, but will optimise the reading by first assessing the status of the M18 M-code, if it is supportive, for another cluster's reading then the reading is marked forward for when that cluster is read, else if the M-code is central to the verse, then read in in deapth and in context."* Verses whose qualified act carries no M-code (so no cluster reading will reach them) are read by their act and placed (researcher: *"read the 15 now as recommended"*). Forward marks go to the open threads register (OT-97). Applied to M18 groups B and C (#1993).
 - Memory `feedback_entry_word_is_not_the_main_operation`. No `iba/app/**` code changed.
+
+## §92. The open threads register is read at every session start; moving it into the escalation table is #2000 (2026-10-12, researcher instruction, escalations #1999, #2000)
+
+- **Researcher, verbatim:** *"you can add the open register as a standard item when a new session is started."* `.claude/commands/start-project.md` now has step 4B. It reads `_analytics/cross-cluster-web/open-threads-register.md` and reports three things in step 5:
+  - the counts by status
+  - the open threads whose "comes back when" names the strand in progress
+  - the threads waiting on the researcher
+- **Proposed move, not built.** The register is proposed to move into the escalation table: a `thread` type, an `escalation_trigger` child table, and the OT-nn numbers kept as an alias. Researcher, verbatim: *"should we not extend escalations, it seems that escalation and open items register are close to each other, and escalation has all the controls already built in"*; and *"create a new escalation to build out the escalation table … We can then work on it in a new chat."* This is #2000, which supersedes #1999. The researcher has further suggestions for it.
+  - Proposal: `_analytics/cross-cluster-web/open-threads-table-proposal-v2-20261012.md`
+  - Handoff: `escalation-table-buildout-handoff-v1-20261012.md`
+- **The register's rules of use stand until #2000 is built.** These are #1935: not a task list; decisions stay in escalations. Step 4B switches to `Escalation.ps1 -Action Match` once #2000 is built. No `iba/app/**` code changed.

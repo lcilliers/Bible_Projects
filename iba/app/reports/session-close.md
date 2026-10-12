@@ -1,9 +1,9 @@
 # Session close — escalation update / governance drift / BUILD.md coverage check (#1875)
 
-> Generated 2026-10-12T05:27:56Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
+> Generated 2026-10-12T09:16:28Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
 
-- session_id: `5fe5be24-a285-4317-a8ee-efd5222e0123` (identified by: CLAUDE_CODE_SESSION_ID)
-- session started: 2026-10-12T04:16:07Z
+- session_id: `b33ee2b5-1d8f-41d1-90c3-1d7ef4e32ec5` (identified by: CLAUDE_CODE_SESSION_ID)
+- session started: 2026-10-12T05:29:38Z
 - transcript found: True
 - escalation-update gaps: **0**
 - BUILD.md gaps: **0**
@@ -24,13 +24,14 @@
 ## Escalation update coverage
 
 Escalations touched this session (id, highest version seen in transcript vs. live `escalation_history`):
-- #1993: transcript v18
-- #1998: transcript v6
+- #1998: transcript v8
+- #1999: transcript v3
+- #2000: transcript v1
 
 <a id="governance-config-doc-drift"></a>
 ## Governance / config / doc drift
 
-Files changed this session under governance/doc scope: CLAUDE.md.
+Files changed this session under governance/doc scope: iba/app/GOVERNANCE.md, CLAUDE.md.
 
 Whether chat content that SHOULD have updated governance/config actually did, and whether any now-superseded text is properly marked superseded/retired, is a judgement call for Claude to make reading the actual session transcript — not mechanically checked here (no chat-content-to-decision mapping exists to check against). If the session's own SESSION-LOG 'decisions made' section names a decision with no matching change among the files above, that is the signal to look at.
 
