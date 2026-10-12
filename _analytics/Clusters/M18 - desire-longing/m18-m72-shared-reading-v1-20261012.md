@@ -1,13 +1,13 @@
 # M18 × M72: the 182 shared verses, checked and read by role
 
-**Date:** 2026-10-12 · **Escalation:** #1993 (handoff v7 item H) · **Method:** [`wa-verse-reading-by-role-guide-v1-20261011.md`](../../../Workflow/Instructions/wa-verse-reading-by-role-guide-v1-20261011.md) (`cfg_behaviour_rule` 73; triage order GOVERNANCE.md §91) · **Status:** v1. Read; **nothing woven**.
+**Date:** 2026-10-12 · **Escalation:** #1993 (handoff v7 item H) · **Method:** [`wa-verse-reading-by-role-guide-v1-20261011.md`](../../../Workflow/Instructions/wa-verse-reading-by-role-guide-v1-20261011.md) (`cfg_behaviour_rule` 73; triage order GOVERNANCE.md §91) · **Status:** v1. Read, and §9 **woven** on instruction (researcher, 2026-10-12, verbatim: *"weave §9 as proposed"*) by `m18-m72-shared-weave-v1-20261012.py` (36 quotes, 0 failures); records `m18-m72-shared-records-update-v1-20261012.py`; claim register v48.
 
 **Instruction (researcher, chat 2026-10-12, verbatim):** *"next the M18 strand overview, item F, lists M72 (Authority & Dominion), which shares 182 verses with M18, as recorded so it isn't lost."*
 
 **Files:**
 - **Pull:** [`m18-m72-shared-pull-v1-20261012.py`](m18-m72-shared-pull-v1-20261012.py) → [`m18-m72-shared-verses-v1-20261012.csv`](m18-m72-shared-verses-v1-20261012.csv). One row per shared verse, with every earlier M18 decision from the registers and role triages in this folder.
 - **Narrative check:** crossref v3 (`../M64 - will-resolve/verse-narrative-ot-crossref-v3-20261009.py`) → [`m18-m72-shared-crossref-v1-20261012.csv`](m18-m72-shared-crossref-v1-20261012.csv).
-- **Triage:** [`m18-m72-shared-triage-v1-20261012.py`](m18-m72-shared-triage-v1-20261012.py) → [`m18-m72-shared-triage-v1-20261012.csv`](m18-m72-shared-triage-v1-20261012.csv). It gives the role of the M18 word and of the M72 word, the decision, the home or forward cluster, and the route.
+- **Triage:** [`m18-m72-shared-triage-v1-20261012.py`](m18-m72-shared-triage-v1-20261012.py) → [`m18-m72-shared-triage-v2-20261012.csv`](m18-m72-shared-triage-v2-20261012.csv) (v2: decisions after the weave; v1 in `archive/`). It gives the role of the M18 word and of the M72 word, the decision, the home or forward cluster, and the route.
 - Passages come from iba.db `verse` (ESV).
 
 ## 1. What the 182 are
@@ -143,7 +143,7 @@ These points come from the 51 only, and are not counted beyond them.
 - Where M72 carries the act, it is God's: his hand, his reign, a kingdom given and taken. Those verses go forward to M72.
 - Two verses show power carrying out what the eye or the will sets on: David (2Sa 11) and Laban's restraint (Gen 31:29, forward).
 
-## 9. Proposed weave (on your instruction only)
+## 9. Weave (done 2026-10-12, as proposed)
 
 | Chapter | What |
 |---|---|
