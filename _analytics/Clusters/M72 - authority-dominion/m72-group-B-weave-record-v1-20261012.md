@@ -8,7 +8,25 @@
 
 > I dont' think the title of ch_11 is true to its contents, and I don't think we really have discovered, debated or explored to the full the true meaning of authority and ruling from a inner being perspective. M72 have added to the understanding, but maybe we are looking at it from the wrong direction. I suggest you add the current thoughts coming out of the M72 reading to ch_11 and place the parts that is specific to the heart, flesh, divine etc. into those sections. from what I can see at the moment rule, authority, giving or having power is more of a state or status that works in collaboration with other characteristics and parties, but this is not yet strongly emerging from the material you are providing. I am not discounting that you are biased in your treatment of readings, so it is likely that I will need to read it again at some point.
 
-## 1. What was done
+## 0. Second pass (same day)
+
+**Researcher, verbatim:** *"'11. Other sides of the inner being' and update the opening paragraph.  you can proceed with writing to the narrative any outstanding parts of M72"*.
+
+- **Ch 11 v31** is renamed `11-other-sides-of-the-inner-being` and its opening is restated.
+- **The outstanding placements are written,** each verse by the act that moves in it (§2):
+  - 10.10 v23 gains two new sections, *Holding authority over another* and *A right set aside for another*.
+  - 10.9 v21 gains three new sections: *Kept from what would rule*, *Under rule, and longing for his*, and *Knowing who rules*.
+  - Also updated: 10.12 v7, 10.7 v27, 10.6 v22, 10.4 v12, 10.11 v8, 10.3 v7, 10.1 v20, 10.13 v7 and Ch 12 v20.
+  - Ch 14 v15 gains *Sin's rule ended*.
+- **Records:** claim register v50.
+- **Open threads:**
+  - OT-16 and OT-98 are closed for M72.
+  - OT-97 gains the 47 forward marks, noted as triaged before the correction.
+  - OT-100 records the title answer, and stays open for the meaning of authority.
+- Script: [`m72-group-B-weave-activities-v1-20261012.py`](m72-group-B-weave-activities-v1-20261012.py); records: [`m72-group-B-records-update-v2-20261012.py`](m72-group-B-records-update-v2-20261012.py).
+- The narrative copy matches files by base name, so the old `11-patterns-of-the-inner-life-*` file in the learning4comfort inbox is not replaced by the renamed one.
+
+## 1. What was done (first pass)
 
 | File | Version | What was added |
 |---|---|---|
