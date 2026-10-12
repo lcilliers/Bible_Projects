@@ -640,7 +640,8 @@ def find_filled_by_referencing_inactive_step(conn: sqlite3.Connection) -> list[s
         return []
     out: list[str] = []
     for r in conn.execute(
-            "SELECT table_name, name, filled_by FROM cfg_column WHERE filled_by IS NOT NULL"):
+            "SELECT table_name, name, filled_by FROM cfg_column WHERE filled_by IS NOT NULL "
+            "AND inactive=0"):   # #2107: an inactive column is already settled as dormant
         if r["filled_by"] in inactive_steps:
             out.append(f"{r['table_name']}.{r['name']} filled_by={r['filled_by']!r} "
                       f"(an inactive step) — confirm dormant or update to the real current writer")

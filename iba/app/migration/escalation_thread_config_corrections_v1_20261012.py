@@ -136,12 +136,16 @@ def main() -> int:
         else:
             apply_logged(conn, RUN_ID, "cfg_behaviour_rule", "insert", {}, NEW_RULE)
             report.append(f"cfg_behaviour_rule {NEW_RULE['rule_key']}: inserted, logged")
+        written = sum(1 for line in report if line.endswith(", logged"))
         if args.dry_run:
             conn.rollback()
             report.append("DRY RUN -- rolled back, nothing written")
-        else:
+        elif written:
             conn.commit()
-            report.append(f"committed under {RUN_ID}")
+            report.append(f"committed under {RUN_ID}: {written} row(s) written")
+        else:
+            conn.rollback()
+            report.append("nothing to write -- every row already current")
     except Exception:
         conn.rollback()
         raise

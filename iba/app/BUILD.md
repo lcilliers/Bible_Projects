@@ -16966,3 +16966,61 @@ Files:
 - Stale lock file deleted; `iba/docs/escalation actions worksheet.xlsx` Threads block gains `-NextAction` and `-SupersededBy` headers, the new response kinds in the `-ResponseKind` hint, and rows 50–53 (withdraw/supersede an item, withdraw/supersede a thread). Memory `feedback_warn_before_editing_excel_tool_interface` corrected: test the workbook itself, never claim "open" from a lock file.
 
 **Testing:** not tested in this session (CHARTER.md §4). Test plan v4 §11.
+
+## 340. Thread supersede: `_SUCCESSOR_RE` control bytes replaced with the intended word boundary (2026-10-12, escalation #2000, defect D2)
+
+**Why:** test plan run 2 (`iba/docs/2000-open-threads-test-plan-v5-20261012.md`) found that section 10 failed on D2. Researcher, chat 2026-10-12 (verbatim): *"fix D2 - ytou do not need a developer session for it"*. The fix was made in this standard session on that instruction, for this defect only. It is not a general change to CHARTER.md §4.
+
+**Found:** `iba/app/lib/escalation.py:724` `_SUCCESSOR_RE` held two literal 0x08 (backspace) bytes where the raw string should have the two characters backslash-b. A backslash-b sequence passed through a tool layer is turned into the control byte; the first repair attempt this session hit the same conversion. So the pattern recognised only `#nnnn`:
+- an item supersede naming `OT-nn` or `OT-nn.n` was refused
+- every thread supersede (`-NextAction reject -State supersede -SupersededBy OT-nn`) was refused and rolled back, because its own generated text "superseded by OT-mm.k" failed the same check
+
+It was the only file under `iba/` with 0x08 bytes.
+
+**Fixed:** the two bytes were replaced with backslash-b, written as byte codes (92, 98) so that no escape sequence was involved. The pattern now reads, by bytes, `\bOT-\d+(?:\.\d+)?\b|#\d+`. Checked: "carried by OT-16.2", "superseded by OT-112.3" and "#2000" match; "no ref here", "OT-16x" and "xOT-16" do not. 0x08 count in the file: 0.
+
+**Test plan run:** sections 9 and 10 re-run on a fresh scratch copy of iba.db with the real code (no harness patch): D1.2–D1.4 and 10.2–10.18 all pass, including 10.4, 10.5, 10.10, 10.11 and 10.18, which failed in run 2. G5 holds in substance; gap G5-a is still open (a successor's history does not name an item reopened by a supersede). Results in test plan v6.
+
+**Not done here:** G5-a; the corrections migration's "committed under" message when nothing was written. (Corrected 2026-10-12, §341: this entry first also listed "the `ready_for_approval` and `approved` + follow-up thread states" as open for the researcher. That was a misreading. Those `-NextAction` values are the approval handshake and do not apply to threads.)
+
+**Files:** `iba/app/lib/escalation.py` (line 724); `iba/docs/2000-open-threads-test-plan-v6-20261012.md`.
+
+## 341. Escalation docs: `-NextAction` on a thread, and the transition table brought in line with config (2026-10-12, escalation #2000)
+
+**Why:** researcher, chat 2026-10-12 (verbatim): *"I don't think you understand properly how the code works and when the -nextaction flag is relevant. bring the documentation up to date"*. Test plan v5 and §340 had reported that `-NextAction ready_for_approval` (and `approved` with follow-up still flagged) put a thread at `re-assigned`, as an open question for the researcher, and Claude had then proposed refusing them. Both were a misreading. `-NextAction` carries the approval handshake (USER-GUIDE §4.4) for items that close on a decision. `ready_for_approval` → `re-assigned` is that handshake's designed hand-off to the reviewer, for any item. A thread never takes the handshake: it is raised self-correctable (T4) and completes when its last item is settled. The only `-NextAction` a thread uses is `reject` (withdraw or supersede). Nothing in the code needs to change. The docs did not say this, so the misreading was possible.
+
+**Build (documentation only, no behaviour change):**
+- `iba/app/USER-GUIDE.md` §4.8: new bullet *`-NextAction` on a thread: `reject` only*, with a dated correction note.
+- `iba/app/USER-GUIDE.md` §4.3: the transition table was behind live `cfg_escalation_transition`. It now shows the two missing thread priority-0 rows (T3/T5 → in-progress, T6 → on-hold), `approved` + `needs_claude_followup` → `re-assigned` at priority 1 (escalation #1075), `approved` + resolution at priority 2, and `followup_cleared_was_approved` → `completed` at priority 5. It also says what `re-assigned` means after `ready_for_approval`.
+- `iba/app/ps/Escalation.ps1` comment-based help: the derived-states list gains `ready_for_approval` → `re-assigned`, `approved` + follow-up → `re-assigned`, and a pointer to the thread priority-0 rows, plus a line stating that a thread uses `-NextAction reject` only. Help text only; no parameter or logic changed.
+- Records corrected: §340 *Not done here*; test plan v7 (run-2 "Noted" bullet and the D1 "Noted" line); #2000 v24.
+
+**Test plan run:** none needed (no behaviour change). The live `cfg_escalation_transition` rows were read back against the new §4.3 table.
+
+**Files:** `iba/app/USER-GUIDE.md`; `iba/app/ps/Escalation.ps1`; `iba/app/BUILD.md`; `iba/docs/2000-open-threads-test-plan-v7-20261012.md`.
+
+## 342. Thread supersede names the successor's own items in its history (G5-a); corrections migration message (2026-10-12, escalation #2000)
+
+**Why:** researcher, chat 2026-10-12 (verbatim): *"fix the two remaining items too, and prepare 2000 for approval"*. These are the two items left open by test plan v5–v7: G5-a, and the corrections migration's misleading close-out line.
+
+**Build:**
+- `iba/app/lib/escalation.py` `_settle_thread_on_reject`: new optional `succ_lines` list. For each carried item it records what happened on the successor thread: `added`, `reopened`, or `already open, kept`, with the source reference (`from OT-nn.n`). `update()` collects these lines and appends them to the successor's `_restate_thread` summary, so the successor's history names its own items. Before, it said only "received the open items of OT-nn".
+- `iba/app/migration/escalation_thread_config_corrections_v1_20261012.py`: commits and prints "committed under <run_id>: n row(s) written" only when rows were written. Otherwise it rolls back and prints "nothing to write -- every row already current".
+
+**Test plan run:** `iba/docs/2000-open-threads-test-plan-v8-20261012.md` run 4, on fresh scratch copies of iba.db. 10.11: OT-112's history reads "item 3 (cluster:M98) added, from OT-111.1; item 1 (strong:H9994) reopened, from OT-111.2". Migration no-op re-run: "nothing to write". Regression: sections 9 and 10 all pass. Cases 6.3 and 8 were recorded as passed from this session's `/session-close`.
+
+**Files:** `iba/app/lib/escalation.py`; `iba/app/migration/escalation_thread_config_corrections_v1_20261012.py`; `iba/docs/2000-open-threads-test-plan-v8-20261012.md`.
+
+## 343. `find_filled_by_referencing_inactive_step` skips inactive columns; #2107 triage (2026-10-12, escalation #2107)
+
+**Why:** researcher, chat 2026-10-12 (verbatim): *"fix the issue on2107"*. #2107 holds 151 advisory findings from `configmaint.validate` (`outputs/configs/CONFIG-REPORT-v555-20261012.md` §0). Triage: `iba/docs/2107-config-findings-triage-v1-20261012.md`.
+
+**Build:**
+- `iba/app/lib/cfgquality.py` `find_filled_by_referencing_inactive_step`: the `cfg_column` query adds `AND inactive=0`. 28 of its 29 findings were columns already retired (`strong_*_parsed`, `verse_lexical_note`, `passage.genre`), whose dormancy is settled. One real finding remains: `passage.lexical_complete_at`.
+- `scripts/SQLite/IBA_DB/`: two query files renamed to hyphenated names (finding category "query file convention").
+
+**Test plan run:** both detectors were called directly against live iba.db (read-only). `find_filled_by_referencing_inactive_step` returns only `passage.lexical_complete_at`; `find_query_file_convention_violations` returns `[]`. `configmaint.validate` was not re-run, because a changed finding set would raise a new escalation alongside #2107. It will be run once the remaining fixes are in.
+
+**Not done here:** every other #2107 category (config rows, worksheet, code, researcher decisions), as listed in the triage file.
+
+**Files:** `iba/app/lib/cfgquality.py`; `scripts/SQLite/IBA_DB/explore-clusters-2.sqlite3-query`, `explore-verses.sqlite3-query`; `iba/docs/2107-config-findings-triage-v1-20261012.md`.

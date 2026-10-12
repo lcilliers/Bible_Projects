@@ -119,10 +119,15 @@
                         reassignment, state changes, all through this one action; the resulting
                         state is DERIVED from what you set via cfg_escalation_transition, not
                         chosen directly:
+                          (thread only, priority 0: items changed -> in-progress / on-hold /
+                           completed, T3/T5, T6, lifecycle -- USER-GUIDE.md sec4.3)
+                          next_action=approved + needs_claude_followup     -> re-assigned (to Claude)
                           next_action=approved (+ resolution present)      -> completed
                           next_action=reject (+ -State withdraw|supersede, -Comment required) -> that state
                           next_action=revise                        -> in-progress
                           next_action=noted                         -> closed
+                          next_action=ready_for_approval            -> re-assigned (waits with
+                                                                        the reviewer, sec4.4)
                           your own explicit -State                 -> that state (D-fix, #762 —
                                                                         outranks the -AssignedTo
                                                                         row above; previously an
@@ -169,6 +174,9 @@
                         then follows T3/T5 (in-progress while in-progress work references it) and
                         T6 (partly settled -> on-hold); when the last open item is settled the
                         thread completes, with a generated resolution (thread lifecycle, #2000).
+    -NextAction on a thread is reject ONLY: the approval handshake (ready_for_approval/approved/
+                        revise/noted/review) is for items that close on a decision, and a thread
+                        (self-correctable, T4) completes when its last item is settled.
     -Action Update (thread) -NextAction reject -State withdraw|supersede [-SupersededBy OT-nn]
                         withdraw withdraws every open item; supersede needs -SupersededBy, and each
                         open item moves to that thread and is recorded superseded here.

@@ -721,7 +721,7 @@ def _resolve_item(db: Db, thread: dict, ref: str):
 
 _SETTLE_KINDS = ("closed", "withdrawn", "superseded")   # #2000 lifecycle: response kinds
                                                          # that settle an item (its status = kind)
-_SUCCESSOR_RE = re.compile(r"OT-\d+(?:\.\d+)?|#\d+")
+_SUCCESSOR_RE = re.compile(r"\bOT-\d+(?:\.\d+)?\b|#\d+")
 
 
 def _respond(cfg: Cfg, db: Db, item: dict, kind: str, text: str, *, via: int | None, by: str,
@@ -764,11 +764,14 @@ def _respond(cfg: Cfg, db: Db, item: dict, kind: str, text: str, *, via: int | N
 
 
 def _settle_thread_on_reject(cfg: Cfg, db: Db, thread: dict, state: str | None, superseded_by,
-                             *, reason: str | None, who: str, at: str) -> list[str]:
+                             *, reason: str | None, who: str, at: str,
+                             succ_lines: list[str] | None = None) -> list[str]:
     """#2000 lifecycle (G4): no thread ends with an open item. Withdraw -> each open item is
     withdrawn with the thread's reason. Supersede -> each open item is added to the successor
     thread (an existing item of the same kind:value is reused, reopened if settled) and recorded
-    superseded here, naming its new reference. Returns summary lines for the history comment."""
+    superseded here, naming its new reference. Returns summary lines for the history comment.
+    `succ_lines`, when given, receives what happened on the successor -- each item added,
+    reopened or already open there -- for the successor's own history (G5-a, test plan v5)."""
     alias = thread["alias"] or f"#{thread['id']}"
     open_items = [dict(r) for r in _thread_items(db, thread["id"], "open")]
     out = []
@@ -795,11 +798,18 @@ def _settle_thread_on_reject(cfg: Cfg, db: Db, thread: dict, state: str | None, 
             if new["status"] != "open":
                 _respond(cfg, db, new, "reopened", carried, via=thread["id"], by=who, files=None,
                          at=at)
+                done = "reopened"
+            else:
+                done = "already open, kept"
         else:
             new = _add_item(cfg, db, succ["id"], it["kind"], it["value"], it["note"],
                             opened_by=thread["id"], at=at)
             _respond(cfg, db, new, "note", carried, via=thread["id"], by=who, files=None, at=at)
+            done = "added"
         ref = f"{succ['alias']}.{new['item_no']}"
+        if succ_lines is not None:
+            succ_lines.append(f"item {new['item_no']} ({it['kind']}:{it['value']}) {done}, from "
+                              f"{alias}.{it['item_no']}")
         _respond(cfg, db, it, "superseded", f"superseded by {ref}: {reason or ''}".strip(),
                  via=succ["id"], by=who, files=None, at=at)
         out.append(f"item {it['item_no']} ({it['kind']}:{it['value']}) superseded by {ref}")
@@ -1504,6 +1514,7 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     # the same transaction, so the transition rows and the T6 check see this call's changes.
     is_thread = cur["type"] == "thread"
     thread_facts, item_summary = None, []
+    succ_lines: list[str] = []          # G5-a: what a supersede did on the successor thread
     if (add_items or item_refs or respond or response_kind or superseded_by) and not is_thread:
         raise ValueError("-Item/-AddItem/-Respond/-ResponseKind/-SupersededBy are for type thread "
                          "only")
@@ -1528,7 +1539,8 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
             item_summary.append(f"item {new_item['item_no']} {kind}:{value} added")
         if checked_action == "reject":                          # #2000 lifecycle (G4)
             item_summary += _settle_thread_on_reject(cfg, db, cur, state, superseded_by,
-                                                     reason=comment, who=who, at=now)
+                                                     reason=comment, who=who, at=now,
+                                                     succ_lines=succ_lines)
         changed = bool(add_items) or response_kind in _SETTLE_KINDS + ("reopened",)
         thread_facts = _thread_facts(db, escalation_id, items_changed=changed,
                                      closed_some=response_kind in _SETTLE_KINDS)
@@ -1591,7 +1603,9 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
         st = _restate_thread(cfg, db, succ["id"],
                              f"{succ['alias']}: received the open items of "
                              f"{cur['alias'] or '#' + str(escalation_id)}, superseded by {who}: "
-                             f"{comment}", who=who, closed_some=False)
+                             f"{comment}"
+                             + (f"\n{succ['alias']}: " + "; ".join(succ_lines) if succ_lines
+                                else ""), who=who, closed_some=False)
         msg += f"\n  successor {succ['alias']} (#{succ['id']}) -> {st}"
     return msg
 

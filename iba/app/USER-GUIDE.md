@@ -278,12 +278,16 @@ order per shape (`manual`/`dispatcher`), first match wins:
 
 | priority | shape | next_action | fires when | → state |
 |---|---|---|---|---|
+| 0 | manual | any | **thread**: this call changed its items, and an in-progress task or issue references it | `in-progress` (T3/T5, escalation #2000) |
+| 0 | manual | any | **thread**: this call settled some items, others are still open, and no in-progress work references it | `on-hold` (T6, escalation #2000) |
 | 0 | manual | any | **thread**: this call's item change left no item open (not on `reject`) | `completed`, resolution generated (escalation #2000 thread lifecycle, 2026-10-12) |
-| 1 | manual | `approved` | `resolution` present (this call or a prior one) | `completed` |
+| 1 | manual | `approved` | the item is still flagged `needs_claude_followup` | `re-assigned`, assigned back to Claude for the follow-up work (escalation #1075) |
+| 2 | manual | `approved` | `resolution` present (this call or a prior one) | `completed` |
 | 2 | manual | `reject` | always | the party's explicit `-State withdraw`/`supersede` choice, `-Comment` required |
 | 3 | manual | `revise` | always | `in-progress` |
 | 4 | manual | `noted` | always | `closed` |
-| 5 | manual | `ready_for_approval` | always | `re-assigned` (register v9, D27 — its own explicit row; previously relied on rule 6's `-AssignedTo`-changed condition, which isn't guaranteed true) |
+| 5 | manual | `ready_for_approval` | always | `re-assigned`: the item now waits with the reviewer it was assigned to (register v9, D27 — its own explicit row; previously relied on rule 6's `-AssignedTo`-changed condition, which isn't guaranteed true) |
+| 5 | manual | none | the item was already `approved` with a resolution, and this call clears `needs_claude_followup` | `completed` (the follow-up is done; no new decision) |
 | 6 | manual | any | you gave an explicit `-State` | that `-State` (escalation #762, 2026-08-21 — outranks rule 7 below; previously `-AssignedTo X -State on-hold` silently landed on `re-assigned`, the explicit `-State` had no way to win) |
 | 6 | manual | any | the item is a **thread** and `-AssignedTo` changed | state unchanged (escalation #2000 D1, 2026-10-12 — a reassigned thread keeps on-hold/in-progress; previously it fell to rule 7 and dropped out of Thread/Match/ThreadCheck) |
 | 7 | manual | any | `-AssignedTo` changed, no more specific rule matched | `re-assigned` |
@@ -518,6 +522,15 @@ history"*).
   completes in the same call**, with a resolution generated from the item closures. Settling some
   items while others stay open returns it to `on-hold`. A thread is never `raised`, and never
   reaches completed or closed with an item open.
+- **`-NextAction` on a thread: `reject` only.** `-NextAction` carries the approval handshake of
+  §4.4 (`ready_for_approval` → `approved`, plus `revise`, `noted`, `review`). That handshake is for
+  items that close on a decision. A thread does not: it is raised self-correctable (T4), and it
+  completes by itself when its last item is settled. So the only `-NextAction` used on a thread is
+  `reject`, to end it early (next bullet). Everything else is an item response (`-Item
+  -ResponseKind -Respond`), an `-AddItem`, a `-Comment`, or an `-AssignedTo`. A reassignment keeps
+  the thread's state (rule 6, D1). Corrected 2026-10-12: test plan v5 had reported the approval
+  values landing a thread on `re-assigned` as an open question. It is not one; those values do not
+  apply to threads, and `re-assigned` is simply where `ready_for_approval` puts any item.
 - **Ending a thread early.** `-NextAction reject -State withdraw` withdraws every open item with
   it. `-NextAction reject -State supersede -SupersededBy OT-nn` moves each open item to that
   thread (reusing a matching item there, reopened if settled) and records it superseded here.
