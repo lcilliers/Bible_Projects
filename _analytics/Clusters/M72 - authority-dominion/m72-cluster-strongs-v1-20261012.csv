@@ -1,0 +1,56 @@
+strong,translit,gloss,language,hits,verses,surface_top,tag_source,tag_confidence,tag_rationale
+H4428G,me.lekh,king,Hebrew,2441,1870,king (1686); King (243); kings (221); king’s (219); Kings (47); royal (9),claude-scan-20260908,high,"'king' -- direct Authority & Dominion match, 2,441 occurrences. escalation #1598 Phase F1"
+H3027H,yad,hand: power,Hebrew,578,510,hand (459); power (30); hands (29); charge (10); under the direction (5); direction (5),claude-scan-20260908,medium,"'hand: power' -- verse-checked (Dan.1.2, Dan.8.25 'his power shall be mighty'), confirmed the POWER sense specifically, not the body-part sense -- direct match to M72 (Authority & Dominion). escalation #1598 Phase C1"
+H8269,sar,ruler,Hebrew,410,357,princes (86); officials (72); commanders (62); commander (39); captains (22); chief (21),claude-scan-20260908,medium,'ruler' -- direct match to M72 (Authority & Dominion). escalation #1598 Phase C1
+H4427A,ma.lakh,to reign,Hebrew,347,283,reigned (150); reign (99); king (44); became king (11); reigns (9); made him king (7),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H6635B,tsa.va,[Lord of] Hosts,Hebrew,283,271,hosts (281); Lord (1); armies (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H4430,me.lekh,king,Hebrew,177,128,king (126); King (22); king’s (14); kings (11); royal (4),claude-scan-20260908,high,'king' (Aramaic form of H4428G). escalation #1598 Phase F1
+G0932,basileia,kingdom,Greek,162,154,kingdom (156); kingdoms (3); royal power (2); dominion (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7218H,rosh,head: leader,Hebrew,154,141,heads (66); chief (30); head (27); chiefs (12); leader (4); you (2),manual-backfill-triage-20260813,medium,"backfill-scope triage type-2 (plain T2 qualifier): gloss token(s) match T2's own cluster.gloss vocabulary and no other cluster's, 2026-08-13 — see iba/app/reports/backfill-scope-triage-20260813.md §5 | relocated T2->M72 2026-09-08 (escalation #1598, researcher-approved). 'head: leader' -- direct match to M72 (Authority & Dominion), same theme as H3027H/hand:power and H8269/ruler already there. escalation #1598 Phase C4"
+H3678G,kis.se,throne,Hebrew,124,114,throne (111); thrones (6); seat (4); rulers (1); seats (1); full moon (1),old-system-migration,," | relocated T2->M72 2026-09-08 (escalation #1598, researcher-approved). 'throne' -- symbol of authority, direct M72 match. escalation #1598 Phase C4"
+H4467,mam.la.khah,kingdom,Hebrew,117,113,kingdom (55); kingdoms (48); royal (6); royal power (3); reign (2); kingship (2),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G1849,exousia,authority,Greek,102,93,authority (64); power (12); right (11); authorities (8); cosmic powers (1); rightful claim (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H5387A,na.si,leader,Hebrew,102,88,prince (28); chiefs (20); chief (16); leaders (14); princes (13); ruler (2),auto-precedent,," | relocated T2->M72 2026-09-08 (escalation #1598, researcher-approved). 'leader' -- direct M72 match. escalation #1598 Phase C4"
+H4438,mal.khut,royalty,Hebrew,91,82,kingdom (43); reign (20); royal (18); realm (3); kingdoms (2); rule (2),llm-allocation-v1_3-20260811,low,"does not denote inner being → T2 (F2) | relocated T2->M72 2026-09-08 (escalation #1598, researcher-approved). 'royalty' -- direct M72 match. escalation #1598 Phase C4"
+G2962H,kurios,lord: master,Greek,85,79,master (33); Sir (12); Lord (7); owner (6); Master (6); masters (5),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H4910,ma.shal,to rule,Hebrew,81,74,rule (27); ruler (18); ruled (8); rules (7); rulers (6); ruling (3),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G0746,archē,beginning,Greek,56,55,beginning (36); rulers (6); rule (3); first (2); corners (2); authorities (1),researcher-ruling-1880-20260928,high,"relocated M16->M72 2026-09-28, escalation #1880, M47 re-allocation register item B-R3 (Batch B R3): Came into M16 via the M17 merge; senses are time and rule. Ruling: approved as proposed (#1880 v4: ""approve to finalise"")."
+H4437,mal.khu,kingdom,Hebrew,54,41,kingdom (44); kingdoms (3); royal (3); kingship (1); kingly (1); realm (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G2233,hēgeomai,to govern,Greek,28,27,count (7); leaders (3); ruler (2); considered (2); regard (2); thought (2),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7287A,ra.dah,to rule,Hebrew,22,22,dominion (6); rule over (3); rule (3); ruled (2); charge (2); Rule (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G0936,basileuō,to reign,Greek,21,18,reign (13); reigned (4); kings (2); reigns (1); reigning (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H4475,mem.sha.lah,dominion,Hebrew,17,16,dominion (8); rule (4); realm (2); authority (2); forces (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H1002,bi.rah,palace,Hebrew,16,16,citadel (12); palace (2); castle (1); fortress (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7985,shol.tan,dominion,Hebrew,14,9,dominion (13); dominions (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H5943,il.lay,Most High [God],Hebrew,10,10,Most High (10),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7990,shal.lit,ruling,Hebrew,10,10,rules (5); powerful (1); captain (1); ruler (1); lawful (1); ruled (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H4468,mam.la.khut,kingdom,Hebrew,8,8,kingdom (7); reign (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7980,sha.lat,to domineer,Hebrew,8,7,power (3); get dominion (1); mastery (1); gained mastery (1); master (1); lorded (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G2961,kurieuō,to lord over,Greek,7,7,has dominion over (1); Lord (1); dominion (1); over (1); exercise lordship (1); binding on (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7981,she.let,to rule,Hebrew,7,7,ruler (3); rule (2); overpowered (1); power (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7336,ra.zan,to rule,Hebrew,6,6,rulers (4); princes (2),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G0937,basilikos,royal,Greek,5,5,official (2); royal (2); king’s (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H8323A,sa.rar,to rule,Hebrew,5,4,rule (2); master (1); make (1); prince (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G1850,exousiazō,to have authority,Greek,4,3,authority over (2); dominated (1); authority (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G2583,kanōn,rule,Greek,4,4,influence (3); rule (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G2634,katakurieuō,to master,Greek,4,4,lord it (1); domineering (1); over (1); mastered (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G2963,kuriotēs,lordship,Greek,4,4,authority (2); dominion (1); dominions (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7989,shal.lit,domineering,Hebrew,4,4,governor (1); rulers (1); power (1); ruler (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H1055,bi.tan,palace,Hebrew,3,3,palace (3),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H4474,mim.shal,dominion,Hebrew,3,3,authority (1); rulers (1); dominion (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H7786,sur,to reign,Hebrew,3,3,strove (1); set up princes (1); ruled (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G2715,katexousiazō,to rule,Greek,2,2,exercise authority (2),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G4519,sabaōth,hosts,Greek,2,2,hosts (2),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G4821,sumbasileuō,to reign with,Greek,2,2,reign (1); rule (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G5247,huperochē,authority,Greek,2,2,high positions (1); lofty (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H2632,che.sen,authority,Hebrew,2,2,power (2),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H4915B,mo.shel,dominion,Hebrew,2,2,rule (1); authority (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H4951,mis.rah,dominion,Hebrew,2,2,government (2),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G0831,authenteō,to domineer,Greek,1,1,exercise authority (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G0933,basileion,palace,Greek,1,1,kings’ courts (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G0934,basileios,kingly,Greek,1,1,royal (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G0938G,basilissa,queen,Greek,1,1,queen (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G1018,brabeuō,to rule,Greek,1,1,rule (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+G2230,hēgemoneuō,to govern,Greek,1,1,governor (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H0643,ap.pe.den,palace,Hebrew,1,1,palatial (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
+H4896,mish.tar,rule,Hebrew,1,1,rule (1),heuristic-family-grouping-v1-20260905,heuristic,family=authority-dominion-rule
