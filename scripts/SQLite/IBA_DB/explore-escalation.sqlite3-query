@@ -10,6 +10,20 @@ WHERE state not in ('completed','withdraw','closed','supersede');
 SELECT * FROM escalation 
 WHERE id in (1807);
 
+select esc.id, esc.type, eti.id as thread_item_id, eti.content
+,esc.short_description,
+esc.comment,
+esc.context,
+esc.resolution,
+eti.kind,
+eti.note,
+eti.status,
+eti.value
+from escalation esc
+join escalation_thread_item eti on esc.id = eti.escalation_id
+where value in ('M01','M02','M25','M47','M72');
+
+
 
 --closed escalations
 SELECT id, answered_at, resolution, short_description, type, state FROM escalation 
