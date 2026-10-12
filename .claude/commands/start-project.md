@@ -120,7 +120,7 @@ status |`). Do not re-read it whole into chat. Instead:
   researcher re-reads or decides (for example OT-99, OT-100).
 
 If the table-based register proposed in
-`_analytics/cross-cluster-web/open-threads-table-proposal-v1-20261012.md` has been built, use its
+`_analytics/cross-cluster-web/open-threads-table-proposal-v2-20261012.md` has been built, use its
 front door (`iba/app/ps/OpenThreads.ps1 -Action Match`) instead of reading the file.
 
 ## 5. Report and stop
