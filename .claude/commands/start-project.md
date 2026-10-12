@@ -103,6 +103,26 @@ missing parse). Read-only, persists its own report every run.
   not carried forward silently. Do not treat a pending pause/escalation from a prior run as
   resolved without checking `Escalation.ps1 -Action List` for its actual state.
 
+## 4B. Open threads register (researcher, 2026-10-12)
+
+Researcher, verbatim: *"you can add the open register as a standard item when a new session is
+started."* Read `_analytics/cross-cluster-web/open-threads-register.md` (the live register, set up
+under #1935). It is a single table, one row per thread (`| OT-nn | thread | raised | comes back when |
+status |`). Do not re-read it whole into chat. Instead:
+
+- **Count by status**, taken from the last cell of each `| OT-` row: open, touched, and resolved or
+  closed. Struck-through (`~~`) threads count as resolved.
+- **Name the open threads that bear on the work in hand.** The strand in progress is taken from the
+  CLAUDE.md strand queue and the last commit message. List the open and touched threads whose
+  "comes back when" cell names that strand's cluster code, its Strong's numbers, or the strand
+  itself, with id and a one-line title.
+- **Name any threads waiting on the researcher.** These are rows whose "comes back when" says the
+  researcher re-reads or decides (for example OT-99, OT-100).
+
+If the table-based register proposed in
+`_analytics/cross-cluster-web/open-threads-table-proposal-v1-20261012.md` has been built, use its
+front door (`iba/app/ps/OpenThreads.ps1 -Action Match`) instead of reading the file.
+
 ## 5. Report and stop
 
 Summarise, briefly, in chat (not a new `.md` file — this is a status check, not a deliverable):
@@ -112,6 +132,8 @@ Summarise, briefly, in chat (not a new `.md` file — this is a status check, no
 - IBA bootstrap result (READY or what went wrong).
 - **Spine check result (step 4A) — FATAL findings first, if any.**
 - Open escalations relevant to this session, and any other loose end found.
+- Open threads register (step 4B): the counts by status; the threads that bear on the strand in
+  progress; the threads waiting on the researcher.
 - Unenforced-config count from step 4, by `enforcement_status` — name the `judgment_call_pending`
   ones specifically (they're waiting on a researcher decision), not just a bare total.
 
