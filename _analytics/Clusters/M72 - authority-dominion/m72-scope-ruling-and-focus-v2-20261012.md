@@ -33,7 +33,7 @@ By Strong's: G1849 *exousia* "authority" 102, H4910 *māšal* "rule" 81, H7287A 
 
 ## 3. Group D, sent forward
 
-[`m72-group-D-forward-v1-20261012.csv`](m72-group-D-forward-v1-20261012.csv), from [`m72-group-D-forward-v1-20261012.py`](m72-group-D-forward-v1-20261012.py). The v1 `hand_holder_aid` (whose hand it is) is no longer needed, because the hand is not read for M72 whoever holds it.
+[`m72-group-D-forward-v2-20261012.csv`](m72-group-D-forward-v2-20261012.csv), from [`m72-group-D-forward-v1-20261012.py`](m72-group-D-forward-v1-20261012.py). The v1 `hand_holder_aid` (whose hand it is) is no longer needed, because the hand is not read for M72 whoever holds it.
 
 **The "give or take away" words are not an M-code.** In `cluster_strong` they are T3, the inner-being action words that belong to no cluster. Examples: H5414G "to give", H3947G "to take", G1325 "to give", G2983 "to take", H4376 "to sell", G3860 "to deliver". "To rescue" (H5337) is M45.
 
@@ -43,7 +43,9 @@ By Strong's: G1849 *exousia* "authority" 102, H4910 *māšal* "rule" 81, H7287A 
 | **no M-code; give/take word** | 42 | The main operator is a give/take word, and no strand will bring the verse back. Most are of the form *"the Lord has given … into your hand"* (Jos 2:24; Judg 1:2; 4:14; 2Ch 28:5), or *"to give you into the hands of the Philistines"* (Judg 15:12). |
 | **no M-code; no give/take word** | 39 | Another act, also with no M-code: *"they fell by the hand of David"* (2Sa 21:22), *"I will stretch out my hand against the Philistines"* (Eze 25:16), *"there is none to deliver us from their hand"* (Lam 5:8). |
 
-**For your direction: the 81 verses with no M-code.** Under the triage order (GOVERNANCE.md §91), an act with no M-code is read by its act and placed. Here the act is mostly God giving someone into another's hand, or a narrative of defeat. My recommendation is one light read of the 81, with one decision for each:
+**Decided (researcher, chat 2026-10-12, verbatim): *"D1 - I think we can place 81 verses as data (the probably belong to T2 but we are not going to reassign anything.)"*** The 81 are data: `m72-group-D-forward-v2-20261012.csv` (status `data (…; researcher D1 2026-10-12)`; v1 in `archive/`). The text below is the question as it was put.
+
+**For your direction (answered): the 81 verses with no M-code.** Under the triage order (GOVERNANCE.md §91), an act with no M-code is read by its act and placed. Here the act is mostly God giving someone into another's hand, or a narrative of defeat. My recommendation is one light read of the 81, with one decision for each:
 - route A when God's act is described (13.1, God's character only, as with E)
 - data when there is no inner-being bearing
 - a placement where a human inner act is in the passage
