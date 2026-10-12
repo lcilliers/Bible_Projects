@@ -21,6 +21,13 @@ acknowledge/triage what's open, not to treat every item as something that must b
 this turn. If this turns out too noisy in practice, narrowing the query (by type, or by an
 age/session cutoff) is the next step -- not silently dropping the check.
 
+Narrowed by type, 2026-10-12 (escalation #2000): threads (type='thread', the open threads register
+carried in this table) rest at on-hold, assigned to Claude, by design -- 93 of them at import. Per
+cfg_escalation 4 as amended by #2000 (rule T5), a thread counts as "work first" only while it is
+in-progress, i.e. while in-progress work references it; an on-hold thread is never backlog. So
+on-hold threads are left out here, and in-progress threads still count. Every other type is
+unchanged.
+
 Never blocks on its own failure -- a DB lock, a missing file, a query error all fall through to
 "allow the stop," because a broken check must not become a new way to get stuck (the exact kind of
 self-inflicted friction iba/docs/escalation-operational-friction-review-v1-20260831.md's Defect 1
@@ -58,6 +65,7 @@ def main() -> None:
             "SELECT id, type, state, next_action, short_description FROM escalation "
             "WHERE next_action_assigned_to='Claude' "
             "AND state IN ('raised','in-progress','re-assigned','on-hold') "
+            "AND NOT (type='thread' AND state!='in-progress') "   # #2000, cfg_escalation 4 / T5
             "ORDER BY id"
         ).fetchall()
         conn.close()

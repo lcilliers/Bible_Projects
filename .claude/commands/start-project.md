@@ -103,25 +103,44 @@ missing parse). Read-only, persists its own report every run.
   not carried forward silently. Do not treat a pending pause/escalation from a prior run as
   resolved without checking `Escalation.ps1 -Action List` for its actual state.
 
-## 4B. Open threads register (researcher, 2026-10-12)
+## 4B. Open threads (researcher, 2026-10-12; carried in the escalation table since #2000)
 
 Researcher, verbatim: *"you can add the open register as a standard item when a new session is
-started."* Read `_analytics/cross-cluster-web/open-threads-register.md` (the live register, set up
-under #1935). It is a single table, one row per thread (`| OT-nn | thread | raised | comes back when |
-status |`). Do not re-read it whole into chat. Instead:
+started."* Since escalation #2000 the open threads register is carried in the escalation table as
+type `thread` (alias `OT-nn`; `cfg_behaviour_rule` open-threads-carried-as-escalations). The file
+`_analytics/cross-cluster-web/open-threads-register.md` is generated from it: do not read it, and
+never edit it. Instead:
 
-- **Count by status**, taken from the last cell of each `| OT-` row: open, touched, and resolved or
-  closed. Struck-through (`~~`) threads count as resolved.
-- **Name the open threads that bear on the work in hand.** The strand in progress is taken from the
-  CLAUDE.md strand queue and the last commit message. List the open and touched threads whose
-  "comes back when" cell names that strand's cluster code, its Strong's numbers, or the strand
-  itself, with id and a one-line title.
-- **Name any threads waiting on the researcher.** These are rows whose "comes back when" says the
-  researcher re-reads or decides (for example OT-99, OT-100).
+1. **Thread check (rule T5)** -- run first:
 
-If the table-based register proposed in
-`_analytics/cross-cluster-web/open-threads-table-proposal-v2-20261012.md` has been built, use its
-front door (`iba/app/ps/OpenThreads.ps1 -Action Match`) instead of reading the file.
+   ```powershell
+   .\iba\app\ps\Escalation.ps1 -Action ThreadCheck -AnsweredBy Claude
+   ```
+
+   Every on-hold thread referenced by an **in-progress** task or issue (an open `escalation`
+   item) moves to `in-progress`; an item whose task or issue has closed is closed. A reference
+   from a raised or on-hold task waits until that task is started (round 2: *"in-progress only"*).
+2. **List the open threads:**
+
+   ```powershell
+   .\iba\app\ps\Escalation.ps1 -Action Thread
+   ```
+
+   Report the counts by state. Rule 4 (`cfg_escalation` resolution_precedence) counts the
+   `in-progress` threads only: name each one with its alias, id and title. An on-hold thread is
+   never "work first".
+3. **Name the threads that bear on the work in hand.** The strand in progress is taken from the
+   CLAUDE.md strand queue and the last commit message. Match its cluster codes, Strong's numbers or
+   verses (rule T1):
+
+   ```powershell
+   .\iba\app\ps\Escalation.ps1 -Action Match -Cluster M18 -Strong H2530
+   ```
+
+   This is read-only. When a task or issue is raised or about to be started, add `-For nnnn
+   -AnsweredBy Claude` to record the match on each thread.
+4. **Name any threads waiting on the researcher**: open threads with a `researcher` item (for
+   example OT-99, OT-100; `-Action Thread -Id OT-nn` shows a thread's items in full).
 
 ## 5. Report and stop
 
@@ -132,8 +151,8 @@ Summarise, briefly, in chat (not a new `.md` file — this is a status check, no
 - IBA bootstrap result (READY or what went wrong).
 - **Spine check result (step 4A) — FATAL findings first, if any.**
 - Open escalations relevant to this session, and any other loose end found.
-- Open threads register (step 4B): the counts by status; the threads that bear on the strand in
-  progress; the threads waiting on the researcher.
+- Open threads (step 4B): what the thread check moved; the counts by state; the in-progress
+  threads; the threads that bear on the strand in progress; the threads waiting on the researcher.
 - Unenforced-config count from step 4, by `enforcement_status` — name the `judgment_call_pending`
   ones specifically (they're waiting on a researcher decision), not just a bare total.
 

@@ -1,0 +1,178 @@
+{
+  "about": "Researcher ruling 9.5 (2026-10-12): \"re-build threads from closed escalations only if the have open items to be resolved.\" Scope read: closed study escalations from #1880 on (the narrative and strand period) whose text says an item was held, deferred, carried forward or left open, and which no OT row or open escalation already carries. 22 were read. Earlier closed escalations (#6 to #1823) are IBA app build items, not study threads, and were not rebuilt. Round 2 (researcher, verbatim): \"approve all three only if there are open threads registered for the incomplete items in these escalations\". Applied: each candidate's items were checked; a thread is rebuilt only where an item is still incomplete and no open thread carries it, and it registers one open item per incomplete point.",
+  "proposed": [
+    {
+      "from_escalation": "#1930",
+      "review_status": "approved (round 2): checked 2026-10-12, style guide is still v2 (cfg_setting narrative.inner_being_style_guide_path = wa-inner-being-narrative-style-guide-v2-20261001.md); no open thread carries it",
+      "why": "#1930 resolution: \"Carried forward, not delivered: style guide v3, to take its own escalation.\" No escalation was raised for it. CLAUDE.md still says style guide v3 is deferred and \"takes its own escalation when it is taken up\".",
+      "escalation": {
+        "id": "assigned at import",
+        "alias": "next OT number",
+        "type": "thread",
+        "short_description": "Narrative style guide v3",
+        "comment": "Style guide v2 (Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md) does not yet carry: the #1930 ruling that weaving carries meaning, not lists; the #1961 change that a key characteristic gets a full Ch 10 sub-chapter (v2 §7 still states #1920 unchanged). On v3, cfg_setting narrative.inner_being_style_guide_path is repointed through Config-Maintenance.ps1 -Step Propose.",
+        "comes_back_when": "the researcher takes up style guide v3; or a narrative change needs a rule the guide does not carry",
+        "context": {
+          "raised_in": "#1930 resolution; #1943; CLAUDE.md banner",
+          "files": [
+            "Workflow/Instructions/wa-inner-being-narrative-style-guide-v2-20261001.md"
+          ]
+        },
+        "state": "on-hold",
+        "next_action_assigned_to": "Claude",
+        "resolution_kind": "self_correctable",
+        "source": "Claude",
+        "originator": "Claude",
+        "raised_at": "2026-10-06T00:00:00Z"
+      },
+      "items": [
+        {
+          "kind": "researcher",
+          "value": "the researcher takes up style guide v3",
+          "status": "open",
+          "note": null
+        },
+        {
+          "kind": "event",
+          "value": "a narrative change needs a rule the guide does not carry",
+          "status": "open",
+          "note": null
+        }
+      ]
+    },
+    {
+      "from_escalation": "#1898",
+      "review_status": "approved (round 2), narrowed to the one incomplete item. Checked 2026-10-12 against the 1 Oct anger ledger and the recovery (#1974): pilot rows, U1 revisit notes, Jer 44 narrowing, Rom 13:5 and Eze 21:15 are AN-H2, ruled status quo 2026-09-30 (\"the verses are woven as verses; the proposed classifications are not used as findings\"); Rom 13:5 is also in OT-07. Num 11:15 is not in AN-H2; the recovery data (U2 L1747) still marks it \"Still for ruling (carried to #1897)\", #1897 closed without ruling it, and the verse is cited nowhere in the narrative.",
+      "why": "#1898: \"The points held for a ruling were not ruled on in this approval, so they are not treated as decided: pilot s2 third/fourth rows; U1 s12/s13/s25/s34 revisit notes; Num 11:15 pointer (G v3 s16.2); part A s12 narrowing by Jer 44; Rom 13:5 conscience seat; Eze 21:15 context seat.\"",
+      "escalation": {
+        "id": "assigned at import",
+        "alias": "next OT number",
+        "type": "thread",
+        "short_description": "Num 11:15: Moses asks to die, a pointer for ruling",
+        "comment": "Left unruled from the M02 prototype (#1897, #1898): \"Pilot §2.1 / G v3 §16.2. Num 11:15 (Moses asks to die) is not in G §16.2's table. Pointer only. Still for ruling (carried to #1897).\" (recovery data, U2 L1747). #1897 and #1898 closed without ruling it, and it is not in AN-H2 or any OT row. The other points #1898 held (pilot rows, U1 revisit notes, Jer 44, Rom 13:5, Eze 21:15) are AN-H2, ruled status quo 2026-09-30.",
+        "comes_back_when": "a strand reads Num 11 or asking to die (M25 life and death; M02; M47 batch G); or the researcher rules the pointer",
+        "context": {
+          "raised_in": "#1897, #1898",
+          "files": [
+            "_analytics/Clusters/M02 - anger-wrath/wa-cluster-M02-recovery-consolidation-data-v1-20261005.md",
+            "_analytics/Clusters/M02 - anger-wrath/anger-strand-observation-ledger-v1-20261001.md"
+          ]
+        },
+        "state": "on-hold",
+        "next_action_assigned_to": "Claude",
+        "resolution_kind": "self_correctable",
+        "source": "Claude",
+        "originator": "Claude",
+        "raised_at": "2026-09-30T00:00:00Z"
+      },
+      "items": [
+        {
+          "kind": "verse",
+          "value": "Num 11:15",
+          "status": "open",
+          "note": "Moses asks to die; not in G v3 §16.2's table"
+        },
+        {
+          "kind": "cluster",
+          "value": "M25",
+          "status": "open",
+          "note": "asking to die"
+        },
+        {
+          "kind": "cluster",
+          "value": "M02",
+          "status": "open",
+          "note": null
+        },
+        {
+          "kind": "cluster",
+          "value": "M47",
+          "status": "open",
+          "note": "batch G §16.2"
+        }
+      ]
+    }
+  ],
+  "considered_not_rebuilt": [
+    {
+      "escalation": "#1888",
+      "reason": "Round 2 check: the Batch A clarification is AN-H1 in the 1 Oct anger ledger, WITHDRAWN 2026-10-01 by the researcher's let-Scripture-speak ruling; the verses are woven as verses. No incomplete item is left."
+    },
+    {
+      "escalation": "#1880",
+      "reason": "Its deferred items are cluster re-allocation and structure (M67 gains H7423B and H5647I; E-R6 faith-family structure review). Rulings #1970 and cfg_behaviour_rule 70 (no re-tagging; clusters are a loose association) closed them. The stale co-occurrence CSV is data upkeep. For review: the 'Batch A-H delta revisit' (155 new M47 pairs, the death side of Life and Death) was a cluster-reading step that #1900 overtook; no escalation records it as done. The M25 strand read the death words, but this preview did not check those 155 pairs against it."
+    },
+    {
+      "escalation": "#1885",
+      "reason": "The one open gap was already done elsewhere (researcher: 'claude AI already completed this')."
+    },
+    {
+      "escalation": "#1892",
+      "reason": "Carried by the open task #1893 (hands signpost) and OT-06."
+    },
+    {
+      "escalation": "#1899",
+      "reason": "Answered by #1900 (fan-out replaces cluster reading)."
+    },
+    {
+      "escalation": "#1911",
+      "reason": "Its three questions were answered (first strand chosen; the reframing accepted)."
+    },
+    {
+      "escalation": "#1913",
+      "reason": "Researcher: 'reviewed. It is a good basis the build from'."
+    },
+    {
+      "escalation": "#1917",
+      "reason": "Filing upkeep (folder census, run CSVs), not a study thread."
+    },
+    {
+      "escalation": "#1918",
+      "reason": "Step 4 was done in the later weaves."
+    },
+    {
+      "escalation": "#1919",
+      "reason": "Ch 11 §4 is 'left open' by design: every strand adds to it."
+    },
+    {
+      "escalation": "#1921",
+      "reason": "Its two open points went to #1924, which settled them."
+    },
+    {
+      "escalation": "#1924",
+      "reason": "Its 'not yet done' item is the open task #1926."
+    },
+    {
+      "escalation": "#1929",
+      "reason": "FE-85 is carried in OT-07."
+    },
+    {
+      "escalation": "#1932",
+      "reason": "Fear units 3-4 were done (#1957, #1958)."
+    },
+    {
+      "escalation": "#1942",
+      "reason": "Completed (H5782, #1942 approved 2026-10-09)."
+    },
+    {
+      "escalation": "#1943",
+      "reason": "Its hold was OT-08, which the researcher closed (2026-10-09)."
+    },
+    {
+      "escalation": "#1966",
+      "reason": "The held weave was done (10.13, #1976)."
+    },
+    {
+      "escalation": "#1975",
+      "reason": "OT-15 is closed (2026-10-09)."
+    },
+    {
+      "escalation": "#1976",
+      "reason": "Approved by the researcher."
+    },
+    {
+      "escalation": "#1922",
+      "reason": "Superseded by #1925."
+    }
+  ]
+}

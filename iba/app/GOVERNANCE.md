@@ -4131,6 +4131,34 @@ They record where things were at that date.
   - the open threads whose "comes back when" names the strand in progress
   - the threads waiting on the researcher
 - **Proposed move, not built.** The register is proposed to move into the escalation table: a `thread` type, an `escalation_trigger` child table, and the OT-nn numbers kept as an alias. Researcher, verbatim: *"should we not extend escalations, it seems that escalation and open items register are close to each other, and escalation has all the controls already built in"*; and *"create a new escalation to build out the escalation table … We can then work on it in a new chat."* This is #2000, which supersedes #1999. The researcher has further suggestions for it.
-  - Proposal: `_analytics/cross-cluster-web/open-threads-table-proposal-v2-20261012.md`
+  - Proposal: `_analytics/cross-cluster-web/open-threads-table-proposal-v3-20261012.md` (v2 in `archive/`)
   - Handoff: `escalation-table-buildout-handoff-v1-20261012.md`
 - **The register's rules of use stand until #2000 is built.** These are #1935: not a task list; decisions stay in escalations. Step 4B switches to `Escalation.ps1 -Action Match` once #2000 is built. No `iba/app/**` code changed.
+- **Built 2026-10-12 (#2000), see §93.** The proposal went to v3 with an item table (`escalation_thread_item`, not `escalation_trigger`) and a response table. Step 4B now runs ThreadCheck, Thread and Match, and the register file is generated.
+
+## §93. The open threads register is carried in the escalation table: type `thread`, alias `OT-nn` (2026-10-12, researcher-approved design, escalation #2000)
+
+- **Researcher, verbatim:** *"should we not extend escalations, it seems that escalation and open items register are close to each other, and escalation has all the controls already built in."*; *"adopt open register into escalation. propose the changes in a md."*; round 6: *"approve the preview, proceed with the build"*. Design and every round's rulings: `_analytics/cross-cluster-web/open-threads-table-proposal-v3-20261012.md` §0. Build: `BUILD.md` §336. Test plan (to run in a standard session): `iba/docs/2000-open-threads-test-plan-v1-20261012.md`.
+- **What changed for the project:**
+  - Each register row is now an escalation of type `thread`, with alias `OT-nn`: #2002 to #2103, OT-01 to OT-100, plus two rebuilt from closed escalations (OT-101 style guide v3 from #1930; OT-102 Num 11:15 from #1898).
+  - Every `-Id` takes the alias.
+  - What a thread waits for is held as items (`escalation_thread_item`, referenced `OT-nn.n`). Every response to an item is a row in `escalation_thread_item_response`, each completion included.
+  - `_analytics/cross-cluster-web/open-threads-register.md` is **generated** (`Escalation.ps1 -Action Export -Type thread`; session-close step 6b). Never edit it. The hand-kept copy is frozen as `archive/open-threads-register-frozen-20261012.md`.
+- **The rules (all config, nothing in this section that is not):**
+
+  | Rule | Says | Lives in |
+  |---|---|---|
+  | T0 | type `thread`; item kinds, item status, response kinds | `cfg_enum` |
+  | T1 | a task or issue is matched against open thread items when raised and before it is started | `cfg_escalation` thread_check_before_work; `-Action Match` |
+  | T2 | a manual Raise may choose `raised`/`on-hold`/`in-progress`; code raises stay `raised` (module blocking, `cfg_escalation` 3); a thread is never `raised` | `cfg_escalation` raise_state_choice; `cfg_enum` escalation_raise_state |
+  | T3/T5 | a thread is in-progress while an **in-progress** task or issue references it (round 2: *"in-progress only"*); session start runs `-Action ThreadCheck` | `cfg_escalation_transition` (priority 0); `cfg_escalation` 4 amended |
+  | T4 | every thread is self_correctable | `cfg_escalation_requirement` |
+  | T6 | completed only through `approved` with every item closed; a partial completion returns the thread to on-hold; a task or issue may close leaving its threads open, and its item on each thread closes | `cfg_escalation` thread_completion; `cfg_escalation_requirement` no_open_thread_items; `cfg_escalation_transition` |
+  | T7 | a thread needs at least one item | `cfg_escalation_requirement` |
+  | T8 | notes on a thread are Updates, never edits to the file | `cfg_behaviour_rule` 74 open-threads-carried-as-escalations |
+  | T9 | the 60-character title check applies unchanged (*"the thread title limit to 60 MUST be maintained"*) | existing (#759) |
+
+- **Rule 4 is redirected, not suspended.** `cfg_escalation` 4 counts only `in-progress` threads as "work first". The on-hold threads are not a backlog to be worked: a thread moves only when a strand reaches it (#1900, focused capture).
+- **Responding in chat** (proposal §3.4). The researcher may answer by item reference (`OT-16.2 close: …`), by value (`OT-16 M03`), or by thread alone (`OT-16`, which goes to the thread's history). Claude records the answer verbatim against the item in the same turn (`cfg_escalation` 5), through `-Action Update -Id OT-nn -Item … -ResponseKind … -Respond …`.
+- **Retired for threads** (proposal §5): the dated one-off strand scripts that edited the register by splitting rows on " | " (`m18-*-records-update-*.py`, `m72-group-B-records-update-*.py`, `verse-narrative-ot-crossref-v3-20261009.py`). They must not be re-run against the generated file. They are left in place; their filing waits on the researcher.
+- **`cfg_behaviour_rule` 43** exception (2) now names every `Escalation.ps1` write action, Match and ThreadCheck included. Its report actions (List, History, Thread, Export) dispatch through run.py.

@@ -662,9 +662,36 @@ def escalation_history(ctx: Ctx) -> Outcome:
     eid = ctx.params.get("Id")
     if not eid:
         return fail("missing-id", "escalation.history requires a -Id parameter")
+    try:
+        eid = esc.resolve_id(ctx.db, eid)      # escalation #2000: -Id also takes a thread alias
+    except ValueError as exc:
+        return fail("bad-parameter", str(exc))
     # id-prefixed stem, 2026-08-26 (escalation #857, researcher direct instruction) -- was
     # escalation-{eid}-history.md (id buried mid-name); versioning is now write_report()'s job
     # (BUILD.md sec60), not this path's -- write_history_report returns the actual written path.
     path = pathlib.Path(ctx.cfg.required_setting("escalation.history_report_dir")) / f"{eid}-escalation-history.md"
     out = esc.write_history_report(ctx.cfg, ctx.db, int(eid), path)
     return ok(f"wrote {out}", path=str(out))
+
+
+def escalation_thread(ctx: Ctx) -> Outcome:
+    """escalation #2000 -- the escalation-reporting work package's Thread step (`Escalation.ps1
+    -Action Thread`): the open threads, or one thread in full with -Id OT-nn. Optional -State
+    (on-hold|in-progress) narrows the list. The console message carries the short list itself,
+    so the query is answered without opening the file (ruling 6)."""
+    path = pathlib.Path(ctx.cfg.required_setting("escalation.thread_report_path"))
+    try:
+        out, lines = esc.write_thread_report(ctx.cfg, ctx.db, path,
+                                             state=ctx.params.get("State"),
+                                             ident=ctx.params.get("Id"))
+    except ValueError as exc:       # a usage slip (unknown alias, wrong -State), not a crash
+        return fail("bad-parameter", str(exc))
+    return ok("\n  ".join([f"-> {out}"] + lines), path=str(out), lines=len(lines))
+
+
+def escalation_thread_export(ctx: Ctx) -> Outcome:
+    """escalation #2000 -- the Export step (`Escalation.ps1 -Action Export -Type thread`):
+    regenerates the open threads register .md from the escalation table. Run at session-close."""
+    path = pathlib.Path(ctx.cfg.required_setting("escalation.thread_register_path"))
+    out, n = esc.write_thread_register(ctx.cfg, ctx.db, path)
+    return ok(f"{n} thread(s) -> {out}", path=str(out), threads=n)

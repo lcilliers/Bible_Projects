@@ -395,7 +395,8 @@ DUPLICATE: ...`), logged by the engine, not a blocking question.
 ### 4.6 The seven actions that exist today
 
 (List, History, AnswerRun, Raise, Update, Correction, plus the two `resolution_kind` actions added
-2026-08-22 — ResolveSelfCorrectable, EscalateToDecision, §4.3a.)
+2026-08-22 — ResolveSelfCorrectable, EscalateToDecision, §4.3a. The four thread actions added
+2026-10-12 — Thread, Match, ThreadCheck, Export — are in §4.8.)
 
 **List/History now dispatch through `run.py`** (register v9, D4/D16/D23, 2026-08-21) — work package
 `escalation-reporting`, steps `escalation.list`/`escalation.history` — instead of `Escalation.ps1`
@@ -490,6 +491,52 @@ correct title, naming the old one in `-Comment`/`-Context` ("supersedes #900"), 
 item with `-NextAction reject -State supersede -Comment "superseded by #901 — <why>"`. Check each
 item's own `-Action History` separately (escalation #909, 2026-08-27: they're no longer linked
 into one combined thread — see the retirement note above).
+
+### 4.8 Threads — the open threads register (2026-10-12, escalation #2000)
+
+The open threads register (held items, researcher questions and signposts, each with a "comes
+back when") is carried in this table as type `thread`. Each thread has an alias `OT-nn`, and
+every `-Id` accepts it (`-Id OT-16`). Rules: `GOVERNANCE.md` §93; build: `BUILD.md` §336.
+
+- **What a thread waits for** is held as **items** (`escalation_thread_item`): `cluster`,
+  `strong`, `verse`, `strand`, `chapter`, `event`, `researcher` or `escalation`. Each item has a
+  reference `OT-nn.n` (e.g. `OT-16.2`), which is never renumbered. An item is open or closed.
+- **Every response to an item** is a row in `escalation_thread_item_response`: touched,
+  narrowed, forward, ruling, note, closed or reopened. Nothing is overwritten.
+- **States.** A thread rests at `on-hold`. It is `in-progress` while an in-progress task or issue
+  references it (an open `escalation` item, `#nnnn`). It reaches `completed` through
+  `-NextAction approved -Resolution "…"`, and only once every item is closed. Closing some items
+  while others stay open returns it to `on-hold`. A thread is never `raised`.
+- **The register file** `_analytics/cross-cluster-web/open-threads-register.md` is generated.
+  Never edit it; it is rewritten by `-Action Export -Type thread`, which session-close runs.
+
+| To… | Command |
+|---|---|
+| see the open threads | `.\Escalation.ps1 -Action Thread` (`-State in-progress` narrows) |
+| see one thread, every item with its responses | `.\Escalation.ps1 -Action Thread -Id OT-16` |
+| find threads that bear on a strand (read-only) | `.\Escalation.ps1 -Action Match -Cluster M18 -Strong H2530 -Verse "Rom 7:15"` |
+| record that a task bears on them (T1) | add `-For 1993 -AnsweredBy Claude` to the Match |
+| bring threads into line at session start (T5) | `.\Escalation.ps1 -Action ThreadCheck -AnsweredBy Claude` |
+| answer an item | `.\Escalation.ps1 -Action Update -Id OT-16 -Item OT-16.2 -ResponseKind closed -Respond "…" -Via 2010 -AnsweredBy …` |
+| forward an item | `… -Item OT-16.2 -ResponseKind forward -Respond "…" -AddItem cluster:M58 …` |
+| add an item | `.\Escalation.ps1 -Action Update -Id OT-16 -AddItem "verse:Rom 7:15-21 :: 7 verses" -AnsweredBy …` |
+| raise a new thread | `.\Escalation.ps1 -Action Raise -Type thread -Question "title, 60 chars max" -Comment "the thread" -ComesBackWhen "…" -Item cluster:M15 -ResolutionKind SelfCorrectable -AnsweredBy Claude` |
+| regenerate the register file | `.\Escalation.ps1 -Action Export -Type thread` |
+
+Notes:
+- **Naming an item:** `-Item` takes `OT-16.2`, the bare number `2`, `cluster:M03`, or the value
+  alone (`M03`) when it is unique in the thread.
+- **Several items at once:** repeat `-Item`; they share one `-Via`.
+- **A note on an item:** written after ` :: `, because a verse value holds a colon itself.
+- **Matching:** M10 matches M10c (and back). A Strong's number matches its exact code, else its
+  base, zero-padded. A verse matches inside a range, and a whole-chapter item matches any verse in
+  that chapter.
+- **When any task or issue changes,** its item on each thread follows it. A thread moves to
+  in-progress when the task does, and the item closes when the task closes.
+
+**A manual Raise of any type** may now also take `-State on-hold` or `-State in-progress`
+(default `raised`; rule T2). A code-raised escalation always lands at `raised`, so module
+blocking (§4.3) still fires on it.
 
 ---
 

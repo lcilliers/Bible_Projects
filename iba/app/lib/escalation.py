@@ -113,6 +113,16 @@ CLI (module path: iba.app.lib.escalation, invoked as `python -m iba.app.lib.esca
         use Correction only to fix something already recorded wrong.
 
 `--originator`/`--by` are now REQUIRED on every write verb — no default, see above.
+
+**Threads, escalation #2000 (2026-10-12)** -- the open threads register carried in this table as
+type='thread' (alias OT-nn). Design: `_analytics/cross-cluster-web/open-threads-table-proposal-v3-
+20261012.md`; rules T0-T9 in config (see the THREADS section below). Child tables
+`escalation_thread_item` (current status only) and `escalation_thread_item_response` (every
+response, each completion included). New verbs: `match` (T1) and `thread-check` (T5); `raise`
+gains --state (T2, manual raise only -- `raise_()` keeps 'raised'), --comes-back-when and
+repeatable --item; `update` gains --item/--response-kind/--respond/--via/--file and --add-item;
+every <id> also takes the alias. Reports (dispatched through run.py): `write_thread_report`
+(-Action Thread) and `write_thread_register` (-Action Export -Type thread).
 """
 
 from __future__ import annotations
@@ -129,16 +139,20 @@ from .cfg import Cfg
 from .db import Db
 
 _OPEN_STATES = ("raised", "re-assigned", "on-hold", "in-progress")
+_TERMINAL_STATES = ("completed", "closed", "withdraw", "supersede")
+_THREAD_OPEN_STATES = ("on-hold", "in-progress")    # a thread never sits at raised (T2)
 
 # every business column on `escalation` / `escalation_history` (id/version/escalation_id excluded
 # -- those are structural, not part of a snapshot's business content)
 # D14/D15 RETIRED 2026-08-27 (escalation #909): from_id and related_activity both removed from
 # these tuples (and from the tables themselves) -- see the module docstring's retirement banner.
+# escalation #2000 (2026-10-12): `alias` (OT-nn, threads only) is immutable like type/raised_at;
+# `comes_back_when` is a replace column like tried/resolution.
 _ENVELOPE_COLS = ("state", "next_action", "next_action_assigned_to", "originator", "answered_at",
                  "resolution_kind", "needs_claude_followup")
 _APPEND_COLS = ("comment", "context")            # escalation: cumulative. history: raw increment.
-_REPLACE_COLS = ("resolution", "tried", "short_description")
-_IMMUTABLE_COLS = ("run_id", "source", "at_step", "type", "raised_at")
+_REPLACE_COLS = ("resolution", "tried", "short_description", "comes_back_when")
+_IMMUTABLE_COLS = ("run_id", "source", "at_step", "type", "raised_at", "alias")
 _COLS = _ENVELOPE_COLS + _APPEND_COLS + _REPLACE_COLS + _IMMUTABLE_COLS
 
 
@@ -246,13 +260,25 @@ def _status_for(db: Db, set_by_substr: str, fallback: str) -> str:
 # ── the config-driven state-derivation rule engine ───────────────────────────────────────────────
 def _condition_true(condition_key: str, *, next_action: str | None, has_resolution: bool,
                     assignee_changed: bool, has_explicit_state: bool = False,
-                    needs_followup: bool = False, cur_next_action: str | None = None) -> bool:
+                    needs_followup: bool = False, cur_next_action: str | None = None,
+                    thread: dict | None = None) -> bool:
     """The fixed, small vocabulary cfg_escalation_transition.condition_key draws from -- see
     escalation-rebuild-design-v1-20260820.md sec2.4. A new condition needs a code change here
     (a new named boolean); which RULE consumes it, in what priority, with what resulting status,
-    is config from that point on."""
+    is config from that point on.
+
+    `thread` (escalation #2000) is None for every non-thread item, so the two thread conditions
+    are always false for them. For a thread it carries: items_changed (an item added, closed or
+    reopened this call, or the state of the work an 'escalation' item references changed),
+    closed_some (an item closed this call), open_remaining (open items after this call) and
+    referenced (an open 'escalation' item points at a task/issue at state in-progress)."""
     if condition_key == "always":
         return True
+    if condition_key == "thread_items_changed_and_referenced":          # T3/T5
+        return bool(thread and thread["items_changed"] and thread["referenced"])
+    if condition_key == "thread_items_changed_partly_closed":           # T6, partial completion
+        return bool(thread and thread["closed_some"] and thread["open_remaining"]
+                    and not thread["referenced"])
     if condition_key == "has_resolution":
         return bool(has_resolution)
     if condition_key == "assignee_changed":
@@ -286,7 +312,7 @@ def _condition_true(condition_key: str, *, next_action: str | None, has_resoluti
 def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_resolution: bool,
                          assignee_changed: bool, explicit_state: str | None,
                          cur_state: str, needs_followup: bool = False,
-                         cur_next_action: str | None = None) -> str:
+                         cur_next_action: str | None = None, thread: dict | None = None) -> str:
     """Reads cfg_escalation_transition for `shape`, in priority order, first match wins -- replaces
     the old hardcoded if/elif chain. `resulting_status_key` of `__explicit__` means the reject
     branch: state comes from the caller's own choice, validated here (withdraw|supersede only).
@@ -310,7 +336,8 @@ def _evaluate_transition(db: Db, shape: str, next_action: str | None, *, has_res
         if not _condition_true(r["condition_key"], next_action=next_action,
                                has_resolution=has_resolution, assignee_changed=assignee_changed,
                                has_explicit_state=explicit_state is not None,
-                               needs_followup=needs_followup, cur_next_action=cur_next_action):
+                               needs_followup=needs_followup, cur_next_action=cur_next_action,
+                               thread=thread):
             continue
         key = r["resulting_status_key"]
         if key == "__explicit__":
@@ -337,6 +364,8 @@ def _requirement_condition_true(condition_key: str, *, originator: str, checked_
         return originator == "Claude" and checked_action == "revise"
     if condition_key == "has_content":                         # D26
         return bool(values.get("comment") or values.get("context") or values.get("tried"))
+    if condition_key == "thread_type":                         # escalation #2000 (T4/T6/T7)
+        return values.get("type") == "thread"
     raise ValueError(f"unknown cfg_escalation_requirement.condition_key {condition_key!r}")
 
 
@@ -475,6 +504,21 @@ def _check_requirements(db: Db, action: str, *, originator: str, checked_action:
                             and cur_assignee == "Claude" and new_assignee == "Researcher"
                             and new_next_action != "ready_for_approval"):
                         raise ValueError(r["message"])
+        elif kind == "must_be_self_correctable":
+            # escalation #2000 T4 (researcher, round 1: "I am ok if threads are assigned as
+            # self-correctable"): every thread is raised self_correctable.
+            if field_val != "self_correctable":
+                raise ValueError(r["message"])
+        elif kind == "no_open_thread_items":
+            # escalation #2000 T6: a thread reaches completed/closed only when every item is
+            # closed. `field` is 'state' -- the state this call would land on. Items written
+            # earlier in the same call (a last item closed together with approved) are already
+            # visible here: same connection, same transaction.
+            if self_id is not None and field_val in ("completed", "closed"):
+                n_open = db.rows("SELECT COUNT(*) AS n FROM escalation_thread_item WHERE "
+                                 "escalation_id=? AND status='open'", (self_id,))[0]["n"]
+                if n_open:
+                    raise ValueError(f"{r['message']} ({n_open} open item(s) on #{self_id})")
         else:
             raise ValueError(f"unknown cfg_escalation_requirement.check_kind {kind!r}")
 
@@ -564,6 +608,344 @@ def _last_next_action_assigned_to(db: Db, escalation_id: int, next_action: str) 
         "SELECT next_action_assigned_to FROM escalation_history WHERE escalation_id=? AND "
         "next_action=? ORDER BY version DESC LIMIT 1", (escalation_id, next_action))
     return rows[0]["next_action_assigned_to"] if rows else None
+
+
+# ── THREADS (type='thread', escalation #2000) ────────────────────────────────────────────────────
+# The open threads register carried in the escalation table. Design: _analytics/cross-cluster-web/
+# open-threads-table-proposal-v3-20261012.md (rounds 1-6). Rules T0-T9 live in config:
+# cfg_escalation (thread_check_before_work, raise_state_choice, thread_completion, 4 amended),
+# cfg_escalation_transition (priority 0, the two thread_* condition keys),
+# cfg_escalation_requirement (thread_type rows), cfg_behaviour_rule
+# open-threads-carried-as-escalations. A thread's items (escalation_thread_item) hold current status
+# only; every response, including each completion, is an escalation_thread_item_response row.
+
+def resolve_id(db: Db, ref) -> int:
+    """An escalation id from `ref`: 2000, '2000', '#2000', or a thread alias 'OT-16' (any case).
+    Escalation.ps1 -Id accepts the alias anywhere an id is taken (proposal sec5)."""
+    s = str(ref).strip()
+    if s.startswith("#"):
+        s = s[1:]
+    if s.isdigit():
+        return int(s)
+    rows = db.rows("SELECT id FROM escalation WHERE alias=? COLLATE NOCASE", (s,))
+    if not rows:
+        raise ValueError(f"no escalation with id or alias {ref!r}")
+    return rows[0]["id"]
+
+
+def _next_alias(db: Db) -> str:
+    rows = db.rows("SELECT MAX(CAST(substr(alias, 4) AS INTEGER)) AS n FROM escalation "
+                   "WHERE alias LIKE 'OT-%'")
+    return f"OT-{(rows[0]['n'] or 0) + 1:02d}"
+
+
+def parse_item_spec(spec: str) -> tuple[str, str, str | None]:
+    """'kind:value[:note]' -> (kind, value, note). The value may itself hold a colon (a verse,
+    'Rom 7:15-21'), so the note is split off only on ' :: ' -- 'verse:Rom 7:15-21 :: 7 verses'."""
+    if ":" not in spec:
+        raise ValueError(f"item {spec!r} must be kind:value (e.g. cluster:M72, verse:Rom 7:15)")
+    kind, rest = spec.split(":", 1)
+    note = None
+    if " :: " in rest:
+        rest, note = rest.split(" :: ", 1)
+    return kind.strip().lower(), rest.strip(), (note.strip() if note else None)
+
+
+def _thread_items(db: Db, escalation_id: int, status: str | None = None):
+    if status:
+        return db.rows("SELECT * FROM escalation_thread_item WHERE escalation_id=? AND status=? "
+                       "ORDER BY item_no", (escalation_id, status))
+    return db.rows("SELECT * FROM escalation_thread_item WHERE escalation_id=? ORDER BY item_no",
+                   (escalation_id,))
+
+
+def _add_item(cfg: Cfg, db: Db, escalation_id: int, kind: str, value: str, note: str | None,
+              *, opened_by: int | None, at: str) -> dict:
+    _grant(cfg, "escalation_thread_item")
+    if kind not in db.cfg.enum("escalation_thread_item_kind"):
+        raise ValueError(f"{kind!r} is not a member of cfg_enum 'escalation_thread_item_kind' "
+                         f"({db.cfg.enum('escalation_thread_item_kind')!r})")
+    if not value:
+        raise ValueError("an item needs a value (kind:value)")
+    dup = db.rows("SELECT item_no, status FROM escalation_thread_item WHERE escalation_id=? AND "
+                  "kind=? AND value=? COLLATE NOCASE", (escalation_id, kind, value))
+    if dup:
+        raise ValueError(f"item {kind}:{value} already exists on #{escalation_id} as item "
+                         f"{dup[0]['item_no']} ({dup[0]['status']}) -- respond to it instead "
+                         f"(-ResponseKind reopened if it is closed)")
+    n = db.rows("SELECT COALESCE(MAX(item_no), 0) + 1 AS n FROM escalation_thread_item "
+                "WHERE escalation_id=?", (escalation_id,))[0]["n"]
+    row = {"escalation_id": escalation_id, "item_no": n, "kind": kind, "value": value,
+           "status": "open", "note": note, "opened_at": at, "opened_by": opened_by}
+    row["id"] = db.write("escalation_thread_item", row)
+    return row
+
+
+def _resolve_item(db: Db, thread: dict, ref: str):
+    """An item of `thread` from `ref` (proposal sec3.4): 'OT-16.1' (alias must be this thread's),
+    '1' (the item number), 'kind:value', or the value alone (unique within the thread)."""
+    s = ref.strip()
+    alias = thread["alias"] or ""
+    if alias and s.upper().startswith(alias.upper() + "."):
+        s = s[len(alias) + 1:]
+    elif s.upper().startswith("OT-") and "." in s:
+        raise ValueError(f"item {ref!r} does not belong to {alias or '#' + str(thread['id'])}")
+    if s.isdigit():
+        rows = db.rows("SELECT * FROM escalation_thread_item WHERE escalation_id=? AND item_no=?",
+                       (thread["id"], int(s)))
+    elif ":" in s and s.split(":", 1)[0].lower() in db.cfg.enum("escalation_thread_item_kind"):
+        kind, value = s.split(":", 1)
+        rows = db.rows("SELECT * FROM escalation_thread_item WHERE escalation_id=? AND kind=? "
+                       "AND value=? COLLATE NOCASE", (thread["id"], kind.lower(), value.strip()))
+    else:
+        rows = db.rows("SELECT * FROM escalation_thread_item WHERE escalation_id=? AND "
+                       "value=? COLLATE NOCASE", (thread["id"], s))
+    if len(rows) != 1:
+        raise ValueError(f"item {ref!r} on {alias or '#' + str(thread['id'])}: "
+                         f"{'not found' if not rows else 'ambiguous -- use the item number'}")
+    return dict(rows[0])
+
+
+def _respond(cfg: Cfg, db: Db, item: dict, kind: str, text: str, *, via: int | None, by: str,
+             files: list | None, at: str) -> None:
+    """One response row; 'closed'/'reopened' also set the item's status (ruling 7: every
+    individual completion is recorded in the response table)."""
+    _grant(cfg, "escalation_thread_item_response")
+    if kind not in db.cfg.enum("escalation_thread_item_response_kind"):
+        raise ValueError(f"{kind!r} is not a member of cfg_enum "
+                         f"'escalation_thread_item_response_kind' "
+                         f"({db.cfg.enum('escalation_thread_item_response_kind')!r})")
+    if not text:
+        raise ValueError("a response needs its text (-Respond); a researcher's response is quoted "
+                         "verbatim (cfg_escalation 5)")
+    statuses = db.cfg.enum("escalation_thread_item_status")         # open / closed
+    if item["status"] not in statuses:
+        raise ValueError(f"item {item['item_no']} has status {item['status']!r}, not a member of "
+                         f"cfg_enum 'escalation_thread_item_status' ({statuses!r})")
+    if kind == "closed":
+        if item["status"] == "closed":
+            raise ValueError(f"item {item['item_no']} ({item['kind']}:{item['value']}) is already "
+                             f"closed")
+        db.update("escalation_thread_item", {"id": item["id"]}, status="closed")
+    elif kind == "reopened":
+        if item["status"] == "open":
+            raise ValueError(f"item {item['item_no']} ({item['kind']}:{item['value']}) is already "
+                             f"open")
+        db.update("escalation_thread_item", {"id": item["id"]}, status="open")
+    db.write("escalation_thread_item_response", {
+        "item_id": item["id"], "escalation_id": item["escalation_id"], "kind": kind, "text": text,
+        "via_escalation": via, "responded_by": by, "responded_at": at,
+        "files": json.dumps(files, ensure_ascii=False) if files else None})
+
+
+def _thread_referenced(db: Db, escalation_id: int) -> bool:
+    """T5 (round 2, 'in-progress only'): an open 'escalation' item points at a task or issue that
+    is itself at state in-progress."""
+    for it in _thread_items(db, escalation_id, "open"):
+        if it["kind"] != "escalation":
+            continue
+        try:
+            ref_id = resolve_id(db, it["value"])
+        except ValueError:
+            continue
+        rows = db.rows("SELECT state FROM escalation WHERE id=?", (ref_id,))
+        if rows and rows[0]["state"] == "in-progress":
+            return True
+    return False
+
+
+def _thread_facts(db: Db, escalation_id: int, *, items_changed: bool, closed_some: bool) -> dict:
+    return {"items_changed": items_changed, "closed_some": closed_some,
+            "open_remaining": len(_thread_items(db, escalation_id, "open")),
+            "referenced": _thread_referenced(db, escalation_id)}
+
+
+def _restate_thread(cfg: Cfg, db: Db, thread_id: int, summary: str, *, who: str,
+                    closed_some: bool) -> str | None:
+    """Re-derive a thread's state after its items, or the work they reference, changed outside an
+    Update of the thread itself (a Match, a referenced task changing state). Same config rows as
+    update(): the two priority-0 thread rows, else unchanged. Writes one history version carrying
+    `summary` (ruling 8: notes on a thread land in history). Returns the new state, or None when
+    the thread is not open."""
+    cur = _current(db, thread_id)
+    if cur["state"] not in _THREAD_OPEN_STATES:
+        return None
+    facts = _thread_facts(db, thread_id, items_changed=True, closed_some=closed_some)
+    new_state = _evaluate_transition(db, "manual", None, has_resolution=bool(cur["resolution"]),
+                                     assignee_changed=False, explicit_state=None,
+                                     cur_state=cur["state"],
+                                     needs_followup=bool(cur["needs_claude_followup"]),
+                                     cur_next_action=cur["next_action"], thread=facts)
+    if new_state not in _THREAD_OPEN_STATES:
+        new_state = cur["state"]
+    _snapshot(cfg, db, thread_id, deltas={"comment": summary},
+              envelope={"state": _check_state(db, new_state), "next_action": cur["next_action"],
+                        "next_action_assigned_to": cur["next_action_assigned_to"],
+                        "resolution_kind": cur["resolution_kind"],
+                        "needs_claude_followup": cur["needs_claude_followup"]},
+              originator=who)
+    return new_state
+
+
+def _sync_threads_for(cfg: Cfg, db: Db, ref_id: int, *, who: str) -> list[str]:
+    """After a task or issue changes, bring every thread that references it (an open 'escalation'
+    item '#ref_id') into line -- T6: when the task or issue reaches a terminal state its item
+    closes, with a note of what it settled (round 2: it may close without resolving its threads);
+    T3/T5: a thread follows the in-progress state of the work that references it."""
+    ref = _current(db, ref_id)
+    if ref["type"] == "thread":
+        return []
+    out = []
+    items = db.rows("SELECT i.* FROM escalation_thread_item i JOIN escalation e ON "
+                    "e.id=i.escalation_id WHERE i.kind='escalation' AND i.status='open' AND "
+                    "i.value=? AND e.type='thread'", (f"#{ref_id}",))
+    now = _now()
+    for it in items:
+        it = dict(it)
+        thread = _current(db, it["escalation_id"])
+        label = thread["alias"] or f"#{thread['id']}"
+        if ref["state"] in _TERMINAL_STATES:
+            settled = (ref["resolution"] or "").strip().replace("\n", " ")
+            text = (f"#{ref_id} reached {ref['state']}"
+                    + (f": {settled[:400]}{'…' if len(settled) > 400 else ''}" if settled else ""))
+            _respond(cfg, db, it, "closed", text, via=ref_id, by=who, files=None, at=now)
+            st = _restate_thread(cfg, db, thread["id"],
+                                 f"{label}: item {it['item_no']} (#{ref_id}) closed -- #{ref_id} "
+                                 f"reached {ref['state']} (T6)", who=who, closed_some=True)
+        else:
+            # T5 moves on-hold -> in-progress only. A thread already in-progress is left alone when
+            # its work steps back (no rule moves it; T6 handles completion).
+            if not (thread["state"] == "on-hold" and ref["state"] == "in-progress"):
+                continue
+            st = _restate_thread(cfg, db, thread["id"],
+                                 f"{label}: #{ref_id} is now {ref['state']} (T3/T5)", who=who,
+                                 closed_some=False)
+        if st:
+            out.append(f"{label} (#{thread['id']}) -> {st}")
+    return out
+
+
+# ── matching (T1) ──
+import re as _re
+
+_VERSE_RE = _re.compile(r"^\s*(?P<book>\d?\s*[A-Za-z]+)\.?\s+(?P<ch>\d+)"
+                        r"(?::(?P<v1>\d+)(?:\s*[-–—]\s*(?P<v2>\d+))?)?\s*$")
+
+
+def _parse_verse(s: str):
+    m = _VERSE_RE.match(s)
+    if not m:
+        return None
+    v1 = int(m["v1"]) if m["v1"] else None
+    v2 = int(m["v2"]) if m["v2"] else v1
+    return (m["book"].replace(" ", "").lower(), int(m["ch"]), v1, v2)
+
+
+def _code_parts(code: str, pattern: str):
+    m = _re.match(pattern, code.strip(), _re.IGNORECASE)
+    return (m.group(1).upper(), (m.group(2) or "").lower()) if m else None
+
+
+def _code_match(item_value: str, query: str, pattern: str, norm=lambda b: b) -> bool:
+    """Exact code, else the same base when either side has no suffix (M10 <-> M10c,
+    H7067 <-> H7067G); two different suffixes never match."""
+    a, b = _code_parts(item_value, pattern), _code_parts(query, pattern)
+    if not a or not b or norm(a[0]) != norm(b[0]):
+        return False
+    return a[1] == b[1] or not a[1] or not b[1]
+
+
+def _strong_norm(base: str) -> str:
+    return base[0] + base[1:].zfill(4)       # reference_strongs_zero_padded_4digit_in_db
+
+
+def _verse_match(item_value: str, query: str) -> bool:
+    """A verse matches inside a range (either side may be a range), and a whole-chapter item
+    ('Rom 8') matches any verse of that chapter."""
+    a, b = _parse_verse(item_value), _parse_verse(query)
+    if not a or not b or a[0] != b[0] or a[1] != b[1]:
+        return False
+    if a[2] is None or b[2] is None:
+        return True
+    return a[2] <= b[3] and b[2] <= a[3]
+
+
+def match_threads(cfg: Cfg, db: Db, *, clusters=(), strongs=(), verses=(), for_ref=None,
+                  who: str | None = None) -> list[str]:
+    """T1. Matches clusters / Strong's / verses against the open items of every thread not
+    completed. Read-only unless `for_ref` names the task or issue the match is for: then each
+    matched thread gains an 'escalation' item '#nnnn' (unless one is already open), and T3/T5
+    re-derive its state -- in-progress only if that task or issue is itself in-progress."""
+    for_id = resolve_id(db, for_ref) if for_ref is not None else None
+    if for_id is not None:
+        target = _current(db, for_id)
+        if target["type"] == "thread":
+            raise ValueError(f"-For must be a task or issue, not a thread (#{for_id})")
+        if target["state"] not in _OPEN_STATES:
+            raise ValueError(f"-For #{for_id} is not open (state={target['state']!r})")
+        who = _check_assignee(db, who)
+    if not (clusters or strongs or verses):
+        raise ValueError("Match needs at least one -Cluster, -Strong or -Verse")
+    ph = ",".join("?" * len(_THREAD_OPEN_STATES))
+    threads = db.rows(f"SELECT * FROM escalation WHERE type='thread' AND state IN ({ph}) "
+                      f"ORDER BY CAST(substr(alias, 4) AS INTEGER)", _THREAD_OPEN_STATES)
+    lines, now = [], _now()
+    for t in threads:
+        hits = []
+        for it in _thread_items(db, t["id"], "open"):
+            v = it["value"]
+            if it["kind"] == "cluster":
+                hits += [f"{it['item_no']} {v} ({q})" for q in clusters
+                         if _code_match(v, q, r"^(M\d+)([a-z]*)$")]
+            elif it["kind"] == "strong":
+                hits += [f"{it['item_no']} {v} ({q})" for q in strongs
+                         if _code_match(v, q, r"^([HG]\d+)([A-Z]*)$", _strong_norm)]
+            elif it["kind"] == "verse":
+                hits += [f"{it['item_no']} {v} ({q})" for q in verses if _verse_match(v, q)]
+        if not hits:
+            continue
+        label = f"{t['alias']} · #{t['id']}"
+        line = f"{label} [{t['state']}] {t['short_description']} -- items {'; '.join(hits)}"
+        if for_id is not None:
+            existing = db.rows("SELECT * FROM escalation_thread_item WHERE escalation_id=? AND "
+                               "kind='escalation' AND value=?", (t["id"], f"#{for_id}"))
+            matched = ", ".join(h.split(" (")[0] for h in hits)
+            if existing and existing[0]["status"] == "open":
+                line += f" -- #{for_id} already referenced (item {existing[0]['item_no']})"
+            else:
+                if existing:
+                    _respond(cfg, db, dict(existing[0]), "reopened",
+                             f"matched again by #{for_id}: items {matched}", via=for_id, by=who,
+                             files=None, at=now)
+                    n = existing[0]["item_no"]
+                else:
+                    n = _add_item(cfg, db, t["id"], "escalation", f"#{for_id}",
+                                  f"matched: items {matched}", opened_by=for_id, at=now)["item_no"]
+                st = _restate_thread(cfg, db, t["id"],
+                                     f"{t['alias']}: item {n} #{for_id} added -- matched items "
+                                     f"{matched} (T1)", who=who, closed_some=False)
+                line += f" -- item {t['alias']}.{n} #{for_id} recorded; thread {st}"
+        lines.append(line)
+    return lines
+
+
+def thread_check(cfg: Cfg, db: Db, *, who: str) -> list[str]:
+    """T5, run at session start (.claude/commands/start-project.md step 4B): every open thread
+    referenced by a task or issue is brought into line with that work -- moved to in-progress when
+    the work is in-progress, its item closed when the work has reached a terminal state."""
+    who = _check_assignee(db, who)
+    refs = db.rows("SELECT DISTINCT i.value FROM escalation_thread_item i JOIN escalation e ON "
+                   "e.id=i.escalation_id WHERE i.kind='escalation' AND i.status='open' AND "
+                   "e.type='thread' AND e.state IN ('on-hold','in-progress')")
+    out = []
+    for r in refs:
+        try:
+            ref_id = resolve_id(db, r["value"])
+        except ValueError:
+            out.append(f"item value {r['value']!r} names no escalation -- left as is")
+            continue
+        out += _sync_threads_for(cfg, db, ref_id, who=who)
+    return out
 
 
 # ── DISPATCHER-TIED shape (run_id set) -- vocabulary/semantics unchanged, engine now config-driven
@@ -835,7 +1217,9 @@ def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str 
              comment: str | None = None, context: str | None = None,
              assigned_to: str = "Claude", resolution_kind: str | None = None,
              needs_followup: bool = False,
-             *, originator: str) -> int:
+             *, originator: str, state: str | None = None,
+             comes_back_when: str | None = None,
+             items: list[tuple[str, str, str | None]] | None = None) -> int:
     """Raise -- a new MANUAL item. `originator` is required, no default. `comment`/
     `short_description` requirements come from cfg_escalation_requirement (action='raise').
 
@@ -859,21 +1243,46 @@ def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str 
     `needs_followup` (escalation #1075, 2026-08-30): set when finishing this item will require a
     further action from Claude AFTER the researcher approves it (a config apply, a build step) --
     consumed by cfg_escalation_transition so `approved` routes back to Claude instead of straight to
-    `completed`. Defaults False -- most items need nothing further."""
+    `completed`. Defaults False -- most items need nothing further.
+
+    escalation #2000 (2026-10-12):
+    - `state` (T2, cfg_escalation raise_state_choice): a manual Raise may land at any member of
+      cfg_enum escalation_raise_state (raised / on-hold / in-progress); default 'raised'. Offered
+      here only -- the code path `raise_()` keeps 'raised', so module_blocking still fires.
+    - type 'thread': `items` (kind, value, note) are required (T7), resolution_kind must be
+      self_correctable (T4), the alias OT-nn is assigned automatically, the state defaults to
+      on-hold and may not be 'raised', and next_action is left empty (a thread is not waiting on
+      review). `comes_back_when` holds the thread's whole 'comes back when' text."""
     checked_type = _check_type(db, etype)
     checked_kind = _check_resolution_kind(db, resolution_kind) if resolution_kind else None
+    is_thread = checked_type == "thread"
     _check_requirements(db, "raise", originator=originator or "", checked_action=None,
                         values={"comment": comment, "short_description": short_description,
-                               "resolution_kind": checked_kind})
+                               "resolution_kind": checked_kind, "type": checked_type,
+                               "items": items or []})
+    if items and not is_thread:
+        raise ValueError("-Item is for type thread only")
     title_error = _title_shape_error(short_description)
     if title_error:
         raise ValueError(title_error)
+    if state is not None:
+        if state not in db.cfg.enum("escalation_raise_state"):
+            raise ValueError(f"{state!r} is not a member of cfg_enum 'escalation_raise_state' "
+                             f"({db.cfg.enum('escalation_raise_state')!r})")
+        if checked_type == "notice":
+            raise ValueError("a notice closes on arrival (D12) -- no -State at Raise")
+    if is_thread and state == "raised":
+        raise ValueError("a thread is raised at on-hold or in-progress, never 'raised' "
+                         "(cfg_escalation raise_state_choice)")
     run_id = f"MANUAL-{datetime.datetime.now(datetime.timezone.utc).strftime('%Y%m%d_%H%M%S_%f')}"
     now = _now()
     if checked_type == "notice":
         state, next_action = _check_state(db, "closed"), None
+    elif is_thread:
+        state, next_action = _check_state(db, state or "on-hold"), None
     else:
-        state, next_action = _check_state(db, _status_for(db, "at Raise", "raised")), "review"
+        state = _check_state(db, state or _status_for(db, "at Raise", "raised"))
+        next_action = "review"
     fields = {
         "run_id": run_id, "source": source, "at_step": "manual", "type": checked_type,
         "short_description": short_description, "context": context, "comment": comment,
@@ -881,14 +1290,23 @@ def raise_new(cfg: Cfg, db: Db, short_description: str, source: str, etype: str 
         "answered_at": now, "raised_at": now, "resolution": None,
         "resolution_kind": checked_kind, "needs_claude_followup": int(needs_followup),
         "next_action_assigned_to": _check_assignee(db, assigned_to),
-        "originator": _check_assignee(db, originator)}
-    return _create(cfg, db, **fields)
+        "originator": _check_assignee(db, originator),
+        "alias": _next_alias(db) if is_thread else None,
+        "comes_back_when": comes_back_when}
+    new_id = _create(cfg, db, **fields)
+    for kind, value, note in items or []:
+        _add_item(cfg, db, new_id, kind, value, note, opened_by=None, at=now)
+    return new_id
 
 
 def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = None,
           next_action_assigned_to: str | None = None, comment: str | None = None,
           context: str | None = None, tried: str | None = None, resolution: str | None = None,
-          state: str | None = None, needs_followup: bool | None = None, originator: str) -> str:
+          state: str | None = None, needs_followup: bool | None = None, originator: str,
+          comes_back_when: str | None = None,
+          add_items: list[tuple[str, str, str | None]] | None = None,
+          item_refs: list[str] | None = None, respond: str | None = None,
+          response_kind: str | None = None, via=None, files: list | None = None) -> str:
     """Update -- every subsequent change to a MANUAL item. `originator` is required, no default.
     Two-stage approval separation of duties: the party that sets `approved` must differ from the
     party that most recently set `ready_for_approval` on this item.
@@ -904,7 +1322,16 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     approved vocabulary, regardless of which shape raised it (`cfg_behaviour_rule
     'decision-points-are-terminal-not-inline'`). A dispatcher-tied `self_correctable` item still
     has no `Update`/`AnswerRun` path at all -- see `resolve_self_correctable()`/
-    `escalate_to_decision()` instead."""
+    `escalate_to_decision()` instead.
+
+    Threads (escalation #2000, proposal sec3.3): `item_refs` + `response_kind` + `respond` (+ `via`,
+    `files`) record one response per named item, all sharing one `via`; `closed` closes the item,
+    `reopened` opens it again, and `forward` needs at least one `add_items` entry (the forward mark
+    becomes a matchable item). `add_items` alone adds items. Each such Update also writes a
+    one-line summary into the thread's history (ruling 8). The thread's state then follows the
+    priority-0 cfg_escalation_transition rows (T3/T5, T6); completed/closed is refused while any
+    item is open (T6). After any change to a task or issue, every thread referencing it is brought
+    into line (`_sync_threads_for`)."""
     cur = _current(db, escalation_id)
     if not cur["run_id"].startswith("MANUAL-") and cur["resolution_kind"] != "decision_required":
         return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
@@ -973,13 +1400,44 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
         _check_requirements(db, "revise", originator=who, checked_action=checked_action,
                             values={"tried": tried})
 
+    # ── thread items and responses (escalation #2000) -- written before the state is derived, in
+    # the same transaction, so the transition rows and the T6 check see this call's changes.
+    is_thread = cur["type"] == "thread"
+    thread_facts, item_summary = None, []
+    if (add_items or item_refs or respond or response_kind) and not is_thread:
+        raise ValueError("-Item/-AddItem/-Respond/-ResponseKind are for type thread only")
+    if is_thread:
+        if (item_refs or respond or response_kind) and not (item_refs and respond and response_kind):
+            raise ValueError("an item response needs all three: -Item, -ResponseKind and -Respond "
+                             "(a response about the whole thread is a plain -Comment)")
+        if response_kind == "forward" and not add_items:
+            raise ValueError("a forward response adds the forward mark as a new item: give "
+                             "-AddItem kind:value (e.g. cluster:M03) with it")
+        via_id = resolve_id(db, via) if via is not None else None
+        now = _now()
+        targets = [_resolve_item(db, cur, r) for r in item_refs or []]
+        for it in targets:
+            _respond(cfg, db, it, response_kind, respond, via=via_id, by=who, files=files, at=now)
+            item_summary.append(f"item {it['item_no']} ({it['kind']}:{it['value']}) "
+                                f"{response_kind}")
+        for kind, value, note in add_items or []:
+            new_item = _add_item(cfg, db, escalation_id, kind, value, note, opened_by=via_id, at=now)
+            item_summary.append(f"item {new_item['item_no']} {kind}:{value} added")
+        changed = bool(add_items) or response_kind in ("closed", "reopened")
+        thread_facts = _thread_facts(db, escalation_id, items_changed=changed,
+                                     closed_some=response_kind == "closed")
+        if item_summary:
+            line = (f"{cur['alias'] or '#' + str(escalation_id)}: " + "; ".join(item_summary)
+                    + (f" (via #{via_id})" if via_id else ""))
+            comment = f"{comment}\n{line}" if comment else line
+
     assignee_changed = bool(next_action_assigned_to) and next_action_assigned_to != cur["next_action_assigned_to"]
     # resolved_needs_followup now computed earlier, above -- the forced-reassignment rule needs it
     # before this point.
     new_state = _evaluate_transition(db, "manual", checked_action, has_resolution=bool(new_resolution),
                                      assignee_changed=assignee_changed, explicit_state=state,
                                      cur_state=cur["state"], needs_followup=bool(resolved_needs_followup),
-                                     cur_next_action=cur["next_action"])
+                                     cur_next_action=cur["next_action"], thread=thread_facts)
 
     # D26 (register v9): work cannot land on a `raised` item -- comment/context/tried content
     # requires the state to actually move first (e.g. -State in-progress), mechanically enforced
@@ -987,12 +1445,13 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     _check_requirements(db, "update", originator=who, checked_action=checked_action,
                         values={"state": new_state, "comment": comment, "context": context,
                                "tried": tried, "next_action": next_action,
-                               "next_action_assigned_to": resolved_assignee},
+                               "next_action_assigned_to": resolved_assignee,
+                               "type": cur["type"]},
                         self_id=escalation_id)
 
     merged = _snapshot(cfg, db, escalation_id,
                        deltas={"comment": comment, "context": context, "tried": tried,
-                              "resolution": resolution},
+                              "resolution": resolution, "comes_back_when": comes_back_when},
                        envelope={
                            "next_action": checked_action if checked_action is not None else cur["next_action"],
                            "next_action_assigned_to": resolved_assignee,
@@ -1003,9 +1462,16 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     # researcher, 2026-08-31: the old message showed only state (e.g. "-> state='re-assigned'"),
     # leaving next_action invisible -- ambiguous, since 're-assigned' alone doesn't say WHAT it was
     # re-assigned by (approved? a plain reassignment?). Show both.
-    return (f"escalation #{escalation_id} v{merged['version']} -> "
+    msg = (f"escalation #{escalation_id} v{merged['version']} -> "
            f"state={new_state!r}, next_action={merged['next_action']!r}, "
            f"assigned_to={merged['next_action_assigned_to']!r}")
+    if item_summary:
+        msg += "\n  " + "; ".join(item_summary)
+    if not is_thread:
+        synced = _sync_threads_for(cfg, db, escalation_id, who=who)
+        if synced:
+            msg += "\n  threads: " + "; ".join(synced)
+    return msg
 
 
 def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str | None = None,
@@ -1071,9 +1537,11 @@ def correction(cfg: Cfg, db: Db, escalation_id: int, *, short_description: str |
                                 "resolution_kind": cur["resolution_kind"],
                                 "needs_claude_followup": cur["needs_claude_followup"]},
                        originator=who)
+    synced = _sync_threads_for(cfg, db, escalation_id, who=who)       # escalation #2000
     return (f"escalation #{escalation_id} v{merged['version']} CORRECTED -> "
            f"state={resolved_state!r}, next_action={resolved_next_action!r}, "
-           f"assigned_to={resolved_assigned_to!r}")
+           f"assigned_to={resolved_assigned_to!r}"
+           + ("\n  threads: " + "; ".join(synced) if synced else ""))
 
 
 # ── resolution_kind transactions (escalation #798/#799) ─────────────────────────────────────────
@@ -1092,8 +1560,10 @@ def resolve_self_correctable(cfg: Cfg, db: Db, escalation_id: int, resolution: s
     if not resolution:
         raise ValueError("resolution is required -- state what was wrong and what changed")
     who = _check_assignee(db, originator)
+    # values (escalation #2000): type + the state this lands on, so the T6 row
+    # (no_open_thread_items, condition thread_type) can refuse a thread with open items.
     _check_requirements(db, "resolve_self_correctable", originator=who, checked_action=None,
-                        values={}, self_id=escalation_id)
+                        values={"type": cur["type"], "state": "completed"}, self_id=escalation_id)
     merged = _snapshot(cfg, db, escalation_id,
                        deltas={"resolution": resolution},
                        envelope={"state": _check_state(db, "completed"), "next_action": None,
@@ -1101,7 +1571,9 @@ def resolve_self_correctable(cfg: Cfg, db: Db, escalation_id: int, resolution: s
                                 "resolution_kind": "self_correctable",
                                 "needs_claude_followup": cur["needs_claude_followup"]},
                        originator=who)
-    return f"escalation #{escalation_id} v{merged['version']} resolved (self_correctable) -> completed"
+    msg = f"escalation #{escalation_id} v{merged['version']} resolved (self_correctable) -> completed"
+    synced = _sync_threads_for(cfg, db, escalation_id, who=who)
+    return msg + ("\n  threads: " + "; ".join(synced) if synced else "")
 
 
 def escalate_to_decision(cfg: Cfg, db: Db, escalation_id: int, tried: str,
@@ -1131,8 +1603,9 @@ def escalate_to_decision(cfg: Cfg, db: Db, escalation_id: int, tried: str,
                                 "resolution_kind": "decision_required",
                                 "needs_claude_followup": cur["needs_claude_followup"]},
                        originator=who)
+    synced = _sync_threads_for(cfg, db, escalation_id, who=who)       # escalation #2000
     return (f"escalation #{escalation_id} v{merged['version']} converted to decision_required "
-           f"(state={new_state!r})")
+           f"(state={new_state!r})" + ("\n  threads: " + "; ".join(synced) if synced else ""))
 
 
 # ── reports ───────────────────────────────────────────────────────────────────────────────────
@@ -1155,9 +1628,13 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
     cumulative gist (escalation-rebuild-design-v1 sec4.2).
 
     No longer grouped by `related_activity` (D14/D15 retired 2026-08-27, escalation #909, see
-    module docstring) -- straight `id` order."""
+    module docstring) -- straight `id` order.
+
+    Threads (escalation #2000, proposal sec5, clash C6) are kept out of the per-item body -- 100
+    of them would flood it -- and get one short section instead: counts by state, then the
+    in-progress threads only (rule 4 counts those alone). `-Action Thread` lists them all."""
     ph = ",".join("?" * len(_OPEN_STATES))
-    rows = db.rows(f"SELECT * FROM escalation WHERE state IN ({ph}) "
+    rows = db.rows(f"SELECT * FROM escalation WHERE state IN ({ph}) AND type != 'thread' "
                    f"ORDER BY id", _OPEN_STATES)
     n_on_hold = sum(1 for r in rows if r["state"] == "on-hold")
     n_in_progress = sum(1 for r in rows if r["state"] == "in-progress")
@@ -1181,11 +1658,34 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
         L.append("|---|---|---|---|---|---|")
         for h in hist:
             changed = [c for c in ("comment", "context", "resolution", "tried",
-                                   "short_description") if h[c]]
+                                   "short_description", "comes_back_when") if h[c]]
             summary = "; ".join(f"{c}: {_gist(h[c], 50)}" for c in changed) or "_(state/assignee only)_"
             L.append(f"| {h['version']} | {h['state']} | {h['next_action'] or ''} | "
                      f"{h['originator'] or ''} | {summary} | {h['answered_at']} |")
         L.append("")
+
+    # ── threads (escalation #2000) ──
+    counts = db.rows("SELECT state, COUNT(*) AS n FROM escalation WHERE type='thread' "
+                     "GROUP BY state ORDER BY state")
+    L += ["## Open threads", ""]
+    if not counts:
+        L += ["_no threads_", ""]
+    else:
+        L += ["Counts by state: " + ", ".join(f"{c['state']} {c['n']}" for c in counts)
+              + ". Full list: `Escalation.ps1 -Action Thread`.", ""]
+        live = db.rows("SELECT * FROM escalation WHERE type='thread' AND state='in-progress' "
+                       "ORDER BY CAST(substr(alias, 4) AS INTEGER)")
+        if not live:
+            L += ["_no thread is in-progress (none is referenced by in-progress work)_", ""]
+        else:
+            L += ["In-progress (referenced by in-progress work; rule 4 counts these):", "",
+                  "| thread | title | open items | referenced by |", "|---|---|---|---|"]
+            for t in live:
+                its = _thread_items(db, t["id"], "open")
+                refs = ", ".join(i["value"] for i in its if i["kind"] == "escalation") or "--"
+                L.append(f"| {t['alias']} · #{t['id']} | {t['short_description']} | {len(its)} | "
+                         f"{refs} |")
+            L.append("")
 
     # Found live 2026-08-21 (researcher, reading this exact table): no short_description column at
     # all -- a resolution-text-only row gives no way to tell what the item was ABOUT without going
@@ -1198,7 +1698,7 @@ def write_list_report(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Pat
     resolved = db.rows(
         "SELECT id, short_description, state, resolution, answered_at "
         "FROM escalation WHERE state IN ('completed','closed','withdraw','supersede') "
-        "ORDER BY answered_at DESC LIMIT 15")
+        "AND type != 'thread' ORDER BY answered_at DESC LIMIT 15")
     L += ["## Recently resolved (last 15)", ""]
     if not resolved:
         L.append("_none yet_")
@@ -1258,6 +1758,141 @@ def write_history_report(cfg: Cfg, db: Db, escalation_id: int, path: pathlib.Pat
     return reportkit.write_report(db.conn, "escalation.history", path, L)
 
 
+def _cell(text) -> str:
+    """A markdown table cell: one line, pipes escaped."""
+    if text is None:
+        return ""
+    return str(text).replace("\r", "").replace("\n", "<br>").replace("|", "\\|")
+
+
+def _raised_in(context) -> str:
+    try:
+        ctx = json.loads(context) if context else {}
+    except (ValueError, TypeError):
+        return ""
+    return ctx.get("raised_in", "") if isinstance(ctx, dict) else ""
+
+
+def _latest_response(db: Db, item_id: int):
+    rows = db.rows("SELECT * FROM escalation_thread_item_response WHERE item_id=? "
+                   "ORDER BY responded_at DESC, id DESC LIMIT 1", (item_id,))
+    return rows[0] if rows else None
+
+
+def _item_line(db: Db, alias: str, it, latest: bool = True) -> str:
+    s = f"{alias}.{it['item_no']} {it['kind']} {it['value']}"
+    if it["note"]:
+        s += f" ({it['note']})"
+    s += f" -- {it['status']}"
+    r = _latest_response(db, it["id"]) if latest else None
+    if r:
+        via = f", #{r['via_escalation']}" if r["via_escalation"] else ""
+        s += f"; latest: {r['kind']} ({r['responded_at'][:10]}{via}): {r['text']}"
+    return s
+
+
+def write_thread_report(cfg: Cfg, db: Db, path: pathlib.Path, *, state: str | None = None,
+                        ident=None) -> tuple[pathlib.Path, list[str]]:
+    """`Escalation.ps1 -Action Thread` (escalation #2000, ruling 6: "Open threads should be a easy
+    query on -action thread only"). Without `ident`: every open thread (on-hold and in-progress;
+    `state` narrows to one), each with its open items. With `ident` (an id or OT-nn): that one
+    thread, every item with its responses in date order. Returns the written path and short
+    console lines."""
+    console: list[str] = []
+    if ident is not None:
+        t = _current(db, resolve_id(db, ident))
+        if t["type"] != "thread":
+            raise ValueError(f"#{t['id']} is type {t['type']!r}, not a thread")
+        L = [f"# {t['alias']} · #{t['id']} -- {t['short_description']}", "",
+             f"state={t['state']} · raised {t['raised_at'][:10]} · raised in: "
+             f"{_raised_in(t['context']) or '--'}", "",
+             f"**Comes back when:** {t['comes_back_when'] or '--'}", "",
+             f"**Thread:** {t['comment'] or ''}", ""]
+        if t["resolution"]:
+            L += [f"**Resolution:** {t['resolution']}", ""]
+        L += ["## Items", ""]
+        for it in _thread_items(db, t["id"]):
+            L.append(f"### {t['alias']}.{it['item_no']} {it['kind']} {it['value']} -- {it['status']}")
+            meta = f"opened {it['opened_at'][:10]}"
+            if it["opened_by"]:
+                meta += f" under #{it['opened_by']}"
+            L += [(f"{it['note']} · " if it["note"] else "") + meta, ""]
+            for r in db.rows("SELECT * FROM escalation_thread_item_response WHERE item_id=? "
+                             "ORDER BY responded_at, id", (it["id"],)):
+                via = f", via #{r['via_escalation']}" if r["via_escalation"] else ""
+                L.append(f"- **{r['kind']}** ({r['responded_at'][:10]}, {r['responded_by']}{via}): "
+                         f"{r['text']}")
+            L.append("")
+            console.append(_item_line(db, t["alias"], it))
+        if t["tried"]:
+            L += ["## History before migration", "", t["tried"], ""]
+        console.insert(0, f"{t['alias']} · #{t['id']} [{t['state']}] {t['short_description']}")
+        out = reportkit.write_report(db.conn, "escalation.thread",
+                                     path.with_name(f"{t['id']}-{path.name}"), L)
+        return out, console
+
+    states = (state,) if state else _THREAD_OPEN_STATES
+    if state and state not in _THREAD_OPEN_STATES:
+        raise ValueError(f"-State for -Action Thread is on-hold or in-progress, not {state!r}")
+    ph = ",".join("?" * len(states))
+    threads = db.rows(f"SELECT * FROM escalation WHERE type='thread' AND state IN ({ph}) "
+                      f"ORDER BY CAST(substr(alias, 4) AS INTEGER)", states)
+    L = ["# Open threads", "",
+         f"> Generated by `Escalation.ps1 -Action Thread`{' -State ' + state if state else ''}. "
+         f"{len(threads)} thread(s). One thread in full: `-Action Thread -Id OT-nn`.", "",
+         "| thread | state | title | open items |", "|---|---|---|---|"]
+    for t in threads:
+        its = _thread_items(db, t["id"], "open")
+        shown = "; ".join(f"{t['alias']}.{i['item_no']} {i['kind']}:{i['value']}" for i in its)
+        if not its:
+            shown = "_none open -- ready to complete (approved)_"
+        L.append(f"| {t['alias']} · #{t['id']} | {t['state']} | {_cell(t['short_description'])} | "
+                 f"{_cell(shown)} |")
+        console.append(f"{t['alias']:<7} #{t['id']} {t['state']:<11} {t['short_description']} "
+                       f"({len(its)} open)")
+    out = reportkit.write_report(db.conn, "escalation.thread", path, L)
+    return out, console
+
+
+def write_thread_register(cfg: Cfg, db: Db, path: pathlib.Path) -> tuple[pathlib.Path, int]:
+    """`Escalation.ps1 -Action Export -Type thread` (escalation #2000, proposal sec5): regenerates
+    the open threads register at its old path from the escalation table -- every thread, by OT
+    number, `OT-nn · #id` in the id cell (decision 3). The thread, raised and comes-back-when cells
+    carry the imported text unchanged; the status cell is generated: state, each item with its
+    latest response, then the register's own status text from before the migration (`tried`)."""
+    threads = db.rows("SELECT * FROM escalation WHERE type='thread' "
+                      "ORDER BY CAST(substr(alias, 4) AS INTEGER)")
+    by_state: dict[str, int] = {}
+    for t in threads:
+        by_state[t["state"]] = by_state.get(t["state"], 0) + 1
+    rule = db.rows("SELECT rule_text FROM cfg_behaviour_rule WHERE "
+                   "rule_key='open-threads-carried-as-escalations'")
+    L = ["# Open threads register", "",
+         "> **Generated** from the escalation table (type=thread) by `Escalation.ps1 -Action "
+         "Export -Type thread`. Do not edit by hand: respond through `Escalation.ps1 -Action "
+         "Update -Id OT-nn` (escalation #2000). The hand-kept register (2026-10-02 to "
+         "2026-10-12) is frozen at `archive/open-threads-register-frozen-20261012.md`.", "",
+         "**Set up:** 2026-10-02 (researcher: *\"I approve of the open threads register\"*, "
+         "#1935). Carried in the escalation table from 2026-10-12 (#2000).", "",
+         "**How it is used** (`cfg_behaviour_rule` open-threads-carried-as-escalations): "
+         + (rule[0]["rule_text"] if rule else "--"), "",
+         "**Threads:** " + ", ".join(f"{k} {v}" for k, v in sorted(by_state.items()))
+         + f" ({len(threads)} in all). Item references are `OT-nn.n`.", "",
+         "| id | thread | raised | comes back when | status |", "| --- | --- | --- | --- | --- |"]
+    for t in threads:
+        parts = [f"**{t['state']}**"]
+        if t["resolution"]:
+            parts[0] += f": {t['resolution']}"
+        parts += [_item_line(db, t["alias"], it) for it in _thread_items(db, t["id"])]
+        if t["tried"]:
+            parts.append(t["tried"])
+        L.append(f"| {t['alias']} · #{t['id']} | {_cell(t['comment'])} | "
+                 f"{_cell(_raised_in(t['context']))} | {_cell(t['comes_back_when'])} | "
+                 f"{_cell(chr(10).join(parts))} |")
+    out = reportkit.write_report(db.conn, "escalation.thread_export", path, L)
+    return out, len(threads)
+
+
 def _extract_flag(args: list[str], name: str) -> tuple[list[str], str | None]:
     prefix = f"--{name}="
     remaining, value = [], None
@@ -1267,6 +1902,22 @@ def _extract_flag(args: list[str], name: str) -> tuple[list[str], str | None]:
         else:
             remaining.append(a)
     return remaining, value
+
+
+def _extract_multi(args: list[str], name: str) -> tuple[list[str], list[str]]:
+    """A repeatable --name=value flag (escalation #2000: -Item, -AddItem, -Cluster, ...)."""
+    prefix = f"--{name}="
+    remaining, values = [], []
+    for a in args:
+        if a.startswith(prefix):
+            values.append(a[len(prefix):])
+        else:
+            remaining.append(a)
+    return remaining, values
+
+
+def _files_arg(raw: list[str]) -> list[str] | None:
+    return [f.strip() for f in raw if f.strip()] or None
 
 
 # escalation #1708, 2026-09-15: the per-connection 30s busy_timeout (cfg.py:Cfg.__init__, WAL +
@@ -1370,26 +2021,52 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
         rest, context = _extract_flag(rest, "context")
         rest, resolution_kind = _extract_flag(rest, "resolution-kind")
         rest, needs_followup = _extract_flag(rest, "needs-followup")
+        rest, state = _extract_flag(rest, "state")                       # escalation #2000 T2
+        rest, comes_back_when = _extract_flag(rest, "comes-back-when")
+        rest, item_specs = _extract_multi(rest, "item")
         question = " ".join(rest)
-        new_id = raise_new(cfg, db, question, source or "claude", etype=etype or "task",
+        etype = etype or "task"
+        new_id = raise_new(cfg, db, question, source or "claude", etype=etype,
                            comment=comment or question, context=context,
-                           assigned_to=assigned_to or "Researcher",
+                           assigned_to=assigned_to or ("Claude" if etype == "thread" else "Researcher"),
                            resolution_kind=resolution_kind,
                            needs_followup=needs_followup in ("1", "true"),
-                           originator=_require_flag(originator, "originator"))
-        print(f"  raised — #{new_id}. Update with: python -m iba.app.lib.escalation update {new_id} ...")
+                           originator=_require_flag(originator, "originator"),
+                           state=state, comes_back_when=comes_back_when,
+                           items=[parse_item_spec(s) for s in item_specs] or None)
+        alias = _current(db, new_id)["alias"]
+        print(f"  raised — #{new_id}{' (' + alias + ')' if alias else ''}. Update with: "
+              f"Escalation.ps1 -Action Update -Id {alias or new_id} ...")
     elif len(argv) >= 2 and argv[0] == "resolve-self-correctable":
         rest, resolution = _extract_flag(argv[2:], "resolution")
         rest, originator = _extract_flag(rest, "originator")
-        print("  " + resolve_self_correctable(cfg, db, int(argv[1]),
+        print("  " + resolve_self_correctable(cfg, db, resolve_id(db, argv[1]),
                                               _require_flag(resolution, "resolution"),
                                               originator=_require_flag(originator, "originator")))
     elif len(argv) >= 2 and argv[0] == "escalate-to-decision":
         rest, tried = _extract_flag(argv[2:], "tried")
         rest, originator = _extract_flag(rest, "originator")
-        print("  " + escalate_to_decision(cfg, db, int(argv[1]),
+        print("  " + escalate_to_decision(cfg, db, resolve_id(db, argv[1]),
                                           _require_flag(tried, "tried"),
                                           originator=_require_flag(originator, "originator")))
+    elif len(argv) >= 1 and argv[0] == "match":                          # escalation #2000 T1
+        rest, for_ref = _extract_flag(argv[1:], "for")
+        rest, originator = _extract_flag(rest, "originator")
+        rest, clusters = _extract_multi(rest, "cluster")
+        rest, strongs = _extract_multi(rest, "strong")
+        rest, verses = _extract_multi(rest, "verse")
+        lines = match_threads(cfg, db, clusters=clusters, strongs=strongs, verses=verses,
+                              for_ref=for_ref,
+                              who=_require_flag(originator, "originator") if for_ref else None)
+        print(f"  {len(lines)} thread(s) matched" + (" (read-only: no -For)" if not for_ref else ""))
+        for line in lines:
+            print("  " + line)
+    elif len(argv) >= 1 and argv[0] == "thread-check":                   # escalation #2000 T5
+        rest, originator = _extract_flag(argv[1:], "originator")
+        lines = thread_check(cfg, db, who=_require_flag(originator, "originator"))
+        print(f"  thread check: {len(lines)} thread change(s)")
+        for line in lines:
+            print("  " + line)
     elif len(argv) >= 2 and argv[0] == "update":
         rest, next_action = _extract_flag(argv[2:], "next-action")
         rest, assigned_to = _extract_flag(rest, "assigned-to")
@@ -1400,17 +2077,29 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
         rest, context = _extract_flag(rest, "context")
         rest, needs_followup_raw = _extract_flag(rest, "needs-followup")
         needs_followup = None if needs_followup_raw is None else needs_followup_raw in ("1", "true")
+        rest, comes_back_when = _extract_flag(rest, "comes-back-when")   # escalation #2000
+        rest, add_specs = _extract_multi(rest, "add-item")
+        rest, item_refs = _extract_multi(rest, "item")
+        rest, respond = _extract_flag(rest, "respond")
+        rest, response_kind = _extract_flag(rest, "response-kind")
+        rest, via = _extract_flag(rest, "via")
+        rest, files = _extract_multi(rest, "file")
         comment = " ".join(rest) or None
-        print("  " + update(cfg, db, int(argv[1]), next_action=next_action,
+        print("  " + update(cfg, db, resolve_id(db, argv[1]), next_action=next_action,
                             next_action_assigned_to=assigned_to, comment=comment, context=context,
                             tried=tried, resolution=resolution,
                             state=state,
                             needs_followup=needs_followup,
-                            originator=_require_flag(originator, "originator")))
+                            originator=_require_flag(originator, "originator"),
+                            comes_back_when=comes_back_when,
+                            add_items=[parse_item_spec(s) for s in add_specs] or None,
+                            item_refs=item_refs or None, respond=respond,
+                            response_kind=response_kind, via=via, files=_files_arg(files)))
     elif len(argv) >= 2 and argv[0] == "history":
         # id-prefixed stem, 2026-08-26 (escalation #857) -- matches handlers/reports.py's copy
-        path = pathlib.Path(cfg.required_setting("escalation.history_report_dir")) / f"{argv[1]}-escalation-history.md"
-        out = write_history_report(cfg, db, int(argv[1]), path)
+        eid = resolve_id(db, argv[1])
+        path = pathlib.Path(cfg.required_setting("escalation.history_report_dir")) / f"{eid}-escalation-history.md"
+        out = write_history_report(cfg, db, eid, path)
         print(f"  -> {out}")
     elif len(argv) >= 2 and argv[0] == "correction":
         rest, next_action = _extract_flag(argv[2:], "next-action")
@@ -1422,7 +2111,7 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
         rest, context = _extract_flag(rest, "context")
         rest, short_description = _extract_flag(rest, "short-description")
         comment = " ".join(rest) or None
-        print("  " + correction(cfg, db, int(argv[1]), short_description=short_description,
+        print("  " + correction(cfg, db, resolve_id(db, argv[1]), short_description=short_description,
                                 next_action=next_action, next_action_assigned_to=assigned_to,
                                 comment=comment, context=context, tried=tried,
                                 resolution=resolution,
@@ -1442,7 +2131,14 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
              " | correction <id> --originator=Claude|Researcher — ERROR CORRECTION ONLY, works in "
              "any state, unlike update: [--short-description=...] [--next-action=...] "
              "[--assigned-to=...] [--state=...] [--resolution=...] "
-             "[--tried=...] [--context=...] [comment...]")
+             "[--tried=...] [--context=...] [comment...]"
+             " | match [--for=<id|OT-nn>] [--cluster=M10]... [--strong=H5782]... "
+             "[--verse='Rom 7:15']... [--originator=... (with --for)]"
+             " | thread-check --originator=Claude|Researcher"
+             " -- threads (escalation #2000): raise --type=thread --state=on-hold "
+             "--comes-back-when=... --item='kind:value[ :: note]'...; update <id|OT-nn> "
+             "[--item=OT-16.1 --response-kind=closed --respond=... --via=1998 --file=path...] "
+             "[--add-item=kind:value...] [--comes-back-when=...]")
     db.close()
     return 0
 

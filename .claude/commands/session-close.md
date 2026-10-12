@@ -91,6 +91,15 @@ either repository. This project never publishes to GitHub itself
 (`governance.no_direct_github_publish`). Quote the script's summary lines in the step 8 report.
 Run it every close, even when no chapter changed: it then reports every file as "unchanged".
 
+## 6b. Regenerate the open threads register
+
+Run `iba\app\ps\Escalation.ps1 -Action Export -Type thread` via the PowerShell tool (escalation #2000, proposal v3 sec5: *"Session-close regenerates it"*). It rewrites
+`_analytics/cross-cluster-web/open-threads-register.md` from the escalation table (type `thread`;
+`cfg_setting escalation.thread_register_path`), with each row as `OT-nn · #id`. The file is
+generated: never edit it by hand. Every note on a thread is an Update (`cfg_behaviour_rule`
+open-threads-carried-as-escalations). Quote its summary line in the step 8 report. Run it every
+close, so the committed file matches the table.
+
 ## 7. Commit and push
 
 Completing a `/session-close` cycle is a standing pre-authorization to commit

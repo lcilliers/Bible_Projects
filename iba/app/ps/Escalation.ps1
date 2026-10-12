@@ -152,6 +152,31 @@
                         current state/assignment carry forward unchanged, the normal case (most
                         corrections fix content, not workflow position).
 
+    **Threads, escalation #2000 (2026-10-12)** — the open threads register now lives in this table
+    as type `thread`, alias `OT-nn` (design: `_analytics/cross-cluster-web/open-threads-table-
+    proposal-v3-20261012.md`; rules T0-T9 in cfg_escalation / cfg_escalation_transition /
+    cfg_escalation_requirement / cfg_behaviour_rule open-threads-carried-as-escalations). Every
+    -Id accepts the alias (`-Id OT-16`).
+    -Action Raise -State   on-hold|in-progress|raised at create (T2; default raised; manual Raise
+                        only). -Type thread also needs -ResolutionKind SelfCorrectable (T4), at
+                        least one -Item 'kind:value' (T7), and takes -ComesBackWhen; it lands
+                        on-hold unless -State in-progress, never raised, and gets the next OT number.
+    -Action Update (thread) -Item OT-16.1 -ResponseKind closed -Respond "..." [-Via 1998] [-File ..]
+                        records a response per named item (closed closes it, reopened reopens it,
+                        forward needs -AddItem kind:value); -AddItem alone adds items. The thread
+                        then follows T3/T5 (in-progress while in-progress work references it) and
+                        T6 (partly closed -> on-hold); -NextAction approved needs every item closed.
+    -Action Thread       the open threads (on-hold + in-progress; -State narrows), or one thread in
+                        full with -Id OT-nn. Through run.py (escalation-reporting/escalation.thread).
+    -Action Match        T1: -Cluster/-Strong/-Verse (repeatable) against open thread items;
+                        read-only, or with -For nnnn -AnsweredBy ... records an escalation item on
+                        each matched thread.
+    -Action ThreadCheck  T5, at session start: threads referenced by in-progress work move to
+                        in-progress; items whose task/issue has closed are closed.
+    -Action Export -Type thread
+                        regenerates `_analytics/cross-cluster-web/open-threads-register.md`
+                        (escalation.thread_register_path). Session-close runs it.
+
 .EXAMPLE
     .\Escalation.ps1 -Action List
 .EXAMPLE
@@ -174,15 +199,25 @@
     .\Escalation.ps1 -Action Update -Id 741 -NextAction reject -State withdraw -AnsweredBy Researcher -Comment "superseded by #900"
 .EXAMPLE
     .\Escalation.ps1 -Action Correction -Id 741 -ShortDescription "corrected title" -AnsweredBy Researcher -Comment "original title had a typo"
+.EXAMPLE
+    .\Escalation.ps1 -Action Thread -State in-progress
+.EXAMPLE
+    .\Escalation.ps1 -Action Match -Cluster M18 -Strong H2530 -For 1993 -AnsweredBy Claude
+.EXAMPLE
+    .\Escalation.ps1 -Action Update -Id OT-16 -Item OT-16.2 -ResponseKind closed -Respond "Eze 19:14 read with M03, no anger in the verse" -Via 2010 -AnsweredBy Claude
+.EXAMPLE
+    .\Escalation.ps1 -Action Raise -Type thread -Question "Mind in Romans 8" -Comment "..." -ComesBackWhen "M15 is read" -Item "cluster:M15" -Item "verse:Rom 8:5-7 :: 3 verses" -ResolutionKind SelfCorrectable -AnsweredBy Claude
 #>
 
 [CmdletBinding(PositionalBinding = $false)]
 param(
     [Parameter(Mandatory = $true)]
     [ValidateSet('List', 'History', 'AnswerRun', 'Raise', 'Update', 'Correction',
-                 'ResolveSelfCorrectable', 'EscalateToDecision')]
+                 'ResolveSelfCorrectable', 'EscalateToDecision',
+                 'Thread', 'Match', 'ThreadCheck', 'Export')]
     [string] $Action,
-    [int] $Id,
+    # escalation #2000: a string, so a thread alias (OT-16) is accepted anywhere an id is.
+    [string] $Id,
     [string] $RunId,
     [ValidateSet('Approve', 'Reject', 'Revise', 'Hold', 'Noted')] [string] $Decision,
     [ValidateSet('ready_for_approval', 'approved', 'reject', 'revise', 'noted', 'review')] [string] $NextAction,
@@ -193,7 +228,7 @@ param(
     [string] $Tried,
     [ValidateSet('Claude', 'Researcher')] [string] $AnsweredBy,
     [ValidateSet('Claude', 'Researcher')] [string] $AssignedTo,
-    [ValidateSet('task', 'run_error', 'issue', 'notice', 'config', 'note')] [string] $Type = 'task',
+    [ValidateSet('task', 'run_error', 'issue', 'notice', 'config', 'note', 'thread')] [string] $Type = 'task',
     [string] $Source = 'researcher',
     # -Action Correction (escalation #774) can set state to ANY value, not just the 5 Update
     # allows explicitly (raised/re-assigned/completed are normally system-derived for Update, but
@@ -211,7 +246,26 @@ param(
     # step) -- approved then routes back to Claude instead of straight to completed. '1' sets it,
     # '0' clears it; omitted on Update carries the item's current value forward unchanged, omitted
     # on Raise defaults to not set.
-    [ValidateSet('1', '0')] [string] $NeedsFollowup
+    [ValidateSet('1', '0')] [string] $NeedsFollowup,
+    # ── threads, escalation #2000 (proposal v3 sec3-sec5) ──
+    # Raise -Type thread: the whole "comes back when" text, and one -Item per matchable item,
+    # 'kind:value' or 'kind:value :: note' (the note is split off on ' :: ' because a verse value
+    # holds a colon itself). Kinds: cluster strong verse strand chapter event researcher escalation.
+    [string] $ComesBackWhen,
+    [string[]] $Item,
+    # Update on a thread: -Item names the item(s) answered (OT-16.1, 1, cluster:M72, or M72),
+    # -ResponseKind and -Respond say how; -Via is the task/issue whose work gave the response;
+    # -File lists full repo-relative paths. -AddItem adds items (needed with -ResponseKind forward).
+    [string[]] $AddItem,
+    [string] $Respond,
+    [ValidateSet('touched', 'narrowed', 'forward', 'ruling', 'note', 'closed', 'reopened')] [string] $ResponseKind,
+    [string] $Via,
+    [string[]] $File,
+    # Match (T1): what to match against open thread items; -For records the match on each thread.
+    [string] $For,
+    [string[]] $Cluster,
+    [string[]] $Strong,
+    [string[]] $Verse
 )
 
 Set-StrictMode -Version Latest
@@ -319,6 +373,11 @@ switch ($Action) {
         if ($AssignedTo) { $flags += "--assigned-to=$AssignedTo" }
         if ($Context) { $flags += "--context=$Context" }
         if ($NeedsFollowup) { $flags += "--needs-followup=$NeedsFollowup" }
+        # escalation #2000: state at create (T2; raised|on-hold|in-progress, checked in Python
+        # against cfg_enum escalation_raise_state), and the thread's own fields.
+        if ($State) { $flags += "--state=$($State.ToLower())" }
+        if ($ComesBackWhen) { $flags += "--comes-back-when=$ComesBackWhen" }
+        foreach ($i in @($Item | Where-Object { $_ })) { $flags += "--item=$i" }
         python -m iba.app.lib.escalation raise @flags $Question
     }
     'ResolveSelfCorrectable' {
@@ -369,11 +428,75 @@ switch ($Action) {
         if ($Tried) { $flags += "--tried=$Tried" }
         if ($Context) { $flags += "--context=$Context" }
         if ($NeedsFollowup) { $flags += "--needs-followup=$NeedsFollowup" }
+        # escalation #2000: thread items and responses (Python refuses these on non-threads).
+        if ($ComesBackWhen) { $flags += "--comes-back-when=$ComesBackWhen" }
+        foreach ($i in @($Item | Where-Object { $_ })) { $flags += "--item=$i" }
+        foreach ($i in @($AddItem | Where-Object { $_ })) { $flags += "--add-item=$i" }
+        if ($Respond) { $flags += "--respond=$Respond" }
+        if ($ResponseKind) { $flags += "--response-kind=$($ResponseKind.ToLower())" }
+        if ($Via) { $flags += "--via=$Via" }
+        foreach ($f in @($File | Where-Object { $_ })) { $flags += "--file=$f" }
         if ($Comment) {
             python -m iba.app.lib.escalation update $Id @flags $Comment
         } else {
             python -m iba.app.lib.escalation update $Id @flags
         }
+    }
+    'Thread' {
+        # escalation #2000 (ruling 6): the open threads, through run.py like List/History.
+        # -State on-hold|in-progress narrows; -Id OT-nn shows one thread with every response.
+        $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-ESCALATION-THREAD"
+        $params = @()
+        if ($State) { $params += @('--param', "State=$($State.ToLower())") }
+        if ($Id) { $params += @('--param', "Id=$Id") }
+        $json = python -m iba.app.run escalation-reporting --step escalation.thread --run-id $runId @params
+        $code = $LASTEXITCODE
+        $res = $json | ConvertFrom-Json
+        Write-Host "  $($res.message)"
+        exit $code
+    }
+    'Export' {
+        # escalation #2000: regenerates the open threads register .md (session-close runs this).
+        if (-not $PSBoundParameters.ContainsKey('Type') -or $Type -ne 'thread') {
+            Write-Host "Export needs -Type thread (the only exportable type)." -ForegroundColor Yellow
+            exit 1
+        }
+        $runId = "RUN-$(Get-Date -Format 'yyyyMMdd_HHmmss_fff')-ESCALATION-THREAD-EXPORT"
+        $json = python -m iba.app.run escalation-reporting --step escalation.thread_export --run-id $runId
+        $code = $LASTEXITCODE
+        $res = $json | ConvertFrom-Json
+        Write-Host "  $($res.message)"
+        exit $code
+    }
+    'Match' {
+        # escalation #2000 T1: before a task or issue is started (and when one is raised), match
+        # its clusters / Strong's / verses against the open thread items. Read-only without -For;
+        # with -For nnnn each matched thread gains an 'escalation' item #nnnn.
+        if (-not ($Cluster -or $Strong -or $Verse)) {
+            Write-Host "Match needs at least one -Cluster, -Strong or -Verse." -ForegroundColor Yellow
+            exit 1
+        }
+        $flags = @()
+        if ($For) {
+            if (-not $AnsweredBy) {
+                Write-Host "Match -For writes to the threads, so it needs -AnsweredBy Claude|Researcher." -ForegroundColor Yellow
+                exit 1
+            }
+            $flags += @("--for=$For", "--originator=$AnsweredBy")
+        }
+        foreach ($c in @($Cluster | Where-Object { $_ })) { $flags += "--cluster=$c" }
+        foreach ($s in @($Strong | Where-Object { $_ })) { $flags += "--strong=$s" }
+        foreach ($v in @($Verse | Where-Object { $_ })) { $flags += "--verse=$v" }
+        python -m iba.app.lib.escalation match @flags
+    }
+    'ThreadCheck' {
+        # escalation #2000 T5: session start (start-project step 4B) -- each thread referenced by
+        # in-progress work moves on-hold -> in-progress; items whose work has closed are closed.
+        if (-not $AnsweredBy) {
+            Write-Host "ThreadCheck needs -AnsweredBy Claude|Researcher -- no default." -ForegroundColor Yellow
+            exit 1
+        }
+        python -m iba.app.lib.escalation thread-check --originator=$AnsweredBy
     }
     'Correction' {
         if (-not $Id) {

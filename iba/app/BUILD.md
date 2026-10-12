@@ -16855,3 +16855,60 @@ Files:
 
 **Files:** `iba/app/lib/narrativecopy.py`, `iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1`, `.claude/commands/session-close.md`, `archive/publishing-retired-20261004/`, `CLAUDE.md` §12, `iba/app/GOVERNANCE.md` §86.
 
+## 336. Open threads carried in the escalation table — type `thread`, alias `OT-nn`, item and response tables (2026-10-12, researcher-approved, escalation #2000)
+
+**Why:** researcher, chat 2026-10-12 (verbatim): *"should we not extend escalations, it seems that escalation and open items register are close to each other, and escalation has all the controls already built in."* and *"adopt open register into escalation. propose the changes in a md."* Design: `_analytics/cross-cluster-web/open-threads-table-proposal-v3-20261012.md`, rounds 1–6 in its §0; round 6: *"approve the preview, proceed with the build"*. Built in a Developer Mode session per `_analytics/cross-cluster-web/escalation-2000-build-handoff-v1-20261012.md`. Not tested in this session (CHARTER.md §4): the test plan is `iba/docs/2000-open-threads-test-plan-v1-20261012.md`.
+
+**Build:**
+- **Config and schema:** `iba/app/migration/escalation_open_threads_v1_20261012.py` (new, idempotent, `--dry-run`/`--db`). It wrote rules T0–T9 (proposal §4) and the schema (proposal §3).
+  - `cfg_enum`: `escalation_type`+`thread`, `escalation_thread_item_kind`, `escalation_thread_item_status`, `escalation_thread_item_response_kind`, `escalation_raise_state`; check kinds `no_open_thread_items`, `must_be_self_correctable`.
+  - `cfg_escalation`: 4 `resolution_precedence` amended (T5: in-progress threads only); new `thread_check_before_work` (T1), `raise_state_choice` (T2), `thread_completion` (T6).
+  - `cfg_escalation_transition`: two shape=manual priority-0 rows (T3/T5 `thread_items_changed_and_referenced` → in-progress; T6 `thread_items_changed_partly_closed` → on-hold), with matching `cfg_status_flow` set_by keys.
+  - `cfg_escalation_requirement`: T7 (`items`, field_required), T4 (`must_be_self_correctable`), T6 (`no_open_thread_items` on update and resolve_self_correctable). All have condition `thread_type`.
+  - `cfg_behaviour_rule` 74 `open-threads-carried-as-escalations` (T8). Rule 43's exception (2) now names every `Escalation.ps1` write action: Correction/ResolveSelfCorrectable/EscalateToDecision were already direct calls, and Match/ThreadCheck are new.
+  - `cfg_step`/`cfg_report`/`cfg_setting` for `escalation.thread` and `escalation.thread_export`; `cfg_on_fail` `bad-parameter` → report-continue for `escalation.thread`/`escalation.history`; `cfg_write_grant`; `cfg_table`/`cfg_column` for every new table and column.
+  - Schema: `escalation`/`escalation_history` + `alias` (unique where set, `idx_escalation_alias`) and `comes_back_when`; new `escalation_thread_item` (item_no, kind, value, status, note, opened_at, opened_by) and `escalation_thread_item_response`.
+- **`iba/app/lib/escalation.py`:**
+  - `alias` is immutable and `comes_back_when` is a replace column.
+  - `raise_new()` gains `state` (T2), `comes_back_when` and `items`. A thread gets the next OT alias, defaults to on-hold, and is never raised; `raise_()` is unchanged.
+  - `update()` gains item responses (`item_refs`/`response_kind`/`respond`/`via`/`files`) and `add_items`. These are written before the state is derived, so the T3/T6 rows and the T6 check see them; each such Update writes a one-line summary to the thread's history (ruling 8).
+  - `_sync_threads_for()` runs after any Update / Correction / ResolveSelfCorrectable / EscalateToDecision of a task or issue. Its item on each thread closes when it reaches a terminal state (with a `closed` response citing its resolution), and an on-hold thread moves to in-progress when its work does.
+  - New `match_threads()` (T1): cluster M10 ↔ M10c; Strong's exact or base, zero-padded; a verse inside a range or a whole-chapter item. Also new: `thread_check()` (T5), `resolve_id()` (an id, `#id` or `OT-nn` wherever an id is taken), `write_thread_report()`, `write_thread_register()`.
+  - `write_list_report()` keeps threads out of the per-item body and the recently-resolved table, and adds an "Open threads" section (counts, in-progress threads only).
+  - Two new requirement check kinds and two new transition condition keys.
+- **`iba/app/handlers/reports.py`:** new `escalation_thread`, `escalation_thread_export`; `escalation_history` resolves an alias. Both id-taking handlers return a clean `bad-parameter` instead of a crash escalation.
+- **`iba/app/ps/Escalation.ps1`:** `-Id` is a string (the alias is accepted); `-Type thread`; Raise passes `-State`, `-ComesBackWhen` and `-Item`; Update passes `-Item`/`-AddItem`/`-Respond`/`-ResponseKind`/`-Via`/`-File`/`-ComesBackWhen`. New actions `Thread` and `Export` (both through run.py), `Match` and `ThreadCheck`.
+- **Session commands:** `.claude/commands/start-project.md` step 4B now runs ThreadCheck, Thread and Match (no longer reads the file). `.claude/commands/session-close.md` has a new step 6b that regenerates the register.
+- **Pre-exit governance check (researcher, 2026-10-12: *"confirm you complied with all the requirements of governance, including those related creating a new table"*)** found three gaps, all fixed in the same session:
+  - **No `cfg_unique` or `cfg_index` rows** for the new tables (GOVERNANCE.md §C: `lib/db.py:table_ddl()` builds a data table from config; every FK column gets an index). The migration now writes `cfg_unique` (escalation_id, item_no) and 5 `cfg_index` rows (`idx_{table}_{col}`). It creates those 5 indexes live and drops the first build's hand-named `idx_escalation_thread_item_response_item`. Checked: `table_ddl()` now yields the same UNIQUE key and index set as the live tables.
+  - **Orphan `cfg_enum escalation_thread_item_status`**: `_respond()` now validates the item status against it.
+  - **Escalation.ps1/worksheet drift** (`governance.ps_worksheet_sync_on_change`): `iba/docs/escalation actions worksheet.xlsx` gains a "Threads (escalation #2000)" block (rows 37–49), with a `-Flag` header row, hints, and 10 example rows whose column C formula builds the command, in the sheet's existing shape. The workbook was confirmed not open first.
+  - `configmaint.validate` re-run: structurally coherent. Every remaining advisory finding predates this build (set-diffed against CONFIG-REPORT-v549). The first run's issue #2104 was superseded by #2105.
+  - **Config change record:** these Developer Mode writes went through migration scripts, not `configmaint.propose`, so they have no `cfg_change_detail` rows. The record is the two migration scripts, this entry, and #2000's history, as for earlier Developer Mode migrations.
+- **Stop hook** `.claude/hooks/stop_check_escalation_backlog.py`: found right after the import, when it listed all 93 on-hold threads as Claude's backlog. It now leaves out threads that are not in-progress (`cfg_escalation` 4 as amended, T5). In-progress threads and every other type still count.
+- **Import (build step 7):** `iba/app/migration/escalation_open_threads_import_v1_20261012.py` (new) imports from the approved preview JSON only, by direct insert, keeping historical dates and states. It checks counts and invariants inside the transaction and refuses a second run.
+  - Re-ran the preview script first: identical output.
+  - Backup `iba/app/db/iba.db.pre-2000-open-threads-20261012.bak`.
+  - Froze the hand-kept register as `_analytics/cross-cluster-web/archive/open-threads-register-frozen-20261012.md`.
+  - Imported: 102 threads (#2002–#2103: OT-01…OT-100, OT-101, OT-102), 284 items, 50 responses (48 closed, 2 forward).
+  - `Escalation.ps1 -Action Export -Type thread` regenerated the register. `_analytics/cross-cluster-web/escalation-2000-register-export-compare-v1-20261012.py` (new, read-only) compared it with the frozen copy: thread/raised/comes-back-when equal on 100 of 100 rows, and the old status text carried whole on 100 of 100.
+
+**Build-time checks (not the test plan):**
+- The migration was applied to a scratch copy twice (idempotent); `find_unregistered_tables_and_columns` = 0.
+- The import was run on a scratch copy and then re-run (refused).
+- On the copy, `thread_check()` moved only OT-09 (through #1993, in-progress), as proposal §7.5 expects. List and Thread reports were generated.
+- `py_compile` and the PowerShell parser report no errors.
+- **Not run live:** ThreadCheck. The first live run is the next `/start-project`, expected to move OT-09 only (test 4.25).
+
+**A gap met during the build, closed in the same step:** once the config rows were live, the running module refused every Update ("unknown condition_key") until `lib/escalation.py` knew the new keys. One refused, rolled-back call; nothing written. Config rows that name new condition keys or check kinds need the code first, or in the same step.
+
+**Implementation choices within the approved design:**
+- T7 uses check kind `field_required` (an empty item list fails it) rather than reviving the retired `exists`.
+- T3 and T5 are read together per round 2: a thread is in-progress while an **in-progress** task or issue references it. A match from a raised or on-hold task is recorded but waits.
+- Item specs split the note on `' :: '`, not `':'`, because verse values hold a colon.
+- Proposal §5's `-CloseItem` is folded into §3.3's single front door (`-Item … -ResponseKind closed -Respond …`), approved in round 5.
+
+**Not done here:** the dated one-off strand scripts that edit the register by splitting rows (`_analytics/Clusters/M18 - desire-longing/m18-*-records-update-*.py`, `_analytics/Clusters/M72 - authority-dominion/m72-group-B-records-update-*.py`, `_analytics/Clusters/M64 - will-resolve/verse-narrative-ot-crossref-v3-20261009.py`) are retired for threads (proposal §5) and must not be re-run against the generated file. They were left in place, because filing destinations wait on the researcher.
+
+**Files:** `iba/app/migration/escalation_open_threads_v1_20261012.py`, `iba/app/migration/escalation_open_threads_import_v1_20261012.py`, `iba/app/lib/escalation.py`, `iba/app/handlers/reports.py`, `iba/app/ps/Escalation.ps1`, `.claude/commands/start-project.md`, `.claude/commands/session-close.md`, `_analytics/cross-cluster-web/escalation-2000-register-export-compare-v1-20261012.py`, `_analytics/cross-cluster-web/open-threads-register.md` (now generated), `iba/docs/2000-open-threads-test-plan-v1-20261012.md`, `iba/app/GOVERNANCE.md` §93, `iba/app/USER-GUIDE.md` §4.8.
+
