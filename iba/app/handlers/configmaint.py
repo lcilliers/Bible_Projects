@@ -601,14 +601,35 @@ def _settings_justification_warning(conn: sqlite3.Connection, table: str, op: st
            f"rather than there before approving.")
 
 
+def apply_logged(conn: sqlite3.Connection, run_id: str, table: str, op: str, where: dict,
+                 set_: dict) -> dict | None:
+    """The ONE audited cfg_* write: performs it and logs it to cfg_change_detail (run_id, table,
+    op, where, set, the row's prior state, applied_at). Used by propose (after approval) and by
+    Developer Mode config migrations (escalation #2000, 2026-10-12: Developer Mode removes
+    propose's approval gate, never the audit -- three #2000 migrations had written cfg_* directly
+    with no cfg_change_detail row). The caller owns the transaction. Returns the prior state."""
+    before = _apply_conn(conn, table, op, where, set_)
+    conn.execute(
+        'INSERT INTO cfg_change_detail (run_id, table_name, op, where_json, set_json, '
+        'before_json, applied_at) VALUES (?,?,?,?,?,?,?)',
+        (run_id, table, op, json.dumps(where) or None, json.dumps(set_) or None,
+         json.dumps(before) if before is not None else None, _now()))
+    return before
+
+
 def _apply(ctx: Ctx, table: str, op: str, where: dict, set_: dict) -> dict | None:
+    return _apply_conn(ctx.db.conn, table, op, where, set_)
+
+
+def _apply_conn(conn: sqlite3.Connection, table: str, op: str, where: dict,
+                set_: dict) -> dict | None:
     """Perform the write; return the row's prior state (or None for insert)."""
-    conn = ctx.db.conn
     before = None
     if op in ("update", "delete") and where:
         wsql = " AND ".join(f'"{k}"=?' for k in where)
-        row = conn.execute(f'SELECT * FROM "{table}" WHERE {wsql}', list(where.values())).fetchone()
-        before = dict(row) if row else None
+        cur = conn.execute(f'SELECT * FROM "{table}" WHERE {wsql}', list(where.values()))
+        row = cur.fetchone()      # by column name, whatever the connection's row_factory
+        before = dict(zip([d[0] for d in cur.description], row)) if row else None
     if op == "insert":
         cols = list(set_)
         ph = ",".join("?" * len(cols))
@@ -658,12 +679,7 @@ def propose(ctx: Ctx) -> Outcome:
             errors = _check_proposal(ctx.db.conn, table, op, where, set_)
             if errors:
                 return fail("invalid-proposal", f"{len(errors)} problem(s): " + "; ".join(errors))
-            before = _apply(ctx, table, op, where, set_)
-            ctx.db.conn.execute(
-                'INSERT INTO cfg_change_detail (run_id, table_name, op, where_json, set_json, '
-                'before_json, applied_at) VALUES (?,?,?,?,?,?,?)',
-                (ctx.run_id, table, op, json.dumps(where) or None, json.dumps(set_) or None,
-                 json.dumps(before) if before is not None else None, _now()))
+            apply_logged(ctx.db.conn, ctx.run_id, table, op, where, set_)
             return ok(f"approved and applied: {op} {table} {where or ''} -> {set_}",
                       table=table, op=op)
         if decision == "reject":

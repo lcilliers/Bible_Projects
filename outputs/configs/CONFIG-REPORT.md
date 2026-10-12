@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-12T11:55:55Z |
+| generated_at | 2026-10-12T13:54:08Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -140,7 +140,7 @@ _(none)_
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
-**Unenforced behaviour rules** (47) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
+**Unenforced behaviour rules** (48) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
 64. [chat] #17 confirm-before-nontrivial-work — context_delivered
 65. [chat] #18 output-to-file-not-chat-only — context_delivered
 66. [chat] #19 factual-discipline-no-guessing — context_delivered
@@ -157,96 +157,97 @@ _(none)_
 77. [development] #46 test-plan-per-module-utility — deliberately_deferred
 78. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
 79. [development] #66 cluster-label-must-track-membership — buildable_not_built
-80. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
-81. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-82. [documentation] #33 single-living-register-update-in-place — context_delivered
-83. [documentation] #34 source-of-truth-is-written-record — context_delivered
-84. [filing] #56 naming-shape — partially_enforced
-85. [filing] #57 snapshot-vs-living-document — context_delivered
-86. [filing] #58 archiving-trigger — partially_enforced
-87. [filing] #59 claude-code-filing-obligations — context_delivered
-88. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-89. [llm_output] #4 inferential-not-confirmed — context_delivered
-90. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
-91. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
-92. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — context_delivered
-93. [llm_output] #70 cluster-tags-loose-no-retagging — context_delivered
-94. [llm_output] #72 route-verses-hib-other-beings-data-only — context_delivered
-95. [llm_output] #73 read-verse-by-role-of-each-mcode-word — context_delivered
-96. [sqlite] #1 verify-before-acting — context_delivered
-97. [sqlite] #11 readonly-by-default — context_delivered
-98. [sqlite] #13 dont-assume-which-database — context_delivered
-99. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
-100. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
-101. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
-102. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
-103. [sqlite] #67 bible-research-db-excluded-from-iba-results — UNCLASSIFIED (missing enforcement_status — audit gap itself)
-104. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
-105. [sqlite] #71 reuse-extracted-base-data-set-based-mcode — context_delivered
-106. [terminal] #2 step-not-done-without-validated-output — context_delivered
-107. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
-108. [terminal] #27 heredoc-powershell-only — context_delivered
-109. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
-110. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
+80. [development] #75 devmode-config-writes-are-audited — context_delivered
+81. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
+82. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+83. [documentation] #33 single-living-register-update-in-place — context_delivered
+84. [documentation] #34 source-of-truth-is-written-record — context_delivered
+85. [filing] #56 naming-shape — partially_enforced
+86. [filing] #57 snapshot-vs-living-document — context_delivered
+87. [filing] #58 archiving-trigger — partially_enforced
+88. [filing] #59 claude-code-filing-obligations — context_delivered
+89. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+90. [llm_output] #4 inferential-not-confirmed — context_delivered
+91. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
+92. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
+93. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — context_delivered
+94. [llm_output] #70 cluster-tags-loose-no-retagging — context_delivered
+95. [llm_output] #72 route-verses-hib-other-beings-data-only — context_delivered
+96. [llm_output] #73 read-verse-by-role-of-each-mcode-word — context_delivered
+97. [sqlite] #1 verify-before-acting — context_delivered
+98. [sqlite] #11 readonly-by-default — context_delivered
+99. [sqlite] #13 dont-assume-which-database — context_delivered
+100. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
+101. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
+102. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
+103. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
+104. [sqlite] #67 bible-research-db-excluded-from-iba-results — UNCLASSIFIED (missing enforcement_status — audit gap itself)
+105. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
+106. [sqlite] #71 reuse-extracted-base-data-set-based-mcode — context_delivered
+107. [terminal] #2 step-not-done-without-validated-output — context_delivered
+108. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
+109. [terminal] #27 heredoc-powershell-only — context_delivered
+110. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
+111. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
 
 **Undelivered conversational rules** (4) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
-111. [chat] #21 chat-items-become-escalations — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
-112. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
-113. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
-114. [terminal] #27 heredoc-powershell-only — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+112. [chat] #21 chat-items-become-escalations — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+113. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+114. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+115. [terminal] #27 heredoc-powershell-only — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
 
 **PS scripts bypassing run.py** (2) — an active PS script calling iba.app.(handlers|lib|tools) directly instead of dispatching through iba.app.run:
-115. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
-116. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+116. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+117. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
 
 **Steps without a PS entry point** (0) — an active cfg_step whose work package has no cfg_work_package.ps_script:
 _(none)_
 
 **Escalation-file naming drift** (27) — a Workflow/Catalogue or iba/docs file whose own header names an escalation the filename doesn't carry as its prefix:
-117. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-118. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
-119. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-120. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
-121. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
-122. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
-123. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
-124. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
-125. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
-126. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
-127. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
-128. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-129. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
-130. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-131. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
-132. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-133. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
-134. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
-135. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
-136. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
-137. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
-138. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
-139. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-140. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
-141. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-142. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-143. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
+118. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+119. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
+120. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+121. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
+122. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
+123. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
+124. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
+125. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
+126. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
+127. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
+128. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
+129. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+130. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
+131. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+132. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
+133. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+134. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
+135. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
+136. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
+137. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
+138. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
+139. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
+140. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+141. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
+142. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+143. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+144. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
 
 **Config hedge phrases** (5) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
-144. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
-145. cfg_method_rule #106 battery-scope-excludes-verse-reading-and-science-extract — hedge phrase in rule_text/enforced_by with no resolution
-146. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
-147. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
-148. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
+145. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
+146. cfg_method_rule #106 battery-scope-excludes-verse-reading-and-science-extract — hedge phrase in rule_text/enforced_by with no resolution
+147. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
+148. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
+149. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
 
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
 
 **Query file convention** (2) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
-149. scripts/SQLite/IBA_DB/explore clusters-2.sqlite3-query — contains a space, should use hyphens
-150. scripts/SQLite/IBA_DB/explore verses.sqlite3-query — contains a space, should use hyphens
+150. scripts/SQLite/IBA_DB/explore clusters-2.sqlite3-query — contains a space, should use hyphens
+151. scripts/SQLite/IBA_DB/explore verses.sqlite3-query — contains a space, should use hyphens
 
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
@@ -1436,12 +1437,12 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- |
 | escalation | 0 | raised | initial state at Raise (escalation.raise_/raise_new) |
 | escalation | 1 | in-progress | either party directly (Update state=in-progress); OR system: next_action=revise; OR dispatcher-tied answer_for_run decision=revise (escalation #795 fix, 2026-08-22); OR system (thread, T3/T5): an open escalation item references in-progress work (escalation #2000) |
-| escalation | 2 | on-hold | either party directly (Update state=on-hold); OR dispatcher-tied answer_for_run decision=hold; OR system (thread, T6): items partly closed and no in-progress work references the thread (escalation #2000) |
+| escalation | 2 | on-hold | either party directly (Update state=on-hold); OR dispatcher-tied answer_for_run decision=hold; OR system (thread, T6): items partly settled (closed, withdrawn or superseded) and no in-progress work references the thread (escalation #2000) |
 | escalation | 3 | re-assigned | system: next_action_assigned_to changed, no more specific rule matched (Update); OR: manual next_action=approved+needs_claude_followup flag set -- routes back to Claude instead of completed (escalation #1075) |
 | escalation | 4 | closed | either party directly (Update state=closed); OR system: next_action=noted (manual) or decision=noted (dispatcher-tied) |
 | escalation | 5 | withdraw | party's explicit choice at Update: next_action=reject, state=withdraw; OR: dispatcher-tied answer_for_run decision=reject (escalation #795 fix, 2026-08-22) |
 | escalation | 6 | supersede | party's explicit choice at Update: next_action=reject, state=supersede |
-| escalation | 7 | completed | system: manual next_action=approved+resolution present; OR: dispatcher-tied answer_for_run decision=approve |
+| escalation | 7 | completed | system: manual next_action=approved+resolution present; OR: dispatcher-tied answer_for_run decision=approve; OR system (thread: every item settled -- closed, withdrawn or superseded -- after an item change; escalation #2000 lifecycle) |
 | prose_section | 0 | draft | apply_session_patch.py: prose_section insert/supersede/bulk_supersede (caller-supplied, the default when omitted) |
 | prose_section | 1 | in_review | apply_session_patch.py: prose_section insert/supersede (caller-supplied status -- no dedicated transition op exists; 0 rows currently at this status) |
 | prose_section | 2 | approved | apply_session_patch.py: prose_section approve (the one dedicated transition op -- also stamps approved_at/approved_by) |
@@ -2647,7 +2648,7 @@ _one row per (observation, field) actually changed by a rule application_ — Au
 | run_id | TEXT |  |  |  |  | the run.run_id of the -Action Apply call that made this change |  |
 
 ### escalation_thread_item
-_one row per thread item_ — One row per item of a thread (type='thread' escalation): what a strand or task is matched against, and the item's current status only (open/closed). Every response, including each completion, is a row in escalation_thread_item_response. escalation #2000 (proposal v3 sec3.2, sec3.4).
+_one row per thread item_ — One row per item of a thread (type='thread' escalation): what a strand or task is matched against, and the item's current status only: open, or settled as closed (answered), withdrawn (no longer relevant) or superseded (carried by another item or thread). Every response, including each settlement, is a row in escalation_thread_item_response. escalation #2000 (proposal v3 sec3.2, sec3.4; thread lifecycle, BUILD.md s338).
 dedup key: `escalation_id, item_no`
 | column | type | pk | notnull | unique | fk | use | source/filled_by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
@@ -2656,21 +2657,21 @@ dedup key: `escalation_id, item_no`
 | item_no | INTEGER |  | ✓ |  |  | the item's place in its thread; the reference is {alias}.{item_no}, e.g. OT-16.1. Never renumbered; a new item takes the next number (proposal sec3.4) | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | kind | TEXT |  | ✓ |  |  | cfg_enum escalation_thread_item_kind: cluster, strong, verse, strand, chapter, event, researcher, escalation | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | value | TEXT |  | ✓ |  |  | e.g. M72, M10c, H5782, Rom 7:15-21, 10.13, #1993 (kind escalation: the task or issue that references the thread) | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
-| status | TEXT |  | ✓ |  |  | cfg_enum escalation_thread_item_status: open or closed -- current state only | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
+| status | TEXT |  | ✓ |  |  | cfg_enum escalation_thread_item_status: open, closed (answered), withdrawn (no longer relevant) or superseded (carried by another item or thread) -- current state only; every change is a response row | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | note | TEXT |  |  |  |  | what this item asks for, e.g. '7 verses' | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | opened_at | TEXT |  | ✓ |  |  | when the item was added (ISO-8601 UTC) | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
-| opened_by | INTEGER |  |  |  | escalation.id | the task or issue under which the item was added (e.g. a forward under #1998); NULL when added with the thread itself | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
+| opened_by | INTEGER |  |  |  | escalation.id | the escalation under which the item was added: a task or issue (e.g. a forward under #1998), or the superseded thread an item was carried over from; NULL when added with the thread itself | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 
 ### escalation_thread_item_response
-_one row per response to a thread item_ — One row per response to a thread item: touched, narrowed, forward, ruling, note, closed, reopened. Nothing is overwritten. escalation #2000 (proposal v3 sec3.3, approved round 5).
+_one row per response to a thread item_ — One row per response to a thread item: touched, narrowed, forward, ruling, note, closed, reopened, withdrawn, superseded. Nothing is overwritten; each response is also written in full to the thread's history. escalation #2000 (proposal v3 sec3.3, approved round 5; thread lifecycle, BUILD.md s338).
 | column | type | pk | notnull | unique | fk | use | source/filled_by |
 | --- | --- | --- | --- | --- | --- | --- | --- |
 | id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | item_id | INTEGER |  | ✓ |  | escalation_thread_item.id | the item answered | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | escalation_id | INTEGER |  | ✓ |  | escalation.id | the thread (repeated from the item, for easy querying) | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
-| kind | TEXT |  | ✓ |  |  | cfg_enum escalation_thread_item_response_kind. 'closed' closes the item, 'reopened' opens it again, 'forward' comes with at least one new item on the same thread | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
+| kind | TEXT |  | ✓ |  |  | cfg_enum escalation_thread_item_response_kind. 'closed', 'withdrawn' and 'superseded' settle an open item (status = kind; 'superseded' names its successor OT-nn[.n] or #nnnn in the text), 'reopened' opens a settled item again, 'forward' comes with at least one new item on the same thread | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | text | TEXT |  | ✓ |  |  | the response; a researcher's response is quoted verbatim (cfg_escalation 5) | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
-| via_escalation | INTEGER |  |  |  | escalation.id | the task or issue whose work gave the response, e.g. 1998 | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
+| via_escalation | INTEGER |  |  |  | escalation.id | the escalation whose work gave the response, e.g. 1998; for a task's own ending, that task; for an item carried over on supersede, the other thread | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | responded_by | TEXT |  | ✓ |  |  | Claude or Researcher | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | responded_at | TEXT |  | ✓ |  |  | ISO-8601 UTC | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | files | TEXT |  |  |  |  | JSON list of full repo-relative paths (cfg_escalation 7) | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
@@ -2700,8 +2701,8 @@ _one row per response to a thread item_ — One row per response to a thread ite
 | escalation_shape | manual, dispatcher |
 | escalation_state | raised, answered, re-assign, on-hold, paused, closed, retracted, withdraw, completed, in-progress, supersede, re-assigned |
 | escalation_thread_item_kind | cluster, strong, verse, strand, chapter, event, researcher, escalation |
-| escalation_thread_item_response_kind | touched, narrowed, forward, ruling, note, closed, reopened |
-| escalation_thread_item_status | open, closed |
+| escalation_thread_item_response_kind | touched, narrowed, forward, ruling, note, closed, reopened, withdrawn, superseded |
+| escalation_thread_item_status | open, closed, withdrawn, superseded |
 | escalation_type | prompted, task, interactive, run_error, issue, report-stop, crash, notice, config, note, thread |
 | folder_purpose_status | authoritative, mixed, reallocate, stale, deleted |
 | folder_purpose_type | archive, operations, results |

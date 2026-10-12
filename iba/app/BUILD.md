@@ -16912,3 +16912,57 @@ Files:
 
 **Files:** `iba/app/migration/escalation_open_threads_v1_20261012.py`, `iba/app/migration/escalation_open_threads_import_v1_20261012.py`, `iba/app/lib/escalation.py`, `iba/app/handlers/reports.py`, `iba/app/ps/Escalation.ps1`, `.claude/commands/start-project.md`, `.claude/commands/session-close.md`, `_analytics/cross-cluster-web/escalation-2000-register-export-compare-v1-20261012.py`, `_analytics/cross-cluster-web/open-threads-register.md` (now generated), `iba/docs/2000-open-threads-test-plan-v1-20261012.md`, `iba/app/GOVERNANCE.md` §93, `iba/app/USER-GUIDE.md` §4.8.
 
+
+## 337. A reassigned thread keeps its state — `cfg_escalation_transition` `thread_reassigned` (2026-10-12, researcher-approved option a, escalation #2000 D1)
+
+**Why:** the #2000 test run (`iba/docs/2000-open-threads-test-plan-v2-20261012.md`, now archived; v3 is current) found defect D1. `Update -Id OT-nn -AssignedTo X`, with no `-State` and no item change, fell to transition priority 7 (`assignee_changed`) and set `re-assigned`. That state is outside `_THREAD_OPEN_STATES` (on-hold, in-progress), so the thread dropped out of `-Action Thread`, `Match` and `ThreadCheck`. Found live on OT-09. Researcher, verbatim (chat 2026-10-12): *"go with option a"*, i.e. a reassignment keeps a thread's state.
+
+**Build (Developer Mode session, 2026-10-12):**
+- `iba/app/lib/escalation.py` `_condition_true`: new condition `thread_reassigned` = the item is a thread (`thread` facts present, which `update()` sets for every thread) and the assignee changed this call. Always false for non-thread items.
+- `iba/app/migration/escalation_thread_reassign_keeps_state_v1_20261012.py` (new, idempotent, `--dry-run`/`--db`): one `cfg_escalation_transition` row, shape `manual`, priority 6, next_action NULL, condition `thread_reassigned` → `__unchanged__`. It sits ahead of priority 7 `assignee_changed` and behind the approval rows (1–5). It shares priority 6 with `explicit_state_given`; both resolve to `__unchanged__` (explicit `-State` or current state), so their order does not matter.
+- No schema change, so no `cfg_table`/`cfg_column` change. `condition_key` has no `cfg_enum`; its vocabulary is the code, per the `cfg_column` description.
+- `USER-GUIDE.md` transition table gains the row. `GOVERNANCE.md` §93 gains a line.
+
+**Not changed (checked, not decided):** priority 5 (`ready_for_approval` → `re-assigned`) and priority 1 (`approved` + needs_followup → `re-assigned`) would strand a thread the same way, but only if a caller sets those next_actions on a thread. Threads are self_correctable (T4), so `reassign_to_researcher_requires_ready_for_approval` (decision_required only) never forces `ready_for_approval` on one. Left as a note on #2000 for the researcher.
+
+**Testing:** not tested in this session (CHARTER.md §4). Cases D1.1–D1.4 are in `iba/docs/2000-open-threads-test-plan-v3-20261012.md` (now v4, section 9), to run in a standard session.
+
+## 338. Thread lifecycle — Claude manages it; withdraw/supersede at item and thread level; completion on the last item; full responses to history (2026-10-12, researcher-approved, escalation #2000)
+
+**Why:** researcher, chat 2026-10-12, asked who approves, how item approval is gathered, whether the thread closes itself, and whether items and threads can be withdrawn or superseded. A first review proposed approval steps; the researcher rejected them (verbatim): *"previously you managed the entire registry without me even reviewing anything, now you want me to go through a workflow if a step inbetween for every item. That is complete over engineering. I can only be asked for approval with sufficient data provided in the approval request to approve, else my ruling is moot - how can I make a decision without researching it. We decided I will give you feedback in the chat, the rest you need to control and the code must make it possible to manage the thread. all interaction must go to history."* The round 2 review (`iba/docs/2000-thread-lifecycle-review-v1-20261012.md`) proposed five changes (G1–G5); *"proceed with the build"*.
+
+**Build (Developer Mode session):**
+- **Config:** `iba/app/migration/escalation_thread_lifecycle_v1_20261012.py` (new, idempotent, `--dry-run`/`--db`).
+  - `cfg_enum` `escalation_thread_item_status` += `withdrawn`, `superseded`; `escalation_thread_item_response_kind` += `withdrawn`, `superseded` (G1).
+  - `cfg_escalation_transition` shape manual, priority 0, `thread_items_all_settled` → `completed` (key `thread: every item settled`, added to `cfg_status_flow` completed set_by) (G3).
+  - `cfg_escalation_requirement` (reject, `superseded_by`, condition `thread_superseding`, field_required) (G4). The two `no_open_thread_items` messages now say "settled".
+  - `cfg_escalation` `thread_completion` restated; `cfg_behaviour_rule` `open-threads-carried-as-escalations` restated; `cfg_column` use text for `escalation_thread_item.status` and `escalation_thread_item_response.kind`. No schema change.
+- **`iba/app/lib/escalation.py`:**
+  - `_respond`: `closed`/`withdrawn`/`superseded` (`_SETTLE_KINDS`) settle an open item, status = kind; `superseded` must name `OT-nn`, `OT-nn.n` or `#nnnn` in its text; `reopened` opens any settled item.
+  - `_thread_facts` gains `all_settled`; `_condition_true` gains `thread_items_all_settled` (never on reject); `_requirement_condition_true` gains `thread_superseding`.
+  - `_thread_completion_resolution` builds the resolution from each item's latest response. `update()` and `_restate_thread` complete a thread with it when the last item settles (`_restate_thread` previously could not leave the open states).
+  - `_sync_threads_for`: a task's item takes its ending (withdraw → `withdrawn`, supersede → `superseded`, else `closed`) (G2).
+  - `update()` gains `superseded_by`; `_settle_thread_on_reject` withdraws a withdrawn thread's open items, or moves a superseded thread's open items to the successor (reusing a matching item there, reopened if settled) and records them `superseded` with the new reference. The successor gets a history version (G4).
+  - The history comment of every item response now carries the response kind, who, the full text and files (G5). The CLI takes `--superseded-by`.
+- **`Escalation.ps1`:** `-ResponseKind` += `withdrawn`, `superseded`; new `-SupersededBy`; help and an example.
+- **Docs:** `USER-GUIDE.md` §4.8 and the transition table; `GOVERNANCE.md` §93 (T6 row amended, lifecycle bullet); escalation actions worksheet.
+
+**Testing:** not tested in this session (CHARTER.md §4). Section 10 of `iba/docs/2000-open-threads-test-plan-v4-20261012.md`, to run in a standard session.
+
+## 339. Developer Mode config writes audited — `configmaint.apply_logged`; #2000's unlogged writes backfilled; stale thread config texts corrected; escalation worksheet (2026-10-12, escalations #2000, #2106)
+
+**Why:** researcher, chat 2026-10-12 (verbatim): *"there is an error in your memory because the worksheet was not open, and it is not now open. fix the error, not bypass it like you previously have done. also deal with 2106 - there are something in the configs that you have not done properly."*
+
+**Found:**
+- The `~$escalation actions worksheet.xlsx` lock file was a stale leftover from 2026-09-04; the workbook was saved 2026-10-12 and could be opened for writing and renamed, so it was not open. Claude had reported it "open in Excel" from the lock file alone (memory rule), and an earlier session had noted the same state and moved on.
+- The three #2000 migrations (`escalation_open_threads_v1`, `escalation_thread_reassign_keeps_state_v1`, `escalation_thread_lifecycle_v1`) wrote `cfg_*` directly. **None of their 87 changes had a `cfg_change_detail` row**, the row-level config audit `propose` writes. Developer Mode removes propose's approval gate, not the audit. The earlier #2000 session had noted the gap (#2000 v14) without fixing it.
+- Config texts left stale by the lifecycle build (§338): `cfg_table` use for both thread tables, the T3/T5 and T6 transition notes, the on-hold `cfg_status_flow` set_by, two `cfg_column` texts (`opened_by`, `via_escalation`), and rule 74's `enforced_by`.
+
+**Fixed:**
+- `iba/app/handlers/configmaint.py`: new `apply_logged(conn, run_id, table, op, where, set_)`, the one audited `cfg_*` write (write + `cfg_change_detail` row with prior state). `propose` now applies through it; `_apply_conn` reads the prior row by column name whatever the connection's row_factory.
+- `iba/app/migration/backfill_cfg_change_detail_2000_v1_20261012.py` (new; `--baseline`, `--dry-run`, refuses a second run): diffs every `cfg_*` table between the NAS copy `db_backups/iba_20261011T171049Z.db` (taken before the #2000 work; nothing logged after it) and live, and records each difference: 81 inserts, 6 updates with their prior rows (cfg_behaviour_rule 43, cfg_escalation 4, cfg_status_flow ×3, cfg_utility escalation), run_id `DEVMODE-2000-BACKFILL-20261012`, 87 rows in all. All 87 checked as #2000's.
+- `iba/app/migration/escalation_thread_config_corrections_v1_20261012.py` (new, through `apply_logged`, run_id `DEVMODE-2000-CONFIG-CORRECTIONS-20261012`): the eight stale texts above, and the new `cfg_behaviour_rule` (development) `devmode-config-writes-are-audited`.
+- `GOVERNANCE.md` §69 and `.claude/commands/developer-mode.md` step 3 state the rule.
+- Stale lock file deleted; `iba/docs/escalation actions worksheet.xlsx` Threads block gains `-NextAction` and `-SupersededBy` headers, the new response kinds in the `-ResponseKind` hint, and rows 50–53 (withdraw/supersede an item, withdraw/supersede a thread). Memory `feedback_warn_before_editing_excel_tool_interface` corrected: test the workbook itself, never claim "open" from a lock file.
+
+**Testing:** not tested in this session (CHARTER.md §4). Test plan v4 §11.

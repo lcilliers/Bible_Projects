@@ -278,12 +278,14 @@ order per shape (`manual`/`dispatcher`), first match wins:
 
 | priority | shape | next_action | fires when | → state |
 |---|---|---|---|---|
+| 0 | manual | any | **thread**: this call's item change left no item open (not on `reject`) | `completed`, resolution generated (escalation #2000 thread lifecycle, 2026-10-12) |
 | 1 | manual | `approved` | `resolution` present (this call or a prior one) | `completed` |
 | 2 | manual | `reject` | always | the party's explicit `-State withdraw`/`supersede` choice, `-Comment` required |
 | 3 | manual | `revise` | always | `in-progress` |
 | 4 | manual | `noted` | always | `closed` |
 | 5 | manual | `ready_for_approval` | always | `re-assigned` (register v9, D27 — its own explicit row; previously relied on rule 6's `-AssignedTo`-changed condition, which isn't guaranteed true) |
 | 6 | manual | any | you gave an explicit `-State` | that `-State` (escalation #762, 2026-08-21 — outranks rule 7 below; previously `-AssignedTo X -State on-hold` silently landed on `re-assigned`, the explicit `-State` had no way to win) |
+| 6 | manual | any | the item is a **thread** and `-AssignedTo` changed | state unchanged (escalation #2000 D1, 2026-10-12 — a reassigned thread keeps on-hold/in-progress; previously it fell to rule 7 and dropped out of Thread/Match/ThreadCheck) |
 | 7 | manual | any | `-AssignedTo` changed, no more specific rule matched | `re-assigned` |
 | 8 | manual | any | nothing else matched | state unchanged |
 | 1 | dispatcher | `hold` | always | `on-hold` |
@@ -496,17 +498,30 @@ into one combined thread — see the retirement note above).
 
 The open threads register (held items, researcher questions and signposts, each with a "comes
 back when") is carried in this table as type `thread`. Each thread has an alias `OT-nn`, and
-every `-Id` accepts it (`-Id OT-16`). Rules: `GOVERNANCE.md` §93; build: `BUILD.md` §336.
+every `-Id` accepts it (`-Id OT-16`). Rules: `GOVERNANCE.md` §93; build: `BUILD.md` §336–§338.
+
+**Who manages a thread:** Claude, end to end. The researcher's part is feedback in chat, which
+Claude records verbatim against the item the same turn. There is no approval step for an item or
+a thread (researcher, 2026-10-12: *"the rest you need to control … all interaction must go to
+history"*).
 
 - **What a thread waits for** is held as **items** (`escalation_thread_item`): `cluster`,
   `strong`, `verse`, `strand`, `chapter`, `event`, `researcher` or `escalation`. Each item has a
-  reference `OT-nn.n` (e.g. `OT-16.2`), which is never renumbered. An item is open or closed.
+  reference `OT-nn.n` (e.g. `OT-16.2`), which is never renumbered. An item is `open`, or settled:
+  `closed` (answered), `withdrawn` (no longer relevant) or `superseded` (carried by another item
+  or thread, which the response names).
 - **Every response to an item** is a row in `escalation_thread_item_response`: touched,
-  narrowed, forward, ruling, note, closed or reopened. Nothing is overwritten.
+  narrowed, forward, ruling, note, closed, reopened, withdrawn or superseded. Nothing is
+  overwritten, and each response is also written in full into the thread's history.
 - **States.** A thread rests at `on-hold`. It is `in-progress` while an in-progress task or issue
-  references it (an open `escalation` item, `#nnnn`). It reaches `completed` through
-  `-NextAction approved -Resolution "…"`, and only once every item is closed. Closing some items
-  while others stay open returns it to `on-hold`. A thread is never `raised`.
+  references it (an open `escalation` item, `#nnnn`). **When its last open item is settled it
+  completes in the same call**, with a resolution generated from the item closures. Settling some
+  items while others stay open returns it to `on-hold`. A thread is never `raised`, and never
+  reaches completed or closed with an item open.
+- **Ending a thread early.** `-NextAction reject -State withdraw` withdraws every open item with
+  it. `-NextAction reject -State supersede -SupersededBy OT-nn` moves each open item to that
+  thread (reusing a matching item there, reopened if settled) and records it superseded here.
+  Both need `-Comment` (the reason).
 - **The register file** `_analytics/cross-cluster-web/open-threads-register.md` is generated.
   Never edit it; it is rewritten by `-Action Export -Type thread`, which session-close runs.
 
@@ -519,6 +534,10 @@ every `-Id` accepts it (`-Id OT-16`). Rules: `GOVERNANCE.md` §93; build: `BUILD
 | bring threads into line at session start (T5) | `.\Escalation.ps1 -Action ThreadCheck -AnsweredBy Claude` |
 | answer an item | `.\Escalation.ps1 -Action Update -Id OT-16 -Item OT-16.2 -ResponseKind closed -Respond "…" -Via 2010 -AnsweredBy …` |
 | forward an item | `… -Item OT-16.2 -ResponseKind forward -Respond "…" -AddItem cluster:M58 …` |
+| withdraw an item (no longer relevant) | `… -Item OT-16.2 -ResponseKind withdrawn -Respond "the reason" …` |
+| supersede an item | `… -Item OT-16.2 -ResponseKind superseded -Respond "carried by OT-41.3: …" …` (the text must name `OT-nn`, `OT-nn.n` or `#nnnn`) |
+| withdraw a thread | `.\Escalation.ps1 -Action Update -Id OT-40 -NextAction reject -State withdraw -Comment "the reason" -AnsweredBy Claude` |
+| supersede a thread | `.\Escalation.ps1 -Action Update -Id OT-40 -NextAction reject -State supersede -SupersededBy OT-41 -Comment "the reason" -AnsweredBy Claude` |
 | add an item | `.\Escalation.ps1 -Action Update -Id OT-16 -AddItem "verse:Rom 7:15-21 :: 7 verses" -AnsweredBy …` |
 | raise a new thread | `.\Escalation.ps1 -Action Raise -Type thread -Question "title, 60 chars max" -Comment "the thread" -ComesBackWhen "…" -Item cluster:M15 -ResolutionKind SelfCorrectable -AnsweredBy Claude` |
 | regenerate the register file | `.\Escalation.ps1 -Action Export -Type thread` |
@@ -532,7 +551,8 @@ Notes:
   base, zero-padded. A verse matches inside a range, and a whole-chapter item matches any verse in
   that chapter.
 - **When any task or issue changes,** its item on each thread follows it. A thread moves to
-  in-progress when the task does, and the item closes when the task closes.
+  in-progress when the task does, and the item takes the task's ending: `closed` when the task
+  is completed or closed, `withdrawn` when it is withdrawn, `superseded` when it is superseded.
 
 **A manual Raise of any type** may now also take `-State on-hold` or `-State in-progress`
 (default `raised`; rule T2). A code-raised escalation always lands at `raised`, so module

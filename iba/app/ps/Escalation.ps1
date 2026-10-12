@@ -162,10 +162,16 @@
                         least one -Item 'kind:value' (T7), and takes -ComesBackWhen; it lands
                         on-hold unless -State in-progress, never raised, and gets the next OT number.
     -Action Update (thread) -Item OT-16.1 -ResponseKind closed -Respond "..." [-Via 1998] [-File ..]
-                        records a response per named item (closed closes it, reopened reopens it,
-                        forward needs -AddItem kind:value); -AddItem alone adds items. The thread
+                        records a response per named item (closed / withdrawn / superseded settle
+                        it -- superseded names its successor OT-nn[.n] or #nnnn in -Respond;
+                        reopened reopens it; forward needs -AddItem kind:value); -AddItem alone
+                        adds items. The full response goes into the thread's history. The thread
                         then follows T3/T5 (in-progress while in-progress work references it) and
-                        T6 (partly closed -> on-hold); -NextAction approved needs every item closed.
+                        T6 (partly settled -> on-hold); when the last open item is settled the
+                        thread completes, with a generated resolution (thread lifecycle, #2000).
+    -Action Update (thread) -NextAction reject -State withdraw|supersede [-SupersededBy OT-nn]
+                        withdraw withdraws every open item; supersede needs -SupersededBy, and each
+                        open item moves to that thread and is recorded superseded here.
     -Action Thread       the open threads (on-hold + in-progress; -State narrows), or one thread in
                         full with -Id OT-nn. Through run.py (escalation-reporting/escalation.thread).
     -Action Match        T1: -Cluster/-Strong/-Verse (repeatable) against open thread items;
@@ -205,6 +211,8 @@
     .\Escalation.ps1 -Action Match -Cluster M18 -Strong H2530 -For 1993 -AnsweredBy Claude
 .EXAMPLE
     .\Escalation.ps1 -Action Update -Id OT-16 -Item OT-16.2 -ResponseKind closed -Respond "Eze 19:14 read with M03, no anger in the verse" -Via 2010 -AnsweredBy Claude
+.EXAMPLE
+    .\Escalation.ps1 -Action Update -Id OT-40 -NextAction reject -State supersede -SupersededBy OT-41 -AnsweredBy Claude -Comment "OT-41 carries the same question, wider"
 .EXAMPLE
     .\Escalation.ps1 -Action Raise -Type thread -Question "Mind in Romans 8" -Comment "..." -ComesBackWhen "M15 is read" -Item "cluster:M15" -Item "verse:Rom 8:5-7 :: 3 verses" -ResolutionKind SelfCorrectable -AnsweredBy Claude
 #>
@@ -258,8 +266,10 @@ param(
     # -File lists full repo-relative paths. -AddItem adds items (needed with -ResponseKind forward).
     [string[]] $AddItem,
     [string] $Respond,
-    [ValidateSet('touched', 'narrowed', 'forward', 'ruling', 'note', 'closed', 'reopened')] [string] $ResponseKind,
+    [ValidateSet('touched', 'narrowed', 'forward', 'ruling', 'note', 'closed', 'reopened', 'withdrawn', 'superseded')] [string] $ResponseKind,
     [string] $Via,
+    # -NextAction reject -State supersede on a thread: the successor thread (OT-nn) its open items move to.
+    [string] $SupersededBy,
     [string[]] $File,
     # Match (T1): what to match against open thread items; -For records the match on each thread.
     [string] $For,
@@ -435,6 +445,7 @@ switch ($Action) {
         if ($Respond) { $flags += "--respond=$Respond" }
         if ($ResponseKind) { $flags += "--response-kind=$($ResponseKind.ToLower())" }
         if ($Via) { $flags += "--via=$Via" }
+        if ($SupersededBy) { $flags += "--superseded-by=$SupersededBy" }
         foreach ($f in @($File | Where-Object { $_ })) { $flags += "--file=$f" }
         if ($Comment) {
             python -m iba.app.lib.escalation update $Id @flags $Comment

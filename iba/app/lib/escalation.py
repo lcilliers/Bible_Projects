@@ -130,6 +130,7 @@ from __future__ import annotations
 import datetime
 import json
 import pathlib
+import re
 import sqlite3
 import sys
 import time
@@ -268,7 +269,7 @@ def _condition_true(condition_key: str, *, next_action: str | None, has_resoluti
     is config from that point on.
 
     `thread` (escalation #2000) is None for every non-thread item, so the two thread conditions
-    are always false for them. For a thread it carries: items_changed (an item added, closed or
+    are always false for them (so is thread_reassigned, #2000 D1). For a thread it carries: items_changed (an item added, closed or
     reopened this call, or the state of the work an 'escalation' item references changed),
     closed_some (an item closed this call), open_remaining (open items after this call) and
     referenced (an open 'escalation' item points at a task/issue at state in-progress)."""
@@ -281,6 +282,16 @@ def _condition_true(condition_key: str, *, next_action: str | None, has_resoluti
                     and not thread["referenced"])
     if condition_key == "has_resolution":
         return bool(has_resolution)
+    if condition_key == "thread_items_all_settled":           # #2000 lifecycle: the last open
+        return bool(thread and thread["items_changed"]         # item settled this call -> the
+                    and thread["all_settled"]                  # thread completes. Never on
+                    and next_action != "reject")               # reject: withdraw/supersede of a
+                                                                # thread settles its items itself
+    if condition_key == "thread_reassigned":                  # escalation #2000 D1 (researcher:
+        return bool(thread is not None and assignee_changed)   # "go with option a"): reassigning a
+                                                                # thread keeps its state -- it never
+                                                                # lands on re-assigned, outside the
+                                                                # thread open states
     if condition_key == "assignee_changed":
         return bool(assignee_changed)
     if condition_key == "explicit_state_given":               # found live 2026-08-21 (#762): an
@@ -366,6 +377,8 @@ def _requirement_condition_true(condition_key: str, *, originator: str, checked_
         return bool(values.get("comment") or values.get("context") or values.get("tried"))
     if condition_key == "thread_type":                         # escalation #2000 (T4/T6/T7)
         return values.get("type") == "thread"
+    if condition_key == "thread_superseding":                  # #2000 lifecycle: a thread
+        return values.get("type") == "thread" and values.get("state") == "supersede"
     raise ValueError(f"unknown cfg_escalation_requirement.condition_key {condition_key!r}")
 
 
@@ -706,10 +719,17 @@ def _resolve_item(db: Db, thread: dict, ref: str):
     return dict(rows[0])
 
 
+_SETTLE_KINDS = ("closed", "withdrawn", "superseded")   # #2000 lifecycle: response kinds
+                                                         # that settle an item (its status = kind)
+_SUCCESSOR_RE = re.compile(r"OT-\d+(?:\.\d+)?|#\d+")
+
+
 def _respond(cfg: Cfg, db: Db, item: dict, kind: str, text: str, *, via: int | None, by: str,
              files: list | None, at: str) -> None:
-    """One response row; 'closed'/'reopened' also set the item's status (ruling 7: every
-    individual completion is recorded in the response table)."""
+    """One response row (ruling 7: every individual completion is recorded in the response table).
+    A settling kind -- closed, withdrawn, superseded (#2000 lifecycle) -- needs an open item and
+    sets its status to that kind; 'reopened' opens a settled item again. 'superseded' must name
+    what carries the item on (OT-nn, OT-nn.n or #nnnn) in its text."""
     _grant(cfg, "escalation_thread_item_response")
     if kind not in db.cfg.enum("escalation_thread_item_response_kind"):
         raise ValueError(f"{kind!r} is not a member of cfg_enum "
@@ -718,24 +738,72 @@ def _respond(cfg: Cfg, db: Db, item: dict, kind: str, text: str, *, via: int | N
     if not text:
         raise ValueError("a response needs its text (-Respond); a researcher's response is quoted "
                          "verbatim (cfg_escalation 5)")
-    statuses = db.cfg.enum("escalation_thread_item_status")         # open / closed
+    statuses = db.cfg.enum("escalation_thread_item_status")   # open/closed/withdrawn/superseded
     if item["status"] not in statuses:
         raise ValueError(f"item {item['item_no']} has status {item['status']!r}, not a member of "
                          f"cfg_enum 'escalation_thread_item_status' ({statuses!r})")
-    if kind == "closed":
-        if item["status"] == "closed":
+    if kind in _SETTLE_KINDS:
+        if item["status"] != "open":
             raise ValueError(f"item {item['item_no']} ({item['kind']}:{item['value']}) is already "
-                             f"closed")
-        db.update("escalation_thread_item", {"id": item["id"]}, status="closed")
+                             f"{item['status']} -- reopen it first")
+        if kind == "superseded" and not _SUCCESSOR_RE.search(text):
+            raise ValueError("a superseded response names what carries the item on (OT-nn, "
+                             "OT-nn.n or #nnnn) in -Respond")
+        db.update("escalation_thread_item", {"id": item["id"]}, status=kind)
+        item["status"] = kind
     elif kind == "reopened":
         if item["status"] == "open":
             raise ValueError(f"item {item['item_no']} ({item['kind']}:{item['value']}) is already "
                              f"open")
         db.update("escalation_thread_item", {"id": item["id"]}, status="open")
+        item["status"] = "open"
     db.write("escalation_thread_item_response", {
         "item_id": item["id"], "escalation_id": item["escalation_id"], "kind": kind, "text": text,
         "via_escalation": via, "responded_by": by, "responded_at": at,
         "files": json.dumps(files, ensure_ascii=False) if files else None})
+
+
+def _settle_thread_on_reject(cfg: Cfg, db: Db, thread: dict, state: str | None, superseded_by,
+                             *, reason: str | None, who: str, at: str) -> list[str]:
+    """#2000 lifecycle (G4): no thread ends with an open item. Withdraw -> each open item is
+    withdrawn with the thread's reason. Supersede -> each open item is added to the successor
+    thread (an existing item of the same kind:value is reused, reopened if settled) and recorded
+    superseded here, naming its new reference. Returns summary lines for the history comment."""
+    alias = thread["alias"] or f"#{thread['id']}"
+    open_items = [dict(r) for r in _thread_items(db, thread["id"], "open")]
+    out = []
+    if state == "withdraw":
+        for it in open_items:
+            _respond(cfg, db, it, "withdrawn", f"{alias} withdrawn: {reason or ''}".strip(),
+                     via=None, by=who, files=None, at=at)
+            out.append(f"item {it['item_no']} ({it['kind']}:{it['value']}) withdrawn")
+        return out
+    if state != "supersede":
+        return out
+    succ = _current(db, resolve_id(db, superseded_by))
+    if succ["type"] != "thread" or succ["id"] == thread["id"]:
+        raise ValueError(f"-SupersededBy {superseded_by!r} must be another thread")
+    if succ["state"] not in _THREAD_OPEN_STATES:
+        raise ValueError(f"-SupersededBy {succ['alias']} is {succ['state']!r}; the successor must "
+                         f"be open (on-hold or in-progress)")
+    for it in open_items:
+        carried = f"carried over from {alias}.{it['item_no']} (superseded): {reason or ''}".strip()
+        dup = db.rows("SELECT * FROM escalation_thread_item WHERE escalation_id=? AND kind=? AND "
+                      "value=? COLLATE NOCASE", (succ["id"], it["kind"], it["value"]))
+        if dup:
+            new = dict(dup[0])
+            if new["status"] != "open":
+                _respond(cfg, db, new, "reopened", carried, via=thread["id"], by=who, files=None,
+                         at=at)
+        else:
+            new = _add_item(cfg, db, succ["id"], it["kind"], it["value"], it["note"],
+                            opened_by=thread["id"], at=at)
+            _respond(cfg, db, new, "note", carried, via=thread["id"], by=who, files=None, at=at)
+        ref = f"{succ['alias']}.{new['item_no']}"
+        _respond(cfg, db, it, "superseded", f"superseded by {ref}: {reason or ''}".strip(),
+                 via=succ["id"], by=who, files=None, at=at)
+        out.append(f"item {it['item_no']} ({it['kind']}:{it['value']}) superseded by {ref}")
+    return out
 
 
 def _thread_referenced(db: Db, escalation_id: int) -> bool:
@@ -755,9 +823,25 @@ def _thread_referenced(db: Db, escalation_id: int) -> bool:
 
 
 def _thread_facts(db: Db, escalation_id: int, *, items_changed: bool, closed_some: bool) -> dict:
+    n_open = len(_thread_items(db, escalation_id, "open"))
     return {"items_changed": items_changed, "closed_some": closed_some,
-            "open_remaining": len(_thread_items(db, escalation_id, "open")),
+            "open_remaining": n_open,
+            "all_settled": n_open == 0 and bool(_thread_items(db, escalation_id)),
             "referenced": _thread_referenced(db, escalation_id)}
+
+
+def _thread_completion_resolution(db: Db, thread: dict) -> str:
+    """#2000 lifecycle: the resolution written when a thread completes because its last item was
+    settled -- each item with how it was settled, from its latest response."""
+    alias = thread["alias"] or f"#{thread['id']}"
+    parts = []
+    for it in _thread_items(db, thread["id"]):
+        r = _latest_response(db, it["id"])
+        via = f" via #{r['via_escalation']}" if r and r["via_escalation"] else ""
+        text = (r["text"] or "").replace("\n", " ") if r else ""
+        parts.append(f"{alias}.{it['item_no']} {it['kind']}:{it['value']} {it['status']}{via}"
+                     + (f": {text[:300]}{'…' if len(text) > 300 else ''}" if text else ""))
+    return f"Every item settled ({len(parts)}): " + "; ".join(parts)
 
 
 def _restate_thread(cfg: Cfg, db: Db, thread_id: int, summary: str, *, who: str,
@@ -776,10 +860,14 @@ def _restate_thread(cfg: Cfg, db: Db, thread_id: int, summary: str, *, who: str,
                                      cur_state=cur["state"],
                                      needs_followup=bool(cur["needs_claude_followup"]),
                                      cur_next_action=cur["next_action"], thread=facts)
-    if new_state not in _THREAD_OPEN_STATES:
+    resolution = None
+    if new_state == "completed" and facts["all_settled"]:      # #2000 lifecycle: last item settled
+        resolution = _thread_completion_resolution(db, cur)
+    elif new_state not in _THREAD_OPEN_STATES:
         new_state = cur["state"]
-    _snapshot(cfg, db, thread_id, deltas={"comment": summary},
-              envelope={"state": _check_state(db, new_state), "next_action": cur["next_action"],
+    _snapshot(cfg, db, thread_id, deltas={"comment": summary, "resolution": resolution},
+              envelope={"state": _check_state(db, new_state),
+                        "next_action": None if resolution else cur["next_action"],
                         "next_action_assigned_to": cur["next_action_assigned_to"],
                         "resolution_kind": cur["resolution_kind"],
                         "needs_claude_followup": cur["needs_claude_followup"]},
@@ -805,13 +893,16 @@ def _sync_threads_for(cfg: Cfg, db: Db, ref_id: int, *, who: str) -> list[str]:
         thread = _current(db, it["escalation_id"])
         label = thread["alias"] or f"#{thread['id']}"
         if ref["state"] in _TERMINAL_STATES:
-            settled = (ref["resolution"] or "").strip().replace("\n", " ")
+            # #2000 lifecycle (G2): the item takes the task's own ending -- a withdrawn or
+            # superseded task does not read as work done.
+            kind = {"withdraw": "withdrawn", "supersede": "superseded"}.get(ref["state"], "closed")
+            settled = (ref["resolution"] or ref["comment"] or "").strip().replace("\n", " ")
             text = (f"#{ref_id} reached {ref['state']}"
                     + (f": {settled[:400]}{'…' if len(settled) > 400 else ''}" if settled else ""))
-            _respond(cfg, db, it, "closed", text, via=ref_id, by=who, files=None, at=now)
+            _respond(cfg, db, it, kind, text, via=ref_id, by=who, files=None, at=now)
             st = _restate_thread(cfg, db, thread["id"],
-                                 f"{label}: item {it['item_no']} (#{ref_id}) closed -- #{ref_id} "
-                                 f"reached {ref['state']} (T6)", who=who, closed_some=True)
+                                 f"{label}: item {it['item_no']} (#{ref_id}) {kind} by {who} -- "
+                                 f"{text} (T6)", who=who, closed_some=True)
         else:
             # T5 moves on-hold -> in-progress only. A thread already in-progress is left alone when
             # its work steps back (no rule moves it; T6 handles completion).
@@ -1306,7 +1397,8 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
           comes_back_when: str | None = None,
           add_items: list[tuple[str, str, str | None]] | None = None,
           item_refs: list[str] | None = None, respond: str | None = None,
-          response_kind: str | None = None, via=None, files: list | None = None) -> str:
+          response_kind: str | None = None, via=None, files: list | None = None,
+          superseded_by=None) -> str:
     """Update -- every subsequent change to a MANUAL item. `originator` is required, no default.
     Two-stage approval separation of duties: the party that sets `approved` must differ from the
     party that most recently set `ready_for_approval` on this item.
@@ -1331,7 +1423,14 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     one-line summary into the thread's history (ruling 8). The thread's state then follows the
     priority-0 cfg_escalation_transition rows (T3/T5, T6); completed/closed is refused while any
     item is open (T6). After any change to a task or issue, every thread referencing it is brought
-    into line (`_sync_threads_for`)."""
+    into line (`_sync_threads_for`).
+
+    Thread lifecycle (#2000, researcher 2026-10-12: "the rest you need to control ... all
+    interaction must go to history"): `withdrawn`/`superseded` settle an item like `closed`; when
+    an item change leaves none open, the thread completes with a generated resolution. A thread
+    withdrawn (`-NextAction reject -State withdraw`) withdraws its open items; superseded
+    (`-State supersede`) needs `superseded_by` (OT-nn) and moves each open item there, recording
+    it superseded. Each item response is written in full into the thread's history comment."""
     cur = _current(db, escalation_id)
     if not cur["run_id"].startswith("MANUAL-") and cur["resolution_kind"] != "decision_required":
         return (f"escalation #{escalation_id} is dispatcher-tied (run_id {cur['run_id']!r}), not "
@@ -1395,7 +1494,8 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
                             values={}, self_id=escalation_id)
     if checked_action == "reject":
         _check_requirements(db, "reject", originator=who, checked_action=checked_action,
-                            values={"state": state})
+                            values={"state": state, "type": cur["type"],
+                                    "superseded_by": superseded_by})
     if checked_action == "revise":
         _check_requirements(db, "revise", originator=who, checked_action=checked_action,
                             values={"tried": tried})
@@ -1404,8 +1504,11 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
     # the same transaction, so the transition rows and the T6 check see this call's changes.
     is_thread = cur["type"] == "thread"
     thread_facts, item_summary = None, []
-    if (add_items or item_refs or respond or response_kind) and not is_thread:
-        raise ValueError("-Item/-AddItem/-Respond/-ResponseKind are for type thread only")
+    if (add_items or item_refs or respond or response_kind or superseded_by) and not is_thread:
+        raise ValueError("-Item/-AddItem/-Respond/-ResponseKind/-SupersededBy are for type thread "
+                         "only")
+    if superseded_by and not (checked_action == "reject" and state == "supersede"):
+        raise ValueError("-SupersededBy goes with -NextAction reject -State supersede")
     if is_thread:
         if (item_refs or respond or response_kind) and not (item_refs and respond and response_kind):
             raise ValueError("an item response needs all three: -Item, -ResponseKind and -Respond "
@@ -1423,12 +1526,20 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
         for kind, value, note in add_items or []:
             new_item = _add_item(cfg, db, escalation_id, kind, value, note, opened_by=via_id, at=now)
             item_summary.append(f"item {new_item['item_no']} {kind}:{value} added")
-        changed = bool(add_items) or response_kind in ("closed", "reopened")
+        if checked_action == "reject":                          # #2000 lifecycle (G4)
+            item_summary += _settle_thread_on_reject(cfg, db, cur, state, superseded_by,
+                                                     reason=comment, who=who, at=now)
+        changed = bool(add_items) or response_kind in _SETTLE_KINDS + ("reopened",)
         thread_facts = _thread_facts(db, escalation_id, items_changed=changed,
-                                     closed_some=response_kind == "closed")
+                                     closed_some=response_kind in _SETTLE_KINDS)
         if item_summary:
+            # all interaction to history (#2000 lifecycle, G5): the response itself, in full
             line = (f"{cur['alias'] or '#' + str(escalation_id)}: " + "; ".join(item_summary)
                     + (f" (via #{via_id})" if via_id else ""))
+            if respond:
+                line += f" -- {response_kind} by {who}: {respond}"
+                if files:
+                    line += f" [files: {', '.join(files)}]"
             comment = f"{comment}\n{line}" if comment else line
 
     assignee_changed = bool(next_action_assigned_to) and next_action_assigned_to != cur["next_action_assigned_to"]
@@ -1438,6 +1549,10 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
                                      assignee_changed=assignee_changed, explicit_state=state,
                                      cur_state=cur["state"], needs_followup=bool(resolved_needs_followup),
                                      cur_next_action=cur["next_action"], thread=thread_facts)
+
+    if (is_thread and new_state == "completed" and thread_facts and thread_facts["all_settled"]
+            and not new_resolution):                        # #2000 lifecycle: last item settled
+        resolution = new_resolution = _thread_completion_resolution(db, cur)
 
     # D26 (register v9): work cannot land on a `raised` item -- comment/context/tried content
     # requires the state to actually move first (e.g. -State in-progress), mechanically enforced
@@ -1471,6 +1586,13 @@ def update(cfg: Cfg, db: Db, escalation_id: int, *, next_action: str | None = No
         synced = _sync_threads_for(cfg, db, escalation_id, who=who)
         if synced:
             msg += "\n  threads: " + "; ".join(synced)
+    elif superseded_by:
+        succ = _current(db, resolve_id(db, superseded_by))
+        st = _restate_thread(cfg, db, succ["id"],
+                             f"{succ['alias']}: received the open items of "
+                             f"{cur['alias'] or '#' + str(escalation_id)}, superseded by {who}: "
+                             f"{comment}", who=who, closed_some=False)
+        msg += f"\n  successor {succ['alias']} (#{succ['id']}) -> {st}"
     return msg
 
 
@@ -1845,7 +1967,7 @@ def write_thread_report(cfg: Cfg, db: Db, path: pathlib.Path, *, state: str | No
         its = _thread_items(db, t["id"], "open")
         shown = "; ".join(f"{t['alias']}.{i['item_no']} {i['kind']}:{i['value']}" for i in its)
         if not its:
-            shown = "_none open -- ready to complete (approved)_"
+            shown = "_none open_"
         L.append(f"| {t['alias']} · #{t['id']} | {t['state']} | {_cell(t['short_description'])} | "
                  f"{_cell(shown)} |")
         console.append(f"{t['alias']:<7} #{t['id']} {t['state']:<11} {t['short_description']} "
@@ -2084,6 +2206,7 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
         rest, response_kind = _extract_flag(rest, "response-kind")
         rest, via = _extract_flag(rest, "via")
         rest, files = _extract_multi(rest, "file")
+        rest, superseded_by = _extract_flag(rest, "superseded-by")      # #2000 lifecycle
         comment = " ".join(rest) or None
         print("  " + update(cfg, db, resolve_id(db, argv[1]), next_action=next_action,
                             next_action_assigned_to=assigned_to, comment=comment, context=context,
@@ -2094,7 +2217,8 @@ def _dispatch(cfg: Cfg, db: Db, argv: list[str]) -> int:
                             comes_back_when=comes_back_when,
                             add_items=[parse_item_spec(s) for s in add_specs] or None,
                             item_refs=item_refs or None, respond=respond,
-                            response_kind=response_kind, via=via, files=_files_arg(files)))
+                            response_kind=response_kind, via=via, files=_files_arg(files),
+                            superseded_by=superseded_by))
     elif len(argv) >= 2 and argv[0] == "history":
         # id-prefixed stem, 2026-08-26 (escalation #857) -- matches handlers/reports.py's copy
         eid = resolve_id(db, argv[1])

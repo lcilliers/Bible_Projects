@@ -109,6 +109,10 @@ Read live, not from memory (`feedback_iba_session_start_read_live_docs_not_memor
   `cfg_table`/`cfg_column`/etc. registration in the same unit of work
   (`config-updated-same-unit-of-work-as-change`), it's just not gated on researcher approval
   before being written.
+- Every `cfg_*` write is audited: write it through
+  `iba.app.handlers.configmaint.apply_logged(conn, run_id, table, op, where, set)`, never a raw
+  INSERT/UPDATE, so `cfg_change_detail` records it with the row's prior state
+  (`devmode-config-writes-are-audited`, 2026-10-12, #2000/#2106 — three migrations had bypassed it).
 
 ## 4. Set the visual signal
 

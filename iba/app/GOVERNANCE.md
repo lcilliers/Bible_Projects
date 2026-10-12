@@ -3240,6 +3240,13 @@ standard `configmaint.propose` per-row approval gate. Every applicable rule (`CH
 document, `cfg_behaviour_rule`) must still be checked and applied — full permissions is not licence
 to skip research. Every development task still gets an escalation item as the durable record.
 
+**Developer Mode removes the approval gate, never the config audit** (2026-10-12, #2000/#2106;
+`cfg_behaviour_rule` `devmode-config-writes-are-audited`). Every `cfg_*` write in a Developer Mode
+session goes through `iba.app.handlers.configmaint.apply_logged(conn, run_id, table, op, where,
+set)`, the same write `propose` uses after approval, so `cfg_change_detail` records it with the
+row's prior state. Found when three #2000 migrations had written `cfg_*` directly: their 87
+changes were backfilled from a pre-change copy of iba.db (`BUILD.md` §339).
+
 **App Mode (standard)** — the default session type. Used both for real operation and for testing
 anything built in a Developer Mode session — testing never happens in the same session that built
 the thing; it happens in a fresh, standard-permission session. Every `cfg_*` change, no exceptions
@@ -4153,11 +4160,19 @@ They record where things were at that date.
   | T2 | a manual Raise may choose `raised`/`on-hold`/`in-progress`; code raises stay `raised` (module blocking, `cfg_escalation` 3); a thread is never `raised` | `cfg_escalation` raise_state_choice; `cfg_enum` escalation_raise_state |
   | T3/T5 | a thread is in-progress while an **in-progress** task or issue references it (round 2: *"in-progress only"*); session start runs `-Action ThreadCheck` | `cfg_escalation_transition` (priority 0); `cfg_escalation` 4 amended |
   | T4 | every thread is self_correctable | `cfg_escalation_requirement` |
-  | T6 | completed only through `approved` with every item closed; a partial completion returns the thread to on-hold; a task or issue may close leaving its threads open, and its item on each thread closes | `cfg_escalation` thread_completion; `cfg_escalation_requirement` no_open_thread_items; `cfg_escalation_transition` |
+  | T6 | *(as amended by the thread lifecycle, below)* a thread completes when its last open item is settled (closed, withdrawn or superseded), with a generated resolution; a partial settlement returns it to on-hold; never completed or closed with an item open; a task or issue may close leaving its threads open, and its item on each thread takes the task's ending | `cfg_escalation` thread_completion; `cfg_escalation_transition` (priority 0 `thread_items_all_settled`, `thread_items_changed_partly_closed`); `cfg_escalation_requirement` no_open_thread_items |
   | T7 | a thread needs at least one item | `cfg_escalation_requirement` |
   | T8 | notes on a thread are Updates, never edits to the file | `cfg_behaviour_rule` 74 open-threads-carried-as-escalations |
   | T9 | the 60-character title check applies unchanged (*"the thread title limit to 60 MUST be maintained"*) | existing (#759) |
 
+- **A reassigned thread keeps its state** (D1, researcher 2026-10-12: *"go with option a"*). `cfg_escalation_transition` priority 6 `thread_reassigned` → unchanged, ahead of the `assignee_changed` → `re-assigned` row, so `-AssignedTo` alone never takes a thread out of on-hold/in-progress. Build: `BUILD.md` §337.
+- **Thread lifecycle: Claude manages it; no approval step** (2026-10-12). Researcher, verbatim: *"previously you managed the entire registry without me even reviewing anything, now you want me to go through a workflow if a step inbetween for every item. That is complete over engineering. I can only be asked for approval with sufficient data provided in the approval request to approve, else my ruling is moot … We decided I will give you feedback in the chat, the rest you need to control and the code must make it possible to manage the thread. all interaction must go to history."* Then: *"proceed with the build"*. What the code now allows (all config-governed, `BUILD.md` §338; review `iba/docs/2000-thread-lifecycle-review-v1-20261012.md`):
+  - An item is settled as `closed`, `withdrawn` or `superseded` (`cfg_enum`); superseded names its successor.
+  - The last open item settled → the thread completes in the same call (`cfg_escalation_transition` priority 0 `thread_items_all_settled`). This replaces T6's separate `approved` step.
+  - A task or issue's ending carries to its thread item: withdrawn → `withdrawn`, superseded → `superseded`, otherwise `closed`.
+  - A thread withdrawn withdraws its open items; a thread superseded names its successor (`-SupersededBy`, `cfg_escalation_requirement` condition `thread_superseding`) and its open items move there. No thread ends with an open item.
+  - Every item response is written in full to the thread's history.
+  - An approval request goes to the researcher only when it carries the data needed to decide.
 - **Rule 4 is redirected, not suspended.** `cfg_escalation` 4 counts only `in-progress` threads as "work first". The on-hold threads are not a backlog to be worked: a thread moves only when a strand reaches it (#1900, focused capture).
 - **Responding in chat** (proposal §3.4). The researcher may answer by item reference (`OT-16.2 close: …`), by value (`OT-16 M03`), or by thread alone (`OT-16`, which goes to the thread's history). Claude records the answer verbatim against the item in the same turn (`cfg_escalation` 5), through `-Action Update -Id OT-nn -Item … -ResponseKind … -Respond …`.
 - **Retired for threads** (proposal §5): the dated one-off strand scripts that edited the register by splitting rows on " | " (`m18-*-records-update-*.py`, `m72-group-B-records-update-*.py`, `verse-narrative-ot-crossref-v3-20261009.py`). They must not be re-run against the generated file. They are left in place; their filing waits on the researcher.
