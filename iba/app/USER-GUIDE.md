@@ -1492,6 +1492,11 @@ iba\app\ps\Narrative-Register.ps1 -Action Export
   the chapters or the register use (`2 Corinthians 1:12`, `2Co 1:12`, ranges, lists, `Mal 2:17–3:2`),
   or `kind: text` with kind `lexical`, `science` or `study file`. A new claim (origin narrative) needs
   `-BeyondText` and at least one source.
+- **`-Action Record` with `from_version` = `to_version`** for a chapter re-reads its current file
+  without a version bump: the citations are parsed again and brought into line. Use it when the
+  reference parser has changed and the chapter text has not (first used for #2136).
+- **A section pointer** after a reference, such as `(Deuteronomy 28:65–67; 10.1)`, is not read as a
+  chapter: `10.1` is the narrative section (#2136).
 - **`-Passage`** is the passage's opening words (case, quotation marks and emphasis ignored). A
   passage is a paragraph, one bullet, one table row or one block quote. Too few words to pick one
   passage is refused, with the count.

@@ -2,6 +2,71 @@
 
 *Published from iba.db on 2026-10-13. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
+## 2026-10-13 — Psa 116:9 and 1Sa 17:19 removed from the narrative
+
+**Researcher:** just remove 1 Sam 17:19 from the narative, it has no relevance;  Ps 116:9 is also not relevant and can be removed.
+
+**Method:** Ch 2: the Psalm 116 citation ends at verse 8; the quoted words of 116:9 ('I will walk before the Lord in the land of the living') are removed with it. Ch 4: '(17:17-20)' becomes '(17:17-18, 20)'.
+
+**Original claims changed:** No claim text changed.
+
+**Refs:** escalation 2138
+
+
+## 2026-10-13 — Citation format: Ch 3 Mark and Luke named (#2136)
+
+**Researcher:** 2136 confirm that the citation references has a consistent format throughout the narative that is consistent with the config and verse table
+
+**Method:** After update 132 named Matthew 22:37, the bare (12:30) and (10:27) that follow it took Matthew; the prose names Mark and Luke. Both now name their book. Found by the book-named-between scan after the update.
+
+**Original claims changed:** No claim text changed. Only reference wording.
+
+**Refs:** escalation 2136
+
+
+## 2026-10-13 — Citation format made consistent (#2136)
+
+**Researcher:** 2136 confirm that the citation references has a consistent format throughout the narative that is consistent with the config and verse table
+
+**Method:** Audit (iba/app/tools/temp_2136_citation_format_audit.py) against style guide section 5, narrative.book_alias_map and the verse table. Corrected: 26 abbreviated or variant book names written in full as the narrative spells them elsewhere (Ch 4, 10.1, 10.10, 12, 14; most in Held sections, reference wording only); the first bare follow-on of 23 paragraphs given its book (Ch 2, 3, 5, 10.4, 10.5, 10.6, 10.7, 10.9, 10.13, 11, 13.1, 14), so the 54 follow-ons that cited nothing in the register now resolve.
+
+**Sources:** outputs/narrative-register/narrative-citation-format-audit-2136-v1-20261013.md
+
+**Scripts:** iba/app/tools/temp_2136_citation_format_audit.py
+
+**Original claims changed:** No claim text changed. Only reference wording.
+
+**Notes:** 'Psalm' (single psalm) and 'Song of Songs' are the narrative's standard forms and are kept.
+
+**Refs:** escalation 2136
+
+
+## 2026-10-13 — Citations linked to two verses added to the verse table (#2138)
+
+**Researcher:** 2138  add the two verses to the verse table. the link to strong_verse should also be set.
+
+**Method:** Psa 116:9 and 1Sa 17:19 were added to the verse table (iba/app/tools/temp_2138_add_gap_verses.py). Ch 2 and Ch 4 are re-read at their current version (from_version = to_version) so their citations take the new verse ids. No chapter text changed.
+
+**Scripts:** iba/app/tools/temp_2138_add_gap_verses.py
+
+**Original claims changed:** No claim or chapter text changed.
+
+**Refs:** escalation 2138
+
+
+## 2026-10-13 — Citation corrections (#2136): section pointers and follow-on books
+
+**Researcher:** fix the citation errors in 2136
+
+**Method:** 1. Reference parser (lib/narrativeregister.py _BODY): a chained part followed by '.digit' is a narrative section pointer ('; 10.1'), not a chapter; 49 false whole-chapter citations in 19 chapters are dropped. 2. Bare follow-ons that took the book of the previous reference while the prose named another book: the book is now named in the reference. Found by the unresolved list, a scan for a book named in the prose between a reference and its follow-on, and a check of each follow-on's quote against its resolved verse. Chapters whose text is unchanged are re-read at their current version (from_version = to_version).
+
+**Original claims changed:** No claim text changed. Only reference wording in five chapters.
+
+**Notes:** Text changes: Ch 2 v19 (1 Corinthians 15:45, 15:54, 15:55); Ch 9 v3 (Ephesians 4:23, Ecclesiastes 3:21); 10.10 v24 (Nehemiah 6:8, was read as Acts 6:8); Ch 11 v32 (Proverbs 15:28); 13.1 v24 (Matthew 12:14, Acts 4:28, Matthew 23:38-39, was read as Luke 23:38-39). Not changed: Psa 116:9 (Ch 2) and 1Sa 17:19 (Ch 4) have no verse row (governance.verse_gap_by_design); the references are correct.
+
+**Refs:** escalation 2136
+
+
 ## 2026-10-13 — Strand updates — anger (M02) pairings with strands already read: 14 gaps woven, two corrections (2026-10-13, OT-29/OT-30/OT-51)
 
 **Strand:** anger

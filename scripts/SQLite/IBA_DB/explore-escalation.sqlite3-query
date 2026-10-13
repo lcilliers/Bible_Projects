@@ -4,13 +4,14 @@
 SELECT version, type,state,next_action_assigned_to,next_action, id, short_description,comment,context, resolution FROM escalation 
 WHERE state not in ('completed','withdraw','closed','on-hold','supersede');
 --all open escalations
-SELECT id, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution FROM escalation 
+SELECT id, alias, version, type,state,next_action,next_action_assigned_to, short_description,comment,context, resolution FROM escalation 
 WHERE state not in ('completed','withdraw','closed','supersede');
 --a specific escalation
 SELECT * FROM escalation 
-WHERE id in (1807);
+where id = 2110;
+;
 
-select esc.id, esc.type, eti.id as thread_item_id, eti.content
+select esc.id, esc.type, eti.id as thread_item_id
 ,esc.short_description,
 esc.comment,
 esc.context,
@@ -21,7 +22,9 @@ eti.status,
 eti.value
 from escalation esc
 join escalation_thread_item eti on esc.id = eti.escalation_id
-where value in ('M01','M02','M25','M47','M72');
+where value in ('M01','M02','M18','M25','M47','M72')
+and eti.status not in ('completed','withdraw','closed','supersede')
+;
 
 
 

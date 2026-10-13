@@ -145,19 +145,19 @@ File `01-the-question-v4-20261002.md` (v4) · draft
 
 ### 02 — Life, breath and death
 
-File `02-life-breath-and-death-v18-20261013.md` (v18) · draft
+File `02-life-breath-and-death-v21-20261013.md` (v21) · draft
 
 ### 03 — One inner person, many words
 
-File `03-one-inner-person-v3-20261009.md` (v3) · draft
+File `03-one-inner-person-v5-20261013.md` (v5) · draft
 
 ### 04 — The heart
 
-File `04-the-heart-v15-20261012.md` (v15) · draft
+File `04-the-heart-v17-20261013.md` (v17) · draft
 
 ### 05 — The soul
 
-File `05-the-soul-v6-20261013.md` (v6) · draft
+File `05-the-soul-v7-20261013.md` (v7) · draft
 
 ### 06 — The spirit
 
@@ -173,7 +173,7 @@ File `08-conscience-and-bosom-v7-20261012.md` (v7) · draft
 
 ### 09 — Where the words part
 
-File `09-where-the-words-part-v2-20261002.md` (v2) · draft
+File `09-where-the-words-part-v3-20261013.md` (v3) · draft
 
 ### 10 — Part 10 — The inner being at work
 
@@ -185,7 +185,7 @@ File `10-00-the-inner-being-at-work-v5-20261002.md` (v5) · draft
 
 ### 10.1 — Feeling
 
-File `10-01-feeling-v20-20261012.md` (v20) · draft
+File `10-01-feeling-v21-20261013.md` (v21) · draft
 
 ### 10.2 — Knowing and hearing
 
@@ -197,19 +197,19 @@ File `10-03-remembering-and-forgetting-v7-20261012.md` (v7) · draft
 
 ### 10.4 — Thinking
 
-File `10-04-thinking-v13-20261013.md` (v13) · draft
+File `10-04-thinking-v14-20261013.md` (v14) · draft
 
 ### 10.5 — Speaking
 
-File `10-05-speaking-v21-20261012.md` (v21) · draft
+File `10-05-speaking-v22-20261013.md` (v22) · draft
 
 ### 10.6 — Wanting
 
-File `10-06-wanting-v22-20261012.md` (v22) · draft
+File `10-06-wanting-v23-20261013.md` (v23) · draft
 
 ### 10.7 — Choosing and setting direction
 
-File `10-07-choosing-and-setting-direction-v27-20261012.md` (v27) · draft
+File `10-07-choosing-and-setting-direction-v28-20261013.md` (v28) · draft
 
 ### 10.8 — Right and wrong
 
@@ -217,11 +217,11 @@ File `10-08-right-and-wrong-v7-20261009.md` (v7) · draft
 
 ### 10.9 — Relating to God
 
-File `10-09-relating-to-god-v22-20261013.md` (v22) · draft
+File `10-09-relating-to-god-v23-20261013.md` (v23) · draft
 
 ### 10.10 — Relating to others
 
-File `10-10-relating-to-others-v23-20261012.md` (v23) · draft
+File `10-10-relating-to-others-v25-20261013.md` (v25) · draft
 
 ### 10.11 — Hiding and disclosing
 
@@ -233,15 +233,15 @@ File `10-12-fear-v8-20261013.md` (v8) · draft
 
 ### 10.13 — Anger
 
-File `10-13-anger-v8-20261013.md` (v8) · draft
+File `10-13-anger-v9-20261013.md` (v9) · draft
 
 ### 11 — Other sides of the inner being
 
-File `11-other-sides-of-the-inner-being-v31-20261012.md` (v31) · draft
+File `11-other-sides-of-the-inner-being-v33-20261013.md` (v33) · draft
 
 ### 12 — When the inner being goes wrong
 
-File `12-when-the-inner-being-goes-wrong-v20-20261012.md` (v20) · draft + held
+File `12-when-the-inner-being-goes-wrong-v21-20261013.md` (v21) · draft + held
 
 ### 13 — Other beings
 
@@ -249,7 +249,7 @@ File `13-00-other-beings-v2-20261008.md` (v2) · draft
 
 ### 13.1 — Divine
 
-File `13-01-divine-v23-20261013.md` (v23) · draft
+File `13-01-divine-v25-20261013.md` (v25) · draft
 
 ### 13.2 — Angels
 
@@ -265,7 +265,7 @@ File `13-04-nature-v5-20261012.md` (v5) · draft
 
 ### 14 — Made new
 
-File `14-made-new-v15-20261012.md` (v15) · draft + held
+File `14-made-new-v16-20261013.md` (v16) · draft + held
 
 ### 15 — Beyond the named words
 

@@ -1,0 +1,34 @@
+{
+ "update": {
+  "update_date": "2026-10-13",
+  "title": "Citations linked to two verses added to the verse table (#2138)",
+  "researcher_instruction": "2138  add the two verses to the verse table. the link to strong_verse should also be set.",
+  "method": "Psa 116:9 and 1Sa 17:19 were added to the verse table (iba/app/tools/temp_2138_add_gap_verses.py). Ch 2 and Ch 4 are re-read at their current version (from_version = to_version) so their citations take the new verse ids. No chapter text changed.",
+  "claims_changed_note": "No claim or chapter text changed.",
+  "notes": null,
+  "source_files": [],
+  "scripts": [
+   "iba/app/tools/temp_2138_add_gap_verses.py"
+  ]
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2138"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "02",
+   "from_version": 19,
+   "to_version": 19,
+   "file": "02-life-breath-and-death-v19-20261013.md"
+  },
+  {
+   "chapter": "04",
+   "from_version": 15,
+   "to_version": 15,
+   "file": "04-the-heart-v15-20261012.md"
+  }
+ ]
+}

@@ -1,0 +1,135 @@
+{
+ "update": {
+  "update_date": "2026-10-13",
+  "title": "Citation corrections (#2136): section pointers and follow-on books",
+  "researcher_instruction": "fix the citation errors in 2136",
+  "method": "1. Reference parser (lib/narrativeregister.py _BODY): a chained part followed by '.digit' is a narrative section pointer ('; 10.1'), not a chapter; 49 false whole-chapter citations in 19 chapters are dropped. 2. Bare follow-ons that took the book of the previous reference while the prose named another book: the book is now named in the reference. Found by the unresolved list, a scan for a book named in the prose between a reference and its follow-on, and a check of each follow-on's quote against its resolved verse. Chapters whose text is unchanged are re-read at their current version (from_version = to_version).",
+  "claims_changed_note": "No claim text changed. Only reference wording in five chapters.",
+  "structure_change": null,
+  "notes": "Text changes: Ch 2 v19 (1 Corinthians 15:45, 15:54, 15:55); Ch 9 v3 (Ephesians 4:23, Ecclesiastes 3:21); 10.10 v24 (Nehemiah 6:8, was read as Acts 6:8); Ch 11 v32 (Proverbs 15:28); 13.1 v24 (Matthew 12:14, Acts 4:28, Matthew 23:38-39, was read as Luke 23:38-39). Not changed: Psa 116:9 (Ch 2) and 1Sa 17:19 (Ch 4) have no verse row (governance.verse_gap_by_design); the references are correct.",
+  "source_files": [],
+  "scripts": []
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2136"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "02",
+   "from_version": 18,
+   "to_version": 19,
+   "file": "02-life-breath-and-death-v19-20261013.md"
+  },
+  {
+   "chapter": "09",
+   "from_version": 2,
+   "to_version": 3,
+   "file": "09-where-the-words-part-v3-20261013.md"
+  },
+  {
+   "chapter": "10.10",
+   "from_version": 23,
+   "to_version": 24,
+   "file": "10-10-relating-to-others-v24-20261013.md"
+  },
+  {
+   "chapter": "11",
+   "from_version": 31,
+   "to_version": 32,
+   "file": "11-other-sides-of-the-inner-being-v32-20261013.md"
+  },
+  {
+   "chapter": "13.1",
+   "from_version": 23,
+   "to_version": 24,
+   "file": "13-01-divine-v24-20261013.md"
+  },
+  {
+   "chapter": "07",
+   "from_version": 8,
+   "to_version": 8,
+   "file": "07-flesh-v8-20261012.md"
+  },
+  {
+   "chapter": "10.1",
+   "from_version": 20,
+   "to_version": 20,
+   "file": "10-01-feeling-v20-20261012.md"
+  },
+  {
+   "chapter": "10.11",
+   "from_version": 8,
+   "to_version": 8,
+   "file": "10-11-hiding-and-disclosing-v8-20261012.md"
+  },
+  {
+   "chapter": "10.12",
+   "from_version": 8,
+   "to_version": 8,
+   "file": "10-12-fear-v8-20261013.md"
+  },
+  {
+   "chapter": "10.13",
+   "from_version": 8,
+   "to_version": 8,
+   "file": "10-13-anger-v8-20261013.md"
+  },
+  {
+   "chapter": "10.2",
+   "from_version": 17,
+   "to_version": 17,
+   "file": "10-02-knowing-and-hearing-v17-20261012.md"
+  },
+  {
+   "chapter": "10.3",
+   "from_version": 7,
+   "to_version": 7,
+   "file": "10-03-remembering-and-forgetting-v7-20261012.md"
+  },
+  {
+   "chapter": "10.6",
+   "from_version": 22,
+   "to_version": 22,
+   "file": "10-06-wanting-v22-20261012.md"
+  },
+  {
+   "chapter": "10.7",
+   "from_version": 27,
+   "to_version": 27,
+   "file": "10-07-choosing-and-setting-direction-v27-20261012.md"
+  },
+  {
+   "chapter": "10.9",
+   "from_version": 22,
+   "to_version": 22,
+   "file": "10-09-relating-to-god-v22-20261013.md"
+  },
+  {
+   "chapter": "12",
+   "from_version": 20,
+   "to_version": 20,
+   "file": "12-when-the-inner-being-goes-wrong-v20-20261012.md"
+  },
+  {
+   "chapter": "13.3",
+   "from_version": 3,
+   "to_version": 3,
+   "file": "13-03-other-spirits-v3-20261012.md"
+  },
+  {
+   "chapter": "13.4",
+   "from_version": 5,
+   "to_version": 5,
+   "file": "13-04-nature-v5-20261012.md"
+  },
+  {
+   "chapter": "14",
+   "from_version": 15,
+   "to_version": 15,
+   "file": "14-made-new-v15-20261012.md"
+  }
+ ]
+}

@@ -1,0 +1,120 @@
+{
+ "update": {
+  "update_date": "2026-10-13",
+  "title": "Citation format made consistent (#2136)",
+  "researcher_instruction": "2136 confirm that the citation references has a consistent format throughout the narative that is consistent with the config and verse table",
+  "method": "Audit (iba/app/tools/temp_2136_citation_format_audit.py) against style guide section 5, narrative.book_alias_map and the verse table. Corrected: 26 abbreviated or variant book names written in full as the narrative spells them elsewhere (Ch 4, 10.1, 10.10, 12, 14; most in Held sections, reference wording only); the first bare follow-on of 23 paragraphs given its book (Ch 2, 3, 5, 10.4, 10.5, 10.6, 10.7, 10.9, 10.13, 11, 13.1, 14), so the 54 follow-ons that cited nothing in the register now resolve.",
+  "claims_changed_note": "No claim text changed. Only reference wording.",
+  "notes": "'Psalm' (single psalm) and 'Song of Songs' are the narrative's standard forms and are kept.",
+  "source_files": [
+   "outputs/narrative-register/narrative-citation-format-audit-2136-v1-20261013.md"
+  ],
+  "scripts": [
+   "iba/app/tools/temp_2136_citation_format_audit.py"
+  ]
+ },
+ "refs": [
+  {
+   "kind": "escalation",
+   "value": "2136"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "02",
+   "from_version": 19,
+   "to_version": 20,
+   "file": "02-life-breath-and-death-v20-20261013.md"
+  },
+  {
+   "chapter": "03",
+   "from_version": 3,
+   "to_version": 4,
+   "file": "03-one-inner-person-v4-20261013.md"
+  },
+  {
+   "chapter": "04",
+   "from_version": 15,
+   "to_version": 16,
+   "file": "04-the-heart-v16-20261013.md"
+  },
+  {
+   "chapter": "05",
+   "from_version": 6,
+   "to_version": 7,
+   "file": "05-the-soul-v7-20261013.md"
+  },
+  {
+   "chapter": "10.1",
+   "from_version": 20,
+   "to_version": 21,
+   "file": "10-01-feeling-v21-20261013.md"
+  },
+  {
+   "chapter": "10.10",
+   "from_version": 24,
+   "to_version": 25,
+   "file": "10-10-relating-to-others-v25-20261013.md"
+  },
+  {
+   "chapter": "10.13",
+   "from_version": 8,
+   "to_version": 9,
+   "file": "10-13-anger-v9-20261013.md"
+  },
+  {
+   "chapter": "10.4",
+   "from_version": 13,
+   "to_version": 14,
+   "file": "10-04-thinking-v14-20261013.md"
+  },
+  {
+   "chapter": "10.5",
+   "from_version": 21,
+   "to_version": 22,
+   "file": "10-05-speaking-v22-20261013.md"
+  },
+  {
+   "chapter": "10.6",
+   "from_version": 22,
+   "to_version": 23,
+   "file": "10-06-wanting-v23-20261013.md"
+  },
+  {
+   "chapter": "10.7",
+   "from_version": 27,
+   "to_version": 28,
+   "file": "10-07-choosing-and-setting-direction-v28-20261013.md"
+  },
+  {
+   "chapter": "10.9",
+   "from_version": 22,
+   "to_version": 23,
+   "file": "10-09-relating-to-god-v23-20261013.md"
+  },
+  {
+   "chapter": "11",
+   "from_version": 32,
+   "to_version": 33,
+   "file": "11-other-sides-of-the-inner-being-v33-20261013.md"
+  },
+  {
+   "chapter": "12",
+   "from_version": 20,
+   "to_version": 21,
+   "file": "12-when-the-inner-being-goes-wrong-v21-20261013.md"
+  },
+  {
+   "chapter": "13.1",
+   "from_version": 24,
+   "to_version": 25,
+   "file": "13-01-divine-v25-20261013.md"
+  },
+  {
+   "chapter": "14",
+   "from_version": 15,
+   "to_version": 16,
+   "file": "14-made-new-v16-20261013.md"
+  }
+ ]
+}

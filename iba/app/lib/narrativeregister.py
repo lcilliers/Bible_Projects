@@ -178,8 +178,9 @@ class VerseIndex:
 
 _BOOK = r"(?P<book>Song\sof\s(?:Songs|Solomon)|(?:[123]\s?)?[A-Z][a-z]+)\.?"
 _PART = r"\d+(?::\d+)?(?:\s?[–-]\s?\d+(?::\d+)?)?"
-# a list or chain part must not be the numeral of the next book ('Jam 1:2, 1 John 3:20')
-_BODY = rf"(?P<body>{_PART}(?:(?:,\s?|;\s)(?:{_PART})(?![A-Za-z]|\s[A-Z][a-z]))*)"
+# a list or chain part must not be the numeral of the next book ('Jam 1:2, 1 John 3:20'), nor a
+# narrative section pointer ('Deuteronomy 28:65-67; 10.1' is Deu 28:65-67 and section 10.1, #2136)
+_BODY = rf"(?P<body>{_PART}(?:(?:,\s?|;\s)(?:{_PART})(?![A-Za-z\d]|\s[A-Z][a-z]|\.\d))*)"
 _REF_RX = re.compile(rf"(?<![\w.]){_BOOK}\s{_BODY}(?![\d:])")
 _FOLLOW_CV = re.compile(r"\((?P<body>\d+:\d+(?:\s?[–-]\s?\d+(?::\d+)?)?(?:,\s?\d+(?::\d+)?)*)\)")
 _FOLLOW_V = re.compile(r"\((?:v\.?\s?|vv\.?\s?)?(?P<body>\d+(?:\s?[–-]\s?\d+)?(?:,\s?\d+)*)\)")
@@ -1083,6 +1084,12 @@ def _sync_citations(cfg, w: Writer, vx: VerseIndex, ch, sections, passages, from
         if key not in have:
             w.insert("narrative_citation", row)
             w.note_unresolved(vx, row, where[key])
+        else:      # a corrected parse (#2136), or a verse since added to the verse table (#2138)
+            sets = {k: row[k] for k in ("ref_as_written", "verse_id") if have[key][k] != row[k]}
+            if "verse_id" in sets:
+                sets["quoted"] = row["quoted"]
+            if sets:
+                w.update("narrative_citation", {"id": have[key]["id"]}, sets)
 
 
 # ══ read-only: find, history, check ═════════════════════════════════════════════════════════════

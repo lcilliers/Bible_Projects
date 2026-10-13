@@ -17102,3 +17102,49 @@ It was the only file under `iba/` with 0x08 bytes.
 **Also:** `.claude/commands/developer-mode.md` step 3 no longer says built work is never tested in the same session (#2137).
 
 **Files:** `iba/app/lib/narrativeregister.py`, `iba/app/handlers/narrativeregister.py`, `iba/app/USER-GUIDE.md`, test plan v4.
+
+## 349. Narrative register: section pointers not read as chapters; follow-on citations corrected (2026-10-13, escalation #2136)
+
+**Why:** researcher, chat 2026-10-13 (verbatim): *"fix the citation errors in 2136"*. The live register held 49 false whole-chapter citations, because a narrative section pointer after a reference (`(Deuteronomy 28:65–67; 10.1)`) was read as chapter 10. It also held follow-on references (`(15:45)`) that took the previous reference's book when the prose named another.
+
+**Change:**
+- `lib/narrativeregister.py` `_BODY`: a chained part followed by `.digit` (or another digit) is not taken, so `; 10.1` is no longer a chapter. Over all 32 current chapter files the only citations the new parser drops are the 49 `; n` section pointers (old/new parse diff, read-only).
+- `lib/narrativeregister.py` `_sync_citations`: a kept citation whose `ref_as_written` changed (for example `Exodus 14:12; 10` → `Exodus 14:12`) is updated in place.
+- **Chapter text (reference wording only, on the researcher's instruction):**
+  - Ch 2 v19: 1 Corinthians 15:45, 15:54 and 15:55 (read as Genesis/Isaiah, or missed)
+  - Ch 9 v3: Ephesians 4:23 and Ecclesiastes 3:21
+  - 10.10 v24: Nehemiah 6:8 (silently read as Acts 6:8)
+  - Ch 11 v32: Proverbs 15:28
+  - 13.1 v24: Matthew 12:14, Acts 4:28, and Matthew 23:38–39 (silently read as Luke 23:38–39)
+  Prior versions are archived. The follow-ons were found three ways: by the unresolved list, by a scan for a book named in the prose between a reference and its follow-on, and by checking each follow-on's quote against its resolved verse (602 of 961 follow-ons carry a quote). The 359 follow-ons with no quote and no book named between are not checked by this method.
+- **Recorded:** `Narrative-Register.ps1 -Action Record -File _analytics/essay/spirit_soul_body/narrative-citation-corrections-2136-v1-20261013.json` (update 130). The 5 changed chapters are bumped one version. The 14 chapters with unchanged text are re-read at their current version (`from_version` = `to_version`; USER-GUIDE.md §12h).
+
+**Result (live Check):** current citations went from 6,267 to 6,218. Section-pointer chapters went from 49 to 0. Unresolved references went from 23 to 2. The 2 left are Psa 116:9 (Ch 2) and 1Sa 17:19 (Ch 4): the references are correct, and the verses have no row (`governance.verse_gap_by_design`). The 57 "claim is current but no current passage tells it" findings are unchanged from the earlier Check.
+
+**Tested** on a copy of iba.db (SQLite backup API; deleted after) before the live record. The run gave the same counts as above, with 0 new unresolved references. It also checked the 10 corrected verses: each is now cited, and the wrong ones (Act 6:8, Luk 23:38) are not.
+
+**Files:** `iba/app/lib/narrativeregister.py`, `iba/app/USER-GUIDE.md`, the five chapter files, `_analytics/essay/spirit_soul_body/narrative-citation-corrections-2136-v1-20261013.json`.
+
+## 350. Two verses added to the verse table; citation format made consistent (2026-10-13, escalations #2138, #2136, #2135)
+
+**Why:** researcher, chat 2026-10-13 (verbatim): *"2135:  apply choice (a) ; 2138  add the two verses to the verse table. the link to strong_verse should also be set.   2136 confirm that the citation references has a consistent format throughout the narative that is consistent with the config and verse table"*.
+
+**#2135 (a):** test plan v5 (`iba/docs/2110-narrative-claim-register-test-plan-v5-20261013.md`; v4 archived), case 5.3 now expects the claims changed under the updates carrying the ref. The tool is unchanged.
+
+**#2138:**
+- **Verses added:** Psa 116:9 (verse id 29761, 6 spans) and 1Sa 17:19 (29762, 10 spans) were added by `iba/app/tools/temp_2138_add_gap_verses.py`. It fetches each verse from STEP through the call3 route, narrowed with `|reference=<osisId>`, and writes the same verse/span rows as `handlers/raw.py:verses_one`, under the same `call3_strong` write grant. The `verse_meta` rows come from the insert trigger. `verse_lexical` was built with `VerseLexical.ps1 -Step lexical.build` (8 and 15 codes).
+- **No `strong_verse` rows, held for the researcher.** strong_verse holds only word-onboarded strongs (`strong.origin='word'`, 4,546 codes), each with its full concordance. All 16 codes in the two verses are `backfill` and have no strong_verse rows anywhere.
+- **Citations linked:** `_sync_citations` now updates a kept citation's `verse_id` (and `quoted`) when the verse has since been added. Ch 2 and Ch 4 were re-read (update 131), and both citations now carry their verse ids.
+
+**#2136 format audit** (`iba/app/tools/temp_2136_citation_format_audit.py`, read-only; report in `outputs/narrative-register/`) checks against style guide §5, `narrative.book_alias_map` and the verse table:
+- **Abbreviated or variant book names:** 26, written in full as the narrative spells them elsewhere (Ch 4, 10.1, 10.10, 12, 14; most in Held sections).
+- **Follow-ons that cited nothing:** 54. The first bare follow-on of each of 23 paragraphs opened before any named reference, so the register, which reads per paragraph, recorded no citation. Each now names its book (Ch 2, 3, 5, 10.4, 10.5, 10.6, 10.7, 10.9, 10.13, 11, 13.1, 14).
+- **Recorded:** update 132 (16 chapters bumped one version, priors archived), then update 133 for Ch 3 v5. Naming Matthew 22:37 had made the bare (12:30) and (10:27) after it take Matthew, while the prose names Mark and Luke. The book-named-between scan caught this after update 132.
+- **Final audit (v3):** 0 variant spellings, 0 tokens outside the alias map, 0 follow-ons citing nothing, 0 hyphen ranges, 0 unresolved chapter references, and 0 unresolved claim sources. "Psalm" (a single psalm) and "Song of Songs" are the narrative's standard forms. The audit's "short form" count (608) measures against the alias map's longest key ("psalms", "songofsolomon"), so it is not an error count.
+- **Follow-on quote check:** 616 of 980 follow-ons carry a quote, and all match their resolved verse.
+
+**Tested:** each Record was run first on a copy of iba.db (SQLite backup API, deleted after): 0 unresolved, nothing unaccounted for. Spine check after: 0 fatal.
+
+**Files:** `iba/app/lib/narrativeregister.py`; `iba/app/tools/temp_2138_add_gap_verses.py`; `iba/app/tools/temp_2136_citation_format_audit.py`; the chapter files; Record JSONs `_analytics/essay/spirit_soul_body/narrative-citation-{verse-links-2138,format-2136,format-2136-ch3}-v1-20261013.json`; test plan v5.
+
+**Addendum, same day (#2138):** both verses were then judged not relevant and removed from the narrative. Researcher, verbatim: *"just remove 1 Sam 17:19 from the narative, it has no relevance;  Ps 116:9 is also not relevant and can be removed."* Register update 134: Ch 2 v21 cites Psalm 116:3–8, with the quoted words of 116:9 removed; Ch 4 v17 cites 1 Samuel 17:17–18, 20. Then, on *"soft delete and prepare the 2138 for approval"*, the two verse rows were soft-deleted (`temp_2138_add_gap_verses.py --delete`, each table under the grant that wrote it): verse 2, span 16, verse_lexical 23. `verse_meta` (2) followed by the trigger `verse_meta_on_verse_deleted`. No strong_verse rows were ever made. The `_sync_citations` verse_id update stays in place for any verse added later. Spine check after: 0 fatal.
