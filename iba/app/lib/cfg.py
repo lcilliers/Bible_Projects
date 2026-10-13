@@ -24,7 +24,7 @@ import sys
 _VERSION_TABLES = (
     "cfg_table", "cfg_column", "cfg_unique", "cfg_index", "cfg_enum", "cfg_connection", "cfg_api",
     "cfg_write_grant", "cfg_work_package", "cfg_step", "cfg_setting", "cfg_on_fail",
-    "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule", "cfg_utility",
+    "cfg_status_flow", "cfg_book_order", "cfg_candidate_rule", "cfg_utility", "cfg_trigger",
 )
 # NOTE (2026-08-07): several cfg_* tables added after this list was written (cfg_quality_check,
 # cfg_method_rule, cfg_report*, cfg_change_detail) are NOT in this list either — an existing,
@@ -186,6 +186,17 @@ class Cfg:
         result = sorted(out.items())
         _trace(f"indexes({table})", result)
         return result
+
+    def triggers(self, table: str, database: str = "iba") -> list[str]:
+        """The CREATE TRIGGER statements registered for this table, in ordinal then name order.
+        `cfg_trigger` added 2026-10-13 (escalation #2110): a trigger is schema exactly like a
+        column or an index, so `lib/db.py:trigger_ddl()` rebuilds it from config and
+        `cfgquality.find_unregistered_triggers` checks the live databases against it."""
+        rows = [r["sql"] for r in self.conn.execute(
+            "SELECT sql FROM cfg_trigger WHERE database=? AND table_name=? AND inactive=0 "
+            "ORDER BY ordinal, name", (database, table))]
+        _trace(f"triggers({table})", rows)
+        return rows
 
     def unique_key(self, table: str, database: str = "iba") -> list[str]:
         """The dedup key — the composite UNIQUE, else the single UNIQUE column, else the PK.

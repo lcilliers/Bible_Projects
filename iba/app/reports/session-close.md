@@ -1,9 +1,9 @@
 # Session close — escalation update / governance drift / BUILD.md coverage check (#1875)
 
-> Generated 2026-10-13T00:46:43Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
+> Generated 2026-10-13T04:22:26Z by `session.close`. Detection only (escalation #1875) — remediation is performed separately by Claude via `.claude/commands/session-close.md`, reading this report plus the session's own transcript.
 
-- session_id: `dd8ba711-39f8-4d4d-a783-e507f15ac234` (identified by: CLAUDE_CODE_SESSION_ID)
-- session started: 2026-10-12T15:03:19Z
+- session_id: `243a410c-20f6-4cd5-9be3-ae5891adfe8b` (identified by: CLAUDE_CODE_SESSION_ID)
+- session started: 2026-10-13T03:20:24Z
 - transcript found: True
 - escalation-update gaps: **0**
 - BUILD.md gaps: **0**
@@ -24,22 +24,12 @@
 ## Escalation update coverage
 
 Escalations touched this session (id, highest version seen in transcript vs. live `escalation_history`):
-- #1944: transcript v2
-- #1945: transcript v2
-- #1946: transcript v2
-- #1947: transcript v2
-- #2015: transcript v7
-- #2018: transcript v2
-- #2030: transcript v8
-- #2031: transcript v9
-- #2052: transcript v7
-- #2063: transcript v9
-- #2110: transcript v2
+- #2110: transcript v14
 
 <a id="governance-config-doc-drift"></a>
 ## Governance / config / doc drift
 
-Files changed this session under governance/doc scope: CLAUDE.md.
+Files changed this session under governance/doc scope: iba/app/GOVERNANCE.md, CLAUDE.md, iba/app/USER-GUIDE.md.
 
 Whether chat content that SHOULD have updated governance/config actually did, and whether any now-superseded text is properly marked superseded/retired, is a judgement call for Claude to make reading the actual session transcript — not mechanically checked here (no chat-content-to-decision mapping exists to check against). If the session's own SESSION-LOG 'decisions made' section names a decision with no matching change among the files above, that is the signal to look at.
 

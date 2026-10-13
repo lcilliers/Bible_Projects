@@ -269,6 +269,8 @@ def _validate_live(conn: sqlite3.Connection) -> list[str]:
     # live the day this was built: finding_verse_index (bible_research.db, 475,790 rows, built the
     # day before) had zero cfg_table/cfg_column rows. See cfgquality.find_unregistered_tables_and_columns.
     e.extend(cfgquality.find_unregistered_tables_and_columns(conn, PROJECT_ROOT))
+    # live triggers vs cfg_trigger, both databases (escalation #2110, 2026-10-13).
+    e.extend(cfgquality.find_unregistered_triggers(conn, PROJECT_ROOT))
 
     return e
 

@@ -80,9 +80,16 @@ def table_ddl(cfg: Cfg, table: str, name: str | None = None) -> tuple[str, list[
     return create_sql, index_sql
 
 
+def trigger_ddl(cfg: Cfg, table: str) -> list[str]:
+    """The CREATE TRIGGER statements for `table`, from `cfg_trigger` (escalation #2110,
+    2026-10-13). Kept apart from `table_ddl()` because a trigger may name other tables, so every
+    table must exist before any trigger is created (`build_data_tables()` does tables first)."""
+    return cfg.triggers(table)
+
+
 def build_data_tables(cfg: Cfg, conn: sqlite3.Connection) -> list[str]:
     """Create every DATA table from cfg_column. Config-governed, from line one — DDL from
-    `table_ddl()` above."""
+    `table_ddl()` above; then every registered trigger (`trigger_ddl()`), once all tables exist."""
     built = []
     for table in cfg.tables():
         create_sql, index_sql = table_ddl(cfg, table)
@@ -91,6 +98,9 @@ def build_data_tables(cfg: Cfg, conn: sqlite3.Connection) -> list[str]:
             conn.execute(sql.replace("CREATE INDEX ", "CREATE INDEX IF NOT EXISTS ", 1)
                              .replace("CREATE UNIQUE INDEX ", "CREATE UNIQUE INDEX IF NOT EXISTS ", 1))
         built.append(table)
+    for table in built:
+        for sql in trigger_ddl(cfg, table):
+            conn.execute(sql.replace("CREATE TRIGGER ", "CREATE TRIGGER IF NOT EXISTS ", 1))
     conn.commit()
     return built
 

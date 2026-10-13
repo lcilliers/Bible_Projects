@@ -73,7 +73,7 @@
 > **★ THE ESSAY IS REGENERATED AS THE INNER-BEING NARRATIVE (researcher decision, 2026-09-30,
 > #1912/#1913).** The Framework B essay (`_analytics/essay/spirit_soul_body/`, a two- vs three-part
 > argument) is **reset** by the new research. It is regenerated as chapter files in
-> `_analytics/essay/spirit_soul_body/inner-being-narrative/`. Start at `00-index-and-status-*`.
+> `_analytics/essay/spirit_soul_body/inner-being-narrative/`. Start at `_analytics/essay/spirit_soul_body/narrative-claim-register.md` (generated from iba.db; the old `00-index-and-status-*` is archived, #2110).
 > Its title is *Inner Being in Operation* (confirmed 2026-09-30, #1916).
 >
 > Researcher, verbatim:
@@ -86,7 +86,14 @@
 >
 > M47 was the first reset. Each later strand:
 > - updates the chapter files it touches (version bump, with the prior version archived)
-> - updates `wa-essay-spirit-soul-body-claim-register-*` in the same pass
+> - records the weave in the **narrative claim register in iba.db** in the same pass:
+>   `iba\app\ps\Narrative-Register.ps1 -Action Record -File <the weave's update JSON> -By Claude`
+>   (USER-GUIDE.md §12h; GOVERNANCE.md §94; #2110). The `.md` claim register (last v51) and
+>   `00-index-and-status` are **archived since 2026-10-13**; the register is published as
+>   `narrative-claim-register.md`, `narrative-claim-changes.md` and `narrative-citation-index.md`
+>   (generated after every change, never edited). Researcher, verbatim: *"process the import, we will
+>   only know if it creates more confusion than be helpful after we have the table to search and
+>   explore it."*
 >
 > Rules for the chapter text:
 > - Unchecked original material stays in marked **Held** sections.

@@ -1451,6 +1451,62 @@ for the build history.
 
 ---
 
+## 12h. The narrative claim register (`Narrative-Register.ps1`, added 2026-10-13, escalation #2110)
+
+The register of the claims the inner-being narrative tells, kept in iba.db (GOVERNANCE.md §94). A
+**claim** is a statement derived from sources that goes beyond their mere text, in its own wording; the
+**narrative** is the story, and the register records the **passages** that tell claims (a claim may be
+told in several places; a passage may tell several claims). Every change keeps its before and after.
+The three published files are regenerated after every write; never edit them by hand:
+`_analytics/essay/spirit_soul_body/narrative-claim-register.md`, `narrative-claim-changes.md`,
+`narrative-citation-index.md`.
+
+**Status (2026-10-13):** live. The original claims and the recorded history are imported (81 claims,
+129 updates); the old `.md` register and `00-index-and-status` are archived. The narrative's own
+claims are linked to their passages chapter by chapter (R0), so until then `Check` lists the
+current claims that no passage tells yet.
+
+```powershell
+# write actions (every one needs -By Claude|Researcher; a refusal writes nothing)
+iba\app\ps\Narrative-Register.ps1 -Action AddClaim -Text "Anger can be held and kept" -BeyondText "joins Ecc 7:9 and Job 36:13 as one act of holding" -Source "Ecc 7:9; Job 36:13" -MainChapter 8 -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action Edit -Claim C-12 -Text "<new wording>" -Verdict Restated -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action Tell -Claim C-12 -Chapter 8 -Passage "Be not quick in your spirit" -Kind "in part" -Part "anger lodges in the bosom" -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action Untell -Claim C-12 -Chapter 8 -Passage "Be not quick" -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action Withdraw -Claim C-12 -Note "<why>" -By Researcher
+iba\app\ps\Narrative-Register.ps1 -Action EditNote -Heading "Researcher direction" -Text "<text>" -By Researcher
+iba\app\ps\Narrative-Register.ps1 -Action EditChapter -Chapter 9 -NewNumber 2 -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action EditSection -Chapter 10.1 -Section "<heading>" -NewHeading "<new>" -By Claude
+iba\app\ps\Narrative-Register.ps1 -Action Record -File "<the weave's update JSON>" -By Claude
+
+# read-only (dated reports in outputs/narrative-register/)
+iba\app\ps\Narrative-Register.ps1 -Action Find -Verse "1 Samuel 24:5"
+iba\app\ps\Narrative-Register.ps1 -Action Find -Chapter 10.12 -Section "Other parties" -Verdict Held
+iba\app\ps\Narrative-Register.ps1 -Action Find -NotInNarrative
+iba\app\ps\Narrative-Register.ps1 -Action Find -ToldInMoreThanOne
+iba\app\ps\Narrative-Register.ps1 -Action History -Claim K-2
+iba\app\ps\Narrative-Register.ps1 -Action Check
+iba\app\ps\Narrative-Register.ps1 -Action Export
+```
+
+- **`-Source`** is one string: items separated by `;` (or ` | `). A verse reference in any spelling
+  the chapters or the register use (`2 Corinthians 1:12`, `2Co 1:12`, ranges, lists, `Mal 2:17–3:2`),
+  or `kind: text` with kind `lexical`, `science` or `study file`. A new claim (origin narrative) needs
+  `-BeyondText` and at least one source.
+- **`-Passage`** is the passage's opening words (case, quotation marks and emphasis ignored). A
+  passage is a paragraph, one bullet, one table row or one block quote. Too few words to pick one
+  passage is refused, with the count.
+- **`Record`** takes one weave's whole update as JSON (the shape is in `record()`'s docstring in
+  `iba/app/lib/narrativeregister.py`): the update (date, title, strand, instruction, sources, scripts,
+  notes, quote check), refs (escalations, threads, thread items), the chapter versions (from → to, the
+  new file, heading renames, passages moved to another chapter or removed), new and edited claims, and
+  the tellings added, changed or removed. It refuses, writing nothing, when a chapter, claim, enum value,
+  escalation or thread does not exist, a version does not match the file on disk, or the same update
+  was already recorded. It then lists every changed passage that tells a claim the JSON does not
+  mention, and every other place a touched claim is told, to be read for consistency.
+- **Direct edits** in the database (e.g. the VS Code SQLite extension) are allowed and logged by the
+  triggers as `direct edit`; run `-Action Export` afterwards to republish, and `-Action Check` to
+  confirm the files and the register agree.
+
 ## 13. Log retention (read-only)
 
 ```powershell
@@ -1895,6 +1951,7 @@ iba/app/
               Registry-Report.ps1 · WordRegistrySpan-Report.ps1 (§12e) ·
               StrongVerse-Report.ps1 (§12f) ·
               Cluster-Report.ps1 · Cluster-Assign.ps1 (§12g) ·
+              Narrative-Register.ps1 (§12h) ·
               **current per-book pipeline (§12b):** VerseLexical.ps1 · Debate-Run.ps1 ·
               Operations-Ingest.ps1 (the work package Debate-Run.ps1's hib/phenomenon/operation/
               closing steps run under) ·

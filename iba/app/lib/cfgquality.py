@@ -583,6 +583,46 @@ def find_unregistered_tables_and_columns(conn: sqlite3.Connection,
     return out
 
 
+def _norm_sql(sql: str | None) -> str:
+    return re.sub(r"\s+", " ", sql or "").strip()
+
+
+def find_unregistered_triggers(conn: sqlite3.Connection, project_root: pathlib.Path) -> list[str]:
+    """Live triggers against `cfg_trigger`, in both databases (escalation #2110, 2026-10-13): a
+    trigger is schema like a table or column (`governance.tables`), and `lib/db.py:trigger_ddl()`
+    rebuilds it from config. Three shapes of drift, all hard errors: a live trigger with no row; an
+    active row naming a trigger that is not live; a live trigger whose SQL differs from its row
+    (whitespace ignored)."""
+    def _db_path(name: str) -> pathlib.Path:
+        r = conn.execute("SELECT value FROM cfg_setting WHERE key=?",
+                         (f"database.{name}.path",)).fetchone()
+        return project_root / json.loads(r["value"])
+
+    out: list[str] = []
+    for db_key in ("iba", "bible_research"):
+        live_conn = conn if db_key == "iba" else sqlite3.connect(_db_path(db_key))
+        try:
+            live = {r[0]: r[1] for r in live_conn.execute(
+                "SELECT name, sql FROM sqlite_master WHERE type='trigger'")}
+            reg = {r["name"]: (r["sql"], r["inactive"]) for r in conn.execute(
+                "SELECT name, sql, inactive FROM cfg_trigger WHERE database=?", (db_key,))}
+            for n in sorted(live.keys() - reg.keys()):
+                out.append(f"schema: trigger {n!r} ({db_key}.db) exists live but has no "
+                           f"cfg_trigger row (governance.tables)")
+            for n in sorted(k for k, (_, inactive) in reg.items()
+                            if inactive == 0 and k not in live):
+                out.append(f"schema: cfg_trigger {n!r} ({db_key}) is active but the trigger is "
+                           f"not live")
+            for n in sorted(live.keys() & reg.keys()):
+                if reg[n][1] == 0 and _norm_sql(live[n]) != _norm_sql(reg[n][0]):
+                    out.append(f"schema: trigger {n!r} ({db_key}.db) differs from its cfg_trigger "
+                               f"sql")
+        finally:
+            if db_key != "iba":
+                live_conn.close()
+    return out
+
+
 def find_unregistered_project_scripts(conn: sqlite3.Connection,
                                       project_root: pathlib.Path) -> list[str]:
     """Phase 0 of the engine-controls migration (escalation #672, `engine-controls-migration-plan-v3

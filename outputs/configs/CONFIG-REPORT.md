@@ -6,7 +6,7 @@
 | --- | --- |
 | database | iba |
 | config_version | app-0.1.0 |
-| generated_at | 2026-10-12T14:11:26Z |
+| generated_at | 2026-10-13T04:07:14Z |
 | current_seed_hash | bootstrap:configuration-maintenance-2026-07-21 |
 
 ## Contents
@@ -45,62 +45,35 @@ _(none)_
 **Missing report paths** (0) — a quality-check step with nowhere for its findings to persist (governance.reports_must_persist violation):
 _(none)_
 
-**Stale filled_by** (29) — cfg_column.filled_by names a now-inactive step:
-6. strong_meaning_parsed.lemma_key filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-7. strong_meaning_parsed.sort filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-8. strong_meaning_parsed.sense_code filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-9. strong_meaning_parsed.gloss filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-10. strong_meaning_parsed.verse_refs filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-11. strong_meaning_parsed.note filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-12. strong_meaning_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-13. strong_lsj_parsed.strong filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-14. strong_lsj_parsed.sense_label filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-15. strong_lsj_parsed.gloss filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-16. strong_lsj_parsed.note filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-17. strong_lsj_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-18. strong_mounce_parsed.strong filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-19. strong_mounce_parsed.mounce_parsed filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-20. strong_mounce_parsed.row_type filled_by='lexicon.parse' (an inactive step) — confirm dormant or update to the real current writer
-21. passage.genre filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-22. passage.lexical_complete_at filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-23. verse_lexical_note.id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-24. verse_lexical_note.verse_lexical_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-25. verse_lexical_note.verse_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-26. verse_lexical_note.passage_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-27. verse_lexical_note.note_type filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-28. verse_lexical_note.resolution_status filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-29. verse_lexical_note.target_verse_lexical_id filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-30. verse_lexical_note.related_verse_lexical_ids filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-31. verse_lexical_note.value_text filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-32. verse_lexical_note.evidence_text filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-33. verse_lexical_note.created_at filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
-34. verse_lexical_note.deleted filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
+**Stale filled_by** (1) — cfg_column.filled_by names a now-inactive step:
+6. passage.lexical_complete_at filled_by='lexical.enrich' (an inactive step) — confirm dormant or update to the real current writer
 
 **Stale governance docs** (0) — GOVERNANCE.md older than the newest applied config change:
 _(none)_
 
 **Unregistered lib modules** (1) — iba/app/lib/*.py with no cfg_utility row:
-35. iba/app/lib/taggingguidance.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
+7. iba/app/lib/taggingguidance.py has no cfg_utility row — run migration/bootstrap_cfg_utility.py to register it
 
-**Low config-density utilities** (18) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
-36. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-37. cfg_utility 'lexicalenrich' (iba\app\lib\lexicalenrich.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-38. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-39. cfg_utility 'apply_1598_phase_a_reallocation_v1_20260908' (iba\app\migration\apply_1598_phase_a_reallocation_v1_20260908.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-40. cfg_utility 'apply_1598_cluster_batch' (iba\app\migration\apply_1598_cluster_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-41. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-42. cfg_utility 'create_verse_meta_table_v1_20260909' (iba\app\migration\create_verse_meta_table_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-43. cfg_utility 'drop_verse_meta_genre_column_v1_20260909' (iba\app\migration\drop_verse_meta_genre_column_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-44. cfg_utility 'add_verse_meta_status_column_v1_20260910' (iba\app\migration\add_verse_meta_status_column_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-45. cfg_utility 'VerseMeta.ps1' (iba\app\ps\VerseMeta.ps1) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-46. cfg_utility 'apply_verse_plaintext_column' (iba\app\tools\_apply_verse_plaintext_column.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-47. cfg_utility 'add_lexicon_header_pos_tags_setting_v1_20260910' (iba\app\migration\add_lexicon_header_pos_tags_setting_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-48. cfg_utility 'create_vw_strong_meaning_raw_v1_20260910' (iba\app\migration\create_vw_strong_meaning_raw_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-49. cfg_utility 'clusterstatus' (iba\app\lib\clusterstatus.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-50. cfg_utility 'recordingpass' (iba\app\lib\recordingpass.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-51. cfg_utility 'batchcontrol' (iba\app\lib\batchcontrol.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-52. cfg_utility 'batchprogressreport' (iba\app\lib\batchprogressreport.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
-53. cfg_utility 'observationenhancer' (iba\app\handlers\observationenhancer.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+**Low config-density utilities** (19) — NON-EXEMPT cfg_utility module with zero real Cfg-method call sites of its own (see §2 Utilities registry for the full module list, including the 11 already declared config_exempt):
+8. cfg_utility 'handlers_catalogue' (iba\app\handlers\catalogue.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+9. cfg_utility 'lexicalenrich' (iba\app\lib\lexicalenrich.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+10. cfg_utility 'lexicalscope' (iba\app\lib\lexicalscope.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+11. cfg_utility 'apply_1598_phase_a_reallocation_v1_20260908' (iba\app\migration\apply_1598_phase_a_reallocation_v1_20260908.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+12. cfg_utility 'apply_1598_cluster_batch' (iba\app\migration\apply_1598_cluster_batch.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+13. cfg_utility 'clusterfamilyscan' (iba\app\lib\clusterfamilyscan.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+14. cfg_utility 'create_verse_meta_table_v1_20260909' (iba\app\migration\create_verse_meta_table_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+15. cfg_utility 'drop_verse_meta_genre_column_v1_20260909' (iba\app\migration\drop_verse_meta_genre_column_v1_20260909.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+16. cfg_utility 'add_verse_meta_status_column_v1_20260910' (iba\app\migration\add_verse_meta_status_column_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+17. cfg_utility 'VerseMeta.ps1' (iba\app\ps\VerseMeta.ps1) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+18. cfg_utility 'apply_verse_plaintext_column' (iba\app\tools\_apply_verse_plaintext_column.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+19. cfg_utility 'add_lexicon_header_pos_tags_setting_v1_20260910' (iba\app\migration\add_lexicon_header_pos_tags_setting_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+20. cfg_utility 'create_vw_strong_meaning_raw_v1_20260910' (iba\app\migration\create_vw_strong_meaning_raw_v1_20260910.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+21. cfg_utility 'clusterstatus' (iba\app\lib\clusterstatus.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+22. cfg_utility 'recordingpass' (iba\app\lib\recordingpass.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+23. cfg_utility 'batchcontrol' (iba\app\lib\batchcontrol.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+24. cfg_utility 'batchprogressreport' (iba\app\lib\batchprogressreport.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+25. cfg_utility 'observationenhancer' (iba\app\handlers\observationenhancer.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
+26. cfg_utility 'narrative_claim_register_import_v1_20261013' (iba\app\migration\narrative_claim_register_import_v1_20261013.py) has zero Cfg-method call sites (.setting()/.enum()/.tables()/... under any variable name) — confirm this is a legitimate zero (mark `cfg_utility.config_exempt=1` via `configmaint.propose`) or a real completeness gap
 
 **Orphan book_order** (0) — cfg.book_order() unused, or a duplicate book/ordinal:
 _(none)_
@@ -123,131 +96,130 @@ _(none)_
 **FolderPurpose.ps1 ValidateSet drift** (0) — same check, for -Type/-Status against folder_purpose_type/folder_purpose_status:
 _(none)_
 
-**Hand-rolled versioning** (5) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
-54. _analytics/Clusters/M18 - desire-longing/m18-m47-narrative-weave-v1-20261009.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
-55. _analytics/Clusters/M64 - will-resolve/m64-choose-verses-pull-v3-20261008.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
-56. _analytics/Clusters/M72 - authority-dominion/m72-group-B-weave-activities-v1-20261012.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
-57. _analytics/Clusters/M72 - authority-dominion/m72-group-B-weave-ch11-and-faculties-v1-20261012.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
-58. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+**Hand-rolled versioning** (6) — a script building a -v{n} filename by hand instead of via filingkit.versioned_path()/reportkit.oneoff_path():
+27. _analytics/Clusters/M02 - anger-wrath/m02-pairing-gaps-weave-v1-20261013.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+28. _analytics/Clusters/M18 - desire-longing/m18-m47-narrative-weave-v1-20261009.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+29. _analytics/Clusters/M64 - will-resolve/m64-choose-verses-pull-v3-20261008.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+30. _analytics/Clusters/M72 - authority-dominion/m72-group-B-weave-activities-v1-20261012.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+31. _analytics/Clusters/M72 - authority-dominion/m72-group-B-weave-ch11-and-faculties-v1-20261012.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
+32. iba/app/lib/prosestore.py builds a -v{n} filename by hand — no filingkit.versioned_path()/reportkit.oneoff_path() call site in the same file
 
 **PS/worksheet drift** (5) — a script's live param() names not matching its tab's flag headers in governance.ps_worksheet_path:
-59. Copy-NarrativeToLearning4Comfort.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\copy-narrativetolearning4comfort.ps1' in some tab's first rows)
-60. Purge-SoftDeletes.ps1: ps tools worksheet.xlsx tab 'Purge-SoftDeletes' is missing flag column(s) ['Action', 'Database', 'Live'] — the script has these parameters now
-61. RelationalReading.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\relationalreading.ps1' in some tab's first rows)
-62. Run-Stage1Batch.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\run-stage1batch.ps1' in some tab's first rows)
-63. VerseReading.ps1: ps tools worksheet.xlsx tab 'VerseReading' is missing flag column(s) ['Force', 'VerseList'] — the script has these parameters now
+33. Copy-NarrativeToLearning4Comfort.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\copy-narrativetolearning4comfort.ps1' in some tab's first rows)
+34. Purge-SoftDeletes.ps1: ps tools worksheet.xlsx tab 'Purge-SoftDeletes' is missing flag column(s) ['Action', 'Database', 'Live'] — the script has these parameters now
+35. RelationalReading.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\relationalreading.ps1' in some tab's first rows)
+36. Run-Stage1Batch.ps1: no tab found in ps tools worksheet.xlsx (expected an embedded path cell 'iba\\app\\ps\\run-stage1batch.ps1' in some tab's first rows)
+37. VerseReading.ps1: ps tools worksheet.xlsx tab 'VerseReading' is missing flag column(s) ['Force', 'VerseList'] — the script has these parameters now
 
 **Escalation.ps1/worksheet drift** (0) — an Escalation.ps1 parameter not used as a -Flag header anywhere in governance.escalation_worksheet_path:
 _(none)_
 
-**Unenforced behaviour rules** (48) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
-64. [chat] #17 confirm-before-nontrivial-work — context_delivered
-65. [chat] #18 output-to-file-not-chat-only — context_delivered
-66. [chat] #19 factual-discipline-no-guessing — context_delivered
-67. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
-68. [chat] #21 chat-items-become-escalations — context_delivered
-69. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
-70. [chat] #23 close-the-loop-not-just-report — context_delivered
-71. [chat] #24 show-evidence-dont-smooth-over — context_delivered
-72. [chat] #74 open-threads-carried-as-escalations — partially_enforced
-73. [development] #38 root-fix-not-one-off — context_delivered
-74. [development] #39 simple-steps-not-engineered-designs — context_delivered
-75. [development] #40 open-items-route-through-escalation — context_delivered
-76. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
-77. [development] #46 test-plan-per-module-utility — deliberately_deferred
-78. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
-79. [development] #66 cluster-label-must-track-membership — buildable_not_built
-80. [development] #75 devmode-config-writes-are-audited — context_delivered
-81. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
-82. [documentation] #32 no-hedge-in-complete-records — partially_enforced
-83. [documentation] #33 single-living-register-update-in-place — context_delivered
-84. [documentation] #34 source-of-truth-is-written-record — context_delivered
-85. [filing] #56 naming-shape — partially_enforced
-86. [filing] #57 snapshot-vs-living-document — context_delivered
-87. [filing] #58 archiving-trigger — partially_enforced
-88. [filing] #59 claude-code-filing-obligations — context_delivered
-89. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
-90. [llm_output] #4 inferential-not-confirmed — context_delivered
-91. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
-92. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
-93. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — context_delivered
-94. [llm_output] #70 cluster-tags-loose-no-retagging — context_delivered
-95. [llm_output] #72 route-verses-hib-other-beings-data-only — context_delivered
-96. [llm_output] #73 read-verse-by-role-of-each-mcode-word — context_delivered
-97. [sqlite] #1 verify-before-acting — context_delivered
-98. [sqlite] #11 readonly-by-default — context_delivered
-99. [sqlite] #13 dont-assume-which-database — context_delivered
-100. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
-101. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
-102. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
-103. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
-104. [sqlite] #67 bible-research-db-excluded-from-iba-results — UNCLASSIFIED (missing enforcement_status — audit gap itself)
-105. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
-106. [sqlite] #71 reuse-extracted-base-data-set-based-mcode — context_delivered
-107. [terminal] #2 step-not-done-without-validated-output — context_delivered
-108. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
-109. [terminal] #27 heredoc-powershell-only — context_delivered
-110. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
-111. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
+**Unenforced behaviour rules** (49) — an active cfg_behaviour_rule row whose enforcement_status is not mechanically_enforced — see the row's own enforced_by text for the reason (mechanically checkable but not yet built, a genuine judgement call, or a class of rule with no durable artifact to check):
+38. [chat] #17 confirm-before-nontrivial-work — context_delivered
+39. [chat] #18 output-to-file-not-chat-only — context_delivered
+40. [chat] #19 factual-discipline-no-guessing — context_delivered
+41. [chat] #20 cost-awareness-flag-cheaper-path — context_delivered
+42. [chat] #21 chat-items-become-escalations — context_delivered
+43. [chat] #22 proceed-autonomously-once-rules-are-stable — context_delivered
+44. [chat] #23 close-the-loop-not-just-report — context_delivered
+45. [chat] #24 show-evidence-dont-smooth-over — context_delivered
+46. [chat] #74 open-threads-carried-as-escalations — partially_enforced
+47. [chat] #76 narrative-claim-register-kept-in-iba-db — partially_enforced
+48. [development] #38 root-fix-not-one-off — context_delivered
+49. [development] #39 simple-steps-not-engineered-designs — context_delivered
+50. [development] #40 open-items-route-through-escalation — context_delivered
+51. [development] #42 user-guide-updated-same-unit-of-work — context_delivered
+52. [development] #46 test-plan-per-module-utility — deliberately_deferred
+53. [development] #65 audit-deliverable-cross-check-before-presenting — context_delivered
+54. [development] #66 cluster-label-must-track-membership — buildable_not_built
+55. [development] #75 devmode-config-writes-are-audited — context_delivered
+56. [documentation] #31 guidance-baked-into-authoritative-record — context_delivered
+57. [documentation] #32 no-hedge-in-complete-records — partially_enforced
+58. [documentation] #33 single-living-register-update-in-place — context_delivered
+59. [documentation] #34 source-of-truth-is-written-record — context_delivered
+60. [filing] #56 naming-shape — partially_enforced
+61. [filing] #57 snapshot-vs-living-document — context_delivered
+62. [filing] #58 archiving-trigger — partially_enforced
+63. [filing] #59 claude-code-filing-obligations — context_delivered
+64. [filing] #60 tool-report-path-vs-deliverable-document — buildable_not_built
+65. [llm_output] #4 inferential-not-confirmed — context_delivered
+66. [llm_output] #36 no-unsubstantiated-superlatives — context_delivered
+67. [llm_output] #37 derive-from-instruction-not-prior-unreviewed-output — context_delivered
+68. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — context_delivered
+69. [llm_output] #70 cluster-tags-loose-no-retagging — context_delivered
+70. [llm_output] #72 route-verses-hib-other-beings-data-only — context_delivered
+71. [llm_output] #73 read-verse-by-role-of-each-mcode-word — context_delivered
+72. [sqlite] #1 verify-before-acting — context_delivered
+73. [sqlite] #11 readonly-by-default — context_delivered
+74. [sqlite] #13 dont-assume-which-database — context_delivered
+75. [sqlite] #47 wa-session-research-flags-retained-as-is — context_delivered
+76. [sqlite] #54 prose-quality-flag-on-upstream-change — context_delivered
+77. [sqlite] #55 prose-section-type-creation-requires-researcher-instruction — context_delivered
+78. [sqlite] #61 inactive-tables-never-active-inputs — context_delivered
+79. [sqlite] #67 bible-research-db-excluded-from-iba-results — UNCLASSIFIED (missing enforcement_status — audit gap itself)
+80. [sqlite] #68 stage1-corrections-only-via-real-rerun — buildable_not_built
+81. [sqlite] #71 reuse-extracted-base-data-set-based-mcode — context_delivered
+82. [terminal] #2 step-not-done-without-validated-output — context_delivered
+83. [terminal] #25 readonly-commands-no-permission-needed — context_delivered
+84. [terminal] #27 heredoc-powershell-only — context_delivered
+85. [terminal] #28 diagnose-reported-errors-dont-route-around — context_delivered
+86. [terminal] #29 verify-fix-against-synthetic-and-real-case — context_delivered
 
-**Undelivered conversational rules** (4) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
-112. [chat] #21 chat-items-become-escalations — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
-113. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
-114. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
-115. [terminal] #27 heredoc-powershell-only — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+**Undelivered conversational rules** (2) — an active cfg_behaviour_rule row classified context_delivered/not_mechanically_checkable whose claimed delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc) does not actually verify live:
+87. [development] #65 audit-deliverable-cross-check-before-presenting — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
+88. [llm_output] #69 let-scripture-speak-no-imputed-synthesis — NOT DELIVERED: no verified delivery mechanism (memory file, governance.* setting, or CLAUDE.md/GOVERNANCE.md/USER-GUIDE.md-referenced doc)
 
 **Unpushed commits** (0) — a local commit not yet pushed to the upstream branch:
 _(none)_
 
 **PS scripts bypassing run.py** (2) — an active PS script calling iba.app.(handlers|lib|tools) directly instead of dispatching through iba.app.run:
-116. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
-117. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+89. iba/app/ps/Behaviour.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
+90. iba/app/ps/VerseMeta.ps1 calls iba.app.(handlers|lib|tools) directly, no iba.app.run dispatch found in the same file
 
 **Steps without a PS entry point** (0) — an active cfg_step whose work package has no cfg_work_package.ps_script:
 _(none)_
 
 **Escalation-file naming drift** (27) — a Workflow/Catalogue or iba/docs file whose own header names an escalation the filename doesn't carry as its prefix:
-118. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-119. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
-120. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
-121. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
-122. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
-123. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
-124. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
-125. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
-126. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
-127. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
-128. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
-129. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-130. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
-131. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-132. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
-133. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
-134. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
-135. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
-136. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
-137. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
-138. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
-139. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
-140. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-141. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
-142. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
-143. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
-144. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
+91. Workflow/Catalogue/1376-characteristic-tables-cross-db-inventory-v2-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+92. Workflow/Catalogue/1379-lexical-to-finding-worked-example-v1-20260901.md — header names Escalation #1378, filename doesn't start with any of them
+93. Workflow/Catalogue/archive/1376-characteristic-tables-cross-db-inventory-v1-20260901.md — header names Escalation #1007, filename doesn't start with any of them
+94. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v2-20260822.md — header names Escalation #798, filename doesn't start with any of them
+95. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v3-20260822.md — header names Escalation #798, filename doesn't start with any of them
+96. iba/docs/archive/escalation-decision-vs-defect-axis-proposal-v4-20260822.md — header names Escalation #798, filename doesn't start with any of them
+97. iba/docs/archive/folder-purpose-governance-plan-v1-20260828.md — header names Escalation #971, filename doesn't start with any of them
+98. iba/docs/archive/folder-purpose-governance-plan-v2-20260828.md — header names Escalation #971, filename doesn't start with any of them
+99. iba/docs/archive/folder-purpose-governance-plan-v3-20260828.md — header names Escalation #971, filename doesn't start with any of them
+100. iba/docs/archive/folder-purpose-governance-plan-v4-20260828.md — header names Escalation #971, filename doesn't start with any of them
+101. iba/docs/archive/Passage read guidance-superseded-by-v1.2-20260727.md — filename contains a space (naming-shape: hyphens only)
+102. iba/docs/archive/prose-store-iba-incorporation-plan-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+103. iba/docs/archive/prose-store-iba-incorporation-plan-v3-20260822.md — header names Escalation #784, filename doesn't start with any of them
+104. iba/docs/escalation-795-outstanding-review-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+105. iba/docs/escalation-decision-vs-defect-axis-proposal-v5-20260822.md — header names Escalation #798, filename doesn't start with any of them
+106. iba/docs/escalation-type-routing-proposal-v1-20260822.md — header names Escalation #795, filename doesn't start with any of them
+107. iba/docs/file-naming-and-location-governance-plan-v1-20260826.md — header names Escalation #863, filename doesn't start with any of them
+108. iba/docs/folder-purpose-governance-plan-v5-20260828.md — header names Escalation #971, filename doesn't start with any of them
+109. iba/docs/prose-add-edit-rules-proposal-v1-20260826.md — header names Escalation #890, filename doesn't start with any of them
+110. iba/docs/prose-book-aware-locations-plan-v1-20260828.md — header names Escalation #989, filename doesn't start with any of them
+111. iba/docs/prose-book-extract-detail-design-20260823.md — header names Escalation #784, filename doesn't start with any of them
+112. iba/docs/prose-book-extract-findings-20260823.md — header names Escalation #784, filename doesn't start with any of them
+113. iba/docs/prose-file-control-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+114. iba/docs/prose-management-784-conversation-capture-v1-20260823.md — header names Escalation #784, filename doesn't start with any of them
+115. iba/docs/prose-management-iba-v1-20260822.md — header names Escalation #784, filename doesn't start with any of them
+116. iba/docs/prose-management-iba-v2-20260822.md — header names Escalation #784, filename doesn't start with any of them
+117. iba/docs/prose-store-iba-incorporation-plan-v4-20260822.md — header names Escalation #784, filename doesn't start with any of them
 
 **Config hedge phrases** (5) — an active cfg_method_rule/cfg_setting row still carrying an unresolved 'not yet .../TBD' with no follow-up:
-145. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
-146. cfg_method_rule #106 battery-scope-excludes-verse-reading-and-science-extract — hedge phrase in rule_text/enforced_by with no resolution
-147. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
-148. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
-149. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
+118. cfg_method_rule #67 spine-on-demand-pull-mechanism — hedge phrase in rule_text/enforced_by with no resolution
+119. cfg_method_rule #106 battery-scope-excludes-verse-reading-and-science-extract — hedge phrase in rule_text/enforced_by with no resolution
+120. cfg_setting governance.prose_canonical_authority — hedge phrase in value/use
+121. cfg_setting governance.procedural_document_taxonomy — hedge phrase in value/use
+122. cfg_setting governance.engineering_documentation_folder — hedge phrase in value/use
 
 **Restated authoritative content** (0) — a GOVERNANCE.md/USER-GUIDE.md/CLAUDE.md paragraph closely duplicating an active cfg_* row's own text instead of pointing to it:
 _(none)_
 
-**Query file convention** (2) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
-150. scripts/SQLite/IBA_DB/explore clusters-2.sqlite3-query — contains a space, should use hyphens
-151. scripts/SQLite/IBA_DB/explore verses.sqlite3-query — contains a space, should use hyphens
+**Query file convention** (0) — an ad-hoc SQL scratch file not under scripts/SQLite/{IBA_DB,Research_DB}/, or with a space in its name, or untitled:
+_(none)_
 
 <a id="1-inactive-configs-historical-record-not-a-decision"></a>
 ## 1. Inactive configs — historical record, not a decision
@@ -267,11 +239,12 @@ _(none)_
 <a id="2-utilities-registry"></a>
 ## 2. Utilities registry
 
-**487** registered module(s) — **35** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **400** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
+**492** registered module(s) — **36** declared `config_exempt` (a legitimate zero for config-setting/enum usage, not a completeness gap), **401** inactive (module removed/merged). See §0 "Low config-density utilities" for any NON-exempt module still flagged.
 
 | module | file | purpose | active | exempt | exempt reason |
 | --- | --- | --- | --- | --- | --- |
 | Copy-NarrativeToLearning4Comfort.ps1 | iba/app/ps/Copy-NarrativeToLearning4Comfort.ps1 | PS wrapper for narrativecopy.py (-DryRun). Run on completion of a section of work, on request, and in /session-close (escalation #1941). | ✓ | ✓ | thin wrapper; config is read by narrativecopy.py |
+| Narrative-Register.ps1 | iba/app/ps/Narrative-Register.ps1 | PS entry point for the narrative claim register (escalation #2110); every action dispatches through run.py, work package narrative-register. | ✓ | ✓ | thin wrapper; config is read by the handlers through run.py |
 | VerseMeta.ps1 | iba/app/ps/VerseMeta.ps1 | PS wrapper for lib/versemeta.py -- VerseMeta.ps1 -Step SetStatus -References "Gen.1.1,Rom 1:2" -Status analysed. Sets verse_meta.status for a comma-delimited list of verse references (osisId or display form, either accepted per reference). Escalation #1661. | ✓ |  |  |
 | add_adversarial_cluster_v1_20260905 | iba/app/migration/add_adversarial_cluster_v1_20260905.py | ONE-OFF migration -- architecture correction, researcher verdict 2026-09-05: Strong's-code classification (negator/connective/party) belongs in cluster/cluster_strong, not cfg_lexical_code_class/configmaint. Creates cluster T4 'Adversarial' and reallocates H7854/G4567/G1228G from T2 to T4 (first of several tracked de-cfg-ification escalations). inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | add_concise_verse_specific_rule_v1_20260921 | iba/app/migration/add_concise_verse_specific_rule_v1_20260921.py | ONE-OFF migration -- escalation #1824: registers a new cfg_method_rule requiring concise, verse-specific obs_text for lexical.meaning/cluster.reading/cluster.answer, fixing the root cause of the same/broaden/new dedup never firing. Run once, then set inactive=1. |  |  |  |
@@ -359,6 +332,7 @@ _(none)_
 | flag_management_build_v1_20260823 | iba/app/migration/flag_management_build_v1_20260823.py | ONE-OFF migration, escalation #833 (Flag Management) -- repurposes wa_quality_flag_types/wa_data_quality_flags for prose-quality checks, adds cfg_column.inactive, retires phase2_flag_types, marks 2 dead columns inactive, records wa_session_research_flags' retention. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
 | folderpurpose | iba/app/lib/folderpurpose.py | folderpurpose.py -- folder_purpose table: seed/refresh from a live directory scan (Method A), cross-check against cfg_setting *_dir/*_path values (Method B), and hand-edit type/status/usage_description (Method C). Escalation #971. | ✓ |  |  |
 | handlers_catalogue | iba/app/handlers/catalogue.py | Thin dispatcher adapter over cataloguewrite.py, registers obs_catalogue.update as a work-package step. | ✓ |  |  |
+| handlers_narrativeregister | iba/app/handlers/narrativeregister.py | handlers/narrativeregister.py -- the run.py handlers for work package narrative-register (one per Narrative-Register.ps1 action); the logic is in lib/narrativeregister.py (escalation #2110). | ✓ |  |  |
 | iba_prototype_build_layers | iba/prototype/build_layers.py | build_layers.py — the STEP pull as SEARCH LAYERS, one table per layer. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | iba_prototype_build_prototype | iba/prototype/build_prototype.py | build_prototype.py — test the term -> sense -> span model against real STEP data. -- INACTIVE 2026-08-18 (escalation #729): zero Cfg-method call sites, researcher decision ("set these 110 module to inactive; if the time arise when they need to be used, then the script can be updated to be fully compliant") rather than config_exempt=1. |  |  |  |
 | iba_prototype_export_md | iba/prototype/export_md.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). export_md.py — render the prototype's JSON "tables" as markdown for review. |  |  |  |
@@ -377,8 +351,11 @@ _(none)_
 | m0_5_11_surface_cue_v1_20260923 | iba/app/migration/m0_5_11_surface_cue_v1_20260923.py | ONE-OFF migration -- researcher instruction 2026-09-23: names surface-form variation as the explicit diagnostic cue for M0.5.11's divergence check. Run once, then set inactive=1. |  |  |  |
 | manifest | iba/app/lib/manifest.py | manifest.py — the project-wide file manifest (rebuild + search). Filename/path metadata only; the baseline lib/contentindex.py (round 2) cross-checks file-content search coverage against. | ✓ |  |  |
 | migration | iba/app/migration/add_escalation_needs_followup_column_20260830.py | ONE-OFF: adds escalation.needs_claude_followup / escalation_history.needs_claude_followup (INTEGER, default 0). Idempotent. escalation #1075. |  |  |  |
+| narrative_claim_register_config_v1_20261013 | iba/app/migration/narrative_claim_register_config_v1_20261013.py | ONE-OFF migration -- escalation #2110, build steps 1 and 2: config (cfg_trigger new; enums, settings, behaviour rule, work package narrative-register, steps, grants, on_fail, reports, utilities) and schema (11 narrative_* tables, indexes, 19 history triggers, all from config through lib/db.py), every cfg_* write through configmaint.apply_logged under run_id DEVMODE-2110-CONFIG-20261013. inactive=1 once applied -- a one-off, not a reusable routine. |  |  |  |
+| narrative_claim_register_import_v1_20261013 | iba/app/migration/narrative_claim_register_import_v1_20261013.py | ONE-OFF import -- escalation #2110, build steps 6 and 7 (spec sec6): --preview reads the claim register v1-v51 (R1), its 53 dated sections (R2), the narrative index (R3), the imputed-readings audit (R5) and digest sec4 (R6), plus the current chapter headings and citations, and writes the preview JSON/md and the review list beside the specification -- no DB write. --apply --preview-file imports the APPROVED preview as it stands (writer migration), once; it refuses a second run. inactive=1 once applied. | ✓ |  |  |
 | narrativecopy | iba/app/lib/narrativecopy.py | narrativecopy.py — copies the current inner-being narrative files (top-level .md, not archive/) to the learning4comfort publication inbox; replaces earlier versions of the same files there, leaves other files untouched; no git (escalation #1941). | ✓ |  |  |
 | narrativegenerate | iba/app/lib/narrativegenerate.py | NON-COMPLIANT (escalation #648 -- hardcoded constant(s) that should be cfg_setting-driven; see iba/app/reports/hardcoded-constants-sweep-20260817.md). report.book_narrative_generate's assembly (debates + governing docs), cost estimate/cap, Anthropic Messages API call, and narrative filing |  |  |  |
+| narrativeregister | iba/app/lib/narrativeregister.py | narrativeregister.py -- the narrative claim register in iba.db (escalation #2110): the reference parser and book-alias map, the register actions (AddClaim, Edit, Tell, Untell, Withdraw, EditNote, EditChapter, EditSection, Record, Find, History, Check) and Export of the three published files. See USER-GUIDE.md and GOVERNANCE.md for #2110. | ✓ |  |  |
 | observationenhancer | iba/app/handlers/observationenhancer.py | observationenhancer.py -- the observation_enhancer utility (escalation #1778). preview(ctx)/apply(ctx): applies a researcher-confirmed cfg_observation_enhancer_rule (selector_sql + update_json) to ib_observation, logging every change to ib_observation_enhancer_log. | ✓ |  |  |
 | passagedebatereport | iba/app/lib/passagedebatereport.py | passagedebatereport.py — registers the passage-debate method (`WA-passage-read-guidance` + | ✓ |  |  |
 | passagetrack | iba/app/lib/passagetrack.py | passagetrack.py — the completion-tracking record for the verse-fanout method (`report. | ✓ | ✓ | receives an already-open cfg/connection from its caller; only checks cfg.may_write(), no settings/enums of its own. |
@@ -889,6 +866,10 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | method | method.interpretation_questions_path | workflow/instructions/WA-interpretation-questions-v1.4-2026-08-02.md | current version of the Q1-Q10 interrogative + Part B guidance of interpretation — the passage-debate scaffold and any AI applying it must follow this exact file |
 | method | method.passage_read_guidance_path | workflow/instructions/WA-passage-read-guidance-v1.5-2026-08-02.md | current version of the passage read guidance (steps 1-5 + notes, incl. step 2 note (f)) — the passage-debate scaffold and any AI applying it must follow this exact file; bump this setting (not the debates' memory) when the guidance revises |
 | narrative | method.narrative_hard_constraints_path | workflow/instructions/WA-inner-being-narrative-hard-constraints-v1-2026-07-30.md | current version of the book-agnostic hard constraints (nothing invented, open threads stay open, no forced unity, plain language, no self-reference) every generated narrative must follow — bump this setting (not memory) when the doc revises |
+| narrative | narrative.book_alias_map | {'1ch': '1Ch', '1chr': '1Ch', '1chron': '1Ch', '1chronicles': '1Ch', '1co': '1Cor', '1cor': '1Cor', '1corinthians': '1Cor', '1jn': '1Jo', '1jo': '1Jo', '1john': '1Jo', '1kgs': '1Ki', '1ki': '1Ki', '1kin': '1Ki', '1kings': '1Ki', '1pe': '1Pe', '1pet': '1Pe', '1peter': '1Pe', '1sa': '1Sa', '1sam': '1Sa', '1samuel': '1Sa', '1th': '1Th', '1thes': '1Th', '1thess': '1Th', '1thessalonians': '1Th', '1ti': '1Ti', '1tim': '1Ti', '1timothy': '1Ti', '2ch': '2Ch', '2chr': '2Ch', '2chron': '2Ch', '2chronicles': '2Ch', '2co': '2Cor', '2cor': '2Cor', '2corinthians': '2Cor', '2jn': '2Jo', '2jo': '2Jo', '2john': '2Jo', '2kgs': '2Ki', '2ki': '2Ki', '2kin': '2Ki', '2kings': '2Ki', '2pe': '2Pe', '2pet': '2Pe', '2peter': '2Pe', '2sa': '2Sa', '2sam': '2Sa', '2samuel': '2Sa', '2th': '2Th', '2thes': '2Th', '2thess': '2Th', '2thessalonians': '2Th', '2ti': '2Ti', '2tim': '2Ti', '2timothy': '2Ti', '3jn': '3Jo', '3jo': '3Jo', '3john': '3Jo', 'act': 'Act', 'acts': 'Act', 'amo': 'Amo', 'amos': 'Amo', 'canticles': 'Song', 'col': 'Col', 'colossians': 'Col', 'dan': 'Dan', 'daniel': 'Dan', 'deu': 'Deu', 'deut': 'Deu', 'deuteronomy': 'Deu', 'dt': 'Deu', 'ecc': 'Ecc', 'eccl': 'Ecc', 'ecclesiastes': 'Ecc', 'eph': 'Eph', 'ephesians': 'Eph', 'est': 'Est', 'esth': 'Est', 'esther': 'Est', 'ex': 'Exo', 'exo': 'Exo', 'exod': 'Exo', 'exodus': 'Exo', 'eze': 'Eze', 'ezek': 'Eze', 'ezekiel': 'Eze', 'ezk': 'Eze', 'ezr': 'Ezr', 'ezra': 'Ezr', 'gal': 'Gal', 'galatians': 'Gal', 'gen': 'Gen', 'genesis': 'Gen', 'hab': 'Hab', 'habakkuk': 'Hab', 'hag': 'Hag', 'haggai': 'Hag', 'heb': 'Heb', 'hebrews': 'Heb', 'hos': 'Hos', 'hosea': 'Hos', 'isa': 'Isa', 'isaiah': 'Isa', 'jam': 'Jam', 'james': 'Jam', 'jas': 'Jam', 'jdg': 'Judg', 'jdgs': 'Judg', 'jer': 'Jer', 'jeremiah': 'Jer', 'jhn': 'Joh', 'jn': 'Joh', 'job': 'Job', 'joe': 'Joe', 'joel': 'Joe', 'joh': 'Joh', 'john': 'Joh', 'jol': 'Joe', 'jon': 'Jon', 'jonah': 'Jon', 'jos': 'Jos', 'josh': 'Jos', 'joshua': 'Jos', 'jud': 'Jude', 'jude': 'Jude', 'judg': 'Judg', 'judges': 'Judg', 'lam': 'Lam', 'lamentations': 'Lam', 'lev': 'Lev', 'leviticus': 'Lev', 'lk': 'Luk', 'luk': 'Luk', 'luke': 'Luk', 'mal': 'Mal', 'malachi': 'Mal', 'mar': 'Mar', 'mark': 'Mar', 'mat': 'Mat', 'matt': 'Mat', 'matthew': 'Mat', 'mic': 'Mic', 'micah': 'Mic', 'mk': 'Mar', 'mrk': 'Mar', 'mt': 'Mat', 'nah': 'Nah', 'nahum': 'Nah', 'neh': 'Neh', 'nehemiah': 'Neh', 'num': 'Num', 'numbers': 'Num', 'oba': 'Obd', 'obad': 'Obd', 'obadiah': 'Obd', 'obd': 'Obd', 'phi': 'Phili', 'phil': 'Phili', 'phile': 'Phile', 'philemon': 'Phile', 'phili': 'Phili', 'philippians': 'Phili', 'phlm': 'Phile', 'phm': 'Phile', 'php': 'Phili', 'pro': 'Pro', 'prov': 'Pro', 'proverbs': 'Pro', 'prv': 'Pro', 'ps': 'Psa', 'psa': 'Psa', 'psalm': 'Psa', 'psalms': 'Psa', 'pss': 'Psa', 'qoh': 'Ecc', 'rev': 'Rev', 'revelation': 'Rev', 'rom': 'Rom', 'romans': 'Rom', 'rut': 'Rut', 'ruth': 'Rut', 'rv': 'Rev', 'sng': 'Song', 'song': 'Song', 'songofsolomon': 'Song', 'songofsongs': 'Song', 'sos': 'Song', 'tit': 'Tit', 'titus': 'Tit', 'zec': 'Zec', 'zech': 'Zec', 'zechariah': 'Zec', 'zep': 'Zep', 'zeph': 'Zep', 'zephaniah': 'Zep'} | book name or abbreviation -> the book code iba.db verse.reference uses. Keys are lower case with spaces and dots removed (lib/narrativeregister.py parse_refs normalises the same way). The chapters write full names (2 Corinthians), the register short codes (2Co), verse uses its own (2Cor) -- escalation #2110, spec sec1, sec3.8 |
+| narrative | narrative.citation_index_path | _analytics/essay/spirit_soul_body/narrative-citation-index.md | the published citation index: every verse cited in the narrative, in canonical order, with where it is cited and which claims rest on it (Export; escalation #2110, spec sec8) |
+| narrative | narrative.claim_changes_path | _analytics/essay/spirit_soul_body/narrative-claim-changes.md | the published change log, by update, newest first, and the Structure log (Export; escalation #2110, spec sec8) |
+| narrative | narrative.claim_register_path | _analytics/essay/spirit_soul_body/narrative-claim-register.md | the published claim register (Narrative-Register.ps1 -Action Export): index notes, chapters with their sections and the claims told there, the original essay claims, the claims not in the narrative, the Tally. One fixed name, outside inner-being-narrative/, so it is never copied to learning4comfort (escalation #2110, spec sec8) |
 | narrative | narrative.copy_source_dir | _analytics/essay/spirit_soul_body/inner-being-narrative | Escalation #1941 (researcher, 2026-10-04): the folder whose current top-level .md files Copy-NarrativeToLearning4Comfort.ps1 copies to the learning4comfort inbox. archive/ is never copied. |
 | narrative | narrative.generate_max_cost | 3.0 | USD cost cap (from the pre-call ESTIMATE) — over this, report.book_narrative_generate refuses outright (cost-cap-exceeded) rather than pausing for approval; raise it deliberately for a book large enough to need it |
 | narrative | narrative.generate_max_output_tokens | 16000 | max_tokens on the Messages API call — the ceiling on how long the generated narrative can be |
@@ -898,6 +879,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | narrative | narrative.output_pattern | WA-{book}-inner-being-narrative.md | filename pattern for the generated narrative, written under report.verse_analysis_output_dir/<book_label>/ — same folder its source debates live in |
 | narrative | narrative.rate_input_per_million | 3.0 | USD per million input tokens, at narrative.generate_model's current rate — used for both the pre-call estimate and the real post-call cost; edit if the model default changes to a different price tier |
 | narrative | narrative.rate_output_per_million | 15.0 | USD per million output tokens, at narrative.generate_model's current rate |
+| narrative | narrative.register_report_dir | outputs/narrative-register | where Narrative-Register.ps1 -Action Find/History/Check write their dated reports (escalation #2110) |
 | narrative | narrative.scope_check_report_path | _analytics/essay/book-narrative-scope-check.md | where report.book_narrative_validate persists its findings |
 | narrative | narrative.usage_log_path | _analytics/essay/narrative-generate-usage.csv | append-only on-disk ledger of every LIVE call's real tokens/cost — scripts/cost_ledger.py (repo root) only ingests Console CSV exports, not this app's own calls, so this is the audit trail for those |
 | notification | notification.header_run_id | run_id       : {run_id} | run-header line — the run's id, for Escalation.ps1 -RunId |
@@ -1127,6 +1109,23 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | --- | --- | --- | --- | --- |
 | 0 | retention.report | iba.app.handlers.reports:retention_report | none | run/escalation/validation_result log-retention & run-health report — read-only, no pruning |
 
+**narrative-register** — runs over `none` · script `iba/app/ps/Narrative-Register.ps1`
+| # | step | handler | scope | does |
+| --- | --- | --- | --- | --- |
+| 0 | narrative_register.add_claim | iba.app.handlers.narrativeregister:add_claim | none | a new claim with its sources (-Text -BeyondText -Source) -- see lib/narrativeregister.py (escalation #2110) |
+| 1 | narrative_register.edit | iba.app.handlers.narrativeregister:edit | none | changes a claim's wording, verdict or sources; the trigger logs it -- see lib/narrativeregister.py (escalation #2110) |
+| 2 | narrative_register.tell | iba.app.handlers.narrativeregister:tell | none | links a claim to the passage that tells it (-Chapter -Passage <opening words>) -- see lib/narrativeregister.py (escalation #2110) |
+| 3 | narrative_register.untell | iba.app.handlers.narrativeregister:untell | none | removes a claim's telling from a passage (status removed; the row stays) -- see lib/narrativeregister.py (escalation #2110) |
+| 4 | narrative_register.withdraw | iba.app.handlers.narrativeregister:withdraw | none | withdraws a claim (the row stays, with its history) -- see lib/narrativeregister.py (escalation #2110) |
+| 5 | narrative_register.edit_note | iba.app.handlers.narrativeregister:edit_note | none | edits one block of the index text -- see lib/narrativeregister.py (escalation #2110) |
+| 6 | narrative_register.edit_chapter | iba.app.handlers.narrativeregister:edit_chapter | none | edits a chapter row (number, title, state, current file) -- see lib/narrativeregister.py (escalation #2110) |
+| 7 | narrative_register.edit_section | iba.app.handlers.narrativeregister:edit_section | none | edits a section row (heading, level, parent, order); a rename keeps the old row and moves its current passages to the new one -- see lib/narrativeregister.py (escalation #2110) |
+| 8 | narrative_register.record | iba.app.handlers.narrativeregister:record | none | records a weave's whole update from a JSON file, then compares the chapter versions passage by passage and lists what the JSON does not account for -- see lib/narrativeregister.py (escalation #2110) |
+| 9 | narrative_register.find | iba.app.handlers.narrativeregister:find | none | read-only search (-Verse -Chapter -Section -Claim -Text -Escalation -Thread -Verdict -NotInNarrative -ToldInMoreThanOne) -- see lib/narrativeregister.py (escalation #2110) |
+| 10 | narrative_register.history | iba.app.handlers.narrativeregister:history | none | read-only: every change to a claim and to the passages that tell it -- see lib/narrativeregister.py (escalation #2110) |
+| 11 | narrative_register.check | iba.app.handlers.narrativeregister:check | none | read-only: chapters, sections and passage anchors against the files on disk -- see lib/narrativeregister.py (escalation #2110) |
+| 12 | narrative_register.export | iba.app.handlers.narrativeregister:export | none | regenerates the three published files (spec sec8) -- see lib/narrativeregister.py (escalation #2110) |
+
 **new-word** — runs over `word` · script `iba/app/ps/New-Word.ps1`
 | # | step | handler | scope | does |
 | --- | --- | --- | --- | --- |
@@ -1305,7 +1304,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 <a id="7-on-fail-condition-path-the-fork-rules"></a>
 ## 7. on_fail — condition -> path (the fork rules)
 
-**20 of 75 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
+**20 of 88 conditions ESCALATE** (pause-continue — the researcher is asked); the rest either stop the run outright (report-stop) or continue with a logged warning (report-continue). Per the researcher's 2026-07-21 rule: any finding that needs a judgement call must be in the first group, not silently in the second or third.
 
 ### 5a. Escalates (pause-continue) — the researcher is asked, every time
 | step | condition | message |
@@ -1355,6 +1354,19 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | lexicon.related | unreachable | report-stop | STEP is not reachable — lexicon.related cannot fetch relatedNos at all |
 | lexicon.validate | findings-rejected | report-stop | researcher flagged lexicon-parse quality findings as needing action |
 | lexicon.validate | needs-revision | report-stop | researcher asked for more specific investigation (see comment) |
+| narrative_register.add_claim | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.check | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.edit | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.edit_chapter | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.edit_note | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.edit_section | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.export | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.find | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.history | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.record | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.tell | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.untell | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+| narrative_register.withdraw | refused | report-continue | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 | passage.build | no-candidates | report-stop | the book has no candidate spans — run set-candidates first |
 | passage.validate | findings-rejected | report-stop | researcher flagged the passage distribution as needing the rule revisited |
 | passage.validate | needs-revision | report-stop | researcher asked for more specific investigation (see comment) |
@@ -1407,7 +1419,7 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | cluster.assign | cluster_strong |
 | cluster.reading | ib_node, ib_observation, run_batch |
 | cluster.subgroup | cluster_subgroup, cluster_subgroup_strong, ib_node, ib_observation, run_batch |
-| configmaint.propose | cfg_api, cfg_behaviour_class, cfg_behaviour_rule, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_enum, cfg_escalation, cfg_escalation_requirement, cfg_escalation_transition, cfg_index, cfg_lexical_code_class, cfg_meta, cfg_method_rule, cfg_observation_enhancer_rule, cfg_on_fail, cfg_passage, cfg_prose, cfg_prose_concept, cfg_quality_check, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_table_purpose, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
+| configmaint.propose | cfg_api, cfg_behaviour_class, cfg_behaviour_rule, cfg_book_order, cfg_candidate_rule, cfg_change_detail, cfg_change_log, cfg_column, cfg_connection, cfg_content_index_exclude, cfg_content_index_size_override, cfg_enum, cfg_escalation, cfg_escalation_requirement, cfg_escalation_transition, cfg_index, cfg_lexical_code_class, cfg_meta, cfg_method_rule, cfg_observation_enhancer_rule, cfg_on_fail, cfg_passage, cfg_prose, cfg_prose_concept, cfg_quality_check, cfg_report, cfg_report_csv_table, cfg_report_section, cfg_setting, cfg_status_flow, cfg_step, cfg_table, cfg_table_purpose, cfg_trigger, cfg_unique, cfg_utility, cfg_work_package, cfg_write_grant |
 | escalation | escalation, escalation_history, escalation_thread_item, escalation_thread_item_response, word_registry |
 | hib.set | debate_change_detail, hib, hib_referent_option, verse_hib |
 | lexical.build | verse_lexical |
@@ -1417,7 +1429,16 @@ _Every setting must have a module (enum.config_module) — configmaint.propose e
 | lexical.run | verse_lexical, verse_lexical_note |
 | lexicon.parse | strong_lsj_parsed, strong_meaning_parsed, strong_mounce_parsed |
 | lexicon.related | strong_related |
-| migration | candidate_seed, cluster, cluster_strong, lemma_inventory, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, word_registry, word_strong |
+| migration | candidate_seed, cluster, cluster_strong, lemma_inventory, narrative_chapter, narrative_citation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, narrative_index_note, narrative_passage, narrative_section, narrative_update, narrative_update_ref, span, strong, strong_lexicon, strong_lsj_parsed, strong_meaning_parsed, strong_meaning_tree, strong_mounce_parsed, strong_related, strong_sense, word_registry, word_strong |
+| narrative_register.add_claim | narrative_claim, narrative_claim_change, narrative_claim_source |
+| narrative_register.edit | narrative_claim, narrative_claim_change, narrative_claim_source |
+| narrative_register.edit_chapter | narrative_chapter, narrative_claim_change |
+| narrative_register.edit_note | narrative_index_note |
+| narrative_register.edit_section | narrative_claim_change, narrative_passage, narrative_section |
+| narrative_register.record | narrative_chapter, narrative_citation, narrative_claim, narrative_claim_change, narrative_claim_source, narrative_claim_telling, narrative_passage, narrative_section, narrative_update, narrative_update_ref |
+| narrative_register.tell | narrative_claim, narrative_claim_change, narrative_claim_telling, narrative_passage |
+| narrative_register.untell | narrative_claim, narrative_claim_change, narrative_claim_telling |
+| narrative_register.withdraw | narrative_claim, narrative_claim_change |
 | observation_enhancer.apply | cfg_observation_enhancer_rule, ib_observation, ib_observation_enhancer_log |
 | operation.set | debate_change_detail, operation, operation_party |
 | passage.build | debate_change_detail, passage, verse_passage |
@@ -2676,6 +2697,212 @@ _one row per response to a thread item_ — One row per response to a thread ite
 | responded_at | TEXT |  | ✓ |  |  | ISO-8601 UTC | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 | files | TEXT |  |  |  |  | JSON list of full repo-relative paths (cfg_escalation 7) | escalation #2000, proposal v3 (open-threads-table-proposal-v3-20261012.md) |
 
+### cfg_trigger
+_one row per trigger_ — Every SQLite trigger in either database, with its full CREATE TRIGGER statement. A trigger is schema exactly like a column or an index: lib/db.py:trigger_ddl() rebuilds it from here, and cfgquality.find_unregistered_triggers (configmaint.validate) checks the live databases against it. escalation #2110, 2026-10-13
+dedup key: `database, name`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| database | TEXT |  | ✓ |  |  | iba or bible_research | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| table_name | TEXT |  | ✓ |  |  | the table the trigger is on | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| name | TEXT |  | ✓ |  |  | the trigger name (unique per database) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| ordinal | INTEGER |  | ✓ |  |  | creation order within a table | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| sql | TEXT |  | ✓ |  |  | the full CREATE TRIGGER statement | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| use | TEXT |  |  |  |  | what the trigger does and why | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| inactive | INTEGER |  | ✓ |  |  | 1 for a retired trigger | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_chapter
+_one row per chapter or sub-chapter_ — One row per chapter or sub-chapter of the inner-being narrative. A renumbering changes chapter_no on the row and is logged; every record keeps its link to the chapter, so the history follows the chapter, not the number. Chapters may be added, split, merged, renamed, renumbered or retired (inactive). escalation #2110, spec sec3.1
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| chapter_no | TEXT |  | ✓ |  |  | 02, 10.7, 13.1 | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| title | TEXT |  | ✓ |  |  | the chapter heading, e.g. Choosing and setting direction | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| reading_order | INTEGER |  | ✓ |  |  | order in the book | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| file_stem | TEXT |  | ✓ |  |  | e.g. 10-07-choosing-and-setting-direction | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| current_version | INTEGER |  |  |  |  | the current chapter file's version, e.g. 27 | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| current_file | TEXT |  |  |  |  | the current chapter file name | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| state | TEXT |  | ✓ |  |  | cfg_enum narrative_chapter_state | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| replaces_original | TEXT |  |  |  |  | the index column 'Replaces or absorbs (original)' | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| built_from | TEXT |  |  |  |  | the index column 'Built from' | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| inactive | INTEGER |  | ✓ |  |  | 1 for a retired chapter number (old Ch 13 Under God's anger) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_section
+_one row per section heading in a chapter_ — One row per section heading in a chapter, current or past. A chapter's opening, before any heading, has its own row (level 0). escalation #2110, spec sec3.2
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| chapter_id | INTEGER |  | ✓ |  | narrative_chapter.id | the chapter | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| heading | TEXT |  | ✓ |  |  | the heading text as written; '(opening)' for the opening | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| level | INTEGER |  | ✓ |  |  | heading level 2-4; 0 for the opening | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| parent_section_id | INTEGER |  |  |  | narrative_section.id | the section it sits in | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| ordinal | INTEGER |  | ✓ |  |  | order in the chapter | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| first_version | INTEGER |  |  |  |  | the first chapter version that has the heading | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| last_version | INTEGER |  |  |  |  | the last chapter version that has it; NULL while current | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| renamed_from_id | INTEGER |  |  |  | narrative_section.id | when a heading is renamed, the old row | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_claim
+_one row per claim_ — The register: one row per claim. A claim is a statement derived from sources (verses, later science) that goes beyond their mere text, held in its own plain wording. A quotation is not a claim. escalation #2110, spec sec3.3 (researcher, round 3)
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| claim_ref | TEXT |  |  | ✓ |  | original claims keep the register's id (I-1, 2-5, K-2); new claims are C-{id}, set by trigger trg_narrative_claim_ref_ai when left empty | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| origin | TEXT |  | ✓ |  |  | cfg_enum narrative_claim_origin | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| claim_text | TEXT |  | ✓ |  |  | the claim in its own plain wording, apart from how the narrative tells it | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| beyond_text | TEXT |  |  |  |  | what the claim adds to its sources: why it is a claim and not a quotation | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| i_read | INTEGER |  | ✓ |  |  | 1 when the narrative marks it as the narrator's reading ('I read') | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| verdict | TEXT |  |  |  |  | cfg_enum narrative_claim_verdict, the register's own words | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| part_verdict | TEXT |  |  |  |  | the second verdict of a split verdict, e.g. Held in 9-1 | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| part_scope | TEXT |  |  |  |  | what each part of a split verdict covers | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| original_chapter | TEXT |  |  |  |  | for original claims: the essay chapter heading | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| original_wording | TEXT |  |  |  |  | for original claims: the claim as the essay made it | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| main_chapter_id | INTEGER |  |  |  | narrative_chapter.id | the chapter that tells the claim most fully | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| main_section_id | INTEGER |  |  |  | narrative_section.id | the section that tells it most fully | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| in_narrative | INTEGER |  | ✓ |  |  | 1 if at least one current passage tells the claim (a pointer does not count); 0 if none. The filter for claims not included | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| status | TEXT |  | ✓ |  |  | cfg_enum narrative_claim_status | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_claim_source
+_one row per source of a claim_ — What a claim rests on: a verse (one row per verse; ranges and lists expanded), a lexical source, science (later), or a study file. escalation #2110, spec sec3.4
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| claim_id | INTEGER |  | ✓ |  | narrative_claim.id | the claim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| source_kind | TEXT |  | ✓ |  |  | cfg_enum narrative_claim_source_kind | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| verse_id | INTEGER |  |  |  | verse.id | for kind verse; NULL where the verse has no row | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| ref_as_written | TEXT |  |  |  |  | the reference as written, e.g. 1 Samuel 24:5 | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| ref_normalised | TEXT |  |  |  |  | in verse.reference form, e.g. 1Sa 24:5 | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| source_text | TEXT |  |  |  |  | for the other kinds: the word with its gloss, the science reference, or the file path | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| note | TEXT |  |  |  |  | how the source bears on the claim, where it is not plain | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_passage
+_one row per passage that tells at least one claim_ — One row per passage of the story (a paragraph or a bullet as it stands in the chapter) that tells at least one claim. passage_text is edited in place; the triggers log the before and after for every claim it tells. escalation #2110, spec sec3.5
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| chapter_id | INTEGER |  | ✓ |  | narrative_chapter.id | the chapter | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| section_id | INTEGER |  |  |  | narrative_section.id | the section | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| ordinal | INTEGER |  | ✓ |  |  | its place in the section | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| anchor_text | TEXT |  | ✓ |  |  | its opening words, so the tool can find it in the file | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| passage_text | TEXT |  | ✓ |  |  | the passage as it now reads | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| first_version | INTEGER |  |  |  |  | the first chapter version that holds it | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| last_version | INTEGER |  |  |  |  | the last chapter version that holds it; NULL while current | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_claim_telling
+_one row per claim told in a passage_ — The link between a claim and a passage that tells it (many to many). escalation #2110, spec sec3.5
+dedup key: `claim_id, passage_id`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| claim_id | INTEGER |  | ✓ |  | narrative_claim.id | the claim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| passage_id | INTEGER |  | ✓ |  | narrative_passage.id | the passage | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| kind | TEXT |  | ✓ |  |  | cfg_enum narrative_telling_kind: in full, in part, pointer | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| part_told | TEXT |  |  |  |  | which part of the claim this passage tells | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| status | TEXT |  | ✓ |  |  | cfg_enum narrative_telling_status: current, removed | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_update
+_one row per weave or recorded pass_ — One row per weave or recorded pass on the narrative, with its instruction, sources, notes and quote check. Imported updates keep the register version that added them. escalation #2110, spec sec3.6
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| update_date | TEXT |  | ✓ |  |  | ISO date of the update | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| title | TEXT |  | ✓ |  |  | the update's heading | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| strand | TEXT |  |  |  |  | e.g. anger (M02) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| researcher_instruction | TEXT |  |  |  |  | verbatim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| method | TEXT |  |  |  |  | method or rule named (e.g. rule 73) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| source_files | TEXT |  |  |  |  | one path per line | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| scripts | TEXT |  |  |  |  | one path per line | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| claims_changed_note | TEXT |  |  |  |  | 'Original claims changed', verbatim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| not_woven_note | TEXT |  |  |  |  | 'Not woven' / 'Kept out', verbatim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| structure_change | TEXT |  |  |  |  | filled when the book's shape changed (the Structure log) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| structure_reason | TEXT |  |  |  |  | the reason for the structure change | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| quote_parts | INTEGER |  |  |  |  | the quote check: parts checked | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| quote_failures | INTEGER |  |  |  |  | the quote check: failures | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| quote_note | TEXT |  |  |  |  | the quote check note, verbatim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| notes | TEXT |  |  |  |  | any other paragraph, verbatim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| legacy_register_version | INTEGER |  |  |  |  | for imported updates, the register version that added it | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_update_ref
+_one row per escalation or thread an update names_ — The escalations, threads and thread items an update names. escalation #2110, spec sec3.6
+dedup key: `update_id, kind, value`
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| update_id | INTEGER |  | ✓ |  | narrative_update.id | the update | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| kind | TEXT |  | ✓ |  |  | cfg_enum narrative_update_ref_kind | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| value | TEXT |  | ✓ |  |  | 1998, OT-29, OT-29.1 | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_claim_change
+_one row per change to a claim or to a passage that tells it_ — The change log, many rows per claim: every change to a claim, and to each passage that tells it, with enough before and after to review the impact without opening another file (Q-F). A change to one passage that tells three claims writes three rows. escalation #2110, spec sec3.7
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| claim_id | INTEGER |  | ✓ |  | narrative_claim.id | the claim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| passage_id | INTEGER |  |  |  | narrative_passage.id | the passage, for a change in how the claim is told | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| update_id | INTEGER |  |  |  | narrative_update.id | the update that made it; NULL for a direct edit | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| change_date | TEXT |  | ✓ |  |  | ISO date | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| change_kind | TEXT |  | ✓ |  |  | cfg_enum narrative_claim_change_kind | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| claim_before | TEXT |  |  |  |  | the claim's wording before | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| claim_after | TEXT |  |  |  |  | the claim's wording after | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| verdict_before | TEXT |  |  |  |  | the verdict before | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| verdict_after | TEXT |  |  |  |  | the verdict after | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| passage_before | TEXT |  |  |  |  | the full passage before, as it read in the chapter | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| passage_after | TEXT |  |  |  |  | the full passage after | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| chapter_id | INTEGER |  |  |  | narrative_chapter.id | where | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| section_id | INTEGER |  |  |  | narrative_section.id | where | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| section_before_id | INTEGER |  |  |  | narrative_section.id | where from, for a move | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| chapter_version_from | INTEGER |  |  |  |  | e.g. 7 | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| chapter_version_to | INTEGER |  |  |  |  | e.g. 8 | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| file_before | TEXT |  |  |  |  | the chapter file before | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| file_after | TEXT |  |  |  |  | the chapter file after | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| note | TEXT |  |  |  |  | the verdict cell verbatim, or any remark | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| basis | TEXT |  | ✓ |  |  | cfg_enum narrative_change_basis: recorded, reconstructed, direct edit | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| provenance | TEXT |  |  |  |  | the file(s) the row came from, or the trigger that wrote it | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_citation
+_one row per verse cited in a passage of the story_ — The citation index: every verse cited anywhere in the story, by passage. With narrative_claim_source it answers, for any verse, where it is cited and which claims rest on it. A reference that cannot be resolved is kept with verse_id NULL, never dropped. escalation #2110, spec sec3.8
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| chapter_id | INTEGER |  | ✓ |  | narrative_chapter.id | where it is cited | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| section_id | INTEGER |  |  |  | narrative_section.id | where it is cited | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| passage_id | INTEGER |  |  |  | narrative_passage.id | NULL if the passage tells no claim | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| verse_id | INTEGER |  |  |  | verse.id | NULL where the verse has no row | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| ref_as_written | TEXT |  | ✓ |  |  | as written in the chapter | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| ref_normalised | TEXT |  |  |  |  | in verse.reference form | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| quoted | INTEGER |  | ✓ |  |  | 1 when the verse's words are quoted, 0 when it is only referred to | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| first_version | INTEGER |  |  |  |  | the first chapter version that cites it | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| last_version | INTEGER |  |  |  |  | the last chapter version that cites it; NULL while current | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
+### narrative_index_note
+_one row per block of index text_ — The parts of the old narrative index that are text, not tables (researcher direction, theme and frame, rules applied, how later work updates the narrative, source files, verse check), one row per block, editable. escalation #2110, spec sec3.9
+| column | type | pk | notnull | unique | fk | use | source/filled_by |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| id | INTEGER | ✓ | ✓ |  |  | surrogate PK | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| heading | TEXT |  | ✓ |  |  | the block heading | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| text | TEXT |  | ✓ |  |  | the block text (markdown) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| ordinal | INTEGER |  | ✓ |  |  | order in the published register | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_at | TEXT |  | ✓ |  |  | when the row was written (ISO-8601 UTC) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+| created_by | TEXT |  | ✓ |  |  | who wrote the row: Claude, Researcher, migration, trigger, or 'direct edit' (the default, for a row inserted outside the tool) | escalation #2110, specification v1 (wa-essay-narrative-record-db-specification-v1-20261013.md) |
+
 <a id="11-enums"></a>
 ## 11. Enums
 
@@ -2713,7 +2940,17 @@ _one row per response to a thread item_ — One row per response to a thread ite
 | ib_observation.tag | instance-meaning, verse-grouping, difference-inference, surface-gloss-divergence, no-human-context, cross-cluster-significance, data-error, alternative-meaning, could-not-resolve, answered-no-flag, tightly-related, no-direct-connection, qualifier-for-term, no-impact, not-related-to-meaningful-word, sole-mcode-in-verse, cluster-pole-negative, cluster-pole-positive, attested-pre-nt, nt-coinage, needs_adjacent_verse_context, elevation-candidate |
 | ib_observation.window | meaning, action-impact, relational, literary, cognitive, affective, operational, constitutional, origin, scientific, Subgroup, faculty |
 | lexical_code_class | negator, connective_causal, connective_coordinating, connective_purpose, party_divine, party_human, party_angelic |
+| narrative_change_basis | recorded, reconstructed, direct edit |
+| narrative_chapter_state | draft, draft + held, empty, deferred |
+| narrative_claim_change_kind | claim created, claim restated, verdict changed, claim withdrawn, telling added, telling changed, telling removed, passage moved, renumbered, edited |
+| narrative_claim_origin | original essay, narrative |
+| narrative_claim_source_kind | verse, lexical, science, study file |
+| narrative_claim_status | current, withdrawn, held |
+| narrative_claim_verdict | Stands, Widened, Restated, Withdrawn, Held, Added, New, Removed, Corrected |
 | narrative_required_channel | Non-human ↔ human, Human ↔ human, Physical world ↔ human |
+| narrative_telling_kind | in full, in part, pointer |
+| narrative_telling_status | current, removed |
+| narrative_update_ref_kind | escalation, thread, thread item |
 | note_type | idiom, pronoun_resolution, noun_relational, noun_severity, chain, connective, related_word, polarity, entity_link, inert, structural_pattern, recurrence_role_shift, cross_lemma_shared_gloss, verb_argument, compound_unit |
 | on_fail | report-continue, pause-continue, report-stop, self-heal |
 | operation_decision | retain, set_aside, retain_referential, recorded_silence |
@@ -2920,6 +3157,42 @@ work package `file-manifest-rebuild` → `iba/app/ps/Manifest-Rebuild.ps1` (chai
 | 0 | summary | ## Summary | Summary | ✓ |
 | 1 | by_category | ## By category | By category | ✓ |
 | 2 | by_currency | ## By currency | By currency | ✓ |
+
+### `narrative_register.check`
+**Narrative register check** — output `md` · naming `dated` · archived to `archive/` · ToC off
+work package `narrative-register` → `iba/app/ps/Narrative-Register.ps1` (chained=0)
+
+| # | section | heading | toc label | in ToC |
+| --- | --- | --- | --- | --- |
+| _(none)_ | _(none)_ | _(none)_ | _(none)_ | _(none)_ |
+
+| condition | path | route | message |
+| --- | --- | --- | --- |
+| refused | report-continue | terminal | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+
+### `narrative_register.find`
+**Narrative register search** — output `md` · naming `dated` · archived to `archive/` · ToC off
+work package `narrative-register` → `iba/app/ps/Narrative-Register.ps1` (chained=0)
+
+| # | section | heading | toc label | in ToC |
+| --- | --- | --- | --- | --- |
+| _(none)_ | _(none)_ | _(none)_ | _(none)_ | _(none)_ |
+
+| condition | path | route | message |
+| --- | --- | --- | --- |
+| refused | report-continue | terminal | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
+
+### `narrative_register.history`
+**Narrative claim history** — output `md` · naming `dated` · archived to `archive/` · ToC off
+work package `narrative-register` → `iba/app/ps/Narrative-Register.ps1` (chained=0)
+
+| # | section | heading | toc label | in ToC |
+| --- | --- | --- | --- | --- |
+| _(none)_ | _(none)_ | _(none)_ | _(none)_ | _(none)_ |
+
+| condition | path | route | message |
+| --- | --- | --- | --- |
+| refused | report-continue | terminal | refused, nothing written -- the reason follows (a usage outcome, not recorded as an escalation) |
 
 ### `passage.validate`
 **Passage quality report** — output `md+csv` · naming `stable` · archived to `archive/` · ToC on
