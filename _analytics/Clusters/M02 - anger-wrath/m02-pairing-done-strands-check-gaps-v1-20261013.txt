@@ -1,0 +1,73 @@
+# M02 pairing threads whose paired strand is already read: verse check
+
+**Date:** 2026-10-13 · **Threads:** OT-30 (#2031, M01), OT-51 (#2052, M20), OT-29 (#2030, M25), OT-62 (#2063, M64) · **Instruction (researcher, verbatim):** *"proceed as recommended"*. The recommendation was to check the pairing threads whose paired strand is already read now, verse by verse against what that strand decided, and to fold the other pairing threads into one thread (section 5).
+
+## 1. Method
+
+Each thread says: *"read only these anger verses, face by face, for how the two operate together."* The verse lists come from `wa-cluster-M02-mcode-face-combinations-v1-20261005.csv`. There are 90 verses: M01 35, M20 12, M25 36, M64 7. OT-16 (M72) is not in this check, because #1998 already closed its M72 item. Its two remaining items (M03, Eze 19:14) go with the other pairing threads in section 5.
+
+For each verse I read the verse, the M-word the pairing found in it, and every current narrative paragraph that cites it. The paragraphs were found with the crossref parser `../M64 - will-resolve/verse-narrative-ot-crossref-v3-20261009.py`; the worksheets are `m02-pairing-done-strands-crossref-v1-20261013.csv` and `m02-pairing-done-strands-context-v1-20261013.py`. A citation alone was not counted as coverage. A verse counts as **carried** only when the narrative paragraph carries the anger and the paired word working together.
+
+Decisions:
+- **carried**: the narrative already carries the anger and the paired word together.
+- **parallel**: a parallel verse that is carried says the same thing.
+- **data**: either there is no anger in the verse (the pairing came from a word such as "trembled" or "waste"), or the paired word is only the outcome or setting of the anger.
+- **forward**: the verse belongs to another open thread.
+- **gap**: not carried. The verse is read in its passage in section 3, with a proposed placement. **Nothing is woven**; weaving waits for the researcher's instruction.
+
+The face given in the tables is the first anger face the pairing CSV lists for the verse.
+
+## 2. Decisions, verse by verse
+
+<<TABLES>>
+## 3. The gaps, read in their passages
+
+Fourteen verses: five for M01, four for M20, five for M25. Readings beyond what a verse states are marked "I read". The placements are proposals.
+
+### M01 Fear & Awe (OT-30)
+
+**Proverbs 20:2.** "The terror of a king is like the growling of a lion; whoever provokes him to anger forfeits his life." The verse sets the fear of a ruler beside the anger of the ruler, and says what provoking him costs. The verse after it says what to do instead: "It is an honor for a man to keep aloof from strife, but every fool will be quarreling" (20:3). The verse before it names wine as "a brawler" (20:1). I read the three together: what a person does with the terror is left to him, either keeping aloof or quarrelling. 10.13 carries only the parallel saying, "A king's wrath is a messenger of death" (16:14). Ch 5 points to this verse with "Chapter 2 takes it up", but Chapter 2 does not cite it (section 4). *Proposed:* 10.13 *Other parties*, beside Proverbs 16:14, with 20:3; and the fear of a ruler in 10.12 *Other parties*.
+
+**Job 19:29.** "be afraid of the sword, for wrath brings the punishment of the sword, that you may know there is a judgment." Job says this to his friends straight after "I know that my Redeemer lives" and "My heart faints within me!" (19:25, 27). He is answering what they say, "How we will pursue him!" and "The root of the matter is found in him" (19:28). He tells his accusers to fear, and the reason he gives is that there is a judgment. I read that the one being accused turns the fear of wrath back onto those who pursue him, and that he does so from the confidence he has just stated. *Proposed:* 10.13 *Other parties* (wrath warned of, toward those who pursue another), and 10.10, where one accuses another.
+
+**Lamentations 2:22.** "You summoned as if to a festival day my terrors on every side, and on the day of the anger of the Lord no one escaped or survived; those whom I held and raised my enemy destroyed." The lament speaks to God about his anger: "Look, O Lord, and see! With whom have you dealt thus?" (2:20); "you have killed them in the day of your anger, slaughtering without pity" (2:21). The figure is a call to a feast. A festival day gathers people to rejoice, and here what is gathered is "my terrors on every side". I read that the speaker does not turn away from God in the terror; the speaker asks him to look, and names what his anger did to those "I held and raised". *Proposed:* 10.13 *Bearing it* (lament spoken to God), and 10.9 (speaking to God in loss).
+
+**Psalm 76:7.** Partly carried: 10.13 quotes "Who can stand before you when once your anger is roused?" It does not carry the first half, "But you, you are to be feared!", or what the psalm gives as the reason for the anger: "the earth feared and was still, when God arose to establish judgment, to save all the humble of the earth" (76:8–9). In the psalm, his anger is roused to save the humble, and the fear is the earth's stillness before it. *Proposed:* 10.12 *Fear before God* (fear as being still), and 10.13 *Shelter, and who can stand* (the anger roused for the humble), with 13.1.
+
+**Revelation 11:18.** "The nations raged, but your wrath came … and for rewarding your servants, the prophets and saints, and those who fear your name, both small and great." The elders say this in worship (11:16–17). Two angers stand in one sentence: the nations' rage, and his wrath, which answers it. In the same verse, fear of his name is what is rewarded, "both small and great". *Proposed:* 10.13 *Other parties* (rage answered by wrath), 10.12 (the fear of his name rewarded), and 13.1.
+
+### M20 Doubt & Discouragement (OT-51)
+
+**Deuteronomy 31:17.** Partly carried: 10.13 quotes only the people's question, "Have not these evils come upon us because our God is not among us?" The verse runs the whole course in God's own words: "my anger will be kindled against them … I will forsake them and hide my face from them, and they will be devoured." The cause stands on both sides of the verse: "they will forsake me and break my covenant" (31:16), and "I will surely hide my face in that day because of all the evil that they have done, because they have turned to other gods" (31:18). I read that the people's question names the absence but not the turning that the verses give as its cause. *Proposed:* 10.9 *When God hides his face*, and widen the 10.13 line.
+
+**Jeremiah 33:5.** "… whom I shall strike down in my anger and my wrath, for I have hidden my face from this city because of all their evil." The next verse turns: "Behold, I will bring to it health and healing, and I will heal them" (33:6). In two verses the hidden face and the anger are followed straight away by healing. *Proposed:* 10.9 *When God hides his face*, beside Isaiah 54:8, and 13.1.
+
+**Psalm 89:46.** "How long, O Lord? Will you hide yourself forever? How long will your wrath burn like fire?" The psalmist sets the length of the anger against the length of his own life: "Remember how short my time is!" (89:47). Then he asks, "What man can live and never see death?" (89:48, already in Chapter 2). The plea weighs God's anger against a short life. *Proposed:* 10.9 *When God hides his face* (the "how long" plea), and Chapter 2 beside 89:48.
+
+**Zephaniah 2:3.** "Seek the Lord, all you humble of the land, who do his just commands; seek righteousness; seek humility; perhaps you may be hidden on the day of the anger of the Lord." The call comes before "the burning anger of the Lord" (2:2). The people called are already humble and already doing his commands, and they are told to seek humility. The verse promises nothing: "perhaps". Being hidden is God's act. *Proposed:* 10.13 *Shelter, and who can stand*, beside Isaiah 26:20, and 10.9 (seeking God).
+
+### M25 Life & Death (OT-29)
+
+**Deuteronomy 31:29.** "For I know that after my death you will surely act corruptly and turn aside from the way that I have commanded you … provoking him to anger through the work of your hands." Moses grounds what he knows in what he has already seen: "For I know how rebellious and stubborn you are. Behold, even today while I am yet alive with you … How much more after my death!" (31:27). The provocation is named as "the work of your hands". *Proposed:* 10.13 *How it is provoked*, and 10.10 (a leader who knows his people's heart).
+
+**Ezekiel 20:33.** "As I live, declares the Lord God, surely with a mighty hand and an outstretched arm and with wrath poured out I will be king over you." This answers a thought: "What is in your mind shall never happen—the thought, 'Let us be like the nations … and worship wood and stone'" (20:32). The wrath poured out goes with bringing out and gathering (20:34), with judgment "face to face" (20:35), and with bringing them "into the bond of the covenant" (20:37). God answers a thought in the mind with an oath by his own life and with his rule. *Proposed:* 10.4 *Thinking* (a thought answered), 13.1 *Ruling*, and 10.13.
+
+**Isaiah 51:17.** Partly carried: 10.13 has "It is drunk" and the cup taken away (51:22). It does not carry the rest of the passage. There is the call "Wake yourself, wake yourself, stand up". There is the one who drank, with "none to guide her … none to take her by the hand" among her sons (51:18), and the question "who will comfort you?" (51:19). There are her sons, "full of the wrath of the Lord" (51:20), "drunk, but not with wine" (51:21). The figure is drunkenness: wrath that has been drunk leaves a person staggering and without a guide. I read that the call to wake goes to one who cannot rise without a hand, and the hand that takes the cup is God's, "who pleads the cause of his people" (51:22). *Proposed:* 10.13 *How it ends*, and Chapter 2 beside the waking verses.
+
+**Proverbs 11:4.** "Riches do not profit in the day of wrath, but righteousness delivers from death." The day of wrath tests what a person has relied on. The next verses go on: "The righteousness of the blameless keeps his way straight" (11:5), and "the treacherous are taken captive by their lust" (11:6, in 10.6). *Proposed:* 10.13 *Shelter, and who can stand*, and Chapter 2 *Delivered from death*.
+
+**Proverbs 29:8.** "Scoffers set a city aflame, but the wise turn away wrath." The scoffer's words set a whole city alight, and the wise turn the anger away. The verses around it set the fool beside the wise: "the fool only rages and laughs, and there is no quiet" (29:9, in 10.10); "A fool gives full vent to his spirit, but a wise man quietly holds it back" (29:11, in Ch 6). I read that the wise man who turns another's wrath away is the same man who holds his own back. *Proposed:* 10.13 *How it is answered* (another's anger turned away), and 10.5 (scoffing as speech that inflames).
+
+## 4. Found in the check, outside the threads
+
+- **A stale line in 10.13** (`10-13-anger-v7-20261012.md`, line 474): "The verses in which anger crosses into life and death are kept for Chapter 2, where that placement is on hold." OT-08 was closed on 2026-10-09, and Chapter 2 already carries Jonah 4:9. Proposed: remove the hold wording.
+- **A pointer in Chapter 5 with nothing behind it:** "Where an angry person's anger puts the life itself at risk ('whoever provokes him to anger forfeits his life', Proverbs 20:2), Chapter 2 takes it up." Chapter 2 does not cite Proverbs 20:2. Proposed: point to 10.13 once Proverbs 20:2 is placed there, or add it to Chapter 2.
+
+Neither change is made. Both are narrative edits and wait for the researcher's instruction.
+
+## 5. Recorded on the threads
+
+- **OT-62 (M64):** all 7 verses are carried. Every item is closed, so the thread completes.
+- **OT-30 (M01), OT-51 (M20), OT-29 (M25):** the cluster item is closed with this check. Each gap verse is added as a `verse` item and stays open until it is woven. When the last one is settled, the thread completes.
+- **Ezekiel 20:13 and 20:21** are added as items to **OT-01** (life by the statutes, #2002), which already holds Ezekiel 20:11.
+- **The other pairing threads** (OT-16's two remaining items, OT-17, and OT-20 to OT-90, apart from those above) are superseded into one thread, *Anger (M02) and the co-occurring M-codes*. That thread has one item per M-code, and each item closes when that cluster's strand reads its shared anger verses. Each superseded thread keeps its own record of verse count and faces; the verse lists stay in the pairing CSV.
