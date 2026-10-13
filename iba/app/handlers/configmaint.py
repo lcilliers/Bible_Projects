@@ -291,6 +291,11 @@ def _find_orphan_configs(conn: sqlite3.Connection) -> list[str]:
     return cfgquality.find_orphan_configs(conn, APP_ROOT)
 
 
+_ADVISORY_TRIED = ("coherence checks passed; these are advisory findings, not errors — approve to "
+                   "acknowledge as known/acceptable, reject to flag for action, or revise with a "
+                   "comment on what to check")
+
+
 def validate(ctx: Ctx) -> Outcome:
     """Hard coherence errors (schema/FK/enum breaks — genuine structural faults) still fail
     outright, report-stop, no question to ask. But a FINDING that needs a researcher JUDGMENT
@@ -486,13 +491,26 @@ def validate(ctx: Ctx) -> Outcome:
                   f"— not re-raised; answer #{dup['id']} to resolve this finding. Full detail in "
                   f"{report_path}", **preset, existing_escalation_id=dup["id"])
 
+    # Escalation #2108 (2026-10-13): the findings changed since an advisory escalation was raised
+    # and it is still open -- record the new findings on THAT escalation (a new version) instead
+    # of raising another one beside it. open_duplicate() above only catches an identical summary.
+    prior = esc.open_for_step(ctx.db, ctx.step_id, _ADVISORY_TRIED[:40])
+    if prior:
+        esc.update(ctx.cfg, ctx.db, prior["id"], originator="Claude",
+                   comment=f"configmaint.validate re-run {ctx.run_id}: the findings changed, now "
+                           f"{summary}. Full detail in {report_path}.",
+                   context=f"findings as of {ctx.run_id}: {summary}",
+                   # D26: work cannot be attached to an item left at 'raised'
+                   state="in-progress" if prior["state"] == "raised" else None)
+        return ok(f"findings changed since open escalation #{prior['id']} -- recorded on it as a new "
+                  f"version, not re-raised. Full detail in {report_path}",
+                  **preset, existing_escalation_id=prior["id"])
+
     return escalate(
         "needs-review",
         question=question,
         preset={**preset, "report_path": str(report_path)},
-        tried="coherence checks passed; these are advisory findings, not errors — approve to "
-              "acknowledge as known/acceptable, reject to flag for action, or revise with a "
-              "comment on what to check",
+        tried=_ADVISORY_TRIED,
         resolution_kind="decision_required")
 
 

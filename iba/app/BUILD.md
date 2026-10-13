@@ -17063,3 +17063,25 @@ It was the only file under `iba/` with 0x08 bytes.
 **Not done here:** R0 (steps 8–9), deferred by the researcher to the chapter-by-chapter review: *"We will do the narrative claims when doing a chapter by chapter review. so you can leave it for the time being."* #2110 is on hold until then. The test plan run (App Mode session) is still outstanding.
 
 **Files:** `_analytics/essay/spirit_soul_body/narrative-claim-register.md`, `narrative-claim-changes.md`, `narrative-citation-index.md` (new, generated); the two archived files above; `CLAUDE.md`; `iba/app/migration/narrative_claim_register_config_v1_20261013.py`; `iba/app/GOVERNANCE.md` §94; `iba/app/USER-GUIDE.md` §12h.
+
+## 346. configmaint.validate records changed advisory findings on the open escalation (2026-10-13, escalation #2108)
+
+**Why:** researcher, chat 2026-10-13 (verbatim): *"sort out 2112, and 2213 as well as 2104, and 2106 they are all the result of you not handling config properly and causing errors, and not complying with goevernance."* `lib/escalation.py:open_duplicate()` treats a re-run as a duplicate only when the finding summary (the counts per category) is identical. Each `configmaint.validate` run whose counts had changed raised a new advisory escalation and left the earlier one open: #2104 → #2105 → #2106 → #2107, then #2112 and #2113 open side by side.
+
+**Change:**
+- `lib/escalation.py`: new `open_for_step(db, at_step, tried_prefix)`, the newest open escalation raised by the step whose `tried` starts with the advisory text.
+- `handlers/configmaint.py`: the advisory `tried` text is one constant, `_ADVISORY_TRIED`. After the identical-summary check, `validate()` looks for an open advisory escalation from the same step; if there is one, it records the new findings on it (`esc.update`, a new version, moved from `raised` to `in-progress` where needed, per D26) and does not raise a new one. Only when none is open is a new escalation raised.
+
+**Tested** (a copy of iba.db under `iba/app/db/`, deleted after; `escalate` stubbed to count calls): no open advisory → a new escalation is raised (1 call); an open advisory with different findings → recorded on it as a new version, 0 raised; the same findings again → the identical-summary check catches it, 0 raised.
+
+**Housekeeping:** #2112 and #2113 superseded into #2108, which carries the rest of the #2107 fixes.
+
+**Files:** `iba/app/lib/escalation.py`, `iba/app/handlers/configmaint.py`.
+
+## 347. Hand-rolled-versioning check: the researcher's exemption recorded in the check (2026-10-13, escalation #2108 F)
+
+**Why:** researcher, chat 2026-10-13 (verbatim): *"F - yes it is exempt, and that has been like that for ever, so why this has now resurfaced, I do not understand."* It resurfaced because the exemption was written only in documents (#784, the #2107 triage), never in `cfgquality.find_hand_rolled_versioning`, so every `configmaint.validate` run flagged it again.
+
+**Change:** `iba/app/lib/cfgquality.py` `find_hand_rolled_versioning` skips `iba/app/lib/prosestore.py` (its cross-day edit-cycle counter, #784) and every file under `_analytics/` (one-off analysis scripts).
+
+**Also recorded on #2108 (no code):** K, older documents keep their names (*"K no need to rename old documents"*); worksheet tabs ignored; script registration not pursued (researcher, verbatim: *"no need to spend any more work on it"*).

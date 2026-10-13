@@ -1246,6 +1246,19 @@ def open_duplicate(db: Db, at_step: str, stable_key: str):
     return rows[0] if rows else None
 
 
+def open_for_step(db: Db, at_step: str, tried_prefix: str):
+    """The newest still-open escalation raised by `at_step` whose `tried` starts with
+    `tried_prefix`, whatever its findings. Escalation #2108 (2026-10-13): open_duplicate() matches
+    the exact finding summary, so a configmaint.validate re-run whose COUNTS had changed raised a
+    new escalation and left the earlier one open (#2104 -> #2105 -> #2106 -> #2107, then #2112 and
+    #2113 open side by side). The caller now records the changed findings on this one instead."""
+    ph = ",".join("?" * len(_OPEN_STATES))
+    rows = db.rows(
+        f"SELECT * FROM escalation WHERE at_step=? AND state IN ({ph}) AND tried LIKE ? "
+        f"ORDER BY id DESC LIMIT 1", (at_step, *_OPEN_STATES, f"{tried_prefix}%"))
+    return rows[0] if rows else None
+
+
 def answer_for_run(cfg: Cfg, db: Db, run_id: str, decision: str, comment: str | None = None,
                    *, answered_by: str, resolution: str | None = None) -> str:
     """Record the decision on a run-scoped (dispatcher-tied) escalation. `answered_by` is required,

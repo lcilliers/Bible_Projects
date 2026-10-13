@@ -1231,6 +1231,11 @@ def find_hand_rolled_versioning(conn: sqlite3.Connection, project_root: pathlib.
             continue
         if rel_posix in ("iba/app/lib/filingkit.py", "iba/app/lib/reportkit.py"):
             continue  # the canonical implementation itself, not a caller reinventing it
+        # Exempt by researcher ruling (2026-10-13, #2108 F, verbatim: "F - yes it is exempt, and
+        # that has been like that for ever"): prosestore.py's cross-day edit-cycle counter (#784)
+        # and the one-off analysis scripts under _analytics/.
+        if rel_posix == "iba/app/lib/prosestore.py" or parts[0] == "_analytics":
+            continue
         try:
             text = f.read_text(encoding="utf-8", errors="ignore")
         except OSError:
