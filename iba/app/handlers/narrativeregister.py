@@ -29,6 +29,10 @@ def _write(ctx: Ctx, fn) -> Outcome:
         message = fn(ctx.cfg, w, ctx.params)
     except nr.Refused as exc:
         return fail("refused", str(exc))
+    if w.unresolved:                     # an unresolved reference is an error (#2134)
+        eid = nr.raise_unresolved(ctx.cfg, ctx.db, w)
+        message += "".join(f"\n  unresolved: {u}" for u in w.unresolved)
+        message += f"\n  escalation #{eid} raised for {len(w.unresolved)} unresolved reference(s)"
     paths = nr.export(ctx.cfg)
     return ok(f"{message}\n  published: {', '.join(p.name for p in paths)}")
 

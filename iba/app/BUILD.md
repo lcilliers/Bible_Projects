@@ -17085,3 +17085,20 @@ It was the only file under `iba/` with 0x08 bytes.
 **Change:** `iba/app/lib/cfgquality.py` `find_hand_rolled_versioning` skips `iba/app/lib/prosestore.py` (its cross-day edit-cycle counter, #784) and every file under `_analytics/` (one-off analysis scripts).
 
 **Also recorded on #2108 (no code):** K, older documents keep their names (*"K no need to rename old documents"*); worksheet tabs ignored; script registration not pursued (researcher, verbatim: *"no need to spend any more work on it"*).
+
+## 348. Narrative register: unresolved references listed and escalated (2026-10-13, escalation #2134)
+
+**Why:** #2110 test plan run 1, note 1 (case 4A.7): `Record` wrote a reference with no `verse` row (`verse_id` NULL) without saying so, and `Check` did not flag it. Researcher, chat 2026-10-13 (verbatim): *"proceed 2134:  if the narrative have unresolved references then there is an error and an escalation should be created resolve it."*
+
+**Change:**
+- `lib/narrativeregister.py`: new `unresolved(vx, normalised, verse_id)`: a verse with no `verse_id`, or a whole chapter the book does not have (a whole chapter that exists has `verse_id` NULL by design and is not unresolved). `Writer` keeps a list (`note_unresolved`), filled where a claim source (`AddClaim`, `Edit`, `Record` new claims) or a citation (`_sync_citations`) is inserted. New `raise_unresolved(cfg, db, w)`: one escalation (issue, self_correctable, Claude) through `escalation.raise_new`, naming every reference, with the researcher's words. `check()` lists every current unresolved citation and claim source.
+- `handlers/narrativeregister.py` `_write`: after a successful write, if the list is not empty, the references go into the output and the escalation is raised; its id is in the output.
+- No config change: the escalation writes go through the escalation module's own grants, as `clusterstatus.flag_if_reassigned` does.
+
+**Found on the live register (Check, read-only):** 23 current citations match no verse, from three causes (section pointers like "; 10.1" read as chapter 10; bare "(15:45)" follow-ons given the previous reference's book; Psa 116:9 missing from `verse`). 42 more '; n' whole-chapter citations resolve but are probably false. Raised as **#2136**.
+
+**Tested** in the building session, on a copy of iba.db and the chapter folder (researcher, #2137: testing in Developer Mode is allowed): test plan v4 (`iba/docs/2110-narrative-claim-register-test-plan-v4-20261013.md`) 4A.7, 4A.13, 4A.14, 5.19, 4 pass (run 2 in its results log).
+
+**Also:** `.claude/commands/developer-mode.md` step 3 no longer says built work is never tested in the same session (#2137).
+
+**Files:** `iba/app/lib/narrativeregister.py`, `iba/app/handlers/narrativeregister.py`, `iba/app/USER-GUIDE.md`, test plan v4.

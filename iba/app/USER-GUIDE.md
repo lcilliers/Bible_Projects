@@ -1503,6 +1503,11 @@ iba\app\ps\Narrative-Register.ps1 -Action Export
   escalation or thread does not exist, a version does not match the file on disk, or the same update
   was already recorded. It then lists every changed passage that tells a claim the JSON does not
   mention, and every other place a touched claim is told, to be read for consistency.
+- **Unresolved references are errors** (researcher, 2026-10-13, #2134). A reference that matches no
+  verse row (a verse with no `verse` row, or a whole chapter the book does not have) is still written,
+  with `verse_id` NULL, but `Record`, `AddClaim` and `Edit -Source` list each one in their output and
+  raise **one escalation** per run naming them all, to be resolved (fix the chapter text, the claim
+  source or the parser, then record again). `-Action Check` lists every current one.
 - **Direct edits** in the database (e.g. the VS Code SQLite extension) are allowed and logged by the
   triggers as `direct edit`; run `-Action Export` afterwards to republish, and `-Action Check` to
   confirm the files and the register agree.

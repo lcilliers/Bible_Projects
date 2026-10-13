@@ -3247,9 +3247,14 @@ set)`, the same write `propose` uses after approval, so `cfg_change_detail` reco
 row's prior state. Found when three #2000 migrations had written `cfg_*` directly: their 87
 changes were backfilled from a pre-change copy of iba.db (`BUILD.md` §339).
 
-**App Mode (standard)** — the default session type. Used both for real operation and for testing
-anything built in a Developer Mode session — testing never happens in the same session that built
-the thing; it happens in a fresh, standard-permission session. Every `cfg_*` change, no exceptions
+**App Mode (standard)** — the default session type, used for real operation. ~~Also used for
+testing anything built in a Developer Mode session — testing never happens in the same session
+that built the thing; it happens in a fresh, standard-permission session.~~ **Superseded
+2026-10-13 (#2137):** Developer Mode work is tested in the session that built it, against a copy
+(never the live DB or live files), with the result recorded on its escalation. Researcher,
+verbatim: *"my view is that the testing regularly show additional development work, and switching
+between development and standard for the sake of testing is an overkill."* Also changed:
+`.claude/commands/developer-mode.md` step 3, `CHARTER.md` §4. Every `cfg_*` change, no exceptions
 for any table, goes through the full `configmaint.propose` → researcher approval → apply cycle,
 exactly as it always has. Only registered modules/utilities run (`iba/app/ps/*.ps1` dispatched
 through `python -m iba.app.run`) — no ad-hoc scripts, no raw DB pokes.

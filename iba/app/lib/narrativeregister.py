@@ -59,6 +59,7 @@ class Writer:
         self.allowed = {r[0] for r in conn.execute(
             "SELECT table_name FROM cfg_write_grant WHERE writer=? AND database='iba' AND inactive=0",
             (step,))}
+        self.unresolved: list[str] = []        # references written that match no verse (#2134)
 
     def _grant(self, table: str) -> None:
         if table not in self.allowed:
@@ -86,6 +87,12 @@ class Writer:
         self._grant("narrative_passage")
         return self.conn.execute("UPDATE narrative_passage SET section_id=? WHERE section_id=? AND "
                                  "last_version IS NULL", (to_section, from_section)).rowcount
+
+    def note_unresolved(self, vx: "VerseIndex", row: dict, where: str) -> None:
+        """Keep a reference just written that matches no verse, for the output and the escalation."""
+        if row.get("source_kind", "verse") == "verse" and unresolved(vx, row.get("ref_normalised") or "",
+                                                                    row.get("verse_id")):
+            self.unresolved.append(f"{where}: '{row.get('ref_as_written')}' read as {row.get('ref_normalised')}")
 
     def mark_changes(self, since_id: int, provenance: str, **extra) -> int:
         """Mark the change rows the triggers wrote during this action as recorded by the tool."""
@@ -176,6 +183,33 @@ _BODY = rf"(?P<body>{_PART}(?:(?:,\s?|;\s)(?:{_PART})(?![A-Za-z]|\s[A-Z][a-z]))*
 _REF_RX = re.compile(rf"(?<![\w.]){_BOOK}\s{_BODY}(?![\d:])")
 _FOLLOW_CV = re.compile(r"\((?P<body>\d+:\d+(?:\s?[–-]\s?\d+(?::\d+)?)?(?:,\s?\d+(?::\d+)?)*)\)")
 _FOLLOW_V = re.compile(r"\((?:v\.?\s?|vv\.?\s?)?(?P<body>\d+(?:\s?[–-]\s?\d+)?(?:,\s?\d+)*)\)")
+
+
+def unresolved(vx: VerseIndex, normalised: str, verse_id: int | None) -> bool:
+    """A reference that matches no verse row: a verse with no verse_id, or a whole chapter the book
+    does not have. Researcher, 2026-10-13 (#2134): an unresolved reference in the narrative is an
+    error, and an escalation is raised to resolve it."""
+    if verse_id is not None:
+        return False
+    m = re.fullmatch(r"(\S+) (\d+)", normalised)
+    return not (m and m.group(1) not in vx.no_chapter and (m.group(1), int(m.group(2))) in vx.last_verse)
+
+
+def raise_unresolved(cfg, db, w: Writer) -> int:
+    """One escalation for the unresolved references a write action recorded (#2134)."""
+    from . import escalation as esc
+    return esc.raise_new(
+        cfg, db, short_description="Unresolved verse references in the narrative register",
+        source=f"narrativeregister ({w.step})", etype="issue",
+        comment=(f"{w.step} wrote {len(w.unresolved)} reference(s) that match no verse row. Researcher, "
+                 f"2026-10-13 (#2134), verbatim: \"if the narrative have unresolved references then there "
+                 f"is an error and an escalation should be created resolve it.\" Correct each one in its "
+                 f"chapter file or claim source (or the reference parser, if it misread the text), then "
+                 f"record again:\n" + "\n".join(f"- {u}" for u in w.unresolved)),
+        context="iba/app/lib/narrativeregister.py (parse_refs, unresolved); the rows are in "
+                "narrative_citation / narrative_claim_source with verse_id NULL; "
+                "Narrative-Register.ps1 -Action Check lists every current one",
+        assigned_to="Claude", resolution_kind="self_correctable", originator=w.who)
 
 
 def _expand(vx: VerseIndex, code: str, body: str, ctx_ch: int | None) -> tuple[list[tuple[str, int | None, str]], int | None]:
@@ -514,7 +548,10 @@ def add_claim(cfg, w: Writer, p: dict) -> str:
         for s in sources:
             w.insert("narrative_claim_source", {"claim_id": cid, **s})
         w.mark_changes(since, "Narrative-Register.ps1 -Action AddClaim", note=p.get("Note"))
-        return conn.execute("SELECT claim_ref FROM narrative_claim WHERE id=?", (cid,)).fetchone()[0]
+        ref = conn.execute("SELECT claim_ref FROM narrative_claim WHERE id=?", (cid,)).fetchone()[0]
+        for s in sources:
+            w.note_unresolved(vx, s, f"claim {ref} source")
+        return ref
     ref = _atomic(conn, go)
     return f"claim {ref} added ({len(sources)} source row(s))"
 
@@ -546,6 +583,7 @@ def edit(cfg, w: Writer, p: dict) -> str:
             w.update("narrative_claim", {"id": c["id"]}, sets)
         for s in sources:
             w.insert("narrative_claim_source", {"claim_id": c["id"], **s})
+            w.note_unresolved(vx, s, f"claim {c['claim_ref']} source")
         conn.execute("UPDATE narrative_claim_change SET change_kind='claim restated' WHERE id > ? "
                      "AND claim_id=? AND change_kind='edited' AND claim_before IS NOT claim_after "
                      "AND note IS NULL", (since, c["id"]))
@@ -915,8 +953,10 @@ def record(cfg, w: Writer, p: dict) -> str:
                     "origin": n.get("origin") or "narrative", "claim_text": n["text"],
                     "beyond_text": n.get("beyond_text"), "i_read": int(bool(n.get("i_read"))),
                     "verdict": n.get("verdict") or "New", "status": "current"})
+                new_ref = conn.execute("SELECT claim_ref FROM narrative_claim WHERE id=?", (cid,)).fetchone()[0]
                 for s in _parse_sources(cfg, vx, "; ".join(n.get("sources") or [])):
                     w.insert("narrative_claim_source", {"claim_id": cid, **s})
+                    w.note_unresolved(vx, s, f"claim {new_ref} source")
                 new_keys[cl.get("key")] = cid
             else:
                 c0 = _claim(conn, cl["ref"])
@@ -1019,6 +1059,7 @@ def _sync_citations(cfg, w: Writer, vx: VerseIndex, ch, sections, passages, from
     last_version = from_v; a new one is inserted with first_version = to_v."""
     conn = cfg.conn
     want: dict[tuple, dict] = {}
+    where: dict[tuple, str] = {}
     for ps in passages:
         heading = sections[ps.section].heading
         sid = _section_row_for(conn, ch["id"], heading)
@@ -1032,6 +1073,7 @@ def _sync_citations(cfg, w: Writer, vx: VerseIndex, ch, sections, passages, from
             want[key] = {"chapter_id": ch["id"], "section_id": sid, "passage_id": prow[0] if prow else None,
                          "verse_id": r.verse_id, "ref_as_written": r.as_written, "ref_normalised": r.normalised,
                          "quoted": int(quoted(ps.text, vt[0] if vt else None)), "first_version": to_v}
+            where[key] = f"Ch {ch['chapter_no']} *{heading}*"
     have = {(r["section_id"], r["ref_normalised"]): r for r in conn.execute(
         "SELECT * FROM narrative_citation WHERE chapter_id=? AND last_version IS NULL", (ch["id"],))}
     for key, r in have.items():
@@ -1040,6 +1082,7 @@ def _sync_citations(cfg, w: Writer, vx: VerseIndex, ch, sections, passages, from
     for key, row in want.items():
         if key not in have:
             w.insert("narrative_citation", row)
+            w.note_unresolved(vx, row, where[key])
 
 
 # ══ read-only: find, history, check ═════════════════════════════════════════════════════════════
@@ -1208,6 +1251,20 @@ def check(cfg, p: dict) -> tuple[list[str], list[str]]:
                                                               f"to confirm" if elsewhere else ""))
     for r in conn.execute("SELECT claim_ref FROM narrative_claim WHERE status='current' AND in_narrative=0"):
         problems.append(f"claim {r[0]} is current but no current passage tells it")
+    vx = VerseIndex(cfg)                  # an unresolved reference is an error (#2134)
+    for r in conn.execute("SELECT ch.chapter_no, s.heading, ci.ref_as_written, ci.ref_normalised FROM "
+                          "narrative_citation ci JOIN narrative_chapter ch ON ch.id=ci.chapter_id LEFT JOIN "
+                          "narrative_section s ON s.id=ci.section_id WHERE ci.last_version IS NULL AND "
+                          "ci.verse_id IS NULL ORDER BY ch.reading_order, s.ordinal"):
+        if unresolved(vx, r["ref_normalised"], None):
+            problems.append(f"Ch {r['chapter_no']} *{r['heading'] or '(opening)'}*: reference "
+                            f"'{r['ref_as_written']}' read as {r['ref_normalised']} matches no verse")
+    for r in conn.execute("SELECT c.claim_ref, s.ref_as_written, s.ref_normalised FROM narrative_claim_source s "
+                          "JOIN narrative_claim c ON c.id=s.claim_id WHERE s.source_kind='verse' AND "
+                          "s.verse_id IS NULL"):
+        if unresolved(vx, r["ref_normalised"] or "", None):
+            problems.append(f"claim {r['claim_ref']} source '{r['ref_as_written']}' read as "
+                            f"{r['ref_normalised']} matches no verse")
     # every enumerated column holds only its cfg_enum values (a direct edit is not checked on entry)
     for table, col, allowed in (
             ("narrative_chapter", "state", cfg.enum("narrative_chapter_state")),

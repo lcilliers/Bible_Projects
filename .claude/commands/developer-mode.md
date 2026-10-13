@@ -103,8 +103,11 @@ Read live, not from memory (`feedback_iba_session_start_read_live_docs_not_memor
 - Every development task carried out this session still gets an escalation item as the durable
   record (`iba/app/ps/Escalation.ps1 -Action Raise ...`) — full permissions is not licence to
   leave work untracked.
-- Work built this session is never tested in this same session. Testing happens in a fresh,
-  standard-permission (App Mode) session, deliberately separate from the one that built it.
+- Work built this session is tested in this same session, against a copy (never the live DB or
+  live files), and the result recorded on its escalation. Researcher, 2026-10-13 (#2137), verbatim:
+  *"my view is that the testing regularly show additional development work, and switching between
+  development and standard for the sake of testing is an overkill."* (This replaces the 2026-08-31
+  line "never tested in this same session".)
 - Any `cfg_*` change made this session is still real config content — it still needs its own
   `cfg_table`/`cfg_column`/etc. registration in the same unit of work
   (`config-updated-same-unit-of-work-as-change`), it's just not gated on researcher approval
