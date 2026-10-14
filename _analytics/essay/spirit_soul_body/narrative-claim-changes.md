@@ -1,6 +1,451 @@
 # Narrative claim changes
 
-*Published from iba.db on 2026-10-13. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-14. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+
+## 2026-10-14 — OT-02: passage openings re-pointed after Ch 2 v24
+
+**Strand:** life and death (M25), OT-02 Q1 What is death?
+
+**Method:** Update 138 changed the opening words of two passages (C-89, C-93). Same-version re-read of Ch 2 v24 with the passages re-pointed so their tellings follow.
+
+**Refs:** thread OT-02
+
+- **C-89** telling changed · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: Scripture often speaks of death as sleep. And it gives its hope against death in the same picture: waking.
+  - passage after: Scripture speaks of death as sleep. And it gives its hope against death in the same picture: waking.
+- **C-93** telling changed · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: When the Old Testament speaks of where the dying go, it speaks of going down to Sheol. It does not say what Sheol is made of. It speaks of where it lies, of who goes down to it, of how they go, and of God and Sheol.
+  - passage after: One way the Old Testament speaks of where the dying go is going down to Sheol. Beside it stand "gathered to his people" (Genesis 25:8) and "the way of all the earth" (1 Kings 2:2). It does not say what Sheol is made of. It speaks of where it lies, of who goes down to it, of how they go, and of God and Sheol.
+
+## 2026-10-14 — OT-02: two uncounted generalisations removed (Ch 2 v24)
+
+**Strand:** life and death (M25), OT-02 Q1 What is death?
+
+**Researcher:** "c) ensure that the narrative does not violate the truth." (2026-10-14)
+
+**Method:** Session-close read-back against cfg_behaviour_rule 69 (no uncounted most/often/always): 'Scripture often speaks of death as sleep' (uncounted 'often') and 'When the Old Testament speaks of where the dying go, it speaks of going down to Sheol' (an implied always, against 'gathered to his people', Gen 25:8, and 'the way of all the earth', 1Ki 2:2) restated; C-89 and C-93 restated to match.
+
+**Scripts:** _analytics/Clusters/M25 - life-death/narrative-quote-check-v1-20261014.py
+
+**Refs:** thread OT-02
+
+**Quote check:** 2 parts, 0 failures
+
+- **C-89** verdict changed (recorded, 2026-10-14)
+  - verdict before: New
+  - verdict after: Corrected
+- **C-89** edited (recorded, 2026-10-14)
+  - claim before: Scripture often speaks of death as sleep, and gives its hope against death as waking
+  - claim after: Scripture speaks of death as sleep, and gives its hope against death as waking
+- **C-93** verdict changed (recorded, 2026-10-14)
+  - verdict before: New
+  - verdict after: Corrected
+- **C-93** edited (recorded, 2026-10-14)
+  - claim before: Where the dying go, the Old Testament speaks of going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of
+  - claim after: One way the Old Testament speaks of where the dying go is going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of
+
+## 2026-10-14 — OT-02: Sheol statements corrected in Ch 5, Ch 9 and 10.12
+
+**Strand:** life and death (M25), OT-02 Q1 What is death?
+
+**Researcher:** "c) ensure that the narrative does not violate the truth." (2026-10-14)
+
+**Method:** Every other chapter passage citing a Sheol/Hades/sleep verse was read against the corrected Ch 2. Ch 5: 'Sheol, the grave' (an equation no verse states) removed. Ch 9: Psa 16:10 and 30:3 were both called rescue of a living person, against Ch 2 and claim 3-9 (Peter reads 16:10 of Christ); restated. 10.12: working note said a Chapter 2 placement 'is on hold' (OT-08 closed 2026-10-09); restated with what is now in Ch 2 and what is not yet read (Job 18:14, Ecc 12:5, Acts 5; OT-02 item).
+
+**Scripts:** _analytics/Clusters/M25 - life-death/narrative-quote-check-v1-20261014.py
+
+**Refs:** thread OT-02
+
+**Quote check:** 10 parts, 0 failures. the one non-match in Ch 9 is the saying it examines ('The soul goes to Sheol; the spirit goes to God'), not Scripture
+
+- **3-9** telling added · 09 *Lines that are often drawn, but that I cannot find* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: **"The soul goes to Sheol; the spirit goes to God."** The verses usually cited speak of the soul being *delivered from* Sheol ("you will not abandon my soul to Sheol", Psalm 16:10; "you have brought up my soul from Sheol", Psalm 30:3). Psalm 30:3 is about a living person rescued from death. Peter reads Psalm 16:10 of Christ, "not abandoned to Hades" (Acts 2:31). Neither sends the soul one way and the spirit another, and the verses that name Sheol or Hades speak of the soul and never of the spirit. And Ecclesiastes leaves the spirit's destination as a question: "Who knows whether the spirit of man goes upward?" (Ecclesiastes 3:21). See Chapter 2.
+  - note: in part
+- **C-102** telling added · 09 *Lines that are often drawn, but that I cannot find* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: **"The soul goes to Sheol; the spirit goes to God."** The verses usually cited speak of the soul being *delivered from* Sheol ("you will not abandon my soul to Sheol", Psalm 16:10; "you have brought up my soul from Sheol", Psalm 30:3). Psalm 30:3 is about a living person rescued from death. Peter reads Psalm 16:10 of Christ, "not abandoned to Hades" (Acts 2:31). Neither sends the soul one way and the spirit another, and the verses that name Sheol or Hades speak of the soul and never of the spirit. And Ecclesiastes leaves the spirit's destination as a question: "Who knows whether the spirit of man goes upward?" (Ecclesiastes 3:21). See Chapter 2.
+  - note: in part
+- **C-97** telling added · 05 *From throat to corpse* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: - **Appetite.** "Put a knife to your throat if you are given to appetite" (Proverbs 23:2). Throat and appetite stand side by side. "A worker's appetite works for him; his mouth urges him on" (Proverbs 16:26). Even Sheol "has enlarged its appetite and opened its mouth" (Isaiah 5:14; Chapter 2, *Going down to Sheol*).
+  - note: pointer: Sheol's appetite (Isaiah 5:14)
+
+## 2026-10-14 — OT-02: Psa 141:7 and 1Co 15:6 woven (Ch 2 v23)
+
+**Strand:** life and death (M25), OT-02 Q1 What is death?
+
+**Researcher:** "a) ensure the claim register is complete for the reading of these verses. b) ensure that the narrative support the claims c) ensure that the narrative does not violate the truth." (2026-10-14)
+
+**Method:** The cross-check after update 135 (life-death-ot02-claim-crosscheck-v3-20261014.csv) showed two verses listed in the R0 batch as bearing on Q1 but not woven: Psa 141:7 (bones at the mouth of Sheol, with 141:8) and 1Co 15:6 (some have fallen asleep). Both woven; sources added to C-94 and C-90.
+
+**Sources:** _analytics/Clusters/M25 - life-death/life-death-ot02-claim-crosscheck-v3-20261014.csv
+
+**Scripts:** _analytics/Clusters/M25 - life-death/narrative-quote-check-v1-20261014.py
+
+**Refs:** thread OT-02
+
+**Quote check:** 8 parts, 0 failures
+
+- **C-90** telling changed · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: Paul uses the same word of those who die believing, and he uses it to speak to grief. "But we do not want you to be uninformed, brothers, about those who are asleep, that you may not grieve as others do who have no hope." "God will bring with him those who have fallen asleep" (1 Thessalonians 4:13–14). The living "will not precede those who have fallen asleep" (4:15). He does not forbid the grief. He sets it apart from grief that has no hope. The hope rests on a rising: "Christ has been raised from the dead, the firstfruits of those who have fallen asleep" (1 Corinthians 15:20). Without that, "those also who have fallen asleep in Christ have perished" (15:18).
+  - passage after: Paul uses the same word of those who die believing, and he uses it to speak to grief. "But we do not want you to be uninformed, brothers, about those who are asleep, that you may not grieve as others do who have no hope." "God will bring with him those who have fallen asleep" (1 Thessalonians 4:13–14). The living "will not precede those who have fallen asleep" (4:15). Of the five hundred who saw the risen Christ, "most of whom are still alive, though some have fallen asleep" (1 Corinthians 15:6). He does not forbid the grief. He sets it apart from grief that has no hope. The hope rests on a rising: "Christ has been raised from the dead, the firstfruits of those who have fallen asleep" (1 Corinthians 15:20). Without that, "those also who have fallen asleep in Christ have perished" (15:18).
+- **C-94** telling changed · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: The righteous speak of going down to it, as the wicked are said to. - Jacob, refusing comfort for Joseph: "No, I shall go down to Sheol to my son, mourning" (Genesis 37:35). Later he fears that his "gray hairs" will be brought down "with sorrow to Sheol" (42:38; 44:29, 31), because, as Judah says, "his life is bound up in the boy's life" (44:30). The going down is measured by grief for a son. - Hezekiah, sick: "In the middle of my days I must depart; I am consigned to the gates of Sheol for the rest of my years. I said, I shall not see the Lord, the Lord in the land of the living" (Isaiah 38:10–11). - Job, in despair, makes it his house: "If I hope for Sheol as my house, if I make my bed in darkness … where then is my hope? … Will it go down to the bars of Sheol?" (Job 17:13, 15–16). - "The wicked shall return to Sheol, all the nations that forget God" (Psalm 9:17). "Drought and heat snatch away the snow waters; so does Sheol those who have sinned" (Job 24:19). - Kings and nations are brought down: the king of Babylon, "brought down to Sheol, to the far reaches of the pit" (Isaiah 14:15); Pharaoh as the great cedar (Ezekiel 31:15–17); Capernaum, "brought down to Hades" (Matthew 11:23; Luke 10:15).
+  - passage after: The righteous speak of going down to it, as the wicked are said to. - Jacob, refusing comfort for Joseph: "No, I shall go down to Sheol to my son, mourning" (Genesis 37:35). Later he fears that his "gray hairs" will be brought down "with sorrow to Sheol" (42:38; 44:29, 31), because, as Judah says, "his life is bound up in the boy's life" (44:30). The going down is measured by grief for a son. - Hezekiah, sick: "In the middle of my days I must depart; I am consigned to the gates of Sheol for the rest of my years. I said, I shall not see the Lord, the Lord in the land of the living" (Isaiah 38:10–11). - Job, in despair, makes it his house: "If I hope for Sheol as my house, if I make my bed in darkness … where then is my hope? … Will it go down to the bars of Sheol?" (Job 17:13, 15–16). - A psalmist, praying against evildoers, says of his own people, "so shall our bones be scattered at the mouth of Sheol", and turns at once: "But my eyes are toward you, O God, my Lord; in you I seek refuge" (Psalm 141:7–8). - "The wicked shall return to Sheol, all the nations that forget God" (Psalm 9:17). "Drought and heat snatch away the snow waters; so does Sheol those who have sinned" (Job 24:19). - Kings and nations are brought down: the king of Babylon, "brought down to Sheol, to the far reaches of the pit" (Isaiah 14:15); Pharaoh as the great cedar (Ezekiel 31:15–17); Capernaum, "brought down to Hades" (Matthew 11:23; Luke 10:15).
+
+## 2026-10-14 — OT-02 death and Sheol: Ch 2 death sections registered and corrected
+
+**Strand:** life and death (M25), OT-02 Q1 What is death?
+
+**Researcher:** "a) ensure the claim register is complete for the reading of these verses. b) ensure that the narrative support the claims c) ensure that the narrative does not violate the truth." (2026-10-14, after: "a) narratives with no basis for the claims - these should be removed from the narrative ... b) a tendency to make verses fit a particular narrative ... c) verses are dropped or set aside if the do not fit into the narrative")
+
+**Method:** R0 for the Ch 2 sections What death is, Going down to Sheol (new), Sleep and waking, Soul, spirit and heart at death, Delivered from death and After death; the 55 Sheol/Hades/sleep verses that were in neither the narrative nor the register read in their passages and woven. Removed: 'Sheol is the grave, the realm of the dead' (no verse). Corrected: the dead 'silent and gone' stated as one side only and framed 'from this side of death'; Luke 16:22 cited without the rich man in Hades (16:23-31); Isa 5:14 set aside as 'one witness is enough'; the 15-verse count shown without its verses (Psa 86:13, Pro 23:14 counted, never shown); 'one picture for death' softened to 'often'.
+
+**Sources:** _analytics/Clusters/M25 - life-death/life-death-ot02-r0-batch-ch2-death-v1-20261013.md
+_analytics/Clusters/M25 - life-death/life-death-ot02-claim-crosscheck-v2-20261013.csv
+_analytics/Clusters/M25 - life-death/life-death-q2-q3-soul-spirit-heart-ledger-v1-20261004.md
+
+**Scripts:** _analytics/Clusters/M25 - life-death/narrative-quote-check-v1-20261014.py
+_analytics/Clusters/M25 - life-death/life-death-claim-register-crosscheck-v2-20261013.py
+
+**Original claims changed:** 33 narrative claims added with sources and tellings; 3-9 corrected (its unsupported 'Sheol here is death and the grave, not a destination distinct from the spirit's' removed); 3-7, 3-9, 3-10, 3-13, 6-2, 2-3, 2-15 linked to the passages that tell them.
+
+**Not woven:** 15 of the 70 uncovered verses are data only: sleep in its ordinary sense (Gen 2:21; 41:5; Judg 16:14; Psa 4:8; Pro 4:16; Isa 5:27; Eze 34:25; Luk 22:45; Act 12:6), H3462 in another sense (Lev 13:11 chronic; 26:10 long kept), Sheol as a measure only (Isa 57:9), Jer 51:57 (same oracle as 51:39, cited), 1Co 7:39 and 11:30 (sleep rendered 'dies', 'died'; no inner-being bearing). Isa 7:11 and Job 11:8 are now cited. The 1,010 die/death-only verses were read in unit 2 and not re-checked.
+
+**Notes:** Researcher findings recorded in CLAUDE.md and memory feedback_claims_register_keeps_narrative_honest.
+
+**Refs:** thread OT-02
+
+**Quote check:** 85 parts, 0 failures. narrative-quote-check-v1-20261014.py on the lines v22 adds to v21; the one non-match is the section title 'Soul, spirit and heart at death'.
+
+- **C-82** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Death is spoken of as the breath taken away
+  - verdict before: —
+  - verdict after: New
+- **C-83** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Death comes to everyone, and falls alike on those the world would set apart
+  - verdict before: —
+  - verdict after: New
+- **C-84** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The same death is met in different ways, and nothing goes with the dead
+  - verdict before: —
+  - verdict after: New
+- **C-85** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Scripture ties death to sin from the first command
+  - verdict before: —
+  - verdict after: New
+- **C-86** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: James and Paul trace death's coming from within: desire, sin, death
+  - verdict before: —
+  - verdict after: New
+- **C-87** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Each person answers for his own sin, and sin can be put away while a death still follows
+  - verdict before: —
+  - verdict after: New
+- **C-88** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Scripture speaks of death inside a living person: the heart dying first, the living called dead, abiding in death
+  - verdict before: —
+  - verdict after: New
+- **C-89** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Scripture often speaks of death as sleep, and gives its hope against death as waking
+  - verdict before: —
+  - verdict after: New
+- **C-90** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Paul uses sleep to speak to grief: grief with hope is set apart from grief without hope, and the hope rests on Christ's rising
+  - verdict before: —
+  - verdict after: New
+- **C-91** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The calls on God to wake speak from how it feels when God does not act
+  - verdict before: —
+  - verdict after: New
+- **C-92** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The waking of the dead is not the same for all
+  - verdict before: —
+  - verdict after: New
+- **C-93** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Where the dying go, the Old Testament speaks of going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of
+  - verdict before: —
+  - verdict after: New
+- **C-94** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The righteous speak of going down to Sheol, as the wicked are said to
+  - verdict before: —
+  - verdict after: New
+- **C-95** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The manner of going down to Sheol is named: mourning, with sorrow, in peace, with blood, silently, alive
+  - verdict before: —
+  - verdict after: New
+- **C-96** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The way to Sheol is already walked in the heart before the end comes
+  - verdict before: —
+  - verdict after: New
+- **C-97** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Sheol is pictured as never satisfied, and the same picture is used of the eyes and the greed of man
+  - verdict before: —
+  - verdict after: New
+- **C-98** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Nothing in Sheol is hidden from God and he is there; and Sheol does not praise him. Both are stated
+  - verdict before: —
+  - verdict after: New
+- **C-99** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Sheol and Hades are named beside death as a power that holds the dead, gives them up to judgment and is ended
+  - verdict before: —
+  - verdict after: New
+- **C-100** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: At death the soul departs, dies, is poured out, is named to the very end, and has an end beyond death
+  - verdict before: —
+  - verdict after: New
+- **C-101** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The soul in these verses is the person: the one who dies, and the one who is ransomed
+  - verdict before: —
+  - verdict after: New
+- **C-102** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The verses that name Sheol or Hades speak of the soul and never of the spirit
+  - verdict before: —
+  - verdict after: New
+- **C-103** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: The heart can die before the body does; no verse found speaks of the heart after death
+  - verdict before: —
+  - verdict after: New
+- **C-104** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Death is pictured as something that surrounds and holds, with waves, cords, snares and gates
+  - verdict before: —
+  - verdict after: New
+- **C-105** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Deliverance from death is for something: walking before God among the living and telling of him
+  - verdict before: —
+  - verdict after: New
+- **C-106** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Some verses say the dead know nothing, do not praise God and do not return
+  - verdict before: —
+  - verdict after: New
+- **C-107** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Prophetic oracles against kings and nations speak of the dead in Sheol as stirred, speaking and comforted
+  - verdict before: —
+  - verdict after: New
+- **C-108** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: In Jesus' account of the rich man and Lazarus the dead remember, see, ask and are answered; one is comforted and one in anguish, and the chasm between them cannot be crossed
+  - verdict before: —
+  - verdict after: New
+- **C-109** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: Scripture speaks of the dead in more than one way, and neither way is made to explain the other away
+  - verdict before: —
+  - verdict after: New
+- **C-110** claim created (recorded, 2026-10-14)
+  - claim before: —
+  - claim after: With God, the dead are carried, blessed and at rest
+  - verdict before: —
+  - verdict after: New
+- **3-9** verdict changed (recorded, 2026-10-14)
+  - verdict before: Restated
+  - verdict after: Corrected
+- **3-9** edited (recorded, 2026-10-14)
+  - claim before: Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. Sheol here is death and the grave, not a destination distinct from the spirit's. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9)
+  - claim after: Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9)
+- **C-82** telling added · 02 *What death is* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Death is the breath gone. "When you take away their breath, they die and return to their dust" (Psalm 104:29). Of the widow's son, Scripture says "there was no breath left in him" (1 Kings 17:17).
+  - note: in full
+- **C-83** telling added · 02 *What death is* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: It comes to everyone. "What man can live and never see death? Who can deliver his soul from the power of Sheol?" (Psalm 89:48). The psalmist asks it inside a plea about God's anger: "How long will your wrath burn like fire? Remember how short my time is!" (89:46–47; 10.9). "Your fathers, where are they? And the prophets, do they live forever?" (Zechariah 1:5). Living forever was withheld at the very start, "lest he reach out his hand and take also of the tree of life and eat, and live forever" (Genesis 3:22). And Job asks: "If a man dies, shall he live again? All the days of my service I would wait, till my renewal should come" (Job 14:14).
+  - note: in full
+- **C-83** telling added · 02 *What death is* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Joab sent a wise woman of Tekoa to David with a staged plea: "Joab put the words in her mouth" (2 Samuel 14:3). In it she says: "We must all die; we are like water spilled on the ground, which cannot be gathered up again. But God will not take away life, and he devises means so that the banished one will not remain an outcast" (14:14). Death falls alike on those the world would set apart: - "How the wise dies just like the fool!" (Ecclesiastes 2:16) - "a time to be born, and a time to die" (Ecclesiastes 3:2) - "it is appointed for man to die once, and after that comes judgment" (Hebrews 9:27)
+  - note: in part: Death falls alike on those the world would set apart
+- **C-84** telling added · 02 *What death is* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The same death is met in different ways. "One dies in his full vigor, being wholly at ease and secure"; "Another dies in bitterness of soul, never having tasted of prosperity" (Job 21:23, 25). Nothing goes with the dead: "For when he dies he will carry nothing away; his glory will not go down after him" (Psalm 49:17); "When the wicked dies, his hope will perish" (Proverbs 11:7). No one knows when it will come: "I am old; I do not know the day of my death" (Genesis 27:2). Yet the Preacher can write that "the day of death" is better "than the day of birth" (Ecclesiastes 7:1).
+  - note: in full
+- **C-85** telling added · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture ties death to sin from the first command. "of the tree of the knowledge of good and evil you shall not eat, for in the day that you eat of it you shall surely die" (Genesis 2:17). The first word spoken against that command denies the death: "But the serpent said to the woman, 'You will not surely die.'" (Genesis 3:4).
+  - note: in full
+- **C-85** telling added · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Paul traces death's entry the same way: "just as sin came into the world through one man, and death through sin, and so death spread to all men because all sinned" (Romans 5:12). He names what death is in relation to sin: - a reign: "death reigned from Adam to Moses" (Romans 5:14) - a wage: "For the wages of sin is death, but the free gift of God is eternal life in Christ Jesus our Lord" (Romans 6:23) - a sting: "The sting of death is sin, and the power of sin is the law" (1 Corinthians 15:56)
+  - note: in part
+- **C-86** telling added · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: James and Paul describe the movement from within, in their own order. James: "Then desire when it has conceived gives birth to sin, and sin when it is fully grown brings forth death" (James 1:15). Paul: "our sinful passions, aroused by the law, were at work in our members to bear fruit for death" (Romans 7:5); "I was once alive apart from the law, but when the commandment came, sin came alive and I died" (Romans 7:9); "The very commandment that promised life proved to be death to me" (Romans 7:10). Section 10.6 follows the desire, and Chapter 12 the sin.
+  - note: in full
+- **C-87** telling added · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Each person answers for his own. "the soul who sins shall die" (Ezekiel 18:4). "But each one shall die for his own sin" (2 Kings 14:6). Jesus says it of unbelief: "unless you believe that I am he you will die in your sins" (John 8:24). John speaks of "sin that leads to death" and of sin that does not, and tells a believer to ask life for a brother whose sin does not lead to death (1 John 5:16–17). He does not say which sin leads to death, and I do not guess.
+  - note: in part
+- **C-87** telling added · 02 *Death and sin* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Sin can be put away while a death still follows. Nathan says to David, "The Lord also has put away your sin; you shall not die. Nevertheless, because by this deed you have utterly scorned the Lord, the child who is born to you shall die" (2 Samuel 12:13–14).
+  - note: in part
+- **C-88** telling added · 02 *Death in the living* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture also speaks of death inside a living person: - **The heart can die first.** Nabal's "heart died within him, and he became as a stone" ten days before he died (below). - **The living can be called dead.** Paul writes to living people, "you, who were dead in your trespasses and the uncircumcision of your flesh" (Colossians 2:13; also Ephesians 2:5). - **A person can be called alive and be dead.** "You have the reputation of being alive, but you are dead" (Revelation 3:1). "She who is self-indulgent is dead even while she lives" (1 Timothy 5:6). Paul speaks of people "alienated from the life of God because of the ignorance that is in them, due to their hardness of heart" (Ephesians 4:18). - **The mind can be set on it.** "For to set the mind on the flesh is death, but to set the mind on the Spirit is life and peace" (Romans 8:6). - **A person can abide in it.** "Whoever does not love abides in death" (1 John 3:14). And "worldly grief produces death" (2 Corinthians 7:10). - **A person can cry out under it.** "Wretched man that I am! Who will deliver me from this body of death?" (Romans 7:24). - **A church can be near it.** "strengthen what remains and is about to die" (Revelation 3:2).
+  - note: in full
+- **C-89** telling added · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture often speaks of death as sleep. And it gives its hope against death in the same picture: waking.
+  - note: in full
+- **C-89** telling added · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Jesus speaks of death as sleep. "the girl is not dead but sleeping. And they laughed at him" (Matthew 9:24). Of Lazarus he says, "Our friend Lazarus has fallen asleep, but I go to awaken him." The disciples hear it as rest: "Lord, if he has fallen asleep, he will recover." So "Jesus told them plainly, 'Lazarus has died'" (John 11:11–14). The picture had to be said plainly before they understood it. At his own death, "many bodies of the saints who had fallen asleep were raised" (Matthew 27:52).
+  - note: in part
+- **C-90** telling added · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Paul uses the same word of those who die believing, and he uses it to speak to grief. "But we do not want you to be uninformed, brothers, about those who are asleep, that you may not grieve as others do who have no hope." "God will bring with him those who have fallen asleep" (1 Thessalonians 4:13–14). The living "will not precede those who have fallen asleep" (4:15). He does not forbid the grief. He sets it apart from grief that has no hope. The hope rests on a rising: "Christ has been raised from the dead, the firstfruits of those who have fallen asleep" (1 Corinthians 15:20). Without that, "those also who have fallen asleep in Christ have perished" (15:18).
+  - note: in full
+- **C-91** telling added · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: I read these as speaking from how it feels when God does not act. Scripture also says, "he who keeps Israel will neither slumber nor sleep" (Psalm 121:4). Both are stated. I leave them side by side. Paul quotes the cry of Psalm 44 and answers it: "No, in all these things we are more than conquerors through him who loved us" (Romans 8:36–37).
+  - note: in full
+- **C-92** telling added · 02 *Sleep and waking* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: And the dead will wake. "Many of those who sleep in the dust of the earth shall awake, some to everlasting life, and some to shame and everlasting contempt" (Daniel 12:2). The waking is not the same for all. Isaiah sets two kinds of dead side by side: "They are dead, they will not live; they are shades, they will not arise" (Isaiah 26:14), and "You who dwell in the dust, awake and sing for joy!" (26:19). For the psalmist, waking means seeing God: "when I awake, I shall be satisfied with your likeness" (Psalm 17:15). These verses are followed below, in "The body raised" and "Life, and judgment". Job's "he will not awake" stands beside them, and I do not reconcile the two.
+  - note: in full
+- **C-93** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: When the Old Testament speaks of where the dying go, it speaks of going down to Sheol. It does not say what Sheol is made of. It speaks of where it lies, of who goes down to it, of how they go, and of God and Sheol.
+  - note: in full
+- **C-93** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: It lies beneath. "The path of life leads upward for the prudent, that he may turn away from Sheol beneath" (Proverbs 15:24). It is the measure of depth, set against the height of heaven: "let it be deep as Sheol or high as heaven" (Isaiah 7:11); "Deeper than Sheol—what can you know?" (Job 11:8).
+  - note: in part
+- **C-94** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The righteous speak of going down to it, as the wicked are said to. - Jacob, refusing comfort for Joseph: "No, I shall go down to Sheol to my son, mourning" (Genesis 37:35). Later he fears that his "gray hairs" will be brought down "with sorrow to Sheol" (42:38; 44:29, 31), because, as Judah says, "his life is bound up in the boy's life" (44:30). The going down is measured by grief for a son. - Hezekiah, sick: "In the middle of my days I must depart; I am consigned to the gates of Sheol for the rest of my years. I said, I shall not see the Lord, the Lord in the land of the living" (Isaiah 38:10–11). - Job, in despair, makes it his house: "If I hope for Sheol as my house, if I make my bed in darkness … where then is my hope? … Will it go down to the bars of Sheol?" (Job 17:13, 15–16). - "The wicked shall return to Sheol, all the nations that forget God" (Psalm 9:17). "Drought and heat snatch away the snow waters; so does Sheol those who have sinned" (Job 24:19). - Kings and nations are brought down: the king of Babylon, "brought down to Sheol, to the far reaches of the pit" (Isaiah 14:15); Pharaoh as the great cedar (Ezekiel 31:15–17); Capernaum, "brought down to Hades" (Matthew 11:23; Luke 10:15).
+  - note: in full
+- **C-95** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: How a person goes down is named. Jacob would go "mourning" and "with sorrow". David asks Solomon not to let Joab's gray head "go down to Sheol in peace", and to bring Shimei's down "with blood" (1 Kings 2:6, 9). A psalmist asks that the wicked "go silently to Sheol" (Psalm 31:17). Korah's company "went down alive into Sheol" (Numbers 16:33). The betrayed psalmist asks the same for those who had been his companions, "for evil is in their dwelling place and in their heart" (Psalm 55:13–15).
+  - note: in full
+- **C-96** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Wisdom marks the way that leads there. Of the forbidden woman: "Her feet go down to death; her steps follow the path to Sheol; she does not ponder the path of life; her ways wander, and she does not know it" (Proverbs 5:5–6). "Let not your heart turn aside to her ways … Her house is the way to Sheol, going down to the chambers of death" (7:25, 27). I read these as speaking of the way a life is already walking, in the heart, before it comes to its end.
+  - note: in full
+- **C-97** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Sheol is never full. "Sheol and Abaddon are never satisfied, and never satisfied are the eyes of man" (Proverbs 27:20). It heads the list of things that "never say, 'Enough'" (30:15–16). "Sheol has enlarged its appetite and opened its mouth beyond measure" (Isaiah 5:14); the word for its appetite is *nephesh* ("soul, appetite"). Sinners invite a son to join them: "like Sheol let us swallow them alive, and whole" (Proverbs 1:12). The same picture is used of people. Proverbs sets the eyes of man beside Sheol, and Habakkuk the arrogant man: "His greed is as wide as Sheol; like death he has never enough" (Habakkuk 2:5).
+  - note: in full
+- **C-98** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Nothing in Sheol is hidden from God. - "Sheol is naked before God, and Abaddon has no covering" (Job 26:6). - "Sheol and Abaddon lie open before the Lord; how much more the hearts of the children of man!" (Proverbs 15:11). The verse argues from Sheol to the heart. - "If I ascend to heaven, you are there! If I make my bed in Sheol, you are there!" (Psalm 139:8). - "If they dig into Sheol, from there shall my hand take them" (Amos 9:2). - His anger reaches it: "a fire is kindled by my anger, and it burns to the depths of Sheol" (Deuteronomy 32:22).
+  - note: in full
+- **C-98** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Hezekiah, in his song, says, "For Sheol does not thank you; death does not praise you" (Isaiah 38:18). Both are stated: God is there, and Sheol does not praise him.
+  - note: in part
+- **C-99** telling added · 02 *Going down to Sheol* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Sheol is also named beside death as a power. Isaiah speaks to those who said, "We have made a covenant with death" (Isaiah 28:15), and answers them: "your agreement with Sheol will not stand" (28:18). Jesus says that "the gates of hell shall not prevail" against his church (Matthew 16:18; the word is *hadēs*). In Revelation, Death rides a pale horse, "and Hades followed him" (Revelation 6:8). At the end, "Death and Hades gave up the dead who were in them, and they were judged", and "Death and Hades were thrown into the lake of fire" (20:13–14). And the risen Christ says, "I have the keys of Death and Hades" (Revelation 1:18).
+  - note: in full
+- **C-100** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: At death Scripture speaks of each inner word in its own way. For the soul, it has more than one way.
+  - note: in full
+- **3-7** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: **The soul.** - **It departs.** "As her soul was departing (for she was dying), she called his name Ben-oni" (Genesis 35:18). - **It dies.** Balaam: "Let me die the death of the upright, and let my end be like his!" (Numbers 23:10). Samson: "Let me die with the Philistines" (Judges 16:30). In both, the Hebrew is *let my soul die*. And "the soul who sins shall die" (Ezekiel 18:4). - **It is poured out.** Of the servant: "he poured out his soul to death and was numbered with the transgressors" (Isaiah 53:12). Before his death Jesus said, "My soul is very sorrowful, even to death" (Matthew 26:38). - **It is named to the very end.** Even the corpse is *nephesh* ("soul"): "Whoever touches the dead body of any person" (Numbers 19:11). - **It has an end beyond death, and Psalm 49 names two.** The psalm is about the death that comes to everyone: "even the wise die; the fool and the stupid alike must perish" (Psalm 49:10). Of the man who trusts in his wealth: "his soul will go to the generation of his fathers, who will never again see light" (49:19). Of himself, the psalmist says: "But God will ransom my soul from the power of Sheol, for he will receive me" (49:15). The psalm does not say what being received involves, and I do not fill it in. Of those who trust in their wealth it says, "death shall be their shepherd, and the upright shall rule over them in the morning" (49:14), and it draws a word for the living from this: "Be not afraid when a man becomes rich" (49:16). - **It is not abandoned.** David wrote, "you will not abandon my soul to Sheol, or let your holy one see corruption" (Psalm 16:10). Peter reads it of Christ's death and rising: "he was not abandoned to Hades, nor did his flesh see corruption" (Acts 2:31).
+  - note: in part
+- **C-101** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: I read the soul in these verses as the person: the one who dies, and the one who is ransomed. It is more than a part that leaves.
+  - note: in full
+- **2-15** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: **The spirit.** - **The spirit is committed and returns.** "Into your hand I commit my spirit" (Psalm 31:5). Jesus "yielded up his spirit" (Matthew 27:50). "Father, into your hands I commit my spirit!" (Luke 23:46). Stephen: "Lord Jesus, receive my spirit" (Acts 7:59). "The dust returns to the earth as it was, and the spirit returns to God who gave it" (Ecclesiastes 12:7). - **The body without it is dead.** "The body apart from the spirit is dead" (James 2:26). - **Where it goes, the Preacher leaves as a question:** "Who knows whether the spirit of man goes upward and the spirit of the beast goes down into the earth?" (Ecclesiastes 3:21). I leave it where he left it.
+  - note: in part
+- **3-13** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: **The spirit.** - **The spirit is committed and returns.** "Into your hand I commit my spirit" (Psalm 31:5). Jesus "yielded up his spirit" (Matthew 27:50). "Father, into your hands I commit my spirit!" (Luke 23:46). Stephen: "Lord Jesus, receive my spirit" (Acts 7:59). "The dust returns to the earth as it was, and the spirit returns to God who gave it" (Ecclesiastes 12:7). - **The body without it is dead.** "The body apart from the spirit is dead" (James 2:26). - **Where it goes, the Preacher leaves as a question:** "Who knows whether the spirit of man goes upward and the spirit of the beast goes down into the earth?" (Ecclesiastes 3:21). I leave it where he left it.
+  - note: in full
+- **3-9** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: No verse sends the soul one way and the spirit another. Of the verses that name Sheol or Hades, some speak of the soul and none speaks of the spirit.
+  - note: in part
+- **C-102** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: No verse sends the soul one way and the spirit another. Of the verses that name Sheol or Hades, some speak of the soul and none speaks of the spirit.
+  - note: in full
+- **C-103** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: And one thing I did not expect: **the heart can die before the body does**. When Nabal sobered up and heard how close he had come to disaster, "his heart died within him, and he became as a stone. And about ten days later the Lord struck Nabal, and he died" (1 Samuel 25:37–38). The heart died first; the man died ten days later. The psalmist knows a similar death in life: "I have been forgotten like one who is dead; I have become like a broken vessel" (Psalm 31:12). Literally, forgotten *from the heart*.
+  - note: in part
+- **C-103** telling added · 02 *Soul, spirit and heart at death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture speaks of the heart while a person lives: "madness is in their hearts while they live, and after that they go to the dead" (Ecclesiastes 9:3). I have found no verse that speaks of the heart after death.
+  - note: in part
+- **3-9** telling added · 02 *Delivered from death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Many verses speak of the soul being "delivered from" Sheol or death. Read in place, most of them are about a **living person rescued from dying**. Of the fifteen verses that speak of a soul delivered, brought up, kept back, ransomed or saved from death, Sheol or the pit, twelve are about someone kept from dying or brought back from near it (Psalm 30:3; 33:19; 56:13; 86:13; 116:8; Joshua 2:13; Job 33:18, 28, 30; Isaiah 38:17; Proverbs 23:14; James 5:20). Two look beyond death (Psalm 49:15 and 16:10, taken up above in "Soul, spirit and heart at death"), and one says that no one can do it (Psalm 89:48, below). - "you have delivered my soul from the depths of Sheol" is said where "a band of ruthless men seeks my life" (Psalm 86:13–14). - A father's discipline is given the same reach: "if you strike him with a rod, he will not die. If you strike him with the rod, you will save his soul from Sheol" (Proverbs 23:13–14). - Hezekiah, recovered: "in love you have delivered my life from the pit of destruction, for you have cast all my sins behind your back" (Isaiah 38:17). - Jonah, from inside the fish: "out of the belly of Sheol I cried, and you heard my voice"; "Yet you brought up my life from the pit, O Lord my God" (Jonah 2:2, 6). - "The snares of death encompassed me; the pangs of Sheol laid hold on me … Then I called on the name of the Lord: 'O Lord, I pray, deliver my soul!'" The psalmist then turns to his own soul: "Return, O my soul, to your rest". And he declares: "For you have delivered my soul from death" (Psalm 116:3–8). - "You have delivered my soul from death … that I may walk before God in the light of life" (Psalm 56:13). - "O Lord, you have brought up my soul from Sheol; you restored me to life from among those who go down to the pit" (Psalm 30:3). - "You who have made me see many troubles and calamities will revive me again; from the depths of the earth you will bring me up again" (Psalm 71:20).
+  - note: in full
+- **C-104** telling added · 02 *Delivered from death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: The verses picture death as something that surrounds and holds. "For the waves of death encompassed me, the torrents of destruction assailed me; the cords of Sheol entangled me; the snares of death confronted me" (2 Samuel 22:5–6; nearly the same words in Psalm 18:4–5, which goes on, "In my distress I called upon the Lord … and my cry to him reached his ears", 18:6). It has gates: "O you who lift me up from the gates of death" (Psalm 9:13). God is named by the rescue: "Our God is a God of salvation, and to God, the Lord, belong deliverances from death" (Psalm 68:20). Even his discipline stops short of it: "The Lord has disciplined me severely, but he has not given me over to death" (Psalm 118:18). Paul says it of a danger in his own life: "He delivered us from such a deadly peril, and he will deliver us" (2 Corinthians 1:10).
+  - note: in full
+- **2-3** telling added · 02 *Delivered from death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: A person can have a part in it too: - "Rescue those who are being taken away to death" (Proverbs 24:11) - "whoever brings back a sinner from his wandering will save his soul from death" (James 5:20)
+  - note: in part
+- **C-105** telling added · 02 *Delivered from death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Deliverance from death is **for** something: for walking before God among the living, and for telling of him. "I shall not die, but I shall live, and recount the deeds of the Lord" (Psalm 118:17). And sometimes it comes by a price. Elihu tells of a man brought near death by pain, "so that his life loathes bread", until "His soul draws near the pit, and his life to those who bring death" (Job 33:20, 22). A messenger says, "Deliver him from going down into the pit; I have found a ransom" (33:24). Then "man prays to God, and he accepts him; he sees his face with a shout of joy" (33:26). The man owns his wrong and his rescue together: "I sinned and perverted what was right, and it was not repaid to me. He has redeemed my soul from going down into the pit, and my life shall look upon the light" (33:27–28). Elihu ends, "Behold, God does all these things, twice, three times, with a man, to bring back his soul from the pit, that he may be lighted with the light of life" (33:29–30). No human can do this: "Who can deliver his soul from the power of Sheol?" (Psalm 89:48).
+  - note: in full
+- **3-10** telling added · 02 *After death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture does speak of people alive before God after death, and it uses both words. - John sees "under the altar the souls of those who had been slain for the word of God", crying out for justice (Revelation 6:9–10). - Hebrews speaks of "the spirits of the righteous made perfect" (Hebrews 12:23). - Peter speaks of "the spirits in prison" (1 Peter 3:19). - And Jesus: "do not fear those who kill the body but cannot kill the soul" (Matthew 10:28).
+  - note: in full
+- **6-2** telling added · 02 *After death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Scripture does speak of people alive before God after death, and it uses both words. - John sees "under the altar the souls of those who had been slain for the word of God", crying out for justice (Revelation 6:9–10). - Hebrews speaks of "the spirits of the righteous made perfect" (Hebrews 12:23). - Peter speaks of "the spirits in prison" (1 Peter 3:19). - And Jesus: "do not fear those who kill the body but cannot kill the soul" (Matthew 10:28).
+  - note: in part: the survival texts stand
+- **C-106** telling added · 02 *After death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Other verses say that the dead are silent and gone: - "But a man dies and is laid low; man breathes his last, and where is he?" (Job 14:10) - "As the cloud fades and vanishes, so he who goes down to Sheol does not come up; he returns no more to his house, nor does his place know him anymore" (Job 7:9–10) - "For the living know that they will die, but the dead know nothing, and they have no more reward, for the memory of them is forgotten" (Ecclesiastes 9:5). The Preacher draws the living back to the work in hand: "Whatever your hand finds to do, do it with your might, for there is no work or thought or knowledge or wisdom in Sheol, to which you are going" (9:10). - "For in death there is no remembrance of you; in Sheol who will give you praise?" (Psalm 6:5) - "The dead do not praise the Lord, nor do any who go down into silence" (Psalm 115:17) - "For Sheol does not thank you; death does not praise you; those who go down to the pit do not hope for your faithfulness. The living, the living, he thanks you, as I do this day" (Isaiah 38:18–19) - Of the man who trusts in his wealth: "his soul will go to the generation of his fathers, who will never again see light" (Psalm 49:19)
+  - note: in full
+- **C-107** telling added · 02 *After death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: Other passages speak of the dead in Sheol as stirred and speaking. They are oracles against kings and nations. - In the taunt against the king of Babylon (Isaiah 14:4): "Sheol beneath is stirred up to meet you when you come; it rouses the shades to greet you, all who were leaders of the earth". They say to him, "You too have become as weak as we! You have become like us!" (14:9–10). - Over Egypt: "The mighty chiefs shall speak of them, with their helpers, out of the midst of Sheol: 'They have come down, they lie still, the uncircumcised, slain by the sword.'" Those who "spread terror in the land of the living" now "bear their shame with those who go down to the pit" (Ezekiel 32:21, 24). The trees of Eden "were comforted in the world below" at Pharaoh's fall (31:16), and Pharaoh "will be comforted for all his multitude" (32:31).
+  - note: in full
+- **C-108** telling added · 02 *After death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: In this account the dead remember, see, ask and are answered. One is comforted and one is in anguish, and the line between them cannot be crossed. The account does not say whether it is a story Jesus tells or an event, and I do not decide it.
+  - note: in full
+- **C-109** telling added · 02 *After death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: So Scripture speaks of the dead in more than one way. Some verses say they know nothing, do not praise and do not return. The oracles and Luke 16 speak of them as stirred and speaking, comforted or in anguish. I do not make one of these explain the other away.
+  - note: in full
+- **C-110** telling added · 02 *After death* (recorded, 2026-10-14)
+  - passage before: —
+  - passage after: And with God, the dead are carried, blessed and at rest: - "The poor man died and was carried by the angels to Abraham's side" (Luke 16:22), where "now he is comforted" (16:25) - "Blessed are the dead who die in the Lord from now on." "Blessed indeed," says the Spirit, "that they may rest from their labors, for their deeds follow them!" (Revelation 14:13) - David, of his dead child: "I shall go to him, but he will not return to me" (2 Samuel 12:23) - Jesus, answering a question about the resurrection: "Now he is not God of the dead, but of the living, for all live to him" (Luke 20:38) - "who died for us so that whether we are awake or asleep we might live with him" (1 Thessalonians 5:10) - The psalmist: "But God will ransom my soul from the power of Sheol, for he will receive me" (Psalm 49:15) - To the man dying beside him: "Truly, I say to you, today you will be with me in paradise" (Luke 23:43) - Paul, weighing life and death: "My desire is to depart and be with Christ, for that is far better. But to remain in the flesh is more necessary on your account" (Philippians 1:23–24) - "we would rather be away from the body and at home with the Lord" (2 Corinthians 5:8). In the same chapter he says, "not that we would be unclothed, but that we would be further clothed" (5:4, in "Waited for", above). Both are stated - Peter: "the gospel was preached even to those who are dead, that though judged in the flesh the way people are, they might live in the spirit the way God does" (1 Peter 4:6)
+  - note: in full
 
 ## 2026-10-13 — Psa 116:9 and 1Sa 17:19 removed from the narrative
 
@@ -3253,3 +3698,4 @@ These areas are absent from the original, or are listed there only as gaps. [Cla
 | 2026-10-08 | the 18 include verses (#1992, from #1987) | No structure change. 6 were already carried (Isa 42:1 in 13.1 through Mat 12:18, with no 10.7 placement by ruling; Deu 2:30; 1Ch 28:9; 1Ch 29:18; Psa 32:2; Pro 1:29). 12 are woven as proposed: 10.7 (Deu 30:14, 17, 20; Phili 1:22–25; Luk 10:39–42; Exo 36:2; Psa 51:13; 2Sa 14:1–19 with Joab, a citation fix); Ch 2 (Job 7:13–16; Jer 8:2); 10.13 (Isa 10:12–15); Ch 12 (Rom 8:7); 10.12 (Pro 1:29; Isa 66:2, both "I read"); 10.10 (2Sa 19:23). Claim register v33. |  |
 | 2026-10-09 | desire (M18) × life and death (M25), and the held items (#1993, #1942) | 10.6 given section headings (Through the eye; Aimed at nothing, and enjoyment given; As heat; Wanting speaks, and drives thinking; Beside choosing; Delight; Wanting that owns the one who wants; Unmet, and wanting against God; Shaped by fear; Evil desire; Wanting life; Wanting and death; Aimed at God; Thirst answered; A person; Jealousy and envy; Taken away; Possessions), with no text dropped. 13.1 gains *Jealousy* and *Stirring*. 13.4 gets its first content. 10.9 gains *Waiting, and pleading*. 10.10 gains *Friends, company and care*. No renumbering. | 10.6 had grown to some 20 paragraphs on many faces of wanting with no structure; the headings name the subject only (style guide). God's jealousy and his stirring of spirits had no home in 13.1. |
 | 2026-10-09 | desire (M18), group A (#1993 item F) | 10.6 gains the section *Coveting* (after *Through the eye*). No other structure change. | The commandment, the see–covet–take order and the law naming the desire make one phenomenon. It had no home. |
+| 2026-10-14 | life and death (M25), OT-02 Q1 What is death? | Ch 2 gains the section 'Going down to Sheol' before 'Sleep and waking'. | The Sheol verses had no home; read in their passages they speak of where Sheol lies, who goes down, how, and God and Sheol. |

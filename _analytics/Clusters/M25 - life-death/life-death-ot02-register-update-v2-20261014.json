@@ -1,0 +1,15 @@
+{
+ "update": {
+  "update_date": "2026-10-14",
+  "title": "OT-02: Psa 141:7 and 1Co 15:6 woven (Ch 2 v23)",
+  "strand": "life and death (M25), OT-02 Q1 What is death?",
+  "researcher_instruction": "\"a) ensure the claim register is complete for the reading of these verses. b) ensure that the narrative support the claims c) ensure that the narrative does not violate the truth.\" (2026-10-14)",
+  "method": "The cross-check after update 135 (life-death-ot02-claim-crosscheck-v3-20261014.csv) showed two verses listed in the R0 batch as bearing on Q1 but not woven: Psa 141:7 (bones at the mouth of Sheol, with 141:8) and 1Co 15:6 (some have fallen asleep). Both woven; sources added to C-94 and C-90.",
+  "source_files": ["_analytics/Clusters/M25 - life-death/life-death-ot02-claim-crosscheck-v3-20261014.csv"],
+  "scripts": ["_analytics/Clusters/M25 - life-death/narrative-quote-check-v1-20261014.py"],
+  "quote_parts": 8,
+  "quote_failures": 0
+ },
+ "refs": [{"kind": "thread", "value": "OT-02"}],
+ "chapters": [{"chapter": "2", "from_version": 22, "to_version": 23, "file": "02-life-breath-and-death-v23-20261014.md"}]
+}

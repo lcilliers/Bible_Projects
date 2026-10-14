@@ -1,6 +1,6 @@
 # Narrative claim register
 
-*Published from iba.db on 2026-10-13. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-14. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 ## (index opening)
 
@@ -145,7 +145,73 @@ File `01-the-question-v4-20261002.md` (v4) · draft
 
 ### 02 — Life, breath and death
 
-File `02-life-breath-and-death-v21-20261013.md` (v21) · draft
+File `02-life-breath-and-death-v24-20261014.md` (v24) · draft
+
+**What death is**
+
+- **C-82** Death is spoken of as the breath taken away (in full)
+- **C-83** Death comes to everyone, and falls alike on those the world would set apart (in full)
+- **C-83** Death comes to everyone, and falls alike on those the world would set apart (in part: Death falls alike on those the world would set apart)
+- **C-84** The same death is met in different ways, and nothing goes with the dead (in full)
+
+**Death and sin**
+
+- **C-85** Scripture ties death to sin from the first command (in full)
+- **C-85** Scripture ties death to sin from the first command (in part)
+- **C-86** James and Paul trace death's coming from within: desire, sin, death (in full)
+- **C-87** Each person answers for his own sin, and sin can be put away while a death still follows (in part)
+
+**Death in the living**
+
+- **C-88** Scripture speaks of death inside a living person: the heart dying first, the living called dead, abiding in death (in full)
+
+**Going down to Sheol**
+
+- **C-93** One way the Old Testament speaks of where the dying go is going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of (in full)
+- **C-93** One way the Old Testament speaks of where the dying go is going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of (in part)
+- **C-94** The righteous speak of going down to Sheol, as the wicked are said to (in full)
+- **C-95** The manner of going down to Sheol is named: mourning, with sorrow, in peace, with blood, silently, alive (in full)
+- **C-96** The way to Sheol is already walked in the heart before the end comes (in full)
+- **C-97** Sheol is pictured as never satisfied, and the same picture is used of the eyes and the greed of man (in full) — also told in: 05 *From throat to corpse* (pointer)
+- **C-98** Nothing in Sheol is hidden from God and he is there; and Sheol does not praise him. Both are stated (in full)
+- **C-98** Nothing in Sheol is hidden from God and he is there; and Sheol does not praise him. Both are stated (in part)
+- **C-99** Sheol and Hades are named beside death as a power that holds the dead, gives them up to judgment and is ended (in full)
+
+**Sleep and waking**
+
+- **C-89** Scripture speaks of death as sleep, and gives its hope against death as waking (in full)
+- **C-89** Scripture speaks of death as sleep, and gives its hope against death as waking (in part)
+- **C-90** Paul uses sleep to speak to grief: grief with hope is set apart from grief without hope, and the hope rests on Christ's rising (in full)
+- **C-91** The calls on God to wake speak from how it feels when God does not act (in full)
+- **C-92** The waking of the dead is not the same for all (in full)
+
+**Soul, spirit and heart at death**
+
+- **C-100** At death the soul departs, dies, is poured out, is named to the very end, and has an end beyond death (in full)
+- **3-7** The soul departs at death (Gen 35:18) (in part)
+- **C-101** The soul in these verses is the person: the one who dies, and the one who is ransomed (in full)
+- **2-15** The spirit is prominent in worship and is what is committed to God at death (E §13.4). Pro 20:27 uses *neshamah* "breath", not *rûaḥ* [lexical], and is outside the reading. The human spirit is equally temper, trouble and provocation (Pro 29:11; Gen 41:8; Act 17:16) (in part)
+- **3-13** "The body apart from the spirit is dead" (Jam 2:26) (in full)
+- **3-9** Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) (in part) — also told in: 02 *Delivered from death* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part)
+- **C-102** The verses that name Sheol or Hades speak of the soul and never of the spirit (in full) — also told in: 09 *Lines that are often drawn, but that I cannot find* (in part)
+- **C-103** The heart can die before the body does; no verse found speaks of the heart after death (in part)
+
+**Delivered from death**
+
+- **3-9** Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) (in full) — also told in: 02 *Soul, spirit and heart at death* (in part); 09 *Lines that are often drawn, but that I cannot find* (in part)
+- **C-104** Death is pictured as something that surrounds and holds, with waves, cords, snares and gates (in full)
+- **2-3** Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) (in part)
+- **C-105** Deliverance from death is for something: walking before God among the living and telling of him (in full)
+
+**After death**
+
+- **3-10** Conscious existence after death (Rev 6:9; Heb 12:23) (in full)
+- **6-2** Most soul-and-death verses are about life delivered from death, not survival after it (see 3-9). The survival texts (Mat 10:28; Rev 6:9) stand (in part: the survival texts stand)
+- **C-106** Some verses say the dead know nothing, do not praise God and do not return (in full)
+- **C-107** Prophetic oracles against kings and nations speak of the dead in Sheol as stirred, speaking and comforted (in full)
+- **C-108** In Jesus' account of the rich man and Lazarus the dead remember, see, ask and are answered; one is comforted and one in anguish, and the chasm between them cannot be crossed (in full)
+- **C-109** Scripture speaks of the dead in more than one way, and neither way is made to explain the other away (in full)
+- **C-110** With God, the dead are carried, blessed and at rest (in full)
 
 ### 03 — One inner person, many words
 
@@ -157,7 +223,11 @@ File `04-the-heart-v17-20261013.md` (v17) · draft
 
 ### 05 — The soul
 
-File `05-the-soul-v7-20261013.md` (v7) · draft
+File `05-the-soul-v8-20261014.md` (v8) · draft
+
+**From throat to corpse**
+
+- **C-97** Sheol is pictured as never satisfied, and the same picture is used of the eyes and the greed of man (pointer: Sheol's appetite (Isaiah 5:14)) — also told in: 02 *Going down to Sheol* (in full)
 
 ### 06 — The spirit
 
@@ -173,7 +243,12 @@ File `08-conscience-and-bosom-v7-20261012.md` (v7) · draft
 
 ### 09 — Where the words part
 
-File `09-where-the-words-part-v3-20261013.md` (v3) · draft
+File `09-where-the-words-part-v4-20261014.md` (v4) · draft
+
+**Lines that are often drawn, but that I cannot find**
+
+- **3-9** Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) (in part) — also told in: 02 *Soul, spirit and heart at death* (in part); 02 *Delivered from death* (in full)
+- **C-102** The verses that name Sheol or Hades speak of the soul and never of the spirit (in part) — also told in: 02 *Soul, spirit and heart at death* (in full)
 
 ### 10 — Part 10 — The inner being at work
 
@@ -229,7 +304,7 @@ File `10-11-hiding-and-disclosing-v8-20261012.md` (v8) · draft
 
 ### 10.12 — Fear
 
-File `10-12-fear-v8-20261013.md` (v8) · draft
+File `10-12-fear-v9-20261014.md` (v9) · draft
 
 ### 10.13 — Anger
 
@@ -305,7 +380,7 @@ File `—` (v—) · deferred
 |---|---|---|---|---|
 | 2-1 | "The soul who sins shall die" (Eze 18:4, 20); "if anyone [*nephesh*] sins" (Lev 5) makes the soul the seat of sin | Restated | In these verses *nephesh* is the person, the one who answers for sin; it is not a faculty inside the person. The soul is the accountable, answerable self (D §3.1, §11.2) | — |
 | 2-2 | The human spirit is never described as sinning: "consistent silence across 1,340 passages" | Restated | No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside | — |
-| 2-3 | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | Stands | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | — |
+| 2-3 | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | Stands | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | 02 *Delivered from death* (in part) |
 | 2-4 | Animals are *nephesh ḥayyâ* just as man is (Gen 1:20–24; 2:7; 9:10) | Stands | Animals are *nephesh ḥayyâ* just as man is (Gen 1:20–24; 2:7; 9:10) | — |
 | 2-5 | Animals almost never have *rûaḥ*; Ecc 3:21 is the only exception; Gen 7:22 uses *neshamah*, not *rûaḥ* | Withdrawn | Animals almost never have *rûaḥ*; Ecc 3:21 is the only exception; Gen 7:22 uses *neshamah*, not *rûaḥ* | — |
 | 2-6 | The image of God may be located in the spirit | Withdrawn | The image of God may be located in the spirit | — |
@@ -317,7 +392,7 @@ File `—` (v—) · deferred
 | 2-12 | "God is never described as 'God is soul'"; the spirit is the higher, more divine part | Restated | "God is spirit" (Joh 4:24) stands. But Scripture speaks freely of God's soul ("my soul shall not abhor you", Lev 26:11; "my soul hates", Isa 1:14; "my soul delights", Isa 42:1; he swears by his soul, Amo 6:8) and God's heart (Gen 6:6; Hos 11:8). No ranking of the words follows (dep §3.10) | — |
 | 2-13 | The soul sits in a middle position, the interface between body and spirit | Withdrawn | The soul sits in a middle position, the interface between body and spirit | — |
 | 2-14 | The soul is self-ward (Deu 12:15; 1Sa 22:2) | Restated | The soul is the needing self, and much of its need is for God: "My soul thirsts for you" (Psa 63:1); "To you, O Lord, I lift up my soul" (Psa 25:1); "Bless the Lord, O my soul" (Psa 103:1) (dep §2.2b) | — |
-| 2-15 | The spirit is God-ward (Rom 8:16; Joh 4:24; Ecc 12:7; Pro 20:27 "the lamp of the Lord"; Luk 23:46; Act 7:59) | Restated | The spirit is prominent in worship and is what is committed to God at death (E §13.4). Pro 20:27 uses *neshamah* "breath", not *rûaḥ* [lexical], and is outside the reading. The human spirit is equally temper, trouble and provocation (Pro 29:11; Gen 41:8; Act 17:16) | — |
+| 2-15 | The spirit is God-ward (Rom 8:16; Joh 4:24; Ecc 12:7; Pro 20:27 "the lamp of the Lord"; Luk 23:46; Act 7:59) | Restated | The spirit is prominent in worship and is what is committed to God at death (E §13.4). Pro 20:27 uses *neshamah* "breath", not *rûaḥ* [lexical], and is outside the reading. The human spirit is equally temper, trouble and provocation (Pro 29:11; Gen 41:8; Act 17:16) | 02 *Soul, spirit and heart at death* (in part) |
 | 2-16 | Heb 4:12 is "the single strongest biblical statement for trichotomy"; "division" proves two entities | Restated | The verse puts soul and spirit beside joints and marrow, which are adjacent, and its end point is the heart: "discerning the thoughts and intentions of the heart". It shows closeness that only the word can divide. It is one of several places the words part; others are added (1Co 15:45; 1Co 14:14–15; the *psychikos* / *pneumatikos* contrast in 1Co 2:14; 15:44–46) (dep §3.4; B §8) | — |
 | 2-17 | Summary: spirit = "eternal essence, does not sin, uniquely human"; soul = "can sin, shared with animals" | Withdrawn | Summary: spirit = "eternal essence, does not sin, uniquely human"; soul = "can sin, shared with animals" | — |
 
@@ -331,13 +406,13 @@ File `—` (v—) · deferred
 | 3-4 | "The spirit comes to the bones in the womb" (Ecc 11:5) | Restated | Whether this is spirit or breath cannot be decided from the verse (SC: U) | — |
 | 3-5 | John filled with the Holy Spirit from the womb (Luk 1:15, 41), so the human spirit must already exist before birth | Restated | The verses stand (God's Spirit, SC D1). The inference about the human spirit is not stated by them and is dropped | — |
 | 3-6 | Isa 49:1; Psa 71:6: identity and calling before birth | Held | Isa 49:1; Psa 71:6: identity and calling before birth | — |
-| 3-7 | The soul departs at death (Gen 35:18) | Widened | The soul departs at death (Gen 35:18) | — |
+| 3-7 | The soul departs at death (Gen 35:18) | Widened | The soul departs at death (Gen 35:18) | 02 *Soul, spirit and heart at death* (in part) |
 | 3-8 | The spirit returns to God (Ecc 12:7; Luk 23:46; Act 7:59; Mat 27:50) | Stands | The spirit returns to God (Ecc 12:7; Luk 23:46; Act 7:59; Mat 27:50) | — |
-| 3-9 | The soul goes to Sheol (Psa 16:10; 30:3; 49:15; 86:13; 89:48), so soul and spirit have different destinations | Restated | Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. Sheol here is death and the grave, not a destination distinct from the spirit's. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) | — |
-| 3-10 | Conscious existence after death (Rev 6:9; Heb 12:23) | Stands | Conscious existence after death (Rev 6:9; Heb 12:23) | — |
+| 3-9 | The soul goes to Sheol (Psa 16:10; 30:3; 49:15; 86:13; 89:48), so soul and spirit have different destinations | Corrected | Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) | 02 *Soul, spirit and heart at death* (in part); 02 *Delivered from death* (in full); 09 *Lines that are often drawn, but that I cannot find* (in part) |
+| 3-10 | Conscious existence after death (Rev 6:9; Heb 12:23) | Stands | Conscious existence after death (Rev 6:9; Heb 12:23) | 02 *After death* (in full) |
 | 3-11 | Mat 10:28: body killed, soul not | Stands | Mat 10:28: body killed, soul not | — |
 | 3-12 | No verse says "they cannot kill the spirit" because the spirit is "already safe" with God | Withdrawn | No verse says "they cannot kill the spirit" because the spirit is "already safe" with God | — |
-| 3-13 | "The body apart from the spirit is dead" (Jam 2:26) | Stands | "The body apart from the spirit is dead" (Jam 2:26) | — |
+| 3-13 | "The body apart from the spirit is dead" (Jam 2:26) | Stands | "The body apart from the spirit is dead" (Jam 2:26) | 02 *Soul, spirit and heart at death* (in full) |
 | 3-14 | Luk 8:55 "her spirit returned" shows the spirit is the primary life-giving force | Restated | The verse stands. But "the life [*nephesh*] of the child came into him again" (1Ki 17:22), and "a breath of life from God entered them" (Rev 11:11). Scripture brings life back with soul, spirit or breath. No primacy follows (dep §3.9) | — |
 | 3-15 | The primacy of the spirit; the hierarchy spirit → soul → body; redemption follows the same order | Withdrawn | The primacy of the spirit; the hierarchy spirit → soul → body; redemption follows the same order | — |
 
@@ -370,7 +445,7 @@ File `—` (v—) · deferred
 | # | Original claim | Verdict | Claim now | Told in |
 |---|---|---|---|---|
 | 6-1 | Eight categories: creatures ~50, life ~200, person/self ~150, emotion ~150, desire ~80, will ~60, survival after death ~40, corpse ~10 | Restated | The shape stands. Distinct Hebrew verses by sense: soul 230, life 180, myself 126, person 83, appetite 45, dead body 13, creature 12, neck 2. Greek: soul 46, life 33, person 8, myself 6. Add throat / neck (stocktake §2) | — |
-| 6-2 | Category 7: the immaterial part that survives death (~40) | Restated | Most soul-and-death verses are about life delivered from death, not survival after it (see 3-9). The survival texts (Mat 10:28; Rev 6:9) stand | — |
+| 6-2 | Category 7: the immaterial part that survives death (~40) | Restated | Most soul-and-death verses are about life delivered from death, not survival after it (see 3-9). The survival texts (Mat 10:28; Rev 6:9) stand | 02 *After death* (in part) |
 | 6-3 | *Nephesh* covers the whole person, on a physical–spiritual continuum | Stands | *Nephesh* covers the whole person, on a physical–spiritual continuum | — |
 
 ### Chapter 8 — The Spirit's fruit (the theological claims only)
@@ -431,7 +506,6 @@ File `—` (v—) · deferred
 | 1-6 | The overlap is real but not total | current | Stands |
 | 2-1 | In these verses *nephesh* is the person, the one who answers for sin; it is not a faculty inside the person. The soul is the accountable, answerable self (D §3.1, §11.2) | current | Restated |
 | 2-2 | No verse read makes the spirit the subject of "to sin". But the spirit is morally judged: haughty before a fall (Pro 16:18), "spirit was not faithful" (Psa 78:8), hardened by God (Deu 2:30), needing to be made "right" (Psa 51:10), with or without deceit (Psa 32:2), defiled with the body (2Co 7:1). The part Scripture judges most is the heart (D §3.4, §9.2, §11.1–3; C §9.2). The original itself listed Pro 16:18 and Deu 2:30, then set them aside | current | Restated |
-| 2-3 | Souls are saved from death and purified (Jam 5:20; 1Pe 1:22) | current | Stands |
 | 2-4 | Animals are *nephesh ḥayyâ* just as man is (Gen 1:20–24; 2:7; 9:10) | current | Stands |
 | 2-5 | Animals almost never have *rûaḥ*; Ecc 3:21 is the only exception; Gen 7:22 uses *neshamah*, not *rûaḥ* | withdrawn | Withdrawn |
 | 2-6 | The image of God may be located in the spirit | withdrawn | Withdrawn |
@@ -443,7 +517,6 @@ File `—` (v—) · deferred
 | 2-12 | "God is spirit" (Joh 4:24) stands. But Scripture speaks freely of God's soul ("my soul shall not abhor you", Lev 26:11; "my soul hates", Isa 1:14; "my soul delights", Isa 42:1; he swears by his soul, Amo 6:8) and God's heart (Gen 6:6; Hos 11:8). No ranking of the words follows (dep §3.10) | current | Restated |
 | 2-13 | The soul sits in a middle position, the interface between body and spirit | withdrawn | Withdrawn |
 | 2-14 | The soul is the needing self, and much of its need is for God: "My soul thirsts for you" (Psa 63:1); "To you, O Lord, I lift up my soul" (Psa 25:1); "Bless the Lord, O my soul" (Psa 103:1) (dep §2.2b) | current | Restated |
-| 2-15 | The spirit is prominent in worship and is what is committed to God at death (E §13.4). Pro 20:27 uses *neshamah* "breath", not *rûaḥ* [lexical], and is outside the reading. The human spirit is equally temper, trouble and provocation (Pro 29:11; Gen 41:8; Act 17:16) | current | Restated |
 | 2-16 | The verse puts soul and spirit beside joints and marrow, which are adjacent, and its end point is the heart: "discerning the thoughts and intentions of the heart". It shows closeness that only the word can divide. It is one of several places the words part; others are added (1Co 15:45; 1Co 14:14–15; the *psychikos* / *pneumatikos* contrast in 1Co 2:14; 15:44–46) (dep §3.4; B §8) | current | Restated |
 | 2-17 | Summary: spirit = "eternal essence, does not sin, uniquely human"; soul = "can sin, shared with animals" | withdrawn | Withdrawn |
 | 3-1 | The man becomes a *nephesh* (Gen 2:7) | current | Stands |
@@ -452,13 +525,9 @@ File `—` (v—) · deferred
 | 3-4 | Whether this is spirit or breath cannot be decided from the verse (SC: U) | current | Restated |
 | 3-5 | The verses stand (God's Spirit, SC D1). The inference about the human spirit is not stated by them and is dropped | current | Restated |
 | 3-6 | Isa 49:1; Psa 71:6: identity and calling before birth | held | Held |
-| 3-7 | The soul departs at death (Gen 35:18) | current | Widened |
 | 3-8 | The spirit returns to God (Ecc 12:7; Luk 23:46; Act 7:59; Mat 27:50) | current | Stands |
-| 3-9 | Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. Sheol here is death and the grave, not a destination distinct from the spirit's. Ecc 3:21 leaves the spirit's destination open ("Who knows?"). The "different destinations" argument, which the original called "the most compelling evidence", does not hold (G §16.4; dep §3.9) | current | Restated |
-| 3-10 | Conscious existence after death (Rev 6:9; Heb 12:23) | current | Stands |
 | 3-11 | Mat 10:28: body killed, soul not | current | Stands |
 | 3-12 | No verse says "they cannot kill the spirit" because the spirit is "already safe" with God | withdrawn | Withdrawn |
-| 3-13 | "The body apart from the spirit is dead" (Jam 2:26) | current | Stands |
 | 3-14 | The verse stands. But "the life [*nephesh*] of the child came into him again" (1Ki 17:22), and "a breath of life from God entered them" (Rev 11:11). Scripture brings life back with soul, spirit or breath. No primacy follows (dep §3.9) | current | Restated |
 | 3-15 | The primacy of the spirit; the hierarchy spirit → soul → body; redemption follows the same order | withdrawn | Withdrawn |
 | 4-1 | Heart = emotion, thought, will, moral centre, core self | current | Widened |
@@ -476,7 +545,6 @@ File `—` (v—) · deferred
 | 5-2 | Replaced by the profile in 05: moved, stirred, troubled, crushed, revived, fervent, ruled, self-knowing (dep §2.3b; C §11.3; B §9.3) | current | Restated |
 | 5-3 | See 9-4 | current | Restated |
 | 6-1 | The shape stands. Distinct Hebrew verses by sense: soul 230, life 180, myself 126, person 83, appetite 45, dead body 13, creature 12, neck 2. Greek: soul 46, life 33, person 8, myself 6. Add throat / neck (stocktake §2) | current | Restated |
-| 6-2 | Most soul-and-death verses are about life delivered from death, not survival after it (see 3-9). The survival texts (Mat 10:28; Rev 6:9) stand | current | Restated |
 | 6-3 | *Nephesh* covers the whole person, on a physical–spiritual continuum | current | Stands |
 | 8-1 | Rom 5:5 says love is poured into our hearts. The verses read show inner ↔ body effects in both directions (glad heart → face; bread → heart; sight → spirit). The one-way spirit → soul → body flow is not shown (dep §3.6; A §9.3) | current | Restated |
 | 8-2 | What the Spirit does not produce (memory, imagination, grief, natural fear, sexuality) | held | Held |
@@ -503,10 +571,13 @@ File `—` (v—) · deferred
 
 | Origin | Verdict | Claims |
 |---|---|---|
+| narrative | Corrected | 2 |
+| narrative | New | 27 |
+| original essay | Corrected | 1 |
 | original essay | Held | 10 |
-| original essay | Restated | 36 |
+| original essay | Restated | 35 |
 | original essay | Stands | 14 |
 | original essay | Widened | 7 |
 | original essay | Withdrawn | 14 |
 
-81 claims; 0 told in the narrative, 81 not.
+110 claims; 36 told in the narrative, 74 not.

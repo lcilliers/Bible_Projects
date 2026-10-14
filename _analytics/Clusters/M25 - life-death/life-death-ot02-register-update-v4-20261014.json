@@ -1,0 +1,10 @@
+{"update":{"update_date":"2026-10-14","title":"OT-02: two uncounted generalisations removed (Ch 2 v24)",
+ "strand":"life and death (M25), OT-02 Q1 What is death?",
+ "researcher_instruction":"\"c) ensure that the narrative does not violate the truth.\" (2026-10-14)",
+ "method":"Session-close read-back against cfg_behaviour_rule 69 (no uncounted most/often/always): 'Scripture often speaks of death as sleep' (uncounted 'often') and 'When the Old Testament speaks of where the dying go, it speaks of going down to Sheol' (an implied always, against 'gathered to his people', Gen 25:8, and 'the way of all the earth', 1Ki 2:2) restated; C-89 and C-93 restated to match.",
+ "quote_parts":2,"quote_failures":0,
+ "scripts":["_analytics/Clusters/M25 - life-death/narrative-quote-check-v1-20261014.py"]},
+ "refs":[{"kind":"thread","value":"OT-02"}],
+ "chapters":[{"chapter":"2","from_version":23,"to_version":24,"file":"02-life-breath-and-death-v24-20261014.md"}],
+ "claims":[{"ref":"C-89","edit":{"text":"Scripture speaks of death as sleep, and gives its hope against death as waking","verdict":"Corrected","note":"uncounted 'often' removed (rule 69)"}},
+  {"ref":"C-93","edit":{"text":"One way the Old Testament speaks of where the dying go is going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of","verdict":"Corrected","note":"implied 'always' removed; other ways: Gen 25:8, 1Ki 2:2 (rule 69)"}}]}

@@ -1,0 +1,805 @@
+{
+ "update": {
+  "update_date": "2026-10-14",
+  "title": "OT-02 death and Sheol: Ch 2 death sections registered and corrected",
+  "strand": "life and death (M25), OT-02 Q1 What is death?",
+  "researcher_instruction": "\"a) ensure the claim register is complete for the reading of these verses. b) ensure that the narrative support the claims c) ensure that the narrative does not violate the truth.\" (2026-10-14, after: \"a) narratives with no basis for the claims - these should be removed from the narrative ... b) a tendency to make verses fit a particular narrative ... c) verses are dropped or set aside if the do not fit into the narrative\")",
+  "method": "R0 for the Ch 2 sections What death is, Going down to Sheol (new), Sleep and waking, Soul, spirit and heart at death, Delivered from death and After death; the 55 Sheol/Hades/sleep verses that were in neither the narrative nor the register read in their passages and woven. Removed: 'Sheol is the grave, the realm of the dead' (no verse). Corrected: the dead 'silent and gone' stated as one side only and framed 'from this side of death'; Luke 16:22 cited without the rich man in Hades (16:23-31); Isa 5:14 set aside as 'one witness is enough'; the 15-verse count shown without its verses (Psa 86:13, Pro 23:14 counted, never shown); 'one picture for death' softened to 'often'.",
+  "source_files": [
+   "_analytics/Clusters/M25 - life-death/life-death-ot02-r0-batch-ch2-death-v1-20261013.md",
+   "_analytics/Clusters/M25 - life-death/life-death-ot02-claim-crosscheck-v2-20261013.csv",
+   "_analytics/Clusters/M25 - life-death/life-death-q2-q3-soul-spirit-heart-ledger-v1-20261004.md"
+  ],
+  "scripts": [
+   "_analytics/Clusters/M25 - life-death/narrative-quote-check-v1-20261014.py",
+   "_analytics/Clusters/M25 - life-death/life-death-claim-register-crosscheck-v2-20261013.py"
+  ],
+  "claims_changed_note": "33 narrative claims added with sources and tellings; 3-9 corrected (its unsupported 'Sheol here is death and the grave, not a destination distinct from the spirit's' removed); 3-7, 3-9, 3-10, 3-13, 6-2, 2-3, 2-15 linked to the passages that tell them.",
+  "not_woven_note": "15 of the 70 uncovered verses are data only: sleep in its ordinary sense (Gen 2:21; 41:5; Judg 16:14; Psa 4:8; Pro 4:16; Isa 5:27; Eze 34:25; Luk 22:45; Act 12:6), H3462 in another sense (Lev 13:11 chronic; 26:10 long kept), Sheol as a measure only (Isa 57:9), Jer 51:57 (same oracle as 51:39, cited), 1Co 7:39 and 11:30 (sleep rendered 'dies', 'died'; no inner-being bearing). Isa 7:11 and Job 11:8 are now cited. The 1,010 die/death-only verses were read in unit 2 and not re-checked.",
+  "structure_change": "Ch 2 gains the section 'Going down to Sheol' before 'Sleep and waking'.",
+  "structure_reason": "The Sheol verses had no home; read in their passages they speak of where Sheol lies, who goes down, how, and God and Sheol.",
+  "quote_parts": 85,
+  "quote_failures": 0,
+  "quote_note": "narrative-quote-check-v1-20261014.py on the lines v22 adds to v21; the one non-match is the section title 'Soul, spirit and heart at death'.",
+  "notes": "Researcher findings recorded in CLAUDE.md and memory feedback_claims_register_keeps_narrative_honest."
+ },
+ "refs": [
+  {
+   "kind": "thread",
+   "value": "OT-02"
+  }
+ ],
+ "chapters": [
+  {
+   "chapter": "2",
+   "from_version": 21,
+   "to_version": 22,
+   "file": "02-life-breath-and-death-v22-20261014.md"
+  }
+ ],
+ "claims": [
+  {
+   "key": "n1",
+   "new": {
+    "text": "Death is spoken of as the breath taken away",
+    "beyond_text": "states what death is from two verses",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Psalm 104:29",
+     "1 Kings 17:17"
+    ]
+   }
+  },
+  {
+   "key": "n2",
+   "new": {
+    "text": "Death comes to everyone, and falls alike on those the world would set apart",
+    "beyond_text": "gathers single sayings into a statement about all",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Psalm 89:48",
+     "Zechariah 1:5",
+     "Genesis 3:22",
+     "Job 14:14",
+     "Ecclesiastes 2:16",
+     "Ecclesiastes 3:2",
+     "Hebrews 9:27"
+    ]
+   }
+  },
+  {
+   "key": "n3",
+   "new": {
+    "text": "The same death is met in different ways, and nothing goes with the dead",
+    "beyond_text": "sets several deaths side by side",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Job 21:23, 25",
+     "Psalm 49:17",
+     "Proverbs 11:7",
+     "Genesis 27:2",
+     "Ecclesiastes 7:1"
+    ]
+   }
+  },
+  {
+   "key": "n4",
+   "new": {
+    "text": "Scripture ties death to sin from the first command",
+    "beyond_text": "joins Genesis 2-3 and Paul as one line",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Genesis 2:17",
+     "Genesis 3:4",
+     "Romans 5:12",
+     "Romans 5:14",
+     "Romans 6:23",
+     "1 Corinthians 15:56"
+    ]
+   }
+  },
+  {
+   "key": "n5",
+   "new": {
+    "text": "James and Paul trace death's coming from within: desire, sin, death",
+    "beyond_text": "reads the verses as a movement within the person",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "James 1:15",
+     "Romans 7:5",
+     "Romans 7:9",
+     "Romans 7:10"
+    ]
+   }
+  },
+  {
+   "key": "n6",
+   "new": {
+    "text": "Each person answers for his own sin, and sin can be put away while a death still follows",
+    "beyond_text": "sets the rule beside David's case",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Ezekiel 18:4",
+     "2 Kings 14:6",
+     "John 8:24",
+     "1 John 5:16-17",
+     "2 Samuel 12:13-14"
+    ]
+   }
+  },
+  {
+   "key": "n7",
+   "new": {
+    "text": "Scripture speaks of death inside a living person: the heart dying first, the living called dead, abiding in death",
+    "beyond_text": "gathers the uses into one account",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "1 Samuel 25:37-38",
+     "Colossians 2:13",
+     "Ephesians 2:5",
+     "Revelation 3:1",
+     "1 Timothy 5:6",
+     "Romans 8:6",
+     "1 John 3:14",
+     "Romans 7:24",
+     "Psalm 88:5"
+    ]
+   }
+  },
+  {
+   "key": "n8",
+   "new": {
+    "text": "Scripture often speaks of death as sleep, and gives its hope against death as waking",
+    "beyond_text": "joins the sleep and waking verses",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Job 14:12",
+     "2 Kings 4:31",
+     "Matthew 9:24",
+     "John 11:11-14",
+     "Matthew 27:52",
+     "Daniel 12:2"
+    ]
+   }
+  },
+  {
+   "key": "n9",
+   "new": {
+    "text": "Paul uses sleep to speak to grief: grief with hope is set apart from grief without hope, and the hope rests on Christ's rising",
+    "beyond_text": "joins 1 Thessalonians 4 and 1 Corinthians 15",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "1 Thessalonians 4:13-15",
+     "1 Corinthians 15:18",
+     "1 Corinthians 15:20"
+    ]
+   }
+  },
+  {
+   "key": "n10",
+   "new": {
+    "text": "The calls on God to wake speak from how it feels when God does not act",
+    "beyond_text": "reads the psalmists' cry beside Psalm 121:4",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 1,
+    "sources": [
+     "Psalm 7:6",
+     "Psalm 35:23",
+     "Psalm 44:23",
+     "Psalm 59:4",
+     "Psalm 121:4"
+    ]
+   }
+  },
+  {
+   "key": "n11",
+   "new": {
+    "text": "The waking of the dead is not the same for all",
+    "beyond_text": "joins Daniel and Isaiah",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Daniel 12:2",
+     "Isaiah 26:14",
+     "Isaiah 26:19",
+     "Psalm 17:15"
+    ]
+   }
+  },
+  {
+   "key": "n12",
+   "new": {
+    "text": "Where the dying go, the Old Testament speaks of going down to Sheol; it says where Sheol lies (beneath, the measure of depth) but not what it is made of",
+    "beyond_text": "a statement over all the Sheol verses",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Proverbs 15:24",
+     "Isaiah 7:11",
+     "Job 11:8",
+     "Isaiah 14:9"
+    ]
+   }
+  },
+  {
+   "key": "n13",
+   "new": {
+    "text": "The righteous speak of going down to Sheol, as the wicked are said to",
+    "beyond_text": "sets Jacob and Hezekiah beside the wicked",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Genesis 37:35",
+     "Genesis 42:38",
+     "Genesis 44:29-31",
+     "Isaiah 38:10-11",
+     "Job 17:13-16",
+     "Psalm 9:17",
+     "Job 24:19",
+     "Isaiah 14:15",
+     "Ezekiel 31:15-17",
+     "Matthew 11:23",
+     "Luke 10:15"
+    ]
+   }
+  },
+  {
+   "key": "n14",
+   "new": {
+    "text": "The manner of going down to Sheol is named: mourning, with sorrow, in peace, with blood, silently, alive",
+    "beyond_text": "gathers the phrases",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Genesis 37:35",
+     "Genesis 42:38",
+     "1 Kings 2:6",
+     "1 Kings 2:9",
+     "Psalm 31:17",
+     "Numbers 16:33",
+     "Psalm 55:13-15"
+    ]
+   }
+  },
+  {
+   "key": "n15",
+   "new": {
+    "text": "The way to Sheol is already walked in the heart before the end comes",
+    "beyond_text": "reads the wisdom sayings of the heart's course",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 1,
+    "sources": [
+     "Proverbs 5:5-6",
+     "Proverbs 7:25-27"
+    ]
+   }
+  },
+  {
+   "key": "n16",
+   "new": {
+    "text": "Sheol is pictured as never satisfied, and the same picture is used of the eyes and the greed of man",
+    "beyond_text": "joins Proverbs, Isaiah and Habakkuk",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Proverbs 27:20",
+     "Proverbs 30:15-16",
+     "Isaiah 5:14",
+     "Proverbs 1:12",
+     "Habakkuk 2:5"
+    ]
+   }
+  },
+  {
+   "key": "n17",
+   "new": {
+    "text": "Nothing in Sheol is hidden from God and he is there; and Sheol does not praise him. Both are stated",
+    "beyond_text": "sets the verses side by side",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Job 26:6",
+     "Proverbs 15:11",
+     "Psalm 139:8",
+     "Amos 9:2",
+     "Deuteronomy 32:22",
+     "Isaiah 38:18"
+    ]
+   }
+  },
+  {
+   "key": "n18",
+   "new": {
+    "text": "Sheol and Hades are named beside death as a power that holds the dead, gives them up to judgment and is ended",
+    "beyond_text": "joins Isaiah 28, Matthew 16 and Revelation",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Isaiah 28:15",
+     "Isaiah 28:18",
+     "Matthew 16:18",
+     "Revelation 6:8",
+     "Revelation 20:13-14",
+     "Revelation 1:18"
+    ]
+   }
+  },
+  {
+   "key": "n19",
+   "new": {
+    "text": "At death the soul departs, dies, is poured out, is named to the very end, and has an end beyond death",
+    "beyond_text": "gathers the soul's ways at death",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Genesis 35:18",
+     "Numbers 23:10",
+     "Judges 16:30",
+     "Ezekiel 18:4",
+     "Isaiah 53:12",
+     "Matthew 26:38",
+     "Numbers 19:11",
+     "Psalm 49:15",
+     "Psalm 49:19",
+     "Psalm 16:10",
+     "Acts 2:31"
+    ]
+   }
+  },
+  {
+   "key": "n20",
+   "new": {
+    "text": "The soul in these verses is the person: the one who dies, and the one who is ransomed",
+    "beyond_text": "reads the soul as the person",
+    "origin": "narrative",
+    "verdict": "New",
+    "i_read": 1,
+    "sources": [
+     "Genesis 35:18",
+     "Numbers 23:10",
+     "Psalm 49:15",
+     "Ezekiel 18:4"
+    ]
+   }
+  },
+  {
+   "key": "n21",
+   "new": {
+    "text": "The verses that name Sheol or Hades speak of the soul and never of the spirit",
+    "beyond_text": "a statement over every Sheol and Hades verse (74 verses checked, 2026-10-13)",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Psalm 16:10",
+     "Psalm 30:3",
+     "Psalm 49:15",
+     "Psalm 86:13",
+     "Psalm 89:48",
+     "Proverbs 23:14",
+     "Acts 2:27",
+     "study file: life-death-ot02-sheol-soul-spirit-life-v1-20261013.md"
+    ]
+   }
+  },
+  {
+   "key": "n22",
+   "new": {
+    "text": "The heart can die before the body does; no verse found speaks of the heart after death",
+    "beyond_text": "reads Nabal's case and states a negative over the heart-death pull",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "1 Samuel 25:37-38",
+     "Psalm 31:12",
+     "Ecclesiastes 9:3",
+     "study file: life-death-q3-heart-death-pull-v1-20261004.csv"
+    ]
+   }
+  },
+  {
+   "key": "n23",
+   "new": {
+    "text": "Death is pictured as something that surrounds and holds, with waves, cords, snares and gates",
+    "beyond_text": "gathers the figures",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "2 Samuel 22:5-6",
+     "Psalm 18:4-6",
+     "Psalm 9:13",
+     "Psalm 68:20",
+     "Psalm 118:18"
+    ]
+   }
+  },
+  {
+   "key": "n24",
+   "new": {
+    "text": "Deliverance from death is for something: walking before God among the living and telling of him",
+    "beyond_text": "joins the purpose clauses",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Psalm 56:13",
+     "Psalm 118:17",
+     "Job 33:26-30",
+     "Isaiah 38:19"
+    ]
+   }
+  },
+  {
+   "key": "n25",
+   "new": {
+    "text": "Some verses say the dead know nothing, do not praise God and do not return",
+    "beyond_text": "gathers the verses that speak of the dead this way",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Job 14:10",
+     "Job 7:9-10",
+     "Ecclesiastes 9:5",
+     "Ecclesiastes 9:10",
+     "Psalm 6:5",
+     "Psalm 115:17",
+     "Isaiah 38:18-19",
+     "Psalm 49:19"
+    ]
+   }
+  },
+  {
+   "key": "n26",
+   "new": {
+    "text": "Prophetic oracles against kings and nations speak of the dead in Sheol as stirred, speaking and comforted",
+    "beyond_text": "gathers the oracles",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Isaiah 14:4",
+     "Isaiah 14:9-10",
+     "Ezekiel 32:21",
+     "Ezekiel 32:24",
+     "Ezekiel 31:16",
+     "Ezekiel 32:31"
+    ]
+   }
+  },
+  {
+   "key": "n27",
+   "new": {
+    "text": "In Jesus' account of the rich man and Lazarus the dead remember, see, ask and are answered; one is comforted and one in anguish, and the chasm between them cannot be crossed",
+    "beyond_text": "states what the account shows of the dead",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Luke 16:22-31"
+    ]
+   }
+  },
+  {
+   "key": "n28",
+   "new": {
+    "text": "Scripture speaks of the dead in more than one way, and neither way is made to explain the other away",
+    "beyond_text": "sets n25 beside n26, n27 and the dead with God",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Ecclesiastes 9:5",
+     "Psalm 115:17",
+     "Isaiah 14:9-10",
+     "Luke 16:23-25",
+     "Revelation 6:9-10"
+    ]
+   }
+  },
+  {
+   "key": "n29",
+   "new": {
+    "text": "With God, the dead are carried, blessed and at rest",
+    "beyond_text": "gathers the verses of the dead with God",
+    "origin": "narrative",
+    "verdict": "New",
+    "sources": [
+     "Luke 16:22",
+     "Luke 16:25",
+     "Revelation 14:13",
+     "2 Samuel 12:23",
+     "Luke 20:38",
+     "1 Thessalonians 5:10",
+     "Psalm 49:15",
+     "Luke 23:43",
+     "Philippians 1:23-24",
+     "2 Corinthians 5:8",
+     "1 Peter 4:6"
+    ]
+   }
+  },
+  {
+   "ref": "3-9",
+   "edit": {
+    "text": "Most of these verses speak of the soul delivered or brought up from Sheol: a living person rescued from death. Corrected 2026-10-04 (#1950): of 15 soul-delivered verses, 12 are rescue from dying; Psa 49:15 (set against the death of all, 49:10) and Psa 16:10 (as Act 2:27, 31 read it) look beyond death; Psa 89:48 says no one can. The verdict holds: no verse gives soul and spirit different destinations. The verses that name Sheol or Hades speak of the soul and never of the spirit. Ecc 3:21 leaves the spirit's destination open (\"Who knows?\"). The \"different destinations\" argument, which the original called \"the most compelling evidence\", does not hold (G §16.4; dep §3.9)",
+    "verdict": "Corrected",
+    "status": "current",
+    "note": "OT-02, 2026-10-14: removed 'Sheol here is death and the grave, not a destination distinct from the spirit's' (no verse states it); the spirit sentence states what the 74 Sheol/Hades verses show."
+   }
+  }
+ ],
+ "tellings": [
+  {
+   "claim": "n1",
+   "chapter": "2",
+   "passage": "Death is the breath gone",
+   "kind": "in full"
+  },
+  {
+   "claim": "n2",
+   "chapter": "2",
+   "passage": "It comes to everyone",
+   "kind": "in full"
+  },
+  {
+   "claim": "n2",
+   "chapter": "2",
+   "passage": "Joab sent a wise woman of Tekoa",
+   "kind": "in part",
+   "part": "Death falls alike on those the world would set apart"
+  },
+  {
+   "claim": "n3",
+   "chapter": "2",
+   "passage": "The same death is met in different ways",
+   "kind": "in full"
+  },
+  {
+   "claim": "n4",
+   "chapter": "2",
+   "passage": "Scripture ties death to sin from the first command",
+   "kind": "in full"
+  },
+  {
+   "claim": "n4",
+   "chapter": "2",
+   "passage": "Paul traces death's entry the same way",
+   "kind": "in part"
+  },
+  {
+   "claim": "n5",
+   "chapter": "2",
+   "passage": "James and Paul describe the movement from within",
+   "kind": "in full"
+  },
+  {
+   "claim": "n6",
+   "chapter": "2",
+   "passage": "Each person answers for his own",
+   "kind": "in part"
+  },
+  {
+   "claim": "n6",
+   "chapter": "2",
+   "passage": "Sin can be put away while a death still follows",
+   "kind": "in part"
+  },
+  {
+   "claim": "n7",
+   "chapter": "2",
+   "passage": "Scripture also speaks of death inside a living person",
+   "kind": "in full"
+  },
+  {
+   "claim": "n8",
+   "chapter": "2",
+   "passage": "Scripture often speaks of death as sleep",
+   "kind": "in full"
+  },
+  {
+   "claim": "n8",
+   "chapter": "2",
+   "passage": "Jesus speaks of death as sleep",
+   "kind": "in part"
+  },
+  {
+   "claim": "n9",
+   "chapter": "2",
+   "passage": "Paul uses the same word of those who die believing",
+   "kind": "in full"
+  },
+  {
+   "claim": "n10",
+   "chapter": "2",
+   "passage": "I read these as speaking from how it feels when God does not act",
+   "kind": "in full"
+  },
+  {
+   "claim": "n11",
+   "chapter": "2",
+   "passage": "And the dead will wake",
+   "kind": "in full"
+  },
+  {
+   "claim": "n12",
+   "chapter": "2",
+   "passage": "When the Old Testament speaks of where the dying go",
+   "kind": "in full"
+  },
+  {
+   "claim": "n12",
+   "chapter": "2",
+   "passage": "It lies beneath",
+   "kind": "in part"
+  },
+  {
+   "claim": "n13",
+   "chapter": "2",
+   "passage": "The righteous speak of going down to it",
+   "kind": "in full"
+  },
+  {
+   "claim": "n14",
+   "chapter": "2",
+   "passage": "How a person goes down is named",
+   "kind": "in full"
+  },
+  {
+   "claim": "n15",
+   "chapter": "2",
+   "passage": "Wisdom marks the way that leads there",
+   "kind": "in full"
+  },
+  {
+   "claim": "n16",
+   "chapter": "2",
+   "passage": "Sheol is never full",
+   "kind": "in full"
+  },
+  {
+   "claim": "n17",
+   "chapter": "2",
+   "passage": "Nothing in Sheol is hidden from God",
+   "kind": "in full"
+  },
+  {
+   "claim": "n17",
+   "chapter": "2",
+   "passage": "Hezekiah, in his song, says",
+   "kind": "in part"
+  },
+  {
+   "claim": "n18",
+   "chapter": "2",
+   "passage": "Sheol is also named beside death as a power",
+   "kind": "in full"
+  },
+  {
+   "claim": "n19",
+   "chapter": "2",
+   "passage": "At death Scripture speaks of each inner word in its own way",
+   "kind": "in full"
+  },
+  {
+   "claim": "3-7",
+   "chapter": "2",
+   "passage": "The soul. It departs",
+   "kind": "in part"
+  },
+  {
+   "claim": "n20",
+   "chapter": "2",
+   "passage": "I read the soul in these verses as the person",
+   "kind": "in full"
+  },
+  {
+   "claim": "2-15",
+   "chapter": "2",
+   "passage": "The spirit. The spirit is committed",
+   "kind": "in part"
+  },
+  {
+   "claim": "3-13",
+   "chapter": "2",
+   "passage": "The spirit. The spirit is committed",
+   "kind": "in full"
+  },
+  {
+   "claim": "3-9",
+   "chapter": "2",
+   "passage": "No verse sends the soul one way and the spirit another",
+   "kind": "in part"
+  },
+  {
+   "claim": "n21",
+   "chapter": "2",
+   "passage": "No verse sends the soul one way and the spirit another",
+   "kind": "in full"
+  },
+  {
+   "claim": "n22",
+   "chapter": "2",
+   "passage": "And one thing I did not expect",
+   "kind": "in part"
+  },
+  {
+   "claim": "n22",
+   "chapter": "2",
+   "passage": "Scripture speaks of the heart while a person lives",
+   "kind": "in part"
+  },
+  {
+   "claim": "3-9",
+   "chapter": "2",
+   "passage": "Many verses speak of the soul being delivered from",
+   "kind": "in full"
+  },
+  {
+   "claim": "n23",
+   "chapter": "2",
+   "passage": "The verses picture death as something that surrounds and holds",
+   "kind": "in full"
+  },
+  {
+   "claim": "2-3",
+   "chapter": "2",
+   "passage": "A person can have a part in it too",
+   "kind": "in part"
+  },
+  {
+   "claim": "n24",
+   "chapter": "2",
+   "passage": "Deliverance from death is for something",
+   "kind": "in full"
+  },
+  {
+   "claim": "3-10",
+   "chapter": "2",
+   "passage": "Scripture does speak of people alive before God after death",
+   "kind": "in full"
+  },
+  {
+   "claim": "6-2",
+   "chapter": "2",
+   "passage": "Scripture does speak of people alive before God after death",
+   "kind": "in part",
+   "part": "the survival texts stand"
+  },
+  {
+   "claim": "n25",
+   "chapter": "2",
+   "passage": "Other verses say that the dead are silent and gone",
+   "kind": "in full"
+  },
+  {
+   "claim": "n26",
+   "chapter": "2",
+   "passage": "Other passages speak of the dead in Sheol as stirred and speaking",
+   "kind": "in full"
+  },
+  {
+   "claim": "n27",
+   "chapter": "2",
+   "passage": "In this account the dead remember",
+   "kind": "in full"
+  },
+  {
+   "claim": "n28",
+   "chapter": "2",
+   "passage": "So Scripture speaks of the dead in more than one way",
+   "kind": "in full"
+  },
+  {
+   "claim": "n29",
+   "chapter": "2",
+   "passage": "And with God, the dead are carried, blessed and at rest",
+   "kind": "in full"
+  }
+ ]
+}

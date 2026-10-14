@@ -1,6 +1,6 @@
 # Narrative citation index
 
-*Published from iba.db on 2026-10-13. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
+*Published from iba.db on 2026-10-14. Edit the register in the database (`Narrative-Register.ps1`); changes made only in this file are not kept.*
 
 | Verse | Cited in | Claims resting on it |
 |---|---|---|
@@ -15,14 +15,14 @@
 | Gen 1:31 | 10.6 *Through the eye* (quoted); 13.4 *(opening)* (quoted) | — |
 | Gen 2:7 | 02 *Life breathed in* (quoted); 02 *Sown and raised* (quoted); 05 *From throat to corpse*; 09 *Lines that are often drawn, but that I cannot find* (quoted); 11 *4. One word, opposite values* | 2-4, 2-5, 3-1, 3-2 |
 | Gen 2:9 | 02 *Life breathed in* (quoted); 10.6 *Through the eye* (quoted) | — |
-| Gen 2:17 | 02 *Death and sin* (quoted) | — |
+| Gen 2:17 | 02 *Death and sin* (quoted) | C-85 |
 | Gen 2:24 | 07 *What flesh means* (quoted) | — |
-| Gen 3:4 | 02 *Death and sin* (quoted); 10.5 *From the heart to the mouth* (quoted) | — |
+| Gen 3:4 | 02 *Death and sin* (quoted); 10.5 *From the heart to the mouth* (quoted) | C-85 |
 | Gen 3:6 | 10.6 *Through the eye* (quoted) | — |
 | Gen 3:8 | 10.11 *(opening)* (quoted) | — |
 | Gen 3:10 | 10.0 *How the activities connect* (quoted); 10.1 *Fear* (quoted); 10.11 *(opening)* (quoted); 10.11 *The words*; 10.11 *Hiding from God*; 10.11 *What changes it*; 10.12 *Fear that comes upon a person* (quoted); 10.12 *What fear does* (quoted); 15 *Other ways Scripture shows the inner life* (quoted) | — |
 | Gen 3:16 | 10.6 *A person* (quoted); 11 *What changes the character* (quoted) | — |
-| Gen 3:22 | 02 *What death is* (quoted) | — |
+| Gen 3:22 | 02 *What death is* (quoted) | C-83 |
 | Gen 3:24 | 02 *Life breathed in* (quoted) | — |
 | Gen 4:5 | 07 *Flesh answers the inner being* (quoted); 10.1 *Where it goes in the body* (quoted); 10.13 *(opening)* (quoted); 10.13 *What it does next*; 15 *Other ways Scripture shows the inner life* (quoted) | — |
 | Gen 4:6 | 10.0 *The path can start with a feeling* (quoted); 10.9 *Anger toward God, and before God* (quoted); 10.13 *What it does next* (quoted); 10.13 *How it is answered* (quoted); 11 *What changes the character*; 15 *Other ways Scripture shows the inner life* (quoted) | — |
@@ -59,7 +59,7 @@
 | Gen 24:7 | 10.7 *Willing* (quoted) | — |
 | Gen 24:8 | 10.7 *Willing* (quoted) | — |
 | Gen 24:45 | 04 *The heart speaks to itself* (quoted) | — |
-| Gen 25:8 | 02 *What death is* (quoted) | — |
+| Gen 25:8 | 02 *What death is* (quoted); 02 *Going down to Sheol* (quoted) | C-93 |
 | Gen 25:32 | 10.6 *Wanting and death* (quoted); 10.7 *Life and death set before a person* (quoted) | — |
 | Gen 26:7 | 10.5 *Fear and the mouth* (quoted) | — |
 | Gen 26:9 | 02 *Facing death* (quoted); 10.11 *Hiding from people* (quoted) | — |
@@ -67,7 +67,7 @@
 | Gen 26:14 | 10.6 *Jealousy and envy* (quoted); 11 *What changes the character* | — |
 | Gen 26:15 | 10.6 *Jealousy and envy* (quoted); 11 *What changes the character* | — |
 | Gen 26:16 | 10.6 *Jealousy and envy* (quoted) | — |
-| Gen 27:2 | 02 *What death is* (quoted) | — |
+| Gen 27:2 | 02 *What death is* (quoted) | C-84 |
 | Gen 27:4 | 02 *Dying to the Lord* (quoted) | — |
 | Gen 27:33 | 10.1 *Fear* (quoted); 10.12 *Fear that comes upon a person* (quoted) | — |
 | Gen 27:41 | 04 *The heart speaks to itself*; 04 *The heart and anger* (quoted); 10.0 *The path can start with a feeling* (quoted); 10.10 *(opening)* (quoted) | — |
@@ -91,12 +91,13 @@
 | Gen 34:19 | 10.1 *In a person* (quoted) | — |
 | Gen 35:5 | 10.12 *Dread laid on others* (quoted); 10.12 *Other parties* | — |
 | Gen 35:17 | 02 *Soul, spirit and heart at death* (quoted); 10.10 *Speaking to another's fear* (quoted) | — |
-| Gen 35:18 | 02 *Soul, spirit and heart at death* (quoted) | 3-7 |
+| Gen 35:18 | 02 *Soul, spirit and heart at death* (quoted) | 3-7, C-100, C-101 |
 | Gen 37:4 | 10.6 *Jealousy and envy* (quoted) | — |
 | Gen 37:8 | 10.6 *Jealousy and envy* (quoted); 11 *Authority as a standing* (quoted) | — |
 | Gen 37:10 | 10.6 *Jealousy and envy* | — |
 | Gen 37:11 | 10.3 *Remembering feeds thinking and prayer* (quoted); 10.6 *Jealousy and envy* (quoted) | — |
 | Gen 37:27 | 07 *What flesh means* (quoted) | — |
+| Gen 37:35 | 02 *Going down to Sheol* (quoted) | C-94, C-94, C-95 |
 | Gen 38:7 | 10.13 *Reading the ruin* (quoted) | — |
 | Gen 38:15 | 10.4 *What thinking does* (quoted) | — |
 | Gen 39:19 | 10.1 *How a feeling rises* (quoted); 10.13 *(opening)* (quoted); 10.13 *What it rises at*; 10.13 *What changes it*; 11 *What changes the character* | — |
@@ -112,7 +113,11 @@
 | Gen 42:18 | 10.10 *The fear of God and the weak* (quoted) | — |
 | Gen 42:21 | 10.9 *Afraid in his presence* (quoted) | — |
 | Gen 42:28 | 10.9 *Afraid in his presence* (quoted) | — |
+| Gen 42:38 | — | C-94, C-94, C-95 |
 | Gen 44:18 | 10.10 *Anger between people* | — |
+| Gen 44:29 | — | C-94, C-94 |
+| Gen 44:30 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
+| Gen 44:31 | — | C-94, C-94 |
 | Gen 45:5 | 10.1 *Where it turns* (quoted); 10.13 *How it is answered* (quoted); 10.13 *Angry with oneself, and at God* (quoted) | — |
 | Gen 45:8 | 10.10 *Anger between people* (quoted); 11 *What changes the character* | — |
 | Gen 45:24 | 10.10 *Anger between people* (quoted); 10.12 *The words* | — |
@@ -262,12 +267,13 @@
 | Num 16:15 | 10.13 *What it rises at* (quoted) | — |
 | Num 16:22 | 06 *The human spirit* (quoted); 07 *What flesh means* (quoted); 10.13 *At whom* (quoted); 10.13 *What changes it* | 3-3 |
 | Num 16:30 | 10.13 *How it is provoked* (quoted) | — |
+| Num 16:33 | 02 *Going down to Sheol* (quoted) | C-95 |
 | Num 16:41 | 10.5 *Grumbling* (quoted) | — |
 | Num 16:48 | 10.13 *Pleading, and standing in the breach* (quoted) | — |
 | Num 17:5 | 10.7 *Others around a choice* (quoted); 13.1 *Choosing* (quoted) | — |
 | Num 17:10 | 10.5 *Grumbling* (quoted); 13.1 *Choosing* (quoted) | — |
 | Num 17:13 | 10.7 *Others around a choice* (quoted); 11 *4. One word, opposite values* (quoted) | — |
-| Num 19:11 | 02 *Soul, spirit and heart at death* (quoted); 05 *From throat to corpse* (quoted) | — |
+| Num 19:11 | 02 *Soul, spirit and heart at death* (quoted); 05 *From throat to corpse* (quoted) | C-100 |
 | Num 21:8 | 02 *Wanting to die* (quoted) | — |
 | Num 22:3 | 10.12 *Dread laid on others* (quoted) | — |
 | Num 22:6 | 10.12 *Dread laid on others* (quoted) | — |
@@ -276,7 +282,7 @@
 | Num 22:29 | 10.1 *How a feeling rises* (quoted) | — |
 | Num 23:8 | 10.5 *Anger in words* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Num 23:9 | 10.4 *What thinking does* (quoted) | — |
-| Num 23:10 | 02 *Soul, spirit and heart at death* (quoted); 02 *Dying to the Lord* (quoted) | — |
+| Num 23:10 | 02 *Soul, spirit and heart at death* (quoted); 02 *Dying to the Lord* (quoted) | C-100, C-101 |
 | Num 24:1 | 10.7 *Choosing before God* (quoted); 13.1 *Delight* | — |
 | Num 24:2 | 10.7 *Choosing before God* (quoted) | — |
 | Num 25:11 | 10.6 *Jealousy and envy* (quoted); 10.9 *Anger toward God, and before God* (quoted); 13.1 *Jealousy* (quoted) | — |
@@ -403,12 +409,14 @@
 | Deu 32:16 | 13.1 *Jealousy* (quoted) | — |
 | Deu 32:18 | 10.3 *Forgetting God* (quoted); 10.3 *When remembering changes character*; 10.13 *How it is provoked* (quoted); 13.1 *Jealousy* (quoted) | — |
 | Deu 32:21 | 13.1 *Jealousy* (quoted) | — |
+| Deu 32:22 | 02 *Going down to Sheol* (quoted) | C-98 |
 | Deu 32:27 | 10.12 *Other parties* (quoted); 10.13 *Why it is held back* (quoted) | — |
 | Deu 32:39 | 02 *Breath lent, and held by God* (quoted); 11 *What changes the character* (quoted) | — |
 | Deu 34:9 | 06 *"A spirit of …" — what comes upon a person* (quoted) | — |
 | Jos 1:8 | 10.0 *From a thought to a deed* (quoted) | — |
 | Jos 2:4 | 10.10 *Care, discouragement and hiding between people* | — |
 | Jos 2:11 | 10.2 *(opening)* (quoted); 10.11 *Hiding another* (quoted); 10.12 *Dread laid on others* (quoted) | — |
+| Jos 2:13 | 02 *Delivered from death* | — |
 | Jos 4:14 | 10.10 *Reverence for people* (quoted) | — |
 | Jos 7:1 | 10.13 *At whom* (quoted); 10.13 *What changes it* | — |
 | Jos 7:5 | 04 *The heart feels*; 10.7 *Willing* (quoted) | — |
@@ -472,7 +480,7 @@
 | Judg 16:27 | 11 *2. Thresholds: the merry heart and the sad heart* | — |
 | Judg 16:28 | 11 *2. Thresholds: the merry heart and the sad heart*; 11 *3. The parts give way in sequence* (quoted) | — |
 | Judg 16:29 | 11 *2. Thresholds: the merry heart and the sad heart* | — |
-| Judg 16:30 | 02 *Wanting to die*; 02 *Soul, spirit and heart at death* (quoted); 11 *2. Thresholds: the merry heart and the sad heart*; 11 *3. The parts give way in sequence* (quoted) | — |
+| Judg 16:30 | 02 *Wanting to die*; 02 *Soul, spirit and heart at death* (quoted); 11 *2. Thresholds: the merry heart and the sad heart*; 11 *3. The parts give way in sequence* (quoted) | C-100 |
 | Judg 17:11 | 10.7 *Willing* (quoted) | — |
 | Judg 17:13 | 10.7 *Willing* (quoted) | — |
 | Judg 19:7 | 10.7 *Willing* | — |
@@ -595,8 +603,8 @@
 | 1Sa 25:29 | 02 *Living before God* (quoted) | — |
 | 1Sa 25:31 | 08 *The Old Testament does this with the heart* (quoted) | — |
 | 1Sa 25:36 | 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
-| 1Sa 25:37 | 02 *Soul, spirit and heart at death* (quoted); 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | 3-7 |
-| 1Sa 25:38 | 02 *Soul, spirit and heart at death* (quoted) | 3-7 |
+| 1Sa 25:37 | 02 *Soul, spirit and heart at death* (quoted); 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | 3-7, C-88, C-103 |
+| 1Sa 25:38 | 02 *Soul, spirit and heart at death* (quoted) | 3-7, C-88, C-103 |
 | 1Sa 26:21 | 05 *The soul is hunted and rescued* (quoted); 13.1 *Delight* (quoted) | — |
 | 1Sa 26:23 | 10.7 *Willing*; 10.7 *What changes the character* | — |
 | 1Sa 26:24 | 10.7 *Willing* (quoted) | — |
@@ -642,12 +650,12 @@
 | 2Sa 11:11 | 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
 | 2Sa 12:5 | 02 *Living before God* (quoted); 10.13 *What it rises at*; 10.13 *What changes it*; 11 *What changes the character* (quoted) | — |
 | 2Sa 12:9 | 10.6 *Coveting* (quoted) | — |
-| 2Sa 12:13 | 02 *Death and sin* (quoted); 10.13 *Reading the ruin* | — |
-| 2Sa 12:14 | 02 *Death and sin* (quoted); 10.13 *Reading the ruin* | — |
+| 2Sa 12:13 | 02 *Death and sin* (quoted); 10.13 *Reading the ruin* | C-87 |
+| 2Sa 12:14 | 02 *Death and sin* (quoted); 10.13 *Reading the ruin* | C-87 |
 | 2Sa 12:17 | 10.1 *Where it turns* (quoted); 10.7 *Willing* (quoted) | — |
 | 2Sa 12:18 | 10.5 *Fear and the mouth* (quoted) | — |
 | 2Sa 12:22 | 02 *Life asked for* (quoted) | — |
-| 2Sa 12:23 | 02 *After death* (quoted); 10.1 *Where it turns* (quoted) | — |
+| 2Sa 12:23 | 02 *After death* (quoted); 10.1 *Where it turns* (quoted) | C-110 |
 | 2Sa 13:12 | 10.7 *Willing* (quoted) | — |
 | 2Sa 13:14 | 10.7 *Willing* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* | — |
 | 2Sa 13:22 | 10.13 *What it does next* (quoted) | — |
@@ -692,8 +700,8 @@
 | 2Sa 20:13 | 10.10 *Loyalty and honour* (quoted) | — |
 | 2Sa 21:1 | 10.6 *Jealousy and envy* (quoted) | — |
 | 2Sa 21:2 | 10.6 *Jealousy and envy* (quoted); 11 *What changes the character* | — |
-| 2Sa 22:5 | 02 *Delivered from death* (quoted); 10.12 *Connections* (quoted) | — |
-| 2Sa 22:6 | 02 *Delivered from death* (quoted) | — |
+| 2Sa 22:5 | 02 *Delivered from death* (quoted); 10.12 *Connections* (quoted) | C-104 |
+| 2Sa 22:6 | 02 *Delivered from death* (quoted) | C-104 |
 | 2Sa 22:20 | 13.1 *Delight* (quoted) | — |
 | 2Sa 22:47 | 02 *Living before God* (quoted) | — |
 | 2Sa 23:3 | 10.10 *The fear of God and the weak* (quoted) | — |
@@ -705,7 +713,9 @@
 | 2Sa 24:10 | 08 *The Old Testament does this with the heart* (quoted) | — |
 | 2Sa 24:17 | 10.10 *Anger between people* (quoted); 10.13 *Pleading, and standing in the breach* (quoted) | — |
 | 1Ki 1:29 | 02 *Living before God* (quoted) | — |
-| 1Ki 2:2 | 02 *What death is* (quoted) | — |
+| 1Ki 2:2 | 02 *What death is* (quoted); 02 *Going down to Sheol* (quoted) | C-93 |
+| 1Ki 2:6 | 02 *Going down to Sheol* (quoted) | C-95 |
+| 1Ki 2:9 | 02 *Going down to Sheol* (quoted) | C-95 |
 | 1Ki 2:38 | 10.5 *The oath* (quoted) | — |
 | 1Ki 2:43 | 10.5 *The oath* (quoted) | — |
 | 1Ki 3:9 | 03 *The translators move between them*; 04 *The heart thinks, attends and remembers* (quoted) | 4-4 |
@@ -738,7 +748,7 @@
 | 1Ki 14:22 | 13.1 *Jealousy* (quoted) | — |
 | 1Ki 17:1 | 02 *Living before God* (quoted); 10.9 *The living God* (quoted) | — |
 | 1Ki 17:3 | 10.11 *Hiding from people* (quoted) | — |
-| 1Ki 17:17 | 02 *What death is* (quoted) | — |
+| 1Ki 17:17 | 02 *What death is* (quoted) | C-82 |
 | 1Ki 17:18 | 10.3 *Remembering in shame* (quoted) | — |
 | 1Ki 17:20 | 10.3 *Remembering in shame* (quoted) | — |
 | 1Ki 17:22 | 02 *Life that returns* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 3-14 |
@@ -773,7 +783,7 @@
 | 2Ki 2:9 | 11 *6. Inner states pass between people* (quoted) | — |
 | 2Ki 3:27 | 10.13 *Connections* (quoted) | — |
 | 2Ki 4:13 | 10.10 *Trembling for another* (quoted) | — |
-| 2Ki 4:31 | 02 *Sleep and waking* (quoted) | — |
+| 2Ki 4:31 | 02 *Sleep and waking* (quoted) | C-89 |
 | 2Ki 4:33 | 02 *Sleep and waking* (quoted) | — |
 | 2Ki 4:34 | 02 *Sleep and waking* (quoted) | — |
 | 2Ki 4:35 | 02 *Sleep and waking* (quoted) | — |
@@ -799,7 +809,7 @@
 | 2Ki 12:15 | 10.4 *What thinking does* (quoted); 10.10 *(opening)* (quoted) | — |
 | 2Ki 13:21 | 02 *Life that returns* (quoted) | — |
 | 2Ki 13:23 | 13.1 *Willing* (quoted) | — |
-| 2Ki 14:6 | 02 *Death and sin* (quoted) | — |
+| 2Ki 14:6 | 02 *Death and sin* (quoted) | C-87 |
 | 2Ki 17:15 | 10.13 *How it is provoked* (quoted) | — |
 | 2Ki 17:33 | 10.9 *Fearing God as a way of life* (quoted); 12 *Fear that goes wrong* (quoted) | — |
 | 2Ki 17:34 | 10.9 *Fearing God as a way of life* (quoted); 12 *Fear that goes wrong* (quoted) | — |
@@ -977,6 +987,7 @@
 | Job 2:9 | 02 *Wanting to die* (quoted) | — |
 | Job 3:10 | 10.11 *Longing to be hidden* (quoted) | — |
 | Job 3:11 | 02 *Wanting to die* (quoted) | — |
+| Job 3:13 | 02 *Wanting to die* (quoted) | — |
 | Job 3:20 | 02 *Life weighed* (quoted) | — |
 | Job 3:21 | 02 *Wanting to die* (quoted) | — |
 | Job 3:25 | 10.1 *What fear does* (quoted); 10.12 *Fear that comes upon a person* (quoted) | — |
@@ -1004,6 +1015,8 @@
 | Job 7:2 | 02 *Life weighed* (quoted); 11 *What changes the character* (quoted) | — |
 | Job 7:3 | 02 *Life weighed* (quoted) | — |
 | Job 7:7 | 02 *Breath lent, and held by God* (quoted); 02 *Life weighed* (quoted); 10.6 *Wanting life* (quoted) | — |
+| Job 7:9 | 02 *After death* (quoted) | C-106 |
+| Job 7:10 | 02 *After death* (quoted) | C-106 |
 | Job 7:11 | 02 *Wanting to die* (quoted); 03 *Side by side* (quoted); 05 *The soul suffers* (quoted) | 1-1 |
 | Job 7:13 | 02 *Wanting to die*; 10.7 *What changes the character* | — |
 | Job 7:14 | 02 *Wanting to die* (quoted); 10.7 *What changes the character* | — |
@@ -1017,6 +1030,7 @@
 | Job 9:35 | 10.5 *Fear and the mouth* (quoted) | — |
 | Job 10:1 | 02 *Life weighed* (quoted); 05 *Loving and hating one's own soul* (quoted); 10.1 *Where it turns* (quoted); 11 *What changes the character* | — |
 | Job 10:12 | 06 *The human spirit* (quoted); 10.9 *The living God* (quoted) | — |
+| Job 11:8 | 02 *Going down to Sheol* (quoted) | C-93, C-93 |
 | Job 12:5 | 10.4 *When thinking changes character* (quoted); 11 *What changes the character* (quoted) | — |
 | Job 12:10 | 02 *Breath lent, and held by God* (quoted) | — |
 | Job 13:3 | 10.9 *Anger toward God, and before God* (quoted) | — |
@@ -1026,10 +1040,10 @@
 | Job 13:21 | 10.11 *Hiding from God* (quoted) | — |
 | Job 13:24 | 10.9 *When God hides his face* (quoted); 11 *What changes the character* (quoted) | — |
 | Job 14:7 | 02 *Sleep and waking* (quoted) | — |
-| Job 14:10 | 02 *After death* (quoted) | — |
-| Job 14:12 | 02 *Sleep and waking* (quoted); 11 *What changes the character* (quoted) | — |
+| Job 14:10 | 02 *After death* (quoted) | C-106 |
+| Job 14:12 | 02 *Sleep and waking* (quoted); 11 *What changes the character* (quoted) | C-89 |
 | Job 14:13 | 02 *Sleep and waking* (quoted); 10.3 *God remembers* (quoted); 10.11 *Longing to be hidden* (quoted); 10.13 *Shelter, and who can stand* (quoted) | — |
-| Job 14:14 | 02 *What death is* (quoted) | — |
+| Job 14:14 | 02 *What death is* (quoted) | C-83 |
 | Job 14:15 | 02 *Sleep and waking* (quoted); 13.1 *Delight* (quoted) | — |
 | Job 15:5 | 10.7 *Choices weighed by another* (quoted) | — |
 | Job 15:6 | 10.7 *Choices weighed by another* (quoted) | — |
@@ -1037,6 +1051,10 @@
 | Job 17:7 | 07 *Flesh answers the inner being* (quoted); 10.1 *Where it goes in the body* (quoted) | — |
 | Job 17:8 | 10.10 *Friends, company and care* (quoted); 11 *What changes the character* | — |
 | Job 17:9 | 10.10 *Friends, company and care* (quoted) | — |
+| Job 17:13 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
+| Job 17:14 | — | C-94, C-94 |
+| Job 17:15 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
+| Job 17:16 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Job 18:4 | 05 *The soul suffers* (quoted); 10.1 *Where it turns* (quoted) | — |
 | Job 18:11 | 10.12 *Dread laid on others* (quoted) | — |
 | Job 18:14 | 10.12 *Connections* | — |
@@ -1058,8 +1076,8 @@
 | Job 21:19 | 10.6 *Wanting and death* (quoted) | — |
 | Job 21:20 | 10.6 *Wanting and death* (quoted) | — |
 | Job 21:21 | 10.6 *Wanting and death* (quoted); 11 *4. One word, opposite values* (quoted) | — |
-| Job 21:23 | 02 *What death is* (quoted) | — |
-| Job 21:25 | 02 *What death is* (quoted) | — |
+| Job 21:23 | 02 *What death is* (quoted) | C-84 |
+| Job 21:25 | 02 *What death is* (quoted) | C-84 |
 | Job 22:21 | 10.9 *(opening)* (quoted) | — |
 | Job 22:22 | 10.9 *(opening)* (quoted) | — |
 | Job 22:23 | 10.9 *(opening)* (quoted) | — |
@@ -1071,9 +1089,11 @@
 | Job 24:4 | 10.11 *Hiding from people* (quoted) | — |
 | Job 24:11 | 10.10 *Friends, company and care* (quoted) | — |
 | Job 24:12 | 10.10 *Friends, company and care* (quoted) | — |
+| Job 24:19 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Job 25:2 | 13.1 *Ruling* (quoted) | — |
 | Job 26:4 | 02 *Breath lent, and held by God* (quoted) | — |
 | Job 26:5 | 15 *Other ways Scripture shows the inner life* (quoted) | — |
+| Job 26:6 | 02 *Going down to Sheol* (quoted) | C-98 |
 | Job 26:11 | 15 *Other ways Scripture shows the inner life* (quoted) | — |
 | Job 27:2 | 02 *Living before God* (quoted) | — |
 | Job 27:3 | 06 *The breath God lends* (quoted) | 2-9 |
@@ -1107,14 +1127,15 @@
 | Job 33:4 | 02 *Life breathed in* (quoted); 06 *The breath God lends* (quoted) | 3-3 |
 | Job 33:16 | 10.2 *(opening)* (quoted) | — |
 | Job 33:17 | 10.2 *(opening)* (quoted) | — |
+| Job 33:18 | 02 *Delivered from death* | — |
 | Job 33:20 | 02 *Delivered from death* (quoted); 11 *What changes the character* | — |
 | Job 33:22 | 02 *Delivered from death* (quoted) | — |
 | Job 33:24 | 02 *Delivered from death* (quoted) | — |
-| Job 33:26 | 02 *Delivered from death* (quoted); 10.1 *Where it turns* (quoted) | — |
-| Job 33:27 | 02 *Delivered from death* (quoted); 12 *The soul answers for it* (quoted) | — |
-| Job 33:28 | 02 *Delivered from death* (quoted) | — |
-| Job 33:29 | 02 *Delivered from death* (quoted) | — |
-| Job 33:30 | 02 *Delivered from death* (quoted); 10.10 *Friends, company and care* (quoted) | — |
+| Job 33:26 | 02 *Delivered from death* (quoted); 10.1 *Where it turns* (quoted) | C-105 |
+| Job 33:27 | 02 *Delivered from death* (quoted); 12 *The soul answers for it* (quoted) | C-105 |
+| Job 33:28 | 02 *Delivered from death* (quoted) | C-105 |
+| Job 33:29 | 02 *Delivered from death* (quoted) | C-105 |
+| Job 33:30 | 02 *Delivered from death* (quoted); 10.10 *Friends, company and care* (quoted) | C-105 |
 | Job 33:31 | 10.10 *Friends, company and care* (quoted) | — |
 | Job 33:32 | 10.1 *When delight is only the measure* (quoted); 10.10 *Friends, company and care* (quoted) | — |
 | Job 34:3 | 10.7 *Choices weighed by another* (quoted); 10.7 *What changes the character* | — |
@@ -1157,19 +1178,20 @@
 | Psa 5:9 | 12 *The heart as the source* (quoted) | — |
 | Psa 5:12 | 13.1 *Delight* (quoted) | — |
 | Psa 6:1 | 10.13 *Bearing it* (quoted) | — |
-| Psa 6:5 | 02 *After death* (quoted) | — |
+| Psa 6:5 | 02 *After death* (quoted) | C-106 |
 | Psa 6:7 | 10.1 *Where it goes in the body* (quoted) | — |
 | Psa 7:4 | 10.9 *Calling on God to wake* (quoted) | — |
 | Psa 7:5 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* | — |
-| Psa 7:6 | 02 *Sleep and waking*; 10.9 *Calling on God to wake* (quoted) | — |
+| Psa 7:6 | 02 *Sleep and waking*; 10.9 *Calling on God to wake* (quoted) | C-91 |
 | Psa 7:15 | 10.0 *The path runs back* (quoted); 10.4 *What is devised comes back* (quoted) | — |
 | Psa 7:16 | 10.0 *The path runs back* (quoted); 10.4 *What is devised comes back* (quoted) | — |
 | Psa 8:4 | 10.9 *Knowing who rules* (quoted); 11 *Authority as a standing* (quoted) | — |
 | Psa 8:6 | 13.4 *(opening)* (quoted) | — |
 | Psa 8:7 | 13.4 *(opening)* (quoted) | — |
 | Psa 8:9 | 10.9 *Knowing who rules* (quoted); 11 *Authority as a standing* (quoted) | — |
-| Psa 9:13 | 02 *Delivered from death* (quoted) | — |
+| Psa 9:13 | 02 *Delivered from death* (quoted) | C-104 |
 | Psa 9:15 | 10.11 *The hidden trap* (quoted) | — |
+| Psa 9:17 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Psa 9:20 | 10.12 *Dread laid on others* (quoted) | — |
 | Psa 10 | 10.10 *Making others afraid* (no verse row) | — |
 | Psa 10:2 | 10.4 *When thinking changes character* (quoted); 10.4 *What is devised comes back* (quoted); 10.10 *Plotting against another* (quoted); 11 *What changes the character* | — |
@@ -1195,12 +1217,15 @@
 | Psa 16:6 | 10.6 *Aimed at God* (quoted) | — |
 | Psa 16:8 | 10.6 *Aimed at God* (quoted) | — |
 | Psa 16:9 | 04 *The heart feels*; 07 *Flesh answers the inner being* (quoted) | — |
-| Psa 16:10 | 02 *Soul, spirit and heart at death* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 3-9, 3-9 |
+| Psa 16:10 | 02 *Soul, spirit and heart at death* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 3-9, 3-9, C-100, C-102 |
 | Psa 16:11 | 10.6 *Aimed at God* (quoted) | — |
 | Psa 17:3 | 10.7 *Holding a choice*; 10.7 *Planning* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Psa 17:5 | 10.7 *Planning* (quoted) | — |
 | Psa 17:8 | 10.11 *Hiding another* (quoted) | — |
-| Psa 17:15 | 02 *Sleep and waking* (quoted); 02 *The body raised* (quoted) | — |
+| Psa 17:15 | 02 *Sleep and waking* (quoted); 02 *The body raised* (quoted) | C-92 |
+| Psa 18:4 | 02 *Delivered from death* (quoted) | C-104 |
+| Psa 18:5 | 02 *Delivered from death* (quoted) | C-104 |
+| Psa 18:6 | — | C-104 |
 | Psa 18:7 | 10.13 *Dread and trembling* (quoted); 10.13 *Other parties* (quoted) | — |
 | Psa 18:19 | 10.1 *When feeling changes character*; 11 *4. One word, opposite values* (quoted); 11 *What changes the character*; 13.1 *Delight* (quoted) | — |
 | Psa 19:7 | 05 *The soul is hunted and rescued* (quoted); 14 *Revived, restored, renewed* (quoted) | — |
@@ -1243,7 +1268,7 @@
 | Psa 27:13 | 02 *Living before God* (quoted) | — |
 | Psa 27:14 | 04 *The heart feels* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Psa 30 | 10.9 *When God hides his face* (no verse row) | — |
-| Psa 30:3 | 02 *Delivered from death* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 3-9 |
+| Psa 30:3 | 02 *Delivered from death* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 3-9, C-102 |
 | Psa 30:5 | 10.13 *(opening)* (quoted); 10.13 *What changes it* (quoted); 11 *What changes the character* (quoted); 13.1 *Delight* (quoted) | — |
 | Psa 30:6 | 10.9 *When God hides his face* (quoted) | — |
 | Psa 30:7 | 10.9 *When God hides his face* (quoted); 15 *Other ways Scripture shows the inner life* (quoted) | — |
@@ -1253,17 +1278,18 @@
 | Psa 31:9 | 05 *The soul suffers* (quoted); 10.13 *Where it sits* (quoted) | — |
 | Psa 31:10 | 02 *Life weighed* (quoted) | — |
 | Psa 31:11 | 10.10 *Making others afraid* (quoted) | — |
-| Psa 31:12 | 02 *Soul, spirit and heart at death* (quoted) | — |
+| Psa 31:12 | 02 *Soul, spirit and heart at death* (quoted) | C-103 |
 | Psa 31:13 | 10.10 *Plotting against another*; 10.12 *Dread laid on others* (quoted) | — |
 | Psa 31:14 | 10.10 *Plotting against another* (quoted); 10.12 *Dread laid on others* (quoted) | — |
 | Psa 31:15 | 10.10 *Plotting against another* (quoted) | — |
+| Psa 31:17 | 02 *Going down to Sheol* (quoted) | C-95 |
 | Psa 31:20 | 10.11 *Hiding another* (quoted) | — |
 | Psa 32:1 | 06 *The human spirit* (quoted) | — |
 | Psa 32:2 | 06 *The human spirit* (quoted); 09 *Lines that are often drawn, but that I cannot find* | 2-2 |
 | Psa 32:4 | 10.13 *The hand that is felt* (quoted) | — |
 | Psa 32:5 | 06 *The human spirit* (quoted); 10.13 *The hand that is felt* (quoted) | — |
 | Psa 33:11 | 11 *8. God has a heart and a soul* (quoted) | — |
-| Psa 33:19 | 02 *Breath lent, and held by God* (quoted) | — |
+| Psa 33:19 | 02 *Breath lent, and held by God* (quoted); 02 *Delivered from death* | — |
 | Psa 34:10 | 10.6 *Wanting life* (quoted) | — |
 | Psa 34:11 | 10.6 *Wanting life* (quoted) | — |
 | Psa 34:12 | 02 *Life weighed* (quoted); 10.6 *Wanting life* (quoted) | — |
@@ -1277,7 +1303,7 @@
 | Psa 35:13 | 08 *The bosom* (quoted) | — |
 | Psa 35:17 | 02 *Sleep and waking* (quoted) | — |
 | Psa 35:20 | 10.5 *The tongue, the lips and the eyes devise* (quoted); 10.10 *Plotting against another* (quoted) | — |
-| Psa 35:23 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted) | — |
+| Psa 35:23 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted) | C-91 |
 | Psa 35:25 | 10.6 *Wanting speaks, and drives thinking* (quoted) | — |
 | Psa 36:1 | 12 *The heart as the source* (quoted) | — |
 | Psa 36:4 | 10.0 *From a thought to a deed* (quoted); 10.4 *The night and the bed* (quoted); 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | — |
@@ -1327,7 +1353,7 @@
 | Psa 44 | 02 *Sleep and waking* (no verse row) | — |
 | Psa 44:21 | 04 *The heart is hidden, and God sees it* (quoted) | — |
 | Psa 44:22 | 02 *Sleep and waking* (quoted); 10.4 *What thinking does* (quoted); 10.9 *Calling on God to wake* (quoted) | — |
-| Psa 44:23 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted); 11 *What changes the character* | — |
+| Psa 44:23 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted); 11 *What changes the character* | C-91 |
 | Psa 44:24 | 10.9 *When God hides his face* (quoted) | — |
 | Psa 44:25 | 05 *The soul suffers* (quoted); 10.9 *When God hides his face* (quoted) | — |
 | Psa 45:1 | 10.5 *From the heart to the mouth* (quoted) | — |
@@ -1338,10 +1364,10 @@
 | Psa 49:8 | 05 *The soul is hunted and rescued* (quoted) | — |
 | Psa 49:10 | 02 *Soul, spirit and heart at death* (quoted) | — |
 | Psa 49:14 | 02 *Soul, spirit and heart at death* (quoted) | — |
-| Psa 49:15 | 02 *Soul, spirit and heart at death* (quoted); 02 *Delivered from death*; 02 *After death* (quoted) | 3-9, 3-9 |
+| Psa 49:15 | 02 *Soul, spirit and heart at death* (quoted); 02 *Delivered from death*; 02 *After death* (quoted) | 3-9, 3-9, C-100, C-101, C-102, C-110 |
 | Psa 49:16 | 02 *Soul, spirit and heart at death* (quoted); 10.12 *Fear between people* (quoted) | — |
-| Psa 49:17 | 02 *What death is* (quoted) | — |
-| Psa 49:19 | 02 *Soul, spirit and heart at death* (quoted); 02 *After death* (quoted) | — |
+| Psa 49:17 | 02 *What death is* (quoted) | C-84 |
+| Psa 49:19 | 02 *Soul, spirit and heart at death* (quoted); 02 *After death* (quoted) | C-100, C-106 |
 | Psa 50:21 | 10.4 *What thinking does* (quoted); 10.9 *(opening)* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
 | Psa 51:5 | 13.1 *Delight* (quoted) | — |
 | Psa 51:6 | 13.1 *Delight* (quoted) | — |
@@ -1362,18 +1388,20 @@
 | Psa 55:4 | 02 *Facing death* (quoted); 10.10 *Anger between people* (quoted); 10.12 *Fear that comes upon a person* (quoted) | — |
 | Psa 55:5 | 10.1 *Fear* (quoted); 10.12 *(opening)* (quoted); 10.12 *Fear that comes upon a person* (quoted); 10.12 *The fear of God* (quoted) | — |
 | Psa 55:12 | 10.10 *Care, discouragement and hiding between people* (quoted); 10.11 *Hiding from people* (quoted); 10.11 *What changes it* | — |
-| Psa 55:13 | 10.10 *Care, discouragement and hiding between people* (quoted); 10.11 *Hiding from people* (quoted); 10.11 *What changes it* | — |
+| Psa 55:13 | 02 *Going down to Sheol*; 10.10 *Care, discouragement and hiding between people* (quoted); 10.11 *Hiding from people* (quoted); 10.11 *What changes it* | C-95 |
+| Psa 55:14 | 02 *Going down to Sheol* | C-95 |
+| Psa 55:15 | 02 *Going down to Sheol* (quoted) | C-95 |
 | Psa 55:21 | 04 *The heart is the source* (quoted); 10.5 *When mouth and heart part*; 12 *The heart deceives its owner* (quoted) | — |
 | Psa 56:3 | 10.1 *Meeting fear* (quoted); 10.1 *When feeling changes character* (quoted); 10.12 *What fear does* (quoted); 10.12 *"Fear not"* (quoted); 11 *What changes the character* (quoted) | — |
 | Psa 56:4 | 07 *What flesh means* (quoted); 10.1 *Meeting fear* (quoted); 10.12 *"Fear not"* (quoted) | — |
 | Psa 56:5 | 11 *What changes the character* (quoted) | — |
-| Psa 56:13 | 02 *Delivered from death* (quoted) | — |
+| Psa 56:13 | 02 *Delivered from death* (quoted) | C-105 |
 | Psa 57:6 | 10.9 *Calling on God to wake* (quoted) | — |
 | Psa 57:7 | 10.9 *Calling on God to wake* (quoted) | — |
 | Psa 57:8 | 10.9 *Calling on God to wake* (quoted); 11 *5. Voices to the soul* (quoted) | — |
 | Psa 58:4 | 10.13 *The words* (quoted) | — |
 | Psa 59:3 | 02 *Sleep and waking* (quoted) | — |
-| Psa 59:4 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted) | — |
+| Psa 59:4 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted) | C-91 |
 | Psa 59:13 | 13.1 *Ruling* (quoted) | — |
 | Psa 63:1 | 05 *The soul wants* (quoted); 07 *Flesh answers the inner being* (quoted) | 2-14 |
 | Psa 63:3 | 10.9 *The living God* (quoted) | — |
@@ -1387,7 +1415,7 @@
 | Psa 66:3 | 10.13 *Shelter, and who can stand* (quoted) | — |
 | Psa 66:7 | 13.1 *Ruling* (quoted) | — |
 | Psa 68:16 | 13.1 *Delight* (quoted) | — |
-| Psa 68:20 | 02 *Delivered from death* (quoted) | — |
+| Psa 68:20 | 02 *Delivered from death* (quoted) | C-104 |
 | Psa 68:29 | 10.1 *Delight* (quoted) | — |
 | Psa 68:30 | 10.1 *Delight* (quoted); 10.1 *When feeling changes character* | — |
 | Psa 68:31 | 10.1 *Delight* (quoted) | — |
@@ -1448,11 +1476,12 @@
 | Psa 84:2 | 02 *Living before God* (quoted); 05 *The soul wants* (quoted); 07 *Flesh answers the inner being* (quoted); 10.9 *The living God* (quoted) | — |
 | Psa 85:6 | 02 *Life asked for* (quoted) | — |
 | Psa 86:11 | 04 *The heart holds what is put into it* (quoted); 10.7 *What a choice rests on* (quoted); 10.7 *Setting the heart* (quoted); 10.9 *Fearing God as a way of life* (quoted) | — |
-| Psa 86:13 | — | 3-9 |
+| Psa 86:13 | 02 *Delivered from death* (quoted) | 3-9, C-102 |
+| Psa 86:14 | 02 *Delivered from death* (quoted) | — |
 | Psa 88 | 10.13 *Bearing it* (no verse row) | — |
 | Psa 88:3 | 02 *Life weighed* (quoted); 10.4 *What thinking does* (quoted) | — |
 | Psa 88:4 | 10.4 *What thinking does* (quoted) | — |
-| Psa 88:5 | 02 *Death in the living* (quoted) | — |
+| Psa 88:5 | 02 *Death in the living* (quoted) | C-88 |
 | Psa 88:7 | 10.13 *How it is spoken of* (quoted) | — |
 | Psa 88:14 | 10.9 *When God hides his face* (quoted) | — |
 | Psa 88:16 | 10.13 *Bearing it* (quoted) | — |
@@ -1461,7 +1490,7 @@
 | Psa 89:17 | 13.1 *Delight* (quoted) | — |
 | Psa 89:46 | 10.9 *When God hides his face* (quoted) | — |
 | Psa 89:47 | 10.9 *When God hides his face* (quoted) | — |
-| Psa 89:48 | 02 *What death is* (quoted); 02 *Delivered from death* | 3-9, 3-9 |
+| Psa 89:48 | 02 *What death is* (quoted); 02 *Delivered from death* | 3-9, 3-9, C-83, C-102 |
 | Psa 89:50 | 08 *The bosom* (quoted) | — |
 | Psa 90:7 | 10.13 *Bearing it* (quoted) | — |
 | Psa 90:9 | 02 *Breath lent, and held by God* (quoted); 10.13 *The responses, gathered* (quoted) | — |
@@ -1492,7 +1521,7 @@
 | Psa 104:15 | 03 *Causes running in every direction*; 09 *Inner and outer*; 10.1 *Feeling and thinking* (quoted); 13.4 *(opening)* (quoted) | — |
 | Psa 104:27 | 13.4 *(opening)* (quoted) | — |
 | Psa 104:28 | 13.4 *(opening)* (quoted) | — |
-| Psa 104:29 | 02 *Breath lent, and held by God* (quoted); 02 *What death is* (quoted); 06 *The breath God lends* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted); 10.9 *When God hides his face* (quoted) | 2-5 |
+| Psa 104:29 | 02 *Breath lent, and held by God* (quoted); 02 *What death is* (quoted); 06 *The breath God lends* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted); 10.9 *When God hides his face* (quoted) | 2-5, C-82 |
 | Psa 104:30 | 02 *Breath lent, and held by God* (quoted); 06 *The breath God lends* (quoted) | — |
 | Psa 105:5 | 10.7 *Being chosen* (quoted) | — |
 | Psa 105:6 | 10.7 *Being chosen* (quoted) | — |
@@ -1531,7 +1560,7 @@
 | Psa 115:3 | 10.10 *Reverence for people* (quoted); 13.1 *Delight* (quoted) | — |
 | Psa 115:5 | 13.1 *Delight* (quoted) | — |
 | Psa 115:7 | 10.5 *Speech before words* (quoted) | — |
-| Psa 115:17 | 02 *After death* (quoted) | — |
+| Psa 115:17 | 02 *After death* (quoted) | C-106, C-109 |
 | Psa 116:3 | 02 *Delivered from death* (quoted); 13.1 *Delight* (quoted) | — |
 | Psa 116:4 | 02 *Delivered from death* (quoted) | — |
 | Psa 116:5 | 02 *Delivered from death* | — |
@@ -1539,8 +1568,8 @@
 | Psa 116:7 | 02 *Delivered from death* (quoted); 05 *The soul is spoken to* (quoted) | — |
 | Psa 116:8 | 02 *Delivered from death* (quoted); 05 *The soul is hunted and rescued* (quoted); 13.1 *Delight* | — |
 | Psa 116:15 | 02 *Dying to the Lord* (quoted); 13.1 *Delight* (quoted) | — |
-| Psa 118:17 | 02 *Delivered from death* (quoted) | — |
-| Psa 118:18 | 02 *Delivered from death* (quoted) | — |
+| Psa 118:17 | 02 *Delivered from death* (quoted) | C-105 |
+| Psa 118:18 | 02 *Delivered from death* (quoted) | C-104 |
 | Psa 119 | 02 *Life asked for* (no verse row); 10.7 *What a choice rests on* (no verse row); 10.9 *(opening)* (no verse row) | — |
 | Psa 119:11 | 04 *The heart thinks, attends and remembers* (quoted); 10.3 *(opening)* (quoted) | — |
 | Psa 119:14 | 10.1 *On God's word, and on God* (quoted) | — |
@@ -1583,7 +1612,7 @@
 | Psa 119:173 | 10.6 *Aimed at God* (quoted) | — |
 | Psa 119:174 | 10.6 *Aimed at God* (quoted) | — |
 | Psa 119:175 | 02 *Life asked for* (quoted); 10.9 *(opening)* (quoted) | — |
-| Psa 121:4 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted) | — |
+| Psa 121:4 | 02 *Sleep and waking* (quoted); 10.9 *Calling on God to wake* (quoted) | C-91 |
 | Psa 124:3 | 10.13 *Other parties* (quoted) | — |
 | Psa 125:3 | 10.8 *(opening)* (quoted) | — |
 | Psa 125:4 | 10.8 *(opening)* (quoted); 13.1 *Choosing* (quoted) | — |
@@ -1600,6 +1629,7 @@
 | Psa 138:7 | 10.13 *Other parties* (quoted) | — |
 | Psa 139:2 | 04 *The heart is hidden, and God sees it* (quoted); 10.4 *Small, passing, and wholly seen* (quoted) | — |
 | Psa 139:4 | 10.5 *Speech is heard* (quoted) | — |
+| Psa 139:8 | 02 *Going down to Sheol* (quoted) | C-98 |
 | Psa 139:14 | 01 *The shape of what follows* (quoted); 10.11 *Hiding from God* (quoted) | — |
 | Psa 139:15 | 10.11 *Hiding from God* (quoted) | — |
 | Psa 139:17 | 10.4 *Small, passing, and wholly seen* (quoted); 10.9 *(opening)* (quoted) | — |
@@ -1613,7 +1643,8 @@
 | Psa 141:4 | 10.7 *Setting the heart* (quoted) | — |
 | Psa 141:5 | 10.7 *Setting the heart* (quoted) | — |
 | Psa 141:6 | 10.1 *When delight is only the measure* (quoted); 10.7 *Setting the heart* (quoted) | — |
-| Psa 141:8 | 10.7 *Setting the heart* (quoted) | — |
+| Psa 141:7 | 02 *Going down to Sheol* (quoted) | C-94 |
+| Psa 141:8 | 02 *Going down to Sheol* (quoted); 10.7 *Setting the heart* (quoted) | C-94 |
 | Psa 142:3 | 10.11 *The hidden trap* (quoted) | — |
 | Psa 142:4 | 10.11 *The hidden trap* (quoted) | — |
 | Psa 142:5 | 02 *Living before God* (quoted) | — |
@@ -1640,6 +1671,7 @@
 | Pro 1:7 | 10.1 *The fear of God* (quoted); 10.2 *(opening)* (quoted); 10.12 *The fear of God* (quoted); 10.12 *Connections* (quoted) | — |
 | Pro 1:10 | 10.7 *Willing* (quoted); 10.10 *Plotting against another* (quoted) | — |
 | Pro 1:11 | 10.10 *Plotting against another* (quoted) | — |
+| Pro 1:12 | 02 *Going down to Sheol* (quoted) | C-97 |
 | Pro 1:13 | 10.6 *Possessions* (quoted) | — |
 | Pro 1:19 | 10.6 *Possessions* (quoted) | — |
 | Pro 1:22 | 10.1 *Delight* (quoted) | — |
@@ -1669,7 +1701,8 @@
 | Pro 4:25 | 04 *The heart is the source* | — |
 | Pro 4:26 | 04 *The heart is the source* | — |
 | Pro 4:27 | 04 *The heart is the source* | — |
-| Pro 5:6 | 10.4 *Thinking and life* (quoted) | — |
+| Pro 5:5 | 02 *Going down to Sheol* (quoted) | C-96 |
+| Pro 5:6 | 02 *Going down to Sheol* (quoted); 10.4 *Thinking and life* (quoted) | C-96 |
 | Pro 6:14 | 04 *The heart and anger* (quoted) | — |
 | Pro 6:18 | 10.0 *From a thought to a deed* (quoted) | — |
 | Pro 6:21 | 04 *The heart holds what is put into it* (quoted) | — |
@@ -1679,6 +1712,9 @@
 | Pro 6:34 | 10.1 *When feeling changes character* (quoted); 10.6 *Jealousy and envy*; 10.13 *Connections*; 11 *What changes the character* | — |
 | Pro 6:35 | 10.1 *Where it turns* (quoted); 10.1 *When feeling changes character* (quoted); 10.6 *Jealousy and envy* (quoted); 10.7 *Willing* (quoted); 11 *What changes the character* (quoted) | — |
 | Pro 7:10 | 11 *4. One word, opposite values* | — |
+| Pro 7:25 | 02 *Going down to Sheol* (quoted) | C-96 |
+| Pro 7:26 | — | C-96 |
+| Pro 7:27 | 02 *Going down to Sheol* (quoted) | C-96 |
 | Pro 8:7 | 10.5 *From the heart to the mouth* (quoted) | — |
 | Pro 8:12 | 11 *What changes the character* | — |
 | Pro 8:13 | 10.1 *The fear of God* (quoted); 10.8 *(opening)* (quoted); 10.12 *The fear of God* (quoted) | — |
@@ -1704,7 +1740,7 @@
 | Pro 11:1 | 13.1 *Delight* (quoted) | — |
 | Pro 11:4 | 10.13 *Shelter, and who can stand* (quoted) | — |
 | Pro 11:6 | 10.6 *Wanting that owns the one who wants* (quoted); 12 *The heart as the source* (quoted) | — |
-| Pro 11:7 | 02 *What death is* (quoted) | — |
+| Pro 11:7 | 02 *What death is* (quoted) | C-84 |
 | Pro 11:20 | 13.1 *Delight* (quoted) | — |
 | Pro 11:23 | 10.6 *Evil desire* (quoted) | — |
 | Pro 11:29 | 12 *Wind: the image of emptiness* (quoted) | — |
@@ -1736,10 +1772,12 @@
 | Pro 15:1 | 10.0 *How the activities connect* (quoted); 10.1 *When feeling changes character* (quoted); 10.5 *Anger in words* (quoted); 10.13 *Governed, and put away* (quoted); 10.13 *What changes it*; 10.13 *Connections*; 11 *What changes the character* (quoted); 15 *Other ways Scripture shows the inner life* (quoted) | — |
 | Pro 15:4 | 02 *Where life flows from* (quoted) | — |
 | Pro 15:8 | 13.1 *Delight* (quoted) | — |
+| Pro 15:11 | 02 *Going down to Sheol* (quoted) | C-98 |
 | Pro 15:13 | 03 *Causes running in every direction* (quoted); 06 *The human spirit* (quoted); 10.1 *Feeling and thinking* (quoted); 11 *3. The parts give way in sequence* (quoted) | — |
 | Pro 15:15 | 10.1 *Feeling and thinking* (quoted) | — |
 | Pro 15:18 | 10.13 *What it does next* (quoted) | — |
 | Pro 15:22 | 10.4 *When thinking changes character* (quoted) | — |
+| Pro 15:24 | 02 *Going down to Sheol* (quoted) | C-93, C-93 |
 | Pro 15:27 | 10.6 *Possessions* (quoted) | — |
 | Pro 15:28 | 10.0 *From a thought to a deed* (quoted); 10.5 *The pause between* (quoted); 11 *What changes the character* (quoted) | — |
 | Pro 15:30 | 03 *Causes running in every direction* (quoted) | — |
@@ -1807,6 +1845,8 @@
 | Pro 23:5 | 10.6 *Possessions* (quoted) | — |
 | Pro 23:6 | 10.6 *Possessions* (quoted) | — |
 | Pro 23:7 | 10.5 *When mouth and heart part* (quoted); 10.6 *Possessions* (quoted); 10.10 *(opening)* (quoted) | — |
+| Pro 23:13 | 02 *Delivered from death* (quoted) | — |
+| Pro 23:14 | 02 *Delivered from death* (quoted) | C-102 |
 | Pro 23:17 | 10.6 *Jealousy and envy* (quoted) | — |
 | Pro 23:18 | 10.6 *Jealousy and envy* (quoted) | — |
 | Pro 23:33 | 10.6 *Wanting that owns the one who wants* | — |
@@ -1841,6 +1881,7 @@
 | Pro 27:14 | 10.4 *What thinking does* (quoted) | — |
 | Pro 27:15 | 10.10 *Anger between people* (quoted) | — |
 | Pro 27:19 | 04 *The heart feels* (quoted) | — |
+| Pro 27:20 | 02 *Going down to Sheol* (quoted) | C-97 |
 | Pro 28:14 | 12 *Fear that goes wrong* (quoted) | — |
 | Pro 28:15 | 10.10 *Holding authority over another* (quoted) | — |
 | Pro 28:16 | 10.10 *Holding authority over another* (quoted); 11 *Authority as a standing* (quoted) | — |
@@ -1851,6 +1892,8 @@
 | Pro 29:22 | 10.13 *What it does next* (quoted); 10.13 *Connections* | — |
 | Pro 29:25 | 10.1 *What fear does* (quoted); 10.12 *Fear set against faith and love* (quoted) | — |
 | Pro 30:7 | 02 *Dying to the Lord* (quoted) | — |
+| Pro 30:15 | 02 *Going down to Sheol* | C-97 |
+| Pro 30:16 | 02 *Going down to Sheol* | C-97 |
 | Pro 30:32 | 10.10 *Plotting against another* (quoted) | — |
 | Pro 30:33 | 10.10 *Plotting against another* (quoted); 10.13 *The words* (quoted) | — |
 | Pro 31 | 10.7 *Planning* (no verse row) | — |
@@ -1860,13 +1903,13 @@
 | Ecc 1:13 | 04 *The heart thinks, attends and remembers* (quoted) | — |
 | Ecc 2:1 | 04 *The heart speaks to itself* (quoted) | — |
 | Ecc 2:11 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
-| Ecc 2:16 | 02 *What death is* (quoted) | — |
+| Ecc 2:16 | 02 *What death is* (quoted) | C-83 |
 | Ecc 2:17 | 02 *Life weighed* (quoted); 05 *Loving and hating one's own soul* (quoted) | — |
 | Ecc 2:23 | 04 *The heart and anger* (quoted); 10.1 *Where it goes in the body* (quoted) | — |
 | Ecc 2:24 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 2:25 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 2:26 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
-| Ecc 3:2 | 02 *What death is* (quoted) | — |
+| Ecc 3:2 | 02 *What death is* (quoted) | C-83 |
 | Ecc 3:11 | 02 *Where life flows from* (quoted); 04 *The heart holds what is put into it* (quoted); 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 3:12 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 3:13 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
@@ -1893,7 +1936,7 @@
 | Ecc 6:3 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 6:9 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 6:12 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
-| Ecc 7:1 | 02 *What death is* (quoted) | — |
+| Ecc 7:1 | 02 *What death is* (quoted) | C-84 |
 | Ecc 7:2 | 10.1 *When feeling changes character* (quoted) | — |
 | Ecc 7:3 | 04 *The heart and anger* (quoted); 10.1 *When feeling changes character* (quoted); 10.13 *The words* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Ecc 7:8 | 06 *The human spirit* (quoted) | — |
@@ -1911,12 +1954,13 @@
 | Ecc 8:12 | 02 *Life set before a person* (quoted); 10.4 *Thinking and life* (quoted) | — |
 | Ecc 8:14 | 10.6 *Aimed at nothing, and enjoyment given* | — |
 | Ecc 8:15 | 10.6 *Aimed at nothing, and enjoyment given* (quoted); 11 *What changes the character* (quoted) | — |
-| Ecc 9:3 | 02 *Life weighed* (quoted); 02 *Soul, spirit and heart at death* (quoted); 12 *The heart as the source* (quoted) | — |
+| Ecc 9:3 | 02 *Life weighed* (quoted); 02 *Soul, spirit and heart at death* (quoted); 12 *The heart as the source* (quoted) | C-103 |
 | Ecc 9:4 | 02 *Life weighed* (quoted) | — |
-| Ecc 9:5 | 02 *After death* (quoted) | — |
+| Ecc 9:5 | 02 *After death* (quoted) | C-106, C-109 |
 | Ecc 9:6 | 10.6 *Jealousy and envy* (quoted) | — |
 | Ecc 9:7 | 11 *2. Thresholds: the merry heart and the sad heart* (quoted) | — |
 | Ecc 9:9 | 02 *Life weighed* (quoted) | — |
+| Ecc 9:10 | 02 *After death* (quoted) | C-106 |
 | Ecc 11:5 | 02 *Life breathed in* (quoted) | 3-4 |
 | Ecc 11:7 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
 | Ecc 11:8 | 10.6 *Aimed at nothing, and enjoyment given* (quoted) | — |
@@ -1971,11 +2015,12 @@
 | Isa 5:11 | 10.6 *Thirst answered* (quoted) | — |
 | Isa 5:12 | 10.6 *Thirst answered* (quoted) | — |
 | Isa 5:13 | 10.6 *Thirst answered* (quoted) | — |
-| Isa 5:14 | 05 *From throat to corpse* (quoted) | — |
+| Isa 5:14 | 02 *Going down to Sheol* (quoted); 05 *From throat to corpse* (quoted) | C-97 |
 | Isa 5:25 | 10.13 *Turned, and not turned* (quoted) | — |
 | Isa 6:10 | 04 *The heart thinks, attends and remembers* (quoted) | — |
 | Isa 7:2 | 04 *The heart and anger* (quoted) | — |
 | Isa 7:4 | 04 *The heart and anger* (quoted); 10.7 *Fear and choosing* (quoted); 10.13 *Other parties* (quoted) | — |
+| Isa 7:11 | 02 *Going down to Sheol* (quoted) | C-93, C-93 |
 | Isa 7:12 | 10.7 *Two sides* (quoted) | — |
 | Isa 7:15 | 10.7 *(opening)* (quoted); 10.7 *The words* (quoted); 10.7 *Two sides* (quoted); 10.7 *What a choice rests on* (quoted); 10.7 *Being chosen*; 10.7 *What follows a choice* (quoted); 10.7 *What changes the character*; 11 *4. One word, opposite values* (quoted); 11 *What changes the character* | — |
 | Isa 7:16 | 10.7 *What changes the character* | — |
@@ -2005,14 +2050,16 @@
 | Isa 13:13 | 10.13 *Dread and trembling* (quoted) | — |
 | Isa 13:17 | 10.4 *What thinking does* (quoted); 13.1 *Stirring* (quoted) | — |
 | Isa 13:18 | 10.4 *What thinking does* (quoted) | — |
-| Isa 14:4 | 10.10 *Anger between people* (quoted); 12 *Pride and the lifted-up heart and spirit* | — |
+| Isa 14:4 | 02 *After death*; 10.10 *Anger between people* (quoted); 12 *Pride and the lifted-up heart and spirit* | C-107 |
 | Isa 14:5 | 13.1 *Ruling* (quoted) | — |
 | Isa 14:6 | 10.10 *Anger between people* (quoted) | — |
 | Isa 14:7 | 10.10 *Anger between people* (quoted) | — |
-| Isa 14:10 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Isa 14:9 | 02 *After death* (quoted) | C-93, C-93, C-107, C-109 |
+| Isa 14:10 | 02 *After death* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | C-107, C-109 |
 | Isa 14:11 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
 | Isa 14:13 | 04 *The heart speaks to itself* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
 | Isa 14:14 | 11 *4. One word, opposite values* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Isa 14:15 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Isa 17:2 | 10.12 *"Fear not"* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Isa 19:4 | 13.1 *Ruling* (quoted) | — |
 | Isa 21:4 | 10.6 *Taken away* (quoted) | — |
@@ -2024,15 +2071,16 @@
 | Isa 26:8 | 05 *The soul wants* (quoted); 10.6 *Aimed at God* (quoted) | — |
 | Isa 26:9 | 01 *(opening)* (quoted); 03 *Side by side* (quoted) | 1-1 |
 | Isa 26:11 | 13.1 *Jealousy* (quoted) | — |
-| Isa 26:14 | 02 *Sleep and waking* (quoted); 02 *The body raised* (quoted) | — |
-| Isa 26:19 | 02 *Sleep and waking* (quoted); 02 *The body raised* (quoted) | — |
+| Isa 26:14 | 02 *Sleep and waking* (quoted); 02 *The body raised* (quoted) | C-92 |
+| Isa 26:19 | 02 *Sleep and waking* (quoted); 02 *The body raised* (quoted) | C-92 |
 | Isa 26:20 | 10.11 *What changes it* (quoted); 10.13 *Shelter, and who can stand* (quoted); 10.13 *The responses, gathered* (quoted) | — |
 | Isa 27:2 | 13.1 *Delight* (quoted) | — |
 | Isa 27:3 | 13.1 *Delight* (quoted) | — |
 | Isa 27:4 | 10.13 *Why it is held back* (quoted); 13.1 *Delight* (quoted) | — |
 | Isa 28:12 | 10.7 *Willing* (quoted); 10.7 *What changes the character* | — |
-| Isa 28:15 | 10.6 *Precious* (quoted); 10.11 *Hiding another* (quoted) | — |
+| Isa 28:15 | 02 *Going down to Sheol* (quoted); 10.6 *Precious* (quoted); 10.11 *Hiding another* (quoted) | C-99 |
 | Isa 28:16 | 10.6 *Precious* (quoted) | — |
+| Isa 28:18 | 02 *Going down to Sheol* (quoted) | C-99 |
 | Isa 28:19 | 10.2 *(opening)* (quoted); 10.13 *Dread and trembling* (quoted) | — |
 | Isa 29:8 | 10.6 *Unmet, and wanting against God* (quoted) | — |
 | Isa 29:10 | 06 *"A spirit of …" — what comes upon a person* (quoted); 12 *Dispositions that come upon a person, and spirits that act* (quoted) | 9-4, 9-4 |
@@ -2057,11 +2105,13 @@
 | Isa 38:2 | 10.9 *Waiting, and pleading* (quoted) | — |
 | Isa 38:3 | 02 *Life asked for* (quoted); 10.9 *Waiting, and pleading* (quoted) | — |
 | Isa 38:5 | 10.9 *Waiting, and pleading* (quoted) | — |
-| Isa 38:11 | 02 *Living before God* (quoted) | — |
+| Isa 38:10 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
+| Isa 38:11 | 02 *Living before God* (quoted); 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Isa 38:14 | 10.1 *Feeling and thinking* (quoted); 10.5 *Speech before words* (quoted) | — |
 | Isa 38:16 | 02 *Life that returns* (quoted); 06 *The human spirit* (quoted) | — |
-| Isa 38:17 | 13.1 *Delight* (quoted) | — |
-| Isa 38:19 | 10.9 *The living God* (quoted) | — |
+| Isa 38:17 | 02 *Delivered from death* (quoted); 13.1 *Delight* (quoted) | — |
+| Isa 38:18 | 02 *Going down to Sheol* (quoted); 02 *After death* (quoted) | C-98, C-106 |
+| Isa 38:19 | 02 *After death* (quoted); 10.9 *The living God* (quoted) | C-105, C-106 |
 | Isa 39:2 | 10.11 *Hiding what I hold* (quoted) | — |
 | Isa 39:4 | 10.11 *Hiding what I hold* (quoted) | — |
 | Isa 39:6 | 10.11 *Hiding what I hold* (quoted) | — |
@@ -2139,7 +2189,7 @@
 | Isa 53:3 | 10.4 *What thinking does*; 10.6 *Through the eye* (quoted) | — |
 | Isa 53:4 | 10.0 *From a thought to a deed* (quoted); 10.4 *What thinking does* (quoted); 10.6 *Through the eye* (quoted); 11 *4. One word, opposite values* (quoted) | — |
 | Isa 53:10 | 13.1 *Delight* | — |
-| Isa 53:12 | 02 *Soul, spirit and heart at death* (quoted); 02 *Made alive* (quoted) | — |
+| Isa 53:12 | 02 *Soul, spirit and heart at death* (quoted); 02 *Made alive* (quoted) | C-100 |
 | Isa 54:6 | 10.9 *When God hides his face* (quoted) | — |
 | Isa 54:8 | 10.9 *When God hides his face* (quoted); 10.13 *How it ends* (quoted) | — |
 | Isa 54:11 | 11 *4. One word, opposite values* (quoted) | — |
@@ -2413,7 +2463,7 @@
 | Eze 16:43 | 10.13 *How it is provoked* (quoted); 13.1 *Jealousy* (quoted) | — |
 | Eze 16:44 | 10.13 *How it is provoked* (quoted); 11 *6. Inner states pass between people* (quoted) | — |
 | Eze 16:63 | 10.3 *Remembering in shame* (quoted) | — |
-| Eze 18:4 | 02 *Death and sin* (quoted); 02 *Soul, spirit and heart at death* (quoted); 05 *The soul answers for itself* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted); 12 *The soul answers for it* (quoted) | 2-1 |
+| Eze 18:4 | 02 *Death and sin* (quoted); 02 *Soul, spirit and heart at death* (quoted); 05 *The soul answers for itself* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted); 12 *The soul answers for it* (quoted) | 2-1, C-87, C-100, C-101 |
 | Eze 18:20 | — | 2-1 |
 | Eze 18:22 | 02 *Life set before a person* (quoted); 10.3 *God remembers* (quoted) | — |
 | Eze 18:23 | 02 *Life set before a person* (quoted); 13.1 *Delight* (quoted) | — |
@@ -2455,16 +2505,20 @@
 | Eze 28:17 | 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
 | Eze 31:9 | 10.6 *Jealousy and envy* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
 | Eze 31:10 | 10.6 *Jealousy and envy* (quoted); 12 *Pride and the lifted-up heart and spirit* (quoted) | — |
+| Eze 31:15 | 02 *Going down to Sheol* | C-94, C-94 |
+| Eze 31:16 | 02 *Going down to Sheol* (quoted); 02 *After death* (quoted) | C-94, C-94, C-107 |
+| Eze 31:17 | 02 *Going down to Sheol* | C-94, C-94 |
 | Eze 32:10 | 10.13 *Dread and trembling* (quoted) | — |
+| Eze 32:21 | 02 *After death* (quoted) | C-107 |
 | Eze 32:23 | 10.12 *Connections* (quoted) | — |
-| Eze 32:24 | 10.12 *Connections* (quoted) | — |
+| Eze 32:24 | 02 *After death* (quoted); 10.12 *Connections* (quoted) | C-107 |
 | Eze 32:25 | 10.12 *Connections* (quoted) | — |
 | Eze 32:26 | 10.12 *Connections* (quoted) | — |
 | Eze 32:27 | 10.12 *Connections* (quoted) | — |
 | Eze 32:28 | 10.12 *Connections* | — |
 | Eze 32:29 | 10.12 *Connections* | — |
 | Eze 32:30 | 10.12 *Connections* | — |
-| Eze 32:31 | 10.12 *Connections* | — |
+| Eze 32:31 | 02 *After death* (quoted); 10.12 *Connections* | C-107 |
 | Eze 32:32 | 10.12 *Connections* (quoted) | — |
 | Eze 33:10 | 02 *Life set before a person* (quoted); 13.1 *Delight* (quoted) | — |
 | Eze 33:11 | 02 *Life set before a person* (quoted); 02 *Living before God* (quoted); 11 *What changes the character* (quoted); 13.1 *Delight* (quoted) | — |
@@ -2544,7 +2598,7 @@
 | Dan 11:36 | 10.7 *Willing* (quoted) | — |
 | Dan 11:37 | 10.6 *Precious* (quoted) | — |
 | Dan 11:38 | 10.6 *Precious* (quoted) | — |
-| Dan 12:2 | 02 *Sleep and waking* (quoted); 02 *Life, and judgment* (quoted); 10.13 *Delivered from the wrath to come* (quoted) | — |
+| Dan 12:2 | 02 *Sleep and waking* (quoted); 02 *Life, and judgment* (quoted); 10.13 *Delivered from the wrath to come* (quoted) | C-89, C-92 |
 | Hos 2:14 | 10.9 *(opening)* (quoted); 11 *1. The inner being is acted upon as much as it acts* (quoted) | — |
 | Hos 2:15 | 11 *1. The inner being is acted upon as much as it acts* (quoted) | — |
 | Hos 3:5 | 10.9 *What it rests on* (quoted) | — |
@@ -2600,10 +2654,13 @@
 | Amo 8:11 | 10.2 *(opening)* (quoted) | — |
 | Amo 8:12 | 10.2 *(opening)* (quoted) | — |
 | Amo 8:13 | 10.2 *(opening)* (quoted) | — |
+| Amo 9:2 | 02 *Going down to Sheol* (quoted) | C-98 |
 | Obd 3 | 04 *The heart speaks to itself* (quoted); 12 *The heart deceives its owner* (quoted) | — |
 | Jon 1:5 | 10.1 *What changes it*; 11 *What changes the character* (quoted) | — |
 | Jon 1:14 | 13.1 *Delight* | — |
 | Jon 1:16 | 10.1 *What changes it* (quoted); 11 *What changes the character* (quoted); 13.1 *Delight* | — |
+| Jon 2:2 | 02 *Delivered from death* (quoted) | — |
+| Jon 2:6 | 02 *Delivered from death* (quoted) | — |
 | Jon 3:9 | 10.13 *Turned, and not turned* (quoted); 10.13 *Returning* (quoted); 10.13 *The responses, gathered* (quoted) | — |
 | Jon 3:10 | 10.13 *Returning* (quoted) | — |
 | Jon 4:1 | 10.9 *Anger toward God, and before God* (quoted) | — |
@@ -2632,7 +2689,7 @@
 | Hab 1:13 | 10.9 *Under rule, and longing for his* (quoted) | — |
 | Hab 1:14 | 10.9 *Under rule, and longing for his* (quoted) | — |
 | Hab 2:4 | 02 *Life set before a person* (quoted) | — |
-| Hab 2:5 | 10.6 *Wanting and death* (quoted) | — |
+| Hab 2:5 | 02 *Going down to Sheol* (quoted); 10.6 *Wanting and death* (quoted) | C-97 |
 | Hab 2:9 | 10.6 *Possessions* (quoted) | — |
 | Hab 2:10 | 10.6 *Possessions* (quoted) | — |
 | Hab 2:15 | 10.0 *The path runs back* (quoted); 10.13 *How it is spoken of* (quoted) | — |
@@ -2657,7 +2714,7 @@
 | Hag 1:14 | 06 *The human spirit* (quoted); 11 *What changes the character*; 13.1 *Stirring* (quoted) | — |
 | Hag 2:7 | 13.1 *Delight* (quoted) | — |
 | Hag 2:8 | 13.1 *Delight* (quoted) | — |
-| Zec 1:5 | 02 *What death is* (quoted) | — |
+| Zec 1:5 | 02 *What death is* (quoted) | C-83 |
 | Zec 1:6 | 13.1 *Purposing* (quoted) | — |
 | Zec 1:12 | 10.13 *Other parties* (quoted); 13.1 *Jealousy* (quoted) | — |
 | Zec 1:13 | 10.13 *Other parties* (quoted) | — |
@@ -2736,7 +2793,7 @@
 | Mat 9:6 | 13.1 *Ruling* (quoted) | — |
 | Mat 9:8 | 10.12 *What fear does* (quoted) | — |
 | Mat 9:13 | 13.1 *Delight* | — |
-| Mat 9:24 | 02 *Sleep and waking* (quoted) | — |
+| Mat 9:24 | 02 *Sleep and waking* (quoted) | C-89 |
 | Mat 10:1 | 13.1 *Ruling* (quoted) | — |
 | Mat 10:19 | 10.1 *Meeting anxiety* (quoted) | — |
 | Mat 10:20 | 10.1 *Meeting anxiety* (quoted) | — |
@@ -2744,6 +2801,7 @@
 | Mat 10:31 | 10.12 *What changes it* (quoted) | — |
 | Mat 11:14 | 10.2 *(opening)* (quoted) | — |
 | Mat 11:15 | 10.2 *(opening)* (quoted) | — |
+| Mat 11:23 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Mat 11:25 | 10.2 *Understanding that is hidden* (quoted) | — |
 | Mat 11:26 | 13.1 *Willing* (quoted) | — |
 | Mat 11:27 | 13.1 *Willing* (quoted) | — |
@@ -2773,6 +2831,7 @@
 | Mat 15:8 | 04 *The heart is the source* (quoted) | — |
 | Mat 15:19 | 04 *The heart is the source* (quoted); 12 *The heart as the source* (quoted) | 9-1 |
 | Mat 16:8 | 10.4 *What thinking does* (quoted) | — |
+| Mat 16:18 | 02 *Going down to Sheol* (quoted) | C-99 |
 | Mat 16:23 | 10.7 *Willing* (quoted) | — |
 | Mat 16:24 | 10.7 *Willing* (quoted) | — |
 | Mat 16:25 | 05 *Loving and hating one's own soul* (quoted); 10.7 *Willing* (quoted) | — |
@@ -2835,7 +2894,7 @@
 | Mat 26:10 | 10.13 *What it rises at* (quoted) | — |
 | Mat 26:31 | 02 *Made alive* (quoted) | — |
 | Mat 26:35 | 10.10 *(opening)* (quoted) | — |
-| Mat 26:38 | 02 *Facing death* (quoted); 02 *Soul, spirit and heart at death* (quoted); 05 *The soul suffers* (quoted); 07 *The willing spirit and the weak flesh* (quoted) | — |
+| Mat 26:38 | 02 *Facing death* (quoted); 02 *Soul, spirit and heart at death* (quoted); 05 *The soul suffers* (quoted); 07 *The willing spirit and the weak flesh* (quoted) | C-100 |
 | Mat 26:39 | 07 *The willing spirit and the weak flesh* (quoted) | — |
 | Mat 26:41 | 06 *The human spirit* (quoted); 07 *The willing spirit and the weak flesh* (quoted); 10.7 *Willing* (quoted) | 2-11 |
 | Mat 26:42 | 10.7 *Willing* (quoted) | — |
@@ -2848,6 +2907,7 @@
 | Mat 27:34 | 10.7 *Willing* | — |
 | Mat 27:43 | 10.5 *Speech before words* (quoted) | — |
 | Mat 27:50 | 02 *Soul, spirit and heart at death* (quoted) | 3-8 |
+| Mat 27:52 | 02 *Sleep and waking* (quoted) | C-89 |
 | Mat 27:54 | 10.12 *Fear before God* (quoted) | — |
 | Mat 28:4 | 10.12 *Fear before God* (quoted) | — |
 | Mat 28:8 | 10.12 *What changes it* (quoted) | — |
@@ -2975,6 +3035,7 @@
 | Luk 9:54 | 10.10 *Anger between people* (quoted) | — |
 | Luk 9:55 | 10.10 *Anger between people* (quoted) | — |
 | Luk 9:56 | 10.10 *Anger between people* (quoted) | — |
+| Luk 10:15 | 02 *Going down to Sheol* (quoted) | C-94, C-94 |
 | Luk 10:17 | 10.1 *Where it turns* (quoted); 13.3 *(opening)* (quoted) | — |
 | Luk 10:18 | 13.3 *(opening)* | — |
 | Luk 10:19 | 13.3 *(opening)* (quoted) | — |
@@ -3024,11 +3085,19 @@
 | Luk 15:29 | 10.5 *Anger in words* (quoted) | — |
 | Luk 15:30 | 10.10 *Anger between people* (quoted) | — |
 | Luk 15:32 | 10.10 *Anger between people* (quoted); 10.13 *How it is answered* (quoted); 11 *What changes the character* | — |
+| Luk 16 | 02 *After death* (no verse row) | — |
 | Luk 16:15 | 08 *The Old Testament does this with the heart* (quoted) | — |
 | Luk 16:21 | 10.6 *Unmet, and wanting against God* (quoted) | — |
-| Luk 16:22 | 02 *After death* (quoted) | — |
-| Luk 16:25 | 10.3 *(opening)* (quoted) | — |
-| Luk 16:26 | 10.6 *Unmet, and wanting against God* (quoted) | — |
+| Luk 16:22 | 02 *After death* (quoted) | C-108, C-110 |
+| Luk 16:23 | 02 *After death* (quoted) | C-108, C-109 |
+| Luk 16:24 | 02 *After death* (quoted) | C-108, C-109 |
+| Luk 16:25 | 02 *After death* (quoted); 10.3 *(opening)* (quoted) | C-108, C-109, C-110 |
+| Luk 16:26 | 02 *After death* (quoted); 10.6 *Unmet, and wanting against God* (quoted) | C-108 |
+| Luk 16:27 | — | C-108 |
+| Luk 16:28 | 02 *After death* | C-108 |
+| Luk 16:29 | 02 *After death* (quoted) | C-108 |
+| Luk 16:30 | 02 *After death* | C-108 |
+| Luk 16:31 | 02 *After death* (quoted) | C-108 |
 | Luk 17:22 | 10.6 *Aimed at God* (quoted) | — |
 | Luk 17:23 | 10.6 *Aimed at God* (quoted) | — |
 | Luk 18:2 | 10.12 *The fear of God* (quoted) | — |
@@ -3039,7 +3108,7 @@
 | Luk 20:6 | 10.12 *Fear between people* (quoted) | — |
 | Luk 20:14 | 10.0 *From a thought to a deed* (quoted); 10.10 *(opening)* (quoted); 11 *6. Inner states pass between people* (quoted) | — |
 | Luk 20:36 | 02 *Life, and judgment* (quoted) | — |
-| Luk 20:38 | 02 *After death* (quoted) | — |
+| Luk 20:38 | 02 *After death* (quoted) | C-110 |
 | Luk 21:26 | 10.12 *What changes it* (quoted) | — |
 | Luk 21:28 | 10.12 *What changes it* (quoted) | — |
 | Luk 21:34 | 10.1 *What anxiety does* (quoted) | — |
@@ -3060,7 +3129,7 @@
 | Luk 23:25 | 10.7 *Willing* (quoted); 11 *What changes the character* | — |
 | Luk 23:40 | 10.12 *The fear of God* (quoted) | — |
 | Luk 23:41 | 10.12 *The fear of God* (quoted) | — |
-| Luk 23:43 | 02 *After death* (quoted) | — |
+| Luk 23:43 | 02 *After death* (quoted) | C-110 |
 | Luk 23:46 | 02 *Soul, spirit and heart at death* (quoted) | 2-15, 3-8 |
 | Luk 23:51 | 10.7 *Planning* (quoted) | — |
 | Luk 23:52 | 10.7 *Planning* (quoted) | — |
@@ -3123,12 +3192,15 @@
 | Joh 7:45 | 10.7 *Willing* | — |
 | Joh 7:46 | 10.7 *Willing* (quoted) | — |
 | Joh 8:15 | 07 *Flesh in the New Testament: one word, several values* (quoted) | — |
-| Joh 8:24 | 02 *Death and sin* (quoted) | — |
+| Joh 8:24 | 02 *Death and sin* (quoted) | C-87 |
 | Joh 8:44 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | Joh 8:51 | 02 *Made alive* (quoted) | — |
 | Joh 9:31 | 10.7 *Willing* (quoted) | — |
 | Joh 10:18 | 13.1 *Ruling* (quoted) | — |
-| Joh 11:13 | 02 *Sleep and waking* (quoted) | — |
+| Joh 11:11 | 02 *Sleep and waking* (quoted) | C-89 |
+| Joh 11:12 | 02 *Sleep and waking* (quoted) | C-89 |
+| Joh 11:13 | 02 *Sleep and waking* (quoted) | C-89 |
+| Joh 11:14 | 02 *Sleep and waking* (quoted) | C-89 |
 | Joh 11:25 | 02 *Where life flows from* (quoted) | — |
 | Joh 11:26 | 02 *Made alive* (quoted) | — |
 | Joh 11:32 | 10.1 *Where it turns* (quoted) | — |
@@ -3176,8 +3248,8 @@
 | Act 2:14 | 10.2 *Perplexity* (quoted) | — |
 | Act 2:23 | 13.1 *Purposing* (quoted) | — |
 | Act 2:24 | 02 *Christ first* (quoted) | — |
-| Act 2:27 | 02 *Christ first* (quoted) | 3-9 |
-| Act 2:31 | 02 *Soul, spirit and heart at death* (quoted) | 3-9 |
+| Act 2:27 | 02 *Christ first* (quoted) | 3-9, C-102 |
+| Act 2:31 | 02 *Soul, spirit and heart at death* (quoted); 09 *Lines that are often drawn, but that I cannot find* (quoted) | 3-9, C-100 |
 | Act 2:41 | 05 *From throat to corpse* (quoted) | — |
 | Act 4:25 | 10.4 *When anger thinks* (quoted) | — |
 | Act 4:26 | 10.4 *When anger thinks* | — |
@@ -3344,8 +3416,8 @@
 | Rom 5:8 | 02 *Made alive* (quoted) | — |
 | Rom 5:9 | 10.13 *Delivered from the wrath to come* (quoted) | — |
 | Rom 5:10 | 14 *Revived, restored, renewed* (quoted) | — |
-| Rom 5:12 | 02 *Death and sin* (quoted); 11 *What changes the character* | — |
-| Rom 5:14 | 02 *Death and sin* (quoted) | — |
+| Rom 5:12 | 02 *Death and sin* (quoted); 11 *What changes the character* | C-85 |
+| Rom 5:14 | 02 *Death and sin* (quoted) | C-85 |
 | Rom 6:2 | 02 *Made alive* (quoted); 11 *What changes the character*; 14 *Revived, restored, renewed* (quoted) | — |
 | Rom 6:4 | 02 *Made alive* (quoted) | — |
 | Rom 6:7 | 14 *Revived, restored, renewed* (quoted) | — |
@@ -3354,13 +3426,13 @@
 | Rom 6:13 | 14 *Sin's rule ended* (quoted) | — |
 | Rom 6:14 | 11 *Authority as a standing* (quoted); 14 *Sin's rule ended* (quoted) | — |
 | Rom 6:16 | 14 *Sin's rule ended* (quoted) | — |
-| Rom 6:23 | 02 *Death and sin* (quoted) | — |
-| Rom 7:5 | 02 *Death and sin* (quoted) | — |
+| Rom 6:23 | 02 *Death and sin* (quoted) | C-85 |
+| Rom 7:5 | 02 *Death and sin* (quoted) | C-86 |
 | Rom 7:6 | 14 *Revived, restored, renewed* (quoted) | — |
 | Rom 7:7 | 10.6 *Coveting* (quoted) | — |
 | Rom 7:8 | 10.6 *Coveting* (quoted) | — |
-| Rom 7:9 | 02 *Death and sin* (quoted); 11 *What changes the character* | — |
-| Rom 7:10 | 02 *Death and sin* (quoted) | — |
+| Rom 7:9 | 02 *Death and sin* (quoted); 11 *What changes the character* | C-86 |
+| Rom 7:10 | 02 *Death and sin* (quoted) | C-86 |
 | Rom 7:15 | 10.7 *Willing* (quoted) | — |
 | Rom 7:16 | 10.7 *Willing* (quoted) | — |
 | Rom 7:17 | 10.7 *Willing* (quoted) | — |
@@ -3369,10 +3441,10 @@
 | Rom 7:21 | 10.7 *Willing* (quoted) | — |
 | Rom 7:22 | 10.1 *On God's word, and on God* (quoted); 10.7 *Willing* | — |
 | Rom 7:23 | 10.1 *On God's word, and on God*; 10.7 *Willing* | — |
-| Rom 7:24 | 02 *Death in the living* (quoted); 10.1 *On God's word, and on God*; 10.7 *Willing* | — |
+| Rom 7:24 | 02 *Death in the living* (quoted); 10.1 *On God's word, and on God*; 10.7 *Willing* | C-88 |
 | Rom 7:25 | 07 *Flesh in the New Testament: one word, several values* (quoted); 10.1 *On God's word, and on God*; 10.7 *Willing*; 11 *7. The inner being is governed* (quoted) | 4-7 |
 | Rom 8:2 | 14 *Revived, restored, renewed* (quoted) | — |
-| Rom 8:6 | 02 *Death in the living* (quoted); 07 *Flesh in the New Testament: one word, several values* (quoted); 10.7 *Planning* (quoted) | — |
+| Rom 8:6 | 02 *Death in the living* (quoted); 07 *Flesh in the New Testament: one word, several values* (quoted); 10.7 *Planning* (quoted) | C-88 |
 | Rom 8:7 | 10.7 *Planning* (quoted); 12 *Flesh as an orientation* (quoted) | — |
 | Rom 8:10 | 14 *Revived, restored, renewed* (quoted) | — |
 | Rom 8:11 | 02 *The body raised* (quoted); 14 *Revived, restored, renewed* (quoted) | — |
@@ -3482,8 +3554,10 @@
 | 1Cor 14:14 | 09 *Spirit and mind in prayer* (quoted) | 2-16, 4-7 |
 | 1Cor 14:15 | 09 *Spirit and mind in prayer* (quoted) | 2-16, 4-7 |
 | 1Cor 15:3 | 02 *Made alive* (quoted) | — |
+| 1Cor 15:6 | 02 *Sleep and waking* (quoted) | C-90 |
+| 1Cor 15:18 | 02 *Sleep and waking* (quoted) | C-90, C-90 |
 | 1Cor 15:19 | 02 *Life weighed* (quoted) | — |
-| 1Cor 15:20 | 02 *Christ first* (quoted) | — |
+| 1Cor 15:20 | 02 *Sleep and waking* (quoted); 02 *Christ first* (quoted) | C-90, C-90 |
 | 1Cor 15:22 | 02 *Christ first* (quoted) | — |
 | 1Cor 15:23 | 02 *Christ first* (quoted) | — |
 | 1Cor 15:26 | 02 *Changed* (quoted) | — |
@@ -3506,7 +3580,7 @@
 | 1Cor 15:53 | 02 *Changed* (quoted) | — |
 | 1Cor 15:54 | 02 *Changed* (quoted) | — |
 | 1Cor 15:55 | 02 *Changed* (quoted) | — |
-| 1Cor 15:56 | 02 *Death and sin* (quoted) | — |
+| 1Cor 15:56 | 02 *Death and sin* (quoted) | C-85 |
 | 1Cor 16:7 | 10.7 *Planning* (quoted) | — |
 | 1Cor 16:12 | 10.7 *Willing* (quoted) | — |
 | 1Cor 16:18 | 10.10 *(opening)* (quoted) | — |
@@ -3536,7 +3610,7 @@
 | 2Cor 5:1 | 02 *Waited for* (quoted) | — |
 | 2Cor 5:2 | 02 *Waited for* (quoted); 10.1 *Where it turns* (quoted); 10.6 *Wanting and death* (quoted) | — |
 | 2Cor 5:4 | 02 *Waited for* (quoted); 10.6 *Wanting and death* (quoted) | — |
-| 2Cor 5:8 | 02 *After death* (quoted) | — |
+| 2Cor 5:8 | 02 *After death* (quoted) | C-110 |
 | 2Cor 5:9 | 10.7 *Setting the heart* (quoted) | — |
 | 2Cor 5:10 | 10.7 *Setting the heart* (quoted) | — |
 | 2Cor 5:11 | 10.12 *The fear of God* (quoted) | — |
@@ -3615,7 +3689,7 @@
 | Eph 2:2 | 12 *Dispositions that come upon a person, and spirits that act* (quoted); 12 *Held — not yet re-examined*; 14 *Held — not yet re-examined* | 8-4, 9-6, 9-6 |
 | Eph 2:3 | 10.13 *Delivered from the wrath to come* (quoted); 12 *Held — not yet re-examined*; 14 *Anger put off, and turned to good* (quoted); 14 *Held — not yet re-examined* | 8-4, 9-6 |
 | Eph 2:4 | 10.13 *Delivered from the wrath to come* (quoted); 14 *Anger put off, and turned to good* (quoted); 14 *Held — not yet re-examined* | 8-4 |
-| Eph 2:5 | 02 *Death in the living*; 02 *Made alive* (quoted); 14 *Anger put off, and turned to good* (quoted); 14 *Held — not yet re-examined* | 8-4 |
+| Eph 2:5 | 02 *Death in the living*; 02 *Made alive* (quoted); 14 *Anger put off, and turned to good* (quoted); 14 *Held — not yet re-examined* | 8-4, C-88 |
 | Eph 2:12 | 14 *Brought near* (quoted) | — |
 | Eph 2:13 | 14 *Brought near* (quoted) | — |
 | Eph 2:14 | 14 *Brought near* (quoted) | — |
@@ -3648,8 +3722,8 @@
 | Phili 1:20 | 02 *Dying to the Lord* (quoted) | — |
 | Phili 1:21 | 02 *Dying to the Lord* (quoted) | — |
 | Phili 1:22 | 07 *Flesh in the New Testament: one word, several values* (quoted); 10.7 *Life and death set before a person* (quoted) | — |
-| Phili 1:23 | 02 *After death* (quoted); 10.7 *Life and death set before a person* (quoted) | — |
-| Phili 1:24 | 02 *After death* (quoted); 10.7 *Life and death set before a person* (quoted) | — |
+| Phili 1:23 | 02 *After death* (quoted); 10.7 *Life and death set before a person* (quoted) | C-110 |
+| Phili 1:24 | 02 *After death* (quoted); 10.7 *Life and death set before a person* (quoted) | C-110 |
 | Phili 1:25 | 10.7 *Life and death set before a person* (quoted) | — |
 | Phili 2:12 | 10.12 *The fear of God* (quoted) | — |
 | Phili 2:13 | 10.7 *Willing* (quoted); 10.12 *The fear of God* (quoted) | — |
@@ -3675,7 +3749,7 @@
 | Col 1:27 | 13.1 *Willing* (quoted) | — |
 | Col 2:5 | 06 *The human spirit* | 1-3 |
 | Col 2:10 | 13.1 *Ruling* (quoted) | — |
-| Col 2:13 | 02 *Death in the living* (quoted); 02 *Made alive* (quoted); 14 *Revived, restored, renewed* (quoted) | — |
+| Col 2:13 | 02 *Death in the living* (quoted); 02 *Made alive* (quoted); 14 *Revived, restored, renewed* (quoted) | C-88 |
 | Col 2:15 | 13.3 *(opening)* (quoted) | — |
 | Col 3:3 | 02 *Made alive* (quoted); 10.11 *Hiding another* (quoted); 14 *Revived, restored, renewed* (quoted) | — |
 | Col 3:4 | 02 *Where life flows from* (quoted) | — |
@@ -3708,11 +3782,13 @@
 | 1Th 4:3 | 10.7 *Willing* (quoted) | — |
 | 1Th 4:5 | 10.6 *Wanting that owns the one who wants* (quoted); 10.7 *Willing* (quoted) | — |
 | 1Th 4:11 | 10.7 *Setting the heart* (quoted) | — |
-| 1Th 4:14 | 02 *Sleep and waking* (quoted) | — |
+| 1Th 4:13 | 02 *Sleep and waking* (quoted) | C-90, C-90 |
+| 1Th 4:14 | 02 *Sleep and waking* (quoted) | C-90, C-90 |
+| 1Th 4:15 | 02 *Sleep and waking* (quoted) | C-90, C-90 |
 | 1Th 4:16 | 02 *Life, and judgment* (quoted) | — |
 | 1Th 4:17 | 02 *Life, and judgment* (quoted) | — |
 | 1Th 5:9 | 10.13 *Delivered from the wrath to come* (quoted) | — |
-| 1Th 5:10 | 02 *After death* (quoted) | — |
+| 1Th 5:10 | 02 *After death* (quoted) | C-110 |
 | 1Th 5:11 | 10.13 *Delivered from the wrath to come* (quoted) | — |
 | 1Th 5:18 | 10.7 *Willing* (quoted) | — |
 | 1Th 5:19 | 06 *God's Spirit and the human person* | — |
@@ -3735,7 +3811,7 @@
 | 1Ti 2:14 | 10.10 *Holding authority over another* (quoted) | — |
 | 1Ti 3:1 | 10.7 *Setting the heart* (quoted) | — |
 | 1Ti 4:2 | 08 *Conscience* | — |
-| 1Ti 5:6 | 02 *Death in the living* (quoted) | — |
+| 1Ti 5:6 | 02 *Death in the living* (quoted) | C-88 |
 | 1Ti 6:6 | 10.7 *Willing* (quoted) | — |
 | 1Ti 6:9 | 10.7 *Willing* (quoted) | — |
 | 1Ti 6:10 | 10.6 *Possessions* (quoted) | — |
@@ -3790,7 +3866,7 @@
 | Heb 9:9 | 08 *Conscience* (quoted) | — |
 | Heb 9:13 | 12 *Inner and outer impurity* | — |
 | Heb 9:14 | 08 *Conscience* (quoted); 10.9 *The living God* (quoted); 12 *Inner and outer impurity* (quoted); 14 *Revived, restored, renewed* (quoted) | — |
-| Heb 9:27 | 02 *What death is* (quoted) | — |
+| Heb 9:27 | 02 *What death is* (quoted) | C-83 |
 | Heb 10:2 | 08 *Conscience* (quoted) | — |
 | Heb 10:5 | 13.1 *Delight* (quoted) | — |
 | Heb 10:6 | 13.1 *Delight* (quoted) | — |
@@ -3825,7 +3901,7 @@
 | Jam 1:6 | 10.2 *Doubt* (quoted) | — |
 | Jam 1:8 | 10.2 *Doubt* (quoted); 11 *What changes the character* (quoted) | — |
 | Jam 1:14 | 10.6 *Wanting that owns the one who wants* (quoted); 12 *Held — not yet re-examined* | 9-6 |
-| Jam 1:15 | 02 *Death and sin* (quoted); 10.6 *Wanting and death* (quoted); 12 *The soul answers for it* (quoted); 12 *Held — not yet re-examined*; 13.1 *Willing* (quoted) | — |
+| Jam 1:15 | 02 *Death and sin* (quoted); 10.6 *Wanting and death* (quoted); 12 *The soul answers for it* (quoted); 12 *Held — not yet re-examined*; 13.1 *Willing* (quoted) | C-86 |
 | Jam 1:17 | 13.1 *Willing* (quoted) | — |
 | Jam 1:18 | 13.1 *Willing* (quoted) | — |
 | Jam 1:19 | 10.2 *(opening)* (quoted); 10.13 *Connections* | — |
@@ -3892,7 +3968,7 @@
 | 1Pe 3:21 | 08 *Conscience* (quoted) | — |
 | 1Pe 4:2 | 07 *Flesh in the New Testament: one word, several values* (quoted); 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | 1Pe 4:3 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
-| 1Pe 4:6 | 02 *After death* (quoted) | — |
+| 1Pe 4:6 | 02 *After death* (quoted) | C-110 |
 | 1Pe 4:19 | 05 *The soul is hunted and rescued* (quoted) | — |
 | 1Pe 5:2 | 10.10 *Holding authority over another* (quoted); 11 *Authority as a standing* (quoted) | — |
 | 1Pe 5:3 | 10.10 *Holding authority over another* (quoted); 11 *Authority as a standing* (quoted) | — |
@@ -3921,7 +3997,7 @@
 | 1Jo 2:16 | 07 *Flesh in the New Testament: one word, several values* (quoted); 10.6 *Wanting that owns the one who wants* (quoted); 12 *Held — not yet re-examined* | — |
 | 1Jo 2:17 | 10.6 *Wanting that owns the one who wants* (quoted) | — |
 | 1Jo 3:2 | 02 *Changed* (quoted) | — |
-| 1Jo 3:14 | 02 *Death in the living* (quoted); 02 *Made alive* (quoted); 10.10 *(opening)* (quoted); 11 *What changes the character*; 12 *The soul answers for it* (quoted) | — |
+| 1Jo 3:14 | 02 *Death in the living* (quoted); 02 *Made alive* (quoted); 10.10 *(opening)* (quoted); 11 *What changes the character*; 12 *The soul answers for it* (quoted) | C-88 |
 | 1Jo 3:19 | 08 *The Old Testament does this with the heart* | — |
 | 1Jo 3:20 | 04 *The heart judges itself* (quoted); 08 *The Old Testament does this with the heart* (quoted); 11 *7. The inner being is governed* (quoted) | — |
 | 1Jo 3:21 | 08 *The Old Testament does this with the heart* (quoted) | — |
@@ -3931,8 +4007,8 @@
 | 1Jo 5:12 | 14 *Revived, restored, renewed* (quoted) | — |
 | 1Jo 5:13 | 02 *Made alive* (quoted) | — |
 | 1Jo 5:14 | 10.7 *Willing* (quoted) | — |
-| 1Jo 5:16 | 02 *Death and sin* (quoted); 10.9 *(opening)* (quoted) | — |
-| 1Jo 5:17 | 02 *Death and sin* | — |
+| 1Jo 5:16 | 02 *Death and sin* (quoted); 10.9 *(opening)* (quoted) | C-87 |
+| 1Jo 5:17 | 02 *Death and sin* | C-87 |
 | 1Jo 5:19 | 12 *Held — not yet re-examined* | — |
 | 2Jo 1 | 10.7 *Others around a choice* (quoted) | — |
 | 2Jo 2 | 10.7 *Others around a choice* (quoted) | — |
@@ -3944,14 +4020,15 @@
 | Jude 19 | 09 *The soul-life and the Spirit-life* (quoted) | — |
 | Rev 1:10 | 06 *Whose spirit is it?* (quoted) | — |
 | Rev 1:17 | 10.12 *"Fear not"* (quoted) | — |
-| Rev 1:18 | 02 *Changed* (quoted) | — |
+| Rev 1:18 | 02 *Going down to Sheol* (quoted); 02 *Changed* (quoted) | C-99 |
 | Rev 2:7 | 02 *Life breathed in* (quoted) | — |
 | Rev 2:11 | 02 *Life, and judgment* (quoted) | — |
-| Rev 3:1 | 02 *Death in the living* (quoted) | — |
+| Rev 3:1 | 02 *Death in the living* (quoted) | C-88 |
 | Rev 3:2 | 02 *Death in the living* (quoted) | — |
 | Rev 4:11 | 13.1 *Willing* (quoted) | — |
-| Rev 6:9 | 02 *After death* (quoted) | 3-10, 6-2 |
-| Rev 6:10 | 02 *After death* | — |
+| Rev 6:8 | 02 *Going down to Sheol* (quoted) | C-99 |
+| Rev 6:9 | 02 *After death* (quoted) | 3-10, 6-2, C-109 |
+| Rev 6:10 | 02 *After death* | C-109 |
 | Rev 6:16 | 10.11 *Hiding from God* (quoted); 10.13 *Shelter, and who can stand* (quoted) | — |
 | Rev 6:17 | 10.11 *Hiding from God* (quoted) | — |
 | Rev 7:16 | 10.6 *Thirst answered* (quoted) | — |
@@ -3965,7 +4042,7 @@
 | Rev 13:4 | 13.3 *(opening)* (quoted) | — |
 | Rev 14:8 | 10.13 *What changes it* | — |
 | Rev 14:10 | 10.13 *What changes it* | — |
-| Rev 14:13 | 02 *After death* (quoted) | — |
+| Rev 14:13 | 02 *After death* (quoted) | C-110 |
 | Rev 14:18 | 13.2 *(opening)* (quoted) | — |
 | Rev 15:1 | 10.13 *How it is spoken of*; 10.13 *How it ends* (quoted); 10.13 *What changes it* | — |
 | Rev 15:3 | 10.13 *Delivered from the wrath to come* (quoted); 10.13 *The responses, gathered* (quoted) | — |
@@ -3983,7 +4060,8 @@
 | Rev 18:16 | 10.6 *Taken away* (quoted) | — |
 | Rev 18:17 | 10.6 *Taken away* (quoted) | — |
 | Rev 20:12 | 02 *Life, and judgment* (quoted) | — |
-| Rev 20:14 | 02 *Life, and judgment* (quoted) | — |
+| Rev 20:13 | 02 *Going down to Sheol* (quoted) | C-99 |
+| Rev 20:14 | 02 *Going down to Sheol* (quoted); 02 *Life, and judgment* (quoted) | C-99 |
 | Rev 20:15 | 02 *Life, and judgment* (quoted) | — |
 | Rev 21:4 | 02 *Life, and judgment* (quoted) | — |
 | Rev 21:8 | 02 *Life, and judgment* (quoted); 10.1 *Meeting fear* (quoted); 10.12 *Fear set against faith and love* (quoted); 10.12 *Connections* (quoted); 10.13 *Delivered from the wrath to come* (quoted); 12 *Held — not yet re-examined* | — |
